@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
 import { SearchPanel } from "./components/SearchPanel";
+import { Sidebar, type AppView } from "./components/Sidebar";
+import { ExercisePanel } from "./components/ExercisePanel";
 import { IntentionList } from "./components/IntentionList";
 import { IntentionDetails } from "./components/IntentionDetails";
 import { fetchHashmap, loadHashmap } from "./services/hashmapService";
@@ -11,6 +13,7 @@ import { searchIntentions } from "./utils/searchIntentions";
 function App() {
   const [data, setData] = useState<HashmapData | null>(null);
   const [source, setSource] = useState<"remote" | "cache">("remote");
+  const [currentView, setCurrentView] = useState<AppView>("hashmap");
   const [mentalSearch, setMentalSearch] = useState("");
   const [englishSearch, setEnglishSearch] = useState("");
   const [categorySearch, setCategorySearch] = useState("");
@@ -103,9 +106,16 @@ function App() {
   }
 
   return (
-    <main className="page-shell">
-      <div className="container">
-        <Header metadata={data?.metadata} source={data ? source : undefined} />
+    <main className="app-layout">
+      <Sidebar
+        currentView={currentView}
+        onViewChange={setCurrentView}
+      />
+
+      <div className="app-content">
+        <div className="page-shell">
+          <div className="container">
+            <Header metadata={data?.metadata} source={data ? source : undefined} />
 
         {loading && (
           <div className="status-card">
@@ -129,9 +139,9 @@ function App() {
           </div>
         )}
 
-        {!loading && data && (
-          <>
-            {source === "cache" && (
+            {!loading && data && currentView === "hashmap" && (
+              <>
+                {source === "cache" && (
               <div className="warning-banner">
                 Não foi possível acessar a fonte externa. Exibindo a última versão
                 salva localmente.
@@ -172,16 +182,22 @@ function App() {
               </p>
             </section>
 
-            <IntentionList
-              items={filteredItems}
-              onSelect={setSelected}
-            />
-          </>
-        )}
+                <IntentionList
+                  items={filteredItems}
+                  onSelect={setSelected}
+                />
+              </>
+            )}
+
+            {!loading && data && currentView === "exercises" && (
+              <ExercisePanel intentions={data.mentalMap} />
+            )}
+          </div>
+        </div>
       </div>
 
       <IntentionDetails
-        item={selected}
+        item={currentView === "hashmap" ? selected : null}
         allItems={data?.mentalMap ?? []}
         onClose={() => setSelected(null)}
         onSelectRelated={setSelected}
