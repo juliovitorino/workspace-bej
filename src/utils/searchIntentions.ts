@@ -22,7 +22,8 @@ export function searchIntentions(
   intentions: MentalIntention[],
   mentalSearch: string,
   englishSearch: string,
-  categorySearch: string
+  categorySearch: string,
+  selectedTags: string[]
 ): MentalIntention[] {
   const normalizedMental = normalizeText(mentalSearch);
   const normalizedEnglish = normalizeText(englishSearch);
@@ -49,7 +50,15 @@ export function searchIntentions(
         !normalizedCategory ||
         normalizeText(item.category ?? "").includes(normalizedCategory);
 
-      return mentalMatches && englishMatches && categoryMatches;
+      const tagsMatch =
+        selectedTags.length === 0 ||
+        selectedTags.every((selectedTag) =>
+          (item.tags ?? []).some(
+            (tag) => normalizeText(tag) === normalizeText(selectedTag)
+          )
+        );
+
+      return mentalMatches && englishMatches && categoryMatches && tagsMatch;
     })
     .sort((a, b) =>
       normalizeText(a.intention).localeCompare(normalizeText(b.intention))

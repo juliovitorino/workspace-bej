@@ -2,9 +2,12 @@ interface SearchPanelProps {
   mentalSearch: string;
   englishSearch: string;
   categorySearch: string;
+  availableTags: string[];
+  selectedTags: string[];
   onMentalSearchChange: (value: string) => void;
   onEnglishSearchChange: (value: string) => void;
   onCategorySearchChange: (value: string) => void;
+  onTagsChange: (tags: string[]) => void;
   onClear: () => void;
 }
 
@@ -12,12 +15,36 @@ export function SearchPanel({
   mentalSearch,
   englishSearch,
   categorySearch,
+  availableTags,
+  selectedTags,
   onMentalSearchChange,
   onEnglishSearchChange,
   onCategorySearchChange,
+  onTagsChange,
   onClear
 }: SearchPanelProps) {
-  const hasFilters = Boolean(mentalSearch || englishSearch || categorySearch);
+  const hasFilters = Boolean(
+    mentalSearch ||
+    englishSearch ||
+    categorySearch ||
+    selectedTags.length > 0
+  );
+
+  const remainingTags = availableTags.filter(
+    (tag) => !selectedTags.includes(tag)
+  );
+
+  function addTag(tag: string) {
+    if (!tag || selectedTags.includes(tag)) {
+      return;
+    }
+
+    onTagsChange([...selectedTags, tag]);
+  }
+
+  function removeTag(tag: string) {
+    onTagsChange(selectedTags.filter((selectedTag) => selectedTag !== tag));
+  }
 
   return (
     <section className="search-panel">
@@ -55,6 +82,46 @@ export function SearchPanel({
           onChange={(event) => onCategorySearchChange(event.target.value)}
           autoComplete="off"
         />
+      </div>
+
+      <div className="field tag-filter-field">
+        <label htmlFor="tag-select">Tags</label>
+
+        <select
+          id="tag-select"
+          value=""
+          onChange={(event) => addTag(event.target.value)}
+          disabled={remainingTags.length === 0}
+        >
+          <option value="">
+            {remainingTags.length > 0
+              ? "Selecione uma tag..."
+              : "Todas as tags selecionadas"}
+          </option>
+
+          {remainingTags.map((tag) => (
+            <option key={tag} value={tag}>
+              {tag}
+            </option>
+          ))}
+        </select>
+
+        {selectedTags.length > 0 && (
+          <div className="selected-tags">
+            {selectedTags.map((tag) => (
+              <button
+                type="button"
+                className="selected-tag"
+                key={tag}
+                onClick={() => removeTag(tag)}
+                title={`Remover tag ${tag}`}
+              >
+                {tag}
+                <span aria-hidden="true">×</span>
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       <button

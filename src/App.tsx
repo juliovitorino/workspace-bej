@@ -14,6 +14,7 @@ function App() {
   const [mentalSearch, setMentalSearch] = useState("");
   const [englishSearch, setEnglishSearch] = useState("");
   const [categorySearch, setCategorySearch] = useState("");
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selected, setSelected] = useState<MentalIntention | null>(null);
   const [loading, setLoading] = useState(true);
   const [retrying, setRetrying] = useState(false);
@@ -53,6 +54,16 @@ function App() {
     };
   }, []);
 
+  const availableTags = useMemo(() => {
+    if (!data) return [];
+
+    return Array.from(
+      new Set(
+        data.mentalMap.flatMap((item) => item.tags ?? [])
+      )
+    ).sort((a, b) => a.localeCompare(b));
+  }, [data]);
+
   const filteredItems = useMemo(() => {
     if (!data) return [];
 
@@ -60,9 +71,10 @@ function App() {
       data.mentalMap,
       mentalSearch,
       englishSearch,
-      categorySearch
+      categorySearch,
+      selectedTags
     );
-  }, [data, mentalSearch, englishSearch, categorySearch]);
+  }, [data, mentalSearch, englishSearch, categorySearch, selectedTags]);
 
   async function retry() {
     setRetrying(true);
@@ -87,6 +99,7 @@ function App() {
     setMentalSearch("");
     setEnglishSearch("");
     setCategorySearch("");
+    setSelectedTags([]);
   }
 
   return (
@@ -136,9 +149,12 @@ function App() {
               mentalSearch={mentalSearch}
               englishSearch={englishSearch}
               categorySearch={categorySearch}
+              availableTags={availableTags}
+              selectedTags={selectedTags}
               onMentalSearchChange={setMentalSearch}
               onEnglishSearchChange={setEnglishSearch}
               onCategorySearchChange={setCategorySearch}
+              onTagsChange={setSelectedTags}
               onClear={clearFilters}
             />
 
