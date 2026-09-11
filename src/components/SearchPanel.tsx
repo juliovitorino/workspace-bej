@@ -1,19 +1,23 @@
 interface SearchPanelProps {
   mentalSearch: string;
   englishSearch: string;
+  tagSearch: string;
   onMentalSearchChange: (value: string) => void;
   onEnglishSearchChange: (value: string) => void;
+  onTagSearchChange: (value: string) => void;
   onClear: () => void;
 }
 
 export function SearchPanel({
   mentalSearch,
   englishSearch,
+  tagSearch,
   onMentalSearchChange,
   onEnglishSearchChange,
+  onTagSearchChange,
   onClear
 }: SearchPanelProps) {
-  const hasFilters = Boolean(mentalSearch || englishSearch);
+  const hasFilters = Boolean(mentalSearch || englishSearch || tagSearch);
 
   return (
     <section className="search-panel">
@@ -37,6 +41,18 @@ export function SearchPanel({
           placeholder="Ex.: used to, getting used to..."
           value={englishSearch}
           onChange={(event) => onEnglishSearchChange(event.target.value)}
+          autoComplete="off"
+        />
+      </div>
+
+      <div className="field">
+        <label htmlFor="tag-search">Tags</label>
+        <input
+          id="tag-search"
+          type="search"
+          placeholder="Ex.: past, habit, condition..."
+          value={tagSearch}
+          onChange={(event) => onTagSearchChange(event.target.value)}
           autoComplete="off"
         />
       </div>

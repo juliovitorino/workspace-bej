@@ -13,6 +13,7 @@ function App() {
   const [source, setSource] = useState<"remote" | "cache">("remote");
   const [mentalSearch, setMentalSearch] = useState("");
   const [englishSearch, setEnglishSearch] = useState("");
+  const [tagSearch, setTagSearch] = useState("");
   const [selected, setSelected] = useState<MentalIntention | null>(null);
   const [loading, setLoading] = useState(true);
   const [retrying, setRetrying] = useState(false);
@@ -58,9 +59,10 @@ function App() {
     return searchIntentions(
       data.mentalMap,
       mentalSearch,
-      englishSearch
+      englishSearch,
+      tagSearch
     );
-  }, [data, mentalSearch, englishSearch]);
+  }, [data, mentalSearch, englishSearch, tagSearch]);
 
   async function retry() {
     setRetrying(true);
@@ -84,6 +86,7 @@ function App() {
   function clearFilters() {
     setMentalSearch("");
     setEnglishSearch("");
+    setTagSearch("");
   }
 
   return (
@@ -132,8 +135,10 @@ function App() {
             <SearchPanel
               mentalSearch={mentalSearch}
               englishSearch={englishSearch}
+              tagSearch={tagSearch}
               onMentalSearchChange={setMentalSearch}
               onEnglishSearchChange={setEnglishSearch}
+              onTagSearchChange={setTagSearch}
               onClear={clearFilters}
             />
 
