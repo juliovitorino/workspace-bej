@@ -1,0 +1,5574 @@
+{
+  "metadata": {
+    "name": "Mental Hashmap",
+    "version": "1.0.0",
+    "updatedAt": "2026-09-11",
+    "language": "pt-BR",
+    "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
+    "sourceBuild": "v.46.30.9.20260909.1024",
+    "totalIntentions": 256
+  },
+  "mentalMap": [
+    {
+      "id": "acao-verbo",
+      "intention": "Ação (verbo)",
+      "english": "Simple Present / Simple Past / Simple Future",
+      "pattern": "subject + verb (present/past/future)",
+      "description": "Ações e fatos em presente, passado ou futuro.",
+      "category": "core-tenses",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu corro todos os dias.",
+          "en": "I run every day."
+        },
+        {
+          "pt": "Ele acordou tarde.",
+          "en": "He woke up later."
+        },
+        {
+          "pt": "Eu vou trabalhar amanhã.",
+          "en": "I will work tomorrow."
+        }
+      ],
+      "tags": [
+        "action",
+        "tense"
+      ],
+      "related": []
+    },
+    {
+      "id": "pode-podia-poderia-deveria-deve",
+      "intention": "Pode, podia, poderia, deveria, deve",
+      "english": "Can, Could, May, Might, Should, Must, Shall, Will, Would",
+      "pattern": "modal + base verb",
+      "description": "Mapa de modais para possibilidade, conselho, obrigação e hipótese.",
+      "category": "modal-verbs",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Talvez chova.",
+          "en": "It might rain."
+        },
+        {
+          "pt": "Você deveria jogar hoje.",
+          "en": "You should play today."
+        }
+      ],
+      "tags": [
+        "modals",
+        "possibility"
+      ],
+      "related": []
+    },
+    {
+      "id": "sou-estou-agora",
+      "intention": "Sou / estou (agora)",
+      "english": "am / is / are",
+      "pattern": "be (present) OR be + ing",
+      "description": "Estado atual ou processo em andamento.",
+      "category": "be-states",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Ele está cansado.",
+          "en": "He is tired."
+        },
+        {
+          "pt": "Eu estou feliz.",
+          "en": "I am happy."
+        }
+      ],
+      "tags": [
+        "present",
+        "state"
+      ],
+      "related": [
+        "era-estava-processo"
+      ]
+    },
+    {
+      "id": "era-estado-estava-processo-estive-esteve",
+      "intention": "Era (estado) / estava (processo) / estive / esteve",
+      "english": "was / were",
+      "pattern": "was/were OR was/were + ing",
+      "description": "Estado ou processo no passado.",
+      "category": "be-states",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Ele estava cansado.",
+          "en": "He was tired."
+        },
+        {
+          "pt": "Nós estávamos jogando futebol ontem.",
+          "en": "We were playing soccer yesterday."
+        }
+      ],
+      "tags": [
+        "past",
+        "state"
+      ],
+      "related": []
+    },
+    {
+      "id": "estou-esta-venho-vem-ha-algum-tempo",
+      "intention": "Estou / está / venho / vem (há algum tempo)",
+      "english": "have / has been + ing",
+      "pattern": "have/has been + verb-ing",
+      "description": "Processo iniciado no passado e ainda relevante/agindo no presente.",
+      "category": "present-perfect-continuous",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Estou trabalhando.",
+          "en": "I have been working."
+        },
+        {
+          "pt": "O build está executando há 11m.",
+          "en": "The build has been running for 11m."
+        }
+      ],
+      "tags": [
+        "duration",
+        "ongoing"
+      ],
+      "related": []
+    },
+    {
+      "id": "tem-tenho-tenha-tiver-participio",
+      "intention": "Tem / tenho / tenha / tiver + particípio",
+      "english": "have / has + past participle",
+      "pattern": "have/has + past participle",
+      "description": "Resultado ou experiência com relevância atual.",
+      "category": "present-perfect",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu tenho aprendido muito.",
+          "en": "I have learnt a lot."
+        }
+      ],
+      "tags": [
+        "present-perfect",
+        "result"
+      ],
+      "related": []
+    },
+    {
+      "id": "tem-tenho-tenha-participio-adjetivo",
+      "intention": "Tem / tenho / tenha + particípio + adjetivo",
+      "english": "have / has been + adjective",
+      "pattern": "have/has been + adjective",
+      "description": "Estado com duração ou relevância atual.",
+      "category": "present-perfect",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Tenho estado cansado ultimamente.",
+          "en": "I have been tired lately."
+        },
+        {
+          "pt": "Ela tem andado entristecida nos últimos anos.",
+          "en": "She has been saddened over last years."
+        }
+      ],
+      "tags": [
+        "state",
+        "duration"
+      ],
+      "related": []
+    },
+    {
+      "id": "tem-que-tenho-que-tenha-que",
+      "intention": "Tem que / tenho que / tenha que",
+      "english": "have / has to; need to; gotta",
+      "pattern": "have/has to + verb OR need to + verb",
+      "description": "Obrigação externa, fato ou necessidade funcional.",
+      "category": "obligation",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu tenho que pagar meus impostos.",
+          "en": "I have to pay my taxes."
+        },
+        {
+          "pt": "Eu tenho que dormir.",
+          "en": "I need to sleep."
+        }
+      ],
+      "tags": [
+        "obligation",
+        "need"
+      ],
+      "related": []
+    },
+    {
+      "id": "estou-esta-tendo-que-verbo",
+      "intention": "Estou / está tendo que + verbo",
+      "english": "am / is / are having to",
+      "pattern": "be having to + verb",
+      "description": "Obrigação temporária, recente ou circunstancial.",
+      "category": "obligation",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Estou tendo que mudar a forma como estudo inglês.",
+          "en": "I’m having to change the way I study English."
+        }
+      ],
+      "tags": [
+        "temporary",
+        "obligation"
+      ],
+      "related": []
+    },
+    {
+      "id": "teve-tive",
+      "intention": "Teve / tive",
+      "english": "have you had...?",
+      "pattern": "have/has + had",
+      "description": "Experiência ou ocorrência até o presente conforme o contexto.",
+      "category": "have-had",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Você teve problemas com a ferramenta?",
+          "en": "Have you had problems with the tool?"
+        }
+      ],
+      "tags": [
+        "experience",
+        "have"
+      ],
+      "related": []
+    },
+    {
+      "id": "tem-tenho-sido",
+      "intention": "Tem / tenho + sido",
+      "english": "have / has been",
+      "pattern": "have/has been + noun/adjective",
+      "description": "Estado, papel ou condição que se estende no tempo.",
+      "category": "present-perfect",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu tenho sido o campeão por 7 anos.",
+          "en": "I’ve been the champion for 7 years."
+        },
+        {
+          "pt": "Tem sido difícil.",
+          "en": "It has been hard."
+        }
+      ],
+      "tags": [
+        "state",
+        "duration"
+      ],
+      "related": []
+    },
+    {
+      "id": "tem-tenho-tenha-tido",
+      "intention": "Tem / tenho / tenha + tido",
+      "english": "have / has + had",
+      "pattern": "have/has had + noun",
+      "description": "Experiências ou ocorrências repetidas/recentes.",
+      "category": "have-had",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu tenho tido pesadelos.",
+          "en": "I have had nightmares."
+        },
+        {
+          "pt": "Ela tem tido dificuldades recentemente.",
+          "en": "She has had difficulty recently."
+        }
+      ],
+      "tags": [
+        "experience",
+        "recent"
+      ],
+      "related": []
+    },
+    {
+      "id": "tinha-participio",
+      "intention": "Tinha + particípio",
+      "english": "had + past participle",
+      "pattern": "had + past participle",
+      "description": "Ação anterior a outra referência no passado.",
+      "category": "past-perfect",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Ela tinha saído.",
+          "en": "She had left."
+        }
+      ],
+      "tags": [
+        "past-perfect"
+      ],
+      "related": []
+    },
+    {
+      "id": "tinha-que-tive-que-teve-que",
+      "intention": "Tinha que / tive que / teve que",
+      "english": "had to",
+      "pattern": "had to + verb",
+      "description": "Obrigação no passado.",
+      "category": "obligation",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu tive que parar o carro.",
+          "en": "I had to stop the car."
+        }
+      ],
+      "tags": [
+        "past",
+        "obligation"
+      ],
+      "related": []
+    },
+    {
+      "id": "haver-tem-houve-tinha-sentido-de-existir",
+      "intention": "Haver / tem / houve / tinha (sentido de existir)",
+      "english": "there + be",
+      "pattern": "there is/are/was/were OR there + modal + be",
+      "description": "Existência sem agente.",
+      "category": "existence",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Poderia haver uma caixa lá em cima.",
+          "en": "There can be a box over there."
+        },
+        {
+          "pt": "Houve um acidente na estrada na semana passada.",
+          "en": "There was an accident on the road last week."
+        }
+      ],
+      "tags": [
+        "existence",
+        "there-be"
+      ],
+      "related": []
+    },
+    {
+      "id": "tem-que-ter-tem-que-haver-existir",
+      "intention": "Tem que ter / tem que haver (existir)",
+      "english": "there has to be",
+      "pattern": "there has/have to be",
+      "description": "Necessidade de existência de algo.",
+      "category": "existence",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Tem que ter um motivo.",
+          "en": "There has to be a reason."
+        },
+        {
+          "pt": "Tem que haver limites.",
+          "en": "There have to be limits."
+        }
+      ],
+      "tags": [
+        "existence",
+        "necessity"
+      ],
+      "related": []
+    },
+    {
+      "id": "estou-esta-se-perguntando-se",
+      "intention": "Estou / está se perguntando se",
+      "english": "be wondering if",
+      "pattern": "subject + be + wondering if + clause",
+      "description": "Pergunta/reflexão em andamento.",
+      "category": "wondering",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Estou me perguntando se ela era feliz.",
+          "en": "I’m wondering if she was happy."
+        }
+      ],
+      "tags": [
+        "wonder",
+        "question"
+      ],
+      "related": []
+    },
+    {
+      "id": "me-pergunto-se-fico-pensando-se-sera-que",
+      "intention": "Me pergunto se / fico pensando se / será que",
+      "english": "I wonder if",
+      "pattern": "subject + wonder if + clause",
+      "description": "Reflexão ou dúvida.",
+      "category": "wondering",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu me pergunto se ela era feliz.",
+          "en": "I wonder if she was happy."
+        }
+      ],
+      "tags": [
+        "wonder",
+        "question"
+      ],
+      "related": []
+    },
+    {
+      "id": "nao-mais-no-longer",
+      "intention": "Não ... mais (no longer)",
+      "english": "no longer",
+      "pattern": "subject + no longer + verb",
+      "description": "Estrutura afirmativa com sentido negativo de cessação.",
+      "category": "cessation",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu não mudo mais minha opinião.",
+          "en": "I no longer change my opinion."
+        }
+      ],
+      "tags": [
+        "negative",
+        "change"
+      ],
+      "related": []
+    },
+    {
+      "id": "nao-mais-any-longer-anymore",
+      "intention": "Não ... mais (any longer / anymore)",
+      "english": "any longer / anymore",
+      "pattern": "negative sentence + any longer/anymore",
+      "description": "Cessação em frase negativa.",
+      "category": "cessation",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu não preciso mais deste servidor.",
+          "en": "I don’t need this server any longer."
+        }
+      ],
+      "tags": [
+        "negative",
+        "change"
+      ],
+      "related": []
+    },
+    {
+      "id": "tao-adjetivo-quanto",
+      "intention": "Tão + adjetivo + quanto",
+      "english": "as + adjective + as",
+      "pattern": "as + adjective + as",
+      "description": "Comparação de igualdade.",
+      "category": "comparison",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Este código é tão simples quanto o outro.",
+          "en": "This code is as simple as another."
+        }
+      ],
+      "tags": [
+        "comparison"
+      ],
+      "related": []
+    },
+    {
+      "id": "assim-como-bem-como",
+      "intention": "Assim como / bem como",
+      "english": "as well as",
+      "pattern": "X as well as Y",
+      "description": "Adição/comparação entre elementos.",
+      "category": "connectors",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu gosto de bananas assim como de maçãs.",
+          "en": "I like bananas as well as apples."
+        }
+      ],
+      "tags": [
+        "connector",
+        "addition"
+      ],
+      "related": []
+    },
+    {
+      "id": "desde-que-contanto-que",
+      "intention": "Desde que / contanto que",
+      "english": "as long as",
+      "pattern": "as long as + clause",
+      "description": "Condição para que algo seja válido.",
+      "category": "condition",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Você pode usar meu computador desde que tenha cuidado.",
+          "en": "You can use my computer as long as you are careful."
+        }
+      ],
+      "tags": [
+        "condition"
+      ],
+      "related": []
+    },
+    {
+      "id": "assim-que-logo-que",
+      "intention": "Assim que / logo que",
+      "english": "as soon as",
+      "pattern": "as soon as + clause",
+      "description": "Indica imediatismo temporal.",
+      "category": "time-connectors",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Vou te mandar uma mensagem assim que terminar.",
+          "en": "I’ll send you a message as soon as I finish it."
+        }
+      ],
+      "tags": [
+        "time",
+        "connector"
+      ],
+      "related": []
+    },
+    {
+      "id": "tanto-quanto",
+      "intention": "Tanto quanto",
+      "english": "as much as",
+      "pattern": "as much as + clause/noun",
+      "description": "Comparação de intensidade ou quantidade.",
+      "category": "comparison",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu amo trabalhar em casa tanto quanto você.",
+          "en": "I love working at home as much as you."
+        }
+      ],
+      "tags": [
+        "comparison"
+      ],
+      "related": []
+    },
+    {
+      "id": "ate-onde",
+      "intention": "Até onde",
+      "english": "as far as",
+      "pattern": "as far as + clause",
+      "description": "Limite de conhecimento ou alcance.",
+      "category": "discourse",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Até onde eu sei, a reunião foi mantida.",
+          "en": "As far as I know, the meeting was kept."
+        }
+      ],
+      "tags": [
+        "knowledge",
+        "discourse"
+      ],
+      "related": []
+    },
+    {
+      "id": "me-disseram-me-contaram-que",
+      "intention": "Me disseram / me contaram que",
+      "english": "I was told that",
+      "pattern": "I was told that + clause",
+      "description": "Informação recebida de terceiros.",
+      "category": "reported-speech",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Me disseram que você ia começar a trabalhar na Microsoft.",
+          "en": "I was told that you were going to start working at Microsoft."
+        }
+      ],
+      "tags": [
+        "reported-speech"
+      ],
+      "related": []
+    },
+    {
+      "id": "houve-agora-acabou-de-haver-surgiu",
+      "intention": "Houve agora / acabou de haver / surgiu",
+      "english": "there has just been",
+      "pattern": "there has just been + noun",
+      "description": "Ocorrência muito recente.",
+      "category": "existence",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Acabou de haver um acidente na estrada.",
+          "en": "There has just been an accident on the road."
+        }
+      ],
+      "tags": [
+        "recent",
+        "existence"
+      ],
+      "related": []
+    },
+    {
+      "id": "vinha-gerundio",
+      "intention": "Vinha + gerúndio",
+      "english": "had been + ing",
+      "pattern": "had been + verb-ing",
+      "description": "Processo que vinha ocorrendo antes de um ponto passado.",
+      "category": "past-perfect-continuous",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu vinha viajando.",
+          "en": "I had been traveling."
+        }
+      ],
+      "tags": [
+        "past",
+        "duration"
+      ],
+      "related": []
+    },
+    {
+      "id": "fato-experiencia-resultado-com-relevancia-atual",
+      "intention": "Fato / experiência / resultado com relevância atual",
+      "english": "have / has + past participle",
+      "pattern": "have/has + past participle",
+      "description": "Experiência ou resultado sem marcador de tempo específico.",
+      "category": "present-perfect",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu viajei muito.",
+          "en": "I have traveled a lot."
+        }
+      ],
+      "tags": [
+        "experience",
+        "result"
+      ],
+      "related": []
+    },
+    {
+      "id": "momento-passado-com-marcador-de-tempo",
+      "intention": "Momento passado com marcador de tempo",
+      "english": "simple past",
+      "pattern": "past form / verb-ed",
+      "description": "Acontecimento localizado em um momento passado.",
+      "category": "simple-past",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu viajei no último mês.",
+          "en": "I traveled last month."
+        }
+      ],
+      "tags": [
+        "past",
+        "time-marker"
+      ],
+      "related": []
+    },
+    {
+      "id": "vou-vai-decisao-ou-plano",
+      "intention": "Vou / vai (decisão ou plano)",
+      "english": "will / going to",
+      "pattern": "will + verb OR be going to + verb",
+      "description": "Will para decisão/reação; going to para plano já definido.",
+      "category": "future",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu vou viajar amanhã.",
+          "en": "I am going to travel tomorrow."
+        }
+      ],
+      "tags": [
+        "future",
+        "plan"
+      ],
+      "related": []
+    },
+    {
+      "id": "estou-indo-esta-indo",
+      "intention": "Estou indo / está indo",
+      "english": "be going to / be off to / be heading to",
+      "pattern": "be + going to/off to/heading to + destination/action",
+      "description": "Movimento, destino ou plano imediato.",
+      "category": "movement-future",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu vou viajar amanhã.",
+          "en": "I’m going to travel tomorrow."
+        },
+        {
+          "pt": "Estou indo para o escritório.",
+          "en": "I’m heading to the office."
+        }
+      ],
+      "tags": [
+        "movement",
+        "future"
+      ],
+      "related": []
+    },
+    {
+      "id": "vou-vai-ficar-ser",
+      "intention": "Vou / vai ficar / ser",
+      "english": "will be",
+      "pattern": "will be + complement",
+      "description": "Estado futuro.",
+      "category": "future",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Vou ficar bem.",
+          "en": "I will be fine."
+        },
+        {
+          "pt": "Tudo vai ficar bem.",
+          "en": "Everything is gonna be fine."
+        }
+      ],
+      "tags": [
+        "future",
+        "state"
+      ],
+      "related": []
+    },
+    {
+      "id": "vou-vai-ter-que",
+      "intention": "Vou / vai ter que",
+      "english": "will / be going to + have to",
+      "pattern": "will have to OR be going to have to + verb",
+      "description": "Obrigação futura.",
+      "category": "future-obligation",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu vou ter que viajar amanhã.",
+          "en": "I am going to have to travel tomorrow."
+        }
+      ],
+      "tags": [
+        "future",
+        "obligation"
+      ],
+      "related": []
+    },
+    {
+      "id": "seja-esteja-espero-estar",
+      "intention": "Seja / esteja / espero estar",
+      "english": "will be / will be + ing",
+      "pattern": "will be + noun/adjective OR will be + ing",
+      "description": "Estado ou processo futuro conforme o contexto.",
+      "category": "future",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu consigo fazer isso mesmo que o início seja difícil.",
+          "en": "I’m able to do that even though the start will be hard."
+        }
+      ],
+      "tags": [
+        "future",
+        "state"
+      ],
+      "related": []
+    },
+    {
+      "id": "ia-verbo",
+      "intention": "Ia + verbo",
+      "english": "was / were going to",
+      "pattern": "was/were going to + verb",
+      "description": "Plano futuro visto a partir do passado.",
+      "category": "future-in-the-past",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu ia viajar amanhã.",
+          "en": "I was going to travel tomorrow."
+        }
+      ],
+      "tags": [
+        "past",
+        "plan"
+      ],
+      "related": []
+    },
+    {
+      "id": "used-to",
+      "intention": "Costumava",
+      "english": "used to",
+      "pattern": "used to + base verb",
+      "description": "Hábito ou situação do passado.",
+      "category": "habits",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu costumava nadar todo dia.",
+          "en": "I used to swim every day."
+        }
+      ],
+      "tags": [
+        "past",
+        "habit"
+      ],
+      "related": [
+        "acostumado",
+        "costumo",
+        "se-me-acostumando-processo-em-andamento"
+      ]
+    },
+    {
+      "id": "be-used-to",
+      "intention": "Acostumado",
+      "english": "be used to",
+      "pattern": "be used to + noun / verb-ing",
+      "description": "Estado de familiaridade ou hábito.",
+      "category": "habits",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu estou acostumado a acordar cedo.",
+          "en": "I am used to waking up early."
+        }
+      ],
+      "tags": [
+        "habit",
+        "familiarity"
+      ],
+      "related": [
+        "used-to",
+        "me-acostumei",
+        "se-me-acostumando-processo-em-andamento"
+      ]
+    },
+    {
+      "id": "usually",
+      "intention": "Costumo",
+      "english": "usually",
+      "pattern": "usually + verb",
+      "description": "Hábito presente/frequência.",
+      "category": "habits",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu costumo estudar à noite.",
+          "en": "I usually study at night."
+        }
+      ],
+      "tags": [
+        "present",
+        "habit"
+      ],
+      "related": []
+    },
+    {
+      "id": "got-used-to",
+      "intention": "Me acostumei",
+      "english": "have gotten used to",
+      "pattern": "have gotten used to + noun / verb-ing",
+      "description": "Mudança concluída para um estado de familiaridade.",
+      "category": "habits",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu me acostumei com a nova rotina depois de algumas semanas.",
+          "en": "I have got used to the new routine after a few weeks."
+        }
+      ],
+      "tags": [
+        "adaptation",
+        "habit"
+      ],
+      "related": []
+    },
+    {
+      "id": "nao-me-acostumei",
+      "intention": "Não me acostumei",
+      "english": "didn't get used to",
+      "pattern": "didn't get used to + noun / verb-ing",
+      "description": "Mudança de hábito que não se consolidou.",
+      "category": "habits",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu não me acostumei com a nova rotina, mesmo depois de vários meses.",
+          "en": "I didn’t get used to the new routine, even after several months."
+        }
+      ],
+      "tags": [
+        "adaptation",
+        "negative"
+      ],
+      "related": []
+    },
+    {
+      "id": "get-used-to",
+      "intention": "Se / me acostumando (processo em andamento)",
+      "english": "be getting used to",
+      "pattern": "be [still] getting used to + noun / verb-ing",
+      "description": "Processo de adaptação em andamento.",
+      "category": "habits",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Estou me acostumando a falar inglês.",
+          "en": "I am getting used to speaking English."
+        }
+      ],
+      "tags": [
+        "adaptation",
+        "ongoing"
+      ],
+      "related": []
+    },
+    {
+      "id": "vou-acostumar",
+      "intention": "Vou acostumar",
+      "english": "will / be going to get used to",
+      "pattern": "will get used to + noun / verb-ing",
+      "description": "Adaptação futura.",
+      "category": "habits",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu vou acostumar com o frio.",
+          "en": "I will get used to the cold."
+        }
+      ],
+      "tags": [
+        "future",
+        "adaptation"
+      ],
+      "related": []
+    },
+    {
+      "id": "tenho-que-acostumar",
+      "intention": "Tenho que acostumar",
+      "english": "have to get used to",
+      "pattern": "have/has to get used to + noun / verb-ing",
+      "description": "Obrigação de mudança/aceitação ao longo do tempo.",
+      "category": "habits",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu tenho que acostumar com o frio.",
+          "en": "I have to get used to the cold."
+        }
+      ],
+      "tags": [
+        "obligation",
+        "adaptation"
+      ],
+      "related": []
+    },
+    {
+      "id": "vou-ter-que-acostumar",
+      "intention": "Vou ter que acostumar",
+      "english": "will have to get used to",
+      "pattern": "will have to get used to + noun / verb-ing",
+      "description": "Obrigação futura de mudança.",
+      "category": "habits",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu vou ter que acostumar com as novas regras.",
+          "en": "I will have to get used to the new rules."
+        }
+      ],
+      "tags": [
+        "future",
+        "obligation",
+        "adaptation"
+      ],
+      "related": []
+    },
+    {
+      "id": "ia-me-acostumar",
+      "intention": "Ia me acostumar",
+      "english": "would get used to",
+      "pattern": "would get used to + noun / verb-ing",
+      "description": "Adaptação futura vista a partir de um pensamento passado.",
+      "category": "habits",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu pensei que ia me acostumar com o frio.",
+          "en": "I thought I would get used to the cold."
+        }
+      ],
+      "tags": [
+        "past",
+        "adaptation"
+      ],
+      "related": []
+    },
+    {
+      "id": "deveria-ter",
+      "intention": "Deveria ter",
+      "english": "should have + past participle",
+      "pattern": "should have + past participle",
+      "description": "Arrependimento ou conselho sobre o passado.",
+      "category": "past-modals",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu deveria ter checado o clima antes de sair.",
+          "en": "I should have checked the weather before leaving."
+        }
+      ],
+      "tags": [
+        "regret",
+        "advice"
+      ],
+      "related": []
+    },
+    {
+      "id": "poderia-ter",
+      "intention": "Poderia ter",
+      "english": "could / might have + past participle",
+      "pattern": "could/might have + past participle",
+      "description": "Possibilidade ou oportunidade perdida no passado.",
+      "category": "past-modals",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu poderia ter assistido aquele filme antes.",
+          "en": "I could have watched that movie before."
+        }
+      ],
+      "tags": [
+        "possibility",
+        "past"
+      ],
+      "related": []
+    },
+    {
+      "id": "deve-ter",
+      "intention": "Deve ter",
+      "english": "must have + past participle",
+      "pattern": "must have + past participle",
+      "description": "Dedução lógica forte sobre o passado.",
+      "category": "past-modals",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Deve ter chovido na última noite.",
+          "en": "It must have rained last night."
+        }
+      ],
+      "tags": [
+        "deduction",
+        "past"
+      ],
+      "related": []
+    },
+    {
+      "id": "sempre-que-toda-vez-que-quando-quer-que-a-qualquer-momento-que",
+      "intention": "Sempre que / toda vez que / quando quer que / a qualquer momento que",
+      "english": "whenever",
+      "pattern": "whenever + clause",
+      "description": "Recorrência ou momento indefinido.",
+      "category": "indefinite-connectors",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Sempre que a vejo, eu sorrio.",
+          "en": "Whenever I see her, I smile."
+        },
+        {
+          "pt": "Me ligue quando quiser.",
+          "en": "Call me whenever you want."
+        }
+      ],
+      "tags": [
+        "time",
+        "indefinite"
+      ],
+      "related": []
+    },
+    {
+      "id": "onde-quer-que",
+      "intention": "Onde quer que",
+      "english": "wherever",
+      "pattern": "wherever + clause",
+      "description": "Lugar indefinido.",
+      "category": "indefinite-connectors",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Onde quer que você esteja.",
+          "en": "Wherever you are."
+        }
+      ],
+      "tags": [
+        "place",
+        "indefinite"
+      ],
+      "related": []
+    },
+    {
+      "id": "o-que-quer-que-tanto-faz-nao-importa-o-que-o-que-for",
+      "intention": "O que quer que / tanto faz / não importa o que / o que for",
+      "english": "whatever",
+      "pattern": "whatever + clause/noun",
+      "description": "Coisa, escolha ou resultado indefinido.",
+      "category": "indefinite-connectors",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Faça o que você quiser.",
+          "en": "Do whatever you want."
+        },
+        {
+          "pt": "Pizza ou macarrão? Tanto faz.",
+          "en": "Pizza or pasta? Whatever."
+        }
+      ],
+      "tags": [
+        "indefinite",
+        "choice"
+      ],
+      "related": []
+    },
+    {
+      "id": "qualquer-lugar-aonde-quiser",
+      "intention": "Qualquer lugar / aonde quiser",
+      "english": "wherever",
+      "pattern": "wherever + clause",
+      "description": "Destino ou lugar indefinido.",
+      "category": "indefinite-connectors",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Nós podemos ir onde quer que você queira.",
+          "en": "We can go wherever you want."
+        }
+      ],
+      "tags": [
+        "place",
+        "indefinite"
+      ],
+      "related": []
+    },
+    {
+      "id": "seja-quem-for-quem-quer-que-seja",
+      "intention": "Seja quem for / quem quer que seja",
+      "english": "whoever",
+      "pattern": "whoever + clause",
+      "description": "Pessoa indefinida.",
+      "category": "indefinite-connectors",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Quem quer que encontre minhas chaves receberá uma recompensa.",
+          "en": "Whoever finds my keys will get a reward."
+        }
+      ],
+      "tags": [
+        "person",
+        "indefinite"
+      ],
+      "related": []
+    },
+    {
+      "id": "como-do-jeito-que-conforme-nao-importa-como",
+      "intention": "Como / do jeito que / conforme / não importa como",
+      "english": "however",
+      "pattern": "however + subject + verb",
+      "description": "Modo indefinido.",
+      "category": "indefinite-connectors",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Faça conforme você quiser.",
+          "en": "Do it however you like."
+        },
+        {
+          "pt": "Vou ajudar você como eu puder.",
+          "en": "I’ll help you however I can."
+        }
+      ],
+      "tags": [
+        "manner",
+        "indefinite"
+      ],
+      "related": []
+    },
+    {
+      "id": "sera-deve-deveria-devia-era-para-regra",
+      "intention": "Será / deve / deveria / devia / era para (regra)",
+      "english": "be supposed to",
+      "pattern": "be supposed to + verb",
+      "description": "Lei, placa, regra, norma ou expectativa.",
+      "category": "expectation",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Você deve usar capacete.",
+          "en": "You are supposed to wear a helmet."
+        },
+        {
+          "pt": "Era para você usar capacete.",
+          "en": "You were supposed to wear a helmet."
+        }
+      ],
+      "tags": [
+        "rule",
+        "expectation"
+      ],
+      "related": []
+    },
+    {
+      "id": "e-se",
+      "intention": "E se...",
+      "english": "what if",
+      "pattern": "what if + clause",
+      "description": "Hipótese conversacional.",
+      "category": "hypothesis",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "E se eu perder meu emprego?",
+          "en": "What if I lose my job?"
+        }
+      ],
+      "tags": [
+        "hypothesis",
+        "conversation"
+      ],
+      "related": []
+    },
+    {
+      "id": "tomara-que",
+      "intention": "Tomara que...",
+      "english": "I hope",
+      "pattern": "I hope + clause",
+      "description": "Expressão de esperança.",
+      "category": "hope",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Tomara que ele melhore.",
+          "en": "I hope he gets better."
+        }
+      ],
+      "tags": [
+        "hope"
+      ],
+      "related": []
+    },
+    {
+      "id": "foi-foram-fui-tem-sido-sem-marcador-de-tempo",
+      "intention": "Foi / foram / fui / tem sido (sem marcador de tempo)",
+      "english": "have / has been",
+      "pattern": "have/has been + past participle/noun",
+      "description": "Fato ou experiência sem marcador de tempo específico.",
+      "category": "present-perfect",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Cada atualização foi executada.",
+          "en": "Every update has been executed."
+        },
+        {
+          "pt": "Eu fui aos Estados Unidos duas vezes.",
+          "en": "I have been to the US twice."
+        }
+      ],
+      "tags": [
+        "present-perfect",
+        "passive"
+      ],
+      "related": []
+    },
+    {
+      "id": "foi-foram-fui-com-marcador-de-tempo",
+      "intention": "Foi / foram / fui (com marcador de tempo)",
+      "english": "was / were",
+      "pattern": "was/were + past participle/noun",
+      "description": "Fato localizado em tempo passado.",
+      "category": "simple-past",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Você foi visto lá ontem à noite.",
+          "en": "You were seen there last night."
+        }
+      ],
+      "tags": [
+        "past",
+        "passive"
+      ],
+      "related": []
+    },
+    {
+      "id": "esta-estao-condicao-atual",
+      "intention": "Está / estão (condição atual)",
+      "english": "am / is / are + past participle",
+      "pattern": "be + past participle",
+      "description": "Condição atual resultante.",
+      "category": "state",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "O carro está reparado.",
+          "en": "The car is repaired."
+        },
+        {
+          "pt": "A tarefa está concluída.",
+          "en": "The task is completed."
+        }
+      ],
+      "tags": [
+        "state",
+        "participle"
+      ],
+      "related": []
+    },
+    {
+      "id": "esta-estao-sendo",
+      "intention": "Está / estão sendo",
+      "english": "am / is / are being + past participle",
+      "pattern": "be + being + past participle",
+      "description": "Ação passiva acontecendo agora.",
+      "category": "passive",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "O trabalho está sendo executado.",
+          "en": "The job is being executed."
+        }
+      ],
+      "tags": [
+        "passive",
+        "ongoing"
+      ],
+      "related": []
+    },
+    {
+      "id": "acabei-de",
+      "intention": "Acabei de",
+      "english": "have / has just + past participle",
+      "pattern": "have/has just + past participle",
+      "description": "Ação muito recente.",
+      "category": "recent-actions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Acabei de comer uma maçã.",
+          "en": "I have just eaten an apple."
+        }
+      ],
+      "tags": [
+        "recent",
+        "present-perfect"
+      ],
+      "related": []
+    },
+    {
+      "id": "acabei-acabou-resultado-inesperado",
+      "intention": "Acabei / acabou (resultado inesperado)",
+      "english": "ended up + ing",
+      "pattern": "end up + verb-ing",
+      "description": "Resultado inesperado ou consequência diferente da intenção.",
+      "category": "outcomes",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu acabei falando demais.",
+          "en": "I ended up talking too much."
+        },
+        {
+          "pt": "Nós acabamos sendo mais duros que o esperado.",
+          "en": "We ended up being harder than expected."
+        }
+      ],
+      "tags": [
+        "result",
+        "unexpected"
+      ],
+      "related": []
+    },
+    {
+      "id": "estou-prestes-a",
+      "intention": "Estou prestes a",
+      "english": "be about to",
+      "pattern": "be about to + base verb",
+      "description": "Ação iminente.",
+      "category": "imminence",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Estou prestes a assistir a um vídeo.",
+          "en": "I am about to watch a video."
+        }
+      ],
+      "tags": [
+        "imminent",
+        "future"
+      ],
+      "related": []
+    },
+    {
+      "id": "pode-ser-estar-possibilidade-geral",
+      "intention": "Pode ser / estar (possibilidade geral)",
+      "english": "can be",
+      "pattern": "can [not] be + complement",
+      "description": "Possibilidade geral.",
+      "category": "modality",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Isso pode ser perigoso.",
+          "en": "This can be dangerous."
+        }
+      ],
+      "tags": [
+        "possibility"
+      ],
+      "related": []
+    },
+    {
+      "id": "pode-poderia-ser-estar-hipotese",
+      "intention": "Pode / poderia ser / estar (hipótese)",
+      "english": "could be",
+      "pattern": "could [not] be + complement",
+      "description": "Hipótese ou explicação alternativa.",
+      "category": "modality",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Isso poderia ser o motivo.",
+          "en": "That could be the reason."
+        },
+        {
+          "pt": "Pode ser um mal-entendido.",
+          "en": "It could be a misunderstanding."
+        }
+      ],
+      "tags": [
+        "hypothesis"
+      ],
+      "related": []
+    },
+    {
+      "id": "talvez-seja-esteja",
+      "intention": "Talvez seja / esteja",
+      "english": "might be",
+      "pattern": "might [not] be + complement",
+      "description": "Possibilidade fraca.",
+      "category": "modality",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Ela talvez esteja cansada.",
+          "en": "She might be tired."
+        }
+      ],
+      "tags": [
+        "possibility"
+      ],
+      "related": []
+    },
+    {
+      "id": "deve-ser-estar",
+      "intention": "Deve ser / estar",
+      "english": "must be",
+      "pattern": "must [not] be + complement",
+      "description": "Dedução lógica, quase certeza.",
+      "category": "modality",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Ele deve estar em casa.",
+          "en": "He must be at home."
+        }
+      ],
+      "tags": [
+        "deduction"
+      ],
+      "related": []
+    },
+    {
+      "id": "nao-pode-ser-estar",
+      "intention": "Não pode ser / estar",
+      "english": "can't be",
+      "pattern": "can't be + complement",
+      "description": "Dedução negativa.",
+      "category": "modality",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Isso não pode ser verdade.",
+          "en": "It can’t be true."
+        }
+      ],
+      "tags": [
+        "deduction",
+        "negative"
+      ],
+      "related": []
+    },
+    {
+      "id": "se-der-se-puder-se-for-possivel",
+      "intention": "Se der / se puder / se for possível",
+      "english": "if + subject + can/could; if possible; if it works for you",
+      "pattern": "if + clause",
+      "description": "Possibilidade prática ou disponibilidade.",
+      "category": "condition",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Se puder, você pode comprar alguns biscoitos?",
+          "en": "If you can, could you buy some cookies at the bakery?"
+        },
+        {
+          "pt": "Se estiver ok para você, pode vir hoje.",
+          "en": "If it works for you, you can come over today."
+        }
+      ],
+      "tags": [
+        "condition",
+        "possibility"
+      ],
+      "related": []
+    },
+    {
+      "id": "quando-der-quando-puder",
+      "intention": "Quando der / quando puder",
+      "english": "whenever / when + subject + can/could",
+      "pattern": "whenever/when + clause",
+      "description": "Disponibilidade futura sem hipótese irreal.",
+      "category": "time-connectors",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Quando puder, a gente conversa.",
+          "en": "Whenever you can, we’ll talk."
+        },
+        {
+          "pt": "Quando puder, me avisa.",
+          "en": "When you can, let me know."
+        }
+      ],
+      "tags": [
+        "time",
+        "availability"
+      ],
+      "related": []
+    },
+    {
+      "id": "quem-me-dera",
+      "intention": "Quem me dera",
+      "english": "I wish",
+      "pattern": "I wish + past form / could / were",
+      "description": "Desejo irreal no presente.",
+      "category": "wish",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Quem me dera ter mais tempo.",
+          "en": "I wish I had more time."
+        },
+        {
+          "pt": "Quem me dera morar mais perto.",
+          "en": "I wish I lived closer."
+        }
+      ],
+      "tags": [
+        "wish",
+        "unreal"
+      ],
+      "related": []
+    },
+    {
+      "id": "bem-que-eu-queria-poder",
+      "intention": "Bem que eu queria poder...",
+      "english": "I wish I could / I’d love to, but...",
+      "pattern": "I wish I could + verb",
+      "description": "Desejo com limitação de possibilidade.",
+      "category": "wish",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Bem que eu queria poder viajar mais.",
+          "en": "I wish I could travel more."
+        }
+      ],
+      "tags": [
+        "wish",
+        "ability"
+      ],
+      "related": []
+    },
+    {
+      "id": "para-que",
+      "intention": "... para que ...",
+      "english": "so that",
+      "pattern": "so that + clause",
+      "description": "Propósito de uma ação.",
+      "category": "purpose",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Isso significa, na prática, que temos que focar no que realmente importa para que não comprometamos o build.",
+          "en": "What this means in practice is that we have to focus on what really matters so that we don’t compromise the build."
+        }
+      ],
+      "tags": [
+        "purpose"
+      ],
+      "related": []
+    },
+    {
+      "id": "queria-ter-desejo-nao-realizado",
+      "intention": "Queria ter (desejo não realizado)",
+      "english": "I wish I had + past participle",
+      "pattern": "I wish + had + past participle",
+      "description": "Desejo não realizado ou arrependimento no passado.",
+      "category": "wish",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu queria ter aceitado aquele emprego.",
+          "en": "I wish I had accepted that job."
+        },
+        {
+          "pt": "Eu queria ter ido com você.",
+          "en": "I wish I had gone with you."
+        }
+      ],
+      "tags": [
+        "wish",
+        "regret"
+      ],
+      "related": []
+    },
+    {
+      "id": "se-pelo-menos-presente",
+      "intention": "Se pelo menos... (presente)",
+      "english": "if only + past form",
+      "pattern": "if only + past form",
+      "description": "Desejo forte sobre situação presente.",
+      "category": "wish",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Se pelo menos ele soubesse disso.",
+          "en": "If only he knew about it."
+        }
+      ],
+      "tags": [
+        "wish"
+      ],
+      "related": []
+    },
+    {
+      "id": "se-pelo-menos-tivesse",
+      "intention": "Se pelo menos tivesse...",
+      "english": "if only + had + past participle",
+      "pattern": "if only + had + past participle",
+      "description": "Desejo forte sobre algo que não ocorreu no passado.",
+      "category": "wish",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Se pelo menos ele tivesse avisado.",
+          "en": "If only he had told me."
+        },
+        {
+          "pt": "Se pelo menos eu tivesse tido mais tempo.",
+          "en": "If only I had had more time."
+        }
+      ],
+      "tags": [
+        "wish",
+        "past"
+      ],
+      "related": []
+    },
+    {
+      "id": "quem-sabe",
+      "intention": "Quem sabe...",
+      "english": "maybe / hopefully / who knows?",
+      "pattern": "maybe / hopefully / who knows",
+      "description": "Possibilidade/esperança aberta.",
+      "category": "possibility",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Quem sabe amanhã.",
+          "en": "Maybe tomorrow."
+        },
+        {
+          "pt": "Quem sabe dê certo.",
+          "en": "Hopefully it works out."
+        },
+        {
+          "pt": "Quem sabe?",
+          "en": "Who knows?"
+        }
+      ],
+      "tags": [
+        "possibility",
+        "hope"
+      ],
+      "related": []
+    },
+    {
+      "id": "se-nao-for-incomodo",
+      "intention": "Se não for incômodo...",
+      "english": "if it’s not a problem / if you don’t mind",
+      "pattern": "if + polite condition",
+      "description": "Pedido suavizado.",
+      "category": "politeness",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Se não for incômodo, você pode revisar isso?",
+          "en": "If it’s not a problem, could you review this?"
+        }
+      ],
+      "tags": [
+        "politeness",
+        "request"
+      ],
+      "related": []
+    },
+    {
+      "id": "no-fim-das-contas",
+      "intention": "No fim das contas...",
+      "english": "in the end / at the end of the day",
+      "pattern": "in the end / at the end of the day + clause",
+      "description": "Conclusão ou balanço final.",
+      "category": "discourse",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "No fim das contas, não deu certo.",
+          "en": "In the end, it didn’t work out."
+        },
+        {
+          "pt": "No fim das contas, o que importa é o resultado.",
+          "en": "At the end of the day, what matters is the result."
+        }
+      ],
+      "tags": [
+        "conclusion",
+        "discourse"
+      ],
+      "related": []
+    },
+    {
+      "id": "para-que-algo-e-usado-serve-para-que",
+      "intention": "Para que [algo] é usado / serve para quê",
+      "english": "what is ... used for?",
+      "pattern": "what + noun + be + used for?",
+      "description": "Perguntar finalidade.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Para que isso é usado?",
+          "en": "What is this used for?"
+        }
+      ],
+      "tags": [
+        "question",
+        "purpose"
+      ],
+      "related": []
+    },
+    {
+      "id": "ter-a-oportunidade-ter-a-chance-de",
+      "intention": "Ter a oportunidade / ter a chance de",
+      "english": "get to",
+      "pattern": "get to + verb",
+      "description": "Ter oportunidade, acesso ou permissão.",
+      "category": "opportunity",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu tive a oportunidade de conhecê-la ontem.",
+          "en": "I got to meet her yesterday."
+        },
+        {
+          "pt": "Você vai ter a oportunidade de viajar bastante nesse trabalho.",
+          "en": "You will get to travel a lot in this job."
+        }
+      ],
+      "tags": [
+        "opportunity"
+      ],
+      "related": []
+    },
+    {
+      "id": "conseguindo-progresso-avanco",
+      "intention": "Conseguindo (progresso/avanço)",
+      "english": "be getting + noun/destination",
+      "pattern": "be getting + noun/destination",
+      "description": "Progresso ou resultado em andamento, não capacidade.",
+      "category": "get-results",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Estou chegando lá.",
+          "en": "I’m getting there."
+        },
+        {
+          "pt": "Estou conseguindo resultados.",
+          "en": "I’m getting results."
+        }
+      ],
+      "tags": [
+        "progress",
+        "get"
+      ],
+      "related": []
+    },
+    {
+      "id": "conseguindo-verbo-acao-presente",
+      "intention": "Conseguindo + verbo (ação presente)",
+      "english": "present continuous",
+      "pattern": "be + verb-ing",
+      "description": "Ação presente com resultado visível.",
+      "category": "ability-progress",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Estou conseguindo correr sem dor.",
+          "en": "I’m running without pain."
+        },
+        {
+          "pt": "Estou conseguindo estudar todo dia.",
+          "en": "I’m studying every day."
+        }
+      ],
+      "tags": [
+        "progress",
+        "action"
+      ],
+      "related": []
+    },
+    {
+      "id": "vou-conseguir-resultado",
+      "intention": "Vou conseguir (resultado)",
+      "english": "will get + noun/destination",
+      "pattern": "will get + noun/destination",
+      "description": "Resultado futuro.",
+      "category": "get-results",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu vou conseguir o emprego.",
+          "en": "I’ll get the job."
+        },
+        {
+          "pt": "Nós vamos chegar lá.",
+          "en": "We’ll get there."
+        }
+      ],
+      "tags": [
+        "future",
+        "result"
+      ],
+      "related": []
+    },
+    {
+      "id": "consegue-resultado",
+      "intention": "Consegue (resultado)",
+      "english": "get + noun",
+      "pattern": "get + noun",
+      "description": "Resultado habitual/obtido.",
+      "category": "get-results",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Ele consegue bons resultados com esse método.",
+          "en": "He gets good results with this method."
+        }
+      ],
+      "tags": [
+        "result",
+        "get"
+      ],
+      "related": []
+    },
+    {
+      "id": "consegui-conseguiu-resultado",
+      "intention": "Consegui / conseguiu (resultado)",
+      "english": "got + noun",
+      "pattern": "got + noun",
+      "description": "Resultado obtido no passado.",
+      "category": "get-results",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Ela conseguiu a aprovação ontem.",
+          "en": "She got the approval yesterday."
+        }
+      ],
+      "tags": [
+        "past",
+        "result"
+      ],
+      "related": []
+    },
+    {
+      "id": "consigo-sou-capaz",
+      "intention": "Consigo / sou capaz",
+      "english": "can / be able to",
+      "pattern": "can + verb OR be able to + verb",
+      "description": "Capacidade ou habilidade.",
+      "category": "ability",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu consigo resolver esse problema.",
+          "en": "I can solve this problem."
+        },
+        {
+          "pt": "Ela é capaz de lidar com situações difíceis.",
+          "en": "She is able to handle difficult situations."
+        }
+      ],
+      "tags": [
+        "ability"
+      ],
+      "related": []
+    },
+    {
+      "id": "consegui-evento-especifico",
+      "intention": "Consegui (evento específico)",
+      "english": "was able to / managed to",
+      "pattern": "was able to / managed to + verb",
+      "description": "Sucesso em evento específico passado.",
+      "category": "ability",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu consegui terminar o projeto no prazo.",
+          "en": "I was able to finish the project on time."
+        },
+        {
+          "pt": "Ela conseguiu resolver o problema antes do prazo.",
+          "en": "She managed to fix the issue before the deadline."
+        }
+      ],
+      "tags": [
+        "past",
+        "success"
+      ],
+      "related": []
+    },
+    {
+      "id": "tenho-conseguido-resultado",
+      "intention": "Tenho + conseguido (resultado)",
+      "english": "have / has gotten + noun",
+      "pattern": "have/has gotten + noun",
+      "description": "Resultados obtidos ao longo do tempo.",
+      "category": "get-results",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Tenho conseguido bons resultados com essa abordagem.",
+          "en": "I have gotten good results with this approach."
+        }
+      ],
+      "tags": [
+        "result",
+        "present-perfect"
+      ],
+      "related": []
+    },
+    {
+      "id": "tenho-conseguido-acao",
+      "intention": "Tenho conseguido (ação)",
+      "english": "have / has been able to",
+      "pattern": "have/has been able to + verb",
+      "description": "Capacidade/ação alcançada ao longo do tempo.",
+      "category": "ability",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu tenho conseguido aprender inglês.",
+          "en": "I’ve been able to learn English."
+        }
+      ],
+      "tags": [
+        "ability",
+        "present-perfect"
+      ],
+      "related": []
+    },
+    {
+      "id": "venho-conseguindo",
+      "intention": "Venho + conseguindo",
+      "english": "have / has been getting",
+      "pattern": "have/has been getting + noun/destination",
+      "description": "Processo iniciado no passado e que continua até agora.",
+      "category": "get-results",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Venho conseguindo melhores resultados nos últimos meses.",
+          "en": "I have been getting better results over the past few months."
+        },
+        {
+          "pt": "Ele vem conseguindo ficar mais confiante no trabalho ultimamente.",
+          "en": "He has been getting more confident at work lately."
+        }
+      ],
+      "tags": [
+        "progress",
+        "duration"
+      ],
+      "related": []
+    },
+    {
+      "id": "preferir-preferiria-situacao-especifica",
+      "intention": "Preferir / preferiria (situação específica)",
+      "english": "would rather",
+      "pattern": "would rather + base verb",
+      "description": "Preferência em situação específica.",
+      "category": "preference",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Prefiro ir agora.",
+          "en": "I’d rather go now."
+        },
+        {
+          "pt": "Prefiro ficar em casa.",
+          "en": "I’d rather stay home."
+        }
+      ],
+      "tags": [
+        "preference"
+      ],
+      "related": []
+    },
+    {
+      "id": "fiquei-fiquei-com-emocao",
+      "intention": "Fiquei / fiquei com + emoção",
+      "english": "got + adjective",
+      "pattern": "got + adjective",
+      "description": "Mudança de estado no passado.",
+      "category": "state-change",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu fiquei cansado.",
+          "en": "I got tired."
+        }
+      ],
+      "tags": [
+        "past",
+        "state-change"
+      ],
+      "related": []
+    },
+    {
+      "id": "fico-adjetivo",
+      "intention": "Fico + adjetivo",
+      "english": "get + adjective",
+      "pattern": "get + adjective",
+      "description": "Mudança/estado recorrente no presente.",
+      "category": "state-change",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu fico nervoso antes de reuniões.",
+          "en": "I get nervous before meetings."
+        }
+      ],
+      "tags": [
+        "present",
+        "state-change"
+      ],
+      "related": []
+    },
+    {
+      "id": "ficando-adjetivo",
+      "intention": "Ficando + adjetivo",
+      "english": "be getting + adjective",
+      "pattern": "be getting + adjective",
+      "description": "Mudança de estado em andamento.",
+      "category": "state-change",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Estou ficando mais confiante.",
+          "en": "I am getting more confident."
+        }
+      ],
+      "tags": [
+        "ongoing",
+        "state-change"
+      ],
+      "related": []
+    },
+    {
+      "id": "vou-ficar-adjetivo",
+      "intention": "Vou ficar + adjetivo",
+      "english": "will get + adjective",
+      "pattern": "will get + adjective",
+      "description": "Possível mudança de estado futura.",
+      "category": "state-change",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu vou ficar feliz.",
+          "en": "I will get happy."
+        }
+      ],
+      "tags": [
+        "future",
+        "state-change"
+      ],
+      "related": []
+    },
+    {
+      "id": "fiquei-gerundio",
+      "intention": "Fiquei + gerúndio",
+      "english": "kept + ing",
+      "pattern": "kept + verb-ing",
+      "description": "Ação que continuou/repetiu no passado.",
+      "category": "continuation",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu fiquei pensando.",
+          "en": "I kept thinking."
+        },
+        {
+          "pt": "Eu fiquei esperando.",
+          "en": "I kept waiting."
+        }
+      ],
+      "tags": [
+        "past",
+        "continuation"
+      ],
+      "related": []
+    },
+    {
+      "id": "fiquei-tempo-gerundio",
+      "intention": "Fiquei + tempo + gerúndio",
+      "english": "spent + time + ing",
+      "pattern": "spent + time + verb-ing",
+      "description": "Tempo gasto realizando uma ação.",
+      "category": "duration",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu fiquei duas horas esperando.",
+          "en": "I spent two hours waiting."
+        }
+      ],
+      "tags": [
+        "duration",
+        "past"
+      ],
+      "related": []
+    },
+    {
+      "id": "fiquei-sem-acabou",
+      "intention": "Fiquei sem (acabou)",
+      "english": "ran out of",
+      "pattern": "ran out of + noun",
+      "description": "Algo acabou/ficou indisponível.",
+      "category": "phrasal-verbs",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu fiquei sem bateria.",
+          "en": "I ran out of battery."
+        },
+        {
+          "pt": "Eu fiquei sem tempo.",
+          "en": "I ran out of time."
+        }
+      ],
+      "tags": [
+        "phrasal-verb",
+        "shortage"
+      ],
+      "related": []
+    },
+    {
+      "id": "fiquei-mais-comparativo",
+      "intention": "Fiquei mais + comparativo",
+      "english": "got more + adjective",
+      "pattern": "got more + adjective",
+      "description": "Aumento de característica.",
+      "category": "comparison",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu fiquei mais confiante.",
+          "en": "I got more confident."
+        }
+      ],
+      "tags": [
+        "comparison",
+        "state-change"
+      ],
+      "related": []
+    },
+    {
+      "id": "com-quem-sujeito-verbo",
+      "intention": "Com quem + sujeito + verbo?",
+      "english": "who + auxiliary/modal + subject + verb + with/to/for",
+      "pattern": "who + auxiliary + subject + verb + preposition?",
+      "description": "Pergunta universal sobre pessoa relacionada à ação.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Com quem você está falando?",
+          "en": "Who are you talking to?"
+        },
+        {
+          "pt": "Com quem você foi?",
+          "en": "Who did you go with?"
+        }
+      ],
+      "tags": [
+        "question",
+        "person"
+      ],
+      "related": []
+    },
+    {
+      "id": "com-o-que-sujeito-verbo",
+      "intention": "Com o que + sujeito + verbo?",
+      "english": "what + auxiliary + subject + verb + with",
+      "pattern": "what + auxiliary + subject + verb + with?",
+      "description": "Pergunta sobre coisa/instrumento.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Com o que você abriu isso?",
+          "en": "What did you open this with?"
+        }
+      ],
+      "tags": [
+        "question",
+        "thing"
+      ],
+      "related": []
+    },
+    {
+      "id": "do-que-de-que-sujeito-verbo",
+      "intention": "Do que / de que + sujeito + verbo?",
+      "english": "what + auxiliary + subject + verb + preposition",
+      "pattern": "what + auxiliary + subject + verb + about/from/of?",
+      "description": "Pergunta sobre assunto/origem/necessidade.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Do que você tem medo?",
+          "en": "What are you afraid of?"
+        },
+        {
+          "pt": "Do que você está fugindo?",
+          "en": "What are you running from?"
+        },
+        {
+          "pt": "Do que você precisa?",
+          "en": "What do you need?"
+        }
+      ],
+      "tags": [
+        "question"
+      ],
+      "related": []
+    },
+    {
+      "id": "sobre-o-que-sujeito-verbo",
+      "intention": "Sobre o que + sujeito + verbo?",
+      "english": "what + auxiliary + subject + verb + about",
+      "pattern": "what + auxiliary + subject + verb + about?",
+      "description": "Pergunta sobre tema/assunto.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Sobre o que você está pensando?",
+          "en": "What are you thinking about?"
+        },
+        {
+          "pt": "Sobre o que você está falando?",
+          "en": "What are you talking about?"
+        }
+      ],
+      "tags": [
+        "question",
+        "topic"
+      ],
+      "related": []
+    },
+    {
+      "id": "pra-que-para-que-sujeito-serve",
+      "intention": "Pra que / para que + sujeito + serve?",
+      "english": "what + subject + be + used for",
+      "pattern": "what + subject + be + used for?",
+      "description": "Pergunta de finalidade.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Para que isso é usado?",
+          "en": "What is this used for?"
+        },
+        {
+          "pt": "Para que esta ferramenta é usada?",
+          "en": "What is this tool used for?"
+        }
+      ],
+      "tags": [
+        "question",
+        "purpose"
+      ],
+      "related": []
+    },
+    {
+      "id": "por-que-pra-que-para-que-sujeito-verbo",
+      "intention": "Por que / pra que / para que + sujeito + verbo?",
+      "english": "why + auxiliary + subject + verb",
+      "pattern": "why + auxiliary + subject + verb?",
+      "description": "Pergunta de motivo/finalidade.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Por que você comprou isso?",
+          "en": "Why did you buy this?"
+        },
+        {
+          "pt": "Por que você fez isso?",
+          "en": "Why did you do that?"
+        }
+      ],
+      "tags": [
+        "question",
+        "reason"
+      ],
+      "related": []
+    },
+    {
+      "id": "para-quem-sujeito-verbo",
+      "intention": "Para quem + sujeito + verbo?",
+      "english": "who + auxiliary + subject + verb + for",
+      "pattern": "who + auxiliary + subject + verb + for?",
+      "description": "Pergunta sobre destinatário/beneficiário.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Para quem você fez isso?",
+          "en": "Who did you do this for?"
+        }
+      ],
+      "tags": [
+        "question",
+        "person"
+      ],
+      "related": []
+    },
+    {
+      "id": "em-que-sujeito-verbo",
+      "intention": "Em que + sujeito + verbo?",
+      "english": "what + auxiliary + subject + verb + on",
+      "pattern": "what + auxiliary + subject + verb + on?",
+      "description": "Pergunta sobre objeto/atividade em que se trabalha.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Em que você está trabalhando?",
+          "en": "What are you working on?"
+        }
+      ],
+      "tags": [
+        "question",
+        "topic"
+      ],
+      "related": []
+    },
+    {
+      "id": "de-quem-sujeito-verbo",
+      "intention": "De quem + sujeito + verbo?",
+      "english": "who + auxiliary + subject + verb + from",
+      "pattern": "who + auxiliary + subject + verb + from?",
+      "description": "Pergunta sobre origem/pessoa.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "De quem você recebeu isso?",
+          "en": "Who did you get this from?"
+        },
+        {
+          "pt": "De quem você ouviu essa história?",
+          "en": "Who did you hear that from?"
+        }
+      ],
+      "tags": [
+        "question",
+        "source"
+      ],
+      "related": []
+    },
+    {
+      "id": "de-onde-sujeito-verbo",
+      "intention": "De onde + sujeito + verbo?",
+      "english": "where + auxiliary + subject + verb + from",
+      "pattern": "where + auxiliary + subject + verb + from?",
+      "description": "Pergunta sobre origem/lugar.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "De onde você é?",
+          "en": "Where are you from?"
+        },
+        {
+          "pt": "De onde você tirou essa informação?",
+          "en": "Where did you get this information?"
+        }
+      ],
+      "tags": [
+        "question",
+        "place"
+      ],
+      "related": []
+    },
+    {
+      "id": "quem-te-verbo-algo",
+      "intention": "Quem te + verbo + algo?",
+      "english": "who + verb + you + something",
+      "pattern": "who + past verb + you + object?",
+      "description": "Quando WHO é sujeito, não usa DID.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Quem comprou isso para você?",
+          "en": "Who bought you this?"
+        },
+        {
+          "pt": "Quem te contou essa história?",
+          "en": "Who told you that story?"
+        }
+      ],
+      "tags": [
+        "question",
+        "person"
+      ],
+      "related": []
+    },
+    {
+      "id": "de-onde-veio-sujeito",
+      "intention": "De onde veio + sujeito?",
+      "english": "where + auxiliary + subject + come from",
+      "pattern": "where did + subject + come from?",
+      "description": "Pergunta específica de origem.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "De onde veio essa ideia?",
+          "en": "Where did this idea come from?"
+        }
+      ],
+      "tags": [
+        "question",
+        "origin"
+      ],
+      "related": []
+    },
+    {
+      "id": "qual-deles-delas-sujeito-verbo",
+      "intention": "Qual deles/delas + sujeito + verbo?",
+      "english": "which one + auxiliary + subject + verb",
+      "pattern": "which one + auxiliary + subject + verb?",
+      "description": "Escolha entre opções.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Qual delas você escolhe?",
+          "en": "Which one do you choose?"
+        }
+      ],
+      "tags": [
+        "question",
+        "choice"
+      ],
+      "related": []
+    },
+    {
+      "id": "tem-como-tem-algum-jeito-de-existe-alguma-chance-de",
+      "intention": "Tem como / tem algum jeito de / existe alguma chance de",
+      "english": "is there a way / is there any way / is there any chance",
+      "pattern": "is there a way/chance + to verb OR clause",
+      "description": "Perguntar possibilidade, método ou chance.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Tem como resolver este problema?",
+          "en": "Is there a way to fix this problem?"
+        },
+        {
+          "pt": "Existe alguma chance de remarcar a reunião?",
+          "en": "Is there any chance we could reschedule the meeting?"
+        }
+      ],
+      "tags": [
+        "question",
+        "possibility"
+      ],
+      "related": []
+    },
+    {
+      "id": "estou-com-vontade-de",
+      "intention": "Estou com vontade de...",
+      "english": "I feel like / I’m in the mood for",
+      "pattern": "feel like + ing OR be in the mood for + noun/ing",
+      "description": "Vontade leve, espontânea ou emocional.",
+      "category": "desire",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Estou com vontade de andar de moto.",
+          "en": "I feel like riding."
+        },
+        {
+          "pt": "Estou com vontade de sair.",
+          "en": "I feel like going out."
+        }
+      ],
+      "tags": [
+        "desire",
+        "mood"
+      ],
+      "related": []
+    },
+    {
+      "id": "estou-precisando",
+      "intention": "Estou precisando...",
+      "english": "I need to",
+      "pattern": "need to + verb",
+      "description": "Necessidade mais forte, lógica ou obrigatória.",
+      "category": "need",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Estou precisando descansar.",
+          "en": "I need to get some rest."
+        },
+        {
+          "pt": "Estou precisando sair.",
+          "en": "I need to go out."
+        }
+      ],
+      "tags": [
+        "need"
+      ],
+      "related": []
+    },
+    {
+      "id": "estou-sentindo-que-preciso",
+      "intention": "Estou sentindo que preciso...",
+      "english": "I feel like I need to",
+      "pattern": "I feel like I need to + verb",
+      "description": "Zona híbrida entre sensação e necessidade.",
+      "category": "need",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Estou sentindo que preciso fazer uma pausa.",
+          "en": "I feel like I need to take a break."
+        }
+      ],
+      "tags": [
+        "feeling",
+        "need"
+      ],
+      "related": []
+    },
+    {
+      "id": "eu-sinto-que",
+      "intention": "Eu sinto que...",
+      "english": "I feel like + subject + be",
+      "pattern": "I feel like + clause",
+      "description": "Percepção/sensação sobre uma situação.",
+      "category": "feelings",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Sinto que estou um pouco atrasado para a festa.",
+          "en": "I feel like I’m a bit late to the party."
+        }
+      ],
+      "tags": [
+        "feeling"
+      ],
+      "related": []
+    },
+    {
+      "id": "receber-conseguir",
+      "intention": "Receber / conseguir",
+      "english": "get / got",
+      "pattern": "get/got + noun",
+      "description": "Algo chega até você; receber ou obter.",
+      "category": "get-meanings",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu consegui o emprego.",
+          "en": "I get the job."
+        },
+        {
+          "pt": "Eu recebi a mensagem.",
+          "en": "I got the message."
+        }
+      ],
+      "tags": [
+        "get",
+        "receive"
+      ],
+      "related": []
+    },
+    {
+      "id": "pegar-buscar",
+      "intention": "Pegar / buscar",
+      "english": "get / got",
+      "pattern": "get/got + object",
+      "description": "Buscar, pegar, comprar ou trazer conforme o contexto.",
+      "category": "get-meanings",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu vou buscar água para você.",
+          "en": "I’ll get you some water."
+        },
+        {
+          "pt": "Você pode pegar minha bolsa?",
+          "en": "Can you get my bag?"
+        }
+      ],
+      "tags": [
+        "get",
+        "fetch"
+      ],
+      "related": []
+    },
+    {
+      "id": "ficar-tornar-se",
+      "intention": "Ficar / tornar-se",
+      "english": "get / got + adjective",
+      "pattern": "get/got + adjective",
+      "description": "Mudança de estado.",
+      "category": "get-meanings",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Estou ficando cansado.",
+          "en": "I’m getting tired."
+        },
+        {
+          "pt": "Está ficando tarde.",
+          "en": "It’s getting late."
+        }
+      ],
+      "tags": [
+        "get",
+        "state-change"
+      ],
+      "related": []
+    },
+    {
+      "id": "chegar",
+      "intention": "Chegar",
+      "english": "get / got",
+      "pattern": "get/got + place",
+      "description": "Chegar a destino.",
+      "category": "get-meanings",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu cheguei em casa tarde ontem.",
+          "en": "I got home late yesterday."
+        },
+        {
+          "pt": "Que horas você chegou lá?",
+          "en": "What time did you get there?"
+        }
+      ],
+      "tags": [
+        "get",
+        "arrival"
+      ],
+      "related": []
+    },
+    {
+      "id": "entender",
+      "intention": "Entender",
+      "english": "get / got",
+      "pattern": "get + object/clause",
+      "description": "Compreender algo.",
+      "category": "get-meanings",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu não entendo.",
+          "en": "I don’t get it."
+        },
+        {
+          "pt": "Você entendeu o que eu disse?",
+          "en": "Did you get what I said?"
+        }
+      ],
+      "tags": [
+        "get",
+        "understanding"
+      ],
+      "related": []
+    },
+    {
+      "id": "providenciar-obter-algo-para-alguem",
+      "intention": "Providenciar / obter algo para alguém",
+      "english": "get + someone + something",
+      "pattern": "subject + get/got + someone + something",
+      "description": "Providenciar, comprar, conseguir, trazer ou dar algo para alguém.",
+      "category": "get-meanings",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Ela comprou um presente para ele.",
+          "en": "She got him a gift."
+        },
+        {
+          "pt": "Eu consegui uma Alexa para minha esposa.",
+          "en": "I got my wife an Alexa."
+        }
+      ],
+      "tags": [
+        "get",
+        "causative"
+      ],
+      "related": []
+    },
+    {
+      "id": "convencer-conseguir-fazer-alguem-fazer-algo",
+      "intention": "Convencer / conseguir fazer alguém fazer algo",
+      "english": "get + someone + to + verb",
+      "pattern": "subject + get/got + someone + to + verb",
+      "description": "Persuadir, influenciar ou arranjar uma forma de alguém agir.",
+      "category": "causatives",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu consegui fazer ele me ajudar.",
+          "en": "I got him to help me."
+        }
+      ],
+      "tags": [
+        "causative",
+        "persuasion"
+      ],
+      "related": []
+    },
+    {
+      "id": "obrigar-alguem-a-fazer-algo",
+      "intention": "Obrigar alguém a fazer algo",
+      "english": "make + someone + verb",
+      "pattern": "make + someone + base verb",
+      "description": "Imposição para outra pessoa agir.",
+      "category": "causatives",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu obriguei ela a ajudá-los.",
+          "en": "I made her help them."
+        }
+      ],
+      "tags": [
+        "causative",
+        "force"
+      ],
+      "related": []
+    },
+    {
+      "id": "pedir-delegar-a-alguem-para-fazer-algo",
+      "intention": "Pedir/delegar a alguém para fazer algo",
+      "english": "have + someone + verb",
+      "pattern": "have + someone + base verb",
+      "description": "Delegação ou autoridade tranquila.",
+      "category": "causatives",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu pedi que ela os ajudasse.",
+          "en": "I had her help them."
+        }
+      ],
+      "tags": [
+        "causative",
+        "delegation"
+      ],
+      "related": []
+    },
+    {
+      "id": "estiver-tiver-fizer-puder-souber-futuro-do-subjuntivo",
+      "intention": "Estiver / tiver / fizer / puder / souber (futuro do subjuntivo)",
+      "english": "when / if / as soon as / once / after / before / until + simple present",
+      "pattern": "connector + subject + simple present",
+      "description": "Em condição/tempo futuro real, usar present simple em inglês.",
+      "category": "future-conditions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Quando eu estiver em casa, eu te ligo.",
+          "en": "When I’m home, I’ll call you."
+        },
+        {
+          "pt": "Assim que o sistema estiver disponível, eu enviarei o relatório.",
+          "en": "As soon as the system is available, I’ll send the report."
+        }
+      ],
+      "tags": [
+        "condition",
+        "future"
+      ],
+      "related": []
+    },
+    {
+      "id": "tenho-que-ter-estado",
+      "intention": "Tenho que ter (estado)",
+      "english": "need to be + adjective",
+      "pattern": "need to be + adjective",
+      "description": "Quando “ter” representa estado/qualidade, usar BE + adjetivo.",
+      "category": "need",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu tenho que ter paciência.",
+          "en": "I need to be patient."
+        }
+      ],
+      "tags": [
+        "need",
+        "state"
+      ],
+      "related": []
+    },
+    {
+      "id": "tenho-que-ter-haver-existencia",
+      "intention": "Tenho que ter / haver (existência)",
+      "english": "there has to be",
+      "pattern": "there has to be + noun",
+      "description": "Quando “ter” significa existência.",
+      "category": "existence",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Tem que ter/haver uma solução.",
+          "en": "There has to be a solution."
+        }
+      ],
+      "tags": [
+        "existence",
+        "necessity"
+      ],
+      "related": []
+    },
+    {
+      "id": "tenho-que-ter-posse-real",
+      "intention": "Tenho que ter (posse real)",
+      "english": "need / need to have",
+      "pattern": "need + noun OR need to have + noun",
+      "description": "Posse real; muitas vezes “need + noun” é mais natural.",
+      "category": "need",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu tenho que ter dinheiro pra isso.",
+          "en": "I need to have money for that."
+        }
+      ],
+      "tags": [
+        "need",
+        "possession"
+      ],
+      "related": []
+    },
+    {
+      "id": "estar-disposto",
+      "intention": "Estar disposto",
+      "english": "be willing to",
+      "pattern": "be willing to + verb",
+      "description": "Disposição/intenção/abertura para agir.",
+      "category": "willingness",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu não estou disposto a te ajudar.",
+          "en": "I’m not willing to help you."
+        }
+      ],
+      "tags": [
+        "willingness"
+      ],
+      "related": []
+    },
+    {
+      "id": "vou-aproveitar-oportunidade",
+      "intention": "Vou aproveitar (oportunidade)",
+      "english": "take advantage of",
+      "pattern": "take advantage of + opportunity",
+      "description": "Aproveitar estrategicamente uma oportunidade.",
+      "category": "opportunity",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Vou aproveitar essa oportunidade.",
+          "en": "I’ll take advantage of this opportunity."
+        }
+      ],
+      "tags": [
+        "opportunity"
+      ],
+      "related": []
+    },
+    {
+      "id": "vou-aproveitar-momento-viagem",
+      "intention": "Vou aproveitar (momento/viagem)",
+      "english": "make the most of",
+      "pattern": "make the most of + noun",
+      "description": "Aproveitar ao máximo um momento ou experiência.",
+      "category": "opportunity",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Vou aproveitar essa viagem.",
+          "en": "I’m going to make the most of this trip."
+        }
+      ],
+      "tags": [
+        "experience",
+        "opportunity"
+      ],
+      "related": []
+    },
+    {
+      "id": "vou-aproveitar-desfrutar",
+      "intention": "Vou aproveitar (desfrutar)",
+      "english": "enjoy",
+      "pattern": "enjoy + noun",
+      "description": "Aproveitar no sentido emocional/desfrutar.",
+      "category": "opportunity",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Vou aproveitar este momento.",
+          "en": "I’ll enjoy this moment."
+        }
+      ],
+      "tags": [
+        "enjoyment"
+      ],
+      "related": []
+    },
+    {
+      "id": "vou-aproveitar-usar-o-tempo",
+      "intention": "Vou aproveitar (usar o tempo)",
+      "english": "use this time to",
+      "pattern": "use + time + to + verb",
+      "description": "Usar um período para realizar algo.",
+      "category": "opportunity",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Vou aproveitar este tempo para estudar inglês.",
+          "en": "I’ll use this time to study English."
+        }
+      ],
+      "tags": [
+        "time",
+        "purpose"
+      ],
+      "related": []
+    },
+    {
+      "id": "do-jeito-que-tem-que-como-deve-como-era-esperado",
+      "intention": "Do jeito que tem que / como deve / como era esperado",
+      "english": "the way + subject + be + supposed to + verb",
+      "pattern": "the way + subject + be + supposed to + verb",
+      "description": "Forma esperada/correta de algo acontecer.",
+      "category": "expectation",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Talvez seja melhor aceitar que algumas situações simplesmente acontecem do jeito que devem acontecer.",
+          "en": "It might be better to accept that some situations simply happen the way they are supposed to happen."
+        }
+      ],
+      "tags": [
+        "expectation",
+        "manner"
+      ],
+      "related": []
+    },
+    {
+      "id": "por-acaso-pergunta-casual",
+      "intention": "Por acaso (pergunta casual)",
+      "english": "by any chance / do you happen to",
+      "pattern": "question + by any chance OR do you happen to + verb",
+      "description": "Suaviza pergunta casual.",
+      "category": "politeness",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Você falou com ele por acaso?",
+          "en": "Did you talk to him by any chance?"
+        },
+        {
+          "pt": "Por acaso você conhece ela?",
+          "en": "Do you happen to know her?"
+        }
+      ],
+      "tags": [
+        "politeness",
+        "question"
+      ],
+      "related": []
+    },
+    {
+      "id": "acabou-que",
+      "intention": "Acabou que...",
+      "english": "turn out (that)",
+      "pattern": "turn out (that) + clause",
+      "description": "Resultado inesperado.",
+      "category": "outcomes",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Acabou que deu tudo certo.",
+          "en": "It turned out everything worked out."
+        }
+      ],
+      "tags": [
+        "result",
+        "unexpected"
+      ],
+      "related": []
+    },
+    {
+      "id": "que-bom-que",
+      "intention": "Que bom que...",
+      "english": "I’m glad / I’m happy / glad to hear that",
+      "pattern": "be glad/happy + clause",
+      "description": "Reação positiva.",
+      "category": "reactions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Que bom que você chegou cedo.",
+          "en": "I’m glad you arrived early."
+        }
+      ],
+      "tags": [
+        "reaction",
+        "positive"
+      ],
+      "related": []
+    },
+    {
+      "id": "ainda-bem-que",
+      "intention": "Ainda bem que...",
+      "english": "good thing / it’s a good thing / luckily / thank God / that’s a relief",
+      "pattern": "relief expression + clause",
+      "description": "Alívio após risco evitado.",
+      "category": "reactions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Ainda bem que você achou a chave.",
+          "en": "Good thing you found the key."
+        },
+        {
+          "pt": "Ainda bem que fomos ontem.",
+          "en": "I’m glad we went yesterday."
+        }
+      ],
+      "tags": [
+        "relief",
+        "reaction"
+      ],
+      "related": []
+    },
+    {
+      "id": "nao-gosto-niveis",
+      "intention": "Não gosto (níveis)",
+      "english": "don’t like / don’t really like / can’t stand / hate",
+      "pattern": "subject + preference/rejection verb",
+      "description": "Escala de rejeição do fraco ao muito forte.",
+      "category": "preferences",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu não gosto de funk.",
+          "en": "I don’t like funk."
+        },
+        {
+          "pt": "Eu não suporto funk.",
+          "en": "I can’t stand funk."
+        },
+        {
+          "pt": "Eu odeio funk.",
+          "en": "I hate funk."
+        }
+      ],
+      "tags": [
+        "dislike",
+        "intensity"
+      ],
+      "related": []
+    },
+    {
+      "id": "nao-aguento-mais",
+      "intention": "Não aguento mais",
+      "english": "can’t take ... anymore",
+      "pattern": "can’t take + noun + anymore",
+      "description": "Situação de estresse ou limite emocional.",
+      "category": "reactions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu não aguento mais este trabalho.",
+          "en": "I can’t take this job anymore."
+        }
+      ],
+      "tags": [
+        "stress",
+        "limit"
+      ],
+      "related": []
+    },
+    {
+      "id": "mesmo-assim-assim-mesmo",
+      "intention": "Mesmo assim / assim mesmo",
+      "english": "still / anyway / even so / nevertheless",
+      "pattern": "contrast connector",
+      "description": "Contraste apesar do que foi dito.",
+      "category": "connectors",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu estudei muito, mas mesmo assim fui mal na prova.",
+          "en": "I studied a lot, but I still did badly on the test."
+        },
+        {
+          "pt": "Eu falei pra ele não sair, mas ele saiu mesmo assim.",
+          "en": "I told him not to go out, but he went out anyway."
+        }
+      ],
+      "tags": [
+        "contrast",
+        "connector"
+      ],
+      "related": []
+    },
+    {
+      "id": "assim-como-igual",
+      "intention": "Assim como / igual",
+      "english": "just like / just as",
+      "pattern": "just like + noun OR just as + clause",
+      "description": "Comparação de semelhança.",
+      "category": "comparison",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Assim como você, eu não suporto mentiras.",
+          "en": "Just like you, I don’t put up with lies."
+        },
+        {
+          "pt": "Assim como vemos no esporte, a dedicação faz diferença.",
+          "en": "Just as we see in sport, dedication makes all the difference."
+        }
+      ],
+      "tags": [
+        "comparison"
+      ],
+      "related": []
+    },
+    {
+      "id": "nao-e-bem-assim",
+      "intention": "Não é bem assim",
+      "english": "it’s not exactly like that / it’s not quite like that / that’s not exactly how it is",
+      "pattern": "fixed expression",
+      "description": "Corrige uma generalização ou percepção.",
+      "category": "discourse",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Algumas pessoas pensam que a vida são flores. Mas não é bem assim.",
+          "en": "Some people think life is sunshine and rainbows. But it’s not exactly how it is."
+        }
+      ],
+      "tags": [
+        "correction",
+        "discourse"
+      ],
+      "related": []
+    },
+    {
+      "id": "nao-e-bem-assim-que-sujeito-verbo",
+      "intention": "Não é bem assim que + sujeito + verbo",
+      "english": "that’s not exactly how + subject + verb",
+      "pattern": "that’s not exactly how + clause",
+      "description": "Corrige o modo como algo é feito.",
+      "category": "discourse",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Não é bem assim que você faz.",
+          "en": "That’s not exactly how you do it."
+        }
+      ],
+      "tags": [
+        "correction",
+        "manner"
+      ],
+      "related": []
+    },
+    {
+      "id": "e-assim-que",
+      "intention": "É assim que...",
+      "english": "that’s how / that’s the way / this is how / this is the way",
+      "pattern": "this/that is how + clause",
+      "description": "Apresenta ou retoma a forma como algo acontece.",
+      "category": "discourse",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "É assim que as coisas são.",
+          "en": "That’s how things are."
+        },
+        {
+          "pt": "É assim que vamos dobrar o faturamento.",
+          "en": "This is how we’re going to double our revenue this year."
+        }
+      ],
+      "tags": [
+        "manner",
+        "discourse"
+      ],
+      "related": []
+    },
+    {
+      "id": "e-assim-por-diante",
+      "intention": "E assim por diante",
+      "english": "and so on / and so forth",
+      "pattern": "list + and so on",
+      "description": "Continuação implícita de uma lista ou sequência.",
+      "category": "discourse",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Você acorda, trabalha, dorme, acorda e assim por diante.",
+          "en": "You wake up, work, go to bed, wake up and so on."
+        }
+      ],
+      "tags": [
+        "continuation",
+        "list"
+      ],
+      "related": []
+    },
+    {
+      "id": "nao-esqueca-de-lembre-de-acao-futura",
+      "intention": "Não esqueça de / lembre de (ação futura)",
+      "english": "remember to + verb",
+      "pattern": "remember to + base verb",
+      "description": "Lembrar de executar algo que ainda não aconteceu.",
+      "category": "verb-complements",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Lembre de fechar a porta.",
+          "en": "Remember to close the door."
+        },
+        {
+          "pt": "Lembre de enviar o relatório.",
+          "en": "Remember to send the report."
+        }
+      ],
+      "tags": [
+        "remember",
+        "to-infinitive"
+      ],
+      "related": []
+    },
+    {
+      "id": "eu-lembro-de-ter-memoria",
+      "intention": "Eu lembro de ter... (memória)",
+      "english": "remember + ing",
+      "pattern": "remember + verb-ing",
+      "description": "Memória de ação já executada.",
+      "category": "verb-complements",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu lembro de ter visto isso.",
+          "en": "I remember seeing that."
+        },
+        {
+          "pt": "Você lembra de ter falado isso?",
+          "en": "Do you remember saying that?"
+        }
+      ],
+      "tags": [
+        "remember",
+        "gerund"
+      ],
+      "related": []
+    },
+    {
+      "id": "parar-para",
+      "intention": "Parar para...",
+      "english": "stop to + verb",
+      "pattern": "stop to + base verb",
+      "description": "Interromper uma ação com o objetivo de fazer outra.",
+      "category": "verb-complements",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu parei para fumar.",
+          "en": "I stopped to smoke."
+        }
+      ],
+      "tags": [
+        "stop",
+        "to-infinitive"
+      ],
+      "related": []
+    },
+    {
+      "id": "parar-de",
+      "intention": "Parar de...",
+      "english": "stop + ing",
+      "pattern": "stop + verb-ing",
+      "description": "Cessar uma atividade.",
+      "category": "verb-complements",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu parei de fumar.",
+          "en": "I stopped smoking."
+        }
+      ],
+      "tags": [
+        "stop",
+        "gerund"
+      ],
+      "related": []
+    },
+    {
+      "id": "tentar-conseguir-fazer",
+      "intention": "Tentar conseguir fazer",
+      "english": "try to + verb",
+      "pattern": "try to + base verb",
+      "description": "Tentar com esforço obter um resultado.",
+      "category": "verb-complements",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Tente abrir a porta.",
+          "en": "Try to open the door."
+        }
+      ],
+      "tags": [
+        "try",
+        "to-infinitive"
+      ],
+      "related": []
+    },
+    {
+      "id": "tentar-como-experimento",
+      "intention": "Tentar como experimento",
+      "english": "try + ing",
+      "pattern": "try + verb-ing",
+      "description": "Experimentar um método/alternativa.",
+      "category": "verb-complements",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Tenta abrir a porta desse jeito.",
+          "en": "Try opening the door."
+        }
+      ],
+      "tags": [
+        "try",
+        "gerund"
+      ],
+      "related": []
+    },
+    {
+      "id": "esquecer-de-acao-nao-aconteceu",
+      "intention": "Esquecer de... (ação não aconteceu)",
+      "english": "forget to + verb",
+      "pattern": "forget to + base verb",
+      "description": "Esquecer uma ação pendente.",
+      "category": "verb-complements",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu esqueci de pagar.",
+          "en": "I forgot to pay."
+        }
+      ],
+      "tags": [
+        "forget",
+        "to-infinitive"
+      ],
+      "related": []
+    },
+    {
+      "id": "esqueci-que-ja-acao-aconteceu",
+      "intention": "Esqueci que já... (ação aconteceu)",
+      "english": "forget + ing",
+      "pattern": "forget + verb-ing",
+      "description": "Esquecimento relacionado a ação já realizada.",
+      "category": "verb-complements",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu esqueci que já paguei isso.",
+          "en": "I forgot paying for that."
+        }
+      ],
+      "tags": [
+        "forget",
+        "gerund"
+      ],
+      "related": []
+    },
+    {
+      "id": "com-o-com-a-causa",
+      "intention": "Com o / com a (causa)",
+      "english": "because of",
+      "pattern": "because of + noun",
+      "description": "Quando “com” significa “por causa de”.",
+      "category": "prepositions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Tenho tido problemas por causa do trabalho.",
+          "en": "I’ve had problems because of my job."
+        }
+      ],
+      "tags": [
+        "preposition",
+        "cause"
+      ],
+      "related": []
+    },
+    {
+      "id": "com-o-com-a-tema",
+      "intention": "Com o / com a (tema)",
+      "english": "about",
+      "pattern": "about + noun",
+      "description": "Quando “com” significa “sobre/a respeito de”.",
+      "category": "prepositions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Estou feliz com o resultado.",
+          "en": "I’m happy about the result."
+        }
+      ],
+      "tags": [
+        "preposition",
+        "topic"
+      ],
+      "related": []
+    },
+    {
+      "id": "com-o-com-a-relacao",
+      "intention": "Com o / com a (relação)",
+      "english": "with",
+      "pattern": "with + noun",
+      "description": "Quando há relação direta, companhia, instrumento ou característica.",
+      "category": "prepositions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Tenho problemas com a ferramenta.",
+          "en": "I have problems with the tool."
+        }
+      ],
+      "tags": [
+        "preposition",
+        "relation"
+      ],
+      "related": []
+    },
+    {
+      "id": "mas-porem-todavia-entretanto-contudo-no-entanto-ainda-assim-apesar-disso-embora",
+      "intention": "Mas / porém / todavia / entretanto / contudo / no entanto / ainda assim / apesar disso / embora",
+      "english": "but / however / though / even so / even though / although / despite / in spite of / nevertheless / nonetheless",
+      "pattern": "contrast connector",
+      "description": "Contraste com diferentes níveis de formalidade/intensidade.",
+      "category": "connectors",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Mas é possível continuar.",
+          "en": "But it is possible to continue."
+        }
+      ],
+      "tags": [
+        "contrast",
+        "connector"
+      ],
+      "related": []
+    },
+    {
+      "id": "em-vez-disso",
+      "intention": "Em vez disso",
+      "english": "instead",
+      "pattern": "instead",
+      "description": "Alternativa substituta.",
+      "category": "connectors",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Você quer café? Não, vou tomar chá em vez disso.",
+          "en": "Do you want coffee? No, I’ll have tea instead."
+        }
+      ],
+      "tags": [
+        "alternative"
+      ],
+      "related": []
+    },
+    {
+      "id": "em-vez-de",
+      "intention": "Em vez de",
+      "english": "rather than",
+      "pattern": "rather than + verb/noun",
+      "description": "Comparação/substituição entre escolhas.",
+      "category": "connectors",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Vamos caminhar em vez de dirigir.",
+          "en": "Let’s walk rather than drive."
+        }
+      ],
+      "tags": [
+        "alternative"
+      ],
+      "related": []
+    },
+    {
+      "id": "mas-sim-e-sim",
+      "intention": "Mas sim / e sim",
+      "english": "but rather",
+      "pattern": "not X, but rather Y",
+      "description": "Correção por substituição enfática.",
+      "category": "connectors",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Não é sobre dinheiro, mas sim liberdade.",
+          "en": "It’s not about money, but rather freedom."
+        }
+      ],
+      "tags": [
+        "correction",
+        "contrast"
+      ],
+      "related": []
+    },
+    {
+      "id": "pelo-contrario",
+      "intention": "Pelo contrário",
+      "english": "on the contrary",
+      "pattern": "on the contrary",
+      "description": "Apresenta ideia oposta à anterior.",
+      "category": "connectors",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Isso não é uma fraqueza. Pelo contrário, é uma força.",
+          "en": "This is not a weakness. On the contrary, it’s a strength."
+        }
+      ],
+      "tags": [
+        "contrast"
+      ],
+      "related": []
+    },
+    {
+      "id": "na-verdade-de-fato-na-realidade-alias",
+      "intention": "Na verdade / de fato / na realidade / aliás",
+      "english": "actually / in fact",
+      "pattern": "actually / in fact + clause",
+      "description": "Correção, ênfase ou informação adicional.",
+      "category": "discourse",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu amo inglês. Na verdade, estudo todos os dias.",
+          "en": "I love English. Actually, I study every day."
+        },
+        {
+          "pt": "Eu amo aprender inglês. De fato, estudo todos os dias.",
+          "en": "I love learning English. In fact, I study every day."
+        }
+      ],
+      "tags": [
+        "discourse",
+        "emphasis"
+      ],
+      "related": []
+    },
+    {
+      "id": "se-eu-esse-hipotese-irreal-presente-futuro",
+      "intention": "Se eu ...esse (hipótese irreal presente/futuro)",
+      "english": "if + simple past; would/could/might + base verb",
+      "pattern": "if + simple past, would/could/might + verb",
+      "description": "Hipótese irreal no presente ou futuro.",
+      "category": "conditionals",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Se eu morasse mais perto do trabalho, economizaria tempo.",
+          "en": "If I lived closer to my job, I would save a lot of time."
+        },
+        {
+          "pt": "Se eu soubesse fazer isso, poderia ajudar agora.",
+          "en": "If I knew how to do this, I could help you right now."
+        }
+      ],
+      "tags": [
+        "conditional",
+        "unreal"
+      ],
+      "related": []
+    },
+    {
+      "id": "se-eu-tivesse-hipotese-irreal-passada",
+      "intention": "Se eu tivesse... (hipótese irreal passada)",
+      "english": "if + had + past participle; would/could/might have + past participle",
+      "pattern": "if + had + pp, would/could/might have + pp",
+      "description": "Hipótese irreal sobre algo que já passou.",
+      "category": "conditionals",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Se eu tivesse morado mais perto, teria economizado tempo.",
+          "en": "If I had lived closer to my job, I would have saved a lot of time."
+        },
+        {
+          "pt": "Se eu tivesse sabido fazer isso, poderia ter ajudado.",
+          "en": "If I had known how to do this, I could have helped you earlier."
+        }
+      ],
+      "tags": [
+        "conditional",
+        "past-unreal"
+      ],
+      "related": []
+    },
+    {
+      "id": "se-real-possivel-vai-vou-ira",
+      "intention": "Se (real / possível) ... vai/vou/irá",
+      "english": "if + present simple; will + verb",
+      "pattern": "if + present simple, will + verb",
+      "description": "Condição futura real/possível.",
+      "category": "conditionals",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Se terminarmos esta fase hoje, avançaremos com o deploy amanhã.",
+          "en": "If we finish this phase today, we will move forward with the deployment tomorrow."
+        }
+      ],
+      "tags": [
+        "conditional",
+        "future"
+      ],
+      "related": []
+    },
+    {
+      "id": "se-sempre-regra-habito",
+      "intention": "Se (sempre / regra / hábito)",
+      "english": "if + present simple; present simple",
+      "pattern": "if + present simple, present simple",
+      "description": "Verdade geral, regra, hábito ou padrão.",
+      "category": "conditionals",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Se você aquece gelo, ele derrete.",
+          "en": "If you heat ice, it melts."
+        },
+        {
+          "pt": "Se o build falha, o pipeline para.",
+          "en": "If the build fails, the pipeline stops."
+        }
+      ],
+      "tags": [
+        "conditional",
+        "general-truth"
+      ],
+      "related": []
+    },
+    {
+      "id": "foi-adjetivo",
+      "intention": "Foi + adjetivo",
+      "english": "it was + adjective",
+      "pattern": "it was + adjective",
+      "description": "Avaliação de ação/situação passada.",
+      "category": "past-expression",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Foi incrível.",
+          "en": "It was amazing."
+        }
+      ],
+      "tags": [
+        "past",
+        "adjective"
+      ],
+      "related": []
+    },
+    {
+      "id": "foi-o-que-foi-isso-que",
+      "intention": "Foi o que / foi isso que",
+      "english": "that’s what",
+      "pattern": "that’s what + clause",
+      "description": "Retoma ou identifica o que ocorreu/foi dito.",
+      "category": "discourse",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Foi isso que aconteceu.",
+          "en": "That’s what happened."
+        }
+      ],
+      "tags": [
+        "discourse"
+      ],
+      "related": []
+    },
+    {
+      "id": "foi-sem-querer",
+      "intention": "Foi sem querer",
+      "english": "it was an accident / I didn’t mean to",
+      "pattern": "fixed expression",
+      "description": "Ação não intencional.",
+      "category": "reactions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Foi sem querer.",
+          "en": "It was an accident."
+        }
+      ],
+      "tags": [
+        "accident",
+        "intention"
+      ],
+      "related": []
+    },
+    {
+      "id": "foi-ele-ela-que",
+      "intention": "Foi ele/ela que",
+      "english": "it was him/her who",
+      "pattern": "it was + person + who + clause",
+      "description": "Ênfase na pessoa responsável.",
+      "category": "emphasis",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Foi ele que fez isso.",
+          "en": "It was him who did it."
+        }
+      ],
+      "tags": [
+        "emphasis",
+        "person"
+      ],
+      "related": []
+    },
+    {
+      "id": "foi-quando-foi-ai-que-foi-entao-que",
+      "intention": "Foi quando / foi aí que / foi então que",
+      "english": "that’s when",
+      "pattern": "that’s when + clause",
+      "description": "Marca um momento-chave na narrativa.",
+      "category": "narrative",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Foi então que tudo mudou.",
+          "en": "That’s when everything changed."
+        }
+      ],
+      "tags": [
+        "narrative",
+        "time"
+      ],
+      "related": []
+    },
+    {
+      "id": "foi-ha-pouco-tempo",
+      "intention": "Foi há pouco tempo",
+      "english": "it was not long ago",
+      "pattern": "it was not long ago + clause",
+      "description": "Evento relativamente recente no passado.",
+      "category": "time",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Foi há pouco tempo.",
+          "en": "It was not long ago."
+        }
+      ],
+      "tags": [
+        "time",
+        "past"
+      ],
+      "related": []
+    },
+    {
+      "id": "para-alguem-fazer-algo",
+      "intention": "Para alguém fazer algo",
+      "english": "for someone to + verb",
+      "pattern": "for + someone + to + verb",
+      "description": "Indica agente de uma ação em construção infinitiva.",
+      "category": "infinitive-patterns",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Quanto tempo leva para o YouTube aprovar um canal?",
+          "en": "How long does it take for YouTube to approve a channel?"
+        }
+      ],
+      "tags": [
+        "infinitive",
+        "agent"
+      ],
+      "related": []
+    },
+    {
+      "id": "por-quanto-tempo-ate-quando",
+      "intention": "Por quanto tempo / até quando...?",
+      "english": "how long...?",
+      "pattern": "how long + auxiliary/be + subject ...?",
+      "description": "Pergunta sobre duração.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Por quanto tempo você vai ficar aqui?",
+          "en": "How long are you staying here?"
+        }
+      ],
+      "tags": [
+        "question",
+        "duration"
+      ],
+      "related": []
+    },
+    {
+      "id": "por-quanto-tempo-ate-quando-vou-ter-que",
+      "intention": "Por quanto tempo / até quando vou ter que...?",
+      "english": "how long will + subject + have to...?",
+      "pattern": "how long will + subject + have to + verb?",
+      "description": "Duração de obrigação futura.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Por quanto tempo eu vou ter que esperar?",
+          "en": "How long will I have to wait?"
+        }
+      ],
+      "tags": [
+        "question",
+        "duration",
+        "obligation"
+      ],
+      "related": []
+    },
+    {
+      "id": "por-quanto-tempo-ate-quando-vou-vai-vamos",
+      "intention": "Por quanto tempo / até quando vou/vai/vamos...?",
+      "english": "how long + be + subject + going to...?",
+      "pattern": "how long + be + subject + going to + verb?",
+      "description": "Duração de plano/ação futura.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Por quanto tempo você vai ficar no Brasil?",
+          "en": "How long are you going to stay in Brazil?"
+        }
+      ],
+      "tags": [
+        "question",
+        "duration",
+        "future"
+      ],
+      "related": []
+    },
+    {
+      "id": "por-quanto-tempo-ate-quando-isso-vai",
+      "intention": "Por quanto tempo / até quando isso vai...?",
+      "english": "how long is this going to...?",
+      "pattern": "how long is this going to + verb?",
+      "description": "Duração prevista de situação/coisa.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Até quando isso vai durar?",
+          "en": "How long is this going to last?"
+        }
+      ],
+      "tags": [
+        "question",
+        "duration"
+      ],
+      "related": []
+    },
+    {
+      "id": "por-quanto-tempo-ate-quando-vou-continuar",
+      "intention": "Por quanto tempo / até quando vou continuar...?",
+      "english": "how long + be + subject + going to keep + ing?",
+      "pattern": "how long + be + subject + going to keep + verb-ing?",
+      "description": "Duração de continuidade futura.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Até quando você vai continuar reclamando?",
+          "en": "How long are you going to keep complaining?"
+        }
+      ],
+      "tags": [
+        "question",
+        "duration",
+        "continuation"
+      ],
+      "related": []
+    },
+    {
+      "id": "futuro-do-subjuntivo-se-voce-fizer-tiver-puder-quiser-souber-vier",
+      "intention": "Futuro do subjuntivo: se você fizer / tiver / puder / quiser / souber / vier...",
+      "english": "if + subject + present simple",
+      "pattern": "if + subject + present simple",
+      "description": "Condição futura real expressa com present simple em inglês.",
+      "category": "future-conditions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Se você fizer...",
+          "en": "If you do..."
+        },
+        {
+          "pt": "Se você puder...",
+          "en": "If you can..."
+        },
+        {
+          "pt": "Se você souber...",
+          "en": "If you know..."
+        }
+      ],
+      "tags": [
+        "condition",
+        "future"
+      ],
+      "related": []
+    },
+    {
+      "id": "nao-faco-ideia-do-que",
+      "intention": "Não faço ideia do que...",
+      "english": "I have no idea what + clause",
+      "pattern": "I have no idea what + clause",
+      "description": "Ausência de informação sobre “o que”.",
+      "category": "no-idea",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Não faço ideia do que ele quer.",
+          "en": "I have no idea what he wants."
+        }
+      ],
+      "tags": [
+        "uncertainty",
+        "question-word"
+      ],
+      "related": []
+    },
+    {
+      "id": "nao-faco-ideia-de-onde",
+      "intention": "Não faço ideia de onde...",
+      "english": "I have no idea where + clause",
+      "pattern": "I have no idea where + clause",
+      "description": "Ausência de informação sobre lugar.",
+      "category": "no-idea",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Não faço ideia de onde ela mora.",
+          "en": "I have no idea where she lives."
+        }
+      ],
+      "tags": [
+        "uncertainty",
+        "place"
+      ],
+      "related": []
+    },
+    {
+      "id": "nao-faco-ideia-de-quando",
+      "intention": "Não faço ideia de quando...",
+      "english": "I have no idea when + clause",
+      "pattern": "I have no idea when + clause",
+      "description": "Ausência de informação sobre tempo.",
+      "category": "no-idea",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Não faço ideia de quando eles vão chegar.",
+          "en": "I have no idea when they’ll arrive."
+        }
+      ],
+      "tags": [
+        "uncertainty",
+        "time"
+      ],
+      "related": []
+    },
+    {
+      "id": "nao-faco-ideia-de-por-que",
+      "intention": "Não faço ideia de por que...",
+      "english": "I have no idea why + clause",
+      "pattern": "I have no idea why + clause",
+      "description": "Ausência de informação sobre motivo.",
+      "category": "no-idea",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Não faço ideia de por que ele fez isso.",
+          "en": "I have no idea why he did that."
+        }
+      ],
+      "tags": [
+        "uncertainty",
+        "reason"
+      ],
+      "related": []
+    },
+    {
+      "id": "nao-faco-ideia-de-como",
+      "intention": "Não faço ideia de como...",
+      "english": "I have no idea how + clause",
+      "pattern": "I have no idea how + clause",
+      "description": "Ausência de informação sobre modo.",
+      "category": "no-idea",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Não faço ideia de como isso funciona.",
+          "en": "I have no idea how this works."
+        }
+      ],
+      "tags": [
+        "uncertainty",
+        "manner"
+      ],
+      "related": []
+    },
+    {
+      "id": "nao-faco-ideia-de-quem",
+      "intention": "Não faço ideia de quem...",
+      "english": "I have no idea who + clause",
+      "pattern": "I have no idea who + clause",
+      "description": "Ausência de informação sobre pessoa.",
+      "category": "no-idea",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Não faço ideia de quem me ligou.",
+          "en": "I have no idea who called me."
+        }
+      ],
+      "tags": [
+        "uncertainty",
+        "person"
+      ],
+      "related": []
+    },
+    {
+      "id": "nao-faco-ideia-de-qual",
+      "intention": "Não faço ideia de qual...",
+      "english": "I have no idea which + noun/clause",
+      "pattern": "I have no idea which + noun/clause",
+      "description": "Ausência de informação sobre escolha.",
+      "category": "no-idea",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Não faço ideia de qual eu deveria escolher.",
+          "en": "I have no idea which one I should choose."
+        }
+      ],
+      "tags": [
+        "uncertainty",
+        "choice"
+      ],
+      "related": []
+    },
+    {
+      "id": "nao-faco-ideia-de-quanto-quantos",
+      "intention": "Não faço ideia de quanto / quantos...",
+      "english": "I have no idea how much / how many + clause",
+      "pattern": "I have no idea how much/many + clause",
+      "description": "Ausência de informação sobre quantidade.",
+      "category": "no-idea",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Não faço ideia de quanto custa.",
+          "en": "I have no idea how much it costs."
+        },
+        {
+          "pt": "Não faço ideia de quantas pessoas vêm.",
+          "en": "I have no idea how many people are coming."
+        }
+      ],
+      "tags": [
+        "uncertainty",
+        "quantity"
+      ],
+      "related": []
+    },
+    {
+      "id": "nao-faco-ideia-de-ha-quanto-tempo",
+      "intention": "Não faço ideia de há quanto tempo...",
+      "english": "I have no idea how long + clause",
+      "pattern": "I have no idea how long + clause",
+      "description": "Ausência de informação sobre duração.",
+      "category": "no-idea",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Não faço ideia de quanto tempo vai levar.",
+          "en": "I have no idea how long it will take."
+        }
+      ],
+      "tags": [
+        "uncertainty",
+        "duration"
+      ],
+      "related": []
+    },
+    {
+      "id": "acabar-sendo",
+      "intention": "Acabar sendo...",
+      "english": "turn out to be",
+      "pattern": "turn out to be + noun/adjective",
+      "description": "Resultado final de identidade/qualidade.",
+      "category": "outcomes",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Ele acabou sendo um ótimo chefe.",
+          "en": "He turned out to be a great boss."
+        }
+      ],
+      "tags": [
+        "result"
+      ],
+      "related": []
+    },
+    {
+      "id": "acabar-ficando",
+      "intention": "Acabar ficando...",
+      "english": "turn out + adjective",
+      "pattern": "turn out + adjective",
+      "description": "Resultado final de qualidade/estado.",
+      "category": "outcomes",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "O bolo acabou ficando ótimo.",
+          "en": "The cake turned out great."
+        }
+      ],
+      "tags": [
+        "result"
+      ],
+      "related": []
+    },
+    {
+      "id": "acontece-que-no-fim-das-contas",
+      "intention": "Acontece que / no fim das contas...",
+      "english": "it turns out that",
+      "pattern": "it turns out that + clause",
+      "description": "Introduz fato/resultado revelado.",
+      "category": "outcomes",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Acontece que ele estava certo.",
+          "en": "It turns out that he was right."
+        }
+      ],
+      "tags": [
+        "result",
+        "discourse"
+      ],
+      "related": []
+    },
+    {
+      "id": "queria-que-voce-pudesse",
+      "intention": "Queria que você pudesse...",
+      "english": "I wish you could",
+      "pattern": "I wish + subject + could + verb",
+      "description": "Desejo sobre capacidade/possibilidade de outra pessoa.",
+      "category": "wish",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Queria que você pudesse ver isso.",
+          "en": "I wish you could see this."
+        }
+      ],
+      "tags": [
+        "wish",
+        "ability"
+      ],
+      "related": []
+    },
+    {
+      "id": "eu-sei-eu-nao-sei-wh-to-verb",
+      "intention": "Eu sei / eu não sei + WH + to + verb",
+      "english": "I know / I don’t know + wh-word + to + verb",
+      "pattern": "know/don’t know + wh + to + verb",
+      "description": "Saber/não saber o que, onde, quem ou como fazer.",
+      "category": "knowledge",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu não sei o que fazer.",
+          "en": "I don’t know what to do."
+        },
+        {
+          "pt": "Eu não sei onde ir.",
+          "en": "I don’t know where to go."
+        },
+        {
+          "pt": "Eu não sei quem perguntar.",
+          "en": "I don’t know who to ask."
+        }
+      ],
+      "tags": [
+        "knowledge",
+        "wh"
+      ],
+      "related": []
+    },
+    {
+      "id": "eu-sei-eu-nao-sei-wh-clause",
+      "intention": "Eu sei / eu não sei + WH + clause",
+      "english": "I know / I don’t know + wh-clause",
+      "pattern": "know/don’t know + wh + clause",
+      "description": "Saber/não saber informação expressa por oração.",
+      "category": "knowledge",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu não sei o que ele quer.",
+          "en": "I don’t know what he wants."
+        },
+        {
+          "pt": "Eu sei como funciona.",
+          "en": "I know how it works."
+        }
+      ],
+      "tags": [
+        "knowledge",
+        "wh"
+      ],
+      "related": []
+    },
+    {
+      "id": "disse-para-eu-verbo",
+      "intention": "Disse para eu + verbo",
+      "english": "told me to + verb",
+      "pattern": "tell + someone + to + verb",
+      "description": "Reported speech com instrução.",
+      "category": "reported-speech",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Meu chefe disse para eu manter a calma.",
+          "en": "My boss told me to keep calm."
+        }
+      ],
+      "tags": [
+        "reported-speech",
+        "instruction"
+      ],
+      "related": []
+    },
+    {
+      "id": "me-lembrou-que",
+      "intention": "Me lembrou que...",
+      "english": "reminded me that",
+      "pattern": "remind + someone + that + clause",
+      "description": "Lembrar alguém de um fato/informação.",
+      "category": "reported-speech",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Meu chefe me lembrou que há coisas que não podemos controlar.",
+          "en": "My boss reminded me that there are things we can’t control."
+        }
+      ],
+      "tags": [
+        "reminder",
+        "reported-speech"
+      ],
+      "related": []
+    },
+    {
+      "id": "como-voce-esta-gerundio",
+      "intention": "Como você está + gerúndio?",
+      "english": "how are you + ing...?",
+      "pattern": "how are you + verb-ing...?",
+      "description": "Pergunta sobre adaptação, processo ou como a pessoa está lidando com algo.",
+      "category": "questions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Como você está se adaptando ao novo trabalho?",
+          "en": "How are you adapting to your new job?"
+        },
+        {
+          "pt": "Como você está lidando com a pressão?",
+          "en": "How are you dealing with the pressure?"
+        }
+      ],
+      "tags": [
+        "question",
+        "process"
+      ],
+      "related": []
+    },
+    {
+      "id": "quanto-mais-mais-melhor",
+      "intention": "Quanto mais..., mais/melhor...",
+      "english": "the more..., the more/better...",
+      "pattern": "the more + clause, the more/better + clause",
+      "description": "Relação proporcional.",
+      "category": "comparison",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Quanto mais eu pratico, melhor eu fico.",
+          "en": "The more I practice, the better I get."
+        },
+        {
+          "pt": "Quanto mais eu falo inglês, mais confiante fico.",
+          "en": "The more I speak English, the more confident I become."
+        }
+      ],
+      "tags": [
+        "comparison",
+        "proportion"
+      ],
+      "related": []
+    },
+    {
+      "id": "buffer-de-pensamento",
+      "intention": "Buffer de pensamento",
+      "english": "well / you know / I mean / actually / let me think / the thing is",
+      "pattern": "discourse filler",
+      "description": "Expressões para ganhar tempo e organizar o pensamento.",
+      "category": "fluency-fillers",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Bem...",
+          "en": "Well..."
+        },
+        {
+          "pt": "Sabe...",
+          "en": "You know..."
+        },
+        {
+          "pt": "Deixa eu pensar.",
+          "en": "Let me think."
+        }
+      ],
+      "tags": [
+        "fluency",
+        "filler"
+      ],
+      "related": []
+    },
+    {
+      "id": "organizacao-de-ideias",
+      "intention": "Organização de ideias",
+      "english": "first of all / the main point is / on the other hand / in the end / at the same time / at the end of the day",
+      "pattern": "discourse organizer",
+      "description": "Estruturas para organizar raciocínio.",
+      "category": "discourse",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Primeiro de tudo.",
+          "en": "First of all."
+        },
+        {
+          "pt": "O ponto principal é...",
+          "en": "The main point is..."
+        },
+        {
+          "pt": "Por outro lado.",
+          "en": "On the other hand."
+        }
+      ],
+      "tags": [
+        "discourse",
+        "organization"
+      ],
+      "related": []
+    },
+    {
+      "id": "softening-suavizacao-social",
+      "intention": "Softening (suavização social)",
+      "english": "I guess / kind of / sort of / maybe / I’m not so sure",
+      "pattern": "softener",
+      "description": "Suaviza afirmações em interação social/profissional.",
+      "category": "softening",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu acho.",
+          "en": "I guess."
+        },
+        {
+          "pt": "Meio.",
+          "en": "Kind of."
+        },
+        {
+          "pt": "Eu não tenho tanta certeza.",
+          "en": "I’m not so sure."
+        }
+      ],
+      "tags": [
+        "softening",
+        "social"
+      ],
+      "related": []
+    },
+    {
+      "id": "correcao-e-reformulacao",
+      "intention": "Correção e reformulação",
+      "english": "I mean / what I mean is / actually / in other words",
+      "pattern": "reformulation marker",
+      "description": "Corrigir ou reformular o que acabou de ser dito.",
+      "category": "discourse",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Quero dizer...",
+          "en": "I mean..."
+        },
+        {
+          "pt": "O que eu quero dizer é...",
+          "en": "What I mean is..."
+        },
+        {
+          "pt": "Em outras palavras...",
+          "en": "In other words..."
+        }
+      ],
+      "tags": [
+        "reformulation",
+        "discourse"
+      ],
+      "related": []
+    },
+    {
+      "id": "engajamento-emocional",
+      "intention": "Engajamento emocional",
+      "english": "honestly / to be honest / you know what / the truth is / frankly speaking",
+      "pattern": "engagement marker",
+      "description": "Cria conexão emocional com o ouvinte.",
+      "category": "fluency-fillers",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Honestamente.",
+          "en": "Honestly."
+        },
+        {
+          "pt": "Para ser honesto.",
+          "en": "To be honest."
+        },
+        {
+          "pt": "A verdade é que...",
+          "en": "The truth is..."
+        }
+      ],
+      "tags": [
+        "emotion",
+        "engagement"
+      ],
+      "related": []
+    },
+    {
+      "id": "softening-profissional",
+      "intention": "Softening profissional",
+      "english": "I was wondering if / would you mind / it might be better / I guess / kind of / sort of",
+      "pattern": "professional softener",
+      "description": "Suavização social em contexto profissional.",
+      "category": "softening",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu estava me perguntando se...",
+          "en": "I was wondering if..."
+        },
+        {
+          "pt": "Você se importaria...?",
+          "en": "Would you mind...?"
+        },
+        {
+          "pt": "Talvez seja melhor...",
+          "en": "It might be better..."
+        }
+      ],
+      "tags": [
+        "softening",
+        "professional"
+      ],
+      "related": []
+    },
+    {
+      "id": "expandir-fillers-emocionais",
+      "intention": "Expandir fillers emocionais",
+      "english": "you know what I mean / to be fair / the point is / at least",
+      "pattern": "emotional filler",
+      "description": "Expressões de conexão, equilíbrio e foco.",
+      "category": "fluency-fillers",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Você entende o que eu quero dizer.",
+          "en": "You know what I mean."
+        },
+        {
+          "pt": "Pra ser justo.",
+          "en": "To be fair."
+        },
+        {
+          "pt": "O ponto é que...",
+          "en": "The point is..."
+        }
+      ],
+      "tags": [
+        "fluency",
+        "emotion"
+      ],
+      "related": []
+    },
+    {
+      "id": "sequencia-narrativa",
+      "intention": "Sequência narrativa",
+      "english": "at first / then / eventually / after a while / all of a sudden",
+      "pattern": "narrative sequence marker",
+      "description": "Organiza uma narrativa no tempo.",
+      "category": "narrative",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "No começo.",
+          "en": "At first."
+        },
+        {
+          "pt": "Então.",
+          "en": "Then."
+        },
+        {
+          "pt": "De repente.",
+          "en": "All of a sudden."
+        }
+      ],
+      "tags": [
+        "narrative",
+        "sequence"
+      ],
+      "related": []
+    },
+    {
+      "id": "hedging-profissional",
+      "intention": "Hedging profissional",
+      "english": "from my perspective / as far as I know / it seems that / it appears that",
+      "pattern": "hedging expression",
+      "description": "Expressões para apresentar opinião/certeza com cautela.",
+      "category": "hedging",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Da minha perspectiva.",
+          "en": "From my perspective."
+        },
+        {
+          "pt": "Pelo que eu sei.",
+          "en": "As far as I know."
+        },
+        {
+          "pt": "Parece que...",
+          "en": "It seems that..."
+        }
+      ],
+      "tags": [
+        "hedging",
+        "professional"
+      ],
+      "related": []
+    },
+    {
+      "id": "reported-speech-automatico",
+      "intention": "Reported speech automático",
+      "english": "he told me that / she said she would / she asked if / she told me to / she warned me that / she suggested that",
+      "pattern": "reported speech pattern",
+      "description": "Padrões recorrentes de discurso indireto.",
+      "category": "reported-speech",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Ele me contou que...",
+          "en": "He told me that..."
+        },
+        {
+          "pt": "Ela disse que ela ia...",
+          "en": "She said she would..."
+        },
+        {
+          "pt": "Ela perguntou se...",
+          "en": "She asked if..."
+        }
+      ],
+      "tags": [
+        "reported-speech"
+      ],
+      "related": []
+    },
+    {
+      "id": "emotional-framing",
+      "intention": "Emotional framing",
+      "english": "he was like / she goes",
+      "pattern": "informal speech framing",
+      "description": "Enquadramento informal/emocional ao reproduzir fala.",
+      "category": "informal-speech",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Ele ficou tipo...",
+          "en": "He was like..."
+        },
+        {
+          "pt": "Ela disse...",
+          "en": "She goes..."
+        }
+      ],
+      "tags": [
+        "informal",
+        "reported-speech"
+      ],
+      "related": []
+    },
+    {
+      "id": "reaction-language",
+      "intention": "Reaction language",
+      "english": "that’s quite interesting / that makes sense / I see what you mean",
+      "pattern": "reaction phrase",
+      "description": "Reagir ao que o outro disse.",
+      "category": "reactions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Isso é bem interessante.",
+          "en": "That’s quite interesting."
+        },
+        {
+          "pt": "Isso faz sentido.",
+          "en": "That makes sense."
+        },
+        {
+          "pt": "Eu entendo o que você disse.",
+          "en": "I see what you mean."
+        }
+      ],
+      "tags": [
+        "reaction",
+        "conversation"
+      ],
+      "related": []
+    },
+    {
+      "id": "framing-e-argumentacao-avancada",
+      "intention": "Framing e argumentação avançada",
+      "english": "the main issue here is / what really matters is / from a broader perspective",
+      "pattern": "argument framing",
+      "description": "Enquadrar questão e argumento de forma avançada.",
+      "category": "argumentation",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "O problema principal é que...",
+          "en": "The main issue here is..."
+        },
+        {
+          "pt": "O que realmente importa é...",
+          "en": "What really matters is (that)..."
+        },
+        {
+          "pt": "De uma perspectiva mais ampla...",
+          "en": "From a broader perspective..."
+        }
+      ],
+      "tags": [
+        "argumentation",
+        "framing"
+      ],
+      "related": []
+    },
+    {
+      "id": "vou-aproveitar-micro-nuance",
+      "intention": "Vou aproveitar (micro nuance)",
+      "english": "I might as well",
+      "pattern": "might as well + base verb",
+      "description": "Aproveitar uma situação já presente ou inevitável.",
+      "category": "micro-nuance",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Já estou aqui, então vou aproveitar e estudar um pouco.",
+          "en": "I’m already here, so I might as well study for a while."
+        },
+        {
+          "pt": "Está chovendo, então vou aproveitar e ficar em casa.",
+          "en": "It’s raining, so I might as well stay home and watch a movie."
+        }
+      ],
+      "tags": [
+        "nuance",
+        "opportunity"
+      ],
+      "related": []
+    },
+    {
+      "id": "nao-adianta-nao-faz-sentido",
+      "intention": "Não adianta / não faz sentido",
+      "english": "there’s no point in",
+      "pattern": "there’s no point in + ing",
+      "description": "Indica inutilidade de uma ação.",
+      "category": "micro-nuance",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Não adianta se preocupar com coisas que você não controla.",
+          "en": "There’s no point in worrying about things you can’t control."
+        },
+        {
+          "pt": "Não adianta discutir com ele.",
+          "en": "There’s no point in arguing with him."
+        }
+      ],
+      "tags": [
+        "nuance",
+        "futility"
+      ],
+      "related": []
+    },
+    {
+      "id": "nao-vale-a-pena",
+      "intention": "Não vale a pena",
+      "english": "it’s not worth",
+      "pattern": "it’s not worth + ing",
+      "description": "Indica que uma ação não compensa.",
+      "category": "micro-nuance",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Não vale a pena se estressar com coisas pequenas.",
+          "en": "It’s not worth stressing about small things."
+        },
+        {
+          "pt": "Não vale a pena comprar ferramentas baratas.",
+          "en": "It’s not worth buying cheap tools."
+        }
+      ],
+      "tags": [
+        "nuance",
+        "worth"
+      ],
+      "related": []
+    },
+    {
+      "id": "mesmo-que-apesar-de",
+      "intention": "Mesmo que / apesar de",
+      "english": "even though",
+      "pattern": "even though + clause",
+      "description": "Contraste concessivo.",
+      "category": "advanced-discourse",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Mesmo cansado, decidi ir à academia.",
+          "en": "Even though I was tired, I decided to go to the gym."
+        }
+      ],
+      "tags": [
+        "contrast",
+        "concession"
+      ],
+      "related": []
+    },
+    {
+      "id": "desde-que-contanto-que-condicao",
+      "intention": "Desde que / contanto que (condição)",
+      "english": "as long as",
+      "pattern": "as long as + clause",
+      "description": "Condição necessária.",
+      "category": "advanced-discourse",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Você pode pegar minha moto desde que tenha cuidado.",
+          "en": "You can borrow my motorcycle as long as you are careful."
+        }
+      ],
+      "tags": [
+        "condition"
+      ],
+      "related": []
+    },
+    {
+      "id": "desde-que-sob-a-condicao-de-que",
+      "intention": "Desde que / sob a condição de que",
+      "english": "provided that",
+      "pattern": "provided that + clause",
+      "description": "Condição explícita/formal.",
+      "category": "advanced-discourse",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Você pode entrar no time desde que siga as regras.",
+          "en": "You can join the team provided that you follow the rules."
+        }
+      ],
+      "tags": [
+        "condition",
+        "formal"
+      ],
+      "related": []
+    },
+    {
+      "id": "caso-contrario-senao",
+      "intention": "Caso contrário / senão",
+      "english": "otherwise",
+      "pattern": "otherwise + clause",
+      "description": "Consequência alternativa se condição não for atendida.",
+      "category": "advanced-discourse",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Você deveria sair agora; caso contrário, ficará preso no trânsito.",
+          "en": "You should leave now; otherwise, you’ll get stuck in traffic."
+        }
+      ],
+      "tags": [
+        "consequence",
+        "connector"
+      ],
+      "related": []
+    },
+    {
+      "id": "enquanto-isso",
+      "intention": "Enquanto isso",
+      "english": "meanwhile",
+      "pattern": "meanwhile + clause",
+      "description": "Ação paralela no tempo.",
+      "category": "advanced-discourse",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu vou preparar o relatório. Enquanto isso, você pode revisar os dados.",
+          "en": "I’ll prepare the report. Meanwhile, you can review the data."
+        }
+      ],
+      "tags": [
+        "time",
+        "parallel"
+      ],
+      "related": []
+    },
+    {
+      "id": "aparentemente-pelo-que-parece",
+      "intention": "Aparentemente / pelo que parece",
+      "english": "apparently",
+      "pattern": "apparently + clause",
+      "description": "Nuance de informação não totalmente confirmada.",
+      "category": "advanced-discourse",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Aparentemente, a reunião foi cancelada esta manhã.",
+          "en": "Apparently, the meeting was canceled this morning."
+        }
+      ],
+      "tags": [
+        "nuance",
+        "evidence"
+      ],
+      "related": []
+    },
+    {
+      "id": "supostamente-dizem-que",
+      "intention": "Supostamente / dizem que",
+      "english": "supposedly",
+      "pattern": "supposedly + clause",
+      "description": "Informação reportada/não confirmada.",
+      "category": "advanced-discourse",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Supostamente, este restaurante tem a melhor pizza da cidade.",
+          "en": "Supposedly, this restaurant has the best pizza in the city."
+        }
+      ],
+      "tags": [
+        "nuance",
+        "reported"
+      ],
+      "related": []
+    },
+    {
+      "id": "ironicamente",
+      "intention": "Ironicamente",
+      "english": "ironically",
+      "pattern": "ironically + clause",
+      "description": "Marca ironia situacional.",
+      "category": "advanced-discourse",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Ironicamente, o carro do mecânico quebrou a caminho do trabalho.",
+          "en": "Ironically, the mechanic’s car broke down on the way to work."
+        }
+      ],
+      "tags": [
+        "nuance",
+        "irony"
+      ],
+      "related": []
+    },
+    {
+      "id": "curiosamente-interessante-notar-que",
+      "intention": "Curiosamente / interessante notar que",
+      "english": "interestingly",
+      "pattern": "interestingly + clause",
+      "description": "Destaca informação considerada interessante.",
+      "category": "advanced-discourse",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Curiosamente, muitas pessoas aprendem idiomas mais rápido por meio de conversação.",
+          "en": "Interestingly, many people learn languages faster through conversation."
+        }
+      ],
+      "tags": [
+        "nuance",
+        "emphasis"
+      ],
+      "related": []
+    },
+    {
+      "id": "por-um-lado",
+      "intention": "Por um lado",
+      "english": "on the one hand",
+      "pattern": "on the one hand + clause",
+      "description": "Primeiro lado de uma argumentação contrastiva.",
+      "category": "argumentation",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Por um lado, trabalhar de casa é conveniente.",
+          "en": "On the one hand, working from home is convenient."
+        }
+      ],
+      "tags": [
+        "argumentation",
+        "contrast"
+      ],
+      "related": []
+    },
+    {
+      "id": "em-contraste-por-outro-lado",
+      "intention": "Em contraste / por outro lado",
+      "english": "in contrast",
+      "pattern": "in contrast + clause",
+      "description": "Apresenta contraste explícito.",
+      "category": "argumentation",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Em contraste, trabalhar no escritório permite comunicação mais direta.",
+          "en": "In contrast, working in the office allows more direct communication."
+        }
+      ],
+      "tags": [
+        "argumentation",
+        "contrast"
+      ],
+      "related": []
+    },
+    {
+      "id": "em-outras-palavras",
+      "intention": "Em outras palavras",
+      "english": "in other words",
+      "pattern": "in other words + clause",
+      "description": "Reformula uma ideia.",
+      "category": "argumentation",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Em outras palavras, precisamos simplificar o processo.",
+          "en": "In other words, we need to simplify the process."
+        }
+      ],
+      "tags": [
+        "reformulation"
+      ],
+      "related": []
+    },
+    {
+      "id": "dito-de-outra-forma-colocando-de-outra-maneira",
+      "intention": "Dito de outra forma / colocando de outra maneira",
+      "english": "to put it differently",
+      "pattern": "to put it differently + clause",
+      "description": "Reformula argumento com outra perspectiva.",
+      "category": "argumentation",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Dito de outra forma, o problema não é a ferramenta, mas como a usamos.",
+          "en": "To put it differently, the problem is not the tool but how we use it."
+        }
+      ],
+      "tags": [
+        "reformulation",
+        "argumentation"
+      ],
+      "related": []
+    },
+    {
+      "id": "o-ponto-principal-que-voce-deve-lembrar-e",
+      "intention": "O ponto principal que você deve lembrar é...",
+      "english": "the key takeaway is...",
+      "pattern": "the key takeaway is + that + clause",
+      "description": "Destaca a principal conclusão/mensagem.",
+      "category": "persuasion",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "O ponto principal é que a inteligência artificial está mudando a forma como trabalhamos.",
+          "en": "The key takeaway is that artificial intelligence is changing the way we work."
+        }
+      ],
+      "tags": [
+        "persuasion",
+        "conclusion"
+      ],
+      "related": []
+    },
+    {
+      "id": "na-pratica-isso-significa-que",
+      "intention": "Na prática, isso significa que...",
+      "english": "what this means in practice is...",
+      "pattern": "what this means in practice is + that + clause",
+      "description": "Traduz uma ideia para implicação prática.",
+      "category": "persuasion",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Na prática, isso significa que precisamos adaptar nossos processos.",
+          "en": "What this means in practice is that we need to adapt our processes."
+        }
+      ],
+      "tags": [
+        "persuasion",
+        "practical"
+      ],
+      "related": []
+    },
+    {
+      "id": "aquilo-mudou-o-rumo-da-minha-vida",
+      "intention": "Aquilo mudou o rumo da minha vida",
+      "english": "that was a turning point",
+      "pattern": "that was a turning point",
+      "description": "Metáfora para mudança decisiva de direção.",
+      "category": "cognitive-metaphors",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Aprender inglês foi um ponto de virada na minha vida.",
+          "en": "Learning English was a turning point in my life."
+        },
+        {
+          "pt": "Mudar para uma nova cidade foi um ponto de virada na minha carreira.",
+          "en": "Moving to a new city was a turning point in my career."
+        }
+      ],
+      "tags": [
+        "metaphor",
+        "change"
+      ],
+      "related": []
+    },
+    {
+      "id": "isso-criou-oportunidades",
+      "intention": "Isso criou oportunidades",
+      "english": "it opened doors",
+      "pattern": "open doors",
+      "description": "Metáfora para criação de oportunidades.",
+      "category": "cognitive-metaphors",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Trabalhar naquela empresa abriu muitas portas.",
+          "en": "Working in that company opened many doors."
+        },
+        {
+          "pt": "Networking abriu portas que eu nem imaginava.",
+          "en": "Networking opened doors I didn’t even imagine."
+        }
+      ],
+      "tags": [
+        "metaphor",
+        "opportunity"
+      ],
+      "related": []
+    },
+    {
+      "id": "meio-estranho-um-pouco-estranho",
+      "intention": "Meio estranho / um pouco estranho",
+      "english": "kind of weird",
+      "pattern": "kind of + adjective",
+      "description": "Discurso informal emocional com suavização.",
+      "category": "informal-speech",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "É meio estranho ver esse lugar vazio.",
+          "en": "It’s kind of weird to see this place empty."
+        }
+      ],
+      "tags": [
+        "informal",
+        "softening"
+      ],
+      "related": []
+    },
+    {
+      "id": "praticamente-basicamente-mais-ou-menos-isso",
+      "intention": "Praticamente / basicamente / mais ou menos isso",
+      "english": "pretty much",
+      "pattern": "pretty much + clause",
+      "description": "Resumo informal aproximado.",
+      "category": "informal-speech",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Foi basicamente isso que aconteceu.",
+          "en": "That’s pretty much what happened."
+        }
+      ],
+      "tags": [
+        "informal",
+        "summary"
+      ],
+      "related": []
+    },
+    {
+      "id": "estruturas-de-opiniao",
+      "intention": "Estruturas de opinião",
+      "english": "I guess / I suppose / I assume / I believe",
+      "pattern": "opinion starter + clause",
+      "description": "Marcadores para opinião, suposição ou crença.",
+      "category": "opinion",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu acho...",
+          "en": "I guess..."
+        },
+        {
+          "pt": "Eu acredito...",
+          "en": "I believe..."
+        }
+      ],
+      "tags": [
+        "opinion"
+      ],
+      "related": []
+    },
+    {
+      "id": "estruturas-de-reacao",
+      "intention": "Estruturas de reação",
+      "english": "no wonder / makes sense / that explains it / fair enough",
+      "pattern": "reaction expression",
+      "description": "Reações curtas a explicações/informações.",
+      "category": "reactions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Faz sentido.",
+          "en": "Makes sense."
+        },
+        {
+          "pt": "Isso explica.",
+          "en": "That explains it."
+        }
+      ],
+      "tags": [
+        "reaction"
+      ],
+      "related": []
+    },
+    {
+      "id": "estruturas-de-hipotese-conversacional",
+      "intention": "Estruturas de hipótese conversacional",
+      "english": "I wonder if / what if / suppose / imagine if",
+      "pattern": "hypothesis starter + clause",
+      "description": "Abrir hipótese em conversa.",
+      "category": "hypothesis",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "E se...?",
+          "en": "What if...?"
+        },
+        {
+          "pt": "Imagine se...",
+          "en": "Imagine if..."
+        }
+      ],
+      "tags": [
+        "hypothesis",
+        "conversation"
+      ],
+      "related": []
+    },
+    {
+      "id": "reagir-ao-que-o-outro-disse",
+      "intention": "Reagir ao que o outro disse",
+      "english": "that reminds me of / actually, I had a similar experience / that’s interesting because",
+      "pattern": "reaction + connection",
+      "description": "Conectar a própria experiência ao que o interlocutor disse.",
+      "category": "reactions",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Isso me lembra...",
+          "en": "That reminds me of..."
+        },
+        {
+          "pt": "Na verdade, eu tive uma experiência parecida.",
+          "en": "Actually, I had a similar experience..."
+        }
+      ],
+      "tags": [
+        "reaction",
+        "conversation"
+      ],
+      "related": []
+    },
+    {
+      "id": "opinion-pattern",
+      "intention": "Opinion Pattern",
+      "english": "I think + explanation",
+      "pattern": "I think + clause + because + explanation",
+      "description": "Padrão para expressar opinião com justificativa.",
+      "category": "speaking-patterns",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu acho que saúde mental é muito importante porque o estresse pode afetar o corpo inteiro.",
+          "en": "I think mental health is very important because stress can affect the whole body."
+        }
+      ],
+      "tags": [
+        "opinion",
+        "speaking"
+      ],
+      "related": []
+    },
+    {
+      "id": "preference-pattern",
+      "intention": "Preference Pattern",
+      "english": "I prefer / I’d rather + reason",
+      "pattern": "preference + because + reason",
+      "description": "Padrão para preferência com razão.",
+      "category": "speaking-patterns",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu prefiro treinar de manhã porque me sinto mais energético.",
+          "en": "I’d rather work out in the morning because I feel more energetic."
+        }
+      ],
+      "tags": [
+        "preference",
+        "speaking"
+      ],
+      "related": []
+    },
+    {
+      "id": "contrast-pattern",
+      "intention": "Contrast Pattern",
+      "english": "X is true, but Y",
+      "pattern": "clause + but + clause",
+      "description": "Padrão de contraste.",
+      "category": "speaking-patterns",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Um corpo saudável é importante, mas saúde mental é ainda mais importante.",
+          "en": "A healthy body is important, but mental health is even more important."
+        }
+      ],
+      "tags": [
+        "contrast",
+        "speaking"
+      ],
+      "related": []
+    },
+    {
+      "id": "cause-pattern",
+      "intention": "Cause Pattern",
+      "english": "because + explanation",
+      "pattern": "clause + because + reason",
+      "description": "Padrão de causa/explicação.",
+      "category": "speaking-patterns",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu tento dormir mais cedo porque isso ajuda na minha recuperação.",
+          "en": "I try to sleep earlier because it helps my recovery."
+        }
+      ],
+      "tags": [
+        "cause",
+        "speaking"
+      ],
+      "related": []
+    },
+    {
+      "id": "condition-pattern",
+      "intention": "Condition Pattern",
+      "english": "if + consequence",
+      "pattern": "if + condition, consequence",
+      "description": "Padrão condicional simples.",
+      "category": "speaking-patterns",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Se você não dorme bem, fica cansado o dia todo.",
+          "en": "If you don’t sleep well, you feel tired all day."
+        }
+      ],
+      "tags": [
+        "condition",
+        "speaking"
+      ],
+      "related": []
+    },
+    {
+      "id": "example-pattern",
+      "intention": "Example Pattern",
+      "english": "for example / sometimes",
+      "pattern": "example marker + clause",
+      "description": "Padrão para introduzir exemplos.",
+      "category": "speaking-patterns",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Às vezes eu caminho para limpar a mente.",
+          "en": "Sometimes I go for a walk to clear my mind."
+        }
+      ],
+      "tags": [
+        "example",
+        "speaking"
+      ],
+      "related": []
+    },
+    {
+      "id": "sequence-pattern",
+      "intention": "Sequence Pattern",
+      "english": "first / then / finally",
+      "pattern": "first + clause, then + clause, finally + clause",
+      "description": "Padrão para explicar sequência.",
+      "category": "speaking-patterns",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Primeiro você inspira, depois segura a respiração e finalmente expira devagar.",
+          "en": "First you inhale, then you hold your breath, and finally you exhale slowly."
+        }
+      ],
+      "tags": [
+        "sequence",
+        "speaking"
+      ],
+      "related": []
+    },
+    {
+      "id": "personal-experience-pattern",
+      "intention": "Personal Experience Pattern",
+      "english": "in my case / for me",
+      "pattern": "in my case / for me + clause",
+      "description": "Padrão para experiência pessoal.",
+      "category": "speaking-patterns",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "No meu caso, o estresse geralmente afeta meu sono.",
+          "en": "In my case, stress usually affects my sleep."
+        }
+      ],
+      "tags": [
+        "experience",
+        "speaking"
+      ],
+      "related": []
+    },
+    {
+      "id": "problem-solution-pattern",
+      "intention": "Problem-Solution Pattern",
+      "english": "problem + solution",
+      "pattern": "problem statement + so + solution",
+      "description": "Padrão problema-solução.",
+      "category": "speaking-patterns",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu costumava me sentir muito estressado, então comecei a praticar técnicas de respiração.",
+          "en": "I used to feel very stressed, so I started practicing breathing techniques."
+        }
+      ],
+      "tags": [
+        "problem-solution",
+        "speaking"
+      ],
+      "related": []
+    },
+    {
+      "id": "hypothesis-pattern",
+      "intention": "Hypothesis Pattern",
+      "english": "I wish / I would like / I hope",
+      "pattern": "wish/hope + clause",
+      "description": "Padrão para desejo/hipótese.",
+      "category": "speaking-patterns",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Eu gostaria de poder ir à academia cinco dias por semana.",
+          "en": "I wish I could go to the gym five days a week."
+        }
+      ],
+      "tags": [
+        "hypothesis",
+        "speaking"
+      ],
+      "related": []
+    },
+    {
+      "id": "reasoning-pattern",
+      "intention": "Reasoning Pattern",
+      "english": "but / if / sometimes / so",
+      "pattern": "linked reasoning clauses",
+      "description": "Padrão para desenvolver raciocínio em várias etapas.",
+      "category": "speaking-patterns",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "Saúde mental é importante, mas as pessoas ignoram isso.",
+          "en": "Mental health is important, but people ignore it."
+        },
+        {
+          "pt": "Então saúde mental deveria ser mais discutida.",
+          "en": "So mental health should be discussed more."
+        }
+      ],
+      "tags": [
+        "reasoning",
+        "speaking"
+      ],
+      "related": []
+    },
+    {
+      "id": "conclusion-pattern",
+      "intention": "Conclusion Pattern",
+      "english": "so / that’s why / in the end",
+      "pattern": "conclusion marker + clause",
+      "description": "Padrão para concluir uma ideia.",
+      "category": "speaking-patterns",
+      "searchTerms": [],
+      "examples": [
+        {
+          "pt": "É por isso que dormir é essencial para uma boa saúde.",
+          "en": "That’s why sleep is essential for good health."
+        }
+      ],
+      "tags": [
+        "conclusion",
+        "speaking"
+      ],
+      "related": []
+    }
+  ]
+}
