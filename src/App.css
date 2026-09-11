@@ -18,7 +18,8 @@ body {
 }
 
 button,
-input {
+input,
+select {
   font: inherit;
 }
 
@@ -89,7 +90,7 @@ button {
 
 .search-panel {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
   align-items: end;
   gap: 16px;
   background: #ffffff;
@@ -110,7 +111,8 @@ button {
   font-size: 0.92rem;
 }
 
-.field input {
+.field input,
+.field select {
   width: 100%;
   border: 1px solid #cfd6e4;
   border-radius: 12px;
@@ -120,7 +122,8 @@ button {
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.field input:focus {
+.field input:focus,
+.field select:focus {
   border-color: #3659d9;
   box-shadow: 0 0 0 4px rgba(54, 89, 217, 0.1);
   background: #fff;
@@ -386,6 +389,54 @@ button {
 }
 
 
+
+
+
+/* Multi-tag filter */
+.tag-filter-field {
+  min-width: 0;
+}
+
+.field select {
+  cursor: pointer;
+  color: #344054;
+}
+
+.field select:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.selected-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.selected-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  border: 1px solid #abefc6;
+  border-radius: 999px;
+  padding: 5px 9px;
+  background: #ecfdf3;
+  color: #027a48;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.selected-tag:hover {
+  background: #d1fadf;
+}
+
+.selected-tag span {
+  font-size: 1rem;
+  line-height: 0.8;
+  font-weight: 800;
+}
 
 /* Category shown on each intention card */
 .category-pill {
