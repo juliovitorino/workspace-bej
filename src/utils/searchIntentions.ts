@@ -22,11 +22,11 @@ export function searchIntentions(
   intentions: MentalIntention[],
   mentalSearch: string,
   englishSearch: string,
-  tagSearch: string
+  categorySearch: string
 ): MentalIntention[] {
   const normalizedMental = normalizeText(mentalSearch);
   const normalizedEnglish = normalizeText(englishSearch);
-  const normalizedTag = normalizeText(tagSearch);
+  const normalizedCategory = normalizeText(categorySearch);
 
   return intentions
     .filter((item) => {
@@ -45,13 +45,11 @@ export function searchIntentions(
           normalizeText(term).includes(normalizedEnglish)
         );
 
-      const tagMatches =
-        !normalizedTag ||
-        (item.tags ?? []).some((tag) =>
-          normalizeText(tag).includes(normalizedTag)
-        );
+      const categoryMatches =
+        !normalizedCategory ||
+        normalizeText(item.category ?? "").includes(normalizedCategory);
 
-      return mentalMatches && englishMatches && tagMatches;
+      return mentalMatches && englishMatches && categoryMatches;
     })
     .sort((a, b) =>
       normalizeText(a.intention).localeCompare(normalizeText(b.intention))
