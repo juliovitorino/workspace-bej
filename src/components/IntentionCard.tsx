@@ -19,7 +19,20 @@ export function IntentionCard({ item, onSelect }: IntentionCardProps) {
 
       <div className="card-meta">
         {item.pattern && <span>{item.pattern}</span>}
-        {item.category && <span className="pill">{item.category}</span>}
+
+        {item.category && (
+          <span className="pill category-pill">{item.category}</span>
+        )}
+
+        {item.tags && item.tags.length > 0 && (
+          <div className="card-tags">
+            {item.tags.map((tag) => (
+              <span className="tag-pill" key={tag}>
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </button>
   );
