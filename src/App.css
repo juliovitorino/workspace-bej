@@ -89,7 +89,7 @@ button {
 
 .search-panel {
   display: grid;
-  grid-template-columns: 1fr 1fr auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
   align-items: end;
   gap: 16px;
   background: #ffffff;

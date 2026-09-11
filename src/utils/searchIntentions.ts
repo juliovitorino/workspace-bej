@@ -21,10 +21,12 @@ function matchesAnySearchableField(item: MentalIntention, query: string): boolea
 export function searchIntentions(
   intentions: MentalIntention[],
   mentalSearch: string,
-  englishSearch: string
+  englishSearch: string,
+  tagSearch: string
 ): MentalIntention[] {
   const normalizedMental = normalizeText(mentalSearch);
   const normalizedEnglish = normalizeText(englishSearch);
+  const normalizedTag = normalizeText(tagSearch);
 
   return intentions
     .filter((item) => {
@@ -43,7 +45,13 @@ export function searchIntentions(
           normalizeText(term).includes(normalizedEnglish)
         );
 
-      return mentalMatches && englishMatches;
+      const tagMatches =
+        !normalizedTag ||
+        (item.tags ?? []).some((tag) =>
+          normalizeText(tag).includes(normalizedTag)
+        );
+
+      return mentalMatches && englishMatches && tagMatches;
     })
     .sort((a, b) =>
       normalizeText(a.intention).localeCompare(normalizeText(b.intention))
