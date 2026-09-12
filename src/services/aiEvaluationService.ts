@@ -202,11 +202,12 @@ export async function evaluateTrainingWithAI(
   }
 
   const response = await fetch(
-    `${GEMINI_ENDPOINT}?key=${encodeURIComponent(GEMINI_API_KEY)}`,
+    GEMINI_ENDPOINT,
     {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "x-goog-api-key": GEMINI_API_KEY
       },
       body: JSON.stringify({
         contents: [
