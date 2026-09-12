@@ -1,0 +1,2463 @@
+{
+  "metadata": {
+    "name": "English Adjectives - Common Use",
+    "version": "1.0.0",
+    "updatedAt": "2026-09-12",
+    "language": "en",
+    "description": "Curated set of commonly used English adjectives for study and exercise generation.",
+    "totalAdjectives": 117
+  },
+  "adjectives": [
+    {
+      "id": "good",
+      "adjective": "good",
+      "meanings": [
+        "bom",
+        "boa"
+      ],
+      "comparative": "better",
+      "superlative": "best",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This is a good idea.",
+          "pt": "Esta é uma boa ideia."
+        }
+      ],
+      "tags": [
+        "general",
+        "opinion"
+      ]
+    },
+    {
+      "id": "bad",
+      "adjective": "bad",
+      "meanings": [
+        "ruim",
+        "mau",
+        "má"
+      ],
+      "comparative": "worse",
+      "superlative": "worst",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The weather is bad today.",
+          "pt": "O tempo está ruim hoje."
+        }
+      ],
+      "tags": [
+        "general",
+        "opinion"
+      ]
+    },
+    {
+      "id": "big",
+      "adjective": "big",
+      "meanings": [
+        "grande"
+      ],
+      "comparative": "bigger",
+      "superlative": "biggest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "They live in a big house.",
+          "pt": "Eles moram em uma casa grande."
+        }
+      ],
+      "tags": [
+        "size"
+      ]
+    },
+    {
+      "id": "small",
+      "adjective": "small",
+      "meanings": [
+        "pequeno",
+        "pequena"
+      ],
+      "comparative": "smaller",
+      "superlative": "smallest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I have a small car.",
+          "pt": "Eu tenho um carro pequeno."
+        }
+      ],
+      "tags": [
+        "size"
+      ]
+    },
+    {
+      "id": "new",
+      "adjective": "new",
+      "meanings": [
+        "novo",
+        "nova"
+      ],
+      "comparative": "newer",
+      "superlative": "newest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I started a new job.",
+          "pt": "Eu comecei um novo emprego."
+        }
+      ],
+      "tags": [
+        "time",
+        "general"
+      ]
+    },
+    {
+      "id": "old",
+      "adjective": "old",
+      "meanings": [
+        "velho",
+        "antigo"
+      ],
+      "comparative": "older",
+      "superlative": "oldest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This is an old building.",
+          "pt": "Este é um prédio antigo."
+        }
+      ],
+      "tags": [
+        "time",
+        "general"
+      ]
+    },
+    {
+      "id": "young",
+      "adjective": "young",
+      "meanings": [
+        "jovem"
+      ],
+      "comparative": "younger",
+      "superlative": "youngest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "She is very young.",
+          "pt": "Ela é muito jovem."
+        }
+      ],
+      "tags": [
+        "people",
+        "age"
+      ]
+    },
+    {
+      "id": "long",
+      "adjective": "long",
+      "meanings": [
+        "longo",
+        "comprido"
+      ],
+      "comparative": "longer",
+      "superlative": "longest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "It was a long meeting.",
+          "pt": "Foi uma reunião longa."
+        }
+      ],
+      "tags": [
+        "size",
+        "time"
+      ]
+    },
+    {
+      "id": "short",
+      "adjective": "short",
+      "meanings": [
+        "curto",
+        "baixo"
+      ],
+      "comparative": "shorter",
+      "superlative": "shortest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The lesson was short.",
+          "pt": "A aula foi curta."
+        }
+      ],
+      "tags": [
+        "size",
+        "time"
+      ]
+    },
+    {
+      "id": "high",
+      "adjective": "high",
+      "meanings": [
+        "alto"
+      ],
+      "comparative": "higher",
+      "superlative": "highest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The price is too high.",
+          "pt": "O preço está muito alto."
+        }
+      ],
+      "tags": [
+        "size",
+        "measurement"
+      ]
+    },
+    {
+      "id": "low",
+      "adjective": "low",
+      "meanings": [
+        "baixo"
+      ],
+      "comparative": "lower",
+      "superlative": "lowest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The battery is low.",
+          "pt": "A bateria está baixa."
+        }
+      ],
+      "tags": [
+        "size",
+        "measurement"
+      ]
+    },
+    {
+      "id": "easy",
+      "adjective": "easy",
+      "meanings": [
+        "fácil"
+      ],
+      "comparative": "easier",
+      "superlative": "easiest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This exercise is easy.",
+          "pt": "Este exercício é fácil."
+        }
+      ],
+      "tags": [
+        "difficulty",
+        "learning"
+      ]
+    },
+    {
+      "id": "difficult",
+      "adjective": "difficult",
+      "meanings": [
+        "difícil"
+      ],
+      "comparative": "more difficult",
+      "superlative": "most difficult",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This question is difficult.",
+          "pt": "Esta pergunta é difícil."
+        }
+      ],
+      "tags": [
+        "difficulty",
+        "learning"
+      ]
+    },
+    {
+      "id": "hard",
+      "adjective": "hard",
+      "meanings": [
+        "difícil",
+        "duro"
+      ],
+      "comparative": "harder",
+      "superlative": "hardest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This task is hard.",
+          "pt": "Esta tarefa é difícil."
+        }
+      ],
+      "tags": [
+        "difficulty",
+        "general"
+      ]
+    },
+    {
+      "id": "simple",
+      "adjective": "simple",
+      "meanings": [
+        "simples"
+      ],
+      "comparative": "simpler",
+      "superlative": "simplest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We found a simple solution.",
+          "pt": "Nós encontramos uma solução simples."
+        }
+      ],
+      "tags": [
+        "difficulty",
+        "general"
+      ]
+    },
+    {
+      "id": "important",
+      "adjective": "important",
+      "meanings": [
+        "importante"
+      ],
+      "comparative": "more important",
+      "superlative": "most important",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Health is important.",
+          "pt": "Saúde é importante."
+        }
+      ],
+      "tags": [
+        "priority",
+        "general"
+      ]
+    },
+    {
+      "id": "possible",
+      "adjective": "possible",
+      "meanings": [
+        "possível"
+      ],
+      "comparative": "more possible",
+      "superlative": "most possible",
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Is it possible to change the date?",
+          "pt": "É possível mudar a data?"
+        }
+      ],
+      "tags": [
+        "possibility"
+      ]
+    },
+    {
+      "id": "impossible",
+      "adjective": "impossible",
+      "meanings": [
+        "impossível"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "That is impossible right now.",
+          "pt": "Isso é impossível agora."
+        }
+      ],
+      "tags": [
+        "possibility"
+      ]
+    },
+    {
+      "id": "different",
+      "adjective": "different",
+      "meanings": [
+        "diferente"
+      ],
+      "comparative": "more different",
+      "superlative": "most different",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This version is different.",
+          "pt": "Esta versão é diferente."
+        }
+      ],
+      "tags": [
+        "comparison",
+        "general"
+      ]
+    },
+    {
+      "id": "same",
+      "adjective": "same",
+      "meanings": [
+        "mesmo",
+        "igual"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We have the same problem.",
+          "pt": "Nós temos o mesmo problema."
+        }
+      ],
+      "tags": [
+        "comparison",
+        "general"
+      ]
+    },
+    {
+      "id": "right",
+      "adjective": "right",
+      "meanings": [
+        "certo",
+        "correto",
+        "direito"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "You are right.",
+          "pt": "Você está certo."
+        }
+      ],
+      "tags": [
+        "opinion",
+        "direction"
+      ]
+    },
+    {
+      "id": "wrong",
+      "adjective": "wrong",
+      "meanings": [
+        "errado"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The answer is wrong.",
+          "pt": "A resposta está errada."
+        }
+      ],
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "true",
+      "adjective": "true",
+      "meanings": [
+        "verdadeiro"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "That is true.",
+          "pt": "Isso é verdade."
+        }
+      ],
+      "tags": [
+        "truth",
+        "general"
+      ]
+    },
+    {
+      "id": "false",
+      "adjective": "false",
+      "meanings": [
+        "falso"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The statement is false.",
+          "pt": "A afirmação é falsa."
+        }
+      ],
+      "tags": [
+        "truth",
+        "general"
+      ]
+    },
+    {
+      "id": "ready",
+      "adjective": "ready",
+      "meanings": [
+        "pronto",
+        "preparado"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I'm ready to start.",
+          "pt": "Estou pronto para começar."
+        }
+      ],
+      "tags": [
+        "state"
+      ]
+    },
+    {
+      "id": "sure",
+      "adjective": "sure",
+      "meanings": [
+        "certo",
+        "seguro"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Are you sure about that?",
+          "pt": "Você tem certeza disso?"
+        }
+      ],
+      "tags": [
+        "certainty"
+      ]
+    },
+    {
+      "id": "clear",
+      "adjective": "clear",
+      "meanings": [
+        "claro"
+      ],
+      "comparative": "clearer",
+      "superlative": "clearest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Your explanation was clear.",
+          "pt": "Sua explicação foi clara."
+        }
+      ],
+      "tags": [
+        "communication",
+        "understanding"
+      ]
+    },
+    {
+      "id": "unclear",
+      "adjective": "unclear",
+      "meanings": [
+        "pouco claro",
+        "confuso"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "The instructions are unclear.",
+          "pt": "As instruções não estão claras."
+        }
+      ],
+      "tags": [
+        "communication",
+        "understanding"
+      ]
+    },
+    {
+      "id": "available",
+      "adjective": "available",
+      "meanings": [
+        "disponível"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The room is available tomorrow.",
+          "pt": "O quarto está disponível amanhã."
+        }
+      ],
+      "tags": [
+        "availability"
+      ]
+    },
+    {
+      "id": "busy",
+      "adjective": "busy",
+      "meanings": [
+        "ocupado"
+      ],
+      "comparative": "busier",
+      "superlative": "busiest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I'm busy this afternoon.",
+          "pt": "Estou ocupado esta tarde."
+        }
+      ],
+      "tags": [
+        "work",
+        "time"
+      ]
+    },
+    {
+      "id": "free",
+      "adjective": "free",
+      "meanings": [
+        "livre",
+        "grátis"
+      ],
+      "comparative": "freer",
+      "superlative": "freest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Are you free tonight?",
+          "pt": "Você está livre hoje à noite?"
+        }
+      ],
+      "tags": [
+        "time",
+        "price"
+      ]
+    },
+    {
+      "id": "full",
+      "adjective": "full",
+      "meanings": [
+        "cheio"
+      ],
+      "comparative": "fuller",
+      "superlative": "fullest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The restaurant is full.",
+          "pt": "O restaurante está cheio."
+        }
+      ],
+      "tags": [
+        "quantity",
+        "state"
+      ]
+    },
+    {
+      "id": "empty",
+      "adjective": "empty",
+      "meanings": [
+        "vazio"
+      ],
+      "comparative": "emptier",
+      "superlative": "emptiest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The bottle is empty.",
+          "pt": "A garrafa está vazia."
+        }
+      ],
+      "tags": [
+        "quantity",
+        "state"
+      ]
+    },
+    {
+      "id": "open",
+      "adjective": "open",
+      "meanings": [
+        "aberto"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The store is open.",
+          "pt": "A loja está aberta."
+        }
+      ],
+      "tags": [
+        "state",
+        "places"
+      ]
+    },
+    {
+      "id": "closed",
+      "adjective": "closed",
+      "meanings": [
+        "fechado"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The bank is closed.",
+          "pt": "O banco está fechado."
+        }
+      ],
+      "tags": [
+        "state",
+        "places"
+      ]
+    },
+    {
+      "id": "fast",
+      "adjective": "fast",
+      "meanings": [
+        "rápido"
+      ],
+      "comparative": "faster",
+      "superlative": "fastest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This computer is fast.",
+          "pt": "Este computador é rápido."
+        }
+      ],
+      "tags": [
+        "speed"
+      ]
+    },
+    {
+      "id": "slow",
+      "adjective": "slow",
+      "meanings": [
+        "lento"
+      ],
+      "comparative": "slower",
+      "superlative": "slowest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The internet is slow.",
+          "pt": "A internet está lenta."
+        }
+      ],
+      "tags": [
+        "speed"
+      ]
+    },
+    {
+      "id": "early",
+      "adjective": "early",
+      "meanings": [
+        "cedo",
+        "adiantado"
+      ],
+      "comparative": "earlier",
+      "superlative": "earliest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I arrived early.",
+          "pt": "Eu cheguei cedo."
+        }
+      ],
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "late",
+      "adjective": "late",
+      "meanings": [
+        "atrasado",
+        "tarde"
+      ],
+      "comparative": "later",
+      "superlative": "latest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The bus is late.",
+          "pt": "O ônibus está atrasado."
+        }
+      ],
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "hot",
+      "adjective": "hot",
+      "meanings": [
+        "quente"
+      ],
+      "comparative": "hotter",
+      "superlative": "hottest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "It is very hot today.",
+          "pt": "Está muito quente hoje."
+        }
+      ],
+      "tags": [
+        "weather",
+        "temperature"
+      ]
+    },
+    {
+      "id": "cold",
+      "adjective": "cold",
+      "meanings": [
+        "frio"
+      ],
+      "comparative": "colder",
+      "superlative": "coldest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The water is cold.",
+          "pt": "A água está fria."
+        }
+      ],
+      "tags": [
+        "weather",
+        "temperature"
+      ]
+    },
+    {
+      "id": "warm",
+      "adjective": "warm",
+      "meanings": [
+        "morno",
+        "quente"
+      ],
+      "comparative": "warmer",
+      "superlative": "warmest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The weather is warm.",
+          "pt": "O tempo está quente."
+        }
+      ],
+      "tags": [
+        "weather",
+        "temperature"
+      ]
+    },
+    {
+      "id": "cool",
+      "adjective": "cool",
+      "meanings": [
+        "fresco",
+        "legal"
+      ],
+      "comparative": "cooler",
+      "superlative": "coolest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The evening is cool.",
+          "pt": "A noite está fresca."
+        }
+      ],
+      "tags": [
+        "weather",
+        "opinion"
+      ]
+    },
+    {
+      "id": "happy",
+      "adjective": "happy",
+      "meanings": [
+        "feliz"
+      ],
+      "comparative": "happier",
+      "superlative": "happiest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I'm happy with the result.",
+          "pt": "Estou feliz com o resultado."
+        }
+      ],
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "sad",
+      "adjective": "sad",
+      "meanings": [
+        "triste"
+      ],
+      "comparative": "sadder",
+      "superlative": "saddest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "She felt sad yesterday.",
+          "pt": "Ela se sentiu triste ontem."
+        }
+      ],
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "angry",
+      "adjective": "angry",
+      "meanings": [
+        "bravo",
+        "com raiva"
+      ],
+      "comparative": "angrier",
+      "superlative": "angriest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "He is angry about the problem.",
+          "pt": "Ele está com raiva do problema."
+        }
+      ],
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "tired",
+      "adjective": "tired",
+      "meanings": [
+        "cansado"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I'm tired after work.",
+          "pt": "Estou cansado depois do trabalho."
+        }
+      ],
+      "tags": [
+        "emotion",
+        "health"
+      ]
+    },
+    {
+      "id": "excited",
+      "adjective": "excited",
+      "meanings": [
+        "animado",
+        "empolgado"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I'm excited about the trip.",
+          "pt": "Estou animado com a viagem."
+        }
+      ],
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "worried",
+      "adjective": "worried",
+      "meanings": [
+        "preocupado"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I'm worried about the test.",
+          "pt": "Estou preocupado com a prova."
+        }
+      ],
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "afraid",
+      "adjective": "afraid",
+      "meanings": [
+        "com medo"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "She is afraid of dogs.",
+          "pt": "Ela tem medo de cachorros."
+        }
+      ],
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "calm",
+      "adjective": "calm",
+      "meanings": [
+        "calmo"
+      ],
+      "comparative": "calmer",
+      "superlative": "calmest",
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Try to stay calm.",
+          "pt": "Tente ficar calmo."
+        }
+      ],
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "nervous",
+      "adjective": "nervous",
+      "meanings": [
+        "nervoso"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I was nervous before the interview.",
+          "pt": "Eu estava nervoso antes da entrevista."
+        }
+      ],
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "comfortable",
+      "adjective": "comfortable",
+      "meanings": [
+        "confortável"
+      ],
+      "comparative": "more comfortable",
+      "superlative": "most comfortable",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This chair is comfortable.",
+          "pt": "Esta cadeira é confortável."
+        }
+      ],
+      "tags": [
+        "state",
+        "comfort"
+      ]
+    },
+    {
+      "id": "uncomfortable",
+      "adjective": "uncomfortable",
+      "meanings": [
+        "desconfortável"
+      ],
+      "comparative": "more uncomfortable",
+      "superlative": "most uncomfortable",
+      "level": "A2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "The seat is uncomfortable.",
+          "pt": "O assento é desconfortável."
+        }
+      ],
+      "tags": [
+        "state",
+        "comfort"
+      ]
+    },
+    {
+      "id": "safe",
+      "adjective": "safe",
+      "meanings": [
+        "seguro"
+      ],
+      "comparative": "safer",
+      "superlative": "safest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This neighborhood is safe.",
+          "pt": "Este bairro é seguro."
+        }
+      ],
+      "tags": [
+        "safety"
+      ]
+    },
+    {
+      "id": "dangerous",
+      "adjective": "dangerous",
+      "meanings": [
+        "perigoso"
+      ],
+      "comparative": "more dangerous",
+      "superlative": "most dangerous",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "That road is dangerous at night.",
+          "pt": "Aquela estrada é perigosa à noite."
+        }
+      ],
+      "tags": [
+        "safety"
+      ]
+    },
+    {
+      "id": "healthy",
+      "adjective": "healthy",
+      "meanings": [
+        "saudável"
+      ],
+      "comparative": "healthier",
+      "superlative": "healthiest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Walking is a healthy habit.",
+          "pt": "Caminhar é um hábito saudável."
+        }
+      ],
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "id": "sick",
+      "adjective": "sick",
+      "meanings": [
+        "doente"
+      ],
+      "comparative": "sicker",
+      "superlative": "sickest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "He is sick today.",
+          "pt": "Ele está doente hoje."
+        }
+      ],
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "id": "strong",
+      "adjective": "strong",
+      "meanings": [
+        "forte"
+      ],
+      "comparative": "stronger",
+      "superlative": "strongest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "She is very strong.",
+          "pt": "Ela é muito forte."
+        }
+      ],
+      "tags": [
+        "strength",
+        "health"
+      ]
+    },
+    {
+      "id": "weak",
+      "adjective": "weak",
+      "meanings": [
+        "fraco"
+      ],
+      "comparative": "weaker",
+      "superlative": "weakest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The signal is weak.",
+          "pt": "O sinal está fraco."
+        }
+      ],
+      "tags": [
+        "strength",
+        "health"
+      ]
+    },
+    {
+      "id": "clean",
+      "adjective": "clean",
+      "meanings": [
+        "limpo"
+      ],
+      "comparative": "cleaner",
+      "superlative": "cleanest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The kitchen is clean.",
+          "pt": "A cozinha está limpa."
+        }
+      ],
+      "tags": [
+        "state",
+        "housing"
+      ]
+    },
+    {
+      "id": "dirty",
+      "adjective": "dirty",
+      "meanings": [
+        "sujo"
+      ],
+      "comparative": "dirtier",
+      "superlative": "dirtiest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "My shoes are dirty.",
+          "pt": "Meus sapatos estão sujos."
+        }
+      ],
+      "tags": [
+        "state",
+        "housing"
+      ]
+    },
+    {
+      "id": "beautiful",
+      "adjective": "beautiful",
+      "meanings": [
+        "bonito",
+        "lindo"
+      ],
+      "comparative": "more beautiful",
+      "superlative": "most beautiful",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The beach is beautiful.",
+          "pt": "A praia é linda."
+        }
+      ],
+      "tags": [
+        "appearance",
+        "opinion"
+      ]
+    },
+    {
+      "id": "ugly",
+      "adjective": "ugly",
+      "meanings": [
+        "feio"
+      ],
+      "comparative": "uglier",
+      "superlative": "ugliest",
+      "level": "A1",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "The building is ugly.",
+          "pt": "O prédio é feio."
+        }
+      ],
+      "tags": [
+        "appearance",
+        "opinion"
+      ]
+    },
+    {
+      "id": "nice",
+      "adjective": "nice",
+      "meanings": [
+        "legal",
+        "agradável",
+        "bonito"
+      ],
+      "comparative": "nicer",
+      "superlative": "nicest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "She is a nice person.",
+          "pt": "Ela é uma pessoa legal."
+        }
+      ],
+      "tags": [
+        "opinion",
+        "social"
+      ]
+    },
+    {
+      "id": "kind",
+      "adjective": "kind",
+      "meanings": [
+        "gentil",
+        "bondoso"
+      ],
+      "comparative": "kinder",
+      "superlative": "kindest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "He is very kind.",
+          "pt": "Ele é muito gentil."
+        }
+      ],
+      "tags": [
+        "personality",
+        "social"
+      ]
+    },
+    {
+      "id": "friendly",
+      "adjective": "friendly",
+      "meanings": [
+        "amigável",
+        "simpático"
+      ],
+      "comparative": "friendlier",
+      "superlative": "friendliest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The staff is friendly.",
+          "pt": "A equipe é simpática."
+        }
+      ],
+      "tags": [
+        "personality",
+        "social"
+      ]
+    },
+    {
+      "id": "rude",
+      "adjective": "rude",
+      "meanings": [
+        "grosseiro"
+      ],
+      "comparative": "ruder",
+      "superlative": "rudest",
+      "level": "A2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "That comment was rude.",
+          "pt": "Aquele comentário foi grosseiro."
+        }
+      ],
+      "tags": [
+        "personality",
+        "social"
+      ]
+    },
+    {
+      "id": "polite",
+      "adjective": "polite",
+      "meanings": [
+        "educado"
+      ],
+      "comparative": "more polite",
+      "superlative": "most polite",
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "He is always polite.",
+          "pt": "Ele é sempre educado."
+        }
+      ],
+      "tags": [
+        "personality",
+        "social"
+      ]
+    },
+    {
+      "id": "honest",
+      "adjective": "honest",
+      "meanings": [
+        "honesto"
+      ],
+      "comparative": "more honest",
+      "superlative": "most honest",
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I appreciate honest feedback.",
+          "pt": "Eu valorizo feedback honesto."
+        }
+      ],
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "smart",
+      "adjective": "smart",
+      "meanings": [
+        "inteligente",
+        "esperto"
+      ],
+      "comparative": "smarter",
+      "superlative": "smartest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "She is a smart student.",
+          "pt": "Ela é uma aluna inteligente."
+        }
+      ],
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "careful",
+      "adjective": "careful",
+      "meanings": [
+        "cuidadoso"
+      ],
+      "comparative": "more careful",
+      "superlative": "most careful",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Be careful with that glass.",
+          "pt": "Tenha cuidado com esse copo."
+        }
+      ],
+      "tags": [
+        "personality",
+        "safety"
+      ]
+    },
+    {
+      "id": "careless",
+      "adjective": "careless",
+      "meanings": [
+        "descuidado"
+      ],
+      "comparative": "more careless",
+      "superlative": "most careless",
+      "level": "A2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "That was a careless mistake.",
+          "pt": "Foi um erro por descuido."
+        }
+      ],
+      "tags": [
+        "personality",
+        "safety"
+      ]
+    },
+    {
+      "id": "quiet",
+      "adjective": "quiet",
+      "meanings": [
+        "quieto",
+        "silencioso"
+      ],
+      "comparative": "quieter",
+      "superlative": "quietest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This neighborhood is quiet.",
+          "pt": "Este bairro é tranquilo."
+        }
+      ],
+      "tags": [
+        "sound",
+        "personality"
+      ]
+    },
+    {
+      "id": "loud",
+      "adjective": "loud",
+      "meanings": [
+        "barulhento",
+        "alto"
+      ],
+      "comparative": "louder",
+      "superlative": "loudest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The music is too loud.",
+          "pt": "A música está muito alta."
+        }
+      ],
+      "tags": [
+        "sound"
+      ]
+    },
+    {
+      "id": "interesting",
+      "adjective": "interesting",
+      "meanings": [
+        "interessante"
+      ],
+      "comparative": "more interesting",
+      "superlative": "most interesting",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The book is interesting.",
+          "pt": "O livro é interessante."
+        }
+      ],
+      "tags": [
+        "opinion",
+        "learning"
+      ]
+    },
+    {
+      "id": "boring",
+      "adjective": "boring",
+      "meanings": [
+        "chato",
+        "entediante"
+      ],
+      "comparative": "more boring",
+      "superlative": "most boring",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The movie was boring.",
+          "pt": "O filme foi chato."
+        }
+      ],
+      "tags": [
+        "opinion",
+        "emotion"
+      ]
+    },
+    {
+      "id": "useful",
+      "adjective": "useful",
+      "meanings": [
+        "útil"
+      ],
+      "comparative": "more useful",
+      "superlative": "most useful",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This app is very useful.",
+          "pt": "Este aplicativo é muito útil."
+        }
+      ],
+      "tags": [
+        "utility",
+        "learning"
+      ]
+    },
+    {
+      "id": "useless",
+      "adjective": "useless",
+      "meanings": [
+        "inútil"
+      ],
+      "comparative": "more useless",
+      "superlative": "most useless",
+      "level": "A2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "That information is useless now.",
+          "pt": "Essa informação é inútil agora."
+        }
+      ],
+      "tags": [
+        "utility"
+      ]
+    },
+    {
+      "id": "expensive",
+      "adjective": "expensive",
+      "meanings": [
+        "caro"
+      ],
+      "comparative": "more expensive",
+      "superlative": "most expensive",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This phone is expensive.",
+          "pt": "Este celular é caro."
+        }
+      ],
+      "tags": [
+        "money",
+        "shopping"
+      ]
+    },
+    {
+      "id": "cheap",
+      "adjective": "cheap",
+      "meanings": [
+        "barato"
+      ],
+      "comparative": "cheaper",
+      "superlative": "cheapest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This restaurant is cheap.",
+          "pt": "Este restaurante é barato."
+        }
+      ],
+      "tags": [
+        "money",
+        "shopping"
+      ]
+    },
+    {
+      "id": "rich",
+      "adjective": "rich",
+      "meanings": [
+        "rico"
+      ],
+      "comparative": "richer",
+      "superlative": "richest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "He comes from a rich family.",
+          "pt": "Ele vem de uma família rica."
+        }
+      ],
+      "tags": [
+        "money",
+        "people"
+      ]
+    },
+    {
+      "id": "poor",
+      "adjective": "poor",
+      "meanings": [
+        "pobre",
+        "ruim"
+      ],
+      "comparative": "poorer",
+      "superlative": "poorest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The service was poor.",
+          "pt": "O serviço foi ruim."
+        }
+      ],
+      "tags": [
+        "money",
+        "quality"
+      ]
+    },
+    {
+      "id": "modern",
+      "adjective": "modern",
+      "meanings": [
+        "moderno"
+      ],
+      "comparative": "more modern",
+      "superlative": "most modern",
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The office is modern.",
+          "pt": "O escritório é moderno."
+        }
+      ],
+      "tags": [
+        "technology",
+        "style"
+      ]
+    },
+    {
+      "id": "traditional",
+      "adjective": "traditional",
+      "meanings": [
+        "tradicional"
+      ],
+      "comparative": "more traditional",
+      "superlative": "most traditional",
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This is a traditional dish.",
+          "pt": "Este é um prato tradicional."
+        }
+      ],
+      "tags": [
+        "culture",
+        "style"
+      ]
+    },
+    {
+      "id": "popular",
+      "adjective": "popular",
+      "meanings": [
+        "popular"
+      ],
+      "comparative": "more popular",
+      "superlative": "most popular",
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This app is very popular.",
+          "pt": "Este aplicativo é muito popular."
+        }
+      ],
+      "tags": [
+        "society",
+        "opinion"
+      ]
+    },
+    {
+      "id": "famous",
+      "adjective": "famous",
+      "meanings": [
+        "famoso"
+      ],
+      "comparative": "more famous",
+      "superlative": "most famous",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Rio is famous for its beaches.",
+          "pt": "O Rio é famoso por suas praias."
+        }
+      ],
+      "tags": [
+        "society",
+        "places"
+      ]
+    },
+    {
+      "id": "common",
+      "adjective": "common",
+      "meanings": [
+        "comum"
+      ],
+      "comparative": "more common",
+      "superlative": "most common",
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This is a common mistake.",
+          "pt": "Este é um erro comum."
+        }
+      ],
+      "tags": [
+        "general"
+      ]
+    },
+    {
+      "id": "rare",
+      "adjective": "rare",
+      "meanings": [
+        "raro"
+      ],
+      "comparative": "rarer",
+      "superlative": "rarest",
+      "level": "A2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "That situation is rare.",
+          "pt": "Essa situação é rara."
+        }
+      ],
+      "tags": [
+        "general"
+      ]
+    },
+    {
+      "id": "special",
+      "adjective": "special",
+      "meanings": [
+        "especial"
+      ],
+      "comparative": "more special",
+      "superlative": "most special",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Today is a special day.",
+          "pt": "Hoje é um dia especial."
+        }
+      ],
+      "tags": [
+        "general",
+        "emotion"
+      ]
+    },
+    {
+      "id": "normal",
+      "adjective": "normal",
+      "meanings": [
+        "normal"
+      ],
+      "comparative": "more normal",
+      "superlative": "most normal",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "That reaction is normal.",
+          "pt": "Essa reação é normal."
+        }
+      ],
+      "tags": [
+        "general"
+      ]
+    },
+    {
+      "id": "strange",
+      "adjective": "strange",
+      "meanings": [
+        "estranho"
+      ],
+      "comparative": "stranger",
+      "superlative": "strangest",
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "That sounds strange.",
+          "pt": "Isso parece estranho."
+        }
+      ],
+      "tags": [
+        "general",
+        "opinion"
+      ]
+    },
+    {
+      "id": "serious",
+      "adjective": "serious",
+      "meanings": [
+        "sério"
+      ],
+      "comparative": "more serious",
+      "superlative": "most serious",
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This is a serious problem.",
+          "pt": "Este é um problema sério."
+        }
+      ],
+      "tags": [
+        "general",
+        "work"
+      ]
+    },
+    {
+      "id": "funny",
+      "adjective": "funny",
+      "meanings": [
+        "engraçado"
+      ],
+      "comparative": "funnier",
+      "superlative": "funniest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "That story is funny.",
+          "pt": "Essa história é engraçada."
+        }
+      ],
+      "tags": [
+        "emotion",
+        "social"
+      ]
+    },
+    {
+      "id": "great",
+      "adjective": "great",
+      "meanings": [
+        "ótimo",
+        "excelente"
+      ],
+      "comparative": "greater",
+      "superlative": "greatest",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "You did a great job.",
+          "pt": "Você fez um ótimo trabalho."
+        }
+      ],
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "excellent",
+      "adjective": "excellent",
+      "meanings": [
+        "excelente"
+      ],
+      "comparative": "more excellent",
+      "superlative": "most excellent",
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The service was excellent.",
+          "pt": "O serviço foi excelente."
+        }
+      ],
+      "tags": [
+        "opinion",
+        "quality"
+      ]
+    },
+    {
+      "id": "perfect",
+      "adjective": "perfect",
+      "meanings": [
+        "perfeito"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The timing was perfect.",
+          "pt": "O momento foi perfeito."
+        }
+      ],
+      "tags": [
+        "opinion",
+        "quality"
+      ]
+    },
+    {
+      "id": "better",
+      "adjective": "better",
+      "meanings": [
+        "melhor"
+      ],
+      "comparative": "better",
+      "superlative": "best",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This option is better.",
+          "pt": "Esta opção é melhor."
+        }
+      ],
+      "tags": [
+        "comparison",
+        "opinion"
+      ]
+    },
+    {
+      "id": "worse",
+      "adjective": "worse",
+      "meanings": [
+        "pior"
+      ],
+      "comparative": "worse",
+      "superlative": "worst",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The traffic is worse today.",
+          "pt": "O trânsito está pior hoje."
+        }
+      ],
+      "tags": [
+        "comparison",
+        "opinion"
+      ]
+    },
+    {
+      "id": "best",
+      "adjective": "best",
+      "meanings": [
+        "melhor"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This is the best choice.",
+          "pt": "Esta é a melhor escolha."
+        }
+      ],
+      "tags": [
+        "comparison",
+        "opinion"
+      ]
+    },
+    {
+      "id": "worst",
+      "adjective": "worst",
+      "meanings": [
+        "pior"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "That was the worst day of the week.",
+          "pt": "Aquele foi o pior dia da semana."
+        }
+      ],
+      "tags": [
+        "comparison",
+        "opinion"
+      ]
+    },
+    {
+      "id": "local",
+      "adjective": "local",
+      "meanings": [
+        "local"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We visited a local market.",
+          "pt": "Nós visitamos um mercado local."
+        }
+      ],
+      "tags": [
+        "places",
+        "community"
+      ]
+    },
+    {
+      "id": "global",
+      "adjective": "global",
+      "meanings": [
+        "global"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This is a global company.",
+          "pt": "Esta é uma empresa global."
+        }
+      ],
+      "tags": [
+        "business",
+        "world"
+      ]
+    },
+    {
+      "id": "public",
+      "adjective": "public",
+      "meanings": [
+        "público"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The park is open to the public.",
+          "pt": "O parque é aberto ao público."
+        }
+      ],
+      "tags": [
+        "society",
+        "places"
+      ]
+    },
+    {
+      "id": "private",
+      "adjective": "private",
+      "meanings": [
+        "privado",
+        "particular"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This is a private conversation.",
+          "pt": "Esta é uma conversa privada."
+        }
+      ],
+      "tags": [
+        "society",
+        "work"
+      ]
+    },
+    {
+      "id": "personal",
+      "adjective": "personal",
+      "meanings": [
+        "pessoal"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "That's a personal decision.",
+          "pt": "Essa é uma decisão pessoal."
+        }
+      ],
+      "tags": [
+        "people",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "professional",
+      "adjective": "professional",
+      "meanings": [
+        "profissional"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "She is very professional.",
+          "pt": "Ela é muito profissional."
+        }
+      ],
+      "tags": [
+        "work"
+      ]
+    },
+    {
+      "id": "technical",
+      "adjective": "technical",
+      "meanings": [
+        "técnico"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We had a technical problem.",
+          "pt": "Nós tivemos um problema técnico."
+        }
+      ],
+      "tags": [
+        "technology",
+        "work"
+      ]
+    },
+    {
+      "id": "digital",
+      "adjective": "digital",
+      "meanings": [
+        "digital"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We use digital tools every day.",
+          "pt": "Nós usamos ferramentas digitais todos os dias."
+        }
+      ],
+      "tags": [
+        "technology"
+      ]
+    },
+    {
+      "id": "online",
+      "adjective": "online",
+      "meanings": [
+        "online"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The course is online.",
+          "pt": "O curso é online."
+        }
+      ],
+      "tags": [
+        "technology"
+      ]
+    },
+    {
+      "id": "offline",
+      "adjective": "offline",
+      "meanings": [
+        "offline"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The app works offline.",
+          "pt": "O aplicativo funciona offline."
+        }
+      ],
+      "tags": [
+        "technology"
+      ]
+    },
+    {
+      "id": "real",
+      "adjective": "real",
+      "meanings": [
+        "real",
+        "verdadeiro"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This is a real problem.",
+          "pt": "Este é um problema real."
+        }
+      ],
+      "tags": [
+        "general"
+      ]
+    },
+    {
+      "id": "main",
+      "adjective": "main",
+      "meanings": [
+        "principal"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "What is the main reason?",
+          "pt": "Qual é o principal motivo?"
+        }
+      ],
+      "tags": [
+        "priority"
+      ]
+    },
+    {
+      "id": "final",
+      "adjective": "final",
+      "meanings": [
+        "final"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This is the final version.",
+          "pt": "Esta é a versão final."
+        }
+      ],
+      "tags": [
+        "time",
+        "process"
+      ]
+    },
+    {
+      "id": "current",
+      "adjective": "current",
+      "meanings": [
+        "atual"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "What is your current job?",
+          "pt": "Qual é o seu trabalho atual?"
+        }
+      ],
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "recent",
+      "adjective": "recent",
+      "meanings": [
+        "recente"
+      ],
+      "comparative": "more recent",
+      "superlative": "most recent",
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This is a recent change.",
+          "pt": "Esta é uma mudança recente."
+        }
+      ],
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "future",
+      "adjective": "future",
+      "meanings": [
+        "futuro"
+      ],
+      "comparative": null,
+      "superlative": null,
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We discussed future plans.",
+          "pt": "Nós discutimos planos futuros."
+        }
+      ],
+      "tags": [
+        "time"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2378 @@
+{
+  "metadata": {
+    "name": "English Verbs - Common Use",
+    "version": "1.0.0",
+    "updatedAt": "2026-09-12",
+    "language": "en",
+    "description": "Curated set of commonly used English verbs for study and exercise generation.",
+    "totalVerbs": 99
+  },
+  "verbs": [
+    {
+      "id": "be",
+      "base": "be",
+      "type": "irregular",
+      "past": "was/were",
+      "pastParticiple": "been",
+      "thirdPerson": "is",
+      "gerund": "being",
+      "meanings": [
+        "ser",
+        "estar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I am ready.",
+          "pt": "Eu estou pronto."
+        }
+      ],
+      "tags": [
+        "core",
+        "state"
+      ]
+    },
+    {
+      "id": "have",
+      "base": "have",
+      "type": "irregular",
+      "past": "had",
+      "pastParticiple": "had",
+      "thirdPerson": "has",
+      "gerund": "having",
+      "meanings": [
+        "ter"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I have a question.",
+          "pt": "Eu tenho uma pergunta."
+        }
+      ],
+      "tags": [
+        "core",
+        "possession"
+      ]
+    },
+    {
+      "id": "do",
+      "base": "do",
+      "type": "irregular",
+      "past": "did",
+      "pastParticiple": "done",
+      "thirdPerson": "does",
+      "gerund": "doing",
+      "meanings": [
+        "fazer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I do my homework at night.",
+          "pt": "Eu faço minha lição à noite."
+        }
+      ],
+      "tags": [
+        "core",
+        "action"
+      ]
+    },
+    {
+      "id": "say",
+      "base": "say",
+      "type": "irregular",
+      "past": "said",
+      "pastParticiple": "said",
+      "thirdPerson": "says",
+      "gerund": "saying",
+      "meanings": [
+        "dizer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "She says hello every morning.",
+          "pt": "Ela diz olá todas as manhãs."
+        }
+      ],
+      "tags": [
+        "communication"
+      ]
+    },
+    {
+      "id": "go",
+      "base": "go",
+      "type": "irregular",
+      "past": "went",
+      "pastParticiple": "gone",
+      "thirdPerson": "goes",
+      "gerund": "going",
+      "meanings": [
+        "ir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I go to work by bus.",
+          "pt": "Eu vou ao trabalho de ônibus."
+        }
+      ],
+      "tags": [
+        "movement",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "get",
+      "base": "get",
+      "type": "irregular",
+      "past": "got",
+      "pastParticiple": "got/gotten",
+      "thirdPerson": "gets",
+      "gerund": "getting",
+      "meanings": [
+        "conseguir",
+        "obter",
+        "ficar",
+        "chegar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I get home at six.",
+          "pt": "Eu chego em casa às seis."
+        }
+      ],
+      "tags": [
+        "core",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "make",
+      "base": "make",
+      "type": "irregular",
+      "past": "made",
+      "pastParticiple": "made",
+      "thirdPerson": "makes",
+      "gerund": "making",
+      "meanings": [
+        "fazer",
+        "criar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I make coffee every morning.",
+          "pt": "Eu faço café todas as manhãs."
+        }
+      ],
+      "tags": [
+        "core",
+        "creation"
+      ]
+    },
+    {
+      "id": "know",
+      "base": "know",
+      "type": "irregular",
+      "past": "knew",
+      "pastParticiple": "known",
+      "thirdPerson": "knows",
+      "gerund": "knowing",
+      "meanings": [
+        "saber",
+        "conhecer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I know the answer.",
+          "pt": "Eu sei a resposta."
+        }
+      ],
+      "tags": [
+        "knowledge"
+      ]
+    },
+    {
+      "id": "think",
+      "base": "think",
+      "type": "irregular",
+      "past": "thought",
+      "pastParticiple": "thought",
+      "thirdPerson": "thinks",
+      "gerund": "thinking",
+      "meanings": [
+        "pensar",
+        "achar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I think this is a good idea.",
+          "pt": "Eu acho que esta é uma boa ideia."
+        }
+      ],
+      "tags": [
+        "thought"
+      ]
+    },
+    {
+      "id": "take",
+      "base": "take",
+      "type": "irregular",
+      "past": "took",
+      "pastParticiple": "taken",
+      "thirdPerson": "takes",
+      "gerund": "taking",
+      "meanings": [
+        "pegar",
+        "levar",
+        "tomar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I take the bus every day.",
+          "pt": "Eu pego o ônibus todos os dias."
+        }
+      ],
+      "tags": [
+        "movement",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "see",
+      "base": "see",
+      "type": "irregular",
+      "past": "saw",
+      "pastParticiple": "seen",
+      "thirdPerson": "sees",
+      "gerund": "seeing",
+      "meanings": [
+        "ver"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I see my friends on weekends.",
+          "pt": "Eu vejo meus amigos nos fins de semana."
+        }
+      ],
+      "tags": [
+        "perception"
+      ]
+    },
+    {
+      "id": "come",
+      "base": "come",
+      "type": "irregular",
+      "past": "came",
+      "pastParticiple": "come",
+      "thirdPerson": "comes",
+      "gerund": "coming",
+      "meanings": [
+        "vir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Come here, please.",
+          "pt": "Venha aqui, por favor."
+        }
+      ],
+      "tags": [
+        "movement"
+      ]
+    },
+    {
+      "id": "want",
+      "base": "want",
+      "type": "regular",
+      "past": "wanted",
+      "pastParticiple": "wanted",
+      "thirdPerson": "wants",
+      "gerund": "wanting",
+      "meanings": [
+        "querer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I want to learn English.",
+          "pt": "Eu quero aprender inglês."
+        }
+      ],
+      "tags": [
+        "desire"
+      ]
+    },
+    {
+      "id": "look",
+      "base": "look",
+      "type": "regular",
+      "past": "looked",
+      "pastParticiple": "looked",
+      "thirdPerson": "looks",
+      "gerund": "looking",
+      "meanings": [
+        "olhar",
+        "parecer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Look at this picture.",
+          "pt": "Olhe para esta imagem."
+        }
+      ],
+      "tags": [
+        "perception"
+      ]
+    },
+    {
+      "id": "use",
+      "base": "use",
+      "type": "regular",
+      "past": "used",
+      "pastParticiple": "used",
+      "thirdPerson": "uses",
+      "gerund": "using",
+      "meanings": [
+        "usar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I use this app every day.",
+          "pt": "Eu uso este aplicativo todos os dias."
+        }
+      ],
+      "tags": [
+        "technology",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "find",
+      "base": "find",
+      "type": "irregular",
+      "past": "found",
+      "pastParticiple": "found",
+      "thirdPerson": "finds",
+      "gerund": "finding",
+      "meanings": [
+        "encontrar",
+        "achar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I can't find my keys.",
+          "pt": "Eu não consigo encontrar minhas chaves."
+        }
+      ],
+      "tags": [
+        "daily-life"
+      ]
+    },
+    {
+      "id": "give",
+      "base": "give",
+      "type": "irregular",
+      "past": "gave",
+      "pastParticiple": "given",
+      "thirdPerson": "gives",
+      "gerund": "giving",
+      "meanings": [
+        "dar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Please give me a minute.",
+          "pt": "Por favor, me dê um minuto."
+        }
+      ],
+      "tags": [
+        "interaction"
+      ]
+    },
+    {
+      "id": "tell",
+      "base": "tell",
+      "type": "irregular",
+      "past": "told",
+      "pastParticiple": "told",
+      "thirdPerson": "tells",
+      "gerund": "telling",
+      "meanings": [
+        "contar",
+        "dizer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Tell me the truth.",
+          "pt": "Diga-me a verdade."
+        }
+      ],
+      "tags": [
+        "communication"
+      ]
+    },
+    {
+      "id": "work",
+      "base": "work",
+      "type": "regular",
+      "past": "worked",
+      "pastParticiple": "worked",
+      "thirdPerson": "works",
+      "gerund": "working",
+      "meanings": [
+        "trabalhar",
+        "funcionar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I work from home.",
+          "pt": "Eu trabalho de casa."
+        }
+      ],
+      "tags": [
+        "work",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "call",
+      "base": "call",
+      "type": "regular",
+      "past": "called",
+      "pastParticiple": "called",
+      "thirdPerson": "calls",
+      "gerund": "calling",
+      "meanings": [
+        "ligar",
+        "chamar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I'll call you later.",
+          "pt": "Eu vou te ligar mais tarde."
+        }
+      ],
+      "tags": [
+        "communication"
+      ]
+    },
+    {
+      "id": "try",
+      "base": "try",
+      "type": "regular",
+      "past": "tried",
+      "pastParticiple": "tried",
+      "thirdPerson": "tries",
+      "gerund": "trying",
+      "meanings": [
+        "tentar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I try to practice every day.",
+          "pt": "Eu tento praticar todos os dias."
+        }
+      ],
+      "tags": [
+        "effort"
+      ]
+    },
+    {
+      "id": "ask",
+      "base": "ask",
+      "type": "regular",
+      "past": "asked",
+      "pastParticiple": "asked",
+      "thirdPerson": "asks",
+      "gerund": "asking",
+      "meanings": [
+        "perguntar",
+        "pedir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Can I ask you a question?",
+          "pt": "Posso te fazer uma pergunta?"
+        }
+      ],
+      "tags": [
+        "communication"
+      ]
+    },
+    {
+      "id": "need",
+      "base": "need",
+      "type": "regular",
+      "past": "needed",
+      "pastParticiple": "needed",
+      "thirdPerson": "needs",
+      "gerund": "needing",
+      "meanings": [
+        "precisar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I need more time.",
+          "pt": "Eu preciso de mais tempo."
+        }
+      ],
+      "tags": [
+        "need"
+      ]
+    },
+    {
+      "id": "feel",
+      "base": "feel",
+      "type": "irregular",
+      "past": "felt",
+      "pastParticiple": "felt",
+      "thirdPerson": "feels",
+      "gerund": "feeling",
+      "meanings": [
+        "sentir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I feel better today.",
+          "pt": "Eu me sinto melhor hoje."
+        }
+      ],
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "become",
+      "base": "become",
+      "type": "irregular",
+      "past": "became",
+      "pastParticiple": "become",
+      "thirdPerson": "becomes",
+      "gerund": "becoming",
+      "meanings": [
+        "tornar-se"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "He became a doctor.",
+          "pt": "Ele se tornou médico."
+        }
+      ],
+      "tags": [
+        "change"
+      ]
+    },
+    {
+      "id": "leave",
+      "base": "leave",
+      "type": "irregular",
+      "past": "left",
+      "pastParticiple": "left",
+      "thirdPerson": "leaves",
+      "gerund": "leaving",
+      "meanings": [
+        "sair",
+        "deixar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I leave home at seven.",
+          "pt": "Eu saio de casa às sete."
+        }
+      ],
+      "tags": [
+        "movement",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "put",
+      "base": "put",
+      "type": "irregular",
+      "past": "put",
+      "pastParticiple": "put",
+      "thirdPerson": "puts",
+      "gerund": "putting",
+      "meanings": [
+        "colocar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Put the phone on the table.",
+          "pt": "Coloque o telefone na mesa."
+        }
+      ],
+      "tags": [
+        "action"
+      ]
+    },
+    {
+      "id": "mean",
+      "base": "mean",
+      "type": "irregular",
+      "past": "meant",
+      "pastParticiple": "meant",
+      "thirdPerson": "means",
+      "gerund": "meaning",
+      "meanings": [
+        "significar",
+        "querer dizer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "What does this word mean?",
+          "pt": "O que esta palavra significa?"
+        }
+      ],
+      "tags": [
+        "communication",
+        "meaning"
+      ]
+    },
+    {
+      "id": "keep",
+      "base": "keep",
+      "type": "irregular",
+      "past": "kept",
+      "pastParticiple": "kept",
+      "thirdPerson": "keeps",
+      "gerund": "keeping",
+      "meanings": [
+        "manter",
+        "continuar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Keep going.",
+          "pt": "Continue."
+        }
+      ],
+      "tags": [
+        "continuity"
+      ]
+    },
+    {
+      "id": "let",
+      "base": "let",
+      "type": "irregular",
+      "past": "let",
+      "pastParticiple": "let",
+      "thirdPerson": "lets",
+      "gerund": "letting",
+      "meanings": [
+        "deixar",
+        "permitir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Let me help you.",
+          "pt": "Deixe-me te ajudar."
+        }
+      ],
+      "tags": [
+        "permission"
+      ]
+    },
+    {
+      "id": "begin",
+      "base": "begin",
+      "type": "irregular",
+      "past": "began",
+      "pastParticiple": "begun",
+      "thirdPerson": "begins",
+      "gerund": "beginning",
+      "meanings": [
+        "começar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The class begins at nine.",
+          "pt": "A aula começa às nove."
+        }
+      ],
+      "tags": [
+        "time",
+        "action"
+      ]
+    },
+    {
+      "id": "help",
+      "base": "help",
+      "type": "regular",
+      "past": "helped",
+      "pastParticiple": "helped",
+      "thirdPerson": "helps",
+      "gerund": "helping",
+      "meanings": [
+        "ajudar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Can you help me?",
+          "pt": "Você pode me ajudar?"
+        }
+      ],
+      "tags": [
+        "interaction"
+      ]
+    },
+    {
+      "id": "talk",
+      "base": "talk",
+      "type": "regular",
+      "past": "talked",
+      "pastParticiple": "talked",
+      "thirdPerson": "talks",
+      "gerund": "talking",
+      "meanings": [
+        "falar",
+        "conversar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We talk every day.",
+          "pt": "Nós conversamos todos os dias."
+        }
+      ],
+      "tags": [
+        "communication"
+      ]
+    },
+    {
+      "id": "start",
+      "base": "start",
+      "type": "regular",
+      "past": "started",
+      "pastParticiple": "started",
+      "thirdPerson": "starts",
+      "gerund": "starting",
+      "meanings": [
+        "começar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I start work at eight.",
+          "pt": "Eu começo a trabalhar às oito."
+        }
+      ],
+      "tags": [
+        "work",
+        "time"
+      ]
+    },
+    {
+      "id": "show",
+      "base": "show",
+      "type": "irregular",
+      "past": "showed",
+      "pastParticiple": "shown/showed",
+      "thirdPerson": "shows",
+      "gerund": "showing",
+      "meanings": [
+        "mostrar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Show me your project.",
+          "pt": "Mostre-me seu projeto."
+        }
+      ],
+      "tags": [
+        "communication"
+      ]
+    },
+    {
+      "id": "hear",
+      "base": "hear",
+      "type": "irregular",
+      "past": "heard",
+      "pastParticiple": "heard",
+      "thirdPerson": "hears",
+      "gerund": "hearing",
+      "meanings": [
+        "ouvir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I can hear you clearly.",
+          "pt": "Eu consigo te ouvir claramente."
+        }
+      ],
+      "tags": [
+        "perception"
+      ]
+    },
+    {
+      "id": "play",
+      "base": "play",
+      "type": "regular",
+      "past": "played",
+      "pastParticiple": "played",
+      "thirdPerson": "plays",
+      "gerund": "playing",
+      "meanings": [
+        "jogar",
+        "tocar",
+        "brincar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "They play soccer on Sundays.",
+          "pt": "Eles jogam futebol aos domingos."
+        }
+      ],
+      "tags": [
+        "leisure",
+        "sports"
+      ]
+    },
+    {
+      "id": "run",
+      "base": "run",
+      "type": "irregular",
+      "past": "ran",
+      "pastParticiple": "run",
+      "thirdPerson": "runs",
+      "gerund": "running",
+      "meanings": [
+        "correr",
+        "executar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I run three times a week.",
+          "pt": "Eu corro três vezes por semana."
+        }
+      ],
+      "tags": [
+        "fitness",
+        "movement"
+      ]
+    },
+    {
+      "id": "move",
+      "base": "move",
+      "type": "regular",
+      "past": "moved",
+      "pastParticiple": "moved",
+      "thirdPerson": "moves",
+      "gerund": "moving",
+      "meanings": [
+        "mover",
+        "mudar-se"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We moved to a new apartment.",
+          "pt": "Nós nos mudamos para um novo apartamento."
+        }
+      ],
+      "tags": [
+        "movement",
+        "housing"
+      ]
+    },
+    {
+      "id": "like",
+      "base": "like",
+      "type": "regular",
+      "past": "liked",
+      "pastParticiple": "liked",
+      "thirdPerson": "likes",
+      "gerund": "liking",
+      "meanings": [
+        "gostar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I like Brazilian food.",
+          "pt": "Eu gosto de comida brasileira."
+        }
+      ],
+      "tags": [
+        "preference"
+      ]
+    },
+    {
+      "id": "live",
+      "base": "live",
+      "type": "regular",
+      "past": "lived",
+      "pastParticiple": "lived",
+      "thirdPerson": "lives",
+      "gerund": "living",
+      "meanings": [
+        "morar",
+        "viver"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I live in Brazil.",
+          "pt": "Eu moro no Brasil."
+        }
+      ],
+      "tags": [
+        "daily-life",
+        "housing"
+      ]
+    },
+    {
+      "id": "believe",
+      "base": "believe",
+      "type": "regular",
+      "past": "believed",
+      "pastParticiple": "believed",
+      "thirdPerson": "believes",
+      "gerund": "believing",
+      "meanings": [
+        "acreditar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I believe you.",
+          "pt": "Eu acredito em você."
+        }
+      ],
+      "tags": [
+        "thought"
+      ]
+    },
+    {
+      "id": "bring",
+      "base": "bring",
+      "type": "irregular",
+      "past": "brought",
+      "pastParticiple": "brought",
+      "thirdPerson": "brings",
+      "gerund": "bringing",
+      "meanings": [
+        "trazer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Bring your notebook tomorrow.",
+          "pt": "Traga seu caderno amanhã."
+        }
+      ],
+      "tags": [
+        "movement",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "happen",
+      "base": "happen",
+      "type": "regular",
+      "past": "happened",
+      "pastParticiple": "happened",
+      "thirdPerson": "happens",
+      "gerund": "happening",
+      "meanings": [
+        "acontecer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "What happened yesterday?",
+          "pt": "O que aconteceu ontem?"
+        }
+      ],
+      "tags": [
+        "events"
+      ]
+    },
+    {
+      "id": "write",
+      "base": "write",
+      "type": "irregular",
+      "past": "wrote",
+      "pastParticiple": "written",
+      "thirdPerson": "writes",
+      "gerund": "writing",
+      "meanings": [
+        "escrever"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I write emails every day.",
+          "pt": "Eu escrevo e-mails todos os dias."
+        }
+      ],
+      "tags": [
+        "communication",
+        "work"
+      ]
+    },
+    {
+      "id": "sit",
+      "base": "sit",
+      "type": "irregular",
+      "past": "sat",
+      "pastParticiple": "sat",
+      "thirdPerson": "sits",
+      "gerund": "sitting",
+      "meanings": [
+        "sentar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Sit here, please.",
+          "pt": "Sente-se aqui, por favor."
+        }
+      ],
+      "tags": [
+        "daily-life"
+      ]
+    },
+    {
+      "id": "stand",
+      "base": "stand",
+      "type": "irregular",
+      "past": "stood",
+      "pastParticiple": "stood",
+      "thirdPerson": "stands",
+      "gerund": "standing",
+      "meanings": [
+        "ficar em pé"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Please stand here.",
+          "pt": "Por favor, fique em pé aqui."
+        }
+      ],
+      "tags": [
+        "daily-life"
+      ]
+    },
+    {
+      "id": "lose",
+      "base": "lose",
+      "type": "irregular",
+      "past": "lost",
+      "pastParticiple": "lost",
+      "thirdPerson": "loses",
+      "gerund": "losing",
+      "meanings": [
+        "perder"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I lost my wallet.",
+          "pt": "Eu perdi minha carteira."
+        }
+      ],
+      "tags": [
+        "daily-life"
+      ]
+    },
+    {
+      "id": "pay",
+      "base": "pay",
+      "type": "irregular",
+      "past": "paid",
+      "pastParticiple": "paid",
+      "thirdPerson": "pays",
+      "gerund": "paying",
+      "meanings": [
+        "pagar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I pay the bills online.",
+          "pt": "Eu pago as contas online."
+        }
+      ],
+      "tags": [
+        "money",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "meet",
+      "base": "meet",
+      "type": "irregular",
+      "past": "met",
+      "pastParticiple": "met",
+      "thirdPerson": "meets",
+      "gerund": "meeting",
+      "meanings": [
+        "encontrar",
+        "conhecer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I met her at work.",
+          "pt": "Eu a conheci no trabalho."
+        }
+      ],
+      "tags": [
+        "interaction",
+        "work"
+      ]
+    },
+    {
+      "id": "learn",
+      "base": "learn",
+      "type": "regular",
+      "past": "learned/learnt",
+      "pastParticiple": "learned/learnt",
+      "thirdPerson": "learns",
+      "gerund": "learning",
+      "meanings": [
+        "aprender"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I learn something new every day.",
+          "pt": "Eu aprendo algo novo todos os dias."
+        }
+      ],
+      "tags": [
+        "education"
+      ]
+    },
+    {
+      "id": "change",
+      "base": "change",
+      "type": "regular",
+      "past": "changed",
+      "pastParticiple": "changed",
+      "thirdPerson": "changes",
+      "gerund": "changing",
+      "meanings": [
+        "mudar",
+        "alterar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Things change quickly.",
+          "pt": "As coisas mudam rapidamente."
+        }
+      ],
+      "tags": [
+        "change"
+      ]
+    },
+    {
+      "id": "understand",
+      "base": "understand",
+      "type": "irregular",
+      "past": "understood",
+      "pastParticiple": "understood",
+      "thirdPerson": "understands",
+      "gerund": "understanding",
+      "meanings": [
+        "entender"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I understand the problem.",
+          "pt": "Eu entendo o problema."
+        }
+      ],
+      "tags": [
+        "knowledge"
+      ]
+    },
+    {
+      "id": "watch",
+      "base": "watch",
+      "type": "regular",
+      "past": "watched",
+      "pastParticiple": "watched",
+      "thirdPerson": "watches",
+      "gerund": "watching",
+      "meanings": [
+        "assistir",
+        "observar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We watch movies on Fridays.",
+          "pt": "Nós assistimos a filmes às sextas-feiras."
+        }
+      ],
+      "tags": [
+        "leisure",
+        "perception"
+      ]
+    },
+    {
+      "id": "follow",
+      "base": "follow",
+      "type": "regular",
+      "past": "followed",
+      "pastParticiple": "followed",
+      "thirdPerson": "follows",
+      "gerund": "following",
+      "meanings": [
+        "seguir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Follow the instructions.",
+          "pt": "Siga as instruções."
+        }
+      ],
+      "tags": [
+        "action"
+      ]
+    },
+    {
+      "id": "stop",
+      "base": "stop",
+      "type": "regular",
+      "past": "stopped",
+      "pastParticiple": "stopped",
+      "thirdPerson": "stops",
+      "gerund": "stopping",
+      "meanings": [
+        "parar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Stop talking for a moment.",
+          "pt": "Pare de falar por um momento."
+        }
+      ],
+      "tags": [
+        "action"
+      ]
+    },
+    {
+      "id": "create",
+      "base": "create",
+      "type": "regular",
+      "past": "created",
+      "pastParticiple": "created",
+      "thirdPerson": "creates",
+      "gerund": "creating",
+      "meanings": [
+        "criar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We create software for clients.",
+          "pt": "Nós criamos software para clientes."
+        }
+      ],
+      "tags": [
+        "creation",
+        "work"
+      ]
+    },
+    {
+      "id": "speak",
+      "base": "speak",
+      "type": "irregular",
+      "past": "spoke",
+      "pastParticiple": "spoken",
+      "thirdPerson": "speaks",
+      "gerund": "speaking",
+      "meanings": [
+        "falar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I speak English every day.",
+          "pt": "Eu falo inglês todos os dias."
+        }
+      ],
+      "tags": [
+        "communication",
+        "language"
+      ]
+    },
+    {
+      "id": "read",
+      "base": "read",
+      "type": "irregular",
+      "past": "read",
+      "pastParticiple": "read",
+      "thirdPerson": "reads",
+      "gerund": "reading",
+      "meanings": [
+        "ler"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I read before bed.",
+          "pt": "Eu leio antes de dormir."
+        }
+      ],
+      "tags": [
+        "education",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "add",
+      "base": "add",
+      "type": "regular",
+      "past": "added",
+      "pastParticiple": "added",
+      "thirdPerson": "adds",
+      "gerund": "adding",
+      "meanings": [
+        "adicionar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Add your name to the list.",
+          "pt": "Adicione seu nome à lista."
+        }
+      ],
+      "tags": [
+        "action"
+      ]
+    },
+    {
+      "id": "spend",
+      "base": "spend",
+      "type": "irregular",
+      "past": "spent",
+      "pastParticiple": "spent",
+      "thirdPerson": "spends",
+      "gerund": "spending",
+      "meanings": [
+        "gastar",
+        "passar tempo"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I spend an hour studying English.",
+          "pt": "Eu passo uma hora estudando inglês."
+        }
+      ],
+      "tags": [
+        "time",
+        "money"
+      ]
+    },
+    {
+      "id": "grow",
+      "base": "grow",
+      "type": "irregular",
+      "past": "grew",
+      "pastParticiple": "grown",
+      "thirdPerson": "grows",
+      "gerund": "growing",
+      "meanings": [
+        "crescer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The company is growing fast.",
+          "pt": "A empresa está crescendo rápido."
+        }
+      ],
+      "tags": [
+        "change",
+        "work"
+      ]
+    },
+    {
+      "id": "open",
+      "base": "open",
+      "type": "regular",
+      "past": "opened",
+      "pastParticiple": "opened",
+      "thirdPerson": "opens",
+      "gerund": "opening",
+      "meanings": [
+        "abrir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Open the window, please.",
+          "pt": "Abra a janela, por favor."
+        }
+      ],
+      "tags": [
+        "daily-life"
+      ]
+    },
+    {
+      "id": "walk",
+      "base": "walk",
+      "type": "regular",
+      "past": "walked",
+      "pastParticiple": "walked",
+      "thirdPerson": "walks",
+      "gerund": "walking",
+      "meanings": [
+        "caminhar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I walk on the beach in the morning.",
+          "pt": "Eu caminho na praia de manhã."
+        }
+      ],
+      "tags": [
+        "movement",
+        "fitness"
+      ]
+    },
+    {
+      "id": "win",
+      "base": "win",
+      "type": "irregular",
+      "past": "won",
+      "pastParticiple": "won",
+      "thirdPerson": "wins",
+      "gerund": "winning",
+      "meanings": [
+        "ganhar",
+        "vencer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Our team won the game.",
+          "pt": "Nosso time venceu o jogo."
+        }
+      ],
+      "tags": [
+        "sports",
+        "success"
+      ]
+    },
+    {
+      "id": "remember",
+      "base": "remember",
+      "type": "regular",
+      "past": "remembered",
+      "pastParticiple": "remembered",
+      "thirdPerson": "remembers",
+      "gerund": "remembering",
+      "meanings": [
+        "lembrar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I remember that day.",
+          "pt": "Eu me lembro daquele dia."
+        }
+      ],
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "id": "buy",
+      "base": "buy",
+      "type": "irregular",
+      "past": "bought",
+      "pastParticiple": "bought",
+      "thirdPerson": "buys",
+      "gerund": "buying",
+      "meanings": [
+        "comprar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I bought a new phone.",
+          "pt": "Eu comprei um telefone novo."
+        }
+      ],
+      "tags": [
+        "shopping",
+        "money"
+      ]
+    },
+    {
+      "id": "wait",
+      "base": "wait",
+      "type": "regular",
+      "past": "waited",
+      "pastParticiple": "waited",
+      "thirdPerson": "waits",
+      "gerund": "waiting",
+      "meanings": [
+        "esperar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Wait for me outside.",
+          "pt": "Espere por mim lá fora."
+        }
+      ],
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "send",
+      "base": "send",
+      "type": "irregular",
+      "past": "sent",
+      "pastParticiple": "sent",
+      "thirdPerson": "sends",
+      "gerund": "sending",
+      "meanings": [
+        "enviar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Send me the file, please.",
+          "pt": "Envie-me o arquivo, por favor."
+        }
+      ],
+      "tags": [
+        "communication",
+        "work"
+      ]
+    },
+    {
+      "id": "build",
+      "base": "build",
+      "type": "irregular",
+      "past": "built",
+      "pastParticiple": "built",
+      "thirdPerson": "builds",
+      "gerund": "building",
+      "meanings": [
+        "construir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We build backend services.",
+          "pt": "Nós construímos serviços de backend."
+        }
+      ],
+      "tags": [
+        "creation",
+        "work",
+        "technology"
+      ]
+    },
+    {
+      "id": "stay",
+      "base": "stay",
+      "type": "regular",
+      "past": "stayed",
+      "pastParticiple": "stayed",
+      "thirdPerson": "stays",
+      "gerund": "staying",
+      "meanings": [
+        "ficar",
+        "permanecer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I stayed home yesterday.",
+          "pt": "Eu fiquei em casa ontem."
+        }
+      ],
+      "tags": [
+        "daily-life"
+      ]
+    },
+    {
+      "id": "fall",
+      "base": "fall",
+      "type": "irregular",
+      "past": "fell",
+      "pastParticiple": "fallen",
+      "thirdPerson": "falls",
+      "gerund": "falling",
+      "meanings": [
+        "cair"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Be careful not to fall.",
+          "pt": "Tenha cuidado para não cair."
+        }
+      ],
+      "tags": [
+        "movement"
+      ]
+    },
+    {
+      "id": "cut",
+      "base": "cut",
+      "type": "irregular",
+      "past": "cut",
+      "pastParticiple": "cut",
+      "thirdPerson": "cuts",
+      "gerund": "cutting",
+      "meanings": [
+        "cortar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Cut the paper in half.",
+          "pt": "Corte o papel ao meio."
+        }
+      ],
+      "tags": [
+        "action"
+      ]
+    },
+    {
+      "id": "sell",
+      "base": "sell",
+      "type": "irregular",
+      "past": "sold",
+      "pastParticiple": "sold",
+      "thirdPerson": "sells",
+      "gerund": "selling",
+      "meanings": [
+        "vender"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "They sell books online.",
+          "pt": "Eles vendem livros online."
+        }
+      ],
+      "tags": [
+        "shopping",
+        "money"
+      ]
+    },
+    {
+      "id": "decide",
+      "base": "decide",
+      "type": "regular",
+      "past": "decided",
+      "pastParticiple": "decided",
+      "thirdPerson": "decides",
+      "gerund": "deciding",
+      "meanings": [
+        "decidir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I decided to stay.",
+          "pt": "Eu decidi ficar."
+        }
+      ],
+      "tags": [
+        "decision"
+      ]
+    },
+    {
+      "id": "return",
+      "base": "return",
+      "type": "regular",
+      "past": "returned",
+      "pastParticiple": "returned",
+      "thirdPerson": "returns",
+      "gerund": "returning",
+      "meanings": [
+        "retornar",
+        "devolver"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I'll return tomorrow.",
+          "pt": "Eu volto amanhã."
+        }
+      ],
+      "tags": [
+        "movement"
+      ]
+    },
+    {
+      "id": "explain",
+      "base": "explain",
+      "type": "regular",
+      "past": "explained",
+      "pastParticiple": "explained",
+      "thirdPerson": "explains",
+      "gerund": "explaining",
+      "meanings": [
+        "explicar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Can you explain this rule?",
+          "pt": "Você pode explicar esta regra?"
+        }
+      ],
+      "tags": [
+        "communication",
+        "education"
+      ]
+    },
+    {
+      "id": "hope",
+      "base": "hope",
+      "type": "regular",
+      "past": "hoped",
+      "pastParticiple": "hoped",
+      "thirdPerson": "hopes",
+      "gerund": "hoping",
+      "meanings": [
+        "esperar",
+        "ter esperança"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I hope everything goes well.",
+          "pt": "Espero que tudo dê certo."
+        }
+      ],
+      "tags": [
+        "emotion",
+        "expectation"
+      ]
+    },
+    {
+      "id": "develop",
+      "base": "develop",
+      "type": "regular",
+      "past": "developed",
+      "pastParticiple": "developed",
+      "thirdPerson": "develops",
+      "gerund": "developing",
+      "meanings": [
+        "desenvolver"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We develop web applications.",
+          "pt": "Nós desenvolvemos aplicações web."
+        }
+      ],
+      "tags": [
+        "work",
+        "technology"
+      ]
+    },
+    {
+      "id": "break",
+      "base": "break",
+      "type": "irregular",
+      "past": "broke",
+      "pastParticiple": "broken",
+      "thirdPerson": "breaks",
+      "gerund": "breaking",
+      "meanings": [
+        "quebrar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I broke my glasses.",
+          "pt": "Eu quebrei meus óculos."
+        }
+      ],
+      "tags": [
+        "daily-life"
+      ]
+    },
+    {
+      "id": "receive",
+      "base": "receive",
+      "type": "regular",
+      "past": "received",
+      "pastParticiple": "received",
+      "thirdPerson": "receives",
+      "gerund": "receiving",
+      "meanings": [
+        "receber"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I received your message.",
+          "pt": "Eu recebi sua mensagem."
+        }
+      ],
+      "tags": [
+        "communication"
+      ]
+    },
+    {
+      "id": "agree",
+      "base": "agree",
+      "type": "regular",
+      "past": "agreed",
+      "pastParticiple": "agreed",
+      "thirdPerson": "agrees",
+      "gerund": "agreeing",
+      "meanings": [
+        "concordar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I agree with you.",
+          "pt": "Eu concordo com você."
+        }
+      ],
+      "tags": [
+        "opinion",
+        "communication"
+      ]
+    },
+    {
+      "id": "eat",
+      "base": "eat",
+      "type": "irregular",
+      "past": "ate",
+      "pastParticiple": "eaten",
+      "thirdPerson": "eats",
+      "gerund": "eating",
+      "meanings": [
+        "comer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I eat breakfast at seven.",
+          "pt": "Eu tomo café da manhã às sete."
+        }
+      ],
+      "tags": [
+        "food",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "drink",
+      "base": "drink",
+      "type": "irregular",
+      "past": "drank",
+      "pastParticiple": "drunk",
+      "thirdPerson": "drinks",
+      "gerund": "drinking",
+      "meanings": [
+        "beber"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I drink a lot of water.",
+          "pt": "Eu bebo muita água."
+        }
+      ],
+      "tags": [
+        "food",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "sleep",
+      "base": "sleep",
+      "type": "irregular",
+      "past": "slept",
+      "pastParticiple": "slept",
+      "thirdPerson": "sleeps",
+      "gerund": "sleeping",
+      "meanings": [
+        "dormir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I sleep about seven hours.",
+          "pt": "Eu durmo cerca de sete horas."
+        }
+      ],
+      "tags": [
+        "daily-life",
+        "health"
+      ]
+    },
+    {
+      "id": "drive",
+      "base": "drive",
+      "type": "irregular",
+      "past": "drove",
+      "pastParticiple": "driven",
+      "thirdPerson": "drives",
+      "gerund": "driving",
+      "meanings": [
+        "dirigir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I drive to work sometimes.",
+          "pt": "Às vezes eu dirijo até o trabalho."
+        }
+      ],
+      "tags": [
+        "transport",
+        "movement"
+      ]
+    },
+    {
+      "id": "study",
+      "base": "study",
+      "type": "regular",
+      "past": "studied",
+      "pastParticiple": "studied",
+      "thirdPerson": "studies",
+      "gerund": "studying",
+      "meanings": [
+        "estudar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I study English every day.",
+          "pt": "Eu estudo inglês todos os dias."
+        }
+      ],
+      "tags": [
+        "education",
+        "language"
+      ]
+    },
+    {
+      "id": "teach",
+      "base": "teach",
+      "type": "irregular",
+      "past": "taught",
+      "pastParticiple": "taught",
+      "thirdPerson": "teaches",
+      "gerund": "teaching",
+      "meanings": [
+        "ensinar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "She teaches English online.",
+          "pt": "Ela ensina inglês online."
+        }
+      ],
+      "tags": [
+        "education",
+        "language"
+      ]
+    },
+    {
+      "id": "wear",
+      "base": "wear",
+      "type": "irregular",
+      "past": "wore",
+      "pastParticiple": "worn",
+      "thirdPerson": "wears",
+      "gerund": "wearing",
+      "meanings": [
+        "vestir",
+        "usar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I wear glasses.",
+          "pt": "Eu uso óculos."
+        }
+      ],
+      "tags": [
+        "daily-life",
+        "clothing"
+      ]
+    },
+    {
+      "id": "choose",
+      "base": "choose",
+      "type": "irregular",
+      "past": "chose",
+      "pastParticiple": "chosen",
+      "thirdPerson": "chooses",
+      "gerund": "choosing",
+      "meanings": [
+        "escolher"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Choose the best option.",
+          "pt": "Escolha a melhor opção."
+        }
+      ],
+      "tags": [
+        "decision"
+      ]
+    },
+    {
+      "id": "forget",
+      "base": "forget",
+      "type": "irregular",
+      "past": "forgot",
+      "pastParticiple": "forgotten",
+      "thirdPerson": "forgets",
+      "gerund": "forgetting",
+      "meanings": [
+        "esquecer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Don't forget your keys.",
+          "pt": "Não esqueça suas chaves."
+        }
+      ],
+      "tags": [
+        "memory"
+      ]
+    },
+    {
+      "id": "catch",
+      "base": "catch",
+      "type": "irregular",
+      "past": "caught",
+      "pastParticiple": "caught",
+      "thirdPerson": "catches",
+      "gerund": "catching",
+      "meanings": [
+        "pegar",
+        "capturar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I caught the bus on time.",
+          "pt": "Eu peguei o ônibus a tempo."
+        }
+      ],
+      "tags": [
+        "transport",
+        "movement"
+      ]
+    },
+    {
+      "id": "travel",
+      "base": "travel",
+      "type": "regular",
+      "past": "traveled/travelled",
+      "pastParticiple": "traveled/travelled",
+      "thirdPerson": "travels",
+      "gerund": "traveling/travelling",
+      "meanings": [
+        "viajar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I travel for work sometimes.",
+          "pt": "Às vezes eu viajo a trabalho."
+        }
+      ],
+      "tags": [
+        "travel",
+        "work"
+      ]
+    },
+    {
+      "id": "cook",
+      "base": "cook",
+      "type": "regular",
+      "past": "cooked",
+      "pastParticiple": "cooked",
+      "thirdPerson": "cooks",
+      "gerund": "cooking",
+      "meanings": [
+        "cozinhar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I cook dinner at home.",
+          "pt": "Eu preparo o jantar em casa."
+        }
+      ],
+      "tags": [
+        "food",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "listen",
+      "base": "listen",
+      "type": "regular",
+      "past": "listened",
+      "pastParticiple": "listened",
+      "thirdPerson": "listens",
+      "gerund": "listening",
+      "meanings": [
+        "escutar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I listen to podcasts in English.",
+          "pt": "Eu escuto podcasts em inglês."
+        }
+      ],
+      "tags": [
+        "perception",
+        "language"
+      ]
+    },
+    {
+      "id": "plan",
+      "base": "plan",
+      "type": "regular",
+      "past": "planned",
+      "pastParticiple": "planned",
+      "thirdPerson": "plans",
+      "gerund": "planning",
+      "meanings": [
+        "planejar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We plan our week on Sunday.",
+          "pt": "Nós planejamos nossa semana no domingo."
+        }
+      ],
+      "tags": [
+        "planning"
+      ]
+    },
+    {
+      "id": "check",
+      "base": "check",
+      "type": "regular",
+      "past": "checked",
+      "pastParticiple": "checked",
+      "thirdPerson": "checks",
+      "gerund": "checking",
+      "meanings": [
+        "verificar",
+        "checar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Check your email.",
+          "pt": "Verifique seu e-mail."
+        }
+      ],
+      "tags": [
+        "work",
+        "technology"
+      ]
+    },
+    {
+      "id": "fix",
+      "base": "fix",
+      "type": "regular",
+      "past": "fixed",
+      "pastParticiple": "fixed",
+      "thirdPerson": "fixes",
+      "gerund": "fixing",
+      "meanings": [
+        "consertar",
+        "corrigir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I fixed the bug.",
+          "pt": "Eu corrigi o bug."
+        }
+      ],
+      "tags": [
+        "technology",
+        "work"
+      ]
+    },
+    {
+      "id": "finish",
+      "base": "finish",
+      "type": "regular",
+      "past": "finished",
+      "pastParticiple": "finished",
+      "thirdPerson": "finishes",
+      "gerund": "finishing",
+      "meanings": [
+        "terminar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I finished the task.",
+          "pt": "Eu terminei a tarefa."
+        }
+      ],
+      "tags": [
+        "work",
+        "completion"
+      ]
+    }
+  ]
+}

@@ -4,11 +4,15 @@ import { Header } from "./components/Header";
 import { SearchPanel } from "./components/SearchPanel";
 import { Sidebar, type AppView } from "./components/Sidebar";
 import { ExercisePanel } from "./components/ExercisePanel";
+import { BasicTraining } from "./components/BasicTraining";
+import { AdvancedTraining } from "./components/AdvancedTraining";
 import { IntentionList } from "./components/IntentionList";
 import { IntentionDetails } from "./components/IntentionDetails";
 import { fetchHashmap, loadHashmap } from "./services/hashmapService";
 import type { HashmapData, MentalIntention } from "./types/hashmap";
 import { searchIntentions } from "./utils/searchIntentions";
+
+type TrainingMode = "basic" | "advanced" | null;
 
 function App() {
   const [data, setData] = useState<HashmapData | null>(null);
@@ -19,6 +23,8 @@ function App() {
   const [categorySearch, setCategorySearch] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selected, setSelected] = useState<MentalIntention | null>(null);
+  const [trainingMode, setTrainingMode] = useState<TrainingMode>(null);
+  const [trainingIntention, setTrainingIntention] = useState<MentalIntention | null>(null);
   const [loading, setLoading] = useState(true);
   const [retrying, setRetrying] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -105,6 +111,20 @@ function App() {
     setSelectedTags([]);
   }
 
+  function startTraining(
+    item: MentalIntention,
+    mode: Exclude<TrainingMode, null>
+  ) {
+    setTrainingIntention(item);
+    setTrainingMode(mode);
+    setSelected(null);
+  }
+
+  function closeTraining() {
+    setTrainingMode(null);
+    setTrainingIntention(null);
+  }
+
   return (
     <main className="app-layout">
       <Sidebar
@@ -139,7 +159,7 @@ function App() {
           </div>
         )}
 
-            {!loading && data && currentView === "hashmap" && (
+            {!loading && data && currentView === "hashmap" && !trainingMode && (
               <>
                 {source === "cache" && (
               <div className="warning-banner">
@@ -189,18 +209,39 @@ function App() {
               </>
             )}
 
-            {!loading && data && currentView === "exercises" && (
+            {!loading && data && currentView === "exercises" && !trainingMode && (
               <ExercisePanel intentions={data.mentalMap} />
             )}
+            {!loading &&
+              data &&
+              trainingMode === "basic" &&
+              trainingIntention && (
+                <BasicTraining
+                  intention={trainingIntention}
+                  onBack={closeTraining}
+                />
+              )}
+
+            {!loading &&
+              data &&
+              trainingMode === "advanced" &&
+              trainingIntention && (
+                <AdvancedTraining
+                  intention={trainingIntention}
+                  onBack={closeTraining}
+                />
+              )}
           </div>
         </div>
       </div>
 
       <IntentionDetails
-        item={currentView === "hashmap" ? selected : null}
+        item={currentView === "hashmap" && !trainingMode ? selected : null}
         allItems={data?.mentalMap ?? []}
         onClose={() => setSelected(null)}
         onSelectRelated={setSelected}
+        onBasicTraining={(item) => startTraining(item, "basic")}
+        onAdvancedTraining={(item) => startTraining(item, "advanced")}
       />
     </main>
   );
