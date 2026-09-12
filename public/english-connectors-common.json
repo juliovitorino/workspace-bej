@@ -1,0 +1,1627 @@
+{
+  "metadata": {
+    "name": "English Connectors - Common Use",
+    "version": "1.0.0",
+    "updatedAt": "2026-09-12",
+    "language": "en",
+    "description": "Curated set of common English connectors for advanced sentence-building exercises.",
+    "totalConnectors": 75
+  },
+  "connectors": [
+    {
+      "id": "but",
+      "connector": "but",
+      "meanings": [
+        "mas"
+      ],
+      "category": "contrast",
+      "type": "coordinating_conjunction",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I wanted to go, but I was tired.",
+          "pt": "Eu queria ir, mas estava cansado."
+        }
+      ],
+      "tags": [
+        "contrast",
+        "coordinating_conjunction"
+      ]
+    },
+    {
+      "id": "however",
+      "connector": "however",
+      "meanings": [
+        "porém",
+        "no entanto"
+      ],
+      "category": "contrast",
+      "type": "conjunctive_adverb",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The task was difficult. However, we finished it.",
+          "pt": "A tarefa era difícil. No entanto, nós a terminamos."
+        }
+      ],
+      "tags": [
+        "contrast",
+        "conjunctive_adverb"
+      ]
+    },
+    {
+      "id": "although",
+      "connector": "although",
+      "meanings": [
+        "embora",
+        "apesar de que"
+      ],
+      "category": "contrast",
+      "type": "subordinating_conjunction",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Although I was tired, I kept working.",
+          "pt": "Embora eu estivesse cansado, continuei trabalhando."
+        }
+      ],
+      "tags": [
+        "contrast",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "even-though",
+      "connector": "even though",
+      "meanings": [
+        "embora",
+        "mesmo que"
+      ],
+      "category": "contrast",
+      "type": "subordinating_conjunction",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Even though it was raining, we went out.",
+          "pt": "Embora estivesse chovendo, nós saímos."
+        }
+      ],
+      "tags": [
+        "contrast",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "though",
+      "connector": "though",
+      "meanings": [
+        "embora",
+        "apesar disso"
+      ],
+      "category": "contrast",
+      "type": "subordinating_conjunction",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Though it was late, we continued talking.",
+          "pt": "Embora estivesse tarde, continuamos conversando."
+        }
+      ],
+      "tags": [
+        "contrast",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "whereas",
+      "connector": "whereas",
+      "meanings": [
+        "enquanto que",
+        "ao passo que"
+      ],
+      "category": "contrast",
+      "type": "subordinating_conjunction",
+      "level": "B2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "I prefer coffee, whereas she prefers tea.",
+          "pt": "Eu prefiro café, enquanto ela prefere chá."
+        }
+      ],
+      "tags": [
+        "contrast",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "while",
+      "connector": "while",
+      "meanings": [
+        "enquanto",
+        "embora"
+      ],
+      "category": "contrast",
+      "type": "subordinating_conjunction",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "While I understand your point, I disagree.",
+          "pt": "Embora eu entenda seu ponto, eu discordo."
+        }
+      ],
+      "tags": [
+        "contrast",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "nevertheless",
+      "connector": "nevertheless",
+      "meanings": [
+        "mesmo assim",
+        "no entanto"
+      ],
+      "category": "contrast",
+      "type": "conjunctive_adverb",
+      "level": "B2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "It was expensive. Nevertheless, I bought it.",
+          "pt": "Era caro. Mesmo assim, eu comprei."
+        }
+      ],
+      "tags": [
+        "contrast",
+        "conjunctive_adverb"
+      ]
+    },
+    {
+      "id": "nonetheless",
+      "connector": "nonetheless",
+      "meanings": [
+        "ainda assim",
+        "mesmo assim"
+      ],
+      "category": "contrast",
+      "type": "conjunctive_adverb",
+      "level": "B2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "The plan was risky. Nonetheless, we accepted it.",
+          "pt": "O plano era arriscado. Ainda assim, nós o aceitamos."
+        }
+      ],
+      "tags": [
+        "contrast",
+        "conjunctive_adverb"
+      ]
+    },
+    {
+      "id": "on-the-other-hand",
+      "connector": "on the other hand",
+      "meanings": [
+        "por outro lado"
+      ],
+      "category": "contrast",
+      "type": "discourse_connector",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The job pays well. On the other hand, it is stressful.",
+          "pt": "O trabalho paga bem. Por outro lado, é estressante."
+        }
+      ],
+      "tags": [
+        "contrast",
+        "discourse_connector"
+      ]
+    },
+    {
+      "id": "in-contrast",
+      "connector": "in contrast",
+      "meanings": [
+        "em contraste",
+        "por outro lado"
+      ],
+      "category": "contrast",
+      "type": "discourse_connector",
+      "level": "B2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "My old job was stressful. In contrast, this one is calm.",
+          "pt": "Meu antigo trabalho era estressante. Em contraste, este é tranquilo."
+        }
+      ],
+      "tags": [
+        "contrast",
+        "discourse_connector"
+      ]
+    },
+    {
+      "id": "instead",
+      "connector": "instead",
+      "meanings": [
+        "em vez disso"
+      ],
+      "category": "contrast",
+      "type": "conjunctive_adverb",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I didn't drive. Instead, I took the bus.",
+          "pt": "Eu não dirigi. Em vez disso, peguei o ônibus."
+        }
+      ],
+      "tags": [
+        "contrast",
+        "conjunctive_adverb"
+      ]
+    },
+    {
+      "id": "rather-than",
+      "connector": "rather than",
+      "meanings": [
+        "em vez de",
+        "ao invés de"
+      ],
+      "category": "contrast",
+      "type": "prepositional_connector",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I stayed home rather than going out.",
+          "pt": "Eu fiquei em casa em vez de sair."
+        }
+      ],
+      "tags": [
+        "contrast",
+        "prepositional_connector"
+      ]
+    },
+    {
+      "id": "despite",
+      "connector": "despite",
+      "meanings": [
+        "apesar de"
+      ],
+      "category": "contrast",
+      "type": "prepositional_connector",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Despite the rain, we went for a walk.",
+          "pt": "Apesar da chuva, fomos caminhar."
+        }
+      ],
+      "tags": [
+        "contrast",
+        "prepositional_connector"
+      ]
+    },
+    {
+      "id": "in-spite-of",
+      "connector": "in spite of",
+      "meanings": [
+        "apesar de"
+      ],
+      "category": "contrast",
+      "type": "prepositional_connector",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "In spite of the traffic, we arrived on time.",
+          "pt": "Apesar do trânsito, chegamos na hora."
+        }
+      ],
+      "tags": [
+        "contrast",
+        "prepositional_connector"
+      ]
+    },
+    {
+      "id": "because",
+      "connector": "because",
+      "meanings": [
+        "porque"
+      ],
+      "category": "cause_reason",
+      "type": "subordinating_conjunction",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I stayed home because I was tired.",
+          "pt": "Eu fiquei em casa porque estava cansado."
+        }
+      ],
+      "tags": [
+        "cause_reason",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "because-of",
+      "connector": "because of",
+      "meanings": [
+        "por causa de"
+      ],
+      "category": "cause_reason",
+      "type": "prepositional_connector",
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The flight was delayed because of the weather.",
+          "pt": "O voo atrasou por causa do tempo."
+        }
+      ],
+      "tags": [
+        "cause_reason",
+        "prepositional_connector"
+      ]
+    },
+    {
+      "id": "since",
+      "connector": "since",
+      "meanings": [
+        "já que",
+        "visto que"
+      ],
+      "category": "cause_reason",
+      "type": "subordinating_conjunction",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Since you're here, let's start.",
+          "pt": "Já que você está aqui, vamos começar."
+        }
+      ],
+      "tags": [
+        "cause_reason",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "as",
+      "connector": "as",
+      "meanings": [
+        "como",
+        "já que"
+      ],
+      "category": "cause_reason",
+      "type": "subordinating_conjunction",
+      "level": "B1",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "As it was getting late, we left.",
+          "pt": "Como estava ficando tarde, fomos embora."
+        }
+      ],
+      "tags": [
+        "cause_reason",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "due-to",
+      "connector": "due to",
+      "meanings": [
+        "devido a"
+      ],
+      "category": "cause_reason",
+      "type": "prepositional_connector",
+      "level": "B2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The meeting was canceled due to a technical problem.",
+          "pt": "A reunião foi cancelada devido a um problema técnico."
+        }
+      ],
+      "tags": [
+        "cause_reason",
+        "prepositional_connector"
+      ]
+    },
+    {
+      "id": "owing-to",
+      "connector": "owing to",
+      "meanings": [
+        "devido a"
+      ],
+      "category": "cause_reason",
+      "type": "prepositional_connector",
+      "level": "B2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "The event was postponed owing to bad weather.",
+          "pt": "O evento foi adiado devido ao mau tempo."
+        }
+      ],
+      "tags": [
+        "cause_reason",
+        "prepositional_connector"
+      ]
+    },
+    {
+      "id": "so",
+      "connector": "so",
+      "meanings": [
+        "então",
+        "por isso"
+      ],
+      "category": "result",
+      "type": "coordinating_conjunction",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I was tired, so I went home.",
+          "pt": "Eu estava cansado, então fui para casa."
+        }
+      ],
+      "tags": [
+        "result",
+        "coordinating_conjunction"
+      ]
+    },
+    {
+      "id": "therefore",
+      "connector": "therefore",
+      "meanings": [
+        "portanto",
+        "por isso"
+      ],
+      "category": "result",
+      "type": "conjunctive_adverb",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The data was incomplete. Therefore, we repeated the test.",
+          "pt": "Os dados estavam incompletos. Portanto, repetimos o teste."
+        }
+      ],
+      "tags": [
+        "result",
+        "conjunctive_adverb"
+      ]
+    },
+    {
+      "id": "thus",
+      "connector": "thus",
+      "meanings": [
+        "assim",
+        "portanto"
+      ],
+      "category": "result",
+      "type": "conjunctive_adverb",
+      "level": "B2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "The system failed, thus delaying the process.",
+          "pt": "O sistema falhou, atrasando assim o processo."
+        }
+      ],
+      "tags": [
+        "result",
+        "conjunctive_adverb"
+      ]
+    },
+    {
+      "id": "as-a-result",
+      "connector": "as a result",
+      "meanings": [
+        "como resultado",
+        "por isso"
+      ],
+      "category": "result",
+      "type": "discourse_connector",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We improved the code. As a result, the app became faster.",
+          "pt": "Melhoramos o código. Como resultado, o aplicativo ficou mais rápido."
+        }
+      ],
+      "tags": [
+        "result",
+        "discourse_connector"
+      ]
+    },
+    {
+      "id": "consequently",
+      "connector": "consequently",
+      "meanings": [
+        "consequentemente"
+      ],
+      "category": "result",
+      "type": "conjunctive_adverb",
+      "level": "B2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "The road was closed. Consequently, we arrived late.",
+          "pt": "A estrada estava fechada. Consequentemente, chegamos atrasados."
+        }
+      ],
+      "tags": [
+        "result",
+        "conjunctive_adverb"
+      ]
+    },
+    {
+      "id": "for-this-reason",
+      "connector": "for this reason",
+      "meanings": [
+        "por esse motivo"
+      ],
+      "category": "result",
+      "type": "discourse_connector",
+      "level": "B1",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "The service was unstable. For this reason, we changed providers.",
+          "pt": "O serviço estava instável. Por esse motivo, trocamos de fornecedor."
+        }
+      ],
+      "tags": [
+        "result",
+        "discourse_connector"
+      ]
+    },
+    {
+      "id": "and",
+      "connector": "and",
+      "meanings": [
+        "e"
+      ],
+      "category": "addition",
+      "type": "coordinating_conjunction",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I work and study every day.",
+          "pt": "Eu trabalho e estudo todos os dias."
+        }
+      ],
+      "tags": [
+        "addition",
+        "coordinating_conjunction"
+      ]
+    },
+    {
+      "id": "also",
+      "connector": "also",
+      "meanings": [
+        "também"
+      ],
+      "category": "addition",
+      "type": "conjunctive_adverb",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The app is fast and also easy to use.",
+          "pt": "O aplicativo é rápido e também fácil de usar."
+        }
+      ],
+      "tags": [
+        "addition",
+        "conjunctive_adverb"
+      ]
+    },
+    {
+      "id": "too",
+      "connector": "too",
+      "meanings": [
+        "também"
+      ],
+      "category": "addition",
+      "type": "adverbial_connector",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I like coffee, too.",
+          "pt": "Eu também gosto de café."
+        }
+      ],
+      "tags": [
+        "addition",
+        "adverbial_connector"
+      ]
+    },
+    {
+      "id": "as-well",
+      "connector": "as well",
+      "meanings": [
+        "também"
+      ],
+      "category": "addition",
+      "type": "adverbial_connector",
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "She speaks English and Spanish as well.",
+          "pt": "Ela fala inglês e espanhol também."
+        }
+      ],
+      "tags": [
+        "addition",
+        "adverbial_connector"
+      ]
+    },
+    {
+      "id": "in-addition",
+      "connector": "in addition",
+      "meanings": [
+        "além disso"
+      ],
+      "category": "addition",
+      "type": "discourse_connector",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The course is practical. In addition, it is affordable.",
+          "pt": "O curso é prático. Além disso, é acessível."
+        }
+      ],
+      "tags": [
+        "addition",
+        "discourse_connector"
+      ]
+    },
+    {
+      "id": "moreover",
+      "connector": "moreover",
+      "meanings": [
+        "além disso"
+      ],
+      "category": "addition",
+      "type": "conjunctive_adverb",
+      "level": "B2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "The solution is simple. Moreover, it is cheap.",
+          "pt": "A solução é simples. Além disso, é barata."
+        }
+      ],
+      "tags": [
+        "addition",
+        "conjunctive_adverb"
+      ]
+    },
+    {
+      "id": "furthermore",
+      "connector": "furthermore",
+      "meanings": [
+        "além disso"
+      ],
+      "category": "addition",
+      "type": "conjunctive_adverb",
+      "level": "B2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "The tool is fast. Furthermore, it is reliable.",
+          "pt": "A ferramenta é rápida. Além disso, é confiável."
+        }
+      ],
+      "tags": [
+        "addition",
+        "conjunctive_adverb"
+      ]
+    },
+    {
+      "id": "besides",
+      "connector": "besides",
+      "meanings": [
+        "além disso",
+        "além de"
+      ],
+      "category": "addition",
+      "type": "conjunctive_adverb",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I don't want to go. Besides, it's too late.",
+          "pt": "Eu não quero ir. Além disso, está muito tarde."
+        }
+      ],
+      "tags": [
+        "addition",
+        "conjunctive_adverb"
+      ]
+    },
+    {
+      "id": "not-only-but-also",
+      "connector": "not only ... but also",
+      "meanings": [
+        "não apenas ... mas também"
+      ],
+      "category": "addition",
+      "type": "correlative_conjunction",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "She not only speaks English but also teaches it.",
+          "pt": "Ela não apenas fala inglês, mas também o ensina."
+        }
+      ],
+      "tags": [
+        "addition",
+        "correlative_conjunction"
+      ]
+    },
+    {
+      "id": "if",
+      "connector": "if",
+      "meanings": [
+        "se"
+      ],
+      "category": "condition",
+      "type": "subordinating_conjunction",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "If you need help, call me.",
+          "pt": "Se você precisar de ajuda, me ligue."
+        }
+      ],
+      "tags": [
+        "condition",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "unless",
+      "connector": "unless",
+      "meanings": [
+        "a menos que",
+        "se não"
+      ],
+      "category": "condition",
+      "type": "subordinating_conjunction",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I won't go unless you come with me.",
+          "pt": "Eu não vou a menos que você venha comigo."
+        }
+      ],
+      "tags": [
+        "condition",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "as-long-as",
+      "connector": "as long as",
+      "meanings": [
+        "desde que",
+        "contanto que"
+      ],
+      "category": "condition",
+      "type": "subordinating_conjunction",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "You can stay as long as you are quiet.",
+          "pt": "Você pode ficar desde que fique em silêncio."
+        }
+      ],
+      "tags": [
+        "condition",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "provided-that",
+      "connector": "provided that",
+      "meanings": [
+        "desde que",
+        "contanto que"
+      ],
+      "category": "condition",
+      "type": "subordinating_conjunction",
+      "level": "B2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "You can work remotely provided that the manager agrees.",
+          "pt": "Você pode trabalhar remotamente desde que o gerente concorde."
+        }
+      ],
+      "tags": [
+        "condition",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "in-case",
+      "connector": "in case",
+      "meanings": [
+        "caso",
+        "para o caso de"
+      ],
+      "category": "condition",
+      "type": "subordinating_conjunction",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Take an umbrella in case it rains.",
+          "pt": "Leve um guarda-chuva caso chova."
+        }
+      ],
+      "tags": [
+        "condition",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "otherwise",
+      "connector": "otherwise",
+      "meanings": [
+        "caso contrário",
+        "senão"
+      ],
+      "category": "condition",
+      "type": "conjunctive_adverb",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Leave now. Otherwise, you'll be late.",
+          "pt": "Saia agora. Caso contrário, você vai se atrasar."
+        }
+      ],
+      "tags": [
+        "condition",
+        "conjunctive_adverb"
+      ]
+    },
+    {
+      "id": "when",
+      "connector": "when",
+      "meanings": [
+        "quando"
+      ],
+      "category": "time_sequence",
+      "type": "subordinating_conjunction",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Call me when you arrive.",
+          "pt": "Me ligue quando você chegar."
+        }
+      ],
+      "tags": [
+        "time_sequence",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "whenever",
+      "connector": "whenever",
+      "meanings": [
+        "sempre que"
+      ],
+      "category": "time_sequence",
+      "type": "subordinating_conjunction",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I practice whenever I have time.",
+          "pt": "Eu pratico sempre que tenho tempo."
+        }
+      ],
+      "tags": [
+        "time_sequence",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "before",
+      "connector": "before",
+      "meanings": [
+        "antes de",
+        "antes que"
+      ],
+      "category": "time_sequence",
+      "type": "subordinating_conjunction",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Check the file before you send it.",
+          "pt": "Verifique o arquivo antes de enviá-lo."
+        }
+      ],
+      "tags": [
+        "time_sequence",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "after",
+      "connector": "after",
+      "meanings": [
+        "depois de",
+        "depois que"
+      ],
+      "category": "time_sequence",
+      "type": "subordinating_conjunction",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We talked after the meeting ended.",
+          "pt": "Nós conversamos depois que a reunião terminou."
+        }
+      ],
+      "tags": [
+        "time_sequence",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "while",
+      "connector": "while",
+      "meanings": [
+        "enquanto"
+      ],
+      "category": "time_sequence",
+      "type": "subordinating_conjunction",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I listen to podcasts while I walk.",
+          "pt": "Eu escuto podcasts enquanto caminho."
+        }
+      ],
+      "tags": [
+        "time_sequence",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "until",
+      "connector": "until",
+      "meanings": [
+        "até",
+        "até que"
+      ],
+      "category": "time_sequence",
+      "type": "subordinating_conjunction",
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Wait here until I come back.",
+          "pt": "Espere aqui até eu voltar."
+        }
+      ],
+      "tags": [
+        "time_sequence",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "as-soon-as",
+      "connector": "as soon as",
+      "meanings": [
+        "assim que"
+      ],
+      "category": "time_sequence",
+      "type": "subordinating_conjunction",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I'll call you as soon as I arrive.",
+          "pt": "Eu vou te ligar assim que chegar."
+        }
+      ],
+      "tags": [
+        "time_sequence",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "once",
+      "connector": "once",
+      "meanings": [
+        "assim que",
+        "uma vez que"
+      ],
+      "category": "time_sequence",
+      "type": "subordinating_conjunction",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Once you understand the rule, it becomes easier.",
+          "pt": "Assim que você entende a regra, fica mais fácil."
+        }
+      ],
+      "tags": [
+        "time_sequence",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "then",
+      "connector": "then",
+      "meanings": [
+        "então",
+        "depois"
+      ],
+      "category": "time_sequence",
+      "type": "sequence_connector",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "First we tested the app, then we deployed it.",
+          "pt": "Primeiro testamos o aplicativo, depois fizemos o deploy."
+        }
+      ],
+      "tags": [
+        "time_sequence",
+        "sequence_connector"
+      ]
+    },
+    {
+      "id": "first",
+      "connector": "first",
+      "meanings": [
+        "primeiro"
+      ],
+      "category": "time_sequence",
+      "type": "sequence_connector",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "First, open the application.",
+          "pt": "Primeiro, abra o aplicativo."
+        }
+      ],
+      "tags": [
+        "time_sequence",
+        "sequence_connector"
+      ]
+    },
+    {
+      "id": "next",
+      "connector": "next",
+      "meanings": [
+        "em seguida",
+        "depois"
+      ],
+      "category": "time_sequence",
+      "type": "sequence_connector",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Next, select an option.",
+          "pt": "Em seguida, selecione uma opção."
+        }
+      ],
+      "tags": [
+        "time_sequence",
+        "sequence_connector"
+      ]
+    },
+    {
+      "id": "finally",
+      "connector": "finally",
+      "meanings": [
+        "finalmente",
+        "por fim"
+      ],
+      "category": "time_sequence",
+      "type": "sequence_connector",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Finally, click the save button.",
+          "pt": "Por fim, clique no botão salvar."
+        }
+      ],
+      "tags": [
+        "time_sequence",
+        "sequence_connector"
+      ]
+    },
+    {
+      "id": "so-that",
+      "connector": "so that",
+      "meanings": [
+        "para que"
+      ],
+      "category": "purpose",
+      "type": "subordinating_conjunction",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I wrote it down so that I wouldn't forget.",
+          "pt": "Eu anotei para que não esquecesse."
+        }
+      ],
+      "tags": [
+        "purpose",
+        "subordinating_conjunction"
+      ]
+    },
+    {
+      "id": "in-order-to",
+      "connector": "in order to",
+      "meanings": [
+        "para",
+        "a fim de"
+      ],
+      "category": "purpose",
+      "type": "infinitive_connector",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I practice every day in order to improve my English.",
+          "pt": "Eu pratico todos os dias para melhorar meu inglês."
+        }
+      ],
+      "tags": [
+        "purpose",
+        "infinitive_connector"
+      ]
+    },
+    {
+      "id": "so-as-to",
+      "connector": "so as to",
+      "meanings": [
+        "para",
+        "a fim de"
+      ],
+      "category": "purpose",
+      "type": "infinitive_connector",
+      "level": "B2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "We left early so as to avoid traffic.",
+          "pt": "Saímos cedo para evitar o trânsito."
+        }
+      ],
+      "tags": [
+        "purpose",
+        "infinitive_connector"
+      ]
+    },
+    {
+      "id": "for-example",
+      "connector": "for example",
+      "meanings": [
+        "por exemplo"
+      ],
+      "category": "example_clarification",
+      "type": "discourse_connector",
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "You can practice in many ways. For example, you can speak with friends.",
+          "pt": "Você pode praticar de muitas maneiras. Por exemplo, pode conversar com amigos."
+        }
+      ],
+      "tags": [
+        "example_clarification",
+        "discourse_connector"
+      ]
+    },
+    {
+      "id": "for-instance",
+      "connector": "for instance",
+      "meanings": [
+        "por exemplo"
+      ],
+      "category": "example_clarification",
+      "type": "discourse_connector",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Some verbs are irregular. For instance, go becomes went.",
+          "pt": "Alguns verbos são irregulares. Por exemplo, go vira went."
+        }
+      ],
+      "tags": [
+        "example_clarification",
+        "discourse_connector"
+      ]
+    },
+    {
+      "id": "such-as",
+      "connector": "such as",
+      "meanings": [
+        "como",
+        "tais como"
+      ],
+      "category": "example_clarification",
+      "type": "prepositional_connector",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I enjoy activities such as walking and swimming.",
+          "pt": "Eu gosto de atividades como caminhar e nadar."
+        }
+      ],
+      "tags": [
+        "example_clarification",
+        "prepositional_connector"
+      ]
+    },
+    {
+      "id": "in-other-words",
+      "connector": "in other words",
+      "meanings": [
+        "em outras palavras"
+      ],
+      "category": "example_clarification",
+      "type": "discourse_connector",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The process is automatic. In other words, you don't need to do it manually.",
+          "pt": "O processo é automático. Em outras palavras, você não precisa fazer manualmente."
+        }
+      ],
+      "tags": [
+        "example_clarification",
+        "discourse_connector"
+      ]
+    },
+    {
+      "id": "that-is",
+      "connector": "that is",
+      "meanings": [
+        "isto é",
+        "ou seja"
+      ],
+      "category": "example_clarification",
+      "type": "discourse_connector",
+      "level": "B1",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "The deadline is Friday, that is, the end of the week.",
+          "pt": "O prazo é sexta-feira, ou seja, o fim da semana."
+        }
+      ],
+      "tags": [
+        "example_clarification",
+        "discourse_connector"
+      ]
+    },
+    {
+      "id": "in-fact",
+      "connector": "in fact",
+      "meanings": [
+        "na verdade",
+        "de fato"
+      ],
+      "category": "emphasis",
+      "type": "discourse_connector",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I thought it was difficult. In fact, it was quite easy.",
+          "pt": "Eu achei que era difícil. Na verdade, era bem fácil."
+        }
+      ],
+      "tags": [
+        "emphasis",
+        "discourse_connector"
+      ]
+    },
+    {
+      "id": "actually",
+      "connector": "actually",
+      "meanings": [
+        "na verdade",
+        "na realidade"
+      ],
+      "category": "emphasis",
+      "type": "adverbial_connector",
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Actually, I changed my mind.",
+          "pt": "Na verdade, eu mudei de ideia."
+        }
+      ],
+      "tags": [
+        "emphasis",
+        "adverbial_connector"
+      ]
+    },
+    {
+      "id": "especially",
+      "connector": "especially",
+      "meanings": [
+        "especialmente"
+      ],
+      "category": "emphasis",
+      "type": "adverbial_connector",
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I like Brazilian food, especially feijoada.",
+          "pt": "Eu gosto de comida brasileira, especialmente feijoada."
+        }
+      ],
+      "tags": [
+        "emphasis",
+        "adverbial_connector"
+      ]
+    },
+    {
+      "id": "particularly",
+      "connector": "particularly",
+      "meanings": [
+        "particularmente",
+        "especialmente"
+      ],
+      "category": "emphasis",
+      "type": "adverbial_connector",
+      "level": "B1",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "This feature is particularly useful for beginners.",
+          "pt": "Este recurso é particularmente útil para iniciantes."
+        }
+      ],
+      "tags": [
+        "emphasis",
+        "adverbial_connector"
+      ]
+    },
+    {
+      "id": "above-all",
+      "connector": "above all",
+      "meanings": [
+        "acima de tudo",
+        "principalmente"
+      ],
+      "category": "emphasis",
+      "type": "discourse_connector",
+      "level": "B2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "Above all, you need to practice consistently.",
+          "pt": "Acima de tudo, você precisa praticar com consistência."
+        }
+      ],
+      "tags": [
+        "emphasis",
+        "discourse_connector"
+      ]
+    },
+    {
+      "id": "or",
+      "connector": "or",
+      "meanings": [
+        "ou"
+      ],
+      "category": "choice",
+      "type": "coordinating_conjunction",
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Would you like coffee or tea?",
+          "pt": "Você gostaria de café ou chá?"
+        }
+      ],
+      "tags": [
+        "choice",
+        "coordinating_conjunction"
+      ]
+    },
+    {
+      "id": "either-or",
+      "connector": "either ... or",
+      "meanings": [
+        "ou ... ou"
+      ],
+      "category": "choice",
+      "type": "correlative_conjunction",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We can either stay home or go out.",
+          "pt": "Podemos ou ficar em casa ou sair."
+        }
+      ],
+      "tags": [
+        "choice",
+        "correlative_conjunction"
+      ]
+    },
+    {
+      "id": "neither-nor",
+      "connector": "neither ... nor",
+      "meanings": [
+        "nem ... nem"
+      ],
+      "category": "choice",
+      "type": "correlative_conjunction",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "He speaks neither French nor Spanish.",
+          "pt": "Ele não fala nem francês nem espanhol."
+        }
+      ],
+      "tags": [
+        "choice",
+        "correlative_conjunction"
+      ]
+    },
+    {
+      "id": "whether-or",
+      "connector": "whether ... or",
+      "meanings": [
+        "se ... ou"
+      ],
+      "category": "choice",
+      "type": "correlative_conjunction",
+      "level": "B2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "I don't know whether to stay or leave.",
+          "pt": "Eu não sei se fico ou vou embora."
+        }
+      ],
+      "tags": [
+        "choice",
+        "correlative_conjunction"
+      ]
+    },
+    {
+      "id": "in-conclusion",
+      "connector": "in conclusion",
+      "meanings": [
+        "em conclusão"
+      ],
+      "category": "conclusion",
+      "type": "discourse_connector",
+      "level": "B2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "In conclusion, the project was successful.",
+          "pt": "Em conclusão, o projeto foi bem-sucedido."
+        }
+      ],
+      "tags": [
+        "conclusion",
+        "discourse_connector"
+      ]
+    },
+    {
+      "id": "to-sum-up",
+      "connector": "to sum up",
+      "meanings": [
+        "resumindo",
+        "em resumo"
+      ],
+      "category": "conclusion",
+      "type": "discourse_connector",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "To sum up, we need more practice.",
+          "pt": "Resumindo, precisamos de mais prática."
+        }
+      ],
+      "tags": [
+        "conclusion",
+        "discourse_connector"
+      ]
+    },
+    {
+      "id": "overall",
+      "connector": "overall",
+      "meanings": [
+        "no geral",
+        "de modo geral"
+      ],
+      "category": "conclusion",
+      "type": "adverbial_connector",
+      "level": "B1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Overall, the experience was positive.",
+          "pt": "No geral, a experiência foi positiva."
+        }
+      ],
+      "tags": [
+        "conclusion",
+        "adverbial_connector"
+      ]
+    },
+    {
+      "id": "in-short",
+      "connector": "in short",
+      "meanings": [
+        "em resumo",
+        "resumindo"
+      ],
+      "category": "conclusion",
+      "type": "discourse_connector",
+      "level": "B1",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "In short, the app works well.",
+          "pt": "Em resumo, o aplicativo funciona bem."
+        }
+      ],
+      "tags": [
+        "conclusion",
+        "discourse_connector"
+      ]
+    }
+  ]
+}

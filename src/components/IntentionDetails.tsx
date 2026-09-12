@@ -5,13 +5,17 @@ interface IntentionDetailsProps {
   allItems: MentalIntention[];
   onClose: () => void;
   onSelectRelated: (item: MentalIntention) => void;
+  onBasicTraining: (item: MentalIntention) => void;
+  onAdvancedTraining: (item: MentalIntention) => void;
 }
 
 export function IntentionDetails({
   item,
   allItems,
   onClose,
-  onSelectRelated
+  onSelectRelated,
+  onBasicTraining,
+  onAdvancedTraining
 }: IntentionDetailsProps) {
   if (!item) return null;
 
@@ -40,6 +44,24 @@ export function IntentionDetails({
         <p className="eyebrow">Intenção Mental</p>
         <h2>{item.intention}</h2>
         <p className="detail-english">{item.english}</p>
+
+        <div className="training-actions">
+          <button
+            type="button"
+            className="primary-button"
+            onClick={() => onBasicTraining(item)}
+          >
+            Treino básico
+          </button>
+
+          <button
+            type="button"
+            className="secondary-button"
+            onClick={() => onAdvancedTraining(item)}
+          >
+            Treino avançado
+          </button>
+        </div>
 
         {item.pattern && (
           <section>

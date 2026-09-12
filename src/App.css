@@ -778,3 +778,202 @@ button {
     height: 32px;
   }
 }
+
+
+/* Training actions inside intention details */
+.training-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 8px;
+}
+
+/* Shared training layout */
+.basic-training,
+.advanced-training {
+  display: grid;
+  gap: 24px;
+}
+
+.training-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.training-page-header {
+  background: #ffffff;
+  border: 1px solid #e2e7f0;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 10px 25px rgba(24, 39, 75, 0.05);
+}
+
+.training-page-header h1 {
+  margin: 4px 0 8px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.04em;
+}
+
+.training-pattern {
+  margin: 8px 0 0;
+  color: #667085;
+  font-size: 0.9rem;
+}
+
+.training-instruction {
+  margin: 18px 0 0;
+  color: #475467;
+  line-height: 1.6;
+}
+
+.training-writing-area {
+  display: grid;
+  gap: 8px;
+}
+
+.training-writing-area label {
+  font-weight: 800;
+  font-size: 0.92rem;
+}
+
+.training-writing-area textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 120px;
+  border: 1px solid #cfd6e4;
+  border-radius: 14px;
+  padding: 14px;
+  outline: none;
+  background: #ffffff;
+  color: #172033;
+  font: inherit;
+  line-height: 1.5;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.training-writing-area textarea:focus {
+  border-color: #3659d9;
+  box-shadow: 0 0 0 4px rgba(54, 89, 217, 0.1);
+}
+
+/* Basic training */
+.basic-training-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.training-word-card {
+  background: #ffffff;
+  border: 1px solid #e2e7f0;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 8px 22px rgba(24, 39, 75, 0.05);
+}
+
+.training-word-card h2 {
+  margin: 6px 0 4px;
+  font-size: 1.35rem;
+}
+
+.training-translation {
+  margin: 0;
+  color: #667085;
+  line-height: 1.45;
+}
+
+/* Advanced training */
+.advanced-training-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.training-group-card {
+  background: #ffffff;
+  border: 1px solid #e2e7f0;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 8px 22px rgba(24, 39, 75, 0.05);
+}
+
+.training-token-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.training-token {
+  display: grid;
+  gap: 3px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #f7f9fc;
+}
+
+.training-token strong {
+  color: #172033;
+  font-size: 1rem;
+}
+
+.training-token span {
+  color: #667085;
+  font-size: 0.85rem;
+}
+
+.training-token small {
+  width: fit-content;
+  margin-top: 2px;
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: #edf1ff;
+  color: #3659d9;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.connectors-card {
+  grid-column: 1 / -1;
+}
+
+.connectors-card .training-token-list {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.advanced-writing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.combined-sentence-area {
+  background: #ffffff;
+  border: 1px solid #e2e7f0;
+  border-radius: 16px;
+  padding: 18px;
+}
+
+@media (max-width: 820px) {
+  .training-actions,
+  .training-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .basic-training-grid,
+  .advanced-training-grid,
+  .advanced-writing-grid,
+  .connectors-card .training-token-list {
+    grid-template-columns: 1fr;
+  }
+
+  .connectors-card {
+    grid-column: auto;
+  }
+
+  .training-page-header {
+    padding: 18px;
+  }
+}
