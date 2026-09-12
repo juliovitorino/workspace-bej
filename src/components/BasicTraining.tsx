@@ -1,5 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
+import {
+  evaluateTrainingWithAI,
+  type AIEvaluationResult
+} from "../services/aiEvaluationService";
 
 interface BasicTrainingProps {
   intention: MentalIntention;
@@ -67,6 +71,10 @@ export function BasicTraining({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [round, setRound] = useState(0);
+  const [studentText, setStudentText] = useState("");
+  const [evaluating, setEvaluating] = useState(false);
+  const [evaluationError, setEvaluationError] = useState<string | null>(null);
+  const [evaluation, setEvaluation] = useState<AIEvaluationResult | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -139,6 +147,53 @@ export function BasicTraining({
 
   function generateNewRound() {
     setRound((current) => current + 1);
+    setStudentText("");
+    setEvaluation(null);
+    setEvaluationError(null);
+  }
+
+  async function handleEvaluate() {
+    if (
+      !trainingItems.verb ||
+      !trainingItems.adjective ||
+      !trainingItems.noun
+    ) {
+      return;
+    }
+
+    if (!studentText.trim()) {
+      setEvaluationError(
+        "Escreva ou dite uma frase antes de solicitar a avaliação."
+      );
+      return;
+    }
+
+    setEvaluating(true);
+    setEvaluationError(null);
+    setEvaluation(null);
+
+    try {
+      const result = await evaluateTrainingWithAI({
+        mode: "basic",
+        intention,
+        studentText,
+        vocabulary: {
+          verbs: [trainingItems.verb.base],
+          adjectives: [trainingItems.adjective.adjective],
+          nouns: [trainingItems.noun.noun]
+        }
+      });
+
+      setEvaluation(result);
+    } catch (err) {
+      setEvaluationError(
+        err instanceof Error
+          ? err.message
+          : "Não foi possível avaliar a frase."
+      );
+    } finally {
+      setEvaluating(false);
+    }
   }
 
   return (
@@ -237,17 +292,108 @@ export function BasicTraining({
         )}
 
       {!loading && !error && (
-        <div className="training-writing-area">
-          <label htmlFor="basic-training-answer">
-            Escreva (Dite) sua frase
-          </label>
+        <>
+          <div className="training-writing-area">
+            <label htmlFor="basic-training-answer">
+              Escreva (Dite) sua frase
+            </label>
 
-          <textarea
-            id="basic-training-answer"
-            rows={5}
-            placeholder="Digite sua frase em inglês..."
-          />
-        </div>
+            <textarea
+              id="basic-training-answer"
+              rows={5}
+              placeholder="Digite sua frase em inglês..."
+              value={studentText}
+              onChange={(event) => {
+                setStudentText(event.target.value);
+                setEvaluation(null);
+                setEvaluationError(null);
+              }}
+            />
+
+            <button
+              type="button"
+              className="primary-button"
+              onClick={handleEvaluate}
+              disabled={evaluating || !studentText.trim()}
+            >
+              {evaluating
+                ? "Avaliando com IA..."
+                : "Avaliar com IA"}
+            </button>
+          </div>
+
+          {evaluationError && (
+            <div className="status-card error-card ai-evaluation-error">
+              <h2>Não foi possível avaliar a frase.</h2>
+              <p>{evaluationError}</p>
+            </div>
+          )}
+
+          {evaluation && (
+            <section className="ai-evaluation-card">
+              <div className="ai-evaluation-header">
+                <div>
+                  <p className="eyebrow">Avaliação com IA</p>
+                  <h2>Resultado do treino</h2>
+                </div>
+
+                <div className="ai-score">
+                  <strong>{evaluation.score}</strong>
+                  <span>/ 10</span>
+                </div>
+              </div>
+
+              <div className="ai-evaluation-grid">
+                <div>
+                  <span>Gramática</span>
+                  <strong>{evaluation.grammar}</strong>
+                </div>
+
+                <div>
+                  <span>Naturalidade</span>
+                  <strong>{evaluation.naturalness}</strong>
+                </div>
+
+                <div>
+                  <span>Intenção mental</span>
+                  <strong>
+                    {evaluation.intentionUsedCorrectly
+                      ? "Correta"
+                      : "Precisa melhorar"}
+                  </strong>
+                </div>
+
+                <div>
+                  <span>Vocabulário sorteado</span>
+                  <strong>
+                    {evaluation.vocabularyUsedCorrectly
+                      ? "Bom uso"
+                      : "Precisa melhorar"}
+                  </strong>
+                </div>
+              </div>
+
+              <div className="ai-feedback-section">
+                <h3>Feedback</h3>
+                <p>{evaluation.feedbackPt}</p>
+              </div>
+
+              <div className="ai-feedback-section">
+                <h3>Correção</h3>
+                <p className="english">
+                  {evaluation.correctedSentence}
+                </p>
+              </div>
+
+              <div className="ai-feedback-section">
+                <h3>Versão mais natural</h3>
+                <p className="english">
+                  {evaluation.betterVersion}
+                </p>
+              </div>
+            </section>
+          )}
+        </>
       )}
     </section>
   );
