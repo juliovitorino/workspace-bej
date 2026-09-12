@@ -1,5 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
+import {
+  evaluateTrainingWithAI,
+  type AIEvaluationResult
+} from "../services/aiEvaluationService";
 
 interface AdvancedTrainingProps {
   intention: MentalIntention;
@@ -86,6 +90,12 @@ export function AdvancedTraining({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [round, setRound] = useState(0);
+  const [sentenceOne, setSentenceOne] = useState("");
+  const [sentenceTwo, setSentenceTwo] = useState("");
+  const [combinedSentence, setCombinedSentence] = useState("");
+  const [evaluating, setEvaluating] = useState(false);
+  const [evaluationError, setEvaluationError] = useState<string | null>(null);
+  const [evaluation, setEvaluation] = useState<AIEvaluationResult | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -174,6 +184,66 @@ export function AdvancedTraining({
 
   function generateNewRound() {
     setRound((current) => current + 1);
+    setSentenceOne("");
+    setSentenceTwo("");
+    setCombinedSentence("");
+    setEvaluation(null);
+    setEvaluationError(null);
+  }
+
+  async function handleEvaluate() {
+    if (!hasEnoughVocabulary) {
+      return;
+    }
+
+    if (
+      !sentenceOne.trim() ||
+      !sentenceTwo.trim() ||
+      !combinedSentence.trim()
+    ) {
+      setEvaluationError(
+        "Preencha as duas frases e a versão combinada antes de solicitar a avaliação."
+      );
+      return;
+    }
+
+    setEvaluating(true);
+    setEvaluationError(null);
+    setEvaluation(null);
+
+    try {
+      const studentText = [
+        `Frase 1: ${sentenceOne}`,
+        `Frase 2: ${sentenceTwo}`,
+        `Frase combinada: ${combinedSentence}`
+      ].join("\n");
+
+      const result = await evaluateTrainingWithAI({
+        mode: "advanced",
+        intention,
+        studentText,
+        vocabulary: {
+          verbs: trainingItems.verbs.map((verb) => verb.base),
+          adjectives: trainingItems.adjectives.map(
+            (adjective) => adjective.adjective
+          ),
+          nouns: trainingItems.nouns.map((noun) => noun.noun),
+          connectors: trainingItems.connectors.map(
+            (connector) => connector.connector
+          )
+        }
+      });
+
+      setEvaluation(result);
+    } catch (err) {
+      setEvaluationError(
+        err instanceof Error
+          ? err.message
+          : "Não foi possível avaliar o treino avançado."
+      );
+    } finally {
+      setEvaluating(false);
+    }
   }
 
   return (
@@ -311,6 +381,12 @@ export function AdvancedTraining({
                 id="advanced-sentence-one"
                 rows={4}
                 placeholder="Crie a primeira frase em inglês..."
+                value={sentenceOne}
+                onChange={(event) => {
+                  setSentenceOne(event.target.value);
+                  setEvaluation(null);
+                  setEvaluationError(null);
+                }}
               />
             </div>
 
@@ -323,6 +399,12 @@ export function AdvancedTraining({
                 id="advanced-sentence-two"
                 rows={4}
                 placeholder="Crie a segunda frase em inglês..."
+                value={sentenceTwo}
+                onChange={(event) => {
+                  setSentenceTwo(event.target.value);
+                  setEvaluation(null);
+                  setEvaluationError(null);
+                }}
               />
             </div>
           </div>
@@ -336,8 +418,102 @@ export function AdvancedTraining({
               id="advanced-combined-sentence"
               rows={5}
               placeholder="Use um ou mais conectores para juntar suas duas frases..."
+              value={combinedSentence}
+              onChange={(event) => {
+                setCombinedSentence(event.target.value);
+                setEvaluation(null);
+                setEvaluationError(null);
+              }}
             />
+
+            <button
+              type="button"
+              className="primary-button"
+              onClick={handleEvaluate}
+              disabled={
+                evaluating ||
+                !sentenceOne.trim() ||
+                !sentenceTwo.trim() ||
+                !combinedSentence.trim()
+              }
+            >
+              {evaluating
+                ? "Avaliando com IA..."
+                : "Avaliar com IA"}
+            </button>
           </div>
+
+          {evaluationError && (
+            <div className="status-card error-card ai-evaluation-error">
+              <h2>Não foi possível avaliar o treino.</h2>
+              <p>{evaluationError}</p>
+            </div>
+          )}
+
+          {evaluation && (
+            <section className="ai-evaluation-card">
+              <div className="ai-evaluation-header">
+                <div>
+                  <p className="eyebrow">Avaliação com IA</p>
+                  <h2>Resultado do treino avançado</h2>
+                </div>
+
+                <div className="ai-score">
+                  <strong>{evaluation.score}</strong>
+                  <span>/ 10</span>
+                </div>
+              </div>
+
+              <div className="ai-evaluation-grid">
+                <div>
+                  <span>Gramática</span>
+                  <strong>{evaluation.grammar}</strong>
+                </div>
+
+                <div>
+                  <span>Naturalidade</span>
+                  <strong>{evaluation.naturalness}</strong>
+                </div>
+
+                <div>
+                  <span>Intenção mental</span>
+                  <strong>
+                    {evaluation.intentionUsedCorrectly
+                      ? "Correta"
+                      : "Precisa melhorar"}
+                  </strong>
+                </div>
+
+                <div>
+                  <span>Vocabulário e conectores</span>
+                  <strong>
+                    {evaluation.vocabularyUsedCorrectly
+                      ? "Bom uso"
+                      : "Precisa melhorar"}
+                  </strong>
+                </div>
+              </div>
+
+              <div className="ai-feedback-section">
+                <h3>Feedback</h3>
+                <p>{evaluation.feedbackPt}</p>
+              </div>
+
+              <div className="ai-feedback-section">
+                <h3>Correção</h3>
+                <p className="english">
+                  {evaluation.correctedSentence}
+                </p>
+              </div>
+
+              <div className="ai-feedback-section">
+                <h3>Versão mais natural</h3>
+                <p className="english">
+                  {evaluation.betterVersion}
+                </p>
+              </div>
+            </section>
+          )}
         </>
       )}
     </section>
