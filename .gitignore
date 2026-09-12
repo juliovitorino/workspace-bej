@@ -1,0 +1,116 @@
+# =========================
+# Node / Frontend
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.pnpm-store/
+
+# =========================
+# Build outputs
+# =========================
+dist/
+build/
+out/
+coverage/
+
+# =========================
+# Environment files
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# IDEs / Editors
+# =========================
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# =========================
+# Temporary files
+# =========================
+tmp/
+temp/
+*.tmp
+*.bak
+
+# =========================
+# Cache
+# =========================
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.svelte-kit/
+.angular/
+
+# =========================
+# TypeScript
+# =========================
+*.tsbuildinfo
+
+# =========================
+# Java / Spring Boot
+# caso exista backend Java
+# =========================
+target/
+*.class
+*.jar
+*.war
+
+# Maven
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle/
+.gradle-cache/
+
+# =========================
+# Local application data
+# =========================
+data/local/
+data/tmp/
+
+# =========================
+# Secrets / credentials
+# =========================
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+credentials.json
+secrets.json
+
+# =========================
+# Backup / exported files
+# =========================
+*.zip
+*.tar
+*.tar.gz
+
+# =========================
+# Generated local files
+# =========================
+*.local.json

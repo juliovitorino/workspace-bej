@@ -5573,6 +5573,1453 @@
         "speaking"
       ],
       "related": []
-    }
+    },
+    {
+      "id": "mark-my-words",
+      "intention": "Pode anotar o que estou dizendo...",
+      "english": "Mark my words...",
+      "pattern": "Mark my words + statement/prediction",
+      "description": "Chunk usado para enfatizar uma afirmação ou previsão que o falante acredita fortemente que vai se confirmar.",
+      "category": "chunk",
+      "searchTerms": [
+        "pode anotar",
+        "pode escrever",
+        "você vai ver",
+        "lembre do que estou dizendo",
+        "mark my words"
+      ],
+      "examples": [
+        {
+          "pt": "Pode anotar o que estou dizendo. O inglês vai mudar minha vida.",
+          "en": "Mark my words. English will change my life."
+        },
+        {
+          "pt": "Pode anotar. Isso vai funcionar.",
+          "en": "Mark my words. This is going to work."
+        },
+        {
+          "pt": "Pode anotar. Um dia ele vai voltar.",
+          "en": "Mark my words. He'll come back someday."
+        }
+      ],
+      "tags": [
+        "emphasis",
+        "prediction",
+        "speaking",
+        "chunk"
+      ],
+      "related": []
+    },
+      {
+    "id": "youre-one-to-talk",
+    "intention": "Olha só quem fala.",
+    "english": "You're one to talk.",
+    "pattern": "Fixed chunk",
+    "description": "Chunk usado para responder de forma irônica quando a outra pessoa critica algo que ela mesma também faz.",
+    "category": "chunk",
+    "searchTerms": [
+      "olha só quem fala",
+      "quem fala",
+      "ironia",
+      "criticar"
+    ],
+    "examples": [
+      {
+        "pt": "Olha só quem fala.",
+        "en": "You're one to talk."
+      }
+    ],
+    "tags": [
+      "reaction",
+      "irony",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "everything-is-hunky-dory",
+    "intention": "Está tudo uma maravilha.",
+    "english": "Everything is hunky-dory.",
+    "pattern": "Fixed chunk",
+    "description": "Chunk informal para dizer que tudo está bem ou correndo perfeitamente.",
+    "category": "chunk",
+    "searchTerms": [
+      "está tudo bem",
+      "está tudo uma maravilha",
+      "tudo certo",
+      "hunky dory"
+    ],
+    "examples": [
+      {
+        "pt": "Está tudo uma maravilha.",
+        "en": "Everything is hunky-dory."
+      }
+    ],
+    "tags": [
+      "state",
+      "informal",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-dont-feel-good",
+    "intention": "Não estou me sentindo bem.",
+    "english": "I don't feel good.",
+    "pattern": "I don't feel + adjective",
+    "description": "Estrutura simples para dizer como você não está se sentindo.",
+    "category": "chunk",
+    "searchTerms": [
+      "não estou me sentindo bem",
+      "não me sinto bem",
+      "feel good"
+    ],
+    "examples": [
+      {
+        "pt": "Não estou me sentindo bem.",
+        "en": "I don't feel good."
+      }
+    ],
+    "tags": [
+      "feeling",
+      "health",
+      "speaking"
+    ],
+    "related": [
+      "im-under-the-weather"
+    ]
+  },
+  {
+    "id": "im-under-the-weather",
+    "intention": "Estou meio indisposto.",
+    "english": "I'm under the weather.",
+    "pattern": "Fixed chunk",
+    "description": "Expressão idiomática para dizer que você está se sentindo indisposto ou um pouco doente.",
+    "category": "chunk",
+    "searchTerms": [
+      "indisposto",
+      "meio doente",
+      "não estou bem",
+      "under the weather"
+    ],
+    "examples": [
+      {
+        "pt": "Estou meio indisposto.",
+        "en": "I'm under the weather."
+      }
+    ],
+    "tags": [
+      "feeling",
+      "health",
+      "idiom",
+      "speaking"
+    ],
+    "related": [
+      "i-dont-feel-good"
+    ]
+  },
+  {
+    "id": "whats-on-the-agenda-today",
+    "intention": "O que temos pra hoje?",
+    "english": "What's on the agenda today?",
+    "pattern": "What's on the agenda + time?",
+    "description": "Pergunta usada para saber quais atividades, planos ou assuntos estão previstos.",
+    "category": "chunk",
+    "searchTerms": [
+      "o que temos pra hoje",
+      "agenda",
+      "planos de hoje",
+      "what's on the agenda"
+    ],
+    "examples": [
+      {
+        "pt": "O que temos pra hoje?",
+        "en": "What's on the agenda today?"
+      }
+    ],
+    "tags": [
+      "question",
+      "planning",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "where-were-we",
+    "intention": "Onde nós estávamos?",
+    "english": "Where were we?",
+    "pattern": "Fixed chunk",
+    "description": "Chunk usado para retomar uma conversa ou atividade depois de uma interrupção.",
+    "category": "chunk",
+    "searchTerms": [
+      "onde estávamos",
+      "retomar conversa",
+      "retomar assunto",
+      "where were we"
+    ],
+    "examples": [
+      {
+        "pt": "Onde nós estávamos?",
+        "en": "Where were we?"
+      }
+    ],
+    "tags": [
+      "conversation-management",
+      "question",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "ill-let-it-slide",
+    "intention": "Vou deixar passar desta vez.",
+    "english": "I'll let it slide this time.",
+    "pattern": "I'll let it slide + optional time",
+    "description": "Chunk para dizer que você vai ignorar ou perdoar algo desta vez.",
+    "category": "chunk",
+    "searchTerms": [
+      "vou deixar passar",
+      "desta vez",
+      "perdoar",
+      "let it slide"
+    ],
+    "examples": [
+      {
+        "pt": "Eu vou deixar passar desta vez.",
+        "en": "I'll let it slide this time."
+      }
+    ],
+    "tags": [
+      "reaction",
+      "decision",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "go-big-or-go-home",
+    "intention": "Tudo ou nada / vai com tudo ou nem tenta.",
+    "english": "Go big or go home.",
+    "pattern": "Fixed chunk",
+    "description": "Expressão para incentivar alguém a se comprometer totalmente com uma ação.",
+    "category": "chunk",
+    "searchTerms": [
+      "tudo ou nada",
+      "vai com tudo",
+      "ou vai ou rachar",
+      "go big or go home"
+    ],
+    "examples": [
+      {
+        "pt": "Tudo ou nada.",
+        "en": "Go big or go home."
+      },
+      {
+        "pt": "Vai com tudo ou nem tenta.",
+        "en": "Go big or go home."
+      }
+    ],
+    "tags": [
+      "motivation",
+      "idiom",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "why-the-long-face",
+    "intention": "Que cara triste é essa?",
+    "english": "Why the long face?",
+    "pattern": "Fixed chunk",
+    "description": "Pergunta informal usada quando alguém parece triste ou abatido.",
+    "category": "chunk",
+    "searchTerms": [
+      "que cara é essa",
+      "cara triste",
+      "triste",
+      "why the long face"
+    ],
+    "examples": [
+      {
+        "pt": "Que cara triste é essa?",
+        "en": "Why the long face?"
+      }
+    ],
+    "tags": [
+      "question",
+      "reaction",
+      "idiom",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "out-of-sight-out-of-mind",
+    "intention": "O que os olhos não veem, o coração não sente.",
+    "english": "Out of sight, out of mind.",
+    "pattern": "Fixed chunk",
+    "description": "Provérbio usado para dizer que tendemos a esquecer o que não vemos ou com que não temos contato.",
+    "category": "chunk",
+    "searchTerms": [
+      "o que os olhos não veem",
+      "coração não sente",
+      "out of sight out of mind"
+    ],
+    "examples": [
+      {
+        "pt": "O que os olhos não veem, o coração não sente.",
+        "en": "Out of sight, out of mind."
+      }
+    ],
+    "tags": [
+      "proverb",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "are-you-pulling-my-leg",
+    "intention": "Você está me zoando?",
+    "english": "Are you pulling my leg?",
+    "pattern": "Fixed chunk",
+    "description": "Pergunta idiomática para saber se alguém está brincando, enganando ou zoando você.",
+    "category": "chunk",
+    "searchTerms": [
+      "você está me zoando",
+      "está brincando comigo",
+      "pulling my leg"
+    ],
+    "examples": [
+      {
+        "pt": "Cê tá me zoando?",
+        "en": "Are you pulling my leg?"
+      }
+    ],
+    "tags": [
+      "question",
+      "idiom",
+      "reaction",
+      "speaking"
+    ],
+    "related": [
+      "are-you-mocking-me"
+    ]
+  },
+  {
+    "id": "takes-one-to-know-one",
+    "intention": "O sujo falando do mal lavado.",
+    "english": "Takes one to know one.",
+    "pattern": "Fixed chunk",
+    "description": "Resposta usada quando alguém critica em outra pessoa um defeito que também possui.",
+    "category": "chunk",
+    "searchTerms": [
+      "o sujo falando do mal lavado",
+      "takes one to know one",
+      "hipocrisia"
+    ],
+    "examples": [
+      {
+        "pt": "O sujo falando do mal lavado.",
+        "en": "Takes one to know one."
+      }
+    ],
+    "tags": [
+      "reaction",
+      "idiom",
+      "speaking"
+    ],
+    "related": [
+      "youre-one-to-talk"
+    ]
+  },
+  {
+    "id": "go-ahead-and-get-busy",
+    "intention": "Mãos à obra.",
+    "english": "Go ahead and get busy.",
+    "pattern": "Go ahead and + verb",
+    "description": "Chunk para incentivar alguém a começar uma tarefa ou ação.",
+    "category": "chunk",
+    "searchTerms": [
+      "mãos à obra",
+      "começar",
+      "vai em frente",
+      "get busy"
+    ],
+    "examples": [
+      {
+        "pt": "Mãos à obra.",
+        "en": "Go ahead and get busy."
+      }
+    ],
+    "tags": [
+      "encouragement",
+      "action",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "ill-get-the-hang-of-it",
+    "intention": "Vou pegar o jeito.",
+    "english": "I'll get the hang of it.",
+    "pattern": "get the hang of + object",
+    "description": "Expressão usada para dizer que você vai aprender a fazer algo com prática.",
+    "category": "chunk",
+    "searchTerms": [
+      "vou pegar o jeito",
+      "pegar o jeito",
+      "aprender com prática",
+      "get the hang of it"
+    ],
+    "examples": [
+      {
+        "pt": "Vou pegar o jeito.",
+        "en": "I'll get the hang of it."
+      }
+    ],
+    "tags": [
+      "learning",
+      "idiom",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "what-to-do-then",
+    "intention": "O que fazer então?",
+    "english": "What to do then?",
+    "pattern": "What to do + time/discourse marker?",
+    "description": "Chunk curto para perguntar qual ação tomar em seguida.",
+    "category": "chunk",
+    "searchTerms": [
+      "o que fazer então",
+      "o que resta fazer",
+      "what to do then"
+    ],
+    "examples": [
+      {
+        "pt": "O que fazer então?",
+        "en": "What to do then?"
+      }
+    ],
+    "tags": [
+      "question",
+      "decision",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "lets-catch-up",
+    "intention": "Vamos colocar o papo em dia.",
+    "english": "Let's catch up.",
+    "pattern": "Let's + verb",
+    "description": "Chunk usado para sugerir conversar e trocar novidades depois de algum tempo.",
+    "category": "chunk",
+    "searchTerms": [
+      "colocar o papo em dia",
+      "nos atualizar",
+      "catch up"
+    ],
+    "examples": [
+      {
+        "pt": "Vamos colocar o papo em dia.",
+        "en": "Let's catch up."
+      }
+    ],
+    "tags": [
+      "social",
+      "suggestion",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "ill-check-back-in-with-you-later",
+    "intention": "Eu falo com você mais tarde.",
+    "english": "I'll check back in with you later.",
+    "pattern": "check back in with + person + later",
+    "description": "Chunk para dizer que você retomará o contato com alguém mais tarde.",
+    "category": "chunk",
+    "searchTerms": [
+      "falo com você mais tarde",
+      "retomar contato",
+      "check back in"
+    ],
+    "examples": [
+      {
+        "pt": "Eu falo com você mais tarde.",
+        "en": "I'll check back in with you later."
+      }
+    ],
+    "tags": [
+      "follow-up",
+      "future",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "look-whos-here",
+    "intention": "Olha quem está aqui!",
+    "english": "Look who's here!",
+    "pattern": "Fixed chunk",
+    "description": "Reação usada ao notar ou anunciar a chegada de alguém.",
+    "category": "chunk",
+    "searchTerms": [
+      "olha quem está aqui",
+      "quem chegou",
+      "look who's here"
+    ],
+    "examples": [
+      {
+        "pt": "Olha quem está aqui!",
+        "en": "Look who's here!"
+      }
+    ],
+    "tags": [
+      "reaction",
+      "social",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "im-gonna-take-a-piss",
+    "intention": "Vou fazer xixi.",
+    "english": "I'm gonna take a piss.",
+    "pattern": "I'm gonna + verb",
+    "description": "Expressão muito informal e vulgar para dizer que vai urinar.",
+    "category": "chunk",
+    "searchTerms": [
+      "vou fazer xixi",
+      "urinar",
+      "take a piss"
+    ],
+    "examples": [
+      {
+        "pt": "Vou fazer xixi.",
+        "en": "I'm gonna take a piss."
+      }
+    ],
+    "tags": [
+      "informal",
+      "vulgar",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "im-over-you",
+    "intention": "Eu já te superei.",
+    "english": "I'm over you.",
+    "pattern": "be over + person/situation",
+    "description": "Chunk para dizer que você superou emocionalmente uma pessoa ou situação.",
+    "category": "chunk",
+    "searchTerms": [
+      "já te superei",
+      "superei você",
+      "não me importo mais",
+      "over you"
+    ],
+    "examples": [
+      {
+        "pt": "Eu já te superei.",
+        "en": "I'm over you."
+      }
+    ],
+    "tags": [
+      "relationship",
+      "emotion",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "ill-hold-you-to-that",
+    "intention": "Vou cobrar isso de você.",
+    "english": "I'll hold you to that.",
+    "pattern": "hold + person + to + promise/statement",
+    "description": "Chunk usado quando você pretende cobrar que alguém cumpra o que prometeu ou disse.",
+    "category": "chunk",
+    "searchTerms": [
+      "vou cobrar isso de você",
+      "cobrar promessa",
+      "hold you to that"
+    ],
+    "examples": [
+      {
+        "pt": "Vou cobrar isso de você.",
+        "en": "I'll hold you to that."
+      }
+    ],
+    "tags": [
+      "commitment",
+      "reaction",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "you-left-me-high-and-dry",
+    "intention": "Você me deixou na mão.",
+    "english": "You left me high and dry.",
+    "pattern": "leave + person + high and dry",
+    "description": "Expressão idiomática para dizer que alguém abandonou você numa situação difícil.",
+    "category": "chunk",
+    "searchTerms": [
+      "me deixou na mão",
+      "abandonou",
+      "high and dry"
+    ],
+    "examples": [
+      {
+        "pt": "Você me deixou na mão.",
+        "en": "You left me high and dry."
+      }
+    ],
+    "tags": [
+      "idiom",
+      "complaint",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "are-you-mocking-me",
+    "intention": "Você está zombando de mim?",
+    "english": "Are you mocking me?",
+    "pattern": "Are you + ING + me?",
+    "description": "Pergunta direta para saber se alguém está zombando ou tirando sarro de você.",
+    "category": "chunk",
+    "searchTerms": [
+      "zombando de mim",
+      "tirando sarro",
+      "mocking me"
+    ],
+    "examples": [
+      {
+        "pt": "Cê tá zombando de mim?",
+        "en": "Are you mocking me?"
+      }
+    ],
+    "tags": [
+      "question",
+      "reaction",
+      "speaking"
+    ],
+    "related": [
+      "are-you-pulling-my-leg"
+    ]
+  },
+  {
+    "id": "thats-beside-the-point",
+    "intention": "Isso não vem ao caso.",
+    "english": "That's beside the point.",
+    "pattern": "Fixed chunk",
+    "description": "Chunk para indicar que algo é irrelevante para o assunto principal.",
+    "category": "chunk",
+    "searchTerms": [
+      "não vem ao caso",
+      "irrelevante",
+      "fora do assunto",
+      "beside the point"
+    ],
+    "examples": [
+      {
+        "pt": "Isso não vem ao caso.",
+        "en": "That's beside the point."
+      }
+    ],
+    "tags": [
+      "argumentation",
+      "reaction",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "dont-shove-me",
+    "intention": "Não me empurre.",
+    "english": "Don't shove me.",
+    "pattern": "Don't + verb + me",
+    "description": "Comando direto para pedir que alguém não empurre você.",
+    "category": "chunk",
+    "searchTerms": [
+      "não me empurre",
+      "empurrar",
+      "shove me"
+    ],
+    "examples": [
+      {
+        "pt": "Não me empurre.",
+        "en": "Don't shove me."
+      }
+    ],
+    "tags": [
+      "imperative",
+      "boundary",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "no-backsies",
+    "intention": "Não pode voltar atrás.",
+    "english": "No backsies.",
+    "pattern": "Fixed chunk",
+    "description": "Expressão informal e brincalhona indicando que não vale desistir ou voltar atrás.",
+    "category": "chunk",
+    "searchTerms": [
+      "não pode voltar atrás",
+      "sem arrependimento",
+      "no backsies"
+    ],
+    "examples": [
+      {
+        "pt": "Não pode voltar atrás.",
+        "en": "No backsies."
+      }
+    ],
+    "tags": [
+      "informal",
+      "playful",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-have-a-few-friends",
+    "intention": "Eu tenho poucos amigos.",
+    "english": "I have a few friends.",
+    "pattern": "I have a few + plural noun",
+    "description": "Estrutura do arquivo para dizer que você tem uma pequena quantidade de algo contável.",
+    "category": "chunk",
+    "searchTerms": [
+      "tenho poucos amigos",
+      "alguns amigos",
+      "a few friends"
+    ],
+    "examples": [
+      {
+        "pt": "Eu tenho poucos amigos.",
+        "en": "I have a few friends."
+      }
+    ],
+    "tags": [
+      "quantity",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "if-you-say-so",
+    "intention": "Se você diz.",
+    "english": "If you say so.",
+    "pattern": "Fixed chunk",
+    "description": "Resposta usada para aceitar o que alguém diz, muitas vezes com certa dúvida ou reserva.",
+    "category": "chunk",
+    "searchTerms": [
+      "se você diz",
+      "se você está dizendo",
+      "if you say so"
+    ],
+    "examples": [
+      {
+        "pt": "Se você diz.",
+        "en": "If you say so."
+      }
+    ],
+    "tags": [
+      "reaction",
+      "skepticism",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "you-had-me-at-hello",
+    "intention": "Você me conquistou no primeiro olá.",
+    "english": "You had me at hello.",
+    "pattern": "You had me at + noun/moment",
+    "description": "Chunk para dizer que alguém conquistou você desde o primeiro momento.",
+    "category": "chunk",
+    "searchTerms": [
+      "me conquistou",
+      "desde o primeiro olá",
+      "had me at hello"
+    ],
+    "examples": [
+      {
+        "pt": "Você me conquistou no primeiro olá.",
+        "en": "You had me at hello."
+      }
+    ],
+    "tags": [
+      "relationship",
+      "idiom",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "cat-got-your-tongue",
+    "intention": "O gato comeu sua língua?",
+    "english": "Cat got your tongue?",
+    "pattern": "Fixed chunk",
+    "description": "Expressão brincalhona usada quando alguém fica calado ou não responde.",
+    "category": "chunk",
+    "searchTerms": [
+      "o gato comeu sua língua",
+      "ficou mudo",
+      "não vai falar",
+      "cat got your tongue"
+    ],
+    "examples": [
+      {
+        "pt": "O gato comeu sua língua?",
+        "en": "Cat got your tongue?"
+      }
+    ],
+    "tags": [
+      "reaction",
+      "idiom",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-take-your-point",
+    "intention": "Entendo seu ponto de vista.",
+    "english": "I take your point.",
+    "pattern": "I take your point",
+    "description": "Chunk para reconhecer que você entende ou aceita o ponto apresentado por outra pessoa.",
+    "category": "chunk",
+    "searchTerms": [
+      "entendo seu ponto",
+      "ponto de vista",
+      "take your point"
+    ],
+    "examples": [
+      {
+        "pt": "Entendo seu ponto de vista.",
+        "en": "I take your point."
+      }
+    ],
+    "tags": [
+      "agreement",
+      "argumentation",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "what-does-that-do-for-you",
+    "intention": "O que isso faz ou significa para você?",
+    "english": "What does that do for you?",
+    "pattern": "What does + subject + do for + person?",
+    "description": "Pergunta usada para explorar o efeito, benefício ou significado de algo para alguém.",
+    "category": "chunk",
+    "searchTerms": [
+      "o que isso faz pra você",
+      "o que isso significa pra você",
+      "benefício",
+      "do for you"
+    ],
+    "examples": [
+      {
+        "pt": "O que isso faz / significa pra você?",
+        "en": "What does that do for you?"
+      }
+    ],
+    "tags": [
+      "question",
+      "meaning",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "you-are-way-out-of-line",
+    "intention": "Você está passando dos limites.",
+    "english": "You are way out of line.",
+    "pattern": "be way out of line",
+    "description": "Chunk forte para dizer que o comportamento de alguém ultrapassou limites aceitáveis.",
+    "category": "chunk",
+    "searchTerms": [
+      "passando dos limites",
+      "fora da linha",
+      "out of line"
+    ],
+    "examples": [
+      {
+        "pt": "Você está passando dos limites.",
+        "en": "You are way out of line."
+      }
+    ],
+    "tags": [
+      "boundary",
+      "reaction",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "good-riddance",
+    "intention": "Já vai tarde.",
+    "english": "Good riddance.",
+    "pattern": "Fixed chunk",
+    "description": "Expressão forte usada para demonstrar alívio por alguém ou algo ter ido embora.",
+    "category": "chunk",
+    "searchTerms": [
+      "já vai tarde",
+      "que bom que se foi",
+      "good riddance"
+    ],
+    "examples": [
+      {
+        "pt": "Já vai tarde.",
+        "en": "Good riddance."
+      }
+    ],
+    "tags": [
+      "reaction",
+      "strong-language",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "you-reap-what-you-sow",
+    "intention": "Você colhe o que planta.",
+    "english": "You reap what you sow.",
+    "pattern": "Fixed chunk",
+    "description": "Provérbio para dizer que as consequências correspondem às próprias ações.",
+    "category": "chunk",
+    "searchTerms": [
+      "você colhe o que planta",
+      "consequências",
+      "reap what you sow"
+    ],
+    "examples": [
+      {
+        "pt": "Você colhe o que você planta.",
+        "en": "You reap what you sow."
+      }
+    ],
+    "tags": [
+      "proverb",
+      "consequence",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-couldnt-have-said-it-better-myself",
+    "intention": "Eu não poderia ter dito isso melhor.",
+    "english": "I couldn't have said it better myself.",
+    "pattern": "couldn't have + past participle",
+    "description": "Chunk para demonstrar forte concordância com a forma como outra pessoa expressou uma ideia.",
+    "category": "chunk",
+    "searchTerms": [
+      "não poderia ter dito melhor",
+      "concordo plenamente",
+      "couldn't have said it better"
+    ],
+    "examples": [
+      {
+        "pt": "Não poderia ter dito isso melhor.",
+        "en": "I couldn't have said it better myself."
+      }
+    ],
+    "tags": [
+      "agreement",
+      "modal-perfect",
+      "speaking"
+    ],
+    "related": [
+      "you-can-say-that-again"
+    ]
+  },
+  {
+    "id": "i-will-not-settle-for-anything-less",
+    "intention": "Não vou me contentar com nada menos.",
+    "english": "I will not settle for anything less.",
+    "pattern": "settle for + noun/pronoun",
+    "description": "Chunk para afirmar que você não aceitará menos do que considera adequado.",
+    "category": "chunk",
+    "searchTerms": [
+      "não vou me contentar",
+      "não vou aceitar menos",
+      "settle for anything less"
+    ],
+    "examples": [
+      {
+        "pt": "Não vou me contentar com nada menos.",
+        "en": "I will not settle for anything less."
+      },
+      {
+        "pt": "Não vou aceitar menos do que eu mereço.",
+        "en": "I will not settle for anything less."
+      }
+    ],
+    "tags": [
+      "determination",
+      "boundary",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "nothing-to-do-with-me",
+    "intention": "Não tem nada a ver comigo.",
+    "english": "Nothing to do with me.",
+    "pattern": "nothing to do with + person/thing",
+    "description": "Chunk para dizer que algo não está relacionado a você ou não é sua responsabilidade.",
+    "category": "chunk",
+    "searchTerms": [
+      "nada a ver comigo",
+      "não é problema meu",
+      "não me diz respeito",
+      "nothing to do with me"
+    ],
+    "examples": [
+      {
+        "pt": "Não tem nada a ver comigo.",
+        "en": "Nothing to do with me."
+      }
+    ],
+    "tags": [
+      "distance",
+      "responsibility",
+      "speaking"
+    ],
+    "related": [
+      "its-not-on-you"
+    ]
+  },
+  {
+    "id": "what-else-is-there-to-say",
+    "intention": "O que mais há para dizer?",
+    "english": "What else is there to say?",
+    "pattern": "What else is there to + verb?",
+    "description": "Pergunta retórica ou literal usada quando parece não haver muito mais a acrescentar.",
+    "category": "chunk",
+    "searchTerms": [
+      "o que mais há para dizer",
+      "o que mais dizer",
+      "what else is there to say"
+    ],
+    "examples": [
+      {
+        "pt": "O que há mais para dizer?",
+        "en": "What else is there to say?"
+      }
+    ],
+    "tags": [
+      "question",
+      "conclusion",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "im-kind-of",
+    "intention": "Estou meio...",
+    "english": "I'm kind of...",
+    "pattern": "I'm kind of + adjective/state",
+    "description": "Chunk usado para suavizar ou aproximar uma descrição de estado.",
+    "category": "chunk",
+    "searchTerms": [
+      "estou meio",
+      "mais ou menos",
+      "kind of",
+      "ocupado",
+      "doente"
+    ],
+    "examples": [
+      {
+        "pt": "Estou meio ocupado.",
+        "en": "I'm kind of busy."
+      },
+      {
+        "pt": "Estou meio doente.",
+        "en": "I'm kind of sick."
+      }
+    ],
+    "tags": [
+      "softener",
+      "state",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "you-can-say-that-again",
+    "intention": "Pode crer / concordo plenamente.",
+    "english": "You can say that again.",
+    "pattern": "Fixed chunk",
+    "description": "Expressão idiomática usada para demonstrar forte concordância.",
+    "category": "chunk",
+    "searchTerms": [
+      "pode crer",
+      "concordo plenamente",
+      "pode apostar",
+      "say that again"
+    ],
+    "examples": [
+      {
+        "pt": "Concordo plenamente.",
+        "en": "You can say that again."
+      }
+    ],
+    "tags": [
+      "agreement",
+      "idiom",
+      "speaking"
+    ],
+    "related": [
+      "i-couldnt-have-said-it-better-myself"
+    ]
+  },
+  {
+    "id": "its-not-on-you",
+    "intention": "Não é culpa sua / não é sua responsabilidade.",
+    "english": "It's not on you.",
+    "pattern": "be on + person",
+    "description": "Chunk para dizer que uma culpa, responsabilidade ou obrigação não recai sobre alguém.",
+    "category": "chunk",
+    "searchTerms": [
+      "não é culpa sua",
+      "não é sua responsabilidade",
+      "not on you"
+    ],
+    "examples": [
+      {
+        "pt": "Não é culpa sua.",
+        "en": "It's not on you."
+      }
+    ],
+    "tags": [
+      "responsibility",
+      "reassurance",
+      "speaking"
+    ],
+    "related": [
+      "nothing-to-do-with-me"
+    ]
+  },
+  {
+    "id": "we-got-bigger-fish-to-fry",
+    "intention": "Temos problemas mais importantes para resolver.",
+    "english": "We got bigger fish to fry.",
+    "pattern": "have/get bigger fish to fry",
+    "description": "Expressão idiomática para dizer que existem assuntos mais importantes que exigem atenção.",
+    "category": "chunk",
+    "searchTerms": [
+      "problemas mais importantes",
+      "coisas mais importantes",
+      "bigger fish to fry"
+    ],
+    "examples": [
+      {
+        "pt": "Temos problemas mais importantes para resolver.",
+        "en": "We got bigger fish to fry."
+      }
+    ],
+    "tags": [
+      "priority",
+      "idiom",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "hang-on",
+    "intention": "Espere um pouco / aguente firme.",
+    "english": "Hang on.",
+    "pattern": "Fixed chunk",
+    "description": "Chunk com sentidos dependentes do contexto: esperar um momento ou aguentar firme.",
+    "category": "chunk",
+    "searchTerms": [
+      "espere um pouco",
+      "aguente firme",
+      "resista",
+      "hang on"
+    ],
+    "examples": [
+      {
+        "pt": "Espere um pouco.",
+        "en": "Hang on."
+      },
+      {
+        "pt": "Aguente firme.",
+        "en": "Hang on."
+      }
+    ],
+    "tags": [
+      "conversation-management",
+      "encouragement",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "what-can-i-get-you",
+    "intention": "O que posso te oferecer?",
+    "english": "What can I get you?",
+    "pattern": "What can I get + person?",
+    "description": "Pergunta comum ao oferecer comida, bebida ou algo a alguém.",
+    "category": "chunk",
+    "searchTerms": [
+      "o que posso te oferecer",
+      "o que deseja",
+      "o que posso trazer",
+      "what can I get you"
+    ],
+    "examples": [
+      {
+        "pt": "O que posso te oferecer?",
+        "en": "What can I get you?"
+      }
+    ],
+    "tags": [
+      "question",
+      "service",
+      "speaking"
+    ],
+    "related": [
+      "what-can-i-get-to-drink"
+    ]
+  },
+  {
+    "id": "what-can-i-get-to-drink",
+    "intention": "O que posso oferecer para beber?",
+    "english": "What can I get to drink?",
+    "pattern": "What can I get + to drink?",
+    "description": "Pergunta do arquivo relacionada a oferecer ou escolher uma bebida.",
+    "category": "chunk",
+    "searchTerms": [
+      "o que posso oferecer para beber",
+      "bebida",
+      "get to drink"
+    ],
+    "examples": [
+      {
+        "pt": "O que posso te oferecer para beber?",
+        "en": "What can I get to drink?"
+      }
+    ],
+    "tags": [
+      "question",
+      "drink",
+      "speaking"
+    ],
+    "related": [
+      "what-can-i-get-you"
+    ]
+  },
+  {
+    "id": "let-bygones-be-bygones",
+    "intention": "Deixa o passado pra trás.",
+    "english": "Let bygones be bygones.",
+    "pattern": "Fixed chunk",
+    "description": "Expressão usada para sugerir que conflitos ou acontecimentos passados sejam deixados no passado.",
+    "category": "chunk",
+    "searchTerms": [
+      "deixa o passado pra trás",
+      "esquecer o passado",
+      "bygones be bygones"
+    ],
+    "examples": [
+      {
+        "pt": "Deixa o passado pra trás.",
+        "en": "Let bygones be bygones."
+      }
+    ],
+    "tags": [
+      "reconciliation",
+      "idiom",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "what-have-you-got-to-lose",
+    "intention": "O que você tem a perder?",
+    "english": "What have you got to lose?",
+    "pattern": "What have you got to + verb?",
+    "description": "Pergunta usada para encorajar alguém a tentar algo quando o risco parece pequeno.",
+    "category": "chunk",
+    "searchTerms": [
+      "o que você tem a perder",
+      "tentar",
+      "what have you got to lose"
+    ],
+    "examples": [
+      {
+        "pt": "O que você tem a perder?",
+        "en": "What have you got to lose?"
+      }
+    ],
+    "tags": [
+      "question",
+      "encouragement",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "woe-is-me",
+    "intention": "Ai de mim.",
+    "english": "Woe is me!",
+    "pattern": "Fixed chunk",
+    "description": "Expressão dramática ou irônica de sofrimento, autopiedade ou lamento.",
+    "category": "chunk",
+    "searchTerms": [
+      "ai de mim",
+      "lamento",
+      "woe is me"
+    ],
+    "examples": [
+      {
+        "pt": "Ai de mim.",
+        "en": "Woe is me!"
+      }
+    ],
+    "tags": [
+      "reaction",
+      "dramatic",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "im-sick-of-it",
+    "intention": "Já chega / já deu.",
+    "english": "I'm sick of it!",
+    "pattern": "be sick of + noun/pronoun/ING",
+    "description": "Chunk forte para expressar irritação ou cansaço com algo repetitivo ou desagradável.",
+    "category": "chunk",
+    "searchTerms": [
+      "já chega",
+      "já deu",
+      "estou cansado disso",
+      "sick of it"
+    ],
+    "examples": [
+      {
+        "pt": "Já chega!",
+        "en": "I'm sick of it!"
+      }
+    ],
+    "tags": [
+      "frustration",
+      "emotion",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "by-any-chance",
+    "intention": "Por acaso...",
+    "english": "by any chance",
+    "pattern": "question + by any chance?",
+    "description": "Chunk usado para suavizar uma pergunta e transmitir a ideia de 'por acaso'.",
+    "category": "chunk",
+    "searchTerms": [
+      "por acaso",
+      "by any chance",
+      "suavizar pergunta"
+    ],
+    "examples": [
+      {
+        "pt": "Você viu meu telefone por acaso?",
+        "en": "Have you seen my cell phone by any chance?"
+      }
+    ],
+    "tags": [
+      "question",
+      "softener",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "how-about",
+    "intention": "Que tal...?",
+    "english": "How about...?",
+    "pattern": "How about + noun/ING?",
+    "description": "Estrutura usada para fazer uma sugestão ou propor uma alternativa.",
+    "category": "chunk",
+    "searchTerms": [
+      "que tal",
+      "sugestão",
+      "how about"
+    ],
+    "examples": [
+      {
+        "pt": "Que tal...?",
+        "en": "How about...?"
+      }
+    ],
+    "tags": [
+      "suggestion",
+      "question",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-cant-wait",
+    "intention": "Não vejo a hora...",
+    "english": "I can't wait...",
+    "pattern": "I can't wait + to + verb / for + noun",
+    "description": "Chunk usado para demonstrar grande expectativa ou entusiasmo por algo futuro.",
+    "category": "chunk",
+    "searchTerms": [
+      "não vejo a hora",
+      "mal posso esperar",
+      "can't wait"
+    ],
+    "examples": [
+      {
+        "pt": "Não vejo a hora...",
+        "en": "I can't wait..."
+      }
+    ],
+    "tags": [
+      "anticipation",
+      "emotion",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-was-up-all-night",
+    "intention": "Passei a noite toda acordado.",
+    "english": "I was up all night.",
+    "pattern": "be up all night",
+    "description": "Chunk para dizer que você ficou acordado durante toda a noite.",
+    "category": "chunk",
+    "searchTerms": [
+      "passei a noite toda acordado",
+      "acordado a noite toda",
+      "up all night"
+    ],
+    "examples": [
+      {
+        "pt": "Passei a noite toda acordado.",
+        "en": "I was up all night."
+      }
+    ],
+    "tags": [
+      "time",
+      "state",
+      "speaking"
+    ],
+    "related": []
+  }
+
   ]
 }
