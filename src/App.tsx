@@ -210,7 +210,10 @@ function App() {
             )}
 
             {!loading && data && currentView === "exercises" && !trainingMode && (
-              <ExercisePanel intentions={data.mentalMap} />
+              <ExercisePanel
+                intentions={data.mentalMap}
+                onStartTraining={startTraining}
+              />
             )}
             {!loading &&
               data &&

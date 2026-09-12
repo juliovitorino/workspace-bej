@@ -977,3 +977,84 @@ button {
     padding: 18px;
   }
 }
+
+
+/* Exercise mode selector */
+.exercise-mode-selector {
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e2e7f0;
+  border-radius: 16px;
+}
+
+.exercise-mode-label {
+  margin: 0;
+  font-weight: 800;
+  font-size: 0.92rem;
+}
+
+.exercise-mode-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.exercise-mode-button {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  text-align: left;
+  padding: 16px;
+  border: 1px solid #d8deea;
+  border-radius: 14px;
+  background: #f8fafc;
+  color: #344054;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.exercise-mode-button:hover {
+  border-color: #b8c4eb;
+  background: #ffffff;
+}
+
+.exercise-mode-button.active {
+  border-color: #3659d9;
+  background: #edf1ff;
+  box-shadow: 0 0 0 3px rgba(54, 89, 217, 0.08);
+}
+
+.exercise-mode-button strong {
+  font-size: 0.98rem;
+}
+
+.exercise-mode-button span {
+  color: #667085;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.exercise-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.exercise-card-actions .primary-button {
+  min-width: 120px;
+}
+
+@media (max-width: 820px) {
+  .exercise-mode-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .exercise-card-actions {
+    justify-content: stretch;
+  }
+
+  .exercise-card-actions .primary-button {
+    width: 100%;
+  }
+}
