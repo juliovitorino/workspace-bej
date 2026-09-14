@@ -20,9 +20,17 @@ export function IntentionCard({ item, onSelect }: IntentionCardProps) {
       <div className="card-meta">
         {item.pattern && <span>{item.pattern}</span>}
 
-        {item.category && (
-          <span className="pill category-pill">{item.category}</span>
-        )}
+        <div className="card-badges">
+          {item.englishLevel && (
+            <span className="pill english-level-pill">
+              {item.englishLevel}
+            </span>
+          )}
+
+          {item.category && (
+            <span className="pill category-pill">{item.category}</span>
+          )}
+        </div>
 
         {item.tags && item.tags.length > 0 && (
           <div className="card-tags">

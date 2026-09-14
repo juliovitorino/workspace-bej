@@ -35,7 +35,8 @@
         "action",
         "tense"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A1"
     },
     {
       "id": "pode-podia-poderia-deveria-deve",
@@ -59,7 +60,8 @@
         "modals",
         "possibility"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "sou-estou-agora",
@@ -85,7 +87,8 @@
       ],
       "related": [
         "era-estava-processo"
-      ]
+      ],
+      "englishLevel": "A1"
     },
     {
       "id": "era-estado-estava-processo-estive-esteve",
@@ -109,7 +112,8 @@
         "past",
         "state"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "estou-esta-venho-vem-ha-algum-tempo",
@@ -133,7 +137,8 @@
         "duration",
         "ongoing"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "tem-tenho-tenha-tiver-participio",
@@ -153,7 +158,8 @@
         "present-perfect",
         "result"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "tem-tenho-tenha-participio-adjetivo",
@@ -177,7 +183,8 @@
         "state",
         "duration"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "tem-que-tenho-que-tenha-que",
@@ -201,7 +208,8 @@
         "obligation",
         "need"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "estou-esta-tendo-que-verbo",
@@ -221,7 +229,8 @@
         "temporary",
         "obligation"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "teve-tive",
@@ -241,7 +250,8 @@
         "experience",
         "have"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "tem-tenho-sido",
@@ -265,7 +275,8 @@
         "state",
         "duration"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "tem-tenho-tenha-tido",
@@ -289,7 +300,8 @@
         "experience",
         "recent"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "tinha-participio",
@@ -308,7 +320,8 @@
       "tags": [
         "past-perfect"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "tinha-que-tive-que-teve-que",
@@ -328,7 +341,8 @@
         "past",
         "obligation"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "haver-tem-houve-tinha-sentido-de-existir",
@@ -352,7 +366,8 @@
         "existence",
         "there-be"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "tem-que-ter-tem-que-haver-existir",
@@ -376,7 +391,8 @@
         "existence",
         "necessity"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "estou-esta-se-perguntando-se",
@@ -396,7 +412,8 @@
         "wonder",
         "question"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "me-pergunto-se-fico-pensando-se-sera-que",
@@ -416,7 +433,8 @@
         "wonder",
         "question"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "nao-mais-no-longer",
@@ -436,7 +454,8 @@
         "negative",
         "change"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "nao-mais-any-longer-anymore",
@@ -456,7 +475,8 @@
         "negative",
         "change"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "tao-adjetivo-quanto",
@@ -475,7 +495,8 @@
       "tags": [
         "comparison"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "assim-como-bem-como",
@@ -495,7 +516,8 @@
         "connector",
         "addition"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "desde-que-contanto-que",
@@ -514,7 +536,8 @@
       "tags": [
         "condition"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "assim-que-logo-que",
@@ -534,7 +557,8 @@
         "time",
         "connector"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "tanto-quanto",
@@ -553,7 +577,8 @@
       "tags": [
         "comparison"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "ate-onde",
@@ -573,7 +598,8 @@
         "knowledge",
         "discourse"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "me-disseram-me-contaram-que",
@@ -592,7 +618,8 @@
       "tags": [
         "reported-speech"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "houve-agora-acabou-de-haver-surgiu",
@@ -612,7 +639,8 @@
         "recent",
         "existence"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "vinha-gerundio",
@@ -632,7 +660,8 @@
         "past",
         "duration"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "fato-experiencia-resultado-com-relevancia-atual",
@@ -652,7 +681,8 @@
         "experience",
         "result"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "momento-passado-com-marcador-de-tempo",
@@ -672,7 +702,8 @@
         "past",
         "time-marker"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A1"
     },
     {
       "id": "vou-vai-decisao-ou-plano",
@@ -692,7 +723,8 @@
         "future",
         "plan"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "estou-indo-esta-indo",
@@ -716,7 +748,8 @@
         "movement",
         "future"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "vou-vai-ficar-ser",
@@ -740,7 +773,8 @@
         "future",
         "state"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "vou-vai-ter-que",
@@ -760,7 +794,8 @@
         "future",
         "obligation"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "seja-esteja-espero-estar",
@@ -780,7 +815,8 @@
         "future",
         "state"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "ia-verbo",
@@ -800,7 +836,8 @@
         "past",
         "plan"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "used-to",
@@ -824,7 +861,8 @@
         "acostumado",
         "costumo",
         "se-me-acostumando-processo-em-andamento"
-      ]
+      ],
+      "englishLevel": "A2"
     },
     {
       "id": "be-used-to",
@@ -848,7 +886,8 @@
         "used-to",
         "me-acostumei",
         "se-me-acostumando-processo-em-andamento"
-      ]
+      ],
+      "englishLevel": "B1"
     },
     {
       "id": "usually",
@@ -868,7 +907,8 @@
         "present",
         "habit"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A1"
     },
     {
       "id": "got-used-to",
@@ -888,7 +928,8 @@
         "adaptation",
         "habit"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "nao-me-acostumei",
@@ -908,7 +949,8 @@
         "adaptation",
         "negative"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "get-used-to",
@@ -928,7 +970,8 @@
         "adaptation",
         "ongoing"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "vou-acostumar",
@@ -948,7 +991,8 @@
         "future",
         "adaptation"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "tenho-que-acostumar",
@@ -968,7 +1012,8 @@
         "obligation",
         "adaptation"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "vou-ter-que-acostumar",
@@ -989,7 +1034,8 @@
         "obligation",
         "adaptation"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "ia-me-acostumar",
@@ -1009,7 +1055,8 @@
         "past",
         "adaptation"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "deveria-ter",
@@ -1029,7 +1076,8 @@
         "regret",
         "advice"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "poderia-ter",
@@ -1049,7 +1097,8 @@
         "possibility",
         "past"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "deve-ter",
@@ -1069,7 +1118,8 @@
         "deduction",
         "past"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "sempre-que-toda-vez-que-quando-quer-que-a-qualquer-momento-que",
@@ -1093,7 +1143,8 @@
         "time",
         "indefinite"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "onde-quer-que",
@@ -1113,7 +1164,8 @@
         "place",
         "indefinite"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "o-que-quer-que-tanto-faz-nao-importa-o-que-o-que-for",
@@ -1137,7 +1189,8 @@
         "indefinite",
         "choice"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "qualquer-lugar-aonde-quiser",
@@ -1157,7 +1210,8 @@
         "place",
         "indefinite"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "seja-quem-for-quem-quer-que-seja",
@@ -1177,7 +1231,8 @@
         "person",
         "indefinite"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "como-do-jeito-que-conforme-nao-importa-como",
@@ -1201,7 +1256,8 @@
         "manner",
         "indefinite"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "sera-deve-deveria-devia-era-para-regra",
@@ -1225,7 +1281,8 @@
         "rule",
         "expectation"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "e-se",
@@ -1245,7 +1302,8 @@
         "hypothesis",
         "conversation"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "tomara-que",
@@ -1264,7 +1322,8 @@
       "tags": [
         "hope"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "foi-foram-fui-tem-sido-sem-marcador-de-tempo",
@@ -1288,7 +1347,8 @@
         "present-perfect",
         "passive"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "foi-foram-fui-com-marcador-de-tempo",
@@ -1308,7 +1368,8 @@
         "past",
         "passive"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "esta-estao-condicao-atual",
@@ -1332,7 +1393,8 @@
         "state",
         "participle"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "esta-estao-sendo",
@@ -1352,7 +1414,8 @@
         "passive",
         "ongoing"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "acabei-de",
@@ -1372,7 +1435,8 @@
         "recent",
         "present-perfect"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "acabei-acabou-resultado-inesperado",
@@ -1396,7 +1460,8 @@
         "result",
         "unexpected"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "estou-prestes-a",
@@ -1416,7 +1481,8 @@
         "imminent",
         "future"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "pode-ser-estar-possibilidade-geral",
@@ -1435,7 +1501,8 @@
       "tags": [
         "possibility"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "pode-poderia-ser-estar-hipotese",
@@ -1458,7 +1525,8 @@
       "tags": [
         "hypothesis"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "talvez-seja-esteja",
@@ -1477,7 +1545,8 @@
       "tags": [
         "possibility"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "deve-ser-estar",
@@ -1496,7 +1565,8 @@
       "tags": [
         "deduction"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "nao-pode-ser-estar",
@@ -1516,7 +1586,8 @@
         "deduction",
         "negative"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "se-der-se-puder-se-for-possivel",
@@ -1540,7 +1611,8 @@
         "condition",
         "possibility"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "quando-der-quando-puder",
@@ -1564,7 +1636,8 @@
         "time",
         "availability"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "quem-me-dera",
@@ -1588,7 +1661,8 @@
         "wish",
         "unreal"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "bem-que-eu-queria-poder",
@@ -1608,7 +1682,8 @@
         "wish",
         "ability"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "para-que",
@@ -1627,7 +1702,8 @@
       "tags": [
         "purpose"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "queria-ter-desejo-nao-realizado",
@@ -1651,7 +1727,8 @@
         "wish",
         "regret"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "se-pelo-menos-presente",
@@ -1670,7 +1747,8 @@
       "tags": [
         "wish"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "se-pelo-menos-tivesse",
@@ -1694,7 +1772,8 @@
         "wish",
         "past"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "C1"
     },
     {
       "id": "quem-sabe",
@@ -1722,7 +1801,8 @@
         "possibility",
         "hope"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "se-nao-for-incomodo",
@@ -1742,7 +1822,8 @@
         "politeness",
         "request"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "no-fim-das-contas",
@@ -1766,7 +1847,8 @@
         "conclusion",
         "discourse"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "para-que-algo-e-usado-serve-para-que",
@@ -1786,7 +1868,8 @@
         "question",
         "purpose"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "ter-a-oportunidade-ter-a-chance-de",
@@ -1809,7 +1892,8 @@
       "tags": [
         "opportunity"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "conseguindo-progresso-avanco",
@@ -1833,7 +1917,8 @@
         "progress",
         "get"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "conseguindo-verbo-acao-presente",
@@ -1857,7 +1942,8 @@
         "progress",
         "action"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "vou-conseguir-resultado",
@@ -1881,7 +1967,8 @@
         "future",
         "result"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "consegue-resultado",
@@ -1901,7 +1988,8 @@
         "result",
         "get"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "consegui-conseguiu-resultado",
@@ -1921,7 +2009,8 @@
         "past",
         "result"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "consigo-sou-capaz",
@@ -1944,7 +2033,8 @@
       "tags": [
         "ability"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "consegui-evento-especifico",
@@ -1968,7 +2058,8 @@
         "past",
         "success"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "tenho-conseguido-resultado",
@@ -1988,7 +2079,8 @@
         "result",
         "present-perfect"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "tenho-conseguido-acao",
@@ -2008,7 +2100,8 @@
         "ability",
         "present-perfect"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "venho-conseguindo",
@@ -2032,7 +2125,8 @@
         "progress",
         "duration"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "preferir-preferiria-situacao-especifica",
@@ -2055,7 +2149,8 @@
       "tags": [
         "preference"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "fiquei-fiquei-com-emocao",
@@ -2075,7 +2170,8 @@
         "past",
         "state-change"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "fico-adjetivo",
@@ -2095,7 +2191,8 @@
         "present",
         "state-change"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "ficando-adjetivo",
@@ -2115,7 +2212,8 @@
         "ongoing",
         "state-change"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "vou-ficar-adjetivo",
@@ -2135,7 +2233,8 @@
         "future",
         "state-change"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "fiquei-gerundio",
@@ -2159,7 +2258,8 @@
         "past",
         "continuation"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "fiquei-tempo-gerundio",
@@ -2179,7 +2279,8 @@
         "duration",
         "past"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "fiquei-sem-acabou",
@@ -2203,7 +2304,8 @@
         "phrasal-verb",
         "shortage"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "fiquei-mais-comparativo",
@@ -2223,7 +2325,8 @@
         "comparison",
         "state-change"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "com-quem-sujeito-verbo",
@@ -2247,7 +2350,8 @@
         "question",
         "person"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "com-o-que-sujeito-verbo",
@@ -2267,7 +2371,8 @@
         "question",
         "thing"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "do-que-de-que-sujeito-verbo",
@@ -2294,7 +2399,8 @@
       "tags": [
         "question"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "sobre-o-que-sujeito-verbo",
@@ -2318,7 +2424,8 @@
         "question",
         "topic"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "pra-que-para-que-sujeito-serve",
@@ -2342,7 +2449,8 @@
         "question",
         "purpose"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "por-que-pra-que-para-que-sujeito-verbo",
@@ -2366,7 +2474,8 @@
         "question",
         "reason"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "para-quem-sujeito-verbo",
@@ -2386,7 +2495,8 @@
         "question",
         "person"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "em-que-sujeito-verbo",
@@ -2406,7 +2516,8 @@
         "question",
         "topic"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "de-quem-sujeito-verbo",
@@ -2430,7 +2541,8 @@
         "question",
         "source"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "de-onde-sujeito-verbo",
@@ -2454,7 +2566,8 @@
         "question",
         "place"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "quem-te-verbo-algo",
@@ -2478,7 +2591,8 @@
         "question",
         "person"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "de-onde-veio-sujeito",
@@ -2498,7 +2612,8 @@
         "question",
         "origin"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "qual-deles-delas-sujeito-verbo",
@@ -2518,7 +2633,8 @@
         "question",
         "choice"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "tem-como-tem-algum-jeito-de-existe-alguma-chance-de",
@@ -2542,7 +2658,8 @@
         "question",
         "possibility"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "estou-com-vontade-de",
@@ -2566,7 +2683,8 @@
         "desire",
         "mood"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "estou-precisando",
@@ -2589,7 +2707,8 @@
       "tags": [
         "need"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "estou-sentindo-que-preciso",
@@ -2609,7 +2728,8 @@
         "feeling",
         "need"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "eu-sinto-que",
@@ -2628,7 +2748,8 @@
       "tags": [
         "feeling"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "receber-conseguir",
@@ -2652,7 +2773,8 @@
         "get",
         "receive"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "pegar-buscar",
@@ -2676,7 +2798,8 @@
         "get",
         "fetch"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "ficar-tornar-se",
@@ -2700,7 +2823,8 @@
         "get",
         "state-change"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "chegar",
@@ -2724,7 +2848,8 @@
         "get",
         "arrival"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "entender",
@@ -2748,7 +2873,8 @@
         "get",
         "understanding"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "providenciar-obter-algo-para-alguem",
@@ -2772,7 +2898,8 @@
         "get",
         "causative"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "convencer-conseguir-fazer-alguem-fazer-algo",
@@ -2792,7 +2919,8 @@
         "causative",
         "persuasion"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "obrigar-alguem-a-fazer-algo",
@@ -2812,7 +2940,8 @@
         "causative",
         "force"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "pedir-delegar-a-alguem-para-fazer-algo",
@@ -2832,7 +2961,8 @@
         "causative",
         "delegation"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "estiver-tiver-fizer-puder-souber-futuro-do-subjuntivo",
@@ -2856,7 +2986,8 @@
         "condition",
         "future"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "tenho-que-ter-estado",
@@ -2876,7 +3007,8 @@
         "need",
         "state"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "tenho-que-ter-haver-existencia",
@@ -2896,7 +3028,8 @@
         "existence",
         "necessity"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "tenho-que-ter-posse-real",
@@ -2916,7 +3049,8 @@
         "need",
         "possession"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "estar-disposto",
@@ -2935,7 +3069,8 @@
       "tags": [
         "willingness"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "vou-aproveitar-oportunidade",
@@ -2954,7 +3089,8 @@
       "tags": [
         "opportunity"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "vou-aproveitar-momento-viagem",
@@ -2974,7 +3110,8 @@
         "experience",
         "opportunity"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "vou-aproveitar-desfrutar",
@@ -2993,7 +3130,8 @@
       "tags": [
         "enjoyment"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "vou-aproveitar-usar-o-tempo",
@@ -3013,7 +3151,8 @@
         "time",
         "purpose"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "do-jeito-que-tem-que-como-deve-como-era-esperado",
@@ -3033,7 +3172,8 @@
         "expectation",
         "manner"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "por-acaso-pergunta-casual",
@@ -3057,7 +3197,8 @@
         "politeness",
         "question"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "acabou-que",
@@ -3077,7 +3218,8 @@
         "result",
         "unexpected"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "que-bom-que",
@@ -3097,7 +3239,8 @@
         "reaction",
         "positive"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "ainda-bem-que",
@@ -3121,7 +3264,8 @@
         "relief",
         "reaction"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "nao-gosto-niveis",
@@ -3149,7 +3293,8 @@
         "dislike",
         "intensity"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "nao-aguento-mais",
@@ -3169,7 +3314,8 @@
         "stress",
         "limit"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "mesmo-assim-assim-mesmo",
@@ -3193,7 +3339,8 @@
         "contrast",
         "connector"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "assim-como-igual",
@@ -3216,7 +3363,8 @@
       "tags": [
         "comparison"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "nao-e-bem-assim",
@@ -3236,7 +3384,8 @@
         "correction",
         "discourse"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "nao-e-bem-assim-que-sujeito-verbo",
@@ -3256,7 +3405,8 @@
         "correction",
         "manner"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "e-assim-que",
@@ -3280,7 +3430,8 @@
         "manner",
         "discourse"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "e-assim-por-diante",
@@ -3300,7 +3451,8 @@
         "continuation",
         "list"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "nao-esqueca-de-lembre-de-acao-futura",
@@ -3324,7 +3476,8 @@
         "remember",
         "to-infinitive"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "eu-lembro-de-ter-memoria",
@@ -3348,7 +3501,8 @@
         "remember",
         "gerund"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "parar-para",
@@ -3368,7 +3522,8 @@
         "stop",
         "to-infinitive"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "parar-de",
@@ -3388,7 +3543,8 @@
         "stop",
         "gerund"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "tentar-conseguir-fazer",
@@ -3408,7 +3564,8 @@
         "try",
         "to-infinitive"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "tentar-como-experimento",
@@ -3428,7 +3585,8 @@
         "try",
         "gerund"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "esquecer-de-acao-nao-aconteceu",
@@ -3448,7 +3606,8 @@
         "forget",
         "to-infinitive"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "esqueci-que-ja-acao-aconteceu",
@@ -3468,7 +3627,8 @@
         "forget",
         "gerund"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "com-o-com-a-causa",
@@ -3488,7 +3648,8 @@
         "preposition",
         "cause"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "com-o-com-a-tema",
@@ -3508,7 +3669,8 @@
         "preposition",
         "topic"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A1"
     },
     {
       "id": "com-o-com-a-relacao",
@@ -3528,7 +3690,8 @@
         "preposition",
         "relation"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A1"
     },
     {
       "id": "mas-porem-todavia-entretanto-contudo-no-entanto-ainda-assim-apesar-disso-embora",
@@ -3548,7 +3711,8 @@
         "contrast",
         "connector"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "em-vez-disso",
@@ -3567,7 +3731,8 @@
       "tags": [
         "alternative"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "em-vez-de",
@@ -3586,7 +3751,8 @@
       "tags": [
         "alternative"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "mas-sim-e-sim",
@@ -3606,7 +3772,8 @@
         "correction",
         "contrast"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "pelo-contrario",
@@ -3625,7 +3792,8 @@
       "tags": [
         "contrast"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "na-verdade-de-fato-na-realidade-alias",
@@ -3649,7 +3817,8 @@
         "discourse",
         "emphasis"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "se-eu-esse-hipotese-irreal-presente-futuro",
@@ -3673,7 +3842,8 @@
         "conditional",
         "unreal"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "se-eu-tivesse-hipotese-irreal-passada",
@@ -3697,7 +3867,8 @@
         "conditional",
         "past-unreal"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "se-real-possivel-vai-vou-ira",
@@ -3717,7 +3888,8 @@
         "conditional",
         "future"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "se-sempre-regra-habito",
@@ -3741,7 +3913,8 @@
         "conditional",
         "general-truth"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "foi-adjetivo",
@@ -3761,7 +3934,8 @@
         "past",
         "adjective"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A1"
     },
     {
       "id": "foi-o-que-foi-isso-que",
@@ -3780,7 +3954,8 @@
       "tags": [
         "discourse"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "foi-sem-querer",
@@ -3800,7 +3975,8 @@
         "accident",
         "intention"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "foi-ele-ela-que",
@@ -3820,7 +3996,8 @@
         "emphasis",
         "person"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "foi-quando-foi-ai-que-foi-entao-que",
@@ -3840,7 +4017,8 @@
         "narrative",
         "time"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "foi-ha-pouco-tempo",
@@ -3860,7 +4038,8 @@
         "time",
         "past"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "para-alguem-fazer-algo",
@@ -3880,7 +4059,8 @@
         "infinitive",
         "agent"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "por-quanto-tempo-ate-quando",
@@ -3900,7 +4080,8 @@
         "question",
         "duration"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "por-quanto-tempo-ate-quando-vou-ter-que",
@@ -3921,7 +4102,8 @@
         "duration",
         "obligation"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "por-quanto-tempo-ate-quando-vou-vai-vamos",
@@ -3942,7 +4124,8 @@
         "duration",
         "future"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "por-quanto-tempo-ate-quando-isso-vai",
@@ -3962,7 +4145,8 @@
         "question",
         "duration"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "por-quanto-tempo-ate-quando-vou-continuar",
@@ -3983,7 +4167,8 @@
         "duration",
         "continuation"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "futuro-do-subjuntivo-se-voce-fizer-tiver-puder-quiser-souber-vier",
@@ -4011,7 +4196,8 @@
         "condition",
         "future"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "nao-faco-ideia-do-que",
@@ -4031,7 +4217,8 @@
         "uncertainty",
         "question-word"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "nao-faco-ideia-de-onde",
@@ -4051,7 +4238,8 @@
         "uncertainty",
         "place"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "nao-faco-ideia-de-quando",
@@ -4071,7 +4259,8 @@
         "uncertainty",
         "time"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "nao-faco-ideia-de-por-que",
@@ -4091,7 +4280,8 @@
         "uncertainty",
         "reason"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "nao-faco-ideia-de-como",
@@ -4111,7 +4301,8 @@
         "uncertainty",
         "manner"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "nao-faco-ideia-de-quem",
@@ -4131,7 +4322,8 @@
         "uncertainty",
         "person"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "nao-faco-ideia-de-qual",
@@ -4151,7 +4343,8 @@
         "uncertainty",
         "choice"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "nao-faco-ideia-de-quanto-quantos",
@@ -4175,7 +4368,8 @@
         "uncertainty",
         "quantity"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "nao-faco-ideia-de-ha-quanto-tempo",
@@ -4195,7 +4389,8 @@
         "uncertainty",
         "duration"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "acabar-sendo",
@@ -4214,7 +4409,8 @@
       "tags": [
         "result"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "acabar-ficando",
@@ -4233,7 +4429,8 @@
       "tags": [
         "result"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "acontece-que-no-fim-das-contas",
@@ -4253,7 +4450,8 @@
         "result",
         "discourse"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "queria-que-voce-pudesse",
@@ -4273,7 +4471,8 @@
         "wish",
         "ability"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "eu-sei-eu-nao-sei-wh-to-verb",
@@ -4301,7 +4500,8 @@
         "knowledge",
         "wh"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "eu-sei-eu-nao-sei-wh-clause",
@@ -4325,7 +4525,8 @@
         "knowledge",
         "wh"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "disse-para-eu-verbo",
@@ -4345,7 +4546,8 @@
         "reported-speech",
         "instruction"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "me-lembrou-que",
@@ -4365,7 +4567,8 @@
         "reminder",
         "reported-speech"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "como-voce-esta-gerundio",
@@ -4389,7 +4592,8 @@
         "question",
         "process"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "quanto-mais-mais-melhor",
@@ -4413,7 +4617,8 @@
         "comparison",
         "proportion"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "buffer-de-pensamento",
@@ -4441,7 +4646,8 @@
         "fluency",
         "filler"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "organizacao-de-ideias",
@@ -4469,7 +4675,8 @@
         "discourse",
         "organization"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "softening-suavizacao-social",
@@ -4497,7 +4704,8 @@
         "softening",
         "social"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "correcao-e-reformulacao",
@@ -4525,7 +4733,8 @@
         "reformulation",
         "discourse"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "engajamento-emocional",
@@ -4553,7 +4762,8 @@
         "emotion",
         "engagement"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "softening-profissional",
@@ -4581,7 +4791,8 @@
         "softening",
         "professional"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "C1"
     },
     {
       "id": "expandir-fillers-emocionais",
@@ -4609,7 +4820,8 @@
         "fluency",
         "emotion"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "sequencia-narrativa",
@@ -4637,7 +4849,8 @@
         "narrative",
         "sequence"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "hedging-profissional",
@@ -4665,7 +4878,8 @@
         "hedging",
         "professional"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "C1"
     },
     {
       "id": "reported-speech-automatico",
@@ -4692,7 +4906,8 @@
       "tags": [
         "reported-speech"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "emotional-framing",
@@ -4716,7 +4931,8 @@
         "informal",
         "reported-speech"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "reaction-language",
@@ -4744,7 +4960,8 @@
         "reaction",
         "conversation"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "framing-e-argumentacao-avancada",
@@ -4772,7 +4989,8 @@
         "argumentation",
         "framing"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "C1"
     },
     {
       "id": "vou-aproveitar-micro-nuance",
@@ -4796,7 +5014,8 @@
         "nuance",
         "opportunity"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "nao-adianta-nao-faz-sentido",
@@ -4820,7 +5039,8 @@
         "nuance",
         "futility"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "nao-vale-a-pena",
@@ -4844,7 +5064,8 @@
         "nuance",
         "worth"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "mesmo-que-apesar-de",
@@ -4864,7 +5085,8 @@
         "contrast",
         "concession"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "desde-que-contanto-que-condicao",
@@ -4883,7 +5105,8 @@
       "tags": [
         "condition"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "desde-que-sob-a-condicao-de-que",
@@ -4903,7 +5126,8 @@
         "condition",
         "formal"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "C1"
     },
     {
       "id": "caso-contrario-senao",
@@ -4923,7 +5147,8 @@
         "consequence",
         "connector"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "enquanto-isso",
@@ -4943,7 +5168,8 @@
         "time",
         "parallel"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "aparentemente-pelo-que-parece",
@@ -4963,7 +5189,8 @@
         "nuance",
         "evidence"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "supostamente-dizem-que",
@@ -4983,7 +5210,8 @@
         "nuance",
         "reported"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "ironicamente",
@@ -5003,7 +5231,8 @@
         "nuance",
         "irony"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "C1"
     },
     {
       "id": "curiosamente-interessante-notar-que",
@@ -5023,7 +5252,8 @@
         "nuance",
         "emphasis"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "C1"
     },
     {
       "id": "por-um-lado",
@@ -5043,7 +5273,8 @@
         "argumentation",
         "contrast"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "em-contraste-por-outro-lado",
@@ -5063,7 +5294,8 @@
         "argumentation",
         "contrast"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "em-outras-palavras",
@@ -5082,7 +5314,8 @@
       "tags": [
         "reformulation"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "dito-de-outra-forma-colocando-de-outra-maneira",
@@ -5102,7 +5335,8 @@
         "reformulation",
         "argumentation"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "C1"
     },
     {
       "id": "o-ponto-principal-que-voce-deve-lembrar-e",
@@ -5122,7 +5356,8 @@
         "persuasion",
         "conclusion"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "C1"
     },
     {
       "id": "na-pratica-isso-significa-que",
@@ -5142,7 +5377,8 @@
         "persuasion",
         "practical"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "C1"
     },
     {
       "id": "aquilo-mudou-o-rumo-da-minha-vida",
@@ -5166,7 +5402,8 @@
         "metaphor",
         "change"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "isso-criou-oportunidades",
@@ -5190,7 +5427,8 @@
         "metaphor",
         "opportunity"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "meio-estranho-um-pouco-estranho",
@@ -5210,7 +5448,8 @@
         "informal",
         "softening"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "praticamente-basicamente-mais-ou-menos-isso",
@@ -5230,7 +5469,8 @@
         "informal",
         "summary"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "estruturas-de-opiniao",
@@ -5253,7 +5493,8 @@
       "tags": [
         "opinion"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "estruturas-de-reacao",
@@ -5271,7 +5512,7 @@
         {
           "pt": "Isso explica.",
           "en": "That explains it."
-        },        
+        },
         {
           "pt": "Não é à toa que você está cansado; você passou o dia todo trabalhando.",
           "en": "No wonder you're tired; you've been working all day."
@@ -5280,7 +5521,8 @@
       "tags": [
         "reaction"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "estruturas-de-hipotese-conversacional",
@@ -5304,7 +5546,8 @@
         "hypothesis",
         "conversation"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "reagir-ao-que-o-outro-disse",
@@ -5328,7 +5571,8 @@
         "reaction",
         "conversation"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "opinion-pattern",
@@ -5348,7 +5592,8 @@
         "opinion",
         "speaking"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "preference-pattern",
@@ -5368,7 +5613,8 @@
         "preference",
         "speaking"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "contrast-pattern",
@@ -5388,7 +5634,8 @@
         "contrast",
         "speaking"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "cause-pattern",
@@ -5408,7 +5655,8 @@
         "cause",
         "speaking"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "condition-pattern",
@@ -5428,7 +5676,8 @@
         "condition",
         "speaking"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "example-pattern",
@@ -5448,7 +5697,8 @@
         "example",
         "speaking"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "sequence-pattern",
@@ -5468,7 +5718,8 @@
         "sequence",
         "speaking"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "personal-experience-pattern",
@@ -5488,7 +5739,8 @@
         "experience",
         "speaking"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "A2"
     },
     {
       "id": "problem-solution-pattern",
@@ -5508,7 +5760,8 @@
         "problem-solution",
         "speaking"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "hypothesis-pattern",
@@ -5528,7 +5781,8 @@
         "hypothesis",
         "speaking"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "reasoning-pattern",
@@ -5552,7 +5806,8 @@
         "reasoning",
         "speaking"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
     {
       "id": "conclusion-pattern",
@@ -5572,7 +5827,8 @@
         "conclusion",
         "speaking"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B1"
     },
     {
       "id": "mark-my-words",
@@ -5608,1418 +5864,1472 @@
         "speaking",
         "chunk"
       ],
-      "related": []
+      "related": [],
+      "englishLevel": "B2"
     },
-      {
-    "id": "youre-one-to-talk",
-    "intention": "Olha só quem fala.",
-    "english": "You're one to talk.",
-    "pattern": "Fixed chunk",
-    "description": "Chunk usado para responder de forma irônica quando a outra pessoa critica algo que ela mesma também faz.",
-    "category": "chunk",
-    "searchTerms": [
-      "olha só quem fala",
-      "quem fala",
-      "ironia",
-      "criticar"
-    ],
-    "examples": [
-      {
-        "pt": "Olha só quem fala.",
-        "en": "You're one to talk."
-      }
-    ],
-    "tags": [
-      "reaction",
-      "irony",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "everything-is-hunky-dory",
-    "intention": "Está tudo uma maravilha.",
-    "english": "Everything is hunky-dory.",
-    "pattern": "Fixed chunk",
-    "description": "Chunk informal para dizer que tudo está bem ou correndo perfeitamente.",
-    "category": "chunk",
-    "searchTerms": [
-      "está tudo bem",
-      "está tudo uma maravilha",
-      "tudo certo",
-      "hunky dory"
-    ],
-    "examples": [
-      {
-        "pt": "Está tudo uma maravilha.",
-        "en": "Everything is hunky-dory."
-      }
-    ],
-    "tags": [
-      "state",
-      "informal",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "i-dont-feel-good",
-    "intention": "Não estou me sentindo bem.",
-    "english": "I don't feel good.",
-    "pattern": "I don't feel + adjective",
-    "description": "Estrutura simples para dizer como você não está se sentindo.",
-    "category": "chunk",
-    "searchTerms": [
-      "não estou me sentindo bem",
-      "não me sinto bem",
-      "feel good"
-    ],
-    "examples": [
-      {
-        "pt": "Não estou me sentindo bem.",
-        "en": "I don't feel good."
-      }
-    ],
-    "tags": [
-      "feeling",
-      "health",
-      "speaking"
-    ],
-    "related": [
-      "im-under-the-weather"
-    ]
-  },
-  {
-    "id": "im-under-the-weather",
-    "intention": "Estou meio indisposto.",
-    "english": "I'm under the weather.",
-    "pattern": "Fixed chunk",
-    "description": "Expressão idiomática para dizer que você está se sentindo indisposto ou um pouco doente.",
-    "category": "chunk",
-    "searchTerms": [
-      "indisposto",
-      "meio doente",
-      "não estou bem",
-      "under the weather"
-    ],
-    "examples": [
-      {
-        "pt": "Estou meio indisposto.",
-        "en": "I'm under the weather."
-      }
-    ],
-    "tags": [
-      "feeling",
-      "health",
-      "idiom",
-      "speaking"
-    ],
-    "related": [
-      "i-dont-feel-good"
-    ]
-  },
-  {
-    "id": "whats-on-the-agenda-today",
-    "intention": "O que temos pra hoje?",
-    "english": "What's on the agenda today?",
-    "pattern": "What's on the agenda + time?",
-    "description": "Pergunta usada para saber quais atividades, planos ou assuntos estão previstos.",
-    "category": "chunk",
-    "searchTerms": [
-      "o que temos pra hoje",
-      "agenda",
-      "planos de hoje",
-      "what's on the agenda"
-    ],
-    "examples": [
-      {
-        "pt": "O que temos pra hoje?",
-        "en": "What's on the agenda today?"
-      }
-    ],
-    "tags": [
-      "question",
-      "planning",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "where-were-we",
-    "intention": "Onde nós estávamos?",
-    "english": "Where were we?",
-    "pattern": "Fixed chunk",
-    "description": "Chunk usado para retomar uma conversa ou atividade depois de uma interrupção.",
-    "category": "chunk",
-    "searchTerms": [
-      "onde estávamos",
-      "retomar conversa",
-      "retomar assunto",
-      "where were we"
-    ],
-    "examples": [
-      {
-        "pt": "Onde nós estávamos?",
-        "en": "Where were we?"
-      }
-    ],
-    "tags": [
-      "conversation-management",
-      "question",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "ill-let-it-slide",
-    "intention": "Vou deixar passar desta vez.",
-    "english": "I'll let it slide this time.",
-    "pattern": "I'll let it slide + optional time",
-    "description": "Chunk para dizer que você vai ignorar ou perdoar algo desta vez.",
-    "category": "chunk",
-    "searchTerms": [
-      "vou deixar passar",
-      "desta vez",
-      "perdoar",
-      "let it slide"
-    ],
-    "examples": [
-      {
-        "pt": "Eu vou deixar passar desta vez.",
-        "en": "I'll let it slide this time."
-      }
-    ],
-    "tags": [
-      "reaction",
-      "decision",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "go-big-or-go-home",
-    "intention": "Tudo ou nada / vai com tudo ou nem tenta.",
-    "english": "Go big or go home.",
-    "pattern": "Fixed chunk",
-    "description": "Expressão para incentivar alguém a se comprometer totalmente com uma ação.",
-    "category": "chunk",
-    "searchTerms": [
-      "tudo ou nada",
-      "vai com tudo",
-      "ou vai ou rachar",
-      "go big or go home"
-    ],
-    "examples": [
-      {
-        "pt": "Tudo ou nada.",
-        "en": "Go big or go home."
-      },
-      {
-        "pt": "Vai com tudo ou nem tenta.",
-        "en": "Go big or go home."
-      }
-    ],
-    "tags": [
-      "motivation",
-      "idiom",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "why-the-long-face",
-    "intention": "Que cara triste é essa?",
-    "english": "Why the long face?",
-    "pattern": "Fixed chunk",
-    "description": "Pergunta informal usada quando alguém parece triste ou abatido.",
-    "category": "chunk",
-    "searchTerms": [
-      "que cara é essa",
-      "cara triste",
-      "triste",
-      "why the long face"
-    ],
-    "examples": [
-      {
-        "pt": "Que cara triste é essa?",
-        "en": "Why the long face?"
-      }
-    ],
-    "tags": [
-      "question",
-      "reaction",
-      "idiom",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "out-of-sight-out-of-mind",
-    "intention": "O que os olhos não veem, o coração não sente.",
-    "english": "Out of sight, out of mind.",
-    "pattern": "Fixed chunk",
-    "description": "Provérbio usado para dizer que tendemos a esquecer o que não vemos ou com que não temos contato.",
-    "category": "chunk",
-    "searchTerms": [
-      "o que os olhos não veem",
-      "coração não sente",
-      "out of sight out of mind"
-    ],
-    "examples": [
-      {
-        "pt": "O que os olhos não veem, o coração não sente.",
-        "en": "Out of sight, out of mind."
-      }
-    ],
-    "tags": [
-      "proverb",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "are-you-pulling-my-leg",
-    "intention": "Você está me zoando?",
-    "english": "Are you pulling my leg?",
-    "pattern": "Fixed chunk",
-    "description": "Pergunta idiomática para saber se alguém está brincando, enganando ou zoando você.",
-    "category": "chunk",
-    "searchTerms": [
-      "você está me zoando",
-      "está brincando comigo",
-      "pulling my leg"
-    ],
-    "examples": [
-      {
-        "pt": "Cê tá me zoando?",
-        "en": "Are you pulling my leg?"
-      }
-    ],
-    "tags": [
-      "question",
-      "idiom",
-      "reaction",
-      "speaking"
-    ],
-    "related": [
-      "are-you-mocking-me"
-    ]
-  },
-  {
-    "id": "takes-one-to-know-one",
-    "intention": "O sujo falando do mal lavado.",
-    "english": "Takes one to know one.",
-    "pattern": "Fixed chunk",
-    "description": "Resposta usada quando alguém critica em outra pessoa um defeito que também possui.",
-    "category": "chunk",
-    "searchTerms": [
-      "o sujo falando do mal lavado",
-      "takes one to know one",
-      "hipocrisia"
-    ],
-    "examples": [
-      {
-        "pt": "O sujo falando do mal lavado.",
-        "en": "Takes one to know one."
-      }
-    ],
-    "tags": [
-      "reaction",
-      "idiom",
-      "speaking"
-    ],
-    "related": [
-      "youre-one-to-talk"
-    ]
-  },
-  {
-    "id": "go-ahead-and-get-busy",
-    "intention": "Mãos à obra.",
-    "english": "Go ahead and get busy.",
-    "pattern": "Go ahead and + verb",
-    "description": "Chunk para incentivar alguém a começar uma tarefa ou ação.",
-    "category": "chunk",
-    "searchTerms": [
-      "mãos à obra",
-      "começar",
-      "vai em frente",
-      "get busy"
-    ],
-    "examples": [
-      {
-        "pt": "Mãos à obra.",
-        "en": "Go ahead and get busy."
-      }
-    ],
-    "tags": [
-      "encouragement",
-      "action",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "ill-get-the-hang-of-it",
-    "intention": "Vou pegar o jeito.",
-    "english": "I'll get the hang of it.",
-    "pattern": "get the hang of + object",
-    "description": "Expressão usada para dizer que você vai aprender a fazer algo com prática.",
-    "category": "chunk",
-    "searchTerms": [
-      "vou pegar o jeito",
-      "pegar o jeito",
-      "aprender com prática",
-      "get the hang of it"
-    ],
-    "examples": [
-      {
-        "pt": "Vou pegar o jeito.",
-        "en": "I'll get the hang of it."
-      }
-    ],
-    "tags": [
-      "learning",
-      "idiom",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "what-to-do-then",
-    "intention": "O que fazer então?",
-    "english": "What to do then?",
-    "pattern": "What to do + time/discourse marker?",
-    "description": "Chunk curto para perguntar qual ação tomar em seguida.",
-    "category": "chunk",
-    "searchTerms": [
-      "o que fazer então",
-      "o que resta fazer",
-      "what to do then"
-    ],
-    "examples": [
-      {
-        "pt": "O que fazer então?",
-        "en": "What to do then?"
-      }
-    ],
-    "tags": [
-      "question",
-      "decision",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "lets-catch-up",
-    "intention": "Vamos colocar o papo em dia.",
-    "english": "Let's catch up.",
-    "pattern": "Let's + verb",
-    "description": "Chunk usado para sugerir conversar e trocar novidades depois de algum tempo.",
-    "category": "chunk",
-    "searchTerms": [
-      "colocar o papo em dia",
-      "nos atualizar",
-      "catch up"
-    ],
-    "examples": [
-      {
-        "pt": "Vamos colocar o papo em dia.",
-        "en": "Let's catch up."
-      }
-    ],
-    "tags": [
-      "social",
-      "suggestion",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "ill-check-back-in-with-you-later",
-    "intention": "Eu falo com você mais tarde.",
-    "english": "I'll check back in with you later.",
-    "pattern": "check back in with + person + later",
-    "description": "Chunk para dizer que você retomará o contato com alguém mais tarde.",
-    "category": "chunk",
-    "searchTerms": [
-      "falo com você mais tarde",
-      "retomar contato",
-      "check back in"
-    ],
-    "examples": [
-      {
-        "pt": "Eu falo com você mais tarde.",
-        "en": "I'll check back in with you later."
-      }
-    ],
-    "tags": [
-      "follow-up",
-      "future",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "look-whos-here",
-    "intention": "Olha quem está aqui!",
-    "english": "Look who's here!",
-    "pattern": "Fixed chunk",
-    "description": "Reação usada ao notar ou anunciar a chegada de alguém.",
-    "category": "chunk",
-    "searchTerms": [
-      "olha quem está aqui",
-      "quem chegou",
-      "look who's here"
-    ],
-    "examples": [
-      {
-        "pt": "Olha quem está aqui!",
-        "en": "Look who's here!"
-      }
-    ],
-    "tags": [
-      "reaction",
-      "social",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "im-gonna-take-a-piss",
-    "intention": "Vou fazer xixi.",
-    "english": "I'm gonna take a piss.",
-    "pattern": "I'm gonna + verb",
-    "description": "Expressão muito informal e vulgar para dizer que vai urinar.",
-    "category": "chunk",
-    "searchTerms": [
-      "vou fazer xixi",
-      "urinar",
-      "take a piss"
-    ],
-    "examples": [
-      {
-        "pt": "Vou fazer xixi.",
-        "en": "I'm gonna take a piss."
-      }
-    ],
-    "tags": [
-      "informal",
-      "vulgar",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "im-over-you",
-    "intention": "Eu já te superei.",
-    "english": "I'm over you.",
-    "pattern": "be over + person/situation",
-    "description": "Chunk para dizer que você superou emocionalmente uma pessoa ou situação.",
-    "category": "chunk",
-    "searchTerms": [
-      "já te superei",
-      "superei você",
-      "não me importo mais",
-      "over you"
-    ],
-    "examples": [
-      {
-        "pt": "Eu já te superei.",
-        "en": "I'm over you."
-      }
-    ],
-    "tags": [
-      "relationship",
-      "emotion",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "ill-hold-you-to-that",
-    "intention": "Vou cobrar isso de você.",
-    "english": "I'll hold you to that.",
-    "pattern": "hold + person + to + promise/statement",
-    "description": "Chunk usado quando você pretende cobrar que alguém cumpra o que prometeu ou disse.",
-    "category": "chunk",
-    "searchTerms": [
-      "vou cobrar isso de você",
-      "cobrar promessa",
-      "hold you to that"
-    ],
-    "examples": [
-      {
-        "pt": "Vou cobrar isso de você.",
-        "en": "I'll hold you to that."
-      }
-    ],
-    "tags": [
-      "commitment",
-      "reaction",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "you-left-me-high-and-dry",
-    "intention": "Você me deixou na mão.",
-    "english": "You left me high and dry.",
-    "pattern": "leave + person + high and dry",
-    "description": "Expressão idiomática para dizer que alguém abandonou você numa situação difícil.",
-    "category": "chunk",
-    "searchTerms": [
-      "me deixou na mão",
-      "abandonou",
-      "high and dry"
-    ],
-    "examples": [
-      {
-        "pt": "Você me deixou na mão.",
-        "en": "You left me high and dry."
-      }
-    ],
-    "tags": [
-      "idiom",
-      "complaint",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "are-you-mocking-me",
-    "intention": "Você está zombando de mim?",
-    "english": "Are you mocking me?",
-    "pattern": "Are you + ING + me?",
-    "description": "Pergunta direta para saber se alguém está zombando ou tirando sarro de você.",
-    "category": "chunk",
-    "searchTerms": [
-      "zombando de mim",
-      "tirando sarro",
-      "mocking me"
-    ],
-    "examples": [
-      {
-        "pt": "Cê tá zombando de mim?",
-        "en": "Are you mocking me?"
-      }
-    ],
-    "tags": [
-      "question",
-      "reaction",
-      "speaking"
-    ],
-    "related": [
-      "are-you-pulling-my-leg"
-    ]
-  },
-  {
-    "id": "thats-beside-the-point",
-    "intention": "Isso não vem ao caso.",
-    "english": "That's beside the point.",
-    "pattern": "Fixed chunk",
-    "description": "Chunk para indicar que algo é irrelevante para o assunto principal.",
-    "category": "chunk",
-    "searchTerms": [
-      "não vem ao caso",
-      "irrelevante",
-      "fora do assunto",
-      "beside the point"
-    ],
-    "examples": [
-      {
-        "pt": "Isso não vem ao caso.",
-        "en": "That's beside the point."
-      }
-    ],
-    "tags": [
-      "argumentation",
-      "reaction",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "dont-shove-me",
-    "intention": "Não me empurre.",
-    "english": "Don't shove me.",
-    "pattern": "Don't + verb + me",
-    "description": "Comando direto para pedir que alguém não empurre você.",
-    "category": "chunk",
-    "searchTerms": [
-      "não me empurre",
-      "empurrar",
-      "shove me"
-    ],
-    "examples": [
-      {
-        "pt": "Não me empurre.",
-        "en": "Don't shove me."
-      }
-    ],
-    "tags": [
-      "imperative",
-      "boundary",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "no-backsies",
-    "intention": "Não pode voltar atrás.",
-    "english": "No backsies.",
-    "pattern": "Fixed chunk",
-    "description": "Expressão informal e brincalhona indicando que não vale desistir ou voltar atrás.",
-    "category": "chunk",
-    "searchTerms": [
-      "não pode voltar atrás",
-      "sem arrependimento",
-      "no backsies"
-    ],
-    "examples": [
-      {
-        "pt": "Não pode voltar atrás.",
-        "en": "No backsies."
-      }
-    ],
-    "tags": [
-      "informal",
-      "playful",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "i-have-a-few-friends",
-    "intention": "Eu tenho poucos amigos.",
-    "english": "I have a few friends.",
-    "pattern": "I have a few + plural noun",
-    "description": "Estrutura do arquivo para dizer que você tem uma pequena quantidade de algo contável.",
-    "category": "chunk",
-    "searchTerms": [
-      "tenho poucos amigos",
-      "alguns amigos",
-      "a few friends"
-    ],
-    "examples": [
-      {
-        "pt": "Eu tenho poucos amigos.",
-        "en": "I have a few friends."
-      }
-    ],
-    "tags": [
-      "quantity",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "if-you-say-so",
-    "intention": "Se você diz.",
-    "english": "If you say so.",
-    "pattern": "Fixed chunk",
-    "description": "Resposta usada para aceitar o que alguém diz, muitas vezes com certa dúvida ou reserva.",
-    "category": "chunk",
-    "searchTerms": [
-      "se você diz",
-      "se você está dizendo",
-      "if you say so"
-    ],
-    "examples": [
-      {
-        "pt": "Se você diz.",
-        "en": "If you say so."
-      }
-    ],
-    "tags": [
-      "reaction",
-      "skepticism",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "you-had-me-at-hello",
-    "intention": "Você me conquistou no primeiro olá.",
-    "english": "You had me at hello.",
-    "pattern": "You had me at + noun/moment",
-    "description": "Chunk para dizer que alguém conquistou você desde o primeiro momento.",
-    "category": "chunk",
-    "searchTerms": [
-      "me conquistou",
-      "desde o primeiro olá",
-      "had me at hello"
-    ],
-    "examples": [
-      {
-        "pt": "Você me conquistou no primeiro olá.",
-        "en": "You had me at hello."
-      }
-    ],
-    "tags": [
-      "relationship",
-      "idiom",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "cat-got-your-tongue",
-    "intention": "O gato comeu sua língua?",
-    "english": "Cat got your tongue?",
-    "pattern": "Fixed chunk",
-    "description": "Expressão brincalhona usada quando alguém fica calado ou não responde.",
-    "category": "chunk",
-    "searchTerms": [
-      "o gato comeu sua língua",
-      "ficou mudo",
-      "não vai falar",
-      "cat got your tongue"
-    ],
-    "examples": [
-      {
-        "pt": "O gato comeu sua língua?",
-        "en": "Cat got your tongue?"
-      }
-    ],
-    "tags": [
-      "reaction",
-      "idiom",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "i-take-your-point",
-    "intention": "Entendo seu ponto de vista.",
-    "english": "I take your point.",
-    "pattern": "I take your point",
-    "description": "Chunk para reconhecer que você entende ou aceita o ponto apresentado por outra pessoa.",
-    "category": "chunk",
-    "searchTerms": [
-      "entendo seu ponto",
-      "ponto de vista",
-      "take your point"
-    ],
-    "examples": [
-      {
-        "pt": "Entendo seu ponto de vista.",
-        "en": "I take your point."
-      }
-    ],
-    "tags": [
-      "agreement",
-      "argumentation",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "what-does-that-do-for-you",
-    "intention": "O que isso faz ou significa para você?",
-    "english": "What does that do for you?",
-    "pattern": "What does + subject + do for + person?",
-    "description": "Pergunta usada para explorar o efeito, benefício ou significado de algo para alguém.",
-    "category": "chunk",
-    "searchTerms": [
-      "o que isso faz pra você",
-      "o que isso significa pra você",
-      "benefício",
-      "do for you"
-    ],
-    "examples": [
-      {
-        "pt": "O que isso faz / significa pra você?",
-        "en": "What does that do for you?"
-      }
-    ],
-    "tags": [
-      "question",
-      "meaning",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "you-are-way-out-of-line",
-    "intention": "Você está passando dos limites.",
-    "english": "You are way out of line.",
-    "pattern": "be way out of line",
-    "description": "Chunk forte para dizer que o comportamento de alguém ultrapassou limites aceitáveis.",
-    "category": "chunk",
-    "searchTerms": [
-      "passando dos limites",
-      "fora da linha",
-      "out of line"
-    ],
-    "examples": [
-      {
-        "pt": "Você está passando dos limites.",
-        "en": "You are way out of line."
-      }
-    ],
-    "tags": [
-      "boundary",
-      "reaction",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "good-riddance",
-    "intention": "Já vai tarde.",
-    "english": "Good riddance.",
-    "pattern": "Fixed chunk",
-    "description": "Expressão forte usada para demonstrar alívio por alguém ou algo ter ido embora.",
-    "category": "chunk",
-    "searchTerms": [
-      "já vai tarde",
-      "que bom que se foi",
-      "good riddance"
-    ],
-    "examples": [
-      {
-        "pt": "Já vai tarde.",
-        "en": "Good riddance."
-      }
-    ],
-    "tags": [
-      "reaction",
-      "strong-language",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "you-reap-what-you-sow",
-    "intention": "Você colhe o que planta.",
-    "english": "You reap what you sow.",
-    "pattern": "Fixed chunk",
-    "description": "Provérbio para dizer que as consequências correspondem às próprias ações.",
-    "category": "chunk",
-    "searchTerms": [
-      "você colhe o que planta",
-      "consequências",
-      "reap what you sow"
-    ],
-    "examples": [
-      {
-        "pt": "Você colhe o que você planta.",
-        "en": "You reap what you sow."
-      }
-    ],
-    "tags": [
-      "proverb",
-      "consequence",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "i-couldnt-have-said-it-better-myself",
-    "intention": "Eu não poderia ter dito isso melhor.",
-    "english": "I couldn't have said it better myself.",
-    "pattern": "couldn't have + past participle",
-    "description": "Chunk para demonstrar forte concordância com a forma como outra pessoa expressou uma ideia.",
-    "category": "chunk",
-    "searchTerms": [
-      "não poderia ter dito melhor",
-      "concordo plenamente",
-      "couldn't have said it better"
-    ],
-    "examples": [
-      {
-        "pt": "Não poderia ter dito isso melhor.",
-        "en": "I couldn't have said it better myself."
-      }
-    ],
-    "tags": [
-      "agreement",
-      "modal-perfect",
-      "speaking"
-    ],
-    "related": [
-      "you-can-say-that-again"
-    ]
-  },
-  {
-    "id": "i-will-not-settle-for-anything-less",
-    "intention": "Não vou me contentar com nada menos.",
-    "english": "I will not settle for anything less.",
-    "pattern": "settle for + noun/pronoun",
-    "description": "Chunk para afirmar que você não aceitará menos do que considera adequado.",
-    "category": "chunk",
-    "searchTerms": [
-      "não vou me contentar",
-      "não vou aceitar menos",
-      "settle for anything less"
-    ],
-    "examples": [
-      {
-        "pt": "Não vou me contentar com nada menos.",
-        "en": "I will not settle for anything less."
-      },
-      {
-        "pt": "Não vou aceitar menos do que eu mereço.",
-        "en": "I will not settle for anything less."
-      }
-    ],
-    "tags": [
-      "determination",
-      "boundary",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "nothing-to-do-with-me",
-    "intention": "Não tem nada a ver comigo.",
-    "english": "Nothing to do with me.",
-    "pattern": "nothing to do with + person/thing",
-    "description": "Chunk para dizer que algo não está relacionado a você ou não é sua responsabilidade.",
-    "category": "chunk",
-    "searchTerms": [
-      "nada a ver comigo",
-      "não é problema meu",
-      "não me diz respeito",
-      "nothing to do with me"
-    ],
-    "examples": [
-      {
-        "pt": "Não tem nada a ver comigo.",
-        "en": "Nothing to do with me."
-      }
-    ],
-    "tags": [
-      "distance",
-      "responsibility",
-      "speaking"
-    ],
-    "related": [
-      "its-not-on-you"
-    ]
-  },
-  {
-    "id": "what-else-is-there-to-say",
-    "intention": "O que mais há para dizer?",
-    "english": "What else is there to say?",
-    "pattern": "What else is there to + verb?",
-    "description": "Pergunta retórica ou literal usada quando parece não haver muito mais a acrescentar.",
-    "category": "chunk",
-    "searchTerms": [
-      "o que mais há para dizer",
-      "o que mais dizer",
-      "what else is there to say"
-    ],
-    "examples": [
-      {
-        "pt": "O que há mais para dizer?",
-        "en": "What else is there to say?"
-      }
-    ],
-    "tags": [
-      "question",
-      "conclusion",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "im-kind-of",
-    "intention": "Estou meio...",
-    "english": "I'm kind of...",
-    "pattern": "I'm kind of + adjective/state",
-    "description": "Chunk usado para suavizar ou aproximar uma descrição de estado.",
-    "category": "chunk",
-    "searchTerms": [
-      "estou meio",
-      "mais ou menos",
-      "kind of",
-      "ocupado",
-      "doente"
-    ],
-    "examples": [
-      {
-        "pt": "Estou meio ocupado.",
-        "en": "I'm kind of busy."
-      },
-      {
-        "pt": "Estou meio doente.",
-        "en": "I'm kind of sick."
-      }
-    ],
-    "tags": [
-      "softener",
-      "state",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "you-can-say-that-again",
-    "intention": "Pode crer / concordo plenamente.",
-    "english": "You can say that again.",
-    "pattern": "Fixed chunk",
-    "description": "Expressão idiomática usada para demonstrar forte concordância.",
-    "category": "chunk",
-    "searchTerms": [
-      "pode crer",
-      "concordo plenamente",
-      "pode apostar",
-      "say that again"
-    ],
-    "examples": [
-      {
-        "pt": "Concordo plenamente.",
-        "en": "You can say that again."
-      }
-    ],
-    "tags": [
-      "agreement",
-      "idiom",
-      "speaking"
-    ],
-    "related": [
-      "i-couldnt-have-said-it-better-myself"
-    ]
-  },
-  {
-    "id": "its-not-on-you",
-    "intention": "Não é culpa sua / não é sua responsabilidade.",
-    "english": "It's not on you.",
-    "pattern": "be on + person",
-    "description": "Chunk para dizer que uma culpa, responsabilidade ou obrigação não recai sobre alguém.",
-    "category": "chunk",
-    "searchTerms": [
-      "não é culpa sua",
-      "não é sua responsabilidade",
-      "not on you"
-    ],
-    "examples": [
-      {
-        "pt": "Não é culpa sua.",
-        "en": "It's not on you."
-      }
-    ],
-    "tags": [
-      "responsibility",
-      "reassurance",
-      "speaking"
-    ],
-    "related": [
-      "nothing-to-do-with-me"
-    ]
-  },
-  {
-    "id": "we-got-bigger-fish-to-fry",
-    "intention": "Temos problemas mais importantes para resolver.",
-    "english": "We got bigger fish to fry.",
-    "pattern": "have/get bigger fish to fry",
-    "description": "Expressão idiomática para dizer que existem assuntos mais importantes que exigem atenção.",
-    "category": "chunk",
-    "searchTerms": [
-      "problemas mais importantes",
-      "coisas mais importantes",
-      "bigger fish to fry"
-    ],
-    "examples": [
-      {
-        "pt": "Temos problemas mais importantes para resolver.",
-        "en": "We got bigger fish to fry."
-      }
-    ],
-    "tags": [
-      "priority",
-      "idiom",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "hang-on",
-    "intention": "Espere um pouco / aguente firme.",
-    "english": "Hang on.",
-    "pattern": "Fixed chunk",
-    "description": "Chunk com sentidos dependentes do contexto: esperar um momento ou aguentar firme.",
-    "category": "chunk",
-    "searchTerms": [
-      "espere um pouco",
-      "aguente firme",
-      "resista",
-      "hang on"
-    ],
-    "examples": [
-      {
-        "pt": "Espere um pouco.",
-        "en": "Hang on."
-      },
-      {
-        "pt": "Aguente firme.",
-        "en": "Hang on."
-      }
-    ],
-    "tags": [
-      "conversation-management",
-      "encouragement",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "what-can-i-get-you",
-    "intention": "O que posso te oferecer?",
-    "english": "What can I get you?",
-    "pattern": "What can I get + person?",
-    "description": "Pergunta comum ao oferecer comida, bebida ou algo a alguém.",
-    "category": "chunk",
-    "searchTerms": [
-      "o que posso te oferecer",
-      "o que deseja",
-      "o que posso trazer",
-      "what can I get you"
-    ],
-    "examples": [
-      {
-        "pt": "O que posso te oferecer?",
-        "en": "What can I get you?"
-      }
-    ],
-    "tags": [
-      "question",
-      "service",
-      "speaking"
-    ],
-    "related": [
-      "what-can-i-get-to-drink"
-    ]
-  },
-  {
-    "id": "what-can-i-get-to-drink",
-    "intention": "O que posso oferecer para beber?",
-    "english": "What can I get to drink?",
-    "pattern": "What can I get + to drink?",
-    "description": "Pergunta do arquivo relacionada a oferecer ou escolher uma bebida.",
-    "category": "chunk",
-    "searchTerms": [
-      "o que posso oferecer para beber",
-      "bebida",
-      "get to drink"
-    ],
-    "examples": [
-      {
-        "pt": "O que posso te oferecer para beber?",
-        "en": "What can I get to drink?"
-      }
-    ],
-    "tags": [
-      "question",
-      "drink",
-      "speaking"
-    ],
-    "related": [
-      "what-can-i-get-you"
-    ]
-  },
-  {
-    "id": "let-bygones-be-bygones",
-    "intention": "Deixa o passado pra trás.",
-    "english": "Let bygones be bygones.",
-    "pattern": "Fixed chunk",
-    "description": "Expressão usada para sugerir que conflitos ou acontecimentos passados sejam deixados no passado.",
-    "category": "chunk",
-    "searchTerms": [
-      "deixa o passado pra trás",
-      "esquecer o passado",
-      "bygones be bygones"
-    ],
-    "examples": [
-      {
-        "pt": "Deixa o passado pra trás.",
-        "en": "Let bygones be bygones."
-      }
-    ],
-    "tags": [
-      "reconciliation",
-      "idiom",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "what-have-you-got-to-lose",
-    "intention": "O que você tem a perder?",
-    "english": "What have you got to lose?",
-    "pattern": "What have you got to + verb?",
-    "description": "Pergunta usada para encorajar alguém a tentar algo quando o risco parece pequeno.",
-    "category": "chunk",
-    "searchTerms": [
-      "o que você tem a perder",
-      "tentar",
-      "what have you got to lose"
-    ],
-    "examples": [
-      {
-        "pt": "O que você tem a perder?",
-        "en": "What have you got to lose?"
-      }
-    ],
-    "tags": [
-      "question",
-      "encouragement",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "woe-is-me",
-    "intention": "Ai de mim.",
-    "english": "Woe is me!",
-    "pattern": "Fixed chunk",
-    "description": "Expressão dramática ou irônica de sofrimento, autopiedade ou lamento.",
-    "category": "chunk",
-    "searchTerms": [
-      "ai de mim",
-      "lamento",
-      "woe is me"
-    ],
-    "examples": [
-      {
-        "pt": "Ai de mim.",
-        "en": "Woe is me!"
-      }
-    ],
-    "tags": [
-      "reaction",
-      "dramatic",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "im-sick-of-it",
-    "intention": "Já chega / já deu.",
-    "english": "I'm sick of it!",
-    "pattern": "be sick of + noun/pronoun/ING",
-    "description": "Chunk forte para expressar irritação ou cansaço com algo repetitivo ou desagradável.",
-    "category": "chunk",
-    "searchTerms": [
-      "já chega",
-      "já deu",
-      "estou cansado disso",
-      "sick of it"
-    ],
-    "examples": [
-      {
-        "pt": "Já chega!",
-        "en": "I'm sick of it!"
-      }
-    ],
-    "tags": [
-      "frustration",
-      "emotion",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "by-any-chance",
-    "intention": "Por acaso...",
-    "english": "by any chance",
-    "pattern": "question + by any chance?",
-    "description": "Chunk usado para suavizar uma pergunta e transmitir a ideia de 'por acaso'.",
-    "category": "chunk",
-    "searchTerms": [
-      "por acaso",
-      "by any chance",
-      "suavizar pergunta"
-    ],
-    "examples": [
-      {
-        "pt": "Você viu meu telefone por acaso?",
-        "en": "Have you seen my cell phone by any chance?"
-      }
-    ],
-    "tags": [
-      "question",
-      "softener",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "how-about",
-    "intention": "Que tal...?",
-    "english": "How about...?",
-    "pattern": "How about + noun/ING?",
-    "description": "Estrutura usada para fazer uma sugestão ou propor uma alternativa.",
-    "category": "chunk",
-    "searchTerms": [
-      "que tal",
-      "sugestão",
-      "how about"
-    ],
-    "examples": [
-      {
-        "pt": "Que tal...?",
-        "en": "How about...?"
-      }
-    ],
-    "tags": [
-      "suggestion",
-      "question",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "i-cant-wait",
-    "intention": "Não vejo a hora...",
-    "english": "I can't wait...",
-    "pattern": "I can't wait + to + verb / for + noun",
-    "description": "Chunk usado para demonstrar grande expectativa ou entusiasmo por algo futuro.",
-    "category": "chunk",
-    "searchTerms": [
-      "não vejo a hora",
-      "mal posso esperar",
-      "can't wait"
-    ],
-    "examples": [
-      {
-        "pt": "Não vejo a hora...",
-        "en": "I can't wait..."
-      }
-    ],
-    "tags": [
-      "anticipation",
-      "emotion",
-      "speaking"
-    ],
-    "related": []
-  },
-  {
-    "id": "i-was-up-all-night",
-    "intention": "Passei a noite toda acordado.",
-    "english": "I was up all night.",
-    "pattern": "be up all night",
-    "description": "Chunk para dizer que você ficou acordado durante toda a noite.",
-    "category": "chunk",
-    "searchTerms": [
-      "passei a noite toda acordado",
-      "acordado a noite toda",
-      "up all night"
-    ],
-    "examples": [
-      {
-        "pt": "Passei a noite toda acordado.",
-        "en": "I was up all night."
-      }
-    ],
-    "tags": [
-      "time",
-      "state",
-      "speaking"
-    ],
-    "related": []
-  }
-
+    {
+      "id": "youre-one-to-talk",
+      "intention": "Olha só quem fala.",
+      "english": "You're one to talk.",
+      "pattern": "Fixed chunk",
+      "description": "Chunk usado para responder de forma irônica quando a outra pessoa critica algo que ela mesma também faz.",
+      "category": "chunk",
+      "searchTerms": [
+        "olha só quem fala",
+        "quem fala",
+        "ironia",
+        "criticar"
+      ],
+      "examples": [
+        {
+          "pt": "Olha só quem fala.",
+          "en": "You're one to talk."
+        }
+      ],
+      "tags": [
+        "reaction",
+        "irony",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "everything-is-hunky-dory",
+      "intention": "Está tudo uma maravilha.",
+      "english": "Everything is hunky-dory.",
+      "pattern": "Fixed chunk",
+      "description": "Chunk informal para dizer que tudo está bem ou correndo perfeitamente.",
+      "category": "chunk",
+      "searchTerms": [
+        "está tudo bem",
+        "está tudo uma maravilha",
+        "tudo certo",
+        "hunky dory"
+      ],
+      "examples": [
+        {
+          "pt": "Está tudo uma maravilha.",
+          "en": "Everything is hunky-dory."
+        }
+      ],
+      "tags": [
+        "state",
+        "informal",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "C1"
+    },
+    {
+      "id": "i-dont-feel-good",
+      "intention": "Não estou me sentindo bem.",
+      "english": "I don't feel good.",
+      "pattern": "I don't feel + adjective",
+      "description": "Estrutura simples para dizer como você não está se sentindo.",
+      "category": "chunk",
+      "searchTerms": [
+        "não estou me sentindo bem",
+        "não me sinto bem",
+        "feel good"
+      ],
+      "examples": [
+        {
+          "pt": "Não estou me sentindo bem.",
+          "en": "I don't feel good."
+        }
+      ],
+      "tags": [
+        "feeling",
+        "health",
+        "speaking"
+      ],
+      "related": [
+        "im-under-the-weather"
+      ],
+      "englishLevel": "A1"
+    },
+    {
+      "id": "im-under-the-weather",
+      "intention": "Estou meio indisposto.",
+      "english": "I'm under the weather.",
+      "pattern": "Fixed chunk",
+      "description": "Expressão idiomática para dizer que você está se sentindo indisposto ou um pouco doente.",
+      "category": "chunk",
+      "searchTerms": [
+        "indisposto",
+        "meio doente",
+        "não estou bem",
+        "under the weather"
+      ],
+      "examples": [
+        {
+          "pt": "Estou meio indisposto.",
+          "en": "I'm under the weather."
+        }
+      ],
+      "tags": [
+        "feeling",
+        "health",
+        "idiom",
+        "speaking"
+      ],
+      "related": [
+        "i-dont-feel-good"
+      ],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "whats-on-the-agenda-today",
+      "intention": "O que temos pra hoje?",
+      "english": "What's on the agenda today?",
+      "pattern": "What's on the agenda + time?",
+      "description": "Pergunta usada para saber quais atividades, planos ou assuntos estão previstos.",
+      "category": "chunk",
+      "searchTerms": [
+        "o que temos pra hoje",
+        "agenda",
+        "planos de hoje",
+        "what's on the agenda"
+      ],
+      "examples": [
+        {
+          "pt": "O que temos pra hoje?",
+          "en": "What's on the agenda today?"
+        }
+      ],
+      "tags": [
+        "question",
+        "planning",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "where-were-we",
+      "intention": "Onde nós estávamos?",
+      "english": "Where were we?",
+      "pattern": "Fixed chunk",
+      "description": "Chunk usado para retomar uma conversa ou atividade depois de uma interrupção.",
+      "category": "chunk",
+      "searchTerms": [
+        "onde estávamos",
+        "retomar conversa",
+        "retomar assunto",
+        "where were we"
+      ],
+      "examples": [
+        {
+          "pt": "Onde nós estávamos?",
+          "en": "Where were we?"
+        }
+      ],
+      "tags": [
+        "conversation-management",
+        "question",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "ill-let-it-slide",
+      "intention": "Vou deixar passar desta vez.",
+      "english": "I'll let it slide this time.",
+      "pattern": "I'll let it slide + optional time",
+      "description": "Chunk para dizer que você vai ignorar ou perdoar algo desta vez.",
+      "category": "chunk",
+      "searchTerms": [
+        "vou deixar passar",
+        "desta vez",
+        "perdoar",
+        "let it slide"
+      ],
+      "examples": [
+        {
+          "pt": "Eu vou deixar passar desta vez.",
+          "en": "I'll let it slide this time."
+        }
+      ],
+      "tags": [
+        "reaction",
+        "decision",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "go-big-or-go-home",
+      "intention": "Tudo ou nada / vai com tudo ou nem tenta.",
+      "english": "Go big or go home.",
+      "pattern": "Fixed chunk",
+      "description": "Expressão para incentivar alguém a se comprometer totalmente com uma ação.",
+      "category": "chunk",
+      "searchTerms": [
+        "tudo ou nada",
+        "vai com tudo",
+        "ou vai ou rachar",
+        "go big or go home"
+      ],
+      "examples": [
+        {
+          "pt": "Tudo ou nada.",
+          "en": "Go big or go home."
+        },
+        {
+          "pt": "Vai com tudo ou nem tenta.",
+          "en": "Go big or go home."
+        }
+      ],
+      "tags": [
+        "motivation",
+        "idiom",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "C1"
+    },
+    {
+      "id": "why-the-long-face",
+      "intention": "Que cara triste é essa?",
+      "english": "Why the long face?",
+      "pattern": "Fixed chunk",
+      "description": "Pergunta informal usada quando alguém parece triste ou abatido.",
+      "category": "chunk",
+      "searchTerms": [
+        "que cara é essa",
+        "cara triste",
+        "triste",
+        "why the long face"
+      ],
+      "examples": [
+        {
+          "pt": "Que cara triste é essa?",
+          "en": "Why the long face?"
+        }
+      ],
+      "tags": [
+        "question",
+        "reaction",
+        "idiom",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "out-of-sight-out-of-mind",
+      "intention": "O que os olhos não veem, o coração não sente.",
+      "english": "Out of sight, out of mind.",
+      "pattern": "Fixed chunk",
+      "description": "Provérbio usado para dizer que tendemos a esquecer o que não vemos ou com que não temos contato.",
+      "category": "chunk",
+      "searchTerms": [
+        "o que os olhos não veem",
+        "coração não sente",
+        "out of sight out of mind"
+      ],
+      "examples": [
+        {
+          "pt": "O que os olhos não veem, o coração não sente.",
+          "en": "Out of sight, out of mind."
+        }
+      ],
+      "tags": [
+        "proverb",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "C1"
+    },
+    {
+      "id": "are-you-pulling-my-leg",
+      "intention": "Você está me zoando?",
+      "english": "Are you pulling my leg?",
+      "pattern": "Fixed chunk",
+      "description": "Pergunta idiomática para saber se alguém está brincando, enganando ou zoando você.",
+      "category": "chunk",
+      "searchTerms": [
+        "você está me zoando",
+        "está brincando comigo",
+        "pulling my leg"
+      ],
+      "examples": [
+        {
+          "pt": "Cê tá me zoando?",
+          "en": "Are you pulling my leg?"
+        }
+      ],
+      "tags": [
+        "question",
+        "idiom",
+        "reaction",
+        "speaking"
+      ],
+      "related": [
+        "are-you-mocking-me"
+      ],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "takes-one-to-know-one",
+      "intention": "O sujo falando do mal lavado.",
+      "english": "Takes one to know one.",
+      "pattern": "Fixed chunk",
+      "description": "Resposta usada quando alguém critica em outra pessoa um defeito que também possui.",
+      "category": "chunk",
+      "searchTerms": [
+        "o sujo falando do mal lavado",
+        "takes one to know one",
+        "hipocrisia"
+      ],
+      "examples": [
+        {
+          "pt": "O sujo falando do mal lavado.",
+          "en": "Takes one to know one."
+        }
+      ],
+      "tags": [
+        "reaction",
+        "idiom",
+        "speaking"
+      ],
+      "related": [
+        "youre-one-to-talk"
+      ],
+      "englishLevel": "C1"
+    },
+    {
+      "id": "go-ahead-and-get-busy",
+      "intention": "Mãos à obra.",
+      "english": "Go ahead and get busy.",
+      "pattern": "Go ahead and + verb",
+      "description": "Chunk para incentivar alguém a começar uma tarefa ou ação.",
+      "category": "chunk",
+      "searchTerms": [
+        "mãos à obra",
+        "começar",
+        "vai em frente",
+        "get busy"
+      ],
+      "examples": [
+        {
+          "pt": "Mãos à obra.",
+          "en": "Go ahead and get busy."
+        }
+      ],
+      "tags": [
+        "encouragement",
+        "action",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "ill-get-the-hang-of-it",
+      "intention": "Vou pegar o jeito.",
+      "english": "I'll get the hang of it.",
+      "pattern": "get the hang of + object",
+      "description": "Expressão usada para dizer que você vai aprender a fazer algo com prática.",
+      "category": "chunk",
+      "searchTerms": [
+        "vou pegar o jeito",
+        "pegar o jeito",
+        "aprender com prática",
+        "get the hang of it"
+      ],
+      "examples": [
+        {
+          "pt": "Vou pegar o jeito.",
+          "en": "I'll get the hang of it."
+        }
+      ],
+      "tags": [
+        "learning",
+        "idiom",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "what-to-do-then",
+      "intention": "O que fazer então?",
+      "english": "What to do then?",
+      "pattern": "What to do + time/discourse marker?",
+      "description": "Chunk curto para perguntar qual ação tomar em seguida.",
+      "category": "chunk",
+      "searchTerms": [
+        "o que fazer então",
+        "o que resta fazer",
+        "what to do then"
+      ],
+      "examples": [
+        {
+          "pt": "O que fazer então?",
+          "en": "What to do then?"
+        }
+      ],
+      "tags": [
+        "question",
+        "decision",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "lets-catch-up",
+      "intention": "Vamos colocar o papo em dia.",
+      "english": "Let's catch up.",
+      "pattern": "Let's + verb",
+      "description": "Chunk usado para sugerir conversar e trocar novidades depois de algum tempo.",
+      "category": "chunk",
+      "searchTerms": [
+        "colocar o papo em dia",
+        "nos atualizar",
+        "catch up"
+      ],
+      "examples": [
+        {
+          "pt": "Vamos colocar o papo em dia.",
+          "en": "Let's catch up."
+        }
+      ],
+      "tags": [
+        "social",
+        "suggestion",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "ill-check-back-in-with-you-later",
+      "intention": "Eu falo com você mais tarde.",
+      "english": "I'll check back in with you later.",
+      "pattern": "check back in with + person + later",
+      "description": "Chunk para dizer que você retomará o contato com alguém mais tarde.",
+      "category": "chunk",
+      "searchTerms": [
+        "falo com você mais tarde",
+        "retomar contato",
+        "check back in"
+      ],
+      "examples": [
+        {
+          "pt": "Eu falo com você mais tarde.",
+          "en": "I'll check back in with you later."
+        }
+      ],
+      "tags": [
+        "follow-up",
+        "future",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "look-whos-here",
+      "intention": "Olha quem está aqui!",
+      "english": "Look who's here!",
+      "pattern": "Fixed chunk",
+      "description": "Reação usada ao notar ou anunciar a chegada de alguém.",
+      "category": "chunk",
+      "searchTerms": [
+        "olha quem está aqui",
+        "quem chegou",
+        "look who's here"
+      ],
+      "examples": [
+        {
+          "pt": "Olha quem está aqui!",
+          "en": "Look who's here!"
+        }
+      ],
+      "tags": [
+        "reaction",
+        "social",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "im-gonna-take-a-piss",
+      "intention": "Vou fazer xixi.",
+      "english": "I'm gonna take a piss.",
+      "pattern": "I'm gonna + verb",
+      "description": "Expressão muito informal e vulgar para dizer que vai urinar.",
+      "category": "chunk",
+      "searchTerms": [
+        "vou fazer xixi",
+        "urinar",
+        "take a piss"
+      ],
+      "examples": [
+        {
+          "pt": "Vou fazer xixi.",
+          "en": "I'm gonna take a piss."
+        }
+      ],
+      "tags": [
+        "informal",
+        "vulgar",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "im-over-you",
+      "intention": "Eu já te superei.",
+      "english": "I'm over you.",
+      "pattern": "be over + person/situation",
+      "description": "Chunk para dizer que você superou emocionalmente uma pessoa ou situação.",
+      "category": "chunk",
+      "searchTerms": [
+        "já te superei",
+        "superei você",
+        "não me importo mais",
+        "over you"
+      ],
+      "examples": [
+        {
+          "pt": "Eu já te superei.",
+          "en": "I'm over you."
+        }
+      ],
+      "tags": [
+        "relationship",
+        "emotion",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "ill-hold-you-to-that",
+      "intention": "Vou cobrar isso de você.",
+      "english": "I'll hold you to that.",
+      "pattern": "hold + person + to + promise/statement",
+      "description": "Chunk usado quando você pretende cobrar que alguém cumpra o que prometeu ou disse.",
+      "category": "chunk",
+      "searchTerms": [
+        "vou cobrar isso de você",
+        "cobrar promessa",
+        "hold you to that"
+      ],
+      "examples": [
+        {
+          "pt": "Vou cobrar isso de você.",
+          "en": "I'll hold you to that."
+        }
+      ],
+      "tags": [
+        "commitment",
+        "reaction",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "you-left-me-high-and-dry",
+      "intention": "Você me deixou na mão.",
+      "english": "You left me high and dry.",
+      "pattern": "leave + person + high and dry",
+      "description": "Expressão idiomática para dizer que alguém abandonou você numa situação difícil.",
+      "category": "chunk",
+      "searchTerms": [
+        "me deixou na mão",
+        "abandonou",
+        "high and dry"
+      ],
+      "examples": [
+        {
+          "pt": "Você me deixou na mão.",
+          "en": "You left me high and dry."
+        }
+      ],
+      "tags": [
+        "idiom",
+        "complaint",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "C1"
+    },
+    {
+      "id": "are-you-mocking-me",
+      "intention": "Você está zombando de mim?",
+      "english": "Are you mocking me?",
+      "pattern": "Are you + ING + me?",
+      "description": "Pergunta direta para saber se alguém está zombando ou tirando sarro de você.",
+      "category": "chunk",
+      "searchTerms": [
+        "zombando de mim",
+        "tirando sarro",
+        "mocking me"
+      ],
+      "examples": [
+        {
+          "pt": "Cê tá zombando de mim?",
+          "en": "Are you mocking me?"
+        }
+      ],
+      "tags": [
+        "question",
+        "reaction",
+        "speaking"
+      ],
+      "related": [
+        "are-you-pulling-my-leg"
+      ],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "thats-beside-the-point",
+      "intention": "Isso não vem ao caso.",
+      "english": "That's beside the point.",
+      "pattern": "Fixed chunk",
+      "description": "Chunk para indicar que algo é irrelevante para o assunto principal.",
+      "category": "chunk",
+      "searchTerms": [
+        "não vem ao caso",
+        "irrelevante",
+        "fora do assunto",
+        "beside the point"
+      ],
+      "examples": [
+        {
+          "pt": "Isso não vem ao caso.",
+          "en": "That's beside the point."
+        }
+      ],
+      "tags": [
+        "argumentation",
+        "reaction",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "dont-shove-me",
+      "intention": "Não me empurre.",
+      "english": "Don't shove me.",
+      "pattern": "Don't + verb + me",
+      "description": "Comando direto para pedir que alguém não empurre você.",
+      "category": "chunk",
+      "searchTerms": [
+        "não me empurre",
+        "empurrar",
+        "shove me"
+      ],
+      "examples": [
+        {
+          "pt": "Não me empurre.",
+          "en": "Don't shove me."
+        }
+      ],
+      "tags": [
+        "imperative",
+        "boundary",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "no-backsies",
+      "intention": "Não pode voltar atrás.",
+      "english": "No backsies.",
+      "pattern": "Fixed chunk",
+      "description": "Expressão informal e brincalhona indicando que não vale desistir ou voltar atrás.",
+      "category": "chunk",
+      "searchTerms": [
+        "não pode voltar atrás",
+        "sem arrependimento",
+        "no backsies"
+      ],
+      "examples": [
+        {
+          "pt": "Não pode voltar atrás.",
+          "en": "No backsies."
+        }
+      ],
+      "tags": [
+        "informal",
+        "playful",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "C1"
+    },
+    {
+      "id": "i-have-a-few-friends",
+      "intention": "Eu tenho poucos amigos.",
+      "english": "I have a few friends.",
+      "pattern": "I have a few + plural noun",
+      "description": "Estrutura do arquivo para dizer que você tem uma pequena quantidade de algo contável.",
+      "category": "chunk",
+      "searchTerms": [
+        "tenho poucos amigos",
+        "alguns amigos",
+        "a few friends"
+      ],
+      "examples": [
+        {
+          "pt": "Eu tenho poucos amigos.",
+          "en": "I have a few friends."
+        }
+      ],
+      "tags": [
+        "quantity",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "if-you-say-so",
+      "intention": "Se você diz.",
+      "english": "If you say so.",
+      "pattern": "Fixed chunk",
+      "description": "Resposta usada para aceitar o que alguém diz, muitas vezes com certa dúvida ou reserva.",
+      "category": "chunk",
+      "searchTerms": [
+        "se você diz",
+        "se você está dizendo",
+        "if you say so"
+      ],
+      "examples": [
+        {
+          "pt": "Se você diz.",
+          "en": "If you say so."
+        }
+      ],
+      "tags": [
+        "reaction",
+        "skepticism",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "you-had-me-at-hello",
+      "intention": "Você me conquistou no primeiro olá.",
+      "english": "You had me at hello.",
+      "pattern": "You had me at + noun/moment",
+      "description": "Chunk para dizer que alguém conquistou você desde o primeiro momento.",
+      "category": "chunk",
+      "searchTerms": [
+        "me conquistou",
+        "desde o primeiro olá",
+        "had me at hello"
+      ],
+      "examples": [
+        {
+          "pt": "Você me conquistou no primeiro olá.",
+          "en": "You had me at hello."
+        }
+      ],
+      "tags": [
+        "relationship",
+        "idiom",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "C1"
+    },
+    {
+      "id": "cat-got-your-tongue",
+      "intention": "O gato comeu sua língua?",
+      "english": "Cat got your tongue?",
+      "pattern": "Fixed chunk",
+      "description": "Expressão brincalhona usada quando alguém fica calado ou não responde.",
+      "category": "chunk",
+      "searchTerms": [
+        "o gato comeu sua língua",
+        "ficou mudo",
+        "não vai falar",
+        "cat got your tongue"
+      ],
+      "examples": [
+        {
+          "pt": "O gato comeu sua língua?",
+          "en": "Cat got your tongue?"
+        }
+      ],
+      "tags": [
+        "reaction",
+        "idiom",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "C1"
+    },
+    {
+      "id": "i-take-your-point",
+      "intention": "Entendo seu ponto de vista.",
+      "english": "I take your point.",
+      "pattern": "I take your point",
+      "description": "Chunk para reconhecer que você entende ou aceita o ponto apresentado por outra pessoa.",
+      "category": "chunk",
+      "searchTerms": [
+        "entendo seu ponto",
+        "ponto de vista",
+        "take your point"
+      ],
+      "examples": [
+        {
+          "pt": "Entendo seu ponto de vista.",
+          "en": "I take your point."
+        }
+      ],
+      "tags": [
+        "agreement",
+        "argumentation",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "what-does-that-do-for-you",
+      "intention": "O que isso faz ou significa para você?",
+      "english": "What does that do for you?",
+      "pattern": "What does + subject + do for + person?",
+      "description": "Pergunta usada para explorar o efeito, benefício ou significado de algo para alguém.",
+      "category": "chunk",
+      "searchTerms": [
+        "o que isso faz pra você",
+        "o que isso significa pra você",
+        "benefício",
+        "do for you"
+      ],
+      "examples": [
+        {
+          "pt": "O que isso faz / significa pra você?",
+          "en": "What does that do for you?"
+        }
+      ],
+      "tags": [
+        "question",
+        "meaning",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "you-are-way-out-of-line",
+      "intention": "Você está passando dos limites.",
+      "english": "You are way out of line.",
+      "pattern": "be way out of line",
+      "description": "Chunk forte para dizer que o comportamento de alguém ultrapassou limites aceitáveis.",
+      "category": "chunk",
+      "searchTerms": [
+        "passando dos limites",
+        "fora da linha",
+        "out of line"
+      ],
+      "examples": [
+        {
+          "pt": "Você está passando dos limites.",
+          "en": "You are way out of line."
+        }
+      ],
+      "tags": [
+        "boundary",
+        "reaction",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "good-riddance",
+      "intention": "Já vai tarde.",
+      "english": "Good riddance.",
+      "pattern": "Fixed chunk",
+      "description": "Expressão forte usada para demonstrar alívio por alguém ou algo ter ido embora.",
+      "category": "chunk",
+      "searchTerms": [
+        "já vai tarde",
+        "que bom que se foi",
+        "good riddance"
+      ],
+      "examples": [
+        {
+          "pt": "Já vai tarde.",
+          "en": "Good riddance."
+        }
+      ],
+      "tags": [
+        "reaction",
+        "strong-language",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "C1"
+    },
+    {
+      "id": "you-reap-what-you-sow",
+      "intention": "Você colhe o que planta.",
+      "english": "You reap what you sow.",
+      "pattern": "Fixed chunk",
+      "description": "Provérbio para dizer que as consequências correspondem às próprias ações.",
+      "category": "chunk",
+      "searchTerms": [
+        "você colhe o que planta",
+        "consequências",
+        "reap what you sow"
+      ],
+      "examples": [
+        {
+          "pt": "Você colhe o que você planta.",
+          "en": "You reap what you sow."
+        }
+      ],
+      "tags": [
+        "proverb",
+        "consequence",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "C1"
+    },
+    {
+      "id": "i-couldnt-have-said-it-better-myself",
+      "intention": "Eu não poderia ter dito isso melhor.",
+      "english": "I couldn't have said it better myself.",
+      "pattern": "couldn't have + past participle",
+      "description": "Chunk para demonstrar forte concordância com a forma como outra pessoa expressou uma ideia.",
+      "category": "chunk",
+      "searchTerms": [
+        "não poderia ter dito melhor",
+        "concordo plenamente",
+        "couldn't have said it better"
+      ],
+      "examples": [
+        {
+          "pt": "Não poderia ter dito isso melhor.",
+          "en": "I couldn't have said it better myself."
+        }
+      ],
+      "tags": [
+        "agreement",
+        "modal-perfect",
+        "speaking"
+      ],
+      "related": [
+        "you-can-say-that-again"
+      ],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "i-will-not-settle-for-anything-less",
+      "intention": "Não vou me contentar com nada menos.",
+      "english": "I will not settle for anything less.",
+      "pattern": "settle for + noun/pronoun",
+      "description": "Chunk para afirmar que você não aceitará menos do que considera adequado.",
+      "category": "chunk",
+      "searchTerms": [
+        "não vou me contentar",
+        "não vou aceitar menos",
+        "settle for anything less"
+      ],
+      "examples": [
+        {
+          "pt": "Não vou me contentar com nada menos.",
+          "en": "I will not settle for anything less."
+        },
+        {
+          "pt": "Não vou aceitar menos do que eu mereço.",
+          "en": "I will not settle for anything less."
+        }
+      ],
+      "tags": [
+        "determination",
+        "boundary",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "nothing-to-do-with-me",
+      "intention": "Não tem nada a ver comigo.",
+      "english": "Nothing to do with me.",
+      "pattern": "nothing to do with + person/thing",
+      "description": "Chunk para dizer que algo não está relacionado a você ou não é sua responsabilidade.",
+      "category": "chunk",
+      "searchTerms": [
+        "nada a ver comigo",
+        "não é problema meu",
+        "não me diz respeito",
+        "nothing to do with me"
+      ],
+      "examples": [
+        {
+          "pt": "Não tem nada a ver comigo.",
+          "en": "Nothing to do with me."
+        }
+      ],
+      "tags": [
+        "distance",
+        "responsibility",
+        "speaking"
+      ],
+      "related": [
+        "its-not-on-you"
+      ],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "what-else-is-there-to-say",
+      "intention": "O que mais há para dizer?",
+      "english": "What else is there to say?",
+      "pattern": "What else is there to + verb?",
+      "description": "Pergunta retórica ou literal usada quando parece não haver muito mais a acrescentar.",
+      "category": "chunk",
+      "searchTerms": [
+        "o que mais há para dizer",
+        "o que mais dizer",
+        "what else is there to say"
+      ],
+      "examples": [
+        {
+          "pt": "O que há mais para dizer?",
+          "en": "What else is there to say?"
+        }
+      ],
+      "tags": [
+        "question",
+        "conclusion",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "im-kind-of",
+      "intention": "Estou meio...",
+      "english": "I'm kind of...",
+      "pattern": "I'm kind of + adjective/state",
+      "description": "Chunk usado para suavizar ou aproximar uma descrição de estado.",
+      "category": "chunk",
+      "searchTerms": [
+        "estou meio",
+        "mais ou menos",
+        "kind of",
+        "ocupado",
+        "doente"
+      ],
+      "examples": [
+        {
+          "pt": "Estou meio ocupado.",
+          "en": "I'm kind of busy."
+        },
+        {
+          "pt": "Estou meio doente.",
+          "en": "I'm kind of sick."
+        }
+      ],
+      "tags": [
+        "softener",
+        "state",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "you-can-say-that-again",
+      "intention": "Pode crer / concordo plenamente.",
+      "english": "You can say that again.",
+      "pattern": "Fixed chunk",
+      "description": "Expressão idiomática usada para demonstrar forte concordância.",
+      "category": "chunk",
+      "searchTerms": [
+        "pode crer",
+        "concordo plenamente",
+        "pode apostar",
+        "say that again"
+      ],
+      "examples": [
+        {
+          "pt": "Concordo plenamente.",
+          "en": "You can say that again."
+        }
+      ],
+      "tags": [
+        "agreement",
+        "idiom",
+        "speaking"
+      ],
+      "related": [
+        "i-couldnt-have-said-it-better-myself"
+      ],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "its-not-on-you",
+      "intention": "Não é culpa sua / não é sua responsabilidade.",
+      "english": "It's not on you.",
+      "pattern": "be on + person",
+      "description": "Chunk para dizer que uma culpa, responsabilidade ou obrigação não recai sobre alguém.",
+      "category": "chunk",
+      "searchTerms": [
+        "não é culpa sua",
+        "não é sua responsabilidade",
+        "not on you"
+      ],
+      "examples": [
+        {
+          "pt": "Não é culpa sua.",
+          "en": "It's not on you."
+        }
+      ],
+      "tags": [
+        "responsibility",
+        "reassurance",
+        "speaking"
+      ],
+      "related": [
+        "nothing-to-do-with-me"
+      ],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "we-got-bigger-fish-to-fry",
+      "intention": "Temos problemas mais importantes para resolver.",
+      "english": "We got bigger fish to fry.",
+      "pattern": "have/get bigger fish to fry",
+      "description": "Expressão idiomática para dizer que existem assuntos mais importantes que exigem atenção.",
+      "category": "chunk",
+      "searchTerms": [
+        "problemas mais importantes",
+        "coisas mais importantes",
+        "bigger fish to fry"
+      ],
+      "examples": [
+        {
+          "pt": "Temos problemas mais importantes para resolver.",
+          "en": "We got bigger fish to fry."
+        }
+      ],
+      "tags": [
+        "priority",
+        "idiom",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "C1"
+    },
+    {
+      "id": "hang-on",
+      "intention": "Espere um pouco / aguente firme.",
+      "english": "Hang on.",
+      "pattern": "Fixed chunk",
+      "description": "Chunk com sentidos dependentes do contexto: esperar um momento ou aguentar firme.",
+      "category": "chunk",
+      "searchTerms": [
+        "espere um pouco",
+        "aguente firme",
+        "resista",
+        "hang on"
+      ],
+      "examples": [
+        {
+          "pt": "Espere um pouco.",
+          "en": "Hang on."
+        },
+        {
+          "pt": "Aguente firme.",
+          "en": "Hang on."
+        }
+      ],
+      "tags": [
+        "conversation-management",
+        "encouragement",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "what-can-i-get-you",
+      "intention": "O que posso te oferecer?",
+      "english": "What can I get you?",
+      "pattern": "What can I get + person?",
+      "description": "Pergunta comum ao oferecer comida, bebida ou algo a alguém.",
+      "category": "chunk",
+      "searchTerms": [
+        "o que posso te oferecer",
+        "o que deseja",
+        "o que posso trazer",
+        "what can I get you"
+      ],
+      "examples": [
+        {
+          "pt": "O que posso te oferecer?",
+          "en": "What can I get you?"
+        }
+      ],
+      "tags": [
+        "question",
+        "service",
+        "speaking"
+      ],
+      "related": [
+        "what-can-i-get-to-drink"
+      ],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "what-can-i-get-to-drink",
+      "intention": "O que posso oferecer para beber?",
+      "english": "What can I get to drink?",
+      "pattern": "What can I get + to drink?",
+      "description": "Pergunta do arquivo relacionada a oferecer ou escolher uma bebida.",
+      "category": "chunk",
+      "searchTerms": [
+        "o que posso oferecer para beber",
+        "bebida",
+        "get to drink"
+      ],
+      "examples": [
+        {
+          "pt": "O que posso te oferecer para beber?",
+          "en": "What can I get to drink?"
+        }
+      ],
+      "tags": [
+        "question",
+        "drink",
+        "speaking"
+      ],
+      "related": [
+        "what-can-i-get-you"
+      ],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "let-bygones-be-bygones",
+      "intention": "Deixa o passado pra trás.",
+      "english": "Let bygones be bygones.",
+      "pattern": "Fixed chunk",
+      "description": "Expressão usada para sugerir que conflitos ou acontecimentos passados sejam deixados no passado.",
+      "category": "chunk",
+      "searchTerms": [
+        "deixa o passado pra trás",
+        "esquecer o passado",
+        "bygones be bygones"
+      ],
+      "examples": [
+        {
+          "pt": "Deixa o passado pra trás.",
+          "en": "Let bygones be bygones."
+        }
+      ],
+      "tags": [
+        "reconciliation",
+        "idiom",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "C1"
+    },
+    {
+      "id": "what-have-you-got-to-lose",
+      "intention": "O que você tem a perder?",
+      "english": "What have you got to lose?",
+      "pattern": "What have you got to + verb?",
+      "description": "Pergunta usada para encorajar alguém a tentar algo quando o risco parece pequeno.",
+      "category": "chunk",
+      "searchTerms": [
+        "o que você tem a perder",
+        "tentar",
+        "what have you got to lose"
+      ],
+      "examples": [
+        {
+          "pt": "O que você tem a perder?",
+          "en": "What have you got to lose?"
+        }
+      ],
+      "tags": [
+        "question",
+        "encouragement",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "woe-is-me",
+      "intention": "Ai de mim.",
+      "english": "Woe is me!",
+      "pattern": "Fixed chunk",
+      "description": "Expressão dramática ou irônica de sofrimento, autopiedade ou lamento.",
+      "category": "chunk",
+      "searchTerms": [
+        "ai de mim",
+        "lamento",
+        "woe is me"
+      ],
+      "examples": [
+        {
+          "pt": "Ai de mim.",
+          "en": "Woe is me!"
+        }
+      ],
+      "tags": [
+        "reaction",
+        "dramatic",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "C2"
+    },
+    {
+      "id": "im-sick-of-it",
+      "intention": "Já chega / já deu.",
+      "english": "I'm sick of it!",
+      "pattern": "be sick of + noun/pronoun/ING",
+      "description": "Chunk forte para expressar irritação ou cansaço com algo repetitivo ou desagradável.",
+      "category": "chunk",
+      "searchTerms": [
+        "já chega",
+        "já deu",
+        "estou cansado disso",
+        "sick of it"
+      ],
+      "examples": [
+        {
+          "pt": "Já chega!",
+          "en": "I'm sick of it!"
+        }
+      ],
+      "tags": [
+        "frustration",
+        "emotion",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "by-any-chance",
+      "intention": "Por acaso...",
+      "english": "by any chance",
+      "pattern": "question + by any chance?",
+      "description": "Chunk usado para suavizar uma pergunta e transmitir a ideia de 'por acaso'.",
+      "category": "chunk",
+      "searchTerms": [
+        "por acaso",
+        "by any chance",
+        "suavizar pergunta"
+      ],
+      "examples": [
+        {
+          "pt": "Você viu meu telefone por acaso?",
+          "en": "Have you seen my cell phone by any chance?"
+        }
+      ],
+      "tags": [
+        "question",
+        "softener",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "how-about",
+      "intention": "Que tal...?",
+      "english": "How about...?",
+      "pattern": "How about + noun/ING?",
+      "description": "Estrutura usada para fazer uma sugestão ou propor uma alternativa.",
+      "category": "chunk",
+      "searchTerms": [
+        "que tal",
+        "sugestão",
+        "how about"
+      ],
+      "examples": [
+        {
+          "pt": "Que tal...?",
+          "en": "How about...?"
+        }
+      ],
+      "tags": [
+        "suggestion",
+        "question",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "i-cant-wait",
+      "intention": "Não vejo a hora...",
+      "english": "I can't wait...",
+      "pattern": "I can't wait + to + verb / for + noun",
+      "description": "Chunk usado para demonstrar grande expectativa ou entusiasmo por algo futuro.",
+      "category": "chunk",
+      "searchTerms": [
+        "não vejo a hora",
+        "mal posso esperar",
+        "can't wait"
+      ],
+      "examples": [
+        {
+          "pt": "Não vejo a hora...",
+          "en": "I can't wait..."
+        }
+      ],
+      "tags": [
+        "anticipation",
+        "emotion",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "i-was-up-all-night",
+      "intention": "Passei a noite toda acordado.",
+      "english": "I was up all night.",
+      "pattern": "be up all night",
+      "description": "Chunk para dizer que você ficou acordado durante toda a noite.",
+      "category": "chunk",
+      "searchTerms": [
+        "passei a noite toda acordado",
+        "acordado a noite toda",
+        "up all night"
+      ],
+      "examples": [
+        {
+          "pt": "Passei a noite toda acordado.",
+          "en": "I was up all night."
+        }
+      ],
+      "tags": [
+        "time",
+        "state",
+        "speaking"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    }
   ]
 }
