@@ -21,6 +21,7 @@ function App() {
   const [mentalSearch, setMentalSearch] = useState("");
   const [englishSearch, setEnglishSearch] = useState("");
   const [categorySearch, setCategorySearch] = useState("");
+  const [englishLevelSearch, setEnglishLevelSearch] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selected, setSelected] = useState<MentalIntention | null>(null);
   const [trainingMode, setTrainingMode] = useState<TrainingMode>(null);
@@ -81,9 +82,17 @@ function App() {
       mentalSearch,
       englishSearch,
       categorySearch,
-      selectedTags
+      selectedTags,
+      englishLevelSearch
     );
-  }, [data, mentalSearch, englishSearch, categorySearch, selectedTags]);
+  }, [
+    data,
+    mentalSearch,
+    englishSearch,
+    categorySearch,
+    selectedTags,
+    englishLevelSearch
+  ]);
 
   async function retry() {
     setRetrying(true);
@@ -108,6 +117,7 @@ function App() {
     setMentalSearch("");
     setEnglishSearch("");
     setCategorySearch("");
+    setEnglishLevelSearch("");
     setSelectedTags([]);
   }
 
@@ -179,11 +189,13 @@ function App() {
               mentalSearch={mentalSearch}
               englishSearch={englishSearch}
               categorySearch={categorySearch}
+              englishLevelSearch={englishLevelSearch}
               availableTags={availableTags}
               selectedTags={selectedTags}
               onMentalSearchChange={setMentalSearch}
               onEnglishSearchChange={setEnglishSearch}
               onCategorySearchChange={setCategorySearch}
+              onEnglishLevelSearchChange={setEnglishLevelSearch}
               onTagsChange={setSelectedTags}
               onClear={clearFilters}
             />

@@ -2,11 +2,13 @@ interface SearchPanelProps {
   mentalSearch: string;
   englishSearch: string;
   categorySearch: string;
+  englishLevelSearch: string;
   availableTags: string[];
   selectedTags: string[];
   onMentalSearchChange: (value: string) => void;
   onEnglishSearchChange: (value: string) => void;
   onCategorySearchChange: (value: string) => void;
+  onEnglishLevelSearchChange: (value: string) => void;
   onTagsChange: (tags: string[]) => void;
   onClear: () => void;
 }
@@ -15,11 +17,13 @@ export function SearchPanel({
   mentalSearch,
   englishSearch,
   categorySearch,
+  englishLevelSearch,
   availableTags,
   selectedTags,
   onMentalSearchChange,
   onEnglishSearchChange,
   onCategorySearchChange,
+  onEnglishLevelSearchChange,
   onTagsChange,
   onClear
 }: SearchPanelProps) {
@@ -27,6 +31,7 @@ export function SearchPanel({
     mentalSearch ||
     englishSearch ||
     categorySearch ||
+    englishLevelSearch ||
     selectedTags.length > 0
   );
 
@@ -82,6 +87,25 @@ export function SearchPanel({
           onChange={(event) => onCategorySearchChange(event.target.value)}
           autoComplete="off"
         />
+      </div>
+
+      <div className="field">
+        <label htmlFor="english-level-search">Nível</label>
+        <select
+          id="english-level-search"
+          value={englishLevelSearch}
+          onChange={(event) =>
+            onEnglishLevelSearchChange(event.target.value)
+          }
+        >
+          <option value="">Todos</option>
+          <option value="A1">A1</option>
+          <option value="A2">A2</option>
+          <option value="B1">B1</option>
+          <option value="B2">B2</option>
+          <option value="C1">C1</option>
+          <option value="C2">C2</option>
+        </select>
       </div>
 
       <div className="field tag-filter-field">

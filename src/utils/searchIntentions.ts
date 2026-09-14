@@ -9,6 +9,7 @@ function matchesAnySearchableField(item: MentalIntention, query: string): boolea
     item.english,
     item.pattern ?? "",
     item.category ?? "",
+    item.englishLevel ?? "",
     ...(item.searchTerms ?? []),
     ...(item.tags ?? [])
   ];
@@ -23,11 +24,13 @@ export function searchIntentions(
   mentalSearch: string,
   englishSearch: string,
   categorySearch: string,
-  selectedTags: string[]
+  selectedTags: string[],
+  englishLevelSearch: string
 ): MentalIntention[] {
   const normalizedMental = normalizeText(mentalSearch);
   const normalizedEnglish = normalizeText(englishSearch);
   const normalizedCategory = normalizeText(categorySearch);
+  const normalizedEnglishLevel = normalizeText(englishLevelSearch);
 
   return intentions
     .filter((item) => {
@@ -58,7 +61,17 @@ export function searchIntentions(
           )
         );
 
-      return mentalMatches && englishMatches && categoryMatches && tagsMatch;
+      const englishLevelMatches =
+        !normalizedEnglishLevel ||
+        normalizeText(item.englishLevel ?? "") === normalizedEnglishLevel;
+
+      return (
+        mentalMatches &&
+        englishMatches &&
+        categoryMatches &&
+        tagsMatch &&
+        englishLevelMatches
+      );
     })
     .sort((a, b) =>
       normalizeText(a.intention).localeCompare(normalizeText(b.intention))
