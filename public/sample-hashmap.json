@@ -7369,6 +7369,1295 @@
       ],
       "related": [],
       "englishLevel": "A2"
-    }
+    },
+    {
+      "id": "over-a-few-days",
+      "intention": "Ao longo de alguns dias",
+      "english": "over a few days",
+      "pattern": "over + a few days",
+      "description": "Usado para falar de algo que acontece, muda ou se desenvolve durante uma janela curta e contínua de alguns dias.",
+      "category": "time-duration",
+      "searchTerms": [
+        "ao longo de alguns dias",
+        "durante alguns dias",
+        "over a few days"
+      ],
+      "examples": [
+        {
+          "pt": "Os sintomas melhoraram ao longo de alguns dias.",
+          "en": "The symptoms improved over a few days."
+        },
+        {
+          "pt": "Eu revisei o código ao longo de alguns dias.",
+          "en": "I reviewed the code over a few days."
+        }
+      ],
+      "tags": [
+        "time",
+        "duration",
+        "short-period"
+      ],
+      "related": [
+        "over-time",
+        "over-a-long-period"
+      ],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "over-the-next-few-days",
+      "intention": "Ao longo dos próximos dias",
+      "english": "over the next few days",
+      "pattern": "over the next + period",
+      "description": "Usado para projetar acontecimentos, mudanças ou ações distribuídas pelos próximos dias.",
+      "category": "time-future",
+      "searchTerms": [
+        "nos próximos dias",
+        "ao longo dos próximos dias",
+        "over the next few days"
+      ],
+      "examples": [
+        {
+          "pt": "A entrega deve acontecer ao longo dos próximos dias.",
+          "en": "The delivery should happen over the next few days."
+        },
+        {
+          "pt": "Vou testar essa funcionalidade nos próximos dias.",
+          "en": "I'll test this feature over the next few days."
+        }
+      ],
+      "tags": [
+        "time",
+        "future",
+        "duration"
+      ],
+      "related": [
+        "within-a-period",
+        "from-now-on"
+      ],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "over-time",
+      "intention": "Com o tempo / ao longo do tempo",
+      "english": "over time",
+      "pattern": "over time",
+      "description": "Usado para indicar mudança, adaptação ou evolução gradual ao longo do tempo.",
+      "category": "time-duration",
+      "searchTerms": [
+        "com o tempo",
+        "ao longo do tempo",
+        "gradualmente",
+        "over time"
+      ],
+      "examples": [
+        {
+          "pt": "Você vai melhorar com o tempo.",
+          "en": "You'll get better over time."
+        },
+        {
+          "pt": "Com o tempo, falar inglês ficou mais natural para mim.",
+          "en": "Over time, speaking English became more natural to me."
+        }
+      ],
+      "tags": [
+        "time",
+        "gradual-change",
+        "duration"
+      ],
+      "related": [
+        "little-by-little",
+        "over-the-years",
+        "in-the-long-run"
+      ],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "over-the-years",
+      "intention": "Ao longo dos anos",
+      "english": "over the years",
+      "pattern": "over the years",
+      "description": "Usado para descrever evolução ou mudança observada durante um período longo de anos.",
+      "category": "time-duration",
+      "searchTerms": [
+        "ao longo dos anos",
+        "com o passar dos anos",
+        "over the years"
+      ],
+      "examples": [
+        {
+          "pt": "A empresa cresceu muito ao longo dos anos.",
+          "en": "The company grew a lot over the years."
+        },
+        {
+          "pt": "Meu inglês melhorou muito ao longo dos anos.",
+          "en": "My English has improved a lot over the years."
+        }
+      ],
+      "tags": [
+        "time",
+        "years",
+        "long-term",
+        "change"
+      ],
+      "related": [
+        "over-time",
+        "over-a-long-period"
+      ],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "over-the-weekend",
+      "intention": "Durante o fim de semana",
+      "english": "over the weekend",
+      "pattern": "over the weekend",
+      "description": "Usado para falar de algo que aconteceu ou será feito durante o período fechado do fim de semana.",
+      "category": "time-period",
+      "searchTerms": [
+        "durante o fim de semana",
+        "no fim de semana",
+        "over the weekend"
+      ],
+      "examples": [
+        {
+          "pt": "Nós discutimos isso durante o fim de semana.",
+          "en": "We discussed it over the weekend."
+        },
+        {
+          "pt": "Vou revisar o projeto durante o fim de semana.",
+          "en": "I'll review the project over the weekend."
+        }
+      ],
+      "tags": [
+        "time",
+        "weekend",
+        "period"
+      ],
+      "related": [
+        "during-a-period"
+      ],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "over-the-past-few-months",
+      "intention": "Ao longo dos últimos meses",
+      "english": "over the past few months",
+      "pattern": "over the past + period",
+      "description": "Usado para descrever uma tendência ou processo recente que se estendeu pelos últimos meses.",
+      "category": "time-recent",
+      "searchTerms": [
+        "nos últimos meses",
+        "ao longo dos últimos meses",
+        "over the past few months"
+      ],
+      "examples": [
+        {
+          "pt": "As vendas aumentaram ao longo dos últimos meses.",
+          "en": "Sales increased over the past few months."
+        },
+        {
+          "pt": "Tenho praticado mais conversação nos últimos meses.",
+          "en": "I've been practicing speaking more over the past few months."
+        }
+      ],
+      "tags": [
+        "time",
+        "recent",
+        "months",
+        "duration"
+      ],
+      "related": [
+        "lately",
+        "recently"
+      ],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "over-a-long-period",
+      "intention": "Durante um longo período",
+      "english": "over a long period",
+      "pattern": "over a long period",
+      "description": "Usado para falar de processos, mudanças ou construção gradual durante uma duração extensa.",
+      "category": "time-duration",
+      "searchTerms": [
+        "durante um longo período",
+        "por um longo período",
+        "over a long period"
+      ],
+      "examples": [
+        {
+          "pt": "A confiança é construída durante um longo período.",
+          "en": "Trust is built over a long period."
+        },
+        {
+          "pt": "A fluência se desenvolve durante um longo período de prática consistente.",
+          "en": "Fluency develops over a long period of consistent practice."
+        }
+      ],
+      "tags": [
+        "time",
+        "long-term",
+        "duration"
+      ],
+      "related": [
+        "over-time",
+        "over-the-years",
+        "in-the-long-run"
+      ],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "over-the-course-of",
+      "intention": "No decorrer de...",
+      "english": "over the course of",
+      "pattern": "over the course of + period",
+      "description": "Estrutura mais formal usada para falar de mudanças ou acontecimentos distribuídos ao longo de um período.",
+      "category": "time-duration",
+      "searchTerms": [
+        "no decorrer de",
+        "ao longo de",
+        "durante",
+        "over the course of"
+      ],
+      "examples": [
+        {
+          "pt": "No decorrer do ano, os custos aumentaram.",
+          "en": "Over the course of the year, costs went up."
+        },
+        {
+          "pt": "No decorrer de seis meses, meu inglês melhorou bastante.",
+          "en": "Over the course of six months, my English improved significantly."
+        }
+      ],
+      "tags": [
+        "time",
+        "formal",
+        "duration"
+      ],
+      "related": [
+        "throughout-a-period",
+        "over-a-long-period"
+      ],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "over-time-discourse",
+      "intention": "Com o tempo... (conector discursivo)",
+      "english": "over time, + clause",
+      "pattern": "over time, + clause",
+      "description": "Usado no início da frase para introduzir uma conclusão ou resultado que se tornou verdadeiro gradualmente.",
+      "category": "time-discourse",
+      "searchTerms": [
+        "com o tempo",
+        "ao longo do tempo",
+        "over time"
+      ],
+      "examples": [
+        {
+          "pt": "Com o tempo, essa estratégia se mostrou eficaz.",
+          "en": "Over time, this strategy proved effective."
+        },
+        {
+          "pt": "Com o tempo, comecei a pensar diretamente em inglês.",
+          "en": "Over time, I started thinking directly in English."
+        }
+      ],
+      "tags": [
+        "time",
+        "discourse",
+        "gradual-change"
+      ],
+      "related": [
+        "over-time",
+        "little-by-little"
+      ],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "little-by-little",
+      "intention": "Pouco a pouco / aos poucos",
+      "english": "little by little",
+      "pattern": "little by little",
+      "description": "Usado para indicar progresso ou mudança gradual em pequenas etapas.",
+      "category": "time-progression",
+      "searchTerms": [
+        "pouco a pouco",
+        "aos poucos",
+        "gradualmente",
+        "little by little"
+      ],
+      "examples": [
+        {
+          "pt": "No começo eu evitava falar em público, mas aos poucos fiquei mais confiante.",
+          "en": "At first I avoided speaking in public, but little by little I became more confident."
+        },
+        {
+          "pt": "Aos poucos, comecei a entender melhor os nativos.",
+          "en": "Little by little, I started understanding native speakers better."
+        }
+      ],
+      "tags": [
+        "time",
+        "progress",
+        "gradual-change"
+      ],
+      "related": [
+        "over-time",
+        "eventually"
+      ],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "until-the-last-minute",
+      "intention": "Até a última hora",
+      "english": "until the last minute",
+      "pattern": "until the last minute",
+      "description": "Usado quando algo é adiado, mantido ou deixado para o limite final de tempo.",
+      "category": "time-deadline",
+      "searchTerms": [
+        "até a última hora",
+        "pra última hora",
+        "último minuto",
+        "until the last minute"
+      ],
+      "examples": [
+        {
+          "pt": "Eu consegui fazer as reservas do hotel, mas deixei os passeios para a última hora.",
+          "en": "I managed the hotel reservations, but I ended up leaving the tours until the last minute."
+        },
+        {
+          "pt": "Não deixe essa tarefa para a última hora.",
+          "en": "Don't leave this task until the last minute."
+        }
+      ],
+      "tags": [
+        "time",
+        "deadline",
+        "delay"
+      ],
+      "related": [
+        "by-the-time",
+        "until-then"
+      ],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "each-one-at-a-time",
+      "intention": "Um de cada vez",
+      "english": "each one at a time",
+      "pattern": "each one at a time",
+      "description": "Usado para indicar que pessoas ou coisas devem ser tratadas individualmente, em sequência.",
+      "category": "time-sequence",
+      "searchTerms": [
+        "um de cada vez",
+        "cada um por vez",
+        "one at a time",
+        "each one at a time"
+      ],
+      "examples": [
+        {
+          "pt": "Por favor, venham receber o certificado, um de cada vez.",
+          "en": "Please step forward to receive your certificate, each one at a time."
+        },
+        {
+          "pt": "Vamos resolver os problemas um de cada vez.",
+          "en": "Let's solve the problems one at a time."
+        }
+      ],
+      "tags": [
+        "time",
+        "sequence",
+        "order"
+      ],
+      "related": [
+        "one-at-a-time"
+      ],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "one-at-a-time",
+      "intention": "Um de cada vez",
+      "english": "one at a time",
+      "pattern": "one at a time",
+      "description": "Forma mais comum e natural para indicar que algo deve ser feito individualmente, em sequência.",
+      "category": "time-sequence",
+      "searchTerms": [
+        "um de cada vez",
+        "um por vez",
+        "one at a time"
+      ],
+      "examples": [
+        {
+          "pt": "Faça uma coisa de cada vez.",
+          "en": "Do one thing at a time."
+        },
+        {
+          "pt": "Vamos analisar uma intenção de cada vez.",
+          "en": "Let's analyze one intention at a time."
+        }
+      ],
+      "tags": [
+        "time",
+        "sequence",
+        "conversation"
+      ],
+      "related": [
+        "each-one-at-a-time"
+      ],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "once-in-a-while",
+      "intention": "De vez em quando",
+      "english": "once in a while",
+      "pattern": "once in a while",
+      "description": "Usado para indicar que algo acontece ocasionalmente, mas não com frequência.",
+      "category": "time-frequency",
+      "searchTerms": [
+        "de vez em quando",
+        "ocasionalmente",
+        "once in a while"
+      ],
+      "examples": [
+        {
+          "pt": "De vez em quando, é bom sair da rotina e fazer uma longa caminhada.",
+          "en": "Once in a while, it's good to step away from your routine and just take a long walk."
+        },
+        {
+          "pt": "De vez em quando eu assisto a filmes sem legenda.",
+          "en": "Once in a while, I watch movies without subtitles."
+        }
+      ],
+      "tags": [
+        "time",
+        "frequency",
+        "occasional"
+      ],
+      "related": [
+        "from-time-to-time",
+        "every-now-and-then"
+      ],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "for-a-while",
+      "intention": "Por um tempo / durante algum tempo",
+      "english": "for a while",
+      "pattern": "for a while",
+      "description": "Usado para indicar uma duração indefinida, geralmente curta ou moderada.",
+      "category": "time-duration",
+      "searchTerms": [
+        "por um tempo",
+        "durante algum tempo",
+        "for a while"
+      ],
+      "examples": [
+        {
+          "pt": "Eu fiquei lá por um tempo.",
+          "en": "I stayed there for a while."
+        },
+        {
+          "pt": "Vamos praticar isso por um tempo.",
+          "en": "Let's practice this for a while."
+        }
+      ],
+      "tags": [
+        "time",
+        "duration",
+        "conversation"
+      ],
+      "related": [
+        "for-the-time-being",
+        "over-a-few-days"
+      ],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "for-the-time-being",
+      "intention": "Por enquanto",
+      "english": "for the time being",
+      "pattern": "for the time being",
+      "description": "Usado para indicar uma situação temporária que deve permanecer assim até que algo mude.",
+      "category": "time-temporary",
+      "searchTerms": [
+        "por enquanto",
+        "temporariamente",
+        "for the time being"
+      ],
+      "examples": [
+        {
+          "pt": "Por enquanto, vamos continuar usando essa solução.",
+          "en": "For the time being, we'll keep using this solution."
+        },
+        {
+          "pt": "Vou trabalhar de casa por enquanto.",
+          "en": "I'll work from home for the time being."
+        }
+      ],
+      "tags": [
+        "time",
+        "temporary",
+        "duration"
+      ],
+      "related": [
+        "for-a-while",
+        "until-then"
+      ],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "from-now-on",
+      "intention": "De agora em diante",
+      "english": "from now on",
+      "pattern": "from now on, + clause",
+      "description": "Usado para marcar uma mudança que começa agora e deve continuar no futuro.",
+      "category": "time-future",
+      "searchTerms": [
+        "de agora em diante",
+        "a partir de agora",
+        "from now on"
+      ],
+      "examples": [
+        {
+          "pt": "De agora em diante, vou praticar inglês todos os dias.",
+          "en": "From now on, I'll practice English every day."
+        },
+        {
+          "pt": "A partir de agora, vamos registrar todas as mudanças.",
+          "en": "From now on, we'll record every change."
+        }
+      ],
+      "tags": [
+        "time",
+        "future",
+        "change"
+      ],
+      "related": [
+        "over-the-next-few-days"
+      ],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "in-the-meantime",
+      "intention": "Enquanto isso / nesse meio-tempo",
+      "english": "in the meantime",
+      "pattern": "in the meantime, + clause",
+      "description": "Usado para falar do que acontece durante o intervalo entre dois eventos.",
+      "category": "time-sequence",
+      "searchTerms": [
+        "enquanto isso",
+        "nesse meio-tempo",
+        "in the meantime"
+      ],
+      "examples": [
+        {
+          "pt": "O build está rodando. Enquanto isso, vou revisar os logs.",
+          "en": "The build is running. In the meantime, I'll review the logs."
+        },
+        {
+          "pt": "Ela vai chegar às oito. Enquanto isso, podemos tomar um café.",
+          "en": "She'll arrive at eight. In the meantime, we can have some coffee."
+        }
+      ],
+      "tags": [
+        "time",
+        "sequence",
+        "interval"
+      ],
+      "related": [
+        "at-the-same-time",
+        "until-then"
+      ],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "at-the-same-time",
+      "intention": "Ao mesmo tempo",
+      "english": "at the same time",
+      "pattern": "at the same time",
+      "description": "Usado para indicar simultaneidade entre ações, situações ou ideias.",
+      "category": "time-simultaneous",
+      "searchTerms": [
+        "ao mesmo tempo",
+        "simultaneamente",
+        "at the same time"
+      ],
+      "examples": [
+        {
+          "pt": "Não consigo falar e escrever ao mesmo tempo.",
+          "en": "I can't speak and write at the same time."
+        },
+        {
+          "pt": "O sistema processa vários arquivos ao mesmo tempo.",
+          "en": "The system processes several files at the same time."
+        }
+      ],
+      "tags": [
+        "time",
+        "simultaneous"
+      ],
+      "related": [
+        "while-clause",
+        "in-the-meantime"
+      ],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "from-time-to-time",
+      "intention": "De tempos em tempos",
+      "english": "from time to time",
+      "pattern": "from time to time",
+      "description": "Usado para indicar que algo acontece ocasionalmente em intervalos irregulares.",
+      "category": "time-frequency",
+      "searchTerms": [
+        "de tempos em tempos",
+        "de vez em quando",
+        "from time to time"
+      ],
+      "examples": [
+        {
+          "pt": "De tempos em tempos eu reviso minhas anotações.",
+          "en": "From time to time, I review my notes."
+        },
+        {
+          "pt": "É bom mudar a rotina de tempos em tempos.",
+          "en": "It's good to change your routine from time to time."
+        }
+      ],
+      "tags": [
+        "time",
+        "frequency",
+        "occasional"
+      ],
+      "related": [
+        "once-in-a-while",
+        "every-now-and-then"
+      ],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "every-now-and-then",
+      "intention": "De vez em quando / volta e meia",
+      "english": "every now and then",
+      "pattern": "every now and then",
+      "description": "Expressão conversacional para algo que acontece ocasionalmente.",
+      "category": "time-frequency",
+      "searchTerms": [
+        "de vez em quando",
+        "volta e meia",
+        "every now and then"
+      ],
+      "examples": [
+        {
+          "pt": "De vez em quando eu erro palavras simples.",
+          "en": "Every now and then, I make mistakes with simple words."
+        },
+        {
+          "pt": "Volta e meia eu volto a estudar uma estrutura antiga.",
+          "en": "Every now and then, I go back to an old structure."
+        }
+      ],
+      "tags": [
+        "time",
+        "frequency",
+        "conversation"
+      ],
+      "related": [
+        "once-in-a-while",
+        "from-time-to-time"
+      ],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "sooner-or-later",
+      "intention": "Mais cedo ou mais tarde",
+      "english": "sooner or later",
+      "pattern": "sooner or later, + clause",
+      "description": "Usado para indicar que algo provavelmente acontecerá em algum momento, mesmo sem saber quando.",
+      "category": "time-future",
+      "searchTerms": [
+        "mais cedo ou mais tarde",
+        "uma hora ou outra",
+        "sooner or later"
+      ],
+      "examples": [
+        {
+          "pt": "Mais cedo ou mais tarde, você vai precisar falar sem traduzir.",
+          "en": "Sooner or later, you'll need to speak without translating."
+        },
+        {
+          "pt": "Esse problema vai aparecer mais cedo ou mais tarde.",
+          "en": "This problem will show up sooner or later."
+        }
+      ],
+      "tags": [
+        "time",
+        "future",
+        "eventuality"
+      ],
+      "related": [
+        "eventually",
+        "at-some-point"
+      ],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "eventually",
+      "intention": "Por fim / finalmente / depois de algum tempo",
+      "english": "eventually",
+      "pattern": "eventually + clause",
+      "description": "Usado para indicar que algo aconteceu depois de um processo, demora ou sequência de eventos.",
+      "category": "time-outcome",
+      "searchTerms": [
+        "por fim",
+        "finalmente",
+        "depois de algum tempo",
+        "eventually"
+      ],
+      "examples": [
+        {
+          "pt": "Depois de muita prática, finalmente comecei a falar com mais confiança.",
+          "en": "After a lot of practice, I eventually started speaking more confidently."
+        },
+        {
+          "pt": "Nós tentamos várias abordagens e, por fim, encontramos a solução.",
+          "en": "We tried several approaches and eventually found the solution."
+        }
+      ],
+      "tags": [
+        "time",
+        "outcome",
+        "sequence"
+      ],
+      "related": [
+        "sooner-or-later",
+        "little-by-little"
+      ],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "at-first",
+      "intention": "No começo / a princípio",
+      "english": "at first",
+      "pattern": "at first, + clause",
+      "description": "Usado para contrastar uma situação inicial com algo que mudou depois.",
+      "category": "time-sequence",
+      "searchTerms": [
+        "no começo",
+        "a princípio",
+        "at first"
+      ],
+      "examples": [
+        {
+          "pt": "No começo, eu achava difícil entender nativos.",
+          "en": "At first, I found it difficult to understand native speakers."
+        },
+        {
+          "pt": "A princípio, eu não gostei da ferramenta, mas depois mudei de ideia.",
+          "en": "At first, I didn't like the tool, but later I changed my mind."
+        }
+      ],
+      "tags": [
+        "time",
+        "sequence",
+        "contrast"
+      ],
+      "related": [
+        "eventually",
+        "later-on"
+      ],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "later-on",
+      "intention": "Mais tarde / posteriormente",
+      "english": "later on",
+      "pattern": "later on, + clause",
+      "description": "Usado de forma conversacional para indicar que algo acontece em um momento posterior.",
+      "category": "time-sequence",
+      "searchTerms": [
+        "mais tarde",
+        "posteriormente",
+        "later on"
+      ],
+      "examples": [
+        {
+          "pt": "Podemos falar sobre isso mais tarde.",
+          "en": "We can talk about it later on."
+        },
+        {
+          "pt": "Mais tarde, percebi que ele estava certo.",
+          "en": "Later on, I realized he was right."
+        }
+      ],
+      "tags": [
+        "time",
+        "sequence",
+        "conversation"
+      ],
+      "related": [
+        "at-first",
+        "eventually"
+      ],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "by-the-time",
+      "intention": "Quando... / até o momento em que...",
+      "english": "by the time",
+      "pattern": "by the time + clause, main clause",
+      "description": "Usado para estabelecer um limite temporal e relacionar duas ações, normalmente mostrando que uma já ocorreu ou ocorrerá antes da outra.",
+      "category": "time-connectors",
+      "searchTerms": [
+        "quando",
+        "até o momento em que",
+        "até quando",
+        "by the time"
+      ],
+      "examples": [
+        {
+          "pt": "Quando cheguei, a reunião já tinha começado.",
+          "en": "By the time I arrived, the meeting had already started."
+        },
+        {
+          "pt": "Quando você terminar, eu já terei enviado o relatório.",
+          "en": "By the time you finish, I'll have sent the report."
+        }
+      ],
+      "tags": [
+        "time",
+        "connector",
+        "sequence"
+      ],
+      "related": [
+        "until-then",
+        "by-then"
+      ],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "by-then",
+      "intention": "Até lá / até aquele momento",
+      "english": "by then",
+      "pattern": "by then",
+      "description": "Usado para indicar que algo terá acontecido antes ou até um momento previamente mencionado.",
+      "category": "time-deadline",
+      "searchTerms": [
+        "até lá",
+        "até aquele momento",
+        "by then"
+      ],
+      "examples": [
+        {
+          "pt": "Vou terminar o relatório até lá.",
+          "en": "I'll finish the report by then."
+        },
+        {
+          "pt": "Até lá, eu provavelmente já terei tomado uma decisão.",
+          "en": "By then, I'll probably have made a decision."
+        }
+      ],
+      "tags": [
+        "time",
+        "deadline",
+        "future"
+      ],
+      "related": [
+        "by-the-time",
+        "until-then"
+      ],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "until-then",
+      "intention": "Até lá / até então",
+      "english": "until then",
+      "pattern": "until then",
+      "description": "Usado para falar do que continuará acontecendo até um momento futuro previamente mencionado.",
+      "category": "time-duration",
+      "searchTerms": [
+        "até lá",
+        "até então",
+        "until then"
+      ],
+      "examples": [
+        {
+          "pt": "A reunião é às três. Até lá, vou terminar esta tarefa.",
+          "en": "The meeting is at three. Until then, I'll finish this task."
+        },
+        {
+          "pt": "Ela volta na sexta. Até lá, vou cuidar do projeto.",
+          "en": "She's coming back on Friday. Until then, I'll take care of the project."
+        }
+      ],
+      "tags": [
+        "time",
+        "duration",
+        "future"
+      ],
+      "related": [
+        "by-then",
+        "in-the-meantime"
+      ],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "at-some-point",
+      "intention": "Em algum momento",
+      "english": "at some point",
+      "pattern": "at some point",
+      "description": "Usado para falar de um momento indefinido no passado ou no futuro.",
+      "category": "time-indefinite",
+      "searchTerms": [
+        "em algum momento",
+        "alguma hora",
+        "at some point"
+      ],
+      "examples": [
+        {
+          "pt": "Em algum momento, precisamos conversar sobre isso.",
+          "en": "At some point, we need to talk about this."
+        },
+        {
+          "pt": "Em algum momento eu percebi que estava traduzindo menos.",
+          "en": "At some point, I realized I was translating less."
+        }
+      ],
+      "tags": [
+        "time",
+        "indefinite"
+      ],
+      "related": [
+        "sooner-or-later",
+        "eventually"
+      ],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "at-the-time",
+      "intention": "Na época / naquele momento",
+      "english": "at the time",
+      "pattern": "at the time",
+      "description": "Usado para situar uma opinião, decisão ou situação em um momento específico do passado.",
+      "category": "time-past",
+      "searchTerms": [
+        "na época",
+        "naquele momento",
+        "at the time"
+      ],
+      "examples": [
+        {
+          "pt": "Na época, eu não sabia que essa decisão seria tão importante.",
+          "en": "At the time, I didn't know that decision would be so important."
+        },
+        {
+          "pt": "Eu estava trabalhando em outro projeto na época.",
+          "en": "I was working on another project at the time."
+        }
+      ],
+      "tags": [
+        "time",
+        "past",
+        "context"
+      ],
+      "related": [
+        "back-then"
+      ],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "back-then",
+      "intention": "Naquela época",
+      "english": "back then",
+      "pattern": "back then",
+      "description": "Expressão conversacional usada para se referir a uma época passada já conhecida pelo contexto.",
+      "category": "time-past",
+      "searchTerms": [
+        "naquela época",
+        "naquele tempo",
+        "back then"
+      ],
+      "examples": [
+        {
+          "pt": "Naquela época, eu estudava inglês de uma forma muito diferente.",
+          "en": "Back then, I studied English in a very different way."
+        },
+        {
+          "pt": "A internet era muito mais lenta naquela época.",
+          "en": "The internet was much slower back then."
+        }
+      ],
+      "tags": [
+        "time",
+        "past",
+        "conversation"
+      ],
+      "related": [
+        "at-the-time"
+      ],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "in-the-long-run",
+      "intention": "No longo prazo",
+      "english": "in the long run",
+      "pattern": "in the long run",
+      "description": "Usado para falar de consequências, benefícios ou resultados percebidos depois de bastante tempo.",
+      "category": "time-long-term",
+      "searchTerms": [
+        "no longo prazo",
+        "a longo prazo",
+        "in the long run"
+      ],
+      "examples": [
+        {
+          "pt": "Praticar todos os dias vai fazer diferença no longo prazo.",
+          "en": "Practicing every day will make a difference in the long run."
+        },
+        {
+          "pt": "Essa solução é mais barata no longo prazo.",
+          "en": "This solution is cheaper in the long run."
+        }
+      ],
+      "tags": [
+        "time",
+        "long-term",
+        "result"
+      ],
+      "related": [
+        "in-the-short-term",
+        "over-a-long-period"
+      ],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "in-the-short-term",
+      "intention": "No curto prazo",
+      "english": "in the short term",
+      "pattern": "in the short term",
+      "description": "Usado para falar de efeitos, decisões ou resultados esperados em um período relativamente próximo.",
+      "category": "time-short-term",
+      "searchTerms": [
+        "no curto prazo",
+        "a curto prazo",
+        "in the short term"
+      ],
+      "examples": [
+        {
+          "pt": "No curto prazo, essa solução é suficiente.",
+          "en": "In the short term, this solution is enough."
+        },
+        {
+          "pt": "No curto prazo, quero melhorar minha compreensão oral.",
+          "en": "In the short term, I want to improve my listening comprehension."
+        }
+      ],
+      "tags": [
+        "time",
+        "short-term",
+        "planning"
+      ],
+      "related": [
+        "in-the-long-run"
+      ],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "within-a-period",
+      "intention": "Dentro de... / no prazo de...",
+      "english": "within + period",
+      "pattern": "within + time period",
+      "description": "Usado para indicar que algo deve acontecer antes do fim de um limite de tempo.",
+      "category": "time-deadline",
+      "searchTerms": [
+        "dentro de",
+        "no prazo de",
+        "within"
+      ],
+      "examples": [
+        {
+          "pt": "Vou responder dentro de dois dias.",
+          "en": "I'll reply within two days."
+        },
+        {
+          "pt": "O sistema deve processar o arquivo dentro de uma hora.",
+          "en": "The system should process the file within an hour."
+        }
+      ],
+      "tags": [
+        "time",
+        "deadline",
+        "duration"
+      ],
+      "related": [
+        "by-the-time",
+        "by-then"
+      ],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "throughout-a-period",
+      "intention": "Durante todo o período / ao longo de todo...",
+      "english": "throughout + period",
+      "pattern": "throughout + period",
+      "description": "Usado para indicar que algo acontece ou permanece verdadeiro durante todo um período.",
+      "category": "time-duration",
+      "searchTerms": [
+        "durante todo",
+        "ao longo de todo",
+        "throughout"
+      ],
+      "examples": [
+        {
+          "pt": "Choveu durante toda a noite.",
+          "en": "It rained throughout the night."
+        },
+        {
+          "pt": "Mantivemos contato durante todo o projeto.",
+          "en": "We stayed in touch throughout the project."
+        }
+      ],
+      "tags": [
+        "time",
+        "duration",
+        "whole-period"
+      ],
+      "related": [
+        "over-the-course-of",
+        "during-a-period"
+      ],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "during-a-period",
+      "intention": "Durante...",
+      "english": "during + noun/period",
+      "pattern": "during + noun/time period",
+      "description": "Usado para indicar que algo acontece em algum ponto dentro de um período nomeado.",
+      "category": "time-duration",
+      "searchTerms": [
+        "durante",
+        "during"
+      ],
+      "examples": [
+        {
+          "pt": "Eu recebi uma ligação durante a reunião.",
+          "en": "I received a call during the meeting."
+        },
+        {
+          "pt": "Aprendi muito durante o projeto.",
+          "en": "I learned a lot during the project."
+        }
+      ],
+      "tags": [
+        "time",
+        "duration",
+        "period"
+      ],
+      "related": [
+        "while-clause",
+        "throughout-a-period"
+      ],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "while-clause",
+      "intention": "Enquanto...",
+      "english": "while + clause",
+      "pattern": "while + subject + verb",
+      "description": "Usado para relacionar duas ações ou situações que acontecem ao mesmo tempo.",
+      "category": "time-connectors",
+      "searchTerms": [
+        "enquanto",
+        "ao mesmo tempo em que",
+        "while"
+      ],
+      "examples": [
+        {
+          "pt": "Eu ouço podcasts enquanto caminho.",
+          "en": "I listen to podcasts while I walk."
+        },
+        {
+          "pt": "Ela estava trabalhando enquanto eu preparava o jantar.",
+          "en": "She was working while I was making dinner."
+        }
+      ],
+      "tags": [
+        "time",
+        "connector",
+        "simultaneous"
+      ],
+      "related": [
+        "at-the-same-time",
+        "during-a-period"
+      ],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "no-sooner-than",
+      "intention": "Mal... já... / assim que...",
+      "english": "no sooner ... than",
+      "pattern": "no sooner + auxiliary + subject + past participle + than + clause",
+      "description": "Estrutura avançada e enfática usada para dizer que uma coisa aconteceu imediatamente após outra.",
+      "category": "time-connectors",
+      "searchTerms": [
+        "mal",
+        "assim que",
+        "imediatamente depois",
+        "no sooner than"
+      ],
+      "examples": [
+        {
+          "pt": "Mal eu tinha chegado, começou a chover.",
+          "en": "No sooner had I arrived than it started to rain."
+        },
+        {
+          "pt": "Mal terminamos a reunião, outro problema apareceu.",
+          "en": "No sooner had we finished the meeting than another problem came up."
+        }
+      ],
+      "tags": [
+        "time",
+        "connector",
+        "advanced",
+        "sequence"
+      ],
+      "related": [
+        "hardly-when"
+      ],
+      "englishLevel": "C1"
+    },
+    {
+      "id": "hardly-when",
+      "intention": "Mal... quando...",
+      "english": "hardly ... when",
+      "pattern": "hardly + auxiliary + subject + past participle + when + clause",
+      "description": "Estrutura avançada para indicar que uma ação ocorreu imediatamente antes de outra.",
+      "category": "time-connectors",
+      "searchTerms": [
+        "mal",
+        "quase não",
+        "hardly when"
+      ],
+      "examples": [
+        {
+          "pt": "Mal eu tinha sentado quando o telefone tocou.",
+          "en": "Hardly had I sat down when the phone rang."
+        },
+        {
+          "pt": "Mal começamos quando o sistema caiu.",
+          "en": "Hardly had we started when the system went down."
+        }
+      ],
+      "tags": [
+        "time",
+        "connector",
+        "advanced",
+        "sequence"
+      ],
+      "related": [
+        "no-sooner-than"
+      ],
+      "englishLevel": "C1"
+    }    
   ]
 }
