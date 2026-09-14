@@ -8658,6 +8658,42 @@
         "no-sooner-than"
       ],
       "englishLevel": "C1"
+    },
+    {
+      "id": "todo-mundo-quer",
+      "intention": "Todo mundo quer...",
+      "english": "everybody wants to",
+      "pattern": "everybody wants to + base verb",
+      "description": "Usado para falar de desejos, objetivos ou vontades que são comuns a todas as pessoas de um grupo ou de forma generalizada.",
+      "category": "general-statements",
+      "searchTerms": [
+        "todo mundo quer",
+        "todos querem",
+        "everybody wants to",
+        "everyone wants to"
+      ],
+      "examples": [
+        {
+          "pt": "Todo mundo quer ser feliz.",
+          "en": "Everybody wants to be happy."
+        },
+        {
+          "pt": "Todo mundo quer ganhar mais dinheiro.",
+          "en": "Everybody wants to make more money."
+        },
+        {
+          "pt": "Todo mundo quer melhorar de vida.",
+          "en": "Everybody wants to improve their life."
+        }
+      ],
+      "tags": [
+        "everybody",
+        "generalization",
+        "desire",
+        "conversation"
+      ],
+      "related": [],
+      "englishLevel": "A2"
     }    
   ]
 }
