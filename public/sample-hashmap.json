@@ -5525,6 +5525,45 @@
       "englishLevel": "B2"
     },
     {
+      "id": "no-wonder",
+      "intention": "Não é à toa que... / Não é de se admirar que...",
+      "english": "no wonder",
+      "pattern": "no wonder + clause",
+      "description": "Usado para reagir a uma informação quando uma causa ou explicação torna uma situação óbvia ou compreensível.",
+      "category": "reactions",
+      "searchTerms": [
+        "não é à toa",
+        "não é de se admirar",
+        "faz sentido agora",
+        "agora entendi",
+        "no wonder"
+      ],
+      "examples": [
+        {
+          "pt": "Não é à toa que você está cansado; você passou o dia todo trabalhando.",
+          "en": "No wonder you're tired; you've been working all day."
+        },
+        {
+          "pt": "Não é à toa que ela está feliz. Ela conseguiu o emprego.",
+          "en": "No wonder she's happy. She got the job."
+        },
+        {
+          "pt": "Não é à toa que o sistema está lento; há milhares de requisições ao mesmo tempo.",
+          "en": "No wonder the system is slow; there are thousands of requests at the same time."
+        }
+      ],
+      "tags": [
+        "reaction",
+        "cause",
+        "explanation",
+        "conversation"
+      ],
+      "related": [
+        "estruturas-de-reacao"
+      ],
+      "englishLevel": "B1"
+    },
+    {
       "id": "estruturas-de-hipotese-conversacional",
       "intention": "Estruturas de hipótese conversacional",
       "english": "I wonder if / what if / suppose / imagine if",
