@@ -8694,6 +8694,44 @@
       ],
       "related": [],
       "englishLevel": "A2"
+    },
+    {
+      "id": "estou-dividido-entre",
+      "intention": "Estou dividido entre... / Estou em dúvida entre...",
+      "english": "I'm torn between...",
+      "pattern": "I'm torn between + noun/gerund + and + noun/gerund",
+      "description": "Usado para expressar indecisão quando a pessoa está dividida entre duas opções, escolhas ou caminhos.",
+      "category": "decision-making",
+      "searchTerms": [
+        "estou dividido entre",
+        "estou em dúvida entre",
+        "não sei qual escolher",
+        "indeciso entre",
+        "I'm torn between"
+      ],
+      "examples": [
+        {
+          "pt": "Estou dividido entre ficar em casa e sair com meus amigos.",
+          "en": "I'm torn between staying home and going out with my friends."
+        },
+        {
+          "pt": "Estou em dúvida entre aceitar o emprego e continuar onde estou.",
+          "en": "I'm torn between accepting the job and staying where I am."
+        },
+        {
+          "pt": "Estou dividido entre comprar um carro novo e economizar o dinheiro.",
+          "en": "I'm torn between buying a new car and saving the money."
+        }
+      ],
+      "tags": [
+        "decision",
+        "choice",
+        "indecision",
+        "conversation",
+        "idiom"
+      ],
+      "related": [],
+      "englishLevel": "B1"
     }    
   ]
 }
