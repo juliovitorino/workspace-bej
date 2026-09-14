@@ -1362,3 +1362,37 @@ button {
     line-height: 1.65;
   }
 }
+
+
+/* English level badges */
+.card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.english-level-pill {
+  background: #fff4e5;
+  color: #b54708;
+  border: 1px solid #fedf89;
+}
+
+.detail-level {
+  margin: -14px 0 14px;
+}
+
+@media (max-width: 820px) {
+  .card-badges {
+    justify-content: flex-start;
+  }
+
+  .english-level-pill {
+    font-size: 0.95rem;
+    padding: 7px 11px;
+  }
+
+  .detail-level {
+    margin: -10px 0 16px;
+  }
+}

@@ -45,6 +45,14 @@ export function IntentionDetails({
         <h2>{item.intention}</h2>
         <p className="detail-english">{item.english}</p>
 
+        {item.englishLevel && (
+          <div className="detail-level">
+            <span className="pill english-level-pill">
+              Nível {item.englishLevel}
+            </span>
+          </div>
+        )}
+
         <div className="training-actions">
           <button
             type="button"
