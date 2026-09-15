@@ -20,15 +20,21 @@
       "examples": [
         {
           "pt": "Eu corro todos os dias.",
-          "en": "I run every day."
+          "en": "I run every day.",
+          "ptIntent": "corro",
+          "enIntent": "run"
         },
         {
           "pt": "Ele acordou tarde.",
-          "en": "He woke up later."
+          "en": "He woke up later.",
+          "ptIntent": "acordou",
+          "enIntent": "woke up"
         },
         {
           "pt": "Eu vou trabalhar amanhã.",
-          "en": "I will work tomorrow."
+          "en": "I will work tomorrow.",
+          "ptIntent": "vou trabalhar",
+          "enIntent": "will work"
         }
       ],
       "tags": [
@@ -49,11 +55,15 @@
       "examples": [
         {
           "pt": "Talvez chova.",
-          "en": "It might rain."
+          "en": "It might rain.",
+          "ptIntent": "Talvez chova",
+          "enIntent": "might"
         },
         {
           "pt": "Você deveria jogar hoje.",
-          "en": "You should play today."
+          "en": "You should play today.",
+          "ptIntent": "deveria",
+          "enIntent": "should"
         }
       ],
       "tags": [
@@ -74,11 +84,15 @@
       "examples": [
         {
           "pt": "Ele está cansado.",
-          "en": "He is tired."
+          "en": "He is tired.",
+          "ptIntent": "está cansado",
+          "enIntent": "is"
         },
         {
           "pt": "Eu estou feliz.",
-          "en": "I am happy."
+          "en": "I am happy.",
+          "ptIntent": "estou",
+          "enIntent": "am"
         }
       ],
       "tags": [
@@ -101,11 +115,15 @@
       "examples": [
         {
           "pt": "Ele estava cansado.",
-          "en": "He was tired."
+          "en": "He was tired.",
+          "ptIntent": "estava",
+          "enIntent": "was"
         },
         {
           "pt": "Nós estávamos jogando futebol ontem.",
-          "en": "We were playing soccer yesterday."
+          "en": "We were playing soccer yesterday.",
+          "ptIntent": "estávamos",
+          "enIntent": "were"
         }
       ],
       "tags": [
@@ -126,11 +144,15 @@
       "examples": [
         {
           "pt": "Estou trabalhando.",
-          "en": "I have been working."
+          "en": "I have been working.",
+          "ptIntent": "Estou",
+          "enIntent": "have"
         },
         {
           "pt": "O build está executando há 11m.",
-          "en": "The build has been running for 11m."
+          "en": "The build has been running for 11m.",
+          "ptIntent": "está",
+          "enIntent": "has been"
         }
       ],
       "tags": [
@@ -151,7 +173,9 @@
       "examples": [
         {
           "pt": "Eu tenho aprendido muito.",
-          "en": "I have learnt a lot."
+          "en": "I have learnt a lot.",
+          "ptIntent": "tenho",
+          "enIntent": "have"
         }
       ],
       "tags": [
@@ -172,11 +196,15 @@
       "examples": [
         {
           "pt": "Tenho estado cansado ultimamente.",
-          "en": "I have been tired lately."
+          "en": "I have been tired lately.",
+          "ptIntent": "Tenho",
+          "enIntent": "have"
         },
         {
           "pt": "Ela tem andado entristecida nos últimos anos.",
-          "en": "She has been saddened over last years."
+          "en": "She has been saddened over last years.",
+          "ptIntent": "tem",
+          "enIntent": "has been"
         }
       ],
       "tags": [
@@ -197,11 +225,15 @@
       "examples": [
         {
           "pt": "Eu tenho que pagar meus impostos.",
-          "en": "I have to pay my taxes."
+          "en": "I have to pay my taxes.",
+          "ptIntent": "tenho que",
+          "enIntent": "have"
         },
         {
           "pt": "Eu tenho que dormir.",
-          "en": "I need to sleep."
+          "en": "I need to sleep.",
+          "ptIntent": "tenho que",
+          "enIntent": "need to"
         }
       ],
       "tags": [
@@ -222,7 +254,9 @@
       "examples": [
         {
           "pt": "Estou tendo que mudar a forma como estudo inglês.",
-          "en": "I’m having to change the way I study English."
+          "en": "I’m having to change the way I study English.",
+          "ptIntent": "tendo que",
+          "enIntent": "having to"
         }
       ],
       "tags": [
@@ -243,7 +277,9 @@
       "examples": [
         {
           "pt": "Você teve problemas com a ferramenta?",
-          "en": "Have you had problems with the tool?"
+          "en": "Have you had problems with the tool?",
+          "ptIntent": "teve",
+          "enIntent": "Have you had"
         }
       ],
       "tags": [
@@ -264,11 +300,15 @@
       "examples": [
         {
           "pt": "Eu tenho sido o campeão por 7 anos.",
-          "en": "I’ve been the champion for 7 years."
+          "en": "I’ve been the champion for 7 years.",
+          "ptIntent": "tenho sido",
+          "enIntent": "been"
         },
         {
           "pt": "Tem sido difícil.",
-          "en": "It has been hard."
+          "en": "It has been hard.",
+          "ptIntent": "Tem",
+          "enIntent": "has been"
         }
       ],
       "tags": [
@@ -289,11 +329,15 @@
       "examples": [
         {
           "pt": "Eu tenho tido pesadelos.",
-          "en": "I have had nightmares."
+          "en": "I have had nightmares.",
+          "ptIntent": "tenho tido",
+          "enIntent": "have"
         },
         {
           "pt": "Ela tem tido dificuldades recentemente.",
-          "en": "She has had difficulty recently."
+          "en": "She has had difficulty recently.",
+          "ptIntent": "tem",
+          "enIntent": "has had"
         }
       ],
       "tags": [
@@ -314,7 +358,9 @@
       "examples": [
         {
           "pt": "Ela tinha saído.",
-          "en": "She had left."
+          "en": "She had left.",
+          "ptIntent": "tinha",
+          "enIntent": "had"
         }
       ],
       "tags": [
@@ -334,7 +380,9 @@
       "examples": [
         {
           "pt": "Eu tive que parar o carro.",
-          "en": "I had to stop the car."
+          "en": "I had to stop the car.",
+          "ptIntent": "tive que",
+          "enIntent": "had to"
         }
       ],
       "tags": [
@@ -355,11 +403,15 @@
       "examples": [
         {
           "pt": "Poderia haver uma caixa lá em cima.",
-          "en": "There can be a box over there."
+          "en": "There can be a box over there.",
+          "ptIntent": "haver",
+          "enIntent": "There"
         },
         {
           "pt": "Houve um acidente na estrada na semana passada.",
-          "en": "There was an accident on the road last week."
+          "en": "There was an accident on the road last week.",
+          "ptIntent": "Houve",
+          "enIntent": "There"
         }
       ],
       "tags": [
@@ -380,11 +432,15 @@
       "examples": [
         {
           "pt": "Tem que ter um motivo.",
-          "en": "There has to be a reason."
+          "en": "There has to be a reason.",
+          "ptIntent": "Tem que ter",
+          "enIntent": "There has to be"
         },
         {
           "pt": "Tem que haver limites.",
-          "en": "There have to be limits."
+          "en": "There have to be limits.",
+          "ptIntent": "Tem que haver",
+          "enIntent": "have to be"
         }
       ],
       "tags": [
@@ -405,7 +461,9 @@
       "examples": [
         {
           "pt": "Estou me perguntando se ela era feliz.",
-          "en": "I’m wondering if she was happy."
+          "en": "I’m wondering if she was happy.",
+          "ptIntent": "perguntando se",
+          "enIntent": "wondering if"
         }
       ],
       "tags": [
@@ -426,7 +484,9 @@
       "examples": [
         {
           "pt": "Eu me pergunto se ela era feliz.",
-          "en": "I wonder if she was happy."
+          "en": "I wonder if she was happy.",
+          "ptIntent": "me pergunto se",
+          "enIntent": "I wonder if"
         }
       ],
       "tags": [
@@ -447,7 +507,9 @@
       "examples": [
         {
           "pt": "Eu não mudo mais minha opinião.",
-          "en": "I no longer change my opinion."
+          "en": "I no longer change my opinion.",
+          "ptIntent": "não",
+          "enIntent": "no longer"
         }
       ],
       "tags": [
@@ -468,7 +530,9 @@
       "examples": [
         {
           "pt": "Eu não preciso mais deste servidor.",
-          "en": "I don’t need this server any longer."
+          "en": "I don’t need this server any longer.",
+          "ptIntent": "não",
+          "enIntent": "any longer"
         }
       ],
       "tags": [
@@ -489,7 +553,9 @@
       "examples": [
         {
           "pt": "Este código é tão simples quanto o outro.",
-          "en": "This code is as simple as another."
+          "en": "This code is as simple as another.",
+          "ptIntent": "tão",
+          "enIntent": "code"
         }
       ],
       "tags": [
@@ -509,7 +575,9 @@
       "examples": [
         {
           "pt": "Eu gosto de bananas assim como de maçãs.",
-          "en": "I like bananas as well as apples."
+          "en": "I like bananas as well as apples.",
+          "ptIntent": "assim como",
+          "enIntent": "as well as"
         }
       ],
       "tags": [
@@ -530,7 +598,9 @@
       "examples": [
         {
           "pt": "Você pode usar meu computador desde que tenha cuidado.",
-          "en": "You can use my computer as long as you are careful."
+          "en": "You can use my computer as long as you are careful.",
+          "ptIntent": "desde que",
+          "enIntent": "as long as"
         }
       ],
       "tags": [
@@ -550,7 +620,9 @@
       "examples": [
         {
           "pt": "Vou te mandar uma mensagem assim que terminar.",
-          "en": "I’ll send you a message as soon as I finish it."
+          "en": "I’ll send you a message as soon as I finish it.",
+          "ptIntent": "assim que",
+          "enIntent": "as soon as"
         }
       ],
       "tags": [
@@ -571,7 +643,9 @@
       "examples": [
         {
           "pt": "Eu amo trabalhar em casa tanto quanto você.",
-          "en": "I love working at home as much as you."
+          "en": "I love working at home as much as you.",
+          "ptIntent": "tanto quanto",
+          "enIntent": "as much as"
         }
       ],
       "tags": [
@@ -591,7 +665,9 @@
       "examples": [
         {
           "pt": "Até onde eu sei, a reunião foi mantida.",
-          "en": "As far as I know, the meeting was kept."
+          "en": "As far as I know, the meeting was kept.",
+          "ptIntent": "Até onde",
+          "enIntent": "As far as"
         }
       ],
       "tags": [
@@ -612,7 +688,9 @@
       "examples": [
         {
           "pt": "Me disseram que você ia começar a trabalhar na Microsoft.",
-          "en": "I was told that you were going to start working at Microsoft."
+          "en": "I was told that you were going to start working at Microsoft.",
+          "ptIntent": "Me disseram",
+          "enIntent": "I was told that"
         }
       ],
       "tags": [
@@ -632,7 +710,9 @@
       "examples": [
         {
           "pt": "Acabou de haver um acidente na estrada.",
-          "en": "There has just been an accident on the road."
+          "en": "There has just been an accident on the road.",
+          "ptIntent": "Acabou de haver",
+          "enIntent": "There has just been"
         }
       ],
       "tags": [
@@ -653,7 +733,9 @@
       "examples": [
         {
           "pt": "Eu vinha viajando.",
-          "en": "I had been traveling."
+          "en": "I had been traveling.",
+          "ptIntent": "vinha",
+          "enIntent": "had been"
         }
       ],
       "tags": [
@@ -674,7 +756,9 @@
       "examples": [
         {
           "pt": "Eu viajei muito.",
-          "en": "I have traveled a lot."
+          "en": "I have traveled a lot.",
+          "ptIntent": "viajei",
+          "enIntent": "have"
         }
       ],
       "tags": [
@@ -695,7 +779,9 @@
       "examples": [
         {
           "pt": "Eu viajei no último mês.",
-          "en": "I traveled last month."
+          "en": "I traveled last month.",
+          "ptIntent": "viajei",
+          "enIntent": "traveled"
         }
       ],
       "tags": [
@@ -716,7 +802,9 @@
       "examples": [
         {
           "pt": "Eu vou viajar amanhã.",
-          "en": "I am going to travel tomorrow."
+          "en": "I am going to travel tomorrow.",
+          "ptIntent": "vou",
+          "enIntent": "going to"
         }
       ],
       "tags": [
@@ -737,11 +825,15 @@
       "examples": [
         {
           "pt": "Eu vou viajar amanhã.",
-          "en": "I’m going to travel tomorrow."
+          "en": "I’m going to travel tomorrow.",
+          "ptIntent": "vou viajar",
+          "enIntent": "going to"
         },
         {
           "pt": "Estou indo para o escritório.",
-          "en": "I’m heading to the office."
+          "en": "I’m heading to the office.",
+          "ptIntent": "Estou indo",
+          "enIntent": "heading to"
         }
       ],
       "tags": [
@@ -762,11 +854,15 @@
       "examples": [
         {
           "pt": "Vou ficar bem.",
-          "en": "I will be fine."
+          "en": "I will be fine.",
+          "ptIntent": "Vou",
+          "enIntent": "will be"
         },
         {
           "pt": "Tudo vai ficar bem.",
-          "en": "Everything is gonna be fine."
+          "en": "Everything is gonna be fine.",
+          "ptIntent": "vai ficar",
+          "enIntent": "be"
         }
       ],
       "tags": [
@@ -787,7 +883,9 @@
       "examples": [
         {
           "pt": "Eu vou ter que viajar amanhã.",
-          "en": "I am going to have to travel tomorrow."
+          "en": "I am going to have to travel tomorrow.",
+          "ptIntent": "ter que",
+          "enIntent": "going to have to"
         }
       ],
       "tags": [
@@ -808,7 +906,9 @@
       "examples": [
         {
           "pt": "Eu consigo fazer isso mesmo que o início seja difícil.",
-          "en": "I’m able to do that even though the start will be hard."
+          "en": "I’m able to do that even though the start will be hard.",
+          "ptIntent": "seja",
+          "enIntent": "will be"
         }
       ],
       "tags": [
@@ -829,7 +929,9 @@
       "examples": [
         {
           "pt": "Eu ia viajar amanhã.",
-          "en": "I was going to travel tomorrow."
+          "en": "I was going to travel tomorrow.",
+          "ptIntent": "ia",
+          "enIntent": "going to"
         }
       ],
       "tags": [
@@ -850,7 +952,9 @@
       "examples": [
         {
           "pt": "Eu costumava nadar todo dia.",
-          "en": "I used to swim every day."
+          "en": "I used to swim every day.",
+          "ptIntent": "costumava",
+          "enIntent": "used to"
         }
       ],
       "tags": [
@@ -875,7 +979,9 @@
       "examples": [
         {
           "pt": "Eu estou acostumado a acordar cedo.",
-          "en": "I am used to waking up early."
+          "en": "I am used to waking up early.",
+          "ptIntent": "acostumado",
+          "enIntent": "used to"
         }
       ],
       "tags": [
@@ -900,7 +1006,9 @@
       "examples": [
         {
           "pt": "Eu costumo estudar à noite.",
-          "en": "I usually study at night."
+          "en": "I usually study at night.",
+          "ptIntent": "costumo",
+          "enIntent": "usually"
         }
       ],
       "tags": [
@@ -921,7 +1029,9 @@
       "examples": [
         {
           "pt": "Eu me acostumei com a nova rotina depois de algumas semanas.",
-          "en": "I have got used to the new routine after a few weeks."
+          "en": "I have got used to the new routine after a few weeks.",
+          "ptIntent": "me acostumei",
+          "enIntent": "used to"
         }
       ],
       "tags": [
@@ -942,7 +1052,9 @@
       "examples": [
         {
           "pt": "Eu não me acostumei com a nova rotina, mesmo depois de vários meses.",
-          "en": "I didn’t get used to the new routine, even after several months."
+          "en": "I didn’t get used to the new routine, even after several months.",
+          "ptIntent": "não me acostumei",
+          "enIntent": "didn’t get used to"
         }
       ],
       "tags": [
@@ -963,7 +1075,9 @@
       "examples": [
         {
           "pt": "Estou me acostumando a falar inglês.",
-          "en": "I am getting used to speaking English."
+          "en": "I am getting used to speaking English.",
+          "ptIntent": "me acostumando",
+          "enIntent": "getting used to"
         }
       ],
       "tags": [
@@ -984,7 +1098,9 @@
       "examples": [
         {
           "pt": "Eu vou acostumar com o frio.",
-          "en": "I will get used to the cold."
+          "en": "I will get used to the cold.",
+          "ptIntent": "vou acostumar",
+          "enIntent": "will get used to"
         }
       ],
       "tags": [
@@ -1005,7 +1121,9 @@
       "examples": [
         {
           "pt": "Eu tenho que acostumar com o frio.",
-          "en": "I have to get used to the cold."
+          "en": "I have to get used to the cold.",
+          "ptIntent": "tenho que acostumar",
+          "enIntent": "have to get used to"
         }
       ],
       "tags": [
@@ -1026,7 +1144,9 @@
       "examples": [
         {
           "pt": "Eu vou ter que acostumar com as novas regras.",
-          "en": "I will have to get used to the new rules."
+          "en": "I will have to get used to the new rules.",
+          "ptIntent": "vou ter que acostumar",
+          "enIntent": "will have to get used to"
         }
       ],
       "tags": [
@@ -1048,7 +1168,9 @@
       "examples": [
         {
           "pt": "Eu pensei que ia me acostumar com o frio.",
-          "en": "I thought I would get used to the cold."
+          "en": "I thought I would get used to the cold.",
+          "ptIntent": "ia me acostumar",
+          "enIntent": "would get used to"
         }
       ],
       "tags": [
@@ -1069,7 +1191,9 @@
       "examples": [
         {
           "pt": "Eu deveria ter checado o clima antes de sair.",
-          "en": "I should have checked the weather before leaving."
+          "en": "I should have checked the weather before leaving.",
+          "ptIntent": "deveria ter",
+          "enIntent": "should have"
         }
       ],
       "tags": [
@@ -1090,7 +1214,9 @@
       "examples": [
         {
           "pt": "Eu poderia ter assistido aquele filme antes.",
-          "en": "I could have watched that movie before."
+          "en": "I could have watched that movie before.",
+          "ptIntent": "poderia ter",
+          "enIntent": "could"
         }
       ],
       "tags": [
@@ -1111,7 +1237,9 @@
       "examples": [
         {
           "pt": "Deve ter chovido na última noite.",
-          "en": "It must have rained last night."
+          "en": "It must have rained last night.",
+          "ptIntent": "Deve ter",
+          "enIntent": "must have"
         }
       ],
       "tags": [
@@ -1132,11 +1260,15 @@
       "examples": [
         {
           "pt": "Sempre que a vejo, eu sorrio.",
-          "en": "Whenever I see her, I smile."
+          "en": "Whenever I see her, I smile.",
+          "ptIntent": "Sempre que",
+          "enIntent": "Whenever"
         },
         {
           "pt": "Me ligue quando quiser.",
-          "en": "Call me whenever you want."
+          "en": "Call me whenever you want.",
+          "ptIntent": "Me",
+          "enIntent": "whenever"
         }
       ],
       "tags": [
@@ -1157,7 +1289,9 @@
       "examples": [
         {
           "pt": "Onde quer que você esteja.",
-          "en": "Wherever you are."
+          "en": "Wherever you are.",
+          "ptIntent": "Onde quer que",
+          "enIntent": "Wherever"
         }
       ],
       "tags": [
@@ -1178,11 +1312,15 @@
       "examples": [
         {
           "pt": "Faça o que você quiser.",
-          "en": "Do whatever you want."
+          "en": "Do whatever you want.",
+          "ptIntent": "o que",
+          "enIntent": "whatever"
         },
         {
           "pt": "Pizza ou macarrão? Tanto faz.",
-          "en": "Pizza or pasta? Whatever."
+          "en": "Pizza or pasta? Whatever.",
+          "ptIntent": "Tanto faz",
+          "enIntent": "Whatever"
         }
       ],
       "tags": [
@@ -1203,7 +1341,9 @@
       "examples": [
         {
           "pt": "Nós podemos ir onde quer que você queira.",
-          "en": "We can go wherever you want."
+          "en": "We can go wherever you want.",
+          "ptIntent": "podemos",
+          "enIntent": "wherever"
         }
       ],
       "tags": [
@@ -1224,7 +1364,9 @@
       "examples": [
         {
           "pt": "Quem quer que encontre minhas chaves receberá uma recompensa.",
-          "en": "Whoever finds my keys will get a reward."
+          "en": "Whoever finds my keys will get a reward.",
+          "ptIntent": "Quem quer que",
+          "enIntent": "Whoever"
         }
       ],
       "tags": [
@@ -1245,11 +1387,15 @@
       "examples": [
         {
           "pt": "Faça conforme você quiser.",
-          "en": "Do it however you like."
+          "en": "Do it however you like.",
+          "ptIntent": "conforme",
+          "enIntent": "however"
         },
         {
           "pt": "Vou ajudar você como eu puder.",
-          "en": "I’ll help you however I can."
+          "en": "I’ll help you however I can.",
+          "ptIntent": "Vou ajudar",
+          "enIntent": "however"
         }
       ],
       "tags": [
@@ -1270,11 +1416,15 @@
       "examples": [
         {
           "pt": "Você deve usar capacete.",
-          "en": "You are supposed to wear a helmet."
+          "en": "You are supposed to wear a helmet.",
+          "ptIntent": "deve",
+          "enIntent": "supposed to"
         },
         {
           "pt": "Era para você usar capacete.",
-          "en": "You were supposed to wear a helmet."
+          "en": "You were supposed to wear a helmet.",
+          "ptIntent": "Era para",
+          "enIntent": "supposed to"
         }
       ],
       "tags": [
@@ -1295,7 +1445,9 @@
       "examples": [
         {
           "pt": "E se eu perder meu emprego?",
-          "en": "What if I lose my job?"
+          "en": "What if I lose my job?",
+          "ptIntent": "E se",
+          "enIntent": "What if"
         }
       ],
       "tags": [
@@ -1316,7 +1468,9 @@
       "examples": [
         {
           "pt": "Tomara que ele melhore.",
-          "en": "I hope he gets better."
+          "en": "I hope he gets better.",
+          "ptIntent": "Tomara que",
+          "enIntent": "I hope"
         }
       ],
       "tags": [
@@ -1336,11 +1490,15 @@
       "examples": [
         {
           "pt": "Cada atualização foi executada.",
-          "en": "Every update has been executed."
+          "en": "Every update has been executed.",
+          "ptIntent": "foi",
+          "enIntent": "has been"
         },
         {
           "pt": "Eu fui aos Estados Unidos duas vezes.",
-          "en": "I have been to the US twice."
+          "en": "I have been to the US twice.",
+          "ptIntent": "fui",
+          "enIntent": "have"
         }
       ],
       "tags": [
@@ -1361,7 +1519,9 @@
       "examples": [
         {
           "pt": "Você foi visto lá ontem à noite.",
-          "en": "You were seen there last night."
+          "en": "You were seen there last night.",
+          "ptIntent": "foi",
+          "enIntent": "were"
         }
       ],
       "tags": [
@@ -1382,11 +1542,15 @@
       "examples": [
         {
           "pt": "O carro está reparado.",
-          "en": "The car is repaired."
+          "en": "The car is repaired.",
+          "ptIntent": "está",
+          "enIntent": "is"
         },
         {
           "pt": "A tarefa está concluída.",
-          "en": "The task is completed."
+          "en": "The task is completed.",
+          "ptIntent": "está",
+          "enIntent": "is"
         }
       ],
       "tags": [
@@ -1407,7 +1571,9 @@
       "examples": [
         {
           "pt": "O trabalho está sendo executado.",
-          "en": "The job is being executed."
+          "en": "The job is being executed.",
+          "ptIntent": "está",
+          "enIntent": "is"
         }
       ],
       "tags": [
@@ -1428,7 +1594,9 @@
       "examples": [
         {
           "pt": "Acabei de comer uma maçã.",
-          "en": "I have just eaten an apple."
+          "en": "I have just eaten an apple.",
+          "ptIntent": "Acabei de",
+          "enIntent": "have"
         }
       ],
       "tags": [
@@ -1449,11 +1617,15 @@
       "examples": [
         {
           "pt": "Eu acabei falando demais.",
-          "en": "I ended up talking too much."
+          "en": "I ended up talking too much.",
+          "ptIntent": "acabei",
+          "enIntent": "ended up"
         },
         {
           "pt": "Nós acabamos sendo mais duros que o esperado.",
-          "en": "We ended up being harder than expected."
+          "en": "We ended up being harder than expected.",
+          "ptIntent": "acabamos",
+          "enIntent": "ended up"
         }
       ],
       "tags": [
@@ -1474,7 +1646,9 @@
       "examples": [
         {
           "pt": "Estou prestes a assistir a um vídeo.",
-          "en": "I am about to watch a video."
+          "en": "I am about to watch a video.",
+          "ptIntent": "Estou prestes a",
+          "enIntent": "about to"
         }
       ],
       "tags": [
@@ -1495,7 +1669,9 @@
       "examples": [
         {
           "pt": "Isso pode ser perigoso.",
-          "en": "This can be dangerous."
+          "en": "This can be dangerous.",
+          "ptIntent": "pode ser",
+          "enIntent": "can be"
         }
       ],
       "tags": [
@@ -1515,11 +1691,15 @@
       "examples": [
         {
           "pt": "Isso poderia ser o motivo.",
-          "en": "That could be the reason."
+          "en": "That could be the reason.",
+          "ptIntent": "poderia ser",
+          "enIntent": "could be"
         },
         {
           "pt": "Pode ser um mal-entendido.",
-          "en": "It could be a misunderstanding."
+          "en": "It could be a misunderstanding.",
+          "ptIntent": "Pode",
+          "enIntent": "could be"
         }
       ],
       "tags": [
@@ -1539,7 +1719,9 @@
       "examples": [
         {
           "pt": "Ela talvez esteja cansada.",
-          "en": "She might be tired."
+          "en": "She might be tired.",
+          "ptIntent": "talvez",
+          "enIntent": "might be"
         }
       ],
       "tags": [
@@ -1559,7 +1741,9 @@
       "examples": [
         {
           "pt": "Ele deve estar em casa.",
-          "en": "He must be at home."
+          "en": "He must be at home.",
+          "ptIntent": "deve",
+          "enIntent": "must be"
         }
       ],
       "tags": [
@@ -1579,7 +1763,9 @@
       "examples": [
         {
           "pt": "Isso não pode ser verdade.",
-          "en": "It can’t be true."
+          "en": "It can’t be true.",
+          "ptIntent": "não pode ser",
+          "enIntent": "can’t be"
         }
       ],
       "tags": [
@@ -1600,11 +1786,15 @@
       "examples": [
         {
           "pt": "Se puder, você pode comprar alguns biscoitos?",
-          "en": "If you can, could you buy some cookies at the bakery?"
+          "en": "If you can, could you buy some cookies at the bakery?",
+          "ptIntent": "Se puder",
+          "enIntent": "can, could"
         },
         {
           "pt": "Se estiver ok para você, pode vir hoje.",
-          "en": "If it works for you, you can come over today."
+          "en": "If it works for you, you can come over today.",
+          "ptIntent": "estiver",
+          "enIntent": "If it works for you"
         }
       ],
       "tags": [
@@ -1625,11 +1815,15 @@
       "examples": [
         {
           "pt": "Quando puder, a gente conversa.",
-          "en": "Whenever you can, we’ll talk."
+          "en": "Whenever you can, we’ll talk.",
+          "ptIntent": "Quando puder",
+          "enIntent": "Whenever"
         },
         {
           "pt": "Quando puder, me avisa.",
-          "en": "When you can, let me know."
+          "en": "When you can, let me know.",
+          "ptIntent": "Quando puder",
+          "enIntent": "can, let"
         }
       ],
       "tags": [
@@ -1650,11 +1844,15 @@
       "examples": [
         {
           "pt": "Quem me dera ter mais tempo.",
-          "en": "I wish I had more time."
+          "en": "I wish I had more time.",
+          "ptIntent": "Quem me dera",
+          "enIntent": "I wish I"
         },
         {
           "pt": "Quem me dera morar mais perto.",
-          "en": "I wish I lived closer."
+          "en": "I wish I lived closer.",
+          "ptIntent": "Quem me dera",
+          "enIntent": "I wish I"
         }
       ],
       "tags": [
@@ -1675,7 +1873,9 @@
       "examples": [
         {
           "pt": "Bem que eu queria poder viajar mais.",
-          "en": "I wish I could travel more."
+          "en": "I wish I could travel more.",
+          "ptIntent": "Bem que eu queria poder",
+          "enIntent": "I wish I could"
         }
       ],
       "tags": [
@@ -1696,7 +1896,9 @@
       "examples": [
         {
           "pt": "Isso significa, na prática, que temos que focar no que realmente importa para que não comprometamos o build.",
-          "en": "What this means in practice is that we have to focus on what really matters so that we don’t compromise the build."
+          "en": "What this means in practice is that we have to focus on what really matters so that we don’t compromise the build.",
+          "ptIntent": "para que",
+          "enIntent": "so that"
         }
       ],
       "tags": [
@@ -1716,11 +1918,15 @@
       "examples": [
         {
           "pt": "Eu queria ter aceitado aquele emprego.",
-          "en": "I wish I had accepted that job."
+          "en": "I wish I had accepted that job.",
+          "ptIntent": "queria ter",
+          "enIntent": "I wish I had"
         },
         {
           "pt": "Eu queria ter ido com você.",
-          "en": "I wish I had gone with you."
+          "en": "I wish I had gone with you.",
+          "ptIntent": "queria ter",
+          "enIntent": "I wish I had"
         }
       ],
       "tags": [
@@ -1741,7 +1947,9 @@
       "examples": [
         {
           "pt": "Se pelo menos ele soubesse disso.",
-          "en": "If only he knew about it."
+          "en": "If only he knew about it.",
+          "ptIntent": "Se pelo menos",
+          "enIntent": "If only"
         }
       ],
       "tags": [
@@ -1761,11 +1969,15 @@
       "examples": [
         {
           "pt": "Se pelo menos ele tivesse avisado.",
-          "en": "If only he had told me."
+          "en": "If only he had told me.",
+          "ptIntent": "Se pelo menos",
+          "enIntent": "If only"
         },
         {
           "pt": "Se pelo menos eu tivesse tido mais tempo.",
-          "en": "If only I had had more time."
+          "en": "If only I had had more time.",
+          "ptIntent": "Se pelo menos",
+          "enIntent": "If only"
         }
       ],
       "tags": [
@@ -1786,15 +1998,21 @@
       "examples": [
         {
           "pt": "Quem sabe amanhã.",
-          "en": "Maybe tomorrow."
+          "en": "Maybe tomorrow.",
+          "ptIntent": "Quem sabe",
+          "enIntent": "Maybe"
         },
         {
           "pt": "Quem sabe dê certo.",
-          "en": "Hopefully it works out."
+          "en": "Hopefully it works out.",
+          "ptIntent": "Quem sabe",
+          "enIntent": "Hopefully"
         },
         {
           "pt": "Quem sabe?",
-          "en": "Who knows?"
+          "en": "Who knows?",
+          "ptIntent": "Quem sabe",
+          "enIntent": "Who knows"
         }
       ],
       "tags": [
@@ -1815,7 +2033,9 @@
       "examples": [
         {
           "pt": "Se não for incômodo, você pode revisar isso?",
-          "en": "If it’s not a problem, could you review this?"
+          "en": "If it’s not a problem, could you review this?",
+          "ptIntent": "Se não for incômodo",
+          "enIntent": "If it’s not a problem"
         }
       ],
       "tags": [
@@ -1836,19 +2056,27 @@
       "examples": [
         {
           "pt": "No fim das contas, não deu certo.",
-          "en": "In the end, it didn’t work out."
+          "en": "In the end, it didn’t work out.",
+          "ptIntent": "No fim das contas",
+          "enIntent": "In the end"
         },
         {
           "pt": "No fim das contas, o que importa é o resultado.",
-          "en": "At the end of the day, what matters is the result."
+          "en": "At the end of the day, what matters is the result.",
+          "ptIntent": "No fim das contas",
+          "enIntent": "At the end of the day"
         },
         {
           "pt": "No fim das contas, a decisão é sua.",
-          "en": "At the end of the day, the decision is yours."
+          "en": "At the end of the day, the decision is yours.",
+          "ptIntent": "No fim das contas",
+          "enIntent": "At the end of the day"
         },
         {
           "pt": "No fim das contas, o que importa é continuar praticando.",
-          "en": "At the end of the day, what matters is to keep practicing."
+          "en": "At the end of the day, what matters is to keep practicing.",
+          "ptIntent": "No fim das contas",
+          "enIntent": "At the end of the day"
         }
       ],
       "tags": [
@@ -1869,7 +2097,9 @@
       "examples": [
         {
           "pt": "Para que isso é usado?",
-          "en": "What is this used for?"
+          "en": "What is this used for?",
+          "ptIntent": "Para que",
+          "enIntent": "What is"
         }
       ],
       "tags": [
@@ -1890,11 +2120,15 @@
       "examples": [
         {
           "pt": "Eu tive a oportunidade de conhecê-la ontem.",
-          "en": "I got to meet her yesterday."
+          "en": "I got to meet her yesterday.",
+          "ptIntent": "a oportunidade",
+          "enIntent": "got"
         },
         {
           "pt": "Você vai ter a oportunidade de viajar bastante nesse trabalho.",
-          "en": "You will get to travel a lot in this job."
+          "en": "You will get to travel a lot in this job.",
+          "ptIntent": "ter a oportunidade",
+          "enIntent": "get to"
         }
       ],
       "tags": [
@@ -1914,11 +2148,15 @@
       "examples": [
         {
           "pt": "Estou chegando lá.",
-          "en": "I’m getting there."
+          "en": "I’m getting there.",
+          "ptIntent": "Estou chegando",
+          "enIntent": "getting"
         },
         {
           "pt": "Estou conseguindo resultados.",
-          "en": "I’m getting results."
+          "en": "I’m getting results.",
+          "ptIntent": "conseguindo",
+          "enIntent": "getting"
         }
       ],
       "tags": [
@@ -1939,11 +2177,15 @@
       "examples": [
         {
           "pt": "Estou conseguindo correr sem dor.",
-          "en": "I’m running without pain."
+          "en": "I’m running without pain.",
+          "ptIntent": "conseguindo",
+          "enIntent": "I’m running"
         },
         {
           "pt": "Estou conseguindo estudar todo dia.",
-          "en": "I’m studying every day."
+          "en": "I’m studying every day.",
+          "ptIntent": "conseguindo",
+          "enIntent": "I’m studying"
         }
       ],
       "tags": [
@@ -1964,11 +2206,15 @@
       "examples": [
         {
           "pt": "Eu vou conseguir o emprego.",
-          "en": "I’ll get the job."
+          "en": "I’ll get the job.",
+          "ptIntent": "vou conseguir",
+          "enIntent": "get"
         },
         {
           "pt": "Nós vamos chegar lá.",
-          "en": "We’ll get there."
+          "en": "We’ll get there.",
+          "ptIntent": "vamos chegar",
+          "enIntent": "get"
         }
       ],
       "tags": [
@@ -1989,7 +2235,9 @@
       "examples": [
         {
           "pt": "Ele consegue bons resultados com esse método.",
-          "en": "He gets good results with this method."
+          "en": "He gets good results with this method.",
+          "ptIntent": "consegue",
+          "enIntent": "gets"
         }
       ],
       "tags": [
@@ -2010,7 +2258,9 @@
       "examples": [
         {
           "pt": "Ela conseguiu a aprovação ontem.",
-          "en": "She got the approval yesterday."
+          "en": "She got the approval yesterday.",
+          "ptIntent": "conseguiu",
+          "enIntent": "got"
         }
       ],
       "tags": [
@@ -2031,11 +2281,15 @@
       "examples": [
         {
           "pt": "Eu consigo resolver esse problema.",
-          "en": "I can solve this problem."
+          "en": "I can solve this problem.",
+          "ptIntent": "consigo",
+          "enIntent": "can"
         },
         {
           "pt": "Ela é capaz de lidar com situações difíceis.",
-          "en": "She is able to handle difficult situations."
+          "en": "She is able to handle difficult situations.",
+          "ptIntent": "capaz",
+          "enIntent": "able to"
         }
       ],
       "tags": [
@@ -2055,11 +2309,15 @@
       "examples": [
         {
           "pt": "Eu consegui terminar o projeto no prazo.",
-          "en": "I was able to finish the project on time."
+          "en": "I was able to finish the project on time.",
+          "ptIntent": "consegui",
+          "enIntent": "was able to"
         },
         {
           "pt": "Ela conseguiu resolver o problema antes do prazo.",
-          "en": "She managed to fix the issue before the deadline."
+          "en": "She managed to fix the issue before the deadline.",
+          "ptIntent": "conseguiu",
+          "enIntent": "managed to"
         }
       ],
       "tags": [
@@ -2080,7 +2338,9 @@
       "examples": [
         {
           "pt": "Tenho conseguido bons resultados com essa abordagem.",
-          "en": "I have gotten good results with this approach."
+          "en": "I have gotten good results with this approach.",
+          "ptIntent": "Tenho conseguido",
+          "enIntent": "have"
         }
       ],
       "tags": [
@@ -2101,7 +2361,9 @@
       "examples": [
         {
           "pt": "Eu tenho conseguido aprender inglês.",
-          "en": "I’ve been able to learn English."
+          "en": "I’ve been able to learn English.",
+          "ptIntent": "tenho conseguido",
+          "enIntent": "been able to"
         }
       ],
       "tags": [
@@ -2122,11 +2384,15 @@
       "examples": [
         {
           "pt": "Venho conseguindo melhores resultados nos últimos meses.",
-          "en": "I have been getting better results over the past few months."
+          "en": "I have been getting better results over the past few months.",
+          "ptIntent": "Venho conseguindo",
+          "enIntent": "been getting"
         },
         {
           "pt": "Ele vem conseguindo ficar mais confiante no trabalho ultimamente.",
-          "en": "He has been getting more confident at work lately."
+          "en": "He has been getting more confident at work lately.",
+          "ptIntent": "conseguindo",
+          "enIntent": "has been getting"
         }
       ],
       "tags": [
@@ -2147,11 +2413,15 @@
       "examples": [
         {
           "pt": "Prefiro ir agora.",
-          "en": "I’d rather go now."
+          "en": "I’d rather go now.",
+          "ptIntent": "Prefiro",
+          "enIntent": "rather"
         },
         {
           "pt": "Prefiro ficar em casa.",
-          "en": "I’d rather stay home."
+          "en": "I’d rather stay home.",
+          "ptIntent": "Prefiro",
+          "enIntent": "rather"
         }
       ],
       "tags": [
@@ -2171,7 +2441,9 @@
       "examples": [
         {
           "pt": "Eu fiquei cansado.",
-          "en": "I got tired."
+          "en": "I got tired.",
+          "ptIntent": "fiquei",
+          "enIntent": "got"
         }
       ],
       "tags": [
@@ -2192,7 +2464,9 @@
       "examples": [
         {
           "pt": "Eu fico nervoso antes de reuniões.",
-          "en": "I get nervous before meetings."
+          "en": "I get nervous before meetings.",
+          "ptIntent": "fico",
+          "enIntent": "get"
         }
       ],
       "tags": [
@@ -2213,7 +2487,9 @@
       "examples": [
         {
           "pt": "Estou ficando mais confiante.",
-          "en": "I am getting more confident."
+          "en": "I am getting more confident.",
+          "ptIntent": "ficando",
+          "enIntent": "getting"
         }
       ],
       "tags": [
@@ -2234,7 +2510,9 @@
       "examples": [
         {
           "pt": "Eu vou ficar feliz.",
-          "en": "I will get happy."
+          "en": "I will get happy.",
+          "ptIntent": "vou ficar",
+          "enIntent": "will get"
         }
       ],
       "tags": [
@@ -2255,11 +2533,15 @@
       "examples": [
         {
           "pt": "Eu fiquei pensando.",
-          "en": "I kept thinking."
+          "en": "I kept thinking.",
+          "ptIntent": "fiquei",
+          "enIntent": "kept"
         },
         {
           "pt": "Eu fiquei esperando.",
-          "en": "I kept waiting."
+          "en": "I kept waiting.",
+          "ptIntent": "fiquei",
+          "enIntent": "kept"
         }
       ],
       "tags": [
@@ -2280,7 +2562,9 @@
       "examples": [
         {
           "pt": "Eu fiquei duas horas esperando.",
-          "en": "I spent two hours waiting."
+          "en": "I spent two hours waiting.",
+          "ptIntent": "fiquei",
+          "enIntent": "spent"
         }
       ],
       "tags": [
@@ -2301,11 +2585,15 @@
       "examples": [
         {
           "pt": "Eu fiquei sem bateria.",
-          "en": "I ran out of battery."
+          "en": "I ran out of battery.",
+          "ptIntent": "fiquei sem",
+          "enIntent": "ran out of"
         },
         {
           "pt": "Eu fiquei sem tempo.",
-          "en": "I ran out of time."
+          "en": "I ran out of time.",
+          "ptIntent": "fiquei sem",
+          "enIntent": "ran out of"
         }
       ],
       "tags": [
@@ -2326,7 +2614,9 @@
       "examples": [
         {
           "pt": "Eu fiquei mais confiante.",
-          "en": "I got more confident."
+          "en": "I got more confident.",
+          "ptIntent": "fiquei mais",
+          "enIntent": "got more"
         }
       ],
       "tags": [
@@ -2347,11 +2637,15 @@
       "examples": [
         {
           "pt": "Com quem você está falando?",
-          "en": "Who are you talking to?"
+          "en": "Who are you talking to?",
+          "ptIntent": "Com quem",
+          "enIntent": "are you"
         },
         {
           "pt": "Com quem você foi?",
-          "en": "Who did you go with?"
+          "en": "Who did you go with?",
+          "ptIntent": "Com quem",
+          "enIntent": "did you"
         }
       ],
       "tags": [
@@ -2372,7 +2666,9 @@
       "examples": [
         {
           "pt": "Com o que você abriu isso?",
-          "en": "What did you open this with?"
+          "en": "What did you open this with?",
+          "ptIntent": "Com o que",
+          "enIntent": "What"
         }
       ],
       "tags": [
@@ -2393,15 +2689,21 @@
       "examples": [
         {
           "pt": "Do que você tem medo?",
-          "en": "What are you afraid of?"
+          "en": "What are you afraid of?",
+          "ptIntent": "Do que",
+          "enIntent": "What"
         },
         {
           "pt": "Do que você está fugindo?",
-          "en": "What are you running from?"
+          "en": "What are you running from?",
+          "ptIntent": "Do que",
+          "enIntent": "What"
         },
         {
           "pt": "Do que você precisa?",
-          "en": "What do you need?"
+          "en": "What do you need?",
+          "ptIntent": "Do que",
+          "enIntent": "What"
         }
       ],
       "tags": [
@@ -2421,11 +2723,15 @@
       "examples": [
         {
           "pt": "Sobre o que você está pensando?",
-          "en": "What are you thinking about?"
+          "en": "What are you thinking about?",
+          "ptIntent": "Sobre o que",
+          "enIntent": "What"
         },
         {
           "pt": "Sobre o que você está falando?",
-          "en": "What are you talking about?"
+          "en": "What are you talking about?",
+          "ptIntent": "Sobre o que",
+          "enIntent": "What"
         }
       ],
       "tags": [
@@ -2446,11 +2752,15 @@
       "examples": [
         {
           "pt": "Para que isso é usado?",
-          "en": "What is this used for?"
+          "en": "What is this used for?",
+          "ptIntent": "Para que",
+          "enIntent": "used for"
         },
         {
           "pt": "Para que esta ferramenta é usada?",
-          "en": "What is this tool used for?"
+          "en": "What is this tool used for?",
+          "ptIntent": "Para que",
+          "enIntent": "used for"
         }
       ],
       "tags": [
@@ -2471,11 +2781,15 @@
       "examples": [
         {
           "pt": "Por que você comprou isso?",
-          "en": "Why did you buy this?"
+          "en": "Why did you buy this?",
+          "ptIntent": "Por que",
+          "enIntent": "Why"
         },
         {
           "pt": "Por que você fez isso?",
-          "en": "Why did you do that?"
+          "en": "Why did you do that?",
+          "ptIntent": "Por que",
+          "enIntent": "Why"
         }
       ],
       "tags": [
@@ -2496,7 +2810,9 @@
       "examples": [
         {
           "pt": "Para quem você fez isso?",
-          "en": "Who did you do this for?"
+          "en": "Who did you do this for?",
+          "ptIntent": "Para quem",
+          "enIntent": "did you"
         }
       ],
       "tags": [
@@ -2517,7 +2833,9 @@
       "examples": [
         {
           "pt": "Em que você está trabalhando?",
-          "en": "What are you working on?"
+          "en": "What are you working on?",
+          "ptIntent": "Em que",
+          "enIntent": "What"
         }
       ],
       "tags": [
@@ -2538,11 +2856,15 @@
       "examples": [
         {
           "pt": "De quem você recebeu isso?",
-          "en": "Who did you get this from?"
+          "en": "Who did you get this from?",
+          "ptIntent": "De quem",
+          "enIntent": "did you"
         },
         {
           "pt": "De quem você ouviu essa história?",
-          "en": "Who did you hear that from?"
+          "en": "Who did you hear that from?",
+          "ptIntent": "De quem",
+          "enIntent": "did you"
         }
       ],
       "tags": [
@@ -2563,11 +2885,15 @@
       "examples": [
         {
           "pt": "De onde você é?",
-          "en": "Where are you from?"
+          "en": "Where are you from?",
+          "ptIntent": "De onde",
+          "enIntent": "are you"
         },
         {
           "pt": "De onde você tirou essa informação?",
-          "en": "Where did you get this information?"
+          "en": "Where did you get this information?",
+          "ptIntent": "De onde",
+          "enIntent": "did you"
         }
       ],
       "tags": [
@@ -2588,11 +2914,15 @@
       "examples": [
         {
           "pt": "Quem comprou isso para você?",
-          "en": "Who bought you this?"
+          "en": "Who bought you this?",
+          "ptIntent": "comprou",
+          "enIntent": "bought"
         },
         {
           "pt": "Quem te contou essa história?",
-          "en": "Who told you that story?"
+          "en": "Who told you that story?",
+          "ptIntent": "Quem te",
+          "enIntent": "told"
         }
       ],
       "tags": [
@@ -2613,7 +2943,9 @@
       "examples": [
         {
           "pt": "De onde veio essa ideia?",
-          "en": "Where did this idea come from?"
+          "en": "Where did this idea come from?",
+          "ptIntent": "De onde veio",
+          "enIntent": "Where did"
         }
       ],
       "tags": [
@@ -2634,7 +2966,9 @@
       "examples": [
         {
           "pt": "Qual delas você escolhe?",
-          "en": "Which one do you choose?"
+          "en": "Which one do you choose?",
+          "ptIntent": "delas",
+          "enIntent": "Which one"
         }
       ],
       "tags": [
@@ -2655,11 +2989,15 @@
       "examples": [
         {
           "pt": "Tem como resolver este problema?",
-          "en": "Is there a way to fix this problem?"
+          "en": "Is there a way to fix this problem?",
+          "ptIntent": "Tem como",
+          "enIntent": "Is there a way"
         },
         {
           "pt": "Existe alguma chance de remarcar a reunião?",
-          "en": "Is there any chance we could reschedule the meeting?"
+          "en": "Is there any chance we could reschedule the meeting?",
+          "ptIntent": "Existe alguma chance de",
+          "enIntent": "Is there any chance"
         }
       ],
       "tags": [
@@ -2680,11 +3018,15 @@
       "examples": [
         {
           "pt": "Estou com vontade de andar de moto.",
-          "en": "I feel like riding."
+          "en": "I feel like riding.",
+          "ptIntent": "Estou com vontade de",
+          "enIntent": "I feel like"
         },
         {
           "pt": "Estou com vontade de sair.",
-          "en": "I feel like going out."
+          "en": "I feel like going out.",
+          "ptIntent": "Estou com vontade de",
+          "enIntent": "I feel like"
         }
       ],
       "tags": [
@@ -2705,11 +3047,15 @@
       "examples": [
         {
           "pt": "Estou precisando descansar.",
-          "en": "I need to get some rest."
+          "en": "I need to get some rest.",
+          "ptIntent": "Estou precisando",
+          "enIntent": "I need to"
         },
         {
           "pt": "Estou precisando sair.",
-          "en": "I need to go out."
+          "en": "I need to go out.",
+          "ptIntent": "Estou precisando",
+          "enIntent": "I need to"
         }
       ],
       "tags": [
@@ -2729,7 +3075,9 @@
       "examples": [
         {
           "pt": "Estou sentindo que preciso fazer uma pausa.",
-          "en": "I feel like I need to take a break."
+          "en": "I feel like I need to take a break.",
+          "ptIntent": "Estou sentindo que preciso",
+          "enIntent": "I feel like I need to"
         }
       ],
       "tags": [
@@ -2750,7 +3098,9 @@
       "examples": [
         {
           "pt": "Sinto que estou um pouco atrasado para a festa.",
-          "en": "I feel like I’m a bit late to the party."
+          "en": "I feel like I’m a bit late to the party.",
+          "ptIntent": "Sinto que",
+          "enIntent": "I feel like"
         }
       ],
       "tags": [
@@ -2770,11 +3120,15 @@
       "examples": [
         {
           "pt": "Eu consegui o emprego.",
-          "en": "I get the job."
+          "en": "I get the job.",
+          "ptIntent": "consegui",
+          "enIntent": "get"
         },
         {
           "pt": "Eu recebi a mensagem.",
-          "en": "I got the message."
+          "en": "I got the message.",
+          "ptIntent": "recebi",
+          "enIntent": "got"
         }
       ],
       "tags": [
@@ -2795,11 +3149,15 @@
       "examples": [
         {
           "pt": "Eu vou buscar água para você.",
-          "en": "I’ll get you some water."
+          "en": "I’ll get you some water.",
+          "ptIntent": "buscar",
+          "enIntent": "get"
         },
         {
           "pt": "Você pode pegar minha bolsa?",
-          "en": "Can you get my bag?"
+          "en": "Can you get my bag?",
+          "ptIntent": "pegar",
+          "enIntent": "get"
         }
       ],
       "tags": [
@@ -2820,11 +3178,15 @@
       "examples": [
         {
           "pt": "Estou ficando cansado.",
-          "en": "I’m getting tired."
+          "en": "I’m getting tired.",
+          "ptIntent": "ficando",
+          "enIntent": "I’m getting"
         },
         {
           "pt": "Está ficando tarde.",
-          "en": "It’s getting late."
+          "en": "It’s getting late.",
+          "ptIntent": "ficando",
+          "enIntent": "It’s getting"
         }
       ],
       "tags": [
@@ -2845,11 +3207,15 @@
       "examples": [
         {
           "pt": "Eu cheguei em casa tarde ontem.",
-          "en": "I got home late yesterday."
+          "en": "I got home late yesterday.",
+          "ptIntent": "cheguei",
+          "enIntent": "got"
         },
         {
           "pt": "Que horas você chegou lá?",
-          "en": "What time did you get there?"
+          "en": "What time did you get there?",
+          "ptIntent": "chegou",
+          "enIntent": "get"
         }
       ],
       "tags": [
@@ -2870,11 +3236,15 @@
       "examples": [
         {
           "pt": "Eu não entendo.",
-          "en": "I don’t get it."
+          "en": "I don’t get it.",
+          "ptIntent": "entendo",
+          "enIntent": "get"
         },
         {
           "pt": "Você entendeu o que eu disse?",
-          "en": "Did you get what I said?"
+          "en": "Did you get what I said?",
+          "ptIntent": "entendeu",
+          "enIntent": "get"
         }
       ],
       "tags": [
@@ -2895,11 +3265,15 @@
       "examples": [
         {
           "pt": "Ela comprou um presente para ele.",
-          "en": "She got him a gift."
+          "en": "She got him a gift.",
+          "ptIntent": "comprou",
+          "enIntent": "got"
         },
         {
           "pt": "Eu consegui uma Alexa para minha esposa.",
-          "en": "I got my wife an Alexa."
+          "en": "I got my wife an Alexa.",
+          "ptIntent": "consegui",
+          "enIntent": "got"
         }
       ],
       "tags": [
@@ -2920,7 +3294,9 @@
       "examples": [
         {
           "pt": "Eu consegui fazer ele me ajudar.",
-          "en": "I got him to help me."
+          "en": "I got him to help me.",
+          "ptIntent": "consegui fazer",
+          "enIntent": "got"
         }
       ],
       "tags": [
@@ -2941,7 +3317,9 @@
       "examples": [
         {
           "pt": "Eu obriguei ela a ajudá-los.",
-          "en": "I made her help them."
+          "en": "I made her help them.",
+          "ptIntent": "obriguei",
+          "enIntent": "made"
         }
       ],
       "tags": [
@@ -2962,7 +3340,9 @@
       "examples": [
         {
           "pt": "Eu pedi que ela os ajudasse.",
-          "en": "I had her help them."
+          "en": "I had her help them.",
+          "ptIntent": "pedi",
+          "enIntent": "had her"
         }
       ],
       "tags": [
@@ -2983,11 +3363,15 @@
       "examples": [
         {
           "pt": "Quando eu estiver em casa, eu te ligo.",
-          "en": "When I’m home, I’ll call you."
+          "en": "When I’m home, I’ll call you.",
+          "ptIntent": "estiver",
+          "enIntent": "I’m home"
         },
         {
           "pt": "Assim que o sistema estiver disponível, eu enviarei o relatório.",
-          "en": "As soon as the system is available, I’ll send the report."
+          "en": "As soon as the system is available, I’ll send the report.",
+          "ptIntent": "estiver",
+          "enIntent": "As soon as"
         }
       ],
       "tags": [
@@ -3008,7 +3392,9 @@
       "examples": [
         {
           "pt": "Eu tenho que ter paciência.",
-          "en": "I need to be patient."
+          "en": "I need to be patient.",
+          "ptIntent": "tenho que ter",
+          "enIntent": "need to be"
         }
       ],
       "tags": [
@@ -3029,7 +3415,9 @@
       "examples": [
         {
           "pt": "Tem que ter/haver uma solução.",
-          "en": "There has to be a solution."
+          "en": "There has to be a solution.",
+          "ptIntent": "que ter/haver",
+          "enIntent": "There has to be"
         }
       ],
       "tags": [
@@ -3050,7 +3438,9 @@
       "examples": [
         {
           "pt": "Eu tenho que ter dinheiro pra isso.",
-          "en": "I need to have money for that."
+          "en": "I need to have money for that.",
+          "ptIntent": "tenho que ter",
+          "enIntent": "need to have"
         }
       ],
       "tags": [
@@ -3071,7 +3461,9 @@
       "examples": [
         {
           "pt": "Eu não estou disposto a te ajudar.",
-          "en": "I’m not willing to help you."
+          "en": "I’m not willing to help you.",
+          "ptIntent": "disposto",
+          "enIntent": "willing to"
         }
       ],
       "tags": [
@@ -3091,7 +3483,9 @@
       "examples": [
         {
           "pt": "Vou aproveitar essa oportunidade.",
-          "en": "I’ll take advantage of this opportunity."
+          "en": "I’ll take advantage of this opportunity.",
+          "ptIntent": "Vou aproveitar",
+          "enIntent": "take advantage of"
         }
       ],
       "tags": [
@@ -3111,7 +3505,9 @@
       "examples": [
         {
           "pt": "Vou aproveitar essa viagem.",
-          "en": "I’m going to make the most of this trip."
+          "en": "I’m going to make the most of this trip.",
+          "ptIntent": "Vou aproveitar",
+          "enIntent": "make the most of"
         }
       ],
       "tags": [
@@ -3132,7 +3528,9 @@
       "examples": [
         {
           "pt": "Vou aproveitar este momento.",
-          "en": "I’ll enjoy this moment."
+          "en": "I’ll enjoy this moment.",
+          "ptIntent": "Vou aproveitar",
+          "enIntent": "enjoy"
         }
       ],
       "tags": [
@@ -3152,7 +3550,9 @@
       "examples": [
         {
           "pt": "Vou aproveitar este tempo para estudar inglês.",
-          "en": "I’ll use this time to study English."
+          "en": "I’ll use this time to study English.",
+          "ptIntent": "Vou aproveitar",
+          "enIntent": "use this time to"
         }
       ],
       "tags": [
@@ -3173,7 +3573,9 @@
       "examples": [
         {
           "pt": "Talvez seja melhor aceitar que algumas situações simplesmente acontecem do jeito que devem acontecer.",
-          "en": "It might be better to accept that some situations simply happen the way they are supposed to happen."
+          "en": "It might be better to accept that some situations simply happen the way they are supposed to happen.",
+          "ptIntent": "do jeito que",
+          "enIntent": "the way"
         }
       ],
       "tags": [
@@ -3194,11 +3596,15 @@
       "examples": [
         {
           "pt": "Você falou com ele por acaso?",
-          "en": "Did you talk to him by any chance?"
+          "en": "Did you talk to him by any chance?",
+          "ptIntent": "por acaso",
+          "enIntent": "by any chance"
         },
         {
           "pt": "Por acaso você conhece ela?",
-          "en": "Do you happen to know her?"
+          "en": "Do you happen to know her?",
+          "ptIntent": "Por acaso",
+          "enIntent": "Do you happen to"
         }
       ],
       "tags": [
@@ -3219,7 +3625,9 @@
       "examples": [
         {
           "pt": "Acabou que deu tudo certo.",
-          "en": "It turned out everything worked out."
+          "en": "It turned out everything worked out.",
+          "ptIntent": "Acabou que",
+          "enIntent": "out"
         }
       ],
       "tags": [
@@ -3240,7 +3648,9 @@
       "examples": [
         {
           "pt": "Que bom que você chegou cedo.",
-          "en": "I’m glad you arrived early."
+          "en": "I’m glad you arrived early.",
+          "ptIntent": "Que bom que",
+          "enIntent": "I’m glad"
         }
       ],
       "tags": [
@@ -3261,11 +3671,15 @@
       "examples": [
         {
           "pt": "Ainda bem que você achou a chave.",
-          "en": "Good thing you found the key."
+          "en": "Good thing you found the key.",
+          "ptIntent": "Ainda bem que",
+          "enIntent": "Good thing"
         },
         {
           "pt": "Ainda bem que fomos ontem.",
-          "en": "I’m glad we went yesterday."
+          "en": "I’m glad we went yesterday.",
+          "ptIntent": "Ainda bem que",
+          "enIntent": "I’m glad"
         }
       ],
       "tags": [
@@ -3286,15 +3700,21 @@
       "examples": [
         {
           "pt": "Eu não gosto de funk.",
-          "en": "I don’t like funk."
+          "en": "I don’t like funk.",
+          "ptIntent": "não gosto",
+          "enIntent": "don’t like"
         },
         {
           "pt": "Eu não suporto funk.",
-          "en": "I can’t stand funk."
+          "en": "I can’t stand funk.",
+          "ptIntent": "não",
+          "enIntent": "can’t stand"
         },
         {
           "pt": "Eu odeio funk.",
-          "en": "I hate funk."
+          "en": "I hate funk.",
+          "ptIntent": "odeio",
+          "enIntent": "hate"
         }
       ],
       "tags": [
@@ -3315,7 +3735,9 @@
       "examples": [
         {
           "pt": "Eu não aguento mais este trabalho.",
-          "en": "I can’t take this job anymore."
+          "en": "I can’t take this job anymore.",
+          "ptIntent": "não aguento mais",
+          "enIntent": "can’t take"
         }
       ],
       "tags": [
@@ -3336,11 +3758,15 @@
       "examples": [
         {
           "pt": "Eu estudei muito, mas mesmo assim fui mal na prova.",
-          "en": "I studied a lot, but I still did badly on the test."
+          "en": "I studied a lot, but I still did badly on the test.",
+          "ptIntent": "mesmo assim",
+          "enIntent": "studied"
         },
         {
           "pt": "Eu falei pra ele não sair, mas ele saiu mesmo assim.",
-          "en": "I told him not to go out, but he went out anyway."
+          "en": "I told him not to go out, but he went out anyway.",
+          "ptIntent": "mesmo assim",
+          "enIntent": "anyway"
         }
       ],
       "tags": [
@@ -3361,11 +3787,15 @@
       "examples": [
         {
           "pt": "Assim como você, eu não suporto mentiras.",
-          "en": "Just like you, I don’t put up with lies."
+          "en": "Just like you, I don’t put up with lies.",
+          "ptIntent": "Assim como",
+          "enIntent": "Just like"
         },
         {
           "pt": "Assim como vemos no esporte, a dedicação faz diferença.",
-          "en": "Just as we see in sport, dedication makes all the difference."
+          "en": "Just as we see in sport, dedication makes all the difference.",
+          "ptIntent": "Assim como",
+          "enIntent": "Just as"
         }
       ],
       "tags": [
@@ -3385,7 +3815,9 @@
       "examples": [
         {
           "pt": "Algumas pessoas pensam que a vida são flores. Mas não é bem assim.",
-          "en": "Some people think life is sunshine and rainbows. But it’s not exactly how it is."
+          "en": "Some people think life is sunshine and rainbows. But it’s not exactly how it is.",
+          "ptIntent": "não é bem assim",
+          "enIntent": "not exactly how it is"
         }
       ],
       "tags": [
@@ -3406,7 +3838,9 @@
       "examples": [
         {
           "pt": "Não é bem assim que você faz.",
-          "en": "That’s not exactly how you do it."
+          "en": "That’s not exactly how you do it.",
+          "ptIntent": "Não é bem assim que",
+          "enIntent": "That’s not exactly how"
         }
       ],
       "tags": [
@@ -3427,11 +3861,15 @@
       "examples": [
         {
           "pt": "É assim que as coisas são.",
-          "en": "That’s how things are."
+          "en": "That’s how things are.",
+          "ptIntent": "É assim que",
+          "enIntent": "That’s how"
         },
         {
           "pt": "É assim que vamos dobrar o faturamento.",
-          "en": "This is how we’re going to double our revenue this year."
+          "en": "This is how we’re going to double our revenue this year.",
+          "ptIntent": "É assim que",
+          "enIntent": "This is how"
         }
       ],
       "tags": [
@@ -3452,7 +3890,9 @@
       "examples": [
         {
           "pt": "Você acorda, trabalha, dorme, acorda e assim por diante.",
-          "en": "You wake up, work, go to bed, wake up and so on."
+          "en": "You wake up, work, go to bed, wake up and so on.",
+          "ptIntent": "e assim por diante",
+          "enIntent": "and so on"
         }
       ],
       "tags": [
@@ -3473,11 +3913,15 @@
       "examples": [
         {
           "pt": "Lembre de fechar a porta.",
-          "en": "Remember to close the door."
+          "en": "Remember to close the door.",
+          "ptIntent": "Lembre de",
+          "enIntent": "Remember to"
         },
         {
           "pt": "Lembre de enviar o relatório.",
-          "en": "Remember to send the report."
+          "en": "Remember to send the report.",
+          "ptIntent": "Lembre de",
+          "enIntent": "Remember to"
         }
       ],
       "tags": [
@@ -3498,11 +3942,15 @@
       "examples": [
         {
           "pt": "Eu lembro de ter visto isso.",
-          "en": "I remember seeing that."
+          "en": "I remember seeing that.",
+          "ptIntent": "Eu lembro de ter",
+          "enIntent": "remember"
         },
         {
           "pt": "Você lembra de ter falado isso?",
-          "en": "Do you remember saying that?"
+          "en": "Do you remember saying that?",
+          "ptIntent": "lembra de ter",
+          "enIntent": "remember"
         }
       ],
       "tags": [
@@ -3523,7 +3971,9 @@
       "examples": [
         {
           "pt": "Eu parei para fumar.",
-          "en": "I stopped to smoke."
+          "en": "I stopped to smoke.",
+          "ptIntent": "parei",
+          "enIntent": "stopped"
         }
       ],
       "tags": [
@@ -3544,7 +3994,9 @@
       "examples": [
         {
           "pt": "Eu parei de fumar.",
-          "en": "I stopped smoking."
+          "en": "I stopped smoking.",
+          "ptIntent": "parei",
+          "enIntent": "stopped"
         }
       ],
       "tags": [
@@ -3565,7 +4017,9 @@
       "examples": [
         {
           "pt": "Tente abrir a porta.",
-          "en": "Try to open the door."
+          "en": "Try to open the door.",
+          "ptIntent": "Tente",
+          "enIntent": "Try to"
         }
       ],
       "tags": [
@@ -3586,7 +4040,9 @@
       "examples": [
         {
           "pt": "Tenta abrir a porta desse jeito.",
-          "en": "Try opening the door."
+          "en": "Try opening the door.",
+          "ptIntent": "Tenta",
+          "enIntent": "Try"
         }
       ],
       "tags": [
@@ -3607,7 +4063,9 @@
       "examples": [
         {
           "pt": "Eu esqueci de pagar.",
-          "en": "I forgot to pay."
+          "en": "I forgot to pay.",
+          "ptIntent": "esqueci de",
+          "enIntent": "forgot to"
         }
       ],
       "tags": [
@@ -3628,7 +4086,9 @@
       "examples": [
         {
           "pt": "Eu esqueci que já paguei isso.",
-          "en": "I forgot paying for that."
+          "en": "I forgot paying for that.",
+          "ptIntent": "esqueci que já",
+          "enIntent": "forgot"
         }
       ],
       "tags": [
@@ -3649,7 +4109,9 @@
       "examples": [
         {
           "pt": "Tenho tido problemas por causa do trabalho.",
-          "en": "I’ve had problems because of my job."
+          "en": "I’ve had problems because of my job.",
+          "ptIntent": "causa",
+          "enIntent": "because of"
         }
       ],
       "tags": [
@@ -3670,7 +4132,9 @@
       "examples": [
         {
           "pt": "Estou feliz com o resultado.",
-          "en": "I’m happy about the result."
+          "en": "I’m happy about the result.",
+          "ptIntent": "com o",
+          "enIntent": "about"
         }
       ],
       "tags": [
@@ -3691,7 +4155,9 @@
       "examples": [
         {
           "pt": "Tenho problemas com a ferramenta.",
-          "en": "I have problems with the tool."
+          "en": "I have problems with the tool.",
+          "ptIntent": "com a",
+          "enIntent": "have problems"
         }
       ],
       "tags": [
@@ -3712,7 +4178,9 @@
       "examples": [
         {
           "pt": "Mas é possível continuar.",
-          "en": "But it is possible to continue."
+          "en": "But it is possible to continue.",
+          "ptIntent": "Mas",
+          "enIntent": "But"
         }
       ],
       "tags": [
@@ -3733,7 +4201,9 @@
       "examples": [
         {
           "pt": "Você quer café? Não, vou tomar chá em vez disso.",
-          "en": "Do you want coffee? No, I’ll have tea instead."
+          "en": "Do you want coffee? No, I’ll have tea instead.",
+          "ptIntent": "em vez disso",
+          "enIntent": "instead"
         }
       ],
       "tags": [
@@ -3753,7 +4223,9 @@
       "examples": [
         {
           "pt": "Vamos caminhar em vez de dirigir.",
-          "en": "Let’s walk rather than drive."
+          "en": "Let’s walk rather than drive.",
+          "ptIntent": "em vez de",
+          "enIntent": "rather than"
         }
       ],
       "tags": [
@@ -3773,7 +4245,9 @@
       "examples": [
         {
           "pt": "Não é sobre dinheiro, mas sim liberdade.",
-          "en": "It’s not about money, but rather freedom."
+          "en": "It’s not about money, but rather freedom.",
+          "ptIntent": "mas sim",
+          "enIntent": "but rather"
         }
       ],
       "tags": [
@@ -3794,7 +4268,9 @@
       "examples": [
         {
           "pt": "Isso não é uma fraqueza. Pelo contrário, é uma força.",
-          "en": "This is not a weakness. On the contrary, it’s a strength."
+          "en": "This is not a weakness. On the contrary, it’s a strength.",
+          "ptIntent": "Pelo contrário",
+          "enIntent": "On the contrary"
         }
       ],
       "tags": [
@@ -3814,11 +4290,15 @@
       "examples": [
         {
           "pt": "Eu amo inglês. Na verdade, estudo todos os dias.",
-          "en": "I love English. Actually, I study every day."
+          "en": "I love English. Actually, I study every day.",
+          "ptIntent": "Na verdade",
+          "enIntent": "Actually"
         },
         {
           "pt": "Eu amo aprender inglês. De fato, estudo todos os dias.",
-          "en": "I love learning English. In fact, I study every day."
+          "en": "I love learning English. In fact, I study every day.",
+          "ptIntent": "De fato",
+          "enIntent": "In fact"
         }
       ],
       "tags": [
@@ -3839,11 +4319,15 @@
       "examples": [
         {
           "pt": "Se eu morasse mais perto do trabalho, economizaria tempo.",
-          "en": "If I lived closer to my job, I would save a lot of time."
+          "en": "If I lived closer to my job, I would save a lot of time.",
+          "ptIntent": "Se eu",
+          "enIntent": "If"
         },
         {
           "pt": "Se eu soubesse fazer isso, poderia ajudar agora.",
-          "en": "If I knew how to do this, I could help you right now."
+          "en": "If I knew how to do this, I could help you right now.",
+          "ptIntent": "Se eu",
+          "enIntent": "If"
         }
       ],
       "tags": [
@@ -3864,11 +4348,15 @@
       "examples": [
         {
           "pt": "Se eu tivesse morado mais perto, teria economizado tempo.",
-          "en": "If I had lived closer to my job, I would have saved a lot of time."
+          "en": "If I had lived closer to my job, I would have saved a lot of time.",
+          "ptIntent": "Se eu tivesse",
+          "enIntent": "If"
         },
         {
           "pt": "Se eu tivesse sabido fazer isso, poderia ter ajudado.",
-          "en": "If I had known how to do this, I could have helped you earlier."
+          "en": "If I had known how to do this, I could have helped you earlier.",
+          "ptIntent": "Se eu tivesse",
+          "enIntent": "If"
         }
       ],
       "tags": [
@@ -3889,7 +4377,9 @@
       "examples": [
         {
           "pt": "Se terminarmos esta fase hoje, avançaremos com o deploy amanhã.",
-          "en": "If we finish this phase today, we will move forward with the deployment tomorrow."
+          "en": "If we finish this phase today, we will move forward with the deployment tomorrow.",
+          "ptIntent": "terminarmos",
+          "enIntent": "If"
         }
       ],
       "tags": [
@@ -3910,11 +4400,15 @@
       "examples": [
         {
           "pt": "Se você aquece gelo, ele derrete.",
-          "en": "If you heat ice, it melts."
+          "en": "If you heat ice, it melts.",
+          "ptIntent": "aquece",
+          "enIntent": "If"
         },
         {
           "pt": "Se o build falha, o pipeline para.",
-          "en": "If the build fails, the pipeline stops."
+          "en": "If the build fails, the pipeline stops.",
+          "ptIntent": "build",
+          "enIntent": "If"
         }
       ],
       "tags": [
@@ -3935,7 +4429,9 @@
       "examples": [
         {
           "pt": "Foi incrível.",
-          "en": "It was amazing."
+          "en": "It was amazing.",
+          "ptIntent": "Foi",
+          "enIntent": "It was"
         }
       ],
       "tags": [
@@ -3956,7 +4452,9 @@
       "examples": [
         {
           "pt": "Foi isso que aconteceu.",
-          "en": "That’s what happened."
+          "en": "That’s what happened.",
+          "ptIntent": "Foi isso que",
+          "enIntent": "That’s what"
         }
       ],
       "tags": [
@@ -3976,7 +4474,9 @@
       "examples": [
         {
           "pt": "Foi sem querer.",
-          "en": "It was an accident."
+          "en": "It was an accident.",
+          "ptIntent": "Foi sem querer",
+          "enIntent": "It was an accident"
         }
       ],
       "tags": [
@@ -3997,7 +4497,9 @@
       "examples": [
         {
           "pt": "Foi ele que fez isso.",
-          "en": "It was him who did it."
+          "en": "It was him who did it.",
+          "ptIntent": "Foi ele",
+          "enIntent": "It was him"
         }
       ],
       "tags": [
@@ -4018,7 +4520,9 @@
       "examples": [
         {
           "pt": "Foi então que tudo mudou.",
-          "en": "That’s when everything changed."
+          "en": "That’s when everything changed.",
+          "ptIntent": "Foi então que",
+          "enIntent": "That’s when"
         }
       ],
       "tags": [
@@ -4039,7 +4543,9 @@
       "examples": [
         {
           "pt": "Foi há pouco tempo.",
-          "en": "It was not long ago."
+          "en": "It was not long ago.",
+          "ptIntent": "Foi há pouco tempo",
+          "enIntent": "It was not long ago"
         }
       ],
       "tags": [
@@ -4060,7 +4566,9 @@
       "examples": [
         {
           "pt": "Quanto tempo leva para o YouTube aprovar um canal?",
-          "en": "How long does it take for YouTube to approve a channel?"
+          "en": "How long does it take for YouTube to approve a channel?",
+          "ptIntent": "Quanto",
+          "enIntent": "How"
         }
       ],
       "tags": [
@@ -4081,7 +4589,9 @@
       "examples": [
         {
           "pt": "Por quanto tempo você vai ficar aqui?",
-          "en": "How long are you staying here?"
+          "en": "How long are you staying here?",
+          "ptIntent": "Por quanto tempo",
+          "enIntent": "How long"
         }
       ],
       "tags": [
@@ -4102,7 +4612,9 @@
       "examples": [
         {
           "pt": "Por quanto tempo eu vou ter que esperar?",
-          "en": "How long will I have to wait?"
+          "en": "How long will I have to wait?",
+          "ptIntent": "Por quanto tempo",
+          "enIntent": "How long will"
         }
       ],
       "tags": [
@@ -4124,7 +4636,9 @@
       "examples": [
         {
           "pt": "Por quanto tempo você vai ficar no Brasil?",
-          "en": "How long are you going to stay in Brazil?"
+          "en": "How long are you going to stay in Brazil?",
+          "ptIntent": "Por quanto tempo",
+          "enIntent": "How long"
         }
       ],
       "tags": [
@@ -4146,7 +4660,9 @@
       "examples": [
         {
           "pt": "Até quando isso vai durar?",
-          "en": "How long is this going to last?"
+          "en": "How long is this going to last?",
+          "ptIntent": "Até quando isso vai",
+          "enIntent": "How long is this going to"
         }
       ],
       "tags": [
@@ -4167,7 +4683,9 @@
       "examples": [
         {
           "pt": "Até quando você vai continuar reclamando?",
-          "en": "How long are you going to keep complaining?"
+          "en": "How long are you going to keep complaining?",
+          "ptIntent": "Até quando",
+          "enIntent": "going to keep"
         }
       ],
       "tags": [
@@ -4189,15 +4707,21 @@
       "examples": [
         {
           "pt": "Se você fizer...",
-          "en": "If you do..."
+          "en": "If you do...",
+          "ptIntent": "Se você fizer",
+          "enIntent": "If"
         },
         {
           "pt": "Se você puder...",
-          "en": "If you can..."
+          "en": "If you can...",
+          "ptIntent": "Se você",
+          "enIntent": "If"
         },
         {
           "pt": "Se você souber...",
-          "en": "If you know..."
+          "en": "If you know...",
+          "ptIntent": "Se você",
+          "enIntent": "If"
         }
       ],
       "tags": [
@@ -4218,7 +4742,9 @@
       "examples": [
         {
           "pt": "Não faço ideia do que ele quer.",
-          "en": "I have no idea what he wants."
+          "en": "I have no idea what he wants.",
+          "ptIntent": "Não faço ideia do que",
+          "enIntent": "I have no idea what"
         }
       ],
       "tags": [
@@ -4239,7 +4765,9 @@
       "examples": [
         {
           "pt": "Não faço ideia de onde ela mora.",
-          "en": "I have no idea where she lives."
+          "en": "I have no idea where she lives.",
+          "ptIntent": "Não faço ideia de onde",
+          "enIntent": "I have no idea where"
         }
       ],
       "tags": [
@@ -4260,7 +4788,9 @@
       "examples": [
         {
           "pt": "Não faço ideia de quando eles vão chegar.",
-          "en": "I have no idea when they’ll arrive."
+          "en": "I have no idea when they’ll arrive.",
+          "ptIntent": "Não faço ideia de quando",
+          "enIntent": "I have no idea when"
         }
       ],
       "tags": [
@@ -4281,7 +4811,9 @@
       "examples": [
         {
           "pt": "Não faço ideia de por que ele fez isso.",
-          "en": "I have no idea why he did that."
+          "en": "I have no idea why he did that.",
+          "ptIntent": "Não faço ideia de por que",
+          "enIntent": "I have no idea why"
         }
       ],
       "tags": [
@@ -4302,7 +4834,9 @@
       "examples": [
         {
           "pt": "Não faço ideia de como isso funciona.",
-          "en": "I have no idea how this works."
+          "en": "I have no idea how this works.",
+          "ptIntent": "Não faço ideia de como",
+          "enIntent": "I have no idea how"
         }
       ],
       "tags": [
@@ -4323,7 +4857,9 @@
       "examples": [
         {
           "pt": "Não faço ideia de quem me ligou.",
-          "en": "I have no idea who called me."
+          "en": "I have no idea who called me.",
+          "ptIntent": "Não faço ideia de quem",
+          "enIntent": "I have no idea who"
         }
       ],
       "tags": [
@@ -4344,7 +4880,9 @@
       "examples": [
         {
           "pt": "Não faço ideia de qual eu deveria escolher.",
-          "en": "I have no idea which one I should choose."
+          "en": "I have no idea which one I should choose.",
+          "ptIntent": "Não faço ideia de qual",
+          "enIntent": "I have no idea which"
         }
       ],
       "tags": [
@@ -4365,11 +4903,15 @@
       "examples": [
         {
           "pt": "Não faço ideia de quanto custa.",
-          "en": "I have no idea how much it costs."
+          "en": "I have no idea how much it costs.",
+          "ptIntent": "Não faço ideia de quanto",
+          "enIntent": "I have no idea how much"
         },
         {
           "pt": "Não faço ideia de quantas pessoas vêm.",
-          "en": "I have no idea how many people are coming."
+          "en": "I have no idea how many people are coming.",
+          "ptIntent": "Não faço ideia de quantas",
+          "enIntent": "I have no idea how"
         }
       ],
       "tags": [
@@ -4390,7 +4932,9 @@
       "examples": [
         {
           "pt": "Não faço ideia de quanto tempo vai levar.",
-          "en": "I have no idea how long it will take."
+          "en": "I have no idea how long it will take.",
+          "ptIntent": "Não faço ideia de",
+          "enIntent": "I have no idea how long"
         }
       ],
       "tags": [
@@ -4411,7 +4955,9 @@
       "examples": [
         {
           "pt": "Ele acabou sendo um ótimo chefe.",
-          "en": "He turned out to be a great boss."
+          "en": "He turned out to be a great boss.",
+          "ptIntent": "acabou sendo",
+          "enIntent": "out to be"
         }
       ],
       "tags": [
@@ -4431,7 +4977,9 @@
       "examples": [
         {
           "pt": "O bolo acabou ficando ótimo.",
-          "en": "The cake turned out great."
+          "en": "The cake turned out great.",
+          "ptIntent": "acabou ficando",
+          "enIntent": "out"
         }
       ],
       "tags": [
@@ -4451,7 +4999,9 @@
       "examples": [
         {
           "pt": "Acontece que ele estava certo.",
-          "en": "It turns out that he was right."
+          "en": "It turns out that he was right.",
+          "ptIntent": "Acontece que",
+          "enIntent": "It turns out that"
         }
       ],
       "tags": [
@@ -4472,7 +5022,9 @@
       "examples": [
         {
           "pt": "Queria que você pudesse ver isso.",
-          "en": "I wish you could see this."
+          "en": "I wish you could see this.",
+          "ptIntent": "Queria que você pudesse",
+          "enIntent": "I wish you could"
         }
       ],
       "tags": [
@@ -4493,15 +5045,21 @@
       "examples": [
         {
           "pt": "Eu não sei o que fazer.",
-          "en": "I don’t know what to do."
+          "en": "I don’t know what to do.",
+          "ptIntent": "Eu não sei",
+          "enIntent": "I don’t know"
         },
         {
           "pt": "Eu não sei onde ir.",
-          "en": "I don’t know where to go."
+          "en": "I don’t know where to go.",
+          "ptIntent": "Eu não sei",
+          "enIntent": "I don’t know"
         },
         {
           "pt": "Eu não sei quem perguntar.",
-          "en": "I don’t know who to ask."
+          "en": "I don’t know who to ask.",
+          "ptIntent": "Eu não sei",
+          "enIntent": "I don’t know"
         }
       ],
       "tags": [
@@ -4522,11 +5080,15 @@
       "examples": [
         {
           "pt": "Eu não sei o que ele quer.",
-          "en": "I don’t know what he wants."
+          "en": "I don’t know what he wants.",
+          "ptIntent": "Eu não sei",
+          "enIntent": "I don’t know"
         },
         {
           "pt": "Eu sei como funciona.",
-          "en": "I know how it works."
+          "en": "I know how it works.",
+          "ptIntent": "Eu sei",
+          "enIntent": "I know"
         }
       ],
       "tags": [
@@ -4547,7 +5109,9 @@
       "examples": [
         {
           "pt": "Meu chefe disse para eu manter a calma.",
-          "en": "My boss told me to keep calm."
+          "en": "My boss told me to keep calm.",
+          "ptIntent": "disse para eu",
+          "enIntent": "told me to"
         }
       ],
       "tags": [
@@ -4568,7 +5132,9 @@
       "examples": [
         {
           "pt": "Meu chefe me lembrou que há coisas que não podemos controlar.",
-          "en": "My boss reminded me that there are things we can’t control."
+          "en": "My boss reminded me that there are things we can’t control.",
+          "ptIntent": "me lembrou que",
+          "enIntent": "reminded me that"
         }
       ],
       "tags": [
@@ -4589,11 +5155,15 @@
       "examples": [
         {
           "pt": "Como você está se adaptando ao novo trabalho?",
-          "en": "How are you adapting to your new job?"
+          "en": "How are you adapting to your new job?",
+          "ptIntent": "Como você está",
+          "enIntent": "How are you"
         },
         {
           "pt": "Como você está lidando com a pressão?",
-          "en": "How are you dealing with the pressure?"
+          "en": "How are you dealing with the pressure?",
+          "ptIntent": "Como você está",
+          "enIntent": "How are you"
         }
       ],
       "tags": [
@@ -4614,11 +5184,15 @@
       "examples": [
         {
           "pt": "Quanto mais eu pratico, melhor eu fico.",
-          "en": "The more I practice, the better I get."
+          "en": "The more I practice, the better I get.",
+          "ptIntent": "Quanto mais",
+          "enIntent": "The more"
         },
         {
           "pt": "Quanto mais eu falo inglês, mais confiante fico.",
-          "en": "The more I speak English, the more confident I become."
+          "en": "The more I speak English, the more confident I become.",
+          "ptIntent": "Quanto mais",
+          "enIntent": "The more"
         }
       ],
       "tags": [
@@ -4639,15 +5213,21 @@
       "examples": [
         {
           "pt": "Bem...",
-          "en": "Well..."
+          "en": "Well...",
+          "ptIntent": "Bem",
+          "enIntent": "Well"
         },
         {
           "pt": "Sabe...",
-          "en": "You know..."
+          "en": "You know...",
+          "ptIntent": "Sabe",
+          "enIntent": "You know"
         },
         {
           "pt": "Deixa eu pensar.",
-          "en": "Let me think."
+          "en": "Let me think.",
+          "ptIntent": "pensar",
+          "enIntent": "Let me think"
         }
       ],
       "tags": [
@@ -4668,15 +5248,21 @@
       "examples": [
         {
           "pt": "Primeiro de tudo.",
-          "en": "First of all."
+          "en": "First of all.",
+          "ptIntent": "Primeiro",
+          "enIntent": "First of all"
         },
         {
           "pt": "O ponto principal é...",
-          "en": "The main point is..."
+          "en": "The main point is...",
+          "ptIntent": "ponto",
+          "enIntent": "The main point is"
         },
         {
           "pt": "Por outro lado.",
-          "en": "On the other hand."
+          "en": "On the other hand.",
+          "ptIntent": "outro",
+          "enIntent": "On the other hand"
         }
       ],
       "tags": [
@@ -4697,15 +5283,21 @@
       "examples": [
         {
           "pt": "Eu acho.",
-          "en": "I guess."
+          "en": "I guess.",
+          "ptIntent": "acho",
+          "enIntent": "I guess"
         },
         {
           "pt": "Meio.",
-          "en": "Kind of."
+          "en": "Kind of.",
+          "ptIntent": "Meio",
+          "enIntent": "Kind of"
         },
         {
           "pt": "Eu não tenho tanta certeza.",
-          "en": "I’m not so sure."
+          "en": "I’m not so sure.",
+          "ptIntent": "não tenho",
+          "enIntent": "I’m not so sure"
         }
       ],
       "tags": [
@@ -4726,15 +5318,21 @@
       "examples": [
         {
           "pt": "Quero dizer...",
-          "en": "I mean..."
+          "en": "I mean...",
+          "ptIntent": "Quero",
+          "enIntent": "I mean"
         },
         {
           "pt": "O que eu quero dizer é...",
-          "en": "What I mean is..."
+          "en": "What I mean is...",
+          "ptIntent": "quero",
+          "enIntent": "What I mean is"
         },
         {
           "pt": "Em outras palavras...",
-          "en": "In other words..."
+          "en": "In other words...",
+          "ptIntent": "outras",
+          "enIntent": "In other words"
         }
       ],
       "tags": [
@@ -4755,15 +5353,21 @@
       "examples": [
         {
           "pt": "Honestamente.",
-          "en": "Honestly."
+          "en": "Honestly.",
+          "ptIntent": "Honestamente",
+          "enIntent": "Honestly"
         },
         {
           "pt": "Para ser honesto.",
-          "en": "To be honest."
+          "en": "To be honest.",
+          "ptIntent": "ser",
+          "enIntent": "To be honest"
         },
         {
           "pt": "A verdade é que...",
-          "en": "The truth is..."
+          "en": "The truth is...",
+          "ptIntent": "verdade",
+          "enIntent": "The truth is"
         }
       ],
       "tags": [
@@ -4784,15 +5388,21 @@
       "examples": [
         {
           "pt": "Eu estava me perguntando se...",
-          "en": "I was wondering if..."
+          "en": "I was wondering if...",
+          "ptIntent": "estava me",
+          "enIntent": "I was wondering if"
         },
         {
           "pt": "Você se importaria...?",
-          "en": "Would you mind...?"
+          "en": "Would you mind...?",
+          "ptIntent": "importaria",
+          "enIntent": "Would you mind"
         },
         {
           "pt": "Talvez seja melhor...",
-          "en": "It might be better..."
+          "en": "It might be better...",
+          "ptIntent": "Talvez seja",
+          "enIntent": "It might be better"
         }
       ],
       "tags": [
@@ -4813,15 +5423,21 @@
       "examples": [
         {
           "pt": "Você entende o que eu quero dizer.",
-          "en": "You know what I mean."
+          "en": "You know what I mean.",
+          "ptIntent": "entende",
+          "enIntent": "You know what I mean"
         },
         {
           "pt": "Pra ser justo.",
-          "en": "To be fair."
+          "en": "To be fair.",
+          "ptIntent": "Pra",
+          "enIntent": "To be fair"
         },
         {
           "pt": "O ponto é que...",
-          "en": "The point is..."
+          "en": "The point is...",
+          "ptIntent": "ponto",
+          "enIntent": "The point is"
         }
       ],
       "tags": [
@@ -4842,15 +5458,21 @@
       "examples": [
         {
           "pt": "No começo.",
-          "en": "At first."
+          "en": "At first.",
+          "ptIntent": "começo",
+          "enIntent": "At first"
         },
         {
           "pt": "Então.",
-          "en": "Then."
+          "en": "Then.",
+          "ptIntent": "Então",
+          "enIntent": "Then"
         },
         {
           "pt": "De repente.",
-          "en": "All of a sudden."
+          "en": "All of a sudden.",
+          "ptIntent": "repente",
+          "enIntent": "All of a sudden"
         }
       ],
       "tags": [
@@ -4871,15 +5493,21 @@
       "examples": [
         {
           "pt": "Da minha perspectiva.",
-          "en": "From my perspective."
+          "en": "From my perspective.",
+          "ptIntent": "perspectiva",
+          "enIntent": "From my perspective"
         },
         {
           "pt": "Pelo que eu sei.",
-          "en": "As far as I know."
+          "en": "As far as I know.",
+          "ptIntent": "Pelo",
+          "enIntent": "As far as I know"
         },
         {
           "pt": "Parece que...",
-          "en": "It seems that..."
+          "en": "It seems that...",
+          "ptIntent": "Parece",
+          "enIntent": "It seems that"
         }
       ],
       "tags": [
@@ -4900,15 +5528,21 @@
       "examples": [
         {
           "pt": "Ele me contou que...",
-          "en": "He told me that..."
+          "en": "He told me that...",
+          "ptIntent": "me",
+          "enIntent": "He told me that"
         },
         {
           "pt": "Ela disse que ela ia...",
-          "en": "She said she would..."
+          "en": "She said she would...",
+          "ptIntent": "disse",
+          "enIntent": "She said she would"
         },
         {
           "pt": "Ela perguntou se...",
-          "en": "She asked if..."
+          "en": "She asked if...",
+          "ptIntent": "perguntou",
+          "enIntent": "She asked if"
         }
       ],
       "tags": [
@@ -4928,11 +5562,15 @@
       "examples": [
         {
           "pt": "Ele ficou tipo...",
-          "en": "He was like..."
+          "en": "He was like...",
+          "ptIntent": "ficou",
+          "enIntent": "He was like"
         },
         {
           "pt": "Ela disse...",
-          "en": "She goes..."
+          "en": "She goes...",
+          "ptIntent": "disse",
+          "enIntent": "She goes"
         }
       ],
       "tags": [
@@ -4953,15 +5591,21 @@
       "examples": [
         {
           "pt": "Isso é bem interessante.",
-          "en": "That’s quite interesting."
+          "en": "That’s quite interesting.",
+          "ptIntent": "bem",
+          "enIntent": "That’s quite interesting"
         },
         {
           "pt": "Isso faz sentido.",
-          "en": "That makes sense."
+          "en": "That makes sense.",
+          "ptIntent": "faz",
+          "enIntent": "That makes sense"
         },
         {
           "pt": "Eu entendo o que você disse.",
-          "en": "I see what you mean."
+          "en": "I see what you mean.",
+          "ptIntent": "entendo",
+          "enIntent": "I see what you mean"
         }
       ],
       "tags": [
@@ -4982,15 +5626,21 @@
       "examples": [
         {
           "pt": "O problema principal é que...",
-          "en": "The main issue here is..."
+          "en": "The main issue here is...",
+          "ptIntent": "problema",
+          "enIntent": "The main issue here is"
         },
         {
           "pt": "O que realmente importa é...",
-          "en": "What really matters is (that)..."
+          "en": "What really matters is (that)...",
+          "ptIntent": "realmente",
+          "enIntent": "What really matters is"
         },
         {
           "pt": "De uma perspectiva mais ampla...",
-          "en": "From a broader perspective..."
+          "en": "From a broader perspective...",
+          "ptIntent": "perspectiva",
+          "enIntent": "From a broader perspective"
         }
       ],
       "tags": [
@@ -5011,11 +5661,15 @@
       "examples": [
         {
           "pt": "Já estou aqui, então vou aproveitar e estudar um pouco.",
-          "en": "I’m already here, so I might as well study for a while."
+          "en": "I’m already here, so I might as well study for a while.",
+          "ptIntent": "vou aproveitar",
+          "enIntent": "I might as well"
         },
         {
           "pt": "Está chovendo, então vou aproveitar e ficar em casa.",
-          "en": "It’s raining, so I might as well stay home and watch a movie."
+          "en": "It’s raining, so I might as well stay home and watch a movie.",
+          "ptIntent": "vou aproveitar",
+          "enIntent": "I might as well"
         }
       ],
       "tags": [
@@ -5036,11 +5690,15 @@
       "examples": [
         {
           "pt": "Não adianta se preocupar com coisas que você não controla.",
-          "en": "There’s no point in worrying about things you can’t control."
+          "en": "There’s no point in worrying about things you can’t control.",
+          "ptIntent": "Não adianta",
+          "enIntent": "There’s no point in"
         },
         {
           "pt": "Não adianta discutir com ele.",
-          "en": "There’s no point in arguing with him."
+          "en": "There’s no point in arguing with him.",
+          "ptIntent": "Não adianta",
+          "enIntent": "There’s no point in"
         }
       ],
       "tags": [
@@ -5061,11 +5719,15 @@
       "examples": [
         {
           "pt": "Não vale a pena se estressar com coisas pequenas.",
-          "en": "It’s not worth stressing about small things."
+          "en": "It’s not worth stressing about small things.",
+          "ptIntent": "Não vale a pena",
+          "enIntent": "It’s not worth"
         },
         {
           "pt": "Não vale a pena comprar ferramentas baratas.",
-          "en": "It’s not worth buying cheap tools."
+          "en": "It’s not worth buying cheap tools.",
+          "ptIntent": "Não vale a pena",
+          "enIntent": "It’s not worth"
         }
       ],
       "tags": [
@@ -5086,7 +5748,9 @@
       "examples": [
         {
           "pt": "Mesmo cansado, decidi ir à academia.",
-          "en": "Even though I was tired, I decided to go to the gym."
+          "en": "Even though I was tired, I decided to go to the gym.",
+          "ptIntent": "Mesmo",
+          "enIntent": "Even though"
         }
       ],
       "tags": [
@@ -5107,7 +5771,9 @@
       "examples": [
         {
           "pt": "Você pode pegar minha moto desde que tenha cuidado.",
-          "en": "You can borrow my motorcycle as long as you are careful."
+          "en": "You can borrow my motorcycle as long as you are careful.",
+          "ptIntent": "desde que",
+          "enIntent": "as long as"
         }
       ],
       "tags": [
@@ -5127,7 +5793,9 @@
       "examples": [
         {
           "pt": "Você pode entrar no time desde que siga as regras.",
-          "en": "You can join the team provided that you follow the rules."
+          "en": "You can join the team provided that you follow the rules.",
+          "ptIntent": "desde que",
+          "enIntent": "provided that"
         }
       ],
       "tags": [
@@ -5148,7 +5816,9 @@
       "examples": [
         {
           "pt": "Você deveria sair agora; caso contrário, ficará preso no trânsito.",
-          "en": "You should leave now; otherwise, you’ll get stuck in traffic."
+          "en": "You should leave now; otherwise, you’ll get stuck in traffic.",
+          "ptIntent": "caso contrário",
+          "enIntent": "otherwise"
         }
       ],
       "tags": [
@@ -5169,7 +5839,9 @@
       "examples": [
         {
           "pt": "Eu vou preparar o relatório. Enquanto isso, você pode revisar os dados.",
-          "en": "I’ll prepare the report. Meanwhile, you can review the data."
+          "en": "I’ll prepare the report. Meanwhile, you can review the data.",
+          "ptIntent": "Enquanto isso",
+          "enIntent": "Meanwhile"
         }
       ],
       "tags": [
@@ -5190,7 +5862,9 @@
       "examples": [
         {
           "pt": "Aparentemente, a reunião foi cancelada esta manhã.",
-          "en": "Apparently, the meeting was canceled this morning."
+          "en": "Apparently, the meeting was canceled this morning.",
+          "ptIntent": "Aparentemente",
+          "enIntent": "Apparently"
         }
       ],
       "tags": [
@@ -5211,7 +5885,9 @@
       "examples": [
         {
           "pt": "Supostamente, este restaurante tem a melhor pizza da cidade.",
-          "en": "Supposedly, this restaurant has the best pizza in the city."
+          "en": "Supposedly, this restaurant has the best pizza in the city.",
+          "ptIntent": "Supostamente",
+          "enIntent": "Supposedly"
         }
       ],
       "tags": [
@@ -5232,7 +5908,9 @@
       "examples": [
         {
           "pt": "Ironicamente, o carro do mecânico quebrou a caminho do trabalho.",
-          "en": "Ironically, the mechanic’s car broke down on the way to work."
+          "en": "Ironically, the mechanic’s car broke down on the way to work.",
+          "ptIntent": "Ironicamente",
+          "enIntent": "Ironically"
         }
       ],
       "tags": [
@@ -5253,7 +5931,9 @@
       "examples": [
         {
           "pt": "Curiosamente, muitas pessoas aprendem idiomas mais rápido por meio de conversação.",
-          "en": "Interestingly, many people learn languages faster through conversation."
+          "en": "Interestingly, many people learn languages faster through conversation.",
+          "ptIntent": "Curiosamente",
+          "enIntent": "Interestingly"
         }
       ],
       "tags": [
@@ -5274,7 +5954,9 @@
       "examples": [
         {
           "pt": "Por um lado, trabalhar de casa é conveniente.",
-          "en": "On the one hand, working from home is convenient."
+          "en": "On the one hand, working from home is convenient.",
+          "ptIntent": "Por um lado",
+          "enIntent": "On the one hand"
         }
       ],
       "tags": [
@@ -5295,7 +5977,9 @@
       "examples": [
         {
           "pt": "Em contraste, trabalhar no escritório permite comunicação mais direta.",
-          "en": "In contrast, working in the office allows more direct communication."
+          "en": "In contrast, working in the office allows more direct communication.",
+          "ptIntent": "Em contraste",
+          "enIntent": "In contrast"
         }
       ],
       "tags": [
@@ -5316,7 +6000,9 @@
       "examples": [
         {
           "pt": "Em outras palavras, precisamos simplificar o processo.",
-          "en": "In other words, we need to simplify the process."
+          "en": "In other words, we need to simplify the process.",
+          "ptIntent": "Em outras palavras",
+          "enIntent": "In other words"
         }
       ],
       "tags": [
@@ -5336,7 +6022,9 @@
       "examples": [
         {
           "pt": "Dito de outra forma, o problema não é a ferramenta, mas como a usamos.",
-          "en": "To put it differently, the problem is not the tool but how we use it."
+          "en": "To put it differently, the problem is not the tool but how we use it.",
+          "ptIntent": "Dito de outra forma",
+          "enIntent": "To put it differently"
         }
       ],
       "tags": [
@@ -5357,7 +6045,9 @@
       "examples": [
         {
           "pt": "O ponto principal é que a inteligência artificial está mudando a forma como trabalhamos.",
-          "en": "The key takeaway is that artificial intelligence is changing the way we work."
+          "en": "The key takeaway is that artificial intelligence is changing the way we work.",
+          "ptIntent": "O ponto principal",
+          "enIntent": "The key takeaway is that"
         }
       ],
       "tags": [
@@ -5378,7 +6068,9 @@
       "examples": [
         {
           "pt": "Na prática, isso significa que precisamos adaptar nossos processos.",
-          "en": "What this means in practice is that we need to adapt our processes."
+          "en": "What this means in practice is that we need to adapt our processes.",
+          "ptIntent": "Na prática, isso significa que",
+          "enIntent": "What this means in practice is that"
         }
       ],
       "tags": [
@@ -5399,11 +6091,15 @@
       "examples": [
         {
           "pt": "Aprender inglês foi um ponto de virada na minha vida.",
-          "en": "Learning English was a turning point in my life."
+          "en": "Learning English was a turning point in my life.",
+          "ptIntent": "minha vida",
+          "enIntent": "was a turning point"
         },
         {
           "pt": "Mudar para uma nova cidade foi um ponto de virada na minha carreira.",
-          "en": "Moving to a new city was a turning point in my career."
+          "en": "Moving to a new city was a turning point in my career.",
+          "ptIntent": "Mudar",
+          "enIntent": "was a turning point"
         }
       ],
       "tags": [
@@ -5424,11 +6120,15 @@
       "examples": [
         {
           "pt": "Trabalhar naquela empresa abriu muitas portas.",
-          "en": "Working in that company opened many doors."
+          "en": "Working in that company opened many doors.",
+          "ptIntent": "Trabalhar",
+          "enIntent": "opened"
         },
         {
           "pt": "Networking abriu portas que eu nem imaginava.",
-          "en": "Networking opened doors I didn’t even imagine."
+          "en": "Networking opened doors I didn’t even imagine.",
+          "ptIntent": "Networking",
+          "enIntent": "opened doors"
         }
       ],
       "tags": [
@@ -5449,7 +6149,9 @@
       "examples": [
         {
           "pt": "É meio estranho ver esse lugar vazio.",
-          "en": "It’s kind of weird to see this place empty."
+          "en": "It’s kind of weird to see this place empty.",
+          "ptIntent": "meio estranho",
+          "enIntent": "kind of weird"
         }
       ],
       "tags": [
@@ -5470,7 +6172,9 @@
       "examples": [
         {
           "pt": "Foi basicamente isso que aconteceu.",
-          "en": "That’s pretty much what happened."
+          "en": "That’s pretty much what happened.",
+          "ptIntent": "basicamente",
+          "enIntent": "pretty much"
         }
       ],
       "tags": [
@@ -5491,11 +6195,15 @@
       "examples": [
         {
           "pt": "Eu acho...",
-          "en": "I guess..."
+          "en": "I guess...",
+          "ptIntent": "acho",
+          "enIntent": "I guess"
         },
         {
           "pt": "Eu acredito...",
-          "en": "I believe..."
+          "en": "I believe...",
+          "ptIntent": "acredito",
+          "enIntent": "I believe"
         }
       ],
       "tags": [
@@ -5515,15 +6223,21 @@
       "examples": [
         {
           "pt": "Faz sentido.",
-          "en": "Makes sense."
+          "en": "Makes sense.",
+          "ptIntent": "Faz",
+          "enIntent": "Makes sense"
         },
         {
           "pt": "Isso explica.",
-          "en": "That explains it."
+          "en": "That explains it.",
+          "ptIntent": "explica",
+          "enIntent": "That explains it"
         },
         {
           "pt": "Não é à toa que você está cansado; você passou o dia todo trabalhando.",
-          "en": "No wonder you're tired; you've been working all day."
+          "en": "No wonder you're tired; you've been working all day.",
+          "ptIntent": "Não é",
+          "enIntent": "No wonder"
         }
       ],
       "tags": [
@@ -5549,15 +6263,21 @@
       "examples": [
         {
           "pt": "Não é à toa que você está cansado; você passou o dia todo trabalhando.",
-          "en": "No wonder you're tired; you've been working all day."
+          "en": "No wonder you're tired; you've been working all day.",
+          "ptIntent": "Não é à toa que",
+          "enIntent": "No wonder"
         },
         {
           "pt": "Não é à toa que ela está feliz. Ela conseguiu o emprego.",
-          "en": "No wonder she's happy. She got the job."
+          "en": "No wonder she's happy. She got the job.",
+          "ptIntent": "Não é à toa que",
+          "enIntent": "No wonder"
         },
         {
           "pt": "Não é à toa que o sistema está lento; há milhares de requisições ao mesmo tempo.",
-          "en": "No wonder the system is slow; there are thousands of requests at the same time."
+          "en": "No wonder the system is slow; there are thousands of requests at the same time.",
+          "ptIntent": "Não é à toa que",
+          "enIntent": "No wonder"
         }
       ],
       "tags": [
@@ -5582,11 +6302,15 @@
       "examples": [
         {
           "pt": "E se...?",
-          "en": "What if...?"
+          "en": "What if...?",
+          "ptIntent": "E",
+          "enIntent": "What if"
         },
         {
           "pt": "Imagine se...",
-          "en": "Imagine if..."
+          "en": "Imagine if...",
+          "ptIntent": "Imagine",
+          "enIntent": "Imagine if"
         }
       ],
       "tags": [
@@ -5607,11 +6331,15 @@
       "examples": [
         {
           "pt": "Isso me lembra...",
-          "en": "That reminds me of..."
+          "en": "That reminds me of...",
+          "ptIntent": "me",
+          "enIntent": "That reminds me of"
         },
         {
           "pt": "Na verdade, eu tive uma experiência parecida.",
-          "en": "Actually, I had a similar experience..."
+          "en": "Actually, I had a similar experience...",
+          "ptIntent": "verdade",
+          "enIntent": "Actually, I had a similar experience"
         }
       ],
       "tags": [
@@ -5632,7 +6360,9 @@
       "examples": [
         {
           "pt": "Eu acho que saúde mental é muito importante porque o estresse pode afetar o corpo inteiro.",
-          "en": "I think mental health is very important because stress can affect the whole body."
+          "en": "I think mental health is very important because stress can affect the whole body.",
+          "ptIntent": "acho",
+          "enIntent": "I think"
         }
       ],
       "tags": [
@@ -5653,7 +6383,9 @@
       "examples": [
         {
           "pt": "Eu prefiro treinar de manhã porque me sinto mais energético.",
-          "en": "I’d rather work out in the morning because I feel more energetic."
+          "en": "I’d rather work out in the morning because I feel more energetic.",
+          "ptIntent": "prefiro",
+          "enIntent": "I’d rather"
         }
       ],
       "tags": [
@@ -5674,7 +6406,9 @@
       "examples": [
         {
           "pt": "Um corpo saudável é importante, mas saúde mental é ainda mais importante.",
-          "en": "A healthy body is important, but mental health is even more important."
+          "en": "A healthy body is important, but mental health is even more important.",
+          "ptIntent": "corpo",
+          "enIntent": "is"
         }
       ],
       "tags": [
@@ -5695,7 +6429,9 @@
       "examples": [
         {
           "pt": "Eu tento dormir mais cedo porque isso ajuda na minha recuperação.",
-          "en": "I try to sleep earlier because it helps my recovery."
+          "en": "I try to sleep earlier because it helps my recovery.",
+          "ptIntent": "tento",
+          "enIntent": "try"
         }
       ],
       "tags": [
@@ -5716,7 +6452,9 @@
       "examples": [
         {
           "pt": "Se você não dorme bem, fica cansado o dia todo.",
-          "en": "If you don’t sleep well, you feel tired all day."
+          "en": "If you don’t sleep well, you feel tired all day.",
+          "ptIntent": "não dorme",
+          "enIntent": "If"
         }
       ],
       "tags": [
@@ -5737,7 +6475,9 @@
       "examples": [
         {
           "pt": "Às vezes eu caminho para limpar a mente.",
-          "en": "Sometimes I go for a walk to clear my mind."
+          "en": "Sometimes I go for a walk to clear my mind.",
+          "ptIntent": "vezes",
+          "enIntent": "Sometimes"
         }
       ],
       "tags": [
@@ -5758,7 +6498,9 @@
       "examples": [
         {
           "pt": "Primeiro você inspira, depois segura a respiração e finalmente expira devagar.",
-          "en": "First you inhale, then you hold your breath, and finally you exhale slowly."
+          "en": "First you inhale, then you hold your breath, and finally you exhale slowly.",
+          "ptIntent": "Primeiro",
+          "enIntent": "First"
         }
       ],
       "tags": [
@@ -5779,7 +6521,9 @@
       "examples": [
         {
           "pt": "No meu caso, o estresse geralmente afeta meu sono.",
-          "en": "In my case, stress usually affects my sleep."
+          "en": "In my case, stress usually affects my sleep.",
+          "ptIntent": "caso",
+          "enIntent": "In my case"
         }
       ],
       "tags": [
@@ -5800,7 +6544,9 @@
       "examples": [
         {
           "pt": "Eu costumava me sentir muito estressado, então comecei a praticar técnicas de respiração.",
-          "en": "I used to feel very stressed, so I started practicing breathing techniques."
+          "en": "I used to feel very stressed, so I started practicing breathing techniques.",
+          "ptIntent": "costumava",
+          "enIntent": "so"
         }
       ],
       "tags": [
@@ -5821,7 +6567,9 @@
       "examples": [
         {
           "pt": "Eu gostaria de poder ir à academia cinco dias por semana.",
-          "en": "I wish I could go to the gym five days a week."
+          "en": "I wish I could go to the gym five days a week.",
+          "ptIntent": "gostaria",
+          "enIntent": "I wish I"
         }
       ],
       "tags": [
@@ -5842,11 +6590,15 @@
       "examples": [
         {
           "pt": "Saúde mental é importante, mas as pessoas ignoram isso.",
-          "en": "Mental health is important, but people ignore it."
+          "en": "Mental health is important, but people ignore it.",
+          "ptIntent": "Saúde",
+          "enIntent": "but"
         },
         {
           "pt": "Então saúde mental deveria ser mais discutida.",
-          "en": "So mental health should be discussed more."
+          "en": "So mental health should be discussed more.",
+          "ptIntent": "Então",
+          "enIntent": "So"
         }
       ],
       "tags": [
@@ -5867,7 +6619,9 @@
       "examples": [
         {
           "pt": "É por isso que dormir é essencial para uma boa saúde.",
-          "en": "That’s why sleep is essential for good health."
+          "en": "That’s why sleep is essential for good health.",
+          "ptIntent": "dormir",
+          "enIntent": "That’s why"
         }
       ],
       "tags": [
@@ -5894,15 +6648,21 @@
       "examples": [
         {
           "pt": "Pode anotar o que estou dizendo. O inglês vai mudar minha vida.",
-          "en": "Mark my words. English will change my life."
+          "en": "Mark my words. English will change my life.",
+          "ptIntent": "Pode anotar o que estou dizendo",
+          "enIntent": "Mark my words"
         },
         {
           "pt": "Pode anotar. Isso vai funcionar.",
-          "en": "Mark my words. This is going to work."
+          "en": "Mark my words. This is going to work.",
+          "ptIntent": "Pode anotar",
+          "enIntent": "Mark my words"
         },
         {
           "pt": "Pode anotar. Um dia ele vai voltar.",
-          "en": "Mark my words. He'll come back someday."
+          "en": "Mark my words. He'll come back someday.",
+          "ptIntent": "Pode anotar",
+          "enIntent": "Mark my words"
         }
       ],
       "tags": [
@@ -5930,7 +6690,9 @@
       "examples": [
         {
           "pt": "Olha só quem fala.",
-          "en": "You're one to talk."
+          "en": "You're one to talk.",
+          "ptIntent": "Olha só quem fala",
+          "enIntent": "You're one to talk"
         }
       ],
       "tags": [
@@ -5957,7 +6719,9 @@
       "examples": [
         {
           "pt": "Está tudo uma maravilha.",
-          "en": "Everything is hunky-dory."
+          "en": "Everything is hunky-dory.",
+          "ptIntent": "Está tudo uma maravilha",
+          "enIntent": "Everything is hunky-dory"
         }
       ],
       "tags": [
@@ -5983,7 +6747,9 @@
       "examples": [
         {
           "pt": "Não estou me sentindo bem.",
-          "en": "I don't feel good."
+          "en": "I don't feel good.",
+          "ptIntent": "Não estou me sentindo bem",
+          "enIntent": "I don't feel good"
         }
       ],
       "tags": [
@@ -6012,7 +6778,9 @@
       "examples": [
         {
           "pt": "Estou meio indisposto.",
-          "en": "I'm under the weather."
+          "en": "I'm under the weather.",
+          "ptIntent": "Estou meio indisposto",
+          "enIntent": "I'm under the weather"
         }
       ],
       "tags": [
@@ -6042,7 +6810,9 @@
       "examples": [
         {
           "pt": "O que temos pra hoje?",
-          "en": "What's on the agenda today?"
+          "en": "What's on the agenda today?",
+          "ptIntent": "O que temos pra hoje",
+          "enIntent": "What's on the agenda today"
         }
       ],
       "tags": [
@@ -6069,7 +6839,9 @@
       "examples": [
         {
           "pt": "Onde nós estávamos?",
-          "en": "Where were we?"
+          "en": "Where were we?",
+          "ptIntent": "Onde nós estávamos",
+          "enIntent": "Where were we"
         }
       ],
       "tags": [
@@ -6096,7 +6868,9 @@
       "examples": [
         {
           "pt": "Eu vou deixar passar desta vez.",
-          "en": "I'll let it slide this time."
+          "en": "I'll let it slide this time.",
+          "ptIntent": "vou deixar passar desta vez",
+          "enIntent": "I'll let it slide this time"
         }
       ],
       "tags": [
@@ -6123,11 +6897,15 @@
       "examples": [
         {
           "pt": "Tudo ou nada.",
-          "en": "Go big or go home."
+          "en": "Go big or go home.",
+          "ptIntent": "Tudo ou nada",
+          "enIntent": "Go big or go home"
         },
         {
           "pt": "Vai com tudo ou nem tenta.",
-          "en": "Go big or go home."
+          "en": "Go big or go home.",
+          "ptIntent": "Vai com tudo ou nem tenta",
+          "enIntent": "Go big or go home"
         }
       ],
       "tags": [
@@ -6154,7 +6932,9 @@
       "examples": [
         {
           "pt": "Que cara triste é essa?",
-          "en": "Why the long face?"
+          "en": "Why the long face?",
+          "ptIntent": "Que cara triste é essa",
+          "enIntent": "Why the long face"
         }
       ],
       "tags": [
@@ -6181,7 +6961,9 @@
       "examples": [
         {
           "pt": "O que os olhos não veem, o coração não sente.",
-          "en": "Out of sight, out of mind."
+          "en": "Out of sight, out of mind.",
+          "ptIntent": "O que os olhos não veem, o coração não sente",
+          "enIntent": "Out of sight, out of mind"
         }
       ],
       "tags": [
@@ -6206,7 +6988,9 @@
       "examples": [
         {
           "pt": "Cê tá me zoando?",
-          "en": "Are you pulling my leg?"
+          "en": "Are you pulling my leg?",
+          "ptIntent": "me zoando",
+          "enIntent": "Are you pulling my leg"
         }
       ],
       "tags": [
@@ -6235,7 +7019,9 @@
       "examples": [
         {
           "pt": "O sujo falando do mal lavado.",
-          "en": "Takes one to know one."
+          "en": "Takes one to know one.",
+          "ptIntent": "O sujo falando do mal lavado",
+          "enIntent": "Takes one to know one"
         }
       ],
       "tags": [
@@ -6264,7 +7050,9 @@
       "examples": [
         {
           "pt": "Mãos à obra.",
-          "en": "Go ahead and get busy."
+          "en": "Go ahead and get busy.",
+          "ptIntent": "Mãos à obra",
+          "enIntent": "Go ahead and get busy"
         }
       ],
       "tags": [
@@ -6291,7 +7079,9 @@
       "examples": [
         {
           "pt": "Vou pegar o jeito.",
-          "en": "I'll get the hang of it."
+          "en": "I'll get the hang of it.",
+          "ptIntent": "Vou pegar o jeito",
+          "enIntent": "I'll get the hang of it"
         }
       ],
       "tags": [
@@ -6317,7 +7107,9 @@
       "examples": [
         {
           "pt": "O que fazer então?",
-          "en": "What to do then?"
+          "en": "What to do then?",
+          "ptIntent": "O que fazer então",
+          "enIntent": "What to do then"
         }
       ],
       "tags": [
@@ -6343,7 +7135,9 @@
       "examples": [
         {
           "pt": "Vamos colocar o papo em dia.",
-          "en": "Let's catch up."
+          "en": "Let's catch up.",
+          "ptIntent": "Vamos colocar o papo em dia",
+          "enIntent": "Let's catch up"
         }
       ],
       "tags": [
@@ -6369,7 +7163,9 @@
       "examples": [
         {
           "pt": "Eu falo com você mais tarde.",
-          "en": "I'll check back in with you later."
+          "en": "I'll check back in with you later.",
+          "ptIntent": "Eu falo com você mais tarde",
+          "enIntent": "I'll check back in with you later"
         }
       ],
       "tags": [
@@ -6395,7 +7191,9 @@
       "examples": [
         {
           "pt": "Olha quem está aqui!",
-          "en": "Look who's here!"
+          "en": "Look who's here!",
+          "ptIntent": "Olha quem está aqui",
+          "enIntent": "Look who's here"
         }
       ],
       "tags": [
@@ -6421,7 +7219,9 @@
       "examples": [
         {
           "pt": "Vou fazer xixi.",
-          "en": "I'm gonna take a piss."
+          "en": "I'm gonna take a piss.",
+          "ptIntent": "Vou fazer xixi",
+          "enIntent": "I'm gonna take a piss"
         }
       ],
       "tags": [
@@ -6448,7 +7248,9 @@
       "examples": [
         {
           "pt": "Eu já te superei.",
-          "en": "I'm over you."
+          "en": "I'm over you.",
+          "ptIntent": "Eu já te superei",
+          "enIntent": "I'm over you"
         }
       ],
       "tags": [
@@ -6474,7 +7276,9 @@
       "examples": [
         {
           "pt": "Vou cobrar isso de você.",
-          "en": "I'll hold you to that."
+          "en": "I'll hold you to that.",
+          "ptIntent": "Vou cobrar isso de você",
+          "enIntent": "I'll hold you to that"
         }
       ],
       "tags": [
@@ -6500,7 +7304,9 @@
       "examples": [
         {
           "pt": "Você me deixou na mão.",
-          "en": "You left me high and dry."
+          "en": "You left me high and dry.",
+          "ptIntent": "Você me deixou na mão",
+          "enIntent": "You left me high and dry"
         }
       ],
       "tags": [
@@ -6526,7 +7332,9 @@
       "examples": [
         {
           "pt": "Cê tá zombando de mim?",
-          "en": "Are you mocking me?"
+          "en": "Are you mocking me?",
+          "ptIntent": "zombando de mim",
+          "enIntent": "Are you mocking me"
         }
       ],
       "tags": [
@@ -6555,7 +7363,9 @@
       "examples": [
         {
           "pt": "Isso não vem ao caso.",
-          "en": "That's beside the point."
+          "en": "That's beside the point.",
+          "ptIntent": "Isso não vem ao caso",
+          "enIntent": "That's beside the point"
         }
       ],
       "tags": [
@@ -6581,7 +7391,9 @@
       "examples": [
         {
           "pt": "Não me empurre.",
-          "en": "Don't shove me."
+          "en": "Don't shove me.",
+          "ptIntent": "Não me empurre",
+          "enIntent": "Don't shove me"
         }
       ],
       "tags": [
@@ -6607,7 +7419,9 @@
       "examples": [
         {
           "pt": "Não pode voltar atrás.",
-          "en": "No backsies."
+          "en": "No backsies.",
+          "ptIntent": "Não pode voltar atrás",
+          "enIntent": "No backsies"
         }
       ],
       "tags": [
@@ -6633,7 +7447,9 @@
       "examples": [
         {
           "pt": "Eu tenho poucos amigos.",
-          "en": "I have a few friends."
+          "en": "I have a few friends.",
+          "ptIntent": "Eu tenho poucos amigos",
+          "enIntent": "I have a few friends"
         }
       ],
       "tags": [
@@ -6658,7 +7474,9 @@
       "examples": [
         {
           "pt": "Se você diz.",
-          "en": "If you say so."
+          "en": "If you say so.",
+          "ptIntent": "Se você diz",
+          "enIntent": "If you say so"
         }
       ],
       "tags": [
@@ -6684,7 +7502,9 @@
       "examples": [
         {
           "pt": "Você me conquistou no primeiro olá.",
-          "en": "You had me at hello."
+          "en": "You had me at hello.",
+          "ptIntent": "Você me conquistou no primeiro olá",
+          "enIntent": "You had me at hello"
         }
       ],
       "tags": [
@@ -6711,7 +7531,9 @@
       "examples": [
         {
           "pt": "O gato comeu sua língua?",
-          "en": "Cat got your tongue?"
+          "en": "Cat got your tongue?",
+          "ptIntent": "O gato comeu sua língua",
+          "enIntent": "Cat got your tongue"
         }
       ],
       "tags": [
@@ -6737,7 +7559,9 @@
       "examples": [
         {
           "pt": "Entendo seu ponto de vista.",
-          "en": "I take your point."
+          "en": "I take your point.",
+          "ptIntent": "Entendo seu ponto de vista",
+          "enIntent": "I take your point"
         }
       ],
       "tags": [
@@ -6764,7 +7588,9 @@
       "examples": [
         {
           "pt": "O que isso faz / significa pra você?",
-          "en": "What does that do for you?"
+          "en": "What does that do for you?",
+          "ptIntent": "O que isso faz",
+          "enIntent": "What does that do for you"
         }
       ],
       "tags": [
@@ -6790,7 +7616,9 @@
       "examples": [
         {
           "pt": "Você está passando dos limites.",
-          "en": "You are way out of line."
+          "en": "You are way out of line.",
+          "ptIntent": "Você está passando dos limites",
+          "enIntent": "You are way out of line"
         }
       ],
       "tags": [
@@ -6816,7 +7644,9 @@
       "examples": [
         {
           "pt": "Já vai tarde.",
-          "en": "Good riddance."
+          "en": "Good riddance.",
+          "ptIntent": "Já vai tarde",
+          "enIntent": "Good riddance"
         }
       ],
       "tags": [
@@ -6842,7 +7672,9 @@
       "examples": [
         {
           "pt": "Você colhe o que você planta.",
-          "en": "You reap what you sow."
+          "en": "You reap what you sow.",
+          "ptIntent": "Você colhe o que",
+          "enIntent": "You reap what you sow"
         }
       ],
       "tags": [
@@ -6868,7 +7700,9 @@
       "examples": [
         {
           "pt": "Não poderia ter dito isso melhor.",
-          "en": "I couldn't have said it better myself."
+          "en": "I couldn't have said it better myself.",
+          "ptIntent": "Não poderia ter dito isso melhor",
+          "enIntent": "I couldn't have said it better myself"
         }
       ],
       "tags": [
@@ -6896,11 +7730,15 @@
       "examples": [
         {
           "pt": "Não vou me contentar com nada menos.",
-          "en": "I will not settle for anything less."
+          "en": "I will not settle for anything less.",
+          "ptIntent": "Não vou me contentar com nada menos",
+          "enIntent": "I will not settle for anything less"
         },
         {
           "pt": "Não vou aceitar menos do que eu mereço.",
-          "en": "I will not settle for anything less."
+          "en": "I will not settle for anything less.",
+          "ptIntent": "Não vou aceitar menos",
+          "enIntent": "I will not settle for anything less"
         }
       ],
       "tags": [
@@ -6927,7 +7765,9 @@
       "examples": [
         {
           "pt": "Não tem nada a ver comigo.",
-          "en": "Nothing to do with me."
+          "en": "Nothing to do with me.",
+          "ptIntent": "Não tem nada a ver comigo",
+          "enIntent": "Nothing to do with me"
         }
       ],
       "tags": [
@@ -6955,7 +7795,9 @@
       "examples": [
         {
           "pt": "O que há mais para dizer?",
-          "en": "What else is there to say?"
+          "en": "What else is there to say?",
+          "ptIntent": "O que",
+          "enIntent": "What else is there to say"
         }
       ],
       "tags": [
@@ -6983,11 +7825,15 @@
       "examples": [
         {
           "pt": "Estou meio ocupado.",
-          "en": "I'm kind of busy."
+          "en": "I'm kind of busy.",
+          "ptIntent": "Estou meio",
+          "enIntent": "I'm kind of"
         },
         {
           "pt": "Estou meio doente.",
-          "en": "I'm kind of sick."
+          "en": "I'm kind of sick.",
+          "ptIntent": "Estou meio",
+          "enIntent": "I'm kind of"
         }
       ],
       "tags": [
@@ -7014,7 +7860,9 @@
       "examples": [
         {
           "pt": "Concordo plenamente.",
-          "en": "You can say that again."
+          "en": "You can say that again.",
+          "ptIntent": "Concordo plenamente",
+          "enIntent": "You can say that again"
         }
       ],
       "tags": [
@@ -7042,7 +7890,9 @@
       "examples": [
         {
           "pt": "Não é culpa sua.",
-          "en": "It's not on you."
+          "en": "It's not on you.",
+          "ptIntent": "Não é culpa sua",
+          "enIntent": "It's not on you"
         }
       ],
       "tags": [
@@ -7070,7 +7920,9 @@
       "examples": [
         {
           "pt": "Temos problemas mais importantes para resolver.",
-          "en": "We got bigger fish to fry."
+          "en": "We got bigger fish to fry.",
+          "ptIntent": "Temos problemas mais importantes para resolver",
+          "enIntent": "We got bigger fish to fry"
         }
       ],
       "tags": [
@@ -7097,11 +7949,15 @@
       "examples": [
         {
           "pt": "Espere um pouco.",
-          "en": "Hang on."
+          "en": "Hang on.",
+          "ptIntent": "Espere um pouco",
+          "enIntent": "Hang on"
         },
         {
           "pt": "Aguente firme.",
-          "en": "Hang on."
+          "en": "Hang on.",
+          "ptIntent": "Aguente firme",
+          "enIntent": "Hang on"
         }
       ],
       "tags": [
@@ -7128,7 +7984,9 @@
       "examples": [
         {
           "pt": "O que posso te oferecer?",
-          "en": "What can I get you?"
+          "en": "What can I get you?",
+          "ptIntent": "O que posso te oferecer",
+          "enIntent": "What can I get you"
         }
       ],
       "tags": [
@@ -7156,7 +8014,9 @@
       "examples": [
         {
           "pt": "O que posso te oferecer para beber?",
-          "en": "What can I get to drink?"
+          "en": "What can I get to drink?",
+          "ptIntent": "O que posso",
+          "enIntent": "What can I get to drink"
         }
       ],
       "tags": [
@@ -7184,7 +8044,9 @@
       "examples": [
         {
           "pt": "Deixa o passado pra trás.",
-          "en": "Let bygones be bygones."
+          "en": "Let bygones be bygones.",
+          "ptIntent": "Deixa o passado pra trás",
+          "enIntent": "Let bygones be bygones"
         }
       ],
       "tags": [
@@ -7210,7 +8072,9 @@
       "examples": [
         {
           "pt": "O que você tem a perder?",
-          "en": "What have you got to lose?"
+          "en": "What have you got to lose?",
+          "ptIntent": "O que você tem a perder",
+          "enIntent": "What have you got to lose"
         }
       ],
       "tags": [
@@ -7236,7 +8100,9 @@
       "examples": [
         {
           "pt": "Ai de mim.",
-          "en": "Woe is me!"
+          "en": "Woe is me!",
+          "ptIntent": "Ai de mim",
+          "enIntent": "Woe is me"
         }
       ],
       "tags": [
@@ -7263,7 +8129,9 @@
       "examples": [
         {
           "pt": "Já chega!",
-          "en": "I'm sick of it!"
+          "en": "I'm sick of it!",
+          "ptIntent": "Já chega",
+          "enIntent": "I'm sick of it"
         }
       ],
       "tags": [
@@ -7289,7 +8157,9 @@
       "examples": [
         {
           "pt": "Você viu meu telefone por acaso?",
-          "en": "Have you seen my cell phone by any chance?"
+          "en": "Have you seen my cell phone by any chance?",
+          "ptIntent": "por acaso",
+          "enIntent": "by any chance"
         }
       ],
       "tags": [
@@ -7315,7 +8185,9 @@
       "examples": [
         {
           "pt": "Que tal...?",
-          "en": "How about...?"
+          "en": "How about...?",
+          "ptIntent": "Que tal",
+          "enIntent": "How about"
         }
       ],
       "tags": [
@@ -7341,7 +8213,9 @@
       "examples": [
         {
           "pt": "Não vejo a hora...",
-          "en": "I can't wait..."
+          "en": "I can't wait...",
+          "ptIntent": "Não vejo a hora",
+          "enIntent": "I can't wait"
         }
       ],
       "tags": [
@@ -7367,7 +8241,9 @@
       "examples": [
         {
           "pt": "Passei a noite toda acordado.",
-          "en": "I was up all night."
+          "en": "I was up all night.",
+          "ptIntent": "Passei a noite toda acordado",
+          "enIntent": "I was up all night"
         }
       ],
       "tags": [
@@ -7393,11 +8269,15 @@
       "examples": [
         {
           "pt": "Os sintomas melhoraram ao longo de alguns dias.",
-          "en": "The symptoms improved over a few days."
+          "en": "The symptoms improved over a few days.",
+          "ptIntent": "ao longo de alguns dias",
+          "enIntent": "over a few days"
         },
         {
           "pt": "Eu revisei o código ao longo de alguns dias.",
-          "en": "I reviewed the code over a few days."
+          "en": "I reviewed the code over a few days.",
+          "ptIntent": "ao longo de alguns dias",
+          "enIntent": "over a few days"
         }
       ],
       "tags": [
@@ -7426,11 +8306,15 @@
       "examples": [
         {
           "pt": "A entrega deve acontecer ao longo dos próximos dias.",
-          "en": "The delivery should happen over the next few days."
+          "en": "The delivery should happen over the next few days.",
+          "ptIntent": "ao longo dos próximos dias",
+          "enIntent": "over the next few days"
         },
         {
           "pt": "Vou testar essa funcionalidade nos próximos dias.",
-          "en": "I'll test this feature over the next few days."
+          "en": "I'll test this feature over the next few days.",
+          "ptIntent": "nos próximos dias",
+          "enIntent": "over the next few days"
         }
       ],
       "tags": [
@@ -7460,11 +8344,15 @@
       "examples": [
         {
           "pt": "Você vai melhorar com o tempo.",
-          "en": "You'll get better over time."
+          "en": "You'll get better over time.",
+          "ptIntent": "com o tempo",
+          "enIntent": "over time"
         },
         {
           "pt": "Com o tempo, falar inglês ficou mais natural para mim.",
-          "en": "Over time, speaking English became more natural to me."
+          "en": "Over time, speaking English became more natural to me.",
+          "ptIntent": "Com o tempo",
+          "enIntent": "Over time"
         }
       ],
       "tags": [
@@ -7494,11 +8382,15 @@
       "examples": [
         {
           "pt": "A empresa cresceu muito ao longo dos anos.",
-          "en": "The company grew a lot over the years."
+          "en": "The company grew a lot over the years.",
+          "ptIntent": "ao longo dos anos",
+          "enIntent": "over the years"
         },
         {
           "pt": "Meu inglês melhorou muito ao longo dos anos.",
-          "en": "My English has improved a lot over the years."
+          "en": "My English has improved a lot over the years.",
+          "ptIntent": "ao longo dos anos",
+          "enIntent": "over the years"
         }
       ],
       "tags": [
@@ -7528,11 +8420,15 @@
       "examples": [
         {
           "pt": "Nós discutimos isso durante o fim de semana.",
-          "en": "We discussed it over the weekend."
+          "en": "We discussed it over the weekend.",
+          "ptIntent": "durante o fim de semana",
+          "enIntent": "over the weekend"
         },
         {
           "pt": "Vou revisar o projeto durante o fim de semana.",
-          "en": "I'll review the project over the weekend."
+          "en": "I'll review the project over the weekend.",
+          "ptIntent": "durante o fim de semana",
+          "enIntent": "over the weekend"
         }
       ],
       "tags": [
@@ -7560,11 +8456,15 @@
       "examples": [
         {
           "pt": "As vendas aumentaram ao longo dos últimos meses.",
-          "en": "Sales increased over the past few months."
+          "en": "Sales increased over the past few months.",
+          "ptIntent": "ao longo dos últimos meses",
+          "enIntent": "over the past few months"
         },
         {
           "pt": "Tenho praticado mais conversação nos últimos meses.",
-          "en": "I've been practicing speaking more over the past few months."
+          "en": "I've been practicing speaking more over the past few months.",
+          "ptIntent": "nos últimos meses",
+          "enIntent": "over the past few months"
         }
       ],
       "tags": [
@@ -7594,11 +8494,15 @@
       "examples": [
         {
           "pt": "A confiança é construída durante um longo período.",
-          "en": "Trust is built over a long period."
+          "en": "Trust is built over a long period.",
+          "ptIntent": "durante um longo período",
+          "enIntent": "over a long period"
         },
         {
           "pt": "A fluência se desenvolve durante um longo período de prática consistente.",
-          "en": "Fluency develops over a long period of consistent practice."
+          "en": "Fluency develops over a long period of consistent practice.",
+          "ptIntent": "durante um longo período",
+          "enIntent": "over a long period"
         }
       ],
       "tags": [
@@ -7629,11 +8533,15 @@
       "examples": [
         {
           "pt": "No decorrer do ano, os custos aumentaram.",
-          "en": "Over the course of the year, costs went up."
+          "en": "Over the course of the year, costs went up.",
+          "ptIntent": "No decorrer",
+          "enIntent": "Over the course of"
         },
         {
           "pt": "No decorrer de seis meses, meu inglês melhorou bastante.",
-          "en": "Over the course of six months, my English improved significantly."
+          "en": "Over the course of six months, my English improved significantly.",
+          "ptIntent": "No decorrer de",
+          "enIntent": "Over the course of"
         }
       ],
       "tags": [
@@ -7662,11 +8570,15 @@
       "examples": [
         {
           "pt": "Com o tempo, essa estratégia se mostrou eficaz.",
-          "en": "Over time, this strategy proved effective."
+          "en": "Over time, this strategy proved effective.",
+          "ptIntent": "Com o tempo",
+          "enIntent": "Over time"
         },
         {
           "pt": "Com o tempo, comecei a pensar diretamente em inglês.",
-          "en": "Over time, I started thinking directly in English."
+          "en": "Over time, I started thinking directly in English.",
+          "ptIntent": "Com o tempo",
+          "enIntent": "Over time"
         }
       ],
       "tags": [
@@ -7696,11 +8608,15 @@
       "examples": [
         {
           "pt": "No começo eu evitava falar em público, mas aos poucos fiquei mais confiante.",
-          "en": "At first I avoided speaking in public, but little by little I became more confident."
+          "en": "At first I avoided speaking in public, but little by little I became more confident.",
+          "ptIntent": "aos poucos",
+          "enIntent": "little by little"
         },
         {
           "pt": "Aos poucos, comecei a entender melhor os nativos.",
-          "en": "Little by little, I started understanding native speakers better."
+          "en": "Little by little, I started understanding native speakers better.",
+          "ptIntent": "Aos poucos",
+          "enIntent": "Little by little"
         }
       ],
       "tags": [
@@ -7730,11 +8646,15 @@
       "examples": [
         {
           "pt": "Eu consegui fazer as reservas do hotel, mas deixei os passeios para a última hora.",
-          "en": "I managed the hotel reservations, but I ended up leaving the tours until the last minute."
+          "en": "I managed the hotel reservations, but I ended up leaving the tours until the last minute.",
+          "ptIntent": "a última hora",
+          "enIntent": "until the last minute"
         },
         {
           "pt": "Não deixe essa tarefa para a última hora.",
-          "en": "Don't leave this task until the last minute."
+          "en": "Don't leave this task until the last minute.",
+          "ptIntent": "a última hora",
+          "enIntent": "until the last minute"
         }
       ],
       "tags": [
@@ -7764,11 +8684,15 @@
       "examples": [
         {
           "pt": "Por favor, venham receber o certificado, um de cada vez.",
-          "en": "Please step forward to receive your certificate, each one at a time."
+          "en": "Please step forward to receive your certificate, each one at a time.",
+          "ptIntent": "um de cada vez",
+          "enIntent": "each one at a time"
         },
         {
           "pt": "Vamos resolver os problemas um de cada vez.",
-          "en": "Let's solve the problems one at a time."
+          "en": "Let's solve the problems one at a time.",
+          "ptIntent": "um de cada vez",
+          "enIntent": "one at a time"
         }
       ],
       "tags": [
@@ -7796,11 +8720,15 @@
       "examples": [
         {
           "pt": "Faça uma coisa de cada vez.",
-          "en": "Do one thing at a time."
+          "en": "Do one thing at a time.",
+          "ptIntent": "de cada vez",
+          "enIntent": "at a time"
         },
         {
           "pt": "Vamos analisar uma intenção de cada vez.",
-          "en": "Let's analyze one intention at a time."
+          "en": "Let's analyze one intention at a time.",
+          "ptIntent": "de cada vez",
+          "enIntent": "at a time"
         }
       ],
       "tags": [
@@ -7828,11 +8756,15 @@
       "examples": [
         {
           "pt": "De vez em quando, é bom sair da rotina e fazer uma longa caminhada.",
-          "en": "Once in a while, it's good to step away from your routine and just take a long walk."
+          "en": "Once in a while, it's good to step away from your routine and just take a long walk.",
+          "ptIntent": "De vez em quando",
+          "enIntent": "Once in a while"
         },
         {
           "pt": "De vez em quando eu assisto a filmes sem legenda.",
-          "en": "Once in a while, I watch movies without subtitles."
+          "en": "Once in a while, I watch movies without subtitles.",
+          "ptIntent": "De vez em quando",
+          "enIntent": "Once in a while"
         }
       ],
       "tags": [
@@ -7861,11 +8793,15 @@
       "examples": [
         {
           "pt": "Eu fiquei lá por um tempo.",
-          "en": "I stayed there for a while."
+          "en": "I stayed there for a while.",
+          "ptIntent": "por um tempo",
+          "enIntent": "for a while"
         },
         {
           "pt": "Vamos praticar isso por um tempo.",
-          "en": "Let's practice this for a while."
+          "en": "Let's practice this for a while.",
+          "ptIntent": "por um tempo",
+          "enIntent": "for a while"
         }
       ],
       "tags": [
@@ -7894,11 +8830,15 @@
       "examples": [
         {
           "pt": "Por enquanto, vamos continuar usando essa solução.",
-          "en": "For the time being, we'll keep using this solution."
+          "en": "For the time being, we'll keep using this solution.",
+          "ptIntent": "Por enquanto",
+          "enIntent": "For the time being"
         },
         {
           "pt": "Vou trabalhar de casa por enquanto.",
-          "en": "I'll work from home for the time being."
+          "en": "I'll work from home for the time being.",
+          "ptIntent": "por enquanto",
+          "enIntent": "for the time being"
         }
       ],
       "tags": [
@@ -7927,11 +8867,15 @@
       "examples": [
         {
           "pt": "De agora em diante, vou praticar inglês todos os dias.",
-          "en": "From now on, I'll practice English every day."
+          "en": "From now on, I'll practice English every day.",
+          "ptIntent": "De agora em diante",
+          "enIntent": "From now on"
         },
         {
           "pt": "A partir de agora, vamos registrar todas as mudanças.",
-          "en": "From now on, we'll record every change."
+          "en": "From now on, we'll record every change.",
+          "ptIntent": "A partir de agora",
+          "enIntent": "From now on"
         }
       ],
       "tags": [
@@ -7959,11 +8903,15 @@
       "examples": [
         {
           "pt": "O build está rodando. Enquanto isso, vou revisar os logs.",
-          "en": "The build is running. In the meantime, I'll review the logs."
+          "en": "The build is running. In the meantime, I'll review the logs.",
+          "ptIntent": "Enquanto isso",
+          "enIntent": "In the meantime"
         },
         {
           "pt": "Ela vai chegar às oito. Enquanto isso, podemos tomar um café.",
-          "en": "She'll arrive at eight. In the meantime, we can have some coffee."
+          "en": "She'll arrive at eight. In the meantime, we can have some coffee.",
+          "ptIntent": "Enquanto isso",
+          "enIntent": "In the meantime"
         }
       ],
       "tags": [
@@ -7992,11 +8940,15 @@
       "examples": [
         {
           "pt": "Não consigo falar e escrever ao mesmo tempo.",
-          "en": "I can't speak and write at the same time."
+          "en": "I can't speak and write at the same time.",
+          "ptIntent": "ao mesmo tempo",
+          "enIntent": "at the same time"
         },
         {
           "pt": "O sistema processa vários arquivos ao mesmo tempo.",
-          "en": "The system processes several files at the same time."
+          "en": "The system processes several files at the same time.",
+          "ptIntent": "ao mesmo tempo",
+          "enIntent": "at the same time"
         }
       ],
       "tags": [
@@ -8024,11 +8976,15 @@
       "examples": [
         {
           "pt": "De tempos em tempos eu reviso minhas anotações.",
-          "en": "From time to time, I review my notes."
+          "en": "From time to time, I review my notes.",
+          "ptIntent": "De tempos em tempos",
+          "enIntent": "From time to time"
         },
         {
           "pt": "É bom mudar a rotina de tempos em tempos.",
-          "en": "It's good to change your routine from time to time."
+          "en": "It's good to change your routine from time to time.",
+          "ptIntent": "de tempos em tempos",
+          "enIntent": "from time to time"
         }
       ],
       "tags": [
@@ -8057,11 +9013,15 @@
       "examples": [
         {
           "pt": "De vez em quando eu erro palavras simples.",
-          "en": "Every now and then, I make mistakes with simple words."
+          "en": "Every now and then, I make mistakes with simple words.",
+          "ptIntent": "De vez em quando",
+          "enIntent": "Every now and then"
         },
         {
           "pt": "Volta e meia eu volto a estudar uma estrutura antiga.",
-          "en": "Every now and then, I go back to an old structure."
+          "en": "Every now and then, I go back to an old structure.",
+          "ptIntent": "Volta e meia",
+          "enIntent": "Every now and then"
         }
       ],
       "tags": [
@@ -8090,11 +9050,15 @@
       "examples": [
         {
           "pt": "Mais cedo ou mais tarde, você vai precisar falar sem traduzir.",
-          "en": "Sooner or later, you'll need to speak without translating."
+          "en": "Sooner or later, you'll need to speak without translating.",
+          "ptIntent": "Mais cedo ou mais tarde",
+          "enIntent": "Sooner or later"
         },
         {
           "pt": "Esse problema vai aparecer mais cedo ou mais tarde.",
-          "en": "This problem will show up sooner or later."
+          "en": "This problem will show up sooner or later.",
+          "ptIntent": "mais cedo ou mais tarde",
+          "enIntent": "sooner or later"
         }
       ],
       "tags": [
@@ -8124,11 +9088,15 @@
       "examples": [
         {
           "pt": "Depois de muita prática, finalmente comecei a falar com mais confiança.",
-          "en": "After a lot of practice, I eventually started speaking more confidently."
+          "en": "After a lot of practice, I eventually started speaking more confidently.",
+          "ptIntent": "Depois de",
+          "enIntent": "eventually"
         },
         {
           "pt": "Nós tentamos várias abordagens e, por fim, encontramos a solução.",
-          "en": "We tried several approaches and eventually found the solution."
+          "en": "We tried several approaches and eventually found the solution.",
+          "ptIntent": "por fim",
+          "enIntent": "eventually"
         }
       ],
       "tags": [
@@ -8157,11 +9125,15 @@
       "examples": [
         {
           "pt": "No começo, eu achava difícil entender nativos.",
-          "en": "At first, I found it difficult to understand native speakers."
+          "en": "At first, I found it difficult to understand native speakers.",
+          "ptIntent": "No começo",
+          "enIntent": "At first"
         },
         {
           "pt": "A princípio, eu não gostei da ferramenta, mas depois mudei de ideia.",
-          "en": "At first, I didn't like the tool, but later I changed my mind."
+          "en": "At first, I didn't like the tool, but later I changed my mind.",
+          "ptIntent": "A princípio",
+          "enIntent": "At first"
         }
       ],
       "tags": [
@@ -8190,11 +9162,15 @@
       "examples": [
         {
           "pt": "Podemos falar sobre isso mais tarde.",
-          "en": "We can talk about it later on."
+          "en": "We can talk about it later on.",
+          "ptIntent": "mais tarde",
+          "enIntent": "later on"
         },
         {
           "pt": "Mais tarde, percebi que ele estava certo.",
-          "en": "Later on, I realized he was right."
+          "en": "Later on, I realized he was right.",
+          "ptIntent": "Mais tarde",
+          "enIntent": "Later on"
         }
       ],
       "tags": [
@@ -8224,11 +9200,15 @@
       "examples": [
         {
           "pt": "Quando cheguei, a reunião já tinha começado.",
-          "en": "By the time I arrived, the meeting had already started."
+          "en": "By the time I arrived, the meeting had already started.",
+          "ptIntent": "cheguei",
+          "enIntent": "By the time"
         },
         {
           "pt": "Quando você terminar, eu já terei enviado o relatório.",
-          "en": "By the time you finish, I'll have sent the report."
+          "en": "By the time you finish, I'll have sent the report.",
+          "ptIntent": "terminar",
+          "enIntent": "By the time"
         }
       ],
       "tags": [
@@ -8257,11 +9237,15 @@
       "examples": [
         {
           "pt": "Vou terminar o relatório até lá.",
-          "en": "I'll finish the report by then."
+          "en": "I'll finish the report by then.",
+          "ptIntent": "até lá",
+          "enIntent": "by then"
         },
         {
           "pt": "Até lá, eu provavelmente já terei tomado uma decisão.",
-          "en": "By then, I'll probably have made a decision."
+          "en": "By then, I'll probably have made a decision.",
+          "ptIntent": "Até lá",
+          "enIntent": "By then"
         }
       ],
       "tags": [
@@ -8290,11 +9274,15 @@
       "examples": [
         {
           "pt": "A reunião é às três. Até lá, vou terminar esta tarefa.",
-          "en": "The meeting is at three. Until then, I'll finish this task."
+          "en": "The meeting is at three. Until then, I'll finish this task.",
+          "ptIntent": "Até lá",
+          "enIntent": "Until then"
         },
         {
           "pt": "Ela volta na sexta. Até lá, vou cuidar do projeto.",
-          "en": "She's coming back on Friday. Until then, I'll take care of the project."
+          "en": "She's coming back on Friday. Until then, I'll take care of the project.",
+          "ptIntent": "Até lá",
+          "enIntent": "Until then"
         }
       ],
       "tags": [
@@ -8323,11 +9311,15 @@
       "examples": [
         {
           "pt": "Em algum momento, precisamos conversar sobre isso.",
-          "en": "At some point, we need to talk about this."
+          "en": "At some point, we need to talk about this.",
+          "ptIntent": "Em algum momento",
+          "enIntent": "At some point"
         },
         {
           "pt": "Em algum momento eu percebi que estava traduzindo menos.",
-          "en": "At some point, I realized I was translating less."
+          "en": "At some point, I realized I was translating less.",
+          "ptIntent": "Em algum momento",
+          "enIntent": "At some point"
         }
       ],
       "tags": [
@@ -8355,11 +9347,15 @@
       "examples": [
         {
           "pt": "Na época, eu não sabia que essa decisão seria tão importante.",
-          "en": "At the time, I didn't know that decision would be so important."
+          "en": "At the time, I didn't know that decision would be so important.",
+          "ptIntent": "Na época",
+          "enIntent": "At the time"
         },
         {
           "pt": "Eu estava trabalhando em outro projeto na época.",
-          "en": "I was working on another project at the time."
+          "en": "I was working on another project at the time.",
+          "ptIntent": "na época",
+          "enIntent": "at the time"
         }
       ],
       "tags": [
@@ -8387,11 +9383,15 @@
       "examples": [
         {
           "pt": "Naquela época, eu estudava inglês de uma forma muito diferente.",
-          "en": "Back then, I studied English in a very different way."
+          "en": "Back then, I studied English in a very different way.",
+          "ptIntent": "Naquela época",
+          "enIntent": "Back then"
         },
         {
           "pt": "A internet era muito mais lenta naquela época.",
-          "en": "The internet was much slower back then."
+          "en": "The internet was much slower back then.",
+          "ptIntent": "naquela época",
+          "enIntent": "back then"
         }
       ],
       "tags": [
@@ -8419,11 +9419,15 @@
       "examples": [
         {
           "pt": "Praticar todos os dias vai fazer diferença no longo prazo.",
-          "en": "Practicing every day will make a difference in the long run."
+          "en": "Practicing every day will make a difference in the long run.",
+          "ptIntent": "no longo prazo",
+          "enIntent": "in the long run"
         },
         {
           "pt": "Essa solução é mais barata no longo prazo.",
-          "en": "This solution is cheaper in the long run."
+          "en": "This solution is cheaper in the long run.",
+          "ptIntent": "no longo prazo",
+          "enIntent": "in the long run"
         }
       ],
       "tags": [
@@ -8452,11 +9456,15 @@
       "examples": [
         {
           "pt": "No curto prazo, essa solução é suficiente.",
-          "en": "In the short term, this solution is enough."
+          "en": "In the short term, this solution is enough.",
+          "ptIntent": "No curto prazo",
+          "enIntent": "In the short term"
         },
         {
           "pt": "No curto prazo, quero melhorar minha compreensão oral.",
-          "en": "In the short term, I want to improve my listening comprehension."
+          "en": "In the short term, I want to improve my listening comprehension.",
+          "ptIntent": "No curto prazo",
+          "enIntent": "In the short term"
         }
       ],
       "tags": [
@@ -8484,11 +9492,15 @@
       "examples": [
         {
           "pt": "Vou responder dentro de dois dias.",
-          "en": "I'll reply within two days."
+          "en": "I'll reply within two days.",
+          "ptIntent": "dentro de",
+          "enIntent": "within"
         },
         {
           "pt": "O sistema deve processar o arquivo dentro de uma hora.",
-          "en": "The system should process the file within an hour."
+          "en": "The system should process the file within an hour.",
+          "ptIntent": "dentro de",
+          "enIntent": "within"
         }
       ],
       "tags": [
@@ -8517,11 +9529,15 @@
       "examples": [
         {
           "pt": "Choveu durante toda a noite.",
-          "en": "It rained throughout the night."
+          "en": "It rained throughout the night.",
+          "ptIntent": "durante",
+          "enIntent": "throughout"
         },
         {
           "pt": "Mantivemos contato durante todo o projeto.",
-          "en": "We stayed in touch throughout the project."
+          "en": "We stayed in touch throughout the project.",
+          "ptIntent": "durante todo o",
+          "enIntent": "throughout"
         }
       ],
       "tags": [
@@ -8549,11 +9565,15 @@
       "examples": [
         {
           "pt": "Eu recebi uma ligação durante a reunião.",
-          "en": "I received a call during the meeting."
+          "en": "I received a call during the meeting.",
+          "ptIntent": "durante",
+          "enIntent": "during"
         },
         {
           "pt": "Aprendi muito durante o projeto.",
-          "en": "I learned a lot during the project."
+          "en": "I learned a lot during the project.",
+          "ptIntent": "durante",
+          "enIntent": "during"
         }
       ],
       "tags": [
@@ -8582,11 +9602,15 @@
       "examples": [
         {
           "pt": "Eu ouço podcasts enquanto caminho.",
-          "en": "I listen to podcasts while I walk."
+          "en": "I listen to podcasts while I walk.",
+          "ptIntent": "enquanto",
+          "enIntent": "while"
         },
         {
           "pt": "Ela estava trabalhando enquanto eu preparava o jantar.",
-          "en": "She was working while I was making dinner."
+          "en": "She was working while I was making dinner.",
+          "ptIntent": "enquanto",
+          "enIntent": "while"
         }
       ],
       "tags": [
@@ -8616,11 +9640,15 @@
       "examples": [
         {
           "pt": "Mal eu tinha chegado, começou a chover.",
-          "en": "No sooner had I arrived than it started to rain."
+          "en": "No sooner had I arrived than it started to rain.",
+          "ptIntent": "Mal",
+          "enIntent": "No sooner"
         },
         {
           "pt": "Mal terminamos a reunião, outro problema apareceu.",
-          "en": "No sooner had we finished the meeting than another problem came up."
+          "en": "No sooner had we finished the meeting than another problem came up.",
+          "ptIntent": "Mal",
+          "enIntent": "No sooner"
         }
       ],
       "tags": [
@@ -8649,11 +9677,15 @@
       "examples": [
         {
           "pt": "Mal eu tinha sentado quando o telefone tocou.",
-          "en": "Hardly had I sat down when the phone rang."
+          "en": "Hardly had I sat down when the phone rang.",
+          "ptIntent": "Mal",
+          "enIntent": "Hardly"
         },
         {
           "pt": "Mal começamos quando o sistema caiu.",
-          "en": "Hardly had we started when the system went down."
+          "en": "Hardly had we started when the system went down.",
+          "ptIntent": "Mal",
+          "enIntent": "Hardly"
         }
       ],
       "tags": [
@@ -8683,15 +9715,21 @@
       "examples": [
         {
           "pt": "Todo mundo quer ser feliz.",
-          "en": "Everybody wants to be happy."
+          "en": "Everybody wants to be happy.",
+          "ptIntent": "Todo mundo quer",
+          "enIntent": "Everybody wants to"
         },
         {
           "pt": "Todo mundo quer ganhar mais dinheiro.",
-          "en": "Everybody wants to make more money."
+          "en": "Everybody wants to make more money.",
+          "ptIntent": "Todo mundo quer",
+          "enIntent": "Everybody wants to"
         },
         {
           "pt": "Todo mundo quer melhorar de vida.",
-          "en": "Everybody wants to improve their life."
+          "en": "Everybody wants to improve their life.",
+          "ptIntent": "Todo mundo quer",
+          "enIntent": "Everybody wants to"
         }
       ],
       "tags": [
@@ -8720,15 +9758,21 @@
       "examples": [
         {
           "pt": "Estou dividido entre ficar em casa e sair com meus amigos.",
-          "en": "I'm torn between staying home and going out with my friends."
+          "en": "I'm torn between staying home and going out with my friends.",
+          "ptIntent": "Estou dividido entre",
+          "enIntent": "I'm torn between"
         },
         {
           "pt": "Estou em dúvida entre aceitar o emprego e continuar onde estou.",
-          "en": "I'm torn between accepting the job and staying where I am."
+          "en": "I'm torn between accepting the job and staying where I am.",
+          "ptIntent": "Estou em dúvida entre",
+          "enIntent": "I'm torn between"
         },
         {
           "pt": "Estou dividido entre comprar um carro novo e economizar o dinheiro.",
-          "en": "I'm torn between buying a new car and saving the money."
+          "en": "I'm torn between buying a new car and saving the money.",
+          "ptIntent": "Estou dividido entre",
+          "enIntent": "I'm torn between"
         }
       ],
       "tags": [
@@ -8741,7 +9785,7 @@
       "related": [],
       "englishLevel": "B1"
     },
-        {
+    {
       "id": "it-depends-on",
       "intention": "Depende de...",
       "english": "It depends on...",
@@ -8756,11 +9800,15 @@
       "examples": [
         {
           "pt": "Depende da situação.",
-          "en": "It depends on the situation."
+          "en": "It depends on the situation.",
+          "ptIntent": "Depende",
+          "enIntent": "It depends on"
         },
         {
           "pt": "Depende de quanto tempo nós temos.",
-          "en": "It depends on how much time we have."
+          "en": "It depends on how much time we have.",
+          "ptIntent": "Depende de",
+          "enIntent": "It depends on"
         }
       ],
       "tags": [
@@ -8786,15 +9834,21 @@
       "examples": [
         {
           "pt": "Olhando para trás, eu teria feito algumas coisas de forma diferente.",
-          "en": "Looking back, I would have done a few things differently."
+          "en": "Looking back, I would have done a few things differently.",
+          "ptIntent": "Olhando para trás",
+          "enIntent": "Looking back"
         },
         {
           "pt": "Olhando para trás, aquela experiência me ajudou muito.",
-          "en": "Looking back, that experience helped me a lot."
+          "en": "Looking back, that experience helped me a lot.",
+          "ptIntent": "Olhando para trás",
+          "enIntent": "Looking back"
         },
         {
           "pt": "Imagine que você tem 75 anos e você está relembrando sua vida",
-          "en": "Imagine you're 75 and you're looking back at your life."
+          "en": "Imagine you're 75 and you're looking back at your life.",
+          "ptIntent": "relembrando",
+          "enIntent": "looking back"
         }
       ],
       "tags": [
@@ -8820,11 +9874,15 @@
       "examples": [
         {
           "pt": "Na minha opinião, essa é a melhor opção.",
-          "en": "If you ask me, that's the best option."
+          "en": "If you ask me, that's the best option.",
+          "ptIntent": "Na minha opinião",
+          "enIntent": "If you ask me"
         },
         {
           "pt": "Se quer saber o que eu acho, nós deveríamos esperar.",
-          "en": "If you ask me, we should wait."
+          "en": "If you ask me, we should wait.",
+          "ptIntent": "Se quer saber o que eu acho",
+          "enIntent": "If you ask me"
         }
       ],
       "tags": [
@@ -8850,11 +9908,15 @@
       "examples": [
         {
           "pt": "Eu entendo o seu ponto de vista, mas ainda acho que precisamos de mais dados.",
-          "en": "I see where you're coming from, but I still think we need more data."
+          "en": "I see where you're coming from, but I still think we need more data.",
+          "ptIntent": "Eu entendo o seu ponto de vista",
+          "enIntent": "I see where you're coming from"
         },
         {
           "pt": "Entendo o que você quer dizer.",
-          "en": "I see where you're coming from."
+          "en": "I see where you're coming from.",
+          "ptIntent": "Entendo o",
+          "enIntent": "I see where you're coming from"
         }
       ],
       "tags": [
@@ -8881,11 +9943,15 @@
       "examples": [
         {
           "pt": "Esse é um bom ponto. Eu não tinha pensado nisso.",
-          "en": "That's a good point. I hadn't thought about that."
+          "en": "That's a good point. I hadn't thought about that.",
+          "ptIntent": "Esse é um bom ponto",
+          "enIntent": "That's a good point"
         },
         {
           "pt": "Boa observação. Precisamos considerar isso.",
-          "en": "That's a good point. We need to consider that."
+          "en": "That's a good point. We need to consider that.",
+          "ptIntent": "Boa observação",
+          "enIntent": "That's a good point"
         }
       ],
       "tags": [
@@ -8912,11 +9978,15 @@
       "examples": [
         {
           "pt": "Não estou totalmente convencido de que essa seja a melhor solução.",
-          "en": "I'm not entirely convinced that this is the best solution."
+          "en": "I'm not entirely convinced that this is the best solution.",
+          "ptIntent": "Não estou totalmente convencido",
+          "enIntent": "I'm not entirely convinced that"
         },
         {
           "pt": "Não estou totalmente convencido por esse argumento.",
-          "en": "I'm not entirely convinced by that argument."
+          "en": "I'm not entirely convinced by that argument.",
+          "ptIntent": "Não estou totalmente convencido",
+          "enIntent": "I'm not entirely convinced"
         }
       ],
       "tags": [
@@ -8943,11 +10013,15 @@
       "examples": [
         {
           "pt": "O trabalho paga bem. Por outro lado, exige muitas horas.",
-          "en": "The job pays well. On the other hand, it requires long hours."
+          "en": "The job pays well. On the other hand, it requires long hours.",
+          "ptIntent": "Por outro lado",
+          "enIntent": "On the other hand"
         },
         {
           "pt": "Trabalhar de casa é confortável. Por outro lado, pode ser solitário.",
-          "en": "Working from home is comfortable. On the other hand, it can be lonely."
+          "en": "Working from home is comfortable. On the other hand, it can be lonely.",
+          "ptIntent": "Por outro lado",
+          "enIntent": "On the other hand"
         }
       ],
       "tags": [
@@ -8973,11 +10047,15 @@
       "examples": [
         {
           "pt": "Eu nunca tinha pensado nisso dessa forma.",
-          "en": "I've never really thought about it that way."
+          "en": "I've never really thought about it that way.",
+          "ptIntent": "Eu nunca tinha pensado nisso dessa forma",
+          "enIntent": "I've never really thought about it that way"
         },
         {
           "pt": "Interessante. Eu nunca tinha pensado no problema dessa forma.",
-          "en": "Interesting. I've never really thought about the problem that way."
+          "en": "Interesting. I've never really thought about the problem that way.",
+          "ptIntent": "Eu nunca tinha pensado",
+          "enIntent": "I've never really thought about"
         }
       ],
       "tags": [
@@ -9003,11 +10081,15 @@
       "examples": [
         {
           "pt": "Você é professor.",
-          "en": "You are a teacher."
+          "en": "You are a teacher.",
+          "ptIntent": "Você é",
+          "enIntent": "You are"
         },
         {
           "pt": "Você é muito gentil.",
-          "en": "You are very kind."
+          "en": "You are very kind.",
+          "ptIntent": "Você é",
+          "enIntent": "You are"
         }
       ],
       "tags": [
@@ -9036,11 +10118,15 @@
       "examples": [
         {
           "pt": "Você era professor.",
-          "en": "You were a teacher."
+          "en": "You were a teacher.",
+          "ptIntent": "Você era",
+          "enIntent": "You were"
         },
         {
           "pt": "Você era muito tímido.",
-          "en": "You were very shy."
+          "en": "You were very shy.",
+          "ptIntent": "Você era",
+          "enIntent": "You were"
         }
       ],
       "tags": [
@@ -9069,11 +10155,15 @@
       "examples": [
         {
           "pt": "Você está cansado.",
-          "en": "You are tired."
+          "en": "You are tired.",
+          "ptIntent": "Você está",
+          "enIntent": "You are"
         },
         {
           "pt": "Você está em casa.",
-          "en": "You are at home."
+          "en": "You are at home.",
+          "ptIntent": "Você está",
+          "enIntent": "You are"
         }
       ],
       "tags": [
@@ -9102,11 +10192,15 @@
       "examples": [
         {
           "pt": "Você estava cansado.",
-          "en": "You were tired."
+          "en": "You were tired.",
+          "ptIntent": "Você estava",
+          "enIntent": "You were"
         },
         {
           "pt": "Você estava no trabalho.",
-          "en": "You were at work."
+          "en": "You were at work.",
+          "ptIntent": "Você estava",
+          "enIntent": "You were"
         }
       ],
       "tags": [
@@ -9135,11 +10229,15 @@
       "examples": [
         {
           "pt": "Você tem um carro.",
-          "en": "You have a car."
+          "en": "You have a car.",
+          "ptIntent": "Você tem",
+          "enIntent": "You have"
         },
         {
           "pt": "Você tem dois irmãos.",
-          "en": "You have two brothers."
+          "en": "You have two brothers.",
+          "ptIntent": "Você tem",
+          "enIntent": "You have"
         }
       ],
       "tags": [
@@ -9166,11 +10264,15 @@
       "examples": [
         {
           "pt": "Você tinha um cachorro.",
-          "en": "You had a dog."
+          "en": "You had a dog.",
+          "ptIntent": "Você tinha",
+          "enIntent": "You had"
         },
         {
           "pt": "Você tinha mais tempo antes.",
-          "en": "You had more time before."
+          "en": "You had more time before.",
+          "ptIntent": "Você tinha",
+          "enIntent": "You had"
         }
       ],
       "tags": [
@@ -9198,11 +10300,15 @@
       "examples": [
         {
           "pt": "Você gosta de café.",
-          "en": "You like coffee."
+          "en": "You like coffee.",
+          "ptIntent": "Você gosta de",
+          "enIntent": "You like"
         },
         {
           "pt": "Você gosta de viajar.",
-          "en": "You like traveling."
+          "en": "You like traveling.",
+          "ptIntent": "Você gosta de",
+          "enIntent": "You like"
         }
       ],
       "tags": [
@@ -9227,11 +10333,15 @@
       "examples": [
         {
           "pt": "Você quer água.",
-          "en": "You want water."
+          "en": "You want water.",
+          "ptIntent": "Você quer",
+          "enIntent": "You want"
         },
         {
           "pt": "Você quer viajar.",
-          "en": "You want to travel."
+          "en": "You want to travel.",
+          "ptIntent": "Você quer",
+          "enIntent": "You want"
         }
       ],
       "tags": [
@@ -9256,11 +10366,15 @@
       "examples": [
         {
           "pt": "Você precisa de ajuda.",
-          "en": "You need help."
+          "en": "You need help.",
+          "ptIntent": "Você precisa",
+          "enIntent": "You need"
         },
         {
           "pt": "Você precisa descansar.",
-          "en": "You need to rest."
+          "en": "You need to rest.",
+          "ptIntent": "Você precisa",
+          "enIntent": "You need"
         }
       ],
       "tags": [
@@ -9285,11 +10399,15 @@
       "examples": [
         {
           "pt": "Você pode entrar.",
-          "en": "You can come in."
+          "en": "You can come in.",
+          "ptIntent": "Você pode",
+          "enIntent": "You can"
         },
         {
           "pt": "Você pode falar inglês.",
-          "en": "You can speak English."
+          "en": "You can speak English.",
+          "ptIntent": "Você pode",
+          "enIntent": "You can"
         }
       ],
       "tags": [
@@ -9318,19 +10436,27 @@
       "examples": [
         {
           "pt": "O que posso fazer por você?",
-          "en": "What can I do for you?"
+          "en": "What can I do for you?",
+          "ptIntent": "O que posso fazer por você",
+          "enIntent": "What can I"
         },
         {
           "pt": "Como posso te ajudar?",
-          "en": "What can I help you with?"
+          "en": "What can I help you with?",
+          "ptIntent": "Como posso te ajudar",
+          "enIntent": "What can I"
         },
         {
           "pt": "O que posso trazer para você?",
-          "en": "What can I bring you?"
+          "en": "What can I bring you?",
+          "ptIntent": "O que posso",
+          "enIntent": "What can I"
         },
         {
           "pt": "O que posso te oferecer?",
-          "en": "What can I get you?"
+          "en": "What can I get you?",
+          "ptIntent": "O que posso te",
+          "enIntent": "What can I"
         }
       ],
       "tags": [
@@ -9341,6 +10467,96 @@
       ],
       "related": [],
       "englishLevel": "A2"
-    }    
+    },
+    {
+      "id": "eu-fui-para",
+      "intention": "Eu fui para... / Eu fui ao...",
+      "english": "I went to...",
+      "pattern": "I went to + place",
+      "description": "Usado para dizer que você foi a algum lugar no passado.",
+      "category": "past-actions",
+      "searchTerms": [
+        "eu fui para",
+        "eu fui ao",
+        "eu fui à",
+        "i went to"
+      ],
+      "examples": [
+        {
+          "pt": "Eu fui ao mercado.",
+          "en": "I went to the market.",
+          "ptIntent": "Eu fui ao",
+          "enIntent": "I went to"
+        },
+        {
+          "pt": "Eu fui ao Rio de Janeiro no fim de semana.",
+          "en": "I went to Rio de Janeiro over the weekend.",
+          "ptIntent": "Eu fui ao",
+          "enIntent": "I went to"
+        },
+        {
+          "pt": "Eu fui ao trabalho de manhã.",
+          "en": "I went to work in the morning.",
+          "ptIntent": "Eu fui ao",
+          "enIntent": "I went to"
+        }
+      ],
+      "tags": [
+        "past",
+        "go",
+        "went",
+        "movement",
+        "conversation"
+      ],
+      "related": [
+        "eu-nao-fui-para"
+      ],
+      "englishLevel": "A1"
+    },
+    {
+      "id": "eu-nao-fui-para",
+      "intention": "Eu não fui para... / Eu não fui ao...",
+      "english": "I didn't go to...",
+      "pattern": "I didn't go to + place",
+      "description": "Usado para dizer que você não foi a algum lugar no passado. Depois de 'didn't', o verbo fica na forma base: go, e não went.",
+      "category": "past-actions",
+      "searchTerms": [
+        "eu não fui para",
+        "eu não fui ao",
+        "eu não fui à",
+        "i didn't go to"
+      ],
+      "examples": [
+        {
+          "pt": "Eu não fui ao mercado.",
+          "en": "I didn't go to the market.",
+          "ptIntent": "Eu não fui ao",
+          "enIntent": "I didn't go to"
+        },
+        {
+          "pt": "Eu não fui ao Rio de Janeiro no fim de semana.",
+          "en": "I didn't go to Rio de Janeiro over the weekend.",
+          "ptIntent": "Eu não fui ao",
+          "enIntent": "I didn't go to"
+        },
+        {
+          "pt": "Eu não fui ao trabalho ontem.",
+          "en": "I didn't go to work yesterday.",
+          "ptIntent": "Eu não fui ao",
+          "enIntent": "I didn't go to"
+        }
+      ],
+      "tags": [
+        "past",
+        "negative",
+        "go",
+        "didn't",
+        "conversation"
+      ],
+      "related": [
+        "eu-fui-para"
+      ],
+      "englishLevel": "A1"
+    }
   ]
 }

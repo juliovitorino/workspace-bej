@@ -1,5 +1,34 @@
 import type { MentalIntention } from "../types/hashmap";
 
+
+function renderHighlightedText(
+  text: string,
+  highlight?: string
+) {
+  if (!highlight) {
+    return text;
+  }
+
+  const index = text.indexOf(highlight);
+
+  if (index === -1) {
+    return text;
+  }
+
+  const before = text.slice(0, index);
+  const after = text.slice(index + highlight.length);
+
+  return (
+    <>
+      {before}
+      <strong className="intention-highlight">
+        {highlight}
+      </strong>
+      {after}
+    </>
+  );
+}
+
 interface IntentionDetailsProps {
   item: MentalIntention | null;
   allItems: MentalIntention[];
@@ -91,8 +120,18 @@ export function IntentionDetails({
             <div className="examples">
               {item.examples.map((example, index) => (
                 <div className="example" key={`${item.id}-${index}`}>
-                  <p>{example.pt}</p>
-                  <p className="english">{example.en}</p>
+                  <p>
+                    {renderHighlightedText(
+                      example.pt,
+                      example.ptIntent
+                    )}
+                  </p>
+                  <p className="english">
+                    {renderHighlightedText(
+                      example.en,
+                      example.enIntent
+                    )}
+                  </p>
                 </div>
               ))}
             </div>

@@ -1623,3 +1623,24 @@ button {
     padding: 8px 12px;
   }
 }
+
+
+/* Highlight the intention inside examples */
+.intention-highlight {
+  font-weight: 900;
+  background: #fff4e5;
+  color: #b54708;
+  border-radius: 6px;
+  padding: 0 3px;
+}
+
+.english .intention-highlight {
+  background: #edf1ff;
+  color: #2748c7;
+}
+
+@media (max-width: 820px) {
+  .intention-highlight {
+    padding: 1px 4px;
+  }
+}
