@@ -8,6 +8,8 @@ export interface HashmapMetadata {
 export interface Example {
   pt: string;
   en: string;
+  ptIntent?: string;
+  enIntent?: string;
 }
 
 export interface MentalIntention {
