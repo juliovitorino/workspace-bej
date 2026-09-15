@@ -5360,13 +5360,13 @@
         {
           "pt": "Para ser honesto.",
           "en": "To be honest.",
-          "ptIntent": "ser",
+          "ptIntent": "Para ser honesto",
           "enIntent": "To be honest"
         },
         {
-          "pt": "A verdade é que...",
-          "en": "The truth is...",
-          "ptIntent": "verdade",
+          "pt": "A verdade é que você está certo.",
+          "en": "The truth is you're are right.",
+          "ptIntent": "A verdade é que",
           "enIntent": "The truth is"
         }
       ],
