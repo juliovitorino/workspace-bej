@@ -235,6 +235,7 @@ function App() {
               !trainingMode && (
                 <InterpretationPanel
                   intentions={data.mentalMap}
+                  onSelectIntention={setSelected}
                 />
               )}
             {!loading &&
@@ -261,7 +262,12 @@ function App() {
       </div>
 
       <IntentionDetails
-        item={currentView === "hashmap" && !trainingMode ? selected : null}
+        item={
+          (currentView === "hashmap" || currentView === "interpretation") &&
+          !trainingMode
+            ? selected
+            : null
+        }
         allItems={data?.mentalMap ?? []}
         onClose={() => setSelected(null)}
         onSelectRelated={setSelected}
