@@ -9,6 +9,7 @@ type EnglishLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
 interface InterpretationPanelProps {
   intentions: MentalIntention[];
+  onSelectIntention: (item: MentalIntention) => void;
 }
 
 const THEMES = [
@@ -38,7 +39,8 @@ function shuffle<T>(items: T[]): T[] {
 }
 
 export function InterpretationPanel({
-  intentions
+  intentions,
+  onSelectIntention
 }: InterpretationPanelProps) {
   const [englishLevel, setEnglishLevel] =
     useState<EnglishLevel>("B1");
@@ -327,12 +329,22 @@ export function InterpretationPanel({
                   (item) => item.id === id
                 );
 
-                return (
+                return intention ? (
+                  <button
+                    type="button"
+                    className="pill interpretation-used-button"
+                    key={id}
+                    onClick={() => onSelectIntention(intention)}
+                    title={`Ver detalhes de ${intention.intention}`}
+                  >
+                    {intention.intention}
+                  </button>
+                ) : (
                   <span
                     className="pill"
                     key={id}
                   >
-                    {intention?.intention ?? id}
+                    {id}
                   </span>
                 );
               })}
