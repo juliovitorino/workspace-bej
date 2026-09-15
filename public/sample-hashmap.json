@@ -1742,7 +1742,7 @@
         {
           "pt": "Ele deve estar em casa.",
           "en": "He must be at home.",
-          "ptIntent": "deve",
+          "ptIntent": "deve estar",
           "enIntent": "must be"
         }
       ],
@@ -6224,19 +6224,19 @@
         {
           "pt": "Faz sentido.",
           "en": "Makes sense.",
-          "ptIntent": "Faz",
+          "ptIntent": "Faz sentido",
           "enIntent": "Makes sense"
         },
         {
           "pt": "Isso explica.",
           "en": "That explains it.",
-          "ptIntent": "explica",
+          "ptIntent": "Isso explica",
           "enIntent": "That explains it"
         },
         {
           "pt": "Não é à toa que você está cansado; você passou o dia todo trabalhando.",
           "en": "No wonder you're tired; you've been working all day.",
-          "ptIntent": "Não é",
+          "ptIntent": "Não é à toa que",
           "enIntent": "No wonder"
         }
       ],
