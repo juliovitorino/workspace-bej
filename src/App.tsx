@@ -6,6 +6,7 @@ import { Sidebar, type AppView } from "./components/Sidebar";
 import { ExercisePanel } from "./components/ExercisePanel";
 import { BasicTraining } from "./components/BasicTraining";
 import { AdvancedTraining } from "./components/AdvancedTraining";
+import { InterpretationPanel } from "./components/InterpretationPanel";
 import { IntentionList } from "./components/IntentionList";
 import { IntentionDetails } from "./components/IntentionDetails";
 import { fetchHashmap, loadHashmap } from "./services/hashmapService";
@@ -227,6 +228,15 @@ function App() {
                 onStartTraining={startTraining}
               />
             )}
+
+            {!loading &&
+              data &&
+              currentView === "interpretation" &&
+              !trainingMode && (
+                <InterpretationPanel
+                  intentions={data.mentalMap}
+                />
+              )}
             {!loading &&
               data &&
               trainingMode === "basic" &&
