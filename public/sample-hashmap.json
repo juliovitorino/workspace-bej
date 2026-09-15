@@ -10557,6 +10557,48 @@
         "eu-fui-para"
       ],
       "englishLevel": "A1"
+    },
+    {
+      "id": "for-good",
+      "intention": "De vez / para sempre",
+      "english": "for good",
+      "pattern": "for good",
+      "description": "Usado para dizer que algo acabou, mudou ou foi encerrado de forma definitiva, sem intenção de voltar à situação anterior.",
+      "category": "time-finality",
+      "searchTerms": [
+        "de vez",
+        "para sempre",
+        "definitivamente",
+        "for good"
+      ],
+      "examples": [
+        {
+          "pt": "Eu deixei aquele emprego de vez.",
+          "en": "I left that job for good.",
+          "ptIntent": "de vez",
+          "enIntent": "for good"
+        },
+        {
+          "pt": "Ela se mudou para outro país para sempre.",
+          "en": "She moved to another country for good.",
+          "ptIntent": "para sempre",
+          "enIntent": "for good"
+        },
+        {
+          "pt": "Depois daquele problema, eu decidi parar de usar aquela ferramenta de vez.",
+          "en": "After that problem, I decided to stop using that tool for good.",
+          "ptIntent": "de vez",
+          "enIntent": "for good"
+        }
+      ],
+      "tags": [
+        "time",
+        "finality",
+        "idiom",
+        "conversation"
+      ],
+      "related": [],
+      "englishLevel": "B1"
     }
   ]
 }
