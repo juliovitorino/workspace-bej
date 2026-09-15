@@ -1841,6 +1841,14 @@
         {
           "pt": "No fim das contas, o que importa é o resultado.",
           "en": "At the end of the day, what matters is the result."
+        },
+        {
+          "pt": "No fim das contas, a decisão é sua.",
+          "en": "At the end of the day, the decision is yours."
+        },
+        {
+          "pt": "No fim das contas, o que importa é continuar praticando.",
+          "en": "At the end of the day, what matters is to keep practicing."
         }
       ],
       "tags": [
@@ -8982,36 +8990,316 @@
       "englishLevel": "B2"
     },
     {
-      "id": "at-the-end-of-the-day",
-      "intention": "No fim das contas...",
-      "english": "At the end of the day,...",
-      "pattern": "At the end of the day, + clause",
-      "description": "Usado para resumir uma conclusão ou destacar o ponto mais importante depois de considerar todos os fatores.",
-      "category": "idioms",
+      "id": "voce-e",
+      "intention": "Você é...",
+      "english": "You are...",
+      "pattern": "You are + noun/adjective",
+      "description": "Usado para falar sobre identidade, profissão, característica ou condição.",
+      "category": "be-states",
       "searchTerms": [
-        "no fim das contas",
-        "afinal de contas",
-        "quando tudo é considerado",
-        "at the end of the day"
+        "você é",
+        "you are"
       ],
       "examples": [
         {
-          "pt": "No fim das contas, a decisão é sua.",
-          "en": "At the end of the day, the decision is yours."
+          "pt": "Você é professor.",
+          "en": "You are a teacher."
         },
         {
-          "pt": "No fim das contas, o que importa é continuar praticando.",
-          "en": "At the end of the day, what matters is to keep practicing."
+          "pt": "Você é muito gentil.",
+          "en": "You are very kind."
         }
       ],
       "tags": [
-        "idiom",
-        "conclusion",
-        "discourse",
-        "conversation"
+        "a1",
+        "be",
+        "identity",
+        "description"
+      ],
+      "related": [
+        "voce-era",
+        "voce-esta"
+      ],
+      "englishLevel": "A1"
+    },
+    {
+      "id": "voce-era",
+      "intention": "Você era...",
+      "english": "You were...",
+      "pattern": "You were + noun/adjective",
+      "description": "Usado para falar sobre identidade, característica ou estado no passado.",
+      "category": "be-states",
+      "searchTerms": [
+        "você era",
+        "you were"
+      ],
+      "examples": [
+        {
+          "pt": "Você era professor.",
+          "en": "You were a teacher."
+        },
+        {
+          "pt": "Você era muito tímido.",
+          "en": "You were very shy."
+        }
+      ],
+      "tags": [
+        "a1",
+        "be",
+        "past",
+        "description"
+      ],
+      "related": [
+        "voce-e",
+        "voce-estava"
+      ],
+      "englishLevel": "A1"
+    },
+    {
+      "id": "voce-esta",
+      "intention": "Você está...",
+      "english": "You are...",
+      "pattern": "You are + adjective/place",
+      "description": "Usado para falar sobre estado atual, condição ou localização.",
+      "category": "be-states",
+      "searchTerms": [
+        "você está",
+        "you are"
+      ],
+      "examples": [
+        {
+          "pt": "Você está cansado.",
+          "en": "You are tired."
+        },
+        {
+          "pt": "Você está em casa.",
+          "en": "You are at home."
+        }
+      ],
+      "tags": [
+        "a1",
+        "be",
+        "present",
+        "state"
+      ],
+      "related": [
+        "voce-e",
+        "voce-estava"
+      ],
+      "englishLevel": "A1"
+    },
+    {
+      "id": "voce-estava",
+      "intention": "Você estava...",
+      "english": "You were...",
+      "pattern": "You were + adjective/place",
+      "description": "Usado para falar sobre estado, condição ou localização no passado.",
+      "category": "be-states",
+      "searchTerms": [
+        "você estava",
+        "you were"
+      ],
+      "examples": [
+        {
+          "pt": "Você estava cansado.",
+          "en": "You were tired."
+        },
+        {
+          "pt": "Você estava no trabalho.",
+          "en": "You were at work."
+        }
+      ],
+      "tags": [
+        "a1",
+        "be",
+        "past",
+        "state"
+      ],
+      "related": [
+        "voce-esta",
+        "voce-era"
+      ],
+      "englishLevel": "A1"
+    },
+    {
+      "id": "voce-tem",
+      "intention": "Você tem...",
+      "english": "You have...",
+      "pattern": "You have + noun",
+      "description": "Usado para falar sobre posse, características ou relações.",
+      "category": "possession",
+      "searchTerms": [
+        "você tem",
+        "you have"
+      ],
+      "examples": [
+        {
+          "pt": "Você tem um carro.",
+          "en": "You have a car."
+        },
+        {
+          "pt": "Você tem dois irmãos.",
+          "en": "You have two brothers."
+        }
+      ],
+      "tags": [
+        "a1",
+        "have",
+        "possession"
+      ],
+      "related": [
+        "voce-tinha"
+      ],
+      "englishLevel": "A1"
+    },
+    {
+      "id": "voce-tinha",
+      "intention": "Você tinha...",
+      "english": "You had...",
+      "pattern": "You had + noun",
+      "description": "Usado para falar sobre posse ou situação no passado.",
+      "category": "possession",
+      "searchTerms": [
+        "você tinha",
+        "you had"
+      ],
+      "examples": [
+        {
+          "pt": "Você tinha um cachorro.",
+          "en": "You had a dog."
+        },
+        {
+          "pt": "Você tinha mais tempo antes.",
+          "en": "You had more time before."
+        }
+      ],
+      "tags": [
+        "a1",
+        "have",
+        "past",
+        "possession"
+      ],
+      "related": [
+        "voce-tem"
+      ],
+      "englishLevel": "A1"
+    },
+    {
+      "id": "voce-gosta-de",
+      "intention": "Você gosta de...",
+      "english": "You like...",
+      "pattern": "You like + noun / verb-ing",
+      "description": "Usado para falar sobre preferências.",
+      "category": "preferences",
+      "searchTerms": [
+        "você gosta de",
+        "you like"
+      ],
+      "examples": [
+        {
+          "pt": "Você gosta de café.",
+          "en": "You like coffee."
+        },
+        {
+          "pt": "Você gosta de viajar.",
+          "en": "You like traveling."
+        }
+      ],
+      "tags": [
+        "a1",
+        "preference",
+        "likes"
       ],
       "related": [],
-      "englishLevel": "B2"
+      "englishLevel": "A1"
+    },
+    {
+      "id": "voce-quer",
+      "intention": "Você quer...",
+      "english": "You want...",
+      "pattern": "You want + noun / to + verb",
+      "description": "Usado para falar sobre desejos e vontades.",
+      "category": "desire",
+      "searchTerms": [
+        "você quer",
+        "you want"
+      ],
+      "examples": [
+        {
+          "pt": "Você quer água.",
+          "en": "You want water."
+        },
+        {
+          "pt": "Você quer viajar.",
+          "en": "You want to travel."
+        }
+      ],
+      "tags": [
+        "a1",
+        "desire",
+        "want"
+      ],
+      "related": [],
+      "englishLevel": "A1"
+    },
+    {
+      "id": "voce-precisa",
+      "intention": "Você precisa...",
+      "english": "You need...",
+      "pattern": "You need + noun / to + verb",
+      "description": "Usado para falar sobre necessidade.",
+      "category": "need",
+      "searchTerms": [
+        "você precisa",
+        "you need"
+      ],
+      "examples": [
+        {
+          "pt": "Você precisa de ajuda.",
+          "en": "You need help."
+        },
+        {
+          "pt": "Você precisa descansar.",
+          "en": "You need to rest."
+        }
+      ],
+      "tags": [
+        "a1",
+        "need",
+        "necessity"
+      ],
+      "related": [],
+      "englishLevel": "A1"
+    },
+    {
+      "id": "voce-pode",
+      "intention": "Você pode...",
+      "english": "You can...",
+      "pattern": "You can + base verb",
+      "description": "Usado para falar sobre capacidade, permissão ou possibilidade simples.",
+      "category": "modal-verbs",
+      "searchTerms": [
+        "você pode",
+        "you can"
+      ],
+      "examples": [
+        {
+          "pt": "Você pode entrar.",
+          "en": "You can come in."
+        },
+        {
+          "pt": "Você pode falar inglês.",
+          "en": "You can speak English."
+        }
+      ],
+      "tags": [
+        "a1",
+        "can",
+        "ability",
+        "permission"
+      ],
+      "related": [],
+      "englishLevel": "A1"
     }    
   ]
 }
