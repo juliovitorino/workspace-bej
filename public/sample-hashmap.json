@@ -9300,6 +9300,47 @@
       ],
       "related": [],
       "englishLevel": "A1"
+    },
+    {
+      "id": "o-que-posso-te",
+      "intention": "O que posso te...? / o que posso ...? / Como posso ...?",
+      "english": "What can I ... for you?",
+      "pattern": "What can I + base verb + for you?",
+      "description": "Usado para oferecer ajuda, serviço ou alguma ação para outra pessoa, perguntando o que você pode fazer por ela.",
+      "category": "offers-help",
+      "searchTerms": [
+        "o que posso te",
+        "o que posso fazer por você",
+        "como posso te ajudar",
+        "what can i do for you",
+        "what can i help you with"
+      ],
+      "examples": [
+        {
+          "pt": "O que posso fazer por você?",
+          "en": "What can I do for you?"
+        },
+        {
+          "pt": "Como posso te ajudar?",
+          "en": "What can I help you with?"
+        },
+        {
+          "pt": "O que posso trazer para você?",
+          "en": "What can I bring you?"
+        },
+        {
+          "pt": "O que posso te oferecer?",
+          "en": "What can I get you?"
+        }
+      ],
+      "tags": [
+        "offer",
+        "help",
+        "question",
+        "conversation"
+      ],
+      "related": [],
+      "englishLevel": "A2"
     }    
   ]
 }
