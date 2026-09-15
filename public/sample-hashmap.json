@@ -8732,6 +8732,286 @@
       ],
       "related": [],
       "englishLevel": "B1"
+    },
+        {
+      "id": "it-depends-on",
+      "intention": "Depende de...",
+      "english": "It depends on...",
+      "pattern": "It depends on + noun / pronoun / wh-clause",
+      "description": "Usado para dizer que a resposta ou resultado varia de acordo com a situação, condição ou contexto.",
+      "category": "idioms",
+      "searchTerms": [
+        "depende de",
+        "isso depende de",
+        "it depends on"
+      ],
+      "examples": [
+        {
+          "pt": "Depende da situação.",
+          "en": "It depends on the situation."
+        },
+        {
+          "pt": "Depende de quanto tempo nós temos.",
+          "en": "It depends on how much time we have."
+        }
+      ],
+      "tags": [
+        "idiom",
+        "conversation",
+        "condition"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "looking-back",
+      "intention": "Olhando para trás... / Pensando no passado.../ relembrando",
+      "english": "Looking back,...",
+      "pattern": "Looking back, + clause",
+      "description": "Usado para refletir sobre uma situação passada a partir da perspectiva atual.",
+      "category": "idioms",
+      "searchTerms": [
+        "olhando para trás",
+        "pensando no passado",
+        "looking back"
+      ],
+      "examples": [
+        {
+          "pt": "Olhando para trás, eu teria feito algumas coisas de forma diferente.",
+          "en": "Looking back, I would have done a few things differently."
+        },
+        {
+          "pt": "Olhando para trás, aquela experiência me ajudou muito.",
+          "en": "Looking back, that experience helped me a lot."
+        },
+        {
+          "pt": "Imagine que você tem 75 anos e você está relembrando sua vida",
+          "en": "Imagine you're 75 and you're looking back at your life."
+        }
+      ],
+      "tags": [
+        "idiom",
+        "reflection",
+        "past"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "if-you-ask-me",
+      "intention": "Na minha opinião... / Se quer saber o que eu acho...",
+      "english": "If you ask me,...",
+      "pattern": "If you ask me, + opinion",
+      "description": "Usado para introduzir uma opinião pessoal de forma conversacional.",
+      "category": "idioms",
+      "searchTerms": [
+        "na minha opinião",
+        "se quer saber o que eu acho",
+        "if you ask me"
+      ],
+      "examples": [
+        {
+          "pt": "Na minha opinião, essa é a melhor opção.",
+          "en": "If you ask me, that's the best option."
+        },
+        {
+          "pt": "Se quer saber o que eu acho, nós deveríamos esperar.",
+          "en": "If you ask me, we should wait."
+        }
+      ],
+      "tags": [
+        "idiom",
+        "opinion",
+        "conversation"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "i-see-where-youre-coming-from",
+      "intention": "Eu entendo o seu ponto de vista...",
+      "english": "I see where you're coming from.",
+      "pattern": "I see where + subject + be + coming from",
+      "description": "Usado para mostrar que você entende a opinião, o raciocínio ou a perspectiva da outra pessoa, mesmo sem concordar totalmente.",
+      "category": "idioms",
+      "searchTerms": [
+        "eu entendo seu ponto de vista",
+        "entendo de onde você vem",
+        "i see where you're coming from"
+      ],
+      "examples": [
+        {
+          "pt": "Eu entendo o seu ponto de vista, mas ainda acho que precisamos de mais dados.",
+          "en": "I see where you're coming from, but I still think we need more data."
+        },
+        {
+          "pt": "Entendo o que você quer dizer.",
+          "en": "I see where you're coming from."
+        }
+      ],
+      "tags": [
+        "idiom",
+        "agreement",
+        "understanding",
+        "conversation"
+      ],
+      "related": [],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "thats-a-good-point",
+      "intention": "Esse é um bom ponto.",
+      "english": "That's a good point.",
+      "pattern": "That's a good point.",
+      "description": "Usado para reconhecer que a ideia ou argumento de outra pessoa faz sentido.",
+      "category": "idioms",
+      "searchTerms": [
+        "esse é um bom ponto",
+        "boa observação",
+        "that's a good point"
+      ],
+      "examples": [
+        {
+          "pt": "Esse é um bom ponto. Eu não tinha pensado nisso.",
+          "en": "That's a good point. I hadn't thought about that."
+        },
+        {
+          "pt": "Boa observação. Precisamos considerar isso.",
+          "en": "That's a good point. We need to consider that."
+        }
+      ],
+      "tags": [
+        "idiom",
+        "agreement",
+        "reaction",
+        "conversation"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "im-not-entirely-convinced",
+      "intention": "Não estou totalmente convencido.",
+      "english": "I'm not entirely convinced.",
+      "pattern": "I'm not entirely convinced + that/by/about...",
+      "description": "Usado para expressar discordância ou dúvida de forma moderada e educada.",
+      "category": "idioms",
+      "searchTerms": [
+        "não estou totalmente convencido",
+        "não concordo completamente",
+        "i'm not entirely convinced"
+      ],
+      "examples": [
+        {
+          "pt": "Não estou totalmente convencido de que essa seja a melhor solução.",
+          "en": "I'm not entirely convinced that this is the best solution."
+        },
+        {
+          "pt": "Não estou totalmente convencido por esse argumento.",
+          "en": "I'm not entirely convinced by that argument."
+        }
+      ],
+      "tags": [
+        "idiom",
+        "disagreement",
+        "uncertainty",
+        "conversation"
+      ],
+      "related": [],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "on-the-other-hand",
+      "intention": "Por outro lado...",
+      "english": "On the other hand,...",
+      "pattern": "On the other hand, + clause",
+      "description": "Usado para introduzir outro lado, contraste ou perspectiva diferente em uma discussão.",
+      "category": "idioms",
+      "searchTerms": [
+        "por outro lado",
+        "em contrapartida",
+        "on the other hand"
+      ],
+      "examples": [
+        {
+          "pt": "O trabalho paga bem. Por outro lado, exige muitas horas.",
+          "en": "The job pays well. On the other hand, it requires long hours."
+        },
+        {
+          "pt": "Trabalhar de casa é confortável. Por outro lado, pode ser solitário.",
+          "en": "Working from home is comfortable. On the other hand, it can be lonely."
+        }
+      ],
+      "tags": [
+        "idiom",
+        "contrast",
+        "discourse"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "ive-never-really-thought-about-it-that-way",
+      "intention": "Eu nunca tinha pensado nisso dessa forma.",
+      "english": "I've never really thought about it that way.",
+      "pattern": "I've never really thought about + object + that way",
+      "description": "Usado para reagir quando alguém apresenta uma perspectiva nova ou diferente.",
+      "category": "idioms",
+      "searchTerms": [
+        "nunca pensei nisso dessa forma",
+        "nunca tinha pensado assim",
+        "i've never really thought about it that way"
+      ],
+      "examples": [
+        {
+          "pt": "Eu nunca tinha pensado nisso dessa forma.",
+          "en": "I've never really thought about it that way."
+        },
+        {
+          "pt": "Interessante. Eu nunca tinha pensado no problema dessa forma.",
+          "en": "Interesting. I've never really thought about the problem that way."
+        }
+      ],
+      "tags": [
+        "idiom",
+        "reflection",
+        "perspective",
+        "reaction"
+      ],
+      "related": [],
+      "englishLevel": "B2"
+    },
+    {
+      "id": "at-the-end-of-the-day",
+      "intention": "No fim das contas...",
+      "english": "At the end of the day,...",
+      "pattern": "At the end of the day, + clause",
+      "description": "Usado para resumir uma conclusão ou destacar o ponto mais importante depois de considerar todos os fatores.",
+      "category": "idioms",
+      "searchTerms": [
+        "no fim das contas",
+        "afinal de contas",
+        "quando tudo é considerado",
+        "at the end of the day"
+      ],
+      "examples": [
+        {
+          "pt": "No fim das contas, a decisão é sua.",
+          "en": "At the end of the day, the decision is yours."
+        },
+        {
+          "pt": "No fim das contas, o que importa é continuar praticando.",
+          "en": "At the end of the day, what matters is to keep practicing."
+        }
+      ],
+      "tags": [
+        "idiom",
+        "conclusion",
+        "discourse",
+        "conversation"
+      ],
+      "related": [],
+      "englishLevel": "B2"
     }    
   ]
 }
