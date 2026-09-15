@@ -440,14 +440,16 @@
           "pt": "Tem que haver limites.",
           "en": "There have to be limits.",
           "ptIntent": "Tem que haver",
-          "enIntent": "have to be"
+          "enIntent": "There have to be"
         }
       ],
       "tags": [
         "existence",
         "necessity"
       ],
-      "related": [],
+      "related": [
+        "tem-que-ser"
+      ],
       "englishLevel": "B1"
     },
     {
@@ -5422,21 +5424,21 @@
       "searchTerms": [],
       "examples": [
         {
-          "pt": "Você entende o que eu quero dizer.",
-          "en": "You know what I mean.",
-          "ptIntent": "entende",
+          "pt": "Você entende o que eu quero dizer quando digo algo sobre ela.",
+          "en": "You know what I mean when I say something about her.",
+          "ptIntent": "Você entende o que eu quero dizer",
           "enIntent": "You know what I mean"
         },
         {
-          "pt": "Pra ser justo.",
-          "en": "To be fair.",
-          "ptIntent": "Pra",
+          "pt": "Pra ser justo, tem que ser ele.",
+          "en": "To be fair, it has to be him",
+          "ptIntent": "Pra ser justo",
           "enIntent": "To be fair"
         },
         {
-          "pt": "O ponto é que...",
-          "en": "The point is...",
-          "ptIntent": "ponto",
+          "pt": "O ponto é que eu gosto de você.",
+          "en": "The point is I like you.",
+          "ptIntent": "O ponto é que",
           "enIntent": "The point is"
         }
       ],
@@ -10599,6 +10601,50 @@
       ],
       "related": [],
       "englishLevel": "B1"
+    },
+    {
+      "id": "tem-que-ser",
+      "intention": "Tem que ser...",
+      "english": "It has to be...",
+      "pattern": "It has to be + noun/adjective/complement",
+      "description": "Usado para expressar necessidade, exigência, certeza forte ou condição considerada obrigatória.",
+      "category": "obligation",
+      "searchTerms": [
+        "tem que ser",
+        "precisa ser",
+        "deve ser",
+        "it has to be"
+      ],
+      "examples": [
+        {
+          "pt": "Tem que ser simples.",
+          "en": "It has to be simple.",
+          "ptIntent": "Tem que ser",
+          "enIntent": "It has to be"
+        },
+        {
+          "pt": "Tem que ser hoje.",
+          "en": "It has to be today.",
+          "ptIntent": "Tem que ser",
+          "enIntent": "It has to be"
+        },
+        {
+          "pt": "Tem que ser uma solução melhor.",
+          "en": "It has to be a better solution.",
+          "ptIntent": "Tem que ser",
+          "enIntent": "It has to be"
+        }
+      ],
+      "tags": [
+        "obligation",
+        "necessity",
+        "be",
+        "conversation"
+      ],
+      "related": [
+        "tem-que-ter-tem-que-haver-existir"
+      ],
+      "englishLevel": "A2"
     }
   ]
 }
