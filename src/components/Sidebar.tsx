@@ -1,4 +1,4 @@
-export type AppView = "hashmap" | "exercises";
+export type AppView = "hashmap" | "exercises" | "interpretation";
 
 interface SidebarProps {
   currentView: AppView;
@@ -16,6 +16,10 @@ const menuItems: Array<{
   {
     id: "exercises",
     label: "Exercícios"
+  },
+  {
+    id: "interpretation",
+    label: "Interpretação"
   }
 ];
 
