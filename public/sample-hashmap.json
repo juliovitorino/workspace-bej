@@ -3252,7 +3252,7 @@
     },
     {
       "id": "ainda-bem-que",
-      "intention": "Ainda bem que...",
+      "intention": "Ainda bem que... / que bom que ...",
       "english": "good thing / it’s a good thing / luckily / thank God / that’s a relief",
       "pattern": "relief expression + clause",
       "description": "Alívio após risco evitado.",
