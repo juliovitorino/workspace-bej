@@ -5,6 +5,8 @@ import {
   type AIEvaluationResult
 } from "../services/aiEvaluationService";
 
+const AI_ENABLED = import.meta.env.VITE_AI_ENABLED === "true";
+
 interface AdvancedTrainingProps {
   intention: MentalIntention;
   onBack: () => void;
@@ -426,31 +428,33 @@ export function AdvancedTraining({
               }}
             />
 
-            <button
-              type="button"
-              className="primary-button"
-              onClick={handleEvaluate}
-              disabled={
-                evaluating ||
-                !sentenceOne.trim() ||
-                !sentenceTwo.trim() ||
-                !combinedSentence.trim()
-              }
-            >
-              {evaluating
-                ? "Avaliando com IA..."
-                : "Avaliar com IA"}
-            </button>
+            {AI_ENABLED && (
+              <button
+                type="button"
+                className="primary-button"
+                onClick={handleEvaluate}
+                disabled={
+                  evaluating ||
+                  !sentenceOne.trim() ||
+                  !sentenceTwo.trim() ||
+                  !combinedSentence.trim()
+                }
+              >
+                {evaluating
+                  ? "Avaliando com IA..."
+                  : "Avaliar com IA"}
+              </button>
+            )}
           </div>
 
-          {evaluationError && (
+          {AI_ENABLED && evaluationError && (
             <div className="status-card error-card ai-evaluation-error">
               <h2>Não foi possível avaliar o treino.</h2>
               <p>{evaluationError}</p>
             </div>
           )}
 
-          {evaluation && (
+          {AI_ENABLED && evaluation && (
             <section className="ai-evaluation-card">
               <div className="ai-evaluation-header">
                 <div>

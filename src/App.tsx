@@ -15,6 +15,8 @@ import { searchIntentions } from "./utils/searchIntentions";
 
 type TrainingMode = "basic" | "advanced" | null;
 
+const AI_ENABLED = import.meta.env.VITE_AI_ENABLED === "true";
+
 function App() {
   const [data, setData] = useState<HashmapData | null>(null);
   const [source, setSource] = useState<"remote" | "cache">("remote");
@@ -229,7 +231,8 @@ function App() {
               />
             )}
 
-            {!loading &&
+            {AI_ENABLED &&
+              !loading &&
               data &&
               currentView === "interpretation" &&
               !trainingMode && (
@@ -263,7 +266,10 @@ function App() {
 
       <IntentionDetails
         item={
-          (currentView === "hashmap" || currentView === "interpretation") &&
+          (
+            currentView === "hashmap" ||
+            (AI_ENABLED && currentView === "interpretation")
+          ) &&
           !trainingMode
             ? selected
             : null

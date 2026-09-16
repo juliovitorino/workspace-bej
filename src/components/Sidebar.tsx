@@ -1,5 +1,7 @@
 export type AppView = "hashmap" | "exercises" | "interpretation";
 
+const AI_ENABLED = import.meta.env.VITE_AI_ENABLED === "true";
+
 interface SidebarProps {
   currentView: AppView;
   onViewChange: (view: AppView) => void;
@@ -17,10 +19,14 @@ const menuItems: Array<{
     id: "exercises",
     label: "Exercícios"
   },
-  {
-    id: "interpretation",
-    label: "Interpretação"
-  }
+  ...(AI_ENABLED
+    ? [
+        {
+          id: "interpretation" as AppView,
+          label: "Interpretação"
+        }
+      ]
+    : [])
 ];
 
 export function Sidebar({
