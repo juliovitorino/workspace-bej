@@ -1644,3 +1644,49 @@ button {
     padding: 1px 4px;
   }
 }
+
+
+/* Verb forms shown in training cards */
+.training-verb-forms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.training-verb-form {
+  display: grid;
+  gap: 3px;
+  padding: 10px 12px;
+  border: 1px solid #e2e7f0;
+  border-radius: 10px;
+  background: #fbfcfe;
+}
+
+.training-verb-form span {
+  color: #667085;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.training-verb-form strong {
+  color: #172033;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 820px) {
+  .training-verb-forms {
+    grid-template-columns: 1fr;
+  }
+
+  .training-verb-form span {
+    font-size: 0.88rem;
+  }
+
+  .training-verb-form strong {
+    font-size: 1.08rem;
+  }
+}

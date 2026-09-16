@@ -15,6 +15,11 @@ interface AdvancedTrainingProps {
 interface VerbItem {
   id: string;
   base: string;
+  type?: "regular" | "irregular";
+  past?: string;
+  pastParticiple?: string;
+  thirdPerson?: string;
+  gerund?: string;
   meanings?: string[];
 }
 
@@ -321,6 +326,42 @@ export function AdvancedTraining({
                   <div className="training-token" key={verb.id}>
                     <strong>{verb.base}</strong>
                     <span>{verb.meanings?.join(" / ")}</span>
+
+                    <div className="training-verb-forms">
+                      <div className="training-verb-form">
+                        <span>Presente</span>
+                        <strong>
+                          {verb.thirdPerson
+                            ? `${verb.base} / ${verb.thirdPerson}`
+                            : verb.base}
+                        </strong>
+                      </div>
+
+                      {verb.past && (
+                        <div className="training-verb-form">
+                          <span>Passado</span>
+                          <strong>{verb.past}</strong>
+                        </div>
+                      )}
+
+                      {verb.pastParticiple && (
+                        <div className="training-verb-form">
+                          <span>Particípio</span>
+                          <strong>{verb.pastParticiple}</strong>
+                        </div>
+                      )}
+
+                      {verb.type && (
+                        <div className="training-verb-form">
+                          <span>Tipo</span>
+                          <strong>
+                            {verb.type === "irregular"
+                              ? "Irregular"
+                              : "Regular"}
+                          </strong>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
