@@ -10645,6 +10645,1588 @@
         "tem-que-ter-tem-que-haver-existir"
       ],
       "englishLevel": "A2"
+    },
+        {
+      "id": "make-progress",
+      "intention": "Fazer progresso",
+      "english": "make progress",
+      "pattern": "make progress",
+      "description": "Usado para falar sobre avanço ou melhora em alguma atividade, habilidade ou projeto.",
+      "category": "make-family",
+      "searchTerms": [
+        "fazer progresso",
+        "progredir",
+        "avançar",
+        "make progress"
+      ],
+      "examples": [
+        {
+          "pt": "Estou fazendo progresso no meu inglês.",
+          "en": "I'm making progress with my English.",
+          "ptIntent": "fazendo progresso",
+          "enIntent": "making progress"
+        },
+        {
+          "pt": "Nós fizemos muito progresso esta semana.",
+          "en": "We made a lot of progress this week.",
+          "ptIntent": "fizemos muito progresso",
+          "enIntent": "made a lot of progress"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "progress",
+        "improvement"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "make-a-decision",
+      "intention": "Tomar uma decisão",
+      "english": "make a decision",
+      "pattern": "make a decision",
+      "description": "Usado para falar sobre escolher entre opções ou decidir o que fazer.",
+      "category": "make-family",
+      "searchTerms": [
+        "tomar uma decisão",
+        "decidir",
+        "make a decision"
+      ],
+      "examples": [
+        {
+          "pt": "Preciso tomar uma decisão hoje.",
+          "en": "I need to make a decision today.",
+          "ptIntent": "tomar uma decisão",
+          "enIntent": "make a decision"
+        },
+        {
+          "pt": "Ela tomou uma decisão difícil.",
+          "en": "She made a difficult decision.",
+          "ptIntent": "tomou uma decisão",
+          "enIntent": "made a difficult decision"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "decision",
+        "choice"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "make-a-mistake",
+      "intention": "Cometer um erro",
+      "english": "make a mistake",
+      "pattern": "make a mistake",
+      "description": "Usado para dizer que alguém fez algo de forma incorreta.",
+      "category": "make-family",
+      "searchTerms": [
+        "cometer um erro",
+        "errar",
+        "make a mistake"
+      ],
+      "examples": [
+        {
+          "pt": "Eu cometi um erro.",
+          "en": "I made a mistake.",
+          "ptIntent": "cometi um erro",
+          "enIntent": "made a mistake"
+        },
+        {
+          "pt": "Todo mundo comete erros.",
+          "en": "Everybody makes mistakes.",
+          "ptIntent": "comete erros",
+          "enIntent": "makes mistakes"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "mistake",
+        "error"
+      ],
+      "related": [],
+      "englishLevel": "A1"
+    },
+    {
+      "id": "make-sense",
+      "intention": "Fazer sentido",
+      "english": "make sense",
+      "pattern": "make sense",
+      "description": "Usado quando algo é lógico, compreensível ou coerente.",
+      "category": "make-family",
+      "searchTerms": [
+        "fazer sentido",
+        "faz sentido",
+        "make sense",
+        "makes sense"
+      ],
+      "examples": [
+        {
+          "pt": "Isso faz sentido.",
+          "en": "That makes sense.",
+          "ptIntent": "faz sentido",
+          "enIntent": "makes sense"
+        },
+        {
+          "pt": "Essa explicação não faz sentido.",
+          "en": "This explanation doesn't make sense.",
+          "ptIntent": "não faz sentido",
+          "enIntent": "doesn't make sense"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "logic",
+        "reaction"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "make-money",
+      "intention": "Ganhar dinheiro",
+      "english": "make money",
+      "pattern": "make money",
+      "description": "Usado para falar sobre ganhar dinheiro através de trabalho, negócio ou investimento.",
+      "category": "make-family",
+      "searchTerms": [
+        "ganhar dinheiro",
+        "fazer dinheiro",
+        "make money"
+      ],
+      "examples": [
+        {
+          "pt": "Ele quer ganhar mais dinheiro.",
+          "en": "He wants to make more money.",
+          "ptIntent": "ganhar mais dinheiro",
+          "enIntent": "make more money"
+        },
+        {
+          "pt": "É difícil ganhar dinheiro com esse negócio.",
+          "en": "It's hard to make money from this business.",
+          "ptIntent": "ganhar dinheiro",
+          "enIntent": "make money"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "money",
+        "work"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "make-a-living",
+      "intention": "Ganhar a vida",
+      "english": "make a living",
+      "pattern": "make a living + from/by...",
+      "description": "Usado para falar sobre como alguém ganha dinheiro para se sustentar.",
+      "category": "make-family",
+      "searchTerms": [
+        "ganhar a vida",
+        "se sustentar",
+        "make a living"
+      ],
+      "examples": [
+        {
+          "pt": "Ele ganha a vida como desenvolvedor.",
+          "en": "He makes a living as a developer.",
+          "ptIntent": "ganha a vida",
+          "enIntent": "makes a living"
+        },
+        {
+          "pt": "Ela ganha a vida vendendo cursos online.",
+          "en": "She makes a living selling online courses.",
+          "ptIntent": "ganha a vida",
+          "enIntent": "makes a living"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "money",
+        "work"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "make-an-effort",
+      "intention": "Fazer um esforço",
+      "english": "make an effort",
+      "pattern": "make an effort + to + verb",
+      "description": "Usado para dizer que alguém tenta conscientemente fazer algo melhor ou alcançar um objetivo.",
+      "category": "make-family",
+      "searchTerms": [
+        "fazer um esforço",
+        "se esforçar",
+        "make an effort"
+      ],
+      "examples": [
+        {
+          "pt": "Estou fazendo um esforço para falar inglês todos os dias.",
+          "en": "I'm making an effort to speak English every day.",
+          "ptIntent": "fazendo um esforço",
+          "enIntent": "making an effort"
+        },
+        {
+          "pt": "Você precisa fazer mais esforço.",
+          "en": "You need to make more of an effort.",
+          "ptIntent": "fazer mais esforço",
+          "enIntent": "make more of an effort"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "effort",
+        "improvement"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "make-a-choice",
+      "intention": "Fazer uma escolha",
+      "english": "make a choice",
+      "pattern": "make a choice",
+      "description": "Usado para falar sobre escolher uma opção entre duas ou mais possibilidades.",
+      "category": "make-family",
+      "searchTerms": [
+        "fazer uma escolha",
+        "escolher",
+        "make a choice"
+      ],
+      "examples": [
+        {
+          "pt": "Você precisa fazer uma escolha.",
+          "en": "You need to make a choice.",
+          "ptIntent": "fazer uma escolha",
+          "enIntent": "make a choice"
+        },
+        {
+          "pt": "Eu fiz a escolha certa.",
+          "en": "I made the right choice.",
+          "ptIntent": "fiz a escolha certa",
+          "enIntent": "made the right choice"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "choice",
+        "decision"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "make-a-change",
+      "intention": "Fazer uma mudança",
+      "english": "make a change",
+      "pattern": "make a change",
+      "description": "Usado para falar sobre alterar uma situação, comportamento, plano ou sistema.",
+      "category": "make-family",
+      "searchTerms": [
+        "fazer uma mudança",
+        "mudar algo",
+        "make a change"
+      ],
+      "examples": [
+        {
+          "pt": "Precisamos fazer uma mudança.",
+          "en": "We need to make a change.",
+          "ptIntent": "fazer uma mudança",
+          "enIntent": "make a change"
+        },
+        {
+          "pt": "Eu fiz algumas mudanças no código.",
+          "en": "I made a few changes to the code.",
+          "ptIntent": "fiz algumas mudanças",
+          "enIntent": "made a few changes"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "change"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "make-a-plan",
+      "intention": "Fazer um plano",
+      "english": "make a plan",
+      "pattern": "make a plan",
+      "description": "Usado para falar sobre organizar antecipadamente o que será feito.",
+      "category": "make-family",
+      "searchTerms": [
+        "fazer um plano",
+        "planejar",
+        "make a plan"
+      ],
+      "examples": [
+        {
+          "pt": "Vamos fazer um plano.",
+          "en": "Let's make a plan.",
+          "ptIntent": "fazer um plano",
+          "enIntent": "make a plan"
+        },
+        {
+          "pt": "Nós fizemos um plano para o fim de semana.",
+          "en": "We made a plan for the weekend.",
+          "ptIntent": "fizemos um plano",
+          "enIntent": "made a plan"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "plan",
+        "future"
+      ],
+      "related": [],
+      "englishLevel": "A1"
+    },
+    {
+      "id": "make-arrangements",
+      "intention": "Fazer os preparativos / combinar os detalhes",
+      "english": "make arrangements",
+      "pattern": "make arrangements + for/to...",
+      "description": "Usado para organizar os detalhes práticos necessários para algo acontecer.",
+      "category": "make-family",
+      "searchTerms": [
+        "fazer os preparativos",
+        "organizar os detalhes",
+        "make arrangements"
+      ],
+      "examples": [
+        {
+          "pt": "Precisamos fazer os preparativos para a viagem.",
+          "en": "We need to make arrangements for the trip.",
+          "ptIntent": "fazer os preparativos",
+          "enIntent": "make arrangements"
+        },
+        {
+          "pt": "Eu já combinei tudo para a reunião.",
+          "en": "I've already made arrangements for the meeting.",
+          "ptIntent": "combinei tudo",
+          "enIntent": "made arrangements"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "planning",
+        "arrangements"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "make-a-reservation",
+      "intention": "Fazer uma reserva",
+      "english": "make a reservation",
+      "pattern": "make a reservation + for...",
+      "description": "Usado para reservar mesa, hotel, serviço ou outro recurso.",
+      "category": "make-family",
+      "searchTerms": [
+        "fazer uma reserva",
+        "reservar",
+        "make a reservation"
+      ],
+      "examples": [
+        {
+          "pt": "Quero fazer uma reserva para duas pessoas.",
+          "en": "I'd like to make a reservation for two.",
+          "ptIntent": "fazer uma reserva",
+          "enIntent": "make a reservation"
+        },
+        {
+          "pt": "Eu fiz uma reserva no hotel.",
+          "en": "I made a reservation at the hotel.",
+          "ptIntent": "fiz uma reserva",
+          "enIntent": "made a reservation"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "reservation",
+        "travel"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "make-an-appointment",
+      "intention": "Marcar um horário / uma consulta",
+      "english": "make an appointment",
+      "pattern": "make an appointment + with/for...",
+      "description": "Usado para marcar uma consulta ou horário previamente combinado.",
+      "category": "make-family",
+      "searchTerms": [
+        "marcar horário",
+        "marcar consulta",
+        "make an appointment"
+      ],
+      "examples": [
+        {
+          "pt": "Preciso marcar uma consulta com o médico.",
+          "en": "I need to make an appointment with the doctor.",
+          "ptIntent": "marcar uma consulta",
+          "enIntent": "make an appointment"
+        },
+        {
+          "pt": "Ela marcou um horário para sexta-feira.",
+          "en": "She made an appointment for Friday.",
+          "ptIntent": "marcou um horário",
+          "enIntent": "made an appointment"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "appointment",
+        "daily-life"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "make-a-call",
+      "intention": "Fazer uma ligação",
+      "english": "make a call",
+      "pattern": "make a call + to...",
+      "description": "Usado para falar sobre realizar uma ligação telefônica.",
+      "category": "make-family",
+      "searchTerms": [
+        "fazer uma ligação",
+        "telefonar",
+        "make a call"
+      ],
+      "examples": [
+        {
+          "pt": "Preciso fazer uma ligação.",
+          "en": "I need to make a call.",
+          "ptIntent": "fazer uma ligação",
+          "enIntent": "make a call"
+        },
+        {
+          "pt": "Eu fiz algumas ligações pela manhã.",
+          "en": "I made a few calls in the morning.",
+          "ptIntent": "fiz algumas ligações",
+          "enIntent": "made a few calls"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "phone",
+        "daily-life"
+      ],
+      "related": [],
+      "englishLevel": "A1"
+    },
+    {
+      "id": "make-a-list",
+      "intention": "Fazer uma lista",
+      "english": "make a list",
+      "pattern": "make a list + of...",
+      "description": "Usado para organizar itens, tarefas ou informações em uma lista.",
+      "category": "make-family",
+      "searchTerms": [
+        "fazer uma lista",
+        "listar",
+        "make a list"
+      ],
+      "examples": [
+        {
+          "pt": "Vou fazer uma lista das tarefas.",
+          "en": "I'm going to make a list of the tasks.",
+          "ptIntent": "fazer uma lista",
+          "enIntent": "make a list"
+        },
+        {
+          "pt": "Faça uma lista do que você precisa comprar.",
+          "en": "Make a list of what you need to buy.",
+          "ptIntent": "Faça uma lista",
+          "enIntent": "Make a list"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "list",
+        "daily-life"
+      ],
+      "related": [],
+      "englishLevel": "A1"
+    },
+    {
+      "id": "make-sure",
+      "intention": "Certificar-se / garantir que...",
+      "english": "make sure",
+      "pattern": "make sure + (that) clause / to + verb",
+      "description": "Usado para verificar ou garantir que algo aconteça ou esteja correto.",
+      "category": "make-family",
+      "searchTerms": [
+        "certificar-se",
+        "garantir que",
+        "ter certeza",
+        "make sure"
+      ],
+      "examples": [
+        {
+          "pt": "Certifique-se de fechar a porta.",
+          "en": "Make sure to close the door.",
+          "ptIntent": "Certifique-se",
+          "enIntent": "Make sure"
+        },
+        {
+          "pt": "Quero garantir que tudo esteja funcionando.",
+          "en": "I want to make sure everything is working.",
+          "ptIntent": "garantir",
+          "enIntent": "make sure"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "certainty",
+        "instruction"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "make-a-difference",
+      "intention": "Fazer diferença",
+      "english": "make a difference",
+      "pattern": "make a difference",
+      "description": "Usado quando algo tem impacto, efeito ou importância real.",
+      "category": "make-family",
+      "searchTerms": [
+        "fazer diferença",
+        "ter impacto",
+        "make a difference"
+      ],
+      "examples": [
+        {
+          "pt": "Praticar todos os dias faz diferença.",
+          "en": "Practicing every day makes a difference.",
+          "ptIntent": "faz diferença",
+          "enIntent": "makes a difference"
+        },
+        {
+          "pt": "Uma pequena mudança pode fazer uma grande diferença.",
+          "en": "A small change can make a big difference.",
+          "ptIntent": "fazer uma grande diferença",
+          "enIntent": "make a big difference"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "impact"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "make-a-suggestion",
+      "intention": "Fazer uma sugestão",
+      "english": "make a suggestion",
+      "pattern": "make a suggestion",
+      "description": "Usado para apresentar uma ideia ou proposta para consideração.",
+      "category": "make-family",
+      "searchTerms": [
+        "fazer uma sugestão",
+        "sugerir",
+        "make a suggestion"
+      ],
+      "examples": [
+        {
+          "pt": "Posso fazer uma sugestão?",
+          "en": "Can I make a suggestion?",
+          "ptIntent": "fazer uma sugestão",
+          "enIntent": "make a suggestion"
+        },
+        {
+          "pt": "Ela fez uma ótima sugestão.",
+          "en": "She made a great suggestion.",
+          "ptIntent": "fez uma ótima sugestão",
+          "enIntent": "made a great suggestion"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "suggestion",
+        "conversation"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "make-a-promise",
+      "intention": "Fazer uma promessa",
+      "english": "make a promise",
+      "pattern": "make a promise + to...",
+      "description": "Usado para assumir um compromisso com alguém ou consigo mesmo.",
+      "category": "make-family",
+      "searchTerms": [
+        "fazer uma promessa",
+        "prometer",
+        "make a promise"
+      ],
+      "examples": [
+        {
+          "pt": "Eu fiz uma promessa para mim mesmo.",
+          "en": "I made a promise to myself.",
+          "ptIntent": "fiz uma promessa",
+          "enIntent": "made a promise"
+        },
+        {
+          "pt": "Não faça uma promessa que você não pode cumprir.",
+          "en": "Don't make a promise you can't keep.",
+          "ptIntent": "faça uma promessa",
+          "enIntent": "make a promise"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "promise"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "make-an-excuse",
+      "intention": "Dar uma desculpa / inventar uma desculpa",
+      "english": "make an excuse",
+      "pattern": "make an excuse + for...",
+      "description": "Usado para apresentar uma justificativa, muitas vezes para evitar responsabilidade.",
+      "category": "make-family",
+      "searchTerms": [
+        "dar uma desculpa",
+        "inventar uma desculpa",
+        "make an excuse"
+      ],
+      "examples": [
+        {
+          "pt": "Não invente desculpas.",
+          "en": "Don't make excuses.",
+          "ptIntent": "invente desculpas",
+          "enIntent": "make excuses"
+        },
+        {
+          "pt": "Ele deu uma desculpa por estar atrasado.",
+          "en": "He made an excuse for being late.",
+          "ptIntent": "deu uma desculpa",
+          "enIntent": "made an excuse"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "excuse"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "make-a-good-impression",
+      "intention": "Causar uma boa impressão",
+      "english": "make a good impression",
+      "pattern": "make a good/bad impression + on...",
+      "description": "Usado para falar sobre a impressão causada em outra pessoa.",
+      "category": "make-family",
+      "searchTerms": [
+        "causar boa impressão",
+        "causar uma impressão",
+        "make a good impression"
+      ],
+      "examples": [
+        {
+          "pt": "Quero causar uma boa impressão na entrevista.",
+          "en": "I want to make a good impression in the interview.",
+          "ptIntent": "causar uma boa impressão",
+          "enIntent": "make a good impression"
+        },
+        {
+          "pt": "Ele causou uma ótima impressão na equipe.",
+          "en": "He made a great impression on the team.",
+          "ptIntent": "causou uma ótima impressão",
+          "enIntent": "made a great impression"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "impression",
+        "social"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "make-room",
+      "intention": "Abrir espaço / dar espaço",
+      "english": "make room",
+      "pattern": "make room + for...",
+      "description": "Usado para criar espaço físico ou figurado para alguém ou alguma coisa.",
+      "category": "make-family",
+      "searchTerms": [
+        "abrir espaço",
+        "dar espaço",
+        "make room"
+      ],
+      "examples": [
+        {
+          "pt": "Precisamos abrir espaço para mais uma pessoa.",
+          "en": "We need to make room for one more person.",
+          "ptIntent": "abrir espaço",
+          "enIntent": "make room"
+        },
+        {
+          "pt": "Estou tentando abrir espaço na minha agenda.",
+          "en": "I'm trying to make room in my schedule.",
+          "ptIntent": "abrir espaço",
+          "enIntent": "make room"
+        }
+      ],
+      "tags": [
+        "make",
+        "collocation",
+        "conversation",
+        "space"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+        {
+      "id": "take-a-break",
+      "intention": "Fazer uma pausa",
+      "english": "take a break",
+      "pattern": "take a break",
+      "description": "Usado para interromper uma atividade por um curto período para descansar.",
+      "category": "take-family",
+      "searchTerms": [
+        "fazer uma pausa",
+        "dar uma pausa",
+        "take a break"
+      ],
+      "examples": [
+        {
+          "pt": "Vamos fazer uma pausa.",
+          "en": "Let's take a break.",
+          "ptIntent": "fazer uma pausa",
+          "enIntent": "take a break"
+        },
+        {
+          "pt": "Eu preciso fazer uma pausa de dez minutos.",
+          "en": "I need to take a ten-minute break.",
+          "ptIntent": "fazer uma pausa",
+          "enIntent": "take a ten-minute break"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "break",
+        "rest"
+      ],
+      "related": [],
+      "englishLevel": "A1"
+    },
+    {
+      "id": "take-your-time",
+      "intention": "Levar o tempo que precisar / sem pressa",
+      "english": "take your time",
+      "pattern": "take your time",
+      "description": "Usado para dizer a alguém que não precisa ter pressa.",
+      "category": "take-family",
+      "searchTerms": [
+        "sem pressa",
+        "leve o tempo que precisar",
+        "take your time"
+      ],
+      "examples": [
+        {
+          "pt": "Sem pressa.",
+          "en": "Take your time.",
+          "ptIntent": "Sem pressa",
+          "enIntent": "Take your time"
+        },
+        {
+          "pt": "Leve o tempo que precisar para responder.",
+          "en": "Take your time to answer.",
+          "ptIntent": "Leve o tempo que precisar",
+          "enIntent": "Take your time"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "time",
+        "reassurance"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "take-care",
+      "intention": "Se cuidar / tomar cuidado",
+      "english": "take care",
+      "pattern": "take care",
+      "description": "Usado para se despedir desejando cuidado ou para aconselhar alguém a ter atenção.",
+      "category": "take-family",
+      "searchTerms": [
+        "se cuide",
+        "tomar cuidado",
+        "take care"
+      ],
+      "examples": [
+        {
+          "pt": "Se cuida.",
+          "en": "Take care.",
+          "ptIntent": "Se cuida",
+          "enIntent": "Take care"
+        },
+        {
+          "pt": "Tome cuidado na estrada.",
+          "en": "Take care on the road.",
+          "ptIntent": "Tome cuidado",
+          "enIntent": "Take care"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "care",
+        "farewell"
+      ],
+      "related": [],
+      "englishLevel": "A1"
+    },
+    {
+      "id": "take-care-of",
+      "intention": "Cuidar de...",
+      "english": "take care of",
+      "pattern": "take care of + noun/pronoun",
+      "description": "Usado para falar sobre cuidar de uma pessoa, animal, tarefa ou responsabilidade.",
+      "category": "take-family",
+      "searchTerms": [
+        "cuidar de",
+        "tomar conta de",
+        "take care of"
+      ],
+      "examples": [
+        {
+          "pt": "Eu cuido do meu filho à noite.",
+          "en": "I take care of my son at night.",
+          "ptIntent": "cuido do meu filho",
+          "enIntent": "take care of my son"
+        },
+        {
+          "pt": "Você pode cuidar disso para mim?",
+          "en": "Can you take care of this for me?",
+          "ptIntent": "cuidar disso",
+          "enIntent": "take care of this"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "care",
+        "responsibility"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "take-a-look",
+      "intention": "Dar uma olhada",
+      "english": "take a look",
+      "pattern": "take a look + at...",
+      "description": "Usado para pedir ou sugerir que alguém examine algo rapidamente.",
+      "category": "take-family",
+      "searchTerms": [
+        "dar uma olhada",
+        "olhar",
+        "take a look"
+      ],
+      "examples": [
+        {
+          "pt": "Dê uma olhada nisso.",
+          "en": "Take a look at this.",
+          "ptIntent": "Dê uma olhada",
+          "enIntent": "Take a look"
+        },
+        {
+          "pt": "Vou dar uma olhada no código.",
+          "en": "I'll take a look at the code.",
+          "ptIntent": "dar uma olhada",
+          "enIntent": "take a look"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "look",
+        "review"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "take-a-seat",
+      "intention": "Sentar-se / tomar um assento",
+      "english": "take a seat",
+      "pattern": "take a seat",
+      "description": "Usado para convidar alguém a se sentar.",
+      "category": "take-family",
+      "searchTerms": [
+        "sente-se",
+        "tomar um assento",
+        "take a seat"
+      ],
+      "examples": [
+        {
+          "pt": "Por favor, sente-se.",
+          "en": "Please, take a seat.",
+          "ptIntent": "sente-se",
+          "enIntent": "take a seat"
+        },
+        {
+          "pt": "Você pode se sentar aqui.",
+          "en": "You can take a seat here.",
+          "ptIntent": "se sentar",
+          "enIntent": "take a seat"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "seat",
+        "polite"
+      ],
+      "related": [],
+      "englishLevel": "A1"
+    },
+    {
+      "id": "take-a-shower",
+      "intention": "Tomar banho",
+      "english": "take a shower",
+      "pattern": "take a shower",
+      "description": "Usado para falar sobre tomar banho de chuveiro.",
+      "category": "take-family",
+      "searchTerms": [
+        "tomar banho",
+        "take a shower"
+      ],
+      "examples": [
+        {
+          "pt": "Eu vou tomar banho agora.",
+          "en": "I'm going to take a shower now.",
+          "ptIntent": "tomar banho",
+          "enIntent": "take a shower"
+        },
+        {
+          "pt": "Eu tomei banho antes do trabalho.",
+          "en": "I took a shower before work.",
+          "ptIntent": "tomei banho",
+          "enIntent": "took a shower"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "daily-life",
+        "routine"
+      ],
+      "related": [],
+      "englishLevel": "A1"
+    },
+    {
+      "id": "take-a-walk",
+      "intention": "Dar uma caminhada",
+      "english": "take a walk",
+      "pattern": "take a walk",
+      "description": "Usado para falar sobre caminhar por lazer, exercício ou relaxamento.",
+      "category": "take-family",
+      "searchTerms": [
+        "dar uma caminhada",
+        "caminhar",
+        "take a walk"
+      ],
+      "examples": [
+        {
+          "pt": "Vamos dar uma caminhada.",
+          "en": "Let's take a walk.",
+          "ptIntent": "dar uma caminhada",
+          "enIntent": "take a walk"
+        },
+        {
+          "pt": "Eu dei uma caminhada depois do almoço.",
+          "en": "I took a walk after lunch.",
+          "ptIntent": "dei uma caminhada",
+          "enIntent": "took a walk"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "walk",
+        "exercise"
+      ],
+      "related": [],
+      "englishLevel": "A1"
+    },
+    {
+      "id": "take-a-trip",
+      "intention": "Fazer uma viagem",
+      "english": "take a trip",
+      "pattern": "take a trip + to...",
+      "description": "Usado para falar sobre viajar por lazer ou trabalho.",
+      "category": "take-family",
+      "searchTerms": [
+        "fazer uma viagem",
+        "viajar",
+        "take a trip"
+      ],
+      "examples": [
+        {
+          "pt": "Quero fazer uma viagem no próximo mês.",
+          "en": "I want to take a trip next month.",
+          "ptIntent": "fazer uma viagem",
+          "enIntent": "take a trip"
+        },
+        {
+          "pt": "Nós fizemos uma viagem para o Rio.",
+          "en": "We took a trip to Rio.",
+          "ptIntent": "fizemos uma viagem",
+          "enIntent": "took a trip"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "travel",
+        "trip"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "take-a-photo",
+      "intention": "Tirar uma foto",
+      "english": "take a photo",
+      "pattern": "take a photo/picture",
+      "description": "Usado para falar sobre fotografar alguém ou alguma coisa.",
+      "category": "take-family",
+      "searchTerms": [
+        "tirar uma foto",
+        "fotografar",
+        "take a photo",
+        "take a picture"
+      ],
+      "examples": [
+        {
+          "pt": "Você pode tirar uma foto para mim?",
+          "en": "Can you take a photo for me?",
+          "ptIntent": "tirar uma foto",
+          "enIntent": "take a photo"
+        },
+        {
+          "pt": "Eu tirei muitas fotos durante a viagem.",
+          "en": "I took a lot of photos during the trip.",
+          "ptIntent": "tirei muitas fotos",
+          "enIntent": "took a lot of photos"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "photo",
+        "daily-life"
+      ],
+      "related": [],
+      "englishLevel": "A1"
+    },
+    {
+      "id": "take-notes",
+      "intention": "Fazer anotações",
+      "english": "take notes",
+      "pattern": "take notes",
+      "description": "Usado para registrar informações importantes por escrito.",
+      "category": "take-family",
+      "searchTerms": [
+        "fazer anotações",
+        "anotar",
+        "take notes"
+      ],
+      "examples": [
+        {
+          "pt": "Eu faço anotações durante as reuniões.",
+          "en": "I take notes during meetings.",
+          "ptIntent": "faço anotações",
+          "enIntent": "take notes"
+        },
+        {
+          "pt": "Ela fez algumas anotações.",
+          "en": "She took some notes.",
+          "ptIntent": "fez algumas anotações",
+          "enIntent": "took some notes"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "notes",
+        "study",
+        "work"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "take-a-test",
+      "intention": "Fazer uma prova / teste",
+      "english": "take a test",
+      "pattern": "take a test/exam",
+      "description": "Usado para falar sobre realizar uma prova ou avaliação.",
+      "category": "take-family",
+      "searchTerms": [
+        "fazer uma prova",
+        "fazer um teste",
+        "take a test"
+      ],
+      "examples": [
+        {
+          "pt": "Eu tenho que fazer uma prova amanhã.",
+          "en": "I have to take a test tomorrow.",
+          "ptIntent": "fazer uma prova",
+          "enIntent": "take a test"
+        },
+        {
+          "pt": "Ela fez o teste ontem.",
+          "en": "She took the test yesterday.",
+          "ptIntent": "fez o teste",
+          "enIntent": "took the test"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "test",
+        "study"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "take-a-class",
+      "intention": "Fazer uma aula / curso",
+      "english": "take a class",
+      "pattern": "take a class/course",
+      "description": "Usado para falar sobre participar de uma aula ou curso.",
+      "category": "take-family",
+      "searchTerms": [
+        "fazer uma aula",
+        "fazer um curso",
+        "take a class"
+      ],
+      "examples": [
+        {
+          "pt": "Estou fazendo uma aula de inglês.",
+          "en": "I'm taking an English class.",
+          "ptIntent": "fazendo uma aula",
+          "enIntent": "taking an English class"
+        },
+        {
+          "pt": "Ele fez um curso online.",
+          "en": "He took an online course.",
+          "ptIntent": "fez um curso",
+          "enIntent": "took an online course"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "study",
+        "class"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "take-action",
+      "intention": "Tomar uma atitude / agir",
+      "english": "take action",
+      "pattern": "take action",
+      "description": "Usado para falar sobre agir para resolver uma situação ou atingir um objetivo.",
+      "category": "take-family",
+      "searchTerms": [
+        "tomar uma atitude",
+        "agir",
+        "take action"
+      ],
+      "examples": [
+        {
+          "pt": "Precisamos tomar uma atitude agora.",
+          "en": "We need to take action now.",
+          "ptIntent": "tomar uma atitude",
+          "enIntent": "take action"
+        },
+        {
+          "pt": "A empresa tomou medidas rapidamente.",
+          "en": "The company took action quickly.",
+          "ptIntent": "tomou medidas",
+          "enIntent": "took action"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "action",
+        "decision"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "take-responsibility",
+      "intention": "Assumir responsabilidade",
+      "english": "take responsibility",
+      "pattern": "take responsibility + for...",
+      "description": "Usado para reconhecer e assumir responsabilidade por uma ação ou situação.",
+      "category": "take-family",
+      "searchTerms": [
+        "assumir responsabilidade",
+        "se responsabilizar",
+        "take responsibility"
+      ],
+      "examples": [
+        {
+          "pt": "Eu assumo a responsabilidade pelo erro.",
+          "en": "I take responsibility for the mistake.",
+          "ptIntent": "assumo a responsabilidade",
+          "enIntent": "take responsibility"
+        },
+        {
+          "pt": "Ele assumiu a responsabilidade pelo problema.",
+          "en": "He took responsibility for the problem.",
+          "ptIntent": "assumiu a responsabilidade",
+          "enIntent": "took responsibility"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "responsibility",
+        "accountability"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "take-advantage-of",
+      "intention": "Aproveitar... / tirar proveito de...",
+      "english": "take advantage of",
+      "pattern": "take advantage of + noun/pronoun",
+      "description": "Usado para aproveitar uma oportunidade ou benefício; também pode significar explorar alguém dependendo do contexto.",
+      "category": "take-family",
+      "searchTerms": [
+        "aproveitar",
+        "tirar proveito de",
+        "take advantage of"
+      ],
+      "examples": [
+        {
+          "pt": "Aproveite essa oportunidade.",
+          "en": "Take advantage of this opportunity.",
+          "ptIntent": "Aproveite essa oportunidade",
+          "enIntent": "Take advantage of this opportunity"
+        },
+        {
+          "pt": "Eu aproveitei o tempo livre para estudar.",
+          "en": "I took advantage of the free time to study.",
+          "ptIntent": "aproveitei o tempo livre",
+          "enIntent": "took advantage of the free time"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "opportunity",
+        "benefit"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "take-part-in",
+      "intention": "Participar de...",
+      "english": "take part in",
+      "pattern": "take part in + noun/event",
+      "description": "Usado para falar sobre participar de uma atividade, evento ou projeto.",
+      "category": "take-family",
+      "searchTerms": [
+        "participar de",
+        "tomar parte em",
+        "take part in"
+      ],
+      "examples": [
+        {
+          "pt": "Eu participei da reunião.",
+          "en": "I took part in the meeting.",
+          "ptIntent": "participei da reunião",
+          "enIntent": "took part in the meeting"
+        },
+        {
+          "pt": "Você quer participar do projeto?",
+          "en": "Do you want to take part in the project?",
+          "ptIntent": "participar do projeto",
+          "enIntent": "take part in the project"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "participation",
+        "event"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "take-place",
+      "intention": "Acontecer / ocorrer",
+      "english": "take place",
+      "pattern": "take place",
+      "description": "Usado para falar sobre quando e onde um evento acontece.",
+      "category": "take-family",
+      "searchTerms": [
+        "acontecer",
+        "ocorrer",
+        "take place"
+      ],
+      "examples": [
+        {
+          "pt": "A reunião vai acontecer amanhã.",
+          "en": "The meeting will take place tomorrow.",
+          "ptIntent": "vai acontecer",
+          "enIntent": "will take place"
+        },
+        {
+          "pt": "O evento aconteceu no centro da cidade.",
+          "en": "The event took place downtown.",
+          "ptIntent": "aconteceu",
+          "enIntent": "took place"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "event",
+        "occurrence"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "take-time",
+      "intention": "Levar tempo",
+      "english": "take time",
+      "pattern": "take + amount of time",
+      "description": "Usado para falar sobre a quantidade de tempo necessária para algo.",
+      "category": "take-family",
+      "searchTerms": [
+        "levar tempo",
+        "demorar",
+        "take time"
+      ],
+      "examples": [
+        {
+          "pt": "Isso leva tempo.",
+          "en": "This takes time.",
+          "ptIntent": "leva tempo",
+          "enIntent": "takes time"
+        },
+        {
+          "pt": "Levou duas horas para terminar.",
+          "en": "It took two hours to finish.",
+          "ptIntent": "Levou duas horas",
+          "enIntent": "took two hours"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "time",
+        "duration"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "take-a-while",
+      "intention": "Demorar um pouco",
+      "english": "take a while",
+      "pattern": "take a while",
+      "description": "Usado para dizer que algo leva algum tempo para acontecer ou ser concluído.",
+      "category": "take-family",
+      "searchTerms": [
+        "demorar um pouco",
+        "levar um tempo",
+        "take a while"
+      ],
+      "examples": [
+        {
+          "pt": "Vai demorar um pouco.",
+          "en": "It's going to take a while.",
+          "ptIntent": "demorar um pouco",
+          "enIntent": "take a while"
+        },
+        {
+          "pt": "Demorou um pouco para eu entender.",
+          "en": "It took me a while to understand.",
+          "ptIntent": "Demorou um pouco",
+          "enIntent": "took me a while"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "time",
+        "duration"
+      ],
+      "related": [],
+      "englishLevel": "A2"
+    },
+    {
+      "id": "take-it-easy",
+      "intention": "Ir com calma / relaxar",
+      "english": "take it easy",
+      "pattern": "take it easy",
+      "description": "Usado para pedir que alguém relaxe, não se preocupe ou diminua o ritmo.",
+      "category": "take-family",
+      "searchTerms": [
+        "ir com calma",
+        "relaxar",
+        "take it easy"
+      ],
+      "examples": [
+        {
+          "pt": "Vai com calma.",
+          "en": "Take it easy.",
+          "ptIntent": "Vai com calma",
+          "enIntent": "Take it easy"
+        },
+        {
+          "pt": "Você trabalhou muito hoje. Relaxe um pouco.",
+          "en": "You worked a lot today. Take it easy.",
+          "ptIntent": "Relaxe um pouco",
+          "enIntent": "Take it easy"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "relax",
+        "advice"
+      ],
+      "related": [],
+      "englishLevel": "B1"
+    },
+    {
+      "id": "take-it-seriously",
+      "intention": "Levar a sério",
+      "english": "take it seriously",
+      "pattern": "take + object + seriously",
+      "description": "Usado para dizer que algo deve ser tratado com seriedade.",
+      "category": "take-family",
+      "searchTerms": [
+        "levar a sério",
+        "take seriously"
+      ],
+      "examples": [
+        {
+          "pt": "Você precisa levar isso a sério.",
+          "en": "You need to take this seriously.",
+          "ptIntent": "levar isso a sério",
+          "enIntent": "take this seriously"
+        },
+        {
+          "pt": "Eu não levei o problema a sério no começo.",
+          "en": "I didn't take the problem seriously at first.",
+          "ptIntent": "levei o problema a sério",
+          "enIntent": "take the problem seriously"
+        }
+      ],
+      "tags": [
+        "take",
+        "collocation",
+        "conversation",
+        "serious",
+        "attitude"
+      ],
+      "related": [],
+      "englishLevel": "B1"
     }
   ]
 }
