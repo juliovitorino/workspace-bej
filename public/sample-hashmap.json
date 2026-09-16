@@ -803,10 +803,22 @@
       "searchTerms": [],
       "examples": [
         {
-          "pt": "Eu vou viajar amanhã.",
+          "pt": "Eu vou viajar amanhã. / Eu viajarei amanhã.",
           "en": "I am going to travel tomorrow.",
           "ptIntent": "vou",
           "enIntent": "going to"
+        },
+        {
+          "pt": "Ela vai estar lá amanhã. / Ela estará lá amanhã.",
+          "en": "She will be there tomorrow.",
+          "ptIntent": "vai",
+          "enIntent": "will"
+        },
+        {
+          "pt": "Ela vai trabalhar com Bryan na padaria. / Ela trabalhará ...",
+          "en": "She is gonna work with Bryan at the bakery. (contraction)",
+          "ptIntent": "vai",
+          "enIntent": "is gonna"
         }
       ],
       "tags": [
@@ -11597,13 +11609,13 @@
           "pt": "Dê uma olhada nisso.",
           "en": "Take a look at this.",
           "ptIntent": "Dê uma olhada",
-          "enIntent": "Take a look"
+          "enIntent": "Take a look at"
         },
         {
           "pt": "Vou dar uma olhada no código.",
           "en": "I'll take a look at the code.",
           "ptIntent": "dar uma olhada",
-          "enIntent": "take a look"
+          "enIntent": "take a look at"
         }
       ],
       "tags": [
