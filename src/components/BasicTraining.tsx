@@ -15,6 +15,11 @@ interface BasicTrainingProps {
 interface VerbItem {
   id: string;
   base: string;
+  type?: "regular" | "irregular";
+  past?: string;
+  pastParticiple?: string;
+  thirdPerson?: string;
+  gerund?: string;
   meanings?: string[];
   examples?: Array<{
     en: string;
@@ -265,6 +270,42 @@ export function BasicTraining({
                     {trainingItems.verb.meanings.join(" / ")}
                   </p>
                 )}
+
+              <div className="training-verb-forms">
+                <div className="training-verb-form">
+                  <span>Presente</span>
+                  <strong>
+                    {trainingItems.verb.thirdPerson
+                      ? `${trainingItems.verb.base} / ${trainingItems.verb.thirdPerson}`
+                      : trainingItems.verb.base}
+                  </strong>
+                </div>
+
+                {trainingItems.verb.past && (
+                  <div className="training-verb-form">
+                    <span>Passado</span>
+                    <strong>{trainingItems.verb.past}</strong>
+                  </div>
+                )}
+
+                {trainingItems.verb.pastParticiple && (
+                  <div className="training-verb-form">
+                    <span>Particípio</span>
+                    <strong>{trainingItems.verb.pastParticiple}</strong>
+                  </div>
+                )}
+
+                {trainingItems.verb.type && (
+                  <div className="training-verb-form">
+                    <span>Tipo</span>
+                    <strong>
+                      {trainingItems.verb.type === "irregular"
+                        ? "Irregular"
+                        : "Regular"}
+                    </strong>
+                  </div>
+                )}
+              </div>
             </article>
 
             <article className="training-word-card">
