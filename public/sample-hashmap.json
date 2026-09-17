@@ -12331,6 +12331,98 @@
       ],
       "related": [],
       "englishLevel": "B1"
+    },
+    {
+      "id": "qual-e-o-mais-que-voce-ja",
+      "intention": "Qual é o/a ... mais ... que você já...?",
+      "english": "What's the + superlative + noun + you've ever + past participle?",
+      "pattern": "What's the + superlative + noun + you've ever + past participle?",
+      "description": "Usado para perguntar sobre a experiência mais extrema, marcante ou relevante que alguém já teve, viu, fez, comprou, visitou ou viveu.",
+      "category": "superlatives",
+      "searchTerms": [
+        "qual é o melhor que você já",
+        "qual foi o mais difícil que você já",
+        "qual é o mais caro que você já",
+        "qual foi o mais longo que você já",
+        "what's the best you've ever",
+        "what's the hardest you've ever",
+        "what's the most expensive you've ever",
+        "you've ever + past participle"
+      ],
+      "examples": [
+        {
+          "pt": "Qual é o melhor filme que você já viu?",
+          "en": "What's the best movie you've ever seen?",
+          "ptIntent": "Qual é o melhor filme que você já viu",
+          "enIntent": "What's the best movie you've ever seen"
+        },
+        {
+          "pt": "Qual foi o trabalho mais difícil que você já teve?",
+          "en": "What's the hardest job you've ever had?",
+          "ptIntent": "Qual foi o trabalho mais difícil que você já teve",
+          "enIntent": "What's the hardest job you've ever had"
+        },
+        {
+          "pt": "Qual é a coisa mais cara que você já comprou?",
+          "en": "What's the most expensive thing you've ever bought?",
+          "ptIntent": "Qual é a coisa mais cara que você já comprou",
+          "enIntent": "What's the most expensive thing you've ever bought"
+        },
+        {
+          "pt": "Qual foi a viagem mais longa que você já fez?",
+          "en": "What's the longest trip you've ever taken?",
+          "ptIntent": "Qual foi a viagem mais longa que você já fez",
+          "enIntent": "What's the longest trip you've ever taken"
+        },
+        {
+          "pt": "Qual é o melhor restaurante em que você já comeu?",
+          "en": "What's the best restaurant you've ever eaten at?",
+          "ptIntent": "Qual é o melhor restaurante em que você já comeu",
+          "enIntent": "What's the best restaurant you've ever eaten at"
+        },
+        {
+          "pt": "Qual é a cidade mais bonita que você já visitou?",
+          "en": "What's the most beautiful city you've ever visited?",
+          "ptIntent": "Qual é a cidade mais bonita que você já visitou",
+          "enIntent": "What's the most beautiful city you've ever visited"
+        },
+        {
+          "pt": "Qual foi o maior projeto em que você já trabalhou?",
+          "en": "What's the biggest project you've ever worked on?",
+          "ptIntent": "Qual foi o maior projeto em que você já trabalhou",
+          "enIntent": "What's the biggest project you've ever worked on"
+        },
+        {
+          "pt": "Qual é o problema mais difícil que você já resolveu?",
+          "en": "What's the hardest problem you've ever solved?",
+          "ptIntent": "Qual é o problema mais difícil que você já resolveu",
+          "enIntent": "What's the hardest problem you've ever solved"
+        },
+        {
+          "pt": "Qual foi a decisão mais importante que você já tomou?",
+          "en": "What's the most important decision you've ever made?",
+          "ptIntent": "Qual foi a decisão mais importante que você já tomou",
+          "enIntent": "What's the most important decision you've ever made"
+        },
+        {
+          "pt": "Qual é a melhor comida que você já provou?",
+          "en": "What's the best food you've ever tried?",
+          "ptIntent": "Qual é a melhor comida que você já provou",
+          "enIntent": "What's the best food you've ever tried"
+        }
+      ],
+      "tags": [
+        "superlative",
+        "present-perfect",
+        "ever",
+        "question",
+        "past-participle",
+        "conversation"
+      ],
+      "related": [
+        "superlative-ever-past-participle"
+      ],
+      "englishLevel": "B1"
     }
   ]
 }
