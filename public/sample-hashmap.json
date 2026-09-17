@@ -12423,6 +12423,225 @@
         "superlative-ever-past-participle"
       ],
       "englishLevel": "B1"
-    }
+    },
+      {
+    "id": "commute-to-work",
+    "intention": "Ir / se deslocar para o trabalho regularmente",
+    "english": "commute to work",
+    "pattern": "subject + commute(s) to work",
+    "description": "Usado para falar sobre o deslocamento regular entre casa e trabalho.",
+    "category": "commute-family",
+    "searchTerms": [
+      "ir para o trabalho",
+      "se deslocar para o trabalho",
+      "trajeto para o trabalho",
+      "commute to work"
+    ],
+    "examples": [
+      {
+        "pt": "Eu me desloco para o trabalho todos os dias.",
+        "en": "I commute to work every day.",
+        "ptIntent": "me desloco para o trabalho",
+        "enIntent": "commute to work"
+      },
+      {
+        "pt": "Ela vai para o trabalho de segunda a sexta.",
+        "en": "She commutes to work Monday through Friday.",
+        "ptIntent": "vai para o trabalho",
+        "enIntent": "commutes to work"
+      },
+      {
+        "pt": "Eu não me desloco para o trabalho todos os dias.",
+        "en": "I don't commute to work every day.",
+        "ptIntent": "não me desloco para o trabalho",
+        "enIntent": "don't commute to work"
+      },
+      {
+        "pt": "Você se desloca para o trabalho todos os dias?",
+        "en": "Do you commute to work every day?",
+        "ptIntent": "se desloca para o trabalho",
+        "enIntent": "commute to work"
+      }
+    ],
+    "tags": [
+      "commute",
+      "work",
+      "transportation",
+      "daily-life",
+      "conversation"
+    ],
+    "related": [
+      "commute-by-transport",
+      "have-a-long-short-commute",
+      "my-commute-takes"
+    ],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "commute-by-transport",
+    "intention": "Fazer o trajeto de... / ir para o trabalho de...",
+    "english": "commute by + transport",
+    "pattern": "subject + commute(s) by + means of transport",
+    "description": "Usado para informar qual meio de transporte alguém utiliza regularmente no deslocamento para o trabalho.",
+    "category": "commute-family",
+    "searchTerms": [
+      "ir de ônibus",
+      "ir de carro",
+      "ir de trem",
+      "trajeto de ônibus",
+      "commute by bus",
+      "commute by car",
+      "commute by train"
+    ],
+    "examples": [
+      {
+        "pt": "Eu faço o trajeto para o trabalho de ônibus.",
+        "en": "I commute by bus.",
+        "ptIntent": "faço o trajeto para o trabalho de ônibus",
+        "enIntent": "commute by bus"
+      },
+      {
+        "pt": "Ela vai para o trabalho de trem.",
+        "en": "She commutes by train.",
+        "ptIntent": "vai para o trabalho de trem",
+        "enIntent": "commutes by train"
+      },
+      {
+        "pt": "Eu não vou para o trabalho de carro.",
+        "en": "I don't commute by car.",
+        "ptIntent": "não vou para o trabalho de carro",
+        "enIntent": "don't commute by car"
+      },
+      {
+        "pt": "Você vai para o trabalho de metrô?",
+        "en": "Do you commute by subway?",
+        "ptIntent": "vai para o trabalho de metrô",
+        "enIntent": "commute by subway"
+      }
+    ],
+    "tags": [
+      "commute",
+      "transportation",
+      "bus",
+      "car",
+      "train",
+      "conversation"
+    ],
+    "related": [
+      "commute-to-work",
+      "have-a-long-short-commute",
+      "my-commute-takes"
+    ],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "have-a-long-short-commute",
+    "intention": "Ter um trajeto longo / curto para o trabalho",
+    "english": "have a long / short commute",
+    "pattern": "subject + have/has + a long/short commute",
+    "description": "Usado para descrever se o deslocamento regular até o trabalho é longo ou curto.",
+    "category": "commute-family",
+    "searchTerms": [
+      "ter um trajeto longo",
+      "ter um trajeto curto",
+      "demorar muito para chegar ao trabalho",
+      "have a long commute",
+      "have a short commute"
+    ],
+    "examples": [
+      {
+        "pt": "Eu tenho um trajeto longo para o trabalho.",
+        "en": "I have a long commute.",
+        "ptIntent": "tenho um trajeto longo",
+        "enIntent": "have a long commute"
+      },
+      {
+        "pt": "Ela tem um trajeto curto para o trabalho.",
+        "en": "She has a short commute.",
+        "ptIntent": "tem um trajeto curto",
+        "enIntent": "has a short commute"
+      },
+      {
+        "pt": "Eu não tenho um trajeto longo para o trabalho.",
+        "en": "I don't have a long commute.",
+        "ptIntent": "não tenho um trajeto longo",
+        "enIntent": "don't have a long commute"
+      },
+      {
+        "pt": "Você tem um trajeto longo para o trabalho?",
+        "en": "Do you have a long commute?",
+        "ptIntent": "tem um trajeto longo",
+        "enIntent": "have a long commute"
+      }
+    ],
+    "tags": [
+      "commute",
+      "duration",
+      "work",
+      "daily-life",
+      "conversation"
+    ],
+    "related": [
+      "commute-to-work",
+      "commute-by-transport",
+      "my-commute-takes"
+    ],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "my-commute-takes",
+    "intention": "Meu trajeto leva / demora...",
+    "english": "my commute takes + time",
+    "pattern": "my commute takes + amount of time",
+    "description": "Usado para informar quanto tempo leva o deslocamento regular entre casa e trabalho.",
+    "category": "commute-family",
+    "searchTerms": [
+      "meu trajeto leva",
+      "meu trajeto demora",
+      "demoro para chegar ao trabalho",
+      "my commute takes",
+      "commute takes thirty minutes"
+    ],
+    "examples": [
+      {
+        "pt": "Meu trajeto para o trabalho leva trinta minutos.",
+        "en": "My commute takes thirty minutes.",
+        "ptIntent": "Meu trajeto para o trabalho leva",
+        "enIntent": "My commute takes"
+      },
+      {
+        "pt": "Meu trajeto normalmente leva cerca de uma hora.",
+        "en": "My commute usually takes about an hour.",
+        "ptIntent": "Meu trajeto normalmente leva",
+        "enIntent": "My commute usually takes"
+      },
+      {
+        "pt": "Meu trajeto não leva muito tempo.",
+        "en": "My commute doesn't take very long.",
+        "ptIntent": "Meu trajeto não leva",
+        "enIntent": "My commute doesn't take"
+      },
+      {
+        "pt": "Quanto tempo leva o seu trajeto para o trabalho?",
+        "en": "How long does your commute take?",
+        "ptIntent": "Quanto tempo leva o seu trajeto para o trabalho",
+        "enIntent": "How long does your commute take"
+      }
+    ],
+    "tags": [
+      "commute",
+      "time",
+      "duration",
+      "work",
+      "conversation"
+    ],
+    "related": [
+      "commute-to-work",
+      "commute-by-transport",
+      "have-a-long-short-commute"
+    ],
+    "englishLevel": "A2"
+  }
+
   ]
 }
