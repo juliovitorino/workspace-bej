@@ -7,6 +7,35 @@ import {
 
 const AI_ENABLED = import.meta.env.VITE_AI_ENABLED === "true";
 
+
+function renderHighlightedText(
+  text: string,
+  highlight?: string
+) {
+  if (!highlight) {
+    return text;
+  }
+
+  const index = text.indexOf(highlight);
+
+  if (index === -1) {
+    return text;
+  }
+
+  const before = text.slice(0, index);
+  const after = text.slice(index + highlight.length);
+
+  return (
+    <>
+      {before}
+      <strong className="intention-highlight">
+        {highlight}
+      </strong>
+      {after}
+    </>
+  );
+}
+
 interface BasicTrainingProps {
   intention: MentalIntention;
   onBack: () => void;
@@ -229,6 +258,26 @@ export function BasicTraining({
         <p className="eyebrow">Treino básico</p>
         <h1>{intention.intention}</h1>
         <p className="detail-english">{intention.english}</p>
+
+        {intention.examples && intention.examples.length > 0 && (
+          <section className="training-intention-example">
+            <h3>Exemplo</h3>
+            <div className="example">
+              <p>
+                {renderHighlightedText(
+                  intention.examples[0].pt,
+                  intention.examples[0].ptIntent
+                )}
+              </p>
+              <p className="english">
+                {renderHighlightedText(
+                  intention.examples[0].en,
+                  intention.examples[0].enIntent
+                )}
+              </p>
+            </div>
+          </section>
+        )}
 
         {intention.pattern && (
           <p className="training-pattern">{intention.pattern}</p>
