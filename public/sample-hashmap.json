@@ -12239,6 +12239,98 @@
       ],
       "related": [],
       "englishLevel": "B1"
+    },
+    {
+      "id": "superlative-ever-past-participle",
+      "intention": "O/A mais... que eu/nós já...",
+      "english": "the + superlative + noun + I've/we've ever + past participle",
+      "pattern": "the + superlative + noun + subject + have/has ever + past participle",
+      "description": "Usado para destacar uma experiência extrema ou única dentro de tudo o que a pessoa já viveu, viu, fez, construiu, encontrou ou experimentou.",
+      "category": "superlatives",
+      "searchTerms": [
+        "o melhor que já",
+        "o pior que já",
+        "o maior que já",
+        "o mais difícil que já",
+        "o mais interessante que já",
+        "the best i've ever",
+        "the worst i've ever",
+        "the biggest we've ever",
+        "the hardest i've ever",
+        "ever + past participle"
+      ],
+      "examples": [
+        {
+          "pt": "Esse é o melhor filme que eu já vi.",
+          "en": "This is the best movie I've ever seen.",
+          "ptIntent": "o melhor filme que eu já vi",
+          "enIntent": "the best movie I've ever seen"
+        },
+        {
+          "pt": "Esse é o maior projeto que nós já construímos.",
+          "en": "This is the biggest project we've ever built.",
+          "ptIntent": "o maior projeto que nós já construímos",
+          "enIntent": "the biggest project we've ever built"
+        },
+        {
+          "pt": "Esse foi o problema mais difícil que eu já resolvi.",
+          "en": "That was the hardest problem I've ever solved.",
+          "ptIntent": "o problema mais difícil que eu já resolvi",
+          "enIntent": "the hardest problem I've ever solved"
+        },
+        {
+          "pt": "Esse é o maior planeta que nós já encontramos.",
+          "en": "This is the largest planet we've ever found.",
+          "ptIntent": "o maior planeta que nós já encontramos",
+          "enIntent": "the largest planet we've ever found"
+        },
+        {
+          "pt": "Essa é a melhor comida que eu já provei.",
+          "en": "This is the best food I've ever tried.",
+          "ptIntent": "a melhor comida que eu já provei",
+          "enIntent": "the best food I've ever tried"
+        },
+        {
+          "pt": "Essa foi a pior entrevista que eu já fiz.",
+          "en": "That was the worst interview I've ever had.",
+          "ptIntent": "a pior entrevista que eu já fiz",
+          "enIntent": "the worst interview I've ever had"
+        },
+        {
+          "pt": "Esse é o código mais complexo que eu já escrevi.",
+          "en": "This is the most complex code I've ever written.",
+          "ptIntent": "o código mais complexo que eu já escrevi",
+          "enIntent": "the most complex code I've ever written"
+        },
+        {
+          "pt": "Essa é a decisão mais importante que nós já tomamos.",
+          "en": "This is the most important decision we've ever made.",
+          "ptIntent": "a decisão mais importante que nós já tomamos",
+          "enIntent": "the most important decision we've ever made"
+        },
+        {
+          "pt": "Essa foi a viagem mais longa que eu já fiz.",
+          "en": "That was the longest trip I've ever taken.",
+          "ptIntent": "a viagem mais longa que eu já fiz",
+          "enIntent": "the longest trip I've ever taken"
+        },
+        {
+          "pt": "Esse é o sistema mais rápido que nós já desenvolvemos.",
+          "en": "This is the fastest system we've ever developed.",
+          "ptIntent": "o sistema mais rápido que nós já desenvolvemos",
+          "enIntent": "the fastest system we've ever developed"
+        }
+      ],
+      "tags": [
+        "superlative",
+        "present-perfect",
+        "ever",
+        "past-participle",
+        "experience",
+        "conversation"
+      ],
+      "related": [],
+      "englishLevel": "B1"
     }
   ]
 }
