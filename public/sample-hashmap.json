@@ -12641,6 +12641,62 @@
       "have-a-long-short-commute"
     ],
     "englishLevel": "A2"
+  },
+  {
+    "id": "no-way-no-how",
+    "intention": "De jeito nenhum / nem pensar",
+    "english": "no way, no how",
+    "pattern": "no way, no how",
+    "description": "Expressão enfática e informal usada para rejeitar completamente uma ideia, possibilidade, pedido ou situação.",
+    "category": "chunks",
+    "searchTerms": [
+      "de jeito nenhum",
+      "nem pensar",
+      "de forma alguma",
+      "no way",
+      "no way no how"
+    ],
+    "examples": [
+      {
+        "pt": "De jeito nenhum eu vou aceitar isso.",
+        "en": "No way, no how am I going to accept that.",
+        "ptIntent": "De jeito nenhum",
+        "enIntent": "No way, no how"
+      },
+      {
+        "pt": "Nem pensar em voltar para aquele emprego.",
+        "en": "No way, no how am I going back to that job.",
+        "ptIntent": "Nem pensar",
+        "enIntent": "No way, no how"
+      },
+      {
+        "pt": "De jeito nenhum eu faria isso de novo.",
+        "en": "No way, no how would I do that again.",
+        "ptIntent": "De jeito nenhum",
+        "enIntent": "No way, no how"
+      },
+      {
+        "pt": "Nem pensar que eu vou pagar esse preço.",
+        "en": "No way, no how am I paying that price.",
+        "ptIntent": "Nem pensar",
+        "enIntent": "No way, no how"
+      },
+      {
+        "pt": "Nem pensar, de jeito nenhum.",
+        "en": "No way, no how.",
+        "ptIntent": "Nem pensar, de jeito nenhum",
+        "enIntent": "No way, no how"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "idiom",
+      "emphasis",
+      "refusal",
+      "conversation"
+    ],
+    "related": [],
+    "englishLevel": "B2"
   }
 
   ]
