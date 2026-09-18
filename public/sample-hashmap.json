@@ -12697,7 +12697,154 @@
     ],
     "related": [],
     "englishLevel": "B2"
+  },
+  {
+    "id": "what-else-is-there-to",
+    "intention": "O que há mais para...?",
+    "english": "what else is there to...?",
+    "pattern": "what else is there to + base verb?",
+    "description": "Usado para perguntar o que ainda resta fazer, ver, saber, dizer, considerar ou explorar em uma situação.",
+    "category": "question-patterns",
+    "searchTerms": [
+      "o que há mais para",
+      "o que mais há para",
+      "o que mais tem para",
+      "o que mais resta para",
+      "what else is there to"
+    ],
+    "examples": [
+      {
+        "pt": "O que mais há para fazer aqui?",
+        "en": "What else is there to do here?",
+        "ptIntent": "O que mais há para fazer",
+        "enIntent": "What else is there to do"
+      },
+      {
+        "pt": "O que mais há para ver nesta cidade?",
+        "en": "What else is there to see in this city?",
+        "ptIntent": "O que mais há para ver",
+        "enIntent": "What else is there to see"
+      },
+      {
+        "pt": "O que mais há para saber sobre esse assunto?",
+        "en": "What else is there to know about this topic?",
+        "ptIntent": "O que mais há para saber",
+        "enIntent": "What else is there to know"
+      },
+      {
+        "pt": "O que mais há para dizer sobre isso?",
+        "en": "What else is there to say about that?",
+        "ptIntent": "O que mais há para dizer",
+        "enIntent": "What else is there to say"
+      },
+      {
+        "pt": "O que mais há para considerar antes de decidir?",
+        "en": "What else is there to consider before deciding?",
+        "ptIntent": "O que mais há para considerar",
+        "enIntent": "What else is there to consider"
+      }
+    ],
+    "tags": [
+      "question",
+      "chunk",
+      "conversation",
+      "there-is",
+      "what-else"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "say-tell-talk-speak",
+    "intention": "Dizer / contar / conversar / falar",
+    "english": "say / tell / talk / speak",
+    "pattern": "say + something | tell + someone + something | talk + to/with + someone | speak + to/with + someone / speak + language",
+    "description": "Família usada para diferenciar quatro verbos muito comuns de comunicação. SAY foca no que é dito; TELL normalmente inclui a pessoa que recebe a informação; TALK é comum para conversa informal; SPEAK é comum para idiomas, fala mais formal ou o ato de falar.",
+    "category": "communication-family",
+    "searchTerms": [
+      "dizer",
+      "contar",
+      "falar",
+      "conversar",
+      "say",
+      "tell",
+      "talk",
+      "speak",
+      "say tell difference",
+      "talk speak difference"
+    ],
+    "examples": [
+      {
+        "pt": "Ela disse que estava cansada.",
+        "en": "She said she was tired.",
+        "ptIntent": "disse",
+        "enIntent": "said"
+      },
+      {
+        "pt": "Ela me contou que estava cansada.",
+        "en": "She told me she was tired.",
+        "ptIntent": "me contou",
+        "enIntent": "told me"
+      },
+      {
+        "pt": "Eu preciso conversar com você.",
+        "en": "I need to talk to you.",
+        "ptIntent": "conversar com você",
+        "enIntent": "talk to you"
+      },
+      {
+        "pt": "Posso falar com o gerente?",
+        "en": "Can I speak to the manager?",
+        "ptIntent": "falar com o gerente",
+        "enIntent": "speak to the manager"
+      },
+      {
+        "pt": "O que você disse?",
+        "en": "What did you say?",
+        "ptIntent": "disse",
+        "enIntent": "say"
+      },
+      {
+        "pt": "Me conte o que aconteceu.",
+        "en": "Tell me what happened.",
+        "ptIntent": "Me conte",
+        "enIntent": "Tell me"
+      },
+      {
+        "pt": "Nós conversamos sobre trabalho ontem.",
+        "en": "We talked about work yesterday.",
+        "ptIntent": "conversamos sobre",
+        "enIntent": "talked about"
+      },
+      {
+        "pt": "Ela fala inglês muito bem.",
+        "en": "She speaks English very well.",
+        "ptIntent": "fala inglês",
+        "enIntent": "speaks English"
+      },
+      {
+        "pt": "Não diga isso para ele.",
+        "en": "Don't say that to him.",
+        "ptIntent": "Não diga isso",
+        "enIntent": "Don't say that"
+      },
+      {
+        "pt": "Não conte isso para ninguém.",
+        "en": "Don't tell anyone about that.",
+        "ptIntent": "Não conte isso",
+        "enIntent": "Don't tell anyone"
+      }
+    ],
+    "tags": [
+      "say",
+      "tell",
+      "talk",
+      "speak",
+      "communication",
+      "conversation"
+    ],
+    "related": [],
+    "englishLevel": "A2"
   }
-
   ]
 }
