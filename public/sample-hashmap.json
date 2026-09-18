@@ -13399,6 +13399,126 @@
     ],
     "related": [],
     "englishLevel": "B1"
+  },
+  {
+    "id": "fazer-questao-de",
+    "intention": "Fazer questão de...",
+    "english": "make a point of...",
+    "pattern": "make a point of + noun / verb-ing",
+    "description": "Usado para dizer que alguém considera algo importante e faz questão de realizar essa ação ou manter esse hábito.",
+    "category": "make-family",
+    "searchTerms": [
+      "fazer questão de",
+      "faço questão de",
+      "faz questão de",
+      "insistir em",
+      "considerar importante",
+      "make a point of"
+    ],
+    "examples": [
+      {
+        "pt": "Eu faço questão de pagar a conta.",
+        "en": "I make a point of paying the bill.",
+        "ptIntent": "faço questão de",
+        "enIntent": "make a point of"
+      },
+      {
+        "pt": "Minha mãe faz questão do almoço em família.",
+        "en": "My mother makes a point of having lunch with the family.",
+        "ptIntent": "faz questão do almoço em família",
+        "enIntent": "makes a point of having lunch with the family"
+      },
+      {
+        "pt": "Eu faço questão de chegar no horário.",
+        "en": "I make a point of arriving on time.",
+        "ptIntent": "faço questão de",
+        "enIntent": "make a point of"
+      },
+      {
+        "pt": "Ela faz questão de conversar com os filhos todos os dias.",
+        "en": "She makes a point of talking to her children every day.",
+        "ptIntent": "faz questão de",
+        "enIntent": "makes a point of"
+      },
+      {
+        "pt": "Nós fazemos questão de responder todos os clientes.",
+        "en": "We make a point of replying to every customer.",
+        "ptIntent": "fazemos questão de",
+        "enIntent": "make a point of"
+      }
+    ],
+    "tags": [
+      "priority",
+      "habit",
+      "emphasis",
+      "chunk",
+      "conversation"
+    ],
+    "related": [
+      "fazer-questao-de-insist-on"
+    ],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "fazer-questao-de-insist-on",
+    "intention": "Fazer questão de... / insistir em...",
+    "english": "insist on...",
+    "pattern": "insist on + noun / verb-ing",
+    "description": "Usado quando 'fazer questão de' tem um sentido mais forte de insistência. 'Insist on' normalmente passa a ideia de insistir em fazer algo, especialmente quando existe resistência, discussão, discordância ou quando outra pessoa prefere uma alternativa diferente. É mais forte do que 'make a point of', que costuma indicar apenas que alguém considera algo importante e faz isso deliberadamente.",
+    "category": "personal-priorities",
+    "searchTerms": [
+      "fazer questão de",
+      "insistir em",
+      "insisto em",
+      "faz questão de",
+      "insist on",
+      "insisted on",
+      "insists on"
+    ],
+    "examples": [
+      {
+        "pt": "Eu fiz questão de pagar a conta.",
+        "en": "I insisted on paying the bill.",
+        "ptIntent": "fiz questão de",
+        "enIntent": "insisted on"
+      },
+      {
+        "pt": "Minha mãe faz questão de que todos estejam presentes no almoço em família.",
+        "en": "My mother insists on everyone being there for the family lunch.",
+        "ptIntent": "faz questão de",
+        "enIntent": "insists on"
+      },
+      {
+        "pt": "Ele fez questão de dirigir, mesmo estando cansado.",
+        "en": "He insisted on driving, even though he was tired.",
+        "ptIntent": "fez questão de",
+        "enIntent": "insisted on"
+      },
+      {
+        "pt": "Ela faz questão de resolver o problema sozinha.",
+        "en": "She insists on solving the problem by herself.",
+        "ptIntent": "faz questão de",
+        "enIntent": "insists on"
+      },
+      {
+        "pt": "Eu insisti em falar com o gerente.",
+        "en": "I insisted on speaking to the manager.",
+        "ptIntent": "insisti em",
+        "enIntent": "insisted on"
+      }
+    ],
+    "tags": [
+      "insistence",
+      "priority",
+      "emphasis",
+      "gerund",
+      "chunk",
+      "conversation"
+    ],
+    "related": [
+      "fazer-questao-de"
+    ],
+    "englishLevel": "B2"
   }
   ]
 }
