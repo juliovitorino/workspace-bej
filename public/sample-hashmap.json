@@ -9013,43 +9013,6 @@
       "englishLevel": "B1"
     },
     {
-      "id": "every-now-and-then",
-      "intention": "De vez em quando / volta e meia",
-      "english": "every now and then",
-      "pattern": "every now and then",
-      "description": "Expressão conversacional para algo que acontece ocasionalmente.",
-      "category": "time-frequency",
-      "searchTerms": [
-        "de vez em quando",
-        "volta e meia",
-        "every now and then"
-      ],
-      "examples": [
-        {
-          "pt": "De vez em quando eu erro palavras simples.",
-          "en": "Every now and then, I make mistakes with simple words.",
-          "ptIntent": "De vez em quando",
-          "enIntent": "Every now and then"
-        },
-        {
-          "pt": "Volta e meia eu volto a estudar uma estrutura antiga.",
-          "en": "Every now and then, I go back to an old structure.",
-          "ptIntent": "Volta e meia",
-          "enIntent": "Every now and then"
-        }
-      ],
-      "tags": [
-        "time",
-        "frequency",
-        "conversation"
-      ],
-      "related": [
-        "once-in-a-while",
-        "from-time-to-time"
-      ],
-      "englishLevel": "B1"
-    },
-    {
       "id": "sooner-or-later",
       "intention": "Mais cedo ou mais tarde",
       "english": "sooner or later",
@@ -12845,6 +12808,597 @@
     ],
     "related": [],
     "englishLevel": "A2"
+  },
+    {
+    "id": "if-i-were-you-id",
+    "intention": "Se eu fosse você, eu...",
+    "english": "If I were you, I'd...",
+    "pattern": "If I were you, I'd + base verb",
+    "description": "Usado para dar conselho ou sugerir o que você faria no lugar de outra pessoa.",
+    "category": "advice",
+    "searchTerms": [
+      "se eu fosse você",
+      "no seu lugar",
+      "if i were you"
+    ],
+    "examples": [
+      {
+        "pt": "Se eu fosse você, eu falaria com meu gerente.",
+        "en": "If I were you, I'd talk to my manager.",
+        "ptIntent": "Se eu fosse você, eu",
+        "enIntent": "If I were you, I'd"
+      },
+      {
+        "pt": "Se eu fosse você, eu esperaria mais um pouco.",
+        "en": "If I were you, I'd wait a little longer.",
+        "ptIntent": "Se eu fosse você, eu",
+        "enIntent": "If I were you, I'd"
+      },
+      {
+        "pt": "Se eu fosse você, eu não faria isso agora.",
+        "en": "If I were you, I wouldn't do that now.",
+        "ptIntent": "Se eu fosse você, eu não",
+        "enIntent": "If I were you, I wouldn't"
+      },
+      {
+        "pt": "Se eu fosse você, eu tentaria de novo.",
+        "en": "If I were you, I'd try again.",
+        "ptIntent": "Se eu fosse você, eu",
+        "enIntent": "If I were you, I'd"
+      }
+    ],
+    "tags": [
+      "advice",
+      "conditional",
+      "chunk",
+      "conversation"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "have-you-thought-about",
+    "intention": "Você já pensou em...?",
+    "english": "Have you thought about...?",
+    "pattern": "Have you thought about + noun / verb-ing?",
+    "description": "Usado para sugerir uma possibilidade ou ideia de forma natural e pouco direta.",
+    "category": "suggestions",
+    "searchTerms": [
+      "você já pensou em",
+      "já pensou em",
+      "have you thought about"
+    ],
+    "examples": [
+      {
+        "pt": "Você já pensou em mudar de emprego?",
+        "en": "Have you thought about changing jobs?",
+        "ptIntent": "Você já pensou em",
+        "enIntent": "Have you thought about"
+      },
+      {
+        "pt": "Você já pensou em estudar de manhã?",
+        "en": "Have you thought about studying in the morning?",
+        "ptIntent": "Você já pensou em",
+        "enIntent": "Have you thought about"
+      },
+      {
+        "pt": "Você já pensou em conversar com ele?",
+        "en": "Have you thought about talking to him?",
+        "ptIntent": "Você já pensou em",
+        "enIntent": "Have you thought about"
+      }
+    ],
+    "tags": [
+      "suggestion",
+      "question",
+      "chunk",
+      "conversation"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "would-you-mind-ing",
+    "intention": "Você se importaria de...?",
+    "english": "Would you mind...?",
+    "pattern": "Would you mind + verb-ing?",
+    "description": "Usado para fazer pedidos educados perguntando se a pessoa se incomodaria em fazer algo.",
+    "category": "polite-requests",
+    "searchTerms": [
+      "você se importaria de",
+      "se importaria de",
+      "would you mind"
+    ],
+    "examples": [
+      {
+        "pt": "Você se importaria de fechar a porta?",
+        "en": "Would you mind closing the door?",
+        "ptIntent": "Você se importaria de",
+        "enIntent": "Would you mind"
+      },
+      {
+        "pt": "Você se importaria de esperar alguns minutos?",
+        "en": "Would you mind waiting a few minutes?",
+        "ptIntent": "Você se importaria de",
+        "enIntent": "Would you mind"
+      },
+      {
+        "pt": "Você se importaria de me ajudar com isso?",
+        "en": "Would you mind helping me with this?",
+        "ptIntent": "Você se importaria de",
+        "enIntent": "Would you mind"
+      }
+    ],
+    "tags": [
+      "request",
+      "politeness",
+      "gerund",
+      "conversation"
+    ],
+    "related": [
+      "do-you-mind-if-i"
+    ],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "do-you-mind-if-i",
+    "intention": "Você se importa se eu...?",
+    "english": "Do you mind if I...?",
+    "pattern": "Do you mind if I + verb?",
+    "description": "Usado para pedir permissão de forma educada antes de fazer alguma coisa.",
+    "category": "polite-requests",
+    "searchTerms": [
+      "você se importa se eu",
+      "posso",
+      "do you mind if i"
+    ],
+    "examples": [
+      {
+        "pt": "Você se importa se eu abrir a janela?",
+        "en": "Do you mind if I open the window?",
+        "ptIntent": "Você se importa se eu",
+        "enIntent": "Do you mind if I"
+      },
+      {
+        "pt": "Você se importa se eu sentar aqui?",
+        "en": "Do you mind if I sit here?",
+        "ptIntent": "Você se importa se eu",
+        "enIntent": "Do you mind if I"
+      },
+      {
+        "pt": "Você se importa se eu fizer uma pergunta?",
+        "en": "Do you mind if I ask a question?",
+        "ptIntent": "Você se importa se eu",
+        "enIntent": "Do you mind if I"
+      }
+    ],
+    "tags": [
+      "permission",
+      "politeness",
+      "question",
+      "conversation"
+    ],
+    "related": [
+      "would-you-mind-ing"
+    ],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "as-far-as-im-concerned",
+    "intention": "No que me diz respeito / na minha opinião...",
+    "english": "As far as I'm concerned...",
+    "pattern": "As far as I'm concerned, + clause",
+    "description": "Usado para introduzir uma opinião pessoal ou posição sobre um assunto.",
+    "category": "opinion",
+    "searchTerms": [
+      "no que me diz respeito",
+      "na minha opinião",
+      "para mim",
+      "as far as i'm concerned"
+    ],
+    "examples": [
+      {
+        "pt": "Na minha opinião, essa é a melhor opção.",
+        "en": "As far as I'm concerned, this is the best option.",
+        "ptIntent": "Na minha opinião",
+        "enIntent": "As far as I'm concerned"
+      },
+      {
+        "pt": "No que me diz respeito, podemos começar agora.",
+        "en": "As far as I'm concerned, we can start now.",
+        "ptIntent": "No que me diz respeito",
+        "enIntent": "As far as I'm concerned"
+      },
+      {
+        "pt": "Na minha opinião, o problema já foi resolvido.",
+        "en": "As far as I'm concerned, the problem has already been solved.",
+        "ptIntent": "Na minha opinião",
+        "enIntent": "As far as I'm concerned"
+      }
+    ],
+    "tags": [
+      "opinion",
+      "discourse",
+      "chunk",
+      "conversation"
+    ],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "i-couldnt-agree-more",
+    "intention": "Concordo plenamente",
+    "english": "I couldn't agree more.",
+    "pattern": "I couldn't agree more",
+    "description": "Usado para demonstrar concordância total e enfática com o que outra pessoa acabou de dizer.",
+    "category": "agreement",
+    "searchTerms": [
+      "concordo plenamente",
+      "concordo totalmente",
+      "não poderia concordar mais",
+      "i couldn't agree more"
+    ],
+    "examples": [
+      {
+        "pt": "Concordo plenamente. Precisamos simplificar esse processo.",
+        "en": "I couldn't agree more. We need to simplify this process.",
+        "ptIntent": "Concordo plenamente",
+        "enIntent": "I couldn't agree more"
+      },
+      {
+        "pt": "Concordo totalmente com você.",
+        "en": "I couldn't agree more with you.",
+        "ptIntent": "Concordo totalmente",
+        "enIntent": "I couldn't agree more"
+      },
+      {
+        "pt": "Concordo plenamente. Essa é a melhor decisão.",
+        "en": "I couldn't agree more. That's the best decision.",
+        "ptIntent": "Concordo plenamente",
+        "enIntent": "I couldn't agree more"
+      }
+    ],
+    "tags": [
+      "agreement",
+      "reaction",
+      "chunk",
+      "conversation"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "i-cant-remember-the-last-time-i",
+    "intention": "Não me lembro da última vez que eu...",
+    "english": "I can't remember the last time I...",
+    "pattern": "I can't remember the last time + subject + past verb",
+    "description": "Usado para dizer que algo aconteceu há tanto tempo que você não consegue lembrar quando foi a última vez.",
+    "category": "memory",
+    "searchTerms": [
+      "não me lembro da última vez",
+      "faz tanto tempo que",
+      "i can't remember the last time"
+    ],
+    "examples": [
+      {
+        "pt": "Não me lembro da última vez que fui ao cinema.",
+        "en": "I can't remember the last time I went to the movies.",
+        "ptIntent": "Não me lembro da última vez que",
+        "enIntent": "I can't remember the last time"
+      },
+      {
+        "pt": "Não me lembro da última vez que tirei férias.",
+        "en": "I can't remember the last time I took a vacation.",
+        "ptIntent": "Não me lembro da última vez que",
+        "enIntent": "I can't remember the last time"
+      },
+      {
+        "pt": "Não me lembro da última vez que dormi oito horas.",
+        "en": "I can't remember the last time I slept for eight hours.",
+        "ptIntent": "Não me lembro da última vez que",
+        "enIntent": "I can't remember the last time"
+      }
+    ],
+    "tags": [
+      "memory",
+      "past",
+      "chunk",
+      "conversation"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "ive-never-been-one-to",
+    "intention": "Nunca fui de...",
+    "english": "I've never been one to...",
+    "pattern": "I've never been one to + base verb",
+    "description": "Usado para dizer que determinado comportamento ou hábito não faz parte da sua personalidade.",
+    "category": "personal-habits",
+    "searchTerms": [
+      "nunca fui de",
+      "não sou de",
+      "i've never been one to"
+    ],
+    "examples": [
+      {
+        "pt": "Nunca fui de desistir facilmente.",
+        "en": "I've never been one to give up easily.",
+        "ptIntent": "Nunca fui de",
+        "enIntent": "I've never been one to"
+      },
+      {
+        "pt": "Nunca fui de acordar tarde.",
+        "en": "I've never been one to wake up late.",
+        "ptIntent": "Nunca fui de",
+        "enIntent": "I've never been one to"
+      },
+      {
+        "pt": "Nunca fui de reclamar muito.",
+        "en": "I've never been one to complain much.",
+        "ptIntent": "Nunca fui de",
+        "enIntent": "I've never been one to"
+      }
+    ],
+    "tags": [
+      "habit",
+      "personality",
+      "present-perfect",
+      "conversation"
+    ],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "believe-it-or-not",
+    "intention": "Acredite ou não...",
+    "english": "Believe it or not...",
+    "pattern": "Believe it or not, + clause",
+    "description": "Usado para introduzir uma informação surpreendente ou difícil de acreditar.",
+    "category": "discourse",
+    "searchTerms": [
+      "acredite ou não",
+      "por incrível que pareça",
+      "believe it or not"
+    ],
+    "examples": [
+      {
+        "pt": "Acredite ou não, eu nunca estive em Nova York.",
+        "en": "Believe it or not, I've never been to New York.",
+        "ptIntent": "Acredite ou não",
+        "enIntent": "Believe it or not"
+      },
+      {
+        "pt": "Acredite ou não, ele terminou tudo em um dia.",
+        "en": "Believe it or not, he finished everything in one day.",
+        "ptIntent": "Acredite ou não",
+        "enIntent": "Believe it or not"
+      },
+      {
+        "pt": "Acredite ou não, o sistema funcionou na primeira tentativa.",
+        "en": "Believe it or not, the system worked on the first try.",
+        "ptIntent": "Acredite ou não",
+        "enIntent": "Believe it or not"
+      }
+    ],
+    "tags": [
+      "surprise",
+      "discourse",
+      "chunk",
+      "conversation"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "more-often-than-not",
+    "intention": "Na maioria das vezes...",
+    "english": "More often than not...",
+    "pattern": "More often than not, + clause",
+    "description": "Usado para dizer que algo acontece na maior parte das vezes, embora não sempre.",
+    "category": "frequency",
+    "searchTerms": [
+      "na maioria das vezes",
+      "geralmente",
+      "more often than not"
+    ],
+    "examples": [
+      {
+        "pt": "Na maioria das vezes, eu trabalho de casa.",
+        "en": "More often than not, I work from home.",
+        "ptIntent": "Na maioria das vezes",
+        "enIntent": "More often than not"
+      },
+      {
+        "pt": "Na maioria das vezes, ele chega cedo.",
+        "en": "More often than not, he arrives early.",
+        "ptIntent": "Na maioria das vezes",
+        "enIntent": "More often than not"
+      },
+      {
+        "pt": "Na maioria das vezes, a solução mais simples funciona.",
+        "en": "More often than not, the simplest solution works.",
+        "ptIntent": "Na maioria das vezes",
+        "enIntent": "More often than not"
+      }
+    ],
+    "tags": [
+      "frequency",
+      "discourse",
+      "chunk",
+      "conversation"
+    ],
+    "related": [
+      "every-now-and-then"
+    ],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "theres-a-good-chance-that",
+    "intention": "Há uma boa chance de que...",
+    "english": "There's a good chance that...",
+    "pattern": "There's a good chance that + clause",
+    "description": "Usado para expressar uma possibilidade considerada relativamente provável.",
+    "category": "probability",
+    "searchTerms": [
+      "há uma boa chance de que",
+      "é bem provável que",
+      "there's a good chance that"
+    ],
+    "examples": [
+      {
+        "pt": "Há uma boa chance de que chova amanhã.",
+        "en": "There's a good chance that it will rain tomorrow.",
+        "ptIntent": "Há uma boa chance de que",
+        "enIntent": "There's a good chance that"
+      },
+      {
+        "pt": "Há uma boa chance de que ele aceite a proposta.",
+        "en": "There's a good chance that he'll accept the offer.",
+        "ptIntent": "Há uma boa chance de que",
+        "enIntent": "There's a good chance that"
+      },
+      {
+        "pt": "Há uma boa chance de que terminemos hoje.",
+        "en": "There's a good chance that we'll finish today.",
+        "ptIntent": "Há uma boa chance de que",
+        "enIntent": "There's a good chance that"
+      }
+    ],
+    "tags": [
+      "probability",
+      "possibility",
+      "chunk",
+      "conversation"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "whether-you-like-it-or-not",
+    "intention": "Quer você goste ou não...",
+    "english": "Whether you like it or not...",
+    "pattern": "Whether you like it or not, + clause",
+    "description": "Usado para dizer que algo continuará verdadeiro ou acontecerá independentemente da opinião ou preferência da pessoa.",
+    "category": "concession",
+    "searchTerms": [
+      "quer você goste ou não",
+      "goste ou não",
+      "whether you like it or not"
+    ],
+    "examples": [
+      {
+        "pt": "Quer você goste ou não, precisamos fazer isso.",
+        "en": "Whether you like it or not, we have to do this.",
+        "ptIntent": "Quer você goste ou não",
+        "enIntent": "Whether you like it or not"
+      },
+      {
+        "pt": "Quer você goste ou não, as coisas estão mudando.",
+        "en": "Whether you like it or not, things are changing.",
+        "ptIntent": "Quer você goste ou não",
+        "enIntent": "Whether you like it or not"
+      },
+      {
+        "pt": "Quer você goste ou não, ele vai participar.",
+        "en": "Whether you like it or not, he's going to take part.",
+        "ptIntent": "Quer você goste ou não",
+        "enIntent": "Whether you like it or not"
+      }
+    ],
+    "tags": [
+      "concession",
+      "contrast",
+      "chunk",
+      "conversation"
+    ],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "every-now-and-then",
+    "intention": "De vez em quando...",
+    "english": "Every now and then...",
+    "pattern": "Every now and then, + clause",
+    "description": "Usado para dizer que algo acontece ocasionalmente, mas não com frequência.",
+    "category": "frequency",
+    "searchTerms": [
+      "de vez em quando",
+      "às vezes",
+      "ocasionalmente",
+      "every now and then"
+    ],
+    "examples": [
+      {
+        "pt": "De vez em quando, eu saio para jantar.",
+        "en": "Every now and then, I go out for dinner.",
+        "ptIntent": "De vez em quando",
+        "enIntent": "Every now and then"
+      },
+      {
+        "pt": "De vez em quando, eu preciso de uma pausa.",
+        "en": "Every now and then, I need a break.",
+        "ptIntent": "De vez em quando",
+        "enIntent": "Every now and then"
+      },
+      {
+        "pt": "De vez em quando, nós conversamos sobre trabalho.",
+        "en": "Every now and then, we talk about work.",
+        "ptIntent": "De vez em quando",
+        "enIntent": "Every now and then"
+      }
+    ],
+    "tags": [
+      "frequency",
+      "time",
+      "chunk",
+      "conversation"
+    ],
+    "related": [
+      "more-often-than-not"
+    ],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "its-too-bad-that",
+    "intention": "É uma pena que...",
+    "english": "It's too bad that...",
+    "pattern": "It's too bad that + clause",
+    "description": "Usado para expressar desapontamento ou lamentar uma situação.",
+    "category": "reaction",
+    "searchTerms": [
+      "é uma pena que",
+      "que pena que",
+      "it's too bad that"
+    ],
+    "examples": [
+      {
+        "pt": "É uma pena que você não possa vir.",
+        "en": "It's too bad that you can't come.",
+        "ptIntent": "É uma pena que",
+        "enIntent": "It's too bad that"
+      },
+      {
+        "pt": "É uma pena que o evento tenha sido cancelado.",
+        "en": "It's too bad that the event was canceled.",
+        "ptIntent": "É uma pena que",
+        "enIntent": "It's too bad that"
+      },
+      {
+        "pt": "É uma pena que tenhamos tão pouco tempo.",
+        "en": "It's too bad that we have so little time.",
+        "ptIntent": "É uma pena que",
+        "enIntent": "It's too bad that"
+      }
+    ],
+    "tags": [
+      "reaction",
+      "disappointment",
+      "chunk",
+      "conversation"
+    ],
+    "related": [],
+    "englishLevel": "B1"
   }
   ]
 }
