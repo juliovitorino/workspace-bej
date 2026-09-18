@@ -1,8 +1,15 @@
 import type { MentalIntention } from "../types/hashmap";
 
+export interface StoryParagraphIntention {
+  intentionId: string;
+  ptIntent: string;
+  enIntent: string;
+}
+
 export interface StoryParagraph {
   pt: string;
   en: string;
+  intentions: StoryParagraphIntention[];
 }
 
 export interface StoryGenerationResult {
@@ -63,9 +70,21 @@ const storySchema = {
         type: "OBJECT",
         properties: {
           pt: { type: "STRING" },
-          en: { type: "STRING" }
+          en: { type: "STRING" },
+          intentions: {
+            type: "ARRAY",
+            items: {
+              type: "OBJECT",
+              properties: {
+                intentionId: { type: "STRING" },
+                ptIntent: { type: "STRING" },
+                enIntent: { type: "STRING" }
+              },
+              required: ["intentionId", "ptIntent", "enIntent"]
+            }
+          }
         },
-        required: ["pt", "en"]
+        required: ["pt", "en", "intentions"]
       }
     },
     intentionsUsed: {
@@ -123,7 +142,16 @@ REGRAS OBRIGATÓRIAS:
 12. Preserve o sentido entre português e inglês.
 13. Evite tradução excessivamente literal quando uma forma natural em inglês for melhor.
 14. O título também deve ter versão em português e inglês.
-15. Responda exclusivamente no formato JSON solicitado.
+15. Para cada parágrafo, preencha o array "intentions" com as intenções realmente usadas naquele parágrafo.
+16. Cada item de "intentions" deve conter:
+    - "intentionId": ID exato da intenção utilizada;
+    - "ptIntent": trecho EXATO existente dentro do campo "pt";
+    - "enIntent": trecho EXATO existente dentro do campo "en".
+17. "ptIntent" e "enIntent" devem conter somente o trecho que representa a intenção linguística, sem inventar ou parafrasear o texto.
+18. Se um parágrafo usar mais de uma intenção, inclua mais de um item no array "intentions".
+19. Se um parágrafo não usar nenhuma das intenções fornecidas, retorne "intentions": [].
+20. Todos os IDs presentes nos arrays "intentions" devem também aparecer em "intentionsUsed".
+21. Responda exclusivamente no formato JSON solicitado.
 `.trim();
 }
 
@@ -164,10 +192,56 @@ function validateStory(
     );
   }
 
+  const highlightedIds = new Set<string>();
+
   for (const paragraph of story.paragraphs) {
     if (!paragraph.pt?.trim() || !paragraph.en?.trim()) {
       throw new Error("A IA retornou um parágrafo incompleto.");
     }
+
+    if (!Array.isArray(paragraph.intentions)) {
+      throw new Error(
+        "A IA retornou um parágrafo sem o array de intenções."
+      );
+    }
+
+    for (const highlight of paragraph.intentions) {
+      if (!requestedIds.has(highlight.intentionId)) {
+        throw new Error(
+          `A IA destacou uma intenção não solicitada: ${highlight.intentionId}`
+        );
+      }
+
+      if (!highlight.ptIntent?.trim() || !highlight.enIntent?.trim()) {
+        throw new Error(
+          `A IA retornou um destaque incompleto para a intenção ${highlight.intentionId}.`
+        );
+      }
+
+      if (!paragraph.pt.includes(highlight.ptIntent)) {
+        throw new Error(
+          `O destaque PT-BR da intenção ${highlight.intentionId} não existe literalmente no parágrafo.`
+        );
+      }
+
+      if (!paragraph.en.includes(highlight.enIntent)) {
+        throw new Error(
+          `O destaque EN-US da intenção ${highlight.intentionId} não existe literalmente no parágrafo.`
+        );
+      }
+
+      highlightedIds.add(highlight.intentionId);
+    }
+  }
+
+  const missingHighlights = [...requestedIds].filter(
+    (id) => !highlightedIds.has(id)
+  );
+
+  if (missingHighlights.length > 0) {
+    throw new Error(
+      `A IA não marcou no texto todas as intenções solicitadas: ${missingHighlights.join(", ")}`
+    );
   }
 
   if (!story.titlePt?.trim() || !story.titleEn?.trim()) {

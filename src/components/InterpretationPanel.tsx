@@ -1,4 +1,8 @@
-import { useMemo, useState } from "react";
+import {
+  useMemo,
+  useState,
+  type ReactNode
+} from "react";
 import type { MentalIntention } from "../types/hashmap";
 import {
   generateInterpretationStory,
@@ -22,6 +26,69 @@ const THEMES = [
   "surpresa",
   "decisão"
 ];
+
+
+function renderHighlightedText(
+  text: string,
+  highlights: string[]
+) {
+  const ranges = highlights
+    .map((highlight) => {
+      const start = text.indexOf(highlight);
+
+      return start >= 0
+        ? {
+            start,
+            end: start + highlight.length,
+            highlight
+          }
+        : null;
+    })
+    .filter(
+      (
+        range
+      ): range is {
+        start: number;
+        end: number;
+        highlight: string;
+      } => range !== null
+    )
+    .sort((a, b) => a.start - b.start);
+
+  if (ranges.length === 0) {
+    return text;
+  }
+
+const parts: ReactNode[] = [];
+  let cursor = 0;
+
+  ranges.forEach((range, index) => {
+    if (range.start < cursor) {
+      return;
+    }
+
+    if (range.start > cursor) {
+      parts.push(text.slice(cursor, range.start));
+    }
+
+    parts.push(
+      <strong
+        className="intention-highlight"
+        key={`${range.start}-${range.end}-${index}`}
+      >
+        {text.slice(range.start, range.end)}
+      </strong>
+    );
+
+    cursor = range.end;
+  });
+
+  if (cursor < text.length) {
+    parts.push(text.slice(cursor));
+  }
+
+  return <>{parts}</>;
+}
 
 function shuffle<T>(items: T[]): T[] {
   const result = [...items];
@@ -308,12 +375,22 @@ export function InterpretationPanel({
                 key={`${index}-${paragraph.pt}`}
               >
                 <p className="interpretation-pt">
-                  {paragraph.pt}
+                  {renderHighlightedText(
+                    paragraph.pt,
+                    paragraph.intentions.map(
+                      (intention) => intention.ptIntent
+                    )
+                  )}
                 </p>
 
                 {showEnglish && (
                   <p className="english interpretation-en">
-                    {paragraph.en}
+                    {renderHighlightedText(
+                      paragraph.en,
+                      paragraph.intentions.map(
+                        (intention) => intention.enIntent
+                      )
+                    )}
                   </p>
                 )}
               </section>
