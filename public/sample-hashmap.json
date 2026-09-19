@@ -13801,6 +13801,69 @@
   ],
   "related": [],
   "englishLevel": "B1"
+},
+{
+  "id": "como-fazer-how-to",
+  "intention": "Como fazer... / como...",
+  "english": "how to + verb",
+  "pattern": "how to + base verb",
+  "description": "Usado para falar sobre a maneira de fazer alguma coisa. Depois de 'how to', usamos o verbo na forma base. É muito comum depois de verbos como learn, know, teach, show e explain.",
+  "category": "how-to",
+  "searchTerms": [
+    "como fazer",
+    "como",
+    "how to",
+    "aprender como",
+    "saber como",
+    "ensinar como"
+  ],
+  "examples": [
+    {
+      "pt": "Eu quero aprender como fazer isso.",
+      "en": "I want to learn how to do this.",
+      "ptIntent": "como fazer",
+      "enIntent": "how to do"
+    },
+    {
+      "pt": "Lucas sempre quis aprender como fazer pão.",
+      "en": "Lucas always wanted to learn how to make bread.",
+      "ptIntent": "como fazer",
+      "enIntent": "how to make"
+    },
+    {
+      "pt": "Você sabe como usar isso?",
+      "en": "Do you know how to use this?",
+      "ptIntent": "como usar",
+      "enIntent": "how to use"
+    },
+    {
+      "pt": "Ela me ensinou como cozinhar.",
+      "en": "She taught me how to cook.",
+      "ptIntent": "como cozinhar",
+      "enIntent": "how to cook"
+    },
+    {
+      "pt": "Você pode me mostrar como abrir isso?",
+      "en": "Can you show me how to open this?",
+      "ptIntent": "como abrir",
+      "enIntent": "how to open"
+    },
+    {
+      "pt": "Eu não sei como resolver esse problema.",
+      "en": "I don't know how to solve this problem.",
+      "ptIntent": "como resolver",
+      "enIntent": "how to solve"
+    }
+  ],
+  "tags": [
+    "how to",
+    "instructions",
+    "learning",
+    "questions",
+    "conversation"
+  ],
+  "related": [],
+  "englishLevel": "A2"
 }
   ]
 }
