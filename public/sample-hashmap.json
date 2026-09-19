@@ -13519,6 +13519,86 @@
       "fazer-questao-de"
     ],
     "englishLevel": "B2"
+  },
+  {
+    "id": "tanto-tanta-tantos-tantas",
+    "intention": "Tanto / tanta / tantos / tantas",
+    "english": "so much / so many",
+    "pattern": "so much + uncountable noun | so many + plural countable noun",
+    "description": "Usado para expressar grande quantidade. 'So much' é usado com substantivos incontáveis, como time, money e work. 'So many' é usado com substantivos contáveis no plural, como people, problems e questions.",
+    "category": "quantity",
+    "searchTerms": [
+      "tanto",
+      "tanta",
+      "tantos",
+      "tantas",
+      "muito",
+      "muita",
+      "muitos",
+      "muitas",
+      "so much",
+      "so many"
+    ],
+    "examples": [
+      {
+        "pt": "Eu tenho tanto trabalho hoje.",
+        "en": "I have so much work today.",
+        "ptIntent": "tanto trabalho",
+        "enIntent": "so much work"
+      },
+      {
+        "pt": "Por que você gasta tanto dinheiro?",
+        "en": "Why do you spend so much money?",
+        "ptIntent": "tanto dinheiro",
+        "enIntent": "so much money"
+      },
+      {
+        "pt": "Nós não temos tanto tempo.",
+        "en": "We don't have so much time.",
+        "ptIntent": "tanto tempo",
+        "enIntent": "so much time"
+      },
+      {
+        "pt": "Há tantas pessoas aqui hoje.",
+        "en": "There are so many people here today.",
+        "ptIntent": "tantas pessoas",
+        "enIntent": "so many people"
+      },
+      {
+        "pt": "Eu tenho tantos problemas para resolver.",
+        "en": "I have so many problems to solve.",
+        "ptIntent": "tantos problemas",
+        "enIntent": "so many problems"
+      },
+      {
+        "pt": "Por que você faz tantas perguntas?",
+        "en": "Why do you ask so many questions?",
+        "ptIntent": "tantas perguntas",
+        "enIntent": "so many questions"
+      },
+      {
+        "pt": "Eu nunca vi tantas opções.",
+        "en": "I've never seen so many options.",
+        "ptIntent": "tantas opções",
+        "enIntent": "so many options"
+      },
+      {
+        "pt": "Ela colocou tanta energia nesse projeto.",
+        "en": "She put so much energy into this project.",
+        "ptIntent": "tanta energia",
+        "enIntent": "so much energy"
+      }
+    ],
+    "tags": [
+      "quantity",
+      "so-much",
+      "so-many",
+      "countable",
+      "uncountable",
+      "conversation"
+    ],
+    "related": [],
+    "englishLevel": "A2"
   }
   ]
 }
