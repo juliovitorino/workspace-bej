@@ -13599,6 +13599,84 @@
     ],
     "related": [],
     "englishLevel": "A2"
+  },
+  {
+    "id": "at-all",
+    "intention": "Nem um pouco / de jeito nenhum / realmente? / de verdade?",
+    "english": "at all",
+    "pattern": "negative/question + at all",
+    "description": "Usado para dar ênfase. Em frases negativas, costuma reforçar a ideia de 'nem um pouco', 'de jeito nenhum' ou 'absolutamente não'. Em perguntas, frequentemente transmite a ideia de 'realmente?', 'de verdade?' ou 'mesmo?', dependendo do contexto.",
+    "category": "emphasis",
+    "searchTerms": [
+      "nem um pouco",
+      "de jeito nenhum",
+      "absolutamente",
+      "realmente",
+      "de verdade",
+      "mesmo",
+      "at all"
+    ],
+    "examples": [
+      {
+        "pt": "Eu não estou cansado nem um pouco.",
+        "en": "I'm not tired at all.",
+        "ptIntent": "nem um pouco",
+        "enIntent": "at all"
+      },
+      {
+        "pt": "Eu não gostei disso nem um pouco.",
+        "en": "I didn't like it at all.",
+        "ptIntent": "nem um pouco",
+        "enIntent": "at all"
+      },
+      {
+        "pt": "Isso não me incomoda de jeito nenhum.",
+        "en": "It doesn't bother me at all.",
+        "ptIntent": "de jeito nenhum",
+        "enIntent": "at all"
+      },
+      {
+        "pt": "Eu não entendo isso nem um pouco.",
+        "en": "I don't understand this at all.",
+        "ptIntent": "nem um pouco",
+        "enIntent": "at all"
+      },
+      {
+        "pt": "Você está realmente cansado?",
+        "en": "Are you tired at all?",
+        "ptIntent": "realmente",
+        "enIntent": "at all"
+      },
+      {
+        "pt": "Isso realmente ajuda?",
+        "en": "Does this help at all?",
+        "ptIntent": "realmente",
+        "enIntent": "at all"
+      },
+      {
+        "pt": "Você conhece ele de verdade?",
+        "en": "Do you know him at all?",
+        "ptIntent": "de verdade",
+        "enIntent": "at all"
+      },
+      {
+        "pt": "Existe realmente alguma chance de isso funcionar?",
+        "en": "Is there any chance this could work at all?",
+        "ptIntent": "realmente",
+        "enIntent": "at all"
+      }
+    ],
+    "tags": [
+      "emphasis",
+      "negative",
+      "question",
+      "chunk",
+      "conversation"
+    ],
+    "related": [
+      "no-way-no-how"
+    ],
+    "englishLevel": "B1"
   }
   ]
 }
