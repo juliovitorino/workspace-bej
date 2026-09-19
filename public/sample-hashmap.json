@@ -13864,6 +13864,70 @@
   ],
   "related": [],
   "englishLevel": "A2"
+},
+{
+  "id": "daqui-a-pouco",
+  "intention": "Daqui a pouco",
+  "english": "in a little while",
+  "pattern": "in a little while",
+  "description": "Usado para dizer que alguma coisa vai acontecer após um pequeno período de tempo. É uma forma natural de expressar 'daqui a pouco'. 'Soon' também pode transmitir uma ideia parecida, mas é mais amplo e significa 'em breve'.",
+  "category": "time",
+  "searchTerms": [
+    "daqui a pouco",
+    "em pouco tempo",
+    "mais tarde",
+    "em breve",
+    "in a little while",
+    "soon"
+  ],
+  "examples": [
+    {
+      "pt": "Eu vou sair daqui a pouco.",
+      "en": "I'm going to leave in a little while.",
+      "ptIntent": "daqui a pouco",
+      "enIntent": "in a little while"
+    },
+    {
+      "pt": "Eu te ligo daqui a pouco.",
+      "en": "I'll call you in a little while.",
+      "ptIntent": "daqui a pouco",
+      "enIntent": "in a little while"
+    },
+    {
+      "pt": "Nós vamos comer daqui a pouco.",
+      "en": "We're going to eat in a little while.",
+      "ptIntent": "daqui a pouco",
+      "enIntent": "in a little while"
+    },
+    {
+      "pt": "A reunião vai começar daqui a pouco.",
+      "en": "The meeting is going to start in a little while.",
+      "ptIntent": "daqui a pouco",
+      "enIntent": "in a little while"
+    },
+    {
+      "pt": "Eu volto daqui a pouco.",
+      "en": "I'll be back in a little while.",
+      "ptIntent": "daqui a pouco",
+      "enIntent": "in a little while"
+    },
+    {
+      "pt": "A gente conversa sobre isso daqui a pouco.",
+      "en": "We'll talk about it in a little while.",
+      "ptIntent": "daqui a pouco",
+      "enIntent": "in a little while"
+    }
+  ],
+  "tags": [
+    "time",
+    "future",
+    "short-time",
+    "conversation"
+  ],
+  "related": [
+    "every-now-and-then"
+  ],
+  "englishLevel": "A2"
 }
   ]
 }
