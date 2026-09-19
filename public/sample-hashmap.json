@@ -13683,6 +13683,124 @@
       "no-way-no-how"
     ],
     "englishLevel": "B1"
-  }
+  },
+  {
+  "id": "acha-que-vale-a-pena",
+  "intention": "Acha que vale a pena...?",
+  "english": "Do you think it's worth...?",
+  "pattern": "Do you think it's worth + verb-ing?",
+  "description": "Usado para perguntar a opinião de alguém sobre se uma ação merece o tempo, esforço, dinheiro ou atenção necessários. Depois de 'worth', quando houver uma ação, o verbo normalmente aparece na forma -ing.",
+  "category": "opinion",
+  "searchTerms": [
+    "acha que vale a pena",
+    "você acha que vale a pena",
+    "será que vale a pena",
+    "vale a pena",
+    "worth",
+    "is it worth",
+    "do you think it's worth"
+  ],
+  "examples": [
+    {
+      "pt": "Acha que vale a pena aprender isso?",
+      "en": "Do you think it's worth learning this?",
+      "ptIntent": "Acha que vale a pena",
+      "enIntent": "Do you think it's worth"
+    },
+    {
+      "pt": "Acha que vale a pena comprar um carro novo?",
+      "en": "Do you think it's worth buying a new car?",
+      "ptIntent": "Acha que vale a pena",
+      "enIntent": "Do you think it's worth"
+    },
+    {
+      "pt": "Acha que vale a pena tentar de novo?",
+      "en": "Do you think it's worth trying again?",
+      "ptIntent": "Acha que vale a pena",
+      "enIntent": "Do you think it's worth"
+    },
+    {
+      "pt": "Acha que vale a pena esperar mais um pouco?",
+      "en": "Do you think it's worth waiting a little longer?",
+      "ptIntent": "Acha que vale a pena",
+      "enIntent": "Do you think it's worth"
+    },
+    {
+      "pt": "Acha que vale a pena investir tempo nisso?",
+      "en": "Do you think it's worth spending time on this?",
+      "ptIntent": "Acha que vale a pena",
+      "enIntent": "Do you think it's worth"
+    },
+    {
+      "pt": "Acha que vale a pena assistir a esse filme?",
+      "en": "Do you think it's worth watching this movie?",
+      "ptIntent": "Acha que vale a pena",
+      "enIntent": "Do you think it's worth"
+    }
+  ],
+  "tags": [
+    "worth",
+    "opinion",
+    "question",
+    "gerund",
+    "conversation"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "embora-even-though",
+  "intention": "Embora... / apesar de que...",
+  "english": "even though",
+  "pattern": "even though + clause",
+  "description": "Usado para introduzir um contraste forte entre duas ideias. A oração com 'even though' apresenta um fato que poderia levar a outro resultado, mas a ideia principal acontece apesar disso.",
+  "category": "contrast",
+  "searchTerms": [
+    "embora",
+    "apesar de que",
+    "mesmo que",
+    "even though"
+  ],
+  "examples": [
+    {
+      "pt": "Embora eu estivesse cansado, continuei trabalhando.",
+      "en": "Even though I was tired, I kept working.",
+      "ptIntent": "Embora eu estivesse cansado",
+      "enIntent": "Even though I was tired"
+    },
+    {
+      "pt": "Embora estivesse chovendo, nós saímos.",
+      "en": "Even though it was raining, we went out.",
+      "ptIntent": "Embora estivesse chovendo",
+      "enIntent": "Even though it was raining"
+    },
+    {
+      "pt": "Embora ela não gostasse da ideia, ela aceitou.",
+      "en": "Even though she didn't like the idea, she accepted it.",
+      "ptIntent": "Embora ela não gostasse da ideia",
+      "enIntent": "Even though she didn't like the idea"
+    },
+    {
+      "pt": "Embora seja difícil, eu vou continuar.",
+      "en": "Even though it's difficult, I'm going to keep going.",
+      "ptIntent": "Embora seja difícil",
+      "enIntent": "Even though it's difficult"
+    },
+    {
+      "pt": "Embora ele tivesse pouco tempo, terminou o trabalho.",
+      "en": "Even though he had little time, he finished the work.",
+      "ptIntent": "Embora ele tivesse pouco tempo",
+      "enIntent": "Even though he had little time"
+    }
+  ],
+  "tags": [
+    "contrast",
+    "concession",
+    "connector",
+    "conversation"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+}
   ]
 }
