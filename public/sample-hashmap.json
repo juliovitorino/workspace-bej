@@ -13660,6 +13660,12 @@
         "enIntent": "at all"
       },
       {
+        "pt": "Você conhece ele mesmo?",
+        "en": "Do you know him at all?",
+        "ptIntent": "mesmo",
+        "enIntent": "at all"
+      },
+      {
         "pt": "Existe realmente alguma chance de isso funcionar?",
         "en": "Is there any chance this could work at all?",
         "ptIntent": "realmente",
