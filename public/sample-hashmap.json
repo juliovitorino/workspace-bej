@@ -14003,6 +14003,142 @@
   ],
   "related": [],
   "englishLevel": "B1"
+},
+{
+  "id": "pedir-desculpas-apology-family",
+  "intention": "Pedir desculpas / reconhecer um erro / assumir a culpa",
+  "english": "I'm sorry / Sorry about that / My bad / I didn't mean to / That was my fault / That was on me / Please forgive me / I messed up",
+  "pattern": "apology and responsibility expressions",
+  "description": "Família de expressões usadas para pedir desculpas, reconhecer um erro ou assumir responsabilidade. 'Sorry' e 'Sorry about that' são comuns no dia a dia. 'My bad' é bastante informal. 'I didn't mean to' mostra que algo não foi intencional. 'That was my fault' e 'That was on me' assumem responsabilidade diretamente, sendo 'That was on me' bastante conversacional. 'I messed up' admite que você errou. 'Please forgive me' é um pedido de perdão mais forte e emocional.",
+  "category": "apology-family",
+  "searchTerms": [
+    "desculpa",
+    "desculpe",
+    "me desculpe",
+    "sinto muito",
+    "foi mal",
+    "foi culpa minha",
+    "a culpa foi minha",
+    "essa foi por minha conta",
+    "eu fui responsável",
+    "não foi minha intenção",
+    "eu não queria",
+    "eu errei",
+    "eu estraguei tudo",
+    "me perdoe",
+    "sorry",
+    "I'm sorry",
+    "I'm so sorry",
+    "sorry about that",
+    "my bad",
+    "I didn't mean to",
+    "that was my fault",
+    "that was on me",
+    "that's on me",
+    "please forgive me",
+    "I messed up"
+  ],
+  "examples": [
+    {
+      "pt": "Sinto muito.",
+      "en": "I'm so sorry.",
+      "ptIntent": "Sinto muito",
+      "enIntent": "I'm so sorry"
+    },
+    {
+      "pt": "Desculpa por isso.",
+      "en": "Sorry about that.",
+      "ptIntent": "Desculpa por isso",
+      "enIntent": "Sorry about that"
+    },
+    {
+      "pt": "Foi mal.",
+      "en": "My bad.",
+      "ptIntent": "Foi mal",
+      "enIntent": "My bad"
+    },
+    {
+      "pt": "Desculpa, não foi minha intenção.",
+      "en": "Sorry, I didn't mean to.",
+      "ptIntent": "não foi minha intenção",
+      "enIntent": "I didn't mean to"
+    },
+    {
+      "pt": "Foi culpa minha.",
+      "en": "That was my fault.",
+      "ptIntent": "Foi culpa minha",
+      "enIntent": "That was my fault"
+    },
+    {
+      "pt": "Essa foi minha culpa.",
+      "en": "That was on me.",
+      "ptIntent": "minha culpa",
+      "enIntent": "on me"
+    },
+    {
+      "pt": "A culpa é minha.",
+      "en": "That's on me.",
+      "ptIntent": "A culpa é minha",
+      "enIntent": "That's on me"
+    },
+    {
+      "pt": "Por favor, me perdoe.",
+      "en": "Please forgive me.",
+      "ptIntent": "Por favor, me perdoe",
+      "enIntent": "Please forgive me"
+    },
+    {
+      "pt": "Eu errei.",
+      "en": "I messed up.",
+      "ptIntent": "Eu errei",
+      "enIntent": "I messed up"
+    },
+    {
+      "pt": "Desculpa.",
+      "en": "Sorry.",
+      "ptIntent": "Desculpa",
+      "enIntent": "Sorry"
+    },
+    {
+      "pt": "Eu realmente sinto muito pelo que aconteceu.",
+      "en": "I'm really sorry about what happened.",
+      "ptIntent": "realmente sinto muito",
+      "enIntent": "really sorry"
+    },
+    {
+      "pt": "Desculpa, eu não queria te magoar.",
+      "en": "I'm sorry, I didn't mean to hurt you.",
+      "ptIntent": "eu não queria",
+      "enIntent": "I didn't mean to"
+    },
+    {
+      "pt": "Eu estraguei tudo. Desculpa.",
+      "en": "I messed up. I'm sorry.",
+      "ptIntent": "Eu estraguei tudo",
+      "enIntent": "I messed up"
+    },
+    {
+      "pt": "Isso aconteceu por minha culpa.",
+      "en": "That happened because of me. That was on me.",
+      "ptIntent": "por minha culpa",
+      "enIntent": "on me"
+    }
+  ],
+  "tags": [
+    "apology",
+    "sorry",
+    "my bad",
+    "on me",
+    "fault",
+    "mistake",
+    "responsibility",
+    "forgiveness",
+    "conversation",
+    "informal English",
+    "social interaction"
+  ],
+  "related": [],
+  "englishLevel": "A2"
 }
   ]
 }
