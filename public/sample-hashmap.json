@@ -234,13 +234,21 @@
           "en": "I need to sleep.",
           "ptIntent": "tenho que",
           "enIntent": "need to"
+        },
+        {
+          "pt": "Eu tenho que ir.",
+          "en": "I gotta go.",
+          "ptIntent": "tenho que",
+          "enIntent": "gotta"
         }
       ],
       "tags": [
         "obligation",
         "need"
       ],
-      "related": [],
+      "related": [
+         "tenho-que-dizer-i-gotta-say"
+      ],
       "englishLevel": "A2"
     },
     {
@@ -14146,6 +14154,77 @@
   ],
   "related": [],
   "englishLevel": "A2"
+},
+{
+  "id": "tenho-que-dizer-i-gotta-say",
+  "intention": "Tenho que dizer... / tenho que admitir...",
+  "english": "I gotta say...",
+  "pattern": "I gotta say + statement",
+  "description": "Expressão muito comum na fala informal, especialmente no inglês americano, usada antes de dar uma opinião, impressão ou reação. 'Gotta' representa a forma falada e informal de 'got to' em 'I've got to say'. Dependendo do contexto, pode ser entendido como 'tenho que dizer', 'preciso dizer', 'devo admitir' ou simplesmente uma forma de enfatizar a opinião que vem em seguida.",
+  "category": "opinion",
+  "searchTerms": [
+    "tenho que dizer",
+    "tenho que admitir",
+    "preciso dizer",
+    "devo dizer",
+    "devo admitir",
+    "I gotta say",
+    "I've got to say",
+    "I have to say",
+    "gotta say"
+  ],
+  "examples": [
+    {
+      "pt": "Tenho que dizer, isso ficou muito bom.",
+      "en": "I gotta say, this turned out really well.",
+      "ptIntent": "Tenho que dizer",
+      "enIntent": "I gotta say"
+    },
+    {
+      "pt": "Tenho que admitir, eu não esperava isso.",
+      "en": "I gotta say, I wasn't expecting that.",
+      "ptIntent": "Tenho que admitir",
+      "enIntent": "I gotta say"
+    },
+    {
+      "pt": "Tenho que dizer, estou impressionado.",
+      "en": "I gotta say, I'm impressed.",
+      "ptIntent": "Tenho que dizer",
+      "enIntent": "I gotta say"
+    },
+    {
+      "pt": "Tenho que admitir, foi muito divertido.",
+      "en": "I gotta say, that was a lot of fun.",
+      "ptIntent": "Tenho que admitir",
+      "enIntent": "I gotta say"
+    },
+    {
+      "pt": "Tenho que dizer, você fez um ótimo trabalho.",
+      "en": "I gotta say, you did a great job.",
+      "ptIntent": "Tenho que dizer",
+      "enIntent": "I gotta say"
+    },
+    {
+      "pt": "Tenho que admitir, essa é uma ótima ideia.",
+      "en": "I gotta say, that's a great idea.",
+      "ptIntent": "Tenho que admitir",
+      "enIntent": "I gotta say"
+    }
+  ],
+  "tags": [
+    "opinion",
+    "reaction",
+    "gotta",
+    "spoken English",
+    "informal English",
+    "American English",
+    "conversation",
+    "connected speech"
+  ],
+  "related": [
+    "tem-que-tenho-que-tenha-que"
+  ],
+  "englishLevel": "B1"
 }
   ]
 }
