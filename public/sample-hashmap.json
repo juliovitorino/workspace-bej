@@ -13943,46 +13943,53 @@
     "por medo",
     "por necessidade",
     "motivado por",
+    "out of",
+    "outta",
     "out of curiosity",
+    "outta curiosity",
     "out of love",
+    "outta love",
     "out of respect",
+    "outta respect",
     "out of fear",
-    "out of necessity"
+    "outta fear",
+    "out of necessity",
+    "outta necessity"
   ],
   "examples": [
     {
       "pt": "Eu perguntei por curiosidade.",
-      "en": "I asked out of curiosity.",
+      "en": "I asked out of curiosity. / I asked outta curiosity.",
       "ptIntent": "por curiosidade",
       "enIntent": "out of curiosity"
     },
     {
       "pt": "Ele fez isso por amor à família.",
-      "en": "He did it out of love for his family.",
+      "en": "He did it out of love for his family. / He did it outta love for his family.",
       "ptIntent": "por amor",
       "enIntent": "out of love"
     },
     {
       "pt": "Eu aceitei por respeito a ela.",
-      "en": "I agreed out of respect for her.",
+      "en": "I agreed out of respect for her. / I agreed outta respect for her.",
       "ptIntent": "por respeito",
       "enIntent": "out of respect"
     },
     {
       "pt": "Ela ficou em silêncio por medo.",
-      "en": "She remained silent out of fear.",
+      "en": "She remained silent out of fear. / She remained silent outta fear.",
       "ptIntent": "por medo",
       "enIntent": "out of fear"
     },
     {
       "pt": "Eles fizeram isso por necessidade.",
-      "en": "They did it out of necessity.",
+      "en": "They did it out of necessity. / They did it outta necessity.",
       "ptIntent": "por necessidade",
       "enIntent": "out of necessity"
     },
     {
       "pt": "Só estou perguntando por curiosidade.",
-      "en": "I'm just asking out of curiosity.",
+      "en": "I'm just asking out of curiosity. / I'm just asking outta curiosity.",
       "ptIntent": "por curiosidade",
       "enIntent": "out of curiosity"
     }
