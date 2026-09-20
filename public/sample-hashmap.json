@@ -13928,6 +13928,74 @@
     "every-now-and-then"
   ],
   "englishLevel": "A2"
+},
+{
+  "id": "por-motivo-out-of",
+  "intention": "Por... / motivado por...",
+  "english": "out of",
+  "pattern": "out of + motivation/reason",
+  "description": "Usado para explicar o sentimento, motivo ou necessidade que levou alguém a fazer alguma coisa. É muito comum em combinações como 'out of curiosity', 'out of love', 'out of respect', 'out of fear' e 'out of necessity'.",
+  "category": "reason",
+  "searchTerms": [
+    "por curiosidade",
+    "por amor",
+    "por respeito",
+    "por medo",
+    "por necessidade",
+    "motivado por",
+    "out of curiosity",
+    "out of love",
+    "out of respect",
+    "out of fear",
+    "out of necessity"
+  ],
+  "examples": [
+    {
+      "pt": "Eu perguntei por curiosidade.",
+      "en": "I asked out of curiosity.",
+      "ptIntent": "por curiosidade",
+      "enIntent": "out of curiosity"
+    },
+    {
+      "pt": "Ele fez isso por amor à família.",
+      "en": "He did it out of love for his family.",
+      "ptIntent": "por amor",
+      "enIntent": "out of love"
+    },
+    {
+      "pt": "Eu aceitei por respeito a ela.",
+      "en": "I agreed out of respect for her.",
+      "ptIntent": "por respeito",
+      "enIntent": "out of respect"
+    },
+    {
+      "pt": "Ela ficou em silêncio por medo.",
+      "en": "She remained silent out of fear.",
+      "ptIntent": "por medo",
+      "enIntent": "out of fear"
+    },
+    {
+      "pt": "Eles fizeram isso por necessidade.",
+      "en": "They did it out of necessity.",
+      "ptIntent": "por necessidade",
+      "enIntent": "out of necessity"
+    },
+    {
+      "pt": "Só estou perguntando por curiosidade.",
+      "en": "I'm just asking out of curiosity.",
+      "ptIntent": "por curiosidade",
+      "enIntent": "out of curiosity"
+    }
+  ],
+  "tags": [
+    "reason",
+    "motivation",
+    "out of",
+    "cause",
+    "conversation"
+  ],
+  "related": [],
+  "englishLevel": "B1"
 }
   ]
 }
