@@ -13602,7 +13602,7 @@
   },
   {
     "id": "at-all",
-    "intention": "Nem um pouco / de jeito nenhum / realmente? / de verdade?",
+    "intention": "Nem um pouco / de jeito nenhum / realmente? / de verdade? / pelo menos um pouco",
     "english": "at all",
     "pattern": "negative/question + at all",
     "description": "Usado para dar ênfase. Em frases negativas, costuma reforçar a ideia de 'nem um pouco', 'de jeito nenhum' ou 'absolutamente não'. Em perguntas, frequentemente transmite a ideia de 'realmente?', 'de verdade?' ou 'mesmo?', dependendo do contexto.",
@@ -13614,7 +13614,8 @@
       "realmente",
       "de verdade",
       "mesmo",
-      "at all"
+      "at all",
+      "pelo menos um pouco"
     ],
     "examples": [
       {
@@ -13669,6 +13670,12 @@
         "pt": "Existe realmente alguma chance de isso funcionar?",
         "en": "Is there any chance this could work at all?",
         "ptIntent": "realmente",
+        "enIntent": "at all"
+      },
+      {
+        "pt": "Você gosta de futebol pelo menos um pouco?",
+        "en": "Do you like football at all?",
+        "ptIntent": "pelo menos um pouco",
         "enIntent": "at all"
       }
     ],
