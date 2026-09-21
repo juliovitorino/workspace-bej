@@ -14225,6 +14225,185 @@
     "tem-que-tenho-que-tenha-que"
   ],
   "englishLevel": "B1"
+},
+{
+  "id": "nao-importa-no-matter-family",
+  "intention": "Não importa o que / quem / onde / quando / como / qual...",
+  "english": "no matter what / who / where / when / how / which",
+  "pattern": "no matter + what/who/where/when/how/which + clause",
+  "description": "Família usada para dizer que algo continua verdadeiro ou que uma decisão não muda independentemente da situação. 'No matter what' = não importa o que; 'no matter who' = não importa quem; 'no matter where' = não importa onde; 'no matter when' = não importa quando; 'no matter how' = não importa como; 'no matter which' = não importa qual. É muito comum para expressar determinação, compromisso, ausência de diferença ou independência em relação a uma condição.",
+  "category": "no-matter-family",
+  "searchTerms": [
+    "não importa",
+    "não importa o que",
+    "não importa quem",
+    "não importa onde",
+    "não importa quando",
+    "não importa como",
+    "não importa qual",
+    "aconteça o que acontecer",
+    "independentemente",
+    "no matter",
+    "no matter what",
+    "no matter who",
+    "no matter where",
+    "no matter when",
+    "no matter how",
+    "no matter which"
+  ],
+  "examples": [
+    {
+      "pt": "Não importa o que aconteça, eu vou continuar.",
+      "en": "No matter what happens, I'll keep going.",
+      "ptIntent": "Não importa o que",
+      "enIntent": "No matter what"
+    },
+    {
+      "pt": "Eu estarei ao seu lado, não importa o que aconteça.",
+      "en": "I'll be there for you no matter what.",
+      "ptIntent": "não importa o que",
+      "enIntent": "no matter what"
+    },
+    {
+      "pt": "Não importa quem apareça, não abra a porta.",
+      "en": "No matter who shows up, don't open the door.",
+      "ptIntent": "Não importa quem",
+      "enIntent": "No matter who"
+    },
+    {
+      "pt": "Não importa quem você seja, você precisa seguir as regras.",
+      "en": "No matter who you are, you have to follow the rules.",
+      "ptIntent": "Não importa quem",
+      "enIntent": "No matter who"
+    },
+    {
+      "pt": "Não importa onde você esteja, eu vou te encontrar.",
+      "en": "No matter where you are, I'll find you.",
+      "ptIntent": "Não importa onde",
+      "enIntent": "No matter where"
+    },
+    {
+      "pt": "Não importa onde eu vá, sempre levo meu celular.",
+      "en": "No matter where I go, I always take my phone with me.",
+      "ptIntent": "Não importa onde",
+      "enIntent": "No matter where"
+    },
+    {
+      "pt": "Não importa quando você chegar, me ligue.",
+      "en": "No matter when you arrive, call me.",
+      "ptIntent": "Não importa quando",
+      "enIntent": "No matter when"
+    },
+    {
+      "pt": "Não importa quando isso aconteça, estaremos preparados.",
+      "en": "No matter when it happens, we'll be ready.",
+      "ptIntent": "Não importa quando",
+      "enIntent": "No matter when"
+    },
+    {
+      "pt": "Não importa como você faça isso, tenha cuidado.",
+      "en": "No matter how you do it, be careful.",
+      "ptIntent": "Não importa como",
+      "enIntent": "No matter how"
+    },
+    {
+      "pt": "Não importa o quanto seja difícil, eu não vou desistir.",
+      "en": "No matter how difficult it is, I won't give up.",
+      "ptIntent": "Não importa o quanto",
+      "enIntent": "No matter how"
+    },
+    {
+      "pt": "Não importa qual você escolha, os dois são bons.",
+      "en": "No matter which one you choose, they're both good.",
+      "ptIntent": "Não importa qual",
+      "enIntent": "No matter which"
+    },
+    {
+      "pt": "Não importa qual caminho você escolha, vai levar tempo.",
+      "en": "No matter which path you choose, it'll take time.",
+      "ptIntent": "Não importa qual",
+      "enIntent": "No matter which"
+    }
+  ],
+  "tags": [
+    "no matter",
+    "no matter what",
+    "no matter who",
+    "no matter where",
+    "no matter when",
+    "no matter how",
+    "no matter which",
+    "determination",
+    "condition",
+    "contrast",
+    "conversation",
+    "connector"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "de-uma-vez-so-all-at-once",
+  "intention": "De uma vez só / tudo de uma vez",
+  "english": "all at once",
+  "pattern": "all at once",
+  "description": "Usado quando várias coisas são feitas, aprendidas, entendidas ou processadas juntas, de uma vez só. Neste sentido, 'all at once' transmite a ideia de 'tudo de uma vez' ou 'de uma vez só'. Não confundir com 'at once', que também pode significar 'imediatamente'.",
+  "category": "time",
+  "searchTerms": [
+    "de uma vez só",
+    "tudo de uma vez",
+    "tudo ao mesmo tempo",
+    "em um único esforço",
+    "all at once",
+    "at once"
+  ],
+  "examples": [
+    {
+      "pt": "Não tente aprender tudo de uma vez só.",
+      "en": "Don't try to learn everything all at once.",
+      "ptIntent": "tudo de uma vez só",
+      "enIntent": "all at once"
+    },
+    {
+      "pt": "Você não precisa entender tudo de uma vez só.",
+      "en": "You don't have to understand everything all at once.",
+      "ptIntent": "tudo de uma vez só",
+      "enIntent": "all at once"
+    },
+    {
+      "pt": "Não consigo processar toda essa informação de uma vez só.",
+      "en": "I can't process all this information all at once.",
+      "ptIntent": "de uma vez só",
+      "enIntent": "all at once"
+    },
+    {
+      "pt": "Não mude tudo de uma vez só.",
+      "en": "Don't change everything all at once.",
+      "ptIntent": "tudo de uma vez só",
+      "enIntent": "all at once"
+    },
+    {
+      "pt": "Não tente resolver todos os problemas de uma vez só.",
+      "en": "Don't try to solve every problem all at once.",
+      "ptIntent": "de uma vez só",
+      "enIntent": "all at once"
+    },
+    {
+      "pt": "Muitas coisas aconteceram de uma vez só.",
+      "en": "A lot of things happened all at once.",
+      "ptIntent": "de uma vez só",
+      "enIntent": "all at once"
+    }
+  ],
+  "tags": [
+    "time",
+    "all at once",
+    "simultaneous",
+    "conversation",
+    "chunk"
+  ],
+  "related": [],
+  "englishLevel": "B1"
 }
   ]
 }
