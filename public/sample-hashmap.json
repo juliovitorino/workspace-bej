@@ -12068,42 +12068,83 @@
       "related": [],
       "englishLevel": "B1"
     },
+{
+  "id": "take-time",
+  "intention": "Levar tempo / demorar",
+  "english": "take time",
+  "pattern": "take + person + amount of time + to + verb",
+  "description": "Usado para falar sobre quanto tempo algo leva ou quanto tempo alguém demora para fazer alguma coisa. Em inglês, 'eu demorei duas horas para...' normalmente é estruturado como 'it took me two hours to...'.",
+  "category": "take-family",
+  "searchTerms": [
+    "levar tempo",
+    "leva tempo",
+    "demorar",
+    "demorei",
+    "demorou",
+    "demorei bastante",
+    "um bom tempo",
+    "quanto tempo",
+    "quanto tempo demorou",
+    "take time",
+    "it takes",
+    "it took",
+    "it took me",
+    "quite a while"
+  ],
+  "examples": [
     {
-      "id": "take-time",
-      "intention": "Levar tempo",
-      "english": "take time",
-      "pattern": "take + amount of time",
-      "description": "Usado para falar sobre a quantidade de tempo necessária para algo.",
-      "category": "take-family",
-      "searchTerms": [
-        "levar tempo",
-        "demorar",
-        "take time"
-      ],
-      "examples": [
-        {
-          "pt": "Isso leva tempo.",
-          "en": "This takes time.",
-          "ptIntent": "leva tempo",
-          "enIntent": "takes time"
-        },
-        {
-          "pt": "Levou duas horas para terminar.",
-          "en": "It took two hours to finish.",
-          "ptIntent": "Levou duas horas",
-          "enIntent": "took two hours"
-        }
-      ],
-      "tags": [
-        "take",
-        "collocation",
-        "conversation",
-        "time",
-        "duration"
-      ],
-      "related": [],
-      "englishLevel": "A2"
+      "pt": "Isso leva tempo.",
+      "en": "This takes time.",
+      "ptIntent": "leva tempo",
+      "enIntent": "takes time"
     },
+    {
+      "pt": "Levou duas horas para terminar.",
+      "en": "It took two hours to finish.",
+      "ptIntent": "Levou duas horas",
+      "enIntent": "took two hours"
+    },
+    {
+      "pt": "Eu demorei duas horas para terminar.",
+      "en": "It took me two hours to finish.",
+      "ptIntent": "Eu demorei duas horas",
+      "enIntent": "It took me two hours"
+    },
+    {
+      "pt": "Eu demorei muito tempo para aprender isso.",
+      "en": "It took me a long time to learn this.",
+      "ptIntent": "Eu demorei muito tempo",
+      "enIntent": "It took me a long time"
+    },
+    {
+      "pt": "Eu demorei bastante.",
+      "en": "It took me quite a while.",
+      "ptIntent": "Eu demorei bastante",
+      "enIntent": "It took me quite a while"
+    },
+    {
+      "pt": "Ela demorou três dias para terminar o trabalho.",
+      "en": "It took her three days to finish the work.",
+      "ptIntent": "Ela demorou três dias",
+      "enIntent": "It took her three days"
+    },
+    {
+      "pt": "Quanto tempo você demorou para aprender inglês?",
+      "en": "How long did it take you to learn English?",
+      "ptIntent": "Quanto tempo você demorou",
+      "enIntent": "How long did it take you"
+    }
+  ],
+  "tags": [
+    "take",
+    "collocation",
+    "conversation",
+    "time",
+    "duration"
+  ],
+  "related": [],
+  "englishLevel": "A2"
+},
     {
       "id": "take-a-while",
       "intention": "Demorar um pouco",
@@ -14465,6 +14506,78 @@
     "em",
     "adaptation",
     "conversation"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "um-atras-do-outro-one-after-another",
+  "intention": "É um/uma... atrás do outro/da outra",
+  "english": "It's one... after another",
+  "pattern": "It's one + noun + after another",
+  "description": "Usado para dizer que coisas do mesmo tipo acontecem repetidamente ou em sequência: uma depois da outra. Em português brasileiro, corresponde naturalmente a construções como 'é um problema atrás do outro', 'é uma coisa atrás da outra' ou 'é uma crise atrás da outra'. Frequentemente transmite uma sensação de repetição ou acúmulo.",
+  "category": "repetition",
+  "searchTerms": [
+    "um atrás do outro",
+    "uma atrás da outra",
+    "é um atrás do outro",
+    "é uma atrás da outra",
+    "um depois do outro",
+    "uma depois da outra",
+    "uma coisa atrás da outra",
+    "one after another",
+    "it's one after another"
+  ],
+  "examples": [
+    {
+      "pt": "É um caso de corrupção atrás do outro.",
+      "en": "It's one corruption case after another.",
+      "ptIntent": "um caso de corrupção atrás do outro",
+      "enIntent": "one corruption case after another"
+    },
+    {
+      "pt": "É um problema atrás do outro.",
+      "en": "It's one problem after another.",
+      "ptIntent": "um problema atrás do outro",
+      "enIntent": "one problem after another"
+    },
+    {
+      "pt": "É uma reunião atrás da outra.",
+      "en": "It's one meeting after another.",
+      "ptIntent": "uma reunião atrás da outra",
+      "enIntent": "one meeting after another"
+    },
+    {
+      "pt": "É uma coisa atrás da outra.",
+      "en": "It's one thing after another.",
+      "ptIntent": "uma coisa atrás da outra",
+      "enIntent": "one thing after another"
+    },
+    {
+      "pt": "É uma crise atrás da outra.",
+      "en": "It's one crisis after another.",
+      "ptIntent": "uma crise atrás da outra",
+      "enIntent": "one crisis after another"
+    },
+    {
+      "pt": "Ultimamente, tem sido um erro atrás do outro.",
+      "en": "Lately, it's been one mistake after another.",
+      "ptIntent": "um erro atrás do outro",
+      "enIntent": "one mistake after another"
+    },
+    {
+      "pt": "Tivemos uma vitória atrás da outra.",
+      "en": "We had one victory after another.",
+      "ptIntent": "uma vitória atrás da outra",
+      "enIntent": "one victory after another"
+    }
+  ],
+  "tags": [
+    "repetition",
+    "sequence",
+    "one after another",
+    "conversation",
+    "chunk"
   ],
   "related": [],
   "englishLevel": "B1"
