@@ -14404,6 +14404,70 @@
   ],
   "related": [],
   "englishLevel": "B1"
+},
+{
+  "id": "if-you-cant-beat-em-join-em",
+  "intention": "Se não pode vencê-los, junte-se a eles",
+  "english": "If you can't beat 'em, join 'em.",
+  "pattern": "If you can't beat 'em, join 'em.",
+  "description": "Expressão informal usada quando você percebe que não consegue impedir, vencer ou mudar uma situação e decide se adaptar ou participar dela. 'Em é uma redução informal de 'them', muito comum na fala.",
+  "category": "idioms",
+  "searchTerms": [
+    "se não pode vencê-los",
+    "junte-se a eles",
+    "se não dá para vencer",
+    "entre no jogo",
+    "aceitar a situação",
+    "adaptar-se",
+    "if you can't beat them join them",
+    "if you can't beat 'em join 'em",
+    "beat 'em",
+    "join 'em"
+  ],
+  "examples": [
+    {
+      "pt": "Todo mundo no escritório está usando inteligência artificial agora. Se não pode vencê-los, junte-se a eles.",
+      "en": "Everyone at the office is using AI now. If you can't beat 'em, join 'em.",
+      "ptIntent": "Se não pode vencê-los, junte-se a eles",
+      "enIntent": "If you can't beat 'em, join 'em"
+    },
+    {
+      "pt": "Meus amigos não param de falar sobre essa série. Se não dá para vencer, junte-se a eles.",
+      "en": "My friends won't stop talking about that show. If you can't beat 'em, join 'em.",
+      "ptIntent": "Se não dá para vencer, junte-se a eles",
+      "enIntent": "If you can't beat 'em, join 'em"
+    },
+    {
+      "pt": "Todo mundo começou a trabalhar de casa. Se não pode vencê-los, junte-se a eles.",
+      "en": "Everyone started working from home. If you can't beat 'em, join 'em.",
+      "ptIntent": "Se não pode vencê-los, junte-se a eles",
+      "enIntent": "If you can't beat 'em, join 'em"
+    },
+    {
+      "pt": "No começo eu resisti à ideia, mas pensei: se não pode vencê-los, junte-se a eles.",
+      "en": "At first, I resisted the idea, but then I thought, if you can't beat 'em, join 'em.",
+      "ptIntent": "se não pode vencê-los, junte-se a eles",
+      "enIntent": "if you can't beat 'em, join 'em"
+    },
+    {
+      "pt": "Todo mundo estava dançando, então pensei: se não dá para vencer, junte-se a eles.",
+      "en": "Everyone was dancing, so I thought, if you can't beat 'em, join 'em.",
+      "ptIntent": "se não dá para vencer, junte-se a eles",
+      "enIntent": "if you can't beat 'em, join 'em"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "proverb",
+    "informal English",
+    "spoken English",
+    "American English",
+    "em",
+    "adaptation",
+    "conversation"
+  ],
+  "related": [],
+  "englishLevel": "B1"
 }
   ]
 }
