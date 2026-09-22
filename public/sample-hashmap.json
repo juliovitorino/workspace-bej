@@ -5,8 +5,8 @@
     "updatedAt": "2026-09-11",
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
-    "sourceBuild": "v.46.30.9.20260909.1024",
-    "totalIntentions": 460
+    "sourceBuild": "v.46.31.9.20260922.1447",
+    "totalIntentions": 490
   },
   "mentalMap": [
     {
@@ -14854,6 +14854,788 @@
   ],
   "related": [],
   "englishLevel": "A2"
-}
+},
+
+  {
+    "id": "o-que-voce-quer-dizer-com",
+    "intention": "O que você quer dizer com...?",
+    "english": "What do you mean by...?",
+    "pattern": "What do you mean by + noun/pronoun/verb-ing?",
+    "description": "Usado para pedir esclarecimento sobre algo que a outra pessoa disse. É uma estrutura extremamente útil para reparar a conversa quando você não entende exatamente o significado.",
+    "category": "clarification",
+    "searchTerms": ["o que você quer dizer", "o que quer dizer com", "não entendi", "what do you mean", "what do you mean by"],
+    "examples": [
+      {
+        "pt": "O que você quer dizer com isso?",
+        "en": "What do you mean by that?",
+        "ptIntent": "O que você quer dizer com",
+        "enIntent": "What do you mean by"
+      },
+      {
+        "pt": "O que você quer dizer com trabalhar menos?",
+        "en": "What do you mean by working less?",
+        "ptIntent": "O que você quer dizer com",
+        "enIntent": "What do you mean by"
+      }
+    ],
+    "tags": ["clarification", "conversation", "repair", "question"],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "voce-poderia-esclarecer",
+    "intention": "Você poderia esclarecer...?",
+    "english": "Could you clarify...?",
+    "pattern": "Could you clarify + noun/clause?",
+    "description": "Usado para pedir esclarecimento de maneira educada, especialmente em situações profissionais, reuniões e conversas mais formais.",
+    "category": "clarification",
+    "searchTerms": ["esclarecer", "poderia esclarecer", "clarify", "could you clarify"],
+    "examples": [
+      {
+        "pt": "Você poderia esclarecer esse ponto?",
+        "en": "Could you clarify that point?",
+        "ptIntent": "Você poderia esclarecer",
+        "enIntent": "Could you clarify"
+      },
+      {
+        "pt": "Você poderia esclarecer o que aconteceu?",
+        "en": "Could you clarify what happened?",
+        "ptIntent": "Você poderia esclarecer",
+        "enIntent": "Could you clarify"
+      }
+    ],
+    "tags": ["clarification", "polite", "work", "conversation"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "voce-poderia-explicar-melhor",
+    "intention": "Você poderia explicar melhor...?",
+    "english": "Could you elaborate on...?",
+    "pattern": "Could you elaborate on + noun/topic?",
+    "description": "Usado para pedir que alguém forneça mais detalhes sobre um assunto ou explique uma ideia com maior profundidade.",
+    "category": "clarification",
+    "searchTerms": ["explicar melhor", "dar mais detalhes", "elaborate", "elaborate on", "could you elaborate"],
+    "examples": [
+      {
+        "pt": "Você poderia explicar melhor essa ideia?",
+        "en": "Could you elaborate on that idea?",
+        "ptIntent": "Você poderia explicar melhor",
+        "enIntent": "Could you elaborate on"
+      },
+      {
+        "pt": "Você poderia explicar melhor esse ponto?",
+        "en": "Could you elaborate on that point?",
+        "ptIntent": "Você poderia explicar melhor",
+        "enIntent": "Could you elaborate on"
+      }
+    ],
+    "tags": ["clarification", "details", "conversation", "work"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "se-entendi-corretamente",
+    "intention": "Se entendi corretamente...",
+    "english": "If I understand correctly,...",
+    "pattern": "If I understand correctly, + statement",
+    "description": "Usado para confirmar sua interpretação antes de responder ou tirar uma conclusão.",
+    "category": "clarification",
+    "searchTerms": ["se entendi", "se entendi corretamente", "if I understand", "if I understand correctly"],
+    "examples": [
+      {
+        "pt": "Se entendi corretamente, precisamos terminar isso hoje.",
+        "en": "If I understand correctly, we need to finish this today.",
+        "ptIntent": "Se entendi corretamente",
+        "enIntent": "If I understand correctly"
+      },
+      {
+        "pt": "Se entendi corretamente, você quer mudar o plano.",
+        "en": "If I understand correctly, you want to change the plan.",
+        "ptIntent": "Se entendi corretamente",
+        "enIntent": "If I understand correctly"
+      }
+    ],
+    "tags": ["clarification", "confirmation", "conversation"],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "entao-voce-esta-dizendo-que",
+    "intention": "Então você está dizendo que...?",
+    "english": "So you're saying that...?",
+    "pattern": "So you're saying that + clause?",
+    "description": "Usado para reformular o que outra pessoa disse e confirmar se você entendeu corretamente.",
+    "category": "clarification",
+    "searchTerms": ["então você está dizendo", "você está dizendo que", "so you're saying", "so you are saying"],
+    "examples": [
+      {
+        "pt": "Então você está dizendo que precisamos começar novamente?",
+        "en": "So you're saying that we need to start again?",
+        "ptIntent": "Então você está dizendo que",
+        "enIntent": "So you're saying that"
+      },
+      {
+        "pt": "Então você está dizendo que ele não vem?",
+        "en": "So you're saying that he's not coming?",
+        "ptIntent": "Então você está dizendo que",
+        "enIntent": "So you're saying that"
+      }
+    ],
+    "tags": ["clarification", "confirmation", "conversation", "paraphrase"],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "deixa-eu-ver-se-entendi",
+    "intention": "Deixa eu ver se entendi...",
+    "english": "Let me see if I've got this right...",
+    "pattern": "Let me see if I've got this right + statement/question",
+    "description": "Expressão conversacional usada para organizar o entendimento antes de repetir ou confirmar uma informação.",
+    "category": "clarification",
+    "searchTerms": ["deixa eu ver se entendi", "deixe-me ver se entendi", "got this right", "let me see if"],
+    "examples": [
+      {
+        "pt": "Deixa eu ver se entendi: você quer sair amanhã?",
+        "en": "Let me see if I've got this right: you want to leave tomorrow?",
+        "ptIntent": "Deixa eu ver se entendi",
+        "enIntent": "Let me see if I've got this right"
+      },
+      {
+        "pt": "Deixa eu ver se entendi: precisamos fazer tudo novamente?",
+        "en": "Let me see if I've got this right: we need to do everything again?",
+        "ptIntent": "Deixa eu ver se entendi",
+        "enIntent": "Let me see if I've got this right"
+      }
+    ],
+    "tags": ["clarification", "confirmation", "spoken-english"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "desculpe-interromper",
+    "intention": "Desculpe interromper, mas...",
+    "english": "Sorry to interrupt, but...",
+    "pattern": "Sorry to interrupt, but + statement/question",
+    "description": "Usado para entrar educadamente na fala de outra pessoa quando é necessário interrompê-la.",
+    "category": "turn-taking",
+    "searchTerms": ["desculpe interromper", "interromper", "sorry to interrupt"],
+    "examples": [
+      {
+        "pt": "Desculpe interromper, mas preciso fazer uma pergunta.",
+        "en": "Sorry to interrupt, but I need to ask a question.",
+        "ptIntent": "Desculpe interromper, mas",
+        "enIntent": "Sorry to interrupt, but"
+      },
+      {
+        "pt": "Desculpe interromper, mas temos pouco tempo.",
+        "en": "Sorry to interrupt, but we're running out of time.",
+        "ptIntent": "Desculpe interromper, mas",
+        "enIntent": "Sorry to interrupt, but"
+      }
+    ],
+    "tags": ["turn-taking", "politeness", "conversation", "work"],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "deixa-eu-terminar",
+    "intention": "Deixa eu terminar...",
+    "english": "Let me finish...",
+    "pattern": "Let me finish + statement",
+    "description": "Usado quando você quer manter seu turno de fala e terminar o que estava dizendo.",
+    "category": "turn-taking",
+    "searchTerms": ["deixa eu terminar", "deixe-me terminar", "let me finish"],
+    "examples": [
+      {
+        "pt": "Deixa eu terminar meu raciocínio.",
+        "en": "Let me finish my thought.",
+        "ptIntent": "Deixa eu terminar",
+        "enIntent": "Let me finish"
+      },
+      {
+        "pt": "Deixa eu terminar e depois você responde.",
+        "en": "Let me finish and then you can respond.",
+        "ptIntent": "Deixa eu terminar",
+        "enIntent": "Let me finish"
+      }
+    ],
+    "tags": ["turn-taking", "conversation", "spoken-english"],
+    "related": [],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "pode-continuar-go-ahead",
+    "intention": "Pode continuar / pode falar.",
+    "english": "Go ahead.",
+    "pattern": "Go ahead",
+    "description": "Usado para dar permissão ou encorajar alguém a continuar falando ou fazer algo.",
+    "category": "turn-taking",
+    "searchTerms": ["pode continuar", "pode falar", "vá em frente", "go ahead"],
+    "examples": [
+      {
+        "pt": "Pode continuar, estou ouvindo.",
+        "en": "Go ahead, I'm listening.",
+        "ptIntent": "Pode continuar",
+        "enIntent": "Go ahead"
+      },
+      {
+        "pt": "Pode falar. Qual é a sua pergunta?",
+        "en": "Go ahead. What's your question?",
+        "ptIntent": "Pode falar",
+        "enIntent": "Go ahead"
+      }
+    ],
+    "tags": ["turn-taking", "conversation", "permission"],
+    "related": [],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "falando-nisso-speaking-of-which",
+    "intention": "Falando nisso...",
+    "english": "Speaking of which,...",
+    "pattern": "Speaking of which, + related statement",
+    "description": "Usado para conectar naturalmente algo que acabou de ser mencionado a outro assunto relacionado.",
+    "category": "conversation-connectors",
+    "searchTerms": ["falando nisso", "por falar nisso", "speaking of which"],
+    "examples": [
+      {
+        "pt": "Falando nisso, você falou com o Lucas?",
+        "en": "Speaking of which, did you talk to Lucas?",
+        "ptIntent": "Falando nisso",
+        "enIntent": "Speaking of which"
+      },
+      {
+        "pt": "Falando nisso, precisamos marcar a próxima reunião.",
+        "en": "Speaking of which, we need to schedule the next meeting.",
+        "ptIntent": "Falando nisso",
+        "enIntent": "Speaking of which"
+      }
+    ],
+    "tags": ["connector", "conversation", "transition", "spoken-english"],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "a-proposito-by-the-way",
+    "intention": "A propósito...",
+    "english": "By the way,...",
+    "pattern": "By the way, + statement/question",
+    "description": "Usado para introduzir uma informação adicional ou mudar levemente de assunto durante uma conversa.",
+    "category": "conversation-connectors",
+    "searchTerms": ["a propósito", "por sinal", "by the way", "btw"],
+    "examples": [
+      {
+        "pt": "A propósito, você recebeu meu e-mail?",
+        "en": "By the way, did you get my email?",
+        "ptIntent": "A propósito",
+        "enIntent": "By the way"
+      },
+      {
+        "pt": "A propósito, gostei muito da sua ideia.",
+        "en": "By the way, I really liked your idea.",
+        "ptIntent": "A propósito",
+        "enIntent": "By the way"
+      }
+    ],
+    "tags": ["connector", "conversation", "transition"],
+    "related": [],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "pensando-bem-come-to-think-of-it",
+    "intention": "Pensando bem...",
+    "english": "Come to think of it,...",
+    "pattern": "Come to think of it, + realization",
+    "description": "Usado quando algo ocorre à sua mente durante a conversa ou quando você reconsidera o que acabou de dizer.",
+    "category": "conversation-connectors",
+    "searchTerms": ["pensando bem", "agora que penso nisso", "come to think of it"],
+    "examples": [
+      {
+        "pt": "Pensando bem, eu não o vejo há meses.",
+        "en": "Come to think of it, I haven't seen him in months.",
+        "ptIntent": "Pensando bem",
+        "enIntent": "Come to think of it"
+      },
+      {
+        "pt": "Pensando bem, talvez você esteja certo.",
+        "en": "Come to think of it, maybe you're right.",
+        "ptIntent": "Pensando bem",
+        "enIntent": "Come to think of it"
+      }
+    ],
+    "tags": ["conversation", "realization", "spoken-english", "connector"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "a-menos-que-unless",
+    "intention": "A menos que...",
+    "english": "unless",
+    "pattern": "unless + clause",
+    "description": "Usado para estabelecer uma condição negativa. Frequentemente equivale à ideia de 'se não'.",
+    "category": "condition",
+    "searchTerms": ["a menos que", "se não", "unless", "condição"],
+    "examples": [
+      {
+        "pt": "Não vou a menos que ela me convide.",
+        "en": "I won't go unless she invites me.",
+        "ptIntent": "a menos que",
+        "enIntent": "unless"
+      },
+      {
+        "pt": "Não vamos conseguir terminar a menos que alguém nos ajude.",
+        "en": "We won't be able to finish unless someone helps us.",
+        "ptIntent": "a menos que",
+        "enIntent": "unless"
+      }
+    ],
+    "tags": ["condition", "unless", "grammar", "conversation"],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "mesmo-se-even-if",
+    "intention": "Mesmo se...",
+    "english": "even if",
+    "pattern": "even if + hypothetical condition",
+    "description": "Usado para dizer que o resultado não muda mesmo se determinada condição ocorrer. Diferente de 'even though', que descreve um fato.",
+    "category": "condition",
+    "searchTerms": ["mesmo se", "ainda que", "even if", "hipótese"],
+    "examples": [
+      {
+        "pt": "Mesmo se eu estiver cansado, eu vou.",
+        "en": "Even if I'm tired, I'll go.",
+        "ptIntent": "Mesmo se",
+        "enIntent": "Even if"
+      },
+      {
+        "pt": "Mesmo se chover, vamos sair.",
+        "en": "Even if it rains, we'll go out.",
+        "ptIntent": "Mesmo se",
+        "enIntent": "Even if"
+      }
+    ],
+    "tags": ["condition", "hypothesis", "even-if", "conversation"],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "caso-in-case",
+    "intention": "Caso... / para o caso de...",
+    "english": "in case",
+    "pattern": "in case + clause",
+    "description": "Usado quando fazemos algo como precaução porque determinada situação pode acontecer.",
+    "category": "condition",
+    "searchTerms": ["caso", "para o caso de", "por precaução", "in case"],
+    "examples": [
+      {
+        "pt": "Leve um guarda-chuva caso chova.",
+        "en": "Take an umbrella in case it rains.",
+        "ptIntent": "caso chova",
+        "enIntent": "in case it rains"
+      },
+      {
+        "pt": "Vou levar algum dinheiro para o caso de precisarmos.",
+        "en": "I'll take some cash in case we need it.",
+        "ptIntent": "para o caso de precisarmos",
+        "enIntent": "in case we need it"
+      }
+    ],
+    "tags": ["condition", "precaution", "in-case"],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "independentemente-de-regardless-of",
+    "intention": "Independentemente de...",
+    "english": "regardless of",
+    "pattern": "regardless of + noun/pronoun/verb-ing",
+    "description": "Usado para dizer que determinada condição, circunstância ou fator não altera a decisão ou resultado.",
+    "category": "condition",
+    "searchTerms": ["independentemente de", "não importa", "regardless", "regardless of"],
+    "examples": [
+      {
+        "pt": "Vou continuar independentemente do resultado.",
+        "en": "I'll continue regardless of the result.",
+        "ptIntent": "independentemente do resultado",
+        "enIntent": "regardless of the result"
+      },
+      {
+        "pt": "Precisamos fazer isso independentemente do custo.",
+        "en": "We need to do this regardless of the cost.",
+        "ptIntent": "independentemente do custo",
+        "enIntent": "regardless of the cost"
+      }
+    ],
+    "tags": ["condition", "contrast", "regardless", "formal"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "seja-ou-nao-whether-or-not",
+    "intention": "Seja... ou não / ... ou não",
+    "english": "whether or not",
+    "pattern": "whether or not + clause | whether + clause + or not",
+    "description": "Usado quando o resultado permanece válido independentemente de uma condição ser verdadeira ou não.",
+    "category": "alternatives",
+    "searchTerms": ["ou não", "seja ou não", "independentemente se", "whether", "whether or not"],
+    "examples": [
+      {
+        "pt": "Vou fazer isso quer você goste ou não.",
+        "en": "I'll do it whether you like it or not.",
+        "ptIntent": "goste ou não",
+        "enIntent": "whether you like it or not"
+      },
+      {
+        "pt": "Precisamos decidir se estamos prontos ou não.",
+        "en": "We need to decide whether or not we're ready.",
+        "ptIntent": "se estamos prontos ou não",
+        "enIntent": "whether or not we're ready"
+      }
+    ],
+    "tags": ["alternatives", "whether", "condition", "conversation"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "em-vez-de-instead-of",
+    "intention": "Em vez de...",
+    "english": "instead of",
+    "pattern": "instead of + noun/verb-ing",
+    "description": "Usado para apresentar uma alternativa que substitui outra ação, pessoa ou coisa. Quando seguido de verbo, normalmente usamos a forma -ing.",
+    "category": "alternatives",
+    "searchTerms": ["em vez de", "ao invés de", "instead", "instead of"],
+    "examples": [
+      {
+        "pt": "Em vez de reclamar, tente resolver o problema.",
+        "en": "Instead of complaining, try to solve the problem.",
+        "ptIntent": "Em vez de reclamar",
+        "enIntent": "Instead of complaining"
+      },
+      {
+        "pt": "Fui de ônibus em vez de carro.",
+        "en": "I took the bus instead of the car.",
+        "ptIntent": "em vez de carro",
+        "enIntent": "instead of the car"
+      }
+    ],
+    "tags": ["alternative", "contrast", "instead-of", "gerund"],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "como-resultado-as-a-result",
+    "intention": "Como resultado...",
+    "english": "as a result",
+    "pattern": "As a result, + consequence",
+    "description": "Usado para introduzir uma consequência direta do que foi mencionado anteriormente.",
+    "category": "cause-consequence",
+    "searchTerms": ["como resultado", "como consequência", "as a result", "resultado"],
+    "examples": [
+      {
+        "pt": "Ele não estudou. Como resultado, não passou na prova.",
+        "en": "He didn't study. As a result, he didn't pass the test.",
+        "ptIntent": "Como resultado",
+        "enIntent": "As a result"
+      },
+      {
+        "pt": "Os custos aumentaram. Como resultado, tivemos que mudar o plano.",
+        "en": "Costs increased. As a result, we had to change the plan.",
+        "ptIntent": "Como resultado",
+        "enIntent": "As a result"
+      }
+    ],
+    "tags": ["consequence", "connector", "result"],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "portanto-therefore",
+    "intention": "Portanto...",
+    "english": "therefore",
+    "pattern": "Therefore, + conclusion/consequence",
+    "description": "Conector usado para introduzir uma conclusão ou consequência lógica. É mais comum em registros formais e argumentativos.",
+    "category": "cause-consequence",
+    "searchTerms": ["portanto", "por isso", "therefore", "conclusão"],
+    "examples": [
+      {
+        "pt": "Não temos informações suficientes. Portanto, não podemos decidir ainda.",
+        "en": "We don't have enough information. Therefore, we can't decide yet.",
+        "ptIntent": "Portanto",
+        "enIntent": "Therefore"
+      },
+      {
+        "pt": "O prazo terminou. Portanto, não podemos aceitar novas inscrições.",
+        "en": "The deadline has passed. Therefore, we can't accept new applications.",
+        "ptIntent": "Portanto",
+        "enIntent": "Therefore"
+      }
+    ],
+    "tags": ["consequence", "formal", "connector", "argumentation"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "consequentemente-consequently",
+    "intention": "Consequentemente...",
+    "english": "consequently",
+    "pattern": "Consequently, + consequence",
+    "description": "Conector relativamente formal usado para apresentar uma consequência de uma situação anterior.",
+    "category": "cause-consequence",
+    "searchTerms": ["consequentemente", "como consequência", "consequently"],
+    "examples": [
+      {
+        "pt": "A empresa perdeu vários clientes. Consequentemente, a receita caiu.",
+        "en": "The company lost several clients. Consequently, revenue fell.",
+        "ptIntent": "Consequentemente",
+        "enIntent": "Consequently"
+      },
+      {
+        "pt": "O projeto atrasou. Consequentemente, os custos aumentaram.",
+        "en": "The project was delayed. Consequently, costs increased.",
+        "ptIntent": "Consequentemente",
+        "enIntent": "Consequently"
+      }
+    ],
+    "tags": ["consequence", "formal", "connector", "C1"],
+    "related": [],
+    "englishLevel": "C1"
+  },
+  {
+    "id": "devido-a-due-to",
+    "intention": "Devido a...",
+    "english": "due to",
+    "pattern": "due to + noun/noun phrase",
+    "description": "Usado para apresentar a causa de uma situação. Normalmente é seguido por substantivo ou expressão nominal.",
+    "category": "cause-consequence",
+    "searchTerms": ["devido a", "por causa de", "due to", "causa"],
+    "examples": [
+      {
+        "pt": "O voo foi cancelado devido ao mau tempo.",
+        "en": "The flight was canceled due to bad weather.",
+        "ptIntent": "devido ao mau tempo",
+        "enIntent": "due to bad weather"
+      },
+      {
+        "pt": "A reunião foi adiada devido a um problema técnico.",
+        "en": "The meeting was postponed due to a technical issue.",
+        "ptIntent": "devido a um problema técnico",
+        "enIntent": "due to a technical issue"
+      }
+    ],
+    "tags": ["cause", "due-to", "connector"],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "alem-disso-on-top-of-that",
+    "intention": "Além disso... / e ainda por cima...",
+    "english": "on top of that",
+    "pattern": "On top of that, + additional information",
+    "description": "Conector conversacional usado para acrescentar outro fato ou argumento, frequentemente reforçando uma situação já mencionada.",
+    "category": "conversation-connectors",
+    "searchTerms": ["além disso", "ainda por cima", "on top of that"],
+    "examples": [
+      {
+        "pt": "O trabalho é difícil. Além disso, o prazo é muito curto.",
+        "en": "The job is difficult. On top of that, the deadline is very short.",
+        "ptIntent": "Além disso",
+        "enIntent": "On top of that"
+      },
+      {
+        "pt": "Ele chegou atrasado e, ainda por cima, esqueceu os documentos.",
+        "en": "He arrived late, and on top of that, he forgot the documents.",
+        "ptIntent": "ainda por cima",
+        "enIntent": "on top of that"
+      }
+    ],
+    "tags": ["addition", "connector", "conversation", "spoken-english"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "enquanto-que-whereas",
+    "intention": "Enquanto que / ao passo que...",
+    "english": "whereas",
+    "pattern": "clause + whereas + contrasting clause",
+    "description": "Usado para contrastar diretamente duas pessoas, situações, características ou ideias.",
+    "category": "contrast",
+    "searchTerms": ["enquanto que", "ao passo que", "whereas", "contraste"],
+    "examples": [
+      {
+        "pt": "Eu prefiro trabalhar de manhã, enquanto que ela prefere trabalhar à noite.",
+        "en": "I prefer working in the morning, whereas she prefers working at night.",
+        "ptIntent": "enquanto que",
+        "enIntent": "whereas"
+      },
+      {
+        "pt": "Este é barato, ao passo que aquele é muito caro.",
+        "en": "This one is cheap, whereas that one is very expensive.",
+        "ptIntent": "ao passo que",
+        "enIntent": "whereas"
+      }
+    ],
+    "tags": ["contrast", "whereas", "connector"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "tende-a-tend-to",
+    "intention": "Tende a... / costuma...",
+    "english": "tend to",
+    "pattern": "subject + tend(s) to + base verb",
+    "description": "Usado para falar sobre tendências, comportamentos ou situações que acontecem com frequência, sem afirmar que acontecem sempre.",
+    "category": "probability-tendency",
+    "searchTerms": ["tende a", "tendem a", "costuma", "tend to", "tends to"],
+    "examples": [
+      {
+        "pt": "As pessoas tendem a cometer erros quando estão cansadas.",
+        "en": "People tend to make mistakes when they're tired.",
+        "ptIntent": "tendem a",
+        "enIntent": "tend to"
+      },
+      {
+        "pt": "Ele tende a falar muito quando está nervoso.",
+        "en": "He tends to talk a lot when he's nervous.",
+        "ptIntent": "tende a",
+        "enIntent": "tends to"
+      }
+    ],
+    "tags": ["tendency", "generalization", "probability", "conversation"],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "e-provavel-que-be-likely-to",
+    "intention": "É provável que...",
+    "english": "be likely to",
+    "pattern": "subject + be likely to + base verb",
+    "description": "Usado para expressar que existe uma boa probabilidade de algo acontecer. O inglês frequentemente reorganiza 'é provável que alguém faça' para 'alguém + be likely to + verbo'.",
+    "category": "probability-tendency",
+    "searchTerms": ["é provável que", "provavelmente", "likely", "likely to", "be likely to"],
+    "examples": [
+      {
+        "pt": "É provável que ele chegue atrasado.",
+        "en": "He's likely to arrive late.",
+        "ptIntent": "É provável que ele chegue",
+        "enIntent": "He's likely to arrive"
+      },
+      {
+        "pt": "É provável que os preços aumentem.",
+        "en": "Prices are likely to increase.",
+        "ptIntent": "É provável que os preços aumentem",
+        "enIntent": "Prices are likely to increase"
+      }
+    ],
+    "tags": ["probability", "likely", "prediction", "mental-mapping"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "quase-certo-bound-to",
+    "intention": "É muito provável / quase certo que...",
+    "english": "be bound to",
+    "pattern": "subject + be bound to + base verb",
+    "description": "Usado para expressar uma expectativa muito forte de que algo acontecerá. É mais forte que 'be likely to'.",
+    "category": "probability-tendency",
+    "searchTerms": ["muito provável", "quase certo", "certamente vai", "bound to", "be bound to"],
+    "examples": [
+      {
+        "pt": "É quase certo que ele vai descobrir.",
+        "en": "He's bound to find out.",
+        "ptIntent": "É quase certo que ele vai descobrir",
+        "enIntent": "He's bound to find out"
+      },
+      {
+        "pt": "Com tanta prática, você certamente vai melhorar.",
+        "en": "With so much practice, you're bound to improve.",
+        "ptIntent": "certamente vai melhorar",
+        "enIntent": "you're bound to improve"
+      }
+    ],
+    "tags": ["probability", "prediction", "bound-to", "strong-probability"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "voce-sabe-por-acaso",
+    "intention": "Você sabe por acaso...?",
+    "english": "Do you happen to know...?",
+    "pattern": "Do you happen to know + indirect question?",
+    "description": "Usado para fazer uma pergunta de forma menos direta e mais conversacional. Depois de 'Do you happen to know', a pergunta seguinte usa ordem de frase afirmativa.",
+    "category": "indirect-questions",
+    "searchTerms": ["você sabe por acaso", "por acaso você sabe", "happen to know", "do you happen to know"],
+    "examples": [
+      {
+        "pt": "Você sabe por acaso onde ele mora?",
+        "en": "Do you happen to know where he lives?",
+        "ptIntent": "Você sabe por acaso",
+        "enIntent": "Do you happen to know"
+      },
+      {
+        "pt": "Você sabe por acaso que horas a reunião começa?",
+        "en": "Do you happen to know what time the meeting starts?",
+        "ptIntent": "Você sabe por acaso",
+        "enIntent": "Do you happen to know"
+      }
+    ],
+    "tags": ["indirect-question", "politeness", "conversation"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "voce-diria-que-would-you-say",
+    "intention": "Você diria que...?",
+    "english": "Would you say...?",
+    "pattern": "Would you say + clause/question?",
+    "description": "Usado para pedir a avaliação ou opinião de alguém de maneira menos direta.",
+    "category": "indirect-questions",
+    "searchTerms": ["você diria que", "diria que", "would you say", "opinião"],
+    "examples": [
+      {
+        "pt": "Você diria que seu inglês melhorou?",
+        "en": "Would you say your English has improved?",
+        "ptIntent": "Você diria que",
+        "enIntent": "Would you say"
+      },
+      {
+        "pt": "Você diria que esse é o maior problema?",
+        "en": "Would you say this is the biggest problem?",
+        "ptIntent": "Você diria que",
+        "enIntent": "Would you say"
+      }
+    ],
+    "tags": ["indirect-question", "opinion", "conversation"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "nao-so-mas-tambem-not-only-but-also",
+    "intention": "Não só... mas também...",
+    "english": "not only... but also...",
+    "pattern": "not only + X + but also + Y",
+    "description": "Estrutura correlativa usada para acrescentar e enfatizar duas informações relacionadas.",
+    "category": "emphasis-correlation",
+    "searchTerms": ["não só", "mas também", "não apenas", "not only", "but also", "not only but also"],
+    "examples": [
+      {
+        "pt": "Ele não só fala inglês, mas também espanhol.",
+        "en": "He speaks not only English but also Spanish.",
+        "ptIntent": "não só fala inglês, mas também espanhol",
+        "enIntent": "not only English but also Spanish"
+      },
+      {
+        "pt": "Isso não só economiza tempo, mas também reduz custos.",
+        "en": "This not only saves time but also reduces costs.",
+        "ptIntent": "não só economiza tempo, mas também reduz custos",
+        "enIntent": "not only saves time but also reduces costs"
+      }
+    ],
+    "tags": ["emphasis", "correlation", "addition", "not-only-but-also"],
+    "related": [],
+    "englishLevel": "B2"
+  }
+
   ]
 }

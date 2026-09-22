@@ -1,0 +1,352 @@
+{
+    "stories": [
+        {
+            "id": "b1-work-001",
+            "englishLevel": "B1",
+            "topic": "work",
+            "titlePt": "Um dia difícil no trabalho",
+            "titleEn": "A Difficult Day at Work",
+            "paragraphs": [
+                {
+                    "pt": "Lucas chegou cedo ao trabalho, embora estivesse muito cansado.",
+                    "en": "Lucas arrived at work early, even though he was very tired.",
+                    "intentions": [
+                        {
+                            "intentionId": "embora-even-though",
+                            "ptIntent": "embora estivesse muito cansado",
+                            "enIntent": "even though he was very tired"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ele precisava que Mariana terminasse o relatório antes da reunião.",
+                    "en": "He needed Mariana to finish the report before the meeting.",
+                    "intentions": [
+                        {
+                            "intentionId": "preciso-que-alguem-faca-need-person-to",
+                            "ptIntent": "precisava que Mariana terminasse",
+                            "enIntent": "needed Mariana to finish"
+                        }
+                    ]
+                },
+                {
+                    "pt": "A tarefa era bem difícil, mas Mariana continuou trabalhando.",
+                    "en": "The task was pretty difficult, but Mariana kept working.",
+                    "intentions": [
+                        {
+                            "intentionId": "bastante-bem-adjetivo-pretty",
+                            "ptIntent": "bem difícil",
+                            "enIntent": "pretty difficult"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ela demorou bastante para revisar todos os números.",
+                    "en": "It took her quite a while to review all the numbers.",
+                    "intentions": [
+                        {
+                            "intentionId": "take-time",
+                            "ptIntent": "demorou bastante",
+                            "enIntent": "took her quite a while"
+                        }
+                    ]
+                },
+                {
+                    "pt": "No final, o novo relatório ficou muito melhor.",
+                    "en": "In the end, the new report was much better.",
+                    "intentions": [
+                        {
+                            "intentionId": "muito-bem-comparativo-much-a-lot",
+                            "ptIntent": "muito melhor",
+                            "enIntent": "much better"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Lucas agradeceu a Mariana e os dois terminaram o dia mais tranquilos.",
+                    "en": "Lucas thanked Mariana, and they both ended the day feeling more relaxed.",
+                    "intentions": []
+                }
+            ],
+            "intentionsUsed": [
+                "embora-even-though",
+                "preciso-que-alguem-faca-need-person-to",
+                "bastante-bem-adjetivo-pretty",
+                "take-time",
+                "muito-bem-comparativo-much-a-lot"
+            ]
+        },
+        {
+            "id": "b1-work-002",
+            "englishLevel": "B1",
+            "topic": "work",
+            "titlePt": "Uma mudança de planos no trabalho",
+            "titleEn": "A Change of Plans at Work",
+            "paragraphs": [
+                {
+                    "pt": "A reunião foi adiada devido a um problema técnico.",
+                    "en": "The meeting was postponed due to a technical issue.",
+                    "intentions": [
+                        {
+                            "intentionId": "devido-a-due-to",
+                            "ptIntent": "devido a um problema técnico",
+                            "enIntent": "due to a technical issue"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Como resultado, tivemos que mudar o plano.",
+                    "en": "As a result, we had to change the plan.",
+                    "intentions": [
+                        {
+                            "intentionId": "como-resultado-as-a-result",
+                            "ptIntent": "Como resultado",
+                            "enIntent": "As a result"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Em vez de reclamar, Mariana tentou resolver o problema.",
+                    "en": "Instead of complaining, Mariana tried to solve the problem.",
+                    "intentions": [
+                        {
+                            "intentionId": "em-vez-de-instead-of",
+                            "ptIntent": "Em vez de reclamar",
+                            "enIntent": "Instead of complaining"
+                        }
+                    ]
+                },
+                {
+                    "pt": "As pessoas tendem a cometer erros quando estão cansadas.",
+                    "en": "People tend to make mistakes when they're tired.",
+                    "intentions": [
+                        {
+                            "intentionId": "tende-a-tend-to",
+                            "ptIntent": "tendem a",
+                            "enIntent": "tend to"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Mesmo assim, a nova solução ficou bastante boa.",
+                    "en": "Even so, the new solution was pretty good.",
+                    "intentions": [
+                        {
+                            "intentionId": "bastante-bem-adjetivo-pretty",
+                            "ptIntent": "bastante boa",
+                            "enIntent": "pretty good"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Falando nisso, precisamos marcar a próxima reunião.",
+                    "en": "Speaking of which, we need to schedule the next meeting.",
+                    "intentions": [
+                        {
+                            "intentionId": "falando-nisso-speaking-of-which",
+                            "ptIntent": "Falando nisso",
+                            "enIntent": "Speaking of which"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "devido-a-due-to",
+                "como-resultado-as-a-result",
+                "em-vez-de-instead-of",
+                "tende-a-tend-to",
+                "bastante-bem-adjetivo-pretty",
+                "falando-nisso-speaking-of-which"
+            ]
+        },
+        {
+            "id": "b1-study-001",
+            "englishLevel": "B1",
+            "topic": "study",
+            "titlePt": "Uma nova rotina de estudos",
+            "titleEn": "A New Study Routine",
+            "paragraphs": [
+                {
+                    "pt": "Estou me acostumando a falar inglês todos os dias.",
+                    "en": "I am getting used to speaking English every day.",
+                    "intentions": [
+                        {
+                            "intentionId": "get-used-to",
+                            "ptIntent": "me acostumando",
+                            "enIntent": "getting used to"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Tenho estado cansado ultimamente, mas quero manter a rotina.",
+                    "en": "I have been tired lately, but I want to keep the routine.",
+                    "intentions": [
+                        {
+                            "intentionId": "tem-tenho-tenha-participio-adjetivo",
+                            "ptIntent": "Tenho estado cansado",
+                            "enIntent": "I have been tired"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Acha que vale a pena estudar um pouco todos os dias?",
+                    "en": "Do you think it's worth studying a little every day?",
+                    "intentions": [
+                        {
+                            "intentionId": "acha-que-vale-a-pena",
+                            "ptIntent": "Acha que vale a pena",
+                            "enIntent": "Do you think it's worth"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Eu não vou parar a menos que realmente precise descansar.",
+                    "en": "I won't stop unless I really need to rest.",
+                    "intentions": [
+                        {
+                            "intentionId": "a-menos-que-unless",
+                            "ptIntent": "a menos que",
+                            "enIntent": "unless"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Assim que terminar o trabalho, vou praticar conversação.",
+                    "en": "As soon as I finish work, I'm going to practice conversation.",
+                    "intentions": [
+                        {
+                            "intentionId": "assim-que-logo-que",
+                            "ptIntent": "Assim que",
+                            "enIntent": "As soon as"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Posso mudar o horário desde que continue estudando todos os dias.",
+                    "en": "I can change the schedule as long as I keep studying every day.",
+                    "intentions": [
+                        {
+                            "intentionId": "desde-que-contanto-que",
+                            "ptIntent": "desde que",
+                            "enIntent": "as long as"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "get-used-to",
+                "tem-tenho-tenha-participio-adjetivo",
+                "acha-que-vale-a-pena",
+                "a-menos-que-unless",
+                "assim-que-logo-que",
+                "desde-que-contanto-que"
+            ]
+        },
+        {
+            "id": "b1-decision-7f42b56e-8a31-4c9d-b6e2-15f873ac9240",
+            "englishLevel": "B1",
+            "topic": "decision",
+            "titlePt": "Uma decisão difícil sobre o trabalho",
+            "titleEn": "A Difficult Decision About Work",
+            "paragraphs": [
+                {
+                    "pt": "Carlos recebeu uma proposta para trabalhar em outra empresa. O salário era melhor, mas ele gostava da equipe atual.",
+                    "en": "Carlos received an offer to work for another company. The salary was better, but he liked his current team.",
+                    "intentions": []
+                },
+                {
+                    "pt": "Ele pensou na proposta durante todo o fim de semana. Eu me pergunto se mudar de emprego agora é realmente uma boa ideia, pensou.",
+                    "en": "He thought about the offer all weekend. I wonder if changing jobs now is really a good idea, he thought.",
+                    "intentions": [
+                        {
+                            "intentionId": "me-pergunto-se-fico-pensando-se-sera-que",
+                            "ptIntent": "me pergunto se",
+                            "enIntent": "I wonder if"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Na segunda-feira, Carlos conversou com sua amiga Ana. Ela perguntou: Acha que vale a pena aceitar a proposta apenas por causa do salário?",
+                    "en": "On Monday, Carlos talked to his friend Ana. She asked, Do you think it's worth accepting the offer just because of the salary?",
+                    "intentions": [
+                        {
+                            "intentionId": "acha-que-vale-a-pena",
+                            "ptIntent": "Acha que vale a pena",
+                            "enIntent": "Do you think it's worth"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Carlos respondeu: Prefiro trabalhar em um lugar onde eu possa aprender coisas novas, mesmo se o salário não for perfeito.",
+                    "en": "Carlos replied, I'd rather work somewhere I can learn new things, even if the salary isn't perfect.",
+                    "intentions": [
+                        {
+                            "intentionId": "preferir-preferiria-situacao-especifica",
+                            "ptIntent": "Prefiro",
+                            "enIntent": "rather"
+                        },
+                        {
+                            "intentionId": "mesmo-se-even-if",
+                            "ptIntent": "mesmo se",
+                            "enIntent": "even if"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ana entendeu a preocupação dele e disse: Se eu fosse você, eu conversaria com o novo gerente antes de decidir.",
+                    "en": "Ana understood his concern and said, If I were you, I'd talk to the new manager before deciding.",
+                    "intentions": [
+                        {
+                            "intentionId": "if-i-were-you-id",
+                            "ptIntent": "Se eu fosse você, eu",
+                            "enIntent": "If I were you, I'd"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Carlos decidiu fazer isso. Em vez de aceitar a proposta imediatamente, marcou outra conversa com a empresa.",
+                    "en": "Carlos decided to do that. Instead of accepting the offer immediately, he scheduled another conversation with the company.",
+                    "intentions": [
+                        {
+                            "intentionId": "em-vez-de-instead-of",
+                            "ptIntent": "Em vez de aceitar",
+                            "enIntent": "Instead of accepting"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Depois da conversa, ele percebeu que teria boas oportunidades de crescimento. Como resultado, ficou mais confiante sobre a mudança.",
+                    "en": "After the conversation, he realized that he would have good opportunities to grow. As a result, he felt more confident about the change.",
+                    "intentions": [
+                        {
+                            "intentionId": "como-resultado-as-a-result",
+                            "ptIntent": "Como resultado",
+                            "enIntent": "As a result"
+                        }
+                    ]
+                },
+                {
+                    "pt": "No final, Carlos decidiu aceitar o novo trabalho, a menos que a empresa mudasse as condições da proposta. Ele sabia que nenhuma decisão era perfeita, mas agora tinha informações suficientes para escolher.",
+                    "en": "In the end, Carlos decided to accept the new job unless the company changed the terms of the offer. He knew that no decision was perfect, but now he had enough information to make a choice.",
+                    "intentions": [
+                        {
+                            "intentionId": "a-menos-que-unless",
+                            "ptIntent": "a menos que",
+                            "enIntent": "unless"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "me-pergunto-se-fico-pensando-se-sera-que",
+                "acha-que-vale-a-pena",
+                "preferir-preferiria-situacao-especifica",
+                "mesmo-se-even-if",
+                "if-i-were-you-id",
+                "em-vez-de-instead-of",
+                "como-resultado-as-a-result",
+                "a-menos-que-unless"
+            ]
+        }
+    ]
+}
