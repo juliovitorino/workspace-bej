@@ -14760,6 +14760,100 @@
     "bastante-bem-adjetivo-pretty"
   ],
   "englishLevel": "B1"
+},
+{
+  "id": "preciso-que-alguem-faca-need-person-to",
+  "intention": "Preciso que alguém faça...",
+  "english": "I need + person + to + verb",
+  "pattern": "I need + person/object pronoun + to + base verb",
+  "description": "Usado quando precisamos que outra pessoa faça alguma coisa. Em português, pensamos em 'preciso que + pessoa + verbo', mas o inglês reorganiza a estrutura para 'I need + pessoa + to + verbo'. Depois de 'need', usamos pronomes objeto como me, you, him, her, us e them. Não é necessário procurar uma tradução para o 'que' português.",
+  "category": "need-family",
+  "searchTerms": [
+    "preciso que",
+    "preciso que você",
+    "preciso que ele",
+    "preciso que ela",
+    "preciso que eles",
+    "precisamos que",
+    "need you to",
+    "need him to",
+    "need her to",
+    "need them to",
+    "I need someone to"
+  ],
+  "examples": [
+    {
+      "pt": "Preciso que você traga os documentos.",
+      "en": "I need you to bring the documents.",
+      "ptIntent": "Preciso que você traga",
+      "enIntent": "I need you to bring"
+    },
+    {
+      "pt": "Preciso que ela traga o relatório.",
+      "en": "I need her to bring the report.",
+      "ptIntent": "Preciso que ela traga",
+      "enIntent": "I need her to bring"
+    },
+    {
+      "pt": "Preciso que ele termine isso hoje.",
+      "en": "I need him to finish this today.",
+      "ptIntent": "Preciso que ele termine",
+      "enIntent": "I need him to finish"
+    },
+    {
+      "pt": "Preciso que eles cheguem mais cedo.",
+      "en": "I need them to arrive earlier.",
+      "ptIntent": "Preciso que eles cheguem",
+      "enIntent": "I need them to arrive"
+    },
+    {
+      "pt": "Preciso que você me ajude.",
+      "en": "I need you to help me.",
+      "ptIntent": "Preciso que você me ajude",
+      "enIntent": "I need you to help me"
+    },
+    {
+      "pt": "Preciso que ela fale com o gerente.",
+      "en": "I need her to talk to the manager.",
+      "ptIntent": "Preciso que ela fale",
+      "enIntent": "I need her to talk"
+    },
+    {
+      "pt": "Preciso que ele verifique isso para mim.",
+      "en": "I need him to check this for me.",
+      "ptIntent": "Preciso que ele verifique",
+      "enIntent": "I need him to check"
+    },
+    {
+      "pt": "Preciso que eles resolvam esse problema.",
+      "en": "I need them to solve this problem.",
+      "ptIntent": "Preciso que eles resolvam",
+      "enIntent": "I need them to solve"
+    },
+    {
+      "pt": "Precisamos que você envie o arquivo hoje.",
+      "en": "We need you to send the file today.",
+      "ptIntent": "Precisamos que você envie",
+      "enIntent": "We need you to send"
+    },
+    {
+      "pt": "Eu precisava que ela me explicasse o problema.",
+      "en": "I needed her to explain the problem to me.",
+      "ptIntent": "Eu precisava que ela me explicasse",
+      "enIntent": "I needed her to explain"
+    }
+  ],
+  "tags": [
+    "need",
+    "need someone to",
+    "object-pronouns",
+    "sentence-pattern",
+    "conversation",
+    "grammar",
+    "mental-mapping"
+  ],
+  "related": [],
+  "englishLevel": "A2"
 }
   ]
 }
