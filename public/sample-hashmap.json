@@ -14581,6 +14581,185 @@
   ],
   "related": [],
   "englishLevel": "B1"
+},
+{
+  "id": "bastante-bem-adjetivo-pretty",
+  "intention": "Bastante / bem + adjetivo",
+  "english": "pretty + adjective",
+  "pattern": "pretty + adjective",
+  "description": "Usado no inglês conversacional para intensificar um adjetivo. 'Pretty' antes de um adjetivo frequentemente corresponde a 'bastante', 'bem' ou 'consideravelmente' em português. Não confundir com 'pretty' no sentido de 'bonito'.",
+  "category": "intensity",
+  "searchTerms": [
+    "bastante",
+    "bem",
+    "bem bom",
+    "bem legal",
+    "bem difícil",
+    "bem caro",
+    "bastante interessante",
+    "pretty",
+    "pretty good",
+    "pretty difficult"
+  ],
+  "examples": [
+    {
+      "pt": "Isso é bastante bom.",
+      "en": "That's pretty good.",
+      "ptIntent": "bastante bom",
+      "enIntent": "pretty good"
+    },
+    {
+      "pt": "O lugar é bem legal.",
+      "en": "The place is pretty nice.",
+      "ptIntent": "bem legal",
+      "enIntent": "pretty nice"
+    },
+    {
+      "pt": "Isso é bem difícil.",
+      "en": "That's pretty difficult.",
+      "ptIntent": "bem difícil",
+      "enIntent": "pretty difficult"
+    },
+    {
+      "pt": "Esse restaurante é bem caro.",
+      "en": "This restaurant is pretty expensive.",
+      "ptIntent": "bem caro",
+      "enIntent": "pretty expensive"
+    },
+    {
+      "pt": "O assunto é bastante interessante.",
+      "en": "The topic is pretty interesting.",
+      "ptIntent": "bastante interessante",
+      "enIntent": "pretty interesting"
+    },
+    {
+      "pt": "Estou bem cansado hoje.",
+      "en": "I'm pretty tired today.",
+      "ptIntent": "bem cansado",
+      "enIntent": "pretty tired"
+    },
+    {
+      "pt": "Ela está bastante ocupada esta semana.",
+      "en": "She's pretty busy this week.",
+      "ptIntent": "bastante ocupada",
+      "enIntent": "pretty busy"
+    },
+    {
+      "pt": "Foi bem fácil entender.",
+      "en": "It was pretty easy to understand.",
+      "ptIntent": "bem fácil",
+      "enIntent": "pretty easy"
+    }
+  ],
+  "tags": [
+    "pretty",
+    "adjective",
+    "intensity",
+    "conversation",
+    "spoken-english"
+  ],
+  "related": [
+    "muito-bem-comparativo-much-a-lot"
+  ],
+  "englishLevel": "B1"
+},
+{
+  "id": "muito-bem-comparativo-much-a-lot",
+  "intention": "Muito / bem + comparativo",
+  "english": "much / a lot + comparative",
+  "pattern": "much + comparative | a lot + comparative",
+  "description": "Usado para intensificar comparações. Antes de formas comparativas como 'better', 'easier', 'faster' e 'cheaper', usamos frequentemente 'much' ou, no inglês conversacional, 'a lot'. Assim, 'muito melhor' pode ser 'much better' ou 'a lot better'.",
+  "category": "comparison",
+  "searchTerms": [
+    "muito melhor",
+    "bem melhor",
+    "muito mais fácil",
+    "bem mais fácil",
+    "muito mais rápido",
+    "bem mais rápido",
+    "muito mais barato",
+    "muito mais interessante",
+    "much better",
+    "a lot better",
+    "much easier",
+    "a lot easier",
+    "comparativo"
+  ],
+  "examples": [
+    {
+      "pt": "Isso é muito melhor.",
+      "en": "This is much better.",
+      "ptIntent": "muito melhor",
+      "enIntent": "much better"
+    },
+    {
+      "pt": "Isso é bem melhor.",
+      "en": "This is a lot better.",
+      "ptIntent": "bem melhor",
+      "enIntent": "a lot better"
+    },
+    {
+      "pt": "Agora está muito mais fácil.",
+      "en": "It's much easier now.",
+      "ptIntent": "muito mais fácil",
+      "enIntent": "much easier"
+    },
+    {
+      "pt": "Agora está bem mais fácil.",
+      "en": "It's a lot easier now.",
+      "ptIntent": "bem mais fácil",
+      "enIntent": "a lot easier"
+    },
+    {
+      "pt": "Este computador é muito mais rápido.",
+      "en": "This computer is much faster.",
+      "ptIntent": "muito mais rápido",
+      "enIntent": "much faster"
+    },
+    {
+      "pt": "Meu novo computador é bem mais rápido.",
+      "en": "My new computer is a lot faster.",
+      "ptIntent": "bem mais rápido",
+      "enIntent": "a lot faster"
+    },
+    {
+      "pt": "Essa opção é muito mais barata.",
+      "en": "This option is much cheaper.",
+      "ptIntent": "muito mais barata",
+      "enIntent": "much cheaper"
+    },
+    {
+      "pt": "Essa história é muito mais interessante.",
+      "en": "This story is much more interesting.",
+      "ptIntent": "muito mais interessante",
+      "enIntent": "much more interesting"
+    },
+    {
+      "pt": "Inglês ficou bem mais fácil para mim.",
+      "en": "English has become a lot easier for me.",
+      "ptIntent": "bem mais fácil",
+      "enIntent": "a lot easier"
+    },
+    {
+      "pt": "Estou me sentindo muito melhor hoje.",
+      "en": "I'm feeling much better today.",
+      "ptIntent": "muito melhor",
+      "enIntent": "much better"
+    }
+  ],
+  "tags": [
+    "much",
+    "a lot",
+    "comparative",
+    "comparison",
+    "intensity",
+    "conversation",
+    "spoken-english"
+  ],
+  "related": [
+    "bastante-bem-adjetivo-pretty"
+  ],
+  "englishLevel": "B1"
 }
   ]
 }
