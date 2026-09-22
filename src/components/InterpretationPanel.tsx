@@ -402,7 +402,7 @@ export function InterpretationPanel({
 
             <div className="interpretation-used-list">
               {story.intentionsUsed.map((id) => {
-                const intention = selectedIntentions.find(
+                const intention = intentions.find(
                   (item) => item.id === id
                 );
 

@@ -1,4 +1,5 @@
 import type { MentalIntention } from "../types/hashmap";
+import { getRandomLocalStory } from "./localStoryService";
 
 export interface StoryParagraphIntention {
   intentionId: string;
@@ -13,6 +14,7 @@ export interface StoryParagraph {
 }
 
 export interface StoryGenerationResult {
+  id?: string;
   titlePt: string;
   titleEn: string;
   paragraphs: StoryParagraph[];
@@ -290,6 +292,21 @@ export async function generateInterpretationStory(
   const data = (await response.json()) as GeminiResponse;
 
   if (!response.ok || data.error) {
+    if (response.status === 503 || response.status === 429) {
+      console.warn(
+        `[StoryGenerationService] Gemini unavailable or quota exceeded (${response.status}). Trying local fallback.`
+      );
+
+      const fallbackStory = getRandomLocalStory(
+        request.englishLevel,
+        request.intentions.map((intention) => intention.id)
+      );
+
+      if (fallbackStory) {
+        return fallbackStory;
+      }
+    }
+
     throw new Error(
       data.error?.message || `Erro ao acessar a IA (${response.status}).`
     );
