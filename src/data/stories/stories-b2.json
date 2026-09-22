@@ -1,0 +1,206 @@
+{
+    "stories": [
+        {
+            "id": "b2-family-d34690dc-94f5-41f6-a784-d505ba8b8938",
+            "englishLevel": "B2",
+            "topic": "family",
+            "titlePt": "O almoço que quase não aconteceu",
+            "titleEn": "The Lunch That Almost Didn't Happen",
+            "paragraphs": [
+                {
+                    "pt": "No domingo, minha família decidiu se reunir na casa dos meus pais. Eu deveria ter saído de casa mais cedo, porque o trânsito estava muito pior do que eu esperava.",
+                    "en": "On Sunday, my family decided to get together at my parents' house. I should have left home earlier because traffic was much worse than I expected.",
+                    "intentions": [
+                        {
+                            "intentionId": "deveria-ter",
+                            "ptIntent": "deveria ter",
+                            "enIntent": "should have"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Sempre que toda a família se reúne, minha mãe prepara comida demais. Desta vez não foi diferente, e a mesa estava completamente cheia quando cheguei.",
+                    "en": "Whenever the whole family gets together, my mother makes too much food. This time was no different, and the table was completely full when I arrived.",
+                    "intentions": [
+                        {
+                            "intentionId": "sempre-que-toda-vez-que-quando-quer-que-a-qualquer-momento-que",
+                            "ptIntent": "Sempre que",
+                            "enIntent": "Whenever"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Meu irmão ainda não tinha chegado, e todos começaram a ficar preocupados. Acontece que ele tinha parado no caminho para buscar nossa avó.",
+                    "en": "My brother still hadn't arrived, and everyone started to get worried. It turns out that he had stopped on the way to pick up our grandmother.",
+                    "intentions": [
+                        {
+                            "intentionId": "acontece-que-no-fim-das-contas",
+                            "ptIntent": "Acontece que",
+                            "enIntent": "It turns out that"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Quando eles finalmente chegaram, minha avó disse que queria sentar perto dos netos. Depois, ela me contou que sentia falta de ver todos juntos com mais frequência.",
+                    "en": "When they finally arrived, my grandmother said she wanted to sit near her grandchildren. Later, she told me that she missed seeing everyone together more often.",
+                    "intentions": [
+                        {
+                            "intentionId": "reported-speech-automatico",
+                            "ptIntent": "ela me contou que",
+                            "enIntent": "she told me that"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Mesmo que todos tenham vidas ocupadas, percebemos que esses encontros ainda são importantes para nós. Ninguém ficou olhando o celular durante o almoço.",
+                    "en": "Even though everyone has busy lives, we realized that these gatherings are still important to us. Nobody kept looking at their phone during lunch.",
+                    "intentions": [
+                        {
+                            "intentionId": "mesmo-que-apesar-de",
+                            "ptIntent": "Mesmo que",
+                            "enIntent": "Even though"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Depois do almoço, pensei: vou aproveitar esse momento e tirar algumas fotos com meus pais e meus irmãos. Fazia muito tempo que não tínhamos uma foto de todos juntos.",
+                    "en": "After lunch, I thought, I'm going to make the most of this moment and take some pictures with my parents and siblings. It had been a long time since we had a picture of everyone together.",
+                    "intentions": [
+                        {
+                            "intentionId": "vou-aproveitar-momento-viagem",
+                            "ptIntent": "vou aproveitar",
+                            "enIntent": "make the most of"
+                        }
+                    ]
+                },
+                {
+                    "pt": "No fim das contas, o atraso e a preocupação ficaram em segundo plano. No final do dia, o que realmente importava era termos passado algumas horas juntos.",
+                    "en": "In the end, the delay and the worry didn't seem so important. At the end of the day, what really mattered was that we had spent a few hours together.",
+                    "intentions": [
+                        {
+                            "intentionId": "organizacao-de-ideias",
+                            "ptIntent": "No final do dia",
+                            "enIntent": "At the end of the day"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "deveria-ter",
+                "sempre-que-toda-vez-que-quando-quer-que-a-qualquer-momento-que",
+                "acontece-que-no-fim-das-contas",
+                "reported-speech-automatico",
+                "mesmo-que-apesar-de",
+                "vou-aproveitar-momento-viagem",
+                "organizacao-de-ideias"
+            ]
+        },
+        {
+            "id": "b2-family-f5a4ec33-115f-4581-9b13-5c720dc3fb35",
+            "englishLevel": "B2",
+            "topic": "family",
+            "titlePt": "Uma decisão importante em família",
+            "titleEn": "An Important Family Decision",
+            "paragraphs": [
+                {
+                    "pt": "Minha filha recebeu uma proposta de emprego em outra cidade e decidiu conversar conosco antes de aceitar. Ela achava que ia me acostumar rapidamente com a ideia de vê-la com menos frequência.",
+                    "en": "My daughter got a job offer in another city and decided to talk to us before accepting it. She thought I would get used to the idea of seeing her less often pretty quickly.",
+                    "intentions": [
+                        {
+                            "intentionId": "ia-me-acostumar",
+                            "ptIntent": "ia me acostumar",
+                            "enIntent": "would get used to"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Bem que eu queria poder dizer que a mudança não me preocupava, mas eu sabia que sentiria falta dela. Ao mesmo tempo, eu não queria que minha preocupação influenciasse a decisão dela.",
+                    "en": "I wish I could say that the move didn't worry me, but I knew I would miss her. At the same time, I didn't want my concern to influence her decision.",
+                    "intentions": [
+                        {
+                            "intentionId": "bem-que-eu-queria-poder",
+                            "ptIntent": "Bem que eu queria poder",
+                            "enIntent": "I wish I could"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Por um lado, ela ficaria longe da família e teria que começar uma nova rotina. Ela também teria menos ajuda no dia a dia.",
+                    "en": "On the one hand, she would be far from the family and would have to start a new routine. She would also have less help in her daily life.",
+                    "intentions": [
+                        {
+                            "intentionId": "por-um-lado",
+                            "ptIntent": "Por um lado",
+                            "enIntent": "On the one hand"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Por outro lado, o novo emprego oferecia oportunidades que ela não tinha aqui. Ela poderia crescer profissionalmente e se tornar mais independente.",
+                    "en": "In contrast, the new job offered opportunities she didn't have here. She could grow professionally and become more independent.",
+                    "intentions": [
+                        {
+                            "intentionId": "em-contraste-por-outro-lado",
+                            "ptIntent": "Por outro lado",
+                            "enIntent": "In contrast"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Eu disse que apoiaria a decisão dela, desde que ela estivesse realmente confortável com a mudança. Também combinamos de conversar por vídeo várias vezes por semana.",
+                    "en": "I said I would support her decision as long as she was truly comfortable with the move. We also agreed to have video calls several times a week.",
+                    "intentions": [
+                        {
+                            "intentionId": "desde-que-contanto-que-condicao",
+                            "ptIntent": "desde que",
+                            "enIntent": "as long as"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Depois de conversar bastante, percebi que não adianta tentar proteger nossos filhos de todas as mudanças. Em algum momento, precisamos permitir que eles tomem as próprias decisões.",
+                    "en": "After talking for a while, I realized there's no point in trying to protect our children from every change. At some point, we need to let them make their own decisions.",
+                    "intentions": [
+                        {
+                            "intentionId": "nao-adianta-nao-faz-sentido",
+                            "ptIntent": "não adianta",
+                            "enIntent": "there's no point in"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Antes de terminar a conversa, minha esposa perguntou: e se essa mudança for exatamente o que ela precisa agora? Ninguém respondeu imediatamente, mas todos ficaram pensando nisso.",
+                    "en": "Before we finished the conversation, my wife asked, what if this move is exactly what she needs right now? Nobody answered immediately, but we all thought about it.",
+                    "intentions": [
+                        {
+                            "intentionId": "estruturas-de-hipotese-conversacional",
+                            "ptIntent": "e se",
+                            "enIntent": "what if"
+                        }
+                    ]
+                },
+                {
+                    "pt": "No longo prazo, talvez morar longe ajude nossa filha a construir a própria vida sem perder a ligação com a família. Aceitar isso não é fácil, mas faz parte de vê-la crescer.",
+                    "en": "In the long run, living far away may help our daughter build her own life without losing her connection with the family. Accepting that isn't easy, but it's part of watching her grow.",
+                    "intentions": [
+                        {
+                            "intentionId": "in-the-long-run",
+                            "ptIntent": "No longo prazo",
+                            "enIntent": "In the long run"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "ia-me-acostumar",
+                "bem-que-eu-queria-poder",
+                "por-um-lado",
+                "em-contraste-por-outro-lado",
+                "desde-que-contanto-que-condicao",
+                "nao-adianta-nao-faz-sentido",
+                "estruturas-de-hipotese-conversacional",
+                "in-the-long-run"
+            ]
+        }
+    ]
+}

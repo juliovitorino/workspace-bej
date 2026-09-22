@@ -257,6 +257,18 @@ export async function generateInterpretationStory(
   request: StoryGenerationRequest
 ): Promise<StoryGenerationResult> {
   if (!GEMINI_API_KEY) {
+    const fallbackStory = getRandomLocalStory(
+      request.englishLevel,
+      request.intentions.map((intention) => intention.id)
+    );
+
+    if (fallbackStory) {
+      console.warn(
+        "[StoryGenerationService] Gemini API key not configured. Using local fallback."
+      );
+      return fallbackStory;
+    }
+
     throw new Error(
       "VITE_GEMINI_API_KEY não foi configurada no arquivo .env."
     );
@@ -305,6 +317,10 @@ export async function generateInterpretationStory(
       if (fallbackStory) {
         return fallbackStory;
       }
+
+      console.warn(
+        `[StoryGenerationService] No local fallback story found for level ${request.englishLevel}.`
+      );
     }
 
     throw new Error(

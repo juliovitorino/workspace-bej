@@ -1,0 +1,194 @@
+{
+    "stories": [
+        {
+            "id": "a1-work-34a2ae86-03c1-4b9b-9254-5ad7db1886b0",
+            "englishLevel": "A1",
+            "topic": "work",
+            "titlePt": "Uma manhã corrida no escritório",
+            "titleEn": "A Busy Morning at the Office",
+            "paragraphs": [
+                {
+                    "pt": "Eu costumo chegar ao escritório às oito.",
+                    "en": "I usually arrive at the office at eight.",
+                    "intentions": [
+                        {
+                            "intentionId": "usually",
+                            "ptIntent": "costumo",
+                            "enIntent": "usually"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Hoje, estou um pouco cansado, mas começo meu trabalho normalmente.",
+                    "en": "Today, I am a little tired, but I start my work as usual.",
+                    "intentions": [
+                        {
+                            "intentionId": "sou-estou-agora",
+                            "ptIntent": "estou",
+                            "enIntent": "am"
+                        }
+                    ]
+                },
+                {
+                    "pt": "De manhã, tive um problema com o computador e pedi ajuda à Ana.",
+                    "en": "In the morning, I had problems with the computer and asked Ana for help.",
+                    "intentions": [
+                        {
+                            "intentionId": "com-o-com-a-relacao",
+                            "ptIntent": "problema com o computador",
+                            "enIntent": "problems with the computer"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Depois, eu cometi um erro em um documento importante.",
+                    "en": "Then, I made a mistake in an important document.",
+                    "intentions": [
+                        {
+                            "intentionId": "make-a-mistake",
+                            "ptIntent": "cometi um erro",
+                            "enIntent": "made a mistake"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ana ficou calma e disse: 'Vamos fazer um plano para corrigir isso.'",
+                    "en": "Ana stayed calm and said, 'Let's make a plan to fix it.'",
+                    "intentions": [
+                        {
+                            "intentionId": "make-a-plan",
+                            "ptIntent": "fazer um plano",
+                            "enIntent": "make a plan"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Depois de corrigir o documento, decidimos fazer uma pausa para tomar café.",
+                    "en": "After fixing the document, we decided to take a break for coffee.",
+                    "intentions": [
+                        {
+                            "intentionId": "take-a-break",
+                            "ptIntent": "fazer uma pausa",
+                            "enIntent": "take a break"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ontem eu terminei o trabalho tarde, então hoje quero organizar melhor meu tempo.",
+                    "en": "Yesterday I finished work late, so today I want to organize my time better.",
+                    "intentions": [
+                        {
+                            "intentionId": "momento-passado-com-marcador-de-tempo",
+                            "ptIntent": "terminei",
+                            "enIntent": "finished"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "usually",
+                "sou-estou-agora",
+                "com-o-com-a-relacao",
+                "make-a-mistake",
+                "make-a-plan",
+                "take-a-break",
+                "momento-passado-com-marcador-de-tempo"
+            ]
+        },
+        {
+            "id": "a1-work-b7c876ec-f7e4-4eff-8a19-1601230eafa6",
+            "englishLevel": "A1",
+            "topic": "work",
+            "titlePt": "O primeiro dia de Jane",
+            "titleEn": "Jane's First Day",
+            "paragraphs": [
+                {
+                    "pt": "Eu fui ao escritório cedo para encontrar Jane, a nova colega.",
+                    "en": "I went to the office early to meet Jane, the new coworker.",
+                    "intentions": [
+                        {
+                            "intentionId": "eu-fui-para",
+                            "ptIntent": "Eu fui ao",
+                            "enIntent": "I went to"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Quando ela chegou, eu disse: 'Você está no lugar certo.'",
+                    "en": "When she arrived, I said, 'You are in the right place.'",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-esta",
+                            "ptIntent": "Você está",
+                            "enIntent": "You are"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Mostrei a mesa dela e expliquei: 'Você precisa deste computador para trabalhar.'",
+                    "en": "I showed her desk and explained, 'You need this computer for work.'",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-precisa",
+                            "ptIntent": "Você precisa",
+                            "enIntent": "You need"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Depois eu disse: 'Você pode falar comigo quando tiver uma pergunta.'",
+                    "en": "Then I said, 'You can talk to me when you have a question.'",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-pode",
+                            "ptIntent": "Você pode",
+                            "enIntent": "You can"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Antes do almoço, Jane precisou fazer uma ligação para um cliente.",
+                    "en": "Before lunch, Jane needed to make a call to a client.",
+                    "intentions": [
+                        {
+                            "intentionId": "make-a-call",
+                            "ptIntent": "fazer uma ligação",
+                            "enIntent": "make a call"
+                        }
+                    ]
+                },
+                {
+                    "pt": "À tarde, nós decidimos fazer uma lista das tarefas da semana.",
+                    "en": "In the afternoon, we decided to make a list of the tasks for the week.",
+                    "intentions": [
+                        {
+                            "intentionId": "make-a-list",
+                            "ptIntent": "fazer uma lista",
+                            "enIntent": "make a list"
+                        }
+                    ]
+                },
+                {
+                    "pt": "No fim do dia, Jane sorriu e disse: 'Foi um bom primeiro dia.'",
+                    "en": "At the end of the day, Jane smiled and said, 'It was a good first day.'",
+                    "intentions": [
+                        {
+                            "intentionId": "foi-adjetivo",
+                            "ptIntent": "Foi",
+                            "enIntent": "It was"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "eu-fui-para",
+                "voce-esta",
+                "voce-precisa",
+                "voce-pode",
+                "make-a-call",
+                "make-a-list",
+                "foi-adjetivo"
+            ]
+        }
+    ]
+}

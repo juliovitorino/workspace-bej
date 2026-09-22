@@ -1,0 +1,115 @@
+{
+    "stories": [
+        {
+            "id": "c2-travel-91ec0d8d-735d-4e24-b0fc-8f2a7bbcb147",
+            "englishLevel": "C2",
+            "topic": "travel",
+            "titlePt": "Uma conexão complicada em Nova York",
+            "titleEn": "A Complicated Connection in New York",
+            "paragraphs": [
+                {
+                    "pt": "Depois de quase nove horas de voo, Rafael desembarcou em Nova York convencido de que teria tempo suficiente para fazer sua conexão.",
+                    "en": "After nearly nine hours in the air, Rafael landed in New York convinced that he would have ample time to make his connection.",
+                    "intentions": []
+                },
+                {
+                    "pt": "Ao chegar ao controle de imigração, porém, encontrou uma fila enorme que avançava em um ritmo extremamente lento.",
+                    "en": "When he reached immigration, however, he found an enormous line moving at an excruciatingly slow pace.",
+                    "intentions": []
+                },
+                {
+                    "pt": "Ele tentou manter a calma, mas começou a calcular mentalmente quanto tempo ainda precisaria para retirar a bagagem, passar pela alfândega e chegar ao outro terminal.",
+                    "en": "He tried to remain composed, but began mentally calculating how much time he would still need to collect his luggage, clear customs, and reach the other terminal.",
+                    "intentions": []
+                },
+                {
+                    "pt": "Quando finalmente recuperou a mala, percebeu que uma das rodas havia quebrado durante o voo. Ai de mim, pensou ele, olhando para o relógio enquanto arrastava a mala pelo aeroporto.",
+                    "en": "When he finally retrieved his suitcase, he realized that one of its wheels had broken during the flight. Woe is me, he thought, glancing at his watch as he dragged the suitcase through the airport.",
+                    "intentions": [
+                        {
+                            "intentionId": "woe-is-me",
+                            "ptIntent": "Ai de mim",
+                            "enIntent": "Woe is me"
+                        }
+                    ]
+                },
+                {
+                    "pt": "No balcão da companhia aérea, uma funcionária explicou que o embarque já estava sendo encerrado e que seria praticamente impossível chegar ao portão a tempo.",
+                    "en": "At the airline counter, an employee explained that boarding was already closing and that reaching the gate in time would be virtually impossible.",
+                    "intentions": []
+                },
+                {
+                    "pt": "Em vez de discutir, Rafael explicou a situação com calma. A funcionária verificou as alternativas e conseguiu colocá-lo em outro voo naquela mesma noite.",
+                    "en": "Rather than argue, Rafael calmly explained the situation. The employee checked the alternatives and managed to put him on another flight later that evening.",
+                    "intentions": []
+                },
+                {
+                    "pt": "A conexão perdida acabou lhe dando algumas horas inesperadas para jantar e descansar. Quando embarcou novamente, concluiu que viagens internacionais raramente acontecem exatamente como planejamos.",
+                    "en": "The missed connection ultimately gave him a few unexpected hours to have dinner and unwind. When he boarded again, he concluded that international travel rarely unfolds exactly as we envision it.",
+                    "intentions": []
+                }
+            ],
+            "intentionsUsed": [
+                "woe-is-me"
+            ]
+        },
+        {
+            "id": "c2-travel-f74f310a-84bb-4b9e-b258-1cda85c32f09",
+            "englishLevel": "C2",
+            "topic": "travel",
+            "titlePt": "A estrada errada na Toscana",
+            "titleEn": "The Wrong Road in Tuscany",
+            "paragraphs": [
+                {
+                    "pt": "Mariana alugou um carro em Florença para passar alguns dias explorando pequenas cidades da Toscana longe das rotas turísticas mais movimentadas.",
+                    "en": "Mariana rented a car in Florence to spend a few days exploring small Tuscan towns away from the most heavily traveled tourist routes.",
+                    "intentions": []
+                },
+                {
+                    "pt": "Na segunda tarde da viagem, o aplicativo de navegação sugeriu uma estrada estreita que parecia oferecer um caminho consideravelmente mais curto até o hotel.",
+                    "en": "On the second afternoon of the trip, her navigation app suggested a narrow road that appeared to provide a considerably shorter route to the hotel.",
+                    "intentions": []
+                },
+                {
+                    "pt": "Depois de alguns quilômetros, o asfalto desapareceu e a estrada se transformou em um caminho de terra cercado por vinhedos. Para piorar, o sinal do celular desapareceu completamente.",
+                    "en": "After a few miles, the pavement vanished and the road turned into a dirt track surrounded by vineyards. To make matters worse, her cell signal disappeared completely.",
+                    "intentions": []
+                },
+                {
+                    "pt": "Mariana parou o carro e consultou o mapa que havia deixado no porta-luvas. Ai de mim, murmurou ao perceber que não conseguia determinar com precisão onde estava.",
+                    "en": "Mariana pulled over and consulted the map she had left in the glove compartment. Woe is me, she muttered when she realized she could not determine precisely where she was.",
+                    "intentions": [
+                        {
+                            "intentionId": "woe-is-me",
+                            "ptIntent": "Ai de mim",
+                            "enIntent": "Woe is me"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Poucos minutos depois, um agricultor que trabalhava nas proximidades percebeu que ela estava perdida e se aproximou para oferecer ajuda.",
+                    "en": "A few minutes later, a farmer working nearby noticed that she was lost and came over to offer assistance.",
+                    "intentions": []
+                },
+                {
+                    "pt": "Apesar da barreira linguística, os dois conseguiram se entender com algumas palavras, gestos e o mapa. Ele indicou uma pequena estrada que levava de volta à rodovia principal.",
+                    "en": "Despite the language barrier, they managed to understand each other through a combination of a few words, gestures, and the map. He pointed out a small road leading back to the main highway.",
+                    "intentions": []
+                },
+                {
+                    "pt": "Mariana chegou ao hotel quase duas horas depois do previsto, cansada e coberta de poeira, mas curiosamente satisfeita com o desvio inesperado.",
+                    "en": "Mariana reached the hotel almost two hours later than expected, exhausted and covered in dust, yet curiously satisfied with the unexpected detour.",
+                    "intentions": []
+                },
+                {
+                    "pt": "Naquela noite, enquanto jantava em uma pequena praça, percebeu que o episódio mais memorável da viagem tinha sido justamente aquele que jamais teria incluído em seu roteiro.",
+                    "en": "That evening, while having dinner in a small square, she realized that the most memorable episode of the trip was precisely the one she would never have included in her itinerary.",
+                    "intentions": []
+                }
+            ],
+            "intentionsUsed": [
+                "woe-is-me"
+            ]
+        }
+    ]
+}
