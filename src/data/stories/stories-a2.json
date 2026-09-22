@@ -1,0 +1,205 @@
+{
+    "stories": [
+        {
+            "id": "a2-work-9b47b634-23ab-4ac2-b63e-9a421f018f65",
+            "englishLevel": "A2",
+            "topic": "work",
+            "titlePt": "Uma manhã complicada no trabalho",
+            "titleEn": "A Complicated Morning at Work",
+            "paragraphs": [
+                {
+                    "pt": "Carlos trabalha em um escritório no centro e faz o trajeto para o trabalho de ônibus todos os dias.",
+                    "en": "Carlos works in an office downtown and commutes to work by bus every day.",
+                    "intentions": [
+                        {
+                            "intentionId": "commute-by-transport",
+                            "ptIntent": "faz o trajeto para o trabalho de ônibus",
+                            "enIntent": "commutes to work by bus"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Naquela manhã, ele teve que sair de casa mais cedo porque havia muito trânsito.",
+                    "en": "That morning, he had to leave home earlier because there was a lot of traffic.",
+                    "intentions": [
+                        {
+                            "intentionId": "tinha-que-tive-que-teve-que",
+                            "ptIntent": "teve que",
+                            "enIntent": "had to"
+                        },
+                        {
+                            "intentionId": "cause-pattern",
+                            "ptIntent": "porque",
+                            "enIntent": "because"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Quando chegou ao escritório, sua gerente disse que eles tinham que terminar um relatório antes do almoço.",
+                    "en": "When he got to the office, his manager said they had to finish a report before lunch.",
+                    "intentions": [
+                        {
+                            "intentionId": "tem-que-tenho-que-tenha-que",
+                            "ptIntent": "tinham que",
+                            "enIntent": "had to"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Carlos precisava que Ana revisasse os números enquanto ele preparava a apresentação.",
+                    "en": "Carlos needed Ana to check the numbers while he prepared the presentation.",
+                    "intentions": [
+                        {
+                            "intentionId": "preciso-que-alguem-faca-need-person-to",
+                            "ptIntent": "precisava que Ana revisasse",
+                            "enIntent": "needed Ana to check"
+                        },
+                        {
+                            "intentionId": "while-clause",
+                            "ptIntent": "enquanto ele preparava",
+                            "enIntent": "while he prepared"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Depois de conversar com Ana, Carlos conseguiu tomar uma decisão sobre os últimos números do relatório.",
+                    "en": "After talking to Ana, Carlos was able to make a decision about the final numbers in the report.",
+                    "intentions": [
+                        {
+                            "intentionId": "make-a-decision",
+                            "ptIntent": "tomar uma decisão",
+                            "enIntent": "make a decision"
+                        }
+                    ]
+                },
+                {
+                    "pt": "A propósito, Ana lembrou Carlos de enviar uma cópia do relatório para a gerente.",
+                    "en": "By the way, Ana reminded Carlos to send a copy of the report to the manager.",
+                    "intentions": [
+                        {
+                            "intentionId": "a-proposito-by-the-way",
+                            "ptIntent": "A propósito",
+                            "enIntent": "By the way"
+                        }
+                    ]
+                },
+                {
+                    "pt": "No final da manhã, o relatório estava pronto e os dois puderam almoçar tranquilos.",
+                    "en": "By the end of the morning, the report was ready, and they could have lunch without worrying.",
+                    "intentions": []
+                }
+            ],
+            "intentionsUsed": [
+                "commute-by-transport",
+                "tinha-que-tive-que-teve-que",
+                "cause-pattern",
+                "tem-que-tenho-que-tenha-que",
+                "preciso-que-alguem-faca-need-person-to",
+                "while-clause",
+                "make-a-decision",
+                "a-proposito-by-the-way"
+            ]
+        },
+        {
+            "id": "a2-work-3d81f427-7d92-4ee7-8a26-463c7639b1d4",
+            "englishLevel": "A2",
+            "topic": "work",
+            "titlePt": "Uma nova forma de trabalhar",
+            "titleEn": "A New Way to Work",
+            "paragraphs": [
+                {
+                    "pt": "Mariana costumava trabalhar em casa todos os dias, mas agora vai ao escritório três vezes por semana.",
+                    "en": "Mariana used to work from home every day, but now she goes to the office three times a week.",
+                    "intentions": [
+                        {
+                            "intentionId": "used-to",
+                            "ptIntent": "costumava",
+                            "enIntent": "used to"
+                        }
+                    ]
+                },
+                {
+                    "pt": "No começo, ela achou a mudança difícil porque seu trajeto demora quase uma hora.",
+                    "en": "At first, she found the change difficult because her commute takes almost an hour.",
+                    "intentions": [
+                        {
+                            "intentionId": "at-first",
+                            "ptIntent": "No começo",
+                            "enIntent": "At first"
+                        },
+                        {
+                            "intentionId": "my-commute-takes",
+                            "ptIntent": "seu trajeto demora quase uma hora",
+                            "enIntent": "her commute takes almost an hour"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Um dia, um colega perguntou: 'E se você pegar um ônibus mais cedo?'",
+                    "en": "One day, a coworker asked, 'What if you take an earlier bus?'",
+                    "intentions": [
+                        {
+                            "intentionId": "e-se",
+                            "ptIntent": "E se",
+                            "enIntent": "What if"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Mariana decidiu tentar e agora consegue chegar ao escritório antes das nove.",
+                    "en": "Mariana decided to try it, and now she can get to the office before nine.",
+                    "intentions": [
+                        {
+                            "intentionId": "consigo-sou-capaz",
+                            "ptIntent": "consegue",
+                            "enIntent": "can"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Antes de começar o trabalho, ela sempre dá uma olhada na agenda e nas mensagens da equipe.",
+                    "en": "Before starting work, she always takes a look at her calendar and the team's messages.",
+                    "intentions": [
+                        {
+                            "intentionId": "take-a-look",
+                            "ptIntent": "dá uma olhada",
+                            "enIntent": "takes a look"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ela também procura garantir que todas as reuniões importantes estejam na agenda.",
+                    "en": "She also tries to make sure all the important meetings are on the calendar.",
+                    "intentions": [
+                        {
+                            "intentionId": "make-sure",
+                            "ptIntent": "garantir que",
+                            "enIntent": "make sure"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Depois de algumas semanas, Mariana não reclama mais dos dias no escritório e gosta de conversar com a equipe pessoalmente.",
+                    "en": "After a few weeks, Mariana doesn't complain about office days anymore, and she likes talking to the team in person.",
+                    "intentions": [
+                        {
+                            "intentionId": "nao-mais-any-longer-anymore",
+                            "ptIntent": "não reclama mais",
+                            "enIntent": "doesn't complain about office days anymore"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "used-to",
+                "at-first",
+                "my-commute-takes",
+                "e-se",
+                "consigo-sou-capaz",
+                "take-a-look",
+                "make-sure",
+                "nao-mais-any-longer-anymore"
+            ]
+        }
+    ]
+}

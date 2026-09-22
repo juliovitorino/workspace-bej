@@ -1,4 +1,9 @@
+import storiesA1 from "../data/stories/stories-a1.json";
+import storiesA2 from "../data/stories/stories-a2.json";
 import storiesB1 from "../data/stories/stories-b1.json";
+import storiesB2 from "../data/stories/stories-b2.json";
+import storiesC1 from "../data/stories/stories-c1.json";
+import storiesC2 from "../data/stories/stories-c2.json";
 
 export interface LocalStoryParagraphIntention {
   intentionId: string;
@@ -25,7 +30,12 @@ interface LocalStoryLibrary {
 }
 
 const libraries: Record<string, LocalStoryLibrary> = {
+  A1: storiesA1 as LocalStoryLibrary,
+  A2: storiesA2 as LocalStoryLibrary,
   B1: storiesB1 as LocalStoryLibrary,
+  B2: storiesB2 as LocalStoryLibrary,
+  C1: storiesC1 as LocalStoryLibrary,
+  C2: storiesC2 as LocalStoryLibrary,
 };
 
 function randomStory(stories: LocalStory[]): LocalStory {

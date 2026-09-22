@@ -1,0 +1,170 @@
+{
+    "stories": [
+        {
+            "id": "c1-family-8f3a19d2-5c74-4e61-9b28-3d7a6f10c452",
+            "englishLevel": "C1",
+            "topic": "family",
+            "titlePt": "Uma conversa que a família precisava ter",
+            "titleEn": "A Conversation the Family Needed to Have",
+            "paragraphs": [
+                {
+                    "pt": "Depois de meses evitando o assunto, meus irmãos e eu finalmente conversamos sobre como cuidar dos nossos pais à medida que eles envelhecem. Da minha perspectiva, ninguém deveria carregar toda a responsabilidade sozinho.",
+                    "en": "After months of avoiding the subject, my siblings and I finally talked about how to care for our parents as they get older. From my perspective, no one should have to carry the entire responsibility alone.",
+                    "intentions": [
+                        {
+                            "intentionId": "hedging-profissional",
+                            "ptIntent": "Da minha perspectiva",
+                            "enIntent": "From my perspective"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Minha irmã estava frustrada porque sentia que vinha fazendo mais do que todos nós. O que realmente importa é encontrarmos uma solução que seja justa para toda a família.",
+                    "en": "My sister was frustrated because she felt she had been doing more than the rest of us. What really matters is finding a solution that is fair to the whole family.",
+                    "intentions": [
+                        {
+                            "intentionId": "framing-e-argumentacao-avancada",
+                            "ptIntent": "O que realmente importa é",
+                            "enIntent": "What really matters is"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Meu irmão concordou em ajudar mais, desde que todos participassem das decisões importantes. Para mim, essa condição parecia perfeitamente razoável.",
+                    "en": "My brother agreed to help more, provided that everyone took part in the important decisions. To me, that condition seemed perfectly reasonable.",
+                    "intentions": [
+                        {
+                            "intentionId": "desde-que-sob-a-condicao-de-que",
+                            "ptIntent": "desde que",
+                            "enIntent": "provided that"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Então meu pai admitiu que deveria ter falado conosco antes sobre o que ele e minha mãe realmente queriam. Se pelo menos ele tivesse mencionado isso meses atrás, talvez tivéssemos evitado algumas discussões.",
+                    "en": "Then my father admitted that he should have talked to us earlier about what he and my mother actually wanted. If only he had mentioned it months ago, we might have avoided some arguments.",
+                    "intentions": [
+                        {
+                            "intentionId": "se-pelo-menos-tivesse",
+                            "ptIntent": "Se pelo menos",
+                            "enIntent": "If only"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Dito de outra forma, nosso maior problema não era falta de carinho, mas falta de comunicação. Todos queríamos ajudar, porém cada um tinha uma ideia diferente sobre como fazer isso.",
+                    "en": "To put it differently, our biggest problem wasn't a lack of love but a lack of communication. We all wanted to help, but each of us had a different idea of how to do it.",
+                    "intentions": [
+                        {
+                            "intentionId": "dito-de-outra-forma-colocando-de-outra-maneira",
+                            "ptIntent": "Dito de outra forma",
+                            "enIntent": "To put it differently"
+                        }
+                    ]
+                },
+                {
+                    "pt": "No fim da conversa, minha mãe sorriu e disse: 'Deixa o passado pra trás. O importante é que estamos conversando agora.' A tensão diminuiu, e começamos a organizar juntos os próximos meses.",
+                    "en": "At the end of the conversation, my mother smiled and said, 'Let bygones be bygones. What matters is that we're talking now.' The tension eased, and we started planning the next few months together.",
+                    "intentions": [
+                        {
+                            "intentionId": "let-bygones-be-bygones",
+                            "ptIntent": "Deixa o passado pra trás",
+                            "enIntent": "Let bygones be bygones"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "hedging-profissional",
+                "framing-e-argumentacao-avancada",
+                "desde-que-sob-a-condicao-de-que",
+                "se-pelo-menos-tivesse",
+                "dito-de-outra-forma-colocando-de-outra-maneira",
+                "let-bygones-be-bygones"
+            ]
+        },
+        {
+            "id": "c1-family-b742e6a1-31d9-47fc-a805-6e29c14f783b",
+            "englishLevel": "C1",
+            "topic": "family",
+            "titlePt": "O jantar de aniversário da minha mãe",
+            "titleEn": "My Mother's Birthday Dinner",
+            "paragraphs": [
+                {
+                    "pt": "No aniversário da minha mãe, decidimos reunir toda a família para um jantar surpresa. Curiosamente, ninguém contou o segredo, embora quase vinte pessoas soubessem da festa.",
+                    "en": "For my mother's birthday, we decided to bring the whole family together for a surprise dinner. Interestingly, no one gave away the secret, even though almost twenty people knew about the party.",
+                    "intentions": [
+                        {
+                            "intentionId": "curiosamente-interessante-notar-que",
+                            "ptIntent": "Curiosamente",
+                            "enIntent": "Interestingly"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ironicamente, meu pai, que normalmente esquece datas importantes, foi a pessoa que organizou quase tudo. Ele reservou o restaurante, confirmou os convidados e até escolheu o bolo.",
+                    "en": "Ironically, my father, who normally forgets important dates, was the person who organized almost everything. He booked the restaurant, confirmed the guests, and even chose the cake.",
+                    "intentions": [
+                        {
+                            "intentionId": "ironicamente",
+                            "ptIntent": "Ironicamente",
+                            "enIntent": "Ironically"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Mal minha mãe tinha entrado no restaurante, todos começaram a cantar parabéns. Por alguns segundos, ela ficou completamente sem palavras.",
+                    "en": "No sooner had my mother entered the restaurant than everyone started singing happy birthday. For a few seconds, she was completely speechless.",
+                    "intentions": [
+                        {
+                            "intentionId": "no-sooner-than",
+                            "ptIntent": "Mal",
+                            "enIntent": "No sooner"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Durante o jantar, meus irmãos começaram a contar histórias da nossa infância. Consequentemente, meus sobrinhos descobriram várias histórias engraçadas sobre os pais que nunca tinham ouvido antes.",
+                    "en": "During dinner, my siblings started telling stories from our childhood. Consequently, my nieces and nephews learned several funny stories about their parents that they had never heard before.",
+                    "intentions": [
+                        {
+                            "intentionId": "consequentemente-consequently",
+                            "ptIntent": "Consequentemente",
+                            "enIntent": "Consequently"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Na prática, isso significa que uma simples comemoração acabou aproximando diferentes gerações da família. Os adultos relembraram o passado, enquanto os mais jovens entenderam melhor de onde vieram.",
+                    "en": "What this means in practice is that a simple celebration ended up bringing different generations of the family closer together. The adults remembered the past, while the younger ones gained a better understanding of where they came from.",
+                    "intentions": [
+                        {
+                            "intentionId": "na-pratica-isso-significa-que",
+                            "ptIntent": "Na prática, isso significa que",
+                            "enIntent": "What this means in practice is that"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Antes de irmos embora, minha mãe agradeceu a todos e disse que não precisava de presentes caros. O ponto principal é que passar tempo juntos ainda é uma das coisas que ela mais valoriza.",
+                    "en": "Before we left, my mother thanked everyone and said she didn't need expensive gifts. The key takeaway is that spending time together is still one of the things she values most.",
+                    "intentions": [
+                        {
+                            "intentionId": "o-ponto-principal-que-voce-deve-lembrar-e",
+                            "ptIntent": "O ponto principal",
+                            "enIntent": "The key takeaway is that"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "curiosamente-interessante-notar-que",
+                "ironicamente",
+                "no-sooner-than",
+                "consequentemente-consequently",
+                "na-pratica-isso-significa-que",
+                "o-ponto-principal-que-voce-deve-lembrar-e"
+            ]
+        }
+    ]
+}
