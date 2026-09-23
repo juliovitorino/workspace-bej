@@ -1,6 +1,137 @@
 {
     "stories": [
         {
+            "id": "a2-daily-life-84f9bfc1-a4e2-43d3-bac8-1409942900e6",
+            "englishLevel": "A2",
+            "topic": "daily-life",
+            "titlePt": "Uma Manhã Agitada",
+            "titleEn": "A Busy Morning",
+            "paragraphs": [
+                {
+                    "pt": "Leo estava muito cansado na cozinha. Ele olhou para Julia e disse: \"Passei a noite toda acordado estudando para a prova.\"",
+                    "en": "Leo was very tired in the kitchen. He looked at Julia and said, \"I was up all night studying for the exam.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "i-was-up-all-night",
+                            "ptIntent": "Passei a noite toda acordado",
+                            "enIntent": "I was up all night"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Julia apontou para um objeto estranho na mesa. \"De onde veio essa caixa azul? E para que essa ferramenta é usada?\"",
+                    "en": "Julia pointed to a strange object on the table. \"Where did this blue box come from? And what is this tool used for?\"",
+                    "intentions": [
+                        {
+                            "intentionId": "de-onde-veio-sujeito",
+                            "ptIntent": "De onde veio essa caixa azul",
+                            "enIntent": "Where did this blue box come from"
+                        },
+                        {
+                            "intentionId": "para-que-algo-e-usado-serve-para-que",
+                            "ptIntent": "para que essa ferramenta é usada",
+                            "enIntent": "what is this tool used for"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Leo tentou explicar, mas ela continuou falando. Ele sorriu e disse: \"Deixa eu terminar, por favor.\"",
+                    "en": "Leo tried to explain, but she kept talking. He smiled and said, \"Let me finish, please.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "deixa-eu-terminar",
+                            "ptIntent": "Deixa eu terminar",
+                            "enIntent": "Let me finish"
+                        }
+                    ]
+                },
+                {
+                    "pt": "De repente, Leo derrubou uma xícara de café no chão. \"Foi sem querer!\", ele disse rápido. Ele ficou preocupado com a sujeira.",
+                    "en": "Suddenly, Leo knocked a coffee cup onto the floor. \"It was an accident!\", he said quickly. He got worried about the mess.",
+                    "intentions": [
+                        {
+                            "intentionId": "foi-sem-querer",
+                            "ptIntent": "Foi sem querer",
+                            "enIntent": "It was an accident"
+                        },
+                        {
+                            "intentionId": "fiquei-fiquei-com-emocao",
+                            "ptIntent": "ficou preocupado",
+                            "enIntent": "got worried"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Julia pegou um pano para ajudar. \"Você se importa se eu limpar isso? Nós devemos resolver os problemas um de cada vez.\"",
+                    "en": "Julia grabbed a cloth to help. \"Do you mind if I clean this? We should solve problems one at a time.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "do-you-mind-if-i",
+                            "ptIntent": "Você se importa se eu",
+                            "enIntent": "Do you mind if I"
+                        },
+                        {
+                            "intentionId": "one-at-a-time",
+                            "ptIntent": "um de cada vez",
+                            "enIntent": "one at a time"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Leo olhou para o relógio. \"Obrigado. Eu estou indo para o escritório daqui a pouco.\"",
+                    "en": "Leo looked at the clock. \"Thank you. I am heading to the office in a little while.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "estou-indo-esta-indo",
+                            "ptIntent": "estou indo para",
+                            "enIntent": "am heading to"
+                        },
+                        {
+                            "intentionId": "daqui-a-pouco",
+                            "ptIntent": "daqui a pouco",
+                            "enIntent": "in a little while"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ele não queria dar uma desculpa por se atrasar. Ele pensou: \"Tem que ser um bom dia. Com o tempo, eu vou aprender a dormir mais.\"",
+                    "en": "He did not want to make an excuse for being late. He thought, \"It has to be a good day. Over time, I will learn to sleep more.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "make-an-excuse",
+                            "ptIntent": "dar uma desculpa por",
+                            "enIntent": "make an excuse for"
+                        },
+                        {
+                            "intentionId": "tem-que-ser",
+                            "ptIntent": "Tem que ser",
+                            "enIntent": "It has to be"
+                        },
+                        {
+                            "intentionId": "over-time",
+                            "ptIntent": "Com o tempo",
+                            "enIntent": "Over time"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "i-was-up-all-night",
+                "de-onde-veio-sujeito",
+                "para-que-algo-e-usado-serve-para-que",
+                "deixa-eu-terminar",
+                "foi-sem-querer",
+                "fiquei-fiquei-com-emocao",
+                "do-you-mind-if-i",
+                "one-at-a-time",
+                "estou-indo-esta-indo",
+                "daqui-a-pouco",
+                "make-an-excuse",
+                "tem-que-ser",
+                "over-time"
+            ]
+        },
+        {
             "id": "a2-friendship-96ef0fd8-9780-4976-b871-6be53a782170",
             "englishLevel": "A2",
             "topic": "friendship",
