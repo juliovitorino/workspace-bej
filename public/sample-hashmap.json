@@ -15635,7 +15635,104 @@
     "tags": ["emphasis", "correlation", "addition", "not-only-but-also"],
     "related": [],
     "englishLevel": "B2"
-  }
+  },
+  {
+  "id": "ja-que-comecei-vou-ate-o-fim-in-for-a-penny",
+  "intention": "Já que comecei / já estou nessa, vou até o fim",
+  "english": "in for a penny, in for a pound",
+  "pattern": "In for a penny, in for a pound.",
+  "description": "Idiom usado quando alguém já se comprometeu com uma ação e decide ir até o fim, mesmo que isso envolva mais esforço, dinheiro ou risco. É especialmente associado ao inglês britânico.",
+  "category": "idioms",
+  "searchTerms": [
+    "já que comecei",
+    "vou até o fim",
+    "já estou nessa",
+    "agora vou até o fim",
+    "in for a penny",
+    "in for a pound"
+  ],
+  "examples": [
+    {
+      "pt": "Já começamos o projeto, então agora vamos até o fim.",
+      "en": "We've already started the project, so in for a penny, in for a pound.",
+      "ptIntent": "agora vamos até o fim",
+      "enIntent": "in for a penny, in for a pound"
+    },
+    {
+      "pt": "Já estou nessa, então vou até o fim.",
+      "en": "I'm already committed, so in for a penny, in for a pound.",
+      "ptIntent": "vou até o fim",
+      "enIntent": "in for a penny, in for a pound"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "commitment",
+    "decision",
+    "british-english"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
+{
+  "id": "estar-seria-melhor-better-off",
+  "intention": "Estar melhor / seria melhor / estaria melhor",
+  "english": "be better off / would be better off",
+  "pattern": "subject + be better off + verb-ing/noun OR subject + would be better off + verb-ing/noun",
+  "description": "Indica que alguém está em uma situação melhor ou ficaria em uma situação melhor como consequência de uma escolha, ação ou circunstância.",
+  "category": "advice",
+  "searchTerms": [
+    "estou melhor",
+    "está melhor",
+    "estaria melhor",
+    "seria melhor",
+    "ficaria melhor",
+    "better off",
+    "would be better off"
+  ],
+  "examples": [
+    {
+      "pt": "Estou melhor trabalhando de casa.",
+      "en": "I'm better off working from home.",
+      "ptIntent": "Estou melhor",
+      "enIntent": "better off"
+    },
+    {
+      "pt": "Ela está melhor sem aquele emprego.",
+      "en": "She's better off without that job.",
+      "ptIntent": "está melhor",
+      "enIntent": "better off"
+    },
+    {
+      "pt": "Seria melhor você ficar em casa.",
+      "en": "You'd be better off staying home.",
+      "ptIntent": "Seria melhor",
+      "enIntent": "better off"
+    },
+    {
+      "pt": "Seria melhor eu procurar outro emprego.",
+      "en": "I'd be better off looking for another job.",
+      "ptIntent": "Seria melhor",
+      "enIntent": "better off"
+    },
+    {
+      "pt": "Você estaria melhor sem ele.",
+      "en": "You'd be better off without him.",
+      "ptIntent": "estaria melhor",
+      "enIntent": "better off"
+    }
+  ],
+  "tags": [
+    "advice",
+    "better-off",
+    "situation",
+    "choice"
+  ],
+  "related": [
+    "if-i-were-you-id"
+  ],
+  "englishLevel": "B1"
+}
 
   ]
 }
