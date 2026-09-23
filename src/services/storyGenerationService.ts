@@ -15,6 +15,7 @@ export interface StoryParagraph {
 
 export interface StoryGenerationResult {
   id?: string;
+  source: "ai" | "local";
   titlePt: string;
   titleEn: string;
   paragraphs: StoryParagraph[];
@@ -266,7 +267,7 @@ export async function generateInterpretationStory(
       console.warn(
         "[StoryGenerationService] Gemini API key not configured. Using local fallback."
       );
-      return fallbackStory;
+      return { ...fallbackStory, source: "local" };
     }
 
     throw new Error(
@@ -315,7 +316,7 @@ export async function generateInterpretationStory(
       );
 
       if (fallbackStory) {
-        return fallbackStory;
+        return { ...fallbackStory, source: "local" };
       }
 
       console.warn(
@@ -345,8 +346,11 @@ export async function generateInterpretationStory(
   }
 
   try {
-    const parsed = JSON.parse(responseText) as StoryGenerationResult;
-    return validateStory(parsed, request.intentions);
+    const parsed = JSON.parse(responseText) as Omit<StoryGenerationResult, "source">;
+    return validateStory(
+      { ...parsed, source: "ai" },
+      request.intentions
+    );
   } catch (error) {
     if (error instanceof Error) {
       throw error;
