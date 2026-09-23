@@ -27,6 +27,17 @@ const THEMES = [
   "decisão"
 ];
 
+const TOPIC_MAP: Record<string, string> = {
+  cotidiano: "daily-life",
+  trabalho: "work",
+  viagem: "travel",
+  tecnologia: "technology",
+  família: "family",
+  amizade: "friendship",
+  surpresa: "surprise",
+  decisão: "decision"
+};
+
 
 function renderHighlightedText(
   text: string,
@@ -121,6 +132,9 @@ export function InterpretationPanel({
   const [showEnglish, setShowEnglish] = useState(false);
   const [generating, setGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [exportJson, setExportJson] = useState<string | null>(null);
+  const [exportFileName, setExportFileName] = useState<string>("");
+  const [copyFeedback, setCopyFeedback] = useState("Copiar JSON");
 
   const availableIntentions = useMemo(
     () =>
@@ -197,6 +211,121 @@ export function InterpretationPanel({
     } finally {
       setGenerating(false);
     }
+  }
+
+  function handleOpenExportJson() {
+    if (!story || story.source !== "ai") {
+      return;
+    }
+
+    try {
+      const topic = TOPIC_MAP[theme] ?? "daily-life";
+
+      const uuid =
+        typeof crypto !== "undefined" &&
+        typeof crypto.randomUUID === "function"
+          ? crypto.randomUUID()
+          : "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
+              /[xy]/g,
+              (character) => {
+                const random = Math.floor(Math.random() * 16);
+                const value =
+                  character === "x"
+                    ? random
+                    : (random & 0x3) | 0x8;
+
+                return value.toString(16);
+              }
+            );
+
+      const id =
+        `${englishLevel.toLowerCase()}-${topic}-${uuid}`;
+
+      const localStory = {
+        id,
+        englishLevel,
+        topic,
+        titlePt: story.titlePt,
+        titleEn: story.titleEn,
+        paragraphs: story.paragraphs,
+        intentionsUsed: story.intentionsUsed
+      };
+
+      setExportJson(JSON.stringify(localStory, null, 2));
+      setExportFileName(`${id}.json`);
+      setCopyFeedback("Copiar JSON");
+    } catch (error) {
+      console.error(
+        "[InterpretationPanel] Erro ao preparar JSON da história:",
+        error
+      );
+
+      setError(
+        "Não foi possível preparar o JSON da história para exportação."
+      );
+    }
+  }
+
+  async function handleCopyJson() {
+    if (!exportJson) {
+      return;
+    }
+
+    try {
+      if (
+        navigator.clipboard &&
+        typeof navigator.clipboard.writeText === "function"
+      ) {
+        await navigator.clipboard.writeText(exportJson);
+      } else {
+        const textArea = document.createElement("textarea");
+
+        textArea.value = exportJson;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-9999px";
+        textArea.style.top = "0";
+
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        const copied = document.execCommand("copy");
+        textArea.remove();
+
+        if (!copied) {
+          throw new Error("O navegador não permitiu copiar o JSON.");
+        }
+      }
+
+      setCopyFeedback("Copiado!");
+    } catch (error) {
+      console.error(
+        "[InterpretationPanel] Erro ao copiar JSON:",
+        error
+      );
+
+      setCopyFeedback("Não foi possível copiar");
+    }
+  }
+
+  function handleDownloadJson() {
+    if (!exportJson || !exportFileName) {
+      return;
+    }
+
+    const blob = new Blob([exportJson], {
+      type: "application/json;charset=utf-8"
+    });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+
+    link.href = url;
+    link.download = exportFileName;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    URL.revokeObjectURL(url);
   }
 
   return (
@@ -351,21 +480,44 @@ export function InterpretationPanel({
               )}
             </div>
 
-            <button
-              type="button"
-              className={
-                showEnglish
-                  ? "secondary-button"
-                  : "primary-button"
-              }
-              onClick={() =>
-                setShowEnglish((current) => !current)
-              }
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "0.75rem"
+              }}
             >
-              {showEnglish
-                ? "Ocultar versão em inglês"
-                : "Mostrar versão em inglês"}
-            </button>
+              {story.source === "ai" && (
+                <button
+                  type="button"
+                  className="secondary-button"
+                  style={{
+                    borderRadius: "999px",
+                    minWidth: "3.5rem"
+                  }}
+                  title="Exportar história gerada pela IA"
+                  onClick={handleOpenExportJson}
+                >
+                  {"{...}"}
+                </button>
+              )}
+
+              <button
+                type="button"
+                className={
+                  showEnglish
+                    ? "secondary-button"
+                    : "primary-button"
+                }
+                onClick={() =>
+                  setShowEnglish((current) => !current)
+                }
+              >
+                {showEnglish
+                  ? "Ocultar versão em inglês"
+                  : "Mostrar versão em inglês"}
+              </button>
+            </div>
           </div>
 
           <div className="interpretation-paragraphs">
@@ -396,6 +548,99 @@ export function InterpretationPanel({
               </section>
             ))}
           </div>
+
+          {exportJson && (
+            <div
+              role="dialog"
+              aria-modal="true"
+              aria-label="JSON da história"
+              onClick={() => setExportJson(null)}
+              style={{
+                position: "fixed",
+                inset: 0,
+                zIndex: 9999,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "1rem",
+                background: "rgba(0, 0, 0, 0.55)"
+              }}
+            >
+              <div
+                className="status-card"
+                onClick={(event) => event.stopPropagation()}
+                style={{
+                  width: "min(900px, 95vw)",
+                  maxHeight: "90vh",
+                  overflow: "auto",
+                  textAlign: "left"
+                }}
+              >
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  gap: "1rem",
+                  marginBottom: "1rem"
+                }}
+              >
+                <div>
+                  <p className="eyebrow">JSON da história</p>
+                  <strong>Pronto para alimentar a biblioteca local</strong>
+                </div>
+
+                <button
+                  type="button"
+                  className="secondary-button"
+                  onClick={() => setExportJson(null)}
+                  title="Fechar"
+                >
+                  Fechar
+                </button>
+              </div>
+
+              <pre
+                style={{
+                  maxHeight: "420px",
+                  overflow: "auto",
+                  whiteSpace: "pre-wrap",
+                  wordBreak: "break-word",
+                  padding: "1rem",
+                  borderRadius: "12px",
+                  background: "rgba(0, 0, 0, 0.05)"
+                }}
+              >
+                {exportJson}
+              </pre>
+
+              <div
+                style={{
+                  display: "flex",
+                  gap: "0.75rem",
+                  flexWrap: "wrap",
+                  marginTop: "1rem"
+                }}
+              >
+                <button
+                  type="button"
+                  className="secondary-button"
+                  onClick={handleCopyJson}
+                >
+                  {copyFeedback}
+                </button>
+
+                <button
+                  type="button"
+                  className="primary-button"
+                  onClick={handleDownloadJson}
+                >
+                  Baixar JSON
+                </button>
+              </div>
+              </div>
+            </div>
+          )}
 
           <div className="interpretation-used">
             <h3>Intenções utilizadas</h3>

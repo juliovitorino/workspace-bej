@@ -1,6 +1,168 @@
 {
     "stories": [
         {
+            "id": "a1-daily-life-5df8604b-1821-418b-8555-9250efd081dc",
+            "englishLevel": "A1",
+            "topic": "daily-life",
+            "titlePt": "Um Começo de Dia Engraçado",
+            "titleEn": "A Funny Start to the Day",
+            "paragraphs": [
+                {
+                    "pt": "Hoje o dia está ensolarado e bonito. É uma manhã perfeita para sair de casa.",
+                    "en": "Today the day is sunny and beautiful. It is a perfect morning to go outside.",
+                    "intentions": []
+                },
+                {
+                    "pt": "Você decide dar uma caminhada no parque perto de sua casa.",
+                    "en": "You decide to take a walk in the park near your house.",
+                    "intentions": [
+                        {
+                            "intentionId": "take-a-walk",
+                            "ptIntent": "dar uma caminhada",
+                            "enIntent": "take a walk"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Antes de sair, você precisa encontrar as chaves de casa. Você tinha as chaves na mesa ontem à noite.",
+                    "en": "Before leaving, you need to find the house keys. You had the keys on the table last night.",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-tinha",
+                            "ptIntent": "Você tinha as chaves",
+                            "enIntent": "You had the keys"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Você procura na cozinha inteira. Às vezes, é fácil cometer um erro quando estamos com pressa.",
+                    "en": "You search the entire kitchen. Sometimes, it is easy to make a mistake when we are in a hurry.",
+                    "intentions": [
+                        {
+                            "intentionId": "make-a-mistake",
+                            "ptIntent": "cometer um erro",
+                            "enIntent": "make a mistake"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Seu irmão olha para você e sorri. Ele diz: \"Você tem as chaves na sua mão!\"",
+                    "en": "Your brother looks at you and smiles. He says: \"You have the keys in your hand!\"",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-tem",
+                            "ptIntent": "Você tem as chaves",
+                            "enIntent": "You have the keys"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Você olha para a sua mão e ri. Agora, você está feliz e pronto para o seu passeio.",
+                    "en": "You look at your hand and laugh. Now, you are happy and ready for your walk.",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-esta",
+                            "ptIntent": "você está feliz",
+                            "enIntent": "you are happy"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "take-a-walk",
+                "voce-tinha",
+                "make-a-mistake",
+                "voce-tem",
+                "voce-esta"
+            ]
+        },
+        {
+            "id": "a1-daily-life-4134301e-9ba5-44dd-a13a-134d67b98d0b",
+            "englishLevel": "A1",
+            "topic": "daily-life",
+            "titlePt": "Um Dia de Visita",
+            "titleEn": "A Day of Visiting",
+            "paragraphs": [
+                {
+                    "pt": "Leo quer falar com seu amigo Lucas. Ele precisa dar uma notícia importante.",
+                    "en": "Leo wants to talk to his friend Lucas. He needs to give important news.",
+                    "intentions": []
+                },
+                {
+                    "pt": "Leo decide fazer uma ligação para o Lucas de tarde. Ele pega o telefone.",
+                    "en": "Leo decides to make a call to Lucas in the afternoon. He takes his phone.",
+                    "intentions": [
+                        {
+                            "intentionId": "make-a-call",
+                            "ptIntent": "fazer uma ligação para",
+                            "enIntent": "make a call to"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Lucas atende o telefone. Leo diz: 'Eu visitei nossa antiga escola ontem.'",
+                    "en": "Lucas answers the phone. Leo says: 'I visited our old school yesterday.'",
+                    "intentions": [
+                        {
+                            "intentionId": "momento-passado-com-marcador-de-tempo",
+                            "ptIntent": "visitei nossa antiga escola ontem",
+                            "enIntent": "visited our old school yesterday"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Lucas fica muito feliz. Ele diz: 'Venha para minha casa agora. Nós podemos conversar aqui.'",
+                    "en": "Lucas is very happy. He says: 'Come to my house now. We can talk here.'",
+                    "intentions": []
+                },
+                {
+                    "pt": "Leo chega na casa de Lucas. Lucas abre a porta e diz: 'Por favor, sente-se.'",
+                    "en": "Leo arrives at Lucas's house. Lucas opens the door and says: 'Please, take a seat.'",
+                    "intentions": [
+                        {
+                            "intentionId": "take-a-seat",
+                            "ptIntent": "sente-se",
+                            "enIntent": "take a seat"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Lucas sorri para o amigo. Ele diz: 'Você é um bom amigo por vir aqui.'",
+                    "en": "Lucas smiles at his friend. He says: 'You are a good friend for coming here.'",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-e",
+                            "ptIntent": "Você é um bom amigo",
+                            "enIntent": "You are a good friend"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Eles conversam por uma hora e bebem café. Depois, Leo precisa ir embora.",
+                    "en": "They talk for one hour and drink coffee. Then, Leo needs to leave.",
+                    "intentions": []
+                },
+                {
+                    "pt": "Lucas se despede na porta. Ele diz: 'Tchau, Leo. Se cuide na rua!'",
+                    "en": "Lucas says goodbye at the door. He says: 'Goodbye, Leo. Take care on the street!'",
+                    "intentions": [
+                        {
+                            "intentionId": "take-care",
+                            "ptIntent": "Se cuide",
+                            "enIntent": "Take care"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "make-a-call",
+                "momento-passado-com-marcador-de-tempo",
+                "take-a-seat",
+                "voce-e",
+                "take-care"
+            ]
+        },
+        {
             "id": "a1-work-34a2ae86-03c1-4b9b-9254-5ad7db1886b0",
             "englishLevel": "A1",
             "topic": "work",
