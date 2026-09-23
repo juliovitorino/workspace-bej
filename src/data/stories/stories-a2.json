@@ -1,6 +1,125 @@
 {
     "stories": [
         {
+            "id": "a2-friendship-ed74f594-7a9a-4969-a1e0-82d8ecf6d0dd",
+            "englishLevel": "A2",
+            "topic": "friendship",
+            "titlePt": "Um Encontro Inesperado",
+            "titleEn": "An Unexpected Meeting",
+            "paragraphs": [
+                {
+                    "pt": "Leo conheceu Sam na biblioteca ontem. Foi um dia muito especial na semana passada porque eles começaram a conversar sobre livros. Leo perguntou: \"De onde você vem?\"",
+                    "en": "Leo met Sam at the library yesterday. It was a very special day last week because they started talking about books. Leo asked, \"Where do you come from?\"",
+                    "intentions": [
+                        {
+                            "intentionId": "foi-foram-fui-com-marcador-de-tempo",
+                            "ptIntent": "Foi um dia muito especial na semana passada",
+                            "enIntent": "It was a very special day last week"
+                        },
+                        {
+                            "intentionId": "de-onde-sujeito-verbo",
+                            "ptIntent": "De onde você vem?",
+                            "enIntent": "Where do you come from?"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Sam explicou que é um estudante de intercâmbio. Ele disse que quer conhecer a cidade. Leo pensou em um plano e disse: \"Eu tenho que te mostrar o parque principal.\"",
+                    "en": "Sam explained that he is an exchange student. He said he wants to see the city. Leo thought of a plan and said, \"I have to show you the main park.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "tem-que-tenho-que-tenha-que",
+                            "ptIntent": "tenho que te mostrar",
+                            "enIntent": "have to show you"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Leo adora andar de bicicleta perto do lago e acha que Sam também vai gostar. \"Nós podemos ir lá durante o fim de semana\", sugeriu ele.",
+                    "en": "Leo loves riding his bike near the lake and thinks Sam will like it too. \"We can go there over the weekend,\" he suggested.",
+                    "intentions": [
+                        {
+                            "intentionId": "over-the-weekend",
+                            "ptIntent": "durante o fim de semana",
+                            "enIntent": "over the weekend"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Sam começou a falar sobre seus planos de viagem, mas Leo estava tão animado que o interrompeu. Sam sorriu e disse: \"Deixa eu terminar de falar sobre a minha ideia primeiro!\"",
+                    "en": "Sam started talking about his travel plans, but Leo was so excited that he interrupted him. Sam smiled and said, \"Let me finish talking about my idea first!\"",
+                    "intentions": [
+                        {
+                            "intentionId": "deixa-eu-terminar",
+                            "ptIntent": "Deixa eu terminar de falar",
+                            "enIntent": "Let me finish talking"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Sam queria fazer um piquenique à tarde. Ele olhou para Leo e perguntou: \"Que tal comprar algumas frutas e sanduíches na padaria?\"",
+                    "en": "Sam wanted to have an afternoon picnic. He looked at Leo and asked, \"How about buying some fruits and sandwiches at the bakery?\"",
+                    "intentions": [
+                        {
+                            "intentionId": "how-about",
+                            "ptIntent": "Que tal comprar",
+                            "enIntent": "How about buying"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Leo sorriu e concordou imediatamente. Ele disse: \"Não vejo a hora de comer perto do lago! Nós vamos conseguir ótimas fotos lá.\"",
+                    "en": "Leo smiled and agreed immediately. He said, \"I can't wait to eat near the lake! We will get great photos there.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "i-cant-wait",
+                            "ptIntent": "Não vejo a hora de comer",
+                            "enIntent": "I can't wait to eat"
+                        },
+                        {
+                            "intentionId": "vou-conseguir-resultado",
+                            "ptIntent": "vamos conseguir ótimas fotos",
+                            "enIntent": "will get great photos"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Enquanto eles planejam o piquenique, eles aprendem muito sobre a cultura um do outro. É incrível como uma nova amizade pode crescer rápido.",
+                    "en": "While they plan the picnic, they learn a lot about each other's culture. It is amazing how fast a new friendship can grow.",
+                    "intentions": [
+                        {
+                            "intentionId": "while-clause",
+                            "ptIntent": "Enquanto eles planejam",
+                            "enIntent": "While they plan"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Leo quer apresentar Sam para seus outros amigos na próxima semana. Quem sabe eles possam fazer uma grande viagem juntos no futuro.",
+                    "en": "Leo wants to introduce Sam to his other friends next week. Who knows, maybe they can go on a big trip together in the future.",
+                    "intentions": [
+                        {
+                            "intentionId": "quem-sabe",
+                            "ptIntent": "Quem sabe",
+                            "enIntent": "Who knows"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "foi-foram-fui-com-marcador-de-tempo",
+                "de-onde-sujeito-verbo",
+                "tem-que-tenho-que-tenha-que",
+                "over-the-weekend",
+                "deixa-eu-terminar",
+                "how-about",
+                "i-cant-wait",
+                "vou-conseguir-resultado",
+                "while-clause",
+                "quem-sabe"
+            ]
+        },
+        {
             "id": "a2-work-9b47b634-23ab-4ac2-b63e-9a421f018f65",
             "englishLevel": "A2",
             "topic": "work",
