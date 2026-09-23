@@ -15732,6 +15732,65 @@
     "if-i-were-you-id"
   ],
   "englishLevel": "B1"
+},
+{
+  "id": "sendo-que-considerando-que-given-that",
+  "intention": "Sendo que / considerando que / já que",
+  "english": "given that / considering that / since",
+  "pattern": "main clause + given that / considering that / since + clause",
+  "description": "Usado para acrescentar uma informação que explica, justifica ou serve de contexto para o que foi dito. Em português brasileiro, frequentemente pensamos 'sendo que...'. Em inglês, evite traduzir literalmente como 'being that'. Use 'given that' quando quiser destacar uma condição ou fato relevante, 'considering that' quando a ideia for 'levando em consideração que', e 'since' quando a relação for mais naturalmente de justificativa ou causa.",
+  "category": "reason-context",
+  "searchTerms": [
+    "sendo que",
+    "considerando que",
+    "levando em consideração que",
+    "dado que",
+    "já que",
+    "given that",
+    "considering that",
+    "since"
+  ],
+  "examples": [
+    {
+      "pt": "Qual é o perigo de manter minha API key exposta, sendo que ela é apenas uma conta demo?",
+      "en": "What's the risk of leaving my API key exposed, given that it's just a demo account?",
+      "ptIntent": "sendo que",
+      "enIntent": "given that"
+    },
+    {
+      "pt": "Não vejo muito problema nisso, sendo que ninguém mais usa esse sistema.",
+      "en": "I don't see much of a problem with that, considering that nobody else uses this system.",
+      "ptIntent": "sendo que",
+      "enIntent": "considering that"
+    },
+    {
+      "pt": "Por que eu deveria pagar agora, sendo que posso continuar usando a versão gratuita?",
+      "en": "Why should I pay now, given that I can keep using the free version?",
+      "ptIntent": "sendo que",
+      "enIntent": "given that"
+    },
+    {
+      "pt": "Não precisamos complicar o MVP, sendo que ele já resolve o nosso problema.",
+      "en": "We don't need to complicate the MVP, since it already solves our problem.",
+      "ptIntent": "sendo que",
+      "enIntent": "since"
+    },
+    {
+      "pt": "Acho que foi um bom resultado, sendo que tivemos pouco tempo para terminar.",
+      "en": "I think it was a good result, considering that we had very little time to finish.",
+      "ptIntent": "sendo que",
+      "enIntent": "considering that"
+    }
+  ],
+  "tags": [
+    "reason",
+    "context",
+    "explanation",
+    "connector",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "B1"
 }
 
   ]
