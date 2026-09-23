@@ -1,6 +1,113 @@
 {
     "stories": [
         {
+            "id": "a1-daily-life-07ac8d23-03f1-4427-a1fc-1bd42b174a20",
+            "englishLevel": "A1",
+            "topic": "daily-life",
+            "titlePt": "Um Dia Simples no Parque",
+            "titleEn": "A Simple Day in the Park",
+            "paragraphs": [
+                {
+                    "pt": "Hoje é sábado. Eu estou muito feliz porque o dia está bonito.",
+                    "en": "Today is Saturday. I am very happy because the day is beautiful.",
+                    "intentions": [
+                        {
+                            "intentionId": "sou-estou-agora",
+                            "ptIntent": "Eu estou",
+                            "enIntent": "I am"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ontem eu trabalhei muito no escritório.",
+                    "en": "Yesterday I worked a lot in the office.",
+                    "intentions": [
+                        {
+                            "intentionId": "momento-passado-com-marcador-de-tempo",
+                            "ptIntent": "Ontem eu trabalhei",
+                            "enIntent": "Yesterday I worked"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Hoje de manhã, eu fui para o parque perto da minha casa.",
+                    "en": "This morning, I went to the park near my house.",
+                    "intentions": [
+                        {
+                            "intentionId": "eu-fui-para",
+                            "ptIntent": "eu fui para",
+                            "enIntent": "I went to"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Eu gosto de dar uma caminhada quando o sol está brilhando.",
+                    "en": "I like to take a walk when the sun is shining.",
+                    "intentions": [
+                        {
+                            "intentionId": "take-a-walk",
+                            "ptIntent": "dar uma caminhada",
+                            "enIntent": "take a walk"
+                        }
+                    ]
+                },
+                {
+                    "pt": "No parque, eu vejo meu amigo Bob. Eu digo: 'Olá Bob! Você gosta de café?'",
+                    "en": "In the park, I see my friend Bob. I say: 'Hello Bob! You like coffee?'",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-gosta-de",
+                            "ptIntent": "Você gosta de",
+                            "enIntent": "You like"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Bob sorri e responde: 'Sim! Você quer ir à cafeteria comigo agora?'",
+                    "en": "Bob smiles and answers: 'Yes! You want to go to the coffee shop with me now?'",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-quer",
+                            "ptIntent": "Você quer",
+                            "enIntent": "You want"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Eu peço um chá em vez de café. Eu cometo um erro porque o chá está muito quente.",
+                    "en": "I order a tea instead of coffee. I make a mistake because the tea is very hot.",
+                    "intentions": [
+                        {
+                            "intentionId": "make-a-mistake",
+                            "ptIntent": "cometo um erro",
+                            "enIntent": "make a mistake"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Bob diz: 'Cuidado! Você precisa esperar o chá esfriar.' Nós rimos juntos.",
+                    "en": "Bob says: 'Be careful! You need to wait for the tea to cool down.' We laugh together.",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-precisa",
+                            "ptIntent": "Você precisa",
+                            "enIntent": "You need"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "sou-estou-agora",
+                "momento-passado-com-marcador-de-tempo",
+                "eu-fui-para",
+                "take-a-walk",
+                "voce-gosta-de",
+                "voce-quer",
+                "make-a-mistake",
+                "voce-precisa"
+            ]
+        },
+        {
             "id": "a1-daily-life-5df8604b-1821-418b-8555-9250efd081dc",
             "englishLevel": "A1",
             "topic": "daily-life",
