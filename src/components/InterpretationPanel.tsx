@@ -642,6 +642,33 @@ export function InterpretationPanel({
             </div>
           )}
 
+          {story.source === "local" && (
+            <div
+              role="status"
+              style={{
+                display: "flex",
+                alignItems: "flex-start",
+                gap: "0.75rem",
+                marginTop: "1.5rem",
+                padding: "0.9rem 1rem",
+                border: "1px solid rgba(202, 138, 4, 0.28)",
+                borderRadius: "12px",
+                background: "rgba(254, 240, 138, 0.28)",
+                color: "inherit"
+              }}
+            >
+              <span aria-hidden="true">🟡</span>
+
+              <div>
+                <strong>História da biblioteca local</strong>
+                <p style={{ margin: "0.25rem 0 0" }}>
+                  Esta história foi carregada da biblioteca local porque a IA
+                  não estava disponível no momento.
+                </p>
+              </div>
+            </div>
+          )}
+
           <div className="interpretation-used">
             <h3>Intenções utilizadas</h3>
 
