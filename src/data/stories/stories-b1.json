@@ -1,6 +1,87 @@
 {
     "stories": [
         {
+            "id": "b1-daily-life-b090063c-eba2-4a4b-8768-d1b957e9bafa",
+            "englishLevel": "B1",
+            "topic": "daily-life",
+            "titlePt": "Uma Pausa Necessária",
+            "titleEn": "A Much-Needed Break",
+            "paragraphs": [
+                {
+                    "pt": "Lucas olhou para a tela do computador. Ele estava trabalhando em casa há dez horas seguidas e sentia os olhos pesados.",
+                    "en": "Lucas looked at his computer screen. He had been working from home for ten hours straight and his eyes felt heavy.",
+                    "intentions": []
+                },
+                {
+                    "pt": "Ele fechou o notebook e suspirou. \"Estou cansado de trabalhar o dia todo\", pensou ele.",
+                    "en": "He closed his laptop and sighed. \"I'm sick of working all day long,\" he thought.",
+                    "intentions": [
+                        {
+                            "intentionId": "im-sick-of-it",
+                            "ptIntent": "Estou cansado de trabalhar o dia todo",
+                            "enIntent": "I'm sick of working all day long"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ele pegou o celular e decidiu mandar uma mensagem para sua antiga amiga, Sofia. Ele escreveu: \"Oi Sofia! Estou sentindo que preciso fazer uma pausa. Você está livre?\"",
+                    "en": "He grabbed his phone and decided to message his old friend, Sofia. He wrote: \"Hey Sofia! I feel like I need to take a break. Are you free?\"",
+                    "intentions": [
+                        {
+                            "intentionId": "estou-sentindo-que-preciso",
+                            "ptIntent": "Estou sentindo que preciso fazer uma pausa",
+                            "enIntent": "I feel like I need to take a break"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Sofia respondeu rapidamente. Ela sugeriu que se encontrassem na cafeteria favorita deles perto dali. \"Vamos colocar o papo em dia tomando um café\", ela sugeriu.",
+                    "en": "Sofia replied quickly. She suggested meeting at their favorite local coffee shop nearby. \"Let's catch up over some coffee,\" she suggested.",
+                    "intentions": [
+                        {
+                            "intentionId": "lets-catch-up",
+                            "ptIntent": "Vamos colocar o papo em dia",
+                            "enIntent": "Let's catch up"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Meia hora depois, eles se encontraram no local. A cafeteria estava cheia, mas eles conseguiram uma mesa perto da janela.",
+                    "en": "Half an hour later, they met at the place. The coffee shop was crowded, but they got a table near the window.",
+                    "intentions": [
+                        {
+                            "intentionId": "contrast-pattern",
+                            "ptIntent": "A cafeteria estava cheia, mas eles conseguiram uma mesa perto da janela",
+                            "enIntent": "The coffee shop was crowded, but they got a table near the window"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Eles conversaram sobre suas vidas ocupadas e riram muito. \"Nós deveríamos fazer um esforço para nos ver com mais frequência\", disse Sofia.",
+                    "en": "They talked about their busy lives and laughed a lot. \"We should make an effort to see each other more often,\" Sofia said.",
+                    "intentions": [
+                        {
+                            "intentionId": "make-an-effort",
+                            "ptIntent": "fazer um esforço para nos ver",
+                            "enIntent": "make an effort to see each other"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Aquele encontro simples fez com que Lucas se sentisse muito melhor. Ele percebeu que a vida não era apenas trabalho.",
+                    "en": "That simple meeting made Lucas feel much better. He realized that life was not just about work.",
+                    "intentions": []
+                }
+            ],
+            "intentionsUsed": [
+                "im-sick-of-it",
+                "estou-sentindo-que-preciso",
+                "lets-catch-up",
+                "contrast-pattern",
+                "make-an-effort"
+            ]
+        },
+        {
             "id": "b1-work-001",
             "englishLevel": "B1",
             "topic": "work",
