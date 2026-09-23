@@ -1,6 +1,154 @@
 {
     "stories": [
         {
+            "id": "a2-daily-life-fc818d1b-68b7-4589-af46-43b45fa13ce7",
+            "englishLevel": "A2",
+            "topic": "daily-life",
+            "titlePt": "A Escolha de Lucas",
+            "titleEn": "Lucas's Choice",
+            "paragraphs": [
+                {
+                    "pt": "No começo, Lucas não sabia o que fazer com seu tempo livre. Ele queria aprender algo novo e divertido.",
+                    "en": "At first, Lucas did not know what to do with his free time. He wanted to learn something new and fun.",
+                    "intentions": [
+                        {
+                            "intentionId": "at-first",
+                            "ptIntent": "No começo",
+                            "enIntent": "At first"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Durante o fim de semana, ele olhou alguns cursos na internet. Ele pensou em culinária, jardinagem e pintura.",
+                    "en": "Over the weekend, he looked at some courses on the internet. He thought about cooking, gardening, and painting.",
+                    "intentions": [
+                        {
+                            "intentionId": "over-the-weekend",
+                            "ptIntent": "Durante o fim de semana",
+                            "enIntent": "Over the weekend"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ele decidiu conversar com sua amiga Sofia para pedir ajuda. Ele queria dizer a ela que estava entediado.",
+                    "en": "He decided to talk to his friend Sofia to ask for help. He wanted to tell her that he was bored.",
+                    "intentions": [
+                        {
+                            "intentionId": "say-tell-talk-speak",
+                            "ptIntent": "conversar com",
+                            "enIntent": "talk to"
+                        },
+                        {
+                            "intentionId": "say-tell-talk-speak",
+                            "ptIntent": "dizer a ela",
+                            "enIntent": "tell her"
+                        }
+                    ]
+                },
+                {
+                    "pt": "— E se eu fizer um curso de culinária? — Lucas perguntou. — Eu realmente gosto de comer coisas gostosas.",
+                    "en": "\"What if I take a cooking course?\" Lucas asked. \"I really like to eat delicious things.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "e-se",
+                            "ptIntent": "E se eu fizer",
+                            "enIntent": "What if I take"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Sofia sorriu e disse: — Isso faz sentido! Você sempre cozinha para nós quando nos visitamos.",
+                    "en": "Sofia smiled and said: \"That makes sense! You always cook for us when we visit.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "make-sense",
+                            "ptIntent": "faz sentido",
+                            "enIntent": "makes sense"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Lucas ainda estava na dúvida. Sofia disse: — Não se preocupe, leve o tempo que precisar para decidir. É uma decisão importante.",
+                    "en": "Lucas was still in doubt. Sofia said: \"Don't worry, take your time to decide. It is an important decision.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "take-your-time",
+                            "ptIntent": "leve o tempo que precisar",
+                            "enIntent": "take your time"
+                        }
+                    ]
+                },
+                {
+                    "pt": "— Você precisa fazer uma escolha que te faça feliz — ela adicionou enquanto ela bebia seu chá.",
+                    "en": "\"You need to make a choice that makes you happy,\" she added while she drank her tea.",
+                    "intentions": [
+                        {
+                            "intentionId": "make-a-choice",
+                            "ptIntent": "fazer uma escolha",
+                            "enIntent": "make a choice"
+                        },
+                        {
+                            "intentionId": "while-clause",
+                            "ptIntent": "enquanto ela bebia",
+                            "enIntent": "while she drank"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Mais tarde, Lucas comprou os ingredientes para sua primeira receita. Ele ficou mais animado depois de comprar tudo.",
+                    "en": "Later on, Lucas bought the ingredients for his first recipe. He got more excited after buying everything.",
+                    "intentions": [
+                        {
+                            "intentionId": "later-on",
+                            "ptIntent": "Mais tarde",
+                            "enIntent": "Later on"
+                        },
+                        {
+                            "intentionId": "fiquei-mais-comparativo",
+                            "ptIntent": "ficou mais animado",
+                            "enIntent": "got more excited"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ao longo do tempo, ele aprendeu a fazer pães incríveis. Suas habilidades melhoraram muito rápido.",
+                    "en": "Over time, he learned to make amazing bread. His skills improved very fast.",
+                    "intentions": [
+                        {
+                            "intentionId": "over-time",
+                            "ptIntent": "Ao longo do tempo",
+                            "enIntent": "Over time"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Agora ele sabe que seu próximo fim de semana vai ser delicioso. Ele vai preparar um banquete para seus amigos.",
+                    "en": "Now he knows that his next weekend will be delicious. He will prepare a feast for his friends.",
+                    "intentions": [
+                        {
+                            "intentionId": "vou-vai-ficar-ser",
+                            "ptIntent": "vai ser",
+                            "enIntent": "will be"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "at-first",
+                "over-the-weekend",
+                "say-tell-talk-speak",
+                "e-se",
+                "make-sense",
+                "take-your-time",
+                "make-a-choice",
+                "while-clause",
+                "later-on",
+                "fiquei-mais-comparativo",
+                "over-time",
+                "vou-vai-ficar-ser"
+            ]
+        },
+        {
             "id": "a2-friendship-ed74f594-7a9a-4969-a1e0-82d8ecf6d0dd",
             "englishLevel": "A2",
             "topic": "friendship",
