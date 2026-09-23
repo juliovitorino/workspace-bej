@@ -1,6 +1,256 @@
 {
     "stories": [
         {
+            "id": "a2-friendship-96ef0fd8-9780-4976-b871-6be53a782170",
+            "englishLevel": "A2",
+            "topic": "friendship",
+            "titlePt": "O Novo Vizinho e a Velha Amizade",
+            "titleEn": "The New Neighbor and the Old Friendship",
+            "paragraphs": [
+                {
+                    "pt": "Leo e Lucas eram melhores amigos de infância. Naquela época, eles brincavam no parque todos os dias depois da escola.",
+                    "en": "Leo and Lucas were childhood best friends. Back then, they played in the park every day after school.",
+                    "intentions": [
+                        {
+                            "intentionId": "back-then",
+                            "ptIntent": "Naquela época",
+                            "enIntent": "Back then"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Foi há pouco tempo que Lucas se mudou de volta para a cidade. Leo ficou muito feliz em ver seu velho amigo novamente.",
+                    "en": "It was not long ago that Lucas moved back to the city. Leo was very happy to see his old friend again.",
+                    "intentions": [
+                        {
+                            "intentionId": "foi-ha-pouco-tempo",
+                            "ptIntent": "Foi há pouco tempo que",
+                            "enIntent": "It was not long ago that"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Eles se encontraram em uma cafeteria. Leo disse: \"Que bom que você voltou! Senti muito a sua falta.\"",
+                    "en": "They met at a coffee shop. Leo said, \"I'm glad you came back! I missed you a lot.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "que-bom-que",
+                            "ptIntent": "Que bom que",
+                            "enIntent": "I'm glad"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Lucas sorriu e mostrou um belo desenho. Leo perguntou: \"Quem te ensinou isso? É incrível!\"",
+                    "en": "Lucas smiled and showed a beautiful drawing. Leo asked, \"Who taught you this? It's amazing!\"",
+                    "intentions": [
+                        {
+                            "intentionId": "quem-te-verbo-algo",
+                            "ptIntent": "Quem te ensinou isso",
+                            "enIntent": "Who taught you this"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Lucas respondeu: \"Eu aprendi sozinho. Hoje, estou com vontade de pintar o parque antigo. Você quer ir comigo?\"",
+                    "en": "Lucas replied, \"I learned by myself. Today, I feel like painting the old park. Do you want to go with me?\"",
+                    "intentions": [
+                        {
+                            "intentionId": "estou-com-vontade-de",
+                            "ptIntent": "estou com vontade de pintar",
+                            "enIntent": "I feel like painting"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Leo pensou: \"Eu tenho que fazer uma escolha agora: trabalhar ou me divertir.\"",
+                    "en": "Leo thought, \"I have to make a choice now: work or have fun.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "tem-que-tenho-que-tenha-que",
+                            "ptIntent": "tenho que",
+                            "enIntent": "have to"
+                        },
+                        {
+                            "intentionId": "make-a-choice",
+                            "ptIntent": "fazer uma escolha",
+                            "enIntent": "make a choice"
+                        }
+                    ]
+                },
+                {
+                    "pt": "No parque, Leo percebeu que gostava de arte tanto quanto Lucas gostava. Eles passaram a tarde inteira rindo.",
+                    "en": "At the park, Leo realized he liked art as much as Lucas did. They spent the whole afternoon laughing.",
+                    "intentions": [
+                        {
+                            "intentionId": "tanto-quanto",
+                            "ptIntent": "tanto quanto",
+                            "enIntent": "as much as"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Antes de ir embora, Lucas disse: \"Lembre de trazer seus próprios pincéis na próxima vez.\"",
+                    "en": "Before leaving, Lucas said, \"Remember to bring your own brushes next time.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "nao-esqueca-de-lembre-de-acao-futura",
+                            "ptIntent": "Lembre de trazer",
+                            "enIntent": "Remember to bring"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ao longo dos próximos dias, eles se reuniram todas as tardes para pintar e conversar sobre o passado.",
+                    "en": "Over the next few days, they met every afternoon to paint and talk about the past.",
+                    "intentions": [
+                        {
+                            "intentionId": "over-the-next-few-days",
+                            "ptIntent": "Ao longo dos próximos dias",
+                            "enIntent": "Over the next few days"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "back-then",
+                "foi-ha-pouco-tempo",
+                "que-bom-que",
+                "quem-te-verbo-algo",
+                "estou-com-vontade-de",
+                "tem-que-tenho-que-tenha-que",
+                "make-a-choice",
+                "tanto-quanto",
+                "nao-esqueca-de-lembre-de-acao-futura",
+                "over-the-next-few-days"
+            ]
+        },
+        {
+            "id": "a2-daily-life-f0c053b1-7e18-4843-a99c-784911623e3d",
+            "englishLevel": "A2",
+            "topic": "daily-life",
+            "titlePt": "Um Começo de Dia Agitado",
+            "titleEn": "A Busy Start of the Day",
+            "paragraphs": [
+                {
+                    "pt": "Hoje de manhã, há muito barulho na rua. Eu preciso estar calmo para começar o dia bem.",
+                    "en": "This morning, there is a lot of noise on the street. I need to be calm to start the day well.",
+                    "intentions": [
+                        {
+                            "intentionId": "haver-tem-houve-tinha-sentido-de-existir",
+                            "ptIntent": "há",
+                            "enIntent": "there is"
+                        },
+                        {
+                            "intentionId": "tenho-que-ter-estado",
+                            "ptIntent": "preciso estar calmo",
+                            "enIntent": "need to be calm"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Eu olho para o meu armário. Eu estou meio cansado hoje, mas eu preciso fazer uma escolha rápida sobre o que vestir.",
+                    "en": "I look at my closet. I'm kind of tired today, but I need to make a choice quickly about what to wear.",
+                    "intentions": [
+                        {
+                            "intentionId": "im-kind-of",
+                            "ptIntent": "estou meio cansado",
+                            "enIntent": "I'm kind of tired"
+                        },
+                        {
+                            "intentionId": "make-a-choice",
+                            "ptIntent": "fazer uma escolha",
+                            "enIntent": "make a choice"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Leva dez minutos para eu achar minha camisa favorita. Depois disso, eu preciso ter minhas chaves antes de sair.",
+                    "en": "It takes me ten minutes to find my favorite shirt. After that, I need to have my keys before leaving.",
+                    "intentions": [
+                        {
+                            "intentionId": "take-time",
+                            "ptIntent": "Leva dez minutos para eu achar",
+                            "enIntent": "takes me ten minutes to find"
+                        },
+                        {
+                            "intentionId": "tenho-que-ter-posse-real",
+                            "ptIntent": "preciso ter minhas chaves",
+                            "enIntent": "need to have my keys"
+                        }
+                    ]
+                },
+                {
+                    "pt": "De repente, eu vejo um gato preto na sala de estar. De onde veio esse gato?",
+                    "en": "Suddenly, I see a black cat in the living room. Where did this cat come from?",
+                    "intentions": [
+                        {
+                            "intentionId": "de-onde-veio-sujeito",
+                            "ptIntent": "De onde veio esse gato?",
+                            "enIntent": "Where did this cat come from?"
+                        }
+                    ]
+                },
+                {
+                    "pt": "A propósito, a janela da sala estava aberta. Tomara que o dono do gato o encontre logo.",
+                    "en": "By the way, the living room window was open. I hope the cat's owner finds him soon.",
+                    "intentions": [
+                        {
+                            "intentionId": "a-proposito-by-the-way",
+                            "ptIntent": "A propósito,",
+                            "enIntent": "By the way,"
+                        },
+                        {
+                            "intentionId": "tomara-que",
+                            "ptIntent": "Tomara que",
+                            "enIntent": "I hope"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Eu coloco o gato gentilmente no quintal. Eu vou conseguir o ônibus se eu correr agora.",
+                    "en": "I put the cat gently in the yard. I will get the bus if I run now.",
+                    "intentions": [
+                        {
+                            "intentionId": "vou-conseguir-resultado",
+                            "ptIntent": "vou conseguir o ônibus",
+                            "enIntent": "will get the bus"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Eu vou ficar feliz quando eu chegar ao trabalho e relaxar. Eu vou tomar uma xícara de café quente daqui a pouco.",
+                    "en": "I will get happy when I arrive at work and relax. I will drink a cup of hot coffee in a little while.",
+                    "intentions": [
+                        {
+                            "intentionId": "vou-ficar-adjetivo",
+                            "ptIntent": "vou ficar feliz",
+                            "enIntent": "will get happy"
+                        },
+                        {
+                            "intentionId": "daqui-a-pouco",
+                            "ptIntent": "daqui a pouco",
+                            "enIntent": "in a little while"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "make-a-choice",
+                "take-time",
+                "tenho-que-ter-posse-real",
+                "im-kind-of",
+                "vou-conseguir-resultado",
+                "de-onde-veio-sujeito",
+                "a-proposito-by-the-way",
+                "tomara-que",
+                "tenho-que-ter-estado",
+                "daqui-a-pouco",
+                "vou-ficar-adjetivo",
+                "haver-tem-houve-tinha-sentido-de-existir"
+            ]
+        },
+        {
             "id": "a2-daily-life-fc818d1b-68b7-4589-af46-43b45fa13ce7",
             "englishLevel": "A2",
             "topic": "daily-life",
