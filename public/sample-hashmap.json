@@ -14443,7 +14443,7 @@
     "conversation",
     "chunk"
   ],
-  "related": [],
+  "related": ["de-uma-vez-por-todas-once-and-for-all"],
   "englishLevel": "B1"
 },
 {
@@ -15791,7 +15791,62 @@
   ],
   "related": [],
   "englishLevel": "B1"
+},
+{
+  "id": "de-uma-vez-por-todas-once-and-for-all",
+  "intention": "... de uma vez por todas",
+  "english": "once and for all",
+  "pattern": "clause + once and for all",
+  "description": "Usado quando queremos fazer, resolver, decidir ou encerrar algo definitivamente, para que não seja necessário lidar com aquilo novamente. 'Once and for all' corresponde naturalmente à intenção brasileira 'de uma vez por todas'.",
+  "category": "time",
+  "searchTerms": [
+    "de uma vez por todas",
+    "definitivamente",
+    "resolver de vez",
+    "acabar de vez",
+    "decidir de vez",
+    "once and for all"
+  ],
+  "examples": [
+    {
+      "pt": "Precisamos resolver esse problema de uma vez por todas.",
+      "en": "We need to solve this problem once and for all.",
+      "ptIntent": "de uma vez por todas",
+      "enIntent": "once and for all"
+    },
+    {
+      "pt": "Quero terminar isso de uma vez por todas.",
+      "en": "I want to finish this once and for all.",
+      "ptIntent": "de uma vez por todas",
+      "enIntent": "once and for all"
+    },
+    {
+      "pt": "Vamos esclarecer isso de uma vez por todas.",
+      "en": "Let's clear this up once and for all.",
+      "ptIntent": "de uma vez por todas",
+      "enIntent": "once and for all"
+    },
+    {
+      "pt": "Ela decidiu abandonar esse hábito de uma vez por todas.",
+      "en": "She decided to quit that habit once and for all.",
+      "ptIntent": "de uma vez por todas",
+      "enIntent": "once and for all"
+    },
+    {
+      "pt": "Está na hora de resolver essa situação de uma vez por todas.",
+      "en": "It's time to deal with this situation once and for all.",
+      "ptIntent": "de uma vez por todas",
+      "enIntent": "once and for all"
+    }
+  ],
+  "tags": [
+    "decision",
+    "finality",
+    "problem-solving",
+    "spoken-english"
+  ],
+  "related": ["de-uma-vez-so-all-at-once"],
+  "englishLevel": "B1"
 }
-
   ]
 }

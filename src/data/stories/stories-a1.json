@@ -1,6 +1,238 @@
 {
     "stories": [
         {
+            "id": "a1-technology-899536f5-a198-4ba7-b101-7f68d4233cb5",
+            "englishLevel": "A1",
+            "topic": "technology",
+            "titlePt": "O Novo Robô de Sam",
+            "titleEn": "Sam's New Robot",
+            "paragraphs": [
+                {
+                    "pt": "Sam ama tecnologia. Ele quer construir um pequeno robô.",
+                    "en": "Sam loves technology. He wants to build a small robot.",
+                    "intentions": [
+                        {
+                            "intentionId": "acao-verbo",
+                            "ptIntent": "Sam ama",
+                            "enIntent": "Sam loves"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ontem, eu fui para a loja de eletrônicos. Eu comprei peças ontem.",
+                    "en": "Yesterday, I went to the electronics store. I bought parts yesterday.",
+                    "intentions": [
+                        {
+                            "intentionId": "eu-fui-para",
+                            "ptIntent": "eu fui para",
+                            "enIntent": "I went to"
+                        },
+                        {
+                            "intentionId": "momento-passado-com-marcador-de-tempo",
+                            "ptIntent": "comprei peças ontem",
+                            "enIntent": "bought parts yesterday"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Agora, nós precisamos fazer um plano para montar o robô.",
+                    "en": "Now, we need to make a plan to build the robot.",
+                    "intentions": [
+                        {
+                            "intentionId": "make-a-plan",
+                            "ptIntent": "fazer um plano",
+                            "enIntent": "make a plan"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Eu costumo trabalhar na minha mesa perto da janela.",
+                    "en": "I usually work at my desk near the window.",
+                    "intentions": [
+                        {
+                            "intentionId": "usually",
+                            "ptIntent": "costumo",
+                            "enIntent": "usually"
+                        }
+                    ]
+                },
+                {
+                    "pt": "É muito fácil cometer um erro com fios pequenos.",
+                    "en": "It is very easy to make a mistake with small wires.",
+                    "intentions": [
+                        {
+                            "intentionId": "make-a-mistake",
+                            "ptIntent": "cometer um erro",
+                            "enIntent": "make a mistake"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Meu irmão me ajuda. Você é muito bom com tecnologia, Sam.",
+                    "en": "My brother helps me. You are very good with technology, Sam.",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-e",
+                            "ptIntent": "Você é",
+                            "enIntent": "You are"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Você pode conectar os fios vermelhos e azuis com cuidado.",
+                    "en": "You can connect the red and blue wires carefully.",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-pode",
+                            "ptIntent": "Você pode",
+                            "enIntent": "You can"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Parabéns! Você tem um robô de verdade no seu quarto.",
+                    "en": "Congratulations! You have a real robot in your room.",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-tem",
+                            "ptIntent": "Você tem",
+                            "enIntent": "You have"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "acao-verbo",
+                "eu-fui-para",
+                "momento-passado-com-marcador-de-tempo",
+                "make-a-plan",
+                "usually",
+                "make-a-mistake",
+                "voce-e",
+                "voce-pode",
+                "voce-tem"
+            ]
+        },
+        {
+            "id": "a1-daily-life-a64a686e-6559-451c-9c56-e68922e32f78",
+            "englishLevel": "A1",
+            "topic": "daily-life",
+            "titlePt": "Um Encontro Inesperado no Parque",
+            "titleEn": "An Unexpected Meeting in the Park",
+            "paragraphs": [
+                {
+                    "pt": "Julia vai ao parque todo sábado. Eu costumo ler um livro sob as árvores, pensa ela.",
+                    "en": "Julia goes to the park every Saturday. I usually read a book under the trees, she thinks.",
+                    "intentions": [
+                        {
+                            "intentionId": "usually",
+                            "ptIntent": "costumo ler",
+                            "enIntent": "usually read"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ela vê seu antigo amigo de escola, Leo. 'Nossa, você era tão tímido na escola!', diz Julia.",
+                    "en": "She sees her old school friend, Leo. 'Wow, you were so shy at school!', Julia says.",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-era",
+                            "ptIntent": "você era tão tímido",
+                            "enIntent": "you were so shy"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Leo sorri. 'Sim, mas hoje eu trabalho muito. Agora, é hora de fazer uma pausa', diz ele.",
+                    "en": "Leo smiles. 'Yes, but today I work a lot. Now, it is time to take a break', he says.",
+                    "intentions": [
+                        {
+                            "intentionId": "take-a-break",
+                            "ptIntent": "fazer uma pausa",
+                            "enIntent": "take a break"
+                        }
+                    ]
+                },
+                {
+                    "pt": "'Você quer descansar um pouco?', pergunta Leo. 'O dia está lindo.'",
+                    "en": "'You want to rest a bit?', Leo asks. 'The day is beautiful.'",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-quer",
+                            "ptIntent": "Você quer descansar",
+                            "enIntent": "You want to rest"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Julia concorda. 'Sim! Mas primeiro, vamos tirar uma foto juntos', diz ela.",
+                    "en": "Julia agrees. 'Yes! But first, let's take a photo together', she says.",
+                    "intentions": [
+                        {
+                            "intentionId": "take-a-photo",
+                            "ptIntent": "tirar uma foto",
+                            "enIntent": "take a photo"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Leo diz: 'Eu não quero cometer um erro com este celular.'",
+                    "en": "Leo says: 'I do not want to make a mistake with this phone.'",
+                    "intentions": [
+                        {
+                            "intentionId": "make-a-mistake",
+                            "ptIntent": "cometer um erro",
+                            "enIntent": "make a mistake"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Eles tiram a foto finalmente. Foi maravilhoso ver o sorriso deles na imagem.",
+                    "en": "They finally take the photo. It was wonderful to see their smiles in the picture.",
+                    "intentions": [
+                        {
+                            "intentionId": "foi-adjetivo",
+                            "ptIntent": "Foi maravilhoso",
+                            "enIntent": "It was wonderful"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Julia diz: 'Você está muito feliz hoje, Leo!'",
+                    "en": "Julia says: 'You are very happy today, Leo!'",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-esta",
+                            "ptIntent": "Você está muito feliz",
+                            "enIntent": "You are very happy"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Leo sorri e se despede. 'Sim, estou! Preciso ir agora. Lembre-se de se cuidar, Julia!', diz ele.",
+                    "en": "Leo smiles and says goodbye. 'Yes, I am! I need to go now. Remember to take care, Julia!', he says.",
+                    "intentions": [
+                        {
+                            "intentionId": "take-care",
+                            "ptIntent": "se cuidar",
+                            "enIntent": "take care"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "usually",
+                "voce-era",
+                "take-a-break",
+                "voce-quer",
+                "take-a-photo",
+                "make-a-mistake",
+                "foi-adjetivo",
+                "voce-esta",
+                "take-care"
+            ]
+        },
+        {
             "id": "a1-daily-life-07ac8d23-03f1-4427-a1fc-1bd42b174a20",
             "englishLevel": "A1",
             "topic": "daily-life",
