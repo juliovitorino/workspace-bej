@@ -1,6 +1,207 @@
 {
     "stories": [
         {
+            "id": "a1-daily-life-113e4601-3df4-44e7-be93-baaccaa633b8",
+            "englishLevel": "A1",
+            "topic": "daily-life",
+            "titlePt": "Um Dia Simples e Feliz",
+            "titleEn": "A Simple and Happy Day",
+            "paragraphs": [
+                {
+                    "pt": "Ontem foi um dia diferente. Eu fui para o parque de manhã. Eu não fui para a escola.",
+                    "en": "Yesterday was a different day. I went to the park in the morning. I didn't go to school.",
+                    "intentions": [
+                        {
+                            "intentionId": "eu-fui-para",
+                            "ptIntent": "Eu fui para",
+                            "enIntent": "I went to"
+                        },
+                        {
+                            "intentionId": "eu-nao-fui-para",
+                            "ptIntent": "Eu não fui para",
+                            "enIntent": "I didn't go to"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Eu andei no parque e vi minha amiga Mia. Ela disse: \"Você está muito feliz hoje! Você tem um sorriso bonito.\"",
+                    "en": "I walked in the park and saw my friend Mia. She said: \"You are very happy today! You have a beautiful smile.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-esta",
+                            "ptIntent": "Você está",
+                            "enIntent": "You are"
+                        },
+                        {
+                            "intentionId": "voce-tem",
+                            "ptIntent": "Você tem",
+                            "enIntent": "You have"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Eu sorri e respondi que estava feliz por caminhar com o meu cachorro.",
+                    "en": "I smiled and replied that I was happy to walk with my dog.",
+                    "intentions": [
+                        {
+                            "intentionId": "com-o-com-a-relacao",
+                            "ptIntent": "com o",
+                            "enIntent": "with"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Mia olhou para mim e disse: \"Você precisa de uma pausa. Você quer comer um sorvete?\"",
+                    "en": "Mia looked at me and said: \"You need a break. You want to eat an ice cream?\"",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-precisa",
+                            "ptIntent": "Você precisa",
+                            "enIntent": "You need"
+                        },
+                        {
+                            "intentionId": "voce-quer",
+                            "ptIntent": "Você quer",
+                            "enIntent": "You want"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Eu respondi: \"Sim! Nós podemos fazer um plano para a tarde. Você gosta de sorvete de morango?\"",
+                    "en": "I replied: \"Yes! We can make a plan for the afternoon. You like strawberry ice cream?\"",
+                    "intentions": [
+                        {
+                            "intentionId": "make-a-plan",
+                            "ptIntent": "fazer um plano",
+                            "enIntent": "make a plan"
+                        },
+                        {
+                            "intentionId": "voce-gosta-de",
+                            "ptIntent": "Você gosta de",
+                            "enIntent": "You like"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Mia disse que sim. Eu falei: \"Antes de ir, eu preciso ir em casa e tomar banho.\"",
+                    "en": "Mia said yes. I said: \"Before we go, I need to go home and take a shower.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "take-a-shower",
+                            "ptIntent": "tomar banho",
+                            "enIntent": "take a shower"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Mais tarde, na sorveteria, nós compramos sorvetes grandes. Eu disse: \"Espere, vamos tirar uma foto primeiro!\"",
+                    "en": "Later, at the ice cream shop, we bought big ice creams. I said: \"Wait, let's take a photo first!\"",
+                    "intentions": [
+                        {
+                            "intentionId": "take-a-photo",
+                            "ptIntent": "tirar uma foto",
+                            "enIntent": "take a photo"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "eu-fui-para",
+                "eu-nao-fui-para",
+                "voce-esta",
+                "voce-tem",
+                "com-o-com-a-relacao",
+                "voce-precisa",
+                "voce-quer",
+                "make-a-plan",
+                "voce-gosta-de",
+                "take-a-shower",
+                "take-a-photo"
+            ]
+        },
+        {
+            "id": "a1-daily-life-e4ba7102-b944-4a9d-9255-2ff48723d2f0",
+            "englishLevel": "A1",
+            "topic": "daily-life",
+            "titlePt": "Um Dia de Descanso no Parque",
+            "titleEn": "A Day of Rest in the Park",
+            "paragraphs": [
+                {
+                    "pt": "Leo está muito cansado hoje. Ele caminha no parque.",
+                    "en": "Leo is very tired today. He walks in the park.",
+                    "intentions": [
+                        {
+                            "intentionId": "acao-verbo",
+                            "ptIntent": "Ele caminha",
+                            "enIntent": "He walks"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Eu não fui para a escola hoje porque é sábado.",
+                    "en": "I didn't go to school today because it is Saturday.",
+                    "intentions": [
+                        {
+                            "intentionId": "eu-nao-fui-para",
+                            "ptIntent": "Eu não fui para a escola",
+                            "enIntent": "I didn't go to school"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Leo vê um banco de madeira. Um homem simpático diz: Por favor, sente-se.",
+                    "en": "Leo sees a wooden bench. A nice man says: Please, take a seat.",
+                    "intentions": [
+                        {
+                            "intentionId": "take-a-seat",
+                            "ptIntent": "sente-se",
+                            "enIntent": "take a seat"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ele agradece ao homem. Ele realmente precisa fazer uma pausa hoje.",
+                    "en": "He thanks the man. He really needs to take a break today.",
+                    "intentions": [
+                        {
+                            "intentionId": "take-a-break",
+                            "ptIntent": "fazer uma pausa",
+                            "enIntent": "take a break"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Leo liga para sua mãe. Eles conversam sobre o tempo na cidade.",
+                    "en": "Leo calls his mother. They talk about the weather in the city.",
+                    "intentions": [
+                        {
+                            "intentionId": "com-o-com-a-tema",
+                            "ptIntent": "sobre o tempo",
+                            "enIntent": "about the weather"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Depois da ligação, Leo fecha os olhos. O sol está quente e agradável.",
+                    "en": "After the call, Leo closes his eyes. The sun is warm and nice.",
+                    "intentions": [
+                        {
+                            "intentionId": "acao-verbo",
+                            "ptIntent": "Leo fecha",
+                            "enIntent": "Leo closes"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "acao-verbo",
+                "eu-nao-fui-para",
+                "take-a-seat",
+                "take-a-break",
+                "com-o-com-a-tema"
+            ]
+        },
+        {
             "id": "a1-technology-899536f5-a198-4ba7-b101-7f68d4233cb5",
             "englishLevel": "A1",
             "topic": "technology",
