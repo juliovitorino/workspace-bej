@@ -1,6 +1,87 @@
 {
     "stories": [
         {
+            "id": "b1-daily-life-baa3ebd2-67e4-498a-8322-b721154f036f",
+            "englishLevel": "B1",
+            "topic": "daily-life",
+            "titlePt": "Uma Manhã Caótica",
+            "titleEn": "A Chaotic Morning",
+            "paragraphs": [
+                {
+                    "pt": "Lucas acordou assustado com o som do despertador. Ele olhou para o relógio e percebeu que estava atrasado para a sua entrevista de emprego. Ele pulou da cama rapidamente.",
+                    "en": "Lucas woke up startled by the sound of his alarm clock. He looked at the clock and realized he was late for his job interview. He quickly jumped out of bed.",
+                    "intentions": []
+                },
+                {
+                    "pt": "Enquanto procurava suas roupas, ele percebeu que não conseguia encontrar as chaves do carro. \"Não faço ideia de como perdi minhas chaves logo hoje\", ele murmurou para si mesmo, olhando debaixo do sofá.",
+                    "en": "While looking for his clothes, he realized he couldn't find his car keys. \"I have no idea how I lost my keys today of all days,\" he muttered to himself, looking under the sofa.",
+                    "intentions": [
+                        {
+                            "intentionId": "nao-faco-ideia-de-como",
+                            "ptIntent": "Não faço ideia de como",
+                            "enIntent": "I have no idea how"
+                        }
+                    ]
+                },
+                {
+                    "pt": "O café derramou na camisa dele e a torrada queimou. Ele sentiu que a manhã estava um desastre completo. É um problema atrás do outro hoje de manhã, e o tempo estava passando rápido.",
+                    "en": "The coffee spilled on his shirt and the toast burned. He felt like the morning was a complete disaster. It's one problem after another this morning, and time was passing fast.",
+                    "intentions": [
+                        {
+                            "intentionId": "um-atras-do-outro-one-after-another",
+                            "ptIntent": "É um problema atrás do outro",
+                            "enIntent": "It's one problem after another"
+                        }
+                    ]
+                },
+                {
+                    "pt": "O telefone dele tocou. Era sua irmã, Júlia, ligando para desejar boa sorte. Ele explicou rapidamente toda a situação caótica para ela. \"Se quer saber o que eu acho, você deveria respirar fundo e se acalmar\", disse ela.",
+                    "en": "His phone rang. It was his sister, Julia, calling to wish him good luck. He quickly explained the whole chaotic situation to her. \"If you ask me, you should take a deep breath and calm down,\" she said.",
+                    "intentions": [
+                        {
+                            "intentionId": "if-you-ask-me",
+                            "ptIntent": "Se quer saber o que eu acho,",
+                            "enIntent": "If you ask me,"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Júlia lembrou a ele que ele estava muito bem preparado para a conversa. \"Você estudou muito sobre a empresa, e foi isso que me fez ter sucesso na minha entrevista passada\", ela acrescentou.",
+                    "en": "Julia reminded him that he was very well prepared for the conversation. \"You studied a lot about the company, and that's what made me succeed in my past interview,\" she added.",
+                    "intentions": [
+                        {
+                            "intentionId": "foi-o-que-foi-isso-que",
+                            "ptIntent": "foi isso que",
+                            "enIntent": "that's what"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Quando desligou o telefone, Lucas colocou a mão no bolso da calça que já estava vestindo. Para sua surpresa, as chaves estavam lá o tempo todo. \"Há uma boa chance de que eu chegue a tempo se eu sair agora\", pensou ele, sentindo um alívio enorme.",
+                    "en": "When he hung up the phone, Lucas put his hand in the pocket of the pants he was already wearing. To his surprise, the keys were there the whole time. \"There's a good chance that I will arrive on time if I leave now,\" he thought, feeling a huge relief.",
+                    "intentions": [
+                        {
+                            "intentionId": "theres-a-good-chance-that",
+                            "ptIntent": "Há uma boa chance de que",
+                            "enIntent": "There's a good chance that"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ele limpou a camisa rapidamente, pegou sua pasta e correu para a porta. Apesar do começo difícil, ele sentiu que o dia ainda poderia ser um sucesso.",
+                    "en": "He quickly cleaned his shirt, grabbed his briefcase, and ran to the door. Despite the difficult start, he felt that the day could still be a success.",
+                    "intentions": []
+                }
+            ],
+            "intentionsUsed": [
+                "nao-faco-ideia-de-como",
+                "um-atras-do-outro-one-after-another",
+                "if-you-ask-me",
+                "foi-o-que-foi-isso-que",
+                "theres-a-good-chance-that"
+            ]
+        },
+        {
             "id": "b1-daily-life-b090063c-eba2-4a4b-8768-d1b957e9bafa",
             "englishLevel": "B1",
             "topic": "daily-life",
