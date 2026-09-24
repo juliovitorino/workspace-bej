@@ -308,6 +308,214 @@ export function InterpretationPanel({
     }
   }
 
+  function handlePrintStory() {
+    if (!story) {
+      return;
+    }
+
+    const escapeHtml = (value: string) =>
+      value
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+    const exerciseParagraphs = story.paragraphs
+      .map(
+        (paragraph, index) => `
+          <section class="exercise-paragraph">
+            <p><strong>${index + 1}.</strong> ${escapeHtml(paragraph.pt)}</p>
+            <div class="answer-line"></div>
+            <div class="answer-line"></div>
+          </section>
+        `
+      )
+      .join("");
+
+    const solutionParagraphs = story.paragraphs
+      .map(
+        (paragraph, index) => `
+          <section class="solution-paragraph">
+            <p class="pt"><strong>${index + 1}.</strong> ${escapeHtml(paragraph.pt)}</p>
+            <p class="en">${escapeHtml(paragraph.en)}</p>
+          </section>
+        `
+      )
+      .join("");
+
+    const printWindow = window.open("", "_blank", "width=900,height=700");
+
+    if (!printWindow) {
+      setError(
+        "O navegador bloqueou a janela de impressão. Permita pop-ups para imprimir a história."
+      );
+      return;
+    }
+
+    printWindow.document.write(`
+      <!doctype html>
+      <html lang="pt-BR">
+        <head>
+          <meta charset="utf-8" />
+          <title>${escapeHtml(story.titlePt)} - Mental Hashmap</title>
+          <style>
+            @page {
+              size: A4;
+              margin: 14mm 16mm;
+            }
+
+            * {
+              box-sizing: border-box;
+            }
+
+            body {
+              margin: 0;
+              color: #111827;
+              background: #ffffff;
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 11pt;
+              line-height: 1.42;
+            }
+
+            .page {
+              width: 100%;
+            }
+
+            .exercise-page {
+              break-after: page;
+              page-break-after: always;
+            }
+
+            .header {
+              border-bottom: 1px solid #d1d5db;
+              margin-bottom: 14px;
+              padding-bottom: 9px;
+            }
+
+            .brand {
+              margin: 0 0 4px;
+              font-size: 9pt;
+              font-weight: 700;
+              letter-spacing: 0.08em;
+              text-transform: uppercase;
+              color: #6b7280;
+            }
+
+            h1 {
+              margin: 0 0 5px;
+              font-size: 18pt;
+              line-height: 1.2;
+            }
+
+            .meta {
+              margin: 0;
+              color: #4b5563;
+              font-size: 9.5pt;
+            }
+
+            .instructions {
+              margin: 0 0 12px;
+              padding: 8px 10px;
+              border: 1px solid #e5e7eb;
+              border-radius: 7px;
+              background: #f9fafb;
+              font-size: 9.5pt;
+            }
+
+            .exercise-paragraph {
+              break-inside: avoid;
+              page-break-inside: avoid;
+              margin: 0 0 10px;
+            }
+
+            .exercise-paragraph p,
+            .solution-paragraph p {
+              margin: 0 0 5px;
+            }
+
+            .answer-line {
+              height: 34px;
+              border-bottom: 1px solid #cbd5e1;
+            }
+
+            .solution-paragraph {
+              break-inside: avoid;
+              page-break-inside: avoid;
+              margin: 0 0 10px;
+              padding-bottom: 8px;
+              border-bottom: 1px solid #e5e7eb;
+            }
+
+            .solution-paragraph .pt {
+              font-weight: 600;
+            }
+
+            .solution-paragraph .en {
+              margin-left: 18px;
+              color: #374151;
+            }
+
+            .solution-label {
+              margin: 0 0 10px;
+              font-size: 9.5pt;
+              font-weight: 700;
+              text-transform: uppercase;
+              letter-spacing: 0.06em;
+              color: #6b7280;
+            }
+
+            @media print {
+              body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+              }
+            }
+          </style>
+        </head>
+        <body>
+          <main>
+            <section class="page exercise-page">
+              <header class="header">
+                <p class="brand">Brazilian English Journey · Mental Hashmap</p>
+                <h1>${escapeHtml(story.titlePt)}</h1>
+                <p class="meta">Nível ${escapeHtml(englishLevel)} · Exercício de interpretação</p>
+              </header>
+
+              <p class="instructions">
+                Leia a história em português e escreva sua interpretação em inglês
+                nos espaços abaixo. A solução está na página 2.
+              </p>
+
+              ${exerciseParagraphs}
+            </section>
+
+            <section class="page solution-page">
+              <header class="header">
+                <p class="brand">Brazilian English Journey · Mental Hashmap</p>
+                <h1>${escapeHtml(story.titlePt)}</h1>
+                <p class="meta">${escapeHtml(story.titleEn)}</p>
+              </header>
+
+              <p class="solution-label">Solução · PT-BR + EN-US</p>
+
+              ${solutionParagraphs}
+            </section>
+          </main>
+
+          <script>
+            window.addEventListener("load", function () {
+              window.focus();
+              window.print();
+            });
+          </script>
+        </body>
+      </html>
+    `);
+
+    printWindow.document.close();
+  }
+
   function handleDownloadJson() {
     if (!exportJson || !exportFileName) {
       return;
@@ -487,6 +695,37 @@ export function InterpretationPanel({
                 gap: "0.75rem"
               }}
             >
+              <button
+                type="button"
+                className="secondary-button"
+                style={{
+                  borderRadius: "999px",
+                  minWidth: "3.5rem",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}
+                title="Imprimir exercício e solução"
+                aria-label="Imprimir exercício e solução"
+                onClick={handlePrintStory}
+              >
+                <svg
+                  aria-hidden="true"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M6 9V2h12v7" />
+                  <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+                  <rect x="6" y="14" width="12" height="8" />
+                </svg>
+              </button>
+
               {story.source === "ai" && (
                 <button
                   type="button"
