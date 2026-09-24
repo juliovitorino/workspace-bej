@@ -1,6 +1,125 @@
 {
     "stories": [
         {
+            "id": "b1-daily-life-021b78b2-7648-402c-9b36-235c76f440b7",
+            "englishLevel": "B1",
+            "topic": "daily-life",
+            "titlePt": "Um Novo Começo no Café",
+            "titleEn": "A New Beginning at the Café",
+            "paragraphs": [
+                {
+                    "pt": "Lucas encontrou Mariana em uma cafeteria aconchegante no centro da cidade. Eles não se viam há meses. Mariana sorriu e disse: \"Que bom te ver! Vamos colocar o papo em dia.\" Lucas respondeu: \"Com certeza! Eu tenho pensado muito sobre a minha carreira ultimamente.\"",
+                    "en": "Lucas met Mariana in a cozy downtown café. They hadn't seen each other in months. Mariana smiled and said, \"Great to see you! Let's catch up.\" Lucas replied, \"Absolutely! I have thought a lot about my career lately.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "lets-catch-up",
+                            "ptIntent": "Vamos colocar o papo em dia.",
+                            "enIntent": "Let's catch up."
+                        },
+                        {
+                            "intentionId": "tem-tenho-tenha-tiver-participio",
+                            "ptIntent": "tenho pensado",
+                            "enIntent": "have thought"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Lucas explicou que saiu do seu emprego antigo para focar em arte. \"Agora, eu tento ganhar a vida com ilustrações. Eu faço designs para sites, desenho logotipos, crio artes para camisetas e assim por diante.\"",
+                    "en": "Lucas explained that he left his old job to focus on art. \"Now, I try to make a living from illustrations. I design websites, draw logos, create t-shirt art, and so on.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "make-a-living",
+                            "ptIntent": "ganhar a vida com",
+                            "enIntent": "make a living from"
+                        },
+                        {
+                            "intentionId": "e-assim-por-diante",
+                            "ptIntent": "e assim por diante",
+                            "enIntent": "and so on"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Mariana achou a ideia corajosa, mas ficou curiosa sobre a rotina dele. Lucas confessou: \"No começo foi difícil. Eu tenho que me acostumar a trabalhar sozinho em casa. Mas no final, minhas novas rotinas acabaram ficando produtivas.\"",
+                    "en": "Mariana thought the idea was brave, but she was curious about his routine. Lucas confessed, \"At first it was hard. I have to get used to working alone at home. But in the end, my new routines turned out productive.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "tenho-que-acostumar",
+                            "ptIntent": "tenho que me acostumar a trabalhar",
+                            "enIntent": "have to get used to working"
+                        },
+                        {
+                            "intentionId": "acabar-ficando",
+                            "ptIntent": "acabaram ficando produtivas",
+                            "enIntent": "turned out productive"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Mariana tomou um gole de seu café e perguntou: \"Então você está dizendo que prefere a incerteza do que a rotina de um escritório?\" Lucas balançou a cabeça. \"Sim. Eu tive que assumir a responsabilidade pelas minhas próprias escolhas e pelo meu tempo.\"",
+                    "en": "Mariana took a sip of her coffee and asked, \"So you're saying that you prefer uncertainty over an office routine?\" Lucas nodded. \"Yes. I had to take responsibility for my own choices and my time.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "entao-voce-esta-dizendo-que",
+                            "ptIntent": "Então você está dizendo que",
+                            "enIntent": "So you're saying that"
+                        },
+                        {
+                            "intentionId": "take-responsibility",
+                            "ptIntent": "assumir a responsabilidade pelas",
+                            "enIntent": "take responsibility for"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ele continuou com entusiasmo: \"Se eu ganhasse mais projetos este mês, eu compraria um computador novo. Por isso, vou aproveitar a oportunidade de um evento local de negócios amanhã para fazer contatos.\"",
+                    "en": "He continued with enthusiasm: \"If I won more projects this month, I would buy a new computer. Therefore, I will take advantage of the opportunity of a local business event tomorrow to network.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "se-eu-esse-hipotese-irreal-presente-futuro",
+                            "ptIntent": "Se eu ganhasse mais projetos este mês, eu compraria",
+                            "enIntent": "If I won more projects this month, I would buy"
+                        },
+                        {
+                            "intentionId": "vou-aproveitar-oportunidade",
+                            "ptIntent": "vou aproveitar a oportunidade de",
+                            "enIntent": "will take advantage of the opportunity of"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Mariana o incentivou bastante. \"Há uma boa chance de que você consiga muitos clientes lá. Nesse meio-tempo, continue divulgando seu lindo portfólio na internet.\"",
+                    "en": "Mariana encouraged him a lot. \"There's a good chance that you will get many clients there. In the meantime, keep sharing your beautiful portfolio on the internet.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "theres-a-good-chance-that",
+                            "ptIntent": "Há uma boa chance de que",
+                            "enIntent": "There's a good chance that"
+                        },
+                        {
+                            "intentionId": "in-the-meantime",
+                            "ptIntent": "Nesse meio-tempo,",
+                            "enIntent": "In the meantime,"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "lets-catch-up",
+                "tem-tenho-tenha-tiver-participio",
+                "make-a-living",
+                "e-assim-por-diante",
+                "tenho-que-acostumar",
+                "acabar-ficando",
+                "entao-voce-esta-dizendo-que",
+                "take-responsibility",
+                "se-eu-esse-hipotese-irreal-presente-futuro",
+                "vou-aproveitar-oportunidade",
+                "theres-a-good-chance-that",
+                "in-the-meantime"
+            ]
+        },
+        {
             "id": "b1-daily-life-baa3ebd2-67e4-498a-8322-b721154f036f",
             "englishLevel": "B1",
             "topic": "daily-life",
