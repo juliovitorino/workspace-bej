@@ -1,6 +1,119 @@
 {
     "stories": [
         {
+            "id": "a1-daily-life-b71d1a7d-0468-459b-8a41-36cc55e8772d",
+            "englishLevel": "A1",
+            "topic": "daily-life",
+            "titlePt": "Um Encontro no Parque",
+            "titleEn": "A Meeting in the Park",
+            "paragraphs": [
+                {
+                    "pt": "Olá, Julia! Você está no parque hoje. Que bom ver você! Por favor, sente-se.",
+                    "en": "Hello, Julia! You are in the park today. Good to see you! Please, take a seat.",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-esta",
+                            "ptIntent": "Você está",
+                            "enIntent": "You are"
+                        },
+                        {
+                            "intentionId": "take-a-seat",
+                            "ptIntent": "sente-se",
+                            "enIntent": "take a seat"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Obrigado, Leo. Estou muito cansada hoje. Eu não fui para a escola de manhã. Eu só quero fazer uma pausa.",
+                    "en": "Thank you, Leo. I am very tired today. I didn't go to school in the morning. I just want to take a break.",
+                    "intentions": [
+                        {
+                            "intentionId": "eu-nao-fui-para",
+                            "ptIntent": "Eu não fui para a escola",
+                            "enIntent": "I didn't go to school"
+                        },
+                        {
+                            "intentionId": "take-a-break",
+                            "ptIntent": "fazer uma pausa",
+                            "enIntent": "take a break"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Eu entendo. No ano passado, você era muito ocupada também. Você tinha muitos projetos difíceis.",
+                    "en": "I understand. Last year, you were very busy too. You had many difficult projects.",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-era",
+                            "ptIntent": "você era",
+                            "enIntent": "you were"
+                        },
+                        {
+                            "intentionId": "voce-tinha",
+                            "ptIntent": "Você tinha",
+                            "enIntent": "You had"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Sim, é verdade. Mas agora nós podemos descansar. Vamos fazer um plano para o próximo final de semana? Você precisa descansar também.",
+                    "en": "Yes, that is true. But now we can rest. Let's make a plan for next weekend? You need to rest too.",
+                    "intentions": [
+                        {
+                            "intentionId": "make-a-plan",
+                            "ptIntent": "fazer um plano",
+                            "enIntent": "make a plan"
+                        },
+                        {
+                            "intentionId": "voce-precisa",
+                            "ptIntent": "Você precisa",
+                            "enIntent": "You need"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Sim, nós podemos ir ao lago. Você pode nadar lá. Eu prefiro caminhar com o meu cachorro na grama.",
+                    "en": "Yes, we can go to the lake. You can swim there. I prefer to walk with my dog on the grass.",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-pode",
+                            "ptIntent": "Você pode",
+                            "enIntent": "You can"
+                        },
+                        {
+                            "intentionId": "com-o-com-a-relacao",
+                            "ptIntent": "com o meu cachorro",
+                            "enIntent": "with my dog"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Essa é uma ótima ideia! O dia está lindo. Vamos tirar uma foto para lembrar deste momento?",
+                    "en": "That is a great idea! The day is beautiful. Let's take a photo to remember this moment?",
+                    "intentions": [
+                        {
+                            "intentionId": "take-a-photo",
+                            "ptIntent": "tirar uma foto",
+                            "enIntent": "take a photo"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "voce-esta",
+                "take-a-seat",
+                "eu-nao-fui-para",
+                "take-a-break",
+                "voce-era",
+                "voce-tinha",
+                "make-a-plan",
+                "voce-precisa",
+                "voce-pode",
+                "com-o-com-a-relacao",
+                "take-a-photo"
+            ]
+        },
+        {
             "id": "a1-daily-life-113e4601-3df4-44e7-be93-baaccaa633b8",
             "englishLevel": "A1",
             "topic": "daily-life",

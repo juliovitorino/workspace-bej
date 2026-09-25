@@ -1,6 +1,345 @@
 {
     "stories": [
         {
+            "id": "b1-daily-life-9786e901-c863-4b87-8a68-6e2438fbb563",
+            "englishLevel": "B1",
+            "topic": "daily-life",
+            "titlePt": "Abrindo Espaço para o Novo",
+            "titleEn": "Making Room for the New",
+            "paragraphs": [
+                {
+                    "pt": "Lucas queria reorganizar sua pequena sala de estar. Ele tinha muitos livros antigos, revistas e assim por diante.",
+                    "en": "Lucas wanted to reorganize his small living room. He had many old books, magazines, and so on.",
+                    "intentions": [
+                        {
+                            "intentionId": "e-assim-por-diante",
+                            "ptIntent": "e assim por diante",
+                            "enIntent": "and so on"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ele precisava doar algumas coisas para abrir espaço para sua nova mesa de trabalho.",
+                    "en": "He needed to donate some things to make room for his new work desk.",
+                    "intentions": [
+                        {
+                            "intentionId": "make-room",
+                            "ptIntent": "abrir espaço para",
+                            "enIntent": "make room for"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Clara bateu na porta aberta. \"Desculpe interromper, mas você precisa de ajuda com essas caixas pesadas?\" ela perguntou.",
+                    "en": "Clara knocked on the open door. \"Sorry to interrupt, but do you need help with those heavy boxes?\" she asked.",
+                    "intentions": [
+                        {
+                            "intentionId": "desculpe-interromper",
+                            "ptIntent": "Desculpe interromper, mas",
+                            "enIntent": "Sorry to interrupt, but"
+                        }
+                    ]
+                },
+                {
+                    "pt": "\"Sim, por favor! Eu acho que este projeto é importante porque eu preciso de um lugar tranquilo para estudar\", disse Lucas.",
+                    "en": "\"Yes, please! I think this project is important because I need a quiet place to study,\" Lucas said.",
+                    "intentions": [
+                        {
+                            "intentionId": "opinion-pattern",
+                            "ptIntent": "Eu acho que este projeto é importante porque eu preciso de um lugar tranquilo para estudar",
+                            "enIntent": "I think this project is important because I need a quiet place to study"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ela olhou para um videogame antigo na mesa. \"Na verdade, eu não sabia que você ainda tinha este console clássico\", comentou ela.",
+                    "en": "She looked at an old video game on the table. \"Actually, I didn't know you still had this classic console,\" she commented.",
+                    "intentions": [
+                        {
+                            "intentionId": "na-verdade-de-fato-na-realidade-alias",
+                            "ptIntent": "Na verdade, eu não sabia",
+                            "enIntent": "Actually, I didn't know"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Lucas sorriu. \"Eu raramente tenho a oportunidade de jogar hoje em dia, mas tenho ótimas memórias com ele.\"",
+                    "en": "Lucas smiled. \"I rarely get to play nowadays, but I have great memories with it.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "ter-a-oportunidade-ter-a-chance-de",
+                            "ptIntent": "tenho a oportunidade de jogar",
+                            "enIntent": "get to play"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ele começou a empilhar as caixas perto da parede. \"É assim que vamos organizar o espaço antes da mesa nova chegar.\"",
+                    "en": "He started stacking the boxes near the wall. \"This is how we are going to organize the space before the new desk arrives.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "e-assim-que",
+                            "ptIntent": "É assim que",
+                            "enIntent": "This is how"
+                        }
+                    ]
+                },
+                {
+                    "pt": "De repente, a barriga de Clara roncou alto. O que fazer então? Eles decidiram pedir uma pizza antes de continuar.",
+                    "en": "Suddenly, Clara's stomach rumbled loudly. What to do then? They decided to order a pizza before continuing.",
+                    "intentions": [
+                        {
+                            "intentionId": "what-to-do-then",
+                            "ptIntent": "O que fazer então?",
+                            "enIntent": "What to do then?"
+                        }
+                    ]
+                },
+                {
+                    "pt": "A entrega demoraria trinta minutos. Até lá, eles já teriam terminado de limpar o chão da sala de estar.",
+                    "en": "The delivery would take thirty minutes. By then, they would have finished cleaning the living room floor.",
+                    "intentions": [
+                        {
+                            "intentionId": "by-then",
+                            "ptIntent": "Até lá,",
+                            "enIntent": "By then,"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "e-assim-por-diante",
+                "make-room",
+                "desculpe-interromper",
+                "opinion-pattern",
+                "na-verdade-de-fato-na-realidade-alias",
+                "ter-a-oportunidade-ter-a-chance-de",
+                "e-assim-que",
+                "what-to-do-then",
+                "by-then"
+            ]
+        },
+        {
+            "id": "b1-daily-life-d22f2d8b-0553-4c54-9c51-063c07e801d8",
+            "englishLevel": "B1",
+            "topic": "daily-life",
+            "titlePt": "Um Novo Começo na Cidade",
+            "titleEn": "A New Beginning in the City",
+            "paragraphs": [
+                {
+                    "pt": "Lucas acabou de se mudar para um apartamento menor no centro da cidade. Olhando para todas as caixas empilhadas na sala, ele está se perguntando se tomou a decisão certa.",
+                    "en": "Lucas has just moved to a smaller apartment downtown. Looking at all the boxes piled up in the living room, he is wondering if he made the right decision.",
+                    "intentions": [
+                        {
+                            "intentionId": "estou-esta-se-perguntando-se",
+                            "ptIntent": "está se perguntando se",
+                            "enIntent": "is wondering if"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Seu telefone toca. É sua irmã, Mariana. Ela vê o espaço por uma chamada de vídeo e ri. \"Para quem você comprou aquele sofá enorme?\", ela pergunta.",
+                    "en": "His phone rings. It is his sister, Mariana. She sees the space through a video call and laughs. \"Who did you buy that huge sofa for?\", she asks.",
+                    "intentions": [
+                        {
+                            "intentionId": "para-quem-sujeito-verbo",
+                            "ptIntent": "Para quem você comprou aquele sofá enorme?",
+                            "enIntent": "Who did you buy that huge sofa for?"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Lucas sorri e explica que o sofá antigo era muito confortável para ser vendido. \"Eu sei que é grande, mas eu tenho que me acostumar a viver em um lugar menor agora\", ele diz.",
+                    "en": "Lucas smiles and explains that the old sofa was too comfortable to sell. \"I know it's big, but I have to get used to living in a smaller place now,\" he says.",
+                    "intentions": [
+                        {
+                            "intentionId": "tenho-que-acostumar",
+                            "ptIntent": "tenho que me acostumar a",
+                            "enIntent": "have to get used to"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Mariana acha que ele vai se arrepender de ter saído da casa antiga. Lucas responde: \"Não é bem assim. O bairro novo é maravilhoso e posso ir a pé para o trabalho.\"",
+                    "en": "Mariana thinks he will regret leaving his old house. Lucas replies: \"It’s not quite like that. The new neighborhood is wonderful and I can walk to work.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "nao-e-bem-assim",
+                            "ptIntent": "Não é bem assim",
+                            "enIntent": "It’s not quite like that"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Há alguns desafios, é claro. Ele admite que o trânsito é barulhento à noite. \"Ainda estou me acostumando com o barulho dos carros, mas logo passa\", comenta Lucas.",
+                    "en": "There are some challenges, of course. He admits that the traffic is noisy at night. \"I am still getting used to the noise of the cars, but it will pass soon,\" Lucas comments.",
+                    "intentions": [
+                        {
+                            "intentionId": "get-used-to",
+                            "ptIntent": "estou me acostumando",
+                            "enIntent": "am still getting used to"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Mariana sugere que eles se encontrem no final de semana. Lucas concorda imediatamente. \"Ótima ideia! Não me lembro da última vez que eu tomei um café com você com calma\", ele diz.",
+                    "en": "Mariana suggests that they meet up over the weekend. Lucas agrees immediately. \"Great idea! I can't remember the last time I had coffee with you without being in a hurry,\" he says.",
+                    "intentions": [
+                        {
+                            "intentionId": "i-cant-remember-the-last-time-i",
+                            "ptIntent": "Não me lembro da última vez que eu",
+                            "enIntent": "I can't remember the last time I"
+                        }
+                    ]
+                },
+                {
+                    "pt": "\"Vamos colocar o papo em dia. Tem uma cafeteria charmosa bem aqui na minha rua\", sugere Lucas, animado com a visita da irmã.",
+                    "en": "\"Let's catch up. There is a charming coffee shop right here on my street,\" Lucas suggests, excited about his sister's visit.",
+                    "intentions": [
+                        {
+                            "intentionId": "lets-catch-up",
+                            "ptIntent": "Vamos colocar o papo em dia",
+                            "enIntent": "Let's catch up"
+                        }
+                    ]
+                },
+                {
+                    "pt": "O encontro vai acontecer no sábado à tarde. Lucas sabe que, mais cedo ou mais tarde, ele vai se sentir completamente em casa no novo apartamento.",
+                    "en": "The meeting will take place on Saturday afternoon. Lucas knows that, sooner or later, he will feel completely at home in his new apartment.",
+                    "intentions": [
+                        {
+                            "intentionId": "take-place",
+                            "ptIntent": "vai acontecer",
+                            "enIntent": "will take place"
+                        },
+                        {
+                            "intentionId": "sooner-or-later",
+                            "ptIntent": "mais cedo ou mais tarde",
+                            "enIntent": "sooner or later"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "estou-esta-se-perguntando-se",
+                "para-quem-sujeito-verbo",
+                "tenho-que-acostumar",
+                "nao-e-bem-assim",
+                "get-used-to",
+                "i-cant-remember-the-last-time-i",
+                "lets-catch-up",
+                "take-place",
+                "sooner-or-later"
+            ]
+        },
+        {
+            "id": "b1-daily-life-0639263d-ee43-4892-a5ae-5f1440e4bd7d",
+            "englishLevel": "B1",
+            "topic": "daily-life",
+            "titlePt": "A Decisão de Lucas",
+            "titleEn": "Lucas's Decision",
+            "paragraphs": [
+                {
+                    "pt": "Lucas passou a manhã inteira olhando pela janela do escritório. Ele pensou consigo mesmo: \"Estou dividido entre continuar neste emprego seguro e abrir minha própria padaria.\"",
+                    "en": "Lucas spent the whole morning looking out the office window. He thought to himself, \"I'm torn between staying in this secure job and opening my own bakery.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "estou-dividido-entre",
+                            "ptIntent": "Estou dividido entre",
+                            "enIntent": "I'm torn between"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ele decidiu conversar com Clara, uma colega que tinha mudado de setor no mês passado de vez. Ela parecia muito mais feliz agora.",
+                    "en": "He decided to talk to Clara, a colleague who had changed departments last month for good. She seemed much happier now.",
+                    "intentions": [
+                        {
+                            "intentionId": "for-good",
+                            "ptIntent": "de vez",
+                            "enIntent": "for good"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ele se aproximou da mesa dela com uma xícara de café. \"Você tem alguns minutos livres por acaso? Eu preciso de um conselho\", ele perguntou.",
+                    "en": "He approached her desk with a cup of coffee. \"Do you have a few minutes free by any chance? I need some advice,\" he asked.",
+                    "intentions": [
+                        {
+                            "intentionId": "by-any-chance",
+                            "ptIntent": "por acaso",
+                            "enIntent": "by any chance"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Clara sorriu e disse: \"Claro! Se você quiser mudar de vida, você precisa levar isso a sério e planejar cada passo.\"",
+                    "en": "Clara smiled and said, \"Sure! If you want to change your life, you need to take it seriously and plan every step.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "futuro-do-subjuntivo-se-voce-fizer-tiver-puder-quiser-souber-vier",
+                            "ptIntent": "Se você quiser",
+                            "enIntent": "If you want"
+                        },
+                        {
+                            "intentionId": "take-it-seriously",
+                            "ptIntent": "levar isso a sério",
+                            "enIntent": "take it seriously"
+                        }
+                    ]
+                },
+                {
+                    "pt": "\"Eu fiz um curso de panificação no ano passado\", disse Lucas. \"Foi difícil com o trabalho, mas eu consegui terminar o curso com ótimas notas.\"",
+                    "en": "\"I took a baking course last year,\" Lucas said. \"It was difficult with work, but I managed to finish the course with great grades.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "consegui-evento-especifico",
+                            "ptIntent": "consegui terminar",
+                            "enIntent": "managed to finish"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Clara concordou. \"Isso é ótimo! Sabe, foi meu irmão que me incentivou a mudar de carreira quando eu estava com medo.\"",
+                    "en": "Clara agreed. \"That's great! You know, it was my brother who encouraged me to change careers when I was afraid.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "foi-ele-ela-que",
+                            "ptIntent": "foi meu irmão que",
+                            "enIntent": "it was my brother who"
+                        }
+                    ]
+                },
+                {
+                    "pt": "\"Não espere mais. Em vez disso, vá em frente e coloque as mãos à obra para abrir seu negócio!\" ela aconselhou.",
+                    "en": "\"Don't wait any longer. Instead, go ahead and get busy to open your business!\" she advised.",
+                    "intentions": [
+                        {
+                            "intentionId": "em-vez-disso",
+                            "ptIntent": "Em vez disso",
+                            "enIntent": "Instead"
+                        },
+                        {
+                            "intentionId": "go-ahead-and-get-busy",
+                            "ptIntent": "vá em frente e coloque as mãos à obra",
+                            "enIntent": "go ahead and get busy"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "estou-dividido-entre",
+                "for-good",
+                "by-any-chance",
+                "futuro-do-subjuntivo-se-voce-fizer-tiver-puder-quiser-souber-vier",
+                "take-it-seriously",
+                "consegui-evento-especifico",
+                "foi-ele-ela-que",
+                "em-vez-disso",
+                "go-ahead-and-get-busy"
+            ]
+        },
+        {
             "id": "b1-daily-life-021b78b2-7648-402c-9b36-235c76f440b7",
             "englishLevel": "B1",
             "topic": "daily-life",
