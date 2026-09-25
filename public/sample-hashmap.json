@@ -15506,32 +15506,75 @@
     "related": [],
     "englishLevel": "B1"
   },
-  {
-    "id": "e-provavel-que-be-likely-to",
-    "intention": "É provável que...",
-    "english": "be likely to",
-    "pattern": "subject + be likely to + base verb",
-    "description": "Usado para expressar que existe uma boa probabilidade de algo acontecer. O inglês frequentemente reorganiza 'é provável que alguém faça' para 'alguém + be likely to + verbo'.",
-    "category": "probability-tendency",
-    "searchTerms": ["é provável que", "provavelmente", "likely", "likely to", "be likely to"],
-    "examples": [
-      {
-        "pt": "É provável que ele chegue atrasado.",
-        "en": "He's likely to arrive late.",
-        "ptIntent": "É provável que ele chegue",
-        "enIntent": "He's likely to arrive"
-      },
-      {
-        "pt": "É provável que os preços aumentem.",
-        "en": "Prices are likely to increase.",
-        "ptIntent": "É provável que os preços aumentem",
-        "enIntent": "Prices are likely to increase"
-      }
-    ],
-    "tags": ["probability", "likely", "prediction", "mental-mapping"],
-    "related": [],
-    "englishLevel": "B2"
-  },
+{
+  "id": "e-provavel-que-be-likely-to",
+  "intention": "É provável que... / provavelmente vai...",
+  "english": "be likely to",
+  "pattern": "subject + be + likely to + base verb",
+  "description": "Usado para expressar que existe uma boa probabilidade de algo acontecer. O inglês frequentemente reorganiza 'é provável que alguém faça' ou 'alguém provavelmente vai fazer' para 'alguém + be likely to + verbo'.",
+  "category": "probability-tendency",
+  "searchTerms": [
+    "é provável que",
+    "provavelmente",
+    "provavelmente vai",
+    "tem grandes chances de",
+    "likely",
+    "likely to",
+    "be likely to"
+  ],
+  "examples": [
+    {
+      "pt": "É provável que ele chegue atrasado.",
+      "en": "He's likely to arrive late.",
+      "ptIntent": "É provável que ele chegue",
+      "enIntent": "He's likely to arrive"
+    },
+    {
+      "pt": "É provável que os preços aumentem.",
+      "en": "Prices are likely to increase.",
+      "ptIntent": "É provável que os preços aumentem",
+      "enIntent": "Prices are likely to increase"
+    },
+    {
+      "pt": "Ela provavelmente vai aceitar a proposta.",
+      "en": "She's likely to accept the offer.",
+      "ptIntent": "provavelmente vai aceitar",
+      "enIntent": "likely to accept"
+    },
+    {
+      "pt": "É provável que eles mudem de ideia.",
+      "en": "They're likely to change their minds.",
+      "ptIntent": "É provável que eles mudem de ideia",
+      "enIntent": "They're likely to change their minds"
+    },
+    {
+      "pt": "Provavelmente vai chover amanhã.",
+      "en": "It's likely to rain tomorrow.",
+      "ptIntent": "Provavelmente vai chover",
+      "enIntent": "It's likely to rain"
+    },
+    {
+      "pt": "É provável que esse problema aconteça novamente.",
+      "en": "This problem is likely to happen again.",
+      "ptIntent": "É provável que esse problema aconteça novamente",
+      "enIntent": "This problem is likely to happen again"
+    },
+    {
+      "pt": "Ele provavelmente vai conseguir o emprego.",
+      "en": "He's likely to get the job.",
+      "ptIntent": "provavelmente vai conseguir",
+      "enIntent": "likely to get"
+    }
+  ],
+  "tags": [
+    "probability",
+    "likely",
+    "prediction",
+    "mental-mapping"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
   {
     "id": "quase-certo-bound-to",
     "intention": "É muito provável / quase certo que...",
@@ -15847,6 +15890,64 @@
   ],
   "related": ["de-uma-vez-so-all-at-once"],
   "englishLevel": "B1"
+},
+{
+  "id": "se-divertir-aproveitar-have-a-great-time",
+  "intention": "Se divertir muito / aproveitar muito",
+  "english": "have a great time",
+  "pattern": "subject + have / had + a great time + complement",
+  "description": "Usado para dizer que alguém está se divertindo, aproveitou muito uma experiência ou para desejar que alguém aproveite bastante uma viagem, festa, evento ou passeio. 'Have a great time!' também é muito comum como despedida antes de uma atividade agradável.",
+  "category": "enjoyment",
+  "searchTerms": [
+    "se divertir",
+    "se divertir muito",
+    "aproveitar",
+    "aproveitar muito",
+    "divirta-se",
+    "aproveite",
+    "foi muito divertido",
+    "have a great time"
+  ],
+  "examples": [
+    {
+      "pt": "Nós nos divertimos muito na festa ontem.",
+      "en": "We had a great time at the party yesterday.",
+      "ptIntent": "nos divertimos muito",
+      "enIntent": "had a great time"
+    },
+    {
+      "pt": "Estou me divertindo muito aqui.",
+      "en": "I'm having a great time here.",
+      "ptIntent": "me divertindo muito",
+      "enIntent": "having a great time"
+    },
+    {
+      "pt": "Espero que vocês se divirtam muito na viagem.",
+      "en": "I hope you have a great time on your trip.",
+      "ptIntent": "se divirtam muito",
+      "enIntent": "have a great time"
+    },
+    {
+      "pt": "Ela se divertiu muito com os amigos.",
+      "en": "She had a great time with her friends.",
+      "ptIntent": "se divertiu muito",
+      "enIntent": "had a great time"
+    },
+    {
+      "pt": "Divirta-se na festa!",
+      "en": "Have a great time at the party!",
+      "ptIntent": "Divirta-se",
+      "enIntent": "Have a great time"
+    }
+  ],
+  "tags": [
+    "fun",
+    "enjoyment",
+    "social",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "A2"
 }
   ]
 }
