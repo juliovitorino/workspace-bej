@@ -15948,6 +15948,524 @@
   ],
   "related": [],
   "englishLevel": "A2"
+},
+{
+  "id": "sendo-sincero-if-im-being-honest",
+  "intention": "Sendo sincero... / pra ser sincero...",
+  "english": "if I'm being honest",
+  "pattern": "if I'm being honest, + clause",
+  "description": "Usado para introduzir uma opinião ou sentimento sincero, especialmente quando queremos dizer algo de forma mais aberta, pessoal ou direta. Corresponde naturalmente a 'sendo sincero', 'pra ser sincero' ou 'se eu for sincero' em português.",
+  "category": "opinion-honesty",
+  "searchTerms": [
+    "sendo sincero",
+    "pra ser sincero",
+    "para ser sincero",
+    "se eu for sincero",
+    "falando sinceramente",
+    "honest",
+    "being honest",
+    "if I'm being honest"
+  ],
+  "examples": [
+    {
+      "pt": "Sendo sincero, eu não gostei muito do filme.",
+      "en": "If I'm being honest, I didn't really like the movie.",
+      "ptIntent": "Sendo sincero",
+      "enIntent": "If I'm being honest"
+    },
+    {
+      "pt": "Pra ser sincero, eu esperava mais desse trabalho.",
+      "en": "If I'm being honest, I expected more from this job.",
+      "ptIntent": "Pra ser sincero",
+      "enIntent": "If I'm being honest"
+    },
+    {
+      "pt": "Sendo sincero, eu preferia trabalhar de casa.",
+      "en": "If I'm being honest, I'd rather work from home.",
+      "ptIntent": "Sendo sincero",
+      "enIntent": "If I'm being honest"
+    },
+    {
+      "pt": "Se eu for sincero, não acho que seja uma boa ideia.",
+      "en": "If I'm being honest, I don't think it's a good idea.",
+      "ptIntent": "Se eu for sincero",
+      "enIntent": "If I'm being honest"
+    },
+    {
+      "pt": "Pra ser sincero, estou um pouco preocupado com isso.",
+      "en": "If I'm being honest, I'm a little worried about it.",
+      "ptIntent": "Pra ser sincero",
+      "enIntent": "If I'm being honest"
+    }
+  ],
+  "tags": [
+    "honesty",
+    "opinion",
+    "conversation",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "nunca-tinha-pensado-dessa-forma-ive-never-really-thought-about-it-that-way",
+  "intention": "Nunca tinha pensado por esse lado / dessa forma",
+  "english": "I've never really thought about it that way",
+  "pattern": "I've never really thought about + object + that way",
+  "description": "Usado quando alguém apresenta uma perspectiva ou maneira de enxergar algo que você ainda não havia considerado. É uma resposta muito natural em conversas, discussões e troca de opiniões.",
+  "category": "reaction-perspective",
+  "searchTerms": [
+    "nunca tinha pensado nisso",
+    "nunca tinha pensado dessa forma",
+    "nunca tinha pensado por esse lado",
+    "não tinha pensado assim",
+    "thought about it",
+    "that way",
+    "I've never really thought about it that way"
+  ],
+  "examples": [
+    {
+      "pt": "Nunca tinha pensado nisso dessa forma.",
+      "en": "I've never really thought about it that way.",
+      "ptIntent": "Nunca tinha pensado nisso dessa forma",
+      "enIntent": "I've never really thought about it that way"
+    },
+    {
+      "pt": "Nunca tinha pensado por esse lado.",
+      "en": "I've never really thought about it that way.",
+      "ptIntent": "Nunca tinha pensado por esse lado",
+      "enIntent": "I've never really thought about it that way"
+    },
+    {
+      "pt": "Interessante. Nunca tinha pensado nisso dessa forma.",
+      "en": "Interesting. I've never really thought about it that way.",
+      "ptIntent": "Nunca tinha pensado nisso dessa forma",
+      "enIntent": "I've never really thought about it that way"
+    },
+    {
+      "pt": "Você tem razão. Eu nunca tinha pensado por esse lado.",
+      "en": "You're right. I've never really thought about it that way.",
+      "ptIntent": "nunca tinha pensado por esse lado",
+      "enIntent": "I've never really thought about it that way"
+    },
+    {
+      "pt": "Agora que você mencionou isso, nunca tinha pensado nisso dessa forma.",
+      "en": "Now that you mention it, I've never really thought about it that way.",
+      "ptIntent": "nunca tinha pensado nisso dessa forma",
+      "enIntent": "I've never really thought about it that way"
+    }
+  ],
+  "tags": [
+    "reaction",
+    "perspective",
+    "conversation",
+    "opinion",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "agora-que-parei-pra-pensar-now-that-i-think-about-it",
+  "intention": "Agora que parei pra pensar... / pensando bem...",
+  "english": "now that I think about it",
+  "pattern": "now that I think about it, + clause",
+  "description": "Usado quando, durante uma conversa, você para para pensar e percebe, lembra ou reconsidera alguma coisa. Corresponde naturalmente a 'agora que parei pra pensar', 'pensando bem' ou 'agora que penso nisso'.",
+  "category": "reflection-realization",
+  "searchTerms": [
+    "agora que parei pra pensar",
+    "pensando bem",
+    "agora que penso nisso",
+    "parando pra pensar",
+    "agora que pensei nisso",
+    "now that I think about it"
+  ],
+  "examples": [
+    {
+      "pt": "Agora que parei pra pensar, faz muito tempo que não vejo ele.",
+      "en": "Now that I think about it, I haven't seen him in a long time.",
+      "ptIntent": "Agora que parei pra pensar",
+      "enIntent": "Now that I think about it"
+    },
+    {
+      "pt": "Pensando bem, acho que você está certo.",
+      "en": "Now that I think about it, I think you're right.",
+      "ptIntent": "Pensando bem",
+      "enIntent": "Now that I think about it"
+    },
+    {
+      "pt": "Agora que parei pra pensar, nunca trabalhamos juntos.",
+      "en": "Now that I think about it, we've never worked together.",
+      "ptIntent": "Agora que parei pra pensar",
+      "enIntent": "Now that I think about it"
+    },
+    {
+      "pt": "Pensando bem, eu já tive esse problema antes.",
+      "en": "Now that I think about it, I've had this problem before.",
+      "ptIntent": "Pensando bem",
+      "enIntent": "Now that I think about it"
+    },
+    {
+      "pt": "Agora que parei pra pensar, talvez seja melhor esperar.",
+      "en": "Now that I think about it, maybe we'd better wait.",
+      "ptIntent": "Agora que parei pra pensar",
+      "enIntent": "Now that I think about it"
+    }
+  ],
+  "tags": [
+    "reflection",
+    "realization",
+    "conversation",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "nao-sabia-o-que-esperar-didnt-know-what-to-expect",
+  "intention": "Não sabia muito bem o que esperar",
+  "english": "didn't really know what to expect",
+  "pattern": "subject + didn't really know what to expect",
+  "description": "Usado quando você entra em uma situação sem saber exatamente como ela será, o que acontecerá ou qual será o resultado. É muito comum ao falar sobre primeiras experiências, viagens, empregos, entrevistas, encontros e situações novas.",
+  "category": "expectation-uncertainty",
+  "searchTerms": [
+    "não sabia o que esperar",
+    "não sabia muito bem o que esperar",
+    "não sabia como seria",
+    "não sabia o que ia acontecer",
+    "what to expect",
+    "didn't know what to expect",
+    "didn't really know what to expect"
+  ],
+  "examples": [
+    {
+      "pt": "Eu não sabia muito bem o que esperar.",
+      "en": "I didn't really know what to expect.",
+      "ptIntent": "não sabia muito bem o que esperar",
+      "enIntent": "didn't really know what to expect"
+    },
+    {
+      "pt": "Era meu primeiro dia no trabalho, então eu não sabia muito bem o que esperar.",
+      "en": "It was my first day at work, so I didn't really know what to expect.",
+      "ptIntent": "não sabia muito bem o que esperar",
+      "enIntent": "didn't really know what to expect"
+    },
+    {
+      "pt": "Antes da entrevista, eu não sabia o que esperar.",
+      "en": "Before the interview, I didn't know what to expect.",
+      "ptIntent": "não sabia o que esperar",
+      "enIntent": "didn't know what to expect"
+    },
+    {
+      "pt": "Nunca tinha viajado sozinho, então não sabia muito bem o que esperar.",
+      "en": "I'd never traveled alone before, so I didn't really know what to expect.",
+      "ptIntent": "não sabia muito bem o que esperar",
+      "enIntent": "didn't really know what to expect"
+    },
+    {
+      "pt": "Quando comecei o curso, eu não sabia como seria.",
+      "en": "When I started the course, I didn't really know what to expect.",
+      "ptIntent": "não sabia como seria",
+      "enIntent": "didn't really know what to expect"
+    }
+  ],
+  "tags": [
+    "expectation",
+    "uncertainty",
+    "experience",
+    "conversation",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "tanto-faz-se-whether-or-not",
+  "intention": "Tanto faz se... / não importa se...",
+  "english": "whether ... or not",
+  "pattern": "whether + clause + or not, + clause",
+  "description": "Usado quando o resultado, decisão ou situação não muda independentemente de algo acontecer ou não. Em português, corresponde naturalmente a 'tanto faz se...', 'não importa se...' ou 'independentemente de...'.",
+  "category": "condition-indifference",
+  "searchTerms": [
+    "tanto faz se",
+    "não importa se",
+    "independentemente se",
+    "quer aconteça ou não",
+    "whether",
+    "whether or not"
+  ],
+  "examples": [
+    {
+      "pt": "Tanto faz se ele vier ou não.",
+      "en": "It doesn't matter whether he comes or not.",
+      "ptIntent": "Tanto faz se ele vier ou não",
+      "enIntent": "It doesn't matter whether he comes or not"
+    },
+    {
+      "pt": "Tanto faz se você concorda ou não, precisamos tomar uma decisão.",
+      "en": "Whether you agree or not, we need to make a decision.",
+      "ptIntent": "Tanto faz se você concorda ou não",
+      "enIntent": "Whether you agree or not"
+    },
+    {
+      "pt": "Não importa se vai chover ou não, eu vou sair.",
+      "en": "Whether it rains or not, I'm going out.",
+      "ptIntent": "Não importa se vai chover ou não",
+      "enIntent": "Whether it rains or not"
+    },
+    {
+      "pt": "Tanto faz se eles gostam ou não, vamos continuar com o plano.",
+      "en": "Whether they like it or not, we're going ahead with the plan.",
+      "ptIntent": "Tanto faz se eles gostam ou não",
+      "enIntent": "Whether they like it or not"
+    },
+    {
+      "pt": "Não importa se funciona ou não, precisamos tentar.",
+      "en": "Whether it works or not, we need to try.",
+      "ptIntent": "Não importa se funciona ou não",
+      "enIntent": "Whether it works or not"
+    }
+  ],
+  "tags": [
+    "condition",
+    "indifference",
+    "whether",
+    "conversation",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "resumindo-long-story-short",
+  "intention": "Resumindo... / pra resumir a história...",
+  "english": "long story short",
+  "pattern": "long story short, + clause",
+  "description": "Usado para pular detalhes de uma história ou explicação e ir diretamente ao resultado ou ponto principal. É muito comum no inglês falado ao contar experiências e acontecimentos.",
+  "category": "conversation-summary",
+  "searchTerms": [
+    "resumindo",
+    "pra resumir",
+    "para resumir",
+    "pra resumir a história",
+    "encurtando a história",
+    "indo direto ao ponto",
+    "long story short"
+  ],
+  "examples": [
+    {
+      "pt": "Resumindo, consegui o emprego.",
+      "en": "Long story short, I got the job.",
+      "ptIntent": "Resumindo",
+      "enIntent": "Long story short"
+    },
+    {
+      "pt": "Pra resumir a história, perdemos o voo.",
+      "en": "Long story short, we missed the flight.",
+      "ptIntent": "Pra resumir a história",
+      "enIntent": "Long story short"
+    },
+    {
+      "pt": "Resumindo, tivemos que começar tudo de novo.",
+      "en": "Long story short, we had to start all over again.",
+      "ptIntent": "Resumindo",
+      "enIntent": "Long story short"
+    },
+    {
+      "pt": "Pra resumir, o projeto demorou muito mais do que esperávamos.",
+      "en": "Long story short, the project took much longer than we expected.",
+      "ptIntent": "Pra resumir",
+      "enIntent": "Long story short"
+    },
+    {
+      "pt": "Resumindo, decidi não comprar o carro.",
+      "en": "Long story short, I decided not to buy the car.",
+      "ptIntent": "Resumindo",
+      "enIntent": "Long story short"
+    }
+  ],
+  "tags": [
+    "summary",
+    "storytelling",
+    "conversation",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "faca-como-quiser-suit-yourself",
+  "intention": "Faça como quiser / você que sabe",
+  "english": "suit yourself",
+  "pattern": "suit yourself",
+  "description": "Usado quando você deixa a outra pessoa fazer o que quiser, especialmente depois de ter dado uma opinião, sugestão ou conselho. Dependendo do tom, pode soar neutro, resignado ou levemente irritado.",
+  "category": "choice-response",
+  "searchTerms": [
+    "faça como quiser",
+    "você que sabe",
+    "como quiser",
+    "se você prefere assim",
+    "a escolha é sua",
+    "suit yourself"
+  ],
+  "examples": [
+    {
+      "pt": "Se você não quer vir com a gente, faça como quiser.",
+      "en": "If you don't want to come with us, suit yourself.",
+      "ptIntent": "faça como quiser",
+      "enIntent": "suit yourself"
+    },
+    {
+      "pt": "Eu acho que você deveria esperar, mas você que sabe.",
+      "en": "I think you should wait, but suit yourself.",
+      "ptIntent": "você que sabe",
+      "enIntent": "suit yourself"
+    },
+    {
+      "pt": "Você não quer minha ajuda? Tudo bem, faça como quiser.",
+      "en": "You don't want my help? Fine, suit yourself.",
+      "ptIntent": "faça como quiser",
+      "enIntent": "suit yourself"
+    },
+    {
+      "pt": "Se você prefere fazer sozinho, você que sabe.",
+      "en": "If you'd rather do it alone, suit yourself.",
+      "ptIntent": "você que sabe",
+      "enIntent": "suit yourself"
+    },
+    {
+      "pt": "Quer ficar em casa? Faça como quiser.",
+      "en": "You want to stay home? Suit yourself.",
+      "ptIntent": "Faça como quiser",
+      "enIntent": "Suit yourself"
+    }
+  ],
+  "tags": [
+    "choice",
+    "response",
+    "attitude",
+    "conversation",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "tenha-paciencia-comigo-bear-with-me",
+  "intention": "Tenha paciência comigo / só um instante",
+  "english": "bear with me",
+  "pattern": "bear with + person",
+  "description": "Usado para pedir que alguém tenha um pouco de paciência enquanto você termina, verifica, explica ou resolve alguma coisa. 'Bear with me' é muito comum no inglês falado e também em situações profissionais.",
+  "category": "patience-request",
+  "searchTerms": [
+    "tenha paciência comigo",
+    "tenha um pouco de paciência",
+    "só um instante",
+    "só um momento",
+    "aguenta aí",
+    "bear with me",
+    "bear with"
+  ],
+  "examples": [
+    {
+      "pt": "Tenha paciência comigo, estou tentando entender isso.",
+      "en": "Bear with me, I'm trying to understand this.",
+      "ptIntent": "Tenha paciência comigo",
+      "enIntent": "Bear with me"
+    },
+    {
+      "pt": "Só um instante, estou verificando o que aconteceu.",
+      "en": "Bear with me, I'm checking what happened.",
+      "ptIntent": "Só um instante",
+      "enIntent": "Bear with me"
+    },
+    {
+      "pt": "Tenha um pouco de paciência comigo enquanto eu explico.",
+      "en": "Bear with me while I explain.",
+      "ptIntent": "Tenha um pouco de paciência comigo",
+      "enIntent": "Bear with me"
+    },
+    {
+      "pt": "Só um momento, preciso encontrar o arquivo.",
+      "en": "Bear with me, I need to find the file.",
+      "ptIntent": "Só um momento",
+      "enIntent": "Bear with me"
+    },
+    {
+      "pt": "Tenha paciência comigo, isso pode levar alguns minutos.",
+      "en": "Bear with me, this might take a few minutes.",
+      "ptIntent": "Tenha paciência comigo",
+      "enIntent": "Bear with me"
+    }
+  ],
+  "tags": [
+    "patience",
+    "request",
+    "work",
+    "conversation",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "ja-estou-cuidando-disso-im-on-it",
+  "intention": "Já estou cuidando disso / deixa comigo",
+  "english": "I'm on it",
+  "pattern": "I'm on it",
+  "description": "Usado para dizer que você já começou a cuidar de uma tarefa, problema ou pedido, ou que vai tomar uma providência imediatamente. Muito comum no inglês falado e especialmente útil no ambiente de trabalho.",
+  "category": "action-response",
+  "searchTerms": [
+    "já estou cuidando disso",
+    "estou cuidando disso",
+    "deixa comigo",
+    "pode deixar",
+    "já estou resolvendo",
+    "vou resolver",
+    "on it",
+    "I'm on it"
+  ],
+  "examples": [
+    {
+      "pt": "Pode deixar, já estou cuidando disso.",
+      "en": "Don't worry, I'm on it.",
+      "ptIntent": "já estou cuidando disso",
+      "enIntent": "I'm on it"
+    },
+    {
+      "pt": "Precisamos corrigir esse problema hoje. — Deixa comigo.",
+      "en": "We need to fix this issue today. — I'm on it.",
+      "ptIntent": "Deixa comigo",
+      "enIntent": "I'm on it"
+    },
+    {
+      "pt": "Você pode verificar esse erro? — Pode deixar.",
+      "en": "Can you check this error? — I'm on it.",
+      "ptIntent": "Pode deixar",
+      "enIntent": "I'm on it"
+    },
+    {
+      "pt": "O cliente está esperando uma resposta. — Já estou cuidando disso.",
+      "en": "The client is waiting for an answer. — I'm on it.",
+      "ptIntent": "Já estou cuidando disso",
+      "enIntent": "I'm on it"
+    },
+    {
+      "pt": "Precisamos enviar o relatório antes do almoço. — Deixa comigo.",
+      "en": "We need to send the report before lunch. — I'm on it.",
+      "ptIntent": "Deixa comigo",
+      "enIntent": "I'm on it"
+    }
+  ],
+  "tags": [
+    "action",
+    "work",
+    "response",
+    "responsibility",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "A2"
 }
   ]
 }
