@@ -1,6 +1,280 @@
 {
     "stories": [
         {
+            "id": "b1-daily-life-6898ba36-788b-4c27-b8e3-c54a6b634111",
+            "englishLevel": "B1",
+            "topic": "daily-life",
+            "titlePt": "O Novo Escritório de Lucas",
+            "titleEn": "Lucas's New Home Office",
+            "paragraphs": [
+                {
+                    "pt": "Eu decidi trabalhar em casa este ano. Eu tenho trabalhado muito no meu quarto. No início foi difícil, mas eu me acostumei com a nova rotina.",
+                    "en": "I decided to work from home this year. I have worked a lot in my bedroom. At first it was hard, but I have gotten used to the new routine.",
+                    "intentions": [
+                        {
+                            "intentionId": "tem-tenho-tenha-tiver-participio",
+                            "ptIntent": "tenho trabalhado",
+                            "enIntent": "have worked"
+                        },
+                        {
+                            "intentionId": "got-used-to",
+                            "ptIntent": "me acostumei com",
+                            "enIntent": "have gotten used to"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ontem, meu chefe disse para eu comprar uma cadeira confortável. Eu fui até a loja no centro, mas no caminho eu fiquei sem combustível.",
+                    "en": "Yesterday, my boss told me to buy a comfortable chair. I went to the store downtown, but on the way I ran out of fuel.",
+                    "intentions": [
+                        {
+                            "intentionId": "disse-para-eu-verbo",
+                            "ptIntent": "disse para eu comprar",
+                            "enIntent": "told me to buy"
+                        },
+                        {
+                            "intentionId": "fiquei-sem-acabou",
+                            "ptIntent": "fiquei sem",
+                            "enIntent": "ran out of"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Enquanto eu esperava pelo guincho, recebi uma ligação do meu irmão. Ele me perguntou: 'De quem você recebeu essa caixa?' Eu respondi: 'De que você está falando? Eu não recebi nada.'",
+                    "en": "While I was waiting for the tow truck, I got a call from my brother. He asked me, 'Who did you get that box from?' I replied, 'What are you talking about? I didn't receive anything.'",
+                    "intentions": [
+                        {
+                            "intentionId": "de-quem-sujeito-verbo",
+                            "ptIntent": "De quem você recebeu essa caixa?",
+                            "enIntent": "Who did you get that box from?"
+                        },
+                        {
+                            "intentionId": "do-que-de-que-sujeito-verbo",
+                            "ptIntent": "De que você está falando?",
+                            "enIntent": "What are you talking about?"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Quando cheguei em casa, vi uma linda luminária na minha mesa. Devido a um erro de entrega, a encomenda era do vizinho. Foi aí que eu liguei para ele para explicar o mal-entendido.",
+                    "en": "When I got home, I saw a beautiful lamp on my desk. Due to a delivery mistake, the package belonged to my neighbor. That’s when I called him to explain the misunderstanding.",
+                    "intentions": [
+                        {
+                            "intentionId": "devido-a-due-to",
+                            "ptIntent": "Devido a",
+                            "enIntent": "Due to"
+                        },
+                        {
+                            "intentionId": "foi-quando-foi-ai-que-foi-entao-que",
+                            "ptIntent": "Foi aí que",
+                            "enIntent": "That’s when"
+                        }
+                    ]
+                },
+                {
+                    "pt": "O vizinho foi muito gentil e disse que eu poderia ficar com ela. Agora, eu preciso combinar os detalhes para instalar minha nova internet. No entanto, eu não faço ideia de quanto espaço de banda eu preciso para trabalhar.",
+                    "en": "The neighbor was very kind and said I could keep it. Now, I need to make arrangements to install my new internet. However, I have no idea how much bandwidth I need for work.",
+                    "intentions": [
+                        {
+                            "intentionId": "make-arrangements",
+                            "ptIntent": "combinar os detalhes",
+                            "enIntent": "make arrangements"
+                        },
+                        {
+                            "intentionId": "nao-faco-ideia-de-quanto-quantos",
+                            "ptIntent": "não faço ideia de quanto",
+                            "enIntent": "I have no idea how much"
+                        }
+                    ]
+                },
+                {
+                    "pt": "A empresa de internet me ofereceu um plano muito caro. Por outro lado, a conexão é extremamente rápida. Eu não vou assinar o contrato, a menos que eles me deem um bom desconto.",
+                    "en": "The internet company offered me a very expensive plan. On the other hand, the connection is extremely fast. I will not sign the contract unless they give me a good discount.",
+                    "intentions": [
+                        {
+                            "intentionId": "on-the-other-hand",
+                            "ptIntent": "Por outro lado",
+                            "enIntent": "On the other hand"
+                        },
+                        {
+                            "intentionId": "a-menos-que-unless",
+                            "ptIntent": "a menos que",
+                            "enIntent": "unless"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Com o tempo, eu sei que tudo vai dar certo. Mais cedo ou mais tarde, todos nós encontramos um equilíbrio no trabalho remoto. Agora que está tudo pronto, mãos à obra.",
+                    "en": "Over time, I know everything will work out. Sooner or later, we all find a balance in remote work. Now that everything is ready, go ahead and get busy.",
+                    "intentions": [
+                        {
+                            "intentionId": "over-time-discourse",
+                            "ptIntent": "Com o tempo",
+                            "enIntent": "Over time"
+                        },
+                        {
+                            "intentionId": "sooner-or-later",
+                            "ptIntent": "Mais cedo ou mais tarde",
+                            "enIntent": "Sooner or later"
+                        },
+                        {
+                            "intentionId": "go-ahead-and-get-busy",
+                            "ptIntent": "mãos à obra",
+                            "enIntent": "go ahead and get busy"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "tem-tenho-tenha-tiver-participio",
+                "got-used-to",
+                "disse-para-eu-verbo",
+                "fiquei-sem-acabou",
+                "de-quem-sujeito-verbo",
+                "do-que-de-que-sujeito-verbo",
+                "devido-a-due-to",
+                "foi-quando-foi-ai-que-foi-entao-que",
+                "make-arrangements",
+                "nao-faco-ideia-de-quanto-quantos",
+                "on-the-other-hand",
+                "a-menos-que-unless",
+                "over-time-discourse",
+                "sooner-or-later",
+                "go-ahead-and-get-busy"
+            ]
+        },
+        {
+            "id": "b1-daily-life-8cf86d9f-ca1d-47d4-9024-58f6bb42d9e0",
+            "englishLevel": "B1",
+            "topic": "daily-life",
+            "titlePt": "Um Novo Começo",
+            "titleEn": "A New Beginning",
+            "paragraphs": [
+                {
+                    "pt": "Lucas estava sentado em sua mesa, sentindo-se bastante cansado da rotina do escritório. Ele olhou para a janela e pensou: 'Estou sentindo que preciso mudar de carreira'.",
+                    "en": "Lucas was sitting at his desk, feeling pretty tired of the office routine. He looked out the window and thought, 'I feel like I need to change my career'.",
+                    "intentions": [
+                        {
+                            "intentionId": "bastante-bem-adjetivo-pretty",
+                            "ptIntent": "bastante cansado",
+                            "enIntent": "pretty tired"
+                        },
+                        {
+                            "intentionId": "estou-sentindo-que-preciso",
+                            "ptIntent": "Estou sentindo que preciso mudar",
+                            "enIntent": "I feel like I need to change"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Mais tarde, ele encontrou sua amiga Mariana em uma cafeteria. Ela viu um grande manual de fotografia em suas mãos e perguntou: 'Sobre o que você está lendo?'",
+                    "en": "Later, he met his friend Mariana at a coffee shop. She saw a large photography manual in his hands and asked, 'What are you reading about?'",
+                    "intentions": [
+                        {
+                            "intentionId": "sobre-o-que-sujeito-verbo",
+                            "ptIntent": "Sobre o que você está lendo?",
+                            "enIntent": "What are you reading about?"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Lucas sorriu e explicou seu plano. Ele queria ganhar a vida com a fotografia de paisagens, pois sempre foi sua verdadeira paixão.",
+                    "en": "Lucas smiled and explained his plan. He wanted to make a living from landscape photography, as it had always been his true passion.",
+                    "intentions": [
+                        {
+                            "intentionId": "make-a-living",
+                            "ptIntent": "ganhar a vida com",
+                            "enIntent": "make a living from"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Mariana olhou para ele com os olhos arregalados. 'Então você está dizendo que quer pedir demissão do seu emprego fixo para tirar fotos?'",
+                    "en": "Mariana looked at him with wide eyes. 'So you're saying that you want to quit your stable job to take photos?'",
+                    "intentions": [
+                        {
+                            "intentionId": "entao-voce-esta-dizendo-que",
+                            "ptIntent": "Então você está dizendo que",
+                            "enIntent": "So you're saying that"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Lucas riu. 'Na verdade, eu já comecei a dar alguns passos. Ontem mesmo, eu fiquei três horas tirando fotos no parque do centro.'",
+                    "en": "Lucas laughed. 'Actually, I have already started taking some steps. Just yesterday, I spent three hours taking photos in the downtown park.'",
+                    "intentions": [
+                        {
+                            "intentionId": "na-verdade-de-fato-na-realidade-alias",
+                            "ptIntent": "Na verdade",
+                            "enIntent": "Actually"
+                        },
+                        {
+                            "intentionId": "fiquei-tempo-gerundio",
+                            "ptIntent": "fiquei três horas tirando",
+                            "enIntent": "spent three hours taking"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ele contou que encontrou uma pessoa que precisava de fotos profissionais para um site. Lucas estava muito nervoso porque queria causar uma boa impressão.",
+                    "en": "He shared that he met someone who needed professional photos for a website. Lucas was very nervous because he wanted to make a good impression.",
+                    "intentions": [
+                        {
+                            "intentionId": "make-a-good-impression",
+                            "ptIntent": "causar uma boa impressão",
+                            "enIntent": "make a good impression"
+                        }
+                    ]
+                },
+                {
+                    "pt": "No final, o trabalho acabou sendo muito divertido. Ainda bem que o dia estava ensolarado e a iluminação natural ajudou muito.",
+                    "en": "In the end, the job turned out to be a lot of fun. It's a good thing that the day was sunny and the natural light helped a lot.",
+                    "intentions": [
+                        {
+                            "intentionId": "acabar-sendo",
+                            "ptIntent": "acabou sendo",
+                            "enIntent": "turned out to be"
+                        },
+                        {
+                            "intentionId": "ainda-bem-que",
+                            "ptIntent": "Ainda bem que",
+                            "enIntent": "It's a good thing"
+                        }
+                    ]
+                },
+                {
+                    "pt": "A cliente adorou o resultado e eu acabei conseguindo mais dois trabalhos para o próximo fim de semana. Isso me lembrou que devemos arriscar mais.",
+                    "en": "The client loved the result and I ended up getting two more jobs for next weekend. This reminded me that we should take more risks.",
+                    "intentions": [
+                        {
+                            "intentionId": "acabei-acabou-resultado-inesperado",
+                            "ptIntent": "acabei conseguindo",
+                            "enIntent": "ended up getting"
+                        },
+                        {
+                            "intentionId": "me-lembrou-que",
+                            "ptIntent": "me lembrou que",
+                            "enIntent": "reminded me that"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "bastante-bem-adjetivo-pretty",
+                "estou-sentindo-que-preciso",
+                "sobre-o-que-sujeito-verbo",
+                "make-a-living",
+                "entao-voce-esta-dizendo-que",
+                "na-verdade-de-fato-na-realidade-alias",
+                "fiquei-tempo-gerundio",
+                "make-a-good-impression",
+                "acabar-sendo",
+                "ainda-bem-que",
+                "acabei-acabou-resultado-inesperado",
+                "me-lembrou-que"
+            ]
+        },
+        {
             "id": "b1-daily-life-9786e901-c863-4b87-8a68-6e2438fbb563",
             "englishLevel": "B1",
             "topic": "daily-life",
