@@ -16737,7 +16737,7 @@
 },
 {
   "id": "nao-vejo-a-hora-de-cant-wait",
-  "intention": "Não vejo a hora de...",
+  "intention": "Não vejo a hora de / Mal posso esperar",
   "english": "can't wait to / can't wait for",
   "pattern": "subject + can't wait to + base verb | subject + can't wait for + noun/event",
   "description": "Usado para expressar forte expectativa ou entusiasmo por algo que vai acontecer. Use 'can't wait to' antes de um verbo e 'can't wait for' antes de uma coisa, pessoa, data ou evento.",
