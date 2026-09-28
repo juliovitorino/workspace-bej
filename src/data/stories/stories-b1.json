@@ -1,6 +1,296 @@
 {
     "stories": [
         {
+            "id": "b1-travel-add9f526-78b6-4095-afb5-4fde62c68c2c",
+            "englishLevel": "B1",
+            "topic": "travel",
+            "titlePt": "Uma Nova Jornada em Londres",
+            "titleEn": "A New Journey in London",
+            "paragraphs": [
+                {
+                    "pt": "Eu decidi viajar para Londres. Eu trabalhei muito duro ao longo dos últimos meses para economizar dinheiro para esta viagem.",
+                    "en": "I decided to travel to London. I worked very hard over the past few months to save money for this trip.",
+                    "intentions": [
+                        {
+                            "intentionId": "over-the-past-few-months",
+                            "ptIntent": "ao longo dos últimos meses",
+                            "enIntent": "over the past few months"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Minha irmã disse para eu levar pouca bagagem, mas acabei trazendo duas malas enormes de qualquer maneira.",
+                    "en": "My sister told me to pack light, but I ended up bringing two huge suitcases anyway.",
+                    "intentions": [
+                        {
+                            "intentionId": "disse-para-eu-verbo",
+                            "ptIntent": "disse para eu levar",
+                            "enIntent": "told me to pack"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Eu precisava dessas férias porque não aguento mais o estresse. O trabalho estava me enlouquecendo.",
+                    "en": "I needed this vacation because I can't take the stress anymore. Work was driving me crazy.",
+                    "intentions": [
+                        {
+                            "intentionId": "nao-aguento-mais",
+                            "ptIntent": "não aguento mais o estresse",
+                            "enIntent": "can't take the stress anymore"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Enquanto caminhava no Hyde Park, vi inesperadamente meu ex-namorado, Leo. Ele quis conversar, mas eu sorri e disse: \"Eu já te superei.\"",
+                    "en": "While walking in Hyde Park, I unexpectedly saw my ex-boyfriend, Leo. He wanted to talk, but I smiled and said, \"I'm over you.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "im-over-you",
+                            "ptIntent": "Eu já te superei",
+                            "enIntent": "I'm over you"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ele queria planejar uma viagem juntos, mas eu disse a ele que ele vai ter que aceitar que somos apenas amigos agora.",
+                    "en": "He wanted to plan a trip together, but I told him he is going to have to accept that we are just friends now.",
+                    "intentions": [
+                        {
+                            "intentionId": "vou-vai-ter-que",
+                            "ptIntent": "vai ter que aceitar",
+                            "enIntent": "is going to have to accept"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Então, minha amiga Sarah me ligou. Ela mora em Londres e disse: \"Vamos colocar o papo em dia tomando um café hoje!\"",
+                    "en": "Then, my friend Sarah called me. She lives in London, and she said, \"Let's catch up over coffee today!\"",
+                    "intentions": [
+                        {
+                            "intentionId": "lets-catch-up",
+                            "ptIntent": "Vamos colocar o papo em dia",
+                            "enIntent": "Let's catch up"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Percebi que para aproveitar esta viagem, preciso levar isso a sério e focar na minha própria felicidade.",
+                    "en": "I realized that to enjoy this trip, I need to take it seriously and focus on my own happiness.",
+                    "intentions": [
+                        {
+                            "intentionId": "take-it-seriously",
+                            "ptIntent": "levar isso a sério",
+                            "enIntent": "take it seriously"
+                        }
+                    ]
+                },
+                {
+                    "pt": "No final, minha aventura solo acabou ficando maravilhosa e eu me senti completamente livre.",
+                    "en": "In the end, my solo adventure turned out wonderful and I felt completely free.",
+                    "intentions": [
+                        {
+                            "intentionId": "acabar-ficando",
+                            "ptIntent": "acabou ficando maravilhosa",
+                            "enIntent": "turned out wonderful"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "over-the-past-few-months",
+                "disse-para-eu-verbo",
+                "nao-aguento-mais",
+                "im-over-you",
+                "vou-vai-ter-que",
+                "lets-catch-up",
+                "take-it-seriously",
+                "acabar-ficando"
+            ]
+        },
+        {
+            "id": "b1-daily-life-e97982bf-4504-453f-b3e6-58e424802e8a",
+            "englishLevel": "B1",
+            "topic": "daily-life",
+            "titlePt": "Um Encontro Inesperado no Café",
+            "titleEn": "An Unexpected Meeting at the Coffee Shop",
+            "paragraphs": [
+                {
+                    "pt": "Lucas estava sentado em sua cafeteria favorita em um sábado chuvoso. Ele ficou duas horas lendo seu livro antes de ver Sofia entrar pela porta.",
+                    "en": "Lucas was sitting in his favorite coffee shop on a rainy Saturday. He spent two hours reading his book before he saw Sofia walk through the door.",
+                    "intentions": [
+                        {
+                            "intentionId": "fiquei-tempo-gerundio",
+                            "ptIntent": "ficou duas horas lendo",
+                            "enIntent": "spent two hours reading"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Sofia o viu e caminhou até sua mesa. Ela parecia um pouco nervosa e perguntou: \"Se você puder sentar comigo por cinco minutos, eu agradeceria.\"",
+                    "en": "Sofia saw him and walked over to his table. She looked a bit nervous and asked, \"If you could sit with me for five minutes, I would appreciate it.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "se-der-se-puder-se-for-possivel",
+                            "ptIntent": "Se você puder",
+                            "enIntent": "If you could"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Lucas aceitou o convite e olhou para o cardápio para decidir o que comer. Ele comentou: \"Estou dividido entre pedir um muffin de chocolate e comprar uma fatia de bolo de cenoura.\"",
+                    "en": "Lucas accepted the invitation and looked at the menu to decide what to eat. He commented, \"I'm torn between ordering a chocolate muffin and buying a slice of carrot cake.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "estou-dividido-entre",
+                            "ptIntent": "Estou dividido entre pedir um muffin de chocolate e comprar",
+                            "enIntent": "I'm torn between ordering a chocolate muffin and buying"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Sofia sorriu e disse que ele sempre gostou de doces. Ela acrescentou: \"Se eu tivesse mais tempo, eu compraria os dois para você, mas preciso ir embora logo.\"",
+                    "en": "Sofia smiled and said that he always loved sweets. She added, \"If I had more time, I would buy both for you, but I need to leave soon.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "se-eu-esse-hipotese-irreal-presente-futuro",
+                            "ptIntent": "Se eu tivesse mais tempo, eu compraria",
+                            "enIntent": "If I had more time, I would buy"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ela começou a falar sobre o passado deles e sobre como sentia falta daquela época. Lucas olhou para ela com calma e disse: \"Sendo sincero, eu não penso mais na gente.\"",
+                    "en": "She started talking about their past and how she missed those times. Lucas looked at her calmly and said, \"If I'm being honest, I don't think about us anymore.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "sendo-sincero-if-im-being-honest",
+                            "ptIntent": "Sendo sincero",
+                            "enIntent": "If I'm being honest"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Sofia pareceu surpresa, mas ouviu com atenção. Lucas sorriu gentilmente e completou: \"Eu não sinto mais mágoa. Eu já te superei e de verdade quero que você seja feliz.\"",
+                    "en": "Sofia looked surprised, but listened carefully. Lucas smiled gently and added, \"I don't feel hurt anymore. I'm over you, and I truly want you to be happy.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "im-over-you",
+                            "ptIntent": "Eu já te superei",
+                            "enIntent": "I'm over you"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ela respirou fundo e concordou, percebendo que o tempo tinha curado as feridas. \"Este nosso encontro de hoje poderia ser um sinal de que podemos ser bons amigos agora\", ela sugeriu.",
+                    "en": "She took a deep breath and agreed, realizing that time had healed the wounds. \"Our meeting today could be a sign that we can be good friends now,\" she suggested.",
+                    "intentions": [
+                        {
+                            "intentionId": "pode-poderia-ser-estar-hipotese",
+                            "ptIntent": "poderia ser",
+                            "enIntent": "could be"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Lucas concordou com a cabeça, sentindo um grande alívio no peito. Ele se levantou para ir embora e disse: \"Estou sentindo que preciso começar meu fim de semana com uma energia nova.\"",
+                    "en": "Lucas nodded, feeling a great sense of relief in his chest. He stood up to leave and said, \"I feel like I need to start my weekend with a fresh energy.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "estou-sentindo-que-preciso",
+                            "ptIntent": "Estou sentindo que preciso",
+                            "enIntent": "I feel like I need to"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "fiquei-tempo-gerundio",
+                "se-der-se-puder-se-for-possivel",
+                "estou-dividido-entre",
+                "se-eu-esse-hipotese-irreal-presente-futuro",
+                "sendo-sincero-if-im-being-honest",
+                "im-over-you",
+                "pode-poderia-ser-estar-hipotese",
+                "estou-sentindo-que-preciso"
+            ]
+        },
+        {
+            "id": "b1-daily-life-d5f0e493-c6d0-45e1-b880-c06f9600858c",
+            "englishLevel": "B1",
+            "topic": "daily-life",
+            "titlePt": "A Nova Rotina de Lucas",
+            "titleEn": "Lucas's New Routine",
+            "paragraphs": [
+                {
+                    "pt": "Lucas estava cansado da sua rotina diária. Ele sentia que precisava de um novo hobby para animar seus dias. Recentemente, sua vida tem sido entediante após o trabalho.",
+                    "en": "Lucas was tired of his daily routine. He felt he needed a new hobby to liven up his days. Recently, his life has been boring after work.",
+                    "intentions": [
+                        {
+                            "intentionId": "tem-tenho-tenha-participio-adjetivo",
+                            "ptIntent": "tem sido entediante",
+                            "enIntent": "has been boring"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ele se sentou no sofá e começou a pesquisar opções na internet. \"Estou dividido entre fazer aulas de culinária e praticar fotografia\", ele pensou alto. Ambas as opções pareciam muito divertidas.",
+                    "en": "He sat on the couch and started researching options on the internet. \"I'm torn between taking cooking classes and practicing photography,\" he thought out loud. Both options seemed very fun.",
+                    "intentions": [
+                        {
+                            "intentionId": "estou-dividido-entre",
+                            "ptIntent": "Estou dividido entre fazer aulas de culinária e praticar fotografia",
+                            "enIntent": "I'm torn between taking cooking classes and practicing photography"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ele olhou para a câmera antiga de seu pai na estante. \"Bem, eu realmente preciso decidir logo antes que a semana acabe\", murmurou ele para si mesmo. Ele queria começar o quanto antes.",
+                    "en": "He looked at his father's old camera on the shelf. \"Well, I really need to decide soon before the week ends,\" he muttered to himself. He wanted to start as soon as possible.",
+                    "intentions": [
+                        {
+                            "intentionId": "buffer-de-pensamento",
+                            "ptIntent": "Bem,",
+                            "enIntent": "Well,"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Para ajudar na decisão, ele resolveu ligar para sua irmã, Clara. Ela sempre dava excelentes conselhos sobre estilo de vida e novos começos.",
+                    "en": "To help with the decision, he decided to call his sister, Clara. She always gave excellent advice about lifestyle and new beginnings.",
+                    "intentions": []
+                },
+                {
+                    "pt": "\"Tenho que dizer, os dois hobbies combinam muito com você\", disse Clara pelo telefone. Ela sugeriu que ele começasse com a fotografia, pois ele já tinha o equipamento básico em casa.",
+                    "en": "\"I gotta say, both hobbies suit you very well,\" Clara said over the phone. She suggested he start with photography, since he already had the basic equipment at home.",
+                    "intentions": [
+                        {
+                            "intentionId": "tenho-que-dizer-i-gotta-say",
+                            "ptIntent": "Tenho que dizer,",
+                            "enIntent": "I gotta say,"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Lucas sorriu e percebeu que ela tinha razão. \"Obrigado, Clara! De agora em diante, eu vou tirar fotos todos os sábados de manhã no parque\", prometeu ele, animado com seu novo plano.",
+                    "en": "Lucas smiled and realized she was right. \"Thanks, Clara! From now on, I will take photos every Saturday morning in the park,\" he promised, excited about his new plan.",
+                    "intentions": [
+                        {
+                            "intentionId": "from-now-on",
+                            "ptIntent": "De agora em diante, eu vou tirar fotos",
+                            "enIntent": "From now on, I will take photos"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "tem-tenho-tenha-participio-adjetivo",
+                "estou-dividido-entre",
+                "buffer-de-pensamento",
+                "tenho-que-dizer-i-gotta-say",
+                "from-now-on"
+            ]
+        },
+        {
             "id": "b1-daily-life-6898ba36-788b-4c27-b8e3-c54a6b634111",
             "englishLevel": "B1",
             "topic": "daily-life",

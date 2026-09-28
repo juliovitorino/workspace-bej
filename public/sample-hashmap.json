@@ -16466,6 +16466,209 @@
   ],
   "related": [],
   "englishLevel": "A2"
+},
+{
+  "id": "tenho-a-sensacao-de-que-ive-got-a-feeling",
+  "intention": "Tenho a sensação de que... / estou com a impressão de que...",
+  "english": "I've got a feeling...",
+  "pattern": "I've got a feeling + (that) + clause",
+  "description": "Usado quando você tem uma intuição, impressão ou sensação de que alguma coisa vai acontecer ou de que algo é verdade, mesmo sem ter certeza. Na fala, 'that' frequentemente pode ser omitido.",
+  "category": "feeling-intuition",
+  "searchTerms": [
+    "tenho a sensação de que",
+    "estou com a sensação de que",
+    "tenho a impressão de que",
+    "estou com a impressão de que",
+    "estou sentindo que",
+    "pressentimento",
+    "feeling",
+    "got a feeling",
+    "I've got a feeling"
+  ],
+  "examples": [
+    {
+      "pt": "Tenho a sensação de que alguma coisa vai acontecer.",
+      "en": "I've got a feeling something's going to happen.",
+      "ptIntent": "Tenho a sensação de que",
+      "enIntent": "I've got a feeling"
+    },
+    {
+      "pt": "Estou com a impressão de que ele não vai aparecer.",
+      "en": "I've got a feeling he isn't going to show up.",
+      "ptIntent": "Estou com a impressão de que",
+      "enIntent": "I've got a feeling"
+    },
+    {
+      "pt": "Tenho a sensação de que isso vai dar certo.",
+      "en": "I've got a feeling this is going to work out.",
+      "ptIntent": "Tenho a sensação de que",
+      "enIntent": "I've got a feeling"
+    },
+    {
+      "pt": "Estou com a sensação de que esqueci alguma coisa.",
+      "en": "I've got a feeling I forgot something.",
+      "ptIntent": "Estou com a sensação de que",
+      "enIntent": "I've got a feeling"
+    },
+    {
+      "pt": "Tenho a impressão de que ela já sabe.",
+      "en": "I've got a feeling she already knows.",
+      "ptIntent": "Tenho a impressão de que",
+      "enIntent": "I've got a feeling"
+    }
+  ],
+  "tags": [
+    "feeling",
+    "intuition",
+    "impression",
+    "prediction",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "zoar-tirar-sarro-make-fun-of",
+  "intention": "Zoar / tirar sarro de alguém / ser zoado",
+  "english": "make fun of / get made fun of",
+  "pattern": "make fun of + person | get + made fun of",
+  "description": "Usado para falar sobre zoar, tirar sarro ou fazer piada às custas de alguém. Na forma passiva, 'get made fun of' expressa a ideia de 'ser zoado' ou 'sofrer gozação'.",
+  "category": "social-interaction",
+  "searchTerms": [
+    "zoar",
+    "tirar sarro",
+    "tirar sarro de alguém",
+    "fazer piada com alguém",
+    "ser zoado",
+    "sofrer gozação",
+    "make fun of",
+    "make fun of someone",
+    "get made fun of"
+  ],
+  "examples": [
+    {
+      "pt": "Eles sempre tiram sarro de mim.",
+      "en": "They always make fun of me.",
+      "ptIntent": "tiram sarro de mim",
+      "enIntent": "make fun of me"
+    },
+    {
+      "pt": "Não tire sarro dele.",
+      "en": "Don't make fun of him.",
+      "ptIntent": "tire sarro dele",
+      "enIntent": "make fun of him"
+    },
+    {
+      "pt": "Eu estava só zoando ele.",
+      "en": "I was just making fun of him.",
+      "ptIntent": "zoando ele",
+      "enIntent": "making fun of him"
+    },
+    {
+      "pt": "Eu costumava ser zoado na escola.",
+      "en": "I used to get made fun of at school.",
+      "ptIntent": "ser zoado",
+      "enIntent": "get made fun of"
+    },
+    {
+      "pt": "Ele tem medo de ser zoado pelos amigos.",
+      "en": "He's afraid of getting made fun of by his friends.",
+      "ptIntent": "ser zoado",
+      "enIntent": "getting made fun of"
+    },
+    {
+      "pt": "Ninguém gosta de ser zoado por causa da aparência.",
+      "en": "Nobody likes getting made fun of because of their appearance.",
+      "ptIntent": "ser zoado",
+      "enIntent": "getting made fun of"
+    }
+  ],
+  "tags": [
+    "make",
+    "phrasal-expression",
+    "social",
+    "teasing",
+    "passive",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "dar-conta-de-lidar-com-handle",
+  "intention": "Dar conta de / lidar com",
+  "english": "handle",
+  "pattern": "subject + handle + object",
+  "description": "Usado quando alguém consegue lidar com, administrar ou enfrentar uma situação, responsabilidade, problema, pressão ou quantidade de trabalho. Em muitos contextos, 'handle' corresponde naturalmente à intenção brasileira 'dar conta de'.",
+  "category": "ability-management",
+  "searchTerms": [
+    "dar conta de",
+    "dar conta disso",
+    "lidar com",
+    "aguentar",
+    "administrar",
+    "resolver",
+    "handle",
+    "handle it",
+    "handle this",
+    "handle the situation",
+    "handle the pressure",
+    "handle the workload"
+  ],
+  "examples": [
+    {
+      "pt": "Eu consigo dar conta disso.",
+      "en": "I can handle this.",
+      "ptIntent": "dar conta disso",
+      "enIntent": "handle this"
+    },
+    {
+      "pt": "Você consegue dar conta de tanta responsabilidade?",
+      "en": "Can you handle that much responsibility?",
+      "ptIntent": "dar conta de tanta responsabilidade",
+      "enIntent": "handle that much responsibility"
+    },
+    {
+      "pt": "Não sei se consigo dar conta dessa pressão.",
+      "en": "I don't know if I can handle this pressure.",
+      "ptIntent": "dar conta dessa pressão",
+      "enIntent": "handle this pressure"
+    },
+    {
+      "pt": "Deixa comigo. Eu dou conta.",
+      "en": "Leave it to me. I can handle it.",
+      "ptIntent": "dou conta",
+      "enIntent": "handle it"
+    },
+    {
+      "pt": "Ela soube lidar muito bem com a situação.",
+      "en": "She handled the situation really well.",
+      "ptIntent": "lidar muito bem com a situação",
+      "enIntent": "handled the situation really well"
+    },
+    {
+      "pt": "Acho que consigo dar conta dessa quantidade de trabalho.",
+      "en": "I think I can handle this workload.",
+      "ptIntent": "dar conta dessa quantidade de trabalho",
+      "enIntent": "handle this workload"
+    },
+    {
+      "pt": "Ele não conseguiu lidar com a pressão.",
+      "en": "He couldn't handle the pressure.",
+      "ptIntent": "lidar com a pressão",
+      "enIntent": "handle the pressure"
+    }
+  ],
+  "tags": [
+    "ability",
+    "management",
+    "responsibility",
+    "work",
+    "pressure",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "B1"
 }
   ]
 }
