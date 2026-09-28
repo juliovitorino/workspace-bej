@@ -16669,6 +16669,148 @@
   ],
   "related": [],
   "englishLevel": "B1"
+},
+{
+  "id": "estou-ansioso-para-looking-forward-to",
+  "intention": "Estou ansioso para... / estou na expectativa de...",
+  "english": "I'm looking forward to",
+  "pattern": "subject + be + looking forward to + verb-ing / noun",
+  "description": "Usado para dizer que você está esperando algo com expectativa positiva. Depois de 'look forward to', quando usamos um verbo, ele fica na forma -ing porque 'to' aqui funciona como preposição. Também pode ser seguido diretamente por um substantivo.",
+  "category": "expectation-excitement",
+  "searchTerms": [
+    "estou ansioso para",
+    "estou na expectativa de",
+    "estou esperando com expectativa",
+    "mal posso esperar",
+    "looking forward to",
+    "look forward to"
+  ],
+  "examples": [
+    {
+      "pt": "Estou ansioso para viajar.",
+      "en": "I'm looking forward to traveling.",
+      "ptIntent": "Estou ansioso para viajar",
+      "enIntent": "looking forward to traveling"
+    },
+    {
+      "pt": "Estou ansioso para conhecer você pessoalmente.",
+      "en": "I'm looking forward to meeting you in person.",
+      "ptIntent": "Estou ansioso para conhecer você pessoalmente",
+      "enIntent": "looking forward to meeting you in person"
+    },
+    {
+      "pt": "Estou ansioso para começar meu novo trabalho.",
+      "en": "I'm looking forward to starting my new job.",
+      "ptIntent": "Estou ansioso para começar meu novo trabalho",
+      "enIntent": "looking forward to starting my new job"
+    },
+    {
+      "pt": "Estamos ansiosos para trabalhar com vocês.",
+      "en": "We're looking forward to working with you.",
+      "ptIntent": "ansiosos para trabalhar com vocês",
+      "enIntent": "looking forward to working with you"
+    },
+    {
+      "pt": "Estou ansioso pelo fim de semana.",
+      "en": "I'm looking forward to the weekend.",
+      "ptIntent": "Estou ansioso pelo fim de semana",
+      "enIntent": "looking forward to the weekend"
+    },
+    {
+      "pt": "Ela está ansiosa para ver a família novamente.",
+      "en": "She's looking forward to seeing her family again.",
+      "ptIntent": "ansiosa para ver a família novamente",
+      "enIntent": "looking forward to seeing her family again"
+    }
+  ],
+  "tags": [
+    "expectation",
+    "excitement",
+    "future",
+    "gerund",
+    "spoken-english"
+  ],
+  "related": [
+    "nao-vejo-a-hora-de-cant-wait"
+  ],
+  "englishLevel": "B1"
+},
+{
+  "id": "nao-vejo-a-hora-de-cant-wait",
+  "intention": "Não vejo a hora de...",
+  "english": "can't wait to / can't wait for",
+  "pattern": "subject + can't wait to + base verb | subject + can't wait for + noun/event",
+  "description": "Usado para expressar forte expectativa ou entusiasmo por algo que vai acontecer. Use 'can't wait to' antes de um verbo e 'can't wait for' antes de uma coisa, pessoa, data ou evento.",
+  "category": "expectation-excitement",
+  "searchTerms": [
+    "não vejo a hora",
+    "não vejo a hora de",
+    "não vejo a hora de chegar",
+    "mal posso esperar",
+    "estou ansioso para",
+    "can't wait",
+    "can't wait to",
+    "can't wait for"
+  ],
+  "examples": [
+    {
+      "pt": "Não vejo a hora de viajar.",
+      "en": "I can't wait to travel.",
+      "ptIntent": "Não vejo a hora de viajar",
+      "enIntent": "can't wait to travel"
+    },
+    {
+      "pt": "Não vejo a hora de chegar lá.",
+      "en": "I can't wait to get there.",
+      "ptIntent": "Não vejo a hora de chegar lá",
+      "enIntent": "can't wait to get there"
+    },
+    {
+      "pt": "Não vejo a hora de começar meu novo trabalho.",
+      "en": "I can't wait to start my new job.",
+      "ptIntent": "Não vejo a hora de começar meu novo trabalho",
+      "enIntent": "can't wait to start my new job"
+    },
+    {
+      "pt": "Não vejo a hora de ver vocês novamente.",
+      "en": "I can't wait to see you guys again.",
+      "ptIntent": "Não vejo a hora de ver vocês novamente",
+      "enIntent": "can't wait to see you guys again"
+    },
+    {
+      "pt": "Não vejo a hora de chegar sexta-feira.",
+      "en": "I can't wait for Friday.",
+      "ptIntent": "Não vejo a hora de chegar sexta-feira",
+      "enIntent": "can't wait for Friday"
+    },
+    {
+      "pt": "Não vejo a hora de chegar o fim de semana.",
+      "en": "I can't wait for the weekend.",
+      "ptIntent": "Não vejo a hora de chegar o fim de semana",
+      "enIntent": "can't wait for the weekend"
+    },
+    {
+      "pt": "Não vejo a hora de chegar as férias.",
+      "en": "I can't wait for vacation.",
+      "ptIntent": "Não vejo a hora de chegar as férias",
+      "enIntent": "can't wait for vacation"
+    },
+    {
+      "pt": "Ela não vê a hora de começar a faculdade.",
+      "en": "She can't wait to start college.",
+      "ptIntent": "não vê a hora de começar a faculdade",
+      "enIntent": "can't wait to start college"
+    }
+  ],
+  "tags": [
+    "expectation",
+    "excitement",
+    "future",
+    "conversation",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "A2"
 }
   ]
 }
