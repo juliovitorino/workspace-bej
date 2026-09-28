@@ -2,6 +2,9 @@ import { useMemo, useState } from "react";
 import type { Example, MentalIntention } from "../types/hashmap";
 
 type ExerciseMode = "basic" | "advanced";
+type EnglishLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
+
+const ENGLISH_LEVELS: EnglishLevel[] = ["A1", "A2", "B1", "B2", "C1", "C2"];
 
 interface ExercisePanelProps {
   intentions: MentalIntention[];
@@ -69,22 +72,23 @@ export function ExercisePanel({
   intentions,
   onStartTraining
 }: ExercisePanelProps) {
+  const [englishLevel, setEnglishLevel] =
+    useState<EnglishLevel>("B1");
+  const [mode, setMode] = useState<ExerciseMode>("basic");
+  const [amount, setAmount] = useState(5);
+  const [exercises, setExercises] = useState<ExerciseItem[]>([]);
+
   const availableIntentions = useMemo(
     () =>
       intentions.filter(
-        (item) => (item.examples?.length ?? 0) > 0
+        (item) =>
+          item.englishLevel === englishLevel &&
+          (item.examples?.length ?? 0) > 0
       ),
-    [intentions]
+    [intentions, englishLevel]
   );
 
   const maxAmount = availableIntentions.length;
-
-  const [amount, setAmount] = useState(
-    Math.min(5, Math.max(1, maxAmount))
-  );
-
-  const [mode, setMode] = useState<ExerciseMode>("basic");
-  const [exercises, setExercises] = useState<ExerciseItem[]>([]);
 
   function handleAmountChange(value: number) {
     if (Number.isNaN(value)) {
@@ -118,6 +122,20 @@ export function ExercisePanel({
     setExercises([]);
   }
 
+  function handleLevelChange(nextLevel: EnglishLevel) {
+    const levelCount = intentions.filter(
+      (item) =>
+        item.englishLevel === nextLevel &&
+        (item.examples?.length ?? 0) > 0
+    ).length;
+
+    setEnglishLevel(nextLevel);
+    setExercises([]);
+    setAmount((current) =>
+      Math.min(Math.max(current, 1), Math.max(levelCount, 1))
+    );
+  }
+
   return (
     <section className="exercise-panel">
       <div className="exercise-header">
@@ -134,7 +152,7 @@ export function ExercisePanel({
 
         <div className="exercise-total">
           <strong>{maxAmount}</strong>
-          <span>intenções com exemplos disponíveis</span>
+          <span>intenções com exemplos no nível {englishLevel}</span>
         </div>
       </div>
 
@@ -181,6 +199,27 @@ export function ExercisePanel({
             </div>
           </div>
 
+          <div className="exercise-level-selector">
+            <p className="exercise-mode-label">Nível de inglês</p>
+
+            <div className="exercise-level-buttons">
+              {ENGLISH_LEVELS.map((level) => (
+                <button
+                  type="button"
+                  key={level}
+                  className={
+                    englishLevel === level
+                      ? "exercise-level-button active"
+                      : "exercise-level-button"
+                  }
+                  onClick={() => handleLevelChange(level)}
+                >
+                  {level}
+                </button>
+              ))}
+            </div>
+          </div>
+
           <div className="exercise-controls">
             <div className="field exercise-amount-field">
               <label htmlFor="exercise-amount">
@@ -215,8 +254,8 @@ export function ExercisePanel({
               <div className="exercise-results-header">
                 <p className="eyebrow">
                   {mode === "basic"
-                    ? "Treino básico"
-                    : "Treino avançado"}
+                    ? `Treino básico · ${englishLevel}`
+                    : `Treino avançado · ${englishLevel}`}
                 </p>
 
                 <h2>

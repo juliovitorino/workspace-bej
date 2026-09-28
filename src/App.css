@@ -1690,3 +1690,48 @@ button {
     font-size: 1.08rem;
   }
 }
+
+
+/* Exercise English level selector */
+.exercise-level-selector {
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e2e7f0;
+  border-radius: 16px;
+}
+
+.exercise-level-buttons {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.exercise-level-button {
+  min-height: 48px;
+  border: 1px solid #d8deea;
+  border-radius: 12px;
+  background: #f8fafc;
+  color: #344054;
+  font-weight: 800;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.exercise-level-button:hover {
+  border-color: #b8c4eb;
+  background: #ffffff;
+}
+
+.exercise-level-button.active {
+  border-color: #3659d9;
+  background: #edf1ff;
+  color: #3659d9;
+  box-shadow: 0 0 0 3px rgba(54, 89, 217, 0.08);
+}
+
+@media (max-width: 720px) {
+  .exercise-level-buttons {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
