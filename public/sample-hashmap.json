@@ -4098,51 +4098,36 @@
       "englishLevel": "A2"
     },
     {
-      "id": "esqueci-que-ja-acao-aconteceu",
-      "intention": "Esqueci que já... (ação aconteceu)",
-      "english": "forget + ing",
-      "pattern": "forget + verb-ing",
-      "description": "Esquecimento relacionado a ação já realizada.",
-      "category": "verb-complements",
-      "searchTerms": [],
-      "examples": [
-        {
-          "pt": "Eu esqueci que já paguei isso.",
-          "en": "I forgot paying for that.",
-          "ptIntent": "esqueci que já",
-          "enIntent": "forgot"
-        }
-      ],
-      "tags": [
-        "forget",
-        "gerund"
-      ],
-      "related": [],
-      "englishLevel": "B1"
-    },
+  "id": "esqueci-que-ja-acao-aconteceu",
+  "intention": "Esqueci que já... (ação aconteceu)",
+  "english": "I forgot that I had already + past participle",
+  "pattern": "I forgot that I had already + past participle",
+  "description": "Usado quando você esqueceu que uma ação já tinha acontecido antes de outro momento no passado.",
+  "category": "verb-complements",
+  "searchTerms": [
+    "esqueci que já",
+    "eu esqueci que já",
+    "forgot that",
+    "had already",
+    "I'd already"
+  ],
+  "examples": [
     {
-      "id": "com-o-com-a-causa",
-      "intention": "Com o / com a (causa)",
-      "english": "because of",
-      "pattern": "because of + noun",
-      "description": "Quando “com” significa “por causa de”.",
-      "category": "prepositions",
-      "searchTerms": [],
-      "examples": [
-        {
-          "pt": "Tenho tido problemas por causa do trabalho.",
-          "en": "I’ve had problems because of my job.",
-          "ptIntent": "causa",
-          "enIntent": "because of"
-        }
-      ],
-      "tags": [
-        "preposition",
-        "cause"
-      ],
-      "related": [],
-      "englishLevel": "A2"
-    },
+      "pt": "Eu esqueci que já paguei isso.",
+      "en": "I forgot that I had already paid for that.",
+      "ptIntent": "esqueci que já",
+      "enIntent": "forgot that I had already paid"
+    }
+  ],
+  "tags": [
+    "forget",
+    "past-perfect",
+    "already",
+    "past-participle"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
     {
       "id": "com-o-com-a-tema",
       "intention": "Com o / com a (tema)",
@@ -16811,6 +16796,441 @@
   ],
   "related": [],
   "englishLevel": "A2"
+},
+{
+  "id": "assim-que-as-soon-as",
+  "intention": "Assim que...",
+  "english": "as soon as",
+  "pattern": "as soon as + present, subject + will + base verb",
+  "description": "Usado para dizer que uma ação futura acontecerá imediatamente depois de outra. Em vez de traduzir mentalmente os tempos verbais, memorize o gerador completo: AS SOON AS + PRESENT, WILL + VERB. Mesmo falando sobre o futuro, normalmente não usamos 'will' na oração introduzida por 'as soon as'.",
+  "category": "time",
+  "searchTerms": [
+    "assim que",
+    "logo que",
+    "as soon as",
+    "quando eu chegar",
+    "assim que eu chegar",
+    "assim que terminar"
+  ],
+  "examples": [
+    {
+      "pt": "Assim que eu chegar em casa, vou te ligar.",
+      "en": "As soon as I get home, I'll call you.",
+      "ptIntent": "Assim que eu chegar em casa",
+      "enIntent": "As soon as I get home"
+    },
+    {
+      "pt": "Assim que ela chegar, vamos comer.",
+      "en": "As soon as she arrives, we'll eat.",
+      "ptIntent": "Assim que ela chegar",
+      "enIntent": "As soon as she arrives"
+    },
+    {
+      "pt": "Assim que eu terminar este projeto, vou fazer uma pausa.",
+      "en": "As soon as I finish this project, I'll take a break.",
+      "ptIntent": "Assim que eu terminar este projeto",
+      "enIntent": "As soon as I finish this project"
+    },
+    {
+      "pt": "Assim que eu terminar minha aula de inglês, vou dar uma caminhada.",
+      "en": "As soon as I finish my English class, I'll take a walk.",
+      "ptIntent": "Assim que eu terminar minha aula de inglês",
+      "enIntent": "As soon as I finish my English class"
+    },
+    {
+      "pt": "Assim que eu souber de alguma coisa, vou te avisar.",
+      "en": "As soon as I know something, I'll let you know.",
+      "ptIntent": "Assim que eu souber de alguma coisa",
+      "enIntent": "As soon as I know something"
+    },
+    {
+      "pt": "Assim que ele chegar aqui, vamos começar a reunião.",
+      "en": "As soon as he gets here, we'll start the meeting.",
+      "ptIntent": "Assim que ele chegar aqui",
+      "enIntent": "As soon as he gets here"
+    },
+    {
+      "pt": "Assim que eu tiver tempo, vou cuidar disso.",
+      "en": "As soon as I have time, I'll take care of it.",
+      "ptIntent": "Assim que eu tiver tempo",
+      "enIntent": "As soon as I have time"
+    },
+    {
+      "pt": "Assim que eles responderem, vou te contar.",
+      "en": "As soon as they reply, I'll tell you.",
+      "ptIntent": "Assim que eles responderem",
+      "enIntent": "As soon as they reply"
+    }
+  ],
+  "tags": [
+    "time",
+    "future",
+    "present-simple",
+    "will",
+    "time-clause",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "foi-assim-que-e-assim-que-thats-how",
+  "intention": "Foi assim que... / É assim que...",
+  "english": "that's how",
+  "pattern": "that's how + subject + verb",
+  "description": "Usado para explicar a maneira como algo aconteceu ou como algo é feito. 'That's how' pode introduzir tanto uma narrativa sobre o passado quanto uma explicação sobre o presente.",
+  "category": "explanation-narrative",
+  "searchTerms": [
+    "foi assim",
+    "foi assim que",
+    "é assim",
+    "é assim que",
+    "dessa forma",
+    "that's how"
+  ],
+  "examples": [
+    {
+      "pt": "Foi assim que tudo começou.",
+      "en": "That's how it all started.",
+      "ptIntent": "Foi assim que",
+      "enIntent": "That's how"
+    },
+    {
+      "pt": "Foi assim que aprendi inglês.",
+      "en": "That's how I learned English.",
+      "ptIntent": "Foi assim que",
+      "enIntent": "That's how"
+    },
+    {
+      "pt": "Foi assim que conheci minha esposa.",
+      "en": "That's how I met my wife.",
+      "ptIntent": "Foi assim que",
+      "enIntent": "That's how"
+    },
+    {
+      "pt": "Foi assim que resolvemos o problema.",
+      "en": "That's how we solved the problem.",
+      "ptIntent": "Foi assim que",
+      "enIntent": "That's how"
+    },
+    {
+      "pt": "Foi assim que aconteceu.",
+      "en": "That's how it happened.",
+      "ptIntent": "Foi assim que",
+      "enIntent": "That's how"
+    },
+    {
+      "pt": "Foi assim que descobri a verdade.",
+      "en": "That's how I found out the truth.",
+      "ptIntent": "Foi assim que",
+      "enIntent": "That's how"
+    },
+    {
+      "pt": "Foi assim que consegui meu primeiro emprego.",
+      "en": "That's how I got my first job.",
+      "ptIntent": "Foi assim que",
+      "enIntent": "That's how"
+    },
+    {
+      "pt": "É assim que eu estudo inglês todos os dias.",
+      "en": "That's how I study English every day.",
+      "ptIntent": "É assim que",
+      "enIntent": "That's how"
+    },
+    {
+      "pt": "É assim que fazemos as coisas aqui.",
+      "en": "That's how we do things here.",
+      "ptIntent": "É assim que",
+      "enIntent": "That's how"
+    },
+    {
+      "pt": "É assim que funciona.",
+      "en": "That's how it works.",
+      "ptIntent": "É assim que",
+      "enIntent": "That's how"
+    }
+  ],
+  "tags": [
+    "that's-how",
+    "explanation",
+    "narrative",
+    "storytelling",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "ja-era-tarde-demais-it-was-too-late",
+  "intention": "Já era tarde demais",
+  "english": "it was too late",
+  "pattern": "it was too late",
+  "description": "Usado quando uma oportunidade ou momento já passou e não há mais tempo para agir. Embora 'already' seja possível em alguns contextos, 'it was too late' normalmente expressa essa ideia de forma mais natural.",
+  "category": "time",
+  "searchTerms": [
+    "já era tarde demais",
+    "era tarde demais",
+    "já estava tarde demais",
+    "it was too late",
+    "too late"
+  ],
+  "examples": [
+    {
+      "pt": "Quando percebi meu erro, já era tarde demais.",
+      "en": "When I realized my mistake, it was too late.",
+      "ptIntent": "já era tarde demais",
+      "enIntent": "it was too late"
+    },
+    {
+      "pt": "Eu queria cancelar, mas já era tarde demais.",
+      "en": "I wanted to cancel, but it was too late.",
+      "ptIntent": "já era tarde demais",
+      "enIntent": "it was too late"
+    },
+    {
+      "pt": "Quando ela tentou mudar de ideia, já era tarde demais.",
+      "en": "When she tried to change her mind, it was too late.",
+      "ptIntent": "já era tarde demais",
+      "enIntent": "it was too late"
+    },
+    {
+      "pt": "Tentei consertar o problema, mas já era tarde demais.",
+      "en": "I tried to fix the problem, but it was too late.",
+      "ptIntent": "já era tarde demais",
+      "enIntent": "it was too late"
+    }
+  ],
+  "tags": [
+    "time",
+    "too-late",
+    "past",
+    "spoken-english",
+    "storytelling"
+  ],
+  "related": [],
+  "englishLevel": "A2"
+},
+{
+  "id": "quando-aconteceu-ja-era-tarde-demais-by-the-time",
+  "intention": "Quando... aconteceu, já era tarde demais",
+  "english": "by the time..., it was too late",
+  "pattern": "by the time + subject + past verb, it was too late",
+  "description": "Gerador usado para contar que, quando determinado acontecimento ocorreu, a oportunidade ou o momento para agir já havia passado.",
+  "category": "time",
+  "searchTerms": [
+    "quando aconteceu",
+    "quando cheguei",
+    "quando percebi",
+    "quando lembrei",
+    "já era tarde demais",
+    "by the time",
+    "it was too late"
+  ],
+  "examples": [
+    {
+      "pt": "Quando cheguei lá, já era tarde demais.",
+      "en": "By the time I got there, it was too late.",
+      "ptIntent": "Quando cheguei lá, já era tarde demais",
+      "enIntent": "By the time I got there, it was too late"
+    },
+    {
+      "pt": "Quando ela me ligou, já era tarde demais.",
+      "en": "By the time she called me, it was too late.",
+      "ptIntent": "Quando ela me ligou, já era tarde demais",
+      "enIntent": "By the time she called me, it was too late"
+    },
+    {
+      "pt": "Quando ele percebeu o erro, já era tarde demais.",
+      "en": "By the time he realized his mistake, it was too late.",
+      "ptIntent": "Quando ele percebeu o erro, já era tarde demais",
+      "enIntent": "By the time he realized his mistake, it was too late"
+    },
+    {
+      "pt": "Quando ela se lembrou, já era tarde demais.",
+      "en": "By the time she remembered, it was too late.",
+      "ptIntent": "Quando ela se lembrou, já era tarde demais",
+      "enIntent": "By the time she remembered, it was too late"
+    },
+    {
+      "pt": "Quando percebi o que estava acontecendo, já era tarde demais.",
+      "en": "By the time I realized what was happening, it was too late.",
+      "ptIntent": "Quando percebi o que estava acontecendo, já era tarde demais",
+      "enIntent": "By the time I realized what was happening, it was too late"
+    },
+    {
+      "pt": "Quando decidi mudar minha vida, já era quase tarde demais.",
+      "en": "By the time I decided to change my life, it was almost too late.",
+      "ptIntent": "Quando decidi mudar minha vida, já era quase tarde demais",
+      "enIntent": "By the time I decided to change my life, it was almost too late"
+    }
+  ],
+  "tags": [
+    "by-the-time",
+    "time",
+    "past",
+    "too-late",
+    "storytelling",
+    "spoken-english"
+  ],
+  "related": [
+    "ja-era-tarde-demais-it-was-too-late"
+  ],
+  "englishLevel": "B1"
+},
+{
+  "id": "quando-aconteceu-ja-tinha-acontecido-by-the-time",
+  "intention": "Quando... aconteceu, já tinha...",
+  "english": "by the time..., had already...",
+  "pattern": "by the time + subject + simple past, subject + had already + past participle",
+  "description": "Gerador usado para mostrar que uma ação já havia acontecido antes de outro acontecimento no passado. Memorize o bloco completo: BY THE TIME + PAST, ... HAD ALREADY + PAST PARTICIPLE.",
+  "category": "time",
+  "searchTerms": [
+    "quando aconteceu já tinha",
+    "quando cheguei já tinha",
+    "quando percebi já tinha",
+    "quando descobri já tinha",
+    "já tinha acontecido",
+    "by the time",
+    "had already"
+  ],
+  "examples": [
+    {
+      "pt": "Quando cheguei, eles já tinham ido embora.",
+      "en": "By the time I got there, they had already left.",
+      "ptIntent": "Quando cheguei, eles já tinham ido embora",
+      "enIntent": "By the time I got there, they had already left"
+    },
+    {
+      "pt": "Quando cheguei em casa, minha esposa já tinha preparado o jantar.",
+      "en": "By the time I got home, my wife had already made dinner.",
+      "ptIntent": "Quando cheguei em casa, minha esposa já tinha preparado o jantar",
+      "enIntent": "By the time I got home, my wife had already made dinner"
+    },
+    {
+      "pt": "Quando acordei, ela já tinha saído.",
+      "en": "By the time I woke up, she had already left.",
+      "ptIntent": "Quando acordei, ela já tinha saído",
+      "enIntent": "By the time I woke up, she had already left"
+    },
+    {
+      "pt": "Quando liguei para ele, ele já tinha resolvido o problema.",
+      "en": "By the time I called him, he had already solved the problem.",
+      "ptIntent": "Quando liguei para ele, ele já tinha resolvido o problema",
+      "enIntent": "By the time I called him, he had already solved the problem"
+    },
+    {
+      "pt": "Quando percebi meu erro, eu já tinha enviado o e-mail.",
+      "en": "By the time I realized my mistake, I had already sent the email.",
+      "ptIntent": "Quando percebi meu erro, eu já tinha enviado o e-mail",
+      "enIntent": "By the time I realized my mistake, I had already sent the email"
+    },
+    {
+      "pt": "Quando chegamos ao aeroporto, o avião já tinha decolado.",
+      "en": "By the time we got to the airport, the plane had already taken off.",
+      "ptIntent": "Quando chegamos ao aeroporto, o avião já tinha decolado",
+      "enIntent": "By the time we got to the airport, the plane had already taken off"
+    },
+    {
+      "pt": "Quando comecei a procurar outro emprego, a empresa já tinha contratado outra pessoa.",
+      "en": "By the time I started looking for another job, the company had already hired someone else.",
+      "ptIntent": "Quando comecei a procurar outro emprego, a empresa já tinha contratado outra pessoa",
+      "enIntent": "By the time I started looking for another job, the company had already hired someone else"
+    },
+    {
+      "pt": "Quando descobrimos o problema, ele já tinha causado muito prejuízo.",
+      "en": "By the time we found out about the problem, it had already caused a lot of damage.",
+      "ptIntent": "Quando descobrimos o problema, ele já tinha causado muito prejuízo",
+      "enIntent": "By the time we found out about the problem, it had already caused a lot of damage"
+    }
+  ],
+  "tags": [
+    "by-the-time",
+    "past-perfect",
+    "simple-past",
+    "already",
+    "past-participle",
+    "storytelling",
+    "time"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "ja-tinha-sido-had-already-been",
+  "intention": "Já tinha sido...",
+  "english": "had already been + past participle",
+  "pattern": "subject + had already been + past participle",
+  "description": "Usado quando algo já havia sofrido uma ação antes de outro momento no passado. É a forma passiva de 'had already + past participle'. Memorize o gerador: JÁ TINHA SIDO + particípio → HAD ALREADY BEEN + past participle.",
+  "category": "passive-voice",
+  "searchTerms": [
+    "já tinha sido",
+    "já havia sido",
+    "tinha sido",
+    "had already been",
+    "já tinha sido feito",
+    "já tinha sido enviado",
+    "já tinha sido excluído"
+  ],
+  "examples": [
+    {
+      "pt": "Já tinha sido enviado.",
+      "en": "It had already been sent.",
+      "ptIntent": "Já tinha sido enviado",
+      "enIntent": "had already been sent"
+    },
+    {
+      "pt": "O problema já tinha sido corrigido.",
+      "en": "The problem had already been fixed.",
+      "ptIntent": "já tinha sido corrigido",
+      "enIntent": "had already been fixed"
+    },
+    {
+      "pt": "A conta já tinha sido encerrada.",
+      "en": "The account had already been closed.",
+      "ptIntent": "já tinha sido encerrada",
+      "enIntent": "had already been closed"
+    },
+    {
+      "pt": "O arquivo já tinha sido excluído.",
+      "en": "The file had already been deleted.",
+      "ptIntent": "já tinha sido excluído",
+      "enIntent": "had already been deleted"
+    },
+    {
+      "pt": "O e-mail já tinha sido enviado.",
+      "en": "The email had already been sent.",
+      "ptIntent": "já tinha sido enviado",
+      "enIntent": "had already been sent"
+    },
+    {
+      "pt": "A reunião já tinha sido cancelada.",
+      "en": "The meeting had already been canceled.",
+      "ptIntent": "já tinha sido cancelada",
+      "enIntent": "had already been canceled"
+    },
+    {
+      "pt": "A senha já tinha sido alterada.",
+      "en": "The password had already been changed.",
+      "ptIntent": "já tinha sido alterada",
+      "enIntent": "had already been changed"
+    },
+    {
+      "pt": "O documento já tinha sido removido do sistema.",
+      "en": "The document had already been removed from the system.",
+      "ptIntent": "já tinha sido removido",
+      "enIntent": "had already been removed"
+    }
+  ],
+  "tags": [
+    "past-perfect",
+    "passive-voice",
+    "already",
+    "been",
+    "past-participle",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "B1"
 }
   ]
 }
