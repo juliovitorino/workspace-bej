@@ -17231,6 +17231,75 @@
   ],
   "related": [],
   "englishLevel": "B1"
+},
+{
+  "id": "verbo-intensificado-pra-caralho-fucking",
+  "intention": "pra caralho / muito mesmo (intensificação vulgar)",
+  "english": "fucking + verb",
+  "pattern": "subject + fucking + verb + complement",
+  "description": "Usado como intensificador emocional antes de um verbo. 'Fucking' não possui uma tradução fixa: dependendo do contexto, pode corresponder a 'pra caralho', 'muito mesmo', 'demais' ou simplesmente adicionar forte ênfase emocional. É vulgar e deve ser usado apenas em contextos informais apropriados.",
+  "category": "intensifiers",
+  "searchTerms": [
+    "pra caralho",
+    "muito pra caralho",
+    "gosto pra caralho",
+    "amo pra caralho",
+    "odeio pra caralho",
+    "quero pra caralho",
+    "preciso pra caralho",
+    "fucking",
+    "I fucking love",
+    "I fucking hate"
+  ],
+  "examples": [
+    {
+      "pt": "Eu amo meu Mental Hashmap pra caralho.",
+      "en": "I fucking love my Mental Hashmap.",
+      "ptIntent": "amo meu Mental Hashmap pra caralho",
+      "enIntent": "fucking love my Mental Hashmap"
+    },
+    {
+      "pt": "Eu odeio esse aplicativo pra caralho.",
+      "en": "I fucking hate this app.",
+      "ptIntent": "odeio esse aplicativo pra caralho",
+      "enIntent": "fucking hate this app"
+    },
+    {
+      "pt": "Eu preciso muito de umas férias, pra caralho.",
+      "en": "I fucking need a vacation.",
+      "ptIntent": "preciso muito de umas férias, pra caralho",
+      "enIntent": "fucking need a vacation"
+    },
+    {
+      "pt": "Eu quero muito esse emprego, pra caralho.",
+      "en": "I fucking want this job.",
+      "ptIntent": "quero muito esse emprego, pra caralho",
+      "enIntent": "fucking want this job"
+    },
+    {
+      "pt": "Eu amo essa música pra caralho.",
+      "en": "I fucking love this song.",
+      "ptIntent": "amo essa música pra caralho",
+      "enIntent": "fucking love this song"
+    },
+    {
+      "pt": "Eu odeio esperar pra caralho.",
+      "en": "I fucking hate waiting.",
+      "ptIntent": "odeio esperar pra caralho",
+      "enIntent": "fucking hate waiting"
+    }
+  ],
+  "tags": [
+    "fucking",
+    "intensifier",
+    "emphasis",
+    "emotion",
+    "vulgar",
+    "informal",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "B2"
 }
   ]
 }
