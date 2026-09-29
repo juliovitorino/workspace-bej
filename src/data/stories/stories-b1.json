@@ -1,6 +1,130 @@
 {
     "stories": [
         {
+            "id": "b1-family-858809a3-a1ad-4b17-97e4-aeeeff8ae3e5",
+            "englishLevel": "B1",
+            "topic": "family",
+            "titlePt": "O Almoço de Domingo em Família",
+            "titleEn": "The Sunday Family Lunch",
+            "paragraphs": [
+                {
+                    "pt": "No domingo de manhã, Lucas entrou na cozinha e viu sua irmã Júlia tomando café. Ele sorriu e perguntou: \"O que temos para hoje?\"",
+                    "en": "On Sunday morning, Lucas walked into the kitchen and saw his sister Julia drinking coffee. He smiled and asked, \"What's on the agenda today?\"",
+                    "intentions": [
+                        {
+                            "intentionId": "whats-on-the-agenda-today",
+                            "ptIntent": "O que temos para hoje?",
+                            "enIntent": "What's on the agenda today?"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Júlia olhou para ele e suspirou. \"Eu queria fazer aquela lasanha especial para a família, mas eu fiquei sem queijo.\"",
+                    "en": "Julia looked at him and sighed. \"I wanted to make that special lasagna for the family, but I ran out of cheese.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "fiquei-sem-acabou",
+                            "ptIntent": "fiquei sem queijo",
+                            "enIntent": "ran out of cheese"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Lucas sugeriu ir ao mercado da esquina, mas Júlia não tinha certeza se estava aberto. \"Até onde eu sei, eles fecham aos domingos\", ela disse.",
+                    "en": "Lucas suggested going to the corner market, but Julia wasn't sure if it was open. \"As far as I know, they close on Sundays,\" she said.",
+                    "intentions": [
+                        {
+                            "intentionId": "ate-onde",
+                            "ptIntent": "Até onde eu sei",
+                            "enIntent": "As far as I know"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Lucas pensou por um momento e disse: \"Estou sentindo que preciso ajudar mais com os almoços de família, então eu posso dirigir até o supermercado maior.\"",
+                    "en": "Lucas thought for a moment and said, \"I feel like I need to help more with family lunches, so I can drive to the bigger supermarket.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "estou-sentindo-que-preciso",
+                            "ptIntent": "Estou sentindo que preciso ajudar",
+                            "enIntent": "I feel like I need to help"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Júlia sorriu, surpresa com a oferta dele. \"Então você está dizendo que vai dirigir voluntariamente no trânsito de domingo?\"",
+                    "en": "Julia smiled, surprised by his offer. \"So you're saying that you will voluntarily drive in Sunday traffic?\"",
+                    "intentions": [
+                        {
+                            "intentionId": "entao-voce-esta-dizendo-que",
+                            "ptIntent": "Então você está dizendo que vai dirigir",
+                            "enIntent": "So you're saying that you will voluntarily drive"
+                        }
+                    ]
+                },
+                {
+                    "pt": "\"Sim\", ele respondeu. \"Nossa família tem sido muito unida ultimamente, e eu quero manter esse clima bom.\"",
+                    "en": "\"Yes,\" he replied. \"Our family has been very close lately, and I want to keep this good vibe.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "tem-tenho-tenha-participio-adjetivo",
+                            "ptIntent": "tem sido muito unida",
+                            "enIntent": "has been very close"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ela concordou com a cabeça e propôs um acordo. \"Se você comprar o queijo, eu farei a sua sobremesa favorita.\"",
+                    "en": "She nodded and proposed a deal. \"If you buy the cheese, I will make your favorite dessert.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "condition-pattern",
+                            "ptIntent": "Se você comprar o queijo, eu farei a sua sobremesa favorita",
+                            "enIntent": "If you buy the cheese, I will make your favorite dessert"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ele foi ao supermercado animado. Acabou que o queijo estava em promoção, então ele comprou o dobro do que precisava.",
+                    "en": "He went to the supermarket excited. It turned out that the cheese was on sale, so he bought twice as much as he needed.",
+                    "intentions": [
+                        {
+                            "intentionId": "acabou-que",
+                            "ptIntent": "Acabou que",
+                            "enIntent": "It turned out that"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Lucas voltou para casa rapidamente com as sacolas na mão. \"Eu comprei o queijo que você pediu, então o almoço está salvo!\"",
+                    "en": "Lucas returned home quickly with the bags in hand. \"I have bought the cheese you asked for, so lunch is saved!\"",
+                    "intentions": [
+                        {
+                            "intentionId": "fato-experiencia-resultado-com-relevancia-atual",
+                            "ptIntent": "Eu comprei",
+                            "enIntent": "I have bought"
+                        }
+                    ]
+                },
+                {
+                    "pt": "O almoço foi um sucesso absoluto, cheio de risadas e histórias. No final do dia, todos estavam felizes e de barriga cheia.",
+                    "en": "Lunch was an absolute success, full of laughter and stories. At the end of the day, everyone was happy and full.",
+                    "intentions": []
+                }
+            ],
+            "intentionsUsed": [
+                "whats-on-the-agenda-today",
+                "fiquei-sem-acabou",
+                "ate-onde",
+                "estou-sentindo-que-preciso",
+                "entao-voce-esta-dizendo-que",
+                "tem-tenho-tenha-participio-adjetivo",
+                "condition-pattern",
+                "acabou-que",
+                "fato-experiencia-resultado-com-relevancia-atual"
+            ]
+        },
+        {
             "id": "b1-travel-add9f526-78b6-4095-afb5-4fde62c68c2c",
             "englishLevel": "B1",
             "topic": "travel",
