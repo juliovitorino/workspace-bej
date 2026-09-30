@@ -115,6 +115,8 @@ export function BasicTraining({
   const [translating, setTranslating] = useState(false);
   const [translationError, setTranslationError] = useState<string | null>(null);
   const [googleTranslation, setGoogleTranslation] = useState<string | null>(null);
+  const [speaking, setSpeaking] = useState(false);
+  const [speechError, setSpeechError] = useState<string | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -177,6 +179,14 @@ export function BasicTraining({
     };
   }, []);
 
+  useEffect(() => {
+    return () => {
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+    };
+  }, []);
+
   const trainingItems = useMemo(() => {
     return {
       verb: pickRandom(verbs),
@@ -192,6 +202,12 @@ export function BasicTraining({
     setEvaluationError(null);
     setGoogleTranslation(null);
     setTranslationError(null);
+    setSpeechError(null);
+    setSpeaking(false);
+
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
+    }
   }
 
   async function handleEvaluate() {
@@ -262,6 +278,54 @@ export function BasicTraining({
     } finally {
       setTranslating(false);
     }
+  }
+
+  function handleSpeakEnglish() {
+    const englishText = studentText.trim();
+
+    if (!englishText) {
+      setSpeechError("Não há uma frase em inglês para reproduzir.");
+      return;
+    }
+
+    if (!("speechSynthesis" in window)) {
+      setSpeechError(
+        "O recurso de voz não está disponível neste navegador."
+      );
+      return;
+    }
+
+    window.speechSynthesis.cancel();
+    setSpeechError(null);
+
+    const utterance = new SpeechSynthesisUtterance(englishText);
+    const voices = window.speechSynthesis.getVoices();
+    const americanVoice = voices.find(
+      (voice) => voice.lang.toLowerCase() === "en-us"
+    );
+
+    if (americanVoice) {
+      utterance.voice = americanVoice;
+    }
+
+    utterance.lang = "en-US";
+    utterance.rate = 0.9;
+    utterance.pitch = 1;
+
+    utterance.onstart = () => {
+      setSpeaking(true);
+    };
+
+    utterance.onend = () => {
+      setSpeaking(false);
+    };
+
+    utterance.onerror = () => {
+      setSpeaking(false);
+      setSpeechError("Não foi possível reproduzir a frase em inglês.");
+    };
+
+    window.speechSynthesis.speak(utterance);
   }
 
   return (
@@ -433,6 +497,12 @@ export function BasicTraining({
                 setEvaluationError(null);
                 setGoogleTranslation(null);
                 setTranslationError(null);
+                setSpeechError(null);
+                setSpeaking(false);
+
+                if ("speechSynthesis" in window) {
+                  window.speechSynthesis.cancel();
+                }
               }}
             />
 
@@ -471,11 +541,31 @@ export function BasicTraining({
           )}
 
           {googleTranslation && (
-            <section className="status-card google-translation-card">
-              <p className="eyebrow">Tradução do Google</p>
-              <h2>Versão em português</h2>
-              <p>{googleTranslation}</p>
-            </section>
+            <>
+              <section className="status-card google-translation-card">
+                <p className="eyebrow">Tradução do Google</p>
+                <h2>Versão em português</h2>
+                <p>{googleTranslation}</p>
+              </section>
+
+              <div className="training-action-buttons">
+                <button
+                  type="button"
+                  className="secondary-button"
+                  onClick={handleSpeakEnglish}
+                  disabled={speaking || !studentText.trim()}
+                >
+                  {speaking ? "🔊 Reproduzindo..." : "🔊 Ouvir inglês"}
+                </button>
+              </div>
+            </>
+          )}
+
+          {speechError && (
+            <div className="status-card error-card google-translation-error">
+              <h2>Não foi possível reproduzir o áudio.</h2>
+              <p>{speechError}</p>
+            </div>
           )}
 
           {AI_ENABLED && evaluationError && (
