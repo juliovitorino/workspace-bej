@@ -137,6 +137,9 @@ export function AdvancedTraining({
   const [translationError, setTranslationError] = useState<string | null>(null);
   const [googleTranslation, setGoogleTranslation] = useState<string | null>(null);
   const [speaking, setSpeaking] = useState(false);
+  const [evaluationSpeaking, setEvaluationSpeaking] = useState<
+    "corrected" | "better" | null
+  >(null);
   const [speechError, setSpeechError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -243,6 +246,7 @@ export function AdvancedTraining({
     setTranslationError(null);
     setSpeechError(null);
     setSpeaking(false);
+    setEvaluationSpeaking(null);
 
     if ("speechSynthesis" in window) {
       window.speechSynthesis.cancel();
@@ -347,6 +351,7 @@ export function AdvancedTraining({
 
     window.speechSynthesis.cancel();
     setSpeechError(null);
+    setEvaluationSpeaking(null);
 
     const utterance = new SpeechSynthesisUtterance(englishText);
     const voices = window.speechSynthesis.getVoices();
@@ -372,6 +377,60 @@ export function AdvancedTraining({
 
     utterance.onerror = () => {
       setSpeaking(false);
+      setSpeechError("Não foi possível reproduzir a frase em inglês.");
+    };
+
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function handleSpeakEvaluationSentence(
+    text: string,
+    target: "corrected" | "better"
+  ) {
+    const englishText = text.trim();
+
+    if (!englishText) {
+      setSpeechError("Não há uma frase em inglês para reproduzir.");
+      return;
+    }
+
+    if (!("speechSynthesis" in window)) {
+      setSpeechError(
+        "O recurso de voz não está disponível neste navegador."
+      );
+      return;
+    }
+
+    window.speechSynthesis.cancel();
+    setSpeechError(null);
+    setSpeaking(false);
+    setEvaluationSpeaking(null);
+
+    const utterance = new SpeechSynthesisUtterance(englishText);
+    const voices = window.speechSynthesis.getVoices();
+    const americanVoice = voices.find(
+      (voice) => voice.lang.toLowerCase() === "en-us"
+    );
+
+    if (americanVoice) {
+      utterance.voice = americanVoice;
+    }
+
+    utterance.lang = "en-US";
+    utterance.rate = 0.9;
+    utterance.pitch = 1;
+
+    utterance.onstart = () => {
+      setSpeaking(false);
+      setEvaluationSpeaking(target);
+    };
+
+    utterance.onend = () => {
+      setEvaluationSpeaking(null);
+    };
+
+    utterance.onerror = () => {
+      setEvaluationSpeaking(null);
       setSpeechError("Não foi possível reproduzir a frase em inglês.");
     };
 
@@ -615,6 +674,7 @@ export function AdvancedTraining({
                 setTranslationError(null);
                 setSpeechError(null);
                 setSpeaking(false);
+                setEvaluationSpeaking(null);
 
                 if ("speechSynthesis" in window) {
                   window.speechSynthesis.cancel();
@@ -747,16 +807,90 @@ export function AdvancedTraining({
 
               <div className="ai-feedback-section">
                 <h3>Correção</h3>
-                <p className="english">
-                  {evaluation.correctedSentence}
-                </p>
+
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.6rem"
+                  }}
+                >
+                  <p className="english" style={{ flex: 1, margin: 0 }}>
+                    {evaluation.correctedSentence}
+                  </p>
+
+                  <button
+                    type="button"
+                    className="secondary-button"
+                    onClick={() =>
+                      handleSpeakEvaluationSentence(
+                        evaluation.correctedSentence,
+                        "corrected"
+                      )
+                    }
+                    disabled={evaluationSpeaking === "corrected"}
+                    title="Ouvir a correção em inglês"
+                    aria-label="Ouvir a correção em inglês"
+                    style={{
+                      width: "2.5rem",
+                      minWidth: "2.5rem",
+                      height: "2.5rem",
+                      minHeight: "2.5rem",
+                      padding: 0,
+                      borderRadius: "999px",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0
+                    }}
+                  >
+                    <span aria-hidden="true">🔊</span>
+                  </button>
+                </div>
               </div>
 
               <div className="ai-feedback-section">
                 <h3>Versão mais natural</h3>
-                <p className="english">
-                  {evaluation.betterVersion}
-                </p>
+
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.6rem"
+                  }}
+                >
+                  <p className="english" style={{ flex: 1, margin: 0 }}>
+                    {evaluation.betterVersion}
+                  </p>
+
+                  <button
+                    type="button"
+                    className="secondary-button"
+                    onClick={() =>
+                      handleSpeakEvaluationSentence(
+                        evaluation.betterVersion,
+                        "better"
+                      )
+                    }
+                    disabled={evaluationSpeaking === "better"}
+                    title="Ouvir a versão mais natural em inglês"
+                    aria-label="Ouvir a versão mais natural em inglês"
+                    style={{
+                      width: "2.5rem",
+                      minWidth: "2.5rem",
+                      height: "2.5rem",
+                      minHeight: "2.5rem",
+                      padding: 0,
+                      borderRadius: "999px",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0
+                    }}
+                  >
+                    <span aria-hidden="true">🔊</span>
+                  </button>
+                </div>
               </div>
             </section>
           )}
