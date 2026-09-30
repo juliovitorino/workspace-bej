@@ -4,6 +4,7 @@ import {
   evaluateTrainingWithAI,
   type AIEvaluationResult
 } from "../services/aiEvaluationService";
+import { translateEnglishToPortuguese } from "../services/googleTranslateService";
 
 const AI_ENABLED = import.meta.env.VITE_AI_ENABLED === "true";
 
@@ -111,6 +112,9 @@ export function BasicTraining({
   const [evaluating, setEvaluating] = useState(false);
   const [evaluationError, setEvaluationError] = useState<string | null>(null);
   const [evaluation, setEvaluation] = useState<AIEvaluationResult | null>(null);
+  const [translating, setTranslating] = useState(false);
+  const [translationError, setTranslationError] = useState<string | null>(null);
+  const [googleTranslation, setGoogleTranslation] = useState<string | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -186,6 +190,8 @@ export function BasicTraining({
     setStudentText("");
     setEvaluation(null);
     setEvaluationError(null);
+    setGoogleTranslation(null);
+    setTranslationError(null);
   }
 
   async function handleEvaluate() {
@@ -229,6 +235,32 @@ export function BasicTraining({
       );
     } finally {
       setEvaluating(false);
+    }
+  }
+
+  async function handleGoogleTranslate() {
+    if (!studentText.trim()) {
+      setTranslationError(
+        "Escreva ou dite uma frase antes de solicitar a tradução."
+      );
+      return;
+    }
+
+    setTranslating(true);
+    setTranslationError(null);
+    setGoogleTranslation(null);
+
+    try {
+      const result = await translateEnglishToPortuguese(studentText);
+      setGoogleTranslation(result.translatedText);
+    } catch (err) {
+      setTranslationError(
+        err instanceof Error
+          ? err.message
+          : "Não foi possível traduzir a frase com o Google."
+      );
+    } finally {
+      setTranslating(false);
     }
   }
 
@@ -399,22 +431,52 @@ export function BasicTraining({
                 setStudentText(event.target.value);
                 setEvaluation(null);
                 setEvaluationError(null);
+                setGoogleTranslation(null);
+                setTranslationError(null);
               }}
             />
 
-            {AI_ENABLED && (
+            <div className="training-action-buttons">
+              {AI_ENABLED && (
+                <button
+                  type="button"
+                  className="primary-button"
+                  onClick={handleEvaluate}
+                  disabled={evaluating || !studentText.trim()}
+                >
+                  {evaluating
+                    ? "Avaliando com IA..."
+                    : "Avaliar com IA"}
+                </button>
+              )}
+
               <button
                 type="button"
-                className="primary-button"
-                onClick={handleEvaluate}
-                disabled={evaluating || !studentText.trim()}
+                className="secondary-button"
+                onClick={handleGoogleTranslate}
+                disabled={translating || !studentText.trim()}
               >
-                {evaluating
-                  ? "Avaliando com IA..."
-                  : "Avaliar com IA"}
+                {translating
+                  ? "Traduzindo..."
+                  : "Traduzir com Google"}
               </button>
-            )}
+            </div>
           </div>
+
+          {translationError && (
+            <div className="status-card error-card google-translation-error">
+              <h2>Não foi possível traduzir a frase.</h2>
+              <p>{translationError}</p>
+            </div>
+          )}
+
+          {googleTranslation && (
+            <section className="status-card google-translation-card">
+              <p className="eyebrow">Tradução do Google</p>
+              <h2>Versão em português</h2>
+              <p>{googleTranslation}</p>
+            </section>
+          )}
 
           {AI_ENABLED && evaluationError && (
             <div className="status-card error-card ai-evaluation-error">
