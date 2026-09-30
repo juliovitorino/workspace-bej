@@ -75,17 +75,52 @@ export function ExercisePanel({
   const [englishLevel, setEnglishLevel] =
     useState<EnglishLevel>("B1");
   const [mode, setMode] = useState<ExerciseMode>("basic");
+  const [category, setCategory] = useState("Todas");
   const [amount, setAmount] = useState(5);
   const [exercises, setExercises] = useState<ExerciseItem[]>([]);
+
+  const availableCategories = useMemo(() => {
+    const categoryCounts = new Map<string, number>();
+
+    intentions
+      .filter(
+        (item) =>
+          item.englishLevel === englishLevel &&
+          (item.examples?.length ?? 0) > 0 &&
+          Boolean(item.category)
+      )
+      .forEach((item) => {
+        const itemCategory = item.category as string;
+        categoryCounts.set(
+          itemCategory,
+          (categoryCounts.get(itemCategory) ?? 0) + 1
+        );
+      });
+
+    return Array.from(categoryCounts.entries())
+      .map(([name, count]) => ({ name, count }))
+      .sort((a, b) => a.name.localeCompare(b.name));
+  }, [intentions, englishLevel]);
+
+  const totalIntentionsForLevel = useMemo(
+    () =>
+      intentions.filter(
+        (item) =>
+          item.englishLevel === englishLevel &&
+          (item.examples?.length ?? 0) > 0
+      ).length,
+    [intentions, englishLevel]
+  );
 
   const availableIntentions = useMemo(
     () =>
       intentions.filter(
         (item) =>
           item.englishLevel === englishLevel &&
+          (category === "Todas" || item.category === category) &&
           (item.examples?.length ?? 0) > 0
       ),
-    [intentions, englishLevel]
+    [intentions, englishLevel, category]
   );
 
   const maxAmount = availableIntentions.length;
@@ -130,9 +165,25 @@ export function ExercisePanel({
     ).length;
 
     setEnglishLevel(nextLevel);
+    setCategory("Todas");
     setExercises([]);
     setAmount((current) =>
       Math.min(Math.max(current, 1), Math.max(levelCount, 1))
+    );
+  }
+
+  function handleCategoryChange(nextCategory: string) {
+    const categoryCount = intentions.filter(
+      (item) =>
+        item.englishLevel === englishLevel &&
+        (nextCategory === "Todas" || item.category === nextCategory) &&
+        (item.examples?.length ?? 0) > 0
+    ).length;
+
+    setCategory(nextCategory);
+    setExercises([]);
+    setAmount((current) =>
+      Math.min(Math.max(current, 1), Math.max(categoryCount, 1))
     );
   }
 
@@ -152,7 +203,10 @@ export function ExercisePanel({
 
         <div className="exercise-total">
           <strong>{maxAmount}</strong>
-          <span>intenções com exemplos no nível {englishLevel}</span>
+          <span>
+            intenções com exemplos no nível {englishLevel}
+            {category !== "Todas" ? ` · ${category}` : ""}
+          </span>
         </div>
       </div>
 
@@ -220,6 +274,32 @@ export function ExercisePanel({
             </div>
           </div>
 
+          <div className="exercise-level-selector">
+            <p className="exercise-mode-label">Categoria</p>
+
+            <div className="field">
+              <select
+                id="exercise-category"
+                value={category}
+                onChange={(event) =>
+                  handleCategoryChange(event.target.value)
+                }
+              >
+                <option value="Todas">
+                  Todas ({totalIntentionsForLevel})
+                </option>
+                {availableCategories.map((availableCategory) => (
+                  <option
+                    key={availableCategory.name}
+                    value={availableCategory.name}
+                  >
+                    {availableCategory.name} ({availableCategory.count})
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
           <div className="exercise-controls">
             <div className="field exercise-amount-field">
               <label htmlFor="exercise-amount">
@@ -254,8 +334,12 @@ export function ExercisePanel({
               <div className="exercise-results-header">
                 <p className="eyebrow">
                   {mode === "basic"
-                    ? `Treino básico · ${englishLevel}`
-                    : `Treino avançado · ${englishLevel}`}
+                    ? `Treino básico · ${englishLevel}${
+                        category !== "Todas" ? ` · ${category}` : ""
+                      }`
+                    : `Treino avançado · ${englishLevel}${
+                        category !== "Todas" ? ` · ${category}` : ""
+                      }`}
                 </p>
 
                 <h2>
