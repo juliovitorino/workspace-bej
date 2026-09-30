@@ -1,4 +1,5 @@
 import {
+  useEffect,
   useMemo,
   useState,
   type ReactNode
@@ -135,6 +136,18 @@ export function InterpretationPanel({
   const [exportJson, setExportJson] = useState<string | null>(null);
   const [exportFileName, setExportFileName] = useState<string>("");
   const [copyFeedback, setCopyFeedback] = useState("Copiar JSON");
+  const [speaking, setSpeaking] = useState(false);
+  const [speakingParagraphIndex, setSpeakingParagraphIndex] =
+    useState<number | null>(null);
+  const [speechError, setSpeechError] = useState<string | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+    };
+  }, []);
 
   const availableIntentions = useMemo(
     () =>
@@ -152,6 +165,13 @@ export function InterpretationPanel({
     setSelectedIntentions([]);
     setShowEnglish(false);
     setError(null);
+    setSpeechError(null);
+    setSpeaking(false);
+    setSpeakingParagraphIndex(null);
+
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
+    }
 
     const levelCount = intentions.filter(
       (item) => item.englishLevel === nextLevel
@@ -193,6 +213,13 @@ export function InterpretationPanel({
     setStory(null);
     setShowEnglish(false);
     setSelectedIntentions(pickedIntentions);
+    setSpeechError(null);
+    setSpeaking(false);
+    setSpeakingParagraphIndex(null);
+
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
+    }
 
     try {
       const result = await generateInterpretationStory({
@@ -211,6 +238,133 @@ export function InterpretationPanel({
     } finally {
       setGenerating(false);
     }
+  }
+
+  function handleToggleEnglish() {
+    setShowEnglish((current) => {
+      const nextValue = !current;
+
+      if (!nextValue && "speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+        setSpeaking(false);
+        setSpeakingParagraphIndex(null);
+        setSpeechError(null);
+      }
+
+      return nextValue;
+    });
+  }
+
+  function handleSpeakStory() {
+    if (!story) {
+      return;
+    }
+
+    const englishText = [
+      story.titleEn,
+      ...story.paragraphs.map((paragraph) => paragraph.en)
+    ]
+      .filter(Boolean)
+      .join(". ")
+      .trim();
+
+    if (!englishText) {
+      setSpeechError("Não há texto em inglês para reproduzir.");
+      return;
+    }
+
+    if (!("speechSynthesis" in window)) {
+      setSpeechError(
+        "O recurso de voz não está disponível neste navegador."
+      );
+      return;
+    }
+
+    window.speechSynthesis.cancel();
+    setSpeechError(null);
+    setSpeakingParagraphIndex(null);
+
+    const utterance = new SpeechSynthesisUtterance(englishText);
+    const voices = window.speechSynthesis.getVoices();
+    const americanVoice = voices.find(
+      (voice) => voice.lang.toLowerCase() === "en-us"
+    );
+
+    if (americanVoice) {
+      utterance.voice = americanVoice;
+    }
+
+    utterance.lang = "en-US";
+    utterance.rate = 0.9;
+    utterance.pitch = 1;
+
+    utterance.onstart = () => {
+      setSpeaking(true);
+    };
+
+    utterance.onend = () => {
+      setSpeaking(false);
+      setSpeakingParagraphIndex(null);
+    };
+
+    utterance.onerror = () => {
+      setSpeaking(false);
+      setSpeakingParagraphIndex(null);
+      setSpeechError("Não foi possível reproduzir a história em inglês.");
+    };
+
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function handleSpeakParagraph(text: string, index: number) {
+    const englishText = text.trim();
+
+    if (!englishText) {
+      setSpeechError("Não há texto em inglês para reproduzir neste parágrafo.");
+      return;
+    }
+
+    if (!("speechSynthesis" in window)) {
+      setSpeechError(
+        "O recurso de voz não está disponível neste navegador."
+      );
+      return;
+    }
+
+    window.speechSynthesis.cancel();
+    setSpeechError(null);
+    setSpeaking(false);
+    setSpeakingParagraphIndex(null);
+
+    const utterance = new SpeechSynthesisUtterance(englishText);
+    const voices = window.speechSynthesis.getVoices();
+    const americanVoice = voices.find(
+      (voice) => voice.lang.toLowerCase() === "en-us"
+    );
+
+    if (americanVoice) {
+      utterance.voice = americanVoice;
+    }
+
+    utterance.lang = "en-US";
+    utterance.rate = 0.9;
+    utterance.pitch = 1;
+
+    utterance.onstart = () => {
+      setSpeaking(false);
+      setSpeakingParagraphIndex(index);
+    };
+
+    utterance.onend = () => {
+      setSpeakingParagraphIndex(null);
+    };
+
+    utterance.onerror = () => {
+      setSpeakingParagraphIndex(null);
+      setSpeechError("Não foi possível reproduzir este parágrafo em inglês.");
+    };
+
+    window.speechSynthesis.speak(utterance);
   }
 
   function handleOpenExportJson() {
@@ -610,6 +764,13 @@ export function InterpretationPanel({
               setStory(null);
               setShowEnglish(false);
               setError(null);
+              setSpeechError(null);
+              setSpeaking(false);
+              setSpeakingParagraphIndex(null);
+
+              if ("speechSynthesis" in window) {
+                window.speechSynthesis.cancel();
+              }
             }}
           >
             {THEMES.map((themeOption) => (
@@ -741,6 +902,18 @@ export function InterpretationPanel({
                 </button>
               )}
 
+              {showEnglish && (
+                <button
+                  type="button"
+                  className="secondary-button"
+                  onClick={handleSpeakStory}
+                  disabled={speaking}
+                  title="Ouvir a história completa em inglês"
+                >
+                  {speaking ? "🔊 Reproduzindo..." : "🔊 Ouvir inglês"}
+                </button>
+              )}
+
               <button
                 type="button"
                 className={
@@ -748,9 +921,7 @@ export function InterpretationPanel({
                     ? "secondary-button"
                     : "primary-button"
                 }
-                onClick={() =>
-                  setShowEnglish((current) => !current)
-                }
+                onClick={handleToggleEnglish}
               >
                 {showEnglish
                   ? "Ocultar versão em inglês"
@@ -758,6 +929,13 @@ export function InterpretationPanel({
               </button>
             </div>
           </div>
+
+          {speechError && (
+            <div className="status-card error-card google-translation-error">
+              <h2>Não foi possível reproduzir o áudio.</h2>
+              <p>{speechError}</p>
+            </div>
+          )}
 
           <div className="interpretation-paragraphs">
             {story.paragraphs.map((paragraph, index) => (
@@ -775,14 +953,58 @@ export function InterpretationPanel({
                 </p>
 
                 {showEnglish && (
-                  <p className="english interpretation-en">
-                    {renderHighlightedText(
-                      paragraph.en,
-                      paragraph.intentions.map(
-                        (intention) => intention.enIntent
-                      )
-                    )}
-                  </p>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "flex-start",
+                      gap: "0.6rem"
+                    }}
+                  >
+                    <p
+                      className="english interpretation-en"
+                      style={{ flex: 1 }}
+                    >
+                      {renderHighlightedText(
+                        paragraph.en,
+                        paragraph.intentions.map(
+                          (intention) => intention.enIntent
+                        )
+                      )}
+                    </p>
+
+                    <button
+                      type="button"
+                      className="secondary-button"
+                      onClick={() =>
+                        handleSpeakParagraph(paragraph.en, index)
+                      }
+                      disabled={speakingParagraphIndex === index}
+                      title={
+                        speakingParagraphIndex === index
+                          ? "Reproduzindo este parágrafo"
+                          : "Ouvir este parágrafo em inglês"
+                      }
+                      aria-label={
+                        speakingParagraphIndex === index
+                          ? `Reproduzindo parágrafo ${index + 1}`
+                          : `Ouvir parágrafo ${index + 1} em inglês`
+                      }
+                      style={{
+                        width: "2.5rem",
+                        minWidth: "2.5rem",
+                        height: "2.5rem",
+                        minHeight: "2.5rem",
+                        padding: 0,
+                        borderRadius: "999px",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0
+                      }}
+                    >
+                      <span aria-hidden="true">🔊</span>
+                    </button>
+                  </div>
                 )}
               </section>
             ))}
