@@ -17628,7 +17628,64 @@
     ],
     "related": [],
     "englishLevel": "B1"
-  }
+  },
+  {
+  "id": "para-a-fim-de-in-order-to",
+  "intention": "Para... / A fim de... / Com o objetivo de...",
+  "english": "in order to",
+  "pattern": "subject + verb + in order to + base verb",
+  "description": "Usado para explicar a finalidade ou o objetivo de uma ação. Em muitas situações, apenas 'to' é mais comum e natural na fala, mas 'in order to' deixa a ideia de propósito mais explícita. Memorize o gerador: PARA / A FIM DE + VERBO → IN ORDER TO + VERBO.",
+  "category": "purpose-family",
+  "searchTerms": [
+    "para",
+    "a fim de",
+    "com o objetivo de",
+    "com a finalidade de",
+    "para poder",
+    "in order to",
+    "purpose",
+    "objetivo",
+    "finalidade"
+  ],
+  "examples": [
+    {
+      "pt": "Eu estudo inglês com o objetivo de conseguir um emprego melhor.",
+      "en": "I study English in order to get a better job.",
+      "ptIntent": "com o objetivo de conseguir",
+      "enIntent": "in order to get"
+    },
+    {
+      "pt": "Eu acordo cedo a fim de evitar o trânsito.",
+      "en": "I wake up early in order to avoid traffic.",
+      "ptIntent": "a fim de evitar",
+      "enIntent": "in order to avoid"
+    },
+    {
+      "pt": "Ela está economizando dinheiro para viajar no próximo ano.",
+      "en": "She's saving money in order to travel next year.",
+      "ptIntent": "para viajar",
+      "enIntent": "in order to travel"
+    },
+    {
+      "pt": "Precisamos praticar todos os dias com o objetivo de melhorar nosso inglês.",
+      "en": "We need to practice every day in order to improve our English.",
+      "ptIntent": "com o objetivo de melhorar",
+      "enIntent": "in order to improve"
+    }
+  ],
+  "tags": [
+    "purpose",
+    "goal",
+    "reason",
+    "in-order-to",
+    "connector",
+    "infinitive",
+    "spoken-english",
+    "written-english"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+}
 
   ]
 }
