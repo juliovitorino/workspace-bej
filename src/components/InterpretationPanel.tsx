@@ -9,6 +9,10 @@ import {
   generateInterpretationStory,
   type StoryGenerationResult
 } from "../services/storyGenerationService";
+import {
+  searchLocalStories,
+  type LocalStory
+} from "../services/localStoryService";
 
 type EnglishLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
@@ -140,6 +144,10 @@ export function InterpretationPanel({
   const [speakingParagraphIndex, setSpeakingParagraphIndex] =
     useState<number | null>(null);
   const [speechError, setSpeechError] = useState<string | null>(null);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchLevel, setSearchLevel] =
+    useState<EnglishLevel>("B1");
+  const [searchTitle, setSearchTitle] = useState("");
 
   useEffect(() => {
     return () => {
@@ -155,6 +163,11 @@ export function InterpretationPanel({
         (item) => item.englishLevel === englishLevel
       ),
     [intentions, englishLevel]
+  );
+
+  const searchResults = useMemo(
+    () => searchLocalStories(searchLevel, searchTitle),
+    [searchLevel, searchTitle]
   );
 
   const maxAmount = Math.max(1, availableIntentions.length);
@@ -193,6 +206,40 @@ export function InterpretationPanel({
         Math.max(availableIntentions.length, 1)
       )
     );
+  }
+
+  function handleToggleStorySearch() {
+    setSearchOpen((current) => {
+      const nextValue = !current;
+
+      if (nextValue) {
+        setSearchLevel(englishLevel);
+        setSearchTitle("");
+      }
+
+      return nextValue;
+    });
+  }
+
+  function handleLoadLocalStory(localStory: LocalStory) {
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
+    }
+
+    setEnglishLevel(searchLevel);
+    setStory({
+      ...localStory,
+      source: "local"
+    });
+    setSelectedIntentions([]);
+    setShowEnglish(false);
+    setGenerating(false);
+    setError(null);
+    setSpeechError(null);
+    setSpeaking(false);
+    setSpeakingParagraphIndex(null);
+    setExportJson(null);
+    setSearchOpen(false);
   }
 
   async function handleGenerateStory() {
@@ -784,19 +831,213 @@ export function InterpretationPanel({
           </select>
         </div>
 
-        <button
-          type="button"
-          className="primary-button"
-          onClick={handleGenerateStory}
-          disabled={
-            generating || availableIntentions.length === 0
-          }
+        <div
+          style={{
+            display: "flex",
+            alignItems: "flex-end",
+            gap: "0.75rem",
+            flexWrap: "wrap"
+          }}
         >
-          {generating
-            ? "Gerando história..."
-            : "Gerar história"}
-        </button>
+          <button
+            type="button"
+            className="primary-button"
+            onClick={handleGenerateStory}
+            disabled={
+              generating || availableIntentions.length === 0
+            }
+          >
+            {generating
+              ? "Gerando história..."
+              : "Gerar história"}
+          </button>
+
+          <button
+            type="button"
+            className="secondary-button"
+            onClick={handleToggleStorySearch}
+            title={
+              searchOpen
+                ? "Fechar pesquisa de histórias"
+                : "Pesquisar histórias da biblioteca"
+            }
+            aria-label={
+              searchOpen
+                ? "Fechar pesquisa de histórias"
+                : "Pesquisar histórias da biblioteca"
+            }
+            aria-expanded={searchOpen}
+            style={{
+              width: "3rem",
+              minWidth: "3rem",
+              height: "3rem",
+              minHeight: "3rem",
+              padding: 0,
+              borderRadius: "999px",
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center"
+            }}
+          >
+            <svg
+              aria-hidden="true"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.35-4.35" />
+            </svg>
+          </button>
+        </div>
       </div>
+
+      {searchOpen && (
+        <div
+          className="status-card"
+          style={{
+            marginTop: "1rem",
+            textAlign: "left"
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "flex-start",
+              gap: "1rem",
+              marginBottom: "1rem"
+            }}
+          >
+            <div>
+              <p className="eyebrow">Biblioteca local</p>
+              <h2 style={{ margin: 0 }}>Pesquisar história</h2>
+            </div>
+
+            <button
+              type="button"
+              className="secondary-button"
+              onClick={() => setSearchOpen(false)}
+            >
+              Fechar
+            </button>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "minmax(120px, 180px) minmax(220px, 1fr)",
+              gap: "1rem",
+              alignItems: "end"
+            }}
+          >
+            <div className="field">
+              <label htmlFor="story-search-level">Nível</label>
+
+              <select
+                id="story-search-level"
+                value={searchLevel}
+                onChange={(event) =>
+                  setSearchLevel(event.target.value as EnglishLevel)
+                }
+              >
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="B1">B1</option>
+                <option value="B2">B2</option>
+                <option value="C1">C1</option>
+                <option value="C2">C2</option>
+              </select>
+            </div>
+
+            <div className="field">
+              <label htmlFor="story-search-title">Título da história</label>
+
+              <input
+                id="story-search-title"
+                type="search"
+                value={searchTitle}
+                onChange={(event) => setSearchTitle(event.target.value)}
+                placeholder="Digite parte do título em português ou inglês..."
+                autoComplete="off"
+              />
+            </div>
+          </div>
+
+          <div style={{ marginTop: "1.25rem" }}>
+            <p
+              style={{
+                margin: "0 0 0.75rem",
+                fontWeight: 700
+              }}
+            >
+              {searchResults.length === 1
+                ? "1 história encontrada"
+                : `${searchResults.length} histórias encontradas`}
+            </p>
+
+            {searchResults.length === 0 ? (
+              <p style={{ margin: 0 }}>
+                Nenhuma história encontrada para o nível {searchLevel}
+                {searchTitle.trim()
+                  ? ` com o título "${searchTitle.trim()}".`
+                  : "."}
+              </p>
+            ) : (
+              <div
+                style={{
+                  display: "grid",
+                  gap: "0.65rem"
+                }}
+              >
+                {searchResults.map((localStory, index) => (
+                  <div
+                    key={
+                      localStory.id ??
+                      `${localStory.titlePt}-${localStory.titleEn}-${index}`
+                    }
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      gap: "1rem",
+                      padding: "0.8rem 0.9rem",
+                      border: "1px solid rgba(148, 163, 184, 0.35)",
+                      borderRadius: "12px"
+                    }}
+                  >
+                    <div style={{ minWidth: 0 }}>
+                      <strong>{localStory.titlePt}</strong>
+                      <p
+                        className="english"
+                        style={{
+                          margin: "0.2rem 0 0"
+                        }}
+                      >
+                        {localStory.titleEn}
+                      </p>
+                    </div>
+
+                    <button
+                      type="button"
+                      className="secondary-button"
+                      onClick={() => handleLoadLocalStory(localStory)}
+                      style={{ flexShrink: 0 }}
+                    >
+                      Carregar
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {error && (
         <div className="status-card error-card">
@@ -1123,8 +1364,8 @@ export function InterpretationPanel({
               <div>
                 <strong>História da biblioteca local</strong>
                 <p style={{ margin: "0.25rem 0 0" }}>
-                  Esta história foi carregada da biblioteca local porque a IA
-                  não estava disponível no momento.
+                  Esta história foi carregada da biblioteca de histórias do
+                  Mental Hashmap.
                 </p>
               </div>
             </div>
