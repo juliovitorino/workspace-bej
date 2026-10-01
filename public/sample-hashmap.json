@@ -17744,7 +17744,729 @@
   ],
   "related": [],
   "englishLevel": "B1"
-}
+},
+
+  {
+    "id": "ser-estar-presente-am-is-are",
+    "intention": "Ser / Estar no presente",
+    "english": "am / is / are",
+    "pattern": "subject + am/is/are + complement",
+    "description": "Usado para dizer quem alguém é, como alguém está ou onde alguém está no presente. A forma muda de acordo com o sujeito: I am, he/she/it is, you/we/they are. Memorize o gerador: SOU / ESTOU / É / ESTÁ / SOMOS / ESTAMOS / SÃO / ESTÃO → AM / IS / ARE.",
+    "category": "to-be-family",
+    "searchTerms": [
+      "sou",
+      "estou",
+      "é",
+      "está",
+      "somos",
+      "estamos",
+      "são",
+      "estão",
+      "am",
+      "is",
+      "are",
+      "to be"
+    ],
+    "examples": [
+      {
+        "pt": "Eu estou cansado.",
+        "en": "I'm tired.",
+        "ptIntent": "estou cansado",
+        "enIntent": "I'm tired"
+      },
+      {
+        "pt": "Eu sou brasileiro.",
+        "en": "I'm Brazilian.",
+        "ptIntent": "sou brasileiro",
+        "enIntent": "I'm Brazilian"
+      },
+      {
+        "pt": "Ela está ocupada.",
+        "en": "She's busy.",
+        "ptIntent": "está ocupada",
+        "enIntent": "She's busy"
+      },
+      {
+        "pt": "Nós estamos em casa.",
+        "en": "We're at home.",
+        "ptIntent": "estamos em casa",
+        "enIntent": "We're at home"
+      },
+      {
+        "pt": "Eles são meus amigos.",
+        "en": "They're my friends.",
+        "ptIntent": "são meus amigos",
+        "enIntent": "They're my friends"
+      }
+    ],
+    "tags": [
+      "to-be",
+      "present",
+      "am",
+      "is",
+      "are",
+      "affirmative",
+      "basic-english"
+    ],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "ser-estar-pergunta-presente-am-is-are",
+    "intention": "É...? / Está...? / São...? / Estão...?",
+    "english": "am / is / are + subject...?",
+    "pattern": "am/is/are + subject + complement?",
+    "description": "Usado para fazer perguntas com o verbo 'to be' no presente. Em inglês, am/is/are aparece antes do sujeito. Memorize o gerador: VOCÊ ESTÁ...? → ARE YOU...? / ELE ESTÁ...? → IS HE...? / ELA É...? → IS SHE...?",
+    "category": "to-be-family",
+    "searchTerms": [
+      "você está",
+      "ele está",
+      "ela está",
+      "você é",
+      "ele é",
+      "ela é",
+      "eles estão",
+      "eles são",
+      "are you",
+      "is he",
+      "is she",
+      "are they"
+    ],
+    "examples": [
+      {
+        "pt": "Você está cansado?",
+        "en": "Are you tired?",
+        "ptIntent": "Você está",
+        "enIntent": "Are you"
+      },
+      {
+        "pt": "Ela está em casa?",
+        "en": "Is she at home?",
+        "ptIntent": "Ela está",
+        "enIntent": "Is she"
+      },
+      {
+        "pt": "Ele está ocupado?",
+        "en": "Is he busy?",
+        "ptIntent": "Ele está",
+        "enIntent": "Is he"
+      },
+      {
+        "pt": "Eles estão prontos?",
+        "en": "Are they ready?",
+        "ptIntent": "Eles estão",
+        "enIntent": "Are they"
+      }
+    ],
+    "tags": [
+      "to-be",
+      "present",
+      "questions",
+      "am",
+      "is",
+      "are",
+      "basic-english"
+    ],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "ser-estar-passado-was-were",
+    "intention": "Era / Estava / Eram / Estavam",
+    "english": "was / were",
+    "pattern": "subject + was/were + complement",
+    "description": "Usado para dizer quem alguém era, como alguém estava ou onde alguém estava no passado. Use 'was' com I/he/she/it e 'were' com you/we/they. Memorize o gerador: ERA / ESTAVA → WAS / ERAM / ESTAVAM → WERE.",
+    "category": "to-be-family",
+    "searchTerms": [
+      "era",
+      "estava",
+      "eram",
+      "estavam",
+      "was",
+      "were",
+      "to be passado"
+    ],
+    "examples": [
+      {
+        "pt": "Eu estava cansado.",
+        "en": "I was tired.",
+        "ptIntent": "estava cansado",
+        "enIntent": "was tired"
+      },
+      {
+        "pt": "Ela estava em casa.",
+        "en": "She was at home.",
+        "ptIntent": "estava em casa",
+        "enIntent": "was at home"
+      },
+      {
+        "pt": "Ele era meu professor.",
+        "en": "He was my teacher.",
+        "ptIntent": "era meu professor",
+        "enIntent": "was my teacher"
+      },
+      {
+        "pt": "Nós estávamos ocupados.",
+        "en": "We were busy.",
+        "ptIntent": "estávamos ocupados",
+        "enIntent": "were busy"
+      },
+      {
+        "pt": "Eles eram muito jovens.",
+        "en": "They were very young.",
+        "ptIntent": "eram muito jovens",
+        "enIntent": "were very young"
+      }
+    ],
+    "tags": [
+      "to-be",
+      "past",
+      "was",
+      "were",
+      "affirmative",
+      "basic-english"
+    ],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "ser-estar-pergunta-passado-was-were",
+    "intention": "Era...? / Estava...? / Eram...? / Estavam...?",
+    "english": "was / were + subject...?",
+    "pattern": "was/were + subject + complement?",
+    "description": "Usado para fazer perguntas com o verbo 'to be' no passado. Was ou were aparece antes do sujeito. Memorize o gerador: VOCÊ ESTAVA...? → WERE YOU...? / ELE ESTAVA...? → WAS HE...? / ELES ESTAVAM...? → WERE THEY...?",
+    "category": "to-be-family",
+    "searchTerms": [
+      "você estava",
+      "ele estava",
+      "ela estava",
+      "eles estavam",
+      "você era",
+      "eles eram",
+      "were you",
+      "was he",
+      "was she",
+      "were they"
+    ],
+    "examples": [
+      {
+        "pt": "Você estava em casa?",
+        "en": "Were you at home?",
+        "ptIntent": "Você estava",
+        "enIntent": "Were you"
+      },
+      {
+        "pt": "Ela estava cansada?",
+        "en": "Was she tired?",
+        "ptIntent": "Ela estava",
+        "enIntent": "Was she"
+      },
+      {
+        "pt": "Ele estava no trabalho?",
+        "en": "Was he at work?",
+        "ptIntent": "Ele estava",
+        "enIntent": "Was he"
+      },
+      {
+        "pt": "Eles estavam juntos?",
+        "en": "Were they together?",
+        "ptIntent": "Eles estavam",
+        "enIntent": "Were they"
+      }
+    ],
+    "tags": [
+      "to-be",
+      "past",
+      "questions",
+      "was",
+      "were",
+      "basic-english"
+    ],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "ser-estar-futuro-will-be",
+    "intention": "Serei / Estarei / Será / Estará",
+    "english": "will be",
+    "pattern": "subject + will be + complement",
+    "description": "Usado para falar sobre um estado, característica ou localização no futuro. 'Will be' não muda de acordo com o sujeito. Na fala, é muito comum usar as contrações I'll, you'll, he'll, she'll, we'll e they'll. Memorize o gerador: SEREI / ESTAREI / SERÁ / ESTARÁ → WILL BE.",
+    "category": "to-be-family",
+    "searchTerms": [
+      "serei",
+      "estarei",
+      "será",
+      "estará",
+      "seremos",
+      "estaremos",
+      "serão",
+      "estarão",
+      "will be",
+      "I'll be"
+    ],
+    "examples": [
+      {
+        "pt": "Eu estarei lá amanhã.",
+        "en": "I'll be there tomorrow.",
+        "ptIntent": "estarei lá",
+        "enIntent": "I'll be there"
+      },
+      {
+        "pt": "Ela estará ocupada amanhã.",
+        "en": "She'll be busy tomorrow.",
+        "ptIntent": "estará ocupada",
+        "enIntent": "She'll be busy"
+      },
+      {
+        "pt": "Nós estaremos em casa à noite.",
+        "en": "We'll be at home tonight.",
+        "ptIntent": "estaremos em casa",
+        "enIntent": "We'll be at home"
+      },
+      {
+        "pt": "Eles estarão prontos em breve.",
+        "en": "They'll be ready soon.",
+        "ptIntent": "estarão prontos",
+        "enIntent": "They'll be ready"
+      },
+      {
+        "pt": "Vai ficar tudo bem.",
+        "en": "It'll be okay.",
+        "ptIntent": "Vai ficar tudo bem",
+        "enIntent": "It'll be okay"
+      }
+    ],
+    "tags": [
+      "to-be",
+      "future",
+      "will-be",
+      "affirmative",
+      "basic-english"
+    ],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "ser-estar-pergunta-futuro-will-be",
+    "intention": "Será...? / Estará...? / Estarão...?",
+    "english": "will + subject + be...?",
+    "pattern": "will + subject + be + complement?",
+    "description": "Usado para fazer perguntas sobre estados, características ou localização no futuro. Nas perguntas, 'will' aparece antes do sujeito e 'be' depois dele. Memorize o gerador: VOCÊ ESTARÁ...? → WILL YOU BE...? / ELE ESTARÁ...? → WILL HE BE...?",
+    "category": "to-be-family",
+    "searchTerms": [
+      "você estará",
+      "ele estará",
+      "ela estará",
+      "eles estarão",
+      "será",
+      "will you be",
+      "will he be",
+      "will she be",
+      "will they be"
+    ],
+    "examples": [
+      {
+        "pt": "Você estará em casa amanhã?",
+        "en": "Will you be at home tomorrow?",
+        "ptIntent": "Você estará",
+        "enIntent": "Will you be"
+      },
+      {
+        "pt": "Ela estará disponível mais tarde?",
+        "en": "Will she be available later?",
+        "ptIntent": "Ela estará",
+        "enIntent": "Will she be"
+      },
+      {
+        "pt": "Ele estará na reunião?",
+        "en": "Will he be at the meeting?",
+        "ptIntent": "Ele estará",
+        "enIntent": "Will he be"
+      },
+      {
+        "pt": "Eles estarão prontos amanhã?",
+        "en": "Will they be ready tomorrow?",
+        "ptIntent": "Eles estarão",
+        "enIntent": "Will they be"
+      }
+    ],
+    "tags": [
+      "to-be",
+      "future",
+      "questions",
+      "will-be",
+      "basic-english"
+    ],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "estar-fazendo-present-continuous",
+    "intention": "Estou fazendo... / Está fazendo...",
+    "english": "am / is / are + verb-ing",
+    "pattern": "subject + am/is/are + verb-ing + complement",
+    "description": "Usado principalmente para falar sobre uma ação que está acontecendo agora ou ao redor do momento atual. Em português, normalmente pensamos em ESTOU/ESTÁ/ESTAMOS/ESTÃO + verbo no gerúndio (-ando, -endo, -indo). Memorize o gerador: ESTOU FAZENDO → I'M DOING.",
+    "category": "continuous-family",
+    "searchTerms": [
+      "estou fazendo",
+      "está fazendo",
+      "estamos fazendo",
+      "estão fazendo",
+      "ando",
+      "endo",
+      "indo",
+      "gerúndio",
+      "present continuous",
+      "verb ing",
+      "am doing",
+      "is doing",
+      "are doing"
+    ],
+    "examples": [
+      {
+        "pt": "Eu estou trabalhando agora.",
+        "en": "I'm working right now.",
+        "ptIntent": "estou trabalhando",
+        "enIntent": "I'm working"
+      },
+      {
+        "pt": "Ela está estudando inglês.",
+        "en": "She's studying English.",
+        "ptIntent": "está estudando",
+        "enIntent": "She's studying"
+      },
+      {
+        "pt": "Ele está dormindo.",
+        "en": "He's sleeping.",
+        "ptIntent": "está dormindo",
+        "enIntent": "He's sleeping"
+      },
+      {
+        "pt": "Nós estamos esperando o ônibus.",
+        "en": "We're waiting for the bus.",
+        "ptIntent": "estamos esperando",
+        "enIntent": "We're waiting"
+      },
+      {
+        "pt": "Eles estão comendo agora.",
+        "en": "They're eating now.",
+        "ptIntent": "estão comendo",
+        "enIntent": "They're eating"
+      }
+    ],
+    "tags": [
+      "continuous",
+      "present-continuous",
+      "verb-ing",
+      "gerund",
+      "actions-now",
+      "spoken-english",
+      "basic-english"
+    ],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "estar-fazendo-pergunta-present-continuous",
+    "intention": "Você está fazendo...? / Ele está fazendo...?",
+    "english": "am / is / are + subject + verb-ing...?",
+    "pattern": "am/is/are + subject + verb-ing + complement?",
+    "description": "Usado para perguntar se uma ação está acontecendo agora ou ao redor do momento atual. O verbo 'to be' aparece antes do sujeito. Memorize o gerador: VOCÊ ESTÁ FAZENDO...? → ARE YOU DOING...?",
+    "category": "continuous-family",
+    "searchTerms": [
+      "você está fazendo",
+      "ele está fazendo",
+      "ela está fazendo",
+      "eles estão fazendo",
+      "o que você está fazendo",
+      "are you doing",
+      "is he doing",
+      "is she doing",
+      "are they doing",
+      "present continuous question"
+    ],
+    "examples": [
+      {
+        "pt": "O que você está fazendo?",
+        "en": "What are you doing?",
+        "ptIntent": "você está fazendo",
+        "enIntent": "are you doing"
+      },
+      {
+        "pt": "Você está trabalhando agora?",
+        "en": "Are you working right now?",
+        "ptIntent": "Você está trabalhando",
+        "enIntent": "Are you working"
+      },
+      {
+        "pt": "Ela está estudando?",
+        "en": "Is she studying?",
+        "ptIntent": "Ela está estudando",
+        "enIntent": "Is she studying"
+      },
+      {
+        "pt": "Ele está dormindo?",
+        "en": "Is he sleeping?",
+        "ptIntent": "Ele está dormindo",
+        "enIntent": "Is he sleeping"
+      },
+      {
+        "pt": "Eles estão esperando por nós?",
+        "en": "Are they waiting for us?",
+        "ptIntent": "Eles estão esperando",
+        "enIntent": "Are they waiting"
+      }
+    ],
+    "tags": [
+      "continuous",
+      "present-continuous",
+      "questions",
+      "verb-ing",
+      "actions-now",
+      "spoken-english",
+      "basic-english"
+    ],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "estava-fazendo-past-continuous",
+    "intention": "Estava fazendo... / Estavam fazendo...",
+    "english": "was / were + verb-ing",
+    "pattern": "subject + was/were + verb-ing + complement",
+    "description": "Usado para falar sobre uma ação que estava acontecendo em determinado momento do passado. Também é muito usado quando outra ação acontece durante aquela ação. Memorize o gerador: ESTAVA FAZENDO → WAS DOING / ESTAVAM FAZENDO → WERE DOING.",
+    "category": "continuous-family",
+    "searchTerms": [
+      "estava fazendo",
+      "estavam fazendo",
+      "estávamos fazendo",
+      "was doing",
+      "were doing",
+      "past continuous",
+      "estava trabalhando",
+      "estava estudando"
+    ],
+    "examples": [
+      {
+        "pt": "Eu estava trabalhando quando você ligou.",
+        "en": "I was working when you called.",
+        "ptIntent": "estava trabalhando",
+        "enIntent": "was working"
+      },
+      {
+        "pt": "Ela estava estudando naquela hora.",
+        "en": "She was studying at that time.",
+        "ptIntent": "estava estudando",
+        "enIntent": "was studying"
+      },
+      {
+        "pt": "Ele estava dormindo quando eu cheguei.",
+        "en": "He was sleeping when I arrived.",
+        "ptIntent": "estava dormindo",
+        "enIntent": "was sleeping"
+      },
+      {
+        "pt": "Nós estávamos conversando sobre isso.",
+        "en": "We were talking about it.",
+        "ptIntent": "estávamos conversando",
+        "enIntent": "were talking"
+      },
+      {
+        "pt": "Eles estavam esperando por nós.",
+        "en": "They were waiting for us.",
+        "ptIntent": "estavam esperando",
+        "enIntent": "were waiting"
+      }
+    ],
+    "tags": [
+      "continuous",
+      "past-continuous",
+      "was",
+      "were",
+      "verb-ing",
+      "past-actions",
+      "spoken-english"
+    ],
+    "related": [],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "estava-fazendo-pergunta-past-continuous",
+    "intention": "Você estava fazendo...? / Eles estavam fazendo...?",
+    "english": "was / were + subject + verb-ing...?",
+    "pattern": "was/were + subject + verb-ing + complement?",
+    "description": "Usado para perguntar sobre uma ação que estava acontecendo em determinado momento do passado. Was ou were aparece antes do sujeito. Memorize o gerador: VOCÊ ESTAVA FAZENDO...? → WERE YOU DOING...?",
+    "category": "continuous-family",
+    "searchTerms": [
+      "você estava fazendo",
+      "ele estava fazendo",
+      "ela estava fazendo",
+      "eles estavam fazendo",
+      "were you doing",
+      "was he doing",
+      "was she doing",
+      "were they doing",
+      "past continuous question"
+    ],
+    "examples": [
+      {
+        "pt": "O que você estava fazendo quando eu liguei?",
+        "en": "What were you doing when I called?",
+        "ptIntent": "você estava fazendo",
+        "enIntent": "were you doing"
+      },
+      {
+        "pt": "Você estava trabalhando ontem à noite?",
+        "en": "Were you working last night?",
+        "ptIntent": "Você estava trabalhando",
+        "enIntent": "Were you working"
+      },
+      {
+        "pt": "Ela estava estudando quando você chegou?",
+        "en": "Was she studying when you arrived?",
+        "ptIntent": "Ela estava estudando",
+        "enIntent": "Was she studying"
+      },
+      {
+        "pt": "Ele estava dormindo naquela hora?",
+        "en": "Was he sleeping at that time?",
+        "ptIntent": "Ele estava dormindo",
+        "enIntent": "Was he sleeping"
+      },
+      {
+        "pt": "Eles estavam esperando por você?",
+        "en": "Were they waiting for you?",
+        "ptIntent": "Eles estavam esperando",
+        "enIntent": "Were they waiting"
+      }
+    ],
+    "tags": [
+      "continuous",
+      "past-continuous",
+      "questions",
+      "was",
+      "were",
+      "verb-ing",
+      "past-actions"
+    ],
+    "related": [],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "estarei-fazendo-future-continuous",
+    "intention": "Estarei fazendo... / Estará fazendo...",
+    "english": "will be + verb-ing",
+    "pattern": "subject + will be + verb-ing + complement",
+    "description": "Usado para falar sobre uma ação que estará acontecendo em determinado momento do futuro. Memorize o gerador: ESTAREI FAZENDO → I'LL BE DOING.",
+    "category": "continuous-family",
+    "searchTerms": [
+      "estarei fazendo",
+      "estará fazendo",
+      "estaremos fazendo",
+      "estarão fazendo",
+      "will be doing",
+      "future continuous",
+      "I'll be working",
+      "will be working"
+    ],
+    "examples": [
+      {
+        "pt": "Eu estarei trabalhando amanhã de manhã.",
+        "en": "I'll be working tomorrow morning.",
+        "ptIntent": "estarei trabalhando",
+        "enIntent": "I'll be working"
+      },
+      {
+        "pt": "Ela estará estudando à noite.",
+        "en": "She'll be studying tonight.",
+        "ptIntent": "estará estudando",
+        "enIntent": "She'll be studying"
+      },
+      {
+        "pt": "Amanhã a esta hora, eu estarei viajando.",
+        "en": "This time tomorrow, I'll be traveling.",
+        "ptIntent": "estarei viajando",
+        "enIntent": "I'll be traveling"
+      },
+      {
+        "pt": "Nós estaremos esperando por você.",
+        "en": "We'll be waiting for you.",
+        "ptIntent": "estaremos esperando",
+        "enIntent": "We'll be waiting"
+      },
+      {
+        "pt": "Eles estarão trabalhando quando chegarmos.",
+        "en": "They'll be working when we arrive.",
+        "ptIntent": "estarão trabalhando",
+        "enIntent": "They'll be working"
+      }
+    ],
+    "tags": [
+      "continuous",
+      "future-continuous",
+      "will-be",
+      "verb-ing",
+      "future-actions",
+      "spoken-english"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "estarei-fazendo-pergunta-future-continuous",
+    "intention": "Você estará fazendo...? / Eles estarão fazendo...?",
+    "english": "will + subject + be + verb-ing...?",
+    "pattern": "will + subject + be + verb-ing + complement?",
+    "description": "Usado para perguntar se uma ação estará acontecendo em determinado momento do futuro. Memorize o gerador: VOCÊ ESTARÁ FAZENDO...? → WILL YOU BE DOING...?",
+    "category": "continuous-family",
+    "searchTerms": [
+      "você estará fazendo",
+      "ele estará fazendo",
+      "ela estará fazendo",
+      "eles estarão fazendo",
+      "will you be doing",
+      "will he be doing",
+      "will she be doing",
+      "will they be doing",
+      "future continuous question"
+    ],
+    "examples": [
+      {
+        "pt": "O que você estará fazendo amanhã de manhã?",
+        "en": "What will you be doing tomorrow morning?",
+        "ptIntent": "você estará fazendo",
+        "enIntent": "will you be doing"
+      },
+      {
+        "pt": "Você estará trabalhando amanhã?",
+        "en": "Will you be working tomorrow?",
+        "ptIntent": "Você estará trabalhando",
+        "enIntent": "Will you be working"
+      },
+      {
+        "pt": "Ela estará estudando à noite?",
+        "en": "Will she be studying tonight?",
+        "ptIntent": "Ela estará estudando",
+        "enIntent": "Will she be studying"
+      },
+      {
+        "pt": "Eles estarão viajando na próxima semana?",
+        "en": "Will they be traveling next week?",
+        "ptIntent": "Eles estarão viajando",
+        "enIntent": "Will they be traveling"
+      }
+    ],
+    "tags": [
+      "continuous",
+      "future-continuous",
+      "questions",
+      "will-be",
+      "verb-ing",
+      "future-actions"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  }
 
   ]
 }
