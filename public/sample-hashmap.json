@@ -17300,6 +17300,146 @@
   ],
   "related": [],
   "englishLevel": "B2"
-}
+},
+  {
+    "id": "pelo-amor-de-deus-for-goodness-sake",
+    "intention": "Pelo amor de Deus! / Ah, qual é! (leve)",
+    "english": "for goodness' sake!",
+    "pattern": "for goodness' sake + reaction/request",
+    "description": "Expressão usada para demonstrar frustração, impaciência ou irritação de forma relativamente leve. É uma alternativa mais suave a 'for God's sake' e muito mais suave que 'for fuck's sake'. Memorize como um chunk completo: PELO AMOR DE DEUS! / AH, QUAL É! → FOR GOODNESS' SAKE!",
+    "category": "frustration-family",
+    "searchTerms": [
+      "pelo amor de Deus",
+      "ah qual é",
+      "frustração",
+      "irritação",
+      "impaciência",
+      "for goodness sake"
+    ],
+    "examples": [
+      {
+        "pt": "Pelo amor de Deus, pare de reclamar!",
+        "en": "For goodness' sake, stop complaining!",
+        "ptIntent": "Pelo amor de Deus",
+        "enIntent": "For goodness' sake"
+      },
+      {
+        "pt": "Ah, qual é! Tente mais uma vez.",
+        "en": "For goodness' sake! Try one more time.",
+        "ptIntent": "Ah, qual é",
+        "enIntent": "For goodness' sake"
+      },
+      {
+        "pt": "Pelo amor de Deus, tenha um pouco de paciência.",
+        "en": "For goodness' sake, have a little patience.",
+        "ptIntent": "Pelo amor de Deus",
+        "enIntent": "For goodness' sake"
+      }
+    ],
+    "tags": [
+      "frustration",
+      "annoyance",
+      "reaction",
+      "spoken-english",
+      "chunk",
+      "mild"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "pelo-amor-de-deus-for-gods-sake",
+    "intention": "Pelo amor de Deus! (irritação)",
+    "english": "for God's sake!",
+    "pattern": "for God's sake + reaction/request",
+    "description": "Expressão usada para demonstrar frustração, irritação ou impaciência com mais força. Dependendo do tom, pode soar mais intensa que 'for goodness' sake'. Memorize como um chunk completo: PELO AMOR DE DEUS! → FOR GOD'S SAKE!",
+    "category": "frustration-family",
+    "searchTerms": [
+      "pelo amor de Deus",
+      "frustração",
+      "irritação",
+      "impaciência",
+      "for God's sake"
+    ],
+    "examples": [
+      {
+        "pt": "Pelo amor de Deus, me escuta!",
+        "en": "For God's sake, listen to me!",
+        "ptIntent": "Pelo amor de Deus",
+        "enIntent": "For God's sake"
+      },
+      {
+        "pt": "Pelo amor de Deus! Não de novo.",
+        "en": "For God's sake! Not again.",
+        "ptIntent": "Pelo amor de Deus",
+        "enIntent": "For God's sake"
+      },
+      {
+        "pt": "Pelo amor de Deus, cara! Presta atenção.",
+        "en": "For God's sake, man! Pay attention.",
+        "ptIntent": "Pelo amor de Deus",
+        "enIntent": "For God's sake"
+      }
+    ],
+    "tags": [
+      "frustration",
+      "annoyance",
+      "reaction",
+      "spoken-english",
+      "chunk",
+      "strong"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "puta-que-pariu-for-fucks-sake",
+    "intention": "Puta que pariu! / Porra! (frustração ou irritação)",
+    "english": "for fuck's sake!",
+    "pattern": "for fuck's sake + reaction/request",
+    "description": "Expressão vulgar e enfática usada para demonstrar forte frustração, irritação, impaciência ou incredulidade. 'Puta que pariu!' preserva melhor o nível de vulgaridade da expressão inglesa. É muito comum na fala informal, mas deve ser evitada em situações formais ou profissionais. Memorize como um único chunk: PUTA QUE PARIU! / PORRA! → FOR FUCK'S SAKE!",
+    "category": "frustration-family",
+    "searchTerms": [
+      "puta que pariu",
+      "porra",
+      "pelo amor de Deus",
+      "frustração",
+      "irritação",
+      "impaciência",
+      "for fuck's sake"
+    ],
+    "examples": [
+      {
+        "pt": "Puta que pariu, para de fazer isso!",
+        "en": "For fuck's sake, stop doing that!",
+        "ptIntent": "Puta que pariu",
+        "enIntent": "For fuck's sake"
+      },
+      {
+        "pt": "Ah, puta que pariu. De novo não.",
+        "en": "Oh, for fuck's sake. Not again.",
+        "ptIntent": "puta que pariu",
+        "enIntent": "for fuck's sake"
+      },
+      {
+        "pt": "Porra, cara! Presta atenção!",
+        "en": "For fuck's sake, man! Pay attention!",
+        "ptIntent": "Porra",
+        "enIntent": "For fuck's sake"
+      }
+    ],
+    "tags": [
+      "frustration",
+      "annoyance",
+      "reaction",
+      "spoken-english",
+      "chunk",
+      "vulgar",
+      "strong-language"
+    ],
+    "related": [],
+    "englishLevel": "B2"
+  }
+
   ]
 }
