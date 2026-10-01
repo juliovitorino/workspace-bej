@@ -17439,6 +17439,195 @@
     ],
     "related": [],
     "englishLevel": "B2"
+  },
+  
+  {
+    "id": "ficar-puto-get-pissed-off",
+    "intention": "Ficar puto / Ficar muito irritado",
+    "english": "get pissed off",
+    "pattern": "subject + get/getting/got + pissed off",
+    "description": "Usado quando alguém fica muito irritado ou com raiva. No inglês americano informal, 'pissed off' corresponde bem a 'puto' ou 'muito irritado'. Memorize o gerador: FICAR PUTO → GET PISSED OFF.",
+    "category": "frustration-family",
+    "searchTerms": [
+      "ficar puto",
+      "ficar irritado",
+      "ficar com raiva",
+      "puto",
+      "irritado",
+      "get pissed off",
+      "got pissed off"
+    ],
+    "examples": [
+      {
+        "pt": "Eu fiquei puto quando descobri.",
+        "en": "I got pissed off when I found out.",
+        "ptIntent": "fiquei puto",
+        "enIntent": "got pissed off"
+      },
+      {
+        "pt": "Ele ficou puto comigo.",
+        "en": "He got pissed off at me.",
+        "ptIntent": "ficou puto",
+        "enIntent": "got pissed off"
+      },
+      {
+        "pt": "Eu fico puto quando as pessoas fazem isso.",
+        "en": "I get pissed off when people do that.",
+        "ptIntent": "fico puto",
+        "enIntent": "get pissed off"
+      }
+    ],
+    "tags": [
+      "frustration",
+      "anger",
+      "annoyance",
+      "spoken-english",
+      "informal",
+      "strong-language",
+      "get-family"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "deixar-alguem-puto-piss-someone-off",
+    "intention": "Deixar alguém puto / Irritar alguém",
+    "english": "piss someone off",
+    "pattern": "subject + piss/pisses/pissed + someone + off",
+    "description": "Usado quando uma pessoa, situação ou comportamento deixa alguém muito irritado. Diferente de 'get pissed off', que descreve quem fica irritado, aqui o foco está naquilo que causa a irritação. Memorize o gerador: DEIXAR ALGUÉM PUTO → PISS SOMEONE OFF.",
+    "category": "frustration-family",
+    "searchTerms": [
+      "deixar alguém puto",
+      "irritar alguém",
+      "deixar irritado",
+      "encher o saco",
+      "piss someone off",
+      "pissed me off"
+    ],
+    "examples": [
+      {
+        "pt": "Isso me deixou puto.",
+        "en": "That pissed me off.",
+        "ptIntent": "me deixou puto",
+        "enIntent": "pissed me off"
+      },
+      {
+        "pt": "Não deixe ela puta.",
+        "en": "Don't piss her off.",
+        "ptIntent": "deixe ela puta",
+        "enIntent": "piss her off"
+      },
+      {
+        "pt": "O que eu fiz para deixar você puto?",
+        "en": "What did I do to piss you off?",
+        "ptIntent": "deixar você puto",
+        "enIntent": "piss you off"
+      }
+    ],
+    "tags": [
+      "frustration",
+      "anger",
+      "annoyance",
+      "spoken-english",
+      "informal",
+      "strong-language",
+      "phrasal-verb"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "estar-deixando-alguem-puto-pissing-someone-off",
+    "intention": "Estar deixando alguém puto / Estar irritando alguém",
+    "english": "be pissing someone off",
+    "pattern": "subject + be + pissing + someone + off",
+    "description": "Usado quando algo ou alguém está causando irritação naquele momento ou continuamente. É uma construção muito comum na fala informal. Memorize o gerador: ESTAR DEIXANDO ALGUÉM PUTO → BE PISSING SOMEONE OFF.",
+    "category": "frustration-family",
+    "searchTerms": [
+      "está me deixando puto",
+      "está me irritando",
+      "está enchendo meu saco",
+      "pissing me off",
+      "pissing someone off"
+    ],
+    "examples": [
+      {
+        "pt": "Você está me deixando puto.",
+        "en": "You're pissing me off.",
+        "ptIntent": "está me deixando puto",
+        "enIntent": "pissing me off"
+      },
+      {
+        "pt": "Esse barulho está me deixando puto.",
+        "en": "This noise is pissing me off.",
+        "ptIntent": "está me deixando puto",
+        "enIntent": "is pissing me off"
+      },
+      {
+        "pt": "Ele está deixando todo mundo puto.",
+        "en": "He's pissing everyone off.",
+        "ptIntent": "está deixando todo mundo puto",
+        "enIntent": "pissing everyone off"
+      }
+    ],
+    "tags": [
+      "frustration",
+      "anger",
+      "annoyance",
+      "spoken-english",
+      "informal",
+      "strong-language",
+      "continuous"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "isso-me-deixa-puto-that-pisses-me-off",
+    "intention": "Isso me deixa puto!",
+    "english": "that pisses me off!",
+    "pattern": "that + pisses + me + off",
+    "description": "Chunk muito produtivo para reagir a algo que causa irritação ou raiva. Em vez de montar a estrutura palavra por palavra, memorize a reação inteira: ISSO ME DEIXA PUTO! → THAT PISSES ME OFF!",
+    "category": "frustration-family",
+    "searchTerms": [
+      "isso me deixa puto",
+      "isso me irrita",
+      "isso me dá raiva",
+      "that pisses me off",
+      "pisses me off"
+    ],
+    "examples": [
+      {
+        "pt": "Isso me deixa puto!",
+        "en": "That pisses me off!",
+        "ptIntent": "Isso me deixa puto",
+        "enIntent": "That pisses me off"
+      },
+      {
+        "pt": "Sabe o que realmente me deixa puto? Quando as pessoas fazem isso.",
+        "en": "You know what really pisses me off? When people do that.",
+        "ptIntent": "realmente me deixa puto",
+        "enIntent": "really pisses me off"
+      },
+      {
+        "pt": "Isso sempre me deixa puto.",
+        "en": "That always pisses me off.",
+        "ptIntent": "sempre me deixa puto",
+        "enIntent": "always pisses me off"
+      }
+    ],
+    "tags": [
+      "frustration",
+      "anger",
+      "annoyance",
+      "reaction",
+      "spoken-english",
+      "informal",
+      "strong-language",
+      "chunk"
+    ],
+    "related": [],
+    "englishLevel": "B1"
   }
 
   ]
