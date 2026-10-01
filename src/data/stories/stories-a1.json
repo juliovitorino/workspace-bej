@@ -1,6 +1,125 @@
 {
     "stories": [
         {
+            "id": "a1-daily-life-537eaab2-c43e-4157-bfb9-f3eff1702a3f",
+            "englishLevel": "A1",
+            "topic": "daily-life",
+            "titlePt": "Um Sábado Diferente",
+            "titleEn": "A Different Saturday",
+            "paragraphs": [
+                {
+                    "pt": "Ontem, eu fiquei em casa e eu não fui para o parque porque estava chovendo.",
+                    "en": "Yesterday, I stayed at home and I didn't go to the park because it was raining.",
+                    "intentions": [
+                        {
+                            "intentionId": "momento-passado-com-marcador-de-tempo",
+                            "ptIntent": "Ontem, eu fiquei",
+                            "enIntent": "Yesterday, I stayed"
+                        },
+                        {
+                            "intentionId": "eu-nao-fui-para",
+                            "ptIntent": "eu não fui para o parque",
+                            "enIntent": "I didn't go to the park"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Meu amigo Lucas me ligou. Ele disse: 'Você era um menino muito ativo no passado. Você tinha muitas ideias de jogos.'",
+                    "en": "My friend Lucas called me. He said: 'You were a very active boy in the past. You had many ideas for games.'",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-era",
+                            "ptIntent": "Você era um menino muito ativo",
+                            "enIntent": "You were a very active boy"
+                        },
+                        {
+                            "intentionId": "voce-tinha",
+                            "ptIntent": "Você tinha muitas ideias",
+                            "enIntent": "You had many ideas"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Então, Lucas disse: 'Hoje o dia está bonito. Vamos fazer um plano para este sábado.'",
+                    "en": "So, Lucas said: 'Today the weather is beautiful. Let's make a plan for this Saturday.'",
+                    "intentions": [
+                        {
+                            "intentionId": "make-a-plan",
+                            "ptIntent": "fazer um plano",
+                            "enIntent": "make a plan"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Nós decidimos fazer um piquenique. Eu preciso fazer uma lista de frutas e sanduíches para comprar no supermercado.",
+                    "en": "We decided to have a picnic. I need to make a list of fruits and sandwiches to buy at the supermarket.",
+                    "intentions": [
+                        {
+                            "intentionId": "make-a-list",
+                            "ptIntent": "fazer uma lista de frutas e sanduíches",
+                            "enIntent": "make a list of fruits and sandwiches"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Agora, eu estou no supermercado. O lugar está muito cheio de pessoas hoje.",
+                    "en": "Now, I am at the supermarket. The place is very full of people today.",
+                    "intentions": [
+                        {
+                            "intentionId": "sou-estou-agora",
+                            "ptIntent": "eu estou",
+                            "enIntent": "I am"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Eu encontro Lucas no parque. Ele sorri e diz: 'Você está feliz hoje, meu amigo!'",
+                    "en": "I meet Lucas at the park. He smiles and says: 'You are happy today, my friend!'",
+                    "intentions": [
+                        {
+                            "intentionId": "voce-esta",
+                            "ptIntent": "Você está feliz",
+                            "enIntent": "You are happy"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Nós comemos os sanduíches e corremos um pouco. Depois, nós decidimos fazer uma pausa sob uma grande árvore.",
+                    "en": "We eat the sandwiches and run a little. After that, we decide to take a break under a big tree.",
+                    "intentions": [
+                        {
+                            "intentionId": "take-a-break",
+                            "ptIntent": "fazer uma pausa",
+                            "enIntent": "take a break"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Nós conversamos por horas. Foi maravilhoso passar o dia com meu melhor amigo.",
+                    "en": "We talked for hours. It was wonderful to spend the day with my best friend.",
+                    "intentions": [
+                        {
+                            "intentionId": "foi-adjetivo",
+                            "ptIntent": "Foi maravilhoso",
+                            "enIntent": "It was wonderful"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "momento-passado-com-marcador-de-tempo",
+                "eu-nao-fui-para",
+                "voce-era",
+                "voce-tinha",
+                "make-a-plan",
+                "make-a-list",
+                "sou-estou-agora",
+                "voce-esta",
+                "take-a-break",
+                "foi-adjetivo"
+            ]
+        },
+        {
             "id": "a1-daily-life-b71d1a7d-0468-459b-8a41-36cc55e8772d",
             "englishLevel": "A1",
             "topic": "daily-life",
