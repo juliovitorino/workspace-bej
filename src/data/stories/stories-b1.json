@@ -1,6 +1,125 @@
 {
     "stories": [
         {
+            "id": "b1-daily-life-90deb595-3de4-46e2-bbfe-90d9ca5d7463",
+            "englishLevel": "B1",
+            "topic": "daily-life",
+            "titlePt": "Um Encontro Casual",
+            "titleEn": "A Casual Meeting",
+            "paragraphs": [
+                {
+                    "pt": "Oi, Lucas! Que bom te ver. Vamos colocar o papo em dia.",
+                    "en": "Hi, Lucas! Great to see you. Let's catch up.",
+                    "intentions": [
+                        {
+                            "intentionId": "lets-catch-up",
+                            "ptIntent": "Vamos colocar o papo em dia",
+                            "enIntent": "Let's catch up"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Oi, Clara. Eu precisava mesmo de uma pausa. Eu não aguento mais esse trânsito toda tarde.",
+                    "en": "Hi, Clara. I really needed a break. I can't take this traffic anymore every afternoon.",
+                    "intentions": [
+                        {
+                            "intentionId": "nao-aguento-mais",
+                            "ptIntent": "não aguento mais esse trânsito",
+                            "enIntent": "can't take this traffic anymore"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Sente-se e relaxe. Eu vou te pegar um café quente para ajudar.",
+                    "en": "Sit down and relax. I will get you a hot coffee to help.",
+                    "intentions": [
+                        {
+                            "intentionId": "providenciar-obter-algo-para-alguem",
+                            "ptIntent": "vou te pegar um café quente",
+                            "enIntent": "will get you a hot coffee"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Obrigado. Eu decidi que vou tirar férias no mês que vem. Vou usar esse tempo para aprender a pintar.",
+                    "en": "Thank you. I decided to take a vacation next month. I will use this time to learn how to paint.",
+                    "intentions": [
+                        {
+                            "intentionId": "vou-aproveitar-usar-o-tempo",
+                            "ptIntent": "usar esse tempo para aprender",
+                            "enIntent": "use this time to learn"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Isso é ótimo! Eu prefiro pintura tradicional porque a textura do papel é única.",
+                    "en": "That is great! I prefer traditional painting because the texture of the paper is unique.",
+                    "intentions": [
+                        {
+                            "intentionId": "preference-pattern",
+                            "ptIntent": "prefiro pintura tradicional porque a textura do papel é única",
+                            "enIntent": "prefer traditional painting because the texture of the paper is unique"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Interessante. Eu nunca tinha pensado sobre arte dessa forma, mas você tem razão.",
+                    "en": "Interesting. I've never really thought about art that way, but you are right.",
+                    "intentions": [
+                        {
+                            "intentionId": "nunca-tinha-pensado-dessa-forma-ive-never-really-thought-about-it-that-way",
+                            "ptIntent": "nunca tinha pensado sobre arte dessa forma",
+                            "enIntent": "never really thought about art that way"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Por falar nisso, me disseram que o Leo abriu um estúdio de arte no centro.",
+                    "en": "Speaking of which, I was told that Leo opened an art studio downtown.",
+                    "intentions": [
+                        {
+                            "intentionId": "me-disseram-me-contaram-que",
+                            "ptIntent": "me disseram que o Leo abriu",
+                            "enIntent": "I was told that Leo opened"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Sério? Bem, a vida dele não tem nada a ver comigo agora, mas desejo o melhor para ele.",
+                    "en": "Really? Well, his life has nothing to do with me now, but I wish him the best.",
+                    "intentions": [
+                        {
+                            "intentionId": "nothing-to-do-with-me",
+                            "ptIntent": "não tem nada a ver comigo",
+                            "enIntent": "nothing to do with me"
+                        }
+                    ]
+                },
+                {
+                    "pt": "De qualquer forma, nós deveríamos visitar uma galeria juntos em algum momento.",
+                    "en": "Anyway, we should visit a gallery together at some point.",
+                    "intentions": [
+                        {
+                            "intentionId": "at-some-point",
+                            "ptIntent": "em algum momento",
+                            "enIntent": "at some point"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "lets-catch-up",
+                "nao-aguento-mais",
+                "providenciar-obter-algo-para-alguem",
+                "vou-aproveitar-usar-o-tempo",
+                "preference-pattern",
+                "nunca-tinha-pensado-dessa-forma-ive-never-really-thought-about-it-that-way",
+                "me-disseram-me-contaram-que",
+                "nothing-to-do-with-me",
+                "at-some-point"
+            ]
+        },
+        {
             "id": "b1-family-858809a3-a1ad-4b17-97e4-aeeeff8ae3e5",
             "englishLevel": "B1",
             "topic": "family",

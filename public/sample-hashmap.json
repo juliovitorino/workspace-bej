@@ -9714,7 +9714,7 @@
     {
       "id": "estou-dividido-entre",
       "intention": "Estou dividido entre... / Estou em dúvida entre...",
-      "english": "I'm torn between...",
+      "english": "I'm torn between A and B",
       "pattern": "I'm torn between + noun/gerund + and + noun/gerund",
       "description": "Usado para expressar indecisão quando a pessoa está dividida entre duas opções, escolhas ou caminhos.",
       "category": "decision-making",
