@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 
 
@@ -46,6 +47,76 @@ export function IntentionDetails({
   onBasicTraining,
   onAdvancedTraining
 }: IntentionDetailsProps) {
+  const [speakingExampleIndex, setSpeakingExampleIndex] =
+    useState<number | null>(null);
+  const [speechError, setSpeechError] = useState<string | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
+    }
+
+    setSpeakingExampleIndex(null);
+    setSpeechError(null);
+  }, [item?.id]);
+
+  function handleSpeakExample(text: string, index: number) {
+    const englishText = text.trim();
+
+    if (!englishText) {
+      setSpeechError("Não há texto em inglês para reproduzir.");
+      return;
+    }
+
+    if (!("speechSynthesis" in window)) {
+      setSpeechError(
+        "O recurso de voz não está disponível neste navegador."
+      );
+      return;
+    }
+
+    window.speechSynthesis.cancel();
+    setSpeechError(null);
+    setSpeakingExampleIndex(null);
+
+    const utterance = new SpeechSynthesisUtterance(englishText);
+    const voices = window.speechSynthesis.getVoices();
+    const americanVoice = voices.find(
+      (voice) => voice.lang.toLowerCase() === "en-us"
+    );
+
+    if (americanVoice) {
+      utterance.voice = americanVoice;
+    }
+
+    utterance.lang = "en-US";
+    utterance.rate = 0.9;
+    utterance.pitch = 1;
+
+    utterance.onstart = () => {
+      setSpeakingExampleIndex(index);
+    };
+
+    utterance.onend = () => {
+      setSpeakingExampleIndex(null);
+    };
+
+    utterance.onerror = () => {
+      setSpeakingExampleIndex(null);
+      setSpeechError("Não foi possível reproduzir o exemplo em inglês.");
+    };
+
+    window.speechSynthesis.speak(utterance);
+  }
+
   if (!item) return null;
 
   const relatedItems = (item.related ?? [])
@@ -126,15 +197,56 @@ export function IntentionDetails({
                       example.ptIntent
                     )}
                   </p>
-                  <p className="english">
-                    {renderHighlightedText(
-                      example.en,
-                      example.enIntent
-                    )}
-                  </p>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.6rem"
+                    }}
+                  >
+                    <p
+                      className="english"
+                      style={{ flex: 1, margin: 0 }}
+                    >
+                      {renderHighlightedText(
+                        example.en,
+                        example.enIntent
+                      )}
+                    </p>
+
+                    <button
+                      type="button"
+                      className="secondary-button"
+                      onClick={() => handleSpeakExample(example.en, index)}
+                      disabled={speakingExampleIndex === index}
+                      title="Ouvir este exemplo em inglês"
+                      aria-label={`Ouvir exemplo ${index + 1} em inglês`}
+                      style={{
+                        width: "2.5rem",
+                        minWidth: "2.5rem",
+                        height: "2.5rem",
+                        minHeight: "2.5rem",
+                        padding: 0,
+                        borderRadius: "999px",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0
+                      }}
+                    >
+                      <span aria-hidden="true">🔊</span>
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
+
+            {speechError && (
+              <div className="status-card error-card google-translation-error">
+                <h3>Não foi possível reproduzir o áudio.</h3>
+                <p>{speechError}</p>
+              </div>
+            )}
           </section>
         )}
 
