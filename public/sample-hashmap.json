@@ -2897,6 +2897,65 @@
       "englishLevel": "B1"
     },
     {
+  "id": "de-quem-whose",
+  "intention": "De quem...?",
+  "english": "whose...?",
+  "pattern": "whose + noun + be/auxiliary + subject...?",
+  "description": "Usado para perguntar a quem alguma coisa pertence ou com quem algo está relacionado. 'Whose' normalmente aparece antes do substantivo: 'Whose car is this?'. Também pode aparecer sozinho quando o objeto já está claro: 'Whose is this?'. Memorize o gerador: DE QUEM...? → WHOSE...?",
+  "category": "questions",
+  "searchTerms": [
+    "de quem",
+    "de quem é",
+    "de quem são",
+    "pertence a quem",
+    "whose",
+    "whose is",
+    "whose are"
+  ],
+  "examples": [
+    {
+      "pt": "De quem é este carro?",
+      "en": "Whose car is this?",
+      "ptIntent": "De quem",
+      "enIntent": "Whose"
+    },
+    {
+      "pt": "De quem é esta bolsa?",
+      "en": "Whose bag is this?",
+      "ptIntent": "De quem",
+      "enIntent": "Whose"
+    },
+    {
+      "pt": "De quem são estas chaves?",
+      "en": "Whose keys are these?",
+      "ptIntent": "De quem",
+      "enIntent": "Whose"
+    },
+    {
+      "pt": "De quem foi essa ideia?",
+      "en": "Whose idea was that?",
+      "ptIntent": "De quem",
+      "enIntent": "Whose"
+    },
+    {
+      "pt": "De quem é isso?",
+      "en": "Whose is this?",
+      "ptIntent": "De quem",
+      "enIntent": "Whose"
+    }
+  ],
+  "tags": [
+    "questions",
+    "whose",
+    "possession",
+    "question-word",
+    "ownership",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "A1"
+},
+    {
       "id": "de-onde-sujeito-verbo",
       "intention": "De onde + sujeito + verbo?",
       "english": "where + auxiliary + subject + verb + from",
