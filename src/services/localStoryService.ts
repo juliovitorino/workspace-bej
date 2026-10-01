@@ -43,6 +43,53 @@ function randomStory(stories: LocalStory[]): LocalStory {
   return stories[randomIndex];
 }
 
+function normalizeSearchText(value: string): string {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLocaleLowerCase("pt-BR")
+    .trim();
+}
+
+/**
+ * Pesquisa histórias da biblioteca local por nível e título.
+ *
+ * - Se o título estiver vazio, retorna todas as histórias do nível.
+ * - Pesquisa tanto em titlePt quanto em titleEn.
+ * - A pesquisa ignora maiúsculas/minúsculas e acentos.
+ */
+export function searchLocalStories(
+  englishLevel: string,
+  title: string = ""
+): LocalStory[] {
+  const library = libraries[englishLevel.toUpperCase()];
+
+  if (!library || library.stories.length === 0) {
+    return [];
+  }
+
+  const normalizedTitle = normalizeSearchText(title);
+
+  const matches =
+    normalizedTitle.length === 0
+      ? [...library.stories]
+      : library.stories.filter((story) => {
+          const titlePt = normalizeSearchText(story.titlePt);
+          const titleEn = normalizeSearchText(story.titleEn);
+
+          return (
+            titlePt.includes(normalizedTitle) ||
+            titleEn.includes(normalizedTitle)
+          );
+        });
+
+  return matches.sort((storyA, storyB) =>
+    storyA.titlePt.localeCompare(storyB.titlePt, "pt-BR", {
+      sensitivity: "base",
+    })
+  );
+}
+
 export function getRandomLocalStory(
   englishLevel: string,
   selectedIntentionIds: string[] = []
