@@ -137,6 +137,93 @@ export function IntentionDetails({
     window.speechSynthesis.speak(utterance);
   }
 
+  function handlePrintHq() {
+    if (!hqImage) {
+      return;
+    }
+
+    const printWindow = window.open("", "_blank");
+
+    if (!printWindow) {
+      return;
+    }
+
+    const absoluteImageUrl = new URL(hqImage, window.location.href).href;
+
+    printWindow.document.title = `HQ - ${item?.intention ?? "Mental Hashmap"}`;
+    printWindow.document.documentElement.style.margin = "0";
+    printWindow.document.body.style.margin = "0";
+    printWindow.document.body.style.display = "flex";
+    printWindow.document.body.style.alignItems = "center";
+    printWindow.document.body.style.justifyContent = "center";
+
+    const style = printWindow.document.createElement("style");
+    style.textContent = `
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+
+      html,
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 210mm !important;
+        height: 297mm !important;
+        min-width: 210mm !important;
+        min-height: 297mm !important;
+        max-width: 210mm !important;
+        max-height: 297mm !important;
+        overflow: hidden !important;
+        background: #ffffff !important;
+      }
+
+      body {
+        display: block !important;
+      }
+
+      img {
+        position: fixed !important;
+        top: 8mm !important;
+        left: 8mm !important;
+        width: 194mm !important;
+        height: 281mm !important;
+        max-width: 194mm !important;
+        max-height: 281mm !important;
+        object-fit: contain !important;
+        object-position: center center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+    `;
+    printWindow.document.head.appendChild(style);
+
+    const image = printWindow.document.createElement("img");
+    image.src = absoluteImageUrl;
+    image.alt = `HQ relacionada à intenção: ${item?.intention ?? ""}`;
+
+    image.onload = () => {
+      printWindow.focus();
+      printWindow.print();
+    };
+
+    image.onerror = () => {
+      printWindow.close();
+    };
+
+    printWindow.addEventListener(
+      "afterprint",
+      () => {
+        printWindow.close();
+      },
+      { once: true }
+    );
+
+    printWindow.document.body.appendChild(image);
+  }
+
   if (!item) return null;
 
   const relatedItems = (item.related ?? [])
@@ -397,6 +484,48 @@ export function IntentionDetails({
                   borderRadius: "12px"
                 }}
               />
+
+              <button
+                type="button"
+                onClick={handlePrintHq}
+                aria-label="Imprimir HQ"
+                title="Imprimir HQ"
+                style={{
+                  position: "fixed",
+                  top: "max(0.75rem, env(safe-area-inset-top))",
+                  left: "max(0.75rem, env(safe-area-inset-left))",
+                  zIndex: 10001,
+                  width: "2.75rem",
+                  minWidth: "2.75rem",
+                  height: "2.75rem",
+                  minHeight: "2.75rem",
+                  padding: 0,
+                  border: "1px solid rgba(255, 255, 255, 0.35)",
+                  borderRadius: "999px",
+                  background: "rgba(0, 0, 0, 0.68)",
+                  color: "#ffffff",
+                  cursor: "pointer",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}
+              >
+                <svg
+                  aria-hidden="true"
+                  width="21"
+                  height="21"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polyline points="6 9 6 2 18 2 18 9" />
+                  <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+                  <rect x="6" y="14" width="12" height="8" />
+                </svg>
+              </button>
 
               <button
                 type="button"
