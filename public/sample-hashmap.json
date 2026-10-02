@@ -19477,19 +19477,22 @@
         "pt": "Acabei trabalhando até tarde.",
         "en": "I ended up working late.",
         "ptIntent": "Acabei trabalhando",
-        "enIntent": "ended up working"
+        "enIntent": "ended up working",
+        "hqImage":"/images/hq/acabar-fazendo-end-up-01.png"
       },
       {
         "pt": "A gente sempre acaba falando sobre trabalho.",
         "en": "We always end up talking about work.",
         "ptIntent": "acaba falando",
-        "enIntent": "end up talking"
+        "enIntent": "end up talking",
+        "hqImage":"/images/hq/acabar-fazendo-end-up-02.png"
       },
       {
         "pt": "Como você acabou morando no Brasil?",
         "en": "How did you end up living in Brazil?",
         "ptIntent": "acabou morando",
-        "enIntent": "end up living"
+        "enIntent": "end up living",
+        "hqImage":"/images/hq/acabar-fazendo-end-up-03.png"
       }
     ],
     "tags": ["phrasal-verb", "result", "daily-life", "spoken-english"],
