@@ -18466,6 +18466,712 @@
     ],
     "related": [],
     "englishLevel": "B1"
+  },
+  {
+  "id": "encerrar-por-hoje-call-it-a-day",
+  "intention": "Encerrar por hoje / Parar por hoje",
+  "english": "call it a day",
+  "pattern": "call it a day",
+  "description": "Usado quando decidimos parar de trabalhar ou fazer alguma atividade por hoje. É uma expressão muito comum e natural no inglês falado. Mapa mental: ENCERRAR POR HOJE → CALL IT A DAY.",
+  "category": "idiom",
+  "searchTerms": [
+    "encerrar por hoje",
+    "parar por hoje",
+    "chega por hoje",
+    "terminar por hoje",
+    "call it a day"
+  ],
+  "examples": [
+    {
+      "pt": "Acho que podemos encerrar por hoje.",
+      "en": "I think we can call it a day.",
+      "ptIntent": "encerrar por hoje",
+      "enIntent": "call it a day"
+    },
+    {
+      "pt": "Estou cansado. Vamos parar por hoje.",
+      "en": "I'm tired. Let's call it a day.",
+      "ptIntent": "parar por hoje",
+      "enIntent": "call it a day"
+    },
+    {
+      "pt": "Já trabalhamos bastante. Vamos encerrar por hoje.",
+      "en": "We've worked enough. Let's call it a day.",
+      "ptIntent": "encerrar por hoje",
+      "enIntent": "call it a day"
+    },
+    {
+      "pt": "Podemos terminar isso amanhã. Vamos parar por hoje.",
+      "en": "We can finish this tomorrow. Let's call it a day.",
+      "ptIntent": "parar por hoje",
+      "enIntent": "call it a day"
+    },
+    {
+      "pt": "Depois de oito horas trabalhando, decidi encerrar por hoje.",
+      "en": "After working for eight hours, I decided to call it a day.",
+      "ptIntent": "encerrar por hoje",
+      "enIntent": "call it a day"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "spoken-english",
+    "work",
+    "daily-life",
+    "stop",
+    "finish"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "comecar-com-tudo-hit-the-ground-running",
+  "intention": "Começar com tudo / Já começar a todo vapor",
+  "english": "hit the ground running",
+  "pattern": "hit the ground running",
+  "description": "Usado quando alguém começa uma atividade, trabalho ou projeto imediatamente com muita energia, eficiência e sem precisar de muito tempo para se adaptar. Mapa mental: COMEÇAR COM TUDO / JÁ COMEÇAR A TODO VAPOR → HIT THE GROUND RUNNING.",
+  "category": "idiom",
+  "searchTerms": [
+    "começar com tudo",
+    "começar a todo vapor",
+    "já começar produzindo",
+    "começar com energia",
+    "começar rapidamente",
+    "hit the ground running"
+  ],
+  "examples": [
+    {
+      "pt": "Quero começar com tudo no meu novo emprego.",
+      "en": "I want to hit the ground running at my new job.",
+      "ptIntent": "começar com tudo",
+      "enIntent": "hit the ground running"
+    },
+    {
+      "pt": "Precisamos começar a todo vapor na segunda-feira.",
+      "en": "We need to hit the ground running on Monday.",
+      "ptIntent": "começar a todo vapor",
+      "enIntent": "hit the ground running"
+    },
+    {
+      "pt": "Ela começou com tudo no novo projeto.",
+      "en": "She hit the ground running on the new project.",
+      "ptIntent": "começou com tudo",
+      "enIntent": "hit the ground running"
+    },
+    {
+      "pt": "O novo gerente chegou e já começou a todo vapor.",
+      "en": "The new manager came in and hit the ground running.",
+      "ptIntent": "começou a todo vapor",
+      "enIntent": "hit the ground running"
+    },
+    {
+      "pt": "Não temos muito tempo, então precisamos começar com tudo.",
+      "en": "We don't have much time, so we need to hit the ground running.",
+      "ptIntent": "começar com tudo",
+      "enIntent": "hit the ground running"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "spoken-english",
+    "work",
+    "projects",
+    "start",
+    "productivity"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
+{
+  "id": "virar-a-noite-trabalhando-burn-the-midnight-oil",
+  "intention": "Virar a noite trabalhando / estudando",
+  "english": "burn the midnight oil",
+  "pattern": "burn the midnight oil",
+  "description": "Usado quando alguém trabalha ou estuda até muito tarde da noite, normalmente para terminar algo ou cumprir um prazo. Mapa mental: VIRAR A NOITE TRABALHANDO/ESTUDANDO → BURN THE MIDNIGHT OIL.",
+  "category": "idiom",
+  "searchTerms": [
+    "virar a noite trabalhando",
+    "virar a noite estudando",
+    "trabalhar até tarde",
+    "estudar até tarde",
+    "ficar acordado trabalhando",
+    "burn the midnight oil"
+  ],
+  "examples": [
+    {
+      "pt": "Vou ter que virar a noite trabalhando para terminar esse projeto.",
+      "en": "I'll have to burn the midnight oil to finish this project.",
+      "ptIntent": "virar a noite trabalhando",
+      "enIntent": "burn the midnight oil"
+    },
+    {
+      "pt": "Nós viramos a noite trabalhando para cumprir o prazo.",
+      "en": "We burned the midnight oil to meet the deadline.",
+      "ptIntent": "viramos a noite trabalhando",
+      "enIntent": "burned the midnight oil"
+    },
+    {
+      "pt": "Ela está virando a noite estudando para a prova.",
+      "en": "She's burning the midnight oil studying for the exam.",
+      "ptIntent": "virando a noite estudando",
+      "enIntent": "burning the midnight oil"
+    },
+    {
+      "pt": "Não quero virar a noite trabalhando de novo.",
+      "en": "I don't want to burn the midnight oil again.",
+      "ptIntent": "virar a noite trabalhando",
+      "enIntent": "burn the midnight oil"
+    },
+    {
+      "pt": "Ele virou a noite trabalhando para terminar o relatório.",
+      "en": "He burned the midnight oil to finish the report.",
+      "ptIntent": "virou a noite trabalhando",
+      "enIntent": "burned the midnight oil"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "spoken-english",
+    "work",
+    "study",
+    "deadline",
+    "late-night"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
+
+  {
+    "id": "algo-incluido-automaticamente-part-and-parcel",
+    "intention": "Algo incluído automaticamente / Parte integrante",
+    "english": "part and parcel",
+    "pattern": "part and parcel of + something",
+    "description": "Usado para dizer que algo é uma parte essencial, inevitável ou natural de determinada situação, atividade ou experiência. Mapa mental: PARTE INTEGRANTE / ALGO QUE VEM JUNTO → PART AND PARCEL.",
+    "category": "idiom",
+    "searchTerms": [
+      "parte integrante",
+      "faz parte do pacote",
+      "vem junto",
+      "parte natural",
+      "part and parcel"
+    ],
+    "examples": [
+      {
+        "pt": "Essa responsabilidade faz parte do pacote do trabalho.",
+        "en": "This responsibility is part and parcel of the job.",
+        "ptIntent": "faz parte do pacote",
+        "enIntent": "part and parcel"
+      },
+      {
+        "pt": "Lidar com pressão é parte integrante desse trabalho.",
+        "en": "Dealing with pressure is part and parcel of this job.",
+        "ptIntent": "parte integrante",
+        "enIntent": "part and parcel"
+      },
+      {
+        "pt": "Cometer erros faz parte do processo de aprendizagem.",
+        "en": "Making mistakes is part and parcel of the learning process.",
+        "ptIntent": "faz parte do processo",
+        "enIntent": "part and parcel"
+      }
+    ],
+    "tags": ["idiom", "spoken-english", "work", "daily-life"],
+    "related": [],
+    "englishLevel": "C1"
+  },
+  {
+    "id": "movimento-intenso-agitacao-hustle-and-bustle",
+    "intention": "Movimento intenso / Agitação",
+    "english": "hustle and bustle",
+    "pattern": "the hustle and bustle of + place/activity",
+    "description": "Usado para falar do movimento, barulho e atividade intensa de lugares movimentados. Mapa mental: AGITAÇÃO / MOVIMENTO INTENSO → HUSTLE AND BUSTLE.",
+    "category": "idiom",
+    "searchTerms": [
+      "agitação",
+      "movimento intenso",
+      "correria",
+      "cidade movimentada",
+      "hustle and bustle"
+    ],
+    "examples": [
+      {
+        "pt": "Eu gosto da agitação das grandes cidades.",
+        "en": "I love the hustle and bustle of big cities.",
+        "ptIntent": "agitação",
+        "enIntent": "hustle and bustle"
+      },
+      {
+        "pt": "Às vezes preciso fugir da agitação da cidade.",
+        "en": "Sometimes I need to escape the hustle and bustle of the city.",
+        "ptIntent": "agitação",
+        "enIntent": "hustle and bustle"
+      },
+      {
+        "pt": "Ela sente falta do movimento intenso de São Paulo.",
+        "en": "She misses the hustle and bustle of São Paulo.",
+        "ptIntent": "movimento intenso",
+        "enIntent": "hustle and bustle"
+      }
+    ],
+    "tags": ["idiom", "spoken-english", "city", "daily-life"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "detalhes-internos-funcionamento-ins-and-outs",
+    "intention": "Detalhes internos / Funcionamento",
+    "english": "the ins and outs",
+    "pattern": "the ins and outs of + something",
+    "description": "Usado para falar de todos os detalhes, particularidades e funcionamento de alguma coisa. Mapa mental: DETALHES INTERNOS / COMO FUNCIONA → THE INS AND OUTS.",
+    "category": "idiom",
+    "searchTerms": [
+      "detalhes internos",
+      "funcionamento",
+      "como funciona",
+      "todos os detalhes",
+      "ins and outs"
+    ],
+    "examples": [
+      {
+        "pt": "Ele conhece todos os detalhes do sistema.",
+        "en": "He knows the ins and outs of the system.",
+        "ptIntent": "todos os detalhes",
+        "enIntent": "the ins and outs"
+      },
+      {
+        "pt": "Ainda estou aprendendo como funciona esse processo.",
+        "en": "I'm still learning the ins and outs of this process.",
+        "ptIntent": "como funciona",
+        "enIntent": "the ins and outs"
+      },
+      {
+        "pt": "Ela me explicou todos os detalhes do negócio.",
+        "en": "She explained the ins and outs of the business to me.",
+        "ptIntent": "todos os detalhes",
+        "enIntent": "the ins and outs"
+      }
+    ],
+    "tags": ["idiom", "spoken-english", "work", "knowledge"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "de-modo-geral-by-and-large",
+    "intention": "De modo geral",
+    "english": "by and large",
+    "pattern": "by and large, + statement",
+    "description": "Usado para fazer uma avaliação geral sem afirmar que algo é verdadeiro em absolutamente todos os casos. Mapa mental: DE MODO GERAL → BY AND LARGE.",
+    "category": "idiom",
+    "searchTerms": [
+      "de modo geral",
+      "no geral",
+      "em geral",
+      "de maneira geral",
+      "by and large"
+    ],
+    "examples": [
+      {
+        "pt": "De modo geral, o projeto foi bem-sucedido.",
+        "en": "By and large, the project was successful.",
+        "ptIntent": "De modo geral",
+        "enIntent": "By and large"
+      },
+      {
+        "pt": "No geral, estou satisfeito com o resultado.",
+        "en": "By and large, I'm happy with the result.",
+        "ptIntent": "No geral",
+        "enIntent": "By and large"
+      },
+      {
+        "pt": "De modo geral, as pessoas gostaram da mudança.",
+        "en": "By and large, people liked the change.",
+        "ptIntent": "De modo geral",
+        "enIntent": "By and large"
+      }
+    ],
+    "tags": ["idiom", "spoken-english", "opinion", "generalization"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "seguro-ileso-safe-and-sound",
+    "intention": "Seguro / Ileso",
+    "english": "safe and sound",
+    "pattern": "safe and sound",
+    "description": "Usado para dizer que alguém chegou ou permaneceu completamente seguro e sem ferimentos ou problemas. Mapa mental: SEGURO / ILESO → SAFE AND SOUND.",
+    "category": "idiom",
+    "searchTerms": [
+      "seguro",
+      "ileso",
+      "são e salvo",
+      "em segurança",
+      "safe and sound"
+    ],
+    "examples": [
+      {
+        "pt": "Ela chegou em casa sã e salva.",
+        "en": "She arrived home safe and sound.",
+        "ptIntent": "sã e salva",
+        "enIntent": "safe and sound"
+      },
+      {
+        "pt": "Fiquei aliviado quando soube que eles estavam seguros.",
+        "en": "I was relieved to hear they were safe and sound.",
+        "ptIntent": "seguros",
+        "enIntent": "safe and sound"
+      },
+      {
+        "pt": "As crianças voltaram para casa sãs e salvas.",
+        "en": "The kids came home safe and sound.",
+        "ptIntent": "sãs e salvas",
+        "enIntent": "safe and sound"
+      }
+    ],
+    "tags": ["idiom", "spoken-english", "safety", "daily-life"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "ansioso-nervoso-on-pins-and-needles",
+    "intention": "Ansioso / Nervoso esperando algo",
+    "english": "on pins and needles",
+    "pattern": "be + on pins and needles",
+    "description": "Usado quando alguém está muito ansioso, nervoso ou em suspense enquanto espera alguma coisa acontecer. Mapa mental: ANSIOSO / NERVOSO ESPERANDO ALGO → ON PINS AND NEEDLES.",
+    "category": "idiom",
+    "searchTerms": [
+      "ansioso",
+      "nervoso",
+      "na expectativa",
+      "em suspense",
+      "on pins and needles"
+    ],
+    "examples": [
+      {
+        "pt": "Eu estava muito ansioso esperando o resultado.",
+        "en": "I was on pins and needles waiting for the result.",
+        "ptIntent": "muito ansioso",
+        "enIntent": "on pins and needles"
+      },
+      {
+        "pt": "Estamos nervosos esperando a decisão.",
+        "en": "We're on pins and needles waiting for the decision.",
+        "ptIntent": "nervosos",
+        "enIntent": "on pins and needles"
+      },
+      {
+        "pt": "Ela ficou muito ansiosa durante toda a entrevista.",
+        "en": "She was on pins and needles throughout the interview.",
+        "ptIntent": "muito ansiosa",
+        "enIntent": "on pins and needles"
+      }
+    ],
+    "tags": ["idiom", "spoken-english", "feelings", "waiting"],
+    "related": [],
+    "englishLevel": "C1"
+  },
+  {
+    "id": "desgaste-natural-wear-and-tear",
+    "intention": "Desgaste natural",
+    "english": "wear and tear",
+    "pattern": "wear and tear",
+    "description": "Usado para falar do desgaste normal causado pelo uso e pelo tempo. Mapa mental: DESGASTE NATURAL → WEAR AND TEAR.",
+    "category": "idiom",
+    "searchTerms": [
+      "desgaste",
+      "desgaste natural",
+      "desgaste pelo uso",
+      "deterioração",
+      "wear and tear"
+    ],
+    "examples": [
+      {
+        "pt": "O carro mostra sinais de desgaste.",
+        "en": "The car shows signs of wear and tear.",
+        "ptIntent": "desgaste",
+        "enIntent": "wear and tear"
+      },
+      {
+        "pt": "Esse tipo de desgaste é normal.",
+        "en": "This kind of wear and tear is normal.",
+        "ptIntent": "desgaste",
+        "enIntent": "wear and tear"
+      },
+      {
+        "pt": "O piso sofreu muito desgaste ao longo dos anos.",
+        "en": "The floor has suffered a lot of wear and tear over the years.",
+        "ptIntent": "desgaste",
+        "enIntent": "wear and tear"
+      }
+    ],
+    "tags": ["idiom", "spoken-english", "damage", "daily-life"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "incerto-arriscado-touch-and-go",
+    "intention": "Incerto / Por um fio",
+    "english": "touch and go",
+    "pattern": "be + touch and go",
+    "description": "Usado quando o resultado de uma situação é muito incerto e pode dar certo ou errado. Mapa mental: INCERTO / POR UM FIO → TOUCH AND GO.",
+    "category": "idiom",
+    "searchTerms": [
+      "incerto",
+      "por um fio",
+      "situação arriscada",
+      "não saber se vai dar certo",
+      "touch and go"
+    ],
+    "examples": [
+      {
+        "pt": "A situação ficou incerta por um tempo.",
+        "en": "The situation was touch and go for a while.",
+        "ptIntent": "incerta",
+        "enIntent": "touch and go"
+      },
+      {
+        "pt": "Por um tempo, não sabíamos se conseguiríamos terminar.",
+        "en": "For a while, it was touch and go whether we'd finish.",
+        "ptIntent": "não sabíamos se conseguiríamos",
+        "enIntent": "touch and go"
+      },
+      {
+        "pt": "O projeto ficou por um fio durante algumas semanas.",
+        "en": "The project was touch and go for a few weeks.",
+        "ptIntent": "por um fio",
+        "enIntent": "touch and go"
+      }
+    ],
+    "tags": ["idiom", "spoken-english", "uncertainty", "risk"],
+    "related": [],
+    "englishLevel": "C1"
+  },
+  {
+    "id": "relacao-equilibrada-troca-give-and-take",
+    "intention": "Relação equilibrada / Troca",
+    "english": "give and take",
+    "pattern": "give and take",
+    "description": "Usado para falar de uma relação em que as pessoas precisam ceder, negociar e fazer concessões umas às outras. Mapa mental: TROCA / CEDER DOS DOIS LADOS → GIVE AND TAKE.",
+    "category": "idiom",
+    "searchTerms": [
+      "troca",
+      "ceder",
+      "concessões",
+      "relação equilibrada",
+      "give and take"
+    ],
+    "examples": [
+      {
+        "pt": "Um relacionamento precisa de troca.",
+        "en": "A relationship needs give and take.",
+        "ptIntent": "troca",
+        "enIntent": "give and take"
+      },
+      {
+        "pt": "Toda boa parceria exige concessões dos dois lados.",
+        "en": "Every good partnership requires some give and take.",
+        "ptIntent": "concessões dos dois lados",
+        "enIntent": "give and take"
+      },
+      {
+        "pt": "Tem que haver troca entre a empresa e os funcionários.",
+        "en": "There has to be some give and take between the company and its employees.",
+        "ptIntent": "troca",
+        "enIntent": "give and take"
+      }
+    ],
+    "tags": ["idiom", "spoken-english", "relationships", "negotiation"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "enganacao-ilusao-smoke-and-mirrors",
+    "intention": "Enganação / Ilusão",
+    "english": "smoke and mirrors",
+    "pattern": "smoke and mirrors",
+    "description": "Usado quando algo parece impressionante ou verdadeiro, mas na realidade esconde, distorce ou desvia a atenção dos fatos. Mapa mental: ENGANAÇÃO / ILUSÃO → SMOKE AND MIRRORS.",
+    "category": "idiom",
+    "searchTerms": [
+      "enganação",
+      "ilusão",
+      "aparência enganosa",
+      "distração",
+      "smoke and mirrors"
+    ],
+    "examples": [
+      {
+        "pt": "A apresentação foi só enganação.",
+        "en": "The presentation was just smoke and mirrors.",
+        "ptIntent": "enganação",
+        "enIntent": "smoke and mirrors"
+      },
+      {
+        "pt": "Não se deixe enganar. Isso é só ilusão.",
+        "en": "Don't be fooled. It's all smoke and mirrors.",
+        "ptIntent": "ilusão",
+        "enIntent": "smoke and mirrors"
+      },
+      {
+        "pt": "Por trás de toda aquela aparência havia muita enganação.",
+        "en": "Behind all that appearance, there was a lot of smoke and mirrors.",
+        "ptIntent": "enganação",
+        "enIntent": "smoke and mirrors"
+      }
+    ],
+    "tags": ["idiom", "spoken-english", "deception", "appearance"],
+    "related": [],
+    "englishLevel": "C1"
+  },
+  {
+    "id": "muito-limpo-impecavel-spick-and-span",
+    "intention": "Muito limpo / Impecável",
+    "english": "spick and span",
+    "pattern": "be + spick and span",
+    "description": "Usado para dizer que um lugar ou objeto está extremamente limpo, organizado e arrumado. Mapa mental: MUITO LIMPO / IMPECÁVEL → SPICK AND SPAN.",
+    "category": "idiom",
+    "searchTerms": [
+      "muito limpo",
+      "impecável",
+      "limpíssimo",
+      "arrumado",
+      "spick and span"
+    ],
+    "examples": [
+      {
+        "pt": "A casa está impecável.",
+        "en": "The house is spick and span.",
+        "ptIntent": "impecável",
+        "enIntent": "spick and span"
+      },
+      {
+        "pt": "Quero deixar a cozinha impecável antes que eles cheguem.",
+        "en": "I want to get the kitchen spick and span before they arrive.",
+        "ptIntent": "impecável",
+        "enIntent": "spick and span"
+      },
+      {
+        "pt": "O apartamento estava muito limpo quando chegamos.",
+        "en": "The apartment was spick and span when we arrived.",
+        "ptIntent": "muito limpo",
+        "enIntent": "spick and span"
+      }
+    ],
+    "tags": ["idiom", "spoken-english", "cleaning", "home"],
+    "related": [],
+    "englishLevel": "C1"
+  },
+  {
+    "id": "coisas-variadas-aleatorias-odds-and-ends",
+    "intention": "Coisas variadas / Coisinhas diversas",
+    "english": "odds and ends",
+    "pattern": "odds and ends",
+    "description": "Usado para falar de pequenas coisas variadas, geralmente sem uma categoria específica. Mapa mental: COISAS VARIADAS / COISINHAS DIVERSAS → ODDS AND ENDS.",
+    "category": "idiom",
+    "searchTerms": [
+      "coisas variadas",
+      "coisinhas",
+      "coisas diversas",
+      "itens aleatórios",
+      "odds and ends"
+    ],
+    "examples": [
+      {
+        "pt": "Comprei algumas coisinhas diversas na loja.",
+        "en": "I bought some odds and ends at the store.",
+        "ptIntent": "coisinhas diversas",
+        "enIntent": "odds and ends"
+      },
+      {
+        "pt": "Ainda tenho algumas coisinhas para resolver.",
+        "en": "I still have a few odds and ends to take care of.",
+        "ptIntent": "algumas coisinhas",
+        "enIntent": "odds and ends"
+      },
+      {
+        "pt": "A gaveta está cheia de coisas variadas.",
+        "en": "The drawer is full of odds and ends.",
+        "ptIntent": "coisas variadas",
+        "enIntent": "odds and ends"
+      }
+    ],
+    "tags": ["idiom", "spoken-english", "objects", "daily-life"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "altos-e-baixos-ups-and-downs",
+    "intention": "Altos e baixos",
+    "english": "ups and downs",
+    "pattern": "ups and downs",
+    "description": "Usado para falar dos períodos bons e ruins que fazem parte de uma experiência, relacionamento ou da vida. Mapa mental: ALTOS E BAIXOS → UPS AND DOWNS.",
+    "category": "idiom",
+    "searchTerms": [
+      "altos e baixos",
+      "momentos bons e ruins",
+      "fases boas e ruins",
+      "dificuldades",
+      "ups and downs"
+    ],
+    "examples": [
+      {
+        "pt": "A vida tem altos e baixos.",
+        "en": "Life is full of ups and downs.",
+        "ptIntent": "altos e baixos",
+        "enIntent": "ups and downs"
+      },
+      {
+        "pt": "Nosso relacionamento teve muitos altos e baixos.",
+        "en": "Our relationship has had a lot of ups and downs.",
+        "ptIntent": "altos e baixos",
+        "enIntent": "ups and downs"
+      },
+      {
+        "pt": "Todo projeto tem seus altos e baixos.",
+        "en": "Every project has its ups and downs.",
+        "ptIntent": "altos e baixos",
+        "enIntent": "ups and downs"
+      }
+    ],
+    "tags": ["idiom", "spoken-english", "life", "relationships"],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "completamente-diferente-night-and-day",
+    "intention": "Completamente diferente",
+    "english": "night and day",
+    "pattern": "night and day / like night and day",
+    "description": "Usado para enfatizar que duas coisas ou situações são extremamente diferentes. Mapa mental: COMPLETAMENTE DIFERENTE → NIGHT AND DAY.",
+    "category": "idiom",
+    "searchTerms": [
+      "completamente diferente",
+      "diferença enorme",
+      "água e vinho",
+      "totalmente diferente",
+      "night and day"
+    ],
+    "examples": [
+      {
+        "pt": "A diferença é enorme.",
+        "en": "The difference is like night and day.",
+        "ptIntent": "diferença é enorme",
+        "enIntent": "like night and day"
+      },
+      {
+        "pt": "Os dois sistemas são completamente diferentes.",
+        "en": "The two systems are like night and day.",
+        "ptIntent": "completamente diferentes",
+        "enIntent": "like night and day"
+      },
+      {
+        "pt": "Depois da atualização, a diferença foi absurda.",
+        "en": "After the update, the difference was night and day.",
+        "ptIntent": "diferença foi absurda",
+        "enIntent": "night and day"
+      }
+    ],
+    "tags": ["idiom", "spoken-english", "comparison", "difference"],
+    "related": [],
+    "englishLevel": "B2"
   }
 
   ]
