@@ -50,6 +50,7 @@ export function IntentionDetails({
   const [speakingExampleIndex, setSpeakingExampleIndex] =
     useState<number | null>(null);
   const [speechError, setSpeechError] = useState<string | null>(null);
+  const [hqImage, setHqImage] = useState<string | null>(null);
 
   useEffect(() => {
     return () => {
@@ -66,7 +67,26 @@ export function IntentionDetails({
 
     setSpeakingExampleIndex(null);
     setSpeechError(null);
+    setHqImage(null);
   }, [item?.id]);
+
+  useEffect(() => {
+    if (!hqImage) {
+      return;
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setHqImage(null);
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [hqImage]);
 
   function handleSpeakExample(text: string, index: number) {
     const englishText = text.trim();
@@ -201,12 +221,17 @@ export function IntentionDetails({
                     style={{
                       display: "flex",
                       alignItems: "center",
-                      gap: "0.6rem"
+                      gap: "0.6rem",
+                      flexWrap: "wrap"
                     }}
                   >
                     <p
                       className="english"
-                      style={{ flex: 1, margin: 0 }}
+                      style={{
+                        flex: "1 1 12rem",
+                        minWidth: 0,
+                        margin: 0
+                      }}
                     >
                       {renderHighlightedText(
                         example.en,
@@ -214,28 +239,73 @@ export function IntentionDetails({
                       )}
                     </p>
 
-                    <button
-                      type="button"
-                      className="secondary-button"
-                      onClick={() => handleSpeakExample(example.en, index)}
-                      disabled={speakingExampleIndex === index}
-                      title="Ouvir este exemplo em inglês"
-                      aria-label={`Ouvir exemplo ${index + 1} em inglês`}
+                    <div
                       style={{
-                        width: "2.5rem",
-                        minWidth: "2.5rem",
-                        height: "2.5rem",
-                        minHeight: "2.5rem",
-                        padding: 0,
-                        borderRadius: "999px",
                         display: "inline-flex",
                         alignItems: "center",
-                        justifyContent: "center",
-                        flexShrink: 0
+                        gap: "0.45rem",
+                        flexShrink: 0,
+                        marginLeft: "auto"
                       }}
                     >
-                      <span aria-hidden="true">🔊</span>
-                    </button>
+                      <button
+                        type="button"
+                        className="secondary-button"
+                        onClick={() => handleSpeakExample(example.en, index)}
+                        disabled={speakingExampleIndex === index}
+                        title="Ouvir este exemplo em inglês"
+                        aria-label={`Ouvir exemplo ${index + 1} em inglês`}
+                        style={{
+                          width: "2.5rem",
+                          minWidth: "2.5rem",
+                          height: "2.5rem",
+                          minHeight: "2.5rem",
+                          padding: 0,
+                          borderRadius: "999px",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          justifyContent: "center"
+                        }}
+                      >
+                        <span aria-hidden="true">🔊</span>
+                      </button>
+
+                      {example.hqImage && (
+                        <button
+                          type="button"
+                          className="secondary-button"
+                          onClick={() => setHqImage(example.hqImage ?? null)}
+                          title="Ver HQ deste exemplo"
+                          aria-label={`Ver HQ do exemplo ${index + 1}`}
+                          style={{
+                            width: "2.5rem",
+                            minWidth: "2.5rem",
+                            height: "2.5rem",
+                            minHeight: "2.5rem",
+                            padding: 0,
+                            borderRadius: "999px",
+                            display: "inline-flex",
+                            alignItems: "center",
+                            justifyContent: "center"
+                          }}
+                        >
+                          <svg
+                            aria-hidden="true"
+                            width="19"
+                            height="19"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M14.5 4h-5L7.8 6H5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3h-2.8z" />
+                            <circle cx="12" cy="13" r="3" />
+                          </svg>
+                        </button>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -280,6 +350,85 @@ export function IntentionDetails({
               ))}
             </div>
           </section>
+        )}
+
+        {hqImage && (
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Visualização da HQ"
+            onMouseDown={(event) => {
+              event.stopPropagation();
+              setHqImage(null);
+            }}
+            style={{
+              position: "fixed",
+              inset: 0,
+              zIndex: 10000,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "clamp(0.5rem, 2vw, 1.25rem)",
+              background: "rgba(0, 0, 0, 0.88)"
+            }}
+          >
+            <div
+              onMouseDown={(event) => event.stopPropagation()}
+              style={{
+                position: "relative",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "100%",
+                height: "100%",
+                maxWidth: "1200px"
+              }}
+            >
+              <img
+                src={hqImage}
+                alt={`HQ relacionada à intenção: ${item.intention}`}
+                style={{
+                  display: "block",
+                  width: "auto",
+                  height: "auto",
+                  maxWidth: "100%",
+                  maxHeight: "calc(100dvh - 1rem)",
+                  objectFit: "contain",
+                  borderRadius: "12px"
+                }}
+              />
+
+              <button
+                type="button"
+                onClick={() => setHqImage(null)}
+                aria-label="Fechar HQ"
+                title="Fechar"
+                style={{
+                  position: "fixed",
+                  top: "max(0.75rem, env(safe-area-inset-top))",
+                  right: "max(0.75rem, env(safe-area-inset-right))",
+                  zIndex: 10001,
+                  width: "2.75rem",
+                  minWidth: "2.75rem",
+                  height: "2.75rem",
+                  minHeight: "2.75rem",
+                  padding: 0,
+                  border: "1px solid rgba(255, 255, 255, 0.35)",
+                  borderRadius: "999px",
+                  background: "rgba(0, 0, 0, 0.68)",
+                  color: "#ffffff",
+                  fontSize: "1.6rem",
+                  lineHeight: 1,
+                  cursor: "pointer",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}
+              >
+                ×
+              </button>
+            </div>
+          </div>
         )}
       </article>
     </div>

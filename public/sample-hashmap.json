@@ -18544,7 +18544,8 @@
       "pt": "Quero começar com tudo no meu novo emprego.",
       "en": "I want to hit the ground running at my new job.",
       "ptIntent": "começar com tudo",
-      "enIntent": "hit the ground running"
+      "enIntent": "hit the ground running",
+      "hqImage":"/images/hq/hit-the-ground-running-01.png"
     },
     {
       "pt": "Precisamos começar a todo vapor na segunda-feira.",
