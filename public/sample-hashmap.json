@@ -19174,6 +19174,327 @@
     "tags": ["idiom", "spoken-english", "comparison", "difference"],
     "related": [],
     "englishLevel": "B2"
+  },
+  
+  {
+    "id": "voltar-come-back",
+    "intention": "Voltar / Retornar",
+    "english": "come back",
+    "pattern": "come back + (time/place)",
+    "description": "Usado quando alguém retorna ao lugar de referência. Mapa mental: VOLTAR / RETORNAR → COME BACK.",
+    "category": "phrasal-verb",
+    "searchTerms": ["voltar", "retornar", "come back", "came back", "coming back"],
+    "examples": [
+      {
+        "pt": "Eu vou voltar amanhã.",
+        "en": "I'll come back tomorrow.",
+        "ptIntent": "voltar",
+        "enIntent": "come back"
+      },
+      {
+        "pt": "Quando você vai voltar?",
+        "en": "When are you coming back?",
+        "ptIntent": "voltar",
+        "enIntent": "coming back"
+      },
+      {
+        "pt": "Ela voltou ontem.",
+        "en": "She came back yesterday.",
+        "ptIntent": "voltou",
+        "enIntent": "came back"
+      }
+    ],
+    "tags": ["phrasal-verb", "movement", "daily-life"],
+    "related": ["voltar-para-um-lugar-go-back"],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "voltar-para-um-lugar-go-back",
+    "intention": "Voltar para um lugar",
+    "english": "go back",
+    "pattern": "go back + to + place",
+    "description": "Usado para falar de retornar a outro lugar. Mapa mental: VOLTAR PARA UM LUGAR → GO BACK.",
+    "category": "phrasal-verb",
+    "searchTerms": ["voltar", "retornar", "go back", "went back", "going back"],
+    "examples": [
+      {
+        "pt": "Quero voltar para o Brasil.",
+        "en": "I want to go back to Brazil.",
+        "ptIntent": "voltar",
+        "enIntent": "go back"
+      },
+      {
+        "pt": "Eu voltei para o trabalho na segunda-feira.",
+        "en": "I went back to work on Monday.",
+        "ptIntent": "voltei",
+        "enIntent": "went back"
+      },
+      {
+        "pt": "Não quero voltar para lá.",
+        "en": "I don't want to go back there.",
+        "ptIntent": "voltar",
+        "enIntent": "go back"
+      }
+    ],
+    "tags": ["phrasal-verb", "movement", "daily-life"],
+    "related": ["voltar-come-back"],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "descobrir-find-out",
+    "intention": "Descobrir / Ficar sabendo",
+    "english": "find out",
+    "pattern": "find out + information / find out that...",
+    "description": "Usado quando alguém descobre ou fica sabendo de uma informação. Mapa mental: DESCOBRIR / FICAR SABENDO → FIND OUT.",
+    "category": "phrasal-verb",
+    "searchTerms": ["descobrir", "ficar sabendo", "find out", "found out"],
+    "examples": [
+      {
+        "pt": "Preciso descobrir o que aconteceu.",
+        "en": "I need to find out what happened.",
+        "ptIntent": "descobrir",
+        "enIntent": "find out"
+      },
+      {
+        "pt": "Eu descobri a verdade ontem.",
+        "en": "I found out the truth yesterday.",
+        "ptIntent": "descobri",
+        "enIntent": "found out"
+      },
+      {
+        "pt": "Como você ficou sabendo disso?",
+        "en": "How did you find out about that?",
+        "ptIntent": "ficou sabendo",
+        "enIntent": "find out"
+      }
+    ],
+    "tags": ["phrasal-verb", "information", "daily-life"],
+    "related": [],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "desistir-give-up",
+    "intention": "Desistir",
+    "english": "give up",
+    "pattern": "give up / give up + noun / give up + -ing",
+    "description": "Usado para dizer que alguém para de tentar ou abandona algo. Mapa mental: DESISTIR → GIVE UP.",
+    "category": "phrasal-verb",
+    "searchTerms": ["desistir", "abandonar", "give up", "gave up"],
+    "examples": [
+      {
+        "pt": "Não desista!",
+        "en": "Don't give up!",
+        "ptIntent": "desista",
+        "enIntent": "give up"
+      },
+      {
+        "pt": "Eu quase desisti de aprender inglês.",
+        "en": "I almost gave up learning English.",
+        "ptIntent": "desisti",
+        "enIntent": "gave up"
+      },
+      {
+        "pt": "Ele nunca desiste.",
+        "en": "He never gives up.",
+        "ptIntent": "desiste",
+        "enIntent": "gives up"
+      }
+    ],
+    "tags": ["phrasal-verb", "motivation", "daily-life"],
+    "related": [],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "continuar-keep-on",
+    "intention": "Continuar fazendo algo",
+    "english": "keep on",
+    "pattern": "keep on + -ing",
+    "description": "Usado para enfatizar que alguém continua fazendo determinada coisa. Mapa mental: CONTINUAR FAZENDO → KEEP ON.",
+    "category": "phrasal-verb",
+    "searchTerms": ["continuar", "continuar fazendo", "keep on", "kept on"],
+    "examples": [
+      {
+        "pt": "Continue tentando.",
+        "en": "Keep on trying.",
+        "ptIntent": "Continue",
+        "enIntent": "Keep on"
+      },
+      {
+        "pt": "Ele continuou falando.",
+        "en": "He kept on talking.",
+        "ptIntent": "continuou",
+        "enIntent": "kept on"
+      },
+      {
+        "pt": "Ela continua reclamando disso.",
+        "en": "She keeps on complaining about it.",
+        "ptIntent": "continua",
+        "enIntent": "keeps on"
+      }
+    ],
+    "tags": ["phrasal-verb", "continuity", "daily-life"],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "resolver-figure-out",
+    "intention": "Descobrir como resolver / Entender",
+    "english": "figure out",
+    "pattern": "figure out + something / figure out how...",
+    "description": "Usado quando conseguimos entender algo ou descobrir como resolver um problema. Mapa mental: DESCOBRIR COMO RESOLVER / ENTENDER → FIGURE OUT.",
+    "category": "phrasal-verb",
+    "searchTerms": ["resolver", "entender", "descobrir como", "figure out", "figured out"],
+    "examples": [
+      {
+        "pt": "Precisamos descobrir como resolver isso.",
+        "en": "We need to figure out how to solve this.",
+        "ptIntent": "descobrir como resolver",
+        "enIntent": "figure out"
+      },
+      {
+        "pt": "Eu finalmente entendi o problema.",
+        "en": "I finally figured out the problem.",
+        "ptIntent": "entendi",
+        "enIntent": "figured out"
+      },
+      {
+        "pt": "Não consigo entender como isso funciona.",
+        "en": "I can't figure out how this works.",
+        "ptIntent": "entender",
+        "enIntent": "figure out"
+      }
+    ],
+    "tags": ["phrasal-verb", "problem-solving", "work", "daily-life"],
+    "related": ["descobrir-find-out"],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "adiar-put-off",
+    "intention": "Adiar / Deixar para depois",
+    "english": "put off",
+    "pattern": "put off + noun / put off + -ing",
+    "description": "Usado para adiar algo para outro momento. Mapa mental: ADIAR / DEIXAR PARA DEPOIS → PUT OFF.",
+    "category": "phrasal-verb",
+    "searchTerms": ["adiar", "deixar para depois", "postergar", "put off", "putting off"],
+    "examples": [
+      {
+        "pt": "Vamos adiar a reunião.",
+        "en": "Let's put off the meeting.",
+        "ptIntent": "adiar",
+        "enIntent": "put off"
+      },
+      {
+        "pt": "Pare de deixar isso para depois.",
+        "en": "Stop putting it off.",
+        "ptIntent": "deixar isso para depois",
+        "enIntent": "putting it off"
+      },
+      {
+        "pt": "Eles adiaram a decisão.",
+        "en": "They put off the decision.",
+        "ptIntent": "adiaram",
+        "enIntent": "put off"
+      }
+    ],
+    "tags": ["phrasal-verb", "time", "work", "daily-life"],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "encontrar-por-acaso-run-into",
+    "intention": "Encontrar alguém por acaso",
+    "english": "run into",
+    "pattern": "run into + someone",
+    "description": "Usado quando encontramos alguém inesperadamente, sem ter combinado. Mapa mental: ENCONTRAR POR ACASO → RUN INTO.",
+    "category": "phrasal-verb",
+    "searchTerms": ["encontrar por acaso", "esbarrar em alguém", "run into", "ran into"],
+    "examples": [
+      {
+        "pt": "Encontrei um velho amigo por acaso ontem.",
+        "en": "I ran into an old friend yesterday.",
+        "ptIntent": "Encontrei um velho amigo por acaso",
+        "enIntent": "ran into"
+      },
+      {
+        "pt": "Eu sempre encontro ele por acaso no shopping.",
+        "en": "I always run into him at the mall.",
+        "ptIntent": "encontro ele por acaso",
+        "enIntent": "run into"
+      },
+      {
+        "pt": "Adivinha quem eu encontrei por acaso!",
+        "en": "Guess who I ran into!",
+        "ptIntent": "encontrei por acaso",
+        "enIntent": "ran into"
+      }
+    ],
+    "tags": ["phrasal-verb", "people", "social", "daily-life"],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "ficar-sem-run-out-of",
+    "intention": "Ficar sem alguma coisa",
+    "english": "run out of",
+    "pattern": "run out of + something",
+    "description": "Usado quando algo acaba e não temos mais aquilo disponível. Mapa mental: FICAR SEM → RUN OUT OF.",
+    "category": "phrasal-verb",
+    "searchTerms": ["ficar sem", "acabar", "run out of", "ran out of"],
+    "examples": [
+      {
+        "pt": "Estamos ficando sem tempo.",
+        "en": "We're running out of time.",
+        "ptIntent": "ficando sem",
+        "enIntent": "running out of"
+      },
+      {
+        "pt": "Fiquei sem dinheiro.",
+        "en": "I ran out of money.",
+        "ptIntent": "Fiquei sem",
+        "enIntent": "ran out of"
+      },
+      {
+        "pt": "Não quero ficar sem gasolina.",
+        "en": "I don't want to run out of gas.",
+        "ptIntent": "ficar sem",
+        "enIntent": "run out of"
+      }
+    ],
+    "tags": ["phrasal-verb", "daily-life", "resources"],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "acabar-fazendo-end-up",
+    "intention": "Acabar fazendo / Terminar em uma situação",
+    "english": "end up",
+    "pattern": "end up + -ing / end up + place/state",
+    "description": "Usado para falar do resultado final, muitas vezes inesperado, de uma situação. Mapa mental: ACABAR FAZENDO / TERMINAR → END UP.",
+    "category": "phrasal-verb",
+    "searchTerms": ["acabar fazendo", "terminar", "no fim", "end up", "ended up"],
+    "examples": [
+      {
+        "pt": "Acabei trabalhando até tarde.",
+        "en": "I ended up working late.",
+        "ptIntent": "Acabei trabalhando",
+        "enIntent": "ended up working"
+      },
+      {
+        "pt": "A gente sempre acaba falando sobre trabalho.",
+        "en": "We always end up talking about work.",
+        "ptIntent": "acaba falando",
+        "enIntent": "end up talking"
+      },
+      {
+        "pt": "Como você acabou morando no Brasil?",
+        "en": "How did you end up living in Brazil?",
+        "ptIntent": "acabou morando",
+        "enIntent": "end up living"
+      }
+    ],
+    "tags": ["phrasal-verb", "result", "daily-life", "spoken-english"],
+    "related": [],
+    "englishLevel": "B1"
   }
 
   ]
