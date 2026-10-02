@@ -18551,7 +18551,8 @@
       "pt": "Precisamos começar a todo vapor na segunda-feira.",
       "en": "We need to hit the ground running on Monday.",
       "ptIntent": "começar a todo vapor",
-      "enIntent": "hit the ground running"
+      "enIntent": "hit the ground running",
+      "hqImage":"/images/hq/hit-the-ground-running-02.png"
     },
     {
       "pt": "Ela começou com tudo no novo projeto.",
