@@ -10,6 +10,7 @@ export interface Example {
   en: string;
   ptIntent?: string;
   enIntent?: string;
+  hqImage?: string;
 }
 
 export interface MentalIntention {
