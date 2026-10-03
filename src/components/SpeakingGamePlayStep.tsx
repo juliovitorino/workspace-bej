@@ -40,8 +40,13 @@ export function SpeakingGamePlayStep({
         <span style={styles.gameLabel}>Jogo da Fala</span>
 
         <h1 id="speaking-game-verb" style={styles.verb}>
+          <span style={styles.toParticle}>TO</span>{" "}
           {verb.base.toUpperCase()}
         </h1>
+
+        <span style={styles.meanings}>
+          {verb.meanings.join(" • ")}
+        </span>
 
         <span style={styles.verbType}>
           {verb.type === "regular" ? "regular" : "irregular"}
@@ -167,8 +172,24 @@ const styles: Record<string, CSSProperties> = {
     color: "#0f172a",
     overflowWrap: "anywhere"
   },
+  toParticle: {
+    fontSize: "0.52em",
+    fontWeight: 700,
+    letterSpacing: "0",
+    textTransform: "none",
+    color: "#64748b",
+    verticalAlign: "0.18em"
+  },
+  meanings: {
+    marginTop: "0.55rem",
+    fontSize: "0.92rem",
+    fontWeight: 500,
+    lineHeight: 1.35,
+    color: "#64748b",
+    textTransform: "lowercase"
+  },
   verbType: {
-    marginTop: "0.65rem",
+    marginTop: "0.55rem",
     padding: "0.3rem 0.65rem",
     borderRadius: "999px",
     background: "#f1f5f9",
