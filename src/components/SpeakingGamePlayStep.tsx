@@ -40,7 +40,7 @@ export function SpeakingGamePlayStep({
         <span style={styles.gameLabel}>Jogo da Fala</span>
 
         <h1 id="speaking-game-verb" style={styles.verb}>
-          <span style={styles.verb}>TO</span>{" "}
+          <span style={styles.toParticle}>TO</span>{" "}
           {verb.base.toUpperCase()}
         </h1>
 
