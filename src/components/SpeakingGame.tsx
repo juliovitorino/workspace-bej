@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState, type CSSProperties } from "react";
+import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import { SPEAKING_GAME_FORMS } from "../config/speakingGameForms";
 import { getRandomEnglishVerb } from "../services/englishVerbService";
 import type { EnglishVerb } from "../types/englishVerb";
@@ -40,6 +40,10 @@ export function SpeakingGame() {
   const [remainingSeconds, setRemainingSeconds] = useState(settings.seconds);
   const [isLoadingRound, setIsLoadingRound] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [lastStudySeconds, setLastStudySeconds] = useState<number | null>(null);
+
+  const accumulatedStudyTimeMsRef = useRef(0);
+  const activeStudyStartedAtRef = useRef<number | null>(null);
 
   const selectInitialFormIndex = useCallback((): number => {
     if (settings.order === "random") {
@@ -77,6 +81,10 @@ export function SpeakingGame() {
 
     try {
       const verb = await loadNextVerb();
+
+      accumulatedStudyTimeMsRef.current = 0;
+      activeStudyStartedAtRef.current = Date.now();
+      setLastStudySeconds(null);
 
       setCurrentVerb(verb);
       setCurrentFormIndex(selectInitialFormIndex());
@@ -116,6 +124,12 @@ export function SpeakingGame() {
       );
       setRemainingSeconds(settings.seconds);
     } catch (caughtError) {
+      if (activeStudyStartedAtRef.current !== null) {
+        accumulatedStudyTimeMsRef.current +=
+          Date.now() - activeStudyStartedAtRef.current;
+        activeStudyStartedAtRef.current = null;
+      }
+
       setStatus("paused");
       setError(
         caughtError instanceof Error
@@ -163,6 +177,17 @@ export function SpeakingGame() {
   ]);
 
   function stopGame() {
+    if (status === "running" && activeStudyStartedAtRef.current !== null) {
+      accumulatedStudyTimeMsRef.current +=
+        Date.now() - activeStudyStartedAtRef.current;
+    }
+
+    activeStudyStartedAtRef.current = null;
+
+    setLastStudySeconds(
+      Math.floor(accumulatedStudyTimeMsRef.current / 1000)
+    );
+
     setStatus("ready");
     setCurrentVerb(null);
     setRemainingSeconds(settings.seconds);
@@ -171,10 +196,25 @@ export function SpeakingGame() {
   }
 
   function pauseGame() {
+    if (status !== "running") {
+      return;
+    }
+
+    if (activeStudyStartedAtRef.current !== null) {
+      accumulatedStudyTimeMsRef.current +=
+        Date.now() - activeStudyStartedAtRef.current;
+    }
+
+    activeStudyStartedAtRef.current = null;
     setStatus("paused");
   }
 
   function resumeGame() {
+    if (status !== "paused") {
+      return;
+    }
+
+    activeStudyStartedAtRef.current = Date.now();
     setStatus("running");
   }
 
@@ -202,6 +242,7 @@ export function SpeakingGame() {
         <>
           <SpeakingGameReadyStep
             settings={settings}
+            lastStudySeconds={lastStudySeconds}
             onPrevious={goToSetupStep}
             onStart={() => void startGame()}
           />

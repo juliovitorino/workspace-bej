@@ -4,12 +4,14 @@ import type { SpeakingGameSettings } from "../types/speakingGameTypes";
 
 interface SpeakingGameReadyStepProps {
   settings: SpeakingGameSettings;
+  lastStudySeconds?: number | null;
   onPrevious: () => void;
   onStart: () => void;
 }
 
 export function SpeakingGameReadyStep({
   settings,
+  lastStudySeconds = null,
   onPrevious,
   onStart
 }: SpeakingGameReadyStepProps) {
@@ -20,6 +22,9 @@ export function SpeakingGameReadyStep({
 
   const orderDescription =
     settings.order === "sequential" ? "Sequencial" : "Aleatório";
+
+  const studyTimeDescription =
+    lastStudySeconds === null ? null : formatStudyTime(lastStudySeconds);
 
   return (
     <section style={styles.card} aria-labelledby="speaking-game-ready-title">
@@ -32,6 +37,13 @@ export function SpeakingGameReadyStep({
 
         <p style={styles.subtitle}>Tudo pronto para começar.</p>
       </header>
+
+      {studyTimeDescription && (
+        <div style={styles.studyResult} role="status">
+          <span style={styles.studyResultLabel}>Tempo de estudo</span>
+          <strong style={styles.studyResultValue}>{studyTimeDescription}</strong>
+        </div>
+      )}
 
       <div style={styles.summary} aria-label="Resumo da configuração">
         <div style={styles.summaryRow}>
@@ -79,6 +91,23 @@ export function SpeakingGameReadyStep({
   );
 }
 
+function formatStudyTime(totalSeconds: number): string {
+  const safeSeconds = Math.max(0, Math.floor(totalSeconds));
+  const hours = Math.floor(safeSeconds / 3600);
+  const minutes = Math.floor((safeSeconds % 3600) / 60);
+  const seconds = safeSeconds % 60;
+
+  if (hours > 0) {
+    return `${hours}h ${minutes}min ${seconds}s`;
+  }
+
+  if (minutes > 0) {
+    return `${minutes}min ${seconds}s`;
+  }
+
+  return `${seconds}s`;
+}
+
 const styles: Record<string, CSSProperties> = {
   card: {
     width: "min(100%, 34rem)",
@@ -113,6 +142,26 @@ const styles: Record<string, CSSProperties> = {
     margin: "0.6rem 0 0",
     fontSize: "0.98rem",
     color: "#64748b"
+  },
+  studyResult: {
+    display: "grid",
+    justifyItems: "center",
+    gap: "0.25rem",
+    marginBottom: "1.25rem",
+    padding: "1rem",
+    border: "1px solid #bfdbfe",
+    borderRadius: "14px",
+    background: "#eff6ff"
+  },
+  studyResultLabel: {
+    fontSize: "0.85rem",
+    fontWeight: 700,
+    color: "#64748b"
+  },
+  studyResultValue: {
+    fontSize: "1.45rem",
+    lineHeight: 1.2,
+    color: "#1d4ed8"
   },
   summary: {
     display: "grid",
