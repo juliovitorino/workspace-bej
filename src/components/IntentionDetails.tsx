@@ -51,6 +51,7 @@ export function IntentionDetails({
     useState<number | null>(null);
   const [speechError, setSpeechError] = useState<string | null>(null);
   const [hqImage, setHqImage] = useState<string | null>(null);
+  const [shareError, setShareError] = useState<string | null>(null);
 
   useEffect(() => {
     return () => {
@@ -68,6 +69,7 @@ export function IntentionDetails({
     setSpeakingExampleIndex(null);
     setSpeechError(null);
     setHqImage(null);
+    setShareError(null);
   }, [item?.id]);
 
   useEffect(() => {
@@ -135,6 +137,69 @@ export function IntentionDetails({
     };
 
     window.speechSynthesis.speak(utterance);
+  }
+
+  async function handleShareHq() {
+    if (!hqImage) return;
+
+    setShareError(null);
+
+    if (!navigator.share) {
+      setShareError("O compartilhamento não está disponível neste navegador.");
+      return;
+    }
+
+    try {
+      const absoluteImageUrl = new URL(hqImage, window.location.href).href;
+      const response = await fetch(absoluteImageUrl);
+
+      if (!response.ok) {
+        throw new Error("Não foi possível carregar a imagem da HQ.");
+      }
+
+      const blob = await response.blob();
+      const extension =
+        blob.type === "image/jpeg"
+          ? "jpg"
+          : blob.type === "image/webp"
+            ? "webp"
+            : "png";
+
+      const safeName = item?.id
+        ? item.id.replace(/[^a-zA-Z0-9-_]/g, "-")
+        : "mental-hashmap-hq";
+
+      const file = new File(
+        [blob],
+        `${safeName}.${extension}`,
+        { type: blob.type || "image/png" }
+      );
+
+      if (navigator.canShare?.({ files: [file] })) {
+        await navigator.share({
+          title: `HQ - ${item?.intention ?? "Mental Hashmap"}`,
+          text: item?.english
+            ? `${item.intention} — ${item.english}`
+            : item?.intention ?? "Mental Hashmap",
+          files: [file]
+        });
+        return;
+      }
+
+      await navigator.share({
+        title: `HQ - ${item?.intention ?? "Mental Hashmap"}`,
+        text: item?.english
+          ? `${item.intention} — ${item.english}`
+          : item?.intention ?? "Mental Hashmap",
+        url: absoluteImageUrl
+      });
+    } catch (error) {
+      if (error instanceof DOMException && error.name === "AbortError") {
+        return;
+      }
+
+      setShareError("Não foi possível compartilhar a HQ neste dispositivo.");
+    }
   }
 
   function handlePrintHq() {
@@ -526,6 +591,70 @@ export function IntentionDetails({
                   <rect x="6" y="14" width="12" height="8" />
                 </svg>
               </button>
+
+              <button
+                type="button"
+                onClick={handleShareHq}
+                aria-label="Compartilhar HQ"
+                title="Compartilhar HQ"
+                style={{
+                  position: "fixed",
+                  top: "max(0.75rem, env(safe-area-inset-top))",
+                  left: "calc(max(0.75rem, env(safe-area-inset-left)) + 3.35rem)",
+                  zIndex: 10001,
+                  width: "2.75rem",
+                  minWidth: "2.75rem",
+                  height: "2.75rem",
+                  minHeight: "2.75rem",
+                  padding: 0,
+                  border: "1px solid rgba(255, 255, 255, 0.35)",
+                  borderRadius: "999px",
+                  background: "rgba(0, 0, 0, 0.68)",
+                  color: "#ffffff",
+                  cursor: "pointer",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}
+              >
+                <svg
+                  aria-hidden="true"
+                  width="21"
+                  height="21"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="18" cy="5" r="3" />
+                  <circle cx="6" cy="12" r="3" />
+                  <circle cx="18" cy="19" r="3" />
+                  <line x1="8.59" y1="10.51" x2="15.42" y2="6.49" />
+                  <line x1="8.59" y1="13.49" x2="15.42" y2="17.51" />
+                </svg>
+              </button>
+
+              {shareError && (
+                <div
+                  role="status"
+                  style={{
+                    position: "fixed",
+                    top: "calc(max(0.75rem, env(safe-area-inset-top)) + 3.35rem)",
+                    left: "max(0.75rem, env(safe-area-inset-left))",
+                    zIndex: 10001,
+                    maxWidth: "min(22rem, calc(100vw - 1.5rem))",
+                    padding: "0.65rem 0.8rem",
+                    borderRadius: "10px",
+                    background: "rgba(0, 0, 0, 0.82)",
+                    color: "#ffffff",
+                    fontSize: "0.9rem"
+                  }}
+                >
+                  {shareError}
+                </div>
+              )}
 
               <button
                 type="button"

@@ -19500,7 +19500,365 @@
     "tags": ["phrasal-verb", "result", "daily-life", "spoken-english"],
     "related": [],
     "englishLevel": "B1"
-  }
+  },
+  {
+  "id": "nenhuma-vez-not-once",
+  "intention": "Nenhuma vez / Nem uma vez sequer",
+  "english": "not once",
+  "pattern": "not once + statement / Not once did + subject + verb",
+  "description": "Usado para enfatizar que algo não aconteceu nenhuma vez. Pode aparecer no meio ou no final de uma frase e também no início com inversão para dar mais ênfase. Mapa mental: NENHUMA VEZ / NEM UMA VEZ SEQUER → NOT ONCE.",
+  "category": "expression",
+  "searchTerms": [
+    "nenhuma vez",
+    "nem uma vez",
+    "nem uma vez sequer",
+    "not once",
+    "not even once"
+  ],
+  "examples": [
+    {
+      "pt": "Ele não me ligou nenhuma vez.",
+      "en": "He didn't call me once.",
+      "ptIntent": "nenhuma vez",
+      "enIntent": "didn't call me once"
+    },
+    {
+      "pt": "Ela não reclamou nem uma vez sequer.",
+      "en": "She didn't complain, not once.",
+      "ptIntent": "nem uma vez sequer",
+      "enIntent": "not once"
+    },
+    {
+      "pt": "Nenhuma vez ele admitiu que estava errado.",
+      "en": "Not once did he admit he was wrong.",
+      "ptIntent": "Nenhuma vez",
+      "enIntent": "Not once"
+    }
+  ],
+  "tags": [
+    "frequency",
+    "negation",
+    "emphasis",
+    "spoken-english",
+    "american-english"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "sem-mais-demora-without-further-ado",
+  "intention": "Sem mais demora / Sem mais enrolação / Vamos direto ao assunto",
+  "english": "Without further ado",
+  "pattern": "Without further ado, + statement/action",
+  "description": "Expressão usada para encerrar uma introdução e passar diretamente ao assunto, apresentação ou ação principal. É muito comum em apresentações, vídeos, discursos e anúncios. Mapa mental: SEM MAIS DEMORA / VAMOS DIRETO AO ASSUNTO → WITHOUT FURTHER ADO.",
+  "category": "idiom",
+  "searchTerms": [
+    "sem mais demora",
+    "sem mais delongas",
+    "sem mais enrolação",
+    "vamos direto ao assunto",
+    "without further ado",
+    "further ado"
+  ],
+  "examples": [
+    {
+      "pt": "Sem mais demora, vamos começar.",
+      "en": "Without further ado, let's get started.",
+      "ptIntent": "Sem mais demora",
+      "enIntent": "Without further ado"
+    },
+    {
+      "pt": "Sem mais enrolação, vamos ao que realmente importa.",
+      "en": "Without further ado, let's get to what really matters.",
+      "ptIntent": "Sem mais enrolação",
+      "enIntent": "Without further ado"
+    },
+    {
+      "pt": "Sem mais demora, quero apresentar nosso próximo convidado.",
+      "en": "Without further ado, I'd like to introduce our next guest.",
+      "ptIntent": "Sem mais demora",
+      "enIntent": "Without further ado"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "transition",
+    "presentation",
+    "introduction",
+    "spoken-english",
+    "american-english"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
+{
+  "id": "quem-se-queima-fica-cauteloso-once-bitten-twice-shy",
+  "intention": "Depois de uma experiência ruim, a gente fica mais cauteloso / Gato escaldado tem medo de água fria",
+  "english": "Once bitten, twice shy.",
+  "pattern": "Once bitten, twice shy.",
+  "description": "Expressão idiomática usada quando uma experiência ruim faz alguém ficar mais cauteloso e evitar correr o mesmo risco novamente. Mapa mental: DEPOIS DE UMA EXPERIÊNCIA RUIM, FICO MAIS CAUTELOSO → ONCE BITTEN, TWICE SHY.",
+  "category": "idiom",
+  "searchTerms": [
+    "gato escaldado tem medo de água fria",
+    "depois de uma experiência ruim",
+    "ficar mais cauteloso",
+    "não quero passar por isso de novo",
+    "once bitten twice shy",
+    "twice shy"
+  ],
+  "examples": [
+    {
+      "pt": "Já perdi dinheiro com isso antes. Agora sou mais cauteloso.",
+      "en": "I've lost money on this before. Once bitten, twice shy.",
+      "ptIntent": "Agora sou mais cauteloso",
+      "enIntent": "Once bitten, twice shy"
+    },
+    {
+      "pt": "Meu último relacionamento terminou muito mal, então agora estou mais cauteloso.",
+      "en": "My last relationship ended really badly, so I'm more careful now. Once bitten, twice shy.",
+      "ptIntent": "agora estou mais cauteloso",
+      "enIntent": "Once bitten, twice shy"
+    },
+    {
+      "pt": "Depois daquela experiência ruim, não quero cometer o mesmo erro novamente.",
+      "en": "After that bad experience, I don't want to make the same mistake again. Once bitten, twice shy.",
+      "ptIntent": "não quero cometer o mesmo erro novamente",
+      "enIntent": "Once bitten, twice shy"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "caution",
+    "bad-experience",
+    "mistakes",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
+{
+  "id": "estou-no-meu-limite-at-my-wits-end",
+  "intention": "Estou no meu limite / Não sei mais o que fazer",
+  "english": "I'm at my wit's end.",
+  "pattern": "be at + possessive + wit's end",
+  "description": "Expressão idiomática usada quando alguém está extremamente frustrado, preocupado ou sem saber mais o que fazer para resolver uma situação. Mapa mental: ESTOU NO MEU LIMITE / NÃO SEI MAIS O QUE FAZER → I'M AT MY WIT'S END.",
+  "category": "idiom",
+  "searchTerms": [
+    "estou no meu limite",
+    "não sei mais o que fazer",
+    "estou ficando sem opções",
+    "estou desesperado",
+    "at my wit's end",
+    "wit's end"
+  ],
+  "examples": [
+    {
+      "pt": "Estou no meu limite. Já tentei de tudo.",
+      "en": "I'm at my wit's end. I've tried everything.",
+      "ptIntent": "Estou no meu limite",
+      "enIntent": "I'm at my wit's end"
+    },
+    {
+      "pt": "Não sei mais o que fazer com esse problema.",
+      "en": "I'm at my wit's end with this problem.",
+      "ptIntent": "Não sei mais o que fazer",
+      "enIntent": "I'm at my wit's end"
+    },
+    {
+      "pt": "Estou no meu limite com todo esse barulho.",
+      "en": "I'm at my wit's end with all this noise.",
+      "ptIntent": "Estou no meu limite",
+      "enIntent": "I'm at my wit's end"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "frustration",
+    "stress",
+    "problems",
+    "spoken-english",
+    "american-english"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
+{
+  "id": "comparar-coisas-diferentes-apples-and-oranges",
+  "intention": "Comparar coisas que são muito diferentes / Não dá para comparar",
+  "english": "apples and oranges",
+  "pattern": "compare apples and oranges / It's like comparing apples and oranges",
+  "description": "Expressão idiomática usada quando duas coisas são tão diferentes que uma comparação direta entre elas não faz muito sentido. Mapa mental: COMPARAR COISAS MUITO DIFERENTES / NÃO DÁ PARA COMPARAR → APPLES AND ORANGES.",
+  "category": "idiom",
+  "searchTerms": [
+    "não dá para comparar",
+    "coisas diferentes",
+    "comparar coisas diferentes",
+    "apples and oranges",
+    "compare apples and oranges"
+  ],
+  "examples": [
+    {
+      "pt": "Comparar esses dois empregos não faz sentido. São coisas completamente diferentes.",
+      "en": "Comparing these two jobs is like comparing apples and oranges.",
+      "ptIntent": "São coisas completamente diferentes",
+      "enIntent": "comparing apples and oranges"
+    },
+    {
+      "pt": "Você não pode comparar morar no Brasil com morar nos Estados Unidos. São realidades muito diferentes.",
+      "en": "You can't compare living in Brazil to living in the United States. It's apples and oranges.",
+      "ptIntent": "São realidades muito diferentes",
+      "enIntent": "It's apples and oranges"
+    },
+    {
+      "pt": "Não dá para comparar os dois. Um é gratuito e o outro é um serviço premium.",
+      "en": "You can't compare the two. It's like comparing apples and oranges.",
+      "ptIntent": "Não dá para comparar",
+      "enIntent": "comparing apples and oranges"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "comparison",
+    "difference",
+    "spoken-english",
+    "american-english"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "nao-me-trate-com-superioridade-dont-patronize-me",
+  "intention": "Não me trate com superioridade / Não fale comigo como se eu fosse inferior",
+  "english": "Don't patronize me.",
+  "pattern": "Don't patronize + person",
+  "description": "Usado para pedir que alguém pare de falar ou agir de maneira condescendente, como se soubesse mais, fosse superior ou a outra pessoa não fosse capaz de entender. Mapa mental: NÃO ME TRATE COM SUPERIORIDADE → DON'T PATRONIZE ME.",
+  "category": "expression",
+  "searchTerms": [
+    "não me trate com superioridade",
+    "não seja condescendente",
+    "não fale comigo como criança",
+    "don't patronize me",
+    "patronize"
+  ],
+  "examples": [
+    {
+      "pt": "Não me trate com superioridade. Eu sei o que estou fazendo.",
+      "en": "Don't patronize me. I know what I'm doing.",
+      "ptIntent": "Não me trate com superioridade",
+      "enIntent": "Don't patronize me"
+    },
+    {
+      "pt": "Não fale comigo como se eu fosse uma criança.",
+      "en": "Don't patronize me. I'm not a child.",
+      "ptIntent": "Não fale comigo como se eu fosse uma criança",
+      "enIntent": "Don't patronize me"
+    },
+    {
+      "pt": "Não seja condescendente comigo. Eu entendi perfeitamente.",
+      "en": "Don't patronize me. I understood perfectly.",
+      "ptIntent": "Não seja condescendente comigo",
+      "enIntent": "Don't patronize me"
+    }
+  ],
+  "tags": [
+    "expression",
+    "conflict",
+    "attitude",
+    "spoken-english",
+    "american-english"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
+{
+  "id": "e-eu-nao-conto-chopped-liver",
+  "intention": "E eu, não conto? / E eu, sou o quê?",
+  "english": "What am I, chopped liver?",
+  "pattern": "What am I, chopped liver?",
+  "description": "Expressão idiomática e bem-humorada usada quando a pessoa se sente ignorada, deixada de lado ou menos importante que os outros. Mapa mental: E EU, NÃO CONTO? / E EU, SOU O QUÊ? → WHAT AM I, CHOPPED LIVER?",
+  "category": "idiom",
+  "searchTerms": [
+    "e eu",
+    "e eu não conto",
+    "e eu sou o quê",
+    "estou sendo ignorado",
+    "chopped liver",
+    "what am i chopped liver"
+  ],
+  "examples": [
+    {
+      "pt": "Você convidou todo mundo menos eu. E eu, não conto?",
+      "en": "You invited everyone except me. What am I, chopped liver?",
+      "ptIntent": "E eu, não conto?",
+      "enIntent": "What am I, chopped liver?"
+    },
+    {
+      "pt": "Você agradeceu a todo mundo. E eu, sou o quê?",
+      "en": "You thanked everyone. What am I, chopped liver?",
+      "ptIntent": "E eu, sou o quê?",
+      "enIntent": "What am I, chopped liver?"
+    },
+    {
+      "pt": "Todo mundo ganhou um presente menos eu. E eu, não conto?",
+      "en": "Everyone got a gift except me. What am I, chopped liver?",
+      "ptIntent": "E eu, não conto?",
+      "enIntent": "What am I, chopped liver?"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "humor",
+    "complaint",
+    "feeling-left-out",
+    "spoken-english",
+    "american-english"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
+{
+  "id": "como-seria-what-would-be-like",
+  "intention": "Como seria...?",
+  "english": "What would ... be like?",
+  "pattern": "What would + subject + be like?",
+  "description": "Usado para perguntar como seria uma pessoa, situação, experiência, lugar ou realidade hipotética. Mapa mental: COMO SERIA...? → WHAT WOULD ... BE LIKE?",
+  "category": "question-pattern",
+  "searchTerms": [
+    "como seria",
+    "como seria se",
+    "what would be like",
+    "what would it be like"
+  ],
+  "examples": [
+    {
+      "pt": "Como seria morar nos Estados Unidos?",
+      "en": "What would it be like to live in the United States?",
+      "ptIntent": "Como seria",
+      "enIntent": "What would it be like"
+    },
+    {
+      "pt": "Como seria trabalhar para uma empresa americana?",
+      "en": "What would it be like to work for an American company?",
+      "ptIntent": "Como seria",
+      "enIntent": "What would it be like"
+    },
+    {
+      "pt": "Como seria sua vida sem a internet?",
+      "en": "What would your life be like without the internet?",
+      "ptIntent": "Como seria sua vida",
+      "enIntent": "What would your life be like"
+    }
+  ],
+  "tags": [
+    "hypothetical",
+    "questions",
+    "would",
+    "be-like",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+}
 
   ]
 }
