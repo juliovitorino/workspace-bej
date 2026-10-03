@@ -19858,6 +19858,50 @@
   ],
   "related": [],
   "englishLevel": "B1"
+},
+{
+  "id": "o-que-vamos-fazer-com-what-are-we-going-to-do-with",
+  "intention": "O que vamos fazer com...?",
+  "english": "What are we going to do with ...?",
+  "pattern": "What are we going to do with + something/someone?",
+  "description": "Usado para perguntar o que será feito com algo ou alguém, geralmente quando é preciso decidir um destino, uso ou solução. Mapa mental: O QUE VAMOS FAZER COM... → WHAT ARE WE GOING TO DO WITH...?",
+  "category": "chunk",
+  "searchTerms": [
+    "o que vamos fazer com",
+    "o que a gente vai fazer com",
+    "what are we going to do with",
+    "what are we gonna do with"
+  ],
+  "examples": [
+    {
+      "pt": "O que vamos fazer com toda essa comida?",
+      "en": "What are we going to do with all this food?",
+      "ptIntent": "O que vamos fazer com",
+      "enIntent": "What are we going to do with"
+    },
+    {
+      "pt": "O que vamos fazer com esse dinheiro?",
+      "en": "What are we going to do with this money?",
+      "ptIntent": "O que vamos fazer com",
+      "enIntent": "What are we going to do with"
+    },
+    {
+      "pt": "O que vamos fazer com essas caixas?",
+      "en": "What are we going to do with these boxes?",
+      "ptIntent": "O que vamos fazer com",
+      "enIntent": "What are we going to do with"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "question",
+    "going-to",
+    "decision",
+    "daily-life",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "A2"
 }
 
   ]
