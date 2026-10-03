@@ -9,6 +9,7 @@ import { AdvancedTraining } from "./components/AdvancedTraining";
 import { InterpretationPanel } from "./components/InterpretationPanel";
 import { IntentionList } from "./components/IntentionList";
 import { IntentionDetails } from "./components/IntentionDetails";
+import { SpeakingGame } from "./components/SpeakingGame";
 import { fetchHashmap, loadHashmap } from "./services/hashmapService";
 import type { HashmapData, MentalIntention } from "./types/hashmap";
 import { searchIntentions } from "./utils/searchIntentions";
@@ -229,6 +230,10 @@ function App() {
                 intentions={data.mentalMap}
                 onStartTraining={startTraining}
               />
+            )}
+
+            {!loading && currentView === "speaking-game" && !trainingMode && (
+              <SpeakingGame />
             )}
 
             {AI_ENABLED &&
