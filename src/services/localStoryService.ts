@@ -21,6 +21,7 @@ export interface LocalStory {
   id?: string;
   titlePt: string;
   titleEn: string;
+  hqImage?: string;
   paragraphs: LocalStoryParagraph[];
   intentionsUsed: string[];
 }
