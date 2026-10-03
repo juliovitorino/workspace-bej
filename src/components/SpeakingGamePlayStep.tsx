@@ -1,0 +1,297 @@
+import { useState, type CSSProperties } from "react";
+import type { SpeakingGameForm } from "../config/speakingGameForms";
+import type { EnglishVerb } from "../types/englishVerb";
+import type {
+  SpeakingGameSettings,
+  SpeakingGameStatus
+} from "../types/speakingGameTypes";
+
+interface SpeakingGamePlayStepProps {
+  verb: EnglishVerb;
+  form: SpeakingGameForm;
+  settings: SpeakingGameSettings;
+  status: SpeakingGameStatus;
+  remainingSeconds: number;
+  onPause: () => void;
+  onResume: () => void;
+  onStop: () => void;
+  onNext: () => void;
+}
+
+export function SpeakingGamePlayStep({
+  verb,
+  form,
+  settings,
+  status,
+  remainingSeconds,
+  onPause,
+  onResume,
+  onStop,
+  onNext
+}: SpeakingGamePlayStepProps) {
+  const [showVerbForms, setShowVerbForms] = useState(true);
+
+  const isAutomatic = settings.timeMode === "automatic";
+  const isPaused = status === "paused";
+
+  return (
+    <section style={styles.card} aria-labelledby="speaking-game-verb">
+      <header style={styles.header}>
+        <span style={styles.gameLabel}>Jogo da Fala</span>
+
+        <h1 id="speaking-game-verb" style={styles.verb}>
+          {verb.base.toUpperCase()}
+        </h1>
+
+        <span style={styles.verbType}>
+          {verb.type === "regular" ? "regular" : "irregular"}
+        </span>
+      </header>
+
+      <button
+        type="button"
+        onClick={() => setShowVerbForms((current) => !current)}
+        style={styles.visibilityButton}
+        aria-expanded={showVerbForms}
+      >
+        {showVerbForms ? "👁 Ocultar formas do verbo" : "👁 Mostrar formas do verbo"}
+      </button>
+
+      {showVerbForms && (
+        <div style={styles.verbForms}>
+          <div style={styles.formRow}>
+            <span style={styles.formLabel}>Presente</span>
+            <strong style={styles.formValue}>
+              {verb.base} / {verb.thirdPerson}
+            </strong>
+          </div>
+
+          <div style={styles.formRow}>
+            <span style={styles.formLabel}>Passado</span>
+            <strong style={styles.formValue}>{verb.past}</strong>
+          </div>
+
+          <div style={styles.formRow}>
+            <span style={styles.formLabel}>Particípio</span>
+            <strong style={styles.formValue}>{verb.pastParticiple}</strong>
+          </div>
+
+          <div style={styles.formRow}>
+            <span style={styles.formLabel}>Gerúndio</span>
+            <strong style={styles.formValue}>{verb.gerund}</strong>
+          </div>
+        </div>
+      )}
+
+      <div style={styles.challenge}>
+        <span style={styles.challengeLabel}>
+          Fale em voz alta uma frase usando:
+        </span>
+
+        <strong style={styles.challengeForm}>{form}</strong>
+      </div>
+
+      {isAutomatic && (
+        <div style={styles.timerArea} aria-live="polite">
+          <span style={styles.timerLabel}>
+            {isPaused ? "Pausado" : "Próxima rodada em"}
+          </span>
+
+          <strong style={styles.timer}>
+            {remainingSeconds}s
+          </strong>
+        </div>
+      )}
+
+      <footer style={styles.controls}>
+        <button
+          type="button"
+          onClick={isPaused ? onResume : onPause}
+          style={styles.secondaryButton}
+        >
+          {isPaused ? "▶ Continuar" : "⏸ Pausar"}
+        </button>
+
+        <button
+          type="button"
+          onClick={onStop}
+          style={styles.stopButton}
+        >
+          ■ Parar
+        </button>
+
+        {!isAutomatic && (
+          <button
+            type="button"
+            onClick={onNext}
+            style={styles.primaryButton}
+          >
+            Próximo →
+          </button>
+        )}
+      </footer>
+    </section>
+  );
+}
+
+const styles: Record<string, CSSProperties> = {
+  card: {
+    width: "min(100%, 34rem)",
+    margin: "0 auto",
+    boxSizing: "border-box",
+    padding: "clamp(1rem, 4vw, 1.75rem)",
+    border: "1px solid #d8dde6",
+    borderRadius: "18px",
+    background: "#ffffff",
+    boxShadow: "0 8px 28px rgba(15, 23, 42, 0.08)"
+  },
+  header: {
+    display: "grid",
+    justifyItems: "center",
+    marginBottom: "1.25rem",
+    textAlign: "center"
+  },
+  gameLabel: {
+    marginBottom: "0.55rem",
+    fontSize: "0.8rem",
+    fontWeight: 800,
+    letterSpacing: "0.06em",
+    textTransform: "uppercase",
+    color: "#64748b"
+  },
+  verb: {
+    margin: 0,
+    fontSize: "clamp(2.4rem, 12vw, 4rem)",
+    lineHeight: 1,
+    letterSpacing: "0.02em",
+    color: "#0f172a",
+    overflowWrap: "anywhere"
+  },
+  verbType: {
+    marginTop: "0.65rem",
+    padding: "0.3rem 0.65rem",
+    borderRadius: "999px",
+    background: "#f1f5f9",
+    fontSize: "0.85rem",
+    fontWeight: 700,
+    color: "#475569"
+  },
+  visibilityButton: {
+    width: "100%",
+    minHeight: "2.8rem",
+    marginBottom: "1rem",
+    padding: "0.65rem 0.8rem",
+    border: "1px solid #cbd5e1",
+    borderRadius: "10px",
+    background: "#ffffff",
+    color: "#334155",
+    fontSize: "0.92rem",
+    fontWeight: 700,
+    cursor: "pointer"
+  },
+  verbForms: {
+    display: "grid",
+    gap: "0.6rem",
+    marginBottom: "1.5rem",
+    padding: "1rem",
+    border: "1px solid #e2e8f0",
+    borderRadius: "14px",
+    background: "#f8fafc"
+  },
+  formRow: {
+    display: "grid",
+    gridTemplateColumns: "minmax(5.5rem, 0.8fr) minmax(0, 1.2fr)",
+    alignItems: "baseline",
+    gap: "0.75rem"
+  },
+  formLabel: {
+    fontSize: "0.9rem",
+    color: "#64748b"
+  },
+  formValue: {
+    minWidth: 0,
+    fontSize: "0.98rem",
+    color: "#0f172a",
+    overflowWrap: "anywhere"
+  },
+  challenge: {
+    display: "grid",
+    justifyItems: "center",
+    gap: "0.75rem",
+    margin: "1.5rem 0",
+    padding: "1.4rem 1rem",
+    border: "2px solid #bfdbfe",
+    borderRadius: "16px",
+    background: "#eff6ff",
+    textAlign: "center"
+  },
+  challengeLabel: {
+    fontSize: "0.95rem",
+    fontWeight: 700,
+    color: "#475569"
+  },
+  challengeForm: {
+    fontSize: "clamp(1.35rem, 6vw, 1.9rem)",
+    lineHeight: 1.25,
+    color: "#1d4ed8",
+    overflowWrap: "anywhere"
+  },
+  timerArea: {
+    display: "grid",
+    justifyItems: "center",
+    gap: "0.2rem",
+    margin: "1.25rem 0"
+  },
+  timerLabel: {
+    fontSize: "0.9rem",
+    color: "#64748b"
+  },
+  timer: {
+    fontSize: "2rem",
+    lineHeight: 1.1,
+    color: "#0f172a"
+  },
+  controls: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "0.65rem",
+    paddingTop: "1rem",
+    borderTop: "1px solid #e2e8f0"
+  },
+  primaryButton: {
+    flex: "1 1 8rem",
+    minHeight: "3.1rem",
+    padding: "0.8rem 1rem",
+    border: 0,
+    borderRadius: "12px",
+    background: "#2563eb",
+    color: "#ffffff",
+    fontSize: "0.98rem",
+    fontWeight: 800,
+    cursor: "pointer"
+  },
+  secondaryButton: {
+    flex: "1 1 8rem",
+    minHeight: "3.1rem",
+    padding: "0.8rem 1rem",
+    border: "1px solid #cbd5e1",
+    borderRadius: "12px",
+    background: "#ffffff",
+    color: "#334155",
+    fontSize: "0.98rem",
+    fontWeight: 700,
+    cursor: "pointer"
+  },
+  stopButton: {
+    flex: "1 1 7rem",
+    minHeight: "3.1rem",
+    padding: "0.8rem 1rem",
+    border: "1px solid #fecaca",
+    borderRadius: "12px",
+    background: "#fff7f7",
+    color: "#b91c1c",
+    fontSize: "0.98rem",
+    fontWeight: 800,
+    cursor: "pointer"
+  }
+};
