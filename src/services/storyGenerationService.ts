@@ -18,6 +18,7 @@ export interface StoryGenerationResult {
   source: "ai" | "local";
   titlePt: string;
   titleEn: string;
+  hqImage?: string;
   paragraphs: StoryParagraph[];
   intentionsUsed: string[];
 }

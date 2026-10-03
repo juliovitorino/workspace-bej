@@ -148,6 +148,8 @@ export function InterpretationPanel({
   const [searchLevel, setSearchLevel] =
     useState<EnglishLevel>("B1");
   const [searchTitle, setSearchTitle] = useState("");
+  const [showHqImage, setShowHqImage] = useState(false);
+  const [shareError, setShareError] = useState<string | null>(null);
 
   useEffect(() => {
     return () => {
@@ -156,6 +158,25 @@ export function InterpretationPanel({
       }
     };
   }, []);
+
+  useEffect(() => {
+    if (!showHqImage) {
+      return;
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setShowHqImage(false);
+        setShareError(null);
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [showHqImage]);
 
   const availableIntentions = useMemo(
     () =>
@@ -175,6 +196,7 @@ export function InterpretationPanel({
   function handleLevelChange(nextLevel: EnglishLevel) {
     setEnglishLevel(nextLevel);
     setStory(null);
+    setShowHqImage(false);
     setSelectedIntentions([]);
     setShowEnglish(false);
     setError(null);
@@ -231,6 +253,7 @@ export function InterpretationPanel({
       ...localStory,
       source: "local"
     });
+    setShowHqImage(false);
     setSelectedIntentions([]);
     setShowEnglish(false);
     setGenerating(false);
@@ -258,6 +281,7 @@ export function InterpretationPanel({
     setGenerating(true);
     setError(null);
     setStory(null);
+    setShowHqImage(false);
     setShowEnglish(false);
     setSelectedIntentions(pickedIntentions);
     setSpeechError(null);
@@ -507,6 +531,162 @@ export function InterpretationPanel({
 
       setCopyFeedback("Não foi possível copiar");
     }
+  }
+
+  async function handleShareHq() {
+    const hqImage = story?.hqImage?.trim();
+
+    if (!hqImage) {
+      return;
+    }
+
+    setShareError(null);
+
+    if (!navigator.share) {
+      setShareError("O compartilhamento não está disponível neste navegador.");
+      return;
+    }
+
+    try {
+      const absoluteImageUrl = new URL(hqImage, window.location.href).href;
+      const response = await fetch(absoluteImageUrl);
+
+      if (!response.ok) {
+        throw new Error("Não foi possível carregar a imagem da HQ.");
+      }
+
+      const blob = await response.blob();
+      const extension =
+        blob.type === "image/jpeg"
+          ? "jpg"
+          : blob.type === "image/webp"
+            ? "webp"
+            : "png";
+
+      const safeName = story?.id
+        ? story.id.replace(/[^a-zA-Z0-9-_]/g, "-")
+        : "mental-hashmap-story-hq";
+
+      const file = new File(
+        [blob],
+        `${safeName}.${extension}`,
+        { type: blob.type || "image/png" }
+      );
+
+      if (navigator.canShare?.({ files: [file] })) {
+        await navigator.share({
+          title: `HQ - ${story?.titlePt ?? "Mental Hashmap"}`,
+          text: story?.titleEn
+            ? `${story.titlePt} — ${story.titleEn}`
+            : story?.titlePt ?? "Mental Hashmap",
+          files: [file]
+        });
+        return;
+      }
+
+      await navigator.share({
+        title: `HQ - ${story?.titlePt ?? "Mental Hashmap"}`,
+        text: story?.titleEn
+          ? `${story.titlePt} — ${story.titleEn}`
+          : story?.titlePt ?? "Mental Hashmap",
+        url: absoluteImageUrl
+      });
+    } catch (error) {
+      if (error instanceof DOMException && error.name === "AbortError") {
+        return;
+      }
+
+      setShareError("Não foi possível compartilhar a HQ neste dispositivo.");
+    }
+  }
+
+  function handlePrintHq() {
+    const hqImage = story?.hqImage?.trim();
+
+    if (!hqImage) {
+      return;
+    }
+
+    const printWindow = window.open("", "_blank");
+
+    if (!printWindow) {
+      return;
+    }
+
+    const absoluteImageUrl = new URL(hqImage, window.location.href).href;
+
+    printWindow.document.title = `HQ - ${story?.titlePt ?? "Mental Hashmap"}`;
+    printWindow.document.documentElement.style.margin = "0";
+    printWindow.document.body.style.margin = "0";
+    printWindow.document.body.style.display = "flex";
+    printWindow.document.body.style.alignItems = "center";
+    printWindow.document.body.style.justifyContent = "center";
+
+    const style = printWindow.document.createElement("style");
+    style.textContent = `
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+
+      html,
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 210mm !important;
+        height: 297mm !important;
+        min-width: 210mm !important;
+        min-height: 297mm !important;
+        max-width: 210mm !important;
+        max-height: 297mm !important;
+        overflow: hidden !important;
+        background: #ffffff !important;
+      }
+
+      body {
+        display: block !important;
+      }
+
+      img {
+        position: fixed !important;
+        top: 8mm !important;
+        left: 8mm !important;
+        width: 194mm !important;
+        height: 281mm !important;
+        max-width: 194mm !important;
+        max-height: 281mm !important;
+        object-fit: contain !important;
+        object-position: center center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+    `;
+    printWindow.document.head.appendChild(style);
+
+    const image = printWindow.document.createElement("img");
+    image.src = absoluteImageUrl;
+    image.alt = `HQ da história: ${story?.titlePt ?? ""}`;
+
+    image.onload = () => {
+      printWindow.focus();
+      printWindow.print();
+    };
+
+    image.onerror = () => {
+      printWindow.close();
+    };
+
+    printWindow.addEventListener(
+      "afterprint",
+      () => {
+        printWindow.close();
+      },
+      { once: true }
+    );
+
+    printWindow.document.body.appendChild(image);
   }
 
   function handlePrintStory() {
@@ -809,6 +989,7 @@ export function InterpretationPanel({
             onChange={(event) => {
               setTheme(event.target.value);
               setStory(null);
+              setShowHqImage(false);
               setShowEnglish(false);
               setError(null);
               setSpeechError(null);
@@ -1094,7 +1275,9 @@ export function InterpretationPanel({
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: "0.75rem"
+                justifyContent: "flex-end",
+                gap: "0.75rem",
+                flexWrap: "wrap"
               }}
             >
               <button
@@ -1127,6 +1310,34 @@ export function InterpretationPanel({
                   <rect x="6" y="14" width="12" height="8" />
                 </svg>
               </button>
+
+              {story.source === "local" &&
+                Boolean(story.hqImage?.trim()) && (
+                  <button
+                    type="button"
+                    className="secondary-button"
+                    onClick={() => {
+                      setShareError(null);
+                      setShowHqImage(true);
+                    }}
+                    title="Ver HQ da história"
+                    aria-label="Ver HQ da história"
+                    style={{
+                      width: "3.5rem",
+                      minWidth: "3.5rem",
+                      height: "3rem",
+                      minHeight: "3rem",
+                      padding: 0,
+                      borderRadius: "999px",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0
+                    }}
+                  >
+                    <span aria-hidden="true">📷</span>
+                  </button>
+                )}
 
               {story.source === "ai" && (
                 <button
@@ -1250,6 +1461,197 @@ export function InterpretationPanel({
               </section>
             ))}
           </div>
+
+          {showHqImage &&
+            story.source === "local" &&
+            story.hqImage?.trim() && (
+              <div
+                role="dialog"
+                aria-modal="true"
+                aria-label={`HQ da história ${story.titlePt}`}
+                onMouseDown={(event) => {
+                  event.stopPropagation();
+                  setShowHqImage(false);
+                  setShareError(null);
+                }}
+                style={{
+                  position: "fixed",
+                  inset: 0,
+                  zIndex: 10000,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "clamp(0.5rem, 2vw, 1.25rem)",
+                  background: "rgba(0, 0, 0, 0.88)"
+                }}
+              >
+                <div
+                  onMouseDown={(event) => event.stopPropagation()}
+                  style={{
+                    position: "relative",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: "100%",
+                    height: "100%",
+                    maxWidth: "1200px"
+                  }}
+                >
+                  <img
+                    src={story.hqImage}
+                    alt={`HQ da história: ${story.titlePt}`}
+                    style={{
+                      display: "block",
+                      width: "auto",
+                      height: "auto",
+                      maxWidth: "100%",
+                      maxHeight: "calc(100dvh - 1rem)",
+                      objectFit: "contain",
+                      borderRadius: "12px"
+                    }}
+                  />
+
+                  <button
+                    type="button"
+                    onClick={handlePrintHq}
+                    aria-label="Imprimir HQ"
+                    title="Imprimir HQ"
+                    style={{
+                      position: "fixed",
+                      top: "max(0.75rem, env(safe-area-inset-top))",
+                      left: "max(0.75rem, env(safe-area-inset-left))",
+                      zIndex: 10001,
+                      width: "2.75rem",
+                      minWidth: "2.75rem",
+                      height: "2.75rem",
+                      minHeight: "2.75rem",
+                      padding: 0,
+                      border: "1px solid rgba(255, 255, 255, 0.35)",
+                      borderRadius: "999px",
+                      background: "rgba(0, 0, 0, 0.68)",
+                      color: "#ffffff",
+                      cursor: "pointer",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center"
+                    }}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      width="21"
+                      height="21"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="6 9 6 2 18 2 18 9" />
+                      <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+                      <rect x="6" y="14" width="12" height="8" />
+                    </svg>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={handleShareHq}
+                    aria-label="Compartilhar HQ"
+                    title="Compartilhar HQ"
+                    style={{
+                      position: "fixed",
+                      top: "max(0.75rem, env(safe-area-inset-top))",
+                      left: "calc(max(0.75rem, env(safe-area-inset-left)) + 3.35rem)",
+                      zIndex: 10001,
+                      width: "2.75rem",
+                      minWidth: "2.75rem",
+                      height: "2.75rem",
+                      minHeight: "2.75rem",
+                      padding: 0,
+                      border: "1px solid rgba(255, 255, 255, 0.35)",
+                      borderRadius: "999px",
+                      background: "rgba(0, 0, 0, 0.68)",
+                      color: "#ffffff",
+                      cursor: "pointer",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center"
+                    }}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      width="21"
+                      height="21"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <circle cx="18" cy="5" r="3" />
+                      <circle cx="6" cy="12" r="3" />
+                      <circle cx="18" cy="19" r="3" />
+                      <line x1="8.59" y1="10.51" x2="15.42" y2="6.49" />
+                      <line x1="8.59" y1="13.49" x2="15.42" y2="17.51" />
+                    </svg>
+                  </button>
+
+                  {shareError && (
+                    <div
+                      role="status"
+                      style={{
+                        position: "fixed",
+                        top: "calc(max(0.75rem, env(safe-area-inset-top)) + 3.35rem)",
+                        left: "max(0.75rem, env(safe-area-inset-left))",
+                        zIndex: 10001,
+                        maxWidth: "min(22rem, calc(100vw - 1.5rem))",
+                        padding: "0.65rem 0.8rem",
+                        borderRadius: "10px",
+                        background: "rgba(0, 0, 0, 0.82)",
+                        color: "#ffffff",
+                        fontSize: "0.9rem"
+                      }}
+                    >
+                      {shareError}
+                    </div>
+                  )}
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowHqImage(false);
+                      setShareError(null);
+                    }}
+                    aria-label="Fechar HQ"
+                    title="Fechar"
+                    style={{
+                      position: "fixed",
+                      top: "max(0.75rem, env(safe-area-inset-top))",
+                      right: "max(0.75rem, env(safe-area-inset-right))",
+                      zIndex: 10001,
+                      width: "2.75rem",
+                      minWidth: "2.75rem",
+                      height: "2.75rem",
+                      minHeight: "2.75rem",
+                      padding: 0,
+                      border: "1px solid rgba(255, 255, 255, 0.35)",
+                      borderRadius: "999px",
+                      background: "rgba(0, 0, 0, 0.68)",
+                      color: "#ffffff",
+                      fontSize: "1.6rem",
+                      lineHeight: 1,
+                      cursor: "pointer",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center"
+                    }}
+                  >
+                    ×
+                  </button>
+                </div>
+              </div>
+            )}
 
           {exportJson && (
             <div
