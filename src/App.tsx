@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
-import { SearchPanel } from "./components/SearchPanel";
+import { SearchPanel, type HqImageFilter } from "./components/SearchPanel";
 import { Sidebar, type AppView } from "./components/Sidebar";
 import { ExercisePanel } from "./components/ExercisePanel";
 import { BasicTraining } from "./components/BasicTraining";
@@ -26,6 +26,7 @@ function App() {
   const [englishSearch, setEnglishSearch] = useState("");
   const [categorySearch, setCategorySearch] = useState("");
   const [englishLevelSearch, setEnglishLevelSearch] = useState("");
+  const [hqImageFilter, setHqImageFilter] = useState<HqImageFilter>("all");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selected, setSelected] = useState<MentalIntention | null>(null);
   const [trainingMode, setTrainingMode] = useState<TrainingMode>(null);
@@ -81,7 +82,7 @@ function App() {
   const filteredItems = useMemo(() => {
     if (!data) return [];
 
-    return searchIntentions(
+    const searchedItems = searchIntentions(
       data.mentalMap,
       mentalSearch,
       englishSearch,
@@ -89,13 +90,28 @@ function App() {
       selectedTags,
       englishLevelSearch
     );
+
+    if (hqImageFilter === "all") {
+      return searchedItems;
+    }
+
+    return searchedItems.filter((item) => {
+      const hasHqImage = (item.examples ?? []).some(
+        (example) =>
+          typeof example.hqImage === "string" &&
+          example.hqImage.trim().length > 0
+      );
+
+      return hqImageFilter === "with" ? hasHqImage : !hasHqImage;
+    });
   }, [
     data,
     mentalSearch,
     englishSearch,
     categorySearch,
     selectedTags,
-    englishLevelSearch
+    englishLevelSearch,
+    hqImageFilter
   ]);
 
   async function retry() {
@@ -122,6 +138,7 @@ function App() {
     setEnglishSearch("");
     setCategorySearch("");
     setEnglishLevelSearch("");
+    setHqImageFilter("all");
     setSelectedTags([]);
   }
 
@@ -194,12 +211,14 @@ function App() {
               englishSearch={englishSearch}
               categorySearch={categorySearch}
               englishLevelSearch={englishLevelSearch}
+              hqImageFilter={hqImageFilter}
               availableTags={availableTags}
               selectedTags={selectedTags}
               onMentalSearchChange={setMentalSearch}
               onEnglishSearchChange={setEnglishSearch}
               onCategorySearchChange={setCategorySearch}
               onEnglishLevelSearchChange={setEnglishLevelSearch}
+              onHqImageFilterChange={setHqImageFilter}
               onTagsChange={setSelectedTags}
               onClear={clearFilters}
             />
