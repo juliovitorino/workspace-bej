@@ -20137,9 +20137,130 @@
       "que-esta-por-vir-upcoming"
     ],
     "englishLevel": "B1"
-  }
-
-
-
+  },
+  {
+  "id": "por-via-das-duvidas-just-in-case",
+  "intention": "Por via das dúvidas / Caso aconteça...",
+  "english": "just in case",
+  "pattern": "just in case + subject + verb",
+  "description": "Usado quando fazemos algo como precaução porque existe a possibilidade de alguma coisa acontecer. Dependendo do contexto, corresponde ao nosso 'por via das dúvidas', 'só por precaução' e até ao sentido de 'vai que...'. Mapa mental: POR VIA DAS DÚVIDAS / CASO ACONTEÇA... → JUST IN CASE.",
+  "category": "chunk",
+  "searchTerms": [
+    "por via das dúvidas",
+    "por precaução",
+    "caso aconteça",
+    "vai que",
+    "just in case",
+    "precaução"
+  ],
+  "examples": [
+    {
+      "pt": "Leva um guarda-chuva por via das dúvidas.",
+      "en": "Take an umbrella just in case.",
+      "ptIntent": "por via das dúvidas",
+      "enIntent": "just in case"
+    },
+    {
+      "pt": "Leva um guarda-chuva, vai que chove.",
+      "en": "Take an umbrella just in case it rains.",
+      "ptIntent": "vai que chove",
+      "enIntent": "just in case it rains"
+    },
+    {
+      "pt": "Leva dinheiro, vai que eles não aceitam cartão.",
+      "en": "Take some cash just in case they don't take cards.",
+      "ptIntent": "vai que eles não aceitam cartão",
+      "enIntent": "just in case they don't take cards",
+      "hqImage":"/images/hq/por-via-das-duvidas-just-in-case-03.jpg" 
+    },
+    {
+      "pt": "Salva uma cópia por via das dúvidas.",
+      "en": "Save a copy just in case.",
+      "ptIntent": "por via das dúvidas",
+      "enIntent": "just in case"
+    },
+    {
+      "pt": "Vou levar um casaco, vai que esfria.",
+      "en": "I'll take a jacket just in case it gets cold.",
+      "ptIntent": "vai que esfria",
+      "enIntent": "just in case it gets cold"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "just-in-case",
+    "precaution",
+    "possibility",
+    "daily-life",
+    "spoken-english"
+  ],
+  "related": [
+    "vai-que-what-if"
+  ],
+  "englishLevel": "A2"
+},
+{
+  "id": "vai-que-what-if",
+  "intention": "Vai que...?",
+  "english": "What if...?",
+  "pattern": "What if + subject + verb?",
+  "description": "Usado para levantar uma possibilidade, geralmente inesperada, que pode justificar uma precaução ou decisão. Muito próximo do nosso 'vai que...' na fala cotidiana. Mapa mental: VAI QUE...? → WHAT IF...?",
+  "category": "chunk",
+  "searchTerms": [
+    "vai que",
+    "e se",
+    "vai que acontece",
+    "what if",
+    "possibilidade",
+    "precaução"
+  ],
+  "examples": [
+    {
+      "pt": "Leva o guarda-chuva. Vai que chove?",
+      "en": "Take an umbrella. What if it rains?",
+      "ptIntent": "Vai que chove",
+      "enIntent": "What if it rains",
+      "hqImage":"/images/hq/vai-que-what-if-01.png"
+    },
+    {
+      "pt": "Leva dinheiro. Vai que eles não aceitam cartão?",
+      "en": "Take some cash. What if they don't take cards?",
+      "ptIntent": "Vai que eles não aceitam cartão",
+      "enIntent": "What if they don't take cards",
+      "hqImage":"/images/hq/vai-que-what-if-02.png"
+    },
+    {
+      "pt": "Salva o arquivo. Vai que o computador trava?",
+      "en": "Save the file. What if the computer crashes?",
+      "ptIntent": "Vai que o computador trava",
+      "enIntent": "What if the computer crashes",
+      "hqImage":"/images/hq/vai-que-what-if-03.png"
+    },
+    {
+      "pt": "Leva um casaco. Vai que esfria?",
+      "en": "Take a jacket. What if it gets cold?",
+      "ptIntent": "Vai que esfria",
+      "enIntent": "What if it gets cold"
+    },
+    {
+      "pt": "Vamos sair mais cedo. Vai que tem trânsito?",
+      "en": "Let's leave earlier. What if there's traffic?",
+      "ptIntent": "Vai que tem trânsito",
+      "enIntent": "What if there's traffic"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "what-if",
+    "possibility",
+    "precaution",
+    "daily-life",
+    "spoken-english"
+  ],
+  "related": [
+    "por-via-das-duvidas-just-in-case"
+  ],
+  "englishLevel": "A2"
+}
   ]
 }
