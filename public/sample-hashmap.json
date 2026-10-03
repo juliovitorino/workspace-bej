@@ -19902,7 +19902,244 @@
   ],
   "related": [],
   "englishLevel": "A2"
-}
+},
+  {
+    "id": "pra-quem-quiser-for-anyone-who-wants-to",
+    "intention": "Pra quem quiser...",
+    "english": "For anyone who wants to...",
+    "pattern": "For anyone who wants to + verb",
+    "description": "Usado para apresentar algo como disponível, útil ou possível para qualquer pessoa que tenha interesse em fazer determinada coisa. Mapa mental: PRA QUEM QUISER... → FOR ANYONE WHO WANTS TO...",
+    "category": "chunk",
+    "searchTerms": [
+      "pra quem quiser",
+      "para quem quiser",
+      "para qualquer pessoa que queira",
+      "for anyone who wants to"
+    ],
+    "examples": [
+      {
+        "pt": "Pra quem quiser aprender inglês, este aplicativo é gratuito.",
+        "en": "For anyone who wants to learn English, this app is free.",
+        "ptIntent": "Pra quem quiser aprender inglês",
+        "enIntent": "For anyone who wants to learn English"
+      },
+      {
+        "pt": "Pra quem quiser participar, o grupo está aberto.",
+        "en": "For anyone who wants to join, the group is open.",
+        "ptIntent": "Pra quem quiser participar",
+        "enIntent": "For anyone who wants to join"
+      },
+      {
+        "pt": "Pra quem quiser saber mais, eu posso explicar.",
+        "en": "For anyone who wants to know more, I can explain.",
+        "ptIntent": "Pra quem quiser saber mais",
+        "enIntent": "For anyone who wants to know more"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "anyone",
+      "want-to",
+      "daily-life",
+      "spoken-english"
+    ],
+    "related": [
+      "quem-quiser-whoever-wants-to"
+    ],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "quem-quiser-whoever-wants-to",
+    "intention": "Quem quiser...",
+    "english": "Whoever wants to...",
+    "pattern": "Whoever wants to + verb",
+    "description": "Usado quando a própria pessoa que quiser fazer algo funciona como sujeito da ideia seguinte. Mapa mental: QUEM QUISER... → WHOEVER WANTS TO...",
+    "category": "chunk",
+    "searchTerms": [
+      "quem quiser",
+      "qualquer um que queira",
+      "quem tiver vontade",
+      "whoever wants to"
+    ],
+    "examples": [
+      {
+        "pt": "Quem quiser participar pode vir com a gente.",
+        "en": "Whoever wants to join can come with us.",
+        "ptIntent": "Quem quiser participar",
+        "enIntent": "Whoever wants to join"
+      },
+      {
+        "pt": "Quem quiser tentar pode começar agora.",
+        "en": "Whoever wants to try can start now.",
+        "ptIntent": "Quem quiser tentar",
+        "enIntent": "Whoever wants to try"
+      },
+      {
+        "pt": "Quem quiser fazer uma pergunta pode levantar a mão.",
+        "en": "Whoever wants to ask a question can raise their hand.",
+        "ptIntent": "Quem quiser fazer uma pergunta",
+        "enIntent": "Whoever wants to ask a question"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "whoever",
+      "want-to",
+      "daily-life",
+      "spoken-english"
+    ],
+    "related": [
+      "pra-quem-quiser-for-anyone-who-wants-to"
+    ],
+    "englishLevel": "A2"
+  },
+    {
+    "id": "que-esta-chegando-incoming",
+    "intention": "Que está chegando / entrando",
+    "english": "incoming",
+    "pattern": "incoming + noun",
+    "description": "Usado para algo ou alguém que está chegando, entrando ou sendo recebido. Muito comum com chamadas, mensagens, voos, tráfego e novos membros. Mapa mental: QUE ESTÁ CHEGANDO / ENTRANDO → INCOMING.",
+    "category": "chunk",
+    "searchTerms": [
+      "chegando",
+      "entrando",
+      "recebendo",
+      "incoming",
+      "incoming call",
+      "incoming message"
+    ],
+    "examples": [
+      {
+        "pt": "Tenho uma chamada chegando.",
+        "en": "I have an incoming call.",
+        "ptIntent": "chamada chegando",
+        "enIntent": "incoming call"
+      },
+      {
+        "pt": "Precisamos verificar as mensagens que estão chegando.",
+        "en": "We need to check the incoming messages.",
+        "ptIntent": "mensagens que estão chegando",
+        "enIntent": "incoming messages"
+      },
+      {
+        "pt": "O sistema processa todos os dados que chegam.",
+        "en": "The system processes all incoming data.",
+        "ptIntent": "dados que chegam",
+        "enIntent": "incoming data"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "incoming",
+      "movement",
+      "daily-life",
+      "work"
+    ],
+    "related": [
+      "que-esta-por-vir-upcoming",
+      "que-esta-em-andamento-ongoing"
+    ],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "que-esta-por-vir-upcoming",
+    "intention": "Que está por vir / próximo",
+    "english": "upcoming",
+    "pattern": "upcoming + noun",
+    "description": "Usado para algo que acontecerá em breve ou está programado para o futuro próximo, como eventos, reuniões, viagens e lançamentos. Mapa mental: QUE ESTÁ POR VIR / PRÓXIMO → UPCOMING.",
+    "category": "chunk",
+    "searchTerms": [
+      "que está por vir",
+      "próximo",
+      "em breve",
+      "futuro",
+      "upcoming",
+      "upcoming event"
+    ],
+    "examples": [
+      {
+        "pt": "Estou animado com a próxima viagem.",
+        "en": "I'm excited about the upcoming trip.",
+        "ptIntent": "próxima viagem",
+        "enIntent": "upcoming trip"
+      },
+      {
+        "pt": "Precisamos conversar sobre a próxima reunião.",
+        "en": "We need to talk about the upcoming meeting.",
+        "ptIntent": "próxima reunião",
+        "enIntent": "upcoming meeting"
+      },
+      {
+        "pt": "Eles anunciaram os próximos eventos.",
+        "en": "They announced the upcoming events.",
+        "ptIntent": "próximos eventos",
+        "enIntent": "upcoming events"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "upcoming",
+      "future",
+      "events",
+      "daily-life"
+    ],
+    "related": [
+      "que-esta-chegando-incoming",
+      "que-esta-em-andamento-ongoing"
+    ],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "que-esta-em-andamento-ongoing",
+    "intention": "Que está em andamento / acontecendo",
+    "english": "ongoing",
+    "pattern": "ongoing + noun",
+    "description": "Usado para algo que já começou e continua acontecendo ou sendo desenvolvido. Muito comum com projetos, discussões, investigações, problemas e processos. Mapa mental: QUE ESTÁ EM ANDAMENTO / ACONTECENDO → ONGOING.",
+    "category": "chunk",
+    "searchTerms": [
+      "em andamento",
+      "acontecendo",
+      "em curso",
+      "contínuo",
+      "ongoing",
+      "ongoing project",
+      "ongoing discussion"
+    ],
+    "examples": [
+      {
+        "pt": "Este é um projeto que está em andamento.",
+        "en": "This is an ongoing project.",
+        "ptIntent": "projeto que está em andamento",
+        "enIntent": "ongoing project"
+      },
+      {
+        "pt": "Ainda temos uma discussão em andamento.",
+        "en": "We still have an ongoing discussion.",
+        "ptIntent": "discussão em andamento",
+        "enIntent": "ongoing discussion"
+      },
+      {
+        "pt": "Eles estão tentando resolver os problemas que continuam acontecendo.",
+        "en": "They're trying to solve the ongoing problems.",
+        "ptIntent": "problemas que continuam acontecendo",
+        "enIntent": "ongoing problems"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "ongoing",
+      "continuity",
+      "work",
+      "daily-life"
+    ],
+    "related": [
+      "que-esta-chegando-incoming",
+      "que-esta-por-vir-upcoming"
+    ],
+    "englishLevel": "B1"
+  }
+
+
 
   ]
 }
