@@ -20058,9 +20058,9 @@
     ],
     "examples": [
       {
-        "pt": "Estou animado com a próxima viagem.",
+        "pt": "Estou animado com a viagem que está por vir.",
         "en": "I'm excited about the upcoming trip.",
-        "ptIntent": "próxima viagem",
+        "ptIntent": "que está por vir",
         "enIntent": "upcoming trip"
       },
       {
@@ -20070,9 +20070,9 @@
         "enIntent": "upcoming meeting"
       },
       {
-        "pt": "Eles anunciaram os próximos eventos.",
+        "pt": "Eles anunciaram os eventos que estão por vir.",
         "en": "They announced the upcoming events.",
-        "ptIntent": "próximos eventos",
+        "ptIntent": "que estão por vir",
         "enIntent": "upcoming events"
       }
     ],
