@@ -19,6 +19,8 @@ export const SPEAKING_GAME_FORMS = [
   "I should have +verb-participle",
   "I could have +verb-participle",
   "I had been +verb-ing",
+  "I was going to +verb",
+  "I've +verb-participle",
   "I can +verb",
   "I could +verb",
   "I must +verb",
