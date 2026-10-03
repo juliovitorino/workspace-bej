@@ -1,14 +1,18 @@
+export type HqImageFilter = "all" | "with" | "without";
+
 interface SearchPanelProps {
   mentalSearch: string;
   englishSearch: string;
   categorySearch: string;
   englishLevelSearch: string;
+  hqImageFilter: HqImageFilter;
   availableTags: string[];
   selectedTags: string[];
   onMentalSearchChange: (value: string) => void;
   onEnglishSearchChange: (value: string) => void;
   onCategorySearchChange: (value: string) => void;
   onEnglishLevelSearchChange: (value: string) => void;
+  onHqImageFilterChange: (value: HqImageFilter) => void;
   onTagsChange: (tags: string[]) => void;
   onClear: () => void;
 }
@@ -18,12 +22,14 @@ export function SearchPanel({
   englishSearch,
   categorySearch,
   englishLevelSearch,
+  hqImageFilter,
   availableTags,
   selectedTags,
   onMentalSearchChange,
   onEnglishSearchChange,
   onCategorySearchChange,
   onEnglishLevelSearchChange,
+  onHqImageFilterChange,
   onTagsChange,
   onClear
 }: SearchPanelProps) {
@@ -32,6 +38,7 @@ export function SearchPanel({
     englishSearch ||
     categorySearch ||
     englishLevelSearch ||
+    hqImageFilter !== "all" ||
     selectedTags.length > 0
   );
 
@@ -105,6 +112,21 @@ export function SearchPanel({
           <option value="B2">B2</option>
           <option value="C1">C1</option>
           <option value="C2">C2</option>
+        </select>
+      </div>
+
+      <div className="field">
+        <label htmlFor="hq-image-filter">HQ</label>
+        <select
+          id="hq-image-filter"
+          value={hqImageFilter}
+          onChange={(event) =>
+            onHqImageFilterChange(event.target.value as HqImageFilter)
+          }
+        >
+          <option value="all">Todas</option>
+          <option value="with">Com HQ</option>
+          <option value="without">Sem HQ</option>
         </select>
       </div>
 
