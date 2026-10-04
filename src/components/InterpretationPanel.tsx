@@ -167,6 +167,12 @@ export function InterpretationPanel({
       return;
     }
 
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousHtmlOverflow = document.documentElement.style.overflow;
+
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setShowHqImage(false);
@@ -220,6 +226,8 @@ export function InterpretationPanel({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("wheel", handleWheel);
+      document.body.style.overflow = previousBodyOverflow;
+      document.documentElement.style.overflow = previousHtmlOverflow;
     };
   }, [showHqImage]);
 
@@ -1539,11 +1547,14 @@ export function InterpretationPanel({
                 style={{
                   position: "fixed",
                   inset: 0,
+                  width: "100vw",
+                  height: "100dvh",
                   zIndex: 10000,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  padding: "clamp(0.5rem, 2vw, 1.25rem)",
+                  padding: 0,
+                  overflow: "hidden",
                   background: "rgba(0, 0, 0, 0.88)"
                 }}
               >
@@ -1579,9 +1590,11 @@ export function InterpretationPanel({
                     display: "flex",
                     alignItems: hqZoom > 1 ? "flex-start" : "center",
                     justifyContent: hqZoom > 1 ? "flex-start" : "center",
-                    width: "100%",
-                    height: "100%",
-                    maxWidth: "1200px",
+                    width: "100vw",
+                    height: "100dvh",
+                    maxWidth: "100vw",
+                    maxHeight: "100dvh",
+                    boxSizing: "border-box",
                     overflowX: "auto",
                     overflowY: "auto",
                     padding: hqZoom > 1 ? "4rem 1rem 4rem" : 0
