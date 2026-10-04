@@ -54,6 +54,7 @@ export function IntentionDetails({
   const [shareError, setShareError] = useState<string | null>(null);
   const [hqZoom, setHqZoom] = useState(1);
   const hqViewportRef = useRef<HTMLDivElement | null>(null);
+  const detailPanelRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     return () => {
@@ -271,6 +272,130 @@ export function IntentionDetails({
     }
   }
 
+  function handlePrintIntention() {
+    const panel = detailPanelRef.current;
+
+    if (!panel) {
+      return;
+    }
+
+    const printWindow = window.open("", "_blank");
+
+    if (!printWindow) {
+      return;
+    }
+
+    const clonedPanel = panel.cloneNode(true) as HTMLElement;
+
+    clonedPanel
+      .querySelectorAll(
+        ".close-button, .training-actions, .example .secondary-button, [role='dialog'][aria-label='Visualização da HQ']"
+      )
+      .forEach((element) => element.remove());
+
+    clonedPanel.querySelectorAll("section").forEach((section) => {
+      const heading = section.querySelector("h3")?.textContent?.trim();
+
+      if (heading === "Tags" || heading === "Relacionados") {
+        section.remove();
+      }
+    });
+
+    const styles = Array.from(
+      document.querySelectorAll('link[rel="stylesheet"], style')
+    )
+      .map((element) => element.outerHTML)
+      .join("\n");
+
+    printWindow.document.open();
+    printWindow.document.write(`
+      <!doctype html>
+      <html>
+        <head>
+          <meta charset="UTF-8" />
+          <title>${item?.intention ?? "Mental Hashmap"}</title>
+          ${styles}
+          <style>
+            @page {
+              size: A4 portrait;
+              margin: 12mm;
+            }
+
+            html,
+            body {
+              margin: 0 !important;
+              padding: 0 !important;
+              width: 100% !important;
+              min-height: 0 !important;
+              height: auto !important;
+              overflow: visible !important;
+              background: #ffffff !important;
+            }
+
+            body {
+              display: block !important;
+            }
+
+            .detail-panel {
+              position: static !important;
+              width: 100% !important;
+              max-width: none !important;
+              min-height: 0 !important;
+              height: auto !important;
+              max-height: none !important;
+              margin: 0 !important;
+              padding: 0 !important;
+              overflow: visible !important;
+              border: 0 !important;
+              border-radius: 0 !important;
+              box-shadow: none !important;
+              background: #ffffff !important;
+            }
+
+            .example {
+              break-inside: avoid !important;
+              page-break-inside: avoid !important;
+            }
+
+            h1,
+            h2,
+            h3 {
+              break-after: avoid !important;
+              page-break-after: avoid !important;
+            }
+          </style>
+        </head>
+        <body></body>
+      </html>
+    `);
+    printWindow.document.close();
+
+    printWindow.document.body.appendChild(
+      printWindow.document.importNode(clonedPanel, true)
+    );
+
+    const doPrint = () => {
+      printWindow.focus();
+      printWindow.print();
+    };
+
+    if (printWindow.document.fonts?.ready) {
+      printWindow.document.fonts.ready.then(() => {
+        window.setTimeout(doPrint, 150);
+      });
+    } else {
+      window.setTimeout(doPrint, 300);
+    }
+
+    printWindow.addEventListener(
+      "afterprint",
+      () => {
+        printWindow.close();
+      },
+      { once: true }
+    );
+  }
+
   function handlePrintHq() {
     if (!hqImage) {
       return;
@@ -367,6 +492,7 @@ export function IntentionDetails({
   return (
     <div className="modal-backdrop" onMouseDown={onClose}>
       <article
+        ref={detailPanelRef}
         className="detail-panel"
         role="dialog"
         aria-modal="true"
@@ -409,6 +535,17 @@ export function IntentionDetails({
             onClick={() => onAdvancedTraining(item)}
           >
             Treino avançado
+          </button>
+
+          <button
+            type="button"
+            className="secondary-button"
+            onClick={handlePrintIntention}
+            title="Imprimir esta intenção"
+            aria-label="Imprimir esta intenção"
+          >
+            <span aria-hidden="true">🖨️</span>
+            <span>Imprimir</span>
           </button>
         </div>
 
