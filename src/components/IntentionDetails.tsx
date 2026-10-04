@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 
 
@@ -53,6 +53,7 @@ export function IntentionDetails({
   const [hqImage, setHqImage] = useState<string | null>(null);
   const [shareError, setShareError] = useState<string | null>(null);
   const [hqZoom, setHqZoom] = useState(1);
+  const hqViewportRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     return () => {
@@ -134,6 +135,21 @@ export function IntentionDetails({
       window.removeEventListener("wheel", handleWheel);
     };
   }, [hqImage]);
+
+  function handleScrollHqVertical(direction: "up" | "down") {
+    const viewport = hqViewportRef.current;
+
+    if (!viewport) {
+      return;
+    }
+
+    const distance = Math.max(180, viewport.clientHeight * 0.55);
+
+    viewport.scrollBy({
+      top: direction === "down" ? distance : -distance,
+      behavior: "smooth"
+    });
+  }
 
   function handleSpeakExample(text: string, index: number) {
     const englishText = text.trim();
@@ -576,7 +592,32 @@ export function IntentionDetails({
             }}
           >
             <div
+              ref={hqViewportRef}
               onMouseDown={(event) => event.stopPropagation()}
+              onWheel={(event) => {
+                if (
+                  event.ctrlKey ||
+                  event.metaKey ||
+                  event.shiftKey ||
+                  hqZoom <= 1
+                ) {
+                  return;
+                }
+
+                event.preventDefault();
+
+                const multiplier =
+                  event.deltaMode === 1
+                    ? 24
+                    : event.deltaMode === 2
+                      ? event.currentTarget.clientHeight
+                      : 1;
+
+                event.currentTarget.scrollBy({
+                  top: event.deltaY * multiplier,
+                  behavior: "auto"
+                });
+              }}
               style={{
                 position: "relative",
                 display: "flex",
@@ -585,7 +626,8 @@ export function IntentionDetails({
                 width: "100%",
                 height: "100%",
                 maxWidth: "1200px",
-                overflow: "auto",
+                overflowX: "auto",
+                overflowY: "auto",
                 padding: hqZoom > 1 ? "4rem 1rem 4rem" : 0
               }}
             >
@@ -709,6 +751,71 @@ export function IntentionDetails({
                   }}
                 >
                   {shareError}
+                </div>
+              )}
+
+              {hqZoom > 1 && (
+                <div
+                  role="group"
+                  aria-label="Controles de movimento vertical da HQ"
+                  style={{
+                    position: "fixed",
+                    right: "max(0.75rem, env(safe-area-inset-right))",
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    zIndex: 10001,
+                    display: "inline-flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: "0.35rem",
+                    padding: "0.35rem",
+                    border: "1px solid rgba(255, 255, 255, 0.35)",
+                    borderRadius: "999px",
+                    background: "rgba(0, 0, 0, 0.72)",
+                    color: "#ffffff"
+                  }}
+                >
+                  <button
+                    type="button"
+                    onClick={() => handleScrollHqVertical("up")}
+                    aria-label="Mover HQ para cima"
+                    title="Mover para cima"
+                    style={{
+                      width: "2.5rem",
+                      height: "2.5rem",
+                      padding: 0,
+                      border: "1px solid rgba(255, 255, 255, 0.25)",
+                      borderRadius: "999px",
+                      background: "rgba(255, 255, 255, 0.08)",
+                      color: "#ffffff",
+                      fontSize: "1.25rem",
+                      lineHeight: 1,
+                      cursor: "pointer"
+                    }}
+                  >
+                    ↑
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => handleScrollHqVertical("down")}
+                    aria-label="Mover HQ para baixo"
+                    title="Mover para baixo"
+                    style={{
+                      width: "2.5rem",
+                      height: "2.5rem",
+                      padding: 0,
+                      border: "1px solid rgba(255, 255, 255, 0.25)",
+                      borderRadius: "999px",
+                      background: "rgba(255, 255, 255, 0.08)",
+                      color: "#ffffff",
+                      fontSize: "1.25rem",
+                      lineHeight: 1,
+                      cursor: "pointer"
+                    }}
+                  >
+                    ↓
+                  </button>
                 </div>
               )}
 
