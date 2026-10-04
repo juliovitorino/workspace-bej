@@ -20261,6 +20261,106 @@
     "por-via-das-duvidas-just-in-case"
   ],
   "englishLevel": "A2"
-}
+},
+
+  {
+    "id": "ficar-puto-get-pissed-off-0959",
+    "intention": "Ficar puto / Ficar muito irritado",
+    "english": "get pissed off",
+    "pattern": "get pissed off at/with + someone / get pissed off about + something",
+    "description": "Usado para falar da mudança de estado: alguém passa a ficar muito irritado ou puto. Mapa mental: FICAR PUTO → GET PISSED OFF.",
+    "category": "chunk",
+    "searchTerms": [
+      "ficar puto",
+      "ficar puta",
+      "ficar irritado",
+      "ficar bravo",
+      "ficar com raiva",
+      "get pissed off",
+      "got pissed off"
+    ],
+    "examples": [
+      {
+        "pt": "Eu fiquei puto com ele.",
+        "en": "I got pissed off at him.",
+        "ptIntent": "fiquei puto",
+        "enIntent": "got pissed off"
+      },
+      {
+        "pt": "Ela ficou puta comigo.",
+        "en": "She got pissed off at me.",
+        "ptIntent": "ficou puta",
+        "enIntent": "got pissed off"
+      },
+      {
+        "pt": "Eu fiquei puto com o que aconteceu.",
+        "en": "I got pissed off about what happened.",
+        "ptIntent": "fiquei puto",
+        "enIntent": "got pissed off"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "anger",
+      "emotion",
+      "informal",
+      "spoken-english",
+      "daily-life"
+    ],
+    "related": [
+      "estar-puto-be-pissed-off"
+    ],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "estar-puto-be-pissed-off",
+    "intention": "Estar puto / Estar muito irritado",
+    "english": "be pissed off",
+    "pattern": "be pissed off at/with + someone / be pissed off about + something",
+    "description": "Usado para descrever o estado de alguém que já está muito irritado ou puto. Mapa mental: ESTAR PUTO → BE PISSED OFF.",
+    "category": "chunk",
+    "searchTerms": [
+      "estar puto",
+      "estar puta",
+      "estar irritado",
+      "estar bravo",
+      "estar com raiva",
+      "be pissed off",
+      "pissed off"
+    ],
+    "examples": [
+      {
+        "pt": "Eu estou puto com ele.",
+        "en": "I'm pissed off at him.",
+        "ptIntent": "estou puto",
+        "enIntent": "I'm pissed off"
+      },
+      {
+        "pt": "Ela está puta comigo.",
+        "en": "She's pissed off at me.",
+        "ptIntent": "está puta",
+        "enIntent": "She's pissed off"
+      },
+      {
+        "pt": "Por que você está tão puto com isso?",
+        "en": "Why are you so pissed off about it?",
+        "ptIntent": "está tão puto",
+        "enIntent": "are you so pissed off"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "anger",
+      "emotion",
+      "informal",
+      "spoken-english",
+      "daily-life"
+    ],
+    "related": [
+      "ficar-puto-get-pissed-off-0959"
+    ],
+    "englishLevel": "B1"
+  }
+
   ]
 }
