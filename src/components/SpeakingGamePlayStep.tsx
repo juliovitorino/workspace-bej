@@ -36,6 +36,14 @@ export function SpeakingGamePlayStep({
   const isAutomatic = settings.timeMode === "automatic";
   const isPaused = status === "paused";
 
+  function openGoogleTranslate() {
+    window.open(
+      "https://translate.google.com/?hl=pt-BR&sl=en&tl=pt&op=translate",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  }
+
   return (
     <section style={styles.card} aria-labelledby="speaking-game-verb">
       <header style={styles.header}>
@@ -110,6 +118,17 @@ export function SpeakingGamePlayStep({
 
         <strong style={styles.challengeForm}>{form}</strong>
       </div>
+
+      <button
+        type="button"
+        onClick={openGoogleTranslate}
+        style={styles.googleTranslateButton}
+        title="Abrir Google Tradutor: inglês para português"
+        aria-label="Abrir Google Tradutor: inglês para português"
+      >
+        <span aria-hidden="true">🇺🇸 🇧🇷</span>
+        <span>Abrir Google Tradutor</span>
+      </button>
 
       {isAutomatic && (
         <div style={styles.timerArea} aria-live="polite">
@@ -292,6 +311,23 @@ const styles: Record<string, CSSProperties> = {
     lineHeight: 1.25,
     color: "#1d4ed8",
     overflowWrap: "anywhere"
+  },
+  googleTranslateButton: {
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "0.55rem",
+    width: "100%",
+    minHeight: "3.1rem",
+    margin: "0 0 1.5rem",
+    padding: "0.8rem 1rem",
+    border: "1px solid #cbd5e1",
+    borderRadius: "12px",
+    background: "#ffffff",
+    color: "#334155",
+    fontSize: "0.98rem",
+    fontWeight: 800,
+    cursor: "pointer"
   },
   timerArea: {
     display: "grid",
