@@ -52,6 +52,7 @@ export function IntentionDetails({
   const [speechError, setSpeechError] = useState<string | null>(null);
   const [hqImage, setHqImage] = useState<string | null>(null);
   const [shareError, setShareError] = useState<string | null>(null);
+  const [hqZoom, setHqZoom] = useState(1);
 
   useEffect(() => {
     return () => {
@@ -70,6 +71,7 @@ export function IntentionDetails({
     setSpeechError(null);
     setHqImage(null);
     setShareError(null);
+    setHqZoom(1);
   }, [item?.id]);
 
   useEffect(() => {
@@ -80,13 +82,56 @@ export function IntentionDetails({
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setHqImage(null);
+        setShareError(null);
+        setHqZoom(1);
+        return;
+      }
+
+      if (!(event.ctrlKey || event.metaKey)) {
+        return;
+      }
+
+      if (event.key === "+" || event.key === "=") {
+        event.preventDefault();
+        setHqZoom((current) => Math.min(3, current + 0.25));
+        return;
+      }
+
+      if (event.key === "-" || event.key === "_") {
+        event.preventDefault();
+        setHqZoom((current) => Math.max(0.5, current - 0.25));
+        return;
+      }
+
+      if (event.key === "0") {
+        event.preventDefault();
+        setHqZoom(1);
       }
     }
 
+    function handleWheel(event: WheelEvent) {
+      if (!(event.ctrlKey || event.metaKey)) {
+        return;
+      }
+
+      event.preventDefault();
+
+      setHqZoom((current) => {
+        const nextZoom =
+          event.deltaY < 0
+            ? current + 0.25
+            : current - 0.25;
+
+        return Math.min(3, Math.max(0.5, nextZoom));
+      });
+    }
+
     window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("wheel", handleWheel, { passive: false });
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("wheel", handleWheel);
     };
   }, [hqImage]);
 
@@ -426,7 +471,11 @@ export function IntentionDetails({
                         <button
                           type="button"
                           className="secondary-button"
-                          onClick={() => setHqImage(example.hqImage ?? null)}
+                          onClick={() => {
+                            setShareError(null);
+                            setHqZoom(1);
+                            setHqImage(example.hqImage ?? null);
+                          }}
                           title="Ver HQ deste exemplo"
                           aria-label={`Ver HQ do exemplo ${index + 1}`}
                           style={{
@@ -512,6 +561,8 @@ export function IntentionDetails({
             onMouseDown={(event) => {
               event.stopPropagation();
               setHqImage(null);
+              setShareError(null);
+              setHqZoom(1);
             }}
             style={{
               position: "fixed",
@@ -529,11 +580,13 @@ export function IntentionDetails({
               style={{
                 position: "relative",
                 display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                alignItems: hqZoom > 1 ? "flex-start" : "center",
+                justifyContent: hqZoom > 1 ? "flex-start" : "center",
                 width: "100%",
                 height: "100%",
-                maxWidth: "1200px"
+                maxWidth: "1200px",
+                overflow: "auto",
+                padding: hqZoom > 1 ? "4rem 1rem 4rem" : 0
               }}
             >
               <img
@@ -546,7 +599,10 @@ export function IntentionDetails({
                   maxWidth: "100%",
                   maxHeight: "calc(100dvh - 1rem)",
                   objectFit: "contain",
-                  borderRadius: "12px"
+                  borderRadius: "12px",
+                  transform: `scale(${hqZoom})`,
+                  transformOrigin: hqZoom > 1 ? "top left" : "top center",
+                  transition: "transform 120ms ease"
                 }}
               />
 
@@ -656,9 +712,101 @@ export function IntentionDetails({
                 </div>
               )}
 
+              <div
+                role="group"
+                aria-label="Controles de zoom da HQ"
+                style={{
+                  position: "fixed",
+                  left: "50%",
+                  bottom: "max(0.75rem, env(safe-area-inset-bottom))",
+                  transform: "translateX(-50%)",
+                  zIndex: 10001,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.35rem",
+                  padding: "0.35rem",
+                  border: "1px solid rgba(255, 255, 255, 0.35)",
+                  borderRadius: "999px",
+                  background: "rgba(0, 0, 0, 0.72)",
+                  color: "#ffffff"
+                }}
+              >
+                <button
+                  type="button"
+                  onClick={() =>
+                    setHqZoom((current) => Math.max(0.5, current - 0.25))
+                  }
+                  disabled={hqZoom <= 0.5}
+                  aria-label="Diminuir zoom da HQ"
+                  title="Diminuir zoom"
+                  style={{
+                    width: "2.5rem",
+                    height: "2.5rem",
+                    padding: 0,
+                    border: "1px solid rgba(255, 255, 255, 0.25)",
+                    borderRadius: "999px",
+                    background: "rgba(255, 255, 255, 0.08)",
+                    color: "#ffffff",
+                    fontSize: "1.4rem",
+                    cursor: hqZoom <= 0.5 ? "default" : "pointer",
+                    opacity: hqZoom <= 0.5 ? 0.45 : 1
+                  }}
+                >
+                  −
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setHqZoom(1)}
+                  aria-label="Restaurar zoom da HQ para 100%"
+                  title="Restaurar zoom para 100%"
+                  style={{
+                    minWidth: "4.25rem",
+                    height: "2.5rem",
+                    padding: "0 0.75rem",
+                    border: "1px solid rgba(255, 255, 255, 0.25)",
+                    borderRadius: "999px",
+                    background: "rgba(255, 255, 255, 0.08)",
+                    color: "#ffffff",
+                    fontWeight: 700,
+                    cursor: "pointer"
+                  }}
+                >
+                  {Math.round(hqZoom * 100)}%
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() =>
+                    setHqZoom((current) => Math.min(3, current + 0.25))
+                  }
+                  disabled={hqZoom >= 3}
+                  aria-label="Aumentar zoom da HQ"
+                  title="Aumentar zoom"
+                  style={{
+                    width: "2.5rem",
+                    height: "2.5rem",
+                    padding: 0,
+                    border: "1px solid rgba(255, 255, 255, 0.25)",
+                    borderRadius: "999px",
+                    background: "rgba(255, 255, 255, 0.08)",
+                    color: "#ffffff",
+                    fontSize: "1.4rem",
+                    cursor: hqZoom >= 3 ? "default" : "pointer",
+                    opacity: hqZoom >= 3 ? 0.45 : 1
+                  }}
+                >
+                  +
+                </button>
+              </div>
+
               <button
                 type="button"
-                onClick={() => setHqImage(null)}
+                onClick={() => {
+                  setHqImage(null);
+                  setShareError(null);
+                  setHqZoom(1);
+                }}
                 aria-label="Fechar HQ"
                 title="Fechar"
                 style={{
