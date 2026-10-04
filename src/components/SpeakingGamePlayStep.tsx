@@ -16,6 +16,7 @@ interface SpeakingGamePlayStepProps {
   onResume: () => void;
   onStop: () => void;
   onNext: () => void;
+  onNewVerb?: () => void;
 }
 
 export function SpeakingGamePlayStep({
@@ -27,7 +28,8 @@ export function SpeakingGamePlayStep({
   onPause,
   onResume,
   onStop,
-  onNext
+  onNext,
+  onNewVerb
 }: SpeakingGamePlayStepProps) {
   const [showVerbForms, setShowVerbForms] = useState(true);
 
@@ -52,6 +54,19 @@ export function SpeakingGamePlayStep({
           {verb.type === "regular" ? "regular" : "irregular"}
         </span>
       </header>
+
+      {!isAutomatic && onNewVerb && (
+        <button
+          type="button"
+          onClick={onNewVerb}
+          style={styles.newVerbButton}
+          title="Sortear outro verbo mantendo a mesma forma verbal"
+          aria-label="Sortear outro verbo mantendo a mesma forma verbal"
+        >
+          <span aria-hidden="true" style={styles.newVerbIcon}>+</span>
+          <span>Novo verbo</span>
+        </button>
+      )}
 
       <button
         type="button"
@@ -196,6 +211,27 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "0.85rem",
     fontWeight: 700,
     color: "#475569"
+  },
+  newVerbButton: {
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "0.45rem",
+    width: "100%",
+    minHeight: "2.8rem",
+    marginBottom: "0.65rem",
+    padding: "0.65rem 0.8rem",
+    border: "1px solid #93c5fd",
+    borderRadius: "10px",
+    background: "#eff6ff",
+    color: "#1d4ed8",
+    fontSize: "0.92rem",
+    fontWeight: 800,
+    cursor: "pointer"
+  },
+  newVerbIcon: {
+    fontSize: "1.25rem",
+    lineHeight: 1
   },
   visibilityButton: {
     width: "100%",

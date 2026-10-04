@@ -147,6 +147,38 @@ export function SpeakingGame() {
     settings.seconds
   ]);
 
+  const newVerbSameForm = useCallback(async () => {
+    if (
+      settings.timeMode !== "manual" ||
+      !currentVerb ||
+      isLoadingRound
+    ) {
+      return;
+    }
+
+    setIsLoadingRound(true);
+    setError(null);
+
+    try {
+      const nextVerb = await loadNextVerb(currentVerb.id);
+
+      setCurrentVerb(nextVerb);
+    } catch (caughtError) {
+      setError(
+        caughtError instanceof Error
+          ? caughtError.message
+          : "Não foi possível sortear um novo verbo."
+      );
+    } finally {
+      setIsLoadingRound(false);
+    }
+  }, [
+    currentVerb,
+    isLoadingRound,
+    loadNextVerb,
+    settings.timeMode
+  ]);
+
   useEffect(() => {
     if (
       step !== 3 ||
@@ -266,6 +298,7 @@ export function SpeakingGame() {
           onResume={resumeGame}
           onStop={stopGame}
           onNext={() => void nextRound()}
+          onNewVerb={() => void newVerbSameForm()}
         />
       )}
 
