@@ -22,19 +22,22 @@
           "pt": "Eu corro todos os dias.",
           "en": "I run every day.",
           "ptIntent": "corro",
-          "enIntent": "run"
+          "enIntent": "run",
+          "hqImage": "/images/hq/acao-verbo-01.png"
         },
         {
           "pt": "Ele acordou tarde.",
           "en": "He woke up later.",
           "ptIntent": "acordou",
-          "enIntent": "woke up"
+          "enIntent": "woke up",
+          "hqImage": "/images/hq/acao-verbo-02.png"
         },
         {
           "pt": "Eu vou trabalhar amanhã.",
           "en": "I will work tomorrow.",
           "ptIntent": "vou trabalhar",
-          "enIntent": "will work"
+          "enIntent": "will work",
+          "hqImage": "/images/hq/acao-verbo-03.png"
         }
       ],
       "tags": [
@@ -18129,7 +18132,8 @@
         "pt": "Eu estou trabalhando agora.",
         "en": "I'm working right now.",
         "ptIntent": "estou trabalhando",
-        "enIntent": "I'm working"
+        "enIntent": "I'm working",
+        "hqImage": "/images/hq/estar-fazendo-present-continuous-01.png"
       },
       {
         "pt": "Ela está estudando inglês.",
@@ -20360,7 +20364,171 @@
       "ficar-puto-get-pissed-off-0959"
     ],
     "englishLevel": "B1"
+  },
+    {
+    "id": "ser-estar-presente-am-is-are-1208",
+    "intention": "Ser / Estar no presente",
+    "english": "am / is / are",
+    "pattern": "subject + am/is/are + complement",
+    "description": "Usado para dizer quem alguém é, como alguém está ou onde alguém está no presente. Mapa mental: SER / ESTAR AGORA → AM / IS / ARE.",
+    "category": "to-be",
+    "searchTerms": [
+      "ser",
+      "estar",
+      "sou",
+      "estou",
+      "é",
+      "está",
+      "somos",
+      "estamos",
+      "são",
+      "estão",
+      "am",
+      "is",
+      "are",
+      "verb to be",
+      "presente"
+    ],
+    "examples": [
+      {
+        "pt": "Eu estou cansado.",
+        "en": "I am tired.",
+        "ptIntent": "estou",
+        "enIntent": "am"
+      },
+      {
+        "pt": "Ela está em casa.",
+        "en": "She is at home.",
+        "ptIntent": "está",
+        "enIntent": "is"
+      },
+      {
+        "pt": "Eles estão prontos.",
+        "en": "They are ready.",
+        "ptIntent": "estão",
+        "enIntent": "are"
+      }
+    ],
+    "tags": [
+      "verb-to-be",
+      "present",
+      "am",
+      "is",
+      "are",
+      "basic-english",
+      "spoken-english"
+    ],
+    "related": [
+      "ser-estar-passado-was-were-1208",
+      "ser-estar-futuro-will-be-1208"
+    ],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "ser-estar-passado-was-were-1208",
+    "intention": "Ser / Estar no passado",
+    "english": "was / were",
+    "pattern": "subject + was/were + complement",
+    "description": "Usado para dizer quem alguém era, como alguém estava ou onde alguém estava no passado. Mapa mental: SER / ESTAR NO PASSADO → WAS / WERE.",
+    "category": "to-be",
+    "searchTerms": [
+      "era",
+      "estava",
+      "eram",
+      "estavam",
+      "fui",
+      "foi",
+      "was",
+      "were",
+      "verb to be",
+      "passado"
+    ],
+    "examples": [
+      {
+        "pt": "Eu estava cansado.",
+        "en": "I was tired.",
+        "ptIntent": "estava",
+        "enIntent": "was"
+      },
+      {
+        "pt": "Ela estava em casa.",
+        "en": "She was at home.",
+        "ptIntent": "estava",
+        "enIntent": "was"
+      },
+      {
+        "pt": "Eles estavam prontos.",
+        "en": "They were ready.",
+        "ptIntent": "estavam",
+        "enIntent": "were"
+      }
+    ],
+    "tags": [
+      "verb-to-be",
+      "past",
+      "was",
+      "were",
+      "basic-english",
+      "spoken-english"
+    ],
+    "related": [
+      "ser-estar-presente-am-is-are-1208",
+      "ser-estar-futuro-will-be-1208"
+    ],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "ser-estar-futuro-will-be-1208",
+    "intention": "Ser / Estar no futuro",
+    "english": "will be",
+    "pattern": "subject + will be + complement",
+    "description": "Usado para dizer como alguém ou alguma coisa será, estará ou onde estará no futuro. Diferentemente do presente e do passado, WILL BE não muda de acordo com o sujeito. Mapa mental: SER / ESTAR NO FUTURO → WILL BE.",
+    "category": "to-be",
+    "searchTerms": [
+      "será",
+      "estará",
+      "serão",
+      "estarão",
+      "vou estar",
+      "vai estar",
+      "will be",
+      "verb to be",
+      "futuro"
+    ],
+    "examples": [
+      {
+        "pt": "Eu estarei lá amanhã.",
+        "en": "I will be there tomorrow.",
+        "ptIntent": "estarei",
+        "enIntent": "will be"
+      },
+      {
+        "pt": "Ela estará ocupada amanhã.",
+        "en": "She will be busy tomorrow.",
+        "ptIntent": "estará",
+        "enIntent": "will be"
+      },
+      {
+        "pt": "Eles estarão prontos em breve.",
+        "en": "They will be ready soon.",
+        "ptIntent": "estarão",
+        "enIntent": "will be"
+      }
+    ],
+    "tags": [
+      "verb-to-be",
+      "future",
+      "will-be",
+      "basic-english",
+      "spoken-english"
+    ],
+    "related": [
+      "ser-estar-presente-am-is-are-1208",
+      "ser-estar-passado-was-were-1208"
+    ],
+    "englishLevel": "A1"
   }
+
 
   ]
 }
