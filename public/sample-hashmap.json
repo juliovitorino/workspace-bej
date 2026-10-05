@@ -23,21 +23,21 @@
           "en": "I run every day.",
           "ptIntent": "corro",
           "enIntent": "run",
-          "hqImage": "/images/hq/acao-verbo-01.png"
+          "hqImage": "/images/hq/a1/acao-verbo-01.png"
         },
         {
           "pt": "Ele acordou tarde.",
           "en": "He woke up later.",
           "ptIntent": "acordou",
           "enIntent": "woke up",
-          "hqImage": "/images/hq/acao-verbo-02.png"
+          "hqImage": "/images/hq/a1/acao-verbo-02.png"
         },
         {
           "pt": "Eu vou trabalhar amanhã.",
           "en": "I will work tomorrow.",
           "ptIntent": "vou trabalhar",
           "enIntent": "will work",
-          "hqImage": "/images/hq/acao-verbo-03.png"
+          "hqImage": "/images/hq/a1/acao-verbo-03.png"
         }
       ],
       "tags": [
@@ -17384,7 +17384,7 @@
         "en": "For goodness' sake, stop complaining!",
         "ptIntent": "Pelo amor de Deus",
         "enIntent": "For goodness' sake",
-        "hqImage":"/images/hq/pelo-amor-de-deus-for-goodness-sake-01.png"
+        "hqImage":"/images/hq/b1/pelo-amor-de-deus-for-goodness-sake-01.png"
       },
       {
         "pt": "Ah, qual é! Tente mais uma vez.",
@@ -17477,7 +17477,7 @@
         "en": "For fuck's sake, stop doing that!",
         "ptIntent": "Puta que pariu",
         "enIntent": "For fuck's sake",
-        "hqImage":"/images/hq/puta-que-pariu-for-fucks-sake-01.png"
+        "hqImage":"/images/hq/b2/puta-que-pariu-for-fucks-sake-01.png"
       },
       {
         "pt": "Ah, puta que pariu. De novo não.",
@@ -18133,7 +18133,7 @@
         "en": "I'm working right now.",
         "ptIntent": "estou trabalhando",
         "enIntent": "I'm working",
-        "hqImage": "/images/hq/estar-fazendo-present-continuous-01.png"
+        "hqImage": "/images/hq/a1/estar-fazendo-present-continuous-01.png"
       },
       {
         "pt": "Ela está estudando inglês.",
@@ -18551,14 +18551,14 @@
       "en": "I want to hit the ground running at my new job.",
       "ptIntent": "começar com tudo",
       "enIntent": "hit the ground running",
-      "hqImage":"/images/hq/hit-the-ground-running-01.png"
+      "hqImage":"/images/hq/b2/hit-the-ground-running-01.png"
     },
     {
       "pt": "Precisamos começar a todo vapor na segunda-feira.",
       "en": "We need to hit the ground running on Monday.",
       "ptIntent": "começar a todo vapor",
       "enIntent": "hit the ground running",
-      "hqImage":"/images/hq/hit-the-ground-running-02.png"
+      "hqImage":"/images/hq/b2/hit-the-ground-running-02.png"
     },
     {
       "pt": "Ela começou com tudo no novo projeto.",
@@ -19484,21 +19484,21 @@
         "en": "I ended up working late.",
         "ptIntent": "Acabei trabalhando",
         "enIntent": "ended up working",
-        "hqImage":"/images/hq/acabar-fazendo-end-up-01.png"
+        "hqImage":"/images/hq/b1/acabar-fazendo-end-up-01.png"
       },
       {
         "pt": "A gente sempre acaba falando sobre trabalho.",
         "en": "We always end up talking about work.",
         "ptIntent": "acaba falando",
         "enIntent": "end up talking",
-        "hqImage":"/images/hq/acabar-fazendo-end-up-02.png"
+        "hqImage":"/images/hq/b1/acabar-fazendo-end-up-02.png"
       },
       {
         "pt": "Como você acabou morando no Brasil?",
         "en": "How did you end up living in Brazil?",
         "ptIntent": "acabou morando",
         "enIntent": "end up living",
-        "hqImage":"/images/hq/acabar-fazendo-end-up-03.png"
+        "hqImage":"/images/hq/b1/acabar-fazendo-end-up-03.png"
       }
     ],
     "tags": ["phrasal-verb", "result", "daily-life", "spoken-english"],
@@ -20175,7 +20175,7 @@
       "en": "Take some cash just in case they don't take cards.",
       "ptIntent": "vai que eles não aceitam cartão",
       "enIntent": "just in case they don't take cards",
-      "hqImage":"/images/hq/por-via-das-duvidas-just-in-case-03.jpg" 
+      "hqImage":"/images/hq/a2/por-via-das-duvidas-just-in-case-03.jpg" 
     },
     {
       "pt": "Salva uma cópia por via das dúvidas.",
@@ -20224,21 +20224,21 @@
       "en": "Take an umbrella. What if it rains?",
       "ptIntent": "Vai que chove",
       "enIntent": "What if it rains",
-      "hqImage":"/images/hq/vai-que-what-if-01.png"
+      "hqImage":"/images/hq/a2/vai-que-what-if-01.png"
     },
     {
       "pt": "Leva dinheiro. Vai que eles não aceitam cartão?",
       "en": "Take some cash. What if they don't take cards?",
       "ptIntent": "Vai que eles não aceitam cartão",
       "enIntent": "What if they don't take cards",
-      "hqImage":"/images/hq/vai-que-what-if-02.png"
+      "hqImage":"/images/hq/a2/vai-que-what-if-02.png"
     },
     {
       "pt": "Salva o arquivo. Vai que o computador trava?",
       "en": "Save the file. What if the computer crashes?",
       "ptIntent": "Vai que o computador trava",
       "enIntent": "What if the computer crashes",
-      "hqImage":"/images/hq/vai-que-what-if-03.png"
+      "hqImage":"/images/hq/a2/vai-que-what-if-03.png"
     },
     {
       "pt": "Leva um casaco. Vai que esfria?",
