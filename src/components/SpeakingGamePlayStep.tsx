@@ -154,7 +154,7 @@ export function SpeakingGamePlayStep({
         </button>
       )}
 
-      {!isAutomatic && (
+      {(!isAutomatic || isPaused) && (
         <button
           type="button"
           onClick={openGoogleTranslate}
