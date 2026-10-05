@@ -20527,8 +20527,365 @@
       "ser-estar-passado-was-were-1208"
     ],
     "englishLevel": "A1"
-  }
+  },
+  {
+  "id": "nenhum-de-forma-alguma-no-noun-whatsoever",
+  "intention": "Nenhum / Nenhuma de forma alguma",
+  "english": "no + noun + whatsoever",
+  "pattern": "no + noun + whatsoever",
+  "description": "Usado para dar forte ênfase à ausência total de alguma coisa. 'Whatsoever' aparece depois do substantivo e reforça a ideia de 'nenhum de forma alguma', 'absolutamente nenhum' ou 'nenhum sequer'.",
+  "category": "chunk",
+  "searchTerms": [
+    "nenhum",
+    "nenhuma",
+    "nenhum de forma alguma",
+    "absolutamente nenhum",
+    "nenhum sequer",
+    "whatsoever",
+    "no whatsoever"
+  ],
+  "examples": [
+    {
+      "pt": "Não tenho dúvida alguma.",
+      "en": "I have no doubt whatsoever.",
+      "ptIntent": "dúvida alguma",
+      "enIntent": "no doubt whatsoever"
+    },
+    {
+      "pt": "Não há problema algum.",
+      "en": "There is no problem whatsoever.",
+      "ptIntent": "problema algum",
+      "enIntent": "no problem whatsoever"
+    },
+    {
+      "pt": "Ele não demonstrou interesse algum.",
+      "en": "He showed no interest whatsoever.",
+      "ptIntent": "interesse algum",
+      "enIntent": "no interest whatsoever"
+    }
+  ],
+  "tags": [
+    "whatsoever",
+    "no",
+    "emphasis",
+    "negative",
+    "everyday-english"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
+{
+  "id": "nao-custa-nada-nao-faz-mal-there-is-no-harm-in",
+  "intention": "Não custa nada / Não faz mal",
+  "english": "there is no harm in",
+  "pattern": "there is no harm in + verb-ing",
+  "description": "Usado para dizer que não há problema, risco ou prejuízo significativo em fazer algo, geralmente sugerindo que vale a pena tentar. Tem sentido muito próximo de 'it doesn't hurt to', mas usa verbo com -ing depois de 'in'.",
+  "category": "chunk",
+  "searchTerms": [
+    "não custa nada",
+    "não faz mal",
+    "não há mal nenhum",
+    "não tem problema",
+    "there is no harm in",
+    "no harm in"
+  ],
+  "examples": [
+    {
+      "pt": "Não custa nada perguntar.",
+      "en": "There is no harm in asking.",
+      "ptIntent": "Não custa nada",
+      "enIntent": "There is no harm in"
+    },
+    {
+      "pt": "Não custa nada tentar.",
+      "en": "There is no harm in trying.",
+      "ptIntent": "Não custa nada",
+      "enIntent": "There is no harm in"
+    },
+    {
+      "pt": "Não faz mal verificar novamente.",
+      "en": "There is no harm in checking again.",
+      "ptIntent": "Não faz mal",
+      "enIntent": "There is no harm in"
+    }
+  ],
+  "tags": [
+    "there is no harm in",
+    "suggestion",
+    "gerund",
+    "everyday-english"
+  ],
+  "related": [
+    "nao-custa-nada-it-doesnt-hurt"
+  ],
+  "englishLevel": "B1"
+},
+{
+  "id": "nao-custa-nada-it-doesnt-hurt",
+  "intention": "Não custa nada / Não faz mal tentar",
+  "english": "it doesn't hurt",
+  "pattern": "it doesn't hurt to + verb",
+  "description": "Usado para dizer que vale a pena fazer algo porque não há grande risco, esforço ou prejuízo em tentar. Em português, corresponde naturalmente a 'não custa nada' ou 'não faz mal'.",
+  "category": "chunk",
+  "searchTerms": [
+    "não custa nada",
+    "não faz mal",
+    "não custa tentar",
+    "não custa perguntar",
+    "it doesn't hurt",
+    "it doesn't hurt to"
+  ],
+  "examples": [
+    {
+      "pt": "Não custa nada perguntar.",
+      "en": "It doesn't hurt to ask.",
+      "ptIntent": "Não custa nada",
+      "enIntent": "It doesn't hurt"
+    },
+    {
+      "pt": "Não custa nada tentar.",
+      "en": "It doesn't hurt to try.",
+      "ptIntent": "Não custa nada",
+      "enIntent": "It doesn't hurt"
+    },
+    {
+      "pt": "Não custa nada verificar novamente.",
+      "en": "It doesn't hurt to check again.",
+      "ptIntent": "Não custa nada",
+      "enIntent": "It doesn't hurt"
+    }
+  ],
+  "tags": [
+    "it doesn't hurt",
+    "suggestion",
+    "everyday-english",
+    "spoken-english"
+  ],
+  "related": [],
+  "englishLevel": "A2"
+},
+{
+  "id": "muito-menos-quanto-mais-let-alone",
+  "intention": "Muito menos / Quanto mais",
+  "english": "let alone",
+  "pattern": "statement + let alone + more unlikely / difficult thing",
+  "description": "Usado para dizer que, se algo mais básico já não acontece ou não é possível, algo ainda mais difícil, extremo ou improvável muito menos. É muito comum depois de frases negativas.",
+  "category": "chunk",
+  "searchTerms": [
+    "muito menos",
+    "quanto mais",
+    "quem dirá",
+    "let alone"
+  ],
+  "examples": [
+    {
+      "pt": "Eu mal tenho dinheiro para pagar o aluguel, muito menos para comprar um carro.",
+      "en": "I barely have enough money to pay the rent, let alone buy a car.",
+      "ptIntent": "muito menos",
+      "enIntent": "let alone"
+    },
+    {
+      "pt": "Ele não consegue correr cinco quilômetros, quanto mais uma maratona.",
+      "en": "He can't run five kilometers, let alone a marathon.",
+      "ptIntent": "quanto mais",
+      "enIntent": "let alone"
+    },
+    {
+      "pt": "Eu não tenho tempo para assistir a um filme, muito menos a uma série inteira.",
+      "en": "I don't have time to watch a movie, let alone an entire series.",
+      "ptIntent": "muito menos",
+      "enIntent": "let alone"
+    }
+  ],
+  "tags": [
+    "let alone",
+    "contrast",
+    "emphasis",
+    "everyday-english"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "dia-muito-especial-red-letter-day",
+  "intention": "Um dia muito especial / Um dia marcante",
+  "english": "a red-letter day",
+  "pattern": "be a red-letter day / a red-letter day for + someone",
+  "description": "Expressão usada para falar de um dia especialmente importante, feliz ou memorável por causa de algum acontecimento significativo.",
+  "category": "idiom",
+  "searchTerms": [
+    "dia especial",
+    "dia marcante",
+    "dia memorável",
+    "dia importante",
+    "red-letter day"
+  ],
+  "examples": [
+    {
+      "pt": "Hoje é um dia muito especial para mim.",
+      "en": "Today is a red-letter day for me.",
+      "ptIntent": "um dia muito especial",
+      "enIntent": "a red-letter day"
+    },
+    {
+      "pt": "Foi um dia marcante na história da empresa.",
+      "en": "It was a red-letter day in the company's history.",
+      "ptIntent": "um dia marcante",
+      "enIntent": "a red-letter day"
+    },
+    {
+      "pt": "O dia em que consegui meu primeiro emprego foi um dia muito especial para mim.",
+      "en": "The day I got my first job was a red-letter day for me.",
+      "ptIntent": "um dia muito especial",
+      "enIntent": "a red-letter day"
+    }
+  ],
+  "tags": [
+    "red-letter day",
+    "idiom",
+    "special day",
+    "memorable",
+    "important event"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
 
+  {
+    "id": "ate-mesmo-inclusive-even",
+    "intention": "Até / Até mesmo / Inclusive",
+    "english": "even",
+    "pattern": "even + word / phrase",
+    "description": "Usado para enfatizar algo surpreendente, inesperado ou extremo dentro de uma situação.",
+    "category": "chunk",
+    "searchTerms": [
+      "até",
+      "até mesmo",
+      "inclusive",
+      "even"
+    ],
+    "examples": [
+      {
+        "pt": "Até eu consegui fazer isso.",
+        "en": "Even I managed to do it.",
+        "ptIntent": "Até",
+        "enIntent": "Even"
+      },
+      {
+        "pt": "Ela nem sequer me ligou.",
+        "en": "She didn't even call me.",
+        "ptIntent": "nem sequer",
+        "enIntent": "even"
+      },
+      {
+        "pt": "Até as crianças entenderam.",
+        "en": "Even the kids understood.",
+        "ptIntent": "Até",
+        "enIntent": "Even"
+      }
+    ],
+    "tags": [
+      "even",
+      "emphasis",
+      "surprise",
+      "everyday-english"
+    ],
+    "related": [
+      "nem-sequer-not-even"
+    ],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "nem-sequer-not-even",
+    "intention": "Nem / Nem sequer",
+    "english": "not even",
+    "pattern": "not even + word / phrase",
+    "description": "Usado para enfatizar que nem mesmo algo básico, esperado ou mínimo aconteceu.",
+    "category": "chunk",
+    "searchTerms": [
+      "nem",
+      "nem sequer",
+      "nem mesmo",
+      "not even"
+    ],
+    "examples": [
+      {
+        "pt": "Ele nem tentou.",
+        "en": "He didn't even try.",
+        "ptIntent": "nem",
+        "enIntent": "even"
+      },
+      {
+        "pt": "Ela nem sequer disse obrigada.",
+        "en": "She didn't even say thank you.",
+        "ptIntent": "nem sequer",
+        "enIntent": "even"
+      },
+      {
+        "pt": "Eu nem sabia disso.",
+        "en": "I didn't even know that.",
+        "ptIntent": "nem",
+        "enIntent": "even"
+      }
+    ],
+    "tags": [
+      "even",
+      "not-even",
+      "emphasis",
+      "negative",
+      "everyday-english"
+    ],
+    "related": [
+      "ate-mesmo-inclusive-even"
+    ],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "ainda-mais-even-more",
+    "intention": "Ainda mais",
+    "english": "even more",
+    "pattern": "even + comparative",
+    "description": "Usado antes de comparativos para intensificar uma diferença: ainda mais, ainda melhor, ainda pior, ainda maior etc.",
+    "category": "chunk",
+    "searchTerms": [
+      "ainda mais",
+      "ainda melhor",
+      "ainda pior",
+      "even more",
+      "even better",
+      "even worse"
+    ],
+    "examples": [
+      {
+        "pt": "Agora está ainda melhor.",
+        "en": "It's even better now.",
+        "ptIntent": "ainda melhor",
+        "enIntent": "even better"
+      },
+      {
+        "pt": "A situação ficou ainda pior.",
+        "en": "The situation got even worse.",
+        "ptIntent": "ainda pior",
+        "enIntent": "even worse"
+      },
+      {
+        "pt": "Eu preciso praticar ainda mais.",
+        "en": "I need to practice even more.",
+        "ptIntent": "ainda mais",
+        "enIntent": "even more"
+      }
+    ],
+    "tags": [
+      "even",
+      "comparative",
+      "emphasis",
+      "everyday-english"
+    ],
+    "related": [
+      "ate-mesmo-inclusive-even"
+    ],
+    "englishLevel": "A2"
+  }
 
   ]
 }
