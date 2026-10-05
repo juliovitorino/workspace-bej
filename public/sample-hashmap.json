@@ -1006,7 +1006,8 @@
           "pt": "Eu estou acostumado a acordar cedo.",
           "en": "I am used to waking up early.",
           "ptIntent": "acostumado",
-          "enIntent": "used to"
+          "enIntent": "used to",
+          "hqImage": "/images/hq/b1/be-used-to-01.png"
         }
       ],
       "tags": [
