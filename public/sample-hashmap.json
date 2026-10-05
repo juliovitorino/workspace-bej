@@ -15902,7 +15902,8 @@
       "pt": "Precisamos resolver esse problema de uma vez por todas.",
       "en": "We need to solve this problem once and for all.",
       "ptIntent": "de uma vez por todas",
-      "enIntent": "once and for all"
+      "enIntent": "once and for all",
+      "hqImage": "/images/hq/b1/de-uma-vez-por-todas-once-and-for-all-01.png"
     },
     {
       "pt": "Quero terminar isso de uma vez por todas.",
@@ -20144,7 +20145,7 @@
   },
   {
   "id": "por-via-das-duvidas-just-in-case",
-  "intention": "Por via das dúvidas / vai que...",
+  "intention": "Por via das dúvidas / vai que / No caso de / Para o caso de / Caso aconteça / Se acontecer",
   "english": "just in case",
   "pattern": "just in case + subject + verb",
   "description": "Usado quando fazemos algo como precaução porque existe a possibilidade de alguma coisa acontecer. Dependendo do contexto, corresponde ao nosso 'por via das dúvidas', 'só por precaução' e até ao sentido de 'vai que...'. Mapa mental: POR VIA DAS DÚVIDAS / CASO ACONTEÇA... → JUST IN CASE.",
