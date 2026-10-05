@@ -20144,7 +20144,7 @@
   },
   {
   "id": "por-via-das-duvidas-just-in-case",
-  "intention": "Por via das dúvidas / Caso aconteça...",
+  "intention": "Por via das dúvidas / vai que...",
   "english": "just in case",
   "pattern": "just in case + subject + verb",
   "description": "Usado quando fazemos algo como precaução porque existe a possibilidade de alguma coisa acontecer. Dependendo do contexto, corresponde ao nosso 'por via das dúvidas', 'só por precaução' e até ao sentido de 'vai que...'. Mapa mental: POR VIA DAS DÚVIDAS / CASO ACONTEÇA... → JUST IN CASE.",
@@ -20162,32 +20162,36 @@
       "pt": "Leva um guarda-chuva por via das dúvidas.",
       "en": "Take an umbrella just in case.",
       "ptIntent": "por via das dúvidas",
-      "enIntent": "just in case"
+      "enIntent": "just in case",
+      "hqImage": "/images/hq/a2/por-via-das-duvidas-just-in-case-01.png"
     },
     {
       "pt": "Leva um guarda-chuva, vai que chove.",
       "en": "Take an umbrella just in case it rains.",
       "ptIntent": "vai que chove",
-      "enIntent": "just in case it rains"
+      "enIntent": "just in case it rains",
+      "hqImage": "/images/hq/a2/por-via-das-duvidas-just-in-case-02.png"
     },
     {
       "pt": "Leva dinheiro, vai que eles não aceitam cartão.",
       "en": "Take some cash just in case they don't take cards.",
       "ptIntent": "vai que eles não aceitam cartão",
       "enIntent": "just in case they don't take cards",
-      "hqImage":"/images/hq/a2/por-via-das-duvidas-just-in-case-03.jpg" 
+      "hqImage":"/images/hq/a2/por-via-das-duvidas-just-in-case-03.png" 
     },
     {
       "pt": "Salva uma cópia por via das dúvidas.",
       "en": "Save a copy just in case.",
       "ptIntent": "por via das dúvidas",
-      "enIntent": "just in case"
+      "enIntent": "just in case",
+      "hqImage":"/images/hq/a2/por-via-das-duvidas-just-in-case-04.png" 
     },
     {
       "pt": "Vou levar um casaco, vai que esfria.",
       "en": "I'll take a jacket just in case it gets cold.",
       "ptIntent": "vai que esfria",
-      "enIntent": "just in case it gets cold"
+      "enIntent": "just in case it gets cold",
+      "hqImage":"/images/hq/a2/por-via-das-duvidas-just-in-case-05.png" 
     }
   ],
   "tags": [
