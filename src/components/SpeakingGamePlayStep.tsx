@@ -1,10 +1,22 @@
-import { useState, type CSSProperties } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import type { SpeakingGameForm } from "../config/speakingGameForms";
 import type { EnglishVerb } from "../types/englishVerb";
 import type {
   SpeakingGameSettings,
   SpeakingGameStatus
 } from "../types/speakingGameTypes";
+
+type SentenceMode = "afirmativa" | "negativa" | "interrogativa";
+
+const sentenceModes: SentenceMode[] = [
+  "afirmativa",
+  "negativa",
+  "interrogativa"
+];
+
+function drawSentenceMode(): SentenceMode {
+  return sentenceModes[Math.floor(Math.random() * sentenceModes.length)];
+}
 
 interface SpeakingGamePlayStepProps {
   verb: EnglishVerb;
@@ -32,9 +44,16 @@ export function SpeakingGamePlayStep({
   onNewVerb
 }: SpeakingGamePlayStepProps) {
   const [showVerbForms, setShowVerbForms] = useState(true);
+  const [sentenceMode, setSentenceMode] = useState<SentenceMode>(
+    drawSentenceMode
+  );
 
   const isAutomatic = settings.timeMode === "automatic";
   const isPaused = status === "paused";
+
+  useEffect(() => {
+    setSentenceMode(drawSentenceMode());
+  }, [verb.id, form]);
 
   function openGoogleTranslate() {
     window.open(
@@ -113,22 +132,40 @@ export function SpeakingGamePlayStep({
 
       <div style={styles.challenge}>
         <span style={styles.challengeLabel}>
-          Fale em voz alta uma frase usando:
+          Fale em voz alta uma frase na forma:
         </span>
+
+        <strong style={styles.sentenceMode}>
+          {sentenceMode.toUpperCase()}
+        </strong>
+
+        <span style={styles.challengeLabel}>usando:</span>
 
         <strong style={styles.challengeForm}>{form}</strong>
       </div>
 
-      <button
-        type="button"
-        onClick={openGoogleTranslate}
-        style={styles.googleTranslateButton}
-        title="Abrir Google Tradutor: inglês para português"
-        aria-label="Abrir Google Tradutor: inglês para português"
-      >
-        <span aria-hidden="true">🇺🇸 🇧🇷</span>
-        <span>Abrir Google Tradutor</span>
-      </button>
+      {!isAutomatic && (
+        <button
+          type="button"
+          onClick={onNext}
+          style={styles.primaryButton}
+        >
+          Próximo →
+        </button>
+      )}
+
+      {!isAutomatic && (
+        <button
+          type="button"
+          onClick={openGoogleTranslate}
+          style={styles.googleTranslateButton}
+          title="Abrir Google Tradutor: inglês para português"
+          aria-label="Abrir Google Tradutor: inglês para português"
+        >
+          <span aria-hidden="true">🇺🇸 🇧🇷</span>
+          <span>Abrir Google Tradutor</span>
+        </button>
+      )}
 
       {isAutomatic && (
         <div style={styles.timerArea} aria-live="polite">
@@ -159,15 +196,6 @@ export function SpeakingGamePlayStep({
           ■ Parar
         </button>
 
-        {!isAutomatic && (
-          <button
-            type="button"
-            onClick={onNext}
-            style={styles.primaryButton}
-          >
-            Próximo →
-          </button>
-        )}
       </footer>
     </section>
   );
@@ -306,6 +334,15 @@ const styles: Record<string, CSSProperties> = {
     fontWeight: 700,
     color: "#475569"
   },
+  sentenceMode: {
+    padding: "0.4rem 0.8rem",
+    borderRadius: "999px",
+    background: "#dbeafe",
+    fontSize: "clamp(1rem, 4.5vw, 1.2rem)",
+    lineHeight: 1.2,
+    letterSpacing: "0.04em",
+    color: "#1d4ed8"
+  },
   challengeForm: {
     fontSize: "clamp(1.35rem, 6vw, 1.9rem)",
     lineHeight: 1.25,
@@ -352,8 +389,9 @@ const styles: Record<string, CSSProperties> = {
     borderTop: "1px solid #e2e8f0"
   },
   primaryButton: {
-    flex: "1 1 8rem",
+    width: "100%",
     minHeight: "3.1rem",
+    margin: "0 0 0.65rem",
     padding: "0.8rem 1rem",
     border: 0,
     borderRadius: "12px",
