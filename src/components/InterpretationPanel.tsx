@@ -141,6 +141,7 @@ export function InterpretationPanel({
   const [exportJson, setExportJson] = useState<string | null>(null);
   const [exportFileName, setExportFileName] = useState<string>("");
   const [copyFeedback, setCopyFeedback] = useState("Copiar JSON");
+  const [hqCopyFeedback, setHqCopyFeedback] = useState("📋 HQ");
   const [speaking, setSpeaking] = useState(false);
   const [speakingParagraphIndex, setSpeakingParagraphIndex] =
     useState<number | null>(null);
@@ -315,6 +316,7 @@ export function InterpretationPanel({
     setSpeaking(false);
     setSpeakingParagraphIndex(null);
     setExportJson(null);
+    setHqCopyFeedback("📋 HQ");
     setSearchOpen(false);
   }
 
@@ -583,6 +585,116 @@ export function InterpretationPanel({
       );
 
       setCopyFeedback("Não foi possível copiar");
+    }
+  }
+
+  async function handleCopyLocalStoryForHq() {
+    if (!story || story.source !== "local") {
+      return;
+    }
+
+    const generationPrompt = [
+      "Você receberá no objeto story deste JSON uma história bilíngue PT-BR/EN-US. Use esse objeto como fonte única e obrigatória.",
+      "",
+      "OBJETIVO",
+      "Crie uma HQ educacional bilíngue, visualmente profissional, baseada exatamente na história fornecida. O resultado final deve ser uma imagem PNG única, vertical, contendo todas as cenas na ordem original.",
+      "",
+      "REGRAS DE CONTEÚDO",
+      "1. Não reescreva, resuma, corrija, traduza novamente nem invente trechos. Preserve literalmente titlePt, titleEn e todos os textos pt/en.",
+      "2. Cada item de paragraphs corresponde a uma cena/quadro da HQ e deve aparecer exatamente na mesma ordem.",
+      "3. Mantenha personagens, idade aparente, roupas, características físicas, cenários e objetos visualmente consistentes entre todas as cenas.",
+      "4. Represente com clareza a ação, emoção e contexto de cada parágrafo, sem adicionar acontecimentos que contradigam a história.",
+      "",
+      "DIREÇÃO VISUAL",
+      "5. Crie uma HQ moderna, limpa, cinematográfica, semi-realista, expressiva e apropriada para material educacional.",
+      "6. Use uma composição vertical em alta resolução, com todos os quadros organizados de forma clara, equilibrada e fácil de acompanhar.",
+      "7. Use enquadramentos variados, boa narrativa visual, expressões faciais naturais e continuidade visual entre as cenas. Evite aparência de banco de imagens.",
+      "8. Cada quadro deve ter espaço suficiente para a ilustração e para os textos bilíngues sem comprometer a legibilidade.",
+      "",
+      "TEXTOS NA HQ",
+      "9. Inclua em cada cena o texto PT-BR EXATO e, logo abaixo, o texto EN-US EXATO fornecidos no JSON.",
+      "10. Não altere nenhuma palavra. Preserve acentos, pontuação, apóstrofos, contrações e capitalização exatamente como recebidos.",
+      "11. Diferencie visualmente PT-BR e EN-US. Mantenha o português em cor neutra/escura e destaque o inglês em azul.",
+      "12. Use tipografia grande, limpa e altamente legível. Não deixe texto cortado, sobreposto, deformado ou fora dos quadros.",
+      "13. Inclua titlePt e titleEn no topo da HQ e informe discretamente o nível de inglês.",
+      "",
+      "QUALIDADE E VALIDAÇÃO",
+      "14. A imagem final deve conter todas as cenas. Não omita, combine ou reordene cenas.",
+      "15. Antes de finalizar, confira cena por cena se o texto PT-BR e EN-US está completo e corresponde literalmente ao JSON.",
+      "16. Se a quantidade de cenas exigir mais espaço, aumente a altura/composição da imagem em vez de reduzir o texto a um tamanho ilegível.",
+      "17. Não inclua marcas d'água, logotipos de terceiros, explicações extras, exercícios ou conteúdo que não esteja na história.",
+      "",
+      "ENTREGÁVEL",
+      "18. Gere e entregue a HQ final exclusivamente como uma única imagem PNG vertical em alta resolução. Não gere PDF nem qualquer outro formato de documento.",
+      "19. O nome do arquivo PNG final é obrigatório e deve ser exatamente o valor de story.id acrescido da extensão .png: <story.id>.png.",
+      "20. Use story.id como única fonte de verdade para o nome do arquivo. Ignore suggestedBaseName ou qualquer outro campo para definir o nome do arquivo.",
+      "21. Não adicione ao nome do arquivo sufixos ou prefixos como -hq, -comic, -final, datas, horários, UUIDs adicionais ou qualquer outro texto.",
+      "22. Antes de entregar, valide que o nome do arquivo corresponde exatamente a `${story.id}.png`.",
+      "23. Execute a geração da imagem nesta conversa. Não responda apenas com roteiro, instruções, descrição da HQ ou um novo prompt."
+    ].join("\n");
+
+    const payload = {
+      task: "generate_bilingual_comic_image",
+      source: "Mental Hashmap - Brazilian English Journey",
+      story: {
+        id: story.id,
+        englishLevel,
+        titlePt: story.titlePt,
+        titleEn: story.titleEn,
+        paragraphs: story.paragraphs.map((paragraph, index) => ({
+          scene: index + 1,
+          pt: paragraph.pt,
+          en: paragraph.en
+        }))
+      },
+      output: {
+        comicStyle: "modern educational comic, cinematic, semi-realistic",
+        imageFormat: "PNG",
+        documentFormat: null,
+        layout: "single vertical comic image",
+        fileName: `${story.id}.png`,
+        fileNameSource: "story.id",
+        fileNameRule: "The final PNG filename must be exactly <story.id>.png. Do not add prefixes, suffixes, timestamps or extra identifiers."
+      },
+      prompt: generationPrompt
+    };
+
+    const json = JSON.stringify(payload, null, 2);
+
+    try {
+      if (
+        navigator.clipboard &&
+        typeof navigator.clipboard.writeText === "function"
+      ) {
+        await navigator.clipboard.writeText(json);
+      } else {
+        const textArea = document.createElement("textarea");
+
+        textArea.value = json;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-9999px";
+        textArea.style.top = "0";
+
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        const copied = document.execCommand("copy");
+        textArea.remove();
+
+        if (!copied) {
+          throw new Error("O navegador não permitiu copiar o JSON da HQ.");
+        }
+      }
+
+      setHqCopyFeedback("✓ Copiado");
+    } catch (error) {
+      console.error(
+        "[InterpretationPanel] Erro ao copiar história para geração de HQ:",
+        error
+      );
+
+      setHqCopyFeedback("Erro ao copiar");
     }
   }
 
@@ -1378,6 +1490,30 @@ export function InterpretationPanel({
                   <rect x="6" y="14" width="12" height="8" />
                 </svg>
               </button>
+
+              {story.source === "local" && (
+                <button
+                  type="button"
+                  className="secondary-button"
+                  onClick={handleCopyLocalStoryForHq}
+                  title="Copiar história e prompt para gerar HQ"
+                  aria-label="Copiar história e prompt para gerar HQ"
+                  style={{
+                    minWidth: "3.5rem",
+                    height: "3rem",
+                    minHeight: "3rem",
+                    padding: "0 0.7rem",
+                    borderRadius: "999px",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                    whiteSpace: "nowrap"
+                  }}
+                >
+                  {hqCopyFeedback}
+                </button>
+              )}
 
               {story.source === "local" &&
                 Boolean(story.hqImage?.trim()) && (
