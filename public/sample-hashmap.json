@@ -4625,29 +4625,59 @@
       "related": [],
       "englishLevel": "A2"
     },
+{
+  "id": "para-alguem-fazer-algo",
+  "intention": "Para alguém fazer algo",
+  "english": "for someone to + verb",
+  "pattern": "for + someone + to + verb",
+  "description": "Indica agente de uma ação em construção infinitiva.",
+  "category": "infinitive-patterns",
+  "searchTerms": [
+    "para alguém fazer",
+    "for someone to",
+    "para ele fazer",
+    "para ela fazer",
+    "para você fazer"
+  ],
+  "examples": [
     {
-      "id": "para-alguem-fazer-algo",
-      "intention": "Para alguém fazer algo",
-      "english": "for someone to + verb",
-      "pattern": "for + someone + to + verb",
-      "description": "Indica agente de uma ação em construção infinitiva.",
-      "category": "infinitive-patterns",
-      "searchTerms": [],
-      "examples": [
-        {
-          "pt": "Quanto tempo leva para o YouTube aprovar um canal?",
-          "en": "How long does it take for YouTube to approve a channel?",
-          "ptIntent": "Quanto",
-          "enIntent": "How"
-        }
-      ],
-      "tags": [
-        "infinitive",
-        "agent"
-      ],
-      "related": [],
-      "englishLevel": "B2"
+      "pt": "Quanto tempo leva para o YouTube aprovar um canal?",
+      "en": "How long does it take for YouTube to approve a channel?",
+      "ptIntent": "para o YouTube aprovar",
+      "enIntent": "for YouTube to approve"
     },
+    {
+      "pt": "É importante para você entender isso.",
+      "en": "It's important for you to understand this.",
+      "ptIntent": "para você entender",
+      "enIntent": "for you to understand"
+    },
+    {
+      "pt": "Estou esperando meu filho chegar.",
+      "en": "I'm waiting for my son to arrive.",
+      "ptIntent": "meu filho chegar",
+      "enIntent": "for my son to arrive"
+    },
+    {
+      "pt": "Seria melhor para ela falar com o gerente.",
+      "en": "It would be better for her to talk to the manager.",
+      "ptIntent": "para ela falar",
+      "enIntent": "for her to talk"
+    },
+    {
+      "pt": "Há espaço suficiente para todos se sentarem.",
+      "en": "There's enough room for everyone to sit down.",
+      "ptIntent": "para todos se sentarem",
+      "enIntent": "for everyone to sit down"
+    }
+  ],
+  "tags": [
+    "infinitive",
+    "agent"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
     {
       "id": "por-quanto-tempo-ate-quando",
       "intention": "Por quanto tempo / até quando...?",
@@ -8413,6 +8443,18 @@
       ],
       "examples": [
         {
+          "pt": "Com o tempo, essa estratégia se mostrou eficaz.",
+          "en": "Over time, this strategy proved effective.",
+          "ptIntent": "Com o tempo",
+          "enIntent": "Over time"
+        },
+        {
+          "pt": "Com o tempo, comecei a pensar diretamente em inglês.",
+          "en": "Over time, I started thinking directly in English.",
+          "ptIntent": "Com o tempo",
+          "enIntent": "Over time"
+        },
+        {
           "pt": "Você vai melhorar com o tempo.",
           "en": "You'll get better over time.",
           "ptIntent": "com o tempo",
@@ -8624,43 +8666,6 @@
         "over-a-long-period"
       ],
       "englishLevel": "B2"
-    },
-    {
-      "id": "over-time-discourse",
-      "intention": "Com o tempo... (conector discursivo)",
-      "english": "over time, + clause",
-      "pattern": "over time, + clause",
-      "description": "Usado no início da frase para introduzir uma conclusão ou resultado que se tornou verdadeiro gradualmente.",
-      "category": "time-discourse",
-      "searchTerms": [
-        "com o tempo",
-        "ao longo do tempo",
-        "over time"
-      ],
-      "examples": [
-        {
-          "pt": "Com o tempo, essa estratégia se mostrou eficaz.",
-          "en": "Over time, this strategy proved effective.",
-          "ptIntent": "Com o tempo",
-          "enIntent": "Over time"
-        },
-        {
-          "pt": "Com o tempo, comecei a pensar diretamente em inglês.",
-          "en": "Over time, I started thinking directly in English.",
-          "ptIntent": "Com o tempo",
-          "enIntent": "Over time"
-        }
-      ],
-      "tags": [
-        "time",
-        "discourse",
-        "gradual-change"
-      ],
-      "related": [
-        "over-time",
-        "little-by-little"
-      ],
-      "englishLevel": "B1"
     },
     {
       "id": "little-by-little",
@@ -20891,7 +20896,390 @@
       "ate-mesmo-inclusive-even"
     ],
     "englishLevel": "A2"
-  }
+  },
+  {
+  "id": "era-uma-vez-once-upon-a-time",
+  "intention": "Era uma vez...",
+  "english": "Once upon a time...",
+  "pattern": "once upon a time + past clause",
+  "description": "Expressão tradicional usada para iniciar histórias, contos e narrativas, geralmente situando os acontecimentos em um passado distante ou indefinido.",
+  "category": "chunk",
+  "searchTerms": [
+    "era uma vez",
+    "once upon a time",
+    "história",
+    "conto",
+    "narrativa"
+  ],
+  "examples": [
+    {
+      "pt": "Era uma vez um rei que vivia em um grande castelo.",
+      "en": "Once upon a time, there was a king who lived in a great castle.",
+      "ptIntent": "Era uma vez",
+      "enIntent": "Once upon a time"
+    },
+    {
+      "pt": "Era uma vez uma menina que sonhava em viajar pelo mundo.",
+      "en": "Once upon a time, there was a girl who dreamed of traveling the world.",
+      "ptIntent": "Era uma vez",
+      "enIntent": "Once upon a time"
+    },
+    {
+      "pt": "Era uma vez uma pequena vila cercada por montanhas.",
+      "en": "Once upon a time, there was a small village surrounded by mountains.",
+      "ptIntent": "Era uma vez",
+      "enIntent": "Once upon a time"
+    },
+    {
+      "pt": "Era uma vez um homem que decidiu mudar completamente sua vida.",
+      "en": "Once upon a time, there was a man who decided to completely change his life.",
+      "ptIntent": "Era uma vez",
+      "enIntent": "Once upon a time"
+    }
+  ],
+  "tags": [
+    "storytelling",
+    "narrative",
+    "past",
+    "opening"
+  ],
+  "related": [],
+  "englishLevel": "A2"
+},
+  {
+    "id": "de-alguma-forma-somehow-6b51f9f4-38dd-4d12-a79e-d7c8410fbc91",
+    "intention": "De alguma forma / De algum jeito",
+    "english": "somehow",
+    "pattern": "somehow + clause / clause + somehow",
+    "description": "Indica que algo acontece ou será feito de uma maneira que não é conhecida, especificada ou importante.",
+    "category": "adverb",
+    "searchTerms": [
+      "de alguma forma",
+      "de algum jeito",
+      "somehow"
+    ],
+    "examples": [
+      {
+        "pt": "De alguma forma, conseguimos resolver o problema.",
+        "en": "Somehow, we managed to solve the problem.",
+        "ptIntent": "De alguma forma",
+        "enIntent": "Somehow"
+      },
+      {
+        "pt": "Vou dar um jeito de fazer isso funcionar.",
+        "en": "I'll make it work somehow.",
+        "ptIntent": "dar um jeito",
+        "enIntent": "somehow"
+      },
+      {
+        "pt": "De algum jeito, precisamos terminar isso hoje.",
+        "en": "Somehow, we need to finish this today.",
+        "ptIntent": "De algum jeito",
+        "enIntent": "Somehow"
+      }
+    ],
+    "tags": [
+      "adverb",
+      "indefinite",
+      "some"
+    ],
+    "related": [],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "em-algum-lugar-somewhere-3a44c0f5-6e63-46c0-85de-fdbfd63249d1",
+    "intention": "Em algum lugar",
+    "english": "somewhere",
+    "pattern": "somewhere / somewhere + place",
+    "description": "Indica um lugar não conhecido, não especificado ou que não é importante identificar.",
+    "category": "adverb",
+    "searchTerms": [
+      "em algum lugar",
+      "algum lugar",
+      "somewhere"
+    ],
+    "examples": [
+      {
+        "pt": "Deixei minhas chaves em algum lugar da casa.",
+        "en": "I left my keys somewhere in the house.",
+        "ptIntent": "em algum lugar",
+        "enIntent": "somewhere"
+      },
+      {
+        "pt": "Quero morar em algum lugar perto da praia.",
+        "en": "I want to live somewhere near the beach.",
+        "ptIntent": "em algum lugar",
+        "enIntent": "somewhere"
+      },
+      {
+        "pt": "Vamos a algum lugar tranquilo.",
+        "en": "Let's go somewhere quiet.",
+        "ptIntent": "a algum lugar",
+        "enIntent": "somewhere"
+      }
+    ],
+    "tags": [
+      "adverb",
+      "place",
+      "indefinite",
+      "some"
+    ],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "um-pouco-ate-certo-ponto-somewhat-c2c705d2-f312-4594-a817-35f71c76f2c3",
+    "intention": "Um pouco / Um tanto / Até certo ponto",
+    "english": "somewhat",
+    "pattern": "somewhat + adjective/adverb",
+    "description": "Indica grau moderado. É usado com o sentido de 'um pouco', 'um tanto' ou 'até certo ponto'.",
+    "category": "adverb",
+    "searchTerms": [
+      "um pouco",
+      "um tanto",
+      "até certo ponto",
+      "somewhat"
+    ],
+    "examples": [
+      {
+        "pt": "Estou um pouco preocupado com isso.",
+        "en": "I'm somewhat worried about it.",
+        "ptIntent": "um pouco",
+        "enIntent": "somewhat"
+      },
+      {
+        "pt": "A situação é um tanto complicada.",
+        "en": "The situation is somewhat complicated.",
+        "ptIntent": "um tanto",
+        "enIntent": "somewhat"
+      },
+      {
+        "pt": "Fiquei um pouco surpreso com a resposta.",
+        "en": "I was somewhat surprised by the answer.",
+        "ptIntent": "um pouco",
+        "enIntent": "somewhat"
+      }
+    ],
+    "tags": [
+      "adverb",
+      "degree",
+      "some"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "alguem-someone-somebody-e37a31b4-9cc1-43c0-9e23-d702606b5cb6",
+    "intention": "Alguém",
+    "english": "someone / somebody",
+    "pattern": "someone/somebody + verb",
+    "description": "Refere-se a uma pessoa não identificada ou não especificada.",
+    "category": "pronoun",
+    "searchTerms": [
+      "alguém",
+      "someone",
+      "somebody"
+    ],
+    "examples": [
+      {
+        "pt": "Alguém está na porta.",
+        "en": "Someone is at the door.",
+        "ptIntent": "Alguém",
+        "enIntent": "Someone"
+      },
+      {
+        "pt": "Preciso falar com alguém.",
+        "en": "I need to talk to someone.",
+        "ptIntent": "alguém",
+        "enIntent": "someone"
+      },
+      {
+        "pt": "Alguém me contou sobre isso.",
+        "en": "Somebody told me about it.",
+        "ptIntent": "Alguém",
+        "enIntent": "Somebody"
+      }
+    ],
+    "tags": [
+      "pronoun",
+      "person",
+      "indefinite",
+      "some"
+    ],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "alguma-coisa-something-f53cc0d9-5308-40cf-b49f-0718726c886d",
+    "intention": "Alguma coisa / Algo",
+    "english": "something",
+    "pattern": "something + adjective / verb + something",
+    "description": "Refere-se a uma coisa, ideia ou situação não identificada ou não especificada.",
+    "category": "pronoun",
+    "searchTerms": [
+      "alguma coisa",
+      "algo",
+      "something"
+    ],
+    "examples": [
+      {
+        "pt": "Preciso te contar uma coisa.",
+        "en": "I need to tell you something.",
+        "ptIntent": "uma coisa",
+        "enIntent": "something"
+      },
+      {
+        "pt": "Tem alguma coisa errada.",
+        "en": "There's something wrong.",
+        "ptIntent": "alguma coisa",
+        "enIntent": "something"
+      },
+      {
+        "pt": "Quero comer alguma coisa.",
+        "en": "I want to eat something.",
+        "ptIntent": "alguma coisa",
+        "enIntent": "something"
+      }
+    ],
+    "tags": [
+      "pronoun",
+      "thing",
+      "indefinite",
+      "some"
+    ],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "algum-dia-algum-momento-sometime-9c7a5072-f65d-4970-9ec9-32a97692c764",
+    "intention": "Algum dia / Em algum momento",
+    "english": "sometime",
+    "pattern": "sometime + time expression / verb + sometime",
+    "description": "Indica um momento não especificado, normalmente no passado ou no futuro. Não deve ser confundido com 'sometimes', que significa 'às vezes'.",
+    "category": "adverb",
+    "searchTerms": [
+      "algum dia",
+      "em algum momento",
+      "sometime"
+    ],
+    "examples": [
+      {
+        "pt": "Vamos tomar um café algum dia.",
+        "en": "Let's have coffee sometime.",
+        "ptIntent": "algum dia",
+        "enIntent": "sometime"
+      },
+      {
+        "pt": "Quero visitar a Inglaterra algum dia.",
+        "en": "I want to visit England sometime.",
+        "ptIntent": "algum dia",
+        "enIntent": "sometime"
+      },
+      {
+        "pt": "Ele chegou em algum momento durante a noite.",
+        "en": "He arrived sometime during the night.",
+        "ptIntent": "em algum momento",
+        "enIntent": "sometime"
+      }
+    ],
+    "tags": [
+      "adverb",
+      "time",
+      "indefinite",
+      "some"
+    ],
+    "related": [],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "as-vezes-sometimes-62a04145-9c4e-49ae-8512-30556a25cc68",
+    "intention": "Às vezes",
+    "english": "sometimes",
+    "pattern": "sometimes + clause / subject + sometimes + verb",
+    "description": "Indica que algo acontece ocasionalmente, mas não sempre.",
+    "category": "adverb",
+    "searchTerms": [
+      "às vezes",
+      "de vez em quando",
+      "sometimes"
+    ],
+    "examples": [
+      {
+        "pt": "Às vezes eu estudo inglês antes de dormir.",
+        "en": "Sometimes I study English before bed.",
+        "ptIntent": "Às vezes",
+        "enIntent": "Sometimes"
+      },
+      {
+        "pt": "Eu às vezes esqueço palavras simples.",
+        "en": "I sometimes forget simple words.",
+        "ptIntent": "às vezes",
+        "enIntent": "sometimes"
+      },
+      {
+        "pt": "Às vezes é difícil continuar motivado.",
+        "en": "Sometimes it's hard to stay motivated.",
+        "ptIntent": "Às vezes",
+        "enIntent": "Sometimes"
+      }
+    ],
+    "tags": [
+      "adverb",
+      "frequency",
+      "some"
+    ],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+  "id": "pegar-no-flagra-catch-someone-red-handed",
+  "intention": "Pegar alguém no flagra / Pegar com a mão na massa",
+  "english": "catch someone red-handed",
+  "pattern": "catch + someone + red-handed",
+  "description": "Usado quando alguém é surpreendido no momento em que está fazendo algo errado, proibido ou desonesto.",
+  "category": "idiom",
+  "searchTerms": [
+    "pegar no flagra",
+    "pegar com a mão na massa",
+    "flagrante",
+    "catch red-handed",
+    "caught red-handed"
+  ],
+  "examples": [
+    {
+      "pt": "Ela pegou o marido no flagra.",
+      "en": "She caught her husband red-handed.",
+      "ptIntent": "pegou o marido no flagra",
+      "enIntent": "caught her husband red-handed"
+    },
+    {
+      "pt": "O professor pegou o aluno no flagra colando na prova.",
+      "en": "The teacher caught the student red-handed cheating on the test.",
+      "ptIntent": "pegou o aluno no flagra",
+      "enIntent": "caught the student red-handed"
+    },
+    {
+      "pt": "Eles foram pegos no flagra roubando dinheiro.",
+      "en": "They were caught red-handed stealing money.",
+      "ptIntent": "pegos no flagra",
+      "enIntent": "caught red-handed"
+    },
+    {
+      "pt": "Eu peguei meu filho no flagra comendo chocolate antes do jantar.",
+      "en": "I caught my son red-handed eating chocolate before dinner.",
+      "ptIntent": "peguei meu filho no flagra",
+      "enIntent": "caught my son red-handed"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "flagrante",
+    "wrongdoing",
+    "caught"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+}
 
   ]
 }
