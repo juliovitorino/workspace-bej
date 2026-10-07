@@ -23573,6 +23573,81 @@
   ],
   "related": [],
   "englishLevel": "A2"
+},
+{
+  "id": "e-longe-daqui-ate-how-far-is-it-from-here-to-8c4e2f71-6a93-4d58-b120-7f3a91c5e642",
+  "intention": "É longe daqui até o/a...?",
+  "english": "How far is it from here to...?",
+  "pattern": "How far + is it + from here + to + place?",
+  "description": "Usado para perguntar qual é a distância entre o lugar onde você está e outro local. Em português brasileiro, a intenção frequentemente surge naturalmente como 'É longe daqui até...?' ou 'Qual é a distância daqui até...?'.",
+  "category": "question",
+  "searchTerms": [
+    "é longe daqui",
+    "é longe daqui até",
+    "qual a distância daqui",
+    "qual é a distância daqui até",
+    "daqui até",
+    "how far",
+    "how far is it",
+    "how far is it from here",
+    "how far is it from here to"
+  ],
+  "examples": [
+    {
+      "pt": "É longe daqui até o aeroporto?",
+      "en": "How far is it from here to the airport?",
+      "ptIntent": "É longe daqui até",
+      "enIntent": "How far is it from here to"
+    },
+    {
+      "pt": "É longe daqui até o centro da cidade?",
+      "en": "How far is it from here to downtown?",
+      "ptIntent": "É longe daqui até",
+      "enIntent": "How far is it from here to"
+    },
+    {
+      "pt": "É longe daqui até a estação de trem?",
+      "en": "How far is it from here to the train station?",
+      "ptIntent": "É longe daqui até",
+      "enIntent": "How far is it from here to"
+    },
+    {
+      "pt": "É longe daqui até o hotel?",
+      "en": "How far is it from here to the hotel?",
+      "ptIntent": "É longe daqui até",
+      "enIntent": "How far is it from here to"
+    },
+    {
+      "pt": "É longe daqui até a praia?",
+      "en": "How far is it from here to the beach?",
+      "ptIntent": "É longe daqui até",
+      "enIntent": "How far is it from here to"
+    },
+    {
+      "pt": "É longe daqui até o shopping?",
+      "en": "How far is it from here to the mall?",
+      "ptIntent": "É longe daqui até",
+      "enIntent": "How far is it from here to"
+    },
+    {
+      "pt": "É longe daqui até a sua casa?",
+      "en": "How far is it from here to your house?",
+      "ptIntent": "É longe daqui até",
+      "enIntent": "How far is it from here to"
+    }
+  ],
+  "tags": [
+    "question",
+    "how far",
+    "distance",
+    "from here",
+    "directions",
+    "places",
+    "travel",
+    "high-frequency"
+  ],
+  "related": [],
+  "englishLevel": "A1"
 }
   ]
 }

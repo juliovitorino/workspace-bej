@@ -383,6 +383,26 @@ export function BasicTraining({
     }
   }
 
+  function handleClearStudentText() {
+    setStudentText("");
+    setCopyStatus("idle");
+    setEvaluation(null);
+    setEvaluationError(null);
+    setGoogleTranslation(null);
+    setTranslationError(null);
+    setSpeechError(null);
+    setSpeaking(false);
+    setEvaluationSpeaking(null);
+    setDictationError(null);
+    recognitionRef.current?.abort();
+    recognitionRef.current = null;
+    setDictating(false);
+
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
+    }
+  }
+
   async function handleCopyStudentText() {
     const textToCopy = studentText.trim();
 
@@ -782,6 +802,46 @@ export function BasicTraining({
               <label htmlFor="basic-training-answer" style={{ margin: 0 }}>
                 Escreva (Dite) sua frase
               </label>
+
+              {studentText.length > 0 && (
+                <button
+                  type="button"
+                  className="secondary-button"
+                  onClick={handleClearStudentText}
+                  title="Limpar frase"
+                  aria-label="Limpar frase"
+                  style={{
+                    width: "2.25rem",
+                    minWidth: "2.25rem",
+                    height: "2.25rem",
+                    minHeight: "2.25rem",
+                    padding: 0,
+                    borderRadius: "999px",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0
+                  }}
+                >
+                  <svg
+                    aria-hidden="true"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M3 6h18" />
+                    <path d="M8 6V4h8v2" />
+                    <path d="M19 6l-1 14H6L5 6" />
+                    <path d="M10 11v5" />
+                    <path d="M14 11v5" />
+                  </svg>
+                </button>
+              )}
 
               {showDictationButton && (
                 <button
