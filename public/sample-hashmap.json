@@ -15947,25 +15947,29 @@
       "pt": "Quero terminar isso de uma vez por todas.",
       "en": "I want to finish this once and for all.",
       "ptIntent": "de uma vez por todas",
-      "enIntent": "once and for all"
+      "enIntent": "once and for all",
+      "hqImage": "/images/hq/b1/de-uma-vez-por-todas-once-and-for-all-02.png"
     },
     {
       "pt": "Vamos esclarecer isso de uma vez por todas.",
       "en": "Let's clear this up once and for all.",
       "ptIntent": "de uma vez por todas",
-      "enIntent": "once and for all"
+      "enIntent": "once and for all",
+      "hqImage": "/images/hq/b1/de-uma-vez-por-todas-once-and-for-all-03.png"
     },
     {
       "pt": "Ela decidiu abandonar esse hábito de uma vez por todas.",
       "en": "She decided to quit that habit once and for all.",
       "ptIntent": "de uma vez por todas",
-      "enIntent": "once and for all"
+      "enIntent": "once and for all",
+      "hqImage": "/images/hq/b1/de-uma-vez-por-todas-once-and-for-all-04.png"
     },
     {
       "pt": "Está na hora de resolver essa situação de uma vez por todas.",
       "en": "It's time to deal with this situation once and for all.",
       "ptIntent": "de uma vez por todas",
-      "enIntent": "once and for all"
+      "enIntent": "once and for all",
+      "hqImage": "/images/hq/b1/de-uma-vez-por-todas-once-and-for-all-05.png"
     }
   ],
   "tags": [
@@ -23421,8 +23425,149 @@
     ],
     "related": [],
     "englishLevel": "B1"
-  }
-
-
+  },
+  {
+  "id": "mais-tempo-more-time-5c8f2a71-3d94-4e62-b817-6a39d5f1c240",
+  "intention": "Mais tempo",
+  "english": "more time",
+  "pattern": "more + time",
+  "description": "Estrutura muito comum usada para expressar uma quantidade adicional de tempo. Pode ser combinada com verbos como need, have, want, spend, give e take para falar sobre precisar, ter, querer, passar ou conceder mais tempo.",
+  "category": "chunk",
+  "searchTerms": [
+    "mais tempo",
+    "um pouco mais de tempo",
+    "precisar de mais tempo",
+    "ter mais tempo",
+    "passar mais tempo",
+    "dar mais tempo",
+    "more time"
+  ],
+  "examples": [
+    {
+      "pt": "Preciso de mais tempo.",
+      "en": "I need more time.",
+      "ptIntent": "mais tempo",
+      "enIntent": "more time"
+    },
+    {
+      "pt": "Queria ter mais tempo para estudar inglês.",
+      "en": "I wish I had more time to study English.",
+      "ptIntent": "mais tempo",
+      "enIntent": "more time"
+    },
+    {
+      "pt": "Precisamos passar mais tempo juntos.",
+      "en": "We need to spend more time together.",
+      "ptIntent": "mais tempo",
+      "enIntent": "more time"
+    },
+    {
+      "pt": "Você pode me dar mais tempo?",
+      "en": "Can you give me more time?",
+      "ptIntent": "mais tempo",
+      "enIntent": "more time"
+    },
+    {
+      "pt": "Se eu tivesse mais tempo, viajaria mais.",
+      "en": "If I had more time, I would travel more.",
+      "ptIntent": "mais tempo",
+      "enIntent": "more time"
+    },
+    {
+      "pt": "Eu gostaria de passar mais tempo praticando conversação.",
+      "en": "I'd like to spend more time practicing conversation.",
+      "ptIntent": "mais tempo",
+      "enIntent": "more time"
+    },
+    {
+      "pt": "Isso vai levar mais tempo do que eu esperava.",
+      "en": "This is going to take more time than I expected.",
+      "ptIntent": "mais tempo",
+      "enIntent": "more time"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "time",
+    "quantity",
+    "more",
+    "high-frequency",
+    "conversation"
+  ],
+  "related": [],
+  "englishLevel": "A1"
+},
+{
+  "id": "por-mais-tempo-longer-7e4a91c2-5d83-46f7-b120-9c3a68d5e241",
+  "intention": "Por mais tempo / Mais tempo",
+  "english": "longer",
+  "pattern": "verb + longer",
+  "description": "Usado para dizer que uma ação ou situação continua por um período maior de tempo. Em português, frequentemente corresponde a 'por mais tempo' ou simplesmente 'mais tempo'. Diferentemente de 'more time', que trata o tempo como uma quantidade, 'longer' compara a duração de uma ação ou situação.",
+  "category": "chunk",
+  "searchTerms": [
+    "por mais tempo",
+    "mais tempo",
+    "ficar mais tempo",
+    "esperar mais tempo",
+    "dormir mais tempo",
+    "trabalhar mais tempo",
+    "longer",
+    "stay longer"
+  ],
+  "examples": [
+    {
+      "pt": "Queria que você tivesse ficado mais tempo.",
+      "en": "I wish you had stayed longer.",
+      "ptIntent": "mais tempo",
+      "enIntent": "longer"
+    },
+    {
+      "pt": "Você pode ficar mais tempo?",
+      "en": "Can you stay longer?",
+      "ptIntent": "ficar mais tempo",
+      "enIntent": "stay longer"
+    },
+    {
+      "pt": "Eu queria dormir mais tempo.",
+      "en": "I wanted to sleep longer.",
+      "ptIntent": "dormir mais tempo",
+      "enIntent": "sleep longer"
+    },
+    {
+      "pt": "Não posso esperar mais tempo.",
+      "en": "I can't wait any longer.",
+      "ptIntent": "esperar mais tempo",
+      "enIntent": "wait any longer"
+    },
+    {
+      "pt": "Precisamos trabalhar mais tempo hoje.",
+      "en": "We need to work longer today.",
+      "ptIntent": "trabalhar mais tempo",
+      "enIntent": "work longer"
+    },
+    {
+      "pt": "Ela decidiu ficar mais tempo na cidade.",
+      "en": "She decided to stay longer in the city.",
+      "ptIntent": "ficar mais tempo",
+      "enIntent": "stay longer"
+    },
+    {
+      "pt": "Eu gostaria de conversar com você por mais tempo.",
+      "en": "I'd like to talk to you longer.",
+      "ptIntent": "por mais tempo",
+      "enIntent": "longer"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "longer",
+    "time",
+    "duration",
+    "comparative",
+    "high-frequency"
+  ],
+  "related": [],
+  "englishLevel": "A2"
+}
   ]
 }
