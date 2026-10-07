@@ -11486,13 +11486,15 @@
           "pt": "Precisamos abrir espaço para mais uma pessoa.",
           "en": "We need to make room for one more person.",
           "ptIntent": "abrir espaço",
-          "enIntent": "make room"
+          "enIntent": "make room",
+          "hqImage":"/images/hq/b1/make-room-01.jpg"
         },
         {
           "pt": "Estou tentando abrir espaço na minha agenda.",
           "en": "I'm trying to make room in my schedule.",
           "ptIntent": "abrir espaço",
-          "enIntent": "make room"
+          "enIntent": "make room",
+          "hqImage":"/images/hq/b1/make-room-02.png"
         }
       ],
       "tags": [
@@ -22501,19 +22503,22 @@
         "pt": "A que distância fica sua casa daqui?",
         "en": "How far is your house from here?",
         "ptIntent": "A que distância",
-        "enIntent": "How far"
+        "enIntent": "How far",
+        "hqImage": "/images/hq/a1/perguntar-qual-a-distancia-how-far-a63f18d5-4b72-49c1-852e-97d36a5f2048-01.png"
       },
       {
         "pt": "É longe daqui até o aeroporto?",
         "en": "How far is it from here to the airport?",
         "ptIntent": "É longe",
-        "enIntent": "How far"
+        "enIntent": "How far",
+        "hqImage": "/images/hq/a1/perguntar-qual-a-distancia-how-far-a63f18d5-4b72-49c1-852e-97d36a5f2048-02.png"
       },
       {
         "pt": "A que distância fica o hotel da praia?",
         "en": "How far is the hotel from the beach?",
         "ptIntent": "A que distância",
-        "enIntent": "How far"
+        "enIntent": "How far",
+        "hqImage": "/images/hq/a1/perguntar-qual-a-distancia-how-far-a63f18d5-4b72-49c1-852e-97d36a5f2048-03.jpg"
       }
     ],
     "tags": ["question", "how-far", "distance"],

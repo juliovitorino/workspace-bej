@@ -271,9 +271,11 @@ export function IntentionDetails({
 **${sentence}**
 
 Mandatório:
-- Crie uma história HQ em proporção A4 vertical (210 × 297 mm), mantendo todo o conteúdo dentro da área segura para impressão.
-- não coloque tradução pt-br
-- destaque o termo "${intention}"`;
+- Crie uma história HQ em proporção A4 vertical (210 × 297 mm), mantendo todo o conteúdo dentro da área segura para impressão;
+- faça uma variação do personagem, por exemplo: criança, homem ou mulher (jovem, mais maduro, com ou sem barba, cabelos variados); 
+- seja criativo nos ambientes de acordo com a frase;
+- não coloque tradução pt-br;
+- destaque o termo "${intention}" em toda a história;`;
 
     try {
       if (navigator.clipboard?.writeText) {
