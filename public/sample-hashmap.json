@@ -5,8 +5,8 @@
     "updatedAt": "2026-09-11",
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
-    "sourceBuild": "v.46.31.9.20260922.1447",
-    "totalIntentions": 490
+    "sourceBuild": "v.46.32.9.20261006.1753",
+    "totalIntentions": 626
   },
   "mentalMap": [
     {
@@ -5786,7 +5786,11 @@
       "pattern": "there’s no point in + ing",
       "description": "Indica inutilidade de uma ação.",
       "category": "micro-nuance",
-      "searchTerms": [],
+      "searchTerms": [
+        "there is no",
+        "não adianta",
+        "não faz sentido"
+      ],
       "examples": [
         {
           "pt": "Não adianta se preocupar com coisas que você não controla.",
@@ -6179,36 +6183,64 @@
       ],
       "related": [],
       "englishLevel": "C1"
+    },{
+  "id": "ser-um-ponto-de-virada-be-a-turning-point-3f7c82a1-5d49-4e16-9b73-8a2c61f4d905",
+  "intention": "Virada de chave / Ser um ponto de virada",
+  "english": "be a turning point",
+  "pattern": "be + a turning point + in/for + something",
+  "description": "Usado para dizer que um acontecimento, decisão ou experiência representa uma mudança decisiva de direção em uma situação, período da vida, carreira ou processo.",
+  "category": "cognitive-metaphors",
+  "searchTerms": [
+    "ser um ponto de virada",
+    "foi um ponto de virada",
+    "ser uma mudança decisiva",
+    "mudar o rumo",
+    "turning point",
+    "be a turning point",
+    "was a turning point",
+    "virada de chave"
+  ],
+  "examples": [
+    {
+      "pt": "Aprender inglês foi a virada de chave na minha vida.",
+      "en": "Learning English was a turning point in my life.",
+      "ptIntent": "foi a virada de chave",
+      "enIntent": "was a turning point"
     },
     {
-      "id": "aquilo-mudou-o-rumo-da-minha-vida",
-      "intention": "Aquilo mudou o rumo da minha vida",
-      "english": "that was a turning point",
-      "pattern": "that was a turning point",
-      "description": "Metáfora para mudança decisiva de direção.",
-      "category": "cognitive-metaphors",
-      "searchTerms": [],
-      "examples": [
-        {
-          "pt": "Aprender inglês foi um ponto de virada na minha vida.",
-          "en": "Learning English was a turning point in my life.",
-          "ptIntent": "minha vida",
-          "enIntent": "was a turning point"
-        },
-        {
-          "pt": "Mudar para uma nova cidade foi um ponto de virada na minha carreira.",
-          "en": "Moving to a new city was a turning point in my career.",
-          "ptIntent": "Mudar",
-          "enIntent": "was a turning point"
-        }
-      ],
-      "tags": [
-        "metaphor",
-        "change"
-      ],
-      "related": [],
-      "englishLevel": "B2"
+      "pt": "Mudar para uma nova cidade foi a virada de chave na minha carreira.",
+      "en": "Moving to a new city was a turning point in my career.",
+      "ptIntent": "foi a virada de chave",
+      "enIntent": "was a turning point"
     },
+    {
+      "pt": "Este pode ser um ponto de virada para a empresa.",
+      "en": "This could be a turning point for the company.",
+      "ptIntent": "ser um ponto de virada",
+      "enIntent": "be a turning point"
+    },
+    {
+      "pt": "Conseguir meu primeiro emprego como desenvolvedor foi um ponto de virada para mim.",
+      "en": "Getting my first job as a developer was a turning point for me.",
+      "ptIntent": "foi um ponto de virada",
+      "enIntent": "was a turning point"
+    },
+    {
+      "pt": "Aquela conversa acabou sendo um ponto de virada no nosso relacionamento.",
+      "en": "That conversation turned out to be a turning point in our relationship.",
+      "ptIntent": "ser um ponto de virada",
+      "enIntent": "be a turning point"
+    }
+  ],
+  "tags": [
+    "metaphor",
+    "change",
+    "turning-point",
+    "life-events"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
     {
       "id": "isso-criou-oportunidades",
       "intention": "Isso criou oportunidades",
@@ -19093,7 +19125,8 @@
         "pt": "Comprei algumas coisinhas diversas na loja.",
         "en": "I bought some odds and ends at the store.",
         "ptIntent": "coisinhas diversas",
-        "enIntent": "odds and ends"
+        "enIntent": "odds and ends",
+        "hqImage": "/images/hq/a1/coisas-variadas-aleatorias-odds-and-ends-01.png"
       },
       {
         "pt": "Ainda tenho algumas coisinhas para resolver.",
@@ -20916,25 +20949,29 @@
       "pt": "Era uma vez um rei que vivia em um grande castelo.",
       "en": "Once upon a time, there was a king who lived in a great castle.",
       "ptIntent": "Era uma vez",
-      "enIntent": "Once upon a time"
+      "enIntent": "Once upon a time",
+      "hqImage":"/images/hq/a1/era-uma-vez-once-upon-a-time-01.png"
     },
     {
       "pt": "Era uma vez uma menina que sonhava em viajar pelo mundo.",
       "en": "Once upon a time, there was a girl who dreamed of traveling the world.",
       "ptIntent": "Era uma vez",
-      "enIntent": "Once upon a time"
+      "enIntent": "Once upon a time",
+      "hqImage":"/images/hq/a1/era-uma-vez-once-upon-a-time-02.png"
     },
     {
       "pt": "Era uma vez uma pequena vila cercada por montanhas.",
       "en": "Once upon a time, there was a small village surrounded by mountains.",
       "ptIntent": "Era uma vez",
-      "enIntent": "Once upon a time"
+      "enIntent": "Once upon a time",
+      "hqImage":"/images/hq/a1/era-uma-vez-once-upon-a-time-03.png"
     },
     {
       "pt": "Era uma vez um homem que decidiu mudar completamente sua vida.",
       "en": "Once upon a time, there was a man who decided to completely change his life.",
       "ptIntent": "Era uma vez",
-      "enIntent": "Once upon a time"
+      "enIntent": "Once upon a time",
+      "hqImage":"/images/hq/a1/era-uma-vez-once-upon-a-time-04.png"
     }
   ],
   "tags": [
@@ -21279,7 +21316,2113 @@
   ],
   "related": [],
   "englishLevel": "B1"
-}
+},
+{
+  "id": "de-tudo-um-pouco-a-bit-of-everything-52f85c5e-8319-45d2-91bd-65bc3ea991b7",
+  "intention": "De tudo um pouco",
+  "english": "a bit of everything",
+  "pattern": "a bit of everything",
+  "description": "Usado para dizer que algo envolve, contém ou inclui uma variedade de coisas diferentes, sem se limitar a apenas uma categoria.",
+  "category": "chunk",
+  "searchTerms": [
+    "de tudo um pouco",
+    "um pouco de tudo",
+    "a bit of everything",
+    "variedade",
+    "várias coisas"
+  ],
+  "examples": [
+    {
+      "pt": "Eu faço de tudo um pouco.",
+      "en": "I do a bit of everything.",
+      "ptIntent": "de tudo um pouco",
+      "enIntent": "a bit of everything"
+    },
+    {
+      "pt": "Eu escuto de tudo um pouco.",
+      "en": "I listen to a bit of everything.",
+      "ptIntent": "de tudo um pouco",
+      "enIntent": "a bit of everything"
+    },
+    {
+      "pt": "Meu trabalho envolve de tudo um pouco.",
+      "en": "My job involves a bit of everything.",
+      "ptIntent": "de tudo um pouco",
+      "enIntent": "a bit of everything"
+    },
+    {
+      "pt": "No fim de semana, fizemos de tudo um pouco.",
+      "en": "Over the weekend, we did a bit of everything.",
+      "ptIntent": "de tudo um pouco",
+      "enIntent": "a bit of everything"
+    },
+    {
+      "pt": "Que tipo de comida você gosta? De tudo um pouco.",
+      "en": "What kind of food do you like? A bit of everything.",
+      "ptIntent": "De tudo um pouco",
+      "enIntent": "A bit of everything"
+    }
+  ],
+  "tags": [
+    "variety",
+    "conversation",
+    "quantity",
+    "chunk"
+  ],
+  "related": [
+    "um-pouco-de-tudo-a-little-bit-of-everything-0bb11c37-4095-4f46-a73a-c5c6829483b2"
+  ],
+  "englishLevel": "A2"
+},
+{
+  "id": "um-pouco-de-tudo-a-little-bit-of-everything-0bb11c37-4095-4f46-a73a-c5c6829483b2",
+  "intention": "Um pouco de tudo",
+  "english": "a little bit of everything",
+  "pattern": "a little bit of everything",
+  "description": "Usado para dizer que há, se faz, se conhece ou se experimenta uma pequena quantidade ou variedade de muitas coisas diferentes.",
+  "category": "chunk",
+  "searchTerms": [
+    "um pouco de tudo",
+    "de tudo um pouco",
+    "a little bit of everything",
+    "variedade"
+  ],
+  "examples": [
+    {
+      "pt": "Eu gosto de um pouco de tudo.",
+      "en": "I like a little bit of everything.",
+      "ptIntent": "um pouco de tudo",
+      "enIntent": "a little bit of everything"
+    },
+    {
+      "pt": "No meu trabalho, eu faço um pouco de tudo.",
+      "en": "At work, I do a little bit of everything.",
+      "ptIntent": "um pouco de tudo",
+      "enIntent": "a little bit of everything"
+    },
+    {
+      "pt": "Eu escuto um pouco de tudo.",
+      "en": "I listen to a little bit of everything.",
+      "ptIntent": "um pouco de tudo",
+      "enIntent": "a little bit of everything"
+    },
+    {
+      "pt": "Na festa, nós comemos um pouco de tudo.",
+      "en": "At the party, we ate a little bit of everything.",
+      "ptIntent": "um pouco de tudo",
+      "enIntent": "a little bit of everything"
+    },
+    {
+      "pt": "Quando se trata de tecnologia, eu sei um pouco de tudo.",
+      "en": "When it comes to technology, I know a little bit of everything.",
+      "ptIntent": "um pouco de tudo",
+      "enIntent": "a little bit of everything"
+    }
+  ],
+  "tags": [
+    "quantity",
+    "variety",
+    "conversation",
+    "chunk"
+  ],
+  "related": [],
+  "englishLevel": "A2"
+},
+{
+  "id": "quando-foi-a-ultima-vez-que-voce-when-was-the-last-time-you-4a6d7927-2cf5-47e7-b739-51f40590a942",
+  "intention": "Quando foi a última vez que você...?",
+  "english": "When was the last time you + past...?",
+  "pattern": "When was the last time you + simple past...?",
+  "description": "Usado para perguntar quando uma pessoa fez algo pela última vez. Depois de 'When was the last time you', o verbo normalmente aparece no simple past, como went, traveled, talked, ate ou watched.",
+  "category": "chunk",
+  "searchTerms": [
+    "quando foi a última vez",
+    "quando foi a última vez que você",
+    "última vez",
+    "last time",
+    "when was the last time",
+    "when was the last time you"
+  ],
+  "examples": [
+    {
+      "pt": "Quando foi a última vez que você foi ao cinema?",
+      "en": "When was the last time you went to the movie theater?",
+      "ptIntent": "Quando foi a última vez que você",
+      "enIntent": "When was the last time you"
+    },
+    {
+      "pt": "Quando foi a última vez que você viajou para o exterior?",
+      "en": "When was the last time you traveled abroad?",
+      "ptIntent": "Quando foi a última vez que você",
+      "enIntent": "When was the last time you"
+    },
+    {
+      "pt": "Quando foi a última vez que você conversou com sua mãe?",
+      "en": "When was the last time you talked to your mother?",
+      "ptIntent": "Quando foi a última vez que você",
+      "enIntent": "When was the last time you"
+    },
+    {
+      "pt": "Quando foi a última vez que você comeu pizza?",
+      "en": "When was the last time you ate pizza?",
+      "ptIntent": "Quando foi a última vez que você",
+      "enIntent": "When was the last time you"
+    },
+    {
+      "pt": "Quando foi a última vez que você assistiu a um filme?",
+      "en": "When was the last time you watched a movie?",
+      "ptIntent": "Quando foi a última vez que você",
+      "enIntent": "When was the last time you"
+    },
+    {
+      "pt": "Quando foi a última vez que você saiu com seus amigos?",
+      "en": "When was the last time you went out with your friends?",
+      "ptIntent": "Quando foi a última vez que você",
+      "enIntent": "When was the last time you"
+    },
+    {
+      "pt": "Quando foi a última vez que você falou inglês com alguém?",
+      "en": "When was the last time you spoke English with someone?",
+      "ptIntent": "Quando foi a última vez que você",
+      "enIntent": "When was the last time you"
+    }
+  ],
+  "tags": [
+    "question",
+    "simple-past",
+    "last-time",
+    "small-talk",
+    "conversation",
+    "chunk"
+  ],
+  "related": [],
+  "englishLevel": "A2"
+},
+{
+  "id": "x-de-um-total-de-y-x-out-of-y-7f3a2c91-6d48-4e25-9b71-83c5e1a4f602",
+  "intention": "X de / entre um total de Y",
+  "english": "X out of Y",
+  "pattern": "X + out of + Y",
+  "description": "Usado para expressar que uma quantidade X faz parte, foi selecionada ou obtida de um total Y. É muito comum para resultados, proporções, seleções, avaliações e frequência.",
+  "category": "chunk",
+  "searchTerms": [
+    "x de y",
+    "x entre y",
+    "de um total de",
+    "entre um total de",
+    "do total de",
+    "out of",
+    "x out of y",
+    "proporção",
+    "seleção"
+  ],
+  "examples": [
+    {
+      "pt": "Meu app escolheu 5 intenções entre 155 opções.",
+      "en": "My app picked 5 intentions out of 155 choices.",
+      "ptIntent": "5 intenções entre 155 opções",
+      "enIntent": "5 intentions out of 155 choices"
+    },
+    {
+      "pt": "Acertei 8 de 10 perguntas.",
+      "en": "I got 8 out of 10 questions right.",
+      "ptIntent": "8 de 10 perguntas",
+      "enIntent": "8 out of 10 questions"
+    },
+    {
+      "pt": "Apenas 3 de 20 alunos terminaram o exercício.",
+      "en": "Only 3 out of 20 students finished the exercise.",
+      "ptIntent": "3 de 20 alunos",
+      "enIntent": "3 out of 20 students"
+    },
+    {
+      "pt": "Eu treino 5 dias em 7.",
+      "en": "I work out 5 days out of 7.",
+      "ptIntent": "5 dias em 7",
+      "enIntent": "5 days out of 7"
+    },
+    {
+      "pt": "Nove de dez pessoas recomendaram o produto.",
+      "en": "Nine out of ten people recommended the product.",
+      "ptIntent": "Nove de dez pessoas",
+      "enIntent": "Nine out of ten people"
+    },
+    {
+      "pt": "Só uma de cinco pessoas sabia a resposta.",
+      "en": "Only one out of five people knew the answer.",
+      "ptIntent": "uma de cinco pessoas",
+      "enIntent": "one out of five people"
+    }
+  ],
+  "tags": [
+    "quantity",
+    "proportion",
+    "selection",
+    "frequency",
+    "numbers",
+    "chunk"
+  ],
+  "related": [],
+  "englishLevel": "A2"
+},
+{
+  "id": "escolher-x-entre-y-opcoes-pick-x-out-of-y-choices-2d74f8b1-6c39-4a52-91e7-8f3c65d7a420",
+  "intention": "Escolher X entre Y opções",
+  "english": "pick X out of Y choices",
+  "pattern": "pick + X + out of + Y + choices",
+  "description": "Usado para expressar a ideia de escolher ou selecionar uma quantidade X a partir de um conjunto maior de Y opções disponíveis.",
+  "category": "chunk",
+  "searchTerms": [
+    "escolher entre opções",
+    "escolher x entre y",
+    "selecionar x entre y",
+    "escolher de um total de",
+    "pick out of",
+    "pick x out of y",
+    "pick x out of y choices",
+    "choices"
+  ],
+  "examples": [
+    {
+      "pt": "Meu app escolhe 5 intenções entre 155 opções.",
+      "en": "My app picks 5 intentions out of 155 choices.",
+      "ptIntent": "escolhe 5 intenções entre 155 opções",
+      "enIntent": "picks 5 intentions out of 155 choices"
+    },
+    {
+      "pt": "Você precisa escolher 3 entre 20 opções.",
+      "en": "You need to pick 3 out of 20 choices.",
+      "ptIntent": "escolher 3 entre 20 opções",
+      "enIntent": "pick 3 out of 20 choices"
+    },
+    {
+      "pt": "Eu escolhi 2 entre 10 opções.",
+      "en": "I picked 2 out of 10 choices.",
+      "ptIntent": "escolhi 2 entre 10 opções",
+      "enIntent": "picked 2 out of 10 choices"
+    },
+    {
+      "pt": "Você pode escolher 5 entre 100 opções.",
+      "en": "You can pick 5 out of 100 choices.",
+      "ptIntent": "escolher 5 entre 100 opções",
+      "enIntent": "pick 5 out of 100 choices"
+    },
+    {
+      "pt": "O sistema escolheu 10 entre 200 opções disponíveis.",
+      "en": "The system picked 10 out of 200 available choices.",
+      "ptIntent": "escolheu 10 entre 200 opções disponíveis",
+      "enIntent": "picked 10 out of 200 available choices"
+    }
+  ],
+  "tags": [
+    "selection",
+    "choice",
+    "quantity",
+    "numbers",
+    "out-of",
+    "chunk"
+  ],
+  "related": [
+    "x-de-um-total-de-y-x-out-of-y-7f3a2c91-6d48-4e25-9b71-83c5e1a4f602"
+  ],
+  "englishLevel": "A2"
+},
+{
+  "id": "nao-da-azar-dont-jinx-it-8e5d42c7-3b91-4f68-a2d6-71c9e54b803f",
+  "intention": "Não dá azar! / Não zica!",
+  "english": "Don't jinx it!",
+  "pattern": "Don't jinx it!",
+  "description": "Expressão usada quando alguém fala antecipadamente sobre algo positivo que ainda não aconteceu ou ainda pode dar errado. A ideia é pedir para a pessoa não 'dar azar' ao falar sobre o resultado antes da hora.",
+  "category": "idiom",
+  "searchTerms": [
+    "não dá azar",
+    "não dê azar",
+    "não zica",
+    "não zique",
+    "não fala isso",
+    "não comemora antes da hora",
+    "don't jinx it",
+    "jinx"
+  ],
+  "examples": [
+    {
+      "pt": "Acho que vamos ganhar o jogo. Não dá azar!",
+      "en": "I think we're going to win the game. Don't jinx it!",
+      "ptIntent": "Não dá azar",
+      "enIntent": "Don't jinx it"
+    },
+    {
+      "pt": "Parece que finalmente vai dar tudo certo. Não zica!",
+      "en": "It looks like everything is finally going to work out. Don't jinx it!",
+      "ptIntent": "Não zica",
+      "enIntent": "Don't jinx it"
+    },
+    {
+      "pt": "Acho que vou conseguir o emprego. Não fala isso ainda, você vai dar azar!",
+      "en": "I think I'm going to get the job. Don't say that yet. You'll jinx it!",
+      "ptIntent": "você vai dar azar",
+      "enIntent": "You'll jinx it"
+    },
+    {
+      "pt": "Estamos há três dias sem nenhum problema. Não dá azar!",
+      "en": "We've gone three days without any problems. Don't jinx it!",
+      "ptIntent": "Não dá azar",
+      "enIntent": "Don't jinx it"
+    },
+    {
+      "pt": "Tenho certeza de que o deploy vai funcionar de primeira. Não zica!",
+      "en": "I'm sure the deployment will work on the first try. Don't jinx it!",
+      "ptIntent": "Não zica",
+      "enIntent": "Don't jinx it"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "jinx",
+    "luck",
+    "superstition",
+    "warning",
+    "conversation",
+    "informal"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "coloque-se-no-meu-lugar-walk-a-mile-in-my-shoes-6c8b02e4-7a5d-46e1-9f31-5b6d8a73c240",
+  "intention": "Coloque-se no meu lugar / Tente entender o que eu passo",
+  "english": "walk a mile in my shoes",
+  "pattern": "walk a mile in + someone's + shoes",
+  "description": "Expressão usada para dizer que alguém deveria experimentar ou compreender a situação, as dificuldades ou as experiências de outra pessoa antes de julgá-la.",
+  "category": "idiom",
+  "searchTerms": [
+    "coloque-se no meu lugar",
+    "se coloque no meu lugar",
+    "tente entender meu lado",
+    "antes de me julgar",
+    "walk a mile in my shoes",
+    "walk in someone's shoes",
+    "shoes"
+  ],
+  "examples": [
+    {
+      "pt": "Antes de me julgar, coloque-se no meu lugar.",
+      "en": "Before you judge me, walk a mile in my shoes.",
+      "ptIntent": "coloque-se no meu lugar",
+      "enIntent": "walk a mile in my shoes"
+    },
+    {
+      "pt": "Tente se colocar no lugar dela antes de criticá-la.",
+      "en": "Try to walk a mile in her shoes before you criticize her.",
+      "ptIntent": "se colocar no lugar dela",
+      "enIntent": "walk a mile in her shoes"
+    },
+    {
+      "pt": "Você não sabe o que estou passando. Tente se colocar no meu lugar.",
+      "en": "You don't know what I'm going through. Try to walk a mile in my shoes.",
+      "ptIntent": "se colocar no meu lugar",
+      "enIntent": "walk a mile in my shoes"
+    },
+    {
+      "pt": "É fácil criticar alguém quando você nunca esteve no lugar dessa pessoa.",
+      "en": "It's easy to criticize someone when you've never walked a mile in their shoes.",
+      "ptIntent": "esteve no lugar dessa pessoa",
+      "enIntent": "walked a mile in their shoes"
+    },
+    {
+      "pt": "Se você estivesse no meu lugar, talvez entendesse por que tomei essa decisão.",
+      "en": "If you walked a mile in my shoes, you might understand why I made that decision.",
+      "ptIntent": "estivesse no meu lugar",
+      "enIntent": "walked a mile in my shoes"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "empathy",
+    "understanding",
+    "judgment",
+    "perspective",
+    "conversation"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+
+  {
+    "id": "estar-irredutivel-sobre-algo-be-adamant-about-noun-7b16a5d3-8c42-4e71-a936-2f80c5d14e69",
+    "intention": "Estar firme / irredutível sobre algo",
+    "english": "be adamant about + noun",
+    "pattern": "be + adamant + about + noun",
+    "description": "Usado quando alguém tem uma posição muito firme sobre um assunto, decisão, regra ou situação e não pretende mudar de opinião.",
+    "category": "chunk",
+    "searchTerms": [
+      "estar firme sobre",
+      "ser firme sobre",
+      "estar irredutível",
+      "não mudar de opinião",
+      "adamant",
+      "adamant about",
+      "be adamant about"
+    ],
+    "examples": [
+      {
+        "pt": "Ela está irredutível quanto à decisão dela.",
+        "en": "She's adamant about her decision.",
+        "ptIntent": "está irredutível quanto à decisão dela",
+        "enIntent": "adamant about her decision"
+      },
+      {
+        "pt": "Estou absolutamente firme quanto a isso.",
+        "en": "I'm adamant about this.",
+        "ptIntent": "absolutamente firme quanto a isso",
+        "enIntent": "adamant about this"
+      },
+      {
+        "pt": "Ele está irredutível quanto à sua posição.",
+        "en": "He's adamant about his position.",
+        "ptIntent": "está irredutível quanto à sua posição",
+        "enIntent": "adamant about his position"
+      },
+      {
+        "pt": "Meu chefe está irredutível quanto ao prazo.",
+        "en": "My boss is adamant about the deadline.",
+        "ptIntent": "está irredutível quanto ao prazo",
+        "enIntent": "adamant about the deadline"
+      },
+      {
+        "pt": "Eles estão muito firmes quanto às regras.",
+        "en": "They're adamant about the rules.",
+        "ptIntent": "muito firmes quanto às regras",
+        "enIntent": "adamant about the rules"
+      }
+    ],
+    "tags": [
+      "adamant",
+      "opinion",
+      "decision",
+      "position",
+      "adjective",
+      "chunk"
+    ],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "estar-decidido-a-fazer-algo-be-adamant-about-doing-4e8c12a7-f539-46bd-92e1-6a37c5d804fb",
+    "intention": "Estar firmemente decidido a fazer algo",
+    "english": "be adamant about + verb-ing",
+    "pattern": "be + adamant + about + verb-ing",
+    "description": "Usado quando alguém está muito firme em sua decisão de fazer algo. Depois de 'about', quando usamos um verbo, ele aparece na forma -ing.",
+    "category": "chunk",
+    "searchTerms": [
+      "estar decidido a",
+      "estar firmemente decidido",
+      "insistir em fazer",
+      "adamant about doing",
+      "adamant about leaving",
+      "adamant about going"
+    ],
+    "examples": [
+      {
+        "pt": "Estou decidido a ficar aqui.",
+        "en": "I'm adamant about staying here.",
+        "ptIntent": "decidido a ficar aqui",
+        "enIntent": "adamant about staying here"
+      },
+      {
+        "pt": "Ela está decidida a sair da empresa.",
+        "en": "She's adamant about leaving the company.",
+        "ptIntent": "decidida a sair da empresa",
+        "enIntent": "adamant about leaving the company"
+      },
+      {
+        "pt": "Ele está decidido a mudar de emprego.",
+        "en": "He's adamant about changing jobs.",
+        "ptIntent": "decidido a mudar de emprego",
+        "enIntent": "adamant about changing jobs"
+      },
+      {
+        "pt": "Eles estão decididos a se mudar para o exterior.",
+        "en": "They're adamant about moving abroad.",
+        "ptIntent": "decididos a se mudar para o exterior",
+        "enIntent": "adamant about moving abroad"
+      },
+      {
+        "pt": "Estou absolutamente decidido a aprender inglês.",
+        "en": "I'm adamant about learning English.",
+        "ptIntent": "absolutamente decidido a aprender inglês",
+        "enIntent": "adamant about learning English"
+      }
+    ],
+    "tags": [
+      "adamant",
+      "decision",
+      "determination",
+      "verb-ing",
+      "gerund",
+      "chunk"
+    ],
+    "related": [
+      "estar-irredutivel-sobre-algo-be-adamant-about-noun-7b16a5d3-8c42-4e71-a936-2f80c5d14e69"
+    ],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "estar-decidido-a-nao-fazer-be-adamant-about-not-doing-c3198e74-5a62-47d0-b841-9f25e6c73a10",
+    "intention": "Estar firmemente decidido a não fazer algo",
+    "english": "be adamant about not + verb-ing",
+    "pattern": "be + adamant + about + not + verb-ing",
+    "description": "Usado para expressar uma decisão muito firme de não fazer alguma coisa. É especialmente útil para recusas, limites pessoais e decisões que a pessoa não pretende mudar.",
+    "category": "chunk",
+    "searchTerms": [
+      "decidido a não",
+      "não vou fazer",
+      "recusar firmemente",
+      "adamant about not",
+      "adamant about not doing",
+      "não mudar de ideia"
+    ],
+    "examples": [
+      {
+        "pt": "Estou decidido a não desistir.",
+        "en": "I'm adamant about not giving up.",
+        "ptIntent": "decidido a não desistir",
+        "enIntent": "adamant about not giving up"
+      },
+      {
+        "pt": "Ele está decidido a não vender a casa.",
+        "en": "He's adamant about not selling the house.",
+        "ptIntent": "decidido a não vender a casa",
+        "enIntent": "adamant about not selling the house"
+      },
+      {
+        "pt": "Ela está decidida a não voltar.",
+        "en": "She's adamant about not going back.",
+        "ptIntent": "decidida a não voltar",
+        "enIntent": "adamant about not going back"
+      },
+      {
+        "pt": "Estou decidido a não trabalhar nos fins de semana.",
+        "en": "I'm adamant about not working on weekends.",
+        "ptIntent": "decidido a não trabalhar nos fins de semana",
+        "enIntent": "adamant about not working on weekends"
+      },
+      {
+        "pt": "Eles estão decididos a não mudar o plano.",
+        "en": "They're adamant about not changing the plan.",
+        "ptIntent": "decididos a não mudar o plano",
+        "enIntent": "adamant about not changing the plan"
+      }
+    ],
+    "tags": [
+      "adamant",
+      "refusal",
+      "decision",
+      "negative",
+      "verb-ing",
+      "chunk"
+    ],
+    "related": [
+      "estar-decidido-a-fazer-algo-be-adamant-about-doing-4e8c12a7-f539-46bd-92e1-6a37c5d804fb"
+    ],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "insistir-firmemente-que-be-adamant-that-5d27b9f1-a834-4c65-97e2-31f6c8a40d75",
+    "intention": "Insistir firmemente que...",
+    "english": "be adamant that + clause",
+    "pattern": "be + adamant + that + subject + verb",
+    "description": "Usado quando alguém afirma ou sustenta algo com muita convicção e não demonstra disposição para mudar de posição. Depois de 'that', usamos uma oração completa com sujeito e verbo.",
+    "category": "chunk",
+    "searchTerms": [
+      "insistir que",
+      "insistir firmemente que",
+      "afirmar com convicção",
+      "estar convicto de que",
+      "adamant that",
+      "be adamant that"
+    ],
+    "examples": [
+      {
+        "pt": "Ela insiste que está certa.",
+        "en": "She's adamant that she's right.",
+        "ptIntent": "insiste que está certa",
+        "enIntent": "adamant that she's right"
+      },
+      {
+        "pt": "Ele insiste que não fez nada de errado.",
+        "en": "He's adamant that he didn't do anything wrong.",
+        "ptIntent": "insiste que não fez nada de errado",
+        "enIntent": "adamant that he didn't do anything wrong"
+      },
+      {
+        "pt": "Insisto que esta é a melhor solução.",
+        "en": "I'm adamant that this is the best solution.",
+        "ptIntent": "Insisto que esta é a melhor solução",
+        "enIntent": "adamant that this is the best solution"
+      },
+      {
+        "pt": "Eles insistem que o projeto deve continuar.",
+        "en": "They're adamant that the project must continue.",
+        "ptIntent": "insistem que o projeto deve continuar",
+        "enIntent": "adamant that the project must continue"
+      },
+      {
+        "pt": "Ele insistia que já tinha visto aquele homem antes.",
+        "en": "He was adamant that he had seen that man before.",
+        "ptIntent": "insistia que já tinha visto aquele homem antes",
+        "enIntent": "adamant that he had seen that man before"
+      },
+      {
+        "pt": "Estou absolutamente decidido a não desistir.",
+        "en": "I'm adamant that I won't give up.",
+        "ptIntent": "absolutamente decidido a não desistir",
+        "enIntent": "adamant that I won't give up"
+      },
+      {
+        "pt": "Ela está decidida a não pedir desculpas.",
+        "en": "She's adamant that she won't apologize.",
+        "ptIntent": "decidida a não pedir desculpas",
+        "enIntent": "adamant that she won't apologize"
+      }
+    ],
+    "tags": [
+      "adamant",
+      "opinion",
+      "conviction",
+      "that-clause",
+      "insistence",
+      "chunk"
+    ],
+    "related": [
+      "estar-irredutivel-sobre-algo-be-adamant-about-noun-7b16a5d3-8c42-4e71-a936-2f80c5d14e69"
+    ],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "continuar-firme-irredutivel-remain-adamant-91a6c3e8-2f74-45b9-a520-7d38e1c64fb2",
+    "intention": "Continuar firme / Permanecer irredutível",
+    "english": "remain adamant",
+    "pattern": "remain + adamant + about/that...",
+    "description": "Usado para enfatizar que alguém continua mantendo uma posição ou decisão firme, mesmo depois de pressão, críticas, discussões ou tentativas de fazê-lo mudar de ideia.",
+    "category": "chunk",
+    "searchTerms": [
+      "continuar firme",
+      "permanecer firme",
+      "continuar irredutível",
+      "permanecer irredutível",
+      "remain adamant",
+      "remained adamant",
+      "continua insistindo"
+    ],
+    "examples": [
+      {
+        "pt": "Ele continua insistindo que é inocente.",
+        "en": "He remains adamant that he's innocent.",
+        "ptIntent": "continua insistindo que é inocente",
+        "enIntent": "remains adamant that he's innocent"
+      },
+      {
+        "pt": "Ela permaneceu decidida a sair da empresa.",
+        "en": "She remained adamant about leaving the company.",
+        "ptIntent": "permaneceu decidida a sair da empresa",
+        "enIntent": "remained adamant about leaving the company"
+      },
+      {
+        "pt": "Apesar das críticas, ele permaneceu irredutível.",
+        "en": "Despite the criticism, he remained adamant.",
+        "ptIntent": "permaneceu irredutível",
+        "enIntent": "remained adamant"
+      },
+      {
+        "pt": "Eles continuam firmes em sua decisão.",
+        "en": "They remain adamant about their decision.",
+        "ptIntent": "continuam firmes em sua decisão",
+        "enIntent": "remain adamant about their decision"
+      },
+      {
+        "pt": "Mesmo depois da reunião, ela continuou insistindo que estava certa.",
+        "en": "Even after the meeting, she remained adamant that she was right.",
+        "ptIntent": "continuou insistindo que estava certa",
+        "enIntent": "remained adamant that she was right"
+      }
+    ],
+    "tags": [
+      "adamant",
+      "remain",
+      "persistence",
+      "conviction",
+      "opinion",
+      "chunk"
+    ],
+    "related": [
+      "estar-irredutivel-sobre-algo-be-adamant-about-noun-7b16a5d3-8c42-4e71-a936-2f80c5d14e69",
+      "insistir-firmemente-que-be-adamant-that-5d27b9f1-a834-4c65-97e2-31f6c8a40d75"
+    ],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "perguntar-no-presente-do-does-subject-verb-7f2a14c8-3e91-4d65-a827-1b5c93e46f70",
+    "intention": "Perguntar se alguém faz algo",
+    "english": "Do/Does + subject + verb...?",
+    "pattern": "Do/Does + subject + base verb...?",
+    "description": "Estrutura usada para fazer perguntas no Simple Present sobre hábitos, rotinas, preferências, fatos e situações gerais. Use 'do' com I/you/we/they e 'does' com he/she/it. Depois de do/does, o verbo permanece na forma base.",
+    "category": "question",
+    "searchTerms": [
+      "perguntar no presente",
+      "do you",
+      "does he",
+      "does she",
+      "simple present question",
+      "do does subject verb"
+    ],
+    "examples": [
+      {
+        "pt": "Você trabalha aqui?",
+        "en": "Do you work here?",
+        "ptIntent": "Você trabalha",
+        "enIntent": "Do you work"
+      },
+      {
+        "pt": "Ela fala inglês?",
+        "en": "Does she speak English?",
+        "ptIntent": "Ela fala",
+        "enIntent": "Does she speak"
+      },
+      {
+        "pt": "Você gosta de viajar?",
+        "en": "Do you like traveling?",
+        "ptIntent": "Você gosta",
+        "enIntent": "Do you like"
+      },
+      {
+        "pt": "Ele mora perto daqui?",
+        "en": "Does he live near here?",
+        "ptIntent": "Ele mora",
+        "enIntent": "Does he live"
+      }
+    ],
+    "tags": ["question", "simple-present", "do", "does"],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "perguntar-no-passado-did-subject-verb-9b63e2a7-45f8-4c10-a731-6d28f94e5b02",
+    "intention": "Perguntar se alguém fez algo",
+    "english": "Did + subject + verb...?",
+    "pattern": "Did + subject + base verb...?",
+    "description": "Estrutura usada para fazer perguntas no Simple Past. O passado é marcado por 'did', por isso o verbo principal volta para a forma base.",
+    "category": "question",
+    "searchTerms": [
+      "perguntar no passado",
+      "did you",
+      "did he",
+      "did she",
+      "simple past question",
+      "did subject verb"
+    ],
+    "examples": [
+      {
+        "pt": "Você viu ele?",
+        "en": "Did you see him?",
+        "ptIntent": "Você viu",
+        "enIntent": "Did you see"
+      },
+      {
+        "pt": "Você foi ao cinema ontem?",
+        "en": "Did you go to the movie theater yesterday?",
+        "ptIntent": "Você foi",
+        "enIntent": "Did you go"
+      },
+      {
+        "pt": "Ela ligou para você?",
+        "en": "Did she call you?",
+        "ptIntent": "Ela ligou",
+        "enIntent": "Did she call"
+      },
+      {
+        "pt": "Eles terminaram o projeto?",
+        "en": "Did they finish the project?",
+        "ptIntent": "Eles terminaram",
+        "enIntent": "Did they finish"
+      }
+    ],
+    "tags": ["question", "simple-past", "did"],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "perguntar-sobre-experiencia-ou-resultado-have-has-subject-pp-c48d71a5-2e36-4f90-b127-85a9d63e4c21",
+    "intention": "Perguntar se alguém já fez / terminou algo",
+    "english": "Have/Has + subject + past participle...?",
+    "pattern": "Have/Has + subject + past participle...?",
+    "description": "Estrutura do Present Perfect usada para perguntar sobre experiências, acontecimentos ou ações com conexão com o presente.",
+    "category": "question",
+    "searchTerms": [
+      "você já",
+      "já fez",
+      "have you ever",
+      "have you finished",
+      "has she",
+      "present perfect question"
+    ],
+    "examples": [
+      {
+        "pt": "Você já esteve no Brasil?",
+        "en": "Have you ever been to Brazil?",
+        "ptIntent": "Você já esteve",
+        "enIntent": "Have you ever been"
+      },
+      {
+        "pt": "Você terminou o trabalho?",
+        "en": "Have you finished the work?",
+        "ptIntent": "Você terminou",
+        "enIntent": "Have you finished"
+      },
+      {
+        "pt": "Ela já viu esse filme?",
+        "en": "Has she ever seen this movie?",
+        "ptIntent": "Ela já viu",
+        "enIntent": "Has she ever seen"
+      },
+      {
+        "pt": "Eles chegaram?",
+        "en": "Have they arrived?",
+        "ptIntent": "Eles chegaram",
+        "enIntent": "Have they arrived"
+      }
+    ],
+    "tags": ["question", "present-perfect", "have", "has"],
+    "related": [],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "perguntar-se-alguem-consegue-can-subject-verb-a81e53d2-7c49-462b-95f0-31d6e8a47b25",
+    "intention": "Perguntar se alguém pode / consegue fazer algo",
+    "english": "Can + subject + verb...?",
+    "pattern": "Can + subject + base verb...?",
+    "description": "Usado para perguntar sobre capacidade, possibilidade ou para fazer pedidos de forma direta e natural.",
+    "category": "question",
+    "searchTerms": ["você pode", "você consegue", "can you", "can subject verb"],
+    "examples": [
+      {
+        "pt": "Você pode me ajudar?",
+        "en": "Can you help me?",
+        "ptIntent": "Você pode me ajudar",
+        "enIntent": "Can you help me"
+      },
+      {
+        "pt": "Você consegue falar inglês?",
+        "en": "Can you speak English?",
+        "ptIntent": "Você consegue falar inglês",
+        "enIntent": "Can you speak English"
+      },
+      {
+        "pt": "Ela pode vir amanhã?",
+        "en": "Can she come tomorrow?",
+        "ptIntent": "Ela pode vir",
+        "enIntent": "Can she come"
+      }
+    ],
+    "tags": ["question", "modal", "can", "ability", "request"],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "pedir-algo-educadamente-could-subject-verb-f35c91a6-82d4-47e1-b609-54a73e28c160",
+    "intention": "Pedir algo de forma mais educada",
+    "english": "Could + subject + verb...?",
+    "pattern": "Could + subject + base verb...?",
+    "description": "Muito usado para fazer pedidos e perguntas de maneira mais educada ou menos direta que 'can'.",
+    "category": "question",
+    "searchTerms": ["você poderia", "poderia me", "could you", "polite request"],
+    "examples": [
+      {
+        "pt": "Você poderia me dizer onde fica o banco?",
+        "en": "Could you tell me where the bank is?",
+        "ptIntent": "Você poderia me dizer",
+        "enIntent": "Could you tell me"
+      },
+      {
+        "pt": "Você poderia me ajudar?",
+        "en": "Could you help me?",
+        "ptIntent": "Você poderia me ajudar",
+        "enIntent": "Could you help me"
+      },
+      {
+        "pt": "Você poderia repetir isso?",
+        "en": "Could you repeat that?",
+        "ptIntent": "Você poderia repetir",
+        "enIntent": "Could you repeat"
+      }
+    ],
+    "tags": ["question", "modal", "could", "polite-request"],
+    "related": [],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "perguntar-se-alguem-gostaria-would-subject-like-61a7c8e4-39b5-42d0-a826-f15e73c49b02",
+    "intention": "Perguntar se alguém gostaria de algo",
+    "english": "Would + subject + like...?",
+    "pattern": "Would + subject + like + noun/to + verb...?",
+    "description": "Estrutura muito comum para fazer convites, ofertas e perguntar educadamente sobre desejos ou preferências.",
+    "category": "question",
+    "searchTerms": ["você gostaria", "gostaria de", "would you like", "offer", "invitation"],
+    "examples": [
+      {
+        "pt": "Você gostaria de um café?",
+        "en": "Would you like some coffee?",
+        "ptIntent": "Você gostaria",
+        "enIntent": "Would you like"
+      },
+      {
+        "pt": "Você gostaria de ir comigo?",
+        "en": "Would you like to come with me?",
+        "ptIntent": "Você gostaria de ir comigo",
+        "enIntent": "Would you like to come with me"
+      },
+      {
+        "pt": "Ela gostaria de participar?",
+        "en": "Would she like to join us?",
+        "ptIntent": "Ela gostaria de participar",
+        "enIntent": "Would she like to join us"
+      }
+    ],
+    "tags": ["question", "modal", "would", "invitation", "offer"],
+    "related": [],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "perguntar-se-devo-fazer-algo-should-subject-verb-d27f64b9-1c83-45ea-9730-b5a86d42f701",
+    "intention": "Perguntar se devo / devemos fazer algo",
+    "english": "Should + subject + verb...?",
+    "pattern": "Should + subject + base verb...?",
+    "description": "Usado para pedir opinião ou conselho sobre o que seria apropriado, recomendável ou melhor fazer.",
+    "category": "question",
+    "searchTerms": ["devo", "devemos", "should i", "should we", "pedir conselho"],
+    "examples": [
+      {
+        "pt": "Eu devo falar com ela?",
+        "en": "Should I talk to her?",
+        "ptIntent": "devo falar",
+        "enIntent": "Should I talk"
+      },
+      {
+        "pt": "Devemos esperar?",
+        "en": "Should we wait?",
+        "ptIntent": "Devemos esperar",
+        "enIntent": "Should we wait"
+      },
+      {
+        "pt": "Eu devo aceitar o emprego?",
+        "en": "Should I take the job?",
+        "ptIntent": "devo aceitar o emprego",
+        "enIntent": "Should I take the job"
+      }
+    ],
+    "tags": ["question", "modal", "should", "advice"],
+    "related": [],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "perguntar-com-que-frequencia-how-often-8c52d7e1-4f36-49b0-a285-61e73c94f208",
+    "intention": "Com que frequência...?",
+    "english": "How often...?",
+    "pattern": "How often + auxiliary + subject + verb...?",
+    "description": "Usado para perguntar com que frequência alguma coisa acontece ou alguém faz alguma coisa.",
+    "category": "question",
+    "searchTerms": ["com que frequência", "quantas vezes", "how often"],
+    "examples": [
+      {
+        "pt": "Com que frequência você estuda inglês?",
+        "en": "How often do you study English?",
+        "ptIntent": "Com que frequência",
+        "enIntent": "How often"
+      },
+      {
+        "pt": "Com que frequência você vai à academia?",
+        "en": "How often do you go to the gym?",
+        "ptIntent": "Com que frequência",
+        "enIntent": "How often"
+      },
+      {
+        "pt": "Com que frequência vocês viajam?",
+        "en": "How often do you travel?",
+        "ptIntent": "Com que frequência",
+        "enIntent": "How often"
+      }
+    ],
+    "tags": ["question", "how-often", "frequency"],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "perguntar-quantos-how-many-3e91b7c5-64a2-48fd-9173-c5e20a86d439",
+    "intention": "Quantos / Quantas...?",
+    "english": "How many...?",
+    "pattern": "How many + plural countable noun...?",
+    "description": "Usado para perguntar a quantidade de coisas que podem ser contadas individualmente.",
+    "category": "question",
+    "searchTerms": ["quantos", "quantas", "how many", "quantity"],
+    "examples": [
+      {
+        "pt": "Quantos idiomas você fala?",
+        "en": "How many languages do you speak?",
+        "ptIntent": "Quantos idiomas",
+        "enIntent": "How many languages"
+      },
+      {
+        "pt": "Quantos filhos você tem?",
+        "en": "How many children do you have?",
+        "ptIntent": "Quantos filhos",
+        "enIntent": "How many children"
+      },
+      {
+        "pt": "Quantas pessoas trabalham aqui?",
+        "en": "How many people work here?",
+        "ptIntent": "Quantas pessoas",
+        "enIntent": "How many people"
+      }
+    ],
+    "tags": ["question", "how-many", "quantity", "countable"],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "perguntar-quanto-how-much-5d84a1f7-2b63-40ce-9718-e3c95a67b204",
+    "intention": "Quanto / Quanta...?",
+    "english": "How much...?",
+    "pattern": "How much + uncountable noun...? / How much + be...?",
+    "description": "Usado para perguntar quantidade com substantivos incontáveis e também para perguntar preço.",
+    "category": "question",
+    "searchTerms": ["quanto", "quanta", "quanto custa", "how much", "price"],
+    "examples": [
+      {
+        "pt": "Quanto custa isso?",
+        "en": "How much is this?",
+        "ptIntent": "Quanto",
+        "enIntent": "How much"
+      },
+      {
+        "pt": "Quanto dinheiro você precisa?",
+        "en": "How much money do you need?",
+        "ptIntent": "Quanto dinheiro",
+        "enIntent": "How much money"
+      },
+      {
+        "pt": "Quanto tempo você tem?",
+        "en": "How much time do you have?",
+        "ptIntent": "Quanto tempo",
+        "enIntent": "How much time"
+      }
+    ],
+    "tags": ["question", "how-much", "quantity", "price", "uncountable"],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "perguntar-que-tipo-de-what-kind-of-72c6e3a9-15b8-4f27-a941-8d50c36e7b24",
+    "intention": "Que tipo de...?",
+    "english": "What kind of...?",
+    "pattern": "What kind of + noun...?",
+    "description": "Usado para perguntar sobre o tipo, categoria ou variedade de alguma coisa.",
+    "category": "question",
+    "searchTerms": ["que tipo de", "qual tipo de", "what kind of", "tipo"],
+    "examples": [
+      {
+        "pt": "Que tipo de música você gosta?",
+        "en": "What kind of music do you like?",
+        "ptIntent": "Que tipo de música",
+        "enIntent": "What kind of music"
+      },
+      {
+        "pt": "Que tipo de trabalho você faz?",
+        "en": "What kind of work do you do?",
+        "ptIntent": "Que tipo de trabalho",
+        "enIntent": "What kind of work"
+      },
+      {
+        "pt": "Que tipo de filmes você assiste?",
+        "en": "What kind of movies do you watch?",
+        "ptIntent": "Que tipo de filmes",
+        "enIntent": "What kind of movies"
+      }
+    ],
+    "tags": ["question", "what-kind-of", "type", "category"],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "perguntar-que-horas-what-time-19e7c4b2-83d5-46fa-a210-7b68d35c9e41",
+    "intention": "Que horas...?",
+    "english": "What time...?",
+    "pattern": "What time + auxiliary/be + subject...?",
+    "description": "Usado para perguntar o horário em que alguma coisa acontece.",
+    "category": "question",
+    "searchTerms": ["que horas", "qual horário", "what time", "horário"],
+    "examples": [
+      {
+        "pt": "Que horas você acorda?",
+        "en": "What time do you wake up?",
+        "ptIntent": "Que horas",
+        "enIntent": "What time"
+      },
+      {
+        "pt": "Que horas você começa a trabalhar?",
+        "en": "What time do you start work?",
+        "ptIntent": "Que horas",
+        "enIntent": "What time"
+      },
+      {
+        "pt": "Que horas é a reunião?",
+        "en": "What time is the meeting?",
+        "ptIntent": "Que horas",
+        "enIntent": "What time"
+      }
+    ],
+    "tags": ["question", "what-time", "time"],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "perguntar-qual-a-distancia-how-far-a63f18d5-4b72-49c1-852e-97d36a5f2048",
+    "intention": "A que distância / É longe...?",
+    "english": "How far...?",
+    "pattern": "How far + be + subject + from...?",
+    "description": "Usado para perguntar sobre distância entre lugares ou até determinado destino.",
+    "category": "question",
+    "searchTerms": ["a que distância", "é longe", "quanto fica daqui", "how far", "distance"],
+    "examples": [
+      {
+        "pt": "A que distância fica sua casa daqui?",
+        "en": "How far is your house from here?",
+        "ptIntent": "A que distância",
+        "enIntent": "How far"
+      },
+      {
+        "pt": "É longe daqui até o aeroporto?",
+        "en": "How far is it from here to the airport?",
+        "ptIntent": "É longe",
+        "enIntent": "How far"
+      },
+      {
+        "pt": "A que distância fica o hotel da praia?",
+        "en": "How far is the hotel from the beach?",
+        "ptIntent": "A que distância",
+        "enIntent": "How far"
+      }
+    ],
+    "tags": ["question", "how-far", "distance"],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+    "id": "perguntar-idade-how-old-c74e29a1-56b8-43df-9025-e61a38d7f540",
+    "intention": "Quantos anos...?",
+    "english": "How old...?",
+    "pattern": "How old + be + subject...?",
+    "description": "Usado principalmente para perguntar a idade de uma pessoa, animal ou coisa.",
+    "category": "question",
+    "searchTerms": ["quantos anos", "qual a idade", "how old", "idade"],
+    "examples": [
+      {
+        "pt": "Quantos anos você tem?",
+        "en": "How old are you?",
+        "ptIntent": "Quantos anos",
+        "enIntent": "How old"
+      },
+      {
+        "pt": "Quantos anos seu filho tem?",
+        "en": "How old is your son?",
+        "ptIntent": "Quantos anos",
+        "enIntent": "How old"
+      },
+      {
+        "pt": "Quantos anos tem essa casa?",
+        "en": "How old is this house?",
+        "ptIntent": "Quantos anos",
+        "enIntent": "How old"
+      }
+    ],
+    "tags": ["question", "how-old", "age"],
+    "related": [],
+    "englishLevel": "A1"
+  },
+  {
+  "id": "o-que-voce-tem-que-fazer-what-have-you-got-to-verb-6e1c8a74-93f5-4d27-b640-2a8e51c79f36",
+  "intention": "O que você tem que ...?",
+  "english": "What have you got to + verb...?",
+  "pattern": "What + have/has + subject + got to + base verb...?",
+  "description": "Usado para perguntar o que alguém precisa ou tem que fazer. A estrutura 'have got to + verb' expressa necessidade ou obrigação e tem sentido semelhante a 'have to + verb'. Em perguntas, 'have/has' aparece antes do sujeito.",
+  "category": "question",
+  "searchTerms": [
+    "o que você tem que fazer",
+    "o que você precisa fazer",
+    "o que tenho que fazer",
+    "o que ele tem que fazer",
+    "what have you got to",
+    "what have you got to do",
+    "what has he got to",
+    "have got to",
+    "got to",
+    "gotta"
+  ],
+  "examples": [
+    {
+      "pt": "O que você tem que fazer hoje?",
+      "en": "What have you got to do today?",
+      "ptIntent": "O que você tem que fazer",
+      "enIntent": "What have you got to do"
+    },
+    {
+      "pt": "O que você tem que terminar antes de sair?",
+      "en": "What have you got to finish before you leave?",
+      "ptIntent": "O que você tem que terminar",
+      "enIntent": "What have you got to finish"
+    },
+    {
+      "pt": "O que você tem que estudar para a prova?",
+      "en": "What have you got to study for the test?",
+      "ptIntent": "O que você tem que estudar",
+      "enIntent": "What have you got to study"
+    },
+    {
+      "pt": "O que você tem que comprar no supermercado?",
+      "en": "What have you got to buy at the supermarket?",
+      "ptIntent": "O que você tem que comprar",
+      "enIntent": "What have you got to buy"
+    },
+    {
+      "pt": "O que ela tem que fazer amanhã?",
+      "en": "What has she got to do tomorrow?",
+      "ptIntent": "O que ela tem que fazer",
+      "enIntent": "What has she got to do"
+    },
+    {
+      "pt": "O que ele tem que resolver antes da reunião?",
+      "en": "What has he got to sort out before the meeting?",
+      "ptIntent": "O que ele tem que resolver",
+      "enIntent": "What has he got to sort out"
+    },
+    {
+      "pt": "O que temos que fazer para terminar isso hoje?",
+      "en": "What have we got to do to finish this today?",
+      "ptIntent": "O que temos que fazer",
+      "enIntent": "What have we got to do"
+    }
+  ],
+  "tags": [
+    "question",
+    "have-got-to",
+    "obligation",
+    "necessity",
+    "what",
+    "conversation"
+  ],
+  "related": [],
+  "englishLevel": "A2"
+},
+{
+  "id": "concordar-totalmente-you-can-say-that-again-4d8c2f71-9a53-46e0-b184-7f3a62c91d05",
+  "intention": "Com certeza! / Você disse tudo! / Nem me fale!",
+  "english": "You can say that again!",
+  "pattern": "You can say that again!",
+  "description": "Expressão pronta e informal usada para demonstrar forte concordância com algo que outra pessoa acabou de dizer. Apesar da tradução literal sugerir 'você pode dizer isso de novo', normalmente não é um pedido para repetir a frase. A intenção é equivalente a 'com certeza', 'você disse tudo' ou 'nem me fale'.",
+  "category": "chunk",
+  "searchTerms": [
+    "com certeza",
+    "você disse tudo",
+    "nem me fale",
+    "concordo totalmente",
+    "é verdade",
+    "you can say that again",
+    "strong agreement",
+    "agreement"
+  ],
+  "examples": [
+    {
+      "pt": "— Esse trânsito está horrível. — Nem me fale!",
+      "en": "— This traffic is terrible. — You can say that again!",
+      "ptIntent": "Nem me fale",
+      "enIntent": "You can say that again"
+    },
+    {
+      "pt": "— Aprender inglês exige muita prática. — Você disse tudo!",
+      "en": "— Learning English takes a lot of practice. — You can say that again!",
+      "ptIntent": "Você disse tudo",
+      "enIntent": "You can say that again"
+    },
+    {
+      "pt": "— Está muito quente hoje. — Com certeza!",
+      "en": "— It's really hot today. — You can say that again!",
+      "ptIntent": "Com certeza",
+      "enIntent": "You can say that again"
+    },
+    {
+      "pt": "— Esse projeto está dando muito mais trabalho do que esperávamos. — Nem me fale!",
+      "en": "— This project is taking much more work than we expected. — You can say that again!",
+      "ptIntent": "Nem me fale",
+      "enIntent": "You can say that again"
+    },
+    {
+      "pt": "— Precisamos de férias. — Você disse tudo!",
+      "en": "— We need a vacation. — You can say that again!",
+      "ptIntent": "Você disse tudo",
+      "enIntent": "You can say that again"
+    },
+    {
+      "pt": "— Falar inglês é bem diferente de apenas estudar inglês. — Com certeza!",
+      "en": "— Speaking English is very different from just studying English. — You can say that again!",
+      "ptIntent": "Com certeza",
+      "enIntent": "You can say that again"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "agreement",
+    "strong-agreement",
+    "conversation",
+    "informal",
+    "reaction"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "ser-muito-bobo-malucinho-as-daft-as-a-brush-8f2c71a4-6d39-4e85-b120-93a7c54d8e16",
+  "intention": "Ser muito bobo / meio maluco / sem noção",
+  "english": "be as daft as a brush",
+  "pattern": "be + as daft as a brush",
+  "description": "Expressão idiomática informal, especialmente comum no inglês britânico, usada para dizer que alguém é muito bobo, meio maluco, sem noção ou bastante excêntrico. Frequentemente é usada de maneira bem-humorada ou afetuosa, dependendo do contexto.",
+  "category": "idiom",
+  "searchTerms": [
+    "muito bobo",
+    "meio maluco",
+    "maluquinho",
+    "sem noção",
+    "excêntrico",
+    "doidinho",
+    "as daft as a brush",
+    "daft",
+    "british english"
+  ],
+  "examples": [
+    {
+      "pt": "Ele é meio maluco, mas é muito gente boa.",
+      "en": "He's as daft as a brush, but he's a really nice guy.",
+      "ptIntent": "meio maluco",
+      "enIntent": "as daft as a brush"
+    },
+    {
+      "pt": "Meu tio é completamente sem noção às vezes.",
+      "en": "My uncle is as daft as a brush sometimes.",
+      "ptIntent": "completamente sem noção",
+      "enIntent": "as daft as a brush"
+    },
+    {
+      "pt": "Ela é meio maluquinha, mas todo mundo gosta dela.",
+      "en": "She's as daft as a brush, but everyone likes her.",
+      "ptIntent": "meio maluquinha",
+      "enIntent": "as daft as a brush"
+    },
+    {
+      "pt": "Você é muito bobo às vezes!",
+      "en": "You're as daft as a brush sometimes!",
+      "ptIntent": "muito bobo",
+      "enIntent": "as daft as a brush"
+    },
+    {
+      "pt": "Ele pode ser meio doidinho, mas sempre nos faz rir.",
+      "en": "He can be as daft as a brush, but he always makes us laugh.",
+      "ptIntent": "meio doidinho",
+      "enIntent": "as daft as a brush"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "british-english",
+    "informal",
+    "daft",
+    "personality",
+    "humor"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
+{
+  "id": "ser-muito-bem-comportado-as-good-as-gold-3c7e91a5-62d8-4f34-b170-8a5e29c6d413",
+  "intention": "Ser muito bem-comportado / bonzinho",
+  "english": "be as good as gold",
+  "pattern": "be + as good as gold",
+  "description": "Expressão idiomática usada para dizer que alguém, especialmente uma criança, está se comportando muito bem, sendo obediente ou não causando problemas. Também pode ser usada informalmente para adultos ou animais quando estão se comportando excepcionalmente bem.",
+  "category": "idiom",
+  "searchTerms": [
+    "bem-comportado",
+    "muito bem-comportado",
+    "bonzinho",
+    "obediente",
+    "se comportar bem",
+    "as good as gold",
+    "good as gold"
+  ],
+  "examples": [
+    {
+      "pt": "As crianças ficaram muito bem-comportadas durante toda a viagem.",
+      "en": "The children were as good as gold throughout the trip.",
+      "ptIntent": "muito bem-comportadas",
+      "enIntent": "as good as gold"
+    },
+    {
+      "pt": "Não se preocupe com ele. Ele vai ficar bonzinho.",
+      "en": "Don't worry about him. He'll be as good as gold.",
+      "ptIntent": "ficar bonzinho",
+      "enIntent": "be as good as gold"
+    },
+    {
+      "pt": "Minha filha ficou muito bem-comportada na casa da avó.",
+      "en": "My daughter was as good as gold at her grandmother's house.",
+      "ptIntent": "muito bem-comportada",
+      "enIntent": "as good as gold"
+    },
+    {
+      "pt": "O cachorro ficou muito bem-comportado no carro.",
+      "en": "The dog was as good as gold in the car.",
+      "ptIntent": "muito bem-comportado",
+      "enIntent": "as good as gold"
+    },
+    {
+      "pt": "Ele normalmente é muito agitado, mas hoje ficou um anjinho.",
+      "en": "He's usually very energetic, but today he was as good as gold.",
+      "ptIntent": "ficou um anjinho",
+      "enIntent": "as good as gold"
+    },
+    {
+      "pt": "Prometo que vou me comportar muito bem.",
+      "en": "I promise I'll be as good as gold.",
+      "ptIntent": "me comportar muito bem",
+      "enIntent": "be as good as gold"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "behavior",
+    "well-behaved",
+    "children",
+    "informal",
+    "comparison"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "essa-foi-demais-take-the-biscuit-7a3f91c6-5d42-4e87-b130-9c68e2f41a75",
+  "intention": "Essa foi demais / Essa superou todas",
+  "english": "take the biscuit",
+  "pattern": "subject + take/takes/took + the biscuit",
+  "description": "Expressão idiomática, especialmente comum no inglês britânico, usada quando algo ou alguém se destaca por ser particularmente surpreendente, absurdo, irritante ou exagerado. Dependendo do contexto, corresponde a ideias como 'essa foi demais', 'essa superou todas' ou 'essa leva o prêmio'. No inglês americano, 'take the cake' é o equivalente mais comum.",
+  "category": "idiom",
+  "searchTerms": [
+    "essa foi demais",
+    "essa é demais",
+    "essa superou todas",
+    "essa leva o prêmio",
+    "é o cúmulo",
+    "take the biscuit",
+    "takes the biscuit",
+    "took the biscuit",
+    "take the cake",
+    "british english"
+  ],
+  "examples": [
+    {
+      "pt": "Já ouvi muitas desculpas ruins, mas essa foi demais.",
+      "en": "I've heard a lot of bad excuses, but that takes the biscuit.",
+      "ptIntent": "essa foi demais",
+      "enIntent": "takes the biscuit"
+    },
+    {
+      "pt": "Ele chegou duas horas atrasado e ainda reclamou da reunião. Essa foi demais!",
+      "en": "He arrived two hours late and then complained about the meeting. That takes the biscuit!",
+      "ptIntent": "Essa foi demais",
+      "enIntent": "takes the biscuit"
+    },
+    {
+      "pt": "De todas as coisas absurdas que ele já fez, essa supera todas.",
+      "en": "Of all the ridiculous things he's done, this takes the biscuit.",
+      "ptIntent": "essa supera todas",
+      "enIntent": "takes the biscuit"
+    },
+    {
+      "pt": "Eles aumentaram o preço e reduziram o serviço. Essa leva o prêmio.",
+      "en": "They raised the price and reduced the service. That really takes the biscuit.",
+      "ptIntent": "Essa leva o prêmio",
+      "enIntent": "takes the biscuit"
+    },
+    {
+      "pt": "Já tivemos muitos problemas neste projeto, mas esse foi demais.",
+      "en": "We've had a lot of problems on this project, but this one takes the biscuit.",
+      "ptIntent": "esse foi demais",
+      "enIntent": "takes the biscuit"
+    },
+    {
+      "pt": "Ele esqueceu meu aniversário e depois perguntou por que eu estava chateada. Essa foi demais.",
+      "en": "He forgot my birthday and then asked why I was upset. That takes the biscuit.",
+      "ptIntent": "Essa foi demais",
+      "enIntent": "takes the biscuit"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "british-english",
+    "informal",
+    "surprise",
+    "annoyance",
+    "criticism",
+    "reaction"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
+{
+  "id": "x-concluidos-faltam-y-x-down-y-to-go-8b3d7f21-5c94-4a68-b172-9e6f43c2d810",
+  "intention": "X concluídos, faltam Y / X já foram, faltam Y",
+  "english": "X down, Y to go",
+  "pattern": "X + down, + Y + to go",
+  "description": "Estrutura informal e muito comum usada para indicar progresso: uma quantidade de coisas já foi concluída e outra quantidade ainda falta. 'X down' representa o que já foi feito, concluído ou superado; 'Y to go' representa o que ainda resta.",
+  "category": "chunk",
+  "searchTerms": [
+    "x concluídos faltam y",
+    "x feitos faltam y",
+    "x já foram faltam y",
+    "faltam",
+    "ainda faltam",
+    "restam",
+    "one down",
+    "two to go",
+    "x down y to go",
+    "to go",
+    "progress"
+  ],
+  "examples": [
+    {
+      "pt": "Um já foi, faltam dois.",
+      "en": "One down, two to go.",
+      "ptIntent": "Um já foi, faltam dois",
+      "enIntent": "One down, two to go"
+    },
+    {
+      "pt": "Duas tarefas concluídas, faltam três.",
+      "en": "Two tasks down, three to go.",
+      "ptIntent": "Duas tarefas concluídas, faltam três",
+      "enIntent": "Two tasks down, three to go"
+    },
+    {
+      "pt": "Três reuniões já foram, falta uma.",
+      "en": "Three meetings down, one to go.",
+      "ptIntent": "Três reuniões já foram, falta uma",
+      "enIntent": "Three meetings down, one to go"
+    },
+    {
+      "pt": "Cinco capítulos concluídos, faltam dois.",
+      "en": "Five chapters down, two to go.",
+      "ptIntent": "Cinco capítulos concluídos, faltam dois",
+      "enIntent": "Five chapters down, two to go"
+    },
+    {
+      "pt": "Dez exercícios feitos, faltam cinco.",
+      "en": "Ten exercises down, five to go.",
+      "ptIntent": "Dez exercícios feitos, faltam cinco",
+      "enIntent": "Ten exercises down, five to go"
+    },
+    {
+      "pt": "Cinquenta frases concluídas, faltam cinquenta.",
+      "en": "Fifty sentences down, fifty to go.",
+      "ptIntent": "Cinquenta frases concluídas, faltam cinquenta",
+      "enIntent": "Fifty sentences down, fifty to go"
+    },
+    {
+      "pt": "Noventa e nove concluídos, falta só um!",
+      "en": "Ninety-nine down, just one to go!",
+      "ptIntent": "Noventa e nove concluídos, falta só um",
+      "enIntent": "Ninety-nine down, just one to go"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "progress",
+    "remaining",
+    "quantity",
+    "informal",
+    "conversation"
+  ],
+  "related": [],
+  "englishLevel": "A2"
+},
+{
+  "id": "complicar-demais-algo-make-a-meal-out-of-7c2f9a41-5e83-4d16-b729-8a64f31c0e95",
+  "intention": "Complicar demais / Fazer um drama de algo simples",
+  "english": "make a meal out of",
+  "pattern": "make + a meal out of + something",
+  "description": "Expressão idiomática informal, especialmente comum no inglês britânico, usada quando alguém torna uma tarefa, situação ou problema muito mais complicado, trabalhoso ou importante do que realmente precisa ser. Dependendo do contexto, pode transmitir ideias como 'complicar demais', 'fazer um drama' ou 'fazer uma novela de algo simples'.",
+  "category": "idiom",
+  "searchTerms": [
+    "complicar demais",
+    "fazer um drama",
+    "fazer uma novela",
+    "dificultar algo simples",
+    "transformar algo simples em complicado",
+    "make a meal out of",
+    "make a meal of",
+    "british english"
+  ],
+  "examples": [
+    {
+      "pt": "Não complique tanto isso. É uma tarefa simples.",
+      "en": "Don't make a meal out of it. It's a simple task.",
+      "ptIntent": "complique tanto isso",
+      "enIntent": "make a meal out of it"
+    },
+    {
+      "pt": "Ele fez uma novela para preencher um formulário simples.",
+      "en": "He made a meal out of filling in a simple form.",
+      "ptIntent": "fez uma novela",
+      "enIntent": "made a meal out of"
+    },
+    {
+      "pt": "Estamos complicando demais uma decisão muito simples.",
+      "en": "We're making a meal out of a very simple decision.",
+      "ptIntent": "complicando demais",
+      "enIntent": "making a meal out of"
+    },
+    {
+      "pt": "Ela sempre faz um drama quando precisa resolver um pequeno problema.",
+      "en": "She always makes a meal out of dealing with a small problem.",
+      "ptIntent": "faz um drama",
+      "enIntent": "makes a meal out of"
+    },
+    {
+      "pt": "Não faça uma novela disso. É só mudar uma linha de código.",
+      "en": "Don't make a meal out of it. It's just one line of code.",
+      "ptIntent": "faça uma novela disso",
+      "enIntent": "make a meal out of it"
+    },
+    {
+      "pt": "Eles complicaram demais todo o processo.",
+      "en": "They made a meal out of the whole process.",
+      "ptIntent": "complicaram demais",
+      "enIntent": "made a meal out of"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "british-english",
+    "informal",
+    "complication",
+    "exaggeration",
+    "conversation"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
+{
+  "id": "tomar-uma-atitude-dar-o-primeiro-passo-make-a-move-5e7c2a91-84d6-4f30-b159-72a8c63d4e17",
+  "intention": "Tomar uma atitude / Dar o primeiro passo / Agir",
+  "english": "make a move",
+  "pattern": "make + a move",
+  "description": "Expressão muito comum usada para indicar que chegou a hora de agir, tomar uma iniciativa ou dar o primeiro passo em vez de continuar esperando. Dependendo do contexto, também pode significar começar a sair de um lugar.",
+  "category": "chunk",
+  "searchTerms": [
+    "tomar uma atitude",
+    "tomar iniciativa",
+    "dar o primeiro passo",
+    "agir",
+    "fazer alguma coisa",
+    "é hora de agir",
+    "vamos nessa",
+    "ir embora",
+    "make a move"
+  ],
+  "examples": [
+    {
+      "pt": "Se você realmente quer esse emprego, precisa tomar uma atitude.",
+      "en": "If you really want that job, you need to make a move.",
+      "ptIntent": "tomar uma atitude",
+      "enIntent": "make a move"
+    },
+    {
+      "pt": "Não podemos ficar esperando para sempre. Precisamos agir.",
+      "en": "We can't wait forever. We need to make a move.",
+      "ptIntent": "Precisamos agir",
+      "enIntent": "need to make a move"
+    },
+    {
+      "pt": "Acho que está na hora de dar o primeiro passo.",
+      "en": "I think it's time to make a move.",
+      "ptIntent": "dar o primeiro passo",
+      "enIntent": "make a move"
+    },
+    {
+      "pt": "Alguém precisa tomar a iniciativa.",
+      "en": "Someone needs to make a move.",
+      "ptIntent": "tomar a iniciativa",
+      "enIntent": "make a move"
+    },
+    {
+      "pt": "Se quisermos terminar isso hoje, é melhor começarmos a agir.",
+      "en": "If we want to finish this today, we'd better make a move.",
+      "ptIntent": "começarmos a agir",
+      "enIntent": "make a move"
+    },
+    {
+      "pt": "Está ficando tarde. Acho melhor a gente ir.",
+      "en": "It's getting late. I think we'd better make a move.",
+      "ptIntent": "melhor a gente ir",
+      "enIntent": "make a move"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "action",
+    "initiative",
+    "decision",
+    "conversation",
+    "informal"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "dar-em-cima-de-alguem-make-a-move-on-someone-4b8e2d71-6f35-4c90-a247-9d1e63f5b802",
+  "intention": "Dar em cima de alguém / Tomar a iniciativa com alguém",
+  "english": "make a move on someone",
+  "pattern": "make + a move on + someone",
+  "description": "Expressão informal usada quando alguém demonstra interesse romântico ou sexual e toma a iniciativa com outra pessoa, por exemplo flertando, tentando beijá-la ou deixando suas intenções mais claras. O contexto determina exatamente qual foi a iniciativa.",
+  "category": "chunk",
+  "searchTerms": [
+    "dar em cima de alguém",
+    "tomar iniciativa",
+    "tomar a iniciativa com alguém",
+    "chegar em alguém",
+    "flertar",
+    "demonstrar interesse",
+    "interesse romântico",
+    "make a move on someone",
+    "make a move on her",
+    "make a move on him"
+  ],
+  "examples": [
+    {
+      "pt": "Acho que ele está tentando dar em cima dela.",
+      "en": "I think he's trying to make a move on her.",
+      "ptIntent": "dar em cima dela",
+      "enIntent": "make a move on her"
+    },
+    {
+      "pt": "Ele finalmente tomou a iniciativa com ela.",
+      "en": "He finally made a move on her.",
+      "ptIntent": "tomou a iniciativa com ela",
+      "enIntent": "made a move on her"
+    },
+    {
+      "pt": "Você vai ficar olhando para ela ou vai chegar nela?",
+      "en": "Are you going to keep looking at her, or are you going to make a move on her?",
+      "ptIntent": "chegar nela",
+      "enIntent": "make a move on her"
+    },
+    {
+      "pt": "Ela percebeu que ele estava dando em cima dela.",
+      "en": "She realized he was making a move on her.",
+      "ptIntent": "dando em cima dela",
+      "enIntent": "making a move on her"
+    },
+    {
+      "pt": "Ele tentou dar em cima de mim na festa.",
+      "en": "He tried to make a move on me at the party.",
+      "ptIntent": "dar em cima de mim",
+      "enIntent": "make a move on me"
+    },
+    {
+      "pt": "Eu não esperava que ela fosse tomar a iniciativa com ele.",
+      "en": "I didn't expect her to make a move on him.",
+      "ptIntent": "tomar a iniciativa com ele",
+      "enIntent": "make a move on him"
+    },
+    {
+      "pt": "Se você está interessado nela, talvez seja hora de tomar a iniciativa.",
+      "en": "If you're interested in her, maybe it's time to make a move on her.",
+      "ptIntent": "tomar a iniciativa",
+      "enIntent": "make a move on her"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "dating",
+    "flirting",
+    "romance",
+    "initiative",
+    "informal",
+    "conversation"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "estar-procurando-no-lugar-errado-barking-up-the-wrong-tree-6a3f91d8-2c74-4e56-b821-5d9c37a0f142",
+  "intention": "Estar procurando no lugar errado / Culpar a pessoa errada / Seguir a pista errada",
+  "english": "be barking up the wrong tree",
+  "pattern": "be + barking up the wrong tree",
+  "description": "Expressão idiomática usada quando alguém está seguindo uma linha de raciocínio errada, procurando uma solução no lugar errado, suspeitando da pessoa errada ou fazendo uma acusação equivocada. A ideia é que a pessoa está direcionando seus esforços para o alvo errado.",
+  "category": "idiom",
+  "searchTerms": [
+    "procurando no lugar errado",
+    "culpar a pessoa errada",
+    "suspeitar da pessoa errada",
+    "seguir a pista errada",
+    "estar enganado",
+    "ir pelo caminho errado",
+    "alvo errado",
+    "barking up the wrong tree",
+    "wrong tree"
+  ],
+  "examples": [
+    {
+      "pt": "Se você acha que fui eu, está culpando a pessoa errada.",
+      "en": "If you think I did it, you're barking up the wrong tree.",
+      "ptIntent": "está culpando a pessoa errada",
+      "enIntent": "barking up the wrong tree"
+    },
+    {
+      "pt": "A polícia percebeu que estava seguindo a pista errada.",
+      "en": "The police realized they were barking up the wrong tree.",
+      "ptIntent": "seguindo a pista errada",
+      "enIntent": "barking up the wrong tree"
+    },
+    {
+      "pt": "Se você está procurando uma solução aqui, está procurando no lugar errado.",
+      "en": "If you're looking for a solution here, you're barking up the wrong tree.",
+      "ptIntent": "procurando no lugar errado",
+      "enIntent": "barking up the wrong tree"
+    },
+    {
+      "pt": "Eles acham que o problema está no banco de dados, mas estão indo pelo caminho errado.",
+      "en": "They think the problem is in the database, but they're barking up the wrong tree.",
+      "ptIntent": "indo pelo caminho errado",
+      "enIntent": "barking up the wrong tree"
+    },
+    {
+      "pt": "Se você acha que vou mudar de ideia, está muito enganado.",
+      "en": "If you think I'm going to change my mind, you're barking up the wrong tree.",
+      "ptIntent": "está muito enganado",
+      "enIntent": "barking up the wrong tree"
+    },
+    {
+      "pt": "Não adianta reclamar comigo. Você está falando com a pessoa errada.",
+      "en": "There's no point complaining to me. You're barking up the wrong tree.",
+      "ptIntent": "falando com a pessoa errada",
+      "enIntent": "barking up the wrong tree"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "mistake",
+    "wrong-assumption",
+    "wrong-person",
+    "investigation",
+    "conversation"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
+
+  {
+    "id": "queria-que-voce-fosse-estivesse-i-wish-you-were-7d2f84c1-5a93-46e8-b721-3c9f10a65d42",
+    "intention": "Queria que você fosse / estivesse...",
+    "english": "I wish you were...",
+    "pattern": "I wish + subject + were + complement",
+    "description": "Estrutura usada para desejar que uma situação presente fosse diferente da realidade atual. Com o verbo 'be', 'were' é tradicionalmente usado em construções hipotéticas.",
+    "category": "chunk",
+    "searchTerms": [
+      "queria que você fosse",
+      "queria que você estivesse",
+      "quem dera você estivesse",
+      "i wish you were",
+      "wish you were"
+    ],
+    "examples": [
+      {
+        "pt": "Queria que você estivesse aqui.",
+        "en": "I wish you were here.",
+        "ptIntent": "Queria que você estivesse",
+        "enIntent": "I wish you were"
+      },
+      {
+        "pt": "Queria que você estivesse comigo agora.",
+        "en": "I wish you were with me right now.",
+        "ptIntent": "Queria que você estivesse",
+        "enIntent": "I wish you were"
+      },
+      {
+        "pt": "Queria que você fosse meu vizinho.",
+        "en": "I wish you were my neighbor.",
+        "ptIntent": "Queria que você fosse",
+        "enIntent": "I wish you were"
+      },
+      {
+        "pt": "Queria que você estivesse mais perto.",
+        "en": "I wish you were closer.",
+        "ptIntent": "Queria que você estivesse",
+        "enIntent": "I wish you were"
+      },
+      {
+        "pt": "Queria que você fosse mais paciente.",
+        "en": "I wish you were more patient.",
+        "ptIntent": "Queria que você fosse",
+        "enIntent": "I wish you were"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "wish",
+      "desire",
+      "hypothetical",
+      "present"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "queria-que-voce-tivesse-i-wish-you-had-3a91e6d8-72c5-4f30-b846-1d9e57c2a604",
+    "intention": "Queria que você tivesse...",
+    "english": "I wish you had...",
+    "pattern": "I wish + subject + had + past participle",
+    "description": "Estrutura usada para expressar arrependimento ou desejar que algo no passado tivesse acontecido de maneira diferente. Como o passado já não pode ser alterado, normalmente transmite arrependimento, frustração ou reflexão sobre uma situação anterior.",
+    "category": "chunk",
+    "searchTerms": [
+      "queria que você tivesse",
+      "queria que você tivesse feito",
+      "bem que você podia ter",
+      "pena que você não",
+      "i wish you had",
+      "wish had",
+      "arrependimento"
+    ],
+    "examples": [
+      {
+        "pt": "Queria que você tivesse vindo.",
+        "en": "I wish you had come.",
+        "ptIntent": "Queria que você tivesse vindo",
+        "enIntent": "I wish you had come"
+      },
+      {
+        "pt": "Queria que você tivesse me contado.",
+        "en": "I wish you had told me.",
+        "ptIntent": "Queria que você tivesse me contado",
+        "enIntent": "I wish you had told me"
+      },
+      {
+        "pt": "Queria que você tivesse visto aquilo.",
+        "en": "I wish you had seen that.",
+        "ptIntent": "Queria que você tivesse visto",
+        "enIntent": "I wish you had seen"
+      },
+      {
+        "pt": "Queria que você tivesse ficado mais tempo.",
+        "en": "I wish you had stayed longer.",
+        "ptIntent": "Queria que você tivesse ficado",
+        "enIntent": "I wish you had stayed"
+      },
+      {
+        "pt": "Queria que você tivesse me avisado antes.",
+        "en": "I wish you had warned me earlier.",
+        "ptIntent": "Queria que você tivesse me avisado",
+        "enIntent": "I wish you had warned me"
+      },
+      {
+        "pt": "Queria que você tivesse aceitado aquele emprego.",
+        "en": "I wish you had taken that job.",
+        "ptIntent": "Queria que você tivesse aceitado",
+        "enIntent": "I wish you had taken"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "wish",
+      "past",
+      "regret",
+      "past-perfect",
+      "hypothetical"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "queria-que-voce-bem-que-voce-podia-i-wish-you-would-6f28c4a1-9d73-45e6-b210-8a5c31f7d942",
+    "intention": "Queria que você... / Bem que você podia...",
+    "english": "I wish you would...",
+    "pattern": "I wish + subject + would + base verb",
+    "description": "Estrutura usada quando queremos que outra pessoa mude um comportamento, faça alguma coisa ou quando desejamos que uma situação mude. Muitas vezes transmite impaciência, irritação, pedido ou forte desejo de mudança.",
+    "category": "chunk",
+    "searchTerms": [
+      "queria que você",
+      "bem que você podia",
+      "queria que você parasse",
+      "queria que você começasse",
+      "queria que você fizesse",
+      "i wish you would",
+      "wish would",
+      "mudar comportamento"
+    ],
+    "examples": [
+      {
+        "pt": "Queria que você me escutasse.",
+        "en": "I wish you would listen to me.",
+        "ptIntent": "Queria que você me escutasse",
+        "enIntent": "I wish you would listen"
+      },
+      {
+        "pt": "Bem que você podia me ligar de vez em quando.",
+        "en": "I wish you would call me once in a while.",
+        "ptIntent": "Bem que você podia me ligar",
+        "enIntent": "I wish you would call"
+      },
+      {
+        "pt": "Queria que você parasse de fazer isso.",
+        "en": "I wish you would stop doing that.",
+        "ptIntent": "Queria que você parasse",
+        "enIntent": "I wish you would stop"
+      },
+      {
+        "pt": "Queria que você me desse uma chance.",
+        "en": "I wish you would give me a chance.",
+        "ptIntent": "Queria que você me desse",
+        "enIntent": "I wish you would give"
+      },
+      {
+        "pt": "Bem que você podia responder minhas mensagens.",
+        "en": "I wish you would answer my messages.",
+        "ptIntent": "Bem que você podia responder",
+        "enIntent": "I wish you would answer"
+      },
+      {
+        "pt": "Queria que você levasse isso mais a sério.",
+        "en": "I wish you would take this more seriously.",
+        "ptIntent": "Queria que você levasse",
+        "enIntent": "I wish you would take"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "wish",
+      "would",
+      "behavior",
+      "change",
+      "desire",
+      "complaint"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  }
+
 
   ]
 }

@@ -120,6 +120,7 @@ export function BasicTraining({
     "corrected" | "better" | null
   >(null);
   const [speechError, setSpeechError] = useState<string | null>(null);
+  const [copyStatus, setCopyStatus] = useState<"idle" | "copied" | "error">("idle");
 
   useEffect(() => {
     let active = true;
@@ -208,10 +209,72 @@ export function BasicTraining({
     setSpeechError(null);
     setSpeaking(false);
     setEvaluationSpeaking(null);
+    setCopyStatus("idle");
 
     if ("speechSynthesis" in window) {
       window.speechSynthesis.cancel();
     }
+  }
+
+  async function handleCopyStudentText() {
+    const textToCopy = studentText.trim();
+
+    if (!textToCopy) {
+      return;
+    }
+
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(textToCopy);
+      } else {
+        const textarea = document.createElement("textarea");
+        textarea.value = textToCopy;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        textarea.style.pointerEvents = "none";
+        document.body.appendChild(textarea);
+        textarea.select();
+
+        const copied = document.execCommand("copy");
+        document.body.removeChild(textarea);
+
+        if (!copied) {
+          throw new Error("Não foi possível copiar a frase.");
+        }
+      }
+
+      setCopyStatus("copied");
+      window.setTimeout(() => {
+        setCopyStatus("idle");
+      }, 1500);
+    } catch {
+      setCopyStatus("error");
+      window.setTimeout(() => {
+        setCopyStatus("idle");
+      }, 1500);
+    }
+  }
+
+  function handleOpenGoogleTranslate() {
+    const englishText = studentText.trim();
+
+    if (!englishText) {
+      return;
+    }
+
+    const googleTranslateUrl = new URL("https://translate.google.com/");
+    googleTranslateUrl.searchParams.set("hl", "pt-BR");
+    googleTranslateUrl.searchParams.set("sl", "en");
+    googleTranslateUrl.searchParams.set("tl", "pt");
+    googleTranslateUrl.searchParams.set("text", englishText);
+    googleTranslateUrl.searchParams.set("op", "translate");
+
+    window.open(
+      googleTranslateUrl.toString(),
+      "_blank",
+      "noopener,noreferrer"
+    );
   }
 
   async function handleEvaluate() {
@@ -541,9 +604,104 @@ export function BasicTraining({
       {!loading && !error && (
         <>
           <div className="training-writing-area">
-            <label htmlFor="basic-training-answer">
-              Escreva (Dite) sua frase
-            </label>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "0.55rem",
+                marginBottom: "0.35rem"
+              }}
+            >
+              <label htmlFor="basic-training-answer" style={{ margin: 0 }}>
+                Escreva (Dite) sua frase
+              </label>
+
+              <button
+                type="button"
+                className="secondary-button"
+                onClick={handleCopyStudentText}
+                disabled={!studentText.trim()}
+                title={
+                  copyStatus === "copied"
+                    ? "Frase copiada"
+                    : copyStatus === "error"
+                      ? "Erro ao copiar"
+                      : "Copiar frase"
+                }
+                aria-label={
+                  copyStatus === "copied"
+                    ? "Frase copiada"
+                    : copyStatus === "error"
+                      ? "Erro ao copiar a frase"
+                      : "Copiar frase para a área de transferência"
+                }
+                style={{
+                  width: "2.25rem",
+                  minWidth: "2.25rem",
+                  height: "2.25rem",
+                  minHeight: "2.25rem",
+                  padding: 0,
+                  borderRadius: "999px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0
+                }}
+              >
+                {copyStatus === "copied" ? (
+                  <span aria-hidden="true">✓</span>
+                ) : (
+                  <svg
+                    aria-hidden="true"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="9" y="9" width="13" height="13" rx="2" />
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                  </svg>
+                )}
+              </button>
+
+              <button
+                type="button"
+                className="secondary-button"
+                onClick={handleOpenGoogleTranslate}
+                disabled={!studentText.trim()}
+                title="Abrir no Google Tradutor (inglês → português)"
+                aria-label="Abrir frase no Google Tradutor do inglês para português"
+                style={{
+                  width: "2.25rem",
+                  minWidth: "2.25rem",
+                  height: "2.25rem",
+                  minHeight: "2.25rem",
+                  padding: "0.28rem",
+                  borderRadius: "999px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0,
+                  overflow: "hidden"
+                }}
+              >
+                <img
+                  src="/google-translate-icon.png"
+                  alt=""
+                  aria-hidden="true"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    display: "block"
+                  }}
+                />
+              </button>
+            </div>
 
             <textarea
               id="basic-training-answer"
@@ -552,6 +710,7 @@ export function BasicTraining({
               value={studentText}
               onChange={(event) => {
                 setStudentText(event.target.value);
+                setCopyStatus("idle");
                 setEvaluation(null);
                 setEvaluationError(null);
                 setGoogleTranslation(null);
