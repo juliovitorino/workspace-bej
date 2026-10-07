@@ -23662,6 +23662,539 @@
   ],
   "related": ["perguntar-qual-a-distancia-how-far-a63f18d5-4b72-49c1-852e-97d36a5f2048"],
   "englishLevel": "A1"
+},
+{
+  "id": "quanto-tempo-voce-levou-para-how-long-did-it-take-you-7c4e91a2-5d83-46f7-b120-9a3e68d5f241",
+  "intention": "Quanto tempo você levou para...? / Quanto tempo demorou para você...?",
+  "english": "How long did it take you to...?",
+  "pattern": "How long + did it take + you + to + verb?",
+  "description": "Usado para perguntar quanto tempo uma pessoa levou para realizar ou concluir alguma coisa no passado. Em português brasileiro, a intenção pode surgir naturalmente como 'Quanto tempo você levou para...?' ou 'Quanto tempo demorou para você...?'.",
+  "category": "question",
+  "searchTerms": [
+    "quanto tempo",
+    "quanto tempo você levou",
+    "quanto tempo você levou para",
+    "quanto tempo demorou",
+    "quanto tempo demorou para você",
+    "quanto tempo demorou para você fazer",
+    "demorou quanto tempo",
+    "how long",
+    "how long did it take",
+    "how long did it take you",
+    "how long did it take you to"
+  ],
+  "examples": [
+    {
+      "pt": "Quanto tempo você levou para aprender inglês?",
+      "en": "How long did it take you to learn English?",
+      "ptIntent": "Quanto tempo você levou para",
+      "enIntent": "How long did it take you to"
+    },
+    {
+      "pt": "Quanto tempo você levou para terminar o projeto?",
+      "en": "How long did it take you to finish the project?",
+      "ptIntent": "Quanto tempo você levou para",
+      "enIntent": "How long did it take you to"
+    },
+    {
+      "pt": "Quanto tempo demorou para você chegar lá?",
+      "en": "How long did it take you to get there?",
+      "ptIntent": "Quanto tempo demorou para você",
+      "enIntent": "How long did it take you to"
+    },
+    {
+      "pt": "Quanto tempo você levou para encontrar um emprego?",
+      "en": "How long did it take you to find a job?",
+      "ptIntent": "Quanto tempo você levou para",
+      "enIntent": "How long did it take you to"
+    },
+    {
+      "pt": "Quanto tempo demorou para você se acostumar com a nova cidade?",
+      "en": "How long did it take you to get used to the new city?",
+      "ptIntent": "Quanto tempo demorou para você",
+      "enIntent": "How long did it take you to"
+    },
+    {
+      "pt": "Quanto tempo você levou para construir sua casa?",
+      "en": "How long did it take you to build your house?",
+      "ptIntent": "Quanto tempo você levou para",
+      "enIntent": "How long did it take you to"
+    },
+    {
+      "pt": "Quanto tempo demorou para você aprender a dirigir?",
+      "en": "How long did it take you to learn how to drive?",
+      "ptIntent": "Quanto tempo demorou para você",
+      "enIntent": "How long did it take you to"
+    },
+    {
+      "pt": "Quanto tempo você levou para tomar essa decisão?",
+      "en": "How long did it take you to make that decision?",
+      "ptIntent": "Quanto tempo você levou para",
+      "enIntent": "How long did it take you to"
+    }
+  ],
+  "tags": [
+    "question",
+    "how long",
+    "take",
+    "time",
+    "duration",
+    "past",
+    "high-frequency"
+  ],
+  "related": [],
+  "englishLevel": "A2"
+},
+{
+  "id": "quanto-tempo-demorou-para-voce-how-long-did-it-take-you-7c4e91a2-5d83-46f7-b120-9a3e68d5f241",
+  "intention": "Quanto tempo demorou para você...?",
+  "english": "How long did it take you to...?",
+  "pattern": "How long + did it take + you + to + verb?",
+  "description": "Usado para perguntar quanto tempo foi necessário para alguém realizar ou concluir alguma coisa no passado. Em português brasileiro, a intenção pode surgir naturalmente como 'Quanto tempo demorou para você...?'.",
+  "category": "question",
+  "searchTerms": [
+    "quanto tempo",
+    "quanto tempo demorou",
+    "quanto tempo demorou para você",
+    "demorou quanto tempo",
+    "demorou para você",
+    "quanto tempo você levou",
+    "how long",
+    "how long did it take",
+    "how long did it take you",
+    "how long did it take you to"
+  ],
+  "examples": [
+    {
+      "pt": "Quanto tempo demorou para você aprender inglês?",
+      "en": "How long did it take you to learn English?",
+      "ptIntent": "Quanto tempo demorou para você",
+      "enIntent": "How long did it take you to"
+    },
+    {
+      "pt": "Quanto tempo demorou para você terminar o projeto?",
+      "en": "How long did it take you to finish the project?",
+      "ptIntent": "Quanto tempo demorou para você",
+      "enIntent": "How long did it take you to"
+    },
+    {
+      "pt": "Quanto tempo demorou para você chegar lá?",
+      "en": "How long did it take you to get there?",
+      "ptIntent": "Quanto tempo demorou para você",
+      "enIntent": "How long did it take you to"
+    },
+    {
+      "pt": "Quanto tempo demorou para você encontrar um emprego?",
+      "en": "How long did it take you to find a job?",
+      "ptIntent": "Quanto tempo demorou para você",
+      "enIntent": "How long did it take you to"
+    },
+    {
+      "pt": "Quanto tempo demorou para você se acostumar com a nova cidade?",
+      "en": "How long did it take you to get used to the new city?",
+      "ptIntent": "Quanto tempo demorou para você",
+      "enIntent": "How long did it take you to"
+    },
+    {
+      "pt": "Quanto tempo demorou para você construir sua casa?",
+      "en": "How long did it take you to build your house?",
+      "ptIntent": "Quanto tempo demorou para você",
+      "enIntent": "How long did it take you to"
+    },
+    {
+      "pt": "Quanto tempo demorou para você aprender a dirigir?",
+      "en": "How long did it take you to learn how to drive?",
+      "ptIntent": "Quanto tempo demorou para você",
+      "enIntent": "How long did it take you to"
+    },
+    {
+      "pt": "Quanto tempo demorou para você tomar essa decisão?",
+      "en": "How long did it take you to make that decision?",
+      "ptIntent": "Quanto tempo demorou para você",
+      "enIntent": "How long did it take you to"
+    }
+  ],
+  "tags": [
+    "question",
+    "how long",
+    "take",
+    "time",
+    "duration",
+    "past",
+    "high-frequency"
+  ],
+  "related": [],
+  "englishLevel": "A2"
+},
+
+  {
+    "id": "estar-todo-arrumado-dressed-to-the-nines-5f8c2a71-3d94-4e62-b817-6a39d5f1c240",
+    "intention": "Estar todo arrumado / Todo elegante",
+    "english": "dressed to the nines",
+    "pattern": "be + dressed to the nines",
+    "description": "Usado quando alguém está muito bem vestido, normalmente de maneira mais elegante ou caprichada do que o habitual. Em português brasileiro, pode surgir naturalmente como 'estar todo arrumado', 'estar todo elegante' ou 'estar no maior estilo'.",
+    "category": "idiom",
+    "searchTerms": [
+      "todo arrumado",
+      "estar todo arrumado",
+      "todo elegante",
+      "muito elegante",
+      "bem vestido",
+      "no maior estilo",
+      "dressed to the nines",
+      "to the nines"
+    ],
+    "examples": [
+      {
+        "pt": "Olha você, todo arrumado para o casamento!",
+        "en": "Look at you, dressed to the nines for the wedding!",
+        "ptIntent": "todo arrumado",
+        "enIntent": "dressed to the nines"
+      },
+      {
+        "pt": "Todo mundo estava super elegante na festa.",
+        "en": "Everyone was dressed to the nines at the party.",
+        "ptIntent": "super elegante",
+        "enIntent": "dressed to the nines"
+      },
+      {
+        "pt": "Por que você está todo arrumado hoje?",
+        "en": "Why are you dressed to the nines today?",
+        "ptIntent": "todo arrumado",
+        "enIntent": "dressed to the nines"
+      },
+      {
+        "pt": "Ela chegou toda elegante para o jantar.",
+        "en": "She showed up dressed to the nines for dinner.",
+        "ptIntent": "toda elegante",
+        "enIntent": "dressed to the nines"
+      },
+      {
+        "pt": "Não precisa ir todo arrumado, é só um jantar casual.",
+        "en": "You don't need to be dressed to the nines. It's just a casual dinner.",
+        "ptIntent": "todo arrumado",
+        "enIntent": "dressed to the nines"
+      }
+    ],
+    "tags": [
+      "idiom",
+      "clothes",
+      "appearance",
+      "fashion",
+      "social situations"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "aposto-que-ten-to-one-9a4e71c2-6d83-45f0-b219-7c3a58e6d142",
+    "intention": "Aposto que... / É quase certo que...",
+    "english": "ten to one",
+    "pattern": "ten to one + clause",
+    "description": "Usado para dizer que alguma coisa é muito provável. A ideia original vem de uma probabilidade de dez contra um. Em português brasileiro, pode surgir naturalmente como 'aposto que...', 'é quase certo que...' ou 'quer apostar que...?'.",
+    "category": "idiom",
+    "searchTerms": [
+      "aposto que",
+      "é quase certo",
+      "quase certeza",
+      "quer apostar que",
+      "provavelmente",
+      "ten to one",
+      "odds"
+    ],
+    "examples": [
+      {
+        "pt": "Aposto que ele vai chegar atrasado de novo.",
+        "en": "Ten to one he'll be late again.",
+        "ptIntent": "Aposto que",
+        "enIntent": "Ten to one"
+      },
+      {
+        "pt": "Aposto que ela esqueceu o celular em casa.",
+        "en": "Ten to one she left her phone at home.",
+        "ptIntent": "Aposto que",
+        "enIntent": "Ten to one"
+      },
+      {
+        "pt": "É quase certo que vai chover assim que a gente sair.",
+        "en": "Ten to one it'll start raining as soon as we leave.",
+        "ptIntent": "É quase certo que",
+        "enIntent": "Ten to one"
+      },
+      {
+        "pt": "Aposto que ele nem leu minha mensagem ainda.",
+        "en": "Ten to one he hasn't even read my message yet.",
+        "ptIntent": "Aposto que",
+        "enIntent": "Ten to one"
+      },
+      {
+        "pt": "Aposto que ela vai cancelar na última hora.",
+        "en": "Ten to one she'll cancel at the last minute.",
+        "ptIntent": "Aposto que",
+        "enIntent": "Ten to one"
+      }
+    ],
+    "tags": [
+      "idiom",
+      "probability",
+      "prediction",
+      "conversation"
+    ],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "eu-te-cubro-estou-na-sua-retaguarda-ive-got-your-six-3e7c91a5-62d8-4f34-b170-8a5e29c6d413",
+    "intention": "Eu te cubro / Tô na sua retaguarda",
+    "english": "I've got your six",
+    "pattern": "I've got + your six",
+    "description": "Expressão originada no contexto militar, em que a posição de seis horas representa a retaguarda. Hoje também pode ser usada fora desse contexto para dizer que você está protegendo, apoiando ou cuidando das costas de alguém. Em português brasileiro, a ideia pode surgir como 'eu te cubro', 'tô na sua retaguarda' ou 'deixa comigo'.",
+    "category": "idiom",
+    "searchTerms": [
+      "eu te cubro",
+      "te dou cobertura",
+      "estou te protegendo",
+      "tô na sua retaguarda",
+      "estou na sua retaguarda",
+      "deixa comigo",
+      "pode contar comigo",
+      "got your six",
+      "I've got your six",
+      "watch your back"
+    ],
+    "examples": [
+      {
+        "pt": "Vai lá falar com ele. Eu te cubro.",
+        "en": "Go talk to him. I've got your six.",
+        "ptIntent": "Eu te cubro",
+        "enIntent": "I've got your six"
+      },
+      {
+        "pt": "Pode ir na frente. Tô na sua retaguarda.",
+        "en": "You go ahead. I've got your six.",
+        "ptIntent": "Tô na sua retaguarda",
+        "enIntent": "I've got your six"
+      },
+      {
+        "pt": "Não se preocupa, cara. Eu te cubro.",
+        "en": "Don't worry, man. I've got your six.",
+        "ptIntent": "Eu te cubro",
+        "enIntent": "I've got your six"
+      },
+      {
+        "pt": "Se alguma coisa der errado, eu te cubro.",
+        "en": "If anything goes wrong, I've got your six.",
+        "ptIntent": "eu te cubro",
+        "enIntent": "I've got your six"
+      },
+      {
+        "pt": "Você cuida disso e eu fico na sua retaguarda.",
+        "en": "You take care of that, and I've got your six.",
+        "ptIntent": "eu fico na sua retaguarda",
+        "enIntent": "I've got your six"
+      }
+    ],
+    "tags": [
+      "idiom",
+      "support",
+      "protection",
+      "military-origin",
+      "conversation"
+    ],
+    "related": [],
+    "englishLevel": "B2"
+  },
+  {
+    "id": "na-ultima-hora-at-the-eleventh-hour-8f2c71a4-6d39-4e85-b120-93a7c54d8e16",
+    "intention": "Na última hora / No último momento",
+    "english": "at the eleventh hour",
+    "pattern": "at the eleventh hour",
+    "description": "Usado quando alguma coisa acontece ou é feita no último momento possível, geralmente pouco antes de um prazo ou de ser tarde demais. Em português brasileiro, corresponde naturalmente a 'na última hora' ou 'no último momento'.",
+    "category": "idiom",
+    "searchTerms": [
+      "na última hora",
+      "no último momento",
+      "em cima da hora",
+      "quase tarde demais",
+      "eleventh hour",
+      "at the eleventh hour",
+      "last minute"
+    ],
+    "examples": [
+      {
+        "pt": "Ele cancelou a viagem na última hora.",
+        "en": "He canceled the trip at the eleventh hour.",
+        "ptIntent": "na última hora",
+        "enIntent": "at the eleventh hour"
+      },
+      {
+        "pt": "Conseguimos terminar o projeto na última hora.",
+        "en": "We managed to finish the project at the eleventh hour.",
+        "ptIntent": "na última hora",
+        "enIntent": "at the eleventh hour"
+      },
+      {
+        "pt": "Ela mudou de ideia no último momento.",
+        "en": "She changed her mind at the eleventh hour.",
+        "ptIntent": "no último momento",
+        "enIntent": "at the eleventh hour"
+      },
+      {
+        "pt": "Eles chegaram a um acordo na última hora.",
+        "en": "They reached an agreement at the eleventh hour.",
+        "ptIntent": "na última hora",
+        "enIntent": "at the eleventh hour"
+      },
+      {
+        "pt": "Meu chefe mudou tudo na última hora.",
+        "en": "My boss changed everything at the eleventh hour.",
+        "ptIntent": "na última hora",
+        "enIntent": "at the eleventh hour"
+      }
+    ],
+    "tags": [
+      "idiom",
+      "time",
+      "deadline",
+      "last minute",
+      "high-frequency"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "estar-nas-nuvens-on-cloud-nine-6a3f91d8-2c74-4e56-b821-5d9c37a0f142",
+    "intention": "Estar nas nuvens / Estar feliz pra caramba",
+    "english": "on cloud nine",
+    "pattern": "be + on cloud nine",
+    "description": "Usado para dizer que alguém está extremamente feliz, geralmente por causa de alguma notícia ou acontecimento muito positivo. Em português brasileiro, a ideia surge naturalmente como 'estar nas nuvens', 'estar radiante' ou informalmente 'estar feliz pra caramba'.",
+    "category": "idiom",
+    "searchTerms": [
+      "estar nas nuvens",
+      "nas nuvens",
+      "muito feliz",
+      "feliz pra caramba",
+      "estar radiante",
+      "felicidade",
+      "cloud nine",
+      "on cloud nine"
+    ],
+    "examples": [
+      {
+        "pt": "Consegui o emprego! Estou nas nuvens!",
+        "en": "I got the job! I'm on cloud nine!",
+        "ptIntent": "Estou nas nuvens",
+        "enIntent": "I'm on cloud nine"
+      },
+      {
+        "pt": "Ela está nas nuvens desde que recebeu a notícia.",
+        "en": "She's been on cloud nine since she got the news.",
+        "ptIntent": "está nas nuvens",
+        "enIntent": "been on cloud nine"
+      },
+      {
+        "pt": "Ele estava nas nuvens depois do primeiro encontro.",
+        "en": "He was on cloud nine after their first date.",
+        "ptIntent": "estava nas nuvens",
+        "enIntent": "was on cloud nine"
+      },
+      {
+        "pt": "Passei na prova. Estou feliz pra caramba!",
+        "en": "I passed the exam. I'm on cloud nine!",
+        "ptIntent": "Estou feliz pra caramba",
+        "enIntent": "I'm on cloud nine"
+      },
+      {
+        "pt": "Quando ela disse sim, fiquei nas nuvens.",
+        "en": "When she said yes, I was on cloud nine.",
+        "ptIntent": "fiquei nas nuvens",
+        "enIntent": "was on cloud nine"
+      }
+    ],
+    "tags": [
+      "idiom",
+      "happiness",
+      "feelings",
+      "emotion",
+      "conversation",
+      "high-frequency"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+  "id": "antes-tarde-do-que-nunca-better-late-than-never-2f7c91a4-6d38-4e52-b170-8a5e39c6d241",
+  "intention": "Antes tarde do que nunca",
+  "english": "Better late than never",
+  "pattern": "Better late than never",
+  "description": "Usado para dizer que é melhor fazer alguma coisa com atraso do que nunca fazê-la. É praticamente equivalente à expressão brasileira 'Antes tarde do que nunca' e pode ser usada tanto como resposta quanto como comentário sobre algo que finalmente aconteceu.",
+  "category": "idiom",
+  "searchTerms": [
+    "antes tarde do que nunca",
+    "melhor tarde do que nunca",
+    "finalmente",
+    "demorou mas fez",
+    "demorou mas aconteceu",
+    "better late than never",
+    "late",
+    "never"
+  ],
+  "examples": [
+    {
+      "pt": "Finalmente comecei a estudar inglês. Antes tarde do que nunca!",
+      "en": "I finally started studying English. Better late than never!",
+      "ptIntent": "Antes tarde do que nunca",
+      "enIntent": "Better late than never"
+    },
+    {
+      "pt": "Finalmente comecei a fazer academia. Antes tarde do que nunca!",
+      "en": "I finally started going to the gym. Better late than never!",
+      "ptIntent": "Antes tarde do que nunca",
+      "enIntent": "Better late than never"
+    },
+    {
+      "pt": "Ele finalmente pediu desculpas. Antes tarde do que nunca.",
+      "en": "He finally apologized. Better late than never.",
+      "ptIntent": "Antes tarde do que nunca",
+      "enIntent": "Better late than never"
+    },
+    {
+      "pt": "Finalmente marquei aquela consulta que estava adiando. Antes tarde do que nunca.",
+      "en": "I finally made that appointment I'd been putting off. Better late than never.",
+      "ptIntent": "Antes tarde do que nunca",
+      "enIntent": "Better late than never"
+    },
+    {
+      "pt": "Ela começou a aprender a dirigir aos cinquenta anos. Antes tarde do que nunca!",
+      "en": "She started learning to drive at fifty. Better late than never!",
+      "ptIntent": "Antes tarde do que nunca",
+      "enIntent": "Better late than never"
+    },
+    {
+      "pt": "Finalmente organizei minhas finanças. Antes tarde do que nunca.",
+      "en": "I finally got my finances in order. Better late than never.",
+      "ptIntent": "Antes tarde do que nunca",
+      "enIntent": "Better late than never"
+    },
+    {
+      "pt": "Você finalmente consertou aquela torneira? Bom, antes tarde do que nunca!",
+      "en": "You finally fixed that faucet? Well, better late than never!",
+      "ptIntent": "antes tarde do que nunca",
+      "enIntent": "better late than never"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "proverb",
+    "saying",
+    "late",
+    "never",
+    "everyday conversation",
+    "high-frequency"
+  ],
+  "related": [],
+  "englishLevel": "A2"
 }
+
   ]
 }
