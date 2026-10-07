@@ -198,6 +198,9 @@ export function AdvancedTraining({
   const [speechError, setSpeechError] = useState<string | null>(null);
   const [copyStatus, setCopyStatus] = useState<"idle" | "copied" | "error">("idle");
   const [dictating, setDictating] = useState(false);
+  const [dictationTarget, setDictationTarget] = useState<
+    "sentenceOne" | "sentenceTwo" | "combined" | null
+  >(null);
   const showDictationButton = !isMobileDevice();
   const [dictationError, setDictationError] = useState<string | null>(null);
   const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
@@ -314,13 +317,16 @@ export function AdvancedTraining({
     recognitionRef.current?.abort();
     recognitionRef.current = null;
     setDictating(false);
+    setDictationTarget(null);
 
     if ("speechSynthesis" in window) {
       window.speechSynthesis.cancel();
     }
   }
 
-  function handleToggleDictation() {
+  function handleToggleDictation(
+    target: "sentenceOne" | "sentenceTwo" | "combined"
+  ) {
     if (dictating) {
       recognitionRef.current?.stop();
       return;
@@ -336,6 +342,7 @@ export function AdvancedTraining({
     }
 
     setDictationError(null);
+    setDictationTarget(target);
 
     const recognition = new SpeechRecognitionApi();
     recognition.lang = "en-US";
@@ -368,20 +375,28 @@ export function AdvancedTraining({
         return;
       }
 
-      setCombinedSentence((current) => {
+      const appendTranscript = (current: string) => {
         const currentText = current.trimEnd();
 
         return currentText
           ? `${currentText} ${transcript}`
           : transcript;
-      });
+      };
 
-      setCopyStatus("idle");
+      if (target === "sentenceOne") {
+        setSentenceOne(appendTranscript);
+      } else if (target === "sentenceTwo") {
+        setSentenceTwo(appendTranscript);
+      } else {
+        setCombinedSentence(appendTranscript);
+        setCopyStatus("idle");
+        setGoogleTranslation(null);
+        setTranslationError(null);
+        setSpeechError(null);
+      }
+
       setEvaluation(null);
       setEvaluationError(null);
-      setGoogleTranslation(null);
-      setTranslationError(null);
-      setSpeechError(null);
     };
 
     recognition.onerror = (event) => {
@@ -409,6 +424,7 @@ export function AdvancedTraining({
     recognition.onend = () => {
       recognitionRef.current = null;
       setDictating(false);
+      setDictationTarget(null);
     };
 
     recognitionRef.current = recognition;
@@ -418,9 +434,11 @@ export function AdvancedTraining({
     } catch {
       recognitionRef.current = null;
       setDictating(false);
+      setDictationTarget(null);
       setDictationError("Não foi possível iniciar o microfone.");
     }
   }
+
 
   function handleClearStudentText() {
     setCombinedSentence("");
@@ -436,6 +454,7 @@ export function AdvancedTraining({
     recognitionRef.current?.abort();
     recognitionRef.current = null;
     setDictating(false);
+    setDictationTarget(null);
 
     if ("speechSynthesis" in window) {
       window.speechSynthesis.cancel();
@@ -870,9 +889,74 @@ export function AdvancedTraining({
 
           <div className="advanced-writing-grid">
             <div className="training-writing-area">
-              <label htmlFor="advanced-sentence-one">
-                Frase 1
-              </label>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.55rem",
+                  marginBottom: "0.35rem"
+                }}
+              >
+                <label htmlFor="advanced-sentence-one" style={{ margin: 0 }}>
+                  Frase 1
+                </label>
+
+                {showDictationButton && (
+                  <button
+                    type="button"
+                    className="secondary-button"
+                    onClick={() => handleToggleDictation("sentenceOne")}
+                    title={
+                      dictating && dictationTarget === "sentenceOne"
+                        ? "Parar ditado"
+                        : "Ditar frase 1 em inglês"
+                    }
+                    aria-label={
+                      dictating && dictationTarget === "sentenceOne"
+                        ? "Parar ditado da frase 1"
+                        : "Ditar frase 1 em inglês"
+                    }
+                    aria-pressed={dictating && dictationTarget === "sentenceOne"}
+                    style={{
+                      width: "2.25rem",
+                      minWidth: "2.25rem",
+                      height: "2.25rem",
+                      minHeight: "2.25rem",
+                      padding: 0,
+                      borderRadius: "999px",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                      color:
+                        dictating && dictationTarget === "sentenceOne"
+                          ? "#dc2626"
+                          : undefined,
+                      boxShadow:
+                        dictating && dictationTarget === "sentenceOne"
+                          ? "0 0 0 2px rgba(220, 38, 38, 0.18)"
+                          : undefined
+                    }}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect x="9" y="2" width="6" height="11" rx="3" />
+                      <path d="M5 10a7 7 0 0 0 14 0" />
+                      <path d="M12 17v5" />
+                      <path d="M8 22h8" />
+                    </svg>
+                  </button>
+                )}
+              </div>
 
               <textarea
                 id="advanced-sentence-one"
@@ -888,9 +972,74 @@ export function AdvancedTraining({
             </div>
 
             <div className="training-writing-area">
-              <label htmlFor="advanced-sentence-two">
-                Frase 2
-              </label>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.55rem",
+                  marginBottom: "0.35rem"
+                }}
+              >
+                <label htmlFor="advanced-sentence-two" style={{ margin: 0 }}>
+                  Frase 2
+                </label>
+
+                {showDictationButton && (
+                  <button
+                    type="button"
+                    className="secondary-button"
+                    onClick={() => handleToggleDictation("sentenceTwo")}
+                    title={
+                      dictating && dictationTarget === "sentenceTwo"
+                        ? "Parar ditado"
+                        : "Ditar frase 2 em inglês"
+                    }
+                    aria-label={
+                      dictating && dictationTarget === "sentenceTwo"
+                        ? "Parar ditado da frase 2"
+                        : "Ditar frase 2 em inglês"
+                    }
+                    aria-pressed={dictating && dictationTarget === "sentenceTwo"}
+                    style={{
+                      width: "2.25rem",
+                      minWidth: "2.25rem",
+                      height: "2.25rem",
+                      minHeight: "2.25rem",
+                      padding: 0,
+                      borderRadius: "999px",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                      color:
+                        dictating && dictationTarget === "sentenceTwo"
+                          ? "#dc2626"
+                          : undefined,
+                      boxShadow:
+                        dictating && dictationTarget === "sentenceTwo"
+                          ? "0 0 0 2px rgba(220, 38, 38, 0.18)"
+                          : undefined
+                    }}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect x="9" y="2" width="6" height="11" rx="3" />
+                      <path d="M5 10a7 7 0 0 0 14 0" />
+                      <path d="M12 17v5" />
+                      <path d="M8 22h8" />
+                    </svg>
+                  </button>
+                )}
+              </div>
 
               <textarea
                 id="advanced-sentence-two"
@@ -963,10 +1112,10 @@ export function AdvancedTraining({
                 <button
                 type="button"
                 className="secondary-button"
-                onClick={handleToggleDictation}
-                title={dictating ? "Parar ditado" : "Ditar frase em inglês"}
-                aria-label={dictating ? "Parar ditado" : "Ditar frase em inglês"}
-                aria-pressed={dictating}
+                onClick={() => handleToggleDictation("combined")}
+                title={dictating && dictationTarget === "combined" ? "Parar ditado" : "Ditar frase em inglês"}
+                aria-label={dictating && dictationTarget === "combined" ? "Parar ditado" : "Ditar frase em inglês"}
+                aria-pressed={dictating && dictationTarget === "combined"}
                 style={{
                   width: "2.25rem",
                   minWidth: "2.25rem",
@@ -978,8 +1127,8 @@ export function AdvancedTraining({
                   alignItems: "center",
                   justifyContent: "center",
                   flexShrink: 0,
-                  color: dictating ? "#dc2626" : undefined,
-                  boxShadow: dictating
+                  color: dictating && dictationTarget === "combined" ? "#dc2626" : undefined,
+                  boxShadow: dictating && dictationTarget === "combined"
                     ? "0 0 0 2px rgba(220, 38, 38, 0.18)"
                     : undefined
                 }}
