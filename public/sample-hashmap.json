@@ -22522,7 +22522,7 @@
       }
     ],
     "tags": ["question", "how-far", "distance"],
-    "related": [],
+    "related": ["e-longe-daqui-ate-how-far-is-it-from-here-to-8c4e2f71-6a93-4d58-b120-7f3a91c5e642"],
     "englishLevel": "A1"
   },
   {
@@ -23576,21 +23576,28 @@
 },
 {
   "id": "e-longe-daqui-ate-how-far-is-it-from-here-to-8c4e2f71-6a93-4d58-b120-7f3a91c5e642",
-  "intention": "É longe daqui até o/a...?",
-  "english": "How far is it from here to...?",
-  "pattern": "How far + is it + from here + to + place?",
-  "description": "Usado para perguntar qual é a distância entre o lugar onde você está e outro local. Em português brasileiro, a intenção frequentemente surge naturalmente como 'É longe daqui até...?' ou 'Qual é a distância daqui até...?'.",
+  "intention": "É longe daí/daqui até o/a...? / Qual é a distância daí/daqui até o/a...?",
+  "english": "How far is it from there/here to...?",
+  "pattern": "How far + is it + from here/there + to + place?",
+  "description": "Usado para perguntar a distância entre o lugar onde você está ou onde outra pessoa está e outro local. Em português brasileiro, essa intenção pode surgir naturalmente como 'É longe daqui até...?', 'É longe daí até...?', 'Qual é a distância daqui até...?' ou 'Qual é a distância daí até...?'. Em inglês, usamos 'from here' quando o ponto de referência é o lugar onde estamos e 'from there' quando o ponto de referência é o lugar onde a outra pessoa está.",
   "category": "question",
   "searchTerms": [
     "é longe daqui",
+    "é longe daí",
     "é longe daqui até",
+    "é longe daí até",
     "qual a distância daqui",
+    "qual a distância daí",
     "qual é a distância daqui até",
+    "qual é a distância daí até",
     "daqui até",
+    "daí até",
     "how far",
     "how far is it",
     "how far is it from here",
-    "how far is it from here to"
+    "how far is it from there",
+    "how far is it from here to",
+    "how far is it from there to"
   ],
   "examples": [
     {
@@ -23600,16 +23607,22 @@
       "enIntent": "How far is it from here to"
     },
     {
-      "pt": "É longe daqui até o centro da cidade?",
+      "pt": "É longe daí até o aeroporto?",
+      "en": "How far is it from there to the airport?",
+      "ptIntent": "É longe daí até",
+      "enIntent": "How far is it from there to"
+    },
+    {
+      "pt": "Qual é a distância daqui até o centro da cidade?",
       "en": "How far is it from here to downtown?",
-      "ptIntent": "É longe daqui até",
+      "ptIntent": "Qual é a distância daqui até",
       "enIntent": "How far is it from here to"
     },
     {
-      "pt": "É longe daqui até a estação de trem?",
-      "en": "How far is it from here to the train station?",
-      "ptIntent": "É longe daqui até",
-      "enIntent": "How far is it from here to"
+      "pt": "Qual é a distância daí até a estação de trem?",
+      "en": "How far is it from there to the train station?",
+      "ptIntent": "Qual é a distância daí até",
+      "enIntent": "How far is it from there to"
     },
     {
       "pt": "É longe daqui até o hotel?",
@@ -23618,22 +23631,22 @@
       "enIntent": "How far is it from here to"
     },
     {
-      "pt": "É longe daqui até a praia?",
-      "en": "How far is it from here to the beach?",
-      "ptIntent": "É longe daqui até",
-      "enIntent": "How far is it from here to"
+      "pt": "É longe daí até a praia?",
+      "en": "How far is it from there to the beach?",
+      "ptIntent": "É longe daí até",
+      "enIntent": "How far is it from there to"
     },
     {
-      "pt": "É longe daqui até o shopping?",
+      "pt": "Qual é a distância daqui até o shopping?",
       "en": "How far is it from here to the mall?",
-      "ptIntent": "É longe daqui até",
+      "ptIntent": "Qual é a distância daqui até",
       "enIntent": "How far is it from here to"
     },
     {
-      "pt": "É longe daqui até a sua casa?",
-      "en": "How far is it from here to your house?",
-      "ptIntent": "É longe daqui até",
-      "enIntent": "How far is it from here to"
+      "pt": "Qual é a distância daí até a sua casa?",
+      "en": "How far is it from there to your house?",
+      "ptIntent": "Qual é a distância daí até",
+      "enIntent": "How far is it from there to"
     }
   ],
   "tags": [
@@ -23641,12 +23654,13 @@
     "how far",
     "distance",
     "from here",
+    "from there",
     "directions",
     "places",
     "travel",
     "high-frequency"
   ],
-  "related": [],
+  "related": ["perguntar-qual-a-distancia-how-far-a63f18d5-4b72-49c1-852e-97d36a5f2048"],
   "englishLevel": "A1"
 }
   ]
