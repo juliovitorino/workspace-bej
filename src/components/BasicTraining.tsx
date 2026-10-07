@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import {
   evaluateTrainingWithAI,
@@ -7,6 +7,61 @@ import {
 import { translateEnglishToPortuguese } from "../services/googleTranslateService";
 
 const AI_ENABLED = import.meta.env.VITE_AI_ENABLED === "true";
+
+interface SpeechRecognitionResultEventLike extends Event {
+  resultIndex: number;
+  results: ArrayLike<{
+    0: {
+      transcript: string;
+    };
+    isFinal: boolean;
+  }>;
+}
+
+interface SpeechRecognitionErrorEventLike extends Event {
+  error: string;
+}
+
+interface SpeechRecognitionLike {
+  lang: string;
+  continuous: boolean;
+  interimResults: boolean;
+  maxAlternatives: number;
+  onstart: (() => void) | null;
+  onresult: ((event: SpeechRecognitionResultEventLike) => void) | null;
+  onerror: ((event: SpeechRecognitionErrorEventLike) => void) | null;
+  onend: (() => void) | null;
+  start: () => void;
+  stop: () => void;
+  abort: () => void;
+}
+
+type SpeechRecognitionConstructor = new () => SpeechRecognitionLike;
+
+function isMobileDevice(): boolean {
+  const userAgent = navigator.userAgent;
+
+  const isPhoneOrTablet =
+    /Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(userAgent);
+
+  const isIPadOS =
+    navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+
+  return isPhoneOrTablet || isIPadOS;
+}
+
+function getSpeechRecognitionConstructor(): SpeechRecognitionConstructor | null {
+  const speechWindow = window as typeof window & {
+    SpeechRecognition?: SpeechRecognitionConstructor;
+    webkitSpeechRecognition?: SpeechRecognitionConstructor;
+  };
+
+  return (
+    speechWindow.SpeechRecognition ??
+    speechWindow.webkitSpeechRecognition ??
+    null
+  );
+}
 
 
 function renderHighlightedText(
@@ -121,6 +176,10 @@ export function BasicTraining({
   >(null);
   const [speechError, setSpeechError] = useState<string | null>(null);
   const [copyStatus, setCopyStatus] = useState<"idle" | "copied" | "error">("idle");
+  const [dictating, setDictating] = useState(false);
+  const showDictationButton = !isMobileDevice();
+  const [dictationError, setDictationError] = useState<string | null>(null);
+  const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -185,6 +244,8 @@ export function BasicTraining({
 
   useEffect(() => {
     return () => {
+      recognitionRef.current?.abort();
+
       if ("speechSynthesis" in window) {
         window.speechSynthesis.cancel();
       }
@@ -210,9 +271,115 @@ export function BasicTraining({
     setSpeaking(false);
     setEvaluationSpeaking(null);
     setCopyStatus("idle");
+    setDictationError(null);
+    recognitionRef.current?.abort();
+    recognitionRef.current = null;
+    setDictating(false);
 
     if ("speechSynthesis" in window) {
       window.speechSynthesis.cancel();
+    }
+  }
+
+  function handleToggleDictation() {
+    if (dictating) {
+      recognitionRef.current?.stop();
+      return;
+    }
+
+    const SpeechRecognitionApi = getSpeechRecognitionConstructor();
+
+    if (!SpeechRecognitionApi) {
+      setDictationError(
+        "O ditado por voz não está disponível neste navegador. Use Chrome ou Edge no computador."
+      );
+      return;
+    }
+
+    setDictationError(null);
+
+    const recognition = new SpeechRecognitionApi();
+    recognition.lang = "en-US";
+    recognition.continuous = true;
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.onstart = () => {
+      setDictating(true);
+    };
+
+    recognition.onresult = (event) => {
+      const transcripts: string[] = [];
+
+      for (
+        let index = event.resultIndex;
+        index < event.results.length;
+        index += 1
+      ) {
+        const result = event.results[index];
+
+        if (result.isFinal && result[0]?.transcript) {
+          transcripts.push(result[0].transcript.trim());
+        }
+      }
+
+      const transcript = transcripts.join(" ").trim();
+
+      if (!transcript) {
+        return;
+      }
+
+      setStudentText((current) => {
+        const currentText = current.trimEnd();
+
+        return currentText
+          ? `${currentText} ${transcript}`
+          : transcript;
+      });
+
+      setCopyStatus("idle");
+      setEvaluation(null);
+      setEvaluationError(null);
+      setGoogleTranslation(null);
+      setTranslationError(null);
+      setSpeechError(null);
+    };
+
+    recognition.onerror = (event) => {
+      if (event.error === "aborted") {
+        return;
+      }
+
+      if (event.error === "not-allowed" || event.error === "service-not-allowed") {
+        setDictationError(
+          "Permita o acesso ao microfone no navegador para usar o ditado."
+        );
+        return;
+      }
+
+      if (event.error === "no-speech") {
+        setDictationError(
+          "Nenhuma fala foi detectada. Clique no microfone e tente novamente."
+        );
+        return;
+      }
+
+      setDictationError("Não foi possível reconhecer sua fala. Tente novamente.");
+    };
+
+    recognition.onend = () => {
+      recognitionRef.current = null;
+      setDictating(false);
+    };
+
+    recognitionRef.current = recognition;
+
+    try {
+      recognition.start();
+    } catch {
+      recognitionRef.current = null;
+      setDictating(false);
+      setDictationError("Não foi possível iniciar o microfone.");
     }
   }
 
@@ -616,6 +783,50 @@ export function BasicTraining({
                 Escreva (Dite) sua frase
               </label>
 
+              {showDictationButton && (
+                <button
+                type="button"
+                className="secondary-button"
+                onClick={handleToggleDictation}
+                title={dictating ? "Parar ditado" : "Ditar frase em inglês"}
+                aria-label={dictating ? "Parar ditado" : "Ditar frase em inglês"}
+                aria-pressed={dictating}
+                style={{
+                  width: "2.25rem",
+                  minWidth: "2.25rem",
+                  height: "2.25rem",
+                  minHeight: "2.25rem",
+                  padding: 0,
+                  borderRadius: "999px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0,
+                  color: dictating ? "#dc2626" : undefined,
+                  boxShadow: dictating
+                    ? "0 0 0 2px rgba(220, 38, 38, 0.18)"
+                    : undefined
+                }}
+              >
+                <svg
+                  aria-hidden="true"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect x="9" y="2" width="6" height="11" rx="3" />
+                  <path d="M5 10a7 7 0 0 0 14 0" />
+                  <path d="M12 17v5" />
+                  <path d="M8 22h8" />
+                </svg>
+                </button>
+              )}
+
               <button
                 type="button"
                 className="secondary-button"
@@ -724,6 +935,19 @@ export function BasicTraining({
                 }
               }}
             />
+
+            {dictationError && (
+              <p
+                role="alert"
+                style={{
+                  margin: "0.45rem 0 0",
+                  color: "#b91c1c",
+                  fontSize: "0.9rem"
+                }}
+              >
+                {dictationError}
+              </p>
+            )}
 
             <div className="training-action-buttons">
               {AI_ENABLED && (
