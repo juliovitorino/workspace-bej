@@ -615,11 +615,27 @@ Mandatório:
         <h2>{item.intention}</h2>
         <p className="detail-english">{item.english}</p>
 
-        {item.englishLevel && (
-          <div className="detail-level">
-            <span className="pill english-level-pill">
-              Nível {item.englishLevel}
-            </span>
+        {(item.englishLevel || item.category) && (
+          <div
+            className="detail-level"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              flexWrap: "wrap"
+            }}
+          >
+            {item.englishLevel && (
+              <span className="pill english-level-pill">
+                Nível {item.englishLevel}
+              </span>
+            )}
+
+            {item.category && (
+              <span className="pill">
+                {item.category}
+              </span>
+            )}
           </div>
         )}
 
