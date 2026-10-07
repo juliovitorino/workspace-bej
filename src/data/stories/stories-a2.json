@@ -1,6 +1,132 @@
 {
     "stories": [
         {
+            "id": "a2-daily-life-493849f3-af6c-422b-9a73-74ef970dd2ac",
+            "englishLevel": "A2",
+            "topic": "daily-life",
+            "titlePt": "Um Novo Começo Doce",
+            "titleEn": "A Sweet New Beginning",
+            "hqImage": "/images/hq/stories/a2-daily-life-493849f3-af6c-422b-9a73-74ef970dd2ac-1859.png",
+            "paragraphs": [
+                {
+                    "pt": "Lucas estava cansado de sua rotina diária. Ele queria ganhar dinheiro extra para viajar.",
+                    "en": "Lucas was tired of his daily routine. He wanted to make money to travel.",
+                    "intentions": [
+                        {
+                            "intentionId": "era-estado-estava-processo-estive-esteve",
+                            "ptIntent": "estava",
+                            "enIntent": "was"
+                        },
+                        {
+                            "intentionId": "make-money",
+                            "ptIntent": "ganhar dinheiro",
+                            "enIntent": "make money"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Ele pensou em estudar à noite, mas tinha um problema. \"Meu trajeto leva uma hora todos os dias\", ele pensou.",
+                    "en": "He thought about studying at night, but there was a problem. \"My commute takes one hour every day,\" he thought.",
+                    "intentions": [
+                        {
+                            "intentionId": "my-commute-takes",
+                            "ptIntent": "Meu trajeto leva uma hora",
+                            "enIntent": "My commute takes one hour"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Mesmo assim, ele decidiu fazer uma aula de culinária online nos finais de semana para aprender a fazer doces.",
+                    "en": "Even so, he decided to take a class online on weekends to learn how to make sweets.",
+                    "intentions": [
+                        {
+                            "intentionId": "take-a-class",
+                            "ptIntent": "fazer uma aula",
+                            "enIntent": "take a class"
+                        }
+                    ]
+                },
+                {
+                    "pt": "No dia seguinte, no trabalho, sua chefe Sarah o viu pensativo. Ela perguntou: \"O que posso fazer por você hoje, Lucas? Você parece distraído.\"",
+                    "en": "The next day at work, his boss Sarah saw him thinking. She asked, \"What can I do for you today, Lucas? You look distracted.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "o-que-posso-te",
+                            "ptIntent": "O que posso fazer por você",
+                            "enIntent": "What can I do for you"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Lucas começou a falar, mas parou com vergonha. Sarah sorriu e disse: \"Pode continuar, Lucas. Eu quero ouvir.\"",
+                    "en": "Lucas started to speak, but stopped because he was shy. Sarah smiled and said, \"Go ahead, Lucas. I want to hear.\"",
+                    "intentions": [
+                        {
+                            "intentionId": "pode-continuar-go-ahead",
+                            "ptIntent": "Pode continuar",
+                            "enIntent": "Go ahead"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Lucas respirou fundo e tomou coragem. \"Eu gostaria de fazer uma sugestão\", disse ele. \"Podemos vender meus doces caseiros na nossa cafeteria?\"",
+                    "en": "Lucas took a deep breath and got courage. \"I would like to make a suggestion,\" he said. \"Can we sell my homemade sweets in our coffee shop?\"",
+                    "intentions": [
+                        {
+                            "intentionId": "make-a-suggestion",
+                            "ptIntent": "fazer uma sugestão",
+                            "enIntent": "make a suggestion"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Sarah achou a ideia ótima, mas disse que precisava provar os doces um de cada vez para escolher os melhores.",
+                    "en": "Sarah thought it was a great idea, but she said she needed to taste the sweets one at a time to choose the best ones.",
+                    "intentions": [
+                        {
+                            "intentionId": "one-at-a-time",
+                            "ptIntent": "um de cada vez",
+                            "enIntent": "one at a time"
+                        }
+                    ]
+                },
+                {
+                    "pt": "\"Isso é perfeito! Eu vou voltar para casa agora mesmo para preparar as receitas\", respondeu Lucas, animado.",
+                    "en": "\"That is perfect! I will go back to my house right now to prepare the recipes,\" Lucas answered, excited.",
+                    "intentions": [
+                        {
+                            "intentionId": "voltar-para-um-lugar-go-back",
+                            "ptIntent": "voltar para casa",
+                            "enIntent": "go back to my house"
+                        }
+                    ]
+                },
+                {
+                    "pt": "Sarah riu e o lembrou de que ele precisava terminar o relatório antes de ir. Lucas respondeu: \"Já estou cuidando disso!\"",
+                    "en": "Sarah laughed and reminded him that he needed to finish the report before leaving. Lucas replied, \"I'm on it!\"",
+                    "intentions": [
+                        {
+                            "intentionId": "ja-estou-cuidando-disso-im-on-it",
+                            "ptIntent": "Já estou cuidando disso",
+                            "enIntent": "I'm on it"
+                        }
+                    ]
+                }
+            ],
+            "intentionsUsed": [
+                "era-estado-estava-processo-estive-esteve",
+                "make-money",
+                "my-commute-takes",
+                "take-a-class",
+                "o-que-posso-te",
+                "pode-continuar-go-ahead",
+                "make-a-suggestion",
+                "one-at-a-time",
+                "voltar-para-um-lugar-go-back",
+                "ja-estou-cuidando-disso-im-on-it"
+            ]
+        },
+        {
             "id": "a2-daily-life-84f9bfc1-a4e2-43d3-bac8-1409942900e6",
             "englishLevel": "A2",
             "topic": "daily-life",

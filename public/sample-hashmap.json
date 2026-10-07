@@ -24194,7 +24194,529 @@
   ],
   "related": [],
   "englishLevel": "A2"
-}
+},
+{
+  "id": "responder-agradecimento-de-nada-imagina-thank-you-responses-8e3c71a5-4d92-46f8-b130-7a5e29c6d814",
+  "intention": "De nada / Imagina / Não foi nada",
+  "english": "You're welcome / No problem / No worries / Of course / Anytime / My pleasure / Happy to help",
+  "pattern": "Thank you / Thanks → response to thanks",
+  "description": "Diferentes maneiras naturais de responder a um agradecimento em inglês. 'You're welcome' é a forma clássica e neutra. 'No problem' e 'No worries' são mais casuais. 'Of course' transmite que ajudar foi algo natural. 'Anytime' equivale a 'sempre que precisar'. 'My pleasure' é mais educado e elegante, enquanto 'Happy to help' é muito usado quando queremos demonstrar satisfação em ter ajudado.",
+  "category": "chunk",
+  "searchTerms": [
+    "de nada",
+    "imagina",
+    "não foi nada",
+    "sem problema",
+    "sempre que precisar",
+    "foi um prazer",
+    "feliz em ajudar",
+    "responder obrigado",
+    "responder agradecimento",
+    "thank you",
+    "thanks",
+    "you're welcome",
+    "no problem",
+    "no worries",
+    "of course",
+    "anytime",
+    "my pleasure",
+    "happy to help"
+  ],
+  "examples": [
+    {
+      "pt": "— Obrigado pela ajuda! — De nada!",
+      "en": "— Thanks for your help! — You're welcome!",
+      "ptIntent": "De nada",
+      "enIntent": "You're welcome"
+    },
+    {
+      "pt": "— Obrigado por me ajudar com isso. — Sem problema!",
+      "en": "— Thanks for helping me with this. — No problem!",
+      "ptIntent": "Sem problema",
+      "enIntent": "No problem"
+    },
+    {
+      "pt": "— Valeu por esperar por mim. — Imagina!",
+      "en": "— Thanks for waiting for me. — No worries!",
+      "ptIntent": "Imagina",
+      "enIntent": "No worries"
+    },
+    {
+      "pt": "— Muito obrigado por fazer isso por mim. — Claro!",
+      "en": "— Thank you so much for doing that for me. — Of course!",
+      "ptIntent": "Claro",
+      "enIntent": "Of course"
+    },
+    {
+      "pt": "— Valeu pela ajuda, cara. — Sempre que precisar!",
+      "en": "— Thanks for the help, man. — Anytime!",
+      "ptIntent": "Sempre que precisar",
+      "enIntent": "Anytime"
+    },
+    {
+      "pt": "— Muito obrigado por ter vindo. — Foi um prazer.",
+      "en": "— Thank you so much for coming. — My pleasure.",
+      "ptIntent": "Foi um prazer",
+      "enIntent": "My pleasure"
+    },
+    {
+      "pt": "— Obrigado por resolver isso tão rápido. — Fico feliz em ajudar.",
+      "en": "— Thanks for sorting that out so quickly. — Happy to help.",
+      "ptIntent": "Fico feliz em ajudar",
+      "enIntent": "Happy to help"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "thank you",
+    "thanks",
+    "gratitude",
+    "response",
+    "everyday conversation",
+    "small talk",
+    "high-frequency"
+  ],
+  "related": [],
+  "englishLevel": "A1"
+},
+{
+  "id": "brincadeiras-a-parte-jokes-aside-6f2c81a4-9d37-4e65-b120-8a5e43c7d916",
+  "intention": "Brincadeiras à parte...",
+  "english": "Jokes aside, ...",
+  "pattern": "Jokes aside, + clause",
+  "description": "Usado para encerrar momentaneamente as brincadeiras e passar a falar de maneira séria ou sincera. É equivalente ao português brasileiro 'Brincadeiras à parte...'. A variação 'All jokes aside' também é comum e acrescenta um pouco mais de ênfase.",
+  "category": "idiom",
+  "searchTerms": [
+    "brincadeiras à parte",
+    "brincadeira à parte",
+    "falando sério",
+    "agora falando sério",
+    "sem brincadeira",
+    "jokes aside",
+    "all jokes aside",
+    "kidding aside"
+  ],
+  "examples": [
+    {
+      "pt": "Brincadeiras à parte, você fez um ótimo trabalho.",
+      "en": "Jokes aside, you did a great job.",
+      "ptIntent": "Brincadeiras à parte",
+      "enIntent": "Jokes aside"
+    },
+    {
+      "pt": "Brincadeiras à parte, precisamos resolver esse problema hoje.",
+      "en": "Jokes aside, we need to solve this problem today.",
+      "ptIntent": "Brincadeiras à parte",
+      "enIntent": "Jokes aside"
+    },
+    {
+      "pt": "Brincadeiras à parte, eu realmente preciso melhorar meu inglês.",
+      "en": "Jokes aside, I really need to improve my English.",
+      "ptIntent": "Brincadeiras à parte",
+      "enIntent": "Jokes aside"
+    },
+    {
+      "pt": "Brincadeiras à parte, ele é um cara muito legal.",
+      "en": "Jokes aside, he's a really nice guy.",
+      "ptIntent": "Brincadeiras à parte",
+      "enIntent": "Jokes aside"
+    },
+    {
+      "pt": "Brincadeiras à parte, estou muito feliz por você.",
+      "en": "Jokes aside, I'm really happy for you.",
+      "ptIntent": "Brincadeiras à parte",
+      "enIntent": "Jokes aside"
+    },
+    {
+      "pt": "Brincadeiras à parte, isso é um problema sério.",
+      "en": "All jokes aside, this is a serious problem.",
+      "ptIntent": "Brincadeiras à parte",
+      "enIntent": "All jokes aside"
+    },
+    {
+      "pt": "Brincadeiras à parte, acho que você tomou a decisão certa.",
+      "en": "Jokes aside, I think you made the right decision.",
+      "ptIntent": "Brincadeiras à parte",
+      "enIntent": "Jokes aside"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "jokes aside",
+    "all jokes aside",
+    "serious",
+    "conversation",
+    "transition",
+    "everyday conversation"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "seria-teria-teria-sido-teria-tido-would-be-have-been-had-4c7e91a2-8d53-46f0-b721-3a9e65d8f214",
+  "intention": "Seria / Teria / Teria sido ou estado / Teria tido",
+  "english": "would be / would have + past participle / would have been / would have had",
+  "pattern": "would be + complement | would have + past participle | would have been + complement | would have had + noun",
+  "description": "Família de estruturas com 'would' usada para falar de situações hipotéticas. 'Would be' normalmente corresponde a 'seria/estaria'. 'Would have + past participle' corresponde a 'teria + particípio'. 'Would have been' corresponde a 'teria sido/estado'. 'Would have had' corresponde a 'teria tido'.",
+  "category": "chunk",
+  "searchTerms": [
+    "seria",
+    "estaria",
+    "teria",
+    "teria feito",
+    "teria ido",
+    "teria sido",
+    "teria estado",
+    "teria tido",
+    "would be",
+    "would have",
+    "would have been",
+    "would have had"
+  ],
+  "examples": [
+    {
+      "pt": "Seria melhor esperar até amanhã.",
+      "en": "It would be better to wait until tomorrow.",
+      "ptIntent": "Seria melhor",
+      "enIntent": "would be better"
+    },
+    {
+      "pt": "Eu estaria muito feliz com esse resultado.",
+      "en": "I would be very happy with that result.",
+      "ptIntent": "estaria muito feliz",
+      "enIntent": "would be very happy"
+    },
+    {
+      "pt": "Eu teria aceitado o emprego se o salário fosse melhor.",
+      "en": "I would have accepted the job if the salary had been better.",
+      "ptIntent": "teria aceitado",
+      "enIntent": "would have accepted"
+    },
+    {
+      "pt": "Eu teria ido com você, mas estava trabalhando.",
+      "en": "I would have gone with you, but I was working.",
+      "ptIntent": "teria ido",
+      "enIntent": "would have gone"
+    },
+    {
+      "pt": "Teria sido mais fácil com a sua ajuda.",
+      "en": "It would have been easier with your help.",
+      "ptIntent": "Teria sido",
+      "enIntent": "would have been"
+    },
+    {
+      "pt": "Eu teria ficado muito feliz lá.",
+      "en": "I would have been very happy there.",
+      "ptIntent": "teria ficado muito feliz",
+      "enIntent": "would have been very happy"
+    },
+    {
+      "pt": "Eu teria tido mais tempo se tivesse começado mais cedo.",
+      "en": "I would have had more time if I had started earlier.",
+      "ptIntent": "teria tido mais tempo",
+      "enIntent": "would have had more time"
+    },
+    {
+      "pt": "Ela teria tido uma chance melhor se tivesse se preparado.",
+      "en": "She would have had a better chance if she had prepared.",
+      "ptIntent": "teria tido uma chance melhor",
+      "enIntent": "would have had a better chance"
+    }
+  ],
+  "tags": [
+    "would",
+    "would be",
+    "would have",
+    "would have been",
+    "would have had",
+    "conditional",
+    "hypothetical",
+    "past hypothetical"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
+
+  {
+    "id": "ainda-menos-even-less-4895d802-60f2-46bf-8bc2-0dfd6049ad9a",
+    "intention": "Ainda menos / Menos ainda",
+    "english": "even less",
+    "pattern": "even less + noun / adjective / adverb / clause",
+    "description": "Intensifica uma redução ou comparação: uma quantidade, frequência ou intensidade menor do que antes ou do que outra referência.",
+    "category": "chunk",
+    "searchTerms": [
+      "ainda menos",
+      "menos ainda",
+      "cada vez menos",
+      "even less"
+    ],
+    "examples": [
+      {
+        "pt": "Agora tenho ainda menos tempo livre.",
+        "en": "Now I have even less free time.",
+        "ptIntent": "ainda menos",
+        "enIntent": "even less"
+      },
+      {
+        "pt": "Depois de pagar as contas, sobrou ainda menos dinheiro.",
+        "en": "After paying the bills, I had even less money left.",
+        "ptIntent": "ainda menos",
+        "enIntent": "even less"
+      },
+      {
+        "pt": "Ela dorme ainda menos do que eu.",
+        "en": "She sleeps even less than I do.",
+        "ptIntent": "ainda menos",
+        "enIntent": "even less"
+      },
+      {
+        "pt": "Com esse barulho, consigo me concentrar menos ainda.",
+        "en": "With all this noise, I can focus even less.",
+        "ptIntent": "menos ainda",
+        "enIntent": "even less"
+      }
+    ],
+    "tags": [
+      "even",
+      "even less",
+      "everyday conversation"
+    ],
+    "related": [],
+    "englishLevel": "A2"
+  },
+  {
+    "id": "ate-hoje-mesmo-agora-even-now-7866910a-9371-44a1-a263-e39747f205de",
+    "intention": "Até hoje / Mesmo agora",
+    "english": "even now",
+    "pattern": "even now, + clause / clause + even now",
+    "description": "Destaca que algo continua verdadeiro ou surpreendente no momento presente, apesar do tempo passado ou das circunstâncias. Em português, pode corresponder a \"até hoje\" ou \"mesmo agora\", conforme o contexto.",
+    "category": "chunk",
+    "searchTerms": [
+      "até hoje",
+      "mesmo agora",
+      "até agora",
+      "even now"
+    ],
+    "examples": [
+      {
+        "pt": "Até hoje, lembro daquele dia.",
+        "en": "Even now, I remember that day.",
+        "ptIntent": "Até hoje",
+        "enIntent": "Even now"
+      },
+      {
+        "pt": "Mesmo agora, ainda fico nervoso antes de uma entrevista.",
+        "en": "Even now, I still get nervous before an interview.",
+        "ptIntent": "Mesmo agora",
+        "enIntent": "Even now"
+      },
+      {
+        "pt": "Até hoje, não consigo acreditar no que aconteceu.",
+        "en": "Even now, I can’t believe what happened.",
+        "ptIntent": "Até hoje",
+        "enIntent": "Even now"
+      },
+      {
+        "pt": "Mesmo agora, depois de tantos anos, ainda somos amigos.",
+        "en": "Even now, after all these years, we’re still friends.",
+        "ptIntent": "Mesmo agora",
+        "enIntent": "Even now"
+      }
+    ],
+    "tags": [
+      "even",
+      "even now",
+      "everyday conversation"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "mesmo-quando-even-when-3b56c06e-671f-4840-a7b1-916063149eaf",
+    "intention": "Mesmo quando...",
+    "english": "even when",
+    "pattern": "even when + clause",
+    "description": "Indica que algo acontece ou continua acontecendo inclusive em uma situação ou momento que poderia impedir esse resultado. Diferente de \"even if\", normalmente se refere a situações reais ou habituais, não apenas hipotéticas.",
+    "category": "time-connectors",
+    "searchTerms": [
+      "mesmo quando",
+      "até quando",
+      "even when"
+    ],
+    "examples": [
+      {
+        "pt": "Mesmo quando estou cansado, tento praticar inglês.",
+        "en": "Even when I’m tired, I try to practice English.",
+        "ptIntent": "Mesmo quando",
+        "enIntent": "Even when"
+      },
+      {
+        "pt": "Ela sorri mesmo quando está passando por dificuldades.",
+        "en": "She smiles even when she’s going through hard times.",
+        "ptIntent": "mesmo quando",
+        "enIntent": "even when"
+      },
+      {
+        "pt": "Mesmo quando chove, ele sai para caminhar.",
+        "en": "Even when it rains, he goes for a walk.",
+        "ptIntent": "Mesmo quando",
+        "enIntent": "Even when"
+      },
+      {
+        "pt": "Ele me ajuda mesmo quando está ocupado.",
+        "en": "He helps me even when he’s busy.",
+        "ptIntent": "mesmo quando",
+        "enIntent": "even when"
+      }
+    ],
+    "tags": [
+      "even",
+      "even when",
+      "everyday conversation"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "mesmo-naquela-epoca-even-then-f5d1c31c-c62d-48e6-bb6e-d10b27baff43",
+    "intention": "Mesmo naquela época / Mesmo naquele momento",
+    "english": "even then",
+    "pattern": "even then, + clause / clause + even then",
+    "description": "Enfatiza que algo já era verdadeiro em determinado momento do passado, mesmo diante de circunstâncias surpreendentes. Não confundir com \"even so\", que significa \"mesmo assim\" sem necessariamente indicar tempo.",
+    "category": "chunk",
+    "searchTerms": [
+      "mesmo naquela época",
+      "mesmo naquele momento",
+      "até naquela época",
+      "even then"
+    ],
+    "examples": [
+      {
+        "pt": "Mesmo naquela época, eu já queria aprender inglês.",
+        "en": "Even then, I wanted to learn English.",
+        "ptIntent": "Mesmo naquela época",
+        "enIntent": "Even then"
+      },
+      {
+        "pt": "Mesmo naquele momento, eu sabia que precisava mudar.",
+        "en": "Even then, I knew I needed to change.",
+        "ptIntent": "Mesmo naquele momento",
+        "enIntent": "Even then"
+      },
+      {
+        "pt": "Mesmo naquela época, ela já trabalhava muito.",
+        "en": "Even then, she was already working hard.",
+        "ptIntent": "Mesmo naquela época",
+        "enIntent": "Even then"
+      },
+      {
+        "pt": "Mesmo naquele momento, ninguém percebeu o problema.",
+        "en": "Even then, nobody noticed the problem.",
+        "ptIntent": "Mesmo naquele momento",
+        "enIntent": "Even then"
+      }
+    ],
+    "tags": [
+      "even",
+      "even then",
+      "everyday conversation"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "mesmo-antes-de-even-before-0f5e581c-5cf8-4b87-8759-5ddbb8a2185c",
+    "intention": "Mesmo antes de... / Até antes de...",
+    "english": "even before",
+    "pattern": "even before + noun / verb-ing / clause",
+    "description": "Enfatiza que algo aconteceu ou já era verdadeiro antes de outro momento, muitas vezes mais cedo do que se esperava.",
+    "category": "time-connectors",
+    "searchTerms": [
+      "mesmo antes de",
+      "até antes de",
+      "mesmo antes que",
+      "even before"
+    ],
+    "examples": [
+      {
+        "pt": "Mesmo antes de começar o curso, eu já estudava sozinho.",
+        "en": "Even before I started the course, I was studying on my own.",
+        "ptIntent": "Mesmo antes de",
+        "enIntent": "Even before"
+      },
+      {
+        "pt": "Eu já estava nervoso mesmo antes da entrevista.",
+        "en": "I was already nervous even before the interview.",
+        "ptIntent": "mesmo antes",
+        "enIntent": "even before"
+      },
+      {
+        "pt": "Mesmo antes de terminar o filme, eu sabia que ia gostar.",
+        "en": "Even before the movie ended, I knew I was going to like it.",
+        "ptIntent": "Mesmo antes de",
+        "enIntent": "Even before"
+      },
+      {
+        "pt": "Ela acorda cedo, mesmo antes do sol nascer.",
+        "en": "She wakes up early, even before the sun rises.",
+        "ptIntent": "mesmo antes",
+        "enIntent": "even before"
+      }
+    ],
+    "tags": [
+      "even",
+      "even before",
+      "everyday conversation"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  },
+  {
+    "id": "mesmo-depois-de-even-after-402adf0c-2998-41d7-b2eb-08d82f4c7c2e",
+    "intention": "Mesmo depois de...",
+    "english": "even after",
+    "pattern": "even after + noun / verb-ing / clause",
+    "description": "Destaca que algo continua acontecendo ou permanece verdadeiro apesar de um evento anterior que poderia ter mudado a situação.",
+    "category": "time-connectors",
+    "searchTerms": [
+      "mesmo depois de",
+      "até depois de",
+      "even after"
+    ],
+    "examples": [
+      {
+        "pt": "Mesmo depois de trabalhar o dia inteiro, ainda estudo inglês.",
+        "en": "Even after working all day, I still study English.",
+        "ptIntent": "Mesmo depois de",
+        "enIntent": "Even after"
+      },
+      {
+        "pt": "Ela continuou sorrindo mesmo depois da notícia ruim.",
+        "en": "She kept smiling even after the bad news.",
+        "ptIntent": "mesmo depois",
+        "enIntent": "even after"
+      },
+      {
+        "pt": "Mesmo depois de tantos anos, ainda lembro dele.",
+        "en": "Even after all these years, I still remember him.",
+        "ptIntent": "Mesmo depois de",
+        "enIntent": "Even after"
+      },
+      {
+        "pt": "Ele não desistiu mesmo depois de falhar várias vezes.",
+        "en": "He didn’t give up even after failing several times.",
+        "ptIntent": "mesmo depois de",
+        "enIntent": "even after"
+      }
+    ],
+    "tags": [
+      "even",
+      "even after",
+      "everyday conversation"
+    ],
+    "related": [],
+    "englishLevel": "B1"
+  }
 
   ]
 }
