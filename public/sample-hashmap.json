@@ -24980,6 +24980,96 @@
   ],
   "related": [],
   "englishLevel": "A2"
+},
+{
+  "id": "o-que-voce-anda-fazendo-quais-as-novidades-what-have-you-been-up-to-7c9e41a2-5d83-46f7-b120-9a3e68d5f241",
+  "intention": "O QUE VOCÊ ANDA FAZENDO? / QUAIS SÃO AS NOVIDADES? / O QUE VOCÊ TEM FEITO ULTIMAMENTE?",
+  "english": "What have you been up to?",
+  "pattern": "What + have/has + subject + been up to (+ lately/recently)?",
+  "description": "Chunk conversacional muito comum no inglês americano para perguntar informalmente o que alguém anda fazendo, como tem passado o tempo ou quais são as novidades em sua vida. É especialmente natural ao reencontrar amigos ou conversar com alguém depois de algum tempo. A expressão pode ser memorizada como uma pergunta pronta, sem precisar montar mentalmente o present perfect. 'What have you been up to?' geralmente pergunta sobre atividades recentes, enquanto 'What are you up to?' costuma perguntar o que alguém está fazendo ou planejando no momento. Uma resposta natural pode começar com 'Not much', 'I've been working' ou 'I've been pretty busy lately'.",
+  "category": "chunk",
+  "searchTerms": [
+    "o que você anda fazendo",
+    "o que você tem feito",
+    "quais são as novidades",
+    "o que anda fazendo ultimamente",
+    "por onde você anda",
+    "o que anda aprontando",
+    "e aí novidades",
+    "quanto tempo",
+    "what have you been up to",
+    "what have you been up to lately",
+    "what have you been up to recently",
+    "what has she been up to",
+    "what are you up to",
+    "catching up",
+    "small talk"
+  ],
+  "examples": [
+    {
+      "pt": "E aí, John! Quanto tempo! O que você anda fazendo?",
+      "en": "Hey, John! Long time no see! What have you been up to?",
+      "ptIntent": "O que você anda fazendo",
+      "enIntent": "What have you been up to"
+    },
+    {
+      "pt": "Então, quais são as novidades?",
+      "en": "So, what have you been up to?",
+      "ptIntent": "quais são as novidades",
+      "enIntent": "what have you been up to"
+    },
+    {
+      "pt": "O que você tem feito ultimamente? Faz tempo que a gente não conversa.",
+      "en": "What have you been up to lately? We haven't talked in a while.",
+      "ptIntent": "O que você tem feito ultimamente",
+      "enIntent": "What have you been up to lately"
+    },
+    {
+      "pt": "Oi, Sarah! Por onde você anda? Não te vejo há meses!",
+      "en": "Hey, Sarah! What have you been up to? I haven't seen you in months!",
+      "ptIntent": "Por onde você anda",
+      "enIntent": "What have you been up to"
+    },
+    {
+      "pt": "E aí, cara! O que você anda aprontando?",
+      "en": "Hey, man! What have you been up to?",
+      "ptIntent": "O que você anda aprontando",
+      "enIntent": "What have you been up to"
+    },
+    {
+      "pt": "O que ela anda fazendo desde que saiu da empresa?",
+      "en": "What has she been up to since she left the company?",
+      "ptIntent": "O que ela anda fazendo",
+      "enIntent": "What has she been up to"
+    },
+    {
+      "pt": "O que vocês têm feito ultimamente? Ainda estão estudando inglês?",
+      "en": "What have you guys been up to lately? Are you still studying English?",
+      "ptIntent": "O que vocês têm feito ultimamente",
+      "enIntent": "What have you guys been up to lately"
+    },
+    {
+      "pt": "O que você anda fazendo? — Nada demais. Só tenho trabalhado e estudado inglês.",
+      "en": "What have you been up to? — Not much. I've just been working and studying English.",
+      "ptIntent": "O que você anda fazendo",
+      "enIntent": "What have you been up to"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "what have you been up to",
+    "small talk",
+    "catching up",
+    "conversation starters",
+    "informal English",
+    "present perfect",
+    "everyday conversation",
+    "spoken English",
+    "high-frequency",
+    "HelloTalk"
+  ],
+  "related": [],
+  "englishLevel": "B1"
 }
 
   ]
