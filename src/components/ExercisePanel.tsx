@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Example, MentalIntention } from "../types/hashmap";
 
 type ExerciseMode = "basic" | "advanced";
@@ -17,6 +17,68 @@ interface ExercisePanelProps {
 interface ExerciseItem {
   intention: MentalIntention;
   example: Example;
+}
+
+// Guardamos apenas identificadores: as intenções e os exemplos são recuperados
+// do hashmap atual, evitando salvar uma cópia desatualizada do conteúdo.
+interface SavedExercise {
+  intentionId: string;
+  exampleIndex: number;
+}
+
+interface ExerciseSession {
+  englishLevel: EnglishLevel;
+  mode: ExerciseMode;
+  category: string;
+  amount: number;
+  exercises: SavedExercise[];
+}
+
+const EXERCISE_SESSION_KEY = "mental-hashmap-exercise-session-v1";
+
+const DEFAULT_EXERCISE_SESSION: ExerciseSession = {
+  englishLevel: "B1",
+  mode: "basic",
+  category: "Todas",
+  amount: 5,
+  exercises: []
+};
+
+function readExerciseSession(): ExerciseSession {
+  try {
+    const stored = window.sessionStorage.getItem(EXERCISE_SESSION_KEY);
+    if (!stored) return DEFAULT_EXERCISE_SESSION;
+
+    const parsed: unknown = JSON.parse(stored);
+    if (!parsed || typeof parsed !== "object") return DEFAULT_EXERCISE_SESSION;
+
+    const saved = parsed as Partial<ExerciseSession>;
+    return {
+      englishLevel: ENGLISH_LEVELS.includes(saved.englishLevel as EnglishLevel)
+        ? (saved.englishLevel as EnglishLevel)
+        : DEFAULT_EXERCISE_SESSION.englishLevel,
+      mode: saved.mode === "advanced" ? "advanced" : "basic",
+      category: typeof saved.category === "string"
+        ? saved.category
+        : DEFAULT_EXERCISE_SESSION.category,
+      amount: typeof saved.amount === "number" &&
+        Number.isInteger(saved.amount) && saved.amount > 0
+        ? saved.amount
+        : DEFAULT_EXERCISE_SESSION.amount,
+      exercises: Array.isArray(saved.exercises)
+        ? saved.exercises.filter((item): item is SavedExercise =>
+            item !== null &&
+            typeof item === "object" &&
+            typeof item.intentionId === "string" &&
+            Number.isInteger(item.exampleIndex) &&
+            item.exampleIndex >= 0
+          )
+        : []
+    };
+  } catch {
+    // O treino continua funcionando mesmo se o armazenamento estiver bloqueado.
+    return DEFAULT_EXERCISE_SESSION;
+  }
 }
 
 function shuffle<T>(items: T[]): T[] {
@@ -72,12 +134,35 @@ export function ExercisePanel({
   intentions,
   onStartTraining
 }: ExercisePanelProps) {
-  const [englishLevel, setEnglishLevel] =
-    useState<EnglishLevel>("B1");
-  const [mode, setMode] = useState<ExerciseMode>("basic");
-  const [category, setCategory] = useState("Todas");
-  const [amount, setAmount] = useState(5);
-  const [exercises, setExercises] = useState<ExerciseItem[]>([]);
+  const [savedSession] = useState(readExerciseSession);
+  const [englishLevel, setEnglishLevel] = useState<EnglishLevel>(savedSession.englishLevel);
+  const [mode, setMode] = useState<ExerciseMode>(savedSession.mode);
+  const [category, setCategory] = useState(savedSession.category);
+  const [amount, setAmount] = useState(savedSession.amount);
+  const [savedExercises, setSavedExercises] = useState<SavedExercise[]>(savedSession.exercises);
+
+  // Reconstrói o mesmo sorteio (inclusive a ordem e os exemplos escolhidos)
+  // quando a tela é remontada depois de um treino.
+  const exercises = useMemo<ExerciseItem[]>(() => {
+    const byId = new Map(intentions.map((item) => [item.id, item]));
+
+    return savedExercises.flatMap(({ intentionId, exampleIndex }) => {
+      const intention = byId.get(intentionId);
+      const example = intention?.examples?.[exampleIndex];
+      return intention && example ? [{ intention, example }] : [];
+    });
+  }, [intentions, savedExercises]);
+
+  useEffect(() => {
+    try {
+      const session: ExerciseSession = {
+        englishLevel, mode, category, amount, exercises: savedExercises
+      };
+      window.sessionStorage.setItem(EXERCISE_SESSION_KEY, JSON.stringify(session));
+    } catch {
+      // Armazenamento indisponível: não impede a utilização dos exercícios.
+    }
+  }, [englishLevel, mode, category, amount, savedExercises]);
 
   const availableCategories = useMemo(() => {
     const categoryCounts = new Map<string, number>();
@@ -140,21 +225,23 @@ export function ExercisePanel({
 
   function handleGenerate() {
     if (maxAmount === 0) {
-      setExercises([]);
+      setSavedExercises([]);
       return;
     }
 
-    setExercises(
-      generateExercises(
-        availableIntentions,
-        Math.min(amount, maxAmount)
-      )
+    const generated = generateExercises(
+      availableIntentions,
+      Math.min(amount, maxAmount)
     );
+    setSavedExercises(generated.map(({ intention, example }) => ({
+      intentionId: intention.id,
+      exampleIndex: (intention.examples ?? []).indexOf(example)
+    })));
   }
 
   function handleModeChange(nextMode: ExerciseMode) {
     setMode(nextMode);
-    setExercises([]);
+    setSavedExercises([]);
   }
 
   function handleLevelChange(nextLevel: EnglishLevel) {
@@ -166,7 +253,7 @@ export function ExercisePanel({
 
     setEnglishLevel(nextLevel);
     setCategory("Todas");
-    setExercises([]);
+    setSavedExercises([]);
     setAmount((current) =>
       Math.min(Math.max(current, 1), Math.max(levelCount, 1))
     );
@@ -181,7 +268,7 @@ export function ExercisePanel({
     ).length;
 
     setCategory(nextCategory);
-    setExercises([]);
+    setSavedExercises([]);
     setAmount((current) =>
       Math.min(Math.max(current, 1), Math.max(categoryCount, 1))
     );

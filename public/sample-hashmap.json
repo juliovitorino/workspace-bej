@@ -24716,7 +24716,271 @@
     ],
     "related": [],
     "englishLevel": "B1"
-  }
+  },
+  {
+  "id": "se-subestimar-se-desvalorizar-sell-yourself-short-7c4e91a2-5d83-46f7-b120-9a3e68d5f241",
+  "intention": "SE SUBESTIMAR / SE DESVALORIZAR / SE DIMINUIR",
+  "english": "Sell yourself short",
+  "pattern": "subject + sell + reflexive pronoun + short",
+  "description": "Expressão idiomática muito usada no inglês americano para dizer que alguém está subestimando suas próprias capacidades, habilidades, conquistas ou valor. Também pode indicar que uma pessoa está aceitando menos do que merece, especialmente em situações profissionais. A forma 'Don't sell yourself short!' é muito comum para encorajar alguém a reconhecer seu próprio potencial. O pronome reflexivo varia conforme o sujeito: myself, yourself, himself, herself, ourselves, yourselves ou themselves.",
+  "category": "idiom",
+  "searchTerms": [
+    "se subestimar",
+    "não se subestime",
+    "se desvalorizar",
+    "se diminuir",
+    "não reconhecer seu valor",
+    "não dar valor ao próprio potencial",
+    "aceitar menos do que merece",
+    "sell yourself short",
+    "don't sell yourself short",
+    "selling myself short",
+    "selling yourself short",
+    "sold herself short",
+    "sold himself short",
+    "self-worth",
+    "self-confidence"
+  ],
+  "examples": [
+    {
+      "pt": "Não se subestime! Você é muito mais capaz do que imagina.",
+      "en": "Don't sell yourself short! You're much more capable than you think.",
+      "ptIntent": "Não se subestime",
+      "enIntent": "Don't sell yourself short"
+    },
+    {
+      "pt": "Você tem muita experiência como desenvolvedor. Não se desvalorize!",
+      "en": "You have a lot of experience as a developer. Don't sell yourself short!",
+      "ptIntent": "Não se desvalorize",
+      "enIntent": "Don't sell yourself short"
+    },
+    {
+      "pt": "Acho que você está se subestimando.",
+      "en": "I think you're selling yourself short.",
+      "ptIntent": "está se subestimando",
+      "enIntent": "selling yourself short"
+    },
+    {
+      "pt": "Eu costumava me subestimar quando falava inglês com estrangeiros.",
+      "en": "I used to sell myself short when speaking English with foreigners.",
+      "ptIntent": "me subestimar",
+      "enIntent": "sell myself short"
+    },
+    {
+      "pt": "Ela se desvalorizou ao aceitar um salário tão baixo.",
+      "en": "She sold herself short by accepting such a low salary.",
+      "ptIntent": "se desvalorizou",
+      "enIntent": "sold herself short"
+    },
+    {
+      "pt": "Não quero me diminuir só porque ainda não falo inglês fluentemente.",
+      "en": "I don't want to sell myself short just because I'm not fluent in English yet.",
+      "ptIntent": "me diminuir",
+      "enIntent": "sell myself short"
+    },
+    {
+      "pt": "Ele se subestimou durante a entrevista de emprego.",
+      "en": "He sold himself short during the job interview.",
+      "ptIntent": "se subestimou",
+      "enIntent": "sold himself short"
+    },
+    {
+      "pt": "Não se subestime por causa da sua idade. Você ainda tem muito a oferecer.",
+      "en": "Don't sell yourself short because of your age. You still have a lot to offer.",
+      "ptIntent": "Não se subestime",
+      "enIntent": "Don't sell yourself short"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "sell yourself short",
+    "self-confidence",
+    "self-worth",
+    "self-esteem",
+    "career",
+    "job interview",
+    "encouragement",
+    "everyday conversation",
+    "spoken English"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
+{
+  "id": "estar-atrasado-estar-se-atrasando-running-late-8c3e71a5-4d92-46f8-b130-7a5e29c6d814",
+  "intention": "ESTOU ATRASADO! / ESTOU ME ATRASANDO!",
+  "english": "I'm running late!",
+  "pattern": "subject + be + running late (+ for + compromisso)",
+  "description": "Expressão muito comum no inglês americano para dizer que alguém está atrasado ou demorando mais do que o previsto. 'I'm running late' pode ser usada mesmo antes de a pessoa efetivamente perder o horário de um compromisso. Diferentemente de 'I'm running out of time', que significa 'Estou ficando sem tempo', 'I'm running late' indica atraso em relação a um horário ou planejamento. Também pode aparecer no passado como 'I was running late' e no futuro como 'I'm going to be running late'.",
+  "category": "chunk",
+  "searchTerms": [
+    "estou atrasado",
+    "estou me atrasando",
+    "vou me atrasar",
+    "estamos atrasados",
+    "estava atrasado",
+    "estou chegando atrasado",
+    "vou chegar atrasado",
+    "demorando mais que o previsto",
+    "running late",
+    "I'm running late",
+    "we're running late",
+    "was running late",
+    "going to be running late",
+    "late for work",
+    "late for a meeting"
+  ],
+  "examples": [
+    {
+      "pt": "Desculpa, estou atrasado!",
+      "en": "Sorry, I'm running late!",
+      "ptIntent": "estou atrasado",
+      "enIntent": "I'm running late"
+    },
+    {
+      "pt": "Estou me atrasando para o trabalho.",
+      "en": "I'm running late for work.",
+      "ptIntent": "Estou me atrasando",
+      "enIntent": "I'm running late"
+    },
+    {
+      "pt": "Estamos atrasados. Precisamos sair agora!",
+      "en": "We're running late. We need to leave now!",
+      "ptIntent": "Estamos atrasados",
+      "enIntent": "We're running late"
+    },
+    {
+      "pt": "Eu estava atrasado hoje de manhã porque acordei tarde.",
+      "en": "I was running late this morning because I woke up late.",
+      "ptIntent": "estava atrasado",
+      "enIntent": "was running late"
+    },
+    {
+      "pt": "Estou me atrasando para a reunião. Pode começar sem mim.",
+      "en": "I'm running late for the meeting. You can start without me.",
+      "ptIntent": "Estou me atrasando",
+      "enIntent": "I'm running late"
+    },
+    {
+      "pt": "Acho que vou me atrasar. O trânsito está horrível.",
+      "en": "I think I'm going to be running late. Traffic is terrible.",
+      "ptIntent": "vou me atrasar",
+      "enIntent": "going to be running late"
+    },
+    {
+      "pt": "Ela está atrasada porque o ônibus demorou demais.",
+      "en": "She's running late because the bus took too long.",
+      "ptIntent": "está atrasada",
+      "enIntent": "She's running late"
+    },
+    {
+      "pt": "Estamos nos atrasando para o jantar. Vamos logo!",
+      "en": "We're running late for dinner. Let's go!",
+      "ptIntent": "Estamos nos atrasando",
+      "enIntent": "We're running late"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "run late",
+    "running late",
+    "lateness",
+    "time",
+    "schedule",
+    "appointments",
+    "everyday conversation",
+    "spoken English",
+    "high-frequency"
+  ],
+  "related": [],
+  "englishLevel": "A2"
+},
+{
+  "id": "vai-fundo-manda-ver-vai-em-frente-se-joga-go-for-it-9a6e2c71-4d83-45f0-b219-7c3e58a6d142",
+  "intention": "VAI FUNDO! / MANDA VER! / VAI EM FRENTE! / SE JOGA!",
+  "english": "Go for it!",
+  "pattern": "Go for it! / subject + go for it",
+  "description": "Expressão muito comum no inglês americano para incentivar alguém a agir, tentar algo novo, aproveitar uma oportunidade ou seguir em frente com uma decisão. Equivale às expressões brasileiras 'Vai fundo!', 'Manda ver!', 'Vai em frente!' e 'Se joga!'. Também pode ser usada na primeira pessoa, como 'I'm going for it', para dizer que alguém decidiu arriscar ou encarar um desafio.",
+  "category": "chunk",
+  "searchTerms": [
+    "vai fundo",
+    "manda ver",
+    "vai em frente",
+    "se joga",
+    "pode ir",
+    "arrisca",
+    "encara essa",
+    "não perde essa oportunidade",
+    "go for it",
+    "going for it",
+    "went for it",
+    "encouragement",
+    "motivation"
+  ],
+  "examples": [
+    {
+      "pt": "Você quer começar um canal no YouTube? Vai fundo!",
+      "en": "You want to start a YouTube channel? Go for it!",
+      "ptIntent": "Vai fundo",
+      "enIntent": "Go for it"
+    },
+    {
+      "pt": "Se você realmente quer aprender inglês, manda ver!",
+      "en": "If you really want to learn English, go for it!",
+      "ptIntent": "manda ver",
+      "enIntent": "go for it"
+    },
+    {
+      "pt": "Está pensando em se candidatar àquela vaga? Vai em frente!",
+      "en": "Thinking about applying for that job? Go for it!",
+      "ptIntent": "Vai em frente",
+      "enIntent": "Go for it"
+    },
+    {
+      "pt": "Quer viajar sozinho pela primeira vez? Se joga!",
+      "en": "Want to travel alone for the first time? Go for it!",
+      "ptIntent": "Se joga",
+      "enIntent": "Go for it"
+    },
+    {
+      "pt": "Eu estava com medo de começar, mas decidi encarar essa.",
+      "en": "I was afraid to start, but I decided to go for it.",
+      "ptIntent": "encarar essa",
+      "enIntent": "go for it"
+    },
+    {
+      "pt": "Acho que vou arriscar e tentar conseguir aquele emprego.",
+      "en": "I think I'm going to go for it and try to get that job.",
+      "ptIntent": "vou arriscar",
+      "enIntent": "going to go for it"
+    },
+    {
+      "pt": "Ela teve a oportunidade de morar no exterior e resolveu se jogar.",
+      "en": "She had the opportunity to live abroad and decided to go for it.",
+      "ptIntent": "se jogar",
+      "enIntent": "go for it"
+    },
+    {
+      "pt": "Se esse é o seu sonho, vai fundo! Você não tem nada a perder.",
+      "en": "If that's your dream, go for it! You've got nothing to lose.",
+      "ptIntent": "vai fundo",
+      "enIntent": "go for it"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "go for it",
+    "encouragement",
+    "motivation",
+    "decision",
+    "opportunity",
+    "everyday conversation",
+    "spoken English",
+    "high-frequency"
+  ],
+  "related": [],
+  "englishLevel": "A2"
+}
 
   ]
 }
