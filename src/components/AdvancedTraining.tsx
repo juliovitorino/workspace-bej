@@ -541,6 +541,60 @@ export function AdvancedTraining({
     );
   }
 
+  function handlePrintWorksheet() {
+    // Imprime um documento isolado: evita páginas vazias causadas pelo layout do app.
+    // O conteúdo já reflete o sorteio atual; nenhuma nova rodada é gerada.
+    if (!hasEnoughVocabulary) return;
+
+    const worksheet = document.querySelector<HTMLElement>(
+      ".advanced-training-print-sheet"
+    );
+    const worksheetStyles = document.querySelector<HTMLStyleElement>(
+      ".advanced-training > style"
+    );
+    if (!worksheet || !worksheetStyles) return;
+
+    const printFrame = document.createElement("iframe");
+    printFrame.setAttribute("title", "Impressão do treino avançado");
+    printFrame.setAttribute("aria-hidden", "true");
+    printFrame.style.position = "fixed";
+    printFrame.style.width = "0";
+    printFrame.style.height = "0";
+    printFrame.style.border = "0";
+    printFrame.style.opacity = "0";
+    printFrame.style.pointerEvents = "none";
+
+    printFrame.srcdoc = `<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Brazilian English Journey - Treino Avançado</title>
+  <style>${worksheetStyles.textContent ?? ""}</style>
+  <style>
+    @media print {
+      html, body { margin: 0 !important; padding: 0 !important; height: auto !important; min-height: 0 !important; overflow: visible !important; }
+      .advanced-training-print-sheet { position: static !important; top: auto !important; left: auto !important; width: 100% !important; }
+    }
+  </style>
+</head>
+<body>${worksheet.outerHTML}</body>
+</html>`;
+
+    printFrame.onload = () => {
+      const printWindow = printFrame.contentWindow;
+      if (!printWindow) {
+        printFrame.remove();
+        return;
+      }
+      printWindow.addEventListener("afterprint", () => {
+        window.setTimeout(() => printFrame.remove(), 500);
+      }, { once: true });
+      printWindow.focus();
+      printWindow.print();
+    };
+    document.body.appendChild(printFrame);
+  }
+
   async function handleEvaluate() {
     if (!hasEnoughVocabulary) {
       return;
@@ -1336,6 +1390,44 @@ export function AdvancedTraining({
                   }}
                 />
               </button>
+
+              <button
+                type="button"
+                className="secondary-button"
+                onClick={handlePrintWorksheet}
+                disabled={!hasEnoughVocabulary}
+                title="Imprimir folha de exercícios (A4)"
+                aria-label="Imprimir folha de exercícios do treino avançado"
+                style={{
+                  width: "2.25rem",
+                  minWidth: "2.25rem",
+                  height: "2.25rem",
+                  minHeight: "2.25rem",
+                  padding: 0,
+                  borderRadius: "999px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0
+                }}
+              >
+                <svg
+                  aria-hidden="true"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M6 9V3h12v6" />
+                  <rect x="6" y="14" width="12" height="8" rx="1" />
+                  <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+                  <path d="M18 12h.01" />
+                </svg>
+              </button>
             </div>
 
             <textarea
@@ -1587,6 +1679,268 @@ export function AdvancedTraining({
           )}
         </>
       )}
+
+      {/* Folha A4 exclusiva para impressão, sem interferir na interface. */}
+      <style>{`
+        @media screen {
+          .advanced-training-print-sheet { display: none !important; }
+        }
+        @media print {
+          @page { size: A4 portrait; margin: 11mm; }
+          body * { visibility: hidden !important; }
+          .advanced-training > :not(.advanced-training-print-sheet):not(style) { display: none !important; }
+          .advanced-training-print-sheet,
+          .advanced-training-print-sheet * { visibility: visible !important; }
+          .advanced-training-print-sheet {
+            display: block !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            background: white !important;
+            color: #172033 !important;
+            font: 9.5pt/1.27 Arial, Helvetica, sans-serif !important;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+          }
+          .advanced-training-print-sheet * { box-sizing: border-box; }
+          .advanced-training-print-sheet h1,
+          .advanced-training-print-sheet h2,
+          .advanced-training-print-sheet p { margin: 0; }
+          .advanced-training-print-sheet .worksheet-top {
+            border-bottom: 2px solid #334ad9;
+            padding-bottom: 2.5mm;
+            margin-bottom: 3mm;
+          }
+          .advanced-training-print-sheet .worksheet-eyebrow {
+            color: #334ad9;
+            font-size: 8pt;
+            letter-spacing: .7px;
+            font-weight: 700;
+            margin-bottom: 1mm;
+          }
+          .advanced-training-print-sheet .worksheet-intention {
+            font-size: 16pt;
+            line-height: 1.17;
+            font-weight: 750;
+            margin-bottom: 1mm;
+          }
+          .advanced-training-print-sheet .worksheet-english {
+            color: #334ad9;
+            font-size: 12pt;
+            font-weight: 700;
+          }
+          .advanced-training-print-sheet .worksheet-section {
+            margin-bottom: 3mm;
+            break-inside: avoid;
+          }
+          .advanced-training-print-sheet .worksheet-section-title {
+            font-size: 9pt;
+            font-weight: 700;
+            margin-bottom: 1.5mm;
+          }
+          .advanced-training-print-sheet .worksheet-example {
+            background: #f4f6fa !important;
+            padding: 2mm 3mm;
+            border-radius: 2mm;
+          }
+          .advanced-training-print-sheet .worksheet-example p + p { margin-top: 1mm; }
+          .advanced-training-print-sheet .worksheet-example-pt .intention-highlight {
+            color: #b84d00 !important;
+            background: #ffe8c9 !important;
+            font-weight: 700;
+          }
+          .advanced-training-print-sheet .worksheet-example-en { color: #2445c6 !important; }
+          .advanced-training-print-sheet .worksheet-example-en .intention-highlight {
+            color: #1438c0 !important;
+            background: #dce7ff !important;
+            font-weight: 700;
+          }
+          .advanced-training-print-sheet .worksheet-pattern {
+            font: 9pt/1.25 monospace;
+            overflow-wrap: anywhere;
+          }
+          .advanced-training-print-sheet .worksheet-vocabulary {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 2.5mm;
+            margin-bottom: 3mm;
+            break-inside: avoid;
+          }
+          .advanced-training-print-sheet .worksheet-vocab-card {
+            border: 1px solid #ccd5e4;
+            border-radius: 2mm;
+            padding: 2mm;
+          }
+          .advanced-training-print-sheet .worksheet-vocab-label {
+            color: #334ad9;
+            font-size: 8pt;
+            font-weight: 700;
+            letter-spacing: .5px;
+            margin-bottom: 1mm;
+          }
+          .advanced-training-print-sheet .worksheet-vocab-item + .worksheet-vocab-item {
+            border-top: 1px solid #e0e5ef;
+            margin-top: 2mm;
+            padding-top: 2mm;
+          }
+          .advanced-training-print-sheet .worksheet-vocab-word {
+            font-size: 10.5pt;
+            font-weight: 700;
+          }
+          .advanced-training-print-sheet .worksheet-vocab-meaning {
+            font-size: 8pt;
+            color: #536076;
+            overflow-wrap: anywhere;
+            margin: .5mm 0 1mm !important;
+          }
+          .advanced-training-print-sheet .worksheet-verb-forms {
+            font-size: 8pt;
+            line-height: 1.32;
+          }
+          .advanced-training-print-sheet .worksheet-connectors {
+            margin-bottom: 3mm;
+            break-inside: avoid;
+          }
+          .advanced-training-print-sheet .worksheet-connector-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 2mm;
+          }
+          .advanced-training-print-sheet .worksheet-connector {
+            border: 1px solid #ccd5e4;
+            border-radius: 2mm;
+            padding: 2mm;
+            min-width: 0;
+          }
+          .advanced-training-print-sheet .worksheet-connector strong {
+            color: #2445c6;
+            font-size: 9pt;
+            overflow-wrap: anywhere;
+          }
+          .advanced-training-print-sheet .worksheet-connector p {
+            color: #536076;
+            font-size: 8pt;
+            overflow-wrap: anywhere;
+            margin-top: 1mm;
+          }
+          .advanced-training-print-sheet .worksheet-writing-title {
+            font-size: 9pt;
+            font-weight: 700;
+            margin-bottom: 1mm;
+          }
+          .advanced-training-print-sheet .worksheet-writing-instruction {
+            color: #536076;
+            font-size: 8pt;
+            margin-bottom: 1mm;
+          }
+          .advanced-training-print-sheet .worksheet-writing-block {
+            margin-top: 2mm;
+            break-inside: avoid;
+          }
+          .advanced-training-print-sheet .worksheet-writing-line {
+            height: 8mm;
+            border-bottom: 1px solid #b5c0cf;
+          }
+        }
+      `}</style>
+
+      <div className="advanced-training-print-sheet" aria-hidden="true">
+        <header className="worksheet-top">
+          <p className="worksheet-eyebrow">BRAZILIAN ENGLISH JOURNEY · TREINO AVANÇADO</p>
+          <h1 className="worksheet-intention">{intention.intention}</h1>
+          <p className="worksheet-english">{intention.english}</p>
+        </header>
+
+        {intention.examples && intention.examples.length > 0 && (
+          <section className="worksheet-section">
+            <h2 className="worksheet-section-title">Exemplo</h2>
+            <div className="worksheet-example">
+              <p className="worksheet-example-pt">
+                {renderHighlightedText(intention.examples[0].pt, intention.examples[0].ptIntent)}
+              </p>
+              <p className="worksheet-example-en">
+                {renderHighlightedText(intention.examples[0].en, intention.examples[0].enIntent)}
+              </p>
+            </div>
+          </section>
+        )}
+
+        {intention.pattern && (
+          <section className="worksheet-section">
+            <h2 className="worksheet-section-title">Pattern de uso</h2>
+            <p className="worksheet-pattern">{intention.pattern}</p>
+          </section>
+        )}
+
+        {hasEnoughVocabulary && (
+          <>
+            <section className="worksheet-vocabulary">
+              <div className="worksheet-vocab-card">
+                <p className="worksheet-vocab-label">VERBOS</p>
+                {trainingItems.verbs.map((verb) => (
+                  <div className="worksheet-vocab-item" key={verb.id}>
+                    <p className="worksheet-vocab-word">{verb.base}</p>
+                    <p className="worksheet-vocab-meaning">{verb.meanings?.join(" / ")}</p>
+                    <div className="worksheet-verb-forms">
+                      <p><strong>Presente:</strong> {verb.base}{verb.thirdPerson ? ` / ${verb.thirdPerson}` : ""}</p>
+                      <p><strong>Passado:</strong> {verb.past ?? "—"}</p>
+                      <p><strong>Particípio:</strong> {verb.pastParticiple ?? "—"}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="worksheet-vocab-card">
+                <p className="worksheet-vocab-label">ADJETIVOS</p>
+                {trainingItems.adjectives.map((adjective) => (
+                  <div className="worksheet-vocab-item" key={adjective.id}>
+                    <p className="worksheet-vocab-word">{adjective.adjective}</p>
+                    <p className="worksheet-vocab-meaning">{adjective.meanings?.join(" / ")}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="worksheet-vocab-card">
+                <p className="worksheet-vocab-label">SUBSTANTIVOS (NOUNS)</p>
+                {trainingItems.nouns.map((noun) => (
+                  <div className="worksheet-vocab-item" key={noun.id}>
+                    <p className="worksheet-vocab-word">{noun.noun}</p>
+                    <p className="worksheet-vocab-meaning">{noun.meanings?.join(" / ")}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="worksheet-connectors">
+              <h2 className="worksheet-section-title">Conectores disponíveis (EN-US / PT-BR)</h2>
+              <div className="worksheet-connector-grid">
+                {trainingItems.connectors.map((connector) => (
+                  <div className="worksheet-connector" key={connector.id}>
+                    <strong>{connector.connector}</strong>
+                    <p>{connectorMeaning(connector)}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </>
+        )}
+
+        <section className="worksheet-writing">
+          <h2 className="worksheet-writing-title">Minha prática escrita</h2>
+          <p className="worksheet-writing-instruction">
+            Crie duas frases em inglês com o vocabulário sorteado. Depois use um ou mais conectores para juntá-las.
+          </p>
+          {(["Frase 1", "Frase 2", "Junte as duas ideias"] as const).map((title) => (
+            <div className="worksheet-writing-block" key={title}>
+              <h2 className="worksheet-writing-title">{title}</h2>
+              {Array.from({ length: 3 }, (_, index) => (
+                <div className="worksheet-writing-line" key={index} />
+              ))}
+            </div>
+          ))}
+        </section>
+      </div>
     </section>
   );
 }
