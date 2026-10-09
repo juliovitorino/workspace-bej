@@ -8,6 +8,29 @@ import type {
 
 type SentenceMode = "afirmativa" | "negativa" | "interrogativa";
 
+interface VocabularyItem {
+  id: string;
+  meanings?: string[];
+}
+
+interface AdjectiveItem extends VocabularyItem {
+  adjective: string;
+}
+
+interface NounItem extends VocabularyItem {
+  noun: string;
+}
+
+function drawDifferentItem<T extends VocabularyItem>(
+  items: T[],
+  previous: T | null
+): T | null {
+  if (items.length === 0) return null;
+  const alternatives = items.filter((item) => item.id !== previous?.id);
+  const pool = alternatives.length > 0 ? alternatives : items;
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
 const sentenceModes: SentenceMode[] = [
   "afirmativa",
   "negativa",
@@ -44,12 +67,51 @@ export function SpeakingGamePlayStep({
   onNewVerb
 }: SpeakingGamePlayStepProps) {
   const [showVerbForms, setShowVerbForms] = useState(true);
+  const [adjectives, setAdjectives] = useState<AdjectiveItem[]>([]);
+  const [nouns, setNouns] = useState<NounItem[]>([]);
+  const [selectedAdjective, setSelectedAdjective] = useState<AdjectiveItem | null>(null);
+  const [selectedNoun, setSelectedNoun] = useState<NounItem | null>(null);
   const [sentenceMode, setSentenceMode] = useState<SentenceMode>(
     drawSentenceMode
   );
 
   const isAutomatic = settings.timeMode === "automatic";
   const isPaused = status === "paused";
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadVocabulary() {
+      try {
+        const [adjectivesResponse, nounsResponse] = await Promise.all([
+          fetch("/english-adjectives-common.json"),
+          fetch("/english-nouns-common.json")
+        ]);
+        if (!adjectivesResponse.ok || !nounsResponse.ok) {
+          throw new Error("Não foi possível carregar adjetivos e substantivos.");
+        }
+        const adjectivesData = (await adjectivesResponse.json()) as {
+          adjectives?: AdjectiveItem[];
+        };
+        const nounsData = (await nounsResponse.json()) as {
+          nouns?: NounItem[];
+        };
+        if (!active) return;
+        setAdjectives(adjectivesData.adjectives ?? []);
+        setNouns(nounsData.nouns ?? []);
+      } catch (error) {
+        console.error("Erro ao carregar vocabulário do Jogo da Fala:", error);
+      }
+    }
+
+    void loadVocabulary();
+    return () => { active = false; };
+  }, []);
+
+  useEffect(() => {
+    setSelectedAdjective((previous) => drawDifferentItem(adjectives, previous));
+    setSelectedNoun((previous) => drawDifferentItem(nouns, previous));
+  }, [verb.id, adjectives, nouns]);
 
   useEffect(() => {
     setSentenceMode(drawSentenceMode());
@@ -81,6 +143,57 @@ export function SpeakingGamePlayStep({
           {verb.type === "regular" ? "regular" : "irregular"}
         </span>
       </header>
+
+      <div style={styles.vocabularyGrid} aria-label="Vocabulário sorteado">
+        <div style={styles.vocabularyCard}>
+          <span style={styles.vocabularyLabel}>Adjetivo</span>
+          <strong style={styles.vocabularyWord}>
+            {selectedAdjective?.adjective ?? "—"}
+          </strong>
+          {selectedAdjective?.meanings?.length ? (
+            <span style={styles.vocabularyMeaning}>
+              {selectedAdjective.meanings.join(" • ")}
+            </span>
+          ) : null}
+        </div>
+
+        <div style={styles.vocabularyCard}>
+          <span style={styles.vocabularyLabel}>Substantivo (Noun)</span>
+          <strong style={styles.vocabularyWord}>
+            {selectedNoun?.noun ?? "—"}
+          </strong>
+          {selectedNoun?.meanings?.length ? (
+            <span style={styles.vocabularyMeaning}>
+              {selectedNoun.meanings.join(" • ")}
+            </span>
+          ) : null}
+        </div>
+      </div>
+
+      <div style={styles.challenge}>
+        <span style={styles.challengeLabel}>
+          Fale em voz alta uma frase na forma:
+        </span>
+
+        <strong style={styles.sentenceMode}>
+          {sentenceMode.toUpperCase()}
+        </strong>
+
+        <span style={styles.challengeLabel}>usando:</span>
+
+        <strong style={styles.challengeForm}>{form}</strong>
+      </div>
+
+
+      {!isAutomatic && (
+        <button
+          type="button"
+          onClick={onNext}
+          style={styles.primaryButton}
+        >
+          Próximo →
+        </button>
+      )}
 
       {!isAutomatic && onNewVerb && (
         <button
@@ -128,30 +241,6 @@ export function SpeakingGamePlayStep({
             <strong style={styles.formValue}>{verb.gerund}</strong>
           </div>
         </div>
-      )}
-
-      <div style={styles.challenge}>
-        <span style={styles.challengeLabel}>
-          Fale em voz alta uma frase na forma:
-        </span>
-
-        <strong style={styles.sentenceMode}>
-          {sentenceMode.toUpperCase()}
-        </strong>
-
-        <span style={styles.challengeLabel}>usando:</span>
-
-        <strong style={styles.challengeForm}>{form}</strong>
-      </div>
-
-      {!isAutomatic && (
-        <button
-          type="button"
-          onClick={onNext}
-          style={styles.primaryButton}
-        >
-          Próximo →
-        </button>
       )}
 
       {(!isAutomatic || isPaused) && (
@@ -316,6 +405,40 @@ const styles: Record<string, CSSProperties> = {
     minWidth: 0,
     fontSize: "0.98rem",
     color: "#0f172a",
+    overflowWrap: "anywhere"
+  },
+  vocabularyGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 12rem), 1fr))",
+    gap: "0.7rem",
+    marginBottom: "1rem"
+  },
+  vocabularyCard: {
+    display: "grid",
+    justifyItems: "center",
+    alignContent: "start",
+    gap: "0.35rem",
+    padding: "0.85rem",
+    border: "1px solid #dbeafe",
+    borderRadius: "12px",
+    background: "#f8fafc",
+    textAlign: "center"
+  },
+  vocabularyLabel: {
+    fontSize: "0.78rem",
+    fontWeight: 800,
+    textTransform: "uppercase",
+    letterSpacing: "0.04em",
+    color: "#64748b"
+  },
+  vocabularyWord: {
+    fontSize: "1.35rem",
+    color: "#1d4ed8",
+    overflowWrap: "anywhere"
+  },
+  vocabularyMeaning: {
+    fontSize: "0.88rem",
+    color: "#475569",
     overflowWrap: "anywhere"
   },
   challenge: {
