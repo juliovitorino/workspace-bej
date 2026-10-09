@@ -204,6 +204,7 @@ export function AdvancedTraining({
   const showDictationButton = !isMobileDevice();
   const [dictationError, setDictationError] = useState<string | null>(null);
   const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
+  const trainingGridRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -322,6 +323,13 @@ export function AdvancedTraining({
     if ("speechSynthesis" in window) {
       window.speechSynthesis.cancel();
     }
+
+    window.requestAnimationFrame(() => {
+      trainingGridRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
   }
 
   function handleToggleDictation(
@@ -863,14 +871,17 @@ export function AdvancedTraining({
 
       {!loading && !error && hasEnoughVocabulary && (
         <>
-          <div className="advanced-training-grid">
+          <div className="advanced-training-grid" ref={trainingGridRef}>
             <article className="training-group-card">
               <p className="eyebrow">Verbos</p>
 
               <div className="training-token-list">
                 {trainingItems.verbs.map((verb) => (
                   <div className="training-token" key={verb.id}>
-                    <strong>{verb.base}</strong>
+                    <strong>
+                      {verb.base}
+                      {verb.type && ` (${verb.type.toUpperCase()})`}
+                    </strong>
                     <span>{verb.meanings?.join(" / ")}</span>
 
                     <div className="training-verb-forms">
@@ -897,16 +908,6 @@ export function AdvancedTraining({
                         </div>
                       )}
 
-                      {verb.type && (
-                        <div className="training-verb-form">
-                          <span>Tipo</span>
-                          <strong>
-                            {verb.type === "irregular"
-                              ? "Irregular"
-                              : "Regular"}
-                          </strong>
-                        </div>
-                      )}
                     </div>
                   </div>
                 ))}
@@ -1882,7 +1883,7 @@ export function AdvancedTraining({
                 <p className="worksheet-vocab-label">VERBOS</p>
                 {trainingItems.verbs.map((verb) => (
                   <div className="worksheet-vocab-item" key={verb.id}>
-                    <p className="worksheet-vocab-word">{verb.base}</p>
+                    <p className="worksheet-vocab-word">{verb.base}{verb.type && ` (${verb.type.toUpperCase()})`}</p>
                     <p className="worksheet-vocab-meaning">{verb.meanings?.join(" / ")}</p>
                     <div className="worksheet-verb-forms">
                       <p><strong>Presente:</strong> {verb.base}{verb.thirdPerson ? ` / ${verb.thirdPerson}` : ""}</p>
