@@ -55,7 +55,7 @@ export function searchIntentions(
 
       const tagsMatch =
         selectedTags.length === 0 ||
-        selectedTags.every((selectedTag) =>
+        selectedTags.some((selectedTag) =>
           (item.tags ?? []).some(
             (tag) => normalizeText(tag) === normalizeText(selectedTag)
           )
