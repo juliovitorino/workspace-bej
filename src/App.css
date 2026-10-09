@@ -90,7 +90,7 @@ button {
 
 .search-panel {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: end;
   gap: 16px;
   background: #ffffff;
@@ -391,6 +391,18 @@ button {
 
 
 
+
+/* Search filters: keep the tag picker and clear button in separate grid tracks. */
+@media (min-width: 821px) {
+  .search-panel > .tag-filter-field {
+    grid-column: span 2;
+  }
+
+  .search-panel > .secondary-button {
+    grid-column: 4;
+    min-width: 0;
+  }
+}
 
 /* Multi-tag filter */
 .tag-filter-field {

@@ -13893,7 +13893,7 @@
 },
 {
   "id": "embora-even-though",
-  "intention": "Embora... / apesar de que...",
+  "intention": "Embora... / apesar de que... / apesar de ter...",
   "english": "even though",
   "pattern": "even though + clause",
   "description": "Usado para introduzir um contraste forte entre duas ideias. A oração com 'even though' apresenta um fato que poderia levar a outro resultado, mas a ideia principal acontece apesar disso.",
@@ -25070,7 +25070,1254 @@
   ],
   "related": [],
   "englishLevel": "B1"
+},
+{
+  "id": "ser-pura-enganacao-ser-uma-fachada-smoke-and-mirrors-6f3a91c2-8d47-4e50-b126-9c5d72a8e314",
+  "intention": "SER PURA ENGANAÇÃO / SER UMA FACHADA",
+  "english": "be (all) smoke and mirrors",
+  "pattern": "subject + be + (all) smoke and mirrors",
+  "description": "Expressão idiomática muito usada no inglês americano para descrever algo que parece impressionante, verdadeiro ou confiável, mas que, na realidade, é uma fachada, uma ilusão ou uma tentativa de enganar as pessoas. É comum em conversas sobre política, publicidade, negócios, promessas e redes sociais. A palavra 'all' é opcional, mas reforça a ideia de que tudo não passa de aparência ou enganação. 'Smoke and mirrors' também pode ser usado sem o verbo 'be', como em 'It's just smoke and mirrors'. Não significa necessariamente uma fraude ilegal; pode indicar exagero, manipulação ou uma aparência enganosa.",
+  "category": "idiom",
+  "searchTerms": [
+    "ser pura enganação",
+    "ser uma fachada",
+    "ser tudo fachada",
+    "ser só aparência",
+    "ser uma ilusão",
+    "não passar de enganação",
+    "não passar de uma fachada",
+    "ser conversa fiada",
+    "ser só marketing",
+    "ser tudo encenação",
+    "smoke and mirrors",
+    "all smoke and mirrors",
+    "be smoke and mirrors",
+    "be all smoke and mirrors",
+    "just smoke and mirrors",
+    "deceptive appearance",
+    "illusion",
+    "misleading"
+  ],
+  "examples": [
+    {
+      "pt": "Aquela promessa política é pura enganação.",
+      "en": "That political promise is all smoke and mirrors.",
+      "ptIntent": "é pura enganação",
+      "enIntent": "is all smoke and mirrors"
+    },
+    {
+      "pt": "A campanha publicitária é só uma fachada. O produto não é tão bom assim.",
+      "en": "The advertising campaign is just smoke and mirrors. The product isn't that good.",
+      "ptIntent": "é só uma fachada",
+      "enIntent": "is just smoke and mirrors"
+    },
+    {
+      "pt": "Tudo aquilo não passava de uma fachada para esconder os problemas da empresa.",
+      "en": "It was all smoke and mirrors to hide the company's problems.",
+      "ptIntent": "não passava de uma fachada",
+      "enIntent": "was all smoke and mirrors"
+    },
+    {
+      "pt": "A apresentação parecia impressionante, mas era pura enganação.",
+      "en": "The presentation looked impressive, but it was all smoke and mirrors.",
+      "ptIntent": "era pura enganação",
+      "enIntent": "was all smoke and mirrors"
+    },
+    {
+      "pt": "Não se deixe enganar. Aquilo é tudo fachada.",
+      "en": "Don't be fooled. It's all smoke and mirrors.",
+      "ptIntent": "é tudo fachada",
+      "enIntent": "It's all smoke and mirrors"
+    },
+    {
+      "pt": "Às vezes, o que vemos nas redes sociais é só aparência.",
+      "en": "Sometimes, what we see on social media is just smoke and mirrors.",
+      "ptIntent": "é só aparência",
+      "enIntent": "is just smoke and mirrors"
+    },
+    {
+      "pt": "As promessas de dinheiro fácil geralmente não passam de enganação.",
+      "en": "Promises of easy money are often nothing but smoke and mirrors.",
+      "ptIntent": "não passam de enganação",
+      "enIntent": "nothing but smoke and mirrors"
+    },
+    {
+      "pt": "Achei que a empresa estivesse crescendo, mas era tudo fachada.",
+      "en": "I thought the company was growing, but it was all smoke and mirrors.",
+      "ptIntent": "era tudo fachada",
+      "enIntent": "was all smoke and mirrors"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "smoke and mirrors",
+    "deception",
+    "illusion",
+    "appearance",
+    "politics",
+    "advertising",
+    "business",
+    "social media",
+    "everyday conversation",
+    "spoken English"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
+{
+  "id": "ficar-reclamando-ficar-resmungando-ficar-choramingando-whining-8e4b21c7-6d93-4a50-b172-3f9c65d8e214",
+  "intention": "FICAR RECLAMANDO / FICAR RESMUNGANDO / FICAR CHORAMINGANDO",
+  "english": "whine / keep whining",
+  "pattern": "subject + whine(s) / keep(s) whining + (about something)",
+  "description": "O verbo 'whine' significa reclamar, resmungar ou choramingar de maneira insistente, geralmente com um tom irritante ou infantil. É mais expressivo e negativo do que 'complain', que pode significar simplesmente apresentar uma reclamação legítima. 'Whining' é a forma com -ing, usada em construções como 'Stop whining', 'You're whining' e 'Keep whining'. É muito comum em conversas informais, especialmente quando alguém reclama repetidamente de situações, trabalho, problemas ou pequenas dificuldades. Formas verbais: whine (presente), whined (passado), whined (particípio).",
+  "category": "chunk",
+  "searchTerms": [
+    "ficar reclamando",
+    "ficar resmungando",
+    "ficar choramingando",
+    "parar de reclamar",
+    "parar de choramingar",
+    "reclamar de tudo",
+    "viver reclamando",
+    "reclamação irritante",
+    "whine",
+    "whining",
+    "whined",
+    "stop whining",
+    "keep whining",
+    "always whining",
+    "whine about",
+    "quit whining",
+    "complaining"
+  ],
+  "examples": [
+    {
+      "pt": "Pare de reclamar e faça alguma coisa a respeito!",
+      "en": "Stop whining and do something about it!",
+      "ptIntent": "Pare de reclamar",
+      "enIntent": "Stop whining"
+    },
+    {
+      "pt": "Ele vive reclamando do trabalho.",
+      "en": "He keeps whining about his job.",
+      "ptIntent": "vive reclamando",
+      "enIntent": "keeps whining"
+    },
+    {
+      "pt": "Por que você está choramingando por causa disso?",
+      "en": "Why are you whining about that?",
+      "ptIntent": "está choramingando",
+      "enIntent": "are you whining"
+    },
+    {
+      "pt": "Não aguento mais ouvir você reclamando o tempo todo.",
+      "en": "I can't stand listening to you whining all the time.",
+      "ptIntent": "reclamando o tempo todo",
+      "enIntent": "whining all the time"
+    },
+    {
+      "pt": "Ela ficou reclamando durante a viagem inteira.",
+      "en": "She kept whining throughout the entire trip.",
+      "ptIntent": "ficou reclamando",
+      "enIntent": "kept whining"
+    },
+    {
+      "pt": "Em vez de ficar reclamando, tente encontrar uma solução.",
+      "en": "Instead of whining, try to find a solution.",
+      "ptIntent": "ficar reclamando",
+      "enIntent": "whining"
+    },
+    {
+      "pt": "As crianças estavam choramingando porque estavam cansadas.",
+      "en": "The kids were whining because they were tired.",
+      "ptIntent": "estavam choramingando",
+      "enIntent": "were whining"
+    },
+    {
+      "pt": "Eu sei que estou reclamando demais, mas hoje foi um dia difícil.",
+      "en": "I know I'm whining too much, but today was a tough day.",
+      "ptIntent": "estou reclamando demais",
+      "enIntent": "I'm whining too much"
+    },
+    {
+      "pt": "Ele sempre reclama quando as coisas não saem do jeito dele.",
+      "en": "He always whines when things don't go his way.",
+      "ptIntent": "sempre reclama",
+      "enIntent": "always whines"
+    },
+    {
+      "pt": "Chega de choramingar! Vamos seguir em frente.",
+      "en": "Enough whining! Let's move on.",
+      "ptIntent": "Chega de choramingar",
+      "enIntent": "Enough whining"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "whine",
+    "whining",
+    "complaining",
+    "stop whining",
+    "keep whining",
+    "emotions",
+    "behavior",
+    "informal English",
+    "spoken English",
+    "everyday conversation",
+    "phrasal patterns"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "mesmo-que-embora-apesar-de-even-though-flexivel-7d2e91a4-5c83-4b60-a127-9e4f63d8c215",
+  "intention": "MESMO QUE / EMBORA / APESAR DE / MESMO TENDO",
+  "english": "even though",
+  "pattern": "Even though + <subject> + <verb phrase>, <main clause>",
+  "description": "Estrutura concessiva usada para apresentar um fato que contrasta com o resultado da oração principal. 'Even though' é seguido de sujeito e verbo, podendo ser usado com diferentes tempos verbais. Expressa a intenção de dizer que algo aconteceu ou acontece apesar de uma circunstância contrária à expectativa. Diferentemente de 'even if', que pode apresentar uma situação hipotética, 'even though' normalmente introduz uma situação considerada real. No português, pode corresponder a 'mesmo que', 'embora', 'apesar de' ou 'mesmo tendo', dependendo da frase. Quando a oração com 'even though' aparece primeiro, normalmente é separada da oração principal por vírgula.",
+  "category": "chunk",
+  "searchTerms": [
+    "mesmo que",
+    "embora",
+    "apesar de",
+    "mesmo tendo",
+    "mesmo estando",
+    "mesmo sabendo",
+    "mesmo ele",
+    "mesmo ela",
+    "ainda que",
+    "even though",
+    "even though he",
+    "even though she",
+    "even though I",
+    "even though we",
+    "even though they",
+    "concession",
+    "contrast"
+  ],
+  "examples": [
+    {
+      "pt": "Mesmo ele comendo muito, continua magro.",
+      "en": "Even though he eats a lot, he stays thin.",
+      "ptIntent": "Mesmo ele comendo muito",
+      "enIntent": "Even though he eats a lot"
+    },
+    {
+      "pt": "Embora ela estivesse cansada, continuou trabalhando.",
+      "en": "Even though she was tired, she kept working.",
+      "ptIntent": "Embora ela estivesse cansada",
+      "enIntent": "Even though she was tired"
+    },
+    {
+      "pt": "Mesmo eu tendo pouco tempo, estudo inglês todos os dias.",
+      "en": "Even though I have little time, I study English every day.",
+      "ptIntent": "Mesmo eu tendo pouco tempo",
+      "enIntent": "Even though I have little time"
+    },
+    {
+      "pt": "Apesar de estar chovendo, fomos caminhar.",
+      "en": "Even though it was raining, we went for a walk.",
+      "ptIntent": "Apesar de estar chovendo",
+      "enIntent": "Even though it was raining"
+    },
+    {
+      "pt": "Mesmo eles morando longe, nos visitam frequentemente.",
+      "en": "Even though they live far away, they visit us often.",
+      "ptIntent": "Mesmo eles morando longe",
+      "enIntent": "Even though they live far away"
+    },
+    {
+      "pt": "Mesmo eu não entendendo tudo, consigo participar da conversa.",
+      "en": "Even though I don't understand everything, I can take part in the conversation.",
+      "ptIntent": "Mesmo eu não entendendo tudo",
+      "enIntent": "Even though I don't understand everything"
+    },
+    {
+      "pt": "Embora o filme fosse longo, gostei de cada minuto.",
+      "en": "Even though the movie was long, I enjoyed every minute.",
+      "ptIntent": "Embora o filme fosse longo",
+      "enIntent": "Even though the movie was long"
+    },
+    {
+      "pt": "Mesmo sendo difícil, não vou desistir.",
+      "en": "Even though it's difficult, I'm not going to give up.",
+      "ptIntent": "Mesmo sendo difícil",
+      "enIntent": "Even though it's difficult"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "even though",
+    "concession",
+    "contrast",
+    "sentence patterns",
+    "present simple",
+    "past simple",
+    "complex sentences",
+    "spoken English",
+    "everyday conversation"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "mesmo-ja-tendo-feito-even-though-had-past-participle-3a7f82c1-6d94-4e50-b218-5c9e71d4a632",
+  "intention": "MESMO JÁ TENDO FEITO / EMBORA JÁ TIVESSE FEITO / APESAR DE JÁ TER FEITO",
+  "english": "even though + subject + had + past participle",
+  "pattern": "Even though + <subject> + had + <past participle>, <main clause>",
+  "description": "Estrutura concessiva com past perfect usada para indicar que uma ação já havia acontecido antes de outro momento ou acontecimento no passado, mas não impediu um resultado inesperado. O padrão combina 'even though' com 'had + past participle'. O auxiliar 'had' é utilizado com todos os sujeitos: I, you, he, she, it, we e they. O verbo principal deve estar no particípio passado, como eaten, gone, finished, studied, worked ou seen. A oração principal geralmente descreve outro fato passado. A palavra 'já' ajuda a transmitir a ideia de anterioridade em português, mas nem sempre precisa aparecer na tradução. O past perfect é especialmente útil quando a sequência temporal precisa ficar explícita.",
+  "category": "chunk",
+  "searchTerms": [
+    "mesmo já tendo feito",
+    "mesmo tendo feito",
+    "embora já tivesse feito",
+    "apesar de já ter feito",
+    "mesmo ele tendo comido",
+    "mesmo ela tendo estudado",
+    "mesmo eu tendo trabalhado",
+    "mesmo nós tendo terminado",
+    "já havia feito",
+    "já tinha feito",
+    "even though had",
+    "even though he had",
+    "even though she had",
+    "even though I had",
+    "even though we had",
+    "even though they had",
+    "past perfect",
+    "past participle"
+  ],
+  "examples": [
+    {
+      "pt": "Mesmo ele tendo comido toda a comida naquela noite, ainda tínhamos mais comida na despensa.",
+      "en": "Even though he had eaten all the food that night, we still had more food in the pantry.",
+      "ptIntent": "Mesmo ele tendo comido",
+      "enIntent": "Even though he had eaten"
+    },
+    {
+      "pt": "Embora ela já tivesse estudado bastante, ficou nervosa durante a prova.",
+      "en": "Even though she had studied a lot, she felt nervous during the exam.",
+      "ptIntent": "Embora ela já tivesse estudado",
+      "enIntent": "Even though she had studied"
+    },
+    {
+      "pt": "Mesmo eu já tendo trabalhado o dia inteiro, ainda fui à academia.",
+      "en": "Even though I had worked all day, I still went to the gym.",
+      "ptIntent": "Mesmo eu já tendo trabalhado",
+      "enIntent": "Even though I had worked"
+    },
+    {
+      "pt": "Apesar de já termos terminado o projeto, o cliente pediu mais alterações.",
+      "en": "Even though we had finished the project, the client asked for more changes.",
+      "ptIntent": "Apesar de já termos terminado",
+      "enIntent": "Even though we had finished"
+    },
+    {
+      "pt": "Mesmo eles já tendo saído de casa, chegaram atrasados.",
+      "en": "Even though they had left home, they arrived late.",
+      "ptIntent": "Mesmo eles já tendo saído",
+      "enIntent": "Even though they had left"
+    },
+    {
+      "pt": "Embora eu já tivesse visto aquele filme, assisti de novo com minha esposa.",
+      "en": "Even though I had seen that movie before, I watched it again with my wife.",
+      "ptIntent": "Embora eu já tivesse visto",
+      "enIntent": "Even though I had seen"
+    },
+    {
+      "pt": "Mesmo ela já tendo comprado as passagens, decidiu cancelar a viagem.",
+      "en": "Even though she had bought the tickets, she decided to cancel the trip.",
+      "ptIntent": "Mesmo ela já tendo comprado",
+      "enIntent": "Even though she had bought"
+    },
+    {
+      "pt": "Apesar de eu já ter aprendido aquela expressão, esqueci como usá-la na conversa.",
+      "en": "Even though I had learned that expression, I forgot how to use it in conversation.",
+      "ptIntent": "Apesar de eu já ter aprendido",
+      "enIntent": "Even though I had learned"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "even though",
+    "past perfect",
+    "past participle",
+    "had",
+    "concession",
+    "contrast",
+    "sentence patterns",
+    "irregular verbs",
+    "complex sentences",
+    "spoken English"
+  ],
+  "related": [],
+  "englishLevel": "B2"
+},
+{
+  "id": "estar-rolando-estar-acontecendo-estar-em-andamento-going-on-8c4e21a7-5d93-46f0-b182-7a9e63d5c214",
+  "intention": "ESTAR ROLANDO / ESTAR ACONTECENDO / ESTAR EM ANDAMENTO",
+  "english": "be going on",
+  "pattern": "<subject> + am/is/are/was/were + going on (+ right now / at the moment)",
+  "description": "Chunk muito comum no inglês americano para expressar que alguma coisa está acontecendo, rolando ou em andamento. A expressão 'be going on' é especialmente natural em conversas informais, reuniões e situações do cotidiano. No ambiente de tecnologia, pode ser usada para perguntar se há testes, reuniões, atividades ou mudanças acontecendo. 'What's going on?' significa 'O que está acontecendo?' ou 'O que está rolando?'. Para execução técnica de testes automatizados, 'running' pode ser mais específico. Outras alternativas são 'happening', 'in progress' e 'underway'. A expressão também pode ser utilizada no passado, como em 'What was going on?'.",
+  "category": "chunk",
+  "searchTerms": [
+    "estar rolando",
+    "estar acontecendo",
+    "estar em andamento",
+    "estar ocorrendo",
+    "ter alguma coisa rolando",
+    "o que está rolando",
+    "o que está acontecendo",
+    "alguma atividade rolando",
+    "teste integrado rolando",
+    "teste de integração em andamento",
+    "going on",
+    "be going on",
+    "what's going on",
+    "anything going on",
+    "something going on",
+    "is there anything going on",
+    "happening",
+    "in progress",
+    "underway",
+    "running"
+  ],
+  "examples": [
+    {
+      "pt": "Tem algum teste de integração rolando neste momento?",
+      "en": "Is there any integration testing going on right now?",
+      "ptIntent": "rolando",
+      "enIntent": "going on"
+    },
+    {
+      "pt": "O que está rolando aqui?",
+      "en": "What's going on here?",
+      "ptIntent": "está rolando",
+      "enIntent": "going on"
+    },
+    {
+      "pt": "Tem alguma coisa acontecendo com o servidor?",
+      "en": "Is there anything going on with the server?",
+      "ptIntent": "acontecendo",
+      "enIntent": "going on"
+    },
+    {
+      "pt": "Tem alguma reunião rolando agora?",
+      "en": "Is there a meeting going on right now?",
+      "ptIntent": "rolando",
+      "enIntent": "going on"
+    },
+    {
+      "pt": "Tem muita coisa acontecendo no projeto neste momento.",
+      "en": "There's a lot going on with the project right now.",
+      "ptIntent": "acontecendo",
+      "enIntent": "going on"
+    },
+    {
+      "pt": "Não tem nada rolando por aqui hoje.",
+      "en": "There's nothing going on around here today.",
+      "ptIntent": "rolando",
+      "enIntent": "going on"
+    },
+    {
+      "pt": "O que estava acontecendo durante a implantação?",
+      "en": "What was going on during the deployment?",
+      "ptIntent": "estava acontecendo",
+      "enIntent": "was going on"
+    },
+    {
+      "pt": "Tem alguma atividade de manutenção rolando no ambiente de produção?",
+      "en": "Is there any maintenance going on in the production environment?",
+      "ptIntent": "rolando",
+      "enIntent": "going on"
+    },
+    {
+      "pt": "Parece que tem alguma coisa acontecendo nos bastidores.",
+      "en": "It looks like there's something going on behind the scenes.",
+      "ptIntent": "acontecendo",
+      "enIntent": "going on"
+    },
+    {
+      "pt": "Você sabe o que está rolando com aquela funcionalidade?",
+      "en": "Do you know what's going on with that feature?",
+      "ptIntent": "está rolando",
+      "enIntent": "going on"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "going on",
+    "happening",
+    "in progress",
+    "underway",
+    "present continuous",
+    "past continuous",
+    "small talk",
+    "workplace English",
+    "software development",
+    "integration testing",
+    "meetings",
+    "everyday conversation",
+    "spoken English",
+    "high-frequency"
+  ],
+  "related": [],
+  "englishLevel": "A2"
+},
+{
+  "id": "entendi-saquei-peguei-gotcha-9b3e71c4-5d82-46a0-b193-7e4f62d8a215",
+  "intention": "ENTENDI! / SAQUEI! / PEGUEI!",
+  "english": "Gotcha!",
+  "pattern": "Gotcha! / Gotcha + (thanks / okay / now I understand)",
+  "description": "Chunk extremamente comum no inglês americano informal, usado para demonstrar que você entendeu uma explicação, instrução ou informação. 'Gotcha' é uma forma coloquial derivada de 'got you'. Nesse contexto, equivale a 'Entendi!', 'Saquei!' ou 'Peguei!'. Também pode significar 'Te peguei!' quando alguém é flagrado, surpreendido ou enganado em uma brincadeira. Em 'I gotcha', dependendo do contexto, pode transmitir apoio, proteção ou disposição para ajudar, como 'Pode contar comigo!'. É muito natural em conversas rápidas, reuniões informais e interações cotidianas. Em situações profissionais formais, 'Got it' ou 'Understood' podem ser alternativas mais adequadas.",
+  "category": "chunk",
+  "searchTerms": [
+    "entendi",
+    "saquei",
+    "peguei",
+    "agora entendi",
+    "entendi agora",
+    "tá entendido",
+    "beleza entendi",
+    "te peguei",
+    "te flagrei",
+    "deixa comigo",
+    "pode contar comigo",
+    "gotcha",
+    "got you",
+    "i gotcha",
+    "got it",
+    "understood",
+    "i see",
+    "makes sense"
+  ],
+  "examples": [
+    {
+      "pt": "Entendi! Obrigado pela explicação.",
+      "en": "Gotcha! Thanks for the explanation.",
+      "ptIntent": "Entendi",
+      "enIntent": "Gotcha"
+    },
+    {
+      "pt": "Ah, saquei! Agora faz sentido.",
+      "en": "Oh, gotcha! That makes sense now.",
+      "ptIntent": "saquei",
+      "enIntent": "gotcha"
+    },
+    {
+      "pt": "Peguei! Vou corrigir o problema.",
+      "en": "Gotcha! I'll fix the issue.",
+      "ptIntent": "Peguei",
+      "enIntent": "Gotcha"
+    },
+    {
+      "pt": "Entendi! Preciso reiniciar a aplicação depois de alterar a configuração.",
+      "en": "Gotcha! I need to restart the application after changing the configuration.",
+      "ptIntent": "Entendi",
+      "enIntent": "Gotcha"
+    },
+    {
+      "pt": "Ah, entendi! Então os testes de integração ainda estão em andamento.",
+      "en": "Oh, gotcha! So the integration tests are still in progress.",
+      "ptIntent": "entendi",
+      "enIntent": "gotcha"
+    },
+    {
+      "pt": "Saquei! Você quer que eu envie o relatório até amanhã.",
+      "en": "Gotcha! You want me to send the report by tomorrow.",
+      "ptIntent": "Saquei",
+      "enIntent": "Gotcha"
+    },
+    {
+      "pt": "Agora entendi! Você estava falando do ambiente de homologação.",
+      "en": "Gotcha! You were talking about the staging environment.",
+      "ptIntent": "entendi",
+      "enIntent": "Gotcha"
+    },
+    {
+      "pt": "Entendi! Vou verificar isso depois do almoço.",
+      "en": "Gotcha! I'll check that after lunch.",
+      "ptIntent": "Entendi",
+      "enIntent": "Gotcha"
+    },
+    {
+      "pt": "Te peguei! Eu sabia que você estava brincando.",
+      "en": "Gotcha! I knew you were joking.",
+      "ptIntent": "Te peguei",
+      "enIntent": "Gotcha"
+    },
+    {
+      "pt": "Não se preocupe, pode contar comigo!",
+      "en": "Don't worry, I gotcha!",
+      "ptIntent": "pode contar comigo",
+      "enIntent": "I gotcha"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "gotcha",
+    "got you",
+    "got it",
+    "understanding",
+    "acknowledgment",
+    "informal English",
+    "American English",
+    "small talk",
+    "workplace English",
+    "software development",
+    "spoken English",
+    "everyday conversation",
+    "high-frequency"
+  ],
+  "related": [],
+  "englishLevel": "A2"
+},
+{
+  "id": "ja-faz-tudo-isso-sera-que-ja-faz-has-it-really-been-4b8e72a1-6c95-4f30-a218-9d7e53c6b142",
+  "intention": "JÁ FAZ ...? / SERÁ QUE JÁ FAZ...? / JÁ SE PASSARAM ...?",
+  "english": "Has it really been...?",
+  "pattern": "Has it really been + <duration> + since + <event>? / Has it really been + <duration>?",
+  "description": "Chunk interrogativo usado para expressar surpresa ou incredulidade com a passagem do tempo. O gerador trabalha dois padrões: (1) 'Has it really been + duration + since + event?', para perguntar quanto tempo passou desde um acontecimento; (2) 'Has it really been + duration?', para expressar surpresa com uma duração já conhecida pelo contexto. Em 'since + event', quando o acontecimento é uma oração, normalmente utiliza-se o simple past. O campo duration pode receber expressões como 'a year', 'six months', 'ten years' e 'that long'. A expressão é especialmente natural em reencontros, conversas sobre trabalho, lembranças e acontecimentos pessoais.",
+  "category": "chunk",
+  "searchTerms": [
+    "já faz tudo isso",
+    "será que já faz",
+    "já se passou tanto tempo",
+    "faz tanto tempo assim",
+    "já faz um ano",
+    "já faz dez anos",
+    "já se passaram cinco anos",
+    "has it really been",
+    "has it really been that long",
+    "has it really been a year",
+    "has it really been ten years",
+    "has it really been since",
+    "elapsed time",
+    "since",
+    "present perfect"
+  ],
+  "examples": [
+    {
+      "pt": "Já faz dez anos desde a última vez que nos encontramos?",
+      "en": "Has it really been ten years since we last met?",
+      "ptIntent": "Já faz dez anos",
+      "enIntent": "Has it really been ten years"
+    },
+    {
+      "pt": "Será que já faz um ano desde que comecei a estudar inglês?",
+      "en": "Has it really been a year since I started studying English?",
+      "ptIntent": "Será que já faz um ano",
+      "enIntent": "Has it really been a year"
+    },
+    {
+      "pt": "Já se passaram cinco anos desde que trabalhamos juntos?",
+      "en": "Has it really been five years since we worked together?",
+      "ptIntent": "Já se passaram cinco anos",
+      "enIntent": "Has it really been five years"
+    },
+    {
+      "pt": "Já faz seis meses desde que você começou no emprego novo?",
+      "en": "Has it really been six months since you started your new job?",
+      "ptIntent": "Já faz seis meses",
+      "enIntent": "Has it really been six months"
+    },
+    {
+      "pt": "Já faz tanto tempo assim desde que nos vimos?",
+      "en": "Has it really been that long since we saw each other?",
+      "ptIntent": "Já faz tanto tempo assim",
+      "enIntent": "Has it really been that long"
+    },
+    {
+      "pt": "Já faz tudo isso?",
+      "en": "Has it really been that long?",
+      "ptIntent": "Já faz tudo isso",
+      "enIntent": "Has it really been that long"
+    },
+    {
+      "pt": "Já faz um ano?",
+      "en": "Has it really been a year?",
+      "ptIntent": "Já faz um ano",
+      "enIntent": "Has it really been a year"
+    },
+    {
+      "pt": "Já se passaram dez anos?",
+      "en": "Has it really been ten years?",
+      "ptIntent": "Já se passaram dez anos",
+      "enIntent": "Has it really been ten years"
+    },
+    {
+      "pt": "Já faz tanto tempo assim? Parece que foi ontem!",
+      "en": "Has it really been that long? It feels like yesterday!",
+      "ptIntent": "Já faz tanto tempo assim",
+      "enIntent": "Has it really been that long"
+    },
+    {
+      "pt": "Já faz três meses? Nem percebi o tempo passar!",
+      "en": "Has it really been three months? I didn't even notice the time passing!",
+      "ptIntent": "Já faz três meses",
+      "enIntent": "Has it really been three months"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "has it really been",
+    "present perfect",
+    "elapsed time",
+    "surprise",
+    "nostalgia",
+    "since",
+    "time expressions",
+    "sentence generator",
+    "small talk",
+    "spoken English",
+    "American English"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "o-que-eu-mais-menos-faco-what-i-do-the-most-least-6b3e91a4-7c52-4d80-a126-9f5e43c8b217",
+  "intention": "O QUE EU MAIS FAÇO É... / O QUE EU MENOS FAÇO É...",
+  "english": "What I do the most/least is...",
+  "pattern": "What + <subject> + do/does + the most/least + is + <base verb phrase>",
+  "description": "Chunk usado para destacar a atividade que alguém realiza com maior ou menor frequência. 'What I do the most is...' corresponde a 'O que eu mais faço é...', enquanto 'What I do the least is...' corresponde a 'O que eu menos faço é...'. O padrão também permite trocar o sujeito: 'What he does the most is...', 'What we do the least is...'. Após 'is', a forma base do verbo é especialmente natural nessa construção, como em 'What I do the most is practice English'. Em conversas cotidianas, alternativas como 'I spend most of my time...' e 'I rarely...' também são frequentes. A expressão 'the most' indica maior frequência relativa, enquanto 'the least' indica menor frequência relativa entre as atividades consideradas.",
+  "category": "chunk",
+  "searchTerms": [
+    "o que eu mais faço",
+    "o que eu menos faço",
+    "o que mais faço é",
+    "o que menos faço é",
+    "a atividade que mais faço",
+    "a atividade que menos faço",
+    "o que ele mais faz",
+    "o que ela menos faz",
+    "o que fazemos com mais frequência",
+    "what i do the most",
+    "what i do the least",
+    "what he does the most",
+    "what she does the least",
+    "what we do the most",
+    "the most",
+    "the least",
+    "daily routine",
+    "habits"
+  ],
+  "examples": [
+    {
+      "pt": "O que eu mais faço é estudar inglês.",
+      "en": "What I do the most is study English.",
+      "ptIntent": "O que eu mais faço é",
+      "enIntent": "What I do the most is"
+    },
+    {
+      "pt": "O que eu menos faço é assistir à televisão.",
+      "en": "What I do the least is watch TV.",
+      "ptIntent": "O que eu menos faço é",
+      "enIntent": "What I do the least is"
+    },
+    {
+      "pt": "O que eu mais faço depois do almoço é praticar inglês.",
+      "en": "What I do the most after lunch is practice English.",
+      "ptIntent": "O que eu mais faço depois do almoço é",
+      "enIntent": "What I do the most after lunch is"
+    },
+    {
+      "pt": "O que eu menos faço durante a semana é sair de casa.",
+      "en": "What I do the least during the week is go out.",
+      "ptIntent": "O que eu menos faço durante a semana é",
+      "enIntent": "What I do the least during the week is"
+    },
+    {
+      "pt": "O que ele mais faz no trabalho é escrever código Java.",
+      "en": "What he does the most at work is write Java code.",
+      "ptIntent": "O que ele mais faz no trabalho é",
+      "enIntent": "What he does the most at work is"
+    },
+    {
+      "pt": "O que ela menos faz é reclamar dos problemas.",
+      "en": "What she does the least is complain about problems.",
+      "ptIntent": "O que ela menos faz é",
+      "enIntent": "What she does the least is"
+    },
+    {
+      "pt": "O que nós mais fazemos nas reuniões é discutir soluções.",
+      "en": "What we do the most in meetings is discuss solutions.",
+      "ptIntent": "O que nós mais fazemos nas reuniões é",
+      "enIntent": "What we do the most in meetings is"
+    },
+    {
+      "pt": "O que eu mais faço nos fins de semana é passar tempo com minha família.",
+      "en": "What I do the most on weekends is spend time with my family.",
+      "ptIntent": "O que eu mais faço nos fins de semana é",
+      "enIntent": "What I do the most on weekends is"
+    },
+    {
+      "pt": "O que eu menos faço quando estou ocupado é verificar as redes sociais.",
+      "en": "What I do the least when I'm busy is check social media.",
+      "ptIntent": "O que eu menos faço quando estou ocupado é",
+      "enIntent": "What I do the least when I'm busy is"
+    },
+    {
+      "pt": "O que eu mais faço para melhorar meu inglês é conversar com outras pessoas.",
+      "en": "What I do the most to improve my English is talk to other people.",
+      "ptIntent": "O que eu mais faço para melhorar meu inglês é",
+      "enIntent": "What I do the most to improve my English is"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "what i do the most",
+    "what i do the least",
+    "habits",
+    "daily routine",
+    "frequency",
+    "comparisons",
+    "superlatives",
+    "sentence patterns",
+    "small talk",
+    "HelloTalk",
+    "spoken English",
+    "American English"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "desde-quando-voce-since-when-have-you-8c4e91a2-5d73-46f0-b128-9a6e35d7c214",
+  "intention": "DESDE QUANDO VOCÊ...? / DESDE QUANDO ELE...? / DESDE QUANDO ELA...?",
+  "english": "Since when have you...?",
+  "pattern": "Since when + have/has + <subject> + <past participle>? / Since when + have/has + <subject> + been + <verb-ing>?",
+  "description": "Chunk interrogativo usado para perguntar desde quando uma situação existe ou uma atividade vem acontecendo. O primeiro padrão utiliza o present perfect, como em 'Since when have you known her?'. O segundo utiliza o present perfect continuous, como em 'Since when have you been studying English?'. A expressão 'Since when...?' também pode transmitir surpresa, dúvida ou contestação, especialmente em construções como 'Since when do you like coffee?'. Para perguntar de maneira neutra há quanto tempo uma atividade acontece, 'How long have you been...?' costuma ser mais natural. O auxiliar 'have' é utilizado com I, you, we e they; 'has' com he, she e it.",
+  "category": "chunk",
+  "searchTerms": [
+    "desde quando você",
+    "desde quando ele",
+    "desde quando ela",
+    "desde quando vocês",
+    "desde quando você trabalha",
+    "desde quando você estuda",
+    "desde quando você conhece",
+    "desde quando você mora",
+    "desde quando você faz isso",
+    "since when",
+    "since when have you",
+    "since when has he",
+    "since when has she",
+    "since when have you been",
+    "since when do you",
+    "how long have you been",
+    "present perfect",
+    "present perfect continuous"
+  ],
+  "examples": [
+    {
+      "pt": "Desde quando você estuda inglês?",
+      "en": "Since when have you been studying English?",
+      "ptIntent": "Desde quando você estuda",
+      "enIntent": "Since when have you been studying"
+    },
+    {
+      "pt": "Desde quando você trabalha nesta empresa?",
+      "en": "Since when have you been working at this company?",
+      "ptIntent": "Desde quando você trabalha",
+      "enIntent": "Since when have you been working"
+    },
+    {
+      "pt": "Desde quando você conhece aquela mulher?",
+      "en": "Since when have you known that woman?",
+      "ptIntent": "Desde quando você conhece",
+      "enIntent": "Since when have you known"
+    },
+    {
+      "pt": "Desde quando você mora no Brasil?",
+      "en": "Since when have you been living in Brazil?",
+      "ptIntent": "Desde quando você mora",
+      "enIntent": "Since when have you been living"
+    },
+    {
+      "pt": "Desde quando ele trabalha com Java?",
+      "en": "Since when has he been working with Java?",
+      "ptIntent": "Desde quando ele trabalha",
+      "enIntent": "Since when has he been working"
+    },
+    {
+      "pt": "Desde quando ela conhece seu irmão?",
+      "en": "Since when has she known your brother?",
+      "ptIntent": "Desde quando ela conhece",
+      "enIntent": "Since when has she known"
+    },
+    {
+      "pt": "Desde quando vocês estão desenvolvendo esse aplicativo?",
+      "en": "Since when have you guys been developing this app?",
+      "ptIntent": "Desde quando vocês estão desenvolvendo",
+      "enIntent": "Since when have you guys been developing"
+    },
+    {
+      "pt": "Desde quando você está aprendendo a andar de moto?",
+      "en": "Since when have you been learning to ride a motorcycle?",
+      "ptIntent": "Desde quando você está aprendendo",
+      "enIntent": "Since when have you been learning"
+    },
+    {
+      "pt": "Desde quando você gosta de café?",
+      "en": "Since when do you like coffee?",
+      "ptIntent": "Desde quando você gosta",
+      "enIntent": "Since when do you like"
+    },
+    {
+      "pt": "Desde quando você se importa com isso?",
+      "en": "Since when do you care about that?",
+      "ptIntent": "Desde quando você se importa",
+      "enIntent": "Since when do you care"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "since when",
+    "present perfect",
+    "present perfect continuous",
+    "past participle",
+    "verb ing",
+    "questions",
+    "time expressions",
+    "surprise",
+    "small talk",
+    "workplace English",
+    "spoken English",
+    "American English"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "desde-que-voce-since-you-3f7a82c1-6d94-4e50-b218-5c9e71d4a632",
+  "intention": "DESDE QUE VOCÊ... / DESDE QUE ELE... / DESDE QUE ELA...",
+  "english": "Since you...",
+  "pattern": "Since + <subject> + <past simple verb phrase>, <main clause>",
+  "description": "Chunk usado para indicar um acontecimento que marca o início de outra situação. Em frases como 'Since you started studying English, you've improved a lot', a oração com 'since' identifica o momento inicial, enquanto a oração principal apresenta o resultado ou a situação posterior. Quando a referência é um acontecimento concluído no passado, utiliza-se normalmente o simple past depois de 'since'. A oração principal frequentemente aparece no present perfect quando a situação se estende até o presente, mas outros tempos verbais também são possíveis. A oração com 'since' pode aparecer no início ou no final da frase. Neste registro, 'since' tem sentido temporal de 'desde que', não o sentido condicional de 'contanto que', que pode ser expresso por 'as long as' ou 'provided that'.",
+  "category": "chunk",
+  "searchTerms": [
+    "desde que você",
+    "desde que ele",
+    "desde que ela",
+    "desde que nós",
+    "desde que vocês",
+    "desde que comecei",
+    "desde que você começou",
+    "desde que você saiu",
+    "desde que você chegou",
+    "desde que você se mudou",
+    "desde que nos conhecemos",
+    "desde que aconteceu",
+    "since you",
+    "since he",
+    "since she",
+    "since we",
+    "since they",
+    "since you started",
+    "since you left",
+    "since you moved",
+    "since we met",
+    "time clauses",
+    "present perfect"
+  ],
+  "examples": [
+    {
+      "pt": "Desde que você começou a estudar inglês, melhorou muito.",
+      "en": "Since you started studying English, you've improved a lot.",
+      "ptIntent": "Desde que você começou",
+      "enIntent": "Since you started"
+    },
+    {
+      "pt": "Desde que você se mudou para cá, quase não nos vemos.",
+      "en": "Since you moved here, we haven't seen each other much.",
+      "ptIntent": "Desde que você se mudou",
+      "enIntent": "Since you moved"
+    },
+    {
+      "pt": "Desde que você saiu da empresa, muita coisa mudou.",
+      "en": "Since you left the company, a lot has changed.",
+      "ptIntent": "Desde que você saiu",
+      "enIntent": "Since you left"
+    },
+    {
+      "pt": "Desde que comecei a praticar inglês todos os dias, me sinto mais confiante.",
+      "en": "Since I started practicing English every day, I've felt more confident.",
+      "ptIntent": "Desde que comecei",
+      "enIntent": "Since I started"
+    },
+    {
+      "pt": "Desde que ele começou a trabalhar remotamente, tem passado mais tempo com a família.",
+      "en": "Since he started working remotely, he's been spending more time with his family.",
+      "ptIntent": "Desde que ele começou",
+      "enIntent": "Since he started"
+    },
+    {
+      "pt": "Desde que ela comprou uma moto, tem viajado mais.",
+      "en": "Since she bought a motorcycle, she's been traveling more.",
+      "ptIntent": "Desde que ela comprou",
+      "enIntent": "Since she bought"
+    },
+    {
+      "pt": "Desde que nos conhecemos, conversamos quase todos os dias.",
+      "en": "Since we met, we've talked almost every day.",
+      "ptIntent": "Desde que nos conhecemos",
+      "enIntent": "Since we met"
+    },
+    {
+      "pt": "Desde que você começou a usar o aplicativo, quantas intenções aprendeu?",
+      "en": "Since you started using the app, how many intentions have you learned?",
+      "ptIntent": "Desde que você começou",
+      "enIntent": "Since you started"
+    },
+    {
+      "pt": "Desde que eles atualizaram o sistema, tivemos vários problemas.",
+      "en": "Since they updated the system, we've had several problems.",
+      "ptIntent": "Desde que eles atualizaram",
+      "enIntent": "Since they updated"
+    },
+    {
+      "pt": "Desde que você me explicou o problema, tenho pensado em uma solução.",
+      "en": "Since you explained the problem to me, I've been thinking about a solution.",
+      "ptIntent": "Desde que você me explicou",
+      "enIntent": "Since you explained"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "since",
+    "since you",
+    "time expressions",
+    "time clauses",
+    "past simple",
+    "present perfect",
+    "present perfect continuous",
+    "sentence patterns",
+    "daily routine",
+    "small talk",
+    "workplace English",
+    "spoken English",
+    "American English"
+  ],
+  "related": [],
+  "englishLevel": "B1"
+},
+{
+  "id": "e-por-essa-razao-que-e-por-isso-que-thats-why-7c4e91a2-5d83-46f0-b127-9a6e35d8c214",
+  "intention": "É POR ESSA RAZÃO QUE... / É POR ISSO QUE... / ESSE É O MOTIVO PELO QUAL...",
+  "english": "That's why... / That's the reason why...",
+  "pattern": "That's why + <subject> + <verb phrase> / That's the reason why + <subject> + <verb phrase>",
+  "description": "Chunk de causa e consequência muito frequente no inglês americano. 'That's why...' significa 'É por isso que...' ou 'É por essa razão que...' e introduz uma explicação, consequência ou justificativa relacionada a algo mencionado anteriormente. 'That's the reason why...' transmite a mesma ideia, mas com maior ênfase. Depois de 'why', utiliza-se normalmente uma oração com sujeito e verbo. A estrutura funciona com diferentes tempos verbais, incluindo presente, passado, futuro e present perfect. É especialmente útil para explicar decisões, hábitos, problemas e resultados em conversas cotidianas e profissionais. Não confundir com 'because', que introduz diretamente a causa: 'I stayed home because I was tired' equivale a 'I was tired. That's why I stayed home'.",
+  "category": "chunk",
+  "searchTerms": [
+    "é por essa razão que",
+    "é por isso que",
+    "esse é o motivo pelo qual",
+    "essa é a razão pela qual",
+    "por esse motivo",
+    "por essa razão",
+    "é justamente por isso que",
+    "é exatamente por isso que",
+    "that's why",
+    "that is why",
+    "that's the reason why",
+    "that's exactly why",
+    "that's precisely why",
+    "the reason why",
+    "because",
+    "cause and effect",
+    "explaining reasons"
+  ],
+  "examples": [
+    {
+      "pt": "É por isso que estudo inglês todos os dias.",
+      "en": "That's why I study English every day.",
+      "ptIntent": "É por isso que",
+      "enIntent": "That's why"
+    },
+    {
+      "pt": "É por essa razão que quero trabalhar para uma empresa internacional.",
+      "en": "That's why I want to work for an international company.",
+      "ptIntent": "É por essa razão que",
+      "enIntent": "That's why"
+    },
+    {
+      "pt": "É por isso que comecei a conversar com pessoas de outros países.",
+      "en": "That's why I started talking to people from other countries.",
+      "ptIntent": "É por isso que",
+      "enIntent": "That's why"
+    },
+    {
+      "pt": "Esse é o motivo pelo qual decidi mudar minha rotina.",
+      "en": "That's the reason why I decided to change my routine.",
+      "ptIntent": "Esse é o motivo pelo qual",
+      "enIntent": "That's the reason why"
+    },
+    {
+      "pt": "É por essa razão que precisamos executar os testes de integração.",
+      "en": "That's why we need to run the integration tests.",
+      "ptIntent": "É por essa razão que",
+      "enIntent": "That's why"
+    },
+    {
+      "pt": "É por isso que não consegui participar da reunião ontem.",
+      "en": "That's why I couldn't attend the meeting yesterday.",
+      "ptIntent": "É por isso que",
+      "enIntent": "That's why"
+    },
+    {
+      "pt": "É exatamente por isso que precisamos corrigir o problema antes da implantação.",
+      "en": "That's exactly why we need to fix the issue before deployment.",
+      "ptIntent": "É exatamente por isso que",
+      "enIntent": "That's exactly why"
+    },
+    {
+      "pt": "É por essa razão que tenho praticado inglês depois do almoço.",
+      "en": "That's why I've been practicing English after lunch.",
+      "ptIntent": "É por essa razão que",
+      "enIntent": "That's why"
+    },
+    {
+      "pt": "Esse é o motivo pelo qual ela decidiu morar no exterior.",
+      "en": "That's the reason why she decided to live abroad.",
+      "ptIntent": "Esse é o motivo pelo qual",
+      "enIntent": "That's the reason why"
+    },
+    {
+      "pt": "É por isso que acredito que a repetição é importante para aprender inglês.",
+      "en": "That's why I believe repetition is important for learning English.",
+      "ptIntent": "É por isso que",
+      "enIntent": "That's why"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "that's why",
+    "that's the reason why",
+    "cause and effect",
+    "reason",
+    "consequence",
+    "explanation",
+    "justification",
+    "sentence connectors",
+    "sentence generator",
+    "small talk",
+    "HelloTalk",
+    "workplace English",
+    "spoken English",
+    "American English",
+    "high-frequency"
+  ],
+  "related": [],
+  "englishLevel": "A2"
+},
+{
+  "id": "eu-ouvi-dizer-que-i-heard-that-ive-heard-that-7e3a91c4-5d82-46f0-b127-9c6e43d8a215",
+  "intention": "EU OUVI DIZER QUE... / FIQUEI SABENDO QUE... / JÁ OUVI FALAR QUE...",
+  "english": "I heard that... / I've heard that...",
+  "pattern": "I heard (that) + <subject> + <verb phrase> / I've heard (that) + <subject> + <verb phrase>",
+  "description": "Chunk conversacional usado para compartilhar informações recebidas de outras pessoas, notícias ou comentários, sem necessariamente afirmar que foram confirmados. 'I heard that...' utiliza o simple past e frequentemente se refere a algo que a pessoa ouviu em determinado momento. 'I've heard that...' utiliza o present perfect e enfatiza uma informação conhecida até o presente, sendo especialmente natural ao falar de experiências, lugares, costumes e reputações. O conectivo 'that' é opcional. A estrutura permite construir frases afirmativas, negativas e perguntas indiretas, utilizando diferentes sujeitos e tempos verbais na oração seguinte. Não confundir 'I heard that' com 'I was told that', que enfatiza que alguém informou algo diretamente.",
+  "category": "chunk",
+  "searchTerms": [
+    "eu ouvi dizer que",
+    "ouvi dizer que",
+    "fiquei sabendo que",
+    "já ouvi falar que",
+    "me disseram que",
+    "ouvi falar",
+    "ouvi dizer",
+    "parece que",
+    "i heard that",
+    "i heard",
+    "i've heard that",
+    "i've heard",
+    "i was told that",
+    "someone told me",
+    "word is",
+    "rumor has it",
+    "hearsay",
+    "reported information"
+  ],
+  "examples": [
+    {
+      "pt": "Eu ouvi dizer que você está aprendendo inglês.",
+      "en": "I heard that you're learning English.",
+      "ptIntent": "Eu ouvi dizer que",
+      "enIntent": "I heard that"
+    },
+    {
+      "pt": "Ouvi dizer que você conseguiu um emprego novo.",
+      "en": "I heard you got a new job.",
+      "ptIntent": "Ouvi dizer que",
+      "enIntent": "I heard"
+    },
+    {
+      "pt": "Já ouvi falar que o Marrocos é um país muito bonito.",
+      "en": "I've heard that Morocco is a very beautiful country.",
+      "ptIntent": "Já ouvi falar que",
+      "enIntent": "I've heard that"
+    },
+    {
+      "pt": "Ouvi dizer que a comida turca é deliciosa.",
+      "en": "I've heard that Turkish food is delicious.",
+      "ptIntent": "Ouvi dizer que",
+      "enIntent": "I've heard that"
+    },
+    {
+      "pt": "Fiquei sabendo que você está trabalhando remotamente.",
+      "en": "I heard that you're working remotely.",
+      "ptIntent": "Fiquei sabendo que",
+      "enIntent": "I heard that"
+    },
+    {
+      "pt": "Eu ouvi dizer que o sistema apresentou problemas durante os testes.",
+      "en": "I heard that the system had some issues during testing.",
+      "ptIntent": "Eu ouvi dizer que",
+      "enIntent": "I heard that"
+    },
+    {
+      "pt": "Já ouvi falar que morar no Canadá pode ser caro.",
+      "en": "I've heard that living in Canada can be expensive.",
+      "ptIntent": "Já ouvi falar que",
+      "enIntent": "I've heard that"
+    },
+    {
+      "pt": "Ouvi dizer que você está planejando uma viagem.",
+      "en": "I heard you're planning a trip.",
+      "ptIntent": "Ouvi dizer que",
+      "enIntent": "I heard"
+    },
+    {
+      "pt": "Eu ouvi dizer que a empresa vai lançar uma nova versão do aplicativo.",
+      "en": "I heard that the company is going to release a new version of the app.",
+      "ptIntent": "Eu ouvi dizer que",
+      "enIntent": "I heard that"
+    },
+    {
+      "pt": "Já ouvi falar que praticar inglês todos os dias ajuda a desenvolver a fluência.",
+      "en": "I've heard that practicing English every day helps develop fluency.",
+      "ptIntent": "Já ouvi falar que",
+      "enIntent": "I've heard that"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "i heard that",
+    "i've heard that",
+    "simple past",
+    "present perfect",
+    "reported information",
+    "hearsay",
+    "conversation starters",
+    "small talk",
+    "HelloTalk",
+    "workplace English",
+    "spoken English",
+    "American English",
+    "high-frequency"
+  ],
+  "related": [],
+  "englishLevel": "B1"
 }
-
   ]
 }
