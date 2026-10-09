@@ -180,6 +180,7 @@ export function BasicTraining({
   const showDictationButton = !isMobileDevice();
   const [dictationError, setDictationError] = useState<string | null>(null);
   const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
+  const trainingGridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let active = true;
@@ -278,6 +279,16 @@ export function BasicTraining({
 
     if ("speechSynthesis" in window) {
       window.speechSynthesis.cancel();
+    }
+
+    // Após um novo sorteio, reposiciona o estudo no início dos cartões sorteados apenas no celular.
+    if (window.matchMedia("(max-width: 820px)").matches) {
+      window.requestAnimationFrame(() => {
+        trainingGridRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      });
     }
   }
 
@@ -771,9 +782,13 @@ export function BasicTraining({
         trainingItems.verb &&
         trainingItems.adjective &&
         trainingItems.noun && (
-          <div className="basic-training-grid">
+          <div className="basic-training-grid" ref={trainingGridRef}>
             <article className="training-word-card">
-              <p className="eyebrow">Verbo</p>
+              <p className="eyebrow">
+                Verbo{trainingItems.verb.type && (
+                  <> ({trainingItems.verb.type === "irregular" ? "IRREGULAR" : "REGULAR"})</>
+                )}
+              </p>
               <h2>{trainingItems.verb.base}</h2>
 
               {trainingItems.verb.meanings &&
@@ -807,16 +822,6 @@ export function BasicTraining({
                   </div>
                 )}
 
-                {trainingItems.verb.type && (
-                  <div className="training-verb-form">
-                    <span>Tipo</span>
-                    <strong>
-                      {trainingItems.verb.type === "irregular"
-                        ? "Irregular"
-                        : "Regular"}
-                    </strong>
-                  </div>
-                )}
               </div>
             </article>
 
