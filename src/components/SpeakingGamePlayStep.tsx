@@ -128,7 +128,6 @@ export function SpeakingGamePlayStep({
   return (
     <section style={styles.card} aria-labelledby="speaking-game-verb">
       <header style={styles.header}>
-        <span style={styles.gameLabel}>Jogo da Fala</span>
 
         <h1 id="speaking-game-verb" style={styles.verb}>
           <span style={styles.toParticle}>TO</span>{" "}
@@ -137,10 +136,6 @@ export function SpeakingGamePlayStep({
 
         <span style={styles.meanings}>
           {verb.meanings.join(" • ")}
-        </span>
-
-        <span style={styles.verbType}>
-          {verb.type === "regular" ? "regular" : "irregular"}
         </span>
       </header>
 

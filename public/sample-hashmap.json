@@ -26318,6 +26318,116 @@
   ],
   "related": [],
   "englishLevel": "B1"
+},
+
+{
+  "id": "ha-tempos-faz-muito-tempo-for-a-long-time-9e7b2c41-6f83-4d2a-a195-3b8c64e20f71",
+  "intention": "HÁ TEMPOS... / FAZ MUITO TEMPO... / HÁ UMA ETERNIDADE...",
+  "english": "For a long time / In a long time / In ages / A long time ago",
+  "pattern": "<subject> + have/has + <past participle> + for a long time",
+  "description": "Chunk temporal muito frequente no inglês americano. A intenção 'há tempos' pode expressar continuidade, ausência prolongada de uma ação ou um acontecimento distante no passado. 'For a long time' indica uma duração extensa e pode ser utilizado com present perfect, present perfect continuous e outros tempos verbais, dependendo do contexto. 'In a long time' aparece frequentemente em construções negativas com present perfect para indicar que algo não acontece há bastante tempo. 'In ages' transmite uma ideia semelhante, mas é mais informal e enfática, equivalente a 'há uma eternidade'. 'A long time ago' indica que um acontecimento ocorreu há muito tempo e normalmente acompanha o simple past. Em situações de continuidade, é comum utilizar 'I've lived here for a long time' ou 'I've been waiting for a long time'. Para experiências que não acontecem há bastante tempo, utiliza-se 'I haven't seen you in a long time' ou 'I haven't seen you in ages'. Para acontecimentos concluídos no passado, utiliza-se 'That happened a long time ago'. Não confundir 'for a long time', que expressa duração, com 'a long time ago', que localiza um acontecimento no passado. A escolha da estrutura depende da intenção comunicativa, não de uma tradução literal do português.",
+  "category": "chunk",
+  "searchTerms": [
+    "há tempos",
+    "faz tempo",
+    "faz muito tempo",
+    "há muito tempo",
+    "há bastante tempo",
+    "há anos",
+    "há uma eternidade",
+    "faz uma eternidade",
+    "não vejo há tempos",
+    "não faço isso há tempos",
+    "estou esperando há tempos",
+    "isso aconteceu há tempos",
+    "for a long time",
+    "in a long time",
+    "in ages",
+    "for ages",
+    "a long time ago",
+    "it's been a long time",
+    "it's been ages",
+    "long time no see",
+    "duration",
+    "time expressions"
+  ],
+  "examples": [
+    {
+      "pt": "Eu moro aqui há tempos.",
+      "en": "I've lived here for a long time.",
+      "ptIntent": "há tempos",
+      "enIntent": "for a long time"
+    },
+    {
+      "pt": "Eu estudo inglês há muito tempo.",
+      "en": "I've been studying English for a long time.",
+      "ptIntent": "há muito tempo",
+      "enIntent": "for a long time"
+    },
+    {
+      "pt": "Estou esperando por essa oportunidade há tempos.",
+      "en": "I've been waiting for this opportunity for a long time.",
+      "ptIntent": "há tempos",
+      "enIntent": "for a long time"
+    },
+    {
+      "pt": "Não vejo você há tempos.",
+      "en": "I haven't seen you in a long time.",
+      "ptIntent": "há tempos",
+      "enIntent": "in a long time"
+    },
+    {
+      "pt": "Não converso com meus amigos americanos há uma eternidade.",
+      "en": "I haven't talked to my American friends in ages.",
+      "ptIntent": "há uma eternidade",
+      "enIntent": "in ages"
+    },
+    {
+      "pt": "Não vou ao cinema há muito tempo.",
+      "en": "I haven't been to the movies in a long time.",
+      "ptIntent": "há muito tempo",
+      "enIntent": "in a long time"
+    },
+    {
+      "pt": "Comecei a trabalhar com Java há muito tempo.",
+      "en": "I started working with Java a long time ago.",
+      "ptIntent": "há muito tempo",
+      "enIntent": "a long time ago"
+    },
+    {
+      "pt": "Tomei essa decisão há tempos.",
+      "en": "I made that decision a long time ago.",
+      "ptIntent": "há tempos",
+      "enIntent": "a long time ago"
+    },
+    {
+      "pt": "Faz muito tempo que não conversamos.",
+      "en": "It's been a long time since we last talked.",
+      "ptIntent": "Faz muito tempo",
+      "enIntent": "It's been a long time"
+    },
+    {
+      "pt": "Há tempos quero trabalhar para uma empresa internacional.",
+      "en": "I've wanted to work for an international company for a long time.",
+      "ptIntent": "Há tempos",
+      "enIntent": "for a long time"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "for a long time",
+    "in a long time",
+    "in ages",
+    "for ages",
+    "a long time ago",
+    "it's been a long time",
+    "time expressions",
+    "duration",
+    "past events"
+  ],
+  "related": [],
+  "englishLevel": "A2"
 }
+
   ]
 }
