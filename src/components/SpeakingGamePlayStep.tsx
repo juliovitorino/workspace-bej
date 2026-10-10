@@ -203,6 +203,46 @@ export function SpeakingGamePlayStep({
         </button>
       )}
 
+      {isAutomatic && (
+        <div style={styles.timerArea} aria-live="polite">
+          <span style={styles.timerLabel}>
+            {isPaused ? "Pausado" : "Próxima rodada em"}
+          </span>
+
+          <div style={styles.timerControls}>
+            <strong style={styles.timer}>
+              {remainingSeconds}s
+            </strong>
+            <button
+              type="button"
+              onClick={onNext}
+              disabled={isPaused}
+              style={{
+                ...styles.timerNextButton,
+                ...(isPaused ? styles.timerNextButtonDisabled : {})
+              }}
+              title="Ir para o próximo desafio sem esperar o contador"
+              aria-label="Próximo desafio"
+            >
+              <svg
+                aria-hidden="true"
+                width="23"
+                height="23"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M4 12h15" />
+                <path d="m13 6 6 6-6 6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
+
       <button
         type="button"
         onClick={() => setShowVerbForms((current) => !current)}
@@ -251,45 +291,7 @@ export function SpeakingGamePlayStep({
         </button>
       )}
 
-      {isAutomatic && (
-        <div style={styles.timerArea} aria-live="polite">
-          <span style={styles.timerLabel}>
-            {isPaused ? "Pausado" : "Próxima rodada em"}
-          </span>
 
-          <div style={styles.timerControls}>
-            <strong style={styles.timer}>
-              {remainingSeconds}s
-            </strong>
-            <button
-              type="button"
-              onClick={onNext}
-              disabled={isPaused}
-              style={{
-                ...styles.timerNextButton,
-                ...(isPaused ? styles.timerNextButtonDisabled : {})
-              }}
-              title="Ir para o próximo desafio sem esperar o contador"
-              aria-label="Próximo desafio"
-            >
-              <svg
-                aria-hidden="true"
-                width="23"
-                height="23"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M4 12h15" />
-                <path d="m13 6 6 6-6 6" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      )}
 
       <footer style={styles.controls}>
         <button
@@ -532,7 +534,7 @@ const styles: Record<string, CSSProperties> = {
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
-    width: "2.9rem",
+    width: "5.8rem",
     height: "2.9rem",
     padding: 0,
     border: "1px solid #93c5fd",
