@@ -237,6 +237,9 @@ export function AdvancedTraining({
     status: "copied" | "error";
   } | null>(null);
   const [copyStatus, setCopyStatus] = useState<"idle" | "copied" | "error">("idle");
+  const [draftCopyStatus, setDraftCopyStatus] = useState<
+    Record<"sentenceOne" | "sentenceTwo", "idle" | "copied" | "error">
+  >({ sentenceOne: "idle", sentenceTwo: "idle" });
   const [dictating, setDictating] = useState(false);
   const [dictationTarget, setDictationTarget] = useState<
     "sentenceOne" | "sentenceTwo" | "combined" | null
@@ -371,6 +374,7 @@ export function AdvancedTraining({
     setSpeaking(false);
     setEvaluationSpeaking(null);
     setCopyStatus("idle");
+    setDraftCopyStatus({ sentenceOne: "idle", sentenceTwo: "idle" });
     setDictationError(null);
     recognitionRef.current?.abort();
     recognitionRef.current = null;
@@ -450,8 +454,10 @@ export function AdvancedTraining({
 
       if (target === "sentenceOne") {
         setSentenceOne(appendTranscript);
+        setDraftCopyStatus((current) => ({ ...current, sentenceOne: "idle" }));
       } else if (target === "sentenceTwo") {
         setSentenceTwo(appendTranscript);
+        setDraftCopyStatus((current) => ({ ...current, sentenceTwo: "idle" }));
       } else {
         setCombinedSentence(appendTranscript);
         setCopyStatus("idle");
@@ -507,6 +513,7 @@ export function AdvancedTraining({
 
 
   function handleClearSentence(target: "sentenceOne" | "sentenceTwo") {
+    setDraftCopyStatus((current) => ({ ...current, [target]: "idle" }));
     if (target === "sentenceOne") {
       setSentenceOne("");
     } else {
@@ -545,6 +552,37 @@ export function AdvancedTraining({
 
     if ("speechSynthesis" in window) {
       window.speechSynthesis.cancel();
+    }
+  }
+
+  async function handleCopyDraftSentence(target: "sentenceOne" | "sentenceTwo") {
+    const textToCopy = (target === "sentenceOne" ? sentenceOne : sentenceTwo).trim();
+    if (!textToCopy) return;
+
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(textToCopy);
+      } else {
+        // Compatibilidade com navegadores que não disponibilizam Clipboard API.
+        const textarea = document.createElement("textarea");
+        textarea.value = textToCopy;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        textarea.style.pointerEvents = "none";
+        document.body.appendChild(textarea);
+        try {
+          textarea.select();
+          if (!document.execCommand("copy")) {
+            throw new Error("Não foi possível copiar a frase.");
+          }
+        } finally {
+          textarea.remove();
+        }
+      }
+      setDraftCopyStatus((current) => ({ ...current, [target]: "copied" }));
+    } catch {
+      setDraftCopyStatus((current) => ({ ...current, [target]: "error" }));
     }
   }
 
@@ -1084,6 +1122,54 @@ export function AdvancedTraining({
                   Frase 1
                 </label>
 
+                <button
+                  type="button"
+                  className="secondary-button"
+                  onClick={() => handleCopyDraftSentence("sentenceOne")}
+                  disabled={!sentenceOne.trim()}
+                  title={draftCopyStatus.sentenceOne === "copied"
+                    ? "Frase 1 copiada!"
+                    : draftCopyStatus.sentenceOne === "error"
+                      ? "Não foi possível copiar a frase 1"
+                      : "Copiar frase 1"}
+                  aria-label={draftCopyStatus.sentenceOne === "copied"
+                    ? "Frase 1 copiada para a área de transferência"
+                    : "Copiar frase 1 para a área de transferência"}
+                  style={{
+                    width: "2.25rem",
+                    minWidth: "2.25rem",
+                    height: "2.25rem",
+                    minHeight: "2.25rem",
+                    padding: 0,
+                    borderRadius: "999px",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0
+                  }}
+                >
+                  {draftCopyStatus.sentenceOne === "copied" ? (
+                    <span aria-hidden="true">✓</span>
+                  ) : draftCopyStatus.sentenceOne === "error" ? (
+                    <span aria-hidden="true">!</span>
+                  ) : (
+                    <svg
+                      aria-hidden="true"
+                      width="17"
+                      height="17"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect x="9" y="9" width="13" height="13" rx="2" />
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                    </svg>
+                  )}
+                </button>
+
                 {sentenceOne.length > 0 && (
                   <button
                     type="button"
@@ -1188,11 +1274,17 @@ export function AdvancedTraining({
                 value={sentenceOne}
                 onChange={(event) => {
                   setSentenceOne(event.target.value);
+                  setDraftCopyStatus((current) => ({ ...current, sentenceOne: "idle" }));
                   setEvaluation(null);
     setEvaluationCopyStatus(null);
                   setEvaluationError(null);
                 }}
               />
+              {draftCopyStatus.sentenceOne !== "idle" && (
+                <p role="status" aria-live="polite" style={{ margin: "0.35rem 0 0", fontSize: "0.85rem", color: draftCopyStatus.sentenceOne === "copied" ? "#15803d" : "#b91c1c" }}>
+                  {draftCopyStatus.sentenceOne === "copied" ? "Frase 1 copiada!" : "Não foi possível copiar a frase 1."}
+                </p>
+              )}
             </div>
 
             <div className="training-writing-area">
@@ -1207,6 +1299,54 @@ export function AdvancedTraining({
                 <label htmlFor="advanced-sentence-two" style={{ margin: 0 }}>
                   Frase 2
                 </label>
+
+                <button
+                  type="button"
+                  className="secondary-button"
+                  onClick={() => handleCopyDraftSentence("sentenceTwo")}
+                  disabled={!sentenceTwo.trim()}
+                  title={draftCopyStatus.sentenceTwo === "copied"
+                    ? "Frase 2 copiada!"
+                    : draftCopyStatus.sentenceTwo === "error"
+                      ? "Não foi possível copiar a frase 2"
+                      : "Copiar frase 2"}
+                  aria-label={draftCopyStatus.sentenceTwo === "copied"
+                    ? "Frase 2 copiada para a área de transferência"
+                    : "Copiar frase 2 para a área de transferência"}
+                  style={{
+                    width: "2.25rem",
+                    minWidth: "2.25rem",
+                    height: "2.25rem",
+                    minHeight: "2.25rem",
+                    padding: 0,
+                    borderRadius: "999px",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0
+                  }}
+                >
+                  {draftCopyStatus.sentenceTwo === "copied" ? (
+                    <span aria-hidden="true">✓</span>
+                  ) : draftCopyStatus.sentenceTwo === "error" ? (
+                    <span aria-hidden="true">!</span>
+                  ) : (
+                    <svg
+                      aria-hidden="true"
+                      width="17"
+                      height="17"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect x="9" y="9" width="13" height="13" rx="2" />
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                    </svg>
+                  )}
+                </button>
 
                 {sentenceTwo.length > 0 && (
                   <button
@@ -1312,11 +1452,17 @@ export function AdvancedTraining({
                 value={sentenceTwo}
                 onChange={(event) => {
                   setSentenceTwo(event.target.value);
+                  setDraftCopyStatus((current) => ({ ...current, sentenceTwo: "idle" }));
                   setEvaluation(null);
     setEvaluationCopyStatus(null);
                   setEvaluationError(null);
                 }}
               />
+              {draftCopyStatus.sentenceTwo !== "idle" && (
+                <p role="status" aria-live="polite" style={{ margin: "0.35rem 0 0", fontSize: "0.85rem", color: draftCopyStatus.sentenceTwo === "copied" ? "#15803d" : "#b91c1c" }}>
+                  {draftCopyStatus.sentenceTwo === "copied" ? "Frase 2 copiada!" : "Não foi possível copiar a frase 2."}
+                </p>
+              )}
             </div>
           </div>
 
