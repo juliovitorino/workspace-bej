@@ -196,6 +196,10 @@ export function AdvancedTraining({
     "corrected" | "better" | null
   >(null);
   const [speechError, setSpeechError] = useState<string | null>(null);
+  const [evaluationCopyStatus, setEvaluationCopyStatus] = useState<{
+    target: "corrected" | "better";
+    status: "copied" | "error";
+  } | null>(null);
   const [copyStatus, setCopyStatus] = useState<"idle" | "copied" | "error">("idle");
   const [dictating, setDictating] = useState(false);
   const [dictationTarget, setDictationTarget] = useState<
@@ -307,6 +311,7 @@ export function AdvancedTraining({
     setSentenceTwo("");
     setCombinedSentence("");
     setEvaluation(null);
+    setEvaluationCopyStatus(null);
     setEvaluationError(null);
     setGoogleTranslation(null);
     setTranslationError(null);
@@ -404,6 +409,7 @@ export function AdvancedTraining({
       }
 
       setEvaluation(null);
+    setEvaluationCopyStatus(null);
       setEvaluationError(null);
     };
 
@@ -456,6 +462,7 @@ export function AdvancedTraining({
     }
 
     setEvaluation(null);
+    setEvaluationCopyStatus(null);
     setEvaluationError(null);
     setDictationError(null);
 
@@ -471,6 +478,7 @@ export function AdvancedTraining({
     setCombinedSentence("");
     setCopyStatus("idle");
     setEvaluation(null);
+    setEvaluationCopyStatus(null);
     setEvaluationError(null);
     setGoogleTranslation(null);
     setTranslationError(null);
@@ -622,6 +630,7 @@ export function AdvancedTraining({
     setEvaluating(true);
     setEvaluationError(null);
     setEvaluation(null);
+    setEvaluationCopyStatus(null);
 
     try {
       const studentText = [
@@ -731,6 +740,40 @@ export function AdvancedTraining({
     };
 
     window.speechSynthesis.speak(utterance);
+  }
+
+  async function handleCopyEvaluationSentence(
+    text: string,
+    target: "corrected" | "better"
+  ) {
+    const textToCopy = text.trim();
+    if (!textToCopy) return;
+
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(textToCopy);
+      } else {
+        // Compatibilidade com navegadores sem Clipboard API.
+        const textarea = document.createElement("textarea");
+        textarea.value = textToCopy;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        textarea.style.pointerEvents = "none";
+        document.body.appendChild(textarea);
+        try {
+          textarea.select();
+          if (!document.execCommand("copy")) {
+            throw new Error("Falha ao copiar a frase.");
+          }
+        } finally {
+          textarea.remove();
+        }
+      }
+      setEvaluationCopyStatus({ target, status: "copied" });
+    } catch {
+      setEvaluationCopyStatus({ target, status: "error" });
+    }
   }
 
   function handleSpeakEvaluationSentence(
@@ -1080,6 +1123,7 @@ export function AdvancedTraining({
                 onChange={(event) => {
                   setSentenceOne(event.target.value);
                   setEvaluation(null);
+    setEvaluationCopyStatus(null);
                   setEvaluationError(null);
                 }}
               />
@@ -1203,6 +1247,7 @@ export function AdvancedTraining({
                 onChange={(event) => {
                   setSentenceTwo(event.target.value);
                   setEvaluation(null);
+    setEvaluationCopyStatus(null);
                   setEvaluationError(null);
                 }}
               />
@@ -1440,6 +1485,7 @@ export function AdvancedTraining({
                 setCombinedSentence(event.target.value);
                 setCopyStatus("idle");
                 setEvaluation(null);
+    setEvaluationCopyStatus(null);
                 setEvaluationError(null);
                 setGoogleTranslation(null);
                 setTranslationError(null);
@@ -1630,6 +1676,63 @@ export function AdvancedTraining({
                   >
                     <span aria-hidden="true">🔊</span>
                   </button>
+
+                  <button
+                    type="button"
+                    className="secondary-button"
+                    onClick={() =>
+                      handleCopyEvaluationSentence(
+                        evaluation.correctedSentence,
+                        "corrected"
+                      )
+                    }
+                    disabled={!evaluation.correctedSentence.trim()}
+                    title={
+                      evaluationCopyStatus?.target === "corrected"
+                        ? evaluationCopyStatus.status === "copied"
+                          ? "Frase copiada!"
+                          : "Não foi possível copiar a frase"
+                        : "Copiar correção"
+                    }
+                    aria-label={
+                      evaluationCopyStatus?.target === "corrected" &&
+                      evaluationCopyStatus.status === "copied"
+                        ? "Frase copiada para a área de transferência"
+                        : "Copiar correção para a área de transferência"
+                    }
+                    style={{
+                      width: "2.5rem",
+                      minWidth: "2.5rem",
+                      height: "2.5rem",
+                      minHeight: "2.5rem",
+                      padding: 0,
+                      borderRadius: "999px",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0
+                    }}
+                  >
+                    {evaluationCopyStatus?.target === "corrected" &&
+                    evaluationCopyStatus.status === "copied" ? (
+                      <span aria-hidden="true" style={{ color: "#15803d" }}>✓</span>
+                    ) : (
+                      <svg
+                        aria-hidden="true"
+                        width="19"
+                        height="19"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <rect x="8" y="8" width="12" height="12" rx="2" />
+                        <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
+                      </svg>
+                    )}
+                  </button>
                 </div>
               </div>
 
@@ -1673,6 +1776,63 @@ export function AdvancedTraining({
                     }}
                   >
                     <span aria-hidden="true">🔊</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    className="secondary-button"
+                    onClick={() =>
+                      handleCopyEvaluationSentence(
+                        evaluation.betterVersion,
+                        "better"
+                      )
+                    }
+                    disabled={!evaluation.betterVersion.trim()}
+                    title={
+                      evaluationCopyStatus?.target === "better"
+                        ? evaluationCopyStatus.status === "copied"
+                          ? "Frase copiada!"
+                          : "Não foi possível copiar a frase"
+                        : "Copiar versão mais natural"
+                    }
+                    aria-label={
+                      evaluationCopyStatus?.target === "better" &&
+                      evaluationCopyStatus.status === "copied"
+                        ? "Frase copiada para a área de transferência"
+                        : "Copiar versão mais natural para a área de transferência"
+                    }
+                    style={{
+                      width: "2.5rem",
+                      minWidth: "2.5rem",
+                      height: "2.5rem",
+                      minHeight: "2.5rem",
+                      padding: 0,
+                      borderRadius: "999px",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0
+                    }}
+                  >
+                    {evaluationCopyStatus?.target === "better" &&
+                    evaluationCopyStatus.status === "copied" ? (
+                      <span aria-hidden="true" style={{ color: "#15803d" }}>✓</span>
+                    ) : (
+                      <svg
+                        aria-hidden="true"
+                        width="19"
+                        height="19"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <rect x="8" y="8" width="12" height="12" rx="2" />
+                        <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
+                      </svg>
+                    )}
                   </button>
                 </div>
               </div>
