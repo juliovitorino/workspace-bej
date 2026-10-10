@@ -26427,7 +26427,282 @@
   ],
   "related": [],
   "englishLevel": "A2"
+},
+{
+  "id": "take-your-time-to-8f3c2a91-6d47-4b0e-9a25-c71e5d840f32",
+  "intention": "Leve o tempo necessário para...",
+  "english": "Take your time to...",
+  "pattern": "take your time to + verb",
+  "description": "Expressa a intenção de fazer algo sem pressa, respeitando o próprio ritmo e dedicando o tempo necessário. Também admite a variante natural 'take your time + verb-ing', bastante utilizada no inglês conversacional.",
+  "category": "take-family",
+  "searchTerms": [
+    "leve o tempo necessário",
+    "leve o tempo que precisar",
+    "sem pressa",
+    "vá com calma",
+    "faça no seu ritmo",
+    "não precisa ter pressa",
+    "take your time",
+    "take your time to",
+    "take your time doing",
+    "there's no rush"
+  ],
+  "examples": [
+    {
+      "pt": "Leve o tempo necessário para decidir.",
+      "en": "Take your time to decide.",
+      "ptIntent": "Leve o tempo necessário para",
+      "enIntent": "Take your time to"
+    },
+    {
+      "pt": "Leve o tempo necessário para pensar.",
+      "en": "Take your time to think.",
+      "ptIntent": "Leve o tempo necessário para",
+      "enIntent": "Take your time to"
+    },
+    {
+      "pt": "Leve o tempo necessário para aprender.",
+      "en": "Take your time to learn.",
+      "ptIntent": "Leve o tempo necessário para",
+      "enIntent": "Take your time to"
+    },
+    {
+      "pt": "Leve o tempo necessário para escolher.",
+      "en": "Take your time to choose.",
+      "ptIntent": "Leve o tempo necessário para",
+      "enIntent": "Take your time to"
+    },
+    {
+      "pt": "Leve o tempo necessário para entender.",
+      "en": "Take your time to understand.",
+      "ptIntent": "Leve o tempo necessário para",
+      "enIntent": "Take your time to"
+    },
+    {
+      "pt": "Leve o tempo necessário para responder.",
+      "en": "Take your time to answer.",
+      "ptIntent": "Leve o tempo necessário para",
+      "enIntent": "Take your time to"
+    },
+    {
+      "pt": "Leve o tempo necessário para pensar sobre isso.",
+      "en": "Take your time to think about it.",
+      "ptIntent": "Leve o tempo necessário para",
+      "enIntent": "Take your time to"
+    },
+    {
+      "pt": "Leve o tempo necessário para aprender inglês.",
+      "en": "Take your time to learn English.",
+      "ptIntent": "Leve o tempo necessário para",
+      "enIntent": "Take your time to"
+    },
+    {
+      "pt": "Leve o tempo necessário para escolher a opção certa.",
+      "en": "Take your time to choose the right option.",
+      "ptIntent": "Leve o tempo necessário para",
+      "enIntent": "Take your time to"
+    },
+    {
+      "pt": "Leve o tempo necessário para entender o problema.",
+      "en": "Take your time to understand the problem.",
+      "ptIntent": "Leve o tempo necessário para",
+      "enIntent": "Take your time to"
+    },
+    {
+      "pt": "Leve o tempo necessário para tomar uma decisão.",
+      "en": "Take your time to make a decision.",
+      "ptIntent": "Leve o tempo necessário para",
+      "enIntent": "Take your time to"
+    },
+    {
+      "pt": "Leve o tempo necessário para tomar a decisão certa.",
+      "en": "Take your time to make the right decision.",
+      "ptIntent": "Leve o tempo necessário para",
+      "enIntent": "Take your time to"
+    },
+    {
+      "pt": "Vá com calma ao tomar a decisão certa.",
+      "en": "Take your time making the right decision.",
+      "ptIntent": "Vá com calma ao",
+      "enIntent": "Take your time making"
+    },
+    {
+      "pt": "Vá com calma ao escolher.",
+      "en": "Take your time choosing.",
+      "ptIntent": "Vá com calma ao",
+      "enIntent": "Take your time choosing"
+    },
+    {
+      "pt": "Vá com calma ao responder.",
+      "en": "Take your time answering.",
+      "ptIntent": "Vá com calma ao",
+      "enIntent": "Take your time answering"
+    },
+    {
+      "pt": "Sem pressa. Não há urgência.",
+      "en": "Take your time. There's no rush.",
+      "ptIntent": "Sem pressa",
+      "enIntent": "Take your time"
+    }
+  ],
+  "tags": [
+    "take",
+    "collocation",
+    "conversation",
+    "patience",
+    "time",
+    "advice",
+    "imperative",
+    "mother-chunk",
+    "speaking"
+  ],
+  "related": [],
+  "englishLevel": "A2"
+},
+{
+  "id": "take-your-time-doing-6e3f9c42-8a71-4d25-b0f6-2c9e5a8137bd",
+  "intention": "Faça algo sem pressa / no seu ritmo",
+  "english": "Take your time...",
+  "pattern": "take your time + verb-ing",
+  "description": "Expressa a intenção de aconselhar alguém a fazer algo sem pressa, com calma e no próprio ritmo. A construção 'take your time + verb-ing' é muito natural no inglês conversacional. Também é possível usar 'take your time to + verb' para expressar uma intenção semelhante. A expressão 'take your time' também funciona sozinha.",
+  "category": "take-family",
+  "searchTerms": [
+    "faça sem pressa",
+    "faça com calma",
+    "vá com calma",
+    "leve o tempo necessário",
+    "leve o tempo que precisar",
+    "no seu ritmo",
+    "não tenha pressa",
+    "pode ir com calma",
+    "take your time",
+    "take your time doing",
+    "take your time to",
+    "there's no rush"
+  ],
+  "examples": [
+    {
+      "pt": "Vá com calma para decidir.",
+      "en": "Take your time deciding.",
+      "ptIntent": "Vá com calma",
+      "enIntent": "Take your time"
+    },
+    {
+      "pt": "Escolha sem pressa.",
+      "en": "Take your time choosing.",
+      "ptIntent": "sem pressa",
+      "enIntent": "Take your time"
+    },
+    {
+      "pt": "Responda sem pressa.",
+      "en": "Take your time answering.",
+      "ptIntent": "sem pressa",
+      "enIntent": "Take your time"
+    },
+    {
+      "pt": "Leia com calma.",
+      "en": "Take your time reading.",
+      "ptIntent": "com calma",
+      "enIntent": "Take your time"
+    },
+    {
+      "pt": "Aprenda inglês no seu ritmo.",
+      "en": "Take your time learning English.",
+      "ptIntent": "no seu ritmo",
+      "enIntent": "Take your time"
+    },
+    {
+      "pt": "Pense nisso sem pressa.",
+      "en": "Take your time thinking about it.",
+      "ptIntent": "sem pressa",
+      "enIntent": "Take your time"
+    },
+    {
+      "pt": "Vá com calma para tomar uma decisão.",
+      "en": "Take your time making a decision.",
+      "ptIntent": "Vá com calma",
+      "enIntent": "Take your time"
+    },
+    {
+      "pt": "Leve o tempo necessário para tomar a decisão certa.",
+      "en": "Take your time making the right decision.",
+      "ptIntent": "Leve o tempo necessário",
+      "enIntent": "Take your time"
+    },
+    {
+      "pt": "Vá com calma para entender o problema.",
+      "en": "Take your time understanding the problem.",
+      "ptIntent": "Vá com calma",
+      "enIntent": "Take your time"
+    },
+    {
+      "pt": "Faça seu trabalho com calma.",
+      "en": "Take your time doing your work.",
+      "ptIntent": "com calma",
+      "enIntent": "Take your time"
+    },
+    {
+      "pt": "Vá com calma ao preencher o formulário.",
+      "en": "Take your time filling out the form.",
+      "ptIntent": "Vá com calma",
+      "enIntent": "Take your time"
+    },
+    {
+      "pt": "Vá com calma ao explicar a situação.",
+      "en": "Take your time explaining the situation.",
+      "ptIntent": "Vá com calma",
+      "enIntent": "Take your time"
+    },
+    {
+      "pt": "Leve o tempo necessário para decidir.",
+      "en": "Take your time to decide.",
+      "ptIntent": "Leve o tempo necessário",
+      "enIntent": "Take your time"
+    },
+    {
+      "pt": "Leve o tempo necessário para pensar.",
+      "en": "Take your time to think.",
+      "ptIntent": "Leve o tempo necessário",
+      "enIntent": "Take your time"
+    },
+    {
+      "pt": "Leve o tempo necessário para escolher a opção certa.",
+      "en": "Take your time to choose the right option.",
+      "ptIntent": "Leve o tempo necessário",
+      "enIntent": "Take your time"
+    },
+    {
+      "pt": "Leve o tempo necessário para aprender.",
+      "en": "Take your time to learn.",
+      "ptIntent": "Leve o tempo necessário",
+      "enIntent": "Take your time"
+    },
+    {
+      "pt": "Sem pressa. Não há urgência.",
+      "en": "Take your time. There's no rush.",
+      "ptIntent": "Sem pressa",
+      "enIntent": "Take your time"
+    },
+    {
+      "pt": "Pode ir com calma. Temos bastante tempo.",
+      "en": "Take your time. We have plenty of time.",
+      "ptIntent": "Pode ir com calma",
+      "enIntent": "Take your time"
+    }
+  ],
+  "tags": [
+    "take",
+    "collocation",
+    "conversation",
+    "patience",
+    "time",
+    "advice",
+    "imperative",
+    "mother-chunk",
+    "speaking"
+  ],
+  "related": [],
+  "englishLevel": "A2"
 }
-
   ]
 }
