@@ -257,9 +257,37 @@ export function SpeakingGamePlayStep({
             {isPaused ? "Pausado" : "Próxima rodada em"}
           </span>
 
-          <strong style={styles.timer}>
-            {remainingSeconds}s
-          </strong>
+          <div style={styles.timerControls}>
+            <strong style={styles.timer}>
+              {remainingSeconds}s
+            </strong>
+            <button
+              type="button"
+              onClick={onNext}
+              disabled={isPaused}
+              style={{
+                ...styles.timerNextButton,
+                ...(isPaused ? styles.timerNextButtonDisabled : {})
+              }}
+              title="Ir para o próximo desafio sem esperar o contador"
+              aria-label="Próximo desafio"
+            >
+              <svg
+                aria-hidden="true"
+                width="23"
+                height="23"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M4 12h15" />
+                <path d="m13 6 6 6-6 6" />
+              </svg>
+            </button>
+          </div>
         </div>
       )}
 
@@ -493,6 +521,30 @@ const styles: Record<string, CSSProperties> = {
   timerLabel: {
     fontSize: "0.9rem",
     color: "#64748b"
+  },
+  timerControls: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "0.85rem"
+  },
+  timerNextButton: {
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "2.9rem",
+    height: "2.9rem",
+    padding: 0,
+    border: "1px solid #93c5fd",
+    borderRadius: "12px",
+    background: "#eff6ff",
+    color: "#1d4ed8",
+    cursor: "pointer",
+    touchAction: "manipulation"
+  },
+  timerNextButtonDisabled: {
+    opacity: 0.45,
+    cursor: "not-allowed"
   },
   timer: {
     fontSize: "2rem",

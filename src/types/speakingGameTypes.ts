@@ -30,10 +30,10 @@ export interface SpeakingGameRound {
 
 export const DEFAULT_SPEAKING_GAME_SETTINGS: SpeakingGameSettings = {
   timeMode: "manual",
-  seconds: 30,
+  seconds: 60,
   order: "sequential"
 };
 
 export const SPEAKING_GAME_MIN_SECONDS = 2;
 
-export const SPEAKING_GAME_MAX_SECONDS = 30;
+export const SPEAKING_GAME_MAX_SECONDS = 120;
