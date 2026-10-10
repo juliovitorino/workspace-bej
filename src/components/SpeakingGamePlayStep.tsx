@@ -117,6 +117,25 @@ export function SpeakingGamePlayStep({
     setSentenceMode(drawSentenceMode());
   }, [verb.id, form]);
 
+  function scrollToVerbAfterUpdate() {
+    window.requestAnimationFrame(() => {
+      document.getElementById("speaking-game-verb")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  }
+
+  function handleNext() {
+    onNext();
+    scrollToVerbAfterUpdate();
+  }
+
+  function handleNewVerb() {
+    onNewVerb?.();
+    scrollToVerbAfterUpdate();
+  }
+
   function openGoogleTranslate() {
     window.open(
       "https://translate.google.com/?hl=pt-BR&sl=en&tl=pt&op=translate",
@@ -183,7 +202,7 @@ export function SpeakingGamePlayStep({
       {!isAutomatic && (
         <button
           type="button"
-          onClick={onNext}
+          onClick={handleNext}
           style={styles.primaryButton}
         >
           Próximo →
@@ -193,7 +212,7 @@ export function SpeakingGamePlayStep({
       {!isAutomatic && onNewVerb && (
         <button
           type="button"
-          onClick={onNewVerb}
+          onClick={handleNewVerb}
           style={styles.newVerbButton}
           title="Sortear outro verbo mantendo a mesma forma verbal"
           aria-label="Sortear outro verbo mantendo a mesma forma verbal"
@@ -215,7 +234,7 @@ export function SpeakingGamePlayStep({
             </strong>
             <button
               type="button"
-              onClick={onNext}
+              onClick={handleNext}
               disabled={isPaused}
               style={{
                 ...styles.timerNextButton,
