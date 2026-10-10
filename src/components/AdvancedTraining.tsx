@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import {
   evaluateTrainingWithAI,
@@ -209,6 +209,22 @@ export function AdvancedTraining({
   const [dictationError, setDictationError] = useState<string | null>(null);
   const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
   const trainingGridRef = useRef<HTMLDivElement | null>(null);
+
+  const googleTranslationCardRef = useRef<HTMLElement | null>(null);
+  const aiEvaluationCardRef = useRef<HTMLElement | null>(null);
+
+  // O resultado precisa estar montado no DOM antes de posicionar a tela.
+  useLayoutEffect(() => {
+    if (googleTranslation) {
+      googleTranslationCardRef.current?.scrollIntoView({ behavior: "auto", block: "start" });
+    }
+  }, [googleTranslation]);
+
+  useLayoutEffect(() => {
+    if (evaluation && AI_ENABLED) {
+      aiEvaluationCardRef.current?.scrollIntoView({ behavior: "auto", block: "start" });
+    }
+  }, [evaluation]);
 
   useEffect(() => {
     let active = true;
@@ -1567,7 +1583,7 @@ export function AdvancedTraining({
 
           {googleTranslation && (
             <>
-              <section className="status-card google-translation-card">
+              <section className="status-card google-translation-card" ref={googleTranslationCardRef}>
                 <p className="eyebrow">Tradução do Google</p>
                 <h2>Versão em português</h2>
                 <p>{googleTranslation}</p>
@@ -1601,7 +1617,7 @@ export function AdvancedTraining({
           )}
 
           {AI_ENABLED && evaluation && (
-            <section className="ai-evaluation-card">
+            <section className="ai-evaluation-card" ref={aiEvaluationCardRef}>
               <div className="ai-evaluation-header">
                 <div>
                   <p className="eyebrow">Avaliação com IA</p>
@@ -1919,6 +1935,18 @@ export function AdvancedTraining({
                 </div>
               </div>
             </section>
+          )}
+
+          {AI_ENABLED && evaluation && (
+            <div className="training-toolbar" style={{ marginTop: "1rem", marginBottom: "1rem" }}>
+              <button
+                type="button"
+                className="primary-button"
+                onClick={generateNewRound}
+              >
+                Sortear novamente
+              </button>
+            </div>
           )}
         </>
       )}
