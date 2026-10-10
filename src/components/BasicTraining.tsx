@@ -482,6 +482,20 @@ export function BasicTraining({
     );
   }
 
+  function handleOpenEvaluationGoogleTranslate(text: string) {
+    const englishText = text.trim();
+    if (!englishText) return;
+
+    const googleTranslateUrl = new URL("https://translate.google.com/");
+    googleTranslateUrl.searchParams.set("hl", "pt-BR");
+    googleTranslateUrl.searchParams.set("sl", "en");
+    googleTranslateUrl.searchParams.set("tl", "pt");
+    googleTranslateUrl.searchParams.set("text", englishText);
+    googleTranslateUrl.searchParams.set("op", "translate");
+
+    window.open(googleTranslateUrl.toString(), "_blank", "noopener,noreferrer");
+  }
+
   function handlePrintWorksheet() {
     // Imprime somente a folha A4, isolada do layout e das alturas do aplicativo.
     // O HTML já contém o vocabulário do sorteio atual, sem gerar outra rodada.
@@ -1369,6 +1383,40 @@ export function BasicTraining({
                       </svg>
                     )}
                   </button>
+
+                  <button
+                    type="button"
+                    className="secondary-button"
+                    onClick={() => handleOpenEvaluationGoogleTranslate(evaluation.correctedSentence)}
+                    disabled={!evaluation.correctedSentence.trim()}
+                    title="Traduzir correção no Google Tradutor (inglês → português)"
+                    aria-label="Abrir correção no Google Tradutor do inglês para português"
+                    style={{
+                      width: "2.5rem",
+                      minWidth: "2.5rem",
+                      height: "2.5rem",
+                      minHeight: "2.5rem",
+                      padding: "0.32rem",
+                      borderRadius: "999px",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                      overflow: "hidden"
+                    }}
+                  >
+                    <img
+                      src="/google-translate-icon.png"
+                      alt=""
+                      aria-hidden="true"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                        display: "block"
+                      }}
+                    />
+                  </button>
                 </div>
               </div>
 
@@ -1469,6 +1517,40 @@ export function BasicTraining({
                         <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
                       </svg>
                     )}
+                  </button>
+
+                  <button
+                    type="button"
+                    className="secondary-button"
+                    onClick={() => handleOpenEvaluationGoogleTranslate(evaluation.betterVersion)}
+                    disabled={!evaluation.betterVersion.trim()}
+                    title="Traduzir versão mais natural no Google Tradutor (inglês → português)"
+                    aria-label="Abrir versão mais natural no Google Tradutor do inglês para português"
+                    style={{
+                      width: "2.5rem",
+                      minWidth: "2.5rem",
+                      height: "2.5rem",
+                      minHeight: "2.5rem",
+                      padding: "0.32rem",
+                      borderRadius: "999px",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                      overflow: "hidden"
+                    }}
+                  >
+                    <img
+                      src="/google-translate-icon.png"
+                      alt=""
+                      aria-hidden="true"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                        display: "block"
+                      }}
+                    />
                   </button>
                 </div>
               </div>
