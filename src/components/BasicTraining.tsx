@@ -5,6 +5,7 @@ import {
   type AIEvaluationResult
 } from "../services/aiEvaluationService";
 import { translateEnglishToPortuguese } from "../services/googleTranslateService";
+import { validateIntention } from "../services/intentionValidator";
 
 const AI_ENABLED = import.meta.env.VITE_AI_ENABLED === "true";
 
@@ -164,6 +165,10 @@ export function BasicTraining({
   const [error, setError] = useState<string | null>(null);
   const [round, setRound] = useState(0);
   const [studentText, setStudentText] = useState("");
+  const intentionValidation = useMemo(
+    () => validateIntention(studentText, intention),
+    [studentText, intention]
+  );
   const [evaluating, setEvaluating] = useState(false);
   const [evaluationError, setEvaluationError] = useState<string | null>(null);
   const [evaluation, setEvaluation] = useState<AIEvaluationResult | null>(null);
@@ -1169,6 +1174,30 @@ export function BasicTraining({
                 }
               }}
             />
+
+            {intentionValidation.status !== "empty" && (
+              <p
+                role="status"
+                aria-live="polite"
+                style={{
+                  margin: "0.45rem 0 0",
+                  fontSize: "0.9rem",
+                  fontWeight: 500,
+                  color:
+                    intentionValidation.status === "found"
+                      ? "#15803d"
+                      : intentionValidation.status === "missing"
+                        ? "#b45309"
+                        : "#64748b"
+                }}
+              >
+                {intentionValidation.status === "found"
+                  ? "✓ Intenção mental identificada!"
+                  : intentionValidation.status === "missing"
+                    ? "⚠ Você ainda não utilizou a intenção mental."
+                    : "Validação automática indisponível para esta intenção."}
+              </p>
+            )}
 
             {dictationError && (
               <p

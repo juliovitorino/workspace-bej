@@ -1,3 +1,4 @@
+
 export interface HashmapMetadata {
   name: string;
   version: string;
@@ -25,6 +26,9 @@ export interface MentalIntention {
   examples?: Example[];
   tags?: string[];
   related?: string[];
+
+  // Expressões regulares para detectar a intenção mental
+  validationPatterns?: string[];
 }
 
 export interface HashmapData {

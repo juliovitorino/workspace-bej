@@ -974,6 +974,7 @@
       "description": "Hábito ou situação do passado.",
       "category": "habits",
       "searchTerms": [],
+      "validationPatterns": ["(?<!\\b(?:am|is|are|was|were|be|been|being|got|gotten|get|gets|getting)\\s)(?<!\\b(?:am|is|are|was|were|be|been|being)\\s+not\\s)(?<!'(?:m|re|s)\\s)(?<!'(?:m|re|s)\\s+not\\s)\\bused\\s+to\\b", "\\bdid(?:\\s+not|n't)?\\s+(?:[A-Za-z]+\\s+){0,3}use\\s+to\\b"],
       "examples": [
         {
           "pt": "Eu costumava nadar todo dia.",
@@ -1001,6 +1002,7 @@
       "description": "Estado de familiaridade ou hábito.",
       "category": "habits",
       "searchTerms": [],
+      "validationPatterns": ["(?:\\b(?:am|is|are|was|were|be|been|being)\\b|'m|'re|'s)\\s+(?:not\\s+)?used\\s+to\\b"],
       "examples": [
         {
           "pt": "Eu estou acostumado a acordar cedo.",
@@ -1052,6 +1054,7 @@
       "description": "Mudança concluída para um estado de familiaridade.",
       "category": "habits",
       "searchTerms": [],
+      "validationPatterns": ["\\b(?:got|gotten)\\s+used\\s+to\\b"],
       "examples": [
         {
           "pt": "Eu me acostumei com a nova rotina depois de algumas semanas.",

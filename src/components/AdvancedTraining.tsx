@@ -5,6 +5,7 @@ import {
   type AIEvaluationResult
 } from "../services/aiEvaluationService";
 import { translateEnglishToPortuguese } from "../services/googleTranslateService";
+import { validateIntention } from "../services/intentionValidator";
 
 const AI_ENABLED = import.meta.env.VITE_AI_ENABLED === "true";
 
@@ -171,6 +172,37 @@ function connectorMeaning(connector: ConnectorItem): string {
   return connector.meaning ?? "";
 }
 
+/** Exibe o resultado da verificação local da intenção mental. */
+function renderIntentionFeedback(validation: ReturnType<typeof validateIntention>) {
+  if (validation.status === "empty") {
+    return null;
+  }
+
+  return (
+    <p
+      role="status"
+      aria-live="polite"
+      style={{
+        margin: "0.45rem 0 0",
+        fontSize: "0.9rem",
+        fontWeight: 500,
+        color:
+          validation.status === "found"
+            ? "#15803d"
+            : validation.status === "missing"
+              ? "#b45309"
+              : "#64748b"
+      }}
+    >
+      {validation.status === "found"
+        ? "✓ Intenção mental identificada!"
+        : validation.status === "missing"
+          ? "⚠ Você ainda não utilizou a intenção mental."
+          : "Validação automática indisponível para esta intenção."}
+    </p>
+  );
+}
+
 export function AdvancedTraining({
   intention,
   onBack
@@ -185,6 +217,10 @@ export function AdvancedTraining({
   const [sentenceOne, setSentenceOne] = useState("");
   const [sentenceTwo, setSentenceTwo] = useState("");
   const [combinedSentence, setCombinedSentence] = useState("");
+  const combinedSentenceValidation = useMemo(
+    () => validateIntention(combinedSentence, intention),
+    [combinedSentence, intention]
+  );
   const [evaluating, setEvaluating] = useState(false);
   const [evaluationError, setEvaluationError] = useState<string | null>(null);
   const [evaluation, setEvaluation] = useState<AIEvaluationResult | null>(null);
@@ -1528,6 +1564,8 @@ export function AdvancedTraining({
                 }
               }}
             />
+
+            {renderIntentionFeedback(combinedSentenceValidation)}
 
             {dictationError && (
               <p
