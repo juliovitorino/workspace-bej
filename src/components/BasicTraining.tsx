@@ -5,6 +5,7 @@ import {
   type AIEvaluationResult
 } from "../services/aiEvaluationService";
 import { translateEnglishToPortuguese } from "../services/googleTranslateService";
+import { validateIntention } from "../services/intentionValidator";
 
 const AI_ENABLED = import.meta.env.VITE_AI_ENABLED === "true";
 
@@ -164,6 +165,10 @@ export function BasicTraining({
   const [error, setError] = useState<string | null>(null);
   const [round, setRound] = useState(0);
   const [studentText, setStudentText] = useState("");
+  const intentionValidation = useMemo(
+    () => validateIntention(studentText, intention),
+    [studentText, intention]
+  );
   const [evaluating, setEvaluating] = useState(false);
   const [evaluationError, setEvaluationError] = useState<string | null>(null);
   const [evaluation, setEvaluation] = useState<AIEvaluationResult | null>(null);
@@ -1169,6 +1174,50 @@ export function BasicTraining({
                 }
               }}
             />
+
+            {intentionValidation.status !== "empty" && (
+              <p
+                role="status"
+                aria-live="polite"
+                style={{
+                  margin: "0.55rem 0 0",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  maxWidth: "100%",
+                  boxSizing: "border-box",
+                  padding: "0.5rem 0.9rem",
+                  borderRadius: "999px",
+                  fontSize: "0.9rem",
+                  fontWeight: 600,
+                  lineHeight: 1.4,
+                  boxShadow: "0 2px 8px rgba(15, 23, 42, 0.06)",
+                  color:
+                    intentionValidation.status === "found"
+                      ? "#166534"
+                      : intentionValidation.status === "missing"
+                        ? "#92400e"
+                        : "#475569",
+                  backgroundColor:
+                    intentionValidation.status === "found"
+                      ? "#f0fdf4"
+                      : intentionValidation.status === "missing"
+                        ? "#fffbeb"
+                        : "#f1f5f9",
+                  border:
+                    intentionValidation.status === "found"
+                      ? "1px solid #bbf7d0"
+                      : intentionValidation.status === "missing"
+                        ? "1px solid #fde68a"
+                        : "1px solid #cbd5e1"
+                }}
+              >
+                {intentionValidation.status === "found"
+                  ? "✓ Intenção mental identificada!"
+                  : intentionValidation.status === "missing"
+                    ? "⚠ Você ainda não utilizou a intenção mental."
+                    : "Validação automática indisponível para esta intenção."}
+              </p>
+            )}
 
             {dictationError && (
               <p
