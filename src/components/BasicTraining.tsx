@@ -1180,15 +1180,35 @@ export function BasicTraining({
                 role="status"
                 aria-live="polite"
                 style={{
-                  margin: "0.45rem 0 0",
+                  margin: "0.55rem 0 0",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  maxWidth: "100%",
+                  boxSizing: "border-box",
+                  padding: "0.5rem 0.9rem",
+                  borderRadius: "999px",
                   fontSize: "0.9rem",
-                  fontWeight: 500,
+                  fontWeight: 600,
+                  lineHeight: 1.4,
+                  boxShadow: "0 2px 8px rgba(15, 23, 42, 0.06)",
                   color:
                     intentionValidation.status === "found"
-                      ? "#15803d"
+                      ? "#166534"
                       : intentionValidation.status === "missing"
-                        ? "#b45309"
-                        : "#64748b"
+                        ? "#92400e"
+                        : "#475569",
+                  backgroundColor:
+                    intentionValidation.status === "found"
+                      ? "#f0fdf4"
+                      : intentionValidation.status === "missing"
+                        ? "#fffbeb"
+                        : "#f1f5f9",
+                  border:
+                    intentionValidation.status === "found"
+                      ? "1px solid #bbf7d0"
+                      : intentionValidation.status === "missing"
+                        ? "1px solid #fde68a"
+                        : "1px solid #cbd5e1"
                 }}
               >
                 {intentionValidation.status === "found"

@@ -183,15 +183,35 @@ function renderIntentionFeedback(validation: ReturnType<typeof validateIntention
       role="status"
       aria-live="polite"
       style={{
-        margin: "0.45rem 0 0",
+        margin: "0.55rem 0 0",
+        display: "inline-flex",
+        alignItems: "center",
+        maxWidth: "100%",
+        boxSizing: "border-box",
+        padding: "0.5rem 0.9rem",
+        borderRadius: "999px",
         fontSize: "0.9rem",
-        fontWeight: 500,
+        fontWeight: 600,
+        lineHeight: 1.4,
+        boxShadow: "0 2px 8px rgba(15, 23, 42, 0.06)",
         color:
           validation.status === "found"
-            ? "#15803d"
+            ? "#166534"
             : validation.status === "missing"
-              ? "#b45309"
-              : "#64748b"
+              ? "#92400e"
+              : "#475569",
+        backgroundColor:
+          validation.status === "found"
+            ? "#f0fdf4"
+            : validation.status === "missing"
+              ? "#fffbeb"
+              : "#f1f5f9",
+        border:
+          validation.status === "found"
+            ? "1px solid #bbf7d0"
+            : validation.status === "missing"
+              ? "1px solid #fde68a"
+              : "1px solid #cbd5e1"
       }}
     >
       {validation.status === "found"
