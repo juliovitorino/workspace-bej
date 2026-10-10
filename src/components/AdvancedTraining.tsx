@@ -1671,14 +1671,17 @@ export function AdvancedTraining({
                 <div
                   style={{
                     display: "flex",
-                    alignItems: "center",
-                    gap: "0.6rem"
+                    flexDirection: "column",
+                    alignItems: "flex-start",
+                    gap: "0.6rem",
+                    width: "100%"
                   }}
                 >
-                  <p className="english" style={{ flex: 1, margin: 0 }}>
+                  <p className="english" style={{ margin: 0, width: "100%", overflowWrap: "anywhere" }}>
                     {evaluation.correctedSentence}
                   </p>
 
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", flexWrap: "wrap" }}>
                   <button
                     type="button"
                     className="secondary-button"
@@ -1797,6 +1800,7 @@ export function AdvancedTraining({
                       }}
                     />
                   </button>
+                  </div>
                 </div>
               </div>
 
@@ -1806,14 +1810,17 @@ export function AdvancedTraining({
                 <div
                   style={{
                     display: "flex",
-                    alignItems: "center",
-                    gap: "0.6rem"
+                    flexDirection: "column",
+                    alignItems: "flex-start",
+                    gap: "0.6rem",
+                    width: "100%"
                   }}
                 >
-                  <p className="english" style={{ flex: 1, margin: 0 }}>
+                  <p className="english" style={{ margin: 0, width: "100%", overflowWrap: "anywhere" }}>
                     {evaluation.betterVersion}
                   </p>
 
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", flexWrap: "wrap" }}>
                   <button
                     type="button"
                     className="secondary-button"
@@ -1932,6 +1939,7 @@ export function AdvancedTraining({
                       }}
                     />
                   </button>
+                  </div>
                 </div>
               </div>
             </section>
