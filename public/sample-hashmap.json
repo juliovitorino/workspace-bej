@@ -27511,6 +27511,298 @@
   ],
   "related": [],
   "englishLevel": "A2"
+},
+{
+  "id": "alem-de",
+  "intention": "Além de...",
+  "english": "Besides + verb-ing / noun",
+  "pattern": "Besides + verb-ing / noun; In addition to + verb-ing / noun",
+  "description": "Acrescenta uma ação, característica ou elemento a outro. Depois de besides e in addition to, use o verbo com -ing ou um substantivo. O sujeito pode variar livremente. Não confundir com Besides, usado isoladamente com o sentido de 'além disso'.",
+  "category": "connectors",
+  "englishLevel": "A2",
+  "searchTerms": [
+    "além de",
+    "além de ser",
+    "além de trabalhar",
+    "além de estudar",
+    "besides",
+    "besides being",
+    "besides working",
+    "in addition to"
+  ],
+  "validationPatterns": [
+    "\\bbesides\\s+[a-z]+ing\\b",
+    "\\bin\\s+addition\\s+to\\s+[a-z]+ing\\b",
+    "\\bbesides\\s+(?:a|an|the|my|your|his|her|our|their)\\s+[a-z][a-z'-]*\\b",
+    "\\bin\\s+addition\\s+to\\s+(?:a|an|the|my|your|his|her|our|their)\\s+[a-z][a-z'-]*\\b"
+  ],
+  "examples": [
+    {
+      "pt": "Além de ser inteligente, ela é muito gentil.",
+      "en": "Besides being smart, she is very kind.",
+      "ptIntent": "Além de ser",
+      "enIntent": "Besides being"
+    },
+    {
+      "pt": "Além de trabalhar, eu estudo inglês todos os dias.",
+      "en": "Besides working, I study English every day.",
+      "ptIntent": "Além de trabalhar",
+      "enIntent": "Besides working"
+    },
+    {
+      "pt": "Além de estudar inglês, ele está aprendendo francês.",
+      "en": "Besides studying English, he is learning French.",
+      "ptIntent": "Além de estudar",
+      "enIntent": "Besides studying"
+    },
+    {
+      "pt": "Além de morar no Brasil, ela trabalha remotamente.",
+      "en": "Besides living in Brazil, she works remotely.",
+      "ptIntent": "Além de morar",
+      "enIntent": "Besides living"
+    },
+    {
+      "pt": "Além de falar inglês, nós falamos espanhol.",
+      "en": "Besides speaking English, we speak Spanish.",
+      "ptIntent": "Além de falar",
+      "enIntent": "Besides speaking"
+    },
+    {
+      "pt": "Além de ter um emprego, ele administra um canal no YouTube.",
+      "en": "Besides having a job, he runs a YouTube channel.",
+      "ptIntent": "Além de ter",
+      "enIntent": "Besides having"
+    },
+    {
+      "pt": "Além de fazer exercícios, vocês caminham todos os dias.",
+      "en": "Besides exercising, you walk every day.",
+      "ptIntent": "Além de fazer exercícios",
+      "enIntent": "Besides exercising"
+    },
+    {
+      "pt": "Além de ajudar os amigos, eles fazem trabalho voluntário.",
+      "en": "Besides helping their friends, they do volunteer work.",
+      "ptIntent": "Além de ajudar",
+      "enIntent": "Besides helping"
+    },
+    {
+      "pt": "Além de ser caro, o apartamento é pequeno.",
+      "en": "In addition to being expensive, the apartment is small.",
+      "ptIntent": "Além de ser",
+      "enIntent": "In addition to being"
+    },
+    {
+      "pt": "Além de trabalhar em casa, eu estudo à noite.",
+      "en": "In addition to working from home, I study at night.",
+      "ptIntent": "Além de trabalhar",
+      "enIntent": "In addition to working"
+    },
+    {
+      "pt": "Além do inglês, estou aprendendo espanhol.",
+      "en": "Besides English, I'm learning Spanish.",
+      "ptIntent": "Além do inglês",
+      "enIntent": "Besides English"
+    },
+    {
+      "pt": "Além do meu trabalho, tenho outros projetos.",
+      "en": "Besides my job, I have other projects.",
+      "ptIntent": "Além do meu trabalho",
+      "enIntent": "Besides my job"
+    }
+  ],
+  "tags": [
+    "addition",
+    "connectors",
+    "gerund",
+    "prepositions",
+    "conversation",
+    "flexible-subject"
+  ],
+  "related": []
+},
+{
+  "id": "alem-de-ser",
+  "intention": "Além de ser...",
+  "english": "besides being / in addition to being / apart from being / on top of being",
+  "pattern": "Besides being + complemento, sujeito + verbo... / Sujeito + verbo + in addition to being + complemento",
+  "description": "Acrescenta uma característica ou condição a outra informação. Depois de besides, in addition to, apart from e on top of, usa-se being (não be). O sujeito é livre e pode variar. Besides being é natural na conversa; in addition to being é um pouco mais formal; on top of being pode enfatizar o acúmulo de características ou problemas. Apart from being pode ter sentido de 'além de ser', mas em certos contextos também significa 'tirando o fato de ser'.",
+  "category": "connections-and-additions",
+  "englishLevel": "B1",
+  "searchTerms": [
+    "além de ser",
+    "além de estar",
+    "besides being",
+    "in addition to being",
+    "apart from being",
+    "on top of being"
+  ],
+  "validationPatterns": [
+    "\\bbesides\\s+being\\b",
+    "\\bin\\s+addition\\s+to\\s+being\\b",
+    "\\bapart\\s+from\\s+being\\b",
+    "\\bon\\s+top\\s+of\\s+being\\b"
+  ],
+  "examples": [
+    {
+      "pt": "Além de ser inteligente, ela é muito gentil.",
+      "en": "Besides being smart, she is very kind.",
+      "ptIntent": "Além de ser",
+      "enIntent": "Besides being"
+    },
+    {
+      "pt": "Além de ser professor, ele é escritor.",
+      "en": "Besides being a teacher, he is a writer.",
+      "ptIntent": "Além de ser",
+      "enIntent": "Besides being"
+    },
+    {
+      "pt": "Além de ser barato, este celular é fácil de usar.",
+      "en": "Besides being cheap, this phone is easy to use.",
+      "ptIntent": "Além de ser",
+      "enIntent": "Besides being"
+    },
+    {
+      "pt": "Além de ser meu amigo, ele é meu colega de trabalho.",
+      "en": "In addition to being my friend, he is my coworker.",
+      "ptIntent": "Além de ser",
+      "enIntent": "In addition to being"
+    },
+    {
+      "pt": "Além de ser uma cidade bonita, o Rio tem praias incríveis.",
+      "en": "Besides being a beautiful city, Rio has amazing beaches.",
+      "ptIntent": "Além de ser",
+      "enIntent": "Besides being"
+    },
+    {
+      "pt": "Além de ser difícil, o exame foi muito longo.",
+      "en": "On top of being difficult, the exam was very long.",
+      "ptIntent": "Além de ser",
+      "enIntent": "On top of being"
+    },
+    {
+      "pt": "Além de ser um bom pai, você é um ótimo amigo.",
+      "en": "Besides being a good father, you're a great friend.",
+      "ptIntent": "Além de ser",
+      "enIntent": "Besides being"
+    },
+    {
+      "pt": "Além de ser divertido, o jogo é educativo.",
+      "en": "In addition to being fun, the game is educational.",
+      "ptIntent": "Além de ser",
+      "enIntent": "In addition to being"
+    },
+    {
+      "pt": "Além de ser caro, o restaurante é barulhento.",
+      "en": "Besides being expensive, the restaurant is noisy.",
+      "ptIntent": "Além de ser",
+      "enIntent": "Besides being"
+    },
+    {
+      "pt": "Além de ser uma ótima ideia, é fácil de implementar.",
+      "en": "Besides being a great idea, it's easy to implement.",
+      "ptIntent": "Além de ser",
+      "enIntent": "Besides being"
+    }
+  ],
+  "tags": ["addition", "being", "gerund", "connectors", "subject-flexible"],
+  "related": []
+},
+{
+  "id": "e-melhor-sujeito",
+  "intention": "É melhor eu / você / ele / ela / nós / eles...",
+  "english": "I / you / he / she / we / they had better...",
+  "pattern": "subject + had better + base verb (without to)",
+  "description": "Usamos had better para aconselhar ou indicar que uma ação é a melhor escolha, frequentemente com a ideia de evitar uma consequência negativa. A estrutura não muda com o sujeito. Na fala, é comum usar 'd better. Na negativa, had better not + verbo base. Para recomendações mais suaves, should pode soar mais natural.",
+  "category": "advice-and-decisions",
+  "englishLevel": "A2",
+  "searchTerms": [
+    "é melhor eu",
+    "é melhor você",
+    "é melhor ele",
+    "é melhor ela",
+    "é melhor nós",
+    "é melhor eles",
+    "melhor não",
+    "had better",
+    "I'd better",
+    "you'd better"
+  ],
+  "validationPatterns": [
+    "\\b(?:I|you|he|she|it|we|they)\\s+had\\s+better\\s+(?:not\\s+)?[a-z]+\\b",
+    "\\b(?:I|you|he|she|it|we|they)['’]d\\s+better\\s+(?:not\\s+)?[a-z]+\\b"
+  ],
+  "examples": [
+    {
+      "pt": "É melhor eu ir embora agora.",
+      "en": "I'd better leave now.",
+      "ptIntent": "É melhor eu",
+      "enIntent": "I'd better"
+    },
+    {
+      "pt": "É melhor você descansar.",
+      "en": "You'd better get some rest.",
+      "ptIntent": "É melhor você",
+      "enIntent": "You'd better"
+    },
+    {
+      "pt": "É melhor ele ligar para ela.",
+      "en": "He'd better call her.",
+      "ptIntent": "É melhor ele",
+      "enIntent": "He'd better"
+    },
+    {
+      "pt": "É melhor ela sair mais cedo.",
+      "en": "She'd better leave earlier.",
+      "ptIntent": "É melhor ela",
+      "enIntent": "She'd better"
+    },
+    {
+      "pt": "É melhor a gente esperar aqui.",
+      "en": "We'd better wait here.",
+      "ptIntent": "É melhor a gente",
+      "enIntent": "We'd better"
+    },
+    {
+      "pt": "É melhor eles se apressarem.",
+      "en": "They'd better hurry up.",
+      "ptIntent": "É melhor eles",
+      "enIntent": "They'd better"
+    },
+    {
+      "pt": "É melhor eu não falar nada.",
+      "en": "I'd better not say anything.",
+      "ptIntent": "É melhor eu não",
+      "enIntent": "I'd better not"
+    },
+    {
+      "pt": "É melhor você não se atrasar.",
+      "en": "You'd better not be late.",
+      "ptIntent": "É melhor você não",
+      "enIntent": "You'd better not"
+    },
+    {
+      "pt": "É melhor nós verificarmos isso primeiro.",
+      "en": "We had better check that first.",
+      "ptIntent": "É melhor nós",
+      "enIntent": "We had better"
+    },
+    {
+      "pt": "É melhor eu levar um guarda-chuva.",
+      "en": "I'd better take an umbrella.",
+      "ptIntent": "É melhor eu",
+      "enIntent": "I'd better"
+    }
+  ],
+  "tags": [
+    "advice",
+    "recommendation",
+    "warning",
+    "had-better",
+    "subject-variation",
+    "negative"
+  ],
+  "related": []
 }
+
   ]
 }
