@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
+import { ConnectedSpeechButton } from "./ConnectedSpeechStudio";
 
 
 function renderHighlightedText(
@@ -725,6 +726,10 @@ Mandatório:
             <span aria-hidden="true">🖨️</span>
             <span>Imprimir</span>
           </button>
+          <ConnectedSpeechButton
+            title={`Intenção: ${item.intention}`}
+            blocks={(item.examples ?? []).map((example) => ({ original: example.en, portuguese: example.pt }))}
+          />
         </div>
 
         {copySectionError && (
@@ -887,6 +892,12 @@ Mandatório:
                       >
                         <span aria-hidden="true">🔊</span>
                       </button>
+
+                      <ConnectedSpeechButton
+                        title={`${item.intention} — Exemplo ${index + 1}`}
+                        blocks={[{ original: example.en, portuguese: example.pt }]}
+                        compact
+                      />
 
                       <button
                         type="button"

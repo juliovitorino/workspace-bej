@@ -6,6 +6,7 @@ import {
   type ReactNode
 } from "react";
 import type { MentalIntention } from "../types/hashmap";
+import { ConnectedSpeechButton } from "./ConnectedSpeechStudio";
 import {
   generateInterpretationStory,
   type StoryGenerationResult
@@ -1585,6 +1586,12 @@ export function InterpretationPanel({
                 )}
               </button>
 
+              <ConnectedSpeechButton
+                title={`História: ${story.titleEn}`}
+                blocks={story.paragraphs.map((paragraph) => ({ original: paragraph.en, portuguese: paragraph.pt }))}
+                compact
+              />
+
               {story.source === "local" && (
                 <button
                   type="button"
@@ -1703,6 +1710,16 @@ export function InterpretationPanel({
                   )}
                 </p>
 
+                {!showEnglish && (
+                  <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "0.4rem" }}>
+                    <ConnectedSpeechButton
+                      title={`${story.titleEn} — Parágrafo ${index + 1}`}
+                      blocks={[{ original: paragraph.en, portuguese: paragraph.pt }]}
+                      compact
+                    />
+                  </div>
+                )}
+
                 {showEnglish && (
                   <div
                     style={{
@@ -1722,6 +1739,12 @@ export function InterpretationPanel({
                         )
                       )}
                     </p>
+
+                    <ConnectedSpeechButton
+                      title={`${story.titleEn} — Parágrafo ${index + 1}`}
+                      blocks={[{ original: paragraph.en, portuguese: paragraph.pt }]}
+                      compact
+                    />
 
                     <button
                       type="button"
