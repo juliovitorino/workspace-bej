@@ -144,6 +144,8 @@ export function InterpretationPanel({
   const [copyFeedback, setCopyFeedback] = useState("Copiar JSON");
   const [hqCopyFeedback, setHqCopyFeedback] = useState("📋 HQ");
   const [storyCopyFeedback, setStoryCopyFeedback] = useState<"idle" | "copied" | "error">("idle");
+  const [copiedParagraphIndex, setCopiedParagraphIndex] = useState<number | null>(null);
+  const [copyParagraphErrorIndex, setCopyParagraphErrorIndex] = useState<number | null>(null);
   const [speaking, setSpeaking] = useState(false);
   const [speakingParagraphIndex, setSpeakingParagraphIndex] =
     useState<number | null>(null);
@@ -246,6 +248,11 @@ export function InterpretationPanel({
     () => searchLocalStories(searchLevel, searchTitle),
     [searchLevel, searchTitle]
   );
+
+  useEffect(() => {
+    setCopiedParagraphIndex(null);
+    setCopyParagraphErrorIndex(null);
+  }, [story]);
 
   const maxAmount = Math.max(1, availableIntentions.length);
 
@@ -445,6 +452,35 @@ export function InterpretationPanel({
     };
 
     window.speechSynthesis.speak(utterance);
+  }
+
+  async function handleCopyParagraph(text: string, index: number) {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.left = "-9999px";
+        document.body.appendChild(textarea);
+        try {
+          textarea.select();
+          if (!document.execCommand("copy")) {
+            throw new Error("Não foi possível copiar o parágrafo.");
+          }
+        } finally {
+          textarea.remove();
+        }
+      }
+      setCopyParagraphErrorIndex(null);
+      setCopiedParagraphIndex(index);
+    } catch (error) {
+      console.error("[InterpretationPanel] Erro ao copiar parágrafo:", error);
+      setCopiedParagraphIndex(null);
+      setCopyParagraphErrorIndex(index);
+    }
   }
 
   function handleSpeakParagraph(text: string, index: number) {
@@ -1777,6 +1813,45 @@ export function InterpretationPanel({
                       }}
                     >
                       <span aria-hidden="true">🔊</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      className="secondary-button"
+                      onClick={() => void handleCopyParagraph(paragraph.en, index)}
+                      title={
+                        copiedParagraphIndex === index
+                          ? "Parágrafo em inglês copiado"
+                          : copyParagraphErrorIndex === index
+                            ? "Falha ao copiar. Tentar novamente"
+                            : "Copiar este parágrafo em inglês"
+                      }
+                      aria-label={`Copiar parágrafo ${index + 1} em inglês`}
+                      style={{
+                        width: "2.5rem",
+                        minWidth: "2.5rem",
+                        height: "2.5rem",
+                        minHeight: "2.5rem",
+                        padding: 0,
+                        borderRadius: "999px",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0
+                      }}
+                    >
+                      {copiedParagraphIndex === index ? (
+                        <span aria-hidden="true" style={{ fontWeight: 700 }}>✓</span>
+                      ) : copyParagraphErrorIndex === index ? (
+                        <span aria-hidden="true" style={{ fontWeight: 700 }}>!</span>
+                      ) : (
+                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"
+                          fill="none" stroke="currentColor" strokeWidth="2"
+                          strokeLinecap="round" strokeLinejoin="round">
+                          <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2 2h9a2 2 0 0 1 2 2v1" />
+                        </svg>
+                      )}
                     </button>
                   </div>
                 )}
