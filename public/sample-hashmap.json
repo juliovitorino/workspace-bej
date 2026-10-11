@@ -28172,8 +28172,192 @@
     "daily-conversation"
   ],
   "related": []
+},
+{
+  "id": "deus-me-livre-b9bc130a-29d3-4a40-a444-4fb0f9811660",
+  "intention": "Deus me livre! / Deus o livre!",
+  "english": "God forbid! / Heaven forbid!",
+  "pattern": "God forbid! / Heaven forbid! / God forbid + (that) + clause",
+  "description": "Expressa forte desejo de que algo ruim não aconteça, espanto ou rejeição diante de uma possibilidade. God forbid! e Heaven forbid! são equivalentes idiomáticos. Para afastar uma possibilidade específica, use God forbid (that) + oração. Em contextos religiosos ou informais, Lord help us! pode funcionar, mas não é sinônimo em todas as situações.",
+  "englishLevel": "B1",
+  "category": "Reactions and exclamations",
+  "validationPatterns": [
+    "\\b(?:God|Heaven)\\s+forbid\\b"
+  ],
+  "examples": [
+    {
+      "pt": "Deus me livre!",
+      "en": "God forbid!",
+      "ptIntent": "Deus me livre",
+      "enIntent": "God forbid"
+    },
+    {
+      "pt": "Deus me livre de perder meu emprego.",
+      "en": "God forbid I lose my job.",
+      "ptIntent": "Deus me livre de",
+      "enIntent": "God forbid"
+    },
+    {
+      "pt": "Deus me livre que isso aconteça.",
+      "en": "God forbid that happens.",
+      "ptIntent": "Deus me livre que",
+      "enIntent": "God forbid"
+    },
+    {
+      "pt": "Deus o livre de sofrer um acidente.",
+      "en": "God forbid he gets into an accident.",
+      "ptIntent": "Deus o livre de",
+      "enIntent": "God forbid"
+    },
+    {
+      "pt": "Deus me livre de ficar doente durante a viagem.",
+      "en": "God forbid I get sick during the trip.",
+      "ptIntent": "Deus me livre de",
+      "enIntent": "God forbid"
+    },
+    {
+      "pt": "Deus me livre! Eu não quero passar por isso de novo.",
+      "en": "Heaven forbid! I don’t want to go through that again.",
+      "ptIntent": "Deus me livre",
+      "enIntent": "Heaven forbid"
+    },
+    {
+      "pt": "Deus me livre que a gente perca o voo.",
+      "en": "God forbid we miss the flight.",
+      "ptIntent": "Deus me livre que",
+      "enIntent": "God forbid"
+    },
+    {
+      "pt": "Deus me livre que algo dê errado.",
+      "en": "Heaven forbid something goes wrong.",
+      "ptIntent": "Deus me livre que",
+      "enIntent": "Heaven forbid"
+    },
+    {
+      "pt": "Deus o livre de perder essa oportunidade.",
+      "en": "God forbid he misses that opportunity.",
+      "ptIntent": "Deus o livre de",
+      "enIntent": "God forbid"
+    },
+    {
+      "pt": "Deus me livre de ter que começar tudo de novo.",
+      "en": "God forbid I have to start all over again.",
+      "ptIntent": "Deus me livre de",
+      "enIntent": "God forbid"
+    }
+  ],
+  "searchTerms": [
+    "deus me livre",
+    "deus o livre",
+    "deus nos livre",
+    "god forbid",
+    "heaven forbid",
+    "tomara que não",
+    "que isso não aconteça"
+  ],
+  "tags": [
+    "exclamation",
+    "fear",
+    "rejection",
+    "idiom",
+    "daily-conversation"
+  ],
+  "related": []
+},
+{
+  "id": "nem-a-pau-fad3d3cc-f350-45ca-bb2f-4a23272cbd12",
+  "intention": "Nem a pau! / De jeito nenhum!",
+  "english": "No way! / Not a chance! / No freaking way!",
+  "pattern": "No way! / Not a chance! / No freaking way! / There is no way + clause",
+  "description": "Recusa enfática ou descrença forte diante de uma proposta ou situação. No way! é frequente e natural; Not a chance! enfatiza impossibilidade ou recusa; No freaking way! é mais enfático e informal, sem ser tão ofensivo quanto versões com palavrões. There is no way + oração permite ampliar a construção.",
+  "englishLevel": "B1",
+  "category": "Reactions and exclamations",
+  "validationPatterns": [
+    "\\bno\\s+(?:freaking\\s+)?way\\b",
+    "\\bnot\\s+a\\s+chance\\b",
+    "\\bthere(?:\\s+is|\\x27s)\\s+no\\s+way\\b"
+  ],
+  "examples": [
+    {
+      "pt": "Nem a pau!",
+      "en": "No way!",
+      "ptIntent": "Nem a pau",
+      "enIntent": "No way"
+    },
+    {
+      "pt": "Nem a pau que eu vou fazer isso.",
+      "en": "There is no way I’m doing that.",
+      "ptIntent": "Nem a pau que",
+      "enIntent": "There is no way"
+    },
+    {
+      "pt": "Você vai pagar tudo sozinho? Nem a pau!",
+      "en": "Are you going to pay for everything yourself? No way!",
+      "ptIntent": "Nem a pau",
+      "enIntent": "No way"
+    },
+    {
+      "pt": "Nem a pau que eu vou sair nessa chuva.",
+      "en": "There’s no way I’m going out in this rain.",
+      "ptIntent": "Nem a pau que",
+      "enIntent": "There’s no way"
+    },
+    {
+      "pt": "Nem a pau que ele vai aceitar essa proposta.",
+      "en": "There is no way he’ll accept that offer.",
+      "ptIntent": "Nem a pau que",
+      "enIntent": "There is no way"
+    },
+    {
+      "pt": "Você emprestaria sua moto para um desconhecido? Nem a pau!",
+      "en": "Would you lend your motorcycle to a stranger? Not a chance!",
+      "ptIntent": "Nem a pau",
+      "enIntent": "Not a chance"
+    },
+    {
+      "pt": "Nem a pau! Isso é caro demais.",
+      "en": "No freaking way! That’s way too expensive.",
+      "ptIntent": "Nem a pau",
+      "enIntent": "No freaking way"
+    },
+    {
+      "pt": "Nem a pau que vou desistir agora.",
+      "en": "There’s no way I’m giving up now.",
+      "ptIntent": "Nem a pau que",
+      "enIntent": "There’s no way"
+    },
+    {
+      "pt": "Você acha que eu faria isso? Nem a pau!",
+      "en": "Do you think I’d do that? No way!",
+      "ptIntent": "Nem a pau",
+      "enIntent": "No way"
+    },
+    {
+      "pt": "Nem a pau que eu vou trabalhar de graça.",
+      "en": "There is no way I’m working for free.",
+      "ptIntent": "Nem a pau que",
+      "enIntent": "There is no way"
+    }
+  ],
+  "searchTerms": [
+    "nem a pau",
+    "nem pensar",
+    "de jeito nenhum",
+    "não mesmo",
+    "no way",
+    "not a chance",
+    "no freaking way",
+    "there is no way"
+  ],
+  "tags": [
+    "refusal",
+    "disbelief",
+    "informal",
+    "idiom",
+    "daily-conversation"
+  ],
+  "related": []
 }
 
- 
   ]
 }

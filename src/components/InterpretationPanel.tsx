@@ -142,6 +142,7 @@ export function InterpretationPanel({
   const [exportFileName, setExportFileName] = useState<string>("");
   const [copyFeedback, setCopyFeedback] = useState("Copiar JSON");
   const [hqCopyFeedback, setHqCopyFeedback] = useState("📋 HQ");
+  const [storyCopyFeedback, setStoryCopyFeedback] = useState<"idle" | "copied" | "error">("idle");
   const [speaking, setSpeaking] = useState(false);
   const [speakingParagraphIndex, setSpeakingParagraphIndex] =
     useState<number | null>(null);
@@ -250,6 +251,7 @@ export function InterpretationPanel({
   function handleLevelChange(nextLevel: EnglishLevel) {
     setEnglishLevel(nextLevel);
     setStory(null);
+    setStoryCopyFeedback("idle");
     setShowHqImage(false);
     setSelectedIntentions([]);
     setShowEnglish(false);
@@ -303,6 +305,7 @@ export function InterpretationPanel({
     }
 
     setEnglishLevel(searchLevel);
+    setStoryCopyFeedback("idle");
     setStory({
       ...localStory,
       source: "local"
@@ -336,6 +339,7 @@ export function InterpretationPanel({
     setGenerating(true);
     setError(null);
     setStory(null);
+    setStoryCopyFeedback("idle");
     setShowHqImage(false);
     setShowEnglish(false);
     setSelectedIntentions(pickedIntentions);
@@ -869,6 +873,63 @@ export function InterpretationPanel({
     printWindow.document.body.appendChild(image);
   }
 
+  async function handleCopyStoryPlainText() {
+    if (!story) return;
+
+    const crlf = "\r\n";
+    const paragraphs = story.paragraphs;
+
+    const bilingual = [
+      story.titlePt,
+      story.titleEn,
+      "",
+      ...paragraphs.flatMap((paragraph) => [paragraph.pt, paragraph.en, ""])
+    ].join(crlf).trim();
+
+    const portuguese = [
+      story.titlePt,
+      "",
+      ...paragraphs.map((paragraph) => paragraph.pt)
+    ].join(crlf).trim();
+
+    const english = [
+      story.titleEn,
+      "",
+      ...paragraphs.map((paragraph) => paragraph.en)
+    ].join(crlf).trim();
+
+    const plainText = [
+      "PT-BR + EN-US",
+      bilingual,
+      "HISTÓRIA COMPLETA - PT-BR",
+      portuguese,
+      "HISTÓRIA COMPLETA - EN-US",
+      english
+    ].join(crlf + crlf);
+
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(plainText);
+      } else {
+        const textArea = document.createElement("textarea");
+        textArea.value = plainText;
+        textArea.setAttribute("readonly", "");
+        textArea.style.position = "fixed";
+        textArea.style.left = "-9999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        const copied = document.execCommand("copy");
+        textArea.remove();
+        if (!copied) throw new Error("Não foi possível copiar a história.");
+      }
+      setStoryCopyFeedback("copied");
+    } catch (error) {
+      console.error("[InterpretationPanel] Erro ao copiar história:", error);
+      setStoryCopyFeedback("error");
+    }
+  }
+
   function handlePrintStory() {
     if (!story) {
       return;
@@ -1169,6 +1230,7 @@ export function InterpretationPanel({
             onChange={(event) => {
               setTheme(event.target.value);
               setStory(null);
+    setStoryCopyFeedback("idle");
               setShowHqImage(false);
               setShowEnglish(false);
               setError(null);
@@ -1489,6 +1551,38 @@ export function InterpretationPanel({
                   <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
                   <rect x="6" y="14" width="12" height="8" />
                 </svg>
+              </button>
+
+              <button
+                type="button"
+                className="secondary-button"
+                onClick={() => void handleCopyStoryPlainText()}
+                title={storyCopyFeedback === "copied" ? "História copiada" : storyCopyFeedback === "error" ? "Falha ao copiar história" : "Copiar história completa em texto puro"}
+                aria-label={storyCopyFeedback === "copied" ? "História copiada" : "Copiar história completa em texto puro"}
+                style={{
+                  borderRadius: "999px",
+                  width: "3.5rem",
+                  minWidth: "3.5rem",
+                  height: "3rem",
+                  minHeight: "3rem",
+                  padding: 0,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}
+              >
+                {storyCopyFeedback === "copied" ? (
+                  <span aria-hidden="true" style={{ fontSize: "1.25rem", fontWeight: 700 }}>✓</span>
+                ) : storyCopyFeedback === "error" ? (
+                  <span aria-hidden="true" style={{ fontSize: "1.25rem", fontWeight: 700 }}>!</span>
+                ) : (
+                  <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" strokeWidth="2"
+                    strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                  </svg>
+                )}
               </button>
 
               {story.source === "local" && (
