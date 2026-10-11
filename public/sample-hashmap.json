@@ -15857,33 +15857,6 @@
     "englishLevel": "B2"
   },
   {
-    "id": "a-menos-que-unless",
-    "intention": "A menos que...",
-    "english": "unless",
-    "pattern": "unless + clause",
-    "description": "Usado para estabelecer uma condição negativa. Frequentemente equivale à ideia de 'se não'.",
-    "category": "condition",
-    "searchTerms": ["a menos que", "se não", "unless", "condição"],
-    "validationPatterns": ["\\b(?:unless)\\b"],
-    "examples": [
-      {
-        "pt": "Não vou a menos que ela me convide.",
-        "en": "I won't go unless she invites me.",
-        "ptIntent": "a menos que",
-        "enIntent": "unless"
-      },
-      {
-        "pt": "Não vamos conseguir terminar a menos que alguém nos ajude.",
-        "en": "We won't be able to finish unless someone helps us.",
-        "ptIntent": "a menos que",
-        "enIntent": "unless"
-      }
-    ],
-    "tags": ["condition", "unless", "grammar", "conversation"],
-    "related": [],
-    "englishLevel": "B1"
-  },
-  {
     "id": "mesmo-se-even-if",
     "intention": "Mesmo se...",
     "english": "even if",
@@ -28103,7 +28076,104 @@
     "high-frequency"
   ],
   "related": []
+},
+{
+  "id": "as-many-of-the-as-ba38ff35-7c20-4de6-8631-3e64c2cd6329",
+  "intention": "Tantos / tantas dos / das ... quanto ...",
+  "english": "As many of the ... as ...",
+  "pattern": "as + many + of + the + plural countable noun + as",
+  "description": "Usado para comparar ou indicar uma quantidade de elementos dentro de um grupo específico já identificado por the. Diferente de as many + substantivo plural + as, a construção as many of the + substantivo plural + as destaca uma parte de um conjunto definido. Também pode aparecer com as possible ou as I could. O substantivo depois de the deve ser contável e plural.",
+  "englishLevel": "B1",
+  "category": "Comparisons",
+  "validationPatterns": [
+    "\\bas\\s+many\\s+of\\s+the\\s+(?:[\\w-]+\\s+){0,5}[\\w-]+\\s+as\\b"
+  ],
+  "examples": [
+    {
+      "pt": "Li tantos dos livros quanto pude.",
+      "en": "I read as many of the books as I could.",
+      "ptIntent": "tantos dos livros quanto",
+      "enIntent": "as many of the books as"
+    },
+    {
+      "pt": "Convidei tantos dos alunos quanto possível.",
+      "en": "I invited as many of the students as possible.",
+      "ptIntent": "tantos dos alunos quanto",
+      "enIntent": "as many of the students as"
+    },
+    {
+      "pt": "Ela respondeu a tantas das perguntas quanto conseguiu.",
+      "en": "She answered as many of the questions as she could.",
+      "ptIntent": "tantas das perguntas quanto",
+      "enIntent": "as many of the questions as"
+    },
+    {
+      "pt": "Precisamos revisar tantos dos documentos quanto possível hoje.",
+      "en": "We need to review as many of the documents as possible today.",
+      "ptIntent": "tantos dos documentos quanto",
+      "enIntent": "as many of the documents as"
+    },
+    {
+      "pt": "Ele visitou tantos dos museus quanto o tempo permitiu.",
+      "en": "He visited as many of the museums as time allowed.",
+      "ptIntent": "tantos dos museus quanto",
+      "enIntent": "as many of the museums as"
+    },
+    {
+      "pt": "Você conseguiu resolver tantas das questões quanto eu?",
+      "en": "Did you manage to solve as many of the questions as I did?",
+      "ptIntent": "tantas das questões quanto",
+      "enIntent": "as many of the questions as"
+    },
+    {
+      "pt": "Não assisti a tantos dos vídeos quanto você.",
+      "en": "I didn't watch as many of the videos as you did.",
+      "ptIntent": "tantos dos vídeos quanto",
+      "enIntent": "as many of the videos as"
+    },
+    {
+      "pt": "Tentamos salvar tantas das fotos quanto possível.",
+      "en": "We tried to save as many of the photos as possible.",
+      "ptIntent": "tantas das fotos quanto",
+      "enIntent": "as many of the photos as"
+    },
+    {
+      "pt": "Ela conhece tantos dos funcionários quanto o gerente?",
+      "en": "Does she know as many of the employees as the manager does?",
+      "ptIntent": "tantos dos funcionários quanto",
+      "enIntent": "as many of the employees as"
+    },
+    {
+      "pt": "Quero praticar tantas das frases quanto puder.",
+      "en": "I want to practice as many of the sentences as I can.",
+      "ptIntent": "tantas das frases quanto",
+      "enIntent": "as many of the sentences as"
+    }
+  ],
+  "searchTerms": [
+    "tantos dos quanto",
+    "tantas das quanto",
+    "tantos de um grupo quanto",
+    "tantas de um grupo quanto",
+    "as many of the as",
+    "as many of the",
+    "as many of the books as",
+    "as many of the students as",
+    "grupo específico",
+    "parte de um conjunto",
+    "plural countable nouns"
+  ],
+  "tags": [
+    "comparison",
+    "quantity",
+    "countable-nouns",
+    "partitive",
+    "as-many-of-the-as",
+    "daily-conversation"
+  ],
+  "related": []
 }
+
  
   ]
 }
