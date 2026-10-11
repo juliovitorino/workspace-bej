@@ -37,6 +37,7 @@ interface IntentionDetailsProps {
   onSelectRelated: (item: MentalIntention) => void;
   onBasicTraining: (item: MentalIntention) => void;
   onAdvancedTraining: (item: MentalIntention) => void;
+  onReviewTraining: (item: MentalIntention) => void;
 }
 
 export function IntentionDetails({
@@ -45,7 +46,8 @@ export function IntentionDetails({
   onClose,
   onSelectRelated,
   onBasicTraining,
-  onAdvancedTraining
+  onAdvancedTraining,
+  onReviewTraining
 }: IntentionDetailsProps) {
   const [speakingExampleIndex, setSpeakingExampleIndex] =
     useState<number | null>(null);
@@ -654,6 +656,14 @@ Mandatório:
             onClick={() => onAdvancedTraining(item)}
           >
             Treino avançado
+          </button>
+
+          <button
+            type="button"
+            className="secondary-button"
+            onClick={() => onReviewTraining(item)}
+          >
+            Revisão
           </button>
 
           <button

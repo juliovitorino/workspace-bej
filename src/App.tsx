@@ -6,6 +6,7 @@ import { Sidebar, type AppView } from "./components/Sidebar";
 import { ExercisePanel } from "./components/ExercisePanel";
 import { BasicTraining } from "./components/BasicTraining";
 import { AdvancedTraining } from "./components/AdvancedTraining";
+import { ReviewTraining } from "./components/ReviewTraining";
 import { InterpretationPanel } from "./components/InterpretationPanel";
 import { IntentionList } from "./components/IntentionList";
 import { IntentionDetails } from "./components/IntentionDetails";
@@ -14,7 +15,7 @@ import { fetchHashmap, loadHashmap } from "./services/hashmapService";
 import type { HashmapData, MentalIntention } from "./types/hashmap";
 import { searchIntentions } from "./utils/searchIntentions";
 
-type TrainingMode = "basic" | "advanced" | null;
+type TrainingMode = "basic" | "advanced" | "review" | null;
 
 const AI_ENABLED = import.meta.env.VITE_AI_ENABLED === "true";
 
@@ -284,6 +285,16 @@ function App() {
                   onBack={closeTraining}
                 />
               )}
+
+            {!loading &&
+              data &&
+              trainingMode === "review" &&
+              trainingIntention && (
+                <ReviewTraining
+                  intention={trainingIntention}
+                  onBack={closeTraining}
+                />
+              )}
           </div>
         </div>
       </div>
@@ -303,6 +314,7 @@ function App() {
         onSelectRelated={setSelected}
         onBasicTraining={(item) => startTraining(item, "basic")}
         onAdvancedTraining={(item) => startTraining(item, "advanced")}
+        onReviewTraining={(item) => startTraining(item, "review")}
       />
     </main>
   );
