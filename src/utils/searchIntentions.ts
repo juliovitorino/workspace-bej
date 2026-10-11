@@ -1,8 +1,32 @@
 import type { MentalIntention } from "../types/hashmap";
 import { normalizeText } from "./normalizeText";
 
-function matchesAnySearchableField(item: MentalIntention, query: string): boolean {
-  if (!query) return true;
+/**
+ * Busca os termos na ordem digitada, permitindo qualquer texto entre eles.
+ * Ex.: "tão quanto" encontra "Tão + adjetivo + quanto".
+ * Os termos são escapados para que caracteres especiais sejam tratados
+ * como texto literal, e não como comandos de expressão regular.
+ */
+function createSearchPattern(query: string): RegExp | null {
+  const terms = normalizeText(query).split(/\s+/).filter(Boolean);
+  if (terms.length === 0) return null;
+
+  const escapedTerms = terms.map((term) =>
+    term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+  );
+
+  return new RegExp(escapedTerms.join(".*"), "u");
+}
+
+function matchesSearch(value: string, pattern: RegExp | null): boolean {
+  return !pattern || pattern.test(normalizeText(value));
+}
+
+function matchesAnySearchableField(
+  item: MentalIntention,
+  pattern: RegExp | null
+): boolean {
+  if (!pattern) return true;
 
   const searchable = [
     item.intention,
@@ -14,9 +38,7 @@ function matchesAnySearchableField(item: MentalIntention, query: string): boolea
     ...(item.tags ?? [])
   ];
 
-  return searchable.some((value) =>
-    normalizeText(value).includes(query)
-  );
+  return searchable.some((value) => matchesSearch(value, pattern));
 }
 
 export function searchIntentions(
@@ -27,26 +49,24 @@ export function searchIntentions(
   selectedTags: string[],
   englishLevelSearch: string
 ): MentalIntention[] {
-  const normalizedMental = normalizeText(mentalSearch);
-  const normalizedEnglish = normalizeText(englishSearch);
+  const mentalPattern = createSearchPattern(mentalSearch);
+  const englishPattern = createSearchPattern(englishSearch);
   const normalizedCategory = normalizeText(categorySearch);
   const normalizedEnglishLevel = normalizeText(englishLevelSearch);
 
   return intentions
     .filter((item) => {
       const mentalMatches =
-        !normalizedMental ||
-        normalizeText(item.intention).includes(normalizedMental) ||
+        matchesSearch(item.intention, mentalPattern) ||
         (item.searchTerms ?? []).some((term) =>
-          normalizeText(term).includes(normalizedMental)
+          matchesSearch(term, mentalPattern)
         );
 
       const englishMatches =
-        !normalizedEnglish ||
-        normalizeText(item.english).includes(normalizedEnglish) ||
-        normalizeText(item.pattern ?? "").includes(normalizedEnglish) ||
+        matchesSearch(item.english, englishPattern) ||
+        matchesSearch(item.pattern ?? "", englishPattern) ||
         (item.searchTerms ?? []).some((term) =>
-          normalizeText(term).includes(normalizedEnglish)
+          matchesSearch(term, englishPattern)
         );
 
       const categoryMatches =
@@ -82,9 +102,9 @@ export function globalSearch(
   intentions: MentalIntention[],
   query: string
 ): MentalIntention[] {
-  const normalizedQuery = normalizeText(query);
+  const pattern = createSearchPattern(query);
   return intentions
-    .filter((item) => matchesAnySearchableField(item, normalizedQuery))
+    .filter((item) => matchesAnySearchableField(item, pattern))
     .sort((a, b) =>
       normalizeText(a.intention).localeCompare(normalizeText(b.intention))
     );

@@ -55,6 +55,8 @@ export function IntentionDetails({
     useState<number | null>(null);
   const [copiedHqPromptExampleIndex, setCopiedHqPromptExampleIndex] =
     useState<number | null>(null);
+  const [copiedSection, setCopiedSection] = useState<"pattern" | "examples" | null>(null);
+  const [copySectionError, setCopySectionError] = useState<string | null>(null);
   const [speechError, setSpeechError] = useState<string | null>(null);
   const [hqImage, setHqImage] = useState<string | null>(null);
   const [shareError, setShareError] = useState<string | null>(null);
@@ -78,6 +80,8 @@ export function IntentionDetails({
     setSpeakingExampleIndex(null);
     setCopiedExampleIndex(null);
     setCopiedHqPromptExampleIndex(null);
+    setCopiedSection(null);
+    setCopySectionError(null);
     setSpeechError(null);
     setHqImage(null);
     setShareError(null);
@@ -215,6 +219,51 @@ export function IntentionDetails({
     };
 
     window.speechSynthesis.speak(utterance);
+  }
+
+  async function handleCopySection(section: "pattern" | "examples") {
+    if (!item) return;
+
+    const content = section === "pattern"
+      ? item.pattern ?? ""
+      : (item.examples ?? [])
+          .map((example) => `${example.pt}\r\n${example.en}`)
+          .join("\r\n\r\n");
+
+    if (!content.trim()) return;
+
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(content);
+      } else {
+        const textarea = document.createElement("textarea");
+        textarea.value = content;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        textarea.style.pointerEvents = "none";
+        document.body.appendChild(textarea);
+
+        try {
+          textarea.select();
+          textarea.setSelectionRange(0, textarea.value.length);
+          if (!document.execCommand("copy")) {
+            throw new Error("Falha ao copiar o texto.");
+          }
+        } finally {
+          document.body.removeChild(textarea);
+        }
+      }
+
+      setCopySectionError(null);
+      setCopiedSection(section);
+      window.setTimeout(() => {
+        setCopiedSection((current) => current === section ? null : current);
+      }, 1500);
+    } catch {
+      setCopiedSection(null);
+      setCopySectionError("Não foi possível copiar o conteúdo. Tente novamente.");
+    }
   }
 
   async function handleCopyExample(text: string, index: number) {
@@ -394,7 +443,7 @@ Mandatório:
 
     clonedPanel
       .querySelectorAll(
-        ".close-button, .training-actions, .example .secondary-button, [role='dialog'][aria-label='Visualização da HQ']"
+        ".close-button, .training-actions, .copy-section-button, .example .secondary-button, [role='dialog'][aria-label='Visualização da HQ']"
       )
       .forEach((element) => element.remove());
 
@@ -678,9 +727,52 @@ Mandatório:
           </button>
         </div>
 
+        {copySectionError && (
+          <p role="alert" style={{ color: "#b91c1c" }}>{copySectionError}</p>
+        )}
+
         {item.pattern && (
           <section>
-            <h3>Pattern</h3>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+              <h3>Pattern</h3>
+              <button
+                type="button"
+                className="secondary-button copy-section-button"
+                onClick={() => void handleCopySection("pattern")}
+                title={copiedSection === "pattern" ? "Copiado!" : "Copiar Pattern"}
+                aria-label={copiedSection === "pattern" ? "Pattern copiado" : "Copiar Pattern"}
+                style={{
+                  width: "2.25rem",
+                  minWidth: "2.25rem",
+                  height: "2.25rem",
+                  minHeight: "2.25rem",
+                  padding: 0,
+                  borderRadius: "999px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}
+              >
+                {copiedSection === "pattern" ? (
+                  <span aria-hidden="true" style={{ fontWeight: 700 }}>✓</span>
+                ) : (
+                  <svg
+                    aria-hidden="true"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                  </svg>
+                )}
+              </button>
+            </div>
             <p>{item.pattern}</p>
           </section>
         )}
@@ -694,7 +786,46 @@ Mandatório:
 
         {item.examples && item.examples.length > 0 && (
           <section>
-            <h3>Exemplos</h3>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+              <h3>Exemplos</h3>
+              <button
+                type="button"
+                className="secondary-button copy-section-button"
+                onClick={() => void handleCopySection("examples")}
+                title={copiedSection === "examples" ? "Copiado!" : "Copiar exemplos em português e inglês"}
+                aria-label={copiedSection === "examples" ? "exemplos em português e inglês copiado" : "Copiar exemplos em português e inglês"}
+                style={{
+                  width: "2.25rem",
+                  minWidth: "2.25rem",
+                  height: "2.25rem",
+                  minHeight: "2.25rem",
+                  padding: 0,
+                  borderRadius: "999px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}
+              >
+                {copiedSection === "examples" ? (
+                  <span aria-hidden="true" style={{ fontWeight: 700 }}>✓</span>
+                ) : (
+                  <svg
+                    aria-hidden="true"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                  </svg>
+                )}
+              </button>
+            </div>
             <div className="examples">
               {item.examples.map((example, index) => (
                 <div className="example" key={`${item.id}-${index}`}>
