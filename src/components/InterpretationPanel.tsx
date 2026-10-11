@@ -1760,13 +1760,14 @@ export function InterpretationPanel({
                   <div
                     style={{
                       display: "flex",
-                      alignItems: "flex-start",
-                      gap: "0.6rem"
+                      flexDirection: "column",
+                      alignItems: "stretch",
+                      gap: "0.45rem"
                     }}
                   >
                     <p
                       className="english interpretation-en"
-                      style={{ flex: 1 }}
+                      style={{ width: "100%", marginBottom: 0 }}
                     >
                       {renderHighlightedText(
                         paragraph.en,
@@ -1776,83 +1777,94 @@ export function InterpretationPanel({
                       )}
                     </p>
 
-                    <ConnectedSpeechButton
-                      title={`${story.titleEn} — Parágrafo ${index + 1}`}
-                      blocks={[{ original: paragraph.en, portuguese: paragraph.pt }]}
-                      compact
-                    />
-
-                    <button
-                      type="button"
-                      className="secondary-button"
-                      onClick={() =>
-                        handleSpeakParagraph(paragraph.en, index)
-                      }
-                      disabled={speakingParagraphIndex === index}
-                      title={
-                        speakingParagraphIndex === index
-                          ? "Reproduzindo este parágrafo"
-                          : "Ouvir este parágrafo em inglês"
-                      }
-                      aria-label={
-                        speakingParagraphIndex === index
-                          ? `Reproduzindo parágrafo ${index + 1}`
-                          : `Ouvir parágrafo ${index + 1} em inglês`
-                      }
+                    <div
                       style={{
-                        width: "2.5rem",
-                        minWidth: "2.5rem",
-                        height: "2.5rem",
-                        minHeight: "2.5rem",
-                        padding: 0,
-                        borderRadius: "999px",
-                        display: "inline-flex",
+                        display: "flex",
                         alignItems: "center",
-                        justifyContent: "center",
-                        flexShrink: 0
+                        justifyContent: "flex-end",
+                        gap: "0.6rem",
+                        flexWrap: "wrap",
+                        width: "100%"
                       }}
                     >
-                      <span aria-hidden="true">🔊</span>
-                    </button>
+                      <ConnectedSpeechButton
+                        title={`${story.titleEn} — Parágrafo ${index + 1}`}
+                        blocks={[{ original: paragraph.en, portuguese: paragraph.pt }]}
+                        compact
+                      />
 
-                    <button
-                      type="button"
-                      className="secondary-button"
-                      onClick={() => void handleCopyParagraph(paragraph.en, index)}
-                      title={
-                        copiedParagraphIndex === index
-                          ? "Parágrafo em inglês copiado"
-                          : copyParagraphErrorIndex === index
-                            ? "Falha ao copiar. Tentar novamente"
-                            : "Copiar este parágrafo em inglês"
-                      }
-                      aria-label={`Copiar parágrafo ${index + 1} em inglês`}
-                      style={{
-                        width: "2.5rem",
-                        minWidth: "2.5rem",
-                        height: "2.5rem",
-                        minHeight: "2.5rem",
-                        padding: 0,
-                        borderRadius: "999px",
-                        display: "inline-flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        flexShrink: 0
-                      }}
-                    >
-                      {copiedParagraphIndex === index ? (
-                        <span aria-hidden="true" style={{ fontWeight: 700 }}>✓</span>
-                      ) : copyParagraphErrorIndex === index ? (
-                        <span aria-hidden="true" style={{ fontWeight: 700 }}>!</span>
-                      ) : (
-                        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"
-                          fill="none" stroke="currentColor" strokeWidth="2"
-                          strokeLinecap="round" strokeLinejoin="round">
-                          <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2 2h9a2 2 0 0 1 2 2v1" />
-                        </svg>
-                      )}
-                    </button>
+                      <button
+                        type="button"
+                        className="secondary-button"
+                        onClick={() =>
+                          handleSpeakParagraph(paragraph.en, index)
+                        }
+                        disabled={speakingParagraphIndex === index}
+                        title={
+                          speakingParagraphIndex === index
+                            ? "Reproduzindo este parágrafo"
+                            : "Ouvir este parágrafo em inglês"
+                        }
+                        aria-label={
+                          speakingParagraphIndex === index
+                            ? `Reproduzindo parágrafo ${index + 1}`
+                            : `Ouvir parágrafo ${index + 1} em inglês`
+                        }
+                        style={{
+                          width: "2.5rem",
+                          minWidth: "2.5rem",
+                          height: "2.5rem",
+                          minHeight: "2.5rem",
+                          padding: 0,
+                          borderRadius: "999px",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          flexShrink: 0
+                        }}
+                      >
+                        <span aria-hidden="true">🔊</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        className="secondary-button"
+                        onClick={() => void handleCopyParagraph(paragraph.en, index)}
+                        title={
+                          copiedParagraphIndex === index
+                            ? "Parágrafo em inglês copiado"
+                            : copyParagraphErrorIndex === index
+                              ? "Falha ao copiar. Tentar novamente"
+                              : "Copiar este parágrafo em inglês"
+                        }
+                        aria-label={`Copiar parágrafo ${index + 1} em inglês`}
+                        style={{
+                          width: "2.5rem",
+                          minWidth: "2.5rem",
+                          height: "2.5rem",
+                          minHeight: "2.5rem",
+                          padding: 0,
+                          borderRadius: "999px",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          flexShrink: 0
+                        }}
+                      >
+                        {copiedParagraphIndex === index ? (
+                          <span aria-hidden="true" style={{ fontWeight: 700 }}>✓</span>
+                        ) : copyParagraphErrorIndex === index ? (
+                          <span aria-hidden="true" style={{ fontWeight: 700 }}>!</span>
+                        ) : (
+                          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" strokeWidth="2"
+                            strokeLinecap="round" strokeLinejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2 2h9a2 2 0 0 1 2 2v1" />
+                          </svg>
+                        )}
+                      </button>
+                    </div>
                   </div>
                 )}
               </section>
