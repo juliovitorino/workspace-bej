@@ -27802,7 +27802,308 @@
     "negative"
   ],
   "related": []
+},
+    {
+      "id": "as-many-as-8f4c2a91-7b63-4e05-9d18-c6a2f03b5e74",
+      "intention": "Tantos / tantas ... quanto ...",
+      "english": "As many ... as ...",
+      "pattern": "as + many + plural countable noun + as",
+      "description": "Usado para comparar quantidades de elementos contáveis. MANY acompanha substantivos contáveis no plural, como sentences, books, people e questions. A estrutura também pode ser usada com as possible para expressar a maior quantidade possível.",
+      "englishLevel": "A2",
+      "category": "Comparisons",
+      "validationPatterns": [
+        "\\bas\\s+many\\s+\\w+(?:[\\s'-]+\\w+){0,8}\\s+as\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Você precisa copiar tantas frases em inglês quanto frases em português.",
+          "en": "You need to copy as many English sentences as Portuguese sentences.",
+          "ptIntent": "tantas frases em inglês quanto",
+          "enIntent": "as many English sentences as"
+        },
+        {
+          "pt": "Eu tenho tantos livros quanto você.",
+          "en": "I have as many books as you.",
+          "ptIntent": "tantos livros quanto",
+          "enIntent": "as many books as"
+        },
+        {
+          "pt": "Ela tem tantos amigos quanto eu.",
+          "en": "She has as many friends as I do.",
+          "ptIntent": "tantos amigos quanto",
+          "enIntent": "as many friends as"
+        },
+        {
+          "pt": "Eu quero aprender tantas expressões em inglês quanto possível.",
+          "en": "I want to learn as many English expressions as possible.",
+          "ptIntent": "tantas expressões em inglês quanto possível",
+          "enIntent": "as many English expressions as possible"
+        },
+        {
+          "pt": "Nós precisamos de tantas pessoas quanto possível.",
+          "en": "We need as many people as possible.",
+          "ptIntent": "tantas pessoas quanto possível",
+          "enIntent": "as many people as possible"
+        },
+        {
+          "pt": "Você tem tantas perguntas quanto eu?",
+          "en": "Do you have as many questions as I do?",
+          "ptIntent": "tantas perguntas quanto",
+          "enIntent": "as many questions as"
+        },
+        {
+          "pt": "Eu não tenho tantos problemas quanto antes.",
+          "en": "I don't have as many problems as before.",
+          "ptIntent": "tantos problemas quanto",
+          "enIntent": "as many problems as"
+        },
+        {
+          "pt": "Ele não comete tantos erros quanto costumava cometer.",
+          "en": "He doesn't make as many mistakes as he used to.",
+          "ptIntent": "tantos erros quanto",
+          "enIntent": "as many mistakes as"
+        },
+        {
+          "pt": "Tente falar com tantas pessoas quanto possível.",
+          "en": "Try to talk to as many people as possible.",
+          "ptIntent": "tantas pessoas quanto possível",
+          "enIntent": "as many people as possible"
+        },
+        {
+          "pt": "Eu gostaria de praticar tantas frases quanto você.",
+          "en": "I'd like to practice as many sentences as you do.",
+          "ptIntent": "tantas frases quanto",
+          "enIntent": "as many sentences as"
+        }
+      ],
+      "searchTerms": [
+        "tantos quanto",
+        "tantas quanto",
+        "tantos quantos",
+        "tantas quantas",
+        "tantos",
+        "tantas",
+        "quanto",
+        "as many as",
+        "as many",
+        "as many as possible",
+        "comparação de quantidade",
+        "quantidades iguais",
+        "countable nouns"
+      ],
+      "tags": [
+        "comparison",
+        "quantity",
+        "countable-nouns",
+        "as-many-as",
+        "daily-conversation",
+        "high-frequency"
+      ],
+      "related": []
+    },
+        {
+      "id": "as-much-as-a2c41eb5-a362-4b42-a74c-2f675693ed71",
+      "intention": "Tanto / tanta ... quanto ...",
+      "english": "As much ... as ...",
+      "pattern": "as + much + uncountable noun + as",
+      "description": "Usado para comparar quantidades de substantivos incontáveis, como money, time, water, information, work e patience. A estrutura as much + substantivo incontável + as também pode aparecer com possible para expressar a maior quantidade possível. Para substantivos contáveis no plural, use as many ... as.",
+      "englishLevel": "A2",
+      "category": "Comparisons",
+      "validationPatterns": [
+        "\\bas\\s+much\\s+[\\w'-]+(?:\\s+[\\w'-]+){0,7}\\s+as\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Eu tenho tanto dinheiro quanto você.",
+          "en": "I have as much money as you do.",
+          "ptIntent": "tanto dinheiro quanto",
+          "enIntent": "as much money as"
+        },
+        {
+          "pt": "Ela tem tanto tempo livre quanto eu.",
+          "en": "She has as much free time as I do.",
+          "ptIntent": "tanto tempo livre quanto",
+          "enIntent": "as much free time as"
+        },
+        {
+          "pt": "Nós precisamos de tanta água quanto eles.",
+          "en": "We need as much water as they do.",
+          "ptIntent": "tanta água quanto",
+          "enIntent": "as much water as"
+        },
+        {
+          "pt": "Eu não tenho tanta paciência quanto você.",
+          "en": "I don't have as much patience as you do.",
+          "ptIntent": "tanta paciência quanto",
+          "enIntent": "as much patience as"
+        },
+        {
+          "pt": "Ele tem tanta experiência quanto o gerente.",
+          "en": "He has as much experience as the manager.",
+          "ptIntent": "tanta experiência quanto",
+          "enIntent": "as much experience as"
+        },
+        {
+          "pt": "Você recebeu tanta informação quanto eu?",
+          "en": "Did you receive as much information as I did?",
+          "ptIntent": "tanta informação quanto",
+          "enIntent": "as much information as"
+        },
+        {
+          "pt": "Eu quero aprender o máximo de inglês possível.",
+          "en": "I want to learn as much English as possible.",
+          "ptIntent": "o máximo de inglês possível",
+          "enIntent": "as much English as"
+        },
+        {
+          "pt": "Tente economizar o máximo de dinheiro possível.",
+          "en": "Try to save as much money as possible.",
+          "ptIntent": "o máximo de dinheiro possível",
+          "enIntent": "as much money as"
+        },
+        {
+          "pt": "Nós não temos tanto trabalho quanto antes.",
+          "en": "We don't have as much work as before.",
+          "ptIntent": "tanto trabalho quanto",
+          "enIntent": "as much work as"
+        },
+        {
+          "pt": "Ela colocou tanto açúcar quanto eu no café.",
+          "en": "She put as much sugar as I did in the coffee.",
+          "ptIntent": "tanto açúcar quanto",
+          "enIntent": "as much sugar as"
+        }
+      ],
+      "searchTerms": [
+        "tanto quanto",
+        "tanta quanto",
+        "tanto dinheiro quanto",
+        "tanta água quanto",
+        "o máximo possível",
+        "as much as",
+        "as much",
+        "as much as possible",
+        "comparação de quantidade",
+        "substantivos incontáveis",
+        "uncountable nouns"
+      ],
+      "tags": [
+        "comparison",
+        "quantity",
+        "uncountable-nouns",
+        "as-much-as",
+        "daily-conversation",
+        "high-frequency"
+      ],
+      "related": []
+    },
+    {
+  "id": "a-nao-ser-que-8d60c4c4-9e21-437f-ac35-93bd350758b3",
+  "intention": "A não ser que... / A menos que...",
+  "english": "Unless...",
+  "pattern": "main clause + unless + subject + verb (present simple for future conditions)",
+  "description": "UNLESS introduz uma exceção ou condição que impede o resultado da oração principal. Frequentemente equivale a 'if ... not'. Em condições futuras, usa-se normalmente o present simple depois de unless, e não will. Pode aparecer no início ou no meio da frase. Evite combinar unless com outra negação quando isso inverter o sentido pretendido.",
+  "englishLevel": "B1",
+  "category": "Conditions",
+  "validationPatterns": [
+    "\\bunless\\b"
+  ],
+  "examples": [
+    {
+      "pt": "Eu vou sair, a não ser que comece a chover.",
+      "en": "I will go out unless it starts raining.",
+      "ptIntent": "a não ser que",
+      "enIntent": "unless"
+    },
+    {
+      "pt": "Não vou comprar isso, a não ser que o preço caia.",
+      "en": "I won't buy it unless the price drops.",
+      "ptIntent": "a não ser que",
+      "enIntent": "unless"
+    },
+    {
+      "pt": "Nós vamos viajar amanhã, a não ser que aconteça algum imprevisto.",
+      "en": "We will travel tomorrow unless something unexpected happens.",
+      "ptIntent": "a não ser que",
+      "enIntent": "unless"
+    },
+    {
+      "pt": "Ela não vai entender, a não ser que você explique.",
+      "en": "She won't understand unless you explain.",
+      "ptIntent": "a não ser que",
+      "enIntent": "unless"
+    },
+    {
+      "pt": "Você não vai melhorar, a não ser que pratique todos os dias.",
+      "en": "You won't improve unless you practice every day.",
+      "ptIntent": "a não ser que",
+      "enIntent": "unless"
+    },
+    {
+      "pt": "Eu vou continuar estudando, a não ser que fique muito cansado.",
+      "en": "I'll keep studying unless I get too tired.",
+      "ptIntent": "a não ser que",
+      "enIntent": "unless"
+    },
+    {
+      "pt": "Não conte a ninguém, a não ser que seja necessário.",
+      "en": "Don't tell anyone unless it's necessary.",
+      "ptIntent": "a não ser que",
+      "enIntent": "unless"
+    },
+    {
+      "pt": "O aplicativo vai funcionar, a não ser que haja um problema de conexão.",
+      "en": "The app will work unless there is a connection problem.",
+      "ptIntent": "a não ser que",
+      "enIntent": "unless"
+    },
+    {
+      "pt": "A gente pode conversar hoje, a não ser que você esteja ocupado.",
+      "en": "We can talk today unless you are busy.",
+      "ptIntent": "a não ser que",
+      "enIntent": "unless"
+    },
+    {
+      "pt": "Não vou mudar de ideia, a não ser que você me dê um bom motivo.",
+      "en": "I won't change my mind unless you give me a good reason.",
+      "ptIntent": "a não ser que",
+      "enIntent": "unless"
+    },
+    {
+      "pt": "Vou caminhar, a não ser que esteja chovendo.",
+      "en": "I'll go for a walk unless it's raining.",
+      "ptIntent": "a não ser que",
+      "enIntent": "unless"
+    },
+    {
+      "pt": "Não vamos cancelar a reunião, a não ser que o cliente peça.",
+      "en": "We won't cancel the meeting unless the client asks us to.",
+      "ptIntent": "a não ser que",
+      "enIntent": "unless"
+    }
+  ],
+  "searchTerms": [
+    "a não ser que",
+    "a nao ser que",
+    "a menos que",
+    "exceto se",
+    "salvo se",
+    "unless",
+    "if not",
+    "condição",
+    "exceção"
+  ],
+  "tags": [
+    "conditions",
+    "exceptions",
+    "unless",
+    "if-not",
+    "future-conditions",
+    "daily-conversation",
+    "high-frequency"
+  ],
+  "related": []
 }
-
+ 
   ]
 }
