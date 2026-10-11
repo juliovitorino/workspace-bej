@@ -843,15 +843,15 @@ Mandatório:
                   <div
                     style={{
                       display: "flex",
-                      alignItems: "center",
-                      gap: "0.6rem",
-                      flexWrap: "wrap"
+                      flexDirection: "column",
+                      alignItems: "stretch",
+                      gap: "0.45rem"
                     }}
                   >
                     <p
                       className="english"
                       style={{
-                        flex: "1 1 12rem",
+                        width: "100%",
                         minWidth: 0,
                         margin: 0
                       }}
@@ -864,11 +864,12 @@ Mandatório:
 
                     <div
                       style={{
-                        display: "inline-flex",
+                        display: "flex",
                         alignItems: "center",
+                        justifyContent: "flex-end",
+                        flexWrap: "wrap",
                         gap: "0.45rem",
-                        flexShrink: 0,
-                        marginLeft: "auto"
+                        width: "100%"
                       }}
                     >
                       <button
