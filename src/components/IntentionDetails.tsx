@@ -1,3 +1,4 @@
+import { isAuthorMode } from "../utils/authorMode";
 import { useEffect, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import { ConnectedSpeechButton } from "./ConnectedSpeechStudio";
@@ -312,6 +313,7 @@ export function IntentionDetails({
     englishIntention: string | undefined,
     index: number
   ) {
+    if (!isAuthorMode()) return;
     const sentence = englishText.trim();
     const intention = (englishIntention ?? item?.english ?? "").trim();
 
@@ -951,6 +953,7 @@ Mandatório:
                         )}
                       </button>
 
+                      {isAuthorMode() && (
                       <button
                         type="button"
                         className="secondary-button"
@@ -1009,6 +1012,7 @@ Mandatório:
                           </svg>
                         )}
                       </button>
+                      )}
 
                       {example.hqImage && (
                         <button
