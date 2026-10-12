@@ -29022,7 +29022,227 @@
     "its-not-like"
   ],
   "related": []
+},
+
+{
+  "id": "a-vaca-foi-pro-brejo-6f8a2d41-3c75-4b90-ae12-9d5c7f034b68",
+  "intention": "A vaca foi pro brejo / Deu tudo errado",
+  "english": "It all went south",
+  "pattern": "subject + go south (go / goes / going / went / gone)",
+  "description": "Expressão idiomática informal usada quando uma situação dá errado, sai do controle ou toma um rumo negativo. Go south é uma maneira natural de expressar a intenção brasileira 'a vaca foi pro brejo'. Pode ser utilizada no presente, passado, futuro e em construções com verbos modais. Não deve ser interpretada literalmente como uma direção geográfica.",
+  "category": "idiom",
+  "englishLevel": "B1",
+  "searchTerms": [
+    "a vaca foi pro brejo",
+    "a vaca vai pro brejo",
+    "deu tudo errado",
+    "vai dar tudo errado",
+    "desandou tudo",
+    "a situação deu errado",
+    "saiu do controle",
+    "go south",
+    "goes south",
+    "going south",
+    "went south",
+    "gone south"
+  ],
+  "validationPatterns": [
+    "\\b(?:go|goes|going|went|gone)\\s+south\\b"
+  ],
+  "examples": [
+    {
+      "pt": "A vaca foi pro brejo!",
+      "en": "It all went south!",
+      "ptIntent": "A vaca foi pro brejo",
+      "enIntent": "went south"
+    },
+    {
+      "pt": "Tudo estava indo bem, mas a vaca foi pro brejo.",
+      "en": "Everything was going well, but then it all went south.",
+      "ptIntent": "a vaca foi pro brejo",
+      "enIntent": "went south"
+    },
+    {
+      "pt": "Se perdermos esse cliente, a vaca pode ir pro brejo.",
+      "en": "If we lose this client, things could go south.",
+      "ptIntent": "a vaca pode ir pro brejo",
+      "enIntent": "go south"
+    },
+    {
+      "pt": "Depois daquela decisão, tudo começou a dar errado.",
+      "en": "After that decision, everything started going south.",
+      "ptIntent": "tudo começou a dar errado",
+      "enIntent": "going south"
+    },
+    {
+      "pt": "As coisas podem dar errado muito rapidamente.",
+      "en": "Things can go south very quickly.",
+      "ptIntent": "dar errado",
+      "enIntent": "go south"
+    },
+    {
+      "pt": "Se não resolvermos esse problema, tudo vai dar errado.",
+      "en": "If we don't fix this problem, everything will go south.",
+      "ptIntent": "tudo vai dar errado",
+      "enIntent": "go south"
+    },
+    {
+      "pt": "A situação deu errado depois da reunião.",
+      "en": "Things went south after the meeting.",
+      "ptIntent": "deu errado",
+      "enIntent": "went south"
+    },
+    {
+      "pt": "Eu sabia que alguma coisa poderia dar errado.",
+      "en": "I knew something could go south.",
+      "ptIntent": "poderia dar errado",
+      "enIntent": "go south"
+    },
+    {
+      "pt": "Tudo começou a dar errado quando o sistema caiu.",
+      "en": "Everything started going south when the system crashed.",
+      "ptIntent": "Tudo começou a dar errado",
+      "enIntent": "going south"
+    },
+    {
+      "pt": "Achei que tudo daria certo, mas a vaca foi pro brejo.",
+      "en": "I thought everything would work out, but it all went south.",
+      "ptIntent": "a vaca foi pro brejo",
+      "enIntent": "went south"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "brazilian-expression",
+    "failure",
+    "things-going-wrong",
+    "go-south",
+    "informal-english",
+    "spoken-english",
+    "high-frequency"
+  ],
+  "related": []
+},
+
+{
+  "id": "a-vaca-foi-pro-brejo-6f8a2d41-3c75-4b90-ae12-9d5c7f034b68",
+  "intention": "A vaca foi pro brejo / Deu tudo errado",
+  "english": "It all went south",
+  "pattern": "go south / go downhill / fall apart / go belly-up",
+  "description": "Expressão idiomática brasileira usada quando uma situação sai do controle, um plano fracassa ou tudo dá errado. Em inglês, go south é uma alternativa muito natural e informal. Go downhill destaca a piora progressiva, fall apart indica desmoronamento de planos ou situações, e go belly-up é especialmente usado para negócios ou projetos que fracassam.",
+  "category": "idiom",
+  "englishLevel": "B1",
+  "searchTerms": [
+    "a vaca foi pro brejo",
+    "a vaca vai pro brejo",
+    "deu tudo errado",
+    "vai dar tudo errado",
+    "foi tudo por água abaixo",
+    "o plano fracassou",
+    "desandou tudo",
+    "a situação piorou",
+    "go south",
+    "went south",
+    "go downhill",
+    "fall apart",
+    "belly-up"
+  ],
+  "validationPatterns": [
+    "\\b(?:go|goes|going|went|gone)\\s+south\\b",
+    "\\b(?:go|goes|going|went|gone)\\s+downhill\\b",
+    "\\b(?:fall|falls|falling|fell|fallen)\\s+apart\\b",
+    "\\b(?:go|goes|going|went|gone)\\s+belly-up\\b"
+  ],
+  "examples": [
+    {
+      "pt": "A vaca foi pro brejo!",
+      "en": "It all went south!",
+      "ptIntent": "A vaca foi pro brejo",
+      "enIntent": "went south"
+    },
+    {
+      "pt": "Tudo estava indo bem, mas a vaca foi pro brejo.",
+      "en": "Everything was going well, but then it all went south.",
+      "ptIntent": "a vaca foi pro brejo",
+      "enIntent": "went south"
+    },
+    {
+      "pt": "Se perdermos esse cliente, a vaca vai pro brejo.",
+      "en": "If we lose this client, things could go south.",
+      "ptIntent": "a vaca vai pro brejo",
+      "enIntent": "go south"
+    },
+    {
+      "pt": "Depois daquela decisão, tudo começou a dar errado.",
+      "en": "After that decision, everything started going south.",
+      "ptIntent": "tudo começou a dar errado",
+      "enIntent": "going south"
+    },
+    {
+      "pt": "A situação piorou depois que ele saiu da empresa.",
+      "en": "Things went downhill after he left the company.",
+      "ptIntent": "A situação piorou",
+      "enIntent": "went downhill"
+    },
+    {
+      "pt": "Desde aquela reunião, tudo vem piorando.",
+      "en": "Everything has been going downhill since that meeting.",
+      "ptIntent": "tudo vem piorando",
+      "enIntent": "going downhill"
+    },
+    {
+      "pt": "Nosso plano foi por água abaixo.",
+      "en": "Our plan fell apart.",
+      "ptIntent": "foi por água abaixo",
+      "enIntent": "fell apart"
+    },
+    {
+      "pt": "Tudo desmoronou quando descobrimos o problema.",
+      "en": "Everything fell apart when we discovered the problem.",
+      "ptIntent": "Tudo desmoronou",
+      "enIntent": "fell apart"
+    },
+    {
+      "pt": "O negócio foi pro brejo depois de seis meses.",
+      "en": "The business went belly-up after six months.",
+      "ptIntent": "foi pro brejo",
+      "enIntent": "went belly-up"
+    },
+    {
+      "pt": "Sem dinheiro, a empresa pode ir pro brejo.",
+      "en": "Without money, the company could go belly-up.",
+      "ptIntent": "ir pro brejo",
+      "enIntent": "go belly-up"
+    },
+    {
+      "pt": "Achei que tudo daria certo, mas a vaca foi pro brejo.",
+      "en": "I thought everything would work out, but it all went south.",
+      "ptIntent": "a vaca foi pro brejo",
+      "enIntent": "went south"
+    },
+    {
+      "pt": "Quando o sistema caiu durante a apresentação, deu tudo errado.",
+      "en": "When the system crashed during the presentation, everything went south.",
+      "ptIntent": "deu tudo errado",
+      "enIntent": "went south"
+    }
+  ],
+  "tags": [
+    "idiom",
+    "brazilian-expression",
+    "failure",
+    "things-going-wrong",
+    "go-south",
+    "go-downhill",
+    "fall-apart",
+    "belly-up",
+    "informal-english",
+    "spoken-english"
+  ],
+  "related": []
 }
+
+
 
   ]
 }
