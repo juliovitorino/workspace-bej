@@ -31367,7 +31367,1899 @@
       "high-frequency"
     ],
     "related": []
+  },
+  
+  {
+    "id": "e-ai-qual-e-a-boa-824d16da-a766-4141-817f-5cdab6e233c5",
+    "intention": "E aí? / Qual é a boa?",
+    "english": "What's up?",
+    "pattern": "What's up?",
+    "description": "Intenção comunicativa: E aí? / Qual é a boa?. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "E aí? / Qual é a boa?",
+      "What's up?"
+    ],
+    "validationPatterns": [
+      "(?i)What's\\s+up\\?"
+    ],
+    "examples": [
+      {
+        "pt": "E aí, tudo bem?",
+        "en": "Hey, what's up?",
+        "ptIntent": "E aí?",
+        "enIntent": "What's up?"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "quais-sao-as-novidades-e9a2f3ac-e638-4408-961e-0658047699d4",
+    "intention": "Quais são as novidades?",
+    "english": "What's new?",
+    "pattern": "What's new?",
+    "description": "Intenção comunicativa: Quais são as novidades?. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Quais são as novidades?",
+      "What's new?"
+    ],
+    "validationPatterns": [
+      "(?i)what(?:'s|\\s+is)\\s+new(?:\\s+with\\s+\\w+)?\\?"
+    ],
+    "examples": [
+      {
+        "pt": "Quais são as novidades com você?",
+        "en": "What's new with you?",
+        "ptIntent": "Quais são as novidades?",
+        "enIntent": "What's"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "ate-mais-29a7e9f3-168b-4893-8f5c-092ab2504e73",
+    "intention": "Até mais",
+    "english": "See you later",
+    "pattern": "See you later",
+    "description": "Intenção comunicativa: Até mais. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Até mais",
+      "See you later"
+    ],
+    "validationPatterns": [
+      "(?i)See\\s+you\\s+later"
+    ],
+    "examples": [
+      {
+        "pt": "Até mais no escritório.",
+        "en": "See you later at the office.",
+        "ptIntent": "Até mais",
+        "enIntent": "See you later"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "a-gente-se-fala-em-breve-3aa68569-dcbc-45e9-8796-5f476d9dc378",
+    "intention": "A gente se fala em breve",
+    "english": "Talk to you soon",
+    "pattern": "Talk to you soon",
+    "description": "Intenção comunicativa: A gente se fala em breve. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "A gente se fala em breve",
+      "Talk to you soon"
+    ],
+    "validationPatterns": [
+      "(?i)Talk\\s+to\\s+you\\s+soon"
+    ],
+    "examples": [
+      {
+        "pt": "A gente se fala em breve, combinado?",
+        "en": "Talk to you soon, okay?",
+        "ptIntent": "A gente se fala em breve",
+        "enIntent": "Talk to you soon"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "tenha-um-bom-dia-39ed0b0b-0208-4988-8f4a-8618f4e27c0e",
+    "intention": "Tenha um bom dia",
+    "english": "Have a nice day",
+    "pattern": "Have a nice day",
+    "description": "Intenção comunicativa: Tenha um bom dia. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Tenha um bom dia",
+      "Have a nice day"
+    ],
+    "validationPatterns": [
+      "(?i)Have\\s+a\\s+nice\\s+day"
+    ],
+    "examples": [
+      {
+        "pt": "Obrigado! Tenha um bom dia!",
+        "en": "Thanks! Have a nice day!",
+        "ptIntent": "Tenha um bom dia",
+        "enIntent": "Have a nice day"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "durma-bem-88d38705-ec51-4df5-9d3a-986767ae29a9",
+    "intention": "Durma bem",
+    "english": "Sleep well",
+    "pattern": "Sleep well",
+    "description": "Intenção comunicativa: Durma bem. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Durma bem",
+      "Sleep well"
+    ],
+    "validationPatterns": [
+      "(?i)Sleep\\s+well"
+    ],
+    "examples": [
+      {
+        "pt": "Boa noite, durma bem.",
+        "en": "Good night, sleep well.",
+        "ptIntent": "Durma bem",
+        "enIntent": "Sleep well"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "vamos-comecar-2454f356-2013-4735-9273-824489c29c25",
+    "intention": "Vamos começar",
+    "english": "Let's get started",
+    "pattern": "Let's get started",
+    "description": "Intenção comunicativa: Vamos começar. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Vamos começar",
+      "Let's get started"
+    ],
+    "validationPatterns": [
+      "(?i)Let's\\s+get\\s+started"
+    ],
+    "examples": [
+      {
+        "pt": "Todo mundo chegou. Vamos começar.",
+        "en": "Everyone's here. Let's get started.",
+        "ptIntent": "Vamos começar",
+        "enIntent": "Let's get started"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "voce-pode-repetir-5ef361bd-ba18-4fa8-8251-a2d65be5181d",
+    "intention": "Você pode repetir?",
+    "english": "Can you say that again?",
+    "pattern": "Can you say that again?",
+    "description": "Intenção comunicativa: Você pode repetir?. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "Você pode repetir?",
+      "Can you say that again?"
+    ],
+    "validationPatterns": [
+      "(?i)can\\s+you\\s+say\\s+that\\s+again(?:,?\\s+please)?\\?"
+    ],
+    "examples": [
+      {
+        "pt": "Você pode repetir, por favor?",
+        "en": "Can you say that again, please?",
+        "ptIntent": "Você pode repetir?",
+        "enIntent": "Can"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "fale-devagar-por-favor-d71fbe8b-e6ce-486b-8f1c-72f9383d975a",
+    "intention": "Fale devagar, por favor",
+    "english": "Speak slowly, please",
+    "pattern": "Speak slowly, please",
+    "description": "Intenção comunicativa: Fale devagar, por favor. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Fale devagar, por favor",
+      "Speak slowly, please"
+    ],
+    "validationPatterns": [
+      "(?i)Speak\\s+slowly,\\s+please"
+    ],
+    "examples": [
+      {
+        "pt": "Fale devagar, por favor. Ainda estou aprendendo.",
+        "en": "Speak slowly, please. I'm still learning.",
+        "ptIntent": "Fale devagar, por favor",
+        "enIntent": "Speak slowly, please"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "isso-mesmo-esta-certo-d21c1e77-68f2-4818-94e6-63cca76a9389",
+    "intention": "Isso mesmo / Está certo",
+    "english": "That's right",
+    "pattern": "That's right",
+    "description": "Intenção comunicativa: Isso mesmo / Está certo. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Isso mesmo / Está certo",
+      "That's right"
+    ],
+    "validationPatterns": [
+      "(?i)That's\\s+right"
+    ],
+    "examples": [
+      {
+        "pt": "Sim, isso mesmo!",
+        "en": "Yes, that's right!",
+        "ptIntent": "Isso mesmo",
+        "enIntent": "That's right"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "isso-esta-errado-2d42e862-ebb4-4023-b8fd-6ed337cfc6e3",
+    "intention": "Isso está errado",
+    "english": "That's wrong",
+    "pattern": "That's wrong",
+    "description": "Intenção comunicativa: Isso está errado. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Isso está errado",
+      "That's wrong"
+    ],
+    "validationPatterns": [
+      "(?i)That's\\s+wrong"
+    ],
+    "examples": [
+      {
+        "pt": "Isso está errado; a resposta é doze.",
+        "en": "That's wrong; the answer is twelve.",
+        "ptIntent": "Isso está errado",
+        "enIntent": "That's wrong"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "eu-tambem-6c685995-0019-4fab-bd45-7f5150a6920e",
+    "intention": "Eu também",
+    "english": "Me too",
+    "pattern": "Me too",
+    "description": "Intenção comunicativa: Eu também. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Eu também",
+      "Me too"
+    ],
+    "validationPatterns": [
+      "(?i)Me\\s+too"
+    ],
+    "examples": [
+      {
+        "pt": "Eu adoro esse filme. Eu também!",
+        "en": "I love this movie. Me too!",
+        "ptIntent": "Eu também",
+        "enIntent": "Me too"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "eu-tambem-nao-7503f736-f7b7-4990-be4f-1e15f428f597",
+    "intention": "Eu também não",
+    "english": "Me neither",
+    "pattern": "Me neither",
+    "description": "Intenção comunicativa: Eu também não. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Eu também não",
+      "Me neither"
+    ],
+    "validationPatterns": [
+      "(?i)Me\\s+neither"
+    ],
+    "examples": [
+      {
+        "pt": "Não gosto de trânsito. Eu também não.",
+        "en": "I don't like traffic. Me neither.",
+        "ptIntent": "Eu também não",
+        "enIntent": "Me neither"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "muito-obrigado-6d65578a-e634-4324-82d3-13c7139e2685",
+    "intention": "Muito obrigado",
+    "english": "Thanks a lot",
+    "pattern": "Thanks a lot",
+    "description": "Intenção comunicativa: Muito obrigado. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Muito obrigado",
+      "Thanks a lot"
+    ],
+    "validationPatterns": [
+      "(?i)Thanks\\s+a\\s+lot"
+    ],
+    "examples": [
+      {
+        "pt": "Muito obrigado pela sua ajuda.",
+        "en": "Thanks a lot for your help.",
+        "ptIntent": "Muito obrigado",
+        "enIntent": "Thanks a lot"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "voce-tem-certeza-60bdec28-5dfc-489d-9843-4ffc752434b0",
+    "intention": "Você tem certeza?",
+    "english": "Are you sure?",
+    "pattern": "Are you sure?",
+    "description": "Intenção comunicativa: Você tem certeza?. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Você tem certeza?",
+      "Are you sure?"
+    ],
+    "validationPatterns": [
+      "(?i)are\\s+you\\s+sure(?:\\s+[^?]+)?\\?"
+    ],
+    "examples": [
+      {
+        "pt": "Você tem certeza dessa decisão?",
+        "en": "Are you sure about this decision?",
+        "ptIntent": "Você tem certeza?",
+        "enIntent": "Are"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "por-que-nao-5ae0873b-2123-482a-a259-7002879088fa",
+    "intention": "Por que não?",
+    "english": "Why not?",
+    "pattern": "Why not?",
+    "description": "Intenção comunicativa: Por que não?. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Por que não?",
+      "Why not?"
+    ],
+    "validationPatterns": [
+      "(?i)Why\\s+not\\?"
+    ],
+    "examples": [
+      {
+        "pt": "Poderíamos ir amanhã. Por que não?",
+        "en": "We could go tomorrow. Why not?",
+        "ptIntent": "Por que não?",
+        "enIntent": "Why not?"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "parece-bom-combinado-a5ae4e74-dbaa-427e-ae65-afb46d50c156",
+    "intention": "Parece bom / Combinado",
+    "english": "Sounds good",
+    "pattern": "Sounds good",
+    "description": "Intenção comunicativa: Parece bom / Combinado. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Parece bom / Combinado",
+      "Sounds good"
+    ],
+    "validationPatterns": [
+      "(?i)Sounds\\s+good"
+    ],
+    "examples": [
+      {
+        "pt": "Vamos nos encontrar às oito. Combinado!",
+        "en": "Let's meet at eight. Sounds good!",
+        "ptIntent": "Parece bom",
+        "enIntent": "Sounds good"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "muito-bem-parabens-pelo-trabalho-8d7a4c10-f003-4fd1-bd71-1dae75dcefc0",
+    "intention": "Muito bem / Parabéns pelo trabalho",
+    "english": "Well done",
+    "pattern": "Well done",
+    "description": "Intenção comunicativa: Muito bem / Parabéns pelo trabalho. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Muito bem / Parabéns pelo trabalho",
+      "Well done"
+    ],
+    "validationPatterns": [
+      "(?i)Well\\s+done"
+    ],
+    "examples": [
+      {
+        "pt": "Muito bem na sua apresentação!",
+        "en": "Well done on your presentation!",
+        "ptIntent": "Muito bem",
+        "enIntent": "Well done"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "que-pena-que-chato-3e16535c-5c9d-427b-a53c-63ae23f0ebc6",
+    "intention": "Que pena / Que chato",
+    "english": "That's too bad",
+    "pattern": "That's too bad",
+    "description": "Intenção comunicativa: Que pena / Que chato. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Que pena / Que chato",
+      "That's too bad"
+    ],
+    "validationPatterns": [
+      "(?i)That's\\s+too\\s+bad"
+    ],
+    "examples": [
+      {
+        "pt": "Você perdeu o voo? Que pena.",
+        "en": "You missed the flight? That's too bad.",
+        "ptIntent": "Que pena",
+        "enIntent": "That's too bad"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "estou-morrendo-de-fome-743439df-4730-457d-bb4a-c75a000fa6e0",
+    "intention": "Estou morrendo de fome",
+    "english": "I'm starving",
+    "pattern": "subject + be starving",
+    "description": "Intenção comunicativa: Estou morrendo de fome. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Estou morrendo de fome",
+      "I'm starving"
+    ],
+    "validationPatterns": [
+      "(?i)(?:I\\s+am|I'm|you\\s+are|you're|he\\s+is|he's|she\\s+is|she's|we\\s+are|we're|they\\s+are|they're|was|were)\\s+starving"
+    ],
+    "examples": [
+      {
+        "pt": "Estou morrendo de fome. Vamos almoçar.",
+        "en": "I'm starving. Let's get lunch.",
+        "ptIntent": "Estou morrendo de fome",
+        "enIntent": "I'm starving"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "estou-exausto-bb56bc06-3313-42e1-b71d-63137df43be7",
+    "intention": "Estou exausto",
+    "english": "I'm exhausted",
+    "pattern": "subject + be exhausted",
+    "description": "Intenção comunicativa: Estou exausto. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Estou exausto",
+      "I'm exhausted"
+    ],
+    "validationPatterns": [
+      "(?i)(?:I\\s+am|I'm|you\\s+are|you're|he\\s+is|he's|she\\s+is|she's|we\\s+are|we're|they\\s+are|they're|was|were)\\s+exhausted"
+    ],
+    "examples": [
+      {
+        "pt": "Estou exausto depois da viagem.",
+        "en": "I'm exhausted after the trip.",
+        "ptIntent": "Estou exausto",
+        "enIntent": "I'm exhausted"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "estou-com-sede-1408e969-309e-467b-b181-8adb68a601f3",
+    "intention": "Estou com sede",
+    "english": "I'm thirsty",
+    "pattern": "subject + be thirsty",
+    "description": "Intenção comunicativa: Estou com sede. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Estou com sede",
+      "I'm thirsty"
+    ],
+    "validationPatterns": [
+      "(?i)(?:I\\s+am|I'm|you\\s+are|you're|he\\s+is|he's|she\\s+is|she's|we\\s+are|we're|they\\s+are|they're|was|were)\\s+thirsty"
+    ],
+    "examples": [
+      {
+        "pt": "Estou com sede. Posso tomar um pouco de água?",
+        "en": "I'm thirsty. Can I have some water?",
+        "ptIntent": "Estou com sede",
+        "enIntent": "I'm thirsty"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "estou-pronto-4fdccc94-d046-4219-9c64-5018e18b57a8",
+    "intention": "Estou pronto",
+    "english": "I'm ready",
+    "pattern": "subject + be ready",
+    "description": "Intenção comunicativa: Estou pronto. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Estou pronto",
+      "I'm ready"
+    ],
+    "validationPatterns": [
+      "(?i)(?:I\\s+am|I'm|you\\s+are|you're|he\\s+is|he's|she\\s+is|she's|we\\s+are|we're|they\\s+are|they're|was|were)\\s+ready"
+    ],
+    "examples": [
+      {
+        "pt": "Estou pronto para começar.",
+        "en": "I'm ready to begin.",
+        "ptIntent": "Estou pronto",
+        "enIntent": "I'm ready"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "anda-logo-se-apresse-1c439686-4bc1-4a81-a82a-e968b508f74a",
+    "intention": "Anda logo / Se apresse",
+    "english": "Hurry up",
+    "pattern": "Hurry up",
+    "description": "Intenção comunicativa: Anda logo / Se apresse. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Anda logo / Se apresse",
+      "Hurry up"
+    ],
+    "validationPatterns": [
+      "(?i)Hurry\\s+up"
+    ],
+    "examples": [
+      {
+        "pt": "Anda logo ou vamos perder o ônibus.",
+        "en": "Hurry up or we'll miss the bus.",
+        "ptIntent": "Anda logo",
+        "enIntent": "Hurry up"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "va-mais-devagar-diminua-a-velocidade-03079f97-07d5-40f8-90ba-79d583a918a6",
+    "intention": "Vá mais devagar / Diminua a velocidade",
+    "english": "Slow down",
+    "pattern": "Slow down",
+    "description": "Intenção comunicativa: Vá mais devagar / Diminua a velocidade. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Vá mais devagar / Diminua a velocidade",
+      "Slow down"
+    ],
+    "validationPatterns": [
+      "(?i)Slow\\s+down"
+    ],
+    "examples": [
+      {
+        "pt": "Fale mais devagar, você está falando rápido demais.",
+        "en": "Slow down, you're speaking too fast.",
+        "ptIntent": "Vá mais devagar",
+        "enIntent": "Slow down"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "siga-em-frente-8da400b3-4dc2-4c14-9d54-2a255e7b6716",
+    "intention": "Siga em frente",
+    "english": "Go straight",
+    "pattern": "Go straight",
+    "description": "Intenção comunicativa: Siga em frente. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Siga em frente",
+      "Go straight"
+    ],
+    "validationPatterns": [
+      "(?i)Go\\s+straight"
+    ],
+    "examples": [
+      {
+        "pt": "Siga em frente por dois quarteirões.",
+        "en": "Go straight for two blocks.",
+        "ptIntent": "Siga em frente",
+        "enIntent": "Go straight"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "com-licenca-desculpe-incomodar-e3db4696-8935-4a2d-96b6-7b2158658a93",
+    "intention": "Com licença / Desculpe incomodar",
+    "english": "Excuse me",
+    "pattern": "Excuse me",
+    "description": "Intenção comunicativa: Com licença / Desculpe incomodar. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Com licença / Desculpe incomodar",
+      "Excuse me"
+    ],
+    "validationPatterns": [
+      "(?i)Excuse\\s+me"
+    ],
+    "examples": [
+      {
+        "pt": "Com licença, este lugar está ocupado?",
+        "en": "Excuse me, is this seat taken?",
+        "ptIntent": "Com licença",
+        "enIntent": "Excuse me"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "como-pode-repetir-com-licenca-d394c274-163d-46e0-82cf-724b5239aa73",
+    "intention": "Como? / Pode repetir? / Com licença",
+    "english": "Pardon me",
+    "pattern": "Pardon me",
+    "description": "Intenção comunicativa: Como? / Pode repetir? / Com licença. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Como? / Pode repetir? / Com licença",
+      "Pardon me"
+    ],
+    "validationPatterns": [
+      "(?i)Pardon\\s+me"
+    ],
+    "examples": [
+      {
+        "pt": "Como? Não ouvi você.",
+        "en": "Pardon me, I didn't hear you.",
+        "ptIntent": "Como?",
+        "enIntent": "Pardon me"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "onde-fica-o-banheiro-392b2775-43c8-4a98-80ee-49556d814456",
+    "intention": "Onde fica o banheiro?",
+    "english": "Where is the bathroom?",
+    "pattern": "Where is the bathroom?",
+    "description": "Intenção comunicativa: Onde fica o banheiro?. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Onde fica o banheiro?",
+      "Where is the bathroom?"
+    ],
+    "validationPatterns": [
+      "(?i)Where\\s+is\\s+the\\s+bathroom\\?"
+    ],
+    "examples": [
+      {
+        "pt": "Com licença, onde fica o banheiro?",
+        "en": "Excuse me, where is the bathroom?",
+        "ptIntent": "Onde fica o banheiro?",
+        "enIntent": "Where is the bathroom?"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "como-voce-tem-passado-2ecdc81b-0c5f-441c-ac27-c8b470b9fe5b",
+    "intention": "Como você tem passado?",
+    "english": "How have you been?",
+    "pattern": "How have you been?",
+    "description": "Intenção comunicativa: Como você tem passado?. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Como você tem passado?",
+      "How have you been?"
+    ],
+    "validationPatterns": [
+      "(?i)how\\s+have\\s+you\\s+been(?:\\s+[^?]+)?\\?"
+    ],
+    "examples": [
+      {
+        "pt": "Como você tem passado desde nossa última conversa?",
+        "en": "How have you been since we last talked?",
+        "ptIntent": "Como você tem passado?",
+        "enIntent": "How"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "como-estao-as-coisas-837a6fd5-def5-4bcc-9d3d-8b1a304f1ee7",
+    "intention": "Como estão as coisas?",
+    "english": "How are things?",
+    "pattern": "How are things?",
+    "description": "Intenção comunicativa: Como estão as coisas?. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Como estão as coisas?",
+      "How are things?"
+    ],
+    "validationPatterns": [
+      "(?i)how\\s+are\\s+things(?:\\s+[^?]+)?\\?"
+    ],
+    "examples": [
+      {
+        "pt": "Como estão as coisas no seu novo emprego?",
+        "en": "How are things at your new job?",
+        "ptIntent": "Como estão as coisas?",
+        "enIntent": "How"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "voce-pode-ser-mais-especifico-ecd58625-172c-4c33-b7b0-16a9fbc97187",
+    "intention": "Você pode ser mais específico?",
+    "english": "Can you be more specific?",
+    "pattern": "Can you be more specific?",
+    "description": "Intenção comunicativa: Você pode ser mais específico?. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "Você pode ser mais específico?",
+      "Can you be more specific?"
+    ],
+    "validationPatterns": [
+      "(?i)can\\s+you\\s+be\\s+more\\s+specific(?:\\s+[^?]+)?\\?"
+    ],
+    "examples": [
+      {
+        "pt": "Você pode ser mais específico sobre o problema?",
+        "en": "Can you be more specific about the problem?",
+        "ptIntent": "Você pode ser mais específico?",
+        "enIntent": "Can"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "vou-te-manter-informado-ca0b160e-17db-4088-a916-ee60662f5dd4",
+    "intention": "Vou te manter informado",
+    "english": "I'll keep you posted",
+    "pattern": "subject + will keep you posted",
+    "description": "Intenção comunicativa: Vou te manter informado. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Vou te manter informado",
+      "I'll keep you posted"
+    ],
+    "validationPatterns": [
+      "(?i)(?:I\\s+will|I'll|you\\s+will|you'll|we\\s+will|we'll|they\\s+will|they'll|he\\s+will|he'll|she\\s+will|she'll)\\s+keep\\s+you\\s+posted"
+    ],
+    "examples": [
+      {
+        "pt": "Vou te manter informado sobre os resultados.",
+        "en": "I'll keep you posted on the results.",
+        "ptIntent": "Vou te manter informado",
+        "enIntent": "I'll keep you posted"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "me-avise-me-diga-6241e009-fc12-4055-9d8b-7fe9b979eb7b",
+    "intention": "Me avise / Me diga",
+    "english": "Let me know",
+    "pattern": "Let me know",
+    "description": "Intenção comunicativa: Me avise / Me diga. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Me avise / Me diga",
+      "Let me know"
+    ],
+    "validationPatterns": [
+      "(?i)Let\\s+me\\s+know"
+    ],
+    "examples": [
+      {
+        "pt": "Me avise quando chegar.",
+        "en": "Let me know when you arrive.",
+        "ptIntent": "Me avise",
+        "enIntent": "Let me know"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "ja-estou-indo-chego-ai-ja-e05f2f67-3009-4cb0-ac56-f2ca04a77d0b",
+    "intention": "Já estou indo / Chego aí já",
+    "english": "I'll be right there",
+    "pattern": "subject + will be right there",
+    "description": "Intenção comunicativa: Já estou indo / Chego aí já. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Já estou indo / Chego aí já",
+      "I'll be right there"
+    ],
+    "validationPatterns": [
+      "(?i)(?:I\\s+will|I'll|you\\s+will|you'll|we\\s+will|we'll|they\\s+will|they'll|he\\s+will|he'll|she\\s+will|she'll)\\s+be\\s+right\\s+there"
+    ],
+    "examples": [
+      {
+        "pt": "Chego aí em um minuto.",
+        "en": "I'll be right there in a minute.",
+        "ptIntent": "Já estou indo",
+        "enIntent": "I'll be right there"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "vou-te-ligar-de-volta-faca20fe-bbc8-404c-9641-814631c17de1",
+    "intention": "Vou te ligar de volta",
+    "english": "I'll call you back",
+    "pattern": "subject + will call you back",
+    "description": "Intenção comunicativa: Vou te ligar de volta. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Vou te ligar de volta",
+      "I'll call you back"
+    ],
+    "validationPatterns": [
+      "(?i)(?:I\\s+will|I'll|you\\s+will|you'll|we\\s+will|we'll|they\\s+will|they'll|he\\s+will|he'll|she\\s+will|she'll)\\s+call\\s+you\\s+back"
+    ],
+    "examples": [
+      {
+        "pt": "Estou ocupado agora. Vou te ligar de volta.",
+        "en": "I'm busy now. I'll call you back.",
+        "ptIntent": "Vou te ligar de volta",
+        "enIntent": "I'll call you back"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "qual-e-o-prazo-final-287343a3-9580-483d-b7e2-1fde594a058f",
+    "intention": "Qual é o prazo final?",
+    "english": "What's the deadline?",
+    "pattern": "What's the deadline?",
+    "description": "Intenção comunicativa: Qual é o prazo final?. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Qual é o prazo final?",
+      "What's the deadline?"
+    ],
+    "validationPatterns": [
+      "(?i)what(?:'s|\\s+is)\\s+the\\s+deadline(?:\\s+[^?]+)?\\?"
+    ],
+    "examples": [
+      {
+        "pt": "Qual é o prazo final deste relatório?",
+        "en": "What's the deadline for this report?",
+        "ptIntent": "Qual é o prazo final?",
+        "enIntent": "What's"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "quando-e-o-prazo-de-entrega-befacfcc-14b8-41eb-ba4a-31733b3a1b56",
+    "intention": "Quando é o prazo de entrega?",
+    "english": "When is it due?",
+    "pattern": "When is it due?",
+    "description": "Intenção comunicativa: Quando é o prazo de entrega?. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Quando é o prazo de entrega?",
+      "When is it due?"
+    ],
+    "validationPatterns": [
+      "(?i)when\\s+is\\s+(?:it|the\\s+\\w+(?:\\s+\\w+)?)\\s+due\\?"
+    ],
+    "examples": [
+      {
+        "pt": "Quando é o prazo de entrega da tarefa?",
+        "en": "When is the assignment due?",
+        "ptIntent": "Quando é o prazo de entrega?",
+        "enIntent": "When"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "preciso-de-mais-tempo-d3a84b8a-80b7-4e16-bd5f-2ac8ef361a86",
+    "intention": "Preciso de mais tempo",
+    "english": "I need more time",
+    "pattern": "I need more time",
+    "description": "Intenção comunicativa: Preciso de mais tempo. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Preciso de mais tempo",
+      "I need more time"
+    ],
+    "validationPatterns": [
+      "(?i)I\\s+need\\s+more\\s+time"
+    ],
+    "examples": [
+      {
+        "pt": "Preciso de mais tempo para terminar isso.",
+        "en": "I need more time to finish this.",
+        "ptIntent": "Preciso de mais tempo",
+        "enIntent": "I need more time"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "isso-nao-ficou-claro-para-mim-db61d857-d8f2-4227-96cf-c2d2e37c8ab1",
+    "intention": "Isso não ficou claro para mim",
+    "english": "That's not clear to me",
+    "pattern": "That's not clear to me",
+    "description": "Intenção comunicativa: Isso não ficou claro para mim. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "Isso não ficou claro para mim",
+      "That's not clear to me"
+    ],
+    "validationPatterns": [
+      "(?i)That's\\s+not\\s+clear\\s+to\\s+me"
+    ],
+    "examples": [
+      {
+        "pt": "Isso não ficou claro para mim. Você poderia explicar?",
+        "en": "That's not clear to me. Could you explain?",
+        "ptIntent": "Isso não ficou claro para mim",
+        "enIntent": "That's not clear to me"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "posso-participar-aa14a921-5058-4836-b6b7-697fecfd14d1",
+    "intention": "Posso participar?",
+    "english": "Can I join?",
+    "pattern": "Can I join?",
+    "description": "Intenção comunicativa: Posso participar?. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Posso participar?",
+      "Can I join?"
+    ],
+    "validationPatterns": [
+      "(?i)can\\s+i\\s+join(?:\\s+[^?]+)?\\?"
+    ],
+    "examples": [
+      {
+        "pt": "Posso participar da conversa de vocês?",
+        "en": "Can I join your conversation?",
+        "ptIntent": "Posso participar?",
+        "enIntent": "Can"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "vou-te-enviar-isso-92199dbf-f046-4baa-a1bd-60fc9ab439f3",
+    "intention": "Vou te enviar isso",
+    "english": "I'll send it to you",
+    "pattern": "subject + will send it to you",
+    "description": "Intenção comunicativa: Vou te enviar isso. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "Vou te enviar isso",
+      "I'll send it to you"
+    ],
+    "validationPatterns": [
+      "(?i)(?:I\\s+will|I'll|you\\s+will|you'll|we\\s+will|we'll|they\\s+will|they'll|he\\s+will|he'll|she\\s+will|she'll)\\s+send\\s+it\\s+to\\s+you"
+    ],
+    "examples": [
+      {
+        "pt": "Vou te enviar isso depois do almoço.",
+        "en": "I'll send it to you after lunch.",
+        "ptIntent": "Vou te enviar isso",
+        "enIntent": "I'll send it to you"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "vou-enviar-por-e-mail-ab707422-7305-44d5-bf92-09ea1f680c82",
+    "intention": "Vou enviar por e-mail",
+    "english": "I'll email it over",
+    "pattern": "subject + will email it over",
+    "description": "Intenção comunicativa: Vou enviar por e-mail. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Vou enviar por e-mail",
+      "I'll email it over"
+    ],
+    "validationPatterns": [
+      "(?i)(?:I\\s+will|I'll|you\\s+will|you'll|we\\s+will|we'll|they\\s+will|they'll|he\\s+will|he'll|she\\s+will|she'll)\\s+email\\s+it\\s+over"
+    ],
+    "examples": [
+      {
+        "pt": "Vou enviar por e-mail hoje à tarde.",
+        "en": "I'll email it over this afternoon.",
+        "ptIntent": "Vou enviar por e-mail",
+        "enIntent": "I'll email it over"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "estou-com-pressa-3e011d49-def4-485b-98eb-e024fde4039e",
+    "intention": "Estou com pressa",
+    "english": "I'm in a hurry",
+    "pattern": "subject + be in a hurry",
+    "description": "Intenção comunicativa: Estou com pressa. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Estou com pressa",
+      "I'm in a hurry"
+    ],
+    "validationPatterns": [
+      "(?i)(?:I\\s+am|I'm|you\\s+are|you're|he\\s+is|he's|she\\s+is|she's|we\\s+are|we're|they\\s+are|they're|was|were)\\s+in\\s+a\\s+hurry"
+    ],
+    "examples": [
+      {
+        "pt": "Estou com pressa. Podemos conversar depois?",
+        "en": "I'm in a hurry. Can we talk later?",
+        "ptIntent": "Estou com pressa",
+        "enIntent": "I'm in a hurry"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "vamos-tentar-de-novo-104eed28-6080-4dc7-b82f-9f26133b4a39",
+    "intention": "Vamos tentar de novo",
+    "english": "Let's try again",
+    "pattern": "Let's try again",
+    "description": "Intenção comunicativa: Vamos tentar de novo. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Vamos tentar de novo",
+      "Let's try again"
+    ],
+    "validationPatterns": [
+      "(?i)Let's\\s+try\\s+again"
+    ],
+    "examples": [
+      {
+        "pt": "Isso não funcionou. Vamos tentar de novo.",
+        "en": "That didn't work. Let's try again.",
+        "ptIntent": "Vamos tentar de novo",
+        "enIntent": "Let's try again"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "eu-dou-conta-consigo-lidar-com-isso-25e7fd5f-fdde-4eba-8fd0-d0aec712ba5f",
+    "intention": "Eu dou conta / Consigo lidar com isso",
+    "english": "I can manage",
+    "pattern": "I can manage",
+    "description": "Intenção comunicativa: Eu dou conta / Consigo lidar com isso. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Eu dou conta / Consigo lidar com isso",
+      "I can manage"
+    ],
+    "validationPatterns": [
+      "(?i)I\\s+can\\s+manage"
+    ],
+    "examples": [
+      {
+        "pt": "Obrigado, mas eu dou conta.",
+        "en": "Thanks, but I can manage.",
+        "ptIntent": "Eu dou conta",
+        "enIntent": "I can manage"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "precisamos-de-um-plano-reserva-cbc1c481-d47b-49a6-b77f-b66d778cc6db",
+    "intention": "Precisamos de um plano reserva",
+    "english": "We need a backup",
+    "pattern": "We need a backup",
+    "description": "Intenção comunicativa: Precisamos de um plano reserva. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Precisamos de um plano reserva",
+      "We need a backup"
+    ],
+    "validationPatterns": [
+      "(?i)We\\s+need\\s+a\\s+backup"
+    ],
+    "examples": [
+      {
+        "pt": "Precisamos de um plano reserva caso isso falhe.",
+        "en": "We need a backup in case this fails.",
+        "ptIntent": "Precisamos de um plano reserva",
+        "enIntent": "We need a backup"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "eu-sinto-o-mesmo-a93c4ec0-9780-4917-9e3f-facdc3b4f11f",
+    "intention": "Eu sinto o mesmo",
+    "english": "I feel the same way",
+    "pattern": "I feel the same way",
+    "description": "Intenção comunicativa: Eu sinto o mesmo. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "Eu sinto o mesmo",
+      "I feel the same way"
+    ],
+    "validationPatterns": [
+      "(?i)I\\s+feel\\s+the\\s+same\\s+way"
+    ],
+    "examples": [
+      {
+        "pt": "Eu sinto o mesmo em relação à situação.",
+        "en": "I feel the same way about the situation.",
+        "ptIntent": "Eu sinto o mesmo",
+        "enIntent": "I feel the same way"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "acho-dificil-acreditar-nisso-f879d116-a1e8-4cc0-8d4a-7ac179e155fe",
+    "intention": "Acho difícil acreditar nisso",
+    "english": "I find that hard to believe",
+    "pattern": "I find that hard to believe",
+    "description": "Intenção comunicativa: Acho difícil acreditar nisso. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "Acho difícil acreditar nisso",
+      "I find that hard to believe"
+    ],
+    "validationPatterns": [
+      "(?i)I\\s+find\\s+that\\s+hard\\s+to\\s+believe"
+    ],
+    "examples": [
+      {
+        "pt": "Acho difícil acreditar nisso sem provas.",
+        "en": "I find that hard to believe without evidence.",
+        "ptIntent": "Acho difícil acreditar nisso",
+        "enIntent": "I find that hard to believe"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "vamos-tomar-alguma-coisa-180efe66-3346-4c4e-99e8-ae6d33ff4a29",
+    "intention": "Vamos tomar alguma coisa",
+    "english": "Let's get a drink",
+    "pattern": "Let's get a drink",
+    "description": "Intenção comunicativa: Vamos tomar alguma coisa. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Vamos tomar alguma coisa",
+      "Let's get a drink"
+    ],
+    "validationPatterns": [
+      "(?i)Let's\\s+get\\s+a\\s+drink"
+    ],
+    "examples": [
+      {
+        "pt": "Vamos tomar alguma coisa depois do trabalho.",
+        "en": "Let's get a drink after work.",
+        "ptIntent": "Vamos tomar alguma coisa",
+        "enIntent": "Let's get a drink"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "preciso-de-uma-passagem-ingresso-4f84a1f6-931d-4ef6-bd03-faab9622f1d7",
+    "intention": "Preciso de uma passagem / ingresso",
+    "english": "I need a ticket",
+    "pattern": "I need a ticket",
+    "description": "Intenção comunicativa: Preciso de uma passagem / ingresso. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Preciso de uma passagem / ingresso",
+      "I need a ticket"
+    ],
+    "validationPatterns": [
+      "(?i)I\\s+need\\s+a\\s+ticket"
+    ],
+    "examples": [
+      {
+        "pt": "Preciso de uma passagem para São Paulo.",
+        "en": "I need a ticket to São Paulo.",
+        "ptIntent": "Preciso de uma passagem",
+        "enIntent": "I need a ticket"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "uma-passagem-ingresso-por-favor-83002a86-36e9-4668-8fc2-ea40c1332385",
+    "intention": "Uma passagem / ingresso, por favor",
+    "english": "One ticket, please",
+    "pattern": "One ticket, please",
+    "description": "Intenção comunicativa: Uma passagem / ingresso, por favor. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Uma passagem / ingresso, por favor",
+      "One ticket, please"
+    ],
+    "validationPatterns": [
+      "(?i)one\\s+ticket(?:\\s+to\\s+[^,]+)?,?\\s+please"
+    ],
+    "examples": [
+      {
+        "pt": "Uma passagem para o Rio, por favor.",
+        "en": "One ticket to Rio, please.",
+        "ptIntent": "Uma passagem",
+        "enIntent": "One ticket"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "quando-sai-parte-08917951-4513-4217-aead-ae515b560183",
+    "intention": "Quando sai / parte?",
+    "english": "When does it leave?",
+    "pattern": "When does it leave?",
+    "description": "Intenção comunicativa: Quando sai / parte?. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Quando sai / parte?",
+      "When does it leave?"
+    ],
+    "validationPatterns": [
+      "(?i)when\\s+does\\s+(?:it|the\\s+\\w+(?:\\s+\\w+)?)\\s+leave\\?"
+    ],
+    "examples": [
+      {
+        "pt": "Quando sai o próximo trem?",
+        "en": "When does the next train leave?",
+        "ptIntent": "Quando sai",
+        "enIntent": "When"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "isso-e-muito-gentil-da-sua-parte-fdb26479-d3c5-4b13-b8aa-af5d758ea0e9",
+    "intention": "Isso é muito gentil da sua parte",
+    "english": "That's very kind of you",
+    "pattern": "That's very kind of you",
+    "description": "Intenção comunicativa: Isso é muito gentil da sua parte. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "Isso é muito gentil da sua parte",
+      "That's very kind of you"
+    ],
+    "validationPatterns": [
+      "(?i)That's\\s+very\\s+kind\\s+of\\s+you"
+    ],
+    "examples": [
+      {
+        "pt": "Isso é muito gentil da sua parte ao oferecer.",
+        "en": "That's very kind of you to offer.",
+        "ptIntent": "Isso é muito gentil da sua parte",
+        "enIntent": "That's very kind of you"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "que-atencioso-da-sua-parte-d9ef78be-3b64-4b44-8a7d-b962428df437",
+    "intention": "Que atencioso da sua parte",
+    "english": "That's so thoughtful",
+    "pattern": "That's so thoughtful",
+    "description": "Intenção comunicativa: Que atencioso da sua parte. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Que atencioso da sua parte",
+      "That's so thoughtful"
+    ],
+    "validationPatterns": [
+      "(?i)That's\\s+so\\s+thoughtful"
+    ],
+    "examples": [
+      {
+        "pt": "Você lembrou do meu aniversário? Que atencioso!",
+        "en": "You remembered my birthday? That's so thoughtful!",
+        "ptIntent": "Que atencioso da sua parte",
+        "enIntent": "That's so thoughtful"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "continue-assim-e099446c-8bb1-4eaa-9345-68bbf58cb3ce",
+    "intention": "Continue assim",
+    "english": "Keep it up",
+    "pattern": "Keep it up",
+    "description": "Intenção comunicativa: Continue assim. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Continue assim",
+      "Keep it up"
+    ],
+    "validationPatterns": [
+      "(?i)Keep\\s+it\\s+up"
+    ],
+    "examples": [
+      {
+        "pt": "Seu inglês está melhorando. Continue assim!",
+        "en": "Your English is improving. Keep it up!",
+        "ptIntent": "Continue assim",
+        "enIntent": "Keep it up"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "voce-esta-indo-muito-bem-17720544-d513-48d7-87c9-831225a9cdc6",
+    "intention": "Você está indo muito bem",
+    "english": "You're doing great",
+    "pattern": "You're doing great",
+    "description": "Intenção comunicativa: Você está indo muito bem. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Você está indo muito bem",
+      "You're doing great"
+    ],
+    "validationPatterns": [
+      "(?i)You're\\s+doing\\s+great"
+    ],
+    "examples": [
+      {
+        "pt": "Você está indo muito bem. Continue praticando.",
+        "en": "You're doing great. Keep practicing.",
+        "ptIntent": "Você está indo muito bem",
+        "enIntent": "You're doing great"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "repetidas-vezes-varias-e-varias-vezes-ec622067-86f2-4ab4-a9b8-1c0ff4e42a17",
+    "intention": "Repetidas vezes / Várias e várias vezes",
+    "english": "Over and over again",
+    "pattern": "Over and over again",
+    "description": "Intenção comunicativa: Repetidas vezes / Várias e várias vezes. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Repetidas vezes / Várias e várias vezes",
+      "Over and over again"
+    ],
+    "validationPatterns": [
+      "(?i)Over\\s+and\\s+over\\s+again"
+    ],
+    "examples": [
+      {
+        "pt": "Pratiquei a frase várias e várias vezes.",
+        "en": "I practiced the phrase over and over again.",
+        "ptIntent": "Repetidas vezes",
+        "enIntent": "Over and over again"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "isso-nao-e-bom-o-suficiente-b825079c-02d6-4ddc-acc3-04ae9864d139",
+    "intention": "Isso não é bom o suficiente",
+    "english": "It's not good enough",
+    "pattern": "It's not good enough",
+    "description": "Intenção comunicativa: Isso não é bom o suficiente. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Isso não é bom o suficiente",
+      "It's not good enough"
+    ],
+    "validationPatterns": [
+      "(?i)(?:it(?:'s|\\s+is)|this\\s+\\w+\\s+is|that\\s+\\w+\\s+is)\\s+not\\s+good\\s+enough"
+    ],
+    "examples": [
+      {
+        "pt": "Essa solução não é boa o suficiente.",
+        "en": "This solution is not good enough.",
+        "ptIntent": "Isso não é bom o suficiente",
+        "enIntent": "It's"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "isso-e-completamente-inaceitavel-d05c6a52-5c88-45a6-9e77-3f98bd4bc9d1",
+    "intention": "Isso é completamente inaceitável",
+    "english": "That's completely unacceptable",
+    "pattern": "That's completely unacceptable",
+    "description": "Intenção comunicativa: Isso é completamente inaceitável. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Isso é completamente inaceitável",
+      "That's completely unacceptable"
+    ],
+    "validationPatterns": [
+      "(?i)(?:that(?:'s|\\s+is)|that\\s+\\w+\\s+is)\\s+completely\\s+unacceptable"
+    ],
+    "examples": [
+      {
+        "pt": "Esse comportamento é completamente inaceitável.",
+        "en": "That behavior is completely unacceptable.",
+        "ptIntent": "Isso é completamente inaceitável",
+        "enIntent": "That's"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "eu-ficaria-encantado-em-ce40a64f-bf46-4d7a-afb4-01db15d64ec0",
+    "intention": "Eu ficaria encantado em",
+    "english": "I would be delighted to",
+    "pattern": "I would be delighted to",
+    "description": "Intenção comunicativa: Eu ficaria encantado em. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "Eu ficaria encantado em",
+      "I would be delighted to"
+    ],
+    "validationPatterns": [
+      "(?i)I\\s+would\\s+be\\s+delighted\\s+to"
+    ],
+    "examples": [
+      {
+        "pt": "Eu ficaria encantado em fazer parte da sua equipe.",
+        "en": "I would be delighted to join your team.",
+        "ptIntent": "Eu ficaria encantado em",
+        "enIntent": "I would be delighted to"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "eu-ficaria-muito-grato-024698c3-9e85-4ad9-aa23-5ab1d8b4d35e",
+    "intention": "Eu ficaria muito grato",
+    "english": "I would be very grateful",
+    "pattern": "I would be very grateful",
+    "description": "Intenção comunicativa: Eu ficaria muito grato. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "Eu ficaria muito grato",
+      "I would be very grateful"
+    ],
+    "validationPatterns": [
+      "(?i)I\\s+would\\s+be\\s+very\\s+grateful"
+    ],
+    "examples": [
+      {
+        "pt": "Eu ficaria muito grato pela sua ajuda.",
+        "en": "I would be very grateful for your help.",
+        "ptIntent": "Eu ficaria muito grato",
+        "enIntent": "I would be very grateful"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
+  },
+  {
+    "id": "falando-sem-rodeios-a8365845-dad2-4933-b86b-2a1c12070676",
+    "intention": "Falando sem rodeios",
+    "english": "To put it bluntly",
+    "pattern": "To put it bluntly",
+    "description": "Intenção comunicativa: Falando sem rodeios. Expressão usada em conversas cotidianas; adapte sujeito, tempo verbal ou complemento conforme o contexto.",
+    "category": "daily-conversation",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "Falando sem rodeios",
+      "To put it bluntly"
+    ],
+    "validationPatterns": [
+      "(?i)To\\s+put\\s+it\\s+bluntly"
+    ],
+    "examples": [
+      {
+        "pt": "Falando sem rodeios, o plano fracassou.",
+        "en": "To put it bluntly, the plan failed.",
+        "ptIntent": "Falando sem rodeios",
+        "enIntent": "To put it bluntly"
+      }
+    ],
+    "tags": [
+      "chunks",
+      "spoken-english",
+      "video-350"
+    ],
+    "related": []
   }
+
 
 
   ]
