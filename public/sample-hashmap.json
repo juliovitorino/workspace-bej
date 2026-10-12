@@ -417,36 +417,202 @@
       "related": [],
       "englishLevel": "A2"
     },
+{
+  "id": "haver-tem-houve-tinha-sentido-de-existir-7c4e2a91-5f38-4b60-9d12-e8a3c6f07524",
+  "intention": "Haver / ter / existir / houve / havia / haverá",
+  "english": "There + be",
+  "pattern": "there + be (conjugated) / there + modal + be / there + have + been",
+  "description": "Expressa a existência, presença ou ocorrência de algo, sem indicar posse. Em português, corresponde a construções como há, tem, existe, havia, houve, haverá, pode haver e deveria haver. O verbo BE concorda com o elemento apresentado e varia conforme o tempo verbal. A estrutura também admite formas negativas, interrogativas, modais, perfeitas e contrações. Não confundir com HAVE no sentido de possuir alguma coisa.",
+  "category": "existence",
+  "englishLevel": "A2",
+  "searchTerms": [
+    "haver",
+    "há",
+    "tem",
+    "existir",
+    "existe",
+    "existem",
+    "houve",
+    "havia",
+    "tinham",
+    "tinha",
+    "haverá",
+    "vai haver",
+    "pode haver",
+    "poderia haver",
+    "deveria haver",
+    "teria havido",
+    "tem havido",
+    "costumava haver",
+    "não há",
+    "não havia",
+    "there is",
+    "there are",
+    "there was",
+    "there were",
+    "there will be",
+    "there could be",
+    "there might be",
+    "there has been",
+    "there have been",
+    "there used to be",
+    "there be"
+  ],
+  "validationPatterns": [
+    "\\bthere\\s+(?:is|are|was|were|isn't|aren't|wasn't|weren't)\\b",
+    "\\bthere(?:'s|'re)\\b",
+    "\\bthere\\s+(?:will|would|can|could|may|might|must|should|shall)\\s+(?:not\\s+)?be\\b",
+    "\\bthere(?:'ll|'d)\\s+be\\b",
+    "\\bthere\\s+(?:won't|wouldn't|can't|couldn't|mightn't|mustn't|shouldn't|shan't)\\s+be\\b",
+    "\\bthere\\s+(?:has|have|had)\\s+(?:not\\s+)?been\\b",
+    "\\bthere(?:'s|'ve|'d)\\s+been\\b",
+    "\\bthere\\s+(?:hasn't|haven't|hadn't)\\s+been\\b",
+    "\\bthere\\s+(?:will|would|could|might|may|must|should)\\s+have\\s+been\\b",
+    "\\bthere\\s+(?:is|are|was|were)\\s+(?:not\\s+)?going\\s+to\\s+be\\b",
+    "\\bthere\\s+used\\s+to\\s+be\\b",
+    "\\b(?:is|are|was|were)\\s+there\\b",
+    "\\b(?:will|would|can|could|may|might|must|should|shall)\\s+there\\s+be\\b",
+    "\\b(?:has|have|had)\\s+there\\s+been\\b"
+  ],
+  "examples": [
     {
-      "id": "haver-tem-houve-tinha-sentido-de-existir",
-      "intention": "Haver / tem / houve / tinha (sentido de existir)",
-      "english": "there + be",
-      "pattern": "there is/are/was/were OR there + modal + be",
-      "description": "Existência sem agente.",
-      "category": "existence",
-      "searchTerms": [],
-      "validationPatterns": ["\\b(?:there\\s+(?:is|are|was|were|will\\s+be|(?:can|could|may|might|must|shall|should|will|would)\\s+be))\\b"],
-      "examples": [
-        {
-          "pt": "Poderia haver uma caixa lá em cima.",
-          "en": "There can be a box over there.",
-          "ptIntent": "haver",
-          "enIntent": "There"
-        },
-        {
-          "pt": "Houve um acidente na estrada na semana passada.",
-          "en": "There was an accident on the road last week.",
-          "ptIntent": "Houve",
-          "enIntent": "There"
-        }
-      ],
-      "tags": [
-        "existence",
-        "there-be"
-      ],
-      "related": [],
-      "englishLevel": "A2"
+      "pt": "Há um problema no sistema.",
+      "en": "There is a problem with the system.",
+      "ptIntent": "Há",
+      "enIntent": "There is"
     },
+    {
+      "pt": "Tem muitas pessoas esperando lá fora.",
+      "en": "There are a lot of people waiting outside.",
+      "ptIntent": "Tem",
+      "enIntent": "There are"
+    },
+    {
+      "pt": "Houve um acidente na estrada na semana passada.",
+      "en": "There was an accident on the road last week.",
+      "ptIntent": "Houve",
+      "enIntent": "There was"
+    },
+    {
+      "pt": "Havia muitas pessoas na reunião.",
+      "en": "There were many people at the meeting.",
+      "ptIntent": "Havia",
+      "enIntent": "There were"
+    },
+    {
+      "pt": "Haverá uma reunião amanhã.",
+      "en": "There will be a meeting tomorrow.",
+      "ptIntent": "Haverá",
+      "enIntent": "There will be"
+    },
+    {
+      "pt": "Vai haver algumas mudanças no projeto.",
+      "en": "There are going to be some changes to the project.",
+      "ptIntent": "Vai haver",
+      "enIntent": "There are going to be"
+    },
+    {
+      "pt": "Pode haver um erro no código.",
+      "en": "There might be a bug in the code.",
+      "ptIntent": "Pode haver",
+      "enIntent": "There might be"
+    },
+    {
+      "pt": "Poderia haver uma caixa lá em cima.",
+      "en": "There could be a box up there.",
+      "ptIntent": "Poderia haver",
+      "enIntent": "There could be"
+    },
+    {
+      "pt": "Deveria haver uma maneira melhor de fazer isso.",
+      "en": "There should be a better way to do this.",
+      "ptIntent": "Deveria haver",
+      "enIntent": "There should be"
+    },
+    {
+      "pt": "Tem havido muitos problemas ultimamente.",
+      "en": "There have been a lot of problems lately.",
+      "ptIntent": "Tem havido",
+      "enIntent": "There have been"
+    },
+    {
+      "pt": "Tem havido uma melhora significativa.",
+      "en": "There has been a significant improvement.",
+      "ptIntent": "Tem havido",
+      "enIntent": "There has been"
+    },
+    {
+      "pt": "Já tinha havido um problema parecido antes.",
+      "en": "There had been a similar problem before.",
+      "ptIntent": "Tinha havido",
+      "enIntent": "There had been"
+    },
+    {
+      "pt": "Teria havido mais problemas sem sua ajuda.",
+      "en": "There would have been more problems without your help.",
+      "ptIntent": "Teria havido",
+      "enIntent": "There would have been"
+    },
+    {
+      "pt": "Costumava haver uma loja aqui.",
+      "en": "There used to be a store here.",
+      "ptIntent": "Costumava haver",
+      "enIntent": "There used to be"
+    },
+    {
+      "pt": "Não há tempo suficiente.",
+      "en": "There isn't enough time.",
+      "ptIntent": "Não há",
+      "enIntent": "There isn't"
+    },
+    {
+      "pt": "Não havia vagas disponíveis.",
+      "en": "There weren't any available positions.",
+      "ptIntent": "Não havia",
+      "enIntent": "There weren't"
+    },
+    {
+      "pt": "Há alguma coisa que eu possa fazer?",
+      "en": "Is there anything I can do?",
+      "ptIntent": "Há",
+      "enIntent": "Is there"
+    },
+    {
+      "pt": "Havia muitas pessoas na festa?",
+      "en": "Were there a lot of people at the party?",
+      "ptIntent": "Havia",
+      "enIntent": "Were there"
+    },
+    {
+      "pt": "Pode haver algum problema com isso?",
+      "en": "Could there be a problem with that?",
+      "ptIntent": "Pode haver",
+      "enIntent": "Could there be"
+    },
+    {
+      "pt": "Já houve algum problema com esse serviço?",
+      "en": "Has there ever been a problem with this service?",
+      "ptIntent": "Já houve",
+      "enIntent": "Has there ever been"
+    }
+  ],
+  "tags": [
+    "existence",
+    "there-be",
+    "high-frequency",
+    "present",
+    "past",
+    "future",
+    "modal-verbs",
+    "present-perfect",
+    "past-perfect",
+    "conditionals",
+    "negative",
+    "interrogative",
+    "spoken-english"
+  ],
+  "related": []
+},
     {
       "id": "tem-que-ter-tem-que-haver-existir",
       "intention": "Tem que ter / tem que haver (existir)",
