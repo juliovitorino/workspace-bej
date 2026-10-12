@@ -1176,6 +1176,7 @@
       "pattern": "used to + base verb",
       "description": "Hábito ou situação do passado.",
       "category": "habits",
+      "youtubeVideo":"https://youtu.be/PKZUJHN3R9o",
       "searchTerms": [],
       "validationPatterns": ["(?<!\\b(?:am|is|are|was|were|be|been|being|got|gotten|get|gets|getting)\\s)(?<!\\b(?:am|is|are|was|were|be|been|being)\\s+not\\s)(?<!'(?:m|re|s)\\s)(?<!'(?:m|re|s)\\s+not\\s)\\bused\\s+to\\b", "\\bdid(?:\\s+not|n't)?\\s+(?:[A-Za-z]+\\s+){0,3}use\\s+to\\b"],
       "examples": [
@@ -19387,6 +19388,7 @@
   "pattern": "hit the ground running",
   "description": "Usado quando alguém começa uma atividade, trabalho ou projeto imediatamente com muita energia, eficiência e sem precisar de muito tempo para se adaptar. Mapa mental: COMEÇAR COM TUDO / JÁ COMEÇAR A TODO VAPOR → HIT THE GROUND RUNNING.",
   "category": "idiom",
+  "youtubeShort": "https://www.youtube.com/shorts/WZXi1eLD0GM",
   "searchTerms": [
     "começar com tudo",
     "começar a todo vapor",

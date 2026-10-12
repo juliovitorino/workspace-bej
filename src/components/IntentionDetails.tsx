@@ -32,6 +32,21 @@ function renderHighlightedText(
   );
 }
 
+/** Aceita somente links HTTP(S) do YouTube. */
+function getYoutubeUrl(value?: string): string | null {
+  if (!value?.trim()) return null;
+  try {
+    const url = new URL(value.trim());
+    if (url.protocol !== "https:" && url.protocol !== "http:") return null;
+    const allowedHosts = new Set([
+      "youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"
+    ]);
+    return allowedHosts.has(url.hostname.toLowerCase()) ? url.href : null;
+  } catch {
+    return null;
+  }
+}
+
 interface IntentionDetailsProps {
   item: MentalIntention | null;
   allItems: MentalIntention[];
@@ -752,6 +767,9 @@ Mandatório:
 
   if (!item) return null;
 
+  const youtubeVideoUrl = getYoutubeUrl(item.youtubeVideo);
+  const youtubeShortUrl = getYoutubeUrl(item.youtubeShort);
+
   const relatedItems = (item.related ?? [])
     .map((id) => allItems.find((candidate) => candidate.id === id))
     .filter((candidate): candidate is MentalIntention => Boolean(candidate));
@@ -779,7 +797,7 @@ Mandatório:
         <h2>{item.intention}</h2>
         <p className="detail-english">{item.english}</p>
 
-        {(item.englishLevel || item.category) && (
+        {(item.englishLevel || item.category || youtubeVideoUrl || youtubeShortUrl) && (
           <div
             className="detail-level"
             style={{
@@ -799,6 +817,35 @@ Mandatório:
               <span className="pill">
                 {item.category}
               </span>
+            )}
+            {youtubeVideoUrl && (
+              <a
+                className="pill"
+                href={youtubeVideoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Abrir vídeo no YouTube em nova aba"
+                aria-label="Ver vídeo desta intenção no YouTube (nova aba)"
+                style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem", textDecoration: "none", cursor: "pointer" }}
+              >
+                <span aria-hidden="true" style={{ color: "#dc2626" }}>▶</span>
+                Ver vídeo
+              </a>
+            )}
+
+            {youtubeShortUrl && (
+              <a
+                className="pill"
+                href={youtubeShortUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Abrir Short no YouTube em nova aba"
+                aria-label="Ver Short desta intenção no YouTube (nova aba)"
+                style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem", textDecoration: "none", cursor: "pointer" }}
+              >
+                <span aria-hidden="true" style={{ color: "#dc2626" }}>▶</span>
+                Ver Short
+              </a>
             )}
           </div>
         )}
