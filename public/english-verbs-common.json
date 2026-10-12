@@ -2378,6 +2378,772 @@
         "work",
         "completion"
       ]
-    }
+    },
+    
+  {
+    "id": "set",
+    "base": "set",
+    "type": "irregular",
+    "past": "set",
+    "pastParticiple": "set",
+    "thirdPerson": "sets",
+    "gerund": "setting",
+    "meanings": [
+      "definir",
+      "colocar",
+      "ajustar"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I set an alarm for six.",
+        "pt": "Eu ajusto um alarme para as seis."
+      }
+    ],
+    "tags": [
+      "daily-life",
+      "planning"
+    ]
+  },
+  {
+    "id": "love",
+    "base": "love",
+    "type": "regular",
+    "past": "loved",
+    "pastParticiple": "loved",
+    "thirdPerson": "loves",
+    "gerund": "loving",
+    "meanings": [
+      "amar",
+      "adorar"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I love spending time with my family.",
+        "pt": "Eu adoro passar tempo com minha família."
+      }
+    ],
+    "tags": [
+      "emotion",
+      "preference"
+    ]
+  },
+  {
+    "id": "hate",
+    "base": "hate",
+    "type": "regular",
+    "past": "hated",
+    "pastParticiple": "hated",
+    "thirdPerson": "hates",
+    "gerund": "hating",
+    "meanings": [
+      "odiar",
+      "detestar"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I hate waiting in long lines.",
+        "pt": "Eu detesto esperar em filas longas."
+      }
+    ],
+    "tags": [
+      "emotion",
+      "preference"
+    ]
+  },
+  {
+    "id": "answer",
+    "base": "answer",
+    "type": "regular",
+    "past": "answered",
+    "pastParticiple": "answered",
+    "thirdPerson": "answers",
+    "gerund": "answering",
+    "meanings": [
+      "responder"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "Please answer my question.",
+        "pt": "Por favor, responda à minha pergunta."
+      }
+    ],
+    "tags": [
+      "communication"
+    ]
+  },
+  {
+    "id": "ride",
+    "base": "ride",
+    "type": "irregular",
+    "past": "rode",
+    "pastParticiple": "ridden",
+    "thirdPerson": "rides",
+    "gerund": "riding",
+    "meanings": [
+      "andar de",
+      "conduzir"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I ride my motorcycle on weekends.",
+        "pt": "Eu ando de moto nos fins de semana."
+      }
+    ],
+    "tags": [
+      "movement",
+      "transport"
+    ]
+  },
+  {
+    "id": "fly",
+    "base": "fly",
+    "type": "irregular",
+    "past": "flew",
+    "pastParticiple": "flown",
+    "thirdPerson": "flies",
+    "gerund": "flying",
+    "meanings": [
+      "voar",
+      "viajar de avião"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "We fly to São Paulo tomorrow.",
+        "pt": "Nós viajamos de avião para São Paulo amanhã."
+      }
+    ],
+    "tags": [
+      "movement",
+      "travel"
+    ]
+  },
+  {
+    "id": "arrive",
+    "base": "arrive",
+    "type": "regular",
+    "past": "arrived",
+    "pastParticiple": "arrived",
+    "thirdPerson": "arrives",
+    "gerund": "arriving",
+    "meanings": [
+      "chegar"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I arrive at work at nine.",
+        "pt": "Eu chego ao trabalho às nove."
+      }
+    ],
+    "tags": [
+      "movement",
+      "travel"
+    ]
+  },
+  {
+    "id": "wake",
+    "base": "wake",
+    "type": "irregular",
+    "past": "woke",
+    "pastParticiple": "woken",
+    "thirdPerson": "wakes",
+    "gerund": "waking",
+    "meanings": [
+      "acordar",
+      "despertar"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I wake up at six every morning.",
+        "pt": "Eu acordo às seis todas as manhãs."
+      }
+    ],
+    "tags": [
+      "daily-life",
+      "routine"
+    ]
+  },
+  {
+    "id": "wash",
+    "base": "wash",
+    "type": "regular",
+    "past": "washed",
+    "pastParticiple": "washed",
+    "thirdPerson": "washes",
+    "gerund": "washing",
+    "meanings": [
+      "lavar"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I wash my hands before lunch.",
+        "pt": "Eu lavo as mãos antes do almoço."
+      }
+    ],
+    "tags": [
+      "daily-life",
+      "hygiene"
+    ]
+  },
+  {
+    "id": "clean",
+    "base": "clean",
+    "type": "regular",
+    "past": "cleaned",
+    "pastParticiple": "cleaned",
+    "thirdPerson": "cleans",
+    "gerund": "cleaning",
+    "meanings": [
+      "limpar"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I clean the kitchen after dinner.",
+        "pt": "Eu limpo a cozinha depois do jantar."
+      }
+    ],
+    "tags": [
+      "daily-life",
+      "household"
+    ]
+  },
+  {
+    "id": "close",
+    "base": "close",
+    "type": "regular",
+    "past": "closed",
+    "pastParticiple": "closed",
+    "thirdPerson": "closes",
+    "gerund": "closing",
+    "meanings": [
+      "fechar"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "Please close the door.",
+        "pt": "Por favor, feche a porta."
+      }
+    ],
+    "tags": [
+      "daily-life",
+      "action"
+    ]
+  },
+  {
+    "id": "share",
+    "base": "share",
+    "type": "regular",
+    "past": "shared",
+    "pastParticiple": "shared",
+    "thirdPerson": "shares",
+    "gerund": "sharing",
+    "meanings": [
+      "compartilhar",
+      "dividir"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I share my notes with my classmates.",
+        "pt": "Eu compartilho minhas anotações com meus colegas."
+      }
+    ],
+    "tags": [
+      "communication",
+      "learning"
+    ]
+  },
+  {
+    "id": "wish",
+    "base": "wish",
+    "type": "regular",
+    "past": "wished",
+    "pastParticiple": "wished",
+    "thirdPerson": "wishes",
+    "gerund": "wishing",
+    "meanings": [
+      "desejar",
+      "querer que algo fosse diferente"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I wish I had more free time.",
+        "pt": "Eu queria ter mais tempo livre."
+      }
+    ],
+    "tags": [
+      "thought",
+      "desire"
+    ]
+  },
+  {
+    "id": "disagree",
+    "base": "disagree",
+    "type": "regular",
+    "past": "disagreed",
+    "pastParticiple": "disagreed",
+    "thirdPerson": "disagrees",
+    "gerund": "disagreeing",
+    "meanings": [
+      "discordar"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I disagree with that idea.",
+        "pt": "Eu discordo dessa ideia."
+      }
+    ],
+    "tags": [
+      "opinion",
+      "communication"
+    ]
+  },
+  {
+    "id": "guess",
+    "base": "guess",
+    "type": "regular",
+    "past": "guessed",
+    "pastParticiple": "guessed",
+    "thirdPerson": "guesses",
+    "gerund": "guessing",
+    "meanings": [
+      "adivinhar",
+      "supor",
+      "achar"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I guess we can try again tomorrow.",
+        "pt": "Acho que podemos tentar novamente amanhã."
+      }
+    ],
+    "tags": [
+      "thought",
+      "opinion"
+    ]
+  },
+  {
+    "id": "visit",
+    "base": "visit",
+    "type": "regular",
+    "past": "visited",
+    "pastParticiple": "visited",
+    "thirdPerson": "visits",
+    "gerund": "visiting",
+    "meanings": [
+      "visitar"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I visit my parents on Sundays.",
+        "pt": "Eu visito meus pais aos domingos."
+      }
+    ],
+    "tags": [
+      "social",
+      "family"
+    ]
+  },
+  {
+    "id": "join",
+    "base": "join",
+    "type": "regular",
+    "past": "joined",
+    "pastParticiple": "joined",
+    "thirdPerson": "joins",
+    "gerund": "joining",
+    "meanings": [
+      "juntar-se a",
+      "participar de"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "Can I join your group?",
+        "pt": "Posso participar do seu grupo?"
+      }
+    ],
+    "tags": [
+      "social",
+      "interaction"
+    ]
+  },
+  {
+    "id": "invite",
+    "base": "invite",
+    "type": "regular",
+    "past": "invited",
+    "pastParticiple": "invited",
+    "thirdPerson": "invites",
+    "gerund": "inviting",
+    "meanings": [
+      "convidar"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I invited my friends to dinner.",
+        "pt": "Eu convidei meus amigos para jantar."
+      }
+    ],
+    "tags": [
+      "social",
+      "invitation"
+    ]
+  },
+  {
+    "id": "celebrate",
+    "base": "celebrate",
+    "type": "regular",
+    "past": "celebrated",
+    "pastParticiple": "celebrated",
+    "thirdPerson": "celebrates",
+    "gerund": "celebrating",
+    "meanings": [
+      "comemorar",
+      "celebrar"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "We celebrate her birthday every year.",
+        "pt": "Nós comemoramos o aniversário dela todos os anos."
+      }
+    ],
+    "tags": [
+      "social",
+      "celebration"
+    ]
+  },
+  {
+    "id": "thank",
+    "base": "thank",
+    "type": "regular",
+    "past": "thanked",
+    "pastParticiple": "thanked",
+    "thirdPerson": "thanks",
+    "gerund": "thanking",
+    "meanings": [
+      "agradecer"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I thanked her for the help.",
+        "pt": "Eu agradeci a ela pela ajuda."
+      }
+    ],
+    "tags": [
+      "social",
+      "gratitude"
+    ]
+  },
+  {
+    "id": "apologize",
+    "base": "apologize",
+    "type": "regular",
+    "past": "apologized",
+    "pastParticiple": "apologized",
+    "thirdPerson": "apologizes",
+    "gerund": "apologizing",
+    "meanings": [
+      "pedir desculpas"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I apologized for being late.",
+        "pt": "Eu pedi desculpas por estar atrasado."
+      }
+    ],
+    "tags": [
+      "social",
+      "communication"
+    ]
+  },
+  {
+    "id": "promise",
+    "base": "promise",
+    "type": "regular",
+    "past": "promised",
+    "pastParticiple": "promised",
+    "thirdPerson": "promises",
+    "gerund": "promising",
+    "meanings": [
+      "prometer"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I promise to call you tomorrow.",
+        "pt": "Eu prometo ligar para você amanhã."
+      }
+    ],
+    "tags": [
+      "social",
+      "commitment"
+    ]
+  },
+  {
+    "id": "search",
+    "base": "search",
+    "type": "regular",
+    "past": "searched",
+    "pastParticiple": "searched",
+    "thirdPerson": "searches",
+    "gerund": "searching",
+    "meanings": [
+      "pesquisar",
+      "procurar"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I search online for English lessons.",
+        "pt": "Eu pesquiso aulas de inglês na internet."
+      }
+    ],
+    "tags": [
+      "technology",
+      "digital"
+    ]
+  },
+  {
+    "id": "type",
+    "base": "type",
+    "type": "regular",
+    "past": "typed",
+    "pastParticiple": "typed",
+    "thirdPerson": "types",
+    "gerund": "typing",
+    "meanings": [
+      "digitar"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I type my password to log in.",
+        "pt": "Eu digito minha senha para entrar."
+      }
+    ],
+    "tags": [
+      "technology",
+      "digital"
+    ]
+  },
+  {
+    "id": "click",
+    "base": "click",
+    "type": "regular",
+    "past": "clicked",
+    "pastParticiple": "clicked",
+    "thirdPerson": "clicks",
+    "gerund": "clicking",
+    "meanings": [
+      "clicar"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "Click the button to continue.",
+        "pt": "Clique no botão para continuar."
+      }
+    ],
+    "tags": [
+      "technology",
+      "digital"
+    ]
+  },
+  {
+    "id": "post",
+    "base": "post",
+    "type": "regular",
+    "past": "posted",
+    "pastParticiple": "posted",
+    "thirdPerson": "posts",
+    "gerund": "posting",
+    "meanings": [
+      "publicar",
+      "postar"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I post a new video every week.",
+        "pt": "Eu publico um vídeo novo toda semana."
+      }
+    ],
+    "tags": [
+      "technology",
+      "social-media"
+    ]
+  },
+  {
+    "id": "upload",
+    "base": "upload",
+    "type": "regular",
+    "past": "uploaded",
+    "pastParticiple": "uploaded",
+    "thirdPerson": "uploads",
+    "gerund": "uploading",
+    "meanings": [
+      "enviar um arquivo",
+      "fazer upload"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I upload my videos to YouTube.",
+        "pt": "Eu envio meus vídeos para o YouTube."
+      }
+    ],
+    "tags": [
+      "technology",
+      "digital"
+    ]
+  },
+  {
+    "id": "download",
+    "base": "download",
+    "type": "regular",
+    "past": "downloaded",
+    "pastParticiple": "downloaded",
+    "thirdPerson": "downloads",
+    "gerund": "downloading",
+    "meanings": [
+      "baixar um arquivo",
+      "fazer download"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I download the file to my computer.",
+        "pt": "Eu baixo o arquivo para o meu computador."
+      }
+    ],
+    "tags": [
+      "technology",
+      "digital"
+    ]
+  },
+  {
+    "id": "save",
+    "base": "save",
+    "type": "regular",
+    "past": "saved",
+    "pastParticiple": "saved",
+    "thirdPerson": "saves",
+    "gerund": "saving",
+    "meanings": [
+      "salvar",
+      "guardar",
+      "economizar"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I save my work before closing the app.",
+        "pt": "Eu salvo meu trabalho antes de fechar o aplicativo."
+      }
+    ],
+    "tags": [
+      "technology",
+      "digital"
+    ]
+  },
+  {
+    "id": "delete",
+    "base": "delete",
+    "type": "regular",
+    "past": "deleted",
+    "pastParticiple": "deleted",
+    "thirdPerson": "deletes",
+    "gerund": "deleting",
+    "meanings": [
+      "excluir",
+      "apagar"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I delete old messages every month.",
+        "pt": "Eu apago mensagens antigas todo mês."
+      }
+    ],
+    "tags": [
+      "technology",
+      "digital"
+    ]
+  },
+  {
+    "id": "reply",
+    "base": "reply",
+    "type": "regular",
+    "past": "replied",
+    "pastParticiple": "replied",
+    "thirdPerson": "replies",
+    "gerund": "replying",
+    "meanings": [
+      "responder",
+      "dar retorno"
+    ],
+    "level": "A1-A2",
+    "frequency": "high",
+    "examples": [
+      {
+        "en": "I reply to emails in the morning.",
+        "pt": "Eu respondo aos e-mails pela manhã."
+      }
+    ],
+    "tags": [
+      "communication",
+      "digital"
+    ]
+  }
+
   ]
 }
