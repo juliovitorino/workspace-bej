@@ -29025,7 +29025,7 @@
 },
 
 {
-  "id": "a-vaca-foi-pro-brejo-6f8a2d41-3c75-4b90-ae12-9d5c7f034b68",
+  "id": "a-vaca-foi-pro-brejo-7933a3d2-ce0b-4915-a463-66bdbe6b4ef4",
   "intention": "A vaca foi pro brejo / Deu tudo errado",
   "english": "It all went south",
   "pattern": "subject + go south (go / goes / going / went / gone)",
@@ -29240,8 +29240,2134 @@
     "spoken-english"
   ],
   "related": []
-}
+},
+{
+  "id": "estou-a-caminho-b94129a8-6fc4-46d5-b829-495e240fae98",
+  "intention": "Estou a caminho / Estou indo / Já estou indo",
+  "english": "I'm on my way",
+  "pattern": "subject + be + on + possessive adjective + way (+ to + destination / home / back)",
+  "description": "Usado para dizer que alguém já está se deslocando para um lugar ou está prestes a sair, dependendo do contexto. O possessivo muda conforme o sujeito: on my way, on your way, on his way, on her way, on our way, on their way. Para indicar destino, use on my way to work / to your house; com home e back, não use to (on my way home, on my way back). A expressão não significa necessariamente que a pessoa já chegou.",
+  "category": "daily-conversation",
+  "englishLevel": "A2",
+  "searchTerms": [
+    "estou a caminho",
+    "a caminho",
+    "estou indo",
+    "já estou indo",
+    "estou chegando",
+    "indo para",
+    "a caminho de casa",
+    "on my way",
+    "on your way",
+    "on his way",
+    "on her way",
+    "on our way",
+    "on their way"
+  ],
+  "validationPatterns": [
+    "\\bon\\s+(?:my|your|his|her|our|their)\\s+way\\b"
+  ],
+  "examples": [
+    {
+      "pt": "Estou a caminho!",
+      "en": "I'm on my way!",
+      "ptIntent": "Estou a caminho",
+      "enIntent": "on my way"
+    },
+    {
+      "pt": "Estou a caminho da sua casa.",
+      "en": "I'm on my way to your house.",
+      "ptIntent": "a caminho",
+      "enIntent": "on my way"
+    },
+    {
+      "pt": "Estou indo para o trabalho agora.",
+      "en": "I'm on my way to work now.",
+      "ptIntent": "Estou indo",
+      "enIntent": "on my way"
+    },
+    {
+      "pt": "Estou a caminho de casa.",
+      "en": "I'm on my way home.",
+      "ptIntent": "a caminho de casa",
+      "enIntent": "on my way home"
+    },
+    {
+      "pt": "Já estou a caminho.",
+      "en": "I'm already on my way.",
+      "ptIntent": "Já estou a caminho",
+      "enIntent": "on my way"
+    },
+    {
+      "pt": "Você já está a caminho?",
+      "en": "Are you on your way yet?",
+      "ptIntent": "está a caminho",
+      "enIntent": "on your way"
+    },
+    {
+      "pt": "Ela está a caminho da escola.",
+      "en": "She's on her way to school.",
+      "ptIntent": "está a caminho",
+      "enIntent": "on her way"
+    },
+    {
+      "pt": "Ele está a caminho do aeroporto.",
+      "en": "He's on his way to the airport.",
+      "ptIntent": "está a caminho",
+      "enIntent": "on his way"
+    },
+    {
+      "pt": "Estamos a caminho do restaurante.",
+      "en": "We're on our way to the restaurant.",
+      "ptIntent": "Estamos a caminho",
+      "enIntent": "on our way"
+    },
+    {
+      "pt": "Eles estão a caminho.",
+      "en": "They're on their way.",
+      "ptIntent": "estão a caminho",
+      "enIntent": "on their way"
+    },
+    {
+      "pt": "Eu estava a caminho quando você ligou.",
+      "en": "I was on my way when you called.",
+      "ptIntent": "estava a caminho",
+      "enIntent": "on my way"
+    },
+    {
+      "pt": "Não estou a caminho ainda.",
+      "en": "I'm not on my way yet.",
+      "ptIntent": "Não estou a caminho",
+      "enIntent": "on my way"
+    },
+    {
+      "pt": "Estarei a caminho em cinco minutos.",
+      "en": "I'll be on my way in five minutes.",
+      "ptIntent": "Estarei a caminho",
+      "enIntent": "on my way"
+    },
+    {
+      "pt": "Ela já estava a caminho de volta.",
+      "en": "She was already on her way back.",
+      "ptIntent": "a caminho de volta",
+      "enIntent": "on her way back"
+    }
+  ],
+  "tags": [
+    "daily-conversation",
+    "movement",
+    "travel",
+    "high-frequency",
+    "spoken-english",
+    "on-my-way"
+  ],
+  "related": []
+},
+{
+  "id": "manter-contato-keep-in-touch-dc5a0b06-6610-4e64-a625-b27684d5e830",
+  "intention": "Vamos manter contato / Manter contato",
+  "english": "Let's keep in touch",
+  "pattern": "(Let's +) keep in touch (with + person) / subject + keep(s) / kept + in touch (with + person)",
+  "description": "Expressa a intenção de continuar conversando ou mantendo contato com alguém ao longo do tempo, especialmente após uma despedida. “Let’s keep in touch” é um convite amigável. “Keep in touch with someone” permite variar o sujeito, o tempo verbal e a pessoa com quem se mantém contato. Não confundir com “get in touch”, que costuma significar entrar em contato ou fazer o primeiro contato.",
+  "category": "social-interaction",
+  "englishLevel": "A2",
+  "searchTerms": [
+    "vamos manter contato",
+    "manter contato",
+    "continuar em contato",
+    "não perder contato",
+    "a gente se fala",
+    "keep in touch",
+    "let's keep in touch",
+    "keeps in touch",
+    "kept in touch",
+    "stay in touch"
+  ],
+  "validationPatterns": [
+    "\\bkeep\\s+in\\s+touch\\b",
+    "\\bkeeps\\s+in\\s+touch\\b",
+    "\\bkept\\s+in\\s+touch\\b",
+    "\\bkeeping\\s+in\\s+touch\\b"
+  ],
+  "examples": [
+    {
+      "pt": "Vamos manter contato.",
+      "en": "Let's keep in touch.",
+      "ptIntent": "Vamos manter contato",
+      "enIntent": "keep in touch"
+    },
+    {
+      "pt": "Espero que a gente mantenha contato.",
+      "en": "I hope we keep in touch.",
+      "ptIntent": "mantenha contato",
+      "enIntent": "keep in touch"
+    },
+    {
+      "pt": "Quero manter contato com você.",
+      "en": "I want to keep in touch with you.",
+      "ptIntent": "manter contato",
+      "enIntent": "keep in touch"
+    },
+    {
+      "pt": "Vamos manter contato depois da viagem.",
+      "en": "Let's keep in touch after the trip.",
+      "ptIntent": "Vamos manter contato",
+      "enIntent": "keep in touch"
+    },
+    {
+      "pt": "Nós ainda mantemos contato.",
+      "en": "We still keep in touch.",
+      "ptIntent": "mantemos contato",
+      "enIntent": "keep in touch"
+    },
+    {
+      "pt": "Ela mantém contato com os antigos colegas.",
+      "en": "She keeps in touch with her former coworkers.",
+      "ptIntent": "mantém contato",
+      "enIntent": "keeps in touch"
+    },
+    {
+      "pt": "Você mantém contato com seus amigos da escola?",
+      "en": "Do you keep in touch with your school friends?",
+      "ptIntent": "mantém contato",
+      "enIntent": "keep in touch"
+    },
+    {
+      "pt": "Eu não mantenho mais contato com ele.",
+      "en": "I don't keep in touch with him anymore.",
+      "ptIntent": "não mantenho mais contato",
+      "enIntent": "keep in touch"
+    },
+    {
+      "pt": "Nós mantivemos contato por muitos anos.",
+      "en": "We kept in touch for many years.",
+      "ptIntent": "mantivemos contato",
+      "enIntent": "kept in touch"
+    },
+    {
+      "pt": "Não conseguimos manter contato depois que ela se mudou.",
+      "en": "We couldn't keep in touch after she moved away.",
+      "ptIntent": "manter contato",
+      "enIntent": "keep in touch"
+    },
+    {
+      "pt": "Vou manter contato com você.",
+      "en": "I'll keep in touch with you.",
+      "ptIntent": "Vou manter contato",
+      "enIntent": "keep in touch"
+    },
+    {
+      "pt": "É importante manter contato com a família.",
+      "en": "It's important to keep in touch with family.",
+      "ptIntent": "manter contato",
+      "enIntent": "keep in touch"
+    },
+    {
+      "pt": "Prometa que vamos manter contato.",
+      "en": "Promise we'll keep in touch.",
+      "ptIntent": "vamos manter contato",
+      "enIntent": "keep in touch"
+    },
+    {
+      "pt": "Eles têm mantido contato desde a faculdade.",
+      "en": "They have kept in touch since college.",
+      "ptIntent": "têm mantido contato",
+      "enIntent": "kept in touch"
+    }
+  ],
+  "tags": [
+    "social-interaction",
+    "communication",
+    "farewell",
+    "friendship",
+    "keep-in-touch",
+    "high-frequency",
+    "spoken-english"
+  ],
+  "related": []
+},
 
+  {
+    "id": "pretty-good-80a44ec6-d98a-4e05-8ec9-e2f417917f3e",
+    "intention": "Até que bem / Muito bem",
+    "english": "Pretty good",
+    "pattern": "pretty good",
+    "description": "Resposta informal e positiva para dizer como alguém está.",
+    "category": "small-talk",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "até que bem",
+      "pretty good"
+    ],
+    "validationPatterns": [
+      "\\bpretty\\s+good\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou até que bem, obrigado.",
+        "en": "Pretty good, thanks.",
+        "ptIntent": "até que bem",
+        "enIntent": "Pretty good"
+      },
+      {
+        "pt": "Como foi o seu dia? Até que bem.",
+        "en": "How was your day? Pretty good.",
+        "ptIntent": "Até que bem",
+        "enIntent": "Pretty good"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "small-talk",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "not-much-5526e3a1-69bd-4d7f-8f70-5ca20eb3a5f7",
+    "intention": "Nada de mais",
+    "english": "Not much",
+    "pattern": "not much",
+    "description": "Resposta curta quando não há novidades ou acontecimentos importantes.",
+    "category": "small-talk",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "nada de mais",
+      "not much"
+    ],
+    "validationPatterns": [
+      "\\bnot\\s+much\\b"
+    ],
+    "examples": [
+      {
+        "pt": "O que há de novo? Nada de mais.",
+        "en": "What’s new? Not much.",
+        "ptIntent": "Nada de mais",
+        "enIntent": "Not much"
+      },
+      {
+        "pt": "O que você anda fazendo? Nada de mais.",
+        "en": "What have you been doing? Not much.",
+        "ptIntent": "Nada de mais",
+        "enIntent": "Not much"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "small-talk",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "it-s-been-a-while-4acf1860-7a94-45d7-9112-ec55611b6ad6",
+    "intention": "Faz tempo / Há quanto tempo",
+    "english": "It's been a while",
+    "pattern": "it's been a while",
+    "description": "Indica que bastante tempo passou desde um encontro ou acontecimento.",
+    "category": "small-talk",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "faz tempo",
+      "it's been a while",
+      "it s been a while"
+    ],
+    "validationPatterns": [
+      "\\b(?:it(?:'|’)s|it\\s+has)\\s+been\\s+a\\s+while\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Faz tempo que não nos vemos.",
+        "en": "It’s been a while since we last saw each other.",
+        "ptIntent": "Faz tempo",
+        "enIntent": "It’s been a while"
+      },
+      {
+        "pt": "Nossa, faz tempo!",
+        "en": "Wow, it’s been a while!",
+        "ptIntent": "faz tempo",
+        "enIntent": "it’s been a while"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "small-talk",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-doing-great-3eccbf3e-3f16-433c-b8c2-a06ad82d2691",
+    "intention": "Estou muito bem",
+    "english": "I'm doing great",
+    "pattern": "subject + be + doing great",
+    "description": "Resposta entusiasmada sobre como a pessoa está.",
+    "category": "small-talk",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "estou muito bem",
+      "i'm doing great",
+      "i m doing great"
+    ],
+    "validationPatterns": [
+      "\\b(?:am|is|are|was|were|(?:i|you|we|they|he|she)(?:\\x27|’)(?:m|re|s))\\s+doing\\s+great\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou muito bem, obrigado.",
+        "en": "I’m doing great, thanks.",
+        "ptIntent": "Estou muito bem",
+        "enIntent": "I’m doing great"
+      },
+      {
+        "pt": "Ela está muito bem ultimamente.",
+        "en": "She’s doing great lately.",
+        "ptIntent": "está muito bem",
+        "enIntent": "She’s doing great"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "small-talk",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "everything-is-going-well-2cb8c1f1-33a0-4bcb-8568-3d11192e9db5",
+    "intention": "Está tudo indo bem",
+    "english": "Everything is going well",
+    "pattern": "everything + be + going well",
+    "description": "Expressa que as coisas estão correndo bem.",
+    "category": "small-talk",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "está tudo indo bem",
+      "everything is going well"
+    ],
+    "validationPatterns": [
+      "\\beverything\\s+(?:is|was|(?:\\x27|’)s)\\s+going\\s+well\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Está tudo indo bem no trabalho.",
+        "en": "Everything is going well at work.",
+        "ptIntent": "Está tudo indo bem",
+        "enIntent": "Everything is going well"
+      },
+      {
+        "pt": "Está tudo indo bem até agora.",
+        "en": "Everything is going well so far.",
+        "ptIntent": "Está tudo indo bem",
+        "enIntent": "Everything is going well"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "small-talk",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "same-as-always-15ebca5c-2d67-4df6-8335-ec1e49368c97",
+    "intention": "Tudo como sempre / A mesma coisa de sempre",
+    "english": "Same as always",
+    "pattern": "same as always",
+    "description": "Indica que nada relevante mudou.",
+    "category": "small-talk",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "tudo como sempre",
+      "same as always"
+    ],
+    "validationPatterns": [
+      "\\b(?:the\\s+)?same\\s+as\\s+always\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Como está a vida? Tudo como sempre.",
+        "en": "How’s life? Same as always.",
+        "ptIntent": "Tudo como sempre",
+        "enIntent": "Same as always"
+      },
+      {
+        "pt": "Minha rotina é a mesma de sempre.",
+        "en": "My routine is the same as always.",
+        "ptIntent": "a mesma de sempre",
+        "enIntent": "the same as always"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "small-talk",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-fine-thank-you-ac3f76a5-6447-4dba-97b0-db04df489ce0",
+    "intention": "Estou bem, obrigado",
+    "english": "I'm fine, thank you",
+    "pattern": "subject + be + fine + thank you",
+    "description": "Resposta educada a uma saudação.",
+    "category": "small-talk",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "estou bem, obrigado",
+      "i'm fine, thank you",
+      "i m fine thank you"
+    ],
+    "validationPatterns": [
+      "\\b(?:am|is|are|(?:i|you|we|they|he|she)(?:\\x27|’)(?:m|re|s))\\s+fine\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou bem, obrigado. E você?",
+        "en": "I’m fine, thank you. How about you?",
+        "ptIntent": "Estou bem, obrigado",
+        "enIntent": "I’m fine, thank you"
+      },
+      {
+        "pt": "Estamos bem, obrigado por perguntar.",
+        "en": "We’re fine, thank you for asking.",
+        "ptIntent": "Estamos bem, obrigado",
+        "enIntent": "We’re fine, thank you"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "small-talk",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-doing-well-9fa2b9f0-f32f-4ca6-ad7f-61046f9b92fc",
+    "intention": "Estou bem / Estou indo bem",
+    "english": "I'm doing well",
+    "pattern": "subject + be + doing well",
+    "description": "Expressa que a pessoa está bem ou progredindo.",
+    "category": "small-talk",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "estou bem",
+      "i'm doing well",
+      "i m doing well"
+    ],
+    "validationPatterns": [
+      "\\b(?:am|is|are|(?:i|you|we|they|he|she)(?:\\x27|’)(?:m|re|s))\\s+doing\\s+well\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou bem, obrigado por perguntar.",
+        "en": "I’m doing well, thanks for asking.",
+        "ptIntent": "Estou bem",
+        "enIntent": "I’m doing well"
+      },
+      {
+        "pt": "Ele está indo bem no curso.",
+        "en": "He’s doing well in the course.",
+        "ptIntent": "está indo bem",
+        "enIntent": "He’s doing well"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "small-talk",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-good-9f67474d-836b-4d81-9da9-cc45dad90230",
+    "intention": "Estou bem",
+    "english": "I'm good",
+    "pattern": "subject + be + good",
+    "description": "Resposta informal e comum para dizer que está bem.",
+    "category": "small-talk",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "estou bem",
+      "i'm good",
+      "i m good"
+    ],
+    "validationPatterns": [
+      "\\b(?:am|is|are|(?:i|you|we|they|he|she)(?:\\x27|’)(?:m|re|s))\\s+good\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou bem, obrigado.",
+        "en": "I’m good, thanks.",
+        "ptIntent": "Estou bem",
+        "enIntent": "I’m good"
+      },
+      {
+        "pt": "Estamos bem por aqui.",
+        "en": "We’re good over here.",
+        "ptIntent": "Estamos bem",
+        "enIntent": "We’re good"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "small-talk",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "nothing-much-61c29201-6167-4c93-972d-531969b6a44b",
+    "intention": "Nada de mais / Nada de novo",
+    "english": "Nothing much",
+    "pattern": "nothing much",
+    "description": "Resposta informal indicando ausência de novidades.",
+    "category": "small-talk",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "nada de mais",
+      "nothing much"
+    ],
+    "validationPatterns": [
+      "\\bnothing\\s+much\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Nada de mais, só a rotina.",
+        "en": "Nothing much, just the usual.",
+        "ptIntent": "Nada de mais",
+        "enIntent": "Nothing much"
+      },
+      {
+        "pt": "O que está acontecendo? Nada de mais.",
+        "en": "What’s happening? Nothing much.",
+        "ptIntent": "Nada de mais",
+        "enIntent": "Nothing much"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "small-talk",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-on-my-way-d8065fd7-6ceb-4145-9a14-b1070b5e308c",
+    "intention": "Estou a caminho",
+    "english": "I'm on my way",
+    "pattern": "subject + be + on + possessive + way",
+    "description": "Indica que alguém já está a caminho de um destino.",
+    "category": "daily-life",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "estou a caminho",
+      "i'm on my way",
+      "i m on my way"
+    ],
+    "validationPatterns": [
+      "\\bon\\s+(?:my|your|his|her|our|their)\\s+way\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou a caminho. Chego logo.",
+        "en": "I’m on my way. I’ll be there soon.",
+        "ptIntent": "Estou a caminho",
+        "enIntent": "I’m on my way"
+      },
+      {
+        "pt": "Ela está a caminho do trabalho.",
+        "en": "She’s on her way to work.",
+        "ptIntent": "está a caminho",
+        "enIntent": "She’s on her way"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "daily-life",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-ll-be-right-back-c7d1b04a-7fba-4bd4-ab15-9c6e0befab1e",
+    "intention": "Já volto / Volto já",
+    "english": "I'll be right back",
+    "pattern": "subject + will + be right back",
+    "description": "Indica ausência breve e retorno em pouco tempo.",
+    "category": "daily-life",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "já volto",
+      "i'll be right back",
+      "i ll be right back"
+    ],
+    "validationPatterns": [
+      "\\b(?:will|(?:\\x27|’)ll)\\s+be\\s+right\\s+back\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Já volto.",
+        "en": "I’ll be right back.",
+        "ptIntent": "Já volto",
+        "enIntent": "I’ll be right back"
+      },
+      {
+        "pt": "Ela já volta.",
+        "en": "She’ll be right back.",
+        "ptIntent": "já volta",
+        "enIntent": "She’ll be right back"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "daily-life",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-about-to-leave-4d9b04a8-03c7-41fb-995c-7c932196413f",
+    "intention": "Estou prestes a sair",
+    "english": "I'm about to leave",
+    "pattern": "subject + be + about to + base verb",
+    "description": "Indica uma ação iminente; o verbo pode ser substituído.",
+    "category": "daily-life",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "estou prestes a sair",
+      "i'm about to leave",
+      "i m about to leave"
+    ],
+    "validationPatterns": [
+      "\\b(?:am|is|are|was|were|(?:i|you|we|they|he|she)(?:\\x27|’)(?:m|re|s))\\s+about\\s+to\\s+\\w+\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou prestes a sair.",
+        "en": "I’m about to leave.",
+        "ptIntent": "Estou prestes a sair",
+        "enIntent": "I’m about to leave"
+      },
+      {
+        "pt": "Estamos prestes a começar.",
+        "en": "We’re about to start.",
+        "ptIntent": "Estamos prestes a começar",
+        "enIntent": "We’re about to start"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "daily-life",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-running-late-d73e084e-66c3-45ad-94b8-615cd6feb309",
+    "intention": "Estou atrasado / Estou me atrasando",
+    "english": "I'm running late",
+    "pattern": "subject + be + running late",
+    "description": "Indica atraso em relação ao horário previsto.",
+    "category": "daily-life",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "estou atrasado",
+      "i'm running late",
+      "i m running late"
+    ],
+    "validationPatterns": [
+      "\\brunning\\s+late\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou atrasado para a reunião.",
+        "en": "I’m running late for the meeting.",
+        "ptIntent": "Estou atrasado",
+        "enIntent": "I’m running late"
+      },
+      {
+        "pt": "Estamos atrasados hoje.",
+        "en": "We’re running late today.",
+        "ptIntent": "Estamos atrasados",
+        "enIntent": "We’re running late"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "daily-life",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "let-me-check-65062763-611f-46ff-ab53-efb9f1ee5eae",
+    "intention": "Deixa eu verificar / Deixe-me conferir",
+    "english": "Let me check",
+    "pattern": "let + object + check",
+    "description": "Pede um instante para conferir uma informação.",
+    "category": "daily-life",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "deixa eu verificar",
+      "let me check"
+    ],
+    "validationPatterns": [
+      "\\blet\\s+(?:me|us|him|her|them)\\s+check\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Deixa eu verificar o horário.",
+        "en": "Let me check the time.",
+        "ptIntent": "Deixa eu verificar",
+        "enIntent": "Let me check"
+      },
+      {
+        "pt": "Deixa eu conferir isso para você.",
+        "en": "Let me check that for you.",
+        "ptIntent": "Deixa eu conferir",
+        "enIntent": "Let me check"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "daily-life",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "let-me-see-403967b9-8835-49f2-8b71-87183e726f7f",
+    "intention": "Deixa eu ver / Deixa eu pensar",
+    "english": "Let me see",
+    "pattern": "let + object + see",
+    "description": "Pede tempo para pensar, observar ou encontrar uma resposta.",
+    "category": "daily-life",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "deixa eu ver",
+      "let me see"
+    ],
+    "validationPatterns": [
+      "\\blet\\s+(?:me|us|him|her|them)\\s+see\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Deixa eu ver se posso ajudar.",
+        "en": "Let me see if I can help.",
+        "ptIntent": "Deixa eu ver",
+        "enIntent": "Let me see"
+      },
+      {
+        "pt": "Deixa eu pensar um pouco.",
+        "en": "Let me see. I need a moment.",
+        "ptIntent": "Deixa eu pensar",
+        "enIntent": "Let me see"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "daily-life",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-ll-let-you-know-594ab9eb-2af3-4ec1-bf02-76f880e3c003",
+    "intention": "Eu te aviso / Eu te conto depois",
+    "english": "I'll let you know",
+    "pattern": "subject + let + object + know",
+    "description": "Promete informar alguém assim que souber algo.",
+    "category": "daily-life",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "eu te aviso",
+      "i'll let you know",
+      "i ll let you know"
+    ],
+    "validationPatterns": [
+      "\\blet\\s+(?:you|me|him|her|us|them)\\s+know\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Eu te aviso amanhã.",
+        "en": "I’ll let you know tomorrow.",
+        "ptIntent": "Eu te aviso",
+        "enIntent": "I’ll let you know"
+      },
+      {
+        "pt": "Ela vai me avisar quando chegar.",
+        "en": "She’ll let me know when she arrives.",
+        "ptIntent": "vai me avisar",
+        "enIntent": "She’ll let me know"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "daily-life",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "keep-me-updated-68def0ab-02b2-4bd1-b7fb-13b71b683f39",
+    "intention": "Me mantenha informado / Me mantenha atualizado",
+    "english": "Keep me updated",
+    "pattern": "keep + object + updated",
+    "description": "Solicita atualizações sobre uma situação em andamento.",
+    "category": "daily-life",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "me mantenha informado",
+      "keep me updated"
+    ],
+    "validationPatterns": [
+      "\\bkeep\\s+(?:me|you|him|her|us|them)\\s+updated\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Me mantenha informado sobre o projeto.",
+        "en": "Keep me updated on the project.",
+        "ptIntent": "Me mantenha informado",
+        "enIntent": "Keep me updated"
+      },
+      {
+        "pt": "Por favor, mantenha-nos informados.",
+        "en": "Please keep us updated.",
+        "ptIntent": "mantenha-nos informados",
+        "enIntent": "keep us updated"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "daily-life",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-ll-get-back-to-you-112d6ee5-7f35-4b17-a50c-bbd770e1535f",
+    "intention": "Eu te dou um retorno / Eu respondo depois",
+    "english": "I'll get back to you",
+    "pattern": "get back to + person",
+    "description": "Indica que responderá ou retomará contato posteriormente.",
+    "category": "daily-life",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "eu te dou um retorno",
+      "i'll get back to you",
+      "i ll get back to you"
+    ],
+    "validationPatterns": [
+      "\\bget\\s+back\\s+to\\s+(?:you|me|him|her|us|them)\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Eu te dou um retorno amanhã.",
+        "en": "I’ll get back to you tomorrow.",
+        "ptIntent": "Eu te dou um retorno",
+        "enIntent": "I’ll get back to you"
+      },
+      {
+        "pt": "Ela vai me dar uma resposta depois.",
+        "en": "She’ll get back to me later.",
+        "ptIntent": "vai me dar uma resposta",
+        "enIntent": "She’ll get back to me"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "daily-life",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-looking-forward-to-it-31c3ee4e-c66e-4a71-9389-2739b3f810a5",
+    "intention": "Estou ansioso por isso / Estou na expectativa",
+    "english": "I'm looking forward to it",
+    "pattern": "look forward to + noun / verb-ing",
+    "description": "Expressa expectativa positiva; depois de to, usar substantivo ou verbo com -ing.",
+    "category": "daily-life",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "estou ansioso por isso",
+      "i'm looking forward to it",
+      "i m looking forward to it"
+    ],
+    "validationPatterns": [
+      "\\blook(?:s|ing|ed)?\\s+forward\\s+to\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou ansioso por isso.",
+        "en": "I’m looking forward to it.",
+        "ptIntent": "Estou ansioso por isso",
+        "enIntent": "I’m looking forward to it"
+      },
+      {
+        "pt": "Estou ansioso para te conhecer.",
+        "en": "I’m looking forward to meeting you.",
+        "ptIntent": "Estou ansioso para",
+        "enIntent": "I’m looking forward to"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "daily-life",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "that-makes-sense-f38d5d03-5903-4105-931a-92137cec6bf0",
+    "intention": "Isso faz sentido",
+    "english": "That makes sense",
+    "pattern": "subject + make sense",
+    "description": "Reconhece que uma explicação ou ideia é lógica.",
+    "category": "opinions",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "isso faz sentido",
+      "that makes sense"
+    ],
+    "validationPatterns": [
+      "\\bmakes?\\s+sense\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Isso faz sentido.",
+        "en": "That makes sense.",
+        "ptIntent": "Isso faz sentido",
+        "enIntent": "That makes sense"
+      },
+      {
+        "pt": "Sua explicação faz sentido.",
+        "en": "Your explanation makes sense.",
+        "ptIntent": "faz sentido",
+        "enIntent": "makes sense"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "opinions",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-totally-agree-c905b80c-85bf-4eea-a155-bc41ae262666",
+    "intention": "Concordo totalmente",
+    "english": "I totally agree",
+    "pattern": "subject + totally + agree",
+    "description": "Expressa concordância forte.",
+    "category": "opinions",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "concordo totalmente",
+      "i totally agree"
+    ],
+    "validationPatterns": [
+      "\\btotally\\s+agree\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Concordo totalmente com você.",
+        "en": "I totally agree with you.",
+        "ptIntent": "Concordo totalmente",
+        "enIntent": "I totally agree"
+      },
+      {
+        "pt": "Nós concordamos totalmente com essa ideia.",
+        "en": "We totally agree with that idea.",
+        "ptIntent": "concordamos totalmente",
+        "enIntent": "totally agree"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "opinions",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-not-sure-about-that-e62d457d-0eab-4983-a4b0-06fc5ef7f7f3",
+    "intention": "Não tenho tanta certeza disso",
+    "english": "I'm not sure about that",
+    "pattern": "subject + be + not sure about + noun/pronoun",
+    "description": "Expressa dúvida ou discordância cautelosa.",
+    "category": "opinions",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "não tenho tanta certeza disso",
+      "i'm not sure about that",
+      "i m not sure about that"
+    ],
+    "validationPatterns": [
+      "\\bnot\\s+sure\\s+about\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Não tenho tanta certeza disso.",
+        "en": "I’m not sure about that.",
+        "ptIntent": "Não tenho tanta certeza disso",
+        "enIntent": "I’m not sure about that"
+      },
+      {
+        "pt": "Ela não tem certeza sobre o plano.",
+        "en": "She’s not sure about the plan.",
+        "ptIntent": "não tem certeza sobre",
+        "enIntent": "She’s not sure about"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "opinions",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "what-do-you-mean-49a6e505-0e1e-4382-8cec-e72992c45f70",
+    "intention": "O que você quer dizer?",
+    "english": "What do you mean?",
+    "pattern": "what + do/does + subject + mean",
+    "description": "Pede esclarecimento sobre o significado de uma fala.",
+    "category": "opinions",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "o que você quer dizer?",
+      "what do you mean?",
+      "what do you mean"
+    ],
+    "validationPatterns": [
+      "\\bwhat\\s+(?:do|does|did)\\s+\\w+\\s+mean\\b"
+    ],
+    "examples": [
+      {
+        "pt": "O que você quer dizer?",
+        "en": "What do you mean?",
+        "ptIntent": "O que você quer dizer",
+        "enIntent": "What do you mean"
+      },
+      {
+        "pt": "O que ela quer dizer com isso?",
+        "en": "What does she mean by that?",
+        "ptIntent": "O que ela quer dizer",
+        "enIntent": "What does she mean"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "opinions",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "can-you-explain-that-cb0a8f95-0b02-4567-b10b-523b491abaad",
+    "intention": "Você pode explicar isso?",
+    "english": "Can you explain that?",
+    "pattern": "can/could + subject + explain + object",
+    "description": "Pede explicação ou esclarecimento.",
+    "category": "opinions",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "você pode explicar isso?",
+      "can you explain that?",
+      "can you explain that"
+    ],
+    "validationPatterns": [
+      "\\b(?:can|could)\\s+\\w+\\s+explain\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Você pode explicar isso?",
+        "en": "Can you explain that?",
+        "ptIntent": "Você pode explicar",
+        "enIntent": "Can you explain"
+      },
+      {
+        "pt": "Você poderia explicar melhor?",
+        "en": "Could you explain it more clearly?",
+        "ptIntent": "Você poderia explicar",
+        "enIntent": "Could you explain"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "opinions",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "tell-me-more-93c9fb38-3eee-4f5e-b9ed-492825d3aa19",
+    "intention": "Me conta mais / Fale mais",
+    "english": "Tell me more",
+    "pattern": "tell + person + more",
+    "description": "Convida alguém a acrescentar detalhes.",
+    "category": "opinions",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "me conta mais",
+      "tell me more"
+    ],
+    "validationPatterns": [
+      "\\btell\\s+(?:me|us|him|her|them)\\s+more\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Me conta mais sobre a viagem.",
+        "en": "Tell me more about the trip.",
+        "ptIntent": "Me conta mais",
+        "enIntent": "Tell me more"
+      },
+      {
+        "pt": "Conte-nos mais sobre sua ideia.",
+        "en": "Tell us more about your idea.",
+        "ptIntent": "Conte-nos mais",
+        "enIntent": "Tell us more"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "opinions",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-think-so-6d9512ee-e9af-491c-8fa3-c8e4f25deb4b",
+    "intention": "Acho que sim",
+    "english": "I think so",
+    "pattern": "subject + think so",
+    "description": "Indica crença ou concordância com alguma incerteza.",
+    "category": "opinions",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "acho que sim",
+      "i think so"
+    ],
+    "validationPatterns": [
+      "\\b(?:i|we|you|they|he|she)\\s+think\\s+so\\b"
+    ],
+    "examples": [
+      {
+        "pt": "A reunião é hoje? Acho que sim.",
+        "en": "Is the meeting today? I think so.",
+        "ptIntent": "Acho que sim",
+        "enIntent": "I think so"
+      },
+      {
+        "pt": "Você acha que vai funcionar? Acho que sim.",
+        "en": "Do you think it’ll work? I think so.",
+        "ptIntent": "Acho que sim",
+        "enIntent": "I think so"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "opinions",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-don-t-think-so-a29b9171-7b0e-42da-b06c-518945c7cce4",
+    "intention": "Acho que não",
+    "english": "I don't think so",
+    "pattern": "subject + do/does + not + think so",
+    "description": "Indica que algo provavelmente não é verdade.",
+    "category": "opinions",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "acho que não",
+      "i don't think so",
+      "i don t think so"
+    ],
+    "validationPatterns": [
+      "\\b(?:do\\s+not|don(?:\\x27|’)t|does\\s+not|doesn(?:\\x27|’)t)\\s+think\\s+so\\b"
+    ],
+    "examples": [
+      {
+        "pt": "A loja ainda está aberta? Acho que não.",
+        "en": "Is the store still open? I don’t think so.",
+        "ptIntent": "Acho que não",
+        "enIntent": "I don’t think so"
+      },
+      {
+        "pt": "Você acha que ele vem? Acho que não.",
+        "en": "Do you think he’s coming? I don’t think so.",
+        "ptIntent": "Acho que não",
+        "enIntent": "I don’t think so"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "opinions",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-agree-fd474b9c-4a70-4afc-ab37-52ec0107d97e",
+    "intention": "Eu concordo",
+    "english": "I agree",
+    "pattern": "subject + agree",
+    "description": "Expressa concordância com uma opinião.",
+    "category": "opinions",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "eu concordo",
+      "i agree"
+    ],
+    "validationPatterns": [
+      "\\b(?:agree|agrees|agreed|agreeing)\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Eu concordo com você.",
+        "en": "I agree with you.",
+        "ptIntent": "Eu concordo",
+        "enIntent": "I agree"
+      },
+      {
+        "pt": "Ela concorda com a decisão.",
+        "en": "She agrees with the decision.",
+        "ptIntent": "concorda",
+        "enIntent": "agrees"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "opinions",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-disagree-3226f95c-f5a8-47ed-a6ec-b24f97ca6573",
+    "intention": "Eu discordo",
+    "english": "I disagree",
+    "pattern": "subject + disagree",
+    "description": "Expressa discordância de uma opinião.",
+    "category": "opinions",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "eu discordo",
+      "i disagree"
+    ],
+    "validationPatterns": [
+      "\\b(?:disagree|disagrees|disagreed|disagreeing)\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Eu discordo dessa ideia.",
+        "en": "I disagree with that idea.",
+        "ptIntent": "Eu discordo",
+        "enIntent": "I disagree"
+      },
+      {
+        "pt": "Nós discordamos sobre isso.",
+        "en": "We disagree about that.",
+        "ptIntent": "discordamos",
+        "enIntent": "disagree"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "opinions",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "let-s-hang-out-dbf2713b-9c58-4641-a0ed-590de9164664",
+    "intention": "Vamos sair / Vamos passar um tempo juntos",
+    "english": "Let's hang out",
+    "pattern": "let's + hang out",
+    "description": "Propõe encontrar-se informalmente para conviver ou se divertir.",
+    "category": "socializing",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "vamos sair",
+      "let's hang out",
+      "let s hang out"
+    ],
+    "validationPatterns": [
+      "\\bhang(?:s|ing)?\\s+out\\b|\\bhung\\s+out\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Vamos sair qualquer dia.",
+        "en": "Let’s hang out sometime.",
+        "ptIntent": "Vamos sair",
+        "enIntent": "Let’s hang out"
+      },
+      {
+        "pt": "Quer sair com a gente depois do trabalho?",
+        "en": "Do you want to hang out with us after work?",
+        "ptIntent": "sair com a gente",
+        "enIntent": "hang out with us"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "socializing",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "do-you-want-to-join-7ae21bbb-71e2-45be-b163-4ed73ac93c9c",
+    "intention": "Quer participar / Quer vir junto?",
+    "english": "Do you want to join?",
+    "pattern": "do + subject + want to + join",
+    "description": "Convida alguém a participar de uma atividade ou grupo.",
+    "category": "socializing",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "quer participar",
+      "do you want to join?",
+      "do you want to join"
+    ],
+    "validationPatterns": [
+      "\\b(?:want|wants|wanted)\\s+to\\s+join\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Quer participar?",
+        "en": "Do you want to join?",
+        "ptIntent": "Quer participar",
+        "enIntent": "Do you want to join"
+      },
+      {
+        "pt": "Você quer se juntar a nós?",
+        "en": "Do you want to join us?",
+        "ptIntent": "quer se juntar a nós",
+        "enIntent": "want to join us"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "socializing",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "would-you-like-to-come-b3b38a50-c3ec-4b5a-9bbd-37885a38ff38",
+    "intention": "Você gostaria de vir?",
+    "english": "Would you like to come?",
+    "pattern": "would + subject + like to + come",
+    "description": "Faz um convite educado.",
+    "category": "socializing",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "você gostaria de vir?",
+      "would you like to come?",
+      "would you like to come"
+    ],
+    "validationPatterns": [
+      "\\bwould\\s+\\w+\\s+like\\s+to\\s+come\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Você gostaria de vir conosco?",
+        "en": "Would you like to come with us?",
+        "ptIntent": "Você gostaria de vir",
+        "enIntent": "Would you like to come"
+      },
+      {
+        "pt": "Você gostaria de vir ao jantar?",
+        "en": "Would you like to come to dinner?",
+        "ptIntent": "Você gostaria de vir",
+        "enIntent": "Would you like to come"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "socializing",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "let-s-grab-a-coffee-855fe112-b3ce-4666-8377-437ebdf1675b",
+    "intention": "Vamos tomar um café",
+    "english": "Let's grab a coffee",
+    "pattern": "let's + grab + a + drink/food",
+    "description": "Sugere um encontro informal; grab pode ser usado com café e outros alimentos ou bebidas.",
+    "category": "socializing",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "vamos tomar um café",
+      "let's grab a coffee",
+      "let s grab a coffee"
+    ],
+    "validationPatterns": [
+      "\\bgrab\\s+a\\s+(?:coffee|bite|drink)\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Vamos tomar um café amanhã.",
+        "en": "Let’s grab a coffee tomorrow.",
+        "ptIntent": "Vamos tomar um café",
+        "enIntent": "Let’s grab a coffee"
+      },
+      {
+        "pt": "Vamos comer alguma coisa depois.",
+        "en": "Let’s grab a bite later.",
+        "ptIntent": "Vamos comer alguma coisa",
+        "enIntent": "Let’s grab a bite"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "socializing",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "that-sounds-fun-0128f406-2257-4927-998c-15b78ce29adc",
+    "intention": "Parece divertido",
+    "english": "That sounds fun",
+    "pattern": "subject + sound + adjective",
+    "description": "Reage positivamente a uma atividade proposta.",
+    "category": "socializing",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "parece divertido",
+      "that sounds fun"
+    ],
+    "validationPatterns": [
+      "\\bsounds?\\s+fun\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Parece divertido!",
+        "en": "That sounds fun!",
+        "ptIntent": "Parece divertido",
+        "enIntent": "That sounds fun"
+      },
+      {
+        "pt": "Sua viagem parece divertida.",
+        "en": "Your trip sounds fun.",
+        "ptIntent": "parece divertida",
+        "enIntent": "sounds fun"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "socializing",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "that-sounds-like-a-plan-fe8a3f3c-f495-4c0a-ad77-e0fc54ce5e7e",
+    "intention": "Combinado / Parece um bom plano",
+    "english": "That sounds like a plan",
+    "pattern": "that + sounds like a plan",
+    "description": "Aceita uma sugestão ou combinação de maneira natural.",
+    "category": "socializing",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "combinado",
+      "that sounds like a plan"
+    ],
+    "validationPatterns": [
+      "\\bsounds?\\s+like\\s+a\\s+plan\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Vamos nos encontrar às seis? Combinado!",
+        "en": "Shall we meet at six? That sounds like a plan!",
+        "ptIntent": "Combinado",
+        "enIntent": "That sounds like a plan"
+      },
+      {
+        "pt": "Jantamos depois do filme? Parece um bom plano.",
+        "en": "Dinner after the movie? That sounds like a plan.",
+        "ptIntent": "Parece um bom plano",
+        "enIntent": "That sounds like a plan"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "socializing",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-free-this-weekend-8e6fc4c9-811f-4fc9-9064-c539328c0b6e",
+    "intention": "Estou livre neste fim de semana",
+    "english": "I'm free this weekend",
+    "pattern": "subject + be + free + time expression",
+    "description": "Indica disponibilidade para um compromisso.",
+    "category": "socializing",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "estou livre neste fim de semana",
+      "i'm free this weekend",
+      "i m free this weekend"
+    ],
+    "validationPatterns": [
+      "\\b(?:am|is|are|was|were|(?:i|you|we|they|he|she)(?:\\x27|’)(?:m|re|s))\\s+free\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou livre neste fim de semana.",
+        "en": "I’m free this weekend.",
+        "ptIntent": "Estou livre",
+        "enIntent": "I’m free"
+      },
+      {
+        "pt": "Ela está livre amanhã à tarde.",
+        "en": "She’s free tomorrow afternoon.",
+        "ptIntent": "está livre",
+        "enIntent": "She’s free"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "socializing",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-have-no-plans-yet-7628573d-33db-4c86-b976-b6e47cbc0990",
+    "intention": "Ainda não tenho planos",
+    "english": "I have no plans yet",
+    "pattern": "subject + have + no plans + yet",
+    "description": "Indica que nada foi programado até o momento.",
+    "category": "socializing",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "ainda não tenho planos",
+      "i have no plans yet"
+    ],
+    "validationPatterns": [
+      "\\bhave\\s+no\\s+plans\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Ainda não tenho planos.",
+        "en": "I have no plans yet.",
+        "ptIntent": "Ainda não tenho planos",
+        "enIntent": "I have no plans yet"
+      },
+      {
+        "pt": "Ainda não temos planos para sábado.",
+        "en": "We have no plans for Saturday yet.",
+        "ptIntent": "Ainda não temos planos",
+        "enIntent": "We have no plans"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "socializing",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "it-s-my-treat-3f492202-062a-4fc3-a687-57b3705700d5",
+    "intention": "É por minha conta / Eu pago",
+    "english": "It's my treat",
+    "pattern": "it's + possessive + treat",
+    "description": "Oferece-se para pagar por outra pessoa.",
+    "category": "socializing",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "é por minha conta",
+      "it's my treat",
+      "it s my treat"
+    ],
+    "validationPatterns": [
+      "\\b(?:my|your|his|her|our|their)\\s+treat\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Não se preocupe, eu pago.",
+        "en": "Don’t worry, it’s my treat.",
+        "ptIntent": "eu pago",
+        "enIntent": "it’s my treat"
+      },
+      {
+        "pt": "Hoje é por nossa conta.",
+        "en": "Today, it’s our treat.",
+        "ptIntent": "é por nossa conta",
+        "enIntent": "it’s our treat"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "socializing",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "this-one-s-on-me-176ded46-0ce9-47d8-807f-e68c8bab5525",
+    "intention": "Essa é por minha conta",
+    "english": "This one's on me",
+    "pattern": "this/that + one + be + on + person",
+    "description": "Indica que alguém vai pagar a conta ou despesa.",
+    "category": "socializing",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "essa é por minha conta",
+      "this one's on me",
+      "this one s on me"
+    ],
+    "validationPatterns": [
+      "\\b(?:is|was|(?:\\x27|’)s)\\s+on\\s+(?:me|you|him|her|us|them)\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Essa é por minha conta.",
+        "en": "This one’s on me.",
+        "ptIntent": "Essa é por minha conta",
+        "enIntent": "This one’s on me"
+      },
+      {
+        "pt": "O jantar de hoje é por minha conta.",
+        "en": "Dinner tonight is on me.",
+        "ptIntent": "é por minha conta",
+        "enIntent": "is on me"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "socializing",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-excited-1bea15b5-9ce9-454b-9f36-2181da8084bf",
+    "intention": "Estou animado / Estou empolgado",
+    "english": "I'm excited",
+    "pattern": "subject + be + excited",
+    "description": "Expressa entusiasmo e expectativa positiva.",
+    "category": "feelings",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "estou animado",
+      "i'm excited",
+      "i m excited"
+    ],
+    "validationPatterns": [
+      "\\b(?:am|is|are|was|were|(?:i|you|we|they|he|she)(?:\\x27|’)(?:m|re|s))\\s+excited\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou animado com a viagem.",
+        "en": "I’m excited about the trip.",
+        "ptIntent": "Estou animado",
+        "enIntent": "I’m excited"
+      },
+      {
+        "pt": "Eles estão empolgados com a notícia.",
+        "en": "They’re excited about the news.",
+        "ptIntent": "estão empolgados",
+        "enIntent": "They’re excited"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "feelings",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-thrilled-5ba3bf01-aadc-42da-af4c-bfefbb802505",
+    "intention": "Estou radiante / Estou muito empolgado",
+    "english": "I'm thrilled",
+    "pattern": "subject + be + thrilled",
+    "description": "Expressa felicidade ou entusiasmo intensos.",
+    "category": "feelings",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "estou radiante",
+      "i'm thrilled",
+      "i m thrilled"
+    ],
+    "validationPatterns": [
+      "\\b(?:am|is|are|was|were|(?:i|you|we|they|he|she)(?:\\x27|’)(?:m|re|s))\\s+thrilled\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou radiante com a notícia.",
+        "en": "I’m thrilled about the news.",
+        "ptIntent": "Estou radiante",
+        "enIntent": "I’m thrilled"
+      },
+      {
+        "pt": "Ela ficou muito empolgada com a promoção.",
+        "en": "She was thrilled about the promotion.",
+        "ptIntent": "ficou muito empolgada",
+        "enIntent": "She was thrilled"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "feelings",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-proud-of-you-997e6401-1f38-4da2-9794-d0709371e9ad",
+    "intention": "Tenho orgulho de você",
+    "english": "I'm proud of you",
+    "pattern": "subject + be + proud of + person",
+    "description": "Expressa orgulho por esforço, conquista ou comportamento de alguém.",
+    "category": "feelings",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "tenho orgulho de você",
+      "i'm proud of you",
+      "i m proud of you"
+    ],
+    "validationPatterns": [
+      "\\bproud\\s+of\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Tenho orgulho de você.",
+        "en": "I’m proud of you.",
+        "ptIntent": "Tenho orgulho de você",
+        "enIntent": "I’m proud of you"
+      },
+      {
+        "pt": "Estamos orgulhosos da nossa equipe.",
+        "en": "We’re proud of our team.",
+        "ptIntent": "Estamos orgulhosos",
+        "enIntent": "We’re proud of"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "feelings",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-happy-for-you-5186b37b-3e2b-4c95-9506-47a769088517",
+    "intention": "Estou feliz por você",
+    "english": "I'm happy for you",
+    "pattern": "subject + be + happy for + person",
+    "description": "Expressa alegria por algo positivo que aconteceu com outra pessoa.",
+    "category": "feelings",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "estou feliz por você",
+      "i'm happy for you",
+      "i m happy for you"
+    ],
+    "validationPatterns": [
+      "\\bhappy\\s+for\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou feliz por você!",
+        "en": "I’m happy for you!",
+        "ptIntent": "Estou feliz por você",
+        "enIntent": "I’m happy for you"
+      },
+      {
+        "pt": "Estamos felizes por ela.",
+        "en": "We’re happy for her.",
+        "ptIntent": "Estamos felizes por",
+        "enIntent": "We’re happy for"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "feelings",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "that-really-helps-9795fb4e-3d4e-44f0-85d5-743507989298",
+    "intention": "Isso ajuda muito",
+    "english": "That really helps",
+    "pattern": "subject + really + help",
+    "description": "Reconhece que uma informação ou ação foi útil.",
+    "category": "feelings",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "isso ajuda muito",
+      "that really helps"
+    ],
+    "validationPatterns": [
+      "\\breally\\s+helps?\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Obrigado, isso ajuda muito.",
+        "en": "Thanks, that really helps.",
+        "ptIntent": "isso ajuda muito",
+        "enIntent": "that really helps"
+      },
+      {
+        "pt": "Sua explicação ajuda muito.",
+        "en": "Your explanation really helps.",
+        "ptIntent": "ajuda muito",
+        "enIntent": "really helps"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "feelings",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "that-s-very-useful-b69745f8-84c1-43ae-baff-6dc18e23d568",
+    "intention": "Isso é muito útil",
+    "english": "That's very useful",
+    "pattern": "subject + be + very useful",
+    "description": "Avalia algo como bastante útil.",
+    "category": "feelings",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "isso é muito útil",
+      "that's very useful",
+      "that s very useful"
+    ],
+    "validationPatterns": [
+      "\\bvery\\s+useful\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Isso é muito útil, obrigado.",
+        "en": "That’s very useful, thanks.",
+        "ptIntent": "Isso é muito útil",
+        "enIntent": "That’s very useful"
+      },
+      {
+        "pt": "Essas dicas são muito úteis.",
+        "en": "These tips are very useful.",
+        "ptIntent": "são muito úteis",
+        "enIntent": "are very useful"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "feelings",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-can-t-believe-it-27713a2f-eb42-42b8-b008-a8c47f7b75ff",
+    "intention": "Não acredito / Não consigo acreditar",
+    "english": "I can't believe it",
+    "pattern": "subject + cannot + believe + it",
+    "description": "Expressa surpresa, choque ou incredulidade.",
+    "category": "feelings",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "não acredito",
+      "i can't believe it",
+      "i can t believe it"
+    ],
+    "validationPatterns": [
+      "\\b(?:can\\s+not|cannot|can(?:\\x27|’)t)\\s+believe\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Não acredito! Nós ganhamos!",
+        "en": "I can’t believe it! We won!",
+        "ptIntent": "Não acredito",
+        "enIntent": "I can’t believe it"
+      },
+      {
+        "pt": "Ela não consegue acreditar na notícia.",
+        "en": "She can’t believe the news.",
+        "ptIntent": "não consegue acreditar",
+        "enIntent": "can’t believe"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "feelings",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "that-s-amazing-f9f3b95f-2834-4579-8f0f-371a9facd634",
+    "intention": "Isso é incrível",
+    "english": "That's amazing",
+    "pattern": "subject + be + amazing",
+    "description": "Expressa admiração ou surpresa positiva.",
+    "category": "feelings",
+    "englishLevel": "A1",
+    "searchTerms": [
+      "isso é incrível",
+      "that's amazing",
+      "that s amazing"
+    ],
+    "validationPatterns": [
+      "\\b(?:is|are|was|were|(?:\\x27|’)s|(?:\\x27|’)re)\\s+amazing\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Isso é incrível!",
+        "en": "That’s amazing!",
+        "ptIntent": "Isso é incrível",
+        "enIntent": "That’s amazing"
+      },
+      {
+        "pt": "Seu progresso é incrível.",
+        "en": "Your progress is amazing.",
+        "ptIntent": "é incrível",
+        "enIntent": "is amazing"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "feelings",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-grateful-0d2a2282-a965-4e20-a51d-74efaffa6600",
+    "intention": "Sou grato / Estou agradecido",
+    "english": "I'm grateful",
+    "pattern": "subject + be + grateful + for/to",
+    "description": "Expressa gratidão sincera.",
+    "category": "feelings",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "sou grato",
+      "i'm grateful",
+      "i m grateful"
+    ],
+    "validationPatterns": [
+      "\\bgrateful\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Sou grato pela sua ajuda.",
+        "en": "I’m grateful for your help.",
+        "ptIntent": "Sou grato",
+        "enIntent": "I’m grateful"
+      },
+      {
+        "pt": "Estamos agradecidos a todos vocês.",
+        "en": "We’re grateful to all of you.",
+        "ptIntent": "Estamos agradecidos",
+        "enIntent": "We’re grateful"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "feelings",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-appreciate-it-67f77f4b-d6ba-4746-b477-ec78319a1ccf",
+    "intention": "Eu agradeço / Agradeço muito",
+    "english": "I appreciate it",
+    "pattern": "subject + appreciate + object",
+    "description": "Expressa agradecimento e reconhecimento por algo.",
+    "category": "feelings",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "eu agradeço",
+      "i appreciate it"
+    ],
+    "validationPatterns": [
+      "\\bappreciat(?:e|es|ed|ing)\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Eu agradeço muito sua ajuda.",
+        "en": "I really appreciate your help.",
+        "ptIntent": "Eu agradeço muito",
+        "enIntent": "I really appreciate"
+      },
+      {
+        "pt": "Obrigado, eu agradeço.",
+        "en": "Thanks, I appreciate it.",
+        "ptIntent": "eu agradeço",
+        "enIntent": "I appreciate it"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "feelings",
+      "high-frequency"
+    ],
+    "related": []
+  }
 
 
   ]
