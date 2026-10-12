@@ -61,6 +61,7 @@ export function IntentionDetails({
   const [copySectionError, setCopySectionError] = useState<string | null>(null);
   const [speechError, setSpeechError] = useState<string | null>(null);
   const [hqImage, setHqImage] = useState<string | null>(null);
+  const [showMetadataModal, setShowMetadataModal] = useState(false);
   const [shareError, setShareError] = useState<string | null>(null);
   const [hqZoom, setHqZoom] = useState(1);
   const hqViewportRef = useRef<HTMLDivElement | null>(null);
@@ -86,6 +87,7 @@ export function IntentionDetails({
     setCopySectionError(null);
     setSpeechError(null);
     setHqImage(null);
+    setShowMetadataModal(false);
     setShareError(null);
     setHqZoom(1);
   }, [item?.id]);
@@ -158,6 +160,20 @@ export function IntentionDetails({
       document.documentElement.style.overflow = previousHtmlOverflow;
     };
   }, [hqImage]);
+
+  useEffect(() => {
+    if (!showMetadataModal) return;
+
+    function handleMetadataEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        event.stopImmediatePropagation();
+        setShowMetadataModal(false);
+      }
+    }
+
+    window.addEventListener("keydown", handleMetadataEscape, true);
+    return () => window.removeEventListener("keydown", handleMetadataEscape, true);
+  }, [showMetadataModal]);
 
   function handleScrollHqVertical(direction: "up" | "down") {
     const viewport = hqViewportRef.current;
@@ -446,7 +462,7 @@ Mandatório:
 
     clonedPanel
       .querySelectorAll(
-        ".close-button, .training-actions, .copy-section-button, .example .secondary-button, [role='dialog'][aria-label='Visualização da HQ']"
+        ".close-button, .training-actions, .copy-section-button, .example .secondary-button, [role='dialog'][aria-label='Visualização da HQ'], [role='dialog'][aria-label='Tags e termos de busca']"
       )
       .forEach((element) => element.remove());
 
@@ -732,6 +748,18 @@ Mandatório:
             title={`Intenção: ${item.intention}`}
             blocks={(item.examples ?? []).map((example) => ({ original: example.en, portuguese: example.pt }))}
           />
+          {isAuthorMode() && (
+            <button
+              type="button"
+              className="secondary-button"
+              onClick={() => setShowMetadataModal(true)}
+              title="Visualizar tags e searchTerms desta intenção"
+              aria-label="Ver tags e termos de busca"
+            >
+              <span aria-hidden="true">🏷️</span>
+              <span>Tags e termos</span>
+            </button>
+          )}
         </div>
 
         {copySectionError && (
@@ -1068,18 +1096,6 @@ Mandatório:
           </section>
         )}
 
-        {item.tags && item.tags.length > 0 && (
-          <section>
-            <h3>Tags</h3>
-            <div className="tag-list">
-              {item.tags.map((tag) => (
-                <span className="pill" key={tag}>
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </section>
-        )}
 
         {relatedItems.length > 0 && (
           <section>
@@ -1098,6 +1114,90 @@ Mandatório:
               ))}
             </div>
           </section>
+        )}
+
+        {isAuthorMode() && showMetadataModal && (
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Tags e termos de busca"
+            onMouseDown={(event) => {
+              event.stopPropagation();
+              if (event.target === event.currentTarget) {
+                setShowMetadataModal(false);
+              }
+            }}
+            style={{
+              position: "fixed",
+              inset: 0,
+              zIndex: 10002,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "1rem",
+              background: "rgba(0, 0, 0, 0.65)"
+            }}
+          >
+            <div
+              className="detail-panel"
+              style={{
+                position: "relative",
+                width: "min(100%, 36rem)",
+                maxWidth: "36rem",
+                maxHeight: "min(85dvh, 760px)",
+                minHeight: 0,
+                overflowY: "auto",
+                padding: "1.5rem",
+                borderRadius: "14px"
+              }}
+            >
+              <button
+                type="button"
+                className="close-button"
+                onClick={() => setShowMetadataModal(false)}
+                aria-label="Fechar tags e termos de busca"
+                title="Fechar"
+              >
+                ×
+              </button>
+              <p className="eyebrow">Modo Autor</p>
+              <h2 style={{ marginRight: "2rem" }}>Tags e termos de busca</h2>
+              <p style={{ overflowWrap: "anywhere" }}>{item.intention}</p>
+              <section>
+                <h3>searchTerms ({item.searchTerms?.length ?? 0})</h3>
+                {item.searchTerms?.length ? (
+                  <div className="tag-list">
+                    {item.searchTerms.map((term, index) => (
+                      <span className="pill" key={`${term}-${index}`}>{term}</span>
+                    ))}
+                  </div>
+                ) : (
+                  <p>Nenhum termo de busca cadastrado.</p>
+                )}
+              </section>
+              <section>
+                <h3>tags ({item.tags?.length ?? 0})</h3>
+                {item.tags?.length ? (
+                  <div className="tag-list">
+                    {item.tags.map((tag, index) => (
+                      <span className="pill" key={`${tag}-${index}`}>{tag}</span>
+                    ))}
+                  </div>
+                ) : (
+                  <p>Nenhuma tag cadastrada.</p>
+                )}
+              </section>
+              <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "1rem" }}>
+                <button
+                  type="button"
+                  className="secondary-button"
+                  onClick={() => setShowMetadataModal(false)}
+                >
+                  Fechar
+                </button>
+              </div>
+            </div>
+          </div>
         )}
 
         {hqImage && (
