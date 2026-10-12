@@ -445,6 +445,100 @@ Mandatório:
     }
   }
 
+  function handlePrintExamples() {
+    if (!item?.examples?.length) return;
+
+    const printWindow = window.open("", "_blank");
+    if (!printWindow) return;
+
+    const doc = printWindow.document;
+    doc.title = `Exemplos - ${item.intention}`;
+
+    const style = doc.createElement("style");
+    style.textContent = `
+      @page { size: A4 portrait; margin: 15mm; }
+      body { font-family: Arial, Helvetica, sans-serif; color: #172033; margin: 0; }
+      h1 { font-size: 20pt; margin: 0 0 5mm; }
+      .subtitle { color: #475569; font-size: 12pt; margin-bottom: 10mm; }
+      .example-print { break-inside: avoid; page-break-inside: avoid;
+        padding: 4mm 0; border-bottom: 1px solid #e2e8f0; }
+      .number { font-size: 9pt; color: #64748b; margin-bottom: 2mm; }
+      .pt, .en { font-size: 12pt; line-height: 1.5; margin: 2mm 0; }
+      .en { color: #1d4ed8; }
+      strong { font-weight: 700; }
+    `;
+    doc.head.appendChild(style);
+
+    const title = doc.createElement("h1");
+    title.textContent = `Exemplos — ${item.intention}`;
+    doc.body.appendChild(title);
+
+    const subtitle = doc.createElement("div");
+    subtitle.className = "subtitle";
+    subtitle.textContent = item.english;
+    doc.body.appendChild(subtitle);
+
+    function appendHighlightedText(element: HTMLElement, value: string, highlight?: string) {
+      const index = highlight ? value.indexOf(highlight) : -1;
+      if (index < 0 || !highlight) {
+        element.textContent = value;
+        return;
+      }
+      element.appendChild(doc.createTextNode(value.slice(0, index)));
+      const strong = doc.createElement("strong");
+      strong.textContent = highlight;
+      element.appendChild(strong);
+      element.appendChild(doc.createTextNode(value.slice(index + highlight.length)));
+    }
+
+    item.examples.forEach((example, index) => {
+      const wrapper = doc.createElement("div");
+      wrapper.className = "example-print";
+      const number = doc.createElement("div");
+      number.className = "number";
+      number.textContent = `Exemplo ${index + 1}`;
+      wrapper.appendChild(number);
+
+      const pt = doc.createElement("p");
+      pt.className = "pt";
+      appendHighlightedText(pt, example.pt, example.ptIntent);
+      wrapper.appendChild(pt);
+
+      const en = doc.createElement("p");
+      en.className = "en";
+      appendHighlightedText(en, example.en, example.enIntent);
+      wrapper.appendChild(en);
+      doc.body.appendChild(wrapper);
+    });
+
+    // Fecha a aba temporária tanto após imprimir quanto após cancelar.
+    // O fallback por foco cobre navegadores que não disparam afterprint.
+    let printStarted = false;
+    let closed = false;
+
+    const closePrintWindow = () => {
+      if (closed || printWindow.closed) return;
+      closed = true;
+      printWindow.close();
+    };
+
+    const handleReturnToPrintWindow = () => {
+      if (!printStarted) return;
+      // Aguarda a finalização do diálogo antes de tentar fechar.
+      window.setTimeout(closePrintWindow, 350);
+    };
+
+    printWindow.addEventListener("afterprint", closePrintWindow, { once: true });
+    printWindow.addEventListener("focus", handleReturnToPrintWindow);
+
+    printWindow.setTimeout(() => {
+      if (printWindow.closed) return;
+      printWindow.focus();
+      printStarted = true;
+      printWindow.print();
+    }, 200);
+  }
+
   function handlePrintIntention() {
     const panel = detailPanelRef.current;
 
@@ -859,6 +953,26 @@ Mandatório:
                     <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
                   </svg>
                 )}
+              </button>
+              <button
+                type="button"
+                className="secondary-button copy-section-button"
+                onClick={handlePrintExamples}
+                title="Imprimir exemplos em português e inglês"
+                aria-label="Imprimir exemplos em português e inglês"
+                style={{
+                  width: "2.25rem",
+                  minWidth: "2.25rem",
+                  height: "2.25rem",
+                  minHeight: "2.25rem",
+                  padding: 0,
+                  borderRadius: "999px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}
+              >
+                <span aria-hidden="true">🖨️</span>
               </button>
             </div>
             <div className="examples">
