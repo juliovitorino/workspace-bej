@@ -1,3 +1,4 @@
+import { isAuthorMode } from "../utils/authorMode";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
@@ -244,9 +245,10 @@ export function ConnectedSpeechButton({ title, blocks, label = "Connected Speech
     };
   }, [popup]);
 
-  if (!desktop || blocks.length === 0) return null;
+  if (!desktop || blocks.length === 0 || !isAuthorMode()) return null;
 
   function openStudio() {
+    if (!isAuthorMode()) return;
     if (popup && !popup.closed) { popup.focus(); return; }
     const newWindow = window.open("", "_blank");
     if (!newWindow) { setError("O navegador bloqueou a nova aba. Permita pop-ups para este site."); return; }

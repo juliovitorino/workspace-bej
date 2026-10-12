@@ -1,3 +1,4 @@
+import { isAuthorMode } from "../utils/authorMode";
 export interface GoogleTranslationResult {
   translatedText: string;
   detectedSourceLanguage?: string;
@@ -33,6 +34,7 @@ async function translateText(
   source: GoogleTranslateLanguage,
   target: GoogleTranslateLanguage
 ): Promise<GoogleTranslationResult> {
+  if (!isAuthorMode()) throw new Error("Recurso exclusivo do Modo Autor.");
   const normalizedText = text.trim();
 
   if (!normalizedText) {

@@ -1,3 +1,4 @@
+import { isAuthorMode } from "../utils/authorMode";
 import type { MentalIntention } from "../types/hashmap";
 
 export type TrainingEvaluationMode = "basic" | "advanced";
@@ -189,6 +190,7 @@ function normalizeResult(
 export async function evaluateTrainingWithAI(
   request: AIEvaluationRequest
 ): Promise<AIEvaluationResult> {
+  if (!isAuthorMode()) throw new Error("Recurso exclusivo do Modo Autor.");
   if (!GEMINI_API_KEY) {
     throw new Error(
       "VITE_GEMINI_API_KEY não foi configurada no arquivo .env."

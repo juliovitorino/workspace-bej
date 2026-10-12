@@ -1,3 +1,4 @@
+import { isAuthorMode } from "../utils/authorMode";
 import {
   useEffect,
   useMemo,
@@ -535,7 +536,7 @@ export function InterpretationPanel({
   }
 
   function handleOpenExportJson() {
-    if (!story || story.source !== "ai") {
+    if (!isAuthorMode() || !story || story.source !== "ai") {
       return;
     }
 
@@ -588,6 +589,7 @@ export function InterpretationPanel({
   }
 
   async function handleCopyJson() {
+    if (!isAuthorMode()) return;
     if (!exportJson) {
       return;
     }
@@ -630,7 +632,7 @@ export function InterpretationPanel({
   }
 
   async function handleCopyLocalStoryForHq() {
-    if (!story || story.source !== "local") {
+    if (!isAuthorMode() || !story || story.source !== "local") {
       return;
     }
 
@@ -1176,6 +1178,7 @@ export function InterpretationPanel({
   }
 
   function handleDownloadJson() {
+    if (!isAuthorMode()) return;
     if (!exportJson || !exportFileName) {
       return;
     }
@@ -1628,7 +1631,7 @@ export function InterpretationPanel({
                 compact
               />
 
-              {story.source === "local" && (
+              {isAuthorMode() && story.source === "local" && (
                 <button
                   type="button"
                   className="secondary-button"
@@ -1681,7 +1684,7 @@ export function InterpretationPanel({
                   </button>
                 )}
 
-              {story.source === "ai" && (
+              {isAuthorMode() && story.source === "ai" && (
                 <button
                   type="button"
                   className="secondary-button"
@@ -2253,7 +2256,7 @@ export function InterpretationPanel({
               </div>
             )}
 
-          {exportJson && (
+          {isAuthorMode() && exportJson && (
             <div
               role="dialog"
               aria-modal="true"

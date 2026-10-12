@@ -1,3 +1,4 @@
+import { isAuthorMode } from "../utils/authorMode";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import {
@@ -576,6 +577,7 @@ export function BasicTraining({
   }
 
   async function handleEvaluate() {
+    if (!isAuthorMode()) return;
     if (
       !trainingItems.verb ||
       !trainingItems.adjective ||
@@ -621,6 +623,7 @@ export function BasicTraining({
   }
 
   async function handleGoogleTranslate() {
+    if (!isAuthorMode()) return;
     if (!studentText.trim()) {
       setTranslationError(
         "Escreva ou dite uma frase antes de solicitar a tradução."
@@ -1233,7 +1236,7 @@ export function BasicTraining({
             )}
 
             <div className="training-action-buttons">
-              {AI_ENABLED && (
+              {AI_ENABLED && isAuthorMode() && (
                 <button
                   type="button"
                   className="primary-button"
@@ -1246,7 +1249,8 @@ export function BasicTraining({
                 </button>
               )}
 
-              <button
+              {isAuthorMode() && (
+                <button
                 type="button"
                 className="secondary-button"
                 onClick={handleGoogleTranslate}
@@ -1256,17 +1260,18 @@ export function BasicTraining({
                   ? "Traduzindo..."
                   : "Traduzir com Google"}
               </button>
+              )}
             </div>
           </div>
 
-          {translationError && (
+          {isAuthorMode() && translationError && (
             <div className="status-card error-card google-translation-error">
               <h2>Não foi possível traduzir a frase.</h2>
               <p>{translationError}</p>
             </div>
           )}
 
-          {googleTranslation && (
+          {isAuthorMode() && googleTranslation && (
             <>
               <section className="status-card google-translation-card" ref={googleTranslationCardRef}>
                 <p className="eyebrow">Tradução do Google</p>
@@ -1294,14 +1299,14 @@ export function BasicTraining({
             </div>
           )}
 
-          {AI_ENABLED && evaluationError && (
+          {AI_ENABLED && isAuthorMode() && evaluationError && (
             <div className="status-card error-card ai-evaluation-error">
               <h2>Não foi possível avaliar a frase.</h2>
               <p>{evaluationError}</p>
             </div>
           )}
 
-          {AI_ENABLED && evaluation && (
+          {AI_ENABLED && isAuthorMode() && evaluation && (
             <>
             <section className="ai-evaluation-card" ref={aiEvaluationCardRef}>
               <div className="ai-evaluation-header">

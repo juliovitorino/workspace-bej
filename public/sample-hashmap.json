@@ -28357,6 +28357,503 @@
     "daily-conversation"
   ],
   "related": []
+},
+
+  {
+    "id": "a-lot-of-4b7c1e92-6a35-4d08-9f21-8c5a7e3b102d",
+    "intention": "Muito / muita / muitos / muitas",
+    "english": "A lot of",
+    "pattern": "a lot of + countable plural noun / uncountable noun",
+    "description": "Expressa grande quantidade de maneira natural e neutra. Pode acompanhar substantivos contáveis no plural ou incontáveis.",
+    "englishLevel": "A1",
+    "category": "Quantity",
+    "validationPatterns": [
+      "\\ba\\s+lot\\s+of\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Eu tenho muitos livros em casa.",
+        "en": "I have a lot of books at home.",
+        "ptIntent": "muitos",
+        "enIntent": "a lot of"
+      },
+      {
+        "pt": "Ela tem muito trabalho para fazer.",
+        "en": "She has a lot of work to do.",
+        "ptIntent": "muito",
+        "enIntent": "a lot of"
+      },
+      {
+        "pt": "Nós aprendemos muitas expressões novas.",
+        "en": "We learned a lot of new expressions.",
+        "ptIntent": "muitas",
+        "enIntent": "a lot of"
+      },
+      {
+        "pt": "Há muita gente na academia hoje.",
+        "en": "There are a lot of people at the gym today.",
+        "ptIntent": "muita gente",
+        "enIntent": "a lot of"
+      },
+      {
+        "pt": "Eu não tenho muito tempo livre.",
+        "en": "I don't have a lot of free time.",
+        "ptIntent": "muito",
+        "enIntent": "a lot of"
+      }
+    ],
+    "searchTerms": [
+      "muito",
+      "muita",
+      "muitos",
+      "muitas",
+      "a lot of",
+      "grande quantidade"
+    ],
+    "tags": [
+      "quantity",
+      "high-frequency",
+      "countable",
+      "uncountable"
+    ],
+    "related": []
+  },
+  {
+    "id": "a-bunch-of-8e2f5a41-3c76-4b19-a0d8-2f9e6c1b7453",
+    "intention": "Um monte de / vários",
+    "english": "A bunch of",
+    "pattern": "a bunch of + plural noun / collective noun",
+    "description": "Expressa um grupo ou uma quantidade considerável de coisas ou pessoas. É muito comum na conversação informal. Também pode indicar um conjunto físico, como um cacho de bananas.",
+    "englishLevel": "A2",
+    "category": "Quantity",
+    "validationPatterns": [
+      "\\ba\\s+bunch\\s+of\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Eu tenho um monte de coisas para fazer.",
+        "en": "I have a bunch of things to do.",
+        "ptIntent": "um monte de",
+        "enIntent": "a bunch of"
+      },
+      {
+        "pt": "Ele fez um monte de perguntas.",
+        "en": "He asked a bunch of questions.",
+        "ptIntent": "um monte de",
+        "enIntent": "a bunch of"
+      },
+      {
+        "pt": "Conheci um monte de pessoas interessantes.",
+        "en": "I met a bunch of interesting people.",
+        "ptIntent": "um monte de",
+        "enIntent": "a bunch of"
+      },
+      {
+        "pt": "Tem um monte de arquivos nessa pasta.",
+        "en": "There are a bunch of files in this folder.",
+        "ptIntent": "um monte de",
+        "enIntent": "a bunch of"
+      },
+      {
+        "pt": "Comprei um cacho de bananas.",
+        "en": "I bought a bunch of bananas.",
+        "ptIntent": "um cacho de",
+        "enIntent": "a bunch of"
+      }
+    ],
+    "searchTerms": [
+      "um monte de",
+      "vários",
+      "várias",
+      "um grupo de",
+      "um cacho de",
+      "a bunch of"
+    ],
+    "tags": [
+      "quantity",
+      "informal",
+      "spoken-english",
+      "collective"
+    ],
+    "related": []
+  },
+  {
+    "id": "plenty-of-1a6d9c42-5e73-4b80-92f1-c7d3e8a6054b",
+    "intention": "Bastante / de sobra / mais do que suficiente",
+    "english": "Plenty of",
+    "pattern": "plenty of + countable plural noun / uncountable noun",
+    "description": "Expressa uma quantidade abundante ou suficiente, frequentemente com a ideia de que não há necessidade de preocupação. Pode acompanhar substantivos contáveis e incontáveis.",
+    "englishLevel": "A2",
+    "category": "Quantity",
+    "validationPatterns": [
+      "\\bplenty\\s+of\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Temos bastante tempo.",
+        "en": "We have plenty of time.",
+        "ptIntent": "bastante",
+        "enIntent": "plenty of"
+      },
+      {
+        "pt": "Há comida de sobra para todos.",
+        "en": "There's plenty of food for everyone.",
+        "ptIntent": "de sobra",
+        "enIntent": "plenty of"
+      },
+      {
+        "pt": "Você terá muitas oportunidades para praticar.",
+        "en": "You'll have plenty of opportunities to practice.",
+        "ptIntent": "muitas oportunidades",
+        "enIntent": "plenty of"
+      },
+      {
+        "pt": "Ainda temos bastante espaço.",
+        "en": "We still have plenty of room.",
+        "ptIntent": "bastante",
+        "enIntent": "plenty of"
+      },
+      {
+        "pt": "Há muitos motivos para continuar tentando.",
+        "en": "There are plenty of reasons to keep trying.",
+        "ptIntent": "muitos",
+        "enIntent": "plenty of"
+      }
+    ],
+    "searchTerms": [
+      "bastante",
+      "de sobra",
+      "mais do que suficiente",
+      "abundante",
+      "plenty of"
+    ],
+    "tags": [
+      "quantity",
+      "sufficiency",
+      "abundance",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "heaps-of-6c3e1a85-9d42-4f70-b6a1-e8c259d0347f",
+    "intention": "Um montão de / uma porção de",
+    "english": "Heaps of",
+    "pattern": "heaps of + plural noun / uncountable noun",
+    "description": "Expressão informal para uma grande quantidade. É especialmente comum no inglês britânico, australiano e neozelandês. Pode ser usada com substantivos contáveis e incontáveis.",
+    "englishLevel": "B1",
+    "category": "Quantity",
+    "validationPatterns": [
+      "\\bheaps\\s+of\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Tenho um montão de trabalho hoje.",
+        "en": "I've got heaps of work today.",
+        "ptIntent": "um montão de",
+        "enIntent": "heaps of"
+      },
+      {
+        "pt": "Ela tem um montão de amigos.",
+        "en": "She has heaps of friends.",
+        "ptIntent": "um montão de",
+        "enIntent": "heaps of"
+      },
+      {
+        "pt": "Ainda temos tempo de sobra.",
+        "en": "We've still got heaps of time.",
+        "ptIntent": "de sobra",
+        "enIntent": "heaps of"
+      },
+      {
+        "pt": "Recebemos um montão de mensagens.",
+        "en": "We received heaps of messages.",
+        "ptIntent": "um montão de",
+        "enIntent": "heaps of"
+      },
+      {
+        "pt": "Aprendi um montão de coisas novas.",
+        "en": "I learned heaps of new things.",
+        "ptIntent": "um montão de",
+        "enIntent": "heaps of"
+      }
+    ],
+    "searchTerms": [
+      "um montão de",
+      "uma porção de",
+      "muito",
+      "muitos",
+      "heaps of"
+    ],
+    "tags": [
+      "quantity",
+      "informal",
+      "british-english",
+      "australian-english",
+      "abundance"
+    ],
+    "related": []
+  },
+  {
+    "id": "tons-of-2d8f4b61-7a93-4c05-8e16-f3b9a2d7506c",
+    "intention": "Toneladas de / um monte de",
+    "english": "Tons of",
+    "pattern": "tons of + plural noun / uncountable noun",
+    "description": "Expressão informal e enfática para indicar uma quantidade muito grande. Não precisa representar toneladas literalmente. É comum no inglês americano e em conversas cotidianas.",
+    "englishLevel": "A2",
+    "category": "Quantity",
+    "validationPatterns": [
+      "\\btons\\s+of\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Tenho toneladas de trabalho para fazer.",
+        "en": "I have tons of work to do.",
+        "ptIntent": "toneladas de",
+        "enIntent": "tons of"
+      },
+      {
+        "pt": "Ela tem um monte de ideias.",
+        "en": "She has tons of ideas.",
+        "ptIntent": "um monte de",
+        "enIntent": "tons of"
+      },
+      {
+        "pt": "Existem toneladas de vídeos sobre isso.",
+        "en": "There are tons of videos about it.",
+        "ptIntent": "toneladas de",
+        "enIntent": "tons of"
+      },
+      {
+        "pt": "Nós nos divertimos muito na viagem.",
+        "en": "We had tons of fun on the trip.",
+        "ptIntent": "muito",
+        "enIntent": "tons of"
+      },
+      {
+        "pt": "Você tem um monte de oportunidades pela frente.",
+        "en": "You have tons of opportunities ahead of you.",
+        "ptIntent": "um monte de",
+        "enIntent": "tons of"
+      }
+    ],
+    "searchTerms": [
+      "toneladas de",
+      "um monte de",
+      "muitíssimo",
+      "grande quantidade",
+      "tons of"
+    ],
+    "tags": [
+      "quantity",
+      "informal",
+      "emphasis",
+      "american-english"
+    ],
+    "related": []
+  },
+  {
+    "id": "bazillion-9f2a6c18-4d75-4b30-a8e1-c5f7d09263ab",
+    "intention": "Um milhão de / um zilhão de / uma quantidade absurda de",
+    "english": "A bazillion / Bazillions of",
+    "pattern": "a bazillion + plural noun / bazillions of + plural noun",
+    "description": "Expressão hiperbólica e extremamente informal para uma quantidade enorme e indefinida. Bazillion não representa um número matemático real. A construção a bazillion acompanha diretamente um substantivo plural; bazillions of utiliza a preposição of.",
+    "englishLevel": "B2",
+    "category": "Quantity",
+    "validationPatterns": [
+      "\\ba\\s+bazillion\\b",
+      "\\bbazillions\\s+of\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Já te falei isso um milhão de vezes!",
+        "en": "I've told you that a bazillion times!",
+        "ptIntent": "um milhão de vezes",
+        "enIntent": "a bazillion times"
+      },
+      {
+        "pt": "Tenho um zilhão de coisas para fazer.",
+        "en": "I have a bazillion things to do.",
+        "ptIntent": "um zilhão de",
+        "enIntent": "a bazillion"
+      },
+      {
+        "pt": "Existem zilhões de vídeos na internet.",
+        "en": "There are bazillions of videos on the internet.",
+        "ptIntent": "zilhões de",
+        "enIntent": "bazillions of"
+      },
+      {
+        "pt": "Ela me fez um milhão de perguntas.",
+        "en": "She asked me a bazillion questions.",
+        "ptIntent": "um milhão de",
+        "enIntent": "a bazillion"
+      },
+      {
+        "pt": "Tenho zilhões de ideias para o meu canal.",
+        "en": "I've got bazillions of ideas for my channel.",
+        "ptIntent": "zilhões de",
+        "enIntent": "bazillions of"
+      }
+    ],
+    "searchTerms": [
+      "um zilhão de",
+      "zilhões de",
+      "um milhão de",
+      "quantidade absurda",
+      "trocentos",
+      "trocentas",
+      "bazillion",
+      "a bazillion",
+      "bazillions of"
+    ],
+    "tags": [
+      "quantity",
+      "hyperbole",
+      "informal",
+      "exaggeration",
+      "spoken-english"
+    ],
+    "related": []
+  },
+  {
+  "id": "nao-e-que-d2b8c6cb-3fff-4923-a147-faaa35b07bf0",
+  "intention": "Não é que...",
+  "english": "It's not that... / It's not like...",
+  "pattern": "It's not that + subject + clause / It's not like + subject + clause / It's not that ... It's just that ...",
+  "description": "Usado para esclarecer uma impressão equivocada, explicar o verdadeiro motivo de uma atitude ou fazer uma ressalva. 'It's not that...' costuma ser mais neutro; 'It's not like...' é uma alternativa informal que pode soar defensiva conforme o contexto. 'It's not that... It's just that...' contrasta a interpretação incorreta com a explicação real. O sujeito pode variar (I, you, he, she, we, they etc.) e a oração pode ser afirmativa ou negativa.",
+  "englishLevel": "B1",
+  "category": "Explanations and Clarifications",
+  "validationPatterns": [
+    "\\bit(?:'|’)s\\s+not\\s+that\\b",
+    "\\bit\\s+is\\s+not\\s+that\\b",
+    "\\bit(?:'|’)s\\s+not\\s+like\\b",
+    "\\bit\\s+is\\s+not\\s+like\\b"
+  ],
+  "examples": [
+    {
+      "pt": "Não é que eu goste de fazer isso. É que eu tenho que fazer.",
+      "en": "It's not that I like doing it. I just have to.",
+      "ptIntent": "Não é que eu goste",
+      "enIntent": "It's not that I like"
+    },
+    {
+      "pt": "Não é que eu não goste de jogar bola. É que eu não tenho mais tempo.",
+      "en": "It's not that I don't like playing soccer. I just don't have time anymore.",
+      "ptIntent": "Não é que eu não goste",
+      "enIntent": "It's not that I don't like"
+    },
+    {
+      "pt": "Não é que eu não queira.",
+      "en": "It's not that I don't want to.",
+      "ptIntent": "Não é que eu não queira",
+      "enIntent": "It's not that I don't want to"
+    },
+    {
+      "pt": "Não é que eu não saiba.",
+      "en": "It's not that I don't know.",
+      "ptIntent": "Não é que eu não saiba",
+      "enIntent": "It's not that I don't know"
+    },
+    {
+      "pt": "Não é que eu tenha medo.",
+      "en": "It's not that I'm afraid.",
+      "ptIntent": "Não é que eu tenha medo",
+      "enIntent": "It's not that I'm afraid"
+    },
+    {
+      "pt": "Não é que eu não goste dela.",
+      "en": "It's not that I don't like her.",
+      "ptIntent": "Não é que eu não goste dela",
+      "enIntent": "It's not that I don't like her"
+    },
+    {
+      "pt": "Não é que eu não tenha dinheiro.",
+      "en": "It's not that I don't have money.",
+      "ptIntent": "Não é que eu não tenha dinheiro",
+      "enIntent": "It's not that I don't have money"
+    },
+    {
+      "pt": "Não é que eu não confie em você.",
+      "en": "It's not that I don't trust you.",
+      "ptIntent": "Não é que eu não confie em você",
+      "enIntent": "It's not that I don't trust you"
+    },
+    {
+      "pt": "Não é que eu esteja reclamando.",
+      "en": "It's not that I'm complaining.",
+      "ptIntent": "Não é que eu esteja reclamando",
+      "enIntent": "It's not that I'm complaining"
+    },
+    {
+      "pt": "Não é que eu não queira aprender inglês.",
+      "en": "It's not that I don't want to learn English.",
+      "ptIntent": "Não é que eu não queira",
+      "enIntent": "It's not that I don't want to"
+    },
+    {
+      "pt": "Não é que eu não queira. É que estou cansado.",
+      "en": "It's not that I don't want to. It's just that I'm tired.",
+      "ptIntent": "Não é que eu não queira",
+      "enIntent": "It's not that I don't want to"
+    },
+    {
+      "pt": "Não é que eu não queira te ajudar.",
+      "en": "It's not like I don't want to help you.",
+      "ptIntent": "Não é que eu não queira",
+      "enIntent": "It's not like I don't want to"
+    },
+    {
+      "pt": "Não é que ela não se importe. É que ela está ocupada.",
+      "en": "It's not that she doesn't care. It's just that she's busy.",
+      "ptIntent": "Não é que ela não se importe",
+      "enIntent": "It's not that she doesn't care"
+    },
+    {
+      "pt": "Não é que ele seja preguiçoso. É que ele está exausto.",
+      "en": "It's not that he's lazy. It's just that he's exhausted.",
+      "ptIntent": "Não é que ele seja preguiçoso",
+      "enIntent": "It's not that he's lazy"
+    },
+    {
+      "pt": "Não é que a gente não goste da ideia. É que precisamos de mais tempo.",
+      "en": "It's not that we don't like the idea. It's just that we need more time.",
+      "ptIntent": "Não é que a gente não goste",
+      "enIntent": "It's not that we don't like"
+    },
+    {
+      "pt": "Não é que eles não queiram participar.",
+      "en": "It's not that they don't want to participate.",
+      "ptIntent": "Não é que eles não queiram",
+      "enIntent": "It's not that they don't want to"
+    }
+  ],
+  "searchTerms": [
+    "não é que",
+    "não é que eu",
+    "não é que eu não",
+    "não é que ele",
+    "não é que ela",
+    "não é que a gente",
+    "é que",
+    "não é bem isso",
+    "esclarecer",
+    "justificar",
+    "it's not that",
+    "it's not like",
+    "it's just that"
+  ],
+  "tags": [
+    "clarification",
+    "explanation",
+    "contrast",
+    "misunderstanding",
+    "spoken-english",
+    "high-frequency",
+    "its-not-that",
+    "its-not-like"
+  ],
+  "related": []
 }
 
   ]
