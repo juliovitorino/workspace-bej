@@ -820,31 +820,43 @@ Mandatório:
             )}
             {youtubeVideoUrl && (
               <a
-                className="pill"
+                className="youtube-image-link"
                 href={youtubeVideoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Abrir vídeo no YouTube em nova aba"
                 aria-label="Ver vídeo desta intenção no YouTube (nova aba)"
-                style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem", textDecoration: "none", cursor: "pointer" }}
+                style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", textDecoration: "none", cursor: "pointer" }}
               >
-                <span aria-hidden="true" style={{ color: "#dc2626" }}>▶</span>
-                Ver vídeo
+                <img
+                  src="/images/youtube-video.png"
+                  alt=""
+                  aria-hidden="true"
+                  width={34}
+                  height={34}
+                  style={{ display: "block", width: "34px", height: "34px", objectFit: "contain" }}
+                />
               </a>
             )}
 
             {youtubeShortUrl && (
               <a
-                className="pill"
+                className="youtube-image-link"
                 href={youtubeShortUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Abrir Short no YouTube em nova aba"
                 aria-label="Ver Short desta intenção no YouTube (nova aba)"
-                style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem", textDecoration: "none", cursor: "pointer" }}
+                style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", textDecoration: "none", cursor: "pointer" }}
               >
-                <span aria-hidden="true" style={{ color: "#dc2626" }}>▶</span>
-                Ver Short
+                <img
+                  src="/images/youtube-short.png"
+                  alt=""
+                  aria-hidden="true"
+                  width={34}
+                  height={34}
+                  style={{ display: "block", width: "34px", height: "34px", objectFit: "contain" }}
+                />
               </a>
             )}
           </div>
