@@ -36104,7 +36104,135 @@
       "discourse"
     ],
     "related": []
-  }
+  },
+  {
+  "id": "5461eec2-0be7-4489-a133-25fc4557667f",
+  "intention": "Nunca foi tão fácil",
+  "english": "It's never been easier",
+  "pattern": "It's never been easier + to + verb / Subject + has/have never been easier",
+  "description": "Usado para afirmar que algo está mais fácil agora do que em qualquer momento anterior. A construção mais comum é “It’s never been easier to + verbo”.",
+  "category": "daily-conversation",
+  "englishLevel": "B1",
+  "searchTerms": [
+    "nunca foi tão fácil",
+    "never been easier",
+    "mais fácil do que nunca",
+    "it has never been easier"
+  ],
+  "validationPatterns": [
+    "(?i)\\b(?:it['’]?s|it has) never been easier\\b",
+    "(?i)\\b(?:has|have) never been easier\\b"
+  ],
+  "examples": [
+    {
+      "pt": "Nunca foi tão fácil aprender inglês.",
+      "en": "It's never been easier to learn English.",
+      "ptIntent": "Nunca foi tão fácil",
+      "enIntent": "It's never been easier"
+    },
+    {
+      "pt": "Nunca foi tão fácil trabalhar de casa.",
+      "en": "It's never been easier to work from home.",
+      "ptIntent": "Nunca foi tão fácil",
+      "enIntent": "It's never been easier"
+    },
+    {
+      "pt": "Nunca foi tão fácil se conectar com pessoas do mundo inteiro.",
+      "en": "It's never been easier to connect with people around the world.",
+      "ptIntent": "Nunca foi tão fácil",
+      "enIntent": "It's never been easier"
+    },
+    {
+      "pt": "Nunca foi tão fácil abrir o próprio negócio.",
+      "en": "It's never been easier to start your own business.",
+      "ptIntent": "Nunca foi tão fácil",
+      "enIntent": "It's never been easier"
+    },
+    {
+      "pt": "Aprender inglês nunca foi tão fácil.",
+      "en": "Learning English has never been easier.",
+      "ptIntent": "nunca foi tão fácil",
+      "enIntent": "has never been easier"
+    },
+    {
+      "pt": "Nunca foi tão fácil encontrar informações na internet.",
+      "en": "It's never been easier to find information online.",
+      "ptIntent": "Nunca foi tão fácil",
+      "enIntent": "It's never been easier"
+    }
+  ],
+  "tags": [
+    "present perfect",
+    "comparative",
+    "everyday English",
+    "ease",
+    "language chunk"
+  ],
+  "related": []
+},
+{
+  "id": "quanto-tempo-nao-nos-vemos-beafa407-b394-4873-b9b3-372aeca3f808",
+  "intention": "Quanto tempo! / Há quanto tempo não nos vemos!",
+  "english": "Long time no see!",
+  "pattern": "Long time no see! (+ greeting / follow-up question)",
+  "description": "Saudação informal e idiomática usada ao reencontrar alguém depois de bastante tempo sem se ver ou conversar. Expressão fixa: não deve ser interpretada palavra por palavra nem usada como modelo gramatical produtivo.",
+  "category": "greetings",
+  "englishLevel": "A2",
+  "searchTerms": [
+    "quanto tempo",
+    "há quanto tempo",
+    "faz tempo que não nos vemos",
+    "não nos vemos há tempos",
+    "long time no see",
+    "reencontro",
+    "saudação informal"
+  ],
+  "validationPatterns": [
+    "\\blong\\s+time\\s+no\\s+see\\b"
+  ],
+  "examples": [
+    {
+      "pt": "Ei, quanto tempo! Como você tem passado?",
+      "en": "Hey, long time no see! How have you been?",
+      "ptIntent": "quanto tempo",
+      "enIntent": "long time no see"
+    },
+    {
+      "pt": "Nossa, quanto tempo! Faz uma eternidade!",
+      "en": "Wow, long time no see! It's been ages!",
+      "ptIntent": "quanto tempo",
+      "enIntent": "long time no see"
+    },
+    {
+      "pt": "Quanto tempo! O que você tem feito ultimamente?",
+      "en": "Long time no see! What have you been up to?",
+      "ptIntent": "Quanto tempo",
+      "enIntent": "Long time no see"
+    },
+    {
+      "pt": "Quanto tempo! Você ainda trabalha na mesma empresa?",
+      "en": "Long time no see! Are you still working at the same company?",
+      "ptIntent": "Quanto tempo",
+      "enIntent": "Long time no see"
+    },
+    {
+      "pt": "Oi, quanto tempo! Que bom te ver de novo!",
+      "en": "Hey, long time no see! It's good to see you again!",
+      "ptIntent": "quanto tempo",
+      "enIntent": "long time no see"
+    }
+  ],
+  "tags": [
+    "greeting",
+    "small-talk",
+    "reunion",
+    "informal",
+    "fixed-expression",
+    "spoken-english"
+  ],
+  "related": []
+}
+
 
   ]
 }
