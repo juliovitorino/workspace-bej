@@ -41252,9 +41252,2288 @@
     "speaking"
   ],
   "related": []
-}
+},
 
-
+  {
+    "id": "i-get-it-bb811aa1-6d4a-48c2-884c-8f4b1e4720ce",
+    "intention": "Entendi",
+    "english": "I get it",
+    "pattern": "I get it",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Entendi” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "entendi",
+      "i get it"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+get\\s+it\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Entendi.",
+        "en": "I get it.",
+        "ptIntent": "Entendi",
+        "enIntent": "I get it"
+      },
+      {
+        "pt": "Entendi, mas ainda discordo.",
+        "en": "I get it, but I still disagree.",
+        "ptIntent": "Entendi",
+        "enIntent": "I get it"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "good-to-know-4ebfce45-b9e6-4ddc-866d-25080a7bee84",
+    "intention": "Bom saber",
+    "english": "Good to know",
+    "pattern": "Good to know",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Bom saber” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "bom saber",
+      "good to know"
+    ],
+    "validationPatterns": [
+      "\\bGood\\s+to\\s+know\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Bom saber.",
+        "en": "Good to know.",
+        "ptIntent": "Bom saber",
+        "enIntent": "Good to know"
+      },
+      {
+        "pt": "Bom saber. Obrigado por me contar.",
+        "en": "Good to know. Thanks for telling me.",
+        "ptIntent": "Bom saber",
+        "enIntent": "Good to know"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "you-have-a-point-5eb9a01f-9fec-40df-87e8-a68d684837fe",
+    "intention": "Você tem razão nesse ponto",
+    "english": "You have a point",
+    "pattern": "You have a point",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Você tem razão nesse ponto” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "você tem razão nesse ponto",
+      "you have a point"
+    ],
+    "validationPatterns": [
+      "\\bYou\\s+have\\s+a\\s+point\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Você tem razão nesse ponto.",
+        "en": "You have a point.",
+        "ptIntent": "Você tem razão nesse ponto",
+        "enIntent": "You have a point"
+      },
+      {
+        "pt": "Você tem razão nesse ponto. Devemos reconsiderar.",
+        "en": "You have a point. We should reconsider.",
+        "ptIntent": "Você tem razão nesse ponto",
+        "enIntent": "You have a point"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-don-t-buy-it-f8b763e2-b134-4b80-85ce-f11b9708f2e0",
+    "intention": "Não engulo essa história",
+    "english": "I don't buy it",
+    "pattern": "I don't buy it",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Não engulo essa história” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "não engulo essa história",
+      "i don't buy it"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+don't\\s+buy\\s+it\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Não engulo essa história.",
+        "en": "I don't buy it.",
+        "ptIntent": "Não engulo essa história",
+        "enIntent": "I don't buy it"
+      },
+      {
+        "pt": "Não engulo essa história. Essa história parece estranha.",
+        "en": "I don't buy it. That story sounds strange.",
+        "ptIntent": "Não engulo essa história",
+        "enIntent": "I don't buy it"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-knew-it-24130574-088d-4431-9849-00da1db71ad7",
+    "intention": "Eu sabia",
+    "english": "I knew it",
+    "pattern": "I knew it",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Eu sabia” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "eu sabia",
+      "i knew it"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+knew\\s+it\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Eu sabia!",
+        "en": "I knew it!",
+        "ptIntent": "Eu sabia",
+        "enIntent": "I knew it"
+      },
+      {
+        "pt": "Eu sabia! Você estava certo.",
+        "en": "I knew it! You were right.",
+        "ptIntent": "Eu sabia",
+        "enIntent": "I knew it"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-called-it-9a02bbde-5fda-4818-93a4-0b70ef3d6efb",
+    "intention": "Eu já sabia que isso ia acontecer",
+    "english": "I called it",
+    "pattern": "I called it",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Eu já sabia que isso ia acontecer” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "eu já sabia que isso ia acontecer",
+      "i called it"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+called\\s+it\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Eu já sabia que isso ia acontecer!",
+        "en": "I called it!",
+        "ptIntent": "Eu já sabia que isso ia acontecer",
+        "enIntent": "I called it"
+      },
+      {
+        "pt": "Eu já sabia que isso ia acontecer! Eles ganharam o jogo.",
+        "en": "I called it! They won the game.",
+        "ptIntent": "Eu já sabia que isso ia acontecer",
+        "enIntent": "I called it"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "that-figures-bc9dbba8-1a74-497b-a07d-32931213353e",
+    "intention": "Era de se esperar",
+    "english": "That figures",
+    "pattern": "That figures",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Era de se esperar” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "era de se esperar",
+      "that figures"
+    ],
+    "validationPatterns": [
+      "\\bThat\\s+figures\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Era de se esperar.",
+        "en": "That figures.",
+        "ptIntent": "Era de se esperar",
+        "enIntent": "That figures"
+      },
+      {
+        "pt": "Era de se esperar. Ele esqueceu de novo.",
+        "en": "That figures. He forgot again.",
+        "ptIntent": "Era de se esperar",
+        "enIntent": "That figures"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-figured-as-much-1515477a-3cf3-42c7-b991-8310882cc810",
+    "intention": "Era mais ou menos o que eu imaginava",
+    "english": "I figured as much",
+    "pattern": "I figured as much",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Era mais ou menos o que eu imaginava” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "era mais ou menos o que eu imaginava",
+      "i figured as much"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+figured\\s+as\\s+much\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Era mais ou menos o que eu imaginava.",
+        "en": "I figured as much.",
+        "ptIntent": "Era mais ou menos o que eu imaginava",
+        "enIntent": "I figured as much"
+      },
+      {
+        "pt": "Era mais ou menos o que eu imaginava. Ela parecia chateada.",
+        "en": "I figured as much. She seemed upset.",
+        "ptIntent": "Era mais ou menos o que eu imaginava",
+        "enIntent": "I figured as much"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-doubt-it-06f260aa-14ff-44bb-bddc-c7623c4ee576",
+    "intention": "Duvido",
+    "english": "I doubt it",
+    "pattern": "I doubt it",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Duvido” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "duvido",
+      "i doubt it"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+doubt\\s+it\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Duvido.",
+        "en": "I doubt it.",
+        "ptIntent": "Duvido",
+        "enIntent": "I doubt it"
+      },
+      {
+        "pt": "Duvido. O prazo é amanhã.",
+        "en": "I doubt it. The deadline is tomorrow.",
+        "ptIntent": "Duvido",
+        "enIntent": "I doubt it"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-hope-so-f17f0176-c331-4777-a202-f2725db29439",
+    "intention": "Espero que sim",
+    "english": "I hope so",
+    "pattern": "I hope so",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Espero que sim” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "espero que sim",
+      "i hope so"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+hope\\s+so\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Espero que sim.",
+        "en": "I hope so.",
+        "ptIntent": "Espero que sim",
+        "enIntent": "I hope so"
+      },
+      {
+        "pt": "Espero que sim. Precisamos muito de boas notícias.",
+        "en": "I hope so. We really need good news.",
+        "ptIntent": "Espero que sim",
+        "enIntent": "I hope so"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-hope-not-7a59edbe-2778-4651-a798-330eada1054f",
+    "intention": "Espero que não",
+    "english": "I hope not",
+    "pattern": "I hope not",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Espero que não” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "espero que não",
+      "i hope not"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+hope\\s+not\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Espero que não.",
+        "en": "I hope not.",
+        "ptIntent": "Espero que não",
+        "enIntent": "I hope not"
+      },
+      {
+        "pt": "Espero que não. Isso seria um problema.",
+        "en": "I hope not. That would be a problem.",
+        "ptIntent": "Espero que não",
+        "enIntent": "I hope not"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "point-taken-252a094c-df14-412d-86ff-1a78b35e1494",
+    "intention": "Entendi seu argumento",
+    "english": "Point taken",
+    "pattern": "Point taken",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Entendi seu argumento” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "entendi seu argumento",
+      "point taken"
+    ],
+    "validationPatterns": [
+      "\\bPoint\\s+taken\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Entendi seu argumento.",
+        "en": "Point taken.",
+        "ptIntent": "Entendi seu argumento",
+        "enIntent": "Point taken"
+      },
+      {
+        "pt": "Entendi seu argumento. Vou tomar mais cuidado.",
+        "en": "Point taken. I will be more careful.",
+        "ptIntent": "Entendi seu argumento",
+        "enIntent": "Point taken"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-can-relate-48f3c108-d228-402b-8a7f-74ded451b315",
+    "intention": "Eu me identifico com isso",
+    "english": "I can relate",
+    "pattern": "I can relate",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Eu me identifico com isso” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "eu me identifico com isso",
+      "i can relate"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+can\\s+relate\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Eu me identifico com isso.",
+        "en": "I can relate.",
+        "ptIntent": "Eu me identifico com isso",
+        "enIntent": "I can relate"
+      },
+      {
+        "pt": "Eu me identifico com isso. Já passei por isso também.",
+        "en": "I can relate. I have been there too.",
+        "ptIntent": "Eu me identifico com isso",
+        "enIntent": "I can relate"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-hear-you-928c94dc-8437-4e2a-ad5b-db8a0cb56751",
+    "intention": "Entendo o que você está dizendo",
+    "english": "I hear you",
+    "pattern": "I hear you",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Entendo o que você está dizendo” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "entendo o que você está dizendo",
+      "i hear you"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+hear\\s+you\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Entendo o que você está dizendo.",
+        "en": "I hear you.",
+        "ptIntent": "Entendo o que você está dizendo",
+        "enIntent": "I hear you"
+      },
+      {
+        "pt": "Entendo o que você está dizendo. Isso tem sido frustrante.",
+        "en": "I hear you. This has been frustrating.",
+        "ptIntent": "Entendo o que você está dizendo",
+        "enIntent": "I hear you"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "tell-me-about-it-823129a0-05f5-4840-a7d4-8f48a560298a",
+    "intention": "Nem me fale",
+    "english": "Tell me about it",
+    "pattern": "Tell me about it",
+    "description": "Expressão de concordância enfática com uma dificuldade compartilhada; não é um pedido literal para a pessoa contar mais.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "nem me fale",
+      "tell me about it"
+    ],
+    "validationPatterns": [
+      "\\bTell\\s+me\\s+about\\s+it\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Nem me fale!",
+        "en": "Tell me about it!",
+        "ptIntent": "Nem me fale",
+        "enIntent": "Tell me about it"
+      },
+      {
+        "pt": "Nem me fale! Foi uma semana longa.",
+        "en": "Tell me about it! It has been a long week.",
+        "ptIntent": "Nem me fale",
+        "enIntent": "Tell me about it"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "guess-what-b7996696-0221-4f74-9ad4-4815ec71dd66",
+    "intention": "Adivinha só",
+    "english": "Guess what",
+    "pattern": "Guess what",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Adivinha só” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "questions-and-interaction",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "adivinha só",
+      "guess what"
+    ],
+    "validationPatterns": [
+      "\\bGuess\\s+what\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Adivinha só?",
+        "en": "Guess what?",
+        "ptIntent": "Adivinha só",
+        "enIntent": "Guess what"
+      },
+      {
+        "pt": "Adivinha só? Consegui o emprego!",
+        "en": "Guess what? I got the job!",
+        "ptIntent": "Adivinha só",
+        "enIntent": "Guess what"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "what-s-the-catch-7bd17214-2d5e-452c-a7a6-d2e42f52ddbb",
+    "intention": "Onde está a pegadinha",
+    "english": "What's the catch",
+    "pattern": "What's the catch",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Onde está a pegadinha” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "questions-and-interaction",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "onde está a pegadinha",
+      "what's the catch"
+    ],
+    "validationPatterns": [
+      "\\bWhat's\\s+the\\s+catch\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Onde está a pegadinha?",
+        "en": "What's the catch?",
+        "ptIntent": "Onde está a pegadinha",
+        "enIntent": "What's the catch"
+      },
+      {
+        "pt": "Onde está a pegadinha? Isso parece bom demais.",
+        "en": "What's the catch? This sounds too good.",
+        "ptIntent": "Onde está a pegadinha",
+        "enIntent": "What's the catch"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "what-s-your-take-518456bb-dac2-4a3d-bb23-f5fb3201b9cf",
+    "intention": "Qual é a sua opinião",
+    "english": "What's your take",
+    "pattern": "What's your take",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Qual é a sua opinião” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "questions-and-interaction",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "qual é a sua opinião",
+      "what's your take"
+    ],
+    "validationPatterns": [
+      "\\bWhat's\\s+your\\s+take\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Qual é a sua opinião?",
+        "en": "What's your take?",
+        "ptIntent": "Qual é a sua opinião",
+        "enIntent": "What's your take"
+      },
+      {
+        "pt": "Qual é a sua opinião? Devemos mudar o plano?",
+        "en": "What's your take? Should we change the plan?",
+        "ptIntent": "Qual é a sua opinião",
+        "enIntent": "What's your take"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "what-makes-you-say-that-25acd7f4-29ab-49b3-ae7d-4c887193402a",
+    "intention": "Por que você diz isso",
+    "english": "What makes you say that",
+    "pattern": "What makes you say that",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Por que você diz isso” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "questions-and-interaction",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "por que você diz isso",
+      "what makes you say that"
+    ],
+    "validationPatterns": [
+      "\\bWhat\\s+makes\\s+you\\s+say\\s+that\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Por que você diz isso?",
+        "en": "What makes you say that?",
+        "ptIntent": "Por que você diz isso",
+        "enIntent": "What makes you say that"
+      },
+      {
+        "pt": "Por que você diz isso? Aconteceu alguma coisa?",
+        "en": "What makes you say that? Did something happen?",
+        "ptIntent": "Por que você diz isso",
+        "enIntent": "What makes you say that"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "how-so-f52ea10e-83a2-46fd-a45b-2d91f08ef12b",
+    "intention": "Como assim",
+    "english": "How so",
+    "pattern": "How so",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Como assim” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "questions-and-interaction",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "como assim",
+      "how so"
+    ],
+    "validationPatterns": [
+      "\\bHow\\s+so\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Como assim?",
+        "en": "How so?",
+        "ptIntent": "Como assim",
+        "enIntent": "How so"
+      },
+      {
+        "pt": "Como assim? Pode explicar?",
+        "en": "How so? Can you explain?",
+        "ptIntent": "Como assim",
+        "enIntent": "How so"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "are-you-serious-ef564e5e-d394-45bb-8595-1edbad614178",
+    "intention": "Você está falando sério",
+    "english": "Are you serious",
+    "pattern": "Are you serious",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Você está falando sério” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "questions-and-interaction",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "você está falando sério",
+      "are you serious"
+    ],
+    "validationPatterns": [
+      "\\bAre\\s+you\\s+serious\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Você está falando sério?",
+        "en": "Are you serious?",
+        "ptIntent": "Você está falando sério",
+        "enIntent": "Are you serious"
+      },
+      {
+        "pt": "Você está falando sério? Isso é incrível!",
+        "en": "Are you serious? That is amazing!",
+        "ptIntent": "Você está falando sério",
+        "enIntent": "Are you serious"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "are-you-kidding-me-527681ae-7d9f-452d-9b29-2ec374f7d2e7",
+    "intention": "Você está brincando comigo",
+    "english": "Are you kidding me",
+    "pattern": "Are you kidding me",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Você está brincando comigo” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "questions-and-interaction",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "você está brincando comigo",
+      "are you kidding me"
+    ],
+    "validationPatterns": [
+      "\\bAre\\s+you\\s+kidding\\s+me\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Você está brincando comigo?",
+        "en": "Are you kidding me?",
+        "ptIntent": "Você está brincando comigo",
+        "enIntent": "Are you kidding me"
+      },
+      {
+        "pt": "Você está brincando comigo? Acabamos de chegar!",
+        "en": "Are you kidding me? We just got here!",
+        "ptIntent": "Você está brincando comigo",
+        "enIntent": "Are you kidding me"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "can-you-believe-it-a3b126f3-9732-4a72-960d-1bb1d7846614",
+    "intention": "Dá para acreditar",
+    "english": "Can you believe it",
+    "pattern": "Can you believe it",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Dá para acreditar” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "questions-and-interaction",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "dá para acreditar",
+      "can you believe it"
+    ],
+    "validationPatterns": [
+      "\\bCan\\s+you\\s+believe\\s+it\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Dá para acreditar?",
+        "en": "Can you believe it?",
+        "ptIntent": "Dá para acreditar",
+        "enIntent": "Can you believe it"
+      },
+      {
+        "pt": "Dá para acreditar? Finalmente terminamos!",
+        "en": "Can you believe it? We finally finished!",
+        "ptIntent": "Dá para acreditar",
+        "enIntent": "Can you believe it"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "how-did-it-go-fefc14b1-8c0c-4257-aeaa-735a7a9f3424",
+    "intention": "Como foi",
+    "english": "How did it go",
+    "pattern": "How did it go",
+    "description": "Pergunta sobre como ocorreu uma experiência, reunião, entrevista ou evento.",
+    "category": "questions-and-interaction",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "como foi",
+      "how did it go"
+    ],
+    "validationPatterns": [
+      "\\bHow\\s+did\\s+it\\s+go\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Como foi?",
+        "en": "How did it go?",
+        "ptIntent": "Como foi",
+        "enIntent": "How did it go"
+      },
+      {
+        "pt": "Como foi? Você gostou da entrevista?",
+        "en": "How did it go? Did you enjoy the interview?",
+        "ptIntent": "Como foi",
+        "enIntent": "How did it go"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "how-did-it-turn-out-9b9175ca-07db-40e6-be6a-5807f19e39dc",
+    "intention": "Como acabou sendo",
+    "english": "How did it turn out",
+    "pattern": "How did it turn out",
+    "description": "Pergunta pelo resultado final de algo, não apenas pela experiência.",
+    "category": "questions-and-interaction",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "como acabou sendo",
+      "how did it turn out"
+    ],
+    "validationPatterns": [
+      "\\bHow\\s+did\\s+it\\s+turn\\s+out\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Como acabou sendo?",
+        "en": "How did it turn out?",
+        "ptIntent": "Como acabou sendo",
+        "enIntent": "How did it turn out"
+      },
+      {
+        "pt": "Como acabou sendo? O evento foi um sucesso?",
+        "en": "How did it turn out? Was the event successful?",
+        "ptIntent": "Como acabou sendo",
+        "enIntent": "How did it turn out"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "how-does-that-sound-0fb503b1-637d-4833-8e87-0b4f4775080a",
+    "intention": "O que você acha dessa ideia",
+    "english": "How does that sound",
+    "pattern": "How does that sound",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “O que você acha dessa ideia” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "questions-and-interaction",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "o que você acha dessa ideia",
+      "how does that sound"
+    ],
+    "validationPatterns": [
+      "\\bHow\\s+does\\s+that\\s+sound\\b"
+    ],
+    "examples": [
+      {
+        "pt": "O que você acha dessa ideia?",
+        "en": "How does that sound?",
+        "ptIntent": "O que você acha dessa ideia",
+        "enIntent": "How does that sound"
+      },
+      {
+        "pt": "O que você acha dessa ideia? Podemos nos encontrar às seis.",
+        "en": "How does that sound? We could meet at six.",
+        "ptIntent": "O que você acha dessa ideia",
+        "enIntent": "How does that sound"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "are-we-good-1ae490b5-df4a-4b91-a7cb-e04a917d9ed6",
+    "intention": "Está tudo certo entre nós",
+    "english": "Are we good",
+    "pattern": "Are we good",
+    "description": "Pode significar reconciliação ou confirmação de que tudo está acertado, dependendo do contexto.",
+    "category": "questions-and-interaction",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "está tudo certo entre nós",
+      "are we good"
+    ],
+    "validationPatterns": [
+      "\\bAre\\s+we\\s+good\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Está tudo certo entre nós?",
+        "en": "Are we good?",
+        "ptIntent": "Está tudo certo entre nós",
+        "enIntent": "Are we good"
+      },
+      {
+        "pt": "Está tudo certo entre nós? Não quero nenhum ressentimento.",
+        "en": "Are we good? I do not want any hard feelings.",
+        "ptIntent": "Está tudo certo entre nós",
+        "enIntent": "Are we good"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "what-s-next-4ef969e8-0f1a-4572-b13b-2dea9013aecd",
+    "intention": "Qual é o próximo passo",
+    "english": "What's next",
+    "pattern": "What's next",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Qual é o próximo passo” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "questions-and-interaction",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "qual é o próximo passo",
+      "what's next"
+    ],
+    "validationPatterns": [
+      "\\bWhat's\\s+next\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Qual é o próximo passo?",
+        "en": "What's next?",
+        "ptIntent": "Qual é o próximo passo",
+        "enIntent": "What's next"
+      },
+      {
+        "pt": "Qual é o próximo passo? Precisamos testar isso?",
+        "en": "What's next? Do we need to test it?",
+        "ptIntent": "Qual é o próximo passo",
+        "enIntent": "What's next"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "can-i-ask-you-something-e0ddf3e3-abdc-4788-8849-f6f4c54ff9ec",
+    "intention": "Posso te perguntar uma coisa",
+    "english": "Can I ask you something",
+    "pattern": "Can I ask you something",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Posso te perguntar uma coisa” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "questions-and-interaction",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "posso te perguntar uma coisa",
+      "can i ask you something"
+    ],
+    "validationPatterns": [
+      "\\bCan\\s+I\\s+ask\\s+you\\s+something\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Posso te perguntar uma coisa?",
+        "en": "Can I ask you something?",
+        "ptIntent": "Posso te perguntar uma coisa",
+        "enIntent": "Can I ask you something"
+      },
+      {
+        "pt": "Posso te perguntar uma coisa? É importante.",
+        "en": "Can I ask you something? It is important.",
+        "ptIntent": "Posso te perguntar uma coisa",
+        "enIntent": "Can I ask you something"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "are-you-following-me-e6699747-868b-4c5b-b723-3a1f3710533a",
+    "intention": "Você está acompanhando meu raciocínio",
+    "english": "Are you following me",
+    "pattern": "Are you following me",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Você está acompanhando meu raciocínio” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "questions-and-interaction",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "você está acompanhando meu raciocínio",
+      "are you following me"
+    ],
+    "validationPatterns": [
+      "\\bAre\\s+you\\s+following\\s+me\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Você está acompanhando meu raciocínio?",
+        "en": "Are you following me?",
+        "ptIntent": "Você está acompanhando meu raciocínio",
+        "enIntent": "Are you following me"
+      },
+      {
+        "pt": "Você está acompanhando meu raciocínio? Esta parte é importante.",
+        "en": "Are you following me? This part is important.",
+        "ptIntent": "Você está acompanhando meu raciocínio",
+        "enIntent": "Are you following me"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-all-ears-32ed8f59-d0fb-4228-a70b-c4c3d2508da0",
+    "intention": "Sou todo ouvidos",
+    "english": "I'm all ears",
+    "pattern": "I'm all ears",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Sou todo ouvidos” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "feelings-and-daily-life",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "sou todo ouvidos",
+      "i'm all ears"
+    ],
+    "validationPatterns": [
+      "\\bI'm\\s+all\\s+ears\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Sou todo ouvidos.",
+        "en": "I'm all ears.",
+        "ptIntent": "Sou todo ouvidos",
+        "enIntent": "I'm all ears"
+      },
+      {
+        "pt": "Sou todo ouvidos. Conte sua ideia.",
+        "en": "I'm all ears. Tell me your idea.",
+        "ptIntent": "Sou todo ouvidos",
+        "enIntent": "I'm all ears"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-afraid-so-4500bfe3-21a5-4958-b10b-c202e30fb2e7",
+    "intention": "Infelizmente, sim",
+    "english": "I'm afraid so",
+    "pattern": "I'm afraid so",
+    "description": "Resposta educada que confirma uma notícia desagradável.",
+    "category": "feelings-and-daily-life",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "infelizmente, sim",
+      "i'm afraid so"
+    ],
+    "validationPatterns": [
+      "\\bI'm\\s+afraid\\s+so\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Infelizmente, sim.",
+        "en": "I'm afraid so.",
+        "ptIntent": "Infelizmente, sim",
+        "enIntent": "I'm afraid so"
+      },
+      {
+        "pt": "Infelizmente, sim. O voo foi cancelado.",
+        "en": "I'm afraid so. The flight was canceled.",
+        "ptIntent": "Infelizmente, sim",
+        "enIntent": "I'm afraid so"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-afraid-not-fad0cd7e-6b2b-4709-84bf-3acc25bb49b5",
+    "intention": "Infelizmente, não",
+    "english": "I'm afraid not",
+    "pattern": "I'm afraid not",
+    "description": "Resposta educada que nega algo, frequentemente ao transmitir uma notícia desagradável.",
+    "category": "feelings-and-daily-life",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "infelizmente, não",
+      "i'm afraid not"
+    ],
+    "validationPatterns": [
+      "\\bI'm\\s+afraid\\s+not\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Infelizmente, não.",
+        "en": "I'm afraid not.",
+        "ptIntent": "Infelizmente, não",
+        "enIntent": "I'm afraid not"
+      },
+      {
+        "pt": "Infelizmente, não. Estamos com todas as vagas ocupadas.",
+        "en": "I'm afraid not. We are fully booked.",
+        "ptIntent": "Infelizmente, não",
+        "enIntent": "I'm afraid not"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-not-feeling-it-8d086f2e-2449-4757-9eb7-0ffdafd18e55",
+    "intention": "Não estou muito a fim",
+    "english": "I'm not feeling it",
+    "pattern": "I'm not feeling it",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Não estou muito a fim” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "feelings-and-daily-life",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "não estou muito a fim",
+      "i'm not feeling it"
+    ],
+    "validationPatterns": [
+      "\\bI'm\\s+not\\s+feeling\\s+it\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Não estou muito a fim.",
+        "en": "I'm not feeling it.",
+        "ptIntent": "Não estou muito a fim",
+        "enIntent": "I'm not feeling it"
+      },
+      {
+        "pt": "Não estou muito a fim. Vamos fazer outra coisa.",
+        "en": "I'm not feeling it. Let's do something else.",
+        "ptIntent": "Não estou muito a fim",
+        "enIntent": "I'm not feeling it"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-beat-53235c8e-f0e9-4624-abeb-7f0356586daf",
+    "intention": "Estou acabado de cansaço",
+    "english": "I'm beat",
+    "pattern": "I'm beat",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Estou acabado de cansaço” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "feelings-and-daily-life",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "estou acabado de cansaço",
+      "i'm beat"
+    ],
+    "validationPatterns": [
+      "\\bI'm\\s+beat\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou acabado de cansaço.",
+        "en": "I'm beat.",
+        "ptIntent": "Estou acabado de cansaço",
+        "enIntent": "I'm beat"
+      },
+      {
+        "pt": "Estou acabado de cansaço. Preciso dormir.",
+        "en": "I'm beat. I need some sleep.",
+        "ptIntent": "Estou acabado de cansaço",
+        "enIntent": "I'm beat"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-wiped-out-87f856ea-9c00-462a-a0a6-3366da91b497",
+    "intention": "Estou completamente exausto",
+    "english": "I'm wiped out",
+    "pattern": "I'm wiped out",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Estou completamente exausto” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "feelings-and-daily-life",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "estou completamente exausto",
+      "i'm wiped out"
+    ],
+    "validationPatterns": [
+      "\\bI'm\\s+wiped\\s+out\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou completamente exausto.",
+        "en": "I'm wiped out.",
+        "ptIntent": "Estou completamente exausto",
+        "enIntent": "I'm wiped out"
+      },
+      {
+        "pt": "Estou completamente exausto. Hoje foi cansativo.",
+        "en": "I'm wiped out. Today was exhausting.",
+        "ptIntent": "Estou completamente exausto",
+        "enIntent": "I'm wiped out"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-overwhelmed-8a674e29-9317-47bc-b48d-3da5988fc2ea",
+    "intention": "Estou sobrecarregado",
+    "english": "I'm overwhelmed",
+    "pattern": "I'm overwhelmed",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Estou sobrecarregado” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "feelings-and-daily-life",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "estou sobrecarregado",
+      "i'm overwhelmed"
+    ],
+    "validationPatterns": [
+      "\\bI'm\\s+overwhelmed\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou sobrecarregado.",
+        "en": "I'm overwhelmed.",
+        "ptIntent": "Estou sobrecarregado",
+        "enIntent": "I'm overwhelmed"
+      },
+      {
+        "pt": "Estou sobrecarregado. Tenho tarefas demais.",
+        "en": "I'm overwhelmed. I have too many tasks.",
+        "ptIntent": "Estou sobrecarregado",
+        "enIntent": "I'm overwhelmed"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-almost-there-8a4763ac-296a-4a76-85b8-92f0fc3a6f2a",
+    "intention": "Estou quase chegando",
+    "english": "I'm almost there",
+    "pattern": "I'm almost there",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Estou quase chegando” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "feelings-and-daily-life",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "estou quase chegando",
+      "i'm almost there"
+    ],
+    "validationPatterns": [
+      "\\bI'm\\s+almost\\s+there\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou quase chegando.",
+        "en": "I'm almost there.",
+        "ptIntent": "Estou quase chegando",
+        "enIntent": "I'm almost there"
+      },
+      {
+        "pt": "Estou quase chegando. Me dê cinco minutos.",
+        "en": "I'm almost there. Give me five minutes.",
+        "ptIntent": "Estou quase chegando",
+        "enIntent": "I'm almost there"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-lost-track-of-time-933f3be6-ee13-4eca-9454-cfdfbd1b43e9",
+    "intention": "Perdi a noção do tempo",
+    "english": "I lost track of time",
+    "pattern": "I lost track of time",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Perdi a noção do tempo” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "feelings-and-daily-life",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "perdi a noção do tempo",
+      "i lost track of time"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+lost\\s+track\\s+of\\s+time\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Perdi a noção do tempo.",
+        "en": "I lost track of time.",
+        "ptIntent": "Perdi a noção do tempo",
+        "enIntent": "I lost track of time"
+      },
+      {
+        "pt": "Perdi a noção do tempo. Desculpe pelo atraso.",
+        "en": "I lost track of time. Sorry I am late.",
+        "ptIntent": "Perdi a noção do tempo",
+        "enIntent": "I lost track of time"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "time-flies-d0f3d349-07fa-4024-8334-71955b35bbee",
+    "intention": "O tempo voa",
+    "english": "Time flies",
+    "pattern": "Time flies",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “O tempo voa” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "feelings-and-daily-life",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "o tempo voa",
+      "time flies"
+    ],
+    "validationPatterns": [
+      "\\bTime\\s+flies\\b"
+    ],
+    "examples": [
+      {
+        "pt": "O tempo voa.",
+        "en": "Time flies.",
+        "ptIntent": "O tempo voa",
+        "enIntent": "Time flies"
+      },
+      {
+        "pt": "O tempo voa. Já é outubro.",
+        "en": "Time flies. It is already October.",
+        "ptIntent": "O tempo voa",
+        "enIntent": "Time flies"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "can-t-complain-e9125d7d-980d-412c-970c-cce27410c13c",
+    "intention": "Não posso reclamar",
+    "english": "Can't complain",
+    "pattern": "Can't complain",
+    "description": "Resposta elíptica e informal a perguntas sobre como a pessoa está.",
+    "category": "feelings-and-daily-life",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "não posso reclamar",
+      "can't complain"
+    ],
+    "validationPatterns": [
+      "\\bCan't\\s+complain\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Não posso reclamar.",
+        "en": "Can't complain.",
+        "ptIntent": "Não posso reclamar",
+        "enIntent": "Can't complain"
+      },
+      {
+        "pt": "Não posso reclamar. As coisas estão indo bem.",
+        "en": "Can't complain. Things are going well.",
+        "ptIntent": "Não posso reclamar",
+        "enIntent": "Can't complain"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "that-s-my-point-4caf7439-84c0-4f22-aead-fadb6265ffae",
+    "intention": "É exatamente esse o meu ponto",
+    "english": "That's my point",
+    "pattern": "That's my point",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “É exatamente esse o meu ponto” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "feelings-and-daily-life",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "é exatamente esse o meu ponto",
+      "that's my point"
+    ],
+    "validationPatterns": [
+      "\\bThat's\\s+my\\s+point\\b"
+    ],
+    "examples": [
+      {
+        "pt": "É exatamente esse o meu ponto.",
+        "en": "That's my point.",
+        "ptIntent": "É exatamente esse o meu ponto",
+        "enIntent": "That's my point"
+      },
+      {
+        "pt": "É exatamente esse o meu ponto. Precisamos de uma solução mais simples.",
+        "en": "That's my point. We need a simpler solution.",
+        "ptIntent": "É exatamente esse o meu ponto",
+        "enIntent": "That's my point"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "what-a-relief-cc425e1a-e588-4a68-a460-a979e6907b6a",
+    "intention": "Que alívio",
+    "english": "What a relief",
+    "pattern": "What a relief",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Que alívio” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "feelings-and-daily-life",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "que alívio",
+      "what a relief"
+    ],
+    "validationPatterns": [
+      "\\bWhat\\s+a\\s+relief\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Que alívio!",
+        "en": "What a relief!",
+        "ptIntent": "Que alívio",
+        "enIntent": "What a relief"
+      },
+      {
+        "pt": "Que alívio! Deu tudo certo.",
+        "en": "What a relief! Everything worked out.",
+        "ptIntent": "Que alívio",
+        "enIntent": "What a relief"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "what-a-coincidence-97bdaa4f-5d06-4bd1-8cf6-0ffa09c468e3",
+    "intention": "Que coincidência",
+    "english": "What a coincidence",
+    "pattern": "What a coincidence",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Que coincidência” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "feelings-and-daily-life",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "que coincidência",
+      "what a coincidence"
+    ],
+    "validationPatterns": [
+      "\\bWhat\\s+a\\s+coincidence\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Que coincidência!",
+        "en": "What a coincidence!",
+        "ptIntent": "Que coincidência",
+        "enIntent": "What a coincidence"
+      },
+      {
+        "pt": "Que coincidência! Eu estava pensando em você.",
+        "en": "What a coincidence! I was thinking about you.",
+        "ptIntent": "Que coincidência",
+        "enIntent": "What a coincidence"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "it-happens-f2688252-0357-4070-b0b8-b05ecd9cd8ac",
+    "intention": "Acontece",
+    "english": "It happens",
+    "pattern": "It happens",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Acontece” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "feelings-and-daily-life",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "acontece",
+      "it happens"
+    ],
+    "validationPatterns": [
+      "\\bIt\\s+happens\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Acontece.",
+        "en": "It happens.",
+        "ptIntent": "Acontece",
+        "enIntent": "It happens"
+      },
+      {
+        "pt": "Acontece. Não se preocupe com isso.",
+        "en": "It happens. Do not worry about it.",
+        "ptIntent": "Acontece",
+        "enIntent": "It happens"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "count-me-in-f2ae8637-c7f7-41e4-ad54-4aefe24be49f",
+    "intention": "Tô dentro",
+    "english": "Count me in",
+    "pattern": "Count me in",
+    "description": "Aceitação de convite ou participação em um plano.",
+    "category": "decisions-and-connectors",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "tô dentro",
+      "count me in"
+    ],
+    "validationPatterns": [
+      "\\bCount\\s+me\\s+in\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Tô dentro!",
+        "en": "Count me in.",
+        "ptIntent": "Tô dentro",
+        "enIntent": "Count me in"
+      },
+      {
+        "pt": "Tô dentro! Eu adoraria participar.",
+        "en": "Count me in. I'd love to join you.",
+        "ptIntent": "Tô dentro",
+        "enIntent": "Count me in"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "count-me-out-cdd07bb4-875b-40dc-b1f9-e683974cfd34",
+    "intention": "Tô fora",
+    "english": "Count me out",
+    "pattern": "Count me out",
+    "description": "Recusa de convite ou participação em um plano.",
+    "category": "decisions-and-connectors",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "tô fora",
+      "count me out"
+    ],
+    "validationPatterns": [
+      "\\bCount\\s+me\\s+out\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Tô fora!",
+        "en": "Count me out.",
+        "ptIntent": "Tô fora",
+        "enIntent": "Count me out"
+      },
+      {
+        "pt": "Tô fora! Tenho outros planos.",
+        "en": "Count me out. I have other plans.",
+        "ptIntent": "Tô fora",
+        "enIntent": "Count me out"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "you-got-this-1570711d-e15e-47bc-a742-576ff535e84a",
+    "intention": "Você consegue",
+    "english": "You got this",
+    "pattern": "You got this",
+    "description": "Encorajamento informal: você é capaz.",
+    "category": "decisions-and-connectors",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "você consegue",
+      "you got this"
+    ],
+    "validationPatterns": [
+      "\\bYou\\s+got\\s+this\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Você consegue!",
+        "en": "You got this!",
+        "ptIntent": "Você consegue",
+        "enIntent": "You got this"
+      },
+      {
+        "pt": "Você consegue! Continue!",
+        "en": "You got this! Keep going!",
+        "ptIntent": "Você consegue",
+        "enIntent": "You got this"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-got-this-e685c049-4d1c-41df-a84f-bdfec18a8658",
+    "intention": "Deixa comigo",
+    "english": "I got this",
+    "pattern": "I got this",
+    "description": "Afirmação informal de confiança: eu consigo cuidar disso.",
+    "category": "decisions-and-connectors",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "deixa comigo",
+      "i got this"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+got\\s+this\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Deixa comigo!",
+        "en": "I got this.",
+        "ptIntent": "Deixa comigo",
+        "enIntent": "I got this"
+      },
+      {
+        "pt": "Deixa comigo! Pode ficar tranquilo.",
+        "en": "I got this. You can relax.",
+        "ptIntent": "Deixa comigo",
+        "enIntent": "I got this"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-ll-pass-59a1145e-d361-46f5-9b71-9f29a96e5c96",
+    "intention": "Dispenso",
+    "english": "I'll pass",
+    "pattern": "I'll pass",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Dispenso” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "decisions-and-connectors",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "dispenso",
+      "i'll pass"
+    ],
+    "validationPatterns": [
+      "\\bI'll\\s+pass\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Dispenso.",
+        "en": "I'll pass.",
+        "ptIntent": "Dispenso",
+        "enIntent": "I'll pass"
+      },
+      {
+        "pt": "Dispenso. Obrigado pelo convite.",
+        "en": "I'll pass. Thanks for inviting me.",
+        "ptIntent": "Dispenso",
+        "enIntent": "I'll pass"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "fine-by-me-6fd90651-56f6-49fc-b1d7-3084f0269747",
+    "intention": "Por mim, tudo bem",
+    "english": "Fine by me",
+    "pattern": "Fine by me",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Por mim, tudo bem” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "decisions-and-connectors",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "por mim, tudo bem",
+      "fine by me"
+    ],
+    "validationPatterns": [
+      "\\bFine\\s+by\\s+me\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Por mim, tudo bem.",
+        "en": "Fine by me.",
+        "ptIntent": "Por mim, tudo bem",
+        "enIntent": "Fine by me"
+      },
+      {
+        "pt": "Por mim, tudo bem. Podemos começar agora.",
+        "en": "Fine by me. We can start now.",
+        "ptIntent": "Por mim, tudo bem",
+        "enIntent": "Fine by me"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "be-my-guest-2ee47d4e-186c-409b-977a-a030912d788b",
+    "intention": "Fique à vontade",
+    "english": "Be my guest",
+    "pattern": "Be my guest",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Fique à vontade” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "decisions-and-connectors",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "fique à vontade",
+      "be my guest"
+    ],
+    "validationPatterns": [
+      "\\bBe\\s+my\\s+guest\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Fique à vontade.",
+        "en": "Be my guest.",
+        "ptIntent": "Fique à vontade",
+        "enIntent": "Be my guest"
+      },
+      {
+        "pt": "Fique à vontade. Sente-se.",
+        "en": "Be my guest. Take a seat.",
+        "ptIntent": "Fique à vontade",
+        "enIntent": "Be my guest"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "as-you-wish-c4c32129-14f5-49a1-b369-1d7bb8540241",
+    "intention": "Como você quiser",
+    "english": "As you wish",
+    "pattern": "As you wish",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Como você quiser” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "decisions-and-connectors",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "como você quiser",
+      "as you wish"
+    ],
+    "validationPatterns": [
+      "\\bAs\\s+you\\s+wish\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Como você quiser.",
+        "en": "As you wish.",
+        "ptIntent": "Como você quiser",
+        "enIntent": "As you wish"
+      },
+      {
+        "pt": "Como você quiser. Podemos sair agora.",
+        "en": "As you wish. We can leave now.",
+        "ptIntent": "Como você quiser",
+        "enIntent": "As you wish"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "say-no-more-d9cad7de-ac71-4cdb-a851-bca5f61e78b5",
+    "intention": "Não precisa dizer mais nada",
+    "english": "Say no more",
+    "pattern": "Say no more",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Não precisa dizer mais nada” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "decisions-and-connectors",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "não precisa dizer mais nada",
+      "say no more"
+    ],
+    "validationPatterns": [
+      "\\bSay\\s+no\\s+more\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Não precisa dizer mais nada.",
+        "en": "Say no more.",
+        "ptIntent": "Não precisa dizer mais nada",
+        "enIntent": "Say no more"
+      },
+      {
+        "pt": "Não precisa dizer mais nada. Eu entendo.",
+        "en": "Say no more. I understand.",
+        "ptIntent": "Não precisa dizer mais nada",
+        "enIntent": "Say no more"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "now-we-re-talking-d1d24809-3892-469e-8a5c-5eaafaf5ac7f",
+    "intention": "Agora sim",
+    "english": "Now we're talking",
+    "pattern": "Now we're talking",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Agora sim” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "decisions-and-connectors",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "agora sim",
+      "now we're talking"
+    ],
+    "validationPatterns": [
+      "\\bNow\\s+we're\\s+talking\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Agora sim!",
+        "en": "Now we're talking!",
+        "ptIntent": "Agora sim",
+        "enIntent": "Now we're talking"
+      },
+      {
+        "pt": "Agora sim! Essa é uma ótima ideia.",
+        "en": "Now we're talking! That's a great idea.",
+        "ptIntent": "Agora sim",
+        "enIntent": "Now we're talking"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "that-s-the-spirit-7e71667a-b3f2-444b-85ff-a494a918e389",
+    "intention": "Esse é o espírito",
+    "english": "That's the spirit",
+    "pattern": "That's the spirit",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Esse é o espírito” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "decisions-and-connectors",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "esse é o espírito",
+      "that's the spirit"
+    ],
+    "validationPatterns": [
+      "\\bThat's\\s+the\\s+spirit\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Esse é o espírito!",
+        "en": "That's the spirit!",
+        "ptIntent": "Esse é o espírito",
+        "enIntent": "That's the spirit"
+      },
+      {
+        "pt": "Esse é o espírito! Não desista.",
+        "en": "That's the spirit! Don't give up.",
+        "ptIntent": "Esse é o espírito",
+        "enIntent": "That's the spirit"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "first-things-first-551450b0-4b4a-458b-94a5-f7f0225bd23f",
+    "intention": "Primeiro o mais importante",
+    "english": "First things first",
+    "pattern": "First things first, + clause",
+    "description": "Expressão de organização de prioridades; não significa necessariamente fazer apenas uma coisa por vez.",
+    "category": "decisions-and-connectors",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "primeiro o mais importante",
+      "first things first"
+    ],
+    "validationPatterns": [
+      "\\bFirst\\s+things\\s+first\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Primeiro o mais importante.",
+        "en": "First things first.",
+        "ptIntent": "Primeiro o mais importante",
+        "enIntent": "First things first"
+      },
+      {
+        "pt": "Primeiro o mais importante. Precisamos de um plano.",
+        "en": "First things first. We need a plan.",
+        "ptIntent": "Primeiro o mais importante",
+        "enIntent": "First things first"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "in-a-nutshell-a99de902-b289-44f5-8111-f0628cfe0c71",
+    "intention": "Resumindo",
+    "english": "In a nutshell",
+    "pattern": "In a nutshell, + clause",
+    "description": "Conector discursivo que normalmente introduz um resumo; isoladamente depende de contexto. É mais natural quando seguido de uma frase, embora possa funcionar isoladamente com contexto explícito.",
+    "category": "decisions-and-connectors",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "resumindo",
+      "in a nutshell"
+    ],
+    "validationPatterns": [
+      "\\bIn\\s+a\\s+nutshell\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Resumindo.",
+        "en": "In a nutshell.",
+        "ptIntent": "Resumindo",
+        "enIntent": "In a nutshell"
+      },
+      {
+        "pt": "Resumindo, precisamos de mais tempo.",
+        "en": "In a nutshell, we need more time.",
+        "ptIntent": "Resumindo",
+        "enIntent": "In a nutshell"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "either-way-6900e5e0-8512-48d2-8681-5fdb948ef284",
+    "intention": "De qualquer forma",
+    "english": "Either way",
+    "pattern": "Either way, + clause",
+    "description": "Conector discursivo que significa independentemente de qual alternativa; isoladamente depende de contexto. É mais natural quando seguido de uma frase, embora possa funcionar isoladamente com contexto explícito.",
+    "category": "decisions-and-connectors",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "de qualquer forma",
+      "either way"
+    ],
+    "validationPatterns": [
+      "\\bEither\\s+way\\b"
+    ],
+    "examples": [
+      {
+        "pt": "De qualquer forma.",
+        "en": "Either way.",
+        "ptIntent": "De qualquer forma",
+        "enIntent": "Either way"
+      },
+      {
+        "pt": "De qualquer forma, vou apoiar você.",
+        "en": "Either way, I will support you.",
+        "ptIntent": "De qualquer forma",
+        "enIntent": "Either way"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "fingers-crossed-708d1a2c-9e0b-4368-9466-88d9aa8a2779",
+    "intention": "Tomara que dê certo",
+    "english": "Fingers crossed",
+    "pattern": "Fingers crossed",
+    "description": "Expressão de esperança ou torcida por um resultado positivo.",
+    "category": "decisions-and-connectors",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "tomara que dê certo",
+      "fingers crossed"
+    ],
+    "validationPatterns": [
+      "\\bFingers\\s+crossed\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Tomara que dê certo!",
+        "en": "Fingers crossed!",
+        "ptIntent": "Tomara que dê certo",
+        "enIntent": "Fingers crossed"
+      },
+      {
+        "pt": "Tomara que dê certo! Espero que você consiga o emprego.",
+        "en": "Fingers crossed! I hope you get the job.",
+        "ptIntent": "Tomara que dê certo",
+        "enIntent": "Fingers crossed"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  }
 
   ]
 }
