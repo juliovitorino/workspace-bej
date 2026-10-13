@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 
 export type HqImageFilter = "all" | "with" | "without";
 export type ChunkFilter = "all" | "with" | "without";
+export type YoutubeFilter = "all" | "with" | "without";
 
 interface SearchPanelProps {
   mentalSearch: string;
@@ -11,6 +12,9 @@ interface SearchPanelProps {
   englishLevelSearch: string;
   hqImageFilter: HqImageFilter;
   chunkFilter: ChunkFilter;
+  isAuthor: boolean;
+  youtubeVideoFilter: YoutubeFilter;
+  youtubeShortFilter: YoutubeFilter;
   availableTags: string[];
   selectedTags: string[];
   onMentalSearchChange: (value: string) => void;
@@ -19,6 +23,8 @@ interface SearchPanelProps {
   onEnglishLevelSearchChange: (value: string) => void;
   onHqImageFilterChange: (value: HqImageFilter) => void;
   onChunkFilterChange: (value: ChunkFilter) => void;
+  onYoutubeVideoFilterChange: (value: YoutubeFilter) => void;
+  onYoutubeShortFilterChange: (value: YoutubeFilter) => void;
   onTagsChange: (tags: string[]) => void;
   onClear: () => void;
 }
@@ -67,6 +73,9 @@ export function SearchPanel({
   englishLevelSearch,
   hqImageFilter,
   chunkFilter,
+  isAuthor,
+  youtubeVideoFilter,
+  youtubeShortFilter,
   availableTags,
   selectedTags,
   onMentalSearchChange,
@@ -75,6 +84,8 @@ export function SearchPanel({
   onEnglishLevelSearchChange,
   onHqImageFilterChange,
   onChunkFilterChange,
+  onYoutubeVideoFilterChange,
+  onYoutubeShortFilterChange,
   onTagsChange,
   onClear
 }: SearchPanelProps) {
@@ -86,7 +97,9 @@ export function SearchPanel({
 
   const hasFilters = Boolean(
     mentalSearch || englishSearch || categorySearch || englishLevelSearch ||
-    hqImageFilter !== "all" || chunkFilter !== "all" || selectedTags.length > 0
+    hqImageFilter !== "all" || chunkFilter !== "all" ||
+    (isAuthor && (youtubeVideoFilter !== "all" || youtubeShortFilter !== "all")) ||
+    selectedTags.length > 0
   );
 
   const matchingTags = useMemo(() => {
@@ -191,6 +204,30 @@ export function SearchPanel({
           <option value="without">Sem Chunk</option>
         </select>
       </div>
+
+      {isAuthor && (
+        <>
+          <div className="field">
+            <label htmlFor="youtube-video-filter">YouTube Vídeo</label>
+            <select id="youtube-video-filter" value={youtubeVideoFilter}
+              onChange={(event) => onYoutubeVideoFilterChange(event.target.value as YoutubeFilter)}>
+              <option value="all">Todos</option>
+              <option value="with">Com vídeo</option>
+              <option value="without">Sem vídeo</option>
+            </select>
+          </div>
+
+          <div className="field">
+            <label htmlFor="youtube-short-filter">YouTube Short</label>
+            <select id="youtube-short-filter" value={youtubeShortFilter}
+              onChange={(event) => onYoutubeShortFilterChange(event.target.value as YoutubeFilter)}>
+              <option value="all">Todos</option>
+              <option value="with">Com Short</option>
+              <option value="without">Sem Short</option>
+            </select>
+          </div>
+        </>
+      )}
 
       <div className="field tag-filter-field">
         <label htmlFor="open-tag-filter">Tags</label>

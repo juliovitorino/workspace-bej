@@ -797,7 +797,7 @@ Mandatório:
         <h2>{item.intention}</h2>
         <p className="detail-english">{item.english}</p>
 
-        {(item.englishLevel || item.category || youtubeVideoUrl || youtubeShortUrl) && (
+        {(item.englishLevel || item.category || youtubeVideoUrl || youtubeShortUrl || (isAuthorMode() && item.allowLanguageChunkPractice === true)) && (
           <div
             className="detail-level"
             style={{
@@ -818,6 +818,12 @@ Mandatório:
                 {item.category}
               </span>
             )}
+            {isAuthorMode() && item.allowLanguageChunkPractice === true && (
+              <span className="pill">
+                flashcard
+              </span>
+            )}
+
             {youtubeVideoUrl && (
               <a
                 className="youtube-image-link"
