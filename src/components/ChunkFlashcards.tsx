@@ -5,6 +5,13 @@ interface ChunkFlashcardsProps {
   intentions: MentalIntention[];
 }
 
+function formatStudyTime(totalSeconds: number): string {
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+  return [hours, minutes, seconds].map((part) => String(part).padStart(2, "0")).join(":");
+}
+
 function pickRandomId(ids: string[]): string {
   return ids[Math.floor(Math.random() * ids.length)];
 }
@@ -30,10 +37,31 @@ export function ChunkFlashcards({ intentions }: ChunkFlashcardsProps) {
   const [currentId, setCurrentId] = useState<string | null>(null);
   const [audioError, setAudioError] = useState<string | null>(null);
 
+  // Cronômetro da sessão: ocultar o tempo não interrompe a contagem.
+  // O timestamp permite recuperar o tempo correto após a aba ficar em segundo plano.
+  const [studyStartedAt, setStudyStartedAt] = useState<number | null>(null);
+  const [elapsedSeconds, setElapsedSeconds] = useState(0);
+  const [isStudyTimeVisible, setIsStudyTimeVisible] = useState(false);
+
+  useEffect(() => {
+    if (studyStartedAt === null) return;
+
+    const refreshElapsed = () => {
+      setElapsedSeconds(Math.max(0, Math.floor((Date.now() - studyStartedAt) / 1000)));
+    };
+
+    refreshElapsed();
+    const intervalId = window.setInterval(refreshElapsed, 1000);
+    return () => window.clearInterval(intervalId);
+  }, [studyStartedAt]);
+
   useEffect(() => {
     setDrawnIds([]);
     setCurrentId(null);
     setAudioError(null);
+    setStudyStartedAt(null);
+    setElapsedSeconds(0);
+    setIsStudyTimeVisible(false);
   }, [chunks]);
 
   const currentChunk = chunks.find((item) => item.id === currentId) ?? null;
@@ -43,6 +71,8 @@ export function ChunkFlashcards({ intentions }: ChunkFlashcardsProps) {
 
   function nextChunk() {
     if (total === 0) return;
+    // Inicia no primeiro chunk; uma nova rodada não zera a sessão.
+    if (studyStartedAt === null) setStudyStartedAt(Date.now());
     if (typeof window !== "undefined" && "speechSynthesis" in window) {
       window.speechSynthesis.cancel();
     }
@@ -106,7 +136,39 @@ export function ChunkFlashcards({ intentions }: ChunkFlashcardsProps) {
           <h2 id="chunk-flashcards-title">Chunk Flashcards</h2>
           <p>Leia, ouça e repita cada expressão em voz alta.</p>
         </div>
-        <span className="chunk-flashcards-total">{total} chunks disponíveis</span>
+        <div className="chunk-flashcards-heading-tools">
+          <span className="chunk-flashcards-total">{total} chunks disponíveis</span>
+          {isStudyTimeVisible && (
+            <span className="chunk-flashcards-study-time" aria-label={`Tempo de estudo: ${formatStudyTime(elapsedSeconds)}`}>
+              <span className="chunk-flashcards-study-time-label">Tempo de estudo</span>
+              <span className="chunk-flashcards-study-time-value">{formatStudyTime(elapsedSeconds)}</span>
+            </span>
+          )}
+          <button
+            type="button"
+            className="chunk-flashcards-timer-toggle"
+            onClick={() => setIsStudyTimeVisible((visible) => !visible)}
+            aria-label={isStudyTimeVisible ? "Ocultar tempo de estudo" : "Mostrar tempo de estudo"}
+            aria-pressed={isStudyTimeVisible}
+            title={isStudyTimeVisible ? "Ocultar tempo (continua contando)" : "Mostrar cronômetro de estudo"}
+          >
+            {isStudyTimeVisible ? (
+              // Olho fechado: próximo clique oculta o tempo.
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M3 3 21 21" />
+                <path d="M10.6 5.2A10.6 10.6 0 0 1 12 5c4.5 0 8.3 2.9 10 7-0.6 1.5-1.5 2.8-2.6 3.8" />
+                <path d="M6.1 6.1C4.2 7.3 2.8 9.3 2 12c1.7 4.1 5.5 7 10 7 1.5 0 2.9-0.3 4.2-0.9" />
+                <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2" />
+              </svg>
+            ) : (
+              // Cronômetro: próximo clique exibe o tempo.
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <circle cx="12" cy="13" r="8" />
+                <path d="M12 13V9m0 4 3 2M9 2h6m-3 0v3m6.4 1.6 1.4-1.4" />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
 
       {total === 0 ? (

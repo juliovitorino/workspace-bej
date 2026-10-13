@@ -1942,6 +1942,58 @@ button {
   white-space: nowrap;
 }
 
+/* Contador e cronômetro de estudo (visibilidade independente da contagem). */
+.chunk-flashcards-heading-tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chunk-flashcards-study-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 12px;
+  border: 1px solid #c7d5ff;
+  border-radius: 999px;
+  background: #f7f9ff;
+  color: #243d9c;
+  white-space: nowrap;
+}
+
+.chunk-flashcards-study-time-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.chunk-flashcards-study-time-value {
+  font-size: 0.98rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.chunk-flashcards-timer-toggle {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #c7d5ff;
+  border-radius: 50%;
+  background: #eef2ff;
+  color: #3659d9;
+  cursor: pointer;
+}
+
+.chunk-flashcards-timer-toggle:hover,
+.chunk-flashcards-timer-toggle:focus-visible {
+  background: #dfe7ff;
+  outline: 3px solid rgba(54, 89, 217, 0.15);
+}
+
 .chunk-flashcards-progress {
   display: flex;
   justify-content: space-between;
