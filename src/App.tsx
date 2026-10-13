@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
-import { SearchPanel, type ChunkFilter, type HqImageFilter } from "./components/SearchPanel";
+import { SearchPanel, type ChunkFilter, type HqImageFilter, type YoutubeFilter } from "./components/SearchPanel";
 import { Sidebar, type AppView } from "./components/Sidebar";
 import { ExercisePanel } from "./components/ExercisePanel";
 import { BasicTraining } from "./components/BasicTraining";
@@ -15,6 +15,7 @@ import { ChunkFlashcards } from "./components/ChunkFlashcards";
 import { fetchHashmap, loadHashmap } from "./services/hashmapService";
 import type { HashmapData, MentalIntention } from "./types/hashmap";
 import { searchIntentions } from "./utils/searchIntentions";
+import { isAuthorMode } from "./utils/authorMode";
 
 type TrainingMode = "basic" | "advanced" | "review" | null;
 
@@ -30,6 +31,8 @@ function App() {
   const [englishLevelSearch, setEnglishLevelSearch] = useState("");
   const [hqImageFilter, setHqImageFilter] = useState<HqImageFilter>("all");
   const [chunkFilter, setChunkFilter] = useState<ChunkFilter>("all");
+  const [youtubeVideoFilter, setYoutubeVideoFilter] = useState<YoutubeFilter>("all");
+  const [youtubeShortFilter, setYoutubeShortFilter] = useState<YoutubeFilter>("all");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selected, setSelected] = useState<MentalIntention | null>(null);
   const [trainingMode, setTrainingMode] = useState<TrainingMode>(null);
@@ -37,6 +40,9 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [retrying, setRetrying] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Mesma verificacao de modo autor usada pelas ferramentas existentes.
+  const authorMode = isAuthorMode();
 
   useEffect(() => {
     let active = true;
@@ -101,6 +107,21 @@ function App() {
         if (chunkFilter === "without" && isChunk) return false;
       }
 
+      // Entre os filtros de YouTube selecionados, aplica OU (OR).
+      // "all" é neutro: não participa da combinação.
+      // Os demais filtros de busca continuam combinados com E (AND).
+      if (authorMode && (youtubeVideoFilter !== "all" || youtubeShortFilter !== "all")) {
+        const hasYoutubeVideo = typeof item.youtubeVideo === "string" && item.youtubeVideo.trim().length > 0;
+        const hasYoutubeShort = typeof item.youtubeShort === "string" && item.youtubeShort.trim().length > 0;
+
+        const matchesVideo = youtubeVideoFilter !== "all" &&
+          (youtubeVideoFilter === "with" ? hasYoutubeVideo : !hasYoutubeVideo);
+        const matchesShort = youtubeShortFilter !== "all" &&
+          (youtubeShortFilter === "with" ? hasYoutubeShort : !hasYoutubeShort);
+
+        if (!matchesVideo && !matchesShort) return false;
+      }
+
       if (hqImageFilter !== "all") {
         const hasHqImage = (item.examples ?? []).some(
           (example) =>
@@ -121,7 +142,10 @@ function App() {
     selectedTags,
     englishLevelSearch,
     hqImageFilter,
-    chunkFilter
+    chunkFilter,
+    authorMode,
+    youtubeVideoFilter,
+    youtubeShortFilter
   ]);
 
   async function retry() {
@@ -150,6 +174,8 @@ function App() {
     setEnglishLevelSearch("");
     setHqImageFilter("all");
     setChunkFilter("all");
+    setYoutubeVideoFilter("all");
+    setYoutubeShortFilter("all");
     setSelectedTags([]);
   }
 
@@ -224,6 +250,9 @@ function App() {
               englishLevelSearch={englishLevelSearch}
               hqImageFilter={hqImageFilter}
               chunkFilter={chunkFilter}
+              isAuthor={authorMode}
+              youtubeVideoFilter={youtubeVideoFilter}
+              youtubeShortFilter={youtubeShortFilter}
               availableTags={availableTags}
               selectedTags={selectedTags}
               onMentalSearchChange={setMentalSearch}
@@ -232,6 +261,8 @@ function App() {
               onEnglishLevelSearchChange={setEnglishLevelSearch}
               onHqImageFilterChange={setHqImageFilter}
               onChunkFilterChange={setChunkFilter}
+              onYoutubeVideoFilterChange={setYoutubeVideoFilter}
+              onYoutubeShortFilterChange={setYoutubeShortFilter}
               onTagsChange={setSelectedTags}
               onClear={clearFilters}
             />
