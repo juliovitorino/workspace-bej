@@ -1,6 +1,8 @@
-import { useEffect, useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import type { SpeakingGameForm } from "../config/speakingGameForms";
 import type { EnglishVerb } from "../types/englishVerb";
+import type { MentalIntention } from "../types/hashmap";
+import { loadHashmap } from "../services/hashmapService";
 import type {
   SpeakingGameSettings,
   SpeakingGameStatus
@@ -28,6 +30,16 @@ function drawDifferentItem<T extends VocabularyItem>(
   if (items.length === 0) return null;
   const alternatives = items.filter((item) => item.id !== previous?.id);
   const pool = alternatives.length > 0 ? alternatives : items;
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
+function drawDifferentChunk(
+  chunks: MentalIntention[],
+  previous: MentalIntention | null
+): MentalIntention | null {
+  if (chunks.length === 0) return null;
+  const alternatives = chunks.filter((item) => item.id !== previous?.id);
+  const pool = alternatives.length > 0 ? alternatives : chunks;
   return pool[Math.floor(Math.random() * pool.length)];
 }
 
@@ -71,6 +83,9 @@ export function SpeakingGamePlayStep({
   const [nouns, setNouns] = useState<NounItem[]>([]);
   const [selectedAdjective, setSelectedAdjective] = useState<AdjectiveItem | null>(null);
   const [selectedNoun, setSelectedNoun] = useState<NounItem | null>(null);
+  const [chunks, setChunks] = useState<MentalIntention[]>([]);
+  const [selectedChunk, setSelectedChunk] = useState<MentalIntention | null>(null);
+  const previousRemainingSeconds = useRef(remainingSeconds);
   const [sentenceMode, setSentenceMode] = useState<SentenceMode>(
     drawSentenceMode
   );
@@ -108,6 +123,48 @@ export function SpeakingGamePlayStep({
     return () => { active = false; };
   }, []);
 
+  // Reutiliza a mesma fonte do Mental Hashmap usada pelo App.
+  // Só entram intenções explicitamente habilitadas como chunks completos.
+  useEffect(() => {
+    let active = true;
+
+    async function loadChunks() {
+      try {
+        const result = await loadHashmap();
+        if (!active) return;
+        setChunks(
+          result.data.mentalMap.filter(
+            (item) =>
+              item.allowLanguageChunkPractice === true &&
+              typeof item.english === "string" &&
+              item.english.trim().length > 0 &&
+              typeof item.intention === "string" &&
+              item.intention.trim().length > 0
+          )
+        );
+      } catch (error) {
+        console.error("Erro ao carregar chunks do Jogo da Fala:", error);
+      }
+    }
+
+    void loadChunks();
+    return () => { active = false; };
+  }, []);
+
+  // Novo chunk quando a forma verbal ou o verbo muda, e no carregamento inicial.
+  useEffect(() => {
+    setSelectedChunk((previous) => drawDifferentChunk(chunks, previous));
+  }, [verb.id, form, chunks]);
+
+  // No modo automático, o contador volta a subir quando uma nova rodada começa.
+  // Isso também cobre rodadas que reutilizam o mesmo verbo e a mesma forma.
+  useEffect(() => {
+    if (isAutomatic && remainingSeconds > previousRemainingSeconds.current) {
+      setSelectedChunk((previous) => drawDifferentChunk(chunks, previous));
+    }
+    previousRemainingSeconds.current = remainingSeconds;
+  }, [isAutomatic, remainingSeconds, chunks]);
+
   useEffect(() => {
     setSelectedAdjective((previous) => drawDifferentItem(adjectives, previous));
     setSelectedNoun((previous) => drawDifferentItem(nouns, previous));
@@ -127,11 +184,13 @@ export function SpeakingGamePlayStep({
   }
 
   function handleNext() {
+    setSelectedChunk((previous) => drawDifferentChunk(chunks, previous));
     onNext();
     scrollToVerbAfterUpdate();
   }
 
   function handleNewVerb() {
+    setSelectedChunk((previous) => drawDifferentChunk(chunks, previous));
     onNewVerb?.();
     scrollToVerbAfterUpdate();
   }
@@ -163,26 +222,34 @@ export function SpeakingGamePlayStep({
           <span style={styles.vocabularyLabel}>Adjetivo</span>
           <strong style={styles.vocabularyWord}>
             {selectedAdjective?.adjective ?? "—"}
+            {selectedAdjective?.meanings?.length ? (
+              <span style={styles.vocabularyMeaning}>
+                {" ("}{selectedAdjective.meanings.join(" • ")}{")"}
+              </span>
+            ) : null}
           </strong>
-          {selectedAdjective?.meanings?.length ? (
-            <span style={styles.vocabularyMeaning}>
-              {selectedAdjective.meanings.join(" • ")}
-            </span>
-          ) : null}
         </div>
 
         <div style={styles.vocabularyCard}>
           <span style={styles.vocabularyLabel}>Substantivo (Noun)</span>
           <strong style={styles.vocabularyWord}>
             {selectedNoun?.noun ?? "—"}
+            {selectedNoun?.meanings?.length ? (
+              <span style={styles.vocabularyMeaning}>
+                {" ("}{selectedNoun.meanings.join(" • ")}{")"}
+              </span>
+            ) : null}
           </strong>
-          {selectedNoun?.meanings?.length ? (
-            <span style={styles.vocabularyMeaning}>
-              {selectedNoun.meanings.join(" • ")}
-            </span>
-          ) : null}
         </div>
       </div>
+
+      {selectedChunk && (
+        <div style={styles.chunkCard} aria-label="Chunk aleatório do Mental Hashmap">
+          <span style={styles.vocabularyLabel}>🃏 Chunk / intenção aleatória</span>
+          <strong style={styles.chunkEnglish}>{selectedChunk.english}</strong>
+          <span style={styles.chunkPortuguese}>{selectedChunk.intention}</span>
+        </div>
+      )}
 
       <div style={styles.challenge}>
         <span style={styles.challengeLabel}>
@@ -482,6 +549,29 @@ const styles: Record<string, CSSProperties> = {
   },
   vocabularyMeaning: {
     fontSize: "0.88rem",
+    fontWeight: 500,
+    color: "#475569",
+    overflowWrap: "anywhere"
+  },
+  chunkCard: {
+    display: "grid",
+    justifyItems: "center",
+    gap: "0.5rem",
+    padding: "1rem",
+    marginBottom: "1rem",
+    border: "1px solid #bfdbfe",
+    borderRadius: "12px",
+    background: "#eff6ff",
+    textAlign: "center"
+  },
+  chunkEnglish: {
+    fontSize: "clamp(1.2rem, 5vw, 1.6rem)",
+    lineHeight: 1.3,
+    color: "#1d4ed8",
+    overflowWrap: "anywhere"
+  },
+  chunkPortuguese: {
+    fontSize: "0.9rem",
     color: "#475569",
     overflowWrap: "anywhere"
   },
