@@ -41161,7 +41161,99 @@
     "speaking"
   ],
   "related": []
+},
+
+{
+  "id": "c8a2f731-5d49-4b6e-9f20-7a3d1e8c6045",
+  "intention": "Posso ir junto com você?",
+  "english": "Can I tag along with you?",
+  "pattern": "Can I tag along with you? / subject + tag along + with + someone",
+  "description": "Chunk completo e informal usado para pedir permissão para acompanhar alguém em uma atividade, passeio, viagem ou compromisso. TAG ALONG significa ir junto ou acompanhar alguém, especialmente quando a atividade já foi planejada pela outra pessoa. É muito natural em conversas cotidianas e situações sociais. Também pode ser usado sem WITH YOU, como em 'Can I tag along?'.",
+  "category": "daily-conversation",
+  "englishLevel": "B1",
+  "allowLanguageChunkPractice": true,
+  "searchTerms": [
+    "posso ir junto",
+    "posso ir com você",
+    "posso acompanhar você",
+    "posso ir junto com você",
+    "ir junto",
+    "acompanhar alguém",
+    "tag along",
+    "tag along with",
+    "can I tag along",
+    "can I tag along with you"
+  ],
+  "validationPatterns": [
+    "\\bcan\\s+I\\s+tag\\s+along\\s+with\\s+you\\b",
+    "\\bcan\\s+I\\s+tag\\s+along\\b",
+    "\\b(?:tag|tags|tagged|tagging)\\s+along\\b"
+  ],
+  "examples": [
+    {
+      "pt": "Posso ir junto com você?",
+      "en": "Can I tag along with you?",
+      "ptIntent": "Posso ir junto com você",
+      "enIntent": "Can I tag along with you"
+    },
+    {
+      "pt": "Você vai ao shopping? Posso ir junto com você?",
+      "en": "Are you going to the mall? Can I tag along with you?",
+      "ptIntent": "Posso ir junto com você",
+      "enIntent": "Can I tag along with you"
+    },
+    {
+      "pt": "Se você for à praia amanhã, posso ir junto com você?",
+      "en": "If you go to the beach tomorrow, can I tag along with you?",
+      "ptIntent": "posso ir junto com você",
+      "enIntent": "can I tag along with you"
+    },
+    {
+      "pt": "Vocês vão sair hoje à noite? Posso ir junto?",
+      "en": "Are you guys going out tonight? Can I tag along?",
+      "ptIntent": "Posso ir junto",
+      "enIntent": "Can I tag along"
+    },
+    {
+      "pt": "Meu irmão quer ir junto com a gente.",
+      "en": "My brother wants to tag along with us.",
+      "ptIntent": "ir junto com a gente",
+      "enIntent": "tag along with us"
+    },
+    {
+      "pt": "Ela perguntou se poderia ir junto com a gente.",
+      "en": "She asked if she could tag along with us.",
+      "ptIntent": "ir junto com a gente",
+      "enIntent": "tag along with us"
+    },
+    {
+      "pt": "Eu não queria ir sozinho, então perguntei se poderia ir junto com eles.",
+      "en": "I didn't want to go alone, so I asked if I could tag along with them.",
+      "ptIntent": "ir junto com eles",
+      "enIntent": "tag along with them"
+    },
+    {
+      "pt": "Você se importa se eu for junto?",
+      "en": "Do you mind if I tag along?",
+      "ptIntent": "se eu for junto",
+      "enIntent": "if I tag along"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "complete-chunk",
+    "phrasal-verb",
+    "spoken-english",
+    "informal-english",
+    "social-interaction",
+    "invitation",
+    "permission",
+    "daily-conversation",
+    "speaking"
+  ],
+  "related": []
 }
+
 
 
   ]
