@@ -295,8 +295,15 @@ function App() {
               />
             )}
 
-            {!loading && data && currentView === "chunk-flashcards" && !trainingMode && (
-              <ChunkFlashcards intentions={data.mentalMap} onShowDetails={setSelected} />
+            {!loading && data && currentView === "chunk-flashcards" && (
+              <div style={{ display: trainingMode ? "none" : undefined }}>
+                <ChunkFlashcards
+                  intentions={data.mentalMap}
+                  onShowDetails={setSelected}
+                  onBasicTraining={(item) => startTraining(item, "basic")}
+                  onAdvancedTraining={(item) => startTraining(item, "advanced")}
+                />
+              </div>
             )}
 
             {!loading && currentView === "speaking-game" && !trainingMode && (
