@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
-import { SearchPanel, type HqImageFilter } from "./components/SearchPanel";
+import { SearchPanel, type ChunkFilter, type HqImageFilter } from "./components/SearchPanel";
 import { Sidebar, type AppView } from "./components/Sidebar";
 import { ExercisePanel } from "./components/ExercisePanel";
 import { BasicTraining } from "./components/BasicTraining";
@@ -29,6 +29,7 @@ function App() {
   const [categorySearch, setCategorySearch] = useState("");
   const [englishLevelSearch, setEnglishLevelSearch] = useState("");
   const [hqImageFilter, setHqImageFilter] = useState<HqImageFilter>("all");
+  const [chunkFilter, setChunkFilter] = useState<ChunkFilter>("all");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selected, setSelected] = useState<MentalIntention | null>(null);
   const [trainingMode, setTrainingMode] = useState<TrainingMode>(null);
@@ -93,18 +94,24 @@ function App() {
       englishLevelSearch
     );
 
-    if (hqImageFilter === "all") {
-      return searchedItems;
-    }
-
     return searchedItems.filter((item) => {
-      const hasHqImage = (item.examples ?? []).some(
-        (example) =>
-          typeof example.hqImage === "string" &&
-          example.hqImage.trim().length > 0
-      );
+      if (chunkFilter !== "all") {
+        const isChunk = item.allowLanguageChunkPractice === true;
+        if (chunkFilter === "with" && !isChunk) return false;
+        if (chunkFilter === "without" && isChunk) return false;
+      }
 
-      return hqImageFilter === "with" ? hasHqImage : !hasHqImage;
+      if (hqImageFilter !== "all") {
+        const hasHqImage = (item.examples ?? []).some(
+          (example) =>
+            typeof example.hqImage === "string" &&
+            example.hqImage.trim().length > 0
+        );
+        if (hqImageFilter === "with" && !hasHqImage) return false;
+        if (hqImageFilter === "without" && hasHqImage) return false;
+      }
+
+      return true;
     });
   }, [
     data,
@@ -113,7 +120,8 @@ function App() {
     categorySearch,
     selectedTags,
     englishLevelSearch,
-    hqImageFilter
+    hqImageFilter,
+    chunkFilter
   ]);
 
   async function retry() {
@@ -141,6 +149,7 @@ function App() {
     setCategorySearch("");
     setEnglishLevelSearch("");
     setHqImageFilter("all");
+    setChunkFilter("all");
     setSelectedTags([]);
   }
 
@@ -214,6 +223,7 @@ function App() {
               categorySearch={categorySearch}
               englishLevelSearch={englishLevelSearch}
               hqImageFilter={hqImageFilter}
+              chunkFilter={chunkFilter}
               availableTags={availableTags}
               selectedTags={selectedTags}
               onMentalSearchChange={setMentalSearch}
@@ -221,6 +231,7 @@ function App() {
               onCategorySearchChange={setCategorySearch}
               onEnglishLevelSearchChange={setEnglishLevelSearch}
               onHqImageFilterChange={setHqImageFilter}
+              onChunkFilterChange={setChunkFilter}
               onTagsChange={setSelectedTags}
               onClear={clearFilters}
             />
