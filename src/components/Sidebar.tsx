@@ -1,4 +1,4 @@
-export type AppView = "hashmap" | "exercises" | "speaking-game" | "interpretation";
+export type AppView = "hashmap" | "exercises" | "speaking-game" | "chunk-flashcards" | "interpretation";
 
 const AI_ENABLED = import.meta.env.VITE_AI_ENABLED === "true";
 
@@ -18,6 +18,10 @@ const menuItems: Array<{
   {
     id: "exercises",
     label: "Exercícios"
+  },
+  {
+    id: "chunk-flashcards",
+    label: "Chunk Flashcards"
   },
   {
     id: "speaking-game",

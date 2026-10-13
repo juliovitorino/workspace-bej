@@ -36231,7 +36231,1858 @@
     "spoken-english"
   ],
   "related": []
-}
+},
+
+  {
+    "id": "im-short-on-time-d43fd1f3-c8f3-42ca-b84a-86ed9b476082",
+    "intention": "Estou sem muito tempo",
+    "english": "I'm short on time",
+    "pattern": "I'm short on time",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: estou sem muito tempo.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Estou sem muito tempo",
+      "I'm short on time"
+    ],
+    "validationPatterns": [
+      "\\bI'm\\s+short\\s+on\\s+time\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou sem muito tempo hoje.",
+        "en": "I'm short on time today.",
+        "ptIntent": "Estou sem muito tempo",
+        "enIntent": "I'm short on time"
+      },
+      {
+        "pt": "Desculpe, estou sem muito tempo agora.",
+        "en": "Sorry, I'm short on time right now.",
+        "ptIntent": "estou sem muito tempo",
+        "enIntent": "I'm short on time"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "lets-give-it-another-shot-7f7e7c04-5f50-4006-bafb-be11ad670640",
+    "intention": "Vamos tentar mais uma vez",
+    "english": "Let's give it another shot",
+    "pattern": "Let's give it another shot",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: vamos tentar mais uma vez.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Vamos tentar mais uma vez",
+      "Let's give it another shot"
+    ],
+    "validationPatterns": [
+      "\\bLet's\\s+give\\s+it\\s+another\\s+shot\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Vamos tentar mais uma vez.",
+        "en": "Let's give it another shot.",
+        "ptIntent": "Vamos tentar mais uma vez",
+        "enIntent": "Let's give it another shot"
+      },
+      {
+        "pt": "Não deu certo, mas vamos tentar mais uma vez.",
+        "en": "It didn't work, but let's give it another shot.",
+        "ptIntent": "vamos tentar mais uma vez",
+        "enIntent": "let's give it another shot"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "that-drives-me-crazy-b2367ae7-8192-4efa-ad4b-f0c6097f2f28",
+    "intention": "Isso me deixa louco",
+    "english": "That drives me crazy",
+    "pattern": "That drives me crazy",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: isso me deixa louco.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Isso me deixa louco",
+      "That drives me crazy"
+    ],
+    "validationPatterns": [
+      "\\bThat\\s+drives\\s+me\\s+crazy\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Isso me deixa louco.",
+        "en": "That drives me crazy.",
+        "ptIntent": "Isso me deixa louco",
+        "enIntent": "That drives me crazy"
+      },
+      {
+        "pt": "Esse barulho me deixa louco.",
+        "en": "That noise drives me crazy.",
+        "ptIntent": "Esse barulho me deixa louco.",
+        "enIntent": "That noise drives me crazy."
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "that-gets-on-my-nerves-2ecdd26c-6e91-47e1-ac41-445416ccee46",
+    "intention": "Isso me irrita",
+    "english": "That gets on my nerves",
+    "pattern": "That gets on my nerves",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: isso me irrita.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Isso me irrita",
+      "That gets on my nerves"
+    ],
+    "validationPatterns": [
+      "\\bThat\\s+gets\\s+on\\s+my\\s+nerves\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Isso me irrita.",
+        "en": "That gets on my nerves.",
+        "ptIntent": "Isso me irrita",
+        "enIntent": "That gets on my nerves"
+      },
+      {
+        "pt": "Quando ele faz isso, me irrita.",
+        "en": "When he does that, it gets on my nerves.",
+        "ptIntent": "Quando ele faz isso, me irrita.",
+        "enIntent": "When he does that, it gets on my nerves."
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "ill-handle-it-72ae2ce9-4259-4eb8-af7e-34096b990dbc",
+    "intention": "Deixa que eu resolvo",
+    "english": "I'll handle it",
+    "pattern": "I'll handle it",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: deixa que eu resolvo.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Deixa que eu resolvo",
+      "I'll handle it"
+    ],
+    "validationPatterns": [
+      "\\bI'll\\s+handle\\s+it\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Deixa que eu resolvo.",
+        "en": "I'll handle it.",
+        "ptIntent": "Deixa que eu resolvo",
+        "enIntent": "I'll handle it"
+      },
+      {
+        "pt": "Não se preocupe com o problema; deixa que eu resolvo.",
+        "en": "Don't worry about the problem; I'll handle it.",
+        "ptIntent": "deixa que eu resolvo",
+        "enIntent": "I'll handle it"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-owe-you-one-060e23a6-cdc9-490d-b922-a61a99de2f5a",
+    "intention": "Fico te devendo uma",
+    "english": "I owe you one",
+    "pattern": "I owe you one",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: fico te devendo uma.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Fico te devendo uma",
+      "I owe you one"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+owe\\s+you\\s+one\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Obrigado, fico te devendo uma.",
+        "en": "Thanks, I owe you one.",
+        "ptIntent": "fico te devendo uma",
+        "enIntent": "I owe you one"
+      },
+      {
+        "pt": "Você me salvou hoje. Fico te devendo uma.",
+        "en": "You saved me today. I owe you one.",
+        "ptIntent": "Fico te devendo uma",
+        "enIntent": "I owe you one"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "dont-mention-it-811d0ed6-3e77-45bf-aca2-47cfe7a61dc7",
+    "intention": "Não precisa agradecer",
+    "english": "Don't mention it",
+    "pattern": "Don't mention it",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: não precisa agradecer.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Não precisa agradecer",
+      "Don't mention it"
+    ],
+    "validationPatterns": [
+      "\\bDon't\\s+mention\\s+it\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Não precisa agradecer.",
+        "en": "Don't mention it.",
+        "ptIntent": "Não precisa agradecer",
+        "enIntent": "Don't mention it"
+      },
+      {
+        "pt": "Foi um prazer ajudar. Não precisa agradecer.",
+        "en": "Happy to help. Don't mention it.",
+        "ptIntent": "Não precisa agradecer",
+        "enIntent": "Don't mention it"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "dont-be-a-stranger-6ca3c232-cd8f-4c75-a1ea-59580a0b87bf",
+    "intention": "Não suma",
+    "english": "Don't be a stranger",
+    "pattern": "Don't be a stranger",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: não suma.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Não suma",
+      "Don't be a stranger"
+    ],
+    "validationPatterns": [
+      "\\bDon't\\s+be\\s+a\\s+stranger\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Não suma, viu?",
+        "en": "Don't be a stranger!",
+        "ptIntent": "Não suma",
+        "enIntent": "Don't be a stranger"
+      },
+      {
+        "pt": "Foi ótimo te ver. Não suma!",
+        "en": "It was great seeing you. Don't be a stranger!",
+        "ptIntent": "Não suma",
+        "enIntent": "Don't be a stranger"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "im-just-browsing-4611df20-5a53-42da-813e-7f177352175d",
+    "intention": "Estou só dando uma olhada",
+    "english": "I'm just browsing",
+    "pattern": "I'm just browsing",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: estou só dando uma olhada.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Estou só dando uma olhada",
+      "I'm just browsing"
+    ],
+    "validationPatterns": [
+      "\\bI'm\\s+just\\s+browsing\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou só dando uma olhada, obrigado.",
+        "en": "I'm just browsing, thanks.",
+        "ptIntent": "Estou só dando uma olhada",
+        "enIntent": "I'm just browsing"
+      },
+      {
+        "pt": "Não preciso de ajuda. Estou só dando uma olhada.",
+        "en": "I don't need help. I'm just browsing.",
+        "ptIntent": "Estou só dando uma olhada",
+        "enIntent": "I'm just browsing"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "can-i-try-this-on-cc1cad3c-45ce-40a5-929e-4ea4437cf3b5",
+    "intention": "Posso experimentar isto?",
+    "english": "Can I try this on?",
+    "pattern": "Can I try this on?",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: posso experimentar isto?.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Posso experimentar isto?",
+      "Can I try this on?"
+    ],
+    "validationPatterns": [
+      "\\bCan\\s+I\\s+try\\s+this\\s+on\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Posso experimentar isto?",
+        "en": "Can I try this on?",
+        "ptIntent": "Posso experimentar isto?",
+        "enIntent": "Can I try this on?"
+      },
+      {
+        "pt": "Gostei da camisa. Posso experimentar?",
+        "en": "I like this shirt. Can I try this on?",
+        "ptIntent": "Gostei da camisa. Posso experimentar?",
+        "enIntent": "Can I try this on?"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-havent-got-a-clue-a8614a50-4e5f-4387-b687-281ea99af3e7",
+    "intention": "Não faço a menor ideia",
+    "english": "I haven't got a clue",
+    "pattern": "I haven't got a clue",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: não faço a menor ideia.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Não faço a menor ideia",
+      "I haven't got a clue"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+haven't\\s+got\\s+a\\s+clue\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Não faço a menor ideia.",
+        "en": "I haven't got a clue.",
+        "ptIntent": "Não faço a menor ideia",
+        "enIntent": "I haven't got a clue"
+      },
+      {
+        "pt": "Não faço a menor ideia de onde ele está.",
+        "en": "I haven't got a clue where he is.",
+        "ptIntent": "Não faço a menor ideia",
+        "enIntent": "I haven't got a clue"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-cant-make-it-82819376-de79-4e43-9752-96bc8114f5eb",
+    "intention": "Não vou conseguir ir",
+    "english": "I can't make it",
+    "pattern": "I can't make it",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: não vou conseguir ir.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Não vou conseguir ir",
+      "I can't make it"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+can't\\s+make\\s+it\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Desculpe, não vou conseguir ir.",
+        "en": "Sorry, I can't make it.",
+        "ptIntent": "não vou conseguir ir",
+        "enIntent": "I can't make it"
+      },
+      {
+        "pt": "Não vou conseguir ir à reunião amanhã.",
+        "en": "I can't make it to the meeting tomorrow.",
+        "ptIntent": "Não vou conseguir ir",
+        "enIntent": "I can't make it"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-cant-afford-it-c8b91c9c-b248-4ede-9348-fad258bc418e",
+    "intention": "Não tenho condições de pagar",
+    "english": "I can't afford it",
+    "pattern": "I can't afford it",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: não tenho condições de pagar.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Não tenho condições de pagar",
+      "I can't afford it"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+can't\\s+afford\\s+it\\b"
+    ],
+    "examples": [
+      {
+        "pt": "É caro demais. Não tenho condições de pagar.",
+        "en": "It's too expensive. I can't afford it.",
+        "ptIntent": "Não tenho condições de pagar",
+        "enIntent": "I can't afford it"
+      },
+      {
+        "pt": "Quero comprar, mas não tenho condições de pagar.",
+        "en": "I want to buy it, but I can't afford it.",
+        "ptIntent": "não tenho condições de pagar",
+        "enIntent": "I can't afford it"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-cant-help-it-dfcd326e-c767-448b-8cb9-71668ee0bdca",
+    "intention": "Não consigo evitar",
+    "english": "I can't help it",
+    "pattern": "I can't help it",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: não consigo evitar.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Não consigo evitar",
+      "I can't help it"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+can't\\s+help\\s+it\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Não consigo evitar.",
+        "en": "I can't help it.",
+        "ptIntent": "Não consigo evitar",
+        "enIntent": "I can't help it"
+      },
+      {
+        "pt": "Eu sei que é estranho, mas não consigo evitar.",
+        "en": "I know it's strange, but I can't help it.",
+        "ptIntent": "não consigo evitar",
+        "enIntent": "I can't help it"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-cant-stand-it-f19ad27b-75f3-4187-92ce-a93f4465f414",
+    "intention": "Não suporto isso",
+    "english": "I can't stand it",
+    "pattern": "I can't stand it",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: não suporto isso.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Não suporto isso",
+      "I can't stand it"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+can't\\s+stand\\s+it\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Não suporto isso.",
+        "en": "I can't stand it.",
+        "ptIntent": "Não suporto isso",
+        "enIntent": "I can't stand it"
+      },
+      {
+        "pt": "Esse cheiro é horrível. Não suporto isso.",
+        "en": "That smell is awful. I can't stand it.",
+        "ptIntent": "Não suporto isso",
+        "enIntent": "I can't stand it"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "im-counting-on-you-0193527c-60fc-45f5-bfa6-23ad65aec1c1",
+    "intention": "Estou contando com você",
+    "english": "I'm counting on you",
+    "pattern": "I'm counting on you",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: estou contando com você.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Estou contando com você",
+      "I'm counting on you"
+    ],
+    "validationPatterns": [
+      "\\bI'm\\s+counting\\s+on\\s+you\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou contando com você.",
+        "en": "I'm counting on you.",
+        "ptIntent": "Estou contando com você",
+        "enIntent": "I'm counting on you"
+      },
+      {
+        "pt": "Por favor, não se atrase. Estou contando com você.",
+        "en": "Please don't be late. I'm counting on you.",
+        "ptIntent": "Estou contando com você",
+        "enIntent": "I'm counting on you"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "im-trying-to-figure-it-out-526cba91-c0d4-4dea-8ced-5e7bd1f1e4f6",
+    "intention": "Estou tentando descobrir",
+    "english": "I'm trying to figure it out",
+    "pattern": "I'm trying to figure it out",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: estou tentando descobrir.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Estou tentando descobrir",
+      "I'm trying to figure it out"
+    ],
+    "validationPatterns": [
+      "\\bI'm\\s+trying\\s+to\\s+figure\\s+it\\s+out\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou tentando descobrir.",
+        "en": "I'm trying to figure it out.",
+        "ptIntent": "Estou tentando descobrir",
+        "enIntent": "I'm trying to figure it out"
+      },
+      {
+        "pt": "Ainda não sei a resposta. Estou tentando descobrir.",
+        "en": "I don't know the answer yet. I'm trying to figure it out.",
+        "ptIntent": "Estou tentando descobrir",
+        "enIntent": "I'm trying to figure it out"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "thats-out-of-the-question-59116fcb-b589-4f3d-84eb-1727de09778d",
+    "intention": "Isso está fora de questão",
+    "english": "That's out of the question",
+    "pattern": "That's out of the question",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: isso está fora de questão.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Isso está fora de questão",
+      "That's out of the question"
+    ],
+    "validationPatterns": [
+      "\\bThat's\\s+out\\s+of\\s+the\\s+question\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Isso está fora de questão.",
+        "en": "That's out of the question.",
+        "ptIntent": "Isso está fora de questão",
+        "enIntent": "That's out of the question"
+      },
+      {
+        "pt": "Trabalhar sem receber? Isso está fora de questão.",
+        "en": "Work without pay? That's out of the question.",
+        "ptIntent": "Isso está fora de questão",
+        "enIntent": "That's out of the question"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "its-not-worth-it-056483a7-b127-4585-ae1d-ee097b91e57a",
+    "intention": "Não vale a pena",
+    "english": "It's not worth it",
+    "pattern": "It's not worth it",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: não vale a pena.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Não vale a pena",
+      "It's not worth it"
+    ],
+    "validationPatterns": [
+      "\\bIt's\\s+not\\s+worth\\s+it\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Não vale a pena.",
+        "en": "It's not worth it.",
+        "ptIntent": "Não vale a pena",
+        "enIntent": "It's not worth it"
+      },
+      {
+        "pt": "É muito arriscado. Não vale a pena.",
+        "en": "It's too risky. It's not worth it.",
+        "ptIntent": "Não vale a pena",
+        "enIntent": "It's not worth it"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "it-makes-no-difference-b57654ca-6c0d-45a7-acbc-9d3b4cec6ffe",
+    "intention": "Não faz diferença",
+    "english": "It makes no difference",
+    "pattern": "It makes no difference",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: não faz diferença.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Não faz diferença",
+      "It makes no difference"
+    ],
+    "validationPatterns": [
+      "\\bIt\\s+makes\\s+no\\s+difference\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Para mim, não faz diferença.",
+        "en": "To me, it makes no difference.",
+        "ptIntent": "não faz diferença",
+        "enIntent": "it makes no difference"
+      },
+      {
+        "pt": "Qualquer horário serve. Não faz diferença.",
+        "en": "Any time works. It makes no difference.",
+        "ptIntent": "Não faz diferença",
+        "enIntent": "It makes no difference"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "im-heading-out-d0ea9c35-5ff8-47b6-b7e5-64327376c256",
+    "intention": "Estou saindo",
+    "english": "I'm heading out",
+    "pattern": "I'm heading out",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: estou saindo.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Estou saindo",
+      "I'm heading out"
+    ],
+    "validationPatterns": [
+      "\\bI'm\\s+heading\\s+out\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou saindo agora.",
+        "en": "I'm heading out now.",
+        "ptIntent": "Estou saindo",
+        "enIntent": "I'm heading out"
+      },
+      {
+        "pt": "Já terminei o trabalho. Estou saindo.",
+        "en": "I'm done with work. I'm heading out.",
+        "ptIntent": "Estou saindo",
+        "enIntent": "I'm heading out"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "hold-on-a5893fa2-0e0c-4e8c-9607-d67ea7d269f2",
+    "intention": "Espere um instante",
+    "english": "Hold on",
+    "pattern": "Hold on",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: espere um instante.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Espere um instante",
+      "Hold on"
+    ],
+    "validationPatterns": [
+      "\\bHold\\s+on\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Espere um instante.",
+        "en": "Hold on.",
+        "ptIntent": "Espere um instante",
+        "enIntent": "Hold on"
+      },
+      {
+        "pt": "Espere um instante, vou verificar.",
+        "en": "Hold on, I'll check.",
+        "ptIntent": "Espere um instante",
+        "enIntent": "Hold on"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "have-a-seat-39c9810f-c6a7-4fe6-9431-c9264b6cde39",
+    "intention": "Pode se sentar",
+    "english": "Have a seat",
+    "pattern": "Have a seat",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: pode se sentar.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Pode se sentar",
+      "Have a seat"
+    ],
+    "validationPatterns": [
+      "\\bHave\\s+a\\s+seat\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Entre e pode se sentar.",
+        "en": "Come in and have a seat.",
+        "ptIntent": "pode se sentar",
+        "enIntent": "have a seat"
+      },
+      {
+        "pt": "Por favor, pode se sentar.",
+        "en": "Please, have a seat.",
+        "ptIntent": "pode se sentar",
+        "enIntent": "have a seat"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-have-my-doubts-428a69a8-b838-421f-bf7f-10b8db38071f",
+    "intention": "Tenho minhas dúvidas",
+    "english": "I have my doubts",
+    "pattern": "I have my doubts",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: tenho minhas dúvidas.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Tenho minhas dúvidas",
+      "I have my doubts"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+have\\s+my\\s+doubts\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Tenho minhas dúvidas.",
+        "en": "I have my doubts.",
+        "ptIntent": "Tenho minhas dúvidas",
+        "enIntent": "I have my doubts"
+      },
+      {
+        "pt": "Talvez funcione, mas tenho minhas dúvidas.",
+        "en": "It might work, but I have my doubts.",
+        "ptIntent": "tenho minhas dúvidas",
+        "enIntent": "I have my doubts"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "its-not-a-big-deal-840c16c6-1836-4167-844d-e938428f7b9d",
+    "intention": "Não é nada demais",
+    "english": "It's not a big deal",
+    "pattern": "It's not a big deal",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: não é nada demais.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Não é nada demais",
+      "It's not a big deal"
+    ],
+    "validationPatterns": [
+      "\\bIt's\\s+not\\s+a\\s+big\\s+deal\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Não é nada demais.",
+        "en": "It's not a big deal.",
+        "ptIntent": "Não é nada demais",
+        "enIntent": "It's not a big deal"
+      },
+      {
+        "pt": "Foi só um erro pequeno. Não é nada demais.",
+        "en": "It was just a small mistake. It's not a big deal.",
+        "ptIntent": "Não é nada demais",
+        "enIntent": "It's not a big deal"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "you-really-helped-me-out-ccee6339-d24e-4a69-a35d-fdba8c4db63d",
+    "intention": "Você me ajudou muito",
+    "english": "You really helped me out",
+    "pattern": "You really helped me out",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: você me ajudou muito.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Você me ajudou muito",
+      "You really helped me out"
+    ],
+    "validationPatterns": [
+      "\\bYou\\s+really\\s+helped\\s+me\\s+out\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Você me ajudou muito.",
+        "en": "You really helped me out.",
+        "ptIntent": "Você me ajudou muito",
+        "enIntent": "You really helped me out"
+      },
+      {
+        "pt": "Obrigado pelo conselho. Você me ajudou muito.",
+        "en": "Thanks for the advice. You really helped me out.",
+        "ptIntent": "Você me ajudou muito",
+        "enIntent": "You really helped me out"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "practice-makes-perfect-5b4bc970-06fa-41cf-8be0-c254ac5bbe33",
+    "intention": "A prática leva à perfeição",
+    "english": "Practice makes perfect",
+    "pattern": "Practice makes perfect",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: a prática leva à perfeição.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "A prática leva à perfeição",
+      "Practice makes perfect"
+    ],
+    "validationPatterns": [
+      "\\bPractice\\s+makes\\s+perfect\\b"
+    ],
+    "examples": [
+      {
+        "pt": "A prática leva à perfeição.",
+        "en": "Practice makes perfect.",
+        "ptIntent": "A prática leva à perfeição",
+        "enIntent": "Practice makes perfect"
+      },
+      {
+        "pt": "Continue treinando. A prática leva à perfeição.",
+        "en": "Keep practicing. Practice makes perfect.",
+        "ptIntent": "A prática leva à perfeição",
+        "enIntent": "Practice makes perfect"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "to-the-best-of-my-knowledge-12202e34-14ca-44ff-be1d-d2a91906fe43",
+    "intention": "Até onde sei (formal)",
+    "english": "To the best of my knowledge",
+    "pattern": "To the best of my knowledge",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: até onde sei (formal).",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Até onde sei (formal)",
+      "To the best of my knowledge"
+    ],
+    "validationPatterns": [
+      "\\bTo\\s+the\\s+best\\s+of\\s+my\\s+knowledge\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Até onde sei, o prazo é amanhã.",
+        "en": "To the best of my knowledge, the deadline is tomorrow.",
+        "ptIntent": "Até onde sei, o prazo é amanhã.",
+        "enIntent": "To the best of my knowledge"
+      },
+      {
+        "pt": "Até onde sei, nada mudou.",
+        "en": "To the best of my knowledge, nothing has changed.",
+        "ptIntent": "Até onde sei, nada mudou.",
+        "enIntent": "To the best of my knowledge"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "in-my-experience-94d603a7-0d17-46c5-a426-3dab5f8af1d4",
+    "intention": "Pela minha experiência",
+    "english": "In my experience",
+    "pattern": "In my experience",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: pela minha experiência.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Pela minha experiência",
+      "In my experience"
+    ],
+    "validationPatterns": [
+      "\\bIn\\s+my\\s+experience\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Pela minha experiência, isso leva tempo.",
+        "en": "In my experience, this takes time.",
+        "ptIntent": "Pela minha experiência",
+        "enIntent": "In my experience"
+      },
+      {
+        "pt": "Pela minha experiência, praticar diariamente ajuda.",
+        "en": "In my experience, practicing daily helps.",
+        "ptIntent": "Pela minha experiência",
+        "enIntent": "In my experience"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "if-im-not-mistaken-e2f7122f-d154-4959-9d84-a851cb629c05",
+    "intention": "Se não me engano",
+    "english": "If I'm not mistaken",
+    "pattern": "If I'm not mistaken",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: se não me engano.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Se não me engano",
+      "If I'm not mistaken"
+    ],
+    "validationPatterns": [
+      "\\bIf\\s+I'm\\s+not\\s+mistaken\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Se não me engano, ele mora aqui.",
+        "en": "If I'm not mistaken, he lives here.",
+        "ptIntent": "Se não me engano",
+        "enIntent": "If I'm not mistaken"
+      },
+      {
+        "pt": "Se não me engano, a reunião é às nove.",
+        "en": "If I'm not mistaken, the meeting is at nine.",
+        "ptIntent": "Se não me engano",
+        "enIntent": "If I'm not mistaken"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "the-main-thing-is-f2a8dbcb-37f0-436b-b294-367e596ab21c",
+    "intention": "O principal é",
+    "english": "The main thing is",
+    "pattern": "The main thing is",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: o principal é.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "O principal é",
+      "The main thing is"
+    ],
+    "validationPatterns": [
+      "\\bThe\\s+main\\s+thing\\s+is\\b"
+    ],
+    "examples": [
+      {
+        "pt": "O principal é continuar tentando.",
+        "en": "The main thing is to keep trying.",
+        "ptIntent": "O principal é",
+        "enIntent": "The main thing is"
+      },
+      {
+        "pt": "O principal é que estamos seguros.",
+        "en": "The main thing is that we're safe.",
+        "ptIntent": "O principal é",
+        "enIntent": "The main thing is"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "as-a-matter-of-fact-f92dfc63-9e99-43c9-bfa5-d79216fc831a",
+    "intention": "Na verdade / Aliás",
+    "english": "As a matter of fact",
+    "pattern": "As a matter of fact",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: na verdade / aliás.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Na verdade / Aliás",
+      "As a matter of fact"
+    ],
+    "validationPatterns": [
+      "\\bAs\\s+a\\s+matter\\s+of\\s+fact\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Na verdade, eu já terminei.",
+        "en": "As a matter of fact, I've already finished.",
+        "ptIntent": "Na verdade, eu já terminei.",
+        "enIntent": "As a matter of fact"
+      },
+      {
+        "pt": "Aliás, conheço essa pessoa.",
+        "en": "As a matter of fact, I know that person.",
+        "ptIntent": "Aliás, conheço essa pessoa.",
+        "enIntent": "As a matter of fact"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "at-your-earliest-convenience-8032f95f-ac55-4325-a4c8-1e783bb54d08",
+    "intention": "Assim que possível (formal)",
+    "english": "At your earliest convenience",
+    "pattern": "At your earliest convenience",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: assim que possível (formal).",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Assim que possível (formal)",
+      "At your earliest convenience"
+    ],
+    "validationPatterns": [
+      "\\bAt\\s+your\\s+earliest\\s+convenience\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Por favor, responda assim que possível.",
+        "en": "Please reply at your earliest convenience.",
+        "ptIntent": "Por favor, responda assim que possível.",
+        "enIntent": "at your earliest convenience"
+      },
+      {
+        "pt": "Envie os documentos assim que possível.",
+        "en": "Send the documents at your earliest convenience.",
+        "ptIntent": "Envie os documentos assim que possível.",
+        "enIntent": "at your earliest convenience"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "on-purpose-fb3c4f27-58d5-4899-a4f0-4a36d110c952",
+    "intention": "De propósito",
+    "english": "On purpose",
+    "pattern": "On purpose",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: de propósito.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "De propósito",
+      "On purpose"
+    ],
+    "validationPatterns": [
+      "\\bOn\\s+purpose\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Ele fez isso de propósito.",
+        "en": "He did that on purpose.",
+        "ptIntent": "de propósito",
+        "enIntent": "on purpose"
+      },
+      {
+        "pt": "Você derrubou aquilo de propósito?",
+        "en": "Did you knock that over on purpose?",
+        "ptIntent": "de propósito",
+        "enIntent": "on purpose"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "by-accident-be028451-e7c0-468b-8441-809f1caf3dd5",
+    "intention": "Sem querer / Por acidente",
+    "english": "By accident",
+    "pattern": "By accident",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: sem querer / por acidente.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Sem querer / Por acidente",
+      "By accident"
+    ],
+    "validationPatterns": [
+      "\\bBy\\s+accident\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Quebrei o copo sem querer.",
+        "en": "I broke the glass by accident.",
+        "ptIntent": "Quebrei o copo sem querer.",
+        "enIntent": "by accident"
+      },
+      {
+        "pt": "Ela enviou a mensagem por acidente.",
+        "en": "She sent the message by accident.",
+        "ptIntent": "Ela enviou a mensagem por acidente.",
+        "enIntent": "by accident"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "for-real-9094c5fe-b56c-4ff4-b975-6de6151f73f2",
+    "intention": "De verdade / Sério mesmo",
+    "english": "For real",
+    "pattern": "For real",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: de verdade / sério mesmo.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "De verdade / Sério mesmo",
+      "For real"
+    ],
+    "validationPatterns": [
+      "\\bFor\\s+real\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Você está falando sério mesmo?",
+        "en": "Are you for real?",
+        "ptIntent": "Você está falando sério mesmo?",
+        "enIntent": "for real"
+      },
+      {
+        "pt": "Isso aconteceu de verdade.",
+        "en": "That happened for real.",
+        "ptIntent": "Isso aconteceu de verdade.",
+        "enIntent": "for real"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "im-just-looking-thanks-fbf94e0f-f396-4bb6-adfe-5e72e92f3043",
+    "intention": "Estou só olhando, obrigado",
+    "english": "I'm just looking, thanks",
+    "pattern": "I'm just looking, thanks",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: estou só olhando, obrigado.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Estou só olhando, obrigado",
+      "I'm just looking, thanks"
+    ],
+    "validationPatterns": [
+      "\\bI'm\\s+just\\s+looking\\s+thanks\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou só olhando, obrigado.",
+        "en": "I'm just looking, thanks.",
+        "ptIntent": "Estou só olhando, obrigado",
+        "enIntent": "I'm just looking, thanks"
+      },
+      {
+        "pt": "Não preciso de ajuda. Estou só olhando, obrigado.",
+        "en": "I don't need help. I'm just looking, thanks.",
+        "ptIntent": "Estou só olhando, obrigado",
+        "enIntent": "I'm just looking, thanks"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "where-is-the-fitting-room-3da95dd4-b5c5-4f58-bcc2-5a3284340cf0",
+    "intention": "Onde fica o provador?",
+    "english": "Where is the fitting room?",
+    "pattern": "Where is the fitting room?",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: onde fica o provador?.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Onde fica o provador?",
+      "Where is the fitting room?"
+    ],
+    "validationPatterns": [
+      "\\bWhere\\s+is\\s+the\\s+fitting\\s+room\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Onde fica o provador?",
+        "en": "Where is the fitting room?",
+        "ptIntent": "Onde fica o provador?",
+        "enIntent": "Where is the fitting room?"
+      },
+      {
+        "pt": "Com licença, onde fica o provador?",
+        "en": "Excuse me, where is the fitting room?",
+        "ptIntent": "onde fica o provador?",
+        "enIntent": "where is the fitting room?"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "do-you-have-this-in-medium-04ca694d-ed24-4996-b9b5-e9be7dd49c9e",
+    "intention": "Tem isto no tamanho M?",
+    "english": "Do you have this in medium?",
+    "pattern": "Do you have this in medium?",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: tem isto no tamanho m?.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Tem isto no tamanho M?",
+      "Do you have this in medium?"
+    ],
+    "validationPatterns": [
+      "\\bDo\\s+you\\s+have\\s+this\\s+in\\s+medium\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Tem isto no tamanho M?",
+        "en": "Do you have this in medium?",
+        "ptIntent": "Tem isto no tamanho M?",
+        "enIntent": "Do you have this in medium?"
+      },
+      {
+        "pt": "Gostei desta camisa. Tem isto no tamanho M?",
+        "en": "I like this shirt. Do you have this in medium?",
+        "ptIntent": "Tem isto no tamanho M?",
+        "enIntent": "Do you have this in medium?"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "do-you-have-a-bigger-size-972552d1-9af4-484a-a7e7-198d26ce09c7",
+    "intention": "Tem um tamanho maior?",
+    "english": "Do you have a bigger size?",
+    "pattern": "Do you have a bigger size?",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: tem um tamanho maior?.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Tem um tamanho maior?",
+      "Do you have a bigger size?"
+    ],
+    "validationPatterns": [
+      "\\bDo\\s+you\\s+have\\s+a\\s+bigger\\s+size\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Tem um tamanho maior?",
+        "en": "Do you have a bigger size?",
+        "ptIntent": "Tem um tamanho maior?",
+        "enIntent": "Do you have a bigger size?"
+      },
+      {
+        "pt": "Esta ficou apertada. Tem um tamanho maior?",
+        "en": "This one is too tight. Do you have a bigger size?",
+        "ptIntent": "Tem um tamanho maior?",
+        "enIntent": "Do you have a bigger size?"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "can-i-get-a-discount-ad51c6b7-927b-4437-a7f0-0ac972fd908b",
+    "intention": "Posso conseguir um desconto?",
+    "english": "Can I get a discount?",
+    "pattern": "Can I get a discount?",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: posso conseguir um desconto?.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Posso conseguir um desconto?",
+      "Can I get a discount?"
+    ],
+    "validationPatterns": [
+      "\\bCan\\s+I\\s+get\\s+a\\s+discount\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Posso conseguir um desconto?",
+        "en": "Can I get a discount?",
+        "ptIntent": "Posso conseguir um desconto?",
+        "enIntent": "Can I get a discount?"
+      },
+      {
+        "pt": "Se eu pagar à vista, posso conseguir um desconto?",
+        "en": "If I pay cash, can I get a discount?",
+        "ptIntent": "posso conseguir um desconto?",
+        "enIntent": "can I get a discount?"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "can-you-give-me-a-better-price-ce34a010-9a27-4a25-9c2d-96c75bccb1d0",
+    "intention": "Você pode fazer um preço melhor?",
+    "english": "Can you give me a better price?",
+    "pattern": "Can you give me a better price?",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: você pode fazer um preço melhor?.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Você pode fazer um preço melhor?",
+      "Can you give me a better price?"
+    ],
+    "validationPatterns": [
+      "\\bCan\\s+you\\s+give\\s+me\\s+a\\s+better\\s+price\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Você pode fazer um preço melhor?",
+        "en": "Can you give me a better price?",
+        "ptIntent": "Você pode fazer um preço melhor?",
+        "enIntent": "Can you give me a better price?"
+      },
+      {
+        "pt": "Gostei do produto. Você pode fazer um preço melhor?",
+        "en": "I like the product. Can you give me a better price?",
+        "ptIntent": "Você pode fazer um preço melhor?",
+        "enIntent": "Can you give me a better price?"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "please-come-in-d129e5d1-ccfb-4da6-a115-cba94ce22d9f",
+    "intention": "Pode entrar",
+    "english": "Please come in",
+    "pattern": "Please come in",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: pode entrar.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Pode entrar",
+      "Please come in"
+    ],
+    "validationPatterns": [
+      "\\bPlease\\s+come\\s+in\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Pode entrar.",
+        "en": "Please come in.",
+        "ptIntent": "Pode entrar",
+        "enIntent": "Please come in"
+      },
+      {
+        "pt": "A porta está aberta, pode entrar.",
+        "en": "The door is open. Please come in.",
+        "ptIntent": "pode entrar",
+        "enIntent": "Please come in"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "same-here-3493b6aa-0f92-48e5-9076-0eaafae62dae",
+    "intention": "Eu também / Comigo também",
+    "english": "Same here",
+    "pattern": "Same here",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: eu também / comigo também.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Eu também / Comigo também",
+      "Same here"
+    ],
+    "validationPatterns": [
+      "\\bSame\\s+here\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Eu também.",
+        "en": "Same here.",
+        "ptIntent": "Eu também.",
+        "enIntent": "Same here"
+      },
+      {
+        "pt": "Estou cansado hoje. Comigo também.",
+        "en": "I'm tired today. Same here.",
+        "ptIntent": "Estou cansado hoje. Comigo também.",
+        "enIntent": "Same here"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "to-a-certain-degree-0ed930cc-5b88-4556-831f-dcad7daaecf8",
+    "intention": "Até certo ponto",
+    "english": "To a certain degree",
+    "pattern": "To a certain degree",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: até certo ponto.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Até certo ponto",
+      "To a certain degree"
+    ],
+    "validationPatterns": [
+      "\\bTo\\s+a\\s+certain\\s+degree\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Até certo ponto, eu concordo.",
+        "en": "To a certain degree, I agree.",
+        "ptIntent": "Até certo ponto",
+        "enIntent": "To a certain degree"
+      },
+      {
+        "pt": "Isso é verdade até certo ponto.",
+        "en": "That is true to a certain degree.",
+        "ptIntent": "até certo ponto",
+        "enIntent": "to a certain degree"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "what-time-is-the-departure-241b7473-46a7-475d-b975-8fc7c67de649",
+    "intention": "A que horas é a partida?",
+    "english": "What time is the departure?",
+    "pattern": "What time is the departure?",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: a que horas é a partida?.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "A que horas é a partida?",
+      "What time is the departure?"
+    ],
+    "validationPatterns": [
+      "\\bWhat\\s+time\\s+is\\s+the\\s+departure\\b"
+    ],
+    "examples": [
+      {
+        "pt": "A que horas é a partida?",
+        "en": "What time is the departure?",
+        "ptIntent": "A que horas é a partida?",
+        "enIntent": "What time is the departure?"
+      },
+      {
+        "pt": "Preciso pegar o trem. A que horas é a partida?",
+        "en": "I need to catch the train. What time is the departure?",
+        "ptIntent": "A que horas é a partida?",
+        "enIntent": "What time is the departure?"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "im-in-your-debt-78df73b5-50e8-4ddf-bbdf-dfbf907c510e",
+    "intention": "Estou em dívida com você",
+    "english": "I'm in your debt",
+    "pattern": "I'm in your debt",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: estou em dívida com você.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Estou em dívida com você",
+      "I'm in your debt"
+    ],
+    "validationPatterns": [
+      "\\bI'm\\s+in\\s+your\\s+debt\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou em dívida com você.",
+        "en": "I'm in your debt.",
+        "ptIntent": "Estou em dívida com você",
+        "enIntent": "I'm in your debt"
+      },
+      {
+        "pt": "Você fez muito por mim. Estou em dívida com você.",
+        "en": "You've done so much for me. I'm in your debt.",
+        "ptIntent": "Estou em dívida com você",
+        "enIntent": "I'm in your debt"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "you-saved-my-day-3a2e3f02-2d4a-4286-a17c-70c2d349d8a3",
+    "intention": "Você salvou meu dia",
+    "english": "You saved my day",
+    "pattern": "You saved my day",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: você salvou meu dia.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Você salvou meu dia",
+      "You saved my day"
+    ],
+    "validationPatterns": [
+      "\\bYou\\s+saved\\s+my\\s+day\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Você salvou meu dia.",
+        "en": "You saved my day.",
+        "ptIntent": "Você salvou meu dia",
+        "enIntent": "You saved my day"
+      },
+      {
+        "pt": "Muito obrigado! Você salvou meu dia.",
+        "en": "Thank you so much! You saved my day.",
+        "ptIntent": "Você salvou meu dia",
+        "enIntent": "You saved my day"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-might-be-wrong-but-50a9be44-0956-42ed-80c1-a1bb717db54e",
+    "intention": "Posso estar errado, mas",
+    "english": "I might be wrong, but",
+    "pattern": "I might be wrong, but",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: posso estar errado, mas.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "Posso estar errado, mas",
+      "I might be wrong, but"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+might\\s+be\\s+wrong\\s+but\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Posso estar errado, mas acho que ele já saiu.",
+        "en": "I might be wrong, but I think he has already left.",
+        "ptIntent": "Posso estar errado, mas",
+        "enIntent": "I might be wrong, but"
+      },
+      {
+        "pt": "Posso estar errado, mas isso não parece certo.",
+        "en": "I might be wrong, but that doesn't seem right.",
+        "ptIntent": "Posso estar errado, mas",
+        "enIntent": "I might be wrong, but"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  },
+  {
+    "id": "at-all-costs-baa24d73-59b9-4024-bae4-07cd31af44f8",
+    "intention": "A qualquer custo",
+    "english": "At all costs",
+    "pattern": "At all costs",
+    "description": "Expressão de uso cotidiano para comunicar a intenção: a qualquer custo.",
+    "category": "language-chunks",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "A qualquer custo",
+      "At all costs"
+    ],
+    "validationPatterns": [
+      "\\bAt\\s+all\\s+costs\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Precisamos evitar isso a qualquer custo.",
+        "en": "We need to avoid that at all costs.",
+        "ptIntent": "a qualquer custo",
+        "enIntent": "at all costs"
+      },
+      {
+        "pt": "Ele quer vencer a qualquer custo.",
+        "en": "He wants to win at all costs.",
+        "ptIntent": "a qualquer custo",
+        "enIntent": "at all costs"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "high-frequency"
+    ],
+    "related": []
+  }
 
 
   ]

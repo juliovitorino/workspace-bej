@@ -17,6 +17,7 @@ export interface MentalIntention {
   id: string;
   intention: string;
   english: string;
+  allowLanguageChunkPractice?: boolean;
   pattern?: string;
   description?: string;
   category?: string;
