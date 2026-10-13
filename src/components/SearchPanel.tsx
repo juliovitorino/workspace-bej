@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 export type HqImageFilter = "all" | "with" | "without";
+export type ChunkFilter = "all" | "with" | "without";
 
 interface SearchPanelProps {
   mentalSearch: string;
@@ -9,6 +10,7 @@ interface SearchPanelProps {
   categorySearch: string;
   englishLevelSearch: string;
   hqImageFilter: HqImageFilter;
+  chunkFilter: ChunkFilter;
   availableTags: string[];
   selectedTags: string[];
   onMentalSearchChange: (value: string) => void;
@@ -16,6 +18,7 @@ interface SearchPanelProps {
   onCategorySearchChange: (value: string) => void;
   onEnglishLevelSearchChange: (value: string) => void;
   onHqImageFilterChange: (value: HqImageFilter) => void;
+  onChunkFilterChange: (value: ChunkFilter) => void;
   onTagsChange: (tags: string[]) => void;
   onClear: () => void;
 }
@@ -63,6 +66,7 @@ export function SearchPanel({
   categorySearch,
   englishLevelSearch,
   hqImageFilter,
+  chunkFilter,
   availableTags,
   selectedTags,
   onMentalSearchChange,
@@ -70,6 +74,7 @@ export function SearchPanel({
   onCategorySearchChange,
   onEnglishLevelSearchChange,
   onHqImageFilterChange,
+  onChunkFilterChange,
   onTagsChange,
   onClear
 }: SearchPanelProps) {
@@ -81,7 +86,7 @@ export function SearchPanel({
 
   const hasFilters = Boolean(
     mentalSearch || englishSearch || categorySearch || englishLevelSearch ||
-    hqImageFilter !== "all" || selectedTags.length > 0
+    hqImageFilter !== "all" || chunkFilter !== "all" || selectedTags.length > 0
   );
 
   const matchingTags = useMemo(() => {
@@ -174,6 +179,16 @@ export function SearchPanel({
           <option value="all">Todas</option>
           <option value="with">Com HQ</option>
           <option value="without">Sem HQ</option>
+        </select>
+      </div>
+
+      <div className="field">
+        <label htmlFor="chunk-filter">Chunk Flashcards</label>
+        <select id="chunk-filter" value={chunkFilter}
+          onChange={(event) => onChunkFilterChange(event.target.value as ChunkFilter)}>
+          <option value="all">Todos</option>
+          <option value="with">Com Chunk</option>
+          <option value="without">Sem Chunk</option>
         </select>
       </div>
 
