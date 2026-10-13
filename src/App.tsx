@@ -254,7 +254,7 @@ function App() {
             )}
 
             {!loading && data && currentView === "chunk-flashcards" && !trainingMode && (
-              <ChunkFlashcards intentions={data.mentalMap} />
+              <ChunkFlashcards intentions={data.mentalMap} onShowDetails={setSelected} />
             )}
 
             {!loading && currentView === "speaking-game" && !trainingMode && (
@@ -308,6 +308,7 @@ function App() {
         item={
           (
             currentView === "hashmap" ||
+            currentView === "chunk-flashcards" ||
             (AI_ENABLED && currentView === "interpretation")
           ) &&
           !trainingMode
