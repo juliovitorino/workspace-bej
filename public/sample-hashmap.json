@@ -2534,7 +2534,8 @@
         "discourse"
       ],
       "related": [],
-      "englishLevel": "B1"
+      "englishLevel": "B1",      
+      "allowLanguageChunkPractice": true
     },
     {
       "id": "para-que-algo-e-usado-serve-para-que",
@@ -7495,7 +7496,9 @@
         "reaction"
       ],
       "related": [],
-      "englishLevel": "B2"
+      "englishLevel": "B2",      
+      "allowLanguageChunkPractice": true
+
     },
     {
       "id": "no-wonder",
@@ -40554,6 +40557,612 @@
         "high-frequency"
       ],
       "related": []
+    },
+  {
+    "id": "7e4b2f90-8a6d-4f21-b6c1-9d0e2a3f5841",
+    "intention": "Como vão as coisas?",
+    "english": "How's it going?",
+    "pattern": "How's it going?",
+    "description": "Cumprimento informal usado para perguntar como alguém está ou como as coisas estão indo.",
+    "category": "greetings",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": ["como vão as coisas", "como está indo", "how's it going"],
+    "validationPatterns": ["\\bhow(?:'s|\\s+is)\\s+it\\s+going\\b"],
+    "examples": [
+      {
+        "pt": "E aí, como vão as coisas?",
+        "en": "Hey, how's it going?",
+        "ptIntent": "como vão as coisas",
+        "enIntent": "how's it going"
+      },
+      {
+        "pt": "Olá, como vão as coisas hoje?",
+        "en": "Hi, how's it going today?",
+        "ptIntent": "como vão as coisas",
+        "enIntent": "how's it going"
+      }
+    ],
+    "tags": ["greetings", "small-talk", "spoken-english"],
+    "related": []
+  },
+  {
+    "id": "c3a9e6b1-74d2-4a0c-9f53-2e8b6d1a4075",
+    "intention": "Eu diria que",
+    "english": "I'd say",
+    "pattern": "I'd say + clause",
+    "description": "Introduz uma opinião ou estimativa de maneira natural e menos categórica.",
+    "category": "opinions",
+    "englishLevel": "B1",
+    "searchTerms": ["eu diria que", "diria que", "I'd say"],
+    "validationPatterns": ["\\b(?:I'd|I\\s+would)\\s+say\\b"],
+    "examples": [
+      {
+        "pt": "Eu diria que precisamos de mais tempo.",
+        "en": "I'd say we need more time.",
+        "ptIntent": "Eu diria que",
+        "enIntent": "I'd say"
+      },
+      {
+        "pt": "Eu diria que ele está certo.",
+        "en": "I'd say he's right.",
+        "ptIntent": "Eu diria que",
+        "enIntent": "I'd say"
+      }
+    ],
+    "tags": ["opinions", "softening", "speaking"],
+    "related": []
+  },
+  {
+    "id": "f6d18c20-5b49-4e73-a2c8-1f0b9d4e6527",
+    "intention": "Estou trabalhando em",
+    "english": "I'm working on",
+    "pattern": "subject + be + working on + noun/gerund",
+    "description": "Expressa dedicação a um projeto, atividade ou melhoria em andamento.",
+    "category": "work",
+    "englishLevel": "A2",
+    "searchTerms": ["estou trabalhando em", "trabalhando em", "working on"],
+    "validationPatterns": ["\\b(?:am|is|are|'m|'re|'s)\\s+working\\s+on\\b"],
+    "examples": [
+      {
+        "pt": "Estou trabalhando em um projeto novo.",
+        "en": "I'm working on a new project.",
+        "ptIntent": "Estou trabalhando em",
+        "enIntent": "I'm working on"
+      },
+      {
+        "pt": "Estou trabalhando para melhorar meu inglês.",
+        "en": "I'm working on improving my English.",
+        "ptIntent": "Estou trabalhando para melhorar",
+        "enIntent": "I'm working on improving"
+      }
+    ],
+    "tags": ["work", "progress", "productive-chunk"],
+    "related": []
+  },
+  {
+    "id": "4b9a1d75-0f62-48ce-a3d7-6e2c8b5f9140",
+    "intention": "Sou bom em",
+    "english": "I'm good at",
+    "pattern": "subject + be + good at + noun/gerund",
+    "description": "Expressa habilidade ou competência em determinada atividade.",
+    "category": "abilities",
+    "englishLevel": "A2",
+    "searchTerms": ["sou bom em", "sou boa em", "good at"],
+    "validationPatterns": ["\\b(?:am|is|are|'m|'re|'s)\\s+good\\s+at\\b"],
+    "examples": [
+      {
+        "pt": "Sou bom em resolver problemas.",
+        "en": "I'm good at solving problems.",
+        "ptIntent": "Sou bom em",
+        "enIntent": "I'm good at"
+      },
+      {
+        "pt": "Sou bom em aprender coisas novas.",
+        "en": "I'm good at learning new things.",
+        "ptIntent": "Sou bom em",
+        "enIntent": "I'm good at"
+      }
+    ],
+    "tags": ["abilities", "skills", "self-description"],
+    "related": []
+  },
+  {
+    "id": "9d2e5f81-3c70-4b16-a8e9-5f1d6c2b4073",
+    "intention": "Por mim, tanto faz",
+    "english": "I don't mind",
+    "pattern": "I don't mind",
+    "description": "Indica que a pessoa não tem preferência ou não se incomoda com determinada opção.",
+    "category": "preferences",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": ["por mim tanto faz", "não me importo", "I don't mind"],
+    "validationPatterns": ["\\bI\\s+(?:don't|do\\s+not)\\s+mind\\b"],
+    "examples": [
+      {
+        "pt": "Por mim, tanto faz.",
+        "en": "I don't mind.",
+        "ptIntent": "Por mim, tanto faz",
+        "enIntent": "I don't mind"
+      },
+      {
+        "pt": "Podemos sair amanhã. Por mim, tanto faz.",
+        "en": "We can go out tomorrow. I don't mind.",
+        "ptIntent": "Por mim, tanto faz",
+        "enIntent": "I don't mind"
+      }
+    ],
+    "tags": ["preferences", "agreement", "conversation"],
+    "related": []
+  },
+  {
+    "id": "2a8f7d41-6c90-4b35-9e12-3d5f0a7c6849",
+    "intention": "Por mim, tudo bem",
+    "english": "That's fine with me",
+    "pattern": "That's fine with me",
+    "description": "Aceita uma proposta ou decisão, indicando concordância.",
+    "category": "agreement",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": ["por mim tudo bem", "tudo bem por mim", "that's fine with me"],
+    "validationPatterns": ["\\b(?:that's|that\\s+is)\\s+fine\\s+with\\s+me\\b"],
+    "examples": [
+      {
+        "pt": "Por mim, tudo bem.",
+        "en": "That's fine with me.",
+        "ptIntent": "Por mim, tudo bem",
+        "enIntent": "That's fine with me"
+      },
+      {
+        "pt": "Podemos remarcar. Por mim, tudo bem.",
+        "en": "We can reschedule. That's fine with me.",
+        "ptIntent": "Por mim, tudo bem",
+        "enIntent": "That's fine with me"
+      }
+    ],
+    "tags": ["agreement", "acceptance", "workplace"],
+    "related": []
+  },
+  {
+    "id": "a7c5e019-2b63-4d8f-90a1-6e3b5c7d2148",
+    "intention": "Acho que eu deveria",
+    "english": "I should probably",
+    "pattern": "I should probably + base verb",
+    "description": "Expressa uma decisão ou recomendação pessoal com certa hesitação.",
+    "category": "advice",
+    "englishLevel": "B1",
+    "searchTerms": ["acho que deveria", "provavelmente deveria", "should probably"],
+    "validationPatterns": ["\\b(?:I|you|he|she|we|they)\\s+should\\s+probably\\b"],
+    "examples": [
+      {
+        "pt": "Acho que eu deveria dormir mais cedo.",
+        "en": "I should probably go to bed earlier.",
+        "ptIntent": "Acho que eu deveria",
+        "enIntent": "I should probably"
+      },
+      {
+        "pt": "Acho que eu deveria estudar mais.",
+        "en": "I should probably study more.",
+        "ptIntent": "Acho que eu deveria",
+        "enIntent": "I should probably"
+      }
+    ],
+    "tags": ["advice", "self-reflection", "softening"],
+    "related": []
+  },
+  {
+    "id": "5f1b9c72-4a86-43d0-b2e5-8c7f6a1d9034",
+    "intention": "Eu tendo a / Tenho tendência a",
+    "english": "I tend to",
+    "pattern": "subject + tend/tends to + base verb",
+    "description": "Descreve comportamentos habituais ou tendências pessoais.",
+    "category": "habits",
+    "englishLevel": "B1",
+    "searchTerms": ["eu tendo a", "tenho tendência a", "costumo", "tend to"],
+    "validationPatterns": ["\\b(?:tend|tends|tended)\\s+to\\b"],
+    "examples": [
+      {
+        "pt": "Eu tendo a pensar demais nas coisas.",
+        "en": "I tend to overthink things.",
+        "ptIntent": "Eu tendo a",
+        "enIntent": "I tend to"
+      },
+      {
+        "pt": "Eu tendo a acordar cedo.",
+        "en": "I tend to wake up early.",
+        "ptIntent": "Eu tendo a",
+        "enIntent": "I tend to"
+      }
+    ],
+    "tags": ["habits", "tendencies", "self-description"],
+    "related": []
+  },
+  {
+    "id": "b8e2d603-9a51-4c7f-8d20-1e6a5b3f9472",
+    "intention": "Estou planejando",
+    "english": "I'm planning to",
+    "pattern": "subject + be + planning to + base verb",
+    "description": "Expressa planos ou intenções para o futuro.",
+    "category": "future-plans",
+    "englishLevel": "A2",
+    "searchTerms": ["estou planejando", "pretendo", "planning to"],
+    "validationPatterns": ["\\b(?:am|is|are|'m|'re|'s)\\s+planning\\s+to\\b"],
+    "examples": [
+      {
+        "pt": "Estou planejando viajar no próximo ano.",
+        "en": "I'm planning to travel next year.",
+        "ptIntent": "Estou planejando",
+        "enIntent": "I'm planning to"
+      },
+      {
+        "pt": "Estou planejando fazer um curso.",
+        "en": "I'm planning to take a course.",
+        "ptIntent": "Estou planejando",
+        "enIntent": "I'm planning to"
+      }
+    ],
+    "tags": ["future", "plans", "intentions"],
+    "related": []
+  },
+  {
+    "id": "3c6f0a92-8e14-4b75-a1d9-5f2c7e0b6843",
+    "intention": "Eu não diria que",
+    "english": "I wouldn't say",
+    "pattern": "I wouldn't say + clause",
+    "description": "Expressa discordância parcial ou cautelosa, evitando uma afirmação muito direta.",
+    "category": "opinions",
+    "englishLevel": "B1",
+    "searchTerms": ["eu não diria que", "não diria que", "wouldn't say"],
+    "validationPatterns": ["\\bI\\s+(?:wouldn't|would\\s+not)\\s+say\\b"],
+    "examples": [
+      {
+        "pt": "Eu não diria que isso é impossível.",
+        "en": "I wouldn't say it's impossible.",
+        "ptIntent": "Eu não diria que",
+        "enIntent": "I wouldn't say"
+      },
+      {
+        "pt": "Eu não diria que ele está errado.",
+        "en": "I wouldn't say he's wrong.",
+        "ptIntent": "Eu não diria que",
+        "enIntent": "I wouldn't say"
+      }
+    ],
+    "tags": ["opinions", "polite-disagreement", "softening"],
+    "related": []
+  },
+  {
+    "id": "e1a7b5c9-6d24-4f80-9b32-0c5e8a7d4163",
+    "intention": "Pelo que entendi / Então quer dizer que",
+    "english": "I take it",
+    "pattern": "I take it + clause",
+    "description": "Introduz uma inferência feita a partir do que alguém disse ou de uma situação observada.",
+    "category": "inference",
+    "englishLevel": "B2",
+    "searchTerms": ["pelo que entendi", "então quer dizer que", "I take it"],
+    "validationPatterns": ["\\bI\\s+take\\s+it\\s+(?:that\\s+)?(?:you|he|she|we|they|it|the|this|there|I)\\b"],
+    "examples": [
+      {
+        "pt": "Pelo que entendi, você não vem.",
+        "en": "I take it you're not coming.",
+        "ptIntent": "Pelo que entendi",
+        "enIntent": "I take it"
+      },
+      {
+        "pt": "Então quer dizer que a reunião correu bem.",
+        "en": "I take it the meeting went well.",
+        "ptIntent": "Então quer dizer que",
+        "enIntent": "I take it"
+      }
+    ],
+    "tags": ["inference", "conversation", "spoken-english"],
+    "related": []
+  },
+  {
+    "id": "6d0c4e8b-2f71-4a95-b3e6-9c1f5a7d8042",
+    "intention": "Nesse caso",
+    "english": "In that case",
+    "pattern": "In that case, + clause",
+    "description": "Introduz uma decisão ou reação baseada em uma informação anterior.",
+    "category": "conversation-connectors",
+    "englishLevel": "B1",
+    "searchTerms": ["nesse caso", "sendo assim", "in that case"],
+    "validationPatterns": ["\\bin\\s+that\\s+case\\b"],
+    "examples": [
+      {
+        "pt": "Nesse caso, vou esperar.",
+        "en": "In that case, I'll wait.",
+        "ptIntent": "Nesse caso",
+        "enIntent": "In that case"
+      },
+      {
+        "pt": "Nesse caso, vamos cancelar.",
+        "en": "In that case, let's cancel.",
+        "ptIntent": "Nesse caso",
+        "enIntent": "In that case"
+      }
+    ],
+    "tags": ["connector", "consequence", "conversation"],
+    "related": []
+  },
+  {
+    "id": "8b4e1c70-5a92-4d63-9f28-6c0b7e3a1549",
+    "intention": "Dito isso",
+    "english": "That being said",
+    "pattern": "That being said, + contrasting clause",
+    "description": "Introduz uma ressalva ou contraponto ao que acabou de ser dito.",
+    "category": "conversation-connectors",
+    "englishLevel": "B2",
+    "searchTerms": ["dito isso", "apesar disso", "that being said"],
+    "validationPatterns": ["\\bthat\\s+being\\s+said\\b"],
+    "examples": [
+      {
+        "pt": "Dito isso, ainda acho que deveríamos tentar.",
+        "en": "That being said, I still think we should try.",
+        "ptIntent": "Dito isso",
+        "enIntent": "That being said"
+      },
+      {
+        "pt": "Dito isso, não é impossível.",
+        "en": "That being said, it's not impossible.",
+        "ptIntent": "Dito isso",
+        "enIntent": "That being said"
+      }
+    ],
+    "tags": ["connector", "contrast", "opinions"],
+    "related": []
+  },
+  {
+    "id": "1f9d6b34-7c20-4e85-a2f1-5b8c0d7e9634",
+    "intention": "É ruim dizer isso, mas / Lamento dizer, mas",
+    "english": "I hate to say it, but",
+    "pattern": "I hate to say it, but + clause",
+    "description": "Introduz uma verdade desagradável ou opinião difícil de comunicar.",
+    "category": "opinions",
+    "englishLevel": "B1",
+    "searchTerms": ["é ruim dizer isso mas", "lamento dizer mas", "hate to say it"],
+    "validationPatterns": ["\\bI\\s+hate\\s+to\\s+say\\s+it\\s*,?\\s*but\\b"],
+    "examples": [
+      {
+        "pt": "Lamento dizer, mas podemos nos atrasar.",
+        "en": "I hate to say it, but we might be late.",
+        "ptIntent": "Lamento dizer, mas",
+        "enIntent": "I hate to say it, but"
+      },
+      {
+        "pt": "É ruim dizer isso, mas acho que não vai funcionar.",
+        "en": "I hate to say it, but I don't think it'll work.",
+        "ptIntent": "É ruim dizer isso, mas",
+        "enIntent": "I hate to say it, but"
+      }
+    ],
+    "tags": ["opinions", "difficult-truth", "softening"],
+    "related": []
+  },
+  {
+    "id": "0a5c8f21-3d96-4b70-a1e5-7f2d9c6b8430",
+    "intention": "Nunca se sabe",
+    "english": "You never know",
+    "pattern": "You never know",
+    "description": "Expressa incerteza ou a possibilidade de algo inesperado acontecer.",
+    "category": "uncertainty",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": ["nunca se sabe", "vai saber", "you never know"],
+    "validationPatterns": ["\\byou\\s+never\\s+know\\b"],
+    "examples": [
+      {
+        "pt": "Nunca se sabe.",
+        "en": "You never know.",
+        "ptIntent": "Nunca se sabe",
+        "enIntent": "You never know"
+      },
+      {
+        "pt": "Nunca se sabe o que pode acontecer.",
+        "en": "You never know what might happen.",
+        "ptIntent": "Nunca se sabe",
+        "enIntent": "You never know"
+      }
+    ],
+    "tags": ["uncertainty", "possibility", "conversation"],
+    "related": []
+  },
+  {
+    "id": "d7e4a290-1b65-4c8f-9a32-6f0e5b7d1843",
+    "intention": "Agora que você falou nisso",
+    "english": "Now that you mention it",
+    "pattern": "Now that you mention it, + clause",
+    "description": "Usado quando o comentário de alguém desperta uma lembrança ou percepção.",
+    "category": "conversation-connectors",
+    "englishLevel": "B1",
+    "searchTerms": ["agora que você falou nisso", "agora que mencionou", "now that you mention it"],
+    "validationPatterns": ["\\bnow\\s+that\\s+you\\s+mention\\s+it\\b"],
+    "examples": [
+      {
+        "pt": "Agora que você falou nisso, eu me lembro.",
+        "en": "Now that you mention it, I do remember.",
+        "ptIntent": "Agora que você falou nisso",
+        "enIntent": "Now that you mention it"
+      },
+      {
+        "pt": "Agora que você falou nisso, acho que tem razão.",
+        "en": "Now that you mention it, I think you're right.",
+        "ptIntent": "Agora que você falou nisso",
+        "enIntent": "Now that you mention it"
+      }
+    ],
+    "tags": ["connector", "realization", "conversation"],
+    "related": []
+  },
+  {
+    "id": "2c8a5d91-6f30-4b74-9e12-7d5a0c3f8642",
+    "intention": "Na verdade / Se alguma coisa",
+    "english": "If anything",
+    "pattern": "If anything, + contrasting clause",
+    "description": "Introduz uma correção, contraponto ou afirmação mais forte. Não confundir com o uso condicional de 'if anything', como em 'if anything goes wrong'.",
+    "category": "conversation-connectors",
+    "englishLevel": "B2",
+    "searchTerms": ["na verdade", "pelo contrário", "se alguma coisa", "if anything"],
+    "validationPatterns": ["\\bif\\s+anything\\s*,"],
+    "examples": [
+      {
+        "pt": "Na verdade, está fácil até demais.",
+        "en": "If anything, it's too easy.",
+        "ptIntent": "Na verdade",
+        "enIntent": "If anything"
+      },
+      {
+        "pt": "Se tem uma coisa de que precisamos, é mais tempo.",
+        "en": "If anything, we need more time.",
+        "ptIntent": "Se tem uma coisa de que precisamos",
+        "enIntent": "If anything"
+      }
+    ],
+    "tags": ["connector", "contrast", "correction"],
+    "related": []
+  },
+  
+{
+  "id": "b7c3d921-6a84-4e5f-9b20-8d1f7a3c6042",
+  "intention": "Deixa eu ver se entendi direito",
+  "english": "Let me get this straight",
+  "pattern": "Let me get this straight. / Let me get this straight: + statement or question",
+  "description": "Chunk completo usado para confirmar se você entendeu corretamente uma informação, explicação ou situação. Pode demonstrar surpresa, incredulidade ou necessidade de esclarecimento, dependendo da entonação. Muito natural no inglês conversacional.",
+  "category": "conversation",
+  "englishLevel": "B1",
+  "allowLanguageChunkPractice": true,
+  "searchTerms": [
+    "deixa eu ver se entendi",
+    "deixa eu entender direito",
+    "deixa eu entender uma coisa",
+    "entendi direito",
+    "let me get this straight",
+    "get this straight"
+  ],
+  "validationPatterns": [
+    "\\blet\\s+me\\s+get\\s+this\\s+straight\\b"
+  ],
+  "examples": [
+    {
+      "pt": "Deixa eu ver se entendi direito.",
+      "en": "Let me get this straight.",
+      "ptIntent": "Deixa eu ver se entendi direito",
+      "enIntent": "Let me get this straight"
+    },
+    {
+      "pt": "Deixa eu ver se entendi direito. Você quer sair do emprego?",
+      "en": "Let me get this straight. You want to quit your job?",
+      "ptIntent": "Deixa eu ver se entendi direito",
+      "enIntent": "Let me get this straight"
+    },
+    {
+      "pt": "Deixa eu entender uma coisa. Você pagou duas vezes?",
+      "en": "Let me get this straight. You paid twice?",
+      "ptIntent": "Deixa eu entender uma coisa",
+      "enIntent": "Let me get this straight"
+    },
+    {
+      "pt": "Deixa eu ver se entendi direito. Você nunca estudou inglês antes?",
+      "en": "Let me get this straight. You've never studied English before?",
+      "ptIntent": "Deixa eu ver se entendi direito",
+      "enIntent": "Let me get this straight"
+    },
+    {
+      "pt": "Deixa eu ver se entendi direito. Você está dizendo que a reunião foi cancelada?",
+      "en": "Let me get this straight. Are you saying the meeting was canceled?",
+      "ptIntent": "Deixa eu ver se entendi direito",
+      "enIntent": "Let me get this straight"
+    },
+    {
+      "pt": "Deixa eu entender uma coisa. Você quer que eu faça tudo sozinho?",
+      "en": "Let me get this straight. You want me to do everything by myself?",
+      "ptIntent": "Deixa eu entender uma coisa",
+      "enIntent": "Let me get this straight"
     }
+  ],
+  "tags": [
+    "chunk",
+    "complete-chunk",
+    "spoken-english",
+    "clarification",
+    "confirmation",
+    "surprise",
+    "conversation"
+  ],
+  "related": []
+},
+
+{
+  "id": "i-see-your-point-9a72c4e1-6d35-4b8f-a210-7e5c93d18460",
+  "intention": "Entendo seu ponto de vista",
+  "english": "I see your point",
+  "pattern": "I see your point. / I see your point, but + clause",
+  "description": "Chunk completo usado para reconhecer e demonstrar compreensão do argumento ou ponto de vista de outra pessoa, sem necessariamente concordar com ele. Muito natural em conversas, debates, reuniões e situações de discordância educada. Pode ser utilizado sozinho ou seguido de BUT para introduzir uma opinião diferente.",
+  "category": "conversation",
+  "englishLevel": "B1",
+  "allowLanguageChunkPractice": true,
+  "searchTerms": [
+    "entendo seu ponto",
+    "entendo seu ponto de vista",
+    "entendo o que você quer dizer",
+    "compreendo seu argumento",
+    "i see your point",
+    "see your point"
+  ],
+  "validationPatterns": [
+    "\\b(?:I|we)\\s+see\\s+(?:your|his|her|their)\\s+point\\b"
+  ],
+  "examples": [
+    {
+      "pt": "Entendo seu ponto de vista.",
+      "en": "I see your point.",
+      "ptIntent": "Entendo seu ponto de vista",
+      "enIntent": "I see your point"
+    },
+    {
+      "pt": "Entendo seu ponto de vista, mas não concordo.",
+      "en": "I see your point, but I don't agree.",
+      "ptIntent": "Entendo seu ponto de vista",
+      "enIntent": "I see your point"
+    },
+    {
+      "pt": "Entendo seu ponto de vista, mas acho que precisamos de mais tempo.",
+      "en": "I see your point, but I think we need more time.",
+      "ptIntent": "Entendo seu ponto de vista",
+      "enIntent": "I see your point"
+    },
+    {
+      "pt": "Entendo seu ponto de vista. Nunca tinha pensado nisso dessa maneira.",
+      "en": "I see your point. I've never thought about it that way.",
+      "ptIntent": "Entendo seu ponto de vista",
+      "enIntent": "I see your point"
+    },
+    {
+      "pt": "Entendo seu ponto de vista, mas temos que considerar os riscos.",
+      "en": "I see your point, but we have to consider the risks.",
+      "ptIntent": "Entendo seu ponto de vista",
+      "enIntent": "I see your point"
+    },
+    {
+      "pt": "Entendo seu ponto de vista. É um argumento válido.",
+      "en": "I see your point. That's a valid argument.",
+      "ptIntent": "Entendo seu ponto de vista",
+      "enIntent": "I see your point"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "complete-chunk",
+    "spoken-english",
+    "understanding",
+    "opinions",
+    "polite-disagreement",
+    "conversation",
+    "speaking"
+  ],
+  "related": []
+}
+
+
   ]
 }
