@@ -2038,9 +2038,15 @@ button {
 
 .chunk-flashcards-english-row {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.chunk-flashcards-english-actions {
+  display: flex;
   align-items: center;
-  gap: 16px;
-  justify-content: space-between;
+  gap: 12px;
 }
 
 .chunk-flashcards-english-row h3 {
@@ -2052,7 +2058,8 @@ button {
   letter-spacing: -0.04em;
 }
 
-.chunk-flashcards-speaker {
+.chunk-flashcards-speaker,
+.chunk-flashcards-details {
   display: grid;
   flex: 0 0 56px;
   place-items: center;
@@ -2066,7 +2073,9 @@ button {
 }
 
 .chunk-flashcards-speaker:hover,
-.chunk-flashcards-speaker:focus-visible {
+.chunk-flashcards-speaker:focus-visible,
+.chunk-flashcards-details:hover,
+.chunk-flashcards-details:focus-visible {
   background: #dfe7ff;
   outline: 3px solid rgba(54, 89, 217, 0.15);
 }
@@ -2138,6 +2147,7 @@ button {
 
 @media (max-width: 640px) {
   .chunk-flashcards-card { min-height: 310px; }
-  .chunk-flashcards-speaker { width: 48px; height: 48px; flex-basis: 48px; }
+  .chunk-flashcards-speaker,
+  .chunk-flashcards-details { width: 48px; height: 48px; flex-basis: 48px; }
   .chunk-flashcards-actions .primary-button { width: 100%; }
 }

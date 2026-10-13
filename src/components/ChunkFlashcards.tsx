@@ -3,6 +3,7 @@ import type { MentalIntention } from "../types/hashmap";
 
 interface ChunkFlashcardsProps {
   intentions: MentalIntention[];
+  onShowDetails: (intention: MentalIntention) => void;
 }
 
 function formatStudyTime(totalSeconds: number): string {
@@ -16,7 +17,7 @@ function pickRandomId(ids: string[]): string {
   return ids[Math.floor(Math.random() * ids.length)];
 }
 
-export function ChunkFlashcards({ intentions }: ChunkFlashcardsProps) {
+export function ChunkFlashcards({ intentions, onShowDetails }: ChunkFlashcardsProps) {
   // O autor escolhe explicitamente quais intenções são chunks completos.
   const chunks = useMemo(
     () =>
@@ -202,19 +203,33 @@ export function ChunkFlashcards({ intentions }: ChunkFlashcardsProps) {
                 <p className="chunk-flashcards-language">ENGLISH · EN-US</p>
                 <div className="chunk-flashcards-english-row">
                   <h3>{currentChunk.english}</h3>
-                  <button
-                    type="button"
-                    className="chunk-flashcards-speaker"
-                    onClick={speak}
-                    aria-label={`Ouvir pronúncia de ${currentChunk.english}`}
-                    title="Ouvir pronúncia em inglês"
-                  >
-                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M11 5 6 9H3v6h3l5 4V5Z" />
-                      <path d="M15.5 8.5a5 5 0 0 1 0 7" />
-                      <path d="M19 5a10 10 0 0 1 0 14" />
-                    </svg>
-                  </button>
+                  <div className="chunk-flashcards-english-actions">
+                    <button
+                      type="button"
+                      className="chunk-flashcards-speaker"
+                      onClick={speak}
+                      aria-label={`Ouvir pronúncia de ${currentChunk.english}`}
+                      title="Ouvir pronúncia em inglês"
+                    >
+                      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M11 5 6 9H3v6h3l5 4V5Z" />
+                        <path d="M15.5 8.5a5 5 0 0 1 0 7" />
+                        <path d="M19 5a10 10 0 0 1 0 14" />
+                      </svg>
+                    </button>
+                    <button
+                      type="button"
+                      className="chunk-flashcards-details"
+                      onClick={() => onShowDetails(currentChunk)}
+                      aria-label={`Ver detalhes e exemplos de ${currentChunk.english}`}
+                      title="Ver detalhes e mais exemplos"
+                    >
+                      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M12 7v14" />
+                        <path d="M3 18V5.5A2.5 2.5 0 0 1 5.5 3H8a4 4 0 0 1 4 2 4 4 0 0 1 4-2h2.5A2.5 2.5 0 0 1 21 5.5V18h-5a4 4 0 0 0-4 2 4 4 0 0 0-4-2H3Z" />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
                 <div className="chunk-flashcards-divider" />
                 <p className="chunk-flashcards-language">PORTUGUÊS · PT-BR</p>
