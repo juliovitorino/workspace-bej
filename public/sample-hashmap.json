@@ -33258,9 +33258,2853 @@
       "video-350"
     ],
     "related": []
+  },
+  
+{
+  "id": "it-goes-without-saying-8d1b2c74-5f6e-4a39-9c82-1e7b6f4d205a",
+  "intention": "Nem precisa dizer / É óbvio que",
+  "english": "It goes without saying",
+  "pattern": "It goes without saying (that) + clause",
+  "description": "Usado para expressar que uma informação, conclusão ou opinião é tão evidente que não precisa ser mencionada. A palavra 'that' é opcional. A expressão é comum em conversas, apresentações e contextos profissionais.",
+  "category": "opinions",
+  "englishLevel": "B1",
+  "searchTerms": [
+    "nem precisa dizer",
+    "nem é preciso dizer",
+    "é óbvio que",
+    "é evidente que",
+    "dispensa comentários",
+    "não preciso nem dizer",
+    "it goes without saying"
+  ],
+  "validationPatterns": [
+    "(?i)\\bit goes without saying\\b(?:\\s+that\\b)?"
+  ],
+  "examples": [
+    {
+      "pt": "Nem precisa dizer que aprender inglês exige prática.",
+      "en": "It goes without saying that learning English takes practice.",
+      "ptIntent": "Nem precisa dizer que",
+      "enIntent": "It goes without saying that"
+    },
+    {
+      "pt": "É óbvio que a saúde deve vir em primeiro lugar.",
+      "en": "It goes without saying that health should come first.",
+      "ptIntent": "É óbvio que",
+      "enIntent": "It goes without saying that"
+    },
+    {
+      "pt": "Nem preciso dizer que estou muito feliz com os resultados.",
+      "en": "It goes without saying that I'm very happy with the results.",
+      "ptIntent": "Nem preciso dizer que",
+      "enIntent": "It goes without saying that"
+    },
+    {
+      "pt": "É evidente que precisamos trabalhar juntos.",
+      "en": "It goes without saying that we need to work together.",
+      "ptIntent": "É evidente que",
+      "enIntent": "It goes without saying that"
+    },
+    {
+      "pt": "Nem precisa dizer que cometer erros faz parte do aprendizado.",
+      "en": "It goes without saying that making mistakes is part of learning.",
+      "ptIntent": "Nem precisa dizer que",
+      "enIntent": "It goes without saying that"
+    },
+    {
+      "pt": "É óbvio que não podemos desistir agora.",
+      "en": "It goes without saying that we can't give up now.",
+      "ptIntent": "É óbvio que",
+      "enIntent": "It goes without saying that"
+    },
+    {
+      "pt": "Nem precisa dizer que minha família é muito importante para mim.",
+      "en": "It goes without saying that my family is very important to me.",
+      "ptIntent": "Nem precisa dizer que",
+      "enIntent": "It goes without saying that"
+    },
+    {
+      "pt": "Nem precisa dizer que a experiência faz diferença.",
+      "en": "It goes without saying experience makes a difference.",
+      "ptIntent": "Nem precisa dizer que",
+      "enIntent": "It goes without saying"
+    },
+    {
+      "pt": "É evidente que precisamos testar o código antes de colocá-lo em produção.",
+      "en": "It goes without saying that we need to test the code before deploying it to production.",
+      "ptIntent": "É evidente que",
+      "enIntent": "It goes without saying that"
+    },
+    {
+      "pt": "Nem preciso dizer que sou grato por esta oportunidade.",
+      "en": "It goes without saying that I'm grateful for this opportunity.",
+      "ptIntent": "Nem preciso dizer que",
+      "enIntent": "It goes without saying that"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "spoken-english",
+    "opinions",
+    "emphasis",
+    "obviousness",
+    "high-frequency"
+  ],
+  "related": []
+},
+
+{
+  "id": "when-it-comes-to-7a4c2d91-6e83-4b5f-a092-d1e7c6b84f30",
+  "intention": "Quando se trata de / Quando o assunto é",
+  "english": "When it comes to",
+  "pattern": "When it comes to + noun / pronoun / verb-ing",
+  "description": "Usado para introduzir um assunto específico e expressar opiniões, preferências, habilidades ou experiências relacionadas a ele. Depois de 'to', utiliza-se um substantivo, pronome ou verbo com -ing, e não o infinitivo. A estrutura pode aparecer no início ou no meio da frase.",
+  "category": "opinions",
+  "englishLevel": "B1",
+  "searchTerms": [
+    "quando se trata de",
+    "quando o assunto é",
+    "quando falamos de",
+    "no que diz respeito a",
+    "em relação a",
+    "quando a questão é",
+    "when it comes to"
+  ],
+  "validationPatterns": [
+    "(?i)\\bwhen\\s+it\\s+comes\\s+to\\b"
+  ],
+  "examples": [
+    {
+      "pt": "Quando se trata de aprender inglês, a prática é essencial.",
+      "en": "When it comes to learning English, practice is essential.",
+      "ptIntent": "Quando se trata de",
+      "enIntent": "When it comes to"
+    },
+    {
+      "pt": "Quando o assunto é tecnologia, eu gosto de aprender coisas novas.",
+      "en": "When it comes to technology, I like learning new things.",
+      "ptIntent": "Quando o assunto é",
+      "enIntent": "When it comes to"
+    },
+    {
+      "pt": "Quando se trata de saúde, não gosto de correr riscos.",
+      "en": "When it comes to health, I don't like taking risks.",
+      "ptIntent": "Quando se trata de",
+      "enIntent": "When it comes to"
+    },
+    {
+      "pt": "Quando o assunto é comida brasileira, eu adoro churrasco.",
+      "en": "When it comes to Brazilian food, I love barbecue.",
+      "ptIntent": "Quando o assunto é",
+      "enIntent": "When it comes to"
+    },
+    {
+      "pt": "Quando se trata de falar inglês, ainda preciso melhorar minha confiança.",
+      "en": "When it comes to speaking English, I still need to improve my confidence.",
+      "ptIntent": "Quando se trata de",
+      "enIntent": "When it comes to"
+    },
+    {
+      "pt": "Quando o assunto é viajar de moto, a segurança vem primeiro.",
+      "en": "When it comes to traveling by motorcycle, safety comes first.",
+      "ptIntent": "Quando o assunto é",
+      "enIntent": "When it comes to"
+    },
+    {
+      "pt": "Quando se trata de dinheiro, precisamos tomar decisões cuidadosas.",
+      "en": "When it comes to money, we need to make careful decisions.",
+      "ptIntent": "Quando se trata de",
+      "enIntent": "When it comes to"
+    },
+    {
+      "pt": "Eu sou muito exigente quando se trata de qualidade de código.",
+      "en": "I'm very demanding when it comes to code quality.",
+      "ptIntent": "quando se trata de",
+      "enIntent": "when it comes to"
+    },
+    {
+      "pt": "Quando o assunto é trabalhar remotamente, a comunicação é fundamental.",
+      "en": "When it comes to working remotely, communication is essential.",
+      "ptIntent": "Quando o assunto é",
+      "enIntent": "When it comes to"
+    },
+    {
+      "pt": "Quando se trata de escolher um emprego, o salário não é tudo.",
+      "en": "When it comes to choosing a job, salary isn't everything.",
+      "ptIntent": "Quando se trata de",
+      "enIntent": "When it comes to"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "spoken-english",
+    "opinions",
+    "topic-introduction",
+    "collocations",
+    "high-frequency"
+  ],
+  "related": []
+},
+
+  {
+    "id": "it-is-what-it-is-745258c4-9b46-48c0-a4d6-8d689a2e549b",
+    "intention": "É o que é / Fazer o quê",
+    "english": "It is what it is",
+    "pattern": "It is what it is.",
+    "description": "Expressa aceitação ou resignação diante de uma situação que não pode ser mudada. Pode transmitir pragmatismo, frustração ou alívio, dependendo do tom.",
+    "category": "emotions",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "é o que é",
+      "fazer o quê",
+      "não tem jeito",
+      "é assim mesmo",
+      "aceitar a situação"
+    ],
+    "validationPatterns": [
+      "(?i)\\bit\\s+is\\s+what\\s+it\\s+is\\b"
+    ],
+    "examples": [
+      {
+        "pt": "O prazo mudou de novo, mas é o que é.",
+        "en": "The deadline changed again, but it is what it is.",
+        "ptIntent": "é o que é",
+        "enIntent": "it is what it is"
+      },
+      {
+        "pt": "Não conseguimos controlar tudo. Fazer o quê.",
+        "en": "We can’t control everything. It is what it is.",
+        "ptIntent": "Fazer o quê",
+        "enIntent": "It is what it is"
+      },
+      {
+        "pt": "Eu gostaria que as coisas fossem diferentes, mas é assim mesmo.",
+        "en": "I wish things were different, but it is what it is.",
+        "ptIntent": "é assim mesmo",
+        "enIntent": "it is what it is"
+      },
+      {
+        "pt": "Perdemos a oportunidade. Não tem jeito, precisamos seguir em frente.",
+        "en": "We missed the opportunity. It is what it is. We need to move on.",
+        "ptIntent": "Não tem jeito",
+        "enIntent": "It is what it is"
+      },
+      {
+        "pt": "O projeto foi cancelado. É o que é.",
+        "en": "The project was canceled. It is what it is.",
+        "ptIntent": "É o que é",
+        "enIntent": "It is what it is"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "acceptance",
+      "resignation",
+      "spoken-english"
+    ],
+    "related": []
+  },
+  {
+    "id": "moving-on-to-the-next-point-ce275603-6fcc-4575-98d5-1a507fa7c3e8",
+    "intention": "Passando para o próximo ponto",
+    "english": "Moving on to the next point",
+    "pattern": "Moving on to the next point, + clause",
+    "description": "Usado para conduzir reuniões, apresentações ou discussões, sinalizando uma transição organizada para outro assunto. Pode ser usado como frase independente ou seguido de uma explicação.",
+    "category": "communication",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "passando para o próximo ponto",
+      "vamos ao próximo ponto",
+      "seguindo para o próximo tópico",
+      "próximo assunto"
+    ],
+    "validationPatterns": [
+      "(?i)\\bmoving\\s+on\\s+to\\s+the\\s+next\\s+point\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Passando para o próximo ponto, precisamos revisar o cronograma.",
+        "en": "Moving on to the next point, we need to review the timeline.",
+        "ptIntent": "Passando para o próximo ponto",
+        "enIntent": "Moving on to the next point"
+      },
+      {
+        "pt": "Vamos ao próximo ponto: os resultados dos testes.",
+        "en": "Moving on to the next point: the test results.",
+        "ptIntent": "Vamos ao próximo ponto",
+        "enIntent": "Moving on to the next point"
+      },
+      {
+        "pt": "Passando para o próximo ponto, gostaria de discutir os riscos.",
+        "en": "Moving on to the next point, I’d like to discuss the risks.",
+        "ptIntent": "Passando para o próximo ponto",
+        "enIntent": "Moving on to the next point"
+      },
+      {
+        "pt": "Já discutimos o orçamento. Vamos ao próximo ponto.",
+        "en": "We’ve discussed the budget. Moving on to the next point.",
+        "ptIntent": "Vamos ao próximo ponto",
+        "enIntent": "Moving on to the next point"
+      },
+      {
+        "pt": "Passando para o próximo ponto, vamos analisar o feedback dos clientes.",
+        "en": "Moving on to the next point, let’s look at customer feedback.",
+        "ptIntent": "Passando para o próximo ponto",
+        "enIntent": "Moving on to the next point"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "meetings",
+      "presentations",
+      "transitions",
+      "professional-english"
+    ],
+    "related": []
+  },
+  {
+    "id": "much-to-my-surprise-419a35f8-e5d6-4b5c-92b2-4eae19ad6996",
+    "intention": "Para minha grande surpresa",
+    "english": "Much to my surprise",
+    "pattern": "Much to my surprise, + clause",
+    "description": "Introduz um acontecimento inesperado que surpreendeu quem fala. Frequentemente aparece no início de uma frase, mas também pode ocorrer no meio.",
+    "category": "storytelling",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "para minha grande surpresa",
+      "para minha surpresa",
+      "fiquei muito surpreso quando",
+      "inesperadamente"
+    ],
+    "validationPatterns": [
+      "(?i)\\bmuch\\s+to\\s+my\\s+surprise\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Para minha grande surpresa, a reunião terminou antes do previsto.",
+        "en": "Much to my surprise, the meeting ended earlier than expected.",
+        "ptIntent": "Para minha grande surpresa",
+        "enIntent": "Much to my surprise"
+      },
+      {
+        "pt": "Para minha grande surpresa, ele aceitou a proposta.",
+        "en": "Much to my surprise, he accepted the offer.",
+        "ptIntent": "Para minha grande surpresa",
+        "enIntent": "Much to my surprise"
+      },
+      {
+        "pt": "Para minha surpresa, o aplicativo funcionou na primeira tentativa.",
+        "en": "Much to my surprise, the app worked on the first try.",
+        "ptIntent": "Para minha surpresa",
+        "enIntent": "Much to my surprise"
+      },
+      {
+        "pt": "Para minha grande surpresa, consegui entender a conversa inteira.",
+        "en": "Much to my surprise, I managed to understand the whole conversation.",
+        "ptIntent": "Para minha grande surpresa",
+        "enIntent": "Much to my surprise"
+      },
+      {
+        "pt": "O cliente, para minha grande surpresa, elogiou a solução.",
+        "en": "The client, much to my surprise, praised the solution.",
+        "ptIntent": "para minha grande surpresa",
+        "enIntent": "much to my surprise"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "storytelling",
+      "surprise",
+      "discourse-markers"
+    ],
+    "related": []
+  },
+  {
+    "id": "it-s-out-of-my-hands-2dc46035-d094-481e-90da-31c15a885a1e",
+    "intention": "Não depende mais de mim / Está fora do meu controle",
+    "english": "It's out of my hands",
+    "pattern": "It's out of my hands.",
+    "description": "Expressa que a decisão ou o resultado não está mais sob o controle de quem fala. Pode indicar que a responsabilidade passou para outra pessoa ou que fatores externos determinam o resultado.",
+    "category": "limitations",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "não depende mais de mim",
+      "está fora do meu controle",
+      "não está nas minhas mãos",
+      "não posso fazer mais nada"
+    ],
+    "validationPatterns": [
+      "(?i)\\bit(?:\\s+is|['’]s)\\s+out\\s+of\\s+my\\s+hands\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Eu já enviei os documentos. Agora não depende mais de mim.",
+        "en": "I’ve submitted the documents. Now it’s out of my hands.",
+        "ptIntent": "não depende mais de mim",
+        "enIntent": "it's out of my hands"
+      },
+      {
+        "pt": "A decisão cabe à diretoria. Está fora do meu controle.",
+        "en": "The decision is up to management. It’s out of my hands.",
+        "ptIntent": "Está fora do meu controle",
+        "enIntent": "It’s out of my hands"
+      },
+      {
+        "pt": "Fiz tudo o que podia. Agora não está nas minhas mãos.",
+        "en": "I’ve done everything I could. Now it’s out of my hands.",
+        "ptIntent": "não está nas minhas mãos",
+        "enIntent": "it’s out of my hands"
+      },
+      {
+        "pt": "Depois que entrego o código, a aprovação não depende mais de mim.",
+        "en": "Once I submit the code, it’s out of my hands.",
+        "ptIntent": "não depende mais de mim",
+        "enIntent": "out of my hands"
+      },
+      {
+        "pt": "Eu adoraria ajudar, mas isso está fora do meu controle.",
+        "en": "I’d love to help, but it’s out of my hands.",
+        "ptIntent": "está fora do meu controle",
+        "enIntent": "it’s out of my hands"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "control",
+      "responsibility",
+      "professional-english"
+    ],
+    "related": []
+  },
+  {
+    "id": "with-all-due-respect-87ffe516-da95-405a-9661-0b455bd7e965",
+    "intention": "Com todo o respeito",
+    "english": "With all due respect",
+    "pattern": "With all due respect, + clause",
+    "description": "Introduz uma discordância ou crítica com aparência de cortesia. Apesar da formulação educada, pode soar confrontadora, sarcástica ou ríspida dependendo do tom e do contexto; use com cuidado.",
+    "category": "communication",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "com todo o respeito",
+      "com o devido respeito",
+      "respeitosamente discordo",
+      "sem querer desrespeitar"
+    ],
+    "validationPatterns": [
+      "(?i)\\bwith\\s+all\\s+due\\s+respect\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Com todo o respeito, não concordo com essa abordagem.",
+        "en": "With all due respect, I disagree with that approach.",
+        "ptIntent": "Com todo o respeito",
+        "enIntent": "With all due respect"
+      },
+      {
+        "pt": "Com todo o respeito, acho que precisamos de mais dados.",
+        "en": "With all due respect, I think we need more data.",
+        "ptIntent": "Com todo o respeito",
+        "enIntent": "With all due respect"
+      },
+      {
+        "pt": "Com o devido respeito, essa solução não resolve o problema.",
+        "en": "With all due respect, that solution doesn’t solve the problem.",
+        "ptIntent": "Com o devido respeito",
+        "enIntent": "With all due respect"
+      },
+      {
+        "pt": "Com todo o respeito, o prazo não é realista.",
+        "en": "With all due respect, the deadline isn’t realistic.",
+        "ptIntent": "Com todo o respeito",
+        "enIntent": "With all due respect"
+      },
+      {
+        "pt": "Com todo o respeito, gostaria de questionar essa decisão.",
+        "en": "With all due respect, I’d like to question that decision.",
+        "ptIntent": "Com todo o respeito",
+        "enIntent": "With all due respect"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "disagreement",
+      "politeness",
+      "professional-english"
+    ],
+    "related": []
+  },
+  
+    {
+      "id": "what-im-trying-to-say-is-b4535c6e-d90a-5aba-9ebc-59bd5c442e82",
+      "intention": "O que estou tentando dizer é",
+      "english": "What I'm trying to say is",
+      "pattern": "What I am trying to say is (that) + clause",
+      "description": "Expressa a intenção comunicativa \"O que estou tentando dizer é\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "communication",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "O que estou tentando dizer é",
+        "What I'm trying to say is"
+      ],
+      "validationPatterns": [
+        "(?i)\\bWhat\\s+I'm\\s+trying\\s+to\\s+say\\s+is\\b"
+      ],
+      "examples": [
+        {
+          "pt": "O que estou tentando dizer é que precisamos de mais tempo.",
+          "en": "What I'm trying to say is that we need more time.",
+          "ptIntent": "O que estou tentando dizer é",
+          "enIntent": "What I'm trying to say is"
+        },
+        {
+          "pt": "O que estou tentando dizer é que a prática importa mais do que a perfeição.",
+          "en": "What I'm trying to say is that practice matters more than perfection.",
+          "ptIntent": "O que estou tentando dizer é",
+          "enIntent": "What I'm trying to say is"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "communication"
+      ],
+      "related": []
+    },
+    {
+      "id": "the-way-i-see-it-10d5e435-b4d7-56cd-ad05-c7b3a21b0224",
+      "intention": "Na minha visão",
+      "english": "The way I see it",
+      "pattern": "The way I see it, + clause",
+      "description": "Expressa a intenção comunicativa \"Na minha visão\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "opinions",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Na minha visão",
+        "The way I see it"
+      ],
+      "validationPatterns": [
+        "(?i)\\bThe\\s+way\\s+I\\s+see\\s+it\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Na minha visão, deveríamos começar aos poucos.",
+          "en": "The way I see it, we should start small.",
+          "ptIntent": "Na minha visão",
+          "enIntent": "The way I see it"
+        },
+        {
+          "pt": "Na minha visão, essa abordagem é mais segura.",
+          "en": "The way I see it, this approach is safer.",
+          "ptIntent": "Na minha visão",
+          "enIntent": "The way I see it"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "opinions"
+      ],
+      "related": []
+    },
+    {
+      "id": "for-what-its-worth-c234e993-3fb7-5e0f-a874-c39cb21d6486",
+      "intention": "Se vale de alguma coisa minha opinião",
+      "english": "For what it's worth",
+      "pattern": "For what it is worth, + opinion",
+      "description": "Expressa a intenção comunicativa \"Se vale de alguma coisa minha opinião\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "opinions",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "Se vale de alguma coisa minha opinião",
+        "For what it's worth"
+      ],
+      "validationPatterns": [
+        "(?i)\\bFor\\s+what\\s+it's\\s+worth\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Se vale de alguma coisa minha opinião, acho que você fez a coisa certa.",
+          "en": "For what it's worth, I think you did the right thing.",
+          "ptIntent": "Se vale de alguma coisa minha opinião",
+          "enIntent": "For what it's worth"
+        },
+        {
+          "pt": "Se vale de alguma coisa minha opinião, a primeira versão funcionou bem.",
+          "en": "For what it's worth, the first version worked well.",
+          "ptIntent": "Se vale de alguma coisa minha opinião",
+          "enIntent": "For what it's worth"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "opinions"
+      ],
+      "related": []
+    },
+    {
+      "id": "let-me-put-it-this-way-489e9ab8-60ad-5c47-a87a-b0932a87a1a5",
+      "intention": "Deixa eu explicar de outra forma",
+      "english": "Let me put it this way",
+      "pattern": "Let me put it this way: + explanation",
+      "description": "Expressa a intenção comunicativa \"Deixa eu explicar de outra forma\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "communication",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "Deixa eu explicar de outra forma",
+        "Let me put it this way"
+      ],
+      "validationPatterns": [
+        "(?i)\\bLet\\s+me\\s+put\\s+it\\s+this\\s+way\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Deixa eu explicar de outra forma: precisamos de uma solução mais simples.",
+          "en": "Let me put it this way: we need a simpler solution.",
+          "ptIntent": "Deixa eu explicar de outra forma",
+          "enIntent": "Let me put it this way"
+        },
+        {
+          "pt": "Deixa eu explicar de outra forma: fluência exige prática.",
+          "en": "Let me put it this way: fluency takes practice.",
+          "ptIntent": "Deixa eu explicar de outra forma",
+          "enIntent": "Let me put it this way"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "communication"
+      ],
+      "related": []
+    },
+    {
+      "id": "having-said-that-ed97685a-3f49-509f-8142-929b74717603",
+      "intention": "Dito isso",
+      "english": "Having said that",
+      "pattern": "Having said that, + contrasting statement",
+      "description": "Expressa a intenção comunicativa \"Dito isso\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "connectors",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "Dito isso",
+        "Having said that"
+      ],
+      "validationPatterns": [
+        "(?i)\\bHaving\\s+said\\s+that\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Dito isso, ainda precisamos testar isso.",
+          "en": "Having said that, we still need to test it.",
+          "ptIntent": "Dito isso",
+          "enIntent": "Having said that"
+        },
+        {
+          "pt": "O plano é bom. Dito isso, é caro.",
+          "en": "The plan is good. Having said that, it's expensive.",
+          "ptIntent": "Dito isso",
+          "enIntent": "Having said that"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "connectors"
+      ],
+      "related": []
+    },
+    {
+      "id": "if-that-makes-sense-774e4afe-c33d-5b22-bb28-8c4cd7387982",
+      "intention": "Se é que isso faz sentido",
+      "english": "If that makes sense",
+      "pattern": "statement + if that makes sense",
+      "description": "Expressa a intenção comunicativa \"Se é que isso faz sentido\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "communication",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Se é que isso faz sentido",
+        "If that makes sense"
+      ],
+      "validationPatterns": [
+        "(?i)\\bIf\\s+that\\s+makes\\s+sense\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Precisamos focar na qualidade, se é que isso faz sentido.",
+          "en": "We need to focus on quality, if that makes sense.",
+          "ptIntent": "se é que isso faz sentido",
+          "enIntent": "if that makes sense"
+        },
+        {
+          "pt": "É mais uma questão de constância do que de velocidade, se é que isso faz sentido.",
+          "en": "It's more about consistency than speed, if that makes sense.",
+          "ptIntent": "se é que isso faz sentido",
+          "enIntent": "if that makes sense"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "communication"
+      ],
+      "related": []
+    },
+    {
+      "id": "i-get-your-point-0f5411b3-6457-57da-ab95-b240bb71dba9",
+      "intention": "Entendo seu ponto de vista",
+      "english": "I get your point",
+      "pattern": "I get your point + (but / about...)",
+      "description": "Expressa a intenção comunicativa \"Entendo seu ponto de vista\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "communication",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Entendo seu ponto de vista",
+        "I get your point"
+      ],
+      "validationPatterns": [
+        "(?i)\\bI\\s+get\\s+your\\s+point\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Entendo seu ponto de vista, mas discordo.",
+          "en": "I get your point, but I disagree.",
+          "ptIntent": "Entendo seu ponto de vista",
+          "enIntent": "I get your point"
+        },
+        {
+          "pt": "Entendo seu ponto de vista sobre o prazo.",
+          "en": "I get your point about the deadline.",
+          "ptIntent": "Entendo seu ponto de vista",
+          "enIntent": "I get your point"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "communication"
+      ],
+      "related": []
+    },
+    {
+      "id": "correct-me-if-im-wrong-429262bf-9ebc-590a-8f82-3ce5a06e8bea",
+      "intention": "Me corrija se eu estiver errado",
+      "english": "Correct me if I'm wrong",
+      "pattern": "Correct me if I am wrong, but + clause",
+      "description": "Expressa a intenção comunicativa \"Me corrija se eu estiver errado\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "communication",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Me corrija se eu estiver errado",
+        "Correct me if I'm wrong"
+      ],
+      "validationPatterns": [
+        "(?i)\\bCorrect\\s+me\\s+if\\s+I'm\\s+wrong\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Me corrija se eu estiver errado, mas a reunião é amanhã.",
+          "en": "Correct me if I'm wrong, but the meeting is tomorrow.",
+          "ptIntent": "Me corrija se eu estiver errado",
+          "enIntent": "Correct me if I'm wrong"
+        },
+        {
+          "pt": "Me corrija se eu estiver errado, mas já corrigimos aquele erro.",
+          "en": "Correct me if I'm wrong, but we already fixed that bug.",
+          "ptIntent": "Me corrija se eu estiver errado",
+          "enIntent": "Correct me if I'm wrong"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "communication"
+      ],
+      "related": []
+    },
+    {
+      "id": "dont-get-me-wrong-fb733280-53dc-5405-9e77-c66b0251f491",
+      "intention": "Não me entenda mal",
+      "english": "Don't get me wrong",
+      "pattern": "Do not get me wrong, + clarification",
+      "description": "Expressa a intenção comunicativa \"Não me entenda mal\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "communication",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Não me entenda mal",
+        "Don't get me wrong"
+      ],
+      "validationPatterns": [
+        "(?i)\\bDon't\\s+get\\s+me\\s+wrong\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não me entenda mal, eu gosto da ideia.",
+          "en": "Don't get me wrong, I like the idea.",
+          "ptIntent": "Não me entenda mal",
+          "enIntent": "Don't get me wrong"
+        },
+        {
+          "pt": "Não me entenda mal, não estou criticando seu trabalho.",
+          "en": "Don't get me wrong, I'm not criticizing your work.",
+          "ptIntent": "Não me entenda mal",
+          "enIntent": "Don't get me wrong"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "communication"
+      ],
+      "related": []
+    },
+    {
+      "id": "im-supposed-to-68654d03-4838-5155-b4e0-59d40888fc07",
+      "intention": "Era para eu / Devo",
+      "english": "I'm supposed to",
+      "pattern": "subject + be supposed to + base verb",
+      "description": "Expressa a intenção comunicativa \"Era para eu / Devo\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "obligation",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Era para eu",
+        "Devo",
+        "I'm supposed to"
+      ],
+      "validationPatterns": [
+        "(?i)\\b(?:I\\s+am|I'm|you\\s+are|you're|we\\s+are|we're|they\\s+are|they're|he\\s+is|he's|she\\s+is|she's|was|were)\\s+supposed\\s+to\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Era para eu terminar isso hoje.",
+          "en": "I'm supposed to finish this today.",
+          "ptIntent": "Era para eu",
+          "enIntent": "I'm supposed to"
+        },
+        {
+          "pt": "Devo estar na reunião às nove.",
+          "en": "I'm supposed to be at the meeting at nine.",
+          "ptIntent": "Devo",
+          "enIntent": "I'm supposed to"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "obligation"
+      ],
+      "related": []
+    },
+    {
+      "id": "i-was-about-to-af47378c-8b75-5157-ad5f-1eacf502cfca",
+      "intention": "Eu estava prestes a",
+      "english": "I was about to",
+      "pattern": "subject + was/were about to + base verb",
+      "description": "Expressa a intenção comunicativa \"Eu estava prestes a\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "time",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Eu estava prestes a",
+        "I was about to"
+      ],
+      "validationPatterns": [
+        "(?i)\\b(?:I|he|she|we|they|you)\\s+(?:was|were)\\s+about\\s+to\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Eu estava prestes a te ligar quando você me mandou uma mensagem.",
+          "en": "I was about to call you when you texted me.",
+          "ptIntent": "Eu estava prestes a",
+          "enIntent": "I was about to"
+        },
+        {
+          "pt": "Eu estava prestes a sair do escritório.",
+          "en": "I was about to leave the office.",
+          "ptIntent": "Eu estava prestes a",
+          "enIntent": "I was about to"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "time"
+      ],
+      "related": []
+    },
+    {
+      "id": "i-cant-help-but-43f2da46-03c2-51fc-a297-8d0684a2f99f",
+      "intention": "Não consigo deixar de",
+      "english": "I can't help but",
+      "pattern": "subject + cannot help but + base verb",
+      "description": "Expressa a intenção comunicativa \"Não consigo deixar de\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "feelings",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "Não consigo deixar de",
+        "I can't help but"
+      ],
+      "validationPatterns": [
+        "(?i)\\b(?:I|you|we|they|he|she)\\s+(?:can't|cannot|can\\s+not)\\s+help\\s+but\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não consigo deixar de sorrir quando a vejo.",
+          "en": "I can't help but smile when I see her.",
+          "ptIntent": "Não consigo deixar de",
+          "enIntent": "I can't help but"
+        },
+        {
+          "pt": "Não consigo deixar de pensar que deixamos passar alguma coisa.",
+          "en": "I can't help but think we missed something.",
+          "ptIntent": "Não consigo deixar de",
+          "enIntent": "I can't help but"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "feelings"
+      ],
+      "related": []
+    },
+    {
+      "id": "i-have-a-feeling-that-20f3126d-2e92-5b16-9c2f-81867e77a78c",
+      "intention": "Tenho a impressão de que",
+      "english": "I have a feeling that",
+      "pattern": "I have a feeling (that) + clause",
+      "description": "Expressa a intenção comunicativa \"Tenho a impressão de que\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "opinions",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Tenho a impressão de que",
+        "I have a feeling that"
+      ],
+      "validationPatterns": [
+        "(?i)\\b(?:I\\s+have|I've\\s+got)\\s+a\\s+feeling\\s+that\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Tenho a impressão de que alguma coisa está errada.",
+          "en": "I have a feeling that something is wrong.",
+          "ptIntent": "Tenho a impressão de que",
+          "enIntent": "I have a feeling that"
+        },
+        {
+          "pt": "Tenho a impressão de que isso vai funcionar.",
+          "en": "I have a feeling that this will work.",
+          "ptIntent": "Tenho a impressão de que",
+          "enIntent": "I have a feeling that"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "opinions"
+      ],
+      "related": []
+    },
+    {
+      "id": "it-boils-down-to-3f4c40ac-6630-53d8-bbee-aba5fb91648f",
+      "intention": "Tudo se resume a",
+      "english": "It boils down to",
+      "pattern": "it boils down to + noun / verb-ing",
+      "description": "Expressa a intenção comunicativa \"Tudo se resume a\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "discourse",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "Tudo se resume a",
+        "It boils down to"
+      ],
+      "validationPatterns": [
+        "(?i)\\bIt\\s+boils\\s+down\\s+to\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Tudo se resume a confiança.",
+          "en": "It boils down to trust.",
+          "ptIntent": "Tudo se resume a",
+          "enIntent": "It boils down to"
+        },
+        {
+          "pt": "No fim, tudo se resume a fazer uma escolha.",
+          "en": "In the end, it boils down to making a choice.",
+          "ptIntent": "tudo se resume a",
+          "enIntent": "it boils down to"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "discourse"
+      ],
+      "related": []
+    },
+    {
+      "id": "the-bottom-line-is-a086ed01-5b19-5bb9-8e2d-7d654643119b",
+      "intention": "O ponto principal é",
+      "english": "The bottom line is",
+      "pattern": "The bottom line is (that) + clause",
+      "description": "Expressa a intenção comunicativa \"O ponto principal é\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "discourse",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "O ponto principal é",
+        "The bottom line is"
+      ],
+      "validationPatterns": [
+        "(?i)\\bThe\\s+bottom\\s+line\\s+is\\b"
+      ],
+      "examples": [
+        {
+          "pt": "O ponto principal é que precisamos de mais testes.",
+          "en": "The bottom line is that we need more testing.",
+          "ptIntent": "O ponto principal é",
+          "enIntent": "The bottom line is"
+        },
+        {
+          "pt": "O ponto principal é que não podemos nos dar ao luxo de esperar.",
+          "en": "The bottom line is we can't afford to wait.",
+          "ptIntent": "O ponto principal é",
+          "enIntent": "The bottom line is"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "discourse"
+      ],
+      "related": []
+    },
+    {
+      "id": "just-to-be-clear-87d67a1a-84d4-5e26-92b3-7a7d669b426c",
+      "intention": "Só para deixar claro",
+      "english": "Just to be clear",
+      "pattern": "Just to be clear, + statement / question",
+      "description": "Expressa a intenção comunicativa \"Só para deixar claro\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "communication",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Só para deixar claro",
+        "Just to be clear"
+      ],
+      "validationPatterns": [
+        "(?i)\\bJust\\s+to\\s+be\\s+clear\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Só para deixar claro, esta não é a versão final.",
+          "en": "Just to be clear, this is not the final version.",
+          "ptIntent": "Só para deixar claro",
+          "enIntent": "Just to be clear"
+        },
+        {
+          "pt": "Só para deixar claro, vamos nos reunir na sexta-feira?",
+          "en": "Just to be clear, are we meeting on Friday?",
+          "ptIntent": "Só para deixar claro",
+          "enIntent": "Just to be clear"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "communication"
+      ],
+      "related": []
+    },
+    {
+      "id": "i-beg-to-differ-193040a3-1659-5e8e-a59e-d2f2a894dff5",
+      "intention": "Permita-me discordar",
+      "english": "I beg to differ",
+      "pattern": "I beg to differ + (on + topic)",
+      "description": "Expressa a intenção comunicativa \"Permita-me discordar\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "disagreement",
+      "englishLevel": "C1",
+      "searchTerms": [
+        "Permita-me discordar",
+        "I beg to differ"
+      ],
+      "validationPatterns": [
+        "(?i)\\bI\\s+beg\\s+to\\s+differ\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Permita-me discordar; as evidências indicam o contrário.",
+          "en": "I beg to differ; the evidence suggests otherwise.",
+          "ptIntent": "Permita-me discordar",
+          "enIntent": "I beg to differ"
+        },
+        {
+          "pt": "Permita-me discordar nesse ponto.",
+          "en": "I beg to differ on that point.",
+          "ptIntent": "Permita-me discordar",
+          "enIntent": "I beg to differ"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "disagreement"
+      ],
+      "related": []
+    },
+    {
+      "id": "not-necessarily-79755f21-7447-508f-8ccd-b1005088f196",
+      "intention": "Não necessariamente",
+      "english": "Not necessarily",
+      "pattern": "Not necessarily / not necessarily + verb",
+      "description": "Expressa a intenção comunicativa \"Não necessariamente\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "disagreement",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Não necessariamente",
+        "Not necessarily"
+      ],
+      "validationPatterns": [
+        "(?i)\\bnot\\s+necessarily\\b|\\bdoesn't\\s+necessarily\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não necessariamente. Depende do contexto.",
+          "en": "Not necessarily. It depends on the context.",
+          "ptIntent": "Não necessariamente",
+          "enIntent": "Not necessarily"
+        },
+        {
+          "pt": "Um preço mais alto não significa necessariamente melhor qualidade.",
+          "en": "A higher price doesn't necessarily mean better quality.",
+          "ptIntent": "Um preço mais alto não significa necessariamente melhor qualidade.",
+          "enIntent": "necessarily"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "disagreement"
+      ],
+      "related": []
+    },
+    {
+      "id": "its-worth-noting-that-247e7055-dfd6-5544-85b1-fe88b5efd453",
+      "intention": "Vale destacar que",
+      "english": "It's worth noting that",
+      "pattern": "It is worth noting that + clause",
+      "description": "Expressa a intenção comunicativa \"Vale destacar que\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "discourse",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "Vale destacar que",
+        "It's worth noting that"
+      ],
+      "validationPatterns": [
+        "(?i)\\bIt's\\s+worth\\s+noting\\s+that\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vale destacar que os resultados são preliminares.",
+          "en": "It's worth noting that the results are preliminary.",
+          "ptIntent": "Vale destacar que",
+          "enIntent": "It's worth noting that"
+        },
+        {
+          "pt": "Vale destacar que essa mudança afeta todo mundo.",
+          "en": "It's worth noting that this change affects everyone.",
+          "ptIntent": "Vale destacar que",
+          "enIntent": "It's worth noting that"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "discourse"
+      ],
+      "related": []
+    },
+    {
+      "id": "you-might-want-to-cdf7af05-1511-5442-a274-6bcbf7575304",
+      "intention": "Talvez seja melhor você",
+      "english": "You might want to",
+      "pattern": "subject + might want to + base verb",
+      "description": "Expressa a intenção comunicativa \"Talvez seja melhor você\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "advice",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Talvez seja melhor você",
+        "You might want to"
+      ],
+      "validationPatterns": [
+        "(?i)\\b(?:you|we|they|he|she)\\s+might\\s+want\\s+to\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Talvez seja melhor você verificar os logs primeiro.",
+          "en": "You might want to check the logs first.",
+          "ptIntent": "Talvez seja melhor você",
+          "enIntent": "You might want to"
+        },
+        {
+          "pt": "Talvez seja melhor você fazer uma pausa rápida.",
+          "en": "You might want to take a short break.",
+          "ptIntent": "Talvez seja melhor você",
+          "enIntent": "You might want to"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "advice"
+      ],
+      "related": []
+    },
+    {
+      "id": "that-doesnt-add-up-aea44c4a-6793-573d-bd6f-7a548fa58fa1",
+      "intention": "Isso não bate / Não faz sentido",
+      "english": "That doesn't add up",
+      "pattern": "That does not add up / subject + does not add up",
+      "description": "Expressa a intenção comunicativa \"Isso não bate / Não faz sentido\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "idiom",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "Isso não bate",
+        "Não faz sentido",
+        "That doesn't add up"
+      ],
+      "validationPatterns": [
+        "(?i)\\bThat\\s+doesn't\\s+add\\s+up\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Isso não bate. Os números são diferentes.",
+          "en": "That doesn't add up. The numbers are different.",
+          "ptIntent": "Isso não bate",
+          "enIntent": "That doesn't add up"
+        },
+        {
+          "pt": "A explicação dele não faz sentido.",
+          "en": "His explanation doesn't add up.",
+          "ptIntent": "não faz sentido",
+          "enIntent": "doesn't add up"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "idiom"
+      ],
+      "related": []
+    },
+    {
+      "id": "its-up-to-you-32bcff1a-7913-5bcf-ae44-b833bf0c289d",
+      "intention": "Você decide / Fica a seu critério",
+      "english": "It's up to you",
+      "pattern": "It is up to + person + (to + verb / whether...)",
+      "description": "Expressa a intenção comunicativa \"Você decide / Fica a seu critério\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "decisions",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Você decide",
+        "Fica a seu critério",
+        "It's up to you"
+      ],
+      "validationPatterns": [
+        "(?i)\\bIt's\\s+up\\s+to\\s+you\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Você decide se vamos hoje.",
+          "en": "It's up to you whether we go today.",
+          "ptIntent": "Você decide",
+          "enIntent": "It's up to you"
+        },
+        {
+          "pt": "Podemos esperar ou sair agora. Você decide.",
+          "en": "We can wait or leave now. It's up to you.",
+          "ptIntent": "Você decide",
+          "enIntent": "It's up to you"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "decisions"
+      ],
+      "related": []
+    },
+    {
+      "id": "keep-me-posted-b6e65802-81d8-5df4-b422-3cdeac4170bc",
+      "intention": "Me mantenha informado",
+      "english": "Keep me posted",
+      "pattern": "Keep + person + posted + (on + topic)",
+      "description": "Expressa a intenção comunicativa \"Me mantenha informado\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "professional-english",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Me mantenha informado",
+        "Keep me posted"
+      ],
+      "validationPatterns": [
+        "(?i)\\bkeep\\s+(?:me|us|him|her|them)\\s+posted\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Me mantenha informado sobre a implantação.",
+          "en": "Keep me posted on the deployment.",
+          "ptIntent": "Me mantenha informado",
+          "enIntent": "Keep me posted"
+        },
+        {
+          "pt": "Por favor, me mantenha informado se alguma coisa mudar.",
+          "en": "Please keep me posted if anything changes.",
+          "ptIntent": "me mantenha informado",
+          "enIntent": "keep me posted"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "professional-english"
+      ],
+      "related": []
+    },
+    {
+      "id": "keep-me-in-the-loop-db46096a-c144-5091-8fe5-4a200fc5e416",
+      "intention": "Me mantenha por dentro",
+      "english": "Keep me in the loop",
+      "pattern": "Keep + person + in the loop + (on + topic)",
+      "description": "Expressa a intenção comunicativa \"Me mantenha por dentro\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "professional-english",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "Me mantenha por dentro",
+        "Keep me in the loop"
+      ],
+      "validationPatterns": [
+        "(?i)\\bkeep\\s+(?:me|us|him|her|them)\\s+in\\s+the\\s+loop\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Me mantenha por dentro deste projeto.",
+          "en": "Keep me in the loop on this project.",
+          "ptIntent": "Me mantenha por dentro",
+          "enIntent": "Keep me in the loop"
+        },
+        {
+          "pt": "Por favor, me mantenha por dentro conforme as coisas evoluírem.",
+          "en": "Please keep me in the loop as things develop.",
+          "ptIntent": "me mantenha por dentro",
+          "enIntent": "keep me in the loop"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "professional-english"
+      ],
+      "related": []
+    },
+    {
+      "id": "give-me-a-heads-up-834aadbf-f19d-51fe-801a-9e6b5e93c775",
+      "intention": "Me avise com antecedência",
+      "english": "Give me a heads-up",
+      "pattern": "Give + person + a heads-up + (about / before / if...)",
+      "description": "Expressa a intenção comunicativa \"Me avise com antecedência\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "professional-english",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "Me avise com antecedência",
+        "Give me a heads-up"
+      ],
+      "validationPatterns": [
+        "(?i)\\bgive\\s+(?:me|us|him|her|them)\\s+a\\s+heads[ -]up\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Me avise com antecedência antes da reunião.",
+          "en": "Give me a heads-up before the meeting.",
+          "ptIntent": "Me avise com antecedência",
+          "enIntent": "Give me a heads-up"
+        },
+        {
+          "pt": "Você poderia me avisar com antecedência se o prazo mudar?",
+          "en": "Could you give me a heads-up if the deadline changes?",
+          "ptIntent": "Você poderia me avisar com antecedência se o prazo mudar?",
+          "enIntent": "give me a heads-up"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "professional-english"
+      ],
+      "related": []
+    },
+    {
+      "id": "touch-base-318e09d7-5d7c-5fa3-b70e-5c7da63434ce",
+      "intention": "Conversar brevemente para alinhar",
+      "english": "Touch base",
+      "pattern": "touch base + (with + person / about + topic)",
+      "description": "Expressa a intenção comunicativa \"Conversar brevemente para alinhar\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "professional-english",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "Conversar brevemente para alinhar",
+        "Touch base"
+      ],
+      "validationPatterns": [
+        "(?i)\\btouch(?:es|ed|ing)?\\s+base\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vamos conversar rapidamente amanhã de manhã para alinhar.",
+          "en": "Let's touch base tomorrow morning.",
+          "ptIntent": "Vamos conversar rapidamente amanhã de manhã para alinhar.",
+          "enIntent": "touch base"
+        },
+        {
+          "pt": "Eu queria conversar rapidamente para alinhar os novos requisitos.",
+          "en": "I wanted to touch base about the new requirements.",
+          "ptIntent": "Eu queria conversar rapidamente para alinhar os novos requisitos.",
+          "enIntent": "touch base"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "professional-english"
+      ],
+      "related": []
+    },
+    {
+      "id": "circle-back-16143362-06c9-500a-aecf-efbccd753e7b",
+      "intention": "Retomar o assunto depois",
+      "english": "Circle back",
+      "pattern": "circle back + (to + topic / with + person)",
+      "description": "Expressa a intenção comunicativa \"Retomar o assunto depois\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "professional-english",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "Retomar o assunto depois",
+        "Circle back"
+      ],
+      "validationPatterns": [
+        "(?i)\\bcircl(?:e|es|ed|ing)\\s+back\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vamos retomar esse assunto depois do almoço.",
+          "en": "Let's circle back to this after lunch.",
+          "ptIntent": "Vamos retomar esse assunto depois do almoço.",
+          "enIntent": "circle back"
+        },
+        {
+          "pt": "Vou retomar o contato amanhã com uma atualização.",
+          "en": "I'll circle back with an update tomorrow.",
+          "ptIntent": "Vou retomar o contato amanhã com uma atualização.",
+          "enIntent": "circle back"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "professional-english"
+      ],
+      "related": []
+    },
+    {
+      "id": "lets-call-it-a-day-9157d357-6dd1-5ab9-be5f-cdff5d7e8ae1",
+      "intention": "Vamos encerrar por hoje",
+      "english": "Let's call it a day",
+      "pattern": "Let us call it a day",
+      "description": "Expressa a intenção comunicativa \"Vamos encerrar por hoje\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "professional-english",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Vamos encerrar por hoje",
+        "Let's call it a day"
+      ],
+      "validationPatterns": [
+        "(?i)\\bLet's\\s+call\\s+it\\s+a\\s+day\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Já fizemos o suficiente. Vamos encerrar por hoje.",
+          "en": "We've done enough. Let's call it a day.",
+          "ptIntent": "Vamos encerrar por hoje",
+          "enIntent": "Let's call it a day"
+        },
+        {
+          "pt": "Está ficando tarde; vamos encerrar por hoje.",
+          "en": "It's getting late; let's call it a day.",
+          "ptIntent": "vamos encerrar por hoje",
+          "enIntent": "let's call it a day"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "professional-english"
+      ],
+      "related": []
+    },
+    {
+      "id": "lets-play-it-by-ear-ecc8ea93-0ccb-587c-a7aa-d1e5859d2f41",
+      "intention": "Vamos decidir conforme as coisas acontecerem",
+      "english": "Let's play it by ear",
+      "pattern": "Let us play it by ear",
+      "description": "Expressa a intenção comunicativa \"Vamos decidir conforme as coisas acontecerem\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "idiom",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "Vamos decidir conforme as coisas acontecerem",
+        "Let's play it by ear"
+      ],
+      "validationPatterns": [
+        "(?i)\\bLet's\\s+play\\s+it\\s+by\\s+ear\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não precisamos de um plano fixo. Vamos decidir conforme as coisas acontecerem.",
+          "en": "We don't need a fixed plan. Let's play it by ear.",
+          "ptIntent": "Vamos decidir conforme as coisas acontecerem",
+          "enIntent": "Let's play it by ear"
+        },
+        {
+          "pt": "Vamos decidir na hora e ver como fica o tempo.",
+          "en": "Let's play it by ear and see how the weather turns out.",
+          "ptIntent": "Vamos",
+          "enIntent": "Let's play it by ear"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "idiom"
+      ],
+      "related": []
+    },
+    {
+      "id": "on-the-same-page-2b2a8340-f8b4-584e-9446-1e8026d88550",
+      "intention": "Estar alinhados / Na mesma sintonia",
+      "english": "On the same page",
+      "pattern": "be + on the same page + (about + topic)",
+      "description": "Expressa a intenção comunicativa \"Estar alinhados / Na mesma sintonia\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "professional-english",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "Estar alinhados",
+        "Na mesma sintonia",
+        "On the same page"
+      ],
+      "validationPatterns": [
+        "(?i)\\bon\\s+the\\s+same\\s+page\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vamos garantir que estamos alinhados.",
+          "en": "Let's make sure we're on the same page.",
+          "ptIntent": "alinhados",
+          "enIntent": "on the same page"
+        },
+        {
+          "pt": "Acho que finalmente estamos alinhados sobre o escopo.",
+          "en": "I think we're finally on the same page about the scope.",
+          "ptIntent": "alinhados",
+          "enIntent": "on the same page"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "professional-english"
+      ],
+      "related": []
+    },
+    {
+      "id": "as-it-turns-out-222aa708-2555-51b2-bd7e-430f3e84b2c8",
+      "intention": "Acontece que / No fim, descobriu-se que",
+      "english": "As it turns out",
+      "pattern": "As it turns out, + clause",
+      "description": "Expressa a intenção comunicativa \"Acontece que / No fim, descobriu-se que\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "storytelling",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "Acontece que",
+        "No fim, descobriu-se que",
+        "As it turns out"
+      ],
+      "validationPatterns": [
+        "(?i)\\bAs\\s+it\\s+turns\\s+out\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Acontece que o problema estava na configuração.",
+          "en": "As it turns out, the problem was in the configuration.",
+          "ptIntent": "Acontece que",
+          "enIntent": "As it turns out"
+        },
+        {
+          "pt": "No fim, descobriu-se que ela já sabia a resposta.",
+          "en": "As it turns out, she already knew the answer.",
+          "ptIntent": "No fim, descobriu-se que",
+          "enIntent": "As it turns out"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "storytelling"
+      ],
+      "related": []
+    },
+    {
+      "id": "before-i-forget-cc98b2c1-8bda-50c2-8bed-08b22b6b08a1",
+      "intention": "Antes que eu me esqueça",
+      "english": "Before I forget",
+      "pattern": "Before I forget, + statement / question",
+      "description": "Expressa a intenção comunicativa \"Antes que eu me esqueça\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "time-connectors",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Antes que eu me esqueça",
+        "Before I forget"
+      ],
+      "validationPatterns": [
+        "(?i)\\bBefore\\s+I\\s+forget\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Antes que eu me esqueça, você enviou o e-mail?",
+          "en": "Before I forget, did you send the email?",
+          "ptIntent": "Antes que eu me esqueça",
+          "enIntent": "Before I forget"
+        },
+        {
+          "pt": "Antes que eu me esqueça, obrigado pela ajuda.",
+          "en": "Before I forget, thank you for your help.",
+          "ptIntent": "Antes que eu me esqueça",
+          "enIntent": "Before I forget"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "time-connectors"
+      ],
+      "related": []
+    },
+    {
+      "id": "i-happened-to-96c2785f-f54a-517d-a058-2b9216e0b011",
+      "intention": "Por acaso eu",
+      "english": "I happened to",
+      "pattern": "subject + happened to + base verb",
+      "description": "Expressa a intenção comunicativa \"Por acaso eu\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "storytelling",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Por acaso eu",
+        "I happened to"
+      ],
+      "validationPatterns": [
+        "(?i)\\b(?:I|you|we|they|he|she)\\s+happened\\s+to\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Por acaso eu o vi no supermercado.",
+          "en": "I happened to see him at the supermarket.",
+          "ptIntent": "Por acaso eu",
+          "enIntent": "I happened to"
+        },
+        {
+          "pt": "Por acaso eu encontrei uma foto antiga ontem.",
+          "en": "I happened to find an old photo yesterday.",
+          "ptIntent": "Por acaso eu",
+          "enIntent": "I happened to"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "storytelling"
+      ],
+      "related": []
+    },
+    {
+      "id": "it-slipped-my-mind-171de3a7-f42b-5d48-90b8-849a23d73e06",
+      "intention": "Acabei me esquecendo",
+      "english": "It slipped my mind",
+      "pattern": "It slipped + possessive + mind",
+      "description": "Expressa a intenção comunicativa \"Acabei me esquecendo\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "idiom",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "Acabei me esquecendo",
+        "It slipped my mind"
+      ],
+      "validationPatterns": [
+        "(?i)\\bIt\\s+slipped\\s+my\\s+mind\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Desculpa, acabei me esquecendo.",
+          "en": "Sorry, it slipped my mind.",
+          "ptIntent": "acabei me esquecendo",
+          "enIntent": "it slipped my mind"
+        },
+        {
+          "pt": "Eu pretendia te ligar, mas acabei me esquecendo.",
+          "en": "I meant to call you, but it slipped my mind.",
+          "ptIntent": "acabei me esquecendo",
+          "enIntent": "it slipped my mind"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "idiom"
+      ],
+      "related": []
+    },
+    {
+      "id": "in-hindsight-4d781382-42b4-5482-a7fd-b4390c30e76a",
+      "intention": "Olhando para trás",
+      "english": "In hindsight",
+      "pattern": "In hindsight, + clause",
+      "description": "Expressa a intenção comunicativa \"Olhando para trás\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "storytelling",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "Olhando para trás",
+        "In hindsight"
+      ],
+      "validationPatterns": [
+        "(?i)\\bIn\\s+hindsight\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Olhando para trás, eu deveria ter feito mais perguntas.",
+          "en": "In hindsight, I should have asked more questions.",
+          "ptIntent": "Olhando para trás",
+          "enIntent": "In hindsight"
+        },
+        {
+          "pt": "Olhando para trás, foi a decisão certa.",
+          "en": "In hindsight, it was the right decision.",
+          "ptIntent": "Olhando para trás",
+          "enIntent": "In hindsight"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "storytelling"
+      ],
+      "related": []
+    },
+    {
+      "id": "out-of-the-blue-adb1600e-d041-52db-b29a-22334795960f",
+      "intention": "Do nada / Inesperadamente",
+      "english": "Out of the blue",
+      "pattern": "out of the blue (adverbial phrase)",
+      "description": "Expressa a intenção comunicativa \"Do nada / Inesperadamente\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "idiom",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "Do nada",
+        "Inesperadamente",
+        "Out of the blue"
+      ],
+      "validationPatterns": [
+        "(?i)\\bOut\\s+of\\s+the\\s+blue\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Ele me ligou do nada.",
+          "en": "He called me out of the blue.",
+          "ptIntent": "do nada",
+          "enIntent": "out of the blue"
+        },
+        {
+          "pt": "A proposta apareceu inesperadamente.",
+          "en": "The offer came out of the blue.",
+          "ptIntent": "A proposta apareceu inesperadamente.",
+          "enIntent": "out of the blue"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "idiom"
+      ],
+      "related": []
+    },
+    {
+      "id": "so-far,-so-good-e0732e65-6dde-505b-951a-d900f841f068",
+      "intention": "Até agora, tudo bem",
+      "english": "So far, so good",
+      "pattern": "So far, so good",
+      "description": "Expressa a intenção comunicativa \"Até agora, tudo bem\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "daily-conversation",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "Até agora, tudo bem",
+        "So far, so good"
+      ],
+      "validationPatterns": [
+        "(?i)\\bSo\\s+far,\\s+so\\s+good\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Como está indo o projeto? Até agora, tudo bem.",
+          "en": "How's the project going? So far, so good.",
+          "ptIntent": "Até agora, tudo bem",
+          "enIntent": "So far, so good"
+        },
+        {
+          "pt": "Até agora, tudo bem, mas ainda temos trabalho a fazer.",
+          "en": "So far, so good, but we still have work to do.",
+          "ptIntent": "Até agora, tudo bem",
+          "enIntent": "So far, so good"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "daily-conversation"
+      ],
+      "related": []
+    },
+    {
+      "id": "if-thats-the-case-88f402dd-3d2e-57d2-aa8f-bf3edb3316a0",
+      "intention": "Se for esse o caso",
+      "english": "If that's the case",
+      "pattern": "If that is the case, + clause",
+      "description": "Expressa a intenção comunicativa \"Se for esse o caso\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "condition",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Se for esse o caso",
+        "If that's the case"
+      ],
+      "validationPatterns": [
+        "(?i)\\bIf\\s+that's\\s+the\\s+case\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Se for esse o caso, deveríamos esperar.",
+          "en": "If that's the case, we should wait.",
+          "ptIntent": "Se for esse o caso",
+          "enIntent": "If that's the case"
+        },
+        {
+          "pt": "Se for esse o caso, vou mudar o cronograma.",
+          "en": "If that's the case, I'll change the schedule.",
+          "ptIntent": "Se for esse o caso",
+          "enIntent": "If that's the case"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "condition"
+      ],
+      "related": []
+    },
+    {
+      "id": "im-having-second-thoughts-165fc1e3-b18a-55fb-863b-b44a4c3110bf",
+      "intention": "Estou começando a reconsiderar",
+      "english": "I'm having second thoughts",
+      "pattern": "subject + be having second thoughts + about + noun / verb-ing",
+      "description": "Expressa a intenção comunicativa \"Estou começando a reconsiderar\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "decisions",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "Estou começando a reconsiderar",
+        "I'm having second thoughts"
+      ],
+      "validationPatterns": [
+        "(?i)\\bI'm\\s+having\\s+second\\s+thoughts\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Estou começando a reconsiderar a compra do carro.",
+          "en": "I'm having second thoughts about buying the car.",
+          "ptIntent": "Estou começando a reconsiderar",
+          "enIntent": "I'm having second thoughts"
+        },
+        {
+          "pt": "Estou começando a reconsiderar aceitar a proposta.",
+          "en": "I'm having second thoughts about accepting the offer.",
+          "ptIntent": "Estou começando a reconsiderar",
+          "enIntent": "I'm having second thoughts"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "decisions"
+      ],
+      "related": []
+    },
+    {
+      "id": "i-cant-afford-to-fbae75ac-1089-5cfa-b7ad-298b4dd6bcc0",
+      "intention": "Não posso me dar ao luxo de",
+      "english": "I can't afford to",
+      "pattern": "subject + cannot afford to + base verb",
+      "description": "Expressa a intenção comunicativa \"Não posso me dar ao luxo de\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "ability",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Não posso me dar ao luxo de",
+        "I can't afford to"
+      ],
+      "validationPatterns": [
+        "(?i)\\b(?:I|you|we|they|he|she)\\s+(?:can't|cannot|can\\s+not)\\s+afford\\s+to\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não posso me dar ao luxo de perder essa oportunidade.",
+          "en": "I can't afford to lose this opportunity.",
+          "ptIntent": "Não posso me dar ao luxo de",
+          "enIntent": "I can't afford to"
+        },
+        {
+          "pt": "Não posso me dar ao luxo de cometer o mesmo erro novamente.",
+          "en": "I can't afford to make the same mistake again.",
+          "ptIntent": "Não posso me dar ao luxo de",
+          "enIntent": "I can't afford to"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "ability"
+      ],
+      "related": []
+    },
+    {
+      "id": "theres-no-use-in-8d3651d1-40ba-5396-8151-1c9dbacbc3ed",
+      "intention": "Não adianta",
+      "english": "There's no use in",
+      "pattern": "There is no use in + verb-ing",
+      "description": "Expressa a intenção comunicativa \"Não adianta\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "discourse",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Não adianta",
+        "There's no use in"
+      ],
+      "validationPatterns": [
+        "(?i)\\bThere's\\s+no\\s+use\\s+in\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não adianta discutir isso agora.",
+          "en": "There's no use in arguing about it now.",
+          "ptIntent": "Não adianta",
+          "enIntent": "There's no use in"
+        },
+        {
+          "pt": "Não adianta se preocupar com coisas que não podemos controlar.",
+          "en": "There's no use in worrying about things we can't control.",
+          "ptIntent": "Não adianta",
+          "enIntent": "There's no use in"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "discourse"
+      ],
+      "related": []
+    },
+    {
+      "id": "im-running-out-of-1f7ab964-080f-5f4d-b0ce-a86e826ff235",
+      "intention": "Estou ficando sem",
+      "english": "I'm running out of",
+      "pattern": "subject + be running out of + noun",
+      "description": "Expressa a intenção comunicativa \"Estou ficando sem\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "daily-conversation",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Estou ficando sem",
+        "I'm running out of"
+      ],
+      "validationPatterns": [
+        "(?i)\\b(?:am|is|are|'m|'re|'s)\\s+running\\s+out\\s+of\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Estou ficando sem tempo.",
+          "en": "I'm running out of time.",
+          "ptIntent": "Estou ficando sem",
+          "enIntent": "I'm running out of"
+        },
+        {
+          "pt": "Estou ficando sem ideias.",
+          "en": "I'm running out of ideas.",
+          "ptIntent": "Estou ficando sem",
+          "enIntent": "I'm running out of"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "daily-conversation"
+      ],
+      "related": []
+    },
+    {
+      "id": "easier-said-than-done-f944b278-cb0a-5c02-8ec2-ecf2218fea20",
+      "intention": "É mais fácil falar do que fazer",
+      "english": "Easier said than done",
+      "pattern": "Easier said than done",
+      "description": "Expressa a intenção comunicativa \"É mais fácil falar do que fazer\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "idiom",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "É mais fácil falar do que fazer",
+        "Easier said than done"
+      ],
+      "validationPatterns": [
+        "(?i)\\bEasier\\s+said\\s+than\\s+done\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Aprender um idioma é mais fácil falar do que fazer.",
+          "en": "Learning a language is easier said than done.",
+          "ptIntent": "é mais fácil falar do que fazer",
+          "enIntent": "easier said than done"
+        },
+        {
+          "pt": "Manter a calma é mais fácil falar do que fazer.",
+          "en": "Staying calm is easier said than done.",
+          "ptIntent": "é mais fácil falar do que fazer",
+          "enIntent": "easier said than done"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "idiom"
+      ],
+      "related": []
+    },
+    {
+      "id": "up-in-the-air-f4ad7e0c-246d-57d1-8bc2-214778522731",
+      "intention": "Ainda indefinido / Incerto",
+      "english": "Up in the air",
+      "pattern": "be + up in the air",
+      "description": "Expressa a intenção comunicativa \"Ainda indefinido / Incerto\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "idiom",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "Ainda indefinido",
+        "Incerto",
+        "Up in the air"
+      ],
+      "validationPatterns": [
+        "(?i)\\bup\\s+in\\s+the\\s+air\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Nossos planos de viagem ainda estão indefinidos.",
+          "en": "Our travel plans are still up in the air.",
+          "ptIntent": "Nossos planos de viagem ainda estão indefinidos.",
+          "enIntent": "up in the air"
+        },
+        {
+          "pt": "A data de lançamento ainda está indefinida.",
+          "en": "The launch date is up in the air.",
+          "ptIntent": "A data de lançamento ainda está indefinida.",
+          "enIntent": "up in the air"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "idiom"
+      ],
+      "related": []
+    },
+    {
+      "id": "it-has-nothing-to-do-with-c8f1a9d8-2a31-5930-85e3-573bf2604830",
+      "intention": "Não tem nada a ver com",
+      "english": "It has nothing to do with",
+      "pattern": "subject + have nothing to do with + noun / verb-ing",
+      "description": "Expressa a intenção comunicativa \"Não tem nada a ver com\". Use em situações cotidianas ou profissionais, respeitando o contexto e o tom da conversa.",
+      "category": "discourse",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "Não tem nada a ver com",
+        "It has nothing to do with"
+      ],
+      "validationPatterns": [
+        "(?i)\\b(?:has|have|had)\\s+nothing\\s+to\\s+do\\s+with\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não tem nada a ver com dinheiro.",
+          "en": "It has nothing to do with money.",
+          "ptIntent": "Não tem nada a ver com",
+          "enIntent": "It has nothing to do with"
+        },
+        {
+          "pt": "Esse problema não tem nada a ver com o banco de dados.",
+          "en": "This issue has nothing to do with the database.",
+          "ptIntent": "não tem nada a ver com",
+          "enIntent": "has nothing to do with"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english",
+        "discourse"
+      ],
+      "related": []
+    },
+    
+  {
+    "id": "here-s-the-thing-f0d8e4a4-d6d3-4428-99b2-da3d4665ce11",
+    "intention": "A questão é que / O negócio é o seguinte",
+    "english": "Here's the thing",
+    "pattern": "Here's the thing: + explanation",
+    "description": "Introduz o ponto central de uma explicação, geralmente antes de uma ressalva ou dificuldade.",
+    "category": "discourse",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "A questão é que",
+      "Here's the thing",
+      "here s the thing"
+    ],
+    "validationPatterns": [
+      "(?i)\\bHere['’]s\\s+the\\s+thing\\b"
+    ],
+    "examples": [
+      {
+        "pt": "A questão é que eu entendo inglês, mas ainda tenho dificuldade para falar.",
+        "en": "Here's the thing: I understand English, but I still struggle to speak.",
+        "ptIntent": "A questão é que",
+        "enIntent": "Here's the thing"
+      },
+      {
+        "pt": "O negócio é o seguinte: precisamos testar antes de publicar.",
+        "en": "Here's the thing: we need to test before we deploy.",
+        "ptIntent": "O negócio é o seguinte",
+        "enIntent": "Here's the thing"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "discourse"
+    ],
+    "related": []
+  },
+  {
+    "id": "just-so-you-know-b7038333-d948-4e69-8d4c-823e3c0358a2",
+    "intention": "Só para você saber / Só para avisar",
+    "english": "Just so you know",
+    "pattern": "Just so you know, + clause",
+    "description": "Apresenta uma informação que pode ser relevante para a outra pessoa, sem necessariamente exigir uma resposta.",
+    "category": "communication",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "Só para você saber",
+      "Just so you know",
+      "just so you know"
+    ],
+    "validationPatterns": [
+      "(?i)\\bJust\\s+so\\s+you\\s+know\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Só para você saber, já terminei a implementação.",
+        "en": "Just so you know, I've already finished the implementation.",
+        "ptIntent": "Só para você saber",
+        "enIntent": "Just so you know"
+      },
+      {
+        "pt": "Só para avisar, a reunião foi adiada.",
+        "en": "Just so you know, the meeting has been postponed.",
+        "ptIntent": "Só para avisar",
+        "enIntent": "Just so you know"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "communication"
+    ],
+    "related": []
+  },
+  {
+    "id": "if-i-remember-correctly-8323b26b-23e2-4fbd-9e88-362da1b68709",
+    "intention": "Se bem me lembro / Se não me engano",
+    "english": "If I remember correctly",
+    "pattern": "If I remember correctly, + clause",
+    "description": "Apresenta uma lembrança com cautela, indicando que o falante não tem certeza absoluta.",
+    "category": "discourse",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "Se bem me lembro",
+      "If I remember correctly",
+      "if i remember correctly"
+    ],
+    "validationPatterns": [
+      "(?i)\\bIf\\s+I\\s+remember\\s+correctly\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Se bem me lembro, discutimos isso ontem.",
+        "en": "If I remember correctly, we discussed this yesterday.",
+        "ptIntent": "Se bem me lembro",
+        "enIntent": "If I remember correctly"
+      },
+      {
+        "pt": "Se não me engano, ela começou na segunda-feira.",
+        "en": "If I remember correctly, she started on Monday.",
+        "ptIntent": "Se não me engano",
+        "enIntent": "If I remember correctly"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "discourse"
+    ],
+    "related": []
+  },
+  {
+    "id": "on-second-thought-cc3567f2-5dde-4e7b-8080-daa2a71b07a6",
+    "intention": "Pensando melhor / Pensando bem",
+    "english": "On second thought",
+    "pattern": "On second thought, + revised idea",
+    "description": "Introduz uma mudança de opinião após reconsiderar uma decisão ou sugestão.",
+    "category": "decisions",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "Pensando melhor",
+      "On second thought",
+      "on second thought"
+    ],
+    "validationPatterns": [
+      "(?i)\\bOn\\s+second\\s+thought\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Pensando melhor, deveríamos esperar até amanhã.",
+        "en": "On second thought, we should wait until tomorrow.",
+        "ptIntent": "Pensando melhor",
+        "enIntent": "On second thought"
+      },
+      {
+        "pt": "Pensando bem, vou ficar em casa.",
+        "en": "On second thought, I'll stay home.",
+        "ptIntent": "Pensando bem",
+        "enIntent": "On second thought"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "decisions"
+    ],
+    "related": []
+  },
+  {
+    "id": "that-rings-a-bell-8e207414-3698-4402-a1ad-6d380ae06ecc",
+    "intention": "Isso me soa familiar / Isso me lembra alguma coisa",
+    "english": "That rings a bell",
+    "pattern": "That rings a bell",
+    "description": "Indica reconhecimento parcial de um nome, assunto ou situação, sem necessariamente recordar todos os detalhes.",
+    "category": "memory",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "Isso me soa familiar",
+      "That rings a bell",
+      "that rings a bell"
+    ],
+    "validationPatterns": [
+      "(?i)\\bThat\\s+rings\\s+a\\s+bell\\b",
+      "(?i)\\brings\\s+a\\s+bell\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Isso me soa familiar, mas não lembro de onde.",
+        "en": "That rings a bell, but I can't remember where from.",
+        "ptIntent": "Isso me soa familiar",
+        "enIntent": "That rings a bell"
+      },
+      {
+        "pt": "Esse nome me lembra alguma coisa.",
+        "en": "That name rings a bell.",
+        "ptIntent": "me lembra alguma coisa",
+        "enIntent": "rings a bell"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "memory"
+    ],
+    "related": []
+  },
+  {
+    "id": "it-never-crossed-my-mind-16390080-ff08-4918-9861-f41e28332d16",
+    "intention": "Nunca passou pela minha cabeça / Nem me ocorreu",
+    "english": "It never crossed my mind",
+    "pattern": "It never crossed my mind that + clause",
+    "description": "Expressa que uma possibilidade ou ideia não havia sido considerada anteriormente.",
+    "category": "thoughts",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "Nunca passou pela minha cabeça",
+      "It never crossed my mind",
+      "it never crossed my mind"
+    ],
+    "validationPatterns": [
+      "(?i)\\bIt\\s+never\\s+crossed\\s+my\\s+mind\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Nunca passou pela minha cabeça que eu poderia falar inglês fluentemente.",
+        "en": "It never crossed my mind that I could speak English fluently.",
+        "ptIntent": "Nunca passou pela minha cabeça",
+        "enIntent": "It never crossed my mind"
+      },
+      {
+        "pt": "Nem me ocorreu pedir ajuda.",
+        "en": "It never crossed my mind to ask for help.",
+        "ptIntent": "Nem me ocorreu",
+        "enIntent": "It never crossed my mind"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "thoughts"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-wouldn-t-go-that-far-b4051996-213f-4fcf-a2db-0e919249a0cf",
+    "intention": "Eu não iria tão longe / Não diria tanto",
+    "english": "I wouldn't go that far",
+    "pattern": "I wouldn't go that far",
+    "description": "Discordância moderada de uma afirmação considerada exagerada.",
+    "category": "opinions",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "Eu não iria tão longe",
+      "I wouldn't go that far",
+      "i wouldn t go that far"
+    ],
+    "validationPatterns": [
+      "(?i)\\bI\\s+wouldn['’]t\\s+go\\s+that\\s+far\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Eu não iria tão longe; o sistema ainda tem problemas.",
+        "en": "I wouldn't go that far; the system still has issues.",
+        "ptIntent": "Eu não iria tão longe",
+        "enIntent": "I wouldn't go that far"
+      },
+      {
+        "pt": "Não diria tanto, mas concordo que melhorou.",
+        "en": "I wouldn't go that far, but I agree it's improved.",
+        "ptIntent": "Não diria tanto",
+        "enIntent": "I wouldn't go that far"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "opinions"
+    ],
+    "related": []
+  },
+  {
+    "id": "as-far-as-i-can-tell-7051f260-c309-4181-ae0c-aca16409e5e8",
+    "intention": "Pelo que consigo perceber / Até onde posso avaliar",
+    "english": "As far as I can tell",
+    "pattern": "As far as I can tell, + clause",
+    "description": "Expressa uma conclusão provisória baseada nas informações ou evidências disponíveis.",
+    "category": "discourse",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "Pelo que consigo perceber",
+      "As far as I can tell",
+      "as far as i can tell"
+    ],
+    "validationPatterns": [
+      "(?i)\\bAs\\s+far\\s+as\\s+I\\s+can\\s+tell\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Pelo que consigo perceber, o serviço está funcionando.",
+        "en": "As far as I can tell, the service is working.",
+        "ptIntent": "Pelo que consigo perceber",
+        "enIntent": "As far as I can tell"
+      },
+      {
+        "pt": "Até onde posso avaliar, não houve perda de dados.",
+        "en": "As far as I can tell, there was no data loss.",
+        "ptIntent": "Até onde posso avaliar",
+        "enIntent": "As far as I can tell"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "discourse"
+    ],
+    "related": []
+  },
+  {
+    "id": "let-s-get-back-on-track-d90166e3-6876-4b14-8b41-a9f237bff2c4",
+    "intention": "Vamos voltar ao foco / Vamos retomar o assunto",
+    "english": "Let's get back on track",
+    "pattern": "Let's get back on track",
+    "description": "Convida o grupo a retornar ao objetivo principal depois de uma distração ou desvio.",
+    "category": "meetings",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "Vamos voltar ao foco",
+      "Let's get back on track",
+      "let s get back on track"
+    ],
+    "validationPatterns": [
+      "(?i)\\bLet['’]s\\s+get\\s+back\\s+on\\s+track\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Vamos voltar ao foco e terminar a reunião.",
+        "en": "Let's get back on track and finish the meeting.",
+        "ptIntent": "Vamos voltar ao foco",
+        "enIntent": "Let's get back on track"
+      },
+      {
+        "pt": "Vamos retomar o assunto antes que o tempo acabe.",
+        "en": "Let's get back on track before we run out of time.",
+        "ptIntent": "Vamos retomar o assunto",
+        "enIntent": "Let's get back on track"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "meetings"
+    ],
+    "related": []
+  },
+  {
+    "id": "to-some-extent-53dbe473-4dc6-4186-b240-5ab0528f0a31",
+    "intention": "Até certo ponto / Em certa medida",
+    "english": "To some extent",
+    "pattern": "To some extent, + clause / verb + to some extent",
+    "description": "Limita a validade de uma afirmação: ela é verdadeira parcialmente, mas não por completo.",
+    "category": "opinions",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "Até certo ponto",
+      "To some extent",
+      "to some extent"
+    ],
+    "validationPatterns": [
+      "(?i)\\bTo\\s+some\\s+extent\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Até certo ponto, concordo com sua análise.",
+        "en": "To some extent, I agree with your analysis.",
+        "ptIntent": "Até certo ponto",
+        "enIntent": "To some extent"
+      },
+      {
+        "pt": "Em certa medida, isso explica o atraso.",
+        "en": "To some extent, that explains the delay.",
+        "ptIntent": "Em certa medida",
+        "enIntent": "To some extent"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "opinions"
+    ],
+    "related": []
+  },
+  {
+    "id": "not-to-mention-7318e1cc-935c-45f9-9dd2-ffd972560dab",
+    "intention": "Sem falar em / Para não mencionar",
+    "english": "Not to mention",
+    "pattern": "Not to mention + noun / verb-ing / clause",
+    "description": "Acrescenta um argumento relevante, frequentemente reforçando uma crítica ou justificativa.",
+    "category": "connectors",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "Sem falar em",
+      "Not to mention",
+      "not to mention"
+    ],
+    "validationPatterns": [
+      "(?i)\\bNot\\s+to\\s+mention\\b"
+    ],
+    "examples": [
+      {
+        "pt": "O projeto é caro, sem falar no tempo necessário.",
+        "en": "The project is expensive, not to mention the time it takes.",
+        "ptIntent": "sem falar no",
+        "enIntent": "not to mention"
+      },
+      {
+        "pt": "Ela trabalha muito, sem falar que ainda estuda à noite.",
+        "en": "She works hard, not to mention that she studies at night.",
+        "ptIntent": "sem falar que",
+        "enIntent": "not to mention"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "connectors"
+    ],
+    "related": []
+  },
+  {
+    "id": "for-the-most-part-c40f36cb-f780-4d09-ba15-e3fd13046245",
+    "intention": "Na maior parte / Em geral",
+    "english": "For the most part",
+    "pattern": "For the most part, + clause",
+    "description": "Indica que uma afirmação vale para a maioria dos casos, admitindo exceções.",
+    "category": "discourse",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "Na maior parte",
+      "For the most part",
+      "for the most part"
+    ],
+    "validationPatterns": [
+      "(?i)\\bFor\\s+the\\s+most\\s+part\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Em geral, o sistema funciona bem.",
+        "en": "For the most part, the system works well.",
+        "ptIntent": "Em geral",
+        "enIntent": "For the most part"
+      },
+      {
+        "pt": "Na maior parte, as mudanças foram positivas.",
+        "en": "For the most part, the changes were positive.",
+        "ptIntent": "Na maior parte",
+        "enIntent": "For the most part"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "discourse"
+    ],
+    "related": []
+  },
+  {
+    "id": "would-it-be-possible-to-95172437-96c4-4dbd-a77b-0782b4bfa18e",
+    "intention": "Seria possível / Haveria como",
+    "english": "Would it be possible to",
+    "pattern": "Would it be possible to + base verb?",
+    "description": "Faz um pedido ou pergunta sobre viabilidade de forma cortês e indireta.",
+    "category": "requests",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "Seria possível",
+      "Would it be possible to",
+      "would it be possible to"
+    ],
+    "validationPatterns": [
+      "(?i)\\bWould\\s+it\\s+be\\s+possible\\s+to\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Seria possível remarcar a reunião?",
+        "en": "Would it be possible to reschedule the meeting?",
+        "ptIntent": "Seria possível",
+        "enIntent": "Would it be possible to"
+      },
+      {
+        "pt": "Haveria como revisar o código hoje?",
+        "en": "Would it be possible to review the code today?",
+        "ptIntent": "Haveria como",
+        "enIntent": "Would it be possible to"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "requests"
+    ],
+    "related": []
+  },
+  {
+    "id": "as-a-rule-of-thumb-37e1db8b-cd22-4937-b583-11038a963a35",
+    "intention": "Como regra prática / Via de regra",
+    "english": "As a rule of thumb",
+    "pattern": "As a rule of thumb, + clause",
+    "description": "Introduz uma orientação aproximada ou heurística, não uma regra absoluta.",
+    "category": "advice",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "Como regra prática",
+      "As a rule of thumb",
+      "as a rule of thumb"
+    ],
+    "validationPatterns": [
+      "(?i)\\bAs\\s+a\\s+rule\\s+of\\s+thumb\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Como regra prática, faça testes antes de publicar.",
+        "en": "As a rule of thumb, test before you deploy.",
+        "ptIntent": "Como regra prática",
+        "enIntent": "As a rule of thumb"
+      },
+      {
+        "pt": "Via de regra, é melhor começar com o básico.",
+        "en": "As a rule of thumb, it's better to start with the basics.",
+        "ptIntent": "Via de regra",
+        "enIntent": "As a rule of thumb"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "advice"
+    ],
+    "related": []
+  },
+  {
+    "id": "let-s-agree-to-disagree-c6d613cb-5606-4c59-ae4a-80d612d85d74",
+    "intention": "Vamos concordar em discordar",
+    "english": "Let's agree to disagree",
+    "pattern": "Let's agree to disagree",
+    "description": "Encerra uma divergência de maneira civilizada, reconhecendo que as opiniões continuarão diferentes.",
+    "category": "disagreement",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "Vamos concordar em discordar",
+      "Let's agree to disagree",
+      "let s agree to disagree"
+    ],
+    "validationPatterns": [
+      "(?i)\\bLet['’]s\\s+agree\\s+to\\s+disagree\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Vamos concordar em discordar e seguir em frente.",
+        "en": "Let's agree to disagree and move on.",
+        "ptIntent": "Vamos concordar em discordar",
+        "enIntent": "Let's agree to disagree"
+      },
+      {
+        "pt": "Acho que não vamos mudar de ideia; vamos concordar em discordar.",
+        "en": "I don't think we'll change our minds; let's agree to disagree.",
+        "ptIntent": "vamos concordar em discordar",
+        "enIntent": "let's agree to disagree"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "disagreement"
+    ],
+    "related": []
+  },
+  {
+    "id": "it-caught-me-off-guard-8959b9fe-2ea2-417e-aa96-f838780f95f4",
+    "intention": "Me pegou desprevenido / Me pegou de surpresa",
+    "english": "It caught me off guard",
+    "pattern": "It caught + object + off guard",
+    "description": "Descreve algo inesperado que surpreendeu alguém sem tempo para se preparar; permite variar o objeto (me, us, her).",
+    "category": "surprise",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "Me pegou desprevenido",
+      "It caught me off guard",
+      "it caught me off guard"
+    ],
+    "validationPatterns": [
+      "(?i)\\bIt\\s+caught\\s+me\\s+off\\s+guard\\b",
+      "(?i)\\bcaught\\s+me\\s+off\\s+guard\\b"
+    ],
+    "examples": [
+      {
+        "pt": "A pergunta me pegou desprevenido.",
+        "en": "The question caught me off guard.",
+        "ptIntent": "me pegou desprevenido",
+        "enIntent": "caught me off guard"
+      },
+      {
+        "pt": "A mudança de planos me pegou de surpresa.",
+        "en": "The change of plans caught me off guard.",
+        "ptIntent": "me pegou de surpresa",
+        "enIntent": "caught me off guard"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "surprise"
+    ],
+    "related": []
+  },
+  {
+    "id": "it-goes-both-ways-74a419cb-b2fd-4f34-92e6-4f73c9e1f9ad",
+    "intention": "Isso vale para os dois lados / É uma via de mão dupla",
+    "english": "It goes both ways",
+    "pattern": "It goes both ways",
+    "description": "Indica reciprocidade: uma regra, responsabilidade ou comportamento se aplica às duas partes.",
+    "category": "relationships",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "Isso vale para os dois lados",
+      "It goes both ways",
+      "it goes both ways"
+    ],
+    "validationPatterns": [
+      "(?i)\\bIt\\s+goes\\s+both\\s+ways\\b",
+      "(?i)\\bgoes\\s+both\\s+ways\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Respeito vale para os dois lados.",
+        "en": "Respect goes both ways.",
+        "ptIntent": "vale para os dois lados",
+        "enIntent": "goes both ways"
+      },
+      {
+        "pt": "É uma via de mão dupla: os dois precisam ouvir.",
+        "en": "It goes both ways: both people need to listen.",
+        "ptIntent": "É uma via de mão dupla",
+        "enIntent": "It goes both ways"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "relationships"
+    ],
+    "related": []
+  },
+  {
+    "id": "at-least-for-now-5186acc2-1518-453a-b6a7-2d54e7df26d1",
+    "intention": "Pelo menos por enquanto / Ao menos por ora",
+    "english": "At least for now",
+    "pattern": "At least for now",
+    "description": "Limita uma decisão ou situação ao presente, deixando aberta a possibilidade de mudança futura.",
+    "category": "time",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "Pelo menos por enquanto",
+      "At least for now",
+      "at least for now"
+    ],
+    "validationPatterns": [
+      "(?i)\\bAt\\s+least\\s+for\\s+now\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Pelo menos por enquanto, vou continuar trabalhando de casa.",
+        "en": "At least for now, I'll keep working from home.",
+        "ptIntent": "Pelo menos por enquanto",
+        "enIntent": "At least for now"
+      },
+      {
+        "pt": "Ao menos por ora, não vamos mudar o plano.",
+        "en": "At least for now, we're not changing the plan.",
+        "ptIntent": "Ao menos por ora",
+        "enIntent": "At least for now"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "time"
+    ],
+    "related": []
+  },
+  {
+    "id": "it-s-only-a-matter-of-time-0e1d35cb-95ce-4f3c-b5d2-a46a658b4c3e",
+    "intention": "É só uma questão de tempo",
+    "english": "It's only a matter of time",
+    "pattern": "It's only a matter of time before + clause",
+    "description": "Expressa a expectativa de que algo acontecerá inevitavelmente ou com alta probabilidade no futuro.",
+    "category": "predictions",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "É só uma questão de tempo",
+      "It's only a matter of time",
+      "it s only a matter of time"
+    ],
+    "validationPatterns": [
+      "(?i)\\bIt['’]s\\s+only\\s+a\\s+matter\\s+of\\s+time\\b"
+    ],
+    "examples": [
+      {
+        "pt": "É só uma questão de tempo até eu melhorar meu inglês.",
+        "en": "It's only a matter of time before my English improves.",
+        "ptIntent": "É só uma questão de tempo",
+        "enIntent": "It's only a matter of time"
+      },
+      {
+        "pt": "É só uma questão de tempo até descobrirem o problema.",
+        "en": "It's only a matter of time before they find the problem.",
+        "ptIntent": "É só uma questão de tempo",
+        "enIntent": "It's only a matter of time"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "predictions"
+    ],
+    "related": []
+  },
+  {
+    "id": "in-the-first-place-4246fd3a-1695-48e8-94b8-5f8db6859419",
+    "intention": "Para começo de conversa / Em primeiro lugar / Desde o início",
+    "english": "In the first place",
+    "pattern": "In the first place + clause / why ... in the first place?",
+    "description": "Pode introduzir um argumento inicial ou retomar a razão original de algo; o significado depende da posição e do contexto.",
+    "category": "discourse",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "Para começo de conversa",
+      "In the first place",
+      "in the first place"
+    ],
+    "validationPatterns": [
+      "(?i)\\bIn\\s+the\\s+first\\s+place\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Para começo de conversa, ninguém aprovou essa mudança.",
+        "en": "In the first place, nobody approved this change.",
+        "ptIntent": "Para começo de conversa",
+        "enIntent": "In the first place"
+      },
+      {
+        "pt": "Por que você aceitou esse trabalho desde o início?",
+        "en": "Why did you take that job in the first place?",
+        "ptIntent": "desde o início",
+        "enIntent": "in the first place"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english",
+      "discourse"
+    ],
+    "related": []
   }
-
-
 
   ]
 }
