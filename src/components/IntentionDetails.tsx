@@ -74,6 +74,8 @@ export function IntentionDetails({
     useState<number | null>(null);
   const [copiedSection, setCopiedSection] = useState<"pattern" | "examples" | null>(null);
   const [copySectionError, setCopySectionError] = useState<string | null>(null);
+  const [copiedIntentionId, setCopiedIntentionId] = useState<string | null>(null);
+  const [copyIntentionIdError, setCopyIntentionIdError] = useState<string | null>(null);
   const [speechError, setSpeechError] = useState<string | null>(null);
   const [hqImage, setHqImage] = useState<string | null>(null);
   const [showMetadataModal, setShowMetadataModal] = useState(false);
@@ -100,6 +102,8 @@ export function IntentionDetails({
     setCopiedHqPromptExampleIndex(null);
     setCopiedSection(null);
     setCopySectionError(null);
+    setCopiedIntentionId(null);
+    setCopyIntentionIdError(null);
     setSpeechError(null);
     setHqImage(null);
     setShowMetadataModal(false);
@@ -252,6 +256,47 @@ export function IntentionDetails({
     };
 
     window.speechSynthesis.speak(utterance);
+  }
+
+  async function handleCopyIntentionId() {
+    if (!isAuthorMode() || !item?.id) return;
+
+    try {
+      // Mesmo fallback de cópia já utilizado neste componente.
+      if (navigator.clipboard?.writeText) {
+        try {
+          await navigator.clipboard.writeText(item.id);
+        } catch {
+          copyIntentionIdFallback(item.id);
+        }
+      } else {
+        copyIntentionIdFallback(item.id);
+      }
+      setCopiedIntentionId(item.id);
+      setCopyIntentionIdError(null);
+    } catch {
+      setCopiedIntentionId(null);
+      setCopyIntentionIdError("Não foi possível copiar o ID desta intenção.");
+    }
+  }
+
+  function copyIntentionIdFallback(id: string) {
+    const textarea = document.createElement("textarea");
+    textarea.value = id;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    try {
+      textarea.focus();
+      textarea.select();
+      textarea.setSelectionRange(0, id.length);
+      if (!document.execCommand("copy")) {
+        throw new Error("Falha ao copiar ID.");
+      }
+    } finally {
+      document.body.removeChild(textarea);
+    }
   }
 
   async function handleCopySection(section: "pattern" | "examples") {
@@ -911,6 +956,18 @@ Mandatório:
             <button
               type="button"
               className="secondary-button"
+              onClick={() => void handleCopyIntentionId()}
+              title={copiedIntentionId === item.id ? "ID copiado!" : "Copiar ID da intenção"}
+              aria-label={copiedIntentionId === item.id ? "ID copiado" : "Copiar ID da intenção"}
+              style={{ minWidth: "2.75rem" }}
+            >
+              <span aria-hidden="true">{copiedIntentionId === item.id ? "✓" : "🔢"}</span>
+            </button>
+          )}
+          {isAuthorMode() && (
+            <button
+              type="button"
+              className="secondary-button"
               onClick={() => setShowMetadataModal(true)}
               title="Visualizar tags e searchTerms desta intenção"
               aria-label="Ver tags e termos de busca"
@@ -923,6 +980,9 @@ Mandatório:
 
         {copySectionError && (
           <p role="alert" style={{ color: "#b91c1c" }}>{copySectionError}</p>
+        )}
+        {copyIntentionIdError && (
+          <p role="alert" style={{ color: "#b91c1c" }}>{copyIntentionIdError}</p>
         )}
 
         {item.pattern && (
