@@ -9181,7 +9181,7 @@
         "speaking"
       ],
       "related": [
-        "you-can-say-that-again"
+        "ba5109f2-8d37-4f70-9fd4-6339bd42b710"
       ],
       "englishLevel": "B2",
       "allowLanguageChunkPractice": true
@@ -9332,41 +9332,6 @@
       ],
       "related": [],
       "englishLevel": "A2"
-    },
-    {
-      "id": "you-can-say-that-again",
-      "intention": "Pode crer / concordo plenamente.",
-      "english": "You can say that again.",
-      "pattern": "Fixed chunk",
-      "description": "Expressão idiomática usada para demonstrar forte concordância.",
-      "category": "chunk",
-      "searchTerms": [
-        "pode crer",
-        "concordo plenamente",
-        "pode apostar",
-        "say that again"
-      ],
-      "validationPatterns": [
-        "\\b(?:you\\s+can\\s+(?:say|says|said|saying)\\s+that\\s+again)\\b"
-      ],
-      "examples": [
-        {
-          "pt": "Concordo plenamente.",
-          "en": "You can say that again.",
-          "ptIntent": "Concordo plenamente",
-          "enIntent": "You can say that again"
-        }
-      ],
-      "tags": [
-        "agreement",
-        "idiom",
-        "speaking"
-      ],
-      "related": [
-        "i-couldnt-have-said-it-better-myself"
-      ],
-      "englishLevel": "B2",
-      "allowLanguageChunkPractice": true
     },
     {
       "id": "its-not-on-you",
@@ -25750,76 +25715,6 @@
       ],
       "related": [],
       "englishLevel": "A2"
-    },
-    {
-      "id": "concordar-totalmente-you-can-say-that-again-4d8c2f71-9a53-46e0-b184-7f3a62c91d05",
-      "intention": "Com certeza! / Você disse tudo! / Nem me fale!",
-      "english": "You can say that again!",
-      "pattern": "You can say that again!",
-      "description": "Expressão pronta e informal usada para demonstrar forte concordância com algo que outra pessoa acabou de dizer. Apesar da tradução literal sugerir 'você pode dizer isso de novo', normalmente não é um pedido para repetir a frase. A intenção é equivalente a 'com certeza', 'você disse tudo' ou 'nem me fale'.",
-      "category": "chunk",
-      "searchTerms": [
-        "com certeza",
-        "você disse tudo",
-        "nem me fale",
-        "concordo totalmente",
-        "é verdade",
-        "you can say that again",
-        "strong agreement",
-        "agreement"
-      ],
-      "validationPatterns": [
-        "\\b(?:you\\s+can\\s+(?:say|says|said|saying)\\s+that\\s+again)\\b"
-      ],
-      "examples": [
-        {
-          "pt": "— Esse trânsito está horrível. — Nem me fale!",
-          "en": "— This traffic is terrible. — You can say that again!",
-          "ptIntent": "Nem me fale",
-          "enIntent": "You can say that again"
-        },
-        {
-          "pt": "— Aprender inglês exige muita prática. — Você disse tudo!",
-          "en": "— Learning English takes a lot of practice. — You can say that again!",
-          "ptIntent": "Você disse tudo",
-          "enIntent": "You can say that again"
-        },
-        {
-          "pt": "— Está muito quente hoje. — Com certeza!",
-          "en": "— It's really hot today. — You can say that again!",
-          "ptIntent": "Com certeza",
-          "enIntent": "You can say that again"
-        },
-        {
-          "pt": "— Esse projeto está dando muito mais trabalho do que esperávamos. — Nem me fale!",
-          "en": "— This project is taking much more work than we expected. — You can say that again!",
-          "ptIntent": "Nem me fale",
-          "enIntent": "You can say that again"
-        },
-        {
-          "pt": "— Precisamos de férias. — Você disse tudo!",
-          "en": "— We need a vacation. — You can say that again!",
-          "ptIntent": "Você disse tudo",
-          "enIntent": "You can say that again"
-        },
-        {
-          "pt": "— Falar inglês é bem diferente de apenas estudar inglês. — Com certeza!",
-          "en": "— Speaking English is very different from just studying English. — You can say that again!",
-          "ptIntent": "Com certeza",
-          "enIntent": "You can say that again"
-        }
-      ],
-      "tags": [
-        "chunk",
-        "agreement",
-        "strong-agreement",
-        "conversation",
-        "informal",
-        "reaction"
-      ],
-      "related": [],
-      "englishLevel": "B1",
-      "allowLanguageChunkPractice": true
     },
     {
       "id": "ser-muito-bobo-malucinho-as-daft-as-a-brush-8f2c71a4-6d39-4e85-b120-93a7c54d8e16",
@@ -47023,6 +46918,91 @@
       ],
       "related": [],
       "allowLanguageChunkPractice": true
+    },
+    {
+  "id": "ba5109f2-8d37-4f70-9fd4-6339bd42b710",
+  "intention": "Pode crer! / Concordo plenamente! / Com certeza! / Você disse tudo! / Nem me fale!",
+  "english": "You can say that again!",
+  "pattern": "You can say that again!",
+  "description": "Expressão pronta e informal usada para demonstrar forte concordância com algo que outra pessoa acabou de dizer. Apesar da tradução literal sugerir 'você pode dizer isso de novo', normalmente não é um pedido para repetir a frase. A intenção é equivalente a 'com certeza', 'você disse tudo' ou 'nem me fale'. Também pode corresponder a “pode crer” ou “concordo plenamente”, conforme o contexto.",
+  "category": "chunk",
+  "searchTerms": [
+    "pode crer",
+    "concordo plenamente",
+    "pode apostar",
+    "say that again",
+    "com certeza",
+    "você disse tudo",
+    "nem me fale",
+    "concordo totalmente",
+    "é verdade",
+    "you can say that again",
+    "strong agreement",
+    "agreement"
+  ],
+  "validationPatterns": [
+    "\\b(?:you\\s+can\\s+(?:say|says|said|saying)\\s+that\\s+again)\\b"
+  ],
+  "examples": [
+    {
+      "pt": "Concordo plenamente.",
+      "en": "You can say that again.",
+      "ptIntent": "Concordo plenamente",
+      "enIntent": "You can say that again"
+    },
+    {
+      "pt": "— Esse trânsito está horrível. — Nem me fale!",
+      "en": "— This traffic is terrible. — You can say that again!",
+      "ptIntent": "Nem me fale",
+      "enIntent": "You can say that again"
+    },
+    {
+      "pt": "— Aprender inglês exige muita prática. — Você disse tudo!",
+      "en": "— Learning English takes a lot of practice. — You can say that again!",
+      "ptIntent": "Você disse tudo",
+      "enIntent": "You can say that again"
+    },
+    {
+      "pt": "— Está muito quente hoje. — Com certeza!",
+      "en": "— It's really hot today. — You can say that again!",
+      "ptIntent": "Com certeza",
+      "enIntent": "You can say that again"
+    },
+    {
+      "pt": "— Esse projeto está dando muito mais trabalho do que esperávamos. — Nem me fale!",
+      "en": "— This project is taking much more work than we expected. — You can say that again!",
+      "ptIntent": "Nem me fale",
+      "enIntent": "You can say that again"
+    },
+    {
+      "pt": "— Precisamos de férias. — Você disse tudo!",
+      "en": "— We need a vacation. — You can say that again!",
+      "ptIntent": "Você disse tudo",
+      "enIntent": "You can say that again"
+    },
+    {
+      "pt": "— Falar inglês é bem diferente de apenas estudar inglês. — Com certeza!",
+      "en": "— Speaking English is very different from just studying English. — You can say that again!",
+      "ptIntent": "Com certeza",
+      "enIntent": "You can say that again"
     }
+  ],
+  "tags": [
+    "agreement",
+    "idiom",
+    "speaking",
+    "chunk",
+    "strong-agreement",
+    "conversation",
+    "informal",
+    "reaction"
+  ],
+  "related": [
+    "i-couldnt-have-said-it-better-myself"
+  ],
+  "englishLevel": "B1",
+  "allowLanguageChunkPractice": true
+}
+
   ]
 }
