@@ -47248,6 +47248,57 @@
       ],
       "related": [],
       "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "estou-de-queixo-caido-fe883c98-b159-483f-a810-2cb2ba6fd90d",
+      "intention": "Estou de queixo caído!",
+      "english": "I'm blown away!",
+      "pattern": "I'm blown away! / I am blown away!",
+      "description": "Expressa grande surpresa ou admiração diante de algo impressionante. Em inglês americano, “I’m blown away!” funciona como reação independente.",
+      "category": "reactions",
+      "searchTerms": [
+        "estou de queixo caído",
+        "fiquei de queixo caído",
+        "estou impressionado",
+        "fiquei impressionado",
+        "estou maravilhado",
+        "não acredito no que vi",
+        "blown away",
+        "i'm blown away",
+        "i am blown away"
+      ],
+      "validationPatterns": [
+        "\\b(?:I['’]m|I\\s+am)\\s+blown\\s+away\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Estou de queixo caído! O aplicativo ficou incrível.",
+          "en": "I'm blown away! The app looks amazing.",
+          "ptIntent": "Estou de queixo caído",
+          "enIntent": "I'm blown away"
+        },
+        {
+          "pt": "Estou de queixo caído com o quanto você melhorou.",
+          "en": "I'm blown away by how much you've improved.",
+          "ptIntent": "Estou de queixo caído",
+          "enIntent": "I'm blown away"
+        },
+        {
+          "pt": "Estou de queixo caído! Nunca vi nada parecido.",
+          "en": "I'm blown away! I've never seen anything like it.",
+          "ptIntent": "Estou de queixo caído",
+          "enIntent": "I'm blown away"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "reaction",
+        "surprise",
+        "admiration"
+      ],
+      "related": [],
+      "englishLevel": "B1",
+      "allowLanguageChunkPractice": true
     }
   ]
 }

@@ -1,4 +1,3 @@
-
 # Mental Hashmap — Agent Instructions
 
 ## Project
@@ -35,6 +34,78 @@ Brazilian English Journey — Mental Hashmap.
 - Report inconsistencies before modifying unrelated entries.
 - Do not change files outside the requested scope.
 - Show a summary of changes after completion.
+
+## Synchronization Modes (Token-Efficient)
+
+**Default: INCREMENTAL.** Use FULL AUDIT only when the user explicitly
+requests a complete audit, a baseline reconciliation, or a new-language
+initial import. Never escalate to FULL AUDIT merely because a small mismatch
+was detected; report it instead.
+
+### INCREMENTAL (Default)
+
+For routine additions and synchronization of new intentions:
+
+1. Read `AGENTS.md` and locate the configured language files, normally
+   `public/sample-hashmap-en-US.json`, `public/sample-hashmap-fr-FR.json`,
+   and `public/sample-hashmap-es-ES.json`.
+2. Use `en-US` as the canonical reference for which intentions exist.
+   Compare **IDs only** across the language files using a lightweight local
+   script or parser. Do not paste or load entire JSON catalogs into the
+   model's context merely to compare IDs.
+3. Build the list of missing IDs per language. If there are no missing IDs,
+   report that synchronization is already complete and stop; do not rewrite
+   or reformat any JSON.
+4. Retrieve and examine **only the missing intentions**, plus a small number
+   of relevant existing entries when needed to preserve schema or detect
+   semantic duplicates. Never translate or regenerate synchronized entries.
+5. Before writing, report the missing IDs, affected files and planned changes.
+   If the user's prompt requires approval, stop and wait for explicit approval.
+6. For each approved missing intention, create a natural linguistic equivalent
+   in the destination language, respecting all schema, searchTerms, regex,
+   example-count and chunk rules in this document.
+7. Modify only the required entries in the destination JSON files; preserve
+   all existing intentions and avoid unrelated reformatting or key reordering.
+8. Validate JSON syntax, duplicate IDs, required fields, 3–10 examples in
+   newly added entries, and ID coverage using local code. Run relevant tests
+   when available; do not perform a new full semantic audit.
+9. Clean up task-created temporary files under the cleanup rules below.
+   Report counts, IDs added, files changed, validation results and unresolved
+   issues concisely.
+
+**Efficiency rules:** Prefer a single Codex agent for a small batch of new
+intentions. Do not spawn language subagents for one or a few intentions.
+Use subagents only when the volume or complexity clearly justifies them.
+Do not regenerate searchTerms, examples or validationPatterns for already
+synchronized intentions. Prefer targeted edits and targeted tests.
+
+### FULL AUDIT (Explicit Request Only)
+
+When explicitly requested, inspect all configured language catalogs for
+missing IDs, schema inconsistencies, duplicates, semantic mismatches and
+validation issues. Present a report and a proposed plan before making
+changes; wait for authorization when requested. Split work into batches only
+if needed, and never overwrite valid translations without approval.
+
+A newly configured language may require a one-time full population; once
+synchronized, return to INCREMENTAL mode for subsequent additions.
+
+## Example Generation Rules
+
+For every **new or explicitly updated** intention in each target-language
+JSON file:
+
+1. Include **at least 3 and at most 10** natural, idiomatic examples.
+2. Default to **3** strong examples; add more only for meaningful differences
+   in context, usage, structure or communicative intention.
+3. Preserve the existing example schema and field names, including source
+   Portuguese and the language-specific target text and highlighted spans.
+4. Ensure examples express the same intention, but do not force literal
+   translations or English grammar onto French or Spanish.
+5. Avoid near-duplicates, artificial examples and padding to reach 10.
+6. Validate the example count separately for every newly created or updated
+   language entry. Report violations in older entries without modifying them
+   unless the user explicitly requests that work.
 
 ## New Linguistic Intention Workflow
 
