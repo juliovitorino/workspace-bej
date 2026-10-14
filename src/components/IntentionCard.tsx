@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import { isAuthorMode } from "../utils/authorMode";
 
@@ -9,17 +10,78 @@ interface IntentionCardProps {
 export function IntentionCard({ item, onSelect }: IntentionCardProps) {
   const hasYoutubeVideo = typeof item.youtubeVideo === "string" && item.youtubeVideo.trim().length > 0;
   const hasYoutubeShort = typeof item.youtubeShort === "string" && item.youtubeShort.trim().length > 0;
+  const authorMode = isAuthorMode();
+  const [copiedId, setCopiedId] = useState(false);
+  const [copyError, setCopyError] = useState(false);
+  const feedbackTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (feedbackTimeout.current !== null) clearTimeout(feedbackTimeout.current);
+    };
+  }, []);
+
+  async function copyId() {
+    if (!isAuthorMode()) return;
+
+    try {
+      let copied = false;
+      if (navigator.clipboard?.writeText) {
+        try {
+          await navigator.clipboard.writeText(item.id);
+          copied = true;
+        } catch {
+          // Tenta o método alternativo quando o navegador bloqueia a API.
+        }
+      }
+
+      if (!copied) {
+        const textarea = document.createElement("textarea");
+        textarea.value = item.id;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        textarea.style.pointerEvents = "none";
+        document.body.appendChild(textarea);
+        try {
+          textarea.focus();
+          textarea.select();
+          textarea.setSelectionRange(0, item.id.length);
+          if (!document.execCommand("copy")) throw new Error("Falha ao copiar ID");
+        } finally {
+          document.body.removeChild(textarea);
+        }
+      }
+
+      setCopiedId(true);
+      setCopyError(false);
+      if (feedbackTimeout.current !== null) clearTimeout(feedbackTimeout.current);
+      feedbackTimeout.current = setTimeout(() => setCopiedId(false), 1500);
+    } catch {
+      setCopiedId(false);
+      setCopyError(true);
+    }
+  }
 
   return (
-    <button
-      type="button"
+    <div style={{ position: "relative", minWidth: 0 }}>
+    <div
       className="intention-card"
+      role="button"
+      tabIndex={0}
       onClick={() => onSelect(item)}
+      onKeyDown={(event) => {
+        if (event.target !== event.currentTarget) return;
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          onSelect(item);
+        }
+      }}
     >
       <div>
         <h2>{item.intention}</h2>
         <p className="english">{item.english}</p>
-        {isAuthorMode() && (hasYoutubeVideo || hasYoutubeShort) && (
+        {authorMode && (hasYoutubeVideo || hasYoutubeShort) && (
           <div
             aria-label="Conteúdos publicados no YouTube"
             style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginTop: "0.4rem" }}
@@ -49,7 +111,40 @@ export function IntentionCard({ item, onSelect }: IntentionCardProps) {
       </div>
 
       <div className="card-meta">
-        {item.pattern && <span>{item.pattern}</span>}
+        {(item.pattern || authorMode) && (
+          <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", flexWrap: "wrap", minWidth: 0 }}>
+            {item.pattern && <span style={{ overflowWrap: "anywhere" }}>{item.pattern}</span>}
+            {authorMode && (
+              <button
+                type="button"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  void copyId();
+                }}
+                onKeyDown={(event) => event.stopPropagation()}
+                title={copiedId ? "ID copiado!" : "Copiar ID da intenção"}
+                aria-label={copiedId ? "ID copiado" : `Copiar ID da intenção ${item.intention}`}
+                style={{
+                  width: "2.25rem",
+                  height: "2.25rem",
+                  flexShrink: 0,
+                  padding: 0,
+                  border: "1px solid #cbd5e1",
+                  borderRadius: "0.65rem",
+                  background: "#f8fafc",
+                  color: "#1e293b",
+                  cursor: "pointer",
+                  fontSize: "1.1rem",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}
+              >
+                <span aria-hidden="true">{copiedId ? "✓" : "🔢"}</span>
+              </button>
+            )}
+          </div>
+        )}
 
         <div className="card-badges">
           {item.englishLevel && (
@@ -73,6 +168,12 @@ export function IntentionCard({ item, onSelect }: IntentionCardProps) {
           </div>
         )}
       </div>
-    </button>
+    </div>
+    {authorMode && copyError && (
+      <p role="alert" style={{ color: "#b91c1c", margin: "0.25rem 0" }}>
+        Não foi possível copiar o ID. Tente novamente.
+      </p>
+    )}
+    </div>
   );
 }
