@@ -47002,7 +47002,257 @@
   ],
   "englishLevel": "B1",
   "allowLanguageChunkPractice": true
-}
+},
+
+  {
+    "id": "b5c16b11-34d4-4b1d-9c27-31cbb31a2001",
+    "intention": "Não prometo nada",
+    "english": "I'm not making any promises.",
+    "pattern": "I'm not making any promises",
+    "description": "Usado para não garantir um resultado.",
+    "category": "chunk",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "não prometo nada",
+      "i'm not making any promises"
+    ],
+    "validationPatterns": [
+      "\\b(?:I['’]m|I\\s+am)\\s+not\\s+making\\s+any\\s+promises\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Não prometo nada, mas vou tentar.",
+        "en": "I'm not making any promises, but I'll try.",
+        "ptIntent": "Não prometo nada",
+        "enIntent": "I'm not making any promises"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english"
+    ],
+    "related": [],
+    "allowLanguageChunkPractice": true
+  },
+  {
+    "id": "c2a6b782-d5e0-4a5a-972c-32b5b18a2002",
+    "intention": "Isso não é muito a minha praia",
+    "english": "That's not really my thing.",
+    "pattern": "That's not really my thing",
+    "description": "Expressa falta de interesse em algo.",
+    "category": "chunk",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "isso não é minha praia",
+      "that's not really my thing"
+    ],
+    "validationPatterns": [
+      "\\b(?:that['’]s|that\\s+is)\\s+not\\s+really\\s+my\\s+thing\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Obrigado, mas isso não é muito a minha praia.",
+        "en": "Thanks, but that's not really my thing.",
+        "ptIntent": "isso não é muito a minha praia",
+        "enIntent": "that's not really my thing"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english"
+    ],
+    "related": [],
+    "allowLanguageChunkPractice": true
+  },
+  {
+    "id": "a4d39876-2f0e-42c4-90c4-31cbb31a2003",
+    "intention": "Não leve para o lado pessoal",
+    "english": "Don't take it personally.",
+    "pattern": "Don't take it personally",
+    "description": "Pede que algo não seja interpretado como ataque pessoal.",
+    "category": "chunk",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "não leve para o lado pessoal",
+      "don't take it personally"
+    ],
+    "validationPatterns": [
+      "\\b(?:don['’]t|do\\s+not)\\s+take\\s+it\\s+personally\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Não leve para o lado pessoal. É só uma sugestão.",
+        "en": "Don't take it personally. It's just a suggestion.",
+        "ptIntent": "Não leve para o lado pessoal",
+        "enIntent": "Don't take it personally"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english"
+    ],
+    "related": [],
+    "allowLanguageChunkPractice": true
+  },
+  {
+    "id": "f872ab12-8b72-43a5-942e-31cbb31a2004",
+    "intention": "Ninguém sabe ao certo",
+    "english": "It's anyone's guess.",
+    "pattern": "It's anyone's guess",
+    "description": "Usado quando ninguém sabe uma resposta com certeza.",
+    "category": "chunk",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "ninguém sabe ao certo",
+      "it's anyone's guess"
+    ],
+    "validationPatterns": [
+      "\\b(?:it['’]s|it\\s+is)\\s+anyone['’]s\\s+guess\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Quem vai ganhar? Ninguém sabe ao certo.",
+        "en": "Who's going to win? It's anyone's guess.",
+        "ptIntent": "Ninguém sabe ao certo",
+        "enIntent": "It's anyone's guess"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english"
+    ],
+    "related": [],
+    "allowLanguageChunkPractice": true
+  },
+  {
+    "id": "c71f9811-9232-48ad-bb19-31cbb31a2005",
+    "intention": "Isso é grego para mim",
+    "english": "It's all Greek to me.",
+    "pattern": "It's all Greek to me",
+    "description": "Algo é difícil demais para entender.",
+    "category": "chunk",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "isso é grego para mim",
+      "it's all greek to me"
+    ],
+    "validationPatterns": [
+      "\\b(?:it['’]s|it\\s+is)\\s+all\\s+Greek\\s+to\\s+me\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Desculpe, isso é grego para mim.",
+        "en": "Sorry, it's all Greek to me.",
+        "ptIntent": "isso é grego para mim",
+        "enIntent": "it's all Greek to me"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english"
+    ],
+    "related": [],
+    "allowLanguageChunkPractice": true
+  },
+  {
+    "id": "d17f9212-2e4d-438a-8c29-31cbb31a2006",
+    "intention": "Eu não teria conseguido sem sua ajuda",
+    "english": "I couldn't have done it without your help.",
+    "pattern": "I couldn't have done it without your help",
+    "description": "Agradecimento pela ajuda essencial de alguém.",
+    "category": "chunk",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "não teria conseguido sem sua ajuda",
+      "i couldn't have done it without your help"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+(?:couldn['’]t|could\\s+not)\\s+have\\s+done\\s+it\\s+without\\s+your\\s+help\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Eu não teria conseguido sem sua ajuda. Obrigado!",
+        "en": "I couldn't have done it without your help. Thank you!",
+        "ptIntent": "Eu não teria conseguido sem sua ajuda",
+        "enIntent": "I couldn't have done it without your help"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english"
+    ],
+    "related": [],
+    "allowLanguageChunkPractice": true
+  },
+  {
+    "id": "a6f4c921-7a19-43f8-9720-31cbb31a2007",
+    "intention": "Você não pode estar falando sério",
+    "english": "You can't be serious.",
+    "pattern": "You can't be serious",
+    "description": "Expressa surpresa ou incredulidade.",
+    "category": "chunk",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "você não pode estar falando sério",
+      "you can't be serious"
+    ],
+    "validationPatterns": [
+      "\\byou\\s+(?:can['’]t|cannot|can\\s+not)\\s+be\\s+serious\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Você vai pedir demissão? Você não pode estar falando sério!",
+        "en": "You're going to quit? You can't be serious!",
+        "ptIntent": "Você não pode estar falando sério",
+        "enIntent": "You can't be serious"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "spoken-english"
+    ],
+    "related": [],
+    "allowLanguageChunkPractice": true
+  },
+  {
+    "id": "b5e98172-1149-4a79-bd83-31cbb31a2008",
+    "intention": "Tente / dê uma chance",
+    "english": "Give it a shot.",
+    "pattern": "give it a shot",
+    "description": "Expressão completa para incentivar uma tentativa; também permite gerar frases com diferentes sujeitos.",
+    "category": "chunk",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "tente",
+      "dê uma chance",
+      "give it a shot"
+    ],
+    "validationPatterns": [
+      "\\bgive\\s+it\\s+a\\s+shot\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Você nunca tentou? Dê uma chance.",
+        "en": "You've never tried it? Give it a shot.",
+        "ptIntent": "Dê uma chance",
+        "enIntent": "Give it a shot"
+      },
+      {
+        "pt": "Vou tentar.",
+        "en": "I'll give it a shot.",
+        "ptIntent": "Vou tentar",
+        "enIntent": "give it a shot"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "mother-chunk",
+      "spoken-english"
+    ],
+    "related": [],
+    "allowLanguageChunkPractice": true
+  }
+
 
   ]
 }
