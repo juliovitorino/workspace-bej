@@ -28,22 +28,19 @@
           "pt": "Eu corro todos os dias.",
           "en": "Corro todos los días.",
           "ptIntent": "corro",
-          "enIntent": "Corro",
-          "hqImage": "/images/hq/a1/acao-verbo-01.png"
+          "enIntent": "Corro"
         },
         {
           "pt": "Ele acordou tarde.",
           "en": "Él se despertó tarde.",
           "ptIntent": "acordou",
-          "enIntent": "se despertó",
-          "hqImage": "/images/hq/a1/acao-verbo-02.png"
+          "enIntent": "se despertó"
         },
         {
           "pt": "Eu vou trabalhar amanhã.",
           "en": "Voy a trabajar mañana.",
           "ptIntent": "vou trabalhar",
-          "enIntent": "Voy a trabajar",
-          "hqImage": "/images/hq/a1/acao-verbo-03.png"
+          "enIntent": "Voy a trabajar"
         }
       ],
       "tags": [
@@ -1310,7 +1307,6 @@
       "pattern": "soler en imperfecto + infinitivo",
       "description": "Hábito ou situação do passado.",
       "category": "habits",
-      "youtubeVideo": "https://youtu.be/PKZUJHN3R9o",
       "searchTerms": [
         "solía + infinitivo"
       ],
@@ -1354,8 +1350,7 @@
           "pt": "Eu estou acostumado a acordar cedo.",
           "en": "Estoy acostumbrado a levantarme temprano.",
           "ptIntent": "acostumado",
-          "enIntent": "Estoy acostumbrado a",
-          "hqImage": "/images/hq/b1/be-used-to-01.png"
+          "enIntent": "Estoy acostumbrado a"
         }
       ],
       "tags": [
@@ -13611,15 +13606,13 @@
           "pt": "Precisamos abrir espaço para mais uma pessoa.",
           "en": "Necesitamos hacer espacio para una persona más.",
           "ptIntent": "abrir espaço",
-          "enIntent": "hacer espacio",
-          "hqImage": "/images/hq/b1/make-room-01.jpg"
+          "enIntent": "hacer espacio"
         },
         {
           "pt": "Estou tentando abrir espaço na minha agenda.",
           "en": "Estoy intentando hacer hueco en mi agenda.",
           "ptIntent": "abrir espaço",
-          "enIntent": "hacer hueco",
-          "hqImage": "/images/hq/b1/make-room-02.png"
+          "enIntent": "hacer hueco"
         }
       ],
       "tags": [
@@ -18745,36 +18738,31 @@
           "pt": "Precisamos resolver esse problema de uma vez por todas.",
           "en": "Necesitamos resolver este problema de una vez por todas.",
           "ptIntent": "de uma vez por todas",
-          "enIntent": "de una vez por todas",
-          "hqImage": "/images/hq/b1/de-uma-vez-por-todas-once-and-for-all-01.png"
+          "enIntent": "de una vez por todas"
         },
         {
           "pt": "Quero terminar isso de uma vez por todas.",
           "en": "Quiero terminar esto de una vez por todas.",
           "ptIntent": "de uma vez por todas",
-          "enIntent": "de una vez por todas",
-          "hqImage": "/images/hq/b1/de-uma-vez-por-todas-once-and-for-all-02.png"
+          "enIntent": "de una vez por todas"
         },
         {
           "pt": "Vamos esclarecer isso de uma vez por todas.",
           "en": "Vamos a aclarar esto de una vez por todas.",
           "ptIntent": "de uma vez por todas",
-          "enIntent": "de una vez por todas",
-          "hqImage": "/images/hq/b1/de-uma-vez-por-todas-once-and-for-all-03.png"
+          "enIntent": "de una vez por todas"
         },
         {
           "pt": "Ela decidiu abandonar esse hábito de uma vez por todas.",
           "en": "Ella decidió abandonar ese hábito de una vez por todas.",
           "ptIntent": "de uma vez por todas",
-          "enIntent": "de una vez por todas",
-          "hqImage": "/images/hq/b1/de-uma-vez-por-todas-once-and-for-all-04.png"
+          "enIntent": "de una vez por todas"
         },
         {
           "pt": "Está na hora de resolver essa situação de uma vez por todas.",
           "en": "Es hora de resolver esta situación de una vez por todas.",
           "ptIntent": "de uma vez por todas",
-          "enIntent": "de una vez por todas",
-          "hqImage": "/images/hq/b1/de-uma-vez-por-todas-once-and-for-all-05.png"
+          "enIntent": "de una vez por todas"
         }
       ],
       "tags": [
@@ -20331,8 +20319,7 @@
           "pt": "Pelo amor de Deus, pare de reclamar!",
           "en": "¡Por el amor de Dios, deja de quejarte!",
           "ptIntent": "Pelo amor de Deus",
-          "enIntent": "Por el amor de Dios",
-          "hqImage": "/images/hq/b1/pelo-amor-de-deus-for-goodness-sake-01.png"
+          "enIntent": "Por el amor de Dios"
         },
         {
           "pt": "Ah, qual é! Tente mais uma vez.",
@@ -20434,8 +20421,7 @@
           "pt": "Puta que pariu, para de fazer isso!",
           "en": "¡Joder, deja de hacer eso!",
           "ptIntent": "Puta que pariu",
-          "enIntent": "Joder",
-          "hqImage": "/images/hq/b2/puta-que-pariu-for-fucks-sake-01.png"
+          "enIntent": "Joder"
         },
         {
           "pt": "Ah, puta que pariu. De novo não.",
@@ -21138,8 +21124,7 @@
           "pt": "Eu estou trabalhando agora.",
           "en": "Estoy trabajando ahora.",
           "ptIntent": "estou trabalhando",
-          "enIntent": "Estoy trabajando",
-          "hqImage": "/images/hq/a1/estar-fazendo-present-continuous-01.png"
+          "enIntent": "Estoy trabajando"
         },
         {
           "pt": "Ela está estudando inglês.",
@@ -21568,7 +21553,6 @@
       "pattern": "empezar conjugado + con fuerza o a toda máquina",
       "description": "Usado quando alguém começa uma atividade, trabalho ou projeto imediatamente com muita energia, eficiência e sem precisar de muito tempo para se adaptar. Mapa mental: COMEÇAR COM TUDO / JÁ COMEÇAR A TODO VAPOR → empezar con fuerza / empezar a toda máquina.",
       "category": "idiom",
-      "youtubeShort": "https://www.youtube.com/shorts/WZXi1eLD0GM",
       "searchTerms": [
         "começar com tudo",
         "começar a todo vapor",
@@ -21586,15 +21570,13 @@
           "pt": "Quero começar com tudo no meu novo emprego.",
           "en": "Quiero empezar con fuerza en mi nuevo trabajo.",
           "ptIntent": "começar com tudo",
-          "enIntent": "empezar con fuerza",
-          "hqImage": "/images/hq/b2/hit-the-ground-running-01.png"
+          "enIntent": "empezar con fuerza"
         },
         {
           "pt": "Precisamos começar a todo vapor na segunda-feira.",
           "en": "Tenemos que empezar a toda máquina el lunes.",
           "ptIntent": "começar a todo vapor",
-          "enIntent": "empezar a toda máquina",
-          "hqImage": "/images/hq/b2/hit-the-ground-running-02.png"
+          "enIntent": "empezar a toda máquina"
         },
         {
           "pt": "Ela começou com tudo no novo projeto.",
@@ -22227,8 +22209,7 @@
           "pt": "Comprei algumas coisinhas diversas na loja.",
           "en": "Compré algunas cosas sueltas en la tienda.",
           "ptIntent": "coisinhas diversas",
-          "enIntent": "cosas sueltas",
-          "hqImage": "/images/hq/a1/coisas-variadas-aleatorias-odds-and-ends-01.png"
+          "enIntent": "cosas sueltas"
         },
         {
           "pt": "Ainda tenho algumas coisinhas para resolver.",
@@ -22787,22 +22768,19 @@
           "pt": "Acabei trabalhando até tarde.",
           "en": "Acabé trabajando hasta tarde.",
           "ptIntent": "Acabei trabalhando",
-          "enIntent": "Acabé trabajando",
-          "hqImage": "/images/hq/b1/acabar-fazendo-end-up-01.png"
+          "enIntent": "Acabé trabajando"
         },
         {
           "pt": "A gente sempre acaba falando sobre trabalho.",
           "en": "Siempre acabamos hablando de trabajo.",
           "ptIntent": "acaba falando",
-          "enIntent": "acabamos hablando",
-          "hqImage": "/images/hq/b1/acabar-fazendo-end-up-02.png"
+          "enIntent": "acabamos hablando"
         },
         {
           "pt": "Como você acabou morando no Brasil?",
           "en": "¿Cómo acabaste viviendo en Brasil?",
           "ptIntent": "acabou morando",
-          "enIntent": "acabaste viviendo",
-          "hqImage": "/images/hq/b1/acabar-fazendo-end-up-03.png"
+          "enIntent": "acabaste viviendo"
         }
       ],
       "tags": [
@@ -23535,36 +23513,31 @@
           "pt": "Leva um guarda-chuva por via das dúvidas.",
           "en": "Lleva un paraguas por si acaso.",
           "ptIntent": "por via das dúvidas",
-          "enIntent": "por si acaso",
-          "hqImage": "/images/hq/a2/por-via-das-duvidas-just-in-case-01.png"
+          "enIntent": "por si acaso"
         },
         {
           "pt": "Leva um guarda-chuva, vai que chove.",
           "en": "Lleva un paraguas por si llueve.",
           "ptIntent": "vai que chove",
-          "enIntent": "por si",
-          "hqImage": "/images/hq/a2/por-via-das-duvidas-just-in-case-02.png"
+          "enIntent": "por si"
         },
         {
           "pt": "Leva dinheiro, vai que eles não aceitam cartão.",
           "en": "Lleva dinero por si no aceptan tarjeta.",
           "ptIntent": "vai que eles não aceitam cartão",
-          "enIntent": "por si",
-          "hqImage": "/images/hq/a2/por-via-das-duvidas-just-in-case-03.png"
+          "enIntent": "por si"
         },
         {
           "pt": "Salva uma cópia por via das dúvidas.",
           "en": "Guarda una copia por si acaso.",
           "ptIntent": "por via das dúvidas",
-          "enIntent": "por si acaso",
-          "hqImage": "/images/hq/a2/por-via-das-duvidas-just-in-case-04.png"
+          "enIntent": "por si acaso"
         },
         {
           "pt": "Vou levar um casaco, vai que esfria.",
           "en": "Llevaré una chaqueta por si refresca.",
           "ptIntent": "vai que esfria",
-          "enIntent": "por si",
-          "hqImage": "/images/hq/a2/por-via-das-duvidas-just-in-case-05.png"
+          "enIntent": "por si"
         }
       ],
       "tags": [
@@ -23604,22 +23577,19 @@
           "pt": "Leva o guarda-chuva. Vai que chove?",
           "en": "Lleva el paraguas. ¿Y si llueve?",
           "ptIntent": "Vai que chove",
-          "enIntent": "Y si",
-          "hqImage": "/images/hq/a2/vai-que-what-if-01.png"
+          "enIntent": "Y si"
         },
         {
           "pt": "Leva dinheiro. Vai que eles não aceitam cartão?",
           "en": "Lleva dinero. ¿Y si no aceptan tarjeta?",
           "ptIntent": "Vai que eles não aceitam cartão",
-          "enIntent": "Y si",
-          "hqImage": "/images/hq/a2/vai-que-what-if-02.png"
+          "enIntent": "Y si"
         },
         {
           "pt": "Salva o arquivo. Vai que o computador trava?",
           "en": "Guarda el archivo. ¿Y si se bloquea el ordenador?",
           "ptIntent": "Vai que o computador trava",
-          "enIntent": "Y si",
-          "hqImage": "/images/hq/a2/vai-que-what-if-03.png"
+          "enIntent": "Y si"
         },
         {
           "pt": "Leva um casaco. Vai que esfria?",
@@ -24340,29 +24310,25 @@
           "pt": "Era uma vez um rei que vivia em um grande castelo.",
           "en": "Érase una vez un rey que vivía en un gran castillo.",
           "ptIntent": "Era uma vez",
-          "enIntent": "Érase una vez",
-          "hqImage": "/images/hq/a1/era-uma-vez-once-upon-a-time-01.png"
+          "enIntent": "Érase una vez"
         },
         {
           "pt": "Era uma vez uma menina que sonhava em viajar pelo mundo.",
           "en": "Érase una vez una niña que soñaba con viajar por el mundo.",
           "ptIntent": "Era uma vez",
-          "enIntent": "Érase una vez",
-          "hqImage": "/images/hq/a1/era-uma-vez-once-upon-a-time-02.png"
+          "enIntent": "Érase una vez"
         },
         {
           "pt": "Era uma vez uma pequena vila cercada por montanhas.",
           "en": "Érase una vez un pequeño pueblo rodeado de montañas.",
           "ptIntent": "Era uma vez",
-          "enIntent": "Érase una vez",
-          "hqImage": "/images/hq/a1/era-uma-vez-once-upon-a-time-03.png"
+          "enIntent": "Érase una vez"
         },
         {
           "pt": "Era uma vez um homem que decidiu mudar completamente sua vida.",
           "en": "Érase una vez un hombre que decidió cambiar su vida por completo.",
           "ptIntent": "Era uma vez",
-          "enIntent": "Érase una vez",
-          "hqImage": "/images/hq/a1/era-uma-vez-once-upon-a-time-04.png"
+          "enIntent": "Érase una vez"
         }
       ],
       "tags": [
@@ -26133,22 +26099,19 @@
           "pt": "A que distância fica sua casa daqui?",
           "en": "¿A qué distancia está tu casa de aquí?",
           "ptIntent": "A que distância",
-          "enIntent": "A qué distancia",
-          "hqImage": "/images/hq/a1/perguntar-qual-a-distancia-how-far-a63f18d5-4b72-49c1-852e-97d36a5f2048-01.png"
+          "enIntent": "A qué distancia"
         },
         {
           "pt": "É longe daqui até o aeroporto?",
           "en": "¿Está lejos el aeropuerto de aquí?",
           "ptIntent": "É longe",
-          "enIntent": "Está lejos",
-          "hqImage": "/images/hq/a1/perguntar-qual-a-distancia-how-far-a63f18d5-4b72-49c1-852e-97d36a5f2048-02.png"
+          "enIntent": "Está lejos"
         },
         {
           "pt": "A que distância fica o hotel da praia?",
           "en": "¿A qué distancia está el hotel de la playa?",
           "ptIntent": "A que distância",
-          "enIntent": "A qué distancia",
-          "hqImage": "/images/hq/a1/perguntar-qual-a-distancia-how-far-a63f18d5-4b72-49c1-852e-97d36a5f2048-03.jpg"
+          "enIntent": "A qué distancia"
         }
       ],
       "tags": [

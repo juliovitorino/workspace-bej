@@ -31,22 +31,19 @@
           "pt": "Eu corro todos os dias.",
           "en": "Je cours tous les jours.",
           "ptIntent": "corro",
-          "enIntent": "cours",
-          "hqImage": "/images/hq/a1/acao-verbo-01.png"
+          "enIntent": "cours"
         },
         {
           "pt": "Ele acordou tarde.",
           "en": "Il s’est réveillé tard.",
           "ptIntent": "acordou",
-          "enIntent": "s’est réveillé",
-          "hqImage": "/images/hq/a1/acao-verbo-02.png"
+          "enIntent": "s’est réveillé"
         },
         {
           "pt": "Eu vou trabalhar amanhã.",
           "en": "Je vais travailler demain.",
           "ptIntent": "vou trabalhar",
-          "enIntent": "vais travailler",
-          "hqImage": "/images/hq/a1/acao-verbo-03.png"
+          "enIntent": "vais travailler"
         }
       ],
       "tags": [
@@ -1344,7 +1341,6 @@
       "pattern": "verbe à l’imparfait + fréquence",
       "description": "Hábito ou situação do passado.",
       "category": "habits",
-      "youtubeVideo": "https://youtu.be/PKZUJHN3R9o",
       "searchTerms": [
         "habitude passée à l’imparfait"
       ],
@@ -1388,8 +1384,7 @@
           "pt": "Eu estou acostumado a acordar cedo.",
           "en": "Je suis habitué à me lever tôt.",
           "ptIntent": "acostumado",
-          "enIntent": "suis habitué à",
-          "hqImage": "/images/hq/b1/be-used-to-01.png"
+          "enIntent": "suis habitué à"
         }
       ],
       "tags": [
@@ -13785,15 +13780,13 @@
           "pt": "Precisamos abrir espaço para mais uma pessoa.",
           "en": "Nous devons faire de la place pour une personne de plus.",
           "ptIntent": "abrir espaço",
-          "enIntent": "faire de la place",
-          "hqImage": "/images/hq/b1/make-room-01.jpg"
+          "enIntent": "faire de la place"
         },
         {
           "pt": "Estou tentando abrir espaço na minha agenda.",
           "en": "J’essaie de faire de la place dans mon agenda.",
           "ptIntent": "abrir espaço",
-          "enIntent": "faire de la place",
-          "hqImage": "/images/hq/b1/make-room-02.png"
+          "enIntent": "faire de la place"
         }
       ],
       "tags": [
@@ -19061,36 +19054,31 @@
           "pt": "Precisamos resolver esse problema de uma vez por todas.",
           "en": "Nous devons résoudre ce problème une fois pour toutes.",
           "ptIntent": "de uma vez por todas",
-          "enIntent": "une fois pour toutes",
-          "hqImage": "/images/hq/b1/de-uma-vez-por-todas-once-and-for-all-01.png"
+          "enIntent": "une fois pour toutes"
         },
         {
           "pt": "Quero terminar isso de uma vez por todas.",
           "en": "Je veux terminer cela une fois pour toutes.",
           "ptIntent": "de uma vez por todas",
-          "enIntent": "une fois pour toutes",
-          "hqImage": "/images/hq/b1/de-uma-vez-por-todas-once-and-for-all-02.png"
+          "enIntent": "une fois pour toutes"
         },
         {
           "pt": "Vamos esclarecer isso de uma vez por todas.",
           "en": "Clarifions cela une fois pour toutes.",
           "ptIntent": "de uma vez por todas",
-          "enIntent": "une fois pour toutes",
-          "hqImage": "/images/hq/b1/de-uma-vez-por-todas-once-and-for-all-03.png"
+          "enIntent": "une fois pour toutes"
         },
         {
           "pt": "Ela decidiu abandonar esse hábito de uma vez por todas.",
           "en": "Elle a décidé d’abandonner cette habitude une fois pour toutes.",
           "ptIntent": "de uma vez por todas",
-          "enIntent": "une fois pour toutes",
-          "hqImage": "/images/hq/b1/de-uma-vez-por-todas-once-and-for-all-04.png"
+          "enIntent": "une fois pour toutes"
         },
         {
           "pt": "Está na hora de resolver essa situação de uma vez por todas.",
           "en": "Il est temps de résoudre cette situation une fois pour toutes.",
           "ptIntent": "de uma vez por todas",
-          "enIntent": "une fois pour toutes",
-          "hqImage": "/images/hq/b1/de-uma-vez-por-todas-once-and-for-all-05.png"
+          "enIntent": "une fois pour toutes"
         }
       ],
       "tags": [
@@ -20685,8 +20673,7 @@
           "pt": "Pelo amor de Deus, pare de reclamar!",
           "en": "Bon sang, arrête de te plaindre !",
           "ptIntent": "Pelo amor de Deus",
-          "enIntent": "Bon sang",
-          "hqImage": "/images/hq/b1/pelo-amor-de-deus-for-goodness-sake-01.png"
+          "enIntent": "Bon sang"
         },
         {
           "pt": "Ah, qual é! Tente mais uma vez.",
@@ -20790,8 +20777,7 @@
           "pt": "Puta que pariu, para de fazer isso!",
           "en": "Putain, arrête de faire ça !",
           "ptIntent": "Puta que pariu",
-          "enIntent": "Putain",
-          "hqImage": "/images/hq/b2/puta-que-pariu-for-fucks-sake-01.png"
+          "enIntent": "Putain"
         },
         {
           "pt": "Ah, puta que pariu. De novo não.",
@@ -21529,8 +21515,7 @@
           "pt": "Eu estou trabalhando agora.",
           "en": "Je travaille maintenant.",
           "ptIntent": "estou trabalhando",
-          "enIntent": "travaille",
-          "hqImage": "/images/hq/a1/estar-fazendo-present-continuous-01.png"
+          "enIntent": "travaille"
         },
         {
           "pt": "Ela está estudando inglês.",
@@ -21978,7 +21963,6 @@
       "pattern": "démarrer conjugué + locution idiomatique",
       "description": "Usado quando alguém começa uma atividade, trabalho ou projeto imediatamente com muita energia, eficiência e sem precisar de muito tempo para se adaptar. Em francês: démarrer sur les chapeaux de roues.",
       "category": "idiom",
-      "youtubeShort": "https://www.youtube.com/shorts/WZXi1eLD0GM",
       "searchTerms": [
         "começar com tudo",
         "começar a todo vapor",
@@ -21996,15 +21980,13 @@
           "pt": "Quero começar com tudo no meu novo emprego.",
           "en": "Je veux démarrer sur les chapeaux de roues dans mon nouvel emploi.",
           "ptIntent": "começar com tudo",
-          "enIntent": "sur les chapeaux de roues",
-          "hqImage": "/images/hq/b2/hit-the-ground-running-01.png"
+          "enIntent": "sur les chapeaux de roues"
         },
         {
           "pt": "Precisamos começar a todo vapor na segunda-feira.",
           "en": "Nous devons démarrer sur les chapeaux de roues lundi.",
           "ptIntent": "começar a todo vapor",
-          "enIntent": "sur les chapeaux de roues",
-          "hqImage": "/images/hq/b2/hit-the-ground-running-02.png"
+          "enIntent": "sur les chapeaux de roues"
         },
         {
           "pt": "Ela começou com tudo no novo projeto.",
@@ -22647,8 +22629,7 @@
           "pt": "Comprei algumas coisinhas diversas na loja.",
           "en": "J’ai acheté quelques bricoles au magasin.",
           "ptIntent": "coisinhas diversas",
-          "enIntent": "quelques bricoles",
-          "hqImage": "/images/hq/a1/coisas-variadas-aleatorias-odds-and-ends-01.png"
+          "enIntent": "quelques bricoles"
         },
         {
           "pt": "Ainda tenho algumas coisinhas para resolver.",
@@ -23226,22 +23207,19 @@
           "pt": "Acabei trabalhando até tarde.",
           "en": "J’ai fini par travailler tard.",
           "ptIntent": "Acabei trabalhando",
-          "enIntent": "ai fini par",
-          "hqImage": "/images/hq/b1/acabar-fazendo-end-up-01.png"
+          "enIntent": "ai fini par"
         },
         {
           "pt": "A gente sempre acaba falando sobre trabalho.",
           "en": "Nous finissons toujours par parler du travail.",
           "ptIntent": "acaba falando",
-          "enIntent": "finissons toujours par",
-          "hqImage": "/images/hq/b1/acabar-fazendo-end-up-02.png"
+          "enIntent": "finissons toujours par"
         },
         {
           "pt": "Como você acabou morando no Brasil?",
           "en": "Comment as-tu fini par vivre au Brésil ?",
           "ptIntent": "acabou morando",
-          "enIntent": "as-tu fini par",
-          "hqImage": "/images/hq/b1/acabar-fazendo-end-up-03.png"
+          "enIntent": "as-tu fini par"
         }
       ],
       "tags": [
@@ -23984,36 +23962,31 @@
           "pt": "Leva um guarda-chuva por via das dúvidas.",
           "en": "Prends un parapluie par précaution.",
           "ptIntent": "por via das dúvidas",
-          "enIntent": "par précaution",
-          "hqImage": "/images/hq/a2/por-via-das-duvidas-just-in-case-01.png"
+          "enIntent": "par précaution"
         },
         {
           "pt": "Leva um guarda-chuva, vai que chove.",
           "en": "Prends un parapluie au cas où il pleuvrait.",
           "ptIntent": "vai que chove",
-          "enIntent": "au cas où",
-          "hqImage": "/images/hq/a2/por-via-das-duvidas-just-in-case-02.png"
+          "enIntent": "au cas où"
         },
         {
           "pt": "Leva dinheiro, vai que eles não aceitam cartão.",
           "en": "Prends de l’argent au cas où ils n’accepteraient pas la carte.",
           "ptIntent": "vai que eles não aceitam cartão",
-          "enIntent": "au cas où",
-          "hqImage": "/images/hq/a2/por-via-das-duvidas-just-in-case-03.png"
+          "enIntent": "au cas où"
         },
         {
           "pt": "Salva uma cópia por via das dúvidas.",
           "en": "Enregistre une copie par précaution.",
           "ptIntent": "por via das dúvidas",
-          "enIntent": "par précaution",
-          "hqImage": "/images/hq/a2/por-via-das-duvidas-just-in-case-04.png"
+          "enIntent": "par précaution"
         },
         {
           "pt": "Vou levar um casaco, vai que esfria.",
           "en": "Je vais prendre un manteau au cas où il ferait froid.",
           "ptIntent": "vai que esfria",
-          "enIntent": "au cas où",
-          "hqImage": "/images/hq/a2/por-via-das-duvidas-just-in-case-05.png"
+          "enIntent": "au cas où"
         }
       ],
       "tags": [
@@ -24054,22 +24027,19 @@
           "pt": "Leva o guarda-chuva. Vai que chove?",
           "en": "Prends le parapluie. Et s’il pleuvait ?",
           "ptIntent": "Vai que chove",
-          "enIntent": "Et s’",
-          "hqImage": "/images/hq/a2/vai-que-what-if-01.png"
+          "enIntent": "Et s’"
         },
         {
           "pt": "Leva dinheiro. Vai que eles não aceitam cartão?",
           "en": "Prends de l’argent. Et s’ils n’acceptaient pas la carte ?",
           "ptIntent": "Vai que eles não aceitam cartão",
-          "enIntent": "Et s’",
-          "hqImage": "/images/hq/a2/vai-que-what-if-02.png"
+          "enIntent": "Et s’"
         },
         {
           "pt": "Salva o arquivo. Vai que o computador trava?",
           "en": "Enregistre le fichier. Et si l’ordinateur se bloquait ?",
           "ptIntent": "Vai que o computador trava",
-          "enIntent": "Et si",
-          "hqImage": "/images/hq/a2/vai-que-what-if-03.png"
+          "enIntent": "Et si"
         },
         {
           "pt": "Leva um casaco. Vai que esfria?",
@@ -24807,29 +24777,25 @@
           "pt": "Era uma vez um rei que vivia em um grande castelo.",
           "en": "Il était une fois un roi qui vivait dans un grand château.",
           "ptIntent": "Era uma vez",
-          "enIntent": "Il était une fois",
-          "hqImage": "/images/hq/a1/era-uma-vez-once-upon-a-time-01.png"
+          "enIntent": "Il était une fois"
         },
         {
           "pt": "Era uma vez uma menina que sonhava em viajar pelo mundo.",
           "en": "Il était une fois une fille qui rêvait de voyager dans le monde entier.",
           "ptIntent": "Era uma vez",
-          "enIntent": "Il était une fois",
-          "hqImage": "/images/hq/a1/era-uma-vez-once-upon-a-time-02.png"
+          "enIntent": "Il était une fois"
         },
         {
           "pt": "Era uma vez uma pequena vila cercada por montanhas.",
           "en": "Il était une fois un petit village entouré de montagnes.",
           "ptIntent": "Era uma vez",
-          "enIntent": "Il était une fois",
-          "hqImage": "/images/hq/a1/era-uma-vez-once-upon-a-time-03.png"
+          "enIntent": "Il était une fois"
         },
         {
           "pt": "Era uma vez um homem que decidiu mudar completamente sua vida.",
           "en": "Il était une fois un homme qui décida de changer complètement de vie.",
           "ptIntent": "Era uma vez",
-          "enIntent": "Il était une fois",
-          "hqImage": "/images/hq/a1/era-uma-vez-once-upon-a-time-04.png"
+          "enIntent": "Il était une fois"
         }
       ],
       "tags": [
@@ -26650,22 +26616,19 @@
           "pt": "A que distância fica sua casa daqui?",
           "en": "À quelle distance d'ici se trouve ta maison ?",
           "ptIntent": "A que distância",
-          "enIntent": "À quelle distance",
-          "hqImage": "/images/hq/a1/perguntar-qual-a-distancia-how-far-a63f18d5-4b72-49c1-852e-97d36a5f2048-01.png"
+          "enIntent": "À quelle distance"
         },
         {
           "pt": "É longe daqui até o aeroporto?",
           "en": "À quelle distance d'ici se trouve l'aéroport ?",
           "ptIntent": "É longe",
-          "enIntent": "À quelle distance",
-          "hqImage": "/images/hq/a1/perguntar-qual-a-distancia-how-far-a63f18d5-4b72-49c1-852e-97d36a5f2048-02.png"
+          "enIntent": "À quelle distance"
         },
         {
           "pt": "A que distância fica o hotel da praia?",
           "en": "À quelle distance de la plage se trouve l'hôtel ?",
           "ptIntent": "A que distância",
-          "enIntent": "À quelle distance",
-          "hqImage": "/images/hq/a1/perguntar-qual-a-distancia-how-far-a63f18d5-4b72-49c1-852e-97d36a5f2048-03.jpg"
+          "enIntent": "À quelle distance"
         }
       ],
       "tags": [

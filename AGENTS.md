@@ -26,6 +26,27 @@ Brazilian English Journey — Mental Hashmap.
 - Adapt patterns and validationPatterns to each language.
 - Never assume English regex patterns work in French or Spanish.
 - Preserve allowLanguageChunkPractice semantics.
+- Treat `youtubeVideo`, `youtubeShort`, and `hqImage` as language-local media fields; never synchronize them across language files. See Language-Specific Media Fields below.
+
+## Language-Specific Media Fields (Never Synchronize)
+
+The following fields belong **exclusively to the language JSON file in which they are defined**:
+
+- `youtubeVideo`
+- `youtubeShort`
+- `hqImage`
+
+Mandatory rules for INCREMENTAL synchronization, FULL AUDIT, new intentions, and new-language initialization:
+
+1. **Never copy, translate, propagate, compare for equality, or overwrite** these fields between `en-US`, `fr-FR`, `es-ES`, or any future language files.
+2. A value present in `en-US` does **not** imply that the corresponding field or value should exist in `fr-FR` or `es-ES` (and vice versa). Different values, missing fields, and different availability are valid, not synchronization errors.
+3. When creating an intention in a destination language, **do not inherit these fields from the source intention**. Omit them unless the user explicitly supplies media belonging to that destination language. If the destination schema requires a field, follow its existing documented empty/default convention without copying another language's media; otherwise report the constraint.
+4. When updating an existing intention, preserve its language-specific media fields **exactly as they are**, including their values and presence or absence. Do not clear, reset, replace, or remove them during synchronization.
+5. Do not use these fields when determining missing intentions, semantic equivalence, structural inconsistencies, or cross-language synchronization status.
+6. Only modify a language's media fields when the user **explicitly requests a media change for that specific language**. Never infer such authorization from a general synchronization request.
+7. Exclude these fields from cross-language equality checks and synchronization diffs. Report only genuine media issues local to an individual file if the user explicitly requests media validation.
+
+These rules override any general instruction to preserve or synchronize all fields. They do **not** authorize changes to unrelated fields or files.
 
 ## Quality
 - Validate JSON syntax.
@@ -63,7 +84,8 @@ For routine additions and synchronization of new intentions:
    If the user's prompt requires approval, stop and wait for explicit approval.
 6. For each approved missing intention, create a natural linguistic equivalent
    in the destination language, respecting all schema, searchTerms, regex,
-   example-count and chunk rules in this document.
+   example-count and chunk rules in this document, excluding language-local
+   `youtubeVideo`, `youtubeShort`, and `hqImage` fields.
 7. Modify only the required entries in the destination JSON files; preserve
    all existing intentions and avoid unrelated reformatting or key reordering.
 8. Validate JSON syntax, duplicate IDs, required fields, 3–10 examples in
