@@ -43533,6 +43533,1408 @@
       "daily-conversation"
     ],
     "related": []
+  },
+  
+  {
+    "id": "84a955c5-f1f4-5f02-b7f1-424b76b7f149",
+    "intention": "Eu tendo a",
+    "english": "I tend to",
+    "pattern": "I tend to + verb",
+    "description": "Expressa tendência ou comportamento habitual.",
+    "category": "chunk",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "eu tendo a",
+      "i tend to"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+tend\\s+to\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Eu tendo a concordar com você.",
+        "en": "I tend to agree with you.",
+        "ptIntent": "Eu tendo a",
+        "enIntent": "I tend to"
+      },
+      {
+        "pt": "Eu tendo a trabalhar melhor pela manhã.",
+        "en": "I tend to work better in the morning.",
+        "ptIntent": "Eu tendo a",
+        "enIntent": "I tend to"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "conversation",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "9bf4065e-5710-5b9f-8466-58739f599370",
+    "intention": "Na minha opinião / Do jeito que eu vejo",
+    "english": "The way I see it",
+    "pattern": "The way I see it, + clause",
+    "description": "Introduz um ponto de vista pessoal de maneira natural.",
+    "category": "chunk",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "na minha opinião",
+      "the way i see it"
+    ],
+    "validationPatterns": [
+      "\\bThe\\s+way\\s+I\\s+see\\s+it\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Na minha opinião, trabalhar de casa é melhor.",
+        "en": "The way I see it, working from home is better.",
+        "ptIntent": "Na minha opinião",
+        "enIntent": "The way I see it"
+      },
+      {
+        "pt": "Do jeito que eu vejo, precisamos mudar de estratégia.",
+        "en": "The way I see it, we need to change our strategy.",
+        "ptIntent": "Do jeito que eu vejo",
+        "enIntent": "The way I see it"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "conversation",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "61ce67cb-6d84-522d-b5a0-7c0cb7f04968",
+    "intention": "Não estou totalmente convencido de que",
+    "english": "I’m not entirely convinced that",
+    "pattern": "I’m not entirely convinced that + clause",
+    "description": "Expressa discordância cautelosa ou dúvida fundamentada.",
+    "category": "chunk",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "não estou totalmente convencido de que",
+      "i'm not entirely convinced that",
+      "i’m not entirely convinced that"
+    ],
+    "validationPatterns": [
+      "\\bI['’]m\\s+not\\s+entirely\\s+convinced\\s+that\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Não estou totalmente convencido de que isso vai funcionar.",
+        "en": "I’m not entirely convinced that this will work.",
+        "ptIntent": "Não estou totalmente convencido de que",
+        "enIntent": "I’m not entirely convinced that"
+      },
+      {
+        "pt": "Não estou totalmente convencido de que seja a melhor escolha.",
+        "en": "I’m not entirely convinced that it’s the best choice.",
+        "ptIntent": "Não estou totalmente convencido de que",
+        "enIntent": "I’m not entirely convinced that"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "conversation",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "eb3cf787-c79f-5ac6-ad9e-3ac00ecbea45",
+    "intention": "Depende de",
+    "english": "It depends on",
+    "pattern": "It depends on + noun / pronoun / wh-clause",
+    "description": "Indica que a resposta varia conforme uma condição ou circunstância.",
+    "category": "chunk",
+    "englishLevel": "A2",
+    "searchTerms": [
+      "depende de",
+      "it depends on"
+    ],
+    "validationPatterns": [
+      "\\bIt\\s+depends\\s+on\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Depende do preço.",
+        "en": "It depends on the price.",
+        "ptIntent": "Depende d",
+        "enIntent": "It depends on"
+      },
+      {
+        "pt": "Depende do que você quer fazer.",
+        "en": "It depends on what you want to do.",
+        "ptIntent": "Depende d",
+        "enIntent": "It depends on"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "conversation",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "6f1f665b-b245-5146-95c0-1360a0e52e14",
+    "intention": "Dito isso",
+    "english": "Having said that",
+    "pattern": "Having said that, + clause",
+    "description": "Introduz ressalva, contraste ou nova perspectiva após uma afirmação.",
+    "category": "chunk",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "dito isso",
+      "having said that"
+    ],
+    "validationPatterns": [
+      "\\bHaving\\s+said\\s+that\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Dito isso, ainda acho que vale a pena.",
+        "en": "Having said that, I still think it’s worth it.",
+        "ptIntent": "Dito isso",
+        "enIntent": "Having said that"
+      },
+      {
+        "pt": "Dito isso, precisamos considerar os riscos.",
+        "en": "Having said that, we need to consider the risks.",
+        "ptIntent": "Dito isso",
+        "enIntent": "Having said that"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "conversation",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "0a98445c-b19c-54ca-959d-3836b31c653b",
+    "intention": "Do meu ponto de vista",
+    "english": "From my perspective",
+    "pattern": "From my perspective, + clause",
+    "description": "Apresenta uma avaliação a partir da própria perspectiva.",
+    "category": "chunk",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "do meu ponto de vista",
+      "from my perspective"
+    ],
+    "validationPatterns": [
+      "\\bFrom\\s+my\\s+perspective\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Do meu ponto de vista, o plano faz sentido.",
+        "en": "From my perspective, the plan makes sense.",
+        "ptIntent": "Do meu ponto de vista",
+        "enIntent": "From my perspective"
+      },
+      {
+        "pt": "Do meu ponto de vista, precisamos de mais tempo.",
+        "en": "From my perspective, we need more time.",
+        "ptIntent": "Do meu ponto de vista",
+        "enIntent": "From my perspective"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "conversation",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "5f9c1f7b-3186-5e1c-9fdb-24c268d5322d",
+    "intention": "Eu estava dividido entre",
+    "english": "I was torn between",
+    "pattern": "I was torn between + option A + and + option B",
+    "description": "Expressa indecisão entre duas alternativas.",
+    "category": "chunk",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "eu estava dividido entre",
+      "i was torn between"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+was\\s+torn\\s+between\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Eu estava dividido entre ficar e sair.",
+        "en": "I was torn between staying and leaving.",
+        "ptIntent": "Eu estava dividido entre",
+        "enIntent": "I was torn between"
+      },
+      {
+        "pt": "Eu estava dividido entre dois empregos.",
+        "en": "I was torn between two jobs.",
+        "ptIntent": "Eu estava dividido entre",
+        "enIntent": "I was torn between"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "conversation",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "06449e95-be89-53cc-beca-02fff44eebb2",
+    "intention": "Depois de pensar melhor",
+    "english": "After giving it some thought",
+    "pattern": "After giving it some thought, + clause",
+    "description": "Introduz uma decisão ou conclusão após reflexão.",
+    "category": "chunk",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "depois de pensar melhor",
+      "after giving it some thought"
+    ],
+    "validationPatterns": [
+      "\\bAfter\\s+giving\\s+it\\s+some\\s+thought\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Depois de pensar melhor, decidi aceitar a proposta.",
+        "en": "After giving it some thought, I decided to accept the offer.",
+        "ptIntent": "Depois de pensar melhor",
+        "enIntent": "After giving it some thought"
+      },
+      {
+        "pt": "Depois de pensar melhor, mudei de ideia.",
+        "en": "After giving it some thought, I changed my mind.",
+        "ptIntent": "Depois de pensar melhor",
+        "enIntent": "After giving it some thought"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "conversation",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "e1b87a28-f5bd-5998-ba3b-1fe0f5c5cf13",
+    "intention": "Olhando para trás",
+    "english": "Looking back",
+    "pattern": "Looking back, + clause",
+    "description": "Introduz reflexão retrospectiva sobre uma experiência.",
+    "category": "chunk",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "olhando para trás",
+      "looking back"
+    ],
+    "validationPatterns": [
+      "\\bLooking\\s+back\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Olhando para trás, eu faria algumas coisas de outro jeito.",
+        "en": "Looking back, I would do a few things differently.",
+        "ptIntent": "Olhando para trás",
+        "enIntent": "Looking back"
+      },
+      {
+        "pt": "Olhando para trás, aprendi muito com aquela experiência.",
+        "en": "Looking back, I learned a lot from that experience.",
+        "ptIntent": "Olhando para trás",
+        "enIntent": "Looking back"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "conversation",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "0aea1200-2d78-584c-a002-d16ea1af08c7",
+    "intention": "Pensando bem agora / Em retrospectiva",
+    "english": "In hindsight",
+    "pattern": "In hindsight, + clause",
+    "description": "Expressa avaliação feita com conhecimento adquirido depois dos fatos.",
+    "category": "chunk",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "pensando bem agora",
+      "in hindsight"
+    ],
+    "validationPatterns": [
+      "\\bIn\\s+hindsight\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Em retrospectiva, eu deveria ter esperado.",
+        "en": "In hindsight, I should have waited.",
+        "ptIntent": "Em retrospectiva",
+        "enIntent": "In hindsight"
+      },
+      {
+        "pt": "Pensando bem agora, foi a decisão certa.",
+        "en": "In hindsight, it was the right decision.",
+        "ptIntent": "Pensando bem agora",
+        "enIntent": "In hindsight"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "conversation",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "0e9d0a9b-d7c9-58f6-8889-66f1098ad086",
+    "intention": "O que tornou isso difícil foi",
+    "english": "What made it difficult was",
+    "pattern": "What made it difficult was + noun / verb-ing / clause",
+    "description": "Destaca a causa principal de uma dificuldade.",
+    "category": "chunk",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "o que tornou isso difícil foi",
+      "what made it difficult was"
+    ],
+    "validationPatterns": [
+      "\\bWhat\\s+made\\s+it\\s+difficult\\s+was\\b"
+    ],
+    "examples": [
+      {
+        "pt": "O que tornou isso difícil foi a falta de tempo.",
+        "en": "What made it difficult was the lack of time.",
+        "ptIntent": "O que tornou isso difícil foi",
+        "enIntent": "What made it difficult was"
+      },
+      {
+        "pt": "O que tornou isso difícil foi ter que escolher rapidamente.",
+        "en": "What made it difficult was having to choose quickly.",
+        "ptIntent": "O que tornou isso difícil foi",
+        "enIntent": "What made it difficult was"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "conversation",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "86292095-7b88-5a4d-a23c-c3411d9bd083",
+    "intention": "Por um lado",
+    "english": "On the one hand",
+    "pattern": "On the one hand, + clause",
+    "description": "Apresenta o primeiro lado de um contraste ou comparação.",
+    "category": "chunk",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "por um lado",
+      "on the one hand"
+    ],
+    "validationPatterns": [
+      "\\bOn\\s+the\\s+one\\s+hand\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Por um lado, trabalhar de casa economiza tempo.",
+        "en": "On the one hand, working from home saves time.",
+        "ptIntent": "Por um lado",
+        "enIntent": "On the one hand"
+      },
+      {
+        "pt": "Por um lado, a proposta é interessante.",
+        "en": "On the one hand, the offer is interesting.",
+        "ptIntent": "Por um lado",
+        "enIntent": "On the one hand"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "conversation",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "ad22765f-4dbd-53fc-9e9d-531f50fe4757",
+    "intention": "Por outro lado",
+    "english": "On the other hand",
+    "pattern": "On the other hand, + clause",
+    "description": "Apresenta o outro lado de um contraste ou comparação.",
+    "category": "chunk",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "por outro lado",
+      "on the other hand"
+    ],
+    "validationPatterns": [
+      "\\bOn\\s+the\\s+other\\s+hand\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Por outro lado, sinto falta dos colegas.",
+        "en": "On the other hand, I miss my coworkers.",
+        "ptIntent": "Por outro lado",
+        "enIntent": "On the other hand"
+      },
+      {
+        "pt": "Por outro lado, o salário é menor.",
+        "en": "On the other hand, the salary is lower.",
+        "ptIntent": "Por outro lado",
+        "enIntent": "On the other hand"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "conversation",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "954ec48e-5955-5dff-8fb9-677cee457f6c",
+    "intention": "Estou inclinado a acreditar que",
+    "english": "I’m inclined to believe that",
+    "pattern": "I’m inclined to believe that + clause",
+    "description": "Apresenta uma crença ou opinião cautelosa, sem certeza absoluta.",
+    "category": "chunk",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "estou inclinado a acreditar que",
+      "i'm inclined to believe that",
+      "i’m inclined to believe that"
+    ],
+    "validationPatterns": [
+      "\\bI['’]m\\s+inclined\\s+to\\s+believe\\s+that\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Estou inclinado a acreditar que estamos no caminho certo.",
+        "en": "I’m inclined to believe that we’re on the right track.",
+        "ptIntent": "Estou inclinado a acreditar que",
+        "enIntent": "I’m inclined to believe that"
+      },
+      {
+        "pt": "Estou inclinado a acreditar que isso pode funcionar.",
+        "en": "I’m inclined to believe that this could work.",
+        "ptIntent": "Estou inclinado a acreditar que",
+        "enIntent": "I’m inclined to believe that"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "conversation",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "d4332fbe-3c45-514e-880d-abca380b3de5",
+    "intention": "Acho difícil",
+    "english": "I find it hard to",
+    "pattern": "I find it hard to + verb",
+    "description": "Expressa dificuldade pessoal em fazer ou aceitar algo.",
+    "category": "chunk",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "acho difícil",
+      "i find it hard to"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+find\\s+it\\s+hard\\s+to\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Acho difícil acreditar nessa história.",
+        "en": "I find it hard to believe that story.",
+        "ptIntent": "Acho difícil",
+        "enIntent": "I find it hard to"
+      },
+      {
+        "pt": "Acho difícil tomar uma decisão tão rápido.",
+        "en": "I find it hard to make a decision so quickly.",
+        "ptIntent": "Acho difícil",
+        "enIntent": "I find it hard to"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "conversation",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "b41228b4-0ffa-5e4e-b675-6fbb459da49a",
+    "intention": "O que quero dizer é",
+    "english": "What I mean is",
+    "pattern": "What I mean is + clause",
+    "description": "Reformula ou esclarece o próprio raciocínio.",
+    "category": "chunk",
+    "englishLevel": "B1",
+    "searchTerms": [
+      "o que quero dizer é",
+      "what i mean is"
+    ],
+    "validationPatterns": [
+      "\\bWhat\\s+I\\s+mean\\s+is\\b"
+    ],
+    "examples": [
+      {
+        "pt": "O que quero dizer é que precisamos conversar.",
+        "en": "What I mean is that we need to talk.",
+        "ptIntent": "O que quero dizer é",
+        "enIntent": "What I mean is"
+      },
+      {
+        "pt": "O que quero dizer é que não estou pronto.",
+        "en": "What I mean is that I’m not ready.",
+        "ptIntent": "O que quero dizer é",
+        "enIntent": "What I mean is"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "conversation",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "5b9a91ab-3a45-5d9d-859e-25654112203c",
+    "intention": "Até certo ponto",
+    "english": "To some extent",
+    "pattern": "To some extent, + clause",
+    "description": "Indica concordância ou validade parcial de uma afirmação.",
+    "category": "chunk",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "até certo ponto",
+      "to some extent"
+    ],
+    "validationPatterns": [
+      "\\bTo\\s+some\\s+extent\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Até certo ponto, eu concordo com você.",
+        "en": "To some extent, I agree with you.",
+        "ptIntent": "Até certo ponto",
+        "enIntent": "To some extent"
+      },
+      {
+        "pt": "Até certo ponto, a tecnologia facilita nossa vida.",
+        "en": "To some extent, technology makes our lives easier.",
+        "ptIntent": "Até certo ponto",
+        "enIntent": "To some extent"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "conversation",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "a9f04779-7744-59d1-aef2-d167ccaec197",
+    "intention": "Não há como negar que",
+    "english": "There’s no denying that",
+    "pattern": "There’s no denying that + clause",
+    "description": "Enfatiza que determinado fato é difícil de contestar.",
+    "category": "chunk",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "não há como negar que",
+      "there's no denying that",
+      "there’s no denying that"
+    ],
+    "validationPatterns": [
+      "\\bThere['’]s\\s+no\\s+denying\\s+that\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Não há como negar que a tecnologia mudou nossas vidas.",
+        "en": "There’s no denying that technology has changed our lives.",
+        "ptIntent": "Não há como negar que",
+        "enIntent": "There’s no denying that"
+      },
+      {
+        "pt": "Não há como negar que precisamos melhorar.",
+        "en": "There’s no denying that we need to improve.",
+        "ptIntent": "Não há como negar que",
+        "enIntent": "There’s no denying that"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "conversation",
+      "speaking"
+    ],
+    "related": []
+  },
+  {
+    "id": "e7ec0602-23c8-5cf2-8833-3d53d6501b11",
+    "intention": "Dito isso",
+    "english": "That being said",
+    "pattern": "That being said, + clause",
+    "description": "Introduz contraponto, ressalva ou conclusão contrastante.",
+    "category": "chunk",
+    "englishLevel": "B2",
+    "searchTerms": [
+      "dito isso",
+      "that being said"
+    ],
+    "validationPatterns": [
+      "\\bThat\\s+being\\s+said\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Dito isso, ainda prefiro trabalhar em casa.",
+        "en": "That being said, I still prefer working from home.",
+        "ptIntent": "Dito isso",
+        "enIntent": "That being said"
+      },
+      {
+        "pt": "Dito isso, entendo sua preocupação.",
+        "en": "That being said, I understand your concern.",
+        "ptIntent": "Dito isso",
+        "enIntent": "That being said"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "conversation",
+      "speaking"
+    ],
+    "related": []
+  },
+  
+{
+  "id": "inclined-to-believe-7e4b2c91-5a38-4d60-9f12-c8a3e6b07524",
+  "intention": "Estou inclinado a acreditar que",
+  "english": "I'm inclined to believe that",
+  "pattern": "subject + be + inclined to believe (that) + clause",
+  "description": "Expressa uma opinião, impressão ou crença de maneira cautelosa e ponderada. Indica que a pessoa tende a acreditar em algo, embora não tenha certeza absoluta. É comum em discussões, análises, reuniões e conversas em que se deseja apresentar uma opinião sem parecer categórico. O THAT pode ser omitido na fala informal. A estrutura exige uma oração complementar para transmitir uma ideia completa.",
+  "category": "chunk",
+  "englishLevel": "B2",
+  "searchTerms": [
+    "estou inclinado a acreditar que",
+    "tendo a acreditar que",
+    "tenho a tendência de acreditar que",
+    "estou propenso a acreditar que",
+    "inclined to believe",
+    "i'm inclined to believe that",
+    "i am inclined to believe",
+    "i tend to believe"
+  ],
+  "validationPatterns": [
+    "\\b(?:I\\s+am|I'm|he\\s+is|he's|she\\s+is|she's|we\\s+are|we're|they\\s+are|they're)\\s+inclined\\s+to\\s+believe\\s+(?:that\\s+)?",
+    "\\binclined\\s+to\\s+believe\\b"
+  ],
+  "examples": [
+    {
+      "pt": "Estou inclinado a acreditar que estamos no caminho certo.",
+      "en": "I'm inclined to believe that we're on the right track.",
+      "ptIntent": "Estou inclinado a acreditar que",
+      "enIntent": "I'm inclined to believe that"
+    },
+    {
+      "pt": "Estou inclinado a acreditar que essa é a melhor solução.",
+      "en": "I'm inclined to believe that this is the best solution.",
+      "ptIntent": "Estou inclinado a acreditar que",
+      "enIntent": "I'm inclined to believe that"
+    },
+    {
+      "pt": "Estou inclinado a acreditar que trabalhar de casa é mais produtivo.",
+      "en": "I'm inclined to believe that working from home is more productive.",
+      "ptIntent": "Estou inclinado a acreditar que",
+      "enIntent": "I'm inclined to believe that"
+    },
+    {
+      "pt": "Estou inclinado a acreditar que precisamos de mais tempo.",
+      "en": "I'm inclined to believe that we need more time.",
+      "ptIntent": "Estou inclinado a acreditar que",
+      "enIntent": "I'm inclined to believe that"
+    },
+    {
+      "pt": "Estou inclinado a acreditar que ele está dizendo a verdade.",
+      "en": "I'm inclined to believe that he's telling the truth.",
+      "ptIntent": "Estou inclinado a acreditar que",
+      "enIntent": "I'm inclined to believe that"
+    },
+    {
+      "pt": "Estou inclinado a acreditar que aprender inglês exige consistência.",
+      "en": "I'm inclined to believe that learning English requires consistency.",
+      "ptIntent": "Estou inclinado a acreditar que",
+      "enIntent": "I'm inclined to believe that"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "opinion",
+    "belief",
+    "uncertainty",
+    "hedging",
+    "discussion",
+    "spoken-english",
+    "argumentation",
+    "speaking"
+  ],
+  "related": []
+},
+
+{
+  "id": "f2c8e491-7b35-4a6d-9e20-1c5f8b3a7046",
+  "intention": "Acho difícil / Tenho dificuldade para",
+  "english": "I find it hard to",
+  "pattern": "subject + find(s)/found + it + hard to + base verb",
+  "description": "Expressa que uma pessoa considera difícil realizar determinada ação. A estrutura FIND IT HARD TO é muito natural no inglês conversacional e permite falar sobre dificuldades pessoais, profissionais ou emocionais. O verbo FIND pode variar conforme o sujeito e o tempo verbal. Também é possível usar DIFFICULT no lugar de HARD. Exige um verbo no infinitivo sem TO adicional após a estrutura.",
+  "category": "chunk",
+  "englishLevel": "B1",
+  "searchTerms": [
+    "acho difícil",
+    "considero difícil",
+    "tenho dificuldade para",
+    "tenho dificuldade em",
+    "é difícil para mim",
+    "i find it hard to",
+    "find it difficult to",
+    "i found it hard to"
+  ],
+  "validationPatterns": [
+    "\\b(?:find|finds|found)\\s+it\\s+(?:hard|difficult)\\s+to\\s+[a-z]+\\b"
+  ],
+  "examples": [
+    {
+      "pt": "Acho difícil falar inglês fluentemente.",
+      "en": "I find it hard to speak English fluently.",
+      "ptIntent": "Acho difícil",
+      "enIntent": "I find it hard to"
+    },
+    {
+      "pt": "Acho difícil entender falantes nativos.",
+      "en": "I find it hard to understand native speakers.",
+      "ptIntent": "Acho difícil",
+      "enIntent": "I find it hard to"
+    },
+    {
+      "pt": "Tenho dificuldade para acordar cedo.",
+      "en": "I find it hard to wake up early.",
+      "ptIntent": "Tenho dificuldade para",
+      "enIntent": "I find it hard to"
+    },
+    {
+      "pt": "Acho difícil manter a concentração quando estou cansado.",
+      "en": "I find it hard to stay focused when I'm tired.",
+      "ptIntent": "Acho difícil",
+      "enIntent": "I find it hard to"
+    },
+    {
+      "pt": "Acho difícil confiar em pessoas que mentem.",
+      "en": "I find it hard to trust people who lie.",
+      "ptIntent": "Acho difícil",
+      "enIntent": "I find it hard to"
+    },
+    {
+      "pt": "Tenho dificuldade para expressar meus sentimentos em inglês.",
+      "en": "I find it hard to express my feelings in English.",
+      "ptIntent": "Tenho dificuldade para",
+      "enIntent": "I find it hard to"
+    },
+    {
+      "pt": "Achei difícil me adaptar ao novo emprego.",
+      "en": "I found it hard to adapt to my new job.",
+      "ptIntent": "Achei difícil",
+      "enIntent": "I found it hard to"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "difficulty",
+    "opinion",
+    "personal-experience",
+    "spoken-english",
+    "speaking"
+  ],
+  "related": []
+},
+
+{
+  "id": "a8e2c491-5b73-4f6d-9c20-1d7a3e8b6045",
+  "intention": "Depois de pensar um pouco a respeito",
+  "english": "After giving it some thought",
+  "pattern": "After giving it some thought, + clause",
+  "description": "Expressa que uma decisão, opinião ou conclusão foi tomada após refletir sobre determinado assunto. É uma expressão natural em conversas, especialmente quando alguém reconsidera uma proposta, avalia uma situação ou comunica uma decisão. O pronome IT se refere ao assunto já mencionado. A expressão costuma introduzir uma oração principal e não é normalmente usada como resposta isolada.",
+  "category": "chunk",
+  "englishLevel": "B1",
+  "searchTerms": [
+    "depois de pensar um pouco",
+    "depois de pensar a respeito",
+    "depois de refletir",
+    "pensando melhor",
+    "após refletir sobre isso",
+    "after giving it some thought",
+    "give it some thought",
+    "after some thought"
+  ],
+  "validationPatterns": [
+    "\\bafter\\s+giving\\s+it\\s+some\\s+thought\\b",
+    "\\b(?:give|gives|gave|given|giving)\\s+it\\s+some\\s+thought\\b"
+  ],
+  "examples": [
+    {
+      "pt": "Depois de pensar um pouco a respeito, decidi aceitar a proposta.",
+      "en": "After giving it some thought, I decided to accept the offer.",
+      "ptIntent": "Depois de pensar um pouco a respeito",
+      "enIntent": "After giving it some thought"
+    },
+    {
+      "pt": "Depois de pensar um pouco a respeito, acho que você tem razão.",
+      "en": "After giving it some thought, I think you're right.",
+      "ptIntent": "Depois de pensar um pouco a respeito",
+      "enIntent": "After giving it some thought"
+    },
+    {
+      "pt": "Depois de refletir sobre isso, resolvi mudar de emprego.",
+      "en": "After giving it some thought, I decided to change jobs.",
+      "ptIntent": "Depois de refletir sobre isso",
+      "enIntent": "After giving it some thought"
+    },
+    {
+      "pt": "Depois de pensar um pouco a respeito, percebi que precisava melhorar meu inglês.",
+      "en": "After giving it some thought, I realized I needed to improve my English.",
+      "ptIntent": "Depois de pensar um pouco a respeito",
+      "enIntent": "After giving it some thought"
+    },
+    {
+      "pt": "Depois de pensar um pouco a respeito, decidi não comprar a moto.",
+      "en": "After giving it some thought, I decided not to buy the motorcycle.",
+      "ptIntent": "Depois de pensar um pouco a respeito",
+      "enIntent": "After giving it some thought"
+    },
+    {
+      "pt": "Depois de pensar um pouco a respeito, acho melhor esperar.",
+      "en": "After giving it some thought, I think it's better to wait.",
+      "ptIntent": "Depois de pensar um pouco a respeito",
+      "enIntent": "After giving it some thought"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "reflection",
+    "decision-making",
+    "reconsideration",
+    "opinion",
+    "spoken-english",
+    "speaking"
+  ],
+  "related": []
+},
+
+{
+  "id": "b7d3e8a1-4c92-4f65-8a20-6e1b9d5c3047",
+  "intention": "O que tornou isso difícil foi",
+  "english": "What made it difficult was",
+  "pattern": "What made it difficult was + noun phrase / gerund phrase / (that) clause",
+  "description": "Estrutura usada para explicar o principal motivo pelo qual uma situação, tarefa ou experiência foi difícil. Permite destacar a causa da dificuldade, em vez de simplesmente afirmar que algo foi difícil. É muito útil para contar experiências, explicar desafios e construir respostas mais elaboradas em conversas. Depois de WAS, pode aparecer um substantivo, uma expressão com verbo em ING ou uma oração introduzida por THAT.",
+  "category": "chunk",
+  "englishLevel": "B2",
+  "searchTerms": [
+    "o que tornou isso difícil foi",
+    "o que dificultou foi",
+    "o que tornou a situação difícil",
+    "a parte difícil foi",
+    "o que complicou foi",
+    "what made it difficult was",
+    "what made it hard was",
+    "what made things difficult"
+  ],
+  "validationPatterns": [
+    "\\bwhat\\s+made\\s+it\\s+(?:difficult|hard)\\s+was\\b",
+    "\\bwhat\\s+made\\s+(?:things|the\\s+situation)\\s+(?:difficult|hard)\\s+was\\b"
+  ],
+  "examples": [
+    {
+      "pt": "O que tornou isso difícil foi a falta de tempo.",
+      "en": "What made it difficult was the lack of time.",
+      "ptIntent": "O que tornou isso difícil foi",
+      "enIntent": "What made it difficult was"
+    },
+    {
+      "pt": "O que tornou isso difícil foi entender os falantes nativos.",
+      "en": "What made it difficult was understanding native speakers.",
+      "ptIntent": "O que tornou isso difícil foi",
+      "enIntent": "What made it difficult was"
+    },
+    {
+      "pt": "O que tornou isso difícil foi o fato de eu não ter experiência.",
+      "en": "What made it difficult was the fact that I had no experience.",
+      "ptIntent": "O que tornou isso difícil foi",
+      "enIntent": "What made it difficult was"
+    },
+    {
+      "pt": "O que tornou isso difícil foi que ninguém sabia como resolver o problema.",
+      "en": "What made it difficult was that nobody knew how to solve the problem.",
+      "ptIntent": "O que tornou isso difícil foi",
+      "enIntent": "What made it difficult was"
+    },
+    {
+      "pt": "O que tornou isso difícil foi trabalhar sob pressão todos os dias.",
+      "en": "What made it difficult was working under pressure every day.",
+      "ptIntent": "O que tornou isso difícil foi",
+      "enIntent": "What made it difficult was"
+    },
+    {
+      "pt": "O que tornou isso difícil foi me adaptar a um ambiente completamente novo.",
+      "en": "What made it difficult was adapting to a completely new environment.",
+      "ptIntent": "O que tornou isso difícil foi",
+      "enIntent": "What made it difficult was"
+    }
+  ],
+  "tags": [
+    "chunk",
+    "difficulty",
+    "explanation",
+    "cause",
+    "personal-experience",
+    "storytelling",
+    "spoken-english",
+    "speaking"
+  ],
+  "related": []
+},
+
+  {
+    "id": "don-t-knock-it-till-you-try-it-81f6d332-7901-4da2-ae67-6e618e12b77b",
+    "intention": "Não critique antes de experimentar",
+    "english": "Don't knock it till you try it",
+    "pattern": "Don't knock it till you try it",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Não critique antes de experimentar” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "encouragement",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "não critique antes de experimentar",
+      "don't knock it till you try it"
+    ],
+    "validationPatterns": [
+      "\\bDon['’]t\\s+knock\\s+it\\s+till\\s+you\\s+try\\s+it\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Não critique antes de experimentar.",
+        "en": "Don't knock it till you try it.",
+        "ptIntent": "Não critique antes de experimentar",
+        "enIntent": "Don't knock it till you try it"
+      },
+      {
+        "pt": "Não critique antes de experimentar. Talvez você goste.",
+        "en": "Don't knock it till you try it. You might like it.",
+        "ptIntent": "Não critique antes de experimentar",
+        "enIntent": "Don't knock it till you try it"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-m-drawing-a-blank-5cf5ce2d-f83e-46f7-b554-1d65cb542de3",
+    "intention": "Me deu um branco",
+    "english": "I'm drawing a blank",
+    "pattern": "I'm drawing a blank",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Me deu um branco” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "memory-and-thinking",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "me deu um branco",
+      "i'm drawing a blank"
+    ],
+    "validationPatterns": [
+      "\\bI['’]m\\s+drawing\\s+a\\s+blank\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Me deu um branco.",
+        "en": "I'm drawing a blank.",
+        "ptIntent": "Me deu um branco",
+        "enIntent": "I'm drawing a blank"
+      },
+      {
+        "pt": "Me deu um branco. Não consigo lembrar o nome dele.",
+        "en": "I'm drawing a blank. I can't remember his name.",
+        "ptIntent": "Me deu um branco",
+        "enIntent": "I'm drawing a blank"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "you-ve-got-some-nerve-5b497f75-aaed-4688-bd0f-eee63100fb74",
+    "intention": "Você tem muita cara de pau",
+    "english": "You've got some nerve",
+    "pattern": "You've got some nerve",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Você tem muita cara de pau” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "B2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "você tem muita cara de pau",
+      "you've got some nerve"
+    ],
+    "validationPatterns": [
+      "\\bYou['’]ve\\s+got\\s+some\\s+nerve\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Você tem muita cara de pau!",
+        "en": "You've got some nerve!",
+        "ptIntent": "Você tem muita cara de pau",
+        "enIntent": "You've got some nerve"
+      },
+      {
+        "pt": "Você tem muita cara de pau pedindo isso de novo!",
+        "en": "You've got some nerve asking for that again!",
+        "ptIntent": "Você tem muita cara de pau",
+        "enIntent": "You've got some nerve"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "you-can-t-have-it-both-ways-e0910b63-705d-4fa6-815d-c2dd0aacd2e9",
+    "intention": "Você não pode querer as duas coisas ao mesmo tempo",
+    "english": "You can't have it both ways",
+    "pattern": "You can't have it both ways",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Você não pode querer as duas coisas ao mesmo tempo” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "você não pode querer as duas coisas ao mesmo tempo",
+      "you can't have it both ways"
+    ],
+    "validationPatterns": [
+      "\\bYou\\s+can['’]t\\s+have\\s+it\\s+both\\s+ways\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Você não pode querer as duas coisas ao mesmo tempo.",
+        "en": "You can't have it both ways.",
+        "ptIntent": "Você não pode querer as duas coisas ao mesmo tempo",
+        "enIntent": "You can't have it both ways"
+      },
+      {
+        "pt": "Você não pode querer as duas coisas ao mesmo tempo: economizar e gastar tudo.",
+        "en": "You can't have it both ways: saving money and spending it all.",
+        "ptIntent": "Você não pode querer as duas coisas ao mesmo tempo",
+        "enIntent": "You can't have it both ways"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "that-s-a-tall-order-9f39e60a-5ec8-46c3-a215-e98662f13971",
+    "intention": "Isso é pedir demais",
+    "english": "That's a tall order",
+    "pattern": "That's a tall order",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Isso é pedir demais” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "B2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "isso é pedir demais",
+      "that's a tall order"
+    ],
+    "validationPatterns": [
+      "\\bThat['’]s\\s+a\\s+tall\\s+order\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Isso é pedir demais.",
+        "en": "That's a tall order.",
+        "ptIntent": "Isso é pedir demais",
+        "enIntent": "That's a tall order"
+      },
+      {
+        "pt": "Terminar tudo até amanhã? Isso é pedir demais.",
+        "en": "Finish everything by tomorrow? That's a tall order.",
+        "ptIntent": "Isso é pedir demais",
+        "enIntent": "That's a tall order"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "that-s-news-to-me-7a5c9b90-617b-4fe1-abde-8989e8e027db",
+    "intention": "Essa é novidade para mim",
+    "english": "That's news to me",
+    "pattern": "That's news to me",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Essa é novidade para mim” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "essa é novidade para mim",
+      "that's news to me"
+    ],
+    "validationPatterns": [
+      "\\bThat['’]s\\s+news\\s+to\\s+me\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Essa é novidade para mim.",
+        "en": "That's news to me.",
+        "ptIntent": "Essa é novidade para mim",
+        "enIntent": "That's news to me"
+      },
+      {
+        "pt": "Sério? Essa é novidade para mim.",
+        "en": "Really? That's news to me.",
+        "ptIntent": "Essa é novidade para mim",
+        "enIntent": "That's news to me"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "you-re-asking-for-trouble-b1c46e15-8f2f-4486-979d-451d838a4469",
+    "intention": "Você está procurando confusão",
+    "english": "You're asking for trouble",
+    "pattern": "You're asking for trouble",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Você está procurando confusão” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "warnings",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "você está procurando confusão",
+      "you're asking for trouble"
+    ],
+    "validationPatterns": [
+      "\\bYou['’]re\\s+asking\\s+for\\s+trouble\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Você está procurando confusão.",
+        "en": "You're asking for trouble.",
+        "ptIntent": "Você está procurando confusão",
+        "enIntent": "You're asking for trouble"
+      },
+      {
+        "pt": "Você está procurando confusão se continuar provocando ele.",
+        "en": "You're asking for trouble if you keep provoking him.",
+        "ptIntent": "Você está procurando confusão",
+        "enIntent": "You're asking for trouble"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-wouldn-t-put-it-that-way-4ec18ee6-a283-4d2f-b8cf-24ec24c118d9",
+    "intention": "Eu não diria dessa forma",
+    "english": "I wouldn't put it that way",
+    "pattern": "I wouldn't put it that way",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Eu não diria dessa forma” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "B2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "eu não diria dessa forma",
+      "i wouldn't put it that way"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+wouldn['’]t\\s+put\\s+it\\s+that\\s+way\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Eu não diria dessa forma.",
+        "en": "I wouldn't put it that way.",
+        "ptIntent": "Eu não diria dessa forma",
+        "enIntent": "I wouldn't put it that way"
+      },
+      {
+        "pt": "Entendo o que você quer dizer, mas eu não diria dessa forma.",
+        "en": "I see what you mean, but I wouldn't put it that way.",
+        "ptIntent": "eu não diria dessa forma",
+        "enIntent": "I wouldn't put it that way"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "you-might-be-onto-something-cb07984d-83e0-496a-b556-272a162d27a1",
+    "intention": "Talvez você esteja no caminho certo",
+    "english": "You might be onto something",
+    "pattern": "You might be onto something",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Talvez você esteja no caminho certo” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "B2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "talvez você esteja no caminho certo",
+      "you might be onto something"
+    ],
+    "validationPatterns": [
+      "\\bYou\\s+might\\s+be\\s+onto\\s+something\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Talvez você esteja no caminho certo.",
+        "en": "You might be onto something.",
+        "ptIntent": "Talvez você esteja no caminho certo",
+        "enIntent": "You might be onto something"
+      },
+      {
+        "pt": "Talvez você esteja no caminho certo. Vamos testar sua ideia.",
+        "en": "You might be onto something. Let's test your idea.",
+        "ptIntent": "Talvez você esteja no caminho certo",
+        "enIntent": "You might be onto something"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "give-it-a-chance-3e9e0052-1e57-42d2-8094-9be621443d70",
+    "intention": "Dê uma chance",
+    "english": "Give it a chance",
+    "pattern": "Give it a chance",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Dê uma chance” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "encouragement",
+    "englishLevel": "A2",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "dê uma chance",
+      "give it a chance"
+    ],
+    "validationPatterns": [
+      "\\bGive\\s+it\\s+a\\s+chance\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Dê uma chance.",
+        "en": "Give it a chance.",
+        "ptIntent": "Dê uma chance",
+        "enIntent": "Give it a chance"
+      },
+      {
+        "pt": "Dê uma chance, mesmo que pareça difícil.",
+        "en": "Give it a chance, even if it seems hard.",
+        "ptIntent": "Dê uma chance",
+        "enIntent": "Give it a chance"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
+  },
+  {
+    "id": "i-know-it-sounds-silly-2a1709a5-8e58-41a4-85ee-e8809a6bf4ec",
+    "intention": "Eu sei que parece bobagem",
+    "english": "I know it sounds silly",
+    "pattern": "I know it sounds silly",
+    "description": "Chunk conversacional completo usado para comunicar a intenção “Eu sei que parece bobagem” de forma natural em inglês. Pode ser dito sozinho ou combinado com outras frases conforme o contexto.",
+    "category": "reactions-and-opinions",
+    "englishLevel": "B1",
+    "allowLanguageChunkPractice": true,
+    "searchTerms": [
+      "eu sei que parece bobagem",
+      "i know it sounds silly"
+    ],
+    "validationPatterns": [
+      "\\bI\\s+know\\s+it\\s+sounds\\s+silly\\b"
+    ],
+    "examples": [
+      {
+        "pt": "Eu sei que parece bobagem.",
+        "en": "I know it sounds silly.",
+        "ptIntent": "Eu sei que parece bobagem",
+        "enIntent": "I know it sounds silly"
+      },
+      {
+        "pt": "Eu sei que parece bobagem, mas quero tentar.",
+        "en": "I know it sounds silly, but I want to try.",
+        "ptIntent": "Eu sei que parece bobagem",
+        "enIntent": "I know it sounds silly"
+      }
+    ],
+    "tags": [
+      "chunk",
+      "complete-chunk",
+      "spoken-english",
+      "daily-conversation"
+    ],
+    "related": []
   }
 
   ]
