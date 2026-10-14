@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
+import { isAuthorMode } from "../utils/authorMode";
 
 interface ChunkFlashcardsProps {
   intentions: MentalIntention[];
@@ -25,6 +26,8 @@ export function ChunkFlashcards({
   onBasicTraining,
   onAdvancedTraining
 }: ChunkFlashcardsProps) {
+  const authorMode = isAuthorMode();
+
   // O autor escolhe explicitamente quais intenções são chunks completos.
   const chunks = useMemo(
     () =>
@@ -45,7 +48,27 @@ export function ChunkFlashcards({
   const [currentId, setCurrentId] = useState<string | null>(null);
   const [audioError, setAudioError] = useState<string | null>(null);
   const [copiedChunkId, setCopiedChunkId] = useState<string | null>(null);
+  const [copiedIntentionId, setCopiedIntentionId] = useState<string | null>(null);
   const [copyError, setCopyError] = useState<string | null>(null);
+  const copyFeedbackTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // O feedback desaparece sozinho e novas cópias reiniciam o prazo.
+  function showCopyFeedback(type: "chunk" | "id", id: string) {
+    if (copyFeedbackTimeout.current !== null) clearTimeout(copyFeedbackTimeout.current);
+    setCopiedChunkId(type === "chunk" ? id : null);
+    setCopiedIntentionId(type === "id" ? id : null);
+    copyFeedbackTimeout.current = setTimeout(() => {
+      setCopiedChunkId(null);
+      setCopiedIntentionId(null);
+      copyFeedbackTimeout.current = null;
+    }, 1500);
+  }
+
+  useEffect(() => {
+    return () => {
+      if (copyFeedbackTimeout.current !== null) clearTimeout(copyFeedbackTimeout.current);
+    };
+  }, []);
 
   // Cronômetro: tempo de estudo efetivo, descontando todas as pausas.
   // Timestamps evitam perda de precisão quando a aba fica em segundo plano.
@@ -89,7 +112,9 @@ export function ChunkFlashcards({
     setDrawnIds([]);
     setCurrentId(null);
     setAudioError(null);
+    if (copyFeedbackTimeout.current !== null) clearTimeout(copyFeedbackTimeout.current);
     setCopiedChunkId(null);
+    setCopiedIntentionId(null);
     setCopyError(null);
     setStudyStartedAt(null);
     setElapsedSeconds(0);
@@ -111,7 +136,9 @@ export function ChunkFlashcards({
       window.speechSynthesis.cancel();
     }
     setAudioError(null);
+    if (copyFeedbackTimeout.current !== null) clearTimeout(copyFeedbackTimeout.current);
     setCopiedChunkId(null);
+    setCopiedIntentionId(null);
     setCopyError(null);
 
     if (completed) {
@@ -131,50 +158,62 @@ export function ChunkFlashcards({
     setCurrentId(nextId);
   }
 
+  // Reutiliza a mesma estratégia de cópia para o texto do chunk e seu ID.
+  async function copyText(text: string): Promise<void> {
+    let copied = false;
+    if (navigator.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(text);
+        copied = true;
+      } catch {
+        // Alguns navegadores bloqueiam a API; tenta o método alternativo.
+      }
+    }
+
+    if (!copied) {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      textarea.style.pointerEvents = "none";
+      document.body.appendChild(textarea);
+      try {
+        textarea.focus();
+        textarea.select();
+        textarea.setSelectionRange(0, text.length);
+        if (!document.execCommand("copy")) throw new Error("Falha ao copiar.");
+      } finally {
+        document.body.removeChild(textarea);
+      }
+    }
+  }
+
   async function copyChunk() {
     if (!currentChunk) return;
-
     const text = currentChunk.english.trim();
     if (!text) return;
 
     try {
-      // Tenta primeiro a API moderna, quando disponível.
-      let copied = false;
-      if (navigator.clipboard?.writeText) {
-        try {
-          await navigator.clipboard.writeText(text);
-          copied = true;
-        } catch {
-          // Em contextos sem permissão, tenta o método usado nos outros módulos.
-        }
-      }
-
-      if (!copied) {
-        const textarea = document.createElement("textarea");
-        textarea.value = text;
-        textarea.setAttribute("readonly", "");
-        textarea.style.position = "fixed";
-        textarea.style.opacity = "0";
-        textarea.style.pointerEvents = "none";
-        document.body.appendChild(textarea);
-
-        try {
-          textarea.focus();
-          textarea.select();
-          textarea.setSelectionRange(0, text.length);
-          if (!document.execCommand("copy")) {
-            throw new Error("Falha ao copiar o chunk.");
-          }
-        } finally {
-          document.body.removeChild(textarea);
-        }
-      }
-
-      setCopiedChunkId(currentChunk.id);
+      await copyText(text);
+      showCopyFeedback("chunk", currentChunk.id);
       setCopyError(null);
     } catch {
       setCopiedChunkId(null);
       setCopyError("Não foi possível copiar o chunk neste navegador.");
+    }
+  }
+
+  async function copyIntentionId() {
+    // Protege também a ação, não apenas a visibilidade do botão.
+    if (!isAuthorMode() || !currentChunk) return;
+    try {
+      await copyText(currentChunk.id);
+      showCopyFeedback("id", currentChunk.id);
+      setCopyError(null);
+    } catch {
+      setCopiedIntentionId(null);
+      setCopyError("Não foi possível copiar o ID da intenção neste navegador.");
     }
   }
 
@@ -376,6 +415,19 @@ export function ChunkFlashcards({
                         </svg>
                       )}
                     </button>
+                    {authorMode && (
+                      <button
+                        type="button"
+                        className="chunk-flashcards-details"
+                        onClick={() => void copyIntentionId()}
+                        aria-label={copiedIntentionId === currentChunk.id ? "ID copiado" : `Copiar ID da intenção ${currentChunk.intention}`}
+                        title={copiedIntentionId === currentChunk.id ? "ID copiado!" : "Copiar ID da intenção (Modo Autor)"}
+                      >
+                        <span aria-hidden="true" style={{ fontSize: "1.25rem", lineHeight: 1 }}>
+                          {copiedIntentionId === currentChunk.id ? "✓" : "🔢"}
+                        </span>
+                      </button>
+                    )}
                     <button
                       type="button"
                       className="chunk-flashcards-details"
@@ -410,7 +462,20 @@ export function ChunkFlashcards({
 
           {audioError && <p className="chunk-flashcards-audio-error" role="alert">{audioError}</p>}
           {copyError && <p className="chunk-flashcards-audio-error" role="alert">{copyError}</p>}
-          {copiedChunkId === currentId && <p role="status">Chunk em inglês copiado!</p>}
+          {(currentId !== null && (copiedChunkId === currentId || (authorMode && copiedIntentionId === currentId))) && (
+            <p
+              role="status"
+              style={{
+                position: "fixed", bottom: "1.25rem", right: "1.25rem",
+                zIndex: 1000, margin: 0, padding: "0.65rem 1rem",
+                borderRadius: "0.65rem", background: "#1e293b",
+                color: "#ffffff", fontWeight: 600,
+                boxShadow: "0 4px 14px rgba(0,0,0,0.22)"
+              }}
+            >
+              {copiedChunkId === currentId ? "✓ Chunk em inglês copiado!" : "✓ ID da intenção copiado!"}
+            </p>
+          )}
           {completed && (
             <p className="chunk-flashcards-finished" role="status">
               Você praticou todos os {total} chunks desta rodada!
