@@ -68,13 +68,21 @@ http://localhost:5173
 
 ## 4. JSON usado no MVP
 
-Por padrão, o projeto utiliza:
+Por padrão, o projeto utiliza a base padrão:
 
 ```text
 /public/sample-hashmap.json
 ```
 
-A configuração está no arquivo:
+Se o navegador estiver em um idioma suportado, o app também pode escolher automaticamente:
+
+```text
+/public/sample-hashmap-en-US.json
+/public/sample-hashmap-es-ES.json
+/public/sample-hashmap-fr-FR.json
+```
+
+A configuração manual continua no arquivo:
 
 ```text
 .env

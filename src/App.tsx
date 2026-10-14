@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
+import { getStudentLanguage, STUDENT_LANGUAGE_KEY, type StudentLanguage } from "./config/languages";
+import { useEffect, useMemo, useRef, useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
 import { SearchPanel, type ChunkFilter, type HqImageFilter, type YoutubeFilter } from "./components/SearchPanel";
@@ -22,6 +23,8 @@ type TrainingMode = "basic" | "advanced" | "review" | null;
 const AI_ENABLED = import.meta.env.VITE_AI_ENABLED === "true";
 
 function App() {
+  const [language, setLanguage] = useState<StudentLanguage>(getStudentLanguage);
+  const requestVersion = useRef(0);
   const [data, setData] = useState<HashmapData | null>(null);
   const [source, setSource] = useState<"remote" | "cache">("remote");
   const [currentView, setCurrentView] = useState<AppView>("hashmap");
@@ -46,26 +49,27 @@ function App() {
 
   useEffect(() => {
     let active = true;
+    const version = ++requestVersion.current;
 
     async function initialize() {
       setLoading(true);
       setError(null);
 
       try {
-        const result = await loadHashmap();
-        if (!active) return;
+        const result = await loadHashmap(language);
+        if (!active || version !== requestVersion.current) return;
 
         setData(result.data);
         setSource(result.source);
       } catch (err) {
-        if (!active) return;
+        if (!active || version !== requestVersion.current) return;
         setError(
           err instanceof Error
             ? err.message
             : "Não foi possível carregar o Mental Hashmap."
         );
       } finally {
-        if (active) {
+        if (active && version === requestVersion.current) {
           setLoading(false);
         }
       }
@@ -76,7 +80,7 @@ function App() {
     return () => {
       active = false;
     };
-  }, []);
+  }, [language]);
 
   const availableTags = useMemo(() => {
     if (!data) return [];
@@ -149,22 +153,43 @@ function App() {
   ]);
 
   async function retry() {
+    const version = ++requestVersion.current;
     setRetrying(true);
     setError(null);
 
     try {
-      const remoteData = await fetchHashmap();
+      const remoteData = await fetchHashmap(language);
+      if (version !== requestVersion.current) return;
       setData(remoteData);
       setSource("remote");
     } catch (err) {
+      if (version !== requestVersion.current) return;
       setError(
         err instanceof Error
           ? err.message
           : "Não foi possível carregar o Mental Hashmap."
       );
     } finally {
-      setRetrying(false);
+      if (version === requestVersion.current) {
+        setRetrying(false);
+        setLoading(false);
+      }
     }
+  }
+
+  function changeLanguage(nextLanguage: StudentLanguage) {
+    if (nextLanguage === language) return;
+    ++requestVersion.current;
+    setLanguage(nextLanguage);
+    try { localStorage.setItem(STUDENT_LANGUAGE_KEY, nextLanguage); } catch { /* Storage may be unavailable. */ }
+    setData(null);
+    setSelected(null);
+    closeTraining();
+    clearFilters();
+    setLoading(true);
+    setRetrying(false);
+    setError(null);
+    if ("speechSynthesis" in window) window.speechSynthesis.cancel();
   }
 
   function clearFilters() {
@@ -203,7 +228,7 @@ function App() {
       <div className="app-content">
         <div className="page-shell">
           <div className="container">
-            <Header metadata={data?.metadata} source={data ? source : undefined} />
+            <Header language={language} onLanguageChange={changeLanguage} metadata={data?.metadata} source={data ? source : undefined} />
 
         {loading && (
           <div className="status-card">
@@ -298,6 +323,7 @@ function App() {
             {!loading && data && currentView === "chunk-flashcards" && (
               <div style={{ display: trainingMode ? "none" : undefined }}>
                 <ChunkFlashcards
+                  key={language}
                   intentions={data.mentalMap}
                   onShowDetails={setSelected}
                   onBasicTraining={(item) => startTraining(item, "basic")}
@@ -307,7 +333,7 @@ function App() {
             )}
 
             {!loading && currentView === "speaking-game" && !trainingMode && (
-              <SpeakingGame />
+              <SpeakingGame key={language} language={language} />
             )}
 
             {AI_ENABLED &&
@@ -354,6 +380,7 @@ function App() {
       </div>
 
       <IntentionDetails
+        language={language}
         item={
           (
             currentView === "hashmap" ||

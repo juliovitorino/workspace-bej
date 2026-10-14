@@ -1,3 +1,4 @@
+import { LANGUAGES, type StudentLanguage } from "../config/languages";
 import { isAuthorMode } from "../utils/authorMode";
 import { useEffect, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
@@ -48,6 +49,7 @@ function getYoutubeUrl(value?: string): string | null {
 }
 
 interface IntentionDetailsProps {
+  language: StudentLanguage;
   item: MentalIntention | null;
   allItems: MentalIntention[];
   onClose: () => void;
@@ -58,6 +60,7 @@ interface IntentionDetailsProps {
 }
 
 export function IntentionDetails({
+  language,
   item,
   allItems,
   onClose,
@@ -109,7 +112,7 @@ export function IntentionDetails({
     setShowMetadataModal(false);
     setShareError(null);
     setHqZoom(1);
-  }, [item?.id]);
+  }, [item?.id, language]);
 
   useEffect(() => {
     if (!hqImage) {
@@ -210,10 +213,10 @@ export function IntentionDetails({
   }
 
   function handleSpeakExample(text: string, index: number) {
-    const englishText = text.trim();
+    const exampleText = text.trim();
 
-    if (!englishText) {
-      setSpeechError("Não há texto em inglês para reproduzir.");
+    if (!exampleText) {
+      setSpeechError("Não há texto para reproduzir.");
       return;
     }
 
@@ -228,17 +231,19 @@ export function IntentionDetails({
     setSpeechError(null);
     setSpeakingExampleIndex(null);
 
-    const utterance = new SpeechSynthesisUtterance(englishText);
+    const utterance = new SpeechSynthesisUtterance(exampleText);
     const voices = window.speechSynthesis.getVoices();
-    const americanVoice = voices.find(
-      (voice) => voice.lang.toLowerCase() === "en-us"
+    const selectedVoice = voices.find(
+      (voice) => voice.lang.toLowerCase() === language.toLowerCase()
+    ) ?? voices.find(
+      (voice) => voice.lang.toLowerCase().split("-")[0] === language.split("-")[0]
     );
 
-    if (americanVoice) {
-      utterance.voice = americanVoice;
+    if (selectedVoice) {
+      utterance.voice = selectedVoice;
     }
 
-    utterance.lang = "en-US";
+    utterance.lang = language;
     utterance.rate = 0.9;
     utterance.pitch = 1;
 
@@ -252,7 +257,7 @@ export function IntentionDetails({
 
     utterance.onerror = () => {
       setSpeakingExampleIndex(null);
-      setSpeechError("Não foi possível reproduzir o exemplo em inglês.");
+      setSpeechError("Não foi possível reproduzir o exemplo.");
     };
 
     window.speechSynthesis.speak(utterance);
@@ -1146,8 +1151,8 @@ Mandatório:
                         className="secondary-button"
                         onClick={() => handleSpeakExample(example.en, index)}
                         disabled={speakingExampleIndex === index}
-                        title="Ouvir este exemplo em inglês"
-                        aria-label={`Ouvir exemplo ${index + 1} em inglês`}
+                        title={`Ouvir este exemplo em ${LANGUAGES[language].name.toLowerCase()}`}
+                        aria-label={`Ouvir exemplo ${index + 1} em ${LANGUAGES[language].name.toLowerCase()}`}
                         style={{
                           width: "2.5rem",
                           minWidth: "2.5rem",

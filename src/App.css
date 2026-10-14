@@ -2151,3 +2151,9 @@ button {
   .chunk-flashcards-details { width: 48px; height: 48px; flex-basis: 48px; }
   .chunk-flashcards-actions .primary-button { width: 100%; }
 }
+
+.header-tools { display: flex; flex-direction: column; gap: 12px; }
+.language-selector { display: flex; flex-wrap: wrap; gap: 8px; }
+.language-selector button { background: #fff; border: 2px solid #cfd6e4; border-radius: 10px; min-width: 44px; min-height: 44px; font-size: 1.5rem; }
+.language-selector button[aria-pressed="true"] { border-color: #3659d9; background: #edf1ff; }
+.language-selector button:focus-visible { outline: 3px solid #3659d9; outline-offset: 3px; }

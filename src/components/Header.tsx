@@ -1,11 +1,14 @@
+import { LANGUAGES, type StudentLanguage } from "../config/languages";
 import type { HashmapMetadata } from "../types/hashmap";
 
 interface HeaderProps {
+  language: StudentLanguage;
+  onLanguageChange: (language: StudentLanguage) => void;
   metadata?: HashmapMetadata;
   source?: "remote" | "cache";
 }
 
-export function Header({ metadata, source }: HeaderProps) {
+export function Header({ metadata, source, language, onLanguageChange }: HeaderProps) {
   return (
     <header className="app-header">
       <div>
@@ -16,6 +19,16 @@ export function Header({ metadata, source }: HeaderProps) {
         </p>
       </div>
 
+      <div className="header-tools">
+        <div className="language-selector" role="group" aria-label="Idioma do estudante">
+          {(Object.keys(LANGUAGES) as StudentLanguage[]).map((code) => (
+            <button key={code} type="button" aria-label={LANGUAGES[code].name}
+              title={LANGUAGES[code].name} aria-pressed={language === code}
+              onClick={() => onLanguageChange(code)}>
+              <span aria-hidden="true">{LANGUAGES[code].flag}</span>
+            </button>
+          ))}
+        </div>
       {metadata && (
         <div className="metadata">
           <span>v{metadata.version}</span>
@@ -23,6 +36,7 @@ export function Header({ metadata, source }: HeaderProps) {
           {source === "cache" && <span className="cache-badge">cache local</span>}
         </div>
       )}
+      </div>
     </header>
   );
 }
