@@ -2,12 +2,12 @@
   "metadata": {
     "name": "Mental Hashmap",
     "version": "1.0.0",
-    "updatedAt": "2026-09-11",
+    "updatedAt": "2026-10-14",
     "language": "pt-BR",
-    "targetStudent":"en-US",
+    "targetStudent": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1098
+    "totalIntentions": 1105
   },
   "mentalMap": [
     {
@@ -113,7 +113,7 @@
         "state"
       ],
       "related": [
-        "era-estava-processo"
+        "era-estado-estava-processo-estive-esteve"
       ],
       "englishLevel": "A1"
     },
@@ -503,7 +503,7 @@
         "\\bthere\\s+used\\s+to\\s+be\\b",
         "\\b(?:is|are|was|were)\\s+there\\b",
         "\\b(?:will|would|can|could|may|might|must|should|shall)\\s+there\\s+be\\b",
-        "\\b(?:has|have|had)\\s+there\\s+been\\b"
+        "\\b(?:has|have|had)\\s+there\\s+(?:ever\\s+)?been\\b"
       ],
       "examples": [
         {
@@ -575,7 +575,7 @@
         {
           "pt": "Já tinha havido um problema parecido antes.",
           "en": "There had been a similar problem before.",
-          "ptIntent": "Tinha havido",
+          "ptIntent": "tinha havido",
           "enIntent": "There had been"
         },
         {
@@ -1273,9 +1273,9 @@
         "habit"
       ],
       "related": [
-        "acostumado",
-        "costumo",
-        "se-me-acostumando-processo-em-andamento"
+        "be-used-to",
+        "usually",
+        "get-used-to"
       ],
       "englishLevel": "A2"
     },
@@ -1305,8 +1305,8 @@
       ],
       "related": [
         "used-to",
-        "me-acostumei",
-        "se-me-acostumando-processo-em-andamento"
+        "got-used-to",
+        "get-used-to"
       ],
       "englishLevel": "B1"
     },
@@ -7328,7 +7328,7 @@
         {
           "pt": "Aquela conversa acabou sendo um ponto de virada no nosso relacionamento.",
           "en": "That conversation turned out to be a turning point in our relationship.",
-          "ptIntent": "ser um ponto de virada",
+          "ptIntent": "sendo um ponto de virada",
           "enIntent": "be a turning point"
         }
       ],
@@ -10018,10 +10018,7 @@
         "months",
         "duration"
       ],
-      "related": [
-        "lately",
-        "recently"
-      ],
+      "related": [],
       "englishLevel": "B1"
     },
     {
@@ -29663,7 +29660,7 @@
         "there's no rush"
       ],
       "validationPatterns": [
-        "\\b(?:take|takes|took|taken|taking)\\s+your\\s+time\\s+to\\s+[a-z]+\\b"
+        "\\b(?:take|takes|took|taken|taking)\\s+your\\s+time(?:\\s+(?:to\\s+[a-z]+|[a-z]{2,}ing))?\\b"
       ],
       "examples": [
         {
@@ -29799,7 +29796,7 @@
         "there's no rush"
       ],
       "validationPatterns": [
-        "\\b(?:take|takes|took|taken|taking)\\s+your\\s+time\\s+[a-z]{2,}ing\\b"
+        "\\b(?:take|takes|took|taken|taking)\\s+your\\s+time(?:\\s+(?:[a-z]{2,}ing|to\\s+[a-z]+))?\\b"
       ],
       "examples": [
         {
@@ -29946,7 +29943,7 @@
       "validationPatterns": [
         "\\bbesides\\s+[a-z]+ing\\b",
         "\\bin\\s+addition\\s+to\\s+[a-z]+ing\\b",
-        "\\bbesides\\s+(?:a|an|the|my|your|his|her|our|their)\\s+[a-z][a-z'-]*\\b",
+        "\\bbesides\\s+(?:(?:a|an|the|my|your|his|her|our|their)\\s+)?[a-z][a-z'-]*\\b",
         "\\bin\\s+addition\\s+to\\s+(?:a|an|the|my|your|his|her|our|their)\\s+[a-z][a-z'-]*\\b"
       ],
       "examples": [
@@ -33709,14 +33706,14 @@
         "What's up?"
       ],
       "validationPatterns": [
-        "(?i)What's\\s+up\\?"
+        "What's\\s+up\\?"
       ],
       "examples": [
         {
           "pt": "E aí, tudo bem?",
           "en": "Hey, what's up?",
-          "ptIntent": "E aí?",
-          "enIntent": "What's up?"
+          "ptIntent": "E aí",
+          "enIntent": "what's up?"
         }
       ],
       "tags": [
@@ -33740,14 +33737,14 @@
         "What's new?"
       ],
       "validationPatterns": [
-        "(?i)what(?:'s|\\s+is)\\s+new(?:\\s+with\\s+\\w+)?\\?"
+        "what(?:'s|\\s+is)\\s+new(?:\\s+with\\s+\\w+)?\\?"
       ],
       "examples": [
         {
           "pt": "Quais são as novidades com você?",
           "en": "What's new with you?",
-          "ptIntent": "Quais são as novidades?",
-          "enIntent": "What's"
+          "ptIntent": "Quais são as novidades",
+          "enIntent": "What's new"
         }
       ],
       "tags": [
@@ -33771,7 +33768,7 @@
         "See you later"
       ],
       "validationPatterns": [
-        "(?i)See\\s+you\\s+later"
+        "See\\s+you\\s+later"
       ],
       "examples": [
         {
@@ -33802,7 +33799,7 @@
         "Talk to you soon"
       ],
       "validationPatterns": [
-        "(?i)Talk\\s+to\\s+you\\s+soon"
+        "Talk\\s+to\\s+you\\s+soon"
       ],
       "examples": [
         {
@@ -33833,7 +33830,7 @@
         "Have a nice day"
       ],
       "validationPatterns": [
-        "(?i)Have\\s+a\\s+nice\\s+day"
+        "Have\\s+a\\s+nice\\s+day"
       ],
       "examples": [
         {
@@ -33864,14 +33861,14 @@
         "Sleep well"
       ],
       "validationPatterns": [
-        "(?i)Sleep\\s+well"
+        "Sleep\\s+well"
       ],
       "examples": [
         {
           "pt": "Boa noite, durma bem.",
           "en": "Good night, sleep well.",
-          "ptIntent": "Durma bem",
-          "enIntent": "Sleep well"
+          "ptIntent": "durma bem",
+          "enIntent": "sleep well"
         }
       ],
       "tags": [
@@ -33895,7 +33892,7 @@
         "Let's get started"
       ],
       "validationPatterns": [
-        "(?i)Let's\\s+get\\s+started"
+        "Let's\\s+get\\s+started"
       ],
       "examples": [
         {
@@ -33926,14 +33923,14 @@
         "Can you say that again?"
       ],
       "validationPatterns": [
-        "(?i)can\\s+you\\s+say\\s+that\\s+again(?:,?\\s+please)?\\?"
+        "can\\s+you\\s+say\\s+that\\s+again(?:,?\\s+please)?\\?"
       ],
       "examples": [
         {
           "pt": "Você pode repetir, por favor?",
           "en": "Can you say that again, please?",
-          "ptIntent": "Você pode repetir?",
-          "enIntent": "Can"
+          "ptIntent": "Você pode repetir",
+          "enIntent": "Can you say that again"
         }
       ],
       "tags": [
@@ -33957,7 +33954,7 @@
         "Speak slowly, please"
       ],
       "validationPatterns": [
-        "(?i)Speak\\s+slowly,\\s+please"
+        "Speak\\s+slowly,\\s+please"
       ],
       "examples": [
         {
@@ -33988,14 +33985,14 @@
         "That's right"
       ],
       "validationPatterns": [
-        "(?i)That's\\s+right"
+        "That's\\s+right"
       ],
       "examples": [
         {
           "pt": "Sim, isso mesmo!",
           "en": "Yes, that's right!",
-          "ptIntent": "Isso mesmo",
-          "enIntent": "That's right"
+          "ptIntent": "isso mesmo",
+          "enIntent": "that's right"
         }
       ],
       "tags": [
@@ -34019,7 +34016,7 @@
         "That's wrong"
       ],
       "validationPatterns": [
-        "(?i)That's\\s+wrong"
+        "That's\\s+wrong"
       ],
       "examples": [
         {
@@ -34050,7 +34047,7 @@
         "Me too"
       ],
       "validationPatterns": [
-        "(?i)Me\\s+too"
+        "Me\\s+too"
       ],
       "examples": [
         {
@@ -34081,7 +34078,7 @@
         "Me neither"
       ],
       "validationPatterns": [
-        "(?i)Me\\s+neither"
+        "Me\\s+neither"
       ],
       "examples": [
         {
@@ -34112,7 +34109,7 @@
         "Thanks a lot"
       ],
       "validationPatterns": [
-        "(?i)Thanks\\s+a\\s+lot"
+        "Thanks\\s+a\\s+lot"
       ],
       "examples": [
         {
@@ -34143,14 +34140,14 @@
         "Are you sure?"
       ],
       "validationPatterns": [
-        "(?i)are\\s+you\\s+sure(?:\\s+[^?]+)?\\?"
+        "are\\s+you\\s+sure(?:\\s+[^?]+)?\\?"
       ],
       "examples": [
         {
           "pt": "Você tem certeza dessa decisão?",
           "en": "Are you sure about this decision?",
-          "ptIntent": "Você tem certeza?",
-          "enIntent": "Are"
+          "ptIntent": "Você tem certeza",
+          "enIntent": "Are you sure"
         }
       ],
       "tags": [
@@ -34174,7 +34171,7 @@
         "Why not?"
       ],
       "validationPatterns": [
-        "(?i)Why\\s+not\\?"
+        "Why\\s+not\\?"
       ],
       "examples": [
         {
@@ -34205,13 +34202,13 @@
         "Sounds good"
       ],
       "validationPatterns": [
-        "(?i)Sounds\\s+good"
+        "Sounds\\s+good"
       ],
       "examples": [
         {
           "pt": "Vamos nos encontrar às oito. Combinado!",
           "en": "Let's meet at eight. Sounds good!",
-          "ptIntent": "Parece bom",
+          "ptIntent": "Combinado",
           "enIntent": "Sounds good"
         }
       ],
@@ -34236,7 +34233,7 @@
         "Well done"
       ],
       "validationPatterns": [
-        "(?i)Well\\s+done"
+        "Well\\s+done"
       ],
       "examples": [
         {
@@ -34267,7 +34264,7 @@
         "That's too bad"
       ],
       "validationPatterns": [
-        "(?i)That's\\s+too\\s+bad"
+        "That's\\s+too\\s+bad"
       ],
       "examples": [
         {
@@ -34298,7 +34295,7 @@
         "I'm starving"
       ],
       "validationPatterns": [
-        "(?i)(?:I\\s+am|I'm|you\\s+are|you're|he\\s+is|he's|she\\s+is|she's|we\\s+are|we're|they\\s+are|they're|was|were)\\s+starving"
+        "(?:I\\s+am|I'm|you\\s+are|you're|he\\s+is|he's|she\\s+is|she's|we\\s+are|we're|they\\s+are|they're|was|were)\\s+starving"
       ],
       "examples": [
         {
@@ -34329,7 +34326,7 @@
         "I'm exhausted"
       ],
       "validationPatterns": [
-        "(?i)(?:I\\s+am|I'm|you\\s+are|you're|he\\s+is|he's|she\\s+is|she's|we\\s+are|we're|they\\s+are|they're|was|were)\\s+exhausted"
+        "(?:I\\s+am|I'm|you\\s+are|you're|he\\s+is|he's|she\\s+is|she's|we\\s+are|we're|they\\s+are|they're|was|were)\\s+exhausted"
       ],
       "examples": [
         {
@@ -34360,7 +34357,7 @@
         "I'm thirsty"
       ],
       "validationPatterns": [
-        "(?i)(?:I\\s+am|I'm|you\\s+are|you're|he\\s+is|he's|she\\s+is|she's|we\\s+are|we're|they\\s+are|they're|was|were)\\s+thirsty"
+        "(?:I\\s+am|I'm|you\\s+are|you're|he\\s+is|he's|she\\s+is|she's|we\\s+are|we're|they\\s+are|they're|was|were)\\s+thirsty"
       ],
       "examples": [
         {
@@ -34391,7 +34388,7 @@
         "I'm ready"
       ],
       "validationPatterns": [
-        "(?i)(?:I\\s+am|I'm|you\\s+are|you're|he\\s+is|he's|she\\s+is|she's|we\\s+are|we're|they\\s+are|they're|was|were)\\s+ready"
+        "(?:I\\s+am|I'm|you\\s+are|you're|he\\s+is|he's|she\\s+is|she's|we\\s+are|we're|they\\s+are|they're|was|were)\\s+ready"
       ],
       "examples": [
         {
@@ -34422,7 +34419,7 @@
         "Hurry up"
       ],
       "validationPatterns": [
-        "(?i)Hurry\\s+up"
+        "Hurry\\s+up"
       ],
       "examples": [
         {
@@ -34453,13 +34450,13 @@
         "Slow down"
       ],
       "validationPatterns": [
-        "(?i)Slow\\s+down"
+        "Slow\\s+down"
       ],
       "examples": [
         {
           "pt": "Fale mais devagar, você está falando rápido demais.",
           "en": "Slow down, you're speaking too fast.",
-          "ptIntent": "Vá mais devagar",
+          "ptIntent": "Fale mais devagar",
           "enIntent": "Slow down"
         }
       ],
@@ -34484,7 +34481,7 @@
         "Go straight"
       ],
       "validationPatterns": [
-        "(?i)Go\\s+straight"
+        "Go\\s+straight"
       ],
       "examples": [
         {
@@ -34515,7 +34512,7 @@
         "Excuse me"
       ],
       "validationPatterns": [
-        "(?i)Excuse\\s+me"
+        "Excuse\\s+me"
       ],
       "examples": [
         {
@@ -34546,7 +34543,7 @@
         "Pardon me"
       ],
       "validationPatterns": [
-        "(?i)Pardon\\s+me"
+        "Pardon\\s+me"
       ],
       "examples": [
         {
@@ -34577,14 +34574,14 @@
         "Where is the bathroom?"
       ],
       "validationPatterns": [
-        "(?i)Where\\s+is\\s+the\\s+bathroom\\?"
+        "Where\\s+is\\s+the\\s+bathroom\\?"
       ],
       "examples": [
         {
           "pt": "Com licença, onde fica o banheiro?",
           "en": "Excuse me, where is the bathroom?",
-          "ptIntent": "Onde fica o banheiro?",
-          "enIntent": "Where is the bathroom?"
+          "ptIntent": "onde fica o banheiro?",
+          "enIntent": "where is the bathroom?"
         }
       ],
       "tags": [
@@ -34608,14 +34605,14 @@
         "How have you been?"
       ],
       "validationPatterns": [
-        "(?i)how\\s+have\\s+you\\s+been(?:\\s+[^?]+)?\\?"
+        "how\\s+have\\s+you\\s+been(?:\\s+[^?]+)?\\?"
       ],
       "examples": [
         {
           "pt": "Como você tem passado desde nossa última conversa?",
           "en": "How have you been since we last talked?",
-          "ptIntent": "Como você tem passado?",
-          "enIntent": "How"
+          "ptIntent": "Como você tem passado",
+          "enIntent": "How have you been"
         }
       ],
       "tags": [
@@ -34639,14 +34636,14 @@
         "How are things?"
       ],
       "validationPatterns": [
-        "(?i)how\\s+are\\s+things(?:\\s+[^?]+)?\\?"
+        "how\\s+are\\s+things(?:\\s+[^?]+)?\\?"
       ],
       "examples": [
         {
           "pt": "Como estão as coisas no seu novo emprego?",
           "en": "How are things at your new job?",
-          "ptIntent": "Como estão as coisas?",
-          "enIntent": "How"
+          "ptIntent": "Como estão as coisas",
+          "enIntent": "How are things"
         }
       ],
       "tags": [
@@ -34670,14 +34667,14 @@
         "Can you be more specific?"
       ],
       "validationPatterns": [
-        "(?i)can\\s+you\\s+be\\s+more\\s+specific(?:\\s+[^?]+)?\\?"
+        "can\\s+you\\s+be\\s+more\\s+specific(?:\\s+[^?]+)?\\?"
       ],
       "examples": [
         {
           "pt": "Você pode ser mais específico sobre o problema?",
           "en": "Can you be more specific about the problem?",
-          "ptIntent": "Você pode ser mais específico?",
-          "enIntent": "Can"
+          "ptIntent": "Você pode ser mais específico",
+          "enIntent": "Can you be more specific"
         }
       ],
       "tags": [
@@ -34701,7 +34698,7 @@
         "I'll keep you posted"
       ],
       "validationPatterns": [
-        "(?i)(?:I\\s+will|I'll|you\\s+will|you'll|we\\s+will|we'll|they\\s+will|they'll|he\\s+will|he'll|she\\s+will|she'll)\\s+keep\\s+you\\s+posted"
+        "(?:I\\s+will|I'll|you\\s+will|you'll|we\\s+will|we'll|they\\s+will|they'll|he\\s+will|he'll|she\\s+will|she'll)\\s+keep\\s+you\\s+posted"
       ],
       "examples": [
         {
@@ -34732,7 +34729,7 @@
         "Let me know"
       ],
       "validationPatterns": [
-        "(?i)Let\\s+me\\s+know"
+        "Let\\s+me\\s+know"
       ],
       "examples": [
         {
@@ -34763,13 +34760,13 @@
         "I'll be right there"
       ],
       "validationPatterns": [
-        "(?i)(?:I\\s+will|I'll|you\\s+will|you'll|we\\s+will|we'll|they\\s+will|they'll|he\\s+will|he'll|she\\s+will|she'll)\\s+be\\s+right\\s+there"
+        "(?:I\\s+will|I'll|you\\s+will|you'll|we\\s+will|we'll|they\\s+will|they'll|he\\s+will|he'll|she\\s+will|she'll)\\s+be\\s+right\\s+there"
       ],
       "examples": [
         {
           "pt": "Chego aí em um minuto.",
           "en": "I'll be right there in a minute.",
-          "ptIntent": "Já estou indo",
+          "ptIntent": "Chego aí",
           "enIntent": "I'll be right there"
         }
       ],
@@ -34794,7 +34791,7 @@
         "I'll call you back"
       ],
       "validationPatterns": [
-        "(?i)(?:I\\s+will|I'll|you\\s+will|you'll|we\\s+will|we'll|they\\s+will|they'll|he\\s+will|he'll|she\\s+will|she'll)\\s+call\\s+you\\s+back"
+        "(?:I\\s+will|I'll|you\\s+will|you'll|we\\s+will|we'll|they\\s+will|they'll|he\\s+will|he'll|she\\s+will|she'll)\\s+call\\s+you\\s+back"
       ],
       "examples": [
         {
@@ -34825,14 +34822,14 @@
         "What's the deadline?"
       ],
       "validationPatterns": [
-        "(?i)what(?:'s|\\s+is)\\s+the\\s+deadline(?:\\s+[^?]+)?\\?"
+        "what(?:'s|\\s+is)\\s+the\\s+deadline(?:\\s+[^?]+)?\\?"
       ],
       "examples": [
         {
           "pt": "Qual é o prazo final deste relatório?",
           "en": "What's the deadline for this report?",
-          "ptIntent": "Qual é o prazo final?",
-          "enIntent": "What's"
+          "ptIntent": "Qual é o prazo final",
+          "enIntent": "What's the deadline"
         }
       ],
       "tags": [
@@ -34856,14 +34853,14 @@
         "When is it due?"
       ],
       "validationPatterns": [
-        "(?i)when\\s+is\\s+(?:it|the\\s+\\w+(?:\\s+\\w+)?)\\s+due\\?"
+        "when\\s+is\\s+(?:it|the\\s+\\w+(?:\\s+\\w+)?)\\s+due\\?"
       ],
       "examples": [
         {
           "pt": "Quando é o prazo de entrega da tarefa?",
           "en": "When is the assignment due?",
-          "ptIntent": "Quando é o prazo de entrega?",
-          "enIntent": "When"
+          "ptIntent": "Quando é o prazo de entrega",
+          "enIntent": "When is the assignment due"
         }
       ],
       "tags": [
@@ -34887,7 +34884,7 @@
         "I need more time"
       ],
       "validationPatterns": [
-        "(?i)I\\s+need\\s+more\\s+time"
+        "I\\s+need\\s+more\\s+time"
       ],
       "examples": [
         {
@@ -34918,7 +34915,7 @@
         "That's not clear to me"
       ],
       "validationPatterns": [
-        "(?i)That's\\s+not\\s+clear\\s+to\\s+me"
+        "That's\\s+not\\s+clear\\s+to\\s+me"
       ],
       "examples": [
         {
@@ -34949,14 +34946,14 @@
         "Can I join?"
       ],
       "validationPatterns": [
-        "(?i)can\\s+i\\s+join(?:\\s+[^?]+)?\\?"
+        "can\\s+i\\s+join(?:\\s+[^?]+)?\\?"
       ],
       "examples": [
         {
           "pt": "Posso participar da conversa de vocês?",
           "en": "Can I join your conversation?",
-          "ptIntent": "Posso participar?",
-          "enIntent": "Can"
+          "ptIntent": "Posso participar",
+          "enIntent": "Can I join"
         }
       ],
       "tags": [
@@ -34980,7 +34977,7 @@
         "I'll send it to you"
       ],
       "validationPatterns": [
-        "(?i)(?:I\\s+will|I'll|you\\s+will|you'll|we\\s+will|we'll|they\\s+will|they'll|he\\s+will|he'll|she\\s+will|she'll)\\s+send\\s+it\\s+to\\s+you"
+        "(?:I\\s+will|I'll|you\\s+will|you'll|we\\s+will|we'll|they\\s+will|they'll|he\\s+will|he'll|she\\s+will|she'll)\\s+send\\s+it\\s+to\\s+you"
       ],
       "examples": [
         {
@@ -35011,7 +35008,7 @@
         "I'll email it over"
       ],
       "validationPatterns": [
-        "(?i)(?:I\\s+will|I'll|you\\s+will|you'll|we\\s+will|we'll|they\\s+will|they'll|he\\s+will|he'll|she\\s+will|she'll)\\s+email\\s+it\\s+over"
+        "(?:I\\s+will|I'll|you\\s+will|you'll|we\\s+will|we'll|they\\s+will|they'll|he\\s+will|he'll|she\\s+will|she'll)\\s+email\\s+it\\s+over"
       ],
       "examples": [
         {
@@ -35042,7 +35039,7 @@
         "I'm in a hurry"
       ],
       "validationPatterns": [
-        "(?i)(?:I\\s+am|I'm|you\\s+are|you're|he\\s+is|he's|she\\s+is|she's|we\\s+are|we're|they\\s+are|they're|was|were)\\s+in\\s+a\\s+hurry"
+        "(?:I\\s+am|I'm|you\\s+are|you're|he\\s+is|he's|she\\s+is|she's|we\\s+are|we're|they\\s+are|they're|was|were)\\s+in\\s+a\\s+hurry"
       ],
       "examples": [
         {
@@ -35073,7 +35070,7 @@
         "Let's try again"
       ],
       "validationPatterns": [
-        "(?i)Let's\\s+try\\s+again"
+        "Let's\\s+try\\s+again"
       ],
       "examples": [
         {
@@ -35104,13 +35101,13 @@
         "I can manage"
       ],
       "validationPatterns": [
-        "(?i)I\\s+can\\s+manage"
+        "I\\s+can\\s+manage"
       ],
       "examples": [
         {
           "pt": "Obrigado, mas eu dou conta.",
           "en": "Thanks, but I can manage.",
-          "ptIntent": "Eu dou conta",
+          "ptIntent": "eu dou conta",
           "enIntent": "I can manage"
         }
       ],
@@ -35135,7 +35132,7 @@
         "We need a backup"
       ],
       "validationPatterns": [
-        "(?i)We\\s+need\\s+a\\s+backup"
+        "We\\s+need\\s+a\\s+backup"
       ],
       "examples": [
         {
@@ -35166,7 +35163,7 @@
         "I feel the same way"
       ],
       "validationPatterns": [
-        "(?i)I\\s+feel\\s+the\\s+same\\s+way"
+        "I\\s+feel\\s+the\\s+same\\s+way"
       ],
       "examples": [
         {
@@ -35197,7 +35194,7 @@
         "I find that hard to believe"
       ],
       "validationPatterns": [
-        "(?i)I\\s+find\\s+that\\s+hard\\s+to\\s+believe"
+        "I\\s+find\\s+that\\s+hard\\s+to\\s+believe"
       ],
       "examples": [
         {
@@ -35228,7 +35225,7 @@
         "Let's get a drink"
       ],
       "validationPatterns": [
-        "(?i)Let's\\s+get\\s+a\\s+drink"
+        "Let's\\s+get\\s+a\\s+drink"
       ],
       "examples": [
         {
@@ -35259,7 +35256,7 @@
         "I need a ticket"
       ],
       "validationPatterns": [
-        "(?i)I\\s+need\\s+a\\s+ticket"
+        "I\\s+need\\s+a\\s+ticket"
       ],
       "examples": [
         {
@@ -35290,7 +35287,7 @@
         "One ticket, please"
       ],
       "validationPatterns": [
-        "(?i)one\\s+ticket(?:\\s+to\\s+[^,]+)?,?\\s+please"
+        "one\\s+ticket(?:\\s+to\\s+[^,]+)?,?\\s+please"
       ],
       "examples": [
         {
@@ -35321,14 +35318,14 @@
         "When does it leave?"
       ],
       "validationPatterns": [
-        "(?i)when\\s+does\\s+(?:it|the\\s+\\w+(?:\\s+\\w+)?)\\s+leave\\?"
+        "when\\s+does\\s+(?:it|the\\s+\\w+(?:\\s+\\w+)?)\\s+leave\\?"
       ],
       "examples": [
         {
           "pt": "Quando sai o próximo trem?",
           "en": "When does the next train leave?",
           "ptIntent": "Quando sai",
-          "enIntent": "When"
+          "enIntent": "When does the next train leave"
         }
       ],
       "tags": [
@@ -35352,7 +35349,7 @@
         "That's very kind of you"
       ],
       "validationPatterns": [
-        "(?i)That's\\s+very\\s+kind\\s+of\\s+you"
+        "That's\\s+very\\s+kind\\s+of\\s+you"
       ],
       "examples": [
         {
@@ -35383,13 +35380,13 @@
         "That's so thoughtful"
       ],
       "validationPatterns": [
-        "(?i)That's\\s+so\\s+thoughtful"
+        "That's\\s+so\\s+thoughtful"
       ],
       "examples": [
         {
           "pt": "Você lembrou do meu aniversário? Que atencioso!",
           "en": "You remembered my birthday? That's so thoughtful!",
-          "ptIntent": "Que atencioso da sua parte",
+          "ptIntent": "Que atencioso",
           "enIntent": "That's so thoughtful"
         }
       ],
@@ -35414,7 +35411,7 @@
         "Keep it up"
       ],
       "validationPatterns": [
-        "(?i)Keep\\s+it\\s+up"
+        "Keep\\s+it\\s+up"
       ],
       "examples": [
         {
@@ -35445,7 +35442,7 @@
         "You're doing great"
       ],
       "validationPatterns": [
-        "(?i)You're\\s+doing\\s+great"
+        "You're\\s+doing\\s+great"
       ],
       "examples": [
         {
@@ -35476,14 +35473,14 @@
         "Over and over again"
       ],
       "validationPatterns": [
-        "(?i)Over\\s+and\\s+over\\s+again"
+        "Over\\s+and\\s+over\\s+again"
       ],
       "examples": [
         {
           "pt": "Pratiquei a frase várias e várias vezes.",
           "en": "I practiced the phrase over and over again.",
-          "ptIntent": "Repetidas vezes",
-          "enIntent": "Over and over again"
+          "ptIntent": "várias e várias vezes",
+          "enIntent": "over and over again"
         }
       ],
       "tags": [
@@ -35506,14 +35503,14 @@
         "It's not good enough"
       ],
       "validationPatterns": [
-        "(?i)(?:it(?:'s|\\s+is)|this\\s+\\w+\\s+is|that\\s+\\w+\\s+is)\\s+not\\s+good\\s+enough"
+        "(?:it(?:'s|\\s+is)|this\\s+\\w+\\s+is|that\\s+\\w+\\s+is)\\s+not\\s+good\\s+enough"
       ],
       "examples": [
         {
           "pt": "Essa solução não é boa o suficiente.",
           "en": "This solution is not good enough.",
-          "ptIntent": "Isso não é bom o suficiente",
-          "enIntent": "It's"
+          "ptIntent": "não é boa o suficiente",
+          "enIntent": "is not good enough"
         }
       ],
       "tags": [
@@ -35537,14 +35534,14 @@
         "That's completely unacceptable"
       ],
       "validationPatterns": [
-        "(?i)(?:that(?:'s|\\s+is)|that\\s+\\w+\\s+is)\\s+completely\\s+unacceptable"
+        "(?:that(?:'s|\\s+is)|that\\s+\\w+\\s+is)\\s+completely\\s+unacceptable"
       ],
       "examples": [
         {
           "pt": "Esse comportamento é completamente inaceitável.",
           "en": "That behavior is completely unacceptable.",
-          "ptIntent": "Isso é completamente inaceitável",
-          "enIntent": "That's"
+          "ptIntent": "é completamente inaceitável",
+          "enIntent": "is completely unacceptable"
         }
       ],
       "tags": [
@@ -35568,7 +35565,7 @@
         "I would be delighted to"
       ],
       "validationPatterns": [
-        "(?i)I\\s+would\\s+be\\s+delighted\\s+to"
+        "I\\s+would\\s+be\\s+delighted\\s+to"
       ],
       "examples": [
         {
@@ -35598,7 +35595,7 @@
         "I would be very grateful"
       ],
       "validationPatterns": [
-        "(?i)I\\s+would\\s+be\\s+very\\s+grateful"
+        "I\\s+would\\s+be\\s+very\\s+grateful"
       ],
       "examples": [
         {
@@ -35629,7 +35626,7 @@
         "To put it bluntly"
       ],
       "validationPatterns": [
-        "(?i)To\\s+put\\s+it\\s+bluntly"
+        "To\\s+put\\s+it\\s+bluntly"
       ],
       "examples": [
         {
@@ -35664,7 +35661,7 @@
         "it goes without saying"
       ],
       "validationPatterns": [
-        "(?i)\\bit goes without saying\\b(?:\\s+that\\b)?"
+        "\\bit goes without saying\\b(?:\\s+that\\b)?"
       ],
       "examples": [
         {
@@ -35757,7 +35754,7 @@
         "when it comes to"
       ],
       "validationPatterns": [
-        "(?i)\\bwhen\\s+it\\s+comes\\s+to\\b"
+        "\\bwhen\\s+it\\s+comes\\s+to\\b"
       ],
       "examples": [
         {
@@ -35847,7 +35844,7 @@
         "aceitar a situação"
       ],
       "validationPatterns": [
-        "(?i)\\bit\\s+is\\s+what\\s+it\\s+is\\b"
+        "\\bit\\s+is\\s+what\\s+it\\s+is\\b"
       ],
       "examples": [
         {
@@ -35905,7 +35902,7 @@
         "próximo assunto"
       ],
       "validationPatterns": [
-        "(?i)\\bmoving\\s+on\\s+to\\s+the\\s+next\\s+point\\b"
+        "\\bmoving\\s+on\\s+to\\s+the\\s+next\\s+point\\b"
       ],
       "examples": [
         {
@@ -35964,7 +35961,7 @@
         "inesperadamente"
       ],
       "validationPatterns": [
-        "(?i)\\bmuch\\s+to\\s+my\\s+surprise\\b"
+        "\\bmuch\\s+to\\s+my\\s+surprise\\b"
       ],
       "examples": [
         {
@@ -36021,14 +36018,14 @@
         "não posso fazer mais nada"
       ],
       "validationPatterns": [
-        "(?i)\\bit(?:\\s+is|['’]s)\\s+out\\s+of\\s+my\\s+hands\\b"
+        "\\bit(?:\\s+is|['’]s)\\s+out\\s+of\\s+my\\s+hands\\b"
       ],
       "examples": [
         {
           "pt": "Eu já enviei os documentos. Agora não depende mais de mim.",
           "en": "I’ve submitted the documents. Now it’s out of my hands.",
           "ptIntent": "não depende mais de mim",
-          "enIntent": "it's out of my hands"
+          "enIntent": "it’s out of my hands"
         },
         {
           "pt": "A decisão cabe à diretoria. Está fora do meu controle.",
@@ -36079,7 +36076,7 @@
         "sem querer desrespeitar"
       ],
       "validationPatterns": [
-        "(?i)\\bwith\\s+all\\s+due\\s+respect\\b"
+        "\\bwith\\s+all\\s+due\\s+respect\\b"
       ],
       "examples": [
         {
@@ -36134,7 +36131,7 @@
         "What I'm trying to say is"
       ],
       "validationPatterns": [
-        "(?i)\\bWhat\\s+I'm\\s+trying\\s+to\\s+say\\s+is\\b"
+        "\\bWhat\\s+I'm\\s+trying\\s+to\\s+say\\s+is\\b"
       ],
       "examples": [
         {
@@ -36170,7 +36167,7 @@
         "The way I see it"
       ],
       "validationPatterns": [
-        "(?i)\\bThe\\s+way\\s+I\\s+see\\s+it\\b"
+        "\\bThe\\s+way\\s+I\\s+see\\s+it\\b"
       ],
       "examples": [
         {
@@ -36206,7 +36203,7 @@
         "For what it's worth"
       ],
       "validationPatterns": [
-        "(?i)\\bFor\\s+what\\s+it's\\s+worth\\b"
+        "\\bFor\\s+what\\s+it's\\s+worth\\b"
       ],
       "examples": [
         {
@@ -36242,7 +36239,7 @@
         "Let me put it this way"
       ],
       "validationPatterns": [
-        "(?i)\\bLet\\s+me\\s+put\\s+it\\s+this\\s+way\\b"
+        "\\bLet\\s+me\\s+put\\s+it\\s+this\\s+way\\b"
       ],
       "examples": [
         {
@@ -36279,7 +36276,7 @@
         "Having said that"
       ],
       "validationPatterns": [
-        "(?i)\\bHaving\\s+said\\s+that\\b"
+        "\\bHaving\\s+said\\s+that\\b"
       ],
       "examples": [
         {
@@ -36315,7 +36312,7 @@
         "If that makes sense"
       ],
       "validationPatterns": [
-        "(?i)\\bIf\\s+that\\s+makes\\s+sense\\b"
+        "\\bIf\\s+that\\s+makes\\s+sense\\b"
       ],
       "examples": [
         {
@@ -36351,7 +36348,7 @@
         "I get your point"
       ],
       "validationPatterns": [
-        "(?i)\\bI\\s+get\\s+your\\s+point\\b"
+        "\\bI\\s+get\\s+your\\s+point\\b"
       ],
       "examples": [
         {
@@ -36388,7 +36385,7 @@
         "Correct me if I'm wrong"
       ],
       "validationPatterns": [
-        "(?i)\\bCorrect\\s+me\\s+if\\s+I'm\\s+wrong\\b"
+        "\\bCorrect\\s+me\\s+if\\s+I'm\\s+wrong\\b"
       ],
       "examples": [
         {
@@ -36425,7 +36422,7 @@
         "Don't get me wrong"
       ],
       "validationPatterns": [
-        "(?i)\\bDon't\\s+get\\s+me\\s+wrong\\b"
+        "\\bDon't\\s+get\\s+me\\s+wrong\\b"
       ],
       "examples": [
         {
@@ -36463,7 +36460,7 @@
         "I'm supposed to"
       ],
       "validationPatterns": [
-        "(?i)\\b(?:I\\s+am|I'm|you\\s+are|you're|we\\s+are|we're|they\\s+are|they're|he\\s+is|he's|she\\s+is|she's|was|were)\\s+supposed\\s+to\\b"
+        "\\b(?:I\\s+am|I'm|you\\s+are|you're|we\\s+are|we're|they\\s+are|they're|he\\s+is|he's|she\\s+is|she's|was|were)\\s+supposed\\s+to\\b"
       ],
       "examples": [
         {
@@ -36499,7 +36496,7 @@
         "I was about to"
       ],
       "validationPatterns": [
-        "(?i)\\b(?:I|he|she|we|they|you)\\s+(?:was|were)\\s+about\\s+to\\b"
+        "\\b(?:I|he|she|we|they|you)\\s+(?:was|were)\\s+about\\s+to\\b"
       ],
       "examples": [
         {
@@ -36535,7 +36532,7 @@
         "I can't help but"
       ],
       "validationPatterns": [
-        "(?i)\\b(?:I|you|we|they|he|she)\\s+(?:can't|cannot|can\\s+not)\\s+help\\s+but\\b"
+        "\\b(?:I|you|we|they|he|she)\\s+(?:can't|cannot|can\\s+not)\\s+help\\s+but\\b"
       ],
       "examples": [
         {
@@ -36571,7 +36568,7 @@
         "I have a feeling that"
       ],
       "validationPatterns": [
-        "(?i)\\b(?:I\\s+have|I've\\s+got)\\s+a\\s+feeling\\s+that\\b"
+        "\\b(?:I\\s+have|I've\\s+got)\\s+a\\s+feeling\\s+that\\b"
       ],
       "examples": [
         {
@@ -36607,7 +36604,7 @@
         "It boils down to"
       ],
       "validationPatterns": [
-        "(?i)\\bIt\\s+boils\\s+down\\s+to\\b"
+        "\\bIt\\s+boils\\s+down\\s+to\\b"
       ],
       "examples": [
         {
@@ -36643,7 +36640,7 @@
         "The bottom line is"
       ],
       "validationPatterns": [
-        "(?i)\\bThe\\s+bottom\\s+line\\s+is\\b"
+        "\\bThe\\s+bottom\\s+line\\s+is\\b"
       ],
       "examples": [
         {
@@ -36679,7 +36676,7 @@
         "Just to be clear"
       ],
       "validationPatterns": [
-        "(?i)\\bJust\\s+to\\s+be\\s+clear\\b"
+        "\\bJust\\s+to\\s+be\\s+clear\\b"
       ],
       "examples": [
         {
@@ -36715,7 +36712,7 @@
         "I beg to differ"
       ],
       "validationPatterns": [
-        "(?i)\\bI\\s+beg\\s+to\\s+differ\\b"
+        "\\bI\\s+beg\\s+to\\s+differ\\b"
       ],
       "examples": [
         {
@@ -36752,7 +36749,7 @@
         "Not necessarily"
       ],
       "validationPatterns": [
-        "(?i)\\bnot\\s+necessarily\\b|\\bdoesn't\\s+necessarily\\b"
+        "\\bnot\\s+necessarily\\b|\\bdoesn't\\s+necessarily\\b"
       ],
       "examples": [
         {
@@ -36789,7 +36786,7 @@
         "It's worth noting that"
       ],
       "validationPatterns": [
-        "(?i)\\bIt's\\s+worth\\s+noting\\s+that\\b"
+        "\\bIt's\\s+worth\\s+noting\\s+that\\b"
       ],
       "examples": [
         {
@@ -36825,7 +36822,7 @@
         "You might want to"
       ],
       "validationPatterns": [
-        "(?i)\\b(?:you|we|they|he|she)\\s+might\\s+want\\s+to\\b"
+        "\\b(?:you|we|they|he|she)\\s+might\\s+want\\s+to\\b"
       ],
       "examples": [
         {
@@ -36862,7 +36859,7 @@
         "That doesn't add up"
       ],
       "validationPatterns": [
-        "(?i)\\bThat\\s+doesn't\\s+add\\s+up\\b"
+        "\\b(?:doesn't|doesn’t|does\\s+not)\\s+add\\s+up\\b"
       ],
       "examples": [
         {
@@ -36900,7 +36897,7 @@
         "It's up to you"
       ],
       "validationPatterns": [
-        "(?i)\\bIt's\\s+up\\s+to\\s+you\\b"
+        "\\bIt's\\s+up\\s+to\\s+you\\b"
       ],
       "examples": [
         {
@@ -36937,7 +36934,7 @@
         "Keep me posted"
       ],
       "validationPatterns": [
-        "(?i)\\bkeep\\s+(?:me|us|him|her|them)\\s+posted\\b"
+        "\\bkeep\\s+(?:me|us|him|her|them)\\s+posted\\b"
       ],
       "examples": [
         {
@@ -36974,7 +36971,7 @@
         "Keep me in the loop"
       ],
       "validationPatterns": [
-        "(?i)\\bkeep\\s+(?:me|us|him|her|them)\\s+in\\s+the\\s+loop\\b"
+        "\\bkeep\\s+(?:me|us|him|her|them)\\s+in\\s+the\\s+loop\\b"
       ],
       "examples": [
         {
@@ -37011,7 +37008,7 @@
         "Give me a heads-up"
       ],
       "validationPatterns": [
-        "(?i)\\bgive\\s+(?:me|us|him|her|them)\\s+a\\s+heads[ -]up\\b"
+        "\\bgive\\s+(?:me|us|him|her|them)\\s+a\\s+heads[ -]up\\b"
       ],
       "examples": [
         {
@@ -37048,7 +37045,7 @@
         "Touch base"
       ],
       "validationPatterns": [
-        "(?i)\\btouch(?:es|ed|ing)?\\s+base\\b"
+        "\\btouch(?:es|ed|ing)?\\s+base\\b"
       ],
       "examples": [
         {
@@ -37084,7 +37081,7 @@
         "Circle back"
       ],
       "validationPatterns": [
-        "(?i)\\bcircl(?:e|es|ed|ing)\\s+back\\b"
+        "\\bcircl(?:e|es|ed|ing)\\s+back\\b"
       ],
       "examples": [
         {
@@ -37120,7 +37117,7 @@
         "Let's call it a day"
       ],
       "validationPatterns": [
-        "(?i)\\bLet's\\s+call\\s+it\\s+a\\s+day\\b"
+        "\\bLet's\\s+call\\s+it\\s+a\\s+day\\b"
       ],
       "examples": [
         {
@@ -37157,7 +37154,7 @@
         "Let's play it by ear"
       ],
       "validationPatterns": [
-        "(?i)\\bLet's\\s+play\\s+it\\s+by\\s+ear\\b"
+        "\\bLet's\\s+play\\s+it\\s+by\\s+ear\\b"
       ],
       "examples": [
         {
@@ -37195,7 +37192,7 @@
         "On the same page"
       ],
       "validationPatterns": [
-        "(?i)\\bon\\s+the\\s+same\\s+page\\b"
+        "\\bon\\s+the\\s+same\\s+page\\b"
       ],
       "examples": [
         {
@@ -37232,7 +37229,7 @@
         "As it turns out"
       ],
       "validationPatterns": [
-        "(?i)\\bAs\\s+it\\s+turns\\s+out\\b"
+        "\\bAs\\s+it\\s+turns\\s+out\\b"
       ],
       "examples": [
         {
@@ -37268,7 +37265,7 @@
         "Before I forget"
       ],
       "validationPatterns": [
-        "(?i)\\bBefore\\s+I\\s+forget\\b"
+        "\\bBefore\\s+I\\s+forget\\b"
       ],
       "examples": [
         {
@@ -37304,7 +37301,7 @@
         "I happened to"
       ],
       "validationPatterns": [
-        "(?i)\\b(?:I|you|we|they|he|she)\\s+happened\\s+to\\b"
+        "\\b(?:I|you|we|they|he|she)\\s+happened\\s+to\\b"
       ],
       "examples": [
         {
@@ -37340,7 +37337,7 @@
         "It slipped my mind"
       ],
       "validationPatterns": [
-        "(?i)\\bIt\\s+slipped\\s+my\\s+mind\\b"
+        "\\bIt\\s+slipped\\s+my\\s+mind\\b"
       ],
       "examples": [
         {
@@ -37377,7 +37374,7 @@
         "In hindsight"
       ],
       "validationPatterns": [
-        "(?i)\\bIn\\s+hindsight\\b"
+        "\\bIn\\s+hindsight\\b"
       ],
       "examples": [
         {
@@ -37414,7 +37411,7 @@
         "Out of the blue"
       ],
       "validationPatterns": [
-        "(?i)\\bOut\\s+of\\s+the\\s+blue\\b"
+        "\\bOut\\s+of\\s+the\\s+blue\\b"
       ],
       "examples": [
         {
@@ -37450,7 +37447,7 @@
         "So far, so good"
       ],
       "validationPatterns": [
-        "(?i)\\bSo\\s+far,\\s+so\\s+good\\b"
+        "\\bSo\\s+far,\\s+so\\s+good\\b"
       ],
       "examples": [
         {
@@ -37487,7 +37484,7 @@
         "If that's the case"
       ],
       "validationPatterns": [
-        "(?i)\\bIf\\s+that's\\s+the\\s+case\\b"
+        "\\bIf\\s+that's\\s+the\\s+case\\b"
       ],
       "examples": [
         {
@@ -37523,7 +37520,7 @@
         "I'm having second thoughts"
       ],
       "validationPatterns": [
-        "(?i)\\bI'm\\s+having\\s+second\\s+thoughts\\b"
+        "\\bI'm\\s+having\\s+second\\s+thoughts\\b"
       ],
       "examples": [
         {
@@ -37560,7 +37557,7 @@
         "I can't afford to"
       ],
       "validationPatterns": [
-        "(?i)\\b(?:I|you|we|they|he|she)\\s+(?:can't|cannot|can\\s+not)\\s+afford\\s+to\\b"
+        "\\b(?:I|you|we|they|he|she)\\s+(?:can't|cannot|can\\s+not)\\s+afford\\s+to\\b"
       ],
       "examples": [
         {
@@ -37596,7 +37593,7 @@
         "There's no use in"
       ],
       "validationPatterns": [
-        "(?i)\\bThere's\\s+no\\s+use\\s+in\\b"
+        "\\bThere's\\s+no\\s+use\\s+in\\b"
       ],
       "examples": [
         {
@@ -37632,7 +37629,7 @@
         "I'm running out of"
       ],
       "validationPatterns": [
-        "(?i)\\b(?:am|is|are|'m|'re|'s)\\s+running\\s+out\\s+of\\b"
+        "\\b(?:am|is|are|'m|'re|'s)\\s+running\\s+out\\s+of\\b"
       ],
       "examples": [
         {
@@ -37668,7 +37665,7 @@
         "Easier said than done"
       ],
       "validationPatterns": [
-        "(?i)\\bEasier\\s+said\\s+than\\s+done\\b"
+        "\\bEasier\\s+said\\s+than\\s+done\\b"
       ],
       "examples": [
         {
@@ -37706,7 +37703,7 @@
         "Up in the air"
       ],
       "validationPatterns": [
-        "(?i)\\bup\\s+in\\s+the\\s+air\\b"
+        "\\bup\\s+in\\s+the\\s+air\\b"
       ],
       "examples": [
         {
@@ -37742,7 +37739,7 @@
         "It has nothing to do with"
       ],
       "validationPatterns": [
-        "(?i)\\b(?:has|have|had)\\s+nothing\\s+to\\s+do\\s+with\\b"
+        "\\b(?:has|have|had)\\s+nothing\\s+to\\s+do\\s+with\\b"
       ],
       "examples": [
         {
@@ -37779,7 +37776,7 @@
         "here s the thing"
       ],
       "validationPatterns": [
-        "(?i)\\bHere['’]s\\s+the\\s+thing\\b"
+        "\\bHere['’]s\\s+the\\s+thing\\b"
       ],
       "examples": [
         {
@@ -37817,7 +37814,7 @@
         "just so you know"
       ],
       "validationPatterns": [
-        "(?i)\\bJust\\s+so\\s+you\\s+know\\b"
+        "\\bJust\\s+so\\s+you\\s+know\\b"
       ],
       "examples": [
         {
@@ -37854,7 +37851,7 @@
         "if i remember correctly"
       ],
       "validationPatterns": [
-        "(?i)\\bIf\\s+I\\s+remember\\s+correctly\\b"
+        "\\bIf\\s+I\\s+remember\\s+correctly\\b"
       ],
       "examples": [
         {
@@ -37891,7 +37888,7 @@
         "on second thought"
       ],
       "validationPatterns": [
-        "(?i)\\bOn\\s+second\\s+thought\\b"
+        "\\bOn\\s+second\\s+thought\\b"
       ],
       "examples": [
         {
@@ -37928,8 +37925,8 @@
         "that rings a bell"
       ],
       "validationPatterns": [
-        "(?i)\\bThat\\s+rings\\s+a\\s+bell\\b",
-        "(?i)\\brings\\s+a\\s+bell\\b"
+        "\\bThat\\s+rings\\s+a\\s+bell\\b",
+        "\\brings\\s+a\\s+bell\\b"
       ],
       "examples": [
         {
@@ -37967,7 +37964,7 @@
         "it never crossed my mind"
       ],
       "validationPatterns": [
-        "(?i)\\bIt\\s+never\\s+crossed\\s+my\\s+mind\\b"
+        "\\bIt\\s+never\\s+crossed\\s+my\\s+mind\\b"
       ],
       "examples": [
         {
@@ -38005,7 +38002,7 @@
         "i wouldn t go that far"
       ],
       "validationPatterns": [
-        "(?i)\\bI\\s+wouldn['’]t\\s+go\\s+that\\s+far\\b"
+        "\\bI\\s+wouldn['’]t\\s+go\\s+that\\s+far\\b"
       ],
       "examples": [
         {
@@ -38043,7 +38040,7 @@
         "as far as i can tell"
       ],
       "validationPatterns": [
-        "(?i)\\bAs\\s+far\\s+as\\s+I\\s+can\\s+tell\\b"
+        "\\bAs\\s+far\\s+as\\s+I\\s+can\\s+tell\\b"
       ],
       "examples": [
         {
@@ -38080,7 +38077,7 @@
         "let s get back on track"
       ],
       "validationPatterns": [
-        "(?i)\\bLet['’]s\\s+get\\s+back\\s+on\\s+track\\b"
+        "\\bLet['’]s\\s+get\\s+back\\s+on\\s+track\\b"
       ],
       "examples": [
         {
@@ -38118,7 +38115,7 @@
         "to some extent"
       ],
       "validationPatterns": [
-        "(?i)\\bTo\\s+some\\s+extent\\b"
+        "\\bTo\\s+some\\s+extent\\b"
       ],
       "examples": [
         {
@@ -38155,7 +38152,7 @@
         "not to mention"
       ],
       "validationPatterns": [
-        "(?i)\\bNot\\s+to\\s+mention\\b"
+        "\\bNot\\s+to\\s+mention\\b"
       ],
       "examples": [
         {
@@ -38192,7 +38189,7 @@
         "for the most part"
       ],
       "validationPatterns": [
-        "(?i)\\bFor\\s+the\\s+most\\s+part\\b"
+        "\\bFor\\s+the\\s+most\\s+part\\b"
       ],
       "examples": [
         {
@@ -38229,7 +38226,7 @@
         "would it be possible to"
       ],
       "validationPatterns": [
-        "(?i)\\bWould\\s+it\\s+be\\s+possible\\s+to\\b"
+        "\\bWould\\s+it\\s+be\\s+possible\\s+to\\b"
       ],
       "examples": [
         {
@@ -38266,7 +38263,7 @@
         "as a rule of thumb"
       ],
       "validationPatterns": [
-        "(?i)\\bAs\\s+a\\s+rule\\s+of\\s+thumb\\b"
+        "\\bAs\\s+a\\s+rule\\s+of\\s+thumb\\b"
       ],
       "examples": [
         {
@@ -38303,7 +38300,7 @@
         "let s agree to disagree"
       ],
       "validationPatterns": [
-        "(?i)\\bLet['’]s\\s+agree\\s+to\\s+disagree\\b"
+        "\\bLet['’]s\\s+agree\\s+to\\s+disagree\\b"
       ],
       "examples": [
         {
@@ -38341,8 +38338,8 @@
         "it caught me off guard"
       ],
       "validationPatterns": [
-        "(?i)\\bIt\\s+caught\\s+me\\s+off\\s+guard\\b",
-        "(?i)\\bcaught\\s+me\\s+off\\s+guard\\b"
+        "\\bIt\\s+caught\\s+me\\s+off\\s+guard\\b",
+        "\\bcaught\\s+me\\s+off\\s+guard\\b"
       ],
       "examples": [
         {
@@ -38380,8 +38377,8 @@
         "it goes both ways"
       ],
       "validationPatterns": [
-        "(?i)\\bIt\\s+goes\\s+both\\s+ways\\b",
-        "(?i)\\bgoes\\s+both\\s+ways\\b"
+        "\\bIt\\s+goes\\s+both\\s+ways\\b",
+        "\\bgoes\\s+both\\s+ways\\b"
       ],
       "examples": [
         {
@@ -38419,7 +38416,7 @@
         "at least for now"
       ],
       "validationPatterns": [
-        "(?i)\\bAt\\s+least\\s+for\\s+now\\b"
+        "\\bAt\\s+least\\s+for\\s+now\\b"
       ],
       "examples": [
         {
@@ -38456,7 +38453,7 @@
         "it s only a matter of time"
       ],
       "validationPatterns": [
-        "(?i)\\bIt['’]s\\s+only\\s+a\\s+matter\\s+of\\s+time\\b"
+        "\\bIt['’]s\\s+only\\s+a\\s+matter\\s+of\\s+time\\b"
       ],
       "examples": [
         {
@@ -38494,7 +38491,7 @@
         "in the first place"
       ],
       "validationPatterns": [
-        "(?i)\\bIn\\s+the\\s+first\\s+place\\b"
+        "\\bIn\\s+the\\s+first\\s+place\\b"
       ],
       "examples": [
         {
@@ -38532,8 +38529,8 @@
         "it has never been easier"
       ],
       "validationPatterns": [
-        "(?i)\\b(?:it['’]?s|it has) never been easier\\b",
-        "(?i)\\b(?:has|have) never been easier\\b"
+        "\\b(?:it['’]?s|it has) never been easier\\b",
+        "\\b(?:has|have) never been easier\\b"
       ],
       "examples": [
         {
@@ -38733,7 +38730,7 @@
         "That drives me crazy"
       ],
       "validationPatterns": [
-        "\\bThat\\s+drives\\s+me\\s+crazy\\b"
+        "\\bdrives\\s+me\\s+crazy\\b"
       ],
       "examples": [
         {
@@ -38770,7 +38767,7 @@
         "That gets on my nerves"
       ],
       "validationPatterns": [
-        "\\bThat\\s+gets\\s+on\\s+my\\s+nerves\\b"
+        "\\bgets\\s+on\\s+my\\s+nerves\\b"
       ],
       "examples": [
         {
@@ -39983,7 +39980,7 @@
         "I'm just looking, thanks"
       ],
       "validationPatterns": [
-        "\\bI'm\\s+just\\s+looking\\s+thanks\\b"
+        "\\bI'm\\s+just\\s+looking,?\\s+thanks\\b"
       ],
       "examples": [
         {
@@ -40426,7 +40423,7 @@
         "I might be wrong, but"
       ],
       "validationPatterns": [
-        "\\bI\\s+might\\s+be\\s+wrong\\s+but\\b"
+        "\\bI\\s+might\\s+be\\s+wrong,?\\s+but\\b"
       ],
       "examples": [
         {
@@ -46921,339 +46918,336 @@
       "allowLanguageChunkPractice": true
     },
     {
-  "id": "ba5109f2-8d37-4f70-9fd4-6339bd42b710",
-  "intention": "Pode crer! / Concordo plenamente! / Com certeza! / Você disse tudo! / Nem me fale!",
-  "english": "You can say that again!",
-  "pattern": "You can say that again!",
-  "description": "Expressão pronta e informal usada para demonstrar forte concordância com algo que outra pessoa acabou de dizer. Apesar da tradução literal sugerir 'você pode dizer isso de novo', normalmente não é um pedido para repetir a frase. A intenção é equivalente a 'com certeza', 'você disse tudo' ou 'nem me fale'. Também pode corresponder a “pode crer” ou “concordo plenamente”, conforme o contexto.",
-  "category": "chunk",
-  "searchTerms": [
-    "pode crer",
-    "concordo plenamente",
-    "pode apostar",
-    "say that again",
-    "com certeza",
-    "você disse tudo",
-    "nem me fale",
-    "concordo totalmente",
-    "é verdade",
-    "you can say that again",
-    "strong agreement",
-    "agreement"
-  ],
-  "validationPatterns": [
-    "\\b(?:you\\s+can\\s+(?:say|says|said|saying)\\s+that\\s+again)\\b"
-  ],
-  "examples": [
-    {
-      "pt": "Concordo plenamente.",
-      "en": "You can say that again.",
-      "ptIntent": "Concordo plenamente",
-      "enIntent": "You can say that again"
+      "id": "ba5109f2-8d37-4f70-9fd4-6339bd42b710",
+      "intention": "Pode crer! / Concordo plenamente! / Com certeza! / Você disse tudo! / Nem me fale!",
+      "english": "You can say that again!",
+      "pattern": "You can say that again!",
+      "description": "Expressão pronta e informal usada para demonstrar forte concordância com algo que outra pessoa acabou de dizer. Apesar da tradução literal sugerir 'você pode dizer isso de novo', normalmente não é um pedido para repetir a frase. A intenção é equivalente a 'com certeza', 'você disse tudo' ou 'nem me fale'. Também pode corresponder a “pode crer” ou “concordo plenamente”, conforme o contexto.",
+      "category": "chunk",
+      "searchTerms": [
+        "pode crer",
+        "concordo plenamente",
+        "pode apostar",
+        "say that again",
+        "com certeza",
+        "você disse tudo",
+        "nem me fale",
+        "concordo totalmente",
+        "é verdade",
+        "you can say that again",
+        "strong agreement",
+        "agreement"
+      ],
+      "validationPatterns": [
+        "\\b(?:you\\s+can\\s+(?:say|says|said|saying)\\s+that\\s+again)\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Concordo plenamente.",
+          "en": "You can say that again.",
+          "ptIntent": "Concordo plenamente",
+          "enIntent": "You can say that again"
+        },
+        {
+          "pt": "— Esse trânsito está horrível. — Nem me fale!",
+          "en": "— This traffic is terrible. — You can say that again!",
+          "ptIntent": "Nem me fale",
+          "enIntent": "You can say that again"
+        },
+        {
+          "pt": "— Aprender inglês exige muita prática. — Você disse tudo!",
+          "en": "— Learning English takes a lot of practice. — You can say that again!",
+          "ptIntent": "Você disse tudo",
+          "enIntent": "You can say that again"
+        },
+        {
+          "pt": "— Está muito quente hoje. — Com certeza!",
+          "en": "— It's really hot today. — You can say that again!",
+          "ptIntent": "Com certeza",
+          "enIntent": "You can say that again"
+        },
+        {
+          "pt": "— Esse projeto está dando muito mais trabalho do que esperávamos. — Nem me fale!",
+          "en": "— This project is taking much more work than we expected. — You can say that again!",
+          "ptIntent": "Nem me fale",
+          "enIntent": "You can say that again"
+        },
+        {
+          "pt": "— Precisamos de férias. — Você disse tudo!",
+          "en": "— We need a vacation. — You can say that again!",
+          "ptIntent": "Você disse tudo",
+          "enIntent": "You can say that again"
+        },
+        {
+          "pt": "— Falar inglês é bem diferente de apenas estudar inglês. — Com certeza!",
+          "en": "— Speaking English is very different from just studying English. — You can say that again!",
+          "ptIntent": "Com certeza",
+          "enIntent": "You can say that again"
+        }
+      ],
+      "tags": [
+        "agreement",
+        "idiom",
+        "speaking",
+        "chunk",
+        "strong-agreement",
+        "conversation",
+        "informal",
+        "reaction"
+      ],
+      "related": [
+        "i-couldnt-have-said-it-better-myself"
+      ],
+      "englishLevel": "B1",
+      "allowLanguageChunkPractice": true
     },
     {
-      "pt": "— Esse trânsito está horrível. — Nem me fale!",
-      "en": "— This traffic is terrible. — You can say that again!",
-      "ptIntent": "Nem me fale",
-      "enIntent": "You can say that again"
+      "id": "b5c16b11-34d4-4b1d-9c27-31cbb31a2001",
+      "intention": "Não prometo nada",
+      "english": "I'm not making any promises.",
+      "pattern": "I'm not making any promises",
+      "description": "Usado para não garantir um resultado.",
+      "category": "chunk",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "não prometo nada",
+        "i'm not making any promises"
+      ],
+      "validationPatterns": [
+        "\\b(?:I['’]m|I\\s+am)\\s+not\\s+making\\s+any\\s+promises\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não prometo nada, mas vou tentar.",
+          "en": "I'm not making any promises, but I'll try.",
+          "ptIntent": "Não prometo nada",
+          "enIntent": "I'm not making any promises"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
     },
     {
-      "pt": "— Aprender inglês exige muita prática. — Você disse tudo!",
-      "en": "— Learning English takes a lot of practice. — You can say that again!",
-      "ptIntent": "Você disse tudo",
-      "enIntent": "You can say that again"
+      "id": "c2a6b782-d5e0-4a5a-972c-32b5b18a2002",
+      "intention": "Isso não é muito a minha praia",
+      "english": "That's not really my thing.",
+      "pattern": "That's not really my thing",
+      "description": "Expressa falta de interesse em algo.",
+      "category": "chunk",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "isso não é minha praia",
+        "that's not really my thing"
+      ],
+      "validationPatterns": [
+        "\\b(?:that['’]s|that\\s+is)\\s+not\\s+really\\s+my\\s+thing\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Obrigado, mas isso não é muito a minha praia.",
+          "en": "Thanks, but that's not really my thing.",
+          "ptIntent": "isso não é muito a minha praia",
+          "enIntent": "that's not really my thing"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
     },
     {
-      "pt": "— Está muito quente hoje. — Com certeza!",
-      "en": "— It's really hot today. — You can say that again!",
-      "ptIntent": "Com certeza",
-      "enIntent": "You can say that again"
+      "id": "a4d39876-2f0e-42c4-90c4-31cbb31a2003",
+      "intention": "Não leve para o lado pessoal",
+      "english": "Don't take it personally.",
+      "pattern": "Don't take it personally",
+      "description": "Pede que algo não seja interpretado como ataque pessoal.",
+      "category": "chunk",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "não leve para o lado pessoal",
+        "don't take it personally"
+      ],
+      "validationPatterns": [
+        "\\b(?:don['’]t|do\\s+not)\\s+take\\s+it\\s+personally\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não leve para o lado pessoal. É só uma sugestão.",
+          "en": "Don't take it personally. It's just a suggestion.",
+          "ptIntent": "Não leve para o lado pessoal",
+          "enIntent": "Don't take it personally"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
     },
     {
-      "pt": "— Esse projeto está dando muito mais trabalho do que esperávamos. — Nem me fale!",
-      "en": "— This project is taking much more work than we expected. — You can say that again!",
-      "ptIntent": "Nem me fale",
-      "enIntent": "You can say that again"
+      "id": "f872ab12-8b72-43a5-942e-31cbb31a2004",
+      "intention": "Ninguém sabe ao certo",
+      "english": "It's anyone's guess.",
+      "pattern": "It's anyone's guess",
+      "description": "Usado quando ninguém sabe uma resposta com certeza.",
+      "category": "chunk",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "ninguém sabe ao certo",
+        "it's anyone's guess"
+      ],
+      "validationPatterns": [
+        "\\b(?:it['’]s|it\\s+is)\\s+anyone['’]s\\s+guess\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Quem vai ganhar? Ninguém sabe ao certo.",
+          "en": "Who's going to win? It's anyone's guess.",
+          "ptIntent": "Ninguém sabe ao certo",
+          "enIntent": "It's anyone's guess"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
     },
     {
-      "pt": "— Precisamos de férias. — Você disse tudo!",
-      "en": "— We need a vacation. — You can say that again!",
-      "ptIntent": "Você disse tudo",
-      "enIntent": "You can say that again"
+      "id": "c71f9811-9232-48ad-bb19-31cbb31a2005",
+      "intention": "Isso é grego para mim",
+      "english": "It's all Greek to me.",
+      "pattern": "It's all Greek to me",
+      "description": "Algo é difícil demais para entender.",
+      "category": "chunk",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "isso é grego para mim",
+        "it's all greek to me"
+      ],
+      "validationPatterns": [
+        "\\b(?:it['’]s|it\\s+is)\\s+all\\s+Greek\\s+to\\s+me\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Desculpe, isso é grego para mim.",
+          "en": "Sorry, it's all Greek to me.",
+          "ptIntent": "isso é grego para mim",
+          "enIntent": "it's all Greek to me"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
     },
     {
-      "pt": "— Falar inglês é bem diferente de apenas estudar inglês. — Com certeza!",
-      "en": "— Speaking English is very different from just studying English. — You can say that again!",
-      "ptIntent": "Com certeza",
-      "enIntent": "You can say that again"
+      "id": "d17f9212-2e4d-438a-8c29-31cbb31a2006",
+      "intention": "Eu não teria conseguido sem sua ajuda",
+      "english": "I couldn't have done it without your help.",
+      "pattern": "I couldn't have done it without your help",
+      "description": "Agradecimento pela ajuda essencial de alguém.",
+      "category": "chunk",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "não teria conseguido sem sua ajuda",
+        "i couldn't have done it without your help"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+(?:couldn['’]t|could\\s+not)\\s+have\\s+done\\s+it\\s+without\\s+your\\s+help\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Eu não teria conseguido sem sua ajuda. Obrigado!",
+          "en": "I couldn't have done it without your help. Thank you!",
+          "ptIntent": "Eu não teria conseguido sem sua ajuda",
+          "enIntent": "I couldn't have done it without your help"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "a6f4c921-7a19-43f8-9720-31cbb31a2007",
+      "intention": "Você não pode estar falando sério",
+      "english": "You can't be serious.",
+      "pattern": "You can't be serious",
+      "description": "Expressa surpresa ou incredulidade.",
+      "category": "chunk",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "você não pode estar falando sério",
+        "you can't be serious"
+      ],
+      "validationPatterns": [
+        "\\byou\\s+(?:can['’]t|cannot|can\\s+not)\\s+be\\s+serious\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Você vai pedir demissão? Você não pode estar falando sério!",
+          "en": "You're going to quit? You can't be serious!",
+          "ptIntent": "Você não pode estar falando sério",
+          "enIntent": "You can't be serious"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "b5e98172-1149-4a79-bd83-31cbb31a2008",
+      "intention": "Tente / dê uma chance",
+      "english": "Give it a shot.",
+      "pattern": "give it a shot",
+      "description": "Expressão completa para incentivar uma tentativa; também permite gerar frases com diferentes sujeitos.",
+      "category": "chunk",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "tente",
+        "dê uma chance",
+        "give it a shot"
+      ],
+      "validationPatterns": [
+        "\\bgive\\s+it\\s+a\\s+shot\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Você nunca tentou? Dê uma chance.",
+          "en": "You've never tried it? Give it a shot.",
+          "ptIntent": "Dê uma chance",
+          "enIntent": "Give it a shot"
+        },
+        {
+          "pt": "Vou tentar.",
+          "en": "I'll give it a shot.",
+          "ptIntent": "Vou tentar",
+          "enIntent": "give it a shot"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "mother-chunk",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
     }
-  ],
-  "tags": [
-    "agreement",
-    "idiom",
-    "speaking",
-    "chunk",
-    "strong-agreement",
-    "conversation",
-    "informal",
-    "reaction"
-  ],
-  "related": [
-    "i-couldnt-have-said-it-better-myself"
-  ],
-  "englishLevel": "B1",
-  "allowLanguageChunkPractice": true
-},
-
-  {
-    "id": "b5c16b11-34d4-4b1d-9c27-31cbb31a2001",
-    "intention": "Não prometo nada",
-    "english": "I'm not making any promises.",
-    "pattern": "I'm not making any promises",
-    "description": "Usado para não garantir um resultado.",
-    "category": "chunk",
-    "englishLevel": "B1",
-    "searchTerms": [
-      "não prometo nada",
-      "i'm not making any promises"
-    ],
-    "validationPatterns": [
-      "\\b(?:I['’]m|I\\s+am)\\s+not\\s+making\\s+any\\s+promises\\b"
-    ],
-    "examples": [
-      {
-        "pt": "Não prometo nada, mas vou tentar.",
-        "en": "I'm not making any promises, but I'll try.",
-        "ptIntent": "Não prometo nada",
-        "enIntent": "I'm not making any promises"
-      }
-    ],
-    "tags": [
-      "chunk",
-      "spoken-english"
-    ],
-    "related": [],
-    "allowLanguageChunkPractice": true
-  },
-  {
-    "id": "c2a6b782-d5e0-4a5a-972c-32b5b18a2002",
-    "intention": "Isso não é muito a minha praia",
-    "english": "That's not really my thing.",
-    "pattern": "That's not really my thing",
-    "description": "Expressa falta de interesse em algo.",
-    "category": "chunk",
-    "englishLevel": "B1",
-    "searchTerms": [
-      "isso não é minha praia",
-      "that's not really my thing"
-    ],
-    "validationPatterns": [
-      "\\b(?:that['’]s|that\\s+is)\\s+not\\s+really\\s+my\\s+thing\\b"
-    ],
-    "examples": [
-      {
-        "pt": "Obrigado, mas isso não é muito a minha praia.",
-        "en": "Thanks, but that's not really my thing.",
-        "ptIntent": "isso não é muito a minha praia",
-        "enIntent": "that's not really my thing"
-      }
-    ],
-    "tags": [
-      "chunk",
-      "spoken-english"
-    ],
-    "related": [],
-    "allowLanguageChunkPractice": true
-  },
-  {
-    "id": "a4d39876-2f0e-42c4-90c4-31cbb31a2003",
-    "intention": "Não leve para o lado pessoal",
-    "english": "Don't take it personally.",
-    "pattern": "Don't take it personally",
-    "description": "Pede que algo não seja interpretado como ataque pessoal.",
-    "category": "chunk",
-    "englishLevel": "B1",
-    "searchTerms": [
-      "não leve para o lado pessoal",
-      "don't take it personally"
-    ],
-    "validationPatterns": [
-      "\\b(?:don['’]t|do\\s+not)\\s+take\\s+it\\s+personally\\b"
-    ],
-    "examples": [
-      {
-        "pt": "Não leve para o lado pessoal. É só uma sugestão.",
-        "en": "Don't take it personally. It's just a suggestion.",
-        "ptIntent": "Não leve para o lado pessoal",
-        "enIntent": "Don't take it personally"
-      }
-    ],
-    "tags": [
-      "chunk",
-      "spoken-english"
-    ],
-    "related": [],
-    "allowLanguageChunkPractice": true
-  },
-  {
-    "id": "f872ab12-8b72-43a5-942e-31cbb31a2004",
-    "intention": "Ninguém sabe ao certo",
-    "english": "It's anyone's guess.",
-    "pattern": "It's anyone's guess",
-    "description": "Usado quando ninguém sabe uma resposta com certeza.",
-    "category": "chunk",
-    "englishLevel": "B2",
-    "searchTerms": [
-      "ninguém sabe ao certo",
-      "it's anyone's guess"
-    ],
-    "validationPatterns": [
-      "\\b(?:it['’]s|it\\s+is)\\s+anyone['’]s\\s+guess\\b"
-    ],
-    "examples": [
-      {
-        "pt": "Quem vai ganhar? Ninguém sabe ao certo.",
-        "en": "Who's going to win? It's anyone's guess.",
-        "ptIntent": "Ninguém sabe ao certo",
-        "enIntent": "It's anyone's guess"
-      }
-    ],
-    "tags": [
-      "chunk",
-      "spoken-english"
-    ],
-    "related": [],
-    "allowLanguageChunkPractice": true
-  },
-  {
-    "id": "c71f9811-9232-48ad-bb19-31cbb31a2005",
-    "intention": "Isso é grego para mim",
-    "english": "It's all Greek to me.",
-    "pattern": "It's all Greek to me",
-    "description": "Algo é difícil demais para entender.",
-    "category": "chunk",
-    "englishLevel": "B1",
-    "searchTerms": [
-      "isso é grego para mim",
-      "it's all greek to me"
-    ],
-    "validationPatterns": [
-      "\\b(?:it['’]s|it\\s+is)\\s+all\\s+Greek\\s+to\\s+me\\b"
-    ],
-    "examples": [
-      {
-        "pt": "Desculpe, isso é grego para mim.",
-        "en": "Sorry, it's all Greek to me.",
-        "ptIntent": "isso é grego para mim",
-        "enIntent": "it's all Greek to me"
-      }
-    ],
-    "tags": [
-      "chunk",
-      "spoken-english"
-    ],
-    "related": [],
-    "allowLanguageChunkPractice": true
-  },
-  {
-    "id": "d17f9212-2e4d-438a-8c29-31cbb31a2006",
-    "intention": "Eu não teria conseguido sem sua ajuda",
-    "english": "I couldn't have done it without your help.",
-    "pattern": "I couldn't have done it without your help",
-    "description": "Agradecimento pela ajuda essencial de alguém.",
-    "category": "chunk",
-    "englishLevel": "B2",
-    "searchTerms": [
-      "não teria conseguido sem sua ajuda",
-      "i couldn't have done it without your help"
-    ],
-    "validationPatterns": [
-      "\\bI\\s+(?:couldn['’]t|could\\s+not)\\s+have\\s+done\\s+it\\s+without\\s+your\\s+help\\b"
-    ],
-    "examples": [
-      {
-        "pt": "Eu não teria conseguido sem sua ajuda. Obrigado!",
-        "en": "I couldn't have done it without your help. Thank you!",
-        "ptIntent": "Eu não teria conseguido sem sua ajuda",
-        "enIntent": "I couldn't have done it without your help"
-      }
-    ],
-    "tags": [
-      "chunk",
-      "spoken-english"
-    ],
-    "related": [],
-    "allowLanguageChunkPractice": true
-  },
-  {
-    "id": "a6f4c921-7a19-43f8-9720-31cbb31a2007",
-    "intention": "Você não pode estar falando sério",
-    "english": "You can't be serious.",
-    "pattern": "You can't be serious",
-    "description": "Expressa surpresa ou incredulidade.",
-    "category": "chunk",
-    "englishLevel": "B1",
-    "searchTerms": [
-      "você não pode estar falando sério",
-      "you can't be serious"
-    ],
-    "validationPatterns": [
-      "\\byou\\s+(?:can['’]t|cannot|can\\s+not)\\s+be\\s+serious\\b"
-    ],
-    "examples": [
-      {
-        "pt": "Você vai pedir demissão? Você não pode estar falando sério!",
-        "en": "You're going to quit? You can't be serious!",
-        "ptIntent": "Você não pode estar falando sério",
-        "enIntent": "You can't be serious"
-      }
-    ],
-    "tags": [
-      "chunk",
-      "spoken-english"
-    ],
-    "related": [],
-    "allowLanguageChunkPractice": true
-  },
-  {
-    "id": "b5e98172-1149-4a79-bd83-31cbb31a2008",
-    "intention": "Tente / dê uma chance",
-    "english": "Give it a shot.",
-    "pattern": "give it a shot",
-    "description": "Expressão completa para incentivar uma tentativa; também permite gerar frases com diferentes sujeitos.",
-    "category": "chunk",
-    "englishLevel": "B1",
-    "searchTerms": [
-      "tente",
-      "dê uma chance",
-      "give it a shot"
-    ],
-    "validationPatterns": [
-      "\\bgive\\s+it\\s+a\\s+shot\\b"
-    ],
-    "examples": [
-      {
-        "pt": "Você nunca tentou? Dê uma chance.",
-        "en": "You've never tried it? Give it a shot.",
-        "ptIntent": "Dê uma chance",
-        "enIntent": "Give it a shot"
-      },
-      {
-        "pt": "Vou tentar.",
-        "en": "I'll give it a shot.",
-        "ptIntent": "Vou tentar",
-        "enIntent": "give it a shot"
-      }
-    ],
-    "tags": [
-      "chunk",
-      "mother-chunk",
-      "spoken-english"
-    ],
-    "related": [],
-    "allowLanguageChunkPractice": true
-  }
-
-
   ]
 }
