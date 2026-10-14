@@ -7,7 +7,7 @@
     "targetStudent": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1105
+    "totalIntentions": 1106
   },
   "mentalMap": [
     {
@@ -48987,6 +48987,53 @@
         "spoken-english"
       ],
       "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "estou-de-queixo-caido-fe883c98-b159-483f-a810-2cb2ba6fd90d",
+      "intention": "Estou de queixo caído!",
+      "english": "Je reste bouche bée !",
+      "pattern": "Je reste bouche bée ! / Je suis bouche bée !",
+      "description": "Expressa grande surpresa ou admiração diante de algo impressionante. Em francês, « Je reste bouche bée ! » funciona como reação independente. A expressão « bouche bée » não varia conforme o gênero de quem fala.",
+      "category": "reactions",
+      "searchTerms": [
+        "rester bouche bée",
+        "être bouche bée",
+        "être époustouflé",
+        "être émerveillé",
+        "ne pas en croire ses yeux"
+      ],
+      "validationPatterns": [
+        "(?<![A-Za-zÀ-ÖØ-öø-ÿŒœŸ0-9_])Je\\s+(?:reste|suis)\\s+bouche\\s+bée(?![A-Za-zÀ-ÖØ-öø-ÿŒœŸ0-9_])"
+      ],
+      "examples": [
+        {
+          "pt": "Estou de queixo caído! O aplicativo ficou incrível.",
+          "en": "Je reste bouche bée ! L’application est magnifique.",
+          "ptIntent": "Estou de queixo caído",
+          "enIntent": "Je reste bouche bée"
+        },
+        {
+          "pt": "Estou de queixo caído com o quanto você melhorou.",
+          "en": "Je reste bouche bée devant tes progrès.",
+          "ptIntent": "Estou de queixo caído",
+          "enIntent": "Je reste bouche bée"
+        },
+        {
+          "pt": "Estou de queixo caído! Nunca vi nada parecido.",
+          "en": "Je reste bouche bée ! Je n’ai jamais rien vu de pareil.",
+          "ptIntent": "Estou de queixo caído",
+          "enIntent": "Je reste bouche bée"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "reaction",
+        "surprise",
+        "admiration"
+      ],
+      "related": [],
+      "englishLevel": "B1",
       "allowLanguageChunkPractice": true
     }
   ]
