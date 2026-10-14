@@ -47,23 +47,43 @@ export function ChunkFlashcards({
   const [copiedChunkId, setCopiedChunkId] = useState<string | null>(null);
   const [copyError, setCopyError] = useState<string | null>(null);
 
-  // Cronômetro da sessão: ocultar o tempo não interrompe a contagem.
-  // O timestamp permite recuperar o tempo correto após a aba ficar em segundo plano.
+  // Cronômetro: tempo de estudo efetivo, descontando todas as pausas.
+  // Timestamps evitam perda de precisão quando a aba fica em segundo plano.
   const [studyStartedAt, setStudyStartedAt] = useState<number | null>(null);
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
   const [isStudyTimeVisible, setIsStudyTimeVisible] = useState(false);
+  const [pausedAt, setPausedAt] = useState<number | null>(null);
+  const [totalPausedMs, setTotalPausedMs] = useState(0);
 
   useEffect(() => {
     if (studyStartedAt === null) return;
 
     const refreshElapsed = () => {
-      setElapsedSeconds(Math.max(0, Math.floor((Date.now() - studyStartedAt) / 1000)));
+      // Quando pausado, usa o instante da pausa para congelar o contador.
+      const end = pausedAt ?? Date.now();
+      setElapsedSeconds(Math.max(0, Math.floor((end - studyStartedAt - totalPausedMs) / 1000)));
     };
 
     refreshElapsed();
+    if (pausedAt !== null) return; // Nenhum intervalo rodando durante a pausa.
+
     const intervalId = window.setInterval(refreshElapsed, 1000);
     return () => window.clearInterval(intervalId);
-  }, [studyStartedAt]);
+  }, [studyStartedAt, pausedAt, totalPausedMs]);
+
+  function toggleStudyPause() {
+    if (studyStartedAt === null) return;
+
+    if (pausedAt === null) {
+      const now = Date.now();
+      setElapsedSeconds(Math.max(0, Math.floor((now - studyStartedAt - totalPausedMs) / 1000)));
+      setPausedAt(now);
+    } else {
+      // A pausa não entra na duração total, mesmo após várias horas.
+      setTotalPausedMs((previous) => previous + (Date.now() - pausedAt));
+      setPausedAt(null);
+    }
+  }
 
   useEffect(() => {
     setDrawnIds([]);
@@ -74,6 +94,8 @@ export function ChunkFlashcards({
     setStudyStartedAt(null);
     setElapsedSeconds(0);
     setIsStudyTimeVisible(false);
+    setPausedAt(null);
+    setTotalPausedMs(0);
   }, [chunks]);
 
   const currentChunk = chunks.find((item) => item.id === currentId) ?? null;
@@ -229,8 +251,55 @@ export function ChunkFlashcards({
               </svg>
             )}
           </button>
+          <button
+            type="button"
+            className="chunk-flashcards-timer-toggle"
+            onClick={toggleStudyPause}
+            disabled={studyStartedAt === null}
+            aria-label={pausedAt !== null ? "Continuar tempo de estudo" : "Pausar tempo de estudo"}
+            aria-pressed={pausedAt !== null}
+            title={studyStartedAt === null ? "Comece a estudar para habilitar a pausa" : pausedAt !== null ? "Continuar cronômetro" : "Pausar cronômetro"}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "0.4rem",
+              padding: "0.5rem 0.7rem",
+              minHeight: "2.6rem",
+              cursor: studyStartedAt === null ? "not-allowed" : "pointer",
+              opacity: studyStartedAt === null ? 0.5 : 1,
+              fontWeight: 700,
+              whiteSpace: "nowrap"
+            }}
+          >
+            <span aria-hidden="true">{pausedAt !== null ? "▶" : "⏸"}</span>
+          </button>
         </div>
       </div>
+
+      {pausedAt !== null && (
+        <div
+          role="status"
+          aria-live="polite"
+          style={{
+            margin: "0.75rem 0 1rem",
+            padding: "1rem 1.25rem",
+            borderRadius: "12px",
+            backgroundColor: "#7c2d12",
+            color: "#ffffff",
+            border: "2px solid #fbbf24",
+            textAlign: "center",
+            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.18)"
+          }}
+        >
+          <strong style={{ display: "block", fontSize: "1.2rem", letterSpacing: "0.02em" }}>
+            ⏸ ESTUDO PAUSADO
+          </strong>
+          <span style={{ display: "block", marginTop: "0.3rem", fontWeight: 600 }}>
+            Cronômetro parado em {formatStudyTime(elapsedSeconds)}. Clique em ▶ Continuar para retomar.
+          </span>
+        </div>
+      )}
 
       {total === 0 ? (
         <div className="chunk-flashcards-empty" role="status">
