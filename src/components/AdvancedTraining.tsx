@@ -1,11 +1,12 @@
 import { isAuthorMode } from "../utils/authorMode";
+import { LANGUAGES, type StudentLanguage } from "../config/languages";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import {
   evaluateTrainingWithAI,
   type AIEvaluationResult
 } from "../services/aiEvaluationService";
-import { translateEnglishToPortuguese } from "../services/googleTranslateService";
+import { translateStudentLanguageToPortuguese } from "../services/googleTranslateService";
 import { validateIntention } from "../services/intentionValidator";
 
 const AI_ENABLED = import.meta.env.VITE_AI_ENABLED === "true";
@@ -96,6 +97,7 @@ function renderHighlightedText(
 
 interface AdvancedTrainingProps {
   intention: MentalIntention;
+  language: StudentLanguage;
   onBack: () => void;
 }
 
@@ -226,8 +228,10 @@ function renderIntentionFeedback(validation: ReturnType<typeof validateIntention
 
 export function AdvancedTraining({
   intention,
+  language,
   onBack
 }: AdvancedTrainingProps) {
+  const languageName = LANGUAGES[language].name.toLowerCase();
   const [verbs, setVerbs] = useState<VerbItem[]>([]);
   const [nouns, setNouns] = useState<NounItem[]>([]);
   const [adjectives, setAdjectives] = useState<AdjectiveItem[]>([]);
@@ -435,7 +439,7 @@ export function AdvancedTraining({
     setDictationTarget(target);
 
     const recognition = new SpeechRecognitionApi();
-    recognition.lang = "en-US";
+    recognition.lang = language;
     recognition.continuous = true;
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
@@ -656,7 +660,7 @@ export function AdvancedTraining({
 
     const googleTranslateUrl = new URL("https://translate.google.com/");
     googleTranslateUrl.searchParams.set("hl", "pt-BR");
-    googleTranslateUrl.searchParams.set("sl", "en");
+    googleTranslateUrl.searchParams.set("sl", language.split("-")[0]);
     googleTranslateUrl.searchParams.set("tl", "pt");
     googleTranslateUrl.searchParams.set("text", englishText);
     googleTranslateUrl.searchParams.set("op", "translate");
@@ -674,7 +678,7 @@ export function AdvancedTraining({
 
     const googleTranslateUrl = new URL("https://translate.google.com/");
     googleTranslateUrl.searchParams.set("hl", "pt-BR");
-    googleTranslateUrl.searchParams.set("sl", "en");
+    googleTranslateUrl.searchParams.set("sl", language.split("-")[0]);
     googleTranslateUrl.searchParams.set("tl", "pt");
     googleTranslateUrl.searchParams.set("text", englishText);
     googleTranslateUrl.searchParams.set("op", "translate");
@@ -767,6 +771,7 @@ export function AdvancedTraining({
 
       const result = await evaluateTrainingWithAI({
         mode: "advanced",
+        language,
         intention,
         studentText,
         vocabulary: {
@@ -807,7 +812,7 @@ export function AdvancedTraining({
     setGoogleTranslation(null);
 
     try {
-      const result = await translateEnglishToPortuguese(combinedSentence);
+      const result = await translateStudentLanguageToPortuguese(combinedSentence, language);
       setGoogleTranslation(result.translatedText);
     } catch (err) {
       setTranslationError(
@@ -824,7 +829,7 @@ export function AdvancedTraining({
     const englishText = combinedSentence.trim();
 
     if (!englishText) {
-      setSpeechError("Não há uma frase em inglês para reproduzir.");
+      setSpeechError(`Não há uma frase em ${languageName} para reproduzir.`);
       return;
     }
 
@@ -842,14 +847,16 @@ export function AdvancedTraining({
     const utterance = new SpeechSynthesisUtterance(englishText);
     const voices = window.speechSynthesis.getVoices();
     const americanVoice = voices.find(
-      (voice) => voice.lang.toLowerCase() === "en-us"
+      (voice) => voice.lang.toLowerCase() === language.toLowerCase()
+    ) ?? voices.find(
+      (voice) => voice.lang.toLowerCase().split("-")[0] === language.split("-")[0]
     );
 
     if (americanVoice) {
       utterance.voice = americanVoice;
     }
 
-    utterance.lang = "en-US";
+    utterance.lang = language;
     utterance.rate = 0.9;
     utterance.pitch = 1;
 
@@ -863,7 +870,7 @@ export function AdvancedTraining({
 
     utterance.onerror = () => {
       setSpeaking(false);
-      setSpeechError("Não foi possível reproduzir a frase em inglês.");
+      setSpeechError(`Não foi possível reproduzir a frase em ${languageName}.`);
     };
 
     window.speechSynthesis.speak(utterance);
@@ -910,7 +917,7 @@ export function AdvancedTraining({
     const englishText = text.trim();
 
     if (!englishText) {
-      setSpeechError("Não há uma frase em inglês para reproduzir.");
+      setSpeechError(`Não há uma frase em ${languageName} para reproduzir.`);
       return;
     }
 
@@ -929,14 +936,16 @@ export function AdvancedTraining({
     const utterance = new SpeechSynthesisUtterance(englishText);
     const voices = window.speechSynthesis.getVoices();
     const americanVoice = voices.find(
-      (voice) => voice.lang.toLowerCase() === "en-us"
+      (voice) => voice.lang.toLowerCase() === language.toLowerCase()
+    ) ?? voices.find(
+      (voice) => voice.lang.toLowerCase().split("-")[0] === language.split("-")[0]
     );
 
     if (americanVoice) {
       utterance.voice = americanVoice;
     }
 
-    utterance.lang = "en-US";
+    utterance.lang = language;
     utterance.rate = 0.9;
     utterance.pitch = 1;
 
@@ -951,7 +960,7 @@ export function AdvancedTraining({
 
     utterance.onerror = () => {
       setEvaluationSpeaking(null);
-      setSpeechError("Não foi possível reproduzir a frase em inglês.");
+      setSpeechError(`Não foi possível reproduzir a frase em ${languageName}.`);
     };
 
     window.speechSynthesis.speak(utterance);
@@ -982,7 +991,7 @@ export function AdvancedTraining({
       <div className="training-page-header">
         <p className="eyebrow">Treino avançado</p>
         <h1>{intention.intention}</h1>
-        <p className="detail-english">{intention.english}</p>
+        <p className="detail-english">{intention.targetIntention ?? intention.english}</p>
 
         {intention.examples && intention.examples.length > 0 && (
           <section className="training-intention-example">
@@ -1293,7 +1302,7 @@ export function AdvancedTraining({
               <textarea
                 id="advanced-sentence-one"
                 rows={4}
-                placeholder="Crie a primeira frase em inglês..."
+                placeholder={`Crie a primeira frase em ${languageName}...`}
                 value={sentenceOne}
                 onChange={(event) => {
                   setSentenceOne(event.target.value);
@@ -1471,7 +1480,7 @@ export function AdvancedTraining({
               <textarea
                 id="advanced-sentence-two"
                 rows={4}
-                placeholder="Crie a segunda frase em inglês..."
+                placeholder={`Crie a segunda frase em ${languageName}...`}
                 value={sentenceTwo}
                 onChange={(event) => {
                   setSentenceTwo(event.target.value);
@@ -1805,7 +1814,7 @@ export function AdvancedTraining({
                   onClick={handleSpeakEnglish}
                   disabled={speaking || !combinedSentence.trim()}
                 >
-                  {speaking ? "🔊 Reproduzindo..." : "🔊 Ouvir inglês"}
+                  {speaking ? "🔊 Reproduzindo..." : `🔊 Ouvir ${languageName}`}
                 </button>
               </div>
             </>
@@ -2339,7 +2348,7 @@ export function AdvancedTraining({
         <header className="worksheet-top">
           <p className="worksheet-eyebrow">BRAZILIAN ENGLISH JOURNEY · TREINO AVANÇADO</p>
           <h1 className="worksheet-intention">{intention.intention}</h1>
-          <p className="worksheet-english">{intention.english}</p>
+          <p className="worksheet-english">{intention.targetIntention ?? intention.english}</p>
         </header>
 
         {intention.examples && intention.examples.length > 0 && (

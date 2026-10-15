@@ -1,7 +1,7 @@
 import { ControlIcon } from "./ControlIcon";
 import { useEffect, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
-import type { StudentLanguage } from "../config/languages";
+import type { SourceLanguage, StudentLanguage } from "../config/languages";
 import { isMobileDevice } from "../utils/mobileDevice";
 import { repetitionText, WalkingAudio } from "../utils/walkingAudio";
 import type { ChunkLevel } from "../utils/chunkEligibility";
@@ -10,6 +10,7 @@ import { ChunkLevelSelect } from "./ChunkLevelSelect";
 interface Props {
   chunk: MentalIntention | null;
   language: StudentLanguage;
+  sourceLanguage: SourceLanguage;
   level: ChunkLevel;
   onLevelChange: (level: ChunkLevel) => void;
   position: number;
@@ -21,7 +22,7 @@ interface Props {
   onStop: () => void;
 }
 
-export function WalkingMode({ chunk, language, level, onLevelChange, position, total, round, canPrevious, onPrevious, onNext, onStop }: Props) {
+export function WalkingMode({ chunk, language, sourceLanguage, level, onLevelChange, position, total, round, canPrevious, onPrevious, onNext, onStop }: Props) {
   const [paused, setPaused] = useState(false);
   const [repetitions, setRepetitions] = useState(5);
   const [pause, setPause] = useState(3);
@@ -74,7 +75,7 @@ export function WalkingMode({ chunk, language, level, onLevelChange, position, t
       setIndex(v => v + 1);
     };
     if (phase.current === "pause") audio.current.wait(pause * 1000, done);
-    else audio.current.play(repetitionText(chunk.english.trim(), language, index, repetitions),
+    else audio.current.play(repetitionText((chunk.targetIntention ?? chunk.english).trim(), language, index, repetitions),
       language, rate, pause * 1000,
       () => { phase.current = "pause"; setSpoken(index + 1); }, done,
       () => { setError("Não foi possível reproduzir o áudio. Toque em Continuar para tentar novamente."); setPaused(true); });
@@ -146,8 +147,8 @@ export function WalkingMode({ chunk, language, level, onLevelChange, position, t
     <p>Tempo de estudo <strong>{time}</strong> · Rodada {round}</p>
     <p role="status" aria-label="Posição do chunk na rodada">{position}/{total}</p>
     {chunk ? <article className="chunk-flashcards-card">
-      <p>{language}</p><h3 lang={language}>{chunk.english}</h3>
-      <p lang="pt-BR">{chunk.intention}</p>
+      <p>{language}</p><h3 lang={language}>{chunk.targetIntention ?? chunk.english}</h3>
+      <p lang={sourceLanguage}>{chunk.intention}</p>
     </article> : <p role="status">{level === "all" ? "Nenhum chunk disponível." : `Nenhum chunk disponível para o nível ${level}.`} Escolha outro nível nas configurações.</p>}
     <p role="status">{paused ? "Pausado" : !chunk ? "Aguardando seleção de nível" : index >= repetitions ? "Aguardando próximo chunk" : "Ouça e repita"} · Repetições: {spoken}/{repetitions}</p>
     <progress aria-label="Repetições concluídas" value={spoken} max={repetitions} />

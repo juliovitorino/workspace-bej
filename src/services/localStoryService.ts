@@ -49,6 +49,7 @@ const libraries: Record<string, LocalStoryLibrary> = {
 };
 
 const storyLanguageFields = {
+  "pt-BR": { title: "titlePt", paragraph: "pt", intention: "ptIntent" },
   "en-US": { title: "titleEn", paragraph: "en", intention: "enIntent" },
   "es-ES": { title: "titleEs", paragraph: "es", intention: "esIntent" },
   "fr-FR": { title: "titleFr", paragraph: "fr", intention: "frIntent" },

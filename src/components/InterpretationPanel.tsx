@@ -138,7 +138,7 @@ export function InterpretationPanel({
 }: InterpretationPanelProps) {
   const [authorMode, setAuthorMode] = useState(isAuthorMode);
   const aiEnabled = language === "en-US" && import.meta.env.VITE_AI_ENABLED === "true";
-  const languageName = { "en-US": "inglês", "es-ES": "espanhol", "fr-FR": "francês" }[language];
+  const languageName = { "pt-BR": "português", "en-US": "inglês", "es-ES": "espanhol", "fr-FR": "francês" }[language];
   const generationController = useRef<AbortController | null>(null);
   const [englishLevel, setEnglishLevel] =
     useState<EnglishLevel>("B1");

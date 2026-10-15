@@ -1,4 +1,4 @@
-import { LANGUAGES, type StudentLanguage } from "../config/languages";
+import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import type { SpeakingGameForm } from "../config/speakingGameForms";
 import type { SpeakingVerb, GameAdjective, GameNoun } from "../types/englishVerb";
@@ -52,6 +52,7 @@ function drawSentenceMode(): SentenceMode {
 
 interface SpeakingGamePlayStepProps {
   language: StudentLanguage;
+  sourceLanguage: SourceLanguage;
   verb: SpeakingVerb;
   vocabulary: SpeakingVocabulary;
   loading?: boolean;
@@ -69,6 +70,7 @@ interface SpeakingGamePlayStepProps {
 
 export function SpeakingGamePlayStep({
   language,
+  sourceLanguage,
   verb,
   vocabulary,
   loading = false,
@@ -117,7 +119,7 @@ export function SpeakingGamePlayStep({
 
     async function loadChunks() {
       try {
-        const result = await loadHashmap(language);
+        const result = await loadHashmap(language, sourceLanguage);
         if (!active) return;
         setChunks(
           result.data.mentalMap.filter(
@@ -136,7 +138,7 @@ export function SpeakingGamePlayStep({
 
     void loadChunks();
     return () => { active = false; };
-  }, [language]);
+  }, [language, sourceLanguage]);
 
   // Novo chunk quando a forma verbal ou o verbo muda, e no carregamento inicial.
   useEffect(() => {
@@ -184,7 +186,7 @@ export function SpeakingGamePlayStep({
 
   function openGoogleTranslate() {
     window.open(
-      `https://translate.google.com/?hl=pt-BR&sl=${language.slice(0, 2)}&tl=pt&op=translate`,
+      `https://translate.google.com/?hl=${sourceLanguage}&sl=${language.slice(0, 2)}&tl=${sourceLanguage.slice(0, 2)}&op=translate`,
       "_blank",
       "noopener,noreferrer"
     );
@@ -242,7 +244,7 @@ export function SpeakingGamePlayStep({
       {selectedChunk && (
         <div style={styles.chunkCard} aria-label="Chunk aleatório do Mental Hashmap">
           <span style={styles.vocabularyLabel}>🃏 Chunk / intenção aleatória</span>
-          <strong style={styles.chunkEnglish}>{selectedChunk.english}</strong>
+          <strong style={styles.chunkEnglish}>{selectedChunk.targetIntention ?? selectedChunk.english}</strong>
           <span style={styles.chunkPortuguese}>{selectedChunk.intention}</span>
         </div>
       )}
@@ -350,10 +352,10 @@ export function SpeakingGamePlayStep({
           type="button"
           onClick={openGoogleTranslate}
           style={styles.googleTranslateButton}
-          title={`Abrir Google Tradutor: ${LANGUAGES[language].name} para português`}
-          aria-label={`Abrir Google Tradutor: ${LANGUAGES[language].name} para português`}
+          title={`Abrir Google Tradutor: ${LANGUAGES[language].name} para ${LANGUAGES[sourceLanguage].name}`}
+          aria-label={`Abrir Google Tradutor: ${LANGUAGES[language].name} para ${LANGUAGES[sourceLanguage].name}`}
         >
-          <span aria-hidden="true">{LANGUAGES[language].flag} 🇧🇷</span>
+          <span aria-hidden="true">{LANGUAGES[language].flag} {LANGUAGES[sourceLanguage].flag}</span>
           <span>Abrir Google Tradutor</span>
         </button>
       )}

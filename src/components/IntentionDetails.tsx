@@ -1,34 +1,34 @@
-import { LANGUAGES, type StudentLanguage } from "../config/languages";
+import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
 import { isAuthorMode } from "../utils/authorMode";
 import { useEffect, useRef, useState } from "react";
-import type { MentalIntention } from "../types/hashmap";
+import type { Example, MentalIntention } from "../types/hashmap";
 import { ConnectedSpeechButton } from "./ConnectedSpeechStudio";
 
 
-function renderHighlightedText(
-  text: string,
-  highlight?: string
-) {
-  if (!highlight) {
-    return text;
-  }
+/** Campos de destino do contrato 4.0; pt/ptIntent vêm da associação por UUID no serviço. */
+function targetSentence(example: Example): string {
+  return example.exampleItem || example.en;
+}
 
-  const index = text.indexOf(highlight);
+function targetIntent(example: Example): string | undefined {
+  return example.intent || example.enIntent;
+}
 
-  if (index === -1) {
-    return text;
-  }
+function renderHighlightedText(text: string, highlight?: string) {
+  const phrase = highlight?.trim();
+  if (!phrase) return text;
 
-  const before = text.slice(0, index);
-  const after = text.slice(index + highlight.length);
+  // Preserva a capitalização original da frase e evita falhas por diferença de caixa.
+  const index = text.toLocaleLowerCase().indexOf(phrase.toLocaleLowerCase());
+  if (index < 0) return text;
 
   return (
     <>
-      {before}
+      {text.slice(0, index)}
       <strong className="intention-highlight">
-        {highlight}
+        {text.slice(index, index + phrase.length)}
       </strong>
-      {after}
+      {text.slice(index + phrase.length)}
     </>
   );
 }
@@ -50,6 +50,7 @@ function getYoutubeUrl(value?: string): string | null {
 
 interface IntentionDetailsProps {
   language: StudentLanguage;
+  sourceLanguage: SourceLanguage;
   item: MentalIntention | null;
   allItems: MentalIntention[];
   onClose: () => void;
@@ -61,6 +62,7 @@ interface IntentionDetailsProps {
 
 export function IntentionDetails({
   language,
+  sourceLanguage,
   item,
   allItems,
   onClose,
@@ -310,7 +312,7 @@ export function IntentionDetails({
     const content = section === "pattern"
       ? item.pattern ?? ""
       : (item.examples ?? [])
-          .map((example) => `${example.pt}\r\n${example.en}`)
+          .map((example) => `${example.pt}\r\n${targetSentence(example)}`)
           .join("\r\n\r\n");
 
     if (!content.trim()) return;
@@ -350,18 +352,18 @@ export function IntentionDetails({
   }
 
   async function handleCopyExample(text: string, index: number) {
-    const englishText = text.trim();
+    const targetText = text.trim();
 
-    if (!englishText) {
+    if (!targetText) {
       return;
     }
 
     try {
       if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(englishText);
+        await navigator.clipboard.writeText(targetText);
       } else {
         const textarea = document.createElement("textarea");
-        textarea.value = englishText;
+        textarea.value = targetText;
         textarea.setAttribute("readonly", "");
         textarea.style.position = "fixed";
         textarea.style.opacity = "0";
@@ -390,13 +392,13 @@ export function IntentionDetails({
   }
 
   async function handleCopyHqPrompt(
-    englishText: string,
-    englishIntention: string | undefined,
+    sentenceText: string,
+    sentenceIntention: string | undefined,
     index: number
   ) {
     if (!isAuthorMode()) return;
-    const sentence = englishText.trim();
-    const intention = (englishIntention ?? item?.english ?? "").trim();
+    const sentence = sentenceText.trim();
+    const intention = (sentenceIntention ?? item?.english ?? "").trim();
 
     if (!sentence || !intention) {
       return;
@@ -540,7 +542,7 @@ Mandatório:
 
     const subtitle = doc.createElement("div");
     subtitle.className = "subtitle";
-    subtitle.textContent = item.english;
+    subtitle.textContent = item.structure || item.pattern || item.english;
     doc.body.appendChild(subtitle);
 
     function appendHighlightedText(element: HTMLElement, value: string, highlight?: string) {
@@ -571,7 +573,7 @@ Mandatório:
 
       const en = doc.createElement("p");
       en.className = "en";
-      appendHighlightedText(en, example.en, example.enIntent);
+      appendHighlightedText(en, targetSentence(example), targetIntent(example));
       wrapper.appendChild(en);
       doc.body.appendChild(wrapper);
     });
@@ -817,6 +819,9 @@ Mandatório:
 
   if (!item) return null;
 
+  const targetLanguageName = LANGUAGES[language].name;
+  const sourceLanguageName = LANGUAGES[sourceLanguage].name;
+  const targetLevel = item.level ?? item.englishLevel;
   const youtubeVideoUrl = getYoutubeUrl(item.youtubeVideo);
   const youtubeShortUrl = getYoutubeUrl(item.youtubeShort);
 
@@ -845,9 +850,9 @@ Mandatório:
 
         <p className="eyebrow">Intenção Mental</p>
         <h2>{item.intention}</h2>
-        <p className="detail-english">{item.english}</p>
+        <p className="detail-english" lang={language}>{item.targetIntention ?? item.english}</p>
 
-        {(item.englishLevel || item.category || youtubeVideoUrl || youtubeShortUrl || (isAuthorMode() && item.allowLanguageChunkPractice === true)) && (
+        {(targetLevel || item.category || youtubeVideoUrl || youtubeShortUrl || (isAuthorMode() && item.allowLanguageChunkPractice === true)) && (
           <div
             className="detail-level"
             style={{
@@ -857,9 +862,9 @@ Mandatório:
               flexWrap: "wrap"
             }}
           >
-            {item.englishLevel && (
+            {targetLevel && (
               <span className="pill english-level-pill">
-                Nível {item.englishLevel}
+                Nível {targetLevel}
               </span>
             )}
 
@@ -953,10 +958,10 @@ Mandatório:
             <span aria-hidden="true">🖨️</span>
             <span>Imprimir</span>
           </button>
-          <ConnectedSpeechButton
+          {language === "en-US" && <ConnectedSpeechButton
             title={`Intenção: ${item.intention}`}
-            blocks={(item.examples ?? []).map((example) => ({ original: example.en, portuguese: example.pt }))}
-          />
+            blocks={(item.examples ?? []).map((example) => ({ original: targetSentence(example), portuguese: example.pt }))}
+          />}
           {isAuthorMode() && (
             <button
               type="button"
@@ -1051,8 +1056,8 @@ Mandatório:
                 type="button"
                 className="secondary-button copy-section-button"
                 onClick={() => void handleCopySection("examples")}
-                title={copiedSection === "examples" ? "Copiado!" : "Copiar exemplos em português e inglês"}
-                aria-label={copiedSection === "examples" ? "exemplos em português e inglês copiado" : "Copiar exemplos em português e inglês"}
+                title={copiedSection === "examples" ? "Copiado!" : `Copiar exemplos em ${sourceLanguageName.toLowerCase()} e ${targetLanguageName.toLowerCase()}`}
+                aria-label={copiedSection === "examples" ? "Exemplos copiados" : `Copiar exemplos em ${sourceLanguageName.toLowerCase()} e ${targetLanguageName.toLowerCase()}`}
                 style={{
                   width: "2.25rem",
                   minWidth: "2.25rem",
@@ -1088,8 +1093,8 @@ Mandatório:
                 type="button"
                 className="secondary-button copy-section-button"
                 onClick={handlePrintExamples}
-                title="Imprimir exemplos em português e inglês"
-                aria-label="Imprimir exemplos em português e inglês"
+                title={`Imprimir exemplos em ${sourceLanguageName.toLowerCase()} e ${targetLanguageName.toLowerCase()}`}
+                aria-label={`Imprimir exemplos em ${sourceLanguageName.toLowerCase()} e ${targetLanguageName.toLowerCase()}`}
                 style={{
                   width: "2.25rem",
                   minWidth: "2.25rem",
@@ -1107,7 +1112,7 @@ Mandatório:
             </div>
             <div className="examples">
               {item.examples.map((example, index) => (
-                <div className="example" key={`${item.id}-${index}`}>
+                <div className="example" key={example.id}>
                   <p>
                     {renderHighlightedText(
                       example.pt,
@@ -1131,8 +1136,8 @@ Mandatório:
                       }}
                     >
                       {renderHighlightedText(
-                        example.en,
-                        example.enIntent
+                        targetSentence(example),
+                        targetIntent(example)
                       )}
                     </p>
 
@@ -1149,7 +1154,7 @@ Mandatório:
                       <button
                         type="button"
                         className="secondary-button"
-                        onClick={() => handleSpeakExample(example.en, index)}
+                        onClick={() => handleSpeakExample(targetSentence(example), index)}
                         disabled={speakingExampleIndex === index}
                         title={`Ouvir este exemplo em ${LANGUAGES[language].name.toLowerCase()}`}
                         aria-label={`Ouvir exemplo ${index + 1} em ${LANGUAGES[language].name.toLowerCase()}`}
@@ -1168,25 +1173,25 @@ Mandatório:
                         <span aria-hidden="true">🔊</span>
                       </button>
 
-                      <ConnectedSpeechButton
+                      {language === "en-US" && <ConnectedSpeechButton
                         title={`${item.intention} — Exemplo ${index + 1}`}
-                        blocks={[{ original: example.en, portuguese: example.pt }]}
+                        blocks={[{ original: targetSentence(example), portuguese: example.pt }]}
                         compact
-                      />
+                      />}
 
                       <button
                         type="button"
                         className="secondary-button"
-                        onClick={() => void handleCopyExample(example.en, index)}
+                        onClick={() => void handleCopyExample(targetSentence(example), index)}
                         title={
                           copiedExampleIndex === index
                             ? "Frase copiada"
-                            : "Copiar frase em inglês"
+                            : `Copiar frase em ${targetLanguageName.toLowerCase()}`
                         }
                         aria-label={
                           copiedExampleIndex === index
                             ? `Exemplo ${index + 1} copiado`
-                            : `Copiar exemplo ${index + 1} em inglês`
+                            : `Copiar exemplo ${index + 1} em ${targetLanguageName.toLowerCase()}`
                         }
                         style={{
                           width: "2.5rem",
@@ -1231,8 +1236,8 @@ Mandatório:
                         className="secondary-button"
                         onClick={() =>
                           void handleCopyHqPrompt(
-                            example.en,
-                            example.enIntent,
+                            targetSentence(example),
+                            targetIntent(example),
                             index
                           )
                         }
@@ -1353,7 +1358,7 @@ Mandatório:
                   onClick={() => onSelectRelated(related)}
                 >
                   {related.intention}
-                  <span>{related.english}</span>
+                  <span>{related.targetIntention ?? related.english}</span>
                 </button>
               ))}
             </div>

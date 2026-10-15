@@ -1,10 +1,11 @@
 import { isAuthorMode } from "../utils/authorMode";
+import type { StudentLanguage } from "../config/languages";
 export interface GoogleTranslationResult {
   translatedText: string;
   detectedSourceLanguage?: string;
 }
 
-export type GoogleTranslateLanguage = "pt" | "en";
+export type GoogleTranslateLanguage = "pt" | "en" | "es" | "fr";
 
 interface GoogleTranslateApiResponse {
   data?: {
@@ -106,4 +107,12 @@ export function translateEnglishToPortuguese(
   text: string
 ): Promise<GoogleTranslationResult> {
   return translateText(text, "en", "pt");
+}
+
+/** Tradução da língua estudada para português; mantém a API antiga intacta. */
+export function translateStudentLanguageToPortuguese(
+  text: string, language: StudentLanguage
+): Promise<GoogleTranslationResult> {
+  const source = language.split("-")[0] as GoogleTranslateLanguage;
+  return translateText(text, source, "pt");
 }

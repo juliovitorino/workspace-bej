@@ -456,7 +456,7 @@ export function ExercisePanel({
                       <h2>{intention.intention}</h2>
 
                       <p className="english">
-                        {intention.english}
+                        {intention.targetIntention ?? intention.english}
                       </p>
 
                       {intention.pattern && (

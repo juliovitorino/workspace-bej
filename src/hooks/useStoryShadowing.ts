@@ -5,7 +5,7 @@ import { WalkingAudio } from "../utils/walkingAudio";
 import { practiceSteps, responsePause, sentenceSegments, type ShadowingSettings } from "../utils/storyShadowing";
 
 const repeatPrompts: Record<StudentLanguage, string> = {
-  "en-US": "Repeat after me", "fr-FR": "Répétez après moi", "es-ES": "Repite después de mí"
+  "pt-BR": "Repita depois de mim", "en-US": "Repeat after me", "fr-FR": "Répétez après moi", "es-ES": "Repite después de mí"
 };
 export function useStoryShadowing(story: LocalStory, language: StudentLanguage, settings: ShadowingSettings, selected: number) {
   const audio = useRef(new WalkingAudio());

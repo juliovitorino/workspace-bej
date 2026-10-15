@@ -1,11 +1,12 @@
 import { isAuthorMode } from "../utils/authorMode";
+import { LANGUAGES, type StudentLanguage } from "../config/languages";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import {
   evaluateTrainingWithAI,
   type AIEvaluationResult
 } from "../services/aiEvaluationService";
-import { translateEnglishToPortuguese } from "../services/googleTranslateService";
+import { translateStudentLanguageToPortuguese } from "../services/googleTranslateService";
 import { validateIntention } from "../services/intentionValidator";
 
 const AI_ENABLED = import.meta.env.VITE_AI_ENABLED === "true";
@@ -96,13 +97,16 @@ function renderHighlightedText(
 
 interface ReviewTrainingProps {
   intention: MentalIntention;
+  language: StudentLanguage;
   onBack: () => void;
 }
 
 export function ReviewTraining({
   intention,
+  language,
   onBack
 }: ReviewTrainingProps) {
+  const languageName = LANGUAGES[language].name.toLowerCase();
   const [studentText, setStudentText] = useState("");
   const intentionValidation = useMemo(
     () => validateIntention(studentText, intention),
@@ -173,7 +177,7 @@ export function ReviewTraining({
     setDictationError(null);
 
     const recognition = new SpeechRecognitionApi();
-    recognition.lang = "en-US";
+    recognition.lang = language;
     recognition.continuous = true;
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
@@ -328,7 +332,7 @@ export function ReviewTraining({
 
     const googleTranslateUrl = new URL("https://translate.google.com/");
     googleTranslateUrl.searchParams.set("hl", "pt-BR");
-    googleTranslateUrl.searchParams.set("sl", "en");
+    googleTranslateUrl.searchParams.set("sl", language.split("-")[0]);
     googleTranslateUrl.searchParams.set("tl", "pt");
     googleTranslateUrl.searchParams.set("text", englishText);
     googleTranslateUrl.searchParams.set("op", "translate");
@@ -346,7 +350,7 @@ export function ReviewTraining({
 
     const googleTranslateUrl = new URL("https://translate.google.com/");
     googleTranslateUrl.searchParams.set("hl", "pt-BR");
-    googleTranslateUrl.searchParams.set("sl", "en");
+    googleTranslateUrl.searchParams.set("sl", language.split("-")[0]);
     googleTranslateUrl.searchParams.set("tl", "pt");
     googleTranslateUrl.searchParams.set("text", englishText);
     googleTranslateUrl.searchParams.set("op", "translate");
@@ -428,6 +432,7 @@ export function ReviewTraining({
     try {
       const result = await evaluateTrainingWithAI({
         mode: "basic",
+        language,
         intention,
         studentText,
         vocabulary: {
@@ -463,7 +468,7 @@ export function ReviewTraining({
     setGoogleTranslation(null);
 
     try {
-      const result = await translateEnglishToPortuguese(studentText);
+      const result = await translateStudentLanguageToPortuguese(studentText, language);
       setGoogleTranslation(result.translatedText);
     } catch (err) {
       setTranslationError(
@@ -480,7 +485,7 @@ export function ReviewTraining({
     const englishText = studentText.trim();
 
     if (!englishText) {
-      setSpeechError("Não há uma frase em inglês para reproduzir.");
+      setSpeechError(`Não há uma frase em ${languageName} para reproduzir.`);
       return;
     }
 
@@ -498,14 +503,16 @@ export function ReviewTraining({
     const utterance = new SpeechSynthesisUtterance(englishText);
     const voices = window.speechSynthesis.getVoices();
     const americanVoice = voices.find(
-      (voice) => voice.lang.toLowerCase() === "en-us"
+      (voice) => voice.lang.toLowerCase() === language.toLowerCase()
+    ) ?? voices.find(
+      (voice) => voice.lang.toLowerCase().split("-")[0] === language.split("-")[0]
     );
 
     if (americanVoice) {
       utterance.voice = americanVoice;
     }
 
-    utterance.lang = "en-US";
+    utterance.lang = language;
     utterance.rate = 0.9;
     utterance.pitch = 1;
 
@@ -519,7 +526,7 @@ export function ReviewTraining({
 
     utterance.onerror = () => {
       setSpeaking(false);
-      setSpeechError("Não foi possível reproduzir a frase em inglês.");
+      setSpeechError(`Não foi possível reproduzir a frase em ${languageName}.`);
     };
 
     window.speechSynthesis.speak(utterance);
@@ -566,7 +573,7 @@ export function ReviewTraining({
     const englishText = text.trim();
 
     if (!englishText) {
-      setSpeechError("Não há uma frase em inglês para reproduzir.");
+      setSpeechError(`Não há uma frase em ${languageName} para reproduzir.`);
       return;
     }
 
@@ -585,14 +592,16 @@ export function ReviewTraining({
     const utterance = new SpeechSynthesisUtterance(englishText);
     const voices = window.speechSynthesis.getVoices();
     const americanVoice = voices.find(
-      (voice) => voice.lang.toLowerCase() === "en-us"
+      (voice) => voice.lang.toLowerCase() === language.toLowerCase()
+    ) ?? voices.find(
+      (voice) => voice.lang.toLowerCase().split("-")[0] === language.split("-")[0]
     );
 
     if (americanVoice) {
       utterance.voice = americanVoice;
     }
 
-    utterance.lang = "en-US";
+    utterance.lang = language;
     utterance.rate = 0.9;
     utterance.pitch = 1;
 
@@ -607,7 +616,7 @@ export function ReviewTraining({
 
     utterance.onerror = () => {
       setEvaluationSpeaking(null);
-      setSpeechError("Não foi possível reproduzir a frase em inglês.");
+      setSpeechError(`Não foi possível reproduzir a frase em ${languageName}.`);
     };
 
     window.speechSynthesis.speak(utterance);
@@ -629,7 +638,7 @@ export function ReviewTraining({
       <div className="training-page-header">
         <p className="eyebrow">Revisão</p>
         <h1>{intention.intention}</h1>
-        <p className="detail-english">{intention.english}</p>
+        <p className="detail-english">{intention.targetIntention ?? intention.english}</p>
 
         {intention.examples && intention.examples.length > 0 && (
           <section className="training-intention-example">
@@ -886,7 +895,7 @@ export function ReviewTraining({
             <textarea
               id="review-training-answer"
               rows={5}
-              placeholder="Digite sua frase em inglês..."
+              placeholder={`Digite sua frase em ${languageName}...`}
               value={studentText}
               onChange={(event) => {
                 setStudentText(event.target.value);
@@ -1014,7 +1023,7 @@ export function ReviewTraining({
                   onClick={handleSpeakEnglish}
                   disabled={speaking || !studentText.trim()}
                 >
-                  {speaking ? "🔊 Reproduzindo..." : "🔊 Ouvir inglês"}
+                  {speaking ? "🔊 Reproduzindo..." : `🔊 Ouvir ${languageName}`}
                 </button>
               </div>
             </>
@@ -1467,7 +1476,7 @@ export function ReviewTraining({
         <header className="worksheet-top">
           <p className="worksheet-eyebrow">BRAZILIAN ENGLISH JOURNEY · REVISÃO</p>
           <h1 className="worksheet-intention">{intention.intention}</h1>
-          <p className="worksheet-english">{intention.english}</p>
+          <p className="worksheet-english">{intention.targetIntention ?? intention.english}</p>
         </header>
 
         {intention.examples && intention.examples.length > 0 && (

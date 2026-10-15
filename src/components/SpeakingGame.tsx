@@ -1,4 +1,4 @@
-import type { StudentLanguage } from "../config/languages";
+import type { SourceLanguage, StudentLanguage } from "../config/languages";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { getSpeakingGameForms, getSpeakingChallenge, supportsSpeakingForm } from "../config/speakingGameForms";
 import { getSpeakingVocabulary, type SpeakingVocabulary } from "../services/englishVerbService";
@@ -9,7 +9,7 @@ import { SpeakingGamePlayStep } from "./SpeakingGamePlayStep";
 import { SpeakingGameReadyStep } from "./SpeakingGameReadyStep";
 import { SpeakingGameSetupStep } from "./SpeakingGameSetupStep";
 
-export function SpeakingGame({ language }: { language: StudentLanguage }) {
+export function SpeakingGame({ language, sourceLanguage }: { language: StudentLanguage; sourceLanguage: SourceLanguage }) {
   const [step, setStep] = useState<SpeakingGameStep>(1);
   const [settings, setSettings] = useState<SpeakingGameSettings>(DEFAULT_SPEAKING_GAME_SETTINGS);
   const [status, setStatus] = useState<SpeakingGameStatus>("ready");
@@ -127,7 +127,7 @@ export function SpeakingGame({ language }: { language: StudentLanguage }) {
       {isLoadingRound && <p style={styles.message} role="status">Preparando o jogo...</p>}
     </>}
     {step === 3 && round?.language === language && vocabulary && <SpeakingGamePlayStep
-      key={language} language={language} verb={round.verb} vocabulary={vocabulary}
+      key={language} language={language} sourceLanguage={sourceLanguage} verb={round.verb} vocabulary={vocabulary}
       form={getSpeakingChallenge(round.verb, forms[round.index])} formLabel={forms[round.index].label}
       settings={settings} status={status} remainingSeconds={remainingSeconds} loading={isLoadingRound}
       onPause={pauseGame} onResume={resumeGame} onStop={stopGame}

@@ -1,17 +1,20 @@
+import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
 import type { MentalIntention } from "../types/hashmap";
 import { IntentionCard } from "./IntentionCard";
 
 interface IntentionListProps {
   items: MentalIntention[];
+  sourceLanguage: SourceLanguage;
+  language: StudentLanguage;
   onSelect: (item: MentalIntention) => void;
 }
 
-export function IntentionList({ items, onSelect }: IntentionListProps) {
+export function IntentionList({ items, sourceLanguage, language, onSelect }: IntentionListProps) {
   if (items.length === 0) {
     return (
       <div className="empty-state">
         <h2>Nenhuma intenção encontrada.</h2>
-        <p>Tente outro termo em português ou inglês.</p>
+        <p>Experimente outros termos em {LANGUAGES[sourceLanguage].name} ou {LANGUAGES[language].name}, ou limpe os filtros.</p>
       </div>
     );
   }

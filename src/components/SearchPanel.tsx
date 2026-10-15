@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
 import { createPortal } from "react-dom";
 
 export type HqImageFilter = "all" | "with" | "without";
@@ -6,6 +7,8 @@ export type ChunkFilter = "all" | "with" | "without";
 export type YoutubeFilter = "all" | "with" | "without";
 
 interface SearchPanelProps {
+  sourceLanguage: SourceLanguage;
+  language: StudentLanguage;
   mentalSearch: string;
   englishSearch: string;
   categorySearch: string;
@@ -67,6 +70,8 @@ function tagMatchScore(tag: string, rawQuery: string): number {
 }
 
 export function SearchPanel({
+  sourceLanguage,
+  language,
   mentalSearch,
   englishSearch,
   categorySearch,
@@ -106,9 +111,9 @@ export function SearchPanel({
     return availableTags
       .map((tag) => ({ tag, score: tagMatchScore(tag, tagQuery) }))
       .filter(({ score }) => score > 0)
-      .sort((a, b) => b.score - a.score || a.tag.localeCompare(b.tag, "pt-BR"))
+      .sort((a, b) => b.score - a.score || a.tag.localeCompare(b.tag, sourceLanguage))
       .map(({ tag }) => tag);
-  }, [availableTags, tagQuery]);
+  }, [availableTags, tagQuery, sourceLanguage]);
 
   function openTagModal() {
     setDraftTags([...selectedTags]);
@@ -154,14 +159,14 @@ export function SearchPanel({
   return (
     <section className="search-panel">
       <div className="field">
-        <label htmlFor="mental-search">Intenção Mental</label>
-        <input id="mental-search" type="search" placeholder="Ex.: costumava, acostumado, e se..."
+        <label htmlFor="mental-search">Intenção — {LANGUAGES[sourceLanguage].name}</label>
+        <input id="mental-search" type="search" placeholder={`Buscar intenção ou exemplo em ${LANGUAGES[sourceLanguage].name.toLowerCase()}...`}
           value={mentalSearch} onChange={(event) => onMentalSearchChange(event.target.value)} autoComplete="off" />
       </div>
 
       <div className="field">
-        <label htmlFor="english-search">English</label>
-        <input id="english-search" type="search" placeholder="Ex.: used to, getting used to..."
+        <label htmlFor="english-search">Intenção / estrutura — {LANGUAGES[language].name}</label>
+        <input id="english-search" type="search" placeholder={`Buscar intenção, estrutura ou exemplo em ${LANGUAGES[language].name.toLowerCase()}...`}
           value={englishSearch} onChange={(event) => onEnglishSearchChange(event.target.value)} autoComplete="off" />
       </div>
 

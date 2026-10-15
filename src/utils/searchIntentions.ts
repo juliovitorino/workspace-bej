@@ -1,111 +1,95 @@
 import type { MentalIntention } from "../types/hashmap";
 import { normalizeText } from "./normalizeText";
 
-/**
- * Busca os termos na ordem digitada, permitindo qualquer texto entre eles.
- * Ex.: "tão quanto" encontra "Tão + adjetivo + quanto".
- * Os termos são escapados para que caracteres especiais sejam tratados
- * como texto literal, e não como comandos de expressão regular.
- */
+/** Busca flexível, sem acentos e respeitando a ordem das palavras digitadas. */
 function createSearchPattern(query: string): RegExp | null {
   const terms = normalizeText(query).split(/\s+/).filter(Boolean);
   if (terms.length === 0) return null;
-
-  const escapedTerms = terms.map((term) =>
-    term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
-  );
-
+  const escapedTerms = terms.map((term) => term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
   return new RegExp(escapedTerms.join(".*"), "u");
 }
 
-function matchesSearch(value: string, pattern: RegExp | null): boolean {
-  return !pattern || pattern.test(normalizeText(value));
+function matchesSearch(value: string | undefined, pattern: RegExp | null): boolean {
+  return !pattern || pattern.test(normalizeText(value ?? ""));
 }
 
-function matchesAnySearchableField(
-  item: MentalIntention,
-  pattern: RegExp | null
-): boolean {
-  if (!pattern) return true;
+function matchesAny(values: (string | undefined)[], pattern: RegExp | null): boolean {
+  return !pattern || values.some((value) => matchesSearch(value, pattern));
+}
 
-  const searchable = [
+function sourceFields(item: MentalIntention): (string | undefined)[] {
+  return [
     item.intention,
-    item.english,
-    item.pattern ?? "",
-    item.category ?? "",
-    item.englishLevel ?? "",
-    ...(item.searchTerms ?? []),
-    ...(item.tags ?? [])
+    item.sourcePattern,
+    item.sourceStructure,
+    ...(item.sourceSearchTerms ?? []),
+    ...(item.examples ?? []).map((example) => example.pt)
   ];
-
-  return searchable.some((value) => matchesSearch(value, pattern));
 }
 
+function targetFields(item: MentalIntention): (string | undefined)[] {
+  return [
+    item.targetIntention ?? item.intention,
+    item.structure,
+    item.pattern,
+    item.english,
+    ...(item.searchTerms ?? []),
+    ...(item.examples ?? []).map((example) => example.en)
+  ];
+}
+
+function sortedBySource(items: MentalIntention[], sourceLanguage: string): MentalIntention[] {
+  const collator = new Intl.Collator(sourceLanguage, { sensitivity: "base", numeric: true });
+  return items.sort((a, b) => collator.compare(a.intention, b.intention));
+}
+
+/** Os dois campos de busca atuam no idioma indicado, com AND entre eles e os filtros. */
 export function searchIntentions(
   intentions: MentalIntention[],
   mentalSearch: string,
   englishSearch: string,
   categorySearch: string,
   selectedTags: string[],
-  englishLevelSearch: string
+  englishLevelSearch: string,
+  sourceLanguage = "pt-BR"
 ): MentalIntention[] {
-  const mentalPattern = createSearchPattern(mentalSearch);
-  const englishPattern = createSearchPattern(englishSearch);
+  const sourcePattern = createSearchPattern(mentalSearch);
+  const targetPattern = createSearchPattern(englishSearch);
   const normalizedCategory = normalizeText(categorySearch);
-  const normalizedEnglishLevel = normalizeText(englishLevelSearch);
+  const normalizedLevel = normalizeText(englishLevelSearch);
+  const normalizedTags = selectedTags.map(normalizeText);
 
-  return intentions
-    .filter((item) => {
-      const mentalMatches =
-        matchesSearch(item.intention, mentalPattern) ||
-        (item.searchTerms ?? []).some((term) =>
-          matchesSearch(term, mentalPattern)
-        );
-
-      const englishMatches =
-        matchesSearch(item.english, englishPattern) ||
-        matchesSearch(item.pattern ?? "", englishPattern) ||
-        (item.searchTerms ?? []).some((term) =>
-          matchesSearch(term, englishPattern)
-        );
-
-      const categoryMatches =
-        !normalizedCategory ||
-        normalizeText(item.category ?? "").includes(normalizedCategory);
-
-      const tagsMatch =
-        selectedTags.length === 0 ||
-        selectedTags.some((selectedTag) =>
-          (item.tags ?? []).some(
-            (tag) => normalizeText(tag) === normalizeText(selectedTag)
-          )
-        );
-
-      const englishLevelMatches =
-        !normalizedEnglishLevel ||
-        normalizeText(item.englishLevel ?? "") === normalizedEnglishLevel;
-
-      return (
-        mentalMatches &&
-        englishMatches &&
-        categoryMatches &&
-        tagsMatch &&
-        englishLevelMatches
+  return sortedBySource(intentions.filter((item) => {
+    const sourceMatches = matchesAny(sourceFields(item), sourcePattern);
+    const targetMatches = matchesAny(targetFields(item), targetPattern);
+    const categoryMatches = !normalizedCategory ||
+      [item.category, item.sourceCategory].some((value) =>
+        normalizeText(value ?? "").includes(normalizedCategory)
       );
-    })
-    .sort((a, b) =>
-      normalizeText(a.intention).localeCompare(normalizeText(b.intention))
-    );
+    const tagsMatch = normalizedTags.length === 0 ||
+      normalizedTags.some((selectedTag) =>
+        (item.tags ?? []).some((tag) => normalizeText(tag) === selectedTag)
+      );
+    const levelMatches = !normalizedLevel ||
+      normalizeText(item.englishLevel ?? item.level ?? "") === normalizedLevel;
+
+    return sourceMatches && targetMatches && categoryMatches && tagsMatch && levelMatches;
+  }), sourceLanguage);
 }
 
+/** Busca global em ambos os idiomas; usada por outras funcionalidades. */
 export function globalSearch(
   intentions: MentalIntention[],
-  query: string
+  query: string,
+  sourceLanguage = "pt-BR"
 ): MentalIntention[] {
   const pattern = createSearchPattern(query);
-  return intentions
-    .filter((item) => matchesAnySearchableField(item, pattern))
-    .sort((a, b) =>
-      normalizeText(a.intention).localeCompare(normalizeText(b.intention))
-    );
+  return sortedBySource(intentions.filter((item) => matchesAny([
+    ...sourceFields(item),
+    ...targetFields(item),
+    item.category,
+    item.sourceCategory,
+    item.englishLevel,
+    ...(item.tags ?? [])
+  ], pattern)), sourceLanguage);
 }

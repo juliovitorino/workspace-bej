@@ -80,7 +80,7 @@ export function IntentionCard({ item, onSelect }: IntentionCardProps) {
     >
       <div>
         <h2>{item.intention}</h2>
-        <p className="english">{item.english}</p>
+        <p className="english">{item.targetIntention ?? item.english}</p>
         {authorMode && (hasYoutubeVideo || hasYoutubeShort) && (
           <div
             aria-label="Conteúdos publicados no YouTube"

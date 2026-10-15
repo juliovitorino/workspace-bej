@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import { isAuthorMode } from "../utils/authorMode";
-import { LANGUAGES, type StudentLanguage } from "../config/languages";
+import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
 import { isMobileDevice } from "../utils/mobileDevice";
 import { WalkingMode } from "./WalkingMode";
 import { drawChunk, eligibleChunks, type ChunkLevel } from "../utils/chunkEligibility";
@@ -10,6 +10,7 @@ import { ChunkLevelSelect } from "./ChunkLevelSelect";
 interface ChunkFlashcardsProps {
   intentions: MentalIntention[];
   language: StudentLanguage;
+  sourceLanguage: SourceLanguage;
   onWalkingChange: (active: boolean) => void;
   onShowDetails: (intention: MentalIntention) => void;
   onBasicTraining: (intention: MentalIntention) => void;
@@ -26,6 +27,7 @@ function formatStudyTime(totalSeconds: number): string {
 export function ChunkFlashcards({
   intentions,
   language,
+  sourceLanguage,
   onWalkingChange,
   onShowDetails,
   onBasicTraining,
@@ -211,7 +213,7 @@ export function ChunkFlashcards({
 
   async function copyChunk() {
     if (!currentChunk) return;
-    const text = currentChunk.english.trim();
+    const text = (currentChunk.targetIntention ?? currentChunk.english).trim();
     if (!text) return;
 
     try {
@@ -247,7 +249,7 @@ export function ChunkFlashcards({
     setAudioError(null);
     const synth = window.speechSynthesis;
     synth.cancel();
-    const utterance = new SpeechSynthesisUtterance(currentChunk.english.trim());
+    const utterance = new SpeechSynthesisUtterance((currentChunk.targetIntention ?? currentChunk.english).trim());
     utterance.lang = language;
     utterance.rate = 0.9;
     const voices = synth.getVoices();
@@ -270,7 +272,7 @@ export function ChunkFlashcards({
   }, []);
 
   if (walking) {
-    return <WalkingMode chunk={currentChunk} language={language}
+    return <WalkingMode chunk={currentChunk} language={language} sourceLanguage={sourceLanguage}
       level={level} onLevelChange={changeLevel} position={position} total={total} round={round}
       canPrevious={position > 1}
       onPrevious={() => { if (position > 1) setCurrentId(drawnIds[position - 2]); }}
@@ -408,13 +410,13 @@ export function ChunkFlashcards({
               <>
                 <p className="chunk-flashcards-language">{LANGUAGES[language].name} · {language}</p>
                 <div className="chunk-flashcards-english-row">
-                  <h3>{currentChunk.english}</h3>
+                  <h3>{currentChunk.targetIntention ?? currentChunk.english}</h3>
                   <div className="chunk-flashcards-english-actions">
                     <button
                       type="button"
                       className="chunk-flashcards-speaker"
                       onClick={speak}
-                      aria-label={`Ouvir pronúncia de ${currentChunk.english}`}
+                      aria-label={`Ouvir pronúncia de ${currentChunk.targetIntention ?? currentChunk.english}`}
                       title={`Ouvir pronúncia · ${LANGUAGES[language].name}`}
                     >
                       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -427,7 +429,7 @@ export function ChunkFlashcards({
                       type="button"
                       className="chunk-flashcards-details"
                       onClick={() => onShowDetails(currentChunk)}
-                      aria-label={`Ver detalhes e exemplos de ${currentChunk.english}`}
+                      aria-label={`Ver detalhes e exemplos de ${currentChunk.targetIntention ?? currentChunk.english}`}
                       title="Ver detalhes e mais exemplos"
                     >
                       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -439,8 +441,8 @@ export function ChunkFlashcards({
                       type="button"
                       className="chunk-flashcards-details"
                       onClick={() => void copyChunk()}
-                      aria-label={copiedChunkId === currentChunk.id ? "Chunk copiado" : `Copiar ${currentChunk.english} para a área de transferência`}
-                      title={copiedChunkId === currentChunk.id ? "Copiado!" : "Copiar chunk em inglês para o Natural Readers"}
+                      aria-label={copiedChunkId === currentChunk.id ? "Chunk copiado" : `Copiar ${currentChunk.targetIntention ?? currentChunk.english} para a área de transferência`}
+                      title={copiedChunkId === currentChunk.id ? "Copiado!" : "Copiar chunk no idioma de estudo"}
                     >
                       {copiedChunkId === currentChunk.id ? (
                         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -470,7 +472,7 @@ export function ChunkFlashcards({
                       type="button"
                       className="chunk-flashcards-details"
                       onClick={() => onBasicTraining(currentChunk)}
-                      aria-label={`Abrir treino básico de ${currentChunk.english}`}
+                      aria-label={`Abrir treino básico de ${currentChunk.targetIntention ?? currentChunk.english}`}
                       title="Treino básico"
                     >
                       <span aria-hidden="true" style={{ fontSize: "1.5rem", lineHeight: 1 }}>🚶🏻‍➡️</span>
@@ -479,7 +481,7 @@ export function ChunkFlashcards({
                       type="button"
                       className="chunk-flashcards-details"
                       onClick={() => onAdvancedTraining(currentChunk)}
-                      aria-label={`Abrir treino avançado de ${currentChunk.english}`}
+                      aria-label={`Abrir treino avançado de ${currentChunk.targetIntention ?? currentChunk.english}`}
                       title="Treino avançado"
                     >
                       <span aria-hidden="true" style={{ fontSize: "1.5rem", lineHeight: 1 }}>🏃</span>
@@ -487,7 +489,7 @@ export function ChunkFlashcards({
                   </div>
                 </div>
                 <div className="chunk-flashcards-divider" />
-                <p className="chunk-flashcards-language">PORTUGUÊS · PT-BR</p>
+                <p className="chunk-flashcards-language">{LANGUAGES[sourceLanguage].name.toUpperCase()} · {sourceLanguage}</p>
                 <p className="chunk-flashcards-portuguese">{currentChunk.intention}</p>
               </>
             ) : (

@@ -1,5 +1,6 @@
 import { isAuthorMode } from "../utils/authorMode";
 import type { MentalIntention } from "../types/hashmap";
+import { LANGUAGES, type StudentLanguage } from "../config/languages";
 
 export type TrainingEvaluationMode = "basic" | "advanced";
 
@@ -12,6 +13,7 @@ export interface TrainingVocabulary {
 
 export interface AIEvaluationRequest {
   mode: TrainingEvaluationMode;
+  language?: StudentLanguage;
   intention: MentalIntention;
   studentText: string;
   vocabulary?: TrainingVocabulary;
@@ -94,7 +96,7 @@ const evaluationSchema = {
     betterVersion: {
       type: "STRING",
       description:
-        "A natural American-English version of the student's answer."
+        "A natural version of the student's answer in the requested target language."
     }
   },
   required: [
@@ -121,6 +123,7 @@ function buildPrompt(request: AIEvaluationRequest): string {
   const {
     mode,
     intention,
+    language = "en-US",
     studentText,
     vocabulary
   } = request;
@@ -139,7 +142,7 @@ Avalie também se a relação lógica criada pelos conectores faz sentido.
 `;
 
   return `
-Você é um avaliador de inglês para um aluno brasileiro de nível intermediário.
+Você é um avaliador de ${LANGUAGES[language].name.toLowerCase()} para um aluno brasileiro.
 
 Seu objetivo é avaliar a produção do aluno de forma prática, clara,
 encorajadora e rigorosa, sem ser excessivamente acadêmico.
@@ -148,7 +151,7 @@ ${mode === "basic" ? basicInstructions : advancedInstructions}
 
 INTENÇÃO MENTAL:
 Português: ${intention.intention}
-English: ${intention.english}
+Idioma estudado (${language}): ${intention.english}
 Pattern: ${intention.pattern ?? "não informado"}
 
 VOCABULÁRIO SORTEADO:
@@ -162,7 +165,7 @@ ${studentText}
 
 CRITÉRIOS:
 1. Gramática.
-2. Naturalidade em inglês americano.
+2. Naturalidade no idioma estudado (${language}).
 3. Uso correto da intenção mental.
 4. Uso coerente do vocabulário sorteado.
 5. No treino avançado, coerência entre as ideias e os conectores.
@@ -171,7 +174,8 @@ CRITÉRIOS:
 7. Preserve o sentido pretendido pelo aluno ao corrigir.
 8. O feedback deve ser curto e em português do Brasil.
 9. correctedSentence deve corrigir a resposta com o mínimo de alterações.
-10. betterVersion deve mostrar uma forma mais natural de dizer a mesma ideia.
+10. betterVersion deve mostrar uma forma mais natural de dizer a mesma ideia no idioma estudado.
+11. correctedSentence e betterVersion devem estar exclusivamente no idioma estudado (${language}).
 
 Dê uma nota inteira de 0 a 10.
 Responda exclusivamente no formato JSON solicitado.
