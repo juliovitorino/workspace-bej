@@ -13,6 +13,7 @@ import { IntentionList } from "./components/IntentionList";
 import { IntentionDetails } from "./components/IntentionDetails";
 import { SpeakingGame } from "./components/SpeakingGame";
 import { ChunkFlashcards } from "./components/ChunkFlashcards";
+import { StoryShadowing } from "./components/StoryShadowing";
 import { fetchHashmap, loadHashmap } from "./services/hashmapService";
 import type { HashmapData, MentalIntention } from "./types/hashmap";
 import { searchIntentions } from "./utils/searchIntentions";
@@ -222,22 +223,30 @@ function App() {
     <main className="app-layout">
       <Sidebar
         currentView={currentView}
-        onViewChange={setCurrentView}
+        onViewChange={view => {
+          if (view === "shadowing") {
+            closeTraining();
+            setSelected(null);
+            window.speechSynthesis?.cancel();
+          }
+          setCurrentView(view);
+        }}
       />
 
       <div className="app-content">
         <div className="page-shell">
           <div className="container">
             <Header language={language} languageLocked={walkingActive} onLanguageChange={changeLanguage} metadata={data?.metadata} source={data ? source : undefined} />
+            {currentView === "shadowing" && <StoryShadowing key={language} language={language} onMenu={() => setCurrentView("hashmap")} />}
 
-        {loading && (
+        {loading && currentView !== "shadowing" && (
           <div className="status-card">
             <div className="spinner" />
             <p>Carregando Mental Hashmap...</p>
           </div>
         )}
 
-        {!loading && error && !data && (
+        {!loading && error && !data && currentView !== "shadowing" && (
           <div className="status-card error-card">
             <h2>Não foi possível carregar o Mental Hashmap.</h2>
             <p>{error}</p>

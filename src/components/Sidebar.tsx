@@ -1,4 +1,4 @@
-export type AppView = "hashmap" | "exercises" | "speaking-game" | "chunk-flashcards" | "interpretation";
+export type AppView = "hashmap" | "exercises" | "speaking-game" | "chunk-flashcards" | "interpretation" | "shadowing";
 interface SidebarProps {
   currentView: AppView;
   onViewChange: (view: AppView) => void;
@@ -8,6 +8,7 @@ const menuItems: Array<{
   id: AppView;
   label: string;
 }> = [
+  { id: "shadowing", label: "🎧 Shadowing" },
   {
     id: "hashmap",
     label: "Hashmap"

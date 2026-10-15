@@ -34,7 +34,7 @@ export class WalkingAudio {
   }
 
   play(text: string, language: StudentLanguage, rate: number, pauseMs: number,
-    onSpoken: () => void, onDone: () => void, onError: () => void) {
+    onSpoken: () => void, onDone: () => void, onError: () => void, strictVoice = false) {
     this.cancel();
     const generation = this.generation;
     if (!("speechSynthesis" in window)) { onError(); return; }
@@ -46,10 +46,12 @@ export class WalkingAudio {
     const voices = synth.getVoices();
     utterance.voice = voices.find(v => v.lang.toLowerCase() === language.toLowerCase()) ??
       voices.find(v => v.lang.toLowerCase().startsWith(language.slice(0, 2))) ?? null;
+    if (strictVoice && !utterance.voice) { onError(); return; }
     utterance.onend = () => {
       if (generation !== this.generation) return;
       this.utterance = null;
       onSpoken();
+      if (generation !== this.generation) return;
       this.timer = setTimeout(() => {
         if (generation === this.generation) onDone();
       }, pauseMs);

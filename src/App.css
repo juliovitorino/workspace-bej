@@ -2186,3 +2186,27 @@ button {
   .story-search-bar { grid-template-columns: minmax(0, 1fr) auto; }
   .story-search-bar .field:first-child { grid-column: 1 / -1; }
 }
+.shadowing { max-width: 980px; margin: 0 auto; padding: 1rem 0; }
+.shadowing-heading, .shadowing-search, .shadowing-controls { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem; }
+.shadowing-heading { justify-content: space-between; }
+.shadowing label { display: flex; flex-direction: column; gap: .4rem; }
+.shadowing input, .shadowing select, .shadowing button { font: inherit; min-height: 44px; border: 1px solid #cbd5e1; border-radius: 8px; padding: .65rem; }
+.shadowing button { cursor: pointer; }
+.shadowing button:disabled { opacity: .5; cursor: default; }
+.shadowing :focus-visible { outline: 3px solid #3659d9; outline-offset: 3px; }
+.shadowing input[type="checkbox"] { min-height: 24px; width: 24px; }
+.shadowing-stories { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1rem; }
+.shadowing-stories article, .shadowing-reading { padding: 1.25rem; border: 1px solid #dbe3ee; border-radius: 12px; background: #fff; }
+.shadowing-preview { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.6; }
+.shadowing-reading { margin: 1rem 0; font-size: clamp(1.15rem, 2.5vw, 1.5rem); line-height: 1.8; white-space: pre-wrap; overflow-wrap: anywhere; }
+.shadowing-reading mark { color: #172033; background: #fef08a; }
+.shadowing-translation { border-top: 1px solid #e2e8f0; padding-top: 1rem; font-size: 1rem; color: #475569; }
+.shadowing-settings { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 1rem; padding: 1rem 0; }
+.shadowing-settings p { grid-column: 1 / -1; line-height: 1.6; }
+.shadowing progress { width: 100%; accent-color: #3659d9; }
+@media (max-width: 640px) {
+  .shadowing-search { align-items: stretch; flex-direction: column; }
+  .shadowing-controls { gap: .5rem; }
+  .shadowing-controls button { flex: 1 1 100px; }
+  .shadowing-reading { padding: .85rem; }
+}
