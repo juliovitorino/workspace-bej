@@ -2187,7 +2187,19 @@ button {
   .story-search-bar .field:first-child { grid-column: 1 / -1; }
 }
 .shadowing { max-width: 980px; margin: 0 auto; padding: 1rem 0; }
-.shadowing-heading, .shadowing-search, .shadowing-controls { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem; }
+.shadowing-heading, .shadowing-controls { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem; }
+.shadowing-library-tools { margin: 1rem 0 1.5rem; padding: clamp(1rem, 3vw, 1.5rem); border: 1px solid #dbe3f4; border-radius: 18px; background: linear-gradient(120deg, #edf1ff, #f8faff 60%, #fff); }
+.shadowing-library-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; }
+.shadowing-library-eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #3659d9; }
+.shadowing-library-heading h3 { margin: .35rem 0; font-size: clamp(1.25rem, 3vw, 1.6rem); color: #172033; }
+.shadowing-library-heading p { margin: 0; font-size: .9rem; line-height: 1.5; color: #52617c; }
+.shadowing-library-count { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; padding: .65rem 1rem; border: 1px solid #dbe3f4; border-radius: 12px; background: #fff; text-align: center; }
+.shadowing-library-count strong { font-size: 1.65rem; line-height: 1.2; color: #2946b5; font-variant-numeric: tabular-nums; }
+.shadowing-library-count span { font-size: .75rem; }
+.shadowing-search { display: grid; grid-template-columns: minmax(150px, 200px) minmax(0, 1fr); align-items: end; gap: 1rem; }
+.shadowing .shadowing-search label { min-width: 0; align-items: stretch; gap: .5rem; font-size: .85rem; font-weight: 600; color: #334155; }
+.shadowing .shadowing-search input, .shadowing .shadowing-search select { box-sizing: border-box; width: 100%; max-width: 100%; height: 48px; margin: 0; padding: .75rem; border: 1px solid #cbd5e1; border-radius: 10px; background: #fff; color: #172033; font-size: 1rem; font-weight: 400; }
+.shadowing-search input::placeholder { color: #64748b; }
 .shadowing-heading { justify-content: space-between; }
 .shadowing label { display: flex; flex-direction: column; gap: .4rem; }
 .shadowing input, .shadowing select, .shadowing button { font: inherit; min-height: 44px; border: 1px solid #cbd5e1; border-radius: 8px; padding: .65rem; }
@@ -2197,6 +2209,14 @@ button {
 .shadowing input[type="checkbox"] { min-height: 24px; width: 24px; }
 .shadowing-stories { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1rem; }
 .shadowing-stories article, .shadowing-reading { padding: 1.25rem; border: 1px solid #dbe3ee; border-radius: 12px; background: #fff; }
+.shadowing-stories article { transition: border-color .2s ease, box-shadow .2s ease; }
+.shadowing-stories article:focus-within { border-color: #3659d9; box-shadow: 0 0 0 2px #3659d926; }
+@media (hover: hover) {
+  .shadowing-stories article:hover { border-color: #3659d9; box-shadow: 0 0 0 2px #3659d926; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shadowing-stories article { transition: none; }
+}
 .shadowing-preview { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.6; }
 .shadowing-reading { margin: 1rem 0; font-size: clamp(1.15rem, 2.5vw, 1.5rem); line-height: 1.8; white-space: pre-wrap; overflow-wrap: anywhere; }
 .shadowing-reading mark { color: #172033; background: #fef08a; }
@@ -2205,7 +2225,10 @@ button {
 .shadowing-settings p { grid-column: 1 / -1; line-height: 1.6; }
 .shadowing progress { width: 100%; accent-color: #3659d9; }
 @media (max-width: 640px) {
-  .shadowing-search { align-items: stretch; flex-direction: column; }
+  .shadowing-search { grid-template-columns: minmax(0, 1fr); }
+  .shadowing-library-heading { align-items: flex-start; flex-direction: column; }
+  .shadowing-library-count { flex-direction: row; gap: .5rem; padding: .4rem .7rem; }
+  .shadowing-library-count strong { font-size: 1.15rem; }
   .shadowing-controls { gap: .5rem; }
   .shadowing-controls button { flex: 1 1 100px; }
   .shadowing-reading { padding: .85rem; }

@@ -347,12 +347,11 @@ function App() {
               <SpeakingGame key={language} language={language} />
             )}
 
-            {!loading &&
-              data &&
-              currentView === "interpretation" &&
+            {currentView === "interpretation" &&
               !trainingMode && (
                 <InterpretationPanel
-                  intentions={data.mentalMap}
+                  language={language}
+                  intentions={data?.mentalMap ?? []}
                   onSelectIntention={setSelected}
                 />
               )}

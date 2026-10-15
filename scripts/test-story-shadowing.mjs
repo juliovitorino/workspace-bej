@@ -108,8 +108,8 @@ const { StoryShadowing } = load('src/components/StoryShadowing.tsx');
 const { Sidebar } = load('src/components/Sidebar.tsx');
 assert.equal(searchShadowingStories('en-US').length, 42);
 for (const level of ['A1', 'B2']) assert.ok(searchShadowingStories('en-US', level).every(story => story.englishLevel === level));
-assert.equal(searchShadowingStories('fr-FR').length, 0);
-assert.equal(searchShadowingStories('es-ES').length, 0);
+assert.equal(searchShadowingStories('fr-FR').length, 42);
+assert.equal(searchShadowingStories('es-ES').length, 42);
 assert.equal(searchShadowingStories('en-US', 'all', 'no-such-story-9876').length, 0);
 const first = searchShadowingStories('en-US')[0];
 assert.ok(searchShadowingStories('en-US', 'all', first.titleEn.toUpperCase()).includes(first));
@@ -124,13 +124,13 @@ Intl.Segmenter = undefined;
 assert.deepEqual(sentenceSegments(original, 'en-US'), [original]);
 Intl.Segmenter = savedSegmenter;
 assert.match(renderToStaticMarkup(React.createElement(Sidebar, { currentView: 'shadowing', onViewChange() {} })), /Shadowing/);
-assert.match(renderToStaticMarkup(React.createElement(StoryShadowing, { language: 'fr-FR', onMenu() {} })), /Ainda não há histórias/);
+assert.match(renderToStaticMarkup(React.createElement(StoryShadowing, { language: 'fr-FR', onMenu() {} })), /Un samedi/);
 const story = { titleEn: 'Test story', englishLevel: 'A1', paragraphs: [
   { en: 'First paragraph.', pt: 'Primeiro parágrafo.' }, { en: 'Second paragraph.', pt: 'Segundo parágrafo.' }
 ] };
-function session(settings = {}, selected = 0) {
+function session(settings = {}, selected = 0, language = 'en-US', source = story) {
   const props = { settings: { ...defaults, keepAwake: false, interval: 0, ...settings } };
-  const harness = new Harness(({ settings }) => useStoryShadowing(story, 'en-US', settings, selected), props);
+  const harness = new Harness(({ settings }) => useStoryShadowing(source, language, settings, selected), props);
   harness.flush(); return harness;
 }
 function speakEnd(h) { utterances.at(-1).onend(); h.flush(); }
@@ -255,5 +255,50 @@ changing.tree.play(); changing.flush(); assert.equal(utterances.at(-1).rate, .8)
 changing.dispose();
 assert.equal(timers.size, 0); assert.equal(intervals.size, 0); assert.equal(listeners.size, 0);
 console.log('Story Shadowing: filters, language isolation, techniques, scopes, manual navigation, monotonic clock, pause/resume, cancellation, segmentation and asynchronous voices passed.');
+
+// The selected language drives cards, search, segmentation and spoken content.
+const { getStoryTitle, getParagraphText } = load('src/services/localStoryService.ts');
+voices = [{ lang: 'en-US' }, { lang: 'es-ES' }, { lang: 'fr-FR' }];
+for (const language of ['en-US', 'es-ES', 'fr-FR']) {
+  const sample = searchShadowingStories(language, 'A1')[0];
+  const title = getStoryTitle(sample, language);
+  const query = title.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  assert.ok(searchShadowingStories(language, 'A1', query).includes(sample));
+  for (const level of ['A1', 'A2', 'B1', 'B2', 'C1', 'C2']) {
+    const matches = searchShadowingStories(language, level);
+    assert.ok(matches.length > 0 && matches.every(s => s.englishLevel === level));
+  }
+  const markup = renderToStaticMarkup(React.createElement(StoryShadowing, { language, onMenu() {} }));
+  assert.ok(markup.includes(title));
+  const preview = renderToStaticMarkup(React.createElement('span', null, getParagraphText(sample.paragraphs[0], language))).slice(6, -7);
+  assert.ok(markup.includes(preview));
+  for (const scope of ['story', 'paragraph']) for (const control of ['manual', 'automatic']) {
+    const h = session({ technique: 'listen', scope, control, automatic: control === 'automatic' }, 0, language, sample);
+    h.tree.play(); h.flush();
+    assert.equal(utterances.at(-1).lang, language);
+    assert.equal(utterances.at(-1).text, getParagraphText(sample.paragraphs[0], language));
+    assert.equal(h.tree.segments.join(''), getParagraphText(sample.paragraphs[0], language));
+    h.tree.readParagraph(); h.flush();
+    assert.equal(utterances.at(-1).text, getParagraphText(sample.paragraphs[0], language));
+    h.dispose();
+  }
+  const sentences = session({ technique: 'listen', unit: 'sentence', control: 'manual' }, 1, language, sample);
+  sentences.tree.navigate(-1); sentences.flush();
+  const parts = sentenceSegments(getParagraphText(sample.paragraphs[0], language), language);
+  assert.equal(sentences.tree.sentence, parts.length - 1);
+  sentences.tree.play(); sentences.flush();
+  assert.equal(utterances.at(-1).text, parts.at(-1));
+  assert.equal(utterances.at(-1).lang, language);
+  sentences.dispose();
+}
+const translated = searchShadowingStories('fr-FR', 'A1')[0];
+const savedTitle = translated.titleFr;
+try {
+  translated.titleFr = '';
+  assert.ok(!searchShadowingStories('fr-FR', 'A1').includes(translated), 'Incomplete translations are omitted');
+} finally { translated.titleFr = savedTitle; }
+assert.equal(timers.size, 0);
+assert.equal(intervals.size, 0);
+console.log('Multilingual Shadowing: translated cards/search, all CEFR levels, four scope/control combinations, full-paragraph audio and backward sentence navigation passed.');
 
 

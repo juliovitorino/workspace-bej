@@ -1,7 +1,7 @@
 import { ControlIcon } from "./ControlIcon";
 import { useMemo, useRef, useState } from "react";
 import { LANGUAGES, type StudentLanguage } from "../config/languages";
-import { searchShadowingStories, type LocalStory } from "../services/localStoryService";
+import { getStoryTitle, getParagraphText, searchShadowingStories, type LocalStory } from "../services/localStoryService";
 import { defaultShadowingSettings, formatPracticeTime, sentenceSegments, type ShadowingSettings } from "../utils/storyShadowing";
 import { useStoryShadowing } from "../hooks/useStoryShadowing";
 import { ChunkLevelSelect } from "./ChunkLevelSelect";
@@ -41,7 +41,7 @@ function Practice({ story, language, settings, selected, onSettings, onBack, onM
   }
   const paragraph = story.paragraphs[session.paragraph];
   return <>
-    <div className="shadowing-heading"><h3>{story.titleEn}</h3><button type="button" onClick={() => { session.stop(); onBack(); }}>Escolher outra história</button></div>
+    <div className="shadowing-heading"><h3>{getStoryTitle(story, language)}</h3><button type="button" onClick={() => { session.stop(); onBack(); }}>Escolher outra história</button></div>
     <section ref={summaryRef} className="shadowing-session" aria-label="Resumo da prática">
       <div className="shadowing-session-meta"><span>{LANGUAGES[language].name}</span><span className="shadowing-level">{story.englishLevel}</span></div>
       <div className="shadowing-session-stats">
@@ -87,7 +87,7 @@ function Practice({ story, language, settings, selected, onSettings, onBack, onM
     {!session.hasVoice && <p role="alert">Nenhuma voz compatível disponível. Habilite uma voz de {LANGUAGES[language].name} no sistema ou navegador. A lista será atualizada quando as vozes carregarem; o texto continua disponível para leitura.</p>}
     {session.error && <p role="alert">{session.error}</p>}
     {session.warning && <p role="status">{session.warning}</p>}
-    {configuring && <Settings value={settings} sentenceAvailable={story.paragraphs.some(p => sentenceSegments(p.en, language).length > 1)} onChange={value => {
+    {configuring && <Settings value={settings} sentenceAvailable={story.paragraphs.some(p => sentenceSegments(getParagraphText(p, language), language).length > 1)} onChange={value => {
       session.configure(value);
       // The selected scope applies to the current paragraph when changed during practice.
       onSettings(value);
@@ -109,22 +109,27 @@ export function StoryShadowing({ language, onMenu }: { language: StudentLanguage
   return <section className="shadowing" aria-labelledby="shadowing-title">
     <h2 id="shadowing-title">🎧 Shadowing</h2>
     {practicing && story ? <Practice key={sessionVersion} {...{ story, language, settings, selected, onMenu }} onRestart={() => setSessionVersion(v => v + 1)} onSettings={setSettings} onBack={back} /> : story ? <>
-      <h3>{story.titleEn}</h3><p>{story.englishLevel} · {story.paragraphs.length} parágrafos</p>
-      <Settings value={settings} onChange={setSettings} sentenceAvailable={story.paragraphs.some(p => sentenceSegments(p.en, language).length > 1)} />
+      <h3>{getStoryTitle(story, language)}</h3><p>{story.englishLevel} · {story.paragraphs.length} parágrafos</p>
+      <Settings value={settings} onChange={setSettings} sentenceAvailable={story.paragraphs.some(p => sentenceSegments(getParagraphText(p, language), language).length > 1)} />
       {settings.scope === "paragraph" && <label>Selecionar parágrafo<select value={selected} onChange={e => setSelected(Number(e.target.value))}>{story.paragraphs.map((_, i) => <option key={i} value={i}>Parágrafo {i + 1}</option>)}</select></label>}
-      <p className="shadowing-preview" lang={language}>{story.paragraphs[settings.scope === "paragraph" ? selected : 0].en}</p>
+      <p className="shadowing-preview" lang={language}>{getParagraphText(story.paragraphs[settings.scope === "paragraph" ? selected : 0], language)}</p>
       <div className="shadowing-controls"><button type="button" onClick={back}>Voltar à seleção</button><button type="button" className="primary-button" onClick={() => { if (settings.scope === "story") setSelected(0); setPracticing(true); }}>Iniciar prática</button></div>
     </> : <>
-      <div className="shadowing-search" role="search" aria-label="Pesquisar histórias para Shadowing">
-        <ChunkLevelSelect value={level} onChange={setLevel} />
-        <label><span aria-hidden="true">⌕ </span>Pesquisar histórias<input type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Título ou tema" /></label>
+      <div className="shadowing-library-tools">
+        <div className="shadowing-library-heading">
+          <div><span className="shadowing-library-eyebrow">Sua próxima prática</span><h3>Escolha uma história</h3><p>Encontre um tema que desperte sua curiosidade e pratique no seu ritmo.</p></div>
+          <p className="shadowing-library-count" role="status"><strong>{stories.length}</strong><span>{stories.length === 1 ? "história disponível" : "histórias disponíveis"}</span></p>
+        </div>
+        <div className="shadowing-search" role="search" aria-label="Pesquisar histórias para Shadowing">
+          <ChunkLevelSelect value={level} onChange={setLevel} />
+          <label>Pesquisar histórias<input type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Digite parte do título ou um tema" /></label>
+        </div>
       </div>
-      <p role="status">{stories.length} história(s) disponível(is)</p>
       {!stories.length && <p>{language !== "en-US" ? "Ainda não há histórias disponíveis neste idioma. Selecione outro idioma no cabeçalho para consultar sua biblioteca." : "Nenhuma história corresponde aos filtros. Experimente outro nível ou título."}</p>}
       <div className="shadowing-stories">{stories.map((item, i) => <article key={i}>
-        <h3 lang={language}>{item.titleEn}</h3><p>{item.englishLevel} · {item.paragraphs.length} parágrafos</p>
-        {item.topic && <p>{item.topic}</p>}
-        <p className="shadowing-preview" lang={language}>{item.paragraphs[0].en}</p>
+        <h3 lang={language}>{getStoryTitle(item, language)}</h3><p>{item.englishLevel} · {item.paragraphs.length} parágrafos</p>
+        {item.topic && <span className="pill">{item.topic}</span>}
+        <p className="shadowing-preview" lang={language}>{getParagraphText(item.paragraphs[0], language)}</p>
         <button type="button" className="primary-button" onClick={() => { setStory(item); setSelected(0); setPracticing(true); }}>Praticar</button>
       </article>)}</div>
     </>}

@@ -119,7 +119,7 @@ const generated = {
   intentionsUsed: ['test-id']
 };
 const request = { intentions: [intention], englishLevel: 'B1', theme: 'cotidiano' };
-const props = { intentions: [intention], onSelectIntention() {} };
+const props = { intentions: [intention], language: 'en-US', onSelectIntention() {} };
 let fetches = [];
 let responder = () => Promise.resolve({ ok: true, json: async () => ({ candidates: [{ content: { parts: [{ text: JSON.stringify(generated) }] } }] }) });
 globalThis.fetch = (url, options) => { fetches.push({ url, options }); return responder(); };
@@ -237,4 +237,153 @@ await pendingUnmount;
 assert.equal(intervals.size, 0);
 assert.ok([...listeners.values()].every(set => set.size === 0));
 console.log('Story access: public search/loading, all levels, Author controls, stale handlers, service guards, cancellation/races and AI-disabled navigation passed. No external requests made.');
+
+// Multilingual local interpretation uses the same real component and hook harness.
+const { getStoryTitle, getParagraphText, getIntentionText, isStoryAvailable, searchShadowingStories } = load('src/services/localStoryService.ts');
+const sample = searchLocalStories('A1', 'Um Sábado Diferente')[0];
+assert.ok(sample);
+const languages = [
+  ['en-US', 'inglês', 'titleEn', 'en', 'enIntent', 'SATURDAY'],
+  ['fr-FR', 'francês', 'titleFr', 'fr', 'frIntent', 'SAMEDI'],
+  ['es-ES', 'espanhol', 'titleEs', 'es', 'esIntent', 'SABADO'],
+];
+for (const [language, , titleKey, textKey, intentionKey, query] of languages) {
+  assert.equal(getStoryTitle(sample, language), sample[titleKey]);
+  assert.equal(getParagraphText(sample.paragraphs[0], language), sample.paragraphs[0][textKey]);
+  assert.equal(getIntentionText(sample.paragraphs[0].intentions[0], language), sample.paragraphs[0].intentions[0][intentionKey]);
+  assert.ok(searchLocalStories('A1', query, language).includes(sample));
+  assert.ok(searchLocalStories('a1', 'SABADO DIFERENTE', language).includes(sample));
+  assert.equal(searchLocalStories('A1', sample.paragraphs[0][textKey], language).length, 0, 'Search remains title-only');
+  assert.ok(searchLocalStories('A1', '', language).every(s => s.englishLevel === 'A1'));
+  for (const field of [titleKey, textKey, intentionKey]) {
+    const incomplete = structuredClone(sample);
+    if (field === titleKey) delete incomplete[field];
+    else if (field === textKey) delete incomplete.paragraphs[0][field];
+    else delete incomplete.paragraphs[0].intentions[0][field];
+    assert.equal(isStoryAvailable(incomplete, language), false);
+  }
+}
+for (const language of ['es-ES', 'fr-FR']) {
+  assert.equal(searchLocalStories('A1', '', language).length, 11);
+  assert.equal(searchLocalStories('A1', 'Saturday', language).length, 0);
+  for (const level of ['A2', 'B1', 'B2', 'C1', 'C2']) assert.equal(searchLocalStories(level, '', language).length, searchLocalStories(level).length);
+  assert.equal(searchShadowingStories(language).length, 42, 'Shadowing supports translated catalogs');
+}
+assert.equal(searchShadowingStories('en-US').length, 42);
+
+setAuthor(false);
+const utterances = [];
+const voices = languages.map(([lang]) => ({ lang }));
+globalThis.SpeechSynthesisUtterance = class { constructor(value) { this.text = value; } };
+window.speechSynthesis.getVoices = () => voices;
+window.speechSynthesis.speak = utterance => utterances.push(utterance);
+let clipboard = '', printed = '';
+Object.defineProperty(globalThis, 'navigator', { configurable: true, value: { clipboard: { async writeText(value) { clipboard = value; } } } });
+window.open = () => ({ document: { write(value) { printed = value; }, close() {} } });
+const nodeById = (h, id) => find(h.tree, node => node.props?.id === id);
+const buttonText = (h, label) => find(h.tree, node => node.type === 'button' && text(node) === label);
+function loadStory(h, level, title) {
+  nodeById(h, 'story-search-level').props.onChange({ target: { value: level } });
+  nodeById(h, 'story-search-title').props.onChange({ target: { value: title } }); h.flush();
+  find(h.tree, n => n.type === 'form' && n.props.role === 'search').props.onSubmit({ preventDefault() {} }); h.flush();
+  buttonText(h, 'Carregar').props.onClick(); h.flush();
+}
+const targetParagraph = h => find(h.tree, n => n.props?.className === 'english interpretation-en');
+const networkCount = fetches.length;
+for (const [language, name, titleKey, textKey, intentionKey] of languages) {
+  let selectedIntention;
+  const relatedIntentions = sample.paragraphs.flatMap(p => p.intentions).map(i => ({ id: i.intentionId, intention: i.ptIntent }));
+  const h = new Harness(InterpretationPanel, { ...props, language, intentions: relatedIntentions,
+    onSelectIntention(value) { selectedIntention = value; } }); h.flush();
+  loadStory(h, 'A1', sample.titlePt);
+  assert.ok(text(h.tree).includes(sample[titleKey]));
+  assert.equal(targetParagraph(h), null, 'Target paragraphs remain hidden until revealed');
+  buttonText(h, `Mostrar versão em ${name}`).props.onClick(); h.flush();
+  const paragraph = targetParagraph(h);
+  assert.equal(paragraph.props.lang, language);
+  assert.equal(text(paragraph), sample.paragraphs[0][textKey]);
+  const highlight = find(paragraph, n => n.props?.className === 'intention-highlight');
+  assert.equal(text(highlight), sample.paragraphs[0].intentions[0][intentionKey]);
+  find(h.tree, n => n.props?.className === 'pill interpretation-used-button').props.onClick();
+  assert.equal(selectedIntention.id, sample.intentionsUsed[0]);
+  assert.equal(selectedIntention.intention, sample.paragraphs[0].intentions[0].ptIntent);
+  const portuguese = find(h.tree, n => n.props?.className === 'interpretation-pt');
+  assert.equal(text(portuguese), sample.paragraphs[0].pt);
+  const studio = find(h.tree, n => typeof n.type === 'function' && n.type.name === 'ConnectedSpeechButton');
+  assert.equal(studio.props.blocks[0].original, sample.paragraphs[0][textKey]);
+  assert.equal(studio.props.blocks[0].portuguese, sample.paragraphs[0].pt);
+  assert.ok(studio.key.endsWith(language));
+  named(h.tree, `Ouvir parágrafo 1 em ${name}`).props.onClick(); h.flush();
+  assert.equal(utterances.at(-1).lang, language);
+  assert.equal(utterances.at(-1).voice.lang, language);
+  assert.equal(utterances.at(-1).text, sample.paragraphs[0][textKey]);
+  named(h.tree, `Copiar parágrafo 1 em ${name}`).props.onClick();
+  await Promise.resolve(); h.flush();
+  assert.equal(clipboard, sample.paragraphs[0][textKey]);
+  const fullAudio = find(h.tree, n => n.props?.title === `Ouvir a história completa em ${name}`);
+  fullAudio.props.onClick(); h.flush();
+  assert.equal(utterances.at(-1).text, [sample[titleKey], ...sample.paragraphs.map(p => p[textKey])].join('. '));
+  const staleAudio = utterances.at(-1);
+  await named(h.tree, 'Copiar história completa em texto puro').props.onClick(); h.flush();
+  assert.ok(clipboard.includes(`PT-BR + ${language}`));
+  assert.ok(clipboard.includes(sample.paragraphs[0][textKey]));
+  if (language !== 'en-US') assert.ok(!clipboard.includes(sample.paragraphs[0].en));
+  named(h.tree, 'Imprimir exercício e solução').props.onClick();
+  assert.ok(printed.includes(sample[titleKey]));
+  assert.ok(printed.includes(`PT-BR + ${language}`));
+  assert.ok(printed.includes(`interpretação em ${name}`));
+  const nextLanguage = language === 'fr-FR' ? 'es-ES' : 'fr-FR';
+  h.flush({ ...props, language: nextLanguage });
+  assert.equal(targetParagraph(h).props.lang, nextLanguage);
+  assert.equal(text(targetParagraph(h)), getParagraphText(sample.paragraphs[0], nextLanguage));
+  staleAudio.onerror(); h.flush();
+  assert.ok(!text(h.tree).includes('Não foi possível reproduzir a história'));
+  assert.equal(nodeById(h, 'story-search-title').props.value, sample.titlePt);
+  h.dispose();
+}
+// A story missing the new language is cleared with a student-visible notice.
+const switching = new Harness(InterpretationPanel, props); switching.flush();
+const savedFrenchTitle = localStory.titleFr;
+delete localStory.titleFr;
+loadStory(switching, 'B1', localStory.titlePt);
+switching.flush({ ...props, language: 'fr-FR' });
+assert.equal(find(switching.tree, n => n.type === 'article'), null);
+assert.ok(text(switching.tree).includes('Esta história ainda não está disponível em francês'));
+switching.dispose();
+localStory.titleFr = savedFrenchTitle;
+
+// Invalid excerpts are reported and never highlighted; source data stays untouched.
+const annotation = sample.paragraphs[0].intentions[0];
+const savedExcerpt = annotation.frIntent;
+const savedWarn = console.warn;
+const warnings = [];
+try {
+  annotation.frIntent = 'EXCERPT NOT IN PARAGRAPH';
+  console.warn = message => warnings.push(message);
+  const invalid = new Harness(InterpretationPanel, { ...props, language: 'fr-FR' }); invalid.flush();
+  loadStory(invalid, 'A1', sample.titlePt);
+  buttonText(invalid, 'Mostrar versão em francês').props.onClick(); invalid.flush();
+  assert.ok(!text(targetParagraph(invalid)).includes(annotation.frIntent));
+  assert.ok(warnings.some(message => message.includes('parágrafo 1, fr-FR')));
+  invalid.dispose();
+} finally {
+  annotation.frIntent = savedExcerpt;
+  console.warn = savedWarn;
+}
+assert.equal(fetches.length, networkCount, 'Local interpretation makes no AI requests');
+// Language changes abort existing English author generation and reject stale results.
+setAuthor(true);
+responder = () => new Promise(resolve => { resolveFetch = resolve; });
+const authorSwitch = new Harness(InterpretationPanel, props); authorSwitch.flush();
+const pendingLanguage = buttonText(authorSwitch, 'Gerar história').props.onClick(); authorSwitch.flush();
+const languageSignal = fetches.at(-1).options.signal;
+authorSwitch.flush({ ...props, language: 'fr-FR' });
+assert.equal(languageSignal.aborted, true);
+assert.equal(buttonText(authorSwitch, 'Gerar história'), null);
+resolveFetch({ ok: true, json: async () => ({ candidates: [{ content: { parts: [{ text: JSON.stringify(generated) }] } }] }) });
+await pendingLanguage; authorSwitch.flush();
+assert.ok(!text(authorSwitch.tree).includes(generated.titlePt));
+authorSwitch.dispose();
+assert.equal(intervals.size, 0);
+console.log('Multilingual interpretation: title search, CEFR, missing fields, exact highlights, Portuguese reference, audio, clipboard, print, Connected Speech, language switching and Shadowing regression passed.');
 

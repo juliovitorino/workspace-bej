@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import type { StudentLanguage } from "../config/languages";
-import type { LocalStory } from "../services/localStoryService";
+import { getParagraphText, type LocalStory } from "../services/localStoryService";
 import { WalkingAudio } from "../utils/walkingAudio";
 import { practiceSteps, responsePause, sentenceSegments, type ShadowingSettings } from "../utils/storyShadowing";
 
@@ -27,7 +27,7 @@ export function useStoryShadowing(story: LocalStory, language: StudentLanguage, 
   const readingReturn = useRef(false);
   const steps = practiceSteps(settings);
   const current = steps[step] ?? steps[0];
-  const text = story.paragraphs[paragraph].en;
+  const text = getParagraphText(story.paragraphs[paragraph], language);
   const segments = settings.unit === "sentence" ? sentenceSegments(text, language) : [text];
   const spokenText = fullReading ? text : segments[sentence] ?? text;
   const hasVoice = voices.some(v => v.lang.toLowerCase().split("-")[0] === language.slice(0, 2));
@@ -59,7 +59,7 @@ export function useStoryShadowing(story: LocalStory, language: StudentLanguage, 
     else if (settings.scope === "story") {
       const next = Math.max(0, Math.min(story.paragraphs.length - 1, paragraph + direction));
       setParagraph(next);
-      setSentence(direction < 0 && settings.unit === "sentence" ? sentenceSegments(story.paragraphs[next].en, language).length - 1 : 0);
+      setSentence(direction < 0 && settings.unit === "sentence" ? sentenceSegments(getParagraphText(story.paragraphs[next], language), language).length - 1 : 0);
     }
   }
   function play() {

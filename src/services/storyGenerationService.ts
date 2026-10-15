@@ -6,11 +6,15 @@ export interface StoryParagraphIntention {
   intentionId: string;
   ptIntent: string;
   enIntent: string;
+  esIntent?: string;
+  frIntent?: string;
 }
 
 export interface StoryParagraph {
   pt: string;
   en: string;
+  es?: string;
+  fr?: string;
   intentions: StoryParagraphIntention[];
 }
 
@@ -19,6 +23,8 @@ export interface StoryGenerationResult {
   source: "ai" | "local";
   titlePt: string;
   titleEn: string;
+  titleEs?: string;
+  titleFr?: string;
   hqImage?: string;
   paragraphs: StoryParagraph[];
   intentionsUsed: string[];

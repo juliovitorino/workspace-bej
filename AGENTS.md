@@ -14,6 +14,121 @@ Brazilian English Journey — Mental Hashmap.
 - es-ES: Spanish
 - pt-BR: Source language
 
+## Story Files — CEFR Organization and Multilingual Enrichment
+
+These instructions apply to **story catalogs**, not the language-specific
+intention catalogs described in the JSON synchronization sections below.
+Do not confuse the two workflows.
+
+### Location and organization
+
+- The user's Windows project location is:
+  `C:\Users\julio.vitorino\Documents\workspaces\mental-hashmap-app-mvp\mental-hashmap-app\src\data\stories\`.
+- Discover the equivalent path in the active workspace instead of assuming the
+  Windows absolute path exists in every execution environment.
+- The known example is `src/data/stories/stories-a1.json`. Discover other existing
+  CEFR files by inspection (e.g., `stories-a2.json`, `stories-b1.json`,
+  `stories-b2.json`, `stories-c1.json`, `stories-c2.json`); do not create
+  hypothetical files or rename/move existing files without authorization.
+- Organize and validate stories according to their existing `englishLevel`
+  values: `A1`, `A2`, `B1`, `B2`, `C1`, `C2`. The filename level and each story's
+  `englishLevel` must agree; report mismatches before moving anything.
+- Preserve the existing root structure (array/object), order, story IDs,
+  `topic`, `hqImage`, `intentionsUsed`, and all unrelated properties.
+
+### Required Spanish and French fields
+
+For each story selected for enrichment:
+
+1. Add `titleEs` and `titleFr`, using natural, idiomatic Spanish (`es-ES`)
+   and French (`fr-FR`) interpretations of the original `titlePt`.
+2. For **each** object in `paragraphs`, add `es` and `fr`, using its `pt` text
+   as the authoritative source. These are `paragraphs[].es` and
+   `paragraphs[].fr` (NOT fields on the `paragraphs` array itself).
+3. For **each** object in `paragraphs[].intentions`, add `esIntent` and
+   `frIntent`, interpreting the corresponding `ptIntent` in the context of
+   the complete translated paragraph and the same communicative intention.
+4. `esIntent` must be an exact contiguous excerpt of its paragraph's `es`
+   text; `frIntent` must be an exact contiguous excerpt of its paragraph's
+   `fr` text. Choose natural translations that make this possible without
+   distorting the intention. Preserve punctuation, capitalization and accents
+   consistently with the paragraph text.
+5. Preserve the order and number of paragraphs and intention annotations.
+   Never modify `intentionId` or `intentionsUsed` when adding translations.
+6. Preserve existing `titlePt`, `titleEn`, `paragraphs[].pt`,
+   `paragraphs[].en`, `ptIntent`, `enIntent`, `id`, `englishLevel`, `topic`,
+   and `hqImage` exactly. Story images are not translation targets.
+7. If `titleEs`, `titleFr`, `es`, `fr`, `esIntent` or `frIntent` already exists,
+   preserve a valid existing translation. Do not overwrite it merely to
+   standardize wording; report substantive issues for approval.
+8. Translate meaning and context, not English syntax. Maintain characters,
+   chronology, narrative voice, dialogue, tense/aspect where meaningful,
+   and the intended CEFR difficulty as far as natural language allows.
+   Do not invent or omit story events. If the Portuguese is ambiguous,
+   flag the ambiguity rather than silently changing the plot.
+9. If the Portuguese highlighted intention cannot be expressed as a
+   contiguous excerpt in the natural target paragraph, flag the case for
+   manual review rather than inserting an inaccurate or disconnected span.
+
+Example of the required nested shape (illustrative only):
+
+```json
+{
+  "titlePt": "Um Sábado Diferente",
+  "titleEn": "A Different Saturday",
+  "titleEs": "Un sábado diferente",
+  "titleFr": "Un samedi différent",
+  "paragraphs": [
+    {
+      "pt": "Ontem, eu fiquei em casa e eu não fui para o parque porque estava chovendo.",
+      "en": "Yesterday, I stayed at home and I didn't go to the park because it was raining.",
+      "es": "Ayer me quedé en casa y no fui al parque porque estaba lloviendo.",
+      "fr": "Hier, je suis resté à la maison et je ne suis pas allé au parc parce qu'il pleuvait.",
+      "intentions": [
+        {
+          "intentionId": "momento-passado-com-marcador-de-tempo",
+          "ptIntent": "Ontem, eu fiquei",
+          "enIntent": "Yesterday, I stayed",
+          "esIntent": "Ayer me quedé",
+          "frIntent": "Hier, je suis resté"
+        }
+      ]
+    }
+  ]
+}
+```
+
+The example is a partial story excerpt; it does not authorize deleting
+unshown fields or other paragraphs. Where French grammatical gender depends
+on unknown narrator identity, verify context and flag uncertainty rather
+than assume an identity.
+
+### Story enrichment workflow (incremental by default)
+
+1. Inspect `AGENTS.md`, the story loader/schema, the target CEFR file(s),
+   and `git status` before proposing changes.
+2. Inventory only the requested level(s), counting stories, paragraphs,
+   missing translations, and inconsistent annotations using a lightweight
+   local parser. Do not dump full catalogs or UUID lists into agent output.
+3. Present a concise plan (affected filenames and counts), and **wait for
+   explicit user approval before bulk modifications** unless the user has
+   already expressly authorized implementation in the current request.
+4. Add only missing language fields to approved stories; retain existing
+   data and avoid whole-file reformatting or key reordering when feasible.
+5. Validate JSON syntax, CEFR/file alignment, unchanged story IDs, unchanged
+   existing fields, paragraph counts, intention counts, and the exact
+   `esIntent`/`frIntent` substring relationship. Verify that every approved
+   story has both titles and every paragraph/intention has both translations.
+6. Report concise counts by level, number of enriched stories/paragraphs,
+   files modified, validations and unresolved ambiguities. Never print UUIDs.
+7. Follow the existing temporary-file cleanup requirements.
+
+**Scope boundary:** Story enrichment must not trigger the intention-catalog
+cross-language synchronization workflow, alter `sample-hashmap-*.json`,
+regenerate stories with AI, or modify app components unless explicitly
+requested. Do not synchronize or replace `hqImage`, `youtubeVideo`, or
+`youtubeShort` while enriching story translations.
+
 ## JSON synchronization
 - Inspect the existing JSON structure before editing.
 - Keep equivalent intentions synchronized.
