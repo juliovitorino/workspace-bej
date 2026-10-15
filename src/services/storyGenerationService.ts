@@ -1,5 +1,6 @@
 import type { MentalIntention } from "../types/hashmap";
 import { getRandomLocalStory } from "./localStoryService";
+import { isAuthorMode } from "../utils/authorMode";
 
 export interface StoryParagraphIntention {
   intentionId: string;
@@ -256,8 +257,13 @@ function validateStory(
 }
 
 export async function generateInterpretationStory(
-  request: StoryGenerationRequest
+  request: StoryGenerationRequest,
+  signal?: AbortSignal
 ): Promise<StoryGenerationResult> {
+  if (!isAuthorMode() || import.meta.env.VITE_AI_ENABLED !== "true") {
+    throw new Error("A geração de histórias está disponível somente no Modo Author com IA habilitada.");
+  }
+  signal?.throwIfAborted();
   if (!GEMINI_API_KEY) {
     const fallbackStory = getRandomLocalStory(
       request.englishLevel,
@@ -283,6 +289,7 @@ export async function generateInterpretationStory(
   }
 
   const response = await fetch(GEMINI_ENDPOINT, {
+    signal,
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -304,6 +311,8 @@ export async function generateInterpretationStory(
   });
 
   const data = (await response.json()) as GeminiResponse;
+  signal?.throwIfAborted();
+  if (!isAuthorMode()) throw new DOMException("Geração cancelada ao sair do Modo Author.", "AbortError");
 
   if (!response.ok || data.error) {
     if (response.status === 503 || response.status === 429) {

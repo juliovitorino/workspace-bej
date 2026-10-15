@@ -2178,3 +2178,11 @@ button {
 .chunk-level-select select { min-height: 44px; max-width: 100%; padding: .5rem; font: inherit; }
 .chunk-intention-count { margin: 0; text-align: center; font-weight: 700; }
 .walking-note { font-size: .85rem; line-height: 1.5; color: #64748b; }
+.story-search-bar { display: grid; grid-template-columns: minmax(100px, 150px) minmax(0, 1fr) auto; align-items: end; gap: 12px; padding: 16px; border: 1px solid #cfd6e4; border-radius: 12px; background: #fff; }
+.story-search-bar .field { min-width: 0; }
+.story-search-bar input, .story-search-bar select { width: 100%; min-height: 44px; }
+.story-search-bar button { display: inline-flex; justify-content: center; align-items: center; min-width: 44px; min-height: 44px; }
+@media (max-width: 640px) {
+  .story-search-bar { grid-template-columns: minmax(0, 1fr) auto; }
+  .story-search-bar .field:first-child { grid-column: 1 / -1; }
+}

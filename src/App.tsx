@@ -20,8 +20,6 @@ import { isAuthorMode } from "./utils/authorMode";
 
 type TrainingMode = "basic" | "advanced" | "review" | null;
 
-const AI_ENABLED = import.meta.env.VITE_AI_ENABLED === "true";
-
 function App() {
   const [language, setLanguage] = useState<StudentLanguage>(getStudentLanguage);
   const [walkingActive, setWalkingActive] = useState(false);
@@ -340,8 +338,7 @@ function App() {
               <SpeakingGame key={language} language={language} />
             )}
 
-            {AI_ENABLED &&
-              !loading &&
+            {!loading &&
               data &&
               currentView === "interpretation" &&
               !trainingMode && (
@@ -389,7 +386,7 @@ function App() {
           (
             currentView === "hashmap" ||
             currentView === "chunk-flashcards" ||
-            (AI_ENABLED && currentView === "interpretation")
+            currentView === "interpretation"
           ) &&
           !trainingMode
             ? selected

@@ -1,7 +1,4 @@
 export type AppView = "hashmap" | "exercises" | "speaking-game" | "chunk-flashcards" | "interpretation";
-
-const AI_ENABLED = import.meta.env.VITE_AI_ENABLED === "true";
-
 interface SidebarProps {
   currentView: AppView;
   onViewChange: (view: AppView) => void;
@@ -27,14 +24,10 @@ const menuItems: Array<{
     id: "speaking-game",
     label: "Jogo da Fala"
   },
-  ...(AI_ENABLED
-    ? [
-        {
-          id: "interpretation" as AppView,
-          label: "Interpretação"
-        }
-      ]
-    : [])
+  {
+    id: "interpretation",
+    label: "Interpretação"
+  }
 ];
 
 export function Sidebar({

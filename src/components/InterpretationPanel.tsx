@@ -4,7 +4,8 @@ import {
   useMemo,
   useRef,
   useState,
-  type ReactNode
+  type ReactNode,
+  type FormEvent
 } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import { ConnectedSpeechButton } from "./ConnectedSpeechStudio";
@@ -128,6 +129,9 @@ export function InterpretationPanel({
   intentions,
   onSelectIntention
 }: InterpretationPanelProps) {
+  const [authorMode, setAuthorMode] = useState(isAuthorMode);
+  const aiEnabled = import.meta.env.VITE_AI_ENABLED === "true";
+  const generationController = useRef<AbortController | null>(null);
   const [englishLevel, setEnglishLevel] =
     useState<EnglishLevel>("B1");
   const [amount, setAmount] = useState(5);
@@ -159,6 +163,38 @@ export function InterpretationPanel({
   const [shareError, setShareError] = useState<string | null>(null);
   const [hqZoom, setHqZoom] = useState(1);
   const hqViewportRef = useRef<HTMLDivElement | null>(null);
+
+  function cancelGeneration() {
+    generationController.current?.abort();
+    generationController.current = null;
+    setGenerating(false);
+  }
+
+  useEffect(() => {
+    const refreshAuthorMode = () => {
+      const active = isAuthorMode();
+      setAuthorMode(active);
+      if (!active) {
+        cancelGeneration();
+        setExportJson(null);
+        setError(null);
+      }
+    };
+    // storage covers other tabs; polling also observes the existing console/
+    // localStorage activation mechanism in this tab without changing it.
+    const timer = window.setInterval(refreshAuthorMode, 500);
+    window.addEventListener("storage", refreshAuthorMode);
+    window.addEventListener("focus", refreshAuthorMode);
+    document.addEventListener("visibilitychange", refreshAuthorMode);
+    return () => {
+      generationController.current?.abort();
+      generationController.current = null;
+      window.clearInterval(timer);
+      window.removeEventListener("storage", refreshAuthorMode);
+      window.removeEventListener("focus", refreshAuthorMode);
+      document.removeEventListener("visibilitychange", refreshAuthorMode);
+    };
+  }, []);
 
   useEffect(() => {
     return () => {
@@ -258,6 +294,8 @@ export function InterpretationPanel({
   const maxAmount = Math.max(1, availableIntentions.length);
 
   function handleLevelChange(nextLevel: EnglishLevel) {
+    if (!isAuthorMode()) return;
+    cancelGeneration();
     setEnglishLevel(nextLevel);
     setStory(null);
     setStoryCopyFeedback("idle");
@@ -283,6 +321,7 @@ export function InterpretationPanel({
   }
 
   function handleAmountChange(value: number) {
+    if (!isAuthorMode()) return;
     if (Number.isNaN(value)) {
       return;
     }
@@ -295,20 +334,13 @@ export function InterpretationPanel({
     );
   }
 
-  function handleToggleStorySearch() {
-    setSearchOpen((current) => {
-      const nextValue = !current;
-
-      if (nextValue) {
-        setSearchLevel(englishLevel);
-        setSearchTitle("");
-      }
-
-      return nextValue;
-    });
+  function handleStorySearch(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setSearchOpen(true);
   }
 
   function handleLoadLocalStory(localStory: LocalStory) {
+    cancelGeneration();
     if ("speechSynthesis" in window) {
       window.speechSynthesis.cancel();
     }
@@ -333,6 +365,7 @@ export function InterpretationPanel({
   }
 
   async function handleGenerateStory() {
+    if (!isAuthorMode() || !aiEnabled || generationController.current) return;
     if (availableIntentions.length === 0) {
       setError(
         `Não há intenções disponíveis para o nível ${englishLevel}.`
@@ -344,6 +377,8 @@ export function InterpretationPanel({
       0,
       Math.min(amount, availableIntentions.length)
     );
+    const controller = new AbortController();
+    generationController.current = controller;
 
     setGenerating(true);
     setError(null);
@@ -365,17 +400,23 @@ export function InterpretationPanel({
         intentions: pickedIntentions,
         englishLevel,
         theme
-      });
+      }, controller.signal);
 
-      setStory(result);
+      if (generationController.current === controller && !controller.signal.aborted && isAuthorMode()) {
+        setStory(result);
+      }
     } catch (err) {
+      if (generationController.current !== controller || controller.signal.aborted || !isAuthorMode()) return;
       setError(
         err instanceof Error
           ? err.message
           : "Não foi possível gerar a história."
       );
     } finally {
-      setGenerating(false);
+      if (generationController.current === controller) {
+        generationController.current = null;
+        setGenerating(false);
+      }
     }
   }
 
@@ -1206,21 +1247,21 @@ export function InterpretationPanel({
           <h1>História por intenções</h1>
 
           <p className="interpretation-description">
-            Escolha um nível, a quantidade de intenções e um tema.
-            O aplicativo vai sortear as estruturas e gerar uma história
-            curta para você interpretar antes de revelar o inglês.
+            {authorMode && aiEnabled
+              ? "Escolha um nível, a quantidade de intenções e um tema. O aplicativo vai sortear as estruturas e gerar uma história curta para você interpretar antes de revelar o inglês."
+              : "Pesquise histórias da biblioteca por nível e título. Leia e interprete antes de revelar o inglês."}
           </p>
         </div>
 
-        <div className="interpretation-total">
+        {authorMode && aiEnabled && <div className="interpretation-total">
           <strong>{availableIntentions.length}</strong>
           <span>
             intenções disponíveis no nível {englishLevel}
           </span>
-        </div>
+        </div>}
       </div>
 
-      <div className="interpretation-controls">
+      {authorMode && aiEnabled && <div className="interpretation-controls">
         <div className="field">
           <label htmlFor="interpretation-level">
             Nível de inglês
@@ -1268,9 +1309,11 @@ export function InterpretationPanel({
             id="interpretation-theme"
             value={theme}
             onChange={(event) => {
+              if (!isAuthorMode()) return;
+              cancelGeneration();
               setTheme(event.target.value);
               setStory(null);
-    setStoryCopyFeedback("idle");
+              setStoryCopyFeedback("idle");
               setShowHqImage(false);
               setShowEnglish(false);
               setError(null);
@@ -1314,51 +1357,47 @@ export function InterpretationPanel({
               ? "Gerando história..."
               : "Gerar história"}
           </button>
-
-          <button
-            type="button"
-            className="secondary-button"
-            onClick={handleToggleStorySearch}
-            title={
-              searchOpen
-                ? "Fechar pesquisa de histórias"
-                : "Pesquisar histórias da biblioteca"
-            }
-            aria-label={
-              searchOpen
-                ? "Fechar pesquisa de histórias"
-                : "Pesquisar histórias da biblioteca"
-            }
-            aria-expanded={searchOpen}
-            style={{
-              width: "3rem",
-              minWidth: "3rem",
-              height: "3rem",
-              minHeight: "3rem",
-              padding: 0,
-              borderRadius: "999px",
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center"
-            }}
-          >
-            <svg
-              aria-hidden="true"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="11" cy="11" r="8" />
-              <path d="m21 21-4.35-4.35" />
-            </svg>
-          </button>
         </div>
-      </div>
+      </div>}
+
+      <form className="story-search-bar" role="search" aria-label="Pesquisar histórias da biblioteca" onSubmit={handleStorySearch}>
+        <div className="field">
+          <label htmlFor="story-search-level">Nível</label>
+
+          <select
+            id="story-search-level"
+            value={searchLevel}
+            onChange={(event) =>
+              setSearchLevel(event.target.value as EnglishLevel)
+            }
+          >
+            <option value="A1">A1</option>
+            <option value="A2">A2</option>
+            <option value="B1">B1</option>
+            <option value="B2">B2</option>
+            <option value="C1">C1</option>
+            <option value="C2">C2</option>
+          </select>
+        </div>
+
+        <div className="field">
+          <label htmlFor="story-search-title">Título da história</label>
+
+          <input
+            id="story-search-title"
+            type="search"
+            value={searchTitle}
+            onChange={(event) => setSearchTitle(event.target.value)}
+            placeholder="Digite parte do título em português ou inglês..."
+            autoComplete="off"
+          />
+        </div>
+        <button type="submit" className="secondary-button" aria-label="Pesquisar histórias" title="Pesquisar histórias" aria-expanded={searchOpen}>
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
+          </svg>
+        </button>
+      </form>
 
       {searchOpen && (
         <div
@@ -1389,47 +1428,6 @@ export function InterpretationPanel({
             >
               Fechar
             </button>
-          </div>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "minmax(120px, 180px) minmax(220px, 1fr)",
-              gap: "1rem",
-              alignItems: "end"
-            }}
-          >
-            <div className="field">
-              <label htmlFor="story-search-level">Nível</label>
-
-              <select
-                id="story-search-level"
-                value={searchLevel}
-                onChange={(event) =>
-                  setSearchLevel(event.target.value as EnglishLevel)
-                }
-              >
-                <option value="A1">A1</option>
-                <option value="A2">A2</option>
-                <option value="B1">B1</option>
-                <option value="B2">B2</option>
-                <option value="C1">C1</option>
-                <option value="C2">C2</option>
-              </select>
-            </div>
-
-            <div className="field">
-              <label htmlFor="story-search-title">Título da história</label>
-
-              <input
-                id="story-search-title"
-                type="search"
-                value={searchTitle}
-                onChange={(event) => setSearchTitle(event.target.value)}
-                placeholder="Digite parte do título em português ou inglês..."
-                autoComplete="off"
-              />
-            </div>
           </div>
 
           <div style={{ marginTop: "1.25rem" }}>
@@ -1502,14 +1500,14 @@ export function InterpretationPanel({
         </div>
       )}
 
-      {error && (
+      {authorMode && error && (
         <div className="status-card error-card">
           <h2>Não foi possível gerar a história.</h2>
           <p>{error}</p>
         </div>
       )}
 
-      {generating && (
+      {authorMode && generating && (
         <div className="status-card">
           <div className="spinner" />
           <p>
@@ -1518,7 +1516,7 @@ export function InterpretationPanel({
         </div>
       )}
 
-      {!generating &&
+      {authorMode && !generating &&
         !error &&
         selectedIntentions.length > 0 && (
           <div className="interpretation-intentions">
@@ -1625,13 +1623,13 @@ export function InterpretationPanel({
                 )}
               </button>
 
-              <ConnectedSpeechButton
+              {authorMode && <ConnectedSpeechButton
                 title={`História: ${story.titleEn}`}
                 blocks={story.paragraphs.map((paragraph) => ({ original: paragraph.en, portuguese: paragraph.pt }))}
                 compact
-              />
+              />}
 
-              {isAuthorMode() && story.source === "local" && (
+              {authorMode && story.source === "local" && (
                 <button
                   type="button"
                   className="secondary-button"
@@ -1684,7 +1682,7 @@ export function InterpretationPanel({
                   </button>
                 )}
 
-              {isAuthorMode() && story.source === "ai" && (
+              {authorMode && story.source === "ai" && (
                 <button
                   type="button"
                   className="secondary-button"
@@ -2256,7 +2254,7 @@ export function InterpretationPanel({
               </div>
             )}
 
-          {isAuthorMode() && exportJson && (
+          {authorMode && exportJson && (
             <div
               role="dialog"
               aria-modal="true"
