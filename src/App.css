@@ -2157,3 +2157,16 @@ button {
 .language-selector button { background: #fff; border: 2px solid #cfd6e4; border-radius: 10px; min-width: 44px; min-height: 44px; font-size: 1.5rem; }
 .language-selector button[aria-pressed="true"] { border-color: #3659d9; background: #edf1ff; }
 .language-selector button:focus-visible { outline: 3px solid #3659d9; outline-offset: 3px; }
+/* Walking controls are scoped so traditional flashcards keep their layout. */
+.chunk-flashcards-actions:has(.walking-entry) { flex-direction: column; }
+.walking-mode { max-width: 680px; margin: 0 auto; padding: 1rem; }
+.walking-mode h3 { font-size: clamp(2rem, 7vw, 3rem); overflow-wrap: anywhere; }
+.walking-mode progress { width: 100%; height: 1.2rem; accent-color: #2563eb; }
+.walking-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; margin: 1.25rem 0; }
+.walking-controls button, .walking-entry, .walking-settings select { min-height: 48px; font: inherit; border-radius: 10px; padding: .7rem; }
+.walking-controls button { cursor: pointer; }
+.walking-controls button:disabled { opacity: .5; cursor: default; }
+.walking-settings { display: grid; gap: 1rem; margin-top: 1rem; }
+.walking-settings label { display: flex; align-items: center; justify-content: space-between; gap: .75rem; }
+.walking-mode summary { padding: .75rem 0; cursor: pointer; }
+.walking-note { font-size: .85rem; line-height: 1.5; color: #64748b; }

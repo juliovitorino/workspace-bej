@@ -1,9 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import { isAuthorMode } from "../utils/authorMode";
+import type { StudentLanguage } from "../config/languages";
+import { isMobileDevice } from "../utils/mobileDevice";
+import { WalkingMode } from "./WalkingMode";
 
 interface ChunkFlashcardsProps {
   intentions: MentalIntention[];
+  language: StudentLanguage;
+  onWalkingChange: (active: boolean) => void;
   onShowDetails: (intention: MentalIntention) => void;
   onBasicTraining: (intention: MentalIntention) => void;
   onAdvancedTraining: (intention: MentalIntention) => void;
@@ -22,11 +27,24 @@ function pickRandomId(ids: string[]): string {
 
 export function ChunkFlashcards({
   intentions,
+  language,
+  onWalkingChange,
   onShowDetails,
   onBasicTraining,
   onAdvancedTraining
 }: ChunkFlashcardsProps) {
   const authorMode = isAuthorMode();
+  const [walking, setWalking] = useState(false);
+  const [mobile, setMobile] = useState(isMobileDevice);
+  useEffect(() => {
+    const update = () => setMobile(isMobileDevice());
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+  useEffect(() => {
+    onWalkingChange(walking);
+    return () => onWalkingChange(false);
+  }, [walking, onWalkingChange]);
 
   // O autor escolhe explicitamente quais intenções são chunks completos.
   const chunks = useMemo(
@@ -249,6 +267,22 @@ export function ChunkFlashcards({
       }
     };
   }, []);
+
+  if (walking && currentChunk) {
+    const position = drawnIds.indexOf(currentChunk.id);
+    return <WalkingMode chunk={currentChunk} language={language}
+      canPrevious={position > 0}
+      onPrevious={() => { if (position > 0) setCurrentId(drawnIds[position - 1]); }}
+      onNext={() => {
+        if (position < drawnIds.length - 1) {
+          setCurrentId(drawnIds[position + 1]);
+          return false;
+        }
+        nextChunk();
+        return completed;
+      }}
+      onStop={() => setWalking(false)} />;
+  }
 
   return (
     <section className="chunk-flashcards" aria-labelledby="chunk-flashcards-title">
@@ -482,6 +516,12 @@ export function ChunkFlashcards({
             </p>
           )}
           <div className="chunk-flashcards-actions">
+            {mobile && <button type="button" className="primary-button walking-entry" onClick={() => {
+              if (!isMobileDevice()) return;
+              if (!currentChunk) nextChunk();
+              window.speechSynthesis?.cancel();
+              setWalking(true);
+            }}>🎧 Modo Caminhada</button>}
             <button type="button" className="primary-button" onClick={nextChunk}>
               {currentChunk === null ? "Começar" : completed ? "Nova rodada" : "Próximo →"}
             </button>

@@ -24,6 +24,7 @@ const AI_ENABLED = import.meta.env.VITE_AI_ENABLED === "true";
 
 function App() {
   const [language, setLanguage] = useState<StudentLanguage>(getStudentLanguage);
+  const [walkingActive, setWalkingActive] = useState(false);
   const requestVersion = useRef(0);
   const [data, setData] = useState<HashmapData | null>(null);
   const [source, setSource] = useState<"remote" | "cache">("remote");
@@ -178,6 +179,7 @@ function App() {
   }
 
   function changeLanguage(nextLanguage: StudentLanguage) {
+    if (walkingActive) return;
     if (nextLanguage === language) return;
     ++requestVersion.current;
     setLanguage(nextLanguage);
@@ -228,7 +230,7 @@ function App() {
       <div className="app-content">
         <div className="page-shell">
           <div className="container">
-            <Header language={language} onLanguageChange={changeLanguage} metadata={data?.metadata} source={data ? source : undefined} />
+            <Header language={language} languageLocked={walkingActive} onLanguageChange={changeLanguage} metadata={data?.metadata} source={data ? source : undefined} />
 
         {loading && (
           <div className="status-card">
@@ -324,6 +326,8 @@ function App() {
               <div style={{ display: trainingMode ? "none" : undefined }}>
                 <ChunkFlashcards
                   key={language}
+                  language={language}
+                  onWalkingChange={setWalkingActive}
                   intentions={data.mentalMap}
                   onShowDetails={setSelected}
                   onBasicTraining={(item) => startTraining(item, "basic")}

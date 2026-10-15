@@ -3,12 +3,13 @@ import type { HashmapMetadata } from "../types/hashmap";
 
 interface HeaderProps {
   language: StudentLanguage;
+  languageLocked?: boolean;
   onLanguageChange: (language: StudentLanguage) => void;
   metadata?: HashmapMetadata;
   source?: "remote" | "cache";
 }
 
-export function Header({ metadata, source, language, onLanguageChange }: HeaderProps) {
+export function Header({ metadata, source, language, onLanguageChange, languageLocked }: HeaderProps) {
   return (
     <header className="app-header">
       <div>
@@ -23,7 +24,8 @@ export function Header({ metadata, source, language, onLanguageChange }: HeaderP
         <div className="language-selector" role="group" aria-label="Idioma do estudante">
           {(Object.keys(LANGUAGES) as StudentLanguage[]).map((code) => (
             <button key={code} type="button" aria-label={LANGUAGES[code].name}
-              title={LANGUAGES[code].name} aria-pressed={language === code}
+              title={languageLocked ? "Encerre o Modo Caminhada para trocar o idioma" : LANGUAGES[code].name} aria-pressed={language === code}
+              disabled={languageLocked}
               onClick={() => onLanguageChange(code)}>
               <span aria-hidden="true">{LANGUAGES[code].flag}</span>
             </button>
