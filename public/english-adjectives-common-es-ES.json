@@ -1,0 +1,2177 @@
+{
+  "metadata": {
+    "name": "Speaking Game — adjectives — es-ES",
+    "version": "1.0.0",
+    "updatedAt": "2026-10-15",
+    "language": "es-ES",
+    "sourceLanguage": "pt-BR",
+    "totalAdjectives": 116
+  },
+  "adjectives": [
+    {
+      "id": "good",
+      "adjective": "bueno",
+      "meanings": [
+        "bom"
+      ],
+      "forms": {
+        "masculine": "bueno",
+        "feminine": "buena",
+        "masculinePlural": "buenos",
+        "femininePlural": "buenas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "general",
+        "opinion"
+      ]
+    },
+    {
+      "id": "bad",
+      "adjective": "malo",
+      "meanings": [
+        "ruim"
+      ],
+      "forms": {
+        "masculine": "malo",
+        "feminine": "mala",
+        "masculinePlural": "malos",
+        "femininePlural": "malas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "general",
+        "opinion"
+      ]
+    },
+    {
+      "id": "big",
+      "adjective": "grande",
+      "meanings": [
+        "grande"
+      ],
+      "forms": {
+        "masculine": "grande",
+        "feminine": "grande",
+        "masculinePlural": "grandes",
+        "femininePlural": "grandes"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "size"
+      ]
+    },
+    {
+      "id": "small",
+      "adjective": "pequeño",
+      "meanings": [
+        "pequeno"
+      ],
+      "forms": {
+        "masculine": "pequeño",
+        "feminine": "pequeña",
+        "masculinePlural": "pequeños",
+        "femininePlural": "pequeñas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "size"
+      ]
+    },
+    {
+      "id": "new",
+      "adjective": "nuevo",
+      "meanings": [
+        "novo"
+      ],
+      "forms": {
+        "masculine": "nuevo",
+        "feminine": "nueva",
+        "masculinePlural": "nuevos",
+        "femininePlural": "nuevas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "time",
+        "general"
+      ]
+    },
+    {
+      "id": "old",
+      "adjective": "viejo",
+      "meanings": [
+        "velho"
+      ],
+      "forms": {
+        "masculine": "viejo",
+        "feminine": "vieja",
+        "masculinePlural": "viejos",
+        "femininePlural": "viejas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "time",
+        "general"
+      ]
+    },
+    {
+      "id": "young",
+      "adjective": "joven",
+      "meanings": [
+        "jovem"
+      ],
+      "forms": {
+        "masculine": "joven",
+        "feminine": "joven",
+        "masculinePlural": "jóvenes",
+        "femininePlural": "jóvenes"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "people",
+        "age"
+      ]
+    },
+    {
+      "id": "long",
+      "adjective": "largo",
+      "meanings": [
+        "longo"
+      ],
+      "forms": {
+        "masculine": "largo",
+        "feminine": "larga",
+        "masculinePlural": "largos",
+        "femininePlural": "largas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "size",
+        "time"
+      ]
+    },
+    {
+      "id": "short",
+      "adjective": "corto",
+      "meanings": [
+        "curto"
+      ],
+      "forms": {
+        "masculine": "corto",
+        "feminine": "corta",
+        "masculinePlural": "cortos",
+        "femininePlural": "cortas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "size",
+        "time"
+      ]
+    },
+    {
+      "id": "high",
+      "adjective": "alto",
+      "meanings": [
+        "alto"
+      ],
+      "forms": {
+        "masculine": "alto",
+        "feminine": "alta",
+        "masculinePlural": "altos",
+        "femininePlural": "altas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "size",
+        "measurement"
+      ]
+    },
+    {
+      "id": "low",
+      "adjective": "bajo",
+      "meanings": [
+        "baixo"
+      ],
+      "forms": {
+        "masculine": "bajo",
+        "feminine": "baja",
+        "masculinePlural": "bajos",
+        "femininePlural": "bajas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "size",
+        "measurement"
+      ]
+    },
+    {
+      "id": "easy",
+      "adjective": "fácil",
+      "meanings": [
+        "fácil"
+      ],
+      "forms": {
+        "masculine": "fácil",
+        "feminine": "fácil",
+        "masculinePlural": "fáciles",
+        "femininePlural": "fáciles"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "difficulty",
+        "learning"
+      ]
+    },
+    {
+      "id": "difficult",
+      "adjective": "difícil",
+      "meanings": [
+        "difícil"
+      ],
+      "forms": {
+        "masculine": "difícil",
+        "feminine": "difícil",
+        "masculinePlural": "difíciles",
+        "femininePlural": "difíciles"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "difficulty",
+        "learning"
+      ]
+    },
+    {
+      "id": "hard",
+      "adjective": "duro",
+      "meanings": [
+        "duro"
+      ],
+      "forms": {
+        "masculine": "duro",
+        "feminine": "dura",
+        "masculinePlural": "duros",
+        "femininePlural": "duras"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "difficulty",
+        "general"
+      ]
+    },
+    {
+      "id": "simple",
+      "adjective": "sencillo",
+      "meanings": [
+        "simples"
+      ],
+      "forms": {
+        "masculine": "sencillo",
+        "feminine": "sencilla",
+        "masculinePlural": "sencillos",
+        "femininePlural": "sencillas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "difficulty",
+        "general"
+      ]
+    },
+    {
+      "id": "important",
+      "adjective": "importante",
+      "meanings": [
+        "importante"
+      ],
+      "forms": {
+        "masculine": "importante",
+        "feminine": "importante",
+        "masculinePlural": "importantes",
+        "femininePlural": "importantes"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "priority",
+        "general"
+      ]
+    },
+    {
+      "id": "possible",
+      "adjective": "posible",
+      "meanings": [
+        "possível"
+      ],
+      "forms": {
+        "masculine": "posible",
+        "feminine": "posible",
+        "masculinePlural": "posibles",
+        "femininePlural": "posibles"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "possibility"
+      ]
+    },
+    {
+      "id": "impossible",
+      "adjective": "imposible",
+      "meanings": [
+        "impossível"
+      ],
+      "forms": {
+        "masculine": "imposible",
+        "feminine": "imposible",
+        "masculinePlural": "imposibles",
+        "femininePlural": "imposibles"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "possibility"
+      ]
+    },
+    {
+      "id": "different",
+      "adjective": "diferente",
+      "meanings": [
+        "diferente"
+      ],
+      "forms": {
+        "masculine": "diferente",
+        "feminine": "diferente",
+        "masculinePlural": "diferentes",
+        "femininePlural": "diferentes"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "comparison",
+        "general"
+      ]
+    },
+    {
+      "id": "same",
+      "adjective": "mismo",
+      "meanings": [
+        "mesmo"
+      ],
+      "forms": {
+        "masculine": "mismo",
+        "feminine": "misma",
+        "masculinePlural": "mismos",
+        "femininePlural": "mismas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "comparison",
+        "general"
+      ]
+    },
+    {
+      "id": "right",
+      "adjective": "correcto",
+      "meanings": [
+        "correto"
+      ],
+      "forms": {
+        "masculine": "correcto",
+        "feminine": "correcta",
+        "masculinePlural": "correctos",
+        "femininePlural": "correctas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "opinion",
+        "direction"
+      ]
+    },
+    {
+      "id": "wrong",
+      "adjective": "incorrecto",
+      "meanings": [
+        "errado"
+      ],
+      "forms": {
+        "masculine": "incorrecto",
+        "feminine": "incorrecta",
+        "masculinePlural": "incorrectos",
+        "femininePlural": "incorrectas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "true",
+      "adjective": "verdadero",
+      "meanings": [
+        "verdadeiro"
+      ],
+      "forms": {
+        "masculine": "verdadero",
+        "feminine": "verdadera",
+        "masculinePlural": "verdaderos",
+        "femininePlural": "verdaderas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "truth",
+        "general"
+      ]
+    },
+    {
+      "id": "false",
+      "adjective": "falso",
+      "meanings": [
+        "falso"
+      ],
+      "forms": {
+        "masculine": "falso",
+        "feminine": "falsa",
+        "masculinePlural": "falsos",
+        "femininePlural": "falsas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "truth",
+        "general"
+      ]
+    },
+    {
+      "id": "ready",
+      "adjective": "listo",
+      "meanings": [
+        "pronto"
+      ],
+      "forms": {
+        "masculine": "listo",
+        "feminine": "lista",
+        "masculinePlural": "listos",
+        "femininePlural": "listas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "state"
+      ]
+    },
+    {
+      "id": "sure",
+      "adjective": "seguro",
+      "meanings": [
+        "certo",
+        "seguro"
+      ],
+      "forms": {
+        "masculine": "seguro",
+        "feminine": "segura",
+        "masculinePlural": "seguros",
+        "femininePlural": "seguras"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "certainty"
+      ]
+    },
+    {
+      "id": "clear",
+      "adjective": "claro",
+      "meanings": [
+        "claro"
+      ],
+      "forms": {
+        "masculine": "claro",
+        "feminine": "clara",
+        "masculinePlural": "claros",
+        "femininePlural": "claras"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "understanding"
+      ]
+    },
+    {
+      "id": "unclear",
+      "adjective": "confuso",
+      "meanings": [
+        "pouco claro"
+      ],
+      "forms": {
+        "masculine": "confuso",
+        "feminine": "confusa",
+        "masculinePlural": "confusos",
+        "femininePlural": "confusas"
+      },
+      "level": "A2",
+      "frequency": "medium",
+      "tags": [
+        "communication",
+        "understanding"
+      ]
+    },
+    {
+      "id": "available",
+      "adjective": "disponible",
+      "meanings": [
+        "disponível"
+      ],
+      "forms": {
+        "masculine": "disponible",
+        "feminine": "disponible",
+        "masculinePlural": "disponibles",
+        "femininePlural": "disponibles"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "availability"
+      ]
+    },
+    {
+      "id": "busy",
+      "adjective": "ocupado",
+      "meanings": [
+        "ocupado"
+      ],
+      "forms": {
+        "masculine": "ocupado",
+        "feminine": "ocupada",
+        "masculinePlural": "ocupados",
+        "femininePlural": "ocupadas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "time"
+      ]
+    },
+    {
+      "id": "free",
+      "adjective": "libre",
+      "meanings": [
+        "livre"
+      ],
+      "forms": {
+        "masculine": "libre",
+        "feminine": "libre",
+        "masculinePlural": "libres",
+        "femininePlural": "libres"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "time",
+        "price"
+      ]
+    },
+    {
+      "id": "full",
+      "adjective": "lleno",
+      "meanings": [
+        "cheio"
+      ],
+      "forms": {
+        "masculine": "lleno",
+        "feminine": "llena",
+        "masculinePlural": "llenos",
+        "femininePlural": "llenas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "quantity",
+        "state"
+      ]
+    },
+    {
+      "id": "empty",
+      "adjective": "vacío",
+      "meanings": [
+        "vazio"
+      ],
+      "forms": {
+        "masculine": "vacío",
+        "feminine": "vacía",
+        "masculinePlural": "vacíos",
+        "femininePlural": "vacías"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "quantity",
+        "state"
+      ]
+    },
+    {
+      "id": "open",
+      "adjective": "abierto",
+      "meanings": [
+        "aberto"
+      ],
+      "forms": {
+        "masculine": "abierto",
+        "feminine": "abierta",
+        "masculinePlural": "abiertos",
+        "femininePlural": "abiertas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "state",
+        "places"
+      ]
+    },
+    {
+      "id": "closed",
+      "adjective": "cerrado",
+      "meanings": [
+        "fechado"
+      ],
+      "forms": {
+        "masculine": "cerrado",
+        "feminine": "cerrada",
+        "masculinePlural": "cerrados",
+        "femininePlural": "cerradas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "state",
+        "places"
+      ]
+    },
+    {
+      "id": "fast",
+      "adjective": "rápido",
+      "meanings": [
+        "rápido"
+      ],
+      "forms": {
+        "masculine": "rápido",
+        "feminine": "rápida",
+        "masculinePlural": "rápidos",
+        "femininePlural": "rápidas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "speed"
+      ]
+    },
+    {
+      "id": "slow",
+      "adjective": "lento",
+      "meanings": [
+        "lento"
+      ],
+      "forms": {
+        "masculine": "lento",
+        "feminine": "lenta",
+        "masculinePlural": "lentos",
+        "femininePlural": "lentas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "speed"
+      ]
+    },
+    {
+      "id": "early",
+      "adjective": "temprano",
+      "meanings": [
+        "adiantado"
+      ],
+      "forms": {
+        "masculine": "temprano",
+        "feminine": "temprana",
+        "masculinePlural": "tempranos",
+        "femininePlural": "tempranas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "late",
+      "adjective": "tardío",
+      "meanings": [
+        "tardio"
+      ],
+      "forms": {
+        "masculine": "tardío",
+        "feminine": "tardía",
+        "masculinePlural": "tardíos",
+        "femininePlural": "tardías"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "hot",
+      "adjective": "caliente",
+      "meanings": [
+        "quente"
+      ],
+      "forms": {
+        "masculine": "caliente",
+        "feminine": "caliente",
+        "masculinePlural": "calientes",
+        "femininePlural": "calientes"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "weather",
+        "temperature"
+      ]
+    },
+    {
+      "id": "cold",
+      "adjective": "frío",
+      "meanings": [
+        "frio"
+      ],
+      "forms": {
+        "masculine": "frío",
+        "feminine": "fría",
+        "masculinePlural": "fríos",
+        "femininePlural": "frías"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "weather",
+        "temperature"
+      ]
+    },
+    {
+      "id": "warm",
+      "adjective": "templado",
+      "meanings": [
+        "morno"
+      ],
+      "forms": {
+        "masculine": "templado",
+        "feminine": "templada",
+        "masculinePlural": "templados",
+        "femininePlural": "templadas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "weather",
+        "temperature"
+      ]
+    },
+    {
+      "id": "cool",
+      "adjective": "fresco",
+      "meanings": [
+        "fresco"
+      ],
+      "forms": {
+        "masculine": "fresco",
+        "feminine": "fresca",
+        "masculinePlural": "frescos",
+        "femininePlural": "frescas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "weather",
+        "opinion"
+      ]
+    },
+    {
+      "id": "happy",
+      "adjective": "feliz",
+      "meanings": [
+        "feliz"
+      ],
+      "forms": {
+        "masculine": "feliz",
+        "feminine": "feliz",
+        "masculinePlural": "felices",
+        "femininePlural": "felices"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "sad",
+      "adjective": "triste",
+      "meanings": [
+        "triste"
+      ],
+      "forms": {
+        "masculine": "triste",
+        "feminine": "triste",
+        "masculinePlural": "tristes",
+        "femininePlural": "tristes"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "angry",
+      "adjective": "enfadado",
+      "meanings": [
+        "bravo"
+      ],
+      "forms": {
+        "masculine": "enfadado",
+        "feminine": "enfadada",
+        "masculinePlural": "enfadados",
+        "femininePlural": "enfadadas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "tired",
+      "adjective": "cansado",
+      "meanings": [
+        "cansado"
+      ],
+      "forms": {
+        "masculine": "cansado",
+        "feminine": "cansada",
+        "masculinePlural": "cansados",
+        "femininePlural": "cansadas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "emotion",
+        "health"
+      ]
+    },
+    {
+      "id": "excited",
+      "adjective": "entusiasmado",
+      "meanings": [
+        "animado"
+      ],
+      "forms": {
+        "masculine": "entusiasmado",
+        "feminine": "entusiasmada",
+        "masculinePlural": "entusiasmados",
+        "femininePlural": "entusiasmadas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "worried",
+      "adjective": "preocupado",
+      "meanings": [
+        "preocupado"
+      ],
+      "forms": {
+        "masculine": "preocupado",
+        "feminine": "preocupada",
+        "masculinePlural": "preocupados",
+        "femininePlural": "preocupadas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "afraid",
+      "adjective": "asustado",
+      "meanings": [
+        "com medo"
+      ],
+      "forms": {
+        "masculine": "asustado",
+        "feminine": "asustada",
+        "masculinePlural": "asustados",
+        "femininePlural": "asustadas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "calm",
+      "adjective": "tranquilo",
+      "meanings": [
+        "calmo"
+      ],
+      "forms": {
+        "masculine": "tranquilo",
+        "feminine": "tranquila",
+        "masculinePlural": "tranquilos",
+        "femininePlural": "tranquilas"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "nervous",
+      "adjective": "nervioso",
+      "meanings": [
+        "nervoso"
+      ],
+      "forms": {
+        "masculine": "nervioso",
+        "feminine": "nerviosa",
+        "masculinePlural": "nerviosos",
+        "femininePlural": "nerviosas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "emotion"
+      ]
+    },
+    {
+      "id": "comfortable",
+      "adjective": "cómodo",
+      "meanings": [
+        "confortável"
+      ],
+      "forms": {
+        "masculine": "cómodo",
+        "feminine": "cómoda",
+        "masculinePlural": "cómodos",
+        "femininePlural": "cómodas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "state",
+        "comfort"
+      ]
+    },
+    {
+      "id": "uncomfortable",
+      "adjective": "incómodo",
+      "meanings": [
+        "desconfortável"
+      ],
+      "forms": {
+        "masculine": "incómodo",
+        "feminine": "incómoda",
+        "masculinePlural": "incómodos",
+        "femininePlural": "incómodas"
+      },
+      "level": "A2",
+      "frequency": "medium",
+      "tags": [
+        "state",
+        "comfort"
+      ]
+    },
+    {
+      "id": "dangerous",
+      "adjective": "peligroso",
+      "meanings": [
+        "perigoso"
+      ],
+      "forms": {
+        "masculine": "peligroso",
+        "feminine": "peligrosa",
+        "masculinePlural": "peligrosos",
+        "femininePlural": "peligrosas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "safety"
+      ]
+    },
+    {
+      "id": "healthy",
+      "adjective": "sano",
+      "meanings": [
+        "saudável"
+      ],
+      "forms": {
+        "masculine": "sano",
+        "feminine": "sana",
+        "masculinePlural": "sanos",
+        "femininePlural": "sanas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "id": "sick",
+      "adjective": "enfermo",
+      "meanings": [
+        "doente"
+      ],
+      "forms": {
+        "masculine": "enfermo",
+        "feminine": "enferma",
+        "masculinePlural": "enfermos",
+        "femininePlural": "enfermas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "id": "strong",
+      "adjective": "fuerte",
+      "meanings": [
+        "forte"
+      ],
+      "forms": {
+        "masculine": "fuerte",
+        "feminine": "fuerte",
+        "masculinePlural": "fuertes",
+        "femininePlural": "fuertes"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "strength",
+        "health"
+      ]
+    },
+    {
+      "id": "weak",
+      "adjective": "débil",
+      "meanings": [
+        "fraco"
+      ],
+      "forms": {
+        "masculine": "débil",
+        "feminine": "débil",
+        "masculinePlural": "débiles",
+        "femininePlural": "débiles"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "strength",
+        "health"
+      ]
+    },
+    {
+      "id": "clean",
+      "adjective": "limpio",
+      "meanings": [
+        "limpo"
+      ],
+      "forms": {
+        "masculine": "limpio",
+        "feminine": "limpia",
+        "masculinePlural": "limpios",
+        "femininePlural": "limpias"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "state",
+        "housing"
+      ]
+    },
+    {
+      "id": "dirty",
+      "adjective": "sucio",
+      "meanings": [
+        "sujo"
+      ],
+      "forms": {
+        "masculine": "sucio",
+        "feminine": "sucia",
+        "masculinePlural": "sucios",
+        "femininePlural": "sucias"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "state",
+        "housing"
+      ]
+    },
+    {
+      "id": "beautiful",
+      "adjective": "bonito",
+      "meanings": [
+        "bonito"
+      ],
+      "forms": {
+        "masculine": "bonito",
+        "feminine": "bonita",
+        "masculinePlural": "bonitos",
+        "femininePlural": "bonitas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "appearance",
+        "opinion"
+      ]
+    },
+    {
+      "id": "ugly",
+      "adjective": "feo",
+      "meanings": [
+        "feio"
+      ],
+      "forms": {
+        "masculine": "feo",
+        "feminine": "fea",
+        "masculinePlural": "feos",
+        "femininePlural": "feas"
+      },
+      "level": "A1",
+      "frequency": "medium",
+      "tags": [
+        "appearance",
+        "opinion"
+      ]
+    },
+    {
+      "id": "nice",
+      "adjective": "agradable",
+      "meanings": [
+        "legal"
+      ],
+      "forms": {
+        "masculine": "agradable",
+        "feminine": "agradable",
+        "masculinePlural": "agradables",
+        "femininePlural": "agradables"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "opinion",
+        "social"
+      ]
+    },
+    {
+      "id": "kind",
+      "adjective": "bondadoso",
+      "meanings": [
+        "gentil"
+      ],
+      "forms": {
+        "masculine": "bondadoso",
+        "feminine": "bondadosa",
+        "masculinePlural": "bondadosos",
+        "femininePlural": "bondadosas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "personality",
+        "social"
+      ]
+    },
+    {
+      "id": "friendly",
+      "adjective": "simpático",
+      "meanings": [
+        "amigável"
+      ],
+      "forms": {
+        "masculine": "simpático",
+        "feminine": "simpática",
+        "masculinePlural": "simpáticos",
+        "femininePlural": "simpáticas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "personality",
+        "social"
+      ]
+    },
+    {
+      "id": "rude",
+      "adjective": "grosero",
+      "meanings": [
+        "grosseiro"
+      ],
+      "forms": {
+        "masculine": "grosero",
+        "feminine": "grosera",
+        "masculinePlural": "groseros",
+        "femininePlural": "groseras"
+      },
+      "level": "A2",
+      "frequency": "medium",
+      "tags": [
+        "personality",
+        "social"
+      ]
+    },
+    {
+      "id": "polite",
+      "adjective": "educado",
+      "meanings": [
+        "educado"
+      ],
+      "forms": {
+        "masculine": "educado",
+        "feminine": "educada",
+        "masculinePlural": "educados",
+        "femininePlural": "educadas"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "personality",
+        "social"
+      ]
+    },
+    {
+      "id": "honest",
+      "adjective": "honesto",
+      "meanings": [
+        "honesto"
+      ],
+      "forms": {
+        "masculine": "honesto",
+        "feminine": "honesta",
+        "masculinePlural": "honestos",
+        "femininePlural": "honestas"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "smart",
+      "adjective": "inteligente",
+      "meanings": [
+        "inteligente"
+      ],
+      "forms": {
+        "masculine": "inteligente",
+        "feminine": "inteligente",
+        "masculinePlural": "inteligentes",
+        "femininePlural": "inteligentes"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "personality"
+      ]
+    },
+    {
+      "id": "careful",
+      "adjective": "cuidadoso",
+      "meanings": [
+        "cuidadoso"
+      ],
+      "forms": {
+        "masculine": "cuidadoso",
+        "feminine": "cuidadosa",
+        "masculinePlural": "cuidadosos",
+        "femininePlural": "cuidadosas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "personality",
+        "safety"
+      ]
+    },
+    {
+      "id": "careless",
+      "adjective": "descuidado",
+      "meanings": [
+        "descuidado"
+      ],
+      "forms": {
+        "masculine": "descuidado",
+        "feminine": "descuidada",
+        "masculinePlural": "descuidados",
+        "femininePlural": "descuidadas"
+      },
+      "level": "A2",
+      "frequency": "medium",
+      "tags": [
+        "personality",
+        "safety"
+      ]
+    },
+    {
+      "id": "quiet",
+      "adjective": "silencioso",
+      "meanings": [
+        "quieto"
+      ],
+      "forms": {
+        "masculine": "silencioso",
+        "feminine": "silenciosa",
+        "masculinePlural": "silenciosos",
+        "femininePlural": "silenciosas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "sound",
+        "personality"
+      ]
+    },
+    {
+      "id": "loud",
+      "adjective": "ruidoso",
+      "meanings": [
+        "barulhento"
+      ],
+      "forms": {
+        "masculine": "ruidoso",
+        "feminine": "ruidosa",
+        "masculinePlural": "ruidosos",
+        "femininePlural": "ruidosas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "sound"
+      ]
+    },
+    {
+      "id": "interesting",
+      "adjective": "interesante",
+      "meanings": [
+        "interessante"
+      ],
+      "forms": {
+        "masculine": "interesante",
+        "feminine": "interesante",
+        "masculinePlural": "interesantes",
+        "femininePlural": "interesantes"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "opinion",
+        "learning"
+      ]
+    },
+    {
+      "id": "boring",
+      "adjective": "aburrido",
+      "meanings": [
+        "chato"
+      ],
+      "forms": {
+        "masculine": "aburrido",
+        "feminine": "aburrida",
+        "masculinePlural": "aburridos",
+        "femininePlural": "aburridas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "opinion",
+        "emotion"
+      ]
+    },
+    {
+      "id": "useful",
+      "adjective": "útil",
+      "meanings": [
+        "útil"
+      ],
+      "forms": {
+        "masculine": "útil",
+        "feminine": "útil",
+        "masculinePlural": "útiles",
+        "femininePlural": "útiles"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "utility",
+        "learning"
+      ]
+    },
+    {
+      "id": "useless",
+      "adjective": "inútil",
+      "meanings": [
+        "inútil"
+      ],
+      "forms": {
+        "masculine": "inútil",
+        "feminine": "inútil",
+        "masculinePlural": "inútiles",
+        "femininePlural": "inútiles"
+      },
+      "level": "A2",
+      "frequency": "medium",
+      "tags": [
+        "utility"
+      ]
+    },
+    {
+      "id": "expensive",
+      "adjective": "caro",
+      "meanings": [
+        "caro"
+      ],
+      "forms": {
+        "masculine": "caro",
+        "feminine": "cara",
+        "masculinePlural": "caros",
+        "femininePlural": "caras"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "money",
+        "shopping"
+      ]
+    },
+    {
+      "id": "cheap",
+      "adjective": "barato",
+      "meanings": [
+        "barato"
+      ],
+      "forms": {
+        "masculine": "barato",
+        "feminine": "barata",
+        "masculinePlural": "baratos",
+        "femininePlural": "baratas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "money",
+        "shopping"
+      ]
+    },
+    {
+      "id": "rich",
+      "adjective": "rico",
+      "meanings": [
+        "rico"
+      ],
+      "forms": {
+        "masculine": "rico",
+        "feminine": "rica",
+        "masculinePlural": "ricos",
+        "femininePlural": "ricas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "money",
+        "people"
+      ]
+    },
+    {
+      "id": "poor",
+      "adjective": "pobre",
+      "meanings": [
+        "pobre"
+      ],
+      "forms": {
+        "masculine": "pobre",
+        "feminine": "pobre",
+        "masculinePlural": "pobres",
+        "femininePlural": "pobres"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "money",
+        "quality"
+      ]
+    },
+    {
+      "id": "modern",
+      "adjective": "moderno",
+      "meanings": [
+        "moderno"
+      ],
+      "forms": {
+        "masculine": "moderno",
+        "feminine": "moderna",
+        "masculinePlural": "modernos",
+        "femininePlural": "modernas"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "style"
+      ]
+    },
+    {
+      "id": "traditional",
+      "adjective": "tradicional",
+      "meanings": [
+        "tradicional"
+      ],
+      "forms": {
+        "masculine": "tradicional",
+        "feminine": "tradicional",
+        "masculinePlural": "tradicionales",
+        "femininePlural": "tradicionales"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "culture",
+        "style"
+      ]
+    },
+    {
+      "id": "popular",
+      "adjective": "popular",
+      "meanings": [
+        "popular"
+      ],
+      "forms": {
+        "masculine": "popular",
+        "feminine": "popular",
+        "masculinePlural": "populares",
+        "femininePlural": "populares"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "society",
+        "opinion"
+      ]
+    },
+    {
+      "id": "famous",
+      "adjective": "famoso",
+      "meanings": [
+        "famoso"
+      ],
+      "forms": {
+        "masculine": "famoso",
+        "feminine": "famosa",
+        "masculinePlural": "famosos",
+        "femininePlural": "famosas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "society",
+        "places"
+      ]
+    },
+    {
+      "id": "common",
+      "adjective": "común",
+      "meanings": [
+        "comum"
+      ],
+      "forms": {
+        "masculine": "común",
+        "feminine": "común",
+        "masculinePlural": "comunes",
+        "femininePlural": "comunes"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "general"
+      ]
+    },
+    {
+      "id": "rare",
+      "adjective": "raro",
+      "meanings": [
+        "raro"
+      ],
+      "forms": {
+        "masculine": "raro",
+        "feminine": "rara",
+        "masculinePlural": "raros",
+        "femininePlural": "raras"
+      },
+      "level": "A2",
+      "frequency": "medium",
+      "tags": [
+        "general"
+      ]
+    },
+    {
+      "id": "special",
+      "adjective": "especial",
+      "meanings": [
+        "especial"
+      ],
+      "forms": {
+        "masculine": "especial",
+        "feminine": "especial",
+        "masculinePlural": "especiales",
+        "femininePlural": "especiales"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "general",
+        "emotion"
+      ]
+    },
+    {
+      "id": "normal",
+      "adjective": "normal",
+      "meanings": [
+        "normal"
+      ],
+      "forms": {
+        "masculine": "normal",
+        "feminine": "normal",
+        "masculinePlural": "normales",
+        "femininePlural": "normales"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "general"
+      ]
+    },
+    {
+      "id": "strange",
+      "adjective": "extraño",
+      "meanings": [
+        "estranho"
+      ],
+      "forms": {
+        "masculine": "extraño",
+        "feminine": "extraña",
+        "masculinePlural": "extraños",
+        "femininePlural": "extrañas"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "general",
+        "opinion"
+      ]
+    },
+    {
+      "id": "serious",
+      "adjective": "serio",
+      "meanings": [
+        "sério"
+      ],
+      "forms": {
+        "masculine": "serio",
+        "feminine": "seria",
+        "masculinePlural": "serios",
+        "femininePlural": "serias"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "general",
+        "work"
+      ]
+    },
+    {
+      "id": "funny",
+      "adjective": "gracioso",
+      "meanings": [
+        "engraçado"
+      ],
+      "forms": {
+        "masculine": "gracioso",
+        "feminine": "graciosa",
+        "masculinePlural": "graciosos",
+        "femininePlural": "graciosas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "emotion",
+        "social"
+      ]
+    },
+    {
+      "id": "great",
+      "adjective": "estupendo",
+      "meanings": [
+        "ótimo"
+      ],
+      "forms": {
+        "masculine": "estupendo",
+        "feminine": "estupenda",
+        "masculinePlural": "estupendos",
+        "femininePlural": "estupendas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "excellent",
+      "adjective": "excelente",
+      "meanings": [
+        "excelente"
+      ],
+      "forms": {
+        "masculine": "excelente",
+        "feminine": "excelente",
+        "masculinePlural": "excelentes",
+        "femininePlural": "excelentes"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "opinion",
+        "quality"
+      ]
+    },
+    {
+      "id": "perfect",
+      "adjective": "perfecto",
+      "meanings": [
+        "perfeito"
+      ],
+      "forms": {
+        "masculine": "perfecto",
+        "feminine": "perfecta",
+        "masculinePlural": "perfectos",
+        "femininePlural": "perfectas"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "opinion",
+        "quality"
+      ]
+    },
+    {
+      "id": "better",
+      "adjective": "mejor",
+      "meanings": [
+        "melhor"
+      ],
+      "forms": {
+        "masculine": "mejor",
+        "feminine": "mejor",
+        "masculinePlural": "mejores",
+        "femininePlural": "mejores"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "comparison",
+        "opinion"
+      ]
+    },
+    {
+      "id": "worse",
+      "adjective": "peor",
+      "meanings": [
+        "pior"
+      ],
+      "forms": {
+        "masculine": "peor",
+        "feminine": "peor",
+        "masculinePlural": "peores",
+        "femininePlural": "peores"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "comparison",
+        "opinion"
+      ]
+    },
+    {
+      "id": "best",
+      "adjective": "el mejor",
+      "meanings": [
+        "melhor"
+      ],
+      "forms": {
+        "masculine": "el mejor",
+        "feminine": "la mejor",
+        "masculinePlural": "los mejores",
+        "femininePlural": "las mejores"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "comparison",
+        "opinion"
+      ]
+    },
+    {
+      "id": "worst",
+      "adjective": "el peor",
+      "meanings": [
+        "pior"
+      ],
+      "forms": {
+        "masculine": "el peor",
+        "feminine": "la peor",
+        "masculinePlural": "los peores",
+        "femininePlural": "las peores"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "comparison",
+        "opinion"
+      ]
+    },
+    {
+      "id": "local",
+      "adjective": "local",
+      "meanings": [
+        "local"
+      ],
+      "forms": {
+        "masculine": "local",
+        "feminine": "local",
+        "masculinePlural": "locales",
+        "femininePlural": "locales"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "places",
+        "community"
+      ]
+    },
+    {
+      "id": "global",
+      "adjective": "global",
+      "meanings": [
+        "global"
+      ],
+      "forms": {
+        "masculine": "global",
+        "feminine": "global",
+        "masculinePlural": "globales",
+        "femininePlural": "globales"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "business",
+        "world"
+      ]
+    },
+    {
+      "id": "public",
+      "adjective": "público",
+      "meanings": [
+        "público"
+      ],
+      "forms": {
+        "masculine": "público",
+        "feminine": "pública",
+        "masculinePlural": "públicos",
+        "femininePlural": "públicas"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "society",
+        "places"
+      ]
+    },
+    {
+      "id": "private",
+      "adjective": "privado",
+      "meanings": [
+        "privado"
+      ],
+      "forms": {
+        "masculine": "privado",
+        "feminine": "privada",
+        "masculinePlural": "privados",
+        "femininePlural": "privadas"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "society",
+        "work"
+      ]
+    },
+    {
+      "id": "personal",
+      "adjective": "personal",
+      "meanings": [
+        "pessoal"
+      ],
+      "forms": {
+        "masculine": "personal",
+        "feminine": "personal",
+        "masculinePlural": "personales",
+        "femininePlural": "personales"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "people",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "professional",
+      "adjective": "profesional",
+      "meanings": [
+        "profissional"
+      ],
+      "forms": {
+        "masculine": "profesional",
+        "feminine": "profesional",
+        "masculinePlural": "profesionales",
+        "femininePlural": "profesionales"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "work"
+      ]
+    },
+    {
+      "id": "technical",
+      "adjective": "técnico",
+      "meanings": [
+        "técnico"
+      ],
+      "forms": {
+        "masculine": "técnico",
+        "feminine": "técnica",
+        "masculinePlural": "técnicos",
+        "femininePlural": "técnicas"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "work"
+      ]
+    },
+    {
+      "id": "digital",
+      "adjective": "digital",
+      "meanings": [
+        "digital"
+      ],
+      "forms": {
+        "masculine": "digital",
+        "feminine": "digital",
+        "masculinePlural": "digitales",
+        "femininePlural": "digitales"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "technology"
+      ]
+    },
+    {
+      "id": "online",
+      "adjective": "en línea",
+      "meanings": [
+        "online"
+      ],
+      "forms": {
+        "masculine": "en línea",
+        "feminine": "en línea",
+        "masculinePlural": "en línea",
+        "femininePlural": "en línea"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "technology"
+      ]
+    },
+    {
+      "id": "offline",
+      "adjective": "sin conexión",
+      "meanings": [
+        "offline"
+      ],
+      "forms": {
+        "masculine": "sin conexión",
+        "feminine": "sin conexión",
+        "masculinePlural": "sin conexión",
+        "femininePlural": "sin conexión"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "technology"
+      ]
+    },
+    {
+      "id": "real",
+      "adjective": "real",
+      "meanings": [
+        "real"
+      ],
+      "forms": {
+        "masculine": "real",
+        "feminine": "real",
+        "masculinePlural": "reales",
+        "femininePlural": "reales"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "general"
+      ]
+    },
+    {
+      "id": "main",
+      "adjective": "principal",
+      "meanings": [
+        "principal"
+      ],
+      "forms": {
+        "masculine": "principal",
+        "feminine": "principal",
+        "masculinePlural": "principales",
+        "femininePlural": "principales"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "priority"
+      ]
+    },
+    {
+      "id": "final",
+      "adjective": "final",
+      "meanings": [
+        "final"
+      ],
+      "forms": {
+        "masculine": "final",
+        "feminine": "final",
+        "masculinePlural": "finales",
+        "femininePlural": "finales"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "time",
+        "process"
+      ]
+    },
+    {
+      "id": "current",
+      "adjective": "actual",
+      "meanings": [
+        "atual"
+      ],
+      "forms": {
+        "masculine": "actual",
+        "feminine": "actual",
+        "masculinePlural": "actuales",
+        "femininePlural": "actuales"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "recent",
+      "adjective": "reciente",
+      "meanings": [
+        "recente"
+      ],
+      "forms": {
+        "masculine": "reciente",
+        "feminine": "reciente",
+        "masculinePlural": "recientes",
+        "femininePlural": "recientes"
+      },
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "future",
+      "adjective": "futuro",
+      "meanings": [
+        "futuro"
+      ],
+      "forms": {
+        "masculine": "futuro",
+        "feminine": "futura",
+        "masculinePlural": "futuros",
+        "femininePlural": "futuras"
+      },
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "time"
+      ]
+    }
+  ]
+}

@@ -18,8 +18,7 @@ export function clampSpeakingGameSeconds(seconds: number): number {
   );
 }
 
-export function getNextSequentialFormIndex(currentIndex: number): number {
-  const total: number = SPEAKING_GAME_FORMS.length;
+export function getNextSequentialFormIndex(currentIndex: number, total: number = SPEAKING_GAME_FORMS.length): number {
 
   if (total === 0) {
     return 0;
@@ -28,18 +27,14 @@ export function getNextSequentialFormIndex(currentIndex: number): number {
   return (currentIndex + 1) % total;
 }
 
-export function getRandomFormIndex(previousIndex?: number): number {
-  const total: number = SPEAKING_GAME_FORMS.length;
+export function getRandomFormIndex(previousIndex?: number, total: number = SPEAKING_GAME_FORMS.length): number {
 
   if (total <= 1) {
     return 0;
   }
 
-  let nextIndex = Math.floor(Math.random() * total);
-
-  while (nextIndex === previousIndex) {
-    nextIndex = Math.floor(Math.random() * total);
-  }
-
-  return nextIndex;
+  // Draw from the other positions directly; no retry loop for a fixed RNG.
+  if (previousIndex === undefined || previousIndex < 0 || previousIndex >= total) return Math.floor(Math.random() * total);
+  const next = Math.floor(Math.random() * (total - 1));
+  return next >= previousIndex ? next + 1 : next;
 }

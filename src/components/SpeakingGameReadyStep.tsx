@@ -1,8 +1,11 @@
 import type { CSSProperties } from "react";
-import { SPEAKING_GAME_FORMS } from "../config/speakingGameForms";
+import { getSpeakingGameForms } from "../config/speakingGameForms";
+import type { StudentLanguage } from "../config/languages";
 import type { SpeakingGameSettings } from "../types/speakingGameTypes";
 
 interface SpeakingGameReadyStepProps {
+  language: StudentLanguage;
+  loading?: boolean;
   settings: SpeakingGameSettings;
   lastStudySeconds?: number | null;
   onPrevious: () => void;
@@ -10,6 +13,8 @@ interface SpeakingGameReadyStepProps {
 }
 
 export function SpeakingGameReadyStep({
+  language,
+  loading = false,
   settings,
   lastStudySeconds = null,
   onPrevious,
@@ -59,7 +64,7 @@ export function SpeakingGameReadyStep({
         <div style={styles.summaryRow}>
           <span style={styles.summaryLabel}>Formas</span>
           <strong style={styles.summaryValue}>
-            {SPEAKING_GAME_FORMS.length}
+            {getSpeakingGameForms(language).length}
           </strong>
         </div>
       </div>
@@ -72,6 +77,7 @@ export function SpeakingGameReadyStep({
         <button
           type="button"
           onClick={onStart}
+          disabled={loading}
           style={styles.startButton}
         >
           Começar o jogo

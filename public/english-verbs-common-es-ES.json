@@ -1,0 +1,5700 @@
+{
+  "metadata": {
+    "name": "Speaking Game — verbs — es-ES",
+    "version": "1.0.0",
+    "updatedAt": "2026-10-15",
+    "language": "es-ES",
+    "sourceLanguage": "pt-BR",
+    "totalVerbs": 132
+  },
+  "verbs": [
+    {
+      "id": "be-1",
+      "base": "ser",
+      "meanings": [
+        "ser"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "core",
+        "state"
+      ],
+      "forms": {
+        "infinitive": "ser",
+        "present": "soy",
+        "past": "fui",
+        "imperfect": "era",
+        "participle": "sido",
+        "gerund": "siendo",
+        "perfect": "he sido",
+        "pluperfect": "había sido",
+        "perfectInfinitive": "haber sido"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Soy",
+        "past": "Fui",
+        "future": "Voy a ser",
+        "habit": "Antes era",
+        "recent": "Acabo de ser",
+        "regret": "Debería haber sido",
+        "possibility": "Podría haber sido",
+        "intended": "Iba a ser",
+        "perfect": "He sido",
+        "ability": "Puedo ser",
+        "hypothetical": "Podría ser",
+        "obligation": "Debo ser",
+        "advice": "Debería ser"
+      }
+    },
+    {
+      "id": "be-2",
+      "base": "estar",
+      "meanings": [
+        "estar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "core",
+        "state"
+      ],
+      "forms": {
+        "infinitive": "estar",
+        "present": "estoy",
+        "past": "estuve",
+        "imperfect": "estaba",
+        "participle": "estado",
+        "gerund": "estando",
+        "perfect": "he estado",
+        "pluperfect": "había estado",
+        "perfectInfinitive": "haber estado"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Estoy",
+        "past": "Estuve",
+        "future": "Voy a estar",
+        "habit": "Antes estaba",
+        "recent": "Acabo de estar",
+        "regret": "Debería haber estado",
+        "possibility": "Podría haber estado",
+        "intended": "Iba a estar",
+        "perfect": "He estado",
+        "ability": "Puedo estar",
+        "hypothetical": "Podría estar",
+        "obligation": "Debo estar",
+        "advice": "Debería estar"
+      }
+    },
+    {
+      "id": "have-3",
+      "base": "tener",
+      "meanings": [
+        "ter"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "core",
+        "possession"
+      ],
+      "forms": {
+        "infinitive": "tener",
+        "present": "tengo",
+        "past": "tuve",
+        "imperfect": "tenía",
+        "participle": "tenido",
+        "gerund": "teniendo",
+        "perfect": "he tenido",
+        "pluperfect": "había tenido",
+        "perfectInfinitive": "haber tenido"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Tengo",
+        "past": "Tuve",
+        "future": "Voy a tener",
+        "habit": "Antes tenía",
+        "recent": "Acabo de tener",
+        "regret": "Debería haber tenido",
+        "possibility": "Podría haber tenido",
+        "intended": "Iba a tener",
+        "perfect": "He tenido",
+        "ability": "Puedo tener",
+        "hypothetical": "Podría tener",
+        "obligation": "Debo tener",
+        "advice": "Debería tener"
+      }
+    },
+    {
+      "id": "do-4",
+      "base": "realizar",
+      "meanings": [
+        "realizar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "core",
+        "action"
+      ],
+      "forms": {
+        "infinitive": "realizar",
+        "present": "realizo",
+        "past": "realicé",
+        "imperfect": "realizaba",
+        "participle": "realizado",
+        "gerund": "realizando",
+        "perfect": "he realizado",
+        "pluperfect": "había realizado",
+        "perfectInfinitive": "haber realizado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Realizo",
+        "ongoing": "Estoy realizando",
+        "past": "Realicé",
+        "pastOngoing": "Estaba realizando",
+        "duration": "Llevo un tiempo realizando",
+        "future": "Voy a realizar",
+        "habit": "Antes realizaba",
+        "recent": "Acabo de realizar",
+        "regret": "Debería haber realizado",
+        "possibility": "Podría haber realizado",
+        "prior": "Llevaba un tiempo realizando",
+        "intended": "Iba a realizar",
+        "perfect": "He realizado",
+        "ability": "Puedo realizar",
+        "hypothetical": "Podría realizar",
+        "obligation": "Debo realizar",
+        "advice": "Debería realizar"
+      }
+    },
+    {
+      "id": "say-5",
+      "base": "decir",
+      "meanings": [
+        "dizer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "decir",
+        "present": "digo",
+        "past": "dije",
+        "imperfect": "decía",
+        "participle": "dicho",
+        "gerund": "diciendo",
+        "perfect": "he dicho",
+        "pluperfect": "había dicho",
+        "perfectInfinitive": "haber dicho"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Digo",
+        "ongoing": "Estoy diciendo",
+        "past": "Dije",
+        "pastOngoing": "Estaba diciendo",
+        "duration": "Llevo un tiempo diciendo",
+        "future": "Voy a decir",
+        "habit": "Antes decía",
+        "recent": "Acabo de decir",
+        "regret": "Debería haber dicho",
+        "possibility": "Podría haber dicho",
+        "prior": "Llevaba un tiempo diciendo",
+        "intended": "Iba a decir",
+        "perfect": "He dicho",
+        "ability": "Puedo decir",
+        "hypothetical": "Podría decir",
+        "obligation": "Debo decir",
+        "advice": "Debería decir"
+      }
+    },
+    {
+      "id": "go-6",
+      "base": "ir",
+      "meanings": [
+        "ir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "ir",
+        "present": "voy",
+        "past": "fui",
+        "imperfect": "iba",
+        "participle": "ido",
+        "gerund": "yendo",
+        "perfect": "he ido",
+        "pluperfect": "había ido",
+        "perfectInfinitive": "haber ido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Voy",
+        "ongoing": "Estoy yendo",
+        "past": "Fui",
+        "pastOngoing": "Estaba yendo",
+        "duration": "Llevo un tiempo yendo",
+        "future": "Voy a ir",
+        "habit": "Antes iba",
+        "recent": "Acabo de ir",
+        "regret": "Debería haber ido",
+        "possibility": "Podría haber ido",
+        "prior": "Llevaba un tiempo yendo",
+        "intended": "Iba a ir",
+        "perfect": "He ido",
+        "ability": "Puedo ir",
+        "hypothetical": "Podría ir",
+        "obligation": "Debo ir",
+        "advice": "Debería ir"
+      }
+    },
+    {
+      "id": "get-7",
+      "base": "obtener",
+      "meanings": [
+        "obter"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "core",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "obtener",
+        "present": "obtengo",
+        "past": "obtuve",
+        "imperfect": "obtenía",
+        "participle": "obtenido",
+        "gerund": "obteniendo",
+        "perfect": "he obtenido",
+        "pluperfect": "había obtenido",
+        "perfectInfinitive": "haber obtenido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Obtengo",
+        "ongoing": "Estoy obteniendo",
+        "past": "Obtuve",
+        "pastOngoing": "Estaba obteniendo",
+        "duration": "Llevo un tiempo obteniendo",
+        "future": "Voy a obtener",
+        "habit": "Antes obtenía",
+        "recent": "Acabo de obtener",
+        "regret": "Debería haber obtenido",
+        "possibility": "Podría haber obtenido",
+        "prior": "Llevaba un tiempo obteniendo",
+        "intended": "Iba a obtener",
+        "perfect": "He obtenido",
+        "ability": "Puedo obtener",
+        "hypothetical": "Podría obtener",
+        "obligation": "Debo obtener",
+        "advice": "Debería obtener"
+      }
+    },
+    {
+      "id": "make-8",
+      "base": "hacer",
+      "meanings": [
+        "fazer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "core",
+        "creation"
+      ],
+      "forms": {
+        "infinitive": "hacer",
+        "present": "hago",
+        "past": "hice",
+        "imperfect": "hacía",
+        "participle": "hecho",
+        "gerund": "haciendo",
+        "perfect": "he hecho",
+        "pluperfect": "había hecho",
+        "perfectInfinitive": "haber hecho"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Hago",
+        "ongoing": "Estoy haciendo",
+        "past": "Hice",
+        "pastOngoing": "Estaba haciendo",
+        "duration": "Llevo un tiempo haciendo",
+        "future": "Voy a hacer",
+        "habit": "Antes hacía",
+        "recent": "Acabo de hacer",
+        "regret": "Debería haber hecho",
+        "possibility": "Podría haber hecho",
+        "prior": "Llevaba un tiempo haciendo",
+        "intended": "Iba a hacer",
+        "perfect": "He hecho",
+        "ability": "Puedo hacer",
+        "hypothetical": "Podría hacer",
+        "obligation": "Debo hacer",
+        "advice": "Debería hacer"
+      }
+    },
+    {
+      "id": "know-9",
+      "base": "saber",
+      "meanings": [
+        "saber"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "knowledge"
+      ],
+      "forms": {
+        "infinitive": "saber",
+        "present": "sé",
+        "past": "supe",
+        "imperfect": "sabía",
+        "participle": "sabido",
+        "gerund": "sabiendo",
+        "perfect": "he sabido",
+        "pluperfect": "había sabido",
+        "perfectInfinitive": "haber sabido"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Sé",
+        "past": "Supe",
+        "future": "Voy a saber",
+        "habit": "Antes sabía",
+        "recent": "Acabo de saber",
+        "regret": "Debería haber sabido",
+        "possibility": "Podría haber sabido",
+        "intended": "Iba a saber",
+        "perfect": "He sabido",
+        "ability": "Puedo saber",
+        "hypothetical": "Podría saber",
+        "obligation": "Debo saber",
+        "advice": "Debería saber"
+      }
+    },
+    {
+      "id": "know-10",
+      "base": "conocer",
+      "meanings": [
+        "conhecer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "knowledge"
+      ],
+      "forms": {
+        "infinitive": "conocer",
+        "present": "conozco",
+        "past": "conocí",
+        "imperfect": "conocía",
+        "participle": "conocido",
+        "gerund": "conociendo",
+        "perfect": "he conocido",
+        "pluperfect": "había conocido",
+        "perfectInfinitive": "haber conocido"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Conozco",
+        "past": "Conocí",
+        "future": "Voy a conocer",
+        "habit": "Antes conocía",
+        "recent": "Acabo de conocer",
+        "regret": "Debería haber conocido",
+        "possibility": "Podría haber conocido",
+        "intended": "Iba a conocer",
+        "perfect": "He conocido",
+        "ability": "Puedo conocer",
+        "hypothetical": "Podría conocer",
+        "obligation": "Debo conocer",
+        "advice": "Debería conocer"
+      }
+    },
+    {
+      "id": "think-11",
+      "base": "pensar",
+      "meanings": [
+        "pensar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "thought"
+      ],
+      "forms": {
+        "infinitive": "pensar",
+        "present": "pienso",
+        "past": "pensé",
+        "imperfect": "pensaba",
+        "participle": "pensado",
+        "gerund": "pensando",
+        "perfect": "he pensado",
+        "pluperfect": "había pensado",
+        "perfectInfinitive": "haber pensado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Pienso",
+        "ongoing": "Estoy pensando",
+        "past": "Pensé",
+        "pastOngoing": "Estaba pensando",
+        "duration": "Llevo un tiempo pensando",
+        "future": "Voy a pensar",
+        "habit": "Antes pensaba",
+        "recent": "Acabo de pensar",
+        "regret": "Debería haber pensado",
+        "possibility": "Podría haber pensado",
+        "prior": "Llevaba un tiempo pensando",
+        "intended": "Iba a pensar",
+        "perfect": "He pensado",
+        "ability": "Puedo pensar",
+        "hypothetical": "Podría pensar",
+        "obligation": "Debo pensar",
+        "advice": "Debería pensar"
+      }
+    },
+    {
+      "id": "take-12",
+      "base": "tomar",
+      "meanings": [
+        "tomar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "tomar",
+        "present": "tomo",
+        "past": "tomé",
+        "imperfect": "tomaba",
+        "participle": "tomado",
+        "gerund": "tomando",
+        "perfect": "he tomado",
+        "pluperfect": "había tomado",
+        "perfectInfinitive": "haber tomado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Tomo",
+        "ongoing": "Estoy tomando",
+        "past": "Tomé",
+        "pastOngoing": "Estaba tomando",
+        "duration": "Llevo un tiempo tomando",
+        "future": "Voy a tomar",
+        "habit": "Antes tomaba",
+        "recent": "Acabo de tomar",
+        "regret": "Debería haber tomado",
+        "possibility": "Podría haber tomado",
+        "prior": "Llevaba un tiempo tomando",
+        "intended": "Iba a tomar",
+        "perfect": "He tomado",
+        "ability": "Puedo tomar",
+        "hypothetical": "Podría tomar",
+        "obligation": "Debo tomar",
+        "advice": "Debería tomar"
+      }
+    },
+    {
+      "id": "see-13",
+      "base": "ver",
+      "meanings": [
+        "ver"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "perception"
+      ],
+      "forms": {
+        "infinitive": "ver",
+        "present": "veo",
+        "past": "vi",
+        "imperfect": "veía",
+        "participle": "visto",
+        "gerund": "viendo",
+        "perfect": "he visto",
+        "pluperfect": "había visto",
+        "perfectInfinitive": "haber visto"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Veo",
+        "ongoing": "Estoy viendo",
+        "past": "Vi",
+        "pastOngoing": "Estaba viendo",
+        "duration": "Llevo un tiempo viendo",
+        "future": "Voy a ver",
+        "habit": "Antes veía",
+        "recent": "Acabo de ver",
+        "regret": "Debería haber visto",
+        "possibility": "Podría haber visto",
+        "prior": "Llevaba un tiempo viendo",
+        "intended": "Iba a ver",
+        "perfect": "He visto",
+        "ability": "Puedo ver",
+        "hypothetical": "Podría ver",
+        "obligation": "Debo ver",
+        "advice": "Debería ver"
+      }
+    },
+    {
+      "id": "come-14",
+      "base": "venir",
+      "meanings": [
+        "vir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement"
+      ],
+      "forms": {
+        "infinitive": "venir",
+        "present": "vengo",
+        "past": "vine",
+        "imperfect": "venía",
+        "participle": "venido",
+        "gerund": "viniendo",
+        "perfect": "he venido",
+        "pluperfect": "había venido",
+        "perfectInfinitive": "haber venido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Vengo",
+        "ongoing": "Estoy viniendo",
+        "past": "Vine",
+        "pastOngoing": "Estaba viniendo",
+        "duration": "Llevo un tiempo viniendo",
+        "future": "Voy a venir",
+        "habit": "Antes venía",
+        "recent": "Acabo de venir",
+        "regret": "Debería haber venido",
+        "possibility": "Podría haber venido",
+        "prior": "Llevaba un tiempo viniendo",
+        "intended": "Iba a venir",
+        "perfect": "He venido",
+        "ability": "Puedo venir",
+        "hypothetical": "Podría venir",
+        "obligation": "Debo venir",
+        "advice": "Debería venir"
+      }
+    },
+    {
+      "id": "want-15",
+      "base": "querer",
+      "meanings": [
+        "querer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "desire"
+      ],
+      "forms": {
+        "infinitive": "querer",
+        "present": "quiero",
+        "past": "quise",
+        "imperfect": "quería",
+        "participle": "querido",
+        "gerund": "queriendo",
+        "perfect": "he querido",
+        "pluperfect": "había querido",
+        "perfectInfinitive": "haber querido"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Quiero",
+        "past": "Quise",
+        "future": "Voy a querer",
+        "habit": "Antes quería",
+        "recent": "Acabo de querer",
+        "regret": "Debería haber querido",
+        "possibility": "Podría haber querido",
+        "intended": "Iba a querer",
+        "perfect": "He querido",
+        "ability": "Puedo querer",
+        "hypothetical": "Podría querer",
+        "obligation": "Debo querer",
+        "advice": "Debería querer"
+      }
+    },
+    {
+      "id": "look-16",
+      "base": "mirar",
+      "meanings": [
+        "olhar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "perception"
+      ],
+      "forms": {
+        "infinitive": "mirar",
+        "present": "miro",
+        "past": "miré",
+        "imperfect": "miraba",
+        "participle": "mirado",
+        "gerund": "mirando",
+        "perfect": "he mirado",
+        "pluperfect": "había mirado",
+        "perfectInfinitive": "haber mirado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Miro",
+        "ongoing": "Estoy mirando",
+        "past": "Miré",
+        "pastOngoing": "Estaba mirando",
+        "duration": "Llevo un tiempo mirando",
+        "future": "Voy a mirar",
+        "habit": "Antes miraba",
+        "recent": "Acabo de mirar",
+        "regret": "Debería haber mirado",
+        "possibility": "Podría haber mirado",
+        "prior": "Llevaba un tiempo mirando",
+        "intended": "Iba a mirar",
+        "perfect": "He mirado",
+        "ability": "Puedo mirar",
+        "hypothetical": "Podría mirar",
+        "obligation": "Debo mirar",
+        "advice": "Debería mirar"
+      }
+    },
+    {
+      "id": "use-17",
+      "base": "usar",
+      "meanings": [
+        "usar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "usar",
+        "present": "uso",
+        "past": "usé",
+        "imperfect": "usaba",
+        "participle": "usado",
+        "gerund": "usando",
+        "perfect": "he usado",
+        "pluperfect": "había usado",
+        "perfectInfinitive": "haber usado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Uso",
+        "ongoing": "Estoy usando",
+        "past": "Usé",
+        "pastOngoing": "Estaba usando",
+        "duration": "Llevo un tiempo usando",
+        "future": "Voy a usar",
+        "habit": "Antes usaba",
+        "recent": "Acabo de usar",
+        "regret": "Debería haber usado",
+        "possibility": "Podría haber usado",
+        "prior": "Llevaba un tiempo usando",
+        "intended": "Iba a usar",
+        "perfect": "He usado",
+        "ability": "Puedo usar",
+        "hypothetical": "Podría usar",
+        "obligation": "Debo usar",
+        "advice": "Debería usar"
+      }
+    },
+    {
+      "id": "find-18",
+      "base": "encontrar",
+      "meanings": [
+        "encontrar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "encontrar",
+        "present": "encuentro",
+        "past": "encontré",
+        "imperfect": "encontraba",
+        "participle": "encontrado",
+        "gerund": "encontrando",
+        "perfect": "he encontrado",
+        "pluperfect": "había encontrado",
+        "perfectInfinitive": "haber encontrado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Encuentro",
+        "ongoing": "Estoy encontrando",
+        "past": "Encontré",
+        "pastOngoing": "Estaba encontrando",
+        "duration": "Llevo un tiempo encontrando",
+        "future": "Voy a encontrar",
+        "habit": "Antes encontraba",
+        "recent": "Acabo de encontrar",
+        "regret": "Debería haber encontrado",
+        "possibility": "Podría haber encontrado",
+        "prior": "Llevaba un tiempo encontrando",
+        "intended": "Iba a encontrar",
+        "perfect": "He encontrado",
+        "ability": "Puedo encontrar",
+        "hypothetical": "Podría encontrar",
+        "obligation": "Debo encontrar",
+        "advice": "Debería encontrar"
+      }
+    },
+    {
+      "id": "give-19",
+      "base": "dar",
+      "meanings": [
+        "dar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "interaction"
+      ],
+      "forms": {
+        "infinitive": "dar",
+        "present": "doy",
+        "past": "di",
+        "imperfect": "daba",
+        "participle": "dado",
+        "gerund": "dando",
+        "perfect": "he dado",
+        "pluperfect": "había dado",
+        "perfectInfinitive": "haber dado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Doy",
+        "ongoing": "Estoy dando",
+        "past": "Di",
+        "pastOngoing": "Estaba dando",
+        "duration": "Llevo un tiempo dando",
+        "future": "Voy a dar",
+        "habit": "Antes daba",
+        "recent": "Acabo de dar",
+        "regret": "Debería haber dado",
+        "possibility": "Podría haber dado",
+        "prior": "Llevaba un tiempo dando",
+        "intended": "Iba a dar",
+        "perfect": "He dado",
+        "ability": "Puedo dar",
+        "hypothetical": "Podría dar",
+        "obligation": "Debo dar",
+        "advice": "Debería dar"
+      }
+    },
+    {
+      "id": "tell-20",
+      "base": "contar",
+      "meanings": [
+        "contar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "contar",
+        "present": "cuento",
+        "past": "conté",
+        "imperfect": "contaba",
+        "participle": "contado",
+        "gerund": "contando",
+        "perfect": "he contado",
+        "pluperfect": "había contado",
+        "perfectInfinitive": "haber contado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Cuento",
+        "ongoing": "Estoy contando",
+        "past": "Conté",
+        "pastOngoing": "Estaba contando",
+        "duration": "Llevo un tiempo contando",
+        "future": "Voy a contar",
+        "habit": "Antes contaba",
+        "recent": "Acabo de contar",
+        "regret": "Debería haber contado",
+        "possibility": "Podría haber contado",
+        "prior": "Llevaba un tiempo contando",
+        "intended": "Iba a contar",
+        "perfect": "He contado",
+        "ability": "Puedo contar",
+        "hypothetical": "Podría contar",
+        "obligation": "Debo contar",
+        "advice": "Debería contar"
+      }
+    },
+    {
+      "id": "work-21",
+      "base": "trabajar",
+      "meanings": [
+        "trabalhar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "trabajar",
+        "present": "trabajo",
+        "past": "trabajé",
+        "imperfect": "trabajaba",
+        "participle": "trabajado",
+        "gerund": "trabajando",
+        "perfect": "he trabajado",
+        "pluperfect": "había trabajado",
+        "perfectInfinitive": "haber trabajado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Trabajo",
+        "ongoing": "Estoy trabajando",
+        "past": "Trabajé",
+        "pastOngoing": "Estaba trabajando",
+        "duration": "Llevo un tiempo trabajando",
+        "future": "Voy a trabajar",
+        "habit": "Antes trabajaba",
+        "recent": "Acabo de trabajar",
+        "regret": "Debería haber trabajado",
+        "possibility": "Podría haber trabajado",
+        "prior": "Llevaba un tiempo trabajando",
+        "intended": "Iba a trabajar",
+        "perfect": "He trabajado",
+        "ability": "Puedo trabajar",
+        "hypothetical": "Podría trabajar",
+        "obligation": "Debo trabajar",
+        "advice": "Debería trabajar"
+      }
+    },
+    {
+      "id": "call-22",
+      "base": "llamar",
+      "meanings": [
+        "ligar",
+        "chamar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "llamar",
+        "present": "llamo",
+        "past": "llamé",
+        "imperfect": "llamaba",
+        "participle": "llamado",
+        "gerund": "llamando",
+        "perfect": "he llamado",
+        "pluperfect": "había llamado",
+        "perfectInfinitive": "haber llamado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Llamo",
+        "ongoing": "Estoy llamando",
+        "past": "Llamé",
+        "pastOngoing": "Estaba llamando",
+        "duration": "Llevo un tiempo llamando",
+        "future": "Voy a llamar",
+        "habit": "Antes llamaba",
+        "recent": "Acabo de llamar",
+        "regret": "Debería haber llamado",
+        "possibility": "Podría haber llamado",
+        "prior": "Llevaba un tiempo llamando",
+        "intended": "Iba a llamar",
+        "perfect": "He llamado",
+        "ability": "Puedo llamar",
+        "hypothetical": "Podría llamar",
+        "obligation": "Debo llamar",
+        "advice": "Debería llamar"
+      }
+    },
+    {
+      "id": "try-23",
+      "base": "intentar",
+      "meanings": [
+        "tentar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "effort"
+      ],
+      "forms": {
+        "infinitive": "intentar",
+        "present": "intento",
+        "past": "intenté",
+        "imperfect": "intentaba",
+        "participle": "intentado",
+        "gerund": "intentando",
+        "perfect": "he intentado",
+        "pluperfect": "había intentado",
+        "perfectInfinitive": "haber intentado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Intento",
+        "ongoing": "Estoy intentando",
+        "past": "Intenté",
+        "pastOngoing": "Estaba intentando",
+        "duration": "Llevo un tiempo intentando",
+        "future": "Voy a intentar",
+        "habit": "Antes intentaba",
+        "recent": "Acabo de intentar",
+        "regret": "Debería haber intentado",
+        "possibility": "Podría haber intentado",
+        "prior": "Llevaba un tiempo intentando",
+        "intended": "Iba a intentar",
+        "perfect": "He intentado",
+        "ability": "Puedo intentar",
+        "hypothetical": "Podría intentar",
+        "obligation": "Debo intentar",
+        "advice": "Debería intentar"
+      }
+    },
+    {
+      "id": "ask-24",
+      "base": "preguntar",
+      "meanings": [
+        "perguntar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "preguntar",
+        "present": "pregunto",
+        "past": "pregunté",
+        "imperfect": "preguntaba",
+        "participle": "preguntado",
+        "gerund": "preguntando",
+        "perfect": "he preguntado",
+        "pluperfect": "había preguntado",
+        "perfectInfinitive": "haber preguntado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Pregunto",
+        "ongoing": "Estoy preguntando",
+        "past": "Pregunté",
+        "pastOngoing": "Estaba preguntando",
+        "duration": "Llevo un tiempo preguntando",
+        "future": "Voy a preguntar",
+        "habit": "Antes preguntaba",
+        "recent": "Acabo de preguntar",
+        "regret": "Debería haber preguntado",
+        "possibility": "Podría haber preguntado",
+        "prior": "Llevaba un tiempo preguntando",
+        "intended": "Iba a preguntar",
+        "perfect": "He preguntado",
+        "ability": "Puedo preguntar",
+        "hypothetical": "Podría preguntar",
+        "obligation": "Debo preguntar",
+        "advice": "Debería preguntar"
+      }
+    },
+    {
+      "id": "need-25",
+      "base": "necesitar",
+      "meanings": [
+        "precisar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "need"
+      ],
+      "forms": {
+        "infinitive": "necesitar",
+        "present": "necesito",
+        "past": "necesité",
+        "imperfect": "necesitaba",
+        "participle": "necesitado",
+        "gerund": "necesitando",
+        "perfect": "he necesitado",
+        "pluperfect": "había necesitado",
+        "perfectInfinitive": "haber necesitado"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Necesito",
+        "past": "Necesité",
+        "future": "Voy a necesitar",
+        "habit": "Antes necesitaba",
+        "recent": "Acabo de necesitar",
+        "regret": "Debería haber necesitado",
+        "possibility": "Podría haber necesitado",
+        "intended": "Iba a necesitar",
+        "perfect": "He necesitado",
+        "ability": "Puedo necesitar",
+        "hypothetical": "Podría necesitar",
+        "obligation": "Debo necesitar",
+        "advice": "Debería necesitar"
+      }
+    },
+    {
+      "id": "feel-26",
+      "base": "sentir",
+      "meanings": [
+        "sentir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "emotion"
+      ],
+      "forms": {
+        "infinitive": "sentir",
+        "present": "siento",
+        "past": "sentí",
+        "imperfect": "sentía",
+        "participle": "sentido",
+        "gerund": "sintiendo",
+        "perfect": "he sentido",
+        "pluperfect": "había sentido",
+        "perfectInfinitive": "haber sentido"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Siento",
+        "past": "Sentí",
+        "future": "Voy a sentir",
+        "habit": "Antes sentía",
+        "recent": "Acabo de sentir",
+        "regret": "Debería haber sentido",
+        "possibility": "Podría haber sentido",
+        "intended": "Iba a sentir",
+        "perfect": "He sentido",
+        "ability": "Puedo sentir",
+        "hypothetical": "Podría sentir",
+        "obligation": "Debo sentir",
+        "advice": "Debería sentir"
+      }
+    },
+    {
+      "id": "become-27",
+      "base": "convertirse",
+      "meanings": [
+        "tornar-se"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "change"
+      ],
+      "forms": {
+        "infinitive": "convertirme",
+        "present": "me convierto",
+        "past": "me convertí",
+        "imperfect": "me convertía",
+        "participle": "convertido",
+        "gerund": "convirtiéndome",
+        "perfect": "me he convertido",
+        "pluperfect": "me había convertido",
+        "perfectInfinitive": "haberme convertido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Me convierto",
+        "ongoing": "Estoy convirtiéndome",
+        "past": "Me convertí",
+        "pastOngoing": "Estaba convirtiéndome",
+        "duration": "Llevo un tiempo convirtiéndome",
+        "future": "Voy a convertirme",
+        "habit": "Antes me convertía",
+        "recent": "Acabo de convertirme",
+        "regret": "Debería haberme convertido",
+        "possibility": "Podría haberme convertido",
+        "prior": "Llevaba un tiempo convirtiéndome",
+        "intended": "Iba a convertirme",
+        "perfect": "Me he convertido",
+        "ability": "Puedo convertirme",
+        "hypothetical": "Podría convertirme",
+        "obligation": "Debo convertirme",
+        "advice": "Debería convertirme"
+      }
+    },
+    {
+      "id": "leave-28",
+      "base": "salir",
+      "meanings": [
+        "sair"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "salir",
+        "present": "salgo",
+        "past": "salí",
+        "imperfect": "salía",
+        "participle": "salido",
+        "gerund": "saliendo",
+        "perfect": "he salido",
+        "pluperfect": "había salido",
+        "perfectInfinitive": "haber salido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Salgo",
+        "ongoing": "Estoy saliendo",
+        "past": "Salí",
+        "pastOngoing": "Estaba saliendo",
+        "duration": "Llevo un tiempo saliendo",
+        "future": "Voy a salir",
+        "habit": "Antes salía",
+        "recent": "Acabo de salir",
+        "regret": "Debería haber salido",
+        "possibility": "Podría haber salido",
+        "prior": "Llevaba un tiempo saliendo",
+        "intended": "Iba a salir",
+        "perfect": "He salido",
+        "ability": "Puedo salir",
+        "hypothetical": "Podría salir",
+        "obligation": "Debo salir",
+        "advice": "Debería salir"
+      }
+    },
+    {
+      "id": "put-29",
+      "base": "poner",
+      "meanings": [
+        "colocar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "action"
+      ],
+      "forms": {
+        "infinitive": "poner",
+        "present": "pongo",
+        "past": "puse",
+        "imperfect": "ponía",
+        "participle": "puesto",
+        "gerund": "poniendo",
+        "perfect": "he puesto",
+        "pluperfect": "había puesto",
+        "perfectInfinitive": "haber puesto"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Pongo",
+        "ongoing": "Estoy poniendo",
+        "past": "Puse",
+        "pastOngoing": "Estaba poniendo",
+        "duration": "Llevo un tiempo poniendo",
+        "future": "Voy a poner",
+        "habit": "Antes ponía",
+        "recent": "Acabo de poner",
+        "regret": "Debería haber puesto",
+        "possibility": "Podría haber puesto",
+        "prior": "Llevaba un tiempo poniendo",
+        "intended": "Iba a poner",
+        "perfect": "He puesto",
+        "ability": "Puedo poner",
+        "hypothetical": "Podría poner",
+        "obligation": "Debo poner",
+        "advice": "Debería poner"
+      }
+    },
+    {
+      "id": "mean-30",
+      "base": "significar",
+      "meanings": [
+        "significar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "meaning"
+      ],
+      "forms": {
+        "infinitive": "significar",
+        "present": "significo",
+        "past": "signifiqué",
+        "imperfect": "significaba",
+        "participle": "significado",
+        "gerund": "significando",
+        "perfect": "he significado",
+        "pluperfect": "había significado",
+        "perfectInfinitive": "haber significado"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Significo",
+        "past": "Signifiqué",
+        "future": "Voy a significar",
+        "habit": "Antes significaba",
+        "recent": "Acabo de significar",
+        "regret": "Debería haber significado",
+        "possibility": "Podría haber significado",
+        "intended": "Iba a significar",
+        "perfect": "He significado",
+        "ability": "Puedo significar",
+        "hypothetical": "Podría significar",
+        "obligation": "Debo significar",
+        "advice": "Debería significar"
+      }
+    },
+    {
+      "id": "keep-31",
+      "base": "mantener",
+      "meanings": [
+        "manter"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "continuity"
+      ],
+      "forms": {
+        "infinitive": "mantener",
+        "present": "mantengo",
+        "past": "mantuve",
+        "imperfect": "mantenía",
+        "participle": "mantenido",
+        "gerund": "manteniendo",
+        "perfect": "he mantenido",
+        "pluperfect": "había mantenido",
+        "perfectInfinitive": "haber mantenido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Mantengo",
+        "ongoing": "Estoy manteniendo",
+        "past": "Mantuve",
+        "pastOngoing": "Estaba manteniendo",
+        "duration": "Llevo un tiempo manteniendo",
+        "future": "Voy a mantener",
+        "habit": "Antes mantenía",
+        "recent": "Acabo de mantener",
+        "regret": "Debería haber mantenido",
+        "possibility": "Podría haber mantenido",
+        "prior": "Llevaba un tiempo manteniendo",
+        "intended": "Iba a mantener",
+        "perfect": "He mantenido",
+        "ability": "Puedo mantener",
+        "hypothetical": "Podría mantener",
+        "obligation": "Debo mantener",
+        "advice": "Debería mantener"
+      }
+    },
+    {
+      "id": "let-32",
+      "base": "permitir",
+      "meanings": [
+        "permitir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "permission"
+      ],
+      "forms": {
+        "infinitive": "permitir",
+        "present": "permito",
+        "past": "permití",
+        "imperfect": "permitía",
+        "participle": "permitido",
+        "gerund": "permitiendo",
+        "perfect": "he permitido",
+        "pluperfect": "había permitido",
+        "perfectInfinitive": "haber permitido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Permito",
+        "ongoing": "Estoy permitiendo",
+        "past": "Permití",
+        "pastOngoing": "Estaba permitiendo",
+        "duration": "Llevo un tiempo permitiendo",
+        "future": "Voy a permitir",
+        "habit": "Antes permitía",
+        "recent": "Acabo de permitir",
+        "regret": "Debería haber permitido",
+        "possibility": "Podría haber permitido",
+        "prior": "Llevaba un tiempo permitiendo",
+        "intended": "Iba a permitir",
+        "perfect": "He permitido",
+        "ability": "Puedo permitir",
+        "hypothetical": "Podría permitir",
+        "obligation": "Debo permitir",
+        "advice": "Debería permitir"
+      }
+    },
+    {
+      "id": "begin-33",
+      "base": "comenzar",
+      "meanings": [
+        "começar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "time",
+        "action"
+      ],
+      "forms": {
+        "infinitive": "comenzar",
+        "present": "comienzo",
+        "past": "comencé",
+        "imperfect": "comenzaba",
+        "participle": "comenzado",
+        "gerund": "comenzando",
+        "perfect": "he comenzado",
+        "pluperfect": "había comenzado",
+        "perfectInfinitive": "haber comenzado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Comienzo",
+        "ongoing": "Estoy comenzando",
+        "past": "Comencé",
+        "pastOngoing": "Estaba comenzando",
+        "duration": "Llevo un tiempo comenzando",
+        "future": "Voy a comenzar",
+        "habit": "Antes comenzaba",
+        "recent": "Acabo de comenzar",
+        "regret": "Debería haber comenzado",
+        "possibility": "Podría haber comenzado",
+        "prior": "Llevaba un tiempo comenzando",
+        "intended": "Iba a comenzar",
+        "perfect": "He comenzado",
+        "ability": "Puedo comenzar",
+        "hypothetical": "Podría comenzar",
+        "obligation": "Debo comenzar",
+        "advice": "Debería comenzar"
+      }
+    },
+    {
+      "id": "help-34",
+      "base": "ayudar",
+      "meanings": [
+        "ajudar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "interaction"
+      ],
+      "forms": {
+        "infinitive": "ayudar",
+        "present": "ayudo",
+        "past": "ayudé",
+        "imperfect": "ayudaba",
+        "participle": "ayudado",
+        "gerund": "ayudando",
+        "perfect": "he ayudado",
+        "pluperfect": "había ayudado",
+        "perfectInfinitive": "haber ayudado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Ayudo",
+        "ongoing": "Estoy ayudando",
+        "past": "Ayudé",
+        "pastOngoing": "Estaba ayudando",
+        "duration": "Llevo un tiempo ayudando",
+        "future": "Voy a ayudar",
+        "habit": "Antes ayudaba",
+        "recent": "Acabo de ayudar",
+        "regret": "Debería haber ayudado",
+        "possibility": "Podría haber ayudado",
+        "prior": "Llevaba un tiempo ayudando",
+        "intended": "Iba a ayudar",
+        "perfect": "He ayudado",
+        "ability": "Puedo ayudar",
+        "hypothetical": "Podría ayudar",
+        "obligation": "Debo ayudar",
+        "advice": "Debería ayudar"
+      }
+    },
+    {
+      "id": "talk-35",
+      "base": "conversar",
+      "meanings": [
+        "conversar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "conversar",
+        "present": "converso",
+        "past": "conversé",
+        "imperfect": "conversaba",
+        "participle": "conversado",
+        "gerund": "conversando",
+        "perfect": "he conversado",
+        "pluperfect": "había conversado",
+        "perfectInfinitive": "haber conversado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Converso",
+        "ongoing": "Estoy conversando",
+        "past": "Conversé",
+        "pastOngoing": "Estaba conversando",
+        "duration": "Llevo un tiempo conversando",
+        "future": "Voy a conversar",
+        "habit": "Antes conversaba",
+        "recent": "Acabo de conversar",
+        "regret": "Debería haber conversado",
+        "possibility": "Podría haber conversado",
+        "prior": "Llevaba un tiempo conversando",
+        "intended": "Iba a conversar",
+        "perfect": "He conversado",
+        "ability": "Puedo conversar",
+        "hypothetical": "Podría conversar",
+        "obligation": "Debo conversar",
+        "advice": "Debería conversar"
+      }
+    },
+    {
+      "id": "start-36",
+      "base": "empezar",
+      "meanings": [
+        "começar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "time"
+      ],
+      "forms": {
+        "infinitive": "empezar",
+        "present": "empiezo",
+        "past": "empecé",
+        "imperfect": "empezaba",
+        "participle": "empezado",
+        "gerund": "empezando",
+        "perfect": "he empezado",
+        "pluperfect": "había empezado",
+        "perfectInfinitive": "haber empezado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Empiezo",
+        "ongoing": "Estoy empezando",
+        "past": "Empecé",
+        "pastOngoing": "Estaba empezando",
+        "duration": "Llevo un tiempo empezando",
+        "future": "Voy a empezar",
+        "habit": "Antes empezaba",
+        "recent": "Acabo de empezar",
+        "regret": "Debería haber empezado",
+        "possibility": "Podría haber empezado",
+        "prior": "Llevaba un tiempo empezando",
+        "intended": "Iba a empezar",
+        "perfect": "He empezado",
+        "ability": "Puedo empezar",
+        "hypothetical": "Podría empezar",
+        "obligation": "Debo empezar",
+        "advice": "Debería empezar"
+      }
+    },
+    {
+      "id": "show-37",
+      "base": "mostrar",
+      "meanings": [
+        "mostrar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "mostrar",
+        "present": "muestro",
+        "past": "mostré",
+        "imperfect": "mostraba",
+        "participle": "mostrado",
+        "gerund": "mostrando",
+        "perfect": "he mostrado",
+        "pluperfect": "había mostrado",
+        "perfectInfinitive": "haber mostrado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Muestro",
+        "ongoing": "Estoy mostrando",
+        "past": "Mostré",
+        "pastOngoing": "Estaba mostrando",
+        "duration": "Llevo un tiempo mostrando",
+        "future": "Voy a mostrar",
+        "habit": "Antes mostraba",
+        "recent": "Acabo de mostrar",
+        "regret": "Debería haber mostrado",
+        "possibility": "Podría haber mostrado",
+        "prior": "Llevaba un tiempo mostrando",
+        "intended": "Iba a mostrar",
+        "perfect": "He mostrado",
+        "ability": "Puedo mostrar",
+        "hypothetical": "Podría mostrar",
+        "obligation": "Debo mostrar",
+        "advice": "Debería mostrar"
+      }
+    },
+    {
+      "id": "hear-38",
+      "base": "oír",
+      "meanings": [
+        "ouvir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "perception"
+      ],
+      "forms": {
+        "infinitive": "oír",
+        "present": "oigo",
+        "past": "oí",
+        "imperfect": "oía",
+        "participle": "oído",
+        "gerund": "oyendo",
+        "perfect": "he oído",
+        "pluperfect": "había oído",
+        "perfectInfinitive": "haber oído"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Oigo",
+        "ongoing": "Estoy oyendo",
+        "past": "Oí",
+        "pastOngoing": "Estaba oyendo",
+        "duration": "Llevo un tiempo oyendo",
+        "future": "Voy a oír",
+        "habit": "Antes oía",
+        "recent": "Acabo de oír",
+        "regret": "Debería haber oído",
+        "possibility": "Podría haber oído",
+        "prior": "Llevaba un tiempo oyendo",
+        "intended": "Iba a oír",
+        "perfect": "He oído",
+        "ability": "Puedo oír",
+        "hypothetical": "Podría oír",
+        "obligation": "Debo oír",
+        "advice": "Debería oír"
+      }
+    },
+    {
+      "id": "play-39",
+      "base": "jugar",
+      "meanings": [
+        "jogar",
+        "brincar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "leisure",
+        "sports"
+      ],
+      "forms": {
+        "infinitive": "jugar",
+        "present": "juego",
+        "past": "jugué",
+        "imperfect": "jugaba",
+        "participle": "jugado",
+        "gerund": "jugando",
+        "perfect": "he jugado",
+        "pluperfect": "había jugado",
+        "perfectInfinitive": "haber jugado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Juego",
+        "ongoing": "Estoy jugando",
+        "past": "Jugué",
+        "pastOngoing": "Estaba jugando",
+        "duration": "Llevo un tiempo jugando",
+        "future": "Voy a jugar",
+        "habit": "Antes jugaba",
+        "recent": "Acabo de jugar",
+        "regret": "Debería haber jugado",
+        "possibility": "Podría haber jugado",
+        "prior": "Llevaba un tiempo jugando",
+        "intended": "Iba a jugar",
+        "perfect": "He jugado",
+        "ability": "Puedo jugar",
+        "hypothetical": "Podría jugar",
+        "obligation": "Debo jugar",
+        "advice": "Debería jugar"
+      }
+    },
+    {
+      "id": "run-40",
+      "base": "correr",
+      "meanings": [
+        "correr"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "fitness",
+        "movement"
+      ],
+      "forms": {
+        "infinitive": "correr",
+        "present": "corro",
+        "past": "corrí",
+        "imperfect": "corría",
+        "participle": "corrido",
+        "gerund": "corriendo",
+        "perfect": "he corrido",
+        "pluperfect": "había corrido",
+        "perfectInfinitive": "haber corrido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Corro",
+        "ongoing": "Estoy corriendo",
+        "past": "Corrí",
+        "pastOngoing": "Estaba corriendo",
+        "duration": "Llevo un tiempo corriendo",
+        "future": "Voy a correr",
+        "habit": "Antes corría",
+        "recent": "Acabo de correr",
+        "regret": "Debería haber corrido",
+        "possibility": "Podría haber corrido",
+        "prior": "Llevaba un tiempo corriendo",
+        "intended": "Iba a correr",
+        "perfect": "He corrido",
+        "ability": "Puedo correr",
+        "hypothetical": "Podría correr",
+        "obligation": "Debo correr",
+        "advice": "Debería correr"
+      }
+    },
+    {
+      "id": "move-41",
+      "base": "mover",
+      "meanings": [
+        "mover"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement",
+        "housing"
+      ],
+      "forms": {
+        "infinitive": "mover",
+        "present": "muevo",
+        "past": "moví",
+        "imperfect": "movía",
+        "participle": "movido",
+        "gerund": "moviendo",
+        "perfect": "he movido",
+        "pluperfect": "había movido",
+        "perfectInfinitive": "haber movido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Muevo",
+        "ongoing": "Estoy moviendo",
+        "past": "Moví",
+        "pastOngoing": "Estaba moviendo",
+        "duration": "Llevo un tiempo moviendo",
+        "future": "Voy a mover",
+        "habit": "Antes movía",
+        "recent": "Acabo de mover",
+        "regret": "Debería haber movido",
+        "possibility": "Podría haber movido",
+        "prior": "Llevaba un tiempo moviendo",
+        "intended": "Iba a mover",
+        "perfect": "He movido",
+        "ability": "Puedo mover",
+        "hypothetical": "Podría mover",
+        "obligation": "Debo mover",
+        "advice": "Debería mover"
+      }
+    },
+    {
+      "id": "like-42",
+      "base": "apreciar",
+      "meanings": [
+        "apreciar",
+        "gostar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "preference"
+      ],
+      "forms": {
+        "infinitive": "apreciar",
+        "present": "aprecio",
+        "past": "aprecié",
+        "imperfect": "apreciaba",
+        "participle": "apreciado",
+        "gerund": "apreciando",
+        "perfect": "he apreciado",
+        "pluperfect": "había apreciado",
+        "perfectInfinitive": "haber apreciado"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Aprecio",
+        "past": "Aprecié",
+        "future": "Voy a apreciar",
+        "habit": "Antes apreciaba",
+        "recent": "Acabo de apreciar",
+        "regret": "Debería haber apreciado",
+        "possibility": "Podría haber apreciado",
+        "intended": "Iba a apreciar",
+        "perfect": "He apreciado",
+        "ability": "Puedo apreciar",
+        "hypothetical": "Podría apreciar",
+        "obligation": "Debo apreciar",
+        "advice": "Debería apreciar"
+      }
+    },
+    {
+      "id": "live-43",
+      "base": "vivir",
+      "meanings": [
+        "viver",
+        "morar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life",
+        "housing"
+      ],
+      "forms": {
+        "infinitive": "vivir",
+        "present": "vivo",
+        "past": "viví",
+        "imperfect": "vivía",
+        "participle": "vivido",
+        "gerund": "viviendo",
+        "perfect": "he vivido",
+        "pluperfect": "había vivido",
+        "perfectInfinitive": "haber vivido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Vivo",
+        "ongoing": "Estoy viviendo",
+        "past": "Viví",
+        "pastOngoing": "Estaba viviendo",
+        "duration": "Llevo un tiempo viviendo",
+        "future": "Voy a vivir",
+        "habit": "Antes vivía",
+        "recent": "Acabo de vivir",
+        "regret": "Debería haber vivido",
+        "possibility": "Podría haber vivido",
+        "prior": "Llevaba un tiempo viviendo",
+        "intended": "Iba a vivir",
+        "perfect": "He vivido",
+        "ability": "Puedo vivir",
+        "hypothetical": "Podría vivir",
+        "obligation": "Debo vivir",
+        "advice": "Debería vivir"
+      }
+    },
+    {
+      "id": "believe-44",
+      "base": "creer",
+      "meanings": [
+        "acreditar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "thought"
+      ],
+      "forms": {
+        "infinitive": "creer",
+        "present": "creo",
+        "past": "creí",
+        "imperfect": "creía",
+        "participle": "creído",
+        "gerund": "creyendo",
+        "perfect": "he creído",
+        "pluperfect": "había creído",
+        "perfectInfinitive": "haber creído"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Creo",
+        "past": "Creí",
+        "future": "Voy a creer",
+        "habit": "Antes creía",
+        "recent": "Acabo de creer",
+        "regret": "Debería haber creído",
+        "possibility": "Podría haber creído",
+        "intended": "Iba a creer",
+        "perfect": "He creído",
+        "ability": "Puedo creer",
+        "hypothetical": "Podría creer",
+        "obligation": "Debo creer",
+        "advice": "Debería creer"
+      }
+    },
+    {
+      "id": "bring-45",
+      "base": "traer",
+      "meanings": [
+        "trazer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "traer",
+        "present": "traigo",
+        "past": "traje",
+        "imperfect": "traía",
+        "participle": "traído",
+        "gerund": "trayendo",
+        "perfect": "he traído",
+        "pluperfect": "había traído",
+        "perfectInfinitive": "haber traído"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Traigo",
+        "ongoing": "Estoy trayendo",
+        "past": "Traje",
+        "pastOngoing": "Estaba trayendo",
+        "duration": "Llevo un tiempo trayendo",
+        "future": "Voy a traer",
+        "habit": "Antes traía",
+        "recent": "Acabo de traer",
+        "regret": "Debería haber traído",
+        "possibility": "Podría haber traído",
+        "prior": "Llevaba un tiempo trayendo",
+        "intended": "Iba a traer",
+        "perfect": "He traído",
+        "ability": "Puedo traer",
+        "hypothetical": "Podría traer",
+        "obligation": "Debo traer",
+        "advice": "Debería traer"
+      }
+    },
+    {
+      "id": "happen-46",
+      "base": "suceder",
+      "meanings": [
+        "suceder"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "events"
+      ],
+      "forms": {
+        "infinitive": "suceder",
+        "present": "sucede",
+        "past": "sucedió",
+        "imperfect": "sucedía",
+        "participle": "sucedido",
+        "gerund": "sucediendo",
+        "perfect": "ha sucedido",
+        "pluperfect": "había sucedido",
+        "perfectInfinitive": "haber sucedido"
+      },
+      "stative": true,
+      "impersonal": true,
+      "trainingForms": {
+        "present": "Sucede",
+        "past": "Sucedió",
+        "habit": "Sucedía",
+        "perfect": "Ha sucedido",
+        "prior": "Había sucedido"
+      }
+    },
+    {
+      "id": "write-47",
+      "base": "escribir",
+      "meanings": [
+        "escrever"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "work"
+      ],
+      "forms": {
+        "infinitive": "escribir",
+        "present": "escribo",
+        "past": "escribí",
+        "imperfect": "escribía",
+        "participle": "escrito",
+        "gerund": "escribiendo",
+        "perfect": "he escrito",
+        "pluperfect": "había escrito",
+        "perfectInfinitive": "haber escrito"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Escribo",
+        "ongoing": "Estoy escribiendo",
+        "past": "Escribí",
+        "pastOngoing": "Estaba escribiendo",
+        "duration": "Llevo un tiempo escribiendo",
+        "future": "Voy a escribir",
+        "habit": "Antes escribía",
+        "recent": "Acabo de escribir",
+        "regret": "Debería haber escrito",
+        "possibility": "Podría haber escrito",
+        "prior": "Llevaba un tiempo escribiendo",
+        "intended": "Iba a escribir",
+        "perfect": "He escrito",
+        "ability": "Puedo escribir",
+        "hypothetical": "Podría escribir",
+        "obligation": "Debo escribir",
+        "advice": "Debería escribir"
+      }
+    },
+    {
+      "id": "sit-48",
+      "base": "sentarse",
+      "meanings": [
+        "sentar-se"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "sentarme",
+        "present": "me siento",
+        "past": "me senté",
+        "imperfect": "me sentaba",
+        "participle": "sentado",
+        "gerund": "sentándome",
+        "perfect": "me he sentado",
+        "pluperfect": "me había sentado",
+        "perfectInfinitive": "haberme sentado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Me siento",
+        "ongoing": "Estoy sentándome",
+        "past": "Me senté",
+        "pastOngoing": "Estaba sentándome",
+        "duration": "Llevo un tiempo sentándome",
+        "future": "Voy a sentarme",
+        "habit": "Antes me sentaba",
+        "recent": "Acabo de sentarme",
+        "regret": "Debería haberme sentado",
+        "possibility": "Podría haberme sentado",
+        "prior": "Llevaba un tiempo sentándome",
+        "intended": "Iba a sentarme",
+        "perfect": "Me he sentado",
+        "ability": "Puedo sentarme",
+        "hypothetical": "Podría sentarme",
+        "obligation": "Debo sentarme",
+        "advice": "Debería sentarme"
+      }
+    },
+    {
+      "id": "stand-49",
+      "base": "ponerse de pie",
+      "meanings": [
+        "ficar em pé"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "ponerme de pie",
+        "present": "me pongo de pie",
+        "past": "me puse de pie",
+        "imperfect": "me ponía de pie",
+        "participle": "puesto de pie",
+        "gerund": "poniéndome de pie",
+        "perfect": "me he puesto de pie",
+        "pluperfect": "me había puesto de pie",
+        "perfectInfinitive": "haberme puesto de pie"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Me pongo de pie",
+        "ongoing": "Estoy poniéndome de pie",
+        "past": "Me puse de pie",
+        "pastOngoing": "Estaba poniéndome de pie",
+        "duration": "Llevo un tiempo poniéndome de pie",
+        "future": "Voy a ponerme de pie",
+        "habit": "Antes me ponía de pie",
+        "recent": "Acabo de ponerme de pie",
+        "regret": "Debería haberme puesto de pie",
+        "possibility": "Podría haberme puesto de pie",
+        "prior": "Llevaba un tiempo poniéndome de pie",
+        "intended": "Iba a ponerme de pie",
+        "perfect": "Me he puesto de pie",
+        "ability": "Puedo ponerme de pie",
+        "hypothetical": "Podría ponerme de pie",
+        "obligation": "Debo ponerme de pie",
+        "advice": "Debería ponerme de pie"
+      }
+    },
+    {
+      "id": "lose-50",
+      "base": "perder",
+      "meanings": [
+        "perder"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "perder",
+        "present": "pierdo",
+        "past": "perdí",
+        "imperfect": "perdía",
+        "participle": "perdido",
+        "gerund": "perdiendo",
+        "perfect": "he perdido",
+        "pluperfect": "había perdido",
+        "perfectInfinitive": "haber perdido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Pierdo",
+        "ongoing": "Estoy perdiendo",
+        "past": "Perdí",
+        "pastOngoing": "Estaba perdiendo",
+        "duration": "Llevo un tiempo perdiendo",
+        "future": "Voy a perder",
+        "habit": "Antes perdía",
+        "recent": "Acabo de perder",
+        "regret": "Debería haber perdido",
+        "possibility": "Podría haber perdido",
+        "prior": "Llevaba un tiempo perdiendo",
+        "intended": "Iba a perder",
+        "perfect": "He perdido",
+        "ability": "Puedo perder",
+        "hypothetical": "Podría perder",
+        "obligation": "Debo perder",
+        "advice": "Debería perder"
+      }
+    },
+    {
+      "id": "pay-51",
+      "base": "pagar",
+      "meanings": [
+        "pagar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "money",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "pagar",
+        "present": "pago",
+        "past": "pagué",
+        "imperfect": "pagaba",
+        "participle": "pagado",
+        "gerund": "pagando",
+        "perfect": "he pagado",
+        "pluperfect": "había pagado",
+        "perfectInfinitive": "haber pagado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Pago",
+        "ongoing": "Estoy pagando",
+        "past": "Pagué",
+        "pastOngoing": "Estaba pagando",
+        "duration": "Llevo un tiempo pagando",
+        "future": "Voy a pagar",
+        "habit": "Antes pagaba",
+        "recent": "Acabo de pagar",
+        "regret": "Debería haber pagado",
+        "possibility": "Podría haber pagado",
+        "prior": "Llevaba un tiempo pagando",
+        "intended": "Iba a pagar",
+        "perfect": "He pagado",
+        "ability": "Puedo pagar",
+        "hypothetical": "Podría pagar",
+        "obligation": "Debo pagar",
+        "advice": "Debería pagar"
+      }
+    },
+    {
+      "id": "meet-52",
+      "base": "reunirse",
+      "meanings": [
+        "reunir-se"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "interaction",
+        "work"
+      ],
+      "forms": {
+        "infinitive": "reunirme",
+        "present": "me reúno",
+        "past": "me reuní",
+        "imperfect": "me reunía",
+        "participle": "reunido",
+        "gerund": "reuniéndome",
+        "perfect": "me he reunido",
+        "pluperfect": "me había reunido",
+        "perfectInfinitive": "haberme reunido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Me reúno",
+        "ongoing": "Estoy reuniéndome",
+        "past": "Me reuní",
+        "pastOngoing": "Estaba reuniéndome",
+        "duration": "Llevo un tiempo reuniéndome",
+        "future": "Voy a reunirme",
+        "habit": "Antes me reunía",
+        "recent": "Acabo de reunirme",
+        "regret": "Debería haberme reunido",
+        "possibility": "Podría haberme reunido",
+        "prior": "Llevaba un tiempo reuniéndome",
+        "intended": "Iba a reunirme",
+        "perfect": "Me he reunido",
+        "ability": "Puedo reunirme",
+        "hypothetical": "Podría reunirme",
+        "obligation": "Debo reunirme",
+        "advice": "Debería reunirme"
+      }
+    },
+    {
+      "id": "learn-53",
+      "base": "aprender",
+      "meanings": [
+        "aprender"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "education"
+      ],
+      "forms": {
+        "infinitive": "aprender",
+        "present": "aprendo",
+        "past": "aprendí",
+        "imperfect": "aprendía",
+        "participle": "aprendido",
+        "gerund": "aprendiendo",
+        "perfect": "he aprendido",
+        "pluperfect": "había aprendido",
+        "perfectInfinitive": "haber aprendido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Aprendo",
+        "ongoing": "Estoy aprendiendo",
+        "past": "Aprendí",
+        "pastOngoing": "Estaba aprendiendo",
+        "duration": "Llevo un tiempo aprendiendo",
+        "future": "Voy a aprender",
+        "habit": "Antes aprendía",
+        "recent": "Acabo de aprender",
+        "regret": "Debería haber aprendido",
+        "possibility": "Podría haber aprendido",
+        "prior": "Llevaba un tiempo aprendiendo",
+        "intended": "Iba a aprender",
+        "perfect": "He aprendido",
+        "ability": "Puedo aprender",
+        "hypothetical": "Podría aprender",
+        "obligation": "Debo aprender",
+        "advice": "Debería aprender"
+      }
+    },
+    {
+      "id": "change-54",
+      "base": "cambiar",
+      "meanings": [
+        "mudar",
+        "alterar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "change"
+      ],
+      "forms": {
+        "infinitive": "cambiar",
+        "present": "cambio",
+        "past": "cambié",
+        "imperfect": "cambiaba",
+        "participle": "cambiado",
+        "gerund": "cambiando",
+        "perfect": "he cambiado",
+        "pluperfect": "había cambiado",
+        "perfectInfinitive": "haber cambiado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Cambio",
+        "ongoing": "Estoy cambiando",
+        "past": "Cambié",
+        "pastOngoing": "Estaba cambiando",
+        "duration": "Llevo un tiempo cambiando",
+        "future": "Voy a cambiar",
+        "habit": "Antes cambiaba",
+        "recent": "Acabo de cambiar",
+        "regret": "Debería haber cambiado",
+        "possibility": "Podría haber cambiado",
+        "prior": "Llevaba un tiempo cambiando",
+        "intended": "Iba a cambiar",
+        "perfect": "He cambiado",
+        "ability": "Puedo cambiar",
+        "hypothetical": "Podría cambiar",
+        "obligation": "Debo cambiar",
+        "advice": "Debería cambiar"
+      }
+    },
+    {
+      "id": "understand-55",
+      "base": "entender",
+      "meanings": [
+        "entender"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "knowledge"
+      ],
+      "forms": {
+        "infinitive": "entender",
+        "present": "entiendo",
+        "past": "entendí",
+        "imperfect": "entendía",
+        "participle": "entendido",
+        "gerund": "entendiendo",
+        "perfect": "he entendido",
+        "pluperfect": "había entendido",
+        "perfectInfinitive": "haber entendido"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Entiendo",
+        "past": "Entendí",
+        "future": "Voy a entender",
+        "habit": "Antes entendía",
+        "recent": "Acabo de entender",
+        "regret": "Debería haber entendido",
+        "possibility": "Podría haber entendido",
+        "intended": "Iba a entender",
+        "perfect": "He entendido",
+        "ability": "Puedo entender",
+        "hypothetical": "Podría entender",
+        "obligation": "Debo entender",
+        "advice": "Debería entender"
+      }
+    },
+    {
+      "id": "watch-56",
+      "base": "observar",
+      "meanings": [
+        "observar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "leisure",
+        "perception"
+      ],
+      "forms": {
+        "infinitive": "observar",
+        "present": "observo",
+        "past": "observé",
+        "imperfect": "observaba",
+        "participle": "observado",
+        "gerund": "observando",
+        "perfect": "he observado",
+        "pluperfect": "había observado",
+        "perfectInfinitive": "haber observado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Observo",
+        "ongoing": "Estoy observando",
+        "past": "Observé",
+        "pastOngoing": "Estaba observando",
+        "duration": "Llevo un tiempo observando",
+        "future": "Voy a observar",
+        "habit": "Antes observaba",
+        "recent": "Acabo de observar",
+        "regret": "Debería haber observado",
+        "possibility": "Podría haber observado",
+        "prior": "Llevaba un tiempo observando",
+        "intended": "Iba a observar",
+        "perfect": "He observado",
+        "ability": "Puedo observar",
+        "hypothetical": "Podría observar",
+        "obligation": "Debo observar",
+        "advice": "Debería observar"
+      }
+    },
+    {
+      "id": "follow-57",
+      "base": "seguir",
+      "meanings": [
+        "seguir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "action"
+      ],
+      "forms": {
+        "infinitive": "seguir",
+        "present": "sigo",
+        "past": "seguí",
+        "imperfect": "seguía",
+        "participle": "seguido",
+        "gerund": "siguiendo",
+        "perfect": "he seguido",
+        "pluperfect": "había seguido",
+        "perfectInfinitive": "haber seguido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Sigo",
+        "ongoing": "Estoy siguiendo",
+        "past": "Seguí",
+        "pastOngoing": "Estaba siguiendo",
+        "duration": "Llevo un tiempo siguiendo",
+        "future": "Voy a seguir",
+        "habit": "Antes seguía",
+        "recent": "Acabo de seguir",
+        "regret": "Debería haber seguido",
+        "possibility": "Podría haber seguido",
+        "prior": "Llevaba un tiempo siguiendo",
+        "intended": "Iba a seguir",
+        "perfect": "He seguido",
+        "ability": "Puedo seguir",
+        "hypothetical": "Podría seguir",
+        "obligation": "Debo seguir",
+        "advice": "Debería seguir"
+      }
+    },
+    {
+      "id": "stop-58",
+      "base": "parar",
+      "meanings": [
+        "parar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "action"
+      ],
+      "forms": {
+        "infinitive": "parar",
+        "present": "paro",
+        "past": "paré",
+        "imperfect": "paraba",
+        "participle": "parado",
+        "gerund": "parando",
+        "perfect": "he parado",
+        "pluperfect": "había parado",
+        "perfectInfinitive": "haber parado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Paro",
+        "ongoing": "Estoy parando",
+        "past": "Paré",
+        "pastOngoing": "Estaba parando",
+        "duration": "Llevo un tiempo parando",
+        "future": "Voy a parar",
+        "habit": "Antes paraba",
+        "recent": "Acabo de parar",
+        "regret": "Debería haber parado",
+        "possibility": "Podría haber parado",
+        "prior": "Llevaba un tiempo parando",
+        "intended": "Iba a parar",
+        "perfect": "He parado",
+        "ability": "Puedo parar",
+        "hypothetical": "Podría parar",
+        "obligation": "Debo parar",
+        "advice": "Debería parar"
+      }
+    },
+    {
+      "id": "create-59",
+      "base": "crear",
+      "meanings": [
+        "criar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "creation",
+        "work"
+      ],
+      "forms": {
+        "infinitive": "crear",
+        "present": "creo",
+        "past": "creé",
+        "imperfect": "creaba",
+        "participle": "creado",
+        "gerund": "creando",
+        "perfect": "he creado",
+        "pluperfect": "había creado",
+        "perfectInfinitive": "haber creado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Creo",
+        "ongoing": "Estoy creando",
+        "past": "Creé",
+        "pastOngoing": "Estaba creando",
+        "duration": "Llevo un tiempo creando",
+        "future": "Voy a crear",
+        "habit": "Antes creaba",
+        "recent": "Acabo de crear",
+        "regret": "Debería haber creado",
+        "possibility": "Podría haber creado",
+        "prior": "Llevaba un tiempo creando",
+        "intended": "Iba a crear",
+        "perfect": "He creado",
+        "ability": "Puedo crear",
+        "hypothetical": "Podría crear",
+        "obligation": "Debo crear",
+        "advice": "Debería crear"
+      }
+    },
+    {
+      "id": "speak-60",
+      "base": "hablar",
+      "meanings": [
+        "falar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "language"
+      ],
+      "forms": {
+        "infinitive": "hablar",
+        "present": "hablo",
+        "past": "hablé",
+        "imperfect": "hablaba",
+        "participle": "hablado",
+        "gerund": "hablando",
+        "perfect": "he hablado",
+        "pluperfect": "había hablado",
+        "perfectInfinitive": "haber hablado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Hablo",
+        "ongoing": "Estoy hablando",
+        "past": "Hablé",
+        "pastOngoing": "Estaba hablando",
+        "duration": "Llevo un tiempo hablando",
+        "future": "Voy a hablar",
+        "habit": "Antes hablaba",
+        "recent": "Acabo de hablar",
+        "regret": "Debería haber hablado",
+        "possibility": "Podría haber hablado",
+        "prior": "Llevaba un tiempo hablando",
+        "intended": "Iba a hablar",
+        "perfect": "He hablado",
+        "ability": "Puedo hablar",
+        "hypothetical": "Podría hablar",
+        "obligation": "Debo hablar",
+        "advice": "Debería hablar"
+      }
+    },
+    {
+      "id": "read-61",
+      "base": "leer",
+      "meanings": [
+        "ler"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "education",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "leer",
+        "present": "leo",
+        "past": "leí",
+        "imperfect": "leía",
+        "participle": "leído",
+        "gerund": "leyendo",
+        "perfect": "he leído",
+        "pluperfect": "había leído",
+        "perfectInfinitive": "haber leído"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Leo",
+        "ongoing": "Estoy leyendo",
+        "past": "Leí",
+        "pastOngoing": "Estaba leyendo",
+        "duration": "Llevo un tiempo leyendo",
+        "future": "Voy a leer",
+        "habit": "Antes leía",
+        "recent": "Acabo de leer",
+        "regret": "Debería haber leído",
+        "possibility": "Podría haber leído",
+        "prior": "Llevaba un tiempo leyendo",
+        "intended": "Iba a leer",
+        "perfect": "He leído",
+        "ability": "Puedo leer",
+        "hypothetical": "Podría leer",
+        "obligation": "Debo leer",
+        "advice": "Debería leer"
+      }
+    },
+    {
+      "id": "add-62",
+      "base": "añadir",
+      "meanings": [
+        "adicionar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "action"
+      ],
+      "forms": {
+        "infinitive": "añadir",
+        "present": "añado",
+        "past": "añadí",
+        "imperfect": "añadía",
+        "participle": "añadido",
+        "gerund": "añadiendo",
+        "perfect": "he añadido",
+        "pluperfect": "había añadido",
+        "perfectInfinitive": "haber añadido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Añado",
+        "ongoing": "Estoy añadiendo",
+        "past": "Añadí",
+        "pastOngoing": "Estaba añadiendo",
+        "duration": "Llevo un tiempo añadiendo",
+        "future": "Voy a añadir",
+        "habit": "Antes añadía",
+        "recent": "Acabo de añadir",
+        "regret": "Debería haber añadido",
+        "possibility": "Podría haber añadido",
+        "prior": "Llevaba un tiempo añadiendo",
+        "intended": "Iba a añadir",
+        "perfect": "He añadido",
+        "ability": "Puedo añadir",
+        "hypothetical": "Podría añadir",
+        "obligation": "Debo añadir",
+        "advice": "Debería añadir"
+      }
+    },
+    {
+      "id": "spend-63",
+      "base": "gastar",
+      "meanings": [
+        "gastar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "time",
+        "money"
+      ],
+      "forms": {
+        "infinitive": "gastar",
+        "present": "gasto",
+        "past": "gasté",
+        "imperfect": "gastaba",
+        "participle": "gastado",
+        "gerund": "gastando",
+        "perfect": "he gastado",
+        "pluperfect": "había gastado",
+        "perfectInfinitive": "haber gastado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Gasto",
+        "ongoing": "Estoy gastando",
+        "past": "Gasté",
+        "pastOngoing": "Estaba gastando",
+        "duration": "Llevo un tiempo gastando",
+        "future": "Voy a gastar",
+        "habit": "Antes gastaba",
+        "recent": "Acabo de gastar",
+        "regret": "Debería haber gastado",
+        "possibility": "Podría haber gastado",
+        "prior": "Llevaba un tiempo gastando",
+        "intended": "Iba a gastar",
+        "perfect": "He gastado",
+        "ability": "Puedo gastar",
+        "hypothetical": "Podría gastar",
+        "obligation": "Debo gastar",
+        "advice": "Debería gastar"
+      }
+    },
+    {
+      "id": "grow-64",
+      "base": "crecer",
+      "meanings": [
+        "crescer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "change",
+        "work"
+      ],
+      "forms": {
+        "infinitive": "crecer",
+        "present": "crezco",
+        "past": "crecí",
+        "imperfect": "crecía",
+        "participle": "crecido",
+        "gerund": "creciendo",
+        "perfect": "he crecido",
+        "pluperfect": "había crecido",
+        "perfectInfinitive": "haber crecido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Crezco",
+        "ongoing": "Estoy creciendo",
+        "past": "Crecí",
+        "pastOngoing": "Estaba creciendo",
+        "duration": "Llevo un tiempo creciendo",
+        "future": "Voy a crecer",
+        "habit": "Antes crecía",
+        "recent": "Acabo de crecer",
+        "regret": "Debería haber crecido",
+        "possibility": "Podría haber crecido",
+        "prior": "Llevaba un tiempo creciendo",
+        "intended": "Iba a crecer",
+        "perfect": "He crecido",
+        "ability": "Puedo crecer",
+        "hypothetical": "Podría crecer",
+        "obligation": "Debo crecer",
+        "advice": "Debería crecer"
+      }
+    },
+    {
+      "id": "open-65",
+      "base": "abrir",
+      "meanings": [
+        "abrir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "abrir",
+        "present": "abro",
+        "past": "abrí",
+        "imperfect": "abría",
+        "participle": "abierto",
+        "gerund": "abriendo",
+        "perfect": "he abierto",
+        "pluperfect": "había abierto",
+        "perfectInfinitive": "haber abierto"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Abro",
+        "ongoing": "Estoy abriendo",
+        "past": "Abrí",
+        "pastOngoing": "Estaba abriendo",
+        "duration": "Llevo un tiempo abriendo",
+        "future": "Voy a abrir",
+        "habit": "Antes abría",
+        "recent": "Acabo de abrir",
+        "regret": "Debería haber abierto",
+        "possibility": "Podría haber abierto",
+        "prior": "Llevaba un tiempo abriendo",
+        "intended": "Iba a abrir",
+        "perfect": "He abierto",
+        "ability": "Puedo abrir",
+        "hypothetical": "Podría abrir",
+        "obligation": "Debo abrir",
+        "advice": "Debería abrir"
+      }
+    },
+    {
+      "id": "walk-66",
+      "base": "caminar",
+      "meanings": [
+        "caminhar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement",
+        "fitness"
+      ],
+      "forms": {
+        "infinitive": "caminar",
+        "present": "camino",
+        "past": "caminé",
+        "imperfect": "caminaba",
+        "participle": "caminado",
+        "gerund": "caminando",
+        "perfect": "he caminado",
+        "pluperfect": "había caminado",
+        "perfectInfinitive": "haber caminado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Camino",
+        "ongoing": "Estoy caminando",
+        "past": "Caminé",
+        "pastOngoing": "Estaba caminando",
+        "duration": "Llevo un tiempo caminando",
+        "future": "Voy a caminar",
+        "habit": "Antes caminaba",
+        "recent": "Acabo de caminar",
+        "regret": "Debería haber caminado",
+        "possibility": "Podría haber caminado",
+        "prior": "Llevaba un tiempo caminando",
+        "intended": "Iba a caminar",
+        "perfect": "He caminado",
+        "ability": "Puedo caminar",
+        "hypothetical": "Podría caminar",
+        "obligation": "Debo caminar",
+        "advice": "Debería caminar"
+      }
+    },
+    {
+      "id": "win-67",
+      "base": "ganar",
+      "meanings": [
+        "ganhar",
+        "vencer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "sports",
+        "success"
+      ],
+      "forms": {
+        "infinitive": "ganar",
+        "present": "gano",
+        "past": "gané",
+        "imperfect": "ganaba",
+        "participle": "ganado",
+        "gerund": "ganando",
+        "perfect": "he ganado",
+        "pluperfect": "había ganado",
+        "perfectInfinitive": "haber ganado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Gano",
+        "ongoing": "Estoy ganando",
+        "past": "Gané",
+        "pastOngoing": "Estaba ganando",
+        "duration": "Llevo un tiempo ganando",
+        "future": "Voy a ganar",
+        "habit": "Antes ganaba",
+        "recent": "Acabo de ganar",
+        "regret": "Debería haber ganado",
+        "possibility": "Podría haber ganado",
+        "prior": "Llevaba un tiempo ganando",
+        "intended": "Iba a ganar",
+        "perfect": "He ganado",
+        "ability": "Puedo ganar",
+        "hypothetical": "Podría ganar",
+        "obligation": "Debo ganar",
+        "advice": "Debería ganar"
+      }
+    },
+    {
+      "id": "remember-68",
+      "base": "recordar",
+      "meanings": [
+        "lembrar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "memory"
+      ],
+      "forms": {
+        "infinitive": "recordar",
+        "present": "recuerdo",
+        "past": "recordé",
+        "imperfect": "recordaba",
+        "participle": "recordado",
+        "gerund": "recordando",
+        "perfect": "he recordado",
+        "pluperfect": "había recordado",
+        "perfectInfinitive": "haber recordado"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Recuerdo",
+        "past": "Recordé",
+        "future": "Voy a recordar",
+        "habit": "Antes recordaba",
+        "recent": "Acabo de recordar",
+        "regret": "Debería haber recordado",
+        "possibility": "Podría haber recordado",
+        "intended": "Iba a recordar",
+        "perfect": "He recordado",
+        "ability": "Puedo recordar",
+        "hypothetical": "Podría recordar",
+        "obligation": "Debo recordar",
+        "advice": "Debería recordar"
+      }
+    },
+    {
+      "id": "buy-69",
+      "base": "comprar",
+      "meanings": [
+        "comprar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "shopping",
+        "money"
+      ],
+      "forms": {
+        "infinitive": "comprar",
+        "present": "compro",
+        "past": "compré",
+        "imperfect": "compraba",
+        "participle": "comprado",
+        "gerund": "comprando",
+        "perfect": "he comprado",
+        "pluperfect": "había comprado",
+        "perfectInfinitive": "haber comprado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Compro",
+        "ongoing": "Estoy comprando",
+        "past": "Compré",
+        "pastOngoing": "Estaba comprando",
+        "duration": "Llevo un tiempo comprando",
+        "future": "Voy a comprar",
+        "habit": "Antes compraba",
+        "recent": "Acabo de comprar",
+        "regret": "Debería haber comprado",
+        "possibility": "Podría haber comprado",
+        "prior": "Llevaba un tiempo comprando",
+        "intended": "Iba a comprar",
+        "perfect": "He comprado",
+        "ability": "Puedo comprar",
+        "hypothetical": "Podría comprar",
+        "obligation": "Debo comprar",
+        "advice": "Debería comprar"
+      }
+    },
+    {
+      "id": "wait-70",
+      "base": "esperar",
+      "meanings": [
+        "esperar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "time"
+      ],
+      "forms": {
+        "infinitive": "esperar",
+        "present": "espero",
+        "past": "esperé",
+        "imperfect": "esperaba",
+        "participle": "esperado",
+        "gerund": "esperando",
+        "perfect": "he esperado",
+        "pluperfect": "había esperado",
+        "perfectInfinitive": "haber esperado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Espero",
+        "ongoing": "Estoy esperando",
+        "past": "Esperé",
+        "pastOngoing": "Estaba esperando",
+        "duration": "Llevo un tiempo esperando",
+        "future": "Voy a esperar",
+        "habit": "Antes esperaba",
+        "recent": "Acabo de esperar",
+        "regret": "Debería haber esperado",
+        "possibility": "Podría haber esperado",
+        "prior": "Llevaba un tiempo esperando",
+        "intended": "Iba a esperar",
+        "perfect": "He esperado",
+        "ability": "Puedo esperar",
+        "hypothetical": "Podría esperar",
+        "obligation": "Debo esperar",
+        "advice": "Debería esperar"
+      }
+    },
+    {
+      "id": "send-71",
+      "base": "enviar",
+      "meanings": [
+        "enviar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "work"
+      ],
+      "forms": {
+        "infinitive": "enviar",
+        "present": "envío",
+        "past": "envié",
+        "imperfect": "enviaba",
+        "participle": "enviado",
+        "gerund": "enviando",
+        "perfect": "he enviado",
+        "pluperfect": "había enviado",
+        "perfectInfinitive": "haber enviado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Envío",
+        "ongoing": "Estoy enviando",
+        "past": "Envié",
+        "pastOngoing": "Estaba enviando",
+        "duration": "Llevo un tiempo enviando",
+        "future": "Voy a enviar",
+        "habit": "Antes enviaba",
+        "recent": "Acabo de enviar",
+        "regret": "Debería haber enviado",
+        "possibility": "Podría haber enviado",
+        "prior": "Llevaba un tiempo enviando",
+        "intended": "Iba a enviar",
+        "perfect": "He enviado",
+        "ability": "Puedo enviar",
+        "hypothetical": "Podría enviar",
+        "obligation": "Debo enviar",
+        "advice": "Debería enviar"
+      }
+    },
+    {
+      "id": "build-72",
+      "base": "construir",
+      "meanings": [
+        "construir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "creation",
+        "work",
+        "technology"
+      ],
+      "forms": {
+        "infinitive": "construir",
+        "present": "construyo",
+        "past": "construí",
+        "imperfect": "construía",
+        "participle": "construido",
+        "gerund": "construyendo",
+        "perfect": "he construido",
+        "pluperfect": "había construido",
+        "perfectInfinitive": "haber construido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Construyo",
+        "ongoing": "Estoy construyendo",
+        "past": "Construí",
+        "pastOngoing": "Estaba construyendo",
+        "duration": "Llevo un tiempo construyendo",
+        "future": "Voy a construir",
+        "habit": "Antes construía",
+        "recent": "Acabo de construir",
+        "regret": "Debería haber construido",
+        "possibility": "Podría haber construido",
+        "prior": "Llevaba un tiempo construyendo",
+        "intended": "Iba a construir",
+        "perfect": "He construido",
+        "ability": "Puedo construir",
+        "hypothetical": "Podría construir",
+        "obligation": "Debo construir",
+        "advice": "Debería construir"
+      }
+    },
+    {
+      "id": "stay-73",
+      "base": "quedarse",
+      "meanings": [
+        "ficar",
+        "permanecer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "quedarme",
+        "present": "me quedo",
+        "past": "me quedé",
+        "imperfect": "me quedaba",
+        "participle": "quedado",
+        "gerund": "quedándome",
+        "perfect": "me he quedado",
+        "pluperfect": "me había quedado",
+        "perfectInfinitive": "haberme quedado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Me quedo",
+        "ongoing": "Estoy quedándome",
+        "past": "Me quedé",
+        "pastOngoing": "Estaba quedándome",
+        "duration": "Llevo un tiempo quedándome",
+        "future": "Voy a quedarme",
+        "habit": "Antes me quedaba",
+        "recent": "Acabo de quedarme",
+        "regret": "Debería haberme quedado",
+        "possibility": "Podría haberme quedado",
+        "prior": "Llevaba un tiempo quedándome",
+        "intended": "Iba a quedarme",
+        "perfect": "Me he quedado",
+        "ability": "Puedo quedarme",
+        "hypothetical": "Podría quedarme",
+        "obligation": "Debo quedarme",
+        "advice": "Debería quedarme"
+      }
+    },
+    {
+      "id": "fall-74",
+      "base": "caer",
+      "meanings": [
+        "cair"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement"
+      ],
+      "forms": {
+        "infinitive": "caer",
+        "present": "caigo",
+        "past": "caí",
+        "imperfect": "caía",
+        "participle": "caído",
+        "gerund": "cayendo",
+        "perfect": "he caído",
+        "pluperfect": "había caído",
+        "perfectInfinitive": "haber caído"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Caigo",
+        "ongoing": "Estoy cayendo",
+        "past": "Caí",
+        "pastOngoing": "Estaba cayendo",
+        "duration": "Llevo un tiempo cayendo",
+        "future": "Voy a caer",
+        "habit": "Antes caía",
+        "recent": "Acabo de caer",
+        "regret": "Debería haber caído",
+        "possibility": "Podría haber caído",
+        "prior": "Llevaba un tiempo cayendo",
+        "intended": "Iba a caer",
+        "perfect": "He caído",
+        "ability": "Puedo caer",
+        "hypothetical": "Podría caer",
+        "obligation": "Debo caer",
+        "advice": "Debería caer"
+      }
+    },
+    {
+      "id": "cut-75",
+      "base": "cortar",
+      "meanings": [
+        "cortar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "action"
+      ],
+      "forms": {
+        "infinitive": "cortar",
+        "present": "corto",
+        "past": "corté",
+        "imperfect": "cortaba",
+        "participle": "cortado",
+        "gerund": "cortando",
+        "perfect": "he cortado",
+        "pluperfect": "había cortado",
+        "perfectInfinitive": "haber cortado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Corto",
+        "ongoing": "Estoy cortando",
+        "past": "Corté",
+        "pastOngoing": "Estaba cortando",
+        "duration": "Llevo un tiempo cortando",
+        "future": "Voy a cortar",
+        "habit": "Antes cortaba",
+        "recent": "Acabo de cortar",
+        "regret": "Debería haber cortado",
+        "possibility": "Podría haber cortado",
+        "prior": "Llevaba un tiempo cortando",
+        "intended": "Iba a cortar",
+        "perfect": "He cortado",
+        "ability": "Puedo cortar",
+        "hypothetical": "Podría cortar",
+        "obligation": "Debo cortar",
+        "advice": "Debería cortar"
+      }
+    },
+    {
+      "id": "sell-76",
+      "base": "vender",
+      "meanings": [
+        "vender"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "shopping",
+        "money"
+      ],
+      "forms": {
+        "infinitive": "vender",
+        "present": "vendo",
+        "past": "vendí",
+        "imperfect": "vendía",
+        "participle": "vendido",
+        "gerund": "vendiendo",
+        "perfect": "he vendido",
+        "pluperfect": "había vendido",
+        "perfectInfinitive": "haber vendido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Vendo",
+        "ongoing": "Estoy vendiendo",
+        "past": "Vendí",
+        "pastOngoing": "Estaba vendiendo",
+        "duration": "Llevo un tiempo vendiendo",
+        "future": "Voy a vender",
+        "habit": "Antes vendía",
+        "recent": "Acabo de vender",
+        "regret": "Debería haber vendido",
+        "possibility": "Podría haber vendido",
+        "prior": "Llevaba un tiempo vendiendo",
+        "intended": "Iba a vender",
+        "perfect": "He vendido",
+        "ability": "Puedo vender",
+        "hypothetical": "Podría vender",
+        "obligation": "Debo vender",
+        "advice": "Debería vender"
+      }
+    },
+    {
+      "id": "decide-77",
+      "base": "decidir",
+      "meanings": [
+        "decidir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "decision"
+      ],
+      "forms": {
+        "infinitive": "decidir",
+        "present": "decido",
+        "past": "decidí",
+        "imperfect": "decidía",
+        "participle": "decidido",
+        "gerund": "decidiendo",
+        "perfect": "he decidido",
+        "pluperfect": "había decidido",
+        "perfectInfinitive": "haber decidido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Decido",
+        "ongoing": "Estoy decidiendo",
+        "past": "Decidí",
+        "pastOngoing": "Estaba decidiendo",
+        "duration": "Llevo un tiempo decidiendo",
+        "future": "Voy a decidir",
+        "habit": "Antes decidía",
+        "recent": "Acabo de decidir",
+        "regret": "Debería haber decidido",
+        "possibility": "Podría haber decidido",
+        "prior": "Llevaba un tiempo decidiendo",
+        "intended": "Iba a decidir",
+        "perfect": "He decidido",
+        "ability": "Puedo decidir",
+        "hypothetical": "Podría decidir",
+        "obligation": "Debo decidir",
+        "advice": "Debería decidir"
+      }
+    },
+    {
+      "id": "return-78",
+      "base": "volver",
+      "meanings": [
+        "voltar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement"
+      ],
+      "forms": {
+        "infinitive": "volver",
+        "present": "vuelvo",
+        "past": "volví",
+        "imperfect": "volvía",
+        "participle": "vuelto",
+        "gerund": "volviendo",
+        "perfect": "he vuelto",
+        "pluperfect": "había vuelto",
+        "perfectInfinitive": "haber vuelto"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Vuelvo",
+        "ongoing": "Estoy volviendo",
+        "past": "Volví",
+        "pastOngoing": "Estaba volviendo",
+        "duration": "Llevo un tiempo volviendo",
+        "future": "Voy a volver",
+        "habit": "Antes volvía",
+        "recent": "Acabo de volver",
+        "regret": "Debería haber vuelto",
+        "possibility": "Podría haber vuelto",
+        "prior": "Llevaba un tiempo volviendo",
+        "intended": "Iba a volver",
+        "perfect": "He vuelto",
+        "ability": "Puedo volver",
+        "hypothetical": "Podría volver",
+        "obligation": "Debo volver",
+        "advice": "Debería volver"
+      }
+    },
+    {
+      "id": "explain-79",
+      "base": "explicar",
+      "meanings": [
+        "explicar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "education"
+      ],
+      "forms": {
+        "infinitive": "explicar",
+        "present": "explico",
+        "past": "expliqué",
+        "imperfect": "explicaba",
+        "participle": "explicado",
+        "gerund": "explicando",
+        "perfect": "he explicado",
+        "pluperfect": "había explicado",
+        "perfectInfinitive": "haber explicado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Explico",
+        "ongoing": "Estoy explicando",
+        "past": "Expliqué",
+        "pastOngoing": "Estaba explicando",
+        "duration": "Llevo un tiempo explicando",
+        "future": "Voy a explicar",
+        "habit": "Antes explicaba",
+        "recent": "Acabo de explicar",
+        "regret": "Debería haber explicado",
+        "possibility": "Podría haber explicado",
+        "prior": "Llevaba un tiempo explicando",
+        "intended": "Iba a explicar",
+        "perfect": "He explicado",
+        "ability": "Puedo explicar",
+        "hypothetical": "Podría explicar",
+        "obligation": "Debo explicar",
+        "advice": "Debería explicar"
+      }
+    },
+    {
+      "id": "hope-80",
+      "base": "tener esperanza",
+      "meanings": [
+        "ter esperança"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "emotion",
+        "expectation"
+      ],
+      "forms": {
+        "infinitive": "tener esperanza",
+        "present": "tengo esperanza",
+        "past": "tuve esperanza",
+        "imperfect": "tenía esperanza",
+        "participle": "tenido esperanza",
+        "gerund": "teniendo esperanza",
+        "perfect": "he tenido esperanza",
+        "pluperfect": "había tenido esperanza",
+        "perfectInfinitive": "haber tenido esperanza"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Tengo esperanza",
+        "past": "Tuve esperanza",
+        "future": "Voy a tener esperanza",
+        "habit": "Antes tenía esperanza",
+        "recent": "Acabo de tener esperanza",
+        "regret": "Debería haber tenido esperanza",
+        "possibility": "Podría haber tenido esperanza",
+        "intended": "Iba a tener esperanza",
+        "perfect": "He tenido esperanza",
+        "ability": "Puedo tener esperanza",
+        "hypothetical": "Podría tener esperanza",
+        "obligation": "Debo tener esperanza",
+        "advice": "Debería tener esperanza"
+      }
+    },
+    {
+      "id": "develop-81",
+      "base": "desarrollar",
+      "meanings": [
+        "desenvolver"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "technology"
+      ],
+      "forms": {
+        "infinitive": "desarrollar",
+        "present": "desarrollo",
+        "past": "desarrollé",
+        "imperfect": "desarrollaba",
+        "participle": "desarrollado",
+        "gerund": "desarrollando",
+        "perfect": "he desarrollado",
+        "pluperfect": "había desarrollado",
+        "perfectInfinitive": "haber desarrollado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Desarrollo",
+        "ongoing": "Estoy desarrollando",
+        "past": "Desarrollé",
+        "pastOngoing": "Estaba desarrollando",
+        "duration": "Llevo un tiempo desarrollando",
+        "future": "Voy a desarrollar",
+        "habit": "Antes desarrollaba",
+        "recent": "Acabo de desarrollar",
+        "regret": "Debería haber desarrollado",
+        "possibility": "Podría haber desarrollado",
+        "prior": "Llevaba un tiempo desarrollando",
+        "intended": "Iba a desarrollar",
+        "perfect": "He desarrollado",
+        "ability": "Puedo desarrollar",
+        "hypothetical": "Podría desarrollar",
+        "obligation": "Debo desarrollar",
+        "advice": "Debería desarrollar"
+      }
+    },
+    {
+      "id": "break-82",
+      "base": "romper",
+      "meanings": [
+        "quebrar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "romper",
+        "present": "rompo",
+        "past": "rompí",
+        "imperfect": "rompía",
+        "participle": "roto",
+        "gerund": "rompiendo",
+        "perfect": "he roto",
+        "pluperfect": "había roto",
+        "perfectInfinitive": "haber roto"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Rompo",
+        "ongoing": "Estoy rompiendo",
+        "past": "Rompí",
+        "pastOngoing": "Estaba rompiendo",
+        "duration": "Llevo un tiempo rompiendo",
+        "future": "Voy a romper",
+        "habit": "Antes rompía",
+        "recent": "Acabo de romper",
+        "regret": "Debería haber roto",
+        "possibility": "Podría haber roto",
+        "prior": "Llevaba un tiempo rompiendo",
+        "intended": "Iba a romper",
+        "perfect": "He roto",
+        "ability": "Puedo romper",
+        "hypothetical": "Podría romper",
+        "obligation": "Debo romper",
+        "advice": "Debería romper"
+      }
+    },
+    {
+      "id": "receive-83",
+      "base": "recibir",
+      "meanings": [
+        "receber"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "recibir",
+        "present": "recibo",
+        "past": "recibí",
+        "imperfect": "recibía",
+        "participle": "recibido",
+        "gerund": "recibiendo",
+        "perfect": "he recibido",
+        "pluperfect": "había recibido",
+        "perfectInfinitive": "haber recibido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Recibo",
+        "ongoing": "Estoy recibiendo",
+        "past": "Recibí",
+        "pastOngoing": "Estaba recibiendo",
+        "duration": "Llevo un tiempo recibiendo",
+        "future": "Voy a recibir",
+        "habit": "Antes recibía",
+        "recent": "Acabo de recibir",
+        "regret": "Debería haber recibido",
+        "possibility": "Podría haber recibido",
+        "prior": "Llevaba un tiempo recibiendo",
+        "intended": "Iba a recibir",
+        "perfect": "He recibido",
+        "ability": "Puedo recibir",
+        "hypothetical": "Podría recibir",
+        "obligation": "Debo recibir",
+        "advice": "Debería recibir"
+      }
+    },
+    {
+      "id": "agree-84",
+      "base": "estar de acuerdo",
+      "meanings": [
+        "concordar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "opinion",
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "estar de acuerdo",
+        "present": "estoy de acuerdo",
+        "past": "estuve de acuerdo",
+        "imperfect": "estaba de acuerdo",
+        "participle": "estado de acuerdo",
+        "gerund": "estando de acuerdo",
+        "perfect": "he estado de acuerdo",
+        "pluperfect": "había estado de acuerdo",
+        "perfectInfinitive": "haber estado de acuerdo"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Estoy de acuerdo",
+        "past": "Estuve de acuerdo",
+        "future": "Voy a estar de acuerdo",
+        "habit": "Antes estaba de acuerdo",
+        "recent": "Acabo de estar de acuerdo",
+        "regret": "Debería haber estado de acuerdo",
+        "possibility": "Podría haber estado de acuerdo",
+        "intended": "Iba a estar de acuerdo",
+        "perfect": "He estado de acuerdo",
+        "ability": "Puedo estar de acuerdo",
+        "hypothetical": "Podría estar de acuerdo",
+        "obligation": "Debo estar de acuerdo",
+        "advice": "Debería estar de acuerdo"
+      }
+    },
+    {
+      "id": "eat-85",
+      "base": "comer",
+      "meanings": [
+        "comer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "food",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "comer",
+        "present": "como",
+        "past": "comí",
+        "imperfect": "comía",
+        "participle": "comido",
+        "gerund": "comiendo",
+        "perfect": "he comido",
+        "pluperfect": "había comido",
+        "perfectInfinitive": "haber comido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Como",
+        "ongoing": "Estoy comiendo",
+        "past": "Comí",
+        "pastOngoing": "Estaba comiendo",
+        "duration": "Llevo un tiempo comiendo",
+        "future": "Voy a comer",
+        "habit": "Antes comía",
+        "recent": "Acabo de comer",
+        "regret": "Debería haber comido",
+        "possibility": "Podría haber comido",
+        "prior": "Llevaba un tiempo comiendo",
+        "intended": "Iba a comer",
+        "perfect": "He comido",
+        "ability": "Puedo comer",
+        "hypothetical": "Podría comer",
+        "obligation": "Debo comer",
+        "advice": "Debería comer"
+      }
+    },
+    {
+      "id": "drink-86",
+      "base": "beber",
+      "meanings": [
+        "beber"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "food",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "beber",
+        "present": "bebo",
+        "past": "bebí",
+        "imperfect": "bebía",
+        "participle": "bebido",
+        "gerund": "bebiendo",
+        "perfect": "he bebido",
+        "pluperfect": "había bebido",
+        "perfectInfinitive": "haber bebido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Bebo",
+        "ongoing": "Estoy bebiendo",
+        "past": "Bebí",
+        "pastOngoing": "Estaba bebiendo",
+        "duration": "Llevo un tiempo bebiendo",
+        "future": "Voy a beber",
+        "habit": "Antes bebía",
+        "recent": "Acabo de beber",
+        "regret": "Debería haber bebido",
+        "possibility": "Podría haber bebido",
+        "prior": "Llevaba un tiempo bebiendo",
+        "intended": "Iba a beber",
+        "perfect": "He bebido",
+        "ability": "Puedo beber",
+        "hypothetical": "Podría beber",
+        "obligation": "Debo beber",
+        "advice": "Debería beber"
+      }
+    },
+    {
+      "id": "sleep-87",
+      "base": "dormir",
+      "meanings": [
+        "dormir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life",
+        "health"
+      ],
+      "forms": {
+        "infinitive": "dormir",
+        "present": "duermo",
+        "past": "dormí",
+        "imperfect": "dormía",
+        "participle": "dormido",
+        "gerund": "durmiendo",
+        "perfect": "he dormido",
+        "pluperfect": "había dormido",
+        "perfectInfinitive": "haber dormido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Duermo",
+        "ongoing": "Estoy durmiendo",
+        "past": "Dormí",
+        "pastOngoing": "Estaba durmiendo",
+        "duration": "Llevo un tiempo durmiendo",
+        "future": "Voy a dormir",
+        "habit": "Antes dormía",
+        "recent": "Acabo de dormir",
+        "regret": "Debería haber dormido",
+        "possibility": "Podría haber dormido",
+        "prior": "Llevaba un tiempo durmiendo",
+        "intended": "Iba a dormir",
+        "perfect": "He dormido",
+        "ability": "Puedo dormir",
+        "hypothetical": "Podría dormir",
+        "obligation": "Debo dormir",
+        "advice": "Debería dormir"
+      }
+    },
+    {
+      "id": "drive-88",
+      "base": "conducir",
+      "meanings": [
+        "dirigir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "transport",
+        "movement"
+      ],
+      "forms": {
+        "infinitive": "conducir",
+        "present": "conduzco",
+        "past": "conduje",
+        "imperfect": "conducía",
+        "participle": "conducido",
+        "gerund": "conduciendo",
+        "perfect": "he conducido",
+        "pluperfect": "había conducido",
+        "perfectInfinitive": "haber conducido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Conduzco",
+        "ongoing": "Estoy conduciendo",
+        "past": "Conduje",
+        "pastOngoing": "Estaba conduciendo",
+        "duration": "Llevo un tiempo conduciendo",
+        "future": "Voy a conducir",
+        "habit": "Antes conducía",
+        "recent": "Acabo de conducir",
+        "regret": "Debería haber conducido",
+        "possibility": "Podría haber conducido",
+        "prior": "Llevaba un tiempo conduciendo",
+        "intended": "Iba a conducir",
+        "perfect": "He conducido",
+        "ability": "Puedo conducir",
+        "hypothetical": "Podría conducir",
+        "obligation": "Debo conducir",
+        "advice": "Debería conducir"
+      }
+    },
+    {
+      "id": "study-89",
+      "base": "estudiar",
+      "meanings": [
+        "estudar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "education",
+        "language"
+      ],
+      "forms": {
+        "infinitive": "estudiar",
+        "present": "estudio",
+        "past": "estudié",
+        "imperfect": "estudiaba",
+        "participle": "estudiado",
+        "gerund": "estudiando",
+        "perfect": "he estudiado",
+        "pluperfect": "había estudiado",
+        "perfectInfinitive": "haber estudiado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Estudio",
+        "ongoing": "Estoy estudiando",
+        "past": "Estudié",
+        "pastOngoing": "Estaba estudiando",
+        "duration": "Llevo un tiempo estudiando",
+        "future": "Voy a estudiar",
+        "habit": "Antes estudiaba",
+        "recent": "Acabo de estudiar",
+        "regret": "Debería haber estudiado",
+        "possibility": "Podría haber estudiado",
+        "prior": "Llevaba un tiempo estudiando",
+        "intended": "Iba a estudiar",
+        "perfect": "He estudiado",
+        "ability": "Puedo estudiar",
+        "hypothetical": "Podría estudiar",
+        "obligation": "Debo estudiar",
+        "advice": "Debería estudiar"
+      }
+    },
+    {
+      "id": "teach-90",
+      "base": "enseñar",
+      "meanings": [
+        "ensinar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "education",
+        "language"
+      ],
+      "forms": {
+        "infinitive": "enseñar",
+        "present": "enseño",
+        "past": "enseñé",
+        "imperfect": "enseñaba",
+        "participle": "enseñado",
+        "gerund": "enseñando",
+        "perfect": "he enseñado",
+        "pluperfect": "había enseñado",
+        "perfectInfinitive": "haber enseñado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Enseño",
+        "ongoing": "Estoy enseñando",
+        "past": "Enseñé",
+        "pastOngoing": "Estaba enseñando",
+        "duration": "Llevo un tiempo enseñando",
+        "future": "Voy a enseñar",
+        "habit": "Antes enseñaba",
+        "recent": "Acabo de enseñar",
+        "regret": "Debería haber enseñado",
+        "possibility": "Podría haber enseñado",
+        "prior": "Llevaba un tiempo enseñando",
+        "intended": "Iba a enseñar",
+        "perfect": "He enseñado",
+        "ability": "Puedo enseñar",
+        "hypothetical": "Podría enseñar",
+        "obligation": "Debo enseñar",
+        "advice": "Debería enseñar"
+      }
+    },
+    {
+      "id": "wear-91",
+      "base": "llevar",
+      "meanings": [
+        "vestir",
+        "usar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life",
+        "clothing"
+      ],
+      "forms": {
+        "infinitive": "llevar",
+        "present": "llevo",
+        "past": "llevé",
+        "imperfect": "llevaba",
+        "participle": "llevado",
+        "gerund": "llevando",
+        "perfect": "he llevado",
+        "pluperfect": "había llevado",
+        "perfectInfinitive": "haber llevado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Llevo",
+        "ongoing": "Estoy llevando",
+        "past": "Llevé",
+        "pastOngoing": "Estaba llevando",
+        "duration": "Llevo un tiempo llevando",
+        "future": "Voy a llevar",
+        "habit": "Antes llevaba",
+        "recent": "Acabo de llevar",
+        "regret": "Debería haber llevado",
+        "possibility": "Podría haber llevado",
+        "prior": "Llevaba un tiempo llevando",
+        "intended": "Iba a llevar",
+        "perfect": "He llevado",
+        "ability": "Puedo llevar",
+        "hypothetical": "Podría llevar",
+        "obligation": "Debo llevar",
+        "advice": "Debería llevar"
+      }
+    },
+    {
+      "id": "choose-92",
+      "base": "elegir",
+      "meanings": [
+        "escolher"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "decision"
+      ],
+      "forms": {
+        "infinitive": "elegir",
+        "present": "elijo",
+        "past": "elegí",
+        "imperfect": "elegía",
+        "participle": "elegido",
+        "gerund": "eligiendo",
+        "perfect": "he elegido",
+        "pluperfect": "había elegido",
+        "perfectInfinitive": "haber elegido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Elijo",
+        "ongoing": "Estoy eligiendo",
+        "past": "Elegí",
+        "pastOngoing": "Estaba eligiendo",
+        "duration": "Llevo un tiempo eligiendo",
+        "future": "Voy a elegir",
+        "habit": "Antes elegía",
+        "recent": "Acabo de elegir",
+        "regret": "Debería haber elegido",
+        "possibility": "Podría haber elegido",
+        "prior": "Llevaba un tiempo eligiendo",
+        "intended": "Iba a elegir",
+        "perfect": "He elegido",
+        "ability": "Puedo elegir",
+        "hypothetical": "Podría elegir",
+        "obligation": "Debo elegir",
+        "advice": "Debería elegir"
+      }
+    },
+    {
+      "id": "forget-93",
+      "base": "olvidar",
+      "meanings": [
+        "esquecer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "memory"
+      ],
+      "forms": {
+        "infinitive": "olvidar",
+        "present": "olvido",
+        "past": "olvidé",
+        "imperfect": "olvidaba",
+        "participle": "olvidado",
+        "gerund": "olvidando",
+        "perfect": "he olvidado",
+        "pluperfect": "había olvidado",
+        "perfectInfinitive": "haber olvidado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Olvido",
+        "ongoing": "Estoy olvidando",
+        "past": "Olvidé",
+        "pastOngoing": "Estaba olvidando",
+        "duration": "Llevo un tiempo olvidando",
+        "future": "Voy a olvidar",
+        "habit": "Antes olvidaba",
+        "recent": "Acabo de olvidar",
+        "regret": "Debería haber olvidado",
+        "possibility": "Podría haber olvidado",
+        "prior": "Llevaba un tiempo olvidando",
+        "intended": "Iba a olvidar",
+        "perfect": "He olvidado",
+        "ability": "Puedo olvidar",
+        "hypothetical": "Podría olvidar",
+        "obligation": "Debo olvidar",
+        "advice": "Debería olvidar"
+      }
+    },
+    {
+      "id": "catch-94",
+      "base": "atrapar",
+      "meanings": [
+        "capturar",
+        "pegar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "transport",
+        "movement"
+      ],
+      "forms": {
+        "infinitive": "atrapar",
+        "present": "atrapo",
+        "past": "atrapé",
+        "imperfect": "atrapaba",
+        "participle": "atrapado",
+        "gerund": "atrapando",
+        "perfect": "he atrapado",
+        "pluperfect": "había atrapado",
+        "perfectInfinitive": "haber atrapado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Atrapo",
+        "ongoing": "Estoy atrapando",
+        "past": "Atrapé",
+        "pastOngoing": "Estaba atrapando",
+        "duration": "Llevo un tiempo atrapando",
+        "future": "Voy a atrapar",
+        "habit": "Antes atrapaba",
+        "recent": "Acabo de atrapar",
+        "regret": "Debería haber atrapado",
+        "possibility": "Podría haber atrapado",
+        "prior": "Llevaba un tiempo atrapando",
+        "intended": "Iba a atrapar",
+        "perfect": "He atrapado",
+        "ability": "Puedo atrapar",
+        "hypothetical": "Podría atrapar",
+        "obligation": "Debo atrapar",
+        "advice": "Debería atrapar"
+      }
+    },
+    {
+      "id": "travel-95",
+      "base": "viajar",
+      "meanings": [
+        "viajar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "travel",
+        "work"
+      ],
+      "forms": {
+        "infinitive": "viajar",
+        "present": "viajo",
+        "past": "viajé",
+        "imperfect": "viajaba",
+        "participle": "viajado",
+        "gerund": "viajando",
+        "perfect": "he viajado",
+        "pluperfect": "había viajado",
+        "perfectInfinitive": "haber viajado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Viajo",
+        "ongoing": "Estoy viajando",
+        "past": "Viajé",
+        "pastOngoing": "Estaba viajando",
+        "duration": "Llevo un tiempo viajando",
+        "future": "Voy a viajar",
+        "habit": "Antes viajaba",
+        "recent": "Acabo de viajar",
+        "regret": "Debería haber viajado",
+        "possibility": "Podría haber viajado",
+        "prior": "Llevaba un tiempo viajando",
+        "intended": "Iba a viajar",
+        "perfect": "He viajado",
+        "ability": "Puedo viajar",
+        "hypothetical": "Podría viajar",
+        "obligation": "Debo viajar",
+        "advice": "Debería viajar"
+      }
+    },
+    {
+      "id": "cook-96",
+      "base": "cocinar",
+      "meanings": [
+        "cozinhar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "food",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "cocinar",
+        "present": "cocino",
+        "past": "cociné",
+        "imperfect": "cocinaba",
+        "participle": "cocinado",
+        "gerund": "cocinando",
+        "perfect": "he cocinado",
+        "pluperfect": "había cocinado",
+        "perfectInfinitive": "haber cocinado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Cocino",
+        "ongoing": "Estoy cocinando",
+        "past": "Cociné",
+        "pastOngoing": "Estaba cocinando",
+        "duration": "Llevo un tiempo cocinando",
+        "future": "Voy a cocinar",
+        "habit": "Antes cocinaba",
+        "recent": "Acabo de cocinar",
+        "regret": "Debería haber cocinado",
+        "possibility": "Podría haber cocinado",
+        "prior": "Llevaba un tiempo cocinando",
+        "intended": "Iba a cocinar",
+        "perfect": "He cocinado",
+        "ability": "Puedo cocinar",
+        "hypothetical": "Podría cocinar",
+        "obligation": "Debo cocinar",
+        "advice": "Debería cocinar"
+      }
+    },
+    {
+      "id": "listen-97",
+      "base": "escuchar",
+      "meanings": [
+        "escutar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "perception",
+        "language"
+      ],
+      "forms": {
+        "infinitive": "escuchar",
+        "present": "escucho",
+        "past": "escuché",
+        "imperfect": "escuchaba",
+        "participle": "escuchado",
+        "gerund": "escuchando",
+        "perfect": "he escuchado",
+        "pluperfect": "había escuchado",
+        "perfectInfinitive": "haber escuchado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Escucho",
+        "ongoing": "Estoy escuchando",
+        "past": "Escuché",
+        "pastOngoing": "Estaba escuchando",
+        "duration": "Llevo un tiempo escuchando",
+        "future": "Voy a escuchar",
+        "habit": "Antes escuchaba",
+        "recent": "Acabo de escuchar",
+        "regret": "Debería haber escuchado",
+        "possibility": "Podría haber escuchado",
+        "prior": "Llevaba un tiempo escuchando",
+        "intended": "Iba a escuchar",
+        "perfect": "He escuchado",
+        "ability": "Puedo escuchar",
+        "hypothetical": "Podría escuchar",
+        "obligation": "Debo escuchar",
+        "advice": "Debería escuchar"
+      }
+    },
+    {
+      "id": "plan-98",
+      "base": "planear",
+      "meanings": [
+        "planejar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "planning"
+      ],
+      "forms": {
+        "infinitive": "planear",
+        "present": "planeo",
+        "past": "planeé",
+        "imperfect": "planeaba",
+        "participle": "planeado",
+        "gerund": "planeando",
+        "perfect": "he planeado",
+        "pluperfect": "había planeado",
+        "perfectInfinitive": "haber planeado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Planeo",
+        "ongoing": "Estoy planeando",
+        "past": "Planeé",
+        "pastOngoing": "Estaba planeando",
+        "duration": "Llevo un tiempo planeando",
+        "future": "Voy a planear",
+        "habit": "Antes planeaba",
+        "recent": "Acabo de planear",
+        "regret": "Debería haber planeado",
+        "possibility": "Podría haber planeado",
+        "prior": "Llevaba un tiempo planeando",
+        "intended": "Iba a planear",
+        "perfect": "He planeado",
+        "ability": "Puedo planear",
+        "hypothetical": "Podría planear",
+        "obligation": "Debo planear",
+        "advice": "Debería planear"
+      }
+    },
+    {
+      "id": "check-99",
+      "base": "comprobar",
+      "meanings": [
+        "verificar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "technology"
+      ],
+      "forms": {
+        "infinitive": "comprobar",
+        "present": "compruebo",
+        "past": "comprobé",
+        "imperfect": "comprobaba",
+        "participle": "comprobado",
+        "gerund": "comprobando",
+        "perfect": "he comprobado",
+        "pluperfect": "había comprobado",
+        "perfectInfinitive": "haber comprobado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Compruebo",
+        "ongoing": "Estoy comprobando",
+        "past": "Comprobé",
+        "pastOngoing": "Estaba comprobando",
+        "duration": "Llevo un tiempo comprobando",
+        "future": "Voy a comprobar",
+        "habit": "Antes comprobaba",
+        "recent": "Acabo de comprobar",
+        "regret": "Debería haber comprobado",
+        "possibility": "Podría haber comprobado",
+        "prior": "Llevaba un tiempo comprobando",
+        "intended": "Iba a comprobar",
+        "perfect": "He comprobado",
+        "ability": "Puedo comprobar",
+        "hypothetical": "Podría comprobar",
+        "obligation": "Debo comprobar",
+        "advice": "Debería comprobar"
+      }
+    },
+    {
+      "id": "fix-100",
+      "base": "arreglar",
+      "meanings": [
+        "consertar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "work"
+      ],
+      "forms": {
+        "infinitive": "arreglar",
+        "present": "arreglo",
+        "past": "arreglé",
+        "imperfect": "arreglaba",
+        "participle": "arreglado",
+        "gerund": "arreglando",
+        "perfect": "he arreglado",
+        "pluperfect": "había arreglado",
+        "perfectInfinitive": "haber arreglado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Arreglo",
+        "ongoing": "Estoy arreglando",
+        "past": "Arreglé",
+        "pastOngoing": "Estaba arreglando",
+        "duration": "Llevo un tiempo arreglando",
+        "future": "Voy a arreglar",
+        "habit": "Antes arreglaba",
+        "recent": "Acabo de arreglar",
+        "regret": "Debería haber arreglado",
+        "possibility": "Podría haber arreglado",
+        "prior": "Llevaba un tiempo arreglando",
+        "intended": "Iba a arreglar",
+        "perfect": "He arreglado",
+        "ability": "Puedo arreglar",
+        "hypothetical": "Podría arreglar",
+        "obligation": "Debo arreglar",
+        "advice": "Debería arreglar"
+      }
+    },
+    {
+      "id": "finish-101",
+      "base": "terminar",
+      "meanings": [
+        "terminar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "completion"
+      ],
+      "forms": {
+        "infinitive": "terminar",
+        "present": "termino",
+        "past": "terminé",
+        "imperfect": "terminaba",
+        "participle": "terminado",
+        "gerund": "terminando",
+        "perfect": "he terminado",
+        "pluperfect": "había terminado",
+        "perfectInfinitive": "haber terminado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Termino",
+        "ongoing": "Estoy terminando",
+        "past": "Terminé",
+        "pastOngoing": "Estaba terminando",
+        "duration": "Llevo un tiempo terminando",
+        "future": "Voy a terminar",
+        "habit": "Antes terminaba",
+        "recent": "Acabo de terminar",
+        "regret": "Debería haber terminado",
+        "possibility": "Podría haber terminado",
+        "prior": "Llevaba un tiempo terminando",
+        "intended": "Iba a terminar",
+        "perfect": "He terminado",
+        "ability": "Puedo terminar",
+        "hypothetical": "Podría terminar",
+        "obligation": "Debo terminar",
+        "advice": "Debería terminar"
+      }
+    },
+    {
+      "id": "set-102",
+      "base": "ajustar",
+      "meanings": [
+        "ajustar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life",
+        "planning"
+      ],
+      "forms": {
+        "infinitive": "ajustar",
+        "present": "ajusto",
+        "past": "ajusté",
+        "imperfect": "ajustaba",
+        "participle": "ajustado",
+        "gerund": "ajustando",
+        "perfect": "he ajustado",
+        "pluperfect": "había ajustado",
+        "perfectInfinitive": "haber ajustado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Ajusto",
+        "ongoing": "Estoy ajustando",
+        "past": "Ajusté",
+        "pastOngoing": "Estaba ajustando",
+        "duration": "Llevo un tiempo ajustando",
+        "future": "Voy a ajustar",
+        "habit": "Antes ajustaba",
+        "recent": "Acabo de ajustar",
+        "regret": "Debería haber ajustado",
+        "possibility": "Podría haber ajustado",
+        "prior": "Llevaba un tiempo ajustando",
+        "intended": "Iba a ajustar",
+        "perfect": "He ajustado",
+        "ability": "Puedo ajustar",
+        "hypothetical": "Podría ajustar",
+        "obligation": "Debo ajustar",
+        "advice": "Debería ajustar"
+      }
+    },
+    {
+      "id": "love-103",
+      "base": "amar",
+      "meanings": [
+        "amar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "emotion",
+        "preference"
+      ],
+      "forms": {
+        "infinitive": "amar",
+        "present": "amo",
+        "past": "amé",
+        "imperfect": "amaba",
+        "participle": "amado",
+        "gerund": "amando",
+        "perfect": "he amado",
+        "pluperfect": "había amado",
+        "perfectInfinitive": "haber amado"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Amo",
+        "past": "Amé",
+        "future": "Voy a amar",
+        "habit": "Antes amaba",
+        "recent": "Acabo de amar",
+        "regret": "Debería haber amado",
+        "possibility": "Podría haber amado",
+        "intended": "Iba a amar",
+        "perfect": "He amado",
+        "ability": "Puedo amar",
+        "hypothetical": "Podría amar",
+        "obligation": "Debo amar",
+        "advice": "Debería amar"
+      }
+    },
+    {
+      "id": "hate-104",
+      "base": "odiar",
+      "meanings": [
+        "odiar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "emotion",
+        "preference"
+      ],
+      "forms": {
+        "infinitive": "odiar",
+        "present": "odio",
+        "past": "odié",
+        "imperfect": "odiaba",
+        "participle": "odiado",
+        "gerund": "odiando",
+        "perfect": "he odiado",
+        "pluperfect": "había odiado",
+        "perfectInfinitive": "haber odiado"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Odio",
+        "past": "Odié",
+        "future": "Voy a odiar",
+        "habit": "Antes odiaba",
+        "recent": "Acabo de odiar",
+        "regret": "Debería haber odiado",
+        "possibility": "Podría haber odiado",
+        "intended": "Iba a odiar",
+        "perfect": "He odiado",
+        "ability": "Puedo odiar",
+        "hypothetical": "Podría odiar",
+        "obligation": "Debo odiar",
+        "advice": "Debería odiar"
+      }
+    },
+    {
+      "id": "answer-105",
+      "base": "responder",
+      "meanings": [
+        "responder"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "responder",
+        "present": "respondo",
+        "past": "respondí",
+        "imperfect": "respondía",
+        "participle": "respondido",
+        "gerund": "respondiendo",
+        "perfect": "he respondido",
+        "pluperfect": "había respondido",
+        "perfectInfinitive": "haber respondido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Respondo",
+        "ongoing": "Estoy respondiendo",
+        "past": "Respondí",
+        "pastOngoing": "Estaba respondiendo",
+        "duration": "Llevo un tiempo respondiendo",
+        "future": "Voy a responder",
+        "habit": "Antes respondía",
+        "recent": "Acabo de responder",
+        "regret": "Debería haber respondido",
+        "possibility": "Podría haber respondido",
+        "prior": "Llevaba un tiempo respondiendo",
+        "intended": "Iba a responder",
+        "perfect": "He respondido",
+        "ability": "Puedo responder",
+        "hypothetical": "Podría responder",
+        "obligation": "Debo responder",
+        "advice": "Debería responder"
+      }
+    },
+    {
+      "id": "ride-106",
+      "base": "montar",
+      "meanings": [
+        "montar",
+        "andar de"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement",
+        "transport"
+      ],
+      "forms": {
+        "infinitive": "montar",
+        "present": "monto",
+        "past": "monté",
+        "imperfect": "montaba",
+        "participle": "montado",
+        "gerund": "montando",
+        "perfect": "he montado",
+        "pluperfect": "había montado",
+        "perfectInfinitive": "haber montado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Monto",
+        "ongoing": "Estoy montando",
+        "past": "Monté",
+        "pastOngoing": "Estaba montando",
+        "duration": "Llevo un tiempo montando",
+        "future": "Voy a montar",
+        "habit": "Antes montaba",
+        "recent": "Acabo de montar",
+        "regret": "Debería haber montado",
+        "possibility": "Podría haber montado",
+        "prior": "Llevaba un tiempo montando",
+        "intended": "Iba a montar",
+        "perfect": "He montado",
+        "ability": "Puedo montar",
+        "hypothetical": "Podría montar",
+        "obligation": "Debo montar",
+        "advice": "Debería montar"
+      }
+    },
+    {
+      "id": "fly-107",
+      "base": "volar",
+      "meanings": [
+        "voar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement",
+        "travel"
+      ],
+      "forms": {
+        "infinitive": "volar",
+        "present": "vuelo",
+        "past": "volé",
+        "imperfect": "volaba",
+        "participle": "volado",
+        "gerund": "volando",
+        "perfect": "he volado",
+        "pluperfect": "había volado",
+        "perfectInfinitive": "haber volado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Vuelo",
+        "ongoing": "Estoy volando",
+        "past": "Volé",
+        "pastOngoing": "Estaba volando",
+        "duration": "Llevo un tiempo volando",
+        "future": "Voy a volar",
+        "habit": "Antes volaba",
+        "recent": "Acabo de volar",
+        "regret": "Debería haber volado",
+        "possibility": "Podría haber volado",
+        "prior": "Llevaba un tiempo volando",
+        "intended": "Iba a volar",
+        "perfect": "He volado",
+        "ability": "Puedo volar",
+        "hypothetical": "Podría volar",
+        "obligation": "Debo volar",
+        "advice": "Debería volar"
+      }
+    },
+    {
+      "id": "arrive-108",
+      "base": "llegar",
+      "meanings": [
+        "chegar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement",
+        "travel"
+      ],
+      "forms": {
+        "infinitive": "llegar",
+        "present": "llego",
+        "past": "llegué",
+        "imperfect": "llegaba",
+        "participle": "llegado",
+        "gerund": "llegando",
+        "perfect": "he llegado",
+        "pluperfect": "había llegado",
+        "perfectInfinitive": "haber llegado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Llego",
+        "ongoing": "Estoy llegando",
+        "past": "Llegué",
+        "pastOngoing": "Estaba llegando",
+        "duration": "Llevo un tiempo llegando",
+        "future": "Voy a llegar",
+        "habit": "Antes llegaba",
+        "recent": "Acabo de llegar",
+        "regret": "Debería haber llegado",
+        "possibility": "Podría haber llegado",
+        "prior": "Llevaba un tiempo llegando",
+        "intended": "Iba a llegar",
+        "perfect": "He llegado",
+        "ability": "Puedo llegar",
+        "hypothetical": "Podría llegar",
+        "obligation": "Debo llegar",
+        "advice": "Debería llegar"
+      }
+    },
+    {
+      "id": "wake-109",
+      "base": "despertarse",
+      "meanings": [
+        "acordar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life",
+        "routine"
+      ],
+      "forms": {
+        "infinitive": "despertarme",
+        "present": "me despierto",
+        "past": "me desperté",
+        "imperfect": "me despertaba",
+        "participle": "despertado",
+        "gerund": "despertándome",
+        "perfect": "me he despertado",
+        "pluperfect": "me había despertado",
+        "perfectInfinitive": "haberme despertado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Me despierto",
+        "ongoing": "Estoy despertándome",
+        "past": "Me desperté",
+        "pastOngoing": "Estaba despertándome",
+        "duration": "Llevo un tiempo despertándome",
+        "future": "Voy a despertarme",
+        "habit": "Antes me despertaba",
+        "recent": "Acabo de despertarme",
+        "regret": "Debería haberme despertado",
+        "possibility": "Podría haberme despertado",
+        "prior": "Llevaba un tiempo despertándome",
+        "intended": "Iba a despertarme",
+        "perfect": "Me he despertado",
+        "ability": "Puedo despertarme",
+        "hypothetical": "Podría despertarme",
+        "obligation": "Debo despertarme",
+        "advice": "Debería despertarme"
+      }
+    },
+    {
+      "id": "wash-110",
+      "base": "lavar",
+      "meanings": [
+        "lavar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life",
+        "hygiene"
+      ],
+      "forms": {
+        "infinitive": "lavar",
+        "present": "lavo",
+        "past": "lavé",
+        "imperfect": "lavaba",
+        "participle": "lavado",
+        "gerund": "lavando",
+        "perfect": "he lavado",
+        "pluperfect": "había lavado",
+        "perfectInfinitive": "haber lavado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Lavo",
+        "ongoing": "Estoy lavando",
+        "past": "Lavé",
+        "pastOngoing": "Estaba lavando",
+        "duration": "Llevo un tiempo lavando",
+        "future": "Voy a lavar",
+        "habit": "Antes lavaba",
+        "recent": "Acabo de lavar",
+        "regret": "Debería haber lavado",
+        "possibility": "Podría haber lavado",
+        "prior": "Llevaba un tiempo lavando",
+        "intended": "Iba a lavar",
+        "perfect": "He lavado",
+        "ability": "Puedo lavar",
+        "hypothetical": "Podría lavar",
+        "obligation": "Debo lavar",
+        "advice": "Debería lavar"
+      }
+    },
+    {
+      "id": "clean-111",
+      "base": "limpiar",
+      "meanings": [
+        "limpar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life",
+        "household"
+      ],
+      "forms": {
+        "infinitive": "limpiar",
+        "present": "limpio",
+        "past": "limpié",
+        "imperfect": "limpiaba",
+        "participle": "limpiado",
+        "gerund": "limpiando",
+        "perfect": "he limpiado",
+        "pluperfect": "había limpiado",
+        "perfectInfinitive": "haber limpiado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Limpio",
+        "ongoing": "Estoy limpiando",
+        "past": "Limpié",
+        "pastOngoing": "Estaba limpiando",
+        "duration": "Llevo un tiempo limpiando",
+        "future": "Voy a limpiar",
+        "habit": "Antes limpiaba",
+        "recent": "Acabo de limpiar",
+        "regret": "Debería haber limpiado",
+        "possibility": "Podría haber limpiado",
+        "prior": "Llevaba un tiempo limpiando",
+        "intended": "Iba a limpiar",
+        "perfect": "He limpiado",
+        "ability": "Puedo limpiar",
+        "hypothetical": "Podría limpiar",
+        "obligation": "Debo limpiar",
+        "advice": "Debería limpiar"
+      }
+    },
+    {
+      "id": "close-112",
+      "base": "cerrar",
+      "meanings": [
+        "fechar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life",
+        "action"
+      ],
+      "forms": {
+        "infinitive": "cerrar",
+        "present": "cierro",
+        "past": "cerré",
+        "imperfect": "cerraba",
+        "participle": "cerrado",
+        "gerund": "cerrando",
+        "perfect": "he cerrado",
+        "pluperfect": "había cerrado",
+        "perfectInfinitive": "haber cerrado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Cierro",
+        "ongoing": "Estoy cerrando",
+        "past": "Cerré",
+        "pastOngoing": "Estaba cerrando",
+        "duration": "Llevo un tiempo cerrando",
+        "future": "Voy a cerrar",
+        "habit": "Antes cerraba",
+        "recent": "Acabo de cerrar",
+        "regret": "Debería haber cerrado",
+        "possibility": "Podría haber cerrado",
+        "prior": "Llevaba un tiempo cerrando",
+        "intended": "Iba a cerrar",
+        "perfect": "He cerrado",
+        "ability": "Puedo cerrar",
+        "hypothetical": "Podría cerrar",
+        "obligation": "Debo cerrar",
+        "advice": "Debería cerrar"
+      }
+    },
+    {
+      "id": "share-113",
+      "base": "compartir",
+      "meanings": [
+        "compartilhar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "learning"
+      ],
+      "forms": {
+        "infinitive": "compartir",
+        "present": "comparto",
+        "past": "compartí",
+        "imperfect": "compartía",
+        "participle": "compartido",
+        "gerund": "compartiendo",
+        "perfect": "he compartido",
+        "pluperfect": "había compartido",
+        "perfectInfinitive": "haber compartido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Comparto",
+        "ongoing": "Estoy compartiendo",
+        "past": "Compartí",
+        "pastOngoing": "Estaba compartiendo",
+        "duration": "Llevo un tiempo compartiendo",
+        "future": "Voy a compartir",
+        "habit": "Antes compartía",
+        "recent": "Acabo de compartir",
+        "regret": "Debería haber compartido",
+        "possibility": "Podría haber compartido",
+        "prior": "Llevaba un tiempo compartiendo",
+        "intended": "Iba a compartir",
+        "perfect": "He compartido",
+        "ability": "Puedo compartir",
+        "hypothetical": "Podría compartir",
+        "obligation": "Debo compartir",
+        "advice": "Debería compartir"
+      }
+    },
+    {
+      "id": "wish-114",
+      "base": "desear",
+      "meanings": [
+        "desejar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "thought",
+        "desire"
+      ],
+      "forms": {
+        "infinitive": "desear",
+        "present": "deseo",
+        "past": "deseé",
+        "imperfect": "deseaba",
+        "participle": "deseado",
+        "gerund": "deseando",
+        "perfect": "he deseado",
+        "pluperfect": "había deseado",
+        "perfectInfinitive": "haber deseado"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Deseo",
+        "past": "Deseé",
+        "future": "Voy a desear",
+        "habit": "Antes deseaba",
+        "recent": "Acabo de desear",
+        "regret": "Debería haber deseado",
+        "possibility": "Podría haber deseado",
+        "intended": "Iba a desear",
+        "perfect": "He deseado",
+        "ability": "Puedo desear",
+        "hypothetical": "Podría desear",
+        "obligation": "Debo desear",
+        "advice": "Debería desear"
+      }
+    },
+    {
+      "id": "disagree-115",
+      "base": "discrepar",
+      "meanings": [
+        "discordar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "opinion",
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "discrepar",
+        "present": "discrepo",
+        "past": "discrepé",
+        "imperfect": "discrepaba",
+        "participle": "discrepado",
+        "gerund": "discrepando",
+        "perfect": "he discrepado",
+        "pluperfect": "había discrepado",
+        "perfectInfinitive": "haber discrepado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Discrepo",
+        "ongoing": "Estoy discrepando",
+        "past": "Discrepé",
+        "pastOngoing": "Estaba discrepando",
+        "duration": "Llevo un tiempo discrepando",
+        "future": "Voy a discrepar",
+        "habit": "Antes discrepaba",
+        "recent": "Acabo de discrepar",
+        "regret": "Debería haber discrepado",
+        "possibility": "Podría haber discrepado",
+        "prior": "Llevaba un tiempo discrepando",
+        "intended": "Iba a discrepar",
+        "perfect": "He discrepado",
+        "ability": "Puedo discrepar",
+        "hypothetical": "Podría discrepar",
+        "obligation": "Debo discrepar",
+        "advice": "Debería discrepar"
+      }
+    },
+    {
+      "id": "guess-116",
+      "base": "adivinar",
+      "meanings": [
+        "adivinhar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "thought",
+        "opinion"
+      ],
+      "forms": {
+        "infinitive": "adivinar",
+        "present": "adivino",
+        "past": "adiviné",
+        "imperfect": "adivinaba",
+        "participle": "adivinado",
+        "gerund": "adivinando",
+        "perfect": "he adivinado",
+        "pluperfect": "había adivinado",
+        "perfectInfinitive": "haber adivinado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Adivino",
+        "ongoing": "Estoy adivinando",
+        "past": "Adiviné",
+        "pastOngoing": "Estaba adivinando",
+        "duration": "Llevo un tiempo adivinando",
+        "future": "Voy a adivinar",
+        "habit": "Antes adivinaba",
+        "recent": "Acabo de adivinar",
+        "regret": "Debería haber adivinado",
+        "possibility": "Podría haber adivinado",
+        "prior": "Llevaba un tiempo adivinando",
+        "intended": "Iba a adivinar",
+        "perfect": "He adivinado",
+        "ability": "Puedo adivinar",
+        "hypothetical": "Podría adivinar",
+        "obligation": "Debo adivinar",
+        "advice": "Debería adivinar"
+      }
+    },
+    {
+      "id": "visit-117",
+      "base": "visitar",
+      "meanings": [
+        "visitar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "social",
+        "family"
+      ],
+      "forms": {
+        "infinitive": "visitar",
+        "present": "visito",
+        "past": "visité",
+        "imperfect": "visitaba",
+        "participle": "visitado",
+        "gerund": "visitando",
+        "perfect": "he visitado",
+        "pluperfect": "había visitado",
+        "perfectInfinitive": "haber visitado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Visito",
+        "ongoing": "Estoy visitando",
+        "past": "Visité",
+        "pastOngoing": "Estaba visitando",
+        "duration": "Llevo un tiempo visitando",
+        "future": "Voy a visitar",
+        "habit": "Antes visitaba",
+        "recent": "Acabo de visitar",
+        "regret": "Debería haber visitado",
+        "possibility": "Podría haber visitado",
+        "prior": "Llevaba un tiempo visitando",
+        "intended": "Iba a visitar",
+        "perfect": "He visitado",
+        "ability": "Puedo visitar",
+        "hypothetical": "Podría visitar",
+        "obligation": "Debo visitar",
+        "advice": "Debería visitar"
+      }
+    },
+    {
+      "id": "join-118",
+      "base": "unirse",
+      "meanings": [
+        "juntar-se"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "social",
+        "interaction"
+      ],
+      "forms": {
+        "infinitive": "unirme",
+        "present": "me uno",
+        "past": "me uní",
+        "imperfect": "me unía",
+        "participle": "unido",
+        "gerund": "uniéndome",
+        "perfect": "me he unido",
+        "pluperfect": "me había unido",
+        "perfectInfinitive": "haberme unido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Me uno",
+        "ongoing": "Estoy uniéndome",
+        "past": "Me uní",
+        "pastOngoing": "Estaba uniéndome",
+        "duration": "Llevo un tiempo uniéndome",
+        "future": "Voy a unirme",
+        "habit": "Antes me unía",
+        "recent": "Acabo de unirme",
+        "regret": "Debería haberme unido",
+        "possibility": "Podría haberme unido",
+        "prior": "Llevaba un tiempo uniéndome",
+        "intended": "Iba a unirme",
+        "perfect": "Me he unido",
+        "ability": "Puedo unirme",
+        "hypothetical": "Podría unirme",
+        "obligation": "Debo unirme",
+        "advice": "Debería unirme"
+      }
+    },
+    {
+      "id": "invite-119",
+      "base": "invitar",
+      "meanings": [
+        "convidar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "social",
+        "invitation"
+      ],
+      "forms": {
+        "infinitive": "invitar",
+        "present": "invito",
+        "past": "invité",
+        "imperfect": "invitaba",
+        "participle": "invitado",
+        "gerund": "invitando",
+        "perfect": "he invitado",
+        "pluperfect": "había invitado",
+        "perfectInfinitive": "haber invitado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Invito",
+        "ongoing": "Estoy invitando",
+        "past": "Invité",
+        "pastOngoing": "Estaba invitando",
+        "duration": "Llevo un tiempo invitando",
+        "future": "Voy a invitar",
+        "habit": "Antes invitaba",
+        "recent": "Acabo de invitar",
+        "regret": "Debería haber invitado",
+        "possibility": "Podría haber invitado",
+        "prior": "Llevaba un tiempo invitando",
+        "intended": "Iba a invitar",
+        "perfect": "He invitado",
+        "ability": "Puedo invitar",
+        "hypothetical": "Podría invitar",
+        "obligation": "Debo invitar",
+        "advice": "Debería invitar"
+      }
+    },
+    {
+      "id": "celebrate-120",
+      "base": "celebrar",
+      "meanings": [
+        "celebrar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "social",
+        "celebration"
+      ],
+      "forms": {
+        "infinitive": "celebrar",
+        "present": "celebro",
+        "past": "celebré",
+        "imperfect": "celebraba",
+        "participle": "celebrado",
+        "gerund": "celebrando",
+        "perfect": "he celebrado",
+        "pluperfect": "había celebrado",
+        "perfectInfinitive": "haber celebrado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Celebro",
+        "ongoing": "Estoy celebrando",
+        "past": "Celebré",
+        "pastOngoing": "Estaba celebrando",
+        "duration": "Llevo un tiempo celebrando",
+        "future": "Voy a celebrar",
+        "habit": "Antes celebraba",
+        "recent": "Acabo de celebrar",
+        "regret": "Debería haber celebrado",
+        "possibility": "Podría haber celebrado",
+        "prior": "Llevaba un tiempo celebrando",
+        "intended": "Iba a celebrar",
+        "perfect": "He celebrado",
+        "ability": "Puedo celebrar",
+        "hypothetical": "Podría celebrar",
+        "obligation": "Debo celebrar",
+        "advice": "Debería celebrar"
+      }
+    },
+    {
+      "id": "thank-121",
+      "base": "agradecer",
+      "meanings": [
+        "agradecer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "social",
+        "gratitude"
+      ],
+      "forms": {
+        "infinitive": "agradecer",
+        "present": "agradezco",
+        "past": "agradecí",
+        "imperfect": "agradecía",
+        "participle": "agradecido",
+        "gerund": "agradeciendo",
+        "perfect": "he agradecido",
+        "pluperfect": "había agradecido",
+        "perfectInfinitive": "haber agradecido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Agradezco",
+        "ongoing": "Estoy agradeciendo",
+        "past": "Agradecí",
+        "pastOngoing": "Estaba agradeciendo",
+        "duration": "Llevo un tiempo agradeciendo",
+        "future": "Voy a agradecer",
+        "habit": "Antes agradecía",
+        "recent": "Acabo de agradecer",
+        "regret": "Debería haber agradecido",
+        "possibility": "Podría haber agradecido",
+        "prior": "Llevaba un tiempo agradeciendo",
+        "intended": "Iba a agradecer",
+        "perfect": "He agradecido",
+        "ability": "Puedo agradecer",
+        "hypothetical": "Podría agradecer",
+        "obligation": "Debo agradecer",
+        "advice": "Debería agradecer"
+      }
+    },
+    {
+      "id": "apologize-122",
+      "base": "disculparse",
+      "meanings": [
+        "pedir desculpas"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "social",
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "disculparme",
+        "present": "me disculpo",
+        "past": "me disculpé",
+        "imperfect": "me disculpaba",
+        "participle": "disculpado",
+        "gerund": "disculpándome",
+        "perfect": "me he disculpado",
+        "pluperfect": "me había disculpado",
+        "perfectInfinitive": "haberme disculpado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Me disculpo",
+        "ongoing": "Estoy disculpándome",
+        "past": "Me disculpé",
+        "pastOngoing": "Estaba disculpándome",
+        "duration": "Llevo un tiempo disculpándome",
+        "future": "Voy a disculparme",
+        "habit": "Antes me disculpaba",
+        "recent": "Acabo de disculparme",
+        "regret": "Debería haberme disculpado",
+        "possibility": "Podría haberme disculpado",
+        "prior": "Llevaba un tiempo disculpándome",
+        "intended": "Iba a disculparme",
+        "perfect": "Me he disculpado",
+        "ability": "Puedo disculparme",
+        "hypothetical": "Podría disculparme",
+        "obligation": "Debo disculparme",
+        "advice": "Debería disculparme"
+      }
+    },
+    {
+      "id": "promise-123",
+      "base": "prometer",
+      "meanings": [
+        "prometer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "social",
+        "commitment"
+      ],
+      "forms": {
+        "infinitive": "prometer",
+        "present": "prometo",
+        "past": "prometí",
+        "imperfect": "prometía",
+        "participle": "prometido",
+        "gerund": "prometiendo",
+        "perfect": "he prometido",
+        "pluperfect": "había prometido",
+        "perfectInfinitive": "haber prometido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Prometo",
+        "ongoing": "Estoy prometiendo",
+        "past": "Prometí",
+        "pastOngoing": "Estaba prometiendo",
+        "duration": "Llevo un tiempo prometiendo",
+        "future": "Voy a prometer",
+        "habit": "Antes prometía",
+        "recent": "Acabo de prometer",
+        "regret": "Debería haber prometido",
+        "possibility": "Podría haber prometido",
+        "prior": "Llevaba un tiempo prometiendo",
+        "intended": "Iba a prometer",
+        "perfect": "He prometido",
+        "ability": "Puedo prometer",
+        "hypothetical": "Podría prometer",
+        "obligation": "Debo prometer",
+        "advice": "Debería prometer"
+      }
+    },
+    {
+      "id": "search-124",
+      "base": "buscar",
+      "meanings": [
+        "procurar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "digital"
+      ],
+      "forms": {
+        "infinitive": "buscar",
+        "present": "busco",
+        "past": "busqué",
+        "imperfect": "buscaba",
+        "participle": "buscado",
+        "gerund": "buscando",
+        "perfect": "he buscado",
+        "pluperfect": "había buscado",
+        "perfectInfinitive": "haber buscado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Busco",
+        "ongoing": "Estoy buscando",
+        "past": "Busqué",
+        "pastOngoing": "Estaba buscando",
+        "duration": "Llevo un tiempo buscando",
+        "future": "Voy a buscar",
+        "habit": "Antes buscaba",
+        "recent": "Acabo de buscar",
+        "regret": "Debería haber buscado",
+        "possibility": "Podría haber buscado",
+        "prior": "Llevaba un tiempo buscando",
+        "intended": "Iba a buscar",
+        "perfect": "He buscado",
+        "ability": "Puedo buscar",
+        "hypothetical": "Podría buscar",
+        "obligation": "Debo buscar",
+        "advice": "Debería buscar"
+      }
+    },
+    {
+      "id": "type-125",
+      "base": "teclear",
+      "meanings": [
+        "digitar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "digital"
+      ],
+      "forms": {
+        "infinitive": "teclear",
+        "present": "tecleo",
+        "past": "tecleé",
+        "imperfect": "tecleaba",
+        "participle": "tecleado",
+        "gerund": "tecleando",
+        "perfect": "he tecleado",
+        "pluperfect": "había tecleado",
+        "perfectInfinitive": "haber tecleado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Tecleo",
+        "ongoing": "Estoy tecleando",
+        "past": "Tecleé",
+        "pastOngoing": "Estaba tecleando",
+        "duration": "Llevo un tiempo tecleando",
+        "future": "Voy a teclear",
+        "habit": "Antes tecleaba",
+        "recent": "Acabo de teclear",
+        "regret": "Debería haber tecleado",
+        "possibility": "Podría haber tecleado",
+        "prior": "Llevaba un tiempo tecleando",
+        "intended": "Iba a teclear",
+        "perfect": "He tecleado",
+        "ability": "Puedo teclear",
+        "hypothetical": "Podría teclear",
+        "obligation": "Debo teclear",
+        "advice": "Debería teclear"
+      }
+    },
+    {
+      "id": "click-126",
+      "base": "hacer clic",
+      "meanings": [
+        "clicar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "digital"
+      ],
+      "forms": {
+        "infinitive": "hacer clic",
+        "present": "hago clic",
+        "past": "hice clic",
+        "imperfect": "hacía clic",
+        "participle": "hecho clic",
+        "gerund": "haciendo clic",
+        "perfect": "he hecho clic",
+        "pluperfect": "había hecho clic",
+        "perfectInfinitive": "haber hecho clic"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Hago clic",
+        "ongoing": "Estoy haciendo clic",
+        "past": "Hice clic",
+        "pastOngoing": "Estaba haciendo clic",
+        "duration": "Llevo un tiempo haciendo clic",
+        "future": "Voy a hacer clic",
+        "habit": "Antes hacía clic",
+        "recent": "Acabo de hacer clic",
+        "regret": "Debería haber hecho clic",
+        "possibility": "Podría haber hecho clic",
+        "prior": "Llevaba un tiempo haciendo clic",
+        "intended": "Iba a hacer clic",
+        "perfect": "He hecho clic",
+        "ability": "Puedo hacer clic",
+        "hypothetical": "Podría hacer clic",
+        "obligation": "Debo hacer clic",
+        "advice": "Debería hacer clic"
+      }
+    },
+    {
+      "id": "post-127",
+      "base": "publicar",
+      "meanings": [
+        "publicar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "social-media"
+      ],
+      "forms": {
+        "infinitive": "publicar",
+        "present": "publico",
+        "past": "publiqué",
+        "imperfect": "publicaba",
+        "participle": "publicado",
+        "gerund": "publicando",
+        "perfect": "he publicado",
+        "pluperfect": "había publicado",
+        "perfectInfinitive": "haber publicado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Publico",
+        "ongoing": "Estoy publicando",
+        "past": "Publiqué",
+        "pastOngoing": "Estaba publicando",
+        "duration": "Llevo un tiempo publicando",
+        "future": "Voy a publicar",
+        "habit": "Antes publicaba",
+        "recent": "Acabo de publicar",
+        "regret": "Debería haber publicado",
+        "possibility": "Podría haber publicado",
+        "prior": "Llevaba un tiempo publicando",
+        "intended": "Iba a publicar",
+        "perfect": "He publicado",
+        "ability": "Puedo publicar",
+        "hypothetical": "Podría publicar",
+        "obligation": "Debo publicar",
+        "advice": "Debería publicar"
+      }
+    },
+    {
+      "id": "upload-128",
+      "base": "subir",
+      "meanings": [
+        "enviar um arquivo"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "digital"
+      ],
+      "forms": {
+        "infinitive": "subir",
+        "present": "subo",
+        "past": "subí",
+        "imperfect": "subía",
+        "participle": "subido",
+        "gerund": "subiendo",
+        "perfect": "he subido",
+        "pluperfect": "había subido",
+        "perfectInfinitive": "haber subido"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Subo",
+        "ongoing": "Estoy subiendo",
+        "past": "Subí",
+        "pastOngoing": "Estaba subiendo",
+        "duration": "Llevo un tiempo subiendo",
+        "future": "Voy a subir",
+        "habit": "Antes subía",
+        "recent": "Acabo de subir",
+        "regret": "Debería haber subido",
+        "possibility": "Podría haber subido",
+        "prior": "Llevaba un tiempo subiendo",
+        "intended": "Iba a subir",
+        "perfect": "He subido",
+        "ability": "Puedo subir",
+        "hypothetical": "Podría subir",
+        "obligation": "Debo subir",
+        "advice": "Debería subir"
+      }
+    },
+    {
+      "id": "download-129",
+      "base": "descargar",
+      "meanings": [
+        "baixar um arquivo"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "digital"
+      ],
+      "forms": {
+        "infinitive": "descargar",
+        "present": "descargo",
+        "past": "descargué",
+        "imperfect": "descargaba",
+        "participle": "descargado",
+        "gerund": "descargando",
+        "perfect": "he descargado",
+        "pluperfect": "había descargado",
+        "perfectInfinitive": "haber descargado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Descargo",
+        "ongoing": "Estoy descargando",
+        "past": "Descargué",
+        "pastOngoing": "Estaba descargando",
+        "duration": "Llevo un tiempo descargando",
+        "future": "Voy a descargar",
+        "habit": "Antes descargaba",
+        "recent": "Acabo de descargar",
+        "regret": "Debería haber descargado",
+        "possibility": "Podría haber descargado",
+        "prior": "Llevaba un tiempo descargando",
+        "intended": "Iba a descargar",
+        "perfect": "He descargado",
+        "ability": "Puedo descargar",
+        "hypothetical": "Podría descargar",
+        "obligation": "Debo descargar",
+        "advice": "Debería descargar"
+      }
+    },
+    {
+      "id": "save-130",
+      "base": "guardar",
+      "meanings": [
+        "salvar",
+        "guardar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "digital"
+      ],
+      "forms": {
+        "infinitive": "guardar",
+        "present": "guardo",
+        "past": "guardé",
+        "imperfect": "guardaba",
+        "participle": "guardado",
+        "gerund": "guardando",
+        "perfect": "he guardado",
+        "pluperfect": "había guardado",
+        "perfectInfinitive": "haber guardado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Guardo",
+        "ongoing": "Estoy guardando",
+        "past": "Guardé",
+        "pastOngoing": "Estaba guardando",
+        "duration": "Llevo un tiempo guardando",
+        "future": "Voy a guardar",
+        "habit": "Antes guardaba",
+        "recent": "Acabo de guardar",
+        "regret": "Debería haber guardado",
+        "possibility": "Podría haber guardado",
+        "prior": "Llevaba un tiempo guardando",
+        "intended": "Iba a guardar",
+        "perfect": "He guardado",
+        "ability": "Puedo guardar",
+        "hypothetical": "Podría guardar",
+        "obligation": "Debo guardar",
+        "advice": "Debería guardar"
+      }
+    },
+    {
+      "id": "delete-131",
+      "base": "borrar",
+      "meanings": [
+        "apagar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "digital"
+      ],
+      "forms": {
+        "infinitive": "borrar",
+        "present": "borro",
+        "past": "borré",
+        "imperfect": "borraba",
+        "participle": "borrado",
+        "gerund": "borrando",
+        "perfect": "he borrado",
+        "pluperfect": "había borrado",
+        "perfectInfinitive": "haber borrado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Borro",
+        "ongoing": "Estoy borrando",
+        "past": "Borré",
+        "pastOngoing": "Estaba borrando",
+        "duration": "Llevo un tiempo borrando",
+        "future": "Voy a borrar",
+        "habit": "Antes borraba",
+        "recent": "Acabo de borrar",
+        "regret": "Debería haber borrado",
+        "possibility": "Podría haber borrado",
+        "prior": "Llevaba un tiempo borrando",
+        "intended": "Iba a borrar",
+        "perfect": "He borrado",
+        "ability": "Puedo borrar",
+        "hypothetical": "Podría borrar",
+        "obligation": "Debo borrar",
+        "advice": "Debería borrar"
+      }
+    },
+    {
+      "id": "reply-132",
+      "base": "contestar",
+      "meanings": [
+        "responder",
+        "dar retorno"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "digital"
+      ],
+      "forms": {
+        "infinitive": "contestar",
+        "present": "contesto",
+        "past": "contesté",
+        "imperfect": "contestaba",
+        "participle": "contestado",
+        "gerund": "contestando",
+        "perfect": "he contestado",
+        "pluperfect": "había contestado",
+        "perfectInfinitive": "haber contestado"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Contesto",
+        "ongoing": "Estoy contestando",
+        "past": "Contesté",
+        "pastOngoing": "Estaba contestando",
+        "duration": "Llevo un tiempo contestando",
+        "future": "Voy a contestar",
+        "habit": "Antes contestaba",
+        "recent": "Acabo de contestar",
+        "regret": "Debería haber contestado",
+        "possibility": "Podría haber contestado",
+        "prior": "Llevaba un tiempo contestando",
+        "intended": "Iba a contestar",
+        "perfect": "He contestado",
+        "ability": "Puedo contestar",
+        "hypothetical": "Podría contestar",
+        "obligation": "Debo contestar",
+        "advice": "Debería contestar"
+      }
+    }
+  ]
+}

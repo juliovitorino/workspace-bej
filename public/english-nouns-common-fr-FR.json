@@ -1,0 +1,2447 @@
+{
+  "metadata": {
+    "name": "Speaking Game — nouns — fr-FR",
+    "version": "1.0.0",
+    "updatedAt": "2026-10-15",
+    "language": "fr-FR",
+    "sourceLanguage": "pt-BR",
+    "totalNouns": 138
+  },
+  "nouns": [
+    {
+      "id": "person",
+      "noun": "personne",
+      "plural": "personnes",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "pessoa"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "people",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "man",
+      "noun": "homme",
+      "plural": "hommes",
+      "gender": "masculine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "homem"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "people"
+      ]
+    },
+    {
+      "id": "woman",
+      "noun": "femme",
+      "plural": "femmes",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "mulher"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "people"
+      ]
+    },
+    {
+      "id": "child",
+      "noun": "enfant",
+      "plural": "enfants",
+      "gender": "masculine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "feminine": "enfant",
+      "femininePlural": "enfants",
+      "meanings": [
+        "criança"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "people",
+        "family"
+      ]
+    },
+    {
+      "id": "friend",
+      "noun": "ami",
+      "plural": "amis",
+      "gender": "masculine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "feminine": "amie",
+      "femininePlural": "amies",
+      "meanings": [
+        "amigo"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "people",
+        "social"
+      ]
+    },
+    {
+      "id": "family",
+      "noun": "famille",
+      "plural": "familles",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "família"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "family",
+        "people"
+      ]
+    },
+    {
+      "id": "mother",
+      "noun": "mère",
+      "plural": "mères",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "mãe"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "father",
+      "noun": "père",
+      "plural": "pères",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "pai"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "brother",
+      "noun": "frère",
+      "plural": "frères",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "irmão"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "sister",
+      "noun": "sœur",
+      "plural": "sœurs",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "irmã"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "husband",
+      "noun": "mari",
+      "plural": "maris",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "marido"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "wife",
+      "noun": "épouse",
+      "plural": "épouses",
+      "gender": "feminine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "esposa"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "parent",
+      "noun": "parent",
+      "plural": "parents",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "pai"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "student",
+      "noun": "étudiant",
+      "plural": "étudiants",
+      "gender": "masculine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "feminine": "étudiante",
+      "femininePlural": "étudiantes",
+      "meanings": [
+        "estudante"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "education",
+        "people"
+      ]
+    },
+    {
+      "id": "teacher",
+      "noun": "professeur",
+      "plural": "professeurs",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "feminine": "professeure",
+      "femininePlural": "professeures",
+      "meanings": [
+        "professor"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "education",
+        "people"
+      ]
+    },
+    {
+      "id": "customer",
+      "noun": "client",
+      "plural": "clients",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "feminine": "cliente",
+      "femininePlural": "clientes",
+      "meanings": [
+        "cliente"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "business"
+      ]
+    },
+    {
+      "id": "boss",
+      "noun": "responsable",
+      "plural": "responsables",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "feminine": "responsable",
+      "femininePlural": "responsables",
+      "meanings": [
+        "chefe"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "people"
+      ]
+    },
+    {
+      "id": "team",
+      "noun": "équipe",
+      "plural": "équipes",
+      "gender": "feminine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "equipe"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "sports"
+      ]
+    },
+    {
+      "id": "colleague",
+      "noun": "collègue",
+      "plural": "collègues",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "feminine": "collègue",
+      "femininePlural": "collègues",
+      "meanings": [
+        "colega de trabalho"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "people"
+      ]
+    },
+    {
+      "id": "house",
+      "noun": "maison",
+      "plural": "maisons",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "casa"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "housing",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "home",
+      "noun": "foyer",
+      "plural": "foyers",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "casa"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "housing",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "apartment",
+      "noun": "appartement",
+      "plural": "appartements",
+      "gender": "masculine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "apartamento"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "housing"
+      ]
+    },
+    {
+      "id": "room",
+      "noun": "pièce",
+      "plural": "pièces",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "quarto"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "housing"
+      ]
+    },
+    {
+      "id": "kitchen",
+      "noun": "cuisine",
+      "plural": "cuisines",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "cozinha"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "housing"
+      ]
+    },
+    {
+      "id": "bathroom",
+      "noun": "salle de bains",
+      "plural": "salles de bains",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "banheiro"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "housing"
+      ]
+    },
+    {
+      "id": "door",
+      "noun": "porte",
+      "plural": "portes",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "porta"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "housing",
+        "objects"
+      ]
+    },
+    {
+      "id": "window",
+      "noun": "fenêtre",
+      "plural": "fenêtres",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "janela"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "housing",
+        "objects"
+      ]
+    },
+    {
+      "id": "street",
+      "noun": "rue",
+      "plural": "rues",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "rua"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "places",
+        "city"
+      ]
+    },
+    {
+      "id": "city",
+      "noun": "ville",
+      "plural": "villes",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "cidade"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "places",
+        "travel"
+      ]
+    },
+    {
+      "id": "country",
+      "noun": "pays",
+      "plural": "pays",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "país"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "places",
+        "travel"
+      ]
+    },
+    {
+      "id": "place",
+      "noun": "lieu",
+      "plural": "lieux",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "lugar"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "places"
+      ]
+    },
+    {
+      "id": "office",
+      "noun": "bureau",
+      "plural": "bureaux",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "escritório"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "places"
+      ]
+    },
+    {
+      "id": "school",
+      "noun": "école",
+      "plural": "écoles",
+      "gender": "feminine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "escola"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "education",
+        "places"
+      ]
+    },
+    {
+      "id": "hospital",
+      "noun": "hôpital",
+      "plural": "hôpitaux",
+      "gender": "masculine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "hospital"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "health",
+        "places"
+      ]
+    },
+    {
+      "id": "restaurant",
+      "noun": "restaurant",
+      "plural": "restaurants",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "restaurante"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "food",
+        "places"
+      ]
+    },
+    {
+      "id": "store",
+      "noun": "magasin",
+      "plural": "magasins",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "loja"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "shopping",
+        "places"
+      ]
+    },
+    {
+      "id": "market",
+      "noun": "marché",
+      "plural": "marchés",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "mercado"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "shopping",
+        "food"
+      ]
+    },
+    {
+      "id": "airport",
+      "noun": "aéroport",
+      "plural": "aéroports",
+      "gender": "masculine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "aeroporto"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "travel",
+        "places"
+      ]
+    },
+    {
+      "id": "station",
+      "noun": "gare",
+      "plural": "gares",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "estação"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "travel",
+        "transport"
+      ]
+    },
+    {
+      "id": "hotel",
+      "noun": "hôtel",
+      "plural": "hôtels",
+      "gender": "masculine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "hotel"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "travel",
+        "places"
+      ]
+    },
+    {
+      "id": "beach",
+      "noun": "plage",
+      "plural": "plages",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "praia"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "travel",
+        "leisure"
+      ]
+    },
+    {
+      "id": "park",
+      "noun": "parc",
+      "plural": "parcs",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "parque"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "places",
+        "leisure"
+      ]
+    },
+    {
+      "id": "job",
+      "noun": "emploi",
+      "plural": "emplois",
+      "gender": "masculine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "emprego"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "work"
+      ]
+    },
+    {
+      "id": "work",
+      "noun": "travail",
+      "plural": "travaux",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "trabalho"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "work"
+      ]
+    },
+    {
+      "id": "project",
+      "noun": "projet",
+      "plural": "projets",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "projeto"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "technology"
+      ]
+    },
+    {
+      "id": "task",
+      "noun": "tâche",
+      "plural": "tâches",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "tarefa"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "work"
+      ]
+    },
+    {
+      "id": "meeting",
+      "noun": "réunion",
+      "plural": "réunions",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "reunião"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "work"
+      ]
+    },
+    {
+      "id": "company",
+      "noun": "entreprise",
+      "plural": "entreprises",
+      "gender": "feminine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "empresa"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "business"
+      ]
+    },
+    {
+      "id": "business",
+      "noun": "affaire",
+      "plural": "affaires",
+      "gender": "feminine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "negócio"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "business"
+      ]
+    },
+    {
+      "id": "computer",
+      "noun": "ordinateur",
+      "plural": "ordinateurs",
+      "gender": "masculine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "computador"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "objects"
+      ]
+    },
+    {
+      "id": "phone",
+      "noun": "téléphone",
+      "plural": "téléphones",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "telefone"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "objects"
+      ]
+    },
+    {
+      "id": "internet",
+      "noun": "Internet",
+      "gender": "masculine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "uncountable",
+      "meanings": [
+        "internet"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "technology"
+      ]
+    },
+    {
+      "id": "email",
+      "noun": "courriel",
+      "plural": "courriels",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "e-mail"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "technology"
+      ]
+    },
+    {
+      "id": "message",
+      "noun": "message",
+      "plural": "messages",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "mensagem"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "technology"
+      ]
+    },
+    {
+      "id": "file",
+      "noun": "fichier",
+      "plural": "fichiers",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "arquivo"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "work"
+      ]
+    },
+    {
+      "id": "system",
+      "noun": "système",
+      "plural": "systèmes",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "sistema"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "technology"
+      ]
+    },
+    {
+      "id": "application",
+      "noun": "application",
+      "plural": "applications",
+      "gender": "feminine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "aplicativo"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "technology"
+      ]
+    },
+    {
+      "id": "software",
+      "noun": "logiciel",
+      "plural": "logiciels",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "software"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "technology"
+      ]
+    },
+    {
+      "id": "data",
+      "noun": "donnée",
+      "plural": "données",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "dado"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "work"
+      ]
+    },
+    {
+      "id": "problem",
+      "noun": "problème",
+      "plural": "problèmes",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "problema"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "solution",
+      "noun": "solution",
+      "plural": "solutions",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "solução"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "technology"
+      ]
+    },
+    {
+      "id": "idea",
+      "noun": "idée",
+      "plural": "idées",
+      "gender": "feminine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "ideia"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "thought",
+        "work"
+      ]
+    },
+    {
+      "id": "question",
+      "noun": "question",
+      "plural": "questions",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "pergunta"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "education"
+      ]
+    },
+    {
+      "id": "answer",
+      "noun": "réponse",
+      "plural": "réponses",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "resposta"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "education"
+      ]
+    },
+    {
+      "id": "information",
+      "noun": "information",
+      "plural": "informations",
+      "gender": "feminine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "informação"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "work"
+      ]
+    },
+    {
+      "id": "time",
+      "noun": "temps",
+      "plural": "temps",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "tempo"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "day",
+      "noun": "jour",
+      "plural": "jours",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "dia"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "week",
+      "noun": "semaine",
+      "plural": "semaines",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "semana"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "month",
+      "noun": "mois",
+      "plural": "mois",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "mês"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "year",
+      "noun": "année",
+      "plural": "années",
+      "gender": "feminine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "ano"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "morning",
+      "noun": "matin",
+      "plural": "matins",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "manhã"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "afternoon",
+      "noun": "après-midi",
+      "plural": "après-midi",
+      "gender": "masculine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "tarde"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "evening",
+      "noun": "soirée",
+      "plural": "soirées",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "fim de tarde"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "night",
+      "noun": "nuit",
+      "plural": "nuits",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "noite"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "moment",
+      "noun": "moment",
+      "plural": "moments",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "momento"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "food",
+      "noun": "nourriture",
+      "plural": "nourritures",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "comida"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "water",
+      "noun": "eau",
+      "plural": "eaux",
+      "gender": "feminine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "água"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "food",
+        "health"
+      ]
+    },
+    {
+      "id": "coffee",
+      "noun": "café",
+      "plural": "cafés",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "café"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "food",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "tea",
+      "noun": "thé",
+      "plural": "thés",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "chá"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "bread",
+      "noun": "pain",
+      "plural": "pains",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "pão"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "rice",
+      "noun": "riz",
+      "plural": "riz",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "arroz"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "meat",
+      "noun": "viande",
+      "plural": "viandes",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "carne"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "fruit",
+      "noun": "fruit",
+      "plural": "fruits",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "fruta"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "food",
+        "health"
+      ]
+    },
+    {
+      "id": "vegetable",
+      "noun": "légume",
+      "plural": "légumes",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "legume"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "food",
+        "health"
+      ]
+    },
+    {
+      "id": "breakfast",
+      "noun": "petit-déjeuner",
+      "plural": "petits-déjeuners",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "café da manhã"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "food",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "lunch",
+      "noun": "déjeuner",
+      "plural": "déjeuners",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "almoço"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "food",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "dinner",
+      "noun": "dîner",
+      "plural": "dîners",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "jantar"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "food",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "car",
+      "noun": "voiture",
+      "plural": "voitures",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "carro"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "transport"
+      ]
+    },
+    {
+      "id": "bus",
+      "noun": "bus",
+      "plural": "bus",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "ônibus"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "transport"
+      ]
+    },
+    {
+      "id": "train",
+      "noun": "train",
+      "plural": "trains",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "trem"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "transport"
+      ]
+    },
+    {
+      "id": "plane",
+      "noun": "avion",
+      "plural": "avions",
+      "gender": "masculine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "avião"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "transport",
+        "travel"
+      ]
+    },
+    {
+      "id": "trip",
+      "noun": "voyage",
+      "plural": "voyages",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "viagem"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "id": "ticket",
+      "noun": "billet",
+      "plural": "billets",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "bilhete"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "travel",
+        "events"
+      ]
+    },
+    {
+      "id": "road",
+      "noun": "route",
+      "plural": "routes",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "estrada"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "transport",
+        "places"
+      ]
+    },
+    {
+      "id": "traffic",
+      "noun": "circulation",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "uncountable",
+      "meanings": [
+        "trânsito"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "transport",
+        "city"
+      ]
+    },
+    {
+      "id": "map",
+      "noun": "carte",
+      "plural": "cartes",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "mapa"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "travel",
+        "objects"
+      ]
+    },
+    {
+      "id": "money",
+      "noun": "argent",
+      "gender": "masculine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "uncountable",
+      "meanings": [
+        "dinheiro"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "money"
+      ]
+    },
+    {
+      "id": "price",
+      "noun": "prix",
+      "plural": "prix",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "preço"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "money",
+        "shopping"
+      ]
+    },
+    {
+      "id": "bank",
+      "noun": "banque",
+      "plural": "banques",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "banco"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "money",
+        "places"
+      ]
+    },
+    {
+      "id": "card",
+      "noun": "carte bancaire",
+      "plural": "cartes bancaires",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "cartão"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "money",
+        "objects"
+      ]
+    },
+    {
+      "id": "cash",
+      "noun": "espèces",
+      "gender": "feminine",
+      "article": "les",
+      "pluralArticle": "les",
+      "countability": "uncountable",
+      "number": "plural",
+      "meanings": [
+        "dinheiro em espécie"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "money"
+      ]
+    },
+    {
+      "id": "bill",
+      "noun": "facture",
+      "plural": "factures",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "conta"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "money",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "product",
+      "noun": "produit",
+      "plural": "produits",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "produto"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "shopping",
+        "business"
+      ]
+    },
+    {
+      "id": "shop",
+      "noun": "boutique",
+      "plural": "boutiques",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "loja"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "shopping",
+        "places"
+      ]
+    },
+    {
+      "id": "health",
+      "noun": "santé",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "uncountable",
+      "meanings": [
+        "saúde"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "id": "doctor",
+      "noun": "médecin",
+      "plural": "médecins",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "feminine": "médecin",
+      "femininePlural": "médecins",
+      "meanings": [
+        "médico"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "health",
+        "people"
+      ]
+    },
+    {
+      "id": "body",
+      "noun": "corps",
+      "plural": "corps",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "corpo"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "id": "head",
+      "noun": "tête",
+      "plural": "têtes",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "cabeça"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "health",
+        "body"
+      ]
+    },
+    {
+      "id": "hand",
+      "noun": "main",
+      "plural": "mains",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "mão"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "eye",
+      "noun": "œil",
+      "plural": "yeux",
+      "gender": "masculine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "olho"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "heart",
+      "noun": "cœur",
+      "plural": "cœurs",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "coração"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "body",
+        "health"
+      ]
+    },
+    {
+      "id": "pain",
+      "noun": "douleur",
+      "plural": "douleurs",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "dor"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "id": "language",
+      "noun": "langue",
+      "plural": "langues",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "idioma"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "language",
+        "education"
+      ]
+    },
+    {
+      "id": "word",
+      "noun": "mot",
+      "plural": "mots",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "palavra"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "language"
+      ]
+    },
+    {
+      "id": "sentence",
+      "noun": "phrase",
+      "plural": "phrases",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "frase"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "language",
+        "education"
+      ]
+    },
+    {
+      "id": "conversation",
+      "noun": "conversation",
+      "plural": "conversations",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "conversa"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "language"
+      ]
+    },
+    {
+      "id": "story",
+      "noun": "histoire",
+      "plural": "histoires",
+      "gender": "feminine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "história"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "leisure"
+      ]
+    },
+    {
+      "id": "book",
+      "noun": "livre",
+      "plural": "livres",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "livro"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "education",
+        "objects"
+      ]
+    },
+    {
+      "id": "lesson",
+      "noun": "leçon",
+      "plural": "leçons",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "lição"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "education"
+      ]
+    },
+    {
+      "id": "exercise",
+      "noun": "exercice",
+      "plural": "exercices",
+      "gender": "masculine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "exercício"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "education",
+        "fitness"
+      ]
+    },
+    {
+      "id": "example",
+      "noun": "exemple",
+      "plural": "exemples",
+      "gender": "masculine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "exemplo"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "education"
+      ]
+    },
+    {
+      "id": "life",
+      "noun": "vie",
+      "plural": "vies",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "vida"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "daily-life"
+      ]
+    },
+    {
+      "id": "thing",
+      "noun": "chose",
+      "plural": "choses",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "coisa"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "general"
+      ]
+    },
+    {
+      "id": "way",
+      "noun": "manière",
+      "plural": "manières",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "jeito"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "general"
+      ]
+    },
+    {
+      "id": "reason",
+      "noun": "raison",
+      "plural": "raisons",
+      "gender": "feminine",
+      "article": "la",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "razão"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "thought",
+        "communication"
+      ]
+    },
+    {
+      "id": "change",
+      "noun": "changement",
+      "plural": "changements",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "mudança"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "change"
+      ]
+    },
+    {
+      "id": "result",
+      "noun": "résultat",
+      "plural": "résultats",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "resultado"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "education"
+      ]
+    },
+    {
+      "id": "experience",
+      "noun": "expérience",
+      "plural": "expériences",
+      "gender": "feminine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "experiência"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "chance",
+      "noun": "occasion",
+      "plural": "occasions",
+      "gender": "feminine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "chance"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "possibility"
+      ]
+    },
+    {
+      "id": "choice",
+      "noun": "choix",
+      "plural": "choix",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "escolha"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "decision"
+      ]
+    },
+    {
+      "id": "plan",
+      "noun": "plan",
+      "plural": "plans",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "plano"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "planning"
+      ]
+    },
+    {
+      "id": "goal",
+      "noun": "objectif",
+      "plural": "objectifs",
+      "gender": "masculine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "meta"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "planning",
+        "success"
+      ]
+    },
+    {
+      "id": "habit",
+      "noun": "habitude",
+      "plural": "habitudes",
+      "gender": "feminine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "hábito"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life",
+        "learning"
+      ]
+    },
+    {
+      "id": "mistake",
+      "noun": "erreur",
+      "plural": "erreurs",
+      "gender": "feminine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "erro"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "education",
+        "communication"
+      ]
+    },
+    {
+      "id": "success",
+      "noun": "succès",
+      "plural": "succès",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "sucesso"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "tags": [
+        "success"
+      ]
+    },
+    {
+      "id": "future",
+      "noun": "avenir",
+      "plural": "avenirs",
+      "gender": "masculine",
+      "article": "l'",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "futuro"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "time",
+        "planning"
+      ]
+    },
+    {
+      "id": "past",
+      "noun": "passé",
+      "plural": "passés",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "passado"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "present",
+      "noun": "présent",
+      "plural": "présents",
+      "gender": "masculine",
+      "article": "le",
+      "pluralArticle": "les",
+      "countability": "both",
+      "meanings": [
+        "presente"
+      ],
+      "level": "A2",
+      "frequency": "medium",
+      "tags": [
+        "time"
+      ]
+    }
+  ]
+}
