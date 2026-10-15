@@ -6,103 +6,141 @@
             "topic": "daily-life",
             "titlePt": "Um Sábado Diferente",
             "titleEn": "A Different Saturday",
+            "titleEs": "Un sábado diferente",
+            "titleFr": "Un samedi différent",
             "hqImage": "/images/hq/stories/a1-daily-life-537eaab2-c43e-4157-bfb9-f3eff1702a3f.png",
             "paragraphs": [
                 {
                     "pt": "Ontem, eu fiquei em casa e eu não fui para o parque porque estava chovendo.",
                     "en": "Yesterday, I stayed at home and I didn't go to the park because it was raining.",
+                    "es": "Ayer me quedé en casa y no fui al parque porque estaba lloviendo.",
+                    "fr": "Hier, je suis resté à la maison et je ne suis pas allé au parc parce qu'il pleuvait.",
                     "intentions": [
                         {
                             "intentionId": "momento-passado-com-marcador-de-tempo",
                             "ptIntent": "Ontem, eu fiquei",
-                            "enIntent": "Yesterday, I stayed"
+                            "enIntent": "Yesterday, I stayed",
+                            "esIntent": "Ayer me quedé",
+                            "frIntent": "Hier, je suis resté"
                         },
                         {
                             "intentionId": "eu-nao-fui-para",
                             "ptIntent": "eu não fui para o parque",
-                            "enIntent": "I didn't go to the park"
+                            "enIntent": "I didn't go to the park",
+                            "esIntent": "no fui al parque",
+                            "frIntent": "je ne suis pas allé au parc"
                         }
                     ]
                 },
                 {
                     "pt": "Meu amigo Lucas me ligou. Ele disse: 'Você era um menino muito ativo no passado. Você tinha muitas ideias de jogos.'",
                     "en": "My friend Lucas called me. He said: 'You were a very active boy in the past. You had many ideas for games.'",
+                    "es": "Mi amigo Lucas me llamó. Me dijo: 'Antes eras un niño muy activo. Tenías muchas ideas para jugar.'",
+                    "fr": "Mon ami Lucas m'a téléphoné. Il m'a dit : « Avant, tu étais un garçon très actif. Tu avais beaucoup d'idées de jeux. »",
                     "intentions": [
                         {
                             "intentionId": "voce-era",
                             "ptIntent": "Você era um menino muito ativo",
-                            "enIntent": "You were a very active boy"
+                            "enIntent": "You were a very active boy",
+                            "esIntent": "Antes eras un niño muy activo",
+                            "frIntent": "Avant, tu étais un garçon très actif"
                         },
                         {
                             "intentionId": "voce-tinha",
                             "ptIntent": "Você tinha muitas ideias",
-                            "enIntent": "You had many ideas"
+                            "enIntent": "You had many ideas",
+                            "esIntent": "Tenías muchas ideas",
+                            "frIntent": "Tu avais beaucoup d'idées"
                         }
                     ]
                 },
                 {
                     "pt": "Então, Lucas disse: 'Hoje o dia está bonito. Vamos fazer um plano para este sábado.'",
                     "en": "So, Lucas said: 'Today the weather is beautiful. Let's make a plan for this Saturday.'",
+                    "es": "Entonces Lucas dijo: 'Hoy hace buen día. Vamos a hacer un plan para este sábado.'",
+                    "fr": "Alors, Lucas a dit : « Il fait beau aujourd'hui. Nous allons faire un programme pour samedi. »",
                     "intentions": [
                         {
                             "intentionId": "make-a-plan",
                             "ptIntent": "fazer um plano",
-                            "enIntent": "make a plan"
+                            "enIntent": "make a plan",
+                            "esIntent": "hacer un plan",
+                            "frIntent": "faire un programme"
                         }
                     ]
                 },
                 {
                     "pt": "Nós decidimos fazer um piquenique. Eu preciso fazer uma lista de frutas e sanduíches para comprar no supermercado.",
                     "en": "We decided to have a picnic. I need to make a list of fruits and sandwiches to buy at the supermarket.",
+                    "es": "Decidimos hacer un pícnic. Necesito hacer una lista de frutas y bocadillos para comprar en el supermercado.",
+                    "fr": "Nous avons décidé de faire un pique-nique. Je dois faire une liste de fruits et de sandwichs à acheter au supermarché.",
                     "intentions": [
                         {
                             "intentionId": "make-a-list",
                             "ptIntent": "fazer uma lista de frutas e sanduíches",
-                            "enIntent": "make a list of fruits and sandwiches"
+                            "enIntent": "make a list of fruits and sandwiches",
+                            "esIntent": "hacer una lista de frutas y bocadillos",
+                            "frIntent": "faire une liste de fruits et de sandwichs"
                         }
                     ]
                 },
                 {
                     "pt": "Agora, eu estou no supermercado. O lugar está muito cheio de pessoas hoje.",
                     "en": "Now, I am at the supermarket. The place is very full of people today.",
+                    "es": "Ahora estoy en el supermercado. Hoy hay muchísima gente.",
+                    "fr": "Maintenant, je suis au supermarché. Il y a beaucoup de monde aujourd'hui.",
                     "intentions": [
                         {
                             "intentionId": "sou-estou-agora",
                             "ptIntent": "eu estou",
-                            "enIntent": "I am"
+                            "enIntent": "I am",
+                            "esIntent": "estoy",
+                            "frIntent": "je suis"
                         }
                     ]
                 },
                 {
                     "pt": "Eu encontro Lucas no parque. Ele sorri e diz: 'Você está feliz hoje, meu amigo!'",
                     "en": "I meet Lucas at the park. He smiles and says: 'You are happy today, my friend!'",
+                    "es": "Me encuentro con Lucas en el parque. Sonríe y dice: '¡Hoy estás contento, amigo mío!'",
+                    "fr": "Je retrouve Lucas au parc. Il sourit et dit : « Tu es content aujourd'hui, mon ami ! »",
                     "intentions": [
                         {
                             "intentionId": "voce-esta",
                             "ptIntent": "Você está feliz",
-                            "enIntent": "You are happy"
+                            "enIntent": "You are happy",
+                            "esIntent": "estás contento",
+                            "frIntent": "Tu es content"
                         }
                     ]
                 },
                 {
                     "pt": "Nós comemos os sanduíches e corremos um pouco. Depois, nós decidimos fazer uma pausa sob uma grande árvore.",
                     "en": "We eat the sandwiches and run a little. After that, we decide to take a break under a big tree.",
+                    "es": "Comemos los bocadillos y corremos un poco. Después decidimos hacer una pausa bajo un árbol grande.",
+                    "fr": "Nous mangeons les sandwichs et courons un peu. Ensuite, nous décidons de faire une pause sous un grand arbre.",
                     "intentions": [
                         {
                             "intentionId": "take-a-break",
                             "ptIntent": "fazer uma pausa",
-                            "enIntent": "take a break"
+                            "enIntent": "take a break",
+                            "esIntent": "hacer una pausa",
+                            "frIntent": "faire une pause"
                         }
                     ]
                 },
                 {
                     "pt": "Nós conversamos por horas. Foi maravilhoso passar o dia com meu melhor amigo.",
                     "en": "We talked for hours. It was wonderful to spend the day with my best friend.",
+                    "es": "Hablamos durante horas. Fue maravilloso pasar el día con mi mejor amigo.",
+                    "fr": "Nous avons parlé pendant des heures. C'était merveilleux de passer la journée avec mon meilleur ami.",
                     "intentions": [
                         {
                             "intentionId": "foi-adjetivo",
                             "ptIntent": "Foi maravilhoso",
-                            "enIntent": "It was wonderful"
+                            "enIntent": "It was wonderful",
+                            "esIntent": "Fue maravilloso",
+                            "frIntent": "C'était merveilleux"
                         }
                     ]
                 }
@@ -126,95 +164,131 @@
             "topic": "daily-life",
             "titlePt": "Um Encontro no Parque",
             "titleEn": "A Meeting in the Park",
+            "titleEs": "Un encuentro en el parque",
+            "titleFr": "Une rencontre au parc",
             "paragraphs": [
                 {
                     "pt": "Olá, Julia! Você está no parque hoje. Que bom ver você! Por favor, sente-se.",
                     "en": "Hello, Julia! You are in the park today. Good to see you! Please, take a seat.",
+                    "es": "¡Hola, Julia! Hoy estás en el parque. ¡Qué alegría verte! Por favor, siéntate.",
+                    "fr": "Bonjour, Julia ! Tu es au parc aujourd'hui. Ça fait plaisir de te voir ! Assieds-toi, s'il te plaît.",
                     "intentions": [
                         {
                             "intentionId": "voce-esta",
                             "ptIntent": "Você está",
-                            "enIntent": "You are"
+                            "enIntent": "You are",
+                            "esIntent": "estás",
+                            "frIntent": "Tu es"
                         },
                         {
                             "intentionId": "take-a-seat",
                             "ptIntent": "sente-se",
-                            "enIntent": "take a seat"
+                            "enIntent": "take a seat",
+                            "esIntent": "siéntate",
+                            "frIntent": "Assieds-toi"
                         }
                     ]
                 },
                 {
                     "pt": "Obrigado, Leo. Estou muito cansada hoje. Eu não fui para a escola de manhã. Eu só quero fazer uma pausa.",
                     "en": "Thank you, Leo. I am very tired today. I didn't go to school in the morning. I just want to take a break.",
+                    "es": "Gracias, Leo. Hoy estoy muy cansada. Esta mañana no fui al colegio. Solo quiero hacer una pausa.",
+                    "fr": "Merci, Leo. Je suis très fatiguée aujourd'hui. Je ne suis pas allée à l'école ce matin. Je veux juste faire une pause.",
                     "intentions": [
                         {
                             "intentionId": "eu-nao-fui-para",
                             "ptIntent": "Eu não fui para a escola",
-                            "enIntent": "I didn't go to school"
+                            "enIntent": "I didn't go to school",
+                            "esIntent": "no fui al colegio",
+                            "frIntent": "Je ne suis pas allée à l'école"
                         },
                         {
                             "intentionId": "take-a-break",
                             "ptIntent": "fazer uma pausa",
-                            "enIntent": "take a break"
+                            "enIntent": "take a break",
+                            "esIntent": "hacer una pausa",
+                            "frIntent": "faire une pause"
                         }
                     ]
                 },
                 {
                     "pt": "Eu entendo. No ano passado, você era muito ocupada também. Você tinha muitos projetos difíceis.",
                     "en": "I understand. Last year, you were very busy too. You had many difficult projects.",
+                    "es": "Lo entiendo. El año pasado también estabas muy ocupada. Tenías muchos proyectos difíciles.",
+                    "fr": "Je comprends. L'année dernière, tu étais aussi très occupée. Tu avais beaucoup de projets difficiles.",
                     "intentions": [
                         {
                             "intentionId": "voce-era",
                             "ptIntent": "você era",
-                            "enIntent": "you were"
+                            "enIntent": "you were",
+                            "esIntent": "estabas",
+                            "frIntent": "tu étais"
                         },
                         {
                             "intentionId": "voce-tinha",
                             "ptIntent": "Você tinha",
-                            "enIntent": "You had"
+                            "enIntent": "You had",
+                            "esIntent": "Tenías",
+                            "frIntent": "Tu avais"
                         }
                     ]
                 },
                 {
                     "pt": "Sim, é verdade. Mas agora nós podemos descansar. Vamos fazer um plano para o próximo final de semana? Você precisa descansar também.",
                     "en": "Yes, that is true. But now we can rest. Let's make a plan for next weekend? You need to rest too.",
+                    "es": "Sí, es verdad. Pero ahora podemos descansar. ¿Hacemos un plan para el próximo fin de semana? Tú también necesitas descansar.",
+                    "fr": "Oui, c'est vrai. Mais maintenant, nous pouvons nous reposer. On pourrait faire un programme pour le week-end prochain ? Tu as besoin de te reposer aussi.",
                     "intentions": [
                         {
                             "intentionId": "make-a-plan",
                             "ptIntent": "fazer um plano",
-                            "enIntent": "make a plan"
+                            "enIntent": "make a plan",
+                            "esIntent": "Hacemos un plan",
+                            "frIntent": "faire un programme"
                         },
                         {
                             "intentionId": "voce-precisa",
                             "ptIntent": "Você precisa",
-                            "enIntent": "You need"
+                            "enIntent": "You need",
+                            "esIntent": "necesitas",
+                            "frIntent": "Tu as besoin de"
                         }
                     ]
                 },
                 {
                     "pt": "Sim, nós podemos ir ao lago. Você pode nadar lá. Eu prefiro caminhar com o meu cachorro na grama.",
                     "en": "Yes, we can go to the lake. You can swim there. I prefer to walk with my dog on the grass.",
+                    "es": "Sí, podemos ir al lago. Puedes nadar allí. Yo prefiero pasear con mi perro por el césped.",
+                    "fr": "Oui, nous pouvons aller au lac. Tu peux y nager. Je préfère marcher avec mon chien sur l'herbe.",
                     "intentions": [
                         {
                             "intentionId": "voce-pode",
                             "ptIntent": "Você pode",
-                            "enIntent": "You can"
+                            "enIntent": "You can",
+                            "esIntent": "Puedes",
+                            "frIntent": "Tu peux"
                         },
                         {
                             "intentionId": "com-o-com-a-relacao",
                             "ptIntent": "com o meu cachorro",
-                            "enIntent": "with my dog"
+                            "enIntent": "with my dog",
+                            "esIntent": "con mi perro",
+                            "frIntent": "avec mon chien"
                         }
                     ]
                 },
                 {
                     "pt": "Essa é uma ótima ideia! O dia está lindo. Vamos tirar uma foto para lembrar deste momento?",
                     "en": "That is a great idea! The day is beautiful. Let's take a photo to remember this moment?",
+                    "es": "¡Es una idea estupenda! Hace un día precioso. ¿Nos hacemos una foto para recordar este momento?",
+                    "fr": "C'est une très bonne idée ! Il fait très beau. On prend une photo pour se souvenir de ce moment ?",
                     "intentions": [
                         {
                             "intentionId": "take-a-photo",
                             "ptIntent": "tirar uma foto",
-                            "enIntent": "take a photo"
+                            "enIntent": "take a photo",
+                            "esIntent": "hacemos una foto",
+                            "frIntent": "prend une photo"
                         }
                     ]
                 }
@@ -239,101 +313,139 @@
             "topic": "daily-life",
             "titlePt": "Um Dia Simples e Feliz",
             "titleEn": "A Simple and Happy Day",
+            "titleEs": "Un día sencillo y feliz",
+            "titleFr": "Une journée simple et heureuse",
             "paragraphs": [
                 {
                     "pt": "Ontem foi um dia diferente. Eu fui para o parque de manhã. Eu não fui para a escola.",
                     "en": "Yesterday was a different day. I went to the park in the morning. I didn't go to school.",
+                    "es": "Ayer fue un día diferente. Fui al parque por la mañana. No fui al colegio.",
+                    "fr": "Hier, c'était une journée différente. Le matin, j'ai été au parc. Je n'ai pas été à l'école.",
                     "intentions": [
                         {
                             "intentionId": "eu-fui-para",
                             "ptIntent": "Eu fui para",
-                            "enIntent": "I went to"
+                            "enIntent": "I went to",
+                            "esIntent": "Fui al",
+                            "frIntent": "j'ai été au"
                         },
                         {
                             "intentionId": "eu-nao-fui-para",
                             "ptIntent": "Eu não fui para",
-                            "enIntent": "I didn't go to"
+                            "enIntent": "I didn't go to",
+                            "esIntent": "No fui al",
+                            "frIntent": "Je n'ai pas été à"
                         }
                     ]
                 },
                 {
                     "pt": "Eu andei no parque e vi minha amiga Mia. Ela disse: \"Você está muito feliz hoje! Você tem um sorriso bonito.\"",
                     "en": "I walked in the park and saw my friend Mia. She said: \"You are very happy today! You have a beautiful smile.\"",
+                    "es": "Paseé por el parque y vi a mi amiga Mia. Me dijo: '¡Hoy estás muy feliz! Tienes una sonrisa bonita.'",
+                    "fr": "J'ai marché dans le parc et j'ai vu mon amie Mia. Elle m'a dit : « Tu as l'air de très bonne humeur aujourd'hui ! Tu as un beau sourire. »",
                     "intentions": [
                         {
                             "intentionId": "voce-esta",
                             "ptIntent": "Você está",
-                            "enIntent": "You are"
+                            "enIntent": "You are",
+                            "esIntent": "estás",
+                            "frIntent": "Tu as l'air"
                         },
                         {
                             "intentionId": "voce-tem",
                             "ptIntent": "Você tem",
-                            "enIntent": "You have"
+                            "enIntent": "You have",
+                            "esIntent": "Tienes",
+                            "frIntent": "Tu as"
                         }
                     ]
                 },
                 {
                     "pt": "Eu sorri e respondi que estava feliz por caminhar com o meu cachorro.",
                     "en": "I smiled and replied that I was happy to walk with my dog.",
+                    "es": "Sonreí y respondí que me alegraba pasear con mi perro.",
+                    "fr": "J'ai souri et j'ai répondu que cela me faisait plaisir de marcher avec mon chien.",
                     "intentions": [
                         {
                             "intentionId": "com-o-com-a-relacao",
                             "ptIntent": "com o",
-                            "enIntent": "with"
+                            "enIntent": "with",
+                            "esIntent": "con mi",
+                            "frIntent": "avec mon"
                         }
                     ]
                 },
                 {
                     "pt": "Mia olhou para mim e disse: \"Você precisa de uma pausa. Você quer comer um sorvete?\"",
                     "en": "Mia looked at me and said: \"You need a break. You want to eat an ice cream?\"",
+                    "es": "Mia me miró y dijo: 'Necesitas un descanso. ¿Quieres comer un helado?'",
+                    "fr": "Mia a tourné son regard vers moi et a dit : « Tu as besoin d'une pause. Tu veux manger une glace ? »",
                     "intentions": [
                         {
                             "intentionId": "voce-precisa",
                             "ptIntent": "Você precisa",
-                            "enIntent": "You need"
+                            "enIntent": "You need",
+                            "esIntent": "Necesitas",
+                            "frIntent": "Tu as besoin"
                         },
                         {
                             "intentionId": "voce-quer",
                             "ptIntent": "Você quer",
-                            "enIntent": "You want"
+                            "enIntent": "You want",
+                            "esIntent": "Quieres",
+                            "frIntent": "Tu veux"
                         }
                     ]
                 },
                 {
                     "pt": "Eu respondi: \"Sim! Nós podemos fazer um plano para a tarde. Você gosta de sorvete de morango?\"",
                     "en": "I replied: \"Yes! We can make a plan for the afternoon. You like strawberry ice cream?\"",
+                    "es": "Respondí: '¡Sí! Podemos hacer un plan para la tarde. ¿Te gusta el helado de fresa?'",
+                    "fr": "J'ai répondu : « Oui ! Nous pouvons faire un programme pour l'après-midi. Tu aimes la glace à la fraise ? »",
                     "intentions": [
                         {
                             "intentionId": "make-a-plan",
                             "ptIntent": "fazer um plano",
-                            "enIntent": "make a plan"
+                            "enIntent": "make a plan",
+                            "esIntent": "hacer un plan",
+                            "frIntent": "faire un programme"
                         },
                         {
                             "intentionId": "voce-gosta-de",
                             "ptIntent": "Você gosta de",
-                            "enIntent": "You like"
+                            "enIntent": "You like",
+                            "esIntent": "Te gusta",
+                            "frIntent": "Tu aimes"
                         }
                     ]
                 },
                 {
                     "pt": "Mia disse que sim. Eu falei: \"Antes de ir, eu preciso ir em casa e tomar banho.\"",
                     "en": "Mia said yes. I said: \"Before we go, I need to go home and take a shower.\"",
+                    "es": "Mia dijo que sí. Yo dije: 'Antes de ir, tengo que pasar por casa y ducharme.'",
+                    "fr": "Mia a dit oui. J'ai dit : « Avant d'y aller, je dois passer à la maison et prendre une douche. »",
                     "intentions": [
                         {
                             "intentionId": "take-a-shower",
                             "ptIntent": "tomar banho",
-                            "enIntent": "take a shower"
+                            "enIntent": "take a shower",
+                            "esIntent": "ducharme",
+                            "frIntent": "prendre une douche"
                         }
                     ]
                 },
                 {
                     "pt": "Mais tarde, na sorveteria, nós compramos sorvetes grandes. Eu disse: \"Espere, vamos tirar uma foto primeiro!\"",
                     "en": "Later, at the ice cream shop, we bought big ice creams. I said: \"Wait, let's take a photo first!\"",
+                    "es": "Más tarde, en la heladería, compramos unos helados grandes. Yo dije: '¡Espera, vamos a hacernos una foto primero!'",
+                    "fr": "Plus tard, chez le glacier, nous avons acheté de grandes glaces. J'ai dit : « Attends, on va d'abord prendre une photo ! »",
                     "intentions": [
                         {
                             "intentionId": "take-a-photo",
                             "ptIntent": "tirar uma foto",
-                            "enIntent": "take a photo"
+                            "enIntent": "take a photo",
+                            "esIntent": "hacernos una foto",
+                            "frIntent": "prendre une photo"
                         }
                     ]
                 }
@@ -358,70 +470,96 @@
             "topic": "daily-life",
             "titlePt": "Um Dia de Descanso no Parque",
             "titleEn": "A Day of Rest in the Park",
+            "titleEs": "Un día de descanso en el parque",
+            "titleFr": "Une journée de repos au parc",
             "paragraphs": [
                 {
                     "pt": "Leo está muito cansado hoje. Ele caminha no parque.",
                     "en": "Leo is very tired today. He walks in the park.",
+                    "es": "Leo está muy cansado hoy. Camina por el parque.",
+                    "fr": "Leo est très fatigué aujourd'hui. Il marche dans le parc.",
                     "intentions": [
                         {
                             "intentionId": "acao-verbo",
                             "ptIntent": "Ele caminha",
-                            "enIntent": "He walks"
+                            "enIntent": "He walks",
+                            "esIntent": "Camina",
+                            "frIntent": "Il marche"
                         }
                     ]
                 },
                 {
                     "pt": "Eu não fui para a escola hoje porque é sábado.",
                     "en": "I didn't go to school today because it is Saturday.",
+                    "es": "Hoy no fui al colegio porque es sábado.",
+                    "fr": "Je ne suis pas allé à l'école aujourd'hui parce que c'est samedi.",
                     "intentions": [
                         {
                             "intentionId": "eu-nao-fui-para",
                             "ptIntent": "Eu não fui para a escola",
-                            "enIntent": "I didn't go to school"
+                            "enIntent": "I didn't go to school",
+                            "esIntent": "no fui al colegio",
+                            "frIntent": "Je ne suis pas allé à l'école"
                         }
                     ]
                 },
                 {
                     "pt": "Leo vê um banco de madeira. Um homem simpático diz: Por favor, sente-se.",
                     "en": "Leo sees a wooden bench. A nice man says: Please, take a seat.",
+                    "es": "Leo ve un banco de madera. Un hombre simpático dice: Por favor, siéntate.",
+                    "fr": "Leo voit un banc en bois. Un homme sympathique dit : Assieds-toi, s'il te plaît.",
                     "intentions": [
                         {
                             "intentionId": "take-a-seat",
                             "ptIntent": "sente-se",
-                            "enIntent": "take a seat"
+                            "enIntent": "take a seat",
+                            "esIntent": "siéntate",
+                            "frIntent": "Assieds-toi"
                         }
                     ]
                 },
                 {
                     "pt": "Ele agradece ao homem. Ele realmente precisa fazer uma pausa hoje.",
                     "en": "He thanks the man. He really needs to take a break today.",
+                    "es": "Le da las gracias al hombre. Hoy de verdad necesita hacer una pausa.",
+                    "fr": "Il remercie l'homme. Il a vraiment besoin de faire une pause aujourd'hui.",
                     "intentions": [
                         {
                             "intentionId": "take-a-break",
                             "ptIntent": "fazer uma pausa",
-                            "enIntent": "take a break"
+                            "enIntent": "take a break",
+                            "esIntent": "hacer una pausa",
+                            "frIntent": "faire une pause"
                         }
                     ]
                 },
                 {
                     "pt": "Leo liga para sua mãe. Eles conversam sobre o tempo na cidade.",
                     "en": "Leo calls his mother. They talk about the weather in the city.",
+                    "es": "Leo llama a su madre. Hablan del tiempo que hace en la ciudad.",
+                    "fr": "Leo téléphone à sa mère. Ils parlent du temps qu'il fait en ville.",
                     "intentions": [
                         {
                             "intentionId": "com-o-com-a-tema",
                             "ptIntent": "sobre o tempo",
-                            "enIntent": "about the weather"
+                            "enIntent": "about the weather",
+                            "esIntent": "del tiempo",
+                            "frIntent": "du temps"
                         }
                     ]
                 },
                 {
                     "pt": "Depois da ligação, Leo fecha os olhos. O sol está quente e agradável.",
                     "en": "After the call, Leo closes his eyes. The sun is warm and nice.",
+                    "es": "Después de la llamada, Leo cierra los ojos. El sol es cálido y agradable.",
+                    "fr": "Après l'appel, Leo ferme les yeux. Le soleil est chaud et agréable.",
                     "intentions": [
                         {
                             "intentionId": "acao-verbo",
                             "ptIntent": "Leo fecha",
-                            "enIntent": "Leo closes"
+                            "enIntent": "Leo closes",
+                            "esIntent": "Leo cierra",
+                            "frIntent": "Leo ferme"
                         }
                     ]
                 }
@@ -440,97 +578,133 @@
             "topic": "technology",
             "titlePt": "O Novo Robô de Sam",
             "titleEn": "Sam's New Robot",
+            "titleEs": "El nuevo robot de Sam",
+            "titleFr": "Le nouveau robot de Sam",
             "paragraphs": [
                 {
                     "pt": "Sam ama tecnologia. Ele quer construir um pequeno robô.",
                     "en": "Sam loves technology. He wants to build a small robot.",
+                    "es": "A Sam le encanta la tecnología. Quiere construir un pequeño robot.",
+                    "fr": "Sam adore la technologie. Il veut construire un petit robot.",
                     "intentions": [
                         {
                             "intentionId": "acao-verbo",
                             "ptIntent": "Sam ama",
-                            "enIntent": "Sam loves"
+                            "enIntent": "Sam loves",
+                            "esIntent": "A Sam le encanta",
+                            "frIntent": "Sam adore"
                         }
                     ]
                 },
                 {
                     "pt": "Ontem, eu fui para a loja de eletrônicos. Eu comprei peças ontem.",
                     "en": "Yesterday, I went to the electronics store. I bought parts yesterday.",
+                    "es": "Ayer fui a la tienda de electrónica. Ayer compré piezas.",
+                    "fr": "Hier, je suis allé au magasin d'électronique. J'ai acheté des pièces hier.",
                     "intentions": [
                         {
                             "intentionId": "eu-fui-para",
                             "ptIntent": "eu fui para",
-                            "enIntent": "I went to"
+                            "enIntent": "I went to",
+                            "esIntent": "fui a",
+                            "frIntent": "je suis allé au"
                         },
                         {
                             "intentionId": "momento-passado-com-marcador-de-tempo",
                             "ptIntent": "comprei peças ontem",
-                            "enIntent": "bought parts yesterday"
+                            "enIntent": "bought parts yesterday",
+                            "esIntent": "Ayer compré piezas",
+                            "frIntent": "acheté des pièces hier"
                         }
                     ]
                 },
                 {
                     "pt": "Agora, nós precisamos fazer um plano para montar o robô.",
                     "en": "Now, we need to make a plan to build the robot.",
+                    "es": "Ahora necesitamos hacer un plan para montar el robot.",
+                    "fr": "Maintenant, nous devons faire un plan pour assembler le robot.",
                     "intentions": [
                         {
                             "intentionId": "make-a-plan",
                             "ptIntent": "fazer um plano",
-                            "enIntent": "make a plan"
+                            "enIntent": "make a plan",
+                            "esIntent": "hacer un plan",
+                            "frIntent": "faire un plan"
                         }
                     ]
                 },
                 {
                     "pt": "Eu costumo trabalhar na minha mesa perto da janela.",
                     "en": "I usually work at my desk near the window.",
+                    "es": "Suelo trabajar en mi mesa, cerca de la ventana.",
+                    "fr": "J'ai l'habitude de travailler à ma table, près de la fenêtre.",
                     "intentions": [
                         {
                             "intentionId": "usually",
                             "ptIntent": "costumo",
-                            "enIntent": "usually"
+                            "enIntent": "usually",
+                            "esIntent": "Suelo",
+                            "frIntent": "J'ai l'habitude de"
                         }
                     ]
                 },
                 {
                     "pt": "É muito fácil cometer um erro com fios pequenos.",
                     "en": "It is very easy to make a mistake with small wires.",
+                    "es": "Es muy fácil cometer un error con cables pequeños.",
+                    "fr": "C'est très facile de faire une erreur avec de petits fils électriques.",
                     "intentions": [
                         {
                             "intentionId": "make-a-mistake",
                             "ptIntent": "cometer um erro",
-                            "enIntent": "make a mistake"
+                            "enIntent": "make a mistake",
+                            "esIntent": "cometer un error",
+                            "frIntent": "faire une erreur"
                         }
                     ]
                 },
                 {
                     "pt": "Meu irmão me ajuda. Você é muito bom com tecnologia, Sam.",
                     "en": "My brother helps me. You are very good with technology, Sam.",
+                    "es": "Mi hermano me ayuda. Eres muy bueno con la tecnología, Sam.",
+                    "fr": "Mon frère m'aide. Tu es très doué en technologie, Sam.",
                     "intentions": [
                         {
                             "intentionId": "voce-e",
                             "ptIntent": "Você é",
-                            "enIntent": "You are"
+                            "enIntent": "You are",
+                            "esIntent": "Eres",
+                            "frIntent": "Tu es"
                         }
                     ]
                 },
                 {
                     "pt": "Você pode conectar os fios vermelhos e azuis com cuidado.",
                     "en": "You can connect the red and blue wires carefully.",
+                    "es": "Puedes conectar los cables rojos y azules con cuidado.",
+                    "fr": "Tu peux connecter les fils rouges et bleus avec précaution.",
                     "intentions": [
                         {
                             "intentionId": "voce-pode",
                             "ptIntent": "Você pode",
-                            "enIntent": "You can"
+                            "enIntent": "You can",
+                            "esIntent": "Puedes",
+                            "frIntent": "Tu peux"
                         }
                     ]
                 },
                 {
                     "pt": "Parabéns! Você tem um robô de verdade no seu quarto.",
                     "en": "Congratulations! You have a real robot in your room.",
+                    "es": "¡Enhorabuena! Tienes un robot de verdad en tu habitación.",
+                    "fr": "Bravo ! Tu as un vrai robot dans ta chambre.",
                     "intentions": [
                         {
                             "intentionId": "voce-tem",
                             "ptIntent": "Você tem",
-                            "enIntent": "You have"
+                            "enIntent": "You have",
+                            "esIntent": "Tienes",
+                            "frIntent": "Tu as"
                         }
                     ]
                 }
@@ -553,103 +727,141 @@
             "topic": "daily-life",
             "titlePt": "Um Encontro Inesperado no Parque",
             "titleEn": "An Unexpected Meeting in the Park",
+            "titleEs": "Un encuentro inesperado en el parque",
+            "titleFr": "Une rencontre inattendue au parc",
             "paragraphs": [
                 {
                     "pt": "Julia vai ao parque todo sábado. Eu costumo ler um livro sob as árvores, pensa ela.",
                     "en": "Julia goes to the park every Saturday. I usually read a book under the trees, she thinks.",
+                    "es": "Julia va al parque todos los sábados. Suelo leer un libro bajo los árboles, piensa.",
+                    "fr": "Julia va au parc tous les samedis. J'ai l'habitude de lire un livre sous les arbres, pense-t-elle.",
                     "intentions": [
                         {
                             "intentionId": "usually",
                             "ptIntent": "costumo ler",
-                            "enIntent": "usually read"
+                            "enIntent": "usually read",
+                            "esIntent": "Suelo leer",
+                            "frIntent": "J'ai l'habitude de lire"
                         }
                     ]
                 },
                 {
                     "pt": "Ela vê seu antigo amigo de escola, Leo. 'Nossa, você era tão tímido na escola!', diz Julia.",
                     "en": "She sees her old school friend, Leo. 'Wow, you were so shy at school!', Julia says.",
+                    "es": "Ve a Leo, un antiguo amigo del colegio. '¡Vaya, eras muy tímido en el colegio!', dice Julia.",
+                    "fr": "Elle voit Leo, son ancien ami d'école. « Oh, tu étais si timide à l'école ! » dit Julia.",
                     "intentions": [
                         {
                             "intentionId": "voce-era",
                             "ptIntent": "você era tão tímido",
-                            "enIntent": "you were so shy"
+                            "enIntent": "you were so shy",
+                            "esIntent": "eras muy tímido",
+                            "frIntent": "tu étais si timide"
                         }
                     ]
                 },
                 {
                     "pt": "Leo sorri. 'Sim, mas hoje eu trabalho muito. Agora, é hora de fazer uma pausa', diz ele.",
                     "en": "Leo smiles. 'Yes, but today I work a lot. Now, it is time to take a break', he says.",
+                    "es": "Leo sonríe. 'Sí, pero ahora trabajo mucho. Es hora de hacer una pausa', dice.",
+                    "fr": "Leo sourit. « Oui, mais aujourd'hui, je travaille beaucoup. Maintenant, c'est l'heure de faire une pause », dit-il.",
                     "intentions": [
                         {
                             "intentionId": "take-a-break",
                             "ptIntent": "fazer uma pausa",
-                            "enIntent": "take a break"
+                            "enIntent": "take a break",
+                            "esIntent": "hacer una pausa",
+                            "frIntent": "faire une pause"
                         }
                     ]
                 },
                 {
                     "pt": "'Você quer descansar um pouco?', pergunta Leo. 'O dia está lindo.'",
                     "en": "'You want to rest a bit?', Leo asks. 'The day is beautiful.'",
+                    "es": "'¿Quieres descansar un poco?', pregunta Leo. 'Hace un día precioso.'",
+                    "fr": "« Tu veux te reposer un peu ? » demande Leo. « Il fait très beau. »",
                     "intentions": [
                         {
                             "intentionId": "voce-quer",
                             "ptIntent": "Você quer descansar",
-                            "enIntent": "You want to rest"
+                            "enIntent": "You want to rest",
+                            "esIntent": "Quieres descansar",
+                            "frIntent": "Tu veux te reposer"
                         }
                     ]
                 },
                 {
                     "pt": "Julia concorda. 'Sim! Mas primeiro, vamos tirar uma foto juntos', diz ela.",
                     "en": "Julia agrees. 'Yes! But first, let's take a photo together', she says.",
+                    "es": "Julia está de acuerdo. '¡Sí! Pero primero vamos a hacernos una foto juntos', dice.",
+                    "fr": "Julia est d'accord. « Oui ! Mais d'abord, on va prendre une photo ensemble », dit-elle.",
                     "intentions": [
                         {
                             "intentionId": "take-a-photo",
                             "ptIntent": "tirar uma foto",
-                            "enIntent": "take a photo"
+                            "enIntent": "take a photo",
+                            "esIntent": "hacernos una foto",
+                            "frIntent": "prendre une photo"
                         }
                     ]
                 },
                 {
                     "pt": "Leo diz: 'Eu não quero cometer um erro com este celular.'",
                     "en": "Leo says: 'I do not want to make a mistake with this phone.'",
+                    "es": "Leo dice: 'No quiero cometer un error con este móvil.'",
+                    "fr": "Leo dit : « Je ne veux pas faire une erreur avec ce portable. »",
                     "intentions": [
                         {
                             "intentionId": "make-a-mistake",
                             "ptIntent": "cometer um erro",
-                            "enIntent": "make a mistake"
+                            "enIntent": "make a mistake",
+                            "esIntent": "cometer un error",
+                            "frIntent": "faire une erreur"
                         }
                     ]
                 },
                 {
                     "pt": "Eles tiram a foto finalmente. Foi maravilhoso ver o sorriso deles na imagem.",
                     "en": "They finally take the photo. It was wonderful to see their smiles in the picture.",
+                    "es": "Por fin se hacen la foto. Fue maravilloso ver sus sonrisas en la imagen.",
+                    "fr": "Ils prennent enfin la photo. C'était merveilleux de voir leurs sourires sur l'image.",
                     "intentions": [
                         {
                             "intentionId": "foi-adjetivo",
                             "ptIntent": "Foi maravilhoso",
-                            "enIntent": "It was wonderful"
+                            "enIntent": "It was wonderful",
+                            "esIntent": "Fue maravilloso",
+                            "frIntent": "C'était merveilleux"
                         }
                     ]
                 },
                 {
                     "pt": "Julia diz: 'Você está muito feliz hoje, Leo!'",
                     "en": "Julia says: 'You are very happy today, Leo!'",
+                    "es": "Julia dice: '¡Hoy estás muy contento, Leo!'",
+                    "fr": "Julia dit : « Tu es très content aujourd'hui, Leo ! »",
                     "intentions": [
                         {
                             "intentionId": "voce-esta",
                             "ptIntent": "Você está muito feliz",
-                            "enIntent": "You are very happy"
+                            "enIntent": "You are very happy",
+                            "esIntent": "estás muy contento",
+                            "frIntent": "Tu es très content"
                         }
                     ]
                 },
                 {
                     "pt": "Leo sorri e se despede. 'Sim, estou! Preciso ir agora. Lembre-se de se cuidar, Julia!', diz ele.",
                     "en": "Leo smiles and says goodbye. 'Yes, I am! I need to go now. Remember to take care, Julia!', he says.",
+                    "es": "Leo sonríe y se despide. '¡Sí, lo estoy! Tengo que irme ahora. ¡Acuérdate de cuidarte, Julia!', dice.",
+                    "fr": "Leo sourit et dit au revoir. « Oui ! Je dois y aller maintenant. N'oublie pas de prendre soin de toi, Julia ! » dit-il.",
                     "intentions": [
                         {
                             "intentionId": "take-care",
                             "ptIntent": "se cuidar",
-                            "enIntent": "take care"
+                            "enIntent": "take care",
+                            "esIntent": "cuidarte",
+                            "frIntent": "prendre soin de toi"
                         }
                     ]
                 }
@@ -672,92 +884,126 @@
             "topic": "daily-life",
             "titlePt": "Um Dia Simples no Parque",
             "titleEn": "A Simple Day in the Park",
+            "titleEs": "Un día sencillo en el parque",
+            "titleFr": "Une journée simple au parc",
             "paragraphs": [
                 {
                     "pt": "Hoje é sábado. Eu estou muito feliz porque o dia está bonito.",
                     "en": "Today is Saturday. I am very happy because the day is beautiful.",
+                    "es": "Hoy es sábado. Estoy muy feliz porque hace buen día.",
+                    "fr": "Aujourd'hui, c'est samedi. Je suis de très bonne humeur parce qu'il fait beau.",
                     "intentions": [
                         {
                             "intentionId": "sou-estou-agora",
                             "ptIntent": "Eu estou",
-                            "enIntent": "I am"
+                            "enIntent": "I am",
+                            "esIntent": "Estoy",
+                            "frIntent": "Je suis"
                         }
                     ]
                 },
                 {
                     "pt": "Ontem eu trabalhei muito no escritório.",
                     "en": "Yesterday I worked a lot in the office.",
+                    "es": "Ayer trabajé mucho en la oficina.",
+                    "fr": "Hier, j'ai beaucoup travaillé au bureau.",
                     "intentions": [
                         {
                             "intentionId": "momento-passado-com-marcador-de-tempo",
                             "ptIntent": "Ontem eu trabalhei",
-                            "enIntent": "Yesterday I worked"
+                            "enIntent": "Yesterday I worked",
+                            "esIntent": "Ayer trabajé",
+                            "frIntent": "Hier, j'ai beaucoup travaillé"
                         }
                     ]
                 },
                 {
                     "pt": "Hoje de manhã, eu fui para o parque perto da minha casa.",
                     "en": "This morning, I went to the park near my house.",
+                    "es": "Esta mañana fui al parque que está cerca de mi casa.",
+                    "fr": "Ce matin, j'ai été au parc près de chez moi.",
                     "intentions": [
                         {
                             "intentionId": "eu-fui-para",
                             "ptIntent": "eu fui para",
-                            "enIntent": "I went to"
+                            "enIntent": "I went to",
+                            "esIntent": "fui al",
+                            "frIntent": "j'ai été au"
                         }
                     ]
                 },
                 {
                     "pt": "Eu gosto de dar uma caminhada quando o sol está brilhando.",
                     "en": "I like to take a walk when the sun is shining.",
+                    "es": "Me gusta dar un paseo cuando brilla el sol.",
+                    "fr": "J'aime faire une promenade quand le soleil brille.",
                     "intentions": [
                         {
                             "intentionId": "take-a-walk",
                             "ptIntent": "dar uma caminhada",
-                            "enIntent": "take a walk"
+                            "enIntent": "take a walk",
+                            "esIntent": "dar un paseo",
+                            "frIntent": "faire une promenade"
                         }
                     ]
                 },
                 {
                     "pt": "No parque, eu vejo meu amigo Bob. Eu digo: 'Olá Bob! Você gosta de café?'",
                     "en": "In the park, I see my friend Bob. I say: 'Hello Bob! You like coffee?'",
+                    "es": "En el parque veo a mi amigo Bob. Le digo: '¡Hola, Bob! ¿Te gusta el café?'",
+                    "fr": "Au parc, je vois mon ami Bob. Je dis : « Bonjour, Bob ! Tu aimes le café ? »",
                     "intentions": [
                         {
                             "intentionId": "voce-gosta-de",
                             "ptIntent": "Você gosta de",
-                            "enIntent": "You like"
+                            "enIntent": "You like",
+                            "esIntent": "Te gusta",
+                            "frIntent": "Tu aimes"
                         }
                     ]
                 },
                 {
                     "pt": "Bob sorri e responde: 'Sim! Você quer ir à cafeteria comigo agora?'",
                     "en": "Bob smiles and answers: 'Yes! You want to go to the coffee shop with me now?'",
+                    "es": "Bob sonríe y responde: '¡Sí! ¿Quieres venir a la cafetería conmigo ahora?'",
+                    "fr": "Bob sourit et répond : « Oui ! Tu veux venir au café avec moi maintenant ? »",
                     "intentions": [
                         {
                             "intentionId": "voce-quer",
                             "ptIntent": "Você quer",
-                            "enIntent": "You want"
+                            "enIntent": "You want",
+                            "esIntent": "Quieres",
+                            "frIntent": "Tu veux"
                         }
                     ]
                 },
                 {
                     "pt": "Eu peço um chá em vez de café. Eu cometo um erro porque o chá está muito quente.",
                     "en": "I order a tea instead of coffee. I make a mistake because the tea is very hot.",
+                    "es": "Pido un té en vez de un café. Cometo un error porque el té está muy caliente.",
+                    "fr": "Je commande un thé au lieu d'un café. Je fais une erreur parce que le thé est très chaud.",
                     "intentions": [
                         {
                             "intentionId": "make-a-mistake",
                             "ptIntent": "cometo um erro",
-                            "enIntent": "make a mistake"
+                            "enIntent": "make a mistake",
+                            "esIntent": "Cometo un error",
+                            "frIntent": "fais une erreur"
                         }
                     ]
                 },
                 {
                     "pt": "Bob diz: 'Cuidado! Você precisa esperar o chá esfriar.' Nós rimos juntos.",
                     "en": "Bob says: 'Be careful! You need to wait for the tea to cool down.' We laugh together.",
+                    "es": "Bob dice: '¡Cuidado! Tienes que esperar a que se enfríe el té.' Nos reímos juntos.",
+                    "fr": "Bob dit : « Attention ! Tu dois attendre que le thé refroidisse. » Nous rions ensemble.",
                     "intentions": [
                         {
                             "intentionId": "voce-precisa",
                             "ptIntent": "Você precisa",
-                            "enIntent": "You need"
+                            "enIntent": "You need",
+                            "esIntent": "Tienes que",
+                            "frIntent": "Tu dois"
                         }
                     ]
                 }
@@ -779,64 +1025,88 @@
             "topic": "daily-life",
             "titlePt": "Um Começo de Dia Engraçado",
             "titleEn": "A Funny Start to the Day",
+            "titleEs": "Un comienzo de día divertido",
+            "titleFr": "Un début de journée amusant",
             "paragraphs": [
                 {
                     "pt": "Hoje o dia está ensolarado e bonito. É uma manhã perfeita para sair de casa.",
                     "en": "Today the day is sunny and beautiful. It is a perfect morning to go outside.",
+                    "es": "Hoy hace sol y buen tiempo. Es una mañana perfecta para salir de casa.",
+                    "fr": "Aujourd'hui, il fait beau et le soleil brille. C'est une matinée parfaite pour sortir de chez soi.",
                     "intentions": []
                 },
                 {
                     "pt": "Você decide dar uma caminhada no parque perto de sua casa.",
                     "en": "You decide to take a walk in the park near your house.",
+                    "es": "Decides dar un paseo por el parque que está cerca de tu casa.",
+                    "fr": "Tu décides de faire une promenade dans le parc près de chez toi.",
                     "intentions": [
                         {
                             "intentionId": "take-a-walk",
                             "ptIntent": "dar uma caminhada",
-                            "enIntent": "take a walk"
+                            "enIntent": "take a walk",
+                            "esIntent": "dar un paseo",
+                            "frIntent": "faire une promenade"
                         }
                     ]
                 },
                 {
                     "pt": "Antes de sair, você precisa encontrar as chaves de casa. Você tinha as chaves na mesa ontem à noite.",
                     "en": "Before leaving, you need to find the house keys. You had the keys on the table last night.",
+                    "es": "Antes de salir, necesitas encontrar las llaves de casa. Anoche tenías las llaves en la mesa.",
+                    "fr": "Avant de sortir, tu dois trouver les clés de la maison. Tu avais les clés sur la table hier soir.",
                     "intentions": [
                         {
                             "intentionId": "voce-tinha",
                             "ptIntent": "Você tinha as chaves",
-                            "enIntent": "You had the keys"
+                            "enIntent": "You had the keys",
+                            "esIntent": "tenías las llaves",
+                            "frIntent": "Tu avais les clés"
                         }
                     ]
                 },
                 {
                     "pt": "Você procura na cozinha inteira. Às vezes, é fácil cometer um erro quando estamos com pressa.",
                     "en": "You search the entire kitchen. Sometimes, it is easy to make a mistake when we are in a hurry.",
+                    "es": "Buscas por toda la cocina. A veces es fácil cometer un error cuando tenemos prisa.",
+                    "fr": "Tu cherches dans toute la cuisine. Parfois, c'est facile de faire une erreur quand on est pressé.",
                     "intentions": [
                         {
                             "intentionId": "make-a-mistake",
                             "ptIntent": "cometer um erro",
-                            "enIntent": "make a mistake"
+                            "enIntent": "make a mistake",
+                            "esIntent": "cometer un error",
+                            "frIntent": "faire une erreur"
                         }
                     ]
                 },
                 {
                     "pt": "Seu irmão olha para você e sorri. Ele diz: \"Você tem as chaves na sua mão!\"",
                     "en": "Your brother looks at you and smiles. He says: \"You have the keys in your hand!\"",
+                    "es": "Tu hermano te mira y sonríe. Dice: '¡Tienes las llaves en la mano!'",
+                    "fr": "Ton frère te regarde et sourit. Il dit : « Tu as les clés dans la main ! »",
                     "intentions": [
                         {
                             "intentionId": "voce-tem",
                             "ptIntent": "Você tem as chaves",
-                            "enIntent": "You have the keys"
+                            "enIntent": "You have the keys",
+                            "esIntent": "Tienes las llaves",
+                            "frIntent": "Tu as les clés"
                         }
                     ]
                 },
                 {
                     "pt": "Você olha para a sua mão e ri. Agora, você está feliz e pronto para o seu passeio.",
                     "en": "You look at your hand and laugh. Now, you are happy and ready for your walk.",
+                    "es": "Te miras la mano y te ríes. Ahora estás contento y listo para dar tu paseo.",
+                    "fr": "Tu regardes ta main et tu ris. Maintenant, tu es content et prêt pour ta promenade.",
                     "intentions": [
                         {
                             "intentionId": "voce-esta",
                             "ptIntent": "você está feliz",
-                            "enIntent": "you are happy"
+                            "enIntent": "you are happy",
+                            "esIntent": "estás contento",
+                            "frIntent": "tu es content"
                         }
                     ]
                 }
@@ -855,74 +1125,102 @@
             "topic": "daily-life",
             "titlePt": "Um Dia de Visita",
             "titleEn": "A Day of Visiting",
+            "titleEs": "Un día de visita",
+            "titleFr": "Une journée de visite",
             "paragraphs": [
                 {
                     "pt": "Leo quer falar com seu amigo Lucas. Ele precisa dar uma notícia importante.",
                     "en": "Leo wants to talk to his friend Lucas. He needs to give important news.",
+                    "es": "Leo quiere hablar con su amigo Lucas. Necesita darle una noticia importante.",
+                    "fr": "Leo veut parler à son ami Lucas. Il doit lui annoncer une nouvelle importante.",
                     "intentions": []
                 },
                 {
                     "pt": "Leo decide fazer uma ligação para o Lucas de tarde. Ele pega o telefone.",
                     "en": "Leo decides to make a call to Lucas in the afternoon. He takes his phone.",
+                    "es": "Leo decide hacer una llamada a Lucas por la tarde. Coge el teléfono.",
+                    "fr": "Leo décide de passer un appel à Lucas dans l'après-midi. Il prend le téléphone.",
                     "intentions": [
                         {
                             "intentionId": "make-a-call",
                             "ptIntent": "fazer uma ligação para",
-                            "enIntent": "make a call to"
+                            "enIntent": "make a call to",
+                            "esIntent": "hacer una llamada a",
+                            "frIntent": "passer un appel à"
                         }
                     ]
                 },
                 {
                     "pt": "Lucas atende o telefone. Leo diz: 'Eu visitei nossa antiga escola ontem.'",
                     "en": "Lucas answers the phone. Leo says: 'I visited our old school yesterday.'",
+                    "es": "Lucas contesta al teléfono. Leo dice: 'Ayer visité nuestro antiguo colegio.'",
+                    "fr": "Lucas répond au téléphone. Leo dit : « J'ai visité notre ancienne école hier. »",
                     "intentions": [
                         {
                             "intentionId": "momento-passado-com-marcador-de-tempo",
                             "ptIntent": "visitei nossa antiga escola ontem",
-                            "enIntent": "visited our old school yesterday"
+                            "enIntent": "visited our old school yesterday",
+                            "esIntent": "Ayer visité nuestro antiguo colegio",
+                            "frIntent": "visité notre ancienne école hier"
                         }
                     ]
                 },
                 {
                     "pt": "Lucas fica muito feliz. Ele diz: 'Venha para minha casa agora. Nós podemos conversar aqui.'",
                     "en": "Lucas is very happy. He says: 'Come to my house now. We can talk here.'",
+                    "es": "Lucas se pone muy contento. Dice: 'Ven a mi casa ahora. Podemos hablar aquí.'",
+                    "fr": "Lucas est très content. Il dit : « Viens chez moi maintenant. Nous pouvons parler ici. »",
                     "intentions": []
                 },
                 {
                     "pt": "Leo chega na casa de Lucas. Lucas abre a porta e diz: 'Por favor, sente-se.'",
                     "en": "Leo arrives at Lucas's house. Lucas opens the door and says: 'Please, take a seat.'",
+                    "es": "Leo llega a casa de Lucas. Lucas abre la puerta y dice: 'Por favor, siéntate.'",
+                    "fr": "Leo arrive chez Lucas. Lucas ouvre la porte et dit : « Assieds-toi, s'il te plaît. »",
                     "intentions": [
                         {
                             "intentionId": "take-a-seat",
                             "ptIntent": "sente-se",
-                            "enIntent": "take a seat"
+                            "enIntent": "take a seat",
+                            "esIntent": "siéntate",
+                            "frIntent": "Assieds-toi"
                         }
                     ]
                 },
                 {
                     "pt": "Lucas sorri para o amigo. Ele diz: 'Você é um bom amigo por vir aqui.'",
                     "en": "Lucas smiles at his friend. He says: 'You are a good friend for coming here.'",
+                    "es": "Lucas le sonríe a su amigo. Dice: 'Eres un buen amigo por venir aquí.'",
+                    "fr": "Lucas sourit à son ami. Il dit : « Tu es un bon ami. C'est gentil de venir ici. »",
                     "intentions": [
                         {
                             "intentionId": "voce-e",
                             "ptIntent": "Você é um bom amigo",
-                            "enIntent": "You are a good friend"
+                            "enIntent": "You are a good friend",
+                            "esIntent": "Eres un buen amigo",
+                            "frIntent": "Tu es un bon ami"
                         }
                     ]
                 },
                 {
                     "pt": "Eles conversam por uma hora e bebem café. Depois, Leo precisa ir embora.",
                     "en": "They talk for one hour and drink coffee. Then, Leo needs to leave.",
+                    "es": "Hablan durante una hora y beben café. Después, Leo tiene que irse.",
+                    "fr": "Ils parlent pendant une heure et boivent du café. Ensuite, Leo doit partir.",
                     "intentions": []
                 },
                 {
                     "pt": "Lucas se despede na porta. Ele diz: 'Tchau, Leo. Se cuide na rua!'",
                     "en": "Lucas says goodbye at the door. He says: 'Goodbye, Leo. Take care on the street!'",
+                    "es": "Lucas se despide en la puerta. Dice: 'Adiós, Leo. ¡Cuídate por la calle!'",
+                    "fr": "Lucas dit au revoir sur le pas de la porte. Il dit : « Au revoir, Leo. Fais attention à toi dans la rue ! »",
                     "intentions": [
                         {
                             "intentionId": "take-care",
                             "ptIntent": "Se cuide",
-                            "enIntent": "Take care"
+                            "enIntent": "Take care",
+                            "esIntent": "Cuídate",
+                            "frIntent": "Fais attention à toi"
                         }
                     ]
                 }
@@ -941,81 +1239,111 @@
             "topic": "work",
             "titlePt": "Uma manhã corrida no escritório",
             "titleEn": "A Busy Morning at the Office",
+            "titleEs": "Una mañana ajetreada en la oficina",
+            "titleFr": "Une matinée chargée au bureau",
             "paragraphs": [
                 {
                     "pt": "Eu costumo chegar ao escritório às oito.",
                     "en": "I usually arrive at the office at eight.",
+                    "es": "Suelo llegar a la oficina a las ocho.",
+                    "fr": "J'ai l'habitude d'arriver au bureau à huit heures.",
                     "intentions": [
                         {
                             "intentionId": "usually",
                             "ptIntent": "costumo",
-                            "enIntent": "usually"
+                            "enIntent": "usually",
+                            "esIntent": "Suelo",
+                            "frIntent": "J'ai l'habitude d'"
                         }
                     ]
                 },
                 {
                     "pt": "Hoje, estou um pouco cansado, mas começo meu trabalho normalmente.",
                     "en": "Today, I am a little tired, but I start my work as usual.",
+                    "es": "Hoy estoy un poco cansado, pero empiezo a trabajar como siempre.",
+                    "fr": "Aujourd'hui, je suis un peu fatigué, mais je commence mon travail comme d'habitude.",
                     "intentions": [
                         {
                             "intentionId": "sou-estou-agora",
                             "ptIntent": "estou",
-                            "enIntent": "am"
+                            "enIntent": "am",
+                            "esIntent": "estoy",
+                            "frIntent": "suis"
                         }
                     ]
                 },
                 {
                     "pt": "De manhã, tive um problema com o computador e pedi ajuda à Ana.",
                     "en": "In the morning, I had problems with the computer and asked Ana for help.",
+                    "es": "Por la mañana tuve un problema con el ordenador y le pedí ayuda a Ana.",
+                    "fr": "Le matin, j'ai eu un problème avec l'ordinateur et j'ai demandé de l'aide à Ana.",
                     "intentions": [
                         {
                             "intentionId": "com-o-com-a-relacao",
                             "ptIntent": "problema com o computador",
-                            "enIntent": "problems with the computer"
+                            "enIntent": "problems with the computer",
+                            "esIntent": "problema con el ordenador",
+                            "frIntent": "problème avec l'ordinateur"
                         }
                     ]
                 },
                 {
                     "pt": "Depois, eu cometi um erro em um documento importante.",
                     "en": "Then, I made a mistake in an important document.",
+                    "es": "Después cometí un error en un documento importante.",
+                    "fr": "Ensuite, j'ai fait une erreur dans un document important.",
                     "intentions": [
                         {
                             "intentionId": "make-a-mistake",
                             "ptIntent": "cometi um erro",
-                            "enIntent": "made a mistake"
+                            "enIntent": "made a mistake",
+                            "esIntent": "cometí un error",
+                            "frIntent": "j'ai fait une erreur"
                         }
                     ]
                 },
                 {
                     "pt": "Ana ficou calma e disse: 'Vamos fazer um plano para corrigir isso.'",
                     "en": "Ana stayed calm and said, 'Let's make a plan to fix it.'",
+                    "es": "Ana mantuvo la calma y dijo: 'Vamos a hacer un plan para corregirlo.'",
+                    "fr": "Ana a gardé son calme et a dit : « Nous allons faire un plan pour corriger cela. »",
                     "intentions": [
                         {
                             "intentionId": "make-a-plan",
                             "ptIntent": "fazer um plano",
-                            "enIntent": "make a plan"
+                            "enIntent": "make a plan",
+                            "esIntent": "hacer un plan",
+                            "frIntent": "faire un plan"
                         }
                     ]
                 },
                 {
                     "pt": "Depois de corrigir o documento, decidimos fazer uma pausa para tomar café.",
                     "en": "After fixing the document, we decided to take a break for coffee.",
+                    "es": "Después de corregir el documento, decidimos hacer una pausa para tomar un café.",
+                    "fr": "Après avoir corrigé le document, nous avons décidé de faire une pause pour prendre un café.",
                     "intentions": [
                         {
                             "intentionId": "take-a-break",
                             "ptIntent": "fazer uma pausa",
-                            "enIntent": "take a break"
+                            "enIntent": "take a break",
+                            "esIntent": "hacer una pausa",
+                            "frIntent": "faire une pause"
                         }
                     ]
                 },
                 {
                     "pt": "Ontem eu terminei o trabalho tarde, então hoje quero organizar melhor meu tempo.",
                     "en": "Yesterday I finished work late, so today I want to organize my time better.",
+                    "es": "Ayer terminé de trabajar tarde, así que hoy quiero organizar mejor mi tiempo.",
+                    "fr": "Hier, j'ai fini de travailler tard, alors aujourd'hui, je veux mieux organiser mon temps.",
                     "intentions": [
                         {
                             "intentionId": "momento-passado-com-marcador-de-tempo",
                             "ptIntent": "terminei",
-                            "enIntent": "finished"
+                            "enIntent": "finished",
+                            "esIntent": "terminé",
+                            "frIntent": "j'ai fini"
                         }
                     ]
                 }
@@ -1036,81 +1364,111 @@
             "topic": "work",
             "titlePt": "O primeiro dia de Jane",
             "titleEn": "Jane's First Day",
+            "titleEs": "El primer día de Jane",
+            "titleFr": "Le premier jour de Jane",
             "paragraphs": [
                 {
                     "pt": "Eu fui ao escritório cedo para encontrar Jane, a nova colega.",
                     "en": "I went to the office early to meet Jane, the new coworker.",
+                    "es": "Fui temprano a la oficina para encontrarme con Jane, la nueva compañera.",
+                    "fr": "J'ai été au bureau de bonne heure pour rencontrer Jane, la nouvelle collègue.",
                     "intentions": [
                         {
                             "intentionId": "eu-fui-para",
                             "ptIntent": "Eu fui ao",
-                            "enIntent": "I went to"
+                            "enIntent": "I went to",
+                            "esIntent": "Fui temprano a la",
+                            "frIntent": "J'ai été au"
                         }
                     ]
                 },
                 {
                     "pt": "Quando ela chegou, eu disse: 'Você está no lugar certo.'",
                     "en": "When she arrived, I said, 'You are in the right place.'",
+                    "es": "Cuando llegó, le dije: 'Estás en el lugar correcto.'",
+                    "fr": "Quand elle est arrivée, j'ai dit : « Tu es au bon endroit. »",
                     "intentions": [
                         {
                             "intentionId": "voce-esta",
                             "ptIntent": "Você está",
-                            "enIntent": "You are"
+                            "enIntent": "You are",
+                            "esIntent": "Estás",
+                            "frIntent": "Tu es"
                         }
                     ]
                 },
                 {
                     "pt": "Mostrei a mesa dela e expliquei: 'Você precisa deste computador para trabalhar.'",
                     "en": "I showed her desk and explained, 'You need this computer for work.'",
+                    "es": "Le enseñé su mesa y le expliqué: 'Necesitas este ordenador para trabajar.'",
+                    "fr": "Je lui ai montré son bureau et j'ai expliqué : « Tu as besoin de cet ordinateur pour travailler. »",
                     "intentions": [
                         {
                             "intentionId": "voce-precisa",
                             "ptIntent": "Você precisa",
-                            "enIntent": "You need"
+                            "enIntent": "You need",
+                            "esIntent": "Necesitas",
+                            "frIntent": "Tu as besoin de"
                         }
                     ]
                 },
                 {
                     "pt": "Depois eu disse: 'Você pode falar comigo quando tiver uma pergunta.'",
                     "en": "Then I said, 'You can talk to me when you have a question.'",
+                    "es": "Después le dije: 'Puedes hablar conmigo cuando tengas alguna pregunta.'",
+                    "fr": "Ensuite, j'ai dit : « Tu peux me parler quand tu as une question. »",
                     "intentions": [
                         {
                             "intentionId": "voce-pode",
                             "ptIntent": "Você pode",
-                            "enIntent": "You can"
+                            "enIntent": "You can",
+                            "esIntent": "Puedes",
+                            "frIntent": "Tu peux"
                         }
                     ]
                 },
                 {
                     "pt": "Antes do almoço, Jane precisou fazer uma ligação para um cliente.",
                     "en": "Before lunch, Jane needed to make a call to a client.",
+                    "es": "Antes de comer, Jane tuvo que hacer una llamada a un cliente.",
+                    "fr": "Avant le déjeuner, Jane a dû passer un appel à un client.",
                     "intentions": [
                         {
                             "intentionId": "make-a-call",
                             "ptIntent": "fazer uma ligação",
-                            "enIntent": "make a call"
+                            "enIntent": "make a call",
+                            "esIntent": "hacer una llamada",
+                            "frIntent": "passer un appel"
                         }
                     ]
                 },
                 {
                     "pt": "À tarde, nós decidimos fazer uma lista das tarefas da semana.",
                     "en": "In the afternoon, we decided to make a list of the tasks for the week.",
+                    "es": "Por la tarde decidimos hacer una lista de las tareas de la semana.",
+                    "fr": "L'après-midi, nous avons décidé de faire une liste des tâches de la semaine.",
                     "intentions": [
                         {
                             "intentionId": "make-a-list",
                             "ptIntent": "fazer uma lista",
-                            "enIntent": "make a list"
+                            "enIntent": "make a list",
+                            "esIntent": "hacer una lista",
+                            "frIntent": "faire une liste"
                         }
                     ]
                 },
                 {
                     "pt": "No fim do dia, Jane sorriu e disse: 'Foi um bom primeiro dia.'",
                     "en": "At the end of the day, Jane smiled and said, 'It was a good first day.'",
+                    "es": "Al final del día, Jane sonrió y dijo: 'Fue un buen primer día.'",
+                    "fr": "À la fin de la journée, Jane a souri et a dit : « C'était une bonne première journée. »",
                     "intentions": [
                         {
                             "intentionId": "foi-adjetivo",
                             "ptIntent": "Foi",
-                            "enIntent": "It was"
+                            "enIntent": "It was",
+                            "esIntent": "Fue",
+                            "frIntent": "C'était"
                         }
                     ]
                 }
