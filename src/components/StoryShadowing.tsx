@@ -1,5 +1,5 @@
 import { ControlIcon } from "./ControlIcon";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { LANGUAGES, type StudentLanguage } from "../config/languages";
 import { searchShadowingStories, type LocalStory } from "../services/localStoryService";
 import { defaultShadowingSettings, formatPracticeTime, sentenceSegments, type ShadowingSettings } from "../utils/storyShadowing";
@@ -31,18 +31,34 @@ function Practice({ story, language, settings, selected, onSettings, onBack, onM
 }) {
   const session = useStoryShadowing(story, language, settings, selected);
   const [configuring, setConfiguring] = useState(false);
+  const summaryRef = useRef<HTMLElement>(null);
+  function play() {
+    session.play();
+    summaryRef.current?.scrollIntoView({
+      behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+      block: "start",
+    });
+  }
   const paragraph = story.paragraphs[session.paragraph];
   return <>
     <div className="shadowing-heading"><h3>{story.titleEn}</h3><button type="button" onClick={() => { session.stop(); onBack(); }}>Escolher outra história</button></div>
-    <p>{LANGUAGES[language].name} · {story.englishLevel}</p>
-    <p>Tempo efetivo: <time>{formatPracticeTime(session.elapsed)}</time></p>
+    <section ref={summaryRef} className="shadowing-session" aria-label="Resumo da prática">
+      <div className="shadowing-session-meta"><span>{LANGUAGES[language].name}</span><span className="shadowing-level">{story.englishLevel}</span></div>
+      <div className="shadowing-session-stats">
+        <div className="shadowing-session-clock"><span className="shadowing-stat-label">Tempo de prática</span><time>{formatPracticeTime(session.elapsed)}</time><span className="shadowing-stat-note">Cada minuto conta</span></div>
+        <div className="shadowing-session-progress">
+          <span className="shadowing-stat-label">{settings.scope === "paragraph" ? "Seu parágrafo" : "Sua jornada na história"}</span>
+          <p className="shadowing-paragraph-position"><strong>{String(session.paragraph + 1).padStart(2, "0")}</strong><span> / {String(story.paragraphs.length).padStart(2, "0")} parágrafos</span></p>
+          <progress aria-label="Parágrafos concluídos" value={session.completed} max={settings.scope === "paragraph" ? 1 : story.paragraphs.length} />
+          <span className="shadowing-stat-note">{session.completed} de {settings.scope === "paragraph" ? 1 : story.paragraphs.length} {session.completed === 1 ? "parágrafo concluído" : "parágrafos concluídos"}</span>
+        </div>
+      </div>
+    </section>
     {session.complete ? <div role="status" className="status-card">
       <h3>{settings.scope === "paragraph" ? "Parágrafo concluído!" : session.completed === story.paragraphs.length ? "História concluída!" : "Prática concluída!"}</h3>
       <p>{session.completed} parágrafo(s) concluído(s) · {techniqueNames[settings.technique]}</p>
       <div className="shadowing-controls"><button type="button" onClick={onRestart}>Praticar novamente</button><button type="button" onClick={onBack}>Escolher outra história</button><button type="button" onClick={onMenu}>Voltar ao menu principal</button></div>
     </div> : <>
-      <p>História: parágrafo {session.paragraph + 1}/{story.paragraphs.length} · Concluídos: {session.completed}</p>
-      <progress aria-label="Parágrafos concluídos" value={session.completed} max={settings.scope === "paragraph" ? 1 : story.paragraphs.length} />
       <article className="shadowing-reading">
         <p lang={language}>{session.segments.map((part, index) => settings.unit === "sentence" && index === session.sentence ? <mark key={index}>{part}</mark> : <span key={index}>{part}</span>)}</p>
         {settings.translation && paragraph.pt && <p className="shadowing-translation" lang="pt-BR">{paragraph.pt}</p>}
@@ -51,7 +67,7 @@ function Practice({ story, language, settings, selected, onSettings, onBack, onM
       {settings.unit === "sentence" && <p>Frase {session.sentence + 1}/{session.segments.length}</p>}
       <div className="shadowing-controls shadowing-desktop-controls" role="group" aria-label="Controles de reprodução">
         <button type="button" aria-label="Anterior" disabled={!session.canPrevious} onClick={() => session.navigate(-1)}>⏮ Anterior</button>
-        <button type="button" aria-label="Play" disabled={session.playing || !session.hasVoice || configuring} onClick={session.play}>▶ Play</button>
+        <button type="button" aria-label="Play" disabled={session.playing || !session.hasVoice || configuring} onClick={play}>▶ Play</button>
         <button type="button" aria-label="Pause" disabled={!session.playing} onClick={session.pause}>⏸ Pause</button>
         <button type="button" aria-label="Próximo" disabled={!session.canNext} onClick={() => session.navigate(1)}>Próximo ⏭</button>
         <button type="button" aria-label="Repetir" disabled={!session.hasVoice || configuring} onClick={session.repeat}>↻ Repetir</button>
@@ -60,7 +76,7 @@ function Practice({ story, language, settings, selected, onSettings, onBack, onM
       </div>
       <div className="shadowing-mobile-controls" role="group" aria-label="Controles de reprodu??o mobile">
         <button type="button" aria-label="Anterior" disabled={!session.canPrevious} onClick={() => session.navigate(-1)}><ControlIcon lucide name="previous" /></button>
-        <button type="button" className="walking-toggle" aria-label={session.playing ? "Pausar" : "Continuar"} disabled={!session.playing && (!session.hasVoice || configuring)} onClick={session.playing ? session.pause : session.play}><ControlIcon lucide name={session.playing ? "pause" : "play"} /></button>
+        <button type="button" className="walking-toggle" aria-label={session.playing ? "Pausar" : "Continuar"} disabled={!session.playing && (!session.hasVoice || configuring)} onClick={session.playing ? session.pause : play}><ControlIcon lucide name={session.playing ? "pause" : "play"} /></button>
         <button type="button" aria-label="Pr?ximo" disabled={!session.canNext} onClick={() => session.navigate(1)}><ControlIcon lucide name="next" /></button>
         <button type="button" aria-label="Repetir" disabled={!session.hasVoice || configuring} onClick={session.repeat}><ControlIcon lucide name="repeat" /></button>
         <button type="button" aria-label="Parar" onClick={session.stop}><ControlIcon lucide name="stop" /></button>
