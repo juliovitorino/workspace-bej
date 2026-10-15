@@ -4,6 +4,8 @@ import { isAuthorMode } from "../utils/authorMode";
 import type { StudentLanguage } from "../config/languages";
 import { isMobileDevice } from "../utils/mobileDevice";
 import { WalkingMode } from "./WalkingMode";
+import { drawChunk, eligibleChunks, type ChunkLevel } from "../utils/chunkEligibility";
+import { ChunkLevelSelect } from "./ChunkLevelSelect";
 
 interface ChunkFlashcardsProps {
   intentions: MentalIntention[];
@@ -21,10 +23,6 @@ function formatStudyTime(totalSeconds: number): string {
   return [hours, minutes, seconds].map((part) => String(part).padStart(2, "0")).join(":");
 }
 
-function pickRandomId(ids: string[]): string {
-  return ids[Math.floor(Math.random() * ids.length)];
-}
-
 export function ChunkFlashcards({
   intentions,
   language,
@@ -35,6 +33,7 @@ export function ChunkFlashcards({
 }: ChunkFlashcardsProps) {
   const authorMode = isAuthorMode();
   const [walking, setWalking] = useState(false);
+  const [level, setLevel] = useState<ChunkLevel>("all");
   const [mobile, setMobile] = useState(isMobileDevice);
   useEffect(() => {
     const update = () => setMobile(isMobileDevice());
@@ -48,21 +47,13 @@ export function ChunkFlashcards({
 
   // O autor escolhe explicitamente quais intenções são chunks completos.
   const chunks = useMemo(
-    () =>
-      intentions.filter(
-        (item) =>
-          item.allowLanguageChunkPractice === true &&
-          typeof item.id === "string" &&
-          typeof item.english === "string" &&
-          item.english.trim().length > 0 &&
-          typeof item.intention === "string" &&
-          item.intention.trim().length > 0
-      ),
-    [intentions]
+    () => eligibleChunks(intentions, level),
+    [intentions, level]
   );
 
   // Estado da rodada em memória: cada ID só pode ser sorteado uma vez.
   const [drawnIds, setDrawnIds] = useState<string[]>([]);
+  const [round, setRound] = useState(1);
   const [currentId, setCurrentId] = useState<string | null>(null);
   const [audioError, setAudioError] = useState<string | null>(null);
   const [copiedChunkId, setCopiedChunkId] = useState<string | null>(null);
@@ -128,6 +119,7 @@ export function ChunkFlashcards({
 
   useEffect(() => {
     setDrawnIds([]);
+    setRound(1);
     setCurrentId(null);
     setAudioError(null);
     if (copyFeedbackTimeout.current !== null) clearTimeout(copyFeedbackTimeout.current);
@@ -139,15 +131,21 @@ export function ChunkFlashcards({
     setIsStudyTimeVisible(false);
     setPausedAt(null);
     setTotalPausedMs(0);
-  }, [chunks]);
+  }, [intentions]);
 
   const currentChunk = chunks.find((item) => item.id === currentId) ?? null;
   const total = chunks.length;
   const completed = total > 0 && drawnIds.length === total;
   const shownCount = drawnIds.length;
+  const position = currentId === null ? 0 : drawnIds.indexOf(currentId) + 1;
 
-  function nextChunk() {
-    if (total === 0) return;
+  function nextChunk(pool: MentalIntention[] = chunks, restart = false) {
+    if (pool.length === 0) {
+      setDrawnIds([]);
+      setRound(1);
+      setCurrentId(null);
+      return;
+    }
     // Inicia no primeiro chunk; uma nova rodada não zera a sessão.
     if (studyStartedAt === null) setStudyStartedAt(Date.now());
     if (typeof window !== "undefined" && "speechSynthesis" in window) {
@@ -159,21 +157,25 @@ export function ChunkFlashcards({
     setCopiedIntentionId(null);
     setCopyError(null);
 
-    if (completed) {
-      // Nova rodada: evita mostrar imediatamente o último chunk novamente.
-      const candidates = chunks.filter((item) => total === 1 || item.id !== currentId);
-      const firstId = pickRandomId(candidates.map((item) => item.id));
-      setDrawnIds([firstId]);
-      setCurrentId(firstId);
-      return;
-    }
+    const draw = drawChunk(pool, drawnIds, currentId, restart);
+    if (!draw) return;
+    if (draw.newRound) setRound(previous => restart ? 1 : previous + 1);
+    setDrawnIds(draw.drawnIds);
+    setCurrentId(draw.id);
+  }
 
-    const seen = new Set(drawnIds);
-    const remaining = chunks.filter((item) => !seen.has(item.id));
-    if (remaining.length === 0) return;
-    const nextId = pickRandomId(remaining.map((item) => item.id));
-    setDrawnIds((previous) => [...previous, nextId]);
-    setCurrentId(nextId);
+  function changeLevel(nextLevel: ChunkLevel) {
+    if (nextLevel === level) return;
+    window.speechSynthesis?.cancel();
+    setLevel(nextLevel);
+    setAudioError(null);
+    setCopiedChunkId(null);
+    setCopiedIntentionId(null);
+    setCopyError(null);
+    if (copyFeedbackTimeout.current !== null) clearTimeout(copyFeedbackTimeout.current);
+    // Start a fresh round with the same draw mechanism, preserving session time.
+    if (walking || currentId !== null) nextChunk(eligibleChunks(intentions, nextLevel), true);
+    else { setDrawnIds([]); setCurrentId(null); }
   }
 
   // Reutiliza a mesma estratégia de cópia para o texto do chunk e seu ID.
@@ -268,14 +270,14 @@ export function ChunkFlashcards({
     };
   }, []);
 
-  if (walking && currentChunk) {
-    const position = drawnIds.indexOf(currentChunk.id);
+  if (walking) {
     return <WalkingMode chunk={currentChunk} language={language}
-      canPrevious={position > 0}
-      onPrevious={() => { if (position > 0) setCurrentId(drawnIds[position - 1]); }}
+      level={level} onLevelChange={changeLevel} position={position} total={total} round={round}
+      canPrevious={position > 1}
+      onPrevious={() => { if (position > 1) setCurrentId(drawnIds[position - 2]); }}
       onNext={() => {
-        if (position < drawnIds.length - 1) {
-          setCurrentId(drawnIds[position + 1]);
+        if (position < drawnIds.length) {
+          setCurrentId(drawnIds[position]);
           return false;
         }
         nextChunk();
@@ -350,6 +352,9 @@ export function ChunkFlashcards({
         </div>
       </div>
 
+      <ChunkLevelSelect value={level} onChange={changeLevel} />
+      <p className="chunk-intention-count" role="status" aria-label="Posição do chunk na rodada">{position}/{total}</p>
+
       {pausedAt !== null && (
         <div
           role="status"
@@ -376,16 +381,16 @@ export function ChunkFlashcards({
 
       {total === 0 ? (
         <div className="chunk-flashcards-empty" role="status">
-          <h3>Nenhum chunk habilitado</h3>
-          <p>
+          <h3>{level === "all" ? "Nenhum chunk habilitado" : `Nenhum chunk disponível para o nível ${level}.`}</h3>
+          {level === "all" && <p>
             Marque intenções completas com <code>"allowLanguageChunkPractice": true</code>
             {" "}no JSON do Mental Hashmap para praticá-las aqui.
-          </p>
+          </p>}
         </div>
       ) : (
         <>
           <div className="chunk-flashcards-progress" aria-live="polite">
-            <span>Rodada atual</span>
+            <span>Rodada {round}</span>
             <strong>{shownCount} de {total}</strong>
           </div>
           <div
@@ -522,7 +527,7 @@ export function ChunkFlashcards({
               window.speechSynthesis?.cancel();
               setWalking(true);
             }}>🎧 Modo Caminhada</button>}
-            <button type="button" className="primary-button" onClick={nextChunk}>
+            <button type="button" className="primary-button" onClick={() => nextChunk()}>
               {currentChunk === null ? "Começar" : completed ? "Nova rodada" : "Próximo →"}
             </button>
           </div>
