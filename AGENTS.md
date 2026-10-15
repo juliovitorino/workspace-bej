@@ -56,6 +56,20 @@ These rules override any general instruction to preserve or synchronize all fiel
 - Do not change files outside the requested scope.
 - Show a summary of changes after completion.
 
+## User-Facing Reports — Never Display UUIDs
+
+- IDs (including slug + UUID) are internal technical identifiers. Keep generating,
+  preserving, comparing and validating them as required by this document.
+- **Never print or enumerate raw UUIDs or intention IDs in user-facing output**:
+  terminal summaries, progress reports, plans, audit results, completion messages,
+  tables, or lists. This applies to INCREMENTAL, FULL AUDIT and new-intention tasks.
+- Instead, show useful information: intention names or short descriptions,
+  counts by language, affected files, validation status and actionable issues.
+- Internal scripts, JSON files and validation processes may use IDs normally.
+  Do not weaken ID checks or change the JSON schema to hide UUIDs.
+- Only show a specific ID or UUID if the user explicitly requests it for
+  debugging, tracing or inspection.
+
 ## Synchronization Modes (Token-Efficient)
 
 **Default: INCREMENTAL.** Use FULL AUDIT only when the user explicitly
@@ -80,7 +94,7 @@ For routine additions and synchronization of new intentions:
 4. Retrieve and examine **only the missing intentions**, plus a small number
    of relevant existing entries when needed to preserve schema or detect
    semantic duplicates. Never translate or regenerate synchronized entries.
-5. Before writing, report the missing IDs, affected files and planned changes.
+5. Before writing, report the number of missing intentions per language, affected files and planned changes; do not display raw IDs or UUIDs.
    If the user's prompt requires approval, stop and wait for explicit approval.
 6. For each approved missing intention, create a natural linguistic equivalent
    in the destination language, respecting all schema, searchTerms, regex,
@@ -92,8 +106,8 @@ For routine additions and synchronization of new intentions:
    newly added entries, and ID coverage using local code. Run relevant tests
    when available; do not perform a new full semantic audit.
 9. Clean up task-created temporary files under the cleanup rules below.
-   Report counts, IDs added, files changed, validation results and unresolved
-   issues concisely.
+   Report counts, intention names or short descriptions when useful, files changed,
+   validation results and unresolved issues concisely; never list raw IDs or UUIDs.
 
 **Efficiency rules:** Prefer a single Codex agent for a small batch of new
 intentions. Do not spawn language subagents for one or a few intentions.
@@ -144,7 +158,8 @@ When the user requests a new intention:
 9. Set allowLanguageChunkPractice: true only for
    complete, independently usable language chunks.
 10. Validate JSON syntax, IDs and required fields.
-11. Report changes and any uncertain translations.
+11. Report changes using intention names or short descriptions, without listing
+    raw IDs or UUIDs, and mention any uncertain translations.
 
 Never perform literal translation when it changes
 the linguistic intention.

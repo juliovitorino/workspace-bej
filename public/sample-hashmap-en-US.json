@@ -7,7 +7,7 @@
     "targetStudent": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1106
+    "totalIntentions": 1230
   },
   "mentalMap": [
     {
@@ -47299,6 +47299,3762 @@
       "related": [],
       "englishLevel": "B1",
       "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "cad6d4cf-6d3a-4462-95cd-7edb1bd5b059",
+      "intention": "Como as coisas têm ido?",
+      "english": "How have things been going?",
+      "pattern": "How have things been going",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "como as coisas têm ido?",
+        "how have things been going"
+      ],
+      "validationPatterns": [
+        "\\bHow\\s+have\\s+things\\s+been\\s+going\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Como as coisas têm ido?",
+          "en": "How have things been going?",
+          "ptIntent": "Como as coisas têm ido",
+          "enIntent": "How have things been going"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "1bb9902f-de73-4d9c-86fb-37fa46c1eede",
+      "intention": "As coisas têm ido muito bem.",
+      "english": "Things have been going very well.",
+      "pattern": "Things have been going very well",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "as coisas têm ido muito bem.",
+        "things have been going very well"
+      ],
+      "validationPatterns": [
+        "\\bThings\\s+have\\s+been\\s+going\\s+very\\s+well\\b"
+      ],
+      "examples": [
+        {
+          "pt": "As coisas têm ido muito bem.",
+          "en": "Things have been going very well.",
+          "ptIntent": "As coisas têm ido muito bem",
+          "enIntent": "Things have been going very well"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "556da09b-4f7a-4dee-a174-52c18824ab67",
+      "intention": "Tenho estado bem ocupado ultimamente.",
+      "english": "I've been quite busy lately.",
+      "pattern": "I've been quite busy lately",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "tenho estado bem ocupado ultimamente.",
+        "i've been quite busy lately"
+      ],
+      "validationPatterns": [
+        "\\bI've\\s+been\\s+quite\\s+busy\\s+lately\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Tenho estado bem ocupado ultimamente.",
+          "en": "I've been quite busy lately.",
+          "ptIntent": "Tenho estado bem ocupado ultimamente",
+          "enIntent": "I've been quite busy lately"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "1f3acec2-11f9-43c7-993e-601dc7632026",
+      "intention": "Entendo o que você está dizendo.",
+      "english": "I understand what you're saying.",
+      "pattern": "I understand what you're saying",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "entendo o que você está dizendo.",
+        "i understand what you're saying"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+understand\\s+what\\s+you're\\s+saying\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Entendo o que você está dizendo.",
+          "en": "I understand what you're saying.",
+          "ptIntent": "Entendo o que você está dizendo",
+          "enIntent": "I understand what you're saying"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "ce4e0f71-720b-4a0b-8fdf-e1253f407294",
+      "intention": "Não tenho certeza se concordo com isso.",
+      "english": "I'm not sure I agree with that.",
+      "pattern": "I'm not sure I agree with that",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "não tenho certeza se concordo com isso.",
+        "i'm not sure i agree with that"
+      ],
+      "validationPatterns": [
+        "\\bI'm\\s+not\\s+sure\\s+I\\s+agree\\s+with\\s+that\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não tenho certeza se concordo com isso.",
+          "en": "I'm not sure I agree with that.",
+          "ptIntent": "Não tenho certeza se concordo com isso",
+          "enIntent": "I'm not sure I agree with that"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "269a6329-8471-4634-af70-dc503e63860d",
+      "intention": "Esse é um ponto interessante.",
+      "english": "That's an interesting point.",
+      "pattern": "That's an interesting point",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "esse é um ponto interessante.",
+        "that's an interesting point"
+      ],
+      "validationPatterns": [
+        "\\bThat's\\s+an\\s+interesting\\s+point\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Esse é um ponto interessante.",
+          "en": "That's an interesting point.",
+          "ptIntent": "Esse é um ponto interessante",
+          "enIntent": "That's an interesting point"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "40ed2798-8c42-46dc-8f90-3065b4098338",
+      "intention": "Fico feliz que você tenha me contado.",
+      "english": "I'm glad you told me.",
+      "pattern": "I'm glad you told me",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "fico feliz que você tenha me contado.",
+        "i'm glad you told me"
+      ],
+      "validationPatterns": [
+        "\\bI'm\\s+glad\\s+you\\s+told\\s+me\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Fico feliz que você tenha me contado.",
+          "en": "I'm glad you told me.",
+          "ptIntent": "Fico feliz que você tenha me contado",
+          "enIntent": "I'm glad you told me"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "57f187c6-9e9b-4210-91d5-0d18a95cd34b",
+      "intention": "Isso acontece comigo também.",
+      "english": "This happens to me too.",
+      "pattern": "This happens to me too",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "isso acontece comigo também.",
+        "this happens to me too"
+      ],
+      "validationPatterns": [
+        "\\bThis\\s+happens\\s+to\\s+me\\s+too\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Isso acontece comigo também.",
+          "en": "This happens to me too.",
+          "ptIntent": "Isso acontece comigo também",
+          "enIntent": "This happens to me too"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "e0bfc54c-be0e-4d39-8b8d-933f38cf3863",
+      "intention": "Deixe-me verificar e depois te retorno.",
+      "english": "Let me check and I'll get back to you.",
+      "pattern": "Let me check and I'll get back to you",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "deixe-me verificar e depois te retorno.",
+        "let me check and i'll get back to you"
+      ],
+      "validationPatterns": [
+        "\\bLet\\s+me\\s+check\\s+and\\s+I'll\\s+get\\s+back\\s+to\\s+you\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Deixe-me verificar e depois te retorno.",
+          "en": "Let me check and I'll get back to you.",
+          "ptIntent": "Deixe-me verificar e depois te retorno",
+          "enIntent": "Let me check and I'll get back to you"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "7cef9289-3b88-4cee-9a3d-a21c29800fc7",
+      "intention": "Vou terminar isso hoje.",
+      "english": "I'll finish this today.",
+      "pattern": "I'll finish this today",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "vou terminar isso hoje.",
+        "i'll finish this today"
+      ],
+      "validationPatterns": [
+        "\\bI'll\\s+finish\\s+this\\s+today\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vou terminar isso hoje.",
+          "en": "I'll finish this today.",
+          "ptIntent": "Vou terminar isso hoje",
+          "enIntent": "I'll finish this today"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "521240ed-fd64-4dea-80da-1529e6d8de78",
+      "intention": "Podemos adiar um pouco?",
+      "english": "Can we postpone it a little?",
+      "pattern": "Can we postpone it a little",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "podemos adiar um pouco?",
+        "can we postpone it a little"
+      ],
+      "validationPatterns": [
+        "\\bCan\\s+we\\s+postpone\\s+it\\s+a\\s+little\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Podemos adiar um pouco?",
+          "en": "Can we postpone it a little?",
+          "ptIntent": "Podemos adiar um pouco",
+          "enIntent": "Can we postpone it a little"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "efa114b5-da15-42aa-9c58-64a3786ea7c0",
+      "intention": "Voltaremos a isso mais tarde.",
+      "english": "We'll come back to this later.",
+      "pattern": "We'll come back to this later",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "voltaremos a isso mais tarde.",
+        "we'll come back to this later"
+      ],
+      "validationPatterns": [
+        "\\bWe'll\\s+come\\s+back\\s+to\\s+this\\s+later\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Voltaremos a isso mais tarde.",
+          "en": "We'll come back to this later.",
+          "ptIntent": "Voltaremos a isso mais tarde",
+          "enIntent": "We'll come back to this later"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "92a9c12f-42a9-4ed7-ad64-54c11c8dae22",
+      "intention": "Vou dar uma olhada nisso.",
+      "english": "I'll take a look at that.",
+      "pattern": "I'll take a look at that",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "vou dar uma olhada nisso.",
+        "i'll take a look at that"
+      ],
+      "validationPatterns": [
+        "\\bI'll\\s+take\\s+a\\s+look\\s+at\\s+that\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vou dar uma olhada nisso.",
+          "en": "I'll take a look at that.",
+          "ptIntent": "Vou dar uma olhada nisso",
+          "enIntent": "I'll take a look at that"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "94861caf-2e45-48a3-8d11-1f1c89204113",
+      "intention": "Deixe-me ver o que posso fazer.",
+      "english": "Let me see what I can do.",
+      "pattern": "Let me see what I can do",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "deixe-me ver o que posso fazer.",
+        "let me see what i can do"
+      ],
+      "validationPatterns": [
+        "\\bLet\\s+me\\s+see\\s+what\\s+I\\s+can\\s+do\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Deixe-me ver o que posso fazer.",
+          "en": "Let me see what I can do.",
+          "ptIntent": "Deixe-me ver o que posso fazer",
+          "enIntent": "Let me see what I can do"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "ab8b78e2-bd10-41ab-a000-7d0a02707838",
+      "intention": "Vou encontrar uma solução.",
+      "english": "I'll figure something out.",
+      "pattern": "I'll figure something out",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "vou encontrar uma solução.",
+        "i'll figure something out"
+      ],
+      "validationPatterns": [
+        "\\bI'll\\s+figure\\s+something\\s+out\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vou encontrar uma solução.",
+          "en": "I'll figure something out.",
+          "ptIntent": "Vou encontrar uma solução",
+          "enIntent": "I'll figure something out"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "6f8e2e16-614f-48bd-bc12-01f1e41c1b80",
+      "intention": "Vamos resolver isso juntos.",
+      "english": "Let's solve this together.",
+      "pattern": "Let's solve this together",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "vamos resolver isso juntos.",
+        "let's solve this together"
+      ],
+      "validationPatterns": [
+        "\\bLet's\\s+solve\\s+this\\s+together\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vamos resolver isso juntos.",
+          "en": "Let's solve this together.",
+          "ptIntent": "Vamos resolver isso juntos",
+          "enIntent": "Let's solve this together"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "64455e34-394c-47cb-b1ac-ec915db365ef",
+      "intention": "Estou com dificuldade para entender isso.",
+      "english": "I'm having trouble understanding this.",
+      "pattern": "I'm having trouble understanding this",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "estou com dificuldade para entender isso.",
+        "i'm having trouble understanding this"
+      ],
+      "validationPatterns": [
+        "\\bI'm\\s+having\\s+trouble\\s+understanding\\s+this\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Estou com dificuldade para entender isso.",
+          "en": "I'm having trouble understanding this.",
+          "ptIntent": "Estou com dificuldade para entender isso",
+          "enIntent": "I'm having trouble understanding this"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "a2533aef-3f02-4e68-a051-0452fdc134a1",
+      "intention": "Você poderia me explicar isso passo a passo?",
+      "english": "Could you explain it to me step by step?",
+      "pattern": "Could you explain it to me step by step",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "você poderia me explicar isso passo a passo?",
+        "could you explain it to me step by step"
+      ],
+      "validationPatterns": [
+        "\\bCould\\s+you\\s+explain\\s+it\\s+to\\s+me\\s+step\\s+by\\s+step\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Você poderia me explicar isso passo a passo?",
+          "en": "Could you explain it to me step by step?",
+          "ptIntent": "Você poderia me explicar isso passo a passo",
+          "enIntent": "Could you explain it to me step by step"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "39d17273-1543-4604-af08-4bbaa4d56f91",
+      "intention": "Você poderia me dar um exemplo?",
+      "english": "Could you give me an example?",
+      "pattern": "Could you give me an example",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "você poderia me dar um exemplo?",
+        "could you give me an example"
+      ],
+      "validationPatterns": [
+        "\\bCould\\s+you\\s+give\\s+me\\s+an\\s+example\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Você poderia me dar um exemplo?",
+          "en": "Could you give me an example?",
+          "ptIntent": "Você poderia me dar um exemplo",
+          "enIntent": "Could you give me an example"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "fca7e463-0840-4b65-b7ed-edf0e35bba53",
+      "intention": "Deixe-me confirmar se entendi.",
+      "english": "Let me make sure I understand.",
+      "pattern": "Let me make sure I understand",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "deixe-me confirmar se entendi.",
+        "let me make sure i understand"
+      ],
+      "validationPatterns": [
+        "\\bLet\\s+me\\s+make\\s+sure\\s+I\\s+understand\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Deixe-me confirmar se entendi.",
+          "en": "Let me make sure I understand.",
+          "ptIntent": "Deixe-me confirmar se entendi",
+          "enIntent": "Let me make sure I understand"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "0cc71ff7-4e9d-41c5-b713-b037943438c6",
+      "intention": "Surgiu um imprevisto.",
+      "english": "Something came up.",
+      "pattern": "Something came up",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "surgiu um imprevisto.",
+        "something came up"
+      ],
+      "validationPatterns": [
+        "\\bSomething\\s+came\\s+up\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Surgiu um imprevisto.",
+          "en": "Something came up.",
+          "ptIntent": "Surgiu um imprevisto",
+          "enIntent": "Something came up"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "41b9707a-21cc-4b72-8363-4cac03aff21c",
+      "intention": "Algo deu errado.",
+      "english": "Something went wrong.",
+      "pattern": "Something went wrong",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "algo deu errado.",
+        "something went wrong"
+      ],
+      "validationPatterns": [
+        "\\bSomething\\s+went\\s+wrong\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Algo deu errado.",
+          "en": "Something went wrong.",
+          "ptIntent": "Algo deu errado",
+          "enIntent": "Something went wrong"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "9ea9ab61-346d-4007-943f-ac54d9dd58c1",
+      "intention": "Estamos tendo um pequeno problema com isso.",
+      "english": "We're having a little problem with that.",
+      "pattern": "We're having a little problem with that",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "estamos tendo um pequeno problema com isso.",
+        "we're having a little problem with that"
+      ],
+      "validationPatterns": [
+        "\\bWe're\\s+having\\s+a\\s+little\\s+problem\\s+with\\s+that\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Estamos tendo um pequeno problema com isso.",
+          "en": "We're having a little problem with that.",
+          "ptIntent": "Estamos tendo um pequeno problema com isso",
+          "enIntent": "We're having a little problem with that"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "dfedba40-aff9-41f6-99d7-b44ecad603d4",
+      "intention": "Vamos ver o que podemos fazer a respeito.",
+      "english": "Let's see what we can do about it.",
+      "pattern": "Let's see what we can do about it",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "vamos ver o que podemos fazer a respeito.",
+        "let's see what we can do about it"
+      ],
+      "validationPatterns": [
+        "\\bLet's\\s+see\\s+what\\s+we\\s+can\\s+do\\s+about\\s+it\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vamos ver o que podemos fazer a respeito.",
+          "en": "Let's see what we can do about it.",
+          "ptIntent": "Vamos ver o que podemos fazer a respeito",
+          "enIntent": "Let's see what we can do about it"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "dfe3813c-0e98-4cc5-a93c-e5531eaa9794",
+      "intention": "Vamos considerar outra opção.",
+      "english": "Let's look at another option.",
+      "pattern": "Let's look at another option",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "vamos considerar outra opção.",
+        "let's look at another option"
+      ],
+      "validationPatterns": [
+        "\\bLet's\\s+look\\s+at\\s+another\\s+option\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vamos considerar outra opção.",
+          "en": "Let's look at another option.",
+          "ptIntent": "Vamos considerar outra opção",
+          "enIntent": "Let's look at another option"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "c8ad3f2b-b1dd-4127-8bca-ce9ddb1b7292",
+      "intention": "Não é tão ruim quanto parece.",
+      "english": "It's not as bad as it seems.",
+      "pattern": "It's not as bad as it seems",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "não é tão ruim quanto parece.",
+        "it's not as bad as it seems"
+      ],
+      "validationPatterns": [
+        "\\bIt's\\s+not\\s+as\\s+bad\\s+as\\s+it\\s+seems\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não é tão ruim quanto parece.",
+          "en": "It's not as bad as it seems.",
+          "ptIntent": "Não é tão ruim quanto parece",
+          "enIntent": "It's not as bad as it seems"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "aaac58eb-44e7-49c5-8db1-71cf6f93dd37",
+      "intention": "Acho que sei o que aconteceu.",
+      "english": "I think I know what happened.",
+      "pattern": "I think I know what happened",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "acho que sei o que aconteceu.",
+        "i think i know what happened"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+think\\s+I\\s+know\\s+what\\s+happened\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Acho que sei o que aconteceu.",
+          "en": "I think I know what happened.",
+          "ptIntent": "Acho que sei o que aconteceu",
+          "enIntent": "I think I know what happened"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "51ce39bb-0d2f-466d-ae11-e5d358dad099",
+      "intention": "Isso deve resolver o problema.",
+      "english": "That should solve the problem.",
+      "pattern": "That should solve the problem",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "isso deve resolver o problema.",
+        "that should solve the problem"
+      ],
+      "validationPatterns": [
+        "\\bThat\\s+should\\s+solve\\s+the\\s+problem\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Isso deve resolver o problema.",
+          "en": "That should solve the problem.",
+          "ptIntent": "Isso deve resolver o problema",
+          "enIntent": "That should solve the problem"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "d8ea2a5f-ad64-4548-aada-b58955e66028",
+      "intention": "Você vai fazer alguma coisa neste fim de semana?",
+      "english": "Are you doing anything this weekend?",
+      "pattern": "Are you doing anything this weekend",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "você vai fazer alguma coisa neste fim de semana?",
+        "are you doing anything this weekend"
+      ],
+      "validationPatterns": [
+        "\\bAre\\s+you\\s+doing\\s+anything\\s+this\\s+weekend\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Você vai fazer alguma coisa neste fim de semana?",
+          "en": "Are you doing anything this weekend?",
+          "ptIntent": "Você vai fazer alguma coisa neste fim de semana",
+          "enIntent": "Are you doing anything this weekend"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "a8138e8f-e10a-40f4-bfe7-c4f8f7aa14ad",
+      "intention": "Você está livre mais tarde?",
+      "english": "Are you free later?",
+      "pattern": "Are you free later",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "você está livre mais tarde?",
+        "are you free later"
+      ],
+      "validationPatterns": [
+        "\\bAre\\s+you\\s+free\\s+later\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Você está livre mais tarde?",
+          "en": "Are you free later?",
+          "ptIntent": "Você está livre mais tarde",
+          "enIntent": "Are you free later"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "b27166b6-1d95-4b34-a774-d1458d628576",
+      "intention": "Eu ficaria feliz em ir com você.",
+      "english": "I'd be happy to join you.",
+      "pattern": "I'd be happy to join you",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "eu ficaria feliz em ir com você.",
+        "i'd be happy to join you"
+      ],
+      "validationPatterns": [
+        "\\bI'd\\s+be\\s+happy\\s+to\\s+join\\s+you\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Eu ficaria feliz em ir com você.",
+          "en": "I'd be happy to join you.",
+          "ptIntent": "Eu ficaria feliz em ir com você",
+          "enIntent": "I'd be happy to join you"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "774734cb-9f24-4e41-b6ba-7022589ec01e",
+      "intention": "Podemos remarcar para outro dia?",
+      "english": "Can we reschedule for another day?",
+      "pattern": "Can we reschedule for another day",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "podemos remarcar para outro dia?",
+        "can we reschedule for another day"
+      ],
+      "validationPatterns": [
+        "\\bCan\\s+we\\s+reschedule\\s+for\\s+another\\s+day\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Podemos remarcar para outro dia?",
+          "en": "Can we reschedule for another day?",
+          "ptIntent": "Podemos remarcar para outro dia",
+          "enIntent": "Can we reschedule for another day"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "03365bd7-31fd-47cf-8476-1a60e634c40b",
+      "intention": "Que horário é bom para você?",
+      "english": "What time is good for you?",
+      "pattern": "What time is good for you",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "que horário é bom para você?",
+        "what time is good for you"
+      ],
+      "validationPatterns": [
+        "\\bWhat\\s+time\\s+is\\s+good\\s+for\\s+you\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Que horário é bom para você?",
+          "en": "What time is good for you?",
+          "ptIntent": "Que horário é bom para você",
+          "enIntent": "What time is good for you"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "05d25c40-f61d-43c1-b65e-58bcaa566343",
+      "intention": "Deveríamos repetir isso qualquer dia.",
+      "english": "We should do this again sometime.",
+      "pattern": "We should do this again sometime",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "deveríamos repetir isso qualquer dia.",
+        "we should do this again sometime"
+      ],
+      "validationPatterns": [
+        "\\bWe\\s+should\\s+do\\s+this\\s+again\\s+sometime\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Deveríamos repetir isso qualquer dia.",
+          "en": "We should do this again sometime.",
+          "ptIntent": "Deveríamos repetir isso qualquer dia",
+          "enIntent": "We should do this again sometime"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "3301c395-7663-4d69-82c9-fbc043c6a02c",
+      "intention": "Foi ótimo passar um tempo com você.",
+      "english": "It was great spending time with you.",
+      "pattern": "It was great spending time with you",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "foi ótimo passar um tempo com você.",
+        "it was great spending time with you"
+      ],
+      "validationPatterns": [
+        "\\bIt\\s+was\\s+great\\s+spending\\s+time\\s+with\\s+you\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Foi ótimo passar um tempo com você.",
+          "en": "It was great spending time with you.",
+          "ptIntent": "Foi ótimo passar um tempo com você",
+          "enIntent": "It was great spending time with you"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "fcd23e2a-373e-4ab9-b4d8-104861922b68",
+      "intention": "Isso significa muito para mim.",
+      "english": "This means a lot to me.",
+      "pattern": "This means a lot to me",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "isso significa muito para mim.",
+        "this means a lot to me"
+      ],
+      "validationPatterns": [
+        "\\bThis\\s+means\\s+a\\s+lot\\s+to\\s+me\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Isso significa muito para mim.",
+          "en": "This means a lot to me.",
+          "ptIntent": "Isso significa muito para mim",
+          "enIntent": "This means a lot to me"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "807506e9-d19f-4c66-a26e-e98443243e00",
+      "intention": "Isso não me incomoda.",
+      "english": "That doesn't bother me.",
+      "pattern": "That doesn't bother me",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "isso não me incomoda.",
+        "that doesn't bother me"
+      ],
+      "validationPatterns": [
+        "\\bThat\\s+doesn't\\s+bother\\s+me\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Isso não me incomoda.",
+          "en": "That doesn't bother me.",
+          "ptIntent": "Isso não me incomoda",
+          "enIntent": "That doesn't bother me"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "f702fa24-7bdf-45de-bcfb-64efcff2f0d6",
+      "intention": "Tenho sentimentos contraditórios sobre isso.",
+      "english": "I have mixed feelings about this.",
+      "pattern": "I have mixed feelings about this",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "tenho sentimentos contraditórios sobre isso.",
+        "i have mixed feelings about this"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+have\\s+mixed\\s+feelings\\s+about\\s+this\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Tenho sentimentos contraditórios sobre isso.",
+          "en": "I have mixed feelings about this.",
+          "ptIntent": "Tenho sentimentos contraditórios sobre isso",
+          "enIntent": "I have mixed feelings about this"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "c4b8477b-4c81-49df-a0c1-d5fa17b44939",
+      "intention": "Estou começando a entender seu ponto.",
+      "english": "I'm starting to understand your point.",
+      "pattern": "I'm starting to understand your point",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "estou começando a entender seu ponto.",
+        "i'm starting to understand your point"
+      ],
+      "validationPatterns": [
+        "\\bI'm\\s+starting\\s+to\\s+understand\\s+your\\s+point\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Estou começando a entender seu ponto.",
+          "en": "I'm starting to understand your point.",
+          "ptIntent": "Estou começando a entender seu ponto",
+          "enIntent": "I'm starting to understand your point"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "ddd6eadf-cdd0-424a-a901-d1de4012d9ab",
+      "intention": "Essa é uma boa maneira de enxergar as coisas.",
+      "english": "That's a good way to look at things.",
+      "pattern": "That's a good way to look at things",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "essa é uma boa maneira de enxergar as coisas.",
+        "that's a good way to look at things"
+      ],
+      "validationPatterns": [
+        "\\bThat's\\s+a\\s+good\\s+way\\s+to\\s+look\\s+at\\s+things\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Essa é uma boa maneira de enxergar as coisas.",
+          "en": "That's a good way to look at things.",
+          "ptIntent": "Essa é uma boa maneira de enxergar as coisas",
+          "enIntent": "That's a good way to look at things"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "57ecc97e-d077-4a91-93a8-64172f510057",
+      "intention": "Vou ter que pensar sobre isso.",
+      "english": "I'll have to think about that.",
+      "pattern": "I'll have to think about that",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "vou ter que pensar sobre isso.",
+        "i'll have to think about that"
+      ],
+      "validationPatterns": [
+        "\\bI'll\\s+have\\s+to\\s+think\\s+about\\s+that\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vou ter que pensar sobre isso.",
+          "en": "I'll have to think about that.",
+          "ptIntent": "Vou ter que pensar sobre isso",
+          "enIntent": "I'll have to think about that"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "eb0d1fd1-cd06-4bc5-9336-ed8647350ab9",
+      "intention": "Há dois lados nessa questão.",
+      "english": "There are two sides to this.",
+      "pattern": "There are two sides to this",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "há dois lados nessa questão.",
+        "there are two sides to this"
+      ],
+      "validationPatterns": [
+        "\\bThere\\s+are\\s+two\\s+sides\\s+to\\s+this\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Há dois lados nessa questão.",
+          "en": "There are two sides to this.",
+          "ptIntent": "Há dois lados nessa questão",
+          "enIntent": "There are two sides to this"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "e9e25a4c-a64e-4ee0-ac48-e160e591181e",
+      "intention": "A questão é a seguinte.",
+      "english": "The question is this.",
+      "pattern": "The question is this",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "a questão é a seguinte.",
+        "the question is this"
+      ],
+      "validationPatterns": [
+        "\\bThe\\s+question\\s+is\\s+this\\b"
+      ],
+      "examples": [
+        {
+          "pt": "A questão é a seguinte.",
+          "en": "The question is this.",
+          "ptIntent": "A questão é a seguinte",
+          "enIntent": "The question is this"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "bffdfddd-66ab-4913-b7ec-cdd2bf44017f",
+      "intention": "Estou tentando descobrir a causa disso.",
+      "english": "I'm trying to get to the bottom of this.",
+      "pattern": "I'm trying to get to the bottom of this",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "estou tentando descobrir a causa disso.",
+        "i'm trying to get to the bottom of this"
+      ],
+      "validationPatterns": [
+        "\\bI'm\\s+trying\\s+to\\s+get\\s+to\\s+the\\s+bottom\\s+of\\s+this\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Estou tentando descobrir a causa disso.",
+          "en": "I'm trying to get to the bottom of this.",
+          "ptIntent": "Estou tentando descobrir a causa disso",
+          "enIntent": "I'm trying to get to the bottom of this"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "021302d9-5fe8-402d-aa50-3072180691e7",
+      "intention": "Ainda estou avaliando minhas opções.",
+      "english": "I'm still evaluating my options.",
+      "pattern": "I'm still evaluating my options",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "ainda estou avaliando minhas opções.",
+        "i'm still evaluating my options"
+      ],
+      "validationPatterns": [
+        "\\bI'm\\s+still\\s+evaluating\\s+my\\s+options\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Ainda estou avaliando minhas opções.",
+          "en": "I'm still evaluating my options.",
+          "ptIntent": "Ainda estou avaliando minhas opções",
+          "enIntent": "I'm still evaluating my options"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "18faffc0-45cb-425a-aef7-eed8b175679c",
+      "intention": "Vamos lidar com uma coisa de cada vez.",
+      "english": "Let's deal with one thing at a time.",
+      "pattern": "Let's deal with one thing at a time",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "vamos lidar com uma coisa de cada vez.",
+        "let's deal with one thing at a time"
+      ],
+      "validationPatterns": [
+        "\\bLet's\\s+deal\\s+with\\s+one\\s+thing\\s+at\\s+a\\s+time\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vamos lidar com uma coisa de cada vez.",
+          "en": "Let's deal with one thing at a time.",
+          "ptIntent": "Vamos lidar com uma coisa de cada vez",
+          "enIntent": "Let's deal with one thing at a time"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "fa8f9045-b7a6-404d-a71c-7a73b04494c3",
+      "intention": "Vamos focar no que podemos controlar.",
+      "english": "Let's focus on what we can control.",
+      "pattern": "Let's focus on what we can control",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "vamos focar no que podemos controlar.",
+        "let's focus on what we can control"
+      ],
+      "validationPatterns": [
+        "\\bLet's\\s+focus\\s+on\\s+what\\s+we\\s+can\\s+control\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vamos focar no que podemos controlar.",
+          "en": "Let's focus on what we can control.",
+          "ptIntent": "Vamos focar no que podemos controlar",
+          "enIntent": "Let's focus on what we can control"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "345fafad-a94e-437e-b902-796ef3194f12",
+      "intention": "Estamos no caminho certo.",
+      "english": "We're on the right track.",
+      "pattern": "We're on the right track",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "estamos no caminho certo.",
+        "we're on the right track"
+      ],
+      "validationPatterns": [
+        "\\bWe're\\s+on\\s+the\\s+right\\s+track\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Estamos no caminho certo.",
+          "en": "We're on the right track.",
+          "ptIntent": "Estamos no caminho certo",
+          "enIntent": "We're on the right track"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "2c8c05ca-feba-42bf-b245-0b9b8675ae36",
+      "intention": "Qual é a melhor maneira de seguir em frente?",
+      "english": "What's the best way to move forward?",
+      "pattern": "What's the best way to move forward",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "qual é a melhor maneira de seguir em frente?",
+        "what's the best way to move forward"
+      ],
+      "validationPatterns": [
+        "\\bWhat's\\s+the\\s+best\\s+way\\s+to\\s+move\\s+forward\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Qual é a melhor maneira de seguir em frente?",
+          "en": "What's the best way to move forward?",
+          "ptIntent": "Qual é a melhor maneira de seguir em frente",
+          "enIntent": "What's the best way to move forward"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "6d5a8270-e29a-461a-8dc7-2c600f438a0e",
+      "intention": "Quais são os próximos passos?",
+      "english": "What are the next steps?",
+      "pattern": "What are the next steps",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "quais são os próximos passos?",
+        "what are the next steps"
+      ],
+      "validationPatterns": [
+        "\\bWhat\\s+are\\s+the\\s+next\\s+steps\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Quais são os próximos passos?",
+          "en": "What are the next steps?",
+          "ptIntent": "Quais são os próximos passos",
+          "enIntent": "What are the next steps"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "2e4d8893-4a7e-4c00-8cda-8a829dfb1728",
+      "intention": "Obrigado por chamar minha atenção para isso.",
+      "english": "Thank you for bringing this to my attention.",
+      "pattern": "Thank you for bringing this to my attention",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "obrigado por chamar minha atenção para isso.",
+        "thank you for bringing this to my attention"
+      ],
+      "validationPatterns": [
+        "\\bThank\\s+you\\s+for\\s+bringing\\s+this\\s+to\\s+my\\s+attention\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Obrigado por chamar minha atenção para isso.",
+          "en": "Thank you for bringing this to my attention.",
+          "ptIntent": "Obrigado por chamar minha atenção para isso",
+          "enIntent": "Thank you for bringing this to my attention"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "a408d834-8890-4672-830d-54d8c2a8b280",
+      "intention": "Vou levar isso em consideração.",
+      "english": "I'll keep that in mind.",
+      "pattern": "I'll keep that in mind",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "vou levar isso em consideração.",
+        "i'll keep that in mind"
+      ],
+      "validationPatterns": [
+        "\\bI'll\\s+keep\\s+that\\s+in\\s+mind\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vou levar isso em consideração.",
+          "en": "I'll keep that in mind.",
+          "ptIntent": "Vou levar isso em consideração",
+          "enIntent": "I'll keep that in mind"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "62768dec-b982-47b7-a265-58472e0b9011",
+      "intention": "Não sei como você aguenta isso.",
+      "english": "I don't know how you put up with this.",
+      "pattern": "I don't know how you put up with this",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "não sei como você aguenta isso.",
+        "i don't know how you put up with this"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+don't\\s+know\\s+how\\s+you\\s+put\\s+up\\s+with\\s+this\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não sei como você aguenta isso.",
+          "en": "I don't know how you put up with this.",
+          "ptIntent": "Não sei como você aguenta isso",
+          "enIntent": "I don't know how you put up with this"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "40d1533d-f71f-4fe9-b5db-9c4c7871d662",
+      "intention": "Você tem todo o meu apoio.",
+      "english": "You have my full support.",
+      "pattern": "You have my full support",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "você tem todo o meu apoio.",
+        "you have my full support"
+      ],
+      "validationPatterns": [
+        "\\bYou\\s+have\\s+my\\s+full\\s+support\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Você tem todo o meu apoio.",
+          "en": "You have my full support.",
+          "ptIntent": "Você tem todo o meu apoio",
+          "enIntent": "You have my full support"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "52f879c7-d124-496e-87f1-8f20d41f2742",
+      "intention": "Posso sempre contar com você.",
+      "english": "I can always count on you.",
+      "pattern": "I can always count on you",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "posso sempre contar com você.",
+        "i can always count on you"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+can\\s+always\\s+count\\s+on\\s+you\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Posso sempre contar com você.",
+          "en": "I can always count on you.",
+          "ptIntent": "Posso sempre contar com você",
+          "enIntent": "I can always count on you"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "04dd5fb2-fe1e-421d-8d8d-41ef327d001d",
+      "intention": "Não quero tirar conclusões precipitadas.",
+      "english": "I don't want to jump to conclusions.",
+      "pattern": "I don't want to jump to conclusions",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "não quero tirar conclusões precipitadas.",
+        "i don't want to jump to conclusions"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+don't\\s+want\\s+to\\s+jump\\s+to\\s+conclusions\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não quero tirar conclusões precipitadas.",
+          "en": "I don't want to jump to conclusions.",
+          "ptIntent": "Não quero tirar conclusões precipitadas",
+          "enIntent": "I don't want to jump to conclusions"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "482bbb9b-e2f4-4e83-a751-07ba669a5a8c",
+      "intention": "Vamos ver como as coisas se desenrolam.",
+      "english": "Let's see how things unfold.",
+      "pattern": "Let's see how things unfold",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "vamos ver como as coisas se desenrolam.",
+        "let's see how things unfold"
+      ],
+      "validationPatterns": [
+        "\\bLet's\\s+see\\s+how\\s+things\\s+unfold\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vamos ver como as coisas se desenrolam.",
+          "en": "Let's see how things unfold.",
+          "ptIntent": "Vamos ver como as coisas se desenrolam",
+          "enIntent": "Let's see how things unfold"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "06e73a43-9027-4f93-ad2c-c28a34e04e10",
+      "intention": "Só quero garantir que estamos alinhados.",
+      "english": "I just want to make sure we're on the same page.",
+      "pattern": "I just want to make sure we're on the same page",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "só quero garantir que estamos alinhados.",
+        "i just want to make sure we're on the same page"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+just\\s+want\\s+to\\s+make\\s+sure\\s+we're\\s+on\\s+the\\s+same\\s+page\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Só quero garantir que estamos alinhados.",
+          "en": "I just want to make sure we're on the same page.",
+          "ptIntent": "Só quero garantir que estamos alinhados",
+          "enIntent": "I just want to make sure we're on the same page"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "8c318aed-471b-43c2-b2e9-071dec30ff5f",
+      "intention": "Volto em um instante.",
+      "english": "I will be back in a moment.",
+      "pattern": "I will be back in a moment",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "volto em um instante.",
+        "i will be back in a moment"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+will\\s+be\\s+back\\s+in\\s+a\\s+moment\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Volto em um instante.",
+          "en": "I will be back in a moment.",
+          "ptIntent": "Volto em um instante",
+          "enIntent": "I will be back in a moment"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "b67b2a55-78e5-4b41-8ee8-6616cb85e596",
+      "intention": "Me dê um segundo.",
+      "english": "Give me a second.",
+      "pattern": "Give me a second",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "me dê um segundo.",
+        "give me a second"
+      ],
+      "validationPatterns": [
+        "\\bGive\\s+me\\s+a\\s+second\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Me dê um segundo.",
+          "en": "Give me a second.",
+          "ptIntent": "Me dê um segundo",
+          "enIntent": "Give me a second"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "00eb44da-f096-4897-85d6-70a98f0b90f4",
+      "intention": "Como está sendo seu dia?",
+      "english": "How's your day going?",
+      "pattern": "How's your day going",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "como está sendo seu dia?",
+        "how's your day going"
+      ],
+      "validationPatterns": [
+        "\\bHow's\\s+your\\s+day\\s+going\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Como está sendo seu dia?",
+          "en": "How's your day going?",
+          "ptIntent": "Como está sendo seu dia",
+          "enIntent": "How's your day going"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "d4060bde-5151-41f8-a3fc-8aa1ccf1dac1",
+      "intention": "É bom ver você de novo.",
+      "english": "It's good to see you again.",
+      "pattern": "It's good to see you again",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "é bom ver você de novo.",
+        "it's good to see you again"
+      ],
+      "validationPatterns": [
+        "\\bIt's\\s+good\\s+to\\s+see\\s+you\\s+again\\b"
+      ],
+      "examples": [
+        {
+          "pt": "É bom ver você de novo.",
+          "en": "It's good to see you again.",
+          "ptIntent": "É bom ver você de novo",
+          "enIntent": "It's good to see you again"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "94583b1b-91e8-40dc-a7cf-8efb0cad5f69",
+      "intention": "Você provavelmente tem razão.",
+      "english": "You're probably right.",
+      "pattern": "You're probably right",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "você provavelmente tem razão.",
+        "you're probably right"
+      ],
+      "validationPatterns": [
+        "\\bYou're\\s+probably\\s+right\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Você provavelmente tem razão.",
+          "en": "You're probably right.",
+          "ptIntent": "Você provavelmente tem razão",
+          "enIntent": "You're probably right"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "a7418c41-8356-46c5-95a7-623e808a7758",
+      "intention": "Você pode me ajudar com isso?",
+      "english": "Can you help me with this?",
+      "pattern": "Can you help me with this",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "você pode me ajudar com isso?",
+        "can you help me with this"
+      ],
+      "validationPatterns": [
+        "\\bCan\\s+you\\s+help\\s+me\\s+with\\s+this\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Você pode me ajudar com isso?",
+          "en": "Can you help me with this?",
+          "ptIntent": "Você pode me ajudar com isso",
+          "enIntent": "Can you help me with this"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "2d03b83f-7de7-4f66-8f89-abfe3947bf90",
+      "intention": "Você poderia me ajudar por um segundo?",
+      "english": "Could you help me for a second?",
+      "pattern": "Could you help me for a second",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "você poderia me ajudar por um segundo?",
+        "could you help me for a second"
+      ],
+      "validationPatterns": [
+        "\\bCould\\s+you\\s+help\\s+me\\s+for\\s+a\\s+second\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Você poderia me ajudar por um segundo?",
+          "en": "Could you help me for a second?",
+          "ptIntent": "Você poderia me ajudar por um segundo",
+          "enIntent": "Could you help me for a second"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "e5d1d6ca-da06-44ff-8e23-f5f1ecabddc0",
+      "intention": "Você pode me mostrar como fazer isso?",
+      "english": "Can you show me how to do this?",
+      "pattern": "Can you show me how to do this",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "você pode me mostrar como fazer isso?",
+        "can you show me how to do this"
+      ],
+      "validationPatterns": [
+        "\\bCan\\s+you\\s+show\\s+me\\s+how\\s+to\\s+do\\s+this\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Você pode me mostrar como fazer isso?",
+          "en": "Can you show me how to do this?",
+          "ptIntent": "Você pode me mostrar como fazer isso",
+          "enIntent": "Can you show me how to do this"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "23c30b16-f97a-444f-971d-c40eaa405585",
+      "intention": "O que isso significa?",
+      "english": "What does this mean?",
+      "pattern": "What does this mean",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "o que isso significa?",
+        "what does this mean"
+      ],
+      "validationPatterns": [
+        "\\bWhat\\s+does\\s+this\\s+mean\\b"
+      ],
+      "examples": [
+        {
+          "pt": "O que isso significa?",
+          "en": "What does this mean?",
+          "ptIntent": "O que isso significa",
+          "enIntent": "What does this mean"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "fce6b00b-3596-40fc-8495-9e1906265ef8",
+      "intention": "Você poderia falar um pouco mais devagar?",
+      "english": "Could you speak a little slower?",
+      "pattern": "Could you speak a little slower",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "você poderia falar um pouco mais devagar?",
+        "could you speak a little slower"
+      ],
+      "validationPatterns": [
+        "\\bCould\\s+you\\s+speak\\s+a\\s+little\\s+slower\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Você poderia falar um pouco mais devagar?",
+          "en": "Could you speak a little slower?",
+          "ptIntent": "Você poderia falar um pouco mais devagar",
+          "enIntent": "Could you speak a little slower"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "0deafca1-067a-4e16-abc5-7bc29bc7d1fb",
+      "intention": "Eu não ouvi você.",
+      "english": "I didn't hear you.",
+      "pattern": "I didn't hear you",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "eu não ouvi você.",
+        "i didn't hear you"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+didn't\\s+hear\\s+you\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Eu não ouvi você.",
+          "en": "I didn't hear you.",
+          "ptIntent": "Eu não ouvi você",
+          "enIntent": "I didn't hear you"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "5c9df77a-50ed-47d6-9240-240bc6e801b4",
+      "intention": "Onde posso encontrar isso?",
+      "english": "Where can I find this?",
+      "pattern": "Where can I find this",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "onde posso encontrar isso?",
+        "where can i find this"
+      ],
+      "validationPatterns": [
+        "\\bWhere\\s+can\\s+I\\s+find\\s+this\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Onde posso encontrar isso?",
+          "en": "Where can I find this?",
+          "ptIntent": "Onde posso encontrar isso",
+          "enIntent": "Where can I find this"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "fbcdc234-6d96-4fd9-b7f5-24138fa715df",
+      "intention": "Quanto custa isso?",
+      "english": "How much does this cost?",
+      "pattern": "How much does this cost",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "quanto custa isso?",
+        "how much does this cost"
+      ],
+      "validationPatterns": [
+        "\\bHow\\s+much\\s+does\\s+this\\s+cost\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Quanto custa isso?",
+          "en": "How much does this cost?",
+          "ptIntent": "Quanto custa isso",
+          "enIntent": "How much does this cost"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "cde09321-e968-40b8-8d5e-5713d4e388e2",
+      "intention": "Você poderia me dar um minuto?",
+      "english": "Could you give me a minute?",
+      "pattern": "Could you give me a minute",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "você poderia me dar um minuto?",
+        "could you give me a minute"
+      ],
+      "validationPatterns": [
+        "\\bCould\\s+you\\s+give\\s+me\\s+a\\s+minute\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Você poderia me dar um minuto?",
+          "en": "Could you give me a minute?",
+          "ptIntent": "Você poderia me dar um minuto",
+          "enIntent": "Could you give me a minute"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "125e7d72-bb27-4e36-a084-779dbe426cbc",
+      "intention": "Estarei aí em alguns minutos.",
+      "english": "I'll be there in a few minutes.",
+      "pattern": "I'll be there in a few minutes",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "estarei aí em alguns minutos.",
+        "i'll be there in a few minutes"
+      ],
+      "validationPatterns": [
+        "\\bI'll\\s+be\\s+there\\s+in\\s+a\\s+few\\s+minutes\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Estarei aí em alguns minutos.",
+          "en": "I'll be there in a few minutes.",
+          "ptIntent": "Estarei aí em alguns minutos",
+          "enIntent": "I'll be there in a few minutes"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "acb8cb9e-2b71-4732-ac66-314fff5d1508",
+      "intention": "Você está livre hoje à noite?",
+      "english": "Are you free tonight?",
+      "pattern": "Are you free tonight",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "você está livre hoje à noite?",
+        "are you free tonight"
+      ],
+      "validationPatterns": [
+        "\\bAre\\s+you\\s+free\\s+tonight\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Você está livre hoje à noite?",
+          "en": "Are you free tonight?",
+          "ptIntent": "Você está livre hoje à noite",
+          "enIntent": "Are you free tonight"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "1c12832d-8d05-40a5-8c0e-65abd1fef1d2",
+      "intention": "Que horas devemos nos encontrar?",
+      "english": "What time should we meet?",
+      "pattern": "What time should we meet",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "que horas devemos nos encontrar?",
+        "what time should we meet"
+      ],
+      "validationPatterns": [
+        "\\bWhat\\s+time\\s+should\\s+we\\s+meet\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Que horas devemos nos encontrar?",
+          "en": "What time should we meet?",
+          "ptIntent": "Que horas devemos nos encontrar",
+          "enIntent": "What time should we meet"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "681f6e1a-e78e-4cbe-96b5-f5853aedd8e6",
+      "intention": "Onde devemos nos encontrar?",
+      "english": "Where should we meet?",
+      "pattern": "Where should we meet",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "onde devemos nos encontrar?",
+        "where should we meet"
+      ],
+      "validationPatterns": [
+        "\\bWhere\\s+should\\s+we\\s+meet\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Onde devemos nos encontrar?",
+          "en": "Where should we meet?",
+          "ptIntent": "Onde devemos nos encontrar",
+          "enIntent": "Where should we meet"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "6960e2a4-2e0f-4f68-af49-8278cd9f2c0c",
+      "intention": "Para mim funciona.",
+      "english": "It works for me.",
+      "pattern": "It works for me",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "para mim funciona.",
+        "it works for me"
+      ],
+      "validationPatterns": [
+        "\\bIt\\s+works\\s+for\\s+me\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Para mim funciona.",
+          "en": "It works for me.",
+          "ptIntent": "Para mim funciona",
+          "enIntent": "It works for me"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "1c8df936-525f-4a27-ae9e-bf1c4861f8a4",
+      "intention": "Vamos descobrir como fazer isso.",
+      "english": "Let's find out how to do it.",
+      "pattern": "Let's find out how to do it",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "vamos descobrir como fazer isso.",
+        "let's find out how to do it"
+      ],
+      "validationPatterns": [
+        "\\bLet's\\s+find\\s+out\\s+how\\s+to\\s+do\\s+it\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vamos descobrir como fazer isso.",
+          "en": "Let's find out how to do it.",
+          "ptIntent": "Vamos descobrir como fazer isso",
+          "enIntent": "Let's find out how to do it"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "bf62e926-4145-4ca5-aacf-c5fb16f16dcd",
+      "intention": "Vou fazer isso depois.",
+      "english": "I'll do that later.",
+      "pattern": "I'll do that later",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "vou fazer isso depois.",
+        "i'll do that later"
+      ],
+      "validationPatterns": [
+        "\\bI'll\\s+do\\s+that\\s+later\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vou fazer isso depois.",
+          "en": "I'll do that later.",
+          "ptIntent": "Vou fazer isso depois",
+          "enIntent": "I'll do that later"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "93e55eee-7200-45e4-8405-10bd67bd8c5f",
+      "intention": "Ainda não estou pronto.",
+      "english": "I'm not ready yet.",
+      "pattern": "I'm not ready yet",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "ainda não estou pronto.",
+        "i'm not ready yet"
+      ],
+      "validationPatterns": [
+        "\\bI'm\\s+not\\s+ready\\s+yet\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Ainda não estou pronto.",
+          "en": "I'm not ready yet.",
+          "ptIntent": "Ainda não estou pronto",
+          "enIntent": "I'm not ready yet"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "b5502662-3d78-4d89-a8df-0fdd177e8501",
+      "intention": "Não estou me sentindo muito bem.",
+      "english": "I'm not feeling very well.",
+      "pattern": "I'm not feeling very well",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "não estou me sentindo muito bem.",
+        "i'm not feeling very well"
+      ],
+      "validationPatterns": [
+        "\\bI'm\\s+not\\s+feeling\\s+very\\s+well\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não estou me sentindo muito bem.",
+          "en": "I'm not feeling very well.",
+          "ptIntent": "Não estou me sentindo muito bem",
+          "enIntent": "I'm not feeling very well"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "b6421823-ed57-4725-9cfb-fb29d47fa10c",
+      "intention": "Não gosto muito disso.",
+      "english": "I don't like that very much.",
+      "pattern": "I don't like that very much",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "não gosto muito disso.",
+        "i don't like that very much"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+don't\\s+like\\s+that\\s+very\\s+much\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não gosto muito disso.",
+          "en": "I don't like that very much.",
+          "ptIntent": "Não gosto muito disso",
+          "enIntent": "I don't like that very much"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "abed4417-ce09-4566-91b3-38b5a35f3ea4",
+      "intention": "Não sou muito fã disso.",
+      "english": "I'm not a big fan of that.",
+      "pattern": "I'm not a big fan of that",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "não sou muito fã disso.",
+        "i'm not a big fan of that"
+      ],
+      "validationPatterns": [
+        "\\bI'm\\s+not\\s+a\\s+big\\s+fan\\s+of\\s+that\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não sou muito fã disso.",
+          "en": "I'm not a big fan of that.",
+          "ptIntent": "Não sou muito fã disso",
+          "enIntent": "I'm not a big fan of that"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "9b30ae73-be92-4861-8df9-6b040f5231a8",
+      "intention": "Acho que é uma boa ideia.",
+      "english": "I think that's a good idea.",
+      "pattern": "I think that's a good idea",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "acho que é uma boa ideia.",
+        "i think that's a good idea"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+think\\s+that's\\s+a\\s+good\\s+idea\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Acho que é uma boa ideia.",
+          "en": "I think that's a good idea.",
+          "ptIntent": "Acho que é uma boa ideia",
+          "enIntent": "I think that's a good idea"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "27238f73-85bd-4c7b-8a5d-00f2967f45c5",
+      "intention": "Não acho que seja uma boa ideia.",
+      "english": "I don't think that's a good idea.",
+      "pattern": "I don't think that's a good idea",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "não acho que seja uma boa ideia.",
+        "i don't think that's a good idea"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+don't\\s+think\\s+that's\\s+a\\s+good\\s+idea\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não acho que seja uma boa ideia.",
+          "en": "I don't think that's a good idea.",
+          "ptIntent": "Não acho que seja uma boa ideia",
+          "enIntent": "I don't think that's a good idea"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "c406349b-b2f4-4b8a-88d6-2eb693300bfa",
+      "intention": "Tenho passado muito bem.",
+      "english": "I've been doing very well.",
+      "pattern": "I've been doing very well",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "tenho passado muito bem.",
+        "i've been doing very well"
+      ],
+      "validationPatterns": [
+        "\\bI've\\s+been\\s+doing\\s+very\\s+well\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Tenho passado muito bem.",
+          "en": "I've been doing very well.",
+          "ptIntent": "Tenho passado muito bem",
+          "enIntent": "I've been doing very well"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "0024865d-706f-48c6-a109-9c7595812425",
+      "intention": "Concordo totalmente com você.",
+      "english": "I completely agree with you.",
+      "pattern": "I completely agree with you",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "concordo totalmente com você.",
+        "i completely agree with you"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+completely\\s+agree\\s+with\\s+you\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Concordo totalmente com você.",
+          "en": "I completely agree with you.",
+          "ptIntent": "Concordo totalmente com você",
+          "enIntent": "I completely agree with you"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "c9dfee17-daa8-4a71-ae8c-4588c5c231f5",
+      "intention": "Não tenho certeza absoluta.",
+      "english": "I'm not absolutely sure.",
+      "pattern": "I'm not absolutely sure",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "não tenho certeza absoluta.",
+        "i'm not absolutely sure"
+      ],
+      "validationPatterns": [
+        "\\bI'm\\s+not\\s+absolutely\\s+sure\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não tenho certeza absoluta.",
+          "en": "I'm not absolutely sure.",
+          "ptIntent": "Não tenho certeza absoluta",
+          "enIntent": "I'm not absolutely sure"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "34581709-b418-453b-84d6-1b27ce564480",
+      "intention": "Você poderia explicar o que quer dizer?",
+      "english": "Could you explain what you mean?",
+      "pattern": "Could you explain what you mean",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "você poderia explicar o que quer dizer?",
+        "could you explain what you mean"
+      ],
+      "validationPatterns": [
+        "\\bCould\\s+you\\s+explain\\s+what\\s+you\\s+mean\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Você poderia explicar o que quer dizer?",
+          "en": "Could you explain what you mean?",
+          "ptIntent": "Você poderia explicar o que quer dizer",
+          "enIntent": "Could you explain what you mean"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "047f9e8b-350d-49c9-b736-6bb04c84ddc1",
+      "intention": "Vamos fazer uma pausa rápida.",
+      "english": "Let's take a quick break.",
+      "pattern": "Let's take a quick break",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "vamos fazer uma pausa rápida.",
+        "let's take a quick break"
+      ],
+      "validationPatterns": [
+        "\\bLet's\\s+take\\s+a\\s+quick\\s+break\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vamos fazer uma pausa rápida.",
+          "en": "Let's take a quick break.",
+          "ptIntent": "Vamos fazer uma pausa rápida",
+          "enIntent": "Let's take a quick break"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "43299457-cdb4-486c-8c26-18bd158ac02a",
+      "intention": "Não tenho certeza do que você quer dizer.",
+      "english": "I'm not sure what you mean.",
+      "pattern": "I'm not sure what you mean",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "não tenho certeza do que você quer dizer.",
+        "i'm not sure what you mean"
+      ],
+      "validationPatterns": [
+        "\\bI'm\\s+not\\s+sure\\s+what\\s+you\\s+mean\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não tenho certeza do que você quer dizer.",
+          "en": "I'm not sure what you mean.",
+          "ptIntent": "Não tenho certeza do que você quer dizer",
+          "enIntent": "I'm not sure what you mean"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "59afecc9-7c35-4196-9cb1-1962474316b0",
+      "intention": "Não é nada demais.",
+      "english": "It's nothing special.",
+      "pattern": "It's nothing special",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "não é nada demais.",
+        "it's nothing special"
+      ],
+      "validationPatterns": [
+        "\\bIt's\\s+nothing\\s+special\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não é nada demais.",
+          "en": "It's nothing special.",
+          "ptIntent": "Não é nada demais",
+          "enIntent": "It's nothing special"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "3398c48f-622e-49be-817c-9e132c3d6e90",
+      "intention": "Podemos resolver isso.",
+      "english": "We can solve this.",
+      "pattern": "We can solve this",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "podemos resolver isso.",
+        "we can solve this"
+      ],
+      "validationPatterns": [
+        "\\bWe\\s+can\\s+solve\\s+this\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Podemos resolver isso.",
+          "en": "We can solve this.",
+          "ptIntent": "Podemos resolver isso",
+          "enIntent": "We can solve this"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "367c2bb9-ca43-458a-a50d-cf3a27b95a2e",
+      "intention": "Vamos ver como vai ser.",
+      "english": "Let's see how it goes.",
+      "pattern": "Let's see how it goes",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "vamos ver como vai ser.",
+        "let's see how it goes"
+      ],
+      "validationPatterns": [
+        "\\bLet's\\s+see\\s+how\\s+it\\s+goes\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vamos ver como vai ser.",
+          "en": "Let's see how it goes.",
+          "ptIntent": "Vamos ver como vai ser",
+          "enIntent": "Let's see how it goes"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "ab767a52-656c-450b-8e50-67fbc8c221f3",
+      "intention": "Eu adoraria ir.",
+      "english": "I would love to go.",
+      "pattern": "I would love to go",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "eu adoraria ir.",
+        "i would love to go"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+would\\s+love\\s+to\\s+go\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Eu adoraria ir.",
+          "en": "I would love to go.",
+          "ptIntent": "Eu adoraria ir",
+          "enIntent": "I would love to go"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "f4c0c346-3970-415e-ae2a-69166f1f7277",
+      "intention": "Encontro você lá.",
+      "english": "I'll meet you there.",
+      "pattern": "I'll meet you there",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "encontro você lá.",
+        "i'll meet you there"
+      ],
+      "validationPatterns": [
+        "\\bI'll\\s+meet\\s+you\\s+there\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Encontro você lá.",
+          "en": "I'll meet you there.",
+          "ptIntent": "Encontro você lá",
+          "enIntent": "I'll meet you there"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "b3e5e11f-31b0-4d97-ae99-791f2b2509d2",
+      "intention": "Deixe-me pagar.",
+      "english": "Let me pay.",
+      "pattern": "Let me pay",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "deixe-me pagar.",
+        "let me pay"
+      ],
+      "validationPatterns": [
+        "\\bLet\\s+me\\s+pay\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Deixe-me pagar.",
+          "en": "Let me pay.",
+          "ptIntent": "Deixe-me pagar",
+          "enIntent": "Let me pay"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "f5853bba-12b5-4ce0-a822-02bb5be53798",
+      "intention": "Sou muito grato por isso.",
+      "english": "I'm very grateful for that.",
+      "pattern": "I'm very grateful for that",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "sou muito grato por isso.",
+        "i'm very grateful for that"
+      ],
+      "validationPatterns": [
+        "\\bI'm\\s+very\\s+grateful\\s+for\\s+that\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Sou muito grato por isso.",
+          "en": "I'm very grateful for that.",
+          "ptIntent": "Sou muito grato por isso",
+          "enIntent": "I'm very grateful for that"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "702a413e-4c90-451e-b26e-22125a0661eb",
+      "intention": "Muito obrigado pela sua ajuda.",
+      "english": "Thank you so much for your help.",
+      "pattern": "Thank you so much for your help",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "muito obrigado pela sua ajuda.",
+        "thank you so much for your help"
+      ],
+      "validationPatterns": [
+        "\\bThank\\s+you\\s+so\\s+much\\s+for\\s+your\\s+help\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Muito obrigado pela sua ajuda.",
+          "en": "Thank you so much for your help.",
+          "ptIntent": "Muito obrigado pela sua ajuda",
+          "enIntent": "Thank you so much for your help"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "2a814329-858d-451b-893c-f3898307f7ca",
+      "intention": "Ainda não me decidi.",
+      "english": "I haven't decided yet.",
+      "pattern": "I haven't decided yet",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "ainda não me decidi.",
+        "i haven't decided yet"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+haven't\\s+decided\\s+yet\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Ainda não me decidi.",
+          "en": "I haven't decided yet.",
+          "ptIntent": "Ainda não me decidi",
+          "enIntent": "I haven't decided yet"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "057218ef-7e42-4f03-bec4-6ccf84c8f795",
+      "intention": "Ainda estou trabalhando nisso.",
+      "english": "I'm still working on it.",
+      "pattern": "I'm still working on it",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "ainda estou trabalhando nisso.",
+        "i'm still working on it"
+      ],
+      "validationPatterns": [
+        "\\bI'm\\s+still\\s+working\\s+on\\s+it\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Ainda estou trabalhando nisso.",
+          "en": "I'm still working on it.",
+          "ptIntent": "Ainda estou trabalhando nisso",
+          "enIntent": "I'm still working on it"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "3b1b4c27-d805-4bd8-9796-4812810f6ed6",
+      "intention": "Estou investigando isso.",
+      "english": "I'm looking into it.",
+      "pattern": "I'm looking into it",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "estou investigando isso.",
+        "i'm looking into it"
+      ],
+      "validationPatterns": [
+        "\\bI'm\\s+looking\\s+into\\s+it\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Estou investigando isso.",
+          "en": "I'm looking into it.",
+          "ptIntent": "Estou investigando isso",
+          "enIntent": "I'm looking into it"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "9f0963fd-8ee0-45a7-b0cc-a0642bdecc0d",
+      "intention": "Vamos tentar de outra maneira.",
+      "english": "Let's try another way.",
+      "pattern": "Let's try another way",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "vamos tentar de outra maneira.",
+        "let's try another way"
+      ],
+      "validationPatterns": [
+        "\\bLet's\\s+try\\s+another\\s+way\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vamos tentar de outra maneira.",
+          "en": "Let's try another way.",
+          "ptIntent": "Vamos tentar de outra maneira",
+          "enIntent": "Let's try another way"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "40e2399a-3ad0-4bf6-b8ef-7a3519873f89",
+      "intention": "Não tenho certeza se isso vai funcionar.",
+      "english": "I'm not sure if this will work.",
+      "pattern": "I'm not sure if this will work",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "não tenho certeza se isso vai funcionar.",
+        "i'm not sure if this will work"
+      ],
+      "validationPatterns": [
+        "\\bI'm\\s+not\\s+sure\\s+if\\s+this\\s+will\\s+work\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não tenho certeza se isso vai funcionar.",
+          "en": "I'm not sure if this will work.",
+          "ptIntent": "Não tenho certeza se isso vai funcionar",
+          "enIntent": "I'm not sure if this will work"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "c99303e5-2f79-4c4e-9675-a78fa7cace09",
+      "intention": "Estamos um pouco atrasados no cronograma.",
+      "english": "We're a little behind schedule.",
+      "pattern": "We're a little behind schedule",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "estamos um pouco atrasados no cronograma.",
+        "we're a little behind schedule"
+      ],
+      "validationPatterns": [
+        "\\bWe're\\s+a\\s+little\\s+behind\\s+schedule\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Estamos um pouco atrasados no cronograma.",
+          "en": "We're a little behind schedule.",
+          "ptIntent": "Estamos um pouco atrasados no cronograma",
+          "enIntent": "We're a little behind schedule"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "3644af68-cbfb-4e87-b64f-8fbd006d347a",
+      "intention": "Vamos discutir os detalhes.",
+      "english": "Let's discuss the details.",
+      "pattern": "Let's discuss the details",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "vamos discutir os detalhes.",
+        "let's discuss the details"
+      ],
+      "validationPatterns": [
+        "\\bLet's\\s+discuss\\s+the\\s+details\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vamos discutir os detalhes.",
+          "en": "Let's discuss the details.",
+          "ptIntent": "Vamos discutir os detalhes",
+          "enIntent": "Let's discuss the details"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "716c6699-3b5f-482b-bee9-107924b24c1c",
+      "intention": "Vou terminar isso até o fim do dia.",
+      "english": "I'll finish this by the end of the day.",
+      "pattern": "I'll finish this by the end of the day",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "vou terminar isso até o fim do dia.",
+        "i'll finish this by the end of the day"
+      ],
+      "validationPatterns": [
+        "\\bI'll\\s+finish\\s+this\\s+by\\s+the\\s+end\\s+of\\s+the\\s+day\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Vou terminar isso até o fim do dia.",
+          "en": "I'll finish this by the end of the day.",
+          "ptIntent": "Vou terminar isso até o fim do dia",
+          "enIntent": "I'll finish this by the end of the day"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "c4333f13-6234-4cf9-89e9-72e4d252dec9",
+      "intention": "Obrigado por dedicar seu tempo.",
+      "english": "Thank you for taking the time.",
+      "pattern": "Thank you for taking the time",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "obrigado por dedicar seu tempo.",
+        "thank you for taking the time"
+      ],
+      "validationPatterns": [
+        "\\bThank\\s+you\\s+for\\s+taking\\s+the\\s+time\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Obrigado por dedicar seu tempo.",
+          "en": "Thank you for taking the time.",
+          "ptIntent": "Obrigado por dedicar seu tempo",
+          "enIntent": "Thank you for taking the time"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "e82dc390-3157-4bf6-80db-724c75f817b2",
+      "intention": "Sei como você se sente.",
+      "english": "I know how you feel.",
+      "pattern": "I know how you feel",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "sei como você se sente.",
+        "i know how you feel"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+know\\s+how\\s+you\\s+feel\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Sei como você se sente.",
+          "en": "I know how you feel.",
+          "ptIntent": "Sei como você se sente",
+          "enIntent": "I know how you feel"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "cf8c52bf-7d2a-46ac-ace6-21ba9388a6cc",
+      "intention": "Já passei por isso antes.",
+      "english": "I've been through this before.",
+      "pattern": "I've been through this before",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "já passei por isso antes.",
+        "i've been through this before"
+      ],
+      "validationPatterns": [
+        "\\bI've\\s+been\\s+through\\s+this\\s+before\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Já passei por isso antes.",
+          "en": "I've been through this before.",
+          "ptIntent": "Já passei por isso antes",
+          "enIntent": "I've been through this before"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "677379ed-860d-46f7-9c4f-79264ae2ee4b",
+      "intention": "Não me sinto confortável com isso.",
+      "english": "I'm not comfortable with that.",
+      "pattern": "I'm not comfortable with that",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "B1",
+      "searchTerms": [
+        "não me sinto confortável com isso.",
+        "i'm not comfortable with that"
+      ],
+      "validationPatterns": [
+        "\\bI'm\\s+not\\s+comfortable\\s+with\\s+that\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Não me sinto confortável com isso.",
+          "en": "I'm not comfortable with that.",
+          "ptIntent": "Não me sinto confortável com isso",
+          "enIntent": "I'm not comfortable with that"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "9a899088-d778-4d3c-8a45-b866ae69e890",
+      "intention": "Respeito sua decisão.",
+      "english": "I respect your decision.",
+      "pattern": "I respect your decision",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "respeito sua decisão.",
+        "i respect your decision"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+respect\\s+your\\s+decision\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Respeito sua decisão.",
+          "en": "I respect your decision.",
+          "ptIntent": "Respeito sua decisão",
+          "enIntent": "I respect your decision"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "41eeffb4-1f9a-4d48-b188-fe81cef8bdb1",
+      "intention": "Valorizo muito sua opinião.",
+      "english": "I really value your opinion.",
+      "pattern": "I really value your opinion",
+      "description": "Chunk completo e independente, utilizável diretamente em uma conversa.",
+      "category": "language-chunks",
+      "englishLevel": "A2",
+      "searchTerms": [
+        "valorizo muito sua opinião.",
+        "i really value your opinion"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+really\\s+value\\s+your\\s+opinion\\b"
+      ],
+      "examples": [
+        {
+          "pt": "Valorizo muito sua opinião.",
+          "en": "I really value your opinion.",
+          "ptIntent": "Valorizo muito sua opinião",
+          "enIntent": "I really value your opinion"
+        }
+      ],
+      "tags": [
+        "chunk",
+        "ready-to-use",
+        "spoken-english"
+      ],
+      "related": [],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "75c7b6c7-f272-4bc4-8f1c-26209e187902",
+      "intention": "Do jeito que eu vejo",
+      "english": "As I see it",
+      "pattern": "As I see it + complement",
+      "description": "Mother chunk: estrutura produtiva que exige complemento. Não deve entrar no Chunk Flashcards.",
+      "category": "language-chunks",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "do jeito que eu vejo",
+        "as i see it"
+      ],
+      "validationPatterns": [
+        "\\bAs\\s+I\\s+see\\s+it\\b"
+      ],
+      "examples": [],
+      "tags": [
+        "chunk",
+        "mother-chunk",
+        "phrase-generator"
+      ],
+      "related": []
+    },
+    {
+      "id": "791e6e62-da22-47ec-867e-4bcf961aedac",
+      "intention": "Eu diria que",
+      "english": "I would say that",
+      "pattern": "I would say that + complement",
+      "description": "Mother chunk: estrutura produtiva que exige complemento. Não deve entrar no Chunk Flashcards.",
+      "category": "language-chunks",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "eu diria que",
+        "i would say that"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+would\\s+say\\s+that\\b"
+      ],
+      "examples": [],
+      "tags": [
+        "chunk",
+        "mother-chunk",
+        "phrase-generator"
+      ],
+      "related": []
+    },
+    {
+      "id": "c24480c5-8a69-46ec-8ebf-42ef57956fb1",
+      "intention": "Entendo seu ponto, mas",
+      "english": "I understand your point, but",
+      "pattern": "I understand your point, but + complement",
+      "description": "Mother chunk: estrutura produtiva que exige complemento. Não deve entrar no Chunk Flashcards.",
+      "category": "language-chunks",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "entendo seu ponto, mas",
+        "i understand your point, but"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+understand\\s+your\\s+point,\\s+but\\b"
+      ],
+      "examples": [],
+      "tags": [
+        "chunk",
+        "mother-chunk",
+        "phrase-generator"
+      ],
+      "related": []
+    },
+    {
+      "id": "be9cc56e-bd81-41ef-8a4a-3d5cd4fbd695",
+      "intention": "O que mais importa é",
+      "english": "What matters most is",
+      "pattern": "What matters most is + complement",
+      "description": "Mother chunk: estrutura produtiva que exige complemento. Não deve entrar no Chunk Flashcards.",
+      "category": "language-chunks",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "o que mais importa é",
+        "what matters most is"
+      ],
+      "validationPatterns": [
+        "\\bWhat\\s+matters\\s+most\\s+is\\b"
+      ],
+      "examples": [],
+      "tags": [
+        "chunk",
+        "mother-chunk",
+        "phrase-generator"
+      ],
+      "related": []
+    },
+    {
+      "id": "78a06123-0d94-4577-adf5-70e343a6cbee",
+      "intention": "O ponto que quero destacar é",
+      "english": "The point I want to make is",
+      "pattern": "The point I want to make is + complement",
+      "description": "Mother chunk: estrutura produtiva que exige complemento. Não deve entrar no Chunk Flashcards.",
+      "category": "language-chunks",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "o ponto que quero destacar é",
+        "the point i want to make is"
+      ],
+      "validationPatterns": [
+        "\\bThe\\s+point\\s+I\\s+want\\s+to\\s+make\\s+is\\b"
+      ],
+      "examples": [],
+      "tags": [
+        "chunk",
+        "mother-chunk",
+        "phrase-generator"
+      ],
+      "related": []
+    },
+    {
+      "id": "9482b7c3-ab4e-4341-b75d-9e0e5288f4ea",
+      "intention": "Se entendi você corretamente",
+      "english": "If I understand you correctly",
+      "pattern": "If I understand you correctly + complement",
+      "description": "Mother chunk: estrutura produtiva que exige complemento. Não deve entrar no Chunk Flashcards.",
+      "category": "language-chunks",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "se entendi você corretamente",
+        "if i understand you correctly"
+      ],
+      "validationPatterns": [
+        "\\bIf\\s+I\\s+understand\\s+you\\s+correctly\\b"
+      ],
+      "examples": [],
+      "tags": [
+        "chunk",
+        "mother-chunk",
+        "phrase-generator"
+      ],
+      "related": []
+    },
+    {
+      "id": "c7453970-c57c-4d29-9f1a-a9e244031132",
+      "intention": "Então o que você está dizendo é",
+      "english": "So what you're saying is",
+      "pattern": "So what you're saying is + complement",
+      "description": "Mother chunk: estrutura produtiva que exige complemento. Não deve entrar no Chunk Flashcards.",
+      "category": "language-chunks",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "então o que você está dizendo é",
+        "so what you're saying is"
+      ],
+      "validationPatterns": [
+        "\\bSo\\s+what\\s+you're\\s+saying\\s+is\\b"
+      ],
+      "examples": [],
+      "tags": [
+        "chunk",
+        "mother-chunk",
+        "phrase-generator"
+      ],
+      "related": []
+    },
+    {
+      "id": "5a5e16ef-5537-4ed3-9aa5-bc9685fe43fd",
+      "intention": "Pensando bem",
+      "english": "When you think about it",
+      "pattern": "When you think about it + complement",
+      "description": "Mother chunk: estrutura produtiva que exige complemento. Não deve entrar no Chunk Flashcards.",
+      "category": "language-chunks",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "pensando bem",
+        "when you think about it"
+      ],
+      "validationPatterns": [
+        "\\bWhen\\s+you\\s+think\\s+about\\s+it\\b"
+      ],
+      "examples": [],
+      "tags": [
+        "chunk",
+        "mother-chunk",
+        "phrase-generator"
+      ],
+      "related": []
+    },
+    {
+      "id": "f100a164-248d-4668-a50e-9daa920a32d1",
+      "intention": "No fim das contas, isso se resume a",
+      "english": "What this boils down to is",
+      "pattern": "What this boils down to is + complement",
+      "description": "Mother chunk: estrutura produtiva que exige complemento. Não deve entrar no Chunk Flashcards.",
+      "category": "language-chunks",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "no fim das contas, isso se resume a",
+        "what this boils down to is"
+      ],
+      "validationPatterns": [
+        "\\bWhat\\s+this\\s+boils\\s+down\\s+to\\s+is\\b"
+      ],
+      "examples": [],
+      "tags": [
+        "chunk",
+        "mother-chunk",
+        "phrase-generator"
+      ],
+      "related": []
+    },
+    {
+      "id": "ebaefb67-8716-40bb-a067-1b3c2ba48453",
+      "intention": "Posso estar errado sobre isso, mas",
+      "english": "I could be wrong about that, but",
+      "pattern": "I could be wrong about that, but + complement",
+      "description": "Mother chunk: estrutura produtiva que exige complemento. Não deve entrar no Chunk Flashcards.",
+      "category": "language-chunks",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "posso estar errado sobre isso, mas",
+        "i could be wrong about that, but"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+could\\s+be\\s+wrong\\s+about\\s+that,\\s+but\\b"
+      ],
+      "examples": [],
+      "tags": [
+        "chunk",
+        "mother-chunk",
+        "phrase-generator"
+      ],
+      "related": []
+    },
+    {
+      "id": "59d55974-1ab5-40e2-b643-d7fea4665747",
+      "intention": "Não tenho certeza se",
+      "english": "I'm not sure if",
+      "pattern": "I'm not sure if + complement",
+      "description": "Mother chunk: estrutura produtiva que exige complemento. Não deve entrar no Chunk Flashcards.",
+      "category": "language-chunks",
+      "englishLevel": "B2",
+      "searchTerms": [
+        "não tenho certeza se",
+        "i'm not sure if"
+      ],
+      "validationPatterns": [
+        "\\bI'm\\s+not\\s+sure\\s+if\\b"
+      ],
+      "examples": [],
+      "tags": [
+        "chunk",
+        "mother-chunk",
+        "phrase-generator"
+      ],
+      "related": []
     }
   ]
 }
