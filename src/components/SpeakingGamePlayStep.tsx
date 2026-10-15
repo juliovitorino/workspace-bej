@@ -1,3 +1,4 @@
+import type { StudentLanguage } from "../config/languages";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import type { SpeakingGameForm } from "../config/speakingGameForms";
 import type { EnglishVerb } from "../types/englishVerb";
@@ -54,6 +55,7 @@ function drawSentenceMode(): SentenceMode {
 }
 
 interface SpeakingGamePlayStepProps {
+  language: StudentLanguage;
   verb: EnglishVerb;
   form: SpeakingGameForm;
   settings: SpeakingGameSettings;
@@ -67,6 +69,7 @@ interface SpeakingGamePlayStepProps {
 }
 
 export function SpeakingGamePlayStep({
+  language,
   verb,
   form,
   settings,
@@ -130,7 +133,7 @@ export function SpeakingGamePlayStep({
 
     async function loadChunks() {
       try {
-        const result = await loadHashmap();
+        const result = await loadHashmap(language);
         if (!active) return;
         setChunks(
           result.data.mentalMap.filter(
@@ -149,7 +152,7 @@ export function SpeakingGamePlayStep({
 
     void loadChunks();
     return () => { active = false; };
-  }, []);
+  }, [language]);
 
   // Novo chunk quando a forma verbal ou o verbo muda, e no carregamento inicial.
   useEffect(() => {

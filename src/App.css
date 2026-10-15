@@ -2151,3 +2151,30 @@ button {
   .chunk-flashcards-details { width: 48px; height: 48px; flex-basis: 48px; }
   .chunk-flashcards-actions .primary-button { width: 100%; }
 }
+
+.header-tools { display: flex; flex-direction: column; gap: 12px; }
+.language-selector { display: flex; flex-wrap: wrap; gap: 8px; }
+.language-selector button { background: #fff; border: 2px solid #cfd6e4; border-radius: 10px; min-width: 44px; min-height: 44px; font-size: 1.5rem; }
+.language-selector button[aria-pressed="true"] { border-color: #3659d9; background: #edf1ff; }
+.language-selector button:focus-visible { outline: 3px solid #3659d9; outline-offset: 3px; }
+/* Walking controls are scoped so traditional flashcards keep their layout. */
+.chunk-flashcards-actions:has(.walking-entry) { flex-direction: column; gap: 16px; }
+.walking-mode { max-width: 680px; margin: 0 auto; padding: 1rem; }
+.walking-mode h3 { font-size: clamp(2rem, 7vw, 3rem); overflow-wrap: anywhere; }
+.walking-mode progress { width: 100%; height: 1.2rem; accent-color: #2563eb; }
+.walking-controls { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .75rem; margin: 1.25rem 0; }
+.walking-entry, .walking-settings select { min-height: 48px; font: inherit; border-radius: 10px; padding: .7rem; }
+.walking-controls button, .walking-configuration summary { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; width: 52px; height: 52px; padding: 0; border: 1px solid #cfd6e4; border-radius: 50%; background: #fff; color: #172033; cursor: pointer; }
+.walking-controls .walking-toggle { width: 60px; height: 60px; background: #3659d9; border-color: #3659d9; color: #fff; }
+.walking-controls button:enabled:active, .walking-configuration summary:active { transform: scale(.95); }
+.walking-controls button:focus-visible, .walking-configuration summary:focus-visible { outline: 3px solid #3659d9; outline-offset: 3px; }
+.walking-controls button:disabled { opacity: .5; cursor: default; }
+.walking-settings { display: grid; gap: 1rem; margin-top: 1rem; }
+.walking-settings label { display: flex; align-items: center; justify-content: space-between; gap: .75rem; }
+.walking-configuration summary { list-style: none; }
+.walking-configuration summary::-webkit-details-marker { display: none; }
+.walking-configuration[open] summary { background: #edf1ff; border-color: #3659d9; }
+.chunk-level-select { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+.chunk-level-select select { min-height: 44px; max-width: 100%; padding: .5rem; font: inherit; }
+.chunk-intention-count { margin: 0; text-align: center; font-weight: 700; }
+.walking-note { font-size: .85rem; line-height: 1.5; color: #64748b; }

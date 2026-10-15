@@ -1,3 +1,4 @@
+import type { StudentLanguage } from "../config/languages";
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import { SPEAKING_GAME_FORMS } from "../config/speakingGameForms";
 import { getRandomEnglishVerb } from "../services/englishVerbService";
@@ -29,7 +30,7 @@ import { SpeakingGameSetupStep } from "./SpeakingGameSetupStep";
  * - controlar o contador do modo automático;
  * - pausar, continuar e parar o jogo.
  */
-export function SpeakingGame() {
+export function SpeakingGame({ language }: { language: StudentLanguage }) {
   const [step, setStep] = useState<SpeakingGameStep>(1);
   const [settings, setSettings] = useState<SpeakingGameSettings>(
     DEFAULT_SPEAKING_GAME_SETTINGS
@@ -289,6 +290,7 @@ export function SpeakingGame() {
 
       {step === 3 && currentVerb && (
         <SpeakingGamePlayStep
+          language={language}
           verb={currentVerb}
           form={SPEAKING_GAME_FORMS[currentFormIndex]}
           settings={settings}

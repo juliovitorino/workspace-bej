@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "validate:hashmaps": "node scripts/validate-hashmap-locales.mjs",
     "build": "tsc -b && vite build",
     "preview": "vite preview"
   },
