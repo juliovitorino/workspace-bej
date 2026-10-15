@@ -8,28 +8,31 @@ const menuItems: Array<{
   id: AppView;
   label: string;
 }> = [
-  { id: "shadowing", label: "🎧 Shadowing" },
-  {
-    id: "hashmap",
-    label: "Hashmap"
-  },
-  {
-    id: "exercises",
-    label: "Exercícios"
-  },
-  {
-    id: "chunk-flashcards",
-    label: "Chunk Flashcards"
-  },
-  {
-    id: "speaking-game",
-    label: "Jogo da Fala"
-  },
-  {
-    id: "interpretation",
-    label: "Interpretação"
-  }
-];
+    {
+      id: "hashmap",
+      label: "Hashmap"
+    },
+    { 
+      id: "shadowing", 
+      label: "Shadowing" 
+    },
+    {
+      id: "exercises",
+      label: "Exercícios"
+    },
+    {
+      id: "chunk-flashcards",
+      label: "Chunk Flashcards"
+    },
+    {
+      id: "speaking-game",
+      label: "Jogo da Fala"
+    },
+    {
+      id: "interpretation",
+      label: "Interpretação"
+    }
+  ];
 
 export function Sidebar({
   currentView,

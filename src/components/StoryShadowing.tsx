@@ -1,3 +1,4 @@
+import { ControlIcon } from "./ControlIcon";
 import { useMemo, useState } from "react";
 import { LANGUAGES, type StudentLanguage } from "../config/languages";
 import { searchShadowingStories, type LocalStory } from "../services/localStoryService";
@@ -46,9 +47,9 @@ function Practice({ story, language, settings, selected, onSettings, onBack, onM
         <p lang={language}>{session.segments.map((part, index) => settings.unit === "sentence" && index === session.sentence ? <mark key={index}>{part}</mark> : <span key={index}>{part}</span>)}</p>
         {settings.translation && paragraph.pt && <p className="shadowing-translation" lang="pt-BR">{paragraph.pt}</p>}
       </article>
-      <p role="status">{session.fullReading ? "Leitura completa do parágrafo" : techniqueNames[session.step.technique]} · Repetição {session.step.repetition}/{session.step.total} · {session.playing ? session.phase === "wait" ? "Pausa para praticar" : "Reproduzindo" : "Aguardando Play"}</p>
+      <p role="status">{session.fullReading ? "Leitura completa do parágrafo" : techniqueNames[session.step.technique]} · Repetição {session.step.repetition}/{session.step.total} · <strong>{session.playing ? session.phase === "wait" ? "Pausa para praticar" : "Reproduzindo" : "Aguardando Play"}</strong></p>
       {settings.unit === "sentence" && <p>Frase {session.sentence + 1}/{session.segments.length}</p>}
-      <div className="shadowing-controls" role="group" aria-label="Controles de reprodução">
+      <div className="shadowing-controls shadowing-desktop-controls" role="group" aria-label="Controles de reprodução">
         <button type="button" aria-label="Anterior" disabled={!session.canPrevious} onClick={() => session.navigate(-1)}>⏮ Anterior</button>
         <button type="button" aria-label="Play" disabled={session.playing || !session.hasVoice || configuring} onClick={session.play}>▶ Play</button>
         <button type="button" aria-label="Pause" disabled={!session.playing} onClick={session.pause}>⏸ Pause</button>
@@ -56,6 +57,14 @@ function Practice({ story, language, settings, selected, onSettings, onBack, onM
         <button type="button" aria-label="Repetir" disabled={!session.hasVoice || configuring} onClick={session.repeat}>↻ Repetir</button>
         <button type="button" aria-label="Stop" onClick={session.stop}>■ Stop</button>
         <button type="button" aria-label="Configurações" aria-expanded={configuring} onClick={() => { session.pause(); setConfiguring(v => !v); }}>⚙ Configurações</button>
+      </div>
+      <div className="shadowing-mobile-controls" role="group" aria-label="Controles de reprodu??o mobile">
+        <button type="button" aria-label="Anterior" disabled={!session.canPrevious} onClick={() => session.navigate(-1)}><ControlIcon lucide name="previous" /></button>
+        <button type="button" className="walking-toggle" aria-label={session.playing ? "Pausar" : "Continuar"} disabled={!session.playing && (!session.hasVoice || configuring)} onClick={session.playing ? session.pause : session.play}><ControlIcon lucide name={session.playing ? "pause" : "play"} /></button>
+        <button type="button" aria-label="Pr?ximo" disabled={!session.canNext} onClick={() => session.navigate(1)}><ControlIcon lucide name="next" /></button>
+        <button type="button" aria-label="Repetir" disabled={!session.hasVoice || configuring} onClick={session.repeat}><ControlIcon lucide name="repeat" /></button>
+        <button type="button" aria-label="Parar" onClick={session.stop}><ControlIcon lucide name="stop" /></button>
+        <button type="button" aria-label="Configura??es" aria-expanded={configuring} onClick={() => { session.pause(); setConfiguring(v => !v); }}><ControlIcon lucide name="settings" /></button>
       </div>
     </>}
     {settings.unit === "sentence" && <button type="button" disabled={!session.hasVoice || configuring} onClick={session.readParagraph}>Ouvir parágrafo completo</button>}
@@ -100,7 +109,7 @@ export function StoryShadowing({ language, onMenu }: { language: StudentLanguage
         <h3 lang={language}>{item.titleEn}</h3><p>{item.englishLevel} · {item.paragraphs.length} parágrafos</p>
         {item.topic && <p>{item.topic}</p>}
         <p className="shadowing-preview" lang={language}>{item.paragraphs[0].en}</p>
-        <button type="button" className="primary-button" onClick={() => { setStory(item); setSelected(0); }}>Praticar</button>
+        <button type="button" className="primary-button" onClick={() => { setStory(item); setSelected(0); setPracticing(true); }}>Praticar</button>
       </article>)}</div>
     </>}
   </section>;

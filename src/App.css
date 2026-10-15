@@ -2162,13 +2162,13 @@ button {
 .walking-mode { max-width: 680px; margin: 0 auto; padding: 1rem; }
 .walking-mode h3 { font-size: clamp(2rem, 7vw, 3rem); overflow-wrap: anywhere; }
 .walking-mode progress { width: 100%; height: 1.2rem; accent-color: #2563eb; }
-.walking-controls { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .75rem; margin: 1.25rem 0; }
+.walking-controls, .shadowing-mobile-controls { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .75rem; margin: 1.25rem 0; }
 .walking-entry, .walking-settings select { min-height: 48px; font: inherit; border-radius: 10px; padding: .7rem; }
-.walking-controls button, .walking-configuration summary { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; width: 52px; height: 52px; padding: 0; border: 1px solid #cfd6e4; border-radius: 50%; background: #fff; color: #172033; cursor: pointer; }
-.walking-controls .walking-toggle { width: 60px; height: 60px; background: #3659d9; border-color: #3659d9; color: #fff; }
-.walking-controls button:enabled:active, .walking-configuration summary:active { transform: scale(.95); }
-.walking-controls button:focus-visible, .walking-configuration summary:focus-visible { outline: 3px solid #3659d9; outline-offset: 3px; }
-.walking-controls button:disabled { opacity: .5; cursor: default; }
+.walking-controls button, .walking-configuration summary, .shadowing .shadowing-mobile-controls button { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; width: 52px; height: 52px; padding: 0; border: 1px solid #cfd6e4; border-radius: 50%; background: #fff; color: #172033; cursor: pointer; }
+.walking-controls .walking-toggle, .shadowing .shadowing-mobile-controls .walking-toggle { width: 60px; height: 60px; background: #3659d9; border-color: #3659d9; color: #fff; }
+.walking-controls button:enabled:active, .walking-configuration summary:active, .shadowing-mobile-controls button:enabled:active { transform: scale(.95); }
+.walking-controls button:focus-visible, .walking-configuration summary:focus-visible, .shadowing-mobile-controls button:focus-visible { outline: 3px solid #3659d9; outline-offset: 3px; }
+.walking-controls button:disabled, .shadowing-mobile-controls button:disabled { opacity: .5; cursor: default; }
 .walking-settings { display: grid; gap: 1rem; margin-top: 1rem; }
 .walking-settings label { display: flex; align-items: center; justify-content: space-between; gap: .75rem; }
 .walking-configuration summary { list-style: none; }
@@ -2209,4 +2209,11 @@ button {
   .shadowing-controls { gap: .5rem; }
   .shadowing-controls button { flex: 1 1 100px; }
   .shadowing-reading { padding: .85rem; }
+}
+
+.shadowing-mobile-controls { display: none; }
+@media (max-width: 640px) {
+  .shadowing .shadowing-desktop-controls, .shadowing-desktop-label { display: none; }
+  .shadowing-mobile-controls { display: flex; }
+  .shadowing-mobile-controls button[aria-expanded="true"] { background: #edf1ff; border-color: #3659d9; }
 }

@@ -191,8 +191,7 @@ assert.ok(canceled > 0);
 const ui = new Harness(StoryShadowing, { language: 'en-US', onMenu() {} }); ui.flush();
 const practiceButton = find(ui.tree, n => n.type === 'button' && text(n) === 'Praticar');
 assert.ok(practiceButton); practiceButton.props.onClick(); ui.flush();
-const start = find(ui.tree, n => n.type === 'button' && text(n) === 'Iniciar prática');
-start.props.onClick(); ui.flush();
+assert.equal(find(ui.tree, n => n.type === 'button' && text(n) === 'Iniciar prática'), null);
 const practiceNode = find(ui.tree, n => typeof n.type === 'function' && n.type.name === 'Practice');
 assert.ok(practiceNode);
 const practice = new Harness(practiceNode.type, practiceNode.props); practice.flush();
@@ -202,6 +201,40 @@ const obsolete = utterances.at(-1);
 named(practice.tree, 'Próximo').props.onClick(); practice.flush();
 const afterNavigation = utterances.length; obsolete.onend(); practice.flush();
 assert.equal(utterances.length, afterNavigation);
+// Exercise the actual mobile handlers in every scope/control combination.
+for (const scope of ['story', 'paragraph']) for (const control of ['manual', 'automatic']) {
+  const mobile = new Harness(practiceNode.type, { ...practiceNode.props,
+    settings: { ...defaults, scope, control, automatic: control === 'automatic', technique: 'listen', keepAwake: false } });
+  const group = () => find(mobile.tree, n => n.props?.className === 'shadowing-mobile-controls');
+  mobile.flush();
+  assert.equal(React.Children.count(group().props.children), 6);
+  for (const button of React.Children.toArray(group().props.children)) {
+    assert.ok(button.props['aria-label']);
+    assert.equal(text(button), '', 'Mobile controls contain no visible text');
+    assert.match(renderToStaticMarkup(button), /<svg[^>]*aria-hidden="true"/);
+  }
+  assert.equal(named(group(), 'Anterior').props.disabled, true);
+  assert.equal(named(group(), 'Pr?ximo').props.disabled, scope === 'paragraph');
+  named(group(), 'Continuar').props.onClick(); mobile.flush();
+  assert.ok(named(group(), 'Pausar'));
+  named(group(), 'Pausar').props.onClick(); mobile.flush();
+  assert.ok(named(group(), 'Continuar'));
+  named(group(), 'Repetir').props.onClick(); mobile.flush();
+  assert.ok(named(group(), 'Pausar'));
+  named(group(), 'Parar').props.onClick(); mobile.flush();
+  assert.ok(named(group(), 'Continuar'));
+  named(group(), 'Configura??es').props.onClick(); mobile.flush();
+  assert.equal(named(group(), 'Configura??es').props['aria-expanded'], true);
+  assert.equal(named(group(), 'Continuar').props.disabled, true);
+  named(group(), 'Configura??es').props.onClick(); mobile.flush();
+  if (scope === 'story') {
+    named(group(), 'Pr?ximo').props.onClick(); mobile.flush();
+    assert.equal(named(group(), 'Anterior').props.disabled, false);
+    named(group(), 'Anterior').props.onClick(); mobile.flush();
+    assert.equal(named(group(), 'Anterior').props.disabled, true);
+  }
+  mobile.dispose();
+}
 practice.dispose(); ui.dispose();
 
 // Sentence practice keeps the original paragraph and allows its full reading after completion.
