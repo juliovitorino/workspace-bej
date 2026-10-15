@@ -18,6 +18,8 @@ export interface LocalStoryParagraph {
 }
 
 export interface LocalStory {
+  englishLevel?: string;
+  topic?: string;
   id?: string;
   titlePt: string;
   titleEn: string;
@@ -38,6 +40,17 @@ const libraries: Record<string, LocalStoryLibrary> = {
   C1: storiesC1 as LocalStoryLibrary,
   C2: storiesC2 as LocalStoryLibrary,
 };
+
+/** Existing story catalogs contain English with Portuguese reference text only. */
+export function searchShadowingStories(language: string, level = "all", query = ""): LocalStory[] {
+  if (language !== "en-US") return [];
+  const normalized = normalizeSearchText(query);
+  return Object.values(libraries).flatMap(library => library.stories).filter(story =>
+    (level === "all" || story.englishLevel === level) && story.paragraphs.length > 0 &&
+    story.paragraphs.every(p => Boolean(p.en.trim())) &&
+    [story.titleEn, story.titlePt, story.topic ?? ""].some(value => normalizeSearchText(value).includes(normalized))
+  );
+}
 
 function randomStory(stories: LocalStory[]): LocalStory {
   const randomIndex = Math.floor(Math.random() * stories.length);

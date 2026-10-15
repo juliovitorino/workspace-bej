@@ -1,3 +1,4 @@
+import { ControlIcon } from "./ControlIcon";
 import { useEffect, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import type { StudentLanguage } from "../config/languages";
@@ -5,18 +6,6 @@ import { isMobileDevice } from "../utils/mobileDevice";
 import { repetitionText, WalkingAudio } from "../utils/walkingAudio";
 import type { ChunkLevel } from "../utils/chunkEligibility";
 import { ChunkLevelSelect } from "./ChunkLevelSelect";
-
-function ControlIcon({ name }: { name: "previous" | "next" | "pause" | "play" | "stop" | "settings" }) {
-  return <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
-    {name === "previous" && <><path d="M5 4v16" /><path d="m19 4-12 8 12 8Z" /></>}
-    {name === "next" && <><path d="M19 4v16" /><path d="m5 4 12 8-12 8Z" /></>}
-    {name === "pause" && <><path d="M8 5v14M16 5v14" /></>}
-    {name === "play" && <path d="m7 4 13 8-13 8Z" />}
-    {name === "stop" && <rect x="5" y="5" width="14" height="14" rx="1" />}
-    {name === "settings" && <><path d="m10 3-.5 2-2 1-2-.5-2 3L5 10v4l-1.5 1.5 2 3 2-.5 2 1 .5 2h4l.5-2 2-1 2 .5 2-3L19 14v-4l1.5-1.5-2-3-2 .5-2-1-.5-2Z" /><circle cx="12" cy="12" r="3" /></>}
-  </svg>;
-}
 
 interface Props {
   chunk: MentalIntention | null;
