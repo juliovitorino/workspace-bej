@@ -391,6 +391,7 @@ function App() {
               trainingMode === "basic" &&
               trainingIntention && (
                 <BasicTraining
+                  sourceLanguage={sourceLanguage}
                   language={language}
                   intention={trainingIntention}
                   onBack={closeTraining}

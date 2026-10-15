@@ -1,4 +1,5 @@
 import type { MentalIntention } from "../types/hashmap";
+import type { StudentLanguage } from "../config/languages";
 
 export type IntentionValidationStatus =
   | "empty"
@@ -211,13 +212,18 @@ function checkStructuralPattern(text: string, pattern?: string): boolean | null 
 
 export function validateIntention(
   sentence: string,
-  intention: ValidatableIntention
+  intention: ValidatableIntention,
+  language: StudentLanguage = "en-US"
 ): IntentionValidationResult {
   const text = normalizeText(sentence);
   if (!text) return { status: "empty" };
 
-  const explicitPatterns = intention.validationPatterns?.filter(Boolean) ?? [];
-  const structuralResult = checkStructuralPattern(text, intention.pattern);
+  // Os validationPatterns e as heurísticas estruturais atuais foram escritos
+  // para inglês. Em outros idiomas, validamos apenas os chunks localizados
+  // de examples[].enIntent, sem gerar falsos positivos em inglês.
+  const englishRules = language === "en-US";
+  const explicitPatterns = englishRules ? (intention.validationPatterns?.filter(Boolean) ?? []) : [];
+  const structuralResult = englishRules ? checkStructuralPattern(text, intention.pattern) : null;
 
   // Para estruturas conhecidas, a gramática tem prioridade. Se o JSON também
   // tiver regex explícitas, as duas verificações devem ser satisfeitas.
@@ -235,14 +241,16 @@ export function validateIntention(
   ];
   const patterns = explicitPatterns.length > 0
     ? explicitPatterns
-    : exampleChunks.map(buildLiteralPattern);
+    : exampleChunks.map((chunk) => englishRules
+      ? buildLiteralPattern(chunk)
+      : `(?:^|[^\\p{L}\\p{N}])${escapeRegex(normalizeText(chunk)).replace(/\s+/g, "\\s+")}(?=$|[^\\p{L}\\p{N}])`);
 
   if (patterns.length === 0) return { status: "unavailable" };
 
   let validPatterns = 0;
   for (const pattern of patterns) {
     try {
-      const regex = new RegExp(pattern, "i");
+      const regex = new RegExp(pattern, englishRules ? "i" : "iu");
       validPatterns += 1;
       if (regex.test(text)) return { status: "found", matchedPattern: pattern };
     } catch {

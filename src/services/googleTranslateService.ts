@@ -116,3 +116,14 @@ export function translateStudentLanguageToPortuguese(
   const source = language.split("-")[0] as GoogleTranslateLanguage;
   return translateText(text, source, "pt");
 }
+
+/** Tradução da frase do idioma de estudo para o idioma de origem selecionado. */
+export function translateBetweenLanguages(
+  text: string, source: StudentLanguage, target: StudentLanguage
+): Promise<GoogleTranslationResult> {
+  return translateText(
+    text,
+    source.split("-")[0] as GoogleTranslateLanguage,
+    target.split("-")[0] as GoogleTranslateLanguage
+  );
+}

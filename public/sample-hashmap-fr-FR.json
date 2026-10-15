@@ -17732,7 +17732,7 @@
       "id": "de-uma-vez-por-todas-once-and-for-all",
       "intention": "... de uma vez por todas",
       "pattern": "une fois pour toutes + résolution définitive",
-      "description": "Indica uma solução ou decisão definitiva, para evitar retomar o problema. Em francês, use une fois pour toutes junto à ação.",
+      "description": "descrição fr-FR",
       "category": "time",
       "searchTerms": [
         "une fois pour toutes"

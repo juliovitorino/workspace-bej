@@ -17564,7 +17564,7 @@
       "id": "de-uma-vez-por-todas-once-and-for-all",
       "intention": "... de uma vez por todas",
       "pattern": "clause + once and for all",
-      "description": "Usado quando queremos fazer, resolver, decidir ou encerrar algo definitivamente, para que não seja necessário lidar com aquilo novamente. 'Once and for all' corresponde naturalmente à intenção brasileira 'de uma vez por todas'.",
+      "description": "descrição en-US",
       "category": "time",
       "searchTerms": [
         "once and for all"

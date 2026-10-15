@@ -1,6 +1,6 @@
 import { isAuthorMode } from "../utils/authorMode";
 import type { MentalIntention } from "../types/hashmap";
-import { LANGUAGES, type StudentLanguage } from "../config/languages";
+import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
 
 export type TrainingEvaluationMode = "basic" | "advanced";
 
@@ -14,6 +14,7 @@ export interface TrainingVocabulary {
 export interface AIEvaluationRequest {
   mode: TrainingEvaluationMode;
   language?: StudentLanguage;
+  sourceLanguage?: SourceLanguage;
   intention: MentalIntention;
   studentText: string;
   vocabulary?: TrainingVocabulary;
@@ -124,6 +125,7 @@ function buildPrompt(request: AIEvaluationRequest): string {
     mode,
     intention,
     language = "en-US",
+    sourceLanguage = "pt-BR",
     studentText,
     vocabulary
   } = request;
@@ -142,7 +144,7 @@ Avalie também se a relação lógica criada pelos conectores faz sentido.
 `;
 
   return `
-Você é um avaliador de ${LANGUAGES[language].name.toLowerCase()} para um aluno brasileiro.
+Você é um avaliador de ${LANGUAGES[language].name.toLowerCase()} para um aluno que usa ${LANGUAGES[sourceLanguage].name.toLowerCase()} como idioma de origem.
 
 Seu objetivo é avaliar a produção do aluno de forma prática, clara,
 encorajadora e rigorosa, sem ser excessivamente acadêmico.
@@ -150,7 +152,7 @@ encorajadora e rigorosa, sem ser excessivamente acadêmico.
 ${mode === "basic" ? basicInstructions : advancedInstructions}
 
 INTENÇÃO MENTAL:
-Português: ${intention.intention}
+Idioma de origem (${sourceLanguage}): ${intention.intention}
 Idioma estudado (${language}): ${intention.english}
 Pattern: ${intention.pattern ?? "não informado"}
 
@@ -172,7 +174,7 @@ CRITÉRIOS:
 6. Não penalize o aluno apenas por não usar todos os itens sorteados
    quando a frase continuar natural e cumprir o objetivo comunicativo.
 7. Preserve o sentido pretendido pelo aluno ao corrigir.
-8. O feedback deve ser curto e em português do Brasil.
+8. O feedback deve ser curto e em português do Brasil (idioma da interface).
 9. correctedSentence deve corrigir a resposta com o mínimo de alterações.
 10. betterVersion deve mostrar uma forma mais natural de dizer a mesma ideia no idioma estudado.
 11. correctedSentence e betterVersion devem estar exclusivamente no idioma estudado (${language}).

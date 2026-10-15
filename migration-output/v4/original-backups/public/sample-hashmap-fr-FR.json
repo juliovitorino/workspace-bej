@@ -19035,7 +19035,7 @@
       "intention": "... de uma vez por todas",
       "english": "une fois pour toutes",
       "pattern": "une fois pour toutes + résolution définitive",
-      "description": "Indica uma solução ou decisão definitiva, para evitar retomar o problema. Em francês, use une fois pour toutes junto à ação.",
+      "description": "ddescrição fr-FR",
       "category": "time",
       "searchTerms": [
         "de uma vez por todas",
@@ -39344,7 +39344,7 @@
       "intention": "Pensando melhor / Pensando bem",
       "english": "À bien y réfléchir",
       "pattern": "à bien y réfléchir + proposition",
-      "description": "Introduz uma mudança de opinião após reconsiderar uma decisão ou sugestão.",
+      "description": "Descrição fr-FR.",
       "category": "decisions",
       "englishLevel": "B1",
       "searchTerms": [

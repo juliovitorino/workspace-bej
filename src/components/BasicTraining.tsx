@@ -1,12 +1,12 @@
 import { isAuthorMode } from "../utils/authorMode";
-import { LANGUAGES, type StudentLanguage } from "../config/languages";
+import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import {
   evaluateTrainingWithAI,
   type AIEvaluationResult
 } from "../services/aiEvaluationService";
-import { translateStudentLanguageToPortuguese } from "../services/googleTranslateService";
+import { translateBetweenLanguages } from "../services/googleTranslateService";
 import { validateIntention } from "../services/intentionValidator";
 
 const AI_ENABLED = import.meta.env.VITE_AI_ENABLED === "true";
@@ -98,6 +98,7 @@ function renderHighlightedText(
 interface BasicTrainingProps {
   intention: MentalIntention;
   language: StudentLanguage;
+  sourceLanguage: SourceLanguage;
   onBack: () => void;
 }
 
@@ -160,19 +161,26 @@ function pickRandom<T>(items: T[]): T | null {
 export function BasicTraining({
   intention,
   language,
+  sourceLanguage,
   onBack
 }: BasicTrainingProps) {
   const languageName = LANGUAGES[language].name.toLowerCase();
+  const sourceLanguageName = LANGUAGES[sourceLanguage].name.toLowerCase();
+  // Os arquivos de verbos, substantivos e adjetivos são exclusivamente ingleses.
+  const hasEnglishVocabulary = language === "en-US";
   const [verbs, setVerbs] = useState<VerbItem[]>([]);
   const [nouns, setNouns] = useState<NounItem[]>([]);
   const [adjectives, setAdjectives] = useState<AdjectiveItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [round, setRound] = useState(0);
+  const referenceExample = intention.examples?.length
+    ? intention.examples[round % intention.examples.length]
+    : undefined;
   const [studentText, setStudentText] = useState("");
   const intentionValidation = useMemo(
-    () => validateIntention(studentText, intention),
-    [studentText, intention]
+    () => validateIntention(studentText, intention, language),
+    [studentText, intention, language]
   );
   const [evaluating, setEvaluating] = useState(false);
   const [evaluationError, setEvaluationError] = useState<string | null>(null);
@@ -218,6 +226,13 @@ export function BasicTraining({
     async function loadVocabulary() {
       setLoading(true);
       setError(null);
+      if (!hasEnglishVocabulary) {
+        setVerbs([]);
+        setNouns([]);
+        setAdjectives([]);
+        setLoading(false);
+        return;
+      }
 
       try {
         const [verbsResponse, nounsResponse, adjectivesResponse] =
@@ -271,7 +286,7 @@ export function BasicTraining({
     return () => {
       active = false;
     };
-  }, []);
+  }, [hasEnglishVocabulary]);
 
   useEffect(() => {
     return () => {
@@ -495,9 +510,9 @@ export function BasicTraining({
     }
 
     const googleTranslateUrl = new URL("https://translate.google.com/");
-    googleTranslateUrl.searchParams.set("hl", "pt-BR");
+    googleTranslateUrl.searchParams.set("hl", sourceLanguage);
     googleTranslateUrl.searchParams.set("sl", language.split("-")[0]);
-    googleTranslateUrl.searchParams.set("tl", "pt");
+    googleTranslateUrl.searchParams.set("tl", sourceLanguage.split("-")[0]);
     googleTranslateUrl.searchParams.set("text", englishText);
     googleTranslateUrl.searchParams.set("op", "translate");
 
@@ -513,9 +528,9 @@ export function BasicTraining({
     if (!englishText) return;
 
     const googleTranslateUrl = new URL("https://translate.google.com/");
-    googleTranslateUrl.searchParams.set("hl", "pt-BR");
+    googleTranslateUrl.searchParams.set("hl", sourceLanguage);
     googleTranslateUrl.searchParams.set("sl", language.split("-")[0]);
-    googleTranslateUrl.searchParams.set("tl", "pt");
+    googleTranslateUrl.searchParams.set("tl", sourceLanguage.split("-")[0]);
     googleTranslateUrl.searchParams.set("text", englishText);
     googleTranslateUrl.searchParams.set("op", "translate");
 
@@ -548,7 +563,7 @@ export function BasicTraining({
 
     // O iframe não herda o CSS do site: isso evita páginas extras em branco.
     printFrame.srcdoc = `<!doctype html>
-<html lang="pt-BR">
+<html lang="${sourceLanguage}">
 <head>
   <meta charset="utf-8" />
   <title>Brazilian English Journey - Treino Básico</title>
@@ -583,9 +598,7 @@ export function BasicTraining({
   async function handleEvaluate() {
     if (!isAuthorMode()) return;
     if (
-      !trainingItems.verb ||
-      !trainingItems.adjective ||
-      !trainingItems.noun
+      (hasEnglishVocabulary && (!trainingItems.verb || !trainingItems.adjective || !trainingItems.noun))
     ) {
       return;
     }
@@ -606,13 +619,14 @@ export function BasicTraining({
       const result = await evaluateTrainingWithAI({
         mode: "basic",
         language,
+        sourceLanguage,
         intention,
         studentText,
-        vocabulary: {
-          verbs: [trainingItems.verb.base],
-          adjectives: [trainingItems.adjective.adjective],
-          nouns: [trainingItems.noun.noun]
-        }
+        vocabulary: hasEnglishVocabulary ? {
+          verbs: trainingItems.verb ? [trainingItems.verb.base] : [],
+          adjectives: trainingItems.adjective ? [trainingItems.adjective.adjective] : [],
+          nouns: trainingItems.noun ? [trainingItems.noun.noun] : []
+        } : undefined
       });
 
       setEvaluation(result);
@@ -641,7 +655,7 @@ export function BasicTraining({
     setGoogleTranslation(null);
 
     try {
-      const result = await translateStudentLanguageToPortuguese(studentText, language);
+      const result = await translateBetweenLanguages(studentText, language, sourceLanguage);
       setGoogleTranslation(result.translatedText);
     } catch (err) {
       setTranslationError(
@@ -822,20 +836,20 @@ export function BasicTraining({
         <h1>{intention.intention}</h1>
         <p className="detail-english">{intention.targetIntention ?? intention.english}</p>
 
-        {intention.examples && intention.examples.length > 0 && (
+        {referenceExample && (
           <section className="training-intention-example">
             <h3>Exemplo</h3>
             <div className="example">
               <p>
                 {renderHighlightedText(
-                  intention.examples[0].pt,
-                  intention.examples[0].ptIntent
+                  referenceExample.pt,
+                  referenceExample.ptIntent
                 )}
               </p>
               <p className="english">
                 {renderHighlightedText(
-                  intention.examples[0].en,
-                  intention.examples[0].enIntent
+                  referenceExample.en,
+                  referenceExample.enIntent
                 )}
               </p>
             </div>
@@ -847,8 +861,9 @@ export function BasicTraining({
         )}
 
         <p className="training-instruction">
-          Crie uma frase usando a intenção mental e tente incluir
-          o verbo, o adjetivo e o substantivo sorteados abaixo.
+          {hasEnglishVocabulary
+            ? "Crie uma frase usando a intenção mental e tente incluir o verbo, o adjetivo e o substantivo sorteados abaixo."
+            : `Crie uma frase em ${languageName} usando a intenção mental. Use o exemplo em ${sourceLanguageName} como referência. Ao sortear novamente, outro exemplo será exibido, quando disponível.`}
         </p>
       </div>
 
@@ -868,6 +883,7 @@ export function BasicTraining({
 
       {!loading &&
         !error &&
+        hasEnglishVocabulary &&
         trainingItems.verb &&
         trainingItems.adjective &&
         trainingItems.noun && (
@@ -1096,8 +1112,8 @@ export function BasicTraining({
                 className="secondary-button"
                 onClick={handleOpenGoogleTranslate}
                 disabled={!studentText.trim()}
-                title="Abrir no Google Tradutor (inglês → português)"
-                aria-label="Abrir frase no Google Tradutor do inglês para português"
+                title={`Abrir no Google Tradutor (${languageName} → ${sourceLanguageName})`}
+                aria-label={`Abrir frase no Google Tradutor de ${languageName} para ${sourceLanguageName}`}
                 style={{
                   width: "2.25rem",
                   minWidth: "2.25rem",
@@ -1129,7 +1145,7 @@ export function BasicTraining({
                 type="button"
                 className="secondary-button"
                 onClick={handlePrintWorksheet}
-                disabled={loading || Boolean(error) || !trainingItems.verb || !trainingItems.noun || !trainingItems.adjective}
+                disabled={loading || Boolean(error) || (hasEnglishVocabulary && (!trainingItems.verb || !trainingItems.noun || !trainingItems.adjective))}
                 title="Imprimir folha de exercícios (A4)"
                 aria-label="Imprimir folha de exercícios do treino básico"
                 style={{
@@ -1284,7 +1300,7 @@ export function BasicTraining({
             <>
               <section className="status-card google-translation-card" ref={googleTranslationCardRef}>
                 <p className="eyebrow">Tradução do Google</p>
-                <h2>Versão em português</h2>
+                <h2>Versão em {sourceLanguageName}</h2>
                 <p>{googleTranslation}</p>
               </section>
 
@@ -1392,8 +1408,8 @@ export function BasicTraining({
                       )
                     }
                     disabled={evaluationSpeaking === "corrected"}
-                    title="Ouvir a correção em inglês"
-                    aria-label="Ouvir a correção em inglês"
+                    title={`Ouvir a correção em ${languageName}`}
+                    aria-label={`Ouvir a correção em ${languageName}`}
                     style={{
                       width: "2.5rem",
                       minWidth: "2.5rem",
@@ -1472,8 +1488,8 @@ export function BasicTraining({
                     className="secondary-button"
                     onClick={() => handleOpenEvaluationGoogleTranslate(evaluation.correctedSentence)}
                     disabled={!evaluation.correctedSentence.trim()}
-                    title="Traduzir correção no Google Tradutor (inglês → português)"
-                    aria-label="Abrir correção no Google Tradutor do inglês para português"
+                    title={`Traduzir correção no Google Tradutor (${languageName} → ${sourceLanguageName})`}
+                    aria-label={`Abrir correção no Google Tradutor de ${languageName} para ${sourceLanguageName}`}
                     style={{
                       width: "2.5rem",
                       minWidth: "2.5rem",
@@ -1531,8 +1547,8 @@ export function BasicTraining({
                       )
                     }
                     disabled={evaluationSpeaking === "better"}
-                    title="Ouvir a versão mais natural em inglês"
-                    aria-label="Ouvir a versão mais natural em inglês"
+                    title={`Ouvir a versão mais natural em ${languageName}`}
+                    aria-label={`Ouvir a versão mais natural em ${languageName}`}
                     style={{
                       width: "2.5rem",
                       minWidth: "2.5rem",
@@ -1611,8 +1627,8 @@ export function BasicTraining({
                     className="secondary-button"
                     onClick={() => handleOpenEvaluationGoogleTranslate(evaluation.betterVersion)}
                     disabled={!evaluation.betterVersion.trim()}
-                    title="Traduzir versão mais natural no Google Tradutor (inglês → português)"
-                    aria-label="Abrir versão mais natural no Google Tradutor do inglês para português"
+                    title={`Traduzir versão mais natural no Google Tradutor (${languageName} → ${sourceLanguageName})`}
+                    aria-label={`Abrir versão mais natural no Google Tradutor de ${languageName} para ${sourceLanguageName}`}
                     style={{
                       width: "2.5rem",
                       minWidth: "2.5rem",
@@ -1805,15 +1821,15 @@ export function BasicTraining({
           <p className="worksheet-english">{intention.targetIntention ?? intention.english}</p>
         </header>
 
-        {intention.examples && intention.examples.length > 0 && (
+        {referenceExample && (
           <section className="worksheet-section">
             <h2 className="worksheet-section-title">Exemplo</h2>
             <div className="worksheet-example">
               <p className="worksheet-example-pt">
-                {renderHighlightedText(intention.examples[0].pt, intention.examples[0].ptIntent)}
+                {renderHighlightedText(referenceExample.pt, referenceExample.ptIntent)}
               </p>
               <p className="worksheet-example-en">
-                {renderHighlightedText(intention.examples[0].en, intention.examples[0].enIntent)}
+                {renderHighlightedText(referenceExample.en, referenceExample.enIntent)}
               </p>
             </div>
           </section>
@@ -1826,7 +1842,7 @@ export function BasicTraining({
           </section>
         )}
 
-        {trainingItems.verb && trainingItems.noun && trainingItems.adjective && (
+        {hasEnglishVocabulary && trainingItems.verb && trainingItems.noun && trainingItems.adjective && (
           <section className="worksheet-vocabulary">
             <div className="worksheet-vocab-card">
               <p className="worksheet-vocab-label">VERBO</p>
@@ -1854,7 +1870,9 @@ export function BasicTraining({
         <section className="worksheet-writing">
           <h2 className="worksheet-writing-title">Minha prática escrita</h2>
           <p className="worksheet-writing-instruction">
-            Crie frases em inglês com a intenção mental e tente usar o verbo, o adjetivo e o substantivo sorteados.
+            {hasEnglishVocabulary
+              ? "Crie frases em inglês com a intenção mental e tente usar o verbo, o adjetivo e o substantivo sorteados."
+              : `Crie frases em ${languageName} usando a intenção mental apresentada acima.`}
           </p>
           {Array.from({ length: 10 }, (_, index) => (
             <div className="worksheet-writing-line" key={index} />
