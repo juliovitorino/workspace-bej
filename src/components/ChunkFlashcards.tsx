@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import { isAuthorMode } from "../utils/authorMode";
-import type { StudentLanguage } from "../config/languages";
+import { LANGUAGES, type StudentLanguage } from "../config/languages";
 import { isMobileDevice } from "../utils/mobileDevice";
 import { WalkingMode } from "./WalkingMode";
 import { drawChunk, eligibleChunks, type ChunkLevel } from "../utils/chunkEligibility";
@@ -248,12 +248,11 @@ export function ChunkFlashcards({
     const synth = window.speechSynthesis;
     synth.cancel();
     const utterance = new SpeechSynthesisUtterance(currentChunk.english.trim());
-    utterance.lang = "en-US";
+    utterance.lang = language;
     utterance.rate = 0.9;
     const voices = synth.getVoices();
-    const usVoice = voices.find((voice) => voice.lang.toLowerCase() === "en-us");
-    const englishVoice = voices.find((voice) => voice.lang.toLowerCase().startsWith("en"));
-    if (usVoice || englishVoice) utterance.voice = usVoice ?? englishVoice ?? null;
+    utterance.voice = voices.find((voice) => voice.lang.toLowerCase() === language.toLowerCase()) ??
+      voices.find((voice) => voice.lang.toLowerCase().split("-")[0] === language.slice(0, 2)) ?? null;
     utterance.onerror = (event) => {
       if (event.error !== "canceled" && event.error !== "interrupted") {
         setAudioError("Não foi possível reproduzir o áudio neste navegador.");
@@ -407,7 +406,7 @@ export function ChunkFlashcards({
           <article className="chunk-flashcards-card" aria-live="polite">
             {currentChunk ? (
               <>
-                <p className="chunk-flashcards-language">ENGLISH · EN-US</p>
+                <p className="chunk-flashcards-language">{LANGUAGES[language].name} · {language}</p>
                 <div className="chunk-flashcards-english-row">
                   <h3>{currentChunk.english}</h3>
                   <div className="chunk-flashcards-english-actions">
@@ -416,7 +415,7 @@ export function ChunkFlashcards({
                       className="chunk-flashcards-speaker"
                       onClick={speak}
                       aria-label={`Ouvir pronúncia de ${currentChunk.english}`}
-                      title="Ouvir pronúncia em inglês"
+                      title={`Ouvir pronúncia · ${LANGUAGES[language].name}`}
                     >
                       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                         <path d="M11 5 6 9H3v6h3l5 4V5Z" />
