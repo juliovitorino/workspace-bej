@@ -75,7 +75,7 @@ function renderHighlightedText(
     return text;
   }
 
-  const index = text.indexOf(highlight);
+  const index = text.toLocaleLowerCase().indexOf(highlight.toLocaleLowerCase());
 
   if (index === -1) {
     return text;
@@ -88,7 +88,7 @@ function renderHighlightedText(
     <>
       {before}
       <strong className="intention-highlight">
-        {highlight}
+        {text.slice(index, index + highlight.length)}
       </strong>
       {after}
     </>
@@ -166,8 +166,9 @@ export function BasicTraining({
 }: BasicTrainingProps) {
   const languageName = LANGUAGES[language].name.toLowerCase();
   const sourceLanguageName = LANGUAGES[sourceLanguage].name.toLowerCase();
-  // Os arquivos de verbos, substantivos e adjetivos são exclusivamente ingleses.
-  const hasEnglishVocabulary = language === "en-US";
+  // Os vocabulários são em inglês, com significados apenas em pt-BR.
+  // Para outros pares, a prática usa os exemplos bilíngues do Hashmap.
+  const hasEnglishVocabulary = language === "en-US" && sourceLanguage === "pt-BR";
   const [verbs, setVerbs] = useState<VerbItem[]>([]);
   const [nouns, setNouns] = useState<NounItem[]>([]);
   const [adjectives, setAdjectives] = useState<AdjectiveItem[]>([]);
@@ -189,6 +190,7 @@ export function BasicTraining({
   const [translationError, setTranslationError] = useState<string | null>(null);
   const [googleTranslation, setGoogleTranslation] = useState<string | null>(null);
   const [speaking, setSpeaking] = useState(false);
+  const [speakingExample, setSpeakingExample] = useState<"source" | "target" | null>(null);
   const [evaluationSpeaking, setEvaluationSpeaking] = useState<
     "corrected" | "better" | null
   >(null);
@@ -316,6 +318,7 @@ export function BasicTraining({
     setTranslationError(null);
     setSpeechError(null);
     setSpeaking(false);
+    setSpeakingExample(null);
     setEvaluationSpeaking(null);
     setCopyStatus("idle");
     setDictationError(null);
@@ -336,6 +339,35 @@ export function BasicTraining({
         });
       });
     }
+  }
+
+  function handleSpeakReferenceExample(text: string, locale: StudentLanguage, side: "source" | "target") {
+    if (!("speechSynthesis" in window)) {
+      setSpeechError("O recurso de voz não está disponível neste navegador.");
+      return;
+    }
+    window.speechSynthesis.cancel();
+    setSpeechError(null);
+    setSpeaking(false);
+    setEvaluationSpeaking(null);
+    setSpeakingExample(null);
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    const voices = window.speechSynthesis.getVoices();
+    utterance.voice = voices.find((voice) => voice.lang.toLowerCase() === locale.toLowerCase())
+      ?? voices.find((voice) => voice.lang.toLowerCase().split("-")[0] === locale.split("-")[0])
+      ?? null;
+    utterance.lang = locale;
+    utterance.rate = 0.9;
+    utterance.onstart = () => setSpeakingExample(side);
+    utterance.onend = () => setSpeakingExample(null);
+    utterance.onerror = (event) => {
+      setSpeakingExample(null);
+      if (event.error !== "interrupted" && event.error !== "canceled") {
+        setSpeechError(`Não foi possível reproduzir o exemplo em ${LANGUAGES[locale].name.toLowerCase()}.`);
+      }
+    };
+    window.speechSynthesis.speak(utterance);
   }
 
   function handleToggleDictation() {
@@ -451,6 +483,7 @@ export function BasicTraining({
     setTranslationError(null);
     setSpeechError(null);
     setSpeaking(false);
+    setSpeakingExample(null);
     setEvaluationSpeaking(null);
     setDictationError(null);
     recognitionRef.current?.abort();
@@ -840,17 +873,27 @@ export function BasicTraining({
           <section className="training-intention-example">
             <h3>Exemplo</h3>
             <div className="example">
+              <p className="training-example-language">Origem: {LANGUAGES[sourceLanguage].flag} {LANGUAGES[sourceLanguage].name}</p>
               <p>
-                {renderHighlightedText(
-                  referenceExample.pt,
-                  referenceExample.ptIntent
-                )}
+                {renderHighlightedText(referenceExample.pt, referenceExample.ptIntent)}
+                {" "}
+                <button type="button" className="secondary-button training-example-audio"
+                  onClick={() => handleSpeakReferenceExample(referenceExample.pt, sourceLanguage, "source")}
+                  aria-label={`Ouvir exemplo em ${sourceLanguageName}`}
+                  title={`Ouvir em ${sourceLanguageName}`}>
+                  {speakingExample === "source" ? "🔊 Ouvindo" : "🔊 Ouvir"}
+                </button>
               </p>
+              <p className="training-example-language">Estudo: {LANGUAGES[language].flag} {LANGUAGES[language].name}</p>
               <p className="english">
-                {renderHighlightedText(
-                  referenceExample.en,
-                  referenceExample.enIntent
-                )}
+                {renderHighlightedText(referenceExample.en, referenceExample.enIntent)}
+                {" "}
+                <button type="button" className="secondary-button training-example-audio"
+                  onClick={() => handleSpeakReferenceExample(referenceExample.en, language, "target")}
+                  aria-label={`Ouvir exemplo em ${languageName}`}
+                  title={`Ouvir em ${languageName}`}>
+                  {speakingExample === "target" ? "🔊 Ouvindo" : "🔊 Ouvir"}
+                </button>
               </p>
             </div>
           </section>
@@ -1016,8 +1059,8 @@ export function BasicTraining({
                 type="button"
                 className="secondary-button"
                 onClick={handleToggleDictation}
-                title={dictating ? "Parar ditado" : "Ditar frase em inglês"}
-                aria-label={dictating ? "Parar ditado" : "Ditar frase em inglês"}
+                title={dictating ? "Parar ditado" : `Ditar frase em ${languageName}`}
+                aria-label={dictating ? "Parar ditado" : `Ditar frase em ${languageName}`}
                 aria-pressed={dictating}
                 style={{
                   width: "2.25rem",
@@ -1195,6 +1238,7 @@ export function BasicTraining({
                 setTranslationError(null);
                 setSpeechError(null);
                 setSpeaking(false);
+                setSpeakingExample(null);
                 setEvaluationSpeaking(null);
 
                 if ("speechSynthesis" in window) {
@@ -1825,9 +1869,11 @@ export function BasicTraining({
           <section className="worksheet-section">
             <h2 className="worksheet-section-title">Exemplo</h2>
             <div className="worksheet-example">
+              <p className="worksheet-example-language">Origem: {LANGUAGES[sourceLanguage].name}</p>
               <p className="worksheet-example-pt">
                 {renderHighlightedText(referenceExample.pt, referenceExample.ptIntent)}
               </p>
+              <p className="worksheet-example-language">Estudo: {LANGUAGES[language].name}</p>
               <p className="worksheet-example-en">
                 {renderHighlightedText(referenceExample.en, referenceExample.enIntent)}
               </p>

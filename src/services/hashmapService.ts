@@ -129,7 +129,9 @@ function normalizeHashmap(target: HashmapDataV4, source: HashmapDataV4): Hashmap
         en: example.exampleItem,
         ptIntent: pt.intent,
         enIntent: example.intent,
-        hqImage: example.hqImage ?? pt.hqImage
+        // HQ pertence exclusivamente ao idioma de estudo (Target).
+        // Não reutilizar a HQ do Source quando o Target não tiver imagem.
+        hqImage: example.hqImage?.trim() || undefined
       }];
     });
 

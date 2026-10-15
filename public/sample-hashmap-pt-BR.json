@@ -17529,25 +17529,21 @@
       "level": "B1",
       "examples": [
         {
-          "hqImage": "/images/hq/b1/de-uma-vez-por-todas-once-and-for-all-01.png",
           "id": "1c8c4e31-7edb-494b-aed8-ccb72662da63",
           "exampleItem": "Precisamos resolver esse problema de uma vez por todas.",
           "intent": "de uma vez por todas"
         },
         {
-          "hqImage": "/images/hq/b1/de-uma-vez-por-todas-once-and-for-all-02.png",
           "id": "0adca607-fffc-4e7a-bc39-ce4775f919bf",
           "exampleItem": "Quero terminar isso de uma vez por todas.",
           "intent": "de uma vez por todas"
         },
         {
-          "hqImage": "/images/hq/b1/de-uma-vez-por-todas-once-and-for-all-03.png",
           "id": "c878efb8-5be3-4ab7-a451-0e191aceaa2f",
           "exampleItem": "Vamos esclarecer isso de uma vez por todas.",
           "intent": "de uma vez por todas"
         },
         {
-          "hqImage": "/images/hq/b1/de-uma-vez-por-todas-once-and-for-all-04.png",
           "id": "451c3ccc-746f-474b-84ff-074abd9dc59e",
           "exampleItem": "Ela decidiu abandonar esse hábito de uma vez por todas.",
           "intent": "de uma vez por todas"
