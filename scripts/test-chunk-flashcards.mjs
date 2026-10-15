@@ -139,6 +139,21 @@ for (const locale of ['en-US', 'fr-FR', 'es-ES']) {
 
 const props = { intentions: fixtures, language: 'fr-FR', onWalkingChange() {},
   onShowDetails() {}, onBasicTraining() {}, onAdvancedTraining() {} };
+for (const language of ['en-US', 'fr-FR', 'es-ES']) {
+  const h = new Harness(ChunkFlashcards, { ...props, language }); h.flush();
+  find(h.tree, n => n.type === 'button' && text(n) === 'Começar').props.onClick(); h.flush();
+  const speaker = find(h.tree, n => n.props?.className === 'chunk-flashcards-speaker');
+  const regional = { lang: `${language.slice(0, 2)}-CA` };
+  const exact = { lang: language };
+  for (const available of [[{ lang: 'en-US' }, regional, exact], [regional], []]) {
+    window.speechSynthesis.getVoices = () => available;
+    speaker.props.onClick();
+    assert.equal(utterances.at(-1).lang, language);
+    assert.equal(utterances.at(-1).voice?.lang ?? null, available.length === 3 ? language : available[0]?.lang ?? null);
+  }
+  h.dispose();
+}
+window.speechSynthesis.getVoices = () => [];
 const parent = new Harness(ChunkFlashcards, props);
 parent.flush();
 assert.equal(text(named(parent.tree, 'Posição do chunk na rodada')), '0/12');

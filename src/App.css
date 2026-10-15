@@ -2029,6 +2029,7 @@ button {
 }
 
 .chunk-flashcards-language {
+  text-transform: uppercase;
   margin: 0 0 14px;
   color: #3659d9;
   font-size: 0.75rem;

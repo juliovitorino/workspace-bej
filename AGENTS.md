@@ -366,3 +366,40 @@ folders generated for that task that are not part of the original project**.
    and which, if any, were retained for safety.
 8. Cleanup is part of task completion and must not require a separate user
    prompt for artifacts clearly created by the current task.
+
+# Agentes de HQ — Brazilian English Journey
+
+Perfis prontos para adicionar ao repositório (não são GPTs instalados nem processos autônomos).
+
+## Arquivos
+- `docs/agents/hq-common.md` — regras compartilhadas e fluxo de duas fases.
+- `docs/agents/hq-en-US.md` — HQ em inglês americano.
+- `docs/agents/hq-es-ES.md` — HQ em espanhol da Espanha.
+- `docs/agents/hq-fr-FR.md` — HQ em francês da França.
+
+## Instalação
+Copie a pasta `docs/agents` para a raiz do repositório. No `AGENTS.md` da raiz, **sem substituir o conteúdo existente**, acrescente a referência:
+
+```md
+## Agentes de HQ
+Para tarefas de HQ, ler `docs/agents/hq-common.md` e o perfil do idioma:
+- en-US: `docs/agents/hq-en-US.md`
+- es-ES: `docs/agents/hq-es-ES.md`
+- fr-FR: `docs/agents/hq-fr-FR.md`
+Executar a FASE 1 sem modificar arquivos e aguardar aprovação para a FASE 2.
+```
+
+## Como solicitar ao Codex
+
+```text
+Leia AGENTS.md, docs/agents/hq-common.md e docs/agents/hq-en-US.md.
+Quero criar 1 HQ do nível A1, selecionando uma história que ainda não tenha HQ em en-US.
+Execute apenas a FASE 1: diagnóstico, verificação da ferramenta de imagens e plano, sem modificar arquivos.
+```
+
+Troque `hq-en-US.md` por `hq-es-ES.md` ou `hq-fr-FR.md` conforme o idioma.
+
+## Importante
+O Codex pode ler/editar os JSONs e salvar arquivos quando tiver acesso ao workspace. Para **gerar imagens** é necessário que exista uma ferramenta de geração de imagens acessível. Sem ela, o agente prepara um prompt e aguarda a imagem. Não existe promessa de execução diária automática.
+
+O schema atual de `hqImage` e seus consumidores precisam ser inspecionados antes da implementação, pois uma história pode ter imagens distintas por idioma.

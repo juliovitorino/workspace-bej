@@ -1,0 +1,2889 @@
+{
+  "metadata": {
+    "name": "English Nouns - Common Use",
+    "version": "1.0.0",
+    "updatedAt": "2026-09-12",
+    "language": "en",
+    "description": "Curated set of commonly used English nouns for study and exercise generation.",
+    "totalNouns": 138
+  },
+  "nouns": [
+    {
+      "id": "person",
+      "noun": "person",
+      "plural": "people",
+      "countability": "countable",
+      "meanings": [
+        "pessoa"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "She is a kind person.",
+          "pt": "Ela é uma pessoa gentil."
+        }
+      ],
+      "tags": [
+        "people",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "man",
+      "noun": "man",
+      "plural": "men",
+      "countability": "countable",
+      "meanings": [
+        "homem"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "That man is my neighbor.",
+          "pt": "Aquele homem é meu vizinho."
+        }
+      ],
+      "tags": [
+        "people"
+      ]
+    },
+    {
+      "id": "woman",
+      "noun": "woman",
+      "plural": "women",
+      "countability": "countable",
+      "meanings": [
+        "mulher"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The woman is waiting outside.",
+          "pt": "A mulher está esperando lá fora."
+        }
+      ],
+      "tags": [
+        "people"
+      ]
+    },
+    {
+      "id": "child",
+      "noun": "child",
+      "plural": "children",
+      "countability": "countable",
+      "meanings": [
+        "criança",
+        "filho",
+        "filha"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The child is playing in the park.",
+          "pt": "A criança está brincando no parque."
+        }
+      ],
+      "tags": [
+        "people",
+        "family"
+      ]
+    },
+    {
+      "id": "friend",
+      "noun": "friend",
+      "plural": "friends",
+      "countability": "countable",
+      "meanings": [
+        "amigo",
+        "amiga"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "My friend lives nearby.",
+          "pt": "Meu amigo mora perto."
+        }
+      ],
+      "tags": [
+        "people",
+        "social"
+      ]
+    },
+    {
+      "id": "family",
+      "noun": "family",
+      "plural": "families",
+      "countability": "countable",
+      "meanings": [
+        "família"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "My family lives in Brazil.",
+          "pt": "Minha família mora no Brasil."
+        }
+      ],
+      "tags": [
+        "family",
+        "people"
+      ]
+    },
+    {
+      "id": "mother",
+      "noun": "mother",
+      "plural": "mothers",
+      "countability": "countable",
+      "meanings": [
+        "mãe"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "My mother loves cooking.",
+          "pt": "Minha mãe adora cozinhar."
+        }
+      ],
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "father",
+      "noun": "father",
+      "plural": "fathers",
+      "countability": "countable",
+      "meanings": [
+        "pai"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "My father works from home.",
+          "pt": "Meu pai trabalha de casa."
+        }
+      ],
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "brother",
+      "noun": "brother",
+      "plural": "brothers",
+      "countability": "countable",
+      "meanings": [
+        "irmão"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "My brother studies engineering.",
+          "pt": "Meu irmão estuda engenharia."
+        }
+      ],
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "sister",
+      "noun": "sister",
+      "plural": "sisters",
+      "countability": "countable",
+      "meanings": [
+        "irmã"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "My sister lives in another city.",
+          "pt": "Minha irmã mora em outra cidade."
+        }
+      ],
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "husband",
+      "noun": "husband",
+      "plural": "husbands",
+      "countability": "countable",
+      "meanings": [
+        "marido"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Her husband is a teacher.",
+          "pt": "O marido dela é professor."
+        }
+      ],
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "wife",
+      "noun": "wife",
+      "plural": "wives",
+      "countability": "countable",
+      "meanings": [
+        "esposa"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "His wife works at a hospital.",
+          "pt": "A esposa dele trabalha em um hospital."
+        }
+      ],
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "parent",
+      "noun": "parent",
+      "plural": "parents",
+      "countability": "countable",
+      "meanings": [
+        "pai",
+        "mãe",
+        "responsável"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Parents need patience.",
+          "pt": "Pais precisam de paciência."
+        }
+      ],
+      "tags": [
+        "family"
+      ]
+    },
+    {
+      "id": "student",
+      "noun": "student",
+      "plural": "students",
+      "countability": "countable",
+      "meanings": [
+        "estudante",
+        "aluno",
+        "aluna"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The student asked a question.",
+          "pt": "O aluno fez uma pergunta."
+        }
+      ],
+      "tags": [
+        "education",
+        "people"
+      ]
+    },
+    {
+      "id": "teacher",
+      "noun": "teacher",
+      "plural": "teachers",
+      "countability": "countable",
+      "meanings": [
+        "professor",
+        "professora"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The teacher explained the lesson.",
+          "pt": "O professor explicou a lição."
+        }
+      ],
+      "tags": [
+        "education",
+        "people"
+      ]
+    },
+    {
+      "id": "customer",
+      "noun": "customer",
+      "plural": "customers",
+      "countability": "countable",
+      "meanings": [
+        "cliente"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The customer called this morning.",
+          "pt": "O cliente ligou esta manhã."
+        }
+      ],
+      "tags": [
+        "work",
+        "business"
+      ]
+    },
+    {
+      "id": "boss",
+      "noun": "boss",
+      "plural": "bosses",
+      "countability": "countable",
+      "meanings": [
+        "chefe"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "My boss is in a meeting.",
+          "pt": "Meu chefe está em uma reunião."
+        }
+      ],
+      "tags": [
+        "work",
+        "people"
+      ]
+    },
+    {
+      "id": "team",
+      "noun": "team",
+      "plural": "teams",
+      "countability": "countable",
+      "meanings": [
+        "equipe",
+        "time"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Our team finished the project.",
+          "pt": "Nossa equipe terminou o projeto."
+        }
+      ],
+      "tags": [
+        "work",
+        "sports"
+      ]
+    },
+    {
+      "id": "colleague",
+      "noun": "colleague",
+      "plural": "colleagues",
+      "countability": "countable",
+      "meanings": [
+        "colega de trabalho"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I had lunch with a colleague.",
+          "pt": "Eu almocei com um colega de trabalho."
+        }
+      ],
+      "tags": [
+        "work",
+        "people"
+      ]
+    },
+    {
+      "id": "house",
+      "noun": "house",
+      "plural": "houses",
+      "countability": "countable",
+      "meanings": [
+        "casa"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I live in a small house.",
+          "pt": "Eu moro em uma casa pequena."
+        }
+      ],
+      "tags": [
+        "housing",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "home",
+      "noun": "home",
+      "plural": "homes",
+      "countability": "countable",
+      "meanings": [
+        "casa",
+        "lar"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I work from home.",
+          "pt": "Eu trabalho de casa."
+        }
+      ],
+      "tags": [
+        "housing",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "apartment",
+      "noun": "apartment",
+      "plural": "apartments",
+      "countability": "countable",
+      "meanings": [
+        "apartamento"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "They rented an apartment downtown.",
+          "pt": "Eles alugaram um apartamento no centro."
+        }
+      ],
+      "tags": [
+        "housing"
+      ]
+    },
+    {
+      "id": "room",
+      "noun": "room",
+      "plural": "rooms",
+      "countability": "countable",
+      "meanings": [
+        "quarto",
+        "cômodo",
+        "sala"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This room is very quiet.",
+          "pt": "Este quarto é muito silencioso."
+        }
+      ],
+      "tags": [
+        "housing"
+      ]
+    },
+    {
+      "id": "kitchen",
+      "noun": "kitchen",
+      "plural": "kitchens",
+      "countability": "countable",
+      "meanings": [
+        "cozinha"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The kitchen is next to the living room.",
+          "pt": "A cozinha fica ao lado da sala."
+        }
+      ],
+      "tags": [
+        "housing"
+      ]
+    },
+    {
+      "id": "bathroom",
+      "noun": "bathroom",
+      "plural": "bathrooms",
+      "countability": "countable",
+      "meanings": [
+        "banheiro"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The bathroom is upstairs.",
+          "pt": "O banheiro fica no andar de cima."
+        }
+      ],
+      "tags": [
+        "housing"
+      ]
+    },
+    {
+      "id": "door",
+      "noun": "door",
+      "plural": "doors",
+      "countability": "countable",
+      "meanings": [
+        "porta"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Please close the door.",
+          "pt": "Por favor, feche a porta."
+        }
+      ],
+      "tags": [
+        "housing",
+        "objects"
+      ]
+    },
+    {
+      "id": "window",
+      "noun": "window",
+      "plural": "windows",
+      "countability": "countable",
+      "meanings": [
+        "janela"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Open the window, please.",
+          "pt": "Abra a janela, por favor."
+        }
+      ],
+      "tags": [
+        "housing",
+        "objects"
+      ]
+    },
+    {
+      "id": "street",
+      "noun": "street",
+      "plural": "streets",
+      "countability": "countable",
+      "meanings": [
+        "rua"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The street is very busy.",
+          "pt": "A rua é muito movimentada."
+        }
+      ],
+      "tags": [
+        "places",
+        "city"
+      ]
+    },
+    {
+      "id": "city",
+      "noun": "city",
+      "plural": "cities",
+      "countability": "countable",
+      "meanings": [
+        "cidade"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "São Paulo is a large city.",
+          "pt": "São Paulo é uma cidade grande."
+        }
+      ],
+      "tags": [
+        "places",
+        "travel"
+      ]
+    },
+    {
+      "id": "country",
+      "noun": "country",
+      "plural": "countries",
+      "countability": "countable",
+      "meanings": [
+        "país"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Brazil is a beautiful country.",
+          "pt": "O Brasil é um país bonito."
+        }
+      ],
+      "tags": [
+        "places",
+        "travel"
+      ]
+    },
+    {
+      "id": "place",
+      "noun": "place",
+      "plural": "places",
+      "countability": "countable",
+      "meanings": [
+        "lugar"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This is a good place to relax.",
+          "pt": "Este é um bom lugar para relaxar."
+        }
+      ],
+      "tags": [
+        "places"
+      ]
+    },
+    {
+      "id": "office",
+      "noun": "office",
+      "plural": "offices",
+      "countability": "countable",
+      "meanings": [
+        "escritório"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The office is on the third floor.",
+          "pt": "O escritório fica no terceiro andar."
+        }
+      ],
+      "tags": [
+        "work",
+        "places"
+      ]
+    },
+    {
+      "id": "school",
+      "noun": "school",
+      "plural": "schools",
+      "countability": "countable",
+      "meanings": [
+        "escola"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The school is near my house.",
+          "pt": "A escola fica perto da minha casa."
+        }
+      ],
+      "tags": [
+        "education",
+        "places"
+      ]
+    },
+    {
+      "id": "hospital",
+      "noun": "hospital",
+      "plural": "hospitals",
+      "countability": "countable",
+      "meanings": [
+        "hospital"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "She works at a hospital.",
+          "pt": "Ela trabalha em um hospital."
+        }
+      ],
+      "tags": [
+        "health",
+        "places"
+      ]
+    },
+    {
+      "id": "restaurant",
+      "noun": "restaurant",
+      "plural": "restaurants",
+      "countability": "countable",
+      "meanings": [
+        "restaurante"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This restaurant serves Thai food.",
+          "pt": "Este restaurante serve comida tailandesa."
+        }
+      ],
+      "tags": [
+        "food",
+        "places"
+      ]
+    },
+    {
+      "id": "store",
+      "noun": "store",
+      "plural": "stores",
+      "countability": "countable",
+      "meanings": [
+        "loja"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The store closes at nine.",
+          "pt": "A loja fecha às nove."
+        }
+      ],
+      "tags": [
+        "shopping",
+        "places"
+      ]
+    },
+    {
+      "id": "market",
+      "noun": "market",
+      "plural": "markets",
+      "countability": "countable",
+      "meanings": [
+        "mercado",
+        "feira"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I bought fruit at the market.",
+          "pt": "Eu comprei frutas no mercado."
+        }
+      ],
+      "tags": [
+        "shopping",
+        "food"
+      ]
+    },
+    {
+      "id": "airport",
+      "noun": "airport",
+      "plural": "airports",
+      "countability": "countable",
+      "meanings": [
+        "aeroporto"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The airport is far from downtown.",
+          "pt": "O aeroporto fica longe do centro."
+        }
+      ],
+      "tags": [
+        "travel",
+        "places"
+      ]
+    },
+    {
+      "id": "station",
+      "noun": "station",
+      "plural": "stations",
+      "countability": "countable",
+      "meanings": [
+        "estação"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The train station is nearby.",
+          "pt": "A estação de trem fica perto."
+        }
+      ],
+      "tags": [
+        "travel",
+        "transport"
+      ]
+    },
+    {
+      "id": "hotel",
+      "noun": "hotel",
+      "plural": "hotels",
+      "countability": "countable",
+      "meanings": [
+        "hotel"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We stayed at a small hotel.",
+          "pt": "Nós ficamos em um hotel pequeno."
+        }
+      ],
+      "tags": [
+        "travel",
+        "places"
+      ]
+    },
+    {
+      "id": "beach",
+      "noun": "beach",
+      "plural": "beaches",
+      "countability": "countable",
+      "meanings": [
+        "praia"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The beach is crowded today.",
+          "pt": "A praia está cheia hoje."
+        }
+      ],
+      "tags": [
+        "travel",
+        "leisure"
+      ]
+    },
+    {
+      "id": "park",
+      "noun": "park",
+      "plural": "parks",
+      "countability": "countable",
+      "meanings": [
+        "parque"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We walked in the park.",
+          "pt": "Nós caminhamos no parque."
+        }
+      ],
+      "tags": [
+        "places",
+        "leisure"
+      ]
+    },
+    {
+      "id": "job",
+      "noun": "job",
+      "plural": "jobs",
+      "countability": "countable",
+      "meanings": [
+        "emprego",
+        "trabalho"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I started a new job.",
+          "pt": "Eu comecei um novo emprego."
+        }
+      ],
+      "tags": [
+        "work"
+      ]
+    },
+    {
+      "id": "work",
+      "noun": "work",
+      "plural": null,
+      "countability": "uncountable",
+      "meanings": [
+        "trabalho",
+        "serviço"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I have a lot of work today.",
+          "pt": "Eu tenho muito trabalho hoje."
+        }
+      ],
+      "tags": [
+        "work"
+      ]
+    },
+    {
+      "id": "project",
+      "noun": "project",
+      "plural": "projects",
+      "countability": "countable",
+      "meanings": [
+        "projeto"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The project is almost finished.",
+          "pt": "O projeto está quase terminado."
+        }
+      ],
+      "tags": [
+        "work",
+        "technology"
+      ]
+    },
+    {
+      "id": "task",
+      "noun": "task",
+      "plural": "tasks",
+      "countability": "countable",
+      "meanings": [
+        "tarefa"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I completed the task.",
+          "pt": "Eu concluí a tarefa."
+        }
+      ],
+      "tags": [
+        "work"
+      ]
+    },
+    {
+      "id": "meeting",
+      "noun": "meeting",
+      "plural": "meetings",
+      "countability": "countable",
+      "meanings": [
+        "reunião"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We have a meeting at two.",
+          "pt": "Nós temos uma reunião às duas."
+        }
+      ],
+      "tags": [
+        "work"
+      ]
+    },
+    {
+      "id": "company",
+      "noun": "company",
+      "plural": "companies",
+      "countability": "countable",
+      "meanings": [
+        "empresa"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The company is growing fast.",
+          "pt": "A empresa está crescendo rápido."
+        }
+      ],
+      "tags": [
+        "work",
+        "business"
+      ]
+    },
+    {
+      "id": "business",
+      "noun": "business",
+      "plural": "businesses",
+      "countability": "both",
+      "meanings": [
+        "negócio",
+        "empresa",
+        "atividade comercial"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "He owns a small business.",
+          "pt": "Ele tem um pequeno negócio."
+        }
+      ],
+      "tags": [
+        "work",
+        "business"
+      ]
+    },
+    {
+      "id": "computer",
+      "noun": "computer",
+      "plural": "computers",
+      "countability": "countable",
+      "meanings": [
+        "computador"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "My computer is very fast.",
+          "pt": "Meu computador é muito rápido."
+        }
+      ],
+      "tags": [
+        "technology",
+        "objects"
+      ]
+    },
+    {
+      "id": "phone",
+      "noun": "phone",
+      "plural": "phones",
+      "countability": "countable",
+      "meanings": [
+        "telefone",
+        "celular"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "My phone is charging.",
+          "pt": "Meu celular está carregando."
+        }
+      ],
+      "tags": [
+        "technology",
+        "objects"
+      ]
+    },
+    {
+      "id": "internet",
+      "noun": "internet",
+      "plural": null,
+      "countability": "uncountable",
+      "meanings": [
+        "internet"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The internet is slow today.",
+          "pt": "A internet está lenta hoje."
+        }
+      ],
+      "tags": [
+        "technology"
+      ]
+    },
+    {
+      "id": "email",
+      "noun": "email",
+      "plural": "emails",
+      "countability": "countable",
+      "meanings": [
+        "e-mail"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I sent an email this morning.",
+          "pt": "Eu enviei um e-mail esta manhã."
+        }
+      ],
+      "tags": [
+        "communication",
+        "technology"
+      ]
+    },
+    {
+      "id": "message",
+      "noun": "message",
+      "plural": "messages",
+      "countability": "countable",
+      "meanings": [
+        "mensagem"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I received your message.",
+          "pt": "Eu recebi sua mensagem."
+        }
+      ],
+      "tags": [
+        "communication",
+        "technology"
+      ]
+    },
+    {
+      "id": "file",
+      "noun": "file",
+      "plural": "files",
+      "countability": "countable",
+      "meanings": [
+        "arquivo"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Please send me the file.",
+          "pt": "Por favor, me envie o arquivo."
+        }
+      ],
+      "tags": [
+        "technology",
+        "work"
+      ]
+    },
+    {
+      "id": "system",
+      "noun": "system",
+      "plural": "systems",
+      "countability": "countable",
+      "meanings": [
+        "sistema"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The system is working correctly.",
+          "pt": "O sistema está funcionando corretamente."
+        }
+      ],
+      "tags": [
+        "technology"
+      ]
+    },
+    {
+      "id": "application",
+      "noun": "application",
+      "plural": "applications",
+      "countability": "countable",
+      "meanings": [
+        "aplicativo",
+        "aplicação"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This application is easy to use.",
+          "pt": "Este aplicativo é fácil de usar."
+        }
+      ],
+      "tags": [
+        "technology"
+      ]
+    },
+    {
+      "id": "software",
+      "noun": "software",
+      "plural": null,
+      "countability": "uncountable",
+      "meanings": [
+        "software",
+        "programa"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We develop software for clients.",
+          "pt": "Nós desenvolvemos software para clientes."
+        }
+      ],
+      "tags": [
+        "technology"
+      ]
+    },
+    {
+      "id": "data",
+      "noun": "data",
+      "plural": null,
+      "countability": "uncountable",
+      "meanings": [
+        "dados"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The data is stored securely.",
+          "pt": "Os dados são armazenados com segurança."
+        }
+      ],
+      "tags": [
+        "technology",
+        "work"
+      ]
+    },
+    {
+      "id": "problem",
+      "noun": "problem",
+      "plural": "problems",
+      "countability": "countable",
+      "meanings": [
+        "problema"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We need to solve this problem.",
+          "pt": "Nós precisamos resolver este problema."
+        }
+      ],
+      "tags": [
+        "work",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "solution",
+      "noun": "solution",
+      "plural": "solutions",
+      "countability": "countable",
+      "meanings": [
+        "solução"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We found a simple solution.",
+          "pt": "Nós encontramos uma solução simples."
+        }
+      ],
+      "tags": [
+        "work",
+        "technology"
+      ]
+    },
+    {
+      "id": "idea",
+      "noun": "idea",
+      "plural": "ideas",
+      "countability": "countable",
+      "meanings": [
+        "ideia"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "That's a good idea.",
+          "pt": "Essa é uma boa ideia."
+        }
+      ],
+      "tags": [
+        "thought",
+        "work"
+      ]
+    },
+    {
+      "id": "question",
+      "noun": "question",
+      "plural": "questions",
+      "countability": "countable",
+      "meanings": [
+        "pergunta"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I have a question.",
+          "pt": "Eu tenho uma pergunta."
+        }
+      ],
+      "tags": [
+        "communication",
+        "education"
+      ]
+    },
+    {
+      "id": "answer",
+      "noun": "answer",
+      "plural": "answers",
+      "countability": "countable",
+      "meanings": [
+        "resposta"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I know the answer.",
+          "pt": "Eu sei a resposta."
+        }
+      ],
+      "tags": [
+        "communication",
+        "education"
+      ]
+    },
+    {
+      "id": "information",
+      "noun": "information",
+      "plural": null,
+      "countability": "uncountable",
+      "meanings": [
+        "informação",
+        "informações"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I need more information.",
+          "pt": "Eu preciso de mais informações."
+        }
+      ],
+      "tags": [
+        "communication",
+        "work"
+      ]
+    },
+    {
+      "id": "time",
+      "noun": "time",
+      "plural": "times",
+      "countability": "both",
+      "meanings": [
+        "tempo",
+        "vez"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I don't have much time.",
+          "pt": "Eu não tenho muito tempo."
+        }
+      ],
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "day",
+      "noun": "day",
+      "plural": "days",
+      "countability": "countable",
+      "meanings": [
+        "dia"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "It was a long day.",
+          "pt": "Foi um dia longo."
+        }
+      ],
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "week",
+      "noun": "week",
+      "plural": "weeks",
+      "countability": "countable",
+      "meanings": [
+        "semana"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I work five days a week.",
+          "pt": "Eu trabalho cinco dias por semana."
+        }
+      ],
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "month",
+      "noun": "month",
+      "plural": "months",
+      "countability": "countable",
+      "meanings": [
+        "mês"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Next month will be busy.",
+          "pt": "O próximo mês será corrido."
+        }
+      ],
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "year",
+      "noun": "year",
+      "plural": "years",
+      "countability": "countable",
+      "meanings": [
+        "ano"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I moved here last year.",
+          "pt": "Eu me mudei para cá no ano passado."
+        }
+      ],
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "morning",
+      "noun": "morning",
+      "plural": "mornings",
+      "countability": "countable",
+      "meanings": [
+        "manhã"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I study in the morning.",
+          "pt": "Eu estudo de manhã."
+        }
+      ],
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "afternoon",
+      "noun": "afternoon",
+      "plural": "afternoons",
+      "countability": "countable",
+      "meanings": [
+        "tarde"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We have a meeting this afternoon.",
+          "pt": "Nós temos uma reunião esta tarde."
+        }
+      ],
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "evening",
+      "noun": "evening",
+      "plural": "evenings",
+      "countability": "countable",
+      "meanings": [
+        "fim de tarde",
+        "noite"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I usually relax in the evening.",
+          "pt": "Eu geralmente relaxo à noite."
+        }
+      ],
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "night",
+      "noun": "night",
+      "plural": "nights",
+      "countability": "countable",
+      "meanings": [
+        "noite"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I slept well last night.",
+          "pt": "Eu dormi bem ontem à noite."
+        }
+      ],
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "moment",
+      "noun": "moment",
+      "plural": "moments",
+      "countability": "countable",
+      "meanings": [
+        "momento"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Wait a moment, please.",
+          "pt": "Espere um momento, por favor."
+        }
+      ],
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "food",
+      "noun": "food",
+      "plural": null,
+      "countability": "uncountable",
+      "meanings": [
+        "comida",
+        "alimento"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Brazilian food is delicious.",
+          "pt": "A comida brasileira é deliciosa."
+        }
+      ],
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "water",
+      "noun": "water",
+      "plural": null,
+      "countability": "uncountable",
+      "meanings": [
+        "água"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I drink a lot of water.",
+          "pt": "Eu bebo muita água."
+        }
+      ],
+      "tags": [
+        "food",
+        "health"
+      ]
+    },
+    {
+      "id": "coffee",
+      "noun": "coffee",
+      "plural": "coffees",
+      "countability": "both",
+      "meanings": [
+        "café"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I drink coffee every morning.",
+          "pt": "Eu tomo café todas as manhãs."
+        }
+      ],
+      "tags": [
+        "food",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "tea",
+      "noun": "tea",
+      "plural": "teas",
+      "countability": "both",
+      "meanings": [
+        "chá"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Would you like some tea?",
+          "pt": "Você gostaria de um pouco de chá?"
+        }
+      ],
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "bread",
+      "noun": "bread",
+      "plural": null,
+      "countability": "uncountable",
+      "meanings": [
+        "pão"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We need some bread.",
+          "pt": "Nós precisamos de pão."
+        }
+      ],
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "rice",
+      "noun": "rice",
+      "plural": null,
+      "countability": "uncountable",
+      "meanings": [
+        "arroz"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I usually eat rice at lunch.",
+          "pt": "Eu geralmente como arroz no almoço."
+        }
+      ],
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "meat",
+      "noun": "meat",
+      "plural": null,
+      "countability": "uncountable",
+      "meanings": [
+        "carne"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I don't eat much meat.",
+          "pt": "Eu não como muita carne."
+        }
+      ],
+      "tags": [
+        "food"
+      ]
+    },
+    {
+      "id": "fruit",
+      "noun": "fruit",
+      "plural": "fruits",
+      "countability": "both",
+      "meanings": [
+        "fruta",
+        "frutas"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I eat fruit every day.",
+          "pt": "Eu como frutas todos os dias."
+        }
+      ],
+      "tags": [
+        "food",
+        "health"
+      ]
+    },
+    {
+      "id": "vegetable",
+      "noun": "vegetable",
+      "plural": "vegetables",
+      "countability": "countable",
+      "meanings": [
+        "legume",
+        "verdura"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We need more vegetables.",
+          "pt": "Nós precisamos de mais legumes."
+        }
+      ],
+      "tags": [
+        "food",
+        "health"
+      ]
+    },
+    {
+      "id": "breakfast",
+      "noun": "breakfast",
+      "plural": "breakfasts",
+      "countability": "both",
+      "meanings": [
+        "café da manhã"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Breakfast is ready.",
+          "pt": "O café da manhã está pronto."
+        }
+      ],
+      "tags": [
+        "food",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "lunch",
+      "noun": "lunch",
+      "plural": "lunches",
+      "countability": "both",
+      "meanings": [
+        "almoço"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Let's have lunch together.",
+          "pt": "Vamos almoçar juntos."
+        }
+      ],
+      "tags": [
+        "food",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "dinner",
+      "noun": "dinner",
+      "plural": "dinners",
+      "countability": "both",
+      "meanings": [
+        "jantar"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Dinner is at seven.",
+          "pt": "O jantar é às sete."
+        }
+      ],
+      "tags": [
+        "food",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "car",
+      "noun": "car",
+      "plural": "cars",
+      "countability": "countable",
+      "meanings": [
+        "carro"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "My car is in the garage.",
+          "pt": "Meu carro está na garagem."
+        }
+      ],
+      "tags": [
+        "transport"
+      ]
+    },
+    {
+      "id": "bus",
+      "noun": "bus",
+      "plural": "buses",
+      "countability": "countable",
+      "meanings": [
+        "ônibus"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I take the bus to work.",
+          "pt": "Eu pego o ônibus para ir ao trabalho."
+        }
+      ],
+      "tags": [
+        "transport"
+      ]
+    },
+    {
+      "id": "train",
+      "noun": "train",
+      "plural": "trains",
+      "countability": "countable",
+      "meanings": [
+        "trem"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The train leaves at eight.",
+          "pt": "O trem sai às oito."
+        }
+      ],
+      "tags": [
+        "transport"
+      ]
+    },
+    {
+      "id": "plane",
+      "noun": "plane",
+      "plural": "planes",
+      "countability": "countable",
+      "meanings": [
+        "avião"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The plane is boarding now.",
+          "pt": "O avião está embarcando agora."
+        }
+      ],
+      "tags": [
+        "transport",
+        "travel"
+      ]
+    },
+    {
+      "id": "trip",
+      "noun": "trip",
+      "plural": "trips",
+      "countability": "countable",
+      "meanings": [
+        "viagem"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We planned a short trip.",
+          "pt": "Nós planejamos uma viagem curta."
+        }
+      ],
+      "tags": [
+        "travel"
+      ]
+    },
+    {
+      "id": "ticket",
+      "noun": "ticket",
+      "plural": "tickets",
+      "countability": "countable",
+      "meanings": [
+        "bilhete",
+        "passagem",
+        "ingresso"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I bought the ticket online.",
+          "pt": "Eu comprei a passagem online."
+        }
+      ],
+      "tags": [
+        "travel",
+        "events"
+      ]
+    },
+    {
+      "id": "road",
+      "noun": "road",
+      "plural": "roads",
+      "countability": "countable",
+      "meanings": [
+        "estrada",
+        "via"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The road is closed.",
+          "pt": "A estrada está fechada."
+        }
+      ],
+      "tags": [
+        "transport",
+        "places"
+      ]
+    },
+    {
+      "id": "traffic",
+      "noun": "traffic",
+      "plural": null,
+      "countability": "uncountable",
+      "meanings": [
+        "trânsito"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Traffic is terrible today.",
+          "pt": "O trânsito está terrível hoje."
+        }
+      ],
+      "tags": [
+        "transport",
+        "city"
+      ]
+    },
+    {
+      "id": "map",
+      "noun": "map",
+      "plural": "maps",
+      "countability": "countable",
+      "meanings": [
+        "mapa"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Check the map before we leave.",
+          "pt": "Veja o mapa antes de sairmos."
+        }
+      ],
+      "tags": [
+        "travel",
+        "objects"
+      ]
+    },
+    {
+      "id": "money",
+      "noun": "money",
+      "plural": null,
+      "countability": "uncountable",
+      "meanings": [
+        "dinheiro"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I need to save money.",
+          "pt": "Eu preciso economizar dinheiro."
+        }
+      ],
+      "tags": [
+        "money"
+      ]
+    },
+    {
+      "id": "price",
+      "noun": "price",
+      "plural": "prices",
+      "countability": "countable",
+      "meanings": [
+        "preço"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The price is too high.",
+          "pt": "O preço está muito alto."
+        }
+      ],
+      "tags": [
+        "money",
+        "shopping"
+      ]
+    },
+    {
+      "id": "bank",
+      "noun": "bank",
+      "plural": "banks",
+      "countability": "countable",
+      "meanings": [
+        "banco"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The bank opens at ten.",
+          "pt": "O banco abre às dez."
+        }
+      ],
+      "tags": [
+        "money",
+        "places"
+      ]
+    },
+    {
+      "id": "card",
+      "noun": "card",
+      "plural": "cards",
+      "countability": "countable",
+      "meanings": [
+        "cartão"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Can I pay by card?",
+          "pt": "Posso pagar com cartão?"
+        }
+      ],
+      "tags": [
+        "money",
+        "objects"
+      ]
+    },
+    {
+      "id": "cash",
+      "noun": "cash",
+      "plural": null,
+      "countability": "uncountable",
+      "meanings": [
+        "dinheiro em espécie"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I don't carry much cash.",
+          "pt": "Eu não carrego muito dinheiro em espécie."
+        }
+      ],
+      "tags": [
+        "money"
+      ]
+    },
+    {
+      "id": "bill",
+      "noun": "bill",
+      "plural": "bills",
+      "countability": "countable",
+      "meanings": [
+        "conta",
+        "nota",
+        "cédula"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I paid the electricity bill.",
+          "pt": "Eu paguei a conta de luz."
+        }
+      ],
+      "tags": [
+        "money",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "product",
+      "noun": "product",
+      "plural": "products",
+      "countability": "countable",
+      "meanings": [
+        "produto"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This product is very popular.",
+          "pt": "Este produto é muito popular."
+        }
+      ],
+      "tags": [
+        "shopping",
+        "business"
+      ]
+    },
+    {
+      "id": "shop",
+      "noun": "shop",
+      "plural": "shops",
+      "countability": "countable",
+      "meanings": [
+        "loja"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "There's a small shop nearby.",
+          "pt": "Há uma pequena loja perto."
+        }
+      ],
+      "tags": [
+        "shopping",
+        "places"
+      ]
+    },
+    {
+      "id": "health",
+      "noun": "health",
+      "plural": null,
+      "countability": "uncountable",
+      "meanings": [
+        "saúde"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Health is very important.",
+          "pt": "Saúde é muito importante."
+        }
+      ],
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "id": "doctor",
+      "noun": "doctor",
+      "plural": "doctors",
+      "countability": "countable",
+      "meanings": [
+        "médico",
+        "médica"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I need to see a doctor.",
+          "pt": "Eu preciso consultar um médico."
+        }
+      ],
+      "tags": [
+        "health",
+        "people"
+      ]
+    },
+    {
+      "id": "body",
+      "noun": "body",
+      "plural": "bodies",
+      "countability": "countable",
+      "meanings": [
+        "corpo"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Exercise is good for the body.",
+          "pt": "Exercício faz bem para o corpo."
+        }
+      ],
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "id": "head",
+      "noun": "head",
+      "plural": "heads",
+      "countability": "countable",
+      "meanings": [
+        "cabeça"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "My head hurts.",
+          "pt": "Minha cabeça dói."
+        }
+      ],
+      "tags": [
+        "health",
+        "body"
+      ]
+    },
+    {
+      "id": "hand",
+      "noun": "hand",
+      "plural": "hands",
+      "countability": "countable",
+      "meanings": [
+        "mão"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Wash your hands.",
+          "pt": "Lave suas mãos."
+        }
+      ],
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "eye",
+      "noun": "eye",
+      "plural": "eyes",
+      "countability": "countable",
+      "meanings": [
+        "olho"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "My eyes are tired.",
+          "pt": "Meus olhos estão cansados."
+        }
+      ],
+      "tags": [
+        "body"
+      ]
+    },
+    {
+      "id": "heart",
+      "noun": "heart",
+      "plural": "hearts",
+      "countability": "countable",
+      "meanings": [
+        "coração"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Walking is good for your heart.",
+          "pt": "Caminhar faz bem para o coração."
+        }
+      ],
+      "tags": [
+        "body",
+        "health"
+      ]
+    },
+    {
+      "id": "pain",
+      "noun": "pain",
+      "plural": null,
+      "countability": "uncountable",
+      "meanings": [
+        "dor"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I have some pain in my back.",
+          "pt": "Estou com um pouco de dor nas costas."
+        }
+      ],
+      "tags": [
+        "health"
+      ]
+    },
+    {
+      "id": "language",
+      "noun": "language",
+      "plural": "languages",
+      "countability": "countable",
+      "meanings": [
+        "idioma",
+        "língua"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "English is an international language.",
+          "pt": "Inglês é um idioma internacional."
+        }
+      ],
+      "tags": [
+        "language",
+        "education"
+      ]
+    },
+    {
+      "id": "word",
+      "noun": "word",
+      "plural": "words",
+      "countability": "countable",
+      "meanings": [
+        "palavra"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I don't know this word.",
+          "pt": "Eu não conheço esta palavra."
+        }
+      ],
+      "tags": [
+        "language"
+      ]
+    },
+    {
+      "id": "sentence",
+      "noun": "sentence",
+      "plural": "sentences",
+      "countability": "countable",
+      "meanings": [
+        "frase"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Write a short sentence.",
+          "pt": "Escreva uma frase curta."
+        }
+      ],
+      "tags": [
+        "language",
+        "education"
+      ]
+    },
+    {
+      "id": "conversation",
+      "noun": "conversation",
+      "plural": "conversations",
+      "countability": "countable",
+      "meanings": [
+        "conversa"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We had a long conversation.",
+          "pt": "Nós tivemos uma longa conversa."
+        }
+      ],
+      "tags": [
+        "communication",
+        "language"
+      ]
+    },
+    {
+      "id": "story",
+      "noun": "story",
+      "plural": "stories",
+      "countability": "countable",
+      "meanings": [
+        "história"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "He told me a funny story.",
+          "pt": "Ele me contou uma história engraçada."
+        }
+      ],
+      "tags": [
+        "communication",
+        "leisure"
+      ]
+    },
+    {
+      "id": "book",
+      "noun": "book",
+      "plural": "books",
+      "countability": "countable",
+      "meanings": [
+        "livro"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I'm reading a good book.",
+          "pt": "Estou lendo um bom livro."
+        }
+      ],
+      "tags": [
+        "education",
+        "objects"
+      ]
+    },
+    {
+      "id": "lesson",
+      "noun": "lesson",
+      "plural": "lessons",
+      "countability": "countable",
+      "meanings": [
+        "lição",
+        "aula"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Today's lesson was useful.",
+          "pt": "A aula de hoje foi útil."
+        }
+      ],
+      "tags": [
+        "education"
+      ]
+    },
+    {
+      "id": "exercise",
+      "noun": "exercise",
+      "plural": "exercises",
+      "countability": "countable",
+      "meanings": [
+        "exercício"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Complete the exercise.",
+          "pt": "Complete o exercício."
+        }
+      ],
+      "tags": [
+        "education",
+        "fitness"
+      ]
+    },
+    {
+      "id": "example",
+      "noun": "example",
+      "plural": "examples",
+      "countability": "countable",
+      "meanings": [
+        "exemplo"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Can you give me an example?",
+          "pt": "Você pode me dar um exemplo?"
+        }
+      ],
+      "tags": [
+        "education"
+      ]
+    },
+    {
+      "id": "life",
+      "noun": "life",
+      "plural": "lives",
+      "countability": "both",
+      "meanings": [
+        "vida"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Life can change quickly.",
+          "pt": "A vida pode mudar rapidamente."
+        }
+      ],
+      "tags": [
+        "daily-life"
+      ]
+    },
+    {
+      "id": "thing",
+      "noun": "thing",
+      "plural": "things",
+      "countability": "countable",
+      "meanings": [
+        "coisa"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I have a few things to do.",
+          "pt": "Eu tenho algumas coisas para fazer."
+        }
+      ],
+      "tags": [
+        "general"
+      ]
+    },
+    {
+      "id": "way",
+      "noun": "way",
+      "plural": "ways",
+      "countability": "countable",
+      "meanings": [
+        "jeito",
+        "maneira",
+        "caminho"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "There is another way to do it.",
+          "pt": "Há outra maneira de fazer isso."
+        }
+      ],
+      "tags": [
+        "general"
+      ]
+    },
+    {
+      "id": "reason",
+      "noun": "reason",
+      "plural": "reasons",
+      "countability": "countable",
+      "meanings": [
+        "razão",
+        "motivo"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "There is a good reason for that.",
+          "pt": "Há um bom motivo para isso."
+        }
+      ],
+      "tags": [
+        "thought",
+        "communication"
+      ]
+    },
+    {
+      "id": "change",
+      "noun": "change",
+      "plural": "changes",
+      "countability": "countable",
+      "meanings": [
+        "mudança"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The change was necessary.",
+          "pt": "A mudança foi necessária."
+        }
+      ],
+      "tags": [
+        "change"
+      ]
+    },
+    {
+      "id": "result",
+      "noun": "result",
+      "plural": "results",
+      "countability": "countable",
+      "meanings": [
+        "resultado"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The result was better than expected.",
+          "pt": "O resultado foi melhor do que o esperado."
+        }
+      ],
+      "tags": [
+        "work",
+        "education"
+      ]
+    },
+    {
+      "id": "experience",
+      "noun": "experience",
+      "plural": "experiences",
+      "countability": "both",
+      "meanings": [
+        "experiência"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "It was a great experience.",
+          "pt": "Foi uma ótima experiência."
+        }
+      ],
+      "tags": [
+        "work",
+        "daily-life"
+      ]
+    },
+    {
+      "id": "chance",
+      "noun": "chance",
+      "plural": "chances",
+      "countability": "countable",
+      "meanings": [
+        "chance",
+        "oportunidade"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "This is a good chance to practice.",
+          "pt": "Esta é uma boa chance para praticar."
+        }
+      ],
+      "tags": [
+        "possibility"
+      ]
+    },
+    {
+      "id": "choice",
+      "noun": "choice",
+      "plural": "choices",
+      "countability": "countable",
+      "meanings": [
+        "escolha"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "You have two choices.",
+          "pt": "Você tem duas escolhas."
+        }
+      ],
+      "tags": [
+        "decision"
+      ]
+    },
+    {
+      "id": "plan",
+      "noun": "plan",
+      "plural": "plans",
+      "countability": "countable",
+      "meanings": [
+        "plano"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "What's your plan for tomorrow?",
+          "pt": "Qual é o seu plano para amanhã?"
+        }
+      ],
+      "tags": [
+        "planning"
+      ]
+    },
+    {
+      "id": "goal",
+      "noun": "goal",
+      "plural": "goals",
+      "countability": "countable",
+      "meanings": [
+        "meta",
+        "objetivo"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "My goal is to speak English fluently.",
+          "pt": "Minha meta é falar inglês fluentemente."
+        }
+      ],
+      "tags": [
+        "planning",
+        "success"
+      ]
+    },
+    {
+      "id": "habit",
+      "noun": "habit",
+      "plural": "habits",
+      "countability": "countable",
+      "meanings": [
+        "hábito"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Reading every day is a good habit.",
+          "pt": "Ler todos os dias é um bom hábito."
+        }
+      ],
+      "tags": [
+        "daily-life",
+        "learning"
+      ]
+    },
+    {
+      "id": "mistake",
+      "noun": "mistake",
+      "plural": "mistakes",
+      "countability": "countable",
+      "meanings": [
+        "erro"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "Everyone makes mistakes.",
+          "pt": "Todo mundo comete erros."
+        }
+      ],
+      "tags": [
+        "education",
+        "communication"
+      ]
+    },
+    {
+      "id": "success",
+      "noun": "success",
+      "plural": "successes",
+      "countability": "both",
+      "meanings": [
+        "sucesso"
+      ],
+      "level": "A2",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "The project was a success.",
+          "pt": "O projeto foi um sucesso."
+        }
+      ],
+      "tags": [
+        "success"
+      ]
+    },
+    {
+      "id": "future",
+      "noun": "future",
+      "plural": null,
+      "countability": "uncountable",
+      "meanings": [
+        "futuro"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "I'm thinking about the future.",
+          "pt": "Estou pensando no futuro."
+        }
+      ],
+      "tags": [
+        "time",
+        "planning"
+      ]
+    },
+    {
+      "id": "past",
+      "noun": "past",
+      "plural": null,
+      "countability": "uncountable",
+      "meanings": [
+        "passado"
+      ],
+      "level": "A1",
+      "frequency": "high",
+      "examples": [
+        {
+          "en": "We can learn from the past.",
+          "pt": "Podemos aprender com o passado."
+        }
+      ],
+      "tags": [
+        "time"
+      ]
+    },
+    {
+      "id": "present",
+      "noun": "present",
+      "plural": null,
+      "countability": "uncountable",
+      "meanings": [
+        "presente",
+        "momento atual"
+      ],
+      "level": "A2",
+      "frequency": "medium",
+      "examples": [
+        {
+          "en": "Try to focus on the present.",
+          "pt": "Tente focar no presente."
+        }
+      ],
+      "tags": [
+        "time"
+      ]
+    }
+  ]
+}

@@ -39,3 +39,51 @@ export interface EnglishVerbsData {
   metadata: EnglishVerbsMetadata;
   verbs: EnglishVerb[];
 }
+
+/** Localized catalogs store verified forms, rather than English conjugation slots. */
+export interface LocalizedVerb {
+  id: string;
+  base: string;
+  meanings: string[];
+  level: string;
+  frequency: string;
+  tags: string[];
+  forms: {
+    infinitive: string;
+    present: string;
+    past: string;
+    imperfect: string;
+    participle: string;
+    gerund: string;
+    perfect: string;
+    pluperfect: string;
+    perfectInfinitive: string;
+    pastFeminine?: string;
+    pluperfectFeminine?: string;
+  };
+  stative?: boolean;
+  trainingForms: Partial<Record<string, string>>;
+  impersonal?: boolean;
+}
+
+export type SpeakingVerb = EnglishVerb | LocalizedVerb;
+
+export interface GameAdjective {
+  id: string;
+  adjective: string;
+  meanings: string[];
+  forms?: { masculine: string; feminine: string; masculinePlural: string; femininePlural: string; masculineBeforeVowel?: string };
+}
+
+export interface GameNoun {
+  id: string;
+  noun: string;
+  meanings: string[];
+  plural?: string;
+  gender?: "masculine" | "feminine" | "invariant";
+  article?: string;
+  pluralArticle?: string;
+  countability?: string;
+  feminine?: string;
+  femininePlural?: string;
+}

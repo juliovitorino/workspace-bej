@@ -1,0 +1,5745 @@
+{
+  "metadata": {
+    "name": "Speaking Game — verbs — fr-FR",
+    "version": "1.0.0",
+    "updatedAt": "2026-10-15",
+    "language": "fr-FR",
+    "sourceLanguage": "pt-BR",
+    "totalVerbs": 131
+  },
+  "verbs": [
+    {
+      "id": "be-1",
+      "base": "être",
+      "meanings": [
+        "ser",
+        "estar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "core",
+        "state"
+      ],
+      "forms": {
+        "infinitive": "être",
+        "present": "je suis",
+        "past": "j'ai été",
+        "imperfect": "j'étais",
+        "participle": "été",
+        "gerund": "en étant",
+        "perfect": "j'ai été",
+        "pluperfect": "j'avais été",
+        "perfectInfinitive": "avoir été"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Je suis",
+        "past": "J'ai été",
+        "pastOngoing": "J'étais",
+        "duration": "Ça fait un moment que je suis",
+        "future": "Je vais être",
+        "habit": "Avant, j'étais",
+        "recent": "Je viens d'être",
+        "regret": "J'aurais dû être",
+        "possibility": "J'aurais pu être",
+        "prior": "J'avais été",
+        "intended": "J'allais être",
+        "perfect": "J'ai déjà été",
+        "ability": "Je peux être",
+        "hypothetical": "Je pourrais être",
+        "obligation": "Je dois être",
+        "advice": "Je devrais être"
+      }
+    },
+    {
+      "id": "have-2",
+      "base": "avoir",
+      "meanings": [
+        "ter"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "core",
+        "possession"
+      ],
+      "forms": {
+        "infinitive": "avoir",
+        "present": "j'ai",
+        "past": "j'ai eu",
+        "imperfect": "j'avais",
+        "participle": "eu",
+        "gerund": "en ayant",
+        "perfect": "j'ai eu",
+        "pluperfect": "j'avais eu",
+        "perfectInfinitive": "avoir eu"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "J'ai",
+        "past": "J'ai eu",
+        "pastOngoing": "J'avais",
+        "duration": "Ça fait un moment que j'ai",
+        "future": "Je vais avoir",
+        "habit": "Avant, j'avais",
+        "recent": "Je viens d'avoir",
+        "regret": "J'aurais dû avoir",
+        "possibility": "J'aurais pu avoir",
+        "prior": "J'avais eu",
+        "intended": "J'allais avoir",
+        "perfect": "J'ai déjà eu",
+        "ability": "Je peux avoir",
+        "hypothetical": "Je pourrais avoir",
+        "obligation": "Je dois avoir",
+        "advice": "Je devrais avoir"
+      }
+    },
+    {
+      "id": "do-3",
+      "base": "faire",
+      "meanings": [
+        "fazer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "core",
+        "action"
+      ],
+      "forms": {
+        "infinitive": "faire",
+        "present": "je fais",
+        "past": "j'ai fait",
+        "imperfect": "je faisais",
+        "participle": "fait",
+        "gerund": "en faisant",
+        "perfect": "j'ai fait",
+        "pluperfect": "j'avais fait",
+        "perfectInfinitive": "avoir fait"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je fais",
+        "ongoing": "Je suis en train de faire",
+        "past": "J'ai fait",
+        "pastOngoing": "Je faisais",
+        "duration": "Ça fait un moment que je fais",
+        "future": "Je vais faire",
+        "habit": "Avant, je faisais",
+        "recent": "Je viens de faire",
+        "regret": "J'aurais dû faire",
+        "possibility": "J'aurais pu faire",
+        "prior": "J'avais fait",
+        "intended": "J'allais faire",
+        "perfect": "J'ai déjà fait",
+        "ability": "Je peux faire",
+        "hypothetical": "Je pourrais faire",
+        "obligation": "Je dois faire",
+        "advice": "Je devrais faire"
+      }
+    },
+    {
+      "id": "say-4",
+      "base": "dire",
+      "meanings": [
+        "dizer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "dire",
+        "present": "je dis",
+        "past": "j'ai dit",
+        "imperfect": "je disais",
+        "participle": "dit",
+        "gerund": "en disant",
+        "perfect": "j'ai dit",
+        "pluperfect": "j'avais dit",
+        "perfectInfinitive": "avoir dit"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je dis",
+        "ongoing": "Je suis en train de dire",
+        "past": "J'ai dit",
+        "pastOngoing": "Je disais",
+        "duration": "Ça fait un moment que je dis",
+        "future": "Je vais dire",
+        "habit": "Avant, je disais",
+        "recent": "Je viens de dire",
+        "regret": "J'aurais dû dire",
+        "possibility": "J'aurais pu dire",
+        "prior": "J'avais dit",
+        "intended": "J'allais dire",
+        "perfect": "J'ai déjà dit",
+        "ability": "Je peux dire",
+        "hypothetical": "Je pourrais dire",
+        "obligation": "Je dois dire",
+        "advice": "Je devrais dire"
+      }
+    },
+    {
+      "id": "go-5",
+      "base": "aller",
+      "meanings": [
+        "ir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "aller",
+        "present": "je vais",
+        "past": "je suis allé",
+        "imperfect": "j'allais",
+        "participle": "allé",
+        "gerund": "en allant",
+        "perfect": "je suis allé",
+        "pluperfect": "j'étais allé",
+        "perfectInfinitive": "être allé",
+        "pastFeminine": "je suis allée",
+        "pluperfectFeminine": "j'étais allée"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je vais",
+        "ongoing": "Je suis en train d'aller",
+        "past": "Je suis allé / je suis allée",
+        "pastOngoing": "J'allais",
+        "duration": "Ça fait un moment que je vais",
+        "future": "Je vais aller",
+        "habit": "Avant, j'allais",
+        "recent": "Je viens d'aller",
+        "regret": "J'aurais dû aller",
+        "possibility": "J'aurais pu aller",
+        "prior": "J'étais allé / j'étais allée",
+        "intended": "J'allais aller",
+        "perfect": "Je suis déjà allé / je suis déjà allée",
+        "ability": "Je peux aller",
+        "hypothetical": "Je pourrais aller",
+        "obligation": "Je dois aller",
+        "advice": "Je devrais aller"
+      }
+    },
+    {
+      "id": "get-6",
+      "base": "obtenir",
+      "meanings": [
+        "obter"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "core",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "obtenir",
+        "present": "j'obtiens",
+        "past": "j'ai obtenu",
+        "imperfect": "j'obtenais",
+        "participle": "obtenu",
+        "gerund": "en obtenant",
+        "perfect": "j'ai obtenu",
+        "pluperfect": "j'avais obtenu",
+        "perfectInfinitive": "avoir obtenu"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'obtiens",
+        "ongoing": "Je suis en train d'obtenir",
+        "past": "J'ai obtenu",
+        "pastOngoing": "J'obtenais",
+        "duration": "Ça fait un moment que j'obtiens",
+        "future": "Je vais obtenir",
+        "habit": "Avant, j'obtenais",
+        "recent": "Je viens d'obtenir",
+        "regret": "J'aurais dû obtenir",
+        "possibility": "J'aurais pu obtenir",
+        "prior": "J'avais obtenu",
+        "intended": "J'allais obtenir",
+        "perfect": "J'ai déjà obtenu",
+        "ability": "Je peux obtenir",
+        "hypothetical": "Je pourrais obtenir",
+        "obligation": "Je dois obtenir",
+        "advice": "Je devrais obtenir"
+      }
+    },
+    {
+      "id": "make-7",
+      "base": "fabriquer",
+      "meanings": [
+        "fabricar",
+        "criar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "core",
+        "creation"
+      ],
+      "forms": {
+        "infinitive": "fabriquer",
+        "present": "je fabrique",
+        "past": "j'ai fabriqué",
+        "imperfect": "je fabriquais",
+        "participle": "fabriqué",
+        "gerund": "en fabriquant",
+        "perfect": "j'ai fabriqué",
+        "pluperfect": "j'avais fabriqué",
+        "perfectInfinitive": "avoir fabriqué"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je fabrique",
+        "ongoing": "Je suis en train de fabriquer",
+        "past": "J'ai fabriqué",
+        "pastOngoing": "Je fabriquais",
+        "duration": "Ça fait un moment que je fabrique",
+        "future": "Je vais fabriquer",
+        "habit": "Avant, je fabriquais",
+        "recent": "Je viens de fabriquer",
+        "regret": "J'aurais dû fabriquer",
+        "possibility": "J'aurais pu fabriquer",
+        "prior": "J'avais fabriqué",
+        "intended": "J'allais fabriquer",
+        "perfect": "J'ai déjà fabriqué",
+        "ability": "Je peux fabriquer",
+        "hypothetical": "Je pourrais fabriquer",
+        "obligation": "Je dois fabriquer",
+        "advice": "Je devrais fabriquer"
+      }
+    },
+    {
+      "id": "know-8",
+      "base": "savoir",
+      "meanings": [
+        "saber"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "knowledge"
+      ],
+      "forms": {
+        "infinitive": "savoir",
+        "present": "je sais",
+        "past": "j'ai su",
+        "imperfect": "je savais",
+        "participle": "su",
+        "gerund": "en sachant",
+        "perfect": "j'ai su",
+        "pluperfect": "j'avais su",
+        "perfectInfinitive": "avoir su"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Je sais",
+        "past": "J'ai su",
+        "pastOngoing": "Je savais",
+        "duration": "Ça fait un moment que je sais",
+        "future": "Je vais savoir",
+        "habit": "Avant, je savais",
+        "recent": "Je viens de savoir",
+        "regret": "J'aurais dû savoir",
+        "possibility": "J'aurais pu savoir",
+        "prior": "J'avais su",
+        "intended": "J'allais savoir",
+        "perfect": "J'ai déjà su",
+        "ability": "Je peux savoir",
+        "hypothetical": "Je pourrais savoir",
+        "obligation": "Je dois savoir",
+        "advice": "Je devrais savoir"
+      }
+    },
+    {
+      "id": "know-9",
+      "base": "connaître",
+      "meanings": [
+        "conhecer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "knowledge"
+      ],
+      "forms": {
+        "infinitive": "connaître",
+        "present": "je connais",
+        "past": "j'ai connu",
+        "imperfect": "je connaissais",
+        "participle": "connu",
+        "gerund": "en connaissant",
+        "perfect": "j'ai connu",
+        "pluperfect": "j'avais connu",
+        "perfectInfinitive": "avoir connu"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Je connais",
+        "past": "J'ai connu",
+        "pastOngoing": "Je connaissais",
+        "duration": "Ça fait un moment que je connais",
+        "future": "Je vais connaître",
+        "habit": "Avant, je connaissais",
+        "recent": "Je viens de connaître",
+        "regret": "J'aurais dû connaître",
+        "possibility": "J'aurais pu connaître",
+        "prior": "J'avais connu",
+        "intended": "J'allais connaître",
+        "perfect": "J'ai déjà connu",
+        "ability": "Je peux connaître",
+        "hypothetical": "Je pourrais connaître",
+        "obligation": "Je dois connaître",
+        "advice": "Je devrais connaître"
+      }
+    },
+    {
+      "id": "think-10",
+      "base": "penser",
+      "meanings": [
+        "pensar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "thought"
+      ],
+      "forms": {
+        "infinitive": "penser",
+        "present": "je pense",
+        "past": "j'ai pensé",
+        "imperfect": "je pensais",
+        "participle": "pensé",
+        "gerund": "en pensant",
+        "perfect": "j'ai pensé",
+        "pluperfect": "j'avais pensé",
+        "perfectInfinitive": "avoir pensé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je pense",
+        "ongoing": "Je suis en train de penser",
+        "past": "J'ai pensé",
+        "pastOngoing": "Je pensais",
+        "duration": "Ça fait un moment que je pense",
+        "future": "Je vais penser",
+        "habit": "Avant, je pensais",
+        "recent": "Je viens de penser",
+        "regret": "J'aurais dû penser",
+        "possibility": "J'aurais pu penser",
+        "prior": "J'avais pensé",
+        "intended": "J'allais penser",
+        "perfect": "J'ai déjà pensé",
+        "ability": "Je peux penser",
+        "hypothetical": "Je pourrais penser",
+        "obligation": "Je dois penser",
+        "advice": "Je devrais penser"
+      }
+    },
+    {
+      "id": "take-11",
+      "base": "prendre",
+      "meanings": [
+        "pegar",
+        "tomar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "prendre",
+        "present": "je prends",
+        "past": "j'ai pris",
+        "imperfect": "je prenais",
+        "participle": "pris",
+        "gerund": "en prenant",
+        "perfect": "j'ai pris",
+        "pluperfect": "j'avais pris",
+        "perfectInfinitive": "avoir pris"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je prends",
+        "ongoing": "Je suis en train de prendre",
+        "past": "J'ai pris",
+        "pastOngoing": "Je prenais",
+        "duration": "Ça fait un moment que je prends",
+        "future": "Je vais prendre",
+        "habit": "Avant, je prenais",
+        "recent": "Je viens de prendre",
+        "regret": "J'aurais dû prendre",
+        "possibility": "J'aurais pu prendre",
+        "prior": "J'avais pris",
+        "intended": "J'allais prendre",
+        "perfect": "J'ai déjà pris",
+        "ability": "Je peux prendre",
+        "hypothetical": "Je pourrais prendre",
+        "obligation": "Je dois prendre",
+        "advice": "Je devrais prendre"
+      }
+    },
+    {
+      "id": "see-12",
+      "base": "voir",
+      "meanings": [
+        "ver"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "perception"
+      ],
+      "forms": {
+        "infinitive": "voir",
+        "present": "je vois",
+        "past": "j'ai vu",
+        "imperfect": "je voyais",
+        "participle": "vu",
+        "gerund": "en voyant",
+        "perfect": "j'ai vu",
+        "pluperfect": "j'avais vu",
+        "perfectInfinitive": "avoir vu"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je vois",
+        "ongoing": "Je suis en train de voir",
+        "past": "J'ai vu",
+        "pastOngoing": "Je voyais",
+        "duration": "Ça fait un moment que je vois",
+        "future": "Je vais voir",
+        "habit": "Avant, je voyais",
+        "recent": "Je viens de voir",
+        "regret": "J'aurais dû voir",
+        "possibility": "J'aurais pu voir",
+        "prior": "J'avais vu",
+        "intended": "J'allais voir",
+        "perfect": "J'ai déjà vu",
+        "ability": "Je peux voir",
+        "hypothetical": "Je pourrais voir",
+        "obligation": "Je dois voir",
+        "advice": "Je devrais voir"
+      }
+    },
+    {
+      "id": "come-13",
+      "base": "venir",
+      "meanings": [
+        "vir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement"
+      ],
+      "forms": {
+        "infinitive": "venir",
+        "present": "je viens",
+        "past": "je suis venu",
+        "imperfect": "je venais",
+        "participle": "venu",
+        "gerund": "en venant",
+        "perfect": "je suis venu",
+        "pluperfect": "j'étais venu",
+        "perfectInfinitive": "être venu",
+        "pastFeminine": "je suis venue",
+        "pluperfectFeminine": "j'étais venue"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je viens",
+        "ongoing": "Je suis en train de venir",
+        "past": "Je suis venu / je suis venue",
+        "pastOngoing": "Je venais",
+        "duration": "Ça fait un moment que je viens",
+        "future": "Je vais venir",
+        "habit": "Avant, je venais",
+        "recent": "Je viens de venir",
+        "regret": "J'aurais dû venir",
+        "possibility": "J'aurais pu venir",
+        "prior": "J'étais venu / j'étais venue",
+        "intended": "J'allais venir",
+        "perfect": "Je suis déjà venu / je suis déjà venue",
+        "ability": "Je peux venir",
+        "hypothetical": "Je pourrais venir",
+        "obligation": "Je dois venir",
+        "advice": "Je devrais venir"
+      }
+    },
+    {
+      "id": "want-14",
+      "base": "vouloir",
+      "meanings": [
+        "querer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "desire"
+      ],
+      "forms": {
+        "infinitive": "vouloir",
+        "present": "je veux",
+        "past": "j'ai voulu",
+        "imperfect": "je voulais",
+        "participle": "voulu",
+        "gerund": "en voulant",
+        "perfect": "j'ai voulu",
+        "pluperfect": "j'avais voulu",
+        "perfectInfinitive": "avoir voulu"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Je veux",
+        "past": "J'ai voulu",
+        "pastOngoing": "Je voulais",
+        "duration": "Ça fait un moment que je veux",
+        "future": "Je vais vouloir",
+        "habit": "Avant, je voulais",
+        "recent": "Je viens de vouloir",
+        "regret": "J'aurais dû vouloir",
+        "possibility": "J'aurais pu vouloir",
+        "prior": "J'avais voulu",
+        "intended": "J'allais vouloir",
+        "perfect": "J'ai déjà voulu",
+        "ability": "Je peux vouloir",
+        "hypothetical": "Je pourrais vouloir",
+        "obligation": "Je dois vouloir",
+        "advice": "Je devrais vouloir"
+      }
+    },
+    {
+      "id": "look-15",
+      "base": "regarder",
+      "meanings": [
+        "olhar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "perception"
+      ],
+      "forms": {
+        "infinitive": "regarder",
+        "present": "je regarde",
+        "past": "j'ai regardé",
+        "imperfect": "je regardais",
+        "participle": "regardé",
+        "gerund": "en regardant",
+        "perfect": "j'ai regardé",
+        "pluperfect": "j'avais regardé",
+        "perfectInfinitive": "avoir regardé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je regarde",
+        "ongoing": "Je suis en train de regarder",
+        "past": "J'ai regardé",
+        "pastOngoing": "Je regardais",
+        "duration": "Ça fait un moment que je regarde",
+        "future": "Je vais regarder",
+        "habit": "Avant, je regardais",
+        "recent": "Je viens de regarder",
+        "regret": "J'aurais dû regarder",
+        "possibility": "J'aurais pu regarder",
+        "prior": "J'avais regardé",
+        "intended": "J'allais regarder",
+        "perfect": "J'ai déjà regardé",
+        "ability": "Je peux regarder",
+        "hypothetical": "Je pourrais regarder",
+        "obligation": "Je dois regarder",
+        "advice": "Je devrais regarder"
+      }
+    },
+    {
+      "id": "use-16",
+      "base": "utiliser",
+      "meanings": [
+        "usar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "utiliser",
+        "present": "j'utilise",
+        "past": "j'ai utilisé",
+        "imperfect": "j'utilisais",
+        "participle": "utilisé",
+        "gerund": "en utilisant",
+        "perfect": "j'ai utilisé",
+        "pluperfect": "j'avais utilisé",
+        "perfectInfinitive": "avoir utilisé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'utilise",
+        "ongoing": "Je suis en train d'utiliser",
+        "past": "J'ai utilisé",
+        "pastOngoing": "J'utilisais",
+        "duration": "Ça fait un moment que j'utilise",
+        "future": "Je vais utiliser",
+        "habit": "Avant, j'utilisais",
+        "recent": "Je viens d'utiliser",
+        "regret": "J'aurais dû utiliser",
+        "possibility": "J'aurais pu utiliser",
+        "prior": "J'avais utilisé",
+        "intended": "J'allais utiliser",
+        "perfect": "J'ai déjà utilisé",
+        "ability": "Je peux utiliser",
+        "hypothetical": "Je pourrais utiliser",
+        "obligation": "Je dois utiliser",
+        "advice": "Je devrais utiliser"
+      }
+    },
+    {
+      "id": "find-17",
+      "base": "trouver",
+      "meanings": [
+        "encontrar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "trouver",
+        "present": "je trouve",
+        "past": "j'ai trouvé",
+        "imperfect": "je trouvais",
+        "participle": "trouvé",
+        "gerund": "en trouvant",
+        "perfect": "j'ai trouvé",
+        "pluperfect": "j'avais trouvé",
+        "perfectInfinitive": "avoir trouvé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je trouve",
+        "ongoing": "Je suis en train de trouver",
+        "past": "J'ai trouvé",
+        "pastOngoing": "Je trouvais",
+        "duration": "Ça fait un moment que je trouve",
+        "future": "Je vais trouver",
+        "habit": "Avant, je trouvais",
+        "recent": "Je viens de trouver",
+        "regret": "J'aurais dû trouver",
+        "possibility": "J'aurais pu trouver",
+        "prior": "J'avais trouvé",
+        "intended": "J'allais trouver",
+        "perfect": "J'ai déjà trouvé",
+        "ability": "Je peux trouver",
+        "hypothetical": "Je pourrais trouver",
+        "obligation": "Je dois trouver",
+        "advice": "Je devrais trouver"
+      }
+    },
+    {
+      "id": "give-18",
+      "base": "donner",
+      "meanings": [
+        "dar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "interaction"
+      ],
+      "forms": {
+        "infinitive": "donner",
+        "present": "je donne",
+        "past": "j'ai donné",
+        "imperfect": "je donnais",
+        "participle": "donné",
+        "gerund": "en donnant",
+        "perfect": "j'ai donné",
+        "pluperfect": "j'avais donné",
+        "perfectInfinitive": "avoir donné"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je donne",
+        "ongoing": "Je suis en train de donner",
+        "past": "J'ai donné",
+        "pastOngoing": "Je donnais",
+        "duration": "Ça fait un moment que je donne",
+        "future": "Je vais donner",
+        "habit": "Avant, je donnais",
+        "recent": "Je viens de donner",
+        "regret": "J'aurais dû donner",
+        "possibility": "J'aurais pu donner",
+        "prior": "J'avais donné",
+        "intended": "J'allais donner",
+        "perfect": "J'ai déjà donné",
+        "ability": "Je peux donner",
+        "hypothetical": "Je pourrais donner",
+        "obligation": "Je dois donner",
+        "advice": "Je devrais donner"
+      }
+    },
+    {
+      "id": "tell-19",
+      "base": "raconter",
+      "meanings": [
+        "contar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "raconter",
+        "present": "je raconte",
+        "past": "j'ai raconté",
+        "imperfect": "je racontais",
+        "participle": "raconté",
+        "gerund": "en racontant",
+        "perfect": "j'ai raconté",
+        "pluperfect": "j'avais raconté",
+        "perfectInfinitive": "avoir raconté"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je raconte",
+        "ongoing": "Je suis en train de raconter",
+        "past": "J'ai raconté",
+        "pastOngoing": "Je racontais",
+        "duration": "Ça fait un moment que je raconte",
+        "future": "Je vais raconter",
+        "habit": "Avant, je racontais",
+        "recent": "Je viens de raconter",
+        "regret": "J'aurais dû raconter",
+        "possibility": "J'aurais pu raconter",
+        "prior": "J'avais raconté",
+        "intended": "J'allais raconter",
+        "perfect": "J'ai déjà raconté",
+        "ability": "Je peux raconter",
+        "hypothetical": "Je pourrais raconter",
+        "obligation": "Je dois raconter",
+        "advice": "Je devrais raconter"
+      }
+    },
+    {
+      "id": "work-20",
+      "base": "travailler",
+      "meanings": [
+        "trabalhar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "travailler",
+        "present": "je travaille",
+        "past": "j'ai travaillé",
+        "imperfect": "je travaillais",
+        "participle": "travaillé",
+        "gerund": "en travaillant",
+        "perfect": "j'ai travaillé",
+        "pluperfect": "j'avais travaillé",
+        "perfectInfinitive": "avoir travaillé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je travaille",
+        "ongoing": "Je suis en train de travailler",
+        "past": "J'ai travaillé",
+        "pastOngoing": "Je travaillais",
+        "duration": "Ça fait un moment que je travaille",
+        "future": "Je vais travailler",
+        "habit": "Avant, je travaillais",
+        "recent": "Je viens de travailler",
+        "regret": "J'aurais dû travailler",
+        "possibility": "J'aurais pu travailler",
+        "prior": "J'avais travaillé",
+        "intended": "J'allais travailler",
+        "perfect": "J'ai déjà travaillé",
+        "ability": "Je peux travailler",
+        "hypothetical": "Je pourrais travailler",
+        "obligation": "Je dois travailler",
+        "advice": "Je devrais travailler"
+      }
+    },
+    {
+      "id": "call-21",
+      "base": "appeler",
+      "meanings": [
+        "chamar",
+        "ligar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "appeler",
+        "present": "j'appelle",
+        "past": "j'ai appelé",
+        "imperfect": "j'appelais",
+        "participle": "appelé",
+        "gerund": "en appelant",
+        "perfect": "j'ai appelé",
+        "pluperfect": "j'avais appelé",
+        "perfectInfinitive": "avoir appelé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'appelle",
+        "ongoing": "Je suis en train d'appeler",
+        "past": "J'ai appelé",
+        "pastOngoing": "J'appelais",
+        "duration": "Ça fait un moment que j'appelle",
+        "future": "Je vais appeler",
+        "habit": "Avant, j'appelais",
+        "recent": "Je viens d'appeler",
+        "regret": "J'aurais dû appeler",
+        "possibility": "J'aurais pu appeler",
+        "prior": "J'avais appelé",
+        "intended": "J'allais appeler",
+        "perfect": "J'ai déjà appelé",
+        "ability": "Je peux appeler",
+        "hypothetical": "Je pourrais appeler",
+        "obligation": "Je dois appeler",
+        "advice": "Je devrais appeler"
+      }
+    },
+    {
+      "id": "try-22",
+      "base": "essayer",
+      "meanings": [
+        "tentar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "effort"
+      ],
+      "forms": {
+        "infinitive": "essayer",
+        "present": "j'essaie",
+        "past": "j'ai essayé",
+        "imperfect": "j'essayais",
+        "participle": "essayé",
+        "gerund": "en essayant",
+        "perfect": "j'ai essayé",
+        "pluperfect": "j'avais essayé",
+        "perfectInfinitive": "avoir essayé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'essaie",
+        "ongoing": "Je suis en train d'essayer",
+        "past": "J'ai essayé",
+        "pastOngoing": "J'essayais",
+        "duration": "Ça fait un moment que j'essaie",
+        "future": "Je vais essayer",
+        "habit": "Avant, j'essayais",
+        "recent": "Je viens d'essayer",
+        "regret": "J'aurais dû essayer",
+        "possibility": "J'aurais pu essayer",
+        "prior": "J'avais essayé",
+        "intended": "J'allais essayer",
+        "perfect": "J'ai déjà essayé",
+        "ability": "Je peux essayer",
+        "hypothetical": "Je pourrais essayer",
+        "obligation": "Je dois essayer",
+        "advice": "Je devrais essayer"
+      }
+    },
+    {
+      "id": "ask-23",
+      "base": "demander",
+      "meanings": [
+        "perguntar",
+        "pedir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "demander",
+        "present": "je demande",
+        "past": "j'ai demandé",
+        "imperfect": "je demandais",
+        "participle": "demandé",
+        "gerund": "en demandant",
+        "perfect": "j'ai demandé",
+        "pluperfect": "j'avais demandé",
+        "perfectInfinitive": "avoir demandé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je demande",
+        "ongoing": "Je suis en train de demander",
+        "past": "J'ai demandé",
+        "pastOngoing": "Je demandais",
+        "duration": "Ça fait un moment que je demande",
+        "future": "Je vais demander",
+        "habit": "Avant, je demandais",
+        "recent": "Je viens de demander",
+        "regret": "J'aurais dû demander",
+        "possibility": "J'aurais pu demander",
+        "prior": "J'avais demandé",
+        "intended": "J'allais demander",
+        "perfect": "J'ai déjà demandé",
+        "ability": "Je peux demander",
+        "hypothetical": "Je pourrais demander",
+        "obligation": "Je dois demander",
+        "advice": "Je devrais demander"
+      }
+    },
+    {
+      "id": "need-24",
+      "base": "avoir besoin",
+      "meanings": [
+        "precisar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "need"
+      ],
+      "forms": {
+        "infinitive": "avoir besoin",
+        "present": "j'ai besoin",
+        "past": "j'ai eu besoin",
+        "imperfect": "j'avais besoin",
+        "participle": "eu besoin",
+        "gerund": "en ayant besoin",
+        "perfect": "j'ai eu besoin",
+        "pluperfect": "j'avais eu besoin",
+        "perfectInfinitive": "avoir eu besoin"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "J'ai besoin",
+        "past": "J'ai eu besoin",
+        "pastOngoing": "J'avais besoin",
+        "duration": "Ça fait un moment que j'ai besoin",
+        "future": "Je vais avoir besoin",
+        "habit": "Avant, j'avais besoin",
+        "recent": "Je viens d'avoir besoin",
+        "regret": "J'aurais dû avoir besoin",
+        "possibility": "J'aurais pu avoir besoin",
+        "prior": "J'avais eu besoin",
+        "intended": "J'allais avoir besoin",
+        "perfect": "J'ai déjà eu besoin",
+        "ability": "Je peux avoir besoin",
+        "hypothetical": "Je pourrais avoir besoin",
+        "obligation": "Je dois avoir besoin",
+        "advice": "Je devrais avoir besoin"
+      }
+    },
+    {
+      "id": "feel-25",
+      "base": "ressentir",
+      "meanings": [
+        "sentir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "emotion"
+      ],
+      "forms": {
+        "infinitive": "ressentir",
+        "present": "je ressens",
+        "past": "j'ai ressenti",
+        "imperfect": "je ressentais",
+        "participle": "ressenti",
+        "gerund": "en ressentant",
+        "perfect": "j'ai ressenti",
+        "pluperfect": "j'avais ressenti",
+        "perfectInfinitive": "avoir ressenti"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Je ressens",
+        "past": "J'ai ressenti",
+        "pastOngoing": "Je ressentais",
+        "duration": "Ça fait un moment que je ressens",
+        "future": "Je vais ressentir",
+        "habit": "Avant, je ressentais",
+        "recent": "Je viens de ressentir",
+        "regret": "J'aurais dû ressentir",
+        "possibility": "J'aurais pu ressentir",
+        "prior": "J'avais ressenti",
+        "intended": "J'allais ressentir",
+        "perfect": "J'ai déjà ressenti",
+        "ability": "Je peux ressentir",
+        "hypothetical": "Je pourrais ressentir",
+        "obligation": "Je dois ressentir",
+        "advice": "Je devrais ressentir"
+      }
+    },
+    {
+      "id": "become-26",
+      "base": "devenir",
+      "meanings": [
+        "tornar-se"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "change"
+      ],
+      "forms": {
+        "infinitive": "devenir",
+        "present": "je deviens",
+        "past": "je suis devenu",
+        "imperfect": "je devenais",
+        "participle": "devenu",
+        "gerund": "en devenant",
+        "perfect": "je suis devenu",
+        "pluperfect": "j'étais devenu",
+        "perfectInfinitive": "être devenu",
+        "pastFeminine": "je suis devenue",
+        "pluperfectFeminine": "j'étais devenue"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je deviens",
+        "ongoing": "Je suis en train de devenir",
+        "past": "Je suis devenu / je suis devenue",
+        "pastOngoing": "Je devenais",
+        "duration": "Ça fait un moment que je deviens",
+        "future": "Je vais devenir",
+        "habit": "Avant, je devenais",
+        "recent": "Je viens de devenir",
+        "regret": "J'aurais dû devenir",
+        "possibility": "J'aurais pu devenir",
+        "prior": "J'étais devenu / j'étais devenue",
+        "intended": "J'allais devenir",
+        "perfect": "Je suis déjà devenu / je suis déjà devenue",
+        "ability": "Je peux devenir",
+        "hypothetical": "Je pourrais devenir",
+        "obligation": "Je dois devenir",
+        "advice": "Je devrais devenir"
+      }
+    },
+    {
+      "id": "leave-27",
+      "base": "partir",
+      "meanings": [
+        "sair",
+        "partir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "partir",
+        "present": "je pars",
+        "past": "je suis parti",
+        "imperfect": "je partais",
+        "participle": "parti",
+        "gerund": "en partant",
+        "perfect": "je suis parti",
+        "pluperfect": "j'étais parti",
+        "perfectInfinitive": "être parti",
+        "pastFeminine": "je suis partie",
+        "pluperfectFeminine": "j'étais partie"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je pars",
+        "ongoing": "Je suis en train de partir",
+        "past": "Je suis parti / je suis partie",
+        "pastOngoing": "Je partais",
+        "duration": "Ça fait un moment que je pars",
+        "future": "Je vais partir",
+        "habit": "Avant, je partais",
+        "recent": "Je viens de partir",
+        "regret": "J'aurais dû partir",
+        "possibility": "J'aurais pu partir",
+        "prior": "J'étais parti / j'étais partie",
+        "intended": "J'allais partir",
+        "perfect": "Je suis déjà parti / je suis déjà partie",
+        "ability": "Je peux partir",
+        "hypothetical": "Je pourrais partir",
+        "obligation": "Je dois partir",
+        "advice": "Je devrais partir"
+      }
+    },
+    {
+      "id": "put-28",
+      "base": "mettre",
+      "meanings": [
+        "colocar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "action"
+      ],
+      "forms": {
+        "infinitive": "mettre",
+        "present": "je mets",
+        "past": "j'ai mis",
+        "imperfect": "je mettais",
+        "participle": "mis",
+        "gerund": "en mettant",
+        "perfect": "j'ai mis",
+        "pluperfect": "j'avais mis",
+        "perfectInfinitive": "avoir mis"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je mets",
+        "ongoing": "Je suis en train de mettre",
+        "past": "J'ai mis",
+        "pastOngoing": "Je mettais",
+        "duration": "Ça fait un moment que je mets",
+        "future": "Je vais mettre",
+        "habit": "Avant, je mettais",
+        "recent": "Je viens de mettre",
+        "regret": "J'aurais dû mettre",
+        "possibility": "J'aurais pu mettre",
+        "prior": "J'avais mis",
+        "intended": "J'allais mettre",
+        "perfect": "J'ai déjà mis",
+        "ability": "Je peux mettre",
+        "hypothetical": "Je pourrais mettre",
+        "obligation": "Je dois mettre",
+        "advice": "Je devrais mettre"
+      }
+    },
+    {
+      "id": "mean-29",
+      "base": "signifier",
+      "meanings": [
+        "significar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "meaning"
+      ],
+      "forms": {
+        "infinitive": "signifier",
+        "present": "je signifie",
+        "past": "j'ai signifié",
+        "imperfect": "je signifiais",
+        "participle": "signifié",
+        "gerund": "en signifiant",
+        "perfect": "j'ai signifié",
+        "pluperfect": "j'avais signifié",
+        "perfectInfinitive": "avoir signifié"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Je signifie",
+        "past": "J'ai signifié",
+        "pastOngoing": "Je signifiais",
+        "duration": "Ça fait un moment que je signifie",
+        "future": "Je vais signifier",
+        "habit": "Avant, je signifiais",
+        "recent": "Je viens de signifier",
+        "regret": "J'aurais dû signifier",
+        "possibility": "J'aurais pu signifier",
+        "prior": "J'avais signifié",
+        "intended": "J'allais signifier",
+        "perfect": "J'ai déjà signifié",
+        "ability": "Je peux signifier",
+        "hypothetical": "Je pourrais signifier",
+        "obligation": "Je dois signifier",
+        "advice": "Je devrais signifier"
+      }
+    },
+    {
+      "id": "keep-30",
+      "base": "maintenir",
+      "meanings": [
+        "manter"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "continuity"
+      ],
+      "forms": {
+        "infinitive": "maintenir",
+        "present": "je maintiens",
+        "past": "j'ai maintenu",
+        "imperfect": "je maintenais",
+        "participle": "maintenu",
+        "gerund": "en maintenant",
+        "perfect": "j'ai maintenu",
+        "pluperfect": "j'avais maintenu",
+        "perfectInfinitive": "avoir maintenu"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je maintiens",
+        "ongoing": "Je suis en train de maintenir",
+        "past": "J'ai maintenu",
+        "pastOngoing": "Je maintenais",
+        "duration": "Ça fait un moment que je maintiens",
+        "future": "Je vais maintenir",
+        "habit": "Avant, je maintenais",
+        "recent": "Je viens de maintenir",
+        "regret": "J'aurais dû maintenir",
+        "possibility": "J'aurais pu maintenir",
+        "prior": "J'avais maintenu",
+        "intended": "J'allais maintenir",
+        "perfect": "J'ai déjà maintenu",
+        "ability": "Je peux maintenir",
+        "hypothetical": "Je pourrais maintenir",
+        "obligation": "Je dois maintenir",
+        "advice": "Je devrais maintenir"
+      }
+    },
+    {
+      "id": "let-31",
+      "base": "laisser",
+      "meanings": [
+        "deixar",
+        "permitir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "permission"
+      ],
+      "forms": {
+        "infinitive": "laisser",
+        "present": "je laisse",
+        "past": "j'ai laissé",
+        "imperfect": "je laissais",
+        "participle": "laissé",
+        "gerund": "en laissant",
+        "perfect": "j'ai laissé",
+        "pluperfect": "j'avais laissé",
+        "perfectInfinitive": "avoir laissé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je laisse",
+        "ongoing": "Je suis en train de laisser",
+        "past": "J'ai laissé",
+        "pastOngoing": "Je laissais",
+        "duration": "Ça fait un moment que je laisse",
+        "future": "Je vais laisser",
+        "habit": "Avant, je laissais",
+        "recent": "Je viens de laisser",
+        "regret": "J'aurais dû laisser",
+        "possibility": "J'aurais pu laisser",
+        "prior": "J'avais laissé",
+        "intended": "J'allais laisser",
+        "perfect": "J'ai déjà laissé",
+        "ability": "Je peux laisser",
+        "hypothetical": "Je pourrais laisser",
+        "obligation": "Je dois laisser",
+        "advice": "Je devrais laisser"
+      }
+    },
+    {
+      "id": "begin-32",
+      "base": "commencer",
+      "meanings": [
+        "começar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "time",
+        "action"
+      ],
+      "forms": {
+        "infinitive": "commencer",
+        "present": "je commence",
+        "past": "j'ai commencé",
+        "imperfect": "je commençais",
+        "participle": "commencé",
+        "gerund": "en commençant",
+        "perfect": "j'ai commencé",
+        "pluperfect": "j'avais commencé",
+        "perfectInfinitive": "avoir commencé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je commence",
+        "ongoing": "Je suis en train de commencer",
+        "past": "J'ai commencé",
+        "pastOngoing": "Je commençais",
+        "duration": "Ça fait un moment que je commence",
+        "future": "Je vais commencer",
+        "habit": "Avant, je commençais",
+        "recent": "Je viens de commencer",
+        "regret": "J'aurais dû commencer",
+        "possibility": "J'aurais pu commencer",
+        "prior": "J'avais commencé",
+        "intended": "J'allais commencer",
+        "perfect": "J'ai déjà commencé",
+        "ability": "Je peux commencer",
+        "hypothetical": "Je pourrais commencer",
+        "obligation": "Je dois commencer",
+        "advice": "Je devrais commencer"
+      }
+    },
+    {
+      "id": "help-33",
+      "base": "aider",
+      "meanings": [
+        "ajudar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "interaction"
+      ],
+      "forms": {
+        "infinitive": "aider",
+        "present": "j'aide",
+        "past": "j'ai aidé",
+        "imperfect": "j'aidais",
+        "participle": "aidé",
+        "gerund": "en aidant",
+        "perfect": "j'ai aidé",
+        "pluperfect": "j'avais aidé",
+        "perfectInfinitive": "avoir aidé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'aide",
+        "ongoing": "Je suis en train d'aider",
+        "past": "J'ai aidé",
+        "pastOngoing": "J'aidais",
+        "duration": "Ça fait un moment que j'aide",
+        "future": "Je vais aider",
+        "habit": "Avant, j'aidais",
+        "recent": "Je viens d'aider",
+        "regret": "J'aurais dû aider",
+        "possibility": "J'aurais pu aider",
+        "prior": "J'avais aidé",
+        "intended": "J'allais aider",
+        "perfect": "J'ai déjà aidé",
+        "ability": "Je peux aider",
+        "hypothetical": "Je pourrais aider",
+        "obligation": "Je dois aider",
+        "advice": "Je devrais aider"
+      }
+    },
+    {
+      "id": "talk-34",
+      "base": "discuter",
+      "meanings": [
+        "conversar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "discuter",
+        "present": "je discute",
+        "past": "j'ai discuté",
+        "imperfect": "je discutais",
+        "participle": "discuté",
+        "gerund": "en discutant",
+        "perfect": "j'ai discuté",
+        "pluperfect": "j'avais discuté",
+        "perfectInfinitive": "avoir discuté"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je discute",
+        "ongoing": "Je suis en train de discuter",
+        "past": "J'ai discuté",
+        "pastOngoing": "Je discutais",
+        "duration": "Ça fait un moment que je discute",
+        "future": "Je vais discuter",
+        "habit": "Avant, je discutais",
+        "recent": "Je viens de discuter",
+        "regret": "J'aurais dû discuter",
+        "possibility": "J'aurais pu discuter",
+        "prior": "J'avais discuté",
+        "intended": "J'allais discuter",
+        "perfect": "J'ai déjà discuté",
+        "ability": "Je peux discuter",
+        "hypothetical": "Je pourrais discuter",
+        "obligation": "Je dois discuter",
+        "advice": "Je devrais discuter"
+      }
+    },
+    {
+      "id": "start-35",
+      "base": "démarrer",
+      "meanings": [
+        "começar",
+        "iniciar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "time"
+      ],
+      "forms": {
+        "infinitive": "démarrer",
+        "present": "je démarre",
+        "past": "j'ai démarré",
+        "imperfect": "je démarrais",
+        "participle": "démarré",
+        "gerund": "en démarrant",
+        "perfect": "j'ai démarré",
+        "pluperfect": "j'avais démarré",
+        "perfectInfinitive": "avoir démarré"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je démarre",
+        "ongoing": "Je suis en train de démarrer",
+        "past": "J'ai démarré",
+        "pastOngoing": "Je démarrais",
+        "duration": "Ça fait un moment que je démarre",
+        "future": "Je vais démarrer",
+        "habit": "Avant, je démarrais",
+        "recent": "Je viens de démarrer",
+        "regret": "J'aurais dû démarrer",
+        "possibility": "J'aurais pu démarrer",
+        "prior": "J'avais démarré",
+        "intended": "J'allais démarrer",
+        "perfect": "J'ai déjà démarré",
+        "ability": "Je peux démarrer",
+        "hypothetical": "Je pourrais démarrer",
+        "obligation": "Je dois démarrer",
+        "advice": "Je devrais démarrer"
+      }
+    },
+    {
+      "id": "show-36",
+      "base": "montrer",
+      "meanings": [
+        "mostrar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "montrer",
+        "present": "je montre",
+        "past": "j'ai montré",
+        "imperfect": "je montrais",
+        "participle": "montré",
+        "gerund": "en montrant",
+        "perfect": "j'ai montré",
+        "pluperfect": "j'avais montré",
+        "perfectInfinitive": "avoir montré"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je montre",
+        "ongoing": "Je suis en train de montrer",
+        "past": "J'ai montré",
+        "pastOngoing": "Je montrais",
+        "duration": "Ça fait un moment que je montre",
+        "future": "Je vais montrer",
+        "habit": "Avant, je montrais",
+        "recent": "Je viens de montrer",
+        "regret": "J'aurais dû montrer",
+        "possibility": "J'aurais pu montrer",
+        "prior": "J'avais montré",
+        "intended": "J'allais montrer",
+        "perfect": "J'ai déjà montré",
+        "ability": "Je peux montrer",
+        "hypothetical": "Je pourrais montrer",
+        "obligation": "Je dois montrer",
+        "advice": "Je devrais montrer"
+      }
+    },
+    {
+      "id": "hear-37",
+      "base": "entendre",
+      "meanings": [
+        "ouvir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "perception"
+      ],
+      "forms": {
+        "infinitive": "entendre",
+        "present": "j'entends",
+        "past": "j'ai entendu",
+        "imperfect": "j'entendais",
+        "participle": "entendu",
+        "gerund": "en entendant",
+        "perfect": "j'ai entendu",
+        "pluperfect": "j'avais entendu",
+        "perfectInfinitive": "avoir entendu"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'entends",
+        "ongoing": "Je suis en train d'entendre",
+        "past": "J'ai entendu",
+        "pastOngoing": "J'entendais",
+        "duration": "Ça fait un moment que j'entends",
+        "future": "Je vais entendre",
+        "habit": "Avant, j'entendais",
+        "recent": "Je viens d'entendre",
+        "regret": "J'aurais dû entendre",
+        "possibility": "J'aurais pu entendre",
+        "prior": "J'avais entendu",
+        "intended": "J'allais entendre",
+        "perfect": "J'ai déjà entendu",
+        "ability": "Je peux entendre",
+        "hypothetical": "Je pourrais entendre",
+        "obligation": "Je dois entendre",
+        "advice": "Je devrais entendre"
+      }
+    },
+    {
+      "id": "play-38",
+      "base": "jouer",
+      "meanings": [
+        "jogar",
+        "brincar",
+        "tocar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "leisure",
+        "sports"
+      ],
+      "forms": {
+        "infinitive": "jouer",
+        "present": "je joue",
+        "past": "j'ai joué",
+        "imperfect": "je jouais",
+        "participle": "joué",
+        "gerund": "en jouant",
+        "perfect": "j'ai joué",
+        "pluperfect": "j'avais joué",
+        "perfectInfinitive": "avoir joué"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je joue",
+        "ongoing": "Je suis en train de jouer",
+        "past": "J'ai joué",
+        "pastOngoing": "Je jouais",
+        "duration": "Ça fait un moment que je joue",
+        "future": "Je vais jouer",
+        "habit": "Avant, je jouais",
+        "recent": "Je viens de jouer",
+        "regret": "J'aurais dû jouer",
+        "possibility": "J'aurais pu jouer",
+        "prior": "J'avais joué",
+        "intended": "J'allais jouer",
+        "perfect": "J'ai déjà joué",
+        "ability": "Je peux jouer",
+        "hypothetical": "Je pourrais jouer",
+        "obligation": "Je dois jouer",
+        "advice": "Je devrais jouer"
+      }
+    },
+    {
+      "id": "run-39",
+      "base": "courir",
+      "meanings": [
+        "correr"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "fitness",
+        "movement"
+      ],
+      "forms": {
+        "infinitive": "courir",
+        "present": "je cours",
+        "past": "j'ai couru",
+        "imperfect": "je courais",
+        "participle": "couru",
+        "gerund": "en courant",
+        "perfect": "j'ai couru",
+        "pluperfect": "j'avais couru",
+        "perfectInfinitive": "avoir couru"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je cours",
+        "ongoing": "Je suis en train de courir",
+        "past": "J'ai couru",
+        "pastOngoing": "Je courais",
+        "duration": "Ça fait un moment que je cours",
+        "future": "Je vais courir",
+        "habit": "Avant, je courais",
+        "recent": "Je viens de courir",
+        "regret": "J'aurais dû courir",
+        "possibility": "J'aurais pu courir",
+        "prior": "J'avais couru",
+        "intended": "J'allais courir",
+        "perfect": "J'ai déjà couru",
+        "ability": "Je peux courir",
+        "hypothetical": "Je pourrais courir",
+        "obligation": "Je dois courir",
+        "advice": "Je devrais courir"
+      }
+    },
+    {
+      "id": "move-40",
+      "base": "bouger",
+      "meanings": [
+        "mover-se"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement",
+        "housing"
+      ],
+      "forms": {
+        "infinitive": "bouger",
+        "present": "je bouge",
+        "past": "j'ai bougé",
+        "imperfect": "je bougeais",
+        "participle": "bougé",
+        "gerund": "en bougeant",
+        "perfect": "j'ai bougé",
+        "pluperfect": "j'avais bougé",
+        "perfectInfinitive": "avoir bougé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je bouge",
+        "ongoing": "Je suis en train de bouger",
+        "past": "J'ai bougé",
+        "pastOngoing": "Je bougeais",
+        "duration": "Ça fait un moment que je bouge",
+        "future": "Je vais bouger",
+        "habit": "Avant, je bougeais",
+        "recent": "Je viens de bouger",
+        "regret": "J'aurais dû bouger",
+        "possibility": "J'aurais pu bouger",
+        "prior": "J'avais bougé",
+        "intended": "J'allais bouger",
+        "perfect": "J'ai déjà bougé",
+        "ability": "Je peux bouger",
+        "hypothetical": "Je pourrais bouger",
+        "obligation": "Je dois bouger",
+        "advice": "Je devrais bouger"
+      }
+    },
+    {
+      "id": "like-41",
+      "base": "apprécier",
+      "meanings": [
+        "apreciar",
+        "gostar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "preference"
+      ],
+      "forms": {
+        "infinitive": "apprécier",
+        "present": "j'apprécie",
+        "past": "j'ai apprécié",
+        "imperfect": "j'appréciais",
+        "participle": "apprécié",
+        "gerund": "en appréciant",
+        "perfect": "j'ai apprécié",
+        "pluperfect": "j'avais apprécié",
+        "perfectInfinitive": "avoir apprécié"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "J'apprécie",
+        "past": "J'ai apprécié",
+        "pastOngoing": "J'appréciais",
+        "duration": "Ça fait un moment que j'apprécie",
+        "future": "Je vais apprécier",
+        "habit": "Avant, j'appréciais",
+        "recent": "Je viens d'apprécier",
+        "regret": "J'aurais dû apprécier",
+        "possibility": "J'aurais pu apprécier",
+        "prior": "J'avais apprécié",
+        "intended": "J'allais apprécier",
+        "perfect": "J'ai déjà apprécié",
+        "ability": "Je peux apprécier",
+        "hypothetical": "Je pourrais apprécier",
+        "obligation": "Je dois apprécier",
+        "advice": "Je devrais apprécier"
+      }
+    },
+    {
+      "id": "live-42",
+      "base": "vivre",
+      "meanings": [
+        "viver"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life",
+        "housing"
+      ],
+      "forms": {
+        "infinitive": "vivre",
+        "present": "je vis",
+        "past": "j'ai vécu",
+        "imperfect": "je vivais",
+        "participle": "vécu",
+        "gerund": "en vivant",
+        "perfect": "j'ai vécu",
+        "pluperfect": "j'avais vécu",
+        "perfectInfinitive": "avoir vécu"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je vis",
+        "ongoing": "Je suis en train de vivre",
+        "past": "J'ai vécu",
+        "pastOngoing": "Je vivais",
+        "duration": "Ça fait un moment que je vis",
+        "future": "Je vais vivre",
+        "habit": "Avant, je vivais",
+        "recent": "Je viens de vivre",
+        "regret": "J'aurais dû vivre",
+        "possibility": "J'aurais pu vivre",
+        "prior": "J'avais vécu",
+        "intended": "J'allais vivre",
+        "perfect": "J'ai déjà vécu",
+        "ability": "Je peux vivre",
+        "hypothetical": "Je pourrais vivre",
+        "obligation": "Je dois vivre",
+        "advice": "Je devrais vivre"
+      }
+    },
+    {
+      "id": "believe-43",
+      "base": "croire",
+      "meanings": [
+        "acreditar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "thought"
+      ],
+      "forms": {
+        "infinitive": "croire",
+        "present": "je crois",
+        "past": "j'ai cru",
+        "imperfect": "je croyais",
+        "participle": "cru",
+        "gerund": "en croyant",
+        "perfect": "j'ai cru",
+        "pluperfect": "j'avais cru",
+        "perfectInfinitive": "avoir cru"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Je crois",
+        "past": "J'ai cru",
+        "pastOngoing": "Je croyais",
+        "duration": "Ça fait un moment que je crois",
+        "future": "Je vais croire",
+        "habit": "Avant, je croyais",
+        "recent": "Je viens de croire",
+        "regret": "J'aurais dû croire",
+        "possibility": "J'aurais pu croire",
+        "prior": "J'avais cru",
+        "intended": "J'allais croire",
+        "perfect": "J'ai déjà cru",
+        "ability": "Je peux croire",
+        "hypothetical": "Je pourrais croire",
+        "obligation": "Je dois croire",
+        "advice": "Je devrais croire"
+      }
+    },
+    {
+      "id": "bring-44",
+      "base": "apporter",
+      "meanings": [
+        "trazer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "apporter",
+        "present": "j'apporte",
+        "past": "j'ai apporté",
+        "imperfect": "j'apportais",
+        "participle": "apporté",
+        "gerund": "en apportant",
+        "perfect": "j'ai apporté",
+        "pluperfect": "j'avais apporté",
+        "perfectInfinitive": "avoir apporté"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'apporte",
+        "ongoing": "Je suis en train d'apporter",
+        "past": "J'ai apporté",
+        "pastOngoing": "J'apportais",
+        "duration": "Ça fait un moment que j'apporte",
+        "future": "Je vais apporter",
+        "habit": "Avant, j'apportais",
+        "recent": "Je viens d'apporter",
+        "regret": "J'aurais dû apporter",
+        "possibility": "J'aurais pu apporter",
+        "prior": "J'avais apporté",
+        "intended": "J'allais apporter",
+        "perfect": "J'ai déjà apporté",
+        "ability": "Je peux apporter",
+        "hypothetical": "Je pourrais apporter",
+        "obligation": "Je dois apporter",
+        "advice": "Je devrais apporter"
+      }
+    },
+    {
+      "id": "happen-45",
+      "base": "survenir",
+      "meanings": [
+        "sobrevir",
+        "acontecer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "events"
+      ],
+      "forms": {
+        "infinitive": "survenir",
+        "present": "il survient",
+        "past": "il est survenu",
+        "imperfect": "il survenait",
+        "participle": "survenu",
+        "gerund": "en survenant",
+        "perfect": "il est survenu",
+        "pluperfect": "il était survenu",
+        "perfectInfinitive": "être survenu"
+      },
+      "stative": true,
+      "impersonal": true,
+      "trainingForms": {
+        "present": "Il survient",
+        "past": "Il est survenu",
+        "habit": "Il survenait",
+        "perfect": "Il est survenu",
+        "prior": "Il était survenu"
+      }
+    },
+    {
+      "id": "write-46",
+      "base": "écrire",
+      "meanings": [
+        "escrever"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "work"
+      ],
+      "forms": {
+        "infinitive": "écrire",
+        "present": "j'écris",
+        "past": "j'ai écrit",
+        "imperfect": "j'écrivais",
+        "participle": "écrit",
+        "gerund": "en écrivant",
+        "perfect": "j'ai écrit",
+        "pluperfect": "j'avais écrit",
+        "perfectInfinitive": "avoir écrit"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'écris",
+        "ongoing": "Je suis en train d'écrire",
+        "past": "J'ai écrit",
+        "pastOngoing": "J'écrivais",
+        "duration": "Ça fait un moment que j'écris",
+        "future": "Je vais écrire",
+        "habit": "Avant, j'écrivais",
+        "recent": "Je viens d'écrire",
+        "regret": "J'aurais dû écrire",
+        "possibility": "J'aurais pu écrire",
+        "prior": "J'avais écrit",
+        "intended": "J'allais écrire",
+        "perfect": "J'ai déjà écrit",
+        "ability": "Je peux écrire",
+        "hypothetical": "Je pourrais écrire",
+        "obligation": "Je dois écrire",
+        "advice": "Je devrais écrire"
+      }
+    },
+    {
+      "id": "sit-47",
+      "base": "s'asseoir",
+      "meanings": [
+        "sentar-se"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "m'asseoir",
+        "present": "je m'assieds",
+        "past": "je me suis assis",
+        "imperfect": "je m'asseyais",
+        "participle": "assis",
+        "gerund": "en m'asseyant",
+        "perfect": "je me suis assis",
+        "pluperfect": "je m'étais assis",
+        "perfectInfinitive": "m'être assis",
+        "pastFeminine": "je me suis assise",
+        "pluperfectFeminine": "je m'étais assise"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je m'assieds",
+        "ongoing": "Je suis en train de m'asseoir",
+        "past": "Je me suis assis / je me suis assise",
+        "pastOngoing": "Je m'asseyais",
+        "duration": "Ça fait un moment que je m'assieds",
+        "future": "Je vais m'asseoir",
+        "habit": "Avant, je m'asseyais",
+        "recent": "Je viens de m'asseoir",
+        "regret": "J'aurais dû m'asseoir",
+        "possibility": "J'aurais pu m'asseoir",
+        "prior": "Je m'étais assis / je m'étais assise",
+        "intended": "J'allais m'asseoir",
+        "perfect": "Je me suis déjà assis / je me suis déjà assise",
+        "ability": "Je peux m'asseoir",
+        "hypothetical": "Je pourrais m'asseoir",
+        "obligation": "Je dois m'asseoir",
+        "advice": "Je devrais m'asseoir"
+      }
+    },
+    {
+      "id": "stand-48",
+      "base": "se tenir debout",
+      "meanings": [
+        "ficar em pé"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "me tenir debout",
+        "present": "je me tiens debout",
+        "past": "je me suis tenu debout",
+        "imperfect": "je me tenais debout",
+        "participle": "tenu debout",
+        "gerund": "en me tenant debout",
+        "perfect": "je me suis tenu debout",
+        "pluperfect": "je m'étais tenu debout",
+        "perfectInfinitive": "m'être tenu debout",
+        "pastFeminine": "je me suis tenue debout",
+        "pluperfectFeminine": "je m'étais tenue debout"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je me tiens debout",
+        "ongoing": "Je suis en train de me tenir debout",
+        "past": "Je me suis tenu debout / je me suis tenue debout",
+        "pastOngoing": "Je me tenais debout",
+        "duration": "Ça fait un moment que je me tiens debout",
+        "future": "Je vais me tenir debout",
+        "habit": "Avant, je me tenais debout",
+        "recent": "Je viens de me tenir debout",
+        "regret": "J'aurais dû me tenir debout",
+        "possibility": "J'aurais pu me tenir debout",
+        "prior": "Je m'étais tenu debout / je m'étais tenue debout",
+        "intended": "J'allais me tenir debout",
+        "perfect": "Je me suis déjà tenu debout / je me suis déjà tenue debout",
+        "ability": "Je peux me tenir debout",
+        "hypothetical": "Je pourrais me tenir debout",
+        "obligation": "Je dois me tenir debout",
+        "advice": "Je devrais me tenir debout"
+      }
+    },
+    {
+      "id": "lose-49",
+      "base": "perdre",
+      "meanings": [
+        "perder"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "perdre",
+        "present": "je perds",
+        "past": "j'ai perdu",
+        "imperfect": "je perdais",
+        "participle": "perdu",
+        "gerund": "en perdant",
+        "perfect": "j'ai perdu",
+        "pluperfect": "j'avais perdu",
+        "perfectInfinitive": "avoir perdu"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je perds",
+        "ongoing": "Je suis en train de perdre",
+        "past": "J'ai perdu",
+        "pastOngoing": "Je perdais",
+        "duration": "Ça fait un moment que je perds",
+        "future": "Je vais perdre",
+        "habit": "Avant, je perdais",
+        "recent": "Je viens de perdre",
+        "regret": "J'aurais dû perdre",
+        "possibility": "J'aurais pu perdre",
+        "prior": "J'avais perdu",
+        "intended": "J'allais perdre",
+        "perfect": "J'ai déjà perdu",
+        "ability": "Je peux perdre",
+        "hypothetical": "Je pourrais perdre",
+        "obligation": "Je dois perdre",
+        "advice": "Je devrais perdre"
+      }
+    },
+    {
+      "id": "pay-50",
+      "base": "payer",
+      "meanings": [
+        "pagar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "money",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "payer",
+        "present": "je paie",
+        "past": "j'ai payé",
+        "imperfect": "je payais",
+        "participle": "payé",
+        "gerund": "en payant",
+        "perfect": "j'ai payé",
+        "pluperfect": "j'avais payé",
+        "perfectInfinitive": "avoir payé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je paie",
+        "ongoing": "Je suis en train de payer",
+        "past": "J'ai payé",
+        "pastOngoing": "Je payais",
+        "duration": "Ça fait un moment que je paie",
+        "future": "Je vais payer",
+        "habit": "Avant, je payais",
+        "recent": "Je viens de payer",
+        "regret": "J'aurais dû payer",
+        "possibility": "J'aurais pu payer",
+        "prior": "J'avais payé",
+        "intended": "J'allais payer",
+        "perfect": "J'ai déjà payé",
+        "ability": "Je peux payer",
+        "hypothetical": "Je pourrais payer",
+        "obligation": "Je dois payer",
+        "advice": "Je devrais payer"
+      }
+    },
+    {
+      "id": "meet-51",
+      "base": "rencontrer",
+      "meanings": [
+        "encontrar",
+        "conhecer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "interaction",
+        "work"
+      ],
+      "forms": {
+        "infinitive": "rencontrer",
+        "present": "je rencontre",
+        "past": "j'ai rencontré",
+        "imperfect": "je rencontrais",
+        "participle": "rencontré",
+        "gerund": "en rencontrant",
+        "perfect": "j'ai rencontré",
+        "pluperfect": "j'avais rencontré",
+        "perfectInfinitive": "avoir rencontré"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je rencontre",
+        "ongoing": "Je suis en train de rencontrer",
+        "past": "J'ai rencontré",
+        "pastOngoing": "Je rencontrais",
+        "duration": "Ça fait un moment que je rencontre",
+        "future": "Je vais rencontrer",
+        "habit": "Avant, je rencontrais",
+        "recent": "Je viens de rencontrer",
+        "regret": "J'aurais dû rencontrer",
+        "possibility": "J'aurais pu rencontrer",
+        "prior": "J'avais rencontré",
+        "intended": "J'allais rencontrer",
+        "perfect": "J'ai déjà rencontré",
+        "ability": "Je peux rencontrer",
+        "hypothetical": "Je pourrais rencontrer",
+        "obligation": "Je dois rencontrer",
+        "advice": "Je devrais rencontrer"
+      }
+    },
+    {
+      "id": "learn-52",
+      "base": "apprendre",
+      "meanings": [
+        "aprender"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "education"
+      ],
+      "forms": {
+        "infinitive": "apprendre",
+        "present": "j'apprends",
+        "past": "j'ai appris",
+        "imperfect": "j'apprenais",
+        "participle": "appris",
+        "gerund": "en apprenant",
+        "perfect": "j'ai appris",
+        "pluperfect": "j'avais appris",
+        "perfectInfinitive": "avoir appris"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'apprends",
+        "ongoing": "Je suis en train d'apprendre",
+        "past": "J'ai appris",
+        "pastOngoing": "J'apprenais",
+        "duration": "Ça fait un moment que j'apprends",
+        "future": "Je vais apprendre",
+        "habit": "Avant, j'apprenais",
+        "recent": "Je viens d'apprendre",
+        "regret": "J'aurais dû apprendre",
+        "possibility": "J'aurais pu apprendre",
+        "prior": "J'avais appris",
+        "intended": "J'allais apprendre",
+        "perfect": "J'ai déjà appris",
+        "ability": "Je peux apprendre",
+        "hypothetical": "Je pourrais apprendre",
+        "obligation": "Je dois apprendre",
+        "advice": "Je devrais apprendre"
+      }
+    },
+    {
+      "id": "change-53",
+      "base": "changer",
+      "meanings": [
+        "mudar",
+        "alterar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "change"
+      ],
+      "forms": {
+        "infinitive": "changer",
+        "present": "je change",
+        "past": "j'ai changé",
+        "imperfect": "je changeais",
+        "participle": "changé",
+        "gerund": "en changeant",
+        "perfect": "j'ai changé",
+        "pluperfect": "j'avais changé",
+        "perfectInfinitive": "avoir changé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je change",
+        "ongoing": "Je suis en train de changer",
+        "past": "J'ai changé",
+        "pastOngoing": "Je changeais",
+        "duration": "Ça fait un moment que je change",
+        "future": "Je vais changer",
+        "habit": "Avant, je changeais",
+        "recent": "Je viens de changer",
+        "regret": "J'aurais dû changer",
+        "possibility": "J'aurais pu changer",
+        "prior": "J'avais changé",
+        "intended": "J'allais changer",
+        "perfect": "J'ai déjà changé",
+        "ability": "Je peux changer",
+        "hypothetical": "Je pourrais changer",
+        "obligation": "Je dois changer",
+        "advice": "Je devrais changer"
+      }
+    },
+    {
+      "id": "understand-54",
+      "base": "comprendre",
+      "meanings": [
+        "entender"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "knowledge"
+      ],
+      "forms": {
+        "infinitive": "comprendre",
+        "present": "je comprends",
+        "past": "j'ai compris",
+        "imperfect": "je comprenais",
+        "participle": "compris",
+        "gerund": "en comprenant",
+        "perfect": "j'ai compris",
+        "pluperfect": "j'avais compris",
+        "perfectInfinitive": "avoir compris"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Je comprends",
+        "past": "J'ai compris",
+        "pastOngoing": "Je comprenais",
+        "duration": "Ça fait un moment que je comprends",
+        "future": "Je vais comprendre",
+        "habit": "Avant, je comprenais",
+        "recent": "Je viens de comprendre",
+        "regret": "J'aurais dû comprendre",
+        "possibility": "J'aurais pu comprendre",
+        "prior": "J'avais compris",
+        "intended": "J'allais comprendre",
+        "perfect": "J'ai déjà compris",
+        "ability": "Je peux comprendre",
+        "hypothetical": "Je pourrais comprendre",
+        "obligation": "Je dois comprendre",
+        "advice": "Je devrais comprendre"
+      }
+    },
+    {
+      "id": "watch-55",
+      "base": "observer",
+      "meanings": [
+        "observar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "leisure",
+        "perception"
+      ],
+      "forms": {
+        "infinitive": "observer",
+        "present": "j'observe",
+        "past": "j'ai observé",
+        "imperfect": "j'observais",
+        "participle": "observé",
+        "gerund": "en observant",
+        "perfect": "j'ai observé",
+        "pluperfect": "j'avais observé",
+        "perfectInfinitive": "avoir observé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'observe",
+        "ongoing": "Je suis en train d'observer",
+        "past": "J'ai observé",
+        "pastOngoing": "J'observais",
+        "duration": "Ça fait un moment que j'observe",
+        "future": "Je vais observer",
+        "habit": "Avant, j'observais",
+        "recent": "Je viens d'observer",
+        "regret": "J'aurais dû observer",
+        "possibility": "J'aurais pu observer",
+        "prior": "J'avais observé",
+        "intended": "J'allais observer",
+        "perfect": "J'ai déjà observé",
+        "ability": "Je peux observer",
+        "hypothetical": "Je pourrais observer",
+        "obligation": "Je dois observer",
+        "advice": "Je devrais observer"
+      }
+    },
+    {
+      "id": "follow-56",
+      "base": "suivre",
+      "meanings": [
+        "seguir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "action"
+      ],
+      "forms": {
+        "infinitive": "suivre",
+        "present": "je suis",
+        "past": "j'ai suivi",
+        "imperfect": "je suivais",
+        "participle": "suivi",
+        "gerund": "en suivant",
+        "perfect": "j'ai suivi",
+        "pluperfect": "j'avais suivi",
+        "perfectInfinitive": "avoir suivi"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je suis",
+        "ongoing": "Je suis en train de suivre",
+        "past": "J'ai suivi",
+        "pastOngoing": "Je suivais",
+        "duration": "Ça fait un moment que je suis",
+        "future": "Je vais suivre",
+        "habit": "Avant, je suivais",
+        "recent": "Je viens de suivre",
+        "regret": "J'aurais dû suivre",
+        "possibility": "J'aurais pu suivre",
+        "prior": "J'avais suivi",
+        "intended": "J'allais suivre",
+        "perfect": "J'ai déjà suivi",
+        "ability": "Je peux suivre",
+        "hypothetical": "Je pourrais suivre",
+        "obligation": "Je dois suivre",
+        "advice": "Je devrais suivre"
+      }
+    },
+    {
+      "id": "stop-57",
+      "base": "arrêter",
+      "meanings": [
+        "parar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "action"
+      ],
+      "forms": {
+        "infinitive": "arrêter",
+        "present": "j'arrête",
+        "past": "j'ai arrêté",
+        "imperfect": "j'arrêtais",
+        "participle": "arrêté",
+        "gerund": "en arrêtant",
+        "perfect": "j'ai arrêté",
+        "pluperfect": "j'avais arrêté",
+        "perfectInfinitive": "avoir arrêté"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'arrête",
+        "ongoing": "Je suis en train d'arrêter",
+        "past": "J'ai arrêté",
+        "pastOngoing": "J'arrêtais",
+        "duration": "Ça fait un moment que j'arrête",
+        "future": "Je vais arrêter",
+        "habit": "Avant, j'arrêtais",
+        "recent": "Je viens d'arrêter",
+        "regret": "J'aurais dû arrêter",
+        "possibility": "J'aurais pu arrêter",
+        "prior": "J'avais arrêté",
+        "intended": "J'allais arrêter",
+        "perfect": "J'ai déjà arrêté",
+        "ability": "Je peux arrêter",
+        "hypothetical": "Je pourrais arrêter",
+        "obligation": "Je dois arrêter",
+        "advice": "Je devrais arrêter"
+      }
+    },
+    {
+      "id": "create-58",
+      "base": "créer",
+      "meanings": [
+        "criar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "creation",
+        "work"
+      ],
+      "forms": {
+        "infinitive": "créer",
+        "present": "je crée",
+        "past": "j'ai créé",
+        "imperfect": "je créais",
+        "participle": "créé",
+        "gerund": "en créant",
+        "perfect": "j'ai créé",
+        "pluperfect": "j'avais créé",
+        "perfectInfinitive": "avoir créé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je crée",
+        "ongoing": "Je suis en train de créer",
+        "past": "J'ai créé",
+        "pastOngoing": "Je créais",
+        "duration": "Ça fait un moment que je crée",
+        "future": "Je vais créer",
+        "habit": "Avant, je créais",
+        "recent": "Je viens de créer",
+        "regret": "J'aurais dû créer",
+        "possibility": "J'aurais pu créer",
+        "prior": "J'avais créé",
+        "intended": "J'allais créer",
+        "perfect": "J'ai déjà créé",
+        "ability": "Je peux créer",
+        "hypothetical": "Je pourrais créer",
+        "obligation": "Je dois créer",
+        "advice": "Je devrais créer"
+      }
+    },
+    {
+      "id": "speak-59",
+      "base": "parler",
+      "meanings": [
+        "falar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "language"
+      ],
+      "forms": {
+        "infinitive": "parler",
+        "present": "je parle",
+        "past": "j'ai parlé",
+        "imperfect": "je parlais",
+        "participle": "parlé",
+        "gerund": "en parlant",
+        "perfect": "j'ai parlé",
+        "pluperfect": "j'avais parlé",
+        "perfectInfinitive": "avoir parlé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je parle",
+        "ongoing": "Je suis en train de parler",
+        "past": "J'ai parlé",
+        "pastOngoing": "Je parlais",
+        "duration": "Ça fait un moment que je parle",
+        "future": "Je vais parler",
+        "habit": "Avant, je parlais",
+        "recent": "Je viens de parler",
+        "regret": "J'aurais dû parler",
+        "possibility": "J'aurais pu parler",
+        "prior": "J'avais parlé",
+        "intended": "J'allais parler",
+        "perfect": "J'ai déjà parlé",
+        "ability": "Je peux parler",
+        "hypothetical": "Je pourrais parler",
+        "obligation": "Je dois parler",
+        "advice": "Je devrais parler"
+      }
+    },
+    {
+      "id": "read-60",
+      "base": "lire",
+      "meanings": [
+        "ler"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "education",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "lire",
+        "present": "je lis",
+        "past": "j'ai lu",
+        "imperfect": "je lisais",
+        "participle": "lu",
+        "gerund": "en lisant",
+        "perfect": "j'ai lu",
+        "pluperfect": "j'avais lu",
+        "perfectInfinitive": "avoir lu"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je lis",
+        "ongoing": "Je suis en train de lire",
+        "past": "J'ai lu",
+        "pastOngoing": "Je lisais",
+        "duration": "Ça fait un moment que je lis",
+        "future": "Je vais lire",
+        "habit": "Avant, je lisais",
+        "recent": "Je viens de lire",
+        "regret": "J'aurais dû lire",
+        "possibility": "J'aurais pu lire",
+        "prior": "J'avais lu",
+        "intended": "J'allais lire",
+        "perfect": "J'ai déjà lu",
+        "ability": "Je peux lire",
+        "hypothetical": "Je pourrais lire",
+        "obligation": "Je dois lire",
+        "advice": "Je devrais lire"
+      }
+    },
+    {
+      "id": "add-61",
+      "base": "ajouter",
+      "meanings": [
+        "adicionar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "action"
+      ],
+      "forms": {
+        "infinitive": "ajouter",
+        "present": "j'ajoute",
+        "past": "j'ai ajouté",
+        "imperfect": "j'ajoutais",
+        "participle": "ajouté",
+        "gerund": "en ajoutant",
+        "perfect": "j'ai ajouté",
+        "pluperfect": "j'avais ajouté",
+        "perfectInfinitive": "avoir ajouté"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'ajoute",
+        "ongoing": "Je suis en train d'ajouter",
+        "past": "J'ai ajouté",
+        "pastOngoing": "J'ajoutais",
+        "duration": "Ça fait un moment que j'ajoute",
+        "future": "Je vais ajouter",
+        "habit": "Avant, j'ajoutais",
+        "recent": "Je viens d'ajouter",
+        "regret": "J'aurais dû ajouter",
+        "possibility": "J'aurais pu ajouter",
+        "prior": "J'avais ajouté",
+        "intended": "J'allais ajouter",
+        "perfect": "J'ai déjà ajouté",
+        "ability": "Je peux ajouter",
+        "hypothetical": "Je pourrais ajouter",
+        "obligation": "Je dois ajouter",
+        "advice": "Je devrais ajouter"
+      }
+    },
+    {
+      "id": "spend-62",
+      "base": "dépenser",
+      "meanings": [
+        "gastar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "time",
+        "money"
+      ],
+      "forms": {
+        "infinitive": "dépenser",
+        "present": "je dépense",
+        "past": "j'ai dépensé",
+        "imperfect": "je dépensais",
+        "participle": "dépensé",
+        "gerund": "en dépensant",
+        "perfect": "j'ai dépensé",
+        "pluperfect": "j'avais dépensé",
+        "perfectInfinitive": "avoir dépensé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je dépense",
+        "ongoing": "Je suis en train de dépenser",
+        "past": "J'ai dépensé",
+        "pastOngoing": "Je dépensais",
+        "duration": "Ça fait un moment que je dépense",
+        "future": "Je vais dépenser",
+        "habit": "Avant, je dépensais",
+        "recent": "Je viens de dépenser",
+        "regret": "J'aurais dû dépenser",
+        "possibility": "J'aurais pu dépenser",
+        "prior": "J'avais dépensé",
+        "intended": "J'allais dépenser",
+        "perfect": "J'ai déjà dépensé",
+        "ability": "Je peux dépenser",
+        "hypothetical": "Je pourrais dépenser",
+        "obligation": "Je dois dépenser",
+        "advice": "Je devrais dépenser"
+      }
+    },
+    {
+      "id": "grow-63",
+      "base": "grandir",
+      "meanings": [
+        "crescer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "change",
+        "work"
+      ],
+      "forms": {
+        "infinitive": "grandir",
+        "present": "je grandis",
+        "past": "j'ai grandi",
+        "imperfect": "je grandissais",
+        "participle": "grandi",
+        "gerund": "en grandissant",
+        "perfect": "j'ai grandi",
+        "pluperfect": "j'avais grandi",
+        "perfectInfinitive": "avoir grandi"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je grandis",
+        "ongoing": "Je suis en train de grandir",
+        "past": "J'ai grandi",
+        "pastOngoing": "Je grandissais",
+        "duration": "Ça fait un moment que je grandis",
+        "future": "Je vais grandir",
+        "habit": "Avant, je grandissais",
+        "recent": "Je viens de grandir",
+        "regret": "J'aurais dû grandir",
+        "possibility": "J'aurais pu grandir",
+        "prior": "J'avais grandi",
+        "intended": "J'allais grandir",
+        "perfect": "J'ai déjà grandi",
+        "ability": "Je peux grandir",
+        "hypothetical": "Je pourrais grandir",
+        "obligation": "Je dois grandir",
+        "advice": "Je devrais grandir"
+      }
+    },
+    {
+      "id": "open-64",
+      "base": "ouvrir",
+      "meanings": [
+        "abrir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "ouvrir",
+        "present": "j'ouvre",
+        "past": "j'ai ouvert",
+        "imperfect": "j'ouvrais",
+        "participle": "ouvert",
+        "gerund": "en ouvrant",
+        "perfect": "j'ai ouvert",
+        "pluperfect": "j'avais ouvert",
+        "perfectInfinitive": "avoir ouvert"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'ouvre",
+        "ongoing": "Je suis en train d'ouvrir",
+        "past": "J'ai ouvert",
+        "pastOngoing": "J'ouvrais",
+        "duration": "Ça fait un moment que j'ouvre",
+        "future": "Je vais ouvrir",
+        "habit": "Avant, j'ouvrais",
+        "recent": "Je viens d'ouvrir",
+        "regret": "J'aurais dû ouvrir",
+        "possibility": "J'aurais pu ouvrir",
+        "prior": "J'avais ouvert",
+        "intended": "J'allais ouvrir",
+        "perfect": "J'ai déjà ouvert",
+        "ability": "Je peux ouvrir",
+        "hypothetical": "Je pourrais ouvrir",
+        "obligation": "Je dois ouvrir",
+        "advice": "Je devrais ouvrir"
+      }
+    },
+    {
+      "id": "walk-65",
+      "base": "marcher",
+      "meanings": [
+        "caminhar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement",
+        "fitness"
+      ],
+      "forms": {
+        "infinitive": "marcher",
+        "present": "je marche",
+        "past": "j'ai marché",
+        "imperfect": "je marchais",
+        "participle": "marché",
+        "gerund": "en marchant",
+        "perfect": "j'ai marché",
+        "pluperfect": "j'avais marché",
+        "perfectInfinitive": "avoir marché"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je marche",
+        "ongoing": "Je suis en train de marcher",
+        "past": "J'ai marché",
+        "pastOngoing": "Je marchais",
+        "duration": "Ça fait un moment que je marche",
+        "future": "Je vais marcher",
+        "habit": "Avant, je marchais",
+        "recent": "Je viens de marcher",
+        "regret": "J'aurais dû marcher",
+        "possibility": "J'aurais pu marcher",
+        "prior": "J'avais marché",
+        "intended": "J'allais marcher",
+        "perfect": "J'ai déjà marché",
+        "ability": "Je peux marcher",
+        "hypothetical": "Je pourrais marcher",
+        "obligation": "Je dois marcher",
+        "advice": "Je devrais marcher"
+      }
+    },
+    {
+      "id": "win-66",
+      "base": "gagner",
+      "meanings": [
+        "ganhar",
+        "vencer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "sports",
+        "success"
+      ],
+      "forms": {
+        "infinitive": "gagner",
+        "present": "je gagne",
+        "past": "j'ai gagné",
+        "imperfect": "je gagnais",
+        "participle": "gagné",
+        "gerund": "en gagnant",
+        "perfect": "j'ai gagné",
+        "pluperfect": "j'avais gagné",
+        "perfectInfinitive": "avoir gagné"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je gagne",
+        "ongoing": "Je suis en train de gagner",
+        "past": "J'ai gagné",
+        "pastOngoing": "Je gagnais",
+        "duration": "Ça fait un moment que je gagne",
+        "future": "Je vais gagner",
+        "habit": "Avant, je gagnais",
+        "recent": "Je viens de gagner",
+        "regret": "J'aurais dû gagner",
+        "possibility": "J'aurais pu gagner",
+        "prior": "J'avais gagné",
+        "intended": "J'allais gagner",
+        "perfect": "J'ai déjà gagné",
+        "ability": "Je peux gagner",
+        "hypothetical": "Je pourrais gagner",
+        "obligation": "Je dois gagner",
+        "advice": "Je devrais gagner"
+      }
+    },
+    {
+      "id": "remember-67",
+      "base": "se souvenir",
+      "meanings": [
+        "lembrar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "memory"
+      ],
+      "forms": {
+        "infinitive": "me souvenir",
+        "present": "je me souviens",
+        "past": "je me suis souvenu",
+        "imperfect": "je me souvenais",
+        "participle": "souvenu",
+        "gerund": "en me souvenant",
+        "perfect": "je me suis souvenu",
+        "pluperfect": "je m'étais souvenu",
+        "perfectInfinitive": "m'être souvenu",
+        "pastFeminine": "je me suis souvenue",
+        "pluperfectFeminine": "je m'étais souvenue"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Je me souviens",
+        "past": "Je me suis souvenu / je me suis souvenue",
+        "pastOngoing": "Je me souvenais",
+        "duration": "Ça fait un moment que je me souviens",
+        "future": "Je vais me souvenir",
+        "habit": "Avant, je me souvenais",
+        "recent": "Je viens de me souvenir",
+        "regret": "J'aurais dû me souvenir",
+        "possibility": "J'aurais pu me souvenir",
+        "prior": "Je m'étais souvenu / je m'étais souvenue",
+        "intended": "J'allais me souvenir",
+        "perfect": "Je me suis déjà souvenu / je me suis déjà souvenue",
+        "ability": "Je peux me souvenir",
+        "hypothetical": "Je pourrais me souvenir",
+        "obligation": "Je dois me souvenir",
+        "advice": "Je devrais me souvenir"
+      }
+    },
+    {
+      "id": "buy-68",
+      "base": "acheter",
+      "meanings": [
+        "comprar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "shopping",
+        "money"
+      ],
+      "forms": {
+        "infinitive": "acheter",
+        "present": "j'achète",
+        "past": "j'ai acheté",
+        "imperfect": "j'achetais",
+        "participle": "acheté",
+        "gerund": "en achetant",
+        "perfect": "j'ai acheté",
+        "pluperfect": "j'avais acheté",
+        "perfectInfinitive": "avoir acheté"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'achète",
+        "ongoing": "Je suis en train d'acheter",
+        "past": "J'ai acheté",
+        "pastOngoing": "J'achetais",
+        "duration": "Ça fait un moment que j'achète",
+        "future": "Je vais acheter",
+        "habit": "Avant, j'achetais",
+        "recent": "Je viens d'acheter",
+        "regret": "J'aurais dû acheter",
+        "possibility": "J'aurais pu acheter",
+        "prior": "J'avais acheté",
+        "intended": "J'allais acheter",
+        "perfect": "J'ai déjà acheté",
+        "ability": "Je peux acheter",
+        "hypothetical": "Je pourrais acheter",
+        "obligation": "Je dois acheter",
+        "advice": "Je devrais acheter"
+      }
+    },
+    {
+      "id": "wait-69",
+      "base": "attendre",
+      "meanings": [
+        "esperar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "time"
+      ],
+      "forms": {
+        "infinitive": "attendre",
+        "present": "j'attends",
+        "past": "j'ai attendu",
+        "imperfect": "j'attendais",
+        "participle": "attendu",
+        "gerund": "en attendant",
+        "perfect": "j'ai attendu",
+        "pluperfect": "j'avais attendu",
+        "perfectInfinitive": "avoir attendu"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'attends",
+        "ongoing": "Je suis en train d'attendre",
+        "past": "J'ai attendu",
+        "pastOngoing": "J'attendais",
+        "duration": "Ça fait un moment que j'attends",
+        "future": "Je vais attendre",
+        "habit": "Avant, j'attendais",
+        "recent": "Je viens d'attendre",
+        "regret": "J'aurais dû attendre",
+        "possibility": "J'aurais pu attendre",
+        "prior": "J'avais attendu",
+        "intended": "J'allais attendre",
+        "perfect": "J'ai déjà attendu",
+        "ability": "Je peux attendre",
+        "hypothetical": "Je pourrais attendre",
+        "obligation": "Je dois attendre",
+        "advice": "Je devrais attendre"
+      }
+    },
+    {
+      "id": "send-70",
+      "base": "envoyer",
+      "meanings": [
+        "enviar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "work"
+      ],
+      "forms": {
+        "infinitive": "envoyer",
+        "present": "j'envoie",
+        "past": "j'ai envoyé",
+        "imperfect": "j'envoyais",
+        "participle": "envoyé",
+        "gerund": "en envoyant",
+        "perfect": "j'ai envoyé",
+        "pluperfect": "j'avais envoyé",
+        "perfectInfinitive": "avoir envoyé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'envoie",
+        "ongoing": "Je suis en train d'envoyer",
+        "past": "J'ai envoyé",
+        "pastOngoing": "J'envoyais",
+        "duration": "Ça fait un moment que j'envoie",
+        "future": "Je vais envoyer",
+        "habit": "Avant, j'envoyais",
+        "recent": "Je viens d'envoyer",
+        "regret": "J'aurais dû envoyer",
+        "possibility": "J'aurais pu envoyer",
+        "prior": "J'avais envoyé",
+        "intended": "J'allais envoyer",
+        "perfect": "J'ai déjà envoyé",
+        "ability": "Je peux envoyer",
+        "hypothetical": "Je pourrais envoyer",
+        "obligation": "Je dois envoyer",
+        "advice": "Je devrais envoyer"
+      }
+    },
+    {
+      "id": "build-71",
+      "base": "construire",
+      "meanings": [
+        "construir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "creation",
+        "work",
+        "technology"
+      ],
+      "forms": {
+        "infinitive": "construire",
+        "present": "je construis",
+        "past": "j'ai construit",
+        "imperfect": "je construisais",
+        "participle": "construit",
+        "gerund": "en construisant",
+        "perfect": "j'ai construit",
+        "pluperfect": "j'avais construit",
+        "perfectInfinitive": "avoir construit"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je construis",
+        "ongoing": "Je suis en train de construire",
+        "past": "J'ai construit",
+        "pastOngoing": "Je construisais",
+        "duration": "Ça fait un moment que je construis",
+        "future": "Je vais construire",
+        "habit": "Avant, je construisais",
+        "recent": "Je viens de construire",
+        "regret": "J'aurais dû construire",
+        "possibility": "J'aurais pu construire",
+        "prior": "J'avais construit",
+        "intended": "J'allais construire",
+        "perfect": "J'ai déjà construit",
+        "ability": "Je peux construire",
+        "hypothetical": "Je pourrais construire",
+        "obligation": "Je dois construire",
+        "advice": "Je devrais construire"
+      }
+    },
+    {
+      "id": "stay-72",
+      "base": "rester",
+      "meanings": [
+        "ficar",
+        "permanecer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "rester",
+        "present": "je reste",
+        "past": "je suis resté",
+        "imperfect": "je restais",
+        "participle": "resté",
+        "gerund": "en restant",
+        "perfect": "je suis resté",
+        "pluperfect": "j'étais resté",
+        "perfectInfinitive": "être resté",
+        "pastFeminine": "je suis restée",
+        "pluperfectFeminine": "j'étais restée"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je reste",
+        "ongoing": "Je suis en train de rester",
+        "past": "Je suis resté / je suis restée",
+        "pastOngoing": "Je restais",
+        "duration": "Ça fait un moment que je reste",
+        "future": "Je vais rester",
+        "habit": "Avant, je restais",
+        "recent": "Je viens de rester",
+        "regret": "J'aurais dû rester",
+        "possibility": "J'aurais pu rester",
+        "prior": "J'étais resté / j'étais restée",
+        "intended": "J'allais rester",
+        "perfect": "Je suis déjà resté / je suis déjà restée",
+        "ability": "Je peux rester",
+        "hypothetical": "Je pourrais rester",
+        "obligation": "Je dois rester",
+        "advice": "Je devrais rester"
+      }
+    },
+    {
+      "id": "fall-73",
+      "base": "tomber",
+      "meanings": [
+        "cair"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement"
+      ],
+      "forms": {
+        "infinitive": "tomber",
+        "present": "je tombe",
+        "past": "je suis tombé",
+        "imperfect": "je tombais",
+        "participle": "tombé",
+        "gerund": "en tombant",
+        "perfect": "je suis tombé",
+        "pluperfect": "j'étais tombé",
+        "perfectInfinitive": "être tombé",
+        "pastFeminine": "je suis tombée",
+        "pluperfectFeminine": "j'étais tombée"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je tombe",
+        "ongoing": "Je suis en train de tomber",
+        "past": "Je suis tombé / je suis tombée",
+        "pastOngoing": "Je tombais",
+        "duration": "Ça fait un moment que je tombe",
+        "future": "Je vais tomber",
+        "habit": "Avant, je tombais",
+        "recent": "Je viens de tomber",
+        "regret": "J'aurais dû tomber",
+        "possibility": "J'aurais pu tomber",
+        "prior": "J'étais tombé / j'étais tombée",
+        "intended": "J'allais tomber",
+        "perfect": "Je suis déjà tombé / je suis déjà tombée",
+        "ability": "Je peux tomber",
+        "hypothetical": "Je pourrais tomber",
+        "obligation": "Je dois tomber",
+        "advice": "Je devrais tomber"
+      }
+    },
+    {
+      "id": "cut-74",
+      "base": "couper",
+      "meanings": [
+        "cortar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "action"
+      ],
+      "forms": {
+        "infinitive": "couper",
+        "present": "je coupe",
+        "past": "j'ai coupé",
+        "imperfect": "je coupais",
+        "participle": "coupé",
+        "gerund": "en coupant",
+        "perfect": "j'ai coupé",
+        "pluperfect": "j'avais coupé",
+        "perfectInfinitive": "avoir coupé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je coupe",
+        "ongoing": "Je suis en train de couper",
+        "past": "J'ai coupé",
+        "pastOngoing": "Je coupais",
+        "duration": "Ça fait un moment que je coupe",
+        "future": "Je vais couper",
+        "habit": "Avant, je coupais",
+        "recent": "Je viens de couper",
+        "regret": "J'aurais dû couper",
+        "possibility": "J'aurais pu couper",
+        "prior": "J'avais coupé",
+        "intended": "J'allais couper",
+        "perfect": "J'ai déjà coupé",
+        "ability": "Je peux couper",
+        "hypothetical": "Je pourrais couper",
+        "obligation": "Je dois couper",
+        "advice": "Je devrais couper"
+      }
+    },
+    {
+      "id": "sell-75",
+      "base": "vendre",
+      "meanings": [
+        "vender"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "shopping",
+        "money"
+      ],
+      "forms": {
+        "infinitive": "vendre",
+        "present": "je vends",
+        "past": "j'ai vendu",
+        "imperfect": "je vendais",
+        "participle": "vendu",
+        "gerund": "en vendant",
+        "perfect": "j'ai vendu",
+        "pluperfect": "j'avais vendu",
+        "perfectInfinitive": "avoir vendu"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je vends",
+        "ongoing": "Je suis en train de vendre",
+        "past": "J'ai vendu",
+        "pastOngoing": "Je vendais",
+        "duration": "Ça fait un moment que je vends",
+        "future": "Je vais vendre",
+        "habit": "Avant, je vendais",
+        "recent": "Je viens de vendre",
+        "regret": "J'aurais dû vendre",
+        "possibility": "J'aurais pu vendre",
+        "prior": "J'avais vendu",
+        "intended": "J'allais vendre",
+        "perfect": "J'ai déjà vendu",
+        "ability": "Je peux vendre",
+        "hypothetical": "Je pourrais vendre",
+        "obligation": "Je dois vendre",
+        "advice": "Je devrais vendre"
+      }
+    },
+    {
+      "id": "decide-76",
+      "base": "décider",
+      "meanings": [
+        "decidir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "decision"
+      ],
+      "forms": {
+        "infinitive": "décider",
+        "present": "je décide",
+        "past": "j'ai décidé",
+        "imperfect": "je décidais",
+        "participle": "décidé",
+        "gerund": "en décidant",
+        "perfect": "j'ai décidé",
+        "pluperfect": "j'avais décidé",
+        "perfectInfinitive": "avoir décidé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je décide",
+        "ongoing": "Je suis en train de décider",
+        "past": "J'ai décidé",
+        "pastOngoing": "Je décidais",
+        "duration": "Ça fait un moment que je décide",
+        "future": "Je vais décider",
+        "habit": "Avant, je décidais",
+        "recent": "Je viens de décider",
+        "regret": "J'aurais dû décider",
+        "possibility": "J'aurais pu décider",
+        "prior": "J'avais décidé",
+        "intended": "J'allais décider",
+        "perfect": "J'ai déjà décidé",
+        "ability": "Je peux décider",
+        "hypothetical": "Je pourrais décider",
+        "obligation": "Je dois décider",
+        "advice": "Je devrais décider"
+      }
+    },
+    {
+      "id": "return-77",
+      "base": "revenir",
+      "meanings": [
+        "voltar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement"
+      ],
+      "forms": {
+        "infinitive": "revenir",
+        "present": "je reviens",
+        "past": "je suis revenu",
+        "imperfect": "je revenais",
+        "participle": "revenu",
+        "gerund": "en revenant",
+        "perfect": "je suis revenu",
+        "pluperfect": "j'étais revenu",
+        "perfectInfinitive": "être revenu",
+        "pastFeminine": "je suis revenue",
+        "pluperfectFeminine": "j'étais revenue"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je reviens",
+        "ongoing": "Je suis en train de revenir",
+        "past": "Je suis revenu / je suis revenue",
+        "pastOngoing": "Je revenais",
+        "duration": "Ça fait un moment que je reviens",
+        "future": "Je vais revenir",
+        "habit": "Avant, je revenais",
+        "recent": "Je viens de revenir",
+        "regret": "J'aurais dû revenir",
+        "possibility": "J'aurais pu revenir",
+        "prior": "J'étais revenu / j'étais revenue",
+        "intended": "J'allais revenir",
+        "perfect": "Je suis déjà revenu / je suis déjà revenue",
+        "ability": "Je peux revenir",
+        "hypothetical": "Je pourrais revenir",
+        "obligation": "Je dois revenir",
+        "advice": "Je devrais revenir"
+      }
+    },
+    {
+      "id": "explain-78",
+      "base": "expliquer",
+      "meanings": [
+        "explicar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "education"
+      ],
+      "forms": {
+        "infinitive": "expliquer",
+        "present": "j'explique",
+        "past": "j'ai expliqué",
+        "imperfect": "j'expliquais",
+        "participle": "expliqué",
+        "gerund": "en expliquant",
+        "perfect": "j'ai expliqué",
+        "pluperfect": "j'avais expliqué",
+        "perfectInfinitive": "avoir expliqué"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'explique",
+        "ongoing": "Je suis en train d'expliquer",
+        "past": "J'ai expliqué",
+        "pastOngoing": "J'expliquais",
+        "duration": "Ça fait un moment que j'explique",
+        "future": "Je vais expliquer",
+        "habit": "Avant, j'expliquais",
+        "recent": "Je viens d'expliquer",
+        "regret": "J'aurais dû expliquer",
+        "possibility": "J'aurais pu expliquer",
+        "prior": "J'avais expliqué",
+        "intended": "J'allais expliquer",
+        "perfect": "J'ai déjà expliqué",
+        "ability": "Je peux expliquer",
+        "hypothetical": "Je pourrais expliquer",
+        "obligation": "Je dois expliquer",
+        "advice": "Je devrais expliquer"
+      }
+    },
+    {
+      "id": "hope-79",
+      "base": "espérer",
+      "meanings": [
+        "esperar",
+        "ter esperança"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "emotion",
+        "expectation"
+      ],
+      "forms": {
+        "infinitive": "espérer",
+        "present": "j'espère",
+        "past": "j'ai espéré",
+        "imperfect": "j'espérais",
+        "participle": "espéré",
+        "gerund": "en espérant",
+        "perfect": "j'ai espéré",
+        "pluperfect": "j'avais espéré",
+        "perfectInfinitive": "avoir espéré"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "J'espère",
+        "past": "J'ai espéré",
+        "pastOngoing": "J'espérais",
+        "duration": "Ça fait un moment que j'espère",
+        "future": "Je vais espérer",
+        "habit": "Avant, j'espérais",
+        "recent": "Je viens d'espérer",
+        "regret": "J'aurais dû espérer",
+        "possibility": "J'aurais pu espérer",
+        "prior": "J'avais espéré",
+        "intended": "J'allais espérer",
+        "perfect": "J'ai déjà espéré",
+        "ability": "Je peux espérer",
+        "hypothetical": "Je pourrais espérer",
+        "obligation": "Je dois espérer",
+        "advice": "Je devrais espérer"
+      }
+    },
+    {
+      "id": "develop-80",
+      "base": "développer",
+      "meanings": [
+        "desenvolver"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "technology"
+      ],
+      "forms": {
+        "infinitive": "développer",
+        "present": "je développe",
+        "past": "j'ai développé",
+        "imperfect": "je développais",
+        "participle": "développé",
+        "gerund": "en développant",
+        "perfect": "j'ai développé",
+        "pluperfect": "j'avais développé",
+        "perfectInfinitive": "avoir développé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je développe",
+        "ongoing": "Je suis en train de développer",
+        "past": "J'ai développé",
+        "pastOngoing": "Je développais",
+        "duration": "Ça fait un moment que je développe",
+        "future": "Je vais développer",
+        "habit": "Avant, je développais",
+        "recent": "Je viens de développer",
+        "regret": "J'aurais dû développer",
+        "possibility": "J'aurais pu développer",
+        "prior": "J'avais développé",
+        "intended": "J'allais développer",
+        "perfect": "J'ai déjà développé",
+        "ability": "Je peux développer",
+        "hypothetical": "Je pourrais développer",
+        "obligation": "Je dois développer",
+        "advice": "Je devrais développer"
+      }
+    },
+    {
+      "id": "break-81",
+      "base": "casser",
+      "meanings": [
+        "quebrar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "casser",
+        "present": "je casse",
+        "past": "j'ai cassé",
+        "imperfect": "je cassais",
+        "participle": "cassé",
+        "gerund": "en cassant",
+        "perfect": "j'ai cassé",
+        "pluperfect": "j'avais cassé",
+        "perfectInfinitive": "avoir cassé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je casse",
+        "ongoing": "Je suis en train de casser",
+        "past": "J'ai cassé",
+        "pastOngoing": "Je cassais",
+        "duration": "Ça fait un moment que je casse",
+        "future": "Je vais casser",
+        "habit": "Avant, je cassais",
+        "recent": "Je viens de casser",
+        "regret": "J'aurais dû casser",
+        "possibility": "J'aurais pu casser",
+        "prior": "J'avais cassé",
+        "intended": "J'allais casser",
+        "perfect": "J'ai déjà cassé",
+        "ability": "Je peux casser",
+        "hypothetical": "Je pourrais casser",
+        "obligation": "Je dois casser",
+        "advice": "Je devrais casser"
+      }
+    },
+    {
+      "id": "receive-82",
+      "base": "recevoir",
+      "meanings": [
+        "receber"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "recevoir",
+        "present": "je reçois",
+        "past": "j'ai reçu",
+        "imperfect": "je recevais",
+        "participle": "reçu",
+        "gerund": "en recevant",
+        "perfect": "j'ai reçu",
+        "pluperfect": "j'avais reçu",
+        "perfectInfinitive": "avoir reçu"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je reçois",
+        "ongoing": "Je suis en train de recevoir",
+        "past": "J'ai reçu",
+        "pastOngoing": "Je recevais",
+        "duration": "Ça fait un moment que je reçois",
+        "future": "Je vais recevoir",
+        "habit": "Avant, je recevais",
+        "recent": "Je viens de recevoir",
+        "regret": "J'aurais dû recevoir",
+        "possibility": "J'aurais pu recevoir",
+        "prior": "J'avais reçu",
+        "intended": "J'allais recevoir",
+        "perfect": "J'ai déjà reçu",
+        "ability": "Je peux recevoir",
+        "hypothetical": "Je pourrais recevoir",
+        "obligation": "Je dois recevoir",
+        "advice": "Je devrais recevoir"
+      }
+    },
+    {
+      "id": "agree-83",
+      "base": "être d'accord",
+      "meanings": [
+        "concordar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "opinion",
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "être d'accord",
+        "present": "je suis d'accord",
+        "past": "j'ai été d'accord",
+        "imperfect": "j'étais d'accord",
+        "participle": "été d'accord",
+        "gerund": "en étant d'accord",
+        "perfect": "j'ai été d'accord",
+        "pluperfect": "j'avais été d'accord",
+        "perfectInfinitive": "avoir été d'accord"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Je suis d'accord",
+        "past": "J'ai été d'accord",
+        "pastOngoing": "J'étais d'accord",
+        "duration": "Ça fait un moment que je suis d'accord",
+        "future": "Je vais être d'accord",
+        "habit": "Avant, j'étais d'accord",
+        "recent": "Je viens d'être d'accord",
+        "regret": "J'aurais dû être d'accord",
+        "possibility": "J'aurais pu être d'accord",
+        "prior": "J'avais été d'accord",
+        "intended": "J'allais être d'accord",
+        "perfect": "J'ai déjà été d'accord",
+        "ability": "Je peux être d'accord",
+        "hypothetical": "Je pourrais être d'accord",
+        "obligation": "Je dois être d'accord",
+        "advice": "Je devrais être d'accord"
+      }
+    },
+    {
+      "id": "eat-84",
+      "base": "manger",
+      "meanings": [
+        "comer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "food",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "manger",
+        "present": "je mange",
+        "past": "j'ai mangé",
+        "imperfect": "je mangeais",
+        "participle": "mangé",
+        "gerund": "en mangeant",
+        "perfect": "j'ai mangé",
+        "pluperfect": "j'avais mangé",
+        "perfectInfinitive": "avoir mangé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je mange",
+        "ongoing": "Je suis en train de manger",
+        "past": "J'ai mangé",
+        "pastOngoing": "Je mangeais",
+        "duration": "Ça fait un moment que je mange",
+        "future": "Je vais manger",
+        "habit": "Avant, je mangeais",
+        "recent": "Je viens de manger",
+        "regret": "J'aurais dû manger",
+        "possibility": "J'aurais pu manger",
+        "prior": "J'avais mangé",
+        "intended": "J'allais manger",
+        "perfect": "J'ai déjà mangé",
+        "ability": "Je peux manger",
+        "hypothetical": "Je pourrais manger",
+        "obligation": "Je dois manger",
+        "advice": "Je devrais manger"
+      }
+    },
+    {
+      "id": "drink-85",
+      "base": "boire",
+      "meanings": [
+        "beber"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "food",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "boire",
+        "present": "je bois",
+        "past": "j'ai bu",
+        "imperfect": "je buvais",
+        "participle": "bu",
+        "gerund": "en buvant",
+        "perfect": "j'ai bu",
+        "pluperfect": "j'avais bu",
+        "perfectInfinitive": "avoir bu"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je bois",
+        "ongoing": "Je suis en train de boire",
+        "past": "J'ai bu",
+        "pastOngoing": "Je buvais",
+        "duration": "Ça fait un moment que je bois",
+        "future": "Je vais boire",
+        "habit": "Avant, je buvais",
+        "recent": "Je viens de boire",
+        "regret": "J'aurais dû boire",
+        "possibility": "J'aurais pu boire",
+        "prior": "J'avais bu",
+        "intended": "J'allais boire",
+        "perfect": "J'ai déjà bu",
+        "ability": "Je peux boire",
+        "hypothetical": "Je pourrais boire",
+        "obligation": "Je dois boire",
+        "advice": "Je devrais boire"
+      }
+    },
+    {
+      "id": "sleep-86",
+      "base": "dormir",
+      "meanings": [
+        "dormir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life",
+        "health"
+      ],
+      "forms": {
+        "infinitive": "dormir",
+        "present": "je dors",
+        "past": "j'ai dormi",
+        "imperfect": "je dormais",
+        "participle": "dormi",
+        "gerund": "en dormant",
+        "perfect": "j'ai dormi",
+        "pluperfect": "j'avais dormi",
+        "perfectInfinitive": "avoir dormi"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je dors",
+        "ongoing": "Je suis en train de dormir",
+        "past": "J'ai dormi",
+        "pastOngoing": "Je dormais",
+        "duration": "Ça fait un moment que je dors",
+        "future": "Je vais dormir",
+        "habit": "Avant, je dormais",
+        "recent": "Je viens de dormir",
+        "regret": "J'aurais dû dormir",
+        "possibility": "J'aurais pu dormir",
+        "prior": "J'avais dormi",
+        "intended": "J'allais dormir",
+        "perfect": "J'ai déjà dormi",
+        "ability": "Je peux dormir",
+        "hypothetical": "Je pourrais dormir",
+        "obligation": "Je dois dormir",
+        "advice": "Je devrais dormir"
+      }
+    },
+    {
+      "id": "drive-87",
+      "base": "conduire",
+      "meanings": [
+        "dirigir"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "transport",
+        "movement"
+      ],
+      "forms": {
+        "infinitive": "conduire",
+        "present": "je conduis",
+        "past": "j'ai conduit",
+        "imperfect": "je conduisais",
+        "participle": "conduit",
+        "gerund": "en conduisant",
+        "perfect": "j'ai conduit",
+        "pluperfect": "j'avais conduit",
+        "perfectInfinitive": "avoir conduit"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je conduis",
+        "ongoing": "Je suis en train de conduire",
+        "past": "J'ai conduit",
+        "pastOngoing": "Je conduisais",
+        "duration": "Ça fait un moment que je conduis",
+        "future": "Je vais conduire",
+        "habit": "Avant, je conduisais",
+        "recent": "Je viens de conduire",
+        "regret": "J'aurais dû conduire",
+        "possibility": "J'aurais pu conduire",
+        "prior": "J'avais conduit",
+        "intended": "J'allais conduire",
+        "perfect": "J'ai déjà conduit",
+        "ability": "Je peux conduire",
+        "hypothetical": "Je pourrais conduire",
+        "obligation": "Je dois conduire",
+        "advice": "Je devrais conduire"
+      }
+    },
+    {
+      "id": "study-88",
+      "base": "étudier",
+      "meanings": [
+        "estudar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "education",
+        "language"
+      ],
+      "forms": {
+        "infinitive": "étudier",
+        "present": "j'étudie",
+        "past": "j'ai étudié",
+        "imperfect": "j'étudiais",
+        "participle": "étudié",
+        "gerund": "en étudiant",
+        "perfect": "j'ai étudié",
+        "pluperfect": "j'avais étudié",
+        "perfectInfinitive": "avoir étudié"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'étudie",
+        "ongoing": "Je suis en train d'étudier",
+        "past": "J'ai étudié",
+        "pastOngoing": "J'étudiais",
+        "duration": "Ça fait un moment que j'étudie",
+        "future": "Je vais étudier",
+        "habit": "Avant, j'étudiais",
+        "recent": "Je viens d'étudier",
+        "regret": "J'aurais dû étudier",
+        "possibility": "J'aurais pu étudier",
+        "prior": "J'avais étudié",
+        "intended": "J'allais étudier",
+        "perfect": "J'ai déjà étudié",
+        "ability": "Je peux étudier",
+        "hypothetical": "Je pourrais étudier",
+        "obligation": "Je dois étudier",
+        "advice": "Je devrais étudier"
+      }
+    },
+    {
+      "id": "teach-89",
+      "base": "enseigner",
+      "meanings": [
+        "ensinar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "education",
+        "language"
+      ],
+      "forms": {
+        "infinitive": "enseigner",
+        "present": "j'enseigne",
+        "past": "j'ai enseigné",
+        "imperfect": "j'enseignais",
+        "participle": "enseigné",
+        "gerund": "en enseignant",
+        "perfect": "j'ai enseigné",
+        "pluperfect": "j'avais enseigné",
+        "perfectInfinitive": "avoir enseigné"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'enseigne",
+        "ongoing": "Je suis en train d'enseigner",
+        "past": "J'ai enseigné",
+        "pastOngoing": "J'enseignais",
+        "duration": "Ça fait un moment que j'enseigne",
+        "future": "Je vais enseigner",
+        "habit": "Avant, j'enseignais",
+        "recent": "Je viens d'enseigner",
+        "regret": "J'aurais dû enseigner",
+        "possibility": "J'aurais pu enseigner",
+        "prior": "J'avais enseigné",
+        "intended": "J'allais enseigner",
+        "perfect": "J'ai déjà enseigné",
+        "ability": "Je peux enseigner",
+        "hypothetical": "Je pourrais enseigner",
+        "obligation": "Je dois enseigner",
+        "advice": "Je devrais enseigner"
+      }
+    },
+    {
+      "id": "wear-90",
+      "base": "porter",
+      "meanings": [
+        "vestir",
+        "usar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life",
+        "clothing"
+      ],
+      "forms": {
+        "infinitive": "porter",
+        "present": "je porte",
+        "past": "j'ai porté",
+        "imperfect": "je portais",
+        "participle": "porté",
+        "gerund": "en portant",
+        "perfect": "j'ai porté",
+        "pluperfect": "j'avais porté",
+        "perfectInfinitive": "avoir porté"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je porte",
+        "ongoing": "Je suis en train de porter",
+        "past": "J'ai porté",
+        "pastOngoing": "Je portais",
+        "duration": "Ça fait un moment que je porte",
+        "future": "Je vais porter",
+        "habit": "Avant, je portais",
+        "recent": "Je viens de porter",
+        "regret": "J'aurais dû porter",
+        "possibility": "J'aurais pu porter",
+        "prior": "J'avais porté",
+        "intended": "J'allais porter",
+        "perfect": "J'ai déjà porté",
+        "ability": "Je peux porter",
+        "hypothetical": "Je pourrais porter",
+        "obligation": "Je dois porter",
+        "advice": "Je devrais porter"
+      }
+    },
+    {
+      "id": "choose-91",
+      "base": "choisir",
+      "meanings": [
+        "escolher"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "decision"
+      ],
+      "forms": {
+        "infinitive": "choisir",
+        "present": "je choisis",
+        "past": "j'ai choisi",
+        "imperfect": "je choisissais",
+        "participle": "choisi",
+        "gerund": "en choisissant",
+        "perfect": "j'ai choisi",
+        "pluperfect": "j'avais choisi",
+        "perfectInfinitive": "avoir choisi"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je choisis",
+        "ongoing": "Je suis en train de choisir",
+        "past": "J'ai choisi",
+        "pastOngoing": "Je choisissais",
+        "duration": "Ça fait un moment que je choisis",
+        "future": "Je vais choisir",
+        "habit": "Avant, je choisissais",
+        "recent": "Je viens de choisir",
+        "regret": "J'aurais dû choisir",
+        "possibility": "J'aurais pu choisir",
+        "prior": "J'avais choisi",
+        "intended": "J'allais choisir",
+        "perfect": "J'ai déjà choisi",
+        "ability": "Je peux choisir",
+        "hypothetical": "Je pourrais choisir",
+        "obligation": "Je dois choisir",
+        "advice": "Je devrais choisir"
+      }
+    },
+    {
+      "id": "forget-92",
+      "base": "oublier",
+      "meanings": [
+        "esquecer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "memory"
+      ],
+      "forms": {
+        "infinitive": "oublier",
+        "present": "j'oublie",
+        "past": "j'ai oublié",
+        "imperfect": "j'oubliais",
+        "participle": "oublié",
+        "gerund": "en oubliant",
+        "perfect": "j'ai oublié",
+        "pluperfect": "j'avais oublié",
+        "perfectInfinitive": "avoir oublié"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'oublie",
+        "ongoing": "Je suis en train d'oublier",
+        "past": "J'ai oublié",
+        "pastOngoing": "J'oubliais",
+        "duration": "Ça fait un moment que j'oublie",
+        "future": "Je vais oublier",
+        "habit": "Avant, j'oubliais",
+        "recent": "Je viens d'oublier",
+        "regret": "J'aurais dû oublier",
+        "possibility": "J'aurais pu oublier",
+        "prior": "J'avais oublié",
+        "intended": "J'allais oublier",
+        "perfect": "J'ai déjà oublié",
+        "ability": "Je peux oublier",
+        "hypothetical": "Je pourrais oublier",
+        "obligation": "Je dois oublier",
+        "advice": "Je devrais oublier"
+      }
+    },
+    {
+      "id": "catch-93",
+      "base": "attraper",
+      "meanings": [
+        "pegar",
+        "capturar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "transport",
+        "movement"
+      ],
+      "forms": {
+        "infinitive": "attraper",
+        "present": "j'attrape",
+        "past": "j'ai attrapé",
+        "imperfect": "j'attrapais",
+        "participle": "attrapé",
+        "gerund": "en attrapant",
+        "perfect": "j'ai attrapé",
+        "pluperfect": "j'avais attrapé",
+        "perfectInfinitive": "avoir attrapé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'attrape",
+        "ongoing": "Je suis en train d'attraper",
+        "past": "J'ai attrapé",
+        "pastOngoing": "J'attrapais",
+        "duration": "Ça fait un moment que j'attrape",
+        "future": "Je vais attraper",
+        "habit": "Avant, j'attrapais",
+        "recent": "Je viens d'attraper",
+        "regret": "J'aurais dû attraper",
+        "possibility": "J'aurais pu attraper",
+        "prior": "J'avais attrapé",
+        "intended": "J'allais attraper",
+        "perfect": "J'ai déjà attrapé",
+        "ability": "Je peux attraper",
+        "hypothetical": "Je pourrais attraper",
+        "obligation": "Je dois attraper",
+        "advice": "Je devrais attraper"
+      }
+    },
+    {
+      "id": "travel-94",
+      "base": "voyager",
+      "meanings": [
+        "viajar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "travel",
+        "work"
+      ],
+      "forms": {
+        "infinitive": "voyager",
+        "present": "je voyage",
+        "past": "j'ai voyagé",
+        "imperfect": "je voyageais",
+        "participle": "voyagé",
+        "gerund": "en voyageant",
+        "perfect": "j'ai voyagé",
+        "pluperfect": "j'avais voyagé",
+        "perfectInfinitive": "avoir voyagé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je voyage",
+        "ongoing": "Je suis en train de voyager",
+        "past": "J'ai voyagé",
+        "pastOngoing": "Je voyageais",
+        "duration": "Ça fait un moment que je voyage",
+        "future": "Je vais voyager",
+        "habit": "Avant, je voyageais",
+        "recent": "Je viens de voyager",
+        "regret": "J'aurais dû voyager",
+        "possibility": "J'aurais pu voyager",
+        "prior": "J'avais voyagé",
+        "intended": "J'allais voyager",
+        "perfect": "J'ai déjà voyagé",
+        "ability": "Je peux voyager",
+        "hypothetical": "Je pourrais voyager",
+        "obligation": "Je dois voyager",
+        "advice": "Je devrais voyager"
+      }
+    },
+    {
+      "id": "cook-95",
+      "base": "cuisiner",
+      "meanings": [
+        "cozinhar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "food",
+        "daily-life"
+      ],
+      "forms": {
+        "infinitive": "cuisiner",
+        "present": "je cuisine",
+        "past": "j'ai cuisiné",
+        "imperfect": "je cuisinais",
+        "participle": "cuisiné",
+        "gerund": "en cuisinant",
+        "perfect": "j'ai cuisiné",
+        "pluperfect": "j'avais cuisiné",
+        "perfectInfinitive": "avoir cuisiné"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je cuisine",
+        "ongoing": "Je suis en train de cuisiner",
+        "past": "J'ai cuisiné",
+        "pastOngoing": "Je cuisinais",
+        "duration": "Ça fait un moment que je cuisine",
+        "future": "Je vais cuisiner",
+        "habit": "Avant, je cuisinais",
+        "recent": "Je viens de cuisiner",
+        "regret": "J'aurais dû cuisiner",
+        "possibility": "J'aurais pu cuisiner",
+        "prior": "J'avais cuisiné",
+        "intended": "J'allais cuisiner",
+        "perfect": "J'ai déjà cuisiné",
+        "ability": "Je peux cuisiner",
+        "hypothetical": "Je pourrais cuisiner",
+        "obligation": "Je dois cuisiner",
+        "advice": "Je devrais cuisiner"
+      }
+    },
+    {
+      "id": "listen-96",
+      "base": "écouter",
+      "meanings": [
+        "escutar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "perception",
+        "language"
+      ],
+      "forms": {
+        "infinitive": "écouter",
+        "present": "j'écoute",
+        "past": "j'ai écouté",
+        "imperfect": "j'écoutais",
+        "participle": "écouté",
+        "gerund": "en écoutant",
+        "perfect": "j'ai écouté",
+        "pluperfect": "j'avais écouté",
+        "perfectInfinitive": "avoir écouté"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'écoute",
+        "ongoing": "Je suis en train d'écouter",
+        "past": "J'ai écouté",
+        "pastOngoing": "J'écoutais",
+        "duration": "Ça fait un moment que j'écoute",
+        "future": "Je vais écouter",
+        "habit": "Avant, j'écoutais",
+        "recent": "Je viens d'écouter",
+        "regret": "J'aurais dû écouter",
+        "possibility": "J'aurais pu écouter",
+        "prior": "J'avais écouté",
+        "intended": "J'allais écouter",
+        "perfect": "J'ai déjà écouté",
+        "ability": "Je peux écouter",
+        "hypothetical": "Je pourrais écouter",
+        "obligation": "Je dois écouter",
+        "advice": "Je devrais écouter"
+      }
+    },
+    {
+      "id": "plan-97",
+      "base": "planifier",
+      "meanings": [
+        "planejar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "planning"
+      ],
+      "forms": {
+        "infinitive": "planifier",
+        "present": "je planifie",
+        "past": "j'ai planifié",
+        "imperfect": "je planifiais",
+        "participle": "planifié",
+        "gerund": "en planifiant",
+        "perfect": "j'ai planifié",
+        "pluperfect": "j'avais planifié",
+        "perfectInfinitive": "avoir planifié"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je planifie",
+        "ongoing": "Je suis en train de planifier",
+        "past": "J'ai planifié",
+        "pastOngoing": "Je planifiais",
+        "duration": "Ça fait un moment que je planifie",
+        "future": "Je vais planifier",
+        "habit": "Avant, je planifiais",
+        "recent": "Je viens de planifier",
+        "regret": "J'aurais dû planifier",
+        "possibility": "J'aurais pu planifier",
+        "prior": "J'avais planifié",
+        "intended": "J'allais planifier",
+        "perfect": "J'ai déjà planifié",
+        "ability": "Je peux planifier",
+        "hypothetical": "Je pourrais planifier",
+        "obligation": "Je dois planifier",
+        "advice": "Je devrais planifier"
+      }
+    },
+    {
+      "id": "check-98",
+      "base": "vérifier",
+      "meanings": [
+        "verificar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "technology"
+      ],
+      "forms": {
+        "infinitive": "vérifier",
+        "present": "je vérifie",
+        "past": "j'ai vérifié",
+        "imperfect": "je vérifiais",
+        "participle": "vérifié",
+        "gerund": "en vérifiant",
+        "perfect": "j'ai vérifié",
+        "pluperfect": "j'avais vérifié",
+        "perfectInfinitive": "avoir vérifié"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je vérifie",
+        "ongoing": "Je suis en train de vérifier",
+        "past": "J'ai vérifié",
+        "pastOngoing": "Je vérifiais",
+        "duration": "Ça fait un moment que je vérifie",
+        "future": "Je vais vérifier",
+        "habit": "Avant, je vérifiais",
+        "recent": "Je viens de vérifier",
+        "regret": "J'aurais dû vérifier",
+        "possibility": "J'aurais pu vérifier",
+        "prior": "J'avais vérifié",
+        "intended": "J'allais vérifier",
+        "perfect": "J'ai déjà vérifié",
+        "ability": "Je peux vérifier",
+        "hypothetical": "Je pourrais vérifier",
+        "obligation": "Je dois vérifier",
+        "advice": "Je devrais vérifier"
+      }
+    },
+    {
+      "id": "fix-99",
+      "base": "réparer",
+      "meanings": [
+        "consertar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "work"
+      ],
+      "forms": {
+        "infinitive": "réparer",
+        "present": "je répare",
+        "past": "j'ai réparé",
+        "imperfect": "je réparais",
+        "participle": "réparé",
+        "gerund": "en réparant",
+        "perfect": "j'ai réparé",
+        "pluperfect": "j'avais réparé",
+        "perfectInfinitive": "avoir réparé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je répare",
+        "ongoing": "Je suis en train de réparer",
+        "past": "J'ai réparé",
+        "pastOngoing": "Je réparais",
+        "duration": "Ça fait un moment que je répare",
+        "future": "Je vais réparer",
+        "habit": "Avant, je réparais",
+        "recent": "Je viens de réparer",
+        "regret": "J'aurais dû réparer",
+        "possibility": "J'aurais pu réparer",
+        "prior": "J'avais réparé",
+        "intended": "J'allais réparer",
+        "perfect": "J'ai déjà réparé",
+        "ability": "Je peux réparer",
+        "hypothetical": "Je pourrais réparer",
+        "obligation": "Je dois réparer",
+        "advice": "Je devrais réparer"
+      }
+    },
+    {
+      "id": "finish-100",
+      "base": "terminer",
+      "meanings": [
+        "terminar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "work",
+        "completion"
+      ],
+      "forms": {
+        "infinitive": "terminer",
+        "present": "je termine",
+        "past": "j'ai terminé",
+        "imperfect": "je terminais",
+        "participle": "terminé",
+        "gerund": "en terminant",
+        "perfect": "j'ai terminé",
+        "pluperfect": "j'avais terminé",
+        "perfectInfinitive": "avoir terminé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je termine",
+        "ongoing": "Je suis en train de terminer",
+        "past": "J'ai terminé",
+        "pastOngoing": "Je terminais",
+        "duration": "Ça fait un moment que je termine",
+        "future": "Je vais terminer",
+        "habit": "Avant, je terminais",
+        "recent": "Je viens de terminer",
+        "regret": "J'aurais dû terminer",
+        "possibility": "J'aurais pu terminer",
+        "prior": "J'avais terminé",
+        "intended": "J'allais terminer",
+        "perfect": "J'ai déjà terminé",
+        "ability": "Je peux terminer",
+        "hypothetical": "Je pourrais terminer",
+        "obligation": "Je dois terminer",
+        "advice": "Je devrais terminer"
+      }
+    },
+    {
+      "id": "set-101",
+      "base": "régler",
+      "meanings": [
+        "ajustar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life",
+        "planning"
+      ],
+      "forms": {
+        "infinitive": "régler",
+        "present": "je règle",
+        "past": "j'ai réglé",
+        "imperfect": "je réglais",
+        "participle": "réglé",
+        "gerund": "en réglant",
+        "perfect": "j'ai réglé",
+        "pluperfect": "j'avais réglé",
+        "perfectInfinitive": "avoir réglé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je règle",
+        "ongoing": "Je suis en train de régler",
+        "past": "J'ai réglé",
+        "pastOngoing": "Je réglais",
+        "duration": "Ça fait un moment que je règle",
+        "future": "Je vais régler",
+        "habit": "Avant, je réglais",
+        "recent": "Je viens de régler",
+        "regret": "J'aurais dû régler",
+        "possibility": "J'aurais pu régler",
+        "prior": "J'avais réglé",
+        "intended": "J'allais régler",
+        "perfect": "J'ai déjà réglé",
+        "ability": "Je peux régler",
+        "hypothetical": "Je pourrais régler",
+        "obligation": "Je dois régler",
+        "advice": "Je devrais régler"
+      }
+    },
+    {
+      "id": "love-102",
+      "base": "aimer",
+      "meanings": [
+        "amar",
+        "gostar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "emotion",
+        "preference"
+      ],
+      "forms": {
+        "infinitive": "aimer",
+        "present": "j'aime",
+        "past": "j'ai aimé",
+        "imperfect": "j'aimais",
+        "participle": "aimé",
+        "gerund": "en aimant",
+        "perfect": "j'ai aimé",
+        "pluperfect": "j'avais aimé",
+        "perfectInfinitive": "avoir aimé"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "J'aime",
+        "past": "J'ai aimé",
+        "pastOngoing": "J'aimais",
+        "duration": "Ça fait un moment que j'aime",
+        "future": "Je vais aimer",
+        "habit": "Avant, j'aimais",
+        "recent": "Je viens d'aimer",
+        "regret": "J'aurais dû aimer",
+        "possibility": "J'aurais pu aimer",
+        "prior": "J'avais aimé",
+        "intended": "J'allais aimer",
+        "perfect": "J'ai déjà aimé",
+        "ability": "Je peux aimer",
+        "hypothetical": "Je pourrais aimer",
+        "obligation": "Je dois aimer",
+        "advice": "Je devrais aimer"
+      }
+    },
+    {
+      "id": "hate-103",
+      "base": "détester",
+      "meanings": [
+        "odiar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "emotion",
+        "preference"
+      ],
+      "forms": {
+        "infinitive": "détester",
+        "present": "je déteste",
+        "past": "j'ai détesté",
+        "imperfect": "je détestais",
+        "participle": "détesté",
+        "gerund": "en détestant",
+        "perfect": "j'ai détesté",
+        "pluperfect": "j'avais détesté",
+        "perfectInfinitive": "avoir détesté"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Je déteste",
+        "past": "J'ai détesté",
+        "pastOngoing": "Je détestais",
+        "duration": "Ça fait un moment que je déteste",
+        "future": "Je vais détester",
+        "habit": "Avant, je détestais",
+        "recent": "Je viens de détester",
+        "regret": "J'aurais dû détester",
+        "possibility": "J'aurais pu détester",
+        "prior": "J'avais détesté",
+        "intended": "J'allais détester",
+        "perfect": "J'ai déjà détesté",
+        "ability": "Je peux détester",
+        "hypothetical": "Je pourrais détester",
+        "obligation": "Je dois détester",
+        "advice": "Je devrais détester"
+      }
+    },
+    {
+      "id": "answer-104",
+      "base": "répondre",
+      "meanings": [
+        "responder"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "répondre",
+        "present": "je réponds",
+        "past": "j'ai répondu",
+        "imperfect": "je répondais",
+        "participle": "répondu",
+        "gerund": "en répondant",
+        "perfect": "j'ai répondu",
+        "pluperfect": "j'avais répondu",
+        "perfectInfinitive": "avoir répondu"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je réponds",
+        "ongoing": "Je suis en train de répondre",
+        "past": "J'ai répondu",
+        "pastOngoing": "Je répondais",
+        "duration": "Ça fait un moment que je réponds",
+        "future": "Je vais répondre",
+        "habit": "Avant, je répondais",
+        "recent": "Je viens de répondre",
+        "regret": "J'aurais dû répondre",
+        "possibility": "J'aurais pu répondre",
+        "prior": "J'avais répondu",
+        "intended": "J'allais répondre",
+        "perfect": "J'ai déjà répondu",
+        "ability": "Je peux répondre",
+        "hypothetical": "Je pourrais répondre",
+        "obligation": "Je dois répondre",
+        "advice": "Je devrais répondre"
+      }
+    },
+    {
+      "id": "ride-105",
+      "base": "faire du vélo",
+      "meanings": [
+        "andar de bicicleta"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement",
+        "transport"
+      ],
+      "forms": {
+        "infinitive": "faire du vélo",
+        "present": "je fais du vélo",
+        "past": "j'ai fait du vélo",
+        "imperfect": "je faisais du vélo",
+        "participle": "fait du vélo",
+        "gerund": "en faisant du vélo",
+        "perfect": "j'ai fait du vélo",
+        "pluperfect": "j'avais fait du vélo",
+        "perfectInfinitive": "avoir fait du vélo"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je fais du vélo",
+        "ongoing": "Je suis en train de faire du vélo",
+        "past": "J'ai fait du vélo",
+        "pastOngoing": "Je faisais du vélo",
+        "duration": "Ça fait un moment que je fais du vélo",
+        "future": "Je vais faire du vélo",
+        "habit": "Avant, je faisais du vélo",
+        "recent": "Je viens de faire du vélo",
+        "regret": "J'aurais dû faire du vélo",
+        "possibility": "J'aurais pu faire du vélo",
+        "prior": "J'avais fait du vélo",
+        "intended": "J'allais faire du vélo",
+        "perfect": "J'ai déjà fait du vélo",
+        "ability": "Je peux faire du vélo",
+        "hypothetical": "Je pourrais faire du vélo",
+        "obligation": "Je dois faire du vélo",
+        "advice": "Je devrais faire du vélo"
+      }
+    },
+    {
+      "id": "fly-106",
+      "base": "voler",
+      "meanings": [
+        "voar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement",
+        "travel"
+      ],
+      "forms": {
+        "infinitive": "voler",
+        "present": "je vole",
+        "past": "j'ai volé",
+        "imperfect": "je volais",
+        "participle": "volé",
+        "gerund": "en volant",
+        "perfect": "j'ai volé",
+        "pluperfect": "j'avais volé",
+        "perfectInfinitive": "avoir volé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je vole",
+        "ongoing": "Je suis en train de voler",
+        "past": "J'ai volé",
+        "pastOngoing": "Je volais",
+        "duration": "Ça fait un moment que je vole",
+        "future": "Je vais voler",
+        "habit": "Avant, je volais",
+        "recent": "Je viens de voler",
+        "regret": "J'aurais dû voler",
+        "possibility": "J'aurais pu voler",
+        "prior": "J'avais volé",
+        "intended": "J'allais voler",
+        "perfect": "J'ai déjà volé",
+        "ability": "Je peux voler",
+        "hypothetical": "Je pourrais voler",
+        "obligation": "Je dois voler",
+        "advice": "Je devrais voler"
+      }
+    },
+    {
+      "id": "arrive-107",
+      "base": "arriver",
+      "meanings": [
+        "chegar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "movement",
+        "travel"
+      ],
+      "forms": {
+        "infinitive": "arriver",
+        "present": "j'arrive",
+        "past": "je suis arrivé",
+        "imperfect": "j'arrivais",
+        "participle": "arrivé",
+        "gerund": "en arrivant",
+        "perfect": "je suis arrivé",
+        "pluperfect": "j'étais arrivé",
+        "perfectInfinitive": "être arrivé",
+        "pastFeminine": "je suis arrivée",
+        "pluperfectFeminine": "j'étais arrivée"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'arrive",
+        "ongoing": "Je suis en train d'arriver",
+        "past": "Je suis arrivé / je suis arrivée",
+        "pastOngoing": "J'arrivais",
+        "duration": "Ça fait un moment que j'arrive",
+        "future": "Je vais arriver",
+        "habit": "Avant, j'arrivais",
+        "recent": "Je viens d'arriver",
+        "regret": "J'aurais dû arriver",
+        "possibility": "J'aurais pu arriver",
+        "prior": "J'étais arrivé / j'étais arrivée",
+        "intended": "J'allais arriver",
+        "perfect": "Je suis déjà arrivé / je suis déjà arrivée",
+        "ability": "Je peux arriver",
+        "hypothetical": "Je pourrais arriver",
+        "obligation": "Je dois arriver",
+        "advice": "Je devrais arriver"
+      }
+    },
+    {
+      "id": "wake-108",
+      "base": "se réveiller",
+      "meanings": [
+        "acordar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life",
+        "routine"
+      ],
+      "forms": {
+        "infinitive": "me réveiller",
+        "present": "je me réveille",
+        "past": "je me suis réveillé",
+        "imperfect": "je me réveillais",
+        "participle": "réveillé",
+        "gerund": "en me réveillant",
+        "perfect": "je me suis réveillé",
+        "pluperfect": "je m'étais réveillé",
+        "perfectInfinitive": "m'être réveillé",
+        "pastFeminine": "je me suis réveillée",
+        "pluperfectFeminine": "je m'étais réveillée"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je me réveille",
+        "ongoing": "Je suis en train de me réveiller",
+        "past": "Je me suis réveillé / je me suis réveillée",
+        "pastOngoing": "Je me réveillais",
+        "duration": "Ça fait un moment que je me réveille",
+        "future": "Je vais me réveiller",
+        "habit": "Avant, je me réveillais",
+        "recent": "Je viens de me réveiller",
+        "regret": "J'aurais dû me réveiller",
+        "possibility": "J'aurais pu me réveiller",
+        "prior": "Je m'étais réveillé / je m'étais réveillée",
+        "intended": "J'allais me réveiller",
+        "perfect": "Je me suis déjà réveillé / je me suis déjà réveillée",
+        "ability": "Je peux me réveiller",
+        "hypothetical": "Je pourrais me réveiller",
+        "obligation": "Je dois me réveiller",
+        "advice": "Je devrais me réveiller"
+      }
+    },
+    {
+      "id": "wash-109",
+      "base": "laver",
+      "meanings": [
+        "lavar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life",
+        "hygiene"
+      ],
+      "forms": {
+        "infinitive": "laver",
+        "present": "je lave",
+        "past": "j'ai lavé",
+        "imperfect": "je lavais",
+        "participle": "lavé",
+        "gerund": "en lavant",
+        "perfect": "j'ai lavé",
+        "pluperfect": "j'avais lavé",
+        "perfectInfinitive": "avoir lavé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je lave",
+        "ongoing": "Je suis en train de laver",
+        "past": "J'ai lavé",
+        "pastOngoing": "Je lavais",
+        "duration": "Ça fait un moment que je lave",
+        "future": "Je vais laver",
+        "habit": "Avant, je lavais",
+        "recent": "Je viens de laver",
+        "regret": "J'aurais dû laver",
+        "possibility": "J'aurais pu laver",
+        "prior": "J'avais lavé",
+        "intended": "J'allais laver",
+        "perfect": "J'ai déjà lavé",
+        "ability": "Je peux laver",
+        "hypothetical": "Je pourrais laver",
+        "obligation": "Je dois laver",
+        "advice": "Je devrais laver"
+      }
+    },
+    {
+      "id": "clean-110",
+      "base": "nettoyer",
+      "meanings": [
+        "limpar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life",
+        "household"
+      ],
+      "forms": {
+        "infinitive": "nettoyer",
+        "present": "je nettoie",
+        "past": "j'ai nettoyé",
+        "imperfect": "je nettoyais",
+        "participle": "nettoyé",
+        "gerund": "en nettoyant",
+        "perfect": "j'ai nettoyé",
+        "pluperfect": "j'avais nettoyé",
+        "perfectInfinitive": "avoir nettoyé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je nettoie",
+        "ongoing": "Je suis en train de nettoyer",
+        "past": "J'ai nettoyé",
+        "pastOngoing": "Je nettoyais",
+        "duration": "Ça fait un moment que je nettoie",
+        "future": "Je vais nettoyer",
+        "habit": "Avant, je nettoyais",
+        "recent": "Je viens de nettoyer",
+        "regret": "J'aurais dû nettoyer",
+        "possibility": "J'aurais pu nettoyer",
+        "prior": "J'avais nettoyé",
+        "intended": "J'allais nettoyer",
+        "perfect": "J'ai déjà nettoyé",
+        "ability": "Je peux nettoyer",
+        "hypothetical": "Je pourrais nettoyer",
+        "obligation": "Je dois nettoyer",
+        "advice": "Je devrais nettoyer"
+      }
+    },
+    {
+      "id": "close-111",
+      "base": "fermer",
+      "meanings": [
+        "fechar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "daily-life",
+        "action"
+      ],
+      "forms": {
+        "infinitive": "fermer",
+        "present": "je ferme",
+        "past": "j'ai fermé",
+        "imperfect": "je fermais",
+        "participle": "fermé",
+        "gerund": "en fermant",
+        "perfect": "j'ai fermé",
+        "pluperfect": "j'avais fermé",
+        "perfectInfinitive": "avoir fermé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je ferme",
+        "ongoing": "Je suis en train de fermer",
+        "past": "J'ai fermé",
+        "pastOngoing": "Je fermais",
+        "duration": "Ça fait un moment que je ferme",
+        "future": "Je vais fermer",
+        "habit": "Avant, je fermais",
+        "recent": "Je viens de fermer",
+        "regret": "J'aurais dû fermer",
+        "possibility": "J'aurais pu fermer",
+        "prior": "J'avais fermé",
+        "intended": "J'allais fermer",
+        "perfect": "J'ai déjà fermé",
+        "ability": "Je peux fermer",
+        "hypothetical": "Je pourrais fermer",
+        "obligation": "Je dois fermer",
+        "advice": "Je devrais fermer"
+      }
+    },
+    {
+      "id": "share-112",
+      "base": "partager",
+      "meanings": [
+        "compartilhar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "learning"
+      ],
+      "forms": {
+        "infinitive": "partager",
+        "present": "je partage",
+        "past": "j'ai partagé",
+        "imperfect": "je partageais",
+        "participle": "partagé",
+        "gerund": "en partageant",
+        "perfect": "j'ai partagé",
+        "pluperfect": "j'avais partagé",
+        "perfectInfinitive": "avoir partagé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je partage",
+        "ongoing": "Je suis en train de partager",
+        "past": "J'ai partagé",
+        "pastOngoing": "Je partageais",
+        "duration": "Ça fait un moment que je partage",
+        "future": "Je vais partager",
+        "habit": "Avant, je partageais",
+        "recent": "Je viens de partager",
+        "regret": "J'aurais dû partager",
+        "possibility": "J'aurais pu partager",
+        "prior": "J'avais partagé",
+        "intended": "J'allais partager",
+        "perfect": "J'ai déjà partagé",
+        "ability": "Je peux partager",
+        "hypothetical": "Je pourrais partager",
+        "obligation": "Je dois partager",
+        "advice": "Je devrais partager"
+      }
+    },
+    {
+      "id": "wish-113",
+      "base": "souhaiter",
+      "meanings": [
+        "desejar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "thought",
+        "desire"
+      ],
+      "forms": {
+        "infinitive": "souhaiter",
+        "present": "je souhaite",
+        "past": "j'ai souhaité",
+        "imperfect": "je souhaitais",
+        "participle": "souhaité",
+        "gerund": "en souhaitant",
+        "perfect": "j'ai souhaité",
+        "pluperfect": "j'avais souhaité",
+        "perfectInfinitive": "avoir souhaité"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Je souhaite",
+        "past": "J'ai souhaité",
+        "pastOngoing": "Je souhaitais",
+        "duration": "Ça fait un moment que je souhaite",
+        "future": "Je vais souhaiter",
+        "habit": "Avant, je souhaitais",
+        "recent": "Je viens de souhaiter",
+        "regret": "J'aurais dû souhaiter",
+        "possibility": "J'aurais pu souhaiter",
+        "prior": "J'avais souhaité",
+        "intended": "J'allais souhaiter",
+        "perfect": "J'ai déjà souhaité",
+        "ability": "Je peux souhaiter",
+        "hypothetical": "Je pourrais souhaiter",
+        "obligation": "Je dois souhaiter",
+        "advice": "Je devrais souhaiter"
+      }
+    },
+    {
+      "id": "disagree-114",
+      "base": "ne pas être d'accord",
+      "meanings": [
+        "discordar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "opinion",
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "ne pas être d'accord",
+        "present": "je ne suis pas d'accord",
+        "past": "je n'ai pas été d'accord",
+        "imperfect": "je n'étais pas d'accord",
+        "participle": "été d'accord",
+        "gerund": "en n'étant pas d'accord",
+        "perfect": "je n'ai pas été d'accord",
+        "pluperfect": "je n'avais pas été d'accord",
+        "perfectInfinitive": "ne pas avoir été d'accord"
+      },
+      "stative": true,
+      "trainingForms": {
+        "present": "Je ne suis pas d'accord",
+        "past": "Je n'ai pas été d'accord",
+        "pastOngoing": "Je n'étais pas d'accord",
+        "duration": "Ça fait un moment que je ne suis pas d'accord",
+        "future": "Je ne vais pas être d'accord",
+        "habit": "Avant, je n'étais pas d'accord",
+        "regret": "Je n'aurais pas dû être d'accord",
+        "possibility": "J'aurais pu ne pas être d'accord",
+        "prior": "Je n'avais pas été d'accord",
+        "intended": "Je n'allais pas être d'accord",
+        "perfect": "Je n'ai pas été d'accord",
+        "ability": "Je peux ne pas être d'accord",
+        "hypothetical": "Je pourrais ne pas être d'accord",
+        "obligation": "Je ne dois pas être d'accord",
+        "advice": "Je ne devrais pas être d'accord"
+      }
+    },
+    {
+      "id": "guess-115",
+      "base": "deviner",
+      "meanings": [
+        "adivinhar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "thought",
+        "opinion"
+      ],
+      "forms": {
+        "infinitive": "deviner",
+        "present": "je devine",
+        "past": "j'ai deviné",
+        "imperfect": "je devinais",
+        "participle": "deviné",
+        "gerund": "en devinant",
+        "perfect": "j'ai deviné",
+        "pluperfect": "j'avais deviné",
+        "perfectInfinitive": "avoir deviné"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je devine",
+        "ongoing": "Je suis en train de deviner",
+        "past": "J'ai deviné",
+        "pastOngoing": "Je devinais",
+        "duration": "Ça fait un moment que je devine",
+        "future": "Je vais deviner",
+        "habit": "Avant, je devinais",
+        "recent": "Je viens de deviner",
+        "regret": "J'aurais dû deviner",
+        "possibility": "J'aurais pu deviner",
+        "prior": "J'avais deviné",
+        "intended": "J'allais deviner",
+        "perfect": "J'ai déjà deviné",
+        "ability": "Je peux deviner",
+        "hypothetical": "Je pourrais deviner",
+        "obligation": "Je dois deviner",
+        "advice": "Je devrais deviner"
+      }
+    },
+    {
+      "id": "visit-116",
+      "base": "visiter",
+      "meanings": [
+        "visitar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "social",
+        "family"
+      ],
+      "forms": {
+        "infinitive": "visiter",
+        "present": "je visite",
+        "past": "j'ai visité",
+        "imperfect": "je visitais",
+        "participle": "visité",
+        "gerund": "en visitant",
+        "perfect": "j'ai visité",
+        "pluperfect": "j'avais visité",
+        "perfectInfinitive": "avoir visité"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je visite",
+        "ongoing": "Je suis en train de visiter",
+        "past": "J'ai visité",
+        "pastOngoing": "Je visitais",
+        "duration": "Ça fait un moment que je visite",
+        "future": "Je vais visiter",
+        "habit": "Avant, je visitais",
+        "recent": "Je viens de visiter",
+        "regret": "J'aurais dû visiter",
+        "possibility": "J'aurais pu visiter",
+        "prior": "J'avais visité",
+        "intended": "J'allais visiter",
+        "perfect": "J'ai déjà visité",
+        "ability": "Je peux visiter",
+        "hypothetical": "Je pourrais visiter",
+        "obligation": "Je dois visiter",
+        "advice": "Je devrais visiter"
+      }
+    },
+    {
+      "id": "join-117",
+      "base": "rejoindre",
+      "meanings": [
+        "juntar-se a"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "social",
+        "interaction"
+      ],
+      "forms": {
+        "infinitive": "rejoindre",
+        "present": "je rejoins",
+        "past": "j'ai rejoint",
+        "imperfect": "je rejoignais",
+        "participle": "rejoint",
+        "gerund": "en rejoignant",
+        "perfect": "j'ai rejoint",
+        "pluperfect": "j'avais rejoint",
+        "perfectInfinitive": "avoir rejoint"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je rejoins",
+        "ongoing": "Je suis en train de rejoindre",
+        "past": "J'ai rejoint",
+        "pastOngoing": "Je rejoignais",
+        "duration": "Ça fait un moment que je rejoins",
+        "future": "Je vais rejoindre",
+        "habit": "Avant, je rejoignais",
+        "recent": "Je viens de rejoindre",
+        "regret": "J'aurais dû rejoindre",
+        "possibility": "J'aurais pu rejoindre",
+        "prior": "J'avais rejoint",
+        "intended": "J'allais rejoindre",
+        "perfect": "J'ai déjà rejoint",
+        "ability": "Je peux rejoindre",
+        "hypothetical": "Je pourrais rejoindre",
+        "obligation": "Je dois rejoindre",
+        "advice": "Je devrais rejoindre"
+      }
+    },
+    {
+      "id": "invite-118",
+      "base": "inviter",
+      "meanings": [
+        "convidar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "social",
+        "invitation"
+      ],
+      "forms": {
+        "infinitive": "inviter",
+        "present": "j'invite",
+        "past": "j'ai invité",
+        "imperfect": "j'invitais",
+        "participle": "invité",
+        "gerund": "en invitant",
+        "perfect": "j'ai invité",
+        "pluperfect": "j'avais invité",
+        "perfectInfinitive": "avoir invité"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'invite",
+        "ongoing": "Je suis en train d'inviter",
+        "past": "J'ai invité",
+        "pastOngoing": "J'invitais",
+        "duration": "Ça fait un moment que j'invite",
+        "future": "Je vais inviter",
+        "habit": "Avant, j'invitais",
+        "recent": "Je viens d'inviter",
+        "regret": "J'aurais dû inviter",
+        "possibility": "J'aurais pu inviter",
+        "prior": "J'avais invité",
+        "intended": "J'allais inviter",
+        "perfect": "J'ai déjà invité",
+        "ability": "Je peux inviter",
+        "hypothetical": "Je pourrais inviter",
+        "obligation": "Je dois inviter",
+        "advice": "Je devrais inviter"
+      }
+    },
+    {
+      "id": "celebrate-119",
+      "base": "célébrer",
+      "meanings": [
+        "celebrar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "social",
+        "celebration"
+      ],
+      "forms": {
+        "infinitive": "célébrer",
+        "present": "je célèbre",
+        "past": "j'ai célébré",
+        "imperfect": "je célébrais",
+        "participle": "célébré",
+        "gerund": "en célébrant",
+        "perfect": "j'ai célébré",
+        "pluperfect": "j'avais célébré",
+        "perfectInfinitive": "avoir célébré"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je célèbre",
+        "ongoing": "Je suis en train de célébrer",
+        "past": "J'ai célébré",
+        "pastOngoing": "Je célébrais",
+        "duration": "Ça fait un moment que je célèbre",
+        "future": "Je vais célébrer",
+        "habit": "Avant, je célébrais",
+        "recent": "Je viens de célébrer",
+        "regret": "J'aurais dû célébrer",
+        "possibility": "J'aurais pu célébrer",
+        "prior": "J'avais célébré",
+        "intended": "J'allais célébrer",
+        "perfect": "J'ai déjà célébré",
+        "ability": "Je peux célébrer",
+        "hypothetical": "Je pourrais célébrer",
+        "obligation": "Je dois célébrer",
+        "advice": "Je devrais célébrer"
+      }
+    },
+    {
+      "id": "thank-120",
+      "base": "remercier",
+      "meanings": [
+        "agradecer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "social",
+        "gratitude"
+      ],
+      "forms": {
+        "infinitive": "remercier",
+        "present": "je remercie",
+        "past": "j'ai remercié",
+        "imperfect": "je remerciais",
+        "participle": "remercié",
+        "gerund": "en remerciant",
+        "perfect": "j'ai remercié",
+        "pluperfect": "j'avais remercié",
+        "perfectInfinitive": "avoir remercié"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je remercie",
+        "ongoing": "Je suis en train de remercier",
+        "past": "J'ai remercié",
+        "pastOngoing": "Je remerciais",
+        "duration": "Ça fait un moment que je remercie",
+        "future": "Je vais remercier",
+        "habit": "Avant, je remerciais",
+        "recent": "Je viens de remercier",
+        "regret": "J'aurais dû remercier",
+        "possibility": "J'aurais pu remercier",
+        "prior": "J'avais remercié",
+        "intended": "J'allais remercier",
+        "perfect": "J'ai déjà remercié",
+        "ability": "Je peux remercier",
+        "hypothetical": "Je pourrais remercier",
+        "obligation": "Je dois remercier",
+        "advice": "Je devrais remercier"
+      }
+    },
+    {
+      "id": "apologize-121",
+      "base": "s'excuser",
+      "meanings": [
+        "pedir desculpas"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "social",
+        "communication"
+      ],
+      "forms": {
+        "infinitive": "m'excuser",
+        "present": "je m'excuse",
+        "past": "je me suis excusé",
+        "imperfect": "je m'excusais",
+        "participle": "excusé",
+        "gerund": "en m'excusant",
+        "perfect": "je me suis excusé",
+        "pluperfect": "je m'étais excusé",
+        "perfectInfinitive": "m'être excusé",
+        "pastFeminine": "je me suis excusée",
+        "pluperfectFeminine": "je m'étais excusée"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je m'excuse",
+        "ongoing": "Je suis en train de m'excuser",
+        "past": "Je me suis excusé / je me suis excusée",
+        "pastOngoing": "Je m'excusais",
+        "duration": "Ça fait un moment que je m'excuse",
+        "future": "Je vais m'excuser",
+        "habit": "Avant, je m'excusais",
+        "recent": "Je viens de m'excuser",
+        "regret": "J'aurais dû m'excuser",
+        "possibility": "J'aurais pu m'excuser",
+        "prior": "Je m'étais excusé / je m'étais excusée",
+        "intended": "J'allais m'excuser",
+        "perfect": "Je me suis déjà excusé / je me suis déjà excusée",
+        "ability": "Je peux m'excuser",
+        "hypothetical": "Je pourrais m'excuser",
+        "obligation": "Je dois m'excuser",
+        "advice": "Je devrais m'excuser"
+      }
+    },
+    {
+      "id": "promise-122",
+      "base": "promettre",
+      "meanings": [
+        "prometer"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "social",
+        "commitment"
+      ],
+      "forms": {
+        "infinitive": "promettre",
+        "present": "je promets",
+        "past": "j'ai promis",
+        "imperfect": "je promettais",
+        "participle": "promis",
+        "gerund": "en promettant",
+        "perfect": "j'ai promis",
+        "pluperfect": "j'avais promis",
+        "perfectInfinitive": "avoir promis"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je promets",
+        "ongoing": "Je suis en train de promettre",
+        "past": "J'ai promis",
+        "pastOngoing": "Je promettais",
+        "duration": "Ça fait un moment que je promets",
+        "future": "Je vais promettre",
+        "habit": "Avant, je promettais",
+        "recent": "Je viens de promettre",
+        "regret": "J'aurais dû promettre",
+        "possibility": "J'aurais pu promettre",
+        "prior": "J'avais promis",
+        "intended": "J'allais promettre",
+        "perfect": "J'ai déjà promis",
+        "ability": "Je peux promettre",
+        "hypothetical": "Je pourrais promettre",
+        "obligation": "Je dois promettre",
+        "advice": "Je devrais promettre"
+      }
+    },
+    {
+      "id": "search-123",
+      "base": "chercher",
+      "meanings": [
+        "procurar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "digital"
+      ],
+      "forms": {
+        "infinitive": "chercher",
+        "present": "je cherche",
+        "past": "j'ai cherché",
+        "imperfect": "je cherchais",
+        "participle": "cherché",
+        "gerund": "en cherchant",
+        "perfect": "j'ai cherché",
+        "pluperfect": "j'avais cherché",
+        "perfectInfinitive": "avoir cherché"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je cherche",
+        "ongoing": "Je suis en train de chercher",
+        "past": "J'ai cherché",
+        "pastOngoing": "Je cherchais",
+        "duration": "Ça fait un moment que je cherche",
+        "future": "Je vais chercher",
+        "habit": "Avant, je cherchais",
+        "recent": "Je viens de chercher",
+        "regret": "J'aurais dû chercher",
+        "possibility": "J'aurais pu chercher",
+        "prior": "J'avais cherché",
+        "intended": "J'allais chercher",
+        "perfect": "J'ai déjà cherché",
+        "ability": "Je peux chercher",
+        "hypothetical": "Je pourrais chercher",
+        "obligation": "Je dois chercher",
+        "advice": "Je devrais chercher"
+      }
+    },
+    {
+      "id": "type-124",
+      "base": "taper",
+      "meanings": [
+        "digitar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "digital"
+      ],
+      "forms": {
+        "infinitive": "taper",
+        "present": "je tape",
+        "past": "j'ai tapé",
+        "imperfect": "je tapais",
+        "participle": "tapé",
+        "gerund": "en tapant",
+        "perfect": "j'ai tapé",
+        "pluperfect": "j'avais tapé",
+        "perfectInfinitive": "avoir tapé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je tape",
+        "ongoing": "Je suis en train de taper",
+        "past": "J'ai tapé",
+        "pastOngoing": "Je tapais",
+        "duration": "Ça fait un moment que je tape",
+        "future": "Je vais taper",
+        "habit": "Avant, je tapais",
+        "recent": "Je viens de taper",
+        "regret": "J'aurais dû taper",
+        "possibility": "J'aurais pu taper",
+        "prior": "J'avais tapé",
+        "intended": "J'allais taper",
+        "perfect": "J'ai déjà tapé",
+        "ability": "Je peux taper",
+        "hypothetical": "Je pourrais taper",
+        "obligation": "Je dois taper",
+        "advice": "Je devrais taper"
+      }
+    },
+    {
+      "id": "click-125",
+      "base": "cliquer",
+      "meanings": [
+        "clicar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "digital"
+      ],
+      "forms": {
+        "infinitive": "cliquer",
+        "present": "je clique",
+        "past": "j'ai cliqué",
+        "imperfect": "je cliquais",
+        "participle": "cliqué",
+        "gerund": "en cliquant",
+        "perfect": "j'ai cliqué",
+        "pluperfect": "j'avais cliqué",
+        "perfectInfinitive": "avoir cliqué"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je clique",
+        "ongoing": "Je suis en train de cliquer",
+        "past": "J'ai cliqué",
+        "pastOngoing": "Je cliquais",
+        "duration": "Ça fait un moment que je clique",
+        "future": "Je vais cliquer",
+        "habit": "Avant, je cliquais",
+        "recent": "Je viens de cliquer",
+        "regret": "J'aurais dû cliquer",
+        "possibility": "J'aurais pu cliquer",
+        "prior": "J'avais cliqué",
+        "intended": "J'allais cliquer",
+        "perfect": "J'ai déjà cliqué",
+        "ability": "Je peux cliquer",
+        "hypothetical": "Je pourrais cliquer",
+        "obligation": "Je dois cliquer",
+        "advice": "Je devrais cliquer"
+      }
+    },
+    {
+      "id": "post-126",
+      "base": "publier",
+      "meanings": [
+        "publicar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "social-media"
+      ],
+      "forms": {
+        "infinitive": "publier",
+        "present": "je publie",
+        "past": "j'ai publié",
+        "imperfect": "je publiais",
+        "participle": "publié",
+        "gerund": "en publiant",
+        "perfect": "j'ai publié",
+        "pluperfect": "j'avais publié",
+        "perfectInfinitive": "avoir publié"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je publie",
+        "ongoing": "Je suis en train de publier",
+        "past": "J'ai publié",
+        "pastOngoing": "Je publiais",
+        "duration": "Ça fait un moment que je publie",
+        "future": "Je vais publier",
+        "habit": "Avant, je publiais",
+        "recent": "Je viens de publier",
+        "regret": "J'aurais dû publier",
+        "possibility": "J'aurais pu publier",
+        "prior": "J'avais publié",
+        "intended": "J'allais publier",
+        "perfect": "J'ai déjà publié",
+        "ability": "Je peux publier",
+        "hypothetical": "Je pourrais publier",
+        "obligation": "Je dois publier",
+        "advice": "Je devrais publier"
+      }
+    },
+    {
+      "id": "upload-127",
+      "base": "téléverser",
+      "meanings": [
+        "enviar um arquivo"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "digital"
+      ],
+      "forms": {
+        "infinitive": "téléverser",
+        "present": "je téléverse",
+        "past": "j'ai téléversé",
+        "imperfect": "je téléversais",
+        "participle": "téléversé",
+        "gerund": "en téléversant",
+        "perfect": "j'ai téléversé",
+        "pluperfect": "j'avais téléversé",
+        "perfectInfinitive": "avoir téléversé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je téléverse",
+        "ongoing": "Je suis en train de téléverser",
+        "past": "J'ai téléversé",
+        "pastOngoing": "Je téléversais",
+        "duration": "Ça fait un moment que je téléverse",
+        "future": "Je vais téléverser",
+        "habit": "Avant, je téléversais",
+        "recent": "Je viens de téléverser",
+        "regret": "J'aurais dû téléverser",
+        "possibility": "J'aurais pu téléverser",
+        "prior": "J'avais téléversé",
+        "intended": "J'allais téléverser",
+        "perfect": "J'ai déjà téléversé",
+        "ability": "Je peux téléverser",
+        "hypothetical": "Je pourrais téléverser",
+        "obligation": "Je dois téléverser",
+        "advice": "Je devrais téléverser"
+      }
+    },
+    {
+      "id": "download-128",
+      "base": "télécharger",
+      "meanings": [
+        "baixar um arquivo"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "digital"
+      ],
+      "forms": {
+        "infinitive": "télécharger",
+        "present": "je télécharge",
+        "past": "j'ai téléchargé",
+        "imperfect": "je téléchargeais",
+        "participle": "téléchargé",
+        "gerund": "en téléchargeant",
+        "perfect": "j'ai téléchargé",
+        "pluperfect": "j'avais téléchargé",
+        "perfectInfinitive": "avoir téléchargé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je télécharge",
+        "ongoing": "Je suis en train de télécharger",
+        "past": "J'ai téléchargé",
+        "pastOngoing": "Je téléchargeais",
+        "duration": "Ça fait un moment que je télécharge",
+        "future": "Je vais télécharger",
+        "habit": "Avant, je téléchargeais",
+        "recent": "Je viens de télécharger",
+        "regret": "J'aurais dû télécharger",
+        "possibility": "J'aurais pu télécharger",
+        "prior": "J'avais téléchargé",
+        "intended": "J'allais télécharger",
+        "perfect": "J'ai déjà téléchargé",
+        "ability": "Je peux télécharger",
+        "hypothetical": "Je pourrais télécharger",
+        "obligation": "Je dois télécharger",
+        "advice": "Je devrais télécharger"
+      }
+    },
+    {
+      "id": "save-129",
+      "base": "enregistrer",
+      "meanings": [
+        "salvar",
+        "gravar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "digital"
+      ],
+      "forms": {
+        "infinitive": "enregistrer",
+        "present": "j'enregistre",
+        "past": "j'ai enregistré",
+        "imperfect": "j'enregistrais",
+        "participle": "enregistré",
+        "gerund": "en enregistrant",
+        "perfect": "j'ai enregistré",
+        "pluperfect": "j'avais enregistré",
+        "perfectInfinitive": "avoir enregistré"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "J'enregistre",
+        "ongoing": "Je suis en train d'enregistrer",
+        "past": "J'ai enregistré",
+        "pastOngoing": "J'enregistrais",
+        "duration": "Ça fait un moment que j'enregistre",
+        "future": "Je vais enregistrer",
+        "habit": "Avant, j'enregistrais",
+        "recent": "Je viens d'enregistrer",
+        "regret": "J'aurais dû enregistrer",
+        "possibility": "J'aurais pu enregistrer",
+        "prior": "J'avais enregistré",
+        "intended": "J'allais enregistrer",
+        "perfect": "J'ai déjà enregistré",
+        "ability": "Je peux enregistrer",
+        "hypothetical": "Je pourrais enregistrer",
+        "obligation": "Je dois enregistrer",
+        "advice": "Je devrais enregistrer"
+      }
+    },
+    {
+      "id": "delete-130",
+      "base": "supprimer",
+      "meanings": [
+        "excluir",
+        "apagar"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "technology",
+        "digital"
+      ],
+      "forms": {
+        "infinitive": "supprimer",
+        "present": "je supprime",
+        "past": "j'ai supprimé",
+        "imperfect": "je supprimais",
+        "participle": "supprimé",
+        "gerund": "en supprimant",
+        "perfect": "j'ai supprimé",
+        "pluperfect": "j'avais supprimé",
+        "perfectInfinitive": "avoir supprimé"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je supprime",
+        "ongoing": "Je suis en train de supprimer",
+        "past": "J'ai supprimé",
+        "pastOngoing": "Je supprimais",
+        "duration": "Ça fait un moment que je supprime",
+        "future": "Je vais supprimer",
+        "habit": "Avant, je supprimais",
+        "recent": "Je viens de supprimer",
+        "regret": "J'aurais dû supprimer",
+        "possibility": "J'aurais pu supprimer",
+        "prior": "J'avais supprimé",
+        "intended": "J'allais supprimer",
+        "perfect": "J'ai déjà supprimé",
+        "ability": "Je peux supprimer",
+        "hypothetical": "Je pourrais supprimer",
+        "obligation": "Je dois supprimer",
+        "advice": "Je devrais supprimer"
+      }
+    },
+    {
+      "id": "reply-131",
+      "base": "donner une réponse",
+      "meanings": [
+        "dar uma resposta"
+      ],
+      "level": "A1-A2",
+      "frequency": "high",
+      "tags": [
+        "communication",
+        "digital"
+      ],
+      "forms": {
+        "infinitive": "donner une réponse",
+        "present": "je donne une réponse",
+        "past": "j'ai donné une réponse",
+        "imperfect": "je donnais une réponse",
+        "participle": "donné une réponse",
+        "gerund": "en donnant une réponse",
+        "perfect": "j'ai donné une réponse",
+        "pluperfect": "j'avais donné une réponse",
+        "perfectInfinitive": "avoir donné une réponse"
+      },
+      "stative": false,
+      "trainingForms": {
+        "present": "Je donne une réponse",
+        "ongoing": "Je suis en train de donner une réponse",
+        "past": "J'ai donné une réponse",
+        "pastOngoing": "Je donnais une réponse",
+        "duration": "Ça fait un moment que je donne une réponse",
+        "future": "Je vais donner une réponse",
+        "habit": "Avant, je donnais une réponse",
+        "recent": "Je viens de donner une réponse",
+        "regret": "J'aurais dû donner une réponse",
+        "possibility": "J'aurais pu donner une réponse",
+        "prior": "J'avais donné une réponse",
+        "intended": "J'allais donner une réponse",
+        "perfect": "J'ai déjà donné une réponse",
+        "ability": "Je peux donner une réponse",
+        "hypothetical": "Je pourrais donner une réponse",
+        "obligation": "Je dois donner une réponse",
+        "advice": "Je devrais donner une réponse"
+      }
+    }
+  ]
+}
