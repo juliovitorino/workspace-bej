@@ -266,8 +266,8 @@ for (const [language, , titleKey, textKey, intentionKey, query] of languages) {
 for (const language of ['es-ES', 'fr-FR']) {
   assert.equal(searchLocalStories('A1', '', language).length, 11);
   assert.equal(searchLocalStories('A1', 'Saturday', language).length, 0);
-  for (const level of ['A2', 'B1', 'B2', 'C1', 'C2']) assert.equal(searchLocalStories(level, '', language).length, 0);
-  assert.equal(searchShadowingStories(language).length, 0, 'Shadowing availability is unchanged');
+  for (const level of ['A2', 'B1', 'B2', 'C1', 'C2']) assert.equal(searchLocalStories(level, '', language).length, searchLocalStories(level).length);
+  assert.equal(searchShadowingStories(language).length, 42, 'Shadowing supports translated catalogs');
 }
 assert.equal(searchShadowingStories('en-US').length, 42);
 
@@ -343,11 +343,14 @@ for (const [language, name, titleKey, textKey, intentionKey] of languages) {
 }
 // A story missing the new language is cleared with a student-visible notice.
 const switching = new Harness(InterpretationPanel, props); switching.flush();
+const savedFrenchTitle = localStory.titleFr;
+delete localStory.titleFr;
 loadStory(switching, 'B1', localStory.titlePt);
 switching.flush({ ...props, language: 'fr-FR' });
 assert.equal(find(switching.tree, n => n.type === 'article'), null);
 assert.ok(text(switching.tree).includes('Esta história ainda não está disponível em francês'));
 switching.dispose();
+localStory.titleFr = savedFrenchTitle;
 
 // Invalid excerpts are reported and never highlighted; source data stays untouched.
 const annotation = sample.paragraphs[0].intentions[0];

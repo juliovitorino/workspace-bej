@@ -72,14 +72,12 @@ export function isStoryAvailable(story: LocalStory, language: StudentLanguage): 
       paragraph.intentions.every(intention => Boolean(getIntentionText(intention, language).trim())));
 }
 
-/** Existing story catalogs contain English with Portuguese reference text only. */
-export function searchShadowingStories(language: string, level = "all", query = ""): LocalStory[] {
-  if (language !== "en-US") return [];
+/** Search only stories with complete content in the selected study language. */
+export function searchShadowingStories(language: StudentLanguage, level = "all", query = ""): LocalStory[] {
   const normalized = normalizeSearchText(query);
   return Object.values(libraries).flatMap(library => library.stories).filter(story =>
-    (level === "all" || story.englishLevel === level) && story.paragraphs.length > 0 &&
-    story.paragraphs.every(p => Boolean(p.en.trim())) &&
-    [story.titleEn, story.titlePt, story.topic ?? ""].some(value => normalizeSearchText(value).includes(normalized))
+    (level === "all" || story.englishLevel === level) && isStoryAvailable(story, language) &&
+    [getStoryTitle(story, language), story.titlePt, story.topic ?? ""].some(value => normalizeSearchText(value).includes(normalized))
   );
 }
 
