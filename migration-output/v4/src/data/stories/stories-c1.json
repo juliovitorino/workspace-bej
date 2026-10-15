@@ -1,0 +1,234 @@
+{
+  "stories": [
+    {
+      "id": "c1-family-8f3a19d2-5c74-4e61-9b28-3d7a6f10c452",
+      "englishLevel": "C1",
+      "topic": "family",
+      "titlePt": "Uma conversa que a família precisava ter",
+      "titleEn": "A Conversation the Family Needed to Have",
+      "titleEs": "Una conversación que la familia necesitaba tener",
+      "titleFr": "Une conversation que la famille devait avoir",
+      "paragraphs": [
+        {
+          "pt": "Depois de meses evitando o assunto, meus irmãos e eu finalmente conversamos sobre como cuidar dos nossos pais à medida que eles envelhecem. Da minha perspectiva, ninguém deveria carregar toda a responsabilidade sozinho.",
+          "en": "After months of avoiding the subject, my siblings and I finally talked about how to care for our parents as they get older. From my perspective, no one should have to carry the entire responsibility alone.",
+          "es": "Después de meses evitando el tema, mis hermanos y yo hablamos por fin de cómo cuidar de nuestros padres a medida que envejecen. Desde mi perspectiva, nadie debería cargar con toda la responsabilidad a solas.",
+          "fr": "Après des mois à éviter le sujet, mes frères et sœurs et moi avons enfin discuté de la façon de prendre soin de nos parents à mesure qu'ils vieillissent. De mon point de vue, personne ne devrait porter seul toute cette responsabilité.",
+          "intentions": [
+            {
+              "intentionId": "hedging-profissional",
+              "ptIntent": "Da minha perspectiva",
+              "enIntent": "From my perspective",
+              "esIntent": "Desde mi perspectiva",
+              "frIntent": "De mon point de vue"
+            }
+          ],
+          "id": "65ab2145-548d-40fa-94ca-2f87b2fc75fe"
+        },
+        {
+          "pt": "Minha irmã estava frustrada porque sentia que vinha fazendo mais do que todos nós. O que realmente importa é encontrarmos uma solução que seja justa para toda a família.",
+          "en": "My sister was frustrated because she felt she had been doing more than the rest of us. What really matters is finding a solution that is fair to the whole family.",
+          "es": "Mi hermana estaba frustrada porque sentía que llevaba tiempo haciendo más que todos nosotros. Lo que realmente importa es encontrar una solución que sea justa para toda la familia.",
+          "fr": "Ma sœur était frustrée, car elle avait le sentiment d'en faire plus que nous tous depuis un certain temps. Ce qui compte vraiment, c'est de trouver une solution équitable pour toute la famille.",
+          "intentions": [
+            {
+              "intentionId": "framing-e-argumentacao-avancada",
+              "ptIntent": "O que realmente importa é",
+              "enIntent": "What really matters is",
+              "esIntent": "Lo que realmente importa es",
+              "frIntent": "Ce qui compte vraiment, c'est"
+            }
+          ],
+          "id": "c2d13599-f6cf-4443-84a6-559ec1934bb8"
+        },
+        {
+          "pt": "Meu irmão concordou em ajudar mais, desde que todos participassem das decisões importantes. Para mim, essa condição parecia perfeitamente razoável.",
+          "en": "My brother agreed to help more, provided that everyone took part in the important decisions. To me, that condition seemed perfectly reasonable.",
+          "es": "Mi hermano aceptó ayudar más, siempre que todos participáramos en las decisiones importantes. A mí esa condición me parecía perfectamente razonable.",
+          "fr": "Mon frère a accepté d'aider davantage, à condition que tout le monde participe aux décisions importantes. Cette condition me semblait parfaitement raisonnable.",
+          "intentions": [
+            {
+              "intentionId": "desde-que-sob-a-condicao-de-que",
+              "ptIntent": "desde que",
+              "enIntent": "provided that",
+              "esIntent": "siempre que",
+              "frIntent": "à condition que"
+            }
+          ],
+          "id": "25ea314b-f1d9-4614-bc70-8c38c2f9d8a0"
+        },
+        {
+          "pt": "Então meu pai admitiu que deveria ter falado conosco antes sobre o que ele e minha mãe realmente queriam. Se pelo menos ele tivesse mencionado isso meses atrás, talvez tivéssemos evitado algumas discussões.",
+          "en": "Then my father admitted that he should have talked to us earlier about what he and my mother actually wanted. If only he had mentioned it months ago, we might have avoided some arguments.",
+          "es": "Entonces mi padre reconoció que debería haber hablado antes con nosotros sobre lo que él y mi madre querían de verdad. Si al menos lo hubiera mencionado meses antes, quizá habríamos evitado algunas discusiones.",
+          "fr": "Mon père a alors reconnu qu'il aurait dû nous parler plus tôt de ce que ma mère et lui souhaitaient vraiment. Si seulement il en avait parlé quelques mois auparavant, nous aurions peut-être évité certaines disputes.",
+          "intentions": [
+            {
+              "intentionId": "se-pelo-menos-tivesse",
+              "ptIntent": "Se pelo menos",
+              "enIntent": "If only",
+              "esIntent": "Si al menos",
+              "frIntent": "Si seulement"
+            }
+          ],
+          "id": "9cc252bf-979c-4692-945f-ec4fd1c7d8bb"
+        },
+        {
+          "pt": "Dito de outra forma, nosso maior problema não era falta de carinho, mas falta de comunicação. Todos queríamos ajudar, porém cada um tinha uma ideia diferente sobre como fazer isso.",
+          "en": "To put it differently, our biggest problem wasn't a lack of love but a lack of communication. We all wanted to help, but each of us had a different idea of how to do it.",
+          "es": "Dicho de otro modo, nuestro mayor problema no era la falta de cariño, sino la falta de comunicación. Todos queríamos ayudar, pero cada uno tenía una idea distinta de cómo hacerlo.",
+          "fr": "Autrement dit, notre principal problème n'était pas le manque d'affection, mais le manque de communication. Nous voulions tous aider, mais chacun avait une idée différente de la manière de s'y prendre.",
+          "intentions": [
+            {
+              "intentionId": "dito-de-outra-forma-colocando-de-outra-maneira",
+              "ptIntent": "Dito de outra forma",
+              "enIntent": "To put it differently",
+              "esIntent": "Dicho de otro modo",
+              "frIntent": "Autrement dit"
+            }
+          ],
+          "id": "dad6862a-e35f-4613-ad26-448967513874"
+        },
+        {
+          "pt": "No fim da conversa, minha mãe sorriu e disse: 'Deixa o passado pra trás. O importante é que estamos conversando agora.' A tensão diminuiu, e começamos a organizar juntos os próximos meses.",
+          "en": "At the end of the conversation, my mother smiled and said, 'Let bygones be bygones. What matters is that we're talking now.' The tension eased, and we started planning the next few months together.",
+          "es": "Al final de la conversación, mi madre sonrió y dijo: «Dejad atrás el pasado. Lo importante es que estamos hablando ahora». La tensión disminuyó y empezamos a organizar juntos los meses siguientes.",
+          "fr": "À la fin de la discussion, ma mère a souri et a dit : « Laissez le passé derrière vous. L'important, c'est que nous en parlions maintenant. » La tension est retombée et nous avons commencé à organiser ensemble les mois à venir.",
+          "intentions": [
+            {
+              "intentionId": "let-bygones-be-bygones",
+              "ptIntent": "Deixa o passado pra trás",
+              "enIntent": "Let bygones be bygones",
+              "esIntent": "Dejad atrás el pasado",
+              "frIntent": "Laissez le passé derrière vous"
+            }
+          ],
+          "id": "a3f851ff-aed4-4060-8585-990262aa1e9d"
+        }
+      ],
+      "intentionsUsed": [
+        "hedging-profissional",
+        "framing-e-argumentacao-avancada",
+        "desde-que-sob-a-condicao-de-que",
+        "se-pelo-menos-tivesse",
+        "dito-de-outra-forma-colocando-de-outra-maneira",
+        "let-bygones-be-bygones"
+      ]
+    },
+    {
+      "id": "c1-family-b742e6a1-31d9-47fc-a805-6e29c14f783b",
+      "englishLevel": "C1",
+      "topic": "family",
+      "titlePt": "O jantar de aniversário da minha mãe",
+      "titleEn": "My Mother's Birthday Dinner",
+      "titleEs": "La cena de cumpleaños de mi madre",
+      "titleFr": "Le dîner d'anniversaire de ma mère",
+      "paragraphs": [
+        {
+          "pt": "No aniversário da minha mãe, decidimos reunir toda a família para um jantar surpresa. Curiosamente, ninguém contou o segredo, embora quase vinte pessoas soubessem da festa.",
+          "en": "For my mother's birthday, we decided to bring the whole family together for a surprise dinner. Interestingly, no one gave away the secret, even though almost twenty people knew about the party.",
+          "es": "Para el cumpleaños de mi madre, decidimos reunir a toda la familia en una cena sorpresa. Curiosamente, nadie reveló el secreto, aunque casi veinte personas sabían de la fiesta.",
+          "fr": "Pour l'anniversaire de ma mère, nous avons décidé de réunir toute la famille autour d'un dîner surprise. Curieusement, personne n'a vendu la mèche, alors que près de vingt personnes étaient au courant de la fête.",
+          "intentions": [
+            {
+              "intentionId": "curiosamente-interessante-notar-que",
+              "ptIntent": "Curiosamente",
+              "enIntent": "Interestingly",
+              "esIntent": "Curiosamente",
+              "frIntent": "Curieusement"
+            }
+          ],
+          "id": "fb17d53d-1444-4aca-8375-ef0df9c8eee6"
+        },
+        {
+          "pt": "Ironicamente, meu pai, que normalmente esquece datas importantes, foi a pessoa que organizou quase tudo. Ele reservou o restaurante, confirmou os convidados e até escolheu o bolo.",
+          "en": "Ironically, my father, who normally forgets important dates, was the person who organized almost everything. He booked the restaurant, confirmed the guests, and even chose the cake.",
+          "es": "Irónicamente, mi padre, que normalmente olvida las fechas importantes, fue quien lo organizó casi todo. Reservó el restaurante, confirmó la asistencia de los invitados e incluso eligió la tarta.",
+          "fr": "Ironie du sort, mon père, qui oublie d'habitude les dates importantes, est celui qui a presque tout organisé. Il a réservé le restaurant, confirmé la présence des invités et même choisi le gâteau.",
+          "intentions": [
+            {
+              "intentionId": "ironicamente",
+              "ptIntent": "Ironicamente",
+              "enIntent": "Ironically",
+              "esIntent": "Irónicamente",
+              "frIntent": "Ironie du sort"
+            }
+          ],
+          "id": "f7cea20e-3916-49c6-b2a9-e718651f253a"
+        },
+        {
+          "pt": "Mal minha mãe tinha entrado no restaurante, todos começaram a cantar parabéns. Por alguns segundos, ela ficou completamente sem palavras.",
+          "en": "No sooner had my mother entered the restaurant than everyone started singing happy birthday. For a few seconds, she was completely speechless.",
+          "es": "Apenas había entrado mi madre en el restaurante cuando todos empezaron a cantar el cumpleaños feliz. Durante unos segundos se quedó completamente sin palabras.",
+          "fr": "À peine ma mère était-elle entrée dans le restaurant que tout le monde s'est mis à chanter « Joyeux anniversaire ». Pendant quelques secondes, elle est restée complètement sans voix.",
+          "intentions": [
+            {
+              "intentionId": "no-sooner-than",
+              "ptIntent": "Mal",
+              "enIntent": "No sooner",
+              "esIntent": "Apenas",
+              "frIntent": "À peine"
+            }
+          ],
+          "id": "2f2547df-798d-40be-898c-4625b1cfc4f5"
+        },
+        {
+          "pt": "Durante o jantar, meus irmãos começaram a contar histórias da nossa infância. Consequentemente, meus sobrinhos descobriram várias histórias engraçadas sobre os pais que nunca tinham ouvido antes.",
+          "en": "During dinner, my siblings started telling stories from our childhood. Consequently, my nieces and nephews learned several funny stories about their parents that they had never heard before.",
+          "es": "Durante la cena, mis hermanos empezaron a contar historias de nuestra infancia. En consecuencia, mis sobrinos descubrieron varias anécdotas divertidas sobre sus padres que nunca habían oído.",
+          "fr": "Pendant le dîner, mes frères et sœurs ont commencé à raconter des souvenirs de notre enfance. Par conséquent, mes neveux et nièces ont découvert plusieurs anecdotes amusantes sur leurs parents qu'ils n'avaient jamais entendues.",
+          "intentions": [
+            {
+              "intentionId": "consequentemente-consequently",
+              "ptIntent": "Consequentemente",
+              "enIntent": "Consequently",
+              "esIntent": "En consecuencia",
+              "frIntent": "Par conséquent"
+            }
+          ],
+          "id": "7f7c4538-f05d-4d3d-821c-dd2b15e91b84"
+        },
+        {
+          "pt": "Na prática, isso significa que uma simples comemoração acabou aproximando diferentes gerações da família. Os adultos relembraram o passado, enquanto os mais jovens entenderam melhor de onde vieram.",
+          "en": "What this means in practice is that a simple celebration ended up bringing different generations of the family closer together. The adults remembered the past, while the younger ones gained a better understanding of where they came from.",
+          "es": "En la práctica, eso significa que una simple celebración acabó acercando a distintas generaciones de la familia. Los adultos recordaron el pasado, mientras los más jóvenes comprendieron mejor de dónde venían.",
+          "fr": "Concrètement, cela signifie qu'une simple fête a fini par rapprocher différentes générations de la famille. Les adultes se sont remémoré le passé, tandis que les plus jeunes ont mieux compris leurs origines.",
+          "intentions": [
+            {
+              "intentionId": "na-pratica-isso-significa-que",
+              "ptIntent": "Na prática, isso significa que",
+              "enIntent": "What this means in practice is that",
+              "esIntent": "En la práctica, eso significa que",
+              "frIntent": "Concrètement, cela signifie qu'"
+            }
+          ],
+          "id": "23c6f45b-b8fa-4c8b-bc11-b1e77576ff36"
+        },
+        {
+          "pt": "Antes de irmos embora, minha mãe agradeceu a todos e disse que não precisava de presentes caros. O ponto principal é que passar tempo juntos ainda é uma das coisas que ela mais valoriza.",
+          "en": "Before we left, my mother thanked everyone and said she didn't need expensive gifts. The key takeaway is that spending time together is still one of the things she values most.",
+          "es": "Antes de irnos, mi madre nos dio las gracias a todos y dijo que no necesitaba regalos caros. Lo principal es que pasar tiempo juntos sigue siendo una de las cosas que más valora.",
+          "fr": "Avant notre départ, ma mère a remercié tout le monde et a dit qu'elle n'avait pas besoin de cadeaux coûteux. L'essentiel, c'est que passer du temps ensemble reste l'une des choses auxquelles elle tient le plus.",
+          "intentions": [
+            {
+              "intentionId": "o-ponto-principal-que-voce-deve-lembrar-e",
+              "ptIntent": "O ponto principal",
+              "enIntent": "The key takeaway is that",
+              "esIntent": "Lo principal",
+              "frIntent": "L'essentiel"
+            }
+          ],
+          "id": "8361251d-59f8-487d-a175-a31a899cb83f"
+        }
+      ],
+      "intentionsUsed": [
+        "curiosamente-interessante-notar-que",
+        "ironicamente",
+        "no-sooner-than",
+        "consequentemente-consequently",
+        "na-pratica-isso-significa-que",
+        "o-ponto-principal-que-voce-deve-lembrar-e"
+      ]
+    }
+  ]
+}

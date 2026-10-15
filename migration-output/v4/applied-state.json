@@ -1,0 +1,54 @@
+{
+  "files": {
+    "public/sample-hashmap-pt-BR.json": {
+      "backup": "migration-output/v4/original-backups/public/sample-hashmap-pt-BR.json",
+      "originalHash": "29ca00fb1366a3303cfa2f4f17939f3c32aed71bcf706a7d09dcba62ec36c392",
+      "appliedHash": "3f22f0a045a1cfc511a16b6bca955b49791c07ce85d046c8ed6661aeb539a5e9"
+    },
+    "public/sample-hashmap-en-US.json": {
+      "backup": "migration-output/v4/original-backups/public/sample-hashmap-en-US.json",
+      "originalHash": "29ca00fb1366a3303cfa2f4f17939f3c32aed71bcf706a7d09dcba62ec36c392",
+      "appliedHash": "f6cf1c90e9df972888b5ac5c789b22b91f0e6be0a53caf86c34842c3b7ae208d"
+    },
+    "public/sample-hashmap-es-ES.json": {
+      "backup": "migration-output/v4/original-backups/public/sample-hashmap-es-ES.json",
+      "originalHash": "2742b5773c83618db3e4e7c36102839dd983b8435c6f8fbe9d43ef52a9557da0",
+      "appliedHash": "4e047b210b62fa5d1be53cb9f87fb7812af0cb9a07303dd0b70e645c621f575b"
+    },
+    "public/sample-hashmap-fr-FR.json": {
+      "backup": "migration-output/v4/original-backups/public/sample-hashmap-fr-FR.json",
+      "originalHash": "b6b1b035b9f9121d9e8e9bacf69d5a59cddec893009b9f926fa93e72ebd24c84",
+      "appliedHash": "995e1d930517f536f68a5fb5118320a8db3296212b31b2b07d86ea9668c5ac80"
+    },
+    "src/data/stories/stories-a1.json": {
+      "backup": "migration-output/v4/original-backups/src/data/stories/stories-a1.json",
+      "originalHash": "ea981b177bfd0417e075edd08a19435e7c9d1ffbde2454f3dea630b464eeedfd",
+      "appliedHash": "e7b5982a189df60dce78ced4879da855c54274b2f10912b95b2617f917533a1e"
+    },
+    "src/data/stories/stories-a2.json": {
+      "backup": "migration-output/v4/original-backups/src/data/stories/stories-a2.json",
+      "originalHash": "91ad528e349a9f750a8ce7cee17d592f8a134c430d97dcf8d62680f9d7cccdbe",
+      "appliedHash": "413284db4b551249ef0034adb8001997d1d14ce33263d6a508e838420f65602e"
+    },
+    "src/data/stories/stories-b1.json": {
+      "backup": "migration-output/v4/original-backups/src/data/stories/stories-b1.json",
+      "originalHash": "3b92e6ddf2ffc2b29af2986142652a9ef504506d3605641e093db57a1fbb35b6",
+      "appliedHash": "51d0441b845a4f33e99a753b8ac9cfbde9ab026ad227bc1b13905f6aefe3b927"
+    },
+    "src/data/stories/stories-b2.json": {
+      "backup": "migration-output/v4/original-backups/src/data/stories/stories-b2.json",
+      "originalHash": "3c66f926a1fd2fb0e7c80da0e01d3bdf984da25a5f732bfb224eb2bddcfa24ee",
+      "appliedHash": "f8c7f4d6741e35a8a005a611e735f66474e39c26104da9258ecef92b71d371ee"
+    },
+    "src/data/stories/stories-c1.json": {
+      "backup": "migration-output/v4/original-backups/src/data/stories/stories-c1.json",
+      "originalHash": "48186bf813aebfa7fe79897010cdad4e5b4659e9c50b6a2d55c675630eba3d5d",
+      "appliedHash": "572430e04ecfbb1309c0eb429a3b53e82312949459f14392e6d573778d92437a"
+    },
+    "src/data/stories/stories-c2.json": {
+      "backup": "migration-output/v4/original-backups/src/data/stories/stories-c2.json",
+      "originalHash": "c85014a4273e3f10d665fdf413bb474e10165c4a4a92609b3564e51ef72e9b11",
+      "appliedHash": "75703da1ad06ea6b53a5bf460efd256a75470c61773c9bf6884e04604e7b0f85"
+    }
+  }
+}
