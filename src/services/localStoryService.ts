@@ -4,16 +4,21 @@ import storiesB1 from "../data/stories/stories-b1.json";
 import storiesB2 from "../data/stories/stories-b2.json";
 import storiesC1 from "../data/stories/stories-c1.json";
 import storiesC2 from "../data/stories/stories-c2.json";
+import type { StudentLanguage } from "../config/languages";
 
 export interface LocalStoryParagraphIntention {
   intentionId: string;
   ptIntent: string;
   enIntent: string;
+  esIntent?: string;
+  frIntent?: string;
 }
 
 export interface LocalStoryParagraph {
   pt: string;
   en: string;
+  es?: string;
+  fr?: string;
   intentions: LocalStoryParagraphIntention[];
 }
 
@@ -23,6 +28,8 @@ export interface LocalStory {
   id?: string;
   titlePt: string;
   titleEn: string;
+  titleEs?: string;
+  titleFr?: string;
   hqImage?: string;
   paragraphs: LocalStoryParagraph[];
   intentionsUsed: string[];
@@ -40,6 +47,30 @@ const libraries: Record<string, LocalStoryLibrary> = {
   C1: storiesC1 as LocalStoryLibrary,
   C2: storiesC2 as LocalStoryLibrary,
 };
+
+const storyLanguageFields = {
+  "en-US": { title: "titleEn", paragraph: "en", intention: "enIntent" },
+  "es-ES": { title: "titleEs", paragraph: "es", intention: "esIntent" },
+  "fr-FR": { title: "titleFr", paragraph: "fr", intention: "frIntent" },
+} as const;
+
+export function getStoryTitle(story: LocalStory, language: StudentLanguage): string {
+  return story[storyLanguageFields[language].title] ?? "";
+}
+
+export function getParagraphText(paragraph: LocalStoryParagraph, language: StudentLanguage): string {
+  return paragraph[storyLanguageFields[language].paragraph] ?? "";
+}
+
+export function getIntentionText(intention: LocalStoryParagraphIntention, language: StudentLanguage): string {
+  return intention[storyLanguageFields[language].intention] ?? "";
+}
+
+export function isStoryAvailable(story: LocalStory, language: StudentLanguage): boolean {
+  return Boolean(getStoryTitle(story, language).trim()) && story.paragraphs.length > 0 &&
+    story.paragraphs.every(paragraph => Boolean(getParagraphText(paragraph, language).trim()) &&
+      paragraph.intentions.every(intention => Boolean(getIntentionText(intention, language).trim())));
+}
 
 /** Existing story catalogs contain English with Portuguese reference text only. */
 export function searchShadowingStories(language: string, level = "all", query = ""): LocalStory[] {
@@ -69,12 +100,13 @@ function normalizeSearchText(value: string): string {
  * Pesquisa histórias da biblioteca local por nível e título.
  *
  * - Se o título estiver vazio, retorna todas as histórias do nível.
- * - Pesquisa tanto em titlePt quanto em titleEn.
+ * - Pesquisa no título do idioma de estudo e em titlePt.
  * - A pesquisa ignora maiúsculas/minúsculas e acentos.
  */
 export function searchLocalStories(
   englishLevel: string,
-  title: string = ""
+  title: string = "",
+  language: StudentLanguage = "en-US"
 ): LocalStory[] {
   const library = libraries[englishLevel.toUpperCase()];
 
@@ -84,16 +116,17 @@ export function searchLocalStories(
 
   const normalizedTitle = normalizeSearchText(title);
 
+  const availableStories = library.stories.filter(story => isStoryAvailable(story, language));
   const matches =
     normalizedTitle.length === 0
-      ? [...library.stories]
-      : library.stories.filter((story) => {
+      ? [...availableStories]
+      : availableStories.filter((story) => {
           const titlePt = normalizeSearchText(story.titlePt);
-          const titleEn = normalizeSearchText(story.titleEn);
+          const targetTitle = normalizeSearchText(getStoryTitle(story, language));
 
           return (
             titlePt.includes(normalizedTitle) ||
-            titleEn.includes(normalizedTitle)
+            targetTitle.includes(normalizedTitle)
           );
         });
 
@@ -143,7 +176,7 @@ export function getRandomLocalStory(
   const story = randomStory(pool);
 
   console.info(
-    `[LocalStoryService] Local story selected: ${story.id ?? "without-id"}`
+    `[LocalStoryService] Local story selected: ${story.titlePt}`
   );
 
   return story;

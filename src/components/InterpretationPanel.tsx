@@ -1,4 +1,5 @@
 import { isAuthorMode } from "../utils/authorMode";
+import type { StudentLanguage } from "../config/languages";
 import {
   useEffect,
   useMemo,
@@ -15,12 +16,17 @@ import {
 } from "../services/storyGenerationService";
 import {
   searchLocalStories,
+  getStoryTitle,
+  getParagraphText,
+  getIntentionText,
+  isStoryAvailable,
   type LocalStory
 } from "../services/localStoryService";
 
 type EnglishLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
 interface InterpretationPanelProps {
+  language?: StudentLanguage;
   intentions: MentalIntention[];
   onSelectIntention: (item: MentalIntention) => void;
 }
@@ -52,7 +58,7 @@ function renderHighlightedText(
   text: string,
   highlights: string[]
 ) {
-  const ranges = highlights
+  const ranges = highlights.filter(highlight => highlight.length > 0)
     .map((highlight) => {
       const start = text.indexOf(highlight);
 
@@ -126,22 +132,45 @@ function shuffle<T>(items: T[]): T[] {
 }
 
 export function InterpretationPanel({
+  language = "en-US",
   intentions,
   onSelectIntention
 }: InterpretationPanelProps) {
   const [authorMode, setAuthorMode] = useState(isAuthorMode);
-  const aiEnabled = import.meta.env.VITE_AI_ENABLED === "true";
+  const aiEnabled = language === "en-US" && import.meta.env.VITE_AI_ENABLED === "true";
+  const languageName = { "en-US": "inglês", "es-ES": "espanhol", "fr-FR": "francês" }[language];
   const generationController = useRef<AbortController | null>(null);
   const [englishLevel, setEnglishLevel] =
     useState<EnglishLevel>("B1");
   const [amount, setAmount] = useState(5);
   const [theme, setTheme] = useState("cotidiano");
-  const [story, setStory] =
+  const [storedStory, setStory] =
     useState<StoryGenerationResult | null>(null);
+  const story = useMemo(() => {
+    if (!storedStory || !isStoryAvailable(storedStory, language)) return null;
+    return {
+      ...storedStory,
+      title: getStoryTitle(storedStory, language),
+      paragraphs: storedStory.paragraphs.map(paragraph => {
+        const text = getParagraphText(paragraph, language);
+        return {
+          ...paragraph,
+          text,
+          intentions: paragraph.intentions.map(intention => {
+            const targetIntent = getIntentionText(intention, language);
+            return { ...intention, targetIntent: text.includes(targetIntent) ? targetIntent : "" };
+          }),
+        };
+      }),
+    };
+  }, [storedStory, language]);
+  const [languageNotice, setLanguageNotice] = useState<string | null>(null);
+  const previousLanguage = useRef(language);
+  const speechRevision = useRef(0);
   const [selectedIntentions, setSelectedIntentions] = useState<
     MentalIntention[]
   >([]);
-  const [showEnglish, setShowEnglish] = useState(false);
+  const [showTarget, setShowTarget] = useState(false);
   const [generating, setGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [exportJson, setExportJson] = useState<string | null>(null);
@@ -163,6 +192,48 @@ export function InterpretationPanel({
   const [shareError, setShareError] = useState<string | null>(null);
   const [hqZoom, setHqZoom] = useState(1);
   const hqViewportRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (previousLanguage.current === language) return;
+    previousLanguage.current = language;
+    cancelGeneration();
+    cancelSpeech();
+    setSpeaking(false);
+    setSpeakingParagraphIndex(null);
+    setSpeechError(null);
+    setShowHqImage(false);
+    setShareError(null);
+    setExportJson(null);
+    setSelectedIntentions([]);
+    setError(null);
+    setStoryCopyFeedback("idle");
+    setCopiedParagraphIndex(null);
+    setCopyParagraphErrorIndex(null);
+    if (storedStory && !isStoryAvailable(storedStory, language)) {
+      setStory(null);
+      setLanguageNotice(`Esta história ainda não está disponível em ${languageName}. Escolha outra história.`);
+    } else {
+      setLanguageNotice(null);
+    }
+  }, [language, storedStory, languageName]);
+
+  useEffect(() => {
+    if (!storedStory) return;
+    storedStory.paragraphs.forEach((paragraph, index) => {
+      const text = getParagraphText(paragraph, language);
+      for (const intention of paragraph.intentions) {
+        const excerpt = getIntentionText(intention, language);
+        if (excerpt && text && !text.includes(excerpt)) {
+          console.warn(`[InterpretationPanel] Destaque incompatível: ${getStoryTitle(storedStory, language)}, parágrafo ${index + 1}, ${language}.`);
+        }
+      }
+    });
+  }, [storedStory, language]);
+
+  function cancelSpeech() {
+    speechRevision.current++;
+    window.speechSynthesis?.cancel();
+  }
 
   function cancelGeneration() {
     generationController.current?.abort();
@@ -199,7 +270,7 @@ export function InterpretationPanel({
   useEffect(() => {
     return () => {
       if ("speechSynthesis" in window) {
-        window.speechSynthesis.cancel();
+        cancelSpeech();
       }
     };
   }, []);
@@ -282,8 +353,8 @@ export function InterpretationPanel({
   );
 
   const searchResults = useMemo(
-    () => searchLocalStories(searchLevel, searchTitle),
-    [searchLevel, searchTitle]
+    () => searchLocalStories(searchLevel, searchTitle, language),
+    [searchLevel, searchTitle, language]
   );
 
   useEffect(() => {
@@ -301,14 +372,14 @@ export function InterpretationPanel({
     setStoryCopyFeedback("idle");
     setShowHqImage(false);
     setSelectedIntentions([]);
-    setShowEnglish(false);
+    setShowTarget(false);
     setError(null);
     setSpeechError(null);
     setSpeaking(false);
     setSpeakingParagraphIndex(null);
 
     if ("speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
+      cancelSpeech();
     }
 
     const levelCount = intentions.filter(
@@ -340,9 +411,12 @@ export function InterpretationPanel({
   }
 
   function handleLoadLocalStory(localStory: LocalStory) {
+    if (!isStoryAvailable(localStory, language)) return;
+    setLanguageNotice(null);
+    speechRevision.current++;
     cancelGeneration();
     if ("speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
+      cancelSpeech();
     }
 
     setEnglishLevel(searchLevel);
@@ -353,7 +427,7 @@ export function InterpretationPanel({
     });
     setShowHqImage(false);
     setSelectedIntentions([]);
-    setShowEnglish(false);
+    setShowTarget(false);
     setGenerating(false);
     setError(null);
     setSpeechError(null);
@@ -365,7 +439,7 @@ export function InterpretationPanel({
   }
 
   async function handleGenerateStory() {
-    if (!isAuthorMode() || !aiEnabled || generationController.current) return;
+    if (!isAuthorMode() || !aiEnabled || generationController.current || language !== "en-US") return;
     if (availableIntentions.length === 0) {
       setError(
         `Não há intenções disponíveis para o nível ${englishLevel}.`
@@ -385,14 +459,14 @@ export function InterpretationPanel({
     setStory(null);
     setStoryCopyFeedback("idle");
     setShowHqImage(false);
-    setShowEnglish(false);
+    setShowTarget(false);
     setSelectedIntentions(pickedIntentions);
     setSpeechError(null);
     setSpeaking(false);
     setSpeakingParagraphIndex(null);
 
     if ("speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
+      cancelSpeech();
     }
 
     try {
@@ -420,12 +494,12 @@ export function InterpretationPanel({
     }
   }
 
-  function handleToggleEnglish() {
-    setShowEnglish((current) => {
+  function handleToggleTarget() {
+    setShowTarget((current) => {
       const nextValue = !current;
 
       if (!nextValue && "speechSynthesis" in window) {
-        window.speechSynthesis.cancel();
+        cancelSpeech();
         setSpeaking(false);
         setSpeakingParagraphIndex(null);
         setSpeechError(null);
@@ -440,16 +514,16 @@ export function InterpretationPanel({
       return;
     }
 
-    const englishText = [
-      story.titleEn,
-      ...story.paragraphs.map((paragraph) => paragraph.en)
+    const targetText = [
+      story.title,
+      ...story.paragraphs.map((paragraph) => paragraph.text)
     ]
       .filter(Boolean)
       .join(". ")
       .trim();
 
-    if (!englishText) {
-      setSpeechError("Não há texto em inglês para reproduzir.");
+    if (!targetText) {
+      setSpeechError(`Não há texto em ${languageName} para reproduzir.`);
       return;
     }
 
@@ -460,37 +534,41 @@ export function InterpretationPanel({
       return;
     }
 
-    window.speechSynthesis.cancel();
+    cancelSpeech();
     setSpeechError(null);
     setSpeakingParagraphIndex(null);
 
-    const utterance = new SpeechSynthesisUtterance(englishText);
+    const revision = speechRevision.current;
+    const utterance = new SpeechSynthesisUtterance(targetText);
     const voices = window.speechSynthesis.getVoices();
-    const americanVoice = voices.find(
-      (voice) => voice.lang.toLowerCase() === "en-us"
+    const targetVoice = voices.find(
+      (voice) => voice.lang.toLowerCase() === language.toLowerCase()
     );
 
-    if (americanVoice) {
-      utterance.voice = americanVoice;
+    if (targetVoice) {
+      utterance.voice = targetVoice;
     }
 
-    utterance.lang = "en-US";
+    utterance.lang = language;
     utterance.rate = 0.9;
     utterance.pitch = 1;
 
     utterance.onstart = () => {
+      if (revision !== speechRevision.current) return;
       setSpeaking(true);
     };
 
     utterance.onend = () => {
+      if (revision !== speechRevision.current) return;
       setSpeaking(false);
       setSpeakingParagraphIndex(null);
     };
 
     utterance.onerror = () => {
+      if (revision !== speechRevision.current) return;
       setSpeaking(false);
       setSpeakingParagraphIndex(null);
-      setSpeechError("Não foi possível reproduzir a história em inglês.");
+      setSpeechError(`Não foi possível reproduzir a história em ${languageName}.`);
     };
 
     window.speechSynthesis.speak(utterance);
@@ -526,10 +604,10 @@ export function InterpretationPanel({
   }
 
   function handleSpeakParagraph(text: string, index: number) {
-    const englishText = text.trim();
+    const targetText = text.trim();
 
-    if (!englishText) {
-      setSpeechError("Não há texto em inglês para reproduzir neste parágrafo.");
+    if (!targetText) {
+      setSpeechError(`Não há texto em ${languageName} para reproduzir neste parágrafo.`);
       return;
     }
 
@@ -540,44 +618,48 @@ export function InterpretationPanel({
       return;
     }
 
-    window.speechSynthesis.cancel();
+    cancelSpeech();
     setSpeechError(null);
     setSpeaking(false);
     setSpeakingParagraphIndex(null);
 
-    const utterance = new SpeechSynthesisUtterance(englishText);
+    const revision = speechRevision.current;
+    const utterance = new SpeechSynthesisUtterance(targetText);
     const voices = window.speechSynthesis.getVoices();
-    const americanVoice = voices.find(
-      (voice) => voice.lang.toLowerCase() === "en-us"
+    const targetVoice = voices.find(
+      (voice) => voice.lang.toLowerCase() === language.toLowerCase()
     );
 
-    if (americanVoice) {
-      utterance.voice = americanVoice;
+    if (targetVoice) {
+      utterance.voice = targetVoice;
     }
 
-    utterance.lang = "en-US";
+    utterance.lang = language;
     utterance.rate = 0.9;
     utterance.pitch = 1;
 
     utterance.onstart = () => {
+      if (revision !== speechRevision.current) return;
       setSpeaking(false);
       setSpeakingParagraphIndex(index);
     };
 
     utterance.onend = () => {
+      if (revision !== speechRevision.current) return;
       setSpeakingParagraphIndex(null);
     };
 
     utterance.onerror = () => {
+      if (revision !== speechRevision.current) return;
       setSpeakingParagraphIndex(null);
-      setSpeechError("Não foi possível reproduzir este parágrafo em inglês.");
+      setSpeechError(`Não foi possível reproduzir este parágrafo em ${languageName}.`);
     };
 
     window.speechSynthesis.speak(utterance);
   }
 
   function handleOpenExportJson() {
-    if (!isAuthorMode() || !story || story.source !== "ai") {
+    if (!isAuthorMode() || !story || !storedStory || story.source !== "ai") {
       return;
     }
 
@@ -609,8 +691,8 @@ export function InterpretationPanel({
         englishLevel,
         topic,
         titlePt: story.titlePt,
-        titleEn: story.titleEn,
-        paragraphs: story.paragraphs,
+        titleEn: storedStory.titleEn,
+        paragraphs: storedStory.paragraphs,
         intentionsUsed: story.intentionsUsed
       };
 
@@ -678,13 +760,13 @@ export function InterpretationPanel({
     }
 
     const generationPrompt = [
-      "Você receberá no objeto story deste JSON uma história bilíngue PT-BR/EN-US. Use esse objeto como fonte única e obrigatória.",
+      `Você receberá no objeto story deste JSON uma história bilíngue PT-BR/${language}. Use esse objeto como fonte única e obrigatória.`,
       "",
       "OBJETIVO",
       "Crie uma HQ educacional bilíngue, visualmente profissional, baseada exatamente na história fornecida. O resultado final deve ser uma imagem PNG única, vertical, contendo todas as cenas na ordem original.",
       "",
       "REGRAS DE CONTEÚDO",
-      "1. Não reescreva, resuma, corrija, traduza novamente nem invente trechos. Preserve literalmente titlePt, titleEn e todos os textos pt/en.",
+      "1. Não reescreva, resuma, corrija, traduza novamente nem invente trechos. Preserve literalmente titlePt, title e todos os textos pt/text.",
       "2. Cada item de paragraphs corresponde a uma cena/quadro da HQ e deve aparecer exatamente na mesma ordem.",
       "3. Mantenha personagens, idade aparente, roupas, características físicas, cenários e objetos visualmente consistentes entre todas as cenas.",
       "4. Represente com clareza a ação, emoção e contexto de cada parágrafo, sem adicionar acontecimentos que contradigam a história.",
@@ -696,15 +778,15 @@ export function InterpretationPanel({
       "8. Cada quadro deve ter espaço suficiente para a ilustração e para os textos bilíngues sem comprometer a legibilidade.",
       "",
       "TEXTOS NA HQ",
-      "9. Inclua em cada cena o texto PT-BR EXATO e, logo abaixo, o texto EN-US EXATO fornecidos no JSON.",
+      `9. Inclua em cada cena o texto PT-BR EXATO e, logo abaixo, o texto ${language} EXATO fornecidos no JSON.`,
       "10. Não altere nenhuma palavra. Preserve acentos, pontuação, apóstrofos, contrações e capitalização exatamente como recebidos.",
-      "11. Diferencie visualmente PT-BR e EN-US. Mantenha o português em cor neutra/escura e destaque o inglês em azul.",
+      `11. Diferencie visualmente PT-BR e ${language}. Mantenha o português em cor neutra/escura e destaque o ${languageName} em azul.`,
       "12. Use tipografia grande, limpa e altamente legível. Não deixe texto cortado, sobreposto, deformado ou fora dos quadros.",
-      "13. Inclua titlePt e titleEn no topo da HQ e informe discretamente o nível de inglês.",
+      "13. Inclua titlePt e title no topo da HQ e informe discretamente o nível CEFR.",
       "",
       "QUALIDADE E VALIDAÇÃO",
       "14. A imagem final deve conter todas as cenas. Não omita, combine ou reordene cenas.",
-      "15. Antes de finalizar, confira cena por cena se o texto PT-BR e EN-US está completo e corresponde literalmente ao JSON.",
+      `15. Antes de finalizar, confira cena por cena se o texto PT-BR e ${language} está completo e corresponde literalmente ao JSON.`,
       "16. Se a quantidade de cenas exigir mais espaço, aumente a altura/composição da imagem em vez de reduzir o texto a um tamanho ilegível.",
       "17. Não inclua marcas d'água, logotipos de terceiros, explicações extras, exercícios ou conteúdo que não esteja na história.",
       "",
@@ -724,11 +806,12 @@ export function InterpretationPanel({
         id: story.id,
         englishLevel,
         titlePt: story.titlePt,
-        titleEn: story.titleEn,
+        title: story.title,
+        language,
         paragraphs: story.paragraphs.map((paragraph, index) => ({
           scene: index + 1,
           pt: paragraph.pt,
-          en: paragraph.en
+          text: paragraph.text
         }))
       },
       output: {
@@ -840,8 +923,8 @@ export function InterpretationPanel({
       if (navigator.canShare?.({ files: [file] })) {
         await navigator.share({
           title: `HQ - ${story?.titlePt ?? "Mental Hashmap"}`,
-          text: story?.titleEn
-            ? `${story.titlePt} — ${story.titleEn}`
+          text: story?.title
+            ? `${story.titlePt} — ${story.title}`
             : story?.titlePt ?? "Mental Hashmap",
           files: [file]
         });
@@ -850,8 +933,8 @@ export function InterpretationPanel({
 
       await navigator.share({
         title: `HQ - ${story?.titlePt ?? "Mental Hashmap"}`,
-        text: story?.titleEn
-          ? `${story.titlePt} — ${story.titleEn}`
+        text: story?.title
+          ? `${story.titlePt} — ${story.title}`
           : story?.titlePt ?? "Mental Hashmap",
         url: absoluteImageUrl
       });
@@ -961,9 +1044,9 @@ export function InterpretationPanel({
 
     const bilingual = [
       story.titlePt,
-      story.titleEn,
+      story.title,
       "",
-      ...paragraphs.flatMap((paragraph) => [paragraph.pt, paragraph.en, ""])
+      ...paragraphs.flatMap((paragraph) => [paragraph.pt, paragraph.text, ""])
     ].join(crlf).trim();
 
     const portuguese = [
@@ -972,19 +1055,19 @@ export function InterpretationPanel({
       ...paragraphs.map((paragraph) => paragraph.pt)
     ].join(crlf).trim();
 
-    const english = [
-      story.titleEn,
+    const target = [
+      story.title,
       "",
-      ...paragraphs.map((paragraph) => paragraph.en)
+      ...paragraphs.map((paragraph) => paragraph.text)
     ].join(crlf).trim();
 
     const plainText = [
-      "PT-BR + EN-US",
+      `PT-BR + ${language}`,
       bilingual,
       "HISTÓRIA COMPLETA - PT-BR",
       portuguese,
-      "HISTÓRIA COMPLETA - EN-US",
-      english
+      `HISTÓRIA COMPLETA - ${language}`,
+      target
     ].join(crlf + crlf);
 
     try {
@@ -1040,7 +1123,7 @@ export function InterpretationPanel({
         (paragraph, index) => `
           <section class="solution-paragraph">
             <p class="pt"><strong>${index + 1}.</strong> ${escapeHtml(paragraph.pt)}</p>
-            <p class="en">${escapeHtml(paragraph.en)}</p>
+            <p class="en">${escapeHtml(paragraph.text)}</p>
           </section>
         `
       )
@@ -1185,7 +1268,7 @@ export function InterpretationPanel({
               </header>
 
               <p class="instructions">
-                Leia a história em português e escreva sua interpretação em inglês
+                Leia a história em português e escreva sua interpretação em ${escapeHtml(languageName)}
                 nos espaços abaixo. A solução está na página 2.
               </p>
 
@@ -1196,10 +1279,10 @@ export function InterpretationPanel({
               <header class="header">
                 <p class="brand">Brazilian English Journey · Mental Hashmap</p>
                 <h1>${escapeHtml(story.titlePt)}</h1>
-                <p class="meta">${escapeHtml(story.titleEn)}</p>
+                <p class="meta">${escapeHtml(story.title)}</p>
               </header>
 
-              <p class="solution-label">Solução · PT-BR + EN-US</p>
+              <p class="solution-label">Solução · PT-BR + ${escapeHtml(language)}</p>
 
               ${solutionParagraphs}
             </section>
@@ -1249,7 +1332,7 @@ export function InterpretationPanel({
           <p className="interpretation-description">
             {authorMode && aiEnabled
               ? "Escolha um nível, a quantidade de intenções e um tema. O aplicativo vai sortear as estruturas e gerar uma história curta para você interpretar antes de revelar o inglês."
-              : "Pesquise histórias da biblioteca por nível e título. Leia e interprete antes de revelar o inglês."}
+              : `Pesquise histórias da biblioteca por nível e título. Leia e interprete antes de revelar o ${languageName}.`}
           </p>
         </div>
 
@@ -1315,14 +1398,14 @@ export function InterpretationPanel({
               setStory(null);
               setStoryCopyFeedback("idle");
               setShowHqImage(false);
-              setShowEnglish(false);
+              setShowTarget(false);
               setError(null);
               setSpeechError(null);
               setSpeaking(false);
               setSpeakingParagraphIndex(null);
 
               if ("speechSynthesis" in window) {
-                window.speechSynthesis.cancel();
+                cancelSpeech();
               }
             }}
           >
@@ -1388,7 +1471,7 @@ export function InterpretationPanel({
             type="search"
             value={searchTitle}
             onChange={(event) => setSearchTitle(event.target.value)}
-            placeholder="Digite parte do título em português ou inglês..."
+            placeholder={`Digite parte do título em português ou ${languageName}...`}
             autoComplete="off"
           />
         </div>
@@ -1444,7 +1527,7 @@ export function InterpretationPanel({
 
             {searchResults.length === 0 ? (
               <p style={{ margin: 0 }}>
-                Nenhuma história encontrada para o nível {searchLevel}
+                Nenhuma história encontrada em {languageName} para o nível {searchLevel}
                 {searchTitle.trim()
                   ? ` com o título "${searchTitle.trim()}".`
                   : "."}
@@ -1460,7 +1543,7 @@ export function InterpretationPanel({
                   <div
                     key={
                       localStory.id ??
-                      `${localStory.titlePt}-${localStory.titleEn}-${index}`
+                      `${localStory.titlePt}-${getStoryTitle(localStory, language)}-${index}`
                     }
                     style={{
                       display: "flex",
@@ -1473,14 +1556,14 @@ export function InterpretationPanel({
                     }}
                   >
                     <div style={{ minWidth: 0 }}>
-                      <strong>{localStory.titlePt}</strong>
+                      <strong lang={language}>{getStoryTitle(localStory, language)}</strong>
                       <p
                         className="english"
                         style={{
                           margin: "0.2rem 0 0"
                         }}
                       >
-                        {localStory.titleEn}
+                        {localStory.titlePt}
                       </p>
                     </div>
 
@@ -1499,6 +1582,8 @@ export function InterpretationPanel({
           </div>
         </div>
       )}
+
+      {languageNotice && <p role="status">{languageNotice}</p>}
 
       {authorMode && error && (
         <div className="status-card error-card">
@@ -1542,13 +1627,9 @@ export function InterpretationPanel({
           <div className="interpretation-story-header">
             <div>
               <p className="eyebrow">História</p>
-              <h2>{story.titlePt}</h2>
+              <h2 lang={language}>{story.title}</h2>
 
-              {showEnglish && (
-                <p className="english interpretation-title-en">
-                  {story.titleEn}
-                </p>
-              )}
+              <p lang="pt-BR" className="interpretation-title-en">{story.titlePt}</p>
             </div>
 
             <div
@@ -1623,9 +1704,9 @@ export function InterpretationPanel({
                 )}
               </button>
 
-              {authorMode && <ConnectedSpeechButton
-                title={`História: ${story.titleEn}`}
-                blocks={story.paragraphs.map((paragraph) => ({ original: paragraph.en, portuguese: paragraph.pt }))}
+              {authorMode && <ConnectedSpeechButton key={language}
+                title={`História: ${story.title}`}
+                blocks={story.paragraphs.map((paragraph) => ({ original: paragraph.text, portuguese: paragraph.pt }))}
                 compact
               />}
 
@@ -1697,30 +1778,30 @@ export function InterpretationPanel({
                 </button>
               )}
 
-              {showEnglish && (
+              {showTarget && (
                 <button
                   type="button"
                   className="secondary-button"
                   onClick={handleSpeakStory}
                   disabled={speaking}
-                  title="Ouvir a história completa em inglês"
+                  title={`Ouvir a história completa em ${languageName}`}
                 >
-                  {speaking ? "🔊 Reproduzindo..." : "🔊 Ouvir inglês"}
+                  {speaking ? "🔊 Reproduzindo..." : `🔊 Ouvir ${languageName}`}
                 </button>
               )}
 
               <button
                 type="button"
                 className={
-                  showEnglish
+                  showTarget
                     ? "secondary-button"
                     : "primary-button"
                 }
-                onClick={handleToggleEnglish}
+                onClick={handleToggleTarget}
               >
-                {showEnglish
-                  ? "Ocultar versão em inglês"
-                  : "Mostrar versão em inglês"}
+                {showTarget
+                  ? `Ocultar versão em ${languageName}`
+                  : `Mostrar versão em ${languageName}`}
               </button>
             </div>
           </div>
@@ -1738,7 +1819,7 @@ export function InterpretationPanel({
                 className="interpretation-paragraph"
                 key={`${index}-${paragraph.pt}`}
               >
-                <p className="interpretation-pt">
+                <p lang="pt-BR" className="interpretation-pt">
                   {renderHighlightedText(
                     paragraph.pt,
                     paragraph.intentions.map(
@@ -1747,17 +1828,17 @@ export function InterpretationPanel({
                   )}
                 </p>
 
-                {!showEnglish && (
+                {!showTarget && (
                   <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "0.4rem" }}>
-                    <ConnectedSpeechButton
-                      title={`${story.titleEn} — Parágrafo ${index + 1}`}
-                      blocks={[{ original: paragraph.en, portuguese: paragraph.pt }]}
+                    <ConnectedSpeechButton key={language}
+                      title={`${story.title} — Parágrafo ${index + 1}`}
+                      blocks={[{ original: paragraph.text, portuguese: paragraph.pt }]}
                       compact
                     />
                   </div>
                 )}
 
-                {showEnglish && (
+                {showTarget && (
                   <div
                     style={{
                       display: "flex",
@@ -1767,13 +1848,14 @@ export function InterpretationPanel({
                     }}
                   >
                     <p
+                      lang={language}
                       className="english interpretation-en"
                       style={{ width: "100%", marginBottom: 0 }}
                     >
                       {renderHighlightedText(
-                        paragraph.en,
+                        paragraph.text,
                         paragraph.intentions.map(
-                          (intention) => intention.enIntent
+                          (intention) => intention.targetIntent
                         )
                       )}
                     </p>
@@ -1788,9 +1870,9 @@ export function InterpretationPanel({
                         width: "100%"
                       }}
                     >
-                      <ConnectedSpeechButton
-                        title={`${story.titleEn} — Parágrafo ${index + 1}`}
-                        blocks={[{ original: paragraph.en, portuguese: paragraph.pt }]}
+                      <ConnectedSpeechButton key={language}
+                        title={`${story.title} — Parágrafo ${index + 1}`}
+                        blocks={[{ original: paragraph.text, portuguese: paragraph.pt }]}
                         compact
                       />
 
@@ -1798,18 +1880,18 @@ export function InterpretationPanel({
                         type="button"
                         className="secondary-button"
                         onClick={() =>
-                          handleSpeakParagraph(paragraph.en, index)
+                          handleSpeakParagraph(paragraph.text, index)
                         }
                         disabled={speakingParagraphIndex === index}
                         title={
                           speakingParagraphIndex === index
                             ? "Reproduzindo este parágrafo"
-                            : "Ouvir este parágrafo em inglês"
+                            : `Ouvir este parágrafo em ${languageName}`
                         }
                         aria-label={
                           speakingParagraphIndex === index
                             ? `Reproduzindo parágrafo ${index + 1}`
-                            : `Ouvir parágrafo ${index + 1} em inglês`
+                            : `Ouvir parágrafo ${index + 1} em ${languageName}`
                         }
                         style={{
                           width: "2.5rem",
@@ -1830,15 +1912,15 @@ export function InterpretationPanel({
                       <button
                         type="button"
                         className="secondary-button"
-                        onClick={() => void handleCopyParagraph(paragraph.en, index)}
+                        onClick={() => void handleCopyParagraph(paragraph.text, index)}
                         title={
                           copiedParagraphIndex === index
-                            ? "Parágrafo em inglês copiado"
+                            ? `Parágrafo em ${languageName} copiado`
                             : copyParagraphErrorIndex === index
                               ? "Falha ao copiar. Tentar novamente"
-                              : "Copiar este parágrafo em inglês"
+                              : `Copiar este parágrafo em ${languageName}`
                         }
-                        aria-label={`Copiar parágrafo ${index + 1} em inglês`}
+                        aria-label={`Copiar parágrafo ${index + 1} em ${languageName}`}
                         style={{
                           width: "2.5rem",
                           minWidth: "2.5rem",
@@ -2398,7 +2480,7 @@ export function InterpretationPanel({
                     className="pill"
                     key={id}
                   >
-                    {id}
+                    {story.paragraphs.flatMap(paragraph => paragraph.intentions).find(item => item.intentionId === id)?.ptIntent ?? "Intenção não disponível neste catálogo"}
                   </span>
                 );
               })}
