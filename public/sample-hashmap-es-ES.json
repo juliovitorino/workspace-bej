@@ -16036,11 +16036,11 @@
         "(?<![A-Za-zÁÉÍÓÚÜÑáéíóúüñ])(?:bastante)(?![A-Za-zÁÉÍÓÚÜÑáéíóúüñ])"
       ],
       "tags": [
-        "pretty",
-        "adjective",
-        "intensity",
-        "conversation",
-        "spoken-english"
+        "bastante",
+        "adjetivo",
+        "intensidad",
+        "conversación",
+        "inglés-hablado"
       ],
       "related": [
         "muito-bem-comparativo-much-a-lot"
@@ -17506,9 +17506,9 @@
     },
     {
       "id": "se-divertir-aproveitar-have-a-great-time",
-      "intention": "Se divertir muito / aproveitar muito",
+      "intention": "Divertirse mucho / disfrutar mucho",
       "pattern": "pasárselo conjugado + muy bien",
-      "description": "Usado para dizer que alguém está se divertindo, aproveitou uma experiência ou para desejar que aproveite uma viagem, festa ou passeio. Em espanhol, pasarlo bien corresponde a se divertir; ¡Que lo pases bien! é um desejo natural antes de uma atividade agradável. O pronome lo faz parte da expressão.",
+      "description": "Se utiliza para decir que alguien se está divirtiendo, ha disfrutado de una experiencia o para desearle que disfrute de un viaje, una fiesta o una salida. En español, pasárselo bien significa divertirse; ¡Que lo pases bien! es un deseo natural antes de una actividad agradable. El pronombre lo forma parte de la expresión.",
       "category": "enjoyment",
       "searchTerms": [
         "pasárselo muy bien",

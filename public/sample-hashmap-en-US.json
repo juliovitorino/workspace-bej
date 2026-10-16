@@ -17618,9 +17618,9 @@
     },
     {
       "id": "se-divertir-aproveitar-have-a-great-time",
-      "intention": "Se divertir muito / aproveitar muito",
+      "intention": "Have a great time / really enjoy yourself",
       "pattern": "subject + have / had + a great time + complement",
-      "description": "Usado para dizer que alguém está se divertindo, aproveitou muito uma experiência ou para desejar que alguém aproveite bastante uma viagem, festa, evento ou passeio. 'Have a great time!' também é muito comum como despedida antes de uma atividade agradável.",
+      "description": "Used to say that someone is having fun or really enjoyed an experience, or to wish someone an enjoyable trip, party, event, or outing. 'Have a great time!' is also a common farewell before an enjoyable activity.",
       "category": "enjoyment",
       "searchTerms": [
         "have a great time",

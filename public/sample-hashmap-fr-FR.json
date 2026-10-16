@@ -16256,8 +16256,8 @@
     {
       "id": "bastante-bem-adjetivo-pretty",
       "intention": "Assez / plutôt + adjectif",
-      "pattern": "bastante + adjectif ; bastante bien pour exprimer une appréciation",
-      "description": "Utilisé pour intensifier ou nuancer un adjectif. En espagnol, 'bastante + adjectif' peut correspondre à 'assez', 'plutôt' ou 'bien' en français : 'bastante difícil' (assez difficile), 'bastante bueno' (plutôt bon). Le degré d'intensité dépend du contexte ; il ne faut pas considérer automatiquement 'bastante' comme l'expression d'une intensité maximale.",
+      "pattern": "« assez bon » / « plutôt sympa » / « assez difficile » / « plutôt cher » / « assez intéressant » / « assez fatigué » / « assez occupée » + contexte ou complément (selon la phrase)",
+      "description": "Employé en anglais courant pour renforcer un adjectif. Placé devant un adjectif, « pretty » correspond souvent à « assez », « plutôt » ou « bien » en français. À ne pas confondre avec « pretty » au sens de « joli ».",
       "category": "intensity",
       "searchTerms": [
         "assez / plutôt + adjectif",
@@ -16283,11 +16283,11 @@
         "(?<![A-Za-zÀ-ÖØ-öø-ÿŒœŸ0-9_])(?:assez\\s+facile)(?![A-Za-zÀ-ÖØ-öø-ÿŒœŸ0-9_])"
       ],
       "tags": [
-        "pretty",
-        "adjective",
-        "intensity",
+        "assez",
+        "adjectif",
+        "intensité",
         "conversation",
-        "spoken-english"
+        "anglais parlé"
       ],
       "related": [
         "muito-bem-comparativo-much-a-lot"
@@ -17781,9 +17781,9 @@
     },
     {
       "id": "se-divertir-aproveitar-have-a-great-time",
-      "intention": "Se divertir muito / aproveitar muito",
+      "intention": "Bien s’amuser / profiter pleinement",
       "pattern": "s’amuser conjugué + beaucoup ou bien",
-      "description": "Expressa diversão ou desejo de que alguém aproveite uma festa, viagem ou passeio. Em francês, bien s’amuser é pronominal: nous nous sommes bien amusés. Amuse-toi bien ! é uma despedida natural antes de uma atividade agradável.",
+      "description": "S’emploie pour dire que quelqu’un s’amuse ou a beaucoup apprécié une expérience, ou pour lui souhaiter de bien profiter d’un voyage, d’une fête, d’un événement ou d’une sortie. « Amuse-toi bien ! » est une formule courante pour prendre congé avant une activité agréable.",
       "category": "enjoyment",
       "searchTerms": [
         "bien s’amuser",
@@ -17801,10 +17801,10 @@
         "(?<![A-Za-zÀ-ÖØ-öø-ÿŒœŸ0-9_])(?:Amuse-toi\\s+bien)(?![A-Za-zÀ-ÖØ-öø-ÿŒœŸ0-9_])"
       ],
       "tags": [
-        "fun",
-        "enjoyment",
+        "divertissement",
+        "plaisir",
         "social",
-        "spoken-english"
+        "anglais parlé"
       ],
       "related": [],
       "allowLanguageChunkPractice": true,
