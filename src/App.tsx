@@ -26,11 +26,13 @@ import { fetchHashmap, loadHashmap } from "./services/hashmapService";
 import type { HashmapData, MentalIntention } from "./types/hashmap";
 import { searchIntentions } from "./utils/searchIntentions";
 import { isAuthorMode } from "./utils/authorMode";
+import { useAppTheme } from "./hooks/useAppTheme";
 
 type TrainingMode = "basic" | "advanced" | "review" | null;
 
 function App() {
   const { t } = useTranslation();
+  const { theme, changeTheme } = useAppTheme();
   const [language, setLanguage] = useState<StudentLanguage>(getStudentLanguage);
   const [sourceLanguage, setSourceLanguage] = useState<SourceLanguage>(getSourceLanguage);
   useLayoutEffect(() => { syncSourceLanguage(sourceLanguage); }, [sourceLanguage]);
@@ -289,6 +291,8 @@ function App() {
   return (
     <main className="app-layout">
       <Sidebar
+        theme={theme}
+        onThemeChange={changeTheme}
         onOpenLanguages={() => setSettingsDialog("languages")}
         onOpenAbout={() => setSettingsDialog("about")}
         currentView={currentView}

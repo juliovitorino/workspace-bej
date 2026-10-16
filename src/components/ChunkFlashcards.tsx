@@ -380,8 +380,8 @@ export function ChunkFlashcards({
               style={{
                 position: "fixed", bottom: "1.25rem", right: "1.25rem",
                 zIndex: 1000, margin: 0, padding: "0.65rem 1rem",
-                borderRadius: "0.65rem", background: "#1e293b",
-                color: "#ffffff", fontWeight: 600,
+                borderRadius: "0.65rem", background: "var(--text)",
+                color: "var(--on-accent)", fontWeight: 600,
                 boxShadow: "0 4px 14px rgba(0,0,0,0.22)"
               }}
             >
@@ -485,9 +485,9 @@ export function ChunkFlashcards({
             margin: "0.75rem 0 1rem",
             padding: "1rem 1.25rem",
             borderRadius: "12px",
-            backgroundColor: "#7c2d12",
-            color: "#ffffff",
-            border: "2px solid #fbbf24",
+            backgroundColor: "var(--warning)",
+            color: "var(--on-accent)",
+            border: "2px solid var(--warning)",
             textAlign: "center",
             boxShadow: "0 4px 12px rgba(0, 0, 0, 0.18)"
           }}

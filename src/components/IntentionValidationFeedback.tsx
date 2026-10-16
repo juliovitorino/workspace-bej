@@ -18,15 +18,15 @@ export function IntentionValidationFeedback({
   const feedback = {
     found: {
       message: "✓ " + t("common.communicativeIntentionIdentified"),
-      color: "#15803d"
+      color: "var(--good)"
     },
     missing: {
       message: "⚠ " + t("common.youHavenTUsedTheCommunicativeIntentionYet"),
-      color: "#b45309"
+      color: "var(--warning)"
     },
     unavailable: {
       message: t("common.automaticValidationIsUnavailableForThisIntention"),
-      color: "#64748b"
+      color: "var(--muted)"
     }
   }[result.status];
 

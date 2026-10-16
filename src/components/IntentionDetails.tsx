@@ -527,14 +527,14 @@ Mandatório:
     const style = doc.createElement("style");
     style.textContent = `
       @page { size: A4 portrait; margin: 15mm; }
-      body { font-family: Arial, Helvetica, sans-serif; color: #172033; margin: 0; }
+      body { font-family: Arial, Helvetica, sans-serif; color: var(--text); margin: 0; }
       h1 { font-size: 20pt; margin: 0 0 5mm; }
-      .subtitle { color: #475569; font-size: 12pt; margin-bottom: 10mm; }
+      .subtitle { color: var(--text-secondary); font-size: 12pt; margin-bottom: 10mm; }
       .example-print { break-inside: avoid; page-break-inside: avoid;
-        padding: 4mm 0; border-bottom: 1px solid #e2e8f0; }
-      .number { font-size: 9pt; color: #64748b; margin-bottom: 2mm; }
+        padding: 4mm 0; border-bottom: 1px solid var(--border); }
+      .number { font-size: 9pt; color: var(--muted); margin-bottom: 2mm; }
       .pt, .en { font-size: 12pt; line-height: 1.5; margin: 2mm 0; }
-      .en { color: #1d4ed8; }
+      .en { color: var(--accent-hover); }
       strong { font-weight: 700; }
     `;
     doc.head.appendChild(style);
@@ -666,7 +666,7 @@ Mandatório:
               min-height: 0 !important;
               height: auto !important;
               overflow: visible !important;
-              background: #ffffff !important;
+              background: var(--surface) !important;
             }
 
             body {
@@ -686,7 +686,7 @@ Mandatório:
               border: 0 !important;
               border-radius: 0 !important;
               box-shadow: none !important;
-              background: #ffffff !important;
+              background: var(--surface) !important;
             }
 
             .example {
@@ -771,7 +771,7 @@ Mandatório:
         max-width: 210mm !important;
         max-height: 297mm !important;
         overflow: hidden !important;
-        background: #ffffff !important;
+        background: var(--surface) !important;
       }
 
       body {
@@ -996,10 +996,10 @@ Mandatório:
         </div>
 
         {copySectionError && (
-          <p role="alert" style={{ color: "#b91c1c" }}>{copySectionError}</p>
+          <p role="alert" style={{ color: "var(--bad)" }}>{copySectionError}</p>
         )}
         {copyIntentionIdError && (
-          <p role="alert" style={{ color: "#b91c1c" }}>{copyIntentionIdError}</p>
+          <p role="alert" style={{ color: "var(--bad)" }}>{copyIntentionIdError}</p>
         )}
 
         {item.pattern && (

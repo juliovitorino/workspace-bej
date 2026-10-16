@@ -184,9 +184,9 @@ const styles: Record<string, CSSProperties> = {
     margin: "0 auto",
     boxSizing: "border-box",
     padding: "clamp(1rem, 4vw, 1.75rem)",
-    border: "1px solid #d8dde6",
+    border: "1px solid var(--border-strong)",
     borderRadius: "18px",
-    background: "#ffffff",
+    background: "var(--surface)",
     boxShadow: "0 8px 28px rgba(15, 23, 42, 0.08)"
   },
   header: {
@@ -200,18 +200,18 @@ const styles: Record<string, CSSProperties> = {
     fontWeight: 700,
     letterSpacing: "0.04em",
     textTransform: "uppercase",
-    color: "#64748b"
+    color: "var(--muted)"
   },
   title: {
     margin: 0,
     fontSize: "clamp(1.65rem, 7vw, 2.15rem)",
     lineHeight: 1.15,
-    color: "#0f172a"
+    color: "var(--text)"
   },
   subtitle: {
     margin: "0.6rem 0 0",
     fontSize: "0.98rem",
-    color: "#64748b"
+    color: "var(--muted)"
   },
   group: {
     marginBottom: "2rem"
@@ -219,7 +219,7 @@ const styles: Record<string, CSSProperties> = {
   groupTitle: {
     margin: "0 0 0.75rem",
     fontSize: "1rem",
-    color: "#334155"
+    color: "var(--text-secondary)"
   },
   segmentedControl: {
     display: "grid",
@@ -229,19 +229,19 @@ const styles: Record<string, CSSProperties> = {
   segmentButton: {
     minHeight: "3rem",
     padding: "0.75rem",
-    border: "1px solid #cbd5e1",
+    border: "1px solid var(--border-strong)",
     borderRadius: "12px",
-    background: "#f8fafc",
-    color: "#334155",
+    background: "var(--surface-soft)",
+    color: "var(--text-secondary)",
     fontSize: "1rem",
     fontWeight: 700,
     cursor: "pointer"
   },
   segmentButtonSelected: {
-    borderColor: "#2563eb",
-    background: "#eff6ff",
-    color: "#1d4ed8",
-    boxShadow: "inset 0 0 0 1px #2563eb"
+    borderColor: "var(--accent)",
+    background: "var(--accent-soft)",
+    color: "var(--accent-hover)",
+    boxShadow: "inset 0 0 0 1px var(--accent)"
   },
   timeControl: {
     display: "grid",
@@ -254,10 +254,10 @@ const styles: Record<string, CSSProperties> = {
   roundButton: {
     width: "3.25rem",
     height: "3.25rem",
-    border: "1px solid #cbd5e1",
+    border: "1px solid var(--border-strong)",
     borderRadius: "999px",
-    background: "#f8fafc",
-    color: "#0f172a",
+    background: "var(--surface-soft)",
+    color: "var(--text)",
     fontSize: "1.65rem",
     fontWeight: 700,
     cursor: "pointer"
@@ -271,11 +271,11 @@ const styles: Record<string, CSSProperties> = {
   },
   secondsNumber: {
     fontSize: "2rem",
-    color: "#0f172a"
+    color: "var(--text)"
   },
   secondsLabel: {
     fontSize: "1rem",
-    color: "#64748b"
+    color: "var(--muted)"
   },
   footer: {
     display: "grid",
@@ -283,15 +283,15 @@ const styles: Record<string, CSSProperties> = {
     alignItems: "center",
     gap: "0.75rem",
     paddingTop: "1rem",
-    borderTop: "1px solid #e2e8f0"
+    borderTop: "1px solid var(--border)"
   },
   primaryButton: {
     minHeight: "3.1rem",
     padding: "0.8rem 1rem",
     border: 0,
     borderRadius: "12px",
-    background: "#2563eb",
-    color: "#ffffff",
+    background: "var(--accent)",
+    color: "var(--on-accent)",
     fontSize: "1rem",
     fontWeight: 800,
     cursor: "pointer"
@@ -299,10 +299,10 @@ const styles: Record<string, CSSProperties> = {
   secondaryButton: {
     minHeight: "3.1rem",
     padding: "0.8rem 1rem",
-    border: "1px solid #cbd5e1",
+    border: "1px solid var(--border-strong)",
     borderRadius: "12px",
-    background: "#ffffff",
-    color: "#334155",
+    background: "var(--surface)",
+    color: "var(--text-secondary)",
     fontSize: "1rem",
     fontWeight: 700,
     cursor: "pointer"

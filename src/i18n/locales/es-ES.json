@@ -810,5 +810,11 @@
     "voiceSpeed": "Velocidad de la voz",
     "waitingForLevelSelection": "Esperando la selección de nivel",
     "waitingForTheNextChunk": "Esperando el siguiente chunk"
+  },
+  "theme": {
+    "label": "Tema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "auto": "Automático"
   }
 }

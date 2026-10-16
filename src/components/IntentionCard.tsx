@@ -135,10 +135,10 @@ export function IntentionCard({ item, sourceLanguage, language, onSelect }: Inte
                   height: "2.25rem",
                   flexShrink: 0,
                   padding: 0,
-                  border: "1px solid #cbd5e1",
+                  border: "1px solid var(--border-strong)",
                   borderRadius: "0.65rem",
-                  background: "#f8fafc",
-                  color: "#1e293b",
+                  background: "var(--surface-soft)",
+                  color: "var(--text)",
                   cursor: "pointer",
                   fontSize: "1.1rem",
                   display: "inline-flex",
@@ -180,7 +180,7 @@ export function IntentionCard({ item, sourceLanguage, language, onSelect }: Inte
       </div>
     </div>
     {authorMode && copyError && (
-      <p role="alert" style={{ color: "#b91c1c", margin: "0.25rem 0" }}>
+      <p role="alert" style={{ color: "var(--bad)", margin: "0.25rem 0" }}>
         
         {t("hashmap.couldNotCopyTheIdTryAgain")}
       </p>

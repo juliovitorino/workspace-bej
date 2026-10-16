@@ -18,7 +18,21 @@ interface ConnectedSpeechButtonProps {
 }
 
 const POPUP_STYLES = `
-  :root { font-family: Arial, Helvetica, sans-serif; color: #152238; background: #f5f7fb; }
+  :root {
+    --page: #f5f7fb; --surface: #fff; --surface-soft: #eff6ff;
+    --text: #152238; --muted: #64748b; --border: #dbe3ee;
+    --border-strong: #cbd5e1; --accent: #2563eb;
+    --accent-hover: #1d4ed8; --on-accent: #fff; --accent-border: #93c5fd;
+    --shadow: #1522380a; color-scheme: light;
+  }
+  :root[data-theme="dark"] {
+    --page: #0b1220; --surface: #172337; --surface-soft: #243657;
+    --text: #eef3ff; --muted: #a8b8cf; --border: #33445e;
+    --border-strong: #526680; --accent: #9bb4ff;
+    --accent-hover: #bfd0ff; --on-accent: #101c32;
+    --accent-border: #5e78ac; --shadow: #00000040; color-scheme: dark;
+  }
+  :root { font-family: Arial, Helvetica, sans-serif; color: var(--text); background: var(--page); }
   * { box-sizing: border-box; }
   body { margin: 0; }
   button, input { font: inherit; }
@@ -26,28 +40,28 @@ const POPUP_STYLES = `
   .studio-shell { max-width: 1500px; margin: auto; padding: 22px 30px 70px; }
   .studio-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
   .studio-head h1 { font-size: 25px; margin: 4px 0; }
-  .studio-sub { color: #64748b; font-size: 13px; margin: 0; }
+  .studio-sub { color: var(--muted); font-size: 13px; margin: 0; }
   .studio-actions, .studio-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; }
-  .studio-toolbar { position: sticky; top: 0; z-index: 10; background: #fff; border: 1px solid #dbe3ee; border-radius: 12px; padding: 12px; margin: 18px 0; box-shadow: 0 3px 12px #1522380a; }
-  .studio-button { border: 1px solid #cbd5e1; background: white; color: #152238; border-radius: 8px; padding: 8px 12px; min-height: 36px; }
-  .studio-button:hover { background: #eff6ff; }
-  .studio-button.primary { background: #2563eb; color: white; border-color: #2563eb; }
-  .studio-button.primary:hover { background: #1d4ed8; }
-  .studio-divider { height: 27px; border-left: 1px solid #cbd5e1; margin: 0 3px; }
+  .studio-toolbar { position: sticky; top: 0; z-index: 10; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px; margin: 18px 0; box-shadow: 0 3px 12px var(--shadow); }
+  .studio-button { border: 1px solid var(--border-strong); background: white; color: var(--text); border-radius: 8px; padding: 8px 12px; min-height: 36px; }
+  .studio-button:hover { background: var(--accent-soft); }
+  .studio-button.primary { background: var(--accent); color: white; border-color: var(--accent); }
+  .studio-button.primary:hover { background: var(--accent-hover); }
+  .studio-divider { height: 27px; border-left: 1px solid var(--text-secondary); margin: 0 3px; }
   .studio-size { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; }
-  .studio-size input { width: 66px; padding: 6px; border: 1px solid #cbd5e1; border-radius: 7px; }
+  .studio-size input { width: 66px; padding: 6px; border: 1px solid var(--border-strong); border-radius: 7px; }
   .studio-color { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; }
   .studio-color input { width: 33px; height: 31px; padding: 2px; cursor: pointer; }
-  .studio-help { color: #64748b; font-size: 12px; margin: 0 0 18px; }
+  .studio-help { color: var(--muted); font-size: 12px; margin: 0 0 18px; }
   .studio-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; break-inside: avoid; }
-  .studio-card { background: #fff; border: 1px solid #dbe3ee; border-radius: 12px; padding: 18px; min-width: 0; }
-  .studio-card h2 { color: #64748b; font-size: 12px; letter-spacing: .07em; text-transform: uppercase; margin: 0 0 12px; }
+  .studio-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px; min-width: 0; }
+  .studio-card h2 { color: var(--muted); font-size: 12px; letter-spacing: .07em; text-transform: uppercase; margin: 0 0 12px; }
   .studio-original, .studio-editor { line-height: 1.55; overflow-wrap: anywhere; white-space: pre-wrap; min-height: 75px; }
-  .studio-editor { border: 1px dashed #93c5fd; border-radius: 8px; padding: 10px; outline-offset: 3px; }
-  .studio-editor:focus { outline: 2px solid #2563eb; }
-  .studio-pt { font-size: 12px; color: #64748b; margin: 0 0 12px; }
-  .studio-status { font-size: 13px; color: #1d4ed8; min-height: 20px; }
-  @media print { body { background: white; } .studio-shell { padding: 0; max-width: none; } .studio-actions, .studio-toolbar, .studio-help, .studio-status { display: none !important; } .studio-pair { break-inside: avoid; } .studio-card { border-color: #ddd; } .studio-editor { border: none; padding: 0; } @page { size: A4; margin: 13mm; } }
+  .studio-editor { border: 1px dashed var(--accent-border); border-radius: 8px; padding: 10px; outline-offset: 3px; }
+  .studio-editor:focus { outline: 2px solid var(--accent); }
+  .studio-pt { font-size: 12px; color: var(--muted); margin: 0 0 12px; }
+  .studio-status { font-size: 13px; color: var(--accent-hover); min-height: 20px; }
+  @media print { :root, :root[data-theme="dark"] { --page: white; --surface: white; --text: #152238; --muted: #64748b; --border: #ddd; color-scheme: light; } body { background: white; } .studio-shell { padding: 0; max-width: none; } .studio-actions, .studio-toolbar, .studio-help, .studio-status { display: none !important; } .studio-pair { break-inside: avoid; } .studio-card { border-color: #ddd; } .studio-editor { border: none; padding: 0; } @page { size: A4; margin: 13mm; } }
 `;
 
 function StudioWindow({ popup, title, blocks, onClose }: {
@@ -243,7 +257,14 @@ export function ConnectedSpeechButton({ title, blocks, label = "Connected Speech
     if (!popup) return;
     const handleClose = () => setPopup(null);
     popup.addEventListener("beforeunload", handleClose);
+    const observer = new MutationObserver(() => {
+      if (popup.closed) return;
+      popup.document.documentElement.dataset.theme = document.documentElement.dataset.theme ?? "light";
+      popup.document.documentElement.style.colorScheme = document.documentElement.style.colorScheme;
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme", "style"] });
     return () => {
+      observer.disconnect();
       popup.removeEventListener("beforeunload", handleClose);
       if (!popup.closed) popup.close();
     };
@@ -257,6 +278,10 @@ export function ConnectedSpeechButton({ title, blocks, label = "Connected Speech
     const newWindow = window.open("", "_blank");
     if (!newWindow) { setError(t("connectedSpeech.yourBrowserBlockedTheNewTabAllowPopUpsFor")); return; }
     newWindow.document.title = `Connected Speech Studio — ${title}`;
+    // The studio opens in a separate document: mirror the current appearance.
+    newWindow.document.documentElement.dataset.theme = document.documentElement.dataset.theme ?? "light";
+    newWindow.document.documentElement.style.colorScheme = document.documentElement.style.colorScheme;
+
     const style = newWindow.document.createElement("style");
     style.textContent = POPUP_STYLES;
     newWindow.document.head.appendChild(style);
@@ -271,7 +296,7 @@ export function ConnectedSpeechButton({ title, blocks, label = "Connected Speech
       style={compact ? { width: "2.5rem", minWidth: "2.5rem", height: "2.5rem", minHeight: "2.5rem", padding: 0, borderRadius: "999px", display: "inline-flex", alignItems: "center", justifyContent: "center" } : undefined}>
       <span aria-hidden="true">🎧</span>{!compact && <> {label} ↗</>}
     </button>
-    {error && <span role="alert" style={{ color: "#b91c1c", fontSize: "0.8rem" }}>{error}</span>}
+    {error && <span role="alert" style={{ color: "var(--bad)", fontSize: "0.8rem" }}>{error}</span>}
     {popup && !popup.closed && <StudioWindow popup={popup} title={title} blocks={blocks} onClose={() => setPopup(null)} />}
   </>;
 }

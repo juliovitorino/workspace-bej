@@ -201,22 +201,22 @@ function renderIntentionFeedback(validation: ReturnType<typeof validateIntention
         boxShadow: "0 2px 8px rgba(15, 23, 42, 0.06)",
         color:
           validation.status === "found"
-            ? "#166534"
+            ? "var(--good)"
             : validation.status === "missing"
-              ? "#92400e"
-              : "#475569",
+              ? "var(--warning)"
+              : "var(--text-secondary)",
         backgroundColor:
           validation.status === "found"
-            ? "#f0fdf4"
+            ? "var(--good-soft)"
             : validation.status === "missing"
-              ? "#fffbeb"
-              : "#f1f5f9",
+              ? "var(--warning-soft)"
+              : "var(--surface-soft)",
         border:
           validation.status === "found"
-            ? "1px solid #bbf7d0"
+            ? "1px solid var(--good-border)"
             : validation.status === "missing"
-              ? "1px solid #fde68a"
-              : "1px solid #cbd5e1"
+              ? "1px solid var(--warning-border)"
+              : "1px solid var(--text-secondary)"
       }}
     >
       {validation.status === "found"
@@ -1276,7 +1276,7 @@ export function AdvancedTraining({
                       flexShrink: 0,
                       color:
                         dictating && dictationTarget === "sentenceOne"
-                          ? "#dc2626"
+                          ? "var(--bad)"
                           : undefined,
                       boxShadow:
                         dictating && dictationTarget === "sentenceOne"
@@ -1318,7 +1318,7 @@ export function AdvancedTraining({
                 }}
               />
               {draftCopyStatus.sentenceOne !== "idle" && (
-                <p role="status" aria-live="polite" style={{ margin: "0.35rem 0 0", fontSize: "0.85rem", color: draftCopyStatus.sentenceOne === "copied" ? "#15803d" : "#b91c1c" }}>
+                <p role="status" aria-live="polite" style={{ margin: "0.35rem 0 0", fontSize: "0.85rem", color: draftCopyStatus.sentenceOne === "copied" ? "var(--good)" : "var(--bad)" }}>
                   {draftCopyStatus.sentenceOne === "copied" ? t("advancedTraining.sentence1Copied") : t("advancedTraining.couldNotCopySentence1")}
                 </p>
               )}
@@ -1455,7 +1455,7 @@ export function AdvancedTraining({
                       flexShrink: 0,
                       color:
                         dictating && dictationTarget === "sentenceTwo"
-                          ? "#dc2626"
+                          ? "var(--bad)"
                           : undefined,
                       boxShadow:
                         dictating && dictationTarget === "sentenceTwo"
@@ -1497,7 +1497,7 @@ export function AdvancedTraining({
                 }}
               />
               {draftCopyStatus.sentenceTwo !== "idle" && (
-                <p role="status" aria-live="polite" style={{ margin: "0.35rem 0 0", fontSize: "0.85rem", color: draftCopyStatus.sentenceTwo === "copied" ? "#15803d" : "#b91c1c" }}>
+                <p role="status" aria-live="polite" style={{ margin: "0.35rem 0 0", fontSize: "0.85rem", color: draftCopyStatus.sentenceTwo === "copied" ? "var(--good)" : "var(--bad)" }}>
                   {draftCopyStatus.sentenceTwo === "copied" ? t("advancedTraining.sentence2Copied") : t("advancedTraining.couldNotCopySentence2")}
                 </p>
               )}
@@ -1577,7 +1577,7 @@ export function AdvancedTraining({
                   alignItems: "center",
                   justifyContent: "center",
                   flexShrink: 0,
-                  color: dictating && dictationTarget === "combined" ? "#dc2626" : undefined,
+                  color: dictating && dictationTarget === "combined" ? "var(--bad)" : undefined,
                   boxShadow: dictating && dictationTarget === "combined"
                     ? "0 0 0 2px rgba(220, 38, 38, 0.18)"
                     : undefined
@@ -1757,7 +1757,7 @@ export function AdvancedTraining({
                 role="alert"
                 style={{
                   margin: "0.45rem 0 0",
-                  color: "#b91c1c",
+                  color: "var(--bad)",
                   fontSize: "0.9rem"
                 }}
               >
@@ -1973,7 +1973,7 @@ export function AdvancedTraining({
                   >
                     {evaluationCopyStatus?.target === "corrected" &&
                     evaluationCopyStatus.status === "copied" ? (
-                      <span aria-hidden="true" style={{ color: "#15803d" }}>✓</span>
+                      <span aria-hidden="true" style={{ color: "var(--good)" }}>✓</span>
                     ) : (
                       <svg
                         aria-hidden="true"
@@ -2112,7 +2112,7 @@ export function AdvancedTraining({
                   >
                     {evaluationCopyStatus?.target === "better" &&
                     evaluationCopyStatus.status === "copied" ? (
-                      <span aria-hidden="true" style={{ color: "#15803d" }}>✓</span>
+                      <span aria-hidden="true" style={{ color: "var(--good)" }}>✓</span>
                     ) : (
                       <svg
                         aria-hidden="true"
@@ -2205,7 +2205,7 @@ export function AdvancedTraining({
             padding: 0 !important;
             margin: 0 !important;
             background: white !important;
-            color: #172033 !important;
+            color: var(--text) !important;
             font: 9.5pt/1.27 Arial, Helvetica, sans-serif !important;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
@@ -2215,12 +2215,12 @@ export function AdvancedTraining({
           .advanced-training-print-sheet h2,
           .advanced-training-print-sheet p { margin: 0; }
           .advanced-training-print-sheet .worksheet-top {
-            border-bottom: 2px solid #334ad9;
+            border-bottom: 2px solid var(--accent);
             padding-bottom: 2.5mm;
             margin-bottom: 3mm;
           }
           .advanced-training-print-sheet .worksheet-eyebrow {
-            color: #334ad9;
+            color: var(--accent);
             font-size: 8pt;
             letter-spacing: .7px;
             font-weight: 700;
@@ -2233,7 +2233,7 @@ export function AdvancedTraining({
             margin-bottom: 1mm;
           }
           .advanced-training-print-sheet .worksheet-english {
-            color: #334ad9;
+            color: var(--accent);
             font-size: 12pt;
             font-weight: 700;
           }
@@ -2247,20 +2247,20 @@ export function AdvancedTraining({
             margin-bottom: 1.5mm;
           }
           .advanced-training-print-sheet .worksheet-example {
-            background: #f4f6fa !important;
+            background: var(--surface-soft) !important;
             padding: 2mm 3mm;
             border-radius: 2mm;
           }
           .advanced-training-print-sheet .worksheet-example p + p { margin-top: 1mm; }
           .advanced-training-print-sheet .worksheet-example-pt .intention-highlight {
-            color: #b84d00 !important;
-            background: #ffe8c9 !important;
+            color: var(--warning) !important;
+            background: var(--warning-soft) !important;
             font-weight: 700;
           }
-          .advanced-training-print-sheet .worksheet-example-en { color: #2445c6 !important; }
+          .advanced-training-print-sheet .worksheet-example-en { color: var(--accent-hover) !important; }
           .advanced-training-print-sheet .worksheet-example-en .intention-highlight {
-            color: #1438c0 !important;
-            background: #dce7ff !important;
+            color: var(--accent-hover) !important;
+            background: var(--accent-soft) !important;
             font-weight: 700;
           }
           .advanced-training-print-sheet .worksheet-pattern {
@@ -2275,19 +2275,19 @@ export function AdvancedTraining({
             break-inside: avoid;
           }
           .advanced-training-print-sheet .worksheet-vocab-card {
-            border: 1px solid #ccd5e4;
+            border: 1px solid var(--border-strong);
             border-radius: 2mm;
             padding: 2mm;
           }
           .advanced-training-print-sheet .worksheet-vocab-label {
-            color: #334ad9;
+            color: var(--accent);
             font-size: 8pt;
             font-weight: 700;
             letter-spacing: .5px;
             margin-bottom: 1mm;
           }
           .advanced-training-print-sheet .worksheet-vocab-item + .worksheet-vocab-item {
-            border-top: 1px solid #e0e5ef;
+            border-top: 1px solid var(--border);
             margin-top: 2mm;
             padding-top: 2mm;
           }
@@ -2297,7 +2297,7 @@ export function AdvancedTraining({
           }
           .advanced-training-print-sheet .worksheet-vocab-meaning {
             font-size: 8pt;
-            color: #536076;
+            color: var(--muted);
             overflow-wrap: anywhere;
             margin: .5mm 0 1mm !important;
           }
@@ -2315,18 +2315,18 @@ export function AdvancedTraining({
             gap: 2mm;
           }
           .advanced-training-print-sheet .worksheet-connector {
-            border: 1px solid #ccd5e4;
+            border: 1px solid var(--border-strong);
             border-radius: 2mm;
             padding: 2mm;
             min-width: 0;
           }
           .advanced-training-print-sheet .worksheet-connector strong {
-            color: #2445c6;
+            color: var(--accent-hover);
             font-size: 9pt;
             overflow-wrap: anywhere;
           }
           .advanced-training-print-sheet .worksheet-connector p {
-            color: #536076;
+            color: var(--muted);
             font-size: 8pt;
             overflow-wrap: anywhere;
             margin-top: 1mm;
@@ -2337,7 +2337,7 @@ export function AdvancedTraining({
             margin-bottom: 1mm;
           }
           .advanced-training-print-sheet .worksheet-writing-instruction {
-            color: #536076;
+            color: var(--muted);
             font-size: 8pt;
             margin-bottom: 1mm;
           }
@@ -2347,7 +2347,7 @@ export function AdvancedTraining({
           }
           .advanced-training-print-sheet .worksheet-writing-line {
             height: 8mm;
-            border-bottom: 1px solid #b5c0cf;
+            border-bottom: 1px solid var(--border-strong);
           }
         }
       `}</style>
