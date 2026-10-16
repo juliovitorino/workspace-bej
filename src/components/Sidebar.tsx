@@ -1,5 +1,7 @@
 export type AppView = "hashmap" | "exercises" | "speaking-game" | "chunk-flashcards" | "interpretation" | "shadowing";
 interface SidebarProps {
+  onOpenLanguages: () => void;
+  onOpenAbout: () => void;
   currentView: AppView;
   onViewChange: (view: AppView) => void;
 }
@@ -36,7 +38,9 @@ const menuItems: Array<{
 
 export function Sidebar({
   currentView,
-  onViewChange
+  onViewChange,
+  onOpenLanguages,
+  onOpenAbout
 }: SidebarProps) {
   return (
     <aside className="sidebar">
@@ -67,6 +71,12 @@ export function Sidebar({
             </button>
           );
         })}
+        <button type="button" className="sidebar-menu-item" aria-haspopup="dialog" onClick={onOpenLanguages}>
+          <span aria-hidden="true">🌐</span> Idiomas
+        </button>
+        <button type="button" className="sidebar-menu-item" aria-haspopup="dialog" onClick={onOpenAbout}>
+          <span aria-hidden="true">ⓘ</span> Sobre o app
+        </button>
       </nav>
     </aside>
   );

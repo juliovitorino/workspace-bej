@@ -2277,3 +2277,42 @@ button {
   font-size: 0.75rem;
   line-height: 1.2;
 }
+
+/* Navigation settings */
+.language-pair-indicator {
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding: 8px 12px;
+  border: 1px solid #dce4f0;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 1.1rem;
+}
+.app-settings-dialog {
+  width: min(520px, calc(100% - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 24px;
+  overflow-y: auto;
+  border: 1px solid #dce4f0;
+  border-radius: 20px;
+  background: #fff;
+  color: #172033;
+  box-shadow: 0 24px 64px #11182733;
+}
+.app-settings-dialog::backdrop { background: #11182799; }
+.settings-dialog-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+.settings-dialog-heading h2 { margin: 0; font-size: 1.4rem; }
+.settings-dialog-heading button { min-height: 44px; }
+.settings-language-fields { display: grid; gap: 20px; }
+.settings-language-fields label { display: grid; gap: 8px; min-width: 0; font-weight: 600; }
+.settings-language-fields select { width: 100%; min-width: 0; min-height: 48px; padding: 10px; border: 1px solid #98a2b3; border-radius: 8px; background: #fff; color: #172033; }
+.settings-dialog-help { color: #667085; line-height: 1.5; }
+.settings-app-metadata { display: grid; gap: 8px; overflow-wrap: anywhere; }
+.settings-app-metadata dt { font-weight: 700; }
+.settings-app-metadata dd { margin: 0 0 12px; }
+.sidebar-menu-item:focus-visible, .app-settings-dialog :focus-visible { outline: 3px solid #6387ff; outline-offset: 3px; }
+@media (max-width: 480px) {
+  .app-settings-dialog { padding: 20px 16px; }
+  .settings-dialog-heading { gap: 8px; }
+}

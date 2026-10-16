@@ -1,6 +1,7 @@
 import { getSourceLanguage, getStudentLanguage, SOURCE_LANGUAGE_KEY, STUDENT_LANGUAGE_KEY, type SourceLanguage, type StudentLanguage } from "./config/languages";
 import { useEffect, useMemo, useRef, useState } from "react";
 import "./App.css";
+import { AppSettingsDialog } from "./components/AppSettingsDialog";
 import { Header } from "./components/Header";
 import { SearchPanel, type ChunkFilter, type HqImageFilter, type YoutubeFilter } from "./components/SearchPanel";
 import { Sidebar, type AppView } from "./components/Sidebar";
@@ -24,6 +25,7 @@ type TrainingMode = "basic" | "advanced" | "review" | null;
 function App() {
   const [language, setLanguage] = useState<StudentLanguage>(getStudentLanguage);
   const [sourceLanguage, setSourceLanguage] = useState<SourceLanguage>(getSourceLanguage);
+  const [settingsDialog, setSettingsDialog] = useState<"languages" | "about" | null>(null);
   const [walkingActive, setWalkingActive] = useState(false);
   const requestVersion = useRef(0);
   const [data, setData] = useState<HashmapData | null>(null);
@@ -248,6 +250,8 @@ function App() {
   return (
     <main className="app-layout">
       <Sidebar
+        onOpenLanguages={() => setSettingsDialog("languages")}
+        onOpenAbout={() => setSettingsDialog("about")}
         currentView={currentView}
         onViewChange={view => {
           if (view === "shadowing") {
@@ -262,7 +266,18 @@ function App() {
       <div className="app-content">
         <div className="page-shell">
           <div className="container">
-            <Header language={language} sourceLanguage={sourceLanguage} languageLocked={walkingActive} onLanguageChange={changeLanguage} onSourceLanguageChange={changeSourceLanguage} metadata={data?.metadata} source={data ? source : undefined} />
+            <Header language={language} sourceLanguage={sourceLanguage} />
+            {settingsDialog && <AppSettingsDialog
+              kind={settingsDialog}
+              language={language}
+              sourceLanguage={sourceLanguage}
+              languageLocked={walkingActive}
+              onLanguageChange={changeLanguage}
+              onSourceLanguageChange={changeSourceLanguage}
+              metadata={data?.metadata}
+              source={data ? source : undefined}
+              onClose={() => setSettingsDialog(null)}
+            />}
             {currentView === "shadowing" && <StoryShadowing key={`${sourceLanguage}-${language}`} language={language} onMenu={() => setCurrentView("hashmap")} />}
 
         {loading && currentView !== "shadowing" && (
