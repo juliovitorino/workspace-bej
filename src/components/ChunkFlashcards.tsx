@@ -8,6 +8,7 @@ import { drawChunk, eligibleChunks, type ChunkLevel } from "../utils/chunkEligib
 import { ChunkLevelSelect } from "./ChunkLevelSelect";
 
 interface ChunkFlashcardsProps {
+  studyChunk?: MentalIntention;
   intentions: MentalIntention[];
   language: StudentLanguage;
   sourceLanguage: SourceLanguage;
@@ -25,6 +26,7 @@ function formatStudyTime(totalSeconds: number): string {
 }
 
 export function ChunkFlashcards({
+  studyChunk,
   intentions,
   language,
   sourceLanguage,
@@ -135,7 +137,7 @@ export function ChunkFlashcards({
     setTotalPausedMs(0);
   }, [intentions]);
 
-  const currentChunk = chunks.find((item) => item.id === currentId) ?? null;
+  const currentChunk = studyChunk ?? chunks.find((item) => item.id === currentId) ?? null;
   const total = chunks.length;
   const completed = total > 0 && drawnIds.length === total;
   const shownCount = drawnIds.length;
@@ -271,6 +273,122 @@ export function ChunkFlashcards({
     };
   }, []);
 
+  const flashcard = <>
+          <article className="chunk-flashcards-card" aria-live="polite">
+            {currentChunk ? (
+              <>
+                <p className="chunk-flashcards-language">{LANGUAGES[language].name} · {language}</p>
+                <div className="chunk-flashcards-english-row">
+                  <h3>{currentChunk.targetIntention ?? currentChunk.english}</h3>
+                  <div className="chunk-flashcards-english-actions">
+                    <button
+                      type="button"
+                      className="chunk-flashcards-speaker"
+                      onClick={speak}
+                      aria-label={`Ouvir pronúncia de ${currentChunk.targetIntention ?? currentChunk.english}`}
+                      title={`Ouvir pronúncia · ${LANGUAGES[language].name}`}
+                    >
+                      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M11 5 6 9H3v6h3l5 4V5Z" />
+                        <path d="M15.5 8.5a5 5 0 0 1 0 7" />
+                        <path d="M19 5a10 10 0 0 1 0 14" />
+                      </svg>
+                    </button>
+                    <button
+                      type="button"
+                      className="chunk-flashcards-details"
+                      onClick={() => onShowDetails(currentChunk)}
+                      aria-label={`Ver detalhes e exemplos de ${currentChunk.targetIntention ?? currentChunk.english}`}
+                      title="Ver detalhes e mais exemplos"
+                    >
+                      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M12 7v14" />
+                        <path d="M3 18V5.5A2.5 2.5 0 0 1 5.5 3H8a4 4 0 0 1 4 2 4 4 0 0 1 4-2h2.5A2.5 2.5 0 0 1 21 5.5V18h-5a4 4 0 0 0-4 2 4 4 0 0 0-4-2H3Z" />
+                      </svg>
+                    </button>
+                    <button
+                      type="button"
+                      className="chunk-flashcards-details"
+                      onClick={() => void copyChunk()}
+                      aria-label={copiedChunkId === currentChunk.id ? "Chunk copiado" : `Copiar ${currentChunk.targetIntention ?? currentChunk.english} para a área de transferência`}
+                      title={copiedChunkId === currentChunk.id ? "Copiado!" : "Copiar chunk no idioma de estudo"}
+                    >
+                      {copiedChunkId === currentChunk.id ? (
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <path d="m5 12 4 4L19 6" />
+                        </svg>
+                      ) : (
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <rect x="8" y="8" width="12" height="12" rx="2" />
+                          <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
+                        </svg>
+                      )}
+                    </button>
+                    {authorMode && (
+                      <button
+                        type="button"
+                        className="chunk-flashcards-details"
+                        onClick={() => void copyIntentionId()}
+                        aria-label={copiedIntentionId === currentChunk.id ? "ID copiado" : `Copiar ID da intenção ${currentChunk.intention}`}
+                        title={copiedIntentionId === currentChunk.id ? "ID copiado!" : "Copiar ID da intenção (Modo Autor)"}
+                      >
+                        <span aria-hidden="true" style={{ fontSize: "1.25rem", lineHeight: 1 }}>
+                          {copiedIntentionId === currentChunk.id ? "✓" : "🔢"}
+                        </span>
+                      </button>
+                    )}
+                    <button
+                      type="button"
+                      className="chunk-flashcards-details"
+                      onClick={() => onBasicTraining(currentChunk)}
+                      aria-label={`Abrir treino básico de ${currentChunk.targetIntention ?? currentChunk.english}`}
+                      title="Treino básico"
+                    >
+                      <span aria-hidden="true" style={{ fontSize: "1.5rem", lineHeight: 1 }}>🚶🏻‍➡️</span>
+                    </button>
+                    <button
+                      type="button"
+                      className="chunk-flashcards-details"
+                      onClick={() => onAdvancedTraining(currentChunk)}
+                      aria-label={`Abrir treino avançado de ${currentChunk.targetIntention ?? currentChunk.english}`}
+                      title="Treino avançado"
+                    >
+                      <span aria-hidden="true" style={{ fontSize: "1.5rem", lineHeight: 1 }}>🏃</span>
+                    </button>
+                  </div>
+                </div>
+                <div className="chunk-flashcards-divider" />
+                <p className="chunk-flashcards-language">{LANGUAGES[sourceLanguage].name.toUpperCase()} · {sourceLanguage}</p>
+                <p className="chunk-flashcards-portuguese">{currentChunk.intention}</p>
+              </>
+            ) : (
+              <div className="chunk-flashcards-start">
+                <h3>Pronto para praticar?</h3>
+                <p>Clique em Começar para sortear o primeiro chunk.</p>
+              </div>
+            )}
+          </article>
+
+          {audioError && <p className="chunk-flashcards-audio-error" role="alert">{audioError}</p>}
+          {copyError && <p className="chunk-flashcards-audio-error" role="alert">{copyError}</p>}
+          {(currentChunk !== null && (copiedChunkId === currentChunk.id || (authorMode && copiedIntentionId === currentChunk.id))) && (
+            <p
+              role="status"
+              style={{
+                position: "fixed", bottom: "1.25rem", right: "1.25rem",
+                zIndex: 1000, margin: 0, padding: "0.65rem 1rem",
+                borderRadius: "0.65rem", background: "#1e293b",
+                color: "#ffffff", fontWeight: 600,
+                boxShadow: "0 4px 14px rgba(0,0,0,0.22)"
+              }}
+            >
+              {copiedChunkId === currentChunk?.id ? "✓ Chunk em inglês copiado!" : "✓ ID da intenção copiado!"}
+            </p>
+          )}
+  </>;
+
+  if (studyChunk) return flashcard;
+
   if (walking) {
     return <WalkingMode chunk={currentChunk} language={language} sourceLanguage={sourceLanguage}
       level={level} onLevelChange={changeLevel} position={position} total={total} round={round}
@@ -405,117 +523,7 @@ export function ChunkFlashcards({
             <div style={{ width: `${(shownCount / total) * 100}%` }} />
           </div>
 
-          <article className="chunk-flashcards-card" aria-live="polite">
-            {currentChunk ? (
-              <>
-                <p className="chunk-flashcards-language">{LANGUAGES[language].name} · {language}</p>
-                <div className="chunk-flashcards-english-row">
-                  <h3>{currentChunk.targetIntention ?? currentChunk.english}</h3>
-                  <div className="chunk-flashcards-english-actions">
-                    <button
-                      type="button"
-                      className="chunk-flashcards-speaker"
-                      onClick={speak}
-                      aria-label={`Ouvir pronúncia de ${currentChunk.targetIntention ?? currentChunk.english}`}
-                      title={`Ouvir pronúncia · ${LANGUAGES[language].name}`}
-                    >
-                      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                        <path d="M11 5 6 9H3v6h3l5 4V5Z" />
-                        <path d="M15.5 8.5a5 5 0 0 1 0 7" />
-                        <path d="M19 5a10 10 0 0 1 0 14" />
-                      </svg>
-                    </button>
-                    <button
-                      type="button"
-                      className="chunk-flashcards-details"
-                      onClick={() => onShowDetails(currentChunk)}
-                      aria-label={`Ver detalhes e exemplos de ${currentChunk.targetIntention ?? currentChunk.english}`}
-                      title="Ver detalhes e mais exemplos"
-                    >
-                      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                        <path d="M12 7v14" />
-                        <path d="M3 18V5.5A2.5 2.5 0 0 1 5.5 3H8a4 4 0 0 1 4 2 4 4 0 0 1 4-2h2.5A2.5 2.5 0 0 1 21 5.5V18h-5a4 4 0 0 0-4 2 4 4 0 0 0-4-2H3Z" />
-                      </svg>
-                    </button>
-                    <button
-                      type="button"
-                      className="chunk-flashcards-details"
-                      onClick={() => void copyChunk()}
-                      aria-label={copiedChunkId === currentChunk.id ? "Chunk copiado" : `Copiar ${currentChunk.targetIntention ?? currentChunk.english} para a área de transferência`}
-                      title={copiedChunkId === currentChunk.id ? "Copiado!" : "Copiar chunk no idioma de estudo"}
-                    >
-                      {copiedChunkId === currentChunk.id ? (
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                          <path d="m5 12 4 4L19 6" />
-                        </svg>
-                      ) : (
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                          <rect x="8" y="8" width="12" height="12" rx="2" />
-                          <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
-                        </svg>
-                      )}
-                    </button>
-                    {authorMode && (
-                      <button
-                        type="button"
-                        className="chunk-flashcards-details"
-                        onClick={() => void copyIntentionId()}
-                        aria-label={copiedIntentionId === currentChunk.id ? "ID copiado" : `Copiar ID da intenção ${currentChunk.intention}`}
-                        title={copiedIntentionId === currentChunk.id ? "ID copiado!" : "Copiar ID da intenção (Modo Autor)"}
-                      >
-                        <span aria-hidden="true" style={{ fontSize: "1.25rem", lineHeight: 1 }}>
-                          {copiedIntentionId === currentChunk.id ? "✓" : "🔢"}
-                        </span>
-                      </button>
-                    )}
-                    <button
-                      type="button"
-                      className="chunk-flashcards-details"
-                      onClick={() => onBasicTraining(currentChunk)}
-                      aria-label={`Abrir treino básico de ${currentChunk.targetIntention ?? currentChunk.english}`}
-                      title="Treino básico"
-                    >
-                      <span aria-hidden="true" style={{ fontSize: "1.5rem", lineHeight: 1 }}>🚶🏻‍➡️</span>
-                    </button>
-                    <button
-                      type="button"
-                      className="chunk-flashcards-details"
-                      onClick={() => onAdvancedTraining(currentChunk)}
-                      aria-label={`Abrir treino avançado de ${currentChunk.targetIntention ?? currentChunk.english}`}
-                      title="Treino avançado"
-                    >
-                      <span aria-hidden="true" style={{ fontSize: "1.5rem", lineHeight: 1 }}>🏃</span>
-                    </button>
-                  </div>
-                </div>
-                <div className="chunk-flashcards-divider" />
-                <p className="chunk-flashcards-language">{LANGUAGES[sourceLanguage].name.toUpperCase()} · {sourceLanguage}</p>
-                <p className="chunk-flashcards-portuguese">{currentChunk.intention}</p>
-              </>
-            ) : (
-              <div className="chunk-flashcards-start">
-                <h3>Pronto para praticar?</h3>
-                <p>Clique em Começar para sortear o primeiro chunk.</p>
-              </div>
-            )}
-          </article>
-
-          {audioError && <p className="chunk-flashcards-audio-error" role="alert">{audioError}</p>}
-          {copyError && <p className="chunk-flashcards-audio-error" role="alert">{copyError}</p>}
-          {(currentId !== null && (copiedChunkId === currentId || (authorMode && copiedIntentionId === currentId))) && (
-            <p
-              role="status"
-              style={{
-                position: "fixed", bottom: "1.25rem", right: "1.25rem",
-                zIndex: 1000, margin: 0, padding: "0.65rem 1rem",
-                borderRadius: "0.65rem", background: "#1e293b",
-                color: "#ffffff", fontWeight: 600,
-                boxShadow: "0 4px 14px rgba(0,0,0,0.22)"
-              }}
-            >
-              {copiedChunkId === currentId ? "✓ Chunk em inglês copiado!" : "✓ ID da intenção copiado!"}
-            </p>
-          )}
+          {flashcard}
           {completed && (
             <p className="chunk-flashcards-finished" role="status">
               Você praticou todos os {total} chunks desta rodada!

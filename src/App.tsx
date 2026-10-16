@@ -14,6 +14,7 @@ import { InterpretationPanel } from "./components/InterpretationPanel";
 import { IntentionList } from "./components/IntentionList";
 import { IntentionDetails } from "./components/IntentionDetails";
 import { SpeakingGame } from "./components/SpeakingGame";
+import { MemoryFlashcards } from "./components/MemoryFlashcards";
 import { ChunkFlashcards } from "./components/ChunkFlashcards";
 import { StoryShadowing } from "./components/StoryShadowing";
 import { fetchHashmap, loadHashmap } from "./services/hashmapService";
@@ -390,6 +391,16 @@ function App() {
               </div>
             )}
 
+            {!loading && data && currentView === "memory-flashcards" && (
+              <div style={{ display: trainingMode ? "none" : undefined }}>
+                <MemoryFlashcards key={sourceLanguage + "-" + language}
+                  intentions={data.mentalMap} language={language} sourceLanguage={sourceLanguage}
+                  onShowDetails={setSelected}
+                  onBasicTraining={item => startTraining(item, "basic")}
+                  onAdvancedTraining={item => startTraining(item, "advanced")} />
+              </div>
+            )}
+
             {!loading && currentView === "speaking-game" && !trainingMode && (
               <SpeakingGame key={`${sourceLanguage}-${language}`} language={language} sourceLanguage={sourceLanguage} />
             )}
@@ -446,6 +457,7 @@ function App() {
           (
             currentView === "hashmap" ||
             currentView === "chunk-flashcards" ||
+            currentView === "memory-flashcards" ||
             currentView === "interpretation"
           ) &&
           !trainingMode

@@ -1,4 +1,4 @@
-export type AppView = "hashmap" | "exercises" | "speaking-game" | "chunk-flashcards" | "interpretation" | "shadowing";
+export type AppView = "memory-flashcards" | "hashmap" | "exercises" | "speaking-game" | "chunk-flashcards" | "interpretation" | "shadowing";
 interface SidebarProps {
   onOpenLanguages: () => void;
   onOpenAbout: () => void;
@@ -25,6 +25,10 @@ const menuItems: Array<{
     {
       id: "chunk-flashcards",
       label: "Chunk Flashcards"
+    },
+    {
+      id: "memory-flashcards",
+      label: "Memory Flashcards"
     },
     {
       id: "speaking-game",
