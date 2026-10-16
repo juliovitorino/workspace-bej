@@ -1,5 +1,6 @@
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
+import "./IntentionCard.desktop.css";
 import { useEffect, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import { isAuthorMode } from "../utils/authorMode";
@@ -72,7 +73,7 @@ export function IntentionCard({ item, sourceLanguage, language, onSelect }: Inte
   return (
     <div style={{ position: "relative", minWidth: 0 }}>
     <div
-      className="intention-card"
+      className="intention-card bej-intention-card--desktop"
       role="button"
       tabIndex={0}
       onClick={() => onSelect(item)}
@@ -84,7 +85,7 @@ export function IntentionCard({ item, sourceLanguage, language, onSelect }: Inte
         }
       }}
     >
-      <div>
+      <div className="bej-intention-card__text">
         <h2>{item.intention}</h2>
         <p className="english">{item.targetIntention ?? item.english}</p>
         {authorMode && (hasYoutubeVideo || hasYoutubeShort) && (
@@ -117,38 +118,9 @@ export function IntentionCard({ item, sourceLanguage, language, onSelect }: Inte
       </div>
 
       <div className="card-meta">
-        {(item.pattern || authorMode) && (
+        {item.pattern && (
           <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", flexWrap: "wrap", minWidth: 0 }}>
-            {item.pattern && <span style={{ overflowWrap: "anywhere" }}>{item.pattern}</span>}
-            {authorMode && (
-              <button
-                type="button"
-                onClick={(event) => {
-                  event.stopPropagation();
-                  void copyId();
-                }}
-                onKeyDown={(event) => event.stopPropagation()}
-                title={copiedId ? t("common.idCopied") : t("common.copyIntentionId")}
-                aria-label={copiedId ? t("common.idCopied") : t("common.copyIntentionIdForIntention", { intention: (item.intention) })}
-                style={{
-                  width: "2.25rem",
-                  height: "2.25rem",
-                  flexShrink: 0,
-                  padding: 0,
-                  border: "1px solid var(--border-strong)",
-                  borderRadius: "0.65rem",
-                  background: "var(--surface-soft)",
-                  color: "var(--text)",
-                  cursor: "pointer",
-                  fontSize: "1.1rem",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center"
-                }}
-              >
-                <span aria-hidden="true">{copiedId ? "✓" : "🔢"}</span>
-              </button>
-            )}
+            <span style={{ overflowWrap: "anywhere" }}>{item.pattern}</span>
           </div>
         )}
 
@@ -162,21 +134,54 @@ export function IntentionCard({ item, sourceLanguage, language, onSelect }: Inte
           {item.category && (
             <span className="pill category-pill">{item.category}</span>
           )}
+
+          {authorMode && (
+            <button
+              type="button"
+              onClick={(event) => {
+                event.stopPropagation();
+                void copyId();
+              }}
+              onKeyDown={(event) => event.stopPropagation()}
+              title={copiedId ? t("common.idCopied") : t("common.copyIntentionId")}
+              aria-label={copiedId ? t("common.idCopied") : t("common.copyIntentionIdForIntention", { intention: item.intention })}
+              style={{
+                width: "2.25rem",
+                height: "2.25rem",
+                flexShrink: 0,
+                padding: 0,
+                border: "1px solid var(--border-strong)",
+                borderRadius: "0.65rem",
+                background: "var(--surface-soft)",
+                color: "var(--text)",
+                cursor: "pointer",
+                fontSize: "1.1rem",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginLeft: "0.25rem"
+              }}
+            >
+              <span aria-hidden="true">{copiedId ? "✓" : "🔢"}</span>
+            </button>
+          )}
         </div>
 
-        {([
-          { locale: sourceLanguage, tags: item.sourceTags, label: t("hashmap.sourceTags") },
-          { locale: language, tags: item.targetTags, label: t("hashmap.studyLanguageTags") }
-        ]).map(({ locale, tags, label }) => tags && tags.length > 0 && (
-          <div className="card-tag-group" key={locale} role="group" aria-label={`${label}: ${LANGUAGES[locale].name}`}>
-            <span className="card-tag-language" title={localizedLanguageName(locale)}>
-              <span aria-hidden="true">{LANGUAGES[locale].flag}</span> {locale}
-            </span>
-            <div className="card-tags" lang={locale}>
-              {Array.from(new Set(tags)).map(tag => <span className="tag-pill" key={tag}>{tag}</span>)}
+        <div className="bej-intention-card__tag-columns">
+          {([
+            { locale: sourceLanguage, tags: item.sourceTags, label: t("hashmap.sourceTags"), side: "source" },
+            { locale: language, tags: item.targetTags, label: t("hashmap.studyLanguageTags"), side: "study" }
+          ]).map(({ locale, tags, label, side }) => tags && tags.length > 0 && (
+            <div className={`card-tag-group bej-intention-card__tags--${side}`} key={side} role="group" aria-label={`${label}: ${LANGUAGES[locale].name}`}>
+              <span className="card-tag-language" title={localizedLanguageName(locale)}>
+                <span aria-hidden="true">{LANGUAGES[locale].flag}</span> {locale}
+              </span>
+              <div className="card-tags" lang={locale}>
+                {Array.from(new Set(tags)).map(tag => <span className="tag-pill" key={tag}>{tag}</span>)}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
     {authorMode && copyError && (

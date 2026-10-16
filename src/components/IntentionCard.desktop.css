@@ -1,0 +1,85 @@
+/* No mobile, o agrupador nao cria uma nova camada visual:
+   as tags continuam no fluxo original da coluna de metadados. */
+.bej-intention-card__tag-columns {
+  display: contents;
+}
+
+/* Mental Hashmap 4.2.0 — layout dos cards apenas no desktop.
+   Abaixo de 768px, os estilos originais continuam sem alterações. */
+@media (min-width: 768px) {
+  .intention-card.bej-intention-card--desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  .intention-card.bej-intention-card--desktop > .bej-intention-card__text {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .intention-card.bej-intention-card--desktop > .bej-intention-card__text h2,
+  .intention-card.bej-intention-card--desktop > .bej-intention-card__text .english {
+    max-width: 100%;
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  .intention-card.bej-intention-card--desktop > .card-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    gap: 0.65rem;
+  }
+
+  .intention-card.bej-intention-card--desktop .card-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* Desktop: origem na esquerda e idioma de estudo na direita. */
+  .intention-card.bej-intention-card--desktop .bej-intention-card__tag-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1.5rem;
+    row-gap: 0.65rem;
+    align-items: start;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .intention-card.bej-intention-card--desktop .bej-intention-card__tags--source {
+    grid-column: 1;
+  }
+
+  .intention-card.bej-intention-card--desktop .bej-intention-card__tags--study {
+    grid-column: 2;
+  }
+
+  .intention-card.bej-intention-card--desktop .card-tag-group {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .intention-card.bej-intention-card--desktop .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+}
