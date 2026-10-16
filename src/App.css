@@ -2372,6 +2372,35 @@ button {
 .memory-status { text-align: center; font-size: 0.8rem; margin: 16px 0 0; }
 @media (prefers-reduced-motion: reduce) { .memory-progress > div { transition: none; } }
 
+.sidebar-mobile-toggle { display: none; }
+@media (max-width: 820px) {
+  .sidebar {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    align-items: center;
+    gap: 8px 12px;
+  }
+  .sidebar-brand { grid-column: 2; grid-row: 1; padding: 0; }
+  .sidebar-menu { grid-column: 1 / -1; }
+  .sidebar-mobile-toggle {
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    min-height: 44px;
+    padding: 10px;
+    margin-bottom: 0;
+    border: 1px solid #64748b;
+    border-radius: 12px;
+    color: #fff;
+    background: transparent;
+  }
+  .sidebar-menu:not(.mobile-open) { display: none; }
+  .sidebar-mobile-toggle:focus-visible { outline: 3px solid #6387ff; outline-offset: 3px; }
+  #hashmap-search-filters { scroll-margin-top: 16px; }
+}
+
 /* Navigation settings */
 .language-pair-indicator {
   flex-shrink: 0;

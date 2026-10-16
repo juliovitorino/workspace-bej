@@ -157,7 +157,7 @@ export function SearchPanel({
   }, [isTagModalOpen]);
 
   return (
-    <section className="search-panel">
+    <section id="hashmap-search-filters" className="search-panel">
       <div className="field">
         <label htmlFor="mental-search">Intenção — {LANGUAGES[sourceLanguage].name}</label>
         <div className="search-input-with-clear">

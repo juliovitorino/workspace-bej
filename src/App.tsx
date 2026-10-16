@@ -33,6 +33,7 @@ function App() {
   const [data, setData] = useState<HashmapData | null>(null);
   const [source, setSource] = useState<"remote" | "cache">("remote");
   const [currentView, setCurrentView] = useState<AppView>("hashmap");
+  const [filterScrollRequest, setFilterScrollRequest] = useState(0);
   const [mentalSearch, setMentalSearch] = useState("");
   const [englishSearch, setEnglishSearch] = useState("");
   const [categorySearch, setCategorySearch] = useState("");
@@ -51,6 +52,20 @@ function App() {
 
   // Mesma verificacao de modo autor usada pelas ferramentas existentes.
   const authorMode = isAuthorMode();
+
+  useEffect(() => {
+    if (!filterScrollRequest || currentView !== "hashmap" || loading || !data || trainingMode) return;
+    const frame = window.requestAnimationFrame(() => {
+      if (window.matchMedia("(max-width: 820px)").matches) {
+        document.getElementById("hashmap-search-filters")?.scrollIntoView({
+          block: "start",
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth"
+        });
+      }
+      setFilterScrollRequest(0);
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [filterScrollRequest, currentView, loading, data, trainingMode]);
 
   useEffect(() => {
     let active = true;
@@ -256,6 +271,14 @@ function App() {
         onOpenAbout={() => setSettingsDialog("about")}
         currentView={currentView}
         onViewChange={view => {
+          if (view === "hashmap" && window.matchMedia("(max-width: 820px)").matches) {
+            closeTraining();
+            setSelected(null);
+            window.speechSynthesis?.cancel();
+            setFilterScrollRequest(request => request + 1);
+          } else {
+            setFilterScrollRequest(0);
+          }
           if (view === "shadowing") {
             closeTraining();
             setSelected(null);
