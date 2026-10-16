@@ -1,13 +1,19 @@
+import { t, languageName as localizedLanguageName } from "../i18n";
+import { useTranslation } from "react-i18next";
 import { useEffect, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import { isAuthorMode } from "../utils/authorMode";
+import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
 
 interface IntentionCardProps {
   item: MentalIntention;
+  sourceLanguage: SourceLanguage;
+  language: StudentLanguage;
   onSelect: (item: MentalIntention) => void;
 }
 
-export function IntentionCard({ item, onSelect }: IntentionCardProps) {
+export function IntentionCard({ item, sourceLanguage, language, onSelect }: IntentionCardProps) {
+  const { t } = useTranslation();
   const hasYoutubeVideo = typeof item.youtubeVideo === "string" && item.youtubeVideo.trim().length > 0;
   const hasYoutubeShort = typeof item.youtubeShort === "string" && item.youtubeShort.trim().length > 0;
   const authorMode = isAuthorMode();
@@ -47,7 +53,7 @@ export function IntentionCard({ item, onSelect }: IntentionCardProps) {
           textarea.focus();
           textarea.select();
           textarea.setSelectionRange(0, item.id.length);
-          if (!document.execCommand("copy")) throw new Error("Falha ao copiar ID");
+          if (!document.execCommand("copy")) throw new Error(t("common.failedToCopyId"));
         } finally {
           document.body.removeChild(textarea);
         }
@@ -80,17 +86,17 @@ export function IntentionCard({ item, onSelect }: IntentionCardProps) {
     >
       <div>
         <h2>{item.intention}</h2>
-        <p className="english">{item.english}</p>
+        <p className="english">{item.targetIntention ?? item.english}</p>
         {authorMode && (hasYoutubeVideo || hasYoutubeShort) && (
           <div
-            aria-label="Conteúdos publicados no YouTube"
+            aria-label={t("hashmap.contentPublishedOnYoutube")}
             style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginTop: "0.4rem" }}
           >
             {hasYoutubeVideo && (
               <img
                 src="/images/youtube-video.png"
-                alt="Vídeo publicado no YouTube"
-                title="Vídeo publicado no YouTube"
+                alt={t("hashmap.videoPublishedOnYoutube")}
+                title={t("hashmap.videoPublishedOnYoutube")}
                 width={25}
                 height={25}
                 style={{ objectFit: "contain", display: "block" }}
@@ -99,8 +105,8 @@ export function IntentionCard({ item, onSelect }: IntentionCardProps) {
             {hasYoutubeShort && (
               <img
                 src="/images/youtube-short.png"
-                alt="Short publicado no YouTube"
-                title="Short publicado no YouTube"
+                alt={t("hashmap.shortPublishedOnYoutube")}
+                title={t("hashmap.shortPublishedOnYoutube")}
                 width={25}
                 height={25}
                 style={{ objectFit: "contain", display: "block" }}
@@ -122,8 +128,8 @@ export function IntentionCard({ item, onSelect }: IntentionCardProps) {
                   void copyId();
                 }}
                 onKeyDown={(event) => event.stopPropagation()}
-                title={copiedId ? "ID copiado!" : "Copiar ID da intenção"}
-                aria-label={copiedId ? "ID copiado" : `Copiar ID da intenção ${item.intention}`}
+                title={copiedId ? t("common.idCopied") : t("common.copyIntentionId")}
+                aria-label={copiedId ? t("common.idCopied") : t("common.copyIntentionIdForIntention", { intention: (item.intention) })}
                 style={{
                   width: "2.25rem",
                   height: "2.25rem",
@@ -158,20 +164,25 @@ export function IntentionCard({ item, onSelect }: IntentionCardProps) {
           )}
         </div>
 
-        {item.tags && item.tags.length > 0 && (
-          <div className="card-tags">
-            {item.tags.map((tag) => (
-              <span className="tag-pill" key={tag}>
-                {tag}
-              </span>
-            ))}
+        {([
+          { locale: sourceLanguage, tags: item.sourceTags, label: t("hashmap.sourceTags") },
+          { locale: language, tags: item.targetTags, label: t("hashmap.studyLanguageTags") }
+        ]).map(({ locale, tags, label }) => tags && tags.length > 0 && (
+          <div className="card-tag-group" key={locale} role="group" aria-label={`${label}: ${LANGUAGES[locale].name}`}>
+            <span className="card-tag-language" title={localizedLanguageName(locale)}>
+              <span aria-hidden="true">{LANGUAGES[locale].flag}</span> {locale}
+            </span>
+            <div className="card-tags" lang={locale}>
+              {Array.from(new Set(tags)).map(tag => <span className="tag-pill" key={tag}>{tag}</span>)}
+            </div>
           </div>
-        )}
+        ))}
       </div>
     </div>
     {authorMode && copyError && (
       <p role="alert" style={{ color: "#b91c1c", margin: "0.25rem 0" }}>
-        Não foi possível copiar o ID. Tente novamente.
+        
+        {t("hashmap.couldNotCopyTheIdTryAgain")}
       </p>
     )}
     </div>

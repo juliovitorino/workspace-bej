@@ -1,0 +1,94 @@
+/* Isolated personal flashcard styles: no changes to official memory training. */
+.personal-flashcards { max-width: 740px; margin: 0 auto; padding: 18px; border: 1px solid #e0e7f4; border-radius: 20px; background: #fff; }
+.personal-page-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.personal-page-heading h2 { margin: 0 0 4px; font-size: 1.3rem; }
+.personal-page-heading p { margin: 0; color: #667085; font-size: .85rem; }
+.personal-note { color: #667085; font-size: .83rem; }
+.personal-backup-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.personal-import-label { display: inline-flex; align-items: center; cursor: pointer; }
+.personal-import-label input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.personal-import-label:focus-within { outline: 3px solid #3659d9; outline-offset: 3px; }
+.personal-count { font-weight: 700; margin-top: 22px; }
+.personal-study { display: grid; gap: 14px; }
+.personal-study-progress { display: flex; justify-content: space-between; gap: 12px; font-weight: 700; }
+.personal-study-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; min-height: 205px; border-radius: 16px; background: #f4f7fb; padding: 24px; text-align: center; overflow-wrap: anywhere; }
+.personal-study-card h3 { font-size: clamp(1.2rem, 4vw, 1.9rem); margin: 0; }
+.personal-study-card small { color: #667085; }
+.personal-context { margin: 0; font-style: italic; color: #475467; white-space: pre-wrap; }
+.personal-card-image { max-width: 100%; max-height: 260px; object-fit: contain; border-radius: 12px; }
+.personal-study-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.personal-study-actions button { min-height: 48px; white-space: normal; }
+.personal-empty { background: #f4f7fb; border-radius: 12px; padding: 22px; }
+.personal-library { margin-top: 28px; }
+.personal-library-item { display: flex; justify-content: space-between; gap: 12px; border-top: 1px solid #e0e7f4; padding: 12px 0; overflow-wrap: anywhere; }
+.personal-library-item p { margin: 4px 0 0; color: #667085; }
+.personal-library-actions { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.personal-library-actions button { padding: 8px 10px; }
+.personal-error { color: #b42318; font-weight: 600; }
+.personal-modal-backdrop { position: fixed; inset: 0; z-index: 60; background: rgba(13,22,40,.65); display: grid; place-items: center; padding: 12px; }
+.personal-modal { width: min(100%, 550px); max-height: min(94vh, 850px); overflow-y: auto; border-radius: 18px; background: #fff; padding: 22px; box-shadow: 0 20px 50px rgba(0,0,0,.25); }
+.personal-modal-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.personal-modal-header h2 { margin: 0; font-size: 1.2rem; }
+.personal-icon-button { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 0; border-radius: 50%; font-size: 26px; background: #eef2f8; cursor: pointer; }
+.personal-form { display: grid; gap: 14px; margin-top: 14px; }
+.personal-form label { display: grid; gap: 6px; font-weight: 700; font-size: .9rem; }
+.personal-form textarea, .personal-form input[type=file] { width: 100%; min-width: 0; border: 1px solid #cfd6e4; border-radius: 10px; padding: 10px; font: inherit; font-weight: 400; }
+.personal-form textarea { resize: vertical; }
+.personal-pair { color: #475467; margin: 0; }
+.personal-image-preview { display: grid; justify-items: start; gap: 8px; }
+.personal-image-preview img { max-width: 100%; max-height: 180px; object-fit: contain; border-radius: 10px; }
+.personal-form-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.personal-form-actions button { min-height: 44px; }
+.memory-heading { flex-wrap: wrap; margin-bottom: 16px; }
+.memory-heading h2 { margin: 0; }
+.memory-heading-controls { display: flex; align-items: center; gap: 6px; margin-left: auto; }
+.memory-heading-controls .memory-badge { margin: 0; }
+.memory-heading-controls .memory-personal-add { width: 36px; min-width: 36px; height: 36px; font-size: 1.3rem; padding: 0; display: inline-grid; place-items: center; border: 1px solid #cfd6e4; border-radius: 10px; background: #fff; color: #3659d9; cursor: pointer; }
+.memory-heading-controls .personal-backup-trigger { min-width: 36px; width: 36px; height: 36px; font-size: 1.3rem; }
+.memory-personal-add:focus-visible, .personal-flashcards :focus-visible, .personal-modal :focus-visible { outline: 3px solid #3659d9; outline-offset: 3px; }
+@media (max-width: 540px) {
+ .personal-flashcards { padding: 12px; }
+ .personal-library-item { flex-direction: column; }
+ .personal-study-actions { grid-template-columns: 1fr; }
+ .personal-modal { padding: 16px; }
+}
+
+
+/* Simplified personal-card editor: creation and backup are separate operations. */
+.personal-modal { padding: 20px 22px 0; max-height: min(94dvh, 850px); }
+.personal-modal-header { position: relative; }
+.personal-pair { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 8px 0 0; font-size: .85rem; color: #475467; }
+.personal-pair > span:first-child, .personal-pair > span:last-child { background: #f2f5fa; border-radius: 8px; padding: 5px 8px; }
+.personal-form { gap: 12px; margin-top: 16px; }
+.personal-form label { gap: 5px; }
+.personal-form textarea { padding: 9px 10px; min-height: 58px; }
+.personal-image-field { display: grid; justify-items: start; gap: 7px; }
+.personal-field-label { font-size: .9rem; font-weight: 700; }
+.personal-optional { font-size: .8rem; font-weight: 400; color: #667085; }
+.personal-image-hint { font-size: .75rem; color: #667085; }
+.personal-add-image { min-height: 42px; }
+.personal-image-preview { display: flex; align-items: center; gap: 12px; width: 100%; }
+.personal-image-preview img { width: 88px; height: 88px; flex: 0 0 88px; object-fit: contain; border: 1px solid #e0e7f4; background: #f6f8fc; border-radius: 10px; }
+.personal-image-controls { min-width: 0; display: grid; gap: 6px; }
+.personal-image-selected { font-weight: 600; font-size: .85rem; }
+.personal-image-controls > div { display: flex; flex-wrap: wrap; gap: 10px; }
+.personal-text-action { padding: 2px 0; border: 0; background: transparent; color: #3659d9; cursor: pointer; font: inherit; font-size: .84rem; font-weight: 600; }
+.personal-text-action:hover { text-decoration: underline; }
+.personal-text-action:disabled { opacity: .5; cursor: default; }
+.personal-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; opacity: 0; pointer-events: none; }
+.personal-form-actions { position: sticky; bottom: 0; z-index: 2; padding: 12px 0 14px; background: #fff; border-top: 1px solid #e0e7f4; margin-top: 2px; }
+.personal-management-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #e0e7f4; color: #667085; font-size: .83rem; }
+.personal-backup-menu { position: relative; display: inline-flex; align-items: center; flex: 0 0 auto; }
+.personal-backup-trigger { display: grid; place-items: center; min-width: 44px; height: 44px; border: 1px solid #cfd6e4; border-radius: 10px; background: #fff; color: #3659d9; font-size: 1.55rem; font-weight: 700; line-height: 1; cursor: pointer; }
+.personal-backup-dropdown { position: absolute; z-index: 30; top: calc(100% + 5px); right: 0; min-width: 205px; display: grid; padding: 5px; border: 1px solid #cfd6e4; border-radius: 12px; background: #fff; box-shadow: 0 12px 30px rgba(13,22,40,.18); }
+.personal-backup-dropdown button { width: 100%; padding: 12px; text-align: left; border: 0; border-radius: 8px; background: transparent; color: #182230; cursor: pointer; font: inherit; font-weight: 600; }
+.personal-backup-dropdown button:hover, .personal-backup-dropdown button:focus-visible { background: #eef2f8; }
+.personal-backup-feedback { color: #067647; font-size: .85rem; }
+@media (max-width: 540px) {
+  .personal-modal { padding: 14px 14px 0; max-height: 96dvh; }
+  .personal-pair { gap: 5px; }
+  .personal-pair > span:first-child, .personal-pair > span:last-child { padding: 5px; }
+  .personal-form { gap: 10px; }
+  .personal-form-actions { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+  .personal-form-actions button { flex: 1; }
+}

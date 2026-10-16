@@ -1,3 +1,5 @@
+import { t } from "../i18n";
+import { useTranslation } from "react-i18next";
 
 import type { IntentionValidationResult } from "../services/intentionValidator";
 
@@ -8,21 +10,22 @@ interface IntentionValidationFeedbackProps {
 export function IntentionValidationFeedback({
   result
 }: IntentionValidationFeedbackProps) {
+  const { t } = useTranslation();
   if (result.status === "empty") {
     return null;
   }
 
   const feedback = {
     found: {
-      message: "✓ Intenção mental identificada!",
+      message: "✓ " + t("common.communicativeIntentionIdentified"),
       color: "#15803d"
     },
     missing: {
-      message: "⚠ Você ainda não utilizou a intenção mental.",
+      message: "⚠ " + t("common.youHavenTUsedTheCommunicativeIntentionYet"),
       color: "#b45309"
     },
     unavailable: {
-      message: "Validação automática indisponível para esta intenção.",
+      message: t("common.automaticValidationIsUnavailableForThisIntention"),
       color: "#64748b"
     }
   }[result.status];

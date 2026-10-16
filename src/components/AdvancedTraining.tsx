@@ -1,11 +1,14 @@
+import { t, languageName as localizedLanguageName } from "../i18n";
+import { useTranslation } from "react-i18next";
 import { isAuthorMode } from "../utils/authorMode";
+import { LANGUAGES, type StudentLanguage } from "../config/languages";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import {
   evaluateTrainingWithAI,
   type AIEvaluationResult
 } from "../services/aiEvaluationService";
-import { translateEnglishToPortuguese } from "../services/googleTranslateService";
+import { translateStudentLanguageToPortuguese } from "../services/googleTranslateService";
 import { validateIntention } from "../services/intentionValidator";
 
 const AI_ENABLED = import.meta.env.VITE_AI_ENABLED === "true";
@@ -96,6 +99,7 @@ function renderHighlightedText(
 
 interface AdvancedTrainingProps {
   intention: MentalIntention;
+  language: StudentLanguage;
   onBack: () => void;
 }
 
@@ -216,18 +220,21 @@ function renderIntentionFeedback(validation: ReturnType<typeof validateIntention
       }}
     >
       {validation.status === "found"
-        ? "✓ Intenção mental identificada!"
+        ? "✓ " + t("common.communicativeIntentionIdentified")
         : validation.status === "missing"
-          ? "⚠ Você ainda não utilizou a intenção mental."
-          : "Validação automática indisponível para esta intenção."}
+          ? "⚠ " + t("common.youHavenTUsedTheCommunicativeIntentionYet")
+          : t("common.automaticValidationIsUnavailableForThisIntention")}
     </p>
   );
 }
 
 export function AdvancedTraining({
   intention,
+  language,
   onBack
 }: AdvancedTrainingProps) {
+  const { t } = useTranslation();
+  const languageName = localizedLanguageName(language).toLowerCase();
   const [verbs, setVerbs] = useState<VerbItem[]>([]);
   const [nouns, setNouns] = useState<NounItem[]>([]);
   const [adjectives, setAdjectives] = useState<AdjectiveItem[]>([]);
@@ -313,7 +320,7 @@ export function AdvancedTraining({
           !connectorsResponse.ok
         ) {
           throw new Error(
-            "Não foi possível carregar os arquivos de vocabulário."
+            t("common.couldNotLoadTheVocabularyFiles")
           );
         }
 
@@ -340,7 +347,7 @@ export function AdvancedTraining({
         setError(
           err instanceof Error
             ? err.message
-            : "Erro inesperado ao carregar o vocabulário."
+            : t("common.anUnexpectedErrorOccurredWhileLoadingVocabulary")
         );
       } finally {
         if (active) {
@@ -426,7 +433,7 @@ export function AdvancedTraining({
 
     if (!SpeechRecognitionApi) {
       setDictationError(
-        "O ditado por voz não está disponível neste navegador. Use Chrome ou Edge no computador."
+        t("common.voiceDictationIsUnavailableInThisBrowserUseChromeOr")
       );
       return;
     }
@@ -435,7 +442,7 @@ export function AdvancedTraining({
     setDictationTarget(target);
 
     const recognition = new SpeechRecognitionApi();
-    recognition.lang = "en-US";
+    recognition.lang = language;
     recognition.continuous = true;
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
@@ -499,19 +506,19 @@ export function AdvancedTraining({
 
       if (event.error === "not-allowed" || event.error === "service-not-allowed") {
         setDictationError(
-          "Permita o acesso ao microfone no navegador para usar o ditado."
+          t("common.allowMicrophoneAccessInYourBrowserToUseDictation")
         );
         return;
       }
 
       if (event.error === "no-speech") {
         setDictationError(
-          "Nenhuma fala foi detectada. Clique no microfone e tente novamente."
+          t("common.noSpeechDetectedClickTheMicrophoneAndTryAgain")
         );
         return;
       }
 
-      setDictationError("Não foi possível reconhecer sua fala. Tente novamente.");
+      setDictationError(t("common.couldNotRecognizeYourSpeechTryAgain"));
     };
 
     recognition.onend = () => {
@@ -528,7 +535,7 @@ export function AdvancedTraining({
       recognitionRef.current = null;
       setDictating(false);
       setDictationTarget(null);
-      setDictationError("Não foi possível iniciar o microfone.");
+      setDictationError(t("common.couldNotStartTheMicrophone"));
     }
   }
 
@@ -595,7 +602,7 @@ export function AdvancedTraining({
         try {
           textarea.select();
           if (!document.execCommand("copy")) {
-            throw new Error("Não foi possível copiar a frase.");
+            throw new Error(t("common.couldNotCopyTheSentence"));
           }
         } finally {
           textarea.remove();
@@ -631,7 +638,7 @@ export function AdvancedTraining({
         document.body.removeChild(textarea);
 
         if (!copied) {
-          throw new Error("Não foi possível copiar a frase.");
+          throw new Error(t("common.couldNotCopyTheSentence"));
         }
       }
 
@@ -656,7 +663,7 @@ export function AdvancedTraining({
 
     const googleTranslateUrl = new URL("https://translate.google.com/");
     googleTranslateUrl.searchParams.set("hl", "pt-BR");
-    googleTranslateUrl.searchParams.set("sl", "en");
+    googleTranslateUrl.searchParams.set("sl", language.split("-")[0]);
     googleTranslateUrl.searchParams.set("tl", "pt");
     googleTranslateUrl.searchParams.set("text", englishText);
     googleTranslateUrl.searchParams.set("op", "translate");
@@ -674,7 +681,7 @@ export function AdvancedTraining({
 
     const googleTranslateUrl = new URL("https://translate.google.com/");
     googleTranslateUrl.searchParams.set("hl", "pt-BR");
-    googleTranslateUrl.searchParams.set("sl", "en");
+    googleTranslateUrl.searchParams.set("sl", language.split("-")[0]);
     googleTranslateUrl.searchParams.set("tl", "pt");
     googleTranslateUrl.searchParams.set("text", englishText);
     googleTranslateUrl.searchParams.set("op", "translate");
@@ -696,7 +703,7 @@ export function AdvancedTraining({
     if (!worksheet || !worksheetStyles) return;
 
     const printFrame = document.createElement("iframe");
-    printFrame.setAttribute("title", "Impressão do treino avançado");
+    printFrame.setAttribute("title", t("advancedTraining.printAdvancedPractice"));
     printFrame.setAttribute("aria-hidden", "true");
     printFrame.style.position = "fixed";
     printFrame.style.width = "0";
@@ -748,7 +755,7 @@ export function AdvancedTraining({
       !combinedSentence.trim()
     ) {
       setEvaluationError(
-        "Preencha as duas frases e a versão combinada antes de solicitar a avaliação."
+        t("advancedTraining.completeBothSentencesAndTheCombinedVersionBeforeRequestingAn")
       );
       return;
     }
@@ -767,6 +774,7 @@ export function AdvancedTraining({
 
       const result = await evaluateTrainingWithAI({
         mode: "advanced",
+        language,
         intention,
         studentText,
         vocabulary: {
@@ -786,7 +794,7 @@ export function AdvancedTraining({
       setEvaluationError(
         err instanceof Error
           ? err.message
-          : "Não foi possível avaliar o treino avançado."
+          : t("advancedTraining.couldNotEvaluateTheAdvancedPractice")
       );
     } finally {
       setEvaluating(false);
@@ -797,7 +805,7 @@ export function AdvancedTraining({
     if (!isAuthorMode()) return;
     if (!combinedSentence.trim()) {
       setTranslationError(
-        "Escreva a frase combinada antes de solicitar a tradução."
+        t("advancedTraining.writeTheCombinedSentenceBeforeRequestingATranslation")
       );
       return;
     }
@@ -807,13 +815,13 @@ export function AdvancedTraining({
     setGoogleTranslation(null);
 
     try {
-      const result = await translateEnglishToPortuguese(combinedSentence);
+      const result = await translateStudentLanguageToPortuguese(combinedSentence, language);
       setGoogleTranslation(result.translatedText);
     } catch (err) {
       setTranslationError(
         err instanceof Error
           ? err.message
-          : "Não foi possível traduzir a frase com o Google."
+          : t("common.couldNotTranslateTheSentenceWithGoogle")
       );
     } finally {
       setTranslating(false);
@@ -824,13 +832,13 @@ export function AdvancedTraining({
     const englishText = combinedSentence.trim();
 
     if (!englishText) {
-      setSpeechError("Não há uma frase em inglês para reproduzir.");
+      setSpeechError(t("common.thereIsNoSentenceInTargetlanguageToPlay", { targetLanguage: (languageName) }));
       return;
     }
 
     if (!("speechSynthesis" in window)) {
       setSpeechError(
-        "O recurso de voz não está disponível neste navegador."
+        t("common.speechPlaybackIsUnavailableInThisBrowser")
       );
       return;
     }
@@ -842,14 +850,16 @@ export function AdvancedTraining({
     const utterance = new SpeechSynthesisUtterance(englishText);
     const voices = window.speechSynthesis.getVoices();
     const americanVoice = voices.find(
-      (voice) => voice.lang.toLowerCase() === "en-us"
+      (voice) => voice.lang.toLowerCase() === language.toLowerCase()
+    ) ?? voices.find(
+      (voice) => voice.lang.toLowerCase().split("-")[0] === language.split("-")[0]
     );
 
     if (americanVoice) {
       utterance.voice = americanVoice;
     }
 
-    utterance.lang = "en-US";
+    utterance.lang = language;
     utterance.rate = 0.9;
     utterance.pitch = 1;
 
@@ -863,7 +873,7 @@ export function AdvancedTraining({
 
     utterance.onerror = () => {
       setSpeaking(false);
-      setSpeechError("Não foi possível reproduzir a frase em inglês.");
+      setSpeechError(t("common.couldNotPlayTheSentenceInTargetlanguage", { targetLanguage: (languageName) }));
     };
 
     window.speechSynthesis.speak(utterance);
@@ -891,7 +901,7 @@ export function AdvancedTraining({
         try {
           textarea.select();
           if (!document.execCommand("copy")) {
-            throw new Error("Falha ao copiar a frase.");
+            throw new Error(t("common.failedToCopyTheSentence"));
           }
         } finally {
           textarea.remove();
@@ -910,13 +920,13 @@ export function AdvancedTraining({
     const englishText = text.trim();
 
     if (!englishText) {
-      setSpeechError("Não há uma frase em inglês para reproduzir.");
+      setSpeechError(t("common.thereIsNoSentenceInTargetlanguageToPlay", { targetLanguage: (languageName) }));
       return;
     }
 
     if (!("speechSynthesis" in window)) {
       setSpeechError(
-        "O recurso de voz não está disponível neste navegador."
+        t("common.speechPlaybackIsUnavailableInThisBrowser")
       );
       return;
     }
@@ -929,14 +939,16 @@ export function AdvancedTraining({
     const utterance = new SpeechSynthesisUtterance(englishText);
     const voices = window.speechSynthesis.getVoices();
     const americanVoice = voices.find(
-      (voice) => voice.lang.toLowerCase() === "en-us"
+      (voice) => voice.lang.toLowerCase() === language.toLowerCase()
+    ) ?? voices.find(
+      (voice) => voice.lang.toLowerCase().split("-")[0] === language.split("-")[0]
     );
 
     if (americanVoice) {
       utterance.voice = americanVoice;
     }
 
-    utterance.lang = "en-US";
+    utterance.lang = language;
     utterance.rate = 0.9;
     utterance.pitch = 1;
 
@@ -951,7 +963,7 @@ export function AdvancedTraining({
 
     utterance.onerror = () => {
       setEvaluationSpeaking(null);
-      setSpeechError("Não foi possível reproduzir a frase em inglês.");
+      setSpeechError(t("common.couldNotPlayTheSentenceInTargetlanguage", { targetLanguage: (languageName) }));
     };
 
     window.speechSynthesis.speak(utterance);
@@ -965,7 +977,8 @@ export function AdvancedTraining({
           className="secondary-button"
           onClick={onBack}
         >
-          Voltar para o Hashmap
+          
+          {t("common.backToHashmap")}
         </button>
 
         {!loading && !error && (
@@ -974,19 +987,20 @@ export function AdvancedTraining({
             className="primary-button"
             onClick={generateNewRound}
           >
-            Sortear novamente
+            
+            {t("common.drawAgain")}
           </button>
         )}
       </div>
 
       <div className="training-page-header">
-        <p className="eyebrow">Treino avançado</p>
+        <p className="eyebrow">{t("common.advancedPractice")}</p>
         <h1>{intention.intention}</h1>
-        <p className="detail-english">{intention.english}</p>
+        <p className="detail-english">{intention.targetIntention ?? intention.english}</p>
 
         {intention.examples && intention.examples.length > 0 && (
           <section className="training-intention-example">
-            <h3>Exemplo</h3>
+            <h3>{t("common.example")}</h3>
             <div className="example">
               <p>
                 {renderHighlightedText(
@@ -1009,32 +1023,31 @@ export function AdvancedTraining({
         )}
 
         <p className="training-instruction">
-          Crie duas frases independentes usando os elementos sorteados.
-          Depois escolha um ou mais conectores para juntar as ideias
-          em uma frase mais complexa.
+          
+          {t("advancedTraining.createTwoIndependentSentencesUsingTheRandomlySelectedItemsThen")}
         </p>
       </div>
 
       {loading && (
         <div className="status-card">
           <div className="spinner" />
-          <p>Carregando vocabulário...</p>
+          <p>{t("common.loadingVocabulary")}</p>
         </div>
       )}
 
       {!loading && error && (
         <div className="status-card error-card">
-          <h2>Não foi possível carregar o treino.</h2>
+          <h2>{t("common.couldNotLoadThePractice")}</h2>
           <p>{error}</p>
         </div>
       )}
 
       {!loading && !error && !hasEnoughVocabulary && (
         <div className="status-card error-card">
-          <h2>Vocabulário insuficiente.</h2>
+          <h2>{t("advancedTraining.notEnoughVocabulary")}</h2>
           <p>
-            O treino avançado precisa de pelo menos 2 verbos,
-            2 adjetivos, 2 substantivos e 4 conectores.
+            
+            {t("advancedTraining.advancedPracticeRequiresAtLeast2Verbs2Adjectives2")}
           </p>
         </div>
       )}
@@ -1043,7 +1056,7 @@ export function AdvancedTraining({
         <>
           <div className="advanced-training-grid" ref={trainingGridRef}>
             <article className="training-group-card">
-              <p className="eyebrow">Verbos</p>
+              <p className="eyebrow">{t("advancedTraining.verbs")}</p>
 
               <div className="training-token-list">
                 {trainingItems.verbs.map((verb) => (
@@ -1056,7 +1069,7 @@ export function AdvancedTraining({
 
                     <div className="training-verb-forms">
                       <div className="training-verb-form">
-                        <span>Presente</span>
+                        <span>{t("common.present")}</span>
                         <strong>
                           {verb.thirdPerson
                             ? `${verb.base} / ${verb.thirdPerson}`
@@ -1066,14 +1079,14 @@ export function AdvancedTraining({
 
                       {verb.past && (
                         <div className="training-verb-form">
-                          <span>Passado</span>
+                          <span>{t("common.past")}</span>
                           <strong>{verb.past}</strong>
                         </div>
                       )}
 
                       {verb.pastParticiple && (
                         <div className="training-verb-form">
-                          <span>Particípio</span>
+                          <span>{t("common.participle")}</span>
                           <strong>{verb.pastParticiple}</strong>
                         </div>
                       )}
@@ -1085,7 +1098,7 @@ export function AdvancedTraining({
             </article>
 
             <article className="training-group-card">
-              <p className="eyebrow">Adjetivos</p>
+              <p className="eyebrow">{t("advancedTraining.adjectives")}</p>
 
               <div className="training-token-list">
                 {trainingItems.adjectives.map((adjective) => (
@@ -1098,7 +1111,7 @@ export function AdvancedTraining({
             </article>
 
             <article className="training-group-card">
-              <p className="eyebrow">Nouns</p>
+              <p className="eyebrow">{t("advancedTraining.nouns")}</p>
 
               <div className="training-token-list">
                 {trainingItems.nouns.map((noun) => (
@@ -1111,7 +1124,7 @@ export function AdvancedTraining({
             </article>
 
             <article className="training-group-card connectors-card">
-              <p className="eyebrow">Conectores disponíveis</p>
+              <p className="eyebrow">{t("advancedTraining.availableConnectors")}</p>
 
               <div className="training-token-list">
                 {trainingItems.connectors.map((connector) => (
@@ -1142,7 +1155,8 @@ export function AdvancedTraining({
                 }}
               >
                 <label htmlFor="advanced-sentence-one" style={{ margin: 0 }}>
-                  Frase 1
+                  
+                  {t("advancedTraining.sentence1")}
                 </label>
 
                 <button
@@ -1151,13 +1165,13 @@ export function AdvancedTraining({
                   onClick={() => handleCopyDraftSentence("sentenceOne")}
                   disabled={!sentenceOne.trim()}
                   title={draftCopyStatus.sentenceOne === "copied"
-                    ? "Frase 1 copiada!"
+                    ? t("advancedTraining.sentence1Copied")
                     : draftCopyStatus.sentenceOne === "error"
-                      ? "Não foi possível copiar a frase 1"
-                      : "Copiar frase 1"}
+                      ? t("advancedTraining.couldNotCopySentence1")
+                      : t("advancedTraining.copySentence1")}
                   aria-label={draftCopyStatus.sentenceOne === "copied"
-                    ? "Frase 1 copiada para a área de transferência"
-                    : "Copiar frase 1 para a área de transferência"}
+                    ? t("advancedTraining.sentence1CopiedToTheClipboard")
+                    : t("advancedTraining.copySentence1ToTheClipboard")}
                   style={{
                     width: "2.25rem",
                     minWidth: "2.25rem",
@@ -1198,8 +1212,8 @@ export function AdvancedTraining({
                     type="button"
                     className="secondary-button"
                     onClick={() => handleClearSentence("sentenceOne")}
-                    title="Limpar frase 1"
-                    aria-label="Limpar frase 1"
+                    title={t("advancedTraining.clearSentence1")}
+                    aria-label={t("advancedTraining.clearSentence1")}
                     style={{
                       width: "2.25rem",
                       minWidth: "2.25rem",
@@ -1240,13 +1254,13 @@ export function AdvancedTraining({
                     onClick={() => handleToggleDictation("sentenceOne")}
                     title={
                       dictating && dictationTarget === "sentenceOne"
-                        ? "Parar ditado"
-                        : "Ditar frase 1 em inglês"
+                        ? t("common.stopDictation")
+                        : t("advancedTraining.dictateSentence1InEnglish")
                     }
                     aria-label={
                       dictating && dictationTarget === "sentenceOne"
-                        ? "Parar ditado da frase 1"
-                        : "Ditar frase 1 em inglês"
+                        ? t("advancedTraining.stopDictatingSentence1")
+                        : t("advancedTraining.dictateSentence1InEnglish")
                     }
                     aria-pressed={dictating && dictationTarget === "sentenceOne"}
                     style={{
@@ -1293,7 +1307,7 @@ export function AdvancedTraining({
               <textarea
                 id="advanced-sentence-one"
                 rows={4}
-                placeholder="Crie a primeira frase em inglês..."
+                placeholder={t("advancedTraining.createTheFirstSentenceInTargetlanguage", { targetLanguage: (languageName) })}
                 value={sentenceOne}
                 onChange={(event) => {
                   setSentenceOne(event.target.value);
@@ -1305,7 +1319,7 @@ export function AdvancedTraining({
               />
               {draftCopyStatus.sentenceOne !== "idle" && (
                 <p role="status" aria-live="polite" style={{ margin: "0.35rem 0 0", fontSize: "0.85rem", color: draftCopyStatus.sentenceOne === "copied" ? "#15803d" : "#b91c1c" }}>
-                  {draftCopyStatus.sentenceOne === "copied" ? "Frase 1 copiada!" : "Não foi possível copiar a frase 1."}
+                  {draftCopyStatus.sentenceOne === "copied" ? t("advancedTraining.sentence1Copied") : t("advancedTraining.couldNotCopySentence1")}
                 </p>
               )}
             </div>
@@ -1320,7 +1334,8 @@ export function AdvancedTraining({
                 }}
               >
                 <label htmlFor="advanced-sentence-two" style={{ margin: 0 }}>
-                  Frase 2
+                  
+                  {t("advancedTraining.sentence2")}
                 </label>
 
                 <button
@@ -1329,13 +1344,13 @@ export function AdvancedTraining({
                   onClick={() => handleCopyDraftSentence("sentenceTwo")}
                   disabled={!sentenceTwo.trim()}
                   title={draftCopyStatus.sentenceTwo === "copied"
-                    ? "Frase 2 copiada!"
+                    ? t("advancedTraining.sentence2Copied")
                     : draftCopyStatus.sentenceTwo === "error"
-                      ? "Não foi possível copiar a frase 2"
-                      : "Copiar frase 2"}
+                      ? t("advancedTraining.couldNotCopySentence2")
+                      : t("advancedTraining.copySentence2")}
                   aria-label={draftCopyStatus.sentenceTwo === "copied"
-                    ? "Frase 2 copiada para a área de transferência"
-                    : "Copiar frase 2 para a área de transferência"}
+                    ? t("advancedTraining.sentence2CopiedToTheClipboard")
+                    : t("advancedTraining.copySentence2ToTheClipboard")}
                   style={{
                     width: "2.25rem",
                     minWidth: "2.25rem",
@@ -1376,8 +1391,8 @@ export function AdvancedTraining({
                     type="button"
                     className="secondary-button"
                     onClick={() => handleClearSentence("sentenceTwo")}
-                    title="Limpar frase 2"
-                    aria-label="Limpar frase 2"
+                    title={t("advancedTraining.clearSentence2")}
+                    aria-label={t("advancedTraining.clearSentence2")}
                     style={{
                       width: "2.25rem",
                       minWidth: "2.25rem",
@@ -1418,13 +1433,13 @@ export function AdvancedTraining({
                     onClick={() => handleToggleDictation("sentenceTwo")}
                     title={
                       dictating && dictationTarget === "sentenceTwo"
-                        ? "Parar ditado"
-                        : "Ditar frase 2 em inglês"
+                        ? t("common.stopDictation")
+                        : t("advancedTraining.dictateSentence2InEnglish")
                     }
                     aria-label={
                       dictating && dictationTarget === "sentenceTwo"
-                        ? "Parar ditado da frase 2"
-                        : "Ditar frase 2 em inglês"
+                        ? t("advancedTraining.stopDictatingSentence2")
+                        : t("advancedTraining.dictateSentence2InEnglish")
                     }
                     aria-pressed={dictating && dictationTarget === "sentenceTwo"}
                     style={{
@@ -1471,7 +1486,7 @@ export function AdvancedTraining({
               <textarea
                 id="advanced-sentence-two"
                 rows={4}
-                placeholder="Crie a segunda frase em inglês..."
+                placeholder={t("advancedTraining.createTheSecondSentenceInTargetlanguage", { targetLanguage: (languageName) })}
                 value={sentenceTwo}
                 onChange={(event) => {
                   setSentenceTwo(event.target.value);
@@ -1483,7 +1498,7 @@ export function AdvancedTraining({
               />
               {draftCopyStatus.sentenceTwo !== "idle" && (
                 <p role="status" aria-live="polite" style={{ margin: "0.35rem 0 0", fontSize: "0.85rem", color: draftCopyStatus.sentenceTwo === "copied" ? "#15803d" : "#b91c1c" }}>
-                  {draftCopyStatus.sentenceTwo === "copied" ? "Frase 2 copiada!" : "Não foi possível copiar a frase 2."}
+                  {draftCopyStatus.sentenceTwo === "copied" ? t("advancedTraining.sentence2Copied") : t("advancedTraining.couldNotCopySentence2")}
                 </p>
               )}
             </div>
@@ -1499,7 +1514,8 @@ export function AdvancedTraining({
               }}
             >
               <label htmlFor="advanced-combined-sentence" style={{ margin: 0 }}>
-                Junte as duas ideias
+                
+                {t("advancedTraining.combineTheTwoIdeas")}
               </label>
 
               {combinedSentence.length > 0 && (
@@ -1507,8 +1523,8 @@ export function AdvancedTraining({
                   type="button"
                   className="secondary-button"
                   onClick={handleClearStudentText}
-                  title="Limpar frase"
-                  aria-label="Limpar frase"
+                  title={t("common.clearSentence")}
+                  aria-label={t("common.clearSentence")}
                   style={{
                     width: "2.25rem",
                     minWidth: "2.25rem",
@@ -1547,8 +1563,8 @@ export function AdvancedTraining({
                 type="button"
                 className="secondary-button"
                 onClick={() => handleToggleDictation("combined")}
-                title={dictating && dictationTarget === "combined" ? "Parar ditado" : "Ditar frase em inglês"}
-                aria-label={dictating && dictationTarget === "combined" ? "Parar ditado" : "Ditar frase em inglês"}
+                title={dictating && dictationTarget === "combined" ? t("common.stopDictation") : t("common.dictateASentenceInEnglish")}
+                aria-label={dictating && dictationTarget === "combined" ? t("common.stopDictation") : t("common.dictateASentenceInEnglish")}
                 aria-pressed={dictating && dictationTarget === "combined"}
                 style={{
                   width: "2.25rem",
@@ -1593,17 +1609,17 @@ export function AdvancedTraining({
                 disabled={!combinedSentence.trim()}
                 title={
                   copyStatus === "copied"
-                    ? "Frase copiada"
+                    ? t("common.sentenceCopied")
                     : copyStatus === "error"
-                      ? "Erro ao copiar"
-                      : "Copiar frase"
+                      ? t("common.copyError")
+                      : t("common.copySentence")
                 }
                 aria-label={
                   copyStatus === "copied"
-                    ? "Frase copiada"
+                    ? t("common.sentenceCopied")
                     : copyStatus === "error"
-                      ? "Erro ao copiar a frase"
-                      : "Copiar frase para a área de transferência"
+                      ? t("common.errorCopyingTheSentence")
+                      : t("common.copySentenceToTheClipboard")
                 }
                 style={{
                   width: "2.25rem",
@@ -1643,8 +1659,8 @@ export function AdvancedTraining({
                 className="secondary-button"
                 onClick={handleOpenGoogleTranslate}
                 disabled={!combinedSentence.trim()}
-                title="Abrir no Google Tradutor (inglês → português)"
-                aria-label="Abrir frase no Google Tradutor do inglês para português"
+                title={t("common.openInGoogleTranslateEnglishPortuguese")}
+                aria-label={t("common.openSentenceInGoogleTranslateFromEnglishToPortuguese")}
                 style={{
                   width: "2.25rem",
                   minWidth: "2.25rem",
@@ -1677,8 +1693,8 @@ export function AdvancedTraining({
                 className="secondary-button"
                 onClick={handlePrintWorksheet}
                 disabled={!hasEnoughVocabulary}
-                title="Imprimir folha de exercícios (A4)"
-                aria-label="Imprimir folha de exercícios do treino avançado"
+                title={t("common.printWorksheetA4")}
+                aria-label={t("advancedTraining.printAdvancedPracticeWorksheet")}
                 style={{
                   width: "2.25rem",
                   minWidth: "2.25rem",
@@ -1714,7 +1730,7 @@ export function AdvancedTraining({
             <textarea
               id="advanced-combined-sentence"
               rows={5}
-              placeholder="Use um ou mais conectores para juntar suas duas frases..."
+              placeholder={t("advancedTraining.useOneOrMoreConnectorsToCombineYourTwoSentences")}
               value={combinedSentence}
               onChange={(event) => {
                 setCombinedSentence(event.target.value);
@@ -1763,8 +1779,8 @@ export function AdvancedTraining({
                   }
                 >
                   {evaluating
-                    ? "Avaliando com IA..."
-                    : "Avaliar com IA"}
+                    ? t("common.evaluatingWithAi")
+                    : t("common.evaluateWithAi")}
                 </button>
               )}
 
@@ -1777,7 +1793,7 @@ export function AdvancedTraining({
               >
                 {translating
                   ? "Traduzindo..."
-                  : "Traduzir com Google"}
+                  : t("common.translateWithGoogle")}
               </button>
               )}
             </div>
@@ -1785,7 +1801,7 @@ export function AdvancedTraining({
 
           {isAuthorMode() && translationError && (
             <div className="status-card error-card google-translation-error">
-              <h2>Não foi possível traduzir a frase.</h2>
+              <h2>{t("common.couldNotTranslateTheSentence")}</h2>
               <p>{translationError}</p>
             </div>
           )}
@@ -1793,8 +1809,8 @@ export function AdvancedTraining({
           {isAuthorMode() && googleTranslation && (
             <>
               <section className="status-card google-translation-card" ref={googleTranslationCardRef}>
-                <p className="eyebrow">Tradução do Google</p>
-                <h2>Versão em português</h2>
+                <p className="eyebrow">{t("common.googleTranslation")}</p>
+                <h2>{t("common.portugueseVersion")}</h2>
                 <p>{googleTranslation}</p>
               </section>
 
@@ -1805,7 +1821,7 @@ export function AdvancedTraining({
                   onClick={handleSpeakEnglish}
                   disabled={speaking || !combinedSentence.trim()}
                 >
-                  {speaking ? "🔊 Reproduzindo..." : "🔊 Ouvir inglês"}
+                  {speaking ? "🔊 " + t("common.playing") : "🔊 " + t("common.listenInTargetlanguage", { targetLanguage: (languageName) })}
                 </button>
               </div>
             </>
@@ -1813,14 +1829,14 @@ export function AdvancedTraining({
 
           {speechError && (
             <div className="status-card error-card google-translation-error">
-              <h2>Não foi possível reproduzir o áudio.</h2>
+              <h2>{t("common.couldNotPlayTheAudio")}</h2>
               <p>{speechError}</p>
             </div>
           )}
 
           {AI_ENABLED && isAuthorMode() && evaluationError && (
             <div className="status-card error-card ai-evaluation-error">
-              <h2>Não foi possível avaliar o treino.</h2>
+              <h2>{t("advancedTraining.couldNotEvaluateThePractice")}</h2>
               <p>{evaluationError}</p>
             </div>
           )}
@@ -1829,8 +1845,8 @@ export function AdvancedTraining({
             <section className="ai-evaluation-card" ref={aiEvaluationCardRef}>
               <div className="ai-evaluation-header">
                 <div>
-                  <p className="eyebrow">Avaliação com IA</p>
-                  <h2>Resultado do treino avançado</h2>
+                  <p className="eyebrow">{t("common.aiEvaluation")}</p>
+                  <h2>{t("advancedTraining.advancedPracticeResults")}</h2>
                 </div>
 
                 <div className="ai-score">
@@ -1841,41 +1857,41 @@ export function AdvancedTraining({
 
               <div className="ai-evaluation-grid">
                 <div>
-                  <span>Gramática</span>
+                  <span>{t("common.grammar")}</span>
                   <strong>{evaluation.grammar}</strong>
                 </div>
 
                 <div>
-                  <span>Naturalidade</span>
+                  <span>{t("common.naturalness")}</span>
                   <strong>{evaluation.naturalness}</strong>
                 </div>
 
                 <div>
-                  <span>Intenção mental</span>
+                  <span>{t("common.communicativeIntention")}</span>
                   <strong>
                     {evaluation.intentionUsedCorrectly
-                      ? "Correta"
-                      : "Precisa melhorar"}
+                      ? t("common.correct")
+                      : t("common.needsImprovement")}
                   </strong>
                 </div>
 
                 <div>
-                  <span>Vocabulário e conectores</span>
+                  <span>{t("advancedTraining.vocabularyAndConnectors")}</span>
                   <strong>
                     {evaluation.vocabularyUsedCorrectly
-                      ? "Bom uso"
-                      : "Precisa melhorar"}
+                      ? t("common.goodUse")
+                      : t("common.needsImprovement")}
                   </strong>
                 </div>
               </div>
 
               <div className="ai-feedback-section">
-                <h3>Feedback</h3>
+                <h3>{t("common.feedback")}</h3>
                 <p>{evaluation.feedbackPt}</p>
               </div>
 
               <div className="ai-feedback-section">
-                <h3>Correção</h3>
+                <h3>{t("common.correction")}</h3>
 
                 <div
                   style={{
@@ -1901,8 +1917,8 @@ export function AdvancedTraining({
                       )
                     }
                     disabled={evaluationSpeaking === "corrected"}
-                    title="Ouvir a correção em inglês"
-                    aria-label="Ouvir a correção em inglês"
+                    title={t("common.listenToTheCorrectionInEnglish")}
+                    aria-label={t("common.listenToTheCorrectionInEnglish")}
                     style={{
                       width: "2.5rem",
                       minWidth: "2.5rem",
@@ -1932,15 +1948,15 @@ export function AdvancedTraining({
                     title={
                       evaluationCopyStatus?.target === "corrected"
                         ? evaluationCopyStatus.status === "copied"
-                          ? "Frase copiada!"
-                          : "Não foi possível copiar a frase"
-                        : "Copiar correção"
+                          ? t("common.sentenceCopied")
+                          : t("common.couldNotCopyTheSentence")
+                        : t("common.copyCorrection")
                     }
                     aria-label={
                       evaluationCopyStatus?.target === "corrected" &&
                       evaluationCopyStatus.status === "copied"
-                        ? "Frase copiada para a área de transferência"
-                        : "Copiar correção para a área de transferência"
+                        ? t("common.sentenceCopiedToTheClipboard")
+                        : t("common.copyCorrectionToTheClipboard")
                     }
                     style={{
                       width: "2.5rem",
@@ -1981,8 +1997,8 @@ export function AdvancedTraining({
                     className="secondary-button"
                     onClick={() => handleOpenEvaluationGoogleTranslate(evaluation.correctedSentence)}
                     disabled={!evaluation.correctedSentence.trim()}
-                    title="Traduzir correção no Google Tradutor (inglês → português)"
-                    aria-label="Abrir correção no Google Tradutor do inglês para português"
+                    title={t("common.translateCorrectionInGoogleTranslateEnglishPortuguese")}
+                    aria-label={t("common.openCorrectionInGoogleTranslateFromEnglishToPortuguese")}
                     style={{
                       width: "2.5rem",
                       minWidth: "2.5rem",
@@ -2014,7 +2030,7 @@ export function AdvancedTraining({
               </div>
 
               <div className="ai-feedback-section">
-                <h3>Versão mais natural</h3>
+                <h3>{t("common.moreNaturalVersion")}</h3>
 
                 <div
                   style={{
@@ -2040,8 +2056,8 @@ export function AdvancedTraining({
                       )
                     }
                     disabled={evaluationSpeaking === "better"}
-                    title="Ouvir a versão mais natural em inglês"
-                    aria-label="Ouvir a versão mais natural em inglês"
+                    title={t("common.listenToTheMoreNaturalVersionInEnglish")}
+                    aria-label={t("common.listenToTheMoreNaturalVersionInEnglish")}
                     style={{
                       width: "2.5rem",
                       minWidth: "2.5rem",
@@ -2071,15 +2087,15 @@ export function AdvancedTraining({
                     title={
                       evaluationCopyStatus?.target === "better"
                         ? evaluationCopyStatus.status === "copied"
-                          ? "Frase copiada!"
-                          : "Não foi possível copiar a frase"
-                        : "Copiar versão mais natural"
+                          ? t("common.sentenceCopied")
+                          : t("common.couldNotCopyTheSentence")
+                        : t("common.copyTheMoreNaturalVersion")
                     }
                     aria-label={
                       evaluationCopyStatus?.target === "better" &&
                       evaluationCopyStatus.status === "copied"
-                        ? "Frase copiada para a área de transferência"
-                        : "Copiar versão mais natural para a área de transferência"
+                        ? t("common.sentenceCopiedToTheClipboard")
+                        : t("common.copyTheMoreNaturalVersionToTheClipboard")
                     }
                     style={{
                       width: "2.5rem",
@@ -2120,8 +2136,8 @@ export function AdvancedTraining({
                     className="secondary-button"
                     onClick={() => handleOpenEvaluationGoogleTranslate(evaluation.betterVersion)}
                     disabled={!evaluation.betterVersion.trim()}
-                    title="Traduzir versão mais natural no Google Tradutor (inglês → português)"
-                    aria-label="Abrir versão mais natural no Google Tradutor do inglês para português"
+                    title={t("common.translateTheMoreNaturalVersionInGoogleTranslateEnglishPortuguese")}
+                    aria-label={t("common.openTheMoreNaturalVersionInGoogleTranslateFromEnglish")}
                     style={{
                       width: "2.5rem",
                       minWidth: "2.5rem",
@@ -2161,7 +2177,8 @@ export function AdvancedTraining({
                 className="primary-button"
                 onClick={generateNewRound}
               >
-                Sortear novamente
+                
+                {t("common.drawAgain")}
               </button>
             </div>
           )}
@@ -2337,14 +2354,14 @@ export function AdvancedTraining({
 
       <div className="advanced-training-print-sheet" aria-hidden="true">
         <header className="worksheet-top">
-          <p className="worksheet-eyebrow">BRAZILIAN ENGLISH JOURNEY · TREINO AVANÇADO</p>
+          <p className="worksheet-eyebrow">{t("advancedTraining.brazilianEnglishJourneyAdvancedPractice")}</p>
           <h1 className="worksheet-intention">{intention.intention}</h1>
-          <p className="worksheet-english">{intention.english}</p>
+          <p className="worksheet-english">{intention.targetIntention ?? intention.english}</p>
         </header>
 
         {intention.examples && intention.examples.length > 0 && (
           <section className="worksheet-section">
-            <h2 className="worksheet-section-title">Exemplo</h2>
+            <h2 className="worksheet-section-title">{t("common.example")}</h2>
             <div className="worksheet-example">
               <p className="worksheet-example-pt">
                 {renderHighlightedText(intention.examples[0].pt, intention.examples[0].ptIntent)}
@@ -2358,7 +2375,7 @@ export function AdvancedTraining({
 
         {intention.pattern && (
           <section className="worksheet-section">
-            <h2 className="worksheet-section-title">Pattern de uso</h2>
+            <h2 className="worksheet-section-title">{t("common.usagePattern")}</h2>
             <p className="worksheet-pattern">{intention.pattern}</p>
           </section>
         )}
@@ -2367,21 +2384,21 @@ export function AdvancedTraining({
           <>
             <section className="worksheet-vocabulary">
               <div className="worksheet-vocab-card">
-                <p className="worksheet-vocab-label">VERBOS</p>
+                <p className="worksheet-vocab-label">{t("advancedTraining.verbs")}</p>
                 {trainingItems.verbs.map((verb) => (
                   <div className="worksheet-vocab-item" key={verb.id}>
                     <p className="worksheet-vocab-word">{verb.base}{verb.type && ` (${verb.type.toUpperCase()})`}</p>
                     <p className="worksheet-vocab-meaning">{verb.meanings?.join(" / ")}</p>
                     <div className="worksheet-verb-forms">
-                      <p><strong>Presente:</strong> {verb.base}{verb.thirdPerson ? ` / ${verb.thirdPerson}` : ""}</p>
-                      <p><strong>Passado:</strong> {verb.past ?? "—"}</p>
-                      <p><strong>Particípio:</strong> {verb.pastParticiple ?? "—"}</p>
+                      <p><strong>{t("common.present")}</strong> {verb.base}{verb.thirdPerson ? ` / ${verb.thirdPerson}` : ""}</p>
+                      <p><strong>{t("common.past")}</strong> {verb.past ?? "—"}</p>
+                      <p><strong>{t("common.participle")}</strong> {verb.pastParticiple ?? "—"}</p>
                     </div>
                   </div>
                 ))}
               </div>
               <div className="worksheet-vocab-card">
-                <p className="worksheet-vocab-label">ADJETIVOS</p>
+                <p className="worksheet-vocab-label">{t("advancedTraining.adjectives")}</p>
                 {trainingItems.adjectives.map((adjective) => (
                   <div className="worksheet-vocab-item" key={adjective.id}>
                     <p className="worksheet-vocab-word">{adjective.adjective}</p>
@@ -2390,7 +2407,7 @@ export function AdvancedTraining({
                 ))}
               </div>
               <div className="worksheet-vocab-card">
-                <p className="worksheet-vocab-label">SUBSTANTIVOS (NOUNS)</p>
+                <p className="worksheet-vocab-label">{t("advancedTraining.nounsBilingual")}</p>
                 {trainingItems.nouns.map((noun) => (
                   <div className="worksheet-vocab-item" key={noun.id}>
                     <p className="worksheet-vocab-word">{noun.noun}</p>
@@ -2401,7 +2418,7 @@ export function AdvancedTraining({
             </section>
 
             <section className="worksheet-connectors">
-              <h2 className="worksheet-section-title">Conectores disponíveis (EN-US / PT-BR)</h2>
+              <h2 className="worksheet-section-title">{t("advancedTraining.availableConnectorsEnUsPtBr")}</h2>
               <div className="worksheet-connector-grid">
                 {trainingItems.connectors.map((connector) => (
                   <div className="worksheet-connector" key={connector.id}>
@@ -2415,11 +2432,12 @@ export function AdvancedTraining({
         )}
 
         <section className="worksheet-writing">
-          <h2 className="worksheet-writing-title">Minha prática escrita</h2>
+          <h2 className="worksheet-writing-title">{t("common.myWritingPractice")}</h2>
           <p className="worksheet-writing-instruction">
-            Crie duas frases em inglês com o vocabulário sorteado. Depois use um ou mais conectores para juntá-las.
+            
+            {t("advancedTraining.createTwoSentencesInEnglishUsingTheRandomlySelectedVocabulary")}
           </p>
-          {(["Frase 1", "Frase 2", "Junte as duas ideias"] as const).map((title) => (
+          {([t("advancedTraining.sentence1"), t("advancedTraining.sentence2"), t("advancedTraining.combineTheTwoIdeas")] as const).map((title) => (
             <div className="worksheet-writing-block" key={title}>
               <h2 className="worksheet-writing-title">{title}</h2>
               {Array.from({ length: 3 }, (_, index) => (

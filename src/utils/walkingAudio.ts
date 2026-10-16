@@ -1,6 +1,7 @@
 import type { StudentLanguage } from "../config/languages";
 
 const prompts: Record<StudentLanguage, string[]> = {
+  "pt-BR": ["Repita comigo", "De novo", "Mais uma vez", "Última vez"],
   "en-US": ["Repeat with me", "Again", "One more time", "Last time"],
   "fr-FR": ["Répétez avec moi", "Encore une fois", "Une fois de plus", "Une dernière fois"],
   "es-ES": ["Repite conmigo", "Otra vez", "Una vez más", "Una última vez"]

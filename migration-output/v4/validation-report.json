@@ -1,0 +1,2606 @@
+{
+  "status": "review-required",
+  "errors": [
+    {
+      "file": "pt-BR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Isso é demais!",
+      "missingExamples": [
+        1,
+        2
+      ],
+      "extraExamples": [
+        1,
+        2
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Isso é demais!",
+      "missingExamples": [
+        1,
+        2
+      ],
+      "extraExamples": [
+        1,
+        2
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Como as coisas têm ido?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "As coisas têm ido muito bem.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Tenho estado bem ocupado ultimamente.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Entendo o que você está dizendo.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não tenho certeza se concordo com isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Esse é um ponto interessante.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Fico feliz que você tenha me contado.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Isso acontece comigo também.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Deixe-me verificar e depois te retorno.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vou terminar isso hoje.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Podemos adiar um pouco?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Voltaremos a isso mais tarde.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vou dar uma olhada nisso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Deixe-me ver o que posso fazer.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vou encontrar uma solução.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos resolver isso juntos.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Estou com dificuldade para entender isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você poderia me explicar isso passo a passo?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você poderia me dar um exemplo?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Deixe-me confirmar se entendi.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Surgiu um imprevisto.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Algo deu errado.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Estamos tendo um pequeno problema com isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos ver o que podemos fazer a respeito.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos considerar outra opção.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não é tão ruim quanto parece.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Acho que sei o que aconteceu.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Isso deve resolver o problema.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você vai fazer alguma coisa neste fim de semana?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você está livre mais tarde?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Eu ficaria feliz em ir com você.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Podemos remarcar para outro dia?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Que horário é bom para você?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Deveríamos repetir isso qualquer dia.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Foi ótimo passar um tempo com você.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Isso significa muito para mim.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Isso não me incomoda.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Tenho sentimentos contraditórios sobre isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Estou começando a entender seu ponto.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Essa é uma boa maneira de enxergar as coisas.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vou ter que pensar sobre isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Há dois lados nessa questão.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "A questão é a seguinte.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Estou tentando descobrir a causa disso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Ainda estou avaliando minhas opções.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos lidar com uma coisa de cada vez.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos focar no que podemos controlar.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Estamos no caminho certo.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Qual é a melhor maneira de seguir em frente?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Quais são os próximos passos?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Obrigado por chamar minha atenção para isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vou levar isso em consideração.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não sei como você aguenta isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você tem todo o meu apoio.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Posso sempre contar com você.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não quero tirar conclusões precipitadas.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos ver como as coisas se desenrolam.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Só quero garantir que estamos alinhados.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Volto em um instante.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Me dê um segundo.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Como está sendo seu dia?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "É bom ver você de novo.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você provavelmente tem razão.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você pode me ajudar com isso?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você poderia me ajudar por um segundo?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você pode me mostrar como fazer isso?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "O que isso significa?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você poderia falar um pouco mais devagar?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Eu não ouvi você.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Onde posso encontrar isso?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Quanto custa isso?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você poderia me dar um minuto?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Estarei aí em alguns minutos.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você está livre hoje à noite?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Que horas devemos nos encontrar?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Onde devemos nos encontrar?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Para mim funciona.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos descobrir como fazer isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vou fazer isso depois.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Ainda não estou pronto.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não estou me sentindo muito bem.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não gosto muito disso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não sou muito fã disso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Acho que é uma boa ideia.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não acho que seja uma boa ideia.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Tenho passado muito bem.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Concordo totalmente com você.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não tenho certeza absoluta.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você poderia explicar o que quer dizer?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos fazer uma pausa rápida.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não tenho certeza do que você quer dizer.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não é nada demais.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Podemos resolver isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos ver como vai ser.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Eu adoraria ir.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Encontro você lá.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Deixe-me pagar.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Sou muito grato por isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Muito obrigado pela sua ajuda.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Ainda não me decidi.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Ainda estou trabalhando nisso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Estou investigando isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos tentar de outra maneira.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não tenho certeza se isso vai funcionar.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Estamos um pouco atrasados no cronograma.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos discutir os detalhes.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vou terminar isso até o fim do dia.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Obrigado por dedicar seu tempo.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Sei como você se sente.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Já passei por isso antes.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não me sinto confortável com isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Respeito sua decisão.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Valorizo muito sua opinião.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Do jeito que eu vejo",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Eu diria que",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Entendo seu ponto, mas",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "O que mais importa é",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "O ponto que quero destacar é",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Se entendi você corretamente",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Então o que você está dizendo é",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Pensando bem",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "No fim das contas, isso se resume a",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Posso estar errado sobre isso, mas",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "es-ES",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não tenho certeza se",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Isso é demais!",
+      "missingExamples": [
+        1,
+        2
+      ],
+      "extraExamples": [
+        1,
+        2
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Como as coisas têm ido?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "As coisas têm ido muito bem.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Tenho estado bem ocupado ultimamente.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Entendo o que você está dizendo.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não tenho certeza se concordo com isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Esse é um ponto interessante.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Fico feliz que você tenha me contado.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Isso acontece comigo também.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Deixe-me verificar e depois te retorno.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vou terminar isso hoje.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Podemos adiar um pouco?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Voltaremos a isso mais tarde.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vou dar uma olhada nisso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Deixe-me ver o que posso fazer.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vou encontrar uma solução.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos resolver isso juntos.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Estou com dificuldade para entender isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você poderia me explicar isso passo a passo?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você poderia me dar um exemplo?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Deixe-me confirmar se entendi.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Surgiu um imprevisto.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Algo deu errado.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Estamos tendo um pequeno problema com isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos ver o que podemos fazer a respeito.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos considerar outra opção.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não é tão ruim quanto parece.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Acho que sei o que aconteceu.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Isso deve resolver o problema.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você vai fazer alguma coisa neste fim de semana?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você está livre mais tarde?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Eu ficaria feliz em ir com você.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Podemos remarcar para outro dia?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Que horário é bom para você?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Deveríamos repetir isso qualquer dia.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Foi ótimo passar um tempo com você.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Isso significa muito para mim.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Isso não me incomoda.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Tenho sentimentos contraditórios sobre isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Estou começando a entender seu ponto.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Essa é uma boa maneira de enxergar as coisas.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vou ter que pensar sobre isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Há dois lados nessa questão.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "A questão é a seguinte.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Estou tentando descobrir a causa disso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Ainda estou avaliando minhas opções.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos lidar com uma coisa de cada vez.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos focar no que podemos controlar.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Estamos no caminho certo.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Qual é a melhor maneira de seguir em frente?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Quais são os próximos passos?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Obrigado por chamar minha atenção para isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vou levar isso em consideração.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não sei como você aguenta isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você tem todo o meu apoio.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Posso sempre contar com você.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não quero tirar conclusões precipitadas.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos ver como as coisas se desenrolam.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Só quero garantir que estamos alinhados.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Volto em um instante.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Me dê um segundo.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Como está sendo seu dia?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "É bom ver você de novo.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você provavelmente tem razão.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você pode me ajudar com isso?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você poderia me ajudar por um segundo?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você pode me mostrar como fazer isso?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "O que isso significa?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você poderia falar um pouco mais devagar?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Eu não ouvi você.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Onde posso encontrar isso?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Quanto custa isso?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você poderia me dar um minuto?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Estarei aí em alguns minutos.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você está livre hoje à noite?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Que horas devemos nos encontrar?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Onde devemos nos encontrar?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Para mim funciona.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos descobrir como fazer isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vou fazer isso depois.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Ainda não estou pronto.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não estou me sentindo muito bem.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não gosto muito disso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não sou muito fã disso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Acho que é uma boa ideia.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não acho que seja uma boa ideia.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Tenho passado muito bem.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Concordo totalmente com você.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não tenho certeza absoluta.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Você poderia explicar o que quer dizer?",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos fazer uma pausa rápida.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não tenho certeza do que você quer dizer.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não é nada demais.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Podemos resolver isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos ver como vai ser.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Eu adoraria ir.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Encontro você lá.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Deixe-me pagar.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Sou muito grato por isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Muito obrigado pela sua ajuda.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Ainda não me decidi.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Ainda estou trabalhando nisso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Estou investigando isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos tentar de outra maneira.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não tenho certeza se isso vai funcionar.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Estamos um pouco atrasados no cronograma.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vamos discutir os detalhes.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Vou terminar isso até o fim do dia.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Obrigado por dedicar seu tempo.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Sei como você se sente.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Já passei por isso antes.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não me sinto confortável com isso.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Respeito sua decisão.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Valorizo muito sua opinião.",
+      "missingExamples": [],
+      "extraExamples": [
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Do jeito que eu vejo",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Eu diria que",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Entendo seu ponto, mas",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "O que mais importa é",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "O ponto que quero destacar é",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Se entendi você corretamente",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Então o que você está dizendo é",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Pensando bem",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "No fim das contas, isso se resume a",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Posso estar errado sobre isso, mas",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "fr-FR",
+      "message": "Conjunto de exemplos diverge do ingles.",
+      "intention": "Não tenho certeza se",
+      "missingExamples": [],
+      "extraExamples": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "migration-report.json",
+      "message": "Associacoes de exemplos aguardam revisao.",
+      "count": 526
+    }
+  ],
+  "warnings": [
+    {
+      "file": "public/english-verbs-common-en-US.json",
+      "message": "totalVerbs diverge da quantidade real; arquivo preservado."
+    },
+    {
+      "file": "es-ES",
+      "message": "IDs de verbs nao equivalentes ao ingles; relacao universal nao confirmada.",
+      "missingCount": 130,
+      "extraCount": 132
+    },
+    {
+      "file": "fr-FR",
+      "message": "IDs de verbs nao equivalentes ao ingles; relacao universal nao confirmada.",
+      "missingCount": 130,
+      "extraCount": 131
+    },
+    {
+      "file": "es-ES",
+      "message": "IDs de adjectives nao equivalentes ao ingles; relacao universal nao confirmada.",
+      "missingCount": 1,
+      "extraCount": 0
+    }
+  ],
+  "hashes": {
+    "pt-BR": {
+      "intentions": "7d205e99ed724cbd76a8209b4f105aa7383a48187c06dee8e38f3102270a1b12",
+      "intentionExamples": "c5b04ab94f9f080fffe15d9b423b95944f4273fb283cb1578dc6baf88d5d2277",
+      "storyParagraphs": "36fbc1177823a4ca3ff84ec5d18faa19c417e11e97a6651b12ebfcb6a5e35ecc"
+    },
+    "en-US": {
+      "intentions": "7d205e99ed724cbd76a8209b4f105aa7383a48187c06dee8e38f3102270a1b12",
+      "intentionExamples": "f0910cf2064e8c917660d7af64886c672ec5d42a0de6f912db46202abda0ca4a",
+      "storyParagraphs": "36fbc1177823a4ca3ff84ec5d18faa19c417e11e97a6651b12ebfcb6a5e35ecc",
+      "verbs": "1316fb1d9a1dada807faf2a0c68f3c1dab15f1735b6770bcdae17fc51417a780",
+      "adjectives": "55b6355b79c9987d4ac9b4d56907c1b96a75d20d021300c4a734be846b82923e",
+      "nouns": "3250e907488f6dbad5f7dce8940e2839ff198df49542396b1cfa27fe97545328"
+    },
+    "es-ES": {
+      "intentions": "7d205e99ed724cbd76a8209b4f105aa7383a48187c06dee8e38f3102270a1b12",
+      "intentionExamples": "a877a0751498998d46fba7f8dd5c6120ce5e358ed88c2dae5429fba695dd806c",
+      "storyParagraphs": "36fbc1177823a4ca3ff84ec5d18faa19c417e11e97a6651b12ebfcb6a5e35ecc",
+      "verbs": "90936efc0dcb8dc74624f76dc5e78001725a272e90448fe7a0469325ac0229d1",
+      "adjectives": "e18543bb12332ff991b54769012cc758f96142ef143e82d9039ac13517c6d5a5",
+      "nouns": "3250e907488f6dbad5f7dce8940e2839ff198df49542396b1cfa27fe97545328"
+    },
+    "fr-FR": {
+      "intentions": "7d205e99ed724cbd76a8209b4f105aa7383a48187c06dee8e38f3102270a1b12",
+      "intentionExamples": "284ee620f85f6c1467dc0f25e2e3ed6b71a369629879d86996c285f74995f33e",
+      "storyParagraphs": "36fbc1177823a4ca3ff84ec5d18faa19c417e11e97a6651b12ebfcb6a5e35ecc",
+      "verbs": "bf610c928454b1f269ae45568bbdc4d626424e2f6c13bae51e8f7ad7c45629f8",
+      "adjectives": "55b6355b79c9987d4ac9b4d56907c1b96a75d20d021300c4a734be846b82923e",
+      "nouns": "3250e907488f6dbad5f7dce8940e2839ff198df49542396b1cfa27fe97545328"
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import { t } from "../i18n";
 import { useEffect, useRef, useState } from "react";
 import type { StudentLanguage } from "../config/languages";
 import { getParagraphText, type LocalStory } from "../services/localStoryService";
@@ -5,7 +6,7 @@ import { WalkingAudio } from "../utils/walkingAudio";
 import { practiceSteps, responsePause, sentenceSegments, type ShadowingSettings } from "../utils/storyShadowing";
 
 const repeatPrompts: Record<StudentLanguage, string> = {
-  "en-US": "Repeat after me", "fr-FR": "Répétez après moi", "es-ES": "Repite después de mí"
+  "pt-BR": "Repita depois de mim", "en-US": "Repeat after me", "fr-FR": "Répétez après moi", "es-ES": "Repite después de mí"
 };
 export function useStoryShadowing(story: LocalStory, language: StudentLanguage, settings: ShadowingSettings, selected: number) {
   const audio = useRef(new WalkingAudio());
@@ -63,7 +64,7 @@ export function useStoryShadowing(story: LocalStory, language: StudentLanguage, 
     }
   }
   function play() {
-    if (!hasVoice) { setError("Nenhuma voz compatível disponível. Habilite uma voz deste idioma no navegador ou sistema e tente novamente. O texto permanece disponível para leitura."); return; }
+    if (!hasVoice) { setError(t("shadowing.noCompatibleVoiceAvailableEnableAVoiceForThisLanguage")); return; }
     if (complete) return;
     if (phase === "ready") {
       if (step + 1 < steps.length) setStep(step + 1);
@@ -87,7 +88,7 @@ export function useStoryShadowing(story: LocalStory, language: StudentLanguage, 
 
   useEffect(() => {
     if (!playing || complete) return;
-    const fail = () => { setError("Não foi possível reproduzir a voz. Verifique as vozes instaladas e toque em Play para tentar novamente."); setPlaying(false); };
+    const fail = () => { setError(t("shadowing.couldNotPlayTheVoiceCheckYourInstalledVoicesAnd")); setPlaying(false); };
     if (phase === "ready") { setPlaying(false); return; }
     if (phase === "prompt") {
       if (current.technique === "repeat" && !fullReading) {
@@ -131,7 +132,7 @@ export function useStoryShadowing(story: LocalStory, language: StudentLanguage, 
     let requesting = false;
     async function acquire() {
       if (disposed || requesting || lock || !playing || !settings.keepAwake || document.visibilityState !== "visible") return;
-      if (!("wakeLock" in navigator)) { setWarning("Este navegador não permite manter a tela ativa."); return; }
+      if (!("wakeLock" in navigator)) { setWarning(t("common.thisBrowserCannotKeepTheScreenAwake")); return; }
       requesting = true;
       try {
         const acquired = await navigator.wakeLock.request("screen");
@@ -139,9 +140,9 @@ export function useStoryShadowing(story: LocalStory, language: StudentLanguage, 
         lock = acquired; setWarning("");
         acquired.addEventListener("release", () => {
           if (lock === acquired) lock = null;
-          if (!disposed) setWarning("O bloqueio de tela foi liberado. Mantenha a página visível para continuar.");
+          if (!disposed) setWarning(t("shadowing.screenWakeLockWasReleasedKeepThePageVisibleTo"));
         });
-      } catch { if (!disposed) setWarning("Não foi possível manter a tela ativa."); }
+      } catch { if (!disposed) setWarning(t("common.couldNotKeepTheScreenAwake")); }
       finally { requesting = false; }
     }
     void acquire(); document.addEventListener("visibilitychange", acquire);

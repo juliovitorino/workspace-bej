@@ -1,0 +1,4275 @@
+{
+  "schemaVersion": "4.0.0",
+  "status": "review-required",
+  "sources": {
+    "public/sample-hashmap-pt-BR.json": "29ca00fb1366a3303cfa2f4f17939f3c32aed71bcf706a7d09dcba62ec36c392",
+    "public/sample-hashmap-en-US.json": "29ca00fb1366a3303cfa2f4f17939f3c32aed71bcf706a7d09dcba62ec36c392",
+    "public/sample-hashmap-es-ES.json": "2742b5773c83618db3e4e7c36102839dd983b8435c6f8fbe9d43ef52a9557da0",
+    "public/sample-hashmap-fr-FR.json": "b6b1b035b9f9121d9e8e9bacf69d5a59cddec893009b9f926fa93e72ebd24c84",
+    "src/data/stories/stories-a1.json": "ea981b177bfd0417e075edd08a19435e7c9d1ffbde2454f3dea630b464eeedfd",
+    "src/data/stories/stories-a2.json": "91ad528e349a9f750a8ce7cee17d592f8a134c430d97dcf8d62680f9d7cccdbe",
+    "src/data/stories/stories-b1.json": "3b92e6ddf2ffc2b29af2986142652a9ef504506d3605641e093db57a1fbb35b6",
+    "src/data/stories/stories-b2.json": "3c66f926a1fd2fb0e7c80da0e01d3bdf984da25a5f732bfb224eb2bddcfa24ee",
+    "src/data/stories/stories-c1.json": "48186bf813aebfa7fe79897010cdad4e5b4659e9c50b6a2d55c675630eba3d5d",
+    "src/data/stories/stories-c2.json": "c85014a4273e3f10d665fdf413bb474e10165c4a4a92609b3564e51ef72e9b11",
+    "public/english-verbs-common-en-US.json": "043210818d55c5753dd11e530a10dbfd1dec9033f2acdcb61423a444971e84f3",
+    "public/english-verbs-common-es-ES.json": "78c6368a1bce63d549ff98d69220aeeb060ae56d2a081f55318df84fd0630b0d",
+    "public/english-verbs-common-fr-FR.json": "df803447e9eef5eb12b978b51c85f7857d4ecfc6e39e275b5680aa58c475629a",
+    "public/english-adjectives-common-en-US.json": "53d07e8280c14f720f4082d51260a149870d4c7206d35025093b151be57eeb23",
+    "public/english-adjectives-common-es-ES.json": "3ec0602f1d2d30b373b6612f4bdcfd03dc7ba9af807fcfaf584b633e3ab4596c",
+    "public/english-adjectives-common-fr-FR.json": "755d503d9cef950545fa4ebce3a7174168bc96568bde069ce4c3e883520863a7",
+    "public/english-nouns-common-en-US.json": "69acfaa265da7e93443cbab74264106c11902543f6b20fa509542cb628683502",
+    "public/english-nouns-common-es-ES.json": "eb2511eba9526eaf3c2590fb2411a41683927d9fa562aba21381bce466606923",
+    "public/english-nouns-common-fr-FR.json": "cce37c4eeb1d93bdae14a51b4b4fffc414923ba0e7bdee5a44bfd7cb6c544fa1"
+  },
+  "inventory": {
+    "public/sample-hashmap-pt-BR.json": {
+      "intentions": 1230,
+      "examples": 3069,
+      "rootFields": [
+        "metadata",
+        "mentalMap"
+      ],
+      "metadataFields": [
+        "name",
+        "version",
+        "updatedAt",
+        "language",
+        "targetStudent",
+        "source",
+        "sourceBuild",
+        "totalIntentions"
+      ],
+      "intentionFields": [
+        "allowLanguageChunkPractice",
+        "category",
+        "description",
+        "english",
+        "englishLevel",
+        "examples",
+        "id",
+        "intention",
+        "pattern",
+        "related",
+        "searchTerms",
+        "tags",
+        "validationPatterns",
+        "youtubeShort",
+        "youtubeVideo"
+      ],
+      "exampleFields": [
+        "en",
+        "enIntent",
+        "hqImage",
+        "pt",
+        "ptIntent"
+      ]
+    },
+    "public/sample-hashmap-en-US.json": {
+      "intentions": 1230,
+      "examples": 3069,
+      "rootFields": [
+        "metadata",
+        "mentalMap"
+      ],
+      "metadataFields": [
+        "name",
+        "version",
+        "updatedAt",
+        "language",
+        "targetStudent",
+        "source",
+        "sourceBuild",
+        "totalIntentions"
+      ],
+      "intentionFields": [
+        "allowLanguageChunkPractice",
+        "category",
+        "description",
+        "english",
+        "englishLevel",
+        "examples",
+        "id",
+        "intention",
+        "pattern",
+        "related",
+        "searchTerms",
+        "tags",
+        "validationPatterns",
+        "youtubeShort",
+        "youtubeVideo"
+      ],
+      "exampleFields": [
+        "en",
+        "enIntent",
+        "hqImage",
+        "pt",
+        "ptIntent"
+      ]
+    },
+    "public/sample-hashmap-es-ES.json": {
+      "intentions": 1230,
+      "examples": 3328,
+      "rootFields": [
+        "metadata",
+        "mentalMap"
+      ],
+      "metadataFields": [
+        "name",
+        "version",
+        "updatedAt",
+        "language",
+        "targetStudent",
+        "source",
+        "sourceBuild",
+        "totalIntentions"
+      ],
+      "intentionFields": [
+        "allowLanguageChunkPractice",
+        "category",
+        "description",
+        "english",
+        "englishLevel",
+        "examples",
+        "id",
+        "intention",
+        "pattern",
+        "related",
+        "searchTerms",
+        "tags",
+        "validationPatterns"
+      ],
+      "exampleFields": [
+        "en",
+        "enIntent",
+        "pt",
+        "ptIntent"
+      ]
+    },
+    "public/sample-hashmap-fr-FR.json": {
+      "intentions": 1230,
+      "examples": 3328,
+      "rootFields": [
+        "metadata",
+        "mentalMap"
+      ],
+      "metadataFields": [
+        "name",
+        "version",
+        "updatedAt",
+        "language",
+        "targetStudent",
+        "source",
+        "sourceBuild",
+        "totalIntentions"
+      ],
+      "intentionFields": [
+        "allowLanguageChunkPractice",
+        "category",
+        "description",
+        "english",
+        "englishLevel",
+        "examples",
+        "id",
+        "intention",
+        "pattern",
+        "related",
+        "searchTerms",
+        "tags",
+        "validationPatterns"
+      ],
+      "exampleFields": [
+        "en",
+        "enIntent",
+        "pt",
+        "ptIntent"
+      ]
+    },
+    "src/data/stories/stories-a1.json": {
+      "stories": 11,
+      "paragraphs": 80,
+      "rootFields": [
+        "stories"
+      ],
+      "storyFields": [
+        "englishLevel",
+        "hqImage",
+        "id",
+        "intentionsUsed",
+        "paragraphs",
+        "titleEn",
+        "titleEs",
+        "titleFr",
+        "titlePt",
+        "topic"
+      ],
+      "paragraphFields": [
+        "en",
+        "es",
+        "fr",
+        "intentions",
+        "pt"
+      ]
+    },
+    "src/data/stories/stories-a2.json": {
+      "stories": 8,
+      "paragraphs": 64,
+      "rootFields": [
+        "stories"
+      ],
+      "storyFields": [
+        "englishLevel",
+        "hqImage",
+        "id",
+        "intentionsUsed",
+        "paragraphs",
+        "titleEn",
+        "titleEs",
+        "titleFr",
+        "titlePt",
+        "topic"
+      ],
+      "paragraphFields": [
+        "en",
+        "es",
+        "fr",
+        "intentions",
+        "pt"
+      ]
+    },
+    "src/data/stories/stories-b1.json": {
+      "stories": 17,
+      "paragraphs": 126,
+      "rootFields": [
+        "stories"
+      ],
+      "storyFields": [
+        "englishLevel",
+        "hqImage",
+        "id",
+        "intentionsUsed",
+        "paragraphs",
+        "titleEn",
+        "titleEs",
+        "titleFr",
+        "titlePt",
+        "topic"
+      ],
+      "paragraphFields": [
+        "en",
+        "es",
+        "fr",
+        "intentions",
+        "pt"
+      ]
+    },
+    "src/data/stories/stories-b2.json": {
+      "stories": 2,
+      "paragraphs": 15,
+      "rootFields": [
+        "stories"
+      ],
+      "storyFields": [
+        "englishLevel",
+        "id",
+        "intentionsUsed",
+        "paragraphs",
+        "titleEn",
+        "titleEs",
+        "titleFr",
+        "titlePt",
+        "topic"
+      ],
+      "paragraphFields": [
+        "en",
+        "es",
+        "fr",
+        "intentions",
+        "pt"
+      ]
+    },
+    "src/data/stories/stories-c1.json": {
+      "stories": 2,
+      "paragraphs": 12,
+      "rootFields": [
+        "stories"
+      ],
+      "storyFields": [
+        "englishLevel",
+        "id",
+        "intentionsUsed",
+        "paragraphs",
+        "titleEn",
+        "titleEs",
+        "titleFr",
+        "titlePt",
+        "topic"
+      ],
+      "paragraphFields": [
+        "en",
+        "es",
+        "fr",
+        "intentions",
+        "pt"
+      ]
+    },
+    "src/data/stories/stories-c2.json": {
+      "stories": 2,
+      "paragraphs": 15,
+      "rootFields": [
+        "stories"
+      ],
+      "storyFields": [
+        "englishLevel",
+        "id",
+        "intentionsUsed",
+        "paragraphs",
+        "titleEn",
+        "titleEs",
+        "titleFr",
+        "titlePt",
+        "topic"
+      ],
+      "paragraphFields": [
+        "en",
+        "es",
+        "fr",
+        "intentions",
+        "pt"
+      ]
+    },
+    "public/english-verbs-common-en-US.json": {
+      "entries": 130,
+      "rootFields": [
+        "metadata",
+        "verbs"
+      ],
+      "metadataFields": [
+        "name",
+        "version",
+        "updatedAt",
+        "language",
+        "description",
+        "totalVerbs"
+      ],
+      "entryFields": [
+        "base",
+        "examples",
+        "frequency",
+        "gerund",
+        "id",
+        "level",
+        "meanings",
+        "past",
+        "pastParticiple",
+        "tags",
+        "thirdPerson",
+        "type"
+      ]
+    },
+    "public/english-verbs-common-es-ES.json": {
+      "entries": 132,
+      "rootFields": [
+        "metadata",
+        "verbs"
+      ],
+      "metadataFields": [
+        "name",
+        "version",
+        "updatedAt",
+        "language",
+        "sourceLanguage",
+        "totalVerbs"
+      ],
+      "entryFields": [
+        "base",
+        "forms",
+        "frequency",
+        "id",
+        "impersonal",
+        "level",
+        "meanings",
+        "stative",
+        "tags",
+        "trainingForms"
+      ]
+    },
+    "public/english-verbs-common-fr-FR.json": {
+      "entries": 131,
+      "rootFields": [
+        "metadata",
+        "verbs"
+      ],
+      "metadataFields": [
+        "name",
+        "version",
+        "updatedAt",
+        "language",
+        "sourceLanguage",
+        "totalVerbs"
+      ],
+      "entryFields": [
+        "base",
+        "forms",
+        "frequency",
+        "id",
+        "impersonal",
+        "level",
+        "meanings",
+        "stative",
+        "tags",
+        "trainingForms"
+      ]
+    },
+    "public/english-adjectives-common-en-US.json": {
+      "entries": 117,
+      "rootFields": [
+        "metadata",
+        "adjectives"
+      ],
+      "metadataFields": [
+        "name",
+        "version",
+        "updatedAt",
+        "language",
+        "description",
+        "totalAdjectives"
+      ],
+      "entryFields": [
+        "adjective",
+        "comparative",
+        "examples",
+        "frequency",
+        "id",
+        "level",
+        "meanings",
+        "superlative",
+        "tags"
+      ]
+    },
+    "public/english-adjectives-common-es-ES.json": {
+      "entries": 116,
+      "rootFields": [
+        "metadata",
+        "adjectives"
+      ],
+      "metadataFields": [
+        "name",
+        "version",
+        "updatedAt",
+        "language",
+        "sourceLanguage",
+        "totalAdjectives"
+      ],
+      "entryFields": [
+        "adjective",
+        "forms",
+        "frequency",
+        "id",
+        "level",
+        "meanings",
+        "tags"
+      ]
+    },
+    "public/english-adjectives-common-fr-FR.json": {
+      "entries": 117,
+      "rootFields": [
+        "metadata",
+        "adjectives"
+      ],
+      "metadataFields": [
+        "name",
+        "version",
+        "updatedAt",
+        "language",
+        "sourceLanguage",
+        "totalAdjectives"
+      ],
+      "entryFields": [
+        "adjective",
+        "forms",
+        "frequency",
+        "id",
+        "level",
+        "meanings",
+        "tags"
+      ]
+    },
+    "public/english-nouns-common-en-US.json": {
+      "entries": 138,
+      "rootFields": [
+        "metadata",
+        "nouns"
+      ],
+      "metadataFields": [
+        "name",
+        "version",
+        "updatedAt",
+        "language",
+        "description",
+        "totalNouns"
+      ],
+      "entryFields": [
+        "countability",
+        "examples",
+        "frequency",
+        "id",
+        "level",
+        "meanings",
+        "noun",
+        "plural",
+        "tags"
+      ]
+    },
+    "public/english-nouns-common-es-ES.json": {
+      "entries": 138,
+      "rootFields": [
+        "metadata",
+        "nouns"
+      ],
+      "metadataFields": [
+        "name",
+        "version",
+        "updatedAt",
+        "language",
+        "sourceLanguage",
+        "totalNouns"
+      ],
+      "entryFields": [
+        "article",
+        "countability",
+        "feminine",
+        "femininePlural",
+        "frequency",
+        "gender",
+        "id",
+        "level",
+        "meanings",
+        "noun",
+        "plural",
+        "pluralArticle",
+        "tags"
+      ]
+    },
+    "public/english-nouns-common-fr-FR.json": {
+      "entries": 138,
+      "rootFields": [
+        "metadata",
+        "nouns"
+      ],
+      "metadataFields": [
+        "name",
+        "version",
+        "updatedAt",
+        "language",
+        "sourceLanguage",
+        "totalNouns"
+      ],
+      "entryFields": [
+        "article",
+        "countability",
+        "feminine",
+        "femininePlural",
+        "frequency",
+        "gender",
+        "id",
+        "level",
+        "meanings",
+        "noun",
+        "number",
+        "plural",
+        "pluralArticle",
+        "tags"
+      ]
+    }
+  },
+  "matchingRule": "Exact Portuguese text and highlighted span, unique within each intention; never positional.",
+  "caveats": [
+    "Portuguese structural grammar remains unchanged from its source catalog.",
+    "Vocabulary preserved in public; no cross-language equivalence assumed."
+  ],
+  "issues": [
+    {
+      "locale": "pt-BR",
+      "intention": "Isso é demais!",
+      "example": 1,
+      "portuguese": "Isso é demais!",
+      "reason": "Referencia portuguesa repetida; associacao semantica manual necessaria."
+    },
+    {
+      "locale": "pt-BR",
+      "intention": "Isso é demais!",
+      "example": 2,
+      "portuguese": "Isso é demais!",
+      "reason": "Referencia portuguesa repetida; associacao semantica manual necessaria."
+    },
+    {
+      "locale": "en-US",
+      "intention": "Isso é demais!",
+      "example": 1,
+      "portuguese": "Isso é demais!",
+      "reason": "Referencia portuguesa repetida; associacao semantica manual necessaria."
+    },
+    {
+      "locale": "en-US",
+      "intention": "Isso é demais!",
+      "example": 2,
+      "portuguese": "Isso é demais!",
+      "reason": "Referencia portuguesa repetida; associacao semantica manual necessaria."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Isso é demais!",
+      "example": 1,
+      "portuguese": "Isso é demais!",
+      "reason": "Referencia portuguesa repetida; associacao semantica manual necessaria."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Isso é demais!",
+      "example": 2,
+      "portuguese": "Isso é demais!",
+      "reason": "Referencia portuguesa repetida; associacao semantica manual necessaria."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Como as coisas têm ido?",
+      "example": 2,
+      "portuguese": "Como as coisas têm ido? Já faz tempo que não conversamos.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Como as coisas têm ido?",
+      "example": 3,
+      "portuguese": "Você começou no emprego novo. Como as coisas têm ido?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "As coisas têm ido muito bem.",
+      "example": 2,
+      "portuguese": "As coisas têm ido muito bem. Estou gostando do novo trabalho.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "As coisas têm ido muito bem.",
+      "example": 3,
+      "portuguese": "Desde que me mudei, as coisas têm ido muito bem.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Tenho estado bem ocupado ultimamente.",
+      "example": 2,
+      "portuguese": "Tenho estado bem ocupado ultimamente. Estamos terminando um projeto.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Tenho estado bem ocupado ultimamente.",
+      "example": 3,
+      "portuguese": "Desculpe por não ligar. Tenho estado bem ocupado ultimamente.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Entendo o que você está dizendo.",
+      "example": 2,
+      "portuguese": "Entendo o que você está dizendo. Essa mudança é difícil.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Entendo o que você está dizendo.",
+      "example": 3,
+      "portuguese": "Não passei por isso, mas entendo o que você está dizendo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não tenho certeza se concordo com isso.",
+      "example": 2,
+      "portuguese": "Não tenho certeza se concordo com isso. Precisamos de mais informações.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não tenho certeza se concordo com isso.",
+      "example": 3,
+      "portuguese": "Entendo seu argumento, mas não tenho certeza se concordo com isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Esse é um ponto interessante.",
+      "example": 2,
+      "portuguese": "Esse é um ponto interessante. Não tinha pensado nisso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Esse é um ponto interessante.",
+      "example": 3,
+      "portuguese": "Você mencionou os custos. Esse é um ponto interessante.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Fico feliz que você tenha me contado.",
+      "example": 2,
+      "portuguese": "Fico feliz que você tenha me contado. Agora posso ajudar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Fico feliz que você tenha me contado.",
+      "example": 3,
+      "portuguese": "Sei que foi difícil falar disso. Fico feliz que você tenha me contado.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Isso acontece comigo também.",
+      "example": 2,
+      "portuguese": "Isso acontece comigo também quando durmo pouco.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Isso acontece comigo também.",
+      "example": 3,
+      "portuguese": "Você esquece nomes? Isso acontece comigo também.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Deixe-me verificar e depois te retorno.",
+      "example": 2,
+      "portuguese": "Deixe-me verificar e depois te retorno. Preciso consultar a agenda.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Deixe-me verificar e depois te retorno.",
+      "example": 3,
+      "portuguese": "Não sei se ainda há vagas. Deixe-me verificar e depois te retorno.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vou terminar isso hoje.",
+      "example": 2,
+      "portuguese": "Vou terminar isso hoje, antes de sair.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vou terminar isso hoje.",
+      "example": 3,
+      "portuguese": "Falta só revisar o texto. Vou terminar isso hoje.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Podemos adiar um pouco?",
+      "example": 2,
+      "portuguese": "Podemos adiar um pouco? Ainda estou no trânsito.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Podemos adiar um pouco?",
+      "example": 3,
+      "portuguese": "A reunião começa às duas. Podemos adiar um pouco?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Voltaremos a isso mais tarde.",
+      "example": 2,
+      "portuguese": "Voltaremos a isso mais tarde. Primeiro vamos ouvir os outros.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Voltaremos a isso mais tarde.",
+      "example": 3,
+      "portuguese": "Ainda faltam os resultados. Voltaremos a isso mais tarde.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vou dar uma olhada nisso.",
+      "example": 2,
+      "portuguese": "Vou dar uma olhada nisso depois do almoço.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vou dar uma olhada nisso.",
+      "example": 3,
+      "portuguese": "Você me enviou o documento? Vou dar uma olhada nisso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Deixe-me ver o que posso fazer.",
+      "example": 2,
+      "portuguese": "Deixe-me ver o que posso fazer. Talvez haja outro horário.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Deixe-me ver o que posso fazer.",
+      "example": 3,
+      "portuguese": "Você precisa disso hoje? Deixe-me ver o que posso fazer.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vou encontrar uma solução.",
+      "example": 2,
+      "portuguese": "Vou encontrar uma solução, mesmo que precise de ajuda.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vou encontrar uma solução.",
+      "example": 3,
+      "portuguese": "O plano original não funciona. Vou encontrar uma solução.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos resolver isso juntos.",
+      "example": 2,
+      "portuguese": "Vamos resolver isso juntos. Você não precisa fazer tudo sozinho.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos resolver isso juntos.",
+      "example": 3,
+      "portuguese": "Sei que parece complicado, mas vamos resolver isso juntos.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Estou com dificuldade para entender isso.",
+      "example": 2,
+      "portuguese": "Estou com dificuldade para entender isso. Pode explicar de outra forma?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Estou com dificuldade para entender isso.",
+      "example": 3,
+      "portuguese": "Li as instruções duas vezes. Estou com dificuldade para entender isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você poderia me explicar isso passo a passo?",
+      "example": 2,
+      "portuguese": "Você poderia me explicar isso passo a passo? É a primeira vez que uso o sistema.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você poderia me explicar isso passo a passo?",
+      "example": 3,
+      "portuguese": "Não sei por onde começar. Você poderia me explicar isso passo a passo?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você poderia me dar um exemplo?",
+      "example": 2,
+      "portuguese": "Você poderia me dar um exemplo? Quero entender como usar essa expressão.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você poderia me dar um exemplo?",
+      "example": 3,
+      "portuguese": "A regra parece abstrata. Você poderia me dar um exemplo?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Deixe-me confirmar se entendi.",
+      "example": 2,
+      "portuguese": "Deixe-me confirmar se entendi. O prazo é sexta-feira?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Deixe-me confirmar se entendi.",
+      "example": 3,
+      "portuguese": "Antes de começar, deixe-me confirmar se entendi.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Surgiu um imprevisto.",
+      "example": 2,
+      "portuguese": "Surgiu um imprevisto. Vou chegar um pouco mais tarde.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Surgiu um imprevisto.",
+      "example": 3,
+      "portuguese": "Não vou conseguir ir hoje. Surgiu um imprevisto.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Algo deu errado.",
+      "example": 2,
+      "portuguese": "Algo deu errado. O arquivo não foi salvo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Algo deu errado.",
+      "example": 3,
+      "portuguese": "A tela ficou em branco. Algo deu errado.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Estamos tendo um pequeno problema com isso.",
+      "example": 2,
+      "portuguese": "Estamos tendo um pequeno problema com isso. A conexão está instável.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Estamos tendo um pequeno problema com isso.",
+      "example": 3,
+      "portuguese": "O pagamento ainda não passou. Estamos tendo um pequeno problema com isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos ver o que podemos fazer a respeito.",
+      "example": 2,
+      "portuguese": "Vamos ver o que podemos fazer a respeito. Ainda temos tempo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos ver o que podemos fazer a respeito.",
+      "example": 3,
+      "portuguese": "Você recebeu uma cobrança errada? Vamos ver o que podemos fazer a respeito.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos considerar outra opção.",
+      "example": 2,
+      "portuguese": "Vamos considerar outra opção. Esta está fora do orçamento.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos considerar outra opção.",
+      "example": 3,
+      "portuguese": "Se não houver vagas, vamos considerar outra opção.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não é tão ruim quanto parece.",
+      "example": 2,
+      "portuguese": "Não é tão ruim quanto parece. Podemos consertar isso hoje.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não é tão ruim quanto parece.",
+      "example": 3,
+      "portuguese": "Eu já passei por isso. Não é tão ruim quanto parece.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Acho que sei o que aconteceu.",
+      "example": 2,
+      "portuguese": "Acho que sei o que aconteceu. Enviamos a versão antiga.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Acho que sei o que aconteceu.",
+      "example": 3,
+      "portuguese": "O computador desligou sozinho? Acho que sei o que aconteceu.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Isso deve resolver o problema.",
+      "example": 2,
+      "portuguese": "Isso deve resolver o problema. Tente entrar novamente.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Isso deve resolver o problema.",
+      "example": 3,
+      "portuguese": "Acabei de atualizar o sistema. Isso deve resolver o problema.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você vai fazer alguma coisa neste fim de semana?",
+      "example": 2,
+      "portuguese": "Você vai fazer alguma coisa neste fim de semana? Podemos ir à praia.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você vai fazer alguma coisa neste fim de semana?",
+      "example": 3,
+      "portuguese": "Quero organizar um almoço. Você vai fazer alguma coisa neste fim de semana?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você está livre mais tarde?",
+      "example": 2,
+      "portuguese": "Você está livre mais tarde? Queria conversar com você.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você está livre mais tarde?",
+      "example": 3,
+      "portuguese": "Precisamos revisar a apresentação. Você está livre mais tarde?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Eu ficaria feliz em ir com você.",
+      "example": 2,
+      "portuguese": "Eu ficaria feliz em ir com você. Também quero conhecer esse lugar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Eu ficaria feliz em ir com você.",
+      "example": 3,
+      "portuguese": "Se ainda houver espaço, eu ficaria feliz em ir com você.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Podemos remarcar para outro dia?",
+      "example": 2,
+      "portuguese": "Podemos remarcar para outro dia? Tenho uma consulta nesse horário.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Podemos remarcar para outro dia?",
+      "example": 3,
+      "portuguese": "Sábado não vai dar. Podemos remarcar para outro dia?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Que horário é bom para você?",
+      "example": 2,
+      "portuguese": "Que horário é bom para você? Posso me adaptar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Que horário é bom para você?",
+      "example": 3,
+      "portuguese": "Vamos conversar amanhã. Que horário é bom para você?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Deveríamos repetir isso qualquer dia.",
+      "example": 2,
+      "portuguese": "Deveríamos repetir isso qualquer dia. Gostei muito do passeio.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Deveríamos repetir isso qualquer dia.",
+      "example": 3,
+      "portuguese": "O jantar estava ótimo. Deveríamos repetir isso qualquer dia.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Foi ótimo passar um tempo com você.",
+      "example": 2,
+      "portuguese": "Foi ótimo passar um tempo com você. Precisava dessa conversa.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Foi ótimo passar um tempo com você.",
+      "example": 3,
+      "portuguese": "Já está tarde. Foi ótimo passar um tempo com você.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Isso significa muito para mim.",
+      "example": 2,
+      "portuguese": "Isso significa muito para mim. Obrigado pelo apoio.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Isso significa muito para mim.",
+      "example": 3,
+      "portuguese": "Você se lembrou do meu aniversário. Isso significa muito para mim.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Isso não me incomoda.",
+      "example": 2,
+      "portuguese": "Isso não me incomoda. Você pode abrir a janela.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Isso não me incomoda.",
+      "example": 3,
+      "portuguese": "Se você precisar sair cedo, isso não me incomoda.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Tenho sentimentos contraditórios sobre isso.",
+      "example": 2,
+      "portuguese": "Tenho sentimentos contraditórios sobre isso. A mudança tem vantagens e desvantagens.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Tenho sentimentos contraditórios sobre isso.",
+      "example": 3,
+      "portuguese": "A proposta é boa, mas tenho sentimentos contraditórios sobre isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Estou começando a entender seu ponto.",
+      "example": 2,
+      "portuguese": "Estou começando a entender seu ponto. O prazo realmente está apertado.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Estou começando a entender seu ponto.",
+      "example": 3,
+      "portuguese": "Depois desse exemplo, estou começando a entender seu ponto.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Essa é uma boa maneira de enxergar as coisas.",
+      "example": 2,
+      "portuguese": "Essa é uma boa maneira de enxergar as coisas. Ajuda a reduzir a ansiedade.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Essa é uma boa maneira de enxergar as coisas.",
+      "example": 3,
+      "portuguese": "Não tinha pensado nas oportunidades. Essa é uma boa maneira de enxergar as coisas.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vou ter que pensar sobre isso.",
+      "example": 2,
+      "portuguese": "Vou ter que pensar sobre isso antes de aceitar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vou ter que pensar sobre isso.",
+      "example": 3,
+      "portuguese": "A proposta é interessante. Vou ter que pensar sobre isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Há dois lados nessa questão.",
+      "example": 2,
+      "portuguese": "Há dois lados nessa questão. Vamos ouvir a outra pessoa.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Há dois lados nessa questão.",
+      "example": 3,
+      "portuguese": "Antes de julgar, lembre-se: há dois lados nessa questão.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "A questão é a seguinte.",
+      "example": 2,
+      "portuguese": "A questão é a seguinte: temos tempo suficiente?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "A questão é a seguinte.",
+      "example": 3,
+      "portuguese": "Vou ser direto. A questão é a seguinte: quem vai pagar?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Estou tentando descobrir a causa disso.",
+      "example": 2,
+      "portuguese": "Estou tentando descobrir a causa disso. Já conversei com a equipe.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Estou tentando descobrir a causa disso.",
+      "example": 3,
+      "portuguese": "Ainda não tenho uma resposta. Estou tentando descobrir a causa disso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Ainda estou avaliando minhas opções.",
+      "example": 2,
+      "portuguese": "Ainda estou avaliando minhas opções antes de decidir.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Ainda estou avaliando minhas opções.",
+      "example": 3,
+      "portuguese": "Recebi duas propostas. Ainda estou avaliando minhas opções.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos lidar com uma coisa de cada vez.",
+      "example": 2,
+      "portuguese": "Vamos lidar com uma coisa de cada vez. Primeiro, o orçamento.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos lidar com uma coisa de cada vez.",
+      "example": 3,
+      "portuguese": "Há vários problemas. Vamos lidar com uma coisa de cada vez.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos focar no que podemos controlar.",
+      "example": 2,
+      "portuguese": "Vamos focar no que podemos controlar. Não podemos mudar o clima.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos focar no que podemos controlar.",
+      "example": 3,
+      "portuguese": "Não sabemos o resultado ainda. Vamos focar no que podemos controlar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Estamos no caminho certo.",
+      "example": 2,
+      "portuguese": "Estamos no caminho certo. Os resultados estão melhorando.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Estamos no caminho certo.",
+      "example": 3,
+      "portuguese": "Ainda falta muito, mas estamos no caminho certo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Qual é a melhor maneira de seguir em frente?",
+      "example": 2,
+      "portuguese": "Qual é a melhor maneira de seguir em frente? Devemos falar com o gerente?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Qual é a melhor maneira de seguir em frente?",
+      "example": 3,
+      "portuguese": "Já identificamos o problema. Qual é a melhor maneira de seguir em frente?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Quais são os próximos passos?",
+      "example": 2,
+      "portuguese": "Quais são os próximos passos? Preciso enviar algum documento?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Quais são os próximos passos?",
+      "example": 3,
+      "portuguese": "A proposta foi aprovada. Quais são os próximos passos?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Obrigado por chamar minha atenção para isso.",
+      "example": 2,
+      "portuguese": "Obrigado por chamar minha atenção para isso. Vou corrigir o erro.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Obrigado por chamar minha atenção para isso.",
+      "example": 3,
+      "portuguese": "Eu não tinha visto a mensagem. Obrigado por chamar minha atenção para isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vou levar isso em consideração.",
+      "example": 2,
+      "portuguese": "Vou levar isso em consideração ao preparar o orçamento.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vou levar isso em consideração.",
+      "example": 3,
+      "portuguese": "Obrigado pela sugestão. Vou levar isso em consideração.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não sei como você aguenta isso.",
+      "example": 2,
+      "portuguese": "Não sei como você aguenta isso todos os dias.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não sei como você aguenta isso.",
+      "example": 3,
+      "portuguese": "O barulho é constante. Não sei como você aguenta isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você tem todo o meu apoio.",
+      "example": 2,
+      "portuguese": "Você tem todo o meu apoio nessa decisão.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você tem todo o meu apoio.",
+      "example": 3,
+      "portuguese": "Se decidir mudar de carreira, você tem todo o meu apoio.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Posso sempre contar com você.",
+      "example": 2,
+      "portuguese": "Posso sempre contar com você quando preciso de ajuda.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Posso sempre contar com você.",
+      "example": 3,
+      "portuguese": "Você veio mesmo com a chuva. Posso sempre contar com você.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não quero tirar conclusões precipitadas.",
+      "example": 2,
+      "portuguese": "Não quero tirar conclusões precipitadas. Vamos esperar os resultados.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não quero tirar conclusões precipitadas.",
+      "example": 3,
+      "portuguese": "Ainda não ouvimos a outra parte. Não quero tirar conclusões precipitadas.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos ver como as coisas se desenrolam.",
+      "example": 2,
+      "portuguese": "Vamos ver como as coisas se desenrolam antes de mudar o plano.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos ver como as coisas se desenrolam.",
+      "example": 3,
+      "portuguese": "A equipe acabou de começar. Vamos ver como as coisas se desenrolam.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Só quero garantir que estamos alinhados.",
+      "example": 2,
+      "portuguese": "Só quero garantir que estamos alinhados sobre o prazo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Só quero garantir que estamos alinhados.",
+      "example": 3,
+      "portuguese": "Antes de enviar a proposta, só quero garantir que estamos alinhados.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Volto em um instante.",
+      "example": 2,
+      "portuguese": "Volto em um instante. Vou buscar um copo d'água.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Volto em um instante.",
+      "example": 3,
+      "portuguese": "Espere aqui. Volto em um instante.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Me dê um segundo.",
+      "example": 2,
+      "portuguese": "Me dê um segundo. Estou terminando esta mensagem.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Me dê um segundo.",
+      "example": 3,
+      "portuguese": "Não desligue ainda. Me dê um segundo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Como está sendo seu dia?",
+      "example": 2,
+      "portuguese": "Como está sendo seu dia? Você parece animado.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Como está sendo seu dia?",
+      "example": 3,
+      "portuguese": "Acabei de sair do trabalho. Como está sendo seu dia?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "É bom ver você de novo.",
+      "example": 2,
+      "portuguese": "É bom ver você de novo. Fazia tempo!",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "É bom ver você de novo.",
+      "example": 3,
+      "portuguese": "É bom ver você de novo depois de tantos anos.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você provavelmente tem razão.",
+      "example": 2,
+      "portuguese": "Você provavelmente tem razão. É melhor sairmos cedo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você provavelmente tem razão.",
+      "example": 3,
+      "portuguese": "Eu não tinha considerado o trânsito. Você provavelmente tem razão.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você pode me ajudar com isso?",
+      "example": 2,
+      "portuguese": "Você pode me ajudar com isso? Não consigo abrir o arquivo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você pode me ajudar com isso?",
+      "example": 3,
+      "portuguese": "Estou tentando montar a mesa. Você pode me ajudar com isso?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você poderia me ajudar por um segundo?",
+      "example": 2,
+      "portuguese": "Você poderia me ajudar por um segundo? Preciso segurar esta porta.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você poderia me ajudar por um segundo?",
+      "example": 3,
+      "portuguese": "Se não estiver ocupado, você poderia me ajudar por um segundo?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você pode me mostrar como fazer isso?",
+      "example": 2,
+      "portuguese": "Você pode me mostrar como fazer isso? Nunca usei esta máquina.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você pode me mostrar como fazer isso?",
+      "example": 3,
+      "portuguese": "Não entendi as instruções. Você pode me mostrar como fazer isso?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "O que isso significa?",
+      "example": 2,
+      "portuguese": "O que isso significa? Nunca vi essa palavra.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "O que isso significa?",
+      "example": 3,
+      "portuguese": "Apareceu um símbolo na tela. O que isso significa?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você poderia falar um pouco mais devagar?",
+      "example": 2,
+      "portuguese": "Você poderia falar um pouco mais devagar? Ainda estou aprendendo espanhol.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você poderia falar um pouco mais devagar?",
+      "example": 3,
+      "portuguese": "A conexão está ruim. Você poderia falar um pouco mais devagar?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Eu não ouvi você.",
+      "example": 2,
+      "portuguese": "Eu não ouvi você. Pode repetir?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Eu não ouvi você.",
+      "example": 3,
+      "portuguese": "Havia muito barulho. Eu não ouvi você.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Onde posso encontrar isso?",
+      "example": 2,
+      "portuguese": "Onde posso encontrar isso? Procurei em todos os corredores.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Onde posso encontrar isso?",
+      "example": 3,
+      "portuguese": "Preciso deste formulário. Onde posso encontrar isso?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Quanto custa isso?",
+      "example": 2,
+      "portuguese": "Quanto custa isso? Não estou vendo a etiqueta.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Quanto custa isso?",
+      "example": 3,
+      "portuguese": "Gostei desta mochila. Quanto custa isso?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você poderia me dar um minuto?",
+      "example": 2,
+      "portuguese": "Você poderia me dar um minuto? Preciso conferir os números.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você poderia me dar um minuto?",
+      "example": 3,
+      "portuguese": "Estou terminando uma ligação. Você poderia me dar um minuto?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Estarei aí em alguns minutos.",
+      "example": 2,
+      "portuguese": "Estarei aí em alguns minutos. Já estou a caminho.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Estarei aí em alguns minutos.",
+      "example": 3,
+      "portuguese": "Pode pedir uma mesa. Estarei aí em alguns minutos.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você está livre hoje à noite?",
+      "example": 2,
+      "portuguese": "Você está livre hoje à noite? Podemos jantar juntos.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você está livre hoje à noite?",
+      "example": 3,
+      "portuguese": "Tenho dois ingressos. Você está livre hoje à noite?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Que horas devemos nos encontrar?",
+      "example": 2,
+      "portuguese": "Que horas devemos nos encontrar? O filme começa às oito.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Que horas devemos nos encontrar?",
+      "example": 3,
+      "portuguese": "Já escolhemos o lugar. Que horas devemos nos encontrar?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Onde devemos nos encontrar?",
+      "example": 2,
+      "portuguese": "Onde devemos nos encontrar? Na entrada principal?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Onde devemos nos encontrar?",
+      "example": 3,
+      "portuguese": "Chego às seis. Onde devemos nos encontrar?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Para mim funciona.",
+      "example": 2,
+      "portuguese": "Para mim funciona. Podemos marcar para sexta.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Para mim funciona.",
+      "example": 3,
+      "portuguese": "Às sete? Para mim funciona.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos descobrir como fazer isso.",
+      "example": 2,
+      "portuguese": "Vamos descobrir como fazer isso antes de comprar as peças.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos descobrir como fazer isso.",
+      "example": 3,
+      "portuguese": "Nunca fizemos isso, mas vamos descobrir como fazer isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vou fazer isso depois.",
+      "example": 2,
+      "portuguese": "Vou fazer isso depois. Agora preciso terminar o relatório.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vou fazer isso depois.",
+      "example": 3,
+      "portuguese": "Ainda não reservei o hotel. Vou fazer isso depois.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Ainda não estou pronto.",
+      "example": 2,
+      "portuguese": "Ainda não estou pronto. Só preciso calçar os sapatos.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Ainda não estou pronto.",
+      "example": 3,
+      "portuguese": "Podemos começar em cinco minutos? Ainda não estou pronto.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não estou me sentindo muito bem.",
+      "example": 2,
+      "portuguese": "Não estou me sentindo muito bem. Acho que vou para casa.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não estou me sentindo muito bem.",
+      "example": 3,
+      "portuguese": "Hoje não vou correr. Não estou me sentindo muito bem.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não gosto muito disso.",
+      "example": 2,
+      "portuguese": "Não gosto muito disso. Prefiro a outra opção.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não gosto muito disso.",
+      "example": 3,
+      "portuguese": "Entendo por que é popular, mas não gosto muito disso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não sou muito fã disso.",
+      "example": 2,
+      "portuguese": "Não sou muito fã disso. Prefiro algo mais tranquilo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não sou muito fã disso.",
+      "example": 3,
+      "portuguese": "Pode ser divertido para você, mas não sou muito fã disso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Acho que é uma boa ideia.",
+      "example": 2,
+      "portuguese": "Acho que é uma boa ideia. Vai economizar tempo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Acho que é uma boa ideia.",
+      "example": 3,
+      "portuguese": "Vamos dividir as tarefas? Acho que é uma boa ideia.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não acho que seja uma boa ideia.",
+      "example": 2,
+      "portuguese": "Não acho que seja uma boa ideia. A estrada está perigosa.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não acho que seja uma boa ideia.",
+      "example": 3,
+      "portuguese": "Sair sem reservar? Não acho que seja uma boa ideia.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Tenho passado muito bem.",
+      "example": 2,
+      "portuguese": "Tenho passado muito bem desde que comecei a descansar mais.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Tenho passado muito bem.",
+      "example": 3,
+      "portuguese": "Obrigado por perguntar. Tenho passado muito bem.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Concordo totalmente com você.",
+      "example": 2,
+      "portuguese": "Concordo totalmente com você. Precisamos mudar o plano.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Concordo totalmente com você.",
+      "example": 3,
+      "portuguese": "Nesse ponto, concordo totalmente com você.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não tenho certeza absoluta.",
+      "example": 2,
+      "portuguese": "Não tenho certeza absoluta. Vou verificar a data.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não tenho certeza absoluta.",
+      "example": 3,
+      "portuguese": "Acho que é o ônibus certo, mas não tenho certeza absoluta.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você poderia explicar o que quer dizer?",
+      "example": 2,
+      "portuguese": "Você poderia explicar o que quer dizer? Não conheço esse termo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Você poderia explicar o que quer dizer?",
+      "example": 3,
+      "portuguese": "Quando diz que é flexível, você poderia explicar o que quer dizer?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos fazer uma pausa rápida.",
+      "example": 2,
+      "portuguese": "Vamos fazer uma pausa rápida. Já estamos aqui há duas horas.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos fazer uma pausa rápida.",
+      "example": 3,
+      "portuguese": "Antes do próximo exercício, vamos fazer uma pausa rápida.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não tenho certeza do que você quer dizer.",
+      "example": 2,
+      "portuguese": "Não tenho certeza do que você quer dizer. Está falando do prazo?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não tenho certeza do que você quer dizer.",
+      "example": 3,
+      "portuguese": "Pode reformular? Não tenho certeza do que você quer dizer.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não é nada demais.",
+      "example": 2,
+      "portuguese": "Não é nada de especial. É só um café comum.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não é nada demais.",
+      "example": 3,
+      "portuguese": "O hotel é confortável, mas não é nada de especial.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Podemos resolver isso.",
+      "example": 2,
+      "portuguese": "Podemos resolver isso sem cancelar a viagem.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Podemos resolver isso.",
+      "example": 3,
+      "portuguese": "Não se preocupe. Podemos resolver isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos ver como vai ser.",
+      "example": 2,
+      "portuguese": "Vamos ver como vai ser. É a primeira vez que tentamos.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos ver como vai ser.",
+      "example": 3,
+      "portuguese": "Começamos amanhã. Vamos ver como vai ser.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Eu adoraria ir.",
+      "example": 2,
+      "portuguese": "Eu adoraria ir, mas preciso confirmar o horário.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Eu adoraria ir.",
+      "example": 3,
+      "portuguese": "Obrigado pelo convite. Eu adoraria ir.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Encontro você lá.",
+      "example": 2,
+      "portuguese": "Encontro você lá. Vou direto do trabalho.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Encontro você lá.",
+      "example": 3,
+      "portuguese": "Pode entrar sem mim. Encontro você lá.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Deixe-me pagar.",
+      "example": 2,
+      "portuguese": "Deixe-me pagar. Você pagou da última vez.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Deixe-me pagar.",
+      "example": 3,
+      "portuguese": "É seu aniversário. Deixe-me pagar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Sou muito grato por isso.",
+      "example": 2,
+      "portuguese": "Sou muito grato por isso. Sua ajuda fez a diferença.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Sou muito grato por isso.",
+      "example": 3,
+      "portuguese": "Você ficou até tarde para ajudar. Sou muito grato por isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Muito obrigado pela sua ajuda.",
+      "example": 2,
+      "portuguese": "Muito obrigado pela sua ajuda. Sozinho eu não teria conseguido.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Muito obrigado pela sua ajuda.",
+      "example": 3,
+      "portuguese": "Agora está tudo pronto. Muito obrigado pela sua ajuda.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Ainda não me decidi.",
+      "example": 2,
+      "portuguese": "Ainda não me decidi. As duas opções são boas.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Ainda não me decidi.",
+      "example": 3,
+      "portuguese": "Sobre a viagem, ainda não me decidi.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Ainda estou trabalhando nisso.",
+      "example": 2,
+      "portuguese": "Ainda estou trabalhando nisso. Posso enviar uma versão amanhã.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Ainda estou trabalhando nisso.",
+      "example": 3,
+      "portuguese": "O relatório ainda não está pronto. Ainda estou trabalhando nisso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Estou investigando isso.",
+      "example": 2,
+      "portuguese": "Estou investigando isso. Vou falar com quem estava lá.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Estou investigando isso.",
+      "example": 3,
+      "portuguese": "Recebemos uma reclamação. Estou investigando isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos tentar de outra maneira.",
+      "example": 2,
+      "portuguese": "Vamos tentar de outra maneira. Este método não está funcionando.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos tentar de outra maneira.",
+      "example": 3,
+      "portuguese": "Não precisamos desistir. Vamos tentar de outra maneira.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não tenho certeza se isso vai funcionar.",
+      "example": 2,
+      "portuguese": "Não tenho certeza se isso vai funcionar. Nunca testamos com tanta gente.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não tenho certeza se isso vai funcionar.",
+      "example": 3,
+      "portuguese": "Podemos tentar, mas não tenho certeza se isso vai funcionar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Estamos um pouco atrasados no cronograma.",
+      "example": 2,
+      "portuguese": "Estamos um pouco atrasados no cronograma. Precisamos reorganizar as tarefas.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Estamos um pouco atrasados no cronograma.",
+      "example": 3,
+      "portuguese": "A entrega ainda é possível, mas estamos um pouco atrasados no cronograma.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos discutir os detalhes.",
+      "example": 2,
+      "portuguese": "Vamos discutir os detalhes antes de assinar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vamos discutir os detalhes.",
+      "example": 3,
+      "portuguese": "Já concordamos com a ideia. Vamos discutir os detalhes.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vou terminar isso até o fim do dia.",
+      "example": 2,
+      "portuguese": "Vou terminar isso até o fim do dia. Você terá tempo de revisar amanhã.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Vou terminar isso até o fim do dia.",
+      "example": 3,
+      "portuguese": "Falta apenas uma seção. Vou terminar isso até o fim do dia.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Obrigado por dedicar seu tempo.",
+      "example": 2,
+      "portuguese": "Obrigado por dedicar seu tempo para ouvir minha proposta.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Obrigado por dedicar seu tempo.",
+      "example": 3,
+      "portuguese": "Sei que sua agenda está cheia. Obrigado por dedicar seu tempo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Sei como você se sente.",
+      "example": 2,
+      "portuguese": "Sei como você se sente. Também já perdi um emprego.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Sei como você se sente.",
+      "example": 3,
+      "portuguese": "Essa espera é difícil. Sei como você se sente.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Já passei por isso antes.",
+      "example": 2,
+      "portuguese": "Já passei por isso antes. Posso contar o que me ajudou.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Já passei por isso antes.",
+      "example": 3,
+      "portuguese": "Não é fácil começar de novo. Já passei por isso antes.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não me sinto confortável com isso.",
+      "example": 2,
+      "portuguese": "Não me sinto confortável com isso. Prefiro não compartilhar esses dados.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não me sinto confortável com isso.",
+      "example": 3,
+      "portuguese": "Entendo o pedido, mas não me sinto confortável com isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Respeito sua decisão.",
+      "example": 2,
+      "portuguese": "Respeito sua decisão, mesmo pensando diferente.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Respeito sua decisão.",
+      "example": 3,
+      "portuguese": "Se você prefere não ir, respeito sua decisão.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Valorizo muito sua opinião.",
+      "example": 2,
+      "portuguese": "Valorizo muito sua opinião. O que você acha da proposta?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Valorizo muito sua opinião.",
+      "example": 3,
+      "portuguese": "Antes de decidir, quero ouvir você. Valorizo muito sua opinião.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Do jeito que eu vejo",
+      "example": 1,
+      "portuguese": "Do jeito que eu vejo, precisamos de mais tempo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Do jeito que eu vejo",
+      "example": 2,
+      "portuguese": "Do jeito que eu vejo, vale a pena tentar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Do jeito que eu vejo",
+      "example": 3,
+      "portuguese": "Do jeito que eu vejo, a equipe precisa de apoio.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Eu diria que",
+      "example": 1,
+      "portuguese": "Eu diria que esta é a melhor opção.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Eu diria que",
+      "example": 2,
+      "portuguese": "Eu diria que ele está quase pronto.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Eu diria que",
+      "example": 3,
+      "portuguese": "Eu diria que temos umas duas horas.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Entendo seu ponto, mas",
+      "example": 1,
+      "portuguese": "Entendo seu ponto, mas precisamos considerar os custos.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Entendo seu ponto, mas",
+      "example": 2,
+      "portuguese": "Entendo seu ponto, mas discordo da conclusão.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Entendo seu ponto, mas",
+      "example": 3,
+      "portuguese": "Entendo seu ponto, mas ainda precisamos ouvir os outros.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "O que mais importa é",
+      "example": 1,
+      "portuguese": "O que mais importa é que todos estejam seguros.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "O que mais importa é",
+      "example": 2,
+      "portuguese": "O que mais importa é continuar aprendendo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "O que mais importa é",
+      "example": 3,
+      "portuguese": "O que mais importa é a qualidade do trabalho.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "O ponto que quero destacar é",
+      "example": 1,
+      "portuguese": "O ponto que quero destacar é que ainda temos opções.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "O ponto que quero destacar é",
+      "example": 2,
+      "portuguese": "O ponto que quero destacar é a importância de ouvir.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "O ponto que quero destacar é",
+      "example": 3,
+      "portuguese": "O ponto que quero destacar é que ninguém deve ficar de fora.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Se entendi você corretamente",
+      "example": 1,
+      "portuguese": "Se entendi você corretamente, a reunião foi cancelada.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Se entendi você corretamente",
+      "example": 2,
+      "portuguese": "Se entendi você corretamente, precisamos entregar hoje.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Se entendi você corretamente",
+      "example": 3,
+      "portuguese": "Se entendi você corretamente, a mudança só vale para novos clientes.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Então o que você está dizendo é",
+      "example": 1,
+      "portuguese": "Então o que você está dizendo é que precisamos recomeçar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Então o que você está dizendo é",
+      "example": 2,
+      "portuguese": "Então o que você está dizendo é que não há mais vagas.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Então o que você está dizendo é",
+      "example": 3,
+      "portuguese": "Então o que você está dizendo é que podemos escolher outro horário.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Pensando bem",
+      "example": 1,
+      "portuguese": "Pensando bem, não temos nada a perder.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Pensando bem",
+      "example": 2,
+      "portuguese": "Pensando bem, esta opção é mais simples.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Pensando bem",
+      "example": 3,
+      "portuguese": "Pensando bem, todos nós cometemos erros.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "No fim das contas, isso se resume a",
+      "example": 1,
+      "portuguese": "No fim das contas, isso se resume a uma questão de confiança.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "No fim das contas, isso se resume a",
+      "example": 2,
+      "portuguese": "No fim das contas, isso se resume a escolher nossas prioridades.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "No fim das contas, isso se resume a",
+      "example": 3,
+      "portuguese": "No fim das contas, isso se resume a quanto tempo podemos dedicar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Posso estar errado sobre isso, mas",
+      "example": 1,
+      "portuguese": "Posso estar errado sobre isso, mas acho que o prazo mudou.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Posso estar errado sobre isso, mas",
+      "example": 2,
+      "portuguese": "Posso estar errado sobre isso, mas essa parece a melhor solução.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Posso estar errado sobre isso, mas",
+      "example": 3,
+      "portuguese": "Posso estar errado sobre isso, mas não foi isso que combinamos.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não tenho certeza se",
+      "example": 1,
+      "portuguese": "Não tenho certeza se ele pode vir.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não tenho certeza se",
+      "example": 2,
+      "portuguese": "Não tenho certeza se precisamos reservar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "es-ES",
+      "intention": "Não tenho certeza se",
+      "example": 3,
+      "portuguese": "Não tenho certeza se esta é a versão mais recente.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Isso é demais!",
+      "example": 1,
+      "portuguese": "Isso é demais!",
+      "reason": "Referencia portuguesa repetida; associacao semantica manual necessaria."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Isso é demais!",
+      "example": 2,
+      "portuguese": "Isso é demais!",
+      "reason": "Referencia portuguesa repetida; associacao semantica manual necessaria."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Como as coisas têm ido?",
+      "example": 2,
+      "portuguese": "Você começou no emprego novo. Como as coisas têm ido?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Como as coisas têm ido?",
+      "example": 3,
+      "portuguese": "Faz meses que não conversamos. Como as coisas têm ido?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "As coisas têm ido muito bem.",
+      "example": 2,
+      "portuguese": "Desde que mudei de equipe, as coisas têm ido muito bem.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "As coisas têm ido muito bem.",
+      "example": 3,
+      "portuguese": "Depois de um começo difícil, as coisas têm ido muito bem.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Tenho estado bem ocupado ultimamente.",
+      "example": 2,
+      "portuguese": "Não consegui responder antes. Tenho estado bem ocupado ultimamente.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Tenho estado bem ocupado ultimamente.",
+      "example": 3,
+      "portuguese": "Entre o trabalho e os estudos, tenho estado bem ocupado ultimamente.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Entendo o que você está dizendo.",
+      "example": 2,
+      "portuguese": "Você acha o prazo muito curto. Entendo o que você está dizendo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Entendo o que você está dizendo.",
+      "example": 3,
+      "portuguese": "Você prefere esperar pelos resultados. Entendo o que você está dizendo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não tenho certeza se concordo com isso.",
+      "example": 2,
+      "portuguese": "A proposta parece arriscada. Não tenho certeza se concordo com isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não tenho certeza se concordo com isso.",
+      "example": 3,
+      "portuguese": "Você acha que devemos desistir. Não tenho certeza se concordo com isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Esse é um ponto interessante.",
+      "example": 2,
+      "portuguese": "Eu não tinha considerado o custo. Esse é um ponto interessante.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Esse é um ponto interessante.",
+      "example": 3,
+      "portuguese": "Você mencionou o impacto no meio ambiente. Esse é um ponto interessante.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Fico feliz que você tenha me contado.",
+      "example": 2,
+      "portuguese": "Agora entendo por que você estava preocupado. Fico feliz que você tenha me contado.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Fico feliz que você tenha me contado.",
+      "example": 3,
+      "portuguese": "Ainda dá tempo de corrigir o erro. Fico feliz que você tenha me contado.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Isso acontece comigo também.",
+      "example": 2,
+      "portuguese": "Também esqueço nomes quando estou nervoso. Isso acontece comigo também.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Isso acontece comigo também.",
+      "example": 3,
+      "portuguese": "Às vezes você acorda antes do despertador? Isso acontece comigo também.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Deixe-me verificar e depois te retorno.",
+      "example": 2,
+      "portuguese": "Ainda não recebi a confirmação do hotel. Deixe-me verificar e depois te retorno.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Deixe-me verificar e depois te retorno.",
+      "example": 3,
+      "portuguese": "Não sei se temos esse modelo em estoque. Deixe-me verificar e depois te retorno.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vou terminar isso hoje.",
+      "example": 2,
+      "portuguese": "O relatório já está quase pronto. Vou terminar isso hoje.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vou terminar isso hoje.",
+      "example": 3,
+      "portuguese": "Só faltam os últimos ajustes. Vou terminar isso hoje.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Podemos adiar um pouco?",
+      "example": 2,
+      "portuguese": "Preciso de mais dez minutos para revisar. Podemos adiar um pouco?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Podemos adiar um pouco?",
+      "example": 3,
+      "portuguese": "O ônibus está atrasado. Podemos adiar um pouco?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Voltaremos a isso mais tarde.",
+      "example": 2,
+      "portuguese": "Agora precisamos decidir o orçamento. Voltaremos a isso mais tarde.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Voltaremos a isso mais tarde.",
+      "example": 3,
+      "portuguese": "Ainda faltam informações. Voltaremos a isso mais tarde.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vou dar uma olhada nisso.",
+      "example": 2,
+      "portuguese": "Você me enviou o documento? Vou dar uma olhada nisso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vou dar uma olhada nisso.",
+      "example": 3,
+      "portuguese": "A tela está mostrando uma mensagem estranha. Vou dar uma olhada nisso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Deixe-me ver o que posso fazer.",
+      "example": 2,
+      "portuguese": "Você precisa mudar a reserva. Deixe-me ver o que posso fazer.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Deixe-me ver o que posso fazer.",
+      "example": 3,
+      "portuguese": "Sei que o prazo está apertado. Deixe-me ver o que posso fazer.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vou encontrar uma solução.",
+      "example": 2,
+      "portuguese": "O primeiro plano não deu certo. Vou encontrar uma solução.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vou encontrar uma solução.",
+      "example": 3,
+      "portuguese": "Ainda não sei como organizar o transporte. Vou encontrar uma solução.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos resolver isso juntos.",
+      "example": 2,
+      "portuguese": "Você não precisa cuidar de tudo sozinho. Vamos resolver isso juntos.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos resolver isso juntos.",
+      "example": 3,
+      "portuguese": "O problema afeta as duas equipes. Vamos resolver isso juntos.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Estou com dificuldade para entender isso.",
+      "example": 2,
+      "portuguese": "O manual usa muitos termos técnicos. Estou com dificuldade para entender isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Estou com dificuldade para entender isso.",
+      "example": 3,
+      "portuguese": "Esses números parecem contraditórios. Estou com dificuldade para entender isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você poderia me explicar isso passo a passo?",
+      "example": 2,
+      "portuguese": "É a primeira vez que uso esse programa. Você poderia me explicar isso passo a passo?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você poderia me explicar isso passo a passo?",
+      "example": 3,
+      "portuguese": "Não sei como montar a estante. Você poderia me explicar isso passo a passo?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você poderia me dar um exemplo?",
+      "example": 2,
+      "portuguese": "A regra ainda está um pouco abstrata para mim. Você poderia me dar um exemplo?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você poderia me dar um exemplo?",
+      "example": 3,
+      "portuguese": "Você disse que isso acontece com frequência. Você poderia me dar um exemplo?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Deixe-me confirmar se entendi.",
+      "example": 2,
+      "portuguese": "Você quer mudar só o horário, certo? Deixe-me confirmar se entendi.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Deixe-me confirmar se entendi.",
+      "example": 3,
+      "portuguese": "Então o pagamento será feito amanhã? Deixe-me confirmar se entendi.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Surgiu um imprevisto.",
+      "example": 2,
+      "portuguese": "Vou precisar cancelar nosso almoço. Surgiu um imprevisto.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Surgiu um imprevisto.",
+      "example": 3,
+      "portuguese": "Não consegui chegar no horário. Surgiu um imprevisto.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Algo deu errado.",
+      "example": 2,
+      "portuguese": "O pagamento não foi confirmado. Algo deu errado.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Algo deu errado.",
+      "example": 3,
+      "portuguese": "O teste terminou antes da hora. Algo deu errado.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Estamos tendo um pequeno problema com isso.",
+      "example": 2,
+      "portuguese": "O arquivo não abre em todos os computadores. Estamos tendo um pequeno problema com isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Estamos tendo um pequeno problema com isso.",
+      "example": 3,
+      "portuguese": "A entrega chegou incompleta. Estamos tendo um pequeno problema com isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos ver o que podemos fazer a respeito.",
+      "example": 2,
+      "portuguese": "O cliente precisa receber o pedido amanhã. Vamos ver o que podemos fazer a respeito.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos ver o que podemos fazer a respeito.",
+      "example": 3,
+      "portuguese": "Você perdeu o último ônibus. Vamos ver o que podemos fazer a respeito.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos considerar outra opção.",
+      "example": 2,
+      "portuguese": "Essa alternativa está cara demais. Vamos considerar outra opção.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos considerar outra opção.",
+      "example": 3,
+      "portuguese": "O primeiro horário não serve para todos. Vamos considerar outra opção.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não é tão ruim quanto parece.",
+      "example": 2,
+      "portuguese": "O conserto vai levar só uma hora. Não é tão ruim quanto parece.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não é tão ruim quanto parece.",
+      "example": 3,
+      "portuguese": "Ainda podemos recuperar os arquivos. Não é tão ruim quanto parece.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Acho que sei o que aconteceu.",
+      "example": 2,
+      "portuguese": "O sistema foi atualizado durante a noite. Acho que sei o que aconteceu.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Acho que sei o que aconteceu.",
+      "example": 3,
+      "portuguese": "Acho que trocamos as etiquetas. Acho que sei o que aconteceu.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Isso deve resolver o problema.",
+      "example": 2,
+      "portuguese": "Acabei de atualizar o aplicativo. Isso deve resolver o problema.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Isso deve resolver o problema.",
+      "example": 3,
+      "portuguese": "Vamos substituir a peça quebrada. Isso deve resolver o problema.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você vai fazer alguma coisa neste fim de semana?",
+      "example": 2,
+      "portuguese": "Vai fazer sol no sábado. Você vai fazer alguma coisa neste fim de semana?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você vai fazer alguma coisa neste fim de semana?",
+      "example": 3,
+      "portuguese": "Estou pensando em organizar um churrasco. Você vai fazer alguma coisa neste fim de semana?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você está livre mais tarde?",
+      "example": 2,
+      "portuguese": "Queria conversar com você depois da reunião. Você está livre mais tarde?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você está livre mais tarde?",
+      "example": 3,
+      "portuguese": "Podemos tomar um café no fim da tarde. Você está livre mais tarde?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Eu ficaria feliz em ir com você.",
+      "example": 2,
+      "portuguese": "Você vai visitar o museu amanhã? Eu ficaria feliz em ir com você.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Eu ficaria feliz em ir com você.",
+      "example": 3,
+      "portuguese": "Se ainda houver lugar no grupo, eu ficaria feliz em ir com você.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Podemos remarcar para outro dia?",
+      "example": 2,
+      "portuguese": "Tenho uma consulta no mesmo horário. Podemos remarcar para outro dia?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Podemos remarcar para outro dia?",
+      "example": 3,
+      "portuguese": "A previsão é de chuva forte. Podemos remarcar para outro dia?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Que horário é bom para você?",
+      "example": 2,
+      "portuguese": "Posso me adaptar ao seu horário. Que horário é bom para você?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Que horário é bom para você?",
+      "example": 3,
+      "portuguese": "Vamos conversar amanhã. Que horário é bom para você?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Deveríamos repetir isso qualquer dia.",
+      "example": 2,
+      "portuguese": "O jantar foi muito agradável. Deveríamos repetir isso qualquer dia.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Deveríamos repetir isso qualquer dia.",
+      "example": 3,
+      "portuguese": "Gostei muito da nossa caminhada. Deveríamos repetir isso qualquer dia.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Foi ótimo passar um tempo com você.",
+      "example": 2,
+      "portuguese": "Fazia tempo que não tínhamos uma tarde livre. Foi ótimo passar um tempo com você.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Foi ótimo passar um tempo com você.",
+      "example": 3,
+      "portuguese": "Obrigado pelo passeio de hoje. Foi ótimo passar um tempo com você.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Isso significa muito para mim.",
+      "example": 2,
+      "portuguese": "Obrigado por vir à minha apresentação. Isso significa muito para mim.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Isso significa muito para mim.",
+      "example": 3,
+      "portuguese": "Você lembrou do meu aniversário. Isso significa muito para mim.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Isso não me incomoda.",
+      "example": 2,
+      "portuguese": "Podemos sair meia hora mais tarde. Isso não me incomoda.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Isso não me incomoda.",
+      "example": 3,
+      "portuguese": "Você pode abrir a janela. Isso não me incomoda.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Tenho sentimentos contraditórios sobre isso.",
+      "example": 2,
+      "portuguese": "A proposta tem vantagens, mas também riscos. Tenho sentimentos contraditórios sobre isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Tenho sentimentos contraditórios sobre isso.",
+      "example": 3,
+      "portuguese": "Estou feliz pela mudança, mas vou sentir saudade. Tenho sentimentos contraditórios sobre isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Estou começando a entender seu ponto.",
+      "example": 2,
+      "portuguese": "Agora que você explicou os custos, estou começando a entender seu ponto.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Estou começando a entender seu ponto.",
+      "example": 3,
+      "portuguese": "Eu não tinha pensado na situação da equipe. Estou começando a entender seu ponto.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Essa é uma boa maneira de enxergar as coisas.",
+      "example": 2,
+      "portuguese": "Você prefere tratar o erro como uma oportunidade. Essa é uma boa maneira de enxergar as coisas.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Essa é uma boa maneira de enxergar as coisas.",
+      "example": 3,
+      "portuguese": "Pensar no longo prazo ajuda. Essa é uma boa maneira de enxergar as coisas.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vou ter que pensar sobre isso.",
+      "example": 2,
+      "portuguese": "É uma oferta importante. Vou ter que pensar sobre isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vou ter que pensar sobre isso.",
+      "example": 3,
+      "portuguese": "Não posso responder agora. Vou ter que pensar sobre isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Há dois lados nessa questão.",
+      "example": 2,
+      "portuguese": "A decisão ajuda os clientes, mas custa mais caro. Há dois lados nessa questão.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Há dois lados nessa questão.",
+      "example": 3,
+      "portuguese": "Precisamos ouvir as duas equipes. Há dois lados nessa questão.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "A questão é a seguinte.",
+      "example": 2,
+      "portuguese": "Precisamos tomar uma decisão hoje. A questão é a seguinte: temos tempo suficiente?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "A questão é a seguinte.",
+      "example": 3,
+      "portuguese": "Antes de continuar, a questão é a seguinte: quem vai pagar?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Estou tentando descobrir a causa disso.",
+      "example": 2,
+      "portuguese": "Os erros continuam mesmo depois da atualização. Estou tentando descobrir a causa disso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Estou tentando descobrir a causa disso.",
+      "example": 3,
+      "portuguese": "Ainda não sabemos por que as vendas caíram. Estou tentando descobrir a causa disso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Ainda estou avaliando minhas opções.",
+      "example": 2,
+      "portuguese": "Recebi duas propostas de emprego. Ainda estou avaliando minhas opções.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Ainda estou avaliando minhas opções.",
+      "example": 3,
+      "portuguese": "Ainda não escolhi onde estudar. Ainda estou avaliando minhas opções.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos lidar com uma coisa de cada vez.",
+      "example": 2,
+      "portuguese": "Temos vários problemas para resolver. Vamos lidar com uma coisa de cada vez.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos lidar com uma coisa de cada vez.",
+      "example": 3,
+      "portuguese": "Não precisamos decidir tudo agora. Vamos lidar com uma coisa de cada vez.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos focar no que podemos controlar.",
+      "example": 2,
+      "portuguese": "Não podemos mudar o clima. Vamos focar no que podemos controlar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos focar no que podemos controlar.",
+      "example": 3,
+      "portuguese": "A decisão do cliente não depende de nós. Vamos focar no que podemos controlar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Estamos no caminho certo.",
+      "example": 2,
+      "portuguese": "Os primeiros resultados são positivos. Estamos no caminho certo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Estamos no caminho certo.",
+      "example": 3,
+      "portuguese": "Ainda há trabalho, mas estamos avançando. Estamos no caminho certo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Qual é a melhor maneira de seguir em frente?",
+      "example": 2,
+      "portuguese": "Já entendemos o problema. Qual é a melhor maneira de seguir em frente?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Qual é a melhor maneira de seguir em frente?",
+      "example": 3,
+      "portuguese": "O primeiro plano não funcionou. Qual é a melhor maneira de seguir em frente?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Quais são os próximos passos?",
+      "example": 2,
+      "portuguese": "O contrato está assinado. Quais são os próximos passos?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Quais são os próximos passos?",
+      "example": 3,
+      "portuguese": "Terminamos a primeira fase. Quais são os próximos passos?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Obrigado por chamar minha atenção para isso.",
+      "example": 2,
+      "portuguese": "Eu não tinha visto o erro na fatura. Obrigado por chamar minha atenção para isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Obrigado por chamar minha atenção para isso.",
+      "example": 3,
+      "portuguese": "Podemos corrigir isso antes de publicar. Obrigado por chamar minha atenção para isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vou levar isso em consideração.",
+      "example": 2,
+      "portuguese": "Você prefere reuniões pela manhã. Vou levar isso em consideração.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vou levar isso em consideração.",
+      "example": 3,
+      "portuguese": "O orçamento pode mudar no mês que vem. Vou levar isso em consideração.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não sei como você aguenta isso.",
+      "example": 2,
+      "portuguese": "Esse barulho dura o dia inteiro. Não sei como você aguenta isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não sei como você aguenta isso.",
+      "example": 3,
+      "portuguese": "Seu chefe muda os planos a toda hora. Não sei como você aguenta isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você tem todo o meu apoio.",
+      "example": 2,
+      "portuguese": "Se você decidir mudar de carreira, você tem todo o meu apoio.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você tem todo o meu apoio.",
+      "example": 3,
+      "portuguese": "Sei que este momento é difícil. Você tem todo o meu apoio.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Posso sempre contar com você.",
+      "example": 2,
+      "portuguese": "Você me ajudou de novo. Posso sempre contar com você.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Posso sempre contar com você.",
+      "example": 3,
+      "portuguese": "Mesmo nos momentos difíceis, posso sempre contar com você.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não quero tirar conclusões precipitadas.",
+      "example": 2,
+      "portuguese": "Ainda não ouvimos a outra pessoa. Não quero tirar conclusões precipitadas.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não quero tirar conclusões precipitadas.",
+      "example": 3,
+      "portuguese": "Só temos uma parte das informações. Não quero tirar conclusões precipitadas.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos ver como as coisas se desenrolam.",
+      "example": 2,
+      "portuguese": "Acabamos de mudar o processo. Vamos ver como as coisas se desenrolam.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos ver como as coisas se desenrolam.",
+      "example": 3,
+      "portuguese": "Ainda é cedo para decidir. Vamos ver como as coisas se desenrolam.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Só quero garantir que estamos alinhados.",
+      "example": 2,
+      "portuguese": "Antes de começar o projeto, só quero garantir que estamos alinhados.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Só quero garantir que estamos alinhados.",
+      "example": 3,
+      "portuguese": "Você fica com a revisão e eu com a apresentação. Só quero garantir que estamos alinhados.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Volto em um instante.",
+      "example": 2,
+      "portuguese": "Vou buscar meus óculos. Volto em um instante.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Volto em um instante.",
+      "example": 3,
+      "portuguese": "Preciso atender a porta. Volto em um instante.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Me dê um segundo.",
+      "example": 2,
+      "portuguese": "Estou terminando esta mensagem. Me dê um segundo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Me dê um segundo.",
+      "example": 3,
+      "portuguese": "Preciso encontrar a chave. Me dê um segundo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Como está sendo seu dia?",
+      "example": 2,
+      "portuguese": "Você tinha uma reunião importante hoje. Como está sendo seu dia?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Como está sendo seu dia?",
+      "example": 3,
+      "portuguese": "Passei aqui para saber de você. Como está sendo seu dia?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "É bom ver você de novo.",
+      "example": 2,
+      "portuguese": "Faz tanto tempo! É bom ver você de novo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "É bom ver você de novo.",
+      "example": 3,
+      "portuguese": "Senti falta das nossas conversas. É bom ver você de novo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você provavelmente tem razão.",
+      "example": 2,
+      "portuguese": "Essa rota parece mais rápida. Você provavelmente tem razão.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você provavelmente tem razão.",
+      "example": 3,
+      "portuguese": "Não considerei esse detalhe. Você provavelmente tem razão.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você pode me ajudar com isso?",
+      "example": 2,
+      "portuguese": "Não consigo abrir esta embalagem. Você pode me ajudar com isso?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você pode me ajudar com isso?",
+      "example": 3,
+      "portuguese": "Preciso revisar o texto antes de enviar. Você pode me ajudar com isso?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você poderia me ajudar por um segundo?",
+      "example": 2,
+      "portuguese": "Preciso segurar esta caixa. Você poderia me ajudar por um segundo?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você poderia me ajudar por um segundo?",
+      "example": 3,
+      "portuguese": "Não consigo encontrar o botão certo. Você poderia me ajudar por um segundo?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você pode me mostrar como fazer isso?",
+      "example": 2,
+      "portuguese": "Nunca usei esta máquina. Você pode me mostrar como fazer isso?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você pode me mostrar como fazer isso?",
+      "example": 3,
+      "portuguese": "Quero aprender a dobrar isso direito. Você pode me mostrar como fazer isso?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "O que isso significa?",
+      "example": 2,
+      "portuguese": "Não conheço esta expressão. O que isso significa?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "O que isso significa?",
+      "example": 3,
+      "portuguese": "Há um símbolo diferente na tela. O que isso significa?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você poderia falar um pouco mais devagar?",
+      "example": 2,
+      "portuguese": "Ainda estou aprendendo francês. Você poderia falar um pouco mais devagar?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você poderia falar um pouco mais devagar?",
+      "example": 3,
+      "portuguese": "Estou tentando anotar as instruções. Você poderia falar um pouco mais devagar?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Eu não ouvi você.",
+      "example": 2,
+      "portuguese": "Havia muito barulho na rua. Eu não ouvi você.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Eu não ouvi você.",
+      "example": 3,
+      "portuguese": "O som cortou por um momento. Eu não ouvi você.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Onde posso encontrar isso?",
+      "example": 2,
+      "portuguese": "Preciso deste livro para a aula. Onde posso encontrar isso?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Onde posso encontrar isso?",
+      "example": 3,
+      "portuguese": "Estou procurando um adaptador como esse. Onde posso encontrar isso?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Quanto custa isso?",
+      "example": 2,
+      "portuguese": "Esse modelo parece bom. Quanto custa isso?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Quanto custa isso?",
+      "example": 3,
+      "portuguese": "O preço não está na etiqueta. Quanto custa isso?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você poderia me dar um minuto?",
+      "example": 2,
+      "portuguese": "Preciso explicar uma coisa antes da decisão. Você poderia me dar um minuto?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você poderia me dar um minuto?",
+      "example": 3,
+      "portuguese": "Queria falar com você em particular. Você poderia me dar um minuto?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Estarei aí em alguns minutos.",
+      "example": 2,
+      "portuguese": "Estou a duas ruas daí. Estarei aí em alguns minutos.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Estarei aí em alguns minutos.",
+      "example": 3,
+      "portuguese": "Acabei de sair do metrô. Estarei aí em alguns minutos.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você está livre hoje à noite?",
+      "example": 2,
+      "portuguese": "Podemos ir ao cinema. Você está livre hoje à noite?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você está livre hoje à noite?",
+      "example": 3,
+      "portuguese": "Vou cozinhar e pensei em convidar você. Você está livre hoje à noite?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Que horas devemos nos encontrar?",
+      "example": 2,
+      "portuguese": "O filme começa às oito. Que horas devemos nos encontrar?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Que horas devemos nos encontrar?",
+      "example": 3,
+      "portuguese": "Precisamos chegar antes da abertura. Que horas devemos nos encontrar?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Onde devemos nos encontrar?",
+      "example": 2,
+      "portuguese": "A estação tem várias saídas. Onde devemos nos encontrar?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Onde devemos nos encontrar?",
+      "example": 3,
+      "portuguese": "Não conheço bem esse bairro. Onde devemos nos encontrar?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Para mim funciona.",
+      "example": 2,
+      "portuguese": "O horário das três está disponível. Para mim funciona.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Para mim funciona.",
+      "example": 3,
+      "portuguese": "Podemos fazer a reunião por vídeo. Para mim funciona.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos descobrir como fazer isso.",
+      "example": 2,
+      "portuguese": "Precisamos montar o equipamento antes da aula. Vamos descobrir como fazer isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos descobrir como fazer isso.",
+      "example": 3,
+      "portuguese": "O manual está disponível aqui. Vamos descobrir como fazer isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vou fazer isso depois.",
+      "example": 2,
+      "portuguese": "Agora preciso terminar o almoço. Vou fazer isso depois.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vou fazer isso depois.",
+      "example": 3,
+      "portuguese": "A revisão pode esperar. Vou fazer isso depois.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Ainda não estou pronto.",
+      "example": 2,
+      "portuguese": "Ainda estou arrumando minha mala. Ainda não estou pronto.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Ainda não estou pronto.",
+      "example": 3,
+      "portuguese": "Preciso revisar minhas anotações antes da apresentação. Ainda não estou pronto.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não estou me sentindo muito bem.",
+      "example": 2,
+      "portuguese": "Acho melhor ficar em casa. Não estou me sentindo muito bem.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não estou me sentindo muito bem.",
+      "example": 3,
+      "portuguese": "Vou sair mais cedo do trabalho. Não estou me sentindo muito bem.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não gosto muito disso.",
+      "example": 2,
+      "portuguese": "O molho está muito doce para mim. Não gosto muito disso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não gosto muito disso.",
+      "example": 3,
+      "portuguese": "Prefiro quando a música está mais baixa. Não gosto muito disso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não sou muito fã disso.",
+      "example": 2,
+      "portuguese": "Filmes de terror não são minha primeira escolha. Não sou muito fã disso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não sou muito fã disso.",
+      "example": 3,
+      "portuguese": "Podemos escolher outro tipo de restaurante. Não sou muito fã disso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Acho que é uma boa ideia.",
+      "example": 2,
+      "portuguese": "Isso daria mais tempo para a equipe. Acho que é uma boa ideia.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Acho que é uma boa ideia.",
+      "example": 3,
+      "portuguese": "Um passeio ao ar livre faria bem. Acho que é uma boa ideia.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não acho que seja uma boa ideia.",
+      "example": 2,
+      "portuguese": "A estrada fica perigosa à noite. Não acho que seja uma boa ideia.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não acho que seja uma boa ideia.",
+      "example": 3,
+      "portuguese": "Ainda não testamos essa versão. Não acho que seja uma boa ideia.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Tenho passado muito bem.",
+      "example": 2,
+      "portuguese": "Desde que voltei a dormir melhor, tenho passado muito bem.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Tenho passado muito bem.",
+      "example": 3,
+      "portuguese": "Obrigado por perguntar. Tenho passado muito bem.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Concordo totalmente com você.",
+      "example": 2,
+      "portuguese": "Devemos explicar as mudanças com antecedência. Concordo totalmente com você.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Concordo totalmente com você.",
+      "example": 3,
+      "portuguese": "A segurança precisa vir primeiro. Concordo totalmente com você.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não tenho certeza absoluta.",
+      "example": 2,
+      "portuguese": "Acho que a loja fecha às seis. Não tenho certeza absoluta.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não tenho certeza absoluta.",
+      "example": 3,
+      "portuguese": "Parece que este é o caminho certo. Não tenho certeza absoluta.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você poderia explicar o que quer dizer?",
+      "example": 2,
+      "portuguese": "Você disse que o plano não é realista. Você poderia explicar o que quer dizer?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Você poderia explicar o que quer dizer?",
+      "example": 3,
+      "portuguese": "Não entendi sua última observação. Você poderia explicar o que quer dizer?",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos fazer uma pausa rápida.",
+      "example": 2,
+      "portuguese": "Estamos estudando há duas horas. Vamos fazer uma pausa rápida.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos fazer uma pausa rápida.",
+      "example": 3,
+      "portuguese": "Podemos continuar a reunião depois do café. Vamos fazer uma pausa rápida.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não tenho certeza do que você quer dizer.",
+      "example": 2,
+      "portuguese": "Você está falando do prazo ou do orçamento? Não tenho certeza do que você quer dizer.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não tenho certeza do que você quer dizer.",
+      "example": 3,
+      "portuguese": "Pode explicar esse último ponto? Não tenho certeza do que você quer dizer.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não é nada demais.",
+      "example": 2,
+      "portuguese": "O hotel é limpo, mas bem comum. Não é nada demais.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não é nada demais.",
+      "example": 3,
+      "portuguese": "O filme é agradável, sem surpreender. Não é nada demais.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Podemos resolver isso.",
+      "example": 2,
+      "portuguese": "Temos os recursos necessários. Podemos resolver isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Podemos resolver isso.",
+      "example": 3,
+      "portuguese": "Não precisamos desistir por causa desse erro. Podemos resolver isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos ver como vai ser.",
+      "example": 2,
+      "portuguese": "É a primeira vez que trabalhamos juntos. Vamos ver como vai ser.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos ver como vai ser.",
+      "example": 3,
+      "portuguese": "Vamos testar esse horário por uma semana. Vamos ver como vai ser.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Eu adoraria ir.",
+      "example": 2,
+      "portuguese": "Sua viagem parece incrível. Eu adoraria ir.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Eu adoraria ir.",
+      "example": 3,
+      "portuguese": "Ainda há ingressos para o show? Eu adoraria ir.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Encontro você lá.",
+      "example": 2,
+      "portuguese": "Vou sair direto do trabalho. Encontro você lá.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Encontro você lá.",
+      "example": 3,
+      "portuguese": "Você pode ir na frente. Encontro você lá.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Deixe-me pagar.",
+      "example": 2,
+      "portuguese": "Hoje o convite foi meu. Deixe-me pagar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Deixe-me pagar.",
+      "example": 3,
+      "portuguese": "Você pagou da última vez. Deixe-me pagar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Sou muito grato por isso.",
+      "example": 2,
+      "portuguese": "Sua ajuda fez toda a diferença. Sou muito grato por isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Sou muito grato por isso.",
+      "example": 3,
+      "portuguese": "Você ficou até mais tarde para me ajudar. Sou muito grato por isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Muito obrigado pela sua ajuda.",
+      "example": 2,
+      "portuguese": "Consegui terminar a mudança. Muito obrigado pela sua ajuda.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Muito obrigado pela sua ajuda.",
+      "example": 3,
+      "portuguese": "Agora entendi como usar o programa. Muito obrigado pela sua ajuda.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Ainda não me decidi.",
+      "example": 2,
+      "portuguese": "Estou comparando os dois cursos. Ainda não me decidi.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Ainda não me decidi.",
+      "example": 3,
+      "portuguese": "Ainda não sei se vou viajar. Ainda não me decidi.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Ainda estou trabalhando nisso.",
+      "example": 2,
+      "portuguese": "O relatório precisa de mais alguns ajustes. Ainda estou trabalhando nisso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Ainda estou trabalhando nisso.",
+      "example": 3,
+      "portuguese": "Ainda estou revisando os dados. Ainda estou trabalhando nisso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Estou investigando isso.",
+      "example": 2,
+      "portuguese": "Recebi sua mensagem sobre a cobrança. Estou investigando isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Estou investigando isso.",
+      "example": 3,
+      "portuguese": "Precisamos entender a diferença nos números. Estou investigando isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos tentar de outra maneira.",
+      "example": 2,
+      "portuguese": "Esse método está demorando demais. Vamos tentar de outra maneira.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos tentar de outra maneira.",
+      "example": 3,
+      "portuguese": "O programa ainda não está funcionando. Vamos tentar de outra maneira.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não tenho certeza se isso vai funcionar.",
+      "example": 2,
+      "portuguese": "O sinal de internet está muito fraco. Não tenho certeza se isso vai funcionar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não tenho certeza se isso vai funcionar.",
+      "example": 3,
+      "portuguese": "Nunca testamos esse material ao ar livre. Não tenho certeza se isso vai funcionar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Estamos um pouco atrasados no cronograma.",
+      "example": 2,
+      "portuguese": "A entrega das peças demorou mais que o previsto. Estamos um pouco atrasados no cronograma.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Estamos um pouco atrasados no cronograma.",
+      "example": 3,
+      "portuguese": "Precisamos ajustar as próximas etapas. Estamos um pouco atrasados no cronograma.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos discutir os detalhes.",
+      "example": 2,
+      "portuguese": "Já concordamos com a proposta geral. Vamos discutir os detalhes.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vamos discutir os detalhes.",
+      "example": 3,
+      "portuguese": "Precisamos definir os horários e os custos. Vamos discutir os detalhes.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vou terminar isso até o fim do dia.",
+      "example": 2,
+      "portuguese": "Falta só revisar a conclusão. Vou terminar isso até o fim do dia.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Vou terminar isso até o fim do dia.",
+      "example": 3,
+      "portuguese": "Você receberá o arquivo antes de ir embora. Vou terminar isso até o fim do dia.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Obrigado por dedicar seu tempo.",
+      "example": 2,
+      "portuguese": "Sua explicação me ajudou muito. Obrigado por dedicar seu tempo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Obrigado por dedicar seu tempo.",
+      "example": 3,
+      "portuguese": "Sei que sua agenda está cheia. Obrigado por dedicar seu tempo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Sei como você se sente.",
+      "example": 2,
+      "portuguese": "Também fiquei nervoso antes da minha primeira entrevista. Sei como você se sente.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Sei como você se sente.",
+      "example": 3,
+      "portuguese": "Mudar de cidade não é fácil. Sei como você se sente.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Já passei por isso antes.",
+      "example": 2,
+      "portuguese": "Também perdi um emprego de repente. Já passei por isso antes.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Já passei por isso antes.",
+      "example": 3,
+      "portuguese": "Sei como é difícil começar de novo. Já passei por isso antes.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não me sinto confortável com isso.",
+      "example": 2,
+      "portuguese": "Não gosto de compartilhar dados pessoais. Não me sinto confortável com isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não me sinto confortável com isso.",
+      "example": 3,
+      "portuguese": "Acho melhor não tomar essa decisão sem a equipe. Não me sinto confortável com isso.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Respeito sua decisão.",
+      "example": 2,
+      "portuguese": "Mesmo que eu tivesse escolhido outro caminho, respeito sua decisão.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Respeito sua decisão.",
+      "example": 3,
+      "portuguese": "Você prefere não participar. Respeito sua decisão.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Valorizo muito sua opinião.",
+      "example": 2,
+      "portuguese": "Quero ouvir o que você pensa antes de decidir. Valorizo muito sua opinião.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Valorizo muito sua opinião.",
+      "example": 3,
+      "portuguese": "Você conhece bem esta área. Valorizo muito sua opinião.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Do jeito que eu vejo",
+      "example": 1,
+      "portuguese": "Do jeito que eu vejo, precisamos de mais tempo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Do jeito que eu vejo",
+      "example": 2,
+      "portuguese": "Do jeito que eu vejo, o plano ainda é viável.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Do jeito que eu vejo",
+      "example": 3,
+      "portuguese": "Do jeito que eu vejo, devemos ouvir os clientes primeiro.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Eu diria que",
+      "example": 1,
+      "portuguese": "Eu diria que temos tempo suficiente.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Eu diria que",
+      "example": 2,
+      "portuguese": "Eu diria que o trem é a melhor opção.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Eu diria que",
+      "example": 3,
+      "portuguese": "Eu diria que ele tem uns trinta anos.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Entendo seu ponto, mas",
+      "example": 1,
+      "portuguese": "Entendo seu ponto, mas precisamos considerar o custo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Entendo seu ponto, mas",
+      "example": 2,
+      "portuguese": "Entendo seu ponto, mas nem todos podem vir amanhã.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Entendo seu ponto, mas",
+      "example": 3,
+      "portuguese": "Entendo seu ponto, mas ainda prefiro esperar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "O que mais importa é",
+      "example": 1,
+      "portuguese": "O que mais importa é a segurança de todos.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "O que mais importa é",
+      "example": 2,
+      "portuguese": "O que mais importa é que você esteja bem.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "O que mais importa é",
+      "example": 3,
+      "portuguese": "O que mais importa é manter a confiança da equipe.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "O ponto que quero destacar é",
+      "example": 1,
+      "portuguese": "O ponto que quero destacar é que temos alternativas.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "O ponto que quero destacar é",
+      "example": 2,
+      "portuguese": "O ponto que quero destacar é a importância da revisão.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "O ponto que quero destacar é",
+      "example": 3,
+      "portuguese": "O ponto que quero destacar é que esse custo pode mudar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Se entendi você corretamente",
+      "example": 1,
+      "portuguese": "Se entendi você corretamente, a reunião será amanhã.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Se entendi você corretamente",
+      "example": 2,
+      "portuguese": "Se entendi você corretamente, você precisa de duas cópias.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Se entendi você corretamente",
+      "example": 3,
+      "portuguese": "Se entendi você corretamente, o problema já foi resolvido.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Então o que você está dizendo é",
+      "example": 1,
+      "portuguese": "Então o que você está dizendo é que devemos esperar.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Então o que você está dizendo é",
+      "example": 2,
+      "portuguese": "Então o que você está dizendo é que o prazo mudou.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Então o que você está dizendo é",
+      "example": 3,
+      "portuguese": "Então o que você está dizendo é que há outra solução.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Pensando bem",
+      "example": 1,
+      "portuguese": "Pensando bem, essa solução é mais simples.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Pensando bem",
+      "example": 2,
+      "portuguese": "Pensando bem, todos ganham com essa mudança.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Pensando bem",
+      "example": 3,
+      "portuguese": "Pensando bem, já avançamos bastante.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "No fim das contas, isso se resume a",
+      "example": 1,
+      "portuguese": "No fim das contas, isso se resume a uma questão de confiança.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "No fim das contas, isso se resume a",
+      "example": 2,
+      "portuguese": "No fim das contas, isso se resume a escolher nossas prioridades.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "No fim das contas, isso se resume a",
+      "example": 3,
+      "portuguese": "No fim das contas, isso se resume a ter tempo suficiente.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Posso estar errado sobre isso, mas",
+      "example": 1,
+      "portuguese": "Posso estar errado sobre isso, mas acho que a loja fecha cedo.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Posso estar errado sobre isso, mas",
+      "example": 2,
+      "portuguese": "Posso estar errado sobre isso, mas essa não parece a mesma versão.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Posso estar errado sobre isso, mas",
+      "example": 3,
+      "portuguese": "Posso estar errado sobre isso, mas talvez já tenhamos esse documento.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não tenho certeza se",
+      "example": 1,
+      "portuguese": "Não tenho certeza se ele vem amanhã.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não tenho certeza se",
+      "example": 2,
+      "portuguese": "Não tenho certeza se temos tempo suficiente.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    },
+    {
+      "locale": "fr-FR",
+      "intention": "Não tenho certeza se",
+      "example": 3,
+      "portuguese": "Não tenho certeza se essa é a melhor solução.",
+      "reason": "Referencia portuguesa ausente em outro idioma; revisar equivalencia/traducao."
+    }
+  ]
+}

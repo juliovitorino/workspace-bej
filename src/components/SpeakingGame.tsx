@@ -1,4 +1,6 @@
-import type { StudentLanguage } from "../config/languages";
+import { t } from "../i18n";
+import { useTranslation } from "react-i18next";
+import type { SourceLanguage, StudentLanguage } from "../config/languages";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { getSpeakingGameForms, getSpeakingChallenge, supportsSpeakingForm } from "../config/speakingGameForms";
 import { getSpeakingVocabulary, type SpeakingVocabulary } from "../services/englishVerbService";
@@ -9,7 +11,8 @@ import { SpeakingGamePlayStep } from "./SpeakingGamePlayStep";
 import { SpeakingGameReadyStep } from "./SpeakingGameReadyStep";
 import { SpeakingGameSetupStep } from "./SpeakingGameSetupStep";
 
-export function SpeakingGame({ language }: { language: StudentLanguage }) {
+export function SpeakingGame({ language, sourceLanguage }: { language: StudentLanguage; sourceLanguage: SourceLanguage }) {
+  const { t } = useTranslation();
   const [step, setStep] = useState<SpeakingGameStep>(1);
   const [settings, setSettings] = useState<SpeakingGameSettings>(DEFAULT_SPEAKING_GAME_SETTINGS);
   const [status, setStatus] = useState<SpeakingGameStatus>("ready");
@@ -65,7 +68,7 @@ export function SpeakingGame({ language }: { language: StudentLanguage }) {
         ? getRandomFormIndex(kind === "start" ? undefined : previousIndex, forms.length)
         : kind === "start" ? 0 : getNextSequentialFormIndex(previousIndex, forms.length);
       const compatible = data.verbs.filter(verb => supportsSpeakingForm(verb, forms[index]));
-      if (!compatible.length) throw new Error("Não há verbos compatíveis com esta estrutura no idioma selecionado.");
+      if (!compatible.length) throw new Error(t("speaking.noVerbsSupportThisStructureInTheSelectedLanguage"));
       const alternatives = compatible.filter(verb => verb.id !== round?.verb.id);
       const pool = alternatives.length ? alternatives : compatible;
       const verb = pool[Math.floor(Math.random() * pool.length)];
@@ -82,7 +85,7 @@ export function SpeakingGame({ language }: { language: StudentLanguage }) {
     } catch (caughtError) {
       if (!valid()) return;
       if (kind !== "start") { recordStudyTime(); setStatus("paused"); }
-      setError(caughtError instanceof Error ? caughtError.message : "Não foi possível carregar o vocabulário do idioma selecionado.");
+      setError(caughtError instanceof Error ? caughtError.message : t("speaking.couldNotLoadVocabularyForTheSelectedLanguage"));
     } finally {
       if (valid()) { busy.current = false; setIsLoadingRound(false); }
     }
@@ -124,15 +127,15 @@ export function SpeakingGame({ language }: { language: StudentLanguage }) {
     {step === 2 && <>
       <SpeakingGameReadyStep language={language} loading={isLoadingRound} settings={settings} lastStudySeconds={lastStudySeconds}
         onPrevious={() => { generation.current++; busy.current = false; setIsLoadingRound(false); setError(null); setStep(1); }} onStart={() => void loadRound("start")} />
-      {isLoadingRound && <p style={styles.message} role="status">Preparando o jogo...</p>}
+      {isLoadingRound && <p style={styles.message} role="status">{t("speaking.preparingTheGame")}</p>}
     </>}
     {step === 3 && round?.language === language && vocabulary && <SpeakingGamePlayStep
-      key={language} language={language} verb={round.verb} vocabulary={vocabulary}
+      key={language} language={language} sourceLanguage={sourceLanguage} verb={round.verb} vocabulary={vocabulary}
       form={getSpeakingChallenge(round.verb, forms[round.index])} formLabel={forms[round.index].label}
       settings={settings} status={status} remainingSeconds={remainingSeconds} loading={isLoadingRound}
       onPause={pauseGame} onResume={resumeGame} onStop={stopGame}
       onNext={() => void loadRound("next")} onNewVerb={() => void loadRound("verb")} />}
-    {error && <div style={styles.error} role="alert"><strong>Não foi possível continuar.</strong><span>{error}</span></div>}
+    {error && <div style={styles.error} role="alert"><strong>{t("speaking.couldNotContinue")}</strong><span>{error}</span></div>}
   </div>;
 }
 

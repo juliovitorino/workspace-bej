@@ -1,3 +1,5 @@
+import { t, languageName as localizedLanguageName } from "../i18n";
+import { useTranslation } from "react-i18next";
 import { isAuthorMode } from "../utils/authorMode";
 import type { StudentLanguage } from "../config/languages";
 import {
@@ -19,6 +21,7 @@ import {
   getStoryTitle,
   getParagraphText,
   getIntentionText,
+  getStoryHqImage,
   isStoryAvailable,
   type LocalStory
 } from "../services/localStoryService";
@@ -27,6 +30,7 @@ type EnglishLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
 interface InterpretationPanelProps {
   language?: StudentLanguage;
+  sourceLanguage?: StudentLanguage;
   intentions: MentalIntention[];
   onSelectIntention: (item: MentalIntention) => void;
 }
@@ -133,12 +137,16 @@ function shuffle<T>(items: T[]): T[] {
 
 export function InterpretationPanel({
   language = "en-US",
+  sourceLanguage = "pt-BR",
   intentions,
   onSelectIntention
 }: InterpretationPanelProps) {
+  const { t } = useTranslation();
   const [authorMode, setAuthorMode] = useState(isAuthorMode);
   const aiEnabled = language === "en-US" && import.meta.env.VITE_AI_ENABLED === "true";
-  const languageName = { "en-US": "inglês", "es-ES": "espanhol", "fr-FR": "francês" }[language];
+  const languageName = localizedLanguageName(language);
+  // Keep the image-generation prompt in its original Portuguese language.
+  const promptLanguageName = { "pt-BR": "português", "en-US": "inglês", "es-ES": "espanhol", "fr-FR": "francês" }[language];
   const generationController = useRef<AbortController | null>(null);
   const [englishLevel, setEnglishLevel] =
     useState<EnglishLevel>("B1");
@@ -147,15 +155,19 @@ export function InterpretationPanel({
   const [storedStory, setStory] =
     useState<StoryGenerationResult | null>(null);
   const story = useMemo(() => {
-    if (!storedStory || !isStoryAvailable(storedStory, language)) return null;
+    if (!storedStory || !isStoryAvailable(storedStory, language) || !isStoryAvailable(storedStory, sourceLanguage)) return null;
     return {
       ...storedStory,
       title: getStoryTitle(storedStory, language),
+      sourceTitle: getStoryTitle(storedStory, sourceLanguage),
       paragraphs: storedStory.paragraphs.map(paragraph => {
         const text = getParagraphText(paragraph, language);
+        const sourceText = getParagraphText(paragraph, sourceLanguage);
         return {
           ...paragraph,
           text,
+          sourceText,
+          sourceIntentions: paragraph.intentions.map(intention => getIntentionText(intention, sourceLanguage)),
           intentions: paragraph.intentions.map(intention => {
             const targetIntent = getIntentionText(intention, language);
             return { ...intention, targetIntent: text.includes(targetIntent) ? targetIntent : "" };
@@ -163,7 +175,9 @@ export function InterpretationPanel({
         };
       }),
     };
-  }, [storedStory, language]);
+  }, [storedStory, language, sourceLanguage]);
+  // HQ always follows the origin language (Source); no cross-language fallback.
+  const hqImage = story?.source === "local" ? getStoryHqImage(story, sourceLanguage) : undefined;
   const [languageNotice, setLanguageNotice] = useState<string | null>(null);
   const previousLanguage = useRef(language);
   const speechRevision = useRef(0);
@@ -176,7 +190,7 @@ export function InterpretationPanel({
   const [exportJson, setExportJson] = useState<string | null>(null);
   const [exportFileName, setExportFileName] = useState<string>("");
   const [copyFeedback, setCopyFeedback] = useState("Copiar JSON");
-  const [hqCopyFeedback, setHqCopyFeedback] = useState("📋 HQ");
+  const [hqCopyFeedback, setHqCopyFeedback] = useState<"idle" | "copied" | "error">("idle");
   const [storyCopyFeedback, setStoryCopyFeedback] = useState<"idle" | "copied" | "error">("idle");
   const [copiedParagraphIndex, setCopiedParagraphIndex] = useState<number | null>(null);
   const [copyParagraphErrorIndex, setCopyParagraphErrorIndex] = useState<number | null>(null);
@@ -207,15 +221,16 @@ export function InterpretationPanel({
     setSelectedIntentions([]);
     setError(null);
     setStoryCopyFeedback("idle");
+    setHqCopyFeedback("idle");
     setCopiedParagraphIndex(null);
     setCopyParagraphErrorIndex(null);
-    if (storedStory && !isStoryAvailable(storedStory, language)) {
+    if (storedStory && (!isStoryAvailable(storedStory, language) || !isStoryAvailable(storedStory, sourceLanguage))) {
       setStory(null);
-      setLanguageNotice(`Esta história ainda não está disponível em ${languageName}. Escolha outra história.`);
+      setLanguageNotice(t("stories.thisStoryIsNotAvailableInTargetlanguageYetChooseAnother", { targetLanguage: (languageName) }));
     } else {
       setLanguageNotice(null);
     }
-  }, [language, storedStory, languageName]);
+  }, [language, sourceLanguage, storedStory, languageName]);
 
   useEffect(() => {
     if (!storedStory) return;
@@ -353,8 +368,8 @@ export function InterpretationPanel({
   );
 
   const searchResults = useMemo(
-    () => searchLocalStories(searchLevel, searchTitle, language),
-    [searchLevel, searchTitle, language]
+    () => searchLocalStories(searchLevel, searchTitle, language).filter(localStory => isStoryAvailable(localStory, sourceLanguage)),
+    [searchLevel, searchTitle, language, sourceLanguage]
   );
 
   useEffect(() => {
@@ -411,7 +426,7 @@ export function InterpretationPanel({
   }
 
   function handleLoadLocalStory(localStory: LocalStory) {
-    if (!isStoryAvailable(localStory, language)) return;
+    if (!isStoryAvailable(localStory, language) || !isStoryAvailable(localStory, sourceLanguage)) return;
     setLanguageNotice(null);
     speechRevision.current++;
     cancelGeneration();
@@ -434,7 +449,7 @@ export function InterpretationPanel({
     setSpeaking(false);
     setSpeakingParagraphIndex(null);
     setExportJson(null);
-    setHqCopyFeedback("📋 HQ");
+    setHqCopyFeedback("idle");
     setSearchOpen(false);
   }
 
@@ -442,7 +457,7 @@ export function InterpretationPanel({
     if (!isAuthorMode() || !aiEnabled || generationController.current || language !== "en-US") return;
     if (availableIntentions.length === 0) {
       setError(
-        `Não há intenções disponíveis para o nível ${englishLevel}.`
+        t("stories.noIntentionsAvailableForLevelLevel", { level: (englishLevel) })
       );
       return;
     }
@@ -484,7 +499,7 @@ export function InterpretationPanel({
       setError(
         err instanceof Error
           ? err.message
-          : "Não foi possível gerar a história."
+          : t("stories.couldNotGenerateTheStory")
       );
     } finally {
       if (generationController.current === controller) {
@@ -523,13 +538,13 @@ export function InterpretationPanel({
       .trim();
 
     if (!targetText) {
-      setSpeechError(`Não há texto em ${languageName} para reproduzir.`);
+      setSpeechError(t("stories.thereIsNoTextInTargetlanguageToPlay", { targetLanguage: (languageName) }));
       return;
     }
 
     if (!("speechSynthesis" in window)) {
       setSpeechError(
-        "O recurso de voz não está disponível neste navegador."
+        t("common.speechPlaybackIsUnavailableInThisBrowser")
       );
       return;
     }
@@ -568,7 +583,7 @@ export function InterpretationPanel({
       if (revision !== speechRevision.current) return;
       setSpeaking(false);
       setSpeakingParagraphIndex(null);
-      setSpeechError(`Não foi possível reproduzir a história em ${languageName}.`);
+      setSpeechError(t("stories.couldNotPlayTheStoryInTargetlanguage", { targetLanguage: (languageName) }));
     };
 
     window.speechSynthesis.speak(utterance);
@@ -588,7 +603,7 @@ export function InterpretationPanel({
         try {
           textarea.select();
           if (!document.execCommand("copy")) {
-            throw new Error("Não foi possível copiar o parágrafo.");
+            throw new Error(t("stories.couldNotCopyTheParagraph"));
           }
         } finally {
           textarea.remove();
@@ -607,13 +622,13 @@ export function InterpretationPanel({
     const targetText = text.trim();
 
     if (!targetText) {
-      setSpeechError(`Não há texto em ${languageName} para reproduzir neste parágrafo.`);
+      setSpeechError(t("stories.thereIsNoTextInTargetlanguageToPlayInThis", { targetLanguage: (languageName) }));
       return;
     }
 
     if (!("speechSynthesis" in window)) {
       setSpeechError(
-        "O recurso de voz não está disponível neste navegador."
+        t("common.speechPlaybackIsUnavailableInThisBrowser")
       );
       return;
     }
@@ -652,7 +667,7 @@ export function InterpretationPanel({
     utterance.onerror = () => {
       if (revision !== speechRevision.current) return;
       setSpeakingParagraphIndex(null);
-      setSpeechError(`Não foi possível reproduzir este parágrafo em ${languageName}.`);
+      setSpeechError(t("stories.couldNotPlayThisParagraphInTargetlanguage", { targetLanguage: (languageName) }));
     };
 
     window.speechSynthesis.speak(utterance);
@@ -698,7 +713,7 @@ export function InterpretationPanel({
 
       setExportJson(JSON.stringify(localStory, null, 2));
       setExportFileName(`${id}.json`);
-      setCopyFeedback("Copiar JSON");
+      setCopyFeedback(t("stories.copyJson"));
     } catch (error) {
       console.error(
         "[InterpretationPanel] Erro ao preparar JSON da história:",
@@ -706,7 +721,7 @@ export function InterpretationPanel({
       );
 
       setError(
-        "Não foi possível preparar o JSON da história para exportação."
+        t("stories.couldNotPrepareTheStoryJsonForExport")
       );
     }
   }
@@ -739,18 +754,18 @@ export function InterpretationPanel({
         textArea.remove();
 
         if (!copied) {
-          throw new Error("O navegador não permitiu copiar o JSON.");
+          throw new Error(t("stories.yourBrowserDidNotAllowCopyingTheJson"));
         }
       }
 
-      setCopyFeedback("Copiado!");
+      setCopyFeedback(t("stories.copied"));
     } catch (error) {
       console.error(
         "[InterpretationPanel] Erro ao copiar JSON:",
         error
       );
 
-      setCopyFeedback("Não foi possível copiar");
+      setCopyFeedback(t("stories.couldNotCopy"));
     }
   }
 
@@ -780,7 +795,7 @@ export function InterpretationPanel({
       "TEXTOS NA HQ",
       `9. Inclua em cada cena o texto PT-BR EXATO e, logo abaixo, o texto ${language} EXATO fornecidos no JSON.`,
       "10. Não altere nenhuma palavra. Preserve acentos, pontuação, apóstrofos, contrações e capitalização exatamente como recebidos.",
-      `11. Diferencie visualmente PT-BR e ${language}. Mantenha o português em cor neutra/escura e destaque o ${languageName} em azul.`,
+      `11. Diferencie visualmente PT-BR e ${language}. Mantenha o português em cor neutra/escura e destaque o ${promptLanguageName} em azul.`,
       "12. Use tipografia grande, limpa e altamente legível. Não deixe texto cortado, sobreposto, deformado ou fora dos quadros.",
       "13. Inclua titlePt e title no topo da HQ e informe discretamente o nível CEFR.",
       "",
@@ -850,18 +865,18 @@ export function InterpretationPanel({
         textArea.remove();
 
         if (!copied) {
-          throw new Error("O navegador não permitiu copiar o JSON da HQ.");
+          throw new Error(t("stories.yourBrowserDidNotAllowCopyingTheComicJson"));
         }
       }
 
-      setHqCopyFeedback("✓ Copiado");
+      setHqCopyFeedback("copied");
     } catch (error) {
       console.error(
         "[InterpretationPanel] Erro ao copiar história para geração de HQ:",
         error
       );
 
-      setHqCopyFeedback("Erro ao copiar");
+      setHqCopyFeedback("error");
     }
   }
 
@@ -881,8 +896,6 @@ export function InterpretationPanel({
   }
 
   async function handleShareHq() {
-    const hqImage = story?.hqImage?.trim();
-
     if (!hqImage) {
       return;
     }
@@ -890,7 +903,7 @@ export function InterpretationPanel({
     setShareError(null);
 
     if (!navigator.share) {
-      setShareError("O compartilhamento não está disponível neste navegador.");
+      setShareError(t("common.sharingIsUnavailableInThisBrowser"));
       return;
     }
 
@@ -899,7 +912,7 @@ export function InterpretationPanel({
       const response = await fetch(absoluteImageUrl);
 
       if (!response.ok) {
-        throw new Error("Não foi possível carregar a imagem da HQ.");
+        throw new Error(t("common.couldNotLoadTheComicImage"));
       }
 
       const blob = await response.blob();
@@ -922,7 +935,7 @@ export function InterpretationPanel({
 
       if (navigator.canShare?.({ files: [file] })) {
         await navigator.share({
-          title: `HQ - ${story?.titlePt ?? "Mental Hashmap"}`,
+          title: t("stories.comicTitle", { title: (story?.titlePt ?? "Mental Hashmap") }),
           text: story?.title
             ? `${story.titlePt} — ${story.title}`
             : story?.titlePt ?? "Mental Hashmap",
@@ -932,7 +945,7 @@ export function InterpretationPanel({
       }
 
       await navigator.share({
-        title: `HQ - ${story?.titlePt ?? "Mental Hashmap"}`,
+        title: t("stories.comicTitle", { title: (story?.titlePt ?? "Mental Hashmap") }),
         text: story?.title
           ? `${story.titlePt} — ${story.title}`
           : story?.titlePt ?? "Mental Hashmap",
@@ -943,13 +956,11 @@ export function InterpretationPanel({
         return;
       }
 
-      setShareError("Não foi possível compartilhar a HQ neste dispositivo.");
+      setShareError(t("common.couldNotShareTheComicOnThisDevice"));
     }
   }
 
   function handlePrintHq() {
-    const hqImage = story?.hqImage?.trim();
-
     if (!hqImage) {
       return;
     }
@@ -1064,9 +1075,9 @@ export function InterpretationPanel({
     const plainText = [
       `PT-BR + ${language}`,
       bilingual,
-      "HISTÓRIA COMPLETA - PT-BR",
+      t("stories.fullStoryPtBr"),
       portuguese,
-      `HISTÓRIA COMPLETA - ${language}`,
+      t("stories.fullStoryLanguage", { language: (language) }),
       target
     ].join(crlf + crlf);
 
@@ -1084,7 +1095,7 @@ export function InterpretationPanel({
         textArea.select();
         const copied = document.execCommand("copy");
         textArea.remove();
-        if (!copied) throw new Error("Não foi possível copiar a história.");
+        if (!copied) throw new Error(t("stories.couldNotCopyTheStory"));
       }
       setStoryCopyFeedback("copied");
     } catch (error) {
@@ -1133,7 +1144,7 @@ export function InterpretationPanel({
 
     if (!printWindow) {
       setError(
-        "O navegador bloqueou a janela de impressão. Permita pop-ups para imprimir a história."
+        t("stories.yourBrowserBlockedThePrintWindowAllowPopUpsTo")
       );
       return;
     }
@@ -1326,20 +1337,20 @@ export function InterpretationPanel({
     <section className="interpretation-panel">
       <div className="interpretation-header">
         <div>
-          <p className="eyebrow">Interpretação</p>
-          <h1>História por intenções</h1>
+          <p className="eyebrow">{t("common.interpretation")}</p>
+          <h1>{t("stories.storyFromIntentions")}</h1>
 
           <p className="interpretation-description">
             {authorMode && aiEnabled
-              ? "Escolha um nível, a quantidade de intenções e um tema. O aplicativo vai sortear as estruturas e gerar uma história curta para você interpretar antes de revelar o inglês."
-              : `Pesquise histórias da biblioteca por nível e título. Leia e interprete antes de revelar o ${languageName}.`}
+              ? t("stories.chooseALevelTheNumberOfIntentionsAndATopic")
+              : t("stories.searchLibraryStoriesByLevelAndTitleReadAndInterpret", { targetLanguage: (languageName) })}
           </p>
         </div>
 
         {authorMode && aiEnabled && <div className="interpretation-total">
           <strong>{availableIntentions.length}</strong>
           <span>
-            intenções disponíveis no nível {englishLevel}
+            {t("stories.availableIntentions", { count: availableIntentions.length, level: englishLevel })}
           </span>
         </div>}
       </div>
@@ -1347,7 +1358,8 @@ export function InterpretationPanel({
       {authorMode && aiEnabled && <div className="interpretation-controls">
         <div className="field">
           <label htmlFor="interpretation-level">
-            Nível de inglês
+            
+            {t("common.englishLevel")}
           </label>
 
           <select
@@ -1370,7 +1382,8 @@ export function InterpretationPanel({
 
         <div className="field">
           <label htmlFor="interpretation-amount">
-            Quantas intenções usar?
+            
+            {t("stories.howManyIntentionsShouldBeUsed")}
           </label>
 
           <input
@@ -1386,7 +1399,7 @@ export function InterpretationPanel({
         </div>
 
         <div className="field">
-          <label htmlFor="interpretation-theme">Tema</label>
+          <label htmlFor="interpretation-theme">{t("stories.topic")}</label>
 
           <select
             id="interpretation-theme"
@@ -1437,15 +1450,15 @@ export function InterpretationPanel({
             }
           >
             {generating
-              ? "Gerando história..."
-              : "Gerar história"}
+              ? t("stories.generatingStory")
+              : t("stories.generateStory")}
           </button>
         </div>
       </div>}
 
-      <form className="story-search-bar" role="search" aria-label="Pesquisar histórias da biblioteca" onSubmit={handleStorySearch}>
+      <form className="story-search-bar" role="search" aria-label={t("stories.searchLibraryStories")} onSubmit={handleStorySearch}>
         <div className="field">
-          <label htmlFor="story-search-level">Nível</label>
+          <label htmlFor="story-search-level">{t("common.level")}</label>
 
           <select
             id="story-search-level"
@@ -1464,18 +1477,18 @@ export function InterpretationPanel({
         </div>
 
         <div className="field">
-          <label htmlFor="story-search-title">Título da história</label>
+          <label htmlFor="story-search-title">{t("stories.storyTitle")}</label>
 
           <input
             id="story-search-title"
             type="search"
             value={searchTitle}
             onChange={(event) => setSearchTitle(event.target.value)}
-            placeholder={`Digite parte do título em português ou ${languageName}...`}
+            placeholder={t("stories.typePartOfTheTitleInPortugueseOrTargetlanguage", { targetLanguage: (languageName) })}
             autoComplete="off"
           />
         </div>
-        <button type="submit" className="secondary-button" aria-label="Pesquisar histórias" title="Pesquisar histórias" aria-expanded={searchOpen}>
+        <button type="submit" className="secondary-button" aria-label={t("common.searchStories")} title={t("common.searchStories")} aria-expanded={searchOpen}>
           <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
           </svg>
@@ -1500,8 +1513,8 @@ export function InterpretationPanel({
             }}
           >
             <div>
-              <p className="eyebrow">Biblioteca local</p>
-              <h2 style={{ margin: 0 }}>Pesquisar história</h2>
+              <p className="eyebrow">{t("stories.localLibrary")}</p>
+              <h2 style={{ margin: 0 }}>{t("stories.searchForAStory")}</h2>
             </div>
 
             <button
@@ -1509,7 +1522,8 @@ export function InterpretationPanel({
               className="secondary-button"
               onClick={() => setSearchOpen(false)}
             >
-              Fechar
+              
+              {t("common.close")}
             </button>
           </div>
 
@@ -1520,17 +1534,14 @@ export function InterpretationPanel({
                 fontWeight: 700
               }}
             >
-              {searchResults.length === 1
-                ? "1 história encontrada"
-                : `${searchResults.length} histórias encontradas`}
+              {t("stories.searchResults", { count: searchResults.length })}
             </p>
 
             {searchResults.length === 0 ? (
               <p style={{ margin: 0 }}>
-                Nenhuma história encontrada em {languageName} para o nível {searchLevel}
                 {searchTitle.trim()
-                  ? ` com o título "${searchTitle.trim()}".`
-                  : "."}
+                  ? t("stories.noTitleResults", { targetLanguage: languageName, level: searchLevel, title: searchTitle.trim() })
+                  : t("stories.noSearchResults", { targetLanguage: languageName, level: searchLevel })}
               </p>
             ) : (
               <div
@@ -1556,14 +1567,15 @@ export function InterpretationPanel({
                     }}
                   >
                     <div style={{ minWidth: 0 }}>
-                      <strong lang={language}>{getStoryTitle(localStory, language)}</strong>
+                      <strong lang={sourceLanguage}>{getStoryTitle(localStory, sourceLanguage)}</strong>
                       <p
                         className="english"
+                        lang={language}
                         style={{
                           margin: "0.2rem 0 0"
                         }}
                       >
-                        {localStory.titlePt}
+                        {getStoryTitle(localStory, language)}
                       </p>
                     </div>
 
@@ -1573,7 +1585,8 @@ export function InterpretationPanel({
                       onClick={() => handleLoadLocalStory(localStory)}
                       style={{ flexShrink: 0 }}
                     >
-                      Carregar
+                      
+                      {t("stories.load")}
                     </button>
                   </div>
                 ))}
@@ -1587,7 +1600,7 @@ export function InterpretationPanel({
 
       {authorMode && error && (
         <div className="status-card error-card">
-          <h2>Não foi possível gerar a história.</h2>
+          <h2>{t("stories.couldNotGenerateTheStory")}</h2>
           <p>{error}</p>
         </div>
       )}
@@ -1596,7 +1609,8 @@ export function InterpretationPanel({
         <div className="status-card">
           <div className="spinner" />
           <p>
-            Criando uma história com suas intenções...
+            
+            {t("stories.creatingAStoryWithYourIntentions")}
           </p>
         </div>
       )}
@@ -1606,7 +1620,8 @@ export function InterpretationPanel({
         selectedIntentions.length > 0 && (
           <div className="interpretation-intentions">
             <p className="eyebrow">
-              Intenções sorteadas
+              
+              {t("stories.selectedIntentions")}
             </p>
 
             <div className="interpretation-intention-list">
@@ -1626,10 +1641,10 @@ export function InterpretationPanel({
         <article className="interpretation-story">
           <div className="interpretation-story-header">
             <div>
-              <p className="eyebrow">História</p>
+              <p className="eyebrow">{t("stories.story")}</p>
               <h2 lang={language}>{story.title}</h2>
 
-              <p lang="pt-BR" className="interpretation-title-en">{story.titlePt}</p>
+              <p lang={sourceLanguage} className="interpretation-title-en">{story.sourceTitle}</p>
             </div>
 
             <div
@@ -1651,8 +1666,8 @@ export function InterpretationPanel({
                   alignItems: "center",
                   justifyContent: "center"
                 }}
-                title="Imprimir exercício e solução"
-                aria-label="Imprimir exercício e solução"
+                title={t("stories.printExerciseAndSolution")}
+                aria-label={t("stories.printExerciseAndSolution")}
                 onClick={handlePrintStory}
               >
                 <svg
@@ -1676,8 +1691,8 @@ export function InterpretationPanel({
                 type="button"
                 className="secondary-button"
                 onClick={() => void handleCopyStoryPlainText()}
-                title={storyCopyFeedback === "copied" ? "História copiada" : storyCopyFeedback === "error" ? "Falha ao copiar história" : "Copiar história completa em texto puro"}
-                aria-label={storyCopyFeedback === "copied" ? "História copiada" : "Copiar história completa em texto puro"}
+                title={storyCopyFeedback === "copied" ? t("stories.storyCopied") : storyCopyFeedback === "error" ? t("stories.failedToCopyStory") : t("stories.copyFullStoryAsPlainText")}
+                aria-label={storyCopyFeedback === "copied" ? t("stories.storyCopied") : t("stories.copyFullStoryAsPlainText")}
                 style={{
                   borderRadius: "999px",
                   width: "3.5rem",
@@ -1705,7 +1720,7 @@ export function InterpretationPanel({
               </button>
 
               {authorMode && <ConnectedSpeechButton key={language}
-                title={`História: ${story.title}`}
+                title={t("stories.storyTitleHistoriaTitle", { title: (story.title) })}
                 blocks={story.paragraphs.map((paragraph) => ({ original: paragraph.text, portuguese: paragraph.pt }))}
                 compact
               />}
@@ -1715,8 +1730,8 @@ export function InterpretationPanel({
                   type="button"
                   className="secondary-button"
                   onClick={handleCopyLocalStoryForHq}
-                  title="Copiar história e prompt para gerar HQ"
-                  aria-label="Copiar história e prompt para gerar HQ"
+                  title={t("stories.copyStoryAndPromptToGenerateAComic")}
+                  aria-label={t("stories.copyStoryAndPromptToGenerateAComic")}
                   style={{
                     minWidth: "3.5rem",
                     height: "3rem",
@@ -1730,12 +1745,16 @@ export function InterpretationPanel({
                     whiteSpace: "nowrap"
                   }}
                 >
-                  {hqCopyFeedback}
+                  {hqCopyFeedback === "copied"
+                    ? "✓ " + t("stories.copied")
+                    : hqCopyFeedback === "error"
+                      ? t("common.copyError")
+                      : "📋 " + t("common.comic")}
                 </button>
               )}
 
               {story.source === "local" &&
-                Boolean(story.hqImage?.trim()) && (
+                Boolean(hqImage) && (
                   <button
                     type="button"
                     className="secondary-button"
@@ -1744,8 +1763,8 @@ export function InterpretationPanel({
                       setHqZoom(1);
                       setShowHqImage(true);
                     }}
-                    title="Ver HQ da história"
-                    aria-label="Ver HQ da história"
+                    title={t("stories.viewStoryComic")}
+                    aria-label={t("stories.viewStoryComic")}
                     style={{
                       width: "3.5rem",
                       minWidth: "3.5rem",
@@ -1771,7 +1790,7 @@ export function InterpretationPanel({
                     borderRadius: "999px",
                     minWidth: "3.5rem"
                   }}
-                  title="Exportar história gerada pela IA"
+                  title={t("stories.exportAiGeneratedStory")}
                   onClick={handleOpenExportJson}
                 >
                   {"{...}"}
@@ -1784,9 +1803,9 @@ export function InterpretationPanel({
                   className="secondary-button"
                   onClick={handleSpeakStory}
                   disabled={speaking}
-                  title={`Ouvir a história completa em ${languageName}`}
+                  title={t("stories.listenToTheFullStoryInTargetlanguage", { targetLanguage: (languageName) })}
                 >
-                  {speaking ? "🔊 Reproduzindo..." : `🔊 Ouvir ${languageName}`}
+                  {speaking ? "🔊 " + t("common.playing") : "🔊 " + t("common.listenInTargetlanguage", { targetLanguage: (languageName) })}
                 </button>
               )}
 
@@ -1800,15 +1819,15 @@ export function InterpretationPanel({
                 onClick={handleToggleTarget}
               >
                 {showTarget
-                  ? `Ocultar versão em ${languageName}`
-                  : `Mostrar versão em ${languageName}`}
+                  ? t("stories.hideTargetlanguageVersion", { targetLanguage: (languageName) })
+                  : t("stories.showTargetlanguageVersion", { targetLanguage: (languageName) })}
               </button>
             </div>
           </div>
 
           {speechError && (
             <div className="status-card error-card google-translation-error">
-              <h2>Não foi possível reproduzir o áudio.</h2>
+              <h2>{t("common.couldNotPlayTheAudio")}</h2>
               <p>{speechError}</p>
             </div>
           )}
@@ -1817,21 +1836,19 @@ export function InterpretationPanel({
             {story.paragraphs.map((paragraph, index) => (
               <section
                 className="interpretation-paragraph"
-                key={`${index}-${paragraph.pt}`}
+                key={`${index}-${paragraph.sourceText}`}
               >
-                <p lang="pt-BR" className="interpretation-pt">
+                <p lang={sourceLanguage} className="interpretation-pt">
                   {renderHighlightedText(
-                    paragraph.pt,
-                    paragraph.intentions.map(
-                      (intention) => intention.ptIntent
-                    )
+                    paragraph.sourceText,
+                    paragraph.sourceIntentions
                   )}
                 </p>
 
                 {!showTarget && (
                   <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "0.4rem" }}>
                     <ConnectedSpeechButton key={language}
-                      title={`${story.title} — Parágrafo ${index + 1}`}
+                      title={t("stories.titleParagraphNumber", { title: (story.title), number: (index + 1) })}
                       blocks={[{ original: paragraph.text, portuguese: paragraph.pt }]}
                       compact
                     />
@@ -1871,7 +1888,7 @@ export function InterpretationPanel({
                       }}
                     >
                       <ConnectedSpeechButton key={language}
-                        title={`${story.title} — Parágrafo ${index + 1}`}
+                        title={t("stories.titleParagraphNumber", { title: (story.title), number: (index + 1) })}
                         blocks={[{ original: paragraph.text, portuguese: paragraph.pt }]}
                         compact
                       />
@@ -1885,13 +1902,13 @@ export function InterpretationPanel({
                         disabled={speakingParagraphIndex === index}
                         title={
                           speakingParagraphIndex === index
-                            ? "Reproduzindo este parágrafo"
-                            : `Ouvir este parágrafo em ${languageName}`
+                            ? t("stories.playingThisParagraph")
+                            : t("stories.listenToThisParagraphInTargetlanguage", { targetLanguage: (languageName) })
                         }
                         aria-label={
                           speakingParagraphIndex === index
-                            ? `Reproduzindo parágrafo ${index + 1}`
-                            : `Ouvir parágrafo ${index + 1} em ${languageName}`
+                            ? t("stories.playingParagraphNumber", { number: (index + 1) })
+                            : t("stories.listenToParagraphNumberInTargetlanguage", { number: (index + 1), targetLanguage: (languageName) })
                         }
                         style={{
                           width: "2.5rem",
@@ -1915,12 +1932,12 @@ export function InterpretationPanel({
                         onClick={() => void handleCopyParagraph(paragraph.text, index)}
                         title={
                           copiedParagraphIndex === index
-                            ? `Parágrafo em ${languageName} copiado`
+                            ? t("stories.paragraphInTargetlanguageCopied", { targetLanguage: (languageName) })
                             : copyParagraphErrorIndex === index
-                              ? "Falha ao copiar. Tentar novamente"
-                              : `Copiar este parágrafo em ${languageName}`
+                              ? t("stories.copyFailedTryAgain")
+                              : t("stories.copyThisParagraphInTargetlanguage", { targetLanguage: (languageName) })
                         }
-                        aria-label={`Copiar parágrafo ${index + 1} em ${languageName}`}
+                        aria-label={t("stories.copyParagraphNumberInTargetlanguage", { number: (index + 1), targetLanguage: (languageName) })}
                         style={{
                           width: "2.5rem",
                           minWidth: "2.5rem",
@@ -1956,11 +1973,11 @@ export function InterpretationPanel({
 
           {showHqImage &&
             story.source === "local" &&
-            story.hqImage?.trim() && (
+            hqImage && (
               <div
                 role="dialog"
                 aria-modal="true"
-                aria-label={`HQ da história ${story.titlePt}`}
+                aria-label={t("stories.comicForStoryTitle", { title: (story.titlePt) })}
                 onMouseDown={(event) => {
                   event.stopPropagation();
                   setShowHqImage(false);
@@ -2024,8 +2041,8 @@ export function InterpretationPanel({
                   }}
                 >
                   <img
-                    src={story.hqImage}
-                    alt={`HQ da história: ${story.titlePt}`}
+                    src={hqImage}
+                    alt={t("stories.comicForStoryTitle", { title: (story.titlePt) })}
                     style={{
                       display: "block",
                       width: "auto",
@@ -2043,8 +2060,8 @@ export function InterpretationPanel({
                   <button
                     type="button"
                     onClick={handlePrintHq}
-                    aria-label="Imprimir HQ"
-                    title="Imprimir HQ"
+                    aria-label={t("common.printComic")}
+                    title={t("common.printComic")}
                     style={{
                       position: "fixed",
                       top: "max(0.75rem, env(safe-area-inset-top))",
@@ -2085,8 +2102,8 @@ export function InterpretationPanel({
                   <button
                     type="button"
                     onClick={handleShareHq}
-                    aria-label="Compartilhar HQ"
-                    title="Compartilhar HQ"
+                    aria-label={t("common.shareComic")}
+                    title={t("common.shareComic")}
                     style={{
                       position: "fixed",
                       top: "max(0.75rem, env(safe-area-inset-top))",
@@ -2149,7 +2166,7 @@ export function InterpretationPanel({
                   {hqZoom > 1 && (
                     <div
                       role="group"
-                      aria-label="Controles de movimento vertical da HQ"
+                      aria-label={t("common.comicVerticalMovementControls")}
                       style={{
                         position: "fixed",
                         right: "max(0.75rem, env(safe-area-inset-right))",
@@ -2170,8 +2187,8 @@ export function InterpretationPanel({
                       <button
                         type="button"
                         onClick={() => handleScrollHqVertical("up")}
-                        aria-label="Mover HQ para cima"
-                        title="Mover para cima"
+                        aria-label={t("common.moveComicUp")}
+                        title={t("common.moveUp")}
                         style={{
                           width: "2.5rem",
                           height: "2.5rem",
@@ -2191,8 +2208,8 @@ export function InterpretationPanel({
                       <button
                         type="button"
                         onClick={() => handleScrollHqVertical("down")}
-                        aria-label="Mover HQ para baixo"
-                        title="Mover para baixo"
+                        aria-label={t("common.moveComicDown")}
+                        title={t("common.moveDown")}
                         style={{
                           width: "2.5rem",
                           height: "2.5rem",
@@ -2213,7 +2230,7 @@ export function InterpretationPanel({
 
                   <div
                     role="group"
-                    aria-label="Controles de zoom da HQ"
+                    aria-label={t("common.comicZoomControls")}
                     style={{
                       position: "fixed",
                       left: "50%",
@@ -2236,8 +2253,8 @@ export function InterpretationPanel({
                         setHqZoom((current) => Math.max(0.5, current - 0.25))
                       }
                       disabled={hqZoom <= 0.5}
-                      aria-label="Diminuir zoom da HQ"
-                      title="Diminuir zoom"
+                      aria-label={t("common.zoomComicOut")}
+                      title={t("common.zoomOut")}
                       style={{
                         width: "2.5rem",
                         height: "2.5rem",
@@ -2257,8 +2274,8 @@ export function InterpretationPanel({
                     <button
                       type="button"
                       onClick={() => setHqZoom(1)}
-                      aria-label="Restaurar zoom da HQ para 100%"
-                      title="Restaurar zoom para 100%"
+                      aria-label={t("common.resetComicZoomTo100")}
+                      title={t("common.resetZoomTo100")}
                       style={{
                         minWidth: "4.25rem",
                         height: "2.5rem",
@@ -2280,8 +2297,8 @@ export function InterpretationPanel({
                         setHqZoom((current) => Math.min(3, current + 0.25))
                       }
                       disabled={hqZoom >= 3}
-                      aria-label="Aumentar zoom da HQ"
-                      title="Aumentar zoom"
+                      aria-label={t("common.zoomComicIn")}
+                      title={t("common.zoomIn")}
                       style={{
                         width: "2.5rem",
                         height: "2.5rem",
@@ -2306,8 +2323,8 @@ export function InterpretationPanel({
                       setShareError(null);
                       setHqZoom(1);
                     }}
-                    aria-label="Fechar HQ"
-                    title="Fechar"
+                    aria-label={t("common.closeComic")}
+                    title={t("common.close")}
                     style={{
                       position: "fixed",
                       top: "max(0.75rem, env(safe-area-inset-top))",
@@ -2340,7 +2357,7 @@ export function InterpretationPanel({
             <div
               role="dialog"
               aria-modal="true"
-              aria-label="JSON da história"
+              aria-label={t("stories.storyJson")}
               onClick={() => setExportJson(null)}
               style={{
                 position: "fixed",
@@ -2373,17 +2390,18 @@ export function InterpretationPanel({
                 }}
               >
                 <div>
-                  <p className="eyebrow">JSON da história</p>
-                  <strong>Pronto para alimentar a biblioteca local</strong>
+                  <p className="eyebrow">{t("stories.storyJson")}</p>
+                  <strong>{t("stories.readyToAddToTheLocalLibrary")}</strong>
                 </div>
 
                 <button
                   type="button"
                   className="secondary-button"
                   onClick={() => setExportJson(null)}
-                  title="Fechar"
+                  title={t("common.close")}
                 >
-                  Fechar
+                  
+                  {t("common.close")}
                 </button>
               </div>
 
@@ -2422,7 +2440,8 @@ export function InterpretationPanel({
                   className="primary-button"
                   onClick={handleDownloadJson}
                 >
-                  Baixar JSON
+                  
+                  {t("stories.downloadJson")}
                 </button>
               </div>
               </div>
@@ -2447,17 +2466,17 @@ export function InterpretationPanel({
               <span aria-hidden="true">🟡</span>
 
               <div>
-                <strong>História da biblioteca local</strong>
+                <strong>{t("stories.storyFromTheLocalLibrary")}</strong>
                 <p style={{ margin: "0.25rem 0 0" }}>
-                  Esta história foi carregada da biblioteca de histórias do
-                  Mental Hashmap.
+                  
+                  {t("stories.thisStoryWasLoadedFromTheMentalHashmapStoryLibrary")}
                 </p>
               </div>
             </div>
           )}
 
           <div className="interpretation-used">
-            <h3>Intenções utilizadas</h3>
+            <h3>{t("stories.intentionsUsed")}</h3>
 
             <div className="interpretation-used-list">
               {story.intentionsUsed.map((id) => {
@@ -2471,7 +2490,7 @@ export function InterpretationPanel({
                     className="pill interpretation-used-button"
                     key={id}
                     onClick={() => onSelectIntention(intention)}
-                    title={`Ver detalhes de ${intention.intention}`}
+                    title={t("stories.viewDetailsForIntention", { intention: (intention.intention) })}
                   >
                     {intention.intention}
                   </button>
@@ -2480,7 +2499,7 @@ export function InterpretationPanel({
                     className="pill"
                     key={id}
                   >
-                    {story.paragraphs.flatMap(paragraph => paragraph.intentions).find(item => item.intentionId === id)?.ptIntent ?? "Intenção não disponível neste catálogo"}
+                    {story.paragraphs.flatMap(paragraph => paragraph.intentions).find(item => item.intentionId === id)?.ptIntent ?? t("stories.intentionUnavailableInThisCatalog")}
                   </span>
                 );
               })}

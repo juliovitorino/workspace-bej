@@ -1,3 +1,5 @@
+import { t } from "../i18n";
+import { useTranslation } from "react-i18next";
 import type { CSSProperties } from "react";
 import { getSpeakingGameForms } from "../config/speakingGameForms";
 import type { StudentLanguage } from "../config/languages";
@@ -20,13 +22,14 @@ export function SpeakingGameReadyStep({
   onPrevious,
   onStart
 }: SpeakingGameReadyStepProps) {
+  const { t } = useTranslation();
   const timeDescription =
     settings.timeMode === "automatic"
-      ? `Automático — ${settings.seconds}s`
-      : "Manual";
+      ? t("speaking.automaticSecondsS", { seconds: (settings.seconds) })
+      : t("common.manual");
 
   const orderDescription =
-    settings.order === "sequential" ? "Sequencial" : "Aleatório";
+    settings.order === "sequential" ? t("speaking.sequential") : t("speaking.random");
 
   const studyTimeDescription =
     lastStudySeconds === null ? null : formatStudyTime(lastStudySeconds);
@@ -34,35 +37,36 @@ export function SpeakingGameReadyStep({
   return (
     <section style={styles.card} aria-labelledby="speaking-game-ready-title">
       <header style={styles.header}>
-        <span style={styles.step}>Etapa 2 de 2</span>
+        <span style={styles.step}>{t("speaking.step2Of2")}</span>
 
         <h1 id="speaking-game-ready-title" style={styles.title}>
-          Jogo da Fala
+          
+          {t("common.speakingGame")}
         </h1>
 
-        <p style={styles.subtitle}>Tudo pronto para começar.</p>
+        <p style={styles.subtitle}>{t("speaking.everythingIsReadyToStart")}</p>
       </header>
 
       {studyTimeDescription && (
         <div style={styles.studyResult} role="status">
-          <span style={styles.studyResultLabel}>Tempo de estudo</span>
+          <span style={styles.studyResultLabel}>{t("common.studyTime")}</span>
           <strong style={styles.studyResultValue}>{studyTimeDescription}</strong>
         </div>
       )}
 
-      <div style={styles.summary} aria-label="Resumo da configuração">
+      <div style={styles.summary} aria-label={t("speaking.settingsSummary")}>
         <div style={styles.summaryRow}>
-          <span style={styles.summaryLabel}>Tempo</span>
+          <span style={styles.summaryLabel}>{t("speaking.time")}</span>
           <strong style={styles.summaryValue}>{timeDescription}</strong>
         </div>
 
         <div style={styles.summaryRow}>
-          <span style={styles.summaryLabel}>Treino</span>
+          <span style={styles.summaryLabel}>{t("speaking.practice")}</span>
           <strong style={styles.summaryValue}>{orderDescription}</strong>
         </div>
 
         <div style={styles.summaryRow}>
-          <span style={styles.summaryLabel}>Formas</span>
+          <span style={styles.summaryLabel}>{t("speaking.forms")}</span>
           <strong style={styles.summaryValue}>
             {getSpeakingGameForms(language).length}
           </strong>
@@ -71,7 +75,8 @@ export function SpeakingGameReadyStep({
 
       <div style={styles.startArea}>
         <p style={styles.instruction}>
-          Quando estiver pronto, toque no botão e fale cada frase em voz alta.
+          
+          {t("speaking.whenReadyTapTheButtonAndSayEachSentenceAloud")}
         </p>
 
         <button
@@ -80,7 +85,8 @@ export function SpeakingGameReadyStep({
           disabled={loading}
           style={styles.startButton}
         >
-          Começar o jogo
+          
+          {t("speaking.startGame")}
         </button>
       </div>
 
@@ -90,7 +96,8 @@ export function SpeakingGameReadyStep({
           onClick={onPrevious}
           style={styles.secondaryButton}
         >
-          ← Anterior
+          
+          {"← "}{t("common.previous")}
         </button>
       </footer>
     </section>

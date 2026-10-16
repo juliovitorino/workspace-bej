@@ -1,0 +1,1356 @@
+{
+  "stories": [
+    {
+      "id": "a2-daily-life-493849f3-af6c-422b-9a73-74ef970dd2ac",
+      "englishLevel": "A2",
+      "topic": "daily-life",
+      "titlePt": "Um Novo Começo Doce",
+      "titleEn": "A Sweet New Beginning",
+      "titleEs": "Un nuevo comienzo dulce",
+      "titleFr": "Un nouveau départ sucré",
+      "hqImage": "/images/hq/stories/a2-daily-life-493849f3-af6c-422b-9a73-74ef970dd2ac-1859.png",
+      "paragraphs": [
+        {
+          "pt": "Lucas estava cansado de sua rotina diária. Ele queria ganhar dinheiro extra para viajar.",
+          "en": "Lucas was tired of his daily routine. He wanted to make money to travel.",
+          "es": "Lucas estaba cansado de su rutina diaria. Quería ganar dinero extra para viajar.",
+          "fr": "Lucas était fatigué de sa routine quotidienne. Il voulait gagner de l'argent en plus pour voyager.",
+          "intentions": [
+            {
+              "intentionId": "era-estado-estava-processo-estive-esteve",
+              "ptIntent": "estava",
+              "enIntent": "was",
+              "esIntent": "estaba",
+              "frIntent": "était"
+            },
+            {
+              "intentionId": "make-money",
+              "ptIntent": "ganhar dinheiro",
+              "enIntent": "make money",
+              "esIntent": "ganar dinero",
+              "frIntent": "gagner de l'argent"
+            }
+          ],
+          "id": "5993f518-fd8d-4eb5-9096-1da1aefd8fc1"
+        },
+        {
+          "pt": "Ele pensou em estudar à noite, mas tinha um problema. \"Meu trajeto leva uma hora todos os dias\", ele pensou.",
+          "en": "He thought about studying at night, but there was a problem. \"My commute takes one hour every day,\" he thought.",
+          "es": "Pensó en estudiar por la noche, pero tenía un problema. «El trayecto me lleva una hora todos los días», pensó.",
+          "fr": "Il a pensé à étudier le soir, mais il avait un problème. « Mon trajet dure une heure tous les jours », a-t-il pensé.",
+          "intentions": [
+            {
+              "intentionId": "my-commute-takes",
+              "ptIntent": "Meu trajeto leva uma hora",
+              "enIntent": "My commute takes one hour",
+              "esIntent": "El trayecto me lleva una hora",
+              "frIntent": "Mon trajet dure une heure"
+            }
+          ],
+          "id": "c64c7ac7-28cb-4ab3-939a-43281b9e1ded"
+        },
+        {
+          "pt": "Mesmo assim, ele decidiu fazer uma aula de culinária online nos finais de semana para aprender a fazer doces.",
+          "en": "Even so, he decided to take a class online on weekends to learn how to make sweets.",
+          "es": "Aun así, decidió hacer un curso de cocina en línea los fines de semana para aprender a preparar dulces.",
+          "fr": "Malgré tout, il a décidé de suivre un cours de cuisine en ligne le week-end pour apprendre à préparer des pâtisseries.",
+          "intentions": [
+            {
+              "intentionId": "take-a-class",
+              "ptIntent": "fazer uma aula",
+              "enIntent": "take a class",
+              "esIntent": "hacer un curso",
+              "frIntent": "suivre un cours"
+            }
+          ],
+          "id": "741cad9c-2ed1-45d3-8516-978a1a4d08f7"
+        },
+        {
+          "pt": "No dia seguinte, no trabalho, sua chefe Sarah o viu pensativo. Ela perguntou: \"O que posso fazer por você hoje, Lucas? Você parece distraído.\"",
+          "en": "The next day at work, his boss Sarah saw him thinking. She asked, \"What can I do for you today, Lucas? You look distracted.\"",
+          "es": "Al día siguiente, en el trabajo, su jefa Sarah lo vio pensativo. Le preguntó: «¿Qué puedo hacer por ti hoy, Lucas? Pareces distraído».",
+          "fr": "Le lendemain, au travail, sa responsable Sarah l'a vu pensif. Elle lui a demandé : « Qu'est-ce que je peux faire pour toi aujourd'hui, Lucas ? Tu as l'air distrait. »",
+          "intentions": [
+            {
+              "intentionId": "o-que-posso-te",
+              "ptIntent": "O que posso fazer por você",
+              "enIntent": "What can I do for you",
+              "esIntent": "Qué puedo hacer por ti",
+              "frIntent": "Qu'est-ce que je peux faire pour toi"
+            }
+          ],
+          "id": "cf7f7d42-bcb2-42db-b92e-4f0fa8e649bc"
+        },
+        {
+          "pt": "Lucas começou a falar, mas parou com vergonha. Sarah sorriu e disse: \"Pode continuar, Lucas. Eu quero ouvir.\"",
+          "en": "Lucas started to speak, but stopped because he was shy. Sarah smiled and said, \"Go ahead, Lucas. I want to hear.\"",
+          "es": "Lucas empezó a hablar, pero se detuvo por vergüenza. Sarah sonrió y dijo: «Sigue, Lucas. Quiero escucharte».",
+          "fr": "Lucas a commencé à parler, mais il s'est arrêté, gêné. Sarah a souri et a dit : « Tu peux continuer, Lucas. Je veux t'écouter. »",
+          "intentions": [
+            {
+              "intentionId": "pode-continuar-go-ahead",
+              "ptIntent": "Pode continuar",
+              "enIntent": "Go ahead",
+              "esIntent": "Sigue",
+              "frIntent": "Tu peux continuer"
+            }
+          ],
+          "id": "bb28cc2c-e856-4f25-90cd-c8f587d3df1e"
+        },
+        {
+          "pt": "Lucas respirou fundo e tomou coragem. \"Eu gostaria de fazer uma sugestão\", disse ele. \"Podemos vender meus doces caseiros na nossa cafeteria?\"",
+          "en": "Lucas took a deep breath and got courage. \"I would like to make a suggestion,\" he said. \"Can we sell my homemade sweets in our coffee shop?\"",
+          "es": "Lucas respiró hondo y se armó de valor. «Me gustaría hacer una sugerencia», dijo. «¿Podemos vender mis dulces caseros en nuestra cafetería?»",
+          "fr": "Lucas a respiré profondément et a pris son courage à deux mains. « Je voudrais faire une suggestion », a-t-il dit. « Est-ce qu'on peut vendre mes pâtisseries maison dans notre café ? »",
+          "intentions": [
+            {
+              "intentionId": "make-a-suggestion",
+              "ptIntent": "fazer uma sugestão",
+              "enIntent": "make a suggestion",
+              "esIntent": "hacer una sugerencia",
+              "frIntent": "faire une suggestion"
+            }
+          ],
+          "id": "f851f3ba-e45f-4544-915c-3493ed8e7f06"
+        },
+        {
+          "pt": "Sarah achou a ideia ótima, mas disse que precisava provar os doces um de cada vez para escolher os melhores.",
+          "en": "Sarah thought it was a great idea, but she said she needed to taste the sweets one at a time to choose the best ones.",
+          "es": "A Sarah le pareció una idea estupenda, pero dijo que necesitaba probar los dulces de uno en uno para elegir los mejores.",
+          "fr": "Sarah a trouvé l'idée excellente, mais elle a dit qu'elle devait goûter les pâtisseries une par une pour choisir les meilleures.",
+          "intentions": [
+            {
+              "intentionId": "one-at-a-time",
+              "ptIntent": "um de cada vez",
+              "enIntent": "one at a time",
+              "esIntent": "de uno en uno",
+              "frIntent": "une par une"
+            }
+          ],
+          "id": "213baa48-209b-4a77-bf90-439fba47f4ee"
+        },
+        {
+          "pt": "\"Isso é perfeito! Eu vou voltar para casa agora mesmo para preparar as receitas\", respondeu Lucas, animado.",
+          "en": "\"That is perfect! I will go back to my house right now to prepare the recipes,\" Lucas answered, excited.",
+          "es": "«¡Es perfecto! Voy a volver a casa ahora mismo para preparar las recetas», respondió Lucas, entusiasmado.",
+          "fr": "« C'est parfait ! Je vais rentrer à la maison tout de suite pour préparer les recettes », a répondu Lucas, enthousiaste.",
+          "intentions": [
+            {
+              "intentionId": "voltar-para-um-lugar-go-back",
+              "ptIntent": "voltar para casa",
+              "enIntent": "go back to my house",
+              "esIntent": "volver a casa",
+              "frIntent": "rentrer à la maison"
+            }
+          ],
+          "id": "1c673166-ec47-4f71-b7b6-4fb4b7e58db3"
+        },
+        {
+          "pt": "Sarah riu e o lembrou de que ele precisava terminar o relatório antes de ir. Lucas respondeu: \"Já estou cuidando disso!\"",
+          "en": "Sarah laughed and reminded him that he needed to finish the report before leaving. Lucas replied, \"I'm on it!\"",
+          "es": "Sarah se rio y le recordó que tenía que terminar el informe antes de irse. Lucas respondió: «¡Ya me estoy ocupando de ello!»",
+          "fr": "Sarah a ri et lui a rappelé qu'il devait terminer le rapport avant de partir. Lucas a répondu : « Je m'en occupe déjà ! »",
+          "intentions": [
+            {
+              "intentionId": "ja-estou-cuidando-disso-im-on-it",
+              "ptIntent": "Já estou cuidando disso",
+              "enIntent": "I'm on it",
+              "esIntent": "Ya me estoy ocupando de ello",
+              "frIntent": "Je m'en occupe déjà"
+            }
+          ],
+          "id": "ffdfc7b2-661c-4383-a9b7-9a995649b82e"
+        }
+      ],
+      "intentionsUsed": [
+        "era-estado-estava-processo-estive-esteve",
+        "make-money",
+        "my-commute-takes",
+        "take-a-class",
+        "o-que-posso-te",
+        "pode-continuar-go-ahead",
+        "make-a-suggestion",
+        "one-at-a-time",
+        "voltar-para-um-lugar-go-back",
+        "ja-estou-cuidando-disso-im-on-it"
+      ]
+    },
+    {
+      "id": "a2-daily-life-84f9bfc1-a4e2-43d3-bac8-1409942900e6",
+      "englishLevel": "A2",
+      "topic": "daily-life",
+      "titlePt": "Uma Manhã Agitada",
+      "titleEn": "A Busy Morning",
+      "titleEs": "Una mañana ajetreada",
+      "titleFr": "Une matinée agitée",
+      "paragraphs": [
+        {
+          "pt": "Leo estava muito cansado na cozinha. Ele olhou para Julia e disse: \"Passei a noite toda acordado estudando para a prova.\"",
+          "en": "Leo was very tired in the kitchen. He looked at Julia and said, \"I was up all night studying for the exam.\"",
+          "es": "Leo estaba muy cansado en la cocina. Miró a Julia y dijo: «He pasado toda la noche despierto estudiando para el examen».",
+          "fr": "Leo était très fatigué dans la cuisine. Il a regardé Julia et a dit : « Je suis resté éveillé toute la nuit pour réviser l'examen. »",
+          "intentions": [
+            {
+              "intentionId": "i-was-up-all-night",
+              "ptIntent": "Passei a noite toda acordado",
+              "enIntent": "I was up all night",
+              "esIntent": "He pasado toda la noche despierto",
+              "frIntent": "Je suis resté éveillé toute la nuit"
+            }
+          ],
+          "id": "19ab6d10-d229-4b21-a4f5-daa0d6ecf5b2"
+        },
+        {
+          "pt": "Julia apontou para um objeto estranho na mesa. \"De onde veio essa caixa azul? E para que essa ferramenta é usada?\"",
+          "en": "Julia pointed to a strange object on the table. \"Where did this blue box come from? And what is this tool used for?\"",
+          "es": "Julia señaló un objeto extraño en la mesa. «¿De dónde ha salido esa caja azul? ¿Y para qué se usa esa herramienta?»",
+          "fr": "Julia a montré un objet étrange sur la table. « D'où vient cette boîte bleue ? Et à quoi sert cet outil ? »",
+          "intentions": [
+            {
+              "intentionId": "de-onde-veio-sujeito",
+              "ptIntent": "De onde veio essa caixa azul",
+              "enIntent": "Where did this blue box come from",
+              "esIntent": "De dónde ha salido esa caja azul",
+              "frIntent": "D'où vient cette boîte bleue"
+            },
+            {
+              "intentionId": "para-que-algo-e-usado-serve-para-que",
+              "ptIntent": "para que essa ferramenta é usada",
+              "enIntent": "what is this tool used for",
+              "esIntent": "para qué se usa esa herramienta",
+              "frIntent": "à quoi sert cet outil"
+            }
+          ],
+          "id": "d6581bb8-1b7e-4890-a923-b6e69ab4863d"
+        },
+        {
+          "pt": "Leo tentou explicar, mas ela continuou falando. Ele sorriu e disse: \"Deixa eu terminar, por favor.\"",
+          "en": "Leo tried to explain, but she kept talking. He smiled and said, \"Let me finish, please.\"",
+          "es": "Leo intentó explicarlo, pero ella siguió hablando. Él sonrió y dijo: «Déjame terminar, por favor».",
+          "fr": "Leo a essayé d'expliquer, mais elle a continué à parler. Il a souri et a dit : « Laisse-moi finir, s'il te plaît. »",
+          "intentions": [
+            {
+              "intentionId": "deixa-eu-terminar",
+              "ptIntent": "Deixa eu terminar",
+              "enIntent": "Let me finish",
+              "esIntent": "Déjame terminar",
+              "frIntent": "Laisse-moi finir"
+            }
+          ],
+          "id": "900756a5-5e92-446f-b1bf-32f41feeb9ce"
+        },
+        {
+          "pt": "De repente, Leo derrubou uma xícara de café no chão. \"Foi sem querer!\", ele disse rápido. Ele ficou preocupado com a sujeira.",
+          "en": "Suddenly, Leo knocked a coffee cup onto the floor. \"It was an accident!\", he said quickly. He got worried about the mess.",
+          "es": "De repente, Leo tiró una taza de café al suelo. «¡Ha sido sin querer!», dijo rápidamente. Se preocupó por lo que había ensuciado.",
+          "fr": "Soudain, Leo a renversé une tasse de café par terre. « Je ne l'ai pas fait exprès ! » a-t-il dit rapidement. Il s'est inquiété des dégâts.",
+          "intentions": [
+            {
+              "intentionId": "foi-sem-querer",
+              "ptIntent": "Foi sem querer",
+              "enIntent": "It was an accident",
+              "esIntent": "Ha sido sin querer",
+              "frIntent": "Je ne l'ai pas fait exprès"
+            },
+            {
+              "intentionId": "fiquei-fiquei-com-emocao",
+              "ptIntent": "ficou preocupado",
+              "enIntent": "got worried",
+              "esIntent": "Se preocupó",
+              "frIntent": "s'est inquiété"
+            }
+          ],
+          "id": "c5beb6b5-0d0a-43d3-8490-91128553954d"
+        },
+        {
+          "pt": "Julia pegou um pano para ajudar. \"Você se importa se eu limpar isso? Nós devemos resolver os problemas um de cada vez.\"",
+          "en": "Julia grabbed a cloth to help. \"Do you mind if I clean this? We should solve problems one at a time.\"",
+          "es": "Julia cogió un trapo para ayudar. «¿Te importa si limpio esto? Debemos resolver los problemas de uno en uno».",
+          "fr": "Julia a pris un chiffon pour aider. « Ça te dérange si je nettoie ça ? Nous devons résoudre les problèmes un par un. »",
+          "intentions": [
+            {
+              "intentionId": "do-you-mind-if-i",
+              "ptIntent": "Você se importa se eu",
+              "enIntent": "Do you mind if I",
+              "esIntent": "Te importa si",
+              "frIntent": "Ça te dérange si je"
+            },
+            {
+              "intentionId": "one-at-a-time",
+              "ptIntent": "um de cada vez",
+              "enIntent": "one at a time",
+              "esIntent": "de uno en uno",
+              "frIntent": "un par un"
+            }
+          ],
+          "id": "ce80a4b8-c738-48e1-b8ed-77c80fc44636"
+        },
+        {
+          "pt": "Leo olhou para o relógio. \"Obrigado. Eu estou indo para o escritório daqui a pouco.\"",
+          "en": "Leo looked at the clock. \"Thank you. I am heading to the office in a little while.\"",
+          "es": "Leo miró el reloj. «Gracias. Voy a la oficina dentro de un rato».",
+          "fr": "Leo a regardé l'heure. « Merci. Je vais au bureau dans un petit moment. »",
+          "intentions": [
+            {
+              "intentionId": "estou-indo-esta-indo",
+              "ptIntent": "estou indo para",
+              "enIntent": "am heading to",
+              "esIntent": "Voy a",
+              "frIntent": "Je vais au"
+            },
+            {
+              "intentionId": "daqui-a-pouco",
+              "ptIntent": "daqui a pouco",
+              "enIntent": "in a little while",
+              "esIntent": "dentro de un rato",
+              "frIntent": "dans un petit moment"
+            }
+          ],
+          "id": "43ebba61-5139-4545-a4de-c636ea9d65be"
+        },
+        {
+          "pt": "Ele não queria dar uma desculpa por se atrasar. Ele pensou: \"Tem que ser um bom dia. Com o tempo, eu vou aprender a dormir mais.\"",
+          "en": "He did not want to make an excuse for being late. He thought, \"It has to be a good day. Over time, I will learn to sleep more.\"",
+          "es": "No quería poner una excusa por llegar tarde. Pensó: «Tiene que ser un buen día. Con el tiempo, aprenderé a dormir más».",
+          "fr": "Il ne voulait pas trouver une excuse pour son retard. Il a pensé : « Ça doit être une bonne journée. Avec le temps, j'apprendrai à dormir davantage. »",
+          "intentions": [
+            {
+              "intentionId": "make-an-excuse",
+              "ptIntent": "dar uma desculpa por",
+              "enIntent": "make an excuse for",
+              "esIntent": "poner una excusa por",
+              "frIntent": "trouver une excuse pour"
+            },
+            {
+              "intentionId": "tem-que-ser",
+              "ptIntent": "Tem que ser",
+              "enIntent": "It has to be",
+              "esIntent": "Tiene que ser",
+              "frIntent": "Ça doit être"
+            },
+            {
+              "intentionId": "over-time",
+              "ptIntent": "Com o tempo",
+              "enIntent": "Over time",
+              "esIntent": "Con el tiempo",
+              "frIntent": "Avec le temps"
+            }
+          ],
+          "id": "2afedca6-1602-41a4-88c6-13ba21a80046"
+        }
+      ],
+      "intentionsUsed": [
+        "i-was-up-all-night",
+        "de-onde-veio-sujeito",
+        "para-que-algo-e-usado-serve-para-que",
+        "deixa-eu-terminar",
+        "foi-sem-querer",
+        "fiquei-fiquei-com-emocao",
+        "do-you-mind-if-i",
+        "one-at-a-time",
+        "estou-indo-esta-indo",
+        "daqui-a-pouco",
+        "make-an-excuse",
+        "tem-que-ser",
+        "over-time"
+      ]
+    },
+    {
+      "id": "a2-friendship-96ef0fd8-9780-4976-b871-6be53a782170",
+      "englishLevel": "A2",
+      "topic": "friendship",
+      "titlePt": "O Novo Vizinho e a Velha Amizade",
+      "titleEn": "The New Neighbor and the Old Friendship",
+      "titleEs": "El nuevo vecino y la vieja amistad",
+      "titleFr": "Le nouveau voisin et une amitié de longue date",
+      "paragraphs": [
+        {
+          "pt": "Leo e Lucas eram melhores amigos de infância. Naquela época, eles brincavam no parque todos os dias depois da escola.",
+          "en": "Leo and Lucas were childhood best friends. Back then, they played in the park every day after school.",
+          "es": "Leo y Lucas eran los mejores amigos de la infancia. En aquella época, jugaban en el parque todos los días después del colegio.",
+          "fr": "Leo et Lucas étaient les meilleurs amis d'enfance. À cette époque-là, ils jouaient au parc tous les jours après l'école.",
+          "intentions": [
+            {
+              "intentionId": "back-then",
+              "ptIntent": "Naquela época",
+              "enIntent": "Back then",
+              "esIntent": "En aquella época",
+              "frIntent": "À cette époque-là"
+            }
+          ],
+          "id": "5bbbd589-180e-4922-8468-35beb745aad1"
+        },
+        {
+          "pt": "Foi há pouco tempo que Lucas se mudou de volta para a cidade. Leo ficou muito feliz em ver seu velho amigo novamente.",
+          "en": "It was not long ago that Lucas moved back to the city. Leo was very happy to see his old friend again.",
+          "es": "Hace poco que Lucas volvió a vivir en la ciudad. Leo se alegró mucho de volver a ver a su viejo amigo.",
+          "fr": "Cela fait peu de temps que Lucas est revenu vivre en ville. Leo a été très heureux de revoir son vieil ami.",
+          "intentions": [
+            {
+              "intentionId": "foi-ha-pouco-tempo",
+              "ptIntent": "Foi há pouco tempo que",
+              "enIntent": "It was not long ago that",
+              "esIntent": "Hace poco que",
+              "frIntent": "Cela fait peu de temps que"
+            }
+          ],
+          "id": "d4961a12-418b-41c7-bd91-80e563a778f7"
+        },
+        {
+          "pt": "Eles se encontraram em uma cafeteria. Leo disse: \"Que bom que você voltou! Senti muito a sua falta.\"",
+          "en": "They met at a coffee shop. Leo said, \"I'm glad you came back! I missed you a lot.\"",
+          "es": "Se encontraron en una cafetería. Leo dijo: «¡Qué bien que hayas vuelto! Te he echado mucho de menos».",
+          "fr": "Ils se sont retrouvés dans un café. Leo a dit : « Je suis content que tu sois revenu ! Tu m'as beaucoup manqué. »",
+          "intentions": [
+            {
+              "intentionId": "que-bom-que",
+              "ptIntent": "Que bom que",
+              "enIntent": "I'm glad",
+              "esIntent": "Qué bien que",
+              "frIntent": "Je suis content que"
+            }
+          ],
+          "id": "e9e0002a-43f9-45fc-8c24-d5f21ca8325c"
+        },
+        {
+          "pt": "Lucas sorriu e mostrou um belo desenho. Leo perguntou: \"Quem te ensinou isso? É incrível!\"",
+          "en": "Lucas smiled and showed a beautiful drawing. Leo asked, \"Who taught you this? It's amazing!\"",
+          "es": "Lucas sonrió y le enseñó un dibujo precioso. Leo preguntó: «¿Quién te ha enseñado eso? ¡Es increíble!»",
+          "fr": "Lucas a souri et a montré un beau dessin. Leo a demandé : « Qui t'a appris ça ? C'est incroyable ! »",
+          "intentions": [
+            {
+              "intentionId": "quem-te-verbo-algo",
+              "ptIntent": "Quem te ensinou isso",
+              "enIntent": "Who taught you this",
+              "esIntent": "Quién te ha enseñado eso",
+              "frIntent": "Qui t'a appris ça"
+            }
+          ],
+          "id": "d1a23bb9-2829-44f8-962e-4e900dc0e2e0"
+        },
+        {
+          "pt": "Lucas respondeu: \"Eu aprendi sozinho. Hoje, estou com vontade de pintar o parque antigo. Você quer ir comigo?\"",
+          "en": "Lucas replied, \"I learned by myself. Today, I feel like painting the old park. Do you want to go with me?\"",
+          "es": "Lucas respondió: «He aprendido solo. Hoy tengo ganas de pintar el parque de antes. ¿Quieres venir conmigo?»",
+          "fr": "Lucas a répondu : « J'ai appris tout seul. Aujourd'hui, j'ai envie de peindre le parc de notre enfance. Tu veux venir avec moi ? »",
+          "intentions": [
+            {
+              "intentionId": "estou-com-vontade-de",
+              "ptIntent": "estou com vontade de pintar",
+              "enIntent": "I feel like painting",
+              "esIntent": "tengo ganas de pintar",
+              "frIntent": "j'ai envie de peindre"
+            }
+          ],
+          "id": "c7f13068-4bbe-4d10-8b4f-c20218ce3b17"
+        },
+        {
+          "pt": "Leo pensou: \"Eu tenho que fazer uma escolha agora: trabalhar ou me divertir.\"",
+          "en": "Leo thought, \"I have to make a choice now: work or have fun.\"",
+          "es": "Leo pensó: «Tengo que tomar una decisión ahora: trabajar o divertirme».",
+          "fr": "Leo a pensé : « Je dois faire un choix maintenant : travailler ou m'amuser. »",
+          "intentions": [
+            {
+              "intentionId": "tem-que-tenho-que-tenha-que",
+              "ptIntent": "tenho que",
+              "enIntent": "have to",
+              "esIntent": "Tengo que",
+              "frIntent": "Je dois"
+            },
+            {
+              "intentionId": "make-a-choice",
+              "ptIntent": "fazer uma escolha",
+              "enIntent": "make a choice",
+              "esIntent": "tomar una decisión",
+              "frIntent": "faire un choix"
+            }
+          ],
+          "id": "709d3fb2-53cd-4eb2-b98d-2284f8dd45f2"
+        },
+        {
+          "pt": "No parque, Leo percebeu que gostava de arte tanto quanto Lucas gostava. Eles passaram a tarde inteira rindo.",
+          "en": "At the park, Leo realized he liked art as much as Lucas did. They spent the whole afternoon laughing.",
+          "es": "En el parque, Leo se dio cuenta de que le gustaba el arte tanto como a Lucas. Pasaron toda la tarde riéndose.",
+          "fr": "Au parc, Leo s'est rendu compte qu'il aimait l'art autant que Lucas. Ils ont passé tout l'après-midi à rire.",
+          "intentions": [
+            {
+              "intentionId": "tanto-quanto",
+              "ptIntent": "tanto quanto",
+              "enIntent": "as much as",
+              "esIntent": "tanto como",
+              "frIntent": "autant que"
+            }
+          ],
+          "id": "a4c68187-0ad4-4603-a37b-2ed5037fb8f6"
+        },
+        {
+          "pt": "Antes de ir embora, Lucas disse: \"Lembre de trazer seus próprios pincéis na próxima vez.\"",
+          "en": "Before leaving, Lucas said, \"Remember to bring your own brushes next time.\"",
+          "es": "Antes de irse, Lucas dijo: «Acuérdate de traer tus propios pinceles la próxima vez».",
+          "fr": "Avant de partir, Lucas a dit : « Pense à apporter tes propres pinceaux la prochaine fois. »",
+          "intentions": [
+            {
+              "intentionId": "nao-esqueca-de-lembre-de-acao-futura",
+              "ptIntent": "Lembre de trazer",
+              "enIntent": "Remember to bring",
+              "esIntent": "Acuérdate de traer",
+              "frIntent": "Pense à apporter"
+            }
+          ],
+          "id": "77be4e6d-b233-4df6-a1d5-68a4a522198b"
+        },
+        {
+          "pt": "Ao longo dos próximos dias, eles se reuniram todas as tardes para pintar e conversar sobre o passado.",
+          "en": "Over the next few days, they met every afternoon to paint and talk about the past.",
+          "es": "Durante los días siguientes, se reunieron todas las tardes para pintar y hablar del pasado.",
+          "fr": "Au cours des jours suivants, ils se sont retrouvés tous les après-midi pour peindre et parler du passé.",
+          "intentions": [
+            {
+              "intentionId": "over-the-next-few-days",
+              "ptIntent": "Ao longo dos próximos dias",
+              "enIntent": "Over the next few days",
+              "esIntent": "Durante los días siguientes",
+              "frIntent": "Au cours des jours suivants"
+            }
+          ],
+          "id": "eb1505a0-b961-4d42-9c5b-5a11fa18496a"
+        }
+      ],
+      "intentionsUsed": [
+        "back-then",
+        "foi-ha-pouco-tempo",
+        "que-bom-que",
+        "quem-te-verbo-algo",
+        "estou-com-vontade-de",
+        "tem-que-tenho-que-tenha-que",
+        "make-a-choice",
+        "tanto-quanto",
+        "nao-esqueca-de-lembre-de-acao-futura",
+        "over-the-next-few-days"
+      ]
+    },
+    {
+      "id": "a2-daily-life-f0c053b1-7e18-4843-a99c-784911623e3d",
+      "englishLevel": "A2",
+      "topic": "daily-life",
+      "titlePt": "Um Começo de Dia Agitado",
+      "titleEn": "A Busy Start of the Day",
+      "titleEs": "Un comienzo de día ajetreado",
+      "titleFr": "Un début de journée agité",
+      "paragraphs": [
+        {
+          "pt": "Hoje de manhã, há muito barulho na rua. Eu preciso estar calmo para começar o dia bem.",
+          "en": "This morning, there is a lot of noise on the street. I need to be calm to start the day well.",
+          "es": "Esta mañana hay mucho ruido en la calle. Necesito estar tranquilo para empezar bien el día.",
+          "fr": "Ce matin, il y a beaucoup de bruit dans la rue. J'ai besoin d'être calme pour bien commencer la journée.",
+          "intentions": [
+            {
+              "intentionId": "haver-tem-houve-tinha-sentido-de-existir",
+              "ptIntent": "há",
+              "enIntent": "there is",
+              "esIntent": "hay",
+              "frIntent": "il y a"
+            },
+            {
+              "intentionId": "tenho-que-ter-estado",
+              "ptIntent": "preciso estar calmo",
+              "enIntent": "need to be calm",
+              "esIntent": "Necesito estar tranquilo",
+              "frIntent": "J'ai besoin d'être calme"
+            }
+          ],
+          "id": "835fb2bb-9b39-4990-a5fc-5656d30274ab"
+        },
+        {
+          "pt": "Eu olho para o meu armário. Eu estou meio cansado hoje, mas eu preciso fazer uma escolha rápida sobre o que vestir.",
+          "en": "I look at my closet. I'm kind of tired today, but I need to make a choice quickly about what to wear.",
+          "es": "Miro mi armario. Hoy estoy algo cansado, pero necesito tomar una decisión rápida sobre qué ponerme.",
+          "fr": "Je regarde mon armoire. Je suis un peu fatigué aujourd'hui, mais je dois faire un choix rapide pour savoir quoi porter.",
+          "intentions": [
+            {
+              "intentionId": "im-kind-of",
+              "ptIntent": "estou meio cansado",
+              "enIntent": "I'm kind of tired",
+              "esIntent": "estoy algo cansado",
+              "frIntent": "Je suis un peu fatigué"
+            },
+            {
+              "intentionId": "make-a-choice",
+              "ptIntent": "fazer uma escolha",
+              "enIntent": "make a choice",
+              "esIntent": "tomar una decisión",
+              "frIntent": "faire un choix"
+            }
+          ],
+          "id": "5b85ae7f-54ee-4d73-ac29-dc6c4a1b4ed8"
+        },
+        {
+          "pt": "Leva dez minutos para eu achar minha camisa favorita. Depois disso, eu preciso ter minhas chaves antes de sair.",
+          "en": "It takes me ten minutes to find my favorite shirt. After that, I need to have my keys before leaving.",
+          "es": "Tardo diez minutos en encontrar mi camisa favorita. Después necesito tener las llaves antes de salir.",
+          "fr": "Il me faut dix minutes pour trouver ma chemise préférée. Ensuite, je dois avoir mes clés avant de sortir.",
+          "intentions": [
+            {
+              "intentionId": "take-time",
+              "ptIntent": "Leva dez minutos para eu achar",
+              "enIntent": "takes me ten minutes to find",
+              "esIntent": "Tardo diez minutos en encontrar",
+              "frIntent": "Il me faut dix minutes pour trouver"
+            },
+            {
+              "intentionId": "tenho-que-ter-posse-real",
+              "ptIntent": "preciso ter minhas chaves",
+              "enIntent": "need to have my keys",
+              "esIntent": "necesito tener las llaves",
+              "frIntent": "je dois avoir mes clés"
+            }
+          ],
+          "id": "005ae3be-1f08-4b67-869e-d44c3afd26ab"
+        },
+        {
+          "pt": "De repente, eu vejo um gato preto na sala de estar. De onde veio esse gato?",
+          "en": "Suddenly, I see a black cat in the living room. Where did this cat come from?",
+          "es": "De repente veo un gato negro en el salón. ¿De dónde ha salido este gato?",
+          "fr": "Soudain, je vois un chat noir dans le salon. D'où vient ce chat ?",
+          "intentions": [
+            {
+              "intentionId": "de-onde-veio-sujeito",
+              "ptIntent": "De onde veio esse gato?",
+              "enIntent": "Where did this cat come from?",
+              "esIntent": "¿De dónde ha salido este gato?",
+              "frIntent": "D'où vient ce chat ?"
+            }
+          ],
+          "id": "81a1485e-2a84-47ec-bb7f-ad09fd4ee0c3"
+        },
+        {
+          "pt": "A propósito, a janela da sala estava aberta. Tomara que o dono do gato o encontre logo.",
+          "en": "By the way, the living room window was open. I hope the cat's owner finds him soon.",
+          "es": "Por cierto, la ventana del salón estaba abierta. Ojalá su dueño lo encuentre pronto.",
+          "fr": "Au fait, la fenêtre du salon était ouverte. J'espère que le propriétaire du chat le retrouvera vite.",
+          "intentions": [
+            {
+              "intentionId": "a-proposito-by-the-way",
+              "ptIntent": "A propósito,",
+              "enIntent": "By the way,",
+              "esIntent": "Por cierto,",
+              "frIntent": "Au fait,"
+            },
+            {
+              "intentionId": "tomara-que",
+              "ptIntent": "Tomara que",
+              "enIntent": "I hope",
+              "esIntent": "Ojalá",
+              "frIntent": "J'espère que"
+            }
+          ],
+          "id": "854ed958-2201-4075-9a26-173ecb50b1eb"
+        },
+        {
+          "pt": "Eu coloco o gato gentilmente no quintal. Eu vou conseguir o ônibus se eu correr agora.",
+          "en": "I put the cat gently in the yard. I will get the bus if I run now.",
+          "es": "Pongo al gato con cuidado en el jardín. Voy a coger el autobús si corro ahora.",
+          "fr": "Je dépose doucement le chat dans le jardin. Je vais réussir à attraper le bus si je cours maintenant.",
+          "intentions": [
+            {
+              "intentionId": "vou-conseguir-resultado",
+              "ptIntent": "vou conseguir o ônibus",
+              "enIntent": "will get the bus",
+              "esIntent": "Voy a coger el autobús",
+              "frIntent": "vais réussir à attraper le bus"
+            }
+          ],
+          "id": "3e936219-8be6-43a7-a686-b1514d0fe4ac"
+        },
+        {
+          "pt": "Eu vou ficar feliz quando eu chegar ao trabalho e relaxar. Eu vou tomar uma xícara de café quente daqui a pouco.",
+          "en": "I will get happy when I arrive at work and relax. I will drink a cup of hot coffee in a little while.",
+          "es": "Me alegraré cuando llegue al trabajo y pueda relajarme. Voy a tomar una taza de café caliente dentro de un rato.",
+          "fr": "Je serai content quand j'arriverai au travail et que je pourrai me détendre. Je vais boire une tasse de café chaud dans un petit moment.",
+          "intentions": [
+            {
+              "intentionId": "vou-ficar-adjetivo",
+              "ptIntent": "vou ficar feliz",
+              "enIntent": "will get happy",
+              "esIntent": "Me alegraré",
+              "frIntent": "Je serai content"
+            },
+            {
+              "intentionId": "daqui-a-pouco",
+              "ptIntent": "daqui a pouco",
+              "enIntent": "in a little while",
+              "esIntent": "dentro de un rato",
+              "frIntent": "dans un petit moment"
+            }
+          ],
+          "id": "99902362-9bce-463a-b920-580dc4f8c8f5"
+        }
+      ],
+      "intentionsUsed": [
+        "make-a-choice",
+        "take-time",
+        "tenho-que-ter-posse-real",
+        "im-kind-of",
+        "vou-conseguir-resultado",
+        "de-onde-veio-sujeito",
+        "a-proposito-by-the-way",
+        "tomara-que",
+        "tenho-que-ter-estado",
+        "daqui-a-pouco",
+        "vou-ficar-adjetivo",
+        "haver-tem-houve-tinha-sentido-de-existir"
+      ]
+    },
+    {
+      "id": "a2-daily-life-fc818d1b-68b7-4589-af46-43b45fa13ce7",
+      "englishLevel": "A2",
+      "topic": "daily-life",
+      "titlePt": "A Escolha de Lucas",
+      "titleEn": "Lucas's Choice",
+      "titleEs": "La elección de Lucas",
+      "titleFr": "Le choix de Lucas",
+      "hqImage": "/images/hq/stories/a2-daily-life-fc818d1b-68b7-4589-af46-43b45fa13ce7-1318.png",
+      "paragraphs": [
+        {
+          "pt": "No começo, Lucas não sabia o que fazer com seu tempo livre. Ele queria aprender algo novo e divertido.",
+          "en": "At first, Lucas did not know what to do with his free time. He wanted to learn something new and fun.",
+          "es": "Al principio, Lucas no sabía qué hacer con su tiempo libre. Quería aprender algo nuevo y divertido.",
+          "fr": "Au début, Lucas ne savait pas quoi faire de son temps libre. Il voulait apprendre quelque chose de nouveau et d'amusant.",
+          "intentions": [
+            {
+              "intentionId": "at-first",
+              "ptIntent": "No começo",
+              "enIntent": "At first",
+              "esIntent": "Al principio",
+              "frIntent": "Au début"
+            }
+          ],
+          "id": "867ab6ac-4bf0-45e5-80af-387fa1c978a6"
+        },
+        {
+          "pt": "Durante o fim de semana, ele olhou alguns cursos na internet. Ele pensou em culinária, jardinagem e pintura.",
+          "en": "Over the weekend, he looked at some courses on the internet. He thought about cooking, gardening, and painting.",
+          "es": "Durante el fin de semana, miró algunos cursos en internet. Pensó en cocina, jardinería y pintura.",
+          "fr": "Pendant le week-end, il a regardé quelques cours sur Internet. Il a pensé à la cuisine, au jardinage et à la peinture.",
+          "intentions": [
+            {
+              "intentionId": "over-the-weekend",
+              "ptIntent": "Durante o fim de semana",
+              "enIntent": "Over the weekend",
+              "esIntent": "Durante el fin de semana",
+              "frIntent": "Pendant le week-end"
+            }
+          ],
+          "id": "06e12862-187a-4dce-9e2f-95068e7e66ec"
+        },
+        {
+          "pt": "Ele decidiu conversar com sua amiga Sofia para pedir ajuda. Ele queria dizer a ela que estava entediado.",
+          "en": "He decided to talk to his friend Sofia to ask for help. He wanted to tell her that he was bored.",
+          "es": "Decidió hablar con su amiga Sofia para pedirle ayuda. Quería decirle que estaba aburrido.",
+          "fr": "Il a décidé de parler avec son amie Sofia pour lui demander de l'aide. Il voulait lui dire qu'il s'ennuyait.",
+          "intentions": [
+            {
+              "intentionId": "say-tell-talk-speak",
+              "ptIntent": "conversar com",
+              "enIntent": "talk to",
+              "esIntent": "hablar con",
+              "frIntent": "parler avec"
+            },
+            {
+              "intentionId": "say-tell-talk-speak",
+              "ptIntent": "dizer a ela",
+              "enIntent": "tell her",
+              "esIntent": "decirle",
+              "frIntent": "lui dire"
+            }
+          ],
+          "id": "bf4470c6-a89e-412e-802a-616f074b1487"
+        },
+        {
+          "pt": "— E se eu fizer um curso de culinária? — Lucas perguntou. — Eu realmente gosto de comer coisas gostosas.",
+          "en": "\"What if I take a cooking course?\" Lucas asked. \"I really like to eat delicious things.\"",
+          "es": "—¿Y si hago un curso de cocina? —preguntó Lucas—. Me gusta mucho comer cosas ricas.",
+          "fr": "— Et si je suivais un cours de cuisine ? a demandé Lucas. J'aime vraiment manger de bonnes choses.",
+          "intentions": [
+            {
+              "intentionId": "e-se",
+              "ptIntent": "E se eu fizer",
+              "enIntent": "What if I take",
+              "esIntent": "Y si hago",
+              "frIntent": "Et si je suivais"
+            }
+          ],
+          "id": "31e41e6d-6a1f-4e16-935b-fac683de3c11"
+        },
+        {
+          "pt": "Sofia sorriu e disse: — Isso faz sentido! Você sempre cozinha para nós quando nos visitamos.",
+          "en": "Sofia smiled and said: \"That makes sense! You always cook for us when we visit.\"",
+          "es": "Sofia sonrió y dijo: —¡Tiene sentido! Siempre cocinas para nosotros cuando nos visitamos.",
+          "fr": "Sofia a souri et a dit : — C'est logique ! Tu cuisines toujours pour nous quand on se rend visite.",
+          "intentions": [
+            {
+              "intentionId": "make-sense",
+              "ptIntent": "faz sentido",
+              "enIntent": "makes sense",
+              "esIntent": "Tiene sentido",
+              "frIntent": "C'est logique"
+            }
+          ],
+          "id": "6549afe5-c106-41c3-a06d-6e24a4a1e762"
+        },
+        {
+          "pt": "Lucas ainda estava na dúvida. Sofia disse: — Não se preocupe, leve o tempo que precisar para decidir. É uma decisão importante.",
+          "en": "Lucas was still in doubt. Sofia said: \"Don't worry, take your time to decide. It is an important decision.\"",
+          "es": "Lucas todavía tenía dudas. Sofia dijo: —No te preocupes, tómate el tiempo que necesites para decidir. Es una decisión importante.",
+          "fr": "Lucas hésitait encore. Sofia a dit : — Ne t'inquiète pas, prends tout le temps qu'il te faut pour décider. C'est une décision importante.",
+          "intentions": [
+            {
+              "intentionId": "take-your-time",
+              "ptIntent": "leve o tempo que precisar",
+              "enIntent": "take your time",
+              "esIntent": "tómate el tiempo que necesites",
+              "frIntent": "prends tout le temps qu'il te faut"
+            }
+          ],
+          "id": "5bb5e721-b725-4e53-b3d7-c4bfa00d0999"
+        },
+        {
+          "pt": "— Você precisa fazer uma escolha que te faça feliz — ela adicionou enquanto ela bebia seu chá.",
+          "en": "\"You need to make a choice that makes you happy,\" she added while she drank her tea.",
+          "es": "—Necesitas tomar una decisión que te haga feliz —añadió mientras bebía su té.",
+          "fr": "— Tu dois faire un choix qui te rende heureux, a-t-elle ajouté pendant qu'elle buvait son thé.",
+          "intentions": [
+            {
+              "intentionId": "make-a-choice",
+              "ptIntent": "fazer uma escolha",
+              "enIntent": "make a choice",
+              "esIntent": "tomar una decisión",
+              "frIntent": "faire un choix"
+            },
+            {
+              "intentionId": "while-clause",
+              "ptIntent": "enquanto ela bebia",
+              "enIntent": "while she drank",
+              "esIntent": "mientras bebía",
+              "frIntent": "pendant qu'elle buvait"
+            }
+          ],
+          "id": "e7f97de6-8be3-49fd-8c7f-063d96e503ba"
+        },
+        {
+          "pt": "Mais tarde, Lucas comprou os ingredientes para sua primeira receita. Ele ficou mais animado depois de comprar tudo.",
+          "en": "Later on, Lucas bought the ingredients for his first recipe. He got more excited after buying everything.",
+          "es": "Más tarde, Lucas compró los ingredientes para su primera receta. Se animó más después de comprarlo todo.",
+          "fr": "Plus tard, Lucas a acheté les ingrédients pour sa première recette. Il s'est senti plus enthousiaste après avoir tout acheté.",
+          "intentions": [
+            {
+              "intentionId": "later-on",
+              "ptIntent": "Mais tarde",
+              "enIntent": "Later on",
+              "esIntent": "Más tarde",
+              "frIntent": "Plus tard"
+            },
+            {
+              "intentionId": "fiquei-mais-comparativo",
+              "ptIntent": "ficou mais animado",
+              "enIntent": "got more excited",
+              "esIntent": "Se animó más",
+              "frIntent": "s'est senti plus enthousiaste"
+            }
+          ],
+          "id": "81049a4a-1f8d-4596-b3fa-80953c535a27"
+        },
+        {
+          "pt": "Ao longo do tempo, ele aprendeu a fazer pães incríveis. Suas habilidades melhoraram muito rápido.",
+          "en": "Over time, he learned to make amazing bread. His skills improved very fast.",
+          "es": "Con el tiempo, aprendió a preparar unos panes increíbles. Sus habilidades mejoraron muy deprisa.",
+          "fr": "Au fil du temps, il a appris à faire des pains incroyables. Ses compétences se sont améliorées très vite.",
+          "intentions": [
+            {
+              "intentionId": "over-time",
+              "ptIntent": "Ao longo do tempo",
+              "enIntent": "Over time",
+              "esIntent": "Con el tiempo",
+              "frIntent": "Au fil du temps"
+            }
+          ],
+          "id": "931c6038-bd9d-4eca-8f01-435d5d37c705"
+        },
+        {
+          "pt": "Agora ele sabe que seu próximo fim de semana vai ser delicioso. Ele vai preparar um banquete para seus amigos.",
+          "en": "Now he knows that his next weekend will be delicious. He will prepare a feast for his friends.",
+          "es": "Ahora sabe que su próximo fin de semana va a ser delicioso. Va a preparar un banquete para sus amigos.",
+          "fr": "Maintenant, il sait que son prochain week-end va être délicieux. Il va préparer un festin pour ses amis.",
+          "intentions": [
+            {
+              "intentionId": "vou-vai-ficar-ser",
+              "ptIntent": "vai ser",
+              "enIntent": "will be",
+              "esIntent": "va a ser",
+              "frIntent": "va être"
+            }
+          ],
+          "id": "db945a74-49d5-40c2-a8f8-b810bc279a1d"
+        }
+      ],
+      "intentionsUsed": [
+        "at-first",
+        "over-the-weekend",
+        "say-tell-talk-speak",
+        "e-se",
+        "make-sense",
+        "take-your-time",
+        "make-a-choice",
+        "while-clause",
+        "later-on",
+        "fiquei-mais-comparativo",
+        "over-time",
+        "vou-vai-ficar-ser"
+      ]
+    },
+    {
+      "id": "a2-friendship-ed74f594-7a9a-4969-a1e0-82d8ecf6d0dd",
+      "englishLevel": "A2",
+      "topic": "friendship",
+      "titlePt": "Um Encontro Inesperado",
+      "titleEn": "An Unexpected Meeting",
+      "titleEs": "Un encuentro inesperado",
+      "titleFr": "Une rencontre inattendue",
+      "paragraphs": [
+        {
+          "pt": "Leo conheceu Sam na biblioteca ontem. Foi um dia muito especial na semana passada porque eles começaram a conversar sobre livros. Leo perguntou: \"De onde você vem?\"",
+          "en": "Leo met Sam at the library yesterday. It was a very special day last week because they started talking about books. Leo asked, \"Where do you come from?\"",
+          "es": "Leo conoció a Sam ayer en la biblioteca. Fue un día muy especial la semana pasada porque empezaron a hablar de libros. Leo preguntó: «¿De dónde vienes?»",
+          "fr": "Leo a rencontré Sam hier à la bibliothèque. C'était une journée très spéciale la semaine dernière parce qu'ils ont commencé à parler de livres. Leo a demandé : « D'où viens-tu ? »",
+          "intentions": [
+            {
+              "intentionId": "foi-foram-fui-com-marcador-de-tempo",
+              "ptIntent": "Foi um dia muito especial na semana passada",
+              "enIntent": "It was a very special day last week",
+              "esIntent": "Fue un día muy especial la semana pasada",
+              "frIntent": "C'était une journée très spéciale la semaine dernière"
+            },
+            {
+              "intentionId": "de-onde-sujeito-verbo",
+              "ptIntent": "De onde você vem?",
+              "enIntent": "Where do you come from?",
+              "esIntent": "¿De dónde vienes?",
+              "frIntent": "D'où viens-tu ?"
+            }
+          ],
+          "id": "70974aa9-acec-434b-b4b4-9495a426cda5"
+        },
+        {
+          "pt": "Sam explicou que é um estudante de intercâmbio. Ele disse que quer conhecer a cidade. Leo pensou em um plano e disse: \"Eu tenho que te mostrar o parque principal.\"",
+          "en": "Sam explained that he is an exchange student. He said he wants to see the city. Leo thought of a plan and said, \"I have to show you the main park.\"",
+          "es": "Sam explicó que es un estudiante de intercambio. Dijo que quiere conocer la ciudad. Leo pensó en un plan y dijo: «Tengo que enseñarte el parque principal».",
+          "fr": "Sam a expliqué qu'il était un étudiant en échange. Il a dit qu'il voulait découvrir la ville. Leo a réfléchi à un programme et a dit : « Je dois te montrer le parc principal. »",
+          "intentions": [
+            {
+              "intentionId": "tem-que-tenho-que-tenha-que",
+              "ptIntent": "tenho que te mostrar",
+              "enIntent": "have to show you",
+              "esIntent": "Tengo que enseñarte",
+              "frIntent": "Je dois te montrer"
+            }
+          ],
+          "id": "60209526-2dc1-48e4-9d31-dc6ccb61d6fc"
+        },
+        {
+          "pt": "Leo adora andar de bicicleta perto do lago e acha que Sam também vai gostar. \"Nós podemos ir lá durante o fim de semana\", sugeriu ele.",
+          "en": "Leo loves riding his bike near the lake and thinks Sam will like it too. \"We can go there over the weekend,\" he suggested.",
+          "es": "A Leo le encanta montar en bicicleta cerca del lago y cree que a Sam también le gustará. «Podemos ir durante el fin de semana», sugirió.",
+          "fr": "Leo adore faire du vélo près du lac et pense que cela plaira aussi à Sam. « Nous pouvons y aller pendant le week-end », a-t-il proposé.",
+          "intentions": [
+            {
+              "intentionId": "over-the-weekend",
+              "ptIntent": "durante o fim de semana",
+              "enIntent": "over the weekend",
+              "esIntent": "durante el fin de semana",
+              "frIntent": "pendant le week-end"
+            }
+          ],
+          "id": "cd6739ff-5830-4a97-8670-dc02e94355b4"
+        },
+        {
+          "pt": "Sam começou a falar sobre seus planos de viagem, mas Leo estava tão animado que o interrompeu. Sam sorriu e disse: \"Deixa eu terminar de falar sobre a minha ideia primeiro!\"",
+          "en": "Sam started talking about his travel plans, but Leo was so excited that he interrupted him. Sam smiled and said, \"Let me finish talking about my idea first!\"",
+          "es": "Sam empezó a hablar de sus planes de viaje, pero Leo estaba tan entusiasmado que lo interrumpió. Sam sonrió y dijo: «¡Déjame terminar de hablar de mi idea primero!»",
+          "fr": "Sam a commencé à parler de ses projets de voyage, mais Leo était si enthousiaste qu'il l'a interrompu. Sam a souri et a dit : « Laisse-moi finir de parler de mon idée d'abord ! »",
+          "intentions": [
+            {
+              "intentionId": "deixa-eu-terminar",
+              "ptIntent": "Deixa eu terminar de falar",
+              "enIntent": "Let me finish talking",
+              "esIntent": "Déjame terminar de hablar",
+              "frIntent": "Laisse-moi finir de parler"
+            }
+          ],
+          "id": "7c96542b-a251-45d4-a042-ba70292eb6a6"
+        },
+        {
+          "pt": "Sam queria fazer um piquenique à tarde. Ele olhou para Leo e perguntou: \"Que tal comprar algumas frutas e sanduíches na padaria?\"",
+          "en": "Sam wanted to have an afternoon picnic. He looked at Leo and asked, \"How about buying some fruits and sandwiches at the bakery?\"",
+          "es": "Sam quería hacer un pícnic por la tarde. Miró a Leo y preguntó: «¿Qué tal si compramos fruta y bocadillos en la panadería?»",
+          "fr": "Sam voulait faire un pique-nique l'après-midi. Il a regardé Leo et a demandé : « Et si on achetait des fruits et des sandwichs à la boulangerie ? »",
+          "intentions": [
+            {
+              "intentionId": "how-about",
+              "ptIntent": "Que tal comprar",
+              "enIntent": "How about buying",
+              "esIntent": "Qué tal si compramos",
+              "frIntent": "Et si on achetait"
+            }
+          ],
+          "id": "d708a99b-4474-4ffc-85cc-0400ca212076"
+        },
+        {
+          "pt": "Leo sorriu e concordou imediatamente. Ele disse: \"Não vejo a hora de comer perto do lago! Nós vamos conseguir ótimas fotos lá.\"",
+          "en": "Leo smiled and agreed immediately. He said, \"I can't wait to eat near the lake! We will get great photos there.\"",
+          "es": "Leo sonrió y aceptó enseguida. Dijo: «¡Tengo muchas ganas de comer junto al lago! Vamos a conseguir unas fotos estupendas allí».",
+          "fr": "Leo a souri et a tout de suite accepté. Il a dit : « J'ai hâte de manger près du lac ! Nous allons réussir de très belles photos là-bas. »",
+          "intentions": [
+            {
+              "intentionId": "i-cant-wait",
+              "ptIntent": "Não vejo a hora de comer",
+              "enIntent": "I can't wait to eat",
+              "esIntent": "Tengo muchas ganas de comer",
+              "frIntent": "J'ai hâte de manger"
+            },
+            {
+              "intentionId": "vou-conseguir-resultado",
+              "ptIntent": "vamos conseguir ótimas fotos",
+              "enIntent": "will get great photos",
+              "esIntent": "Vamos a conseguir unas fotos estupendas",
+              "frIntent": "allons réussir de très belles photos"
+            }
+          ],
+          "id": "9c59fcbf-ccb5-4a04-bfeb-8c712a2888a3"
+        },
+        {
+          "pt": "Enquanto eles planejam o piquenique, eles aprendem muito sobre a cultura um do outro. É incrível como uma nova amizade pode crescer rápido.",
+          "en": "While they plan the picnic, they learn a lot about each other's culture. It is amazing how fast a new friendship can grow.",
+          "es": "Mientras planean el pícnic, aprenden mucho sobre la cultura del otro. Es increíble lo rápido que puede crecer una nueva amistad.",
+          "fr": "Pendant qu'ils préparent le pique-nique, ils apprennent beaucoup sur la culture de l'autre. C'est incroyable de voir à quelle vitesse une nouvelle amitié peut grandir.",
+          "intentions": [
+            {
+              "intentionId": "while-clause",
+              "ptIntent": "Enquanto eles planejam",
+              "enIntent": "While they plan",
+              "esIntent": "Mientras planean",
+              "frIntent": "Pendant qu'ils préparent"
+            }
+          ],
+          "id": "850380bf-0428-44cb-86a1-f4aff815ffd6"
+        },
+        {
+          "pt": "Leo quer apresentar Sam para seus outros amigos na próxima semana. Quem sabe eles possam fazer uma grande viagem juntos no futuro.",
+          "en": "Leo wants to introduce Sam to his other friends next week. Who knows, maybe they can go on a big trip together in the future.",
+          "es": "Leo quiere presentar a Sam a sus otros amigos la semana que viene. Quién sabe, quizá puedan hacer un gran viaje juntos en el futuro.",
+          "fr": "Leo veut présenter Sam à ses autres amis la semaine prochaine. Qui sait, ils pourront peut-être faire un grand voyage ensemble à l'avenir.",
+          "intentions": [
+            {
+              "intentionId": "quem-sabe",
+              "ptIntent": "Quem sabe",
+              "enIntent": "Who knows",
+              "esIntent": "Quién sabe",
+              "frIntent": "Qui sait"
+            }
+          ],
+          "id": "e1ba4e6b-4592-4657-a142-97fb007f4ad2"
+        }
+      ],
+      "intentionsUsed": [
+        "foi-foram-fui-com-marcador-de-tempo",
+        "de-onde-sujeito-verbo",
+        "tem-que-tenho-que-tenha-que",
+        "over-the-weekend",
+        "deixa-eu-terminar",
+        "how-about",
+        "i-cant-wait",
+        "vou-conseguir-resultado",
+        "while-clause",
+        "quem-sabe"
+      ]
+    },
+    {
+      "id": "a2-work-9b47b634-23ab-4ac2-b63e-9a421f018f65",
+      "englishLevel": "A2",
+      "topic": "work",
+      "titlePt": "Uma manhã complicada no trabalho",
+      "titleEn": "A Complicated Morning at Work",
+      "titleEs": "Una mañana complicada en el trabajo",
+      "titleFr": "Une matinée compliquée au travail",
+      "paragraphs": [
+        {
+          "pt": "Carlos trabalha em um escritório no centro e faz o trajeto para o trabalho de ônibus todos os dias.",
+          "en": "Carlos works in an office downtown and commutes to work by bus every day.",
+          "es": "Carlos trabaja en una oficina en el centro y va al trabajo en autobús todos los días.",
+          "fr": "Carlos travaille dans un bureau du centre-ville et fait le trajet jusqu'au travail en bus tous les jours.",
+          "intentions": [
+            {
+              "intentionId": "commute-by-transport",
+              "ptIntent": "faz o trajeto para o trabalho de ônibus",
+              "enIntent": "commutes to work by bus",
+              "esIntent": "va al trabajo en autobús",
+              "frIntent": "fait le trajet jusqu'au travail en bus"
+            }
+          ],
+          "id": "d8ed35ee-c6a9-4796-a1e5-511c7aa94982"
+        },
+        {
+          "pt": "Naquela manhã, ele teve que sair de casa mais cedo porque havia muito trânsito.",
+          "en": "That morning, he had to leave home earlier because there was a lot of traffic.",
+          "es": "Aquella mañana tuvo que salir de casa más temprano porque había mucho tráfico.",
+          "fr": "Ce matin-là, il a dû partir de chez lui plus tôt parce qu'il y avait beaucoup de circulation.",
+          "intentions": [
+            {
+              "intentionId": "tinha-que-tive-que-teve-que",
+              "ptIntent": "teve que",
+              "enIntent": "had to",
+              "esIntent": "tuvo que",
+              "frIntent": "a dû"
+            },
+            {
+              "intentionId": "cause-pattern",
+              "ptIntent": "porque",
+              "enIntent": "because",
+              "esIntent": "porque",
+              "frIntent": "parce qu'"
+            }
+          ],
+          "id": "b4e47e86-7da2-4ea9-a5ba-d2b127f82c3c"
+        },
+        {
+          "pt": "Quando chegou ao escritório, sua gerente disse que eles tinham que terminar um relatório antes do almoço.",
+          "en": "When he got to the office, his manager said they had to finish a report before lunch.",
+          "es": "Cuando llegó a la oficina, su jefa dijo que tenían que terminar un informe antes de comer.",
+          "fr": "Quand il est arrivé au bureau, sa responsable a dit qu'ils devaient terminer un rapport avant le déjeuner.",
+          "intentions": [
+            {
+              "intentionId": "tem-que-tenho-que-tenha-que",
+              "ptIntent": "tinham que",
+              "enIntent": "had to",
+              "esIntent": "tenían que",
+              "frIntent": "devaient"
+            }
+          ],
+          "id": "c9d58de1-49ee-4afd-9338-c5de709dc9a8"
+        },
+        {
+          "pt": "Carlos precisava que Ana revisasse os números enquanto ele preparava a apresentação.",
+          "en": "Carlos needed Ana to check the numbers while he prepared the presentation.",
+          "es": "Carlos necesitaba que Ana revisara las cifras mientras él preparaba la presentación.",
+          "fr": "Carlos avait besoin qu'Ana vérifie les chiffres pendant qu'il préparait la présentation.",
+          "intentions": [
+            {
+              "intentionId": "preciso-que-alguem-faca-need-person-to",
+              "ptIntent": "precisava que Ana revisasse",
+              "enIntent": "needed Ana to check",
+              "esIntent": "necesitaba que Ana revisara",
+              "frIntent": "avait besoin qu'Ana vérifie"
+            },
+            {
+              "intentionId": "while-clause",
+              "ptIntent": "enquanto ele preparava",
+              "enIntent": "while he prepared",
+              "esIntent": "mientras él preparaba",
+              "frIntent": "pendant qu'il préparait"
+            }
+          ],
+          "id": "99b498a9-af20-47d9-aaf5-abc8a882e98a"
+        },
+        {
+          "pt": "Depois de conversar com Ana, Carlos conseguiu tomar uma decisão sobre os últimos números do relatório.",
+          "en": "After talking to Ana, Carlos was able to make a decision about the final numbers in the report.",
+          "es": "Después de hablar con Ana, Carlos consiguió tomar una decisión sobre las últimas cifras del informe.",
+          "fr": "Après avoir parlé avec Ana, Carlos a réussi à prendre une décision concernant les derniers chiffres du rapport.",
+          "intentions": [
+            {
+              "intentionId": "make-a-decision",
+              "ptIntent": "tomar uma decisão",
+              "enIntent": "make a decision",
+              "esIntent": "tomar una decisión",
+              "frIntent": "prendre une décision"
+            }
+          ],
+          "id": "b9b725f5-0c33-47c0-87bc-ebd66cad7f4d"
+        },
+        {
+          "pt": "A propósito, Ana lembrou Carlos de enviar uma cópia do relatório para a gerente.",
+          "en": "By the way, Ana reminded Carlos to send a copy of the report to the manager.",
+          "es": "Por cierto, Ana le recordó a Carlos que enviara una copia del informe a la jefa.",
+          "fr": "Au fait, Ana a rappelé à Carlos d'envoyer une copie du rapport à la responsable.",
+          "intentions": [
+            {
+              "intentionId": "a-proposito-by-the-way",
+              "ptIntent": "A propósito",
+              "enIntent": "By the way",
+              "esIntent": "Por cierto",
+              "frIntent": "Au fait"
+            }
+          ],
+          "id": "bc67043a-e142-4cc8-81ca-7eeed1996a8a"
+        },
+        {
+          "pt": "No final da manhã, o relatório estava pronto e os dois puderam almoçar tranquilos.",
+          "en": "By the end of the morning, the report was ready, and they could have lunch without worrying.",
+          "es": "Al final de la mañana, el informe estaba listo y los dos pudieron comer tranquilos.",
+          "fr": "À la fin de la matinée, le rapport était prêt et tous les deux ont pu déjeuner tranquillement.",
+          "intentions": [],
+          "id": "43e2bf78-e323-4583-84c1-c19ba5fd0048"
+        }
+      ],
+      "intentionsUsed": [
+        "commute-by-transport",
+        "tinha-que-tive-que-teve-que",
+        "cause-pattern",
+        "tem-que-tenho-que-tenha-que",
+        "preciso-que-alguem-faca-need-person-to",
+        "while-clause",
+        "make-a-decision",
+        "a-proposito-by-the-way"
+      ]
+    },
+    {
+      "id": "a2-work-3d81f427-7d92-4ee7-8a26-463c7639b1d4",
+      "englishLevel": "A2",
+      "topic": "work",
+      "titlePt": "Uma nova forma de trabalhar",
+      "titleEn": "A New Way to Work",
+      "titleEs": "Una nueva forma de trabajar",
+      "titleFr": "Une nouvelle façon de travailler",
+      "paragraphs": [
+        {
+          "pt": "Mariana costumava trabalhar em casa todos os dias, mas agora vai ao escritório três vezes por semana.",
+          "en": "Mariana used to work from home every day, but now she goes to the office three times a week.",
+          "es": "Mariana solía trabajar en casa todos los días, pero ahora va a la oficina tres veces por semana.",
+          "fr": "Mariana avait l'habitude de travailler chez elle tous les jours, mais maintenant, elle va au bureau trois fois par semaine.",
+          "intentions": [
+            {
+              "intentionId": "used-to",
+              "ptIntent": "costumava",
+              "enIntent": "used to",
+              "esIntent": "solía",
+              "frIntent": "avait l'habitude de"
+            }
+          ],
+          "id": "468f51a6-1743-443d-b2aa-94efde35221f"
+        },
+        {
+          "pt": "No começo, ela achou a mudança difícil porque seu trajeto demora quase uma hora.",
+          "en": "At first, she found the change difficult because her commute takes almost an hour.",
+          "es": "Al principio, el cambio le pareció difícil porque el trayecto le lleva casi una hora.",
+          "fr": "Au début, elle a trouvé le changement difficile parce que son trajet dure presque une heure.",
+          "intentions": [
+            {
+              "intentionId": "at-first",
+              "ptIntent": "No começo",
+              "enIntent": "At first",
+              "esIntent": "Al principio",
+              "frIntent": "Au début"
+            },
+            {
+              "intentionId": "my-commute-takes",
+              "ptIntent": "seu trajeto demora quase uma hora",
+              "enIntent": "her commute takes almost an hour",
+              "esIntent": "el trayecto le lleva casi una hora",
+              "frIntent": "son trajet dure presque une heure"
+            }
+          ],
+          "id": "ed5ed7bb-d713-44bd-986a-cc69b756fbdc"
+        },
+        {
+          "pt": "Um dia, um colega perguntou: 'E se você pegar um ônibus mais cedo?'",
+          "en": "One day, a coworker asked, 'What if you take an earlier bus?'",
+          "es": "Un día, un compañero le preguntó: «¿Y si coges un autobús más temprano?»",
+          "fr": "Un jour, un collègue lui a demandé : « Et si tu prenais un bus plus tôt ? »",
+          "intentions": [
+            {
+              "intentionId": "e-se",
+              "ptIntent": "E se",
+              "enIntent": "What if",
+              "esIntent": "Y si",
+              "frIntent": "Et si"
+            }
+          ],
+          "id": "9f09e62e-9c19-42e8-a51f-07d037cc3fe6"
+        },
+        {
+          "pt": "Mariana decidiu tentar e agora consegue chegar ao escritório antes das nove.",
+          "en": "Mariana decided to try it, and now she can get to the office before nine.",
+          "es": "Mariana decidió intentarlo y ahora consigue llegar a la oficina antes de las nueve.",
+          "fr": "Mariana a décidé d'essayer et maintenant, elle arrive à être au bureau avant neuf heures.",
+          "intentions": [
+            {
+              "intentionId": "consigo-sou-capaz",
+              "ptIntent": "consegue",
+              "enIntent": "can",
+              "esIntent": "consigue",
+              "frIntent": "arrive à"
+            }
+          ],
+          "id": "a0a2c881-e981-490d-85cb-ec41b3d39860"
+        },
+        {
+          "pt": "Antes de começar o trabalho, ela sempre dá uma olhada na agenda e nas mensagens da equipe.",
+          "en": "Before starting work, she always takes a look at her calendar and the team's messages.",
+          "es": "Antes de empezar a trabajar, siempre echa un vistazo a la agenda y a los mensajes del equipo.",
+          "fr": "Avant de commencer à travailler, elle jette toujours un coup d'œil à son agenda et aux messages de l'équipe.",
+          "intentions": [
+            {
+              "intentionId": "take-a-look",
+              "ptIntent": "dá uma olhada",
+              "enIntent": "takes a look",
+              "esIntent": "echa un vistazo",
+              "frIntent": "jette toujours un coup d'œil"
+            }
+          ],
+          "id": "7d6703ee-0856-4e34-8194-d887b9916be8"
+        },
+        {
+          "pt": "Ela também procura garantir que todas as reuniões importantes estejam na agenda.",
+          "en": "She also tries to make sure all the important meetings are on the calendar.",
+          "es": "También procura asegurarse de que todas las reuniones importantes estén en la agenda.",
+          "fr": "Elle essaie aussi de s'assurer que toutes les réunions importantes figurent dans son agenda.",
+          "intentions": [
+            {
+              "intentionId": "make-sure",
+              "ptIntent": "garantir que",
+              "enIntent": "make sure",
+              "esIntent": "asegurarse de que",
+              "frIntent": "s'assurer que"
+            }
+          ],
+          "id": "6e650d78-d6cb-4a88-817b-6cfedcdb0dda"
+        },
+        {
+          "pt": "Depois de algumas semanas, Mariana não reclama mais dos dias no escritório e gosta de conversar com a equipe pessoalmente.",
+          "en": "After a few weeks, Mariana doesn't complain about office days anymore, and she likes talking to the team in person.",
+          "es": "Después de unas semanas, Mariana ya no se queja de los días en la oficina y le gusta hablar con el equipo en persona.",
+          "fr": "Après quelques semaines, Mariana ne se plaint plus des journées au bureau et aime parler avec l'équipe en personne.",
+          "intentions": [
+            {
+              "intentionId": "nao-mais-any-longer-anymore",
+              "ptIntent": "não reclama mais",
+              "enIntent": "doesn't complain about office days anymore",
+              "esIntent": "ya no se queja",
+              "frIntent": "ne se plaint plus"
+            }
+          ],
+          "id": "e85aeff0-f2dc-4502-a18f-b2ac62a61e48"
+        }
+      ],
+      "intentionsUsed": [
+        "used-to",
+        "at-first",
+        "my-commute-takes",
+        "e-se",
+        "consigo-sou-capaz",
+        "take-a-look",
+        "make-sure",
+        "nao-mais-any-longer-anymore"
+      ]
+    }
+  ]
+}

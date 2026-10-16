@@ -1,0 +1,168 @@
+{
+  "stories": [
+    {
+      "id": "c2-travel-91ec0d8d-735d-4e24-b0fc-8f2a7bbcb147",
+      "englishLevel": "C2",
+      "topic": "travel",
+      "titlePt": "Uma conexão complicada em Nova York",
+      "titleEn": "A Complicated Connection in New York",
+      "titleEs": "Una conexión complicada en Nueva York",
+      "titleFr": "Une correspondance compliquée à New York",
+      "paragraphs": [
+        {
+          "pt": "Depois de quase nove horas de voo, Rafael desembarcou em Nova York convencido de que teria tempo suficiente para fazer sua conexão.",
+          "en": "After nearly nine hours in the air, Rafael landed in New York convinced that he would have ample time to make his connection.",
+          "es": "Tras casi nueve horas de vuelo, Rafael desembarcó en Nueva York convencido de que tendría tiempo suficiente para coger su conexión.",
+          "fr": "Après près de neuf heures de vol, Rafael a débarqué à New York, convaincu qu'il aurait largement le temps de prendre sa correspondance.",
+          "intentions": [],
+          "id": "95ff15b6-0ddd-4b74-9e65-016b4192f151"
+        },
+        {
+          "pt": "Ao chegar ao controle de imigração, porém, encontrou uma fila enorme que avançava em um ritmo extremamente lento.",
+          "en": "When he reached immigration, however, he found an enormous line moving at an excruciatingly slow pace.",
+          "es": "Sin embargo, al llegar al control de inmigración, se encontró con una cola enorme que avanzaba a un ritmo extremadamente lento.",
+          "fr": "En arrivant au contrôle de l'immigration, il s'est pourtant retrouvé face à une file interminable qui avançait à un rythme extrêmement lent.",
+          "intentions": [],
+          "id": "d68d99c9-ee60-4e54-bf7d-ccca8835a279"
+        },
+        {
+          "pt": "Ele tentou manter a calma, mas começou a calcular mentalmente quanto tempo ainda precisaria para retirar a bagagem, passar pela alfândega e chegar ao outro terminal.",
+          "en": "He tried to remain composed, but began mentally calculating how much time he would still need to collect his luggage, clear customs, and reach the other terminal.",
+          "es": "Intentó mantener la calma, pero empezó a calcular mentalmente cuánto tiempo necesitaría aún para recoger el equipaje, pasar la aduana y llegar a la otra terminal.",
+          "fr": "Il a essayé de garder son calme, mais s'est mis à calculer mentalement le temps qu'il lui faudrait encore pour récupérer ses bagages, passer la douane et rejoindre l'autre terminal.",
+          "intentions": [],
+          "id": "a906818f-8c75-441a-b810-c7d6ffd997c1"
+        },
+        {
+          "pt": "Quando finalmente recuperou a mala, percebeu que uma das rodas havia quebrado durante o voo. Ai de mim, pensou ele, olhando para o relógio enquanto arrastava a mala pelo aeroporto.",
+          "en": "When he finally retrieved his suitcase, he realized that one of its wheels had broken during the flight. Woe is me, he thought, glancing at his watch as he dragged the suitcase through the airport.",
+          "es": "Cuando por fin recuperó la maleta, se dio cuenta de que una de las ruedas se había roto durante el vuelo. Ay de mí, pensó, mirando el reloj mientras arrastraba la maleta por el aeropuerto.",
+          "fr": "Lorsqu'il a enfin récupéré sa valise, il s'est aperçu qu'une des roulettes s'était cassée pendant le vol. Pauvre de moi, s'est-il dit en regardant sa montre tout en traînant sa valise à travers l'aéroport.",
+          "intentions": [
+            {
+              "intentionId": "woe-is-me",
+              "ptIntent": "Ai de mim",
+              "enIntent": "Woe is me",
+              "esIntent": "Ay de mí",
+              "frIntent": "Pauvre de moi"
+            }
+          ],
+          "id": "c95d072f-09e8-421d-a75e-2297f97a70a5"
+        },
+        {
+          "pt": "No balcão da companhia aérea, uma funcionária explicou que o embarque já estava sendo encerrado e que seria praticamente impossível chegar ao portão a tempo.",
+          "en": "At the airline counter, an employee explained that boarding was already closing and that reaching the gate in time would be virtually impossible.",
+          "es": "En el mostrador de la compañía aérea, una empleada le explicó que el embarque ya estaba a punto de cerrarse y que sería prácticamente imposible llegar a la puerta a tiempo.",
+          "fr": "Au comptoir de la compagnie aérienne, une employée lui a expliqué que l'embarquement était sur le point de se terminer et qu'il serait pratiquement impossible d'atteindre la porte à temps.",
+          "intentions": [],
+          "id": "52180c6e-4002-49a5-9136-af08dac4de97"
+        },
+        {
+          "pt": "Em vez de discutir, Rafael explicou a situação com calma. A funcionária verificou as alternativas e conseguiu colocá-lo em outro voo naquela mesma noite.",
+          "en": "Rather than argue, Rafael calmly explained the situation. The employee checked the alternatives and managed to put him on another flight later that evening.",
+          "es": "En vez de discutir, Rafael explicó la situación con calma. La empleada comprobó las alternativas y consiguió colocarlo en otro vuelo esa misma noche.",
+          "fr": "Plutôt que de protester, Rafael a calmement expliqué la situation. L'employée a examiné les différentes possibilités et a réussi à lui trouver une place sur un autre vol le soir même.",
+          "intentions": [],
+          "id": "0c74f584-9f84-4e20-b704-c281d3d2dbaf"
+        },
+        {
+          "pt": "A conexão perdida acabou lhe dando algumas horas inesperadas para jantar e descansar. Quando embarcou novamente, concluiu que viagens internacionais raramente acontecem exatamente como planejamos.",
+          "en": "The missed connection ultimately gave him a few unexpected hours to have dinner and unwind. When he boarded again, he concluded that international travel rarely unfolds exactly as we envision it.",
+          "es": "La conexión perdida acabó regalándole unas horas inesperadas para cenar y descansar. Cuando volvió a embarcar, concluyó que los viajes internacionales rara vez transcurren exactamente como los planeamos.",
+          "fr": "Cette correspondance manquée lui a finalement offert quelques heures inattendues pour dîner et se reposer. En embarquant à nouveau, il en a conclu que les voyages internationaux se déroulent rarement exactement comme nous les prévoyons.",
+          "intentions": [],
+          "id": "3ce09e2c-d6a3-4e48-9b14-ef5d7f7728fe"
+        }
+      ],
+      "intentionsUsed": [
+        "woe-is-me"
+      ]
+    },
+    {
+      "id": "c2-travel-f74f310a-84bb-4b9e-b258-1cda85c32f09",
+      "englishLevel": "C2",
+      "topic": "travel",
+      "titlePt": "A estrada errada na Toscana",
+      "titleEn": "The Wrong Road in Tuscany",
+      "titleEs": "El camino equivocado en la Toscana",
+      "titleFr": "La mauvaise route en Toscane",
+      "paragraphs": [
+        {
+          "pt": "Mariana alugou um carro em Florença para passar alguns dias explorando pequenas cidades da Toscana longe das rotas turísticas mais movimentadas.",
+          "en": "Mariana rented a car in Florence to spend a few days exploring small Tuscan towns away from the most heavily traveled tourist routes.",
+          "es": "Mariana alquiló un coche en Florencia para pasar unos días explorando pequeños pueblos de la Toscana, lejos de las rutas turísticas más concurridas.",
+          "fr": "Mariana a loué une voiture à Florence pour passer quelques jours à explorer de petites villes de Toscane, loin des itinéraires touristiques les plus fréquentés.",
+          "intentions": [],
+          "id": "a578ef60-f631-437a-8a3d-4c52942cec89"
+        },
+        {
+          "pt": "Na segunda tarde da viagem, o aplicativo de navegação sugeriu uma estrada estreita que parecia oferecer um caminho consideravelmente mais curto até o hotel.",
+          "en": "On the second afternoon of the trip, her navigation app suggested a narrow road that appeared to provide a considerably shorter route to the hotel.",
+          "es": "La segunda tarde del viaje, la aplicación de navegación le sugirió una carretera estrecha que parecía ofrecer un trayecto considerablemente más corto hasta el hotel.",
+          "fr": "Le deuxième après-midi du voyage, l'application de navigation lui a proposé une route étroite qui semblait offrir un trajet sensiblement plus court jusqu'à l'hôtel.",
+          "intentions": [],
+          "id": "f3170ba0-6703-4bbb-9adc-eecf5f039009"
+        },
+        {
+          "pt": "Depois de alguns quilômetros, o asfalto desapareceu e a estrada se transformou em um caminho de terra cercado por vinhedos. Para piorar, o sinal do celular desapareceu completamente.",
+          "en": "After a few miles, the pavement vanished and the road turned into a dirt track surrounded by vineyards. To make matters worse, her cell signal disappeared completely.",
+          "es": "Al cabo de unos kilómetros, el asfalto desapareció y la carretera se convirtió en un camino de tierra rodeado de viñedos. Para colmo, el móvil perdió por completo la cobertura.",
+          "fr": "Au bout de quelques kilomètres, l'asphalte a disparu et la route s'est transformée en chemin de terre bordé de vignobles. Pour ne rien arranger, son portable a complètement perdu le réseau.",
+          "intentions": [],
+          "id": "998435f6-dbbc-4b19-910d-130b40e871c4"
+        },
+        {
+          "pt": "Mariana parou o carro e consultou o mapa que havia deixado no porta-luvas. Ai de mim, murmurou ao perceber que não conseguia determinar com precisão onde estava.",
+          "en": "Mariana pulled over and consulted the map she had left in the glove compartment. Woe is me, she muttered when she realized she could not determine precisely where she was.",
+          "es": "Mariana detuvo el coche y consultó el mapa que había dejado en la guantera. Ay de mí, murmuró al darse cuenta de que no conseguía determinar con precisión dónde estaba.",
+          "fr": "Mariana a arrêté la voiture et a consulté la carte qu'elle avait laissée dans la boîte à gants. Pauvre de moi, a-t-elle murmuré en constatant qu'elle ne parvenait pas à déterminer précisément où elle se trouvait.",
+          "intentions": [
+            {
+              "intentionId": "woe-is-me",
+              "ptIntent": "Ai de mim",
+              "enIntent": "Woe is me",
+              "esIntent": "Ay de mí",
+              "frIntent": "Pauvre de moi"
+            }
+          ],
+          "id": "1215493e-d3a3-4bf5-beb8-fb67d7ee18bc"
+        },
+        {
+          "pt": "Poucos minutos depois, um agricultor que trabalhava nas proximidades percebeu que ela estava perdida e se aproximou para oferecer ajuda.",
+          "en": "A few minutes later, a farmer working nearby noticed that she was lost and came over to offer assistance.",
+          "es": "Pocos minutos después, un agricultor que trabajaba cerca se dio cuenta de que estaba perdida y se acercó para ofrecerle ayuda.",
+          "fr": "Quelques minutes plus tard, un agriculteur qui travaillait à proximité a remarqué qu'elle était perdue et s'est approché pour lui proposer son aide.",
+          "intentions": [],
+          "id": "5578e1f8-e270-455d-994d-0d7337bc9b70"
+        },
+        {
+          "pt": "Apesar da barreira linguística, os dois conseguiram se entender com algumas palavras, gestos e o mapa. Ele indicou uma pequena estrada que levava de volta à rodovia principal.",
+          "en": "Despite the language barrier, they managed to understand each other through a combination of a few words, gestures, and the map. He pointed out a small road leading back to the main highway.",
+          "es": "A pesar de la barrera del idioma, lograron entenderse con unas palabras, gestos y el mapa. Él le indicó una pequeña carretera que llevaba de vuelta a la vía principal.",
+          "fr": "Malgré la barrière de la langue, ils ont réussi à se comprendre à l'aide de quelques mots, de gestes et de la carte. Il lui a indiqué une petite route qui rejoignait la route principale.",
+          "intentions": [],
+          "id": "ef83568c-edbd-4ca1-8a7e-90d397ea7908"
+        },
+        {
+          "pt": "Mariana chegou ao hotel quase duas horas depois do previsto, cansada e coberta de poeira, mas curiosamente satisfeita com o desvio inesperado.",
+          "en": "Mariana reached the hotel almost two hours later than expected, exhausted and covered in dust, yet curiously satisfied with the unexpected detour.",
+          "es": "Mariana llegó al hotel casi dos horas más tarde de lo previsto, cansada y cubierta de polvo, pero curiosamente satisfecha con aquel desvío inesperado.",
+          "fr": "Mariana est arrivée à l'hôtel avec près de deux heures de retard, fatiguée et couverte de poussière, mais curieusement satisfaite de ce détour inattendu.",
+          "intentions": [],
+          "id": "c801ccdd-3f2f-4483-a75e-5e94aebd46ba"
+        },
+        {
+          "pt": "Naquela noite, enquanto jantava em uma pequena praça, percebeu que o episódio mais memorável da viagem tinha sido justamente aquele que jamais teria incluído em seu roteiro.",
+          "en": "That evening, while having dinner in a small square, she realized that the most memorable episode of the trip was precisely the one she would never have included in her itinerary.",
+          "es": "Aquella noche, mientras cenaba en una pequeña plaza, se dio cuenta de que el episodio más memorable del viaje había sido precisamente el que nunca habría incluido en su itinerario.",
+          "fr": "Ce soir-là, alors qu'elle dînait sur une petite place, elle a compris que l'épisode le plus mémorable du voyage était justement celui qu'elle n'aurait jamais inclus dans son itinéraire.",
+          "intentions": [],
+          "id": "0927f969-9c2e-409a-a3b6-20162ff62b19"
+        }
+      ],
+      "intentionsUsed": [
+        "woe-is-me"
+      ]
+    }
+  ]
+}

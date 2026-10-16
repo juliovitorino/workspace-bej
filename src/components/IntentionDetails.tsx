@@ -1,34 +1,36 @@
-import { LANGUAGES, type StudentLanguage } from "../config/languages";
+import { t, languageName as localizedLanguageName } from "../i18n";
+import { useTranslation } from "react-i18next";
+import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
 import { isAuthorMode } from "../utils/authorMode";
 import { useEffect, useRef, useState } from "react";
-import type { MentalIntention } from "../types/hashmap";
+import type { Example, MentalIntention } from "../types/hashmap";
 import { ConnectedSpeechButton } from "./ConnectedSpeechStudio";
 
 
-function renderHighlightedText(
-  text: string,
-  highlight?: string
-) {
-  if (!highlight) {
-    return text;
-  }
+/** Campos de destino do contrato 4.0; pt/ptIntent vêm da associação por UUID no serviço. */
+function targetSentence(example: Example): string {
+  return example.exampleItem || example.en;
+}
 
-  const index = text.indexOf(highlight);
+function targetIntent(example: Example): string | undefined {
+  return example.intent || example.enIntent;
+}
 
-  if (index === -1) {
-    return text;
-  }
+function renderHighlightedText(text: string, highlight?: string) {
+  const phrase = highlight?.trim();
+  if (!phrase) return text;
 
-  const before = text.slice(0, index);
-  const after = text.slice(index + highlight.length);
+  // Preserva a capitalização original da frase e evita falhas por diferença de caixa.
+  const index = text.toLocaleLowerCase().indexOf(phrase.toLocaleLowerCase());
+  if (index < 0) return text;
 
   return (
     <>
-      {before}
+      {text.slice(0, index)}
       <strong className="intention-highlight">
-        {highlight}
+        {text.slice(index, index + phrase.length)}
       </strong>
-      {after}
+      {text.slice(index + phrase.length)}
     </>
   );
 }
@@ -50,6 +52,7 @@ function getYoutubeUrl(value?: string): string | null {
 
 interface IntentionDetailsProps {
   language: StudentLanguage;
+  sourceLanguage: SourceLanguage;
   item: MentalIntention | null;
   allItems: MentalIntention[];
   onClose: () => void;
@@ -61,6 +64,7 @@ interface IntentionDetailsProps {
 
 export function IntentionDetails({
   language,
+  sourceLanguage,
   item,
   allItems,
   onClose,
@@ -69,6 +73,7 @@ export function IntentionDetails({
   onAdvancedTraining,
   onReviewTraining
 }: IntentionDetailsProps) {
+  const { t } = useTranslation();
   const [speakingExampleIndex, setSpeakingExampleIndex] =
     useState<number | null>(null);
   const [copiedExampleIndex, setCopiedExampleIndex] =
@@ -216,13 +221,13 @@ export function IntentionDetails({
     const exampleText = text.trim();
 
     if (!exampleText) {
-      setSpeechError("Não há texto para reproduzir.");
+      setSpeechError(t("details.thereIsNoTextToPlay"));
       return;
     }
 
     if (!("speechSynthesis" in window)) {
       setSpeechError(
-        "O recurso de voz não está disponível neste navegador."
+        t("common.speechPlaybackIsUnavailableInThisBrowser")
       );
       return;
     }
@@ -257,7 +262,7 @@ export function IntentionDetails({
 
     utterance.onerror = () => {
       setSpeakingExampleIndex(null);
-      setSpeechError("Não foi possível reproduzir o exemplo.");
+      setSpeechError(t("details.couldNotPlayTheExample"));
     };
 
     window.speechSynthesis.speak(utterance);
@@ -281,7 +286,7 @@ export function IntentionDetails({
       setCopyIntentionIdError(null);
     } catch {
       setCopiedIntentionId(null);
-      setCopyIntentionIdError("Não foi possível copiar o ID desta intenção.");
+      setCopyIntentionIdError(t("details.couldNotCopyThisIntentionSId"));
     }
   }
 
@@ -297,7 +302,7 @@ export function IntentionDetails({
       textarea.select();
       textarea.setSelectionRange(0, id.length);
       if (!document.execCommand("copy")) {
-        throw new Error("Falha ao copiar ID.");
+        throw new Error(t("common.failedToCopyId"));
       }
     } finally {
       document.body.removeChild(textarea);
@@ -310,7 +315,7 @@ export function IntentionDetails({
     const content = section === "pattern"
       ? item.pattern ?? ""
       : (item.examples ?? [])
-          .map((example) => `${example.pt}\r\n${example.en}`)
+          .map((example) => `${example.pt}\r\n${targetSentence(example)}`)
           .join("\r\n\r\n");
 
     if (!content.trim()) return;
@@ -331,7 +336,7 @@ export function IntentionDetails({
           textarea.select();
           textarea.setSelectionRange(0, textarea.value.length);
           if (!document.execCommand("copy")) {
-            throw new Error("Falha ao copiar o texto.");
+            throw new Error(t("details.failedToCopyText"));
           }
         } finally {
           document.body.removeChild(textarea);
@@ -345,23 +350,23 @@ export function IntentionDetails({
       }, 1500);
     } catch {
       setCopiedSection(null);
-      setCopySectionError("Não foi possível copiar o conteúdo. Tente novamente.");
+      setCopySectionError(t("details.couldNotCopyTheContentTryAgain"));
     }
   }
 
   async function handleCopyExample(text: string, index: number) {
-    const englishText = text.trim();
+    const targetText = text.trim();
 
-    if (!englishText) {
+    if (!targetText) {
       return;
     }
 
     try {
       if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(englishText);
+        await navigator.clipboard.writeText(targetText);
       } else {
         const textarea = document.createElement("textarea");
-        textarea.value = englishText;
+        textarea.value = targetText;
         textarea.setAttribute("readonly", "");
         textarea.style.position = "fixed";
         textarea.style.opacity = "0";
@@ -375,7 +380,7 @@ export function IntentionDetails({
         document.body.removeChild(textarea);
 
         if (!copied) {
-          throw new Error("Não foi possível copiar o exemplo.");
+          throw new Error(t("details.couldNotCopyTheExample"));
         }
       }
 
@@ -390,13 +395,13 @@ export function IntentionDetails({
   }
 
   async function handleCopyHqPrompt(
-    englishText: string,
-    englishIntention: string | undefined,
+    sentenceText: string,
+    sentenceIntention: string | undefined,
     index: number
   ) {
     if (!isAuthorMode()) return;
-    const sentence = englishText.trim();
-    const intention = (englishIntention ?? item?.english ?? "").trim();
+    const sentence = sentenceText.trim();
+    const intention = (sentenceIntention ?? item?.english ?? "").trim();
 
     if (!sentence || !intention) {
       return;
@@ -431,7 +436,7 @@ Mandatório:
         document.body.removeChild(textarea);
 
         if (!copied) {
-          throw new Error("Não foi possível copiar o prompt da HQ.");
+          throw new Error(t("details.couldNotCopyTheComicPrompt"));
         }
       }
 
@@ -453,7 +458,7 @@ Mandatório:
     setShareError(null);
 
     if (!navigator.share) {
-      setShareError("O compartilhamento não está disponível neste navegador.");
+      setShareError(t("common.sharingIsUnavailableInThisBrowser"));
       return;
     }
 
@@ -462,7 +467,7 @@ Mandatório:
       const response = await fetch(absoluteImageUrl);
 
       if (!response.ok) {
-        throw new Error("Não foi possível carregar a imagem da HQ.");
+        throw new Error(t("common.couldNotLoadTheComicImage"));
       }
 
       const blob = await response.blob();
@@ -485,7 +490,7 @@ Mandatório:
 
       if (navigator.canShare?.({ files: [file] })) {
         await navigator.share({
-          title: `HQ - ${item?.intention ?? "Mental Hashmap"}`,
+          title: t("details.comicIntention", { intention: (item?.intention ?? "Mental Hashmap") }),
           text: item?.english
             ? `${item.intention} — ${item.english}`
             : item?.intention ?? "Mental Hashmap",
@@ -495,7 +500,7 @@ Mandatório:
       }
 
       await navigator.share({
-        title: `HQ - ${item?.intention ?? "Mental Hashmap"}`,
+        title: t("details.comicIntention", { intention: (item?.intention ?? "Mental Hashmap") }),
         text: item?.english
           ? `${item.intention} — ${item.english}`
           : item?.intention ?? "Mental Hashmap",
@@ -506,7 +511,7 @@ Mandatório:
         return;
       }
 
-      setShareError("Não foi possível compartilhar a HQ neste dispositivo.");
+      setShareError(t("common.couldNotShareTheComicOnThisDevice"));
     }
   }
 
@@ -540,7 +545,7 @@ Mandatório:
 
     const subtitle = doc.createElement("div");
     subtitle.className = "subtitle";
-    subtitle.textContent = item.english;
+    subtitle.textContent = item.structure || item.pattern || item.english;
     doc.body.appendChild(subtitle);
 
     function appendHighlightedText(element: HTMLElement, value: string, highlight?: string) {
@@ -571,7 +576,7 @@ Mandatório:
 
       const en = doc.createElement("p");
       en.className = "en";
-      appendHighlightedText(en, example.en, example.enIntent);
+      appendHighlightedText(en, targetSentence(example), targetIntent(example));
       wrapper.appendChild(en);
       doc.body.appendChild(wrapper);
     });
@@ -817,6 +822,9 @@ Mandatório:
 
   if (!item) return null;
 
+  const targetLanguageName = localizedLanguageName(language);
+  const sourceLanguageName = localizedLanguageName(sourceLanguage);
+  const targetLevel = item.level ?? item.englishLevel;
   const youtubeVideoUrl = getYoutubeUrl(item.youtubeVideo);
   const youtubeShortUrl = getYoutubeUrl(item.youtubeShort);
 
@@ -831,23 +839,23 @@ Mandatório:
         className="detail-panel"
         role="dialog"
         aria-modal="true"
-        aria-label={`Detalhes de ${item.intention}`}
+        aria-label={t("details.detailsForIntention", { intention: (item.intention) })}
         onMouseDown={(event) => event.stopPropagation()}
       >
         <button
           className="close-button"
           type="button"
           onClick={onClose}
-          aria-label="Fechar"
+          aria-label={t("common.close")}
         >
           ×
         </button>
 
-        <p className="eyebrow">Intenção Mental</p>
+        <p className="eyebrow">{t("common.communicativeIntention")}</p>
         <h2>{item.intention}</h2>
-        <p className="detail-english">{item.english}</p>
+        <p className="detail-english" lang={language}>{item.targetIntention ?? item.english}</p>
 
-        {(item.englishLevel || item.category || youtubeVideoUrl || youtubeShortUrl || (isAuthorMode() && item.allowLanguageChunkPractice === true)) && (
+        {(targetLevel || item.category || youtubeVideoUrl || youtubeShortUrl || (isAuthorMode() && item.allowLanguageChunkPractice === true)) && (
           <div
             className="detail-level"
             style={{
@@ -857,9 +865,10 @@ Mandatório:
               flexWrap: "wrap"
             }}
           >
-            {item.englishLevel && (
+            {targetLevel && (
               <span className="pill english-level-pill">
-                Nível {item.englishLevel}
+                
+                {t("common.level")} {targetLevel}
               </span>
             )}
 
@@ -880,8 +889,8 @@ Mandatório:
                 href={youtubeVideoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Abrir vídeo no YouTube em nova aba"
-                aria-label="Ver vídeo desta intenção no YouTube (nova aba)"
+                title={t("details.openVideoOnYoutubeInANewTab")}
+                aria-label={t("details.viewThisIntentionSVideoOnYoutubeNewTab")}
                 style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", textDecoration: "none", cursor: "pointer" }}
               >
                 <img
@@ -901,8 +910,8 @@ Mandatório:
                 href={youtubeShortUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Abrir Short no YouTube em nova aba"
-                aria-label="Ver Short desta intenção no YouTube (nova aba)"
+                title={t("details.openShortOnYoutubeInANewTab")}
+                aria-label={t("details.viewThisIntentionSShortOnYoutubeNewTab")}
                 style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", textDecoration: "none", cursor: "pointer" }}
               >
                 <img
@@ -924,7 +933,8 @@ Mandatório:
             className="primary-button"
             onClick={() => onBasicTraining(item)}
           >
-            Treino básico
+            
+            {t("common.basicPractice")}
           </button>
 
           <button
@@ -932,7 +942,8 @@ Mandatório:
             className="secondary-button"
             onClick={() => onAdvancedTraining(item)}
           >
-            Treino avançado
+            
+            {t("common.advancedPractice")}
           </button>
 
           <button
@@ -940,30 +951,31 @@ Mandatório:
             className="secondary-button"
             onClick={() => onReviewTraining(item)}
           >
-            Revisão
+            
+            {t("common.review")}
           </button>
 
           <button
             type="button"
             className="secondary-button"
             onClick={handlePrintIntention}
-            title="Imprimir esta intenção"
-            aria-label="Imprimir esta intenção"
+            title={t("details.printThisIntention")}
+            aria-label={t("details.printThisIntention")}
           >
             <span aria-hidden="true">🖨️</span>
-            <span>Imprimir</span>
+            <span>{t("common.print")}</span>
           </button>
-          <ConnectedSpeechButton
-            title={`Intenção: ${item.intention}`}
-            blocks={(item.examples ?? []).map((example) => ({ original: example.en, portuguese: example.pt }))}
-          />
+          {language === "en-US" && <ConnectedSpeechButton
+            title={t("common.intentionIntention", { intention: (item.intention) })}
+            blocks={(item.examples ?? []).map((example) => ({ original: targetSentence(example), portuguese: example.pt }))}
+          />}
           {isAuthorMode() && (
             <button
               type="button"
               className="secondary-button"
               onClick={() => void handleCopyIntentionId()}
-              title={copiedIntentionId === item.id ? "ID copiado!" : "Copiar ID da intenção"}
-              aria-label={copiedIntentionId === item.id ? "ID copiado" : "Copiar ID da intenção"}
+              title={copiedIntentionId === item.id ? t("common.idCopied") : t("common.copyIntentionId")}
+              aria-label={copiedIntentionId === item.id ? t("common.idCopied") : t("common.copyIntentionId")}
               style={{ minWidth: "2.75rem" }}
             >
               <span aria-hidden="true">{copiedIntentionId === item.id ? "✓" : "🔢"}</span>
@@ -974,11 +986,11 @@ Mandatório:
               type="button"
               className="secondary-button"
               onClick={() => setShowMetadataModal(true)}
-              title="Visualizar tags e searchTerms desta intenção"
-              aria-label="Ver tags e termos de busca"
+              title={t("details.viewTagsAndSearchtermsForThisIntention")}
+              aria-label={t("details.viewTagsAndSearchTerms")}
             >
               <span aria-hidden="true">🏷️</span>
-              <span>Tags e termos</span>
+              <span>{t("details.tagsAndTerms")}</span>
             </button>
           )}
         </div>
@@ -993,13 +1005,13 @@ Mandatório:
         {item.pattern && (
           <section>
             <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-              <h3>Pattern</h3>
+              <h3>{t("details.pattern")}</h3>
               <button
                 type="button"
                 className="secondary-button copy-section-button"
                 onClick={() => void handleCopySection("pattern")}
-                title={copiedSection === "pattern" ? "Copiado!" : "Copiar Pattern"}
-                aria-label={copiedSection === "pattern" ? "Pattern copiado" : "Copiar Pattern"}
+                title={copiedSection === "pattern" ? t("stories.copied") : t("details.copyPattern")}
+                aria-label={copiedSection === "pattern" ? t("details.patternCopied") : t("details.copyPattern")}
                 style={{
                   width: "2.25rem",
                   minWidth: "2.25rem",
@@ -1038,7 +1050,7 @@ Mandatório:
 
         {item.description && (
           <section>
-            <h3>Descrição</h3>
+            <h3>{t("details.description")}</h3>
             <p>{item.description}</p>
           </section>
         )}
@@ -1046,13 +1058,13 @@ Mandatório:
         {item.examples && item.examples.length > 0 && (
           <section>
             <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-              <h3>Exemplos</h3>
+              <h3>{t("details.examples")}</h3>
               <button
                 type="button"
                 className="secondary-button copy-section-button"
                 onClick={() => void handleCopySection("examples")}
-                title={copiedSection === "examples" ? "Copiado!" : "Copiar exemplos em português e inglês"}
-                aria-label={copiedSection === "examples" ? "exemplos em português e inglês copiado" : "Copiar exemplos em português e inglês"}
+                title={copiedSection === "examples" ? t("stories.copied") : t("details.copyExamplesInSourcelanguageAndTargetlanguage", { sourceLanguage: (sourceLanguageName.toLowerCase()), targetLanguage: (targetLanguageName.toLowerCase()) })}
+                aria-label={copiedSection === "examples" ? t("details.examplesCopied") : t("details.copyExamplesInSourcelanguageAndTargetlanguage", { sourceLanguage: (sourceLanguageName.toLowerCase()), targetLanguage: (targetLanguageName.toLowerCase()) })}
                 style={{
                   width: "2.25rem",
                   minWidth: "2.25rem",
@@ -1088,8 +1100,8 @@ Mandatório:
                 type="button"
                 className="secondary-button copy-section-button"
                 onClick={handlePrintExamples}
-                title="Imprimir exemplos em português e inglês"
-                aria-label="Imprimir exemplos em português e inglês"
+                title={t("details.printExamplesInSourcelanguageAndTargetlanguage", { sourceLanguage: (sourceLanguageName.toLowerCase()), targetLanguage: (targetLanguageName.toLowerCase()) })}
+                aria-label={t("details.printExamplesInSourcelanguageAndTargetlanguage", { sourceLanguage: (sourceLanguageName.toLowerCase()), targetLanguage: (targetLanguageName.toLowerCase()) })}
                 style={{
                   width: "2.25rem",
                   minWidth: "2.25rem",
@@ -1107,7 +1119,7 @@ Mandatório:
             </div>
             <div className="examples">
               {item.examples.map((example, index) => (
-                <div className="example" key={`${item.id}-${index}`}>
+                <div className="example" key={example.id}>
                   <p>
                     {renderHighlightedText(
                       example.pt,
@@ -1131,8 +1143,8 @@ Mandatório:
                       }}
                     >
                       {renderHighlightedText(
-                        example.en,
-                        example.enIntent
+                        targetSentence(example),
+                        targetIntent(example)
                       )}
                     </p>
 
@@ -1149,10 +1161,10 @@ Mandatório:
                       <button
                         type="button"
                         className="secondary-button"
-                        onClick={() => handleSpeakExample(example.en, index)}
+                        onClick={() => handleSpeakExample(targetSentence(example), index)}
                         disabled={speakingExampleIndex === index}
-                        title={`Ouvir este exemplo em ${LANGUAGES[language].name.toLowerCase()}`}
-                        aria-label={`Ouvir exemplo ${index + 1} em ${LANGUAGES[language].name.toLowerCase()}`}
+                        title={t("details.listenToThisExampleInTargetlanguage", { targetLanguage: (LANGUAGES[language].name.toLowerCase()) })}
+                        aria-label={t("details.listenToExampleNumberInTargetlanguage", { number: (index + 1), targetLanguage: (LANGUAGES[language].name.toLowerCase()) })}
                         style={{
                           width: "2.5rem",
                           minWidth: "2.5rem",
@@ -1168,25 +1180,25 @@ Mandatório:
                         <span aria-hidden="true">🔊</span>
                       </button>
 
-                      <ConnectedSpeechButton
-                        title={`${item.intention} — Exemplo ${index + 1}`}
-                        blocks={[{ original: example.en, portuguese: example.pt }]}
+                      {language === "en-US" && <ConnectedSpeechButton
+                        title={t("details.intentionExampleNumber", { intention: (item.intention), number: (index + 1) })}
+                        blocks={[{ original: targetSentence(example), portuguese: example.pt }]}
                         compact
-                      />
+                      />}
 
                       <button
                         type="button"
                         className="secondary-button"
-                        onClick={() => void handleCopyExample(example.en, index)}
+                        onClick={() => void handleCopyExample(targetSentence(example), index)}
                         title={
                           copiedExampleIndex === index
-                            ? "Frase copiada"
-                            : "Copiar frase em inglês"
+                            ? t("common.sentenceCopied")
+                            : t("details.copySentenceInTargetlanguage", { targetLanguage: (targetLanguageName.toLowerCase()) })
                         }
                         aria-label={
                           copiedExampleIndex === index
-                            ? `Exemplo ${index + 1} copiado`
-                            : `Copiar exemplo ${index + 1} em inglês`
+                            ? t("details.exampleNumberCopied", { number: (index + 1) })
+                            : t("details.copyExampleNumberInTargetlanguage", { number: (index + 1), targetLanguage: (targetLanguageName.toLowerCase()) })
                         }
                         style={{
                           width: "2.5rem",
@@ -1231,20 +1243,20 @@ Mandatório:
                         className="secondary-button"
                         onClick={() =>
                           void handleCopyHqPrompt(
-                            example.en,
-                            example.enIntent,
+                            targetSentence(example),
+                            targetIntent(example),
                             index
                           )
                         }
                         title={
                           copiedHqPromptExampleIndex === index
-                            ? "Prompt da HQ copiado"
-                            : "Copiar prompt para criar HQ"
+                            ? t("details.comicPromptCopied")
+                            : t("details.copyPromptToCreateAComic")
                         }
                         aria-label={
                           copiedHqPromptExampleIndex === index
-                            ? `Prompt da HQ do exemplo ${index + 1} copiado`
-                            : `Copiar prompt para criar HQ do exemplo ${index + 1}`
+                            ? t("details.comicPromptForExampleNumberCopied", { number: (index + 1) })
+                            : t("details.copyPromptToCreateAComicForExampleNumber", { number: (index + 1) })
                         }
                         style={{
                           width: "2.5rem",
@@ -1295,8 +1307,8 @@ Mandatório:
                             setHqZoom(1);
                             setHqImage(example.hqImage ?? null);
                           }}
-                          title="Ver HQ deste exemplo"
-                          aria-label={`Ver HQ do exemplo ${index + 1}`}
+                          title={t("details.viewComicForThisExample")}
+                          aria-label={t("details.viewComicForExampleNumber", { number: (index + 1) })}
                           style={{
                             width: "2.5rem",
                             minWidth: "2.5rem",
@@ -1333,7 +1345,7 @@ Mandatório:
 
             {speechError && (
               <div className="status-card error-card google-translation-error">
-                <h3>Não foi possível reproduzir o áudio.</h3>
+                <h3>{t("common.couldNotPlayTheAudio")}</h3>
                 <p>{speechError}</p>
               </div>
             )}
@@ -1343,7 +1355,7 @@ Mandatório:
 
         {relatedItems.length > 0 && (
           <section>
-            <h3>Relacionados</h3>
+            <h3>{t("details.related")}</h3>
             <div className="related-list">
               {relatedItems.map((related) => (
                 <button
@@ -1353,7 +1365,7 @@ Mandatório:
                   onClick={() => onSelectRelated(related)}
                 >
                   {related.intention}
-                  <span>{related.english}</span>
+                  <span>{related.targetIntention ?? related.english}</span>
                 </button>
               ))}
             </div>
@@ -1364,7 +1376,7 @@ Mandatório:
           <div
             role="dialog"
             aria-modal="true"
-            aria-label="Tags e termos de busca"
+            aria-label={t("details.tagsAndSearchTerms")}
             onMouseDown={(event) => {
               event.stopPropagation();
               if (event.target === event.currentTarget) {
@@ -1399,13 +1411,13 @@ Mandatório:
                 type="button"
                 className="close-button"
                 onClick={() => setShowMetadataModal(false)}
-                aria-label="Fechar tags e termos de busca"
-                title="Fechar"
+                aria-label={t("details.closeTagsAndSearchTerms")}
+                title={t("common.close")}
               >
                 ×
               </button>
-              <p className="eyebrow">Modo Autor</p>
-              <h2 style={{ marginRight: "2rem" }}>Tags e termos de busca</h2>
+              <p className="eyebrow">{t("details.authorMode")}</p>
+              <h2 style={{ marginRight: "2rem" }}>{t("details.tagsAndSearchTerms")}</h2>
               <p style={{ overflowWrap: "anywhere" }}>{item.intention}</p>
               <section>
                 <h3>searchTerms ({item.searchTerms?.length ?? 0})</h3>
@@ -1416,11 +1428,11 @@ Mandatório:
                     ))}
                   </div>
                 ) : (
-                  <p>Nenhum termo de busca cadastrado.</p>
+                  <p>{t("details.noSearchTermsAdded")}</p>
                 )}
               </section>
               <section>
-                <h3>tags ({item.tags?.length ?? 0})</h3>
+                <h3>{t("filters.tags")}{item.tags?.length ?? 0})</h3>
                 {item.tags?.length ? (
                   <div className="tag-list">
                     {item.tags.map((tag, index) => (
@@ -1428,7 +1440,7 @@ Mandatório:
                     ))}
                   </div>
                 ) : (
-                  <p>Nenhuma tag cadastrada.</p>
+                  <p>{t("details.noTagsAdded")}</p>
                 )}
               </section>
               <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "1rem" }}>
@@ -1437,7 +1449,8 @@ Mandatório:
                   className="secondary-button"
                   onClick={() => setShowMetadataModal(false)}
                 >
-                  Fechar
+                  
+                  {t("common.close")}
                 </button>
               </div>
             </div>
@@ -1448,7 +1461,7 @@ Mandatório:
           <div
             role="dialog"
             aria-modal="true"
-            aria-label="Visualização da HQ"
+            aria-label={t("details.comicPreview")}
             onMouseDown={(event) => {
               event.stopPropagation();
               setHqImage(null);
@@ -1513,7 +1526,7 @@ Mandatório:
             >
               <img
                 src={hqImage}
-                alt={`HQ relacionada à intenção: ${item.intention}`}
+                alt={t("details.comicRelatedToTheIntentionIntention", { intention: (item.intention) })}
                 style={{
                   display: "block",
                   width: "auto",
@@ -1531,8 +1544,8 @@ Mandatório:
               <button
                 type="button"
                 onClick={handlePrintHq}
-                aria-label="Imprimir HQ"
-                title="Imprimir HQ"
+                aria-label={t("common.printComic")}
+                title={t("common.printComic")}
                 style={{
                   position: "fixed",
                   top: "max(0.75rem, env(safe-area-inset-top))",
@@ -1573,8 +1586,8 @@ Mandatório:
               <button
                 type="button"
                 onClick={handleShareHq}
-                aria-label="Compartilhar HQ"
-                title="Compartilhar HQ"
+                aria-label={t("common.shareComic")}
+                title={t("common.shareComic")}
                 style={{
                   position: "fixed",
                   top: "max(0.75rem, env(safe-area-inset-top))",
@@ -1637,7 +1650,7 @@ Mandatório:
               {hqZoom > 1 && (
                 <div
                   role="group"
-                  aria-label="Controles de movimento vertical da HQ"
+                  aria-label={t("common.comicVerticalMovementControls")}
                   style={{
                     position: "fixed",
                     right: "max(0.75rem, env(safe-area-inset-right))",
@@ -1658,8 +1671,8 @@ Mandatório:
                   <button
                     type="button"
                     onClick={() => handleScrollHqVertical("up")}
-                    aria-label="Mover HQ para cima"
-                    title="Mover para cima"
+                    aria-label={t("common.moveComicUp")}
+                    title={t("common.moveUp")}
                     style={{
                       width: "2.5rem",
                       height: "2.5rem",
@@ -1679,8 +1692,8 @@ Mandatório:
                   <button
                     type="button"
                     onClick={() => handleScrollHqVertical("down")}
-                    aria-label="Mover HQ para baixo"
-                    title="Mover para baixo"
+                    aria-label={t("common.moveComicDown")}
+                    title={t("common.moveDown")}
                     style={{
                       width: "2.5rem",
                       height: "2.5rem",
@@ -1701,7 +1714,7 @@ Mandatório:
 
               <div
                 role="group"
-                aria-label="Controles de zoom da HQ"
+                aria-label={t("common.comicZoomControls")}
                 style={{
                   position: "fixed",
                   left: "50%",
@@ -1724,8 +1737,8 @@ Mandatório:
                     setHqZoom((current) => Math.max(0.5, current - 0.25))
                   }
                   disabled={hqZoom <= 0.5}
-                  aria-label="Diminuir zoom da HQ"
-                  title="Diminuir zoom"
+                  aria-label={t("common.zoomComicOut")}
+                  title={t("common.zoomOut")}
                   style={{
                     width: "2.5rem",
                     height: "2.5rem",
@@ -1745,8 +1758,8 @@ Mandatório:
                 <button
                   type="button"
                   onClick={() => setHqZoom(1)}
-                  aria-label="Restaurar zoom da HQ para 100%"
-                  title="Restaurar zoom para 100%"
+                  aria-label={t("common.resetComicZoomTo100")}
+                  title={t("common.resetZoomTo100")}
                   style={{
                     minWidth: "4.25rem",
                     height: "2.5rem",
@@ -1768,8 +1781,8 @@ Mandatório:
                     setHqZoom((current) => Math.min(3, current + 0.25))
                   }
                   disabled={hqZoom >= 3}
-                  aria-label="Aumentar zoom da HQ"
-                  title="Aumentar zoom"
+                  aria-label={t("common.zoomComicIn")}
+                  title={t("common.zoomIn")}
                   style={{
                     width: "2.5rem",
                     height: "2.5rem",
@@ -1794,8 +1807,8 @@ Mandatório:
                   setShareError(null);
                   setHqZoom(1);
                 }}
-                aria-label="Fechar HQ"
-                title="Fechar"
+                aria-label={t("common.closeComic")}
+                title={t("common.close")}
                 style={{
                   position: "fixed",
                   top: "max(0.75rem, env(safe-area-inset-top))",

@@ -1,0 +1,285 @@
+{
+  "stories": [
+    {
+      "id": "b2-family-d34690dc-94f5-41f6-a784-d505ba8b8938",
+      "englishLevel": "B2",
+      "topic": "family",
+      "titlePt": "O almoço que quase não aconteceu",
+      "titleEn": "The Lunch That Almost Didn't Happen",
+      "titleEs": "La comida que casi no se celebró",
+      "titleFr": "Le déjeuner qui a failli ne pas avoir lieu",
+      "paragraphs": [
+        {
+          "pt": "No domingo, minha família decidiu se reunir na casa dos meus pais. Eu deveria ter saído de casa mais cedo, porque o trânsito estava muito pior do que eu esperava.",
+          "en": "On Sunday, my family decided to get together at my parents' house. I should have left home earlier because traffic was much worse than I expected.",
+          "es": "El domingo, mi familia decidió reunirse en casa de mis padres. Debería haber salido de casa antes, porque el tráfico estaba mucho peor de lo que esperaba.",
+          "fr": "Dimanche, ma famille a décidé de se réunir chez mes parents. J'aurais dû partir de chez moi plus tôt, car la circulation était bien pire que prévu.",
+          "intentions": [
+            {
+              "intentionId": "deveria-ter",
+              "ptIntent": "deveria ter",
+              "enIntent": "should have",
+              "esIntent": "Debería haber",
+              "frIntent": "J'aurais dû"
+            }
+          ],
+          "id": "8f38b43a-9ef9-4b88-9e43-5c7673bfc265"
+        },
+        {
+          "pt": "Sempre que toda a família se reúne, minha mãe prepara comida demais. Desta vez não foi diferente, e a mesa estava completamente cheia quando cheguei.",
+          "en": "Whenever the whole family gets together, my mother makes too much food. This time was no different, and the table was completely full when I arrived.",
+          "es": "Siempre que se reúne toda la familia, mi madre prepara demasiada comida. Esta vez no fue diferente y la mesa estaba completamente llena cuando llegué.",
+          "fr": "Chaque fois que toute la famille se réunit, ma mère prépare trop à manger. Cette fois-ci n'a pas fait exception, et la table était entièrement couverte de plats à mon arrivée.",
+          "intentions": [
+            {
+              "intentionId": "sempre-que-toda-vez-que-quando-quer-que-a-qualquer-momento-que",
+              "ptIntent": "Sempre que",
+              "enIntent": "Whenever",
+              "esIntent": "Siempre que",
+              "frIntent": "Chaque fois que"
+            }
+          ],
+          "id": "3c9a4ca6-cc50-4b76-b806-84e2525c3a0d"
+        },
+        {
+          "pt": "Meu irmão ainda não tinha chegado, e todos começaram a ficar preocupados. Acontece que ele tinha parado no caminho para buscar nossa avó.",
+          "en": "My brother still hadn't arrived, and everyone started to get worried. It turns out that he had stopped on the way to pick up our grandmother.",
+          "es": "Mi hermano todavía no había llegado y todos empezaron a preocuparse. Resulta que había parado por el camino para recoger a nuestra abuela.",
+          "fr": "Mon frère n'était toujours pas arrivé et tout le monde a commencé à s'inquiéter. Il se trouve qu'il s'était arrêté en chemin pour aller chercher notre grand-mère.",
+          "intentions": [
+            {
+              "intentionId": "acontece-que-no-fim-das-contas",
+              "ptIntent": "Acontece que",
+              "enIntent": "It turns out that",
+              "esIntent": "Resulta que",
+              "frIntent": "Il se trouve qu'"
+            }
+          ],
+          "id": "1dea03d6-7af8-4ae6-b310-aa536d85c3f6"
+        },
+        {
+          "pt": "Quando eles finalmente chegaram, minha avó disse que queria sentar perto dos netos. Depois, ela me contou que sentia falta de ver todos juntos com mais frequência.",
+          "en": "When they finally arrived, my grandmother said she wanted to sit near her grandchildren. Later, she told me that she missed seeing everyone together more often.",
+          "es": "Cuando por fin llegaron, mi abuela dijo que quería sentarse cerca de sus nietos. Después me contó que echaba de menos vernos a todos juntos más a menudo.",
+          "fr": "Quand ils sont enfin arrivés, ma grand-mère a dit qu'elle voulait s'asseoir près de ses petits-enfants. Ensuite, elle m'a confié qu'elle regrettait de ne pas nous voir tous réunis plus souvent.",
+          "intentions": [
+            {
+              "intentionId": "reported-speech-automatico",
+              "ptIntent": "ela me contou que",
+              "enIntent": "she told me that",
+              "esIntent": "me contó que",
+              "frIntent": "elle m'a confié qu'"
+            }
+          ],
+          "id": "5b9ec68f-557e-483e-a469-bb6ec84f0a52"
+        },
+        {
+          "pt": "Mesmo que todos tenham vidas ocupadas, percebemos que esses encontros ainda são importantes para nós. Ninguém ficou olhando o celular durante o almoço.",
+          "en": "Even though everyone has busy lives, we realized that these gatherings are still important to us. Nobody kept looking at their phone during lunch.",
+          "es": "Aunque todos llevamos vidas ajetreadas, nos dimos cuenta de que estos encuentros siguen siendo importantes para nosotros. Nadie se quedó mirando el móvil durante la comida.",
+          "fr": "Même si nous avons tous des vies bien remplies, nous avons compris que ces rencontres comptaient toujours pour nous. Personne n'a passé le déjeuner les yeux rivés sur son portable.",
+          "intentions": [
+            {
+              "intentionId": "mesmo-que-apesar-de",
+              "ptIntent": "Mesmo que",
+              "enIntent": "Even though",
+              "esIntent": "Aunque",
+              "frIntent": "Même si"
+            }
+          ],
+          "id": "caef3a1e-fc76-459e-ac11-308c6c2db31c"
+        },
+        {
+          "pt": "Depois do almoço, pensei: vou aproveitar esse momento e tirar algumas fotos com meus pais e meus irmãos. Fazia muito tempo que não tínhamos uma foto de todos juntos.",
+          "en": "After lunch, I thought, I'm going to make the most of this moment and take some pictures with my parents and siblings. It had been a long time since we had a picture of everyone together.",
+          "es": "Después de comer, pensé: voy a aprovechar este momento y hacer unas fotos con mis padres y mis hermanos. Hacía mucho que no teníamos una foto de todos juntos.",
+          "fr": "Après le déjeuner, j'ai pensé : je vais profiter de ce moment pour prendre quelques photos avec mes parents et mes frères et sœurs. Cela faisait très longtemps que nous n'avions pas eu de photo de nous tous ensemble.",
+          "intentions": [
+            {
+              "intentionId": "vou-aproveitar-momento-viagem",
+              "ptIntent": "vou aproveitar",
+              "enIntent": "make the most of",
+              "esIntent": "voy a aprovechar",
+              "frIntent": "je vais profiter de"
+            }
+          ],
+          "id": "e063f80d-3c59-4e28-94b7-020b51d41adc"
+        },
+        {
+          "pt": "No fim das contas, o atraso e a preocupação ficaram em segundo plano. No final do dia, o que realmente importava era termos passado algumas horas juntos.",
+          "en": "In the end, the delay and the worry didn't seem so important. At the end of the day, what really mattered was that we had spent a few hours together.",
+          "es": "Al fin y al cabo, el retraso y la preocupación pasaron a un segundo plano. Al final del día, lo que realmente importaba era haber pasado unas horas juntos.",
+          "fr": "En fin de compte, le retard et l'inquiétude sont passés au second plan. À la fin de la journée, ce qui comptait vraiment, c'était d'avoir passé quelques heures ensemble.",
+          "intentions": [
+            {
+              "intentionId": "organizacao-de-ideias",
+              "ptIntent": "No final do dia",
+              "enIntent": "At the end of the day",
+              "esIntent": "Al final del día",
+              "frIntent": "À la fin de la journée"
+            }
+          ],
+          "id": "e6f71452-ecb5-4bfe-ac6a-80db23086c00"
+        }
+      ],
+      "intentionsUsed": [
+        "deveria-ter",
+        "sempre-que-toda-vez-que-quando-quer-que-a-qualquer-momento-que",
+        "acontece-que-no-fim-das-contas",
+        "reported-speech-automatico",
+        "mesmo-que-apesar-de",
+        "vou-aproveitar-momento-viagem",
+        "organizacao-de-ideias"
+      ]
+    },
+    {
+      "id": "b2-family-f5a4ec33-115f-4581-9b13-5c720dc3fb35",
+      "englishLevel": "B2",
+      "topic": "family",
+      "titlePt": "Uma decisão importante em família",
+      "titleEn": "An Important Family Decision",
+      "titleEs": "Una decisión importante en familia",
+      "titleFr": "Une décision importante en famille",
+      "paragraphs": [
+        {
+          "pt": "Minha filha recebeu uma proposta de emprego em outra cidade e decidiu conversar conosco antes de aceitar. Ela achava que ia me acostumar rapidamente com a ideia de vê-la com menos frequência.",
+          "en": "My daughter got a job offer in another city and decided to talk to us before accepting it. She thought I would get used to the idea of seeing her less often pretty quickly.",
+          "es": "Mi hija recibió una oferta de trabajo en otra ciudad y decidió hablar con nosotros antes de aceptarla. Pensaba que yo me acostumbraría rápidamente a la idea de verla con menos frecuencia.",
+          "fr": "Ma fille a reçu une offre d'emploi dans une autre ville et a décidé d'en parler avec nous avant d'accepter. Elle pensait que j'allais m'habituer rapidement à l'idée de la voir moins souvent.",
+          "intentions": [
+            {
+              "intentionId": "ia-me-acostumar",
+              "ptIntent": "ia me acostumar",
+              "enIntent": "would get used to",
+              "esIntent": "me acostumbraría",
+              "frIntent": "j'allais m'habituer"
+            }
+          ],
+          "id": "d79c278e-605f-4094-9d83-7e1b3d4484c4"
+        },
+        {
+          "pt": "Bem que eu queria poder dizer que a mudança não me preocupava, mas eu sabia que sentiria falta dela. Ao mesmo tempo, eu não queria que minha preocupação influenciasse a decisão dela.",
+          "en": "I wish I could say that the move didn't worry me, but I knew I would miss her. At the same time, I didn't want my concern to influence her decision.",
+          "es": "Ojalá pudiera decir que la mudanza no me preocupaba, pero sabía que la echaría de menos. Al mismo tiempo, no quería que mi preocupación influyera en su decisión.",
+          "fr": "J'aurais bien aimé pouvoir dire que ce déménagement ne m'inquiétait pas, mais je savais qu'elle me manquerait. En même temps, je ne voulais pas que mon inquiétude influence sa décision.",
+          "intentions": [
+            {
+              "intentionId": "bem-que-eu-queria-poder",
+              "ptIntent": "Bem que eu queria poder",
+              "enIntent": "I wish I could",
+              "esIntent": "Ojalá pudiera",
+              "frIntent": "J'aurais bien aimé pouvoir"
+            }
+          ],
+          "id": "a4e948a4-fd77-4574-8071-f3f1c3ebd41a"
+        },
+        {
+          "pt": "Por um lado, ela ficaria longe da família e teria que começar uma nova rotina. Ela também teria menos ajuda no dia a dia.",
+          "en": "On the one hand, she would be far from the family and would have to start a new routine. She would also have less help in her daily life.",
+          "es": "Por un lado, estaría lejos de la familia y tendría que empezar una nueva rutina. También contaría con menos ayuda en el día a día.",
+          "fr": "D'un côté, elle serait loin de sa famille et devrait adopter une nouvelle routine. Elle aurait aussi moins d'aide au quotidien.",
+          "intentions": [
+            {
+              "intentionId": "por-um-lado",
+              "ptIntent": "Por um lado",
+              "enIntent": "On the one hand",
+              "esIntent": "Por un lado",
+              "frIntent": "D'un côté"
+            }
+          ],
+          "id": "89a7bd8d-0625-4eca-982c-4caba2ac44d3"
+        },
+        {
+          "pt": "Por outro lado, o novo emprego oferecia oportunidades que ela não tinha aqui. Ela poderia crescer profissionalmente e se tornar mais independente.",
+          "en": "In contrast, the new job offered opportunities she didn't have here. She could grow professionally and become more independent.",
+          "es": "Por otro lado, el nuevo empleo ofrecía oportunidades que aquí no tenía. Podría crecer profesionalmente y hacerse más independiente.",
+          "fr": "D'un autre côté, ce nouvel emploi lui offrait des perspectives qu'elle n'avait pas ici. Elle pourrait évoluer professionnellement et devenir plus indépendante.",
+          "intentions": [
+            {
+              "intentionId": "em-contraste-por-outro-lado",
+              "ptIntent": "Por outro lado",
+              "enIntent": "In contrast",
+              "esIntent": "Por otro lado",
+              "frIntent": "D'un autre côté"
+            }
+          ],
+          "id": "369bda9a-52f3-44cd-8a24-0be12c7badca"
+        },
+        {
+          "pt": "Eu disse que apoiaria a decisão dela, desde que ela estivesse realmente confortável com a mudança. Também combinamos de conversar por vídeo várias vezes por semana.",
+          "en": "I said I would support her decision as long as she was truly comfortable with the move. We also agreed to have video calls several times a week.",
+          "es": "Dije que apoyaría su decisión, siempre que se sintiera realmente a gusto con la mudanza. También acordamos hablar por videollamada varias veces por semana.",
+          "fr": "J'ai dit que je soutiendrais sa décision, à condition qu'elle soit vraiment à l'aise avec ce changement. Nous avons aussi convenu de nous parler en vidéo plusieurs fois par semaine.",
+          "intentions": [
+            {
+              "intentionId": "desde-que-contanto-que-condicao",
+              "ptIntent": "desde que",
+              "enIntent": "as long as",
+              "esIntent": "siempre que",
+              "frIntent": "à condition qu'"
+            }
+          ],
+          "id": "41b40612-a5ef-4986-89c4-017f6dd35494"
+        },
+        {
+          "pt": "Depois de conversar bastante, percebi que não adianta tentar proteger nossos filhos de todas as mudanças. Em algum momento, precisamos permitir que eles tomem as próprias decisões.",
+          "en": "After talking for a while, I realized there's no point in trying to protect our children from every change. At some point, we need to let them make their own decisions.",
+          "es": "Después de hablar largo y tendido, comprendí que no sirve de nada intentar proteger a nuestros hijos de todos los cambios. En algún momento tenemos que dejar que tomen sus propias decisiones.",
+          "fr": "Après une longue discussion, j'ai compris que cela ne sert à rien d'essayer de protéger nos enfants de tous les changements. À un moment donné, il faut les laisser prendre leurs propres décisions.",
+          "intentions": [
+            {
+              "intentionId": "nao-adianta-nao-faz-sentido",
+              "ptIntent": "não adianta",
+              "enIntent": "there's no point in",
+              "esIntent": "no sirve de nada",
+              "frIntent": "ne sert à rien"
+            }
+          ],
+          "id": "a317b8e6-2478-4788-9feb-4a9191c7b8b2"
+        },
+        {
+          "pt": "Antes de terminar a conversa, minha esposa perguntou: e se essa mudança for exatamente o que ela precisa agora? Ninguém respondeu imediatamente, mas todos ficaram pensando nisso.",
+          "en": "Before we finished the conversation, my wife asked, what if this move is exactly what she needs right now? Nobody answered immediately, but we all thought about it.",
+          "es": "Antes de terminar la conversación, mi mujer preguntó: ¿y si este cambio es exactamente lo que necesita ahora? Nadie respondió de inmediato, pero todos se quedaron pensando en ello.",
+          "fr": "Avant de terminer la conversation, ma femme a demandé : et si ce changement était exactement ce dont elle avait besoin maintenant ? Personne n'a répondu immédiatement, mais tout le monde y a réfléchi.",
+          "intentions": [
+            {
+              "intentionId": "estruturas-de-hipotese-conversacional",
+              "ptIntent": "e se",
+              "enIntent": "what if",
+              "esIntent": "y si",
+              "frIntent": "et si"
+            }
+          ],
+          "id": "8e7dea41-d368-4d3c-a0c9-da3108a3d2f4"
+        },
+        {
+          "pt": "No longo prazo, talvez morar longe ajude nossa filha a construir a própria vida sem perder a ligação com a família. Aceitar isso não é fácil, mas faz parte de vê-la crescer.",
+          "en": "In the long run, living far away may help our daughter build her own life without losing her connection with the family. Accepting that isn't easy, but it's part of watching her grow.",
+          "es": "A largo plazo, quizá vivir lejos ayude a nuestra hija a construir su propia vida sin perder el vínculo con la familia. Aceptarlo no es fácil, pero forma parte de verla crecer.",
+          "fr": "À long terme, vivre loin aidera peut-être notre fille à construire sa propre vie sans perdre ses liens avec la famille. L'accepter n'est pas facile, mais cela fait partie du chemin quand on voit son enfant grandir.",
+          "intentions": [
+            {
+              "intentionId": "in-the-long-run",
+              "ptIntent": "No longo prazo",
+              "enIntent": "In the long run",
+              "esIntent": "A largo plazo",
+              "frIntent": "À long terme"
+            }
+          ],
+          "id": "41162423-3e5a-4a2e-82d2-59e4a68eec29"
+        }
+      ],
+      "intentionsUsed": [
+        "ia-me-acostumar",
+        "bem-que-eu-queria-poder",
+        "por-um-lado",
+        "em-contraste-por-outro-lado",
+        "desde-que-contanto-que-condicao",
+        "nao-adianta-nao-faz-sentido",
+        "estruturas-de-hipotese-conversacional",
+        "in-the-long-run"
+      ]
+    }
+  ]
+}

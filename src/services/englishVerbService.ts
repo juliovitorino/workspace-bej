@@ -1,3 +1,4 @@
+import { t } from "../i18n";
 import type { StudentLanguage } from "../config/languages";
 import type { EnglishVerb, EnglishVerbsData, SpeakingVerb, GameAdjective, GameNoun } from "../types/englishVerb";
 
@@ -29,25 +30,25 @@ async function loadCatalog(category: keyof SpeakingVocabulary, language: Student
   if (cached) return cached;
   const pending = (async () => {
     const response = await fetch(url);
-    if (!response.ok) throw new Error(`Não foi possível carregar ${category} (${response.status}).`);
+    if (!response.ok) throw new Error(t("vocabulary.couldNotLoadCategoryStatus", { category: (category), status: (response.status) }));
     const data: unknown = await response.json();
-    if (!record(data) || !record(data.metadata) || !Array.isArray(data[category])) throw new Error("Catálogo de vocabulário inválido.");
-    if (![language, language.slice(0, 2)].includes(String(data.metadata.language))) throw new Error("O idioma do catálogo não corresponde ao idioma de estudo.");
+    if (!record(data) || !record(data.metadata) || !Array.isArray(data[category])) throw new Error(t("vocabulary.invalidVocabularyCatalog"));
+    if (![language, language.slice(0, 2)].includes(String(data.metadata.language))) throw new Error(t("vocabulary.theCatalogLanguageDoesNotMatchTheStudyLanguage"));
     const entries = data[category];
-    if (!entries.length) throw new Error("O catálogo de vocabulário está vazio.");
+    if (!entries.length) throw new Error(t("vocabulary.theVocabularyCatalogIsEmpty"));
     const seen = new Set<string>();
     for (const item of entries) {
-      if (!record(item) || !text(item.id) || seen.has(item.id) || !strings(item.meanings)) throw new Error("Registro de vocabulário inválido ou duplicado.");
+      if (!record(item) || !text(item.id) || seen.has(item.id) || !strings(item.meanings)) throw new Error(t("vocabulary.invalidOrDuplicateVocabularyEntry"));
       seen.add(item.id);
       if (category === "verbs") {
-        if (!text(item.base)) throw new Error("Verbo sem forma principal.");
+        if (!text(item.base)) throw new Error(t("vocabulary.verbMissingItsMainForm"));
         if (language === "en-US") {
-          if (![item.past, item.pastParticiple, item.thirdPerson, item.gerund].every(text)) throw new Error("Formas inglesas incompletas.");
+          if (![item.past, item.pastParticiple, item.thirdPerson, item.gerund].every(text)) throw new Error(t("vocabulary.incompleteEnglishForms"));
         } else if (!record(item.forms) || !record(item.trainingForms) || !Object.values(item.trainingForms).length || !Object.values(item.trainingForms).every(text) ||
-          !["infinitive", "present", "past", "imperfect", "participle", "gerund", "perfect", "pluperfect", "perfectInfinitive"].every(field => record(item.forms) && text(item.forms[field]))) throw new Error("Formas verbais incompletas.");
+          !["infinitive", "present", "past", "imperfect", "participle", "gerund", "perfect", "pluperfect", "perfectInfinitive"].every(field => record(item.forms) && text(item.forms[field]))) throw new Error(t("vocabulary.incompleteVerbForms"));
       } else if (category === "adjectives") {
-        if (!text(item.adjective) || (language !== "en-US" && (!record(item.forms) || !["masculine", "feminine", "masculinePlural", "femininePlural"].every(k => record(item.forms) && text(item.forms[k]))))) throw new Error("Adjetivo inválido.");
-      } else if (!text(item.noun) || (language !== "en-US" && (!text(item.article) || !["masculine", "feminine", "invariant"].includes(String(item.gender))))) throw new Error("Substantivo inválido.");
+        if (!text(item.adjective) || (language !== "en-US" && (!record(item.forms) || !["masculine", "feminine", "masculinePlural", "femininePlural"].every(k => record(item.forms) && text(item.forms[k]))))) throw new Error(t("vocabulary.invalidAdjective"));
+      } else if (!text(item.noun) || (language !== "en-US" && (!text(item.article) || !["masculine", "feminine", "invariant"].includes(String(item.gender))))) throw new Error(t("vocabulary.invalidNoun"));
     }
     return data;
   })();
