@@ -5,6 +5,9 @@ import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/
 import type { MentalIntention } from "../types/hashmap";
 import { CEFR_LEVELS, eligibleChunks, type ChunkLevel } from "../utils/chunkEligibility";
 import { ChunkFlashcards } from "./ChunkFlashcards";
+import { PersonalFlashcardEditor } from "../features/personal-flashcards/PersonalFlashcardEditor";
+import { PersonalBackupMenu } from "../features/personal-flashcards/PersonalBackupMenu";
+import { PERSONAL_CARDS_CHANGED, countPersonalFlashcards } from "../features/personal-flashcards/personalFlashcardStorage";
 
 interface Props {
   intentions: MentalIntention[];
@@ -37,16 +40,22 @@ export function MemoryFlashcards(props: Props) {
   const { t } = useTranslation();
   const { intentions, language, sourceLanguage } = props;
   const [level, setLevel] = useState<ChunkLevel>("all");
+  const [showPersonalEditor, setShowPersonalEditor] = useState(false);
   const eligible = useMemo(() => eligibleChunks(intentions, level).filter(item =>
     Boolean(item.targetIntention?.trim()) && (item.examples?.length ?? 0) > 0
   ), [intentions, level]);
   // Only a language change remounts the clock; level changes reset the deck below.
-  return <MemoryRound key={`${sourceLanguage}-${language}`} {...props} eligible={eligible}
-    level={level} onLevelChange={setLevel} />;
+  return <>
+    <MemoryRound key={`${sourceLanguage}-${language}`} {...props} eligible={eligible}
+      level={level} onLevelChange={setLevel} onCreatePersonal={() => setShowPersonalEditor(true)} />
+    {showPersonalEditor && <PersonalFlashcardEditor sourceLanguage={sourceLanguage} targetLanguage={language}
+      onClose={() => setShowPersonalEditor(false)} onSaved={() => setShowPersonalEditor(false)} />}
+  </>;
 }
 
 function MemoryRound({ eligible, level, onLevelChange, ...props }: Props & {
   eligible: MentalIntention[]; level: ChunkLevel; onLevelChange: (level: ChunkLevel) => void;
+  onCreatePersonal: () => void;
 }) {
   const { t } = useTranslation();
   const { language, sourceLanguage } = props;
@@ -57,6 +66,26 @@ function MemoryRound({ eligible, level, onLevelChange, ...props }: Props & {
   const [elapsed, setElapsed] = useState(0);
   const clock = useRef<{ startedAt: number | null; accumulated: number }>({ startedAt: null, accumulated: 0 });
   const [running, setRunning] = useState(false);
+  const [personalCount, setPersonalCount] = useState<number | null>(null);
+  const [backupMessage, setBackupMessage] = useState("");
+  const [backupError, setBackupError] = useState("");
+
+  useEffect(() => {
+    let active = true;
+    const refresh = () => {
+      void countPersonalFlashcards().then(count => {
+        if (active) setPersonalCount(count);
+      }).catch(() => {
+        if (active) setPersonalCount(null);
+      });
+    };
+    refresh();
+    window.addEventListener(PERSONAL_CARDS_CHANGED, refresh);
+    return () => {
+      active = false;
+      window.removeEventListener(PERSONAL_CARDS_CHANGED, refresh);
+    };
+  }, []);
   const current = deck[position];
   const total = deck.length;
   const complete = total > 0 && studied.size === total;
@@ -112,7 +141,19 @@ function MemoryRound({ eligible, level, onLevelChange, ...props }: Props & {
   }
 
   return <section className="memory-flashcards" aria-labelledby="memory-title">
-    <header className="memory-heading"><h2 id="memory-title">{"🧠 "}{t("memory.title")}</h2><span className="memory-badge">{t("memory.memory")}</span></header>
+    <header className="memory-heading">
+      <h2 id="memory-title">{"🧠 "}{t("memory.title")}</h2>
+      <div className="memory-heading-controls">
+        <span className="memory-badge">{t("memory.memory")}</span>
+        <button type="button" className="memory-personal-add" onClick={props.onCreatePersonal}
+          title={t("personal.create")} aria-label={t("personal.create")}>+</button>
+        {personalCount === 0 && <PersonalBackupMenu restoreOnly
+          onStatus={message => { setBackupMessage(message); setBackupError(""); }}
+          onError={message => { setBackupError(message); setBackupMessage(""); }} />}
+      </div>
+    </header>
+    {backupMessage && <p role="status" className="personal-backup-feedback">{backupMessage}</p>}
+    {backupError && <p role="alert" className="personal-error">{backupError}</p>}
     <label className="memory-level">{t("memory.studyLevel")}
       <select value={level} onChange={event => onLevelChange(event.target.value as ChunkLevel)}>
         <option value="all">{t("common.allLevels")}</option>

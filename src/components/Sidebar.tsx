@@ -1,16 +1,18 @@
 import { t } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
-export type AppView = "memory-flashcards" | "hashmap" | "exercises" | "speaking-game" | "chunk-flashcards" | "interpretation" | "shadowing";
+export type AppView = "personal-flashcards" | "memory-flashcards" | "hashmap" | "exercises" | "speaking-game" | "chunk-flashcards" | "interpretation" | "shadowing";
 interface SidebarProps {
   onOpenLanguages: () => void;
   onOpenAbout: () => void;
   currentView: AppView;
+  personalCount: number;
   onViewChange: (view: AppView) => void;
 }
 
 export function Sidebar({
   currentView,
+  personalCount,
   onViewChange,
   onOpenLanguages,
   onOpenAbout
@@ -40,6 +42,7 @@ const menuItems: Array<{
       id: "memory-flashcards",
       label: t("memory.title")
     },
+    ...(personalCount >= 1 ? [{ id: "personal-flashcards" as AppView, label: t("personal.title") }] : []),
     {
       id: "speaking-game",
       label: t("common.speakingGame")

@@ -18,6 +18,8 @@ import { IntentionList } from "./components/IntentionList";
 import { IntentionDetails } from "./components/IntentionDetails";
 import { SpeakingGame } from "./components/SpeakingGame";
 import { MemoryFlashcards } from "./components/MemoryFlashcards";
+import { PersonalFlashcards } from "./features/personal-flashcards/PersonalFlashcards";
+import { PERSONAL_CARDS_CHANGED, countPersonalFlashcards } from "./features/personal-flashcards/personalFlashcardStorage";
 import { ChunkFlashcards } from "./components/ChunkFlashcards";
 import { StoryShadowing } from "./components/StoryShadowing";
 import { fetchHashmap, loadHashmap } from "./services/hashmapService";
@@ -38,6 +40,21 @@ function App() {
   const [data, setData] = useState<HashmapData | null>(null);
   const [source, setSource] = useState<"remote" | "cache">("remote");
   const [currentView, setCurrentView] = useState<AppView>("hashmap");
+  const [personalCount, setPersonalCount] = useState(0);
+  useEffect(() => {
+    let active = true;
+    const refresh = () => {
+      void countPersonalFlashcards().then(count => {
+        if (active) setPersonalCount(count);
+      }).catch(() => { if (active) setPersonalCount(0); });
+    };
+    refresh();
+    window.addEventListener(PERSONAL_CARDS_CHANGED, refresh);
+    return () => { active = false; window.removeEventListener(PERSONAL_CARDS_CHANGED, refresh); };
+  }, []);
+  useEffect(() => {
+    if (personalCount === 0 && currentView === "personal-flashcards") setCurrentView("memory-flashcards");
+  }, [personalCount, currentView]);
   const [filterScrollRequest, setFilterScrollRequest] = useState(0);
   const [mentalSearch, setMentalSearch] = useState("");
   const [englishSearch, setEnglishSearch] = useState("");
@@ -275,6 +292,7 @@ function App() {
         onOpenLanguages={() => setSettingsDialog("languages")}
         onOpenAbout={() => setSettingsDialog("about")}
         currentView={currentView}
+        personalCount={personalCount}
         onViewChange={view => {
           if (view === "hashmap" && window.matchMedia("(max-width: 820px)").matches) {
             closeTraining();
@@ -426,6 +444,11 @@ function App() {
                   onBasicTraining={item => startTraining(item, "basic")}
                   onAdvancedTraining={item => startTraining(item, "advanced")} />
               </div>
+            )}
+
+            {currentView === "personal-flashcards" && !trainingMode && (
+              <PersonalFlashcards key={`${sourceLanguage}-${language}`}
+                sourceLanguage={sourceLanguage} targetLanguage={language} />
             )}
 
             {!loading && currentView === "speaking-game" && !trainingMode && (
