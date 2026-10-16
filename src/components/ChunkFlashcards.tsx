@@ -534,16 +534,19 @@ export function ChunkFlashcards({
               {t("flashcards.roundPracticed", { count: total })}
             </p>
           )}
-          <div className="chunk-flashcards-actions">
+          <div
+            className="chunk-flashcards-actions"
+            style={mobile ? { display: "flex", flexDirection: "column", alignItems: "center", gap: "0.75rem" } : undefined}
+          >
+            <button type="button" className="primary-button" onClick={() => nextChunk()}>
+              {currentChunk === null ? t("flashcards.start") : completed ? t("flashcards.newRound") : t("common.next") + " →"}
+            </button>
             {mobile && <button type="button" className="primary-button walking-entry" onClick={() => {
               if (!isMobileDevice()) return;
               if (!currentChunk) nextChunk();
               window.speechSynthesis?.cancel();
               setWalking(true);
             }}>{"🎧 "}{t("common.walkingMode")}</button>}
-            <button type="button" className="primary-button" onClick={() => nextChunk()}>
-              {currentChunk === null ? t("flashcards.start") : completed ? t("flashcards.newRound") : t("common.next") + " →"}
-            </button>
           </div>
         </>
       )}
