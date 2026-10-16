@@ -160,21 +160,58 @@ export function SearchPanel({
     <section className="search-panel">
       <div className="field">
         <label htmlFor="mental-search">Intenção — {LANGUAGES[sourceLanguage].name}</label>
+        <div className="search-input-with-clear">
         <input id="mental-search" type="search" placeholder={`Buscar intenção ou exemplo em ${LANGUAGES[sourceLanguage].name.toLowerCase()}...`}
           value={mentalSearch} onChange={(event) => onMentalSearchChange(event.target.value)} autoComplete="off" />
+          {Boolean(mentalSearch) && (
+            <button type="button" className="secondary-button mobile-clear-search-button"
+              aria-label="Limpar pesquisa no idioma de origem" title="Limpar pesquisa no idioma de origem"
+              onClick={() => {
+                onMentalSearchChange("");
+                document.getElementById("mental-search")?.focus();
+              }}>
+              <span aria-hidden="true">⌫</span>
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="field">
         <label htmlFor="english-search">Intenção / estrutura — {LANGUAGES[language].name}</label>
+        <div className="search-input-with-clear">
         <input id="english-search" type="search" placeholder={`Buscar intenção, estrutura ou exemplo em ${LANGUAGES[language].name.toLowerCase()}...`}
           value={englishSearch} onChange={(event) => onEnglishSearchChange(event.target.value)} autoComplete="off" />
+          {Boolean(englishSearch) && (
+            <button type="button" className="secondary-button mobile-clear-search-button"
+              aria-label="Limpar pesquisa no idioma de estudo" title="Limpar pesquisa no idioma de estudo"
+              onClick={() => {
+                onEnglishSearchChange("");
+                document.getElementById("english-search")?.focus();
+              }}>
+              <span aria-hidden="true">⌫</span>
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="field">
         <label htmlFor="category-search">Categoria</label>
+        <div className="search-input-with-clear">
         <input id="category-search" type="search" placeholder="Ex.: questions, habits, conditions..."
           value={categorySearch} onChange={(event) => onCategorySearchChange(event.target.value)} autoComplete="off" />
+          {Boolean(categorySearch) && (
+            <button type="button" className="secondary-button mobile-clear-search-button"
+              aria-label="Limpar categoria" title="Limpar categoria"
+              onClick={() => {
+                onCategorySearchChange("");
+                document.getElementById("category-search")?.focus();
+              }}>
+              <span aria-hidden="true">⌫</span>
+            </button>
+          )}
+        </div>
       </div>
+
 
       <div className="field">
         <label htmlFor="english-level-search">Nível</label>
