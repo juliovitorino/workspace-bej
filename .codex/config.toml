@@ -1,0 +1,19 @@
+# Mental Hashmap 4.0 - Codex multi-agent configuration
+# Place at: mental-hashmap-app/.codex/config.toml
+# The root Codex session is the orchestrator (see AGENTS.md).
+
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 3
+
+[agents.hashmap_en_us]
+description = "Sincroniza exclusivamente o Mental Hashmap en-US a partir de pt-BR, preservando hqImage local."
+config_file = "agents/hashmap_en_us.toml"
+
+[agents.hashmap_es_es]
+description = "Sincroniza exclusivamente o Mental Hashmap es-ES a partir de pt-BR, preservando hqImage local."
+config_file = "agents/hashmap_es_es.toml"
+
+[agents.hashmap_fr_fr]
+description = "Sincroniza exclusivamente o Mental Hashmap fr-FR a partir de pt-BR, preservando hqImage local."
+config_file = "agents/hashmap_fr_fr.toml"

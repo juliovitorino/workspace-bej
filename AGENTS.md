@@ -1,405 +1,48 @@
-# Mental Hashmap — Agent Instructions
-
-## Project
-Brazilian English Journey — Mental Hashmap.
-
-## Architecture
-- Keep the MVP simple.
-- Do not introduce databases, backends or caches.
-- Reuse the existing TypeScript structure.
-
-## Languages
-- en-US: English
-- fr-FR: French
-- es-ES: Spanish
-- pt-BR: Source language
-
-## Story Files — CEFR Organization and Multilingual Enrichment
-
-These instructions apply to **story catalogs**, not the language-specific
-intention catalogs described in the JSON synchronization sections below.
-Do not confuse the two workflows.
-
-### Location and organization
-
-- The user's Windows project location is:
-  `C:\Users\julio.vitorino\Documents\workspaces\mental-hashmap-app-mvp\mental-hashmap-app\src\data\stories\`.
-- Discover the equivalent path in the active workspace instead of assuming the
-  Windows absolute path exists in every execution environment.
-- The known example is `src/data/stories/stories-a1.json`. Discover other existing
-  CEFR files by inspection (e.g., `stories-a2.json`, `stories-b1.json`,
-  `stories-b2.json`, `stories-c1.json`, `stories-c2.json`); do not create
-  hypothetical files or rename/move existing files without authorization.
-- Organize and validate stories according to their existing `englishLevel`
-  values: `A1`, `A2`, `B1`, `B2`, `C1`, `C2`. The filename level and each story's
-  `englishLevel` must agree; report mismatches before moving anything.
-- Preserve the existing root structure (array/object), order, story IDs,
-  `topic`, `hqImage`, `intentionsUsed`, and all unrelated properties.
-
-### Required Spanish and French fields
-
-For each story selected for enrichment:
-
-1. Add `titleEs` and `titleFr`, using natural, idiomatic Spanish (`es-ES`)
-   and French (`fr-FR`) interpretations of the original `titlePt`.
-2. For **each** object in `paragraphs`, add `es` and `fr`, using its `pt` text
-   as the authoritative source. These are `paragraphs[].es` and
-   `paragraphs[].fr` (NOT fields on the `paragraphs` array itself).
-3. For **each** object in `paragraphs[].intentions`, add `esIntent` and
-   `frIntent`, interpreting the corresponding `ptIntent` in the context of
-   the complete translated paragraph and the same communicative intention.
-4. `esIntent` must be an exact contiguous excerpt of its paragraph's `es`
-   text; `frIntent` must be an exact contiguous excerpt of its paragraph's
-   `fr` text. Choose natural translations that make this possible without
-   distorting the intention. Preserve punctuation, capitalization and accents
-   consistently with the paragraph text.
-5. Preserve the order and number of paragraphs and intention annotations.
-   Never modify `intentionId` or `intentionsUsed` when adding translations.
-6. Preserve existing `titlePt`, `titleEn`, `paragraphs[].pt`,
-   `paragraphs[].en`, `ptIntent`, `enIntent`, `id`, `englishLevel`, `topic`,
-   and `hqImage` exactly. Story images are not translation targets.
-7. If `titleEs`, `titleFr`, `es`, `fr`, `esIntent` or `frIntent` already exists,
-   preserve a valid existing translation. Do not overwrite it merely to
-   standardize wording; report substantive issues for approval.
-8. Translate meaning and context, not English syntax. Maintain characters,
-   chronology, narrative voice, dialogue, tense/aspect where meaningful,
-   and the intended CEFR difficulty as far as natural language allows.
-   Do not invent or omit story events. If the Portuguese is ambiguous,
-   flag the ambiguity rather than silently changing the plot.
-9. If the Portuguese highlighted intention cannot be expressed as a
-   contiguous excerpt in the natural target paragraph, flag the case for
-   manual review rather than inserting an inaccurate or disconnected span.
-
-Example of the required nested shape (illustrative only):
-
-```json
-{
-  "titlePt": "Um Sábado Diferente",
-  "titleEn": "A Different Saturday",
-  "titleEs": "Un sábado diferente",
-  "titleFr": "Un samedi différent",
-  "paragraphs": [
-    {
-      "pt": "Ontem, eu fiquei em casa e eu não fui para o parque porque estava chovendo.",
-      "en": "Yesterday, I stayed at home and I didn't go to the park because it was raining.",
-      "es": "Ayer me quedé en casa y no fui al parque porque estaba lloviendo.",
-      "fr": "Hier, je suis resté à la maison et je ne suis pas allé au parc parce qu'il pleuvait.",
-      "intentions": [
-        {
-          "intentionId": "momento-passado-com-marcador-de-tempo",
-          "ptIntent": "Ontem, eu fiquei",
-          "enIntent": "Yesterday, I stayed",
-          "esIntent": "Ayer me quedé",
-          "frIntent": "Hier, je suis resté"
-        }
-      ]
-    }
-  ]
-}
-```
-
-The example is a partial story excerpt; it does not authorize deleting
-unshown fields or other paragraphs. Where French grammatical gender depends
-on unknown narrator identity, verify context and flag uncertainty rather
-than assume an identity.
-
-### Story enrichment workflow (incremental by default)
-
-1. Inspect `AGENTS.md`, the story loader/schema, the target CEFR file(s),
-   and `git status` before proposing changes.
-2. Inventory only the requested level(s), counting stories, paragraphs,
-   missing translations, and inconsistent annotations using a lightweight
-   local parser. Do not dump full catalogs or UUID lists into agent output.
-3. Present a concise plan (affected filenames and counts), and **wait for
-   explicit user approval before bulk modifications** unless the user has
-   already expressly authorized implementation in the current request.
-4. Add only missing language fields to approved stories; retain existing
-   data and avoid whole-file reformatting or key reordering when feasible.
-5. Validate JSON syntax, CEFR/file alignment, unchanged story IDs, unchanged
-   existing fields, paragraph counts, intention counts, and the exact
-   `esIntent`/`frIntent` substring relationship. Verify that every approved
-   story has both titles and every paragraph/intention has both translations.
-6. Report concise counts by level, number of enriched stories/paragraphs,
-   files modified, validations and unresolved ambiguities. Never print UUIDs.
-7. Follow the existing temporary-file cleanup requirements.
-
-**Scope boundary:** Story enrichment must not trigger the intention-catalog
-cross-language synchronization workflow, alter `sample-hashmap-*.json`,
-regenerate stories with AI, or modify app components unless explicitly
-requested. Do not synchronize or replace `hqImage`, `youtubeVideo`, or
-`youtubeShort` while enriching story translations.
-
-## JSON synchronization
-- Inspect the existing JSON structure before editing.
-- Keep equivalent intentions synchronized.
-- Preserve existing IDs across languages.
-- New intentions must use slug + UUID.
-- Preserve the existing schema and field names.
-- Do not introduce a mentalMap wrapper where absent.
-- Do not translate code identifiers or category values.
-- Translate examples naturally, preserving their intention.
-- Adapt patterns and validationPatterns to each language.
-- Never assume English regex patterns work in French or Spanish.
-- Preserve allowLanguageChunkPractice semantics.
-- Treat `youtubeVideo`, `youtubeShort`, and `hqImage` as language-local media fields; never synchronize them across language files. See Language-Specific Media Fields below.
-
-## Language-Specific Media Fields (Never Synchronize)
-
-The following fields belong **exclusively to the language JSON file in which they are defined**:
-
-- `youtubeVideo`
-- `youtubeShort`
-- `hqImage`
-
-Mandatory rules for INCREMENTAL synchronization, FULL AUDIT, new intentions, and new-language initialization:
-
-1. **Never copy, translate, propagate, compare for equality, or overwrite** these fields between `en-US`, `fr-FR`, `es-ES`, or any future language files.
-2. A value present in `en-US` does **not** imply that the corresponding field or value should exist in `fr-FR` or `es-ES` (and vice versa). Different values, missing fields, and different availability are valid, not synchronization errors.
-3. When creating an intention in a destination language, **do not inherit these fields from the source intention**. Omit them unless the user explicitly supplies media belonging to that destination language. If the destination schema requires a field, follow its existing documented empty/default convention without copying another language's media; otherwise report the constraint.
-4. When updating an existing intention, preserve its language-specific media fields **exactly as they are**, including their values and presence or absence. Do not clear, reset, replace, or remove them during synchronization.
-5. Do not use these fields when determining missing intentions, semantic equivalence, structural inconsistencies, or cross-language synchronization status.
-6. Only modify a language's media fields when the user **explicitly requests a media change for that specific language**. Never infer such authorization from a general synchronization request.
-7. Exclude these fields from cross-language equality checks and synchronization diffs. Report only genuine media issues local to an individual file if the user explicitly requests media validation.
-
-These rules override any general instruction to preserve or synchronize all fields. They do **not** authorize changes to unrelated fields or files.
-
-## Quality
-- Validate JSON syntax.
-- Detect duplicate IDs.
-- Check missing intentions across languages.
-- Report inconsistencies before modifying unrelated entries.
-- Do not change files outside the requested scope.
-- Show a summary of changes after completion.
-
-## User-Facing Reports — Never Display UUIDs
-
-- IDs (including slug + UUID) are internal technical identifiers. Keep generating,
-  preserving, comparing and validating them as required by this document.
-- **Never print or enumerate raw UUIDs or intention IDs in user-facing output**:
-  terminal summaries, progress reports, plans, audit results, completion messages,
-  tables, or lists. This applies to INCREMENTAL, FULL AUDIT and new-intention tasks.
-- Instead, show useful information: intention names or short descriptions,
-  counts by language, affected files, validation status and actionable issues.
-- Internal scripts, JSON files and validation processes may use IDs normally.
-  Do not weaken ID checks or change the JSON schema to hide UUIDs.
-- Only show a specific ID or UUID if the user explicitly requests it for
-  debugging, tracing or inspection.
-
-## Synchronization Modes (Token-Efficient)
-
-**Default: INCREMENTAL.** Use FULL AUDIT only when the user explicitly
-requests a complete audit, a baseline reconciliation, or a new-language
-initial import. Never escalate to FULL AUDIT merely because a small mismatch
-was detected; report it instead.
-
-### INCREMENTAL (Default)
-
-For routine additions and synchronization of new intentions:
-
-1. Read `AGENTS.md` and locate the configured language files, normally
-   `public/sample-hashmap-en-US.json`, `public/sample-hashmap-fr-FR.json`,
-   and `public/sample-hashmap-es-ES.json`.
-2. Use `en-US` as the canonical reference for which intentions exist.
-   Compare **IDs only** across the language files using a lightweight local
-   script or parser. Do not paste or load entire JSON catalogs into the
-   model's context merely to compare IDs.
-3. Build the list of missing IDs per language. If there are no missing IDs,
-   report that synchronization is already complete and stop; do not rewrite
-   or reformat any JSON.
-4. Retrieve and examine **only the missing intentions**, plus a small number
-   of relevant existing entries when needed to preserve schema or detect
-   semantic duplicates. Never translate or regenerate synchronized entries.
-5. Before writing, report the number of missing intentions per language, affected files and planned changes; do not display raw IDs or UUIDs.
-   If the user's prompt requires approval, stop and wait for explicit approval.
-6. For each approved missing intention, create a natural linguistic equivalent
-   in the destination language, respecting all schema, searchTerms, regex,
-   example-count and chunk rules in this document, excluding language-local
-   `youtubeVideo`, `youtubeShort`, and `hqImage` fields.
-7. Modify only the required entries in the destination JSON files; preserve
-   all existing intentions and avoid unrelated reformatting or key reordering.
-8. Validate JSON syntax, duplicate IDs, required fields, 3–10 examples in
-   newly added entries, and ID coverage using local code. Run relevant tests
-   when available; do not perform a new full semantic audit.
-9. Clean up task-created temporary files under the cleanup rules below.
-   Report counts, intention names or short descriptions when useful, files changed,
-   validation results and unresolved issues concisely; never list raw IDs or UUIDs.
-
-**Efficiency rules:** Prefer a single Codex agent for a small batch of new
-intentions. Do not spawn language subagents for one or a few intentions.
-Use subagents only when the volume or complexity clearly justifies them.
-Do not regenerate searchTerms, examples or validationPatterns for already
-synchronized intentions. Prefer targeted edits and targeted tests.
-
-### FULL AUDIT (Explicit Request Only)
-
-When explicitly requested, inspect all configured language catalogs for
-missing IDs, schema inconsistencies, duplicates, semantic mismatches and
-validation issues. Present a report and a proposed plan before making
-changes; wait for authorization when requested. Split work into batches only
-if needed, and never overwrite valid translations without approval.
-
-A newly configured language may require a one-time full population; once
-synchronized, return to INCREMENTAL mode for subsequent additions.
-
-## Example Generation Rules
-
-For every **new or explicitly updated** intention in each target-language
-JSON file:
-
-1. Include **at least 3 and at most 10** natural, idiomatic examples.
-2. Default to **3** strong examples; add more only for meaningful differences
-   in context, usage, structure or communicative intention.
-3. Preserve the existing example schema and field names, including source
-   Portuguese and the language-specific target text and highlighted spans.
-4. Ensure examples express the same intention, but do not force literal
-   translations or English grammar onto French or Spanish.
-5. Avoid near-duplicates, artificial examples and padding to reach 10.
-6. Validate the example count separately for every newly created or updated
-   language entry. Report violations in older entries without modifying them
-   unless the user explicitly requests that work.
-
-## New Linguistic Intention Workflow
-
-When the user requests a new intention:
-
-1. Discover the configured language JSON files.
-2. Search for an existing equivalent intention.
-3. If an equivalent exists, report it and avoid duplicates.
-4. Create one canonical intention ID using slug + UUID.
-5. Preserve that ID across all language files.
-6. Generate natural, idiomatic examples for each language.
-7. Adapt patterns and validationPatterns independently.
-8. Preserve the existing schema and metadata conventions.
-9. Set allowLanguageChunkPractice: true only for
-   complete, independently usable language chunks.
-10. Validate JSON syntax, IDs and required fields.
-11. Report changes using intention names or short descriptions, without listing
-    raw IDs or UUIDs, and mention any uncertain translations.
-
-Never perform literal translation when it changes
-the linguistic intention.
-
-When a new language is added, include its configured
-JSON file in future synchronization tasks.
-
-Do not introduce databases, APIs or new infrastructure.
-
-## SearchTerms Generation Rules
-
-For every new or updated linguistic intention:
-
-1. Never leave searchTerms empty without a reason.
-
-2. Generate search terms based on the linguistic
-   intention, not merely on the example sentences.
-
-3. Include useful synonyms and alternative ways
-   of expressing the same intention.
-
-4. Include common expressions students may type
-   when searching for that intention.
-
-5. Prioritize natural and frequently used expressions.
-
-6. Avoid:
-   - Generic isolated words
-   - Unrelated meanings
-   - Duplicate terms
-   - Entire example sentences
-   - Artificial or unnatural translations
-   - Excessive keyword generation
-
-7. Respect each target language:
-   - en-US: natural American English
-   - fr-FR: natural French
-   - es-ES: natural Spanish
-
-8. Preserve the semantic intention across languages,
-   even when grammatical structures differ.
-
-9. Inspect the application's search implementation
-   before deciding which languages belong in
-   searchTerms.
-
-10. Follow the existing search normalization rules
-    for case, accents and punctuation.
-
-11. Prefer 5 to 10 high-quality search terms,
-    but never add irrelevant terms to reach a quota.
-
-12. Before adding a new intention, search existing
-    intentions using IDs, patterns, examples,
-    descriptions and searchTerms.
-
-13. Never overwrite manually curated searchTerms
-    without reviewing their meaning.
-
-14. Report search terms that could cause ambiguity
-    with existing intentions.
-
-## Temporary Files Cleanup (Mandatory)
-
-After each synchronization or other Codex task, remove **all temporary files and
-folders generated for that task that are not part of the original project**.
-
-1. Before making changes, inspect the project structure and `git status` to
-   distinguish existing project files from task-generated artifacts.
-2. Keep track of every temporary path created by Codex or its subagents,
-   including intermediate JSON batches, generated scripts, staging files,
-   logs, and temporary directories.
-3. Temporary synchronization directories such as `.tmp-sync-es/` and
-   `.tmp-sync-fr/` must be removed after their outputs have been applied and
-   the final project files have been validated, provided they were created
-   by the current task and are not part of the original project.
-4. Clean up temporary artifacts at the end of the task, including after an
-   unsuccessful attempt when it is safe to do so. Never delete files that
-   are still required by a running process.
-5. **Never delete original project files, tracked files, pre-existing user
-   files, or unrelated untracked files.** An untracked file is not necessarily
-   temporary. If ownership or purpose is uncertain, report the path and ask
-   for confirmation before deleting it.
-6. Never remove source JSON files, project configuration, documentation,
-   tests, or user data as part of cleanup. Do not use broad or recursive
-   deletion patterns unless every target has been individually verified.
-7. Before finishing, run `git status` and confirm that no task-generated
-   temporary artifacts remain. Report which temporary paths were deleted
-   and which, if any, were retained for safety.
-8. Cleanup is part of task completion and must not require a separate user
-   prompt for artifacts clearly created by the current task.
-
-# Agentes de HQ — Brazilian English Journey
-
-Perfis prontos para adicionar ao repositório (não são GPTs instalados nem processos autônomos).
-
-## Arquivos
-- `docs/agents/hq-common.md` — regras compartilhadas e fluxo de duas fases.
-- `docs/agents/hq-en-US.md` — HQ em inglês americano.
-- `docs/agents/hq-es-ES.md` — HQ em espanhol da Espanha.
-- `docs/agents/hq-fr-FR.md` — HQ em francês da França.
-
-## Instalação
-Copie a pasta `docs/agents` para a raiz do repositório. No `AGENTS.md` da raiz, **sem substituir o conteúdo existente**, acrescente a referência:
-
-```md
-## Agentes de HQ
-Para tarefas de HQ, ler `docs/agents/hq-common.md` e o perfil do idioma:
-- en-US: `docs/agents/hq-en-US.md`
-- es-ES: `docs/agents/hq-es-ES.md`
-- fr-FR: `docs/agents/hq-fr-FR.md`
-Executar a FASE 1 sem modificar arquivos e aguardar aprovação para a FASE 2.
-```
-
-## Como solicitar ao Codex
-
-```text
-Leia AGENTS.md, docs/agents/hq-common.md e docs/agents/hq-en-US.md.
-Quero criar 1 HQ do nível A1, selecionando uma história que ainda não tenha HQ em en-US.
-Execute apenas a FASE 1: diagnóstico, verificação da ferramenta de imagens e plano, sem modificar arquivos.
-```
-
-Troque `hq-en-US.md` por `hq-es-ES.md` ou `hq-fr-FR.md` conforme o idioma.
-
-## Importante
-O Codex pode ler/editar os JSONs e salvar arquivos quando tiver acesso ao workspace. Para **gerar imagens** é necessário que exista uma ferramenta de geração de imagens acessível. Sem ela, o agente prepara um prompt e aguarda a imagem. Não existe promessa de execução diária automática.
-
-O schema atual de `hqImage` e seus consumidores precisam ser inspecionados antes da implementação, pois uma história pode ter imagens distintas por idioma.
+# Mental Hashmap 4.0 — Codex orchestration instructions
+
+## Activation
+When the user asks to **sincronizar hashmap**, **sync hashmap**, or to run the Mental Hashmap multilingual agents, act as the **ROOT ORCHESTRATOR** in this Codex session. Do not spawn `hashmap_orchestrator` as a child. Its TOML is a reference for the root role.
+
+The canonical source is `public/sample-hashmap-pt-BR.json`. The targets are `public/sample-hashmap-en-US.json`, `public/sample-hashmap-es-ES.json` and `public/sample-hashmap-fr-FR.json`.
+
+## Required delegation
+Spawn three independent custom subagents **in parallel**, named `hashmap_en_us`, `hashmap_es_es`, `hashmap_fr_fr`. Give each agent only its corresponding target file as write scope. Wait for all three. If delegation is unavailable, explicitly report it rather than silently pretending multi-agent execution.
+
+## Required preliminary checks
+1. Inspect `git status` and do not revert or overwrite unrelated user changes.
+2. Read source and targets, detect duplicate intention IDs, duplicate example IDs within an intention, and invalid JSON; stop on invalid source or a structural ambiguity that prevents safe edits.
+3. Inspect the existing `validationPatterns` runtime and relevant JSON contract. **SHA-256 integrity hashes are out of scope**: do not investigate, recompute, copy, repair, or change `metadata.integrity` hashes, and do not treat mismatches as failures.
+4. Determine change baseline: use a user-specified Git base when supplied. Otherwise use a reliable Git history baseline for the pt-BR file and report which commit was used. If no reliable baseline, do not assume existing translated entries need retranslation; fill missing intentions only and flag possible discrepancies for review.
+5. BEFORE delegating, scan every pt-BR intention for an explicitly empty `examples: []`. For each, the ROOT ORCHESTRATOR must generate exactly three natural pt-BR examples, each with a new unique UUID example ID, `exampleItem` and an `intent` span literally present in `exampleItem`. Follow the existing example schema and any required fields; do not add `hqImage`. Save ONLY those empty arrays in the canonical pt-BR JSON, preserving all other intentions, examples and fields. Do not modify nonempty arrays or repair unrelated source content. Update non-hash count metadata only if the existing schema requires it; never touch SHA-256 hashes. Validate the updated source before proceeding. If safe generation/validation fails, stop before delegation and report the issue. Do not generate examples in any other case.
+6. Record the intention IDs and exact three newly generated example IDs. Wait for the pt-BR write to complete, then send the affected intention IDs, generated example IDs, and baseline information to all three agents. Never use array positions as identity.
+
+## Invariants
+- `public/sample-hashmap-pt-BR.json` is canonical. **Only the ROOT ORCHESTRATOR may edit it, and only to replace an explicitly empty `examples: []` with exactly three valid pt-BR examples before delegation.** No other source edits are authorized; locale specialists remain read-only on pt-BR.
+- `mentalMap[].id` is a stable, language-independent identity. Match intentions by ID, never by array index; do not invent, translate, normalize, or replace existing IDs.
+- Example IDs are also stable identities. **Do not change existing example IDs to force equality**. Missing or extra example IDs in target locales are accepted, nonblocking differences in this MVP. Do not reconcile them automatically.
+- **Extra target examples must be ignored and preserved**, even when absent from pt-BR. Do not delete, rewrite, or re-ID them merely to match source counts. Missing historical examples in existing target intentions can be recovered later and must not block synchronization. **Exception: examples freshly generated in pt-BR by this run must be propagated to all three targets, even when the intention already exists there**, with the same newly generated IDs. For newly created intentions, create localized examples with the canonical source example IDs.
+- Localize `intention`, `description`, `pattern`, `structure`, `searchTerms`, `validationPatterns`, `examples[].exampleItem` and `examples[].intent` semantically into the target locale. Never use untranslated pt-BR as a shortcut. Existing translations should not be overwritten without a demonstrated change or correction. Imperfections in `description` and `examples[].intent` are nonblocking for the MVP and should be reported, not used to stop otherwise safe synchronization.
+- **`tags` are localized linguistic fields, NOT language-independent structural fields**. Translate their meaning to each target locale, rather than copying the pt-BR string or requiring literal equality. Example: pt-BR `diversão` → en-US `fun`, es-ES `diversión`, fr-FR `divertissement`. Preserve valid existing localized tags; update only when necessary.
+- Structural fields such as `category`, `related`, `level`, and `allowLanguageChunkPractice` (including its absence) follow the canonical pt-BR values. Preserve unknown target-only fields unless explicitly authorized otherwise.
+- `hqImage` is **locale-private**: never sync, copy, overwrite, remove, or fabricate it. New target examples omit it; existing target examples keep their exact previous value. Do not edit `public/images/hq/**`.
+- Never automatically delete intentions or examples. Report orphaned intentions without removing them; ignore surplus examples for synchronization purposes.
+- Preserve untouched translations and formatting where feasible. No databases, backends, cache, new infrastructure, or permanent scripts. Do not commit automatically.
+
+## Required sequence for empty pt-BR examples
+1. The root scans ALL canonical intentions for `examples: []` before starting any specialist; this applies to existing and new intentions. If none are empty, leave pt-BR untouched.
+2. For each empty array, create exactly three distinct, meaningful Brazilian Portuguese example sentences that illustrate the intention; give each example a unique UUID, valid `exampleItem`, and an exact `intent` substring. Preserve the intention and all other fields. Never add examples to an array that already contains one or more examples.
+3. Persist and validate pt-BR first. Pass a manifest of `{intentionId, generatedExampleIds}` to the three locale agents, and have them translate all three new examples into their own file with the same IDs. A source edit without the corresponding three locale updates is **PARTIAL**, not complete.
+4. Do not reinterpret previously missing or extra target examples as part of this manifest. Preserve them under the existing nonblocking policy. Never copy `hqImage`.
+
+## Incremental synchronization
+1. Work only on IDs demonstrably new or changed since the reliable baseline; without a baseline, add missing intentions only and report possible stale translations.
+2. After the source pre-pass, delegate one destination file to each specialist; no specialist may write to pt-BR or another locale's file.
+3. Translate new/changed linguistic content naturally for each locale, including `tags`; preserve target-specific examples, `hqImage`, and unknown properties.
+4. Do not attempt to equalize historical example counts or rewrite examples solely because their IDs differ from pt-BR. Add the three newly generated canonical examples to each target by ID, including existing intentions; do not duplicate them on retries.
+5. If a safe update cannot be determined, report it as pending instead of guessing or overwriting.
+
+## Final validation
+Parse all four JSONs after the source pre-pass; verify that every formerly empty pt-BR array now contains exactly three valid examples with unique UUID IDs and that all three target locales contain localized versions with those same IDs. Validate schema structure, intention ID uniqueness and intended intention ID coverage, `metadata.language`, `metadata.totalIntentions` against each file's actual intention count, and relevant regex using the project's actual JavaScript runtime. Confirm preservation of target-local `hqImage`, surplus examples, and untouched fields. Run `git diff --check` and review changed paths. Compare example ID sets **for diagnostic reporting only**: missing and extra target examples are **nonblocking**. Ignore SHA-256 hash values entirely; do not validate, recalculate, or modify them. If a pre-existing validation script reports only SHA-256 or accepted example-count/ID mismatches, classify those findings as **IGNORED BY POLICY**, not synchronization failure. If a required check cannot be performed, mark it **NOT VERIFIED**, never PASS.
+
+## Final report
+Report how many empty pt-BR intentions were filled, their IDs, the three generated examples per intention, and whether each was propagated to all locales. For each locale: new intentions, new examples introduced with new intentions or through the authorized source pre-pass, modified intentions/examples, unchanged, orphaned intentions, nonblocking example discrepancies (summary counts only), validation errors, and file status. Distinguish complete, partial, blocked, and nonblocking pending outcomes. Do not print hundreds of example UUIDs. State explicitly that SHA-256 was excluded by policy, and whether pt-BR changed exclusively through the authorized empty-array pre-pass; list any other changed files as unexpected.
