@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1230,
+    "totalIntentions": 1233,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -47717,6 +47717,21 @@
           "id": "37bd52ee-480d-4edb-9a39-9a2104d5893d",
           "exampleItem": "Tal como yo lo veo, el equipo necesita apoyo.",
           "intent": "Tal como yo lo veo"
+        },
+        {
+          "id": "0cff1db6-e07b-4f86-a802-e97d426212a0",
+          "exampleItem": "Tal como yo lo veo, tenemos que hablar antes de decidir.",
+          "intent": "Tal como yo lo veo"
+        },
+        {
+          "id": "642e0d77-cab0-4ffd-8d4b-0d36f420e8b6",
+          "exampleItem": "Tal como yo lo veo, este cambio ayudará al equipo.",
+          "intent": "Tal como yo lo veo"
+        },
+        {
+          "id": "8e81ba79-bd92-4656-b1fd-f3d5168cccb3",
+          "exampleItem": "Tal como yo lo veo, todavía tenemos tiempo para resolver esto.",
+          "intent": "Tal como yo lo veo"
         }
       ]
     },
@@ -47754,6 +47769,21 @@
         {
           "id": "24f1fac0-51f9-43a6-b4d9-f93e527563b6",
           "exampleItem": "Yo diría que tenemos unas dos horas.",
+          "intent": "Yo diría que"
+        },
+        {
+          "id": "749a9f0d-f880-418b-a9f2-e3f8687e8a9a",
+          "exampleItem": "Yo diría que el resultado fue mejor de lo que esperábamos.",
+          "intent": "Yo diría que"
+        },
+        {
+          "id": "27803b11-1b0d-4295-a476-51aa37d4e165",
+          "exampleItem": "Yo diría que necesitamos una semana más.",
+          "intent": "Yo diría que"
+        },
+        {
+          "id": "62533b13-2498-46c5-897b-13505b429b6c",
+          "exampleItem": "Yo diría que esta es la opción más segura.",
           "intent": "Yo diría que"
         }
       ]
@@ -47793,6 +47823,21 @@
           "id": "88f368ab-0fed-4ff6-9368-4e6dfaf17988",
           "exampleItem": "Entiendo tu punto de vista, pero todavía tenemos que escuchar a los demás.",
           "intent": "Entiendo tu punto de vista, pero"
+        },
+        {
+          "id": "5aeaf423-7e1d-4ffb-a792-b91f89061c80",
+          "exampleItem": "Entiendo tu punto de vista, pero tenemos que escuchar al resto del equipo.",
+          "intent": "Entiendo tu punto de vista, pero"
+        },
+        {
+          "id": "101d7af2-f493-470f-a819-fd6958ece115",
+          "exampleItem": "Entiendo tu punto de vista, pero seguimos teniendo un plazo muy ajustado.",
+          "intent": "Entiendo tu punto de vista, pero"
+        },
+        {
+          "id": "7cf229fa-82e6-4624-b72c-37ebdd327dbd",
+          "exampleItem": "Entiendo tu punto de vista, pero creo que podemos probar otra solución.",
+          "intent": "Entiendo tu punto de vista, pero"
         }
       ]
     },
@@ -47830,6 +47875,21 @@
         {
           "id": "0e9ad349-cce6-4b95-8ba9-eac1914b654d",
           "exampleItem": "Lo que más importa es la calidad del trabajo.",
+          "intent": "Lo que más importa es"
+        },
+        {
+          "id": "7b6c6d6d-19ee-42a1-bcb2-4d83a3f6f816",
+          "exampleItem": "Lo que más importa es que todos estén a salvo.",
+          "intent": "Lo que más importa es"
+        },
+        {
+          "id": "fe8ff116-a880-4217-af86-587cf02ade1f",
+          "exampleItem": "Lo que más importa es mantener la confianza entre nosotros.",
+          "intent": "Lo que más importa es"
+        },
+        {
+          "id": "11b2d464-57b7-40f0-add4-e90ad8e1d997",
+          "exampleItem": "Lo que más importa es aprender de lo que ha pasado.",
           "intent": "Lo que más importa es"
         }
       ]
@@ -47869,6 +47929,21 @@
           "id": "71509d2a-099a-40b4-abe7-2509e6386e19",
           "exampleItem": "Lo que quiero destacar es que nadie debe quedarse fuera.",
           "intent": "Lo que quiero destacar es"
+        },
+        {
+          "id": "3145ef6c-67ce-44c2-bc25-dbc9f9467cfd",
+          "exampleItem": "Lo que quiero destacar es que el coste ha bajado bastante.",
+          "intent": "Lo que quiero destacar es"
+        },
+        {
+          "id": "4c64f47b-7f24-40e9-8411-886aca74440a",
+          "exampleItem": "Lo que quiero destacar es que nadie tiene que decidir ahora.",
+          "intent": "Lo que quiero destacar es"
+        },
+        {
+          "id": "4972438c-9c59-4d5f-a9fe-757d2b8a941c",
+          "exampleItem": "Lo que quiero destacar es que la calidad debe ser lo primero.",
+          "intent": "Lo que quiero destacar es"
         }
       ]
     },
@@ -47906,6 +47981,21 @@
         {
           "id": "96db8d94-fce3-4b5c-aa99-ed1b69d0d05e",
           "exampleItem": "Si te he entendido bien, el cambio solo se aplica a los nuevos clientes.",
+          "intent": "Si te he entendido bien"
+        },
+        {
+          "id": "3fdb8e10-125c-482e-9873-1cb9cbfcdbdf",
+          "exampleItem": "Si te he entendido bien, la reunión será mañana.",
+          "intent": "Si te he entendido bien"
+        },
+        {
+          "id": "9a335388-701a-4b7b-88d4-d9b3e359e052",
+          "exampleItem": "Si te he entendido bien, tenemos que revisar el contrato.",
+          "intent": "Si te he entendido bien"
+        },
+        {
+          "id": "1bc99637-c8ad-4817-acc2-d7478809ebe4",
+          "exampleItem": "Si te he entendido bien, prefieres esperar un poco más.",
           "intent": "Si te he entendido bien"
         }
       ]
@@ -47945,6 +48035,21 @@
           "id": "5777581a-c4c6-4c72-aecb-e876fab8500c",
           "exampleItem": "Entonces, lo que estás diciendo es que podemos elegir otro horario.",
           "intent": "Entonces, lo que estás diciendo es"
+        },
+        {
+          "id": "6e0fcde2-74cb-4a42-beb7-9df4dc42b596",
+          "exampleItem": "Entonces, lo que estás diciendo es que el plan ha cambiado.",
+          "intent": "Entonces, lo que estás diciendo es"
+        },
+        {
+          "id": "4bd36515-b227-409a-bfbc-ff44bcfb1d89",
+          "exampleItem": "Entonces, lo que estás diciendo es que tenemos que empezar de nuevo.",
+          "intent": "Entonces, lo que estás diciendo es"
+        },
+        {
+          "id": "765c6c4a-76ac-4650-9f6b-eb5fcca30437",
+          "exampleItem": "Entonces, lo que estás diciendo es que todavía hay una posibilidad.",
+          "intent": "Entonces, lo que estás diciendo es"
         }
       ]
     },
@@ -47982,6 +48087,21 @@
         {
           "id": "ec5d582e-2e74-4371-8826-a44ef64c627e",
           "exampleItem": "Si lo piensas bien, todos cometemos errores.",
+          "intent": "Si lo piensas bien"
+        },
+        {
+          "id": "ec9fb29b-c474-42de-9237-b8d81aabdcb0",
+          "exampleItem": "Si lo piensas bien, podemos salir un poco antes.",
+          "intent": "Si lo piensas bien"
+        },
+        {
+          "id": "6e45e7e3-8f66-4375-bccc-ca4568e452fa",
+          "exampleItem": "Si lo piensas bien, prefiero hablar en persona.",
+          "intent": "Si lo piensas bien"
+        },
+        {
+          "id": "79ff8251-850c-4ce9-a292-57896cc39483",
+          "exampleItem": "Si lo piensas bien, quizá sea mejor dejarlo para mañana.",
           "intent": "Si lo piensas bien"
         }
       ]
@@ -48021,6 +48141,21 @@
           "id": "837dc6e7-75ee-4b27-ae25-455da3e2d6cf",
           "exampleItem": "En el fondo, todo se reduce a cuánto tiempo podemos dedicar.",
           "intent": "En el fondo, todo se reduce a"
+        },
+        {
+          "id": "11459370-df37-473e-9252-adc587f16962",
+          "exampleItem": "En el fondo, todo se reduce a elegir nuestras prioridades.",
+          "intent": "En el fondo, todo se reduce a"
+        },
+        {
+          "id": "2492e0b4-e5ec-40dd-b07f-a6478c75e8c3",
+          "exampleItem": "En el fondo, todo se reduce a trabajar con confianza.",
+          "intent": "En el fondo, todo se reduce a"
+        },
+        {
+          "id": "c728d4cc-5acd-4bbb-85c4-2d28fded8845",
+          "exampleItem": "En el fondo, todo se reduce a encontrar una solución viable.",
+          "intent": "En el fondo, todo se reduce a"
         }
       ]
     },
@@ -48058,6 +48193,21 @@
         {
           "id": "78df295b-bdbb-420a-a2b9-d343b332f069",
           "exampleItem": "Puede que me equivoque, pero eso no es lo que acordamos.",
+          "intent": "Puede que me equivoque, pero"
+        },
+        {
+          "id": "bfd7fe88-e6c7-469d-8484-40601d02dd16",
+          "exampleItem": "Puede que me equivoque, pero creo que el plazo termina hoy.",
+          "intent": "Puede que me equivoque, pero"
+        },
+        {
+          "id": "9796e73c-e0f9-4ca2-ae60-d7b7d8fed160",
+          "exampleItem": "Puede que me equivoque, pero esta cuenta parece demasiado alta.",
+          "intent": "Puede que me equivoque, pero"
+        },
+        {
+          "id": "1018f484-f46e-470b-8307-efcc51a8141d",
+          "exampleItem": "Puede que me equivoque, pero recuerdo que habíamos quedado a otra hora.",
           "intent": "Puede que me equivoque, pero"
         }
       ]
@@ -48097,6 +48247,159 @@
           "id": "5d9df310-9bae-4a3d-82e3-fb333a5288ba",
           "exampleItem": "No estoy seguro de si esta es la versión más reciente.",
           "intent": "No estoy seguro de si"
+        },
+        {
+          "id": "229f2df2-4f46-4b22-b0f9-2dd4c3222cc6",
+          "exampleItem": "No estoy seguro de si conseguiremos llegar a tiempo.",
+          "intent": "No estoy seguro de si"
+        },
+        {
+          "id": "212d7b8c-dd31-4397-9c0c-485ca4484487",
+          "exampleItem": "No estoy seguro de si esta información está actualizada.",
+          "intent": "No estoy seguro de si"
+        },
+        {
+          "id": "f1945b32-88a2-48ce-8e63-89a0b6b8ecf7",
+          "exampleItem": "No estoy seguro de si ha recibido nuestra invitación.",
+          "intent": "No estoy seguro de si"
+        }
+      ]
+    },
+    {
+      "id": "d8a2f1c3-9e45-4c71-b6a8-27f9e3d105ab",
+      "intention": "He metido la pata / he cometido un error",
+      "pattern": "Expresión completa: «He metido la pata»",
+      "description": "Expresión completa e independiente para admitir que se ha cometido un error o se ha fallado en una situación. Equivale a la expresión inglesa informal I messed up.",
+      "category": "language-chunks",
+      "searchTerms": [
+        "he metido la pata",
+        "he cometido un error",
+        "me he equivocado"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])He\\s+metido\\s+la\\s+pata(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloque-de-lenguaje",
+        "listo-para-usar",
+        "inglés-hablado",
+        "informal",
+        "admisión-de-error"
+      ],
+      "related": [
+        "e9b3a2d4-0f56-4d82-971b-38a0f4e216bc",
+        "f0c4b3e5-1a67-4e93-a82c-49b1a5f327cd"
+      ],
+      "allowLanguageChunkPractice": true,
+      "structure": "He metido la pata",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a1e6c2b9-74d0-4f8a-b351-02d9c7e64f10",
+          "exampleItem": "He metido la pata.",
+          "intent": "He metido la pata"
+        },
+        {
+          "id": "b2f7d3c0-85e1-4a9b-9262-13e0d8f75a21",
+          "exampleItem": "Perdona, he metido la pata.",
+          "intent": "he metido la pata"
+        },
+        {
+          "id": "c3a8e4d1-96f2-4bac-8373-24f1e906b532",
+          "exampleItem": "Esta vez he metido la pata hasta el fondo.",
+          "intent": "he metido la pata"
+        }
+      ]
+    },
+    {
+      "id": "e9b3a2d4-0f56-4d82-971b-38a0f4e216bc",
+      "intention": "La he cagado / he metido la pata hasta el fondo",
+      "pattern": "Expresión completa: «La he cagado»",
+      "description": "Expresión completa e independiente para admitir un error o un fallo de forma más enfática. Equivale a la expresión inglesa informal I screwed up. En España, la he cagado es una expresión coloquial y vulgar.",
+      "category": "language-chunks",
+      "searchTerms": [
+        "la he cagado",
+        "he metido la pata hasta el fondo",
+        "he hecho una tontería"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])La\\s+he\\s+cagado(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloque-de-lenguaje",
+        "listo-para-usar",
+        "inglés-hablado",
+        "informal",
+        "admisión-de-error"
+      ],
+      "related": [
+        "d8a2f1c3-9e45-4c71-b6a8-27f9e3d105ab",
+        "f0c4b3e5-1a67-4e93-a82c-49b1a5f327cd"
+      ],
+      "allowLanguageChunkPractice": true,
+      "structure": "La he cagado",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "d4b9f5e2-07a3-4cbd-9484-35a2f017c643",
+          "exampleItem": "La he cagado.",
+          "intent": "La he cagado"
+        },
+        {
+          "id": "e5c0a6f3-18b4-4dce-a595-46b3a128d754",
+          "exampleItem": "Perdona, la he cagado.",
+          "intent": "la he cagado"
+        },
+        {
+          "id": "f6d1b7a4-29c5-4edf-b6a6-57c4b239e865",
+          "exampleItem": "Esta vez la he cagado.",
+          "intent": "la he cagado"
+        }
+      ]
+    },
+    {
+      "id": "f0c4b3e5-1a67-4e93-a82c-49b1a5f327cd",
+      "intention": "Perdona / fallo mío",
+      "pattern": "Expresión completa: «Fallo mío»",
+      "description": "Expresión completa e independiente para reconocer un error o disculparse de manera breve e informal. Equivale a la expresión inglesa My bad.",
+      "category": "language-chunks",
+      "searchTerms": [
+        "fallo mío",
+        "culpa mía",
+        "perdona"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Fallo\\s+mío(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloque-de-lenguaje",
+        "listo-para-usar",
+        "inglés-hablado",
+        "informal",
+        "disculpas"
+      ],
+      "related": [
+        "d8a2f1c3-9e45-4c71-b6a8-27f9e3d105ab",
+        "e9b3a2d4-0f56-4d82-971b-38a0f4e216bc"
+      ],
+      "allowLanguageChunkPractice": true,
+      "structure": "Fallo mío",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "a7e2c8b5-30d6-4fa0-87b7-68d5c340f976",
+          "exampleItem": "Fallo mío.",
+          "intent": "Fallo mío"
+        },
+        {
+          "id": "b8f3d9c6-41e7-40b1-98c8-79e6d451a087",
+          "exampleItem": "Fallo mío, no he visto tu mensaje.",
+          "intent": "Fallo mío"
+        },
+        {
+          "id": "c9a4e0d7-52f8-41c2-a9d9-80f7e562b198",
+          "exampleItem": "¡Ah, fallo mío! Lo he entendido mal.",
+          "intent": "fallo mío"
         }
       ]
     }

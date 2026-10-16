@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1230,
+    "totalIntentions": 1233,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -47464,7 +47464,23 @@
       "related": [],
       "structure": "Do jeito que eu vejo",
       "level": "B2",
-      "examples": []
+      "examples": [
+        {
+          "id": "0cff1db6-e07b-4f86-a802-e97d426212a0",
+          "exampleItem": "Do jeito que eu vejo, precisamos conversar antes de decidir.",
+          "intent": "Do jeito que eu vejo"
+        },
+        {
+          "id": "642e0d77-cab0-4ffd-8d4b-0d36f420e8b6",
+          "exampleItem": "Do jeito que eu vejo, essa mudança vai ajudar a equipe.",
+          "intent": "Do jeito que eu vejo"
+        },
+        {
+          "id": "8e81ba79-bd92-4656-b1fd-f3d5168cccb3",
+          "exampleItem": "Do jeito que eu vejo, ainda temos tempo para resolver isso.",
+          "intent": "Do jeito que eu vejo"
+        }
+      ]
     },
     {
       "id": "791e6e62-da22-47ec-867e-4bcf961aedac",
@@ -47486,7 +47502,23 @@
       "related": [],
       "structure": "Eu diria que",
       "level": "B2",
-      "examples": []
+      "examples": [
+        {
+          "id": "749a9f0d-f880-418b-a9f2-e3f8687e8a9a",
+          "exampleItem": "Eu diria que o resultado foi melhor do que esperávamos.",
+          "intent": "Eu diria que"
+        },
+        {
+          "id": "27803b11-1b0d-4295-a476-51aa37d4e165",
+          "exampleItem": "Eu diria que precisamos de mais uma semana.",
+          "intent": "Eu diria que"
+        },
+        {
+          "id": "62533b13-2498-46c5-897b-13505b429b6c",
+          "exampleItem": "Eu diria que essa é a opção mais segura.",
+          "intent": "Eu diria que"
+        }
+      ]
     },
     {
       "id": "c24480c5-8a69-46ec-8ebf-42ef57956fb1",
@@ -47508,7 +47540,23 @@
       "related": [],
       "structure": "Entendo seu ponto, mas",
       "level": "B2",
-      "examples": []
+      "examples": [
+        {
+          "id": "5aeaf423-7e1d-4ffb-a792-b91f89061c80",
+          "exampleItem": "Entendo seu ponto, mas precisamos ouvir o resto da equipe.",
+          "intent": "Entendo seu ponto, mas"
+        },
+        {
+          "id": "101d7af2-f493-470f-a819-fd6958ece115",
+          "exampleItem": "Entendo seu ponto, mas o prazo continua apertado.",
+          "intent": "Entendo seu ponto, mas"
+        },
+        {
+          "id": "7cf229fa-82e6-4624-b72c-37ebdd327dbd",
+          "exampleItem": "Entendo seu ponto, mas acho que podemos tentar outra solução.",
+          "intent": "Entendo seu ponto, mas"
+        }
+      ]
     },
     {
       "id": "be9cc56e-bd81-41ef-8a4a-3d5cd4fbd695",
@@ -47530,7 +47578,23 @@
       "related": [],
       "structure": "O que mais importa é",
       "level": "B2",
-      "examples": []
+      "examples": [
+        {
+          "id": "7b6c6d6d-19ee-42a1-bcb2-4d83a3f6f816",
+          "exampleItem": "O que mais importa é que todos estejam em segurança.",
+          "intent": "O que mais importa é"
+        },
+        {
+          "id": "fe8ff116-a880-4217-af86-587cf02ade1f",
+          "exampleItem": "O que mais importa é manter a confiança entre nós.",
+          "intent": "O que mais importa é"
+        },
+        {
+          "id": "11b2d464-57b7-40f0-add4-e90ad8e1d997",
+          "exampleItem": "O que mais importa é aprender com o que aconteceu.",
+          "intent": "O que mais importa é"
+        }
+      ]
     },
     {
       "id": "78a06123-0d94-4577-adf5-70e343a6cbee",
@@ -47552,7 +47616,23 @@
       "related": [],
       "structure": "O ponto que quero destacar é",
       "level": "B2",
-      "examples": []
+      "examples": [
+        {
+          "id": "3145ef6c-67ce-44c2-bc25-dbc9f9467cfd",
+          "exampleItem": "O ponto que quero destacar é que o custo caiu bastante.",
+          "intent": "O ponto que quero destacar é"
+        },
+        {
+          "id": "4c64f47b-7f24-40e9-8411-886aca74440a",
+          "exampleItem": "O ponto que quero destacar é que ninguém precisa decidir agora.",
+          "intent": "O ponto que quero destacar é"
+        },
+        {
+          "id": "4972438c-9c59-4d5f-a9fe-757d2b8a941c",
+          "exampleItem": "O ponto que quero destacar é que a qualidade deve vir primeiro.",
+          "intent": "O ponto que quero destacar é"
+        }
+      ]
     },
     {
       "id": "9482b7c3-ab4e-4341-b75d-9e0e5288f4ea",
@@ -47574,7 +47654,23 @@
       "related": [],
       "structure": "Se entendi você corretamente",
       "level": "B2",
-      "examples": []
+      "examples": [
+        {
+          "id": "3fdb8e10-125c-482e-9873-1cb9cbfcdbdf",
+          "exampleItem": "Se entendi você corretamente, a reunião será amanhã.",
+          "intent": "Se entendi você corretamente"
+        },
+        {
+          "id": "9a335388-701a-4b7b-88d4-d9b3e359e052",
+          "exampleItem": "Se entendi você corretamente, precisamos revisar o contrato.",
+          "intent": "Se entendi você corretamente"
+        },
+        {
+          "id": "1bc99637-c8ad-4817-acc2-d7478809ebe4",
+          "exampleItem": "Se entendi você corretamente, você prefere esperar mais um pouco.",
+          "intent": "Se entendi você corretamente"
+        }
+      ]
     },
     {
       "id": "c7453970-c57c-4d29-9f1a-a9e244031132",
@@ -47596,7 +47692,23 @@
       "related": [],
       "structure": "Então o que você está dizendo é",
       "level": "B2",
-      "examples": []
+      "examples": [
+        {
+          "id": "6e0fcde2-74cb-4a42-beb7-9df4dc42b596",
+          "exampleItem": "Então o que você está dizendo é que o plano mudou.",
+          "intent": "Então o que você está dizendo é"
+        },
+        {
+          "id": "4bd36515-b227-409a-bfbc-ff44bcfb1d89",
+          "exampleItem": "Então o que você está dizendo é que precisamos começar de novo.",
+          "intent": "Então o que você está dizendo é"
+        },
+        {
+          "id": "765c6c4a-76ac-4650-9f6b-eb5fcca30437",
+          "exampleItem": "Então o que você está dizendo é que ainda há uma chance.",
+          "intent": "Então o que você está dizendo é"
+        }
+      ]
     },
     {
       "id": "5a5e16ef-5537-4ed3-9aa5-bc9685fe43fd",
@@ -47618,7 +47730,23 @@
       "related": [],
       "structure": "Pensando bem",
       "level": "B2",
-      "examples": []
+      "examples": [
+        {
+          "id": "ec9fb29b-c474-42de-9237-b8d81aabdcb0",
+          "exampleItem": "Pensando bem, podemos sair um pouco mais cedo.",
+          "intent": "Pensando bem"
+        },
+        {
+          "id": "6e45e7e3-8f66-4375-bccc-ca4568e452fa",
+          "exampleItem": "Pensando bem, prefiro conversar pessoalmente.",
+          "intent": "Pensando bem"
+        },
+        {
+          "id": "79ff8251-850c-4ce9-a292-57896cc39483",
+          "exampleItem": "Pensando bem, talvez seja melhor deixar isso para amanhã.",
+          "intent": "Pensando bem"
+        }
+      ]
     },
     {
       "id": "f100a164-248d-4668-a50e-9daa920a32d1",
@@ -47640,7 +47768,23 @@
       "related": [],
       "structure": "No fim das contas, isso se resume a",
       "level": "B2",
-      "examples": []
+      "examples": [
+        {
+          "id": "11459370-df37-473e-9252-adc587f16962",
+          "exampleItem": "No fim das contas, isso se resume a escolher nossas prioridades.",
+          "intent": "No fim das contas, isso se resume a"
+        },
+        {
+          "id": "2492e0b4-e5ec-40dd-b07f-a6478c75e8c3",
+          "exampleItem": "No fim das contas, isso se resume a trabalhar com confiança.",
+          "intent": "No fim das contas, isso se resume a"
+        },
+        {
+          "id": "c728d4cc-5acd-4bbb-85c4-2d28fded8845",
+          "exampleItem": "No fim das contas, isso se resume a encontrar uma solução viável.",
+          "intent": "No fim das contas, isso se resume a"
+        }
+      ]
     },
     {
       "id": "ebaefb67-8716-40bb-a067-1b3c2ba48453",
@@ -47662,7 +47806,23 @@
       "related": [],
       "structure": "Posso estar errado sobre isso, mas",
       "level": "B2",
-      "examples": []
+      "examples": [
+        {
+          "id": "bfd7fe88-e6c7-469d-8484-40601d02dd16",
+          "exampleItem": "Posso estar errado sobre isso, mas acho que o prazo termina hoje.",
+          "intent": "Posso estar errado sobre isso, mas"
+        },
+        {
+          "id": "9796e73c-e0f9-4ca2-ae60-d7b7d8fed160",
+          "exampleItem": "Posso estar errado sobre isso, mas essa conta parece alta demais.",
+          "intent": "Posso estar errado sobre isso, mas"
+        },
+        {
+          "id": "1018f484-f46e-470b-8307-efcc51a8141d",
+          "exampleItem": "Posso estar errado sobre isso, mas lembro de termos combinado outro horário.",
+          "intent": "Posso estar errado sobre isso, mas"
+        }
+      ]
     },
     {
       "id": "59d55974-1ab5-40e2-b643-d7fea4665747",
@@ -47684,7 +47844,161 @@
       "related": [],
       "structure": "Não tenho certeza se",
       "level": "B2",
-      "examples": []
+      "examples": [
+        {
+          "id": "229f2df2-4f46-4b22-b0f9-2dd4c3222cc6",
+          "exampleItem": "Não tenho certeza se vamos conseguir chegar a tempo.",
+          "intent": "Não tenho certeza se"
+        },
+        {
+          "id": "212d7b8c-dd31-4397-9c0c-485ca4484487",
+          "exampleItem": "Não tenho certeza se essa informação está atualizada.",
+          "intent": "Não tenho certeza se"
+        },
+        {
+          "id": "f1945b32-88a2-48ce-8e63-89a0b6b8ecf7",
+          "exampleItem": "Não tenho certeza se ele recebeu nosso convite.",
+          "intent": "Não tenho certeza se"
+        }
+      ]
+    },
+    {
+      "id": "d8a2f1c3-9e45-4c71-b6a8-27f9e3d105ab",
+      "intention": "Eu vacilei / dei mole",
+      "pattern": "Expressão completa: «Eu vacilei»",
+      "description": "Bloco de linguagem completo e independente para admitir que cometeu um erro ou deu mole em alguma situação. Corresponde à expressão informal inglesa I messed up.",
+      "category": "language-chunks",
+      "searchTerms": [
+        "eu vacilei",
+        "dei mole",
+        "pisei na bola"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Eu\\s+vacilei(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloco-de-linguagem",
+        "pronto-para-uso",
+        "ingles-falado",
+        "informal",
+        "admissao-de-erro"
+      ],
+      "related": [
+        "e9b3a2d4-0f56-4d82-971b-38a0f4e216bc",
+        "f0c4b3e5-1a67-4e93-a82c-49b1a5f327cd"
+      ],
+      "allowLanguageChunkPractice": true,
+      "structure": "Eu vacilei",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a1e6c2b9-74d0-4f8a-b351-02d9c7e64f10",
+          "exampleItem": "Eu vacilei.",
+          "intent": "Eu vacilei"
+        },
+        {
+          "id": "b2f7d3c0-85e1-4a9b-9262-13e0d8f75a21",
+          "exampleItem": "Desculpa, eu vacilei.",
+          "intent": "eu vacilei"
+        },
+        {
+          "id": "c3a8e4d1-96f2-4bac-8373-24f1e906b532",
+          "exampleItem": "Eu vacilei feio dessa vez.",
+          "intent": "Eu vacilei"
+        }
+      ]
+    },
+    {
+      "id": "e9b3a2d4-0f56-4d82-971b-38a0f4e216bc",
+      "intention": "Eu fiz besteira / vacilei feio",
+      "pattern": "Expressão completa: «Eu fiz besteira»",
+      "description": "Bloco de linguagem completo e independente para admitir um erro ou uma falha de maneira mais enfática. Corresponde à expressão informal inglesa I screwed up.",
+      "category": "language-chunks",
+      "searchTerms": [
+        "eu fiz besteira",
+        "vacilei feio",
+        "fiz uma besteira"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Eu\\s+fiz\\s+besteira(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloco-de-linguagem",
+        "pronto-para-uso",
+        "ingles-falado",
+        "informal",
+        "admissao-de-erro"
+      ],
+      "related": [
+        "d8a2f1c3-9e45-4c71-b6a8-27f9e3d105ab",
+        "f0c4b3e5-1a67-4e93-a82c-49b1a5f327cd"
+      ],
+      "allowLanguageChunkPractice": true,
+      "structure": "Eu fiz besteira",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "d4b9f5e2-07a3-4cbd-9484-35a2f017c643",
+          "exampleItem": "Eu fiz besteira.",
+          "intent": "Eu fiz besteira"
+        },
+        {
+          "id": "e5c0a6f3-18b4-4dce-a595-46b3a128d754",
+          "exampleItem": "Desculpa, eu fiz besteira.",
+          "intent": "eu fiz besteira"
+        },
+        {
+          "id": "f6d1b7a4-29c5-4edf-b6a6-57c4b239e865",
+          "exampleItem": "Eu fiz besteira dessa vez.",
+          "intent": "Eu fiz besteira"
+        }
+      ]
+    },
+    {
+      "id": "f0c4b3e5-1a67-4e93-a82c-49b1a5f327cd",
+      "intention": "Foi mal / erro meu",
+      "pattern": "Expressão completa: «Foi mal»",
+      "description": "Bloco de linguagem completo e independente para reconhecer um erro ou pedir desculpas de maneira breve e informal. Corresponde à expressão inglesa My bad.",
+      "category": "language-chunks",
+      "searchTerms": [
+        "foi mal",
+        "erro meu",
+        "culpa minha"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Foi\\s+mal(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloco-de-linguagem",
+        "pronto-para-uso",
+        "ingles-falado",
+        "informal",
+        "pedido-de-desculpas"
+      ],
+      "related": [
+        "d8a2f1c3-9e45-4c71-b6a8-27f9e3d105ab",
+        "e9b3a2d4-0f56-4d82-971b-38a0f4e216bc"
+      ],
+      "allowLanguageChunkPractice": true,
+      "structure": "Foi mal",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "a7e2c8b5-30d6-4fa0-87b7-68d5c340f976",
+          "exampleItem": "Foi mal.",
+          "intent": "Foi mal"
+        },
+        {
+          "id": "b8f3d9c6-41e7-40b1-98c8-79e6d451a087",
+          "exampleItem": "Foi mal, eu não vi sua mensagem.",
+          "intent": "Foi mal"
+        },
+        {
+          "id": "c9a4e0d7-52f8-41c2-a9d9-80f7e562b198",
+          "exampleItem": "Ah, foi mal! Eu entendi errado.",
+          "intent": "foi mal"
+        }
+      ]
     }
   ]
 }

@@ -7,14 +7,16 @@ ARQUIVOS
 - Leia: public/sample-hashmap-pt-BR.json e public/sample-hashmap-es-ES.json.
 - Escrita permitida: SOMENTE public/sample-hashmap-es-ES.json. Nao altere outros arquivos, nem crie scripts permanentes.
 - Receba do orquestrador a lista de IDs alterados e a base de comparacao, se disponivel. Se a lista nao vier, calcule diferencas por ID; nunca use posicao do array como identidade.
+- Receba tambem o manifesto do PRE-PASS feito pelo orquestrador: pares de intentionId e os tres generatedExampleIds criados no PT-BR quando examples era []. Leia o PT-BR ja atualizado; NAO gere exemplos em portugues nem escreva no PT-BR.
 
 
 CONTRATO INVIOLAVEL
-- Fonte unica: public/sample-hashmap-pt-BR.json. Nunca altere esse arquivo.
+- Fonte unica: public/sample-hashmap-pt-BR.json. Nunca altere esse arquivo. SOMENTE o orquestrador pode preencher examples: [] no PT-BR ANTES de delegar; voce deve ler a fonte ja preenchida.
 - Contrato JSON schemaVersion 4.0.0: raiz metadata + mentalMap. Preserve estrutura, ordem existente e propriedades desconhecidas.
 - Correlacao: mentalMap[].id deve corresponder ao ID canonico PT-BR. Para exemplos com correspondencia confirmada, preserve o ID canonico; nunca altere IDs existentes, nem use posicao do array como identidade. Diferencas de IDs de exemplos existentes nao bloqueiam o MVP e ficam pendentes de revisao.
 - Campos localizados: intention, description, pattern, structure, searchTerms, validationPatterns, tags, examples[].exampleItem e examples[].intent. Localize semanticamente para es-ES, com gramatica natural. Tags sao palavras-chave traduzidas, NAO identificadores estruturais que precisam ser iguais literalmente ao PT-BR. Nunca copie textos PT-BR nesses campos como atalho.
 - Campos estruturais: category, related, level e outras propriedades comprovadamente neutras devem refletir o PT-BR, preservando campos extras do destino quando nao houver politica explicita. Nao copie tags em PT-BR para es-ES; preserve ou ajuste sua traducao quando a entrada for comprovadamente afetada.
+- EXCECAO OBRIGATORIA PARA NOVOS EXEMPLOS DO PRE-PASS: para cada intencao listada no manifesto do orquestrador, adicione ao seu arquivo os tres exemplos pt-BR recem-criados, traduzidos para seu idioma, com os MESMOS IDs canonicos. Isso vale mesmo se a intencao ja existia no destino. Nao confunda esses IDs com exemplos historicamente ausentes; nao complete outras ausencias. Se algum ID ja existir no destino, nao o duplique: confira sua localizacao e preserve campos locais. Nunca adicione hqImage.
 - hqImage: LOCAL-ONLY POR EXEMPLO E IDIOMA. Ignore totalmente o valor de hqImage da origem; NUNCA copie, sincronize, sobrescreva, apague ou fabrique hqImage no destino. Para novo exemplo, omita hqImage. Para exemplo existente, preserve exatamente seu hqImage, inclusive se outro campo for alterado.
 - Se houver allowLanguageChunkPractice, sincronize como propriedade estrutural booleana conforme PT-BR (incluindo ausencia). Nunca a deduza por traducao.
 - Nao altere imagens ou arquivos public/images/hq. Nao gere HQs.
@@ -28,13 +30,14 @@ CONTRATO INVIOLAVEL
 
 
 FLUXO
-1. Leia ambos os JSONs e valide unicidade de IDs de intencoes e exemplos; bloqueie em caso de duplicatas.
+1. Aguarde o orquestrador terminar e validar o PRE-PASS no PT-BR; receba o manifesto de exemplos novos. Depois leia ambos os JSONs e valide unicidade de IDs de intencoes e exemplos; bloqueie em caso de duplicatas.
 2. Descubra a referencia de mudancas PT-BR (Git base explicitada pelo pai, se houver). Distinga novas intencoes, alteracoes PT-BR e removidos. Sem baseline confiavel, nao presuma que traducoes existentes estao desatualizadas: crie apenas intencoes faltantes e reporte possiveis divergencias. Exemplos ausentes em intencoes existentes ficam para revisao posterior.
 3. Crie ou atualize APENAS intencoes comprovadamente afetadas. Para intencoes novas, inclua exemplos traduzidos com seus IDs canonicos e sem hqImage. Para campos estruturais neutros, sincronize os valores do PT-BR; para campos linguisticos, inclusive tags, localize para es-ES sem alterar significado. Nao complete automaticamente exemplos ausentes em intencoes existentes.
+3a. Antes de concluir, processe TODOS os IDs do manifesto do pre-pass: em cada intencao (nova ou existente), insira ou verifique os tres exemplos traduzidos, mantendo IDs identicos ao PT-BR e sem duplicar em nova execucao. Se a traducao nao for segura, reporte falha parcial; nao declare sincronizacao completa. A regra de adiar exemplos faltantes aplica-se somente a exemplos historicos, NAO a esses tres novos.
 4. Preserve IDs existentes, exemplos excedentes, hqImage local, campos adicionais e traducoes existentes nao afetadas. Nao altere o PT-BR.
 5. Gere validationPatterns no idioma alvo com base na intencao e no motor de regex existente. Nao use padroes exageradamente abrangentes sem alerta.
 6. Valide JSON, schema 4.0.0, IDs unicos, correspondencia dos IDs de intencoes, campos essenciais, regex alteradas e alteracoes Git. Nao exija igualdade de quantidade/IDs de exemplos entre idiomas; ignore hashes SHA-256 sem recalcular ou modifica-los. Diferencas de exemplos e hashes nao sao bloqueantes.
-7. Retorne ao pai: intencoes criadas, atualizadas, preservadas, pendencias nao bloqueantes, erros reais, IDs afetados e arquivo alterado. Nao afirme sucesso parcial como sucesso total.
+7. Retorne ao pai: quantidade e IDs dos exemplos novos do pre-pass propagados, intencoes criadas, atualizadas, preservadas, pendencias nao bloqueantes, erros reais, IDs afetados e arquivo alterado. Nao afirme sucesso parcial como sucesso total.
 
 DIRETRIZ LINGUISTICA
 Use natural Spanish as spoken in Spain; ensure conjugation, accents, punctuation and clitic placement are correct.

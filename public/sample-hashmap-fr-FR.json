@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1230,
+    "totalIntentions": 1233,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -48281,6 +48281,21 @@
           "id": "31ae0d55-688e-4600-afb1-5ba5d7936a7b",
           "exampleItem": "À mon avis, nous devrions d’abord écouter les clients.",
           "intent": "À mon avis"
+        },
+        {
+          "id": "0cff1db6-e07b-4f86-a802-e97d426212a0",
+          "exampleItem": "À mon avis, nous devons discuter avant de décider.",
+          "intent": "À mon avis"
+        },
+        {
+          "id": "642e0d77-cab0-4ffd-8d4b-0d36f420e8b6",
+          "exampleItem": "À mon avis, ce changement va aider l’équipe.",
+          "intent": "À mon avis"
+        },
+        {
+          "id": "8e81ba79-bd92-4656-b1fd-f3d5168cccb3",
+          "exampleItem": "À mon avis, nous avons encore le temps de régler cela.",
+          "intent": "À mon avis"
         }
       ]
     },
@@ -48320,6 +48335,21 @@
           "id": "85f8701a-b163-4d72-a6de-cd434cc2b557",
           "exampleItem": "Je dirais qu’il a une trentaine d’années.",
           "intent": "Je dirais qu’"
+        },
+        {
+          "id": "749a9f0d-f880-418b-a9f2-e3f8687e8a9a",
+          "exampleItem": "Je dirais que le résultat a été meilleur que prévu.",
+          "intent": "Je dirais que"
+        },
+        {
+          "id": "27803b11-1b0d-4295-a476-51aa37d4e165",
+          "exampleItem": "Je dirais que nous avons besoin d’une semaine de plus.",
+          "intent": "Je dirais que"
+        },
+        {
+          "id": "62533b13-2498-46c5-897b-13505b429b6c",
+          "exampleItem": "Je dirais que c’est l’option la plus sûre.",
+          "intent": "Je dirais que"
         }
       ]
     },
@@ -48357,6 +48387,21 @@
         {
           "id": "5e220f26-d83d-488b-bacd-4d17aca2c6d9",
           "exampleItem": "Je comprends ton point de vue, mais je préfère encore attendre.",
+          "intent": "Je comprends ton point de vue, mais"
+        },
+        {
+          "id": "5aeaf423-7e1d-4ffb-a792-b91f89061c80",
+          "exampleItem": "Je comprends ton point de vue, mais nous devons écouter le reste de l’équipe.",
+          "intent": "Je comprends ton point de vue, mais"
+        },
+        {
+          "id": "101d7af2-f493-470f-a819-fd6958ece115",
+          "exampleItem": "Je comprends ton point de vue, mais le délai reste court.",
+          "intent": "Je comprends ton point de vue, mais"
+        },
+        {
+          "id": "7cf229fa-82e6-4624-b72c-37ebdd327dbd",
+          "exampleItem": "Je comprends ton point de vue, mais je pense que nous pouvons essayer une autre solution.",
           "intent": "Je comprends ton point de vue, mais"
         }
       ]
@@ -48396,6 +48441,21 @@
           "id": "3f86874e-1108-4c25-80ea-e24c74033585",
           "exampleItem": "Ce qui compte le plus, c’est de garder la confiance de l’équipe.",
           "intent": "Ce qui compte le plus, c’est"
+        },
+        {
+          "id": "7b6c6d6d-19ee-42a1-bcb2-4d83a3f6f816",
+          "exampleItem": "Ce qui compte le plus, c’est que tout le monde soit en sécurité.",
+          "intent": "Ce qui compte le plus, c’est"
+        },
+        {
+          "id": "fe8ff116-a880-4217-af86-587cf02ade1f",
+          "exampleItem": "Ce qui compte le plus, c’est de maintenir la confiance entre nous.",
+          "intent": "Ce qui compte le plus, c’est"
+        },
+        {
+          "id": "11b2d464-57b7-40f0-add4-e90ad8e1d997",
+          "exampleItem": "Ce qui compte le plus, c’est de tirer des leçons de ce qui s’est passé.",
+          "intent": "Ce qui compte le plus, c’est"
         }
       ]
     },
@@ -48433,6 +48493,21 @@
         {
           "id": "1eb5de9b-fb65-470d-b829-b34a93a69fa2",
           "exampleItem": "Ce que je veux souligner, c’est que ce coût peut changer.",
+          "intent": "Ce que je veux souligner, c’est"
+        },
+        {
+          "id": "3145ef6c-67ce-44c2-bc25-dbc9f9467cfd",
+          "exampleItem": "Ce que je veux souligner, c’est que le coût a beaucoup baissé.",
+          "intent": "Ce que je veux souligner, c’est"
+        },
+        {
+          "id": "4c64f47b-7f24-40e9-8411-886aca74440a",
+          "exampleItem": "Ce que je veux souligner, c’est que personne n’a besoin de décider maintenant.",
+          "intent": "Ce que je veux souligner, c’est"
+        },
+        {
+          "id": "4972438c-9c59-4d5f-a9fe-757d2b8a941c",
+          "exampleItem": "Ce que je veux souligner, c’est que la qualité doit passer avant tout.",
           "intent": "Ce que je veux souligner, c’est"
         }
       ]
@@ -48472,6 +48547,21 @@
           "id": "83c2d66d-531b-4e49-bc2d-7e3d10ff0fd3",
           "exampleItem": "Si je te comprends bien, le problème est déjà résolu.",
           "intent": "Si je te comprends bien"
+        },
+        {
+          "id": "3fdb8e10-125c-482e-9873-1cb9cbfcdbdf",
+          "exampleItem": "Si je te comprends bien, la réunion aura lieu demain.",
+          "intent": "Si je te comprends bien"
+        },
+        {
+          "id": "9a335388-701a-4b7b-88d4-d9b3e359e052",
+          "exampleItem": "Si je te comprends bien, nous devons revoir le contrat.",
+          "intent": "Si je te comprends bien"
+        },
+        {
+          "id": "1bc99637-c8ad-4817-acc2-d7478809ebe4",
+          "exampleItem": "Si je te comprends bien, tu préfères attendre encore un peu.",
+          "intent": "Si je te comprends bien"
         }
       ]
     },
@@ -48509,6 +48599,21 @@
         {
           "id": "ded9a16c-9eb3-4d6b-85c5-cb82dd13b28f",
           "exampleItem": "Donc, ce que tu veux dire, c’est qu’il existe une autre solution.",
+          "intent": "Donc, ce que tu veux dire, c’est"
+        },
+        {
+          "id": "6e0fcde2-74cb-4a42-beb7-9df4dc42b596",
+          "exampleItem": "Donc, ce que tu veux dire, c’est que le plan a changé.",
+          "intent": "Donc, ce que tu veux dire, c’est"
+        },
+        {
+          "id": "4bd36515-b227-409a-bfbc-ff44bcfb1d89",
+          "exampleItem": "Donc, ce que tu veux dire, c’est que nous devons recommencer.",
+          "intent": "Donc, ce que tu veux dire, c’est"
+        },
+        {
+          "id": "765c6c4a-76ac-4650-9f6b-eb5fcca30437",
+          "exampleItem": "Donc, ce que tu veux dire, c’est qu’il reste une chance.",
           "intent": "Donc, ce que tu veux dire, c’est"
         }
       ]
@@ -48548,6 +48653,21 @@
           "id": "df77160c-4849-4f65-be39-9e7d7e2d2d49",
           "exampleItem": "Quand on y réfléchit, nous avons déjà bien avancé.",
           "intent": "Quand on y réfléchit"
+        },
+        {
+          "id": "ec9fb29b-c474-42de-9237-b8d81aabdcb0",
+          "exampleItem": "Quand on y réfléchit, nous pouvons partir un peu plus tôt.",
+          "intent": "Quand on y réfléchit"
+        },
+        {
+          "id": "6e45e7e3-8f66-4375-bccc-ca4568e452fa",
+          "exampleItem": "Quand on y réfléchit, je préfère en discuter en personne.",
+          "intent": "Quand on y réfléchit"
+        },
+        {
+          "id": "79ff8251-850c-4ce9-a292-57896cc39483",
+          "exampleItem": "Quand on y réfléchit, il vaut peut-être mieux remettre cela à demain.",
+          "intent": "Quand on y réfléchit"
         }
       ]
     },
@@ -48586,6 +48706,21 @@
           "id": "49bdebbe-cd50-4ed1-9972-dd833ef4204b",
           "exampleItem": "Au fond, tout se résume à avoir assez de temps.",
           "intent": "Au fond, tout se résume à"
+        },
+        {
+          "id": "11459370-df37-473e-9252-adc587f16962",
+          "exampleItem": "Au fond, tout se résume à choisir nos priorités.",
+          "intent": "Au fond, tout se résume à"
+        },
+        {
+          "id": "2492e0b4-e5ec-40dd-b07f-a6478c75e8c3",
+          "exampleItem": "Au fond, tout se résume à travailler dans un climat de confiance.",
+          "intent": "Au fond, tout se résume à"
+        },
+        {
+          "id": "c728d4cc-5acd-4bbb-85c4-2d28fded8845",
+          "exampleItem": "Au fond, tout se résume à trouver une solution viable.",
+          "intent": "Au fond, tout se résume à"
         }
       ]
     },
@@ -48623,6 +48758,21 @@
         {
           "id": "4306b2e8-b838-4b05-868c-38e46e9a062f",
           "exampleItem": "Je peux me tromper là-dessus, mais nous avons peut-être déjà ce document.",
+          "intent": "Je peux me tromper là-dessus, mais"
+        },
+        {
+          "id": "bfd7fe88-e6c7-469d-8484-40601d02dd16",
+          "exampleItem": "Je peux me tromper là-dessus, mais je crois que le délai expire aujourd’hui.",
+          "intent": "Je peux me tromper là-dessus, mais"
+        },
+        {
+          "id": "9796e73c-e0f9-4ca2-ae60-d7b7d8fed160",
+          "exampleItem": "Je peux me tromper là-dessus, mais cette facture me paraît trop élevée.",
+          "intent": "Je peux me tromper là-dessus, mais"
+        },
+        {
+          "id": "1018f484-f46e-470b-8307-efcc51a8141d",
+          "exampleItem": "Je peux me tromper là-dessus, mais je me souviens que nous avions convenu d’un autre horaire.",
           "intent": "Je peux me tromper là-dessus, mais"
         }
       ]
@@ -48663,6 +48813,159 @@
           "id": "370d6dda-2ed7-44d1-8bbb-676be90da810",
           "exampleItem": "Je ne suis pas sûr que ce soit la meilleure solution.",
           "intent": "Je ne suis pas sûr que"
+        },
+        {
+          "id": "229f2df2-4f46-4b22-b0f9-2dd4c3222cc6",
+          "exampleItem": "Je ne suis pas sûr que nous puissions arriver à temps.",
+          "intent": "Je ne suis pas sûr que"
+        },
+        {
+          "id": "212d7b8c-dd31-4397-9c0c-485ca4484487",
+          "exampleItem": "Je ne suis pas sûr que cette information soit à jour.",
+          "intent": "Je ne suis pas sûr que"
+        },
+        {
+          "id": "f1945b32-88a2-48ce-8e63-89a0b6b8ecf7",
+          "exampleItem": "Je ne suis pas sûr qu’il ait reçu notre invitation.",
+          "intent": "Je ne suis pas sûr qu’il"
+        }
+      ]
+    },
+    {
+      "id": "d8a2f1c3-9e45-4c71-b6a8-27f9e3d105ab",
+      "intention": "J’ai fait une erreur / j’ai gaffé",
+      "pattern": "Expression complète : « J’ai fait une erreur »",
+      "description": "Expression autonome pour reconnaître que l’on a commis une erreur ou fait une gaffe. Elle correspond à l’expression anglaise familière « I messed up ».",
+      "category": "language-chunks",
+      "searchTerms": [
+        "j’ai fait une erreur",
+        "j’ai gaffé",
+        "je me suis planté"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])J['’]ai\\s+fait\\s+une\\s+erreur(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "prêt à l’emploi",
+        "anglais parlé",
+        "familier",
+        "reconnaissance d’une erreur"
+      ],
+      "related": [
+        "e9b3a2d4-0f56-4d82-971b-38a0f4e216bc",
+        "f0c4b3e5-1a67-4e93-a82c-49b1a5f327cd"
+      ],
+      "allowLanguageChunkPractice": true,
+      "structure": "J’ai fait une erreur",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a1e6c2b9-74d0-4f8a-b351-02d9c7e64f10",
+          "exampleItem": "J’ai fait une erreur.",
+          "intent": "J’ai fait une erreur"
+        },
+        {
+          "id": "b2f7d3c0-85e1-4a9b-9262-13e0d8f75a21",
+          "exampleItem": "Pardon, j’ai fait une erreur.",
+          "intent": "j’ai fait une erreur"
+        },
+        {
+          "id": "c3a8e4d1-96f2-4bac-8373-24f1e906b532",
+          "exampleItem": "J’ai fait une erreur, et une grosse, cette fois.",
+          "intent": "J’ai fait une erreur"
+        }
+      ]
+    },
+    {
+      "id": "e9b3a2d4-0f56-4d82-971b-38a0f4e216bc",
+      "intention": "J’ai fait une connerie / je me suis complètement planté",
+      "pattern": "Expression complète : « J’ai fait une connerie »",
+      "description": "Expression autonome pour reconnaître une erreur ou un échec de façon plus appuyée. Elle correspond à l’expression anglaise familière « I screwed up ». « Connerie » appartient à un registre très familier, voire vulgaire.",
+      "category": "language-chunks",
+      "searchTerms": [
+        "j’ai fait une connerie",
+        "je me suis complètement planté",
+        "j’ai fait une bêtise"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])J['’]ai\\s+fait\\s+une\\s+connerie(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "prêt à l’emploi",
+        "anglais parlé",
+        "familier",
+        "reconnaissance d’une erreur"
+      ],
+      "related": [
+        "d8a2f1c3-9e45-4c71-b6a8-27f9e3d105ab",
+        "f0c4b3e5-1a67-4e93-a82c-49b1a5f327cd"
+      ],
+      "allowLanguageChunkPractice": true,
+      "structure": "J’ai fait une connerie",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "d4b9f5e2-07a3-4cbd-9484-35a2f017c643",
+          "exampleItem": "J’ai fait une connerie.",
+          "intent": "J’ai fait une connerie"
+        },
+        {
+          "id": "e5c0a6f3-18b4-4dce-a595-46b3a128d754",
+          "exampleItem": "Pardon, j’ai fait une connerie.",
+          "intent": "j’ai fait une connerie"
+        },
+        {
+          "id": "f6d1b7a4-29c5-4edf-b6a6-57c4b239e865",
+          "exampleItem": "J’ai fait une connerie cette fois.",
+          "intent": "J’ai fait une connerie"
+        }
+      ]
+    },
+    {
+      "id": "f0c4b3e5-1a67-4e93-a82c-49b1a5f327cd",
+      "intention": "Au temps pour moi / c’est ma faute",
+      "pattern": "Expression complète : « Au temps pour moi »",
+      "description": "Expression autonome pour reconnaître brièvement une erreur ou présenter des excuses dans une conversation informelle. Elle correspond à l’expression anglaise « My bad ».",
+      "category": "language-chunks",
+      "searchTerms": [
+        "au temps pour moi",
+        "c’est ma faute",
+        "je me suis trompé"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Au\\s+temps\\s+pour\\s+moi(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "prêt à l’emploi",
+        "anglais parlé",
+        "familier",
+        "excuses"
+      ],
+      "related": [
+        "d8a2f1c3-9e45-4c71-b6a8-27f9e3d105ab",
+        "e9b3a2d4-0f56-4d82-971b-38a0f4e216bc"
+      ],
+      "allowLanguageChunkPractice": true,
+      "structure": "Au temps pour moi",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "a7e2c8b5-30d6-4fa0-87b7-68d5c340f976",
+          "exampleItem": "Au temps pour moi.",
+          "intent": "Au temps pour moi"
+        },
+        {
+          "id": "b8f3d9c6-41e7-40b1-98c8-79e6d451a087",
+          "exampleItem": "Au temps pour moi, je n’avais pas vu ton message.",
+          "intent": "Au temps pour moi"
+        },
+        {
+          "id": "c9a4e0d7-52f8-41c2-a9d9-80f7e562b198",
+          "exampleItem": "Ah, au temps pour moi ! J’avais mal compris.",
+          "intent": "au temps pour moi"
         }
       ]
     }
