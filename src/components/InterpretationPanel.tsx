@@ -998,7 +998,7 @@ export function InterpretationPanel({
         max-width: 210mm !important;
         max-height: 297mm !important;
         overflow: hidden !important;
-        background: #ffffff !important;
+        background: var(--surface) !important;
       }
 
       body {
@@ -1115,7 +1115,7 @@ export function InterpretationPanel({
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+        .replace(/'/g, "&var(--accent-hover);");
 
     const exerciseParagraphs = story.paragraphs
       .map(
@@ -1167,8 +1167,8 @@ export function InterpretationPanel({
 
             body {
               margin: 0;
-              color: #111827;
-              background: #ffffff;
+              color: var(--text);
+              background: var(--surface);
               font-family: Arial, Helvetica, sans-serif;
               font-size: 11pt;
               line-height: 1.42;
@@ -1184,7 +1184,7 @@ export function InterpretationPanel({
             }
 
             .header {
-              border-bottom: 1px solid #d1d5db;
+              border-bottom: 1px solid var(--border-strong);
               margin-bottom: 14px;
               padding-bottom: 9px;
             }
@@ -1195,7 +1195,7 @@ export function InterpretationPanel({
               font-weight: 700;
               letter-spacing: 0.08em;
               text-transform: uppercase;
-              color: #6b7280;
+              color: var(--muted);
             }
 
             h1 {
@@ -1206,16 +1206,16 @@ export function InterpretationPanel({
 
             .meta {
               margin: 0;
-              color: #4b5563;
+              color: var(--muted);
               font-size: 9.5pt;
             }
 
             .instructions {
               margin: 0 0 12px;
               padding: 8px 10px;
-              border: 1px solid #e5e7eb;
+              border: 1px solid var(--border);
               border-radius: 7px;
-              background: #f9fafb;
+              background: var(--surface-raised);
               font-size: 9.5pt;
             }
 
@@ -1232,7 +1232,7 @@ export function InterpretationPanel({
 
             .answer-line {
               height: 34px;
-              border-bottom: 1px solid #cbd5e1;
+              border-bottom: 1px solid var(--text-secondary);
             }
 
             .solution-paragraph {
@@ -1240,7 +1240,7 @@ export function InterpretationPanel({
               page-break-inside: avoid;
               margin: 0 0 10px;
               padding-bottom: 8px;
-              border-bottom: 1px solid #e5e7eb;
+              border-bottom: 1px solid var(--border);
             }
 
             .solution-paragraph .pt {
@@ -1249,7 +1249,7 @@ export function InterpretationPanel({
 
             .solution-paragraph .en {
               margin-left: 18px;
-              color: #374151;
+              color: var(--text-secondary);
             }
 
             .solution-label {
@@ -1258,7 +1258,7 @@ export function InterpretationPanel({
               font-weight: 700;
               text-transform: uppercase;
               letter-spacing: 0.06em;
-              color: #6b7280;
+              color: var(--muted);
             }
 
             @media print {

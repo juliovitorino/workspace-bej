@@ -150,7 +150,7 @@ const styles: Record<string, CSSProperties> = {
     margin: "1rem auto 0",
     textAlign: "center",
     fontSize: "0.95rem",
-    color: "#64748b"
+    color: "var(--muted)"
   },
   error: {
     display: "grid",
@@ -159,10 +159,10 @@ const styles: Record<string, CSSProperties> = {
     margin: "1rem auto 0",
     boxSizing: "border-box",
     padding: "0.9rem 1rem",
-    border: "1px solid #fecaca",
+    border: "1px solid var(--bad-border)",
     borderRadius: "12px",
-    background: "#fff7f7",
-    color: "#991b1b",
+    background: "var(--bad-soft)",
+    color: "var(--bad)",
     fontSize: "0.92rem"
   }
 };

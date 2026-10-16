@@ -396,9 +396,9 @@ const styles: Record<string, CSSProperties> = {
     margin: "0 auto",
     boxSizing: "border-box",
     padding: "clamp(1rem, 4vw, 1.75rem)",
-    border: "1px solid #d8dde6",
+    border: "1px solid var(--border-strong)",
     borderRadius: "18px",
-    background: "#ffffff",
+    background: "var(--surface)",
     boxShadow: "0 8px 28px rgba(15, 23, 42, 0.08)"
   },
   header: {
@@ -413,14 +413,14 @@ const styles: Record<string, CSSProperties> = {
     fontWeight: 800,
     letterSpacing: "0.06em",
     textTransform: "uppercase",
-    color: "#64748b"
+    color: "var(--muted)"
   },
   verb: {
     margin: 0,
     fontSize: "clamp(2.4rem, 12vw, 4rem)",
     lineHeight: 1,
     letterSpacing: "0.02em",
-    color: "#0f172a",
+    color: "var(--text)",
     overflowWrap: "anywhere"
   },
   toParticle: {
@@ -428,7 +428,7 @@ const styles: Record<string, CSSProperties> = {
     fontWeight: 700,
     letterSpacing: "0",
     textTransform: "none",
-    color: "#64748b",
+    color: "var(--muted)",
     verticalAlign: "0.18em"
   },
   meanings: {
@@ -436,17 +436,17 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "0.92rem",
     fontWeight: 500,
     lineHeight: 1.35,
-    color: "#64748b",
+    color: "var(--muted)",
     textTransform: "lowercase"
   },
   verbType: {
     marginTop: "0.55rem",
     padding: "0.3rem 0.65rem",
     borderRadius: "999px",
-    background: "#f1f5f9",
+    background: "var(--surface-soft)",
     fontSize: "0.85rem",
     fontWeight: 700,
-    color: "#475569"
+    color: "var(--text-secondary)"
   },
   newVerbButton: {
     display: "inline-flex",
@@ -457,10 +457,10 @@ const styles: Record<string, CSSProperties> = {
     minHeight: "2.8rem",
     marginBottom: "0.65rem",
     padding: "0.65rem 0.8rem",
-    border: "1px solid #93c5fd",
+    border: "1px solid var(--accent-border)",
     borderRadius: "10px",
-    background: "#eff6ff",
-    color: "#1d4ed8",
+    background: "var(--accent-soft)",
+    color: "var(--accent-hover)",
     fontSize: "0.92rem",
     fontWeight: 800,
     cursor: "pointer"
@@ -474,10 +474,10 @@ const styles: Record<string, CSSProperties> = {
     minHeight: "2.8rem",
     marginBottom: "1rem",
     padding: "0.65rem 0.8rem",
-    border: "1px solid #cbd5e1",
+    border: "1px solid var(--border-strong)",
     borderRadius: "10px",
-    background: "#ffffff",
-    color: "#334155",
+    background: "var(--surface)",
+    color: "var(--text-secondary)",
     fontSize: "0.92rem",
     fontWeight: 700,
     cursor: "pointer"
@@ -487,9 +487,9 @@ const styles: Record<string, CSSProperties> = {
     gap: "0.6rem",
     marginBottom: "1.5rem",
     padding: "1rem",
-    border: "1px solid #e2e8f0",
+    border: "1px solid var(--border)",
     borderRadius: "14px",
-    background: "#f8fafc"
+    background: "var(--surface-soft)"
   },
   formRow: {
     display: "grid",
@@ -499,12 +499,12 @@ const styles: Record<string, CSSProperties> = {
   },
   formLabel: {
     fontSize: "0.9rem",
-    color: "#64748b"
+    color: "var(--muted)"
   },
   formValue: {
     minWidth: 0,
     fontSize: "0.98rem",
-    color: "#0f172a",
+    color: "var(--text)",
     overflowWrap: "anywhere"
   },
   vocabularyGrid: {
@@ -519,9 +519,9 @@ const styles: Record<string, CSSProperties> = {
     alignContent: "start",
     gap: "0.35rem",
     padding: "0.85rem",
-    border: "1px solid #dbeafe",
+    border: "1px solid var(--accent-soft)",
     borderRadius: "12px",
-    background: "#f8fafc",
+    background: "var(--surface-soft)",
     textAlign: "center"
   },
   vocabularyLabel: {
@@ -529,17 +529,17 @@ const styles: Record<string, CSSProperties> = {
     fontWeight: 800,
     textTransform: "uppercase",
     letterSpacing: "0.04em",
-    color: "#64748b"
+    color: "var(--muted)"
   },
   vocabularyWord: {
     fontSize: "1.35rem",
-    color: "#1d4ed8",
+    color: "var(--accent-hover)",
     overflowWrap: "anywhere"
   },
   vocabularyMeaning: {
     fontSize: "0.88rem",
     fontWeight: 500,
-    color: "#475569",
+    color: "var(--text-secondary)",
     overflowWrap: "anywhere"
   },
   chunkCard: {
@@ -548,20 +548,20 @@ const styles: Record<string, CSSProperties> = {
     gap: "0.5rem",
     padding: "1rem",
     marginBottom: "1rem",
-    border: "1px solid #bfdbfe",
+    border: "1px solid var(--accent-border)",
     borderRadius: "12px",
-    background: "#eff6ff",
+    background: "var(--accent-soft)",
     textAlign: "center"
   },
   chunkEnglish: {
     fontSize: "clamp(1.2rem, 5vw, 1.6rem)",
     lineHeight: 1.3,
-    color: "#1d4ed8",
+    color: "var(--accent-hover)",
     overflowWrap: "anywhere"
   },
   chunkPortuguese: {
     fontSize: "0.9rem",
-    color: "#475569",
+    color: "var(--text-secondary)",
     overflowWrap: "anywhere"
   },
   challenge: {
@@ -570,29 +570,29 @@ const styles: Record<string, CSSProperties> = {
     gap: "0.75rem",
     margin: "1.5rem 0",
     padding: "1.4rem 1rem",
-    border: "2px solid #bfdbfe",
+    border: "2px solid var(--accent-border)",
     borderRadius: "16px",
-    background: "#eff6ff",
+    background: "var(--accent-soft)",
     textAlign: "center"
   },
   challengeLabel: {
     fontSize: "0.95rem",
     fontWeight: 700,
-    color: "#475569"
+    color: "var(--text-secondary)"
   },
   sentenceMode: {
     padding: "0.4rem 0.8rem",
     borderRadius: "999px",
-    background: "#dbeafe",
+    background: "var(--accent-soft)",
     fontSize: "clamp(1rem, 4.5vw, 1.2rem)",
     lineHeight: 1.2,
     letterSpacing: "0.04em",
-    color: "#1d4ed8"
+    color: "var(--accent-hover)"
   },
   challengeForm: {
     fontSize: "clamp(1.35rem, 6vw, 1.9rem)",
     lineHeight: 1.25,
-    color: "#1d4ed8",
+    color: "var(--accent-hover)",
     overflowWrap: "anywhere"
   },
   googleTranslateButton: {
@@ -604,10 +604,10 @@ const styles: Record<string, CSSProperties> = {
     minHeight: "3.1rem",
     margin: "0 0 1.5rem",
     padding: "0.8rem 1rem",
-    border: "1px solid #cbd5e1",
+    border: "1px solid var(--border-strong)",
     borderRadius: "12px",
-    background: "#ffffff",
-    color: "#334155",
+    background: "var(--surface)",
+    color: "var(--text-secondary)",
     fontSize: "0.98rem",
     fontWeight: 800,
     cursor: "pointer"
@@ -620,7 +620,7 @@ const styles: Record<string, CSSProperties> = {
   },
   timerLabel: {
     fontSize: "0.9rem",
-    color: "#64748b"
+    color: "var(--muted)"
   },
   timerControls: {
     display: "flex",
@@ -635,10 +635,10 @@ const styles: Record<string, CSSProperties> = {
     width: "5.8rem",
     height: "2.9rem",
     padding: 0,
-    border: "1px solid #93c5fd",
+    border: "1px solid var(--accent-border)",
     borderRadius: "12px",
-    background: "#eff6ff",
-    color: "#1d4ed8",
+    background: "var(--accent-soft)",
+    color: "var(--accent-hover)",
     cursor: "pointer",
     touchAction: "manipulation"
   },
@@ -649,14 +649,14 @@ const styles: Record<string, CSSProperties> = {
   timer: {
     fontSize: "2rem",
     lineHeight: 1.1,
-    color: "#0f172a"
+    color: "var(--text)"
   },
   controls: {
     display: "flex",
     flexWrap: "wrap",
     gap: "0.65rem",
     paddingTop: "1rem",
-    borderTop: "1px solid #e2e8f0"
+    borderTop: "1px solid var(--border)"
   },
   primaryButton: {
     width: "100%",
@@ -665,8 +665,8 @@ const styles: Record<string, CSSProperties> = {
     padding: "0.8rem 1rem",
     border: 0,
     borderRadius: "12px",
-    background: "#2563eb",
-    color: "#ffffff",
+    background: "var(--accent)",
+    color: "var(--on-accent)",
     fontSize: "0.98rem",
     fontWeight: 800,
     cursor: "pointer"
@@ -675,10 +675,10 @@ const styles: Record<string, CSSProperties> = {
     flex: "1 1 8rem",
     minHeight: "3.1rem",
     padding: "0.8rem 1rem",
-    border: "1px solid #cbd5e1",
+    border: "1px solid var(--border-strong)",
     borderRadius: "12px",
-    background: "#ffffff",
-    color: "#334155",
+    background: "var(--surface)",
+    color: "var(--text-secondary)",
     fontSize: "0.98rem",
     fontWeight: 700,
     cursor: "pointer"
@@ -687,10 +687,10 @@ const styles: Record<string, CSSProperties> = {
     flex: "1 1 7rem",
     minHeight: "3.1rem",
     padding: "0.8rem 1rem",
-    border: "1px solid #fecaca",
+    border: "1px solid var(--bad-border)",
     borderRadius: "12px",
-    background: "#fff7f7",
-    color: "#b91c1c",
+    background: "var(--bad-soft)",
+    color: "var(--bad)",
     fontSize: "0.98rem",
     fontWeight: 800,
     cursor: "pointer"

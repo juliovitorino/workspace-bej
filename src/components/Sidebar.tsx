@@ -1,8 +1,11 @@
 import { t } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import type { ThemePreference } from "../theme";
 export type AppView = "personal-flashcards" | "memory-flashcards" | "hashmap" | "exercises" | "speaking-game" | "chunk-flashcards" | "interpretation" | "shadowing";
 interface SidebarProps {
+  theme: ThemePreference;
+  onThemeChange: (theme: ThemePreference) => void;
   onOpenLanguages: () => void;
   onOpenAbout: () => void;
   currentView: AppView;
@@ -11,6 +14,8 @@ interface SidebarProps {
 }
 
 export function Sidebar({
+  theme,
+  onThemeChange,
   currentView,
   personalCount,
   onViewChange,
@@ -95,6 +100,14 @@ const menuItems: Array<{
         <button type="button" className="sidebar-menu-item" aria-haspopup="dialog" onClick={() => { setMenuOpen(false); onOpenLanguages(); }}>
           <span aria-hidden="true">🌐</span>  {t("navigation.languages")}
         </button>
+        <div className="sidebar-theme-control">
+          <label htmlFor="bej-theme-select">{t("theme.label")}</label>
+          <select id="bej-theme-select" value={theme} onChange={event => onThemeChange(event.target.value as ThemePreference)}>
+            <option value="light">{t("theme.light")}</option>
+            <option value="dark">{t("theme.dark")}</option>
+            <option value="auto">{t("theme.auto")}</option>
+          </select>
+        </div>
         <button type="button" className="sidebar-menu-item" aria-haspopup="dialog" onClick={() => { setMenuOpen(false); onOpenAbout(); }}>
           <span aria-hidden="true">ⓘ</span>  {t("common.aboutTheApp")}
         </button>

@@ -747,7 +747,7 @@ export function ReviewTraining({
                   alignItems: "center",
                   justifyContent: "center",
                   flexShrink: 0,
-                  color: dictating ? "#dc2626" : undefined,
+                  color: dictating ? "var(--bad)" : undefined,
                   boxShadow: dictating
                     ? "0 0 0 2px rgba(220, 38, 38, 0.18)"
                     : undefined
@@ -938,22 +938,22 @@ export function ReviewTraining({
                   boxShadow: "0 2px 8px rgba(15, 23, 42, 0.06)",
                   color:
                     intentionValidation.status === "found"
-                      ? "#166534"
+                      ? "var(--good)"
                       : intentionValidation.status === "missing"
-                        ? "#92400e"
-                        : "#475569",
+                        ? "var(--warning)"
+                        : "var(--text-secondary)",
                   backgroundColor:
                     intentionValidation.status === "found"
-                      ? "#f0fdf4"
+                      ? "var(--good-soft)"
                       : intentionValidation.status === "missing"
-                        ? "#fffbeb"
-                        : "#f1f5f9",
+                        ? "var(--warning-soft)"
+                        : "var(--surface-soft)",
                   border:
                     intentionValidation.status === "found"
-                      ? "1px solid #bbf7d0"
+                      ? "1px solid var(--good-border)"
                       : intentionValidation.status === "missing"
-                        ? "1px solid #fde68a"
-                        : "1px solid #cbd5e1"
+                        ? "1px solid var(--warning-border)"
+                        : "1px solid var(--text-secondary)"
                 }}
               >
                 {intentionValidation.status === "found"
@@ -969,7 +969,7 @@ export function ReviewTraining({
                 role="alert"
                 style={{
                   margin: "0.45rem 0 0",
-                  color: "#b91c1c",
+                  color: "var(--bad)",
                   fontSize: "0.9rem"
                 }}
               >
@@ -1173,7 +1173,7 @@ export function ReviewTraining({
                   >
                     {evaluationCopyStatus?.target === "corrected" &&
                     evaluationCopyStatus.status === "copied" ? (
-                      <span aria-hidden="true" style={{ color: "#15803d" }}>✓</span>
+                      <span aria-hidden="true" style={{ color: "var(--good)" }}>✓</span>
                     ) : (
                       <svg
                         aria-hidden="true"
@@ -1312,7 +1312,7 @@ export function ReviewTraining({
                   >
                     {evaluationCopyStatus?.target === "better" &&
                     evaluationCopyStatus.status === "copied" ? (
-                      <span aria-hidden="true" style={{ color: "#15803d" }}>✓</span>
+                      <span aria-hidden="true" style={{ color: "var(--good)" }}>✓</span>
                     ) : (
                       <svg
                         aria-hidden="true"
@@ -1387,7 +1387,7 @@ export function ReviewTraining({
             margin: 0 !important;
             padding: 0 !important;
             border: 0 !important;
-            background: #fff !important;
+            background: var(--surface) !important;
             box-shadow: none !important;
             min-height: 0 !important;
           }
@@ -1402,8 +1402,8 @@ export function ReviewTraining({
             box-sizing: border-box !important;
             padding: 0 !important;
             margin: 0 !important;
-            background: #fff !important;
-            color: #172033 !important;
+            background: var(--surface) !important;
+            color: var(--text) !important;
             font: 11pt/1.35 Arial, Helvetica, sans-serif !important;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
@@ -1413,7 +1413,7 @@ export function ReviewTraining({
           .basic-training-print-sheet h2,
           .basic-training-print-sheet p { margin: 0; }
           .basic-training-print-sheet .worksheet-top {
-            border-bottom: 2px solid #334ad9;
+            border-bottom: 2px solid var(--accent);
             padding-bottom: 4mm;
             margin-bottom: 5mm;
           }
@@ -1421,7 +1421,7 @@ export function ReviewTraining({
             font-size: 9pt;
             letter-spacing: 1px;
             font-weight: 700;
-            color: #334ad9;
+            color: var(--accent);
             margin-bottom: 2mm;
           }
           .basic-training-print-sheet .worksheet-intention {
@@ -1431,7 +1431,7 @@ export function ReviewTraining({
             margin-bottom: 1mm;
           }
           .basic-training-print-sheet .worksheet-english {
-            color: #334ad9;
+            color: var(--accent);
             font-size: 14pt;
             font-weight: 700;
           }
@@ -1442,20 +1442,20 @@ export function ReviewTraining({
             margin-bottom: 2mm;
           }
           .basic-training-print-sheet .worksheet-example {
-            background: #f4f6fa !important;
+            background: var(--surface-soft) !important;
             padding: 3mm 4mm;
             border-radius: 2mm;
           }
           .basic-training-print-sheet .worksheet-example p + p { margin-top: 1.5mm; }
           .basic-training-print-sheet .worksheet-example-pt .intention-highlight {
-            color: #b84d00 !important;
-            background: #ffe8c9 !important;
+            color: var(--warning) !important;
+            background: var(--warning-soft) !important;
             font-weight: 700;
           }
-          .basic-training-print-sheet .worksheet-example-en { color: #2445c6 !important; }
+          .basic-training-print-sheet .worksheet-example-en { color: var(--accent-hover) !important; }
           .basic-training-print-sheet .worksheet-example-en .intention-highlight {
-            color: #1438c0 !important;
-            background: #dce7ff !important;
+            color: var(--accent-hover) !important;
+            background: var(--accent-soft) !important;
             font-weight: 700;
           }
           .basic-training-print-sheet .worksheet-pattern { font-family: monospace; font-size: 10pt; }
@@ -1466,12 +1466,12 @@ export function ReviewTraining({
           }
           .basic-training-print-sheet .worksheet-writing-instruction {
             font-size: 9pt;
-            color: #536076;
+            color: var(--muted);
             margin-bottom: 3mm;
           }
           .basic-training-print-sheet .worksheet-writing-line {
             height: 10mm;
-            border-bottom: 1px solid #b5c0cf;
+            border-bottom: 1px solid var(--border-strong);
             break-inside: avoid;
           }
         }

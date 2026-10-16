@@ -127,9 +127,9 @@ const styles: Record<string, CSSProperties> = {
     margin: "0 auto",
     boxSizing: "border-box",
     padding: "clamp(1rem, 4vw, 1.75rem)",
-    border: "1px solid #d8dde6",
+    border: "1px solid var(--border-strong)",
     borderRadius: "18px",
-    background: "#ffffff",
+    background: "var(--surface)",
     boxShadow: "0 8px 28px rgba(15, 23, 42, 0.08)"
   },
   header: {
@@ -143,18 +143,18 @@ const styles: Record<string, CSSProperties> = {
     fontWeight: 700,
     letterSpacing: "0.04em",
     textTransform: "uppercase",
-    color: "#64748b"
+    color: "var(--muted)"
   },
   title: {
     margin: 0,
     fontSize: "clamp(1.65rem, 7vw, 2.15rem)",
     lineHeight: 1.15,
-    color: "#0f172a"
+    color: "var(--text)"
   },
   subtitle: {
     margin: "0.6rem 0 0",
     fontSize: "0.98rem",
-    color: "#64748b"
+    color: "var(--muted)"
   },
   studyResult: {
     display: "grid",
@@ -162,28 +162,28 @@ const styles: Record<string, CSSProperties> = {
     gap: "0.25rem",
     marginBottom: "1.25rem",
     padding: "1rem",
-    border: "1px solid #bfdbfe",
+    border: "1px solid var(--accent-border)",
     borderRadius: "14px",
-    background: "#eff6ff"
+    background: "var(--accent-soft)"
   },
   studyResultLabel: {
     fontSize: "0.85rem",
     fontWeight: 700,
-    color: "#64748b"
+    color: "var(--muted)"
   },
   studyResultValue: {
     fontSize: "1.45rem",
     lineHeight: 1.2,
-    color: "#1d4ed8"
+    color: "var(--accent-hover)"
   },
   summary: {
     display: "grid",
     gap: "0.75rem",
     marginBottom: "2rem",
     padding: "1rem",
-    border: "1px solid #e2e8f0",
+    border: "1px solid var(--border)",
     borderRadius: "14px",
-    background: "#f8fafc"
+    background: "var(--surface-soft)"
   },
   summaryRow: {
     display: "flex",
@@ -193,12 +193,12 @@ const styles: Record<string, CSSProperties> = {
   },
   summaryLabel: {
     fontSize: "0.95rem",
-    color: "#64748b"
+    color: "var(--muted)"
   },
   summaryValue: {
     textAlign: "right",
     fontSize: "0.98rem",
-    color: "#0f172a"
+    color: "var(--text)"
   },
   startArea: {
     display: "grid",
@@ -210,7 +210,7 @@ const styles: Record<string, CSSProperties> = {
     textAlign: "center",
     fontSize: "1rem",
     lineHeight: 1.55,
-    color: "#475569"
+    color: "var(--text-secondary)"
   },
   startButton: {
     width: "100%",
@@ -218,23 +218,23 @@ const styles: Record<string, CSSProperties> = {
     padding: "0.9rem 1rem",
     border: 0,
     borderRadius: "14px",
-    background: "#2563eb",
-    color: "#ffffff",
+    background: "var(--accent)",
+    color: "var(--on-accent)",
     fontSize: "1.08rem",
     fontWeight: 800,
     cursor: "pointer"
   },
   footer: {
     paddingTop: "1rem",
-    borderTop: "1px solid #e2e8f0"
+    borderTop: "1px solid var(--border)"
   },
   secondaryButton: {
     minHeight: "3.1rem",
     padding: "0.8rem 1rem",
-    border: "1px solid #cbd5e1",
+    border: "1px solid var(--border-strong)",
     borderRadius: "12px",
-    background: "#ffffff",
-    color: "#334155",
+    background: "var(--surface)",
+    color: "var(--text-secondary)",
     fontSize: "1rem",
     fontWeight: 700,
     cursor: "pointer"

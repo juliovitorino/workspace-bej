@@ -322,19 +322,19 @@ export function SearchPanel({
             }}
             style={{
               width: "min(100%, 620px)", maxHeight: "min(85vh, 720px)", display: "flex",
-              flexDirection: "column", borderRadius: 14, background: "#fff", color: "#172033",
+              flexDirection: "column", borderRadius: 14, background: "var(--surface)", color: "var(--text)",
               boxShadow: "0 20px 70px rgba(0,0,0,.3)", overflow: "hidden"
             }}>
             <div style={{ padding: "20px 22px 12px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
               <div>
                 <h2 id="tag-modal-title" style={{ margin: 0, fontSize: 20 }}>{t("filters.filterByTags")}</h2>
-                <p style={{ margin: "5px 0 0", fontSize: 13, color: "#64748b" }}>
+                <p style={{ margin: "5px 0 0", fontSize: 13, color: "var(--muted)" }}>
                   
                   {t("filters.searchByNameOrPartOfAWordAndSelect")}
                 </p>
               </div>
               <button type="button" onClick={closeTagModal} aria-label={t("filters.closeTagSelection")}
-                style={{ border: 0, background: "transparent", fontSize: 25, cursor: "pointer", color: "#475569" }}>×</button>
+                style={{ border: 0, background: "transparent", fontSize: 25, cursor: "pointer", color: "var(--text-secondary)" }}>×</button>
             </div>
 
             <div style={{ padding: "0 22px 12px" }}>
@@ -343,8 +343,8 @@ export function SearchPanel({
                 placeholder={t("filters.searchTagsEGHabitConversaGrammar")}
                 aria-label={t("filters.searchTags")} autoComplete="off"
                 style={{ width: "100%", boxSizing: "border-box", padding: "11px 12px", borderRadius: 8,
-                  border: "1px solid #cbd5e1", fontSize: 15, color: "#172033", background: "#fff" }} />
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 10, gap: 8, fontSize: 13, color: "#64748b" }}>
+                  border: "1px solid var(--border-strong)", fontSize: 15, color: "var(--text)", background: "var(--surface)" }} />
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 10, gap: 8, fontSize: 13, color: "var(--muted)" }}>
                 <span>{t("filters.tagsFound", { count: matchingTags.length })}</span>
                 <span>{t("filters.tagsSelected", { count: draftTags.length })}</span>
               </div>
@@ -352,36 +352,36 @@ export function SearchPanel({
 
             <div style={{ overflowY: "auto", minHeight: 110, padding: "4px 22px 12px", flex: 1 }}>
               {matchingTags.length === 0 ? (
-                <p style={{ textAlign: "center", color: "#64748b", padding: "30px 0" }}>
+                <p style={{ textAlign: "center", color: "var(--muted)", padding: "30px 0" }}>
                   
                   {t("filters.noSimilarTagsFoundTryAnotherWord")}
                 </p>
               ) : matchingTags.map((tag) => (
                 <label key={tag} style={{ display: "flex", alignItems: "center", gap: 12,
-                  padding: "9px 8px", borderBottom: "1px solid #f1f5f9", cursor: "pointer", fontSize: 14 }}>
+                  padding: "9px 8px", borderBottom: "1px solid var(--surface-soft)", cursor: "pointer", fontSize: 14 }}>
                   <input type="checkbox" checked={draftTags.includes(tag)}
                     onChange={() => toggleDraftTag(tag)}
-                    style={{ width: 17, height: 17, accentColor: "#2563eb", flexShrink: 0 }} />
+                    style={{ width: 17, height: 17, accentColor: "var(--accent)", flexShrink: 0 }} />
                   <span style={{ overflowWrap: "anywhere" }}>{tag}</span>
                 </label>
               ))}
             </div>
 
-            <div style={{ borderTop: "1px solid #e2e8f0", padding: "14px 22px", display: "flex",
+            <div style={{ borderTop: "1px solid var(--border)", padding: "14px 22px", display: "flex",
               flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
               <button type="button" onClick={() => setDraftTags([])} disabled={draftTags.length === 0}
-                style={{ background: "transparent", border: 0, color: "#475569", cursor: "pointer", padding: 8 }}>
+                style={{ background: "transparent", border: 0, color: "var(--text-secondary)", cursor: "pointer", padding: 8 }}>
                 
                 {t("filters.deselectAll")}
               </button>
               <div style={{ display: "flex", gap: 8 }}>
                 <button type="button" onClick={closeTagModal}
-                  style={{ padding: "10px 14px", borderRadius: 8, border: "1px solid #cbd5e1", background: "#fff", color: "#334155", cursor: "pointer" }}>
+                  style={{ padding: "10px 14px", borderRadius: 8, border: "1px solid var(--border-strong)", background: "var(--surface)", color: "var(--text-secondary)", cursor: "pointer" }}>
                   
                   {t("filters.cancel")}
                 </button>
                 <button type="button" onClick={applyTags}
-                  style={{ padding: "10px 16px", borderRadius: 8, border: 0, background: "#2563eb", color: "#fff", fontWeight: 600, cursor: "pointer" }}>
+                  style={{ padding: "10px 16px", borderRadius: 8, border: 0, background: "var(--accent)", color: "var(--on-accent)", fontWeight: 600, cursor: "pointer" }}>
                   {t("filters.applyWithCount", { count: draftTags.length })}
                 </button>
               </div>
