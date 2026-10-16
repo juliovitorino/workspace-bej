@@ -1,3 +1,5 @@
+import { t } from "../i18n";
+import { useTranslation } from "react-i18next";
 import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import type { SpeakingGameForm } from "../config/speakingGameForms";
@@ -85,6 +87,7 @@ export function SpeakingGamePlayStep({
   onNext,
   onNewVerb
 }: SpeakingGamePlayStepProps) {
+  const { t } = useTranslation();
   const [showVerbForms, setShowVerbForms] = useState(true);
   const { adjectives, nouns } = vocabulary;
   const [selectedAdjective, setSelectedAdjective] = useState<AdjectiveItem | null>(null);
@@ -101,12 +104,12 @@ export function SpeakingGamePlayStep({
   const isPaused = status === "paused";
   const localized = "forms" in verb ? verb.forms : null;
   const formRows: Array<[string, string]> = localized ? [
-    ["Presente", localized.present], [language === "fr-FR" ? "Passé composé" : "Pretérito indefinido", localized.past],
-    ...(localized.pastFeminine ? [["Passado · feminino", localized.pastFeminine] as [string, string]] : []),
-    ["Imperfeito", localized.imperfect], ["Particípio", localized.participle], ["Gerúndio", localized.gerund],
+    [t("common.present"), localized.present], [language === "fr-FR" ? "Passé composé" : "Pretérito indefinido", localized.past],
+    ...(localized.pastFeminine ? [[t("speaking.pastFeminine"), localized.pastFeminine] as [string, string]] : []),
+    [t("speaking.imperfect"), localized.imperfect], [t("common.participle"), localized.participle], [t("speaking.gerund"), localized.gerund],
   ] : "thirdPerson" in verb ? [
-    ["Presente", `${verb.base} / ${verb.thirdPerson}`], ["Passado", verb.past],
-    ["Particípio", verb.pastParticiple], ["Gerúndio", verb.gerund],
+    [t("common.present"), `${verb.base} / ${verb.thirdPerson}`], [t("common.past"), verb.past],
+    [t("common.participle"), verb.pastParticiple], [t("speaking.gerund"), verb.gerund],
   ] : [];
 
   // Reutiliza a mesma fonte do Mental Hashmap usada pelo App.
@@ -132,7 +135,7 @@ export function SpeakingGamePlayStep({
           )
         );
       } catch (error) {
-        if (active) setChunkError("Não foi possível carregar os chunks deste idioma.");
+        if (active) setChunkError(t("speaking.couldNotLoadChunksForThisLanguage"));
       }
     }
 
@@ -206,9 +209,9 @@ export function SpeakingGamePlayStep({
         </span>
       </header>
 
-      <div style={styles.vocabularyGrid} aria-label="Vocabulário sorteado">
+      <div style={styles.vocabularyGrid} aria-label={t("common.selectedVocabulary")}>
         <div style={styles.vocabularyCard}>
-          <span style={styles.vocabularyLabel}>Adjetivo</span>
+          <span style={styles.vocabularyLabel}>{t("common.adjective")}</span>
           <strong style={styles.vocabularyWord}>
             {selectedAdjective?.adjective ?? "—"}
             {selectedAdjective?.meanings?.length ? (
@@ -220,12 +223,12 @@ export function SpeakingGamePlayStep({
           {selectedAdjective?.forms && <span style={styles.vocabularyMeaning}>
             {selectedAdjective.forms.masculine} / {selectedAdjective.forms.feminine}<br />
             {selectedAdjective.forms.masculinePlural} / {selectedAdjective.forms.femininePlural}
-            {selectedAdjective.forms.masculineBeforeVowel && <><br />Antes de vogal: {selectedAdjective.forms.masculineBeforeVowel}</>}
+            {selectedAdjective.forms.masculineBeforeVowel && <><br />{t("speaking.beforeAVowel")} {selectedAdjective.forms.masculineBeforeVowel}</>}
           </span>}
         </div>
 
         <div style={styles.vocabularyCard}>
-          <span style={styles.vocabularyLabel}>Substantivo</span>
+          <span style={styles.vocabularyLabel}>{t("common.noun")}</span>
           <strong style={styles.vocabularyWord}>
             {selectedNoun ? `${selectedNoun.article ?? ""}${selectedNoun.article?.endsWith("'") ? "" : " "}${selectedNoun.noun}`.trim() : "—"}
             {selectedNoun?.meanings?.length ? (
@@ -234,16 +237,16 @@ export function SpeakingGamePlayStep({
               </span>
             ) : null}
           </strong>
-          {selectedNoun?.gender && <span style={styles.vocabularyMeaning}>{selectedNoun.gender === "feminine" ? "Feminino" : "Masculino"}</span>}
+          {selectedNoun?.gender && <span style={styles.vocabularyMeaning}>{selectedNoun.gender === "feminine" ? t("speaking.feminine") : t("speaking.masculine")}</span>}
           {selectedNoun?.gender && selectedNoun.plural && <span style={styles.vocabularyMeaning}>{selectedNoun.pluralArticle} {selectedNoun.plural}</span>}
-          {selectedNoun?.feminine && <span style={styles.vocabularyMeaning}>Feminino: {selectedNoun.feminine} / {selectedNoun.femininePlural}</span>}
+          {selectedNoun?.feminine && <span style={styles.vocabularyMeaning}>{t("speaking.feminine")} {selectedNoun.feminine} / {selectedNoun.femininePlural}</span>}
         </div>
       </div>
       {chunkError && <p role="status">{chunkError}</p>}
 
       {selectedChunk && (
-        <div style={styles.chunkCard} aria-label="Chunk aleatório do Mental Hashmap">
-          <span style={styles.vocabularyLabel}>🃏 Chunk / intenção aleatória</span>
+        <div style={styles.chunkCard} aria-label={t("speaking.randomChunkFromMentalHashmap")}>
+          <span style={styles.vocabularyLabel}>{t("speaking.randomChunkIntention")}</span>
           <strong style={styles.chunkEnglish}>{selectedChunk.targetIntention ?? selectedChunk.english}</strong>
           <span style={styles.chunkPortuguese}>{selectedChunk.intention}</span>
         </div>
@@ -251,14 +254,15 @@ export function SpeakingGamePlayStep({
 
       <div style={styles.challenge}>
         <span style={styles.challengeLabel}>
-          Fale em voz alta uma frase na forma:
+          
+          {t("speaking.sayASentenceAloudUsingThisForm")}
         </span>
 
         <strong style={styles.sentenceMode}>
           {sentenceMode.toUpperCase()}
         </strong>
 
-        <span style={styles.challengeLabel}>usando:</span>
+        <span style={styles.challengeLabel}>{t("speaking.using")}</span>
 
         <strong style={styles.challengeForm}>{form}</strong>
         {language !== "en-US" && <span style={styles.challengeLabel}>{formLabel}</span>}
@@ -272,7 +276,8 @@ export function SpeakingGamePlayStep({
           disabled={loading}
           style={styles.primaryButton}
         >
-          Próximo →
+          
+          {t("common.next")}{" →"}
         </button>
       )}
 
@@ -282,18 +287,18 @@ export function SpeakingGamePlayStep({
           onClick={handleNewVerb}
           disabled={loading}
           style={styles.newVerbButton}
-          title="Sortear outro verbo mantendo a mesma forma verbal"
-          aria-label="Sortear outro verbo mantendo a mesma forma verbal"
+          title={t("speaking.drawAnotherVerbUsingTheSameVerbForm")}
+          aria-label={t("speaking.drawAnotherVerbUsingTheSameVerbForm")}
         >
           <span aria-hidden="true" style={styles.newVerbIcon}>+</span>
-          <span>Novo verbo</span>
+          <span>{t("speaking.newVerb")}</span>
         </button>
       )}
 
       {isAutomatic && (
         <div style={styles.timerArea} aria-live="polite">
           <span style={styles.timerLabel}>
-            {isPaused ? "Pausado" : "Próxima rodada em"}
+            {isPaused ? t("common.paused") : t("speaking.nextRoundIn")}
           </span>
 
           <div style={styles.timerControls}>
@@ -308,8 +313,8 @@ export function SpeakingGamePlayStep({
                 ...styles.timerNextButton,
                 ...(isPaused ? styles.timerNextButtonDisabled : {})
               }}
-              title="Ir para o próximo desafio sem esperar o contador"
-              aria-label="Próximo desafio"
+              title={t("speaking.goToTheNextChallengeWithoutWaitingForTheCountdown")}
+              aria-label={t("speaking.nextChallenge")}
             >
               <svg
                 aria-hidden="true"
@@ -336,7 +341,7 @@ export function SpeakingGamePlayStep({
         style={styles.visibilityButton}
         aria-expanded={showVerbForms}
       >
-        {showVerbForms ? "👁 Ocultar formas do verbo" : "👁 Mostrar formas do verbo"}
+        {showVerbForms ? "👁 " + t("speaking.hideVerbForms") : "👁 " + t("speaking.showVerbForms")}
       </button>
 
       {showVerbForms && (
@@ -352,11 +357,11 @@ export function SpeakingGamePlayStep({
           type="button"
           onClick={openGoogleTranslate}
           style={styles.googleTranslateButton}
-          title={`Abrir Google Tradutor: ${LANGUAGES[language].name} para ${LANGUAGES[sourceLanguage].name}`}
-          aria-label={`Abrir Google Tradutor: ${LANGUAGES[language].name} para ${LANGUAGES[sourceLanguage].name}`}
+          title={t("speaking.openGoogleTranslateTargetlanguageToSourcelanguage", { targetLanguage: (LANGUAGES[language].name), sourceLanguage: (LANGUAGES[sourceLanguage].name) })}
+          aria-label={t("speaking.openGoogleTranslateTargetlanguageToSourcelanguage", { targetLanguage: (LANGUAGES[language].name), sourceLanguage: (LANGUAGES[sourceLanguage].name) })}
         >
           <span aria-hidden="true">{LANGUAGES[language].flag} {LANGUAGES[sourceLanguage].flag}</span>
-          <span>Abrir Google Tradutor</span>
+          <span>{t("speaking.openGoogleTranslate")}</span>
         </button>
       )}
 
@@ -368,7 +373,7 @@ export function SpeakingGamePlayStep({
           onClick={isPaused ? onResume : onPause}
           style={styles.secondaryButton}
         >
-          {isPaused ? "▶ Continuar" : "⏸ Pausar"}
+          {isPaused ? "▶ " + t("common.resume") : "⏸ " + t("common.pause")}
         </button>
 
         <button
@@ -376,7 +381,8 @@ export function SpeakingGamePlayStep({
           onClick={onStop}
           style={styles.stopButton}
         >
-          ■ Parar
+          
+          {"■ "}{t("common.stop")}
         </button>
 
       </footer>

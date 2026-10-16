@@ -1,3 +1,4 @@
+import { t } from "../i18n";
 import { isAuthorMode } from "../utils/authorMode";
 import type { StudentLanguage } from "../config/languages";
 export interface GoogleTranslationResult {
@@ -35,18 +36,18 @@ async function translateText(
   source: GoogleTranslateLanguage,
   target: GoogleTranslateLanguage
 ): Promise<GoogleTranslationResult> {
-  if (!isAuthorMode()) throw new Error("Recurso exclusivo do Modo Autor.");
+  if (!isAuthorMode()) throw new Error(t("common.thisFeatureIsOnlyAvailableInAuthorMode"));
   const normalizedText = text.trim();
 
   if (!normalizedText) {
-    throw new Error("Digite uma frase antes de solicitar a tradução.");
+    throw new Error(t("translation.enterASentenceBeforeRequestingATranslation"));
   }
 
   const apiKey = import.meta.env.VITE_GOOGLE_TRANSLATE_API_KEY;
 
   if (!apiKey) {
     throw new Error(
-      "A variável VITE_GOOGLE_TRANSLATE_API_KEY não foi configurada."
+      t("translation.viteGoogleTranslateApiKeyIsNotConfigured")
     );
   }
 
@@ -72,13 +73,13 @@ async function translateText(
 
     if (response.status === 429) {
       throw new Error(
-        "O limite de traduções do Google foi atingido. Tente novamente mais tarde."
+        t("translation.theGoogleTranslationLimitHasBeenReachedTryAgainLater")
       );
     }
 
     if (response.status === 403) {
       throw new Error(
-        `A chamada ao Google Translate foi recusada. Verifique a API key e suas restrições. ${apiMessage}`
+        t("translation.googleTranslateRejectedTheRequestCheckTheApiKeyAnd", { apiMessage: (apiMessage) })
       );
     }
 
@@ -88,7 +89,7 @@ async function translateText(
   const translation = payload.data?.translations?.[0];
 
   if (!translation?.translatedText) {
-    throw new Error("O Google não retornou uma tradução.");
+    throw new Error(t("translation.googleDidNotReturnATranslation"));
   }
 
   return {

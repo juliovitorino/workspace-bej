@@ -1,3 +1,4 @@
+import { t } from "../i18n";
 import { DEFAULT_SOURCE_LANGUAGE, DEFAULT_STUDENT_LANGUAGE, LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
 import type {
   Example,
@@ -76,13 +77,13 @@ function isIntentionV4(value: unknown): value is HashmapIntentionV4 {
 
 function validateHashmapV4(value: unknown, language: string): HashmapDataV4 {
   if (!isObject(value) || !isObject(value.metadata) || !Array.isArray(value.mentalMap)) {
-    throw new Error(`Invalid JSON (${language}): metadata or mentalMap not found.`);
+    throw new Error(t("catalog.invalidJsonLanguageMetadataOrMentalmapNotFound", { language: (language) }));
   }
   if (value.metadata.schemaVersion !== "4.0.0" || value.metadata.language !== language) {
-    throw new Error(`Invalid JSON (${language}): schemaVersion or metadata.language mismatch.`);
+    throw new Error(t("catalog.invalidJsonLanguageSchemaversionOrMetadataLanguageMismatch", { language: (language) }));
   }
   if (!value.mentalMap.length || !value.mentalMap.every(isIntentionV4)) {
-    throw new Error(`Invalid JSON (${language}): invalid mental intentions or examples.`);
+    throw new Error(t("catalog.invalidJsonLanguageInvalidMentalIntentionsOrExamples", { language: (language) }));
   }
   return value as unknown as HashmapDataV4;
 }
@@ -90,7 +91,7 @@ function validateHashmapV4(value: unknown, language: string): HashmapDataV4 {
 async function fetchCatalog(language: StudentLanguage): Promise<HashmapDataV4> {
   const response = await fetch(getHashmapUrl(language), { cache: "no-store" });
   if (!response.ok) {
-    throw new Error(`Could not load Mental Hashmap (${language}). HTTP ${response.status}`);
+    throw new Error(t("catalog.couldNotLoadMentalHashmapLanguageHttpStatus", { language: (language), status: (response.status) }));
   }
   return validateHashmapV4(await response.json(), language);
 }
@@ -175,7 +176,7 @@ function isCachedHashmapV4(value: unknown, language: StudentLanguage, source: So
 }
 
 export async function fetchHashmap(language: StudentLanguage = DEFAULT_STUDENT_LANGUAGE, source: SourceLanguage = DEFAULT_SOURCE_LANGUAGE): Promise<HashmapData> {
-  if (language === source) throw new Error("Idioma de origem e idioma de estudo devem ser diferentes.");
+  if (language === source) throw new Error(t("catalog.theSourceAndStudyLanguagesMustBeDifferent"));
   const [targetCatalog, sourceCatalog] = await Promise.all([
     fetchCatalog(language),
     fetchCatalog(source)

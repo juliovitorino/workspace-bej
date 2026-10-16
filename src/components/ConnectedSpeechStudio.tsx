@@ -1,3 +1,5 @@
+import { t } from "../i18n";
+import { useTranslation } from "react-i18next";
 import { isAuthorMode } from "../utils/authorMode";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
@@ -54,6 +56,7 @@ function StudioWindow({ popup, title, blocks, onClose }: {
   blocks: ConnectedSpeechBlock[];
   onClose: () => void;
 }) {
+  const { t } = useTranslation();
   const [originalSize, setOriginalSize] = useState(24);
   const [connectedSize, setConnectedSize] = useState(26);
   const [status, setStatus] = useState("");
@@ -85,7 +88,7 @@ function StudioWindow({ popup, title, blocks, onClose }: {
     const selection = popup.getSelection();
     const savedRange = selectionRef.current;
     if (!selection || !savedRange) {
-      setStatus("Posicione o cursor no texto de Connected Speech antes de inserir ‿.");
+      setStatus(t("connectedSpeech.placeTheCursorInTheConnectedSpeechTextBeforeInserting"));
       return;
     }
 
@@ -93,7 +96,7 @@ function StudioWindow({ popup, title, blocks, onClose }: {
       candidate?.contains(savedRange.commonAncestorContainer)
     );
     if (!editor) {
-      setStatus("Clique primeiro no texto editável de Connected Speech.");
+      setStatus(t("connectedSpeech.firstClickTheEditableConnectedSpeechText"));
       return;
     }
 
@@ -108,7 +111,7 @@ function StudioWindow({ popup, title, blocks, onClose }: {
     selection.addRange(range);
     selectionRef.current = range.cloneRange();
     editor.focus();
-    setStatus("Símbolo de linking ‿ inserido.");
+    setStatus(t("connectedSpeech.linkingSymbolInserted"));
   }
 
   function reset() {
@@ -118,7 +121,7 @@ function StudioWindow({ popup, title, blocks, onClose }: {
     });
     selectionRef.current = null;
     setRevision((value) => value + 1);
-    setStatus("Edições restauradas a partir do inglês original.");
+    setStatus(t("connectedSpeech.editsRestoredFromTheOriginalEnglish"));
   }
 
   async function copy(rich: boolean) {
@@ -148,11 +151,11 @@ function StudioWindow({ popup, title, blocks, onClose }: {
         area.select();
         const ok = popup.document.execCommand("copy");
         area.remove();
-        if (!ok) throw new Error("Clipboard indisponível");
+        if (!ok) throw new Error(t("connectedSpeech.clipboardUnavailable"));
       }
-      setStatus(rich ? "Conteúdo copiado (com formatação quando suportada)." : "Texto puro copiado.");
+      setStatus(rich ? t("connectedSpeech.contentCopiedWithFormattingWhenSupported") : t("connectedSpeech.plainTextCopied"));
     } catch {
-      setStatus("Não foi possível copiar. Verifique as permissões da área de transferência.");
+      setStatus(t("connectedSpeech.couldNotCopyCheckClipboardPermissions"));
     }
   }
 
@@ -165,43 +168,43 @@ function StudioWindow({ popup, title, blocks, onClose }: {
           <p className="studio-sub">{title}</p>
         </div>
         <div className="studio-actions">
-          <button className="studio-button" onClick={() => void copy(false)}>Copiar texto puro</button>
-          <button className="studio-button primary" onClick={() => void copy(true)}>Copiar formatado</button>
-          <button className="studio-button" onClick={() => popup.print()}>Imprimir</button>
-          <button className="studio-button" onClick={() => { popup.close(); onClose(); }}>Fechar</button>
+          <button className="studio-button" onClick={() => void copy(false)}>{t("connectedSpeech.copyPlainText")}</button>
+          <button className="studio-button primary" onClick={() => void copy(true)}>{t("connectedSpeech.copyFormattedText")}</button>
+          <button className="studio-button" onClick={() => popup.print()}>{t("common.print")}</button>
+          <button className="studio-button" onClick={() => { popup.close(); onClose(); }}>{t("common.close")}</button>
         </div>
       </header>
       <div className="studio-toolbar">
-        <label className="studio-size">Original (px)
+        <label className="studio-size">{t("connectedSpeech.originalPx")}
           <input type="number" min="14" max="72" step="2" value={originalSize} onChange={(event) => setOriginalSize(Math.max(14, Math.min(72, Number(event.target.value) || 14)))} />
         </label>
-        <label className="studio-size">Connected speech (px)
+        <label className="studio-size">{t("connectedSpeech.connectedSpeechPx")}
           <input type="number" min="14" max="72" step="2" value={connectedSize} onChange={(event) => setConnectedSize(Math.max(14, Math.min(72, Number(event.target.value) || 14)))} />
         </label>
         <span className="studio-divider" />
-        <button className="studio-button" onMouseDown={(event) => event.preventDefault()} onClick={() => format("bold")} title="Negrito"><b>B</b></button>
-        <button className="studio-button" onMouseDown={(event) => event.preventDefault()} onClick={() => format("underline")} title="Sublinhar"><u>U</u></button>
-        <button className="studio-button" onMouseDown={(event) => event.preventDefault()} onClick={insertLinkingSymbol} title="Inserir símbolo de linking (‿) na posição do cursor" aria-label="Inserir símbolo de linking">‿ Linking</button>
-        <label className="studio-color" title="Cor do texto selecionado">Texto
+        <button className="studio-button" onMouseDown={(event) => event.preventDefault()} onClick={() => format("bold")} title={t("connectedSpeech.bold")}><b>B</b></button>
+        <button className="studio-button" onMouseDown={(event) => event.preventDefault()} onClick={() => format("underline")} title={t("connectedSpeech.underline")}><u>U</u></button>
+        <button className="studio-button" onMouseDown={(event) => event.preventDefault()} onClick={insertLinkingSymbol} title={t("connectedSpeech.insertLinkingSymbolAtTheCursor")} aria-label={t("connectedSpeech.insertLinkingSymbol")}>{t("connectedSpeech.linking")}</button>
+        <label className="studio-color" title={t("connectedSpeech.selectedTextColor")}>{t("connectedSpeech.text")}
           <input type="color" defaultValue="#2563eb" onChange={(event) => format("foreColor", event.target.value)} />
         </label>
-        <label className="studio-color" title="Realce do texto selecionado">Marca-texto
+        <label className="studio-color" title={t("connectedSpeech.selectedTextHighlight")}>{t("connectedSpeech.highlighter")}
           <input type="color" defaultValue="#fde68a" onChange={(event) => format("hiliteColor", event.target.value)} />
         </label>
         <span className="studio-divider" />
-        <button className="studio-button" onClick={reset}>Restaurar edição</button>
+        <button className="studio-button" onClick={reset}>{t("connectedSpeech.resetEdits")}</button>
       </div>
-      <p className="studio-help">Posicione o cursor entre palavras e clique em ‿ Linking para inserir a ligação. Selecione um trecho para aplicar cor, marca-texto, negrito ou sublinhado. Os dois tamanhos de fonte são independentes. O texto original nunca é alterado.</p>
+      <p className="studio-help">{t("connectedSpeech.placeTheCursorBetweenWordsAndClickLinkingToInsert")}</p>
       <p className="studio-status" role="status">{status}</p>
       {blocks.map((block, index) => (
         <section className="studio-pair" key={`${revision}-${index}`}>
           <div className="studio-card">
-            <h2>Original EN-US · {index + 1}</h2>
+            <h2>{t("connectedSpeech.originalEnUs")} {index + 1}</h2>
             {block.portuguese && <p className="studio-pt">{block.portuguese}</p>}
             <div className="studio-original" style={{ fontSize: originalSize }}>{block.original}</div>
           </div>
           <div className="studio-card">
-            <h2>Connected Speech · Editável</h2>
+            <h2>{t("connectedSpeech.connectedSpeechEditable")}</h2>
             <div
               className="studio-editor"
               ref={(node) => { editorRefs.current[index] = node; }}
@@ -212,7 +215,7 @@ function StudioWindow({ popup, title, blocks, onClose }: {
               onKeyUp={saveSelection}
               onInput={saveSelection}
               style={{ fontSize: connectedSize }}
-              aria-label={`Editar connected speech do trecho ${index + 1}`}
+              aria-label={t("connectedSpeech.editConnectedSpeechForPassageNumber", { number: (index + 1) })}
             >{block.original}</div>
           </div>
         </section>
@@ -223,6 +226,7 @@ function StudioWindow({ popup, title, blocks, onClose }: {
 }
 
 export function ConnectedSpeechButton({ title, blocks, label = "Connected Speech", compact = false }: ConnectedSpeechButtonProps) {
+  const { t } = useTranslation();
   const [desktop, setDesktop] = useState(false);
   const [popup, setPopup] = useState<Window | null>(null);
   const [error, setError] = useState("");
@@ -251,7 +255,7 @@ export function ConnectedSpeechButton({ title, blocks, label = "Connected Speech
     if (!isAuthorMode()) return;
     if (popup && !popup.closed) { popup.focus(); return; }
     const newWindow = window.open("", "_blank");
-    if (!newWindow) { setError("O navegador bloqueou a nova aba. Permita pop-ups para este site."); return; }
+    if (!newWindow) { setError(t("connectedSpeech.yourBrowserBlockedTheNewTabAllowPopUpsFor")); return; }
     newWindow.document.title = `Connected Speech Studio — ${title}`;
     const style = newWindow.document.createElement("style");
     style.textContent = POPUP_STYLES;
@@ -263,7 +267,7 @@ export function ConnectedSpeechButton({ title, blocks, label = "Connected Speech
 
   return <>
     <button type="button" className="secondary-button" onClick={openStudio}
-      title="Abrir Connected Speech Studio em nova aba" aria-label={`Connected Speech: ${title}`}
+      title={t("connectedSpeech.openConnectedSpeechStudioInANewTab")} aria-label={t("connectedSpeech.connectedSpeechTitle", { title: (title) })}
       style={compact ? { width: "2.5rem", minWidth: "2.5rem", height: "2.5rem", minHeight: "2.5rem", padding: 0, borderRadius: "999px", display: "inline-flex", alignItems: "center", justifyContent: "center" } : undefined}>
       <span aria-hidden="true">🎧</span>{!compact && <> {label} ↗</>}
     </button>

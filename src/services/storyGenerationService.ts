@@ -1,3 +1,4 @@
+import { t } from "../i18n";
 import type { MentalIntention } from "../types/hashmap";
 import { getRandomLocalStory } from "./localStoryService";
 import { isAuthorMode } from "../utils/authorMode";
@@ -26,6 +27,10 @@ export interface StoryGenerationResult {
   titleEs?: string;
   titleFr?: string;
   hqImage?: string;
+  hqImagePtBr?: string;
+  hqImageEnUs?: string;
+  hqImageFrFr?: string;
+  hqImageEsEs?: string;
   paragraphs: StoryParagraph[];
   intentionsUsed: string[];
 }
@@ -111,7 +116,7 @@ function buildIntentionsContext(intentions: MentalIntention[]): string {
     .map((item, index) =>
       [
         `${index + 1}. ID: ${item.id}`,
-        `Intenção: ${item.intention}`,
+        t("common.intentionIntention", { intention: (item.intention) }),
         `English: ${item.english}`,
         `Pattern: ${item.pattern ?? "não informado"}`
       ].join("\n")
@@ -176,7 +181,7 @@ function validateStory(
     story.paragraphs.length > 10
   ) {
     throw new Error(
-      "A IA retornou uma história fora do limite de 6 a 10 parágrafos."
+      t("storyGeneration.aiReturnedAStoryOutsideThe610ParagraphLimit")
     );
   }
 
@@ -189,7 +194,7 @@ function validateStory(
 
   if (missingIntentions.length > 0) {
     throw new Error(
-      `A IA não utilizou todas as intenções solicitadas: ${missingIntentions.join(", ")}`
+      t("storyGeneration.aiDidNotUseAllRequestedIntentionsIntentions", { intentions: (missingIntentions.join(", ")) })
     );
   }
 
@@ -199,7 +204,7 @@ function validateStory(
 
   if (invalidIntentions.length > 0) {
     throw new Error(
-      `A IA retornou IDs de intenções não solicitadas: ${invalidIntentions.join(", ")}`
+      t("storyGeneration.aiReturnedIntentionIdsThatWereNotRequestedIntentions", { intentions: (invalidIntentions.join(", ")) })
     );
   }
 
@@ -207,37 +212,37 @@ function validateStory(
 
   for (const paragraph of story.paragraphs) {
     if (!paragraph.pt?.trim() || !paragraph.en?.trim()) {
-      throw new Error("A IA retornou um parágrafo incompleto.");
+      throw new Error(t("storyGeneration.aiReturnedAnIncompleteParagraph"));
     }
 
     if (!Array.isArray(paragraph.intentions)) {
       throw new Error(
-        "A IA retornou um parágrafo sem o array de intenções."
+        t("storyGeneration.aiReturnedAParagraphWithoutAnIntentionsArray")
       );
     }
 
     for (const highlight of paragraph.intentions) {
       if (!requestedIds.has(highlight.intentionId)) {
         throw new Error(
-          `A IA destacou uma intenção não solicitada: ${highlight.intentionId}`
+          t("storyGeneration.aiHighlightedAnIntentionThatWasNotRequestedIntention", { intention: (highlight.intentionId) })
         );
       }
 
       if (!highlight.ptIntent?.trim() || !highlight.enIntent?.trim()) {
         throw new Error(
-          `A IA retornou um destaque incompleto para a intenção ${highlight.intentionId}.`
+          t("storyGeneration.aiReturnedAnIncompleteHighlightForIntentionIntention", { intention: (highlight.intentionId) })
         );
       }
 
       if (!paragraph.pt.includes(highlight.ptIntent)) {
         throw new Error(
-          `O destaque PT-BR da intenção ${highlight.intentionId} não existe literalmente no parágrafo.`
+          t("storyGeneration.thePtBrHighlightForIntentionIntentionIsNotAn", { intention: (highlight.intentionId) })
         );
       }
 
       if (!paragraph.en.includes(highlight.enIntent)) {
         throw new Error(
-          `O destaque EN-US da intenção ${highlight.intentionId} não existe literalmente no parágrafo.`
+          t("storyGeneration.theEnUsHighlightForIntentionIntentionIsNotAn", { intention: (highlight.intentionId) })
         );
       }
 
@@ -251,12 +256,12 @@ function validateStory(
 
   if (missingHighlights.length > 0) {
     throw new Error(
-      `A IA não marcou no texto todas as intenções solicitadas: ${missingHighlights.join(", ")}`
+      t("storyGeneration.aiDidNotMarkAllRequestedIntentionsInTheText", { intentions: (missingHighlights.join(", ")) })
     );
   }
 
   if (!story.titlePt?.trim() || !story.titleEn?.trim()) {
-    throw new Error("A IA retornou uma história sem título completo.");
+    throw new Error(t("storyGeneration.aiReturnedAStoryWithoutACompleteTitle"));
   }
 
   return story;
@@ -267,7 +272,7 @@ export async function generateInterpretationStory(
   signal?: AbortSignal
 ): Promise<StoryGenerationResult> {
   if (!isAuthorMode() || import.meta.env.VITE_AI_ENABLED !== "true") {
-    throw new Error("A geração de histórias está disponível somente no Modo Author com IA habilitada.");
+    throw new Error(t("storyGeneration.storyGenerationIsOnlyAvailableInAuthorModeWithAi"));
   }
   signal?.throwIfAborted();
   if (!GEMINI_API_KEY) {
@@ -284,13 +289,13 @@ export async function generateInterpretationStory(
     }
 
     throw new Error(
-      "VITE_GEMINI_API_KEY não foi configurada no arquivo .env."
+      t("common.viteGeminiApiKeyIsNotConfiguredInTheEnv")
     );
   }
 
   if (!request.intentions.length) {
     throw new Error(
-      "Selecione pelo menos uma intenção para gerar a história."
+      t("storyGeneration.selectAtLeastOneIntentionToGenerateTheStory")
     );
   }
 
@@ -318,7 +323,7 @@ export async function generateInterpretationStory(
 
   const data = (await response.json()) as GeminiResponse;
   signal?.throwIfAborted();
-  if (!isAuthorMode()) throw new DOMException("Geração cancelada ao sair do Modo Author.", "AbortError");
+  if (!isAuthorMode()) throw new DOMException(t("storyGeneration.generationCanceledWhenLeavingAuthorMode"), "AbortError");
 
   if (!response.ok || data.error) {
     if (response.status === 503 || response.status === 429) {
@@ -347,7 +352,7 @@ export async function generateInterpretationStory(
 
   if (data.promptFeedback?.blockReason) {
     throw new Error(
-      `A geração foi bloqueada pela IA: ${data.promptFeedback.blockReason}.`
+      t("storyGeneration.generationWasBlockedByAiReason", { reason: (data.promptFeedback.blockReason) })
     );
   }
 
@@ -358,7 +363,7 @@ export async function generateInterpretationStory(
     .trim();
 
   if (!responseText) {
-    throw new Error("A IA não retornou uma história válida.");
+    throw new Error(t("storyGeneration.aiDidNotReturnAValidStory"));
   }
 
   try {
@@ -373,7 +378,7 @@ export async function generateInterpretationStory(
     }
 
     throw new Error(
-      "A IA retornou uma resposta em formato inesperado."
+      t("common.aiReturnedAnUnexpectedResponseFormat")
     );
   }
 }

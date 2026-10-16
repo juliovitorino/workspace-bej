@@ -1,3 +1,5 @@
+import { t, languageName as localizedLanguageName } from "../i18n";
+import { useTranslation } from "react-i18next";
 import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
 
 interface HeaderProps {
@@ -6,13 +8,14 @@ interface HeaderProps {
 }
 
 export function Header({ language, sourceLanguage }: HeaderProps) {
-  const pairLabel = LANGUAGES[sourceLanguage].name + " → " + LANGUAGES[language].name;
+  const { t } = useTranslation();
+  const pairLabel = localizedLanguageName(sourceLanguage) + " → " + localizedLanguageName(language);
   return (
     <header className="app-header">
       <div>
         <p className="eyebrow">Brazilian English Journey</p>
         <h1>Mental Hashmap</h1>
-        <p className="subtitle">Estude intenções de um idioma para outro.</p>
+        <p className="subtitle">{t("header.studyIntentionsFromOneLanguageToAnother")}</p>
       </div>
       <span className="language-pair-indicator" role="status" aria-label={pairLabel} title={pairLabel}>
         <span aria-hidden="true">{LANGUAGES[sourceLanguage].flag} → {LANGUAGES[language].flag}</span>

@@ -1,3 +1,5 @@
+import { t } from "../i18n";
+import { useTranslation } from "react-i18next";
 import type { CSSProperties } from "react";
 import type { SpeakingGameSettings } from "../types/speakingGameTypes";
 import { clampSpeakingGameSeconds } from "../utils/speakingGameEngine";
@@ -15,6 +17,7 @@ export function SpeakingGameSetupStep({
   onNext,
   onPrevious
 }: SpeakingGameSetupStepProps) {
+  const { t } = useTranslation();
   function updateSettings(patch: Partial<SpeakingGameSettings>) {
     onSettingsChange({
       ...settings,
@@ -37,17 +40,19 @@ export function SpeakingGameSetupStep({
   return (
     <section style={styles.card} aria-labelledby="speaking-game-title">
       <header style={styles.header}>
-        <span style={styles.step}>Etapa 1 de 2</span>
+        <span style={styles.step}>{t("speaking.step1Of2")}</span>
         <h1 id="speaking-game-title" style={styles.title}>
-          Jogo da Fala
+          
+          {t("common.speakingGame")}
         </h1>
         <p style={styles.subtitle}>
-          Configure o treino antes de começar.
+          
+          {t("speaking.setUpYourPracticeBeforeStarting")}
         </p>
       </header>
 
       <div style={styles.group}>
-        <h2 style={styles.groupTitle}>Tempo</h2>
+        <h2 style={styles.groupTitle}>{t("speaking.time")}</h2>
 
         <div style={styles.segmentedControl}>
           <button
@@ -61,7 +66,8 @@ export function SpeakingGameSetupStep({
                 : {})
             }}
           >
-            Manual
+            
+            {t("common.manual")}
           </button>
 
           <button
@@ -75,7 +81,8 @@ export function SpeakingGameSetupStep({
                 : {})
             }}
           >
-            Automático
+            
+            {t("common.automatic")}
           </button>
         </div>
 
@@ -89,7 +96,7 @@ export function SpeakingGameSetupStep({
             type="button"
             onClick={decreaseSeconds}
             disabled={settings.timeMode !== "automatic"}
-            aria-label="Diminuir um segundo"
+            aria-label={t("speaking.decreaseByOneSecond")}
             style={styles.roundButton}
           >
             −
@@ -97,14 +104,14 @@ export function SpeakingGameSetupStep({
 
           <div style={styles.seconds} aria-live="polite">
             <strong style={styles.secondsNumber}>{settings.seconds}</strong>
-            <span style={styles.secondsLabel}>seg</span>
+            <span style={styles.secondsLabel}>{t("speaking.sec")}</span>
           </div>
 
           <button
             type="button"
             onClick={increaseSeconds}
             disabled={settings.timeMode !== "automatic"}
-            aria-label="Aumentar um segundo"
+            aria-label={t("speaking.increaseByOneSecond")}
             style={styles.roundButton}
           >
             +
@@ -113,7 +120,7 @@ export function SpeakingGameSetupStep({
       </div>
 
       <div style={styles.group}>
-        <h2 style={styles.groupTitle}>Treino</h2>
+        <h2 style={styles.groupTitle}>{t("speaking.practice")}</h2>
 
         <div style={styles.segmentedControl}>
           <button
@@ -127,7 +134,8 @@ export function SpeakingGameSetupStep({
                 : {})
             }}
           >
-            Sequencial
+            
+            {t("speaking.sequential")}
           </button>
 
           <button
@@ -141,7 +149,8 @@ export function SpeakingGameSetupStep({
                 : {})
             }}
           >
-            Aleatório
+            
+            {t("speaking.random")}
           </button>
         </div>
       </div>
@@ -153,14 +162,16 @@ export function SpeakingGameSetupStep({
             onClick={onPrevious}
             style={styles.secondaryButton}
           >
-            ← Anterior
+            
+            {"← "}{t("common.previous")}
           </button>
         ) : (
           <span />
         )}
 
         <button type="button" onClick={onNext} style={styles.primaryButton}>
-          Próxima →
+          
+          {t("speaking.next")}{" →"}
         </button>
       </footer>
     </section>

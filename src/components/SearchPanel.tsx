@@ -1,3 +1,5 @@
+import { t, languageName as localizedLanguageName } from "../i18n";
+import { useTranslation } from "react-i18next";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
 import { createPortal } from "react-dom";
@@ -94,6 +96,7 @@ export function SearchPanel({
   onTagsChange,
   onClear
 }: SearchPanelProps) {
+  const { t } = useTranslation();
   const [isTagModalOpen, setIsTagModalOpen] = useState(false);
   const [tagQuery, setTagQuery] = useState("");
   const [draftTags, setDraftTags] = useState<string[]>([]);
@@ -159,13 +162,13 @@ export function SearchPanel({
   return (
     <section id="hashmap-search-filters" className="search-panel">
       <div className="field">
-        <label htmlFor="mental-search">Intenção — {LANGUAGES[sourceLanguage].name}</label>
+        <label htmlFor="mental-search">{t("filters.sourceCaption", { sourceLanguage: localizedLanguageName(sourceLanguage) })}</label>
         <div className="search-input-with-clear">
-        <input id="mental-search" type="search" placeholder={`Buscar intenção ou exemplo em ${LANGUAGES[sourceLanguage].name.toLowerCase()}...`}
+        <input id="mental-search" type="search" placeholder={t("filters.searchIntentionsOrExamplesInSourcelanguage", { sourceLanguage: (LANGUAGES[sourceLanguage].name.toLowerCase()) })}
           value={mentalSearch} onChange={(event) => onMentalSearchChange(event.target.value)} autoComplete="off" />
           {Boolean(mentalSearch) && (
             <button type="button" className="secondary-button mobile-clear-search-button"
-              aria-label="Limpar pesquisa no idioma de origem" title="Limpar pesquisa no idioma de origem"
+              aria-label={t("filters.clearSourceLanguageSearch")} title={t("filters.clearSourceLanguageSearch")}
               onClick={() => {
                 onMentalSearchChange("");
                 document.getElementById("mental-search")?.focus();
@@ -177,13 +180,13 @@ export function SearchPanel({
       </div>
 
       <div className="field">
-        <label htmlFor="english-search">Intenção / estrutura — {LANGUAGES[language].name}</label>
+        <label htmlFor="english-search">{t("filters.targetCaption", { targetLanguage: localizedLanguageName(language) })}</label>
         <div className="search-input-with-clear">
-        <input id="english-search" type="search" placeholder={`Buscar intenção, estrutura ou exemplo em ${LANGUAGES[language].name.toLowerCase()}...`}
+        <input id="english-search" type="search" placeholder={t("filters.searchIntentionsStructuresOrExamplesInTargetlanguage", { targetLanguage: (LANGUAGES[language].name.toLowerCase()) })}
           value={englishSearch} onChange={(event) => onEnglishSearchChange(event.target.value)} autoComplete="off" />
           {Boolean(englishSearch) && (
             <button type="button" className="secondary-button mobile-clear-search-button"
-              aria-label="Limpar pesquisa no idioma de estudo" title="Limpar pesquisa no idioma de estudo"
+              aria-label={t("filters.clearStudyLanguageSearch")} title={t("filters.clearStudyLanguageSearch")}
               onClick={() => {
                 onEnglishSearchChange("");
                 document.getElementById("english-search")?.focus();
@@ -195,13 +198,13 @@ export function SearchPanel({
       </div>
 
       <div className="field">
-        <label htmlFor="category-search">Categoria</label>
+        <label htmlFor="category-search">{t("common.category")}</label>
         <div className="search-input-with-clear">
-        <input id="category-search" type="search" placeholder="Ex.: questions, habits, conditions..."
+        <input id="category-search" type="search" placeholder={t("filters.eGQuestionsHabitsConditions")}
           value={categorySearch} onChange={(event) => onCategorySearchChange(event.target.value)} autoComplete="off" />
           {Boolean(categorySearch) && (
             <button type="button" className="secondary-button mobile-clear-search-button"
-              aria-label="Limpar categoria" title="Limpar categoria"
+              aria-label={t("filters.clearCategory")} title={t("filters.clearCategory")}
               onClick={() => {
                 onCategorySearchChange("");
                 document.getElementById("category-search")?.focus();
@@ -214,10 +217,10 @@ export function SearchPanel({
 
 
       <div className="field">
-        <label htmlFor="english-level-search">Nível</label>
+        <label htmlFor="english-level-search">{t("common.level")}</label>
         <select id="english-level-search" value={englishLevelSearch}
           onChange={(event) => onEnglishLevelSearchChange(event.target.value)}>
-          <option value="">Todos</option>
+          <option value="">{t("filters.allTodos")}</option>
           <option value="A1">A1</option>
           <option value="A2">A2</option>
           <option value="B1">B1</option>
@@ -228,34 +231,34 @@ export function SearchPanel({
       </div>
 
       <div className="field">
-        <label htmlFor="hq-image-filter">HQ</label>
+        <label htmlFor="hq-image-filter">{t("common.comic")}</label>
         <select id="hq-image-filter" value={hqImageFilter}
           onChange={(event) => onHqImageFilterChange(event.target.value as HqImageFilter)}>
-          <option value="all">Todas</option>
-          <option value="with">Com HQ</option>
-          <option value="without">Sem HQ</option>
+          <option value="all">{t("filters.all")}</option>
+          <option value="with">{t("filters.withComic")}</option>
+          <option value="without">{t("filters.withoutComic")}</option>
         </select>
       </div>
 
       <div className="field">
-        <label htmlFor="chunk-filter">Chunk Flashcards</label>
+        <label htmlFor="chunk-filter">{t("common.chunkFlashcards")}</label>
         <select id="chunk-filter" value={chunkFilter}
           onChange={(event) => onChunkFilterChange(event.target.value as ChunkFilter)}>
-          <option value="all">Todos</option>
-          <option value="with">Com Chunk</option>
-          <option value="without">Sem Chunk</option>
+          <option value="all">{t("filters.allTodos")}</option>
+          <option value="with">{t("filters.withChunk")}</option>
+          <option value="without">{t("filters.withoutChunk")}</option>
         </select>
       </div>
 
       {isAuthor && (
         <>
           <div className="field">
-            <label htmlFor="youtube-video-filter">YouTube Vídeo</label>
+            <label htmlFor="youtube-video-filter">{t("filters.youtubeVideo")}</label>
             <select id="youtube-video-filter" value={youtubeVideoFilter}
               onChange={(event) => onYoutubeVideoFilterChange(event.target.value as YoutubeFilter)}>
-              <option value="all">Todos</option>
-              <option value="with">Com vídeo</option>
-              <option value="without">Sem vídeo</option>
+              <option value="all">{t("filters.allTodos")}</option>
+              <option value="with">{t("filters.withVideo")}</option>
+              <option value="without">{t("filters.withoutVideo")}</option>
             </select>
           </div>
 
@@ -263,27 +266,27 @@ export function SearchPanel({
             <label htmlFor="youtube-short-filter">YouTube Short</label>
             <select id="youtube-short-filter" value={youtubeShortFilter}
               onChange={(event) => onYoutubeShortFilterChange(event.target.value as YoutubeFilter)}>
-              <option value="all">Todos</option>
-              <option value="with">Com Short</option>
-              <option value="without">Sem Short</option>
+              <option value="all">{t("filters.allTodos")}</option>
+              <option value="with">{t("filters.withShort")}</option>
+              <option value="without">{t("filters.withoutShort")}</option>
             </select>
           </div>
         </>
       )}
 
       <div className="field tag-filter-field">
-        <label htmlFor="open-tag-filter">Tags</label>
+        <label htmlFor="open-tag-filter">{t("filters.tags")}</label>
         <button id="open-tag-filter" ref={openButtonRef} type="button"
           className="secondary-button" onClick={openTagModal}
           aria-haspopup="dialog" aria-expanded={isTagModalOpen}
           style={{ width: "100%", textAlign: "left", minHeight: 38 }}>
-          {selectedTags.length ? `Selecionadas: ${selectedTags.length} — editar tags` : "Pesquisar e selecionar tags..."}
+          {selectedTags.length ? t("filters.selectedCountEditTags", { count: (selectedTags.length) }) : t("filters.searchAndSelectTags")}
         </button>
         {selectedTags.length > 0 && (
           <div className="selected-tags">
             {selectedTags.map((tag) => (
               <button type="button" className="selected-tag" key={tag}
-                onClick={() => removeTag(tag)} title={`Remover tag ${tag}`}>
+                onClick={() => removeTag(tag)} title={t("filters.removeTagTag", { tag: (tag) })}>
                 {tag} <span aria-hidden="true">×</span>
               </button>
             ))}
@@ -292,7 +295,8 @@ export function SearchPanel({
       </div>
 
       <button type="button" className="secondary-button" onClick={onClear} disabled={!hasFilters}>
-        Limpar filtros
+        
+        {t("filters.clearFilters")}
       </button>
 
       {isTagModalOpen && createPortal(
@@ -323,32 +327,34 @@ export function SearchPanel({
             }}>
             <div style={{ padding: "20px 22px 12px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
               <div>
-                <h2 id="tag-modal-title" style={{ margin: 0, fontSize: 20 }}>Filtrar por tags</h2>
+                <h2 id="tag-modal-title" style={{ margin: 0, fontSize: 20 }}>{t("filters.filterByTags")}</h2>
                 <p style={{ margin: "5px 0 0", fontSize: 13, color: "#64748b" }}>
-                  Pesquise por nome ou parte da palavra e marque as tags desejadas.
+                  
+                  {t("filters.searchByNameOrPartOfAWordAndSelect")}
                 </p>
               </div>
-              <button type="button" onClick={closeTagModal} aria-label="Fechar seleção de tags"
+              <button type="button" onClick={closeTagModal} aria-label={t("filters.closeTagSelection")}
                 style={{ border: 0, background: "transparent", fontSize: 25, cursor: "pointer", color: "#475569" }}>×</button>
             </div>
 
             <div style={{ padding: "0 22px 12px" }}>
               <input ref={searchInputRef} type="search" value={tagQuery}
                 onChange={(event) => setTagQuery(event.target.value)}
-                placeholder="Pesquisar tags... Ex.: habit, conversa, grammar"
-                aria-label="Pesquisar tags" autoComplete="off"
+                placeholder={t("filters.searchTagsEGHabitConversaGrammar")}
+                aria-label={t("filters.searchTags")} autoComplete="off"
                 style={{ width: "100%", boxSizing: "border-box", padding: "11px 12px", borderRadius: 8,
                   border: "1px solid #cbd5e1", fontSize: 15, color: "#172033", background: "#fff" }} />
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 10, gap: 8, fontSize: 13, color: "#64748b" }}>
-                <span>{matchingTags.length} {matchingTags.length === 1 ? "tag encontrada" : "tags encontradas"}</span>
-                <span>{draftTags.length} {draftTags.length === 1 ? "selecionada" : "selecionadas"}</span>
+                <span>{t("filters.tagsFound", { count: matchingTags.length })}</span>
+                <span>{t("filters.tagsSelected", { count: draftTags.length })}</span>
               </div>
             </div>
 
             <div style={{ overflowY: "auto", minHeight: 110, padding: "4px 22px 12px", flex: 1 }}>
               {matchingTags.length === 0 ? (
                 <p style={{ textAlign: "center", color: "#64748b", padding: "30px 0" }}>
-                  Nenhuma tag semelhante encontrada. Tente outra palavra.
+                  
+                  {t("filters.noSimilarTagsFoundTryAnotherWord")}
                 </p>
               ) : matchingTags.map((tag) => (
                 <label key={tag} style={{ display: "flex", alignItems: "center", gap: 12,
@@ -365,16 +371,18 @@ export function SearchPanel({
               flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
               <button type="button" onClick={() => setDraftTags([])} disabled={draftTags.length === 0}
                 style={{ background: "transparent", border: 0, color: "#475569", cursor: "pointer", padding: 8 }}>
-                Desmarcar todas
+                
+                {t("filters.deselectAll")}
               </button>
               <div style={{ display: "flex", gap: 8 }}>
                 <button type="button" onClick={closeTagModal}
                   style={{ padding: "10px 14px", borderRadius: 8, border: "1px solid #cbd5e1", background: "#fff", color: "#334155", cursor: "pointer" }}>
-                  Cancelar
+                  
+                  {t("filters.cancel")}
                 </button>
                 <button type="button" onClick={applyTags}
                   style={{ padding: "10px 16px", borderRadius: 8, border: 0, background: "#2563eb", color: "#fff", fontWeight: 600, cursor: "pointer" }}>
-                  Aplicar filtros ({draftTags.length})
+                  {t("filters.applyWithCount", { count: draftTags.length })}
                 </button>
               </div>
             </div>

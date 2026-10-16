@@ -31,6 +31,10 @@ export interface LocalStory {
   titleEs?: string;
   titleFr?: string;
   hqImage?: string;
+  hqImagePtBr?: string;
+  hqImageEnUs?: string;
+  hqImageFrFr?: string;
+  hqImageEsEs?: string;
   paragraphs: LocalStoryParagraph[];
   intentionsUsed: string[];
 }
@@ -47,6 +51,29 @@ const libraries: Record<string, LocalStoryLibrary> = {
   C1: storiesC1 as LocalStoryLibrary,
   C2: storiesC2 as LocalStoryLibrary,
 };
+
+/**
+ * Returns only the comic image for the selected origin language (Source).
+ * Legacy `hqImage` is an alias for pt-BR, never a fallback for other languages.
+ */
+export function getStoryHqImage(
+  story: Pick<LocalStory, "hqImage" | "hqImagePtBr" | "hqImageEnUs" | "hqImageFrFr" | "hqImageEsEs">,
+  language: StudentLanguage
+): string | undefined {
+  const image = (() => {
+    switch (language) {
+      case "pt-BR":
+        return story.hqImagePtBr?.trim() || story.hqImage?.trim();
+      case "en-US":
+        return story.hqImageEnUs?.trim();
+      case "fr-FR":
+        return story.hqImageFrFr?.trim();
+      case "es-ES":
+        return story.hqImageEsEs?.trim();
+    }
+  })();
+  return image || undefined;
+}
 
 const storyLanguageFields = {
   "pt-BR": { title: "titlePt", paragraph: "pt", intention: "ptIntent" },

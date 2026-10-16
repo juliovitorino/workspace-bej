@@ -1,3 +1,5 @@
+import { t, languageName as localizedLanguageName } from "../i18n";
+import { useTranslation } from "react-i18next";
 import { ControlIcon } from "./ControlIcon";
 import { useMemo, useRef, useState } from "react";
 import { LANGUAGES, type StudentLanguage } from "../config/languages";
@@ -7,21 +9,22 @@ import { useStoryShadowing } from "../hooks/useStoryShadowing";
 import { ChunkLevelSelect } from "./ChunkLevelSelect";
 import type { ChunkLevel } from "../utils/chunkEligibility";
 
-const techniqueNames = { listen: "Listen — Escutar", repeat: "Repeat after me — Repetir após a voz", shadow: "Shadowing — Acompanhar a voz", combined: "Listen → Repeat after me → Shadowing" };
+const techniqueNames = () => ({ listen: t("shadowing.listen"), repeat: t("shadowing.repeatAfterMe"), shadow: t("shadowing.shadowingSpeakAlongWithTheVoice"), combined: [t("shadowing.listen"), t("shadowing.repeatAfterMe"), "Shadowing"].join(" → ") });
 function Settings({ value, onChange, sentenceAvailable }: { value: ShadowingSettings; onChange: (value: ShadowingSettings) => void; sentenceAvailable: boolean }) {
+  const { t } = useTranslation();
   function update<K extends keyof ShadowingSettings>(key: K, next: ShadowingSettings[K]) { onChange({ ...value, [key]: next }); }
   return <div className="shadowing-settings">
-    <label>Escopo<select value={value.scope} onChange={e => update("scope", e.target.value as ShadowingSettings["scope"])}><option value="story">História inteira</option><option value="paragraph">Por parágrafo</option></select></label>
-    <label>Controle<select value={value.control} onChange={e => onChange({ ...value, control: e.target.value as ShadowingSettings["control"], automatic: e.target.value === "automatic" })}><option value="automatic">Automático</option><option value="manual">Manual</option></select></label>
-    <label>Técnica<select value={value.technique} onChange={e => update("technique", e.target.value as ShadowingSettings["technique"])}>{Object.entries(techniqueNames).map(([key, name]) => <option key={key} value={key}>{name}</option>)}</select></label>
-    <label>Unidade<select value={value.unit} onChange={e => update("unit", e.target.value as ShadowingSettings["unit"])}><option value="paragraph">Parágrafo completo</option><option value="sentence" disabled={!sentenceAvailable}>Frase individual{!sentenceAvailable ? " (indisponível)" : ""}</option></select></label>
-    <label>Velocidade<select value={value.rate} onChange={e => update("rate", Number(e.target.value))}>{[.8, .9, 1].map(v => <option key={v} value={v}>{v.toFixed(1)}×</option>)}</select></label>
-    <label>Repetições<select value={value.repetitions} onChange={e => update("repetitions", Number(e.target.value))}>{Array.from({ length: 10 }, (_, i) => i + 1).map(v => <option key={v}>{v}</option>)}</select></label>
-    <label>Intervalo entre reproduções (segundos)<input type="number" min="0" max="60" value={value.interval} onChange={e => update("interval", Math.max(0, Math.min(60, Number(e.target.value) || 0)))} /></label>
-    <label><input type="checkbox" checked={value.automatic} disabled={value.control === "manual"} onChange={e => update("automatic", e.target.checked)} /> Avanço automático entre parágrafos</label>
-    <label><input type="checkbox" checked={value.translation} onChange={e => update("translation", e.target.checked)} /> Mostrar tradução PT-BR</label>
-    <label><input type="checkbox" checked={value.keepAwake} onChange={e => update("keepAwake", e.target.checked)} /> Manter tela ativa, se suportado</label>
-    <p>Listen toca uma vez. As repetições configuradas se aplicam a Repeat after me e Shadowing. A pausa de resposta é estimada pelo tamanho do trecho, além do intervalo escolhido.</p>
+    <label>{t("shadowing.scope")}<select value={value.scope} onChange={e => update("scope", e.target.value as ShadowingSettings["scope"])}><option value="story">{t("shadowing.fullStory")}</option><option value="paragraph">{t("shadowing.byParagraph")}</option></select></label>
+    <label>{t("shadowing.control")}<select value={value.control} onChange={e => onChange({ ...value, control: e.target.value as ShadowingSettings["control"], automatic: e.target.value === "automatic" })}><option value="automatic">{t("common.automatic")}</option><option value="manual">{t("common.manual")}</option></select></label>
+    <label>{t("shadowing.technique")}<select value={value.technique} onChange={e => update("technique", e.target.value as ShadowingSettings["technique"])}>{Object.entries(techniqueNames()).map(([key, name]) => <option key={key} value={key}>{name}</option>)}</select></label>
+    <label>{t("shadowing.unit")}<select value={value.unit} onChange={e => update("unit", e.target.value as ShadowingSettings["unit"])}><option value="paragraph">{t("shadowing.fullParagraph")}</option><option value="sentence" disabled={!sentenceAvailable}>{t("shadowing.individualSentence")}{!sentenceAvailable ? t("shadowing.unavailable") : ""}</option></select></label>
+    <label>{t("shadowing.speed")}<select value={value.rate} onChange={e => update("rate", Number(e.target.value))}>{[.8, .9, 1].map(v => <option key={v} value={v}>{v.toFixed(1)}×</option>)}</select></label>
+    <label>{t("shadowing.repetitions")}<select value={value.repetitions} onChange={e => update("repetitions", Number(e.target.value))}>{Array.from({ length: 10 }, (_, i) => i + 1).map(v => <option key={v}>{v}</option>)}</select></label>
+    <label>{t("shadowing.intervalBetweenPlaybacksSeconds")}<input type="number" min="0" max="60" value={value.interval} onChange={e => update("interval", Math.max(0, Math.min(60, Number(e.target.value) || 0)))} /></label>
+    <label><input type="checkbox" checked={value.automatic} disabled={value.control === "manual"} onChange={e => update("automatic", e.target.checked)} />  {t("shadowing.automaticallyAdvanceBetweenParagraphs")}</label>
+    <label><input type="checkbox" checked={value.translation} onChange={e => update("translation", e.target.checked)} />  {t("shadowing.showPtBrTranslation")}</label>
+    <label><input type="checkbox" checked={value.keepAwake} onChange={e => update("keepAwake", e.target.checked)} />  {t("shadowing.keepScreenAwakeIfSupported")}</label>
+    <p>{t("shadowing.listenPlaysOnceTheConfiguredRepetitionsApplyToRepeatAfter")}</p>
   </div>;
 }
 
@@ -29,6 +32,7 @@ function Practice({ story, language, settings, selected, onSettings, onBack, onM
   story: LocalStory; language: StudentLanguage; settings: ShadowingSettings; selected: number;
   onSettings: (settings: ShadowingSettings) => void; onBack: () => void; onMenu: () => void; onRestart: () => void;
 }) {
+  const { t } = useTranslation();
   const session = useStoryShadowing(story, language, settings, selected);
   const [configuring, setConfiguring] = useState(false);
   const summaryRef = useRef<HTMLElement>(null);
@@ -41,50 +45,50 @@ function Practice({ story, language, settings, selected, onSettings, onBack, onM
   }
   const paragraph = story.paragraphs[session.paragraph];
   return <>
-    <div className="shadowing-heading"><h3>{getStoryTitle(story, language)}</h3><button type="button" onClick={() => { session.stop(); onBack(); }}>Escolher outra história</button></div>
-    <section ref={summaryRef} className="shadowing-session" aria-label="Resumo da prática">
-      <div className="shadowing-session-meta"><span>{LANGUAGES[language].name}</span><span className="shadowing-level">{story.englishLevel}</span></div>
+    <div className="shadowing-heading"><h3>{getStoryTitle(story, language)}</h3><button type="button" onClick={() => { session.stop(); onBack(); }}>{t("shadowing.chooseAnotherStory")}</button></div>
+    <section ref={summaryRef} className="shadowing-session" aria-label={t("shadowing.practiceSummary")}>
+      <div className="shadowing-session-meta"><span>{localizedLanguageName(language)}</span><span className="shadowing-level">{story.englishLevel}</span></div>
       <div className="shadowing-session-stats">
-        <div className="shadowing-session-clock"><span className="shadowing-stat-label">Tempo de prática</span><time>{formatPracticeTime(session.elapsed)}</time><span className="shadowing-stat-note">Cada minuto conta</span></div>
+        <div className="shadowing-session-clock"><span className="shadowing-stat-label">{t("shadowing.practiceTime")}</span><time>{formatPracticeTime(session.elapsed)}</time><span className="shadowing-stat-note">{t("shadowing.everyMinuteCounts")}</span></div>
         <div className="shadowing-session-progress">
-          <span className="shadowing-stat-label">{settings.scope === "paragraph" ? "Seu parágrafo" : "Sua jornada na história"}</span>
-          <p className="shadowing-paragraph-position"><strong>{String(session.paragraph + 1).padStart(2, "0")}</strong><span> / {String(story.paragraphs.length).padStart(2, "0")} parágrafos</span></p>
-          <progress aria-label="Parágrafos concluídos" value={session.completed} max={settings.scope === "paragraph" ? 1 : story.paragraphs.length} />
-          <span className="shadowing-stat-note">{session.completed} de {settings.scope === "paragraph" ? 1 : story.paragraphs.length} {session.completed === 1 ? "parágrafo concluído" : "parágrafos concluídos"}</span>
+          <span className="shadowing-stat-label">{settings.scope === "paragraph" ? t("shadowing.yourParagraph") : t("shadowing.yourStoryJourney")}</span>
+          <p className="shadowing-paragraph-position">{t("shadowing.paragraphPosition", { current: String(session.paragraph + 1).padStart(2, "0"), total: String(story.paragraphs.length).padStart(2, "0") })}</p>
+          <progress aria-label={t("shadowing.completedParagraphs")} value={session.completed} max={settings.scope === "paragraph" ? 1 : story.paragraphs.length} />
+          <span className="shadowing-stat-note">{t("shadowing.completedParagraphs", { count: session.completed, total: settings.scope === "paragraph" ? 1 : story.paragraphs.length })}</span>
         </div>
       </div>
     </section>
     {session.complete ? <div role="status" className="status-card">
-      <h3>{settings.scope === "paragraph" ? "Parágrafo concluído!" : session.completed === story.paragraphs.length ? "História concluída!" : "Prática concluída!"}</h3>
-      <p>{session.completed} parágrafo(s) concluído(s) · {techniqueNames[settings.technique]}</p>
-      <div className="shadowing-controls"><button type="button" onClick={onRestart}>Praticar novamente</button><button type="button" onClick={onBack}>Escolher outra história</button><button type="button" onClick={onMenu}>Voltar ao menu principal</button></div>
+      <h3>{settings.scope === "paragraph" ? t("shadowing.paragraphCompleted") : session.completed === story.paragraphs.length ? t("shadowing.storyComplete") : t("shadowing.practiceComplete")}</h3>
+      <p>{t("shadowing.completionSummary", { count: session.completed, technique: techniqueNames()[settings.technique] })}</p>
+      <div className="shadowing-controls"><button type="button" onClick={onRestart}>{t("shadowing.practiceAgain")}</button><button type="button" onClick={onBack}>{t("shadowing.chooseAnotherStory")}</button><button type="button" onClick={onMenu}>{t("shadowing.backToMainMenu")}</button></div>
     </div> : <>
       <article className="shadowing-reading">
         <p lang={language}>{session.segments.map((part, index) => settings.unit === "sentence" && index === session.sentence ? <mark key={index}>{part}</mark> : <span key={index}>{part}</span>)}</p>
         {settings.translation && paragraph.pt && <p className="shadowing-translation" lang="pt-BR">{paragraph.pt}</p>}
       </article>
-      <p role="status">{session.fullReading ? "Leitura completa do parágrafo" : techniqueNames[session.step.technique]} · Repetição {session.step.repetition}/{session.step.total} · <strong>{session.playing ? session.phase === "wait" ? "Pausa para praticar" : "Reproduzindo" : "Aguardando Play"}</strong></p>
-      {settings.unit === "sentence" && <p>Frase {session.sentence + 1}/{session.segments.length}</p>}
-      <div className="shadowing-controls shadowing-desktop-controls" role="group" aria-label="Controles de reprodução">
-        <button type="button" aria-label="Anterior" disabled={!session.canPrevious} onClick={() => session.navigate(-1)}>⏮ Anterior</button>
-        <button type="button" aria-label="Play" disabled={session.playing || !session.hasVoice || configuring} onClick={play}>▶ Play</button>
-        <button type="button" aria-label="Pause" disabled={!session.playing} onClick={session.pause}>⏸ Pause</button>
-        <button type="button" aria-label="Próximo" disabled={!session.canNext} onClick={() => session.navigate(1)}>Próximo ⏭</button>
-        <button type="button" aria-label="Repetir" disabled={!session.hasVoice || configuring} onClick={session.repeat}>↻ Repetir</button>
-        <button type="button" aria-label="Stop" onClick={session.stop}>■ Stop</button>
-        <button type="button" aria-label="Configurações" aria-expanded={configuring} onClick={() => { session.pause(); setConfiguring(v => !v); }}>⚙ Configurações</button>
+      <p role="status">{session.fullReading ? t("shadowing.readTheFullParagraphAloud") : techniqueNames()[session.step.technique]}  {t("shadowing.repetition")} {session.step.repetition}/{session.step.total} · <strong>{session.playing ? session.phase === "wait" ? t("shadowing.practicePause") : t("common.playing") : t("shadowing.waitingForPlay")}</strong></p>
+      {settings.unit === "sentence" && <p>{t("shadowing.sentence")} {session.sentence + 1}/{session.segments.length}</p>}
+      <div className="shadowing-controls shadowing-desktop-controls" role="group" aria-label={t("shadowing.playbackControls")}>
+        <button type="button" aria-label={t("common.previous")} disabled={!session.canPrevious} onClick={() => session.navigate(-1)}>{"⏮ "}{t("common.previous")}</button>
+        <button type="button" aria-label={t("shadowing.play")} disabled={session.playing || !session.hasVoice || configuring} onClick={play}>{"▶ "}{t("shadowing.play")}</button>
+        <button type="button" aria-label={t("common.pause")} disabled={!session.playing} onClick={session.pause}>{"⏸ "}{t("common.pause")}</button>
+        <button type="button" aria-label={t("common.next")} disabled={!session.canNext} onClick={() => session.navigate(1)}>{t("common.next")}{" ⏭"}</button>
+        <button type="button" aria-label={t("shadowing.repeat")} disabled={!session.hasVoice || configuring} onClick={session.repeat}>{"↻ "}{t("shadowing.repeat")}</button>
+        <button type="button" aria-label={t("common.stop")} onClick={session.stop}>{"■ "}{t("common.stop")}</button>
+        <button type="button" aria-label={t("shadowing.settings")} aria-expanded={configuring} onClick={() => { session.pause(); setConfiguring(v => !v); }}>{t("shadowing.settings")}</button>
       </div>
-      <div className="shadowing-mobile-controls" role="group" aria-label="Controles de reprodu??o mobile">
-        <button type="button" aria-label="Anterior" disabled={!session.canPrevious} onClick={() => session.navigate(-1)}><ControlIcon lucide name="previous" /></button>
-        <button type="button" className="walking-toggle" aria-label={session.playing ? "Pausar" : "Continuar"} disabled={!session.playing && (!session.hasVoice || configuring)} onClick={session.playing ? session.pause : play}><ControlIcon lucide name={session.playing ? "pause" : "play"} /></button>
-        <button type="button" aria-label="Pr?ximo" disabled={!session.canNext} onClick={() => session.navigate(1)}><ControlIcon lucide name="next" /></button>
-        <button type="button" aria-label="Repetir" disabled={!session.hasVoice || configuring} onClick={session.repeat}><ControlIcon lucide name="repeat" /></button>
-        <button type="button" aria-label="Parar" onClick={session.stop}><ControlIcon lucide name="stop" /></button>
-        <button type="button" aria-label="Configura??es" aria-expanded={configuring} onClick={() => { session.pause(); setConfiguring(v => !v); }}><ControlIcon lucide name="settings" /></button>
+      <div className="shadowing-mobile-controls" role="group" aria-label={t("shadowing.mobilePlaybackControls")}>
+        <button type="button" aria-label={t("common.previous")} disabled={!session.canPrevious} onClick={() => session.navigate(-1)}><ControlIcon lucide name="previous" /></button>
+        <button type="button" className="walking-toggle" aria-label={session.playing ? t("common.pause") : t("common.resume")} disabled={!session.playing && (!session.hasVoice || configuring)} onClick={session.playing ? session.pause : play}><ControlIcon lucide name={session.playing ? "pause" : "play"} /></button>
+        <button type="button" aria-label={t("common.next")} disabled={!session.canNext} onClick={() => session.navigate(1)}><ControlIcon lucide name="next" /></button>
+        <button type="button" aria-label={t("shadowing.repeat")} disabled={!session.hasVoice || configuring} onClick={session.repeat}><ControlIcon lucide name="repeat" /></button>
+        <button type="button" aria-label={t("common.stop")} onClick={session.stop}><ControlIcon lucide name="stop" /></button>
+        <button type="button" aria-label={t("shadowing.settings")} aria-expanded={configuring} onClick={() => { session.pause(); setConfiguring(v => !v); }}><ControlIcon lucide name="settings" /></button>
       </div>
     </>}
-    {settings.unit === "sentence" && <button type="button" disabled={!session.hasVoice || configuring} onClick={session.readParagraph}>Ouvir parágrafo completo</button>}
-    {!session.hasVoice && <p role="alert">Nenhuma voz compatível disponível. Habilite uma voz de {LANGUAGES[language].name} no sistema ou navegador. A lista será atualizada quando as vozes carregarem; o texto continua disponível para leitura.</p>}
+    {settings.unit === "sentence" && <button type="button" disabled={!session.hasVoice || configuring} onClick={session.readParagraph}>{t("shadowing.listenToTheFullParagraph")}</button>}
+    {!session.hasVoice && <p role="alert">{t("shadowing.noVoiceForLanguage", { targetLanguage: localizedLanguageName(language) })}</p>}
     {session.error && <p role="alert">{session.error}</p>}
     {session.warning && <p role="status">{session.warning}</p>}
     {configuring && <Settings value={settings} sentenceAvailable={story.paragraphs.some(p => sentenceSegments(getParagraphText(p, language), language).length > 1)} onChange={value => {
@@ -92,11 +96,12 @@ function Practice({ story, language, settings, selected, onSettings, onBack, onM
       // The selected scope applies to the current paragraph when changed during practice.
       onSettings(value);
     }} />}
-    <p className="walking-note">Ao continuar uma fala pausada, o trecho atual recomeça. Pausas programadas retomam o tempo restante. Mantenha a página aberta: áudio em segundo plano ou com a tela bloqueada depende do navegador e do sistema.</p>
+    <p className="walking-note">{t("shadowing.resumingPausedSpeechRestartsTheCurrentPassageScheduledPausesResume")}</p>
   </>;
 }
 
 export function StoryShadowing({ language, onMenu }: { language: StudentLanguage; onMenu: () => void }) {
+  const { t } = useTranslation();
   const [level, setLevel] = useState<ChunkLevel>("all");
   const [query, setQuery] = useState("");
   const [story, setStory] = useState<LocalStory | null>(null);
@@ -107,30 +112,30 @@ export function StoryShadowing({ language, onMenu }: { language: StudentLanguage
   const stories = useMemo(() => searchShadowingStories(language, level, query), [language, level, query]);
   function back() { setPracticing(false); setStory(null); }
   return <section className="shadowing" aria-labelledby="shadowing-title">
-    <h2 id="shadowing-title">🎧 Shadowing</h2>
+    <h2 id="shadowing-title">{"🎧 "}{t("common.shadowing")}</h2>
     {practicing && story ? <Practice key={sessionVersion} {...{ story, language, settings, selected, onMenu }} onRestart={() => setSessionVersion(v => v + 1)} onSettings={setSettings} onBack={back} /> : story ? <>
-      <h3>{getStoryTitle(story, language)}</h3><p>{story.englishLevel} · {story.paragraphs.length} parágrafos</p>
+      <h3>{getStoryTitle(story, language)}</h3><p>{story.englishLevel} · {t("shadowing.paragraphsCount", { count: story.paragraphs.length })}</p>
       <Settings value={settings} onChange={setSettings} sentenceAvailable={story.paragraphs.some(p => sentenceSegments(getParagraphText(p, language), language).length > 1)} />
-      {settings.scope === "paragraph" && <label>Selecionar parágrafo<select value={selected} onChange={e => setSelected(Number(e.target.value))}>{story.paragraphs.map((_, i) => <option key={i} value={i}>Parágrafo {i + 1}</option>)}</select></label>}
+      {settings.scope === "paragraph" && <label>{t("shadowing.selectParagraph")}<select value={selected} onChange={e => setSelected(Number(e.target.value))}>{story.paragraphs.map((_, i) => <option key={i} value={i}>{t("shadowing.paragraph")} {i + 1}</option>)}</select></label>}
       <p className="shadowing-preview" lang={language}>{getParagraphText(story.paragraphs[settings.scope === "paragraph" ? selected : 0], language)}</p>
-      <div className="shadowing-controls"><button type="button" onClick={back}>Voltar à seleção</button><button type="button" className="primary-button" onClick={() => { if (settings.scope === "story") setSelected(0); setPracticing(true); }}>Iniciar prática</button></div>
+      <div className="shadowing-controls"><button type="button" onClick={back}>{t("shadowing.backToSelection")}</button><button type="button" className="primary-button" onClick={() => { if (settings.scope === "story") setSelected(0); setPracticing(true); }}>{t("shadowing.startPractice")}</button></div>
     </> : <>
       <div className="shadowing-library-tools">
         <div className="shadowing-library-heading">
-          <div><span className="shadowing-library-eyebrow">Sua próxima prática</span><h3>Escolha uma história</h3><p>Encontre um tema que desperte sua curiosidade e pratique no seu ritmo.</p></div>
-          <p className="shadowing-library-count" role="status"><strong>{stories.length}</strong><span>{stories.length === 1 ? "história disponível" : "histórias disponíveis"}</span></p>
+          <div><span className="shadowing-library-eyebrow">{t("shadowing.yourNextPractice")}</span><h3>{t("shadowing.chooseAStory")}</h3><p>{t("shadowing.findATopicThatSparksYourCuriosityAndPracticeAt")}</p></div>
+          <p className="shadowing-library-count" role="status"><strong>{stories.length}</strong><span>{t("shadowing.availableStories", { count: stories.length })}</span></p>
         </div>
-        <div className="shadowing-search" role="search" aria-label="Pesquisar histórias para Shadowing">
+        <div className="shadowing-search" role="search" aria-label={t("shadowing.searchStoriesForShadowing")}>
           <ChunkLevelSelect value={level} onChange={setLevel} />
-          <label>Pesquisar histórias<input type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Digite parte do título ou um tema" /></label>
+          <label>{t("common.searchStories")}<input type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder={t("shadowing.typePartOfTheTitleOrATopic")} /></label>
         </div>
       </div>
-      {!stories.length && <p>{language !== "en-US" ? "Ainda não há histórias disponíveis neste idioma. Selecione outro idioma no cabeçalho para consultar sua biblioteca." : "Nenhuma história corresponde aos filtros. Experimente outro nível ou título."}</p>}
+      {!stories.length && <p>{language !== "en-US" ? t("shadowing.noStoriesAreAvailableInThisLanguageYetSelectAnother") : t("shadowing.noStoriesMatchTheFiltersTryAnotherLevelOrTitle")}</p>}
       <div className="shadowing-stories">{stories.map((item, i) => <article key={i}>
-        <h3 lang={language}>{getStoryTitle(item, language)}</h3><p>{item.englishLevel} · {item.paragraphs.length} parágrafos</p>
+        <h3 lang={language}>{getStoryTitle(item, language)}</h3><p>{item.englishLevel} · {t("shadowing.paragraphsCount", { count: item.paragraphs.length })}</p>
         {item.topic && <span className="pill">{item.topic}</span>}
         <p className="shadowing-preview" lang={language}>{getParagraphText(item.paragraphs[0], language)}</p>
-        <button type="button" className="primary-button" onClick={() => { setStory(item); setSelected(0); setPracticing(true); }}>Praticar</button>
+        <button type="button" className="primary-button" onClick={() => { setStory(item); setSelected(0); setPracticing(true); }}>{t("shadowing.practice")}</button>
       </article>)}</div>
     </>}
   </section>;

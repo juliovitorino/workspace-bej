@@ -1,6 +1,9 @@
+import { t } from "../i18n";
+import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 
 export function ScrollToTopButton() {
+  const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -22,7 +25,7 @@ export function ScrollToTopButton() {
   if (!visible) return null;
 
   return (
-    <button type="button" className="scroll-to-top-button" aria-label="Ir para o topo" title="Ir para o topo"
+    <button type="button" className="scroll-to-top-button" aria-label={t("navigation.backToTop")} title={t("navigation.backToTop")}
       onClick={() => window.scrollTo({
         top: 0,
         behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth"

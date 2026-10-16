@@ -1,3 +1,5 @@
+import { t, languageName as localizedLanguageName } from "../i18n";
+import { useTranslation } from "react-i18next";
 import { isAuthorMode } from "../utils/authorMode";
 import { LANGUAGES, type StudentLanguage } from "../config/languages";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
@@ -106,7 +108,8 @@ export function ReviewTraining({
   language,
   onBack
 }: ReviewTrainingProps) {
-  const languageName = LANGUAGES[language].name.toLowerCase();
+  const { t } = useTranslation();
+  const languageName = localizedLanguageName(language).toLowerCase();
   const [studentText, setStudentText] = useState("");
   const intentionValidation = useMemo(
     () => validateIntention(studentText, intention),
@@ -169,7 +172,7 @@ export function ReviewTraining({
 
     if (!SpeechRecognitionApi) {
       setDictationError(
-        "O ditado por voz não está disponível neste navegador. Use Chrome ou Edge no computador."
+        t("common.voiceDictationIsUnavailableInThisBrowserUseChromeOr")
       );
       return;
     }
@@ -231,19 +234,19 @@ export function ReviewTraining({
 
       if (event.error === "not-allowed" || event.error === "service-not-allowed") {
         setDictationError(
-          "Permita o acesso ao microfone no navegador para usar o ditado."
+          t("common.allowMicrophoneAccessInYourBrowserToUseDictation")
         );
         return;
       }
 
       if (event.error === "no-speech") {
         setDictationError(
-          "Nenhuma fala foi detectada. Clique no microfone e tente novamente."
+          t("common.noSpeechDetectedClickTheMicrophoneAndTryAgain")
         );
         return;
       }
 
-      setDictationError("Não foi possível reconhecer sua fala. Tente novamente.");
+      setDictationError(t("common.couldNotRecognizeYourSpeechTryAgain"));
     };
 
     recognition.onend = () => {
@@ -258,7 +261,7 @@ export function ReviewTraining({
     } catch {
       recognitionRef.current = null;
       setDictating(false);
-      setDictationError("Não foi possível iniciar o microfone.");
+      setDictationError(t("common.couldNotStartTheMicrophone"));
     }
   }
 
@@ -307,7 +310,7 @@ export function ReviewTraining({
         document.body.removeChild(textarea);
 
         if (!copied) {
-          throw new Error("Não foi possível copiar a frase.");
+          throw new Error(t("common.couldNotCopyTheSentence"));
         }
       }
 
@@ -372,7 +375,7 @@ export function ReviewTraining({
     }
 
     const printFrame = document.createElement("iframe");
-    printFrame.setAttribute("title", "Impressão da folha de exercícios");
+    printFrame.setAttribute("title", t("common.printWorksheet"));
     printFrame.setAttribute("aria-hidden", "true");
     printFrame.style.position = "fixed";
     printFrame.style.width = "0";
@@ -419,7 +422,7 @@ export function ReviewTraining({
     if (!isAuthorMode()) return;
     if (!studentText.trim()) {
       setEvaluationError(
-        "Escreva ou dite uma frase antes de solicitar a avaliação."
+        t("common.writeOrDictateASentenceBeforeRequestingAnEvaluation")
       );
       return;
     }
@@ -447,7 +450,7 @@ export function ReviewTraining({
       setEvaluationError(
         err instanceof Error
           ? err.message
-          : "Não foi possível avaliar a frase."
+          : t("common.couldNotEvaluateTheSentence")
       );
     } finally {
       setEvaluating(false);
@@ -458,7 +461,7 @@ export function ReviewTraining({
     if (!isAuthorMode()) return;
     if (!studentText.trim()) {
       setTranslationError(
-        "Escreva ou dite uma frase antes de solicitar a tradução."
+        t("common.writeOrDictateASentenceBeforeRequestingATranslation")
       );
       return;
     }
@@ -474,7 +477,7 @@ export function ReviewTraining({
       setTranslationError(
         err instanceof Error
           ? err.message
-          : "Não foi possível traduzir a frase com o Google."
+          : t("common.couldNotTranslateTheSentenceWithGoogle")
       );
     } finally {
       setTranslating(false);
@@ -485,13 +488,13 @@ export function ReviewTraining({
     const englishText = studentText.trim();
 
     if (!englishText) {
-      setSpeechError(`Não há uma frase em ${languageName} para reproduzir.`);
+      setSpeechError(t("common.thereIsNoSentenceInTargetlanguageToPlay", { targetLanguage: (languageName) }));
       return;
     }
 
     if (!("speechSynthesis" in window)) {
       setSpeechError(
-        "O recurso de voz não está disponível neste navegador."
+        t("common.speechPlaybackIsUnavailableInThisBrowser")
       );
       return;
     }
@@ -526,7 +529,7 @@ export function ReviewTraining({
 
     utterance.onerror = () => {
       setSpeaking(false);
-      setSpeechError(`Não foi possível reproduzir a frase em ${languageName}.`);
+      setSpeechError(t("common.couldNotPlayTheSentenceInTargetlanguage", { targetLanguage: (languageName) }));
     };
 
     window.speechSynthesis.speak(utterance);
@@ -554,7 +557,7 @@ export function ReviewTraining({
         try {
           textarea.select();
           if (!document.execCommand("copy")) {
-            throw new Error("Falha ao copiar a frase.");
+            throw new Error(t("common.failedToCopyTheSentence"));
           }
         } finally {
           textarea.remove();
@@ -573,13 +576,13 @@ export function ReviewTraining({
     const englishText = text.trim();
 
     if (!englishText) {
-      setSpeechError(`Não há uma frase em ${languageName} para reproduzir.`);
+      setSpeechError(t("common.thereIsNoSentenceInTargetlanguageToPlay", { targetLanguage: (languageName) }));
       return;
     }
 
     if (!("speechSynthesis" in window)) {
       setSpeechError(
-        "O recurso de voz não está disponível neste navegador."
+        t("common.speechPlaybackIsUnavailableInThisBrowser")
       );
       return;
     }
@@ -616,7 +619,7 @@ export function ReviewTraining({
 
     utterance.onerror = () => {
       setEvaluationSpeaking(null);
-      setSpeechError(`Não foi possível reproduzir a frase em ${languageName}.`);
+      setSpeechError(t("common.couldNotPlayTheSentenceInTargetlanguage", { targetLanguage: (languageName) }));
     };
 
     window.speechSynthesis.speak(utterance);
@@ -630,19 +633,20 @@ export function ReviewTraining({
           className="secondary-button"
           onClick={onBack}
         >
-          Voltar para o Hashmap
+          
+          {t("common.backToHashmap")}
         </button>
 
       </div>
 
       <div className="training-page-header">
-        <p className="eyebrow">Revisão</p>
+        <p className="eyebrow">{t("common.review")}</p>
         <h1>{intention.intention}</h1>
         <p className="detail-english">{intention.targetIntention ?? intention.english}</p>
 
         {intention.examples && intention.examples.length > 0 && (
           <section className="training-intention-example">
-            <h3>Exemplo</h3>
+            <h3>{t("common.example")}</h3>
             <div className="example">
               <p>
                 {renderHighlightedText(
@@ -665,8 +669,8 @@ export function ReviewTraining({
         )}
 
         <p className="training-instruction">
-          Crie uma frase livre em inglês usando a intenção mental.
-          Você pode escrever ou ditar sua resposta.
+          
+          {t("reviewTraining.createYourOwnSentenceInEnglishUsingTheCommunicativeIntention")}
         </p>
       </div>
 
@@ -680,7 +684,8 @@ export function ReviewTraining({
               }}
             >
               <label htmlFor="review-training-answer" style={{ margin: 0 }}>
-                Escreva (Dite) sua frase
+                
+                {t("common.writeDictateYourSentence")}
               </label>
 
               {studentText.length > 0 && (
@@ -688,8 +693,8 @@ export function ReviewTraining({
                   type="button"
                   className="secondary-button"
                   onClick={handleClearStudentText}
-                  title="Limpar frase"
-                  aria-label="Limpar frase"
+                  title={t("common.clearSentence")}
+                  aria-label={t("common.clearSentence")}
                   style={{
                     width: "2.25rem",
                     minWidth: "2.25rem",
@@ -728,8 +733,8 @@ export function ReviewTraining({
                 type="button"
                 className="secondary-button"
                 onClick={handleToggleDictation}
-                title={dictating ? "Parar ditado" : "Ditar frase em inglês"}
-                aria-label={dictating ? "Parar ditado" : "Ditar frase em inglês"}
+                title={dictating ? t("common.stopDictation") : t("common.dictateASentenceInEnglish")}
+                aria-label={dictating ? t("common.stopDictation") : t("common.dictateASentenceInEnglish")}
                 aria-pressed={dictating}
                 style={{
                   width: "2.25rem",
@@ -774,17 +779,17 @@ export function ReviewTraining({
                 disabled={!studentText.trim()}
                 title={
                   copyStatus === "copied"
-                    ? "Frase copiada"
+                    ? t("common.sentenceCopied")
                     : copyStatus === "error"
-                      ? "Erro ao copiar"
-                      : "Copiar frase"
+                      ? t("common.copyError")
+                      : t("common.copySentence")
                 }
                 aria-label={
                   copyStatus === "copied"
-                    ? "Frase copiada"
+                    ? t("common.sentenceCopied")
                     : copyStatus === "error"
-                      ? "Erro ao copiar a frase"
-                      : "Copiar frase para a área de transferência"
+                      ? t("common.errorCopyingTheSentence")
+                      : t("common.copySentenceToTheClipboard")
                 }
                 style={{
                   width: "2.25rem",
@@ -824,8 +829,8 @@ export function ReviewTraining({
                 className="secondary-button"
                 onClick={handleOpenGoogleTranslate}
                 disabled={!studentText.trim()}
-                title="Abrir no Google Tradutor (inglês → português)"
-                aria-label="Abrir frase no Google Tradutor do inglês para português"
+                title={t("common.openInGoogleTranslateEnglishPortuguese")}
+                aria-label={t("common.openSentenceInGoogleTranslateFromEnglishToPortuguese")}
                 style={{
                   width: "2.25rem",
                   minWidth: "2.25rem",
@@ -858,8 +863,8 @@ export function ReviewTraining({
                 className="secondary-button"
                 onClick={handlePrintWorksheet}
                 
-                title="Imprimir folha de exercícios (A4)"
-                aria-label="Imprimir folha de revisão"
+                title={t("common.printWorksheetA4")}
+                aria-label={t("reviewTraining.printReviewWorksheet")}
                 style={{
                   width: "2.25rem",
                   minWidth: "2.25rem",
@@ -895,7 +900,7 @@ export function ReviewTraining({
             <textarea
               id="review-training-answer"
               rows={5}
-              placeholder={`Digite sua frase em ${languageName}...`}
+              placeholder={t("common.typeYourSentenceInTargetlanguage", { targetLanguage: (languageName) })}
               value={studentText}
               onChange={(event) => {
                 setStudentText(event.target.value);
@@ -952,10 +957,10 @@ export function ReviewTraining({
                 }}
               >
                 {intentionValidation.status === "found"
-                  ? "✓ Intenção mental identificada!"
+                  ? "✓ " + t("common.communicativeIntentionIdentified")
                   : intentionValidation.status === "missing"
-                    ? "⚠ Você ainda não utilizou a intenção mental."
-                    : "Validação automática indisponível para esta intenção."}
+                    ? "⚠ " + t("common.youHavenTUsedTheCommunicativeIntentionYet")
+                    : t("common.automaticValidationIsUnavailableForThisIntention")}
               </p>
             )}
 
@@ -981,8 +986,8 @@ export function ReviewTraining({
                   disabled={evaluating || !studentText.trim()}
                 >
                   {evaluating
-                    ? "Avaliando com IA..."
-                    : "Avaliar com IA"}
+                    ? t("common.evaluatingWithAi")
+                    : t("common.evaluateWithAi")}
                 </button>
               )}
 
@@ -995,7 +1000,7 @@ export function ReviewTraining({
               >
                 {translating
                   ? "Traduzindo..."
-                  : "Traduzir com Google"}
+                  : t("common.translateWithGoogle")}
               </button>
               )}
             </div>
@@ -1003,7 +1008,7 @@ export function ReviewTraining({
 
           {isAuthorMode() && translationError && (
             <div className="status-card error-card google-translation-error">
-              <h2>Não foi possível traduzir a frase.</h2>
+              <h2>{t("common.couldNotTranslateTheSentence")}</h2>
               <p>{translationError}</p>
             </div>
           )}
@@ -1011,8 +1016,8 @@ export function ReviewTraining({
           {isAuthorMode() && googleTranslation && (
             <>
               <section className="status-card google-translation-card" ref={googleTranslationCardRef}>
-                <p className="eyebrow">Tradução do Google</p>
-                <h2>Versão em português</h2>
+                <p className="eyebrow">{t("common.googleTranslation")}</p>
+                <h2>{t("common.portugueseVersion")}</h2>
                 <p>{googleTranslation}</p>
               </section>
 
@@ -1023,7 +1028,7 @@ export function ReviewTraining({
                   onClick={handleSpeakEnglish}
                   disabled={speaking || !studentText.trim()}
                 >
-                  {speaking ? "🔊 Reproduzindo..." : `🔊 Ouvir ${languageName}`}
+                  {speaking ? "🔊 " + t("common.playing") : "🔊 " + t("common.listenInTargetlanguage", { targetLanguage: (languageName) })}
                 </button>
               </div>
             </>
@@ -1031,14 +1036,14 @@ export function ReviewTraining({
 
           {speechError && (
             <div className="status-card error-card google-translation-error">
-              <h2>Não foi possível reproduzir o áudio.</h2>
+              <h2>{t("common.couldNotPlayTheAudio")}</h2>
               <p>{speechError}</p>
             </div>
           )}
 
           {AI_ENABLED && isAuthorMode() && evaluationError && (
             <div className="status-card error-card ai-evaluation-error">
-              <h2>Não foi possível avaliar a frase.</h2>
+              <h2>{t("common.couldNotEvaluateTheSentence")}</h2>
               <p>{evaluationError}</p>
             </div>
           )}
@@ -1048,8 +1053,8 @@ export function ReviewTraining({
             <section className="ai-evaluation-card" ref={aiEvaluationCardRef}>
               <div className="ai-evaluation-header">
                 <div>
-                  <p className="eyebrow">Avaliação com IA</p>
-                  <h2>Resultado do treino</h2>
+                  <p className="eyebrow">{t("common.aiEvaluation")}</p>
+                  <h2>{t("common.practiceResults")}</h2>
                 </div>
 
                 <div className="ai-score">
@@ -1060,33 +1065,33 @@ export function ReviewTraining({
 
               <div className="ai-evaluation-grid">
                 <div>
-                  <span>Gramática</span>
+                  <span>{t("common.grammar")}</span>
                   <strong>{evaluation.grammar}</strong>
                 </div>
 
                 <div>
-                  <span>Naturalidade</span>
+                  <span>{t("common.naturalness")}</span>
                   <strong>{evaluation.naturalness}</strong>
                 </div>
 
                 <div>
-                  <span>Intenção mental</span>
+                  <span>{t("common.communicativeIntention")}</span>
                   <strong>
                     {evaluation.intentionUsedCorrectly
-                      ? "Correta"
-                      : "Precisa melhorar"}
+                      ? t("common.correct")
+                      : t("common.needsImprovement")}
                   </strong>
                 </div>
 
               </div>
 
               <div className="ai-feedback-section">
-                <h3>Feedback</h3>
+                <h3>{t("common.feedback")}</h3>
                 <p>{evaluation.feedbackPt}</p>
               </div>
 
               <div className="ai-feedback-section">
-                <h3>Correção</h3>
+                <h3>{t("common.correction")}</h3>
 
                 <div
                   style={{
@@ -1112,8 +1117,8 @@ export function ReviewTraining({
                       )
                     }
                     disabled={evaluationSpeaking === "corrected"}
-                    title="Ouvir a correção em inglês"
-                    aria-label="Ouvir a correção em inglês"
+                    title={t("common.listenToTheCorrectionInEnglish")}
+                    aria-label={t("common.listenToTheCorrectionInEnglish")}
                     style={{
                       width: "2.5rem",
                       minWidth: "2.5rem",
@@ -1143,15 +1148,15 @@ export function ReviewTraining({
                     title={
                       evaluationCopyStatus?.target === "corrected"
                         ? evaluationCopyStatus.status === "copied"
-                          ? "Frase copiada!"
-                          : "Não foi possível copiar a frase"
-                        : "Copiar correção"
+                          ? t("common.sentenceCopied")
+                          : t("common.couldNotCopyTheSentence")
+                        : t("common.copyCorrection")
                     }
                     aria-label={
                       evaluationCopyStatus?.target === "corrected" &&
                       evaluationCopyStatus.status === "copied"
-                        ? "Frase copiada para a área de transferência"
-                        : "Copiar correção para a área de transferência"
+                        ? t("common.sentenceCopiedToTheClipboard")
+                        : t("common.copyCorrectionToTheClipboard")
                     }
                     style={{
                       width: "2.5rem",
@@ -1192,8 +1197,8 @@ export function ReviewTraining({
                     className="secondary-button"
                     onClick={() => handleOpenEvaluationGoogleTranslate(evaluation.correctedSentence)}
                     disabled={!evaluation.correctedSentence.trim()}
-                    title="Traduzir correção no Google Tradutor (inglês → português)"
-                    aria-label="Abrir correção no Google Tradutor do inglês para português"
+                    title={t("common.translateCorrectionInGoogleTranslateEnglishPortuguese")}
+                    aria-label={t("common.openCorrectionInGoogleTranslateFromEnglishToPortuguese")}
                     style={{
                       width: "2.5rem",
                       minWidth: "2.5rem",
@@ -1225,7 +1230,7 @@ export function ReviewTraining({
               </div>
 
               <div className="ai-feedback-section">
-                <h3>Versão mais natural</h3>
+                <h3>{t("common.moreNaturalVersion")}</h3>
 
                 <div
                   style={{
@@ -1251,8 +1256,8 @@ export function ReviewTraining({
                       )
                     }
                     disabled={evaluationSpeaking === "better"}
-                    title="Ouvir a versão mais natural em inglês"
-                    aria-label="Ouvir a versão mais natural em inglês"
+                    title={t("common.listenToTheMoreNaturalVersionInEnglish")}
+                    aria-label={t("common.listenToTheMoreNaturalVersionInEnglish")}
                     style={{
                       width: "2.5rem",
                       minWidth: "2.5rem",
@@ -1282,15 +1287,15 @@ export function ReviewTraining({
                     title={
                       evaluationCopyStatus?.target === "better"
                         ? evaluationCopyStatus.status === "copied"
-                          ? "Frase copiada!"
-                          : "Não foi possível copiar a frase"
-                        : "Copiar versão mais natural"
+                          ? t("common.sentenceCopied")
+                          : t("common.couldNotCopyTheSentence")
+                        : t("common.copyTheMoreNaturalVersion")
                     }
                     aria-label={
                       evaluationCopyStatus?.target === "better" &&
                       evaluationCopyStatus.status === "copied"
-                        ? "Frase copiada para a área de transferência"
-                        : "Copiar versão mais natural para a área de transferência"
+                        ? t("common.sentenceCopiedToTheClipboard")
+                        : t("common.copyTheMoreNaturalVersionToTheClipboard")
                     }
                     style={{
                       width: "2.5rem",
@@ -1331,8 +1336,8 @@ export function ReviewTraining({
                     className="secondary-button"
                     onClick={() => handleOpenEvaluationGoogleTranslate(evaluation.betterVersion)}
                     disabled={!evaluation.betterVersion.trim()}
-                    title="Traduzir versão mais natural no Google Tradutor (inglês → português)"
-                    aria-label="Abrir versão mais natural no Google Tradutor do inglês para português"
+                    title={t("common.translateTheMoreNaturalVersionInGoogleTranslateEnglishPortuguese")}
+                    aria-label={t("common.openTheMoreNaturalVersionInGoogleTranslateFromEnglish")}
                     style={{
                       width: "2.5rem",
                       minWidth: "2.5rem",
@@ -1474,14 +1479,14 @@ export function ReviewTraining({
 
       <div className="basic-training-print-sheet" aria-hidden="true">
         <header className="worksheet-top">
-          <p className="worksheet-eyebrow">BRAZILIAN ENGLISH JOURNEY · REVISÃO</p>
+          <p className="worksheet-eyebrow">{t("reviewTraining.brazilianEnglishJourneyReview")}</p>
           <h1 className="worksheet-intention">{intention.intention}</h1>
           <p className="worksheet-english">{intention.targetIntention ?? intention.english}</p>
         </header>
 
         {intention.examples && intention.examples.length > 0 && (
           <section className="worksheet-section">
-            <h2 className="worksheet-section-title">Exemplo</h2>
+            <h2 className="worksheet-section-title">{t("common.example")}</h2>
             <div className="worksheet-example">
               <p className="worksheet-example-pt">
                 {renderHighlightedText(intention.examples[0].pt, intention.examples[0].ptIntent)}
@@ -1495,15 +1500,16 @@ export function ReviewTraining({
 
         {intention.pattern && (
           <section className="worksheet-section">
-            <h2 className="worksheet-section-title">Pattern de uso</h2>
+            <h2 className="worksheet-section-title">{t("common.usagePattern")}</h2>
             <p className="worksheet-pattern">{intention.pattern}</p>
           </section>
         )}
 
         <section className="worksheet-writing">
-          <h2 className="worksheet-writing-title">Minha prática escrita</h2>
+          <h2 className="worksheet-writing-title">{t("common.myWritingPractice")}</h2>
           <p className="worksheet-writing-instruction">
-            Crie frases em inglês usando a intenção mental.
+            
+            {t("reviewTraining.createSentencesInEnglishUsingTheCommunicativeIntention")}
           </p>
           {Array.from({ length: 10 }, (_, index) => (
             <div className="worksheet-writing-line" key={index} />

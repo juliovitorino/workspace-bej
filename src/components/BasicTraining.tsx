@@ -1,3 +1,5 @@
+import { t, languageName as localizedLanguageName } from "../i18n";
+import { useTranslation } from "react-i18next";
 import { isAuthorMode } from "../utils/authorMode";
 import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
@@ -164,8 +166,9 @@ export function BasicTraining({
   sourceLanguage,
   onBack
 }: BasicTrainingProps) {
-  const languageName = LANGUAGES[language].name.toLowerCase();
-  const sourceLanguageName = LANGUAGES[sourceLanguage].name.toLowerCase();
+  const { t } = useTranslation();
+  const languageName = localizedLanguageName(language).toLowerCase();
+  const sourceLanguageName = localizedLanguageName(sourceLanguage).toLowerCase();
   // Os vocabulários são em inglês, com significados apenas em pt-BR.
   // Para outros pares, a prática usa os exemplos bilíngues do Hashmap.
   const hasEnglishVocabulary = language === "en-US" && sourceLanguage === "pt-BR";
@@ -250,7 +253,7 @@ export function BasicTraining({
           !adjectivesResponse.ok
         ) {
           throw new Error(
-            "Não foi possível carregar os arquivos de vocabulário."
+            t("common.couldNotLoadTheVocabularyFiles")
           );
         }
 
@@ -274,7 +277,7 @@ export function BasicTraining({
         setError(
           err instanceof Error
             ? err.message
-            : "Erro inesperado ao carregar o vocabulário."
+            : t("common.anUnexpectedErrorOccurredWhileLoadingVocabulary")
         );
       } finally {
         if (active) {
@@ -343,7 +346,7 @@ export function BasicTraining({
 
   function handleSpeakReferenceExample(text: string, locale: StudentLanguage, side: "source" | "target") {
     if (!("speechSynthesis" in window)) {
-      setSpeechError("O recurso de voz não está disponível neste navegador.");
+      setSpeechError(t("common.speechPlaybackIsUnavailableInThisBrowser"));
       return;
     }
     window.speechSynthesis.cancel();
@@ -364,7 +367,7 @@ export function BasicTraining({
     utterance.onerror = (event) => {
       setSpeakingExample(null);
       if (event.error !== "interrupted" && event.error !== "canceled") {
-        setSpeechError(`Não foi possível reproduzir o exemplo em ${LANGUAGES[locale].name.toLowerCase()}.`);
+        setSpeechError(t("basicTraining.couldNotPlayTheExampleInLanguage", { language: (LANGUAGES[locale].name.toLowerCase()) }));
       }
     };
     window.speechSynthesis.speak(utterance);
@@ -380,7 +383,7 @@ export function BasicTraining({
 
     if (!SpeechRecognitionApi) {
       setDictationError(
-        "O ditado por voz não está disponível neste navegador. Use Chrome ou Edge no computador."
+        t("common.voiceDictationIsUnavailableInThisBrowserUseChromeOr")
       );
       return;
     }
@@ -442,19 +445,19 @@ export function BasicTraining({
 
       if (event.error === "not-allowed" || event.error === "service-not-allowed") {
         setDictationError(
-          "Permita o acesso ao microfone no navegador para usar o ditado."
+          t("common.allowMicrophoneAccessInYourBrowserToUseDictation")
         );
         return;
       }
 
       if (event.error === "no-speech") {
         setDictationError(
-          "Nenhuma fala foi detectada. Clique no microfone e tente novamente."
+          t("common.noSpeechDetectedClickTheMicrophoneAndTryAgain")
         );
         return;
       }
 
-      setDictationError("Não foi possível reconhecer sua fala. Tente novamente.");
+      setDictationError(t("common.couldNotRecognizeYourSpeechTryAgain"));
     };
 
     recognition.onend = () => {
@@ -469,7 +472,7 @@ export function BasicTraining({
     } catch {
       recognitionRef.current = null;
       setDictating(false);
-      setDictationError("Não foi possível iniciar o microfone.");
+      setDictationError(t("common.couldNotStartTheMicrophone"));
     }
   }
 
@@ -519,7 +522,7 @@ export function BasicTraining({
         document.body.removeChild(textarea);
 
         if (!copied) {
-          throw new Error("Não foi possível copiar a frase.");
+          throw new Error(t("common.couldNotCopyTheSentence"));
         }
       }
 
@@ -585,7 +588,7 @@ export function BasicTraining({
     }
 
     const printFrame = document.createElement("iframe");
-    printFrame.setAttribute("title", "Impressão da folha de exercícios");
+    printFrame.setAttribute("title", t("common.printWorksheet"));
     printFrame.setAttribute("aria-hidden", "true");
     printFrame.style.position = "fixed";
     printFrame.style.width = "0";
@@ -638,7 +641,7 @@ export function BasicTraining({
 
     if (!studentText.trim()) {
       setEvaluationError(
-        "Escreva ou dite uma frase antes de solicitar a avaliação."
+        t("common.writeOrDictateASentenceBeforeRequestingAnEvaluation")
       );
       return;
     }
@@ -667,7 +670,7 @@ export function BasicTraining({
       setEvaluationError(
         err instanceof Error
           ? err.message
-          : "Não foi possível avaliar a frase."
+          : t("common.couldNotEvaluateTheSentence")
       );
     } finally {
       setEvaluating(false);
@@ -678,7 +681,7 @@ export function BasicTraining({
     if (!isAuthorMode()) return;
     if (!studentText.trim()) {
       setTranslationError(
-        "Escreva ou dite uma frase antes de solicitar a tradução."
+        t("common.writeOrDictateASentenceBeforeRequestingATranslation")
       );
       return;
     }
@@ -694,7 +697,7 @@ export function BasicTraining({
       setTranslationError(
         err instanceof Error
           ? err.message
-          : "Não foi possível traduzir a frase com o Google."
+          : t("common.couldNotTranslateTheSentenceWithGoogle")
       );
     } finally {
       setTranslating(false);
@@ -705,13 +708,13 @@ export function BasicTraining({
     const englishText = studentText.trim();
 
     if (!englishText) {
-      setSpeechError(`Não há uma frase em ${languageName} para reproduzir.`);
+      setSpeechError(t("common.thereIsNoSentenceInTargetlanguageToPlay", { targetLanguage: (languageName) }));
       return;
     }
 
     if (!("speechSynthesis" in window)) {
       setSpeechError(
-        "O recurso de voz não está disponível neste navegador."
+        t("common.speechPlaybackIsUnavailableInThisBrowser")
       );
       return;
     }
@@ -746,7 +749,7 @@ export function BasicTraining({
 
     utterance.onerror = () => {
       setSpeaking(false);
-      setSpeechError(`Não foi possível reproduzir a frase em ${languageName}.`);
+      setSpeechError(t("common.couldNotPlayTheSentenceInTargetlanguage", { targetLanguage: (languageName) }));
     };
 
     window.speechSynthesis.speak(utterance);
@@ -774,7 +777,7 @@ export function BasicTraining({
         try {
           textarea.select();
           if (!document.execCommand("copy")) {
-            throw new Error("Falha ao copiar a frase.");
+            throw new Error(t("common.failedToCopyTheSentence"));
           }
         } finally {
           textarea.remove();
@@ -793,13 +796,13 @@ export function BasicTraining({
     const englishText = text.trim();
 
     if (!englishText) {
-      setSpeechError(`Não há uma frase em ${languageName} para reproduzir.`);
+      setSpeechError(t("common.thereIsNoSentenceInTargetlanguageToPlay", { targetLanguage: (languageName) }));
       return;
     }
 
     if (!("speechSynthesis" in window)) {
       setSpeechError(
-        "O recurso de voz não está disponível neste navegador."
+        t("common.speechPlaybackIsUnavailableInThisBrowser")
       );
       return;
     }
@@ -836,7 +839,7 @@ export function BasicTraining({
 
     utterance.onerror = () => {
       setEvaluationSpeaking(null);
-      setSpeechError(`Não foi possível reproduzir a frase em ${languageName}.`);
+      setSpeechError(t("common.couldNotPlayTheSentenceInTargetlanguage", { targetLanguage: (languageName) }));
     };
 
     window.speechSynthesis.speak(utterance);
@@ -850,7 +853,8 @@ export function BasicTraining({
           className="secondary-button"
           onClick={onBack}
         >
-          Voltar para o Hashmap
+          
+          {t("common.backToHashmap")}
         </button>
 
         {!loading && !error && (
@@ -859,40 +863,41 @@ export function BasicTraining({
             className="primary-button"
             onClick={generateNewRound}
           >
-            Sortear novamente
+            
+            {t("common.drawAgain")}
           </button>
         )}
       </div>
 
       <div className="training-page-header">
-        <p className="eyebrow">Treino básico</p>
+        <p className="eyebrow">{t("common.basicPractice")}</p>
         <h1>{intention.intention}</h1>
         <p className="detail-english">{intention.targetIntention ?? intention.english}</p>
 
         {referenceExample && (
           <section className="training-intention-example">
-            <h3>Exemplo</h3>
+            <h3>{t("common.example")}</h3>
             <div className="example">
-              <p className="training-example-language">Origem: {LANGUAGES[sourceLanguage].flag} {LANGUAGES[sourceLanguage].name}</p>
+              <p className="training-example-language">{t("basicTraining.source")} {LANGUAGES[sourceLanguage].flag} {localizedLanguageName(sourceLanguage)}</p>
               <p>
                 {renderHighlightedText(referenceExample.pt, referenceExample.ptIntent)}
                 {" "}
                 <button type="button" className="secondary-button training-example-audio"
                   onClick={() => handleSpeakReferenceExample(referenceExample.pt, sourceLanguage, "source")}
-                  aria-label={`Ouvir exemplo em ${sourceLanguageName}`}
-                  title={`Ouvir em ${sourceLanguageName}`}>
-                  {speakingExample === "source" ? "🔊 Ouvindo" : "🔊 Ouvir"}
+                  aria-label={t("basicTraining.listenToTheExampleInSourcelanguage", { sourceLanguage: (sourceLanguageName) })}
+                  title={t("basicTraining.listenInSourcelanguage", { sourceLanguage: (sourceLanguageName) })}>
+                  {speakingExample === "source" ? "🔊 " + t("basicTraining.listening") : "🔊 " + t("basicTraining.listen")}
                 </button>
               </p>
-              <p className="training-example-language">Estudo: {LANGUAGES[language].flag} {LANGUAGES[language].name}</p>
+              <p className="training-example-language">{t("basicTraining.study")} {LANGUAGES[language].flag} {localizedLanguageName(language)}</p>
               <p className="english">
                 {renderHighlightedText(referenceExample.en, referenceExample.enIntent)}
                 {" "}
                 <button type="button" className="secondary-button training-example-audio"
                   onClick={() => handleSpeakReferenceExample(referenceExample.en, language, "target")}
-                  aria-label={`Ouvir exemplo em ${languageName}`}
-                  title={`Ouvir em ${languageName}`}>
-                  {speakingExample === "target" ? "🔊 Ouvindo" : "🔊 Ouvir"}
+                  aria-label={t("basicTraining.listenToTheExampleInSourcelanguage", { sourceLanguage: (languageName) })}
+                  title={t("basicTraining.listenInSourcelanguage", { sourceLanguage: (languageName) })}>
+                  {speakingExample === "target" ? "🔊 " + t("basicTraining.listening") : "🔊 " + t("basicTraining.listen")}
                 </button>
               </p>
             </div>
@@ -905,21 +910,21 @@ export function BasicTraining({
 
         <p className="training-instruction">
           {hasEnglishVocabulary
-            ? "Crie uma frase usando a intenção mental e tente incluir o verbo, o adjetivo e o substantivo sorteados abaixo."
-            : `Crie uma frase em ${languageName} usando a intenção mental. Use o exemplo em ${sourceLanguageName} como referência. Ao sortear novamente, outro exemplo será exibido, quando disponível.`}
+            ? t("basicTraining.createASentenceUsingTheCommunicativeIntentionAndTryTo")
+            : t("basicTraining.createASentenceInTargetlanguageUsingTheCommunicativeIntentionUse", { targetLanguage: (languageName), sourceLanguage: (sourceLanguageName) })}
         </p>
       </div>
 
       {loading && (
         <div className="status-card">
           <div className="spinner" />
-          <p>Carregando vocabulário...</p>
+          <p>{t("common.loadingVocabulary")}</p>
         </div>
       )}
 
       {!loading && error && (
         <div className="status-card error-card">
-          <h2>Não foi possível carregar o treino.</h2>
+          <h2>{t("common.couldNotLoadThePractice")}</h2>
           <p>{error}</p>
         </div>
       )}
@@ -933,8 +938,9 @@ export function BasicTraining({
           <div className="basic-training-grid" ref={trainingGridRef}>
             <article className="training-word-card">
               <p className="eyebrow">
-                Verbo{trainingItems.verb.type && (
-                  <> ({trainingItems.verb.type === "irregular" ? "IRREGULAR" : "REGULAR"})</>
+                
+                {t("basicTraining.verb")}{trainingItems.verb.type && (
+                  <> ({trainingItems.verb.type === "irregular" ? t("basicTraining.irregular") : t("basicTraining.regular")})</>
                 )}
               </p>
               <h2>{trainingItems.verb.base}</h2>
@@ -948,7 +954,7 @@ export function BasicTraining({
 
               <div className="training-verb-forms">
                 <div className="training-verb-form">
-                  <span>Presente</span>
+                  <span>{t("common.present")}</span>
                   <strong>
                     {trainingItems.verb.thirdPerson
                       ? `${trainingItems.verb.base} / ${trainingItems.verb.thirdPerson}`
@@ -958,14 +964,14 @@ export function BasicTraining({
 
                 {trainingItems.verb.past && (
                   <div className="training-verb-form">
-                    <span>Passado</span>
+                    <span>{t("common.past")}</span>
                     <strong>{trainingItems.verb.past}</strong>
                   </div>
                 )}
 
                 {trainingItems.verb.pastParticiple && (
                   <div className="training-verb-form">
-                    <span>Particípio</span>
+                    <span>{t("common.participle")}</span>
                     <strong>{trainingItems.verb.pastParticiple}</strong>
                   </div>
                 )}
@@ -974,7 +980,7 @@ export function BasicTraining({
             </article>
 
             <article className="training-word-card">
-              <p className="eyebrow">Adjetivo</p>
+              <p className="eyebrow">{t("common.adjective")}</p>
               <h2>{trainingItems.adjective.adjective}</h2>
 
               {trainingItems.adjective.meanings &&
@@ -986,7 +992,7 @@ export function BasicTraining({
             </article>
 
             <article className="training-word-card">
-              <p className="eyebrow">Noun</p>
+              <p className="eyebrow">{t("common.noun")}</p>
               <h2>{trainingItems.noun.noun}</h2>
 
               {trainingItems.noun.meanings &&
@@ -1011,7 +1017,8 @@ export function BasicTraining({
               }}
             >
               <label htmlFor="basic-training-answer" style={{ margin: 0 }}>
-                Escreva (Dite) sua frase
+                
+                {t("common.writeDictateYourSentence")}
               </label>
 
               {studentText.length > 0 && (
@@ -1019,8 +1026,8 @@ export function BasicTraining({
                   type="button"
                   className="secondary-button"
                   onClick={handleClearStudentText}
-                  title="Limpar frase"
-                  aria-label="Limpar frase"
+                  title={t("common.clearSentence")}
+                  aria-label={t("common.clearSentence")}
                   style={{
                     width: "2.25rem",
                     minWidth: "2.25rem",
@@ -1059,8 +1066,8 @@ export function BasicTraining({
                 type="button"
                 className="secondary-button"
                 onClick={handleToggleDictation}
-                title={dictating ? "Parar ditado" : `Ditar frase em ${languageName}`}
-                aria-label={dictating ? "Parar ditado" : `Ditar frase em ${languageName}`}
+                title={dictating ? t("common.stopDictation") : t("basicTraining.dictateASentenceInTargetlanguage", { targetLanguage: (languageName) })}
+                aria-label={dictating ? t("common.stopDictation") : t("basicTraining.dictateASentenceInTargetlanguage", { targetLanguage: (languageName) })}
                 aria-pressed={dictating}
                 style={{
                   width: "2.25rem",
@@ -1105,17 +1112,17 @@ export function BasicTraining({
                 disabled={!studentText.trim()}
                 title={
                   copyStatus === "copied"
-                    ? "Frase copiada"
+                    ? t("common.sentenceCopied")
                     : copyStatus === "error"
-                      ? "Erro ao copiar"
-                      : "Copiar frase"
+                      ? t("common.copyError")
+                      : t("common.copySentence")
                 }
                 aria-label={
                   copyStatus === "copied"
-                    ? "Frase copiada"
+                    ? t("common.sentenceCopied")
                     : copyStatus === "error"
-                      ? "Erro ao copiar a frase"
-                      : "Copiar frase para a área de transferência"
+                      ? t("common.errorCopyingTheSentence")
+                      : t("common.copySentenceToTheClipboard")
                 }
                 style={{
                   width: "2.25rem",
@@ -1155,8 +1162,8 @@ export function BasicTraining({
                 className="secondary-button"
                 onClick={handleOpenGoogleTranslate}
                 disabled={!studentText.trim()}
-                title={`Abrir no Google Tradutor (${languageName} → ${sourceLanguageName})`}
-                aria-label={`Abrir frase no Google Tradutor de ${languageName} para ${sourceLanguageName}`}
+                title={t("basicTraining.openInGoogleTranslateTargetlanguageSourcelanguage", { targetLanguage: (languageName), sourceLanguage: (sourceLanguageName) })}
+                aria-label={t("basicTraining.openSentenceInGoogleTranslateFromTargetlanguageToSourcelanguage", { targetLanguage: (languageName), sourceLanguage: (sourceLanguageName) })}
                 style={{
                   width: "2.25rem",
                   minWidth: "2.25rem",
@@ -1189,8 +1196,8 @@ export function BasicTraining({
                 className="secondary-button"
                 onClick={handlePrintWorksheet}
                 disabled={loading || Boolean(error) || (hasEnglishVocabulary && (!trainingItems.verb || !trainingItems.noun || !trainingItems.adjective))}
-                title="Imprimir folha de exercícios (A4)"
-                aria-label="Imprimir folha de exercícios do treino básico"
+                title={t("common.printWorksheetA4")}
+                aria-label={t("basicTraining.printBasicPracticeWorksheet")}
                 style={{
                   width: "2.25rem",
                   minWidth: "2.25rem",
@@ -1226,7 +1233,7 @@ export function BasicTraining({
             <textarea
               id="basic-training-answer"
               rows={5}
-              placeholder={`Digite sua frase em ${languageName}...`}
+              placeholder={t("common.typeYourSentenceInTargetlanguage", { targetLanguage: (languageName) })}
               value={studentText}
               onChange={(event) => {
                 setStudentText(event.target.value);
@@ -1284,10 +1291,10 @@ export function BasicTraining({
                 }}
               >
                 {intentionValidation.status === "found"
-                  ? "✓ Intenção mental identificada!"
+                  ? "✓ " + t("common.communicativeIntentionIdentified")
                   : intentionValidation.status === "missing"
-                    ? "⚠ Você ainda não utilizou a intenção mental."
-                    : "Validação automática indisponível para esta intenção."}
+                    ? "⚠ " + t("common.youHavenTUsedTheCommunicativeIntentionYet")
+                    : t("common.automaticValidationIsUnavailableForThisIntention")}
               </p>
             )}
 
@@ -1313,8 +1320,8 @@ export function BasicTraining({
                   disabled={evaluating || !studentText.trim()}
                 >
                   {evaluating
-                    ? "Avaliando com IA..."
-                    : "Avaliar com IA"}
+                    ? t("common.evaluatingWithAi")
+                    : t("common.evaluateWithAi")}
                 </button>
               )}
 
@@ -1327,7 +1334,7 @@ export function BasicTraining({
               >
                 {translating
                   ? "Traduzindo..."
-                  : "Traduzir com Google"}
+                  : t("common.translateWithGoogle")}
               </button>
               )}
             </div>
@@ -1335,7 +1342,7 @@ export function BasicTraining({
 
           {isAuthorMode() && translationError && (
             <div className="status-card error-card google-translation-error">
-              <h2>Não foi possível traduzir a frase.</h2>
+              <h2>{t("common.couldNotTranslateTheSentence")}</h2>
               <p>{translationError}</p>
             </div>
           )}
@@ -1343,8 +1350,8 @@ export function BasicTraining({
           {isAuthorMode() && googleTranslation && (
             <>
               <section className="status-card google-translation-card" ref={googleTranslationCardRef}>
-                <p className="eyebrow">Tradução do Google</p>
-                <h2>Versão em {sourceLanguageName}</h2>
+                <p className="eyebrow">{t("common.googleTranslation")}</p>
+                <h2>{t("basicTraining.versionIn")} {sourceLanguageName}</h2>
                 <p>{googleTranslation}</p>
               </section>
 
@@ -1355,7 +1362,7 @@ export function BasicTraining({
                   onClick={handleSpeakEnglish}
                   disabled={speaking || !studentText.trim()}
                 >
-                  {speaking ? "🔊 Reproduzindo..." : `🔊 Ouvir ${languageName}`}
+                  {speaking ? "🔊 " + t("common.playing") : "🔊 " + t("common.listenInTargetlanguage", { targetLanguage: (languageName) })}
                 </button>
               </div>
             </>
@@ -1363,14 +1370,14 @@ export function BasicTraining({
 
           {speechError && (
             <div className="status-card error-card google-translation-error">
-              <h2>Não foi possível reproduzir o áudio.</h2>
+              <h2>{t("common.couldNotPlayTheAudio")}</h2>
               <p>{speechError}</p>
             </div>
           )}
 
           {AI_ENABLED && isAuthorMode() && evaluationError && (
             <div className="status-card error-card ai-evaluation-error">
-              <h2>Não foi possível avaliar a frase.</h2>
+              <h2>{t("common.couldNotEvaluateTheSentence")}</h2>
               <p>{evaluationError}</p>
             </div>
           )}
@@ -1380,8 +1387,8 @@ export function BasicTraining({
             <section className="ai-evaluation-card" ref={aiEvaluationCardRef}>
               <div className="ai-evaluation-header">
                 <div>
-                  <p className="eyebrow">Avaliação com IA</p>
-                  <h2>Resultado do treino</h2>
+                  <p className="eyebrow">{t("common.aiEvaluation")}</p>
+                  <h2>{t("common.practiceResults")}</h2>
                 </div>
 
                 <div className="ai-score">
@@ -1392,41 +1399,41 @@ export function BasicTraining({
 
               <div className="ai-evaluation-grid">
                 <div>
-                  <span>Gramática</span>
+                  <span>{t("common.grammar")}</span>
                   <strong>{evaluation.grammar}</strong>
                 </div>
 
                 <div>
-                  <span>Naturalidade</span>
+                  <span>{t("common.naturalness")}</span>
                   <strong>{evaluation.naturalness}</strong>
                 </div>
 
                 <div>
-                  <span>Intenção mental</span>
+                  <span>{t("common.communicativeIntention")}</span>
                   <strong>
                     {evaluation.intentionUsedCorrectly
-                      ? "Correta"
-                      : "Precisa melhorar"}
+                      ? t("common.correct")
+                      : t("common.needsImprovement")}
                   </strong>
                 </div>
 
                 <div>
-                  <span>Vocabulário sorteado</span>
+                  <span>{t("common.selectedVocabulary")}</span>
                   <strong>
                     {evaluation.vocabularyUsedCorrectly
-                      ? "Bom uso"
-                      : "Precisa melhorar"}
+                      ? t("common.goodUse")
+                      : t("common.needsImprovement")}
                   </strong>
                 </div>
               </div>
 
               <div className="ai-feedback-section">
-                <h3>Feedback</h3>
+                <h3>{t("common.feedback")}</h3>
                 <p>{evaluation.feedbackPt}</p>
               </div>
 
               <div className="ai-feedback-section">
-                <h3>Correção</h3>
+                <h3>{t("common.correction")}</h3>
 
                 <div
                   style={{
@@ -1452,8 +1459,8 @@ export function BasicTraining({
                       )
                     }
                     disabled={evaluationSpeaking === "corrected"}
-                    title={`Ouvir a correção em ${languageName}`}
-                    aria-label={`Ouvir a correção em ${languageName}`}
+                    title={t("basicTraining.listenToTheCorrectionInTargetlanguage", { targetLanguage: (languageName) })}
+                    aria-label={t("basicTraining.listenToTheCorrectionInTargetlanguage", { targetLanguage: (languageName) })}
                     style={{
                       width: "2.5rem",
                       minWidth: "2.5rem",
@@ -1483,15 +1490,15 @@ export function BasicTraining({
                     title={
                       evaluationCopyStatus?.target === "corrected"
                         ? evaluationCopyStatus.status === "copied"
-                          ? "Frase copiada!"
-                          : "Não foi possível copiar a frase"
-                        : "Copiar correção"
+                          ? t("common.sentenceCopied")
+                          : t("common.couldNotCopyTheSentence")
+                        : t("common.copyCorrection")
                     }
                     aria-label={
                       evaluationCopyStatus?.target === "corrected" &&
                       evaluationCopyStatus.status === "copied"
-                        ? "Frase copiada para a área de transferência"
-                        : "Copiar correção para a área de transferência"
+                        ? t("common.sentenceCopiedToTheClipboard")
+                        : t("common.copyCorrectionToTheClipboard")
                     }
                     style={{
                       width: "2.5rem",
@@ -1532,8 +1539,8 @@ export function BasicTraining({
                     className="secondary-button"
                     onClick={() => handleOpenEvaluationGoogleTranslate(evaluation.correctedSentence)}
                     disabled={!evaluation.correctedSentence.trim()}
-                    title={`Traduzir correção no Google Tradutor (${languageName} → ${sourceLanguageName})`}
-                    aria-label={`Abrir correção no Google Tradutor de ${languageName} para ${sourceLanguageName}`}
+                    title={t("basicTraining.translateCorrectionInGoogleTranslateTargetlanguageSourcelanguage", { targetLanguage: (languageName), sourceLanguage: (sourceLanguageName) })}
+                    aria-label={t("basicTraining.openCorrectionInGoogleTranslateFromTargetlanguageToSourcelanguage", { targetLanguage: (languageName), sourceLanguage: (sourceLanguageName) })}
                     style={{
                       width: "2.5rem",
                       minWidth: "2.5rem",
@@ -1565,7 +1572,7 @@ export function BasicTraining({
               </div>
 
               <div className="ai-feedback-section">
-                <h3>Versão mais natural</h3>
+                <h3>{t("common.moreNaturalVersion")}</h3>
 
                 <div
                   style={{
@@ -1591,8 +1598,8 @@ export function BasicTraining({
                       )
                     }
                     disabled={evaluationSpeaking === "better"}
-                    title={`Ouvir a versão mais natural em ${languageName}`}
-                    aria-label={`Ouvir a versão mais natural em ${languageName}`}
+                    title={t("basicTraining.listenToTheMoreNaturalVersionInTargetlanguage", { targetLanguage: (languageName) })}
+                    aria-label={t("basicTraining.listenToTheMoreNaturalVersionInTargetlanguage", { targetLanguage: (languageName) })}
                     style={{
                       width: "2.5rem",
                       minWidth: "2.5rem",
@@ -1622,15 +1629,15 @@ export function BasicTraining({
                     title={
                       evaluationCopyStatus?.target === "better"
                         ? evaluationCopyStatus.status === "copied"
-                          ? "Frase copiada!"
-                          : "Não foi possível copiar a frase"
-                        : "Copiar versão mais natural"
+                          ? t("common.sentenceCopied")
+                          : t("common.couldNotCopyTheSentence")
+                        : t("common.copyTheMoreNaturalVersion")
                     }
                     aria-label={
                       evaluationCopyStatus?.target === "better" &&
                       evaluationCopyStatus.status === "copied"
-                        ? "Frase copiada para a área de transferência"
-                        : "Copiar versão mais natural para a área de transferência"
+                        ? t("common.sentenceCopiedToTheClipboard")
+                        : t("common.copyTheMoreNaturalVersionToTheClipboard")
                     }
                     style={{
                       width: "2.5rem",
@@ -1671,8 +1678,8 @@ export function BasicTraining({
                     className="secondary-button"
                     onClick={() => handleOpenEvaluationGoogleTranslate(evaluation.betterVersion)}
                     disabled={!evaluation.betterVersion.trim()}
-                    title={`Traduzir versão mais natural no Google Tradutor (${languageName} → ${sourceLanguageName})`}
-                    aria-label={`Abrir versão mais natural no Google Tradutor de ${languageName} para ${sourceLanguageName}`}
+                    title={t("basicTraining.translateTheMoreNaturalVersionInGoogleTranslateTargetlanguageSourcelanguage", { targetLanguage: (languageName), sourceLanguage: (sourceLanguageName) })}
+                    aria-label={t("basicTraining.openTheMoreNaturalVersionInGoogleTranslateFromTargetlanguage", { targetLanguage: (languageName), sourceLanguage: (sourceLanguageName) })}
                     style={{
                       width: "2.5rem",
                       minWidth: "2.5rem",
@@ -1709,7 +1716,8 @@ export function BasicTraining({
                 className="primary-button"
                 onClick={generateNewRound}
               >
-                Sortear novamente
+                
+                {t("common.drawAgain")}
               </button>
             </div>
             </>
@@ -1860,20 +1868,20 @@ export function BasicTraining({
 
       <div className="basic-training-print-sheet" aria-hidden="true">
         <header className="worksheet-top">
-          <p className="worksheet-eyebrow">BRAZILIAN ENGLISH JOURNEY · TREINO BÁSICO</p>
+          <p className="worksheet-eyebrow">{t("basicTraining.brazilianEnglishJourneyBasicPractice")}</p>
           <h1 className="worksheet-intention">{intention.intention}</h1>
           <p className="worksheet-english">{intention.targetIntention ?? intention.english}</p>
         </header>
 
         {referenceExample && (
           <section className="worksheet-section">
-            <h2 className="worksheet-section-title">Exemplo</h2>
+            <h2 className="worksheet-section-title">{t("common.example")}</h2>
             <div className="worksheet-example">
-              <p className="worksheet-example-language">Origem: {LANGUAGES[sourceLanguage].name}</p>
+              <p className="worksheet-example-language">{t("basicTraining.source")} {localizedLanguageName(sourceLanguage)}</p>
               <p className="worksheet-example-pt">
                 {renderHighlightedText(referenceExample.pt, referenceExample.ptIntent)}
               </p>
-              <p className="worksheet-example-language">Estudo: {LANGUAGES[language].name}</p>
+              <p className="worksheet-example-language">{t("basicTraining.study")} {localizedLanguageName(language)}</p>
               <p className="worksheet-example-en">
                 {renderHighlightedText(referenceExample.en, referenceExample.enIntent)}
               </p>
@@ -1883,7 +1891,7 @@ export function BasicTraining({
 
         {intention.pattern && (
           <section className="worksheet-section">
-            <h2 className="worksheet-section-title">Pattern de uso</h2>
+            <h2 className="worksheet-section-title">{t("common.usagePattern")}</h2>
             <p className="worksheet-pattern">{intention.pattern}</p>
           </section>
         )}
@@ -1891,22 +1899,22 @@ export function BasicTraining({
         {hasEnglishVocabulary && trainingItems.verb && trainingItems.noun && trainingItems.adjective && (
           <section className="worksheet-vocabulary">
             <div className="worksheet-vocab-card">
-              <p className="worksheet-vocab-label">VERBO</p>
+              <p className="worksheet-vocab-label">{t("basicTraining.verb")}</p>
               <p className="worksheet-vocab-word">{trainingItems.verb.base}</p>
               <p className="worksheet-vocab-meaning">{trainingItems.verb.meanings?.join(" / ")}</p>
               <div className="worksheet-verb-forms">
-                <p><strong>Presente:</strong> {trainingItems.verb.base}{trainingItems.verb.thirdPerson ? ` / ${trainingItems.verb.thirdPerson}` : ""}</p>
-                <p><strong>Passado:</strong> {trainingItems.verb.past ?? "—"}</p>
-                <p><strong>Particípio:</strong> {trainingItems.verb.pastParticiple ?? "—"}</p>
+                <p><strong>{t("common.present")}</strong> {trainingItems.verb.base}{trainingItems.verb.thirdPerson ? ` / ${trainingItems.verb.thirdPerson}` : ""}</p>
+                <p><strong>{t("common.past")}</strong> {trainingItems.verb.past ?? "—"}</p>
+                <p><strong>{t("common.participle")}</strong> {trainingItems.verb.pastParticiple ?? "—"}</p>
               </div>
             </div>
             <div className="worksheet-vocab-card">
-              <p className="worksheet-vocab-label">ADJETIVO</p>
+              <p className="worksheet-vocab-label">{t("common.adjective")}</p>
               <p className="worksheet-vocab-word">{trainingItems.adjective.adjective}</p>
               <p className="worksheet-vocab-meaning">{trainingItems.adjective.meanings?.join(" / ")}</p>
             </div>
             <div className="worksheet-vocab-card">
-              <p className="worksheet-vocab-label">NOUN</p>
+              <p className="worksheet-vocab-label">{t("common.noun")}</p>
               <p className="worksheet-vocab-word">{trainingItems.noun.noun}</p>
               <p className="worksheet-vocab-meaning">{trainingItems.noun.meanings?.join(" / ")}</p>
             </div>
@@ -1914,11 +1922,11 @@ export function BasicTraining({
         )}
 
         <section className="worksheet-writing">
-          <h2 className="worksheet-writing-title">Minha prática escrita</h2>
+          <h2 className="worksheet-writing-title">{t("common.myWritingPractice")}</h2>
           <p className="worksheet-writing-instruction">
             {hasEnglishVocabulary
-              ? "Crie frases em inglês com a intenção mental e tente usar o verbo, o adjetivo e o substantivo sorteados."
-              : `Crie frases em ${languageName} usando a intenção mental apresentada acima.`}
+              ? t("basicTraining.createSentencesInEnglishUsingTheCommunicativeIntentionAndTry")
+              : t("basicTraining.createSentencesInTargetlanguageUsingTheCommunicativeIntentionShownAbove", { targetLanguage: (languageName) })}
           </p>
           {Array.from({ length: 10 }, (_, index) => (
             <div className="worksheet-writing-line" key={index} />

@@ -1,3 +1,5 @@
+import { t } from "../i18n";
+import { useTranslation } from "react-i18next";
 import { useState } from "react";
 export type AppView = "memory-flashcards" | "hashmap" | "exercises" | "speaking-game" | "chunk-flashcards" | "interpretation" | "shadowing";
 interface SidebarProps {
@@ -7,6 +9,13 @@ interface SidebarProps {
   onViewChange: (view: AppView) => void;
 }
 
+export function Sidebar({
+  currentView,
+  onViewChange,
+  onOpenLanguages,
+  onOpenAbout
+}: SidebarProps) {
+  const { t } = useTranslation();
 const menuItems: Array<{
   id: AppView;
   label: string;
@@ -17,36 +26,30 @@ const menuItems: Array<{
     },
     { 
       id: "shadowing", 
-      label: "Shadowing" 
+      label: t("common.shadowing") 
     },
     {
       id: "exercises",
-      label: "Exercícios"
+      label: t("common.exercises")
     },
     {
       id: "chunk-flashcards",
-      label: "Chunk Flashcards"
+      label: t("common.chunkFlashcards")
     },
     {
       id: "memory-flashcards",
-      label: "Memory Flashcards"
+      label: t("memory.title")
     },
     {
       id: "speaking-game",
-      label: "Jogo da Fala"
+      label: t("common.speakingGame")
     },
     {
       id: "interpretation",
-      label: "Interpretação"
+      label: t("common.interpretation")
     }
   ];
 
-export function Sidebar({
-  currentView,
-  onViewChange,
-  onOpenLanguages,
-  onOpenAbout
-}: SidebarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -59,14 +62,14 @@ export function Sidebar({
       </div>
 
       <button type="button" className="sidebar-mobile-toggle" aria-expanded={menuOpen}
-        aria-label="Abrir menu" title="Abrir menu"
+        aria-label={t("navigation.openMenu")} title={t("navigation.openMenu")}
         aria-controls="sidebar-navigation" onClick={() => setMenuOpen(open => !open)}>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
           strokeWidth="2" strokeLinecap="round" aria-hidden="true" focusable="false">
           <path d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
-      <nav id="sidebar-navigation" className={`sidebar-menu${menuOpen ? " mobile-open" : ""}`} aria-label="Menu principal">
+      <nav id="sidebar-navigation" className={`sidebar-menu${menuOpen ? " mobile-open" : ""}`} aria-label={t("navigation.mainMenu")}>
         {menuItems.map((item) => {
           const isActive = currentView === item.id;
 
@@ -87,10 +90,10 @@ export function Sidebar({
           );
         })}
         <button type="button" className="sidebar-menu-item" aria-haspopup="dialog" onClick={() => { setMenuOpen(false); onOpenLanguages(); }}>
-          <span aria-hidden="true">🌐</span> Idiomas
+          <span aria-hidden="true">🌐</span>  {t("navigation.languages")}
         </button>
         <button type="button" className="sidebar-menu-item" aria-haspopup="dialog" onClick={() => { setMenuOpen(false); onOpenAbout(); }}>
-          <span aria-hidden="true">ⓘ</span> Sobre o app
+          <span aria-hidden="true">ⓘ</span>  {t("common.aboutTheApp")}
         </button>
       </nav>
     </aside>

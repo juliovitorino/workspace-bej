@@ -875,3 +875,28 @@ Os locais referem-se ao fonte existente, que não foi modificado. A mesma ocorr�
 | walking.voiceSpeed | Velocidade da voz | src/components/WalkingMode.tsx:175 | — |
 | walking.waitingForLevelSelection | Aguardando seleção de nível | src/components/WalkingMode.tsx:153 | — |
 | walking.waitingForTheNextChunk | Aguardando próximo chunk | src/components/WalkingMode.tsx:153 | — |
+
+
+---
+
+## Fase 2 — integração da interface (16/10/2026)
+
+A partir do projeto ZIP recebido, a integração i18next/react-i18next já estava parcialmente executada. Esta entrega preserva a integração e complementa os captions remanescentes identificados por varredura de JSX e atributos acessíveis.
+
+- O idioma Source é a fonte única do idioma da interface; Target continua controlando o conteúdo pedagógico.
+- Os componentes React usam `useTranslation()`; serviços e handlers fora de componentes usam a instância central.
+- Traduções complementadas: título de Memory Flashcards, mensagem de atualização, contagem de parágrafos, controles mobile de Shadowing, rótulo de substantivos e contador da próxima rodada.
+- Correções de textos residuais em português na busca de histórias, resultados, contagem de intenções, mensagens de voz e acessibilidade.
+- Corrigida a interpolação de `shadowing.completionSummary` para `{{technique}}` (antes estava incorretamente `{{time}}`).
+- Nomes de idiomas nas mensagens da tela de histórias agora seguem o idioma Source.
+- Adicionado `npm run validate:i18n` para validar chaves, interpolações e referências literais.
+
+### Verificações nesta entrega
+
+- `node node_modules/typescript/bin/tsc -b --pretty false`: **aprovado**.
+- `npm run validate:i18n`: **aprovado**.
+- Teste direto do i18next para os quatro idiomas, incluindo plurais: **aprovado**.
+- `npm run build`: a compilação TypeScript passou, mas o empacotamento Vite **não pôde ser validado neste ambiente Linux**, porque o `node_modules` fornecido era de Windows e não continha o pacote opcional `@rollup/rollup-linux-x64-gnu`. Execute `npm ci` e `npm run build` no Windows/VS Code.
+- Os testes legados com carregador TypeScript próprio ainda precisam ser adaptados para os novos imports do i18n; não foram considerados aprovados nesta entrega.
+
+Os campos dos JSONs pedagógicos não foram alterados. O relatório da Fase 1 permanece acima como registro histórico.

@@ -1,3 +1,5 @@
+import { t } from "../i18n";
+import { useTranslation } from "react-i18next";
 import { ControlIcon } from "./ControlIcon";
 import { useEffect, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
@@ -23,6 +25,7 @@ interface Props {
 }
 
 export function WalkingMode({ chunk, language, sourceLanguage, level, onLevelChange, position, total, round, canPrevious, onPrevious, onNext, onStop }: Props) {
+  const { t } = useTranslation();
   const [paused, setPaused] = useState(false);
   const [repetitions, setRepetitions] = useState(5);
   const [pause, setPause] = useState(3);
@@ -78,7 +81,7 @@ export function WalkingMode({ chunk, language, sourceLanguage, level, onLevelCha
     else audio.current.play(repetitionText((chunk.targetIntention ?? chunk.english).trim(), language, index, repetitions),
       language, rate, pause * 1000,
       () => { phase.current = "pause"; setSpoken(index + 1); }, done,
-      () => { setError("Não foi possível reproduzir o áudio. Toque em Continuar para tentar novamente."); setPaused(true); });
+      () => { setError(t("walking.couldNotPlayTheAudioTapResumeToTryAgain")); setPaused(true); });
     return () => audio.current.cancel();
   }, [chunk?.id, language, level, paused, index, repetitions, pause, rate, automatic, revision]);
 
@@ -103,7 +106,7 @@ export function WalkingMode({ chunk, language, sourceLanguage, level, onLevelCha
     const acquire = async () => {
       if (disposed || requesting || lock || !keepAwake || paused || document.visibilityState !== "visible") return;
       if (!("wakeLock" in navigator)) {
-        setWakeWarning("Este navegador não permite manter a tela ativa."); return;
+        setWakeWarning(t("common.thisBrowserCannotKeepTheScreenAwake")); return;
       }
       requesting = true;
       try {
@@ -113,9 +116,9 @@ export function WalkingMode({ chunk, language, sourceLanguage, level, onLevelCha
         setWakeWarning("");
         acquired.addEventListener("release", () => {
           if (lock === acquired) lock = null;
-          if (!disposed) setWakeWarning("A tela pode apagar. Mantenha a página aberta para continuar.");
+          if (!disposed) setWakeWarning(t("walking.theScreenMayTurnOffKeepThePageOpenTo"));
         });
-      } catch { if (!disposed) setWakeWarning("Não foi possível manter a tela ativa."); }
+      } catch { if (!disposed) setWakeWarning(t("common.couldNotKeepTheScreenAwake")); }
       finally { requesting = false; }
     };
     setWakeWarning("");
@@ -143,43 +146,43 @@ export function WalkingMode({ chunk, language, sourceLanguage, level, onLevelCha
   const time = [Math.floor(seconds / 3600), Math.floor(seconds / 60) % 60, seconds % 60]
     .map(v => String(v).padStart(2, "0")).join(":");
   return <section className="walking-mode" aria-labelledby="walking-title">
-    <h2 id="walking-title">🎧 Modo Caminhada</h2>
-    <p>Tempo de estudo <strong>{time}</strong> · Rodada {round}</p>
-    <p role="status" aria-label="Posição do chunk na rodada">{position}/{total}</p>
+    <h2 id="walking-title">{"🎧 "}{t("common.walkingMode")}</h2>
+    <p>{t("common.studyTime")} <strong>{time}</strong> · {t("flashcards.roundNumber", { round })}</p>
+    <p role="status" aria-label={t("common.chunkPositionInTheRound")}>{position}/{total}</p>
     {chunk ? <article className="chunk-flashcards-card">
       <p>{language}</p><h3 lang={language}>{chunk.targetIntention ?? chunk.english}</h3>
       <p lang={sourceLanguage}>{chunk.intention}</p>
-    </article> : <p role="status">{level === "all" ? "Nenhum chunk disponível." : `Nenhum chunk disponível para o nível ${level}.`} Escolha outro nível nas configurações.</p>}
-    <p role="status">{paused ? "Pausado" : !chunk ? "Aguardando seleção de nível" : index >= repetitions ? "Aguardando próximo chunk" : "Ouça e repita"} · Repetições: {spoken}/{repetitions}</p>
-    <progress aria-label="Repetições concluídas" value={spoken} max={repetitions} />
+    </article> : <p role="status">{level === "all" ? t("walking.noChunksAvailable") : t("common.noChunksAvailableForLevelLevel", { level: (level) })}  {t("walking.chooseAnotherLevelInSettings")}</p>}
+    <p role="status">{paused ? t("common.paused") : !chunk ? t("walking.waitingForLevelSelection") : index >= repetitions ? t("walking.waitingForTheNextChunk") : t("walking.listenAndRepeat")}  {t("shadowing.repetitions")} {spoken}/{repetitions}</p>
+    <progress aria-label={t("walking.repetitionsCompleted")} value={spoken} max={repetitions} />
     {error && <p role="alert">{error}</p>}
     <div className="walking-controls">
-      <button type="button" aria-label="Chunk anterior" title="Chunk anterior" disabled={!canPrevious || !chunk} onClick={() => navigate(true)}><ControlIcon name="previous" /></button>
-      <button type="button" className="walking-toggle" aria-label={paused ? "Continuar" : "Pausar"} title={paused ? "Continuar" : "Pausar"} onClick={() => { audio.current.cancel(); setError(""); setPaused(v => !v); }}><ControlIcon name={paused ? "play" : "pause"} /></button>
-      <button type="button" aria-label="Próximo chunk" title="Próximo chunk" disabled={!chunk} onClick={() => navigate()}><ControlIcon name="next" /></button>
-      <button type="button" aria-label="Parar" title="Parar" onClick={() => { audio.current.cancel(); onStop(); }}><ControlIcon name="stop" /></button>
+      <button type="button" aria-label={t("walking.previousChunk")} title={t("walking.previousChunk")} disabled={!canPrevious || !chunk} onClick={() => navigate(true)}><ControlIcon name="previous" /></button>
+      <button type="button" className="walking-toggle" aria-label={paused ? t("common.resume") : t("common.pause")} title={paused ? t("common.resume") : t("common.pause")} onClick={() => { audio.current.cancel(); setError(""); setPaused(v => !v); }}><ControlIcon name={paused ? "play" : "pause"} /></button>
+      <button type="button" aria-label={t("walking.nextChunk")} title={t("walking.nextChunk")} disabled={!chunk} onClick={() => navigate()}><ControlIcon name="next" /></button>
+      <button type="button" aria-label={t("common.stop")} title={t("common.stop")} onClick={() => { audio.current.cancel(); onStop(); }}><ControlIcon name="stop" /></button>
     </div>
-    <details className="walking-configuration"><summary aria-label="Configurações de reprodução" title="Configurações de reprodução"><ControlIcon name="settings" /></summary>
+    <details className="walking-configuration"><summary aria-label={t("walking.playbackSettings")} title={t("walking.playbackSettings")}><ControlIcon name="settings" /></summary>
       <div className="walking-settings">
         <ChunkLevelSelect value={level} onChange={nextLevel => {
           if (nextLevel === level) return;
           resetPlayback();
           onLevelChange(nextLevel);
         }} />
-        <label>Repetições por chunk <select value={repetitions} onChange={e => { resetPlayback(); setRepetitions(Number(e.target.value)); }}>
+        <label>{t("walking.repetitionsPerChunk")} <select value={repetitions} onChange={e => { resetPlayback(); setRepetitions(Number(e.target.value)); }}>
           {Array.from({ length: 8 }, (_, i) => i + 3).map(v => <option key={v}>{v}</option>)}
         </select></label>
-        <label>Pausa entre reproduções <select value={pause} onChange={e => setPause(Number(e.target.value))}>
-          {Array.from({ length: 7 }, (_, i) => i + 2).map(v => <option key={v} value={v}>{v} segundos</option>)}
+        <label>{t("walking.pauseBetweenPlaybacks")} <select value={pause} onChange={e => setPause(Number(e.target.value))}>
+          {Array.from({ length: 7 }, (_, i) => i + 2).map(v => <option key={v} value={v}>{v}  {t("walking.seconds")}</option>)}
         </select></label>
-        <label>Velocidade da voz <select value={rate} onChange={e => setRate(Number(e.target.value))}>
+        <label>{t("walking.voiceSpeed")} <select value={rate} onChange={e => setRate(Number(e.target.value))}>
           {[0.8, 0.9, 1].map(v => <option key={v} value={v}>{v.toFixed(1)}×</option>)}
         </select></label>
-        <label><input type="checkbox" checked={automatic} onChange={e => setAutomatic(e.target.checked)} /> Avanço automático</label>
-        <label><input type="checkbox" checked={keepAwake} onChange={e => setKeepAwake(e.target.checked)} /> Manter tela ativa</label>
+        <label><input type="checkbox" checked={automatic} onChange={e => setAutomatic(e.target.checked)} />  {t("walking.autoAdvance")}</label>
+        <label><input type="checkbox" checked={keepAwake} onChange={e => setKeepAwake(e.target.checked)} />  {t("walking.keepScreenAwake")}</label>
       </div>
     </details>
     {wakeWarning && <p role="status">{wakeWarning}</p>}
-    <p className="walking-note">Mantenha esta página aberta e o celular desbloqueado. O navegador pode suspender o áudio em segundo plano. Para trocar o idioma, encerre a caminhada.</p>
+    <p className="walking-note">{t("walking.keepThisPageOpenAndYourPhoneUnlockedYourBrowser")}</p>
   </section>;
 }

@@ -1,3 +1,5 @@
+import { t, languageName as localizedLanguageName } from "../i18n";
+import { useTranslation } from "react-i18next";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
 import type { MentalIntention } from "../types/hashmap";
@@ -13,7 +15,7 @@ interface Props {
   onAdvancedTraining: (item: MentalIntention) => void;
 }
 
-const levelNames = ["Iniciante", "Básico", "Intermediário", "Intermediário avançado", "Avançado", "Proficiente"];
+const levelNames = () => [t("memory.beginner"), t("memory.elementary"), t("memory.intermediate"), t("memory.upperIntermediate"), t("memory.advanced"), t("memory.proficient")];
 const ignoreWalking = () => {};
 
 export function shuffleChunks(chunks: MentalIntention[]): MentalIntention[] {
@@ -32,6 +34,7 @@ export function formatMemoryTime(milliseconds: number): string {
 }
 
 export function MemoryFlashcards(props: Props) {
+  const { t } = useTranslation();
   const { intentions, language, sourceLanguage } = props;
   const [level, setLevel] = useState<ChunkLevel>("all");
   const eligible = useMemo(() => eligibleChunks(intentions, level).filter(item =>
@@ -45,6 +48,7 @@ export function MemoryFlashcards(props: Props) {
 function MemoryRound({ eligible, level, onLevelChange, ...props }: Props & {
   eligible: MentalIntention[]; level: ChunkLevel; onLevelChange: (level: ChunkLevel) => void;
 }) {
+  const { t } = useTranslation();
   const { language, sourceLanguage } = props;
   const [deck, setDeck] = useState(() => shuffleChunks(eligible));
   const [position, setPosition] = useState(0);
@@ -108,46 +112,46 @@ function MemoryRound({ eligible, level, onLevelChange, ...props }: Props & {
   }
 
   return <section className="memory-flashcards" aria-labelledby="memory-title">
-    <header className="memory-heading"><h2 id="memory-title">🧠 Memory Flashcards</h2><span className="memory-badge">Memória</span></header>
-    <label className="memory-level">Nível de estudo
+    <header className="memory-heading"><h2 id="memory-title">{"🧠 "}{t("memory.title")}</h2><span className="memory-badge">{t("memory.memory")}</span></header>
+    <label className="memory-level">{t("memory.studyLevel")}
       <select value={level} onChange={event => onLevelChange(event.target.value as ChunkLevel)}>
-        <option value="all">Todos os níveis</option>
-        {CEFR_LEVELS.map((value, index) => <option key={value} value={value}>{value} — {levelNames[index]}</option>)}
+        <option value="all">{t("common.allLevels")}</option>
+        {CEFR_LEVELS.map((value, index) => <option key={value} value={value}>{value} — {levelNames()[index]}</option>)}
       </select>
     </label>
     <div className="memory-stats">
-      <div><strong>{studied.size} / {total}</strong><span>Estudados</span></div>
-      <div><strong>{progress.toLocaleString("pt-BR", { maximumFractionDigits: 1 })}%</strong><span>Progresso</span></div>
-      <div><strong>{formatMemoryTime(elapsed)}</strong><span>Tempo de estudo</span></div>
+      <div><strong>{studied.size} / {total}</strong><span>{t("memory.studied")}</span></div>
+      <div><strong>{progress.toLocaleString(sourceLanguage, { maximumFractionDigits: 1 })}%</strong><span>{t("memory.progress")}</span></div>
+      <div><strong>{formatMemoryTime(elapsed)}</strong><span>{t("common.studyTime")}</span></div>
     </div>
-    <div className="memory-progress" role="progressbar" aria-label="Chunks estudados" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress}>
+    <div className="memory-progress" role="progressbar" aria-label={t("memory.chunksStudied")} aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress}>
       <div style={{ width: `${progress}%` }} />
     </div>
-    <div className="memory-progress-labels"><span>{studied.size} chunks estudados</span><span>{total - studied.size} restantes</span></div>
-    <div className="memory-languages"><span>{LANGUAGES[sourceLanguage].flag} {LANGUAGES[sourceLanguage].name} → {LANGUAGES[language].flag} {LANGUAGES[language].name}</span>
+    <div className="memory-progress-labels"><span>{t("memory.studiedChunks", { count: studied.size })}</span><span>{t("memory.remainingChunks", { count: total - studied.size })}</span></div>
+    <div className="memory-languages"><span>{LANGUAGES[sourceLanguage].flag} {localizedLanguageName(sourceLanguage)} → {LANGUAGES[language].flag} {localizedLanguageName(language)}</span>
       {current?.englishLevel && <span className="memory-badge">{current.englishLevel}</span>}
     </div>
     <div className="memory-card" data-side={revealed ? "back" : "front"} aria-live="polite">
-      {!current ? <p>Nenhum chunk disponível para este nível e par de idiomas.</p> : revealed ?
+      {!current ? <p>{t("memory.noChunksAvailableForThisLevelAndLanguagePair")}</p> : revealed ?
         <ChunkFlashcards key={current.id} intentions={eligible} studyChunk={current} language={language} sourceLanguage={sourceLanguage}
           onWalkingChange={ignoreWalking} onShowDetails={props.onShowDetails}
           onBasicTraining={props.onBasicTraining} onAdvancedTraining={props.onAdvancedTraining} /> : <>
-          <p className="memory-card-label">{LANGUAGES[sourceLanguage].flag} IDIOMA DE ORIGEM</p>
+          <p className="memory-card-label">{LANGUAGES[sourceLanguage].flag}  {t("common.sourceLanguage")}</p>
           <h3 lang={sourceLanguage}>{current.intention}</h3>
-          <p>Tente lembrar como dizer isso em {LANGUAGES[language].name.toLowerCase()}.</p>
-          <small>Resposta oculta</small>
+          <p>{t("memory.recallHint", { targetLanguage: localizedLanguageName(language) })}</p>
+          <small>{t("memory.answerHidden")}</small>
         </>}
     </div>
     <div className="memory-actions">
-      <button type="button" className="primary-button" disabled={!current} onClick={flip}>{revealed ? "↶ Ver frente" : "Virar flashcard"}</button>
+      <button type="button" className="primary-button" disabled={!current} onClick={flip}>{revealed ? "↶ " + t("memory.viewFront") : t("memory.flipFlashcard")}</button>
       <button type="button" className="secondary-button" disabled={!current || (!complete && !studied.has(current.id))}
         onClick={() => {
           if (complete) { restart(); return; }
           window.speechSynthesis?.cancel();
           setPosition(value => value + 1);
           setRevealed(false);
-        }}>{complete ? "Iniciar nova rodada" : "⇄ Sortear próximo chunk"}</button>
+        }}>{complete ? t("memory.startANewRound") : "⇄ " + t("memory.drawNextChunk")}</button>
     </div>
-    <p className="memory-status" role="status">{complete ? "Rodada concluída!" : current && studied.has(current.id) ? "Chunk registrado. Você pode avançar." : "Revele o verso para registrar seu estudo."}</p>
+    <p className="memory-status" role="status">{complete ? t("memory.roundComplete") : current && studied.has(current.id) ? t("memory.chunkRecordedYouCanMoveOn") : t("memory.revealTheBackToRecordYourStudy")}</p>
   </section>;
 }

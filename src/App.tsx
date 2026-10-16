@@ -1,5 +1,8 @@
+import { t } from "./i18n";
+import { useTranslation } from "react-i18next";
 import { getSourceLanguage, getStudentLanguage, SOURCE_LANGUAGE_KEY, STUDENT_LANGUAGE_KEY, type SourceLanguage, type StudentLanguage } from "./config/languages";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { syncSourceLanguage } from "./i18n";
 import "./App.css";
 import { AppSettingsDialog } from "./components/AppSettingsDialog";
 import { Header } from "./components/Header";
@@ -25,8 +28,10 @@ import { isAuthorMode } from "./utils/authorMode";
 type TrainingMode = "basic" | "advanced" | "review" | null;
 
 function App() {
+  const { t } = useTranslation();
   const [language, setLanguage] = useState<StudentLanguage>(getStudentLanguage);
   const [sourceLanguage, setSourceLanguage] = useState<SourceLanguage>(getSourceLanguage);
+  useLayoutEffect(() => { syncSourceLanguage(sourceLanguage); }, [sourceLanguage]);
   const [settingsDialog, setSettingsDialog] = useState<"languages" | "about" | null>(null);
   const [walkingActive, setWalkingActive] = useState(false);
   const requestVersion = useRef(0);
@@ -86,7 +91,7 @@ function App() {
         setError(
           err instanceof Error
             ? err.message
-            : "Não foi possível carregar o Mental Hashmap."
+            : t("app.couldNotLoadMentalHashmap")
         );
       } finally {
         if (active && version === requestVersion.current) {
@@ -189,7 +194,7 @@ function App() {
       setError(
         err instanceof Error
           ? err.message
-          : "Não foi possível carregar o Mental Hashmap."
+          : t("app.couldNotLoadMentalHashmap")
       );
     } finally {
       if (version === requestVersion.current) {
@@ -308,13 +313,13 @@ function App() {
         {loading && currentView !== "shadowing" && (
           <div className="status-card">
             <div className="spinner" />
-            <p>Carregando Mental Hashmap...</p>
+            <p>{t("app.loadingMentalHashmap")}</p>
           </div>
         )}
 
         {!loading && error && !data && currentView !== "shadowing" && (
           <div className="status-card error-card">
-            <h2>Não foi possível carregar o Mental Hashmap.</h2>
+            <h2>{t("app.couldNotLoadMentalHashmap")}</h2>
             <p>{error}</p>
             <button
               className="primary-button"
@@ -322,7 +327,7 @@ function App() {
               onClick={retry}
               disabled={retrying}
             >
-              {retrying ? "Tentando novamente..." : "Tentar novamente"}
+              {retrying ? t("app.tryingAgain") : t("app.tryAgain")}
             </button>
           </div>
         )}
@@ -331,14 +336,14 @@ function App() {
               <>
                 {source === "cache" && (
               <div className="warning-banner">
-                Não foi possível acessar a fonte externa. Exibindo a última versão
-                salva localmente.
+                
+                {t("app.couldNotAccessTheExternalSourceShowingTheLatestVersion")}
                 <button
                   type="button"
                   onClick={retry}
                   disabled={retrying}
                 >
-                  {retrying ? "Atualizando..." : "Tentar atualizar"}
+                  {retrying ? t("app.updating") : t("app.checkForUpdates")}
                 </button>
               </div>
             )}
@@ -371,15 +376,14 @@ function App() {
 
             <section className="results-header">
               <div>
-                <p className="eyebrow">Resultados</p>
+                <p className="eyebrow">{t("app.results")}</p>
                 <h2>
-                  {filteredItems.length}{" "}
-                  {filteredItems.length === 1 ? "intenção" : "intenções"}
+                  {t("hashmap.results", { count: filteredItems.length })}
                 </h2>
               </div>
 
               <p>
-                Total disponível: <strong>{data.mentalMap.length}</strong>
+                {t("hashmap.totalAvailable", { count: data.mentalMap.length })}
               </p>
             </section>
 
@@ -432,6 +436,7 @@ function App() {
               !trainingMode && (
                 <InterpretationPanel
                   language={language}
+                  sourceLanguage={sourceLanguage}
                   intentions={data?.mentalMap ?? []}
                   onSelectIntention={setSelected}
                 />

@@ -1,3 +1,4 @@
+import { t } from "../i18n";
 import { isAuthorMode } from "../utils/authorMode";
 import type { MentalIntention } from "../types/hashmap";
 import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
@@ -196,16 +197,16 @@ function normalizeResult(
 export async function evaluateTrainingWithAI(
   request: AIEvaluationRequest
 ): Promise<AIEvaluationResult> {
-  if (!isAuthorMode()) throw new Error("Recurso exclusivo do Modo Autor.");
+  if (!isAuthorMode()) throw new Error(t("common.thisFeatureIsOnlyAvailableInAuthorMode"));
   if (!GEMINI_API_KEY) {
     throw new Error(
-      "VITE_GEMINI_API_KEY não foi configurada no arquivo .env."
+      t("common.viteGeminiApiKeyIsNotConfiguredInTheEnv")
     );
   }
 
   if (!request.studentText.trim()) {
     throw new Error(
-      "Escreva uma frase antes de solicitar a avaliação."
+      t("evaluation.writeASentenceBeforeRequestingAnEvaluation")
     );
   }
 
@@ -261,7 +262,7 @@ export async function evaluateTrainingWithAI(
 
   if (!responseText) {
     throw new Error(
-      "A IA não retornou uma avaliação válida."
+      t("evaluation.aiDidNotReturnAValidEvaluation")
     );
   }
 
@@ -270,7 +271,7 @@ export async function evaluateTrainingWithAI(
     return normalizeResult(parsed);
   } catch {
     throw new Error(
-      "A IA retornou uma resposta em formato inesperado."
+      t("common.aiReturnedAnUnexpectedResponseFormat")
     );
   }
 }

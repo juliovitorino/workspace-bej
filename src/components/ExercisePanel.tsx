@@ -1,3 +1,5 @@
+import { t } from "../i18n";
+import { useTranslation } from "react-i18next";
 import { useEffect, useMemo, useState } from "react";
 import type { Example, MentalIntention } from "../types/hashmap";
 
@@ -134,6 +136,7 @@ export function ExercisePanel({
   intentions,
   onStartTraining
 }: ExercisePanelProps) {
+  const { t } = useTranslation();
   const [savedSession] = useState(readExerciseSession);
   const [englishLevel, setEnglishLevel] = useState<EnglishLevel>(savedSession.englishLevel);
   const [mode, setMode] = useState<ExerciseMode>(savedSession.mode);
@@ -278,20 +281,19 @@ export function ExercisePanel({
     <section className="exercise-panel">
       <div className="exercise-header">
         <div>
-          <p className="eyebrow">Exercícios</p>
-          <h1>Treino de intenções</h1>
+          <p className="eyebrow">{t("common.exercises")}</p>
+          <h1>{t("exercises.intentionPractice")}</h1>
 
           <p className="exercise-description">
-            Escolha o tipo de treino e quantas intenções você quer praticar.
-            O aplicativo vai sortear as intenções e você poderá iniciar
-            o treino de cada uma delas.
+            
+            {t("exercises.chooseThePracticeTypeAndHowManyIntentionsToStudy")}
           </p>
         </div>
 
         <div className="exercise-total">
           <strong>{maxAmount}</strong>
           <span>
-            intenções com exemplos no nível {englishLevel}
+            {t("exercises.availableAtLevel", { count: maxAmount, level: englishLevel })}
             {category !== "Todas" ? ` · ${category}` : ""}
           </span>
         </div>
@@ -299,15 +301,16 @@ export function ExercisePanel({
 
       {maxAmount === 0 ? (
         <div className="empty-state">
-          <h2>Nenhuma intenção com exemplo disponível.</h2>
+          <h2>{t("exercises.noIntentionsWithExamplesAvailable")}</h2>
           <p>
-            Adicione exemplos ao JSON para utilizar a área de exercícios.
+            
+            {t("exercises.addExamplesToTheJsonToUseTheExercisesArea")}
           </p>
         </div>
       ) : (
         <>
           <div className="exercise-mode-selector">
-            <p className="exercise-mode-label">Tipo de treino</p>
+            <p className="exercise-mode-label">{t("exercises.practiceType")}</p>
 
             <div className="exercise-mode-buttons">
               <button
@@ -319,8 +322,8 @@ export function ExercisePanel({
                 }
                 onClick={() => handleModeChange("basic")}
               >
-                <strong>Treino básico</strong>
-                <span>1 verbo + 1 adjetivo + 1 noun</span>
+                <strong>{t("common.basicPractice")}</strong>
+                <span>{t("exercises.format1Verb1Adjective1Noun")}</span>
               </button>
 
               <button
@@ -332,16 +335,17 @@ export function ExercisePanel({
                 }
                 onClick={() => handleModeChange("advanced")}
               >
-                <strong>Treino avançado</strong>
+                <strong>{t("common.advancedPractice")}</strong>
                 <span>
-                  2 verbos + 2 adjetivos + 2 nouns + 4 conectores
+                  
+                  {t("exercises.format2Verbs2Adjectives2Nouns4Connectors")}
                 </span>
               </button>
             </div>
           </div>
 
           <div className="exercise-level-selector">
-            <p className="exercise-mode-label">Nível de inglês</p>
+            <p className="exercise-mode-label">{t("common.englishLevel")}</p>
 
             <div className="exercise-level-buttons">
               {ENGLISH_LEVELS.map((level) => (
@@ -362,7 +366,7 @@ export function ExercisePanel({
           </div>
 
           <div className="exercise-level-selector">
-            <p className="exercise-mode-label">Categoria</p>
+            <p className="exercise-mode-label">{t("common.category")}</p>
 
             <div className="field">
               <select
@@ -373,7 +377,8 @@ export function ExercisePanel({
                 }
               >
                 <option value="Todas">
-                  Todas ({totalIntentionsForLevel})
+                  
+                  {t("filters.allCategoriesCount", { count: totalIntentionsForLevel })}
                 </option>
                 {availableCategories.map((availableCategory) => (
                   <option
@@ -390,7 +395,8 @@ export function ExercisePanel({
           <div className="exercise-controls">
             <div className="field exercise-amount-field">
               <label htmlFor="exercise-amount">
-                Quantas intenções você quer treinar?
+                
+                {t("exercises.howManyIntentionsWouldYouLikeToPractice")}
               </label>
 
               <input
@@ -411,8 +417,8 @@ export function ExercisePanel({
               onClick={handleGenerate}
             >
               {exercises.length > 0
-                ? "Sortear novamente"
-                : "Gerar treino"}
+                ? t("common.drawAgain")
+                : t("exercises.generatePractice")}
             </button>
           </div>
 
@@ -421,24 +427,16 @@ export function ExercisePanel({
               <div className="exercise-results-header">
                 <p className="eyebrow">
                   {mode === "basic"
-                    ? `Treino básico · ${englishLevel}${
-                        category !== "Todas" ? ` · ${category}` : ""
-                      }`
-                    : `Treino avançado · ${englishLevel}${
-                        category !== "Todas" ? ` · ${category}` : ""
-                      }`}
+                    ? t("exercises.basicPracticeLevelCategorysuffix", { level: (englishLevel), categorySuffix: (category !== "Todas" ? ` · ${category}` : "") })
+                    : t("exercises.advancedPracticeLevelCategorysuffix", { level: (englishLevel), categorySuffix: (category !== "Todas" ? ` · ${category}` : "") })}
                 </p>
 
                 <h2>
-                  {exercises.length}{" "}
-                  {exercises.length === 1
-                    ? "intenção sorteada"
-                    : "intenções sorteadas"}
+                  {t("exercises.drawnIntentions", { count: exercises.length })}
                 </h2>
 
                 <p className="exercise-description">
-                  Clique em <strong>Treinar</strong> para abrir o exercício
-                  completo daquela intenção.
+                  {t("exercises.openPracticeHint")}
                 </p>
               </div>
 
@@ -467,7 +465,8 @@ export function ExercisePanel({
 
                       <div className="exercise-example">
                         <span className="exercise-example-label">
-                          Exemplo do Hashmap
+                          
+                          {t("exercises.hashmapExample")}
                         </span>
 
                         <p>{example.pt}</p>
@@ -499,7 +498,8 @@ export function ExercisePanel({
                             onStartTraining(intention, mode)
                           }
                         >
-                          Treinar
+                          
+                          {t("exercises.practice")}
                         </button>
                       </div>
                     </div>
