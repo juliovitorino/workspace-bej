@@ -2278,6 +2278,34 @@ button {
   line-height: 1.2;
 }
 
+/* Global mobile navigation: below modal backdrops (z-index: 10). */
+.scroll-to-top-button { display: none; }
+@media (max-width: 768px) {
+  .scroll-to-top-button {
+    position: fixed;
+    right: calc(20px + env(safe-area-inset-right, 0px));
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    z-index: 5;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #3659d9;
+    color: #fff;
+    box-shadow: 0 4px 12px #17203333;
+  }
+  .scroll-to-top-button:hover { background: #2847b8; }
+  .scroll-to-top-button:focus-visible { outline: 3px solid #172033; outline-offset: 3px; }
+  /* Keep modal interactions and existing fixed copy notifications unobstructed. */
+  body:has(dialog[open], .modal-backdrop, [aria-modal="true"], [role="status"][style*="fixed"]) .scroll-to-top-button {
+    display: none;
+  }
+}
+@media print { .scroll-to-top-button { display: none; } }
+
 /* Navigation settings */
 .language-pair-indicator {
   flex-shrink: 0;
