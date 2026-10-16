@@ -138,6 +138,8 @@ function normalizeHashmap(target: HashmapDataV4, source: HashmapDataV4): Hashmap
 
     return {
       ...item,
+      // A explicação acompanha o idioma de origem, sem fallback para o Target.
+      description: original?.description,
       // Títulos visíveis sempre no par escolhido; não repetir o pt-BR fixo.
       intention: localizedIntention(original ?? item, source.metadata.language),
       english: item.structure || item.pattern || item.intention,

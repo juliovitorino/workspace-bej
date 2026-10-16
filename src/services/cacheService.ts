@@ -1,7 +1,7 @@
 import { DEFAULT_SOURCE_LANGUAGE, DEFAULT_STUDENT_LANGUAGE, type SourceLanguage, type StudentLanguage } from "../config/languages";
 import type { HashmapData } from "../types/hashmap";
 
-const CACHE_KEY = "mental-hashmap-data-v4-target-hq-only";
+const CACHE_KEY = "mental-hashmap-data-v4-target-hq-only-source-description";
 const keyFor = (language: StudentLanguage, source: SourceLanguage) => `${CACHE_KEY}-${source}-${language}`;
 
 export function saveHashmapCache(data: HashmapData, language: StudentLanguage = DEFAULT_STUDENT_LANGUAGE, source: SourceLanguage = DEFAULT_SOURCE_LANGUAGE): void {
