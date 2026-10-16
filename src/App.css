@@ -485,6 +485,17 @@ button {
   gap: 6px;
 }
 
+.card-tag-group {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  max-width: 100%;
+  padding-top: 8px;
+  border-top: 1px solid #e6eaf2;
+}
+.card-tag-language { font-size: 0.75rem; font-weight: 700; color: #475467; }
+.card-tag-group .tag-pill { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
+
 .tag-pill {
   display: inline-flex;
   width: fit-content;

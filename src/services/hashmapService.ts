@@ -146,6 +146,8 @@ function normalizeHashmap(target: HashmapDataV4, source: HashmapDataV4): Hashmap
       sourceStructure: original?.structure,
       sourceSearchTerms: original?.searchTerms ?? [],
       sourceCategory: original?.category,
+      sourceTags: Array.from(new Set(original?.tags ?? [])),
+      targetTags: Array.from(new Set(item.tags ?? [])),
       tags: Array.from(new Set([...(original?.tags ?? []), ...(item.tags ?? [])])),
       englishLevel: item.level ?? original?.level,
       examples
@@ -164,6 +166,8 @@ function isCachedHashmapV4(value: unknown, language: StudentLanguage, source: So
   return value.mentalMap.every((item: unknown) =>
     isObject(item) && typeof item.id === "string" &&
     typeof item.intention === "string" && typeof item.english === "string" &&
+    Array.isArray(item.sourceTags) && item.sourceTags.every((tag: unknown) => typeof tag === "string") &&
+    Array.isArray(item.targetTags) && item.targetTags.every((tag: unknown) => typeof tag === "string") &&
     Array.isArray(item.examples) && item.examples.every((example: unknown) =>
       isExampleV4(example) && typeof (example as unknown as Record<string, unknown>).pt === "string" &&
       typeof (example as unknown as Record<string, unknown>).en === "string")

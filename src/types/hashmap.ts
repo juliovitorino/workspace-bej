@@ -83,6 +83,8 @@ export interface MentalIntention extends Omit<HashmapIntentionV4, "examples"> {
   sourceStructure?: string;
   sourceSearchTerms?: string[];
   sourceCategory?: string;
+  sourceTags?: string[];
+  targetTags?: string[];
   /** A lista principal de tags pode conter tags de ambos os catálogos. */
   englishLevel?: EnglishLevel;
   examples?: Example[];

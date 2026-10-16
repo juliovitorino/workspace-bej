@@ -22,7 +22,7 @@ export function IntentionList({ items, sourceLanguage, language, onSelect }: Int
   return (
     <div className="intention-list">
       {items.map((item) => (
-        <IntentionCard key={item.id} item={item} onSelect={onSelect} />
+        <IntentionCard key={item.id} item={item} sourceLanguage={sourceLanguage} language={language} onSelect={onSelect} />
       ))}
     </div>
   );

@@ -17522,10 +17522,10 @@
         "(?<![A-Za-zÁÉÍÓÚÜÑáéíóúüñ])(?:pas(?:amos|ando|éis|ó|a)\\s+muy\\s+bien|pasando\\s+muy\\s+bien|pásatelo\\s+bien)(?![A-Za-zÁÉÍÓÚÜÑáéíóúüñ])"
       ],
       "tags": [
-        "fun",
-        "enjoyment",
+        "diversión",
+        "disfrute",
         "social",
-        "spoken-english"
+        "inglés-hablado"
       ],
       "related": [],
       "allowLanguageChunkPractice": true,

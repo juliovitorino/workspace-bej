@@ -1,13 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import { isAuthorMode } from "../utils/authorMode";
+import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
 
 interface IntentionCardProps {
   item: MentalIntention;
+  sourceLanguage: SourceLanguage;
+  language: StudentLanguage;
   onSelect: (item: MentalIntention) => void;
 }
 
-export function IntentionCard({ item, onSelect }: IntentionCardProps) {
+export function IntentionCard({ item, sourceLanguage, language, onSelect }: IntentionCardProps) {
   const hasYoutubeVideo = typeof item.youtubeVideo === "string" && item.youtubeVideo.trim().length > 0;
   const hasYoutubeShort = typeof item.youtubeShort === "string" && item.youtubeShort.trim().length > 0;
   const authorMode = isAuthorMode();
@@ -158,15 +161,19 @@ export function IntentionCard({ item, onSelect }: IntentionCardProps) {
           )}
         </div>
 
-        {item.tags && item.tags.length > 0 && (
-          <div className="card-tags">
-            {item.tags.map((tag) => (
-              <span className="tag-pill" key={tag}>
-                {tag}
-              </span>
-            ))}
+        {([
+          { locale: sourceLanguage, tags: item.sourceTags, label: "Tags de origem" },
+          { locale: language, tags: item.targetTags, label: "Tags de estudo" }
+        ]).map(({ locale, tags, label }) => tags && tags.length > 0 && (
+          <div className="card-tag-group" key={locale} role="group" aria-label={`${label}: ${LANGUAGES[locale].name}`}>
+            <span className="card-tag-language" title={LANGUAGES[locale].name}>
+              <span aria-hidden="true">{LANGUAGES[locale].flag}</span> {locale}
+            </span>
+            <div className="card-tags" lang={locale}>
+              {Array.from(new Set(tags)).map(tag => <span className="tag-pill" key={tag}>{tag}</span>)}
+            </div>
           </div>
-        )}
+        ))}
       </div>
     </div>
     {authorMode && copyError && (
