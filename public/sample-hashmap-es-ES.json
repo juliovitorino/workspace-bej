@@ -16016,9 +16016,9 @@
     },
     {
       "id": "bastante-bem-adjetivo-pretty",
-      "intention": "Bastante / bem + adjetivo",
+      "intention": "Bastante / muy + adjetivo",
       "pattern": "bastante + adjetivo; bastante bien para valoración",
-      "description": "Usado para intensificar ou graduar um adjetivo. Em espanhol, bastante + adjetivo pode corresponder a bastante ou bem em português: bastante difícil, bastante bueno. O grau de intensidade depende do contexto; não confundir bastante com uma indicação automática de intensidade máxima.",
+      "description": "Se utiliza para intensificar o graduar un adjetivo. En español, 'bastante + adjetivo' puede expresar un grado considerable de intensidad: 'bastante difícil', 'bastante bueno'. El grado de intensidad depende del contexto; no debe confundirse 'bastante' con una indicación automática de intensidad máxima.",
       "category": "intensity",
       "searchTerms": [
         "bastante",

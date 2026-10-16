@@ -16255,9 +16255,9 @@
     },
     {
       "id": "bastante-bem-adjetivo-pretty",
-      "intention": "Bastante / bem + adjetivo",
-      "pattern": "adverbe d’intensité + adjectif",
-      "description": "Intensifica um adjetivo de maneira moderada. Em francês, use assez ou plutôt conforme o contexto; essas formas não exprimem beleza.",
+      "intention": "Assez / plutôt + adjectif",
+      "pattern": "bastante + adjectif ; bastante bien pour exprimer une appréciation",
+      "description": "Utilisé pour intensifier ou nuancer un adjectif. En espagnol, 'bastante + adjectif' peut correspondre à 'assez', 'plutôt' ou 'bien' en français : 'bastante difícil' (assez difficile), 'bastante bueno' (plutôt bon). Le degré d'intensité dépend du contexte ; il ne faut pas considérer automatiquement 'bastante' comme l'expression d'une intensité maximale.",
       "category": "intensity",
       "searchTerms": [
         "assez / plutôt + adjectif",

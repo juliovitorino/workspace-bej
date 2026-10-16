@@ -16086,9 +16086,9 @@
     },
     {
       "id": "bastante-bem-adjetivo-pretty",
-      "intention": "Bastante / bem + adjetivo",
+      "intention": "Quite / fairly + adjective",
       "pattern": "pretty + adjective",
-      "description": "Usado no inglês conversacional para intensificar um adjetivo. 'Pretty' antes de um adjetivo frequentemente corresponde a 'bastante', 'bem' ou 'consideravelmente' em português. Não confundir com 'pretty' no sentido de 'bonito'.",
+      "description": "Used in conversational English to intensify an adjective. 'Pretty' before an adjective often means 'quite', 'fairly', or 'rather'. Not to be confused with 'pretty' meaning 'beautiful'.",
       "category": "intensity",
       "searchTerms": [
         "pretty",

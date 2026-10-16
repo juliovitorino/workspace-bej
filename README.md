@@ -1,205 +1,25 @@
-# Mental Hashmap MVP
+# BEJ 4.0 — Pacote de agentes de sincronização
 
-Primeiro MVP do app web para consulta do Mental Hashmap.
+## Conteúdo
+- `AGENTS.md`: instrui o Codex raiz a atuar como orquestrador.
+- `.codex/agents/hashmap_orchestrator.toml`: especificação do agente pai (referência, não invocar como subagente).
+- `.codex/agents/hashmap_en_us.toml`: especialista em inglês.
+- `.codex/agents/hashmap_es_es.toml`: especialista em espanhol.
+- `.codex/agents/hashmap_fr_fr.toml`: especialista em francês.
+- `.codex/config.toml`: configuração mínima de subagentes.
 
-## Stack
+## Instalação no VS Code
+1. Extraia este ZIP na **raiz** do repositório `mental-hashmap-app`, preservando as pastas ocultas `.codex/`.
+2. Se já existirem `AGENTS.md` ou `.codex/config.toml`, **não sobrescreva**: faça merge das instruções e da seção `[agents]`.
+3. Confirme que seu Codex carrega agentes locais e está atualizado; reinicie a sessão para carregar as novas definições.
+4. Faça commit ou crie um ponto de restauração do Git antes da primeira execução.
+5. No chat principal do Codex (não em um subagente), envie:
+   `Sincronize o Mental Hashmap 4.0. Use os subagentes hashmap_en_us, hashmap_es_es e hashmap_fr_fr em paralelo. Compare as alterações do pt-BR com o último commit confiável, preserve hqImage local, valide integridade e me mostre o relatório final.`
 
-- React
-- TypeScript
-- Vite
-- JSON externo
-- localStorage para cache
-- sem backend
-- sem banco de dados
-
-## Funcionalidades
-
-- Busca por **Intenção Mental**
-- Busca por **English**
-- Busca combinada
-- Busca parcial
-- Busca case-insensitive
-- Busca accent-insensitive
-- Listagem de todas as intenções
-- Ordenação alfabética
-- Contador de resultados
-- Painel de detalhes
-- Intenções relacionadas
-- Loading
-- Tratamento de erro
-- Retry
-- Cache local
-- Fallback para cache se a fonte externa estiver indisponível
-
-## 1. Pré-requisitos
-
-Instale:
-
-- Node.js 20+ recomendado
-- npm
-- Git opcional
-
-Confira:
-
-```bash
-node --version
-npm --version
-```
-
-## 2. Instalação
-
-Dentro da pasta do projeto:
-
-```bash
-npm install
-```
-
-## 3. Rodar
-
-```bash
-npm run dev
-```
-
-Abra no navegador:
-
-```text
-http://localhost:5173
-```
-
-## 4. JSON usado no MVP
-
-Por padrão, o projeto utiliza a base padrão:
-
-```text
-/public/sample-hashmap.json
-```
-
-Se o navegador estiver em um idioma suportado, o app também pode escolher automaticamente:
-
-```text
-/public/sample-hashmap-en-US.json
-/public/sample-hashmap-es-ES.json
-/public/sample-hashmap-fr-FR.json
-```
-
-A configuração manual continua no arquivo:
-
-```text
-.env
-```
-
-Atualmente:
-
-```env
-VITE_HASHMAP_URL=/sample-hashmap.json
-```
-
-## 5. Usar JSON do GitHub
-
-Quando você publicar o arquivo no GitHub, copie a URL RAW.
-
-Exemplo:
-
-```text
-https://raw.githubusercontent.com/SEU_USUARIO/SEU_REPOSITORIO/main/hashmap.json
-```
-
-Altere `.env`:
-
-```env
-VITE_HASHMAP_URL=https://raw.githubusercontent.com/SEU_USUARIO/SEU_REPOSITORIO/main/hashmap.json
-```
-
-Depois reinicie:
-
-```bash
-npm run dev
-```
-
-## 6. Estrutura esperada do JSON
-
-```json
-{
-  "metadata": {
-    "name": "Mental Hashmap",
-    "version": "1.0.0",
-    "updatedAt": "2026-09-11",
-    "language": "pt-BR"
-  },
-  "mentalMap": [
-    {
-      "id": "used-to",
-      "intention": "Eu costumava...",
-      "english": "I used to...",
-      "pattern": "used to + base verb",
-      "description": "Expresses a past habit or situation that is no longer true.",
-      "category": "past-habits",
-      "searchTerms": [
-        "costumava",
-        "used to"
-      ],
-      "examples": [
-        {
-          "pt": "Eu costumava trabalhar aqui.",
-          "en": "I used to work here."
-        }
-      ],
-      "tags": [
-        "past",
-        "habit"
-      ],
-      "related": [
-        "be-used-to"
-      ]
-    }
-  ]
-}
-```
-
-## 7. Build de produção
-
-```bash
-npm run build
-```
-
-O resultado ficará em:
-
-```text
-dist/
-```
-
-Para testar:
-
-```bash
-npm run preview
-```
-
-## 8. Próximos passos sugeridos
-
-Depois de validar este MVP:
-
-1. Publicar o JSON real no GitHub.
-2. Adicionar todas as intenções do seu documento.
-3. Melhorar o layout.
-4. Adicionar áudio/pronúncia.
-5. Adicionar favoritos.
-6. Adicionar "já domino esta intenção".
-7. Adicionar autenticação quando virar benefício do clube pago.
-
-## Arquitetura
-
-```text
-GitHub / JSON
-      |
-      | HTTPS
-      v
-React + TypeScript
-      |
-      +-- Busca por intenção
-      +-- Busca em inglês
-      +-- Detalhes
-      |
-      v
-localStorage
-(cache)
-```
+## Limitações e cuidados
+- Estes arquivos são **configurações/instruções**, não um processo agendado, observador de arquivos nem execução automática ao salvar. A execução é iniciada pelo comando no Codex.
+- O Codex precisa de acesso aos arquivos e suporte a subagentes no cliente instalado.
+- Não foi incluído script de hash: a implementação de SHA-256 já existente no projeto deve ser localizada e reutilizada. Se ausente, a validação é bloqueada até inspeção do código.
+- Não houve teste sobre os JSONs reais do seu projeto, porque os arquivos completos não foram fornecidos neste pedido.
+- Para primeira sincronização, comece com poucos IDs novos; não faça tradução completa das 1.230 intenções sem solicitação explícita.
+- `hqImage` nunca é transportado entre idiomas e deve sobreviver a qualquer atualização do exemplo no seu próprio arquivo.
