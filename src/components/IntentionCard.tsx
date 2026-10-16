@@ -167,19 +167,21 @@ export function IntentionCard({ item, sourceLanguage, language, onSelect }: Inte
           )}
         </div>
 
-        {([
-          { locale: sourceLanguage, tags: item.sourceTags, label: t("hashmap.sourceTags") },
-          { locale: language, tags: item.targetTags, label: t("hashmap.studyLanguageTags") }
-        ]).map(({ locale, tags, label }) => tags && tags.length > 0 && (
-          <div className="card-tag-group" key={locale} role="group" aria-label={`${label}: ${LANGUAGES[locale].name}`}>
-            <span className="card-tag-language" title={localizedLanguageName(locale)}>
-              <span aria-hidden="true">{LANGUAGES[locale].flag}</span> {locale}
-            </span>
-            <div className="card-tags" lang={locale}>
-              {Array.from(new Set(tags)).map(tag => <span className="tag-pill" key={tag}>{tag}</span>)}
+        <div className="bej-intention-card__tag-columns">
+          {([
+            { locale: sourceLanguage, tags: item.sourceTags, label: t("hashmap.sourceTags"), side: "source" },
+            { locale: language, tags: item.targetTags, label: t("hashmap.studyLanguageTags"), side: "study" }
+          ]).map(({ locale, tags, label, side }) => tags && tags.length > 0 && (
+            <div className={`card-tag-group bej-intention-card__tags--${side}`} key={side} role="group" aria-label={`${label}: ${LANGUAGES[locale].name}`}>
+              <span className="card-tag-language" title={localizedLanguageName(locale)}>
+                <span aria-hidden="true">{LANGUAGES[locale].flag}</span> {locale}
+              </span>
+              <div className="card-tags" lang={locale}>
+                {Array.from(new Set(tags)).map(tag => <span className="tag-pill" key={tag}>{tag}</span>)}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
     {authorMode && copyError && (
