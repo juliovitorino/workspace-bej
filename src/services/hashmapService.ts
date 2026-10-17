@@ -123,12 +123,11 @@ function normalizeHashmap(target: HashmapDataV4, source: HashmapDataV4): Hashmap
 
     const examples: Example[] = (item.examples ?? []).flatMap((example) => {
       const pt = sourceExamples.get(example.id);
-      if (!pt) return [];
       return [{
         ...example,
-        pt: pt.exampleItem,
+        pt: pt?.exampleItem ?? "",
         en: example.exampleItem,
-        ptIntent: pt.intent,
+        ptIntent: pt?.intent,
         enIntent: example.intent,
         // HQ pertence exclusivamente ao idioma de estudo (Target).
         // Não reutilizar a HQ do Source quando o Target não tiver imagem.

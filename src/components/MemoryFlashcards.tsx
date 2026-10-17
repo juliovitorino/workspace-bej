@@ -13,7 +13,7 @@ import { FavoriteChunkButton } from "./FavoriteChunkButton";
 
 interface Props {
   favorites?: FavoriteChunk[];
-  onToggleFavorite?: (id: string) => void;
+  onToggleFavorite?: (id: string, type?: "example") => void;
   intentions: MentalIntention[];
   language: StudentLanguage;
   sourceLanguage: SourceLanguage;
@@ -185,7 +185,7 @@ function MemoryRound({ eligible, level, onLevelChange, ...props }: Props & {
           <div className="chunk-flashcards-card-header">
             <p className="memory-card-label">{LANGUAGES[sourceLanguage].flag}  {t("common.sourceLanguage")}</p>
             {props.onToggleFavorite && <FavoriteChunkButton
-              active={props.favorites?.some(favorite => favorite.id === current.id && favorite.language === language) ?? false}
+              active={props.favorites?.some(favorite => favorite.type === undefined && favorite.id === current.id && favorite.language === language) ?? false}
               onToggle={() => props.onToggleFavorite?.(current.id)} />}
           </div>
           <h3 lang={sourceLanguage}>{current.intention}</h3>
