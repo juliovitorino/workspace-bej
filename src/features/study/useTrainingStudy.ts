@@ -11,7 +11,12 @@ export class TrainingActivity {
   private pending = false;
   private pendingAt = 0;
   private media = false;
-  interact(now: number) { this.interactions++; this.until = now + IDLE_MS; }
+  paused = false;
+  interact(now: number) { if (!this.paused) { this.interactions++; this.until = now + IDLE_MS; } }
+  togglePause(now: number) {
+    this.paused = !this.paused;
+    if (!this.paused) this.interact(now);
+  }
   update(pending: boolean, media: boolean, now: number) {
     if (pending && !this.pending) this.pendingAt = this.interactions;
     if (this.media && !media) this.until = now + IDLE_MS;
@@ -19,9 +24,9 @@ export class TrainingActivity {
   }
   signal(now: number, ready: boolean) {
     const activeUntil = this.media ? Infinity : this.until;
-    const active = ready && (this.media || this.interactions > 0) && now < activeUntil &&
+    const active = !this.paused && ready && (this.media || this.interactions > 0) && now < activeUntil &&
       (!this.pending || this.media || this.interactions > this.pendingAt);
-    return { active, activeUntil };
+    return { active, activeUntil: this.paused ? 0 : activeUntil };
   }
 }
 
@@ -42,7 +47,13 @@ export function useTrainingStudy(identity: string, ready: boolean, pending: bool
     setRevision(value => value + 1);
   };
   const interact = (event: SyntheticEvent) => { if (event.isTrusted) recordActivity(); };
+  const toggleStudyPause = () => {
+    if (activity.current.identity !== identity) return;
+    activity.current.policy.togglePause(Date.now());
+    setRevision(value => value + 1);
+  };
   // Let the field's handlers save its controlled value before tracking schedules
   // another render. Input capture can restore the old value before onChange.
-  return { recordActivity, onPointerDown: interact, onKeyDown: interact, onInput: interact, onScrollCapture: interact };
+  return { recordActivity, studyPaused: activity.current.policy.paused, toggleStudyPause,
+    onPointerDown: interact, onKeyDown: interact, onInput: interact, onScrollCapture: interact };
 }

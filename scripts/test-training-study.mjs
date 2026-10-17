@@ -178,6 +178,31 @@ for (const module of ['basic-training', 'advanced-training']) {
   assert.equal(sessions.length, 1); assert.equal(sessions[0].activeSeconds, 65);
 }
 
+// Explicit pause excludes the entire break and only the resume button restarts it.
+for (const module of ['basic-training', 'advanced-training']) {
+  const practice = await openTraining(module);
+  const syncPanel = () => practice.panel.flush(find(practice.component.tree, n => n.type === TrainingStudyTime).props);
+  syncPanel();
+  assert.equal(find(practice.panel.tree, n => n.type === 'button').props.disabled, true);
+  input(practice); await advance(30000, [practice.panel]); syncPanel();
+  const pause = find(practice.panel.tree, n => n.type === 'button');
+  assert.equal(pause.props.disabled, false); let stopped = false;
+  pause.props.onClick({ stopPropagation() { stopped = true; } }); practice.component.flush(); syncPanel(); await settle();
+  assert.equal(stopped, true); assert.equal(find(practice.panel.tree, n => n.type === 'button').props['aria-pressed'], true);
+  assert.equal(text(find(practice.panel.tree, n => n.props?.role === 'status')), translations.common.paused);
+  const pausedId = readStudyStore().activeSession.id;
+  await advance(IDLE_MS + 30000, [practice.panel]);
+  input(practice); await advance(10000, [practice.panel]); syncPanel();
+  assert.equal(text(find(practice.panel.tree, n => n.type === 'time')), '00:00:30', 'manual pause excludes the whole break and interactions cannot resume it');
+  const resume = find(practice.panel.tree, n => n.type === 'button');
+  assert.equal(resume.props['aria-label'], translations.flashcards.resumeStudyTime);
+  resume.props.onClick({ stopPropagation() {} }); practice.component.flush(); syncPanel();
+  await advance(30000, [practice.panel]); syncPanel();
+  assert.equal(text(find(practice.panel.tree, n => n.type === 'time')), '00:01:00');
+  await finish(practice);
+  assert.equal(readStudyStore().studyData.sessions.find(s => s.id === pausedId).activeSeconds, 60, 'resume keeps the same session and never adds break time');
+}
+
 // C: the idle window is the existing five-minute reading grace, not all idle time.
 const idle = await openTraining('basic-training'); input(idle); await advance(30000, [idle.panel]); input(idle);
 await advance(IDLE_MS + 20000, [idle.panel]);

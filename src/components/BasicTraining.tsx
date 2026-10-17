@@ -210,7 +210,7 @@ export function BasicTraining({
   const [dictating, setDictating] = useState(false);
   const showDictationButton = !isMobileDevice();
   const [dictationError, setDictationError] = useState<string | null>(null);
-  const { recordActivity: recordStudyActivity, ...studyEvents } = useTrainingStudy(`basic-training:${language}:${intention.id}`, !loading && !error,
+  const { recordActivity: recordStudyActivity, studyPaused, toggleStudyPause, ...studyEvents } = useTrainingStudy(`basic-training:${language}:${intention.id}`, !loading && !error,
     evaluating || translating, speaking || evaluationSpeaking !== null || speakingExample !== null, onStudyState);
   const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
   const trainingGridRef = useRef<HTMLDivElement>(null);
@@ -855,7 +855,7 @@ export function BasicTraining({
 
   return (
     <section className="basic-training" {...studyEvents}>
-      <TrainingStudyTime module="basic-training" language={language} />
+      <TrainingStudyTime module="basic-training" language={language} paused={studyPaused} onTogglePause={toggleStudyPause} />
       <div className="training-toolbar">
         <button
           type="button"

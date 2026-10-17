@@ -278,7 +278,7 @@ export function AdvancedTraining({
   >(null);
   const showDictationButton = !isMobileDevice();
   const [dictationError, setDictationError] = useState<string | null>(null);
-  const { recordActivity: recordStudyActivity, ...studyEvents } = useTrainingStudy(`advanced-training:${language}:${intention.id}`, !loading && !error,
+  const { recordActivity: recordStudyActivity, studyPaused, toggleStudyPause, ...studyEvents } = useTrainingStudy(`advanced-training:${language}:${intention.id}`, !loading && !error,
     evaluating || translating, speaking || evaluationSpeaking !== null, onStudyState);
   const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
   const trainingGridRef = useRef<HTMLDivElement | null>(null);
@@ -979,7 +979,7 @@ export function AdvancedTraining({
 
   return (
     <section className="advanced-training" {...studyEvents}>
-      <TrainingStudyTime module="advanced-training" language={language} />
+      <TrainingStudyTime module="advanced-training" language={language} paused={studyPaused} onTogglePause={toggleStudyPause} />
       <div className="training-toolbar">
         <button
           type="button"
