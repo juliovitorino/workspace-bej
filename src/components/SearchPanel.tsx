@@ -9,6 +9,7 @@ export type ChunkFilter = "all" | "with" | "without";
 export type YoutubeFilter = "all" | "with" | "without";
 
 interface SearchPanelProps {
+  mobileCollapsed?: boolean;
   sourceLanguage: SourceLanguage;
   language: StudentLanguage;
   mentalSearch: string;
@@ -72,6 +73,7 @@ function tagMatchScore(tag: string, rawQuery: string): number {
 }
 
 export function SearchPanel({
+  mobileCollapsed = false,
   sourceLanguage,
   language,
   mentalSearch,
@@ -160,7 +162,7 @@ export function SearchPanel({
   }, [isTagModalOpen]);
 
   return (
-    <section id="hashmap-search-filters" className="search-panel">
+    <section id="hashmap-search-filters" className={`search-panel${mobileCollapsed ? " search-panel--mobile-collapsed" : ""}`}>
       <div className="field">
         <label htmlFor="mental-search">{t("filters.sourceCaption", { sourceLanguage: localizedLanguageName(sourceLanguage) })}</label>
         <div className="search-input-with-clear">

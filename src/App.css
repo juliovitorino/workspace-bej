@@ -2408,14 +2408,22 @@ button {
   line-height: 1.2;
 }
 
-/* Global mobile navigation: below modal backdrops (z-index: 10). */
-.scroll-to-top-button { display: none; }
-@media (max-width: 768px) {
-  .scroll-to-top-button {
+/* Shared mobile navigation: below modal backdrops (z-index: 10). */
+.mobile-floating-controls { display: none; }
+@media (max-width: 820px) {
+  .search-panel--mobile-collapsed { display: none; }
+  .hashmap-results-header { scroll-margin-top: 16px; }
+  .mobile-floating-controls {
     position: fixed;
     right: calc(20px + env(safe-area-inset-right, 0px));
     bottom: calc(20px + env(safe-area-inset-bottom, 0px));
     z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .mobile-floating-controls > button {
     display: grid;
     place-items: center;
     width: 48px;
@@ -2427,14 +2435,14 @@ button {
     color: var(--on-accent);
     box-shadow: 0 4px 12px var(--shadow);
   }
-  .scroll-to-top-button:hover { background: var(--accent-hover); }
-  .scroll-to-top-button:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+  .mobile-floating-controls > button:hover { background: var(--accent-hover); }
+  .mobile-floating-controls > button:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
   /* Keep modal interactions and existing fixed copy notifications unobstructed. */
-  body:has(dialog[open], .modal-backdrop, [aria-modal="true"], [role="status"][style*="fixed"]) .scroll-to-top-button {
+  body:has(dialog[open], .modal-backdrop, [aria-modal="true"], [role="status"][style*="fixed"]) .mobile-floating-controls {
     display: none;
   }
 }
-@media print { .scroll-to-top-button { display: none; } }
+@media print { .mobile-floating-controls { display: none; } }
 
 /* Memory Flashcards: layout follows the mobile study prototype. */
 .memory-flashcards {

@@ -63,6 +63,8 @@ function App() {
     if (personalCount === 0 && currentView === "personal-flashcards") setCurrentView("memory-flashcards");
   }, [personalCount, currentView]);
   const [filterScrollRequest, setFilterScrollRequest] = useState(0);
+  const [filtersVisible, setFiltersVisible] = useState(false);
+  const resultsRef = useRef<HTMLElement>(null);
   const [mentalSearch, setMentalSearch] = useState("");
   const [englishSearch, setEnglishSearch] = useState("");
   const [categorySearch, setCategorySearch] = useState("");
@@ -86,7 +88,7 @@ function App() {
     if (!filterScrollRequest || currentView !== "hashmap" || loading || !data || trainingMode) return;
     const frame = window.requestAnimationFrame(() => {
       if (window.matchMedia("(max-width: 820px)").matches) {
-        document.getElementById("hashmap-search-filters")?.scrollIntoView({
+        (filtersVisible ? document.getElementById("hashmap-search-filters") : resultsRef.current)?.scrollIntoView({
           block: "start",
           behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth"
         });
@@ -94,7 +96,7 @@ function App() {
       setFilterScrollRequest(0);
     });
     return () => window.cancelAnimationFrame(frame);
-  }, [filterScrollRequest, currentView, loading, data, trainingMode]);
+  }, [filterScrollRequest, filtersVisible, currentView, loading, data, trainingMode]);
 
   useEffect(() => {
     let active = true;
@@ -377,6 +379,7 @@ function App() {
             )}
 
             <SearchPanel
+              mobileCollapsed={!filtersVisible}
               sourceLanguage={sourceLanguage}
               language={language}
               mentalSearch={mentalSearch}
@@ -402,7 +405,7 @@ function App() {
               onClear={clearFilters}
             />
 
-            <section className="results-header">
+            <section ref={resultsRef} className="results-header hashmap-results-header">
               <div>
                 <p className="eyebrow">{t("app.results")}</p>
                 <h2>
@@ -543,7 +546,26 @@ function App() {
         onAdvancedTraining={(item) => startTraining(item, "advanced")}
         onReviewTraining={(item) => startTraining(item, "review")}
       />
-      <ScrollToTopButton />
+      <div className="mobile-floating-controls">
+        {currentView === "hashmap" && !loading && data && !trainingMode && (
+          <button type="button" className="hashmap-filter-toggle"
+            aria-label={t(filtersVisible ? "navigation.hideFilters" : "navigation.showFilters")}
+            title={t(filtersVisible ? "navigation.hideFilters" : "navigation.showFilters")}
+            aria-expanded={filtersVisible}
+            aria-controls="hashmap-search-filters"
+            onClick={() => {
+              setFiltersVisible(visible => !visible);
+              setFilterScrollRequest(request => request + 1);
+            }}>
+            <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="10.5" cy="10.5" r="6.5" />
+              <path d="m16 16 5 5" />
+            </svg>
+          </button>
+        )}
+        <ScrollToTopButton />
+      </div>
     </main>
   );
 }
