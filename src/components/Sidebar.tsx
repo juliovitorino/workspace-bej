@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const SIDEBAR_COLLAPSED_KEY = "bej-sidebar-collapsed";
 import type { ThemePreference } from "../theme";
-export type AppView = "study-dashboard" | "personal-flashcards" | "memory-flashcards" | "hashmap" | "exercises" | "speaking-game" | "chunk-flashcards" | "favorite-chunks" | "interpretation" | "shadowing";
+export type AppView = "study-dashboard" | "extra-activities" | "personal-flashcards" | "memory-flashcards" | "hashmap" | "exercises" | "speaking-game" | "chunk-flashcards" | "favorite-chunks" | "interpretation" | "shadowing";
 interface SidebarProps {
   theme: ThemePreference;
   onThemeChange: (theme: ThemePreference) => void;
@@ -33,6 +33,7 @@ const menuItems: Array<{
   icon: string;
 }> = [
     { id: "study-dashboard", label: t("study.title"), icon: "\u{1F4CA}" },
+    { id: "extra-activities", label: t("extras.title"), icon: "\u{23F1}" },
     {
       id: "hashmap",
       label: "Hashmap",

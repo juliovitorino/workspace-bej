@@ -4,13 +4,24 @@ export const STUDY_KEY = "bej-study-data";
 export const STUDY_CHANGED = "bej-study-changed";
 export const APPLICATION = "Brazilian English Journey";
 export const MAX_BACKUP_BYTES = 5 * 1024 * 1024;
-export const STUDY_MODULES = ["hashmap", "memory-flashcards", "chunk-flashcards", "chunk-favorites", "shadowing", "basic-training", "advanced-training", "speaking-game", "interpretation"] as const;
+export const STUDY_MODULES = ["hashmap", "memory-flashcards", "chunk-flashcards", "chunk-favorites", "shadowing", "basic-training", "advanced-training", "speaking-game", "interpretation", "extra-activities"] as const;
+export const EXTRA_CATEGORIES = ["conversation", "writing", "private-class", "other"] as const;
+export type ExtraCategory = typeof EXTRA_CATEGORIES[number];
 export type StudyModule = typeof STUDY_MODULES[number];
 export type StudyMode = "manual" | "walking";
 export interface StudySession {
   id: string; language: StudentLanguage; module: StudyModule; mode: StudyMode;
   startedAt: string; endedAt: string; activeSeconds: number;
   dailySeconds?: Record<string, number>;
+  category?: ExtraCategory;
+  note?: string;
+}
+// Unconfirmed external time is deliberately separate from automatic checkpoints.
+export interface ExtraActivityDraft {
+  id: string; owner: string; language: StudentLanguage; category: ExtraCategory; note?: string;
+  startedAt: string; updatedAt: string; state: "running" | "paused";
+  accumulatedMs: number; dailyMs: Record<string, number>; runningSince: string | null;
+  recoveryAt?: string;
 }
 export interface ManualAdjustment {
   id: string; language: StudentLanguage; seconds: number; date: string; description: string;
@@ -21,9 +32,9 @@ export interface StudyData {
   sessions: StudySession[];
   manualAdjustments: ManualAdjustment[];
 }
-export interface StudyStore { schemaVersion: 1; studyData: StudyData; activeSession: StudySession | null }
+export interface StudyStore { schemaVersion: 1; studyData: StudyData; activeSession: StudySession | null; extraActivity?: ExtraActivityDraft | null }
 export interface StudyBackup { schemaVersion: 1; application: typeof APPLICATION; exportedAt: string; studyData: StudyData }
-export type StudyErrorCode = "invalid" | "version" | "storage" | "conflict" | "stale" | "tooLarge" | "duplicate";
+export type StudyErrorCode = "invalid" | "version" | "storage" | "conflict" | "stale" | "tooLarge" | "duplicate" | "extraActive" | "otherTab" | "zero";
 export class StudyError extends Error { constructor(public code: StudyErrorCode) { super(code); } }
 type StorageLike = Pick<Storage, "getItem" | "setItem">;
 const invalid = (): never => { throw new StudyError("invalid"); };
@@ -41,6 +52,9 @@ function session(v: unknown): StudySession {
   if (!object(v) || !id(v.id) || !isStudentLanguage(v.language) || !STUDY_MODULES.includes(v.module as StudyModule) ||
     !["manual", "walking"].includes(v.mode as string) || !instant(v.startedAt) || !instant(v.endedAt) || !seconds(v.activeSeconds) ||
     Date.parse(v.endedAt) < Date.parse(v.startedAt) || v.activeSeconds > Math.floor((Date.parse(v.endedAt) - Date.parse(v.startedAt)) / 1000)) return invalid();
+  if (v.module === "extra-activities" && (!EXTRA_CATEGORIES.includes(v.category as ExtraCategory) || v.mode !== "manual" || v.activeSeconds === 0)) return invalid();
+  if (v.category !== undefined && !EXTRA_CATEGORIES.includes(v.category as ExtraCategory)) return invalid();
+  if (v.note !== undefined && (typeof v.note !== "string" || v.note.length > 1000)) return invalid();
   let dailySeconds: Record<string, number> | undefined;
   if (v.dailySeconds !== undefined) {
     if (!object(v.dailySeconds)) return invalid();
@@ -54,7 +68,27 @@ function session(v: unknown): StudySession {
   }
   return { id: v.id, language: v.language, module: v.module as StudyModule, mode: v.mode as StudyMode,
     startedAt: new Date(v.startedAt).toISOString(), endedAt: new Date(v.endedAt).toISOString(), activeSeconds: v.activeSeconds,
-    ...(dailySeconds ? { dailySeconds } : {}) };
+    ...(dailySeconds ? { dailySeconds } : {}), ...(v.category !== undefined ? { category: v.category as ExtraCategory } : {}),
+    ...(v.note !== undefined ? { note: v.note as string } : {}) };
+}
+function extraDraft(v: unknown): ExtraActivityDraft {
+  if (!object(v) || !id(v.id) || !id(v.owner) || !isStudentLanguage(v.language) || !EXTRA_CATEGORIES.includes(v.category as ExtraCategory) ||
+    (v.note !== undefined && (typeof v.note !== "string" || v.note.length > 1000)) || !instant(v.startedAt) || !instant(v.updatedAt) ||
+    !["running", "paused"].includes(v.state as string) || !seconds(v.accumulatedMs) || !object(v.dailyMs)) return invalid();
+  const start = Date.parse(v.startedAt), updated = Date.parse(v.updatedAt);
+  if (updated < start || v.accumulatedMs > updated - start ||
+    (v.state === "running" ? v.runningSince !== v.updatedAt : v.runningSince !== null) ||
+    (v.recoveryAt !== undefined && (!instant(v.recoveryAt) || Date.parse(v.recoveryAt) < updated))) return invalid();
+  const dailyMs: Record<string, number> = {};
+  for (const [day, ms] of Object.entries(v.dailyMs).sort(([a], [b]) => a.localeCompare(b))) {
+    if (!validDay(day) || !seconds(ms) || ms > 90000000 || Date.parse(day) < start - 172800000 || Date.parse(day) > updated + 86400000) return invalid();
+    dailyMs[day] = ms;
+  }
+  if (Object.values(dailyMs).reduce((a, b) => a + b, 0) !== v.accumulatedMs) return invalid();
+  return { id: v.id, owner: v.owner, language: v.language, category: v.category as ExtraCategory,
+    ...(v.note !== undefined ? { note: v.note as string } : {}), startedAt: v.startedAt, updatedAt: v.updatedAt,
+    state: v.state as ExtraActivityDraft["state"], accumulatedMs: v.accumulatedMs, dailyMs, runningSince: v.runningSince as string | null,
+    ...(v.recoveryAt !== undefined ? { recoveryAt: v.recoveryAt as string } : {}) };
 }
 function adjustment(v: unknown): ManualAdjustment {
   if (!object(v) || !id(v.id) || !isStudentLanguage(v.language) || !seconds(v.seconds) || !validDay(v.date) ||
@@ -109,7 +143,9 @@ export function readStudyStore(storage: StorageLike = localStorage): StudyStore 
     new Set(studyData.manualAdjustments.map(a => a.id)).size !== studyData.manualAdjustments.length) return invalid();
   const activeSession = v.activeSession === null ? null : session(v.activeSession);
   if (activeSession && studyData.sessions.some(s => s.id === activeSession.id)) throw new StudyError("conflict");
-  return { schemaVersion: 1, studyData, activeSession };
+  const extraActivity = v.extraActivity == null ? v.extraActivity : extraDraft(v.extraActivity);
+  if (extraActivity && (studyData.sessions.some(s => s.id === extraActivity.id) || activeSession?.module === "extra-activities")) throw new StudyError("conflict");
+  return { schemaVersion: 1, studyData, activeSession, ...(extraActivity !== undefined ? { extraActivity } : {}) };
 }
 export function writeStudyStore(store: StudyStore, storage: StorageLike = localStorage): void {
   const serialized = JSON.stringify(store);
@@ -168,6 +204,7 @@ export function mergeStudyData(local: StudyData, incoming: StudyData, preferInco
   return { studyData, newSessions, duplicates, newAdjustments, conflicts, goalDifferences, currentSeconds: totalSeconds(local), afterSeconds: totalSeconds(studyData) };
 }
 export function restoreStudyBackup(store: StudyStore, backup: StudyBackup, expected: string, preferIncomingGoals = false): StudyStore {
+  if (store.extraActivity) throw new StudyError("extraActive");
   if (JSON.stringify(store) !== expected || store.activeSession) throw new StudyError("stale");
   const merge = mergeStudyData(store.studyData, backup.studyData, preferIncomingGoals);
   if (merge.conflicts.length) throw new StudyError("conflict");

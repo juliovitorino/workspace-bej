@@ -334,6 +334,7 @@ const updateChart = sessions => {
 const chartSession = (module, seconds, language = 'en-US', daysAgo = 0, mode = 'manual') => {
   const end = new Date().getTime() - daysAgo * 86400000;
   return { id: `comparison-${module}-${language}-${daysAgo}-${mode}`, module, language, mode, activeSeconds: seconds,
+    ...(module === 'extra-activities' ? { category: 'conversation' } : {}),
     startedAt: new Date(end - seconds * 1000).toISOString(), endedAt: new Date(end).toISOString() };
 };
 setFilter(1, 'all');
@@ -398,6 +399,27 @@ pageButton(translations.common.next).props.onClick(); dashboard.flush(); pageBut
 chartStore.studyData.sessions = chartStore.studyData.sessions.slice(0, 10); refreshHistory();
 assert.equal(rows().length, 10); assert.ok(text(pagination()).includes('1 de 1'), 'deletion or restoration cannot leave an out-of-range page');
 chartStore.studyData.sessions = []; refreshHistory(); assert.equal(historyList(), null); assert.equal(pagination(), null);
+
+// External analysis shares metrics/history; the official goal ignores analysis filters.
+updateChart([chartSession('basic-training', 30 * 3600),
+  ...[['conversation', 8], ['private-class', 6], ['writing', 4]].map(([category, hours]) => ({ ...chartSession('extra-activities', hours * 3600), id: `extra-${category}`, category, note: 'external ' + category }))]);
+const metricValue = label => text(find(dashboard.tree, n => n.type === 'div' && n.props.className === 'study-panel' && React.Children.toArray(n.props.children).some(child => child?.type === 'span' && text(child) === label)));
+assert.ok(metricValue(translations.extras.internalTime).includes('30h'));
+assert.ok(metricValue(translations.extras.externalTime).includes('18h'));
+assert.ok(metricValue(translations.extras.consolidated).includes('48h'));
+const officialProgress = () => find(dashboard.tree, n => n.type === 'progress').props.value;
+assert.equal(officialProgress(), 6.4);
+assert.equal(chartRows(translations.extras.byCategory).length, 4);
+assert.ok(chartRows(translations.extras.byCategory).some(row => rowLabel(row) === translations.extras.categories.other && barPercent(row) === 0));
+setFilter(4, 'external'); assert.ok(metricValue(translations.extras.consolidated).includes('18h')); assert.equal(officialProgress(), 6.4);
+setFilter(5, 'conversation'); assert.ok(metricValue(translations.extras.consolidated).includes('8h')); assert.equal(officialProgress(), 6.4);
+assert.equal(rows().length, 1); assert.ok(text(historyList()).includes('external conversation'));
+setFilter(4, 'internal'); assert.ok(metricValue(translations.extras.consolidated).includes('30h')); assert.equal(filterControls().length, 5);
+setFilter(4, 'all'); setFilter(5, 'all'); assert.ok(metricValue(translations.extras.consolidated).includes('48h'));
+updateChart(Array.from({ length: 45 }, (_, index) => ({ ...chartSession('extra-activities', 60), id: `extra-page-${index}`, note: `external ${index}` })));
+assert.equal(rows().length, 20); pageButton(translations.common.next).props.onClick(); dashboard.flush();
+assert.equal(rows().length, 20); pageButton(translations.common.next).props.onClick(); dashboard.flush(); assert.equal(rows().length, 5);
+console.log('PASS external dashboard: 30h + 18h = 48h, four categories including zero, origin/category filters, official 6.4% unchanged, notes and 20/20/5 external history.');
 dashboard.dispose();
 console.log('PASS history pagination: 20/20/5 rows, disjoint pages, previous/next boundaries, filter reset, page clamping after data changes and empty state.');
 console.log('PASS module chart: 3min01s of 8min02s = 37.55%, filtered denominator, accurate bar width and safe empty state.');
