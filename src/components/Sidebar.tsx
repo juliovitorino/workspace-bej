@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const SIDEBAR_COLLAPSED_KEY = "bej-sidebar-collapsed";
 import type { ThemePreference } from "../theme";
-export type AppView = "personal-flashcards" | "memory-flashcards" | "hashmap" | "exercises" | "speaking-game" | "chunk-flashcards" | "interpretation" | "shadowing";
+export type AppView = "personal-flashcards" | "memory-flashcards" | "hashmap" | "exercises" | "speaking-game" | "chunk-flashcards" | "favorite-chunks" | "interpretation" | "shadowing";
 interface SidebarProps {
   theme: ThemePreference;
   onThemeChange: (theme: ThemePreference) => void;
@@ -12,6 +12,7 @@ interface SidebarProps {
   onOpenAbout: () => void;
   currentView: AppView;
   personalCount: number;
+  favoriteChunkCount?: number;
   onViewChange: (view: AppView) => void;
 }
 
@@ -20,6 +21,7 @@ export function Sidebar({
   onThemeChange,
   currentView,
   personalCount,
+  favoriteChunkCount = 0,
   onViewChange,
   onOpenLanguages,
   onOpenAbout
@@ -50,6 +52,7 @@ const menuItems: Array<{
       label: t("common.chunkFlashcards"),
       icon: "🗂️"
     },
+    ...(favoriteChunkCount > 0 ? [{ id: "favorite-chunks" as AppView, label: t("favorites.title"), icon: "⭐" }] : []),
     {
       id: "memory-flashcards",
       label: t("memory.title"),

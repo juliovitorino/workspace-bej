@@ -8,8 +8,14 @@ import { isMobileDevice } from "../utils/mobileDevice";
 import { repetitionText, WalkingAudio } from "../utils/walkingAudio";
 import type { ChunkLevel } from "../utils/chunkEligibility";
 import { ChunkLevelSelect } from "./ChunkLevelSelect";
+import { WalkingSession, type WalkingSummary } from "../utils/walkingSession";
+import { WalkingSessionSummary } from "./WalkingSessionSummary";
+import { FavoriteChunkButton } from "./FavoriteChunkButton";
 
 interface Props {
+  stopWhenEmpty?: boolean;
+  favorite?: boolean;
+  onToggleFavorite?: () => void;
   chunk: MentalIntention | null;
   language: StudentLanguage;
   sourceLanguage: SourceLanguage;
@@ -21,10 +27,10 @@ interface Props {
   canPrevious: boolean;
   onPrevious: () => void;
   onNext: () => boolean;
-  onStop: () => void;
+  onStop: (summary?: WalkingSummary) => void;
 }
 
-export function WalkingMode({ chunk, language, sourceLanguage, level, onLevelChange, position, total, round, canPrevious, onPrevious, onNext, onStop }: Props) {
+export function WalkingMode({ chunk, language, sourceLanguage, level, onLevelChange, position, total, round, canPrevious, onPrevious, onNext, onStop, stopWhenEmpty = false, favorite = false, onToggleFavorite }: Props) {
   const { t } = useTranslation();
   const [paused, setPaused] = useState(false);
   const [repetitions, setRepetitions] = useState(5);
@@ -41,9 +47,25 @@ export function WalkingMode({ chunk, language, sourceLanguage, level, onLevelCha
   const elapsed = useRef(0);
   const activeSince = useRef<number | null>(performance.now());
   const audio = useRef(new WalkingAudio());
+  const session = useRef(new WalkingSession());
+  const playbackToken = useRef(0);
   const phase = useRef<"speech" | "pause">("speech");
-  const callbacks = useRef({ onNext, onPrevious, onStop });
-  callbacks.current = { onNext, onPrevious, onStop };
+  const finishWhenEmpty = useRef(false);
+  finishWhenEmpty.current = stopWhenEmpty && total === 0;
+  const callbacks = useRef({ onNext, onPrevious, onStop: stopSession });
+  callbacks.current = { onNext, onPrevious, onStop: stopSession };
+
+  function stopSession() {
+    audio.current.cancel();
+    const duration = elapsed.current + (activeSince.current === null ? 0 : performance.now() - activeSince.current);
+    onStop(session.current.summary(total, Math.floor(duration / 1000)));
+  }
+
+  useEffect(() => {
+    if (finishWhenEmpty.current && (paused || phase.current === "pause" || !chunk || index >= repetitions)) {
+      callbacks.current.onStop();
+    }
+  }, [stopWhenEmpty, total, paused, chunk?.id, index, repetitions]);
 
   function resetPlayback() {
     audio.current.cancel();
@@ -77,10 +99,16 @@ export function WalkingMode({ chunk, language, sourceLanguage, level, onLevelCha
       phase.current = "speech";
       setIndex(v => v + 1);
     };
+    const token = ++playbackToken.current;
     if (phase.current === "pause") audio.current.wait(pause * 1000, done);
     else audio.current.play(repetitionText((chunk.targetIntention ?? chunk.english).trim(), language, index, repetitions),
       language, rate, pause * 1000,
-      () => { phase.current = "pause"; setSpoken(index + 1); }, done,
+      () => {
+        session.current.record(token, chunk.id, index + 1 >= repetitions);
+        phase.current = "pause";
+        setSpoken(index + 1);
+        if (finishWhenEmpty.current) callbacks.current.onStop();
+      }, done,
       () => { setError(t("walking.couldNotPlayTheAudioTapResumeToTryAgain")); setPaused(true); });
     return () => audio.current.cancel();
   }, [chunk?.id, language, level, paused, index, repetitions, pause, rate, automatic, revision]);
@@ -150,17 +178,22 @@ export function WalkingMode({ chunk, language, sourceLanguage, level, onLevelCha
     <p>{t("common.studyTime")} <strong>{time}</strong> · {t("flashcards.roundNumber", { round })}</p>
     <p role="status" aria-label={t("common.chunkPositionInTheRound")}>{position}/{total}</p>
     {chunk ? <article className="chunk-flashcards-card">
-      <p>{language}</p><h3 lang={language}>{chunk.targetIntention ?? chunk.english}</h3>
+      <div className="chunk-flashcards-card-header">
+        <p>{language}</p>
+        {onToggleFavorite && <FavoriteChunkButton active={favorite} onToggle={onToggleFavorite} />}
+      </div>
+      <h3 lang={language}>{chunk.targetIntention ?? chunk.english}</h3>
       <p lang={sourceLanguage}>{chunk.intention}</p>
     </article> : <p role="status">{level === "all" ? t("walking.noChunksAvailable") : t("common.noChunksAvailableForLevelLevel", { level: (level) })}  {t("walking.chooseAnotherLevelInSettings")}</p>}
     <p role="status">{paused ? t("common.paused") : !chunk ? t("walking.waitingForLevelSelection") : index >= repetitions ? t("walking.waitingForTheNextChunk") : t("walking.listenAndRepeat")}  {t("shadowing.repetitions")} {spoken}/{repetitions}</p>
     <progress aria-label={t("walking.repetitionsCompleted")} value={spoken} max={repetitions} />
+    {paused && <WalkingSessionSummary summary={session.current.summary(total, seconds)} />}
     {error && <p role="alert">{error}</p>}
     <div className="walking-controls">
       <button type="button" aria-label={t("walking.previousChunk")} title={t("walking.previousChunk")} disabled={!canPrevious || !chunk} onClick={() => navigate(true)}><ControlIcon name="previous" /></button>
       <button type="button" className="walking-toggle" aria-label={paused ? t("common.resume") : t("common.pause")} title={paused ? t("common.resume") : t("common.pause")} onClick={() => { audio.current.cancel(); setError(""); setPaused(v => !v); }}><ControlIcon name={paused ? "play" : "pause"} /></button>
       <button type="button" aria-label={t("walking.nextChunk")} title={t("walking.nextChunk")} disabled={!chunk} onClick={() => navigate()}><ControlIcon name="next" /></button>
-      <button type="button" aria-label={t("common.stop")} title={t("common.stop")} onClick={() => { audio.current.cancel(); onStop(); }}><ControlIcon name="stop" /></button>
+      <button type="button" aria-label={t("common.stop")} title={t("common.stop")} onClick={stopSession}><ControlIcon name="stop" /></button>
     </div>
     <details className="walking-configuration"><summary aria-label={t("walking.playbackSettings")} title={t("walking.playbackSettings")}><ControlIcon name="settings" /></summary>
       <div className="walking-settings">

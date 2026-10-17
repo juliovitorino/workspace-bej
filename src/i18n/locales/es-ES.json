@@ -809,12 +809,25 @@
     "theScreenMayTurnOffKeepThePageOpenTo": "La pantalla puede apagarse. Mantén la página abierta para continuar.",
     "voiceSpeed": "Velocidad de la voz",
     "waitingForLevelSelection": "Esperando la selección de nivel",
-    "waitingForTheNextChunk": "Esperando el siguiente chunk"
+    "waitingForTheNextChunk": "Esperando el siguiente chunk",
+    "sessionSummary": "Resumen de la sesión",
+    "sessionEnded": "Sesión finalizada",
+    "completedChunks": "Chunks completados",
+    "sessionProgress": "Progreso de la caminata",
+    "playedPhrases": "Frases reproducidas"
   },
   "theme": {
     "label": "Tema",
     "light": "Claro",
     "dark": "Oscuro",
     "auto": "Automático"
+  },
+  "favorites": {
+    "title": "Chunks favoritos",
+    "add": "Añadir a favoritos",
+    "remove": "Quitar de favoritos",
+    "empty": "No hay chunks favoritos disponibles para este idioma y nivel.",
+    "backToAll": "Volver a Chunk Flashcards",
+    "storageError": "No se han podido guardar los favoritos en este navegador."
   }
 }

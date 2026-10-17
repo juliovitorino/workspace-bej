@@ -5,15 +5,19 @@ import { useEffect, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import { isAuthorMode } from "../utils/authorMode";
 import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
+import { eligibleChunks } from "../utils/chunkEligibility";
+import { FavoriteChunkButton } from "./FavoriteChunkButton";
 
 interface IntentionCardProps {
   item: MentalIntention;
   sourceLanguage: SourceLanguage;
   language: StudentLanguage;
   onSelect: (item: MentalIntention) => void;
+  favorite?: boolean;
+  onToggleFavorite?: (id: string) => void;
 }
 
-export function IntentionCard({ item, sourceLanguage, language, onSelect }: IntentionCardProps) {
+export function IntentionCard({ item, sourceLanguage, language, onSelect, favorite = false, onToggleFavorite }: IntentionCardProps) {
   const { t } = useTranslation();
   const hasYoutubeVideo = typeof item.youtubeVideo === "string" && item.youtubeVideo.trim().length > 0;
   const hasYoutubeShort = typeof item.youtubeShort === "string" && item.youtubeShort.trim().length > 0;
@@ -133,6 +137,10 @@ export function IntentionCard({ item, sourceLanguage, language, onSelect }: Inte
 
           {item.category && (
             <span className="pill category-pill">{item.category}</span>
+          )}
+
+          {onToggleFavorite && eligibleChunks([item], "all").length > 0 && (
+            <FavoriteChunkButton active={favorite} onToggle={() => onToggleFavorite(item.id)} />
           )}
 
           {authorMode && (

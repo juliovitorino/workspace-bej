@@ -809,12 +809,25 @@
     "theScreenMayTurnOffKeepThePageOpenTo": "L’écran peut s’éteindre. Gardez la page ouverte pour continuer.",
     "voiceSpeed": "Vitesse de la voix",
     "waitingForLevelSelection": "En attente du choix du niveau",
-    "waitingForTheNextChunk": "En attente du chunk suivant"
+    "waitingForTheNextChunk": "En attente du chunk suivant",
+    "sessionSummary": "Résumé de la séance",
+    "sessionEnded": "Séance terminée",
+    "completedChunks": "Chunks terminés",
+    "sessionProgress": "Progression de la marche",
+    "playedPhrases": "Phrases écoutées"
   },
   "theme": {
     "label": "Thème",
     "light": "Clair",
     "dark": "Sombre",
     "auto": "Automatique"
+  },
+  "favorites": {
+    "title": "Chunks favoris",
+    "add": "Ajouter aux favoris",
+    "remove": "Retirer des favoris",
+    "empty": "Aucun chunk favori disponible pour cette langue et ce niveau.",
+    "backToAll": "Revenir aux Chunk Flashcards",
+    "storageError": "Impossible d’enregistrer les favoris dans ce navigateur."
   }
 }

@@ -11,6 +11,11 @@ import { transpileModule, ModuleKind, JsxEmit, ScriptTarget } from 'typescript';
 // browser APIs. Static rendering below separately uses React's real renderer.
 const require = createRequire(import.meta.url);
 const cache = new Map();
+const translations = JSON.parse(readFileSync('src/i18n/locales/pt-BR.json', 'utf8'));
+const translate = (key, values = {}) => {
+  const value = key.split('.').reduce((item, part) => item?.[part], translations) ?? key;
+  return String(value).replace(/\{\{(\w+)\}\}/g, (_, name) => String(values[name] ?? ''));
+};
 let currentHarness = null;
 const hooks = { ...React };
 for (const name of ['useState', 'useRef', 'useMemo', 'useEffect']) {
@@ -21,11 +26,14 @@ function load(file) {
   if (cache.has(file)) return cache.get(file).exports;
   const module = { exports: {} };
   cache.set(file, module);
+  if (file.endsWith('.css')) return module.exports;
   const { outputText } = transpileModule(readFileSync(file, 'utf8'), { compilerOptions: {
     module: ModuleKind.CommonJS, jsx: JsxEmit.ReactJSX, target: ScriptTarget.ES2022
   } });
   const localRequire = id => {
     if (id === 'react') return hooks;
+    if (id === 'react-i18next') return { useTranslation: () => ({ t: translate, i18n: { language: 'pt-BR' } }) };
+    if (id.endsWith('/i18n')) return { t: translate, languageName: value => value };
     if (!id.startsWith('.')) return require(id);
     const base = resolve(dirname(file), id);
     return load([base, `${base}.ts`, `${base}.tsx`].find(existsSync));
@@ -104,6 +112,12 @@ const { CEFR_LEVELS, eligibleChunks, drawChunk } = load('src/utils/chunkEligibil
 const { ChunkFlashcards } = load('src/components/ChunkFlashcards.tsx');
 const { WalkingMode } = load('src/components/WalkingMode.tsx');
 const { ChunkLevelSelect } = load('src/components/ChunkLevelSelect.tsx');
+const { FavoriteChunkButton } = load('src/components/FavoriteChunkButton.tsx');
+const { WalkingSessionSummary } = load('src/components/WalkingSessionSummary.tsx');
+const { useFavoriteChunks } = load('src/hooks/useFavoriteChunks.ts');
+const { Sidebar } = load('src/components/Sidebar.tsx');
+const { IntentionCard } = load('src/components/IntentionCard.tsx');
+const { IntentionList } = load('src/components/IntentionList.tsx');
 const makeChunk = (id, englishLevel, extra = {}) => ({ id, english: `Chunk ${id}`, intention: `Intenção ${id}`,
   englishLevel, allowLanguageChunkPractice: true, ...extra });
 const fixtures = CEFR_LEVELS.flatMap(level => [makeChunk(`${level}-1`, level), makeChunk(`${level}-2`, level)]);
@@ -118,7 +132,9 @@ assert.equal(eligibleChunks([makeChunk('normalized', ' a2 ')], 'A2').length, 1);
 assert.equal(drawChunk([], [], null), null);
 for (const locale of ['en-US', 'fr-FR', 'es-ES']) {
   const data = JSON.parse(readFileSync(`public/sample-hashmap-${locale}.json`, 'utf8'));
-  const items = Array.isArray(data) ? data : data.mentalMap;
+  const items = (Array.isArray(data) ? data : data.mentalMap).map(item => ({ ...item,
+    english: item.english ?? item.structure, englishLevel: item.englishLevel ?? item.level
+  }));
   const all = eligibleChunks(items, 'all');
   assert.equal(CEFR_LEVELS.reduce((sum, level) => sum + eligibleChunks(items, level).length, 0), all.length);
   for (const level of CEFR_LEVELS) {
@@ -137,7 +153,7 @@ for (const locale of ['en-US', 'fr-FR', 'es-ES']) {
   }
 }
 
-const props = { intentions: fixtures, language: 'fr-FR', onWalkingChange() {},
+const props = { intentions: fixtures, language: 'fr-FR', sourceLanguage: 'pt-BR', onWalkingChange() {},
   onShowDetails() {}, onBasicTraining() {}, onAdvancedTraining() {} };
 for (const language of ['en-US', 'fr-FR', 'es-ES']) {
   const h = new Harness(ChunkFlashcards, { ...props, language }); h.flush();
@@ -240,4 +256,194 @@ assert.equal(timeouts.size, 0);
 assert.equal(intervals.size, 0);
 navigator.userAgent = 'Desktop Chrome'; navigator.platform = 'Win32'; navigator.maxTouchPoints = 0;
 assert.doesNotMatch(renderToStaticMarkup(React.createElement(ChunkFlashcards, props)), /walking-entry/);
+
+// Favorites reuse the real card and round state, with a pool isolated by language.
+const favoriteProps = { ...props, language: 'en-US', mode: 'favorites',
+  favorites: [{ id: 'A1-1', language: 'en-US' }, { id: 'A1-2', language: 'es-ES' }],
+  onToggleFavorite() {}, onBackToAll() {} };
+const favorites = new Harness(ChunkFlashcards, favoriteProps); favorites.flush();
+find(favorites.tree, n => n.type === 'button' && text(n) === 'Começar').props.onClick(); favorites.flush();
+assert.equal(find(favorites.tree, n => n.type === FavoriteChunkButton).props.active, true);
+assert.ok(text(favorites.tree).includes('Chunk A1-1'));
+assert.doesNotMatch(renderToStaticMarkup(React.createElement(ChunkFlashcards, favoriteProps)), /walking-entry/);
+favorites.flush({ ...favoriteProps, language: 'es-ES' });
+find(favorites.tree, n => n.type === 'button' && text(n) === 'Começar').props.onClick(); favorites.flush();
+assert.ok(text(favorites.tree).includes('Chunk A1-2'));
+favorites.flush({ ...favoriteProps, favorites: [] });
+assert.ok(text(favorites.tree).includes(translations.favorites.empty));
+assert.equal(find(favorites.tree, n => n.type === FavoriteChunkButton), null);
+favorites.dispose();
+
+// Count on successful speech end, not draw/navigation or the end of the delay.
+navigator.userAgent = 'iPhone'; navigator.platform = 'iPhone'; navigator.maxTouchPoints = 5;
+now = 0;
+let stopped = null, toggled = 0;
+const statsProps = { ...props, chunk: fixtures[0], total: 2, position: 1, round: 1, level: 'all',
+  canPrevious: false, onPrevious() {}, onNext() { return false; }, onLevelChange() {},
+  onStop(summary) { stopped = summary; }, favorite: false, onToggleFavorite() { toggled++; } };
+const stats = new Harness(WalkingMode, statsProps); stats.flush();
+for (let i = 0; i < 2; i++) {
+  const utterance = utterances.at(-1); utterance.onend(); utterance.onend(); stats.flush();
+  const [id, timer] = [...timeouts][0]; timeouts.delete(id); timer.fn(); stats.flush();
+}
+const incomplete = utterances.at(-1);
+now = 10000; named(stats.tree, 'Pausar').props.onClick(); stats.flush();
+let summary = find(stats.tree, n => n.type === WalkingSessionSummary).props.summary;
+assert.deepEqual({ ...summary }, { completed: 0, total: 2, phrases: 2, seconds: 10 });
+incomplete.onend(); incomplete.onerror(); stats.flush();
+assert.equal(find(stats.tree, n => n.type === WalkingSessionSummary).props.summary.phrases, 2);
+now = 60000; for (const tick of intervals.values()) tick(); stats.flush();
+assert.equal(find(stats.tree, n => n.type === WalkingSessionSummary).props.summary.seconds, 10);
+named(stats.tree, 'Continuar').props.onClick(); stats.flush();
+const speechBeforeFavorite = utterances.length;
+find(stats.tree, n => n.type === FavoriteChunkButton).props.onToggle();
+stats.flush({ ...statsProps, favorite: true });
+assert.equal(toggled, 1); assert.equal(utterances.length, speechBeforeFavorite);
+for (let i = 0; i < 3; i++) {
+  utterances.at(-1).onend(); stats.flush();
+  if (i < 2) { const [id, timer] = [...timeouts][0]; timeouts.delete(id); timer.fn(); stats.flush(); }
+}
+now = 65000;
+named(stats.tree, 'Parar').props.onClick(); stats.flush();
+assert.deepEqual({ ...stopped }, { completed: 1, total: 2, phrases: 5, seconds: 15 });
+stats.dispose();
+const newSession = new Harness(WalkingMode, statsProps); newSession.flush();
+named(newSession.tree, 'Pausar').props.onClick(); newSession.flush();
+assert.equal(find(newSession.tree, n => n.type === WalkingSessionSummary).props.summary.phrases, 0);
+newSession.dispose();
+assert.equal(timeouts.size, 0); assert.equal(intervals.size, 0);
+
+// Favorites walking uses the same playback and draw policy on phones only.
+const extraFavoriteChunk = makeChunk('A1-3', 'A1');
+let favoriteWalkProps = { ...props, language: 'en-US', mode: 'favorites', intentions: [...fixtures, extraFavoriteChunk],
+  favorites: [{ id: 'A1-1', language: 'en-US' }, { id: 'A1-2', language: 'en-US' },
+    { id: 'A2-1', language: 'es-ES' }, { id: 'A2-2', language: 'en-US' }],
+  onToggleFavorite(id) { favoriteWalkProps = { ...favoriteWalkProps,
+    favorites: favoriteWalkProps.favorites.filter(f => f.id !== id || f.language !== 'en-US') }; } };
+const favoriteWalkParent = new Harness(ChunkFlashcards, favoriteWalkProps); favoriteWalkParent.flush();
+find(favoriteWalkParent.tree, n => n.type === ChunkLevelSelect).props.onChange('A1'); favoriteWalkParent.flush();
+assert.ok(find(favoriteWalkParent.tree, n => n.props?.className?.includes('walking-entry')));
+find(favoriteWalkParent.tree, n => n.props?.className?.includes('walking-entry')).props.onClick(); favoriteWalkParent.flush();
+const favoriteWalk = new Harness(WalkingMode, favoriteWalkParent.tree.props);
+function flushFavoriteWalk() {
+  for (let i = 0; i < 30; i++) {
+    favoriteWalkParent.flush(favoriteWalkProps);
+    if (favoriteWalkParent.tree.type !== WalkingMode) return;
+    favoriteWalk.flush(favoriteWalkParent.tree.props);
+    if (!favoriteWalkParent.dirty) return;
+  }
+  assert.fail('Favorite walking must settle');
+}
+flushFavoriteWalk();
+assert.equal(favoriteWalkParent.tree.props.total, 2);
+const removedCurrent = favoriteWalkParent.tree.props.chunk.id;
+utterances.at(-1).onend(); flushFavoriteWalk();
+{ const [id, timer] = [...timeouts][0]; timeouts.delete(id); timer.fn(); flushFavoriteWalk(); }
+const playingBeforeRemoval = utterances.at(-1), speechCountBeforeRemoval = utterances.length;
+find(favoriteWalk.tree, n => n.type === FavoriteChunkButton).props.onToggle(); flushFavoriteWalk();
+assert.equal(favoriteWalkParent.tree.props.chunk.id, removedCurrent);
+assert.equal(favoriteWalkParent.tree.props.total, 1);
+assert.equal(utterances.length, speechCountBeforeRemoval); // current utterance was not restarted/canceled
+favoriteWalkProps = { ...favoriteWalkProps, favorites: [...favoriteWalkProps.favorites, { id: 'A1-3', language: 'en-US' }] };
+flushFavoriteWalk(); assert.equal(favoriteWalkParent.tree.props.total, 2);
+assert.equal(utterances.at(-1), playingBeforeRemoval);
+for (let i = 1; i < 5; i++) {
+  utterances.at(-1).onend(); flushFavoriteWalk();
+  const [id, timer] = [...timeouts][0]; timeouts.delete(id); timer.fn(); flushFavoriteWalk();
+}
+assert.notEqual(favoriteWalkParent.tree.props.chunk.id, removedCurrent);
+assert.equal(favoriteWalkParent.tree.props.chunk.englishLevel, 'A1');
+assert.equal(utterances.at(-1).lang, 'en-US');
+named(favoriteWalk.tree, 'Pausar').props.onClick(); flushFavoriteWalk();
+const beforeEmptySummary = find(favoriteWalk.tree, n => n.type === WalkingSessionSummary).props.summary;
+assert.equal(beforeEmptySummary.phrases, 5); assert.equal(beforeEmptySummary.completed, 1);
+favoriteWalkProps = { ...favoriteWalkProps, favorites: [] }; flushFavoriteWalk();
+assert.notEqual(favoriteWalkParent.tree.type, WalkingMode);
+const emptySummary = find(favoriteWalkParent.tree, n => n.type === WalkingSessionSummary).props.summary;
+assert.equal(emptySummary.total, 0); assert.equal(emptySummary.phrases, 5); assert.equal(emptySummary.completed, 1);
+assert.equal(emptySummary.seconds, beforeEmptySummary.seconds);
+favoriteWalk.dispose(); favoriteWalkParent.dispose();
+// Removing the sole favorite during speech lets that speech end before stopping.
+let soleStop = null;
+const soleProps = { ...statsProps, stopWhenEmpty: true, onStop(summary) { soleStop = summary; } };
+const soleWalk = new Harness(WalkingMode, soleProps); soleWalk.flush();
+const lastUtterance = utterances.at(-1);
+soleWalk.flush({ ...soleProps, total: 0 }); assert.equal(soleStop, null);
+lastUtterance.onend(); soleWalk.flush();
+assert.equal(soleStop.total, 0); assert.equal(soleStop.phrases, 1);
+soleWalk.dispose();
+assert.equal(timeouts.size, 0); assert.equal(intervals.size, 0);
+assert.ok(text(WalkingSessionSummary({ summary: { completed: 3, total: 1, phrases: 15, seconds: 10 } })).includes('100%'));
+assert.ok(text(WalkingSessionSummary({ summary: { completed: 3, total: 0, phrases: 15, seconds: 10 } })).includes('0%'));
+console.log('Favorites walking: mobile entry, level/language pool, live add/remove, uninterrupted speech, historical stats and safe empty-session stop passed.');
+// The shared hook persists synchronously and leaves other languages intact.
+let savedFavorites = null;
+globalThis.localStorage = {
+  getItem: () => savedFavorites,
+  setItem(key, value) { assert.equal(key, 'bej-favorite-chunks'); savedFavorites = value; }
+};
+const store = new Harness(useFavoriteChunks, {}); store.flush();
+store.tree.toggleFavorite('A1-1', 'en-US');
+store.tree.toggleFavorite('A1-1', 'es-ES');
+store.flush();
+assert.equal(JSON.parse(savedFavorites).length, 2);
+store.tree.toggleFavorite('A1-1', 'es-ES'); store.flush();
+assert.deepEqual(JSON.parse(savedFavorites), [{ id: 'A1-1', language: 'en-US' }]);
+const reloaded = new Harness(useFavoriteChunks, {}); reloaded.flush();
+assert.equal(reloaded.tree.favorites[0].language, 'en-US');
+globalThis.localStorage.setItem = () => { throw Error('quota'); };
+store.tree.toggleFavorite('A1-2', 'en-US'); store.flush();
+assert.equal(store.tree.storageError, true); assert.equal(store.tree.favorites.length, 1);
+store.dispose(); reloaded.dispose();
+const sidebarProps = { theme: 'light', currentView: 'chunk-flashcards', personalCount: 0,
+  onThemeChange() {}, onOpenLanguages() {}, onOpenAbout() {}, onViewChange() {} };
+assert.ok(renderToStaticMarkup(React.createElement(Sidebar, { ...sidebarProps, favoriteChunkCount: 1 })).includes(translations.favorites.title));
+assert.ok(!renderToStaticMarkup(React.createElement(Sidebar, { ...sidebarProps, favoriteChunkCount: 0 })).includes(translations.favorites.title));
+
+// Hashmap is another entry point into the same shared favorite store.
+let hashmapSaved = null, selectedIntention = null;
+globalThis.localStorage = {
+  getItem: () => hashmapSaved,
+  setItem(key, value) { assert.equal(key, 'bej-favorite-chunks'); hashmapSaved = value; }
+};
+function FavoriteListHarness(input) {
+  const store = useFavoriteChunks();
+  return IntentionList({ ...input, favorites: store.favorites,
+    onToggleFavorite: id => store.toggleFavorite(id, input.language) });
+}
+const listProps = { items: [fixtures[0]], sourceLanguage: 'pt-BR', language: 'en-US',
+  onSelect(item) { selectedIntention = item; } };
+const list = new Harness(FavoriteListHarness, listProps); list.flush();
+const card = new Harness(IntentionCard, find(list.tree, n => n.type === IntentionCard).props); card.flush();
+const clickFavorite = () => {
+  const favorite = find(card.tree, n => n.type === FavoriteChunkButton);
+  const button = new Harness(FavoriteChunkButton, favorite.props); button.flush();
+  let stopped = false;
+  button.tree.props.onClick({ stopPropagation() { stopped = true; } });
+  if (!stopped) find(card.tree, n => n.props?.role === 'button').props.onClick();
+  assert.equal(stopped, true); assert.equal(selectedIntention, null);
+  button.dispose(); list.flush(); card.flush(find(list.tree, n => n.type === IntentionCard).props);
+};
+assert.equal(find(card.tree, n => n.type === FavoriteChunkButton).props.active, false);
+clickFavorite();
+assert.equal(find(card.tree, n => n.type === FavoriteChunkButton).props.active, true);
+assert.deepEqual(JSON.parse(hashmapSaved), [{ id: fixtures[0].id, language: 'en-US' }]);
+list.flush({ ...listProps, language: 'es-ES' }); card.flush(find(list.tree, n => n.type === IntentionCard).props);
+assert.equal(find(card.tree, n => n.type === FavoriteChunkButton).props.active, false);
+clickFavorite(); assert.equal(JSON.parse(hashmapSaved).length, 2);
+clickFavorite(); assert.deepEqual(JSON.parse(hashmapSaved), [{ id: fixtures[0].id, language: 'en-US' }]);
+// Existing card navigation still works, while ineligible cards have no star.
+find(card.tree, n => n.props?.role === 'button').props.onClick();
+assert.equal(selectedIntention.id, fixtures[0].id);
+card.flush({ ...card.props, item: { ...fixtures[0], allowLanguageChunkPractice: false } });
+assert.equal(find(card.tree, n => n.type === FavoriteChunkButton), null);
+// Author and ordinary profiles see the same public favorite action.
+for (const author of [false, true]) {
+  window.localStorage = { getItem: () => author ? '8f4c2e91-6a73-4d0b-9e52-c17a08f6b394' : null };
+  card.flush({ ...card.props, item: fixtures[0] });
+  assert.ok(find(card.tree, n => n.type === FavoriteChunkButton));
+}
+card.dispose(); list.dispose();
+console.log('Hashmap favorites: shared persistence, public profiles, eligibility, language isolation and click/navigation separation passed.');
 console.log('CEFR, real catalogs, round coverage/counters, backward navigation, live filters, cancellation, time/settings, empty levels and accessible controls passed.');
+console.log('Favorites filtering/removal/language changes, pause/resume summaries, incomplete/duplicate speech, active time, stop/new sessions and favorite toggling during playback passed.');

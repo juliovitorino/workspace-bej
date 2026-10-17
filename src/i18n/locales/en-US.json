@@ -809,12 +809,25 @@
     "theScreenMayTurnOffKeepThePageOpenTo": "The screen may turn off. Keep the page open to continue.",
     "voiceSpeed": "Voice speed",
     "waitingForLevelSelection": "Waiting for level selection",
-    "waitingForTheNextChunk": "Waiting for the next chunk"
+    "waitingForTheNextChunk": "Waiting for the next chunk",
+    "sessionSummary": "Session summary",
+    "sessionEnded": "Session ended",
+    "completedChunks": "Completed chunks",
+    "sessionProgress": "Walking progress",
+    "playedPhrases": "Phrases played"
   },
   "theme": {
     "label": "Theme",
     "light": "Light",
     "dark": "Dark",
     "auto": "Automatic"
+  },
+  "favorites": {
+    "title": "Favorite Chunks",
+    "add": "Add to favorites",
+    "remove": "Remove from favorites",
+    "empty": "No favorite chunks available for this language and level.",
+    "backToAll": "Back to Chunk Flashcards",
+    "storageError": "Could not save favorites in this browser."
   }
 }

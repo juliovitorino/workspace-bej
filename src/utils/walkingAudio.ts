@@ -41,6 +41,7 @@ export class WalkingAudio {
     if (!("speechSynthesis" in window)) { onError(); return; }
     const synth = window.speechSynthesis;
     const utterance = new SpeechSynthesisUtterance(text);
+    let settled = false;
     this.utterance = utterance;
     utterance.lang = language;
     utterance.rate = rate;
@@ -49,7 +50,8 @@ export class WalkingAudio {
       voices.find(v => v.lang.toLowerCase().startsWith(language.slice(0, 2))) ?? null;
     if (strictVoice && !utterance.voice) { onError(); return; }
     utterance.onend = () => {
-      if (generation !== this.generation) return;
+      if (generation !== this.generation || settled) return;
+      settled = true;
       this.utterance = null;
       onSpoken();
       if (generation !== this.generation) return;
@@ -58,7 +60,7 @@ export class WalkingAudio {
       }, pauseMs);
     };
     utterance.onerror = () => {
-      if (generation === this.generation) { this.cancel(); onError(); }
+      if (generation === this.generation && !settled) { settled = true; this.cancel(); onError(); }
     };
     try { synth.speak(this.utterance); } catch { this.cancel(); onError(); }
   }
