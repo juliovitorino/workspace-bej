@@ -1,5 +1,4 @@
 import type { FavoriteChunk } from "../utils/favoriteChunks";
-import { FavoriteChunkButton } from "./FavoriteChunkButton";
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
@@ -1126,9 +1125,6 @@ Mandatório:
             <div className="examples">
               {item.examples.map((example, index) => (
                 <div className="example" key={example.id}>
-                  {onToggleFavorite && example.id && targetSentence(example).trim() && <FavoriteChunkButton
-                    active={favorites.some(favorite => favorite.type === "example" && favorite.id === example.id && favorite.language === language)}
-                    onToggle={() => onToggleFavorite(example.id, "example")} />}
                   <p>
                     {renderHighlightedText(
                       example.pt,
@@ -1344,6 +1340,37 @@ Mandatório:
                             <path d="M14.5 4h-5L7.8 6H5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3h-2.8z" />
                             <circle cx="12" cy="13" r="3" />
                           </svg>
+                        </button>
+                      )}
+                      {onToggleFavorite && example.id && targetSentence(example).trim() && (
+                        <button
+                          type="button"
+                          className="chunk-favorite-button"
+                          aria-label={t(favorites.some(favorite => favorite.type === "example" && favorite.id === example.id && favorite.language === language) ? "favorites.remove" : "favorites.add")}
+                          title={t(favorites.some(favorite => favorite.type === "example" && favorite.id === example.id && favorite.language === language) ? "favorites.remove" : "favorites.add")}
+                          aria-pressed={favorites.some(favorite => favorite.type === "example" && favorite.id === example.id && favorite.language === language)}
+                          onClick={event => {
+                            event.stopPropagation();
+                            onToggleFavorite(example.id, "example");
+                          }}
+                          style={{
+                            width: "2.5rem",
+                            minWidth: "2.5rem",
+                            height: "2.5rem",
+                            minHeight: "2.5rem",
+                            flex: "0 0 2.5rem",
+                            margin: 0,
+                            padding: 0,
+                            border: "none",
+                            background: "transparent",
+                            color: "var(--accent)",
+                            display: "inline-flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            cursor: "pointer"
+                          }}
+                        >
+                          <span aria-hidden="true">{favorites.some(favorite => favorite.type === "example" && favorite.id === example.id && favorite.language === language) ? "★" : "☆"}</span>
                         </button>
                       )}
                     </div>
