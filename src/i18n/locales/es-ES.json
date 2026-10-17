@@ -502,6 +502,7 @@
     "practiceType": "Tipo de práctica"
   },
   "filters": {
+    "clearLevelCategoryTags": "Limpiar filtros de nivel, categor?a y etiquetas",
     "all": "Todas (",
     "allCategoriesCount": "Todas ({{count}})",
     "allTodos": "Todos",

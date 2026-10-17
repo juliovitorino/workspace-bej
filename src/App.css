@@ -2702,3 +2702,5 @@ button { color: inherit; }
     transition: none;
   }
 }
+
+#app-floating-controls .hashmap-clear-card-filters { order: -2; }

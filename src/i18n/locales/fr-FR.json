@@ -502,6 +502,7 @@
     "practiceType": "Type d’entraînement"
   },
   "filters": {
+    "clearLevelCategoryTags": "Effacer les filtres de niveau, cat?gorie et ?tiquettes",
     "all": "Toutes (",
     "allCategoriesCount": "Toutes ({{count}})",
     "allTodos": "Tous",
