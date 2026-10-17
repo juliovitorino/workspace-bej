@@ -603,6 +603,20 @@ assert.equal(favoriteStudyItems([exampleOrigin], exampleFavorites, 'en-US', 'A1'
 assert.equal(favoriteStudyItems([exampleOrigin], exampleFavorites, 'en-US', 'B1').length, 2);
 const completeOrigin = { ...exampleOrigin, allowLanguageChunkPractice: true };
 assert.equal(favoriteStudyItems([completeOrigin], [...exampleFavorites, { id: 'origin', language: 'en-US' }], 'en-US', 'all').length, 3);
+// Favorite session IDs and example text must never replace the parent used by navigation.
+for (const catalogFavorite of [exampleFavorites.find(f => f.type === 'example' && f.language === 'en-US'), { id: 'origin', language: 'en-US' }]) {
+  const opened = [];
+  const navigation = new Harness(ChunkFlashcards, { ...props, language: 'en-US', mode: 'favorites',
+    intentions: [completeOrigin], favorites: [catalogFavorite],
+    onShowDetails: item => opened.push(item), onBasicTraining: item => opened.push(item), onAdvancedTraining: item => opened.push(item) });
+  navigation.flush();
+  find(navigation.tree, n => n.type === 'button' && n.props.className === 'primary-button').props.onClick(); navigation.flush();
+  for (const title of [translations.flashcards.viewDetailsAndMoreExamples, translations.common.basicPractice, translations.common.advancedPractice]) {
+    find(navigation.tree, n => n.type === 'button' && n.props.title === title).props.onClick();
+    assert.equal(opened.at(-1), completeOrigin);
+  }
+  navigation.dispose();
+}
 let exampleProps = { ...props, language: 'en-US', mode: 'favorites', intentions: [exampleOrigin], favorites: exampleFavorites,
   onToggleFavorite(id, type) { exampleProps = { ...exampleProps, favorites: exampleProps.favorites.filter(f => f.id !== id || f.type !== type || f.language !== 'en-US') }; } };
 const examplePractice = new Harness(ChunkFlashcards, exampleProps); examplePractice.flush();
@@ -641,3 +655,36 @@ utterances.at(-1).onstart(); assert.deepEqual(walkSignals.at(-1), { active: true
 utterances.at(-1).onend(); assert.deepEqual(walkSignals.at(-1), { active: false, mode: 'walking' });
 trackedWalk.dispose();
 console.log('Dashboard integration: manual start/pause/resume/unmount, no per-card restart, walking starts on actual speech and excludes repetition delays passed.');
+
+// Card filters derive selection from the official filters and isolate click events.
+const filterCalls = []; let detailCalls = 0;
+const filterItem = { ...fixtures[0], englishLevel: 'A2', category: 'tense', sourceTags: ['presente'], targetTags: ['present'] };
+const filterProps = { item: filterItem, sourceLanguage: 'pt-BR', language: 'en-US', onSelect: () => detailCalls++,
+  filters: { englishLevelSearch: '', categorySearch: '', selectedTags: [],
+    onLevelToggle: value => filterCalls.push(['level', value]), onCategoryToggle: value => filterCalls.push(['category', value]),
+    onTagToggle: value => filterCalls.push(['tag', value]) } };
+const filterCard = new Harness(IntentionCard, filterProps); filterCard.flush();
+let stoppedClicks = 0;
+for (const value of ['A2', 'tense', 'presente', 'present']) {
+  const button = find(filterCard.tree, n => n.type === 'button' && n.props.children === value);
+  assert.equal(button.props['aria-pressed'], false);
+  button.props.onClick({ stopPropagation() { stoppedClicks++; } });
+}
+assert.deepEqual(filterCalls, [['level', 'A2'], ['category', 'tense'], ['tag', 'presente'], ['tag', 'present']]);
+assert.equal(stoppedClicks, 4); assert.equal(detailCalls, 0);
+filterCard.flush({ ...filterProps, filters: { ...filterProps.filters, englishLevelSearch: 'a2', categorySearch: 'tense', selectedTags: ['presente', 'present'] } });
+for (const value of ['A2', 'tense', 'presente', 'present']) assert.equal(find(filterCard.tree, n => n.type === 'button' && n.props.children === value).props['aria-pressed'], true);
+filterCard.flush(filterProps);
+assert.equal(find(filterCard.tree, n => n.type === 'button' && n.props.children === 'A2').props['aria-pressed'], false);
+filterCard.dispose();
+console.log('Card filters: level/category/bilingual tags, official state highlights, clearing and event isolation passed.');
+
+const { searchIntentions: searchCardFilters } = load('src/utils/searchIntentions.ts');
+const filterCatalog = [
+  { ...filterItem, id: 'present', tags: ['presente'] },
+  { ...filterItem, id: 'informal', tags: ['informal'] },
+  { ...filterItem, id: 'other', category: 'other', tags: ['presente'] }
+];
+assert.deepEqual(searchCardFilters(filterCatalog, '', '', 'tense', ['presente', 'informal'], 'A2').map(item => item.id).sort(), ['informal', 'present']);
+assert.equal(searchCardFilters(filterCatalog, '', '', 'tense', ['informal'], 'A2').length, 1);
+console.log('Card filter combinations preserve OR between tags and AND with level/category.');

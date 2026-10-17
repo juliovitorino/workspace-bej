@@ -83,3 +83,14 @@
     overflow-wrap: anywhere;
   }
 }
+
+.intention-card .card-filter-button {
+  font-family: inherit; cursor: pointer; min-height: 44px; max-width: 100%;
+  align-items: center; white-space: normal; overflow-wrap: anywhere;
+  border: 1px solid var(--border-strong);
+}
+.intention-card .card-filter-button[aria-pressed="true"] {
+  color: var(--accent); border-color: var(--accent); background: var(--accent-soft);
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.intention-card .card-filter-button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }

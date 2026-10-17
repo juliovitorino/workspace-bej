@@ -5,7 +5,7 @@
     "configuration": "Configuración de la actividad",
     "category": "Categoría externa",
     "note": "Nota opcional (hasta 1.000 caracteres)",
-    "categories": { "conversation": "Conversación", "writing": "Escritura", "private-class": "Clase particular", "other": "Otros estudios" },
+    "categories": { "conversation": "Conversación", "writing": "Escritura", "private-class": "Clase particular", "reading": "Lectura", "active-listening": "Escucha activa", "other": "Otros estudios" },
     "states": { "ready": "Listo para empezar", "running": "En curso", "paused": "En pausa", "ended": "Finalizado", "recovery": "Pendiente de recuperación" },
     "start": "Iniciar actividad",
     "stopSave": "Detener y guardar",
@@ -33,7 +33,12 @@
   "study": {
     "historyTitle": "Historial de estudios",
     "backDashboard": "Volver al panel",
+    "moreOptions": "M?s opciones del panel",
     "settings": "Configuraci?n",
+    "showDetails": "Mostrar detalles",
+    "hideDetails": "Ocultar detalles",
+    "showGoalExplanation": "Mostrar explicaci?n de la meta",
+    "hideGoalExplanation": "Ocultar explicaci?n de la meta",
     "moreDetails": "+ Detalles",
     "lessDetails": "? Detalles",
     "historyPages": "Paginación del historial",
@@ -588,6 +593,9 @@
     "yourBrowserDoesNotSupportSpeechPlayback": "Tu navegador no admite la reproducción de voz."
   },
   "hashmap": {
+    "filterByLevel": "Filtrar por nivel {{level}}",
+    "filterByCategory": "Filtrar por categor?a {{category}}",
+    "filterByTag": "Filtrar por etiqueta {{tag}}",
     "contentPublishedOnYoutube": "Contenido publicado en YouTube",
     "couldNotCopyTheIdTryAgain": "No se ha podido copiar el ID. Inténtalo de nuevo.",
     "emptyHint": "Prueba otros términos en {{sourceLanguage}} o {{targetLanguage}}, o borra los filtros.",

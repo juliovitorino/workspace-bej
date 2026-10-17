@@ -148,7 +148,8 @@ fixture.studyData.sessions = [['basic-training', 30, undefined], ['extra-activit
 let stats = app.stats(fixture.studyData, filter, new Date(now));
 assert.equal(stats.internal, 30 * 3600); assert.equal(stats.external, 18 * 3600); assert.equal(stats.total, 48 * 3600);
 assert.equal(stats.total / (750 * 3600) * 100, 6.4);
-assert.equal(stats.byExtraCategory.other, 0); assert.equal(Object.keys(stats.byExtraCategory).length, 4);
+assert.equal(stats.byExtraCategory.other, 0); assert.equal(Object.keys(stats.byExtraCategory).length, 6);
+assert.equal(stats.byExtraCategory.reading, 0); assert.equal(stats.byExtraCategory['active-listening'], 0);
 assert.equal(app.stats(fixture.studyData, { ...filter, origin: 'external' }, new Date(now)).total, 18 * 3600);
 assert.equal(app.stats(fixture.studyData, { ...filter, extraCategory: 'conversation' }, new Date(now)).total, 8 * 3600);
 assert.equal(app.stats(fixture.studyData, { ...filter, origin: 'internal', extraCategory: 'conversation' }, new Date(now)).total, 30 * 3600);
@@ -171,6 +172,50 @@ assert.equal(app.storage.parseStudyBackup(JSON.stringify(app.storage.backupOf(ap
 assert.equal(data.get('bej-favorite-chunks'), 'preserve'); assert.equal(data.get('interface-theme'), 'dark');
 console.log('PASS consolidation: 30h + 18h = 48h, 6.4% goal, source/category/language filters, four categories, manual adjustments, legacy schema, backup merge/dedup/conflicts and note validation.');
 console.log('PASS concurrency: existing tracking lock protects internal/external writes and another tab cannot start or change a session.');
+// Exercise both additions through the real service and persisted recovery path.
+const oldSessions = structuredClone(app.storage.readStudyStore().studyData.sessions);
+for (const category of ['reading', 'active-listening']) {
+  await app.service.startExtraActivity('en-US', category, 'note ' + category);
+  draft = app.storage.readStudyStore().extraActivity;
+  assert.equal(draft.category, category);
+  now += 90000; await app.service.changeExtraActivity(draft.id, 'pause');
+  now += 30000;
+  assert.equal(app.time.extraEstimate(app.storage.readStudyStore().extraActivity, now).accumulatedMs, 90000);
+  await app.service.changeExtraActivity(draft.id, 'resume'); now += 30000;
+  await app.service.changeExtraActivity(draft.id, 'stop');
+  await app.service.changeExtraActivity(draft.id, 'stop');
+  let saved = app.storage.readStudyStore().studyData.sessions.filter(s => s.id === draft.id);
+  assert.equal(saved.length, 1); assert.equal(saved[0].activeSeconds, 120);
+  assert.equal(saved[0].category, category); assert.equal(saved[0].note, 'note ' + category);
+
+  await app.service.startExtraActivity('en-US', category, 'recovered ' + category);
+  now += 60000; await reload(); draft = app.storage.readStudyStore().extraActivity;
+  assert.equal(draft.category, category); assert.ok(draft.recoveryAt);
+  await app.service.changeExtraActivity(draft.id, 'confirm', 45);
+  saved = app.storage.readStudyStore().studyData.sessions.filter(s => s.id === draft.id);
+  assert.equal(saved.length, 1); assert.equal(saved[0].activeSeconds, 45);
+}
+const expandedStore = app.storage.readStudyStore();
+assert.deepEqual(expandedStore.studyData.sessions.slice(0, oldSessions.length), oldSessions);
+for (const category of ['reading', 'active-listening']) {
+  const filtered = app.stats(expandedStore.studyData, { ...filter, extraCategory: category }, new Date(now));
+  assert.equal(filtered.total, 165); assert.equal(filtered.external, 165);
+  assert.equal(filtered.byLanguage['en-US'], 165);
+  assert.equal(filtered.byExtraCategory[category], 165);
+  assert.ok(filtered.entries.every(e => e.category === category));
+}
+const expandedStats = app.stats(expandedStore.studyData, filter, new Date(now));
+assert.equal(expandedStats.total, app.stats({ ...expandedStore.studyData, sessions: oldSessions }, filter, new Date(now)).total + 330);
+assert.equal(Object.values(expandedStats.byExtraCategory).reduce((a, b) => a + b, 0), expandedStats.external);
+const expandedBackup = app.storage.parseStudyBackup(JSON.stringify(app.storage.backupOf(expandedStore, new Date(now))));
+let expandedRestored = app.storage.restoreStudyBackup(app.storage.emptyStore(), expandedBackup, JSON.stringify(app.storage.emptyStore()));
+expandedRestored = app.storage.restoreStudyBackup(expandedRestored, expandedBackup, JSON.stringify(expandedRestored));
+assert.deepEqual(expandedRestored.studyData, expandedStore.studyData);
+for (const locale of ['pt-BR', 'en-US', 'es-ES', 'fr-FR']) {
+  const labels = JSON.parse(readFileSync('src/i18n/locales/' + locale + '.json', 'utf8')).extras.categories;
+  assert.ok(labels.reading); assert.ok(labels['active-listening']);
+}
+console.log('PASS reading/listening: start, pause, resume, stop, recovery, persisted notes, category filters, totals without duplication, legacy preservation, new backup restore and four locales.');
 stop(); await settle(); Date.now = realNow;
 assert.equal(timers.size, 0);
 

@@ -5,7 +5,7 @@
     "configuration": "Configuration de l’activité",
     "category": "Catégorie externe",
     "note": "Note facultative (1 000 caractères maximum)",
-    "categories": { "conversation": "Conversation", "writing": "Écriture", "private-class": "Cours particulier", "other": "Autres études" },
+    "categories": { "conversation": "Conversation", "writing": "Écriture", "private-class": "Cours particulier", "reading": "Lecture", "active-listening": "?coute active", "other": "Autres études" },
     "states": { "ready": "Prêt à commencer", "running": "En cours", "paused": "En pause", "ended": "Terminé", "recovery": "Récupération en attente" },
     "start": "Démarrer l’activité",
     "stopSave": "Arrêter et enregistrer",
@@ -33,7 +33,12 @@
   "study": {
     "historyTitle": "Historique des ?tudes",
     "backDashboard": "Retour au tableau de bord",
+    "moreOptions": "Plus d?options du tableau de bord",
     "settings": "Param?tres",
+    "showDetails": "Afficher les d?tails",
+    "hideDetails": "Masquer les d?tails",
+    "showGoalExplanation": "Afficher l?explication de l?objectif",
+    "hideGoalExplanation": "Masquer l?explication de l?objectif",
     "moreDetails": "+ D?tails",
     "lessDetails": "? D?tails",
     "historyPages": "Pagination de l’historique",
@@ -588,6 +593,9 @@
     "yourBrowserDoesNotSupportSpeechPlayback": "Votre navigateur ne prend pas en charge la lecture vocale."
   },
   "hashmap": {
+    "filterByLevel": "Filtrer par niveau {{level}}",
+    "filterByCategory": "Filtrer par cat?gorie {{category}}",
+    "filterByTag": "Filtrer par ?tiquette {{tag}}",
     "contentPublishedOnYoutube": "Contenus publiés sur YouTube",
     "couldNotCopyTheIdTryAgain": "Impossible de copier l’ID. Réessayez.",
     "emptyHint": "Essayez d’autres termes en {{sourceLanguage}} ou en {{targetLanguage}}, ou effacez les filtres.",

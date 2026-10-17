@@ -5,7 +5,7 @@
     "configuration": "Activity setup",
     "category": "External category",
     "note": "Optional note (up to 1,000 characters)",
-    "categories": { "conversation": "Conversation", "writing": "Writing", "private-class": "Private lesson", "other": "Other study" },
+    "categories": { "conversation": "Conversation", "writing": "Writing", "private-class": "Private lesson", "reading": "Reading", "active-listening": "Active Listening", "other": "Other study" },
     "states": { "ready": "Ready to start", "running": "In progress", "paused": "Paused", "ended": "Finished", "recovery": "Recovery pending" },
     "start": "Start activity",
     "stopSave": "Stop and save",
@@ -33,7 +33,12 @@
   "study": {
     "historyTitle": "Study History",
     "backDashboard": "Back to Dashboard",
+    "moreOptions": "More dashboard options",
     "settings": "Settings",
+    "showDetails": "Show details",
+    "hideDetails": "Hide details",
+    "showGoalExplanation": "Show goal explanation",
+    "hideGoalExplanation": "Hide goal explanation",
     "moreDetails": "+ Details",
     "lessDetails": "? Details",
     "historyPages": "History pagination",
@@ -588,6 +593,9 @@
     "yourBrowserDoesNotSupportSpeechPlayback": "Your browser does not support speech playback."
   },
   "hashmap": {
+    "filterByLevel": "Filter by level {{level}}",
+    "filterByCategory": "Filter by category {{category}}",
+    "filterByTag": "Filter by tag {{tag}}",
     "contentPublishedOnYoutube": "Content published on YouTube",
     "couldNotCopyTheIdTryAgain": "Could not copy the ID. Try again.",
     "emptyHint": "Try other terms in {{sourceLanguage}} or {{targetLanguage}}, or clear the filters.",
