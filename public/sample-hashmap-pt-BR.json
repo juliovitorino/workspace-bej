@@ -29365,98 +29365,6 @@
       ]
     },
     {
-      "id": "a-vaca-foi-pro-brejo-7933a3d2-ce0b-4915-a463-66bdbe6b4ef4",
-      "intention": "A vaca foi pro brejo / Deu tudo errado",
-      "pattern": "«a vaca foi pro brejo» / «a vaca pode ir pro brejo» / «Tudo começou a dar errado» / «dar errado» / «tudo vai dar errado» / «deu errado» / «poderia dar errado» + contexto ou complemento (conforme a frase)",
-      "description": "Expressão idiomática informal usada quando uma situação dá errado, sai do controle ou toma um rumo negativo. Go south é uma maneira natural de expressar a intenção brasileira 'a vaca foi pro brejo'. Pode ser utilizada no presente, passado, futuro e em construções com verbos modais. Não deve ser interpretada literalmente como uma direção geográfica.",
-      "category": "idiom",
-      "searchTerms": [
-        "a vaca foi pro brejo",
-        "a situação deu errado",
-        "a vaca pode ir pro brejo",
-        "tudo começou a dar errado",
-        "dar errado",
-        "tudo vai dar errado",
-        "deu errado",
-        "poderia dar errado"
-      ],
-      "validationPatterns": [
-        "(?<![\\p{L}\\p{N}_])a\\s+vaca\\s+foi\\s+pro\\s+brejo(?![\\p{L}\\p{N}_])",
-        "(?<![\\p{L}\\p{N}_])a\\s+vaca\\s+pode\\s+ir\\s+pro\\s+brejo(?![\\p{L}\\p{N}_])",
-        "(?<![\\p{L}\\p{N}_])Tudo\\s+começou\\s+a\\s+dar\\s+errado(?![\\p{L}\\p{N}_])",
-        "(?<![\\p{L}\\p{N}_])dar\\s+errado(?![\\p{L}\\p{N}_])",
-        "(?<![\\p{L}\\p{N}_])tudo\\s+vai\\s+dar\\s+errado(?![\\p{L}\\p{N}_])",
-        "(?<![\\p{L}\\p{N}_])deu\\s+errado(?![\\p{L}\\p{N}_])",
-        "(?<![\\p{L}\\p{N}_])poderia\\s+dar\\s+errado(?![\\p{L}\\p{N}_])"
-      ],
-      "tags": [
-        "idiom",
-        "brazilian-expression",
-        "failure",
-        "things-going-wrong",
-        "go-south",
-        "informal-english",
-        "spoken-english",
-        "high-frequency"
-      ],
-      "related": [],
-      "allowLanguageChunkPractice": true,
-      "structure": "a vaca foi pro brejo / a vaca pode ir pro brejo / Tudo começou a dar errado / dar errado / tudo vai dar errado / deu errado / poderia dar errado",
-      "level": "B1",
-      "examples": [
-        {
-          "id": "8be05645-9b65-4f06-a32f-c8f9a033189a",
-          "exampleItem": "A vaca foi pro brejo!",
-          "intent": "A vaca foi pro brejo"
-        },
-        {
-          "id": "622a6c03-2d29-4823-a00f-48d468507dd0",
-          "exampleItem": "Tudo estava indo bem, mas a vaca foi pro brejo.",
-          "intent": "a vaca foi pro brejo"
-        },
-        {
-          "id": "74e23499-7969-460c-a871-bb80d8e2419b",
-          "exampleItem": "Se perdermos esse cliente, a vaca pode ir pro brejo.",
-          "intent": "a vaca pode ir pro brejo"
-        },
-        {
-          "id": "9980d959-e9b5-4c8b-8bd7-41a89ef228e8",
-          "exampleItem": "Depois daquela decisão, tudo começou a dar errado.",
-          "intent": "tudo começou a dar errado"
-        },
-        {
-          "id": "724a6208-2813-4416-9b7a-00e62c988990",
-          "exampleItem": "As coisas podem dar errado muito rapidamente.",
-          "intent": "dar errado"
-        },
-        {
-          "id": "fed52ca1-a1ce-4c70-bec7-ffc880dcf46f",
-          "exampleItem": "Se não resolvermos esse problema, tudo vai dar errado.",
-          "intent": "tudo vai dar errado"
-        },
-        {
-          "id": "d841fffc-3ce8-4373-9b19-611c9a544fa3",
-          "exampleItem": "A situação deu errado depois da reunião.",
-          "intent": "deu errado"
-        },
-        {
-          "id": "40819bbd-e831-4d07-974f-748b385d8147",
-          "exampleItem": "Eu sabia que alguma coisa poderia dar errado.",
-          "intent": "poderia dar errado"
-        },
-        {
-          "id": "1bafc819-9f06-4b1a-b57c-99a6ebcfdb9c",
-          "exampleItem": "Tudo começou a dar errado quando o sistema caiu.",
-          "intent": "Tudo começou a dar errado"
-        },
-        {
-          "id": "645b4d13-40a4-48d0-8113-010da78948df",
-          "exampleItem": "Achei que tudo daria certo, mas a vaca foi pro brejo.",
-          "intent": "a vaca foi pro brejo"
-        }
-      ]
-    },
-    {
       "id": "a-vaca-foi-pro-brejo-6f8a2d41-3c75-4b90-ae12-9d5c7f034b68",
       "intention": "A vaca foi pro brejo / Deu tudo errado",
       "pattern": "«a vaca foi pro brejo» / «a vaca vai pro brejo» / «tudo começou a dar errado» / «A situação piorou» / «tudo vem piorando» / «foi por água abaixo» / «Tudo desmoronou» + contexto ou complemento (conforme a frase)",
@@ -48040,6 +47948,50 @@
           "id": "20cae557-b252-4165-bf46-d10ebc2c45f3",
           "exampleItem": "O que realmente seria necessário para isso funcionar?",
           "intent": "O que realmente seria necessário para"
+        }
+      ]
+    },
+    {
+      "id": "tirar-o-maximo-de-proveito",
+      "intention": "Tirar o máximo de proveito",
+      "pattern": "tirar o máximo de proveito de + substantivo / situação / oportunidade",
+      "description": "Expressa a intenção de aproveitar da melhor maneira possível uma oportunidade, experiência, recurso ou período de tempo, buscando obter o maior benefício.",
+      "category": "expressions",
+      "searchTerms": [
+        "tirar o máximo de proveito",
+        "tirar o melhor proveito",
+        "aproveitar ao máximo",
+        "tirando o máximo de proveito",
+        "tirei o máximo de proveito"
+      ],
+      "validationPatterns": [
+        "\\btir(?:ar|o|a|amos|am|ei|ou|ando)\\s+o\\s+máximo\\s+de\\s+proveito\\b",
+        "\\baproveit(?:ar|o|a|amos|am|ei|ou|ando)\\s+ao\\s+máximo\\b"
+      ],
+      "tags": [
+        "aproveitamento",
+        "oportunidades",
+        "expressões",
+        "benefícios"
+      ],
+      "related": [],
+      "structure": "tirar o máximo de proveito de + complemento",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "de7f10d1-49a2-4d8c-8a10-7e916e3d9201",
+          "exampleItem": "Quero tirar o máximo de proveito desta oportunidade.",
+          "intent": "tirar o máximo de proveito"
+        },
+        {
+          "id": "a3e26b41-0f8c-4c19-a5b2-2f63d18e7702",
+          "exampleItem": "Precisamos tirar o máximo de proveito do nosso tempo.",
+          "intent": "tirar o máximo de proveito"
+        },
+        {
+          "id": "9c4d72e0-6a31-4c6f-bb82-0d18e39a5403",
+          "exampleItem": "Estou tentando tirar o máximo de proveito das minhas aulas de inglês.",
+          "intent": "tirar o máximo de proveito"
         }
       ]
     }

@@ -28932,88 +28932,6 @@
       ]
     },
     {
-      "id": "a-vaca-foi-pro-brejo-7933a3d2-ce0b-4915-a463-66bdbe6b4ef4",
-      "intention": "A vaca foi pro brejo / Deu tudo errado",
-      "pattern": "subject + go south (go / goes / going / went / gone)",
-      "description": "Expressão idiomática informal usada quando uma situação dá errado, sai do controle ou toma um rumo negativo. Go south é uma maneira natural de expressar a intenção brasileira 'a vaca foi pro brejo'. Pode ser utilizada no presente, passado, futuro e em construções com verbos modais. Não deve ser interpretada literalmente como uma direção geográfica.",
-      "category": "idiom",
-      "searchTerms": [
-        "go south",
-        "going south",
-        "went south",
-        "It all went south"
-      ],
-      "validationPatterns": [
-        "\\b(?:go|goes|going|went|gone)\\s+south\\b"
-      ],
-      "tags": [
-        "idiom",
-        "brazilian-expression",
-        "failure",
-        "things-going-wrong",
-        "go-south",
-        "informal-english",
-        "spoken-english",
-        "high-frequency"
-      ],
-      "related": [],
-      "allowLanguageChunkPractice": true,
-      "structure": "It all went south",
-      "level": "B1",
-      "examples": [
-        {
-          "id": "8be05645-9b65-4f06-a32f-c8f9a033189a",
-          "exampleItem": "It all went south!",
-          "intent": "went south"
-        },
-        {
-          "id": "622a6c03-2d29-4823-a00f-48d468507dd0",
-          "exampleItem": "Everything was going well, but then it all went south.",
-          "intent": "went south"
-        },
-        {
-          "id": "74e23499-7969-460c-a871-bb80d8e2419b",
-          "exampleItem": "If we lose this client, things could go south.",
-          "intent": "go south"
-        },
-        {
-          "id": "9980d959-e9b5-4c8b-8bd7-41a89ef228e8",
-          "exampleItem": "After that decision, everything started going south.",
-          "intent": "going south"
-        },
-        {
-          "id": "724a6208-2813-4416-9b7a-00e62c988990",
-          "exampleItem": "Things can go south very quickly.",
-          "intent": "go south"
-        },
-        {
-          "id": "fed52ca1-a1ce-4c70-bec7-ffc880dcf46f",
-          "exampleItem": "If we don't fix this problem, everything will go south.",
-          "intent": "go south"
-        },
-        {
-          "id": "d841fffc-3ce8-4373-9b19-611c9a544fa3",
-          "exampleItem": "Things went south after the meeting.",
-          "intent": "went south"
-        },
-        {
-          "id": "40819bbd-e831-4d07-974f-748b385d8147",
-          "exampleItem": "I knew something could go south.",
-          "intent": "go south"
-        },
-        {
-          "id": "1bafc819-9f06-4b1a-b57c-99a6ebcfdb9c",
-          "exampleItem": "Everything started going south when the system crashed.",
-          "intent": "going south"
-        },
-        {
-          "id": "645b4d13-40a4-48d0-8113-010da78948df",
-          "exampleItem": "I thought everything would work out, but it all went south.",
-          "intent": "went south"
-        }
-      ]
-    },
-    {
       "id": "a-vaca-foi-pro-brejo-6f8a2d41-3c75-4b90-ae12-9d5c7f034b68",
       "intention": "A vaca foi pro brejo / Deu tudo errado",
       "pattern": "go south / go downhill / fall apart / go belly-up",
@@ -47440,6 +47358,50 @@
           "id": "20cae557-b252-4165-bf46-d10ebc2c45f3",
           "exampleItem": "What would it really take for this to work?",
           "intent": "What would it really take for"
+        }
+      ]
+    },
+    {
+      "id": "tirar-o-maximo-de-proveito",
+      "intention": "Make the most of",
+      "pattern": "make the most of + noun / situation / opportunity",
+      "description": "Expresses the intention to use an opportunity, experience, resource, or period of time as effectively as possible to gain the greatest benefit.",
+      "category": "expressions",
+      "searchTerms": [
+        "make the most of",
+        "get the most out of",
+        "make the best use of",
+        "making the most of",
+        "made the most of"
+      ],
+      "validationPatterns": [
+        "\\b(?:make|makes|made|making)\\s+the\\s+most\\s+of\\b",
+        "\\b(?:get|gets|got|getting)\\s+the\\s+most\\s+out\\s+of\\b"
+      ],
+      "tags": [
+        "effective-use",
+        "opportunities",
+        "expressions",
+        "benefits"
+      ],
+      "related": [],
+      "structure": "make the most of + complement",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "de7f10d1-49a2-4d8c-8a10-7e916e3d9201",
+          "exampleItem": "I want to make the most of this opportunity.",
+          "intent": "make the most of"
+        },
+        {
+          "id": "a3e26b41-0f8c-4c19-a5b2-2f63d18e7702",
+          "exampleItem": "We need to make the most of our time.",
+          "intent": "make the most of"
+        },
+        {
+          "id": "9c4d72e0-6a31-4c6f-bb82-0d18e39a5403",
+          "exampleItem": "I am trying to make the most of my English classes.",
+          "intent": "make the most of"
         }
       ]
     }
