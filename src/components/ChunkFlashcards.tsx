@@ -8,8 +8,18 @@ import { isMobileDevice } from "../utils/mobileDevice";
 import { WalkingMode } from "./WalkingMode";
 import { drawChunk, eligibleChunks, type ChunkLevel } from "../utils/chunkEligibility";
 import { ChunkLevelSelect } from "./ChunkLevelSelect";
+import type { FavoriteChunk } from "../utils/favoriteChunks";
+import type { WalkingSummary } from "../utils/walkingSession";
+import { FavoriteChunkButton } from "./FavoriteChunkButton";
+import { WalkingSessionSummary } from "./WalkingSessionSummary";
+
+const NO_FAVORITES: FavoriteChunk[] = [];
 
 interface ChunkFlashcardsProps {
+  mode?: "all" | "favorites";
+  favorites?: FavoriteChunk[];
+  onToggleFavorite?: (id: string) => void;
+  onBackToAll?: () => void;
   studyChunk?: MentalIntention;
   intentions: MentalIntention[];
   language: StudentLanguage;
@@ -28,6 +38,10 @@ function formatStudyTime(totalSeconds: number): string {
 }
 
 export function ChunkFlashcards({
+  mode = "all",
+  favorites = NO_FAVORITES,
+  onToggleFavorite,
+  onBackToAll,
   studyChunk,
   intentions,
   language,
@@ -40,6 +54,7 @@ export function ChunkFlashcards({
   const { t } = useTranslation();
   const authorMode = isAuthorMode();
   const [walking, setWalking] = useState(false);
+  const [walkingSummary, setWalkingSummary] = useState<WalkingSummary | null>(null);
   const [level, setLevel] = useState<ChunkLevel>("all");
   const [mobile, setMobile] = useState(isMobileDevice);
   useEffect(() => {
@@ -54,8 +69,9 @@ export function ChunkFlashcards({
 
   // O autor escolhe explicitamente quais intenções são chunks completos.
   const chunks = useMemo(
-    () => eligibleChunks(intentions, level),
-    [intentions, level]
+    () => eligibleChunks(intentions, level).filter(item => mode === "all" ||
+      favorites.some(favorite => favorite.id === item.id && favorite.language === language)),
+    [intentions, level, mode, favorites, language]
   );
 
   // Estado da rodada em memória: cada ID só pode ser sorteado uma vez.
@@ -138,9 +154,17 @@ export function ChunkFlashcards({
     setIsStudyTimeVisible(false);
     setPausedAt(null);
     setTotalPausedMs(0);
-  }, [intentions]);
+    setWalkingSummary(null);
+  }, [intentions, language, mode]);
 
-  const currentChunk = studyChunk ?? chunks.find((item) => item.id === currentId) ?? null;
+  useEffect(() => {
+    const ids = new Set(chunks.map(item => item.id));
+    setDrawnIds(previous => previous.every(id => ids.has(id)) ? previous : previous.filter(id => ids.has(id)));
+    setCurrentId(previous => !walking && previous !== null && !ids.has(previous) ? null : previous);
+  }, [chunks, walking]);
+
+  const currentChunk = studyChunk ?? chunks.find((item) => item.id === currentId) ??
+    (walking ? intentions.find(item => item.id === currentId) ?? null : null);
   const total = chunks.length;
   const completed = total > 0 && drawnIds.length === total;
   const shownCount = drawnIds.length;
@@ -181,7 +205,8 @@ export function ChunkFlashcards({
     setCopyError(null);
     if (copyFeedbackTimeout.current !== null) clearTimeout(copyFeedbackTimeout.current);
     // Start a fresh round with the same draw mechanism, preserving session time.
-    if (walking || currentId !== null) nextChunk(eligibleChunks(intentions, nextLevel), true);
+    if (walking || currentId !== null) nextChunk(eligibleChunks(intentions, nextLevel).filter(item => mode === "all" ||
+      favorites.some(favorite => favorite.id === item.id && favorite.language === language)), true);
     else { setDrawnIds([]); setCurrentId(null); }
   }
 
@@ -280,7 +305,12 @@ export function ChunkFlashcards({
           <article className="chunk-flashcards-card" aria-live="polite">
             {currentChunk ? (
               <>
-                <p className="chunk-flashcards-language">{localizedLanguageName(language)} · {language}</p>
+                <div className="chunk-flashcards-card-header">
+                  <p className="chunk-flashcards-language">{localizedLanguageName(language)} · {language}</p>
+                  {onToggleFavorite && <FavoriteChunkButton
+                    active={favorites.some(favorite => favorite.id === currentChunk.id && favorite.language === language)}
+                    onToggle={() => onToggleFavorite(currentChunk.id)} />}
+                </div>
                 <div className="chunk-flashcards-english-row">
                   <h3>{currentChunk.targetIntention ?? currentChunk.english}</h3>
                   <div className="chunk-flashcards-english-actions">
@@ -394,18 +424,21 @@ export function ChunkFlashcards({
 
   if (walking) {
     return <WalkingMode chunk={currentChunk} language={language} sourceLanguage={sourceLanguage}
+      stopWhenEmpty={mode === "favorites"}
+      favorite={favorites.some(favorite => favorite.id === currentChunk?.id && favorite.language === language)}
+      onToggleFavorite={onToggleFavorite && currentChunk ? () => onToggleFavorite(currentChunk.id) : undefined}
       level={level} onLevelChange={changeLevel} position={position} total={total} round={round}
       canPrevious={position > 1}
       onPrevious={() => { if (position > 1) setCurrentId(drawnIds[position - 2]); }}
       onNext={() => {
-        if (position < drawnIds.length) {
+        if (position > 0 && position < drawnIds.length) {
           setCurrentId(drawnIds[position]);
           return false;
         }
         nextChunk();
         return completed;
       }}
-      onStop={() => setWalking(false)} />;
+      onStop={summary => { setWalkingSummary(summary ?? null); setWalking(false); }} />;
   }
 
   return (
@@ -413,7 +446,7 @@ export function ChunkFlashcards({
       <div className="chunk-flashcards-heading">
         <div>
           <p className="eyebrow">{t("flashcards.completeExpressionPractice")}</p>
-          <h2 id="chunk-flashcards-title">{t("common.chunkFlashcards")}</h2>
+          <h2 id="chunk-flashcards-title">{t(mode === "favorites" ? "favorites.title" : "common.chunkFlashcards")}</h2>
           <p>{t("flashcards.readListenAndRepeatEachExpressionAloud")}</p>
         </div>
         <div className="chunk-flashcards-heading-tools">
@@ -475,6 +508,8 @@ export function ChunkFlashcards({
       </div>
 
       <ChunkLevelSelect value={level} onChange={changeLevel} />
+      {mode === "favorites" && <button type="button" className="secondary-button" onClick={onBackToAll}>{t("favorites.backToAll")}</button>}
+      {walkingSummary && <WalkingSessionSummary summary={walkingSummary} ended />}
       <p className="chunk-intention-count" role="status" aria-label={t("common.chunkPositionInTheRound")}>{position}/{total}</p>
 
       {pausedAt !== null && (
@@ -504,8 +539,8 @@ export function ChunkFlashcards({
 
       {total === 0 ? (
         <div className="chunk-flashcards-empty" role="status">
-          <h3>{level === "all" ? t("flashcards.noChunksEnabled") : t("common.noChunksAvailableForLevelLevel", { level: (level) })}</h3>
-          {level === "all" && <p>
+          <h3>{mode === "favorites" ? t("favorites.empty") : level === "all" ? t("flashcards.noChunksEnabled") : t("common.noChunksAvailableForLevelLevel", { level: (level) })}</h3>
+          {mode === "all" && level === "all" && <p>
             
             {t("flashcards.markCompleteIntentionsWith")} <code>"allowLanguageChunkPractice": true</code>
             {" "}{t("flashcards.inTheMentalHashmapJsonToPracticeThemHere")}
@@ -545,6 +580,7 @@ export function ChunkFlashcards({
               if (!isMobileDevice()) return;
               if (!currentChunk) nextChunk();
               window.speechSynthesis?.cancel();
+              setWalkingSummary(null);
               setWalking(true);
             }}>{"🎧 "}{t("common.walkingMode")}</button>}
           </div>

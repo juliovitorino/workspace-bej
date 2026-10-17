@@ -66,4 +66,12 @@ audio.play('test', 'en-US', 1, 2000, () => {}, () => callbacks++, () => callback
 utterances.at(-1).onerror();
 assert.equal(callbacks, 10);
 assert.equal(pending.length, 0);
+// A browser dispatching the same successful end event twice counts once.
+let successful = 0;
+audio.play('test', 'en-US', 1, 2000, () => successful++, () => {}, () => assert.fail('late error'));
+const duplicate = utterances.at(-1);
+duplicate.onend(); duplicate.onend(); duplicate.onerror();
+assert.equal(successful, 1);
+assert.equal(pending.length, 1);
+audio.cancel();
 console.log('Walking Mode: mobile detection, localized speech, five repetitions, timing, voice/rate, errors and cancellation passed.');

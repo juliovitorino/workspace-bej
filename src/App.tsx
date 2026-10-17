@@ -27,6 +27,8 @@ import type { HashmapData, MentalIntention } from "./types/hashmap";
 import { searchIntentions } from "./utils/searchIntentions";
 import { isAuthorMode } from "./utils/authorMode";
 import { useAppTheme } from "./hooks/useAppTheme";
+import { useFavoriteChunks } from "./hooks/useFavoriteChunks";
+import { eligibleChunks } from "./utils/chunkEligibility";
 
 type TrainingMode = "basic" | "advanced" | "review" | null;
 
@@ -40,6 +42,10 @@ function App() {
   const [walkingActive, setWalkingActive] = useState(false);
   const requestVersion = useRef(0);
   const [data, setData] = useState<HashmapData | null>(null);
+  const { favorites, toggleFavorite, storageError: favoriteStorageError } = useFavoriteChunks();
+  const favoriteChunkCount = useMemo(() => eligibleChunks(data?.metadata.language === language ? data.mentalMap : [], "all")
+    .filter(item => favorites.some(favorite => favorite.id === item.id && favorite.language === language)).length,
+  [data, favorites, language]);
   const [source, setSource] = useState<"remote" | "cache">("remote");
   const [currentView, setCurrentView] = useState<AppView>("hashmap");
   const [personalCount, setPersonalCount] = useState(0);
@@ -297,6 +303,7 @@ function App() {
         onOpenAbout={() => setSettingsDialog("about")}
         currentView={currentView}
         personalCount={personalCount}
+        favoriteChunkCount={favoriteChunkCount}
         onViewChange={view => {
           if (view === "hashmap" && window.matchMedia("(max-width: 820px)").matches) {
             closeTraining();
@@ -306,7 +313,7 @@ function App() {
           } else {
             setFilterScrollRequest(0);
           }
-          if (view === "shadowing") {
+          if (view === "shadowing" || view === "favorite-chunks") {
             closeTraining();
             setSelected(null);
             window.speechSynthesis?.cancel();
@@ -411,6 +418,8 @@ function App() {
 
                 <IntentionList
                   items={filteredItems}
+                  favorites={favorites}
+                  onToggleFavorite={id => toggleFavorite(id, language)}
                   sourceLanguage={sourceLanguage}
                   language={language}
                   onSelect={setSelected}
@@ -425,11 +434,16 @@ function App() {
               />
             )}
 
-            {!loading && data && currentView === "chunk-flashcards" && (
+            {favoriteStorageError && <p role="alert">{t("favorites.storageError")}</p>}
+            {!loading && data && (currentView === "chunk-flashcards" || currentView === "favorite-chunks") && (
               <div style={{ display: trainingMode ? "none" : undefined }}>
                 <ChunkFlashcards
                   sourceLanguage={sourceLanguage}
-                  key={`${sourceLanguage}-${language}`}
+                  key={`${sourceLanguage}-${language}-${currentView}`}
+                  mode={currentView === "favorite-chunks" ? "favorites" : "all"}
+                  favorites={favorites}
+                  onToggleFavorite={id => toggleFavorite(id, language)}
+                  onBackToAll={() => setCurrentView("chunk-flashcards")}
                   language={language}
                   onWalkingChange={setWalkingActive}
                   intentions={data.mentalMap}
