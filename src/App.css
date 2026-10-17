@@ -2423,7 +2423,7 @@ button {
     align-items: center;
     gap: 12px;
   }
-  .mobile-floating-controls > button {
+  .mobile-floating-controls > button, .mobile-floating-controls .study-mobile-controls button {
     display: grid;
     place-items: center;
     width: 48px;
@@ -2435,8 +2435,8 @@ button {
     color: var(--on-accent);
     box-shadow: 0 4px 12px var(--shadow);
   }
-  .mobile-floating-controls > button:hover { background: var(--accent-hover); }
-  .mobile-floating-controls > button:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+  .mobile-floating-controls > button:hover, .mobile-floating-controls .study-mobile-controls button:hover { background: var(--accent-hover); }
+  .mobile-floating-controls > button:focus-visible, .mobile-floating-controls .study-mobile-controls button:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
   /* Keep modal interactions and existing fixed copy notifications unobstructed. */
   body:has(dialog[open], .modal-backdrop, [aria-modal="true"], [role="status"][style*="fixed"]) .mobile-floating-controls {
     display: none;

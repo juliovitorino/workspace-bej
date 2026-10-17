@@ -15,11 +15,12 @@ const HISTORY_PAGE_SIZE = 20;
 const moduleKeys: Record<string, string> = { hashmap: "Hashmap", "memory-flashcards": "memory.title", "chunk-flashcards": "common.chunkFlashcards", "chunk-favorites": "favorites.title", shadowing: "common.shadowing", "basic-training": "study.basicTraining", "advanced-training": "study.advancedTraining", "speaking-game": "common.speakingGame", interpretation: "common.interpretation", "extra-activities": "extras.title", previous: "study.previousHours" };
 export function StudyDashboard({ language }: { language: StudentLanguage }) {
   const { t, i18n } = useTranslation();
+  const [expanded, setExpanded] = useState(false);
   const [historyVisible, setHistoryVisible] = useState(false);
   const [filtersVisible, setFiltersVisible] = useState(() => !window.matchMedia("(max-width: 820px)").matches);
   useEffect(() => {
     const mobile = window.matchMedia("(max-width: 820px)");
-    const resize = () => setFiltersVisible(!mobile.matches);
+    const resize = () => { setFiltersVisible(!mobile.matches); setExpanded(false); };
     mobile.addEventListener("change", resize);
     return () => mobile.removeEventListener("change", resize);
   }, []);
@@ -159,8 +160,8 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
     </li>)}</ul>}</section>;
   };
   const dashboardControls = (floating = false) => <>
-        <button type="button" className={floating ? "study-floating-history" : "secondary-button study-icon-button"} aria-label={t("study.historyTitle")} title={t("study.historyTitle")} onClick={() => { setHistoryVisible(true); setScrollTarget("study-title"); }}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 11a9 9 0 1 1 2 7M3 4v7h7m2-5v6l4 2" /></svg></button>
-        <button type="button" className={floating ? "study-floating-settings" : "secondary-button study-icon-button"} aria-label={t("study.settings")} title={t("study.settings")} aria-expanded={settingsVisible} aria-controls="study-settings" onClick={() => { setSettingsVisible(!settingsVisible); setScrollTarget(settingsVisible ? "study-results" : "study-settings"); }}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m9 3-1 3-3 1-2 4 2 2v4l4 2 3-1 3 1 4-2v-4l2-2-2-4-3-1-1-3Z"/><circle cx="12" cy="12" r="3"/></svg></button>
+        <button type="button" className={floating ? "study-floating-history" : "secondary-button study-icon-button"} aria-label={t("study.historyTitle")} title={t("study.historyTitle")} onClick={() => { setExpanded(false); setHistoryVisible(true); setScrollTarget("study-title"); }}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 11a9 9 0 1 1 2 7M3 4v7h7m2-5v6l4 2" /></svg></button>
+        <button type="button" className={floating ? "study-floating-settings" : "secondary-button study-icon-button"} aria-label={t("study.settings")} title={t("study.settings")} aria-expanded={settingsVisible} aria-controls="study-settings" onClick={() => { setExpanded(false); setSettingsVisible(!settingsVisible); setScrollTarget(settingsVisible ? "study-results" : "study-settings"); }}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m9 3-1 3-3 1-2 4 2 2v4l4 2 3-1 3 1 4-2v-4l2-2-2-4-3-1-1-3Z"/><circle cx="12" cy="12" r="3"/></svg></button>
   </>;
   return <section className="study-dashboard" aria-labelledby="study-title">
     <header className="study-header"><div><h2 id="study-title" tabIndex={-1}>{t(historyVisible ? "study.historyTitle" : "study.title")}</h2><p>{t("study.intro")}</p></div><div className="study-actions">
@@ -251,7 +252,7 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
       </section>
       <p hidden={historyVisible} className="study-note">{t("study.limitations")}</p>
       <p hidden={historyVisible} className="study-note">{t("study.compatibilityNote")}</p>
-        {!historyVisible && document.getElementById("app-floating-controls") && createPortal(<>{dashboardControls(true)}<button type="button" className="hashmap-filter-toggle" aria-label={t(filtersVisible ? "navigation.hideFilters" : "navigation.showFilters")} aria-expanded={filtersVisible} aria-controls="study-filters" onClick={() => { setFiltersVisible(!filtersVisible); setScrollTarget(filtersVisible ? "study-results" : "study-filters"); }}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button></>, document.getElementById("app-floating-controls")!)}
+        {!historyVisible && document.getElementById("app-floating-controls") && createPortal(<div className="study-mobile-controls"><div id="study-mobile-actions" className="study-mobile-actions" hidden={!expanded}>{dashboardControls(true)}<button type="button" className="hashmap-filter-toggle" aria-label={t(filtersVisible ? "navigation.hideFilters" : "navigation.showFilters")} title={t(filtersVisible ? "navigation.hideFilters" : "navigation.showFilters")} aria-expanded={filtersVisible} aria-controls="study-filters" onClick={() => { setExpanded(false); setFiltersVisible(!filtersVisible); setScrollTarget(filtersVisible ? "study-results" : "study-filters"); }}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button></div><button type="button" aria-label={t("study.moreOptions")} title={t("study.moreOptions")} aria-expanded={expanded} aria-controls="study-mobile-actions" onClick={() => setExpanded(!expanded)}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg></button></div>, document.getElementById("app-floating-controls")!)}
     </>}
   </section>;
 }
