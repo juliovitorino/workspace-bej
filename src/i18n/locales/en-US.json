@@ -1,5 +1,7 @@
 {
   "study": {
+    "historyPages": "History pagination",
+    "historyPage": "Page {{page}} of {{total}} · {{count}} records",
     "basicTraining": "Basic Exercise",
     "advancedTraining": "Advanced Exercise",
     "tracking": { "waiting": "Waiting for practice to begin", "active": "Tracking", "idle": "Paused due to inactivity", "unavailable": "Tracking unavailable" },

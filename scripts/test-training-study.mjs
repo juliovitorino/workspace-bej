@@ -296,7 +296,35 @@ moduleFilter.props.onChange({ target: { value: 'basic-training' } }); dashboard.
 assert.ok(text(basicRow()).includes('100%')); assert.equal(barPercent(basicRow()), 100, 'percentages follow the filtered total');
 chartStore.studyData.sessions = []; memory.set(STUDY_KEY, JSON.stringify(chartStore)); listeners.get(STUDY_CHANGED)(); dashboard.flush();
 assert.ok(text(moduleChart()).includes(translations.study.empty)); assert.ok(!text(moduleChart()).includes('NaN'));
+// History renders only one fixed page, with totals independent of navigation.
+moduleFilter.props.onChange({ target: { value: 'all' } }); dashboard.flush();
+chartStore.studyData.sessions = Array.from({ length: 45 }, (_, index) => ({ id: `page-${index}`, module: index < 5 ? 'basic-training' : 'advanced-training',
+  language: 'en-US', mode: 'manual', activeSeconds: 60, startedAt: new Date(now - 60000).toISOString(), endedAt: new Date(now).toISOString() }));
+const refreshHistory = () => { memory.set(STUDY_KEY, JSON.stringify(chartStore)); listeners.get(STUDY_CHANGED)(); dashboard.flush(); };
+refreshHistory();
+const historyList = () => find(dashboard.tree, n => n.props?.id === 'study-history-list');
+const pagination = () => find(dashboard.tree, n => n.type === 'nav' && n.props.className.includes('study-history-pagination'));
+const pageButton = label => find(pagination(), n => n.type === 'button' && text(n) === label);
+const rows = () => React.Children.toArray(historyList()?.props.children);
+assert.equal(rows().length, 20); assert.equal(pageButton(translations.common.previous).props.disabled, true);
+assert.ok(text(pagination()).includes('1 de 3')); const firstPageKeys = rows().map(row => row.key);
+pageButton(translations.common.next).props.onClick(); dashboard.flush();
+assert.equal(rows().length, 20); assert.ok(rows().every(row => !firstPageKeys.includes(row.key)));
+pageButton(translations.common.next).props.onClick(); dashboard.flush();
+assert.equal(rows().length, 5); assert.equal(pageButton(translations.common.next).props.disabled, true);
+assert.ok(text(pagination()).includes('3 de 3'));
+pageButton(translations.common.previous).props.onClick(); dashboard.flush(); assert.equal(rows().length, 20);
+pageButton(translations.common.next).props.onClick(); dashboard.flush();
+const filterHistory = find(dashboard.tree, n => n.type === 'select' && find(n, c => c.type === 'option' && c.props.value === 'basic-training'));
+filterHistory.props.onChange({ target: { value: 'basic-training' } }); dashboard.flush();
+assert.equal(rows().length, 5); assert.ok(text(pagination()).includes('1 de 1'), 'changing filters resets to page one');
+filterHistory.props.onChange({ target: { value: 'all' } }); dashboard.flush();
+pageButton(translations.common.next).props.onClick(); dashboard.flush(); pageButton(translations.common.next).props.onClick(); dashboard.flush();
+chartStore.studyData.sessions = chartStore.studyData.sessions.slice(0, 10); refreshHistory();
+assert.equal(rows().length, 10); assert.ok(text(pagination()).includes('1 de 1'), 'deletion or restoration cannot leave an out-of-range page');
+chartStore.studyData.sessions = []; refreshHistory(); assert.equal(historyList(), null); assert.equal(pagination(), null);
 dashboard.dispose();
+console.log('PASS history pagination: 20/20/5 rows, disjoint pages, previous/next boundaries, filter reset, page clamping after data changes and empty state.');
 console.log('PASS module chart: 3min01s of 8min02s = 37.55%, filtered denominator, accurate bar width and safe empty state.');
 console.log('PASS training A–G: actual Basic/Advanced components, trusted interaction only, 65 seconds each, idle cap/resume, no source overlap, navigation, languages, actual TTS state, passive network exclusion, central visual readout, blocked state, limited writes and idempotent backup.');
 

@@ -10,6 +10,7 @@ import { studyEntries, studyStats, type StudyFilters } from "./studyStats";
 import "./study.css";
 
 const languages = Object.keys(LANGUAGES) as StudentLanguage[];
+const HISTORY_PAGE_SIZE = 20;
 const moduleKeys: Record<string, string> = { hashmap: "Hashmap", "memory-flashcards": "memory.title", "chunk-flashcards": "common.chunkFlashcards", "chunk-favorites": "favorites.title", shadowing: "common.shadowing", "basic-training": "study.basicTraining", "advanced-training": "study.advancedTraining", previous: "study.previousHours" };
 export function StudyDashboard({ language }: { language: StudentLanguage }) {
   const { t, i18n } = useTranslation();
@@ -32,7 +33,7 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
   const [confirmed, setConfirmed] = useState(false);
   const fileInput = useRef<HTMLInputElement>(null);
   const [now, setNow] = useState(() => new Date());
-  const [historyLimit, setHistoryLimit] = useState(50);
+  const [historyPage, setHistoryPage] = useState(1);
   const fail = (e: unknown) => { setError(t(`study.errors.${e instanceof StudyError ? e.code : "storage"}`)); setMessage(""); };
   useEffect(() => {
     const refresh = () => {
@@ -48,9 +49,14 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
     setGoalHours(String(store?.studyData.goals[goalLanguage] ?? ""));
     setMonthlyHours(String(store?.studyData.monthlyGoals[goalLanguage] ?? ""));
   }, [goalLanguage, store]);
-  useEffect(() => { setHistoryLimit(50); }, [filters]);
+  useEffect(() => { setHistoryPage(1); }, [filters]);
   const validRange = filters.period !== "custom" || (validDay(filters.from) && validDay(filters.to) && filters.from <= filters.to);
   const stats = useMemo(() => store && studyStats(store.studyData, validRange ? filters : { ...filters, period: "today" }, now), [store, filters, validRange, now]);
+  const history = useMemo(() => [...(stats?.entries ?? [])].sort((a, b) => b.date.localeCompare(a.date)), [stats]);
+  const historyPages = Math.max(1, Math.ceil(history.length / HISTORY_PAGE_SIZE));
+  const currentHistoryPage = Math.min(historyPage, historyPages);
+  const historyRows = history.slice((currentHistoryPage - 1) * HISTORY_PAGE_SIZE, currentHistoryPage * HISTORY_PAGE_SIZE);
+  useEffect(() => { setHistoryPage(page => Math.min(page, historyPages)); }, [historyPages]);
   const preview = useMemo(() => store && pending && mergeStudyData(store.studyData, pending.backup.studyData, incomingGoals), [store, pending, incomingGoals]);
   const stale = !!pending && JSON.stringify(store) !== pending.baseline;
   const duration = (seconds: number) => t("study.duration", { hours: Math.floor(seconds / 3600), minutes: Math.floor(seconds % 3600 / 60), seconds: Math.floor(seconds % 60) });
@@ -164,11 +170,15 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
         <label>{t("study.description")}<input maxLength={1000} value={description} onChange={e => setDescription(e.target.value)} /></label>
         <div className="study-actions"><button type="submit" className="primary-button">{t("study.save")}</button>{editing && <button type="button" className="secondary-button" onClick={resetAdjustment}>{t("study.cancel")}</button>}</div>
       </fieldset></form></div>
-      <section className="study-panel"><h3>{t("study.history")}</h3>{!stats.entries.length ? <p>{t("study.empty")}</p> : <ul className="study-history">{[...stats.entries].sort((a, b) => b.date.localeCompare(a.date)).slice(0, historyLimit).map(e => <li key={`${e.module}:${e.id}:${e.date}`}>
+      <section className="study-panel"><h3>{t("study.history")}</h3>{!history.length ? <p>{t("study.empty")}</p> : <ul id="study-history-list" className="study-history">{historyRows.map(e => <li key={`${e.module}:${e.id}:${e.date}`}>
         <div><time dateTime={e.date}>{new Date(e.date + "T12:00:00").toLocaleDateString(i18n.language)}</time><strong>{languageName(e.language)}</strong><span>{moduleLabel(e.module)} · {t(`study.modes.${e.mode}`)}</span><strong>{duration(e.seconds)}</strong>{e.description && <span>{e.description}</span>}</div>
         {e.module === "previous" && <div className="study-actions"><button type="button" className="secondary-button" disabled={busy} onClick={() => { setEditing(e.id); setAdjustLanguage(e.language); setHours(String(Math.floor(e.seconds / 3600))); setMinutes(String(Math.floor(e.seconds % 3600 / 60))); setDate(e.date); setDescription(e.description ?? ""); }}>{t("study.edit")}</button>
           <button type="button" className="secondary-button" disabled={busy} onClick={() => { if (window.confirm(t("study.confirmDelete"))) void action(async () => { await changeData(data => ({ ...data, manualAdjustments: data.manualAdjustments.filter(a => a.id !== e.id) })); if (editing === e.id) resetAdjustment(); setMessage(t("study.saved")); }); }}>{t("study.delete")}</button></div>}
-      </li>)}</ul>}{stats.entries.length > historyLimit && <button type="button" className="secondary-button" onClick={() => setHistoryLimit(n => n + 50)}>{t("study.showMore")}</button>}</section>
+      </li>)}</ul>}{history.length > 0 && <nav className="study-actions study-history-pagination" aria-label={t("study.historyPages")}>
+        <button type="button" className="secondary-button" aria-controls="study-history-list" disabled={currentHistoryPage === 1} onClick={() => setHistoryPage(currentHistoryPage - 1)}>{t("common.previous")}</button>
+        <span role="status">{t("study.historyPage", { page: currentHistoryPage, total: historyPages, count: history.length })}</span>
+        <button type="button" className="secondary-button" aria-controls="study-history-list" disabled={currentHistoryPage === historyPages} onClick={() => setHistoryPage(currentHistoryPage + 1)}>{t("common.next")}</button>
+      </nav>}</section>
       <section className="study-panel"><h3>{t("study.myData")}</h3><p>{t("study.backupNote")}</p><div className="study-actions">
         <button type="button" className="primary-button" disabled={busy} onClick={() => void action(exportBackup)}>{t("study.export")}</button>
         <button type="button" className="secondary-button" disabled={busy} onClick={() => fileInput.current?.click()}>{t("study.restore")}</button>
