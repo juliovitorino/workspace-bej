@@ -1,7 +1,7 @@
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { ControlIcon } from "./ControlIcon";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { LANGUAGES, type StudentLanguage } from "../config/languages";
 import { getStoryTitle, getParagraphText, searchShadowingStories, type LocalStory } from "../services/localStoryService";
 import { defaultShadowingSettings, formatPracticeTime, sentenceSegments, type ShadowingSettings } from "../utils/storyShadowing";
@@ -28,13 +28,22 @@ function Settings({ value, onChange, sentenceAvailable }: { value: ShadowingSett
   </div>;
 }
 
-function Practice({ story, language, settings, selected, onSettings, onBack, onMenu, onRestart }: {
+type StudyStateReporter = (active: boolean, mode?: "manual" | "walking") => void;
+function Practice({ story, language, settings, selected, onSettings, onBack, onMenu, onRestart, onStudyState }: {
   story: LocalStory; language: StudentLanguage; settings: ShadowingSettings; selected: number;
   onSettings: (settings: ShadowingSettings) => void; onBack: () => void; onMenu: () => void; onRestart: () => void;
+  onStudyState?: StudyStateReporter;
 }) {
   const { t } = useTranslation();
   const session = useStoryShadowing(story, language, settings, selected);
   const [configuring, setConfiguring] = useState(false);
+  // Follow the existing practice clock, including guided response windows in
+  // manual mode. Waiting for the next Play command never adds study time.
+  const studying = session.playing && !session.complete && !configuring;
+  useEffect(() => {
+    onStudyState?.(studying, "manual");
+    return () => onStudyState?.(false, "manual");
+  }, [studying, onStudyState]);
   const summaryRef = useRef<HTMLElement>(null);
   function play() {
     session.play();
@@ -100,7 +109,7 @@ function Practice({ story, language, settings, selected, onSettings, onBack, onM
   </>;
 }
 
-export function StoryShadowing({ language, onMenu }: { language: StudentLanguage; onMenu: () => void }) {
+export function StoryShadowing({ language, onMenu, onStudyState }: { language: StudentLanguage; onMenu: () => void; onStudyState?: StudyStateReporter }) {
   const { t } = useTranslation();
   const [level, setLevel] = useState<ChunkLevel>("all");
   const [query, setQuery] = useState("");
@@ -113,7 +122,7 @@ export function StoryShadowing({ language, onMenu }: { language: StudentLanguage
   function back() { setPracticing(false); setStory(null); }
   return <section className="shadowing" aria-labelledby="shadowing-title">
     <h2 id="shadowing-title">{"🎧 "}{t("common.shadowing")}</h2>
-    {practicing && story ? <Practice key={sessionVersion} {...{ story, language, settings, selected, onMenu }} onRestart={() => setSessionVersion(v => v + 1)} onSettings={setSettings} onBack={back} /> : story ? <>
+    {practicing && story ? <Practice key={sessionVersion} {...{ story, language, settings, selected, onMenu, onStudyState }} onRestart={() => setSessionVersion(v => v + 1)} onSettings={setSettings} onBack={back} /> : story ? <>
       <h3>{getStoryTitle(story, language)}</h3><p>{story.englishLevel} · {t("shadowing.paragraphsCount", { count: story.paragraphs.length })}</p>
       <Settings value={settings} onChange={setSettings} sentenceAvailable={story.paragraphs.some(p => sentenceSegments(getParagraphText(p, language), language).length > 1)} />
       {settings.scope === "paragraph" && <label>{t("shadowing.selectParagraph")}<select value={selected} onChange={e => setSelected(Number(e.target.value))}>{story.paragraphs.map((_, i) => <option key={i} value={i}>{t("shadowing.paragraph")} {i + 1}</option>)}</select></label>}

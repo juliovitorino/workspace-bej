@@ -10,7 +10,7 @@ import { studyEntries, studyStats, type StudyFilters } from "./studyStats";
 import "./study.css";
 
 const languages = Object.keys(LANGUAGES) as StudentLanguage[];
-const moduleKeys: Record<string, string> = { hashmap: "Hashmap", "memory-flashcards": "memory.title", "chunk-flashcards": "common.chunkFlashcards", "chunk-favorites": "favorites.title", previous: "study.previousHours" };
+const moduleKeys: Record<string, string> = { hashmap: "Hashmap", "memory-flashcards": "memory.title", "chunk-flashcards": "common.chunkFlashcards", "chunk-favorites": "favorites.title", shadowing: "common.shadowing", previous: "study.previousHours" };
 export function StudyDashboard({ language }: { language: StudentLanguage }) {
   const { t, i18n } = useTranslation();
   const [store, setStore] = useState<StudyStore | null>(null);

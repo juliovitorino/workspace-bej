@@ -88,7 +88,7 @@ function App() {
     setStudySignal(previous => previous?.view === currentView && previous.language === language && previous.active === active && previous.mode === mode
       ? previous : { view: currentView, language, active, mode });
   }, [currentView, language]);
-  const studyWarning = useStudyTracking(currentView, language, studySignal, !!settingsDialog || !!trainingMode || loading || !data);
+  const studyWarning = useStudyTracking(currentView, language, studySignal, !!settingsDialog || !!trainingMode || (currentView !== "shadowing" && (loading || !data)));
 
   // Mesma verificacao de modo autor usada pelas ferramentas existentes.
   const authorMode = isAuthorMode();
@@ -349,7 +349,7 @@ function App() {
             />}
             {studyWarning && (studyWarning !== "compatibility" || currentView === "study-dashboard") && <p className="warning-banner" role="status">{t(`study.warning.${studyWarning}`)}</p>}
             {currentView === "study-dashboard" && <StudyDashboard language={language} />}
-            {currentView === "shadowing" && <StoryShadowing key={`${sourceLanguage}-${language}`} language={language} onMenu={() => setCurrentView("hashmap")} />}
+            {currentView === "shadowing" && <StoryShadowing key={`${sourceLanguage}-${language}`} language={language} onStudyState={reportStudy} onMenu={() => setCurrentView("hashmap")} />}
 
         {loading && currentView !== "shadowing" && currentView !== "study-dashboard" && (
           <div className="status-card">

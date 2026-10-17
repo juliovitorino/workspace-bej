@@ -11,6 +11,9 @@ import { transpileModule, ModuleKind, JsxEmit, ScriptTarget } from 'typescript';
 // browser APIs. Static rendering below separately uses React's real renderer.
 const require = createRequire(import.meta.url);
 const cache = new Map();
+const translations = JSON.parse(readFileSync('src/i18n/locales/pt-BR.json', 'utf8'));
+const translate = (key, values = {}) => String(key.split('.').reduce((value, part) => value?.[part], translations) ?? key)
+  .replace(/\{\{(\w+)\}\}/g, (_, name) => String(values[name] ?? ''));
 let currentHarness = null;
 const hooks = { ...React };
 for (const name of ['useState', 'useRef', 'useMemo', 'useEffect']) {
@@ -28,6 +31,8 @@ function load(file) {
   } });
   const localRequire = id => {
     if (id === 'react') return hooks;
+    if (id === 'react-i18next') return { useTranslation: () => ({ t: translate }) };
+    if (id.endsWith('/i18n')) return { t: translate, languageName: value => value };
     if (!id.startsWith('.')) return require(id);
     const base = resolve(dirname(file), id);
     return load([base, `${base}.ts`, `${base}.tsx`].find(existsSync));
@@ -195,8 +200,8 @@ assert.equal(find(ui.tree, n => n.type === 'button' && text(n) === 'Iniciar prá
 const practiceNode = find(ui.tree, n => typeof n.type === 'function' && n.type.name === 'Practice');
 assert.ok(practiceNode);
 const practice = new Harness(practiceNode.type, practiceNode.props); practice.flush();
-for (const label of ['Anterior', 'Play', 'Pause', 'Próximo', 'Repetir', 'Stop', 'Configurações']) assert.ok(named(practice.tree, label));
-named(practice.tree, 'Play').props.onClick(); practice.flush();
+for (const key of ['common.previous', 'shadowing.play', 'common.pause', 'common.next', 'shadowing.repeat', 'common.stop', 'shadowing.settings']) assert.ok(named(practice.tree, translate(key)));
+named(practice.tree, translate('shadowing.play')).props.onClick(); practice.flush();
 const obsolete = utterances.at(-1);
 named(practice.tree, 'Próximo').props.onClick(); practice.flush();
 const afterNavigation = utterances.length; obsolete.onend(); practice.flush();
@@ -214,7 +219,7 @@ for (const scope of ['story', 'paragraph']) for (const control of ['manual', 'au
     assert.match(renderToStaticMarkup(button), /<svg[^>]*aria-hidden="true"/);
   }
   assert.equal(named(group(), 'Anterior').props.disabled, true);
-  assert.equal(named(group(), 'Pr?ximo').props.disabled, scope === 'paragraph');
+  assert.equal(named(group(), 'Próximo').props.disabled, scope === 'paragraph');
   named(group(), 'Continuar').props.onClick(); mobile.flush();
   assert.ok(named(group(), 'Pausar'));
   named(group(), 'Pausar').props.onClick(); mobile.flush();
@@ -223,12 +228,12 @@ for (const scope of ['story', 'paragraph']) for (const control of ['manual', 'au
   assert.ok(named(group(), 'Pausar'));
   named(group(), 'Parar').props.onClick(); mobile.flush();
   assert.ok(named(group(), 'Continuar'));
-  named(group(), 'Configura??es').props.onClick(); mobile.flush();
-  assert.equal(named(group(), 'Configura??es').props['aria-expanded'], true);
+  named(group(), 'Configurações').props.onClick(); mobile.flush();
+  assert.equal(named(group(), 'Configurações').props['aria-expanded'], true);
   assert.equal(named(group(), 'Continuar').props.disabled, true);
-  named(group(), 'Configura??es').props.onClick(); mobile.flush();
+  named(group(), 'Configurações').props.onClick(); mobile.flush();
   if (scope === 'story') {
-    named(group(), 'Pr?ximo').props.onClick(); mobile.flush();
+    named(group(), 'Próximo').props.onClick(); mobile.flush();
     assert.equal(named(group(), 'Anterior').props.disabled, false);
     named(group(), 'Anterior').props.onClick(); mobile.flush();
     assert.equal(named(group(), 'Anterior').props.disabled, true);
@@ -300,5 +305,84 @@ try {
 assert.equal(timers.size, 0);
 assert.equal(intervals.size, 0);
 console.log('Multilingual Shadowing: translated cards/search, all CEFR levels, four scope/control combinations, full-paragraph audio and backward sentence navigation passed.');
+
+// Dashboard integration uses the real Practice component and its real hook.
+// Advance a deterministic clock rather than waiting minutes in real time.
+const { StudyClock } = load('src/features/study/studyTrackingService.ts');
+const { emptyStore, backupOf, parseStudyBackup, restoreStudyBackup, totalSeconds } = load('src/features/study/studyStorage.ts');
+const { studyStats } = load('src/features/study/studyStats.ts');
+const baseTime = new Date(2026, 0, 1, 12).getTime();
+let studySequence = 0;
+function dashboardPractice(language = 'en-US', settings = {}, clock = new StudyClock(() => `shadowing-${++studySequence}`), records = []) {
+  const source = searchShadowingStories(language, 'A1')[0];
+  const reports = [];
+  const onStudyState = (active, mode) => {
+    reports.push({ active, mode });
+    const finished = clock.set({ language, module: 'shadowing', mode }, active, baseTime + now);
+    if (finished?.activeSeconds) records.push(finished);
+  };
+  const h = new Harness(practiceNode.type, { ...practiceNode.props, story: source, language, onStudyState,
+    settings: { ...defaults, technique: 'listen', scope: 'paragraph', interval: 0, keepAwake: false, ...settings } });
+  h.flush();
+  return { h, clock, records, reports,
+    play() { named(h.tree, translate('shadowing.play')).props.onClick(); h.flush(); },
+    pause() { named(h.tree, translate('common.pause')).props.onClick(); h.flush(); },
+    advance(ms) {
+      for (let remaining = ms; remaining > 0;) {
+        const step = Math.min(15000, remaining); now += step; remaining -= step;
+        for (const tick of intervals.values()) tick();
+        h.flush(); clock.snapshot(baseTime + now);
+      }
+    },
+    finish() { h.dispose(); const record = clock.finish(baseTime + now); if (record?.activeSeconds) records.push(record); return records; }
+  };
+}
+const a = dashboardPractice();
+a.advance(10000); assert.equal(a.clock.snapshot(baseTime + now), null, 'merely opening Shadowing adds zero time');
+a.play(); a.advance(65000);
+assert.equal(find(a.h.tree, n => n.type === 'time').props.children, '00:01:05', 'existing visual clock is preserved');
+named(a.h.tree, translate('common.stop')).props.onClick(); a.h.flush();
+assert.equal(a.reports.at(-1).active, false);
+const recordsA = a.finish(); assert.equal(recordsA.length, 1); assert.equal(recordsA[0].activeSeconds, 65);
+const b = dashboardPractice(); b.play(); b.advance(30000);
+const pauseId = b.clock.snapshot(baseTime + now).id;
+b.pause(); b.advance(20000); b.play(); b.advance(30000);
+assert.equal(b.clock.snapshot(baseTime + now).id, pauseId);
+assert.equal(b.finish()[0].activeSeconds, 60, '30s play + 20s paused + 30s play = 60s');
+const c = dashboardPractice(); c.play(); c.advance(60000); const recordsC = c.finish();
+now += 20000; assert.equal(c.clock.snapshot(baseTime + now), null); assert.equal(recordsC[0].activeSeconds, 60, 'leaving never continues accumulation');
+const d = dashboardPractice(); d.play(); d.advance(30000); d.h.dispose();
+const secondStory = dashboardPractice('en-US', {}, d.clock, d.records); secondStory.play(); secondStory.advance(20000);
+assert.equal(secondStory.finish()[0].activeSeconds, 50, 'changing stories never re-adds prior elapsed time');
+assert.equal(d.records.length, 1);
+const en = dashboardPractice(); en.play(); en.advance(30000); en.h.dispose();
+const es = dashboardPractice('es-ES', {}, en.clock, en.records); es.play(); es.advance(20000); es.finish();
+assert.deepEqual(en.records.map(s => [s.language, s.activeSeconds]), [['en-US', 30], ['es-ES', 20]]);
+const guided = dashboardPractice('en-US', { technique: 'repeat', control: 'manual', repetitions: 2 });
+guided.play(); speakEnd(guided.h); timerEnd(guided.h); speakEnd(guided.h); timerEnd(guided.h);
+assert.equal(guided.reports.at(-1).active, true, 'guided manual response window counts as practice');
+timerEnd(guided.h);
+assert.equal(guided.reports.at(-1).active, false, 'manual ready state waits for explicit Play');
+const beforeReady = guided.clock.snapshot(baseTime + now).activeSeconds;
+guided.advance(20000); assert.equal(guided.clock.snapshot(baseTime + now).activeSeconds, beforeReady); guided.finish();
+const completedPractice = dashboardPractice(); completedPractice.play(); completedPractice.advance(5000);
+for (let i = 0; completedPractice.reports.at(-1).active; i++) {
+  assert.ok(i < 100, 'Practice must complete');
+  if (timers.size) timerEnd(completedPractice.h); else speakEnd(completedPractice.h);
+}
+assert.equal(completedPractice.reports.at(-1).active, false, 'completion suspends dashboard tracking'); completedPractice.finish();
+const noVoiceSaved = voices; voices = [];
+const noVoicePractice = dashboardPractice(); noVoicePractice.play(); noVoicePractice.advance(10000);
+assert.equal(noVoicePractice.finish().length, 0, 'missing voice cannot start a study session'); voices = noVoiceSaved;
+const persisted = { ...emptyStore(), studyData: { ...emptyStore().studyData, sessions: recordsA } };
+const exported = parseStudyBackup(JSON.stringify(backupOf(persisted, new Date(baseTime + now))));
+let restored = restoreStudyBackup(emptyStore(), exported, JSON.stringify(emptyStore()));
+restored = restoreStudyBackup(restored, exported, JSON.stringify(restored));
+assert.equal(totalSeconds(restored.studyData), 65); assert.equal(restored.studyData.sessions[0].id, recordsA[0].id);
+const metrics = studyStats(restored.studyData, { language: 'en-US', module: 'shadowing', mode: 'all', period: 'all', from: '', to: '' }, new Date(baseTime + now));
+assert.equal(metrics.total, 65); assert.equal(metrics.byModule.shadowing, 65); assert.equal(metrics.byLanguage['en-US'], 65);
+assert.equal(restored.studyData.goals['en-US'], 750);
+assert.equal(intervals.size, 0); assert.equal(timers.size, 0);
+console.log('Shadowing dashboard A–F passed with deterministic time: 65s practice, pause exclusion, navigation, story change, language separation, guided manual practice, completion, missing voice, module/language totals and idempotent backup round trip.');
 
 
