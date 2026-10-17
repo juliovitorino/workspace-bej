@@ -337,6 +337,8 @@ function flushFavoriteWalk() {
 }
 flushFavoriteWalk();
 assert.equal(favoriteWalkParent.tree.props.total, 2);
+find(favoriteWalk.tree, n => n.type === 'input' && n.props.type === 'checkbox').props.onChange({ target: { checked: false } });
+flushFavoriteWalk(); // removing the current favorite advances even with auto-advance disabled
 const removedCurrent = favoriteWalkParent.tree.props.chunk.id;
 utterances.at(-1).onend(); flushFavoriteWalk();
 { const [id, timer] = [...timeouts][0]; timeouts.delete(id); timer.fn(); flushFavoriteWalk(); }
@@ -348,20 +350,17 @@ assert.equal(utterances.length, speechCountBeforeRemoval); // current utterance 
 favoriteWalkProps = { ...favoriteWalkProps, favorites: [...favoriteWalkProps.favorites, { id: 'A1-3', language: 'en-US' }] };
 flushFavoriteWalk(); assert.equal(favoriteWalkParent.tree.props.total, 2);
 assert.equal(utterances.at(-1), playingBeforeRemoval);
-for (let i = 1; i < 5; i++) {
-  utterances.at(-1).onend(); flushFavoriteWalk();
-  const [id, timer] = [...timeouts][0]; timeouts.delete(id); timer.fn(); flushFavoriteWalk();
-}
+utterances.at(-1).onend(); flushFavoriteWalk();
 assert.notEqual(favoriteWalkParent.tree.props.chunk.id, removedCurrent);
 assert.equal(favoriteWalkParent.tree.props.chunk.englishLevel, 'A1');
 assert.equal(utterances.at(-1).lang, 'en-US');
 named(favoriteWalk.tree, 'Pausar').props.onClick(); flushFavoriteWalk();
 const beforeEmptySummary = find(favoriteWalk.tree, n => n.type === WalkingSessionSummary).props.summary;
-assert.equal(beforeEmptySummary.phrases, 5); assert.equal(beforeEmptySummary.completed, 1);
+assert.equal(beforeEmptySummary.phrases, 2); assert.equal(beforeEmptySummary.completed, 0);
 favoriteWalkProps = { ...favoriteWalkProps, favorites: [] }; flushFavoriteWalk();
 assert.notEqual(favoriteWalkParent.tree.type, WalkingMode);
 const emptySummary = find(favoriteWalkParent.tree, n => n.type === WalkingSessionSummary).props.summary;
-assert.equal(emptySummary.total, 0); assert.equal(emptySummary.phrases, 5); assert.equal(emptySummary.completed, 1);
+assert.equal(emptySummary.total, 0); assert.equal(emptySummary.phrases, 2); assert.equal(emptySummary.completed, 0);
 assert.equal(emptySummary.seconds, beforeEmptySummary.seconds);
 favoriteWalk.dispose(); favoriteWalkParent.dispose();
 // Removing the sole favorite during speech lets that speech end before stopping.
@@ -510,6 +509,73 @@ assert.equal(find(emptyMemoryRound.tree, n => n.type === FavoriteChunkButton), n
 emptyMemoryRound.dispose(); ineligibleMemory.dispose();
 assert.equal(intervals.size, 0); assert.equal(timeouts.size, 0);
 console.log('Memory favorites: shared persisted state on both faces, eligibility, ordinary user, language isolation, unchanged reveal/progress/deck/audio passed.');
+
+// Regression: remove five favorites down to zero without returning to Start.
+const realDateNow = Date.now;
+let manualClock = 100000;
+Date.now = () => manualClock;
+navigator.userAgent = 'Desktop Chrome'; navigator.platform = 'Win32'; navigator.maxTouchPoints = 0;
+const removalItems = Array.from({ length: 5 }, (_, i) => makeChunk(`remove-${i}`, 'A1'));
+let removalStorage = null;
+globalThis.localStorage = { getItem: () => removalStorage,
+  setItem(key, value) { assert.equal(key, 'bej-favorite-chunks'); removalStorage = value; } };
+function RemovalPractice(input) {
+  const store = useFavoriteChunks();
+  return ChunkFlashcards({ ...input, mode: 'favorites', favorites: store.favorites,
+    onToggleFavorite: id => store.toggleFavorite(id, input.language) });
+}
+for (const language of ['en-US', 'es-ES', 'fr-FR']) {
+  const otherLanguage = language === 'en-US' ? 'es-ES' : 'en-US';
+  const untouchedFavorite = { id: removalItems[0].id, language: otherLanguage };
+  removalStorage = JSON.stringify([...removalItems.map(item => ({ id: item.id, language })), untouchedFavorite]);
+  const practice = new Harness(RemovalPractice, { ...props, intentions: removalItems, language, onBackToAll() {} }); practice.flush();
+  find(practice.tree, n => n.type === 'button' && text(n) === 'Começar').props.onClick(); practice.flush();
+  named(practice.tree, translate('flashcards.showStudyTime')).props.onClick(); practice.flush();
+  manualClock += 12000; for (const tick of intervals.values()) tick(); practice.flush();
+  const removed = new Set();
+  for (let remaining = 4; remaining >= 0; remaining--) {
+    const currentText = text(find(practice.tree, n => n.type === 'h3'));
+    assert(!removed.has(currentText)); removed.add(currentText);
+    find(practice.tree, n => n.type === FavoriteChunkButton).props.onToggle(); practice.flush();
+    assert.equal(JSON.parse(removalStorage).filter(f => f.language === language).length, remaining);
+    assert(JSON.parse(removalStorage).some(f => f.id === untouchedFavorite.id && f.language === otherLanguage));
+    assert.ok(text(practice.tree).includes('00:00:12'));
+    assert.equal(find(practice.tree, n => n.props?.className === 'chunk-flashcards-start'), null);
+    if (remaining > 0) {
+      assert(find(practice.tree, n => n.type === FavoriteChunkButton));
+      assert(!removed.has(text(find(practice.tree, n => n.type === 'h3'))));
+      assert.ok(text(practice.tree).includes(translate('flashcards.roundNumber', { round: 1 })));
+    } else {
+      assert.equal(find(practice.tree, n => n.type === FavoriteChunkButton), null);
+      assert(find(practice.tree, n => n.props?.className === 'chunk-flashcards-empty'));
+      manualClock += 5000; for (const tick of intervals.values()) tick(); practice.flush();
+      assert.ok(text(practice.tree).includes('00:00:12')); // the final session time is frozen
+    }
+  }
+  practice.dispose();
+}
+Date.now = realDateNow;
+
+// Keep the current card for an unrelated removal; prefer unseen items, then a new round.
+let historyProps = { ...props, language: 'en-US', mode: 'favorites', intentions: removalItems.slice(0, 4),
+  favorites: removalItems.slice(0, 4).map(item => ({ id: item.id, language: 'en-US' })),
+  onToggleFavorite(id) { historyProps = { ...historyProps, favorites: historyProps.favorites.filter(f => f.id !== id) }; } };
+const historyPractice = new Harness(ChunkFlashcards, historyProps); historyPractice.flush();
+const nextManual = () => { find(historyPractice.tree, n => n.type === 'button' && n.props.className === 'primary-button').props.onClick(); historyPractice.flush(historyProps); };
+const currentManualText = () => text(find(historyPractice.tree, n => n.type === 'h3'));
+nextManual(); const firstManualText = currentManualText();
+const removeOther = removalItems.slice(0, 4).find(item => item.english !== firstManualText);
+historyProps = { ...historyProps, favorites: historyProps.favorites.filter(f => f.id !== removeOther.id) }; historyPractice.flush(historyProps);
+assert.equal(currentManualText(), firstManualText);
+nextManual(); assert.notEqual(currentManualText(), firstManualText);
+find(historyPractice.tree, n => n.type === FavoriteChunkButton).props.onToggle(); historyPractice.flush(historyProps);
+assert.notEqual(currentManualText(), firstManualText); // the third, unseen favorite
+find(historyPractice.tree, n => n.type === FavoriteChunkButton).props.onToggle(); historyPractice.flush(historyProps);
+assert.equal(currentManualText(), firstManualText);
+assert.ok(text(historyPractice.tree).includes(translate('flashcards.roundNumber', { round: 2 })));
+historyPractice.dispose();
+assert.equal(intervals.size, 0); assert.equal(timeouts.size, 0);
+console.log('Favorite removal: five-to-zero in EN/ES/FR, exact persistence, other-language preservation, active clock, unrelated removal, unseen-first draw and automatic next round passed.');
 console.log('Hashmap favorites: shared persistence, public profiles, eligibility, language isolation and click/navigation separation passed.');
 console.log('CEFR, real catalogs, round coverage/counters, backward navigation, live filters, cancellation, time/settings, empty levels and accessible controls passed.');
 console.log('Favorites filtering/removal/language changes, pause/resume summaries, incomplete/duplicate speech, active time, stop/new sessions and favorite toggling during playback passed.');

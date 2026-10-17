@@ -82,6 +82,7 @@ export function ChunkFlashcards({
   const [copiedChunkId, setCopiedChunkId] = useState<string | null>(null);
   const [copiedIntentionId, setCopiedIntentionId] = useState<string | null>(null);
   const [copyError, setCopyError] = useState<string | null>(null);
+  const previousStudySet = useRef({ intentions, language, mode });
   const copyFeedbackTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // O feedback desaparece sozinho e novas cópias reiniciam o prazo.
@@ -158,10 +159,29 @@ export function ChunkFlashcards({
   }, [intentions, language, mode]);
 
   useEffect(() => {
+    const previous = previousStudySet.current;
+    previousStudySet.current = { intentions, language, mode };
+    // A different catalog/language starts a session; editing favorites does not.
+    if (previous.intentions !== intentions || previous.language !== language || previous.mode !== mode) return;
     const ids = new Set(chunks.map(item => item.id));
+    if (!walking && currentId !== null && !ids.has(currentId)) {
+      if (mode === "favorites" && chunks.length > 0) {
+        nextChunk(chunks);
+        return;
+      }
+      if (mode === "favorites" && chunks.length === 0) {
+        window.speechSynthesis?.cancel();
+        if (studyStartedAt !== null) {
+          setElapsedSeconds(Math.max(0, Math.floor(((pausedAt ?? Date.now()) - studyStartedAt - totalPausedMs) / 1000)));
+          setStudyStartedAt(null);
+          setPausedAt(null);
+          setTotalPausedMs(0);
+        }
+      }
+      setCurrentId(null);
+    }
     setDrawnIds(previous => previous.every(id => ids.has(id)) ? previous : previous.filter(id => ids.has(id)));
-    setCurrentId(previous => !walking && previous !== null && !ids.has(previous) ? null : previous);
-  }, [chunks, walking]);
+  }, [chunks, walking, mode]);
 
   const currentChunk = studyChunk ?? chunks.find((item) => item.id === currentId) ??
     (walking ? intentions.find(item => item.id === currentId) ?? null : null);
@@ -188,7 +208,8 @@ export function ChunkFlashcards({
     setCopiedIntentionId(null);
     setCopyError(null);
 
-    const draw = drawChunk(pool, drawnIds, currentId, restart);
+    const poolIds = new Set(pool.map(item => item.id));
+    const draw = drawChunk(pool, drawnIds.filter(id => poolIds.has(id)), currentId, restart);
     if (!draw) return;
     if (draw.newRound) setRound(previous => restart ? 1 : previous + 1);
     setDrawnIds(draw.drawnIds);
@@ -425,6 +446,7 @@ export function ChunkFlashcards({
   if (walking) {
     return <WalkingMode chunk={currentChunk} language={language} sourceLanguage={sourceLanguage}
       stopWhenEmpty={mode === "favorites"}
+      currentEligible={mode !== "favorites" || chunks.some(item => item.id === currentChunk?.id)}
       favorite={favorites.some(favorite => favorite.id === currentChunk?.id && favorite.language === language)}
       onToggleFavorite={onToggleFavorite && currentChunk ? () => onToggleFavorite(currentChunk.id) : undefined}
       level={level} onLevelChange={changeLevel} position={position} total={total} round={round}

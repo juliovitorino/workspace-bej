@@ -14,6 +14,7 @@ import { FavoriteChunkButton } from "./FavoriteChunkButton";
 
 interface Props {
   stopWhenEmpty?: boolean;
+  currentEligible?: boolean;
   favorite?: boolean;
   onToggleFavorite?: () => void;
   chunk: MentalIntention | null;
@@ -30,7 +31,7 @@ interface Props {
   onStop: (summary?: WalkingSummary) => void;
 }
 
-export function WalkingMode({ chunk, language, sourceLanguage, level, onLevelChange, position, total, round, canPrevious, onPrevious, onNext, onStop, stopWhenEmpty = false, favorite = false, onToggleFavorite }: Props) {
+export function WalkingMode({ chunk, language, sourceLanguage, level, onLevelChange, position, total, round, canPrevious, onPrevious, onNext, onStop, stopWhenEmpty = false, currentEligible = true, favorite = false, onToggleFavorite }: Props) {
   const { t } = useTranslation();
   const [paused, setPaused] = useState(false);
   const [repetitions, setRepetitions] = useState(5);
@@ -52,6 +53,8 @@ export function WalkingMode({ chunk, language, sourceLanguage, level, onLevelCha
   const phase = useRef<"speech" | "pause">("speech");
   const finishWhenEmpty = useRef(false);
   finishWhenEmpty.current = stopWhenEmpty && total === 0;
+  const advanceAfterSpeech = useRef(false);
+  advanceAfterSpeech.current = !currentEligible;
   const callbacks = useRef({ onNext, onPrevious, onStop: stopSession });
   callbacks.current = { onNext, onPrevious, onStop: stopSession };
 
@@ -85,6 +88,12 @@ export function WalkingMode({ chunk, language, sourceLanguage, level, onLevelCha
   navigateRef.current = navigate;
 
   useEffect(() => {
+    if (!currentEligible && total > 0 && (paused || phase.current === "pause" || !chunk || index >= repetitions)) {
+      navigateRef.current();
+    }
+  }, [currentEligible, total, paused, chunk?.id, index, repetitions]);
+
+  useEffect(() => {
     if (!isMobileDevice()) {
       audio.current.cancel();
       callbacks.current.onStop();
@@ -108,6 +117,7 @@ export function WalkingMode({ chunk, language, sourceLanguage, level, onLevelCha
         phase.current = "pause";
         setSpoken(index + 1);
         if (finishWhenEmpty.current) callbacks.current.onStop();
+        else if (advanceAfterSpeech.current) navigateRef.current();
       }, done,
       () => { setError(t("walking.couldNotPlayTheAudioTapResumeToTryAgain")); setPaused(true); });
     return () => audio.current.cancel();
