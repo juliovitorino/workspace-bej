@@ -1,5 +1,8 @@
 {
   "study": {
+    "basicTraining": "Exercício Básico",
+    "advancedTraining": "Exercício Avançado",
+    "tracking": { "waiting": "Aguardando início da prática", "active": "Contabilizando", "idle": "Pausado por inatividade", "unavailable": "Contagem indisponível" },
     "compatibilityNote": "Sem Web Locks, a contagem funciona em modo de compatibilidade. Use uma única aba: a reserva temporária reduz conflitos, mas não garante exclusão entre abas.",
     "title": "Dashboard de Estudos",
     "intro": "Jornada das 750 horas: uma meta pessoal de dedicação, sem garantia de fluência ou certificação do FSI.",

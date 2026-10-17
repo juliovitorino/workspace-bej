@@ -1,5 +1,8 @@
 {
   "study": {
+    "basicTraining": "Exercice de base",
+    "advancedTraining": "Exercice avancé",
+    "tracking": { "waiting": "En attente du début de la pratique", "active": "Suivi en cours", "idle": "En pause pour inactivité", "unavailable": "Suivi indisponible" },
     "compatibilityNote": "Sans Web Locks, le suivi utilise le mode de compatibilité. Utilisez un seul onglet : la réservation temporaire réduit les conflits, mais ne garantit pas l’exclusion entre onglets.",
     "title": "Tableau de bord des études",
     "intro": "Le parcours des 750 heures : un objectif personnel de travail, sans garantie de maîtrise ni certification du FSI.",

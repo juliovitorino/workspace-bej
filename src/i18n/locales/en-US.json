@@ -1,5 +1,8 @@
 {
   "study": {
+    "basicTraining": "Basic Exercise",
+    "advancedTraining": "Advanced Exercise",
+    "tracking": { "waiting": "Waiting for practice to begin", "active": "Tracking", "idle": "Paused due to inactivity", "unavailable": "Tracking unavailable" },
     "compatibilityNote": "Without Web Locks, tracking uses compatibility mode. Use a single tab: the temporary lease reduces conflicts but cannot guarantee cross-tab exclusion.",
     "title": "Study Dashboard",
     "intro": "The 750-hour journey: a personal dedication goal, without a guarantee of fluency or FSI certification.",

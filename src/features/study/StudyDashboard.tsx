@@ -10,7 +10,7 @@ import { studyEntries, studyStats, type StudyFilters } from "./studyStats";
 import "./study.css";
 
 const languages = Object.keys(LANGUAGES) as StudentLanguage[];
-const moduleKeys: Record<string, string> = { hashmap: "Hashmap", "memory-flashcards": "memory.title", "chunk-flashcards": "common.chunkFlashcards", "chunk-favorites": "favorites.title", shadowing: "common.shadowing", previous: "study.previousHours" };
+const moduleKeys: Record<string, string> = { hashmap: "Hashmap", "memory-flashcards": "memory.title", "chunk-flashcards": "common.chunkFlashcards", "chunk-favorites": "favorites.title", shadowing: "common.shadowing", "basic-training": "study.basicTraining", "advanced-training": "study.advancedTraining", previous: "study.previousHours" };
 export function StudyDashboard({ language }: { language: StudentLanguage }) {
   const { t, i18n } = useTranslation();
   const [store, setStore] = useState<StudyStore | null>(null);
@@ -114,10 +114,11 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
       setStore(current); setPending({ backup, baseline: JSON.stringify(current) });
     });
   }
-  const chart = (title: string, values: Record<string, number>, label: (key: string) => string = key => key) => {
+  const chart = (title: string, values: Record<string, number>, label: (key: string) => string = key => key, total?: number) => {
     const entries = Object.entries(values).sort(([a], [b]) => a.localeCompare(b)), max = Math.max(1, ...entries.map(([, seconds]) => seconds));
+    const scale = Math.max(1, total ?? max);
     return <section className="study-panel"><h3>{title}</h3>{!entries.length ? <p>{t("study.empty")}</p> : <ul className="study-chart">{entries.map(([key, seconds]) => <li key={key}>
-      <div><span>{label(key)}</span><strong>{duration(seconds)}</strong></div><div className="study-bar" aria-hidden="true"><span style={{ width: `${seconds / max * 100}%` }} /></div>
+      <div><span>{label(key)}</span><strong>{duration(seconds)}{total !== undefined && ` · ${number(seconds / scale * 100)}%`}</strong></div><div className="study-bar" aria-hidden="true"><span style={{ width: `${seconds / scale * 100}%` }} /></div>
     </li>)}</ul>}</section>;
   };
   return <section className="study-dashboard" aria-labelledby="study-title">
@@ -148,7 +149,7 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
           </div>;
         })}
       </section>
-      <div className="study-charts">{chart(t("study.byModule"), stats.byModule, moduleLabel)}{chart(t("study.byLanguage"), stats.byLanguage, code => languageName(code as StudentLanguage))}{chart(t("study.timeline"), stats.timeline)}</div>
+      <div className="study-charts">{chart(t("study.byModule"), stats.byModule, moduleLabel, stats.total)}{chart(t("study.byLanguage"), stats.byLanguage, code => languageName(code as StudentLanguage))}{chart(t("study.timeline"), stats.timeline)}</div>
       <div className="study-charts"><form className="study-panel" onSubmit={saveGoals}><fieldset disabled={busy}><legend>{t("study.goals")}</legend>
         <label>{t("study.language")}<select value={goalLanguage} onChange={e => setGoalLanguage(e.target.value as StudentLanguage)}>{languages.map(code => <option key={code} value={code}>{languageName(code)}</option>)}</select></label>
         <label>{t("study.targetHours")}<input type="number" min="0.01" max="10000000" step="0.01" required value={goalHours} onChange={e => setGoalHours(e.target.value)} /></label>

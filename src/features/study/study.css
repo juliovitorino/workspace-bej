@@ -31,4 +31,7 @@
 .study-note { color: var(--muted); font-size: .9rem; margin: 0; }
 .study-feedback { padding: 16px; border: 1px solid var(--good-border); border-radius: 10px; background: var(--good-soft); color: var(--good); }
 .study-dashboard :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.training-study-time { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: 12px 0 20px; padding: 12px 16px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--text); }
+.training-study-time time { font-size: 1.25rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.training-study-time [role="status"] { color: var(--muted); font-size: .85rem; }
 @media (max-width: 820px) { .study-panel { padding: 16px; } .study-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } .study-metrics strong { font-size: 1.05rem; } }

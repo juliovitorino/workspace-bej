@@ -47999,6 +47999,49 @@
           "intent": "foi mal"
         }
       ]
+    },
+    {
+      "id": "e2356229-8399-4f3d-81ce-4fcb89d894bd",
+      "intention": "O que realmente seria necessário para...?",
+      "pattern": "O que realmente seria necessário para + pessoa/coisa + verbo no infinitivo?",
+      "description": "Estrutura geradora de perguntas para investigar as condições, os esforços ou as mudanças realmente necessários para que alguém ou algo alcance um resultado. Exige complemento para formar uma pergunta completa.",
+      "category": "language-chunks",
+      "searchTerms": [
+        "o que realmente seria necessário para",
+        "o que seria preciso para",
+        "o que seria necessário para",
+        "quais condições seriam necessárias"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])O\\s+que\\s+realmente\\s+seria\\s+necessário\\s+para(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloco-de-linguagem",
+        "estrutura-geradora",
+        "pergunta",
+        "condicoes-necessarias",
+        "reflexao"
+      ],
+      "related": [],
+      "structure": "O que realmente seria necessário para",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "8ab518af-0ef5-4627-801c-de84a89e177b",
+          "exampleItem": "O que realmente seria necessário para eu conseguir isso?",
+          "intent": "O que realmente seria necessário para"
+        },
+        {
+          "id": "e6cfae8c-d515-4e3f-a622-292725f1445b",
+          "exampleItem": "O que realmente seria necessário para você mudar de ideia?",
+          "intent": "O que realmente seria necessário para"
+        },
+        {
+          "id": "20cae557-b252-4165-bf46-d10ebc2c45f3",
+          "exampleItem": "O que realmente seria necessário para isso funcionar?",
+          "intent": "O que realmente seria necessário para"
+        }
+      ]
     }
   ]
 }

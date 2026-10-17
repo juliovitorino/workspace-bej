@@ -1,3 +1,5 @@
+import { useTrainingStudy, type TrainingStudyReporter } from "../features/study/useTrainingStudy";
+import { TrainingStudyTime } from "../features/study/TrainingStudyTime";
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { isAuthorMode } from "../utils/authorMode";
@@ -98,6 +100,7 @@ function renderHighlightedText(
 }
 
 interface AdvancedTrainingProps {
+  onStudyState?: TrainingStudyReporter;
   intention: MentalIntention;
   language: StudentLanguage;
   onBack: () => void;
@@ -229,6 +232,7 @@ function renderIntentionFeedback(validation: ReturnType<typeof validateIntention
 }
 
 export function AdvancedTraining({
+  onStudyState,
   intention,
   language,
   onBack
@@ -274,6 +278,8 @@ export function AdvancedTraining({
   >(null);
   const showDictationButton = !isMobileDevice();
   const [dictationError, setDictationError] = useState<string | null>(null);
+  const { recordActivity: recordStudyActivity, ...studyEvents } = useTrainingStudy(`advanced-training:${language}:${intention.id}`, !loading && !error,
+    evaluating || translating, speaking || evaluationSpeaking !== null, onStudyState);
   const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
   const trainingGridRef = useRef<HTMLDivElement | null>(null);
 
@@ -448,10 +454,12 @@ export function AdvancedTraining({
     recognition.maxAlternatives = 1;
 
     recognition.onstart = () => {
+      recordStudyActivity();
       setDictating(true);
     };
 
     recognition.onresult = (event) => {
+      recordStudyActivity();
       const transcripts: string[] = [];
 
       for (
@@ -970,7 +978,8 @@ export function AdvancedTraining({
   }
 
   return (
-    <section className="advanced-training">
+    <section className="advanced-training" {...studyEvents}>
+      <TrainingStudyTime module="advanced-training" language={language} />
       <div className="training-toolbar">
         <button
           type="button"

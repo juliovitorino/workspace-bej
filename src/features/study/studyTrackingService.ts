@@ -3,6 +3,7 @@ import type { StudentLanguage } from "../../config/languages";
 import { StudyLease } from "./studyLease";
 
 export interface StudyContext { language: StudentLanguage; module: StudyModule; mode: StudyMode }
+export interface StudyReading { seconds: number; state: "waiting" | "active" | "idle" | "unavailable" }
 export const IDLE_MS = 5 * 60 * 1000;
 export const CHECKPOINT_MS = 15000;
 export function localDay(date: Date): string {
@@ -68,11 +69,20 @@ export class StudyTracker {
   private queue: Promise<unknown> = Promise.resolve();
   private context: StudyContext | null = null;
   private active = false;
+  private blocked = false;
   private until = Infinity;
   private listeners = new Set<(status: string) => void>();
   private status = "";
   private lease: StudyLease | null = null;
   private failed = false;
+  readSession(context: StudyContext): StudyReading {
+    if (!this.canTrack()) return { seconds: 0, state: "unavailable" };
+    if (!this.context || this.context.module !== context.module || this.context.language !== context.language || this.context.mode !== context.mode) return { seconds: 0, state: "waiting" };
+    const now = Date.now();
+    const current = this.clock.snapshot(now);
+    return { seconds: current?.activeSeconds ?? 0,
+      state: this.blocked ? "unavailable" : !current ? "waiting" : this.active && now < this.until ? "active" : now >= this.until ? "idle" : "unavailable" };
+  }
   private loseLease() {
     this.owner = false;
     this.clock = new StudyClock();
@@ -105,9 +115,9 @@ export class StudyTracker {
     });
     return this.queue;
   }
-  set(context: StudyContext | null, active: boolean, until = Infinity) {
+  set(context: StudyContext | null, active: boolean, until = Infinity, blocked = false) {
     const wasActive = this.active;
-    this.context = context; this.active = active; this.until = until;
+    this.context = context; this.active = active; this.until = until; this.blocked = blocked;
     if (!this.canTrack()) return;
     const finished = this.clock.set(context, active, Date.now(), until);
     const checkpoint = this.clock.snapshot(Date.now());

@@ -4,7 +4,7 @@ export const STUDY_KEY = "bej-study-data";
 export const STUDY_CHANGED = "bej-study-changed";
 export const APPLICATION = "Brazilian English Journey";
 export const MAX_BACKUP_BYTES = 5 * 1024 * 1024;
-export const STUDY_MODULES = ["hashmap", "memory-flashcards", "chunk-flashcards", "chunk-favorites", "shadowing"] as const;
+export const STUDY_MODULES = ["hashmap", "memory-flashcards", "chunk-flashcards", "chunk-favorites", "shadowing", "basic-training", "advanced-training"] as const;
 export type StudyModule = typeof STUDY_MODULES[number];
 export type StudyMode = "manual" | "walking";
 export interface StudySession {

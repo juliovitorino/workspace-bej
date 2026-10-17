@@ -1,5 +1,5 @@
 import { StudyDashboard } from "./features/study/StudyDashboard";
-import { useStudyTracking, type StudySignal } from "./features/study/useStudyTracking";
+import { effectiveStudyView, useStudyTracking, type StudySignal } from "./features/study/useStudyTracking";
 import { t } from "./i18n";
 import { useTranslation } from "react-i18next";
 import { getSourceLanguage, getStudentLanguage, SOURCE_LANGUAGE_KEY, STUDENT_LANGUAGE_KEY, type SourceLanguage, type StudentLanguage } from "./config/languages";
@@ -88,7 +88,13 @@ function App() {
     setStudySignal(previous => previous?.view === currentView && previous.language === language && previous.active === active && previous.mode === mode
       ? previous : { view: currentView, language, active, mode });
   }, [currentView, language]);
-  const studyWarning = useStudyTracking(currentView, language, studySignal, !!settingsDialog || !!trainingMode || (currentView !== "shadowing" && (loading || !data)));
+  const [trainingSignal, setTrainingSignal] = useState<StudySignal | null>(null);
+  const studyView = effectiveStudyView(currentView, trainingMode);
+  const reportTraining = useCallback((active: boolean, mode: "manual" | "walking" = "manual", activeUntil?: number) => {
+    setTrainingSignal({ view: studyView, language, active, mode, activeUntil });
+  }, [studyView, language]);
+  const studyWarning = useStudyTracking(studyView, language, trainingMode ? trainingSignal : studySignal,
+    !!settingsDialog || trainingMode === "review" || (studyView !== "shadowing" && (loading || !data)));
 
   // Mesma verificacao de modo autor usada pelas ferramentas existentes.
   const authorMode = isAuthorMode();
@@ -503,6 +509,7 @@ function App() {
               trainingMode === "basic" &&
               trainingIntention && (
                 <BasicTraining
+                  onStudyState={reportTraining}
                   sourceLanguage={sourceLanguage}
                   language={language}
                   intention={trainingIntention}
@@ -515,6 +522,7 @@ function App() {
               trainingMode === "advanced" &&
               trainingIntention && (
                 <AdvancedTraining
+                  onStudyState={reportTraining}
                   language={language}
                   intention={trainingIntention}
                   onBack={closeTraining}

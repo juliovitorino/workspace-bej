@@ -1,5 +1,8 @@
 {
   "study": {
+    "basicTraining": "Ejercicio básico",
+    "advancedTraining": "Ejercicio avanzado",
+    "tracking": { "waiting": "Esperando el inicio de la práctica", "active": "Contabilizando", "idle": "Pausado por inactividad", "unavailable": "Seguimiento no disponible" },
     "compatibilityNote": "Sin Web Locks, el seguimiento usa el modo de compatibilidad. Utiliza una sola pestaña: la reserva temporal reduce conflictos, pero no garantiza la exclusión entre pestañas.",
     "title": "Panel de estudios",
     "intro": "El camino de las 750 horas: una meta personal de dedicación, sin garantía de fluidez ni certificación del FSI.",
