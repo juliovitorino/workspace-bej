@@ -8,8 +8,12 @@ import { ChunkFlashcards } from "./ChunkFlashcards";
 import { PersonalFlashcardEditor } from "../features/personal-flashcards/PersonalFlashcardEditor";
 import { PersonalBackupMenu } from "../features/personal-flashcards/PersonalBackupMenu";
 import { PERSONAL_CARDS_CHANGED, countPersonalFlashcards } from "../features/personal-flashcards/personalFlashcardStorage";
+import type { FavoriteChunk } from "../utils/favoriteChunks";
+import { FavoriteChunkButton } from "./FavoriteChunkButton";
 
 interface Props {
+  favorites?: FavoriteChunk[];
+  onToggleFavorite?: (id: string) => void;
   intentions: MentalIntention[];
   language: StudentLanguage;
   sourceLanguage: SourceLanguage;
@@ -175,9 +179,15 @@ function MemoryRound({ eligible, level, onLevelChange, ...props }: Props & {
     <div className="memory-card" data-side={revealed ? "back" : "front"} aria-live="polite">
       {!current ? <p>{t("memory.noChunksAvailableForThisLevelAndLanguagePair")}</p> : revealed ?
         <ChunkFlashcards key={current.id} intentions={eligible} studyChunk={current} language={language} sourceLanguage={sourceLanguage}
+          favorites={props.favorites} onToggleFavorite={props.onToggleFavorite}
           onWalkingChange={ignoreWalking} onShowDetails={props.onShowDetails}
           onBasicTraining={props.onBasicTraining} onAdvancedTraining={props.onAdvancedTraining} /> : <>
-          <p className="memory-card-label">{LANGUAGES[sourceLanguage].flag}  {t("common.sourceLanguage")}</p>
+          <div className="chunk-flashcards-card-header">
+            <p className="memory-card-label">{LANGUAGES[sourceLanguage].flag}  {t("common.sourceLanguage")}</p>
+            {props.onToggleFavorite && <FavoriteChunkButton
+              active={props.favorites?.some(favorite => favorite.id === current.id && favorite.language === language) ?? false}
+              onToggle={() => props.onToggleFavorite?.(current.id)} />}
+          </div>
           <h3 lang={sourceLanguage}>{current.intention}</h3>
           <p>{t("memory.recallHint", { targetLanguage: localizedLanguageName(language) })}</p>
           <small>{t("memory.answerHidden")}</small>

@@ -457,6 +457,8 @@ function App() {
             {!loading && data && currentView === "memory-flashcards" && (
               <div style={{ display: trainingMode ? "none" : undefined }}>
                 <MemoryFlashcards key={sourceLanguage + "-" + language}
+                  favorites={favorites}
+                  onToggleFavorite={id => toggleFavorite(id, language)}
                   intentions={data.mentalMap} language={language} sourceLanguage={sourceLanguage}
                   onShowDetails={setSelected}
                   onBasicTraining={item => startTraining(item, "basic")}

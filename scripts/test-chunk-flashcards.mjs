@@ -118,6 +118,7 @@ const { useFavoriteChunks } = load('src/hooks/useFavoriteChunks.ts');
 const { Sidebar } = load('src/components/Sidebar.tsx');
 const { IntentionCard } = load('src/components/IntentionCard.tsx');
 const { IntentionList } = load('src/components/IntentionList.tsx');
+const { MemoryFlashcards } = load('src/components/MemoryFlashcards.tsx');
 const makeChunk = (id, englishLevel, extra = {}) => ({ id, english: `Chunk ${id}`, intention: `Intenção ${id}`,
   englishLevel, allowLanguageChunkPractice: true, ...extra });
 const fixtures = CEFR_LEVELS.flatMap(level => [makeChunk(`${level}-1`, level), makeChunk(`${level}-2`, level)]);
@@ -444,6 +445,71 @@ for (const author of [false, true]) {
   assert.ok(find(card.tree, n => n.type === FavoriteChunkButton));
 }
 card.dispose(); list.dispose();
+// Memory cards share the App store on both faces without resetting the deck.
+let memorySaved = null, memoryCancellations = 0;
+globalThis.localStorage = { getItem: () => memorySaved,
+  setItem(key, value) { assert.equal(key, 'bej-favorite-chunks'); memorySaved = value; } };
+window.speechSynthesis.cancel = () => memoryCancellations++;
+window.localStorage = { getItem: () => null }; // ordinary user
+const memoryItems = [makeChunk('memory-1', 'A1', { targetIntention: 'First expression', examples: [{ id: 'e1' }] }),
+  makeChunk('memory-2', 'A1', { targetIntention: 'Second expression', examples: [{ id: 'e2' }] }),
+  makeChunk('not-a-chunk', 'A1', { targetIntention: 'Not eligible', examples: [{ id: 'e3' }], allowLanguageChunkPractice: false })];
+function MemoryStore(input) {
+  const store = useFavoriteChunks();
+  return MemoryFlashcards({ ...input, favorites: store.favorites,
+    onToggleFavorite: id => store.toggleFavorite(id, input.language) });
+}
+const memoryProps = { ...props, intentions: memoryItems, language: 'en-US' };
+const memoryStore = new Harness(MemoryStore, memoryProps); memoryStore.flush();
+const roundElement = () => find(memoryStore.tree, n => n.type?.name === 'MemoryRound');
+assert.equal(roundElement().props.eligible.length, 2);
+const memoryRound = new Harness(roundElement().type, roundElement().props); memoryRound.flush();
+const memoryFace = () => find(memoryRound.tree, n => n.props?.className === 'memory-card');
+const memoryStats = () => text(find(memoryRound.tree, n => n.props?.className === 'memory-stats'));
+const memoryToggle = buttonProps => {
+  const button = new Harness(FavoriteChunkButton, buttonProps); button.flush();
+  let stopped = false; button.tree.props.onClick({ stopPropagation() { stopped = true; } }); assert(stopped);
+  button.dispose(); memoryStore.flush(); memoryRound.flush(roundElement().props);
+};
+const frontStats = memoryStats(), frontCancelCount = memoryCancellations;
+memoryToggle(find(memoryRound.tree, n => n.type === FavoriteChunkButton).props);
+assert.equal(memoryFace().props['data-side'], 'front'); assert.equal(memoryStats(), frontStats);
+assert.equal(memoryCancellations, frontCancelCount);
+assert.equal(find(memoryRound.tree, n => n.type === FavoriteChunkButton).props.active, true);
+const memoryId = JSON.parse(memorySaved)[0].id;
+assert.deepEqual(JSON.parse(memorySaved), [{ id: memoryId, language: 'en-US' }]);
+// Reveal using the existing button, then toggle through the reused back face.
+find(memoryRound.tree, n => n.type === 'button' && n.props.className === 'primary-button').props.onClick(); memoryRound.flush();
+const back = () => find(memoryRound.tree, n => n.type === ChunkFlashcards);
+const memoryBack = new Harness(ChunkFlashcards, back().props); memoryBack.flush();
+assert.equal(find(memoryBack.tree, n => n.type === FavoriteChunkButton).props.active, true);
+find(memoryBack.tree, n => n.props?.className === 'chunk-flashcards-speaker').props.onClick();
+const backStats = memoryStats(), backCancelCount = memoryCancellations, backAudioCount = utterances.length;
+memoryToggle(find(memoryBack.tree, n => n.type === FavoriteChunkButton).props);
+memoryBack.flush(back().props);
+assert.equal(memoryFace().props['data-side'], 'back'); assert.equal(memoryStats(), backStats);
+assert.equal(memoryCancellations, backCancelCount); assert.equal(utterances.length, backAudioCount);
+assert.equal(back().props.studyChunk.id, memoryId); assert.deepEqual(JSON.parse(memorySaved), []);
+// Save again; switching the target language must not inherit the English star.
+memoryToggle(find(memoryBack.tree, n => n.type === FavoriteChunkButton).props); memoryBack.flush(back().props);
+assert.equal(JSON.parse(memorySaved)[0].language, 'en-US');
+find(memoryRound.tree, n => n.type === 'button' && n.props.className === 'secondary-button').props.onClick(); memoryRound.flush();
+assert.equal(memoryFace().props['data-side'], 'front');
+assert.equal(find(memoryRound.tree, n => n.type === FavoriteChunkButton).props.active, false);
+assert.equal(memoryStats(), backStats); // advancing does not erase the recorded card
+memoryBack.dispose(); memoryRound.dispose(); memoryStore.dispose();
+const spanishMemoryStore = new Harness(MemoryStore, { ...memoryProps, language: 'es-ES' }); spanishMemoryStore.flush();
+const spanishRoundElement = find(spanishMemoryStore.tree, n => n.type?.name === 'MemoryRound');
+const spanishMemoryRound = new Harness(spanishRoundElement.type, spanishRoundElement.props); spanishMemoryRound.flush();
+assert.equal(find(spanishMemoryRound.tree, n => n.type === FavoriteChunkButton).props.active, false);
+spanishMemoryRound.dispose(); spanishMemoryStore.dispose();
+const ineligibleMemory = new Harness(MemoryFlashcards, { ...memoryProps, intentions: [memoryItems[2]] }); ineligibleMemory.flush();
+const emptyRoundElement = find(ineligibleMemory.tree, n => n.type?.name === 'MemoryRound');
+const emptyMemoryRound = new Harness(emptyRoundElement.type, emptyRoundElement.props); emptyMemoryRound.flush();
+assert.equal(find(emptyMemoryRound.tree, n => n.type === FavoriteChunkButton), null);
+emptyMemoryRound.dispose(); ineligibleMemory.dispose();
+assert.equal(intervals.size, 0); assert.equal(timeouts.size, 0);
+console.log('Memory favorites: shared persisted state on both faces, eligibility, ordinary user, language isolation, unchanged reveal/progress/deck/audio passed.');
 console.log('Hashmap favorites: shared persistence, public profiles, eligibility, language isolation and click/navigation separation passed.');
 console.log('CEFR, real catalogs, round coverage/counters, backward navigation, live filters, cancellation, time/settings, empty levels and accessible controls passed.');
 console.log('Favorites filtering/removal/language changes, pause/resume summaries, incomplete/duplicate speech, active time, stop/new sessions and favorite toggling during playback passed.');
