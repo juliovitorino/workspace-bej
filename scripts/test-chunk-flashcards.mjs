@@ -603,6 +603,20 @@ assert.equal(favoriteStudyItems([exampleOrigin], exampleFavorites, 'en-US', 'A1'
 assert.equal(favoriteStudyItems([exampleOrigin], exampleFavorites, 'en-US', 'B1').length, 2);
 const completeOrigin = { ...exampleOrigin, allowLanguageChunkPractice: true };
 assert.equal(favoriteStudyItems([completeOrigin], [...exampleFavorites, { id: 'origin', language: 'en-US' }], 'en-US', 'all').length, 3);
+// Favorite session IDs and example text must never replace the parent used by navigation.
+for (const catalogFavorite of [exampleFavorites.find(f => f.type === 'example' && f.language === 'en-US'), { id: 'origin', language: 'en-US' }]) {
+  const opened = [];
+  const navigation = new Harness(ChunkFlashcards, { ...props, language: 'en-US', mode: 'favorites',
+    intentions: [completeOrigin], favorites: [catalogFavorite],
+    onShowDetails: item => opened.push(item), onBasicTraining: item => opened.push(item), onAdvancedTraining: item => opened.push(item) });
+  navigation.flush();
+  find(navigation.tree, n => n.type === 'button' && n.props.className === 'primary-button').props.onClick(); navigation.flush();
+  for (const title of [translations.flashcards.viewDetailsAndMoreExamples, translations.common.basicPractice, translations.common.advancedPractice]) {
+    find(navigation.tree, n => n.type === 'button' && n.props.title === title).props.onClick();
+    assert.equal(opened.at(-1), completeOrigin);
+  }
+  navigation.dispose();
+}
 let exampleProps = { ...props, language: 'en-US', mode: 'favorites', intentions: [exampleOrigin], favorites: exampleFavorites,
   onToggleFavorite(id, type) { exampleProps = { ...exampleProps, favorites: exampleProps.favorites.filter(f => f.id !== id || f.type !== type || f.language !== 'en-US') }; } };
 const examplePractice = new Harness(ChunkFlashcards, exampleProps); examplePractice.flush();

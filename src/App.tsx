@@ -558,6 +558,7 @@ function App() {
           (
             currentView === "hashmap" ||
             currentView === "chunk-flashcards" ||
+            currentView === "favorite-chunks" ||
             currentView === "memory-flashcards" ||
             currentView === "interpretation"
           ) &&
