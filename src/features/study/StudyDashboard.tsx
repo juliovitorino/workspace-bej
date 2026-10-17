@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { LANGUAGES, type StudentLanguage } from "../../config/languages";
 import { languageName } from "../../i18n";
 import { backupOf, MAX_BACKUP_BYTES, mergeStudyData, newStudyId, parseStudyBackup, readStudyStore, restoreStudyBackup,
-  STUDY_CHANGED, STUDY_KEY, STUDY_MODULES, StudyError, updateStudyStore, validDay,
+  STUDY_CHANGED, STUDY_KEY, STUDY_MODULES, EXTRA_CATEGORIES, StudyError, updateStudyStore, validDay,
   type ManualAdjustment, type StudyBackup, type StudyData, type StudyStore } from "./studyStorage";
 import { localDay, studyTracker } from "./studyTrackingService";
 import { studyEntries, studyStats, type StudyFilters } from "./studyStats";
@@ -11,7 +11,7 @@ import "./study.css";
 
 const languages = Object.keys(LANGUAGES) as StudentLanguage[];
 const HISTORY_PAGE_SIZE = 20;
-const moduleKeys: Record<string, string> = { hashmap: "Hashmap", "memory-flashcards": "memory.title", "chunk-flashcards": "common.chunkFlashcards", "chunk-favorites": "favorites.title", shadowing: "common.shadowing", "basic-training": "study.basicTraining", "advanced-training": "study.advancedTraining", "speaking-game": "common.speakingGame", interpretation: "common.interpretation", previous: "study.previousHours" };
+const moduleKeys: Record<string, string> = { hashmap: "Hashmap", "memory-flashcards": "memory.title", "chunk-flashcards": "common.chunkFlashcards", "chunk-favorites": "favorites.title", shadowing: "common.shadowing", "basic-training": "study.basicTraining", "advanced-training": "study.advancedTraining", "speaking-game": "common.speakingGame", interpretation: "common.interpretation", "extra-activities": "extras.title", previous: "study.previousHours" };
 export function StudyDashboard({ language }: { language: StudentLanguage }) {
   const { t, i18n } = useTranslation();
   const [store, setStore] = useState<StudyStore | null>(null);
@@ -58,11 +58,13 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
   const historyRows = history.slice((currentHistoryPage - 1) * HISTORY_PAGE_SIZE, currentHistoryPage * HISTORY_PAGE_SIZE);
   useEffect(() => { setHistoryPage(page => Math.min(page, historyPages)); }, [historyPages]);
   const preview = useMemo(() => store && pending && mergeStudyData(store.studyData, pending.backup.studyData, incomingGoals), [store, pending, incomingGoals]);
-  const stale = !!pending && JSON.stringify(store) !== pending.baseline;
+  const stale = !!pending && (JSON.stringify(store) !== pending.baseline || !!store?.extraActivity);
   const duration = (seconds: number) => t("study.duration", { hours: Math.floor(seconds / 3600), minutes: Math.floor(seconds % 3600 / 60), seconds: Math.floor(seconds % 60) });
   const number = (value: number) => value.toLocaleString(i18n.language, { maximumFractionDigits: 2 });
   const moduleLabel = (key: string) => key === "hashmap" ? "Mental Hashmap" : t(moduleKeys[key]);
-  const moduleValues = Object.fromEntries((filters.module === "all" ? STUDY_MODULES : [filters.module])
+  const applicableModules = STUDY_MODULES.filter(key => filters.origin === "internal" ? key !== "extra-activities"
+    : filters.origin === "external" || (filters.extraCategory && filters.extraCategory !== "all") ? key === "extra-activities" : true);
+  const moduleValues = Object.fromEntries((filters.module === "all" ? applicableModules : [filters.module])
     .map(key => [key, stats?.byModule[key] ?? 0]));
   // Keep prior-hour adjustments visible when no module filter excludes them.
   if (filters.module === "all" && stats?.byModule.previous) moduleValues.previous = stats.byModule.previous;
@@ -115,6 +117,7 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
   }
   function selectFile(file?: File) {
     if (!file) return;
+    if (store?.extraActivity) { fail(new StudyError("extraActive")); return; }
     setPending(null); setConfirmed(false); setIncomingGoals(false);
     void action(async () => {
       if (file.size > MAX_BACKUP_BYTES) throw new StudyError("tooLarge");
@@ -144,18 +147,21 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
         <label>{t("study.module")}<select value={filters.module} onChange={e => setFilters({ ...filters, module: e.target.value as StudyFilters["module"] })}><option value="all">{t("study.allModules")}</option>{STUDY_MODULES.map(key => <option key={key} value={key}>{moduleLabel(key)}</option>)}</select></label>
         <label>{t("study.mode")}<select value={filters.mode} onChange={e => setFilters({ ...filters, mode: e.target.value as StudyFilters["mode"] })}>{["all", "manual", "walking"].map(key => <option key={key} value={key}>{t(`study.modes.${key}`)}</option>)}</select></label>
         <label>{t("study.period")}<select value={filters.period} onChange={e => setFilters({ ...filters, period: e.target.value as StudyFilters["period"] })}>{["today", "7", "30", "month", "90", "all", "custom"].map(key => <option key={key} value={key}>{t(`study.periods.${key}`)}</option>)}</select></label>
+        <label>{t("extras.origin")}<select value={filters.origin ?? "all"} onChange={e => setFilters({ ...filters, origin: e.target.value as StudyFilters["origin"] })}>{["all", "internal", "external"].map(key => <option key={key} value={key}>{t(`extras.origins.${key}`)}</option>)}</select></label>
+        {filters.origin !== "internal" && <label>{t("extras.category")}<select value={filters.extraCategory ?? "all"} onChange={e => setFilters({ ...filters, extraCategory: e.target.value as StudyFilters["extraCategory"] })}><option value="all">{t("extras.allCategories")}</option>{EXTRA_CATEGORIES.map(key => <option key={key} value={key}>{t(`extras.categories.${key}`)}</option>)}</select></label>}
         {filters.period === "custom" && <><label>{t("study.from")}<input type="date" value={filters.from} onChange={e => setFilters({ ...filters, from: e.target.value })} /></label><label>{t("study.to")}<input type="date" value={filters.to} onChange={e => setFilters({ ...filters, to: e.target.value })} /></label></>}
       </fieldset>
       {!validRange && <p role="alert">{t("study.errors.invalid")}</p>}
       <div className="study-metrics">{([ ["accumulated", stats.total], ["today", stats.today], ["week", stats.week], ["month", stats.month], ["dailyAverage", stats.average] ] as const).map(([key, seconds]) => <div className="study-panel" key={key}><span>{t(`study.${key}`)}</span><strong>{duration(seconds)}</strong></div>)}
+        {([ ["internalTime", stats.internal], ["externalTime", stats.external], ["consolidated", stats.total] ] as const).map(([key, seconds]) => <div className="study-panel" key={key}><span>{t(`extras.${key}`)}</span><strong>{duration(seconds)}</strong></div>)}
         {([ ["studyDays", stats.studyDays], ["streak", stats.streak], ["longest", stats.longest] ] as const).map(([key, count]) => <div className="study-panel" key={key}><span>{t(`study.${key}`)}</span><strong>{number(count)}</strong></div>)}
       </div><p className="study-note">{t("study.streakNote")}</p>
       <section className="study-panel"><h3>{t("study.journey")}</h3><p>{t("study.historicalNote")}</p>
         {languages.filter(code => filters.language === "all" || filters.language === code).map(code => {
-          const entries = studyEntries(store.studyData).filter(e => e.language === code && (filters.module === "all" || filters.module === e.module) && (filters.mode === "all" || filters.mode === e.mode)), total = entries.reduce((n, e) => n + e.seconds, 0);
+          const entries = studyEntries(store.studyData).filter(e => e.language === code), total = entries.reduce((n, e) => n + e.seconds, 0);
           const target = store.studyData.goals[code], monthly = store.studyData.monthlyGoals[code];
           const percent = target ? total / (target * 3600) * 100 : 0;
-          const monthTotal = stats.entries.filter(e => e.language === code && e.date.slice(0, 7) === localDay(now).slice(0, 7)).reduce((n, e) => n + e.seconds, 0);
+          const monthTotal = entries.filter(e => e.date.slice(0, 7) === localDay(now).slice(0, 7)).reduce((n, e) => n + e.seconds, 0);
           return <div className="study-goal" key={code}><h4>{languageName(code)}</h4><p>{duration(total)} / {target ? t("study.hoursValue", { hours: number(target) }) : t("study.noGoal")}</p>
             {target && <><progress aria-label={t("study.progressFor", { language: languageName(code) })} value={Math.min(percent, 100)} max={100} /><p>{t("study.progress", { percent: number(percent), remaining: duration(Math.max(0, target * 3600 - total)) })}</p>{percent >= 100 && <strong>{t("study.reached")}</strong>}</>}
             {monthly && <p>{t("study.monthlyProgress", { actual: duration(monthTotal), target: number(monthly) })}</p>}
@@ -163,6 +169,7 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
         })}
       </section>
       <div className="study-charts">{chart(t("study.byModule"), moduleValues, moduleLabel, stats.total, true)}{chart(t("study.byLanguage"), stats.byLanguage, code => languageName(code as StudentLanguage))}{chart(t("study.timeline"), stats.timeline)}</div>
+      {chart(t("extras.byCategory"), stats.byExtraCategory, key => t(`extras.categories.${key}`), stats.external, true)}
       <div className="study-charts"><form className="study-panel" onSubmit={saveGoals}><fieldset disabled={busy}><legend>{t("study.goals")}</legend>
         <label>{t("study.language")}<select value={goalLanguage} onChange={e => setGoalLanguage(e.target.value as StudentLanguage)}>{languages.map(code => <option key={code} value={code}>{languageName(code)}</option>)}</select></label>
         <label>{t("study.targetHours")}<input type="number" min="0.01" max="10000000" step="0.01" required value={goalHours} onChange={e => setGoalHours(e.target.value)} /></label>
@@ -178,7 +185,7 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
         <div className="study-actions"><button type="submit" className="primary-button">{t("study.save")}</button>{editing && <button type="button" className="secondary-button" onClick={resetAdjustment}>{t("study.cancel")}</button>}</div>
       </fieldset></form></div>
       <section className="study-panel"><h3>{t("study.history")}</h3>{!history.length ? <p>{t("study.empty")}</p> : <ul id="study-history-list" className="study-history">{historyRows.map(e => <li key={`${e.module}:${e.id}:${e.date}`}>
-        <div><time dateTime={e.date}>{new Date(e.date + "T12:00:00").toLocaleDateString(i18n.language)}</time><strong>{languageName(e.language)}</strong><span>{moduleLabel(e.module)} · {t(`study.modes.${e.mode}`)}</span><strong>{duration(e.seconds)}</strong>{e.description && <span>{e.description}</span>}</div>
+        <div><time dateTime={e.date}>{new Date(e.date + "T12:00:00").toLocaleDateString(i18n.language)}</time><strong>{languageName(e.language)}</strong><span>{moduleLabel(e.module)} · {t(`study.modes.${e.mode}`)}</span>{e.category && <span>{t(`extras.categories.${e.category}`)}</span>}<strong>{duration(e.seconds)}</strong>{e.description && <span>{e.description}</span>}{e.note && <span>{e.note}</span>}</div>
         {e.module === "previous" && <div className="study-actions"><button type="button" className="secondary-button" disabled={busy} onClick={() => { setEditing(e.id); setAdjustLanguage(e.language); setHours(String(Math.floor(e.seconds / 3600))); setMinutes(String(Math.floor(e.seconds % 3600 / 60))); setDate(e.date); setDescription(e.description ?? ""); }}>{t("study.edit")}</button>
           <button type="button" className="secondary-button" disabled={busy} onClick={() => { if (window.confirm(t("study.confirmDelete"))) void action(async () => { await changeData(data => ({ ...data, manualAdjustments: data.manualAdjustments.filter(a => a.id !== e.id) })); if (editing === e.id) resetAdjustment(); setMessage(t("study.saved")); }); }}>{t("study.delete")}</button></div>}
       </li>)}</ul>}{history.length > 0 && <nav className="study-actions study-history-pagination" aria-label={t("study.historyPages")}>
@@ -188,9 +195,10 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
       </nav>}</section>
       <section className="study-panel"><h3>{t("study.myData")}</h3><p>{t("study.backupNote")}</p><div className="study-actions">
         <button type="button" className="primary-button" disabled={busy} onClick={() => void action(exportBackup)}>{t("study.export")}</button>
-        <button type="button" className="secondary-button" disabled={busy} onClick={() => fileInput.current?.click()}>{t("study.restore")}</button>
+        <button type="button" className="secondary-button" disabled={busy || !!store.extraActivity} onClick={() => fileInput.current?.click()}>{t("study.restore")}</button>
         <input ref={fileInput} hidden type="file" accept=".json,application/json" aria-label={t("study.restore")} onChange={e => { selectFile(e.target.files?.[0]); e.target.value = ""; }} />
       </div>
+      {store.extraActivity && <p role="status">{t("study.errors.extraActive")}</p>}
       {preview && pending && <section className="study-preview" aria-labelledby="study-preview-title"><h4 id="study-preview-title">{t("study.preview")}</h4>
         <dl>{([ ["backupSessions", pending.backup.studyData.sessions.length], ["newSessions", preview.newSessions], ["duplicates", preview.duplicates], ["conflicts", preview.conflicts.length], ["newAdjustments", preview.newAdjustments] ] as const).map(([key, value]) => <div key={key}><dt>{t(`study.${key}`)}</dt><dd>{value}</dd></div>)}<div><dt>{t("study.currentHours")}</dt><dd>{duration(preview.currentSeconds)}</dd></div><div><dt>{t("study.afterHours")}</dt><dd>{duration(preview.afterSeconds)}</dd></div></dl>
         {!!preview.conflicts.length && <p role="alert">{t("study.errors.conflict")}</p>}

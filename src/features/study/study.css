@@ -18,6 +18,8 @@
 .study-chart { display: grid; gap: 16px; max-height: 360px; overflow-y: auto; }
 .study-chart-modules { max-height: none; overflow: visible; }
 .study-chart-modules li, .study-chart-modules li > div:first-child > * { min-width: 0; overflow-wrap: anywhere; }
+.extra-activities textarea { box-sizing: border-box; width: 100%; min-width: 0; padding: 10px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--surface); color: var(--text); font: inherit; resize: vertical; }
+.extra-activity-clock { display: block; margin: 16px 0; font-size: clamp(2rem, 8vw, 3rem); font-weight: 700; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
 .study-chart li > div:first-child { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; }
 .study-bar { height: 10px; background: var(--surface-soft); border-radius: 6px; margin-top: 6px; overflow: hidden; }
 .study-bar span { display: block; height: 100%; background: var(--accent); }

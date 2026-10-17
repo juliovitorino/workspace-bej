@@ -1,4 +1,6 @@
 import { StudyDashboard } from "./features/study/StudyDashboard";
+import { ExtraActivities } from "./features/study/ExtraActivities";
+import { useExtraActivity } from "./features/study/useExtraActivity";
 import { effectiveStudyView, useStudyTracking, type StudySignal } from "./features/study/useStudyTracking";
 import { t } from "./i18n";
 import { useTranslation } from "react-i18next";
@@ -93,8 +95,9 @@ function App() {
   const reportTraining = useCallback((active: boolean, mode: "manual" | "walking" = "manual", activeUntil?: number) => {
     setTrainingSignal({ view: studyView, language, active, mode, activeUntil });
   }, [studyView, language]);
+  const extraActivity = useExtraActivity();
   const studyWarning = useStudyTracking(studyView, language, trainingMode ? trainingSignal : studySignal,
-    !!settingsDialog || trainingMode === "review" || (studyView !== "shadowing" && (loading || !data)));
+    !!extraActivity.draft || !!settingsDialog || trainingMode === "review" || (studyView !== "shadowing" && (loading || !data)));
 
   // Mesma verificacao de modo autor usada pelas ferramentas existentes.
   const authorMode = isAuthorMode();
@@ -329,7 +332,7 @@ function App() {
           } else {
             setFilterScrollRequest(0);
           }
-          if (view === "shadowing" || view === "favorite-chunks" || view === "study-dashboard") {
+          if (view === "shadowing" || view === "favorite-chunks" || view === "study-dashboard" || view === "extra-activities") {
             closeTraining();
             setSelected(null);
             window.speechSynthesis?.cancel();
@@ -355,16 +358,18 @@ function App() {
             />}
             {studyWarning && (studyWarning !== "compatibility" || currentView === "study-dashboard") && <p className="warning-banner" role="status">{t(`study.warning.${studyWarning}`)}</p>}
             {currentView === "study-dashboard" && <StudyDashboard language={language} />}
+            {extraActivity.draft && currentView !== "extra-activities" && <p className="warning-banner" role="status">{t("extras.activeNotice")} <button type="button" className="secondary-button" onClick={() => { closeTraining(); setSelected(null); setCurrentView("extra-activities"); }}>{t("extras.open")}</button></p>}
+            {currentView === "extra-activities" && <ExtraActivities language={language} state={extraActivity} />}
             {currentView === "shadowing" && <StoryShadowing key={`${sourceLanguage}-${language}`} language={language} onStudyState={reportStudy} onMenu={() => setCurrentView("hashmap")} />}
 
-        {loading && currentView !== "shadowing" && currentView !== "study-dashboard" && (
+        {loading && currentView !== "shadowing" && currentView !== "study-dashboard" && currentView !== "extra-activities" && (
           <div className="status-card">
             <div className="spinner" />
             <p>{t("app.loadingMentalHashmap")}</p>
           </div>
         )}
 
-        {!loading && error && !data && currentView !== "shadowing" && currentView !== "study-dashboard" && (
+        {!loading && error && !data && currentView !== "shadowing" && currentView !== "study-dashboard" && currentView !== "extra-activities" && (
           <div className="status-card error-card">
             <h2>{t("app.couldNotLoadMentalHashmap")}</h2>
             <p>{error}</p>

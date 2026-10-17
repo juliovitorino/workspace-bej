@@ -1,4 +1,5 @@
-import { newStudyId, STUDY_CHANGED, StudyError, updateStudyStore, type StudyMode, type StudyModule, type StudySession, type StudyStore } from "./studyStorage";
+import { newStudyId, readStudyStore, STUDY_CHANGED, STUDY_KEY, StudyError, updateStudyStore, type StudyMode, type StudyModule, type StudySession, type StudyStore } from "./studyStorage";
+import { advanceExtra, recoverExtra } from "./extraActivityTime";
 import type { StudentLanguage } from "../../config/languages";
 import { StudyLease } from "./studyLease";
 
@@ -64,6 +65,8 @@ export function recoverCheckpoint(store: StudyStore): StudyStore {
 class LostStudyLease extends Error {}
 
 export class StudyTracker {
+  readonly extraOwner = newStudyId();
+  private extraBlocked = false;
   private clock = new StudyClock();
   private owner = false;
   private queue: Promise<unknown> = Promise.resolve();
@@ -81,8 +84,22 @@ export class StudyTracker {
     const now = Date.now();
     const current = this.clock.snapshot(now);
     return { seconds: current?.activeSeconds ?? 0,
-      state: this.blocked ? "unavailable" : !current ? "waiting" : this.active && now < this.until ? "active" : now >= this.until ? "idle" : "unavailable" };
+      state: this.blocked || this.extraBlocked ? "unavailable" : !current ? "waiting" : this.active && now < this.until ? "active" : now >= this.until ? "idle" : "unavailable" };
   }
+  hasControl() { return this.canTrack(); }
+  requireControl() { if (!this.canTrack()) throw new StudyError(this.failed ? "storage" : "otherTab"); }
+  private syncExtra = () => {
+    try {
+      const blocked = !!readStudyStore().extraActivity;
+      if (blocked === this.extraBlocked) return;
+      this.extraBlocked = blocked;
+      if (!this.canTrack()) return;
+      if (blocked) {
+        const finished = this.clock.finish(Date.now());
+        void this.enqueue(store => ({ ...append(store, finished), activeSession: null }));
+      } else this.clock.set(this.context, this.active, Date.now(), this.until);
+    } catch { this.extraBlocked = true; }
+  };
   private loseLease() {
     this.owner = false;
     this.clock = new StudyClock();
@@ -116,15 +133,26 @@ export class StudyTracker {
     return this.queue;
   }
   set(context: StudyContext | null, active: boolean, until = Infinity, blocked = false) {
+    this.syncExtra();
     const wasActive = this.active;
     this.context = context; this.active = active; this.until = until; this.blocked = blocked;
     if (!this.canTrack()) return;
-    const finished = this.clock.set(context, active, Date.now(), until);
+    const finished = this.clock.set(context, active && !this.extraBlocked, Date.now(), until);
     const checkpoint = this.clock.snapshot(Date.now());
     if (finished || (wasActive && !active)) void this.enqueue(store => ({ ...append(store, finished), activeSession: checkpoint }));
   }
   checkpoint() {
+    this.syncExtra();
     if (!this.canTrack()) return;
+    if (this.extraBlocked) {
+      const now = Date.now();
+      void this.enqueue(store => {
+        const draft = store.extraActivity;
+        return draft?.owner === this.extraOwner && !draft.recoveryAt && draft.state === "running" && now >= Date.parse(draft.updatedAt)
+          ? { ...store, extraActivity: advanceExtra(draft, now) } : store;
+      });
+      return;
+    }
     const checkpoint = this.clock.snapshot(Date.now());
     if (checkpoint) void this.enqueue(store => ({ ...store, activeSession: checkpoint }));
   }
@@ -137,7 +165,7 @@ export class StudyTracker {
     const finished = this.clock.finish(Date.now());
     await this.enqueue(store => ({ ...append(store, finished), activeSession: null }));
     if (this.status) throw new StudyError("storage");
-    if (this.owner) this.clock.set(this.context, this.active, Date.now(), this.until);
+    if (this.owner) this.clock.set(this.context, this.active && !this.extraBlocked, Date.now(), this.until);
   }
   start(): () => void {
     let disposed = false, release: (() => void) | undefined;
@@ -145,6 +173,10 @@ export class StudyTracker {
     const fallback = typeof navigator.locks?.request !== "function";
     const lease = fallback ? new StudyLease(localStorage, newStudyId()) : null;
     this.lease = lease;
+    this.syncExtra();
+    window.addEventListener(STUDY_CHANGED, this.syncExtra);
+    const externalStorage = (event: StorageEvent) => { if (event.key === STUDY_KEY || event.key === null) this.syncExtra(); };
+    window.addEventListener("storage", externalStorage);
     let claiming = false;
     const tryFallback = async () => {
       if (!lease || disposed || claiming || this.failed) return;
@@ -159,10 +191,10 @@ export class StudyTracker {
         await new Promise(resolve => window.setTimeout(resolve, 150));
         if (disposed) return;
         if (!lease.owns()) { this.report("otherTab"); return; }
-        await this.enqueue(recoverCheckpoint);
+        await this.enqueue(store => recoverExtra(recoverCheckpoint(store), this.extraOwner, Date.now()));
         if (disposed || this.failed || !lease.owns()) return;
         this.owner = true;
-        this.clock.set(this.context, this.active, Date.now(), this.until);
+        this.clock.set(this.context, this.active && !this.extraBlocked, Date.now(), this.until);
         this.report("");
       } catch { this.failed = true; this.owner = false; this.clock = new StudyClock(); this.report("storage"); }
       finally { claiming = false; }
@@ -174,10 +206,10 @@ export class StudyTracker {
       try {
         await navigator.locks.request("bej-study-tracker", { signal: abort.signal }, async () => {
           if (disposed) return;
-          await this.enqueue(recoverCheckpoint);
+          await this.enqueue(store => recoverExtra(recoverCheckpoint(store), this.extraOwner, Date.now()));
           if (disposed || this.status) return;
           this.owner = true;
-          this.clock.set(this.context, this.active, Date.now(), this.until);
+          this.clock.set(this.context, this.active && !this.extraBlocked, Date.now(), this.until);
           this.report("");
           await new Promise<void>(resolve => { release = resolve; });
           this.owner = false;
@@ -195,6 +227,8 @@ export class StudyTracker {
       disposed = true; abort.abort(); window.clearInterval(timer);
       if (leaseTimer !== undefined) window.clearInterval(leaseTimer);
       window.removeEventListener("pagehide", hide);
+      window.removeEventListener(STUDY_CHANGED, this.syncExtra);
+      window.removeEventListener("storage", externalStorage);
       void this.seal().catch(() => {}).finally(() => { release?.(); lease?.release(); });
     };
   }

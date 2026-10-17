@@ -4,7 +4,7 @@ O dashboard registra a dedicação à aprendizagem. As 750 horas são uma sugest
 
 ## Armazenamento e recuperação
 
-Uma única chave, `bej-study-data`, contém `{schemaVersion: 1, studyData, activeSession}`. `studyData` contém `goals`, `monthlyGoals`, `sessions` e `manualAdjustments`. Metas são horas por idioma; durações são segundos inteiros. Os registros têm IDs estáveis gerados por `crypto.randomUUID()` (com fallback via `crypto.getRandomValues`). Dados inválidos não são substituídos por histórico vazio.
+Uma única chave, `bej-study-data`, contém `{schemaVersion: 1, studyData, activeSession}` e, opcionalmente, `extraActivity`. `studyData` contém `goals`, `monthlyGoals`, `sessions` e `manualAdjustments`. Metas são horas por idioma; durações são segundos inteiros. Os registros têm IDs estáveis gerados por `crypto.randomUUID()` (com fallback via `crypto.getRandomValues`). Dados inválidos não são substituídos por histórico vazio.
 
 Cada alteração valida o candidato inteiro e grava uma vez com `localStorage.setItem`. Web Locks serializa as alterações entre abas; um segundo lock dá a uma única aba a responsabilidade pelo monitoramento. A segunda aba mostra um aviso e aguarda a primeira fechar.
 
@@ -36,7 +36,27 @@ Os módulos aparecem nos filtros, histórico, gráficos e totais por idioma e me
 
 ## Indicadores
 
-Filtros usam os idiomas da configuração central e respeitam idioma, módulo, modalidade e período. O progresso da meta ignora apenas o filtro temporal e está identificado como histórico. Nenhuma hora de espanhol entra na meta de inglês. Cada idioma tem sua própria barra; somente a barra é limitada a 100%, sem descartar tempo excedente.
+Filtros usam os idiomas da configuração central e respeitam idioma, módulo, modalidade, período, origem e categoria externa. Selecionar uma categoria restringe a análise às sessões externas daquela categoria; a origem interna ignora a categoria oculta. Ajustes manuais entram em todas as atividades, sem serem reclassificados como estudo interno ou externo. O progresso oficial da meta é o histórico real do idioma, incluindo atividades externas confirmadas e ajustes, independentemente dos filtros de análise. Nenhuma hora de espanhol entra na meta de inglês. Cada idioma tem sua própria barra; somente a barra é limitada a 100%, sem descartar tempo excedente.
+
+### Atividades Extras (4.9.0)
+
+O menu Atividades Extras registra conversação, escrita, aula particular e outros estudos, usando os idiomas centrais do aplicativo. Iniciar, pausar, continuar, parar/salvar e descartar usam o mesmo controle de exclusividade do rastreador e a mesma gravação atômica de `bej-study-data`. Idioma, categoria e observação (até 1.000 caracteres) ficam bloqueados durante a sessão. Uma sessão de zero segundos pode ser descartada, mas não salva.
+
+`extraActivity` guarda ID estável, responsável pela sessão, timestamps, estado, milissegundos confirmados em checkpoints e distribuição diária. Não é o `activeSession` interno. O tempo externo é calculado pela diferença de timestamps, descontando pausas; a atualização visual de um segundo não acumula nem grava segundos. O checkpoint de 15 segundos do serviço central também confirma o estado temporário externo. Trocar de aba, navegar entre módulos, abrir outro aplicativo ou bloquear a tela não aplica o limite de inatividade de cinco minutos nem o limite interno de suspensão do processo.
+
+Enquanto houver uma sessão externa, inclusive pausada ou pendente, o rastreador suspende os módulos internos, mostra orientação para abrir Atividades Extras e impede outra sessão externa. As operações verificam o mesmo Web Lock ou a reserva de compatibilidade já existente. Uma segunda aba só pode recuperar depois de obter o controle. Sem Web Locks, a reserva em localStorage continua sendo consultiva; deve-se usar uma única aba, pois localStorage não fornece exclusão atômica entre processos.
+
+Ao recarregar/fechar e reabrir a página, o novo responsável marca a sessão para recuperação. Nesse momento congela o limite estimado; outras recargas não o aumentam. A tela mostra idioma, categoria, observação, início, tempo previamente acumulado, adicional estimado e total sugerido. O estudante informa o tempo real em segundos, com prévia HH:MM:SS, até esse limite. Uma sessão pausada não recebe nenhum tempo após a pausa. Confirmar salva e remove a sessão temporária na mesma gravação; repetir a confirmação não duplica o registro. Descartar remove somente o temporário. Falha de gravação preserva o estado anterior para nova tentativa.
+
+Sessões concluídas usam `module: "extra-activities"`, `mode: "manual"`, `category` obrigatória e `note` opcional. O schema permanece na versão 1 e as sessões antigas continuam válidas. `dailySeconds` divide o tempo pelos dias locais, inclusive na meia-noite. Uma confirmação inferior ao estimado conserva os primeiros intervalos elegíveis, até atingir exatamente a duração confirmada; a soma diária é igual a `activeSeconds`.
+
+O Dashboard mantém os indicadores anteriores e acrescenta tempo interno, externo e consolidado (interno + externo confirmado + ajustes). As quatro categorias aparecem, inclusive com zero. Sessões externas entram nos gráficos e no mesmo histórico paginado de 20 registros, com categoria e observação. Por exemplo, 30h internas + 18h externas = 48h consolidadas e 6,4% da meta de 750h; filtrar apenas conversação não altera a meta oficial.
+
+Backup exporta apenas as sessões concluídas, incluindo categoria, observação e distribuição diária. O temporário não é exportado nem contabilizado. Restauração fica bloqueada enquanto houver sessão externa, e volta a usar a mesclagem por ID ao salvar ou descartar. Backups antigos permanecem compatíveis.
+
+Em celulares, o navegador pode suspender a atualização visual ou encerrar a página para liberar memória. Timestamps permitem calcular o período elegível, mas não comprovam quanto desse período foi estudo: após interrupção é indispensável a confirmação. Limpeza do armazenamento pelo usuário ou pelo sistema pode remover dados locais; mantenha backups das sessões concluídas. Mudanças regressivas no relógio impedem salvar um intervalo inconsistente até sua correção.
+
+`node scripts/test-extra-activities.mjs` cobre os fluxos de 45 minutos, pausas, recuperação ativa/pausada, recarga repetida, descarte, falha atômica de gravação, confirmação idempotente, meia-noite, concorrência, consolidação de 48h e backup. Os testes de UI do dashboard também verificam filtros, meta oficial, categorias e histórico unificado.
 
 Dias com estudo exigem tempo positivo. Sequências exigem ao menos 60 segundos no dia local, somando registros desse dia. A sequência atual pode terminar hoje ou ontem; a maior sequência é a do período filtrado. Registros automáticos incluem `dailySeconds`, preservando a divisão real dos intervalos ativos à meia-noite. Backups compatíveis sem esse campo atribuem os segundos à data local do início da sessão. O gráfico usa dias para períodos curtos, semanas para 30 dias e meses para histórico/90 dias. O histórico agrupa a mesma sessão por dia quando atravessa a meia-noite.
 
