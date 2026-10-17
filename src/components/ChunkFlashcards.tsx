@@ -17,6 +17,7 @@ import { WalkingSessionSummary } from "./WalkingSessionSummary";
 const NO_FAVORITES: FavoriteChunk[] = [];
 
 interface ChunkFlashcardsProps {
+  onStudyState?: (active: boolean, mode?: "manual" | "walking") => void;
   mode?: "all" | "favorites";
   favorites?: FavoriteChunk[];
   onToggleFavorite?: (id: string, type?: "example") => void;
@@ -39,6 +40,7 @@ function formatStudyTime(totalSeconds: number): string {
 }
 
 export function ChunkFlashcards({
+  onStudyState,
   mode = "all",
   favorites = NO_FAVORITES,
   onToggleFavorite,
@@ -191,6 +193,11 @@ export function ChunkFlashcards({
   const favoriteId = studyItem?.favoriteId ?? currentChunk?.id;
   const favoriteType = studyItem?.favoriteType;
   const origin = studyItem?.origin ?? currentChunk;
+  useEffect(() => {
+    if (studyChunk || walking) return;
+    onStudyState?.(studyStartedAt !== null && pausedAt === null && chunks.length > 0, "manual");
+    return () => onStudyState?.(false, "manual");
+  }, [studyChunk, walking, studyStartedAt, pausedAt, chunks.length > 0, onStudyState]);
   const total = chunks.length;
   const completed = total > 0 && drawnIds.length === total;
   const shownCount = drawnIds.length;
@@ -449,7 +456,7 @@ export function ChunkFlashcards({
   if (studyChunk) return flashcard;
 
   if (walking) {
-    return <WalkingMode chunk={currentChunk} language={language} sourceLanguage={sourceLanguage}
+    return <WalkingMode onStudyState={onStudyState} chunk={currentChunk} language={language} sourceLanguage={sourceLanguage}
       stopWhenEmpty={mode === "favorites"}
       currentEligible={mode !== "favorites" || chunks.some(item => item.id === currentChunk?.id)}
       favorite={favorites.some(favorite => favorite.id === favoriteId && favorite.type === favoriteType && favorite.language === language)}

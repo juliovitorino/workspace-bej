@@ -615,3 +615,29 @@ star = find(examplePractice.tree, n => n.type === FavoriteChunkButton); star.pro
 assert.ok(!find(examplePractice.tree, n => n.type === FavoriteChunkButton));
 assert.equal(exampleProps.favorites.length, 2); // unavailable and other-language references survive
 console.log('Example favorites: UUID resolution, level inheritance, independent identities, mixed pool and removal to empty passed.');
+
+// Dashboard integration follows the existing clock, without signaling on each card.
+const studySignals = [];
+const tracked = new Harness(ChunkFlashcards, { ...props, onStudyState: (active, mode) => studySignals.push({ active, mode }) });
+tracked.flush(); assert.equal(studySignals.at(-1).active, false);
+find(tracked.tree, n => n.type === 'button' && n.props.className === 'primary-button').props.onClick(); tracked.flush();
+assert.deepEqual(studySignals.at(-1), { active: true, mode: 'manual' });
+const countBeforeNext = studySignals.length;
+find(tracked.tree, n => n.type === 'button' && n.props.className === 'primary-button').props.onClick(); tracked.flush();
+assert.equal(studySignals.length, countBeforeNext, 'next card does not restart tracking');
+const pauseTracking = () => find(tracked.tree, n => n.type === 'button' && n.props['aria-label'] === translations.flashcards.pauseStudyTime);
+pauseTracking().props.onClick(); tracked.flush(); assert.equal(studySignals.at(-1).active, false);
+find(tracked.tree, n => n.type === 'button' && n.props['aria-label'] === translations.flashcards.resumeStudyTime).props.onClick(); tracked.flush();
+assert.equal(studySignals.at(-1).active, true);
+tracked.dispose(); assert.equal(studySignals.at(-1).active, false);
+const walkSignals = [];
+navigator.userAgent = 'iPhone'; navigator.platform = 'iPhone'; navigator.maxTouchPoints = 5;
+const trackedWalk = new Harness(WalkingMode, { chunk: fixtures[0], language: 'en-US', sourceLanguage: 'pt-BR',
+  level: 'all', position: 1, total: 2, round: 1, canPrevious: false, onNext() {}, onPrevious() {}, onStop() {}, onLevelChange() {},
+  onStudyState: (active, mode) => walkSignals.push({ active, mode }) });
+trackedWalk.flush();
+assert.equal(walkSignals.length, 0, 'walking does not count queued speech');
+utterances.at(-1).onstart(); assert.deepEqual(walkSignals.at(-1), { active: true, mode: 'walking' });
+utterances.at(-1).onend(); assert.deepEqual(walkSignals.at(-1), { active: false, mode: 'walking' });
+trackedWalk.dispose();
+console.log('Dashboard integration: manual start/pause/resume/unmount, no per-card restart, walking starts on actual speech and excludes repetition delays passed.');

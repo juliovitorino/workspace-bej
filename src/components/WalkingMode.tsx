@@ -13,6 +13,7 @@ import { WalkingSessionSummary } from "./WalkingSessionSummary";
 import { FavoriteChunkButton } from "./FavoriteChunkButton";
 
 interface Props {
+  onStudyState?: (active: boolean, mode?: "manual" | "walking") => void;
   stopWhenEmpty?: boolean;
   currentEligible?: boolean;
   favorite?: boolean;
@@ -31,7 +32,7 @@ interface Props {
   onStop: (summary?: WalkingSummary) => void;
 }
 
-export function WalkingMode({ chunk, language, sourceLanguage, level, onLevelChange, position, total, round, canPrevious, onPrevious, onNext, onStop, stopWhenEmpty = false, currentEligible = true, favorite = false, onToggleFavorite }: Props) {
+export function WalkingMode({ onStudyState, chunk, language, sourceLanguage, level, onLevelChange, position, total, round, canPrevious, onPrevious, onNext, onStop, stopWhenEmpty = false, currentEligible = true, favorite = false, onToggleFavorite }: Props) {
   const { t } = useTranslation();
   const [paused, setPaused] = useState(false);
   const [repetitions, setRepetitions] = useState(5);
@@ -113,15 +114,17 @@ export function WalkingMode({ chunk, language, sourceLanguage, level, onLevelCha
     else audio.current.play(repetitionText((chunk.targetIntention ?? chunk.english).trim(), language, index, repetitions),
       language, rate, pause * 1000,
       () => {
+        onStudyState?.(false, "walking");
         session.current.record(token, chunk.id, index + 1 >= repetitions);
         phase.current = "pause";
         setSpoken(index + 1);
         if (finishWhenEmpty.current) callbacks.current.onStop();
         else if (advanceAfterSpeech.current) navigateRef.current();
       }, done,
-      () => { setError(t("walking.couldNotPlayTheAudioTapResumeToTryAgain")); setPaused(true); });
-    return () => audio.current.cancel();
-  }, [chunk?.id, language, level, paused, index, repetitions, pause, rate, automatic, revision]);
+      () => { onStudyState?.(false, "walking"); setError(t("walking.couldNotPlayTheAudioTapResumeToTryAgain")); setPaused(true); },
+      false, () => onStudyState?.(true, "walking"));
+    return () => { audio.current.cancel(); onStudyState?.(false, "walking"); };
+  }, [chunk?.id, language, level, paused, index, repetitions, pause, rate, automatic, revision, onStudyState]);
 
   useEffect(() => {
     const now = performance.now();
