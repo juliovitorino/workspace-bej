@@ -11,6 +11,9 @@ import { transpileModule, ModuleKind, JsxEmit, ScriptTarget } from 'typescript';
 // browser APIs. Static rendering below separately uses React's real renderer.
 const require = createRequire(import.meta.url);
 const cache = new Map();
+const translations = JSON.parse(readFileSync('src/i18n/locales/pt-BR.json', 'utf8'));
+const translate = (key, values = {}) => String(key.split('.').reduce((value, part) => value?.[part], translations) ?? key)
+  .replace(/\{\{(\w+)\}\}/g, (_, name) => String(values[name] ?? ''));
 let currentHarness = null;
 const hooks = { ...React };
 for (const name of ['useState', 'useRef', 'useMemo', 'useEffect']) {
@@ -27,6 +30,8 @@ function load(file) {
   } });
   const localRequire = id => {
     if (id === 'react') return hooks;
+    if (id === 'react-i18next') return { useTranslation: () => ({ t: translate }) };
+    if (id.endsWith('/i18n')) return { t: translate };
     if (!id.startsWith('.')) return require(id);
     const base = resolve(dirname(file), id);
     return load([base, `${base}.ts`, `${base}.tsx`].find(existsSync));
@@ -96,7 +101,12 @@ globalThis.window = {
 };
 globalThis.document = { getElementById() { return null; } };
 let openedUrl = '';
-let hashmapLoader = async language => ({ data: JSON.parse(readFileSync(`public/sample-hashmap-${language}.json`, 'utf8')) });
+// The component consumes runtime fields supplied by the V4 catalog adapter.
+const runtimeCatalog = language => {
+  const data = JSON.parse(readFileSync(`public/sample-hashmap-${language}.json`, 'utf8'));
+  return { ...data, mentalMap: data.mentalMap.map(item => ({ ...item, english: item.structure || item.pattern || item.intention })) };
+};
+let hashmapLoader = async language => ({ data: runtimeCatalog(language) });
 const requests = [];
 let fetchImpl = async url => {
   requests.push(url);
@@ -176,7 +186,7 @@ async function start(h, settings = {}) {
   assert.ok(component(h,SpeakingGamePlayStep));
 }
 for (const language of languages) for(const timeMode of ['manual','automatic']) for(const order of ['sequential','random']) {
-  const h=new Harness(SpeakingGame,{language});
+  const h=new Harness(SpeakingGame,{sourceLanguage:'pt-BR',language});
   await start(h,{timeMode,order,seconds:2});
   let play=component(h,SpeakingGamePlayStep);
   assert.ok(vocabulary[language].verbs.includes(play.props.verb));
@@ -201,7 +211,7 @@ for (const language of languages) for(const timeMode of ['manual','automatic']) 
   const child=new Harness(SpeakingGamePlayStep,component(h,SpeakingGamePlayStep).props);child.flush();await settle(child);
   const chunk=named(child.tree,'Chunk aleatório do Mental Hashmap');
   assert.ok(chunk);
-  const localHashmap=JSON.parse(readFileSync(`public/sample-hashmap-${language}.json`,'utf8')).mentalMap;
+  const localHashmap=runtimeCatalog(language).mentalMap;
   assert.ok(localHashmap.some(item=>item.allowLanguageChunkPractice===true && text(chunk).includes(item.english)));
   const translation=find(child.tree,n=>n.type==='button' && n.props.title?.startsWith('Abrir Google Tradutor'));
   if(translation) { translation.props.onClick();assert.ok(openedUrl.includes(`sl=${language.slice(0,2)}`)); }
@@ -219,7 +229,7 @@ for (const language of languages) for(const timeMode of ['manual','automatic']) 
 const pendingChunks = [];
 const realHashmapLoader=hashmapLoader;
 hashmapLoader=language=>new Promise(resolve=>pendingChunks.push({language,resolve}));
-const playProps=language=>({language,verb:vocabulary[language].verbs[0],vocabulary:vocabulary[language],form:'Teste',formLabel:'Teste',settings:{timeMode:'manual',seconds:60,order:'sequential'},status:'running',remainingSeconds:60,onPause(){},onResume(){},onStop(){},onNext(){}});
+const playProps=language=>({sourceLanguage:"pt-BR",language,verb:vocabulary[language].verbs[0],vocabulary:vocabulary[language],form:'Teste',formLabel:'Teste',settings:{timeMode:'manual',seconds:60,order:'sequential'},status:'running',remainingSeconds:60,onPause(){},onResume(){},onStop(){},onNext(){}});
 const chunkSession=new Harness(SpeakingGamePlayStep,playProps('en-US'));chunkSession.flush();
 chunkSession.flush(playProps('es-ES'));
 pendingChunks[1].resolve({data:{mentalMap:[{id:'spanish-test',english:'Hasta pronto',intention:'Até logo',allowLanguageChunkPractice:true}]}});
@@ -234,21 +244,21 @@ service.clearEnglishVerbsCache();
 const deferred=[];
 const normalFetch=fetchImpl;
 fetchImpl=url=>new Promise(resolve=>{requests.push(url);deferred.push({url,resolve});});
-const h=new Harness(SpeakingGame,{language:'en-US'});h.flush();
+const h=new Harness(SpeakingGame,{sourceLanguage:'pt-BR',language:'en-US'});h.flush();
 component(h,SpeakingGameSetupStep).props.onNext();h.flush();
 component(h,SpeakingGameReadyStep).props.onStart();h.flush();
 component(h,SpeakingGameReadyStep).props.onStart();h.flush();
 assert.equal(deferred.length,3,'Repeated start cannot create duplicate requests');
-h.flush({language:'es-ES'});
+h.flush({sourceLanguage:"pt-BR",language:'es-ES'});
 for(const {url,resolve}of deferred.splice(0)) resolve({ok:true,json:async()=>JSON.parse(readFileSync(`public${url}`,'utf8'))});
 await settle(h);assert.equal(component(h,SpeakingGamePlayStep),null);
 assert.ok(component(h,SpeakingGameSetupStep));
 fetchImpl=normalFetch;
-for(const language of ['es-ES','fr-FR','en-US']) { h.flush({language});await start(h);assert.equal(component(h,SpeakingGamePlayStep).props.language,language); }
+for(const language of ['es-ES','fr-FR','en-US']) { h.flush({sourceLanguage:'pt-BR',language});await start(h);assert.equal(component(h,SpeakingGamePlayStep).props.language,language); }
 h.dispose();assert.equal(timers.size,0);
 
 // Stopping while a new round is pending cannot resurrect the session.
-const stopping=new Harness(SpeakingGame,{language:'en-US'});await start(stopping);
+const stopping=new Harness(SpeakingGame,{sourceLanguage:'pt-BR',language:'en-US'});await start(stopping);
 const oldPlay=component(stopping,SpeakingGamePlayStep);
 oldPlay.props.onNext();stopping.flush();oldPlay.props.onStop();await settle(stopping);
 assert.equal(component(stopping,SpeakingGamePlayStep),null);
@@ -257,7 +267,7 @@ assert.ok(component(stopping,SpeakingGameReadyStep));stopping.dispose();
 // Failures remain local to the selected language and can be retried.
 service.clearEnglishVerbsCache();
 fetchImpl=async url=>({ok:false,status:503});
-const failed=new Harness(SpeakingGame,{language:'fr-FR'});failed.flush();component(failed,SpeakingGameSetupStep).props.onNext();failed.flush();component(failed,SpeakingGameReadyStep).props.onStart();await settle(failed);
+const failed=new Harness(SpeakingGame,{sourceLanguage:'pt-BR',language:'fr-FR'});failed.flush();component(failed,SpeakingGameSetupStep).props.onNext();failed.flush();component(failed,SpeakingGameReadyStep).props.onStart();await settle(failed);
 assert.ok(named(failed.tree,'alert') || find(failed.tree,n=>n.props?.role==='alert'));
 assert.equal(component(failed,SpeakingGamePlayStep),null);
 fetchImpl=normalFetch;component(failed,SpeakingGameReadyStep).props.onStart();await settle(failed);assert.equal(component(failed,SpeakingGamePlayStep).props.language,'fr-FR');failed.dispose();
@@ -266,6 +276,40 @@ fetchImpl=normalFetch;component(failed,SpeakingGameReadyStep).props.onStart();aw
 service.clearEnglishVerbsCache();fetchImpl=async url=>({ok:true,json:async()=>JSON.parse(readFileSync(`public/english-${url.includes('verbs')?'verbs':url.includes('adjectives')?'adjectives':'nouns'}-common-en-US.json`,'utf8'))});
 await assert.rejects(service.getSpeakingVocabulary('es-ES'),/idioma/);
 fetchImpl=normalFetch;
+// Real game handlers feed the existing clock; no wall time from setup or pauses.
+const { StudyClock, IDLE_MS } = load('src/features/study/studyTrackingService.ts');
+now = new Date(2026, 9, 17, 10).getTime();
+const studyClock = new StudyClock(() => 'game-study');
+let studyLanguage = 'en-US', lastSignal;
+const reportStudy = (active, mode, until) => {
+  lastSignal = { active, until };
+  studyClock.set({ module: 'speaking-game', language: studyLanguage, mode }, active, now, until);
+};
+const tracked = new Harness(SpeakingGame, { language: studyLanguage, sourceLanguage: 'pt-BR', onStudyState: reportStudy });
+tracked.flush(); assert.equal(lastSignal.active, false); assert.equal(studyClock.snapshot(now), null);
+await start(tracked, { timeMode: 'manual' }); assert.equal(lastSignal.active, true);
+const advanceStudy = seconds => { for (let i = 0; i < seconds; i++) { now += 1000; studyClock.snapshot(now); } };
+advanceStudy(65); assert.equal(studyClock.snapshot(now).activeSeconds, 65);
+component(tracked, SpeakingGamePlayStep).props.onPause(); tracked.flush();
+advanceStudy(120); assert.equal(studyClock.snapshot(now).activeSeconds, 65);
+tracked.tree.props.onPointerDown({ isTrusted: true }); tracked.flush();
+assert.equal(lastSignal.active, false, 'paused interactions never resume study');
+component(tracked, SpeakingGamePlayStep).props.onResume(); tracked.flush();
+advanceStudy(10); assert.equal(studyClock.snapshot(now).activeSeconds, 75);
+tracked.tree.props.onInput({ isTrusted: false }); tracked.flush();
+const previousDeadline = lastSignal.until;
+advanceStudy(10); tracked.tree.props.onKeyDown({ isTrusted: true }); tracked.flush();
+assert.ok(lastSignal.until > previousDeadline);
+advanceStudy(IDLE_MS / 1000 + 60);
+assert.equal(studyClock.snapshot(now).activeSeconds, 385, 'idle adds only five minutes since last interaction');
+component(tracked, SpeakingGamePlayStep).props.onStop(); tracked.flush();
+advanceStudy(60); assert.equal(lastSignal.active, false); assert.equal(studyClock.snapshot(now).activeSeconds, 385);
+component(tracked, SpeakingGameReadyStep).props.onStart(); await settle(tracked); advanceStudy(5);
+tracked.flush({ language: 'fr-FR', sourceLanguage: 'pt-BR', onStudyState: reportStudy });
+assert.equal(lastSignal.active, false, 'language change stops the old practice');
+tracked.dispose(); assert.equal(lastSignal.active, false, 'unmount stops reporting');
+assert.equal(timers.size, 0);
+console.log('PASS Speaking study: setup exclusion, 65 seconds, explicit pause/resume, trusted activity, five-minute idle, stop, language and unmount.');
 Date.now=oldDateNow;
 assert.equal(timers.size,0);
 console.log('Speaking Game: nine catalogs, English preservation, localized morphology, compatible forms, cache isolation, manual/automatic and sequential/random modes, timers, pause/resume/stop, language changes, stale requests, errors/retry and Translate passed.');

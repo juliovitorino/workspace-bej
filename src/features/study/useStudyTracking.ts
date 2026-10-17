@@ -15,7 +15,7 @@ export function useStudyTracking(view: string, language: StudentLanguage, signal
   useEffect(() => () => studyTracker.set(null, false), []);
   useEffect(() => {
     const module: StudyModule | null = view === "favorite-chunks" ? "chunk-favorites"
-      : ["hashmap", "memory-flashcards", "chunk-flashcards", "shadowing", "basic-training", "advanced-training"].includes(view) ? view as StudyModule : null;
+      : ["hashmap", "memory-flashcards", "chunk-flashcards", "shadowing", "basic-training", "advanced-training", "speaking-game", "interpretation"].includes(view) ? view as StudyModule : null;
     let lastInteraction = 0;
     const context: StudyContext | null = module ? { language, module, mode: signal?.mode ?? "manual" } : null;
     if (context?.module === "hashmap") context.mode = "manual";

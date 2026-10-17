@@ -11,7 +11,7 @@ import "./study.css";
 
 const languages = Object.keys(LANGUAGES) as StudentLanguage[];
 const HISTORY_PAGE_SIZE = 20;
-const moduleKeys: Record<string, string> = { hashmap: "Hashmap", "memory-flashcards": "memory.title", "chunk-flashcards": "common.chunkFlashcards", "chunk-favorites": "favorites.title", shadowing: "common.shadowing", "basic-training": "study.basicTraining", "advanced-training": "study.advancedTraining", previous: "study.previousHours" };
+const moduleKeys: Record<string, string> = { hashmap: "Hashmap", "memory-flashcards": "memory.title", "chunk-flashcards": "common.chunkFlashcards", "chunk-favorites": "favorites.title", shadowing: "common.shadowing", "basic-training": "study.basicTraining", "advanced-training": "study.advancedTraining", "speaking-game": "common.speakingGame", interpretation: "common.interpretation", previous: "study.previousHours" };
 export function StudyDashboard({ language }: { language: StudentLanguage }) {
   const { t, i18n } = useTranslation();
   const [store, setStore] = useState<StudyStore | null>(null);

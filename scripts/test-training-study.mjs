@@ -270,7 +270,25 @@ const policy = new TrainingActivity(); assert.equal(policy.signal(now, true).act
 policy.interact(now); policy.update(true, false, now); assert.equal(policy.signal(now, true).active, false);
 policy.update(false, false, now + IDLE_MS + 1); assert.equal(policy.signal(now + IDLE_MS + 1, true).active, false, 'late network completion does not invent fresh activity');
 
-// G: both exercise modules use the unchanged, idempotent backup contract.
+// New module signals traverse the real central hook, visibility gate and storage.
+for (const module of ['speaking-game', 'interpretation']) {
+  const context = { module, language: 'en-US', mode: 'manual' };
+  const signal = { view: module, language: 'en-US', mode: 'manual', active: false, activeUntil: now + IDLE_MS };
+  navigate(module, 'en-US', signal); await advance(10000);
+  assert.equal(studyTracker.readSession(context).seconds, 0);
+  navigate(module, 'en-US', { ...signal, active: true, activeUntil: now + IDLE_MS });
+  await advance(65000); assert.equal(studyTracker.readSession(context).seconds, 65);
+  document.visibilityState = 'hidden'; listeners.get('visibilitychange')();
+  await advance(20000); assert.equal(studyTracker.readSession(context).seconds, 65);
+  document.visibilityState = 'visible'; listeners.get('visibilitychange')();
+  await advance(5000); assert.equal(studyTracker.readSession(context).seconds, 70);
+  navigate('study-dashboard'); await studyTracker.seal();
+  const saved = readStudyStore().studyData.sessions.filter(s => s.module === module);
+  assert.equal(saved.length, 1); assert.equal(saved[0].activeSeconds, 70);
+}
+console.log('PASS new module signals: central hook, initial inactivity, 65 seconds, hidden tab exclusion, visibility resume, exit and persisted totals.');
+
+// G: all exercise modules use the unchanged, idempotent backup contract.
 const current = readStudyStore(), backup = parseStudyBackup(JSON.stringify(backupOf(current, new Date(now))));
 let restored = restoreStudyBackup(current, backup, JSON.stringify(current));
 restored = restoreStudyBackup(restored, backup, JSON.stringify(restored));
@@ -292,6 +310,9 @@ const barPercent = row => parseFloat(find(row, n => n.type === 'span' && n.props
 assert.ok(text(basicRow()).includes('37,55%'), '181 seconds out of 482 seconds must display 37.55%');
 assert.ok(Math.abs(barPercent(basicRow()) - 181 / 482 * 100) < 1e-9);
 const moduleFilter = find(dashboard.tree, n => n.type === 'select' && find(n, c => c.type === 'option' && c.props.value === 'basic-training'));
+for (const [module, key] of [['speaking-game', 'speakingGame'], ['interpretation', 'interpretation']]) {
+  assert.equal(text(find(moduleFilter, n => n.type === 'option' && n.props.value === module)), translations.common[key]);
+}
 moduleFilter.props.onChange({ target: { value: 'basic-training' } }); dashboard.flush();
 assert.ok(text(basicRow()).includes('100%')); assert.equal(barPercent(basicRow()), 100, 'percentages follow the filtered total');
 chartStore.studyData.sessions = []; memory.set(STUDY_KEY, JSON.stringify(chartStore)); listeners.get(STUDY_CHANGED)(); dashboard.flush();

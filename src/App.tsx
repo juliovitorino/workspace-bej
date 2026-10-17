@@ -84,9 +84,9 @@ function App() {
   const [error, setError] = useState<string | null>(null);
 
   const [studySignal, setStudySignal] = useState<StudySignal | null>(null);
-  const reportStudy = useCallback((active: boolean, mode: "manual" | "walking" = "manual") => {
-    setStudySignal(previous => previous?.view === currentView && previous.language === language && previous.active === active && previous.mode === mode
-      ? previous : { view: currentView, language, active, mode });
+  const reportStudy = useCallback((active: boolean, mode: "manual" | "walking" = "manual", activeUntil?: number) => {
+    setStudySignal(previous => previous?.view === currentView && previous.language === language && previous.active === active && previous.mode === mode && previous.activeUntil === activeUntil
+      ? previous : { view: currentView, language, active, mode, activeUntil });
   }, [currentView, language]);
   const [trainingSignal, setTrainingSignal] = useState<StudySignal | null>(null);
   const studyView = effectiveStudyView(currentView, trainingMode);
@@ -492,12 +492,13 @@ function App() {
             )}
 
             {!loading && currentView === "speaking-game" && !trainingMode && (
-              <SpeakingGame key={`${sourceLanguage}-${language}`} language={language} sourceLanguage={sourceLanguage} />
+              <SpeakingGame onStudyState={reportStudy} key={`${sourceLanguage}-${language}`} language={language} sourceLanguage={sourceLanguage} />
             )}
 
             {currentView === "interpretation" &&
               !trainingMode && (
                 <InterpretationPanel
+                  onStudyState={reportStudy}
                   language={language}
                   sourceLanguage={sourceLanguage}
                   intentions={data?.mentalMap ?? []}

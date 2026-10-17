@@ -11,6 +11,9 @@ import { transpileModule, ModuleKind, JsxEmit, ScriptTarget } from 'typescript';
 // browser APIs. Static rendering below separately uses React's real renderer.
 const require = createRequire(import.meta.url);
 const cache = new Map();
+const translations = JSON.parse(readFileSync('src/i18n/locales/pt-BR.json', 'utf8'));
+const translate = (key, values = {}) => String(key.split('.').reduce((value, part) => value?.[part], translations) ?? key)
+  .replace(/\{\{(\w+)\}\}/g, (_, name) => String(values[name] ?? ''));
 let currentHarness = null;
 const hooks = { ...React };
 for (const name of ['useState', 'useRef', 'useMemo', 'useEffect']) {
@@ -28,6 +31,8 @@ function load(file) {
   } });
   const localRequire = id => {
     if (id === 'react') return hooks;
+    if (id === 'react-i18next') return { useTranslation: () => ({ t: translate }) };
+    if (id.endsWith('/i18n')) return { t: translate, languageName: value => ({ 'pt-BR': 'português', 'en-US': 'inglês', 'es-ES': 'espanhol', 'fr-FR': 'francês' }[value] ?? value) };
     if (!id.startsWith('.')) return require(id);
     const base = resolve(dirname(file), id);
     return load([base, `${base}.ts`, `${base}.tsx`].find(existsSync));
@@ -386,4 +391,70 @@ assert.ok(!text(authorSwitch.tree).includes(generated.titlePt));
 authorSwitch.dispose();
 assert.equal(intervals.size, 0);
 console.log('Multilingual interpretation: title search, CEFR, missing fields, exact highlights, Portuguese reference, audio, clipboard, print, Connected Speech, language switching and Shadowing regression passed.');
+
+// Actual content events share the central clock, with no library/selection time.
+setAuthor(false);
+const { StudyClock, IDLE_MS } = load('src/features/study/studyTrackingService.ts');
+const realNow = Date.now;
+let studyNow = new Date(2026, 9, 17, 10).getTime(), studySignal;
+Date.now = () => studyNow;
+const interpretationClock = new StudyClock(() => 'interpretation-study');
+const reportStudy = (active, mode, until) => {
+  studySignal = { active, until };
+  interpretationClock.set({ module: 'interpretation', language: 'en-US', mode }, active, studyNow, until);
+};
+const studying = new Harness(InterpretationPanel, { ...props, onStudyState: reportStudy }); studying.flush();
+assert.equal(studySignal.active, false); assert.equal(interpretationClock.snapshot(studyNow), null);
+loadStory(studying, 'A1', sample.titlePt);
+assert.equal(studySignal.active, false, 'selection alone never starts a session');
+const content = () => find(studying.tree, n => n.type === 'article');
+content().props.onPointerDown({ isTrusted: false }); studying.flush();
+assert.equal(studySignal.active, false);
+const savedNode = globalThis.Node;
+globalThis.Node = class { contains() { return true; } };
+window.innerHeight = 800;
+let contentTop = 1000;
+content().props.ref.current = { getBoundingClientRect: () => ({ top: contentTop, bottom: contentTop + 600 }) };
+const pageScroll = { isTrusted: true, target: new Node() };
+for (const listener of listeners.get('scroll') ?? []) listener(pageScroll);
+studying.flush(); assert.equal(studySignal.active, false, 'scrolling the library above the content does not count');
+contentTop = 100;
+for (const listener of listeners.get('scroll') ?? []) listener(pageScroll);
+studying.flush(); assert.equal(studySignal.active, true, 'page scroll over visible story counts');
+globalThis.Node = savedNode;
+content().props.onPointerDown({ isTrusted: true }); studying.flush();
+assert.equal(studySignal.active, true);
+const advanceStudy = seconds => { for (let i = 0; i < seconds; i++) { studyNow += 1000; interpretationClock.snapshot(studyNow); } };
+advanceStudy(65); assert.equal(interpretationClock.snapshot(studyNow).activeSeconds, 65);
+const firstDeadline = studySignal.until;
+content().props.onInput({ isTrusted: true }); studying.flush();
+assert.ok(studySignal.until > firstDeadline, 'typing renews the reading window');
+advanceStudy(IDLE_MS / 1000 + 60);
+assert.equal(interpretationClock.snapshot(studyNow).activeSeconds, 365);
+content().props.onScrollCapture({ isTrusted: true }); studying.flush();
+advanceStudy(10); assert.equal(interpretationClock.snapshot(studyNow).activeSeconds, 375);
+studying.flush({ ...props, language: 'fr-FR', onStudyState: reportStudy });
+assert.equal(studySignal.active, false, 'new language requires a new interaction');
+advanceStudy(60); assert.equal(interpretationClock.snapshot(studyNow).activeSeconds, 375);
+content().props.onKeyDown({ isTrusted: true }); studying.flush();
+advanceStudy(5); studying.dispose();
+assert.equal(studySignal.active, false); advanceStudy(60);
+assert.equal(interpretationClock.snapshot(studyNow).activeSeconds, 380);
+assert.equal(listeners.get('scroll')?.size ?? 0, 0, 'scroll listeners are removed');
+
+// Passive AI generation suspends an already active reading session.
+setAuthor(true);
+const pendingStudy = new Harness(InterpretationPanel, { ...props, onStudyState: reportStudy }); pendingStudy.flush();
+loadStory(pendingStudy, 'B1', localStory.titlePt);
+find(pendingStudy.tree, n => n.type === 'article').props.onInput({ isTrusted: true }); pendingStudy.flush();
+assert.equal(studySignal.active, true);
+responder = () => new Promise(resolve => { resolveFetch = resolve; });
+const generatingStudy = buttonText(pendingStudy, 'Gerar história').props.onClick(); pendingStudy.flush();
+assert.equal(studySignal.active, false, 'waiting on AI is not study');
+const beforeWait = interpretationClock.snapshot(studyNow).activeSeconds;
+advanceStudy(600); assert.equal(interpretationClock.snapshot(studyNow).activeSeconds, beforeWait);
+resolveFetch({ ok: true, json: async () => ({ candidates: [{ content: { parts: [{ text: JSON.stringify(generated) }] } }] }) });
+await generatingStudy; pendingStudy.flush(); assert.equal(studySignal.active, false);
+pendingStudy.dispose(); Date.now = realNow;
+console.log('PASS Interpretation study: library/selection exclusion, trusted events, 65 seconds, typing/scroll renewal, idle, language, exit, AI wait and listener cleanup.');
 

@@ -207,3 +207,20 @@ console.log('PASS: active/pause/idle/module/language/walking/midnight/checkpoint
 console.log('PASS: queued runtime writes, active-session export seals and rotates IDs, continued study plus restored export keeps exact totals, checkpoint failure blocks successful export.');
 console.log('PASS: no-Web-Locks automatic tracking, lease contention, renewal, expiry, ownership loss, safe release and storage denial.');
 console.log('PASS: 30 minutes of Shadowing persist once, filter by module/language, contribute to the English goal, and survive repeated backup restore.');
+const newModuleStore = emptyStore();
+for (const [module, seconds, language] of [['speaking-game', 65, 'en-US'], ['interpretation', 125, 'fr-FR']]) {
+  assert.ok(storage.STUDY_MODULES.includes(module));
+  newModuleStore.studyData.sessions.push({ id: `new-${module}`, module, mode: 'manual', language,
+    startedAt: new Date(start).toISOString(), endedAt: new Date(start + seconds * 1000).toISOString(), activeSeconds: seconds });
+}
+const newBackup = parseStudyBackup(JSON.stringify(backupOf(newModuleStore, new Date(start + 3600000))));
+let mergedModules = restoreStudyBackup(emptyStore(), newBackup, JSON.stringify(emptyStore()));
+mergedModules = restoreStudyBackup(mergedModules, newBackup, JSON.stringify(mergedModules));
+assert.equal(mergedModules.schemaVersion, 1); assert.equal(mergedModules.studyData.sessions.length, 2);
+assert.equal(totalSeconds(mergedModules.studyData), 190);
+for (const [module, seconds, language] of [['speaking-game', 65, 'en-US'], ['interpretation', 125, 'fr-FR']]) {
+  const stats = studyStats(mergedModules.studyData, { ...filter, language: 'all', module }, new Date(start + 3600000));
+  assert.equal(stats.total, seconds); assert.equal(stats.byModule[module], seconds); assert.equal(stats.byLanguage[language], seconds);
+}
+assert.equal(studyStats(mergedModules.studyData, { ...filter, language: 'en-US', module: 'all' }, new Date(start + 3600000)).total, 65);
+console.log('PASS: Speaking Game and Interpretation version-1 backup round trip, repeated restore, exact totals and isolated module/language filters.');

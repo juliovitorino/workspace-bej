@@ -1,6 +1,7 @@
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { isAuthorMode } from "../utils/authorMode";
+import { useTrainingStudy, type TrainingStudyReporter } from "../features/study/useTrainingStudy";
 import type { StudentLanguage } from "../config/languages";
 import {
   useEffect,
@@ -33,6 +34,7 @@ interface InterpretationPanelProps {
   sourceLanguage?: StudentLanguage;
   intentions: MentalIntention[];
   onSelectIntention: (item: MentalIntention) => void;
+  onStudyState?: TrainingStudyReporter;
 }
 
 const THEMES = [
@@ -139,7 +141,8 @@ export function InterpretationPanel({
   language = "en-US",
   sourceLanguage = "pt-BR",
   intentions,
-  onSelectIntention
+  onSelectIntention,
+  onStudyState
 }: InterpretationPanelProps) {
   const { t } = useTranslation();
   const [authorMode, setAuthorMode] = useState(isAuthorMode);
@@ -186,6 +189,21 @@ export function InterpretationPanel({
   >([]);
   const [showTarget, setShowTarget] = useState(false);
   const [generating, setGenerating] = useState(false);
+  const { recordActivity, studyPaused: _studyPaused, toggleStudyPause: _toggleStudyPause, ...studyEvents } =
+    useTrainingStudy(`${language}:${sourceLanguage}:${story?.id ?? "library"}`, !!story && !generating, generating, false, onStudyState);
+  const studyContent = useRef<HTMLElement | null>(null);
+  useEffect(() => {
+    if (!story || generating) return;
+    // Page/ancestor scrolling does not bubble through the article's React handlers.
+    const onScroll = (event: Event) => {
+      const content = studyContent.current;
+      if (!event.isTrusted || !content || !(event.target instanceof Node) || !event.target.contains(content)) return;
+      const bounds = content.getBoundingClientRect();
+      if (bounds.bottom > 0 && bounds.top < window.innerHeight) recordActivity();
+    };
+    window.addEventListener("scroll", onScroll, { capture: true, passive: true });
+    return () => window.removeEventListener("scroll", onScroll, { capture: true });
+  }, [story, language, sourceLanguage, generating]);
   const [error, setError] = useState<string | null>(null);
   const [exportJson, setExportJson] = useState<string | null>(null);
   const [exportFileName, setExportFileName] = useState<string>("");
@@ -1638,7 +1656,7 @@ export function InterpretationPanel({
         )}
 
       {!generating && story && (
-        <article className="interpretation-story">
+        <article ref={studyContent} className="interpretation-story" {...studyEvents}>
           <div className="interpretation-story-header">
             <div>
               <p className="eyebrow">{t("stories.story")}</p>

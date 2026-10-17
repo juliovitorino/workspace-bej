@@ -10,8 +10,9 @@ import { getNextSequentialFormIndex, getRandomFormIndex } from "../utils/speakin
 import { SpeakingGamePlayStep } from "./SpeakingGamePlayStep";
 import { SpeakingGameReadyStep } from "./SpeakingGameReadyStep";
 import { SpeakingGameSetupStep } from "./SpeakingGameSetupStep";
+import { useTrainingStudy, type TrainingStudyReporter } from "../features/study/useTrainingStudy";
 
-export function SpeakingGame({ language, sourceLanguage }: { language: StudentLanguage; sourceLanguage: SourceLanguage }) {
+export function SpeakingGame({ language, sourceLanguage, onStudyState }: { language: StudentLanguage; sourceLanguage: SourceLanguage; onStudyState?: TrainingStudyReporter }) {
   const { t } = useTranslation();
   const [step, setStep] = useState<SpeakingGameStep>(1);
   const [settings, setSettings] = useState<SpeakingGameSettings>(DEFAULT_SPEAKING_GAME_SETTINGS);
@@ -29,6 +30,11 @@ export function SpeakingGame({ language, sourceLanguage }: { language: StudentLa
   const currentLanguage = useRef(language);
   currentLanguage.current = language;
   const forms = getSpeakingGameForms(language);
+  const practicing = step === 3 && status === "running" && round?.language === language;
+  const { recordActivity, studyPaused: _studyPaused, toggleStudyPause: _toggleStudyPause, ...studyEvents } =
+    useTrainingStudy(language, practicing && !isLoadingRound, isLoadingRound, false, onStudyState);
+  // Only a real start/resume renews activity; automatic rounds do not defeat idle expiry.
+  useEffect(() => { if (practicing) recordActivity(); }, [practicing, language]);
 
   useEffect(() => {
     generation.current++;
@@ -122,7 +128,7 @@ export function SpeakingGame({ language, sourceLanguage }: { language: StudentLa
     activeStudyStartedAtRef.current = Date.now();
     setStatus("running");
   }
-  return <div style={styles.page}>
+  return <div style={styles.page} {...(step === 3 ? studyEvents : {})}>
     {step === 1 && <SpeakingGameSetupStep settings={settings} onSettingsChange={setSettings} onNext={() => { setError(null); setStep(2); }} />}
     {step === 2 && <>
       <SpeakingGameReadyStep language={language} loading={isLoadingRound} settings={settings} lastStudySeconds={lastStudySeconds}
