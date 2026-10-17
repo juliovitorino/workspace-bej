@@ -18,6 +18,7 @@
     "from": "From",
     "to": "To",
     "duration": "{{hours}}h {{minutes}}min {{seconds}}s",
+    "zeroDuration": "0h 0min",
     "hoursValue": "{{hours}} hours",
     "accumulated": "Time in period",
     "today": "Today",

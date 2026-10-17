@@ -62,6 +62,10 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
   const duration = (seconds: number) => t("study.duration", { hours: Math.floor(seconds / 3600), minutes: Math.floor(seconds % 3600 / 60), seconds: Math.floor(seconds % 60) });
   const number = (value: number) => value.toLocaleString(i18n.language, { maximumFractionDigits: 2 });
   const moduleLabel = (key: string) => key === "hashmap" ? "Mental Hashmap" : t(moduleKeys[key]);
+  const moduleValues = Object.fromEntries((filters.module === "all" ? STUDY_MODULES : [filters.module])
+    .map(key => [key, stats?.byModule[key] ?? 0]));
+  // Keep prior-hour adjustments visible when no module filter excludes them.
+  if (filters.module === "all" && stats?.byModule.previous) moduleValues.previous = stats.byModule.previous;
   async function action(work: () => Promise<void>) {
     setBusy(true); setError(""); setMessage("");
     try { await work(); } catch (e) { fail(e); } finally { setBusy(false); }
@@ -120,11 +124,14 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
       setStore(current); setPending({ backup, baseline: JSON.stringify(current) });
     });
   }
-  const chart = (title: string, values: Record<string, number>, label: (key: string) => string = key => key, total?: number) => {
-    const entries = Object.entries(values).sort(([a], [b]) => a.localeCompare(b)), max = Math.max(1, ...entries.map(([, seconds]) => seconds));
+  const chart = (title: string, values: Record<string, number>, label: (key: string) => string = key => key, total?: number, modules = false) => {
+    const entries = Object.entries(values).sort(modules
+      ? ([a, secondsA], [b, secondsB]) => secondsB - secondsA || label(a).localeCompare(label(b), i18n.language)
+      : ([a], [b]) => a.localeCompare(b));
+    const max = Math.max(1, ...entries.map(([, seconds]) => seconds));
     const scale = Math.max(1, total ?? max);
-    return <section className="study-panel"><h3>{title}</h3>{!entries.length ? <p>{t("study.empty")}</p> : <ul className="study-chart">{entries.map(([key, seconds]) => <li key={key}>
-      <div><span>{label(key)}</span><strong>{duration(seconds)}{total !== undefined && ` · ${number(seconds / scale * 100)}%`}</strong></div><div className="study-bar" aria-hidden="true"><span style={{ width: `${seconds / scale * 100}%` }} /></div>
+    return <section className="study-panel"><h3>{title}</h3>{!entries.length ? <p>{t("study.empty")}</p> : <ul className={modules ? "study-chart study-chart-modules" : "study-chart"}>{entries.map(([key, seconds]) => <li key={key}>
+      <div><span>{label(key)}</span><strong>{modules && seconds === 0 ? t("study.zeroDuration") : duration(seconds)}{total !== undefined && ` · ${number(seconds / scale * 100)}%`}</strong></div><div className="study-bar" aria-hidden="true"><span style={{ width: `${seconds / scale * 100}%` }} /></div>
     </li>)}</ul>}</section>;
   };
   return <section className="study-dashboard" aria-labelledby="study-title">
@@ -155,7 +162,7 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
           </div>;
         })}
       </section>
-      <div className="study-charts">{chart(t("study.byModule"), stats.byModule, moduleLabel, stats.total)}{chart(t("study.byLanguage"), stats.byLanguage, code => languageName(code as StudentLanguage))}{chart(t("study.timeline"), stats.timeline)}</div>
+      <div className="study-charts">{chart(t("study.byModule"), moduleValues, moduleLabel, stats.total, true)}{chart(t("study.byLanguage"), stats.byLanguage, code => languageName(code as StudentLanguage))}{chart(t("study.timeline"), stats.timeline)}</div>
       <div className="study-charts"><form className="study-panel" onSubmit={saveGoals}><fieldset disabled={busy}><legend>{t("study.goals")}</legend>
         <label>{t("study.language")}<select value={goalLanguage} onChange={e => setGoalLanguage(e.target.value as StudentLanguage)}>{languages.map(code => <option key={code} value={code}>{languageName(code)}</option>)}</select></label>
         <label>{t("study.targetHours")}<input type="number" min="0.01" max="10000000" step="0.01" required value={goalHours} onChange={e => setGoalHours(e.target.value)} /></label>

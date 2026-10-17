@@ -18,6 +18,7 @@
     "from": "De",
     "to": "Até",
     "duration": "{{hours}}h {{minutes}}min {{seconds}}s",
+    "zeroDuration": "0h 0min",
     "hoursValue": "{{hours}} horas",
     "accumulated": "Horas no período",
     "today": "Hoje",

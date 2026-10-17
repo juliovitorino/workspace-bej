@@ -18,6 +18,7 @@
     "from": "Du",
     "to": "Au",
     "duration": "{{hours}}h {{minutes}}min {{seconds}}s",
+    "zeroDuration": "0h 0min",
     "hoursValue": "{{hours}} heures",
     "accumulated": "Temps sur la période",
     "today": "Aujourd’hui",

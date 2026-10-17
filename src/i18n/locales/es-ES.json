@@ -18,6 +18,7 @@
     "from": "Desde",
     "to": "Hasta",
     "duration": "{{hours}}h {{minutes}}min {{seconds}}s",
+    "zeroDuration": "0h 0min",
     "hoursValue": "{{hours}} horas",
     "accumulated": "Tiempo del periodo",
     "today": "Hoy",

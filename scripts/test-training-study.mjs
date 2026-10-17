@@ -298,7 +298,7 @@ tracking.dispose(); await settle();
 
 // Module bars represent a share of all filtered study time, not the largest bar.
 const { StudyDashboard } = load('src/features/study/StudyDashboard.tsx');
-const { STUDY_KEY, STUDY_CHANGED } = load('src/features/study/studyStorage.ts');
+const { STUDY_KEY, STUDY_CHANGED, STUDY_MODULES } = load('src/features/study/studyStorage.ts');
 const chartStore = { schemaVersion: 1, activeSession: null, studyData: { ...current.studyData, manualAdjustments: [], sessions:
   [['basic-training', 181], ['advanced-training', 301]].map(([module, activeSeconds]) => ({ id: `chart-${module}`, module, activeSeconds, language: 'en-US', mode: 'manual',
     startedAt: new Date(now - 482000).toISOString(), endedAt: new Date(now).toISOString() })) } };
@@ -316,7 +316,61 @@ for (const [module, key] of [['speaking-game', 'speakingGame'], ['interpretation
 moduleFilter.props.onChange({ target: { value: 'basic-training' } }); dashboard.flush();
 assert.ok(text(basicRow()).includes('100%')); assert.equal(barPercent(basicRow()), 100, 'percentages follow the filtered total');
 chartStore.studyData.sessions = []; memory.set(STUDY_KEY, JSON.stringify(chartStore)); listeners.get(STUDY_CHANGED)(); dashboard.flush();
-assert.ok(text(moduleChart()).includes(translations.study.empty)); assert.ok(!text(moduleChart()).includes('NaN'));
+assert.equal(React.Children.toArray(find(moduleChart(), n => n.type === 'ul').props.children).length, 1);
+assert.ok(text(moduleChart()).includes(translations.study.zeroDuration)); assert.ok(text(moduleChart()).includes('0%'));
+assert.equal(barPercent(basicRow()), 0); assert.ok(!text(moduleChart()).includes('NaN'));
+// Module comparison lists every applicable module, ordered by raw seconds.
+const chartSection = title => find(dashboard.tree, n => n.type === 'section' && React.Children.toArray(n.props.children).some(c => c?.type === 'h3' && text(c) === title));
+const chartRows = title => React.Children.toArray(find(chartSection(title), n => n.type === 'ul')?.props.children);
+const moduleRows = () => chartRows(translations.study.byModule);
+const rowLabel = row => text(find(row, n => n.type === 'span' && !n.props.style));
+const filterControls = () => React.Children.toArray(find(dashboard.tree, n => n.type === 'fieldset' && n.props.className?.includes('study-filters')).props.children)
+  .map(label => find(label, n => n.type === 'select')).filter(Boolean);
+const setFilter = (index, value) => { filterControls()[index].props.onChange({ target: { value } }); dashboard.flush(); };
+const labels = Object.fromEntries(STUDY_MODULES.map(module => [module, text(find(moduleFilter, n => n.type === 'option' && n.props.value === module))]));
+const updateChart = sessions => {
+  chartStore.studyData.sessions = sessions; memory.set(STUDY_KEY, JSON.stringify(chartStore)); listeners.get(STUDY_CHANGED)(); dashboard.flush();
+};
+const chartSession = (module, seconds, language = 'en-US', daysAgo = 0, mode = 'manual') => {
+  const end = new Date().getTime() - daysAgo * 86400000;
+  return { id: `comparison-${module}-${language}-${daysAgo}-${mode}`, module, language, mode, activeSeconds: seconds,
+    startedAt: new Date(end - seconds * 1000).toISOString(), endedAt: new Date(end).toISOString() };
+};
+setFilter(1, 'all');
+assert.equal(moduleRows().length, STUDY_MODULES.length);
+assert.ok(moduleRows().every(row => text(row).includes('0h 0min') && text(row).includes('0%') && barPercent(row) === 0));
+assert.deepEqual(moduleRows().map(rowLabel), Object.values(labels).sort((a, b) => a.localeCompare(b, 'pt-BR')));
+assert.equal(find(moduleChart(), n => n.type === 'ul').props.className, 'study-chart study-chart-modules');
+updateChart([chartSession('basic-training', 5 * 3600), chartSession('shadowing', 2 * 3600), chartSession('speaking-game', 10 * 3600)]);
+assert.equal(moduleRows().length, STUDY_MODULES.length);
+assert.deepEqual(moduleRows().slice(0, 3).map(rowLabel), ['speaking-game', 'basic-training', 'shadowing'].map(module => labels[module]));
+assert.equal(moduleRows().filter(row => barPercent(row) === 0).length, STUDY_MODULES.length - 3);
+assert.ok(Math.abs(barPercent(moduleRows()[0]) - 10 / 17 * 100) < 1e-9);
+assert.ok(text(moduleRows()[0]).includes('10h 0min 0s'));
+updateChart(STUDY_MODULES.map((module, index) => chartSession(module, (index + 1) * 60)));
+assert.deepEqual(moduleRows().map(rowLabel), [...STUDY_MODULES].reverse().map(module => labels[module]));
+updateChart(STUDY_MODULES.map(module => chartSession(module, 120)));
+assert.deepEqual(moduleRows().map(rowLabel), Object.values(labels).sort((a, b) => a.localeCompare(b, 'pt-BR')));
+// Refresh and all four filters recalculate order without changing persisted data.
+updateChart([chartSession('shadowing', 1000, 'en-US', 40), chartSession('speaking-game', 65), chartSession('interpretation', 125, 'fr-FR'), chartSession('chunk-favorites', 70, 'en-US', 0, 'walking')]);
+assert.equal(rowLabel(moduleRows()[0]), labels.shadowing);
+setFilter(3, 'today'); assert.equal(rowLabel(moduleRows()[0]), labels['chunk-favorites']);
+setFilter(0, 'fr-FR'); assert.equal(rowLabel(moduleRows()[0]), labels.interpretation);
+assert.equal(moduleRows().filter(row => barPercent(row) > 0).length, 1);
+setFilter(0, 'all'); assert.equal(rowLabel(moduleRows()[0]), labels.interpretation);
+setFilter(2, 'walking'); assert.equal(rowLabel(moduleRows()[0]), labels['chunk-favorites']);
+assert.equal(barPercent(moduleRows()[0]), 100);
+setFilter(1, 'interpretation'); assert.equal(moduleRows().length, 1); assert.equal(barPercent(moduleRows()[0]), 0);
+setFilter(2, 'manual'); assert.equal(barPercent(moduleRows()[0]), 100);
+setFilter(1, 'all'); setFilter(2, 'all'); setFilter(3, 'all');
+const diskBeforeFilters = memory.get(STUDY_KEY);
+setFilter(0, 'en-US'); setFilter(0, 'all'); assert.equal(memory.get(STUDY_KEY), diskBeforeFilters);
+for (const title of [translations.study.byLanguage, translations.study.timeline]) {
+  assert.equal(find(chartSection(title), n => n.type === 'ul').props.className, 'study-chart');
+  const order = chartRows(title).map(rowLabel); assert.deepEqual(order, [...order].sort((a, b) => a.localeCompare(b)));
+}
+setFilter(0, 'en-US'); setFilter(1, 'all');
+console.log('PASS module comparison: complete/empty lists, zero widths, 10h/5h/2h order, localized ties, nine active modules, live refresh, all filters, unchanged storage and other charts.');
 // History renders only one fixed page, with totals independent of navigation.
 moduleFilter.props.onChange({ target: { value: 'all' } }); dashboard.flush();
 chartStore.studyData.sessions = Array.from({ length: 45 }, (_, index) => ({ id: `page-${index}`, module: index < 5 ? 'basic-training' : 'advanced-training',

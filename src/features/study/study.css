@@ -16,6 +16,8 @@
 .study-dashboard progress { width: 100%; height: 18px; accent-color: var(--accent); }
 .study-chart, .study-history { list-style: none; padding: 0; margin: 0; }
 .study-chart { display: grid; gap: 16px; max-height: 360px; overflow-y: auto; }
+.study-chart-modules { max-height: none; overflow: visible; }
+.study-chart-modules li, .study-chart-modules li > div:first-child > * { min-width: 0; overflow-wrap: anywhere; }
 .study-chart li > div:first-child { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; }
 .study-bar { height: 10px; background: var(--surface-soft); border-radius: 6px; margin-top: 6px; overflow: hidden; }
 .study-bar span { display: block; height: 100%; background: var(--accent); }
