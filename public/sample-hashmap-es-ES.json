@@ -28675,91 +28675,6 @@
       ]
     },
     {
-      "id": "a-vaca-foi-pro-brejo-7933a3d2-ce0b-4915-a463-66bdbe6b4ef4",
-      "intention": "A vaca foi pro brejo / Deu tudo errado",
-      "pattern": "irse al traste para fracaso; salir mal para resultado negativo",
-      "description": "Expressão informal usada quando uma situação dá errado, sai do controle ou toma um rumo negativo. Em espanhol, 'irse al traste', 'torcerse' ou 'salir mal' podem expressar a intenção brasileira de a vaca ir para o brejo. Pode aparecer no presente, passado, futuro e com verbos modais. O sentido é figurado e não representa uma direção geográfica.",
-      "category": "idiom",
-      "searchTerms": [
-        "irse todo al traste / salir mal",
-        "se fue al traste",
-        "irse al traste",
-        "salir mal",
-        "todo saldrá mal",
-        "salió mal",
-        "irse todo al traste"
-      ],
-      "validationPatterns": [
-        "(?<![A-Za-zÁÉÍÓÚÜÑáéíóúüñ])(?:al\\s+traste|sali(?:r|ó|endo)\\s+mal|saldrá\\s+mal)(?![A-Za-zÁÉÍÓÚÜÑáéíóúüñ])"
-      ],
-      "tags": [
-        "idiom",
-        "brazilian-expression",
-        "failure",
-        "things-going-wrong",
-        "go-south",
-        "informal-english",
-        "spoken-english",
-        "high-frequency"
-      ],
-      "related": [],
-      "allowLanguageChunkPractice": true,
-      "structure": "irse todo al traste / salir mal",
-      "level": "B1",
-      "examples": [
-        {
-          "id": "8be05645-9b65-4f06-a32f-c8f9a033189a",
-          "exampleItem": "¡Todo se fue al traste!",
-          "intent": "se fue al traste"
-        },
-        {
-          "id": "622a6c03-2d29-4823-a00f-48d468507dd0",
-          "exampleItem": "Todo iba bien, pero se fue al traste.",
-          "intent": "se fue al traste"
-        },
-        {
-          "id": "74e23499-7969-460c-a871-bb80d8e2419b",
-          "exampleItem": "Si perdemos a este cliente, todo puede irse al traste.",
-          "intent": "irse al traste"
-        },
-        {
-          "id": "9980d959-e9b5-4c8b-8bd7-41a89ef228e8",
-          "exampleItem": "Después de aquella decisión, todo empezó a salir mal.",
-          "intent": "salir mal"
-        },
-        {
-          "id": "724a6208-2813-4416-9b7a-00e62c988990",
-          "exampleItem": "Las cosas pueden salir mal muy rápidamente.",
-          "intent": "salir mal"
-        },
-        {
-          "id": "fed52ca1-a1ce-4c70-bec7-ffc880dcf46f",
-          "exampleItem": "Si no resolvemos este problema, todo saldrá mal.",
-          "intent": "todo saldrá mal"
-        },
-        {
-          "id": "d841fffc-3ce8-4373-9b19-611c9a544fa3",
-          "exampleItem": "La situación salió mal después de la reunión.",
-          "intent": "salió mal"
-        },
-        {
-          "id": "40819bbd-e831-4d07-974f-748b385d8147",
-          "exampleItem": "Sabía que algo podía salir mal.",
-          "intent": "salir mal"
-        },
-        {
-          "id": "1bafc819-9f06-4b1a-b57c-99a6ebcfdb9c",
-          "exampleItem": "Todo empezó a salir mal cuando se cayó el sistema.",
-          "intent": "salir mal"
-        },
-        {
-          "id": "645b4d13-40a4-48d0-8113-010da78948df",
-          "exampleItem": "Pensaba que todo saldría bien, pero todo se fue al traste.",
-          "intent": "se fue al traste"
-        }
-      ]
-    },
-    {
       "id": "a-vaca-foi-pro-brejo-6f8a2d41-3c75-4b90-ae12-9d5c7f034b68",
       "intention": "A vaca foi pro brejo / Deu tudo errado",
       "pattern": "irse al traste para fracaso; empeorar para deterioro progresivo",
@@ -48443,6 +48358,50 @@
           "id": "20cae557-b252-4165-bf46-d10ebc2c45f3",
           "exampleItem": "¿Qué haría falta realmente para que esto funcionara?",
           "intent": "Qué haría falta realmente para"
+        }
+      ]
+    },
+    {
+      "id": "tirar-o-maximo-de-proveito",
+      "intention": "Sacar el máximo provecho",
+      "pattern": "sacar el máximo provecho de + sustantivo / situación / oportunidad",
+      "description": "Expresa la intención de aprovechar de la mejor manera posible una oportunidad, una experiencia, un recurso o un periodo de tiempo para obtener el mayor beneficio.",
+      "category": "expressions",
+      "searchTerms": [
+        "sacar el máximo provecho",
+        "sacar el mejor partido",
+        "aprovechar al máximo",
+        "sacando el máximo provecho",
+        "saqué el máximo provecho"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:sacar|saco|sacas|saca|sacamos|sacáis|sacan|saqué|sacó|sacando)\\s+el\\s+máximo\\s+provecho(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:aprovechar|aprovecho|aprovechas|aprovecha|aprovechamos|aprovecháis|aprovechan|aproveché|aprovechó|aprovechando)\\s+al\\s+máximo(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "aprovechamiento",
+        "oportunidades",
+        "expresiones",
+        "beneficios"
+      ],
+      "related": [],
+      "structure": "sacar el máximo provecho de + complemento",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "de7f10d1-49a2-4d8c-8a10-7e916e3d9201",
+          "exampleItem": "Quiero sacar el máximo provecho de esta oportunidad.",
+          "intent": "sacar el máximo provecho"
+        },
+        {
+          "id": "a3e26b41-0f8c-4c19-a5b2-2f63d18e7702",
+          "exampleItem": "Tenemos que sacar el máximo provecho de nuestro tiempo.",
+          "intent": "sacar el máximo provecho"
+        },
+        {
+          "id": "9c4d72e0-6a31-4c6f-bb82-0d18e39a5403",
+          "exampleItem": "Estoy intentando sacar el máximo provecho de mis clases de inglés.",
+          "intent": "sacar el máximo provecho"
         }
       ]
     }

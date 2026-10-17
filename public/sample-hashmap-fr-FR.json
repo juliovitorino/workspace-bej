@@ -29116,90 +29116,6 @@
       ]
     },
     {
-      "id": "a-vaca-foi-pro-brejo-7933a3d2-ce0b-4915-a463-66bdbe6b4ef4",
-      "intention": "A vaca foi pro brejo / Deu tudo errado",
-      "pattern": "sujet + mal tourner",
-      "description": "Expressa que uma situação dá errado ou toma um rumo negativo. Em francês, tourner mal é natural: Tout a mal tourné. O verbo pode variar no presente, passado, futuro ou acompanhar um modal.",
-      "category": "idiom",
-      "searchTerms": [
-        "Tout a mal tourné",
-        "mal tourner",
-        "mal tourné"
-      ],
-      "validationPatterns": [
-        "(?<![A-Za-zÀ-ÖØ-öø-ÿŒœŸ0-9_])(?:Tout\\s+a\\s+mal\\s+tourné)(?![A-Za-zÀ-ÖØ-öø-ÿŒœŸ0-9_])",
-        "(?<![A-Za-zÀ-ÖØ-öø-ÿŒœŸ0-9_])(?:tout\\s+a\\s+mal\\s+tourné)(?![A-Za-zÀ-ÖØ-öø-ÿŒœŸ0-9_])",
-        "(?<![A-Za-zÀ-ÖØ-öø-ÿŒœŸ0-9_])(?:mal\\s+tourner)(?![A-Za-zÀ-ÖØ-öø-ÿŒœŸ0-9_])",
-        "(?<![A-Za-zÀ-ÖØ-öø-ÿŒœŸ0-9_])(?:mal\\s+tourné)(?![A-Za-zÀ-ÖØ-öø-ÿŒœŸ0-9_])"
-      ],
-      "tags": [
-        "idiom",
-        "brazilian-expression",
-        "failure",
-        "things-going-wrong",
-        "go-south",
-        "informal-english",
-        "spoken-english",
-        "high-frequency"
-      ],
-      "related": [],
-      "allowLanguageChunkPractice": true,
-      "structure": "Tout a mal tourné",
-      "level": "B1",
-      "examples": [
-        {
-          "id": "8be05645-9b65-4f06-a32f-c8f9a033189a",
-          "exampleItem": "Tout a mal tourné !",
-          "intent": "Tout a mal tourné"
-        },
-        {
-          "id": "622a6c03-2d29-4823-a00f-48d468507dd0",
-          "exampleItem": "Tout allait bien, puis tout a mal tourné.",
-          "intent": "tout a mal tourné"
-        },
-        {
-          "id": "74e23499-7969-460c-a871-bb80d8e2419b",
-          "exampleItem": "Si nous perdons ce client, les choses pourraient mal tourner.",
-          "intent": "mal tourner"
-        },
-        {
-          "id": "9980d959-e9b5-4c8b-8bd7-41a89ef228e8",
-          "exampleItem": "Après cette décision, tout a commencé à mal tourner.",
-          "intent": "mal tourner"
-        },
-        {
-          "id": "724a6208-2813-4416-9b7a-00e62c988990",
-          "exampleItem": "Les choses peuvent mal tourner très vite.",
-          "intent": "mal tourner"
-        },
-        {
-          "id": "fed52ca1-a1ce-4c70-bec7-ffc880dcf46f",
-          "exampleItem": "Si nous ne résolvons pas ce problème, tout va mal tourner.",
-          "intent": "mal tourner"
-        },
-        {
-          "id": "d841fffc-3ce8-4373-9b19-611c9a544fa3",
-          "exampleItem": "Les choses ont mal tourné après la réunion.",
-          "intent": "mal tourné"
-        },
-        {
-          "id": "40819bbd-e831-4d07-974f-748b385d8147",
-          "exampleItem": "Je savais que quelque chose pouvait mal tourner.",
-          "intent": "mal tourner"
-        },
-        {
-          "id": "1bafc819-9f06-4b1a-b57c-99a6ebcfdb9c",
-          "exampleItem": "Tout a commencé à mal tourner quand le système est tombé en panne.",
-          "intent": "mal tourner"
-        },
-        {
-          "id": "645b4d13-40a4-48d0-8113-010da78948df",
-          "exampleItem": "Je pensais que tout s'arrangerait, mais tout a mal tourné.",
-          "intent": "tout a mal tourné"
-        }
-      ]
-    },
-    {
       "id": "a-vaca-foi-pro-brejo-6f8a2d41-3c75-4b90-ae12-9d5c7f034b68",
       "intention": "A vaca foi pro brejo / Deu tudo errado",
       "pattern": "sujet + mal tourner / s'effondrer / faire faillite",
@@ -49009,6 +48925,50 @@
           "id": "20cae557-b252-4165-bf46-d10ebc2c45f3",
           "exampleItem": "Que faudrait-il vraiment pour que cela fonctionne ?",
           "intent": "Que faudrait-il vraiment pour que"
+        }
+      ]
+    },
+    {
+      "id": "tirar-o-maximo-de-proveito",
+      "intention": "Tirer le meilleur parti",
+      "pattern": "tirer le meilleur parti de + nom / situation / occasion",
+      "description": "Exprime l’intention de profiter au mieux d’une occasion, d’une expérience, d’une ressource ou d’une période, afin d’en retirer le plus grand bénéfice.",
+      "category": "expressions",
+      "searchTerms": [
+        "tirer le meilleur parti",
+        "tirer le meilleur profit",
+        "profiter au maximum",
+        "en tirant le meilleur parti",
+        "j’ai tiré le meilleur parti"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])tir(?:er|e|es|ons|ez|ent|ais|ait|ions|iez|aient|é|ée|és|ées|ant)\\s+le\\s+meilleur\\s+parti(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])profit(?:er|e|es|ons|ez|ent|ais|ait|ions|iez|aient|é|ée|és|ées|ant)\\s+au\\s+maximum(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "utilisation optimale",
+        "occasions",
+        "expressions",
+        "bénéfices"
+      ],
+      "related": [],
+      "structure": "tirer le meilleur parti de + complément",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "de7f10d1-49a2-4d8c-8a10-7e916e3d9201",
+          "exampleItem": "Je veux tirer le meilleur parti de cette occasion.",
+          "intent": "tirer le meilleur parti"
+        },
+        {
+          "id": "a3e26b41-0f8c-4c19-a5b2-2f63d18e7702",
+          "exampleItem": "Nous devons tirer le meilleur parti de notre temps.",
+          "intent": "tirer le meilleur parti"
+        },
+        {
+          "id": "9c4d72e0-6a31-4c6f-bb82-0d18e39a5403",
+          "exampleItem": "J’essaie de tirer le meilleur parti de mes cours d’anglais.",
+          "intent": "tirer le meilleur parti"
         }
       ]
     }
