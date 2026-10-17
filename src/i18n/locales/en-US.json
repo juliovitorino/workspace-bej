@@ -484,6 +484,8 @@
     "title": "Memory Flashcards"
   },
   "navigation": {
+    "showFilters": "Show filters",
+    "hideFilters": "Hide filters",
     "backToTop": "Back to top",
     "languages": "Languages",
     "mainMenu": "Main menu",

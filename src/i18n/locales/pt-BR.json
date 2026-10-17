@@ -484,6 +484,8 @@
     "title": "Flashcards de Memória"
   },
   "navigation": {
+    "showFilters": "Mostrar filtros",
+    "hideFilters": "Ocultar filtros",
     "backToTop": "Ir para o topo",
     "languages": "Idiomas",
     "mainMenu": "Menu principal",

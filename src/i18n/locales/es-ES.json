@@ -484,6 +484,8 @@
     "title": "Tarjetas de memoria"
   },
   "navigation": {
+    "showFilters": "Mostrar filtros",
+    "hideFilters": "Ocultar filtros",
     "backToTop": "Volver arriba",
     "languages": "Idiomas",
     "mainMenu": "Menú principal",
