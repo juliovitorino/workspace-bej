@@ -1,3 +1,5 @@
+import type { FavoriteChunk } from "../utils/favoriteChunks";
+import { FavoriteChunkButton } from "./FavoriteChunkButton";
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
@@ -51,6 +53,8 @@ function getYoutubeUrl(value?: string): string | null {
 }
 
 interface IntentionDetailsProps {
+  favorites?: FavoriteChunk[];
+  onToggleFavorite?: (id: string, type?: "example") => void;
   language: StudentLanguage;
   sourceLanguage: SourceLanguage;
   item: MentalIntention | null;
@@ -63,6 +67,8 @@ interface IntentionDetailsProps {
 }
 
 export function IntentionDetails({
+  favorites = [],
+  onToggleFavorite,
   language,
   sourceLanguage,
   item,
@@ -1120,6 +1126,9 @@ Mandatório:
             <div className="examples">
               {item.examples.map((example, index) => (
                 <div className="example" key={example.id}>
+                  {onToggleFavorite && example.id && targetSentence(example).trim() && <FavoriteChunkButton
+                    active={favorites.some(favorite => favorite.type === "example" && favorite.id === example.id && favorite.language === language)}
+                    onToggle={() => onToggleFavorite(example.id, "example")} />}
                   <p>
                     {renderHighlightedText(
                       example.pt,

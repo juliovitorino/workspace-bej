@@ -1,3 +1,4 @@
+import { favoriteStudyItems, type FavoriteStudyItem } from "../utils/favoriteStudyItems";
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -18,7 +19,7 @@ const NO_FAVORITES: FavoriteChunk[] = [];
 interface ChunkFlashcardsProps {
   mode?: "all" | "favorites";
   favorites?: FavoriteChunk[];
-  onToggleFavorite?: (id: string) => void;
+  onToggleFavorite?: (id: string, type?: "example") => void;
   onBackToAll?: () => void;
   studyChunk?: MentalIntention;
   intentions: MentalIntention[];
@@ -69,8 +70,7 @@ export function ChunkFlashcards({
 
   // O autor escolhe explicitamente quais intenções são chunks completos.
   const chunks = useMemo(
-    () => eligibleChunks(intentions, level).filter(item => mode === "all" ||
-      favorites.some(favorite => favorite.id === item.id && favorite.language === language)),
+    () => mode === "all" ? eligibleChunks(intentions, level) : favoriteStudyItems(intentions, favorites, language, level),
     [intentions, level, mode, favorites, language]
   );
 
@@ -183,8 +183,14 @@ export function ChunkFlashcards({
     setDrawnIds(previous => previous.every(id => ids.has(id)) ? previous : previous.filter(id => ids.has(id)));
   }, [chunks, walking, mode]);
 
+  const retainedWalkingChunk = useRef<MentalIntention | null>(null);
   const currentChunk = studyChunk ?? chunks.find((item) => item.id === currentId) ??
-    (walking ? intentions.find(item => item.id === currentId) ?? null : null);
+    (walking && retainedWalkingChunk.current?.id === currentId ? retainedWalkingChunk.current : null);
+  if (currentChunk) retainedWalkingChunk.current = currentChunk;
+  const studyItem = currentChunk as FavoriteStudyItem | null;
+  const favoriteId = studyItem?.favoriteId ?? currentChunk?.id;
+  const favoriteType = studyItem?.favoriteType;
+  const origin = studyItem?.origin ?? currentChunk;
   const total = chunks.length;
   const completed = total > 0 && drawnIds.length === total;
   const shownCount = drawnIds.length;
@@ -226,8 +232,7 @@ export function ChunkFlashcards({
     setCopyError(null);
     if (copyFeedbackTimeout.current !== null) clearTimeout(copyFeedbackTimeout.current);
     // Start a fresh round with the same draw mechanism, preserving session time.
-    if (walking || currentId !== null) nextChunk(eligibleChunks(intentions, nextLevel).filter(item => mode === "all" ||
-      favorites.some(favorite => favorite.id === item.id && favorite.language === language)), true);
+    if (walking || currentId !== null) nextChunk(mode === "all" ? eligibleChunks(intentions, nextLevel) : favoriteStudyItems(intentions, favorites, language, nextLevel), true);
     else { setDrawnIds([]); setCurrentId(null); }
   }
 
@@ -281,7 +286,7 @@ export function ChunkFlashcards({
     // Protege também a ação, não apenas a visibilidade do botão.
     if (!isAuthorMode() || !currentChunk) return;
     try {
-      await copyText(currentChunk.id);
+      await copyText(origin!.id);
       showCopyFeedback("id", currentChunk.id);
       setCopyError(null);
     } catch {
@@ -329,8 +334,8 @@ export function ChunkFlashcards({
                 <div className="chunk-flashcards-card-header">
                   <p className="chunk-flashcards-language">{localizedLanguageName(language)} · {language}</p>
                   {onToggleFavorite && <FavoriteChunkButton
-                    active={favorites.some(favorite => favorite.id === currentChunk.id && favorite.language === language)}
-                    onToggle={() => onToggleFavorite(currentChunk.id)} />}
+                    active={favorites.some(favorite => favorite.id === favoriteId && favorite.type === favoriteType && favorite.language === language)}
+                    onToggle={() => onToggleFavorite(favoriteId!, favoriteType)} />}
                 </div>
                 <div className="chunk-flashcards-english-row">
                   <h3>{currentChunk.targetIntention ?? currentChunk.english}</h3>
@@ -351,7 +356,7 @@ export function ChunkFlashcards({
                     <button
                       type="button"
                       className="chunk-flashcards-details"
-                      onClick={() => onShowDetails(currentChunk)}
+                      onClick={() => onShowDetails(origin!)}
                       aria-label={t("flashcards.viewDetailsAndExamplesOfText", { text: (currentChunk.targetIntention ?? currentChunk.english) })}
                       title={t("flashcards.viewDetailsAndMoreExamples")}
                     >
@@ -394,7 +399,7 @@ export function ChunkFlashcards({
                     <button
                       type="button"
                       className="chunk-flashcards-details"
-                      onClick={() => onBasicTraining(currentChunk)}
+                      onClick={() => onBasicTraining(origin!)}
                       aria-label={t("flashcards.openBasicPracticeForText", { text: (currentChunk.targetIntention ?? currentChunk.english) })}
                       title={t("common.basicPractice")}
                     >
@@ -403,7 +408,7 @@ export function ChunkFlashcards({
                     <button
                       type="button"
                       className="chunk-flashcards-details"
-                      onClick={() => onAdvancedTraining(currentChunk)}
+                      onClick={() => onAdvancedTraining(origin!)}
                       aria-label={t("flashcards.openAdvancedPracticeForText", { text: (currentChunk.targetIntention ?? currentChunk.english) })}
                       title={t("common.advancedPractice")}
                     >
@@ -447,8 +452,8 @@ export function ChunkFlashcards({
     return <WalkingMode chunk={currentChunk} language={language} sourceLanguage={sourceLanguage}
       stopWhenEmpty={mode === "favorites"}
       currentEligible={mode !== "favorites" || chunks.some(item => item.id === currentChunk?.id)}
-      favorite={favorites.some(favorite => favorite.id === currentChunk?.id && favorite.language === language)}
-      onToggleFavorite={onToggleFavorite && currentChunk ? () => onToggleFavorite(currentChunk.id) : undefined}
+      favorite={favorites.some(favorite => favorite.id === favoriteId && favorite.type === favoriteType && favorite.language === language)}
+      onToggleFavorite={onToggleFavorite && currentChunk ? () => onToggleFavorite(favoriteId!, favoriteType) : undefined}
       level={level} onLevelChange={changeLevel} position={position} total={total} round={round}
       canPrevious={position > 1}
       onPrevious={() => { if (position > 1) setCurrentId(drawnIds[position - 2]); }}

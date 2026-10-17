@@ -38,3 +38,10 @@ assert.equal(session.summary(1, 17).completed, 1);
 assert.equal(session.summary(0, 17).completed, 1); // removal never erases session history
 assert.equal(new WalkingSession().summary(0, 0).phrases, 0);
 console.log('Favorite persistence, malformed storage, language isolation, deduplication, session completion and callback deduplication passed.');
+
+// Type is part of favorite identity, independently of catalog ID and language.
+const mixed = toggleFavoriteChunk(valid, 'x', 'en-US', 'example');
+assert.equal(mixed.length, 3);
+assert.deepEqual(parseFavoriteChunks(JSON.stringify([...mixed, mixed[2]])), mixed);
+assert.deepEqual(toggleFavoriteChunk(mixed, 'x', 'en-US', 'example'), valid);
+assert.equal(parseFavoriteChunks('[{"id":"x","language":"en-US","type":"unknown"}]').length, 0);

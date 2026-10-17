@@ -11,7 +11,7 @@ interface IntentionListProps {
   language: StudentLanguage;
   onSelect: (item: MentalIntention) => void;
   favorites?: FavoriteChunk[];
-  onToggleFavorite?: (id: string) => void;
+  onToggleFavorite?: (id: string, type?: "example") => void;
 }
 
 export function IntentionList({ items, sourceLanguage, language, onSelect, favorites = [], onToggleFavorite }: IntentionListProps) {
@@ -29,7 +29,7 @@ export function IntentionList({ items, sourceLanguage, language, onSelect, favor
     <div className="intention-list">
       {items.map((item) => (
         <IntentionCard key={item.id} item={item} sourceLanguage={sourceLanguage} language={language} onSelect={onSelect}
-          favorite={favorites.some(favorite => favorite.id === item.id && favorite.language === language)}
+          favorite={favorites.some(favorite => favorite.type === undefined && favorite.id === item.id && favorite.language === language)}
           onToggleFavorite={onToggleFavorite} />
       ))}
     </div>

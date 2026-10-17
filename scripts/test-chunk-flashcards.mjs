@@ -579,3 +579,39 @@ console.log('Favorite removal: five-to-zero in EN/ES/FR, exact persistence, othe
 console.log('Hashmap favorites: shared persistence, public profiles, eligibility, language isolation and click/navigation separation passed.');
 console.log('CEFR, real catalogs, round coverage/counters, backward navigation, live filters, cancellation, time/settings, empty levels and accessible controls passed.');
 console.log('Favorites filtering/removal/language changes, pause/resume summaries, incomplete/duplicate speech, active time, stop/new sessions and favorite toggling during playback passed.');
+
+// Favorite example resolution and manual session share the production component.
+const { favoriteStudyItems } = load('src/utils/favoriteStudyItems.ts');
+const exampleOrigin = { id: 'origin', intention: 'origem', english: 'origin', targetIntention: 'origin', englishLevel: 'B1',
+  allowLanguageChunkPractice: false, examples: [
+    { id: 'sentence-one', exampleItem: 'First sentence.', en: 'First sentence.', pt: 'Primeira frase.', intent: 'First' },
+    { id: 'sentence-two', exampleItem: 'Second sentence.', en: 'Second sentence.', pt: 'Segunda frase.', intent: 'Second' }
+  ] };
+const exampleFavorites = [
+  { id: 'sentence-one', language: 'en-US', type: 'example' },
+  { id: 'sentence-two', language: 'en-US', type: 'example' },
+  { id: 'unavailable', language: 'en-US', type: 'example' },
+  { id: 'sentence-one', language: 'es-ES', type: 'example' }
+];
+const resolved = favoriteStudyItems([exampleOrigin], exampleFavorites, 'en-US', 'all');
+assert.equal(resolved.length, 2);
+assert.notEqual(resolved[0].id, resolved[1].id);
+assert.equal(resolved[0].targetIntention, 'First sentence.');
+assert.equal(resolved[0].intention, 'Primeira frase.');
+assert.equal(resolved[0].examples.length, 1);
+assert.equal(favoriteStudyItems([exampleOrigin], exampleFavorites, 'en-US', 'A1').length, 0);
+assert.equal(favoriteStudyItems([exampleOrigin], exampleFavorites, 'en-US', 'B1').length, 2);
+const completeOrigin = { ...exampleOrigin, allowLanguageChunkPractice: true };
+assert.equal(favoriteStudyItems([completeOrigin], [...exampleFavorites, { id: 'origin', language: 'en-US' }], 'en-US', 'all').length, 3);
+let exampleProps = { ...props, language: 'en-US', mode: 'favorites', intentions: [exampleOrigin], favorites: exampleFavorites,
+  onToggleFavorite(id, type) { exampleProps = { ...exampleProps, favorites: exampleProps.favorites.filter(f => f.id !== id || f.type !== type || f.language !== 'en-US') }; } };
+const examplePractice = new Harness(ChunkFlashcards, exampleProps); examplePractice.flush();
+find(examplePractice.tree, n => n.type === 'button' && n.props.className === 'primary-button').props.onClick(); examplePractice.flush();
+let star = find(examplePractice.tree, n => n.type === FavoriteChunkButton);
+assert.equal(star.props.active, true);
+star.props.onToggle(); examplePractice.flush(exampleProps);
+assert.ok(find(examplePractice.tree, n => n.type === 'h3' && ['First sentence.', 'Second sentence.'].includes(n.props.children)));
+star = find(examplePractice.tree, n => n.type === FavoriteChunkButton); star.props.onToggle(); examplePractice.flush(exampleProps);
+assert.ok(!find(examplePractice.tree, n => n.type === FavoriteChunkButton));
+assert.equal(exampleProps.favorites.length, 2); // unavailable and other-language references survive
+console.log('Example favorites: UUID resolution, level inheritance, independent identities, mixed pool and removal to empty passed.');

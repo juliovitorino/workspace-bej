@@ -28,7 +28,7 @@ import { searchIntentions } from "./utils/searchIntentions";
 import { isAuthorMode } from "./utils/authorMode";
 import { useAppTheme } from "./hooks/useAppTheme";
 import { useFavoriteChunks } from "./hooks/useFavoriteChunks";
-import { eligibleChunks } from "./utils/chunkEligibility";
+import { favoriteStudyItems } from "./utils/favoriteStudyItems";
 
 type TrainingMode = "basic" | "advanced" | "review" | null;
 
@@ -43,8 +43,7 @@ function App() {
   const requestVersion = useRef(0);
   const [data, setData] = useState<HashmapData | null>(null);
   const { favorites, toggleFavorite, storageError: favoriteStorageError } = useFavoriteChunks();
-  const favoriteChunkCount = useMemo(() => eligibleChunks(data?.metadata.language === language ? data.mentalMap : [], "all")
-    .filter(item => favorites.some(favorite => favorite.id === item.id && favorite.language === language)).length,
+  const favoriteChunkCount = useMemo(() => favoriteStudyItems(data?.metadata.language === language ? data.mentalMap : [], favorites, language, "all").length,
   [data, favorites, language]);
   const [source, setSource] = useState<"remote" | "cache">("remote");
   const [currentView, setCurrentView] = useState<AppView>("hashmap");
@@ -419,7 +418,7 @@ function App() {
                 <IntentionList
                   items={filteredItems}
                   favorites={favorites}
-                  onToggleFavorite={id => toggleFavorite(id, language)}
+                  onToggleFavorite={(id, type) => toggleFavorite(id, language, type)}
                   sourceLanguage={sourceLanguage}
                   language={language}
                   onSelect={setSelected}
@@ -442,7 +441,7 @@ function App() {
                   key={`${sourceLanguage}-${language}-${currentView}`}
                   mode={currentView === "favorite-chunks" ? "favorites" : "all"}
                   favorites={favorites}
-                  onToggleFavorite={id => toggleFavorite(id, language)}
+                  onToggleFavorite={(id, type) => toggleFavorite(id, language, type)}
                   onBackToAll={() => setCurrentView("chunk-flashcards")}
                   language={language}
                   onWalkingChange={setWalkingActive}
@@ -458,7 +457,7 @@ function App() {
               <div style={{ display: trainingMode ? "none" : undefined }}>
                 <MemoryFlashcards key={sourceLanguage + "-" + language}
                   favorites={favorites}
-                  onToggleFavorite={id => toggleFavorite(id, language)}
+                  onToggleFavorite={(id, type) => toggleFavorite(id, language, type)}
                   intentions={data.mentalMap} language={language} sourceLanguage={sourceLanguage}
                   onShowDetails={setSelected}
                   onBasicTraining={item => startTraining(item, "basic")}
@@ -522,6 +521,8 @@ function App() {
       </div>
 
       <IntentionDetails
+        favorites={favorites}
+        onToggleFavorite={(id, type) => toggleFavorite(id, language, type)}
         sourceLanguage={sourceLanguage}
         language={language}
         item={

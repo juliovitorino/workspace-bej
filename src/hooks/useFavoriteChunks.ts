@@ -15,8 +15,8 @@ export function useFavoriteChunks() {
     window.addEventListener("storage", refresh);
     return () => window.removeEventListener("storage", refresh);
   }, []);
-  function toggleFavorite(id: string, language: StudentLanguage) {
-    const next = toggleFavoriteChunk(current.current, id, language);
+  function toggleFavorite(id: string, language: StudentLanguage, type?: "example") {
+    const next = toggleFavoriteChunk(current.current, id, language, type);
     try {
       localStorage.setItem(FAVORITE_CHUNKS_KEY, JSON.stringify(next));
       current.current = next;
