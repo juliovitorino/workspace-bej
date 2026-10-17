@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1233,
+    "totalIntentions": 1234,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -48966,6 +48966,49 @@
           "id": "c9a4e0d7-52f8-41c2-a9d9-80f7e562b198",
           "exampleItem": "Ah, au temps pour moi ! J’avais mal compris.",
           "intent": "au temps pour moi"
+        }
+      ]
+    },
+    {
+      "id": "e2356229-8399-4f3d-81ce-4fcb89d894bd",
+      "intention": "Que faudrait-il vraiment pour que… ?",
+      "pattern": "Que faudrait-il vraiment pour que + sujet + verbe au subjonctif ?",
+      "description": "Structure permettant de formuler des questions sur les conditions, les efforts ou les changements réellement nécessaires pour qu’une personne ou une chose atteigne un résultat. Elle exige un complément pour former une question complète.",
+      "category": "language-chunks",
+      "searchTerms": [
+        "que faudrait-il vraiment pour que",
+        "que faudrait-il pour que",
+        "que serait-il nécessaire de faire pour",
+        "quelles conditions seraient nécessaires"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Que\\s+faudrait-il\\s+vraiment\\s+pour\\s+que(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "structure génératrice",
+        "question",
+        "conditions nécessaires",
+        "réflexion"
+      ],
+      "related": [],
+      "structure": "Que faudrait-il vraiment pour que",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "8ab518af-0ef5-4627-801c-de84a89e177b",
+          "exampleItem": "Que faudrait-il vraiment pour que j’y arrive ?",
+          "intent": "Que faudrait-il vraiment pour que"
+        },
+        {
+          "id": "e6cfae8c-d515-4e3f-a622-292725f1445b",
+          "exampleItem": "Que faudrait-il vraiment pour que tu changes d’avis ?",
+          "intent": "Que faudrait-il vraiment pour que"
+        },
+        {
+          "id": "20cae557-b252-4165-bf46-d10ebc2c45f3",
+          "exampleItem": "Que faudrait-il vraiment pour que cela fonctionne ?",
+          "intent": "Que faudrait-il vraiment pour que"
         }
       ]
     }

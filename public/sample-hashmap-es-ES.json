@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1233,
+    "totalIntentions": 1234,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -48400,6 +48400,49 @@
           "id": "c9a4e0d7-52f8-41c2-a9d9-80f7e562b198",
           "exampleItem": "¡Ah, fallo mío! Lo he entendido mal.",
           "intent": "fallo mío"
+        }
+      ]
+    },
+    {
+      "id": "e2356229-8399-4f3d-81ce-4fcb89d894bd",
+      "intention": "¿Qué haría falta realmente para...?",
+      "pattern": "¿Qué haría falta realmente para que + persona/cosa + verbo en imperfecto de subjuntivo?",
+      "description": "Estructura para formular preguntas sobre las condiciones, los esfuerzos o los cambios realmente necesarios para que alguien o algo alcance un resultado. Requiere un complemento para formar una pregunta completa.",
+      "category": "language-chunks",
+      "searchTerms": [
+        "qué haría falta realmente para",
+        "qué sería necesario para",
+        "qué se necesitaría para",
+        "qué condiciones serían necesarias"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Qué\\s+haría\\s+falta\\s+realmente\\s+para(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloque-de-lenguaje",
+        "estructura-generadora",
+        "pregunta",
+        "condiciones-necesarias",
+        "reflexión"
+      ],
+      "related": [],
+      "structure": "Qué haría falta realmente para",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "8ab518af-0ef5-4627-801c-de84a89e177b",
+          "exampleItem": "¿Qué haría falta realmente para que yo consiguiera eso?",
+          "intent": "Qué haría falta realmente para"
+        },
+        {
+          "id": "e6cfae8c-d515-4e3f-a622-292725f1445b",
+          "exampleItem": "¿Qué haría falta realmente para que cambiaras de opinión?",
+          "intent": "Qué haría falta realmente para"
+        },
+        {
+          "id": "20cae557-b252-4165-bf46-d10ebc2c45f3",
+          "exampleItem": "¿Qué haría falta realmente para que esto funcionara?",
+          "intent": "Qué haría falta realmente para"
         }
       ]
     }

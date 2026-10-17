@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1233,
+    "totalIntentions": 1234,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -47397,6 +47397,49 @@
           "id": "c9a4e0d7-52f8-41c2-a9d9-80f7e562b198",
           "exampleItem": "Oh, my bad! I misunderstood.",
           "intent": "my bad"
+        }
+      ]
+    },
+    {
+      "id": "e2356229-8399-4f3d-81ce-4fcb89d894bd",
+      "intention": "What would it really take to...?",
+      "pattern": "What would it really take for + person/thing + to + base verb?",
+      "description": "A question-building structure used to explore the conditions, effort, or changes actually needed for someone or something to achieve a result. It requires a complement to form a complete question.",
+      "category": "language-chunks",
+      "searchTerms": [
+        "what would it really take for",
+        "what would it take to",
+        "what would be needed for",
+        "what conditions would be necessary"
+      ],
+      "validationPatterns": [
+        "\\bWhat\\s+would\\s+it\\s+really\\s+take\\s+for\\s+.+?\\s+to\\s+[a-z]+\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "generative-structure",
+        "question",
+        "necessary-conditions",
+        "reflection"
+      ],
+      "related": [],
+      "structure": "What would it really take for",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "8ab518af-0ef5-4627-801c-de84a89e177b",
+          "exampleItem": "What would it really take for me to achieve this?",
+          "intent": "What would it really take for"
+        },
+        {
+          "id": "e6cfae8c-d515-4e3f-a622-292725f1445b",
+          "exampleItem": "What would it really take for you to change your mind?",
+          "intent": "What would it really take for"
+        },
+        {
+          "id": "20cae557-b252-4165-bf46-d10ebc2c45f3",
+          "exampleItem": "What would it really take for this to work?",
+          "intent": "What would it really take for"
         }
       ]
     }
