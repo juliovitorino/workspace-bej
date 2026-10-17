@@ -31,6 +31,11 @@
     "allCategories": "Toutes les catégories"
   },
   "study": {
+    "historyTitle": "Historique des ?tudes",
+    "backDashboard": "Retour au tableau de bord",
+    "settings": "Param?tres",
+    "moreDetails": "+ D?tails",
+    "lessDetails": "? D?tails",
     "historyPages": "Pagination de l’historique",
     "historyPage": "Page {{page}} sur {{total}} · {{count}} enregistrements",
     "basicTraining": "Exercice de base",
@@ -49,7 +54,10 @@
     "from": "Du",
     "to": "Au",
     "duration": "{{hours}}h {{minutes}}min {{seconds}}s",
-    "zeroDuration": "0h 0min",
+    "durationHours": "{{count}}h",
+    "durationMinutes": "{{count}}min",
+    "durationSeconds": "{{count}}s",
+    "zeroDuration": "0s",
     "hoursValue": "{{hours}} heures",
     "accumulated": "Temps sur la période",
     "today": "Aujourd’hui",

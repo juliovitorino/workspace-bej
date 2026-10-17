@@ -31,6 +31,11 @@
     "allCategories": "All categories"
   },
   "study": {
+    "historyTitle": "Study History",
+    "backDashboard": "Back to Dashboard",
+    "settings": "Settings",
+    "moreDetails": "+ Details",
+    "lessDetails": "? Details",
     "historyPages": "History pagination",
     "historyPage": "Page {{page}} of {{total}} · {{count}} records",
     "basicTraining": "Basic Exercise",
@@ -49,7 +54,10 @@
     "from": "From",
     "to": "To",
     "duration": "{{hours}}h {{minutes}}min {{seconds}}s",
-    "zeroDuration": "0h 0min",
+    "durationHours": "{{count}}h",
+    "durationMinutes": "{{count}}min",
+    "durationSeconds": "{{count}}s",
+    "zeroDuration": "0s",
     "hoursValue": "{{hours}} hours",
     "accumulated": "Time in period",
     "today": "Today",

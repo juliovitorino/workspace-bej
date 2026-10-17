@@ -101,8 +101,8 @@ globalThis.clearInterval = id => intervals.delete(id);
 globalThis.setTimeout = (fn, ms) => { timeouts.set(++nextTimer, { fn, ms }); return nextTimer; };
 globalThis.clearTimeout = id => timeouts.delete(id);
 globalThis.localStorage = { getItem: key => memory.get(key) ?? null, setItem(key, value) { writes++; memory.set(key, value); }, removeItem: key => memory.delete(key) };
-globalThis.document = { visibilityState: 'visible', addEventListener(name, fn) { listeners.set(name, fn); }, removeEventListener(name) { listeners.delete(name); } };
-globalThis.window = { setInterval, clearInterval, setTimeout, clearTimeout, dispatchEvent() {},
+globalThis.document = { getElementById: () => null, visibilityState: 'visible', addEventListener(name, fn) { listeners.set(name, fn); }, removeEventListener(name) { listeners.delete(name); } };
+globalThis.window = { matchMedia: () => ({ matches: false, addEventListener() {}, removeEventListener() {} }), setInterval, clearInterval, setTimeout, clearTimeout, dispatchEvent() {},
   addEventListener(name, fn) { listeners.set(name, fn); }, removeEventListener(name) { listeners.delete(name); },
   speechSynthesis: { cancel() {}, getVoices: () => [{ lang: 'en-US' }, { lang: 'es-ES' }], speak: u => utterances.push(u) } };
 globalThis.SpeechSynthesisUtterance = class { constructor(text) { this.text = text; } };
@@ -304,6 +304,21 @@ const chartStore = { schemaVersion: 1, activeSession: null, studyData: { ...curr
     startedAt: new Date(now - 482000).toISOString(), endedAt: new Date(now).toISOString() })) } };
 memory.set(STUDY_KEY, JSON.stringify(chartStore));
 const dashboard = new Harness(StudyDashboard, { language: 'en-US' }); dashboard.flush();
+const viewNode = id => find(dashboard.tree, n => n.props.id === id);
+assert.equal(viewNode('study-details').props.hidden, true);
+assert.equal(viewNode('study-settings').props.hidden, true);
+const beforeUi = memory.get(STUDY_KEY);
+find(dashboard.tree, n => n.type === 'button' && n.props['aria-controls'] === 'study-details').props.onClick(); dashboard.flush();
+assert.equal(viewNode('study-details').props.hidden, false);
+find(dashboard.tree, n => n.type === 'button' && n.props['aria-controls'] === 'study-settings').props.onClick(); dashboard.flush();
+assert.equal(viewNode('study-settings').props.hidden, false);
+find(dashboard.tree, n => n.type === 'button' && n.props['aria-label'] === translations.study.historyTitle).props.onClick(); dashboard.flush();
+assert.equal(viewNode('study-results').props.hidden, true);
+assert.equal(viewNode('study-filters').props.hidden, false);
+find(dashboard.tree, n => n.type === 'button' && text(n) === translations.study.backDashboard).props.onClick(); dashboard.flush();
+assert.equal(viewNode('study-results').props.hidden, false);
+assert.equal(memory.get(STUDY_KEY), beforeUi, 'details, settings and history navigation never write study data');
+console.log('PASS dashboard views: collapsed details/settings, expansion, dedicated history, return and no storage writes.');
 const moduleChart = () => find(dashboard.tree, n => n.type === 'section' && React.Children.toArray(n.props.children).some(c => c?.type === 'h3' && text(c) === translations.study.byModule));
 const basicRow = () => find(moduleChart(), n => n.type === 'li' && text(n).includes(translations.study.basicTraining));
 const barPercent = row => parseFloat(find(row, n => n.type === 'span' && n.props.style?.width).props.style.width);
@@ -338,8 +353,14 @@ const chartSession = (module, seconds, language = 'en-US', daysAgo = 0, mode = '
     startedAt: new Date(end - seconds * 1000).toISOString(), endedAt: new Date(end).toISOString() };
 };
 setFilter(1, 'all');
+for (const [seconds, expected] of [[308, '5min 8s'], [3608, '1h 8s'], [3600, '1h'], [300, '5min'], [8, '8s']]) {
+  updateChart([chartSession('basic-training', seconds)]);
+  assert.equal(text(find(basicRow(), n => n.type === 'strong')), expected + ' \u00b7 100%');
+}
+updateChart([]);
+console.log('PASS compact durations: omitted zero units, exact hours/minutes/seconds and zero fallback.');
 assert.equal(moduleRows().length, STUDY_MODULES.length);
-assert.ok(moduleRows().every(row => text(row).includes('0h 0min') && text(row).includes('0%') && barPercent(row) === 0));
+assert.ok(moduleRows().every(row => text(row).includes('0s') && text(row).includes('0%') && barPercent(row) === 0));
 assert.deepEqual(moduleRows().map(rowLabel), Object.values(labels).sort((a, b) => a.localeCompare(b, 'pt-BR')));
 assert.equal(find(moduleChart(), n => n.type === 'ul').props.className, 'study-chart study-chart-modules');
 updateChart([chartSession('basic-training', 5 * 3600), chartSession('shadowing', 2 * 3600), chartSession('speaking-game', 10 * 3600)]);
@@ -347,7 +368,7 @@ assert.equal(moduleRows().length, STUDY_MODULES.length);
 assert.deepEqual(moduleRows().slice(0, 3).map(rowLabel), ['speaking-game', 'basic-training', 'shadowing'].map(module => labels[module]));
 assert.equal(moduleRows().filter(row => barPercent(row) === 0).length, STUDY_MODULES.length - 3);
 assert.ok(Math.abs(barPercent(moduleRows()[0]) - 10 / 17 * 100) < 1e-9);
-assert.ok(text(moduleRows()[0]).includes('10h 0min 0s'));
+assert.ok(text(moduleRows()[0]).includes('10h'));
 updateChart(STUDY_MODULES.map((module, index) => chartSession(module, (index + 1) * 60)));
 assert.deepEqual(moduleRows().map(rowLabel), [...STUDY_MODULES].reverse().map(module => labels[module]));
 updateChart(STUDY_MODULES.map(module => chartSession(module, 120)));
