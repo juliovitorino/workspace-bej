@@ -502,6 +502,7 @@
     "practiceType": "Practice type"
   },
   "filters": {
+    "clearLevelCategoryTags": "Clear level, category and tag filters",
     "all": "All (",
     "allCategoriesCount": "All ({{count}})",
     "allTodos": "All",

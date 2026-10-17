@@ -581,6 +581,22 @@ function App() {
         onReviewTraining={(item) => startTraining(item, "review")}
       />
       <div id="app-floating-controls" className="mobile-floating-controls">
+        {currentView === "hashmap" && !loading && data && !trainingMode &&
+          Boolean(englishLevelSearch || categorySearch || selectedTags.length) && (
+          <button type="button" className="hashmap-clear-card-filters"
+            aria-label={t("filters.clearLevelCategoryTags")} title={t("filters.clearLevelCategoryTags")}
+            onClick={() => {
+              setEnglishLevelSearch("");
+              setCategorySearch("");
+              setSelectedTags([]);
+              document.querySelector<HTMLButtonElement>("#app-floating-controls .hashmap-filter-toggle")?.focus({ preventScroll: true });
+            }}>
+            <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M20 3H4l6 7v9l4 2v-8M16 15l5 5m0-5-5 5" />
+            </svg>
+          </button>
+        )}
         {currentView === "hashmap" && !loading && data && !trainingMode && (
           <button type="button" className="hashmap-filter-toggle"
             aria-label={t(filtersVisible ? "navigation.hideFilters" : "navigation.showFilters")}
