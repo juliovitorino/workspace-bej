@@ -5,10 +5,21 @@ import { useEffect, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import { isAuthorMode } from "../utils/authorMode";
 import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
+import { normalizeText } from "../utils/normalizeText";
 import { eligibleChunks } from "../utils/chunkEligibility";
 import { FavoriteChunkButton } from "./FavoriteChunkButton";
 
+export interface IntentionCardFilters {
+  englishLevelSearch: string;
+  categorySearch: string;
+  selectedTags: string[];
+  onLevelToggle: (level: string) => void;
+  onCategoryToggle: (category: string) => void;
+  onTagToggle: (tag: string) => void;
+}
+
 interface IntentionCardProps {
+  filters?: IntentionCardFilters;
   item: MentalIntention;
   sourceLanguage: SourceLanguage;
   language: StudentLanguage;
@@ -17,7 +28,7 @@ interface IntentionCardProps {
   onToggleFavorite?: (id: string) => void;
 }
 
-export function IntentionCard({ item, sourceLanguage, language, onSelect, favorite = false, onToggleFavorite }: IntentionCardProps) {
+export function IntentionCard({ item, sourceLanguage, language, onSelect, favorite = false, onToggleFavorite, filters }: IntentionCardProps) {
   const { t } = useTranslation();
   const hasYoutubeVideo = typeof item.youtubeVideo === "string" && item.youtubeVideo.trim().length > 0;
   const hasYoutubeShort = typeof item.youtubeShort === "string" && item.youtubeShort.trim().length > 0;
@@ -130,13 +141,11 @@ export function IntentionCard({ item, sourceLanguage, language, onSelect, favori
 
         <div className="card-badges">
           {item.englishLevel && (
-            <span className="pill english-level-pill">
-              {item.englishLevel}
-            </span>
+            filters ? <button type="button" className="pill english-level-pill card-filter-button" aria-label={t("hashmap.filterByLevel", { level: item.englishLevel })} aria-pressed={normalizeText(filters.englishLevelSearch) === normalizeText(item.englishLevel)} onClick={event => { event.stopPropagation(); filters.onLevelToggle(item.englishLevel!); }}>{item.englishLevel}</button> : <span className="pill english-level-pill">{item.englishLevel}</span>
           )}
 
           {item.category && (
-            <span className="pill category-pill">{item.category}</span>
+            filters ? <button type="button" className="pill category-pill card-filter-button" aria-label={t("hashmap.filterByCategory", { category: item.category })} aria-pressed={normalizeText(filters.categorySearch) === normalizeText(item.category)} onClick={event => { event.stopPropagation(); filters.onCategoryToggle(item.category!); }}>{item.category}</button> : <span className="pill category-pill">{item.category}</span>
           )}
 
           {onToggleFavorite && eligibleChunks([item], "all").length > 0 && (
@@ -185,7 +194,7 @@ export function IntentionCard({ item, sourceLanguage, language, onSelect, favori
                 <span aria-hidden="true">{LANGUAGES[locale].flag}</span> {locale}
               </span>
               <div className="card-tags" lang={locale}>
-                {Array.from(new Set(tags)).map(tag => <span className="tag-pill" key={tag}>{tag}</span>)}
+                {Array.from(new Set(tags)).map(tag => filters ? <button type="button" className="tag-pill card-filter-button" key={tag} aria-label={t("hashmap.filterByTag", { tag })} aria-pressed={filters.selectedTags.some(selected => normalizeText(selected) === normalizeText(tag))} onClick={event => { event.stopPropagation(); filters.onTagToggle(tag); }}>{tag}</button> : <span className="tag-pill" key={tag}>{tag}</span>)}
               </div>
             </div>
           ))}

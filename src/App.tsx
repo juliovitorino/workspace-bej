@@ -28,6 +28,7 @@ import { ChunkFlashcards } from "./components/ChunkFlashcards";
 import { StoryShadowing } from "./components/StoryShadowing";
 import { fetchHashmap, loadHashmap } from "./services/hashmapService";
 import type { HashmapData, MentalIntention } from "./types/hashmap";
+import { normalizeText } from "./utils/normalizeText";
 import { searchIntentions } from "./utils/searchIntentions";
 import { isAuthorMode } from "./utils/authorMode";
 import { useAppTheme } from "./hooks/useAppTheme";
@@ -442,6 +443,12 @@ function App() {
 
                 <IntentionList
                   items={filteredItems}
+                  filters={{ englishLevelSearch, categorySearch, selectedTags,
+                    onLevelToggle: level => setEnglishLevelSearch(current => normalizeText(current) === normalizeText(level) ? "" : level),
+                    onCategoryToggle: category => setCategorySearch(current => normalizeText(current) === normalizeText(category) ? "" : category),
+                    onTagToggle: tag => setSelectedTags(current => current.some(value => normalizeText(value) === normalizeText(tag))
+                      ? current.filter(value => normalizeText(value) !== normalizeText(tag)) : [...current, tag])
+                  }}
                   favorites={favorites}
                   onToggleFavorite={(id, type) => toggleFavorite(id, language, type)}
                   sourceLanguage={sourceLanguage}

@@ -593,6 +593,9 @@
     "yourBrowserDoesNotSupportSpeechPlayback": "Seu navegador não oferece reprodução de voz."
   },
   "hashmap": {
+    "filterByLevel": "Filtrar pelo n?vel {{level}}",
+    "filterByCategory": "Filtrar pela categoria {{category}}",
+    "filterByTag": "Filtrar pela tag {{tag}}",
     "contentPublishedOnYoutube": "Conteúdos publicados no YouTube",
     "couldNotCopyTheIdTryAgain": "Não foi possível copiar o ID. Tente novamente.",
     "emptyHint": "Experimente outros termos em {{sourceLanguage}} ou {{targetLanguage}}, ou limpe os filtros.",
