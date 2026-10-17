@@ -1,7 +1,9 @@
+import { StudyDashboard } from "./features/study/StudyDashboard";
+import { effectiveStudyView, useStudyTracking, type StudySignal } from "./features/study/useStudyTracking";
 import { t } from "./i18n";
 import { useTranslation } from "react-i18next";
 import { getSourceLanguage, getStudentLanguage, SOURCE_LANGUAGE_KEY, STUDENT_LANGUAGE_KEY, type SourceLanguage, type StudentLanguage } from "./config/languages";
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { syncSourceLanguage } from "./i18n";
 import "./App.css";
 import { AppSettingsDialog } from "./components/AppSettingsDialog";
@@ -80,6 +82,19 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [retrying, setRetrying] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const [studySignal, setStudySignal] = useState<StudySignal | null>(null);
+  const reportStudy = useCallback((active: boolean, mode: "manual" | "walking" = "manual", activeUntil?: number) => {
+    setStudySignal(previous => previous?.view === currentView && previous.language === language && previous.active === active && previous.mode === mode && previous.activeUntil === activeUntil
+      ? previous : { view: currentView, language, active, mode, activeUntil });
+  }, [currentView, language]);
+  const [trainingSignal, setTrainingSignal] = useState<StudySignal | null>(null);
+  const studyView = effectiveStudyView(currentView, trainingMode);
+  const reportTraining = useCallback((active: boolean, mode: "manual" | "walking" = "manual", activeUntil?: number) => {
+    setTrainingSignal({ view: studyView, language, active, mode, activeUntil });
+  }, [studyView, language]);
+  const studyWarning = useStudyTracking(studyView, language, trainingMode ? trainingSignal : studySignal,
+    !!settingsDialog || trainingMode === "review" || (studyView !== "shadowing" && (loading || !data)));
 
   // Mesma verificacao de modo autor usada pelas ferramentas existentes.
   const authorMode = isAuthorMode();
@@ -314,7 +329,7 @@ function App() {
           } else {
             setFilterScrollRequest(0);
           }
-          if (view === "shadowing" || view === "favorite-chunks") {
+          if (view === "shadowing" || view === "favorite-chunks" || view === "study-dashboard") {
             closeTraining();
             setSelected(null);
             window.speechSynthesis?.cancel();
@@ -338,16 +353,18 @@ function App() {
               source={data ? source : undefined}
               onClose={() => setSettingsDialog(null)}
             />}
-            {currentView === "shadowing" && <StoryShadowing key={`${sourceLanguage}-${language}`} language={language} onMenu={() => setCurrentView("hashmap")} />}
+            {studyWarning && (studyWarning !== "compatibility" || currentView === "study-dashboard") && <p className="warning-banner" role="status">{t(`study.warning.${studyWarning}`)}</p>}
+            {currentView === "study-dashboard" && <StudyDashboard language={language} />}
+            {currentView === "shadowing" && <StoryShadowing key={`${sourceLanguage}-${language}`} language={language} onStudyState={reportStudy} onMenu={() => setCurrentView("hashmap")} />}
 
-        {loading && currentView !== "shadowing" && (
+        {loading && currentView !== "shadowing" && currentView !== "study-dashboard" && (
           <div className="status-card">
             <div className="spinner" />
             <p>{t("app.loadingMentalHashmap")}</p>
           </div>
         )}
 
-        {!loading && error && !data && currentView !== "shadowing" && (
+        {!loading && error && !data && currentView !== "shadowing" && currentView !== "study-dashboard" && (
           <div className="status-card error-card">
             <h2>{t("app.couldNotLoadMentalHashmap")}</h2>
             <p>{error}</p>
@@ -440,6 +457,7 @@ function App() {
             {!loading && data && (currentView === "chunk-flashcards" || currentView === "favorite-chunks") && (
               <div style={{ display: trainingMode ? "none" : undefined }}>
                 <ChunkFlashcards
+                  onStudyState={reportStudy}
                   sourceLanguage={sourceLanguage}
                   key={`${sourceLanguage}-${language}-${currentView}`}
                   mode={currentView === "favorite-chunks" ? "favorites" : "all"}
@@ -458,7 +476,7 @@ function App() {
 
             {!loading && data && currentView === "memory-flashcards" && (
               <div style={{ display: trainingMode ? "none" : undefined }}>
-                <MemoryFlashcards key={sourceLanguage + "-" + language}
+                <MemoryFlashcards onStudyState={reportStudy} key={sourceLanguage + "-" + language}
                   favorites={favorites}
                   onToggleFavorite={(id, type) => toggleFavorite(id, language, type)}
                   intentions={data.mentalMap} language={language} sourceLanguage={sourceLanguage}
@@ -474,12 +492,13 @@ function App() {
             )}
 
             {!loading && currentView === "speaking-game" && !trainingMode && (
-              <SpeakingGame key={`${sourceLanguage}-${language}`} language={language} sourceLanguage={sourceLanguage} />
+              <SpeakingGame onStudyState={reportStudy} key={`${sourceLanguage}-${language}`} language={language} sourceLanguage={sourceLanguage} />
             )}
 
             {currentView === "interpretation" &&
               !trainingMode && (
                 <InterpretationPanel
+                  onStudyState={reportStudy}
                   language={language}
                   sourceLanguage={sourceLanguage}
                   intentions={data?.mentalMap ?? []}
@@ -491,6 +510,7 @@ function App() {
               trainingMode === "basic" &&
               trainingIntention && (
                 <BasicTraining
+                  onStudyState={reportTraining}
                   sourceLanguage={sourceLanguage}
                   language={language}
                   intention={trainingIntention}
@@ -503,6 +523,7 @@ function App() {
               trainingMode === "advanced" &&
               trainingIntention && (
                 <AdvancedTraining
+                  onStudyState={reportTraining}
                   language={language}
                   intention={trainingIntention}
                   onBack={closeTraining}

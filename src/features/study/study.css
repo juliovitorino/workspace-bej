@@ -1,0 +1,41 @@
+.study-dashboard { display: grid; gap: 20px; min-width: 0; }
+.study-dashboard h2, .study-dashboard h3, .study-dashboard h4 { margin: 0 0 12px; }
+.study-panel { min-width: 0; margin: 0; padding: 20px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); }
+.study-dashboard fieldset { min-width: 0; margin: 0; border: 0; padding: 0; }
+.study-dashboard fieldset.study-panel { border: 1px solid var(--border); padding: 20px; }
+.study-dashboard legend { font-weight: 700; margin-bottom: 12px; }
+.study-dashboard label { display: grid; min-width: 0; gap: 6px; margin-bottom: 12px; }
+.study-dashboard input, .study-dashboard select { box-sizing: border-box; width: 100%; min-width: 0; min-height: 44px; padding: 10px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--surface); color: var(--text); }
+.study-dashboard button { min-height: 44px; overflow-wrap: anywhere; }
+.study-filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+.study-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
+.study-metrics .study-panel { display: grid; gap: 10px; }
+.study-metrics strong { font-size: 1.35rem; }
+.study-charts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px; }
+.study-goal { border-top: 1px solid var(--border); padding-top: 16px; margin-top: 16px; }
+.study-dashboard progress { width: 100%; height: 18px; accent-color: var(--accent); }
+.study-chart, .study-history { list-style: none; padding: 0; margin: 0; }
+.study-chart { display: grid; gap: 16px; max-height: 360px; overflow-y: auto; }
+.study-chart-modules { max-height: none; overflow: visible; }
+.study-chart-modules li, .study-chart-modules li > div:first-child > * { min-width: 0; overflow-wrap: anywhere; }
+.study-chart li > div:first-child { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; }
+.study-bar { height: 10px; background: var(--surface-soft); border-radius: 6px; margin-top: 6px; overflow: hidden; }
+.study-bar span { display: block; height: 100%; background: var(--accent); }
+.study-history li { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.study-history li > div:first-child { display: grid; gap: 5px; min-width: 0; overflow-wrap: anywhere; }
+.study-history-pagination { margin-top: 16px; justify-content: space-between; }
+.study-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.study-preview { border-top: 1px solid var(--border); padding-top: 20px; margin-top: 20px; }
+.study-preview dl { display: grid; gap: 10px; }
+.study-preview dl > div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+.study-preview dd { margin: 0; font-weight: 700; }
+.study-dashboard .study-check { display: flex; align-items: center; gap: 10px; margin-top: 16px; }
+.study-dashboard .study-check input { width: 22px; height: 22px; min-height: 22px; flex-shrink: 0; }
+.study-note { color: var(--muted); font-size: .9rem; margin: 0; }
+.study-feedback { padding: 16px; border: 1px solid var(--good-border); border-radius: 10px; background: var(--good-soft); color: var(--good); }
+.study-dashboard :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.training-study-time { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: 12px 0 20px; padding: 12px 16px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--text); }
+.training-study-time time { font-size: 1.25rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.training-study-time [role="status"] { color: var(--muted); font-size: .85rem; }
+.training-study-pause { display: inline-flex; align-items: center; justify-content: center; width: 44px; min-height: 44px; padding: 8px; }
+@media (max-width: 820px) { .study-panel { padding: 16px; } .study-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } .study-metrics strong { font-size: 1.05rem; } }

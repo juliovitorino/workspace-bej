@@ -12,6 +12,7 @@ import type { FavoriteChunk } from "../utils/favoriteChunks";
 import { FavoriteChunkButton } from "./FavoriteChunkButton";
 
 interface Props {
+  onStudyState?: (active: boolean, mode?: "manual" | "walking") => void;
   favorites?: FavoriteChunk[];
   onToggleFavorite?: (id: string, type?: "example") => void;
   intentions: MentalIntention[];
@@ -90,6 +91,10 @@ function MemoryRound({ eligible, level, onLevelChange, ...props }: Props & {
       window.removeEventListener(PERSONAL_CARDS_CHANGED, refresh);
     };
   }, []);
+  useEffect(() => {
+    props.onStudyState?.(running && eligible.length > 0, "manual");
+    return () => props.onStudyState?.(false, "manual");
+  }, [running, eligible.length > 0, props.onStudyState]);
   const current = deck[position];
   const total = deck.length;
   const complete = total > 0 && studied.size === total;

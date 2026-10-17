@@ -1,3 +1,5 @@
+import { useTrainingStudy, type TrainingStudyReporter } from "../features/study/useTrainingStudy";
+import { TrainingStudyTime } from "../features/study/TrainingStudyTime";
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { isAuthorMode } from "../utils/authorMode";
@@ -98,6 +100,7 @@ function renderHighlightedText(
 }
 
 interface BasicTrainingProps {
+  onStudyState?: TrainingStudyReporter;
   intention: MentalIntention;
   language: StudentLanguage;
   sourceLanguage: SourceLanguage;
@@ -161,6 +164,7 @@ function pickRandom<T>(items: T[]): T | null {
 }
 
 export function BasicTraining({
+  onStudyState,
   intention,
   language,
   sourceLanguage,
@@ -206,6 +210,8 @@ export function BasicTraining({
   const [dictating, setDictating] = useState(false);
   const showDictationButton = !isMobileDevice();
   const [dictationError, setDictationError] = useState<string | null>(null);
+  const { recordActivity: recordStudyActivity, studyPaused, toggleStudyPause, ...studyEvents } = useTrainingStudy(`basic-training:${language}:${intention.id}`, !loading && !error,
+    evaluating || translating, speaking || evaluationSpeaking !== null || speakingExample !== null, onStudyState);
   const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
   const trainingGridRef = useRef<HTMLDivElement>(null);
 
@@ -397,10 +403,12 @@ export function BasicTraining({
     recognition.maxAlternatives = 1;
 
     recognition.onstart = () => {
+      recordStudyActivity();
       setDictating(true);
     };
 
     recognition.onresult = (event) => {
+      recordStudyActivity();
       const transcripts: string[] = [];
 
       for (
@@ -846,7 +854,8 @@ export function BasicTraining({
   }
 
   return (
-    <section className="basic-training">
+    <section className="basic-training" {...studyEvents}>
+      <TrainingStudyTime module="basic-training" language={language} paused={studyPaused} onTogglePause={toggleStudyPause} />
       <div className="training-toolbar">
         <button
           type="button"
