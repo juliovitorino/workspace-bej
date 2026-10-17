@@ -31,6 +31,11 @@
     "allCategories": "Todas las categorías"
   },
   "study": {
+    "historyTitle": "Historial de estudios",
+    "backDashboard": "Volver al panel",
+    "settings": "Configuraci?n",
+    "moreDetails": "+ Detalles",
+    "lessDetails": "? Detalles",
     "historyPages": "Paginación del historial",
     "historyPage": "Página {{page}} de {{total}} · {{count}} registros",
     "basicTraining": "Ejercicio básico",
@@ -49,7 +54,10 @@
     "from": "Desde",
     "to": "Hasta",
     "duration": "{{hours}}h {{minutes}}min {{seconds}}s",
-    "zeroDuration": "0h 0min",
+    "durationHours": "{{count}}h",
+    "durationMinutes": "{{count}}min",
+    "durationSeconds": "{{count}}s",
+    "zeroDuration": "0s",
     "hoursValue": "{{hours}} horas",
     "accumulated": "Tiempo del periodo",
     "today": "Hoy",

@@ -572,7 +572,7 @@ function App() {
         onAdvancedTraining={(item) => startTraining(item, "advanced")}
         onReviewTraining={(item) => startTraining(item, "review")}
       />
-      <div className="mobile-floating-controls">
+      <div id="app-floating-controls" className="mobile-floating-controls">
         {currentView === "hashmap" && !loading && data && !trainingMode && (
           <button type="button" className="hashmap-filter-toggle"
             aria-label={t(filtersVisible ? "navigation.hideFilters" : "navigation.showFilters")}
