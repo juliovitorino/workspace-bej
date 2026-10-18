@@ -144,6 +144,8 @@ function normalizeHashmap(target: HashmapDataV4, source: HashmapDataV4): Hashmap
       english: item.structure || item.pattern || item.intention,
       targetIntention: localizedIntention(item, target.metadata.language),
       sourceAudioText: original ? localizedIntention(original, source.metadata.language) : "",
+      // Inclui TODOS os exemplos do idioma de origem, mesmo sem par no destino.
+      sourceExampleTexts: (original?.examples ?? []).map((example) => example.exampleItem),
       // Não perder os campos de busca da origem ao normalizar o catálogo de estudo.
       sourcePattern: original?.pattern,
       sourceStructure: original?.structure,

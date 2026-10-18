@@ -32,6 +32,12 @@ export function useStudyTracking(view: string, language: StudentLanguage, signal
     const interaction = (event: Event) => {
       if (!event.isTrusted) return;
       const target = event.target;
+      // Consulta e filtragem não são operações de estudo: evitar qualquer
+      // checkpoint/re-render do monitoramento no meio da digitação (iOS).
+      // Este retorno não altera as permissões de escrita nem o relógio da aba
+      // proprietária de uma Atividade Extra em andamento.
+      if (view === "hashmap" && typeof Element !== "undefined" && target instanceof Element &&
+          target.closest("#hashmap-search-filters")) return;
       if (event.type === "scroll" && Date.now() - scrollIntent > 1500) return;
       studyTracker.interactExtra();
       if (typeof Element !== "undefined" && target instanceof Element && target.closest(".sidebar, .mobile-floating-controls, .app-settings-dialog, .app-header")) return;
