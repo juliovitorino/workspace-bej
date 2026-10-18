@@ -33,6 +33,7 @@ export function cancelNeuralExampleAudio(): void {
   }
 }
 
+/** SHA-256 via Web Crypto, available in HTTPS and localhost contexts. */
 async function sha256(text: string): Promise<string | null> {
   if (!globalThis.crypto?.subtle) return null;
   const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
@@ -44,7 +45,13 @@ function safeAudioPath(path: unknown, language: string, voice: NeuralVoice, id: 
     path === `/audio/${language}/${voice}/${id}-${voice}.mp3`;
 }
 
-/** Only play a recorded file when its source text hash matches the current example. */
+/**
+ * Uses the recording when its path is trusted and the example text hash matches.
+ * On HTTP without Web Crypto, the recorded file is allowed by its strict local path;
+ * SHA-256 verification is skipped only because the browser API is unavailable.
+ *
+ * Note: secure/integrity-sensitive deployments should serve the app over HTTPS.
+ */
 export async function playNeuralExampleAudio({
   example, language, voice = DEFAULT_NEURAL_VOICE, onStart, onEnd, onError
 }: PlayOptions): Promise<void> {
@@ -73,14 +80,17 @@ export async function playNeuralExampleAudio({
 
   if (language !== "en-US") { fallback(); return; }
   let hash: string | null = null;
-  try { hash = await sha256(text); } catch { /* Browser may not provide Web Crypto. */ }
+  try { hash = await sha256(text); } catch { /* Web Crypto may be blocked on HTTP. */ }
   if (request !== generation) return;
-  if (!hash) { fallback(); return; }
 
   const order: NeuralVoice[] = voice === "marin" ? ["marin", "cedar"] : ["cedar"];
   const urls = order.flatMap(candidate => {
     const url = example.mp3?.[candidate];
-    return safeAudioPath(url, language, candidate, example.id) && example.hashmp3?.[candidate] === hash ? [url] : [];
+    const recordedHash = example.hashmp3?.[candidate];
+    const matchesHash = hash === null || recordedHash === hash;
+    return safeAudioPath(url, language, candidate, example.id) &&
+      typeof recordedHash === "string" && /^[a-f0-9]{64}$/i.test(recordedHash) &&
+      matchesHash ? [url] : [];
   });
   const tryNext = (index: number) => {
     if (request !== generation) return;
@@ -103,7 +113,6 @@ export async function playNeuralExampleAudio({
       if (request !== generation || failed) return;
       failed = true;
       clear();
-      // If playback already began, do not unexpectedly switch voices mid-sentence.
       if (started) onError?.(); else tryNext(index + 1);
     };
     void audio.play().catch(() => {
