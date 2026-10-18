@@ -5,7 +5,9 @@ export interface LearningRound {
   presentedItemIds: string[];
   updatedAt: string;
 }
+
 export const roundKey = (language: string, module: string) => `bej-learning-round-v1:${language}:${module}`;
+
 export function readRound(key: string): LearningRound {
   const raw = localStorage.getItem(key);
   if (raw) {
@@ -17,28 +19,38 @@ export function readRound(key: string): LearningRound {
   }
   return { version: 1, round: 1, completedRounds: 0, presentedItemIds: [], updatedAt: new Date().toISOString() };
 }
-// Callers hold the existing module study control for selection AND presentation.
-// A filtered pool never discards progress in the full eligible catalog.
+
+// Os filtros de nível não descartam progresso do catálogo completo.
 export function reconcileRound(key: string, eligible: string[]): LearningRound {
   const state = readRound(key), ids = new Set(eligible);
   state.presentedItemIds = [...new Set(state.presentedItemIds)].filter(id => ids.has(id));
   return state;
 }
+
 export function saveRound(key: string, state: LearningRound) {
   state.updatedAt = new Date().toISOString();
   localStorage.setItem(key, JSON.stringify(state));
   window.dispatchEvent(new Event("bej-learning-round-changed"));
   return state;
 }
-export function finishRound(key: string, eligible: string[], fullCatalog = eligible) {
+
+// A conclusão exige que TODOS os elegíveis do catálogo completo tenham sido
+// apresentados, mesmo quando o estudante estiver filtrando apenas um nível.
+export function finishRound(key: string, _filteredEligible: string[], fullCatalog = _filteredEligible) {
   const state = reconcileRound(key, fullCatalog);
-  if (eligible.length && eligible.every(id => state.presentedItemIds.includes(id))) {
-    state.round++; state.completedRounds++; state.presentedItemIds = [];
+  const allIds = [...new Set(fullCatalog)];
+  if (allIds.length > 0 && allIds.every(id => state.presentedItemIds.includes(id))) {
+    state.round++; state.completedRounds++;
+    state.presentedItemIds = [];
   }
   return saveRound(key, state);
 }
+
 export function presentItem(key: string, eligible: string[], id: string) {
   const state = reconcileRound(key, eligible);
-  if (eligible.includes(id) && !state.presentedItemIds.includes(id)) state.presentedItemIds.push(id);
-  return saveRound(key, state);
+  if (eligible.includes(id) && !state.presentedItemIds.includes(id)) {
+    state.presentedItemIds.push(id);
+    return saveRound(key, state);
+  }
+  return state;
 }

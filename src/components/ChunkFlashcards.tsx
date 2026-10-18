@@ -59,7 +59,6 @@ export function ChunkFlashcards({
   onAdvancedTraining
 }: ChunkFlashcardsProps) {
   const { t } = useTranslation();
-  const trackedSeconds = useStudyReading(mode === "favorites" ? "chunk-favorites" : "chunk-flashcards", language);
   const authorMode = isAuthorMode();
   const [walking, setWalking] = useState(false);
   const [walkingSummary, setWalkingSummary] = useState<WalkingSummary | null>(null);
@@ -182,7 +181,7 @@ export function ChunkFlashcards({
         return;
       }
       if (mode === "favorites" && chunks.length === 0) {
-        cancelStudyAudio();
+        window.speechSynthesis?.cancel();
         if (studyStartedAt !== null) {
           setElapsedSeconds(Math.max(0, Math.floor(((pausedAt ?? Date.now()) - studyStartedAt - totalPausedMs) / 1000)));
           setStudyStartedAt(null);
@@ -210,7 +209,9 @@ export function ChunkFlashcards({
   }, [studyChunk, walking, studyStartedAt, pausedAt, chunks.length > 0, onStudyState]);
   const total = chunks.length;
   const shownCount = chunks.filter(item => drawnIds.includes(item.id)).length;
-  const completed = total > 0 && shownCount === total;
+  const completed = allEligible.length > 0 &&
+    allEligible.every(item => drawnIds.includes(item.id));
+  const shownHistory = drawnIds.filter(id => chunks.some(item => item.id === id));
   const position = currentId === null ? 0 : Math.min(total, shownCount + (drawnIds.includes(currentId) ? 0 : 1));
 
   function nextChunk(pool: MentalIntention[] = chunks) {
@@ -222,7 +223,7 @@ export function ChunkFlashcards({
     // Inicia no primeiro chunk; uma nova rodada não zera a sessão.
     if (studyStartedAt === null) setStudyStartedAt(Date.now());
     if (typeof window !== "undefined" && "speechSynthesis" in window) {
-      cancelStudyAudio();
+      window.speechSynthesis.cancel();
     }
     setAudioError(null);
     if (copyFeedbackTimeout.current !== null) clearTimeout(copyFeedbackTimeout.current);
@@ -233,7 +234,15 @@ export function ChunkFlashcards({
     try {
       studyTracker.requireControl();
       const state = finishRound(persistenceKey, pool.map(item => item.id), allEligible.map(item => item.id));
-      const candidates = pool.filter(item => !state.presentedItemIds.includes(item.id));
+      let candidates = pool.filter(item => !state.presentedItemIds.includes(item.id));
+      // Se o nível escolhido se esgotar, preservar os demais IDs da rodada.
+      // No modo caminhada, continuar automaticamente pelo catálogo completo
+      // para não deixar o aluno sem áudio com o telefone no bolso.
+      if (!candidates.length && walking && pool.length > 0 &&
+          state.presentedItemIds.length < allEligible.length) {
+        candidates = allEligible.filter(item => !state.presentedItemIds.includes(item.id));
+        setLevel("all");
+      }
       if (!candidates.length) { setCurrentId(null); return; }
       const selected = candidates[Math.floor(Math.random() * candidates.length)];
       setRound(state.round); setDrawnIds(state.presentedItemIds); setCurrentId(selected.id);
@@ -243,8 +252,9 @@ export function ChunkFlashcards({
   function recordPresentation() {
     if (!currentChunk || studyChunk) return;
     studyTracker.requireControl();
-    let state = presentItem(persistenceKey, allEligible.map(item => item.id), currentChunk.id);
-    if (!walking) state = finishRound(persistenceKey, chunks.map(item => item.id), allEligible.map(item => item.id));
+    // Marcar ao exibir no modo manual ou ao iniciar o áudio no modo caminhada.
+    // A rodada manual só reinicia no próximo sorteio, não ao exibir o último cartão.
+    const state = presentItem(persistenceKey, allEligible.map(item => item.id), currentChunk.id);
     setDrawnIds(state.presentedItemIds); setRound(state.round);
   }
   useEffect(() => {
@@ -267,7 +277,7 @@ export function ChunkFlashcards({
 
   function changeLevel(nextLevel: ChunkLevel) {
     if (nextLevel === level) return;
-    cancelStudyAudio();
+    window.speechSynthesis?.cancel();
     setLevel(nextLevel);
     setAudioError(null);
     setCopiedChunkId(null);
@@ -347,7 +357,7 @@ export function ChunkFlashcards({
 
     setAudioError(null);
     const synth = window.speechSynthesis;
-    cancelStudyAudio();
+    synth.cancel();
     const utterance = new SpeechSynthesisUtterance((currentChunk.targetIntention ?? currentChunk.english).trim());
     utterance.lang = language;
     utterance.rate = 0.9;
@@ -359,13 +369,13 @@ export function ChunkFlashcards({
         setAudioError(t("flashcards.couldNotPlayTheAudioInThisBrowser"));
       }
     };
-    speakStudyAudio(utterance);
+    synth.speak(utterance);
   }
 
   useEffect(() => {
     return () => {
       if (typeof window !== "undefined" && "speechSynthesis" in window) {
-        cancelStudyAudio();
+        window.speechSynthesis.cancel();
       }
     };
   }, []);
@@ -500,8 +510,8 @@ export function ChunkFlashcards({
       favorite={favorites.some(favorite => favorite.id === favoriteId && favorite.type === favoriteType && favorite.language === language)}
       onToggleFavorite={onToggleFavorite && currentChunk ? () => onToggleFavorite(favoriteId!, favoriteType) : undefined}
       level={level} onLevelChange={changeLevel} position={shownCount} total={total} round={round}
-      canPrevious={currentId !== null && drawnIds.indexOf(currentId) > 0}
-      onPrevious={() => { const previous = currentId === null ? -1 : drawnIds.indexOf(currentId) - 1; if (previous >= 0) setCurrentId(drawnIds[previous]); }}
+      canPrevious={currentId !== null && shownHistory.indexOf(currentId) > 0}
+      onPrevious={() => { const previous = currentId === null ? -1 : shownHistory.indexOf(currentId) - 1; if (previous >= 0) setCurrentId(shownHistory[previous]); }}
       onNext={() => {
         nextChunk();
         return completed;
@@ -520,9 +530,9 @@ export function ChunkFlashcards({
         <div className="chunk-flashcards-heading-tools">
           <span className="chunk-flashcards-total">{t("flashcards.availableChunks", { count: total })}</span>
           {isStudyTimeVisible && (
-            <span className="chunk-flashcards-study-time" aria-label={t("flashcards.studyTimeTime", { time: (formatStudyTime(trackedSeconds ?? elapsedSeconds)) })}>
+            <span className="chunk-flashcards-study-time" aria-label={t("flashcards.studyTimeTime", { time: (formatStudyTime(elapsedSeconds)) })}>
               <span className="chunk-flashcards-study-time-label">{t("common.studyTime")}</span>
-              <span className="chunk-flashcards-study-time-value">{formatStudyTime(trackedSeconds ?? elapsedSeconds)}</span>
+              <span className="chunk-flashcards-study-time-value">{formatStudyTime(elapsedSeconds)}</span>
             </span>
           )}
           <button
@@ -601,7 +611,7 @@ export function ChunkFlashcards({
             {"⏸ "}{t("flashcards.studyPaused")}
           </strong>
           <span style={{ display: "block", marginTop: "0.3rem", fontWeight: 600 }}>
-            {t("flashcards.timerPaused", { time: formatStudyTime(trackedSeconds ?? elapsedSeconds) })}
+            {t("flashcards.timerPaused", { time: formatStudyTime(elapsedSeconds) })}
           </span>
         </div>
       )}
@@ -649,7 +659,7 @@ export function ChunkFlashcards({
             {mobile && <button type="button" className="primary-button walking-entry" onClick={() => {
               if (!isMobileDevice()) return;
               if (!currentChunk || drawnIds.includes(currentChunk.id)) nextChunk();
-              cancelStudyAudio();
+              window.speechSynthesis?.cancel();
               setWalkingSummary(null);
               setWalking(true);
             }}>{"🎧 "}{t("common.walkingMode")}</button>}
