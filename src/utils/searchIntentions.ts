@@ -23,7 +23,8 @@ function sourceFields(item: MentalIntention): (string | undefined)[] {
     item.sourcePattern,
     item.sourceStructure,
     ...(item.sourceSearchTerms ?? []),
-    ...(item.examples ?? []).map((example) => example.pt)
+    // Fonte canônica: inclui exemplos da origem mesmo quando ausentes no destino.
+    ...(item.sourceExampleTexts ?? (item.examples ?? []).map((example) => example.pt))
   ];
 }
 
@@ -34,7 +35,8 @@ function targetFields(item: MentalIntention): (string | undefined)[] {
     item.pattern,
     item.english,
     ...(item.searchTerms ?? []),
-    ...(item.examples ?? []).map((example) => example.en)
+    // exampleItem é o texto normalizado do idioma estudado (JSON 4.0).
+    ...(item.examples ?? []).map((example) => example.exampleItem || example.en)
   ];
 }
 
