@@ -161,12 +161,28 @@
         {
           "id": "c54e21fc-01c2-4abb-a20c-1320faecf6b0",
           "exampleItem": "He is tired.",
-          "intent": "is"
+          "intent": "is",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/c54e21fc-01c2-4abb-a20c-1320faecf6b0-cedar.mp3",
+            "marin": "/audio/en-US/marin/c54e21fc-01c2-4abb-a20c-1320faecf6b0-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "c6f07a992ab8639ad40f27c8c79074085bd2bc8db6e5344ddf65b3f566304a2e",
+            "marin": "c6f07a992ab8639ad40f27c8c79074085bd2bc8db6e5344ddf65b3f566304a2e"
+          }
         },
         {
           "id": "3a6265b3-8aab-40ba-81f5-14da7d8db231",
           "exampleItem": "I am happy.",
-          "intent": "am"
+          "intent": "am",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/3a6265b3-8aab-40ba-81f5-14da7d8db231-cedar.mp3",
+            "marin": "/audio/en-US/marin/3a6265b3-8aab-40ba-81f5-14da7d8db231-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "e4383618e44faf25843ea47a405387e0090bae5c576aa834f18c14a46d221610",
+            "marin": "e4383618e44faf25843ea47a405387e0090bae5c576aa834f18c14a46d221610"
+          }
         }
       ]
     },
@@ -194,12 +210,28 @@
         {
           "id": "a8847dc8-0b58-4939-b735-485a6899c6c4",
           "exampleItem": "He was tired.",
-          "intent": "was"
+          "intent": "was",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/a8847dc8-0b58-4939-b735-485a6899c6c4-cedar.mp3",
+            "marin": "/audio/en-US/marin/a8847dc8-0b58-4939-b735-485a6899c6c4-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "18c4f7a7683843e6c2b1b11de504a8d9acba92dedb72674db603e5e45e9be957",
+            "marin": "18c4f7a7683843e6c2b1b11de504a8d9acba92dedb72674db603e5e45e9be957"
+          }
         },
         {
           "id": "b9fcb7e3-0f76-4335-a5db-95a2425fba30",
           "exampleItem": "We were playing soccer yesterday.",
-          "intent": "were"
+          "intent": "were",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/b9fcb7e3-0f76-4335-a5db-95a2425fba30-cedar.mp3",
+            "marin": "/audio/en-US/marin/b9fcb7e3-0f76-4335-a5db-95a2425fba30-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "118e76f262694c9a64c96433d476d260efdfddd1c83144fb5dec89db59ac2c98",
+            "marin": "118e76f262694c9a64c96433d476d260efdfddd1c83144fb5dec89db59ac2c98"
+          }
         }
       ]
     },
@@ -228,12 +260,28 @@
         {
           "id": "066f4e47-11fb-41bc-ad56-f8761e8ad73a",
           "exampleItem": "I have been working.",
-          "intent": "have"
+          "intent": "have",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/066f4e47-11fb-41bc-ad56-f8761e8ad73a-cedar.mp3",
+            "marin": "/audio/en-US/marin/066f4e47-11fb-41bc-ad56-f8761e8ad73a-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "91aae5d84830c2c98f768138696097f2efa3d200c2a6feb71f120e5966658074",
+            "marin": "91aae5d84830c2c98f768138696097f2efa3d200c2a6feb71f120e5966658074"
+          }
         },
         {
           "id": "39db8216-4d33-4a07-9b16-4ab5d10002c8",
           "exampleItem": "The build has been running for 11m.",
-          "intent": "has been"
+          "intent": "has been",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/39db8216-4d33-4a07-9b16-4ab5d10002c8-cedar.mp3",
+            "marin": "/audio/en-US/marin/39db8216-4d33-4a07-9b16-4ab5d10002c8-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "132ee53b6ee5ef61f0fa8f206cdf1caf0ce838cfbea604f6a64d74f4093af038",
+            "marin": "132ee53b6ee5ef61f0fa8f206cdf1caf0ce838cfbea604f6a64d74f4093af038"
+          }
         }
       ]
     },
@@ -261,7 +309,15 @@
         {
           "id": "44be0cd5-6dcb-4ca4-94aa-b539130cf67c",
           "exampleItem": "I have learnt a lot.",
-          "intent": "have"
+          "intent": "have",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/44be0cd5-6dcb-4ca4-94aa-b539130cf67c-cedar.mp3",
+            "marin": "/audio/en-US/marin/44be0cd5-6dcb-4ca4-94aa-b539130cf67c-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "4b6675c2d8b958c4ea31001260e0f04eb059adbbe58e691653fdf321e1b610eb",
+            "marin": "4b6675c2d8b958c4ea31001260e0f04eb059adbbe58e691653fdf321e1b610eb"
+          }
         }
       ]
     },
@@ -290,12 +346,28 @@
         {
           "id": "c35ced6b-85c0-4dfc-b8d6-34579dfbf401",
           "exampleItem": "I have been tired lately.",
-          "intent": "have"
+          "intent": "have",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/c35ced6b-85c0-4dfc-b8d6-34579dfbf401-cedar.mp3",
+            "marin": "/audio/en-US/marin/c35ced6b-85c0-4dfc-b8d6-34579dfbf401-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "277868226c37d4c32f09e189dd175ee620870236c9e6bb7e22a17a07e368baf1",
+            "marin": "277868226c37d4c32f09e189dd175ee620870236c9e6bb7e22a17a07e368baf1"
+          }
         },
         {
           "id": "c982c1e4-1cfc-42a2-b979-5464c4b9bf5d",
           "exampleItem": "She has been saddened over last years.",
-          "intent": "has been"
+          "intent": "has been",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/c982c1e4-1cfc-42a2-b979-5464c4b9bf5d-cedar.mp3",
+            "marin": "/audio/en-US/marin/c982c1e4-1cfc-42a2-b979-5464c4b9bf5d-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "55ec5834a31811ea96d7d9f3ed48c6a52fb496645725e678f691fe66158f750b",
+            "marin": "55ec5834a31811ea96d7d9f3ed48c6a52fb496645725e678f691fe66158f750b"
+          }
         }
       ]
     },
@@ -329,17 +401,41 @@
         {
           "id": "230ca48e-1a27-43c2-975a-ab38c6b31eb6",
           "exampleItem": "I have to pay my taxes.",
-          "intent": "have"
+          "intent": "have",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/230ca48e-1a27-43c2-975a-ab38c6b31eb6-cedar.mp3",
+            "marin": "/audio/en-US/marin/230ca48e-1a27-43c2-975a-ab38c6b31eb6-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "c8da1ae31686deb607c1627376a3acf6b90b6233de23f12a5d3f10c28c9be465",
+            "marin": "c8da1ae31686deb607c1627376a3acf6b90b6233de23f12a5d3f10c28c9be465"
+          }
         },
         {
           "id": "b6a02419-c897-4858-976b-4ea2e6b5f9b9",
           "exampleItem": "I need to sleep.",
-          "intent": "need to"
+          "intent": "need to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/b6a02419-c897-4858-976b-4ea2e6b5f9b9-cedar.mp3",
+            "marin": "/audio/en-US/marin/b6a02419-c897-4858-976b-4ea2e6b5f9b9-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "25947b4b7b872d6611989bb7e3d525ac9a0f00894dce6a3d38efb14fd119dcc8",
+            "marin": "25947b4b7b872d6611989bb7e3d525ac9a0f00894dce6a3d38efb14fd119dcc8"
+          }
         },
         {
           "id": "c8a0c8df-c5b5-4cb6-89c4-2a2af4557dbf",
           "exampleItem": "I gotta go.",
-          "intent": "gotta"
+          "intent": "gotta",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/c8a0c8df-c5b5-4cb6-89c4-2a2af4557dbf-cedar.mp3",
+            "marin": "/audio/en-US/marin/c8a0c8df-c5b5-4cb6-89c4-2a2af4557dbf-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "52f2ed80c56f515533a3ae589803829bd816102a85f3cd5d94e6dc514f9eacbf",
+            "marin": "52f2ed80c56f515533a3ae589803829bd816102a85f3cd5d94e6dc514f9eacbf"
+          }
         }
       ]
     },
@@ -369,7 +465,15 @@
         {
           "id": "a6984f58-742f-4e26-a9c6-ffea797dabc6",
           "exampleItem": "I’m having to change the way I study English.",
-          "intent": "having to"
+          "intent": "having to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/a6984f58-742f-4e26-a9c6-ffea797dabc6-cedar.mp3",
+            "marin": "/audio/en-US/marin/a6984f58-742f-4e26-a9c6-ffea797dabc6-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "ac7e8382b7b0566d9050d5093fc3d1179216356862f601ea01fb6c3214dd7b4f",
+            "marin": "ac7e8382b7b0566d9050d5093fc3d1179216356862f601ea01fb6c3214dd7b4f"
+          }
         }
       ]
     },
@@ -396,7 +500,15 @@
         {
           "id": "0f1e4ffb-2b72-4b26-bd5c-04ece5c8c8b0",
           "exampleItem": "Have you had problems with the tool?",
-          "intent": "Have you had"
+          "intent": "Have you had",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/0f1e4ffb-2b72-4b26-bd5c-04ece5c8c8b0-cedar.mp3",
+            "marin": "/audio/en-US/marin/0f1e4ffb-2b72-4b26-bd5c-04ece5c8c8b0-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "4c70eef71842c8e7615e446e52f92f13ff399c6913353a6ee6383e4e1bcef374",
+            "marin": "4c70eef71842c8e7615e446e52f92f13ff399c6913353a6ee6383e4e1bcef374"
+          }
         }
       ]
     },
@@ -425,12 +537,28 @@
         {
           "id": "a253fd19-4769-4b2c-9ed8-f6d445b3f0c2",
           "exampleItem": "I’ve been the champion for 7 years.",
-          "intent": "been"
+          "intent": "been",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/a253fd19-4769-4b2c-9ed8-f6d445b3f0c2-cedar.mp3",
+            "marin": "/audio/en-US/marin/a253fd19-4769-4b2c-9ed8-f6d445b3f0c2-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "b9bfd24ed8cd8668d6e428d39b8447fed232d69472138c8a6f20b88bd56771fa",
+            "marin": "b9bfd24ed8cd8668d6e428d39b8447fed232d69472138c8a6f20b88bd56771fa"
+          }
         },
         {
           "id": "7aaffbcd-da1d-4a5c-9dff-a3c542db0da4",
           "exampleItem": "It has been hard.",
-          "intent": "has been"
+          "intent": "has been",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/7aaffbcd-da1d-4a5c-9dff-a3c542db0da4-cedar.mp3",
+            "marin": "/audio/en-US/marin/7aaffbcd-da1d-4a5c-9dff-a3c542db0da4-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "cff5dd7cee6ae2ba1209ae5efc4da262ce8c38283393f502e65ebe00d7612f81",
+            "marin": "cff5dd7cee6ae2ba1209ae5efc4da262ce8c38283393f502e65ebe00d7612f81"
+          }
         }
       ]
     },
@@ -459,12 +587,28 @@
         {
           "id": "57da2135-2ce0-4412-ab55-2a3adcc940dd",
           "exampleItem": "I have had nightmares.",
-          "intent": "have"
+          "intent": "have",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/57da2135-2ce0-4412-ab55-2a3adcc940dd-cedar.mp3",
+            "marin": "/audio/en-US/marin/57da2135-2ce0-4412-ab55-2a3adcc940dd-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "33e1cd50bca77c06ae5db227240296131b00c1e343465ba017d84622ef5927f3",
+            "marin": "33e1cd50bca77c06ae5db227240296131b00c1e343465ba017d84622ef5927f3"
+          }
         },
         {
           "id": "c54e7918-8b29-47f9-bb07-d909199e82cd",
           "exampleItem": "She has had difficulty recently.",
-          "intent": "has had"
+          "intent": "has had",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/c54e7918-8b29-47f9-bb07-d909199e82cd-cedar.mp3",
+            "marin": "/audio/en-US/marin/c54e7918-8b29-47f9-bb07-d909199e82cd-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "85d2111312b3c876d7fb734fd723f7f4fda415452997bdaaacac1401bdc73047",
+            "marin": "85d2111312b3c876d7fb734fd723f7f4fda415452997bdaaacac1401bdc73047"
+          }
         }
       ]
     },
@@ -491,7 +635,15 @@
         {
           "id": "ffc39a7b-f651-4ae2-aa03-cb5d2cab16d8",
           "exampleItem": "She had left.",
-          "intent": "had"
+          "intent": "had",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/ffc39a7b-f651-4ae2-aa03-cb5d2cab16d8-cedar.mp3",
+            "marin": "/audio/en-US/marin/ffc39a7b-f651-4ae2-aa03-cb5d2cab16d8-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "21caa0611ca4b719a9c04cc30583bc89edc1fe239eab265f8b0481f09c6736ab",
+            "marin": "21caa0611ca4b719a9c04cc30583bc89edc1fe239eab265f8b0481f09c6736ab"
+          }
         }
       ]
     },
@@ -518,7 +670,15 @@
         {
           "id": "31f6694c-c258-4b79-bb0f-88e1b26a229e",
           "exampleItem": "I had to stop the car.",
-          "intent": "had to"
+          "intent": "had to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/31f6694c-c258-4b79-bb0f-88e1b26a229e-cedar.mp3",
+            "marin": "/audio/en-US/marin/31f6694c-c258-4b79-bb0f-88e1b26a229e-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "d61f131eeeb5bafe7a6ea50c64936133770647af458b74489f287256dc93aa7f",
+            "marin": "d61f131eeeb5bafe7a6ea50c64936133770647af458b74489f287256dc93aa7f"
+          }
         }
       ]
     },
@@ -590,102 +750,262 @@
         {
           "id": "deabb62d-4a7f-41a6-a3de-cf73eccd3c05",
           "exampleItem": "There is a problem with the system.",
-          "intent": "There is"
+          "intent": "There is",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/deabb62d-4a7f-41a6-a3de-cf73eccd3c05-cedar.mp3",
+            "marin": "/audio/en-US/marin/deabb62d-4a7f-41a6-a3de-cf73eccd3c05-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "b79599e308a9970d9f178f776ed85dcebfc5a67cd433773fb51f35d35efb2a1d",
+            "marin": "b79599e308a9970d9f178f776ed85dcebfc5a67cd433773fb51f35d35efb2a1d"
+          }
         },
         {
           "id": "608ae233-ec02-4f55-bf9a-f589cfb1b43b",
           "exampleItem": "There are a lot of people waiting outside.",
-          "intent": "There are"
+          "intent": "There are",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/608ae233-ec02-4f55-bf9a-f589cfb1b43b-cedar.mp3",
+            "marin": "/audio/en-US/marin/608ae233-ec02-4f55-bf9a-f589cfb1b43b-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "1cb2809e562ca6638af55281c11d7df81f17040eaa01bb6fdb1b3bc4865e4a69",
+            "marin": "1cb2809e562ca6638af55281c11d7df81f17040eaa01bb6fdb1b3bc4865e4a69"
+          }
         },
         {
           "id": "3b92f2d6-e7e2-4232-8e8c-62e8d721a0da",
           "exampleItem": "There was an accident on the road last week.",
-          "intent": "There was"
+          "intent": "There was",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/3b92f2d6-e7e2-4232-8e8c-62e8d721a0da-cedar.mp3",
+            "marin": "/audio/en-US/marin/3b92f2d6-e7e2-4232-8e8c-62e8d721a0da-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "805b668692c20ba9d5b00ec069452623e3437f0f0d864a2ae4e787d6d438c637",
+            "marin": "805b668692c20ba9d5b00ec069452623e3437f0f0d864a2ae4e787d6d438c637"
+          }
         },
         {
           "id": "6223dd37-d0de-4aee-a5fd-7ee7b3514788",
           "exampleItem": "There were many people at the meeting.",
-          "intent": "There were"
+          "intent": "There were",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/6223dd37-d0de-4aee-a5fd-7ee7b3514788-cedar.mp3",
+            "marin": "/audio/en-US/marin/6223dd37-d0de-4aee-a5fd-7ee7b3514788-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "844cdcaba13b56d9bb322bdd54d81c332061abeea0fe0cd8cdbde835543bbeb1",
+            "marin": "844cdcaba13b56d9bb322bdd54d81c332061abeea0fe0cd8cdbde835543bbeb1"
+          }
         },
         {
           "id": "cce474f3-2e18-4de0-938e-55f52f4b5df8",
           "exampleItem": "There will be a meeting tomorrow.",
-          "intent": "There will be"
+          "intent": "There will be",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/cce474f3-2e18-4de0-938e-55f52f4b5df8-cedar.mp3",
+            "marin": "/audio/en-US/marin/cce474f3-2e18-4de0-938e-55f52f4b5df8-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "ee8d4e78280ed61a9568216be3546b25b98e0582c770b8279d64b3b438e708fb",
+            "marin": "ee8d4e78280ed61a9568216be3546b25b98e0582c770b8279d64b3b438e708fb"
+          }
         },
         {
           "id": "47f28681-0987-4efe-b9ed-c80855770d5f",
           "exampleItem": "There are going to be some changes to the project.",
-          "intent": "There are going to be"
+          "intent": "There are going to be",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/47f28681-0987-4efe-b9ed-c80855770d5f-cedar.mp3",
+            "marin": "/audio/en-US/marin/47f28681-0987-4efe-b9ed-c80855770d5f-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "8d4346a8758b672c5a6f176f41bfacf4dea7ddd80b4ce50fda946a17fc06a5a5",
+            "marin": "8d4346a8758b672c5a6f176f41bfacf4dea7ddd80b4ce50fda946a17fc06a5a5"
+          }
         },
         {
           "id": "81e0cf2c-cfb6-4cd9-8bae-1a806059d6ac",
           "exampleItem": "There might be a bug in the code.",
-          "intent": "There might be"
+          "intent": "There might be",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/81e0cf2c-cfb6-4cd9-8bae-1a806059d6ac-cedar.mp3",
+            "marin": "/audio/en-US/marin/81e0cf2c-cfb6-4cd9-8bae-1a806059d6ac-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "1be27be3a3c999e29cc6fd60fa237e5907436f6069f2ab82c5fec4c08188b9d1",
+            "marin": "1be27be3a3c999e29cc6fd60fa237e5907436f6069f2ab82c5fec4c08188b9d1"
+          }
         },
         {
           "id": "40dbfea4-e535-41bd-9e1d-0929c5f3bf18",
           "exampleItem": "There could be a box up there.",
-          "intent": "There could be"
+          "intent": "There could be",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/40dbfea4-e535-41bd-9e1d-0929c5f3bf18-cedar.mp3",
+            "marin": "/audio/en-US/marin/40dbfea4-e535-41bd-9e1d-0929c5f3bf18-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "fb82b4299d3743cec2e6fb397500d4da3006865ed67225aa685cd411b1bf6cf2",
+            "marin": "fb82b4299d3743cec2e6fb397500d4da3006865ed67225aa685cd411b1bf6cf2"
+          }
         },
         {
           "id": "336943b6-753c-4781-9234-5b6b6152e905",
           "exampleItem": "There should be a better way to do this.",
-          "intent": "There should be"
+          "intent": "There should be",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/336943b6-753c-4781-9234-5b6b6152e905-cedar.mp3",
+            "marin": "/audio/en-US/marin/336943b6-753c-4781-9234-5b6b6152e905-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "5a9d4e15e0fd094c11aef0881528d82a836eb5a2eec57ec501c6d7ca7ba721aa",
+            "marin": "5a9d4e15e0fd094c11aef0881528d82a836eb5a2eec57ec501c6d7ca7ba721aa"
+          }
         },
         {
           "id": "82619b95-174f-40e8-be64-b9dc791a72ca",
           "exampleItem": "There have been a lot of problems lately.",
-          "intent": "There have been"
+          "intent": "There have been",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/82619b95-174f-40e8-be64-b9dc791a72ca-cedar.mp3",
+            "marin": "/audio/en-US/marin/82619b95-174f-40e8-be64-b9dc791a72ca-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "886aa21f1ea3a8d02fb20b5579a3f2148f50ac41c00af6825e14e198fecd76a3",
+            "marin": "886aa21f1ea3a8d02fb20b5579a3f2148f50ac41c00af6825e14e198fecd76a3"
+          }
         },
         {
           "id": "db4e597c-8275-4c9d-8466-2e8cda376a6c",
           "exampleItem": "There has been a significant improvement.",
-          "intent": "There has been"
+          "intent": "There has been",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/db4e597c-8275-4c9d-8466-2e8cda376a6c-cedar.mp3",
+            "marin": "/audio/en-US/marin/db4e597c-8275-4c9d-8466-2e8cda376a6c-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "9c648c219e0a6f6a73f90ed44accc922a37ac4cff607cd20946375bd35c190aa",
+            "marin": "9c648c219e0a6f6a73f90ed44accc922a37ac4cff607cd20946375bd35c190aa"
+          }
         },
         {
           "id": "7434786d-008d-4ae0-9ccc-7b6405d130ed",
           "exampleItem": "There had been a similar problem before.",
-          "intent": "There had been"
+          "intent": "There had been",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/7434786d-008d-4ae0-9ccc-7b6405d130ed-cedar.mp3",
+            "marin": "/audio/en-US/marin/7434786d-008d-4ae0-9ccc-7b6405d130ed-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "230b98ec0ac7094409d50a62daa7ffdf210cfb1f4b53dc759884ba2ee60276b1",
+            "marin": "230b98ec0ac7094409d50a62daa7ffdf210cfb1f4b53dc759884ba2ee60276b1"
+          }
         },
         {
           "id": "57f04f1b-2d7c-4d1e-a05b-cad30babad81",
           "exampleItem": "There would have been more problems without your help.",
-          "intent": "There would have been"
+          "intent": "There would have been",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/57f04f1b-2d7c-4d1e-a05b-cad30babad81-cedar.mp3",
+            "marin": "/audio/en-US/marin/57f04f1b-2d7c-4d1e-a05b-cad30babad81-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "fd356466531e2ebdb06b9d89f04fbdcc377715ce4ab4f8082de21ab7e5d47405",
+            "marin": "fd356466531e2ebdb06b9d89f04fbdcc377715ce4ab4f8082de21ab7e5d47405"
+          }
         },
         {
           "id": "f98c9c66-4abc-468f-8a54-0a9dfc46d218",
           "exampleItem": "There used to be a store here.",
-          "intent": "There used to be"
+          "intent": "There used to be",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/f98c9c66-4abc-468f-8a54-0a9dfc46d218-cedar.mp3",
+            "marin": "/audio/en-US/marin/f98c9c66-4abc-468f-8a54-0a9dfc46d218-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "e89d018647de8cc0ad3194493ee5839ab73d5893873e17969052d08478205f11",
+            "marin": "e89d018647de8cc0ad3194493ee5839ab73d5893873e17969052d08478205f11"
+          }
         },
         {
           "id": "ab70c515-ae6f-40d9-bda2-6560cc5155a7",
           "exampleItem": "There isn't enough time.",
-          "intent": "There isn't"
+          "intent": "There isn't",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/ab70c515-ae6f-40d9-bda2-6560cc5155a7-cedar.mp3",
+            "marin": "/audio/en-US/marin/ab70c515-ae6f-40d9-bda2-6560cc5155a7-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "29ee1a20d83a8852e52b833b53b2926854f9ed9169c67eb39d3b191de7ba8f75",
+            "marin": "29ee1a20d83a8852e52b833b53b2926854f9ed9169c67eb39d3b191de7ba8f75"
+          }
         },
         {
           "id": "94c97d92-8ea6-449b-ae3d-91ce1f66e0b5",
           "exampleItem": "There weren't any available positions.",
-          "intent": "There weren't"
+          "intent": "There weren't",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/94c97d92-8ea6-449b-ae3d-91ce1f66e0b5-cedar.mp3",
+            "marin": "/audio/en-US/marin/94c97d92-8ea6-449b-ae3d-91ce1f66e0b5-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "9b7c145461e4d2cc763939afc8f37fff1bb123a9da15997f25e7d59d91bb79fb",
+            "marin": "9b7c145461e4d2cc763939afc8f37fff1bb123a9da15997f25e7d59d91bb79fb"
+          }
         },
         {
           "id": "3d7d9111-810c-45c9-a148-3a27450486de",
           "exampleItem": "Is there anything I can do?",
-          "intent": "Is there"
+          "intent": "Is there",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/3d7d9111-810c-45c9-a148-3a27450486de-cedar.mp3",
+            "marin": "/audio/en-US/marin/3d7d9111-810c-45c9-a148-3a27450486de-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "a1d4f2a7afa519f60747d1e43abff6043d4d6bc7b5b07254b7184b778c201bff",
+            "marin": "a1d4f2a7afa519f60747d1e43abff6043d4d6bc7b5b07254b7184b778c201bff"
+          }
         },
         {
           "id": "b44f2efc-5151-4d95-b594-f7be8c3907c1",
           "exampleItem": "Were there a lot of people at the party?",
-          "intent": "Were there"
+          "intent": "Were there",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/b44f2efc-5151-4d95-b594-f7be8c3907c1-cedar.mp3",
+            "marin": "/audio/en-US/marin/b44f2efc-5151-4d95-b594-f7be8c3907c1-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "0925778c50d34f162cc86a5ccb075478af65cc456919002ac0e37feeb1e52464",
+            "marin": "0925778c50d34f162cc86a5ccb075478af65cc456919002ac0e37feeb1e52464"
+          }
         },
         {
           "id": "9d88aa5a-1110-4f07-bd71-206f090b43f1",
           "exampleItem": "Could there be a problem with that?",
-          "intent": "Could there be"
+          "intent": "Could there be",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/9d88aa5a-1110-4f07-bd71-206f090b43f1-cedar.mp3",
+            "marin": "/audio/en-US/marin/9d88aa5a-1110-4f07-bd71-206f090b43f1-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "e5759a816baa8523b8c0e763dbdd638852e26198f0ac1cefab50a8825d149b2f",
+            "marin": "e5759a816baa8523b8c0e763dbdd638852e26198f0ac1cefab50a8825d149b2f"
+          }
         },
         {
           "id": "288e611a-675e-4e77-80b0-d3af422732f4",
           "exampleItem": "Has there ever been a problem with this service?",
-          "intent": "Has there ever been"
+          "intent": "Has there ever been",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/288e611a-675e-4e77-80b0-d3af422732f4-cedar.mp3",
+            "marin": "/audio/en-US/marin/288e611a-675e-4e77-80b0-d3af422732f4-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "d03832e11edef156dcef0435d1e775a735b83e222eeec15b0c743ffef6a07b43",
+            "marin": "d03832e11edef156dcef0435d1e775a735b83e222eeec15b0c743ffef6a07b43"
+          }
         }
       ]
     },
@@ -715,12 +1035,28 @@
         {
           "id": "8ac73254-98cb-411b-901f-fb1449ea1141",
           "exampleItem": "There has to be a reason.",
-          "intent": "There has to be"
+          "intent": "There has to be",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/8ac73254-98cb-411b-901f-fb1449ea1141-cedar.mp3",
+            "marin": "/audio/en-US/marin/8ac73254-98cb-411b-901f-fb1449ea1141-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "2bd2872b21f62c7162df49d15a73df661a8ab15b9d7f8d6f65a324c45a423664",
+            "marin": "2bd2872b21f62c7162df49d15a73df661a8ab15b9d7f8d6f65a324c45a423664"
+          }
         },
         {
           "id": "cf1e64e7-5ae2-475b-b909-be4197493b8b",
           "exampleItem": "There have to be limits.",
-          "intent": "There have to be"
+          "intent": "There have to be",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/cf1e64e7-5ae2-475b-b909-be4197493b8b-cedar.mp3",
+            "marin": "/audio/en-US/marin/cf1e64e7-5ae2-475b-b909-be4197493b8b-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "4419cf3e158a4e3944000d15e35d34aee41f89dffa2ef06117dfd699c4907070",
+            "marin": "4419cf3e158a4e3944000d15e35d34aee41f89dffa2ef06117dfd699c4907070"
+          }
         }
       ]
     },
@@ -748,7 +1084,15 @@
         {
           "id": "7a973618-7aad-4a47-94b1-207762e5c9d3",
           "exampleItem": "I’m wondering if she was happy.",
-          "intent": "wondering if"
+          "intent": "wondering if",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/7a973618-7aad-4a47-94b1-207762e5c9d3-cedar.mp3",
+            "marin": "/audio/en-US/marin/7a973618-7aad-4a47-94b1-207762e5c9d3-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "8f8361639b9e7fd2e13aab6d859e65972c26804562436f64802bc7e13173f5c5",
+            "marin": "8f8361639b9e7fd2e13aab6d859e65972c26804562436f64802bc7e13173f5c5"
+          }
         }
       ]
     },
@@ -775,7 +1119,15 @@
         {
           "id": "65b5b4ab-4beb-4827-8d49-488861edc5e9",
           "exampleItem": "I wonder if she was happy.",
-          "intent": "I wonder if"
+          "intent": "I wonder if",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/65b5b4ab-4beb-4827-8d49-488861edc5e9-cedar.mp3",
+            "marin": "/audio/en-US/marin/65b5b4ab-4beb-4827-8d49-488861edc5e9-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "eff7de937ce41fcbacff895b596bd3a308abb8819dbdb7282c153153b7b76322",
+            "marin": "eff7de937ce41fcbacff895b596bd3a308abb8819dbdb7282c153153b7b76322"
+          }
         }
       ]
     },
@@ -802,7 +1154,15 @@
         {
           "id": "0bca8ab9-e8cf-43b0-ab27-58917c8ba830",
           "exampleItem": "I no longer change my opinion.",
-          "intent": "no longer"
+          "intent": "no longer",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/0bca8ab9-e8cf-43b0-ab27-58917c8ba830-cedar.mp3",
+            "marin": "/audio/en-US/marin/0bca8ab9-e8cf-43b0-ab27-58917c8ba830-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "2f36655f9adb43bbfefb8cdc1d5a22ac289d4bccd0f455e2dfc867a78455ad12",
+            "marin": "2f36655f9adb43bbfefb8cdc1d5a22ac289d4bccd0f455e2dfc867a78455ad12"
+          }
         }
       ]
     },
@@ -830,7 +1190,15 @@
         {
           "id": "40086c08-45e7-4b94-9c52-5858c17ce53a",
           "exampleItem": "I don’t need this server any longer.",
-          "intent": "any longer"
+          "intent": "any longer",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/40086c08-45e7-4b94-9c52-5858c17ce53a-cedar.mp3",
+            "marin": "/audio/en-US/marin/40086c08-45e7-4b94-9c52-5858c17ce53a-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "466cd862dc91f44b99d375208b33f2ffc08007cd8f0c30252ade125f6f1c6e12",
+            "marin": "466cd862dc91f44b99d375208b33f2ffc08007cd8f0c30252ade125f6f1c6e12"
+          }
         }
       ]
     },
@@ -857,7 +1225,15 @@
         {
           "id": "65edd8c4-13b5-42c2-9f05-f6b8089d6eba",
           "exampleItem": "This code is as simple as another.",
-          "intent": "code"
+          "intent": "code",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/65edd8c4-13b5-42c2-9f05-f6b8089d6eba-cedar.mp3",
+            "marin": "/audio/en-US/marin/65edd8c4-13b5-42c2-9f05-f6b8089d6eba-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "83f6202bf641c045f2332a36f64302f916991f8a0835074381ecf83ad7604bde",
+            "marin": "83f6202bf641c045f2332a36f64302f916991f8a0835074381ecf83ad7604bde"
+          }
         }
       ]
     },
@@ -884,7 +1260,15 @@
         {
           "id": "9301d0a7-805c-4d5c-9260-0e5a87f0ae17",
           "exampleItem": "I like bananas as well as apples.",
-          "intent": "as well as"
+          "intent": "as well as",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/9301d0a7-805c-4d5c-9260-0e5a87f0ae17-cedar.mp3",
+            "marin": "/audio/en-US/marin/9301d0a7-805c-4d5c-9260-0e5a87f0ae17-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "35a39cc1e6df7a795ec746830fa99ec3919a3d7ee399bb4f7f0291ecd60d2443",
+            "marin": "35a39cc1e6df7a795ec746830fa99ec3919a3d7ee399bb4f7f0291ecd60d2443"
+          }
         }
       ]
     },
@@ -910,7 +1294,15 @@
         {
           "id": "68d2b3dd-9ac5-4c17-a021-d8d5cbf2494d",
           "exampleItem": "You can use my computer as long as you are careful.",
-          "intent": "as long as"
+          "intent": "as long as",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/68d2b3dd-9ac5-4c17-a021-d8d5cbf2494d-cedar.mp3",
+            "marin": "/audio/en-US/marin/68d2b3dd-9ac5-4c17-a021-d8d5cbf2494d-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "1676e32fa6d73302f7776a59c14fbac917a4dc8e79bf7cb0c8f3e3282f707abc",
+            "marin": "1676e32fa6d73302f7776a59c14fbac917a4dc8e79bf7cb0c8f3e3282f707abc"
+          }
         }
       ]
     },
@@ -937,7 +1329,15 @@
         {
           "id": "a5c011e4-96b0-4010-a6cd-e3c34d456888",
           "exampleItem": "I’ll send you a message as soon as I finish it.",
-          "intent": "as soon as"
+          "intent": "as soon as",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/a5c011e4-96b0-4010-a6cd-e3c34d456888-cedar.mp3",
+            "marin": "/audio/en-US/marin/a5c011e4-96b0-4010-a6cd-e3c34d456888-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "8a33a2751776f1d356dfa58f78772950e5ac5049d7ab7996084e81710dc62c9f",
+            "marin": "8a33a2751776f1d356dfa58f78772950e5ac5049d7ab7996084e81710dc62c9f"
+          }
         }
       ]
     },
@@ -963,7 +1363,15 @@
         {
           "id": "1d763c99-3c5c-4354-b8a2-47036d4d9281",
           "exampleItem": "I love working at home as much as you.",
-          "intent": "as much as"
+          "intent": "as much as",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/1d763c99-3c5c-4354-b8a2-47036d4d9281-cedar.mp3",
+            "marin": "/audio/en-US/marin/1d763c99-3c5c-4354-b8a2-47036d4d9281-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "f1e52ea1135756d6b256e633e846292fa5505fe0c9ceaa81eecfa3df9fa01155",
+            "marin": "f1e52ea1135756d6b256e633e846292fa5505fe0c9ceaa81eecfa3df9fa01155"
+          }
         }
       ]
     },
@@ -990,7 +1398,15 @@
         {
           "id": "ae98ebdf-63fa-4122-af32-5d00653708b5",
           "exampleItem": "As far as I know, the meeting was kept.",
-          "intent": "As far as"
+          "intent": "As far as",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/ae98ebdf-63fa-4122-af32-5d00653708b5-cedar.mp3",
+            "marin": "/audio/en-US/marin/ae98ebdf-63fa-4122-af32-5d00653708b5-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "bbf934da69d2a31025ad7e95996d320ef701180c6db81b9b62b8e20aaee604b4",
+            "marin": "bbf934da69d2a31025ad7e95996d320ef701180c6db81b9b62b8e20aaee604b4"
+          }
         }
       ]
     },
@@ -1016,7 +1432,15 @@
         {
           "id": "b328d584-d903-46e2-80de-4f55f9d0d73f",
           "exampleItem": "I was told that you were going to start working at Microsoft.",
-          "intent": "I was told that"
+          "intent": "I was told that",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/b328d584-d903-46e2-80de-4f55f9d0d73f-cedar.mp3",
+            "marin": "/audio/en-US/marin/b328d584-d903-46e2-80de-4f55f9d0d73f-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "f3327d0890fd6edf1cf43c00737454ff0687a7dbbadfa89c325270b336738639",
+            "marin": "f3327d0890fd6edf1cf43c00737454ff0687a7dbbadfa89c325270b336738639"
+          }
         }
       ]
     },
@@ -1043,7 +1467,15 @@
         {
           "id": "06393eb2-ed7e-426e-92f5-e03f8328a71a",
           "exampleItem": "There has just been an accident on the road.",
-          "intent": "There has just been"
+          "intent": "There has just been",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/06393eb2-ed7e-426e-92f5-e03f8328a71a-cedar.mp3",
+            "marin": "/audio/en-US/marin/06393eb2-ed7e-426e-92f5-e03f8328a71a-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "96942b991368591959a9f97cd258d54f0b917c4dd201b9cdbac323af10f1a840",
+            "marin": "96942b991368591959a9f97cd258d54f0b917c4dd201b9cdbac323af10f1a840"
+          }
         }
       ]
     },
@@ -1071,7 +1503,15 @@
         {
           "id": "8b7081aa-1b1e-470b-b5f2-daa6bb9092a2",
           "exampleItem": "I had been traveling.",
-          "intent": "had been"
+          "intent": "had been",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/8b7081aa-1b1e-470b-b5f2-daa6bb9092a2-cedar.mp3",
+            "marin": "/audio/en-US/marin/8b7081aa-1b1e-470b-b5f2-daa6bb9092a2-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "7b11a6505bb40db0a9934e877fe88e417c2340769eb2032938b7fd0f8dee4b46",
+            "marin": "7b11a6505bb40db0a9934e877fe88e417c2340769eb2032938b7fd0f8dee4b46"
+          }
         }
       ]
     },
@@ -1099,7 +1539,15 @@
         {
           "id": "8d651d4a-510f-46d1-acad-a84adda1730e",
           "exampleItem": "I have traveled a lot.",
-          "intent": "have"
+          "intent": "have",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/8d651d4a-510f-46d1-acad-a84adda1730e-cedar.mp3",
+            "marin": "/audio/en-US/marin/8d651d4a-510f-46d1-acad-a84adda1730e-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "17bc8c76dc786039378620611730e0c26fe133c86011b910b35421c36f9b3537",
+            "marin": "17bc8c76dc786039378620611730e0c26fe133c86011b910b35421c36f9b3537"
+          }
         }
       ]
     },
@@ -1127,7 +1575,15 @@
         {
           "id": "33610aae-b174-44c3-b6b9-d3b0ab6003d4",
           "exampleItem": "I traveled last month.",
-          "intent": "traveled"
+          "intent": "traveled",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/33610aae-b174-44c3-b6b9-d3b0ab6003d4-cedar.mp3",
+            "marin": "/audio/en-US/marin/33610aae-b174-44c3-b6b9-d3b0ab6003d4-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "bde6f35c1c173fb65fddafe8a1a11ebe63a724f1ae883652978234e5c0ead540",
+            "marin": "bde6f35c1c173fb65fddafe8a1a11ebe63a724f1ae883652978234e5c0ead540"
+          }
         }
       ]
     },
@@ -1157,17 +1613,41 @@
         {
           "id": "70572cfc-2928-4b92-989c-31dcca7fea77",
           "exampleItem": "I am going to travel tomorrow.",
-          "intent": "going to"
+          "intent": "going to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/70572cfc-2928-4b92-989c-31dcca7fea77-cedar.mp3",
+            "marin": "/audio/en-US/marin/70572cfc-2928-4b92-989c-31dcca7fea77-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "f4314706361b4f41565a0e32a34a1a027cc2e78fd0c827ac08470d3e2f06f6de",
+            "marin": "f4314706361b4f41565a0e32a34a1a027cc2e78fd0c827ac08470d3e2f06f6de"
+          }
         },
         {
           "id": "cb3cb06b-6cda-4871-ad2b-b3ceb90a6970",
           "exampleItem": "She will be there tomorrow.",
-          "intent": "will"
+          "intent": "will",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/cb3cb06b-6cda-4871-ad2b-b3ceb90a6970-cedar.mp3",
+            "marin": "/audio/en-US/marin/cb3cb06b-6cda-4871-ad2b-b3ceb90a6970-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "c8296427c4b078386f3e838f93e6e31e94b237a7c796ed9e7a700bfd0e4212fb",
+            "marin": "c8296427c4b078386f3e838f93e6e31e94b237a7c796ed9e7a700bfd0e4212fb"
+          }
         },
         {
           "id": "f709f4df-30ef-4701-a2d3-c247c9d67c66",
           "exampleItem": "She is gonna work with Bryan at the bakery. (contraction)",
-          "intent": "is gonna"
+          "intent": "is gonna",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/f709f4df-30ef-4701-a2d3-c247c9d67c66-cedar.mp3",
+            "marin": "/audio/en-US/marin/f709f4df-30ef-4701-a2d3-c247c9d67c66-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "2a740c86a875567d9fa88389fa27d3a5eab19499c41b207734fcba9032f7036e",
+            "marin": "2a740c86a875567d9fa88389fa27d3a5eab19499c41b207734fcba9032f7036e"
+          }
         }
       ]
     },
@@ -1198,12 +1678,28 @@
         {
           "id": "f214ab7a-59fe-4f30-a40e-3452478f96c0",
           "exampleItem": "I’m going to travel tomorrow.",
-          "intent": "going to"
+          "intent": "going to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/f214ab7a-59fe-4f30-a40e-3452478f96c0-cedar.mp3",
+            "marin": "/audio/en-US/marin/f214ab7a-59fe-4f30-a40e-3452478f96c0-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "072f12b2574fe569ef476bd27685becc6f1595bc94d498e54b595d9e0764480a",
+            "marin": "072f12b2574fe569ef476bd27685becc6f1595bc94d498e54b595d9e0764480a"
+          }
         },
         {
           "id": "7b42782c-78f7-4fe1-9fd6-d8ef4bda5411",
           "exampleItem": "I’m heading to the office.",
-          "intent": "heading to"
+          "intent": "heading to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/7b42782c-78f7-4fe1-9fd6-d8ef4bda5411-cedar.mp3",
+            "marin": "/audio/en-US/marin/7b42782c-78f7-4fe1-9fd6-d8ef4bda5411-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "0ce43917fb5bd26a60feefb54ec1e4d9b2ffda1c7fe06976bb36af09c13fd477",
+            "marin": "0ce43917fb5bd26a60feefb54ec1e4d9b2ffda1c7fe06976bb36af09c13fd477"
+          }
         }
       ]
     },
@@ -1232,12 +1728,28 @@
         {
           "id": "11a7c8e1-7848-46eb-813a-05455baf98d9",
           "exampleItem": "I will be fine.",
-          "intent": "will be"
+          "intent": "will be",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/11a7c8e1-7848-46eb-813a-05455baf98d9-cedar.mp3",
+            "marin": "/audio/en-US/marin/11a7c8e1-7848-46eb-813a-05455baf98d9-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "1fa7e3abdb164a9222487a1c5eddd0cc65b548efb5aa1ade7bb1767e5e9a8e6e",
+            "marin": "1fa7e3abdb164a9222487a1c5eddd0cc65b548efb5aa1ade7bb1767e5e9a8e6e"
+          }
         },
         {
           "id": "c00d03da-e557-4ddc-87d2-d99662461458",
           "exampleItem": "Everything is gonna be fine.",
-          "intent": "be"
+          "intent": "be",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/c00d03da-e557-4ddc-87d2-d99662461458-cedar.mp3",
+            "marin": "/audio/en-US/marin/c00d03da-e557-4ddc-87d2-d99662461458-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "d96f74bd93f7bc65d611da909add430dc48ecc211db75fd5b65ac068ef9dee99",
+            "marin": "d96f74bd93f7bc65d611da909add430dc48ecc211db75fd5b65ac068ef9dee99"
+          }
         }
       ]
     },
@@ -1267,7 +1779,15 @@
         {
           "id": "c0f2f581-b304-4788-a09f-dcb075b05266",
           "exampleItem": "I am going to have to travel tomorrow.",
-          "intent": "going to have to"
+          "intent": "going to have to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/c0f2f581-b304-4788-a09f-dcb075b05266-cedar.mp3",
+            "marin": "/audio/en-US/marin/c0f2f581-b304-4788-a09f-dcb075b05266-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "a4fc619db00075d273fcdec55609e8c8f191b688d9a1661e7bbbb5646f33b41a",
+            "marin": "a4fc619db00075d273fcdec55609e8c8f191b688d9a1661e7bbbb5646f33b41a"
+          }
         }
       ]
     },
@@ -1295,7 +1815,15 @@
         {
           "id": "acc9a373-d0c0-4bd2-893e-e19070ab539c",
           "exampleItem": "I’m able to do that even though the start will be hard.",
-          "intent": "will be"
+          "intent": "will be",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/acc9a373-d0c0-4bd2-893e-e19070ab539c-cedar.mp3",
+            "marin": "/audio/en-US/marin/acc9a373-d0c0-4bd2-893e-e19070ab539c-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "607483f8ef25bc28b521da5a399141df30277dcbb6f174f496623d17b48a18a1",
+            "marin": "607483f8ef25bc28b521da5a399141df30277dcbb6f174f496623d17b48a18a1"
+          }
         }
       ]
     },
@@ -1324,7 +1852,15 @@
         {
           "id": "323baeb7-99f5-4176-8df4-d8a02c10dd00",
           "exampleItem": "I was going to travel tomorrow.",
-          "intent": "going to"
+          "intent": "going to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/323baeb7-99f5-4176-8df4-d8a02c10dd00-cedar.mp3",
+            "marin": "/audio/en-US/marin/323baeb7-99f5-4176-8df4-d8a02c10dd00-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "7c552be38fd9cf1887cc33eea863e5466b2120c8ae611686b41c10ffa0a28ec3",
+            "marin": "7c552be38fd9cf1887cc33eea863e5466b2120c8ae611686b41c10ffa0a28ec3"
+          }
         }
       ]
     },
@@ -1357,7 +1893,15 @@
         {
           "id": "3c39f27c-4f86-407f-bf17-f38ef94a751e",
           "exampleItem": "I used to swim every day.",
-          "intent": "used to"
+          "intent": "used to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/3c39f27c-4f86-407f-bf17-f38ef94a751e-cedar.mp3",
+            "marin": "/audio/en-US/marin/3c39f27c-4f86-407f-bf17-f38ef94a751e-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "848d2ffc6f52955d5f5beee5d7be9af7e006ec7f14c28520e1cd252336444635",
+            "marin": "848d2ffc6f52955d5f5beee5d7be9af7e006ec7f14c28520e1cd252336444635"
+          }
         }
       ]
     },
@@ -1390,7 +1934,15 @@
           "hqImage": "/images/hq/b1/be-used-to-01.png",
           "id": "5cf0f5db-0e77-4f89-ac42-6f43b0f475c1",
           "exampleItem": "I am used to waking up early.",
-          "intent": "used to"
+          "intent": "used to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/5cf0f5db-0e77-4f89-ac42-6f43b0f475c1-cedar.mp3",
+            "marin": "/audio/en-US/marin/5cf0f5db-0e77-4f89-ac42-6f43b0f475c1-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "794a9cc209c3815cece3baac0d2fa0732e9004ade528aaf0f1a0b7da8d716f85",
+            "marin": "794a9cc209c3815cece3baac0d2fa0732e9004ade528aaf0f1a0b7da8d716f85"
+          }
         }
       ]
     },
@@ -1417,7 +1969,15 @@
         {
           "id": "b95466af-f88e-4af4-aa2d-1a2dcc146b7c",
           "exampleItem": "I usually study at night.",
-          "intent": "usually"
+          "intent": "usually",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/b95466af-f88e-4af4-aa2d-1a2dcc146b7c-cedar.mp3",
+            "marin": "/audio/en-US/marin/b95466af-f88e-4af4-aa2d-1a2dcc146b7c-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "817fc109238b37a5eed253d1142883aaecd82bd241d8caf23441df3ce7ea38c6",
+            "marin": "817fc109238b37a5eed253d1142883aaecd82bd241d8caf23441df3ce7ea38c6"
+          }
         }
       ]
     },
@@ -1445,7 +2005,15 @@
         {
           "id": "803999b2-49b1-49af-b311-7b95161cb7ee",
           "exampleItem": "I have got used to the new routine after a few weeks.",
-          "intent": "used to"
+          "intent": "used to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/803999b2-49b1-49af-b311-7b95161cb7ee-cedar.mp3",
+            "marin": "/audio/en-US/marin/803999b2-49b1-49af-b311-7b95161cb7ee-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "60d75ff99ea133a7181505a5db150b7c3e1cee47c64cf761a3500d880d286a99",
+            "marin": "60d75ff99ea133a7181505a5db150b7c3e1cee47c64cf761a3500d880d286a99"
+          }
         }
       ]
     },
@@ -1473,7 +2041,15 @@
         {
           "id": "f4572f50-bdcb-4cc4-8a97-a0f63f61bc98",
           "exampleItem": "I didn’t get used to the new routine, even after several months.",
-          "intent": "didn’t get used to"
+          "intent": "didn’t get used to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/f4572f50-bdcb-4cc4-8a97-a0f63f61bc98-cedar.mp3",
+            "marin": "/audio/en-US/marin/f4572f50-bdcb-4cc4-8a97-a0f63f61bc98-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "63e616a9bbd6a069258e224c07f817160b87ae2d9f0683c8c0d63e581699d0bd",
+            "marin": "63e616a9bbd6a069258e224c07f817160b87ae2d9f0683c8c0d63e581699d0bd"
+          }
         }
       ]
     },
@@ -1501,7 +2077,15 @@
         {
           "id": "cd08a314-3101-4ce0-a83c-9b7e40836c07",
           "exampleItem": "I am getting used to speaking English.",
-          "intent": "getting used to"
+          "intent": "getting used to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/cd08a314-3101-4ce0-a83c-9b7e40836c07-cedar.mp3",
+            "marin": "/audio/en-US/marin/cd08a314-3101-4ce0-a83c-9b7e40836c07-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "d4744ae15d190b16a3149ce644fe75d22bf8fd047415ad1fc072ca5f3fbe6f89",
+            "marin": "d4744ae15d190b16a3149ce644fe75d22bf8fd047415ad1fc072ca5f3fbe6f89"
+          }
         }
       ]
     },
@@ -1531,7 +2115,15 @@
         {
           "id": "c58c7dad-3b1d-4b7a-94e5-c9d0b9f0d782",
           "exampleItem": "I will get used to the cold.",
-          "intent": "will get used to"
+          "intent": "will get used to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/c58c7dad-3b1d-4b7a-94e5-c9d0b9f0d782-cedar.mp3",
+            "marin": "/audio/en-US/marin/c58c7dad-3b1d-4b7a-94e5-c9d0b9f0d782-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "e3c3bef0b3e65e1830ca06e57d221ad1bf3c2501810dfc2fb02d865284f2fc14",
+            "marin": "e3c3bef0b3e65e1830ca06e57d221ad1bf3c2501810dfc2fb02d865284f2fc14"
+          }
         }
       ]
     },
@@ -1558,7 +2150,15 @@
         {
           "id": "e03d7aa3-5536-45e0-a0f4-44508aaa9558",
           "exampleItem": "I have to get used to the cold.",
-          "intent": "have to get used to"
+          "intent": "have to get used to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/e03d7aa3-5536-45e0-a0f4-44508aaa9558-cedar.mp3",
+            "marin": "/audio/en-US/marin/e03d7aa3-5536-45e0-a0f4-44508aaa9558-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "a71f067756d464d066a709d4dff9fc11f384fbc176bf068258bf1bb61f7833c1",
+            "marin": "a71f067756d464d066a709d4dff9fc11f384fbc176bf068258bf1bb61f7833c1"
+          }
         }
       ]
     },
@@ -1586,7 +2186,15 @@
         {
           "id": "e5d7213b-f702-4071-a2e9-aabda8dca7dc",
           "exampleItem": "I will have to get used to the new rules.",
-          "intent": "will have to get used to"
+          "intent": "will have to get used to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/e5d7213b-f702-4071-a2e9-aabda8dca7dc-cedar.mp3",
+            "marin": "/audio/en-US/marin/e5d7213b-f702-4071-a2e9-aabda8dca7dc-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "4b3c61ff0588210852b9f8c5dabe0e34c7b9d3f76606fcfc806c38887b1d784e",
+            "marin": "4b3c61ff0588210852b9f8c5dabe0e34c7b9d3f76606fcfc806c38887b1d784e"
+          }
         }
       ]
     },
@@ -1613,7 +2221,15 @@
         {
           "id": "4ed9d53b-1c56-4734-be6d-285dac87c054",
           "exampleItem": "I thought I would get used to the cold.",
-          "intent": "would get used to"
+          "intent": "would get used to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/4ed9d53b-1c56-4734-be6d-285dac87c054-cedar.mp3",
+            "marin": "/audio/en-US/marin/4ed9d53b-1c56-4734-be6d-285dac87c054-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "381fd325d86cc7f147f685a39bd989606286730fe4b9326720e18cb1241e213d",
+            "marin": "381fd325d86cc7f147f685a39bd989606286730fe4b9326720e18cb1241e213d"
+          }
         }
       ]
     },
@@ -1641,7 +2257,15 @@
         {
           "id": "e0a7075e-ed5f-41b3-99c0-b41458312b34",
           "exampleItem": "I should have checked the weather before leaving.",
-          "intent": "should have"
+          "intent": "should have",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/e0a7075e-ed5f-41b3-99c0-b41458312b34-cedar.mp3",
+            "marin": "/audio/en-US/marin/e0a7075e-ed5f-41b3-99c0-b41458312b34-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "703efd212a6f95e96873b080aef40fd722c31b166c624b80062115689965010b",
+            "marin": "703efd212a6f95e96873b080aef40fd722c31b166c624b80062115689965010b"
+          }
         }
       ]
     },
@@ -1669,7 +2293,15 @@
         {
           "id": "d82c33e9-6922-42c9-9bf6-3588e0b412c3",
           "exampleItem": "I could have watched that movie before.",
-          "intent": "could"
+          "intent": "could",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/d82c33e9-6922-42c9-9bf6-3588e0b412c3-cedar.mp3",
+            "marin": "/audio/en-US/marin/d82c33e9-6922-42c9-9bf6-3588e0b412c3-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "5b883ae637ac9aef17f792fdc621dac0f1f174b0119a2e6901eab0c7e1869f98",
+            "marin": "5b883ae637ac9aef17f792fdc621dac0f1f174b0119a2e6901eab0c7e1869f98"
+          }
         }
       ]
     },
@@ -1697,7 +2329,15 @@
         {
           "id": "569e0cf5-2b6d-4060-a289-c7913494c6ff",
           "exampleItem": "It must have rained last night.",
-          "intent": "must have"
+          "intent": "must have",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/569e0cf5-2b6d-4060-a289-c7913494c6ff-cedar.mp3",
+            "marin": "/audio/en-US/marin/569e0cf5-2b6d-4060-a289-c7913494c6ff-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "c22f7bb76c9c24869bb8ac8215474d294be655807ce200402b3335ca670ae55a",
+            "marin": "c22f7bb76c9c24869bb8ac8215474d294be655807ce200402b3335ca670ae55a"
+          }
         }
       ]
     },
@@ -1724,12 +2364,28 @@
         {
           "id": "cd238f3a-525f-4153-a20a-05355b5ab701",
           "exampleItem": "Whenever I see her, I smile.",
-          "intent": "Whenever"
+          "intent": "Whenever",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/cd238f3a-525f-4153-a20a-05355b5ab701-cedar.mp3",
+            "marin": "/audio/en-US/marin/cd238f3a-525f-4153-a20a-05355b5ab701-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "bc8c093507ddfa547a8bbfd9d3036b87101871547c47cd543401d95bbbe152e4",
+            "marin": "bc8c093507ddfa547a8bbfd9d3036b87101871547c47cd543401d95bbbe152e4"
+          }
         },
         {
           "id": "75f5273e-7877-4df6-8ed4-9fafe4bf05b0",
           "exampleItem": "Call me whenever you want.",
-          "intent": "whenever"
+          "intent": "whenever",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/75f5273e-7877-4df6-8ed4-9fafe4bf05b0-cedar.mp3",
+            "marin": "/audio/en-US/marin/75f5273e-7877-4df6-8ed4-9fafe4bf05b0-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "e1b19d05729c682d1bb8170bdd05511358de43ccb5c444272b8a5717386223ca",
+            "marin": "e1b19d05729c682d1bb8170bdd05511358de43ccb5c444272b8a5717386223ca"
+          }
         }
       ]
     },
@@ -1756,7 +2412,15 @@
         {
           "id": "b3cdbcfa-8f68-4e9f-984b-b51e3c4b8729",
           "exampleItem": "Wherever you are.",
-          "intent": "Wherever"
+          "intent": "Wherever",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/b3cdbcfa-8f68-4e9f-984b-b51e3c4b8729-cedar.mp3",
+            "marin": "/audio/en-US/marin/b3cdbcfa-8f68-4e9f-984b-b51e3c4b8729-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "18fbdc9c5cdfcca323e10d6510dd37e78d261f7443255b41894d07a846104039",
+            "marin": "18fbdc9c5cdfcca323e10d6510dd37e78d261f7443255b41894d07a846104039"
+          }
         }
       ]
     },
@@ -1783,12 +2447,28 @@
         {
           "id": "d1f44b84-0af5-45c1-911a-887191431c95",
           "exampleItem": "Do whatever you want.",
-          "intent": "whatever"
+          "intent": "whatever",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/d1f44b84-0af5-45c1-911a-887191431c95-cedar.mp3",
+            "marin": "/audio/en-US/marin/d1f44b84-0af5-45c1-911a-887191431c95-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "015ed717825bbca1ca40a242b9b37f65ec3da1f2374ed0a72576ab732617c86f",
+            "marin": "015ed717825bbca1ca40a242b9b37f65ec3da1f2374ed0a72576ab732617c86f"
+          }
         },
         {
           "id": "ab013193-4b51-491e-93c1-ea060e503a91",
           "exampleItem": "Pizza or pasta? Whatever.",
-          "intent": "Whatever"
+          "intent": "Whatever",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/ab013193-4b51-491e-93c1-ea060e503a91-cedar.mp3",
+            "marin": "/audio/en-US/marin/ab013193-4b51-491e-93c1-ea060e503a91-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "8ea3eaca6af0ce735b2dbb2eb3e7c2c74961f6fc4f8a0c06ff1a09abc4c351f8",
+            "marin": "8ea3eaca6af0ce735b2dbb2eb3e7c2c74961f6fc4f8a0c06ff1a09abc4c351f8"
+          }
         }
       ]
     },
@@ -1815,7 +2495,15 @@
         {
           "id": "24926582-d29f-4624-85c3-21bb7181b241",
           "exampleItem": "We can go wherever you want.",
-          "intent": "wherever"
+          "intent": "wherever",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/24926582-d29f-4624-85c3-21bb7181b241-cedar.mp3",
+            "marin": "/audio/en-US/marin/24926582-d29f-4624-85c3-21bb7181b241-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "4b4538934fabf9ec890b531bc9ec895e2fefa36fff25933a4b6e61df960daef5",
+            "marin": "4b4538934fabf9ec890b531bc9ec895e2fefa36fff25933a4b6e61df960daef5"
+          }
         }
       ]
     },
@@ -1842,7 +2530,15 @@
         {
           "id": "6f34cb79-acd3-42bf-9fb6-deb116431563",
           "exampleItem": "Whoever finds my keys will get a reward.",
-          "intent": "Whoever"
+          "intent": "Whoever",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/6f34cb79-acd3-42bf-9fb6-deb116431563-cedar.mp3",
+            "marin": "/audio/en-US/marin/6f34cb79-acd3-42bf-9fb6-deb116431563-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "9e5a264378439971fef2a6818169de6b13b211fa76a78785a39bbd377c98d58c",
+            "marin": "9e5a264378439971fef2a6818169de6b13b211fa76a78785a39bbd377c98d58c"
+          }
         }
       ]
     },
@@ -1869,12 +2565,28 @@
         {
           "id": "8b8c38ba-fd62-46dc-97f7-9e6248151a5c",
           "exampleItem": "Do it however you like.",
-          "intent": "however"
+          "intent": "however",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/8b8c38ba-fd62-46dc-97f7-9e6248151a5c-cedar.mp3",
+            "marin": "/audio/en-US/marin/8b8c38ba-fd62-46dc-97f7-9e6248151a5c-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "85a867245f8af4fa39cace675f4573ab57f70683531ad9260c091f7916550809",
+            "marin": "85a867245f8af4fa39cace675f4573ab57f70683531ad9260c091f7916550809"
+          }
         },
         {
           "id": "0720c557-bc50-450e-8165-cdfb51fca1c4",
           "exampleItem": "I’ll help you however I can.",
-          "intent": "however"
+          "intent": "however",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/0720c557-bc50-450e-8165-cdfb51fca1c4-cedar.mp3",
+            "marin": "/audio/en-US/marin/0720c557-bc50-450e-8165-cdfb51fca1c4-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "ac7b38453839f45873bb3d75c8481707271fe82691bf9995fb0d3990c602ece9",
+            "marin": "ac7b38453839f45873bb3d75c8481707271fe82691bf9995fb0d3990c602ece9"
+          }
         }
       ]
     },
@@ -1902,12 +2614,28 @@
         {
           "id": "10b7b1e2-7b26-4fef-88b2-ff58c41e7c79",
           "exampleItem": "You are supposed to wear a helmet.",
-          "intent": "supposed to"
+          "intent": "supposed to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/10b7b1e2-7b26-4fef-88b2-ff58c41e7c79-cedar.mp3",
+            "marin": "/audio/en-US/marin/10b7b1e2-7b26-4fef-88b2-ff58c41e7c79-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "ff75ee15a8e07a84eb70b69bfa94da5b95badb0c10d52ddb8dc182cf797ae1fd",
+            "marin": "ff75ee15a8e07a84eb70b69bfa94da5b95badb0c10d52ddb8dc182cf797ae1fd"
+          }
         },
         {
           "id": "626c8fdc-abbd-4b32-8552-c28a7d551e97",
           "exampleItem": "You were supposed to wear a helmet.",
-          "intent": "supposed to"
+          "intent": "supposed to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/626c8fdc-abbd-4b32-8552-c28a7d551e97-cedar.mp3",
+            "marin": "/audio/en-US/marin/626c8fdc-abbd-4b32-8552-c28a7d551e97-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "f9e0db48ae8a6426a2147a3cd78e51005e5225f7b776aeba2f52b129ae436383",
+            "marin": "f9e0db48ae8a6426a2147a3cd78e51005e5225f7b776aeba2f52b129ae436383"
+          }
         }
       ]
     },
@@ -1934,7 +2662,15 @@
         {
           "id": "25e5587d-9629-43eb-b6be-c71ec1e1f753",
           "exampleItem": "What if I lose my job?",
-          "intent": "What if"
+          "intent": "What if",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/25e5587d-9629-43eb-b6be-c71ec1e1f753-cedar.mp3",
+            "marin": "/audio/en-US/marin/25e5587d-9629-43eb-b6be-c71ec1e1f753-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "510f28e6225eb8dc1967a65e4ebe6c017aff3b9eb10aed367fb60a9eb15979fd",
+            "marin": "510f28e6225eb8dc1967a65e4ebe6c017aff3b9eb10aed367fb60a9eb15979fd"
+          }
         }
       ]
     },
@@ -1960,7 +2696,15 @@
         {
           "id": "ae7a2ac2-3f9b-41e4-a5a7-3fd4ede49f6b",
           "exampleItem": "I hope he gets better.",
-          "intent": "I hope"
+          "intent": "I hope",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/ae7a2ac2-3f9b-41e4-a5a7-3fd4ede49f6b-cedar.mp3",
+            "marin": "/audio/en-US/marin/ae7a2ac2-3f9b-41e4-a5a7-3fd4ede49f6b-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "172acb18a4a1fb1b559616fdf9cceb805aaf9c4b58863979ffd497da08ae3679",
+            "marin": "172acb18a4a1fb1b559616fdf9cceb805aaf9c4b58863979ffd497da08ae3679"
+          }
         }
       ]
     },
@@ -1988,12 +2732,28 @@
         {
           "id": "24d23a1a-91fb-403c-bdae-0c9b96aa4393",
           "exampleItem": "Every update has been executed.",
-          "intent": "has been"
+          "intent": "has been",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/24d23a1a-91fb-403c-bdae-0c9b96aa4393-cedar.mp3",
+            "marin": "/audio/en-US/marin/24d23a1a-91fb-403c-bdae-0c9b96aa4393-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "42f340bc7e8e15c5832c292ddc2dd560619ac9d7eb07089df993b7ce3b413d66",
+            "marin": "42f340bc7e8e15c5832c292ddc2dd560619ac9d7eb07089df993b7ce3b413d66"
+          }
         },
         {
           "id": "d3426144-70e0-4005-95f7-a0035af8a11a",
           "exampleItem": "I have been to the US twice.",
-          "intent": "have"
+          "intent": "have",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/d3426144-70e0-4005-95f7-a0035af8a11a-cedar.mp3",
+            "marin": "/audio/en-US/marin/d3426144-70e0-4005-95f7-a0035af8a11a-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "84bb45516507b8d107ab0777f0ad965ce842f264be5a7d7f97cbdfb006393324",
+            "marin": "84bb45516507b8d107ab0777f0ad965ce842f264be5a7d7f97cbdfb006393324"
+          }
         }
       ]
     },
@@ -2021,7 +2781,15 @@
         {
           "id": "d10c409b-1f16-4f87-9b72-8c5714ec810c",
           "exampleItem": "You were seen there last night.",
-          "intent": "were"
+          "intent": "were",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/d10c409b-1f16-4f87-9b72-8c5714ec810c-cedar.mp3",
+            "marin": "/audio/en-US/marin/d10c409b-1f16-4f87-9b72-8c5714ec810c-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "f19490f58c25a85bea23866930574ee8bfcd7270b86857e6c9881f132c99db9b",
+            "marin": "f19490f58c25a85bea23866930574ee8bfcd7270b86857e6c9881f132c99db9b"
+          }
         }
       ]
     },
@@ -2050,12 +2818,28 @@
         {
           "id": "5b27743d-4407-40b7-b2ce-9a96829690f6",
           "exampleItem": "The car is repaired.",
-          "intent": "is"
+          "intent": "is",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/5b27743d-4407-40b7-b2ce-9a96829690f6-cedar.mp3",
+            "marin": "/audio/en-US/marin/5b27743d-4407-40b7-b2ce-9a96829690f6-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "54854de3cbfba0f925f5084982e9132319a1e5bb55ea9e6483b686cc6d992cca",
+            "marin": "54854de3cbfba0f925f5084982e9132319a1e5bb55ea9e6483b686cc6d992cca"
+          }
         },
         {
           "id": "466eac82-4a12-4543-8255-bdb06cfd7858",
           "exampleItem": "The task is completed.",
-          "intent": "is"
+          "intent": "is",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/466eac82-4a12-4543-8255-bdb06cfd7858-cedar.mp3",
+            "marin": "/audio/en-US/marin/466eac82-4a12-4543-8255-bdb06cfd7858-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "3965919b663c6a85cf629c3d12ef2529d33605315e64a0c22b76de2eedc13ad5",
+            "marin": "3965919b663c6a85cf629c3d12ef2529d33605315e64a0c22b76de2eedc13ad5"
+          }
         }
       ]
     },
@@ -2084,7 +2868,15 @@
         {
           "id": "02ab3bfb-8829-44d0-994e-2f61f2d0976b",
           "exampleItem": "The job is being executed.",
-          "intent": "is"
+          "intent": "is",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/02ab3bfb-8829-44d0-994e-2f61f2d0976b-cedar.mp3",
+            "marin": "/audio/en-US/marin/02ab3bfb-8829-44d0-994e-2f61f2d0976b-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "56cd620d6c10795582f63235a2b341ee5a7b528094ce15fd4057947c930686c2",
+            "marin": "56cd620d6c10795582f63235a2b341ee5a7b528094ce15fd4057947c930686c2"
+          }
         }
       ]
     },
@@ -2112,7 +2904,15 @@
         {
           "id": "151e64b8-f27a-4be6-96f0-ea1a1d12d628",
           "exampleItem": "I have just eaten an apple.",
-          "intent": "have"
+          "intent": "have",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/151e64b8-f27a-4be6-96f0-ea1a1d12d628-cedar.mp3",
+            "marin": "/audio/en-US/marin/151e64b8-f27a-4be6-96f0-ea1a1d12d628-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "b8893fb001fd7d6908a69a6cc7e07fa9ca7774cac674120a5822c85bcecee111",
+            "marin": "b8893fb001fd7d6908a69a6cc7e07fa9ca7774cac674120a5822c85bcecee111"
+          }
         }
       ]
     },
@@ -2140,12 +2940,28 @@
         {
           "id": "648d446d-be6a-47b6-85d1-36df2236f1a2",
           "exampleItem": "I ended up talking too much.",
-          "intent": "ended up"
+          "intent": "ended up",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/648d446d-be6a-47b6-85d1-36df2236f1a2-cedar.mp3",
+            "marin": "/audio/en-US/marin/648d446d-be6a-47b6-85d1-36df2236f1a2-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "a588cfef8a2bfab1d0e5f90348603bd04f27239be7bf89880ec1fb50cfa8aaa1",
+            "marin": "a588cfef8a2bfab1d0e5f90348603bd04f27239be7bf89880ec1fb50cfa8aaa1"
+          }
         },
         {
           "id": "40baef71-edba-4267-b403-462700262fcf",
           "exampleItem": "We ended up being harder than expected.",
-          "intent": "ended up"
+          "intent": "ended up",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/40baef71-edba-4267-b403-462700262fcf-cedar.mp3",
+            "marin": "/audio/en-US/marin/40baef71-edba-4267-b403-462700262fcf-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "92d2e3592e219f78922857db39567638725b06494109defc9f808bf04c2d950a",
+            "marin": "92d2e3592e219f78922857db39567638725b06494109defc9f808bf04c2d950a"
+          }
         }
       ]
     },
@@ -2173,7 +2989,15 @@
         {
           "id": "e2089f35-da66-4bc1-b55a-e0468ff3b58f",
           "exampleItem": "I am about to watch a video.",
-          "intent": "about to"
+          "intent": "about to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/e2089f35-da66-4bc1-b55a-e0468ff3b58f-cedar.mp3",
+            "marin": "/audio/en-US/marin/e2089f35-da66-4bc1-b55a-e0468ff3b58f-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "6c0343dc729863fc6dbb1b496fb4b0de3ae935183d5952d0a66b389daa865458",
+            "marin": "6c0343dc729863fc6dbb1b496fb4b0de3ae935183d5952d0a66b389daa865458"
+          }
         }
       ]
     },
@@ -2199,7 +3023,15 @@
         {
           "id": "dc72fcaa-419b-4dc8-aee4-60954740df83",
           "exampleItem": "This can be dangerous.",
-          "intent": "can be"
+          "intent": "can be",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/dc72fcaa-419b-4dc8-aee4-60954740df83-cedar.mp3",
+            "marin": "/audio/en-US/marin/dc72fcaa-419b-4dc8-aee4-60954740df83-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "cf2078b08cbc5f23321b7de84b82ece16d9933b278eb79286e96c1545988244d",
+            "marin": "cf2078b08cbc5f23321b7de84b82ece16d9933b278eb79286e96c1545988244d"
+          }
         }
       ]
     },
@@ -2225,12 +3057,28 @@
         {
           "id": "2d1f7e9f-7239-43b2-9427-7eb17dd0d3d6",
           "exampleItem": "That could be the reason.",
-          "intent": "could be"
+          "intent": "could be",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/2d1f7e9f-7239-43b2-9427-7eb17dd0d3d6-cedar.mp3",
+            "marin": "/audio/en-US/marin/2d1f7e9f-7239-43b2-9427-7eb17dd0d3d6-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "50eafdcc224b455cc03ead720c65e95b9c547c95097f623aa05668cdf7fa46c1",
+            "marin": "50eafdcc224b455cc03ead720c65e95b9c547c95097f623aa05668cdf7fa46c1"
+          }
         },
         {
           "id": "afa5cd40-c4b2-45d1-b86b-aa9af6dd70e8",
           "exampleItem": "It could be a misunderstanding.",
-          "intent": "could be"
+          "intent": "could be",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/afa5cd40-c4b2-45d1-b86b-aa9af6dd70e8-cedar.mp3",
+            "marin": "/audio/en-US/marin/afa5cd40-c4b2-45d1-b86b-aa9af6dd70e8-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "08355ba17bb51838b6c20890f95648324e09cbbf9e54de0791c7beb2853a42f1",
+            "marin": "08355ba17bb51838b6c20890f95648324e09cbbf9e54de0791c7beb2853a42f1"
+          }
         }
       ]
     },
@@ -2256,7 +3104,15 @@
         {
           "id": "de8bed3b-f5a3-48c5-9c56-9b4cc6ca44bb",
           "exampleItem": "She might be tired.",
-          "intent": "might be"
+          "intent": "might be",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/de8bed3b-f5a3-48c5-9c56-9b4cc6ca44bb-cedar.mp3",
+            "marin": "/audio/en-US/marin/de8bed3b-f5a3-48c5-9c56-9b4cc6ca44bb-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "f9c771519fa78bc3137ebf924e92484aa34094ef068f72e07ad49877c7e33859",
+            "marin": "f9c771519fa78bc3137ebf924e92484aa34094ef068f72e07ad49877c7e33859"
+          }
         }
       ]
     },
@@ -2282,7 +3138,15 @@
         {
           "id": "e782272b-c177-489f-9c10-7f59b82eb70d",
           "exampleItem": "He must be at home.",
-          "intent": "must be"
+          "intent": "must be",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/e782272b-c177-489f-9c10-7f59b82eb70d-cedar.mp3",
+            "marin": "/audio/en-US/marin/e782272b-c177-489f-9c10-7f59b82eb70d-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "904551e97b4025dda9bbc0b2a2609ff6b36a99a064623a208efd5cc356552dff",
+            "marin": "904551e97b4025dda9bbc0b2a2609ff6b36a99a064623a208efd5cc356552dff"
+          }
         }
       ]
     },
@@ -2310,7 +3174,15 @@
         {
           "id": "85250c1c-4e47-496e-a33e-6b88b6f00186",
           "exampleItem": "It can’t be true.",
-          "intent": "can’t be"
+          "intent": "can’t be",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/85250c1c-4e47-496e-a33e-6b88b6f00186-cedar.mp3",
+            "marin": "/audio/en-US/marin/85250c1c-4e47-496e-a33e-6b88b6f00186-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "7da6b4e282ba971d09ba53c138611fb3e4f7d8004d7959735865e3b1a0fe71a5",
+            "marin": "7da6b4e282ba971d09ba53c138611fb3e4f7d8004d7959735865e3b1a0fe71a5"
+          }
         }
       ]
     },
@@ -2342,12 +3214,28 @@
         {
           "id": "607cea05-dd53-44aa-bc9c-7e5511201862",
           "exampleItem": "If you can, could you buy some cookies at the bakery?",
-          "intent": "can, could"
+          "intent": "can, could",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/607cea05-dd53-44aa-bc9c-7e5511201862-cedar.mp3",
+            "marin": "/audio/en-US/marin/607cea05-dd53-44aa-bc9c-7e5511201862-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "a673961473bcb76555dea53b5ad431bda8196824b3e6b7dc2ad999c6db5eed84",
+            "marin": "a673961473bcb76555dea53b5ad431bda8196824b3e6b7dc2ad999c6db5eed84"
+          }
         },
         {
           "id": "54d51f4e-b724-4e68-8a45-cc34d8e0e7d0",
           "exampleItem": "If it works for you, you can come over today.",
-          "intent": "If it works for you"
+          "intent": "If it works for you",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/54d51f4e-b724-4e68-8a45-cc34d8e0e7d0-cedar.mp3",
+            "marin": "/audio/en-US/marin/54d51f4e-b724-4e68-8a45-cc34d8e0e7d0-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "f0b4999661bb373449919ca9144578cb3aa485b30dac04785acd171b4e237d42",
+            "marin": "f0b4999661bb373449919ca9144578cb3aa485b30dac04785acd171b4e237d42"
+          }
         }
       ]
     },
@@ -2378,12 +3266,28 @@
         {
           "id": "016e9547-7b16-47e6-af3b-a7e48ce6458c",
           "exampleItem": "Whenever you can, we’ll talk.",
-          "intent": "Whenever"
+          "intent": "Whenever",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/016e9547-7b16-47e6-af3b-a7e48ce6458c-cedar.mp3",
+            "marin": "/audio/en-US/marin/016e9547-7b16-47e6-af3b-a7e48ce6458c-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "467b84f6b5df078486d16407c82874ae9778a58abcd3224a810a9998ee4388e2",
+            "marin": "467b84f6b5df078486d16407c82874ae9778a58abcd3224a810a9998ee4388e2"
+          }
         },
         {
           "id": "1d17424c-9e4c-43db-878b-e0aa2091007c",
           "exampleItem": "When you can, let me know.",
-          "intent": "can, let"
+          "intent": "can, let",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/1d17424c-9e4c-43db-878b-e0aa2091007c-cedar.mp3",
+            "marin": "/audio/en-US/marin/1d17424c-9e4c-43db-878b-e0aa2091007c-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "da9c6b6369afacfdf32eb193963e63c8cb6d31d9dffb7f93629859ca1425ccf9",
+            "marin": "da9c6b6369afacfdf32eb193963e63c8cb6d31d9dffb7f93629859ca1425ccf9"
+          }
         }
       ]
     },
@@ -2411,12 +3315,28 @@
         {
           "id": "c3decff5-3b51-476a-b2ca-d8f85352571b",
           "exampleItem": "I wish I had more time.",
-          "intent": "I wish I"
+          "intent": "I wish I",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/c3decff5-3b51-476a-b2ca-d8f85352571b-cedar.mp3",
+            "marin": "/audio/en-US/marin/c3decff5-3b51-476a-b2ca-d8f85352571b-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "bb78eb6187ce4020468fb80999e38aaab9c7b331cc8b44d37436d76019a1a844",
+            "marin": "bb78eb6187ce4020468fb80999e38aaab9c7b331cc8b44d37436d76019a1a844"
+          }
         },
         {
           "id": "5ab01935-42e3-49a4-8228-124bb8dcbd3c",
           "exampleItem": "I wish I lived closer.",
-          "intent": "I wish I"
+          "intent": "I wish I",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/5ab01935-42e3-49a4-8228-124bb8dcbd3c-cedar.mp3",
+            "marin": "/audio/en-US/marin/5ab01935-42e3-49a4-8228-124bb8dcbd3c-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "65e41ecd73976f5ccd55dc01a334787cedd37aa2794faa1df9f32bedaa35d413",
+            "marin": "65e41ecd73976f5ccd55dc01a334787cedd37aa2794faa1df9f32bedaa35d413"
+          }
         }
       ]
     },
@@ -2444,7 +3364,15 @@
         {
           "id": "bf50be9d-d867-4c7f-a8f0-144b8f952b1b",
           "exampleItem": "I wish I could travel more.",
-          "intent": "I wish I could"
+          "intent": "I wish I could",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/bf50be9d-d867-4c7f-a8f0-144b8f952b1b-cedar.mp3",
+            "marin": "/audio/en-US/marin/bf50be9d-d867-4c7f-a8f0-144b8f952b1b-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "413ffb8528ae520988c8936a1431f6953ae0a01b890da1f2ebb13ab070f2884e",
+            "marin": "413ffb8528ae520988c8936a1431f6953ae0a01b890da1f2ebb13ab070f2884e"
+          }
         }
       ]
     },
@@ -2470,7 +3398,15 @@
         {
           "id": "b6f486d7-b832-4770-9fc7-78be3e87e03d",
           "exampleItem": "What this means in practice is that we have to focus on what really matters so that we don’t compromise the build.",
-          "intent": "so that"
+          "intent": "so that",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/b6f486d7-b832-4770-9fc7-78be3e87e03d-cedar.mp3",
+            "marin": "/audio/en-US/marin/b6f486d7-b832-4770-9fc7-78be3e87e03d-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "b7ce2b6cbf2d30f851bece6aa920193278a61e695ffcd4a7d5491f699bf61deb",
+            "marin": "b7ce2b6cbf2d30f851bece6aa920193278a61e695ffcd4a7d5491f699bf61deb"
+          }
         }
       ]
     },
@@ -2499,12 +3435,28 @@
         {
           "id": "7916839b-001d-4e25-a929-3b3e74d7948f",
           "exampleItem": "I wish I had accepted that job.",
-          "intent": "I wish I had"
+          "intent": "I wish I had",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/7916839b-001d-4e25-a929-3b3e74d7948f-cedar.mp3",
+            "marin": "/audio/en-US/marin/7916839b-001d-4e25-a929-3b3e74d7948f-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "70531f0e0f877ea6e20c78e8c4c607205d3616f69c270df3a8ca836d2a0ca199",
+            "marin": "70531f0e0f877ea6e20c78e8c4c607205d3616f69c270df3a8ca836d2a0ca199"
+          }
         },
         {
           "id": "b509d158-4e98-4b1a-9e89-55f9f02ae25d",
           "exampleItem": "I wish I had gone with you.",
-          "intent": "I wish I had"
+          "intent": "I wish I had",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/b509d158-4e98-4b1a-9e89-55f9f02ae25d-cedar.mp3",
+            "marin": "/audio/en-US/marin/b509d158-4e98-4b1a-9e89-55f9f02ae25d-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "5c822e2c9a8aef163c7f1d1d8cd6654efde0b5d2284a7a2987fcb7329d5014ad",
+            "marin": "5c822e2c9a8aef163c7f1d1d8cd6654efde0b5d2284a7a2987fcb7329d5014ad"
+          }
         }
       ]
     },
@@ -2531,7 +3483,15 @@
         {
           "id": "d6121047-b1a7-4e65-8125-5ee846e65378",
           "exampleItem": "If only he knew about it.",
-          "intent": "If only"
+          "intent": "If only",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/d6121047-b1a7-4e65-8125-5ee846e65378-cedar.mp3",
+            "marin": "/audio/en-US/marin/d6121047-b1a7-4e65-8125-5ee846e65378-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "c96b930a25c7406c22a08a782b00100d6fd5d43ea13d4d7e29415266042d0331",
+            "marin": "c96b930a25c7406c22a08a782b00100d6fd5d43ea13d4d7e29415266042d0331"
+          }
         }
       ]
     },
@@ -2559,12 +3519,28 @@
         {
           "id": "a3981e3b-3fc7-4af7-836e-7195cb97b562",
           "exampleItem": "If only he had told me.",
-          "intent": "If only"
+          "intent": "If only",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/a3981e3b-3fc7-4af7-836e-7195cb97b562-cedar.mp3",
+            "marin": "/audio/en-US/marin/a3981e3b-3fc7-4af7-836e-7195cb97b562-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "89cea9c81a46c71b9040fde06e83df363e9f25908312ff7affd3129952a3723e",
+            "marin": "89cea9c81a46c71b9040fde06e83df363e9f25908312ff7affd3129952a3723e"
+          }
         },
         {
           "id": "818d387d-d809-43ff-9b57-1d33b42a6a35",
           "exampleItem": "If only I had had more time.",
-          "intent": "If only"
+          "intent": "If only",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/818d387d-d809-43ff-9b57-1d33b42a6a35-cedar.mp3",
+            "marin": "/audio/en-US/marin/818d387d-d809-43ff-9b57-1d33b42a6a35-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "1ab26e7cbbe0232860d4b95ddc46b8581a186fee12edb431f7b670053b3a8ef3",
+            "marin": "1ab26e7cbbe0232860d4b95ddc46b8581a186fee12edb431f7b670053b3a8ef3"
+          }
         }
       ]
     },
@@ -2595,17 +3571,41 @@
         {
           "id": "6693cbad-aa36-4850-95d3-7e525d407306",
           "exampleItem": "Maybe tomorrow.",
-          "intent": "Maybe"
+          "intent": "Maybe",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/6693cbad-aa36-4850-95d3-7e525d407306-cedar.mp3",
+            "marin": "/audio/en-US/marin/6693cbad-aa36-4850-95d3-7e525d407306-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "1ba955d55577da6f2f07ce3b475247a2b569bacbcd3004e6ca3166bde6421f6a",
+            "marin": "1ba955d55577da6f2f07ce3b475247a2b569bacbcd3004e6ca3166bde6421f6a"
+          }
         },
         {
           "id": "57d26b46-d06e-4034-94ca-d3b1ed00ffaa",
           "exampleItem": "Hopefully it works out.",
-          "intent": "Hopefully"
+          "intent": "Hopefully",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/57d26b46-d06e-4034-94ca-d3b1ed00ffaa-cedar.mp3",
+            "marin": "/audio/en-US/marin/57d26b46-d06e-4034-94ca-d3b1ed00ffaa-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "4ee2bea99b00d8769aff04d24098c7394c37f1abd1a82b5151d87e0eb480ebe4",
+            "marin": "4ee2bea99b00d8769aff04d24098c7394c37f1abd1a82b5151d87e0eb480ebe4"
+          }
         },
         {
           "id": "b6997854-12ff-4bcd-84e1-192c444d86d5",
           "exampleItem": "Who knows?",
-          "intent": "Who knows"
+          "intent": "Who knows",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/b6997854-12ff-4bcd-84e1-192c444d86d5-cedar.mp3",
+            "marin": "/audio/en-US/marin/b6997854-12ff-4bcd-84e1-192c444d86d5-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "10096605a2eac03041b60b3da6025c8a31f582eea558fcd4f2dfc26e836102a9",
+            "marin": "10096605a2eac03041b60b3da6025c8a31f582eea558fcd4f2dfc26e836102a9"
+          }
         }
       ]
     },
@@ -2633,7 +3633,15 @@
         {
           "id": "dba18352-3ccc-44e2-a062-50cdb583b49a",
           "exampleItem": "If it’s not a problem, could you review this?",
-          "intent": "If it’s not a problem"
+          "intent": "If it’s not a problem",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/dba18352-3ccc-44e2-a062-50cdb583b49a-cedar.mp3",
+            "marin": "/audio/en-US/marin/dba18352-3ccc-44e2-a062-50cdb583b49a-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "b5c9688b714a0cb3b331b00920261cd952af739eebeda2ea7676373a4ea110e6",
+            "marin": "b5c9688b714a0cb3b331b00920261cd952af739eebeda2ea7676373a4ea110e6"
+          }
         }
       ]
     },
@@ -2663,22 +3671,54 @@
         {
           "id": "ff1d4ca1-923c-47d9-bcba-89d036abe9a9",
           "exampleItem": "In the end, it didn’t work out.",
-          "intent": "In the end"
+          "intent": "In the end",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/ff1d4ca1-923c-47d9-bcba-89d036abe9a9-cedar.mp3",
+            "marin": "/audio/en-US/marin/ff1d4ca1-923c-47d9-bcba-89d036abe9a9-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "8a26d50e92127491bb660e4d564f0fea974a6633895d52feb468b213a49c6847",
+            "marin": "8a26d50e92127491bb660e4d564f0fea974a6633895d52feb468b213a49c6847"
+          }
         },
         {
           "id": "26f71257-f9f7-4aa5-a090-551b804fc743",
           "exampleItem": "At the end of the day, what matters is the result.",
-          "intent": "At the end of the day"
+          "intent": "At the end of the day",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/26f71257-f9f7-4aa5-a090-551b804fc743-cedar.mp3",
+            "marin": "/audio/en-US/marin/26f71257-f9f7-4aa5-a090-551b804fc743-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "52425265c8ac7c0749eb384ed5ebecf127d66031150151440aef4ee0e841ad21",
+            "marin": "52425265c8ac7c0749eb384ed5ebecf127d66031150151440aef4ee0e841ad21"
+          }
         },
         {
           "id": "8b738bd6-ae68-43b0-bcba-e9d7c3ec7c98",
           "exampleItem": "At the end of the day, the decision is yours.",
-          "intent": "At the end of the day"
+          "intent": "At the end of the day",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/8b738bd6-ae68-43b0-bcba-e9d7c3ec7c98-cedar.mp3",
+            "marin": "/audio/en-US/marin/8b738bd6-ae68-43b0-bcba-e9d7c3ec7c98-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "e2dc4d46c82559d6133b39688c4d0bde7142f953f54fc3a7d0bd71fce3d22289",
+            "marin": "e2dc4d46c82559d6133b39688c4d0bde7142f953f54fc3a7d0bd71fce3d22289"
+          }
         },
         {
           "id": "82e756ed-a1fc-409a-8cce-d1ca547d1b11",
           "exampleItem": "At the end of the day, what matters is to keep practicing.",
-          "intent": "At the end of the day"
+          "intent": "At the end of the day",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/82e756ed-a1fc-409a-8cce-d1ca547d1b11-cedar.mp3",
+            "marin": "/audio/en-US/marin/82e756ed-a1fc-409a-8cce-d1ca547d1b11-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "aa1326e8ffe54fe233892514523d6149a6b5c756bd51ec10e2e663816927c5fc",
+            "marin": "aa1326e8ffe54fe233892514523d6149a6b5c756bd51ec10e2e663816927c5fc"
+          }
         }
       ]
     },
@@ -2707,7 +3747,15 @@
         {
           "id": "51483c00-9aa0-4c25-8dbe-d9ca2b5fe3e8",
           "exampleItem": "What is this used for?",
-          "intent": "What is"
+          "intent": "What is",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/51483c00-9aa0-4c25-8dbe-d9ca2b5fe3e8-cedar.mp3",
+            "marin": "/audio/en-US/marin/51483c00-9aa0-4c25-8dbe-d9ca2b5fe3e8-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "f824b9370a47297a298ccc8edb6c157b205fe34602ac1072680bb9f40b64a28a",
+            "marin": "f824b9370a47297a298ccc8edb6c157b205fe34602ac1072680bb9f40b64a28a"
+          }
         }
       ]
     },
@@ -2734,12 +3782,28 @@
         {
           "id": "16d9257f-8794-4e63-a7be-314496d716f8",
           "exampleItem": "I got to meet her yesterday.",
-          "intent": "got"
+          "intent": "got",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/16d9257f-8794-4e63-a7be-314496d716f8-cedar.mp3",
+            "marin": "/audio/en-US/marin/16d9257f-8794-4e63-a7be-314496d716f8-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "ea93f607f68011d4f83cd65a9b15dd6393e4024aa3c5ca98181d2f8db1ab78d4",
+            "marin": "ea93f607f68011d4f83cd65a9b15dd6393e4024aa3c5ca98181d2f8db1ab78d4"
+          }
         },
         {
           "id": "ba07a1a8-2a25-4a25-8b4d-20fc41c55403",
           "exampleItem": "You will get to travel a lot in this job.",
-          "intent": "get to"
+          "intent": "get to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/ba07a1a8-2a25-4a25-8b4d-20fc41c55403-cedar.mp3",
+            "marin": "/audio/en-US/marin/ba07a1a8-2a25-4a25-8b4d-20fc41c55403-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "bdaa334731354159d56b0d2d39c8bdf03656d44098e8c3485f0613ebd887d4c7",
+            "marin": "bdaa334731354159d56b0d2d39c8bdf03656d44098e8c3485f0613ebd887d4c7"
+          }
         }
       ]
     },
@@ -2768,12 +3832,28 @@
         {
           "id": "f8b7e74a-c262-45a1-8ad7-7ffc6c8ad288",
           "exampleItem": "I’m getting there.",
-          "intent": "getting"
+          "intent": "getting",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/f8b7e74a-c262-45a1-8ad7-7ffc6c8ad288-cedar.mp3",
+            "marin": "/audio/en-US/marin/f8b7e74a-c262-45a1-8ad7-7ffc6c8ad288-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "704003ad070b15205da1b5d8c7d9173ebbf18ffb5125c2d544310823c1d4d019",
+            "marin": "704003ad070b15205da1b5d8c7d9173ebbf18ffb5125c2d544310823c1d4d019"
+          }
         },
         {
           "id": "30f16fd8-3bab-4547-853c-05d1ebf09845",
           "exampleItem": "I’m getting results.",
-          "intent": "getting"
+          "intent": "getting",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/30f16fd8-3bab-4547-853c-05d1ebf09845-cedar.mp3",
+            "marin": "/audio/en-US/marin/30f16fd8-3bab-4547-853c-05d1ebf09845-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "f5519a033dd1a17141820d2fb25b1af76e9d74a7442510ff356e06e3d9382556",
+            "marin": "f5519a033dd1a17141820d2fb25b1af76e9d74a7442510ff356e06e3d9382556"
+          }
         }
       ]
     },
@@ -2803,12 +3883,28 @@
         {
           "id": "89dfafb7-3988-4600-956e-98c366551adc",
           "exampleItem": "I’m running without pain.",
-          "intent": "I’m running"
+          "intent": "I’m running",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/89dfafb7-3988-4600-956e-98c366551adc-cedar.mp3",
+            "marin": "/audio/en-US/marin/89dfafb7-3988-4600-956e-98c366551adc-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "f8ebde7ede699d1ffed92644aa524e5028ca2d340a69ee0d05dffddb9ba1a0fc",
+            "marin": "f8ebde7ede699d1ffed92644aa524e5028ca2d340a69ee0d05dffddb9ba1a0fc"
+          }
         },
         {
           "id": "7e35e75b-4a8b-40e4-b0a5-e8e35e6d4890",
           "exampleItem": "I’m studying every day.",
-          "intent": "I’m studying"
+          "intent": "I’m studying",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/7e35e75b-4a8b-40e4-b0a5-e8e35e6d4890-cedar.mp3",
+            "marin": "/audio/en-US/marin/7e35e75b-4a8b-40e4-b0a5-e8e35e6d4890-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "a478c9c463705133686df83cfad0e03ad13c0598240908d05779b1a5dbf69d62",
+            "marin": "a478c9c463705133686df83cfad0e03ad13c0598240908d05779b1a5dbf69d62"
+          }
         }
       ]
     },
@@ -2838,12 +3934,28 @@
         {
           "id": "2db09584-5ce9-44f6-832a-09027b432824",
           "exampleItem": "I’ll get the job.",
-          "intent": "get"
+          "intent": "get",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/2db09584-5ce9-44f6-832a-09027b432824-cedar.mp3",
+            "marin": "/audio/en-US/marin/2db09584-5ce9-44f6-832a-09027b432824-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "05a0149209368182a877bf84dbae2f22a11c28f057516bf9bb0ae7fc92840ea7",
+            "marin": "05a0149209368182a877bf84dbae2f22a11c28f057516bf9bb0ae7fc92840ea7"
+          }
         },
         {
           "id": "84fb942e-7caf-474d-8a9d-afd925839754",
           "exampleItem": "We’ll get there.",
-          "intent": "get"
+          "intent": "get",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/84fb942e-7caf-474d-8a9d-afd925839754-cedar.mp3",
+            "marin": "/audio/en-US/marin/84fb942e-7caf-474d-8a9d-afd925839754-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "ab04f9de918a149095f9bd13f131a687d2bba43eef15f3e14a1cffaa1e89ae33",
+            "marin": "ab04f9de918a149095f9bd13f131a687d2bba43eef15f3e14a1cffaa1e89ae33"
+          }
         }
       ]
     },
@@ -2871,7 +3983,15 @@
         {
           "id": "33f79bd8-f343-49f9-860e-6c9d5fc8b1f7",
           "exampleItem": "He gets good results with this method.",
-          "intent": "gets"
+          "intent": "gets",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/33f79bd8-f343-49f9-860e-6c9d5fc8b1f7-cedar.mp3",
+            "marin": "/audio/en-US/marin/33f79bd8-f343-49f9-860e-6c9d5fc8b1f7-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "3853c00a6b8698f003d6c4a4ee83cf6375cbc762bdad52557cda70e9339d16e7",
+            "marin": "3853c00a6b8698f003d6c4a4ee83cf6375cbc762bdad52557cda70e9339d16e7"
+          }
         }
       ]
     },
@@ -2899,7 +4019,15 @@
         {
           "id": "5afa7e40-6ea2-4f92-883d-80537ab91a1b",
           "exampleItem": "She got the approval yesterday.",
-          "intent": "got"
+          "intent": "got",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/5afa7e40-6ea2-4f92-883d-80537ab91a1b-cedar.mp3",
+            "marin": "/audio/en-US/marin/5afa7e40-6ea2-4f92-883d-80537ab91a1b-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "9df9cabb1dfe8b1fa7e6fb605cdb6340d529925c6d2922cb8d0ced10e1573b2a",
+            "marin": "9df9cabb1dfe8b1fa7e6fb605cdb6340d529925c6d2922cb8d0ced10e1573b2a"
+          }
         }
       ]
     },
@@ -2928,12 +4056,28 @@
         {
           "id": "8ead37a4-577c-49a4-9fea-659a5d363887",
           "exampleItem": "I can solve this problem.",
-          "intent": "can"
+          "intent": "can",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/8ead37a4-577c-49a4-9fea-659a5d363887-cedar.mp3",
+            "marin": "/audio/en-US/marin/8ead37a4-577c-49a4-9fea-659a5d363887-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "48d0e4c1b2027d93d2ea8b965b164bc1ee9af086484d371a6cf7af5498c326c2",
+            "marin": "48d0e4c1b2027d93d2ea8b965b164bc1ee9af086484d371a6cf7af5498c326c2"
+          }
         },
         {
           "id": "a8167995-640e-4cbf-8528-3a7c64c1d30f",
           "exampleItem": "She is able to handle difficult situations.",
-          "intent": "able to"
+          "intent": "able to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/a8167995-640e-4cbf-8528-3a7c64c1d30f-cedar.mp3",
+            "marin": "/audio/en-US/marin/a8167995-640e-4cbf-8528-3a7c64c1d30f-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "43ba971783972022bd1b623c008d93a902a4a2529f4d6ebbf2c6028672584003",
+            "marin": "43ba971783972022bd1b623c008d93a902a4a2529f4d6ebbf2c6028672584003"
+          }
         }
       ]
     },
@@ -2962,12 +4106,28 @@
         {
           "id": "c6e5f800-238f-4aed-b6c0-37b91259dbd5",
           "exampleItem": "I was able to finish the project on time.",
-          "intent": "was able to"
+          "intent": "was able to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/c6e5f800-238f-4aed-b6c0-37b91259dbd5-cedar.mp3",
+            "marin": "/audio/en-US/marin/c6e5f800-238f-4aed-b6c0-37b91259dbd5-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "403f08cea6d04410f9a16ae3f9b5427263ac7710e6873eea11efd725ca8c55ce",
+            "marin": "403f08cea6d04410f9a16ae3f9b5427263ac7710e6873eea11efd725ca8c55ce"
+          }
         },
         {
           "id": "0d5b9780-5df2-4627-b55f-b3d8ba620821",
           "exampleItem": "She managed to fix the issue before the deadline.",
-          "intent": "managed to"
+          "intent": "managed to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/0d5b9780-5df2-4627-b55f-b3d8ba620821-cedar.mp3",
+            "marin": "/audio/en-US/marin/0d5b9780-5df2-4627-b55f-b3d8ba620821-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "c4c5510a309241fcb4e686f37c0e68874c2b74789f1685e9a67aeff537a4869e",
+            "marin": "c4c5510a309241fcb4e686f37c0e68874c2b74789f1685e9a67aeff537a4869e"
+          }
         }
       ]
     },
@@ -2995,7 +4155,15 @@
         {
           "id": "91668a9a-a6aa-445f-8c01-5e7da53b0e44",
           "exampleItem": "I have gotten good results with this approach.",
-          "intent": "have"
+          "intent": "have",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/91668a9a-a6aa-445f-8c01-5e7da53b0e44-cedar.mp3",
+            "marin": "/audio/en-US/marin/91668a9a-a6aa-445f-8c01-5e7da53b0e44-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "5d759c496191d60656fb3d6f35654913a52532af3c951f0dd33c86243721de11",
+            "marin": "5d759c496191d60656fb3d6f35654913a52532af3c951f0dd33c86243721de11"
+          }
         }
       ]
     },
@@ -3024,7 +4192,15 @@
         {
           "id": "ada14090-ecc2-4d4b-8f23-0748582f6650",
           "exampleItem": "I’ve been able to learn English.",
-          "intent": "been able to"
+          "intent": "been able to",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/ada14090-ecc2-4d4b-8f23-0748582f6650-cedar.mp3",
+            "marin": "/audio/en-US/marin/ada14090-ecc2-4d4b-8f23-0748582f6650-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "84ac6ee62abd4e26c62737743afaa1fc9b67e455252ec15ae21e9ba59139bbbc",
+            "marin": "84ac6ee62abd4e26c62737743afaa1fc9b67e455252ec15ae21e9ba59139bbbc"
+          }
         }
       ]
     },
@@ -3054,12 +4230,28 @@
         {
           "id": "94103bed-4939-4133-b663-680e8b62d0d5",
           "exampleItem": "I have been getting better results over the past few months.",
-          "intent": "been getting"
+          "intent": "been getting",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/94103bed-4939-4133-b663-680e8b62d0d5-cedar.mp3",
+            "marin": "/audio/en-US/marin/94103bed-4939-4133-b663-680e8b62d0d5-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "1921e21119450dd3f571044d28c86d82010bbda832ae0723826005191288b425",
+            "marin": "1921e21119450dd3f571044d28c86d82010bbda832ae0723826005191288b425"
+          }
         },
         {
           "id": "1ca29f24-11cb-4713-8029-159a3e62c70d",
           "exampleItem": "He has been getting more confident at work lately.",
-          "intent": "has been getting"
+          "intent": "has been getting",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/1ca29f24-11cb-4713-8029-159a3e62c70d-cedar.mp3",
+            "marin": "/audio/en-US/marin/1ca29f24-11cb-4713-8029-159a3e62c70d-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "93225f097e9126c7d58e44c27afd047944c2edc359acd5d7b19f1f6deda66400",
+            "marin": "93225f097e9126c7d58e44c27afd047944c2edc359acd5d7b19f1f6deda66400"
+          }
         }
       ]
     },
@@ -3086,12 +4278,28 @@
         {
           "id": "c706e96b-adca-43fe-89db-9b0f392d8f7d",
           "exampleItem": "I’d rather go now.",
-          "intent": "rather"
+          "intent": "rather",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/c706e96b-adca-43fe-89db-9b0f392d8f7d-cedar.mp3",
+            "marin": "/audio/en-US/marin/c706e96b-adca-43fe-89db-9b0f392d8f7d-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "c9a1a0a51006bcc4ee132a661c88a8e441b17e7a3bdc65a46aa942e72eb31a12",
+            "marin": "c9a1a0a51006bcc4ee132a661c88a8e441b17e7a3bdc65a46aa942e72eb31a12"
+          }
         },
         {
           "id": "7080bc11-cd49-40e5-9804-d3d3f0574e9c",
           "exampleItem": "I’d rather stay home.",
-          "intent": "rather"
+          "intent": "rather",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/7080bc11-cd49-40e5-9804-d3d3f0574e9c-cedar.mp3",
+            "marin": "/audio/en-US/marin/7080bc11-cd49-40e5-9804-d3d3f0574e9c-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "36419cdc2557ed1bcc50161c8633f656bea21c90f7cc604ff0e84858aa1ff406",
+            "marin": "36419cdc2557ed1bcc50161c8633f656bea21c90f7cc604ff0e84858aa1ff406"
+          }
         }
       ]
     },
@@ -3119,7 +4327,15 @@
         {
           "id": "1e8df455-8ec1-40dc-8e32-db7da05d4c10",
           "exampleItem": "I got tired.",
-          "intent": "got"
+          "intent": "got",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/1e8df455-8ec1-40dc-8e32-db7da05d4c10-cedar.mp3",
+            "marin": "/audio/en-US/marin/1e8df455-8ec1-40dc-8e32-db7da05d4c10-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "69f05fbc92905dc5af76555b2b68ca3675146ea60b4a5a989b36da18c0789201",
+            "marin": "69f05fbc92905dc5af76555b2b68ca3675146ea60b4a5a989b36da18c0789201"
+          }
         }
       ]
     },
@@ -3147,7 +4363,15 @@
         {
           "id": "8ec1d7d3-27f2-477c-9d7b-341affb36e57",
           "exampleItem": "I get nervous before meetings.",
-          "intent": "get"
+          "intent": "get",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/8ec1d7d3-27f2-477c-9d7b-341affb36e57-cedar.mp3",
+            "marin": "/audio/en-US/marin/8ec1d7d3-27f2-477c-9d7b-341affb36e57-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "57e7aa8d9f9657d2f6434ce87c26c003b957a80efd255a299adcab3c990d0186",
+            "marin": "57e7aa8d9f9657d2f6434ce87c26c003b957a80efd255a299adcab3c990d0186"
+          }
         }
       ]
     },
@@ -3175,7 +4399,15 @@
         {
           "id": "2989158e-a838-461e-b271-a72336b72971",
           "exampleItem": "I am getting more confident.",
-          "intent": "getting"
+          "intent": "getting",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/2989158e-a838-461e-b271-a72336b72971-cedar.mp3",
+            "marin": "/audio/en-US/marin/2989158e-a838-461e-b271-a72336b72971-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "bbb7cd6540f49ce094bbe0048caa2c3868bb7d9ec3913a70e93a85d73ec4e9bb",
+            "marin": "bbb7cd6540f49ce094bbe0048caa2c3868bb7d9ec3913a70e93a85d73ec4e9bb"
+          }
         }
       ]
     },
@@ -3203,7 +4435,15 @@
         {
           "id": "f0b9410d-5415-4e03-b545-7537ec640b13",
           "exampleItem": "I will get happy.",
-          "intent": "will get"
+          "intent": "will get",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/f0b9410d-5415-4e03-b545-7537ec640b13-cedar.mp3",
+            "marin": "/audio/en-US/marin/f0b9410d-5415-4e03-b545-7537ec640b13-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "c8f03a588693d0311c0651586965ce87f081b742d70f0711a4d6f7671fcf1b64",
+            "marin": "c8f03a588693d0311c0651586965ce87f081b742d70f0711a4d6f7671fcf1b64"
+          }
         }
       ]
     },
@@ -3231,12 +4471,28 @@
         {
           "id": "97d9d90e-f67a-4f68-94d3-2b0d2195d697",
           "exampleItem": "I kept thinking.",
-          "intent": "kept"
+          "intent": "kept",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/97d9d90e-f67a-4f68-94d3-2b0d2195d697-cedar.mp3",
+            "marin": "/audio/en-US/marin/97d9d90e-f67a-4f68-94d3-2b0d2195d697-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "0c227b9bf19005763bb2442834ec6f5e93ab3c5ab4a0e7f60339c4df187f3b48",
+            "marin": "0c227b9bf19005763bb2442834ec6f5e93ab3c5ab4a0e7f60339c4df187f3b48"
+          }
         },
         {
           "id": "0aa569de-b590-443b-9387-c806e00e4fc9",
           "exampleItem": "I kept waiting.",
-          "intent": "kept"
+          "intent": "kept",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/0aa569de-b590-443b-9387-c806e00e4fc9-cedar.mp3",
+            "marin": "/audio/en-US/marin/0aa569de-b590-443b-9387-c806e00e4fc9-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "60561a8259de82eea0eb38798aa75960b56956c9125e747b3e449cd48576feaf",
+            "marin": "60561a8259de82eea0eb38798aa75960b56956c9125e747b3e449cd48576feaf"
+          }
         }
       ]
     },
@@ -3264,7 +4520,15 @@
         {
           "id": "415fa05f-6ee1-4608-893e-1a841c5bfbf3",
           "exampleItem": "I spent two hours waiting.",
-          "intent": "spent"
+          "intent": "spent",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/415fa05f-6ee1-4608-893e-1a841c5bfbf3-cedar.mp3",
+            "marin": "/audio/en-US/marin/415fa05f-6ee1-4608-893e-1a841c5bfbf3-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "5810d20700627bb10ef220a04f7fe34072bdebf4c3422bd264f6047672cf5e4b",
+            "marin": "5810d20700627bb10ef220a04f7fe34072bdebf4c3422bd264f6047672cf5e4b"
+          }
         }
       ]
     },
@@ -3291,12 +4555,28 @@
         {
           "id": "9a2bab57-07db-46e4-910f-355169bddce0",
           "exampleItem": "I ran out of battery.",
-          "intent": "ran out of"
+          "intent": "ran out of",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/9a2bab57-07db-46e4-910f-355169bddce0-cedar.mp3",
+            "marin": "/audio/en-US/marin/9a2bab57-07db-46e4-910f-355169bddce0-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "83ff69b43a50fba5f27a18fd9f560d4dabf564d7534b56dbe5764e9acf771877",
+            "marin": "83ff69b43a50fba5f27a18fd9f560d4dabf564d7534b56dbe5764e9acf771877"
+          }
         },
         {
           "id": "856df33e-ca55-4906-9198-1f8828d1b3b8",
           "exampleItem": "I ran out of time.",
-          "intent": "ran out of"
+          "intent": "ran out of",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/856df33e-ca55-4906-9198-1f8828d1b3b8-cedar.mp3",
+            "marin": "/audio/en-US/marin/856df33e-ca55-4906-9198-1f8828d1b3b8-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "b954378279105b0718b750726c4fb51112f2becf2bb6fa4c49da4b5cac963541",
+            "marin": "b954378279105b0718b750726c4fb51112f2becf2bb6fa4c49da4b5cac963541"
+          }
         }
       ]
     },
@@ -3324,7 +4604,15 @@
         {
           "id": "77722def-24df-485f-a4c0-543fc0079fb3",
           "exampleItem": "I got more confident.",
-          "intent": "got more"
+          "intent": "got more",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/77722def-24df-485f-a4c0-543fc0079fb3-cedar.mp3",
+            "marin": "/audio/en-US/marin/77722def-24df-485f-a4c0-543fc0079fb3-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "468c8fc550e598a7ac5fc48c1cd28a5a47106f6eadf084f62ec41b56d6124ffc",
+            "marin": "468c8fc550e598a7ac5fc48c1cd28a5a47106f6eadf084f62ec41b56d6124ffc"
+          }
         }
       ]
     },
@@ -3357,12 +4645,28 @@
         {
           "id": "5514c9d4-d7d0-4ea0-a4b0-b2224d25ff27",
           "exampleItem": "Who are you talking to?",
-          "intent": "are you"
+          "intent": "are you",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/5514c9d4-d7d0-4ea0-a4b0-b2224d25ff27-cedar.mp3",
+            "marin": "/audio/en-US/marin/5514c9d4-d7d0-4ea0-a4b0-b2224d25ff27-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "c43123194ae46a70029fa96256b30e33f9bed1e754e7b5c76b276b9881cc2795",
+            "marin": "c43123194ae46a70029fa96256b30e33f9bed1e754e7b5c76b276b9881cc2795"
+          }
         },
         {
           "id": "ba3255e8-cafb-41bd-8976-3f459c6ea473",
           "exampleItem": "Who did you go with?",
-          "intent": "did you"
+          "intent": "did you",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/ba3255e8-cafb-41bd-8976-3f459c6ea473-cedar.mp3",
+            "marin": "/audio/en-US/marin/ba3255e8-cafb-41bd-8976-3f459c6ea473-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "0d1e059a07d514e4c4fa1d25bb454f5d176d9e97a78f47a0f42186f1abc91c8c",
+            "marin": "0d1e059a07d514e4c4fa1d25bb454f5d176d9e97a78f47a0f42186f1abc91c8c"
+          }
         }
       ]
     },
@@ -3390,7 +4694,15 @@
         {
           "id": "3b0f78de-bab3-41d9-8814-ad05ddd9dacf",
           "exampleItem": "What did you open this with?",
-          "intent": "What"
+          "intent": "What",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/3b0f78de-bab3-41d9-8814-ad05ddd9dacf-cedar.mp3",
+            "marin": "/audio/en-US/marin/3b0f78de-bab3-41d9-8814-ad05ddd9dacf-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "be0977d6e3479eb905ad603dea3a280a5342f660ef5547dc3ca689922b2186ec",
+            "marin": "be0977d6e3479eb905ad603dea3a280a5342f660ef5547dc3ca689922b2186ec"
+          }
         }
       ]
     },
@@ -3419,17 +4731,41 @@
         {
           "id": "0aa345b5-f963-4b18-8fe3-6376f5cf72d4",
           "exampleItem": "What are you afraid of?",
-          "intent": "What"
+          "intent": "What",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/0aa345b5-f963-4b18-8fe3-6376f5cf72d4-cedar.mp3",
+            "marin": "/audio/en-US/marin/0aa345b5-f963-4b18-8fe3-6376f5cf72d4-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "6a049b6e7bddd765992ac63d3d2d9bc15bd395a5452bb1cccefeae30dd5d40b4",
+            "marin": "6a049b6e7bddd765992ac63d3d2d9bc15bd395a5452bb1cccefeae30dd5d40b4"
+          }
         },
         {
           "id": "40c526c3-a77b-4e16-ac87-6c0970dfd1a7",
           "exampleItem": "What are you running from?",
-          "intent": "What"
+          "intent": "What",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/40c526c3-a77b-4e16-ac87-6c0970dfd1a7-cedar.mp3",
+            "marin": "/audio/en-US/marin/40c526c3-a77b-4e16-ac87-6c0970dfd1a7-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "7ae96571f4fd3f9c7c2be95206a6807920b3c944f36b311297ec07f3f5b6c50d",
+            "marin": "7ae96571f4fd3f9c7c2be95206a6807920b3c944f36b311297ec07f3f5b6c50d"
+          }
         },
         {
           "id": "534b7746-50bf-4191-8fa3-69bd71952a0b",
           "exampleItem": "What do you need?",
-          "intent": "What"
+          "intent": "What",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/534b7746-50bf-4191-8fa3-69bd71952a0b-cedar.mp3",
+            "marin": "/audio/en-US/marin/534b7746-50bf-4191-8fa3-69bd71952a0b-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "52c6a4f68307d05bfd6460d1dd807e2fa05d65b94fefedb74c63296b3c78642a",
+            "marin": "52c6a4f68307d05bfd6460d1dd807e2fa05d65b94fefedb74c63296b3c78642a"
+          }
         }
       ]
     },
@@ -3458,12 +4794,28 @@
         {
           "id": "b95f94ee-fb40-4343-9fe7-2790266c3bc8",
           "exampleItem": "What are you thinking about?",
-          "intent": "What"
+          "intent": "What",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/b95f94ee-fb40-4343-9fe7-2790266c3bc8-cedar.mp3",
+            "marin": "/audio/en-US/marin/b95f94ee-fb40-4343-9fe7-2790266c3bc8-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "ddbc2e3c0570a7250947f38db79b13437e35dcd8b9d354d74230f39d9f04694d",
+            "marin": "ddbc2e3c0570a7250947f38db79b13437e35dcd8b9d354d74230f39d9f04694d"
+          }
         },
         {
           "id": "6c41c6be-920e-45ce-b090-63ef394dac25",
           "exampleItem": "What are you talking about?",
-          "intent": "What"
+          "intent": "What",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/6c41c6be-920e-45ce-b090-63ef394dac25-cedar.mp3",
+            "marin": "/audio/en-US/marin/6c41c6be-920e-45ce-b090-63ef394dac25-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "046accd1beaddf0ff7269f8c28604f3510bbf156a2aac065898f7f882f09a2ad",
+            "marin": "046accd1beaddf0ff7269f8c28604f3510bbf156a2aac065898f7f882f09a2ad"
+          }
         }
       ]
     },
@@ -3492,12 +4844,28 @@
         {
           "id": "53ea51e5-9461-4337-86b3-a1e1ea930ba4",
           "exampleItem": "What is this used for?",
-          "intent": "used for"
+          "intent": "used for",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/53ea51e5-9461-4337-86b3-a1e1ea930ba4-cedar.mp3",
+            "marin": "/audio/en-US/marin/53ea51e5-9461-4337-86b3-a1e1ea930ba4-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "f824b9370a47297a298ccc8edb6c157b205fe34602ac1072680bb9f40b64a28a",
+            "marin": "f824b9370a47297a298ccc8edb6c157b205fe34602ac1072680bb9f40b64a28a"
+          }
         },
         {
           "id": "eab046da-547d-40fa-b4b5-6ff5eaa92a67",
           "exampleItem": "What is this tool used for?",
-          "intent": "used for"
+          "intent": "used for",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/eab046da-547d-40fa-b4b5-6ff5eaa92a67-cedar.mp3",
+            "marin": "/audio/en-US/marin/eab046da-547d-40fa-b4b5-6ff5eaa92a67-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "22563bbf0294fdf1c7c01f81e903b4988687819156636dbdae8d2579b63f3324",
+            "marin": "22563bbf0294fdf1c7c01f81e903b4988687819156636dbdae8d2579b63f3324"
+          }
         }
       ]
     },
@@ -3526,12 +4894,28 @@
         {
           "id": "8b34c412-6f92-4c64-8b6d-72ad9981ab47",
           "exampleItem": "Why did you buy this?",
-          "intent": "Why"
+          "intent": "Why",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/8b34c412-6f92-4c64-8b6d-72ad9981ab47-cedar.mp3",
+            "marin": "/audio/en-US/marin/8b34c412-6f92-4c64-8b6d-72ad9981ab47-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "c3afcfe25c0d2be16c54732b5d9bb339fed2c7ff94733dca0fe3b5f50d39ecd2",
+            "marin": "c3afcfe25c0d2be16c54732b5d9bb339fed2c7ff94733dca0fe3b5f50d39ecd2"
+          }
         },
         {
           "id": "dd7582ba-f14c-41c0-b4ee-167b5edfaddb",
           "exampleItem": "Why did you do that?",
-          "intent": "Why"
+          "intent": "Why",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/dd7582ba-f14c-41c0-b4ee-167b5edfaddb-cedar.mp3",
+            "marin": "/audio/en-US/marin/dd7582ba-f14c-41c0-b4ee-167b5edfaddb-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "6c355c7205f696137cb99be2b8aa822a12fb6a51911bc986e5df32add4aa0e77",
+            "marin": "6c355c7205f696137cb99be2b8aa822a12fb6a51911bc986e5df32add4aa0e77"
+          }
         }
       ]
     },
@@ -3559,7 +4943,15 @@
         {
           "id": "3acaee4b-942b-4053-85ec-d45df8533a08",
           "exampleItem": "Who did you do this for?",
-          "intent": "did you"
+          "intent": "did you",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/3acaee4b-942b-4053-85ec-d45df8533a08-cedar.mp3",
+            "marin": "/audio/en-US/marin/3acaee4b-942b-4053-85ec-d45df8533a08-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "de98913f0825cda779922b3eef8de379a3e439ce5c68b6ddc1d063256eed4cdf",
+            "marin": "de98913f0825cda779922b3eef8de379a3e439ce5c68b6ddc1d063256eed4cdf"
+          }
         }
       ]
     },
@@ -3587,7 +4979,15 @@
         {
           "id": "501502a7-c38c-4c5e-b0e9-3d3641126c5f",
           "exampleItem": "What are you working on?",
-          "intent": "What"
+          "intent": "What",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/501502a7-c38c-4c5e-b0e9-3d3641126c5f-cedar.mp3",
+            "marin": "/audio/en-US/marin/501502a7-c38c-4c5e-b0e9-3d3641126c5f-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "d06df7c13088e2268e8325915c409956eba5f8c558f828c379e0124f96463f4a",
+            "marin": "d06df7c13088e2268e8325915c409956eba5f8c558f828c379e0124f96463f4a"
+          }
         }
       ]
     },
@@ -3616,12 +5016,28 @@
         {
           "id": "802792b4-3267-462a-8394-87c2f540247f",
           "exampleItem": "Who did you get this from?",
-          "intent": "did you"
+          "intent": "did you",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/802792b4-3267-462a-8394-87c2f540247f-cedar.mp3",
+            "marin": "/audio/en-US/marin/802792b4-3267-462a-8394-87c2f540247f-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "54a51ba46f313f0da77d81a0fedc6bafcf88f7d78452fe6093c864ed7f1dea1a",
+            "marin": "54a51ba46f313f0da77d81a0fedc6bafcf88f7d78452fe6093c864ed7f1dea1a"
+          }
         },
         {
           "id": "d63f87d7-c962-4d8c-9bc7-2a486b08c51f",
           "exampleItem": "Who did you hear that from?",
-          "intent": "did you"
+          "intent": "did you",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/d63f87d7-c962-4d8c-9bc7-2a486b08c51f-cedar.mp3",
+            "marin": "/audio/en-US/marin/d63f87d7-c962-4d8c-9bc7-2a486b08c51f-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "09d0bdf0a499693ac0d4686a57164209c6a842adcfa89608420b81ed0774c090",
+            "marin": "09d0bdf0a499693ac0d4686a57164209c6a842adcfa89608420b81ed0774c090"
+          }
         }
       ]
     },
@@ -3653,27 +5069,67 @@
         {
           "id": "89cbbd41-1567-4ffa-ac96-afd093b79542",
           "exampleItem": "Whose car is this?",
-          "intent": "Whose"
+          "intent": "Whose",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/89cbbd41-1567-4ffa-ac96-afd093b79542-cedar.mp3",
+            "marin": "/audio/en-US/marin/89cbbd41-1567-4ffa-ac96-afd093b79542-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "2b4331d79bb5bc9573ac97156888c1ebf5229d7ac11befe3d5987318a682b666",
+            "marin": "2b4331d79bb5bc9573ac97156888c1ebf5229d7ac11befe3d5987318a682b666"
+          }
         },
         {
           "id": "0cf1a3c0-9ecf-4585-aa6f-12a6436e9f0f",
           "exampleItem": "Whose bag is this?",
-          "intent": "Whose"
+          "intent": "Whose",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/0cf1a3c0-9ecf-4585-aa6f-12a6436e9f0f-cedar.mp3",
+            "marin": "/audio/en-US/marin/0cf1a3c0-9ecf-4585-aa6f-12a6436e9f0f-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "4ae2e0246ab24f9125216af2587b1ab28514ce21b8438558a52aa9268bfee5cd",
+            "marin": "4ae2e0246ab24f9125216af2587b1ab28514ce21b8438558a52aa9268bfee5cd"
+          }
         },
         {
           "id": "0f971a42-24a9-43c1-8d2c-1e792fec78e7",
           "exampleItem": "Whose keys are these?",
-          "intent": "Whose"
+          "intent": "Whose",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/0f971a42-24a9-43c1-8d2c-1e792fec78e7-cedar.mp3",
+            "marin": "/audio/en-US/marin/0f971a42-24a9-43c1-8d2c-1e792fec78e7-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "1717cf4b951421aad6b1cc87e5ff0cd7d5b05f68446be1f8c8f778120c514013",
+            "marin": "1717cf4b951421aad6b1cc87e5ff0cd7d5b05f68446be1f8c8f778120c514013"
+          }
         },
         {
           "id": "39034cac-a236-40ed-bfa8-639de750e3eb",
           "exampleItem": "Whose idea was that?",
-          "intent": "Whose"
+          "intent": "Whose",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/39034cac-a236-40ed-bfa8-639de750e3eb-cedar.mp3",
+            "marin": "/audio/en-US/marin/39034cac-a236-40ed-bfa8-639de750e3eb-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "e272d78c87115de3c6139af09be61b9337cd147380acb09ce7e8919baaf74e35",
+            "marin": "e272d78c87115de3c6139af09be61b9337cd147380acb09ce7e8919baaf74e35"
+          }
         },
         {
           "id": "0e0c439f-6575-4296-8a76-87e87daf8334",
           "exampleItem": "Whose is this?",
-          "intent": "Whose"
+          "intent": "Whose",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/0e0c439f-6575-4296-8a76-87e87daf8334-cedar.mp3",
+            "marin": "/audio/en-US/marin/0e0c439f-6575-4296-8a76-87e87daf8334-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "7391f91c01f7fea295ac6b7e404451e076bbe0805a413c5a840a8c47e2de8fa3",
+            "marin": "7391f91c01f7fea295ac6b7e404451e076bbe0805a413c5a840a8c47e2de8fa3"
+          }
         }
       ]
     },
@@ -3703,12 +5159,28 @@
         {
           "id": "ccf8c6bb-2353-4042-8cb2-8994e39ffffc",
           "exampleItem": "Where are you from?",
-          "intent": "are you"
+          "intent": "are you",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/ccf8c6bb-2353-4042-8cb2-8994e39ffffc-cedar.mp3",
+            "marin": "/audio/en-US/marin/ccf8c6bb-2353-4042-8cb2-8994e39ffffc-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "63265a79774350462d4ce11d5a90687ff8e6f2511bb512e0409be568b6be7046",
+            "marin": "63265a79774350462d4ce11d5a90687ff8e6f2511bb512e0409be568b6be7046"
+          }
         },
         {
           "id": "938f2254-3c54-4fea-a0d2-0119a3c3b8c9",
           "exampleItem": "Where did you get this information?",
-          "intent": "did you"
+          "intent": "did you",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/938f2254-3c54-4fea-a0d2-0119a3c3b8c9-cedar.mp3",
+            "marin": "/audio/en-US/marin/938f2254-3c54-4fea-a0d2-0119a3c3b8c9-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "abb6071020b800f53db204e0cf26727ca94a1ea24805bdbeb3d045b54d0f3260",
+            "marin": "abb6071020b800f53db204e0cf26727ca94a1ea24805bdbeb3d045b54d0f3260"
+          }
         }
       ]
     },
@@ -3737,12 +5209,28 @@
         {
           "id": "a964cdb2-b376-49d2-8445-1887bf56ac45",
           "exampleItem": "Who bought you this?",
-          "intent": "bought"
+          "intent": "bought",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/a964cdb2-b376-49d2-8445-1887bf56ac45-cedar.mp3",
+            "marin": "/audio/en-US/marin/a964cdb2-b376-49d2-8445-1887bf56ac45-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "e6dfa4a7c3ce6e698cbf61c15f8eb12e8d1b87eb45db54cdf0d939fdc634cc30",
+            "marin": "e6dfa4a7c3ce6e698cbf61c15f8eb12e8d1b87eb45db54cdf0d939fdc634cc30"
+          }
         },
         {
           "id": "7d1b6d10-e67d-433f-8e2b-eeb07eb0c941",
           "exampleItem": "Who told you that story?",
-          "intent": "told"
+          "intent": "told",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/7d1b6d10-e67d-433f-8e2b-eeb07eb0c941-cedar.mp3",
+            "marin": "/audio/en-US/marin/7d1b6d10-e67d-433f-8e2b-eeb07eb0c941-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "bafe04d9fd9e1aedba27b056b72b8cf17db2d2eccb747c395100ebca27aac97b",
+            "marin": "bafe04d9fd9e1aedba27b056b72b8cf17db2d2eccb747c395100ebca27aac97b"
+          }
         }
       ]
     },
@@ -3771,7 +5259,15 @@
         {
           "id": "793afbdf-90cb-4881-b131-0cfef327cf27",
           "exampleItem": "Where did this idea come from?",
-          "intent": "Where did"
+          "intent": "Where did",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/793afbdf-90cb-4881-b131-0cfef327cf27-cedar.mp3",
+            "marin": "/audio/en-US/marin/793afbdf-90cb-4881-b131-0cfef327cf27-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "aa7334970f420d5e559f7f0e30c25a1c68afe7472fc8850c10c618e3e02e54ad",
+            "marin": "aa7334970f420d5e559f7f0e30c25a1c68afe7472fc8850c10c618e3e02e54ad"
+          }
         }
       ]
     },
@@ -3799,7 +5295,15 @@
         {
           "id": "8d62b429-d365-42b5-a022-f712fd16fdf1",
           "exampleItem": "Which one do you choose?",
-          "intent": "Which one"
+          "intent": "Which one",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/8d62b429-d365-42b5-a022-f712fd16fdf1-cedar.mp3",
+            "marin": "/audio/en-US/marin/8d62b429-d365-42b5-a022-f712fd16fdf1-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "667f98f78539844b46113f5bcb42ec2e69df58f04fec201b701a8533752e4ce4",
+            "marin": "667f98f78539844b46113f5bcb42ec2e69df58f04fec201b701a8533752e4ce4"
+          }
         }
       ]
     },
@@ -3829,12 +5333,28 @@
         {
           "id": "9ed62532-4e57-4c84-a8b3-66099547246a",
           "exampleItem": "Is there a way to fix this problem?",
-          "intent": "Is there a way"
+          "intent": "Is there a way",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/9ed62532-4e57-4c84-a8b3-66099547246a-cedar.mp3",
+            "marin": "/audio/en-US/marin/9ed62532-4e57-4c84-a8b3-66099547246a-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "c3dc02c4360f2c73dbe1ae442175aaf5c30f86c838963e40a4bc3d039d9408e2",
+            "marin": "c3dc02c4360f2c73dbe1ae442175aaf5c30f86c838963e40a4bc3d039d9408e2"
+          }
         },
         {
           "id": "e13b001f-19f2-4b84-8e1d-00373a121675",
           "exampleItem": "Is there any chance we could reschedule the meeting?",
-          "intent": "Is there any chance"
+          "intent": "Is there any chance",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/e13b001f-19f2-4b84-8e1d-00373a121675-cedar.mp3",
+            "marin": "/audio/en-US/marin/e13b001f-19f2-4b84-8e1d-00373a121675-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "156d84903d6c2f09135dea58d160056c351f0a4be4abc084689797559026c04e",
+            "marin": "156d84903d6c2f09135dea58d160056c351f0a4be4abc084689797559026c04e"
+          }
         }
       ]
     },
@@ -3863,7 +5383,15 @@
         {
           "id": "ef5930a8-b885-400a-882d-3089167e8c5c",
           "exampleItem": "I feel like riding.",
-          "intent": "I feel like"
+          "intent": "I feel like",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/ef5930a8-b885-400a-882d-3089167e8c5c-cedar.mp3",
+            "marin": "/audio/en-US/marin/ef5930a8-b885-400a-882d-3089167e8c5c-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "aace744b5301fe2e350f4002734a96b2db307382189b58d4f9f6435245c83dfb",
+            "marin": "aace744b5301fe2e350f4002734a96b2db307382189b58d4f9f6435245c83dfb"
+          }
         },
         {
           "id": "8372d740-c58f-48f7-8cb7-3bec441fb206",

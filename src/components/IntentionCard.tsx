@@ -32,6 +32,11 @@ export function IntentionCard({ item, sourceLanguage, language, onSelect, favori
   const { t } = useTranslation();
   const hasYoutubeVideo = typeof item.youtubeVideo === "string" && item.youtubeVideo.trim().length > 0;
   const hasYoutubeShort = typeof item.youtubeShort === "string" && item.youtubeShort.trim().length > 0;
+  const audioExamples = (item.examples ?? []).filter((example) =>
+    (typeof example.mp3?.cedar === "string" && example.mp3.cedar.trim().length > 0) ||
+    (typeof example.mp3?.marin === "string" && example.mp3.marin.trim().length > 0)
+  );
+  const hasNeuralAudio = audioExamples.length > 0;
   const authorMode = isAuthorMode();
   const [copiedId, setCopiedId] = useState(false);
   const [copyError, setCopyError] = useState(false);
@@ -103,9 +108,9 @@ export function IntentionCard({ item, sourceLanguage, language, onSelect, favori
       <div className="bej-intention-card__text">
         <h2>{item.intention}</h2>
         <p className="english">{item.targetIntention ?? item.english}</p>
-        {authorMode && (hasYoutubeVideo || hasYoutubeShort) && (
+        {authorMode && (hasYoutubeVideo || hasYoutubeShort || hasNeuralAudio) && (
           <div
-            aria-label={t("hashmap.contentPublishedOnYoutube")}
+            aria-label="Conteúdos disponíveis para esta intenção"
             style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginTop: "0.4rem" }}
           >
             {hasYoutubeVideo && (
@@ -127,6 +132,16 @@ export function IntentionCard({ item, sourceLanguage, language, onSelect, favori
                 height={25}
                 style={{ objectFit: "contain", display: "block" }}
               />
+            )}
+            {hasNeuralAudio && (
+              <span
+                role="img"
+                aria-label={`Áudio neural disponível em ${audioExamples.length} exemplo(s)`}
+                title={`Áudio neural Cedar/Marin em ${audioExamples.length} de ${item.examples?.length ?? 0} exemplo(s)`}
+                style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 25, height: 25, fontSize: "1.25rem" }}
+              >
+                🔊
+              </span>
             )}
           </div>
         )}
