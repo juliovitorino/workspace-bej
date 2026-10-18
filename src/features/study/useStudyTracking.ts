@@ -40,7 +40,7 @@ export function useStudyTracking(view: string, language: StudentLanguage, signal
       else if (view === "extra-activities") studyTracker.interact();
     };
     const lifecycle = () => { refresh(); studyTracker.checkpoint(); };
-    const blur = () => { studyTracker.set(context, false, Infinity, true); studyTracker.checkpoint(); };
+    const blur = () => { if (context?.mode !== "walking") studyTracker.set(context, false, Infinity, true); studyTracker.checkpoint(); };
     const events = ["pointerdown", "click", "keydown", "input", "change", "wheel", "touchmove", "scroll"];
     for (const event of events) window.addEventListener(event, interaction, { passive: true, capture: true });
     document.addEventListener("visibilitychange", lifecycle);

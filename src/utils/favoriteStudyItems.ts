@@ -13,15 +13,15 @@ export function favoriteStudyItems(intentions: MentalIntention[], favorites: Fav
   const examples = new Map(intentions.flatMap(origin => (origin.examples ?? []).map(example => [example.id, { origin, example }] as const)));
   return favorites.flatMap<FavoriteStudyItem>(favorite => {
     if (favorite.language !== language) return [];
-    const id = JSON.stringify([favorite.type ?? "intention", favorite.id, language]);
+    const id = `intention:${favorite.id}`;
     if (favorite.type === "example") {
       const match = examples.get(favorite.id);
       if (!match) return [];
       const { origin, example } = match;
       const text = (example.exampleItem || example.en).trim();
       if (!text || (level !== "all" && origin.englishLevel !== level)) return [];
-      return [{ ...origin, id, favoriteId: favorite.id, favoriteType: "example", origin,
-        intention: example.pt, english: text, targetIntention: text, examples: [example] }];
+      return [{ ...origin, id: `example:${origin.id}:${example.id}`, favoriteId: favorite.id, favoriteType: "example", origin,
+        sourceAudioText: example.pt, intention: example.pt, english: text, targetIntention: text, examples: [example] }];
     }
     const origin = intentions.find(item => item.id === favorite.id);
     return origin && eligible.has(origin.id) ? [{ ...origin, id, favoriteId: favorite.id, origin }] : [];

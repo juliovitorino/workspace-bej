@@ -78,6 +78,7 @@ export interface Example extends HashmapExampleV4 {
 export interface MentalIntention extends Omit<HashmapIntentionV4, "examples"> {
   english: string;
   targetIntention?: string;
+  sourceAudioText?: string;
   /** Campos da origem preservados para busca e filtros em qualquer par de idiomas. */
   sourcePattern?: string;
   sourceStructure?: string;

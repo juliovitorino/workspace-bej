@@ -1,3 +1,5 @@
+import { studyTracker } from "../features/study/studyTrackingService";
+import { roundKey, readRound, reconcileRound, finishRound, presentItem } from "../utils/learningRound";
 import { speakStudyAudio, cancelStudyAudio } from "../features/study/studyAudio";
 import { useStudyReading } from "../features/study/useStudyReading";
 import { favoriteStudyItems, type FavoriteStudyItem } from "../utils/favoriteStudyItems";
@@ -9,7 +11,7 @@ import { isAuthorMode } from "../utils/authorMode";
 import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
 import { isMobileDevice } from "../utils/mobileDevice";
 import { WalkingMode } from "./WalkingMode";
-import { drawChunk, eligibleChunks, type ChunkLevel } from "../utils/chunkEligibility";
+import { eligibleChunks, type ChunkLevel } from "../utils/chunkEligibility";
 import { ChunkLevelSelect } from "./ChunkLevelSelect";
 import type { FavoriteChunk } from "../utils/favoriteChunks";
 import type { WalkingSummary } from "../utils/walkingSession";
@@ -57,7 +59,6 @@ export function ChunkFlashcards({
   onAdvancedTraining
 }: ChunkFlashcardsProps) {
   const { t } = useTranslation();
-  const trackedSeconds = useStudyReading(mode === "favorites" ? "chunk-favorites" : "chunk-flashcards", language);
   const authorMode = isAuthorMode();
   const [walking, setWalking] = useState(false);
   const [walkingSummary, setWalkingSummary] = useState<WalkingSummary | null>(null);
@@ -78,6 +79,9 @@ export function ChunkFlashcards({
     () => mode === "all" ? eligibleChunks(intentions, level) : favoriteStudyItems(intentions, favorites, language, level),
     [intentions, level, mode, favorites, language]
   );
+
+  const persistenceKey = roundKey(language, mode === "all" ? "chunk-flashcards" : "favorite-chunks");
+  const allEligible = useMemo(() => mode === "all" ? eligibleChunks(intentions, "all") : favoriteStudyItems(intentions, favorites, language, "all"), [intentions, favorites, language, mode]);
 
   // Estado da rodada em memória: cada ID só pode ser sorteado uma vez.
   const [drawnIds, setDrawnIds] = useState<string[]>([]);
@@ -147,10 +151,12 @@ export function ChunkFlashcards({
   }
 
   useEffect(() => {
-    setDrawnIds([]);
-    setRound(1);
-    setCurrentId(null);
     setAudioError(null);
+    try {
+      const saved = readRound(persistenceKey);
+      setDrawnIds(saved.presentedItemIds); setRound(saved.round);
+    } catch { setAudioError(t("study.errors.storage")); }
+    setCurrentId(null);
     if (copyFeedbackTimeout.current !== null) clearTimeout(copyFeedbackTimeout.current);
     setCopiedChunkId(null);
     setCopiedIntentionId(null);
@@ -175,7 +181,7 @@ export function ChunkFlashcards({
         return;
       }
       if (mode === "favorites" && chunks.length === 0) {
-        cancelStudyAudio();
+        window.speechSynthesis?.cancel();
         if (studyStartedAt !== null) {
           setElapsedSeconds(Math.max(0, Math.floor(((pausedAt ?? Date.now()) - studyStartedAt - totalPausedMs) / 1000)));
           setStudyStartedAt(null);
@@ -185,7 +191,7 @@ export function ChunkFlashcards({
       }
       setCurrentId(null);
     }
-    setDrawnIds(previous => previous.every(id => ids.has(id)) ? previous : previous.filter(id => ids.has(id)));
+
   }, [chunks, walking, mode]);
 
   const retainedWalkingChunk = useRef<MentalIntention | null>(null);
@@ -202,21 +208,22 @@ export function ChunkFlashcards({
     return () => onStudyState?.(false, "manual");
   }, [studyChunk, walking, studyStartedAt, pausedAt, chunks.length > 0, onStudyState]);
   const total = chunks.length;
-  const completed = total > 0 && drawnIds.length === total;
-  const shownCount = drawnIds.length;
-  const position = currentId === null ? 0 : drawnIds.indexOf(currentId) + 1;
+  const shownCount = chunks.filter(item => drawnIds.includes(item.id)).length;
+  const completed = allEligible.length > 0 &&
+    allEligible.every(item => drawnIds.includes(item.id));
+  const shownHistory = drawnIds.filter(id => chunks.some(item => item.id === id));
+  const position = currentId === null ? 0 : Math.min(total, shownCount + (drawnIds.includes(currentId) ? 0 : 1));
 
-  function nextChunk(pool: MentalIntention[] = chunks, restart = false) {
+  function nextChunk(pool: MentalIntention[] = chunks) {
     if (pool.length === 0) {
-      setDrawnIds([]);
-      setRound(1);
+
       setCurrentId(null);
       return;
     }
     // Inicia no primeiro chunk; uma nova rodada não zera a sessão.
     if (studyStartedAt === null) setStudyStartedAt(Date.now());
     if (typeof window !== "undefined" && "speechSynthesis" in window) {
-      cancelStudyAudio();
+      window.speechSynthesis.cancel();
     }
     setAudioError(null);
     if (copyFeedbackTimeout.current !== null) clearTimeout(copyFeedbackTimeout.current);
@@ -224,26 +231,62 @@ export function ChunkFlashcards({
     setCopiedIntentionId(null);
     setCopyError(null);
 
-    const poolIds = new Set(pool.map(item => item.id));
-    const draw = drawChunk(pool, drawnIds.filter(id => poolIds.has(id)), currentId, restart);
-    if (!draw) return;
-    if (draw.newRound) setRound(previous => restart ? 1 : previous + 1);
-    setDrawnIds(draw.drawnIds);
-    setCurrentId(draw.id);
+    try {
+      studyTracker.requireControl();
+      const state = finishRound(persistenceKey, pool.map(item => item.id), allEligible.map(item => item.id));
+      let candidates = pool.filter(item => !state.presentedItemIds.includes(item.id));
+      // Se o nível escolhido se esgotar, preservar os demais IDs da rodada.
+      // No modo caminhada, continuar automaticamente pelo catálogo completo
+      // para não deixar o aluno sem áudio com o telefone no bolso.
+      if (!candidates.length && walking && pool.length > 0 &&
+          state.presentedItemIds.length < allEligible.length) {
+        candidates = allEligible.filter(item => !state.presentedItemIds.includes(item.id));
+        setLevel("all");
+      }
+      if (!candidates.length) { setCurrentId(null); return; }
+      const selected = candidates[Math.floor(Math.random() * candidates.length)];
+      setRound(state.round); setDrawnIds(state.presentedItemIds); setCurrentId(selected.id);
+    } catch (error) { setAudioError(t(error instanceof Error && "code" in error && error.code === "otherTab" ? "study.errors.otherTab" : "study.errors.storage")); }
   }
+
+  function recordPresentation() {
+    if (!currentChunk || studyChunk) return;
+    studyTracker.requireControl();
+    // Marcar ao exibir no modo manual ou ao iniciar o áudio no modo caminhada.
+    // A rodada manual só reinicia no próximo sorteio, não ao exibir o último cartão.
+    const state = presentItem(persistenceKey, allEligible.map(item => item.id), currentChunk.id);
+    setDrawnIds(state.presentedItemIds); setRound(state.round);
+  }
+  useEffect(() => {
+    if (!walking && currentChunk && !studyChunk) {
+      try { recordPresentation(); } catch { setCurrentId(null); }
+    }
+  }, [currentId, walking, persistenceKey]);
+  useEffect(() => {
+    const refresh = () => {
+      try {
+        const state = reconcileRound(persistenceKey, allEligible.map(item => item.id));
+        setDrawnIds(state.presentedItemIds); setRound(state.round);
+      } catch { setAudioError(t("study.errors.storage")); }
+    };
+    refresh();
+    window.addEventListener("storage", refresh);
+    window.addEventListener("bej-learning-round-changed", refresh);
+    return () => { window.removeEventListener("storage", refresh); window.removeEventListener("bej-learning-round-changed", refresh); };
+  }, [persistenceKey, allEligible]);
 
   function changeLevel(nextLevel: ChunkLevel) {
     if (nextLevel === level) return;
-    cancelStudyAudio();
+    window.speechSynthesis?.cancel();
     setLevel(nextLevel);
     setAudioError(null);
     setCopiedChunkId(null);
     setCopiedIntentionId(null);
     setCopyError(null);
     if (copyFeedbackTimeout.current !== null) clearTimeout(copyFeedbackTimeout.current);
-    // Start a fresh round with the same draw mechanism, preserving session time.
-    if (walking || currentId !== null) nextChunk(mode === "all" ? eligibleChunks(intentions, nextLevel) : favoriteStudyItems(intentions, favorites, language, nextLevel), true);
-    else { setDrawnIds([]); setCurrentId(null); }
+    // Keep persisted progress while selecting within the new level.
+    if (walking || currentId !== null) nextChunk(mode === "all" ? eligibleChunks(intentions, nextLevel) : favoriteStudyItems(intentions, favorites, language, nextLevel));
+    else setCurrentId(null);
   }
 
   // Reutiliza a mesma estratégia de cópia para o texto do chunk e seu ID.
@@ -314,7 +357,7 @@ export function ChunkFlashcards({
 
     setAudioError(null);
     const synth = window.speechSynthesis;
-    cancelStudyAudio();
+    synth.cancel();
     const utterance = new SpeechSynthesisUtterance((currentChunk.targetIntention ?? currentChunk.english).trim());
     utterance.lang = language;
     utterance.rate = 0.9;
@@ -326,13 +369,13 @@ export function ChunkFlashcards({
         setAudioError(t("flashcards.couldNotPlayTheAudioInThisBrowser"));
       }
     };
-    speakStudyAudio(utterance);
+    synth.speak(utterance);
   }
 
   useEffect(() => {
     return () => {
       if (typeof window !== "undefined" && "speechSynthesis" in window) {
-        cancelStudyAudio();
+        window.speechSynthesis.cancel();
       }
     };
   }, []);
@@ -460,18 +503,16 @@ export function ChunkFlashcards({
 
   if (walking) {
     return <WalkingMode onStudyState={onStudyState} chunk={currentChunk} language={language} sourceLanguage={sourceLanguage}
+      onPresented={recordPresentation}
+      onCycleComplete={() => { studyTracker.requireControl(); const state = finishRound(persistenceKey, chunks.map(item => item.id), allEligible.map(item => item.id)); setDrawnIds(state.presentedItemIds); setRound(state.round); }}
       stopWhenEmpty={mode === "favorites"}
       currentEligible={mode !== "favorites" || chunks.some(item => item.id === currentChunk?.id)}
       favorite={favorites.some(favorite => favorite.id === favoriteId && favorite.type === favoriteType && favorite.language === language)}
       onToggleFavorite={onToggleFavorite && currentChunk ? () => onToggleFavorite(favoriteId!, favoriteType) : undefined}
-      level={level} onLevelChange={changeLevel} position={position} total={total} round={round}
-      canPrevious={position > 1}
-      onPrevious={() => { if (position > 1) setCurrentId(drawnIds[position - 2]); }}
+      level={level} onLevelChange={changeLevel} position={shownCount} total={total} round={round}
+      canPrevious={currentId !== null && shownHistory.indexOf(currentId) > 0}
+      onPrevious={() => { const previous = currentId === null ? -1 : shownHistory.indexOf(currentId) - 1; if (previous >= 0) setCurrentId(shownHistory[previous]); }}
       onNext={() => {
-        if (position > 0 && position < drawnIds.length) {
-          setCurrentId(drawnIds[position]);
-          return false;
-        }
         nextChunk();
         return completed;
       }}
@@ -489,9 +530,9 @@ export function ChunkFlashcards({
         <div className="chunk-flashcards-heading-tools">
           <span className="chunk-flashcards-total">{t("flashcards.availableChunks", { count: total })}</span>
           {isStudyTimeVisible && (
-            <span className="chunk-flashcards-study-time" aria-label={t("flashcards.studyTimeTime", { time: (formatStudyTime(trackedSeconds ?? elapsedSeconds)) })}>
+            <span className="chunk-flashcards-study-time" aria-label={t("flashcards.studyTimeTime", { time: (formatStudyTime(elapsedSeconds)) })}>
               <span className="chunk-flashcards-study-time-label">{t("common.studyTime")}</span>
-              <span className="chunk-flashcards-study-time-value">{formatStudyTime(trackedSeconds ?? elapsedSeconds)}</span>
+              <span className="chunk-flashcards-study-time-value">{formatStudyTime(elapsedSeconds)}</span>
             </span>
           )}
           <button
@@ -546,6 +587,7 @@ export function ChunkFlashcards({
 
       <ChunkLevelSelect value={level} onChange={changeLevel} />
       {mode === "favorites" && <button type="button" className="secondary-button" onClick={onBackToAll}>{t("favorites.backToAll")}</button>}
+      {audioError && <p role="alert">{audioError}</p>}
       {walkingSummary && <WalkingSessionSummary summary={walkingSummary} ended />}
       <p className="chunk-intention-count" role="status" aria-label={t("common.chunkPositionInTheRound")}>{position}/{total}</p>
 
@@ -569,7 +611,7 @@ export function ChunkFlashcards({
             {"⏸ "}{t("flashcards.studyPaused")}
           </strong>
           <span style={{ display: "block", marginTop: "0.3rem", fontWeight: 600 }}>
-            {t("flashcards.timerPaused", { time: formatStudyTime(trackedSeconds ?? elapsedSeconds) })}
+            {t("flashcards.timerPaused", { time: formatStudyTime(elapsedSeconds) })}
           </span>
         </div>
       )}
@@ -588,6 +630,7 @@ export function ChunkFlashcards({
           <div className="chunk-flashcards-progress" aria-live="polite">
             <span>{t("flashcards.roundNumber", { round })}</span>
             <strong>{t("common.countOfTotal", { count: shownCount, total })}</strong>
+            <span>{t("flashcards.itemsRemaining")}: {Math.max(0, total - shownCount)}</span>
           </div>
           <div
             className="chunk-flashcards-progress-track"
@@ -615,8 +658,8 @@ export function ChunkFlashcards({
             </button>
             {mobile && <button type="button" className="primary-button walking-entry" onClick={() => {
               if (!isMobileDevice()) return;
-              if (!currentChunk) nextChunk();
-              cancelStudyAudio();
+              if (!currentChunk || drawnIds.includes(currentChunk.id)) nextChunk();
+              window.speechSynthesis?.cancel();
               setWalkingSummary(null);
               setWalking(true);
             }}>{"🎧 "}{t("common.walkingMode")}</button>}

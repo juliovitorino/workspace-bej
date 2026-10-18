@@ -581,6 +581,7 @@
     "youtubeVideo": "YouTube video"
   },
   "flashcards": {
+    "itemsRemaining": "Items remaining",
     "availableChunks_many": "{{count}} chunks available",
     "availableChunks_one": "{{count}} chunk available",
     "availableChunks_other": "{{count}} chunks available",
@@ -996,6 +997,8 @@
     "verbMissingItsMainForm": "Verb missing its main form."
   },
   "walking": {
+    "translationAudio": "Play translation audio",
+    "translationAudioDescription": "After the sentence in the study language, play its translation in the source language after 1 second.",
     "autoAdvance": "Auto-advance",
     "chooseAnotherLevelInSettings": "Choose another level in settings.",
     "couldNotPlayTheAudioTapResumeToTryAgain": "Could not play the audio. Tap Resume to try again.",
