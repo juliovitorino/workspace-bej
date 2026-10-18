@@ -27,7 +27,7 @@ function load(file) {
   const module = { exports: {} };
   cache.set(file, module);
   if (file.endsWith('.css')) return module.exports;
-  const { outputText } = transpileModule(readFileSync(file, 'utf8'), { compilerOptions: {
+  const { outputText } = transpileModule(readFileSync(file, 'utf8').replaceAll('import.meta.url', JSON.stringify('file:///study-lock-tests/entry.js')), { compilerOptions: {
     module: ModuleKind.CommonJS, jsx: JsxEmit.ReactJSX, target: ScriptTarget.ES2022
   } });
   const localRequire = id => {

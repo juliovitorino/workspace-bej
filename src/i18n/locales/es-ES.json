@@ -46,7 +46,7 @@
     "basicTraining": "Ejercicio básico",
     "advancedTraining": "Ejercicio avanzado",
     "tracking": { "waiting": "Esperando el inicio de la práctica", "active": "Contabilizando", "idle": "Pausado por inactividad", "unavailable": "Seguimiento no disponible" },
-    "compatibilityNote": "Sin Web Locks, el seguimiento usa el modo de compatibilidad. Utiliza una sola pestaña: la reserva temporal reduce conflictos, pero no garantiza la exclusión entre pestañas.",
+    "compatibilityNote": "El control entre pesta?as utiliza Web Locks cuando est? disponible o un SharedWorker en direcciones HTTP. Distintos m?dulos pueden funcionar simult?neamente.",
     "title": "Panel de estudios",
     "intro": "El camino de las 750 horas: una meta personal de dedicación, sin garantía de fluidez ni certificación del FSI.",
     "filters": "Filtros",
@@ -140,8 +140,9 @@
       "custom": "Intervalo personalizado"
     },
     "errors": {
+      "unsupported": "Este navegador no ofrece Web Locks ni SharedWorker. El seguimiento no est? disponible en esta direcci?n. Usa un navegador compatible o HTTPS.",
       "extraActive": "Guarda o descarta la Actividad Extra activa o pendiente de recuperación antes de restaurar un backup o iniciar otra actividad.",
-      "otherTab": "Otra pestaña controla el seguimiento. Úsala o ciérrala y espera a que se libere el control aquí.",
+      "otherTab": "Otra pesta?a est? registrando este m?dulo. Puedes usar otro m?dulo aqu? o cerrar la pesta?a responsable para liberarlo.",
       "zero": "No se puede guardar una sesión de duración cero. Continúa estudiando o descarta la actividad.",
       "invalid": "Archivo, registro, fecha o duración no válidos. No se importaron datos.",
       "version": "Versión de copia o almacenamiento incompatible.",
@@ -152,9 +153,9 @@
       "duplicate": "Ya existe un ajuste con el mismo idioma, fecha, duración y descripción."
     },
     "warning": {
-      "compatibility": "Seguimiento automático activo en modo de compatibilidad. Mantén BEJ abierto en una sola pestaña para evitar duplicar el tiempo.",
-      "unsupported": "El navegador no admite Web Locks. El seguimiento automático se desactiva para evitar duplicados entre pestañas.",
-      "otherTab": "Otra pestaña gestiona el seguimiento. Usa la pestaña ya abierta o ciérrala para registrar aquí.",
+      "compatibility": "El control entre pesta?as est? activo mediante el navegador.",
+      "unsupported": "Este navegador no ofrece Web Locks ni SharedWorker. El seguimiento no est? disponible en esta direcci?n. Usa un navegador compatible o HTTPS.",
+      "otherTab": "Otra pesta?a est? registrando este m?dulo. Puedes usar otro m?dulo aqu? o cerrar la pesta?a responsable para liberarlo.",
       "storage": "No se pudo guardar el tiempo. Se detuvo el seguimiento automático. Comprueba el almacenamiento y recarga.",
       "invalid": "Datos de estudio no válidos. Se detuvo el seguimiento automático; se conservó el historial.",
       "conflict": "Conflicto en el historial de estudio. Se detuvo el seguimiento automático.",

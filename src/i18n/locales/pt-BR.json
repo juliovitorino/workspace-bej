@@ -46,7 +46,7 @@
     "basicTraining": "Exercício Básico",
     "advancedTraining": "Exercício Avançado",
     "tracking": { "waiting": "Aguardando início da prática", "active": "Contabilizando", "idle": "Pausado por inatividade", "unavailable": "Contagem indisponível" },
-    "compatibilityNote": "Sem Web Locks, a contagem funciona em modo de compatibilidade. Use uma única aba: a reserva temporária reduz conflitos, mas não garante exclusão entre abas.",
+    "compatibilityNote": "O controle entre abas utiliza Web Locks quando dispon?vel ou um SharedWorker em endere?os HTTP. M?dulos diferentes podem funcionar simultaneamente.",
     "title": "Dashboard de Estudos",
     "intro": "Jornada das 750 horas: uma meta pessoal de dedicação, sem garantia de fluência ou certificação do FSI.",
     "filters": "Filtros",
@@ -140,8 +140,9 @@
       "custom": "Intervalo personalizado"
     },
     "errors": {
+      "unsupported": "Este navegador n?o oferece Web Locks nem SharedWorker. O monitoramento n?o est? dispon?vel neste endere?o. Use um navegador compat?vel ou acesso por HTTPS.",
       "extraActive": "Salve ou descarte a Atividade Extra ativa ou pendente de recuperação antes de restaurar um backup ou iniciar outra atividade.",
-      "otherTab": "Outra aba controla o monitoramento. Use essa aba ou feche-a e aguarde a liberação nesta aba.",
+      "otherTab": "Outra aba est? monitorando este m?dulo. Voc? pode usar outro m?dulo nesta aba ou fechar a aba respons?vel para liberar este m?dulo.",
       "zero": "Uma sessão de duração zero não pode ser salva. Continue estudando ou descarte a atividade.",
       "invalid": "Arquivo, registro, data ou duração inválida. Nenhum dado foi importado.",
       "version": "Versão de backup ou armazenamento incompatível.",
@@ -152,9 +153,9 @@
       "duplicate": "Já existe um ajuste com o mesmo idioma, data, duração e descrição."
     },
     "warning": {
-      "compatibility": "Contagem automática ativa em modo de compatibilidade. Mantenha o BEJ aberto em uma única aba para evitar contagem duplicada.",
-      "unsupported": "O navegador não oferece Web Locks. A contagem automática está desativada para evitar duplicidade entre abas.",
-      "otherTab": "Outra aba está responsável pelo monitoramento. Use a aba que já está aberta ou feche-a para monitorar nesta aba.",
+      "compatibility": "O controle entre abas est? ativo pelo navegador.",
+      "unsupported": "Este navegador n?o oferece Web Locks nem SharedWorker. O monitoramento n?o est? dispon?vel neste endere?o. Use um navegador compat?vel ou acesso por HTTPS.",
+      "otherTab": "Outra aba est? monitorando este m?dulo. Voc? pode usar outro m?dulo nesta aba ou fechar a aba respons?vel para liberar este m?dulo.",
       "storage": "Falha ao salvar o tempo. A contagem automática foi interrompida. Verifique o armazenamento e recarregue.",
       "invalid": "Dados de estudo inválidos. A contagem automática foi interrompida; o histórico foi preservado.",
       "conflict": "Conflito no histórico de estudo. A contagem automática foi interrompida.",

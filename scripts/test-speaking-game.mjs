@@ -25,7 +25,7 @@ function load(file) {
   if (file.endsWith('hashmapService.ts')) return { loadHashmap: language => hashmapLoader(language) };
   const module = { exports: {} };
   cache.set(file, module);
-  const { outputText } = transpileModule(readFileSync(file, 'utf8').replaceAll('import.meta.env', 'globalThis.__speakingEnv'), { compilerOptions: {
+  const { outputText } = transpileModule(readFileSync(file, 'utf8').replaceAll('import.meta.url', JSON.stringify('file:///study-lock-tests/entry.js')).replaceAll('import.meta.env', 'globalThis.__speakingEnv'), { compilerOptions: {
     module: ModuleKind.CommonJS, jsx: JsxEmit.ReactJSX, target: ScriptTarget.ES2022
   } });
   const localRequire = id => {

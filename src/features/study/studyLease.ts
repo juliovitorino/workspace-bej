@@ -1,39 +1,35 @@
 import { StudyError } from "./studyStorage";
+import { getStudyLocks } from "./studyLocks";
 
-export const STUDY_LEASE_KEY = "bej-study-tracking-lease";
-export const LEASE_MS = 45000;
-type LeaseStorage = Pick<Storage, "getItem" | "setItem" | "removeItem">;
-
-// Advisory fallback only: localStorage has no compare-and-swap operation.
-// Check ownership before every tracking write and expire abandoned owners.
+export const STUDY_LEASE_KEY = "bej-study-v2:control:";
+// Controls remain held during background throttling. Both Web Locks and the
+// HTTP coordinator arbitrate acquisition; localStorage is never used as a mutex.
 export class StudyLease {
-  constructor(private storage: LeaseStorage, private token: string) {}
-  private read(): { token: string; expiresAt: number } | null {
-    let raw: string | null;
-    try { raw = this.storage.getItem(STUDY_LEASE_KEY); } catch { throw new StudyError("storage"); }
-    if (!raw) return null;
-    try {
-      const value = JSON.parse(raw);
-      return value && typeof value.token === "string" && Number.isFinite(value.expiresAt) ? value : null;
-    } catch { return null; }
-  }
-  owns(now = Date.now()): boolean {
-    const lease = this.read();
-    return lease?.token === this.token && lease.expiresAt > now;
-  }
-  claim(now = Date.now()): boolean {
-    const previous = this.read();
-    if (previous && previous.token !== this.token && previous.expiresAt > now) return false;
-    return this.write(now);
-  }
-  renew(now = Date.now()): boolean { return this.owns(now) && this.write(now); }
-  private write(now: number): boolean {
-    try { this.storage.setItem(STUDY_LEASE_KEY, JSON.stringify({ token: this.token, expiresAt: now + LEASE_MS })); }
-    catch { throw new StudyError("storage"); }
-    return this.owns(now);
+  private held = false;
+  private pending: Promise<boolean> | null = null;
+  private releaseLock: (() => void) | null = null;
+  private disposed = false;
+  constructor(readonly resource: string) {}
+  owns(): boolean { return this.held && !this.disposed; }
+  claim(): Promise<boolean> {
+    if (this.disposed) return Promise.resolve(false);
+    if (this.owns()) return Promise.resolve(true);
+    if (this.pending) return this.pending;
+    const locks = getStudyLocks();
+    if (!locks) return Promise.reject(new StudyError("unsupported"));
+    this.pending = new Promise<boolean>((resolve, reject) => {
+      void locks.request(STUDY_LEASE_KEY + this.resource, { ifAvailable: true }, async lock => {
+        if (!lock || this.disposed) { resolve(false); return; }
+        this.held = true;
+        await new Promise<void>(release => { this.releaseLock = release; resolve(true); });
+        this.held = false;
+      }).catch(() => reject(new StudyError("storage")));
+    }).finally(() => { this.pending = null; });
+    return this.pending;
   }
   release() {
-    if (this.read()?.token !== this.token) return;
-    try { this.storage.removeItem(STUDY_LEASE_KEY); } catch { /* Expiry still permits recovery. */ }
+    this.disposed = true;
+    this.held = false;
+    this.releaseLock?.();
   }
 }

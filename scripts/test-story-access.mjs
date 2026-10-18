@@ -24,8 +24,8 @@ function load(file) {
   if (cache.has(file)) return cache.get(file).exports;
   const module = { exports: {} };
   cache.set(file, module);
-  if (file.endsWith('.json')) return module.exports = JSON.parse(readFileSync(file, 'utf8'));
-  const source = readFileSync(file, 'utf8').replaceAll('import.meta.env', 'globalThis.__storyTestEnv');
+  if (file.endsWith('.json')) return module.exports = JSON.parse(readFileSync(file, 'utf8').replaceAll('import.meta.url', JSON.stringify('file:///study-lock-tests/entry.js')));
+  const source = readFileSync(file, 'utf8').replaceAll('import.meta.url', JSON.stringify('file:///study-lock-tests/entry.js')).replaceAll('import.meta.env', 'globalThis.__storyTestEnv');
   const { outputText } = transpileModule(source, { compilerOptions: {
     module: ModuleKind.CommonJS, jsx: JsxEmit.ReactJSX, target: ScriptTarget.ES2022, esModuleInterop: true
   } });

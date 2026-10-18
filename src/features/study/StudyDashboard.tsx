@@ -3,8 +3,8 @@ import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import { LANGUAGES, type StudentLanguage } from "../../config/languages";
 import { languageName } from "../../i18n";
-import { backupOf, MAX_BACKUP_BYTES, mergeStudyData, newStudyId, parseStudyBackup, readStudyStore, restoreStudyBackup,
-  STUDY_CHANGED, STUDY_KEY, STUDY_MODULES, EXTRA_CATEGORIES, StudyError, updateStudyStore, validDay,
+import { backupOf, MAX_BACKUP_BYTES, mergeStudyData, newStudyId, parseStudyBackup, readStudyStore, readStudyCheckpoints, studyDataWithCheckpoints, restoreStudyBackup,
+  STUDY_CHANGED, isStudyStorageKey, STUDY_MODULES, EXTRA_CATEGORIES, StudyError, updateStudyStore, validDay,
   type ManualAdjustment, type StudyBackup, type StudyData, type StudyStore } from "./studyStorage";
 import { localDay, studyTracker } from "./studyTrackingService";
 import { studyEntries, studyStats, type StudyFilters } from "./studyStats";
@@ -35,6 +35,7 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
     setScrollTarget("");
   }, [scrollTarget]);
   const [store, setStore] = useState<StudyStore | null>(null);
+  const [checkpoints, setCheckpoints] = useState<ReturnType<typeof readStudyCheckpoints>>([]);
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
@@ -57,13 +58,21 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
   const fail = (e: unknown) => { setError(t(`study.errors.${e instanceof StudyError ? e.code : "storage"}`)); setMessage(""); };
   useEffect(() => {
     const refresh = () => {
-      try { setStore(readStudyStore()); setError(""); } catch (e) { setStore(null); fail(e); }
+      try {
+        setStore(readStudyStore()); setCheckpoints(readStudyCheckpoints()); setError("");
+      } catch (e) { setStore(null); setCheckpoints([]); fail(e); }
     };
-    const storage = (event: StorageEvent) => { if (event.key === STUDY_KEY || event.key === null) refresh(); };
+    const storage = (event: StorageEvent) => { if (isStudyStorageKey(event.key)) refresh(); };
     refresh();
     window.addEventListener(STUDY_CHANGED, refresh); window.addEventListener("storage", storage);
+    const visible = () => { if (document.visibilityState === "visible") refresh(); };
+    window.addEventListener("focus", refresh); document.addEventListener("visibilitychange", visible);
     const timer = window.setInterval(() => setNow(new Date()), 60000);
-    return () => { window.removeEventListener(STUDY_CHANGED, refresh); window.removeEventListener("storage", storage); window.clearInterval(timer); };
+    return () => {
+      window.removeEventListener(STUDY_CHANGED, refresh); window.removeEventListener("storage", storage);
+      window.removeEventListener("focus", refresh); document.removeEventListener("visibilitychange", visible);
+      window.clearInterval(timer);
+    };
   }, [i18n.language]);
   useEffect(() => {
     setGoalHours(String(store?.studyData.goals[goalLanguage] ?? ""));
@@ -71,8 +80,11 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
   }, [goalLanguage, store]);
   useEffect(() => { setHistoryPage(1); }, [filters]);
   const validRange = filters.period !== "custom" || (validDay(filters.from) && validDay(filters.to) && filters.from <= filters.to);
-  const stats = useMemo(() => store && studyStats(store.studyData, validRange ? filters : { ...filters, period: "today" }, now), [store, filters, validRange, now]);
-  const history = useMemo(() => [...(stats?.entries ?? [])].sort((a, b) => b.date.localeCompare(a.date)), [stats]);
+  const displayData = useMemo(() => store && studyDataWithCheckpoints(store.studyData, checkpoints), [store, checkpoints]);
+  const stats = useMemo(() => displayData && studyStats(displayData, validRange ? filters : { ...filters, period: "today" }, now), [displayData, filters, validRange, now]);
+  const history = useMemo(() => store
+    ? [...studyStats(store.studyData, validRange ? filters : { ...filters, period: "today" }, now).entries].sort((a, b) => b.date.localeCompare(a.date))
+    : [], [store, filters, validRange, now]);
   const historyPages = Math.max(1, Math.ceil(history.length / HISTORY_PAGE_SIZE));
   const currentHistoryPage = Math.min(historyPage, historyPages);
   const historyRows = history.slice((currentHistoryPage - 1) * HISTORY_PAGE_SIZE, currentHistoryPage * HISTORY_PAGE_SIZE);
@@ -189,7 +201,7 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
       <div id="study-results" className="study-content" tabIndex={-1} hidden={historyVisible}>
       <section className="study-panel"><div className="study-goal-heading"><h3>{t("study.journey")}</h3><button type="button" className="secondary-button study-goal-info" aria-label={t(goalExplanationVisible ? "study.hideGoalExplanation" : "study.showGoalExplanation")} title={t(goalExplanationVisible ? "study.hideGoalExplanation" : "study.showGoalExplanation")} aria-expanded={goalExplanationVisible} aria-controls="study-goal-explanation" onClick={() => setGoalExplanationVisible(!goalExplanationVisible)}>{informationIcon}</button></div><p id="study-goal-explanation" className="study-goal-explanation" data-expanded={goalExplanationVisible}>{t("study.historicalNote")}</p>
         {languages.filter(code => filters.language === "all" || filters.language === code).map(code => {
-          const entries = studyEntries(store.studyData).filter(e => e.language === code), total = entries.reduce((n, e) => n + e.seconds, 0);
+          const entries = studyEntries(displayData!).filter(e => e.language === code), total = entries.reduce((n, e) => n + e.seconds, 0);
           const target = store.studyData.goals[code], monthly = store.studyData.monthlyGoals[code];
           const percent = target ? total / (target * 3600) * 100 : 0;
           const monthTotal = entries.filter(e => e.date.slice(0, 7) === localDay(now).slice(0, 7)).reduce((n, e) => n + e.seconds, 0);

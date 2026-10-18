@@ -46,7 +46,7 @@
     "basicTraining": "Basic Exercise",
     "advancedTraining": "Advanced Exercise",
     "tracking": { "waiting": "Waiting for practice to begin", "active": "Tracking", "idle": "Paused due to inactivity", "unavailable": "Tracking unavailable" },
-    "compatibilityNote": "Without Web Locks, tracking uses compatibility mode. Use a single tab: the temporary lease reduces conflicts but cannot guarantee cross-tab exclusion.",
+    "compatibilityNote": "Cross-tab control uses Web Locks when available or a SharedWorker on HTTP addresses. Different modules can run simultaneously.",
     "title": "Study Dashboard",
     "intro": "The 750-hour journey: a personal dedication goal, without a guarantee of fluency or FSI certification.",
     "filters": "Filters",
@@ -140,8 +140,9 @@
       "custom": "Custom range"
     },
     "errors": {
+      "unsupported": "This browser offers neither Web Locks nor SharedWorker. Tracking is unavailable at this address. Use a compatible browser or HTTPS.",
       "extraActive": "Save or discard the active Extra Activity or pending recovery before restoring a backup or starting another activity.",
-      "otherTab": "Another tab controls tracking. Use that tab or close it and wait for control to become available here.",
+      "otherTab": "Another tab is tracking this module. You can use a different module here or close the controlling tab to release this module.",
       "zero": "A zero-duration session cannot be saved. Continue studying or discard the activity.",
       "invalid": "Invalid file, record, date or duration. No data was imported.",
       "version": "Incompatible backup or storage version.",
@@ -152,9 +153,9 @@
       "duplicate": "An adjustment with the same language, date, duration and description already exists."
     },
     "warning": {
-      "compatibility": "Automatic tracking is active in compatibility mode. Keep BEJ open in a single tab to avoid duplicate time.",
-      "unsupported": "This browser does not support Web Locks. Automatic tracking is disabled to avoid duplication across tabs.",
-      "otherTab": "Another tab owns study tracking. Use the already open tab or close it to track here.",
+      "compatibility": "Cross-tab control is active through the browser.",
+      "unsupported": "This browser offers neither Web Locks nor SharedWorker. Tracking is unavailable at this address. Use a compatible browser or HTTPS.",
+      "otherTab": "Another tab is tracking this module. You can use a different module here or close the controlling tab to release this module.",
       "storage": "Could not save study time. Automatic tracking stopped. Check storage and reload.",
       "invalid": "Invalid study data. Automatic tracking stopped; history was preserved.",
       "conflict": "Study history conflict. Automatic tracking stopped.",

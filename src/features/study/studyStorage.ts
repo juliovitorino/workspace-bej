@@ -1,6 +1,8 @@
 import { isStudentLanguage, type StudentLanguage } from "../../config/languages";
+import { getStudyLocks } from "./studyLocks";
 
-export const STUDY_KEY = "bej-study-data";
+export const STUDY_KEY = "bej-study-v2:";
+export const isStudyStorageKey = (key: string | null) => key === null || key.startsWith(STUDY_KEY);
 export const STUDY_CHANGED = "bej-study-changed";
 export const APPLICATION = "Brazilian English Journey";
 export const MAX_BACKUP_BYTES = 5 * 1024 * 1024;
@@ -34,9 +36,9 @@ export interface StudyData {
 }
 export interface StudyStore { schemaVersion: 1; studyData: StudyData; activeSession: StudySession | null; extraActivity?: ExtraActivityDraft | null }
 export interface StudyBackup { schemaVersion: 1; application: typeof APPLICATION; exportedAt: string; studyData: StudyData }
-export type StudyErrorCode = "invalid" | "version" | "storage" | "conflict" | "stale" | "tooLarge" | "duplicate" | "extraActive" | "otherTab" | "zero";
+export type StudyErrorCode = "invalid" | "version" | "storage" | "conflict" | "stale" | "tooLarge" | "duplicate" | "extraActive" | "otherTab" | "zero" | "unsupported";
 export class StudyError extends Error { constructor(public code: StudyErrorCode) { super(code); } }
-type StorageLike = Pick<Storage, "getItem" | "setItem">;
+type StorageLike = Pick<Storage, "getItem" | "setItem" | "removeItem" | "key" | "length">;
 const invalid = (): never => { throw new StudyError("invalid"); };
 const object = (v: unknown): v is Record<string, unknown> => !!v && typeof v === "object" && !Array.isArray(v);
 const seconds = (v: unknown): v is number => typeof v === "number" && Number.isSafeInteger(v) && v >= 0 && v <= 1e12;
@@ -129,38 +131,133 @@ export function totalSeconds(data: StudyData): number {
   if (!Number.isSafeInteger(sum)) return invalid();
   return sum;
 }
-export function readStudyStore(storage: StorageLike = localStorage): StudyStore {
-  let raw: string | null;
-  try { raw = storage.getItem(STUDY_KEY); } catch { throw new StudyError("storage"); }
-  if (raw === null) return emptyStore();
-  let v: unknown;
-  try { v = JSON.parse(raw); } catch { return invalid(); }
-  if (!object(v)) return invalid();
-  if (v.schemaVersion !== 1) throw new StudyError("version");
+// The aggregate is a read model only; records are persisted independently.
+function validateStore(v: StudyStore): StudyStore {
   const studyData = validateStudyData(v.studyData);
-  // Persisted history must already be deduplicated.
   if (new Set(studyData.sessions.map(s => s.id)).size !== studyData.sessions.length ||
     new Set(studyData.manualAdjustments.map(a => a.id)).size !== studyData.manualAdjustments.length) return invalid();
-  const activeSession = v.activeSession === null ? null : session(v.activeSession);
-  if (activeSession && studyData.sessions.some(s => s.id === activeSession.id)) throw new StudyError("conflict");
-  const extraActivity = v.extraActivity == null ? v.extraActivity : extraDraft(v.extraActivity);
-  if (extraActivity && (studyData.sessions.some(s => s.id === extraActivity.id) || activeSession?.module === "extra-activities")) throw new StudyError("conflict");
-  return { schemaVersion: 1, studyData, activeSession, ...(extraActivity !== undefined ? { extraActivity } : {}) };
+  const activeSession = v.activeSession == null ? null : session(v.activeSession);
+  const extraActivity = v.extraActivity == null ? null : extraDraft(v.extraActivity);
+  return { schemaVersion: 1, studyData, activeSession, extraActivity };
 }
-export function writeStudyStore(store: StudyStore, storage: StorageLike = localStorage): void {
-  const serialized = JSON.stringify(store);
-  // Validate the entire candidate before the single atomic localStorage write.
-  readStudyStore({ getItem: () => serialized, setItem: () => {} });
-  try { storage.setItem(STUDY_KEY, serialized); } catch { throw new StudyError("storage"); }
+const recordKey = (kind: string, identity: string) => STUDY_KEY + kind + ":" + encodeURIComponent(identity);
+function readJSON(storage: StorageLike, key: string): unknown {
+  const raw = storage.getItem(key);
+  return raw === null ? null : JSON.parse(raw);
 }
-export async function updateStudyStore(change: (store: StudyStore) => StudyStore): Promise<StudyStore> {
-  const commit = () => {
-    const next = change(readStudyStore());
-    writeStudyStore(next);
+export function readExtraActivity(storage: StorageLike = localStorage): ExtraActivityDraft | null {
+  try {
+    const raw = readJSON(storage, STUDY_KEY + "active:extra-activities");
+    if (raw === null) return null;
+    const draft = extraDraft(raw);
+    return storage.getItem(recordKey("session", draft.id)) === null ? draft : null;
+  } catch (error) {
+    if (error instanceof StudyError) throw error;
+    if (error instanceof SyntaxError) return invalid();
+    throw new StudyError("storage");
+  }
+}
+export function readStudyStore(storage: StorageLike = localStorage, module?: StudyModule): StudyStore {
+  try {
+    const result = emptyStore();
+    result.extraActivity = readExtraActivity(storage);
+    if (module && module !== "extra-activities") result.activeSession = readJSON(storage, STUDY_KEY + "active:" + module) as StudySession | null;
+    const keys = Array.from({ length: storage.length }, (_, i) => storage.key(i)).filter((k): k is string => !!k && k.startsWith(STUDY_KEY));
+    for (const key of keys.sort()) {
+      const value = readJSON(storage, key);
+      if (value === null) continue;
+      if (key.startsWith(STUDY_KEY + "session:")) {
+        const item = session(value);
+        if (key !== recordKey("session", item.id)) return invalid();
+        result.studyData.sessions.push(item);
+      } else if (key.startsWith(STUDY_KEY + "adjustment:")) {
+        const item = adjustment(value);
+        if (key !== recordKey("adjustment", item.id)) return invalid();
+        result.studyData.manualAdjustments.push(item);
+      }
+      else if (key.startsWith(STUDY_KEY + "goal:")) {
+        const language = decodeURIComponent(key.slice((STUDY_KEY + "goal:").length));
+        if (!isStudentLanguage(language) || !object(value)) return invalid();
+        Object.assign(result.studyData.goals, goals({ [language]: value.total }));
+        if (value.monthly !== undefined) Object.assign(result.studyData.monthlyGoals, goals({ [language]: value.monthly }));
+      }
+    }
+    // History precedes draft removal. A crash between writes cannot resurrect it.
+    if (result.activeSession && result.studyData.sessions.some(s => s.id === result.activeSession!.id)) result.activeSession = null;
+    if (result.activeSession && result.activeSession.module !== module) return invalid();
+    if (result.extraActivity && result.studyData.sessions.some(s => s.id === result.extraActivity!.id)) result.extraActivity = null;
+    return validateStore(result);
+  } catch (error) {
+    if (error instanceof StudyError) throw error;
+    if (error instanceof SyntaxError) return invalid();
+    throw new StudyError("storage");
+  }
+}
+// Confirmed checkpoints are visible progress, but remain separate from completed
+// history and backups. Never estimate wall time for internal activity here.
+export function readStudyCheckpoints(storage: StorageLike = localStorage): StudySession[] {
+  try {
+    const checkpoints: StudySession[] = [];
+    for (const module of STUDY_MODULES) {
+      if (module === "extra-activities") continue; // External drafts need confirmation.
+      const raw = readJSON(storage, STUDY_KEY + "active:" + module);
+      if (raw === null) continue;
+      const item = session(raw);
+      if (item.module !== module) return invalid();
+      if (item.activeSeconds > 0) checkpoints.push(item);
+    }
+    return checkpoints;
+  } catch (error) {
+    if (error instanceof StudyError) throw error;
+    if (error instanceof SyntaxError) return invalid();
+    throw new StudyError("storage");
+  }
+}
+export function studyDataWithCheckpoints(data: StudyData, checkpoints: StudySession[]): StudyData {
+  const sessions = new Map(data.sessions.map(item => [item.id, item]));
+  for (const checkpoint of checkpoints) if (!sessions.has(checkpoint.id)) sessions.set(checkpoint.id, checkpoint);
+  return { ...data, sessions: [...sessions.values()] };
+}
+function entries(store: StudyStore, module?: StudyModule): Map<string, string> {
+  const values = new Map<string, string>();
+  const add = (key: string, value: unknown) => { if (value != null) values.set(key, JSON.stringify(value)); };
+  for (const item of store.studyData.sessions) add(recordKey("session", item.id), item);
+  for (const item of store.studyData.manualAdjustments) add(recordKey("adjustment", item.id), item);
+  for (const language of new Set([...Object.keys(store.studyData.goals), ...Object.keys(store.studyData.monthlyGoals)])) {
+    const key = language as StudentLanguage;
+    add(recordKey("goal", key), { total: store.studyData.goals[key], monthly: store.studyData.monthlyGoals[key] });
+  }
+  add(STUDY_KEY + "active:extra-activities", store.extraActivity);
+  if (module && module !== "extra-activities") add(STUDY_KEY + "active:" + module, store.activeSession);
+  return values;
+}
+export function writeStudyStore(store: StudyStore, storage: StorageLike = localStorage, previous = readStudyStore(storage), module?: StudyModule): void {
+  const next = validateStore(store), before = entries(previous, module), after = entries(next, module);
+  for (const item of next.studyData.sessions) {
+    const raw = storage.getItem(recordKey("session", item.id));
+    if (raw && JSON.stringify(session(JSON.parse(raw))) !== JSON.stringify(item)) throw new StudyError("conflict");
+    if (!raw && item.module !== module) {
+      const active = readJSON(storage, STUDY_KEY + "active:" + item.module);
+      if (object(active) && active.id === item.id) throw new StudyError("stale");
+    }
+  }
+  try {
+    for (const [key, value] of after) if (before.get(key) !== value) storage.setItem(key, value);
+    for (const key of before.keys()) if (!after.has(key) && !key.startsWith(STUDY_KEY + "session:")) storage.removeItem(key);
+  } catch { throw new StudyError("storage"); }
+}
+export async function updateStudyStore(change: (store: StudyStore) => StudyStore, module?: StudyModule): Promise<StudyStore> {
+  // Short transaction lock, independent of the long-lived module control locks.
+  const locks = getStudyLocks();
+  if (!locks) throw new StudyError("unsupported");
+  return locks.request("bej-study-v2:write", { controlResource: module }, lock => {
+    if (!lock) throw new StudyError("otherTab");
+    const previous = readStudyStore(localStorage, module);
+    const next = change(structuredClone(previous));
+    writeStudyStore(next, localStorage, previous, module);
     window.dispatchEvent(new Event(STUDY_CHANGED));
-    return next;
-  };
-  return typeof navigator.locks?.request === "function" ? navigator.locks.request("bej-study-write", commit) : commit();
+    return readStudyStore(localStorage, module);
+  });
 }
 export function parseStudyBackup(text: string): StudyBackup {
   if (new Blob([text]).size > MAX_BACKUP_BYTES) throw new StudyError("tooLarge");

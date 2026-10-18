@@ -46,7 +46,7 @@
     "basicTraining": "Exercice de base",
     "advancedTraining": "Exercice avancé",
     "tracking": { "waiting": "En attente du début de la pratique", "active": "Suivi en cours", "idle": "En pause pour inactivité", "unavailable": "Suivi indisponible" },
-    "compatibilityNote": "Sans Web Locks, le suivi utilise le mode de compatibilité. Utilisez un seul onglet : la réservation temporaire réduit les conflits, mais ne garantit pas l’exclusion entre onglets.",
+    "compatibilityNote": "Le contr?le entre onglets utilise Web Locks si disponible ou un SharedWorker pour les adresses HTTP. Diff?rents modules peuvent fonctionner simultan?ment.",
     "title": "Tableau de bord des études",
     "intro": "Le parcours des 750 heures : un objectif personnel de travail, sans garantie de maîtrise ni certification du FSI.",
     "filters": "Filtres",
@@ -140,8 +140,9 @@
       "custom": "Intervalle personnalisé"
     },
     "errors": {
+      "unsupported": "Ce navigateur ne propose ni Web Locks ni SharedWorker. Le suivi est indisponible ? cette adresse. Utilisez un navigateur compatible ou HTTPS.",
       "extraActive": "Enregistrez ou abandonnez l’activité supplémentaire en cours ou en attente de récupération avant de restaurer une sauvegarde ou d’en commencer une autre.",
-      "otherTab": "Un autre onglet contrôle le suivi. Utilisez-le ou fermez-le et attendez que le contrôle soit disponible ici.",
+      "otherTab": "Un autre onglet suit ce module. Vous pouvez utiliser un autre module ici ou fermer l?onglet responsable pour le lib?rer.",
       "zero": "Une session de durée nulle ne peut pas être enregistrée. Continuez à étudier ou abandonnez l’activité.",
       "invalid": "Fichier, enregistrement, date ou durée invalide. Aucune donnée importée.",
       "version": "Version de sauvegarde ou de stockage incompatible.",
@@ -152,9 +153,9 @@
       "duplicate": "Un ajustement avec la même langue, date, durée et description existe déjà."
     },
     "warning": {
-      "compatibility": "Le suivi automatique est actif en mode de compatibilité. Gardez BEJ ouvert dans un seul onglet pour éviter de compter le temps deux fois.",
-      "unsupported": "Ce navigateur ne prend pas en charge Web Locks. Le suivi automatique est désactivé pour éviter les doublons entre onglets.",
-      "otherTab": "Un autre onglet gère le suivi. Utilisez l’onglet déjà ouvert ou fermez-le pour enregistrer ici.",
+      "compatibility": "Le contr?le entre onglets est actif dans le navigateur.",
+      "unsupported": "Ce navigateur ne propose ni Web Locks ni SharedWorker. Le suivi est indisponible ? cette adresse. Utilisez un navigateur compatible ou HTTPS.",
+      "otherTab": "Un autre onglet suit ce module. Vous pouvez utiliser un autre module ici ou fermer l?onglet responsable pour le lib?rer.",
       "storage": "Impossible d’enregistrer le temps. Le suivi automatique est arrêté. Vérifiez le stockage et rechargez.",
       "invalid": "Données d’étude invalides. Le suivi automatique est arrêté ; l’historique est préservé.",
       "conflict": "Conflit dans l’historique d’étude. Le suivi automatique est arrêté.",

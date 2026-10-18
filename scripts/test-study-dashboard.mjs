@@ -10,7 +10,7 @@ function load(file) {
   file = resolve(file);
   if (cache.has(file)) return cache.get(file).exports;
   const module = { exports: {} }; cache.set(file, module);
-  const output = transpileModule(readFileSync(file, 'utf8'), { compilerOptions: { module: ModuleKind.CommonJS, target: ScriptTarget.ES2022 } }).outputText;
+  const output = transpileModule(readFileSync(file, 'utf8').replaceAll('import.meta.url', JSON.stringify('file:///study-lock-tests/entry.js')), { compilerOptions: { module: ModuleKind.CommonJS, target: ScriptTarget.ES2022 } }).outputText;
   const localRequire = id => {
     if (!id.startsWith('.')) return require(id);
     const base = resolve(dirname(file), id);
@@ -26,7 +26,7 @@ const { emptyStore, backupOf, parseStudyBackup, mergeStudyData, restoreStudyBack
 const code = expected => e => e instanceof StudyError && e.code === expected;
 const rawStore = new Map([['bej-favorite-chunks', '[{"id":"keep","language":"en-US"}]'], ['interface-theme', 'dark']]);
 let failWrite = false;
-const disk = { getItem: key => rawStore.get(key) ?? null, removeItem: key => rawStore.delete(key), setItem(key, value) { if (failWrite) throw new DOMException('Quota', 'QuotaExceededError'); rawStore.set(key, value); } };
+const disk = { get length() { return rawStore.size; }, key: i => [...rawStore.keys()][i] ?? null, getItem: key => rawStore.get(key) ?? null, removeItem: key => rawStore.delete(key), setItem(key, value) { if (failWrite) throw new DOMException('Quota', 'QuotaExceededError'); rawStore.set(key, value); } };
 assert.equal(totalSeconds(readStudyStore(disk).studyData), 0);
 const empty = backupOf(emptyStore());
 assert.equal(totalSeconds(parseStudyBackup(JSON.stringify(empty)).studyData), 0);
@@ -99,11 +99,11 @@ for (const mutate of [b => b.studyData.sessions[0].activeSeconds = -1, b => b.st
 }
 assert.throws(() => parseStudyBackup(JSON.stringify({ ...backup, schemaVersion: 2 })), code('version'));
 assert.throws(() => parseStudyBackup(' '.repeat(storage.MAX_BACKUP_BYTES + 1)), code('tooLarge'));
-const beforeFailure = rawStore.get(STUDY_KEY); failWrite = true;
-assert.throws(() => writeStudyStore(emptyStore(), disk), code('storage'));
-assert.equal(rawStore.get(STUDY_KEY), beforeFailure, 'quota failure leaves all previous data intact'); failWrite = false;
+const beforeFailure = JSON.stringify([...rawStore]); failWrite = true;
+assert.throws(() => writeStudyStore({ ...emptyStore(), studyData: { ...emptyStore().studyData, goals: { 'en-US': 900 } } }, disk), code('storage'));
+assert.equal(JSON.stringify([...rawStore]), beforeFailure, 'quota failure leaves all previous data intact'); failWrite = false;
 assert.equal(rawStore.get('bej-favorite-chunks'), '[{"id":"keep","language":"en-US"}]'); assert.equal(rawStore.get('interface-theme'), 'dark');
-rawStore.set(STUDY_KEY, '{broken'); assert.throws(() => readStudyStore(disk), code('invalid')); assert.equal(rawStore.get(STUDY_KEY), '{broken');
+rawStore.set(STUDY_KEY + 'session:broken', '{broken'); assert.throws(() => readStudyStore(disk), code('invalid')); assert.equal(rawStore.get(STUDY_KEY + 'session:broken'), '{broken'); rawStore.delete(STUDY_KEY + 'session:broken');
 assert.throws(() => readStudyStore({ getItem() { throw Error('denied'); }, setItem() {} }), code('storage'));
 const interrupted = { ...emptyStore(), activeSession: manual };
 const recovered = recoverCheckpoint(interrupted);
@@ -126,7 +126,7 @@ const { studyTracker } = load('src/features/study/studyTrackingService.ts');
 const realNow = Date.now, realNavigator = Object.getOwnPropertyDescriptor(globalThis, 'navigator');
 let fakeNow = start, lastStatus = '';
 Date.now = () => fakeNow;
-rawStore.delete(STUDY_KEY);
+for (const key of [...rawStore.keys()]) if (key.startsWith(STUDY_KEY)) rawStore.delete(key);
 globalThis.localStorage = disk;
 globalThis.window = { dispatchEvent() {}, addEventListener() {}, removeEventListener() {}, setInterval() { return 1; }, clearInterval() {} };
 Object.defineProperty(globalThis, 'navigator', { configurable: true, value: { locks: { request(_name, options, fn) {
@@ -135,7 +135,7 @@ Object.defineProperty(globalThis, 'navigator', { configurable: true, value: { lo
 const settle = async () => { for (let i = 0; i < 30; i++) await Promise.resolve(); };
 const unsubscribe = studyTracker.subscribe(status => { lastStatus = status; });
 const stop = studyTracker.start(); await settle();
-studyTracker.set(context, true);
+studyTracker.set(context, true); await settle();
 fakeNow += 5000; await studyTracker.seal();
 const midSessionBackup = backupOf(readStudyStore(disk), new Date(fakeNow));
 assert.equal(totalSeconds(midSessionBackup.studyData), 5);
@@ -144,52 +144,22 @@ const afterExport = readStudyStore(disk);
 assert.equal(afterExport.studyData.sessions.length, 2, 'export seals one ID and continuation gets another');
 assert.equal(totalSeconds(afterExport.studyData), 10);
 assert.equal(totalSeconds(restoreStudyBackup(afterExport, midSessionBackup, JSON.stringify(afterExport)).studyData), 10, 'importing the active-session export cannot duplicate the exported segment');
-studyTracker.set(context, true); fakeNow += 5000; failWrite = true; studyTracker.checkpoint(); await settle();
+studyTracker.set(context, true); await settle(); fakeNow += 5000; failWrite = true; studyTracker.checkpoint(); await settle();
 assert.equal(lastStatus, 'storage');
 await assert.rejects(() => studyTracker.seal(), code('storage'));
 assert.equal(totalSeconds(readStudyStore(disk).studyData), 10, 'failed checkpoint/export never overwrites confirmed history');
 stop(); await settle(); unsubscribe(); failWrite = false;
 
-const { StudyLease, STUDY_LEASE_KEY, LEASE_MS } = load('src/features/study/studyLease.ts');
-const leaseOne = new StudyLease(disk, 'tab-one'), leaseTwo = new StudyLease(disk, 'tab-two');
-assert.equal(leaseOne.claim(fakeNow), true);
-assert.equal(leaseTwo.claim(fakeNow), false, 'second tab respects a live owner');
-assert.equal(leaseOne.renew(fakeNow + 5000), true);
-assert.equal(leaseTwo.claim(fakeNow + LEASE_MS + 5001), true, 'abandoned owner expires');
-assert.equal(leaseOne.owns(fakeNow + LEASE_MS + 5001), false);
-leaseOne.release(); assert.equal(JSON.parse(rawStore.get(STUDY_LEASE_KEY)).token, 'tab-two', 'old owner cannot release the new owner');
-leaseTwo.release(); assert.equal(rawStore.has(STUDY_LEASE_KEY), false);
-
-// A browser without navigator.locks still persists actual study time.
+// Unsupported browsers never use a get/set lease as an atomic lock.
 Object.defineProperty(globalThis, 'navigator', { configurable: true, value: {} });
-window.setTimeout = setTimeout;
 const { StudyTracker } = load('src/features/study/studyTrackingService.ts');
-rawStore.delete(STUDY_KEY);
-const fallbackTracker = new StudyTracker(); let fallbackStatus = '';
-fallbackTracker.subscribe(status => { fallbackStatus = status; });
-fallbackTracker.set(context, true);
-const stopFallback = fallbackTracker.start();
-await new Promise(resolve => setTimeout(resolve, 180)); await settle();
-assert.equal(fallbackStatus, '');
-fakeNow += 5000; await fallbackTracker.seal();
-assert.equal(totalSeconds(readStudyStore(disk).studyData), 5, 'no-Web-Locks mode records real time');
-const secondFallback = new StudyTracker(); let secondStatus = '';
-secondFallback.subscribe(status => { secondStatus = status; });
-const stopSecond = secondFallback.start(); await settle();
-assert.equal(secondStatus, 'otherTab');
-stopSecond(); await settle();
-assert.equal(new StudyLease(disk, JSON.parse(rawStore.get(STUDY_LEASE_KEY)).token).owns(fakeNow), true);
-const savedBeforeLoss = rawStore.get(STUDY_KEY);
-rawStore.set(STUDY_LEASE_KEY, JSON.stringify({ token: 'new-owner', expiresAt: fakeNow + LEASE_MS }));
-fakeNow += 5000; fallbackTracker.checkpoint(); await settle();
-assert.equal(fallbackStatus, 'otherTab');
-assert.equal(rawStore.get(STUDY_KEY), savedBeforeLoss, 'losing ownership prevents stale tracking writes');
+const fallbackTracker = new StudyTracker();
+const beforeFallback = JSON.stringify([...rawStore]);
+const stopFallback = fallbackTracker.start(); fallbackTracker.set(context, true); await settle();
+assert.equal(fallbackTracker.hasControl(), false);
+await assert.rejects(() => storage.updateStudyStore(s => s), code('unsupported'));
+assert.equal(JSON.stringify([...rawStore]), beforeFallback);
 stopFallback(); await settle();
-rawStore.delete(STUDY_LEASE_KEY); failWrite = true;
-const deniedTracker = new StudyTracker(); let deniedStatus = '';
-deniedTracker.subscribe(status => { deniedStatus = status; });
-const stopDenied = deniedTracker.start(); await settle();
-assert.equal(deniedStatus, 'storage'); stopDenied(); await settle(); failWrite = false;
 Date.now = realNow;
 if (realNavigator) Object.defineProperty(globalThis, 'navigator', realNavigator);
 const shadowClock = new StudyClock(() => 'shadowing-thirty-minutes');
@@ -205,7 +175,7 @@ assert.equal(shadowRestored.studyData.sessions.length, 1); assert.equal(shadowRe
 assert.equal(totalSeconds(shadowRestored.studyData) / (750 * 3600) * 100, 1800 / (750 * 3600) * 100);
 console.log('PASS: active/pause/idle/module/language/walking/midnight/checkpoint tracking; empty and valid backups; exact round-trip totals; repeated import; duplicate and conflicting IDs; goal choice; invalid dates/durations/version/JSON; file size; atomic quota failure; isolated storage; filters and streak threshold.');
 console.log('PASS: queued runtime writes, active-session export seals and rotates IDs, continued study plus restored export keeps exact totals, checkpoint failure blocks successful export.');
-console.log('PASS: no-Web-Locks automatic tracking, lease contention, renewal, expiry, ownership loss, safe release and storage denial.');
+console.log('PASS: unsupported browsers fail closed without altering records.');
 console.log('PASS: 30 minutes of Shadowing persist once, filter by module/language, contribute to the English goal, and survive repeated backup restore.');
 const newModuleStore = emptyStore();
 for (const [module, seconds, language] of [['speaking-game', 65, 'en-US'], ['interpretation', 125, 'fr-FR']]) {
