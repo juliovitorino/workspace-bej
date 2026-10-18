@@ -96,6 +96,43 @@ try {
   now += 100000; cancelled.onend(); await settle(); assert.equal(checkpoint().activeSeconds,1030,'late end after cancellation cannot add time');
   console.log('PASS real speech handlers: long playback, overlap, pause/resume, cancellation, late events and existing callbacks preserved.');
 
+  for (const [view,module] of [['chunk-flashcards','chunk-flashcards'],['favorite-chunks','chunk-favorites']]) {
+    const signal = active => ({view,language:'en-US',mode:'walking',active});
+    const walkingProps = {view,language:'en-US',blocked:false,signal:signal(true)};
+    tracking.flush(walkingProps); await settle();
+    const {StudyTracker} = load('src/features/study/studyTrackingService.ts');
+    const {roundKey,presentItem,readRound} = load('src/utils/learningRound.ts');
+    const contender = new StudyTracker(), releaseContender = contender.start();
+    contender.set({module,language:'en-US',mode:'walking'},true); await settle();
+    const roundStorageKey=roundKey('en-US',view);
+    studyTracker.requireControl(); presentItem(roundStorageKey,['one','two'],'one');
+    assert.throws(()=>{contender.requireControl(); presentItem(roundStorageKey,['one','two'],'two');});
+    assert.deepEqual(readRound(roundStorageKey).presentedItemIds,['one']);
+    releaseContender(); await settle();
+    now += 20*60000; // no ticks or speech callbacks
+    dispatch(listeners,{type:'blur'});
+    document.visibilityState='hidden'; dispatch(documentListeners,{type:'visibilitychange'}); await settle();
+    tracking.flush({...walkingProps,signal:signal(false)}); await settle();
+    assert.equal(storage.readStudyStore(disk,module).activeSession.activeSeconds,1200);
+    now += 5*60000;
+    tracking.flush(walkingProps); await settle();
+    now += 27*60000;
+    tracking.flush({...walkingProps,signal:signal(false)}); await settle();
+    assert.equal(storage.readStudyStore(disk,module).activeSession.activeSeconds,2820);
+    const sessionId=storage.readStudyStore(disk,module).activeSession.id;
+    tracking.flush({view:'study-dashboard',language:'en-US',blocked:false,signal:null}); await settle();
+    const completed=storage.readStudyStore(disk,module).studyData.sessions.find(item=>item.id===sessionId);
+    assert.equal(completed.activeSeconds,2820);
+    assert.equal(storage.studyDataWithCheckpoints(storage.readStudyStore().studyData,storage.readStudyCheckpoints()).sessions.filter(item=>item.id===sessionId).length,1);
+    tracking.flush(walkingProps); await settle();
+    now += 10*60000;
+    const directId=storage.readStudyStore(disk,module).activeSession.id;
+    tracking.flush({view:'study-dashboard',language:'en-US',blocked:false,signal:null}); await settle();
+    assert.equal(storage.readStudyStore(disk,module).studyData.sessions.find(item=>item.id===directId).activeSeconds,600);
+    document.visibilityState='visible';
+  }
+  console.log('PASS walking in both modules: 20 active + 5 paused + 27 active = 47 minutes, blur/background without callbacks, pause-stop idempotency, direct-stop final 10 minutes, persisted Dashboard and unchanged manual cap.');
+
   tracking.flush({...tracking.props,view:'extra-activities'}); await settle();
   await extra.startExtraActivity('en-US','private-class','90-minute lesson');
   const draft = storage.readStudyStore().extraActivity;

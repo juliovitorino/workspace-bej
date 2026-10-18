@@ -143,6 +143,7 @@ function normalizeHashmap(target: HashmapDataV4, source: HashmapDataV4): Hashmap
       intention: localizedIntention(original ?? item, source.metadata.language),
       english: item.structure || item.pattern || item.intention,
       targetIntention: localizedIntention(item, target.metadata.language),
+      sourceAudioText: original ? localizedIntention(original, source.metadata.language) : "",
       // Não perder os campos de busca da origem ao normalizar o catálogo de estudo.
       sourcePattern: original?.pattern,
       sourceStructure: original?.structure,

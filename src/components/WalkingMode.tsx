@@ -13,6 +13,8 @@ import { WalkingSessionSummary } from "./WalkingSessionSummary";
 import { FavoriteChunkButton } from "./FavoriteChunkButton";
 
 interface Props {
+  onPresented?: () => void;
+  onCycleComplete?: () => void;
   onStudyState?: (active: boolean, mode?: "manual" | "walking") => void;
   stopWhenEmpty?: boolean;
   currentEligible?: boolean;
@@ -32,8 +34,9 @@ interface Props {
   onStop: (summary?: WalkingSummary) => void;
 }
 
-export function WalkingMode({ onStudyState, chunk, language, sourceLanguage, level, onLevelChange, position, total, round, canPrevious, onPrevious, onNext, onStop, stopWhenEmpty = false, currentEligible = true, favorite = false, onToggleFavorite }: Props) {
+export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk, language, sourceLanguage, level, onLevelChange, position, total, round, canPrevious, onPrevious, onNext, onStop, stopWhenEmpty = false, currentEligible = true, favorite = false, onToggleFavorite }: Props) {
   const { t } = useTranslation();
+  const [translationAudio, setTranslationAudio] = useState(() => localStorage.getItem("bej-walking-translation-audio") === "true");
   const [paused, setPaused] = useState(false);
   const [repetitions, setRepetitions] = useState(5);
   const [pause, setPause] = useState(3);
@@ -47,11 +50,11 @@ export function WalkingMode({ onStudyState, chunk, language, sourceLanguage, lev
   const [wakeWarning, setWakeWarning] = useState("");
   const [seconds, setSeconds] = useState(0);
   const elapsed = useRef(0);
-  const activeSince = useRef<number | null>(performance.now());
+  const activeSince = useRef<number | null>(Date.now());
   const audio = useRef(new WalkingAudio());
   const session = useRef(new WalkingSession());
   const playbackToken = useRef(0);
-  const phase = useRef<"speech" | "pause">("speech");
+  const phase = useRef<"speech" | "translation-gap" | "translation" | "pause">("speech");
   const finishWhenEmpty = useRef(false);
   finishWhenEmpty.current = stopWhenEmpty && total === 0;
   const advanceAfterSpeech = useRef(false);
@@ -60,8 +63,9 @@ export function WalkingMode({ onStudyState, chunk, language, sourceLanguage, lev
   callbacks.current = { onNext, onPrevious, onStop: stopSession };
 
   function stopSession() {
+    onStudyState?.(false, "walking");
     audio.current.cancel();
-    const duration = elapsed.current + (activeSince.current === null ? 0 : performance.now() - activeSince.current);
+    const duration = elapsed.current + (activeSince.current === null ? 0 : Date.now() - activeSince.current);
     onStop(session.current.summary(total, Math.floor(duration / 1000)));
   }
 
@@ -105,40 +109,58 @@ export function WalkingMode({ onStudyState, chunk, language, sourceLanguage, lev
       if (automatic) navigateRef.current();
       return;
     }
+    const fail = () => { onStudyState?.(false, "walking"); setError(t("walking.couldNotPlayTheAudioTapResumeToTryAgain")); setPaused(true); };
     const done = () => {
       phase.current = "speech";
+      if (index + 1 >= repetitions) {
+        try { onCycleComplete?.(); } catch { fail(); return; }
+      }
       setIndex(v => v + 1);
     };
     const token = ++playbackToken.current;
+    const translated = translationAudio && chunk.sourceAudioText?.trim() && sourceLanguage !== language;
+    const complete = () => {
+      session.current.record(token, chunk.id, index + 1 >= repetitions);
+      phase.current = "pause";
+      setSpoken(index + 1);
+      if (finishWhenEmpty.current) callbacks.current.onStop();
+      else if (advanceAfterSpeech.current) navigateRef.current();
+    };
+    const translate = () => {
+      phase.current = "translation";
+      audio.current.play(chunk.sourceAudioText!.trim(), sourceLanguage, rate, pause * 1000, complete, done, fail);
+    };
     if (phase.current === "pause") audio.current.wait(pause * 1000, done);
+    else if (phase.current === "translation-gap") audio.current.wait(1000, translate);
+    else if (phase.current === "translation") translate();
     else audio.current.play(repetitionText((chunk.targetIntention ?? chunk.english).trim(), language, index, repetitions),
-      language, rate, pause * 1000,
-      () => {
-        onStudyState?.(false, "walking");
-        session.current.record(token, chunk.id, index + 1 >= repetitions);
-        phase.current = "pause";
-        setSpoken(index + 1);
-        if (finishWhenEmpty.current) callbacks.current.onStop();
-        else if (advanceAfterSpeech.current) navigateRef.current();
-      }, done,
-      () => { onStudyState?.(false, "walking"); setError(t("walking.couldNotPlayTheAudioTapResumeToTryAgain")); setPaused(true); },
-      false, () => onStudyState?.(true, "walking"));
-    return () => { audio.current.cancel(); onStudyState?.(false, "walking"); };
-  }, [chunk?.id, language, level, paused, index, repetitions, pause, rate, automatic, revision, onStudyState]);
+      language, rate, translated ? 1000 : pause * 1000,
+      () => { if (translated) phase.current = "translation-gap"; else complete(); },
+      translated ? translate : done, fail, false, () => {
+        try { onPresented?.(); } catch { audio.current.cancel(); fail(); }
+      });
+    return () => { audio.current.cancel(); };
+  }, [chunk?.id, language, sourceLanguage, level, paused, index, repetitions, pause, rate, automatic, revision, translationAudio]);
+
+  const sessionActive = !paused && !!chunk && (index < repetitions || automatic);
+  useEffect(() => {
+    onStudyState?.(sessionActive, "walking");
+    return () => onStudyState?.(false, "walking");
+  }, [sessionActive, onStudyState]);
 
   useEffect(() => {
-    const now = performance.now();
-    if (paused && activeSince.current !== null) {
+    const now = Date.now();
+    if (!sessionActive && activeSince.current !== null) {
       elapsed.current += now - activeSince.current;
       activeSince.current = null;
-    } else if (!paused && activeSince.current === null) activeSince.current = now;
+    } else if (sessionActive && activeSince.current === null) activeSince.current = now;
     const update = () => setSeconds(Math.floor((elapsed.current +
-      (activeSince.current === null ? 0 : performance.now() - activeSince.current)) / 1000));
+      (activeSince.current === null ? 0 : Date.now() - activeSince.current)) / 1000));
     update();
-    if (paused) return;
+    if (!sessionActive) return;
     const timer = setInterval(update, 1000);
     return () => clearInterval(timer);
-  }, [paused]);
+  }, [sessionActive]);
 
   useEffect(() => {
     let disposed = false;
@@ -184,12 +206,26 @@ export function WalkingMode({ onStudyState, chunk, language, sourceLanguage, lev
     };
   }, []);
 
+  useEffect(() => {
+    const leaving = () => {
+      onStudyState?.(false, "walking");
+      audio.current.cancel();
+      if (activeSince.current !== null) {
+        elapsed.current += Date.now() - activeSince.current;
+        activeSince.current = null;
+      }
+      setPaused(true);
+    };
+    window.addEventListener("pagehide", leaving);
+    return () => window.removeEventListener("pagehide", leaving);
+  }, [onStudyState]);
+
   const time = [Math.floor(seconds / 3600), Math.floor(seconds / 60) % 60, seconds % 60]
     .map(v => String(v).padStart(2, "0")).join(":");
   return <section className="walking-mode" aria-labelledby="walking-title">
     <h2 id="walking-title">{"🎧 "}{t("common.walkingMode")}</h2>
     <p>{t("common.studyTime")} <strong>{time}</strong> · {t("flashcards.roundNumber", { round })}</p>
-    <p role="status" aria-label={t("common.chunkPositionInTheRound")}>{position}/{total}</p>
+    <p role="status" aria-label={t("common.chunkPositionInTheRound")}>{position}/{total} · {t("flashcards.itemsRemaining")}: {Math.max(0, total - position)}</p>
     {chunk ? <article className="chunk-flashcards-card">
       <div className="chunk-flashcards-card-header">
         <p>{language}</p>
@@ -204,12 +240,13 @@ export function WalkingMode({ onStudyState, chunk, language, sourceLanguage, lev
     {error && <p role="alert">{error}</p>}
     <div className="walking-controls">
       <button type="button" aria-label={t("walking.previousChunk")} title={t("walking.previousChunk")} disabled={!canPrevious || !chunk} onClick={() => navigate(true)}><ControlIcon name="previous" /></button>
-      <button type="button" className="walking-toggle" aria-label={paused ? t("common.resume") : t("common.pause")} title={paused ? t("common.resume") : t("common.pause")} onClick={() => { audio.current.cancel(); setError(""); setPaused(v => !v); }}><ControlIcon name={paused ? "play" : "pause"} /></button>
+      <button type="button" className="walking-toggle" aria-label={paused ? t("common.resume") : t("common.pause")} title={paused ? t("common.resume") : t("common.pause")} onClick={() => { onStudyState?.(paused, "walking"); audio.current.cancel(); setError(""); setPaused(v => !v); }}><ControlIcon name={paused ? "play" : "pause"} /></button>
       <button type="button" aria-label={t("walking.nextChunk")} title={t("walking.nextChunk")} disabled={!chunk} onClick={() => navigate()}><ControlIcon name="next" /></button>
       <button type="button" aria-label={t("common.stop")} title={t("common.stop")} onClick={stopSession}><ControlIcon name="stop" /></button>
     </div>
     <details className="walking-configuration"><summary aria-label={t("walking.playbackSettings")} title={t("walking.playbackSettings")}><ControlIcon name="settings" /></summary>
       <div className="walking-settings">
+        <label><input type="checkbox" checked={translationAudio} onChange={e => { audio.current.cancel(); phase.current = "speech"; localStorage.setItem("bej-walking-translation-audio", String(e.target.checked)); setTranslationAudio(e.target.checked); }} />{t("walking.translationAudio")}<small>{t("walking.translationAudioDescription")}</small></label>
         <ChunkLevelSelect value={level} onChange={nextLevel => {
           if (nextLevel === level) return;
           resetPlayback();

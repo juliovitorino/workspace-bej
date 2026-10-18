@@ -96,19 +96,22 @@ Object.defineProperty(globalThis, 'performance', { value: { now: () => now }, co
 Object.defineProperty(globalThis, 'navigator', { configurable: true, value: {
   userAgent: 'iPhone', platform: 'iPhone', maxTouchPoints: 5
 } });
-globalThis.localStorage = { getItem: () => null };
+const roundStorage = new Map();
+globalThis.localStorage = { getItem: key => roundStorage.get(key) ?? null, setItem: (key,value) => roundStorage.set(key,value) };
+const originalDateNow = Date.now; Date.now = () => now;
 globalThis.setTimeout = (fn, ms) => { timeouts.set(++timerId, { fn, ms }); return timerId; };
 globalThis.clearTimeout = id => timeouts.delete(id);
 globalThis.setInterval = fn => { intervals.set(++timerId, fn); return timerId; };
 globalThis.clearInterval = id => intervals.delete(id);
 globalThis.SpeechSynthesisUtterance = class { constructor(value) { this.text = value; } };
-globalThis.window = { addEventListener() {}, removeEventListener() {},
+globalThis.window = { addEventListener() {}, removeEventListener() {}, dispatchEvent() {},
   setInterval, clearInterval, speechSynthesis: {
-    cancel() {}, getVoices: () => [], speak: value => utterances.push(value)
+    cancel() {}, getVoices: () => [], speak: value => { utterances.push(value); value.onstart?.(); }
   } };
 globalThis.document = { visibilityState: 'visible', addEventListener() {}, removeEventListener() {} };
 
 const { CEFR_LEVELS, eligibleChunks, drawChunk } = load('src/utils/chunkEligibility.ts');
+load('src/features/study/studyTrackingService.ts').studyTracker.requireControl = () => {};
 const { ChunkFlashcards } = load('src/components/ChunkFlashcards.tsx');
 const { WalkingMode } = load('src/components/WalkingMode.tsx');
 const { ChunkLevelSelect } = load('src/components/ChunkLevelSelect.tsx');
@@ -170,6 +173,7 @@ for (const language of ['en-US', 'fr-FR', 'es-ES']) {
   }
   h.dispose();
 }
+roundStorage.clear();
 window.speechSynthesis.getVoices = () => [];
 const parent = new Harness(ChunkFlashcards, props);
 parent.flush();
@@ -190,11 +194,11 @@ flushPair();
 assert.equal(parent.tree.props.position, 1);
 const firstId = parent.tree.props.chunk.id;
 const click = name => { named(walking.tree, name).props.onClick(); flushPair(); };
-click('Próximo chunk'); assert.equal(parent.tree.props.position, 2);
-click('Chunk anterior'); assert.equal(parent.tree.props.position, 1);
-assert.equal(parent.tree.props.chunk.id, firstId);
-click('Próximo chunk'); assert.equal(parent.tree.props.position, 2);
-click('Próximo chunk'); assert.equal(parent.tree.props.position, 1);
+named(walking.tree, translations.walking.nextChunk).props.onClick(); flushPair();
+assert.equal(parent.tree.props.position, 2);
+assert.notEqual(parent.tree.props.chunk.id, firstId);
+named(walking.tree, translations.walking.nextChunk).props.onClick(); flushPair();
+assert.equal(parent.tree.props.position, 1);
 assert.equal(parent.tree.props.round, 2);
 
 // A live filter change cancels old speech, preserves time/settings, and starts
@@ -209,7 +213,7 @@ stale.onend(); stale.onerror(); flushPair();
 assert.equal(utterances.length, spokenBeforeStale);
 assert.equal(parent.tree.props.chunk.englishLevel, 'B1');
 assert.equal(parent.tree.props.position, 1);
-assert.equal(parent.tree.props.round, 1);
+assert.equal(parent.tree.props.round, 2);
 assert.equal(utterances.at(-1).rate, .8);
 assert.equal(utterances.at(-1).lang, 'fr-FR');
 assert.ok(text(walking.tree).includes('00:00:42'));
@@ -337,7 +341,7 @@ function flushFavoriteWalk() {
 }
 flushFavoriteWalk();
 assert.equal(favoriteWalkParent.tree.props.total, 2);
-find(favoriteWalk.tree, n => n.type === 'input' && n.props.type === 'checkbox').props.onChange({ target: { checked: false } });
+find(favoriteWalk.tree, n => n.type === 'label' && text(n).includes(translations.walking.autoAdvance)).props.children[0].props.onChange({ target: { checked: false } });
 flushFavoriteWalk(); // removing the current favorite advances even with auto-advance disabled
 const removedCurrent = favoriteWalkParent.tree.props.chunk.id;
 utterances.at(-1).onend(); flushFavoriteWalk();
@@ -517,8 +521,9 @@ Date.now = () => manualClock;
 navigator.userAgent = 'Desktop Chrome'; navigator.platform = 'Win32'; navigator.maxTouchPoints = 0;
 const removalItems = Array.from({ length: 5 }, (_, i) => makeChunk(`remove-${i}`, 'A1'));
 let removalStorage = null;
-globalThis.localStorage = { getItem: () => removalStorage,
-  setItem(key, value) { assert.equal(key, 'bej-favorite-chunks'); removalStorage = value; } };
+globalThis.localStorage = { getItem: key => key === 'bej-favorite-chunks' ? removalStorage : roundStorage.get(key) ?? null,
+  setItem(key, value) { if (key === 'bej-favorite-chunks') removalStorage = value; else roundStorage.set(key,value); } };
+roundStorage.clear();
 function RemovalPractice(input) {
   const store = useFavoriteChunks();
   return ChunkFlashcards({ ...input, mode: 'favorites', favorites: store.favorites,
@@ -544,7 +549,7 @@ for (const language of ['en-US', 'es-ES', 'fr-FR']) {
     if (remaining > 0) {
       assert(find(practice.tree, n => n.type === FavoriteChunkButton));
       assert(!removed.has(text(find(practice.tree, n => n.type === 'h3'))));
-      assert.ok(text(practice.tree).includes(translate('flashcards.roundNumber', { round: 1 })));
+      assert.ok(text(practice.tree).includes(translate('flashcards.roundNumber', { round: remaining === 1 ? 2 : 1 })));
     } else {
       assert.equal(find(practice.tree, n => n.type === FavoriteChunkButton), null);
       assert(find(practice.tree, n => n.props?.className === 'chunk-flashcards-empty'));
@@ -556,6 +561,7 @@ for (const language of ['en-US', 'es-ES', 'fr-FR']) {
 }
 Date.now = realDateNow;
 
+roundStorage.clear();
 // Keep the current card for an unrelated removal; prefer unseen items, then a new round.
 let historyProps = { ...props, language: 'en-US', mode: 'favorites', intentions: removalItems.slice(0, 4),
   favorites: removalItems.slice(0, 4).map(item => ({ id: item.id, language: 'en-US' })),
@@ -572,7 +578,7 @@ find(historyPractice.tree, n => n.type === FavoriteChunkButton).props.onToggle()
 assert.notEqual(currentManualText(), firstManualText); // the third, unseen favorite
 find(historyPractice.tree, n => n.type === FavoriteChunkButton).props.onToggle(); historyPractice.flush(historyProps);
 assert.equal(currentManualText(), firstManualText);
-assert.ok(text(historyPractice.tree).includes(translate('flashcards.roundNumber', { round: 2 })));
+assert.ok(text(historyPractice.tree).includes(translate('flashcards.roundNumber', { round: 3 })));
 historyPractice.dispose();
 assert.equal(intervals.size, 0); assert.equal(timeouts.size, 0);
 console.log('Favorite removal: five-to-zero in EN/ES/FR, exact persistence, other-language preservation, active clock, unrelated removal, unseen-first draw and automatic next round passed.');
@@ -650,11 +656,11 @@ const trackedWalk = new Harness(WalkingMode, { chunk: fixtures[0], language: 'en
   level: 'all', position: 1, total: 2, round: 1, canPrevious: false, onNext() {}, onPrevious() {}, onStop() {}, onLevelChange() {},
   onStudyState: (active, mode) => walkSignals.push({ active, mode }) });
 trackedWalk.flush();
-assert.equal(walkSignals.length, 0, 'walking does not count queued speech');
+assert.equal(walkSignals.at(-1).active, true, "walking session includes active waits");
 utterances.at(-1).onstart(); assert.deepEqual(walkSignals.at(-1), { active: true, mode: 'walking' });
-utterances.at(-1).onend(); assert.deepEqual(walkSignals.at(-1), { active: false, mode: 'walking' });
+utterances.at(-1).onend(); assert.deepEqual(walkSignals.at(-1), { active: true, mode: 'walking' });
 trackedWalk.dispose();
-console.log('Dashboard integration: manual start/pause/resume/unmount, no per-card restart, walking starts on actual speech and excludes repetition delays passed.');
+console.log('Dashboard integration: manual start/pause/resume/unmount, no per-card restart, walking retains active repetition delays passed.');
 
 // Card filters derive selection from the official filters and isolate click events.
 const filterCalls = []; let detailCalls = 0;
@@ -688,3 +694,58 @@ const filterCatalog = [
 assert.deepEqual(searchCardFilters(filterCatalog, '', '', 'tense', ['presente', 'informal'], 'A2').map(item => item.id).sort(), ['informal', 'present']);
 assert.equal(searchCardFilters(filterCatalog, '', '', 'tense', ['informal'], 'A2').length, 1);
 console.log('Card filter combinations preserve OR between tags and AND with level/category.');
+
+Date.now = originalDateNow;
+
+globalThis.localStorage = { getItem: key => roundStorage.get(key) ?? null, setItem: (key,value) => roundStorage.set(key,value) };
+roundStorage.clear();
+let presentations = 0, cycles = 0;
+const bilingualProps = { ...statsProps, chunk: { ...fixtures[0], sourceAudioText: "Texto de origem." },
+  onPresented() { presentations++; }, onCycleComplete() { cycles++; } };
+const bilingual = new Harness(WalkingMode, bilingualProps); bilingual.flush();
+const translationToggle = find(bilingual.tree, n => n.type === 'label' && text(n).includes(translations.walking.translationAudio));
+translationToggle.props.children[0].props.onChange({target:{checked:true}}); bilingual.flush();
+assert.equal(roundStorage.get("bej-walking-translation-audio"), "true");
+const runDelay = expected => { const [id,timer] = [...timeouts][0]; assert.equal(timer.ms, expected); timeouts.delete(id); timer.fn(); bilingual.flush(); };
+for (let i=0;i<5;i++) {
+  assert.equal(utterances.at(-1).lang,"fr-FR");
+  utterances.at(-1).onend(); bilingual.flush();
+  assert.equal(utterances.at(-1).lang,"fr-FR");
+  runDelay(1000);
+  assert.equal(utterances.at(-1).lang,"pt-BR");
+  assert.equal(utterances.at(-1).text,"Texto de origem.");
+  utterances.at(-1).onend(); bilingual.flush();
+  runDelay(3000);
+}
+assert.equal(cycles,1);
+bilingual.dispose();
+const gap = new Harness(WalkingMode,bilingualProps); gap.flush();
+utterances.at(-1).onend(); gap.flush();
+const delayed = [...timeouts.values()][0], beforePause = utterances.length;
+named(gap.tree, translations.common.pause).props.onClick(); gap.flush();
+delayed.fn(); assert.equal(utterances.length,beforePause);
+named(gap.tree, translations.common.resume).props.onClick(); gap.flush();
+const [gapId,gapTimer]=[...timeouts][0]; timeouts.delete(gapId); assert.equal(gapTimer.ms,1000); gapTimer.fn(); gap.flush();
+assert.equal(utterances.at(-1).lang,"pt-BR");
+gap.dispose();
+const stoppedGap = new Harness(WalkingMode,bilingualProps); stoppedGap.flush(); utterances.at(-1).onend(); stoppedGap.flush();
+const stoppedDelay = [...timeouts.values()][0], beforeStop = utterances.length;
+named(stoppedGap.tree,translations.common.stop).props.onClick(); stoppedGap.dispose(); stoppedDelay.fn();
+assert.equal(utterances.length,beforeStop);
+const missing = new Harness(WalkingMode,{...bilingualProps,chunk:{...fixtures[0],sourceAudioText:""}}); missing.flush();
+utterances.at(-1).onend(); missing.flush(); assert.equal([...timeouts.values()][0].ms,3000); missing.dispose();
+assert.equal(timeouts.size,0);
+console.log("PASS bilingual: all repetitions, 1 second after actual end, source language, missing translation, paused/resumed gap and stopped stale callbacks.");
+
+Date.now = () => now;
+performance.now = () => -12345;
+now = 100000000;
+roundStorage.set("bej-walking-translation-audio","false");
+let timedSummary;
+const timed = new Harness(WalkingMode,{...bilingualProps,onStop: summary => {timedSummary=summary;}}); timed.flush();
+now += 20*60000; named(timed.tree,translations.common.pause).props.onClick(); timed.flush();
+now += 5*60000; named(timed.tree,translations.common.resume).props.onClick(); timed.flush();
+now += 27*60000; named(timed.tree,translations.common.stop).props.onClick(); timed.dispose();
+assert.equal(timedSummary.seconds,2820,"display and stop summary use the same wall clock as Dashboard");
+Date.now = originalDateNow;
+console.log("PASS walking visual timer: 47 effective minutes with independent performance clock.");

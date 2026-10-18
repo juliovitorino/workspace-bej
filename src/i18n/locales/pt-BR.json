@@ -581,6 +581,7 @@
     "youtubeVideo": "YouTube Vídeo"
   },
   "flashcards": {
+    "itemsRemaining": "Itens restantes",
     "availableChunks_many": "{{count}} chunks disponíveis",
     "availableChunks_one": "{{count}} chunk disponível",
     "availableChunks_other": "{{count}} chunks disponíveis",
@@ -996,6 +997,8 @@
     "verbMissingItsMainForm": "Verbo sem forma principal."
   },
   "walking": {
+    "translationAudio": "Reproduzir tradução em áudio",
+    "translationAudioDescription": "Após a frase no idioma estudado, reproduzir a tradução no idioma de origem com intervalo de 1 segundo.",
     "autoAdvance": "Avanço automático",
     "chooseAnotherLevelInSettings": "Escolha outro nível nas configurações.",
     "couldNotPlayTheAudioTapResumeToTryAgain": "Não foi possível reproduzir o áudio. Toque em Continuar para tentar novamente.",

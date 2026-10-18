@@ -24,7 +24,7 @@ export class StudyClock {
   private interval(now: number, buckets: Record<string, number>) {
     if (!this.current || (!this.enabled && !this.media)) return;
     let start = this.last;
-    const end = Math.max(start, this.media ? now : Math.min(now, start + IDLE_MS));
+    const end = Math.max(start, (this.media || this.current.mode === "walking") ? now : Math.min(now, start + IDLE_MS));
     while (start < end) {
       const date = new Date(start), day = localDay(date);
       const until = Math.min(end, new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1).getTime());
@@ -44,7 +44,7 @@ export class StudyClock {
     this.interval(effective, this.dailyMs); this.last = effective;
     return this.snapshot(effective, false);
   }
-  isIdle(now: number) { return !this.media && this.enabled && now - this.last >= IDLE_MS; }
+  isIdle(now: number) { return this.current?.mode !== "walking" && !this.media && this.enabled && now - this.last >= IDLE_MS; }
   setMedia(playing: boolean, now: number, resuming = false) {
     if (playing === this.media) return;
     if (playing && resuming) this.last = Math.max(now, this.last);
