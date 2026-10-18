@@ -44,19 +44,43 @@
           "hqImage": "/images/hq/a1/acao-verbo-01.png",
           "id": "f1da666e-e19d-4a09-bc65-bec2a2649487",
           "exampleItem": "I run every day.",
-          "intent": "run"
+          "intent": "run",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/f1da666e-e19d-4a09-bc65-bec2a2649487-cedar.mp3",
+            "marin": "/audio/en-US/marin/f1da666e-e19d-4a09-bc65-bec2a2649487-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "398f54422a1814f9fee8fd8c3a979b82807b1c1f94282a00d1486e735430350c",
+            "marin": "398f54422a1814f9fee8fd8c3a979b82807b1c1f94282a00d1486e735430350c"
+          }
         },
         {
           "hqImage": "/images/hq/a1/acao-verbo-02.png",
           "id": "cea0cd36-606a-42b8-a17a-4d6bbd21b31d",
-          "exampleItem": "He woke up later.",
-          "intent": "woke up"
+          "exampleItem": "He woke up later every day.",
+          "intent": "woke up",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/cea0cd36-606a-42b8-a17a-4d6bbd21b31d-cedar.mp3",
+            "marin": "/audio/en-US/marin/cea0cd36-606a-42b8-a17a-4d6bbd21b31d-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "b3197043bdac72e9746d5dae5cbf9daa01c19c045f26034314920c256092080b",
+            "marin": "b3197043bdac72e9746d5dae5cbf9daa01c19c045f26034314920c256092080b"
+          }
         },
         {
           "hqImage": "/images/hq/a1/acao-verbo-03.png",
           "id": "ca135deb-8b93-4921-8cd5-49a03cbd3de1",
           "exampleItem": "I will work tomorrow.",
-          "intent": "will work"
+          "intent": "will work",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/ca135deb-8b93-4921-8cd5-49a03cbd3de1-cedar.mp3",
+            "marin": "/audio/en-US/marin/ca135deb-8b93-4921-8cd5-49a03cbd3de1-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "57040184e447352da6ae8967955c1d3753667e52f730ada6f284acffd43818f2",
+            "marin": "57040184e447352da6ae8967955c1d3753667e52f730ada6f284acffd43818f2"
+          }
         }
       ]
     },
@@ -85,12 +109,28 @@
         {
           "id": "09a9f70c-360b-4266-bb75-7c02800d4c03",
           "exampleItem": "It might rain.",
-          "intent": "might"
+          "intent": "might",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/09a9f70c-360b-4266-bb75-7c02800d4c03-cedar.mp3",
+            "marin": "/audio/en-US/marin/09a9f70c-360b-4266-bb75-7c02800d4c03-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "c314fb0ec2df25ca748c011bad9abc70d7e4f211ed1a31fe9169e9b4c120ca4a",
+            "marin": "c314fb0ec2df25ca748c011bad9abc70d7e4f211ed1a31fe9169e9b4c120ca4a"
+          }
         },
         {
           "id": "a2f73c06-6407-44cb-a92d-1682c50cd94a",
           "exampleItem": "You should play today.",
-          "intent": "should"
+          "intent": "should",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/a2f73c06-6407-44cb-a92d-1682c50cd94a-cedar.mp3",
+            "marin": "/audio/en-US/marin/a2f73c06-6407-44cb-a92d-1682c50cd94a-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "99cfdb8d9006e35584fdbfd8f3f4f4596eadf9cec23018cdfdc82712e3238411",
+            "marin": "99cfdb8d9006e35584fdbfd8f3f4f4596eadf9cec23018cdfdc82712e3238411"
+          }
         }
       ]
     },
