@@ -7,6 +7,7 @@ import { isAuthorMode } from "../utils/authorMode";
 import { useEffect, useRef, useState } from "react";
 import type { Example, MentalIntention } from "../types/hashmap";
 import { ConnectedSpeechButton } from "./ConnectedSpeechStudio";
+import { playNeuralExampleAudio } from "../features/study/neuralExampleAudio";
 
 
 /** Campos de destino do contrato 4.0; pt/ptIntent vêm da associação por UUID no serviço. */
@@ -224,54 +225,24 @@ export function IntentionDetails({
   }
 
   function handleSpeakExample(text: string, index: number) {
-    const exampleText = text.trim();
-
-    if (!exampleText) {
+    const example = item?.examples?.[index];
+    if (!example || !text.trim()) {
       setSpeechError(t("details.thereIsNoTextToPlay"));
       return;
     }
-
-    if (!("speechSynthesis" in window)) {
-      setSpeechError(
-        t("common.speechPlaybackIsUnavailableInThisBrowser")
-      );
-      return;
-    }
-
     cancelStudyAudio();
     setSpeechError(null);
     setSpeakingExampleIndex(null);
-
-    const utterance = new SpeechSynthesisUtterance(exampleText);
-    const voices = window.speechSynthesis.getVoices();
-    const selectedVoice = voices.find(
-      (voice) => voice.lang.toLowerCase() === language.toLowerCase()
-    ) ?? voices.find(
-      (voice) => voice.lang.toLowerCase().split("-")[0] === language.split("-")[0]
-    );
-
-    if (selectedVoice) {
-      utterance.voice = selectedVoice;
-    }
-
-    utterance.lang = language;
-    utterance.rate = 0.9;
-    utterance.pitch = 1;
-
-    utterance.onstart = () => {
-      setSpeakingExampleIndex(index);
-    };
-
-    utterance.onend = () => {
-      setSpeakingExampleIndex(null);
-    };
-
-    utterance.onerror = () => {
-      setSpeakingExampleIndex(null);
-      setSpeechError(t("details.couldNotPlayTheExample"));
-    };
-
-    speakStudyAudio(utterance);
+    void playNeuralExampleAudio({
+      example,
+      language,
+      onStart: () => setSpeakingExampleIndex(index),
+      onEnd: () => setSpeakingExampleIndex(null),
+      onError: () => {
+        setSpeakingExampleIndex(null);
+        setSpeechError(t("details.couldNotPlayTheExample"));
+      }
+    });
   }
 
   async function handleCopyIntentionId() {

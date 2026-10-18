@@ -1,4 +1,5 @@
 import { studyTracker } from "./studyTrackingService";
+import { cancelNeuralExampleAudio } from "./neuralExampleAudio";
 
 // Preserve existing player handlers and UI. Only real synthesis lifecycle events
 // prove playback; queuing an utterance or clicking Play does not prove speech.
@@ -28,6 +29,7 @@ export function speakStudyAudio(utterance: SpeechSynthesisUtterance) {
   catch (failure) { stop(); throw failure; }
 }
 export function cancelStudyAudio() {
+  cancelNeuralExampleAudio();
   const tokens = [...tracked.values()]; tracked.clear();
   for (const token of tokens) studyTracker.media(token, false);
   window.speechSynthesis?.cancel();

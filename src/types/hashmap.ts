@@ -31,6 +31,8 @@ export interface HashmapExampleV4 {
   exampleItem: string;
   intent: string;
   hqImage?: string;
+  mp3?: Partial<Record<"cedar" | "marin", string>>;
+  hashmp3?: Partial<Record<"cedar" | "marin", string>>;
 }
 
 /** Uma intenção, em um único idioma, como armazenada no JSON 4.0. */
