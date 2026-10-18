@@ -1,4 +1,38 @@
 {
+  "studyDanger": {
+    "title": "Zone de danger",
+    "intro": "Réinitialise uniquement les données de temps et d’historique utilisées par le Dashboard. Les autres données de l’application sont conservées. Nous recommandons d’exporter une sauvegarde avant de continuer.",
+    "languageTitle": "Réinitialiser les données d’une langue",
+    "languageDescription": "Supprime l’historique et les ajustements d’étude de la langue sélectionnée.",
+    "resetLanguage": "Réinitialiser {{language}}",
+    "allTitle": "Réinitialiser toutes les données d’étude",
+    "allDescription": "Supprime définitivement les données d’étude de toutes les langues, quelle que soit la langue sélectionnée dans le Dashboard.",
+    "resetAll": "Réinitialiser toutes les langues",
+    "globalTitle": "Attention ! Réinitialiser TOUTES les langues",
+    "languageConfirmTitle": "Réinitialiser les données de {{language}} ?",
+    "contextLanguage": "Langue actuellement sélectionnée dans le Dashboard : {{language}}.",
+    "globalWarning": "Même si {{language}} est sélectionné, cette opération supprimera aussi les données de toutes les autres langues qui en possèdent. Le filtre du Dashboard ne limite pas cette suppression.",
+    "otherLanguagesPreserved": "Les données des autres langues seront conservées.",
+    "impactTitle": "Aperçu des données à supprimer",
+    "recordedTime": "Temps enregistré",
+    "sessions": "Sessions",
+    "adjustments": "Ajustements manuels",
+    "impactTotal": "Total à supprimer : {{time}} pour {{sessions}} sessions et {{adjustments}} ajustements manuels. Le temps inclut les ajustements.",
+    "changed": "Les données ont changé. Vérifiez l’aperçu actualisé et saisissez à nouveau la phrase de confirmation.",
+    "confirmGlobal": "Supprimer les données de toutes les langues",
+    "confirmLanguage": "Langue concernée : {{language}}. Seules ses données de temps du Dashboard seront supprimées : historique d’étude, points de contrôle et ajustements d’heures, y compris le temps enregistré dans les Activités supplémentaires.",
+    "confirmAll": "Vous êtes sur le point de supprimer définitivement les données d’étude de TOUTES les langues : historique du Dashboard, points de contrôle et ajustements d’heures, y compris le temps enregistré dans les Activités supplémentaires.",
+    "preserved": "Les objectifs totaux et mensuels, les favoris, les langues sélectionnées, les préférences et les contenus pédagogiques seront conservés.",
+    "irreversible": "Cette opération est irréversible sans sauvegarde. Vous pouvez annuler et exporter vos données avant de continuer.",
+    "typePhrase": "Saisissez {{phrase}} pour confirmer :",
+    "phraseLanguage": "RÉINITIALISER",
+    "phraseAll": "RÉINITIALISER TOUTES LES LANGUES",
+    "confirm": "Supprimer définitivement les données",
+    "working": "Suppression…",
+    "blocked": "Les données ne peuvent pas être réinitialisées tant que des sessions concernées sont ouvertes, même en pause ou dans d’autres onglets. Fermez les sessions interactives et terminez ou abandonnez les Activités supplémentaires avant de réessayer.",
+    "failed": "La suppression n’a pas abouti. Le Dashboard affiche les données enregistrées. Réessayez ; les suppressions interrompues seront terminées en toute sécurité.",
+    "success": "Les données d’étude sélectionnées ont été supprimées. Les objectifs et les préférences ont été conservés."
+  },
   "extras": {
     "title": "Activités supplémentaires",
     "intro": "Suivez vos études en dehors de BEJ : conversation, écriture, cours et autres activités.",
@@ -31,6 +65,7 @@
     "allCategories": "Toutes les catégories"
   },
   "study": {
+    "calendar": "Filtrer par période",
     "historyTitle": "Historique des ?tudes",
     "backDashboard": "Retour au tableau de bord",
     "moreOptions": "Plus d?options du tableau de bord",
@@ -46,7 +81,7 @@
     "basicTraining": "Exercice de base",
     "advancedTraining": "Exercice avancé",
     "tracking": { "waiting": "En attente du début de la pratique", "active": "Suivi en cours", "idle": "En pause pour inactivité", "unavailable": "Suivi indisponible" },
-    "compatibilityNote": "Sans Web Locks, le suivi utilise le mode de compatibilité. Utilisez un seul onglet : la réservation temporaire réduit les conflits, mais ne garantit pas l’exclusion entre onglets.",
+    "compatibilityNote": "Le contr?le entre onglets utilise Web Locks si disponible ou un SharedWorker pour les adresses HTTP. Diff?rents modules peuvent fonctionner simultan?ment.",
     "title": "Tableau de bord des études",
     "intro": "Le parcours des 750 heures : un objectif personnel de travail, sans garantie de maîtrise ni certification du FSI.",
     "filters": "Filtres",
@@ -123,7 +158,7 @@
     "confirmMerge": "J’ai vérifié l’aperçu et je confirme la fusion de l’historique.",
     "merge": "Confirmer la restauration par fusion",
     "unavailable": "Historique indisponible. Les données existantes n’ont pas été remplacées. Vérifiez le stockage et rechargez la page.",
-    "limitations": "Sans synchronisation automatique. Les identifiants identiques sont dédupliqués ; des identifiants différents sur plusieurs appareils peuvent représenter le même intervalle. Points de contrôle toutes les 15 secondes : une interruption peut perdre le dernier segment non confirmé. Les sessions importées sans répartition quotidienne utilisent leur date locale de début.",
+    "limitations": "Sans synchronisation automatique entre appareils. Les identifiants identiques sont dédupliqués ; des identifiants différents sur plusieurs appareils peuvent représenter le même intervalle. Les points de contrôle sont enregistrés lors des interactions et des changements d’état. Les modules interactifs limitent chaque intervalle sans interaction à 3 minutes ; les Activités Extras en cours n’ont pas cette limite. Une interruption peut perdre le temps non confirmé. Les sessions importées sans répartition quotidienne utilisent leur date locale de début.",
     "modes": {
       "all": "Tous",
       "manual": "Manuel",
@@ -140,8 +175,9 @@
       "custom": "Intervalle personnalisé"
     },
     "errors": {
+      "unsupported": "Ce navigateur ne propose ni Web Locks ni SharedWorker. Le suivi est indisponible ? cette adresse. Utilisez un navigateur compatible ou HTTPS.",
       "extraActive": "Enregistrez ou abandonnez l’activité supplémentaire en cours ou en attente de récupération avant de restaurer une sauvegarde ou d’en commencer une autre.",
-      "otherTab": "Un autre onglet contrôle le suivi. Utilisez-le ou fermez-le et attendez que le contrôle soit disponible ici.",
+      "otherTab": "Un autre onglet suit ce module. Vous pouvez utiliser un autre module ici ou fermer l?onglet responsable pour le lib?rer.",
       "zero": "Une session de durée nulle ne peut pas être enregistrée. Continuez à étudier ou abandonnez l’activité.",
       "invalid": "Fichier, enregistrement, date ou durée invalide. Aucune donnée importée.",
       "version": "Version de sauvegarde ou de stockage incompatible.",
@@ -152,9 +188,9 @@
       "duplicate": "Un ajustement avec la même langue, date, durée et description existe déjà."
     },
     "warning": {
-      "compatibility": "Le suivi automatique est actif en mode de compatibilité. Gardez BEJ ouvert dans un seul onglet pour éviter de compter le temps deux fois.",
-      "unsupported": "Ce navigateur ne prend pas en charge Web Locks. Le suivi automatique est désactivé pour éviter les doublons entre onglets.",
-      "otherTab": "Un autre onglet gère le suivi. Utilisez l’onglet déjà ouvert ou fermez-le pour enregistrer ici.",
+      "compatibility": "Le contr?le entre onglets est actif dans le navigateur.",
+      "unsupported": "Ce navigateur ne propose ni Web Locks ni SharedWorker. Le suivi est indisponible ? cette adresse. Utilisez un navigateur compatible ou HTTPS.",
+      "otherTab": "Un autre onglet suit ce module. Vous pouvez utiliser un autre module ici ou fermer l?onglet responsable pour le lib?rer.",
       "storage": "Impossible d’enregistrer le temps. Le suivi automatique est arrêté. Vérifiez le stockage et rechargez.",
       "invalid": "Données d’étude invalides. Le suivi automatique est arrêté ; l’historique est préservé.",
       "conflict": "Conflit dans l’historique d’étude. Le suivi automatique est arrêté.",

@@ -1,3 +1,4 @@
+import { useStudyReading } from "../features/study/useStudyReading";
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { ControlIcon } from "./ControlIcon";
@@ -36,6 +37,7 @@ function Practice({ story, language, settings, selected, onSettings, onBack, onM
 }) {
   const { t } = useTranslation();
   const session = useStoryShadowing(story, language, settings, selected);
+  const trackedSeconds = useStudyReading("shadowing", language);
   const [configuring, setConfiguring] = useState(false);
   // Follow the existing practice clock, including guided response windows in
   // manual mode. Waiting for the next Play command never adds study time.
@@ -58,7 +60,7 @@ function Practice({ story, language, settings, selected, onSettings, onBack, onM
     <section ref={summaryRef} className="shadowing-session" aria-label={t("shadowing.practiceSummary")}>
       <div className="shadowing-session-meta"><span>{localizedLanguageName(language)}</span><span className="shadowing-level">{story.englishLevel}</span></div>
       <div className="shadowing-session-stats">
-        <div className="shadowing-session-clock"><span className="shadowing-stat-label">{t("shadowing.practiceTime")}</span><time>{formatPracticeTime(session.elapsed)}</time><span className="shadowing-stat-note">{t("shadowing.everyMinuteCounts")}</span></div>
+        <div className="shadowing-session-clock"><span className="shadowing-stat-label">{t("shadowing.practiceTime")}</span><time>{formatPracticeTime(trackedSeconds === null ? session.elapsed : trackedSeconds * 1000)}</time><span className="shadowing-stat-note">{t("shadowing.everyMinuteCounts")}</span></div>
         <div className="shadowing-session-progress">
           <span className="shadowing-stat-label">{settings.scope === "paragraph" ? t("shadowing.yourParagraph") : t("shadowing.yourStoryJourney")}</span>
           <p className="shadowing-paragraph-position">{t("shadowing.paragraphPosition", { current: String(session.paragraph + 1).padStart(2, "0"), total: String(story.paragraphs.length).padStart(2, "0") })}</p>

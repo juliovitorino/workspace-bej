@@ -4,20 +4,20 @@ import { studyTracker } from "./studyTrackingService";
 import { advanceExtra, extraEstimate, finishExtra } from "./extraActivityTime";
 
 export async function startExtraActivity(language: StudentLanguage, category: ExtraCategory, note: string) {
-  studyTracker.requireControl();
+  await studyTracker.acquireExtraControl();
   await studyTracker.seal();
   return updateStudyStore(store => {
-    studyTracker.requireControl();
+    studyTracker.requireExtraControl();
     if (store.extraActivity) throw new StudyError("extraActive");
     const now = new Date(Date.now()).toISOString();
     return { ...store, extraActivity: { id: newStudyId(), owner: studyTracker.extraOwner, language, category,
       ...(note.trim() ? { note: note.trim() } : {}), startedAt: now, updatedAt: now, state: "running",
       accumulatedMs: 0, dailyMs: {}, runningSince: now } };
-  });
+  }, "extra-activities");
 }
 export function changeExtraActivity(id: string, action: "pause" | "resume" | "stop" | "confirm" | "discard", confirmedSeconds?: number) {
   return updateStudyStore(store => {
-    studyTracker.requireControl();
+    studyTracker.requireExtraControl();
     const draft = store.extraActivity;
     if (!draft) {
       if ((action === "stop" || action === "confirm") && store.studyData.sessions.some(s => s.id === id && s.module === "extra-activities")) return store;
@@ -40,5 +40,5 @@ export function changeExtraActivity(id: string, action: "pause" | "resume" | "st
     if (!Number.isSafeInteger(seconds) || seconds! < 0 || seconds! > maximum) throw new StudyError("invalid");
     const session = finishExtra(draft, now, seconds!);
     return { ...store, extraActivity: null, studyData: { ...store.studyData, sessions: [...store.studyData.sessions, session] } };
-  });
+  }, "extra-activities");
 }

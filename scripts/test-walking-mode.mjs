@@ -2,11 +2,20 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { transpileModule } from 'typescript';
 
-async function load(path) {
-  const { outputText } = transpileModule(readFileSync(new URL(path, import.meta.url), 'utf8'),
-    { compilerOptions: { target: 9, module: 99 } });
-  return import(`data:text/javascript;base64,${Buffer.from(outputText).toString('base64')}`);
+const { createRequire } = await import('node:module');
+const { fileURLToPath } = await import('node:url');
+const { dirname, resolve } = await import('node:path');
+const vm = await import('node:vm');
+const require = createRequire(import.meta.url), cache = new Map();
+function loadModule(file) {
+  file = resolve(file); if (cache.has(file)) return cache.get(file).exports;
+  const module = { exports: {} }; cache.set(file,module);
+  const source = readFileSync(file,'utf8').replaceAll('import.meta.url','"file:///walking-test.js"');
+  const { outputText } = transpileModule(source,{compilerOptions:{target:9,module:1}});
+  vm.runInThisContext(`(function(require,module,exports){${outputText}\n})`,{filename:file})(name => name.startsWith('.') ? loadModule(resolve(dirname(file),name)+'.ts') : require(name),module,module.exports);
+  return module.exports;
 }
+async function load(name) { return loadModule(fileURLToPath(new URL(name,import.meta.url))); }
 const { WalkingAudio, repetitionText } = await load('../src/utils/walkingAudio.ts');
 const { isMobileDevice } = await load('../src/utils/mobileDevice.ts');
 for (const [userAgent, platform, maxTouchPoints, expected] of [

@@ -27,7 +27,7 @@ function load(file) {
   const module = { exports: {} };
   cache.set(file, module);
   if (file.endsWith('.css')) return module.exports;
-  const { outputText } = transpileModule(readFileSync(file, 'utf8').replaceAll('import.meta.env', 'globalThis.__trainingEnv'), { compilerOptions: {
+  const { outputText } = transpileModule(readFileSync(file, 'utf8').replaceAll('import.meta.url', JSON.stringify('file:///study-lock-tests/entry.js')).replaceAll('import.meta.env', 'globalThis.__trainingEnv'), { compilerOptions: {
     module: ModuleKind.CommonJS, jsx: JsxEmit.ReactJSX, target: ScriptTarget.ES2022
   } });
   const localRequire = id => {
@@ -100,7 +100,7 @@ globalThis.setInterval = (fn, ms) => { intervals.set(++nextTimer, { fn, ms, next
 globalThis.clearInterval = id => intervals.delete(id);
 globalThis.setTimeout = (fn, ms) => { timeouts.set(++nextTimer, { fn, ms }); return nextTimer; };
 globalThis.clearTimeout = id => timeouts.delete(id);
-globalThis.localStorage = { getItem: key => memory.get(key) ?? null, setItem(key, value) { writes++; memory.set(key, value); }, removeItem: key => memory.delete(key) };
+globalThis.localStorage = { get length() { return memory.size; }, key: i => [...memory.keys()][i] ?? null, getItem: key => memory.get(key) ?? null, setItem(key, value) { writes++; memory.set(key, value); }, removeItem: key => memory.delete(key) };
 globalThis.document = { getElementById: () => null, visibilityState: 'visible', addEventListener(name, fn) { listeners.set(name, fn); }, removeEventListener(name) { listeners.delete(name); } };
 globalThis.window = { matchMedia: () => ({ matches: false, addEventListener() {}, removeEventListener() {} }), setInterval, clearInterval, setTimeout, clearTimeout, dispatchEvent() {},
   addEventListener(name, fn) { listeners.set(name, fn); }, removeEventListener(name) { listeners.delete(name); },
@@ -148,7 +148,8 @@ function input(practice, trusted = true) {
   const value = 'I might go home today.';
   const field = find(practice.component.tree, n => n.type === 'textarea');
   field.props.onChange({ target: { value } });
-  practice.component.tree.props.onInput({ isTrusted: trusted }); practice.component.flush();
+  practice.component.tree.props.onInput({ isTrusted: trusted });
+  listeners.get("input")?.({ type: "input", isTrusted: trusted, target: null }); practice.component.flush();
   assert.equal(find(practice.component.tree, n => n.type === 'textarea').props.value, value, 'typing survives a tracking render');
 }
 async function finish(practice) {
@@ -190,7 +191,7 @@ for (const module of ['basic-training', 'advanced-training']) {
   pause.props.onClick({ stopPropagation() { stopped = true; } }); practice.component.flush(); syncPanel(); await settle();
   assert.equal(stopped, true); assert.equal(find(practice.panel.tree, n => n.type === 'button').props['aria-pressed'], true);
   assert.equal(text(find(practice.panel.tree, n => n.props?.role === 'status')), translations.common.paused);
-  const pausedId = readStudyStore().activeSession.id;
+  const pausedId = readStudyStore(localStorage, module).activeSession.id;
   await advance(IDLE_MS + 30000, [practice.panel]);
   input(practice); await advance(10000, [practice.panel]); syncPanel();
   assert.equal(text(find(practice.panel.tree, n => n.type === 'time')), '00:00:30', 'manual pause excludes the whole break and interactions cannot resume it');
@@ -207,11 +208,11 @@ for (const module of ['basic-training', 'advanced-training']) {
 const idle = await openTraining('basic-training'); input(idle); await advance(30000, [idle.panel]); input(idle);
 await advance(IDLE_MS + 20000, [idle.panel]);
 const idleReading = studyTracker.readSession({ module: idle.module, language: 'en-US', mode: 'manual' });
-assert.equal(idleReading.state, 'idle'); assert.equal(idleReading.seconds, 330);
+assert.equal(idleReading.state, 'idle'); assert.equal(idleReading.seconds, 210);
 assert.equal(text(find(idle.panel.tree, n => n.props?.role === 'status')), translations.study.tracking.idle);
-const idleId = readStudyStore().activeSession.id;
+const idleId = readStudyStore(localStorage, idle.module).activeSession.id;
 input(idle); await advance(30000, [idle.panel]); await finish(idle);
-assert.equal(readStudyStore().studyData.sessions.find(s => s.id === idleId).activeSeconds, 360, '20 seconds beyond IDLE_MS add zero');
+assert.equal(readStudyStore().studyData.sessions.find(s => s.id === idleId).activeSeconds, 240, '20 seconds beyond IDLE_MS add zero');
 
 // D/E: hidden source-module signals cannot become exercise signals.
 const originSignal = { view: 'chunk-flashcards', language: 'en-US', mode: 'manual', active: true };
@@ -258,10 +259,10 @@ utterances.at(-1).onend(); audio.component.flush(); await finish(audio);
 const pending = { identity: 'network', ready: true, pending: false, media: false };
 const networkReport = (active, mode, activeUntil) => navigate('advanced-training', 'en-US', { view: 'advanced-training', language: 'en-US', active, mode, activeUntil });
 const network = new Harness(p => useTrainingStudy(p.identity, p.ready, p.pending, p.media, networkReport), pending);
-network.flush(); network.tree.onInput({ isTrusted: true }); network.flush(); await advance(5000);
+network.flush(); await settle(); network.tree.onInput({ isTrusted: true }); network.flush(); await advance(5000);
 network.flush({ ...pending, pending: true }); await advance(20000);
 const networkReading = studyTracker.readSession({ module: 'advanced-training', language: 'en-US', mode: 'manual' }); assert.equal(networkReading.seconds, 5);
-network.tree.onScrollCapture({ isTrusted: true }); network.flush(); await advance(10000);
+network.tree.onScrollCapture({ isTrusted: true }); listeners.get("pointerdown")?.({ type: "pointerdown", isTrusted: true, target: null }); network.flush(); await advance(10000);
 assert.equal(studyTracker.readSession({ module: 'advanced-training', language: 'en-US', mode: 'manual' }).seconds, 15);
 network.flush(pending); navigate('advanced-training', 'en-US', { view: 'advanced-training', language: 'en-US', active: true, mode: 'manual', activeUntil: now + IDLE_MS }, true);
 assert.equal(studyTracker.readSession({ module: 'advanced-training', language: 'en-US', mode: 'manual' }).state, 'unavailable');
@@ -298,16 +299,20 @@ tracking.dispose(); await settle();
 
 // Module bars represent a share of all filtered study time, not the largest bar.
 const { StudyDashboard } = load('src/features/study/StudyDashboard.tsx');
-const { STUDY_KEY, STUDY_CHANGED, STUDY_MODULES } = load('src/features/study/studyStorage.ts');
+const { STUDY_KEY, STUDY_CHANGED, STUDY_MODULES, writeStudyStore } = load('src/features/study/studyStorage.ts');
+function persistChartStore() {
+  for (const key of [...memory.keys()]) if (key.startsWith(STUDY_KEY)) memory.delete(key);
+  writeStudyStore(chartStore);
+}
 const chartStore = { schemaVersion: 1, activeSession: null, studyData: { ...current.studyData, manualAdjustments: [], sessions:
   [['basic-training', 181], ['advanced-training', 301]].map(([module, activeSeconds]) => ({ id: `chart-${module}`, module, activeSeconds, language: 'en-US', mode: 'manual',
     startedAt: new Date(now - 482000).toISOString(), endedAt: new Date(now).toISOString() })) } };
-memory.set(STUDY_KEY, JSON.stringify(chartStore));
+persistChartStore();
 const dashboard = new Harness(StudyDashboard, { language: 'en-US' }); dashboard.flush();
 const viewNode = id => find(dashboard.tree, n => n.props.id === id);
 assert.equal(viewNode('study-details').props.hidden, true);
 assert.equal(viewNode('study-settings').props.hidden, true);
-const beforeUi = memory.get(STUDY_KEY);
+const beforeUi = JSON.stringify([...memory]);
 find(dashboard.tree, n => n.type === 'button' && n.props['aria-controls'] === 'study-details').props.onClick(); dashboard.flush();
 assert.equal(viewNode('study-details').props.hidden, false);
 find(dashboard.tree, n => n.type === 'button' && n.props['aria-controls'] === 'study-settings').props.onClick(); dashboard.flush();
@@ -317,7 +322,7 @@ assert.equal(viewNode('study-results').props.hidden, true);
 assert.equal(viewNode('study-filters').props.hidden, false);
 find(dashboard.tree, n => n.type === 'button' && text(n) === translations.study.backDashboard).props.onClick(); dashboard.flush();
 assert.equal(viewNode('study-results').props.hidden, false);
-assert.equal(memory.get(STUDY_KEY), beforeUi, 'details, settings and history navigation never write study data');
+assert.equal(JSON.stringify([...memory]), beforeUi, 'details, settings and history navigation never write study data');
 console.log('PASS dashboard views: collapsed details/settings, expansion, dedicated history, return and no storage writes.');
 const moduleChart = () => find(dashboard.tree, n => n.type === 'section' && React.Children.toArray(n.props.children).some(c => c?.type === 'h3' && text(c) === translations.study.byModule));
 const basicRow = () => find(moduleChart(), n => n.type === 'li' && text(n).includes(translations.study.basicTraining));
@@ -330,7 +335,7 @@ for (const [module, key] of [['speaking-game', 'speakingGame'], ['interpretation
 }
 moduleFilter.props.onChange({ target: { value: 'basic-training' } }); dashboard.flush();
 assert.ok(text(basicRow()).includes('100%')); assert.equal(barPercent(basicRow()), 100, 'percentages follow the filtered total');
-chartStore.studyData.sessions = []; memory.set(STUDY_KEY, JSON.stringify(chartStore)); listeners.get(STUDY_CHANGED)(); dashboard.flush();
+chartStore.studyData.sessions = []; persistChartStore(); listeners.get(STUDY_CHANGED)(); dashboard.flush();
 assert.equal(React.Children.toArray(find(moduleChart(), n => n.type === 'ul').props.children).length, 1);
 assert.ok(text(moduleChart()).includes(translations.study.zeroDuration)); assert.ok(text(moduleChart()).includes('0%'));
 assert.equal(barPercent(basicRow()), 0); assert.ok(!text(moduleChart()).includes('NaN'));
@@ -344,7 +349,7 @@ const filterControls = () => React.Children.toArray(find(dashboard.tree, n => n.
 const setFilter = (index, value) => { filterControls()[index].props.onChange({ target: { value } }); dashboard.flush(); };
 const labels = Object.fromEntries(STUDY_MODULES.map(module => [module, text(find(moduleFilter, n => n.type === 'option' && n.props.value === module))]));
 const updateChart = sessions => {
-  chartStore.studyData.sessions = sessions; memory.set(STUDY_KEY, JSON.stringify(chartStore)); listeners.get(STUDY_CHANGED)(); dashboard.flush();
+  chartStore.studyData.sessions = sessions; persistChartStore(); listeners.get(STUDY_CHANGED)(); dashboard.flush();
 };
 const chartSession = (module, seconds, language = 'en-US', daysAgo = 0, mode = 'manual') => {
   const end = new Date().getTime() - daysAgo * 86400000;
@@ -385,8 +390,8 @@ assert.equal(barPercent(moduleRows()[0]), 100);
 setFilter(1, 'interpretation'); assert.equal(moduleRows().length, 1); assert.equal(barPercent(moduleRows()[0]), 0);
 setFilter(2, 'manual'); assert.equal(barPercent(moduleRows()[0]), 100);
 setFilter(1, 'all'); setFilter(2, 'all'); setFilter(3, 'all');
-const diskBeforeFilters = memory.get(STUDY_KEY);
-setFilter(0, 'en-US'); setFilter(0, 'all'); assert.equal(memory.get(STUDY_KEY), diskBeforeFilters);
+const diskBeforeFilters = JSON.stringify([...memory]);
+setFilter(0, 'en-US'); setFilter(0, 'all'); assert.equal(JSON.stringify([...memory]), diskBeforeFilters);
 for (const title of [translations.study.byLanguage, translations.study.timeline]) {
   assert.equal(find(chartSection(title), n => n.type === 'ul').props.className, 'study-chart');
   const order = chartRows(title).map(rowLabel); assert.deepEqual(order, [...order].sort((a, b) => a.localeCompare(b)));
@@ -397,7 +402,7 @@ console.log('PASS module comparison: complete/empty lists, zero widths, 10h/5h/2
 moduleFilter.props.onChange({ target: { value: 'all' } }); dashboard.flush();
 chartStore.studyData.sessions = Array.from({ length: 45 }, (_, index) => ({ id: `page-${index}`, module: index < 5 ? 'basic-training' : 'advanced-training',
   language: 'en-US', mode: 'manual', activeSeconds: 60, startedAt: new Date(now - 60000).toISOString(), endedAt: new Date(now).toISOString() }));
-const refreshHistory = () => { memory.set(STUDY_KEY, JSON.stringify(chartStore)); listeners.get(STUDY_CHANGED)(); dashboard.flush(); };
+const refreshHistory = () => { persistChartStore(); listeners.get("storage")({ key: STUDY_KEY + "session:history-refresh" }); dashboard.flush(); };
 refreshHistory();
 const historyList = () => find(dashboard.tree, n => n.props?.id === 'study-history-list');
 const pagination = () => find(dashboard.tree, n => n.type === 'nav' && n.props.className.includes('study-history-pagination'));
@@ -430,7 +435,7 @@ assert.ok(metricValue(translations.extras.externalTime).includes('18h'));
 assert.ok(metricValue(translations.extras.consolidated).includes('48h'));
 const officialProgress = () => find(dashboard.tree, n => n.type === 'progress').props.value;
 assert.equal(officialProgress(), 6.4);
-assert.equal(chartRows(translations.extras.byCategory).length, 4);
+assert.equal(chartRows(translations.extras.byCategory).length, 6);
 assert.ok(chartRows(translations.extras.byCategory).some(row => rowLabel(row) === translations.extras.categories.other && barPercent(row) === 0));
 setFilter(4, 'external'); assert.ok(metricValue(translations.extras.consolidated).includes('18h')); assert.equal(officialProgress(), 6.4);
 setFilter(5, 'conversation'); assert.ok(metricValue(translations.extras.consolidated).includes('8h')); assert.equal(officialProgress(), 6.4);
@@ -440,7 +445,75 @@ setFilter(4, 'all'); setFilter(5, 'all'); assert.ok(metricValue(translations.ext
 updateChart(Array.from({ length: 45 }, (_, index) => ({ ...chartSession('extra-activities', 60), id: `extra-page-${index}`, note: `external ${index}` })));
 assert.equal(rows().length, 20); pageButton(translations.common.next).props.onClick(); dashboard.flush();
 assert.equal(rows().length, 20); pageButton(translations.common.next).props.onClick(); dashboard.flush(); assert.equal(rows().length, 5);
-console.log('PASS external dashboard: 30h + 18h = 48h, four categories including zero, origin/category filters, official 6.4% unchanged, notes and 20/20/5 external history.');
+console.log('PASS external dashboard: 30h + 18h = 48h, six categories including zero, origin/category filters, official 6.4% unchanged, notes and 20/20/5 external history.');
+// A dashboard tab must show confirmed time while the flashcards tab stays open.
+updateChart([]);
+const liveCheckpoint = { ...chartSession('chunk-flashcards', 120), id: 'live-flashcards' };
+const checkpointKey = STUDY_KEY + 'active:chunk-flashcards';
+memory.set(checkpointKey, JSON.stringify(liveCheckpoint));
+listeners.get('storage')({ key: checkpointKey }); dashboard.flush();
+assert.ok(metricValue(translations.extras.consolidated).includes('2min'));
+assert.equal(officialProgress(), 120 / (750 * 3600) * 100);
+assert.equal(readStudyStore().studyData.sessions.length, 0, 'visible checkpoint is not completed history');
+assert.equal(backupOf(readStudyStore()).studyData.sessions.length, 0, 'backups do not seal another tab');
+const pausedCheckpoint = { ...liveCheckpoint, activeSeconds: 120 };
+memory.set(checkpointKey, JSON.stringify(pausedCheckpoint));
+listeners.get('focus')(); dashboard.flush();
+assert.ok(metricValue(translations.extras.consolidated).includes('2min'));
+const finalCheckpoint = { ...liveCheckpoint, activeSeconds: 125, endedAt: new Date(Date.parse(liveCheckpoint.endedAt) + 5000).toISOString() };
+memory.set(STUDY_KEY + 'session:' + finalCheckpoint.id, JSON.stringify(finalCheckpoint));
+listeners.get('storage')({ key: STUDY_KEY + 'session:' + finalCheckpoint.id }); dashboard.flush();
+assert.ok(metricValue(translations.extras.consolidated).includes('2min 5s'), 'finalized history wins even before draft removal');
+assert.equal(officialProgress(), 125 / (750 * 3600) * 100);
+memory.delete(checkpointKey); listeners.get('storage')({ key: checkpointKey }); dashboard.flush();
+assert.ok(metricValue(translations.extras.consolidated).includes('2min 5s'));
+assert.equal(readStudyStore().studyData.sessions.length, 1);
+console.log('PASS live Dashboard: cross-tab checkpoint contributes to metrics/goals before completion, focus refresh, pause stays fixed, history wins without duplication and backup remains completed-only.');
+
+// The calendar uses the actual Dashboard filter state, with no persistence.
+const calendarWrites = writes;
+const calendarButton = () => named(dashboard.tree, translations.study.calendar);
+const periodSelect = () => find(dashboard.tree, n => n.type === 'select' && find(n, c => c.type === 'option' && c.props.value === 'custom'));
+const periodMenu = () => find(dashboard.tree, n => n.type?.name === 'StudyPeriodMenu');
+const calendarAnchor = {};
+const originalElementById = document.getElementById, originalMatchMedia = window.matchMedia;
+const calendarScrolls = []; let reducedMotion = false;
+document.getElementById = id => id === 'study-time-by-module' ? {
+  scrollIntoView(options) {
+    assert.equal(periodMenu(), null, 'menu collapses before scrolling');
+    assert.ok(find(dashboard.tree, node => node.props?.id === id), 'updated module chart is mounted');
+    calendarScrolls.push({ ...options, period: periodSelect().props.value });
+  }, focus(options) { assert.equal(options.preventScroll, true); }
+} : originalElementById(id);
+window.matchMedia = query => query === '(prefers-reduced-motion: reduce)' ? { matches: reducedMotion } : originalMatchMedia(query);
+for (const period of ['today', '7', '30', 'month', '90', 'all']) {
+  const beforeScroll = calendarScrolls.length;
+  calendarButton().props.onClick({ currentTarget: calendarAnchor }); dashboard.flush();
+  assert.equal(calendarScrolls.length, beforeScroll, 'opening never scrolls');
+  assert.equal(periodMenu().props.period, periodSelect().props.value);
+  periodMenu().props.onSelect(period); dashboard.flush();
+  assert.equal(periodSelect().props.value, period); assert.equal(periodMenu(), null);
+  assert.equal(calendarScrolls.length, beforeScroll + 1);
+  assert.deepEqual(calendarScrolls.at(-1), { behavior: 'smooth', block: 'start', period });
+  reducedMotion = true;
+  calendarButton().props.onClick({ currentTarget: calendarAnchor }); dashboard.flush();
+  periodMenu().props.onSelect(period); dashboard.flush();
+  assert.equal(periodMenu(), null); assert.equal(calendarScrolls.length, beforeScroll + 2, 'same period scrolls exactly once');
+  assert.deepEqual(calendarScrolls.at(-1), { behavior: 'instant', block: 'start', period });
+  reducedMotion = false;
+}
+const selectionScrolls = calendarScrolls.length;
+periodSelect().props.onChange({ target: { value: 'custom' } }); dashboard.flush();
+calendarButton().props.onClick({ currentTarget: calendarAnchor }); dashboard.flush();
+assert.equal(periodMenu().props.period, 'custom');
+periodMenu().props.onClose(); dashboard.flush(); assert.equal(periodSelect().props.value, 'custom');
+calendarButton().props.onClick({ currentTarget: calendarAnchor }); dashboard.flush();
+calendarButton().props.onClick({ currentTarget: calendarAnchor }); dashboard.flush(); assert.equal(periodMenu(), null);
+assert.equal(calendarScrolls.length, selectionScrolls, 'traditional filters, opening and closing never scroll to the module chart');
+document.getElementById = originalElementById; window.matchMedia = originalMatchMedia;
+assert.equal(writes, calendarWrites);
+console.log('PASS calendar Dashboard: all six periods share the existing filter, bidirectional selection, custom period, toggle/close and zero storage writes.');
+console.log('PASS calendar selection scroll: all six periods collapse before one scroll to the updated module chart, repeated active periods, reduced motion and no scroll without selection.');
 dashboard.dispose();
 console.log('PASS history pagination: 20/20/5 rows, disjoint pages, previous/next boundaries, filter reset, page clamping after data changes and empty state.');
 console.log('PASS module chart: 3min01s of 8min02s = 37.55%, filtered denominator, accurate bar width and safe empty state.');

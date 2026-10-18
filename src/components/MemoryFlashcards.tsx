@@ -1,3 +1,5 @@
+import { cancelStudyAudio } from "../features/study/studyAudio";
+import { useStudyReading } from "../features/study/useStudyReading";
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -64,6 +66,7 @@ function MemoryRound({ eligible, level, onLevelChange, ...props }: Props & {
 }) {
   const { t } = useTranslation();
   const { language, sourceLanguage } = props;
+  const trackedSeconds = useStudyReading("memory-flashcards", language);
   const [deck, setDeck] = useState(() => shuffleChunks(eligible));
   const [position, setPosition] = useState(0);
   const [revealed, setRevealed] = useState(false);
@@ -113,10 +116,10 @@ function MemoryRound({ eligible, level, onLevelChange, ...props }: Props & {
     setPosition(0);
     setRevealed(false);
     setStudied(new Set());
-    window.speechSynthesis?.cancel();
+    cancelStudyAudio();
   }, [eligible]);
 
-  useEffect(() => () => window.speechSynthesis?.cancel(), []);
+  useEffect(() => () => cancelStudyAudio(), []);
 
   function flip() {
     if (!current) return;
@@ -134,7 +137,7 @@ function MemoryRound({ eligible, level, onLevelChange, ...props }: Props & {
         setRunning(false);
       }
     }
-    window.speechSynthesis?.cancel();
+    cancelStudyAudio();
     setRevealed(value => !value);
   }
 
@@ -146,7 +149,7 @@ function MemoryRound({ eligible, level, onLevelChange, ...props }: Props & {
     clock.current = { startedAt: null, accumulated: 0 };
     setElapsed(0);
     setRunning(false);
-    window.speechSynthesis?.cancel();
+    cancelStudyAudio();
   }
 
   return <section className="memory-flashcards" aria-labelledby="memory-title">
@@ -172,7 +175,7 @@ function MemoryRound({ eligible, level, onLevelChange, ...props }: Props & {
     <div className="memory-stats">
       <div><strong>{studied.size} / {total}</strong><span>{t("memory.studied")}</span></div>
       <div><strong>{progress.toLocaleString(sourceLanguage, { maximumFractionDigits: 1 })}%</strong><span>{t("memory.progress")}</span></div>
-      <div><strong>{formatMemoryTime(elapsed)}</strong><span>{t("common.studyTime")}</span></div>
+      <div><strong>{formatMemoryTime(trackedSeconds === null ? elapsed : trackedSeconds * 1000)}</strong><span>{t("common.studyTime")}</span></div>
     </div>
     <div className="memory-progress" role="progressbar" aria-label={t("memory.chunksStudied")} aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress}>
       <div style={{ width: `${progress}%` }} />
@@ -203,7 +206,7 @@ function MemoryRound({ eligible, level, onLevelChange, ...props }: Props & {
       <button type="button" className="secondary-button" disabled={!current || (!complete && !studied.has(current.id))}
         onClick={() => {
           if (complete) { restart(); return; }
-          window.speechSynthesis?.cancel();
+          cancelStudyAudio();
           setPosition(value => value + 1);
           setRevealed(false);
         }}>{complete ? t("memory.startANewRound") : "⇄ " + t("memory.drawNextChunk")}</button>

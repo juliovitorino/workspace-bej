@@ -1,3 +1,4 @@
+import { speakStudyAudio, cancelStudyAudio } from "../features/study/studyAudio";
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { isAuthorMode } from "../utils/authorMode";
@@ -265,7 +266,7 @@ export function InterpretationPanel({
 
   function cancelSpeech() {
     speechRevision.current++;
-    window.speechSynthesis?.cancel();
+    cancelStudyAudio();
   }
 
   function cancelGeneration() {
@@ -604,7 +605,7 @@ export function InterpretationPanel({
       setSpeechError(t("stories.couldNotPlayTheStoryInTargetlanguage", { targetLanguage: (languageName) }));
     };
 
-    window.speechSynthesis.speak(utterance);
+    speakStudyAudio(utterance);
   }
 
   async function handleCopyParagraph(text: string, index: number) {
@@ -688,7 +689,7 @@ export function InterpretationPanel({
       setSpeechError(t("stories.couldNotPlayThisParagraphInTargetlanguage", { targetLanguage: (languageName) }));
     };
 
-    window.speechSynthesis.speak(utterance);
+    speakStudyAudio(utterance);
   }
 
   function handleOpenExportJson() {

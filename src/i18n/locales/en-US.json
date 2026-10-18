@@ -1,4 +1,38 @@
 {
+  "studyDanger": {
+    "title": "Danger Zone",
+    "intro": "Resets only the time and history records used by the Dashboard. Other app data is preserved. We recommend exporting a backup before continuing.",
+    "languageTitle": "Reset one language's data",
+    "languageDescription": "Deletes study history and adjustments for the selected language.",
+    "resetLanguage": "Reset {{language}}",
+    "allTitle": "Reset all study data",
+    "allDescription": "Permanently deletes study records for all languages, regardless of the language selected in the Dashboard.",
+    "resetAll": "Reset all languages",
+    "globalTitle": "Warning! Reset ALL languages",
+    "languageConfirmTitle": "Reset {{language}} data?",
+    "contextLanguage": "Language currently selected in the Dashboard: {{language}}.",
+    "globalWarning": "Even with {{language}} selected, this operation will also delete records for every other language with data. The Dashboard filter does not limit this deletion.",
+    "otherLanguagesPreserved": "Records for all other languages will be preserved.",
+    "impactTitle": "Records to be deleted",
+    "recordedTime": "Recorded time",
+    "sessions": "Sessions",
+    "adjustments": "Manual adjustments",
+    "impactTotal": "Total to delete: {{time}} across {{sessions}} sessions and {{adjustments}} manual adjustments. Time includes adjustments.",
+    "changed": "Records have changed. Review the updated preview and type the confirmation phrase again.",
+    "confirmGlobal": "Delete data for all languages",
+    "confirmLanguage": "Affected language: {{language}}. Only Dashboard time records for this language will be deleted: study history, checkpoints and hour adjustments, including time recorded in Extra Activities.",
+    "confirmAll": "You are about to permanently delete study records for ALL languages: Dashboard history, checkpoints and hour adjustments, including time recorded in Extra Activities.",
+    "preserved": "Total and monthly goals, favorites, selected languages, preferences and learning content will be preserved.",
+    "irreversible": "This operation cannot be undone without a backup. You can cancel and export your data before continuing.",
+    "typePhrase": "Type {{phrase}} to confirm:",
+    "phraseLanguage": "RESET",
+    "phraseAll": "RESET ALL LANGUAGES",
+    "confirm": "Permanently delete records",
+    "working": "Deleting…",
+    "blocked": "Data cannot be reset while affected sessions are open, including paused sessions or sessions in other tabs. End interactive sessions and finish or discard Extra Activities before trying again.",
+    "failed": "Deletion did not complete. The Dashboard shows persisted data. Try again; interrupted deletions will be safely completed.",
+    "success": "The selected study records were deleted. Goals and preferences were preserved."
+  },
   "extras": {
     "title": "Extra Activities",
     "intro": "Track study outside BEJ: conversation, writing, lessons and other activities.",
@@ -31,6 +65,7 @@
     "allCategories": "All categories"
   },
   "study": {
+    "calendar": "Filter by period",
     "historyTitle": "Study History",
     "backDashboard": "Back to Dashboard",
     "moreOptions": "More dashboard options",
@@ -46,7 +81,7 @@
     "basicTraining": "Basic Exercise",
     "advancedTraining": "Advanced Exercise",
     "tracking": { "waiting": "Waiting for practice to begin", "active": "Tracking", "idle": "Paused due to inactivity", "unavailable": "Tracking unavailable" },
-    "compatibilityNote": "Without Web Locks, tracking uses compatibility mode. Use a single tab: the temporary lease reduces conflicts but cannot guarantee cross-tab exclusion.",
+    "compatibilityNote": "Cross-tab control uses Web Locks when available or a SharedWorker on HTTP addresses. Different modules can run simultaneously.",
     "title": "Study Dashboard",
     "intro": "The 750-hour journey: a personal dedication goal, without a guarantee of fluency or FSI certification.",
     "filters": "Filters",
@@ -123,7 +158,7 @@
     "confirmMerge": "I reviewed the preview and confirm merging the history.",
     "merge": "Confirm merge restore",
     "unavailable": "History unavailable. Existing data has not been replaced. Check storage and reload the page.",
-    "limitations": "No automatic synchronization. Matching IDs are deduplicated; different IDs on different devices may represent the same interval. Checkpoints every 15 seconds: an interruption may lose the last unconfirmed segment. Imported sessions without daily buckets use their local start date.",
+    "limitations": "No automatic synchronization between devices. Matching IDs are deduplicated; different IDs on different devices may represent the same interval. Checkpoints are saved on interactions and state changes. Interactive modules cap each interval without interaction at 3 minutes; running Extra Activities have no such limit. An interruption may lose the unconfirmed segment. Imported sessions without daily buckets use their local start date.",
     "modes": {
       "all": "All",
       "manual": "Manual",
@@ -140,8 +175,9 @@
       "custom": "Custom range"
     },
     "errors": {
+      "unsupported": "This browser offers neither Web Locks nor SharedWorker. Tracking is unavailable at this address. Use a compatible browser or HTTPS.",
       "extraActive": "Save or discard the active Extra Activity or pending recovery before restoring a backup or starting another activity.",
-      "otherTab": "Another tab controls tracking. Use that tab or close it and wait for control to become available here.",
+      "otherTab": "Another tab is tracking this module. You can use a different module here or close the controlling tab to release this module.",
       "zero": "A zero-duration session cannot be saved. Continue studying or discard the activity.",
       "invalid": "Invalid file, record, date or duration. No data was imported.",
       "version": "Incompatible backup or storage version.",
@@ -152,9 +188,9 @@
       "duplicate": "An adjustment with the same language, date, duration and description already exists."
     },
     "warning": {
-      "compatibility": "Automatic tracking is active in compatibility mode. Keep BEJ open in a single tab to avoid duplicate time.",
-      "unsupported": "This browser does not support Web Locks. Automatic tracking is disabled to avoid duplication across tabs.",
-      "otherTab": "Another tab owns study tracking. Use the already open tab or close it to track here.",
+      "compatibility": "Cross-tab control is active through the browser.",
+      "unsupported": "This browser offers neither Web Locks nor SharedWorker. Tracking is unavailable at this address. Use a compatible browser or HTTPS.",
+      "otherTab": "Another tab is tracking this module. You can use a different module here or close the controlling tab to release this module.",
       "storage": "Could not save study time. Automatic tracking stopped. Check storage and reload.",
       "invalid": "Invalid study data. Automatic tracking stopped; history was preserved.",
       "conflict": "Study history conflict. Automatic tracking stopped.",

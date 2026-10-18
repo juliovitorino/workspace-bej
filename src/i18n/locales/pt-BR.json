@@ -1,4 +1,38 @@
 {
+  "studyDanger": {
+    "title": "Zona de Perigo",
+    "intro": "Redefine somente os registros de tempo e histórico que alimentam o Dashboard. Não apaga outros dados do aplicativo. Recomendamos exportar um backup antes de continuar.",
+    "languageTitle": "Redefinir dados de um idioma",
+    "languageDescription": "Exclui o histórico e os ajustes de estudo do idioma selecionado.",
+    "resetLanguage": "Redefinir {{language}}",
+    "allTitle": "Redefinir todos os dados de estudo",
+    "allDescription": "Exclui permanentemente os registros de estudo de todos os idiomas, independentemente do idioma selecionado no Dashboard.",
+    "resetAll": "Redefinir todos os idiomas",
+    "globalTitle": "Atenção! Redefinir TODOS os idiomas",
+    "languageConfirmTitle": "Redefinir dados de {{language}}?",
+    "contextLanguage": "Idioma atualmente selecionado no Dashboard: {{language}}.",
+    "globalWarning": "Mesmo com {{language}} selecionado, esta operação também excluirá os registros de todos os demais idiomas que possuam dados. O filtro do Dashboard não limita esta exclusão.",
+    "otherLanguagesPreserved": "Os registros dos demais idiomas serão preservados.",
+    "impactTitle": "Prévia dos registros a excluir",
+    "recordedTime": "Tempo registrado",
+    "sessions": "Sessões",
+    "adjustments": "Ajustes manuais",
+    "impactTotal": "Total a excluir: {{time}} em {{sessions}} sessões e {{adjustments}} ajustes manuais. O tempo inclui os ajustes.",
+    "changed": "Os registros mudaram. Revise a prévia atualizada e digite novamente a frase de confirmação.",
+    "confirmGlobal": "Excluir dados de todos os idiomas",
+    "confirmLanguage": "Idioma afetado: {{language}}. Serão excluídos somente os registros de tempo do Dashboard deste idioma: histórico de estudo, checkpoints e ajustes de horas, incluindo o tempo registrado em Atividades Extras.",
+    "confirmAll": "Você está prestes a excluir permanentemente os registros de estudo de TODOS os idiomas: histórico do Dashboard, checkpoints e ajustes de horas, incluindo o tempo registrado em Atividades Extras.",
+    "preserved": "Metas de horas e mensais, favoritos, idiomas selecionados, preferências e conteúdos pedagógicos serão preservados.",
+    "irreversible": "Esta operação é irreversível sem backup. Você pode cancelar e exportar seus dados antes de continuar.",
+    "typePhrase": "Digite {{phrase}} para confirmar:",
+    "phraseLanguage": "REDEFINIR",
+    "phraseAll": "REDEFINIR TODOS OS IDIOMAS",
+    "confirm": "Excluir registros permanentemente",
+    "working": "Excluindo…",
+    "blocked": "Não é possível redefinir os dados enquanto houver sessões afetadas abertas, inclusive em outras abas ou pausadas. Encerre as sessões interativas e finalize ou descarte as Atividades Extras antes de tentar novamente.",
+    "failed": "A exclusão não foi concluída. O Dashboard mostra os dados persistidos. Tente novamente; exclusões interrompidas serão concluídas com segurança.",
+    "success": "Os registros de estudo selecionados foram excluídos. Metas e preferências foram preservadas."
+  },
   "extras": {
     "title": "Atividades Extras",
     "intro": "Registre seu estudo fora do BEJ: conversação, escrita, aulas e outras atividades.",
@@ -31,6 +65,7 @@
     "allCategories": "Todas as categorias"
   },
   "study": {
+    "calendar": "Filtrar por período",
     "historyTitle": "Hist?rico de Estudos",
     "backDashboard": "Voltar ao Dashboard",
     "moreOptions": "Mais op??es do Dashboard",
@@ -46,7 +81,7 @@
     "basicTraining": "Exercício Básico",
     "advancedTraining": "Exercício Avançado",
     "tracking": { "waiting": "Aguardando início da prática", "active": "Contabilizando", "idle": "Pausado por inatividade", "unavailable": "Contagem indisponível" },
-    "compatibilityNote": "Sem Web Locks, a contagem funciona em modo de compatibilidade. Use uma única aba: a reserva temporária reduz conflitos, mas não garante exclusão entre abas.",
+    "compatibilityNote": "O controle entre abas utiliza Web Locks quando dispon?vel ou um SharedWorker em endere?os HTTP. M?dulos diferentes podem funcionar simultaneamente.",
     "title": "Dashboard de Estudos",
     "intro": "Jornada das 750 horas: uma meta pessoal de dedicação, sem garantia de fluência ou certificação do FSI.",
     "filters": "Filtros",
@@ -123,7 +158,7 @@
     "confirmMerge": "Revisei a prévia e confirmo a mesclagem do histórico.",
     "merge": "Confirmar restauração por mesclagem",
     "unavailable": "Histórico indisponível. Os dados existentes não foram substituídos. Verifique o armazenamento e recarregue a página.",
-    "limitations": "Sem sincronização automática. IDs iguais são deduplicados; sessões com IDs diferentes em dispositivos distintos podem representar o mesmo intervalo. Checkpoints a cada 15 segundos: uma interrupção pode perder o último trecho não confirmado. Sessões importadas sem distribuição diária usam a data local de início.",
+    "limitations": "Sem sincronização automática entre dispositivos. IDs iguais são deduplicados; sessões com IDs diferentes em dispositivos distintos podem representar o mesmo intervalo. Checkpoints são salvos nas interações e mudanças de estado. Nos módulos interativos, cada intervalo sem interação tem teto de 3 minutos; Atividades Extras em execução não têm esse limite. Uma interrupção pode perder o trecho ainda não confirmado. Sessões importadas sem distribuição diária usam a data local de início.",
     "modes": {
       "all": "Todas",
       "manual": "Manual",
@@ -140,8 +175,9 @@
       "custom": "Intervalo personalizado"
     },
     "errors": {
+      "unsupported": "Este navegador n?o oferece Web Locks nem SharedWorker. O monitoramento n?o est? dispon?vel neste endere?o. Use um navegador compat?vel ou acesso por HTTPS.",
       "extraActive": "Salve ou descarte a Atividade Extra ativa ou pendente de recuperação antes de restaurar um backup ou iniciar outra atividade.",
-      "otherTab": "Outra aba controla o monitoramento. Use essa aba ou feche-a e aguarde a liberação nesta aba.",
+      "otherTab": "Outra aba est? monitorando este m?dulo. Voc? pode usar outro m?dulo nesta aba ou fechar a aba respons?vel para liberar este m?dulo.",
       "zero": "Uma sessão de duração zero não pode ser salva. Continue estudando ou descarte a atividade.",
       "invalid": "Arquivo, registro, data ou duração inválida. Nenhum dado foi importado.",
       "version": "Versão de backup ou armazenamento incompatível.",
@@ -152,9 +188,9 @@
       "duplicate": "Já existe um ajuste com o mesmo idioma, data, duração e descrição."
     },
     "warning": {
-      "compatibility": "Contagem automática ativa em modo de compatibilidade. Mantenha o BEJ aberto em uma única aba para evitar contagem duplicada.",
-      "unsupported": "O navegador não oferece Web Locks. A contagem automática está desativada para evitar duplicidade entre abas.",
-      "otherTab": "Outra aba está responsável pelo monitoramento. Use a aba que já está aberta ou feche-a para monitorar nesta aba.",
+      "compatibility": "O controle entre abas est? ativo pelo navegador.",
+      "unsupported": "Este navegador n?o oferece Web Locks nem SharedWorker. O monitoramento n?o est? dispon?vel neste endere?o. Use um navegador compat?vel ou acesso por HTTPS.",
+      "otherTab": "Outra aba est? monitorando este m?dulo. Voc? pode usar outro m?dulo nesta aba ou fechar a aba respons?vel para liberar este m?dulo.",
       "storage": "Falha ao salvar o tempo. A contagem automática foi interrompida. Verifique o armazenamento e recarregue.",
       "invalid": "Dados de estudo inválidos. A contagem automática foi interrompida; o histórico foi preservado.",
       "conflict": "Conflito no histórico de estudo. A contagem automática foi interrompida.",

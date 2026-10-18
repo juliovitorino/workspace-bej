@@ -27,6 +27,15 @@ export function ExtraActivities({ language, state }: { language: StudentLanguage
   const recovering = !!draft && (!!draft.recoveryAt || draft.owner !== studyTracker.extraOwner);
   const maximum = draft ? Math.floor(extraEstimate(draft, Math.max(now, Date.parse(draft.updatedAt))).accumulatedMs / 1000) : 0;
   useEffect(() => { const timer = window.setInterval(() => setNow(Date.now()), 1000); return () => window.clearInterval(timer); }, []);
+  useEffect(() => {
+    const refresh = () => setNow(Date.now());
+    window.addEventListener("focus", refresh); window.addEventListener("pageshow", refresh);
+    document.addEventListener("visibilitychange", refresh);
+    return () => {
+      window.removeEventListener("focus", refresh); window.removeEventListener("pageshow", refresh);
+      document.removeEventListener("visibilitychange", refresh);
+    };
+  }, []);
   useEffect(() => { if (recovering) setConfirmed(String(maximum)); }, [draft?.id, draft?.recoveryAt, recovering]);
   async function act(work: () => Promise<StudyStore>, finishedSeconds?: number) {
     setBusy(true); setError("");

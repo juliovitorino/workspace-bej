@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type SyntheticEvent } from "react";
-import { IDLE_MS } from "./studyTrackingService";
+import { IDLE_MS, studyTracker } from "./studyTrackingService";
 
 export type TrainingStudyReporter = (active: boolean, mode?: "manual" | "walking", activeUntil?: number) => void;
 
@@ -44,6 +44,8 @@ export function useTrainingStudy(identity: string, ready: boolean, pending: bool
   const recordActivity = () => {
     if (!ready || activity.current.identity !== identity) return;
     activity.current.policy.interact(Date.now());
+    // Also covers real speech-recognition results, which have no DOM input.
+    studyTracker.interact();
     setRevision(value => value + 1);
   };
   const interact = (event: SyntheticEvent) => { if (event.isTrusted) recordActivity(); };

@@ -25,7 +25,7 @@ function load(file) {
   if (file.endsWith('hashmapService.ts')) return { loadHashmap: language => hashmapLoader(language) };
   const module = { exports: {} };
   cache.set(file, module);
-  const { outputText } = transpileModule(readFileSync(file, 'utf8').replaceAll('import.meta.env', 'globalThis.__speakingEnv'), { compilerOptions: {
+  const { outputText } = transpileModule(readFileSync(file, 'utf8').replaceAll('import.meta.url', JSON.stringify('file:///study-lock-tests/entry.js')).replaceAll('import.meta.env', 'globalThis.__speakingEnv'), { compilerOptions: {
     module: ModuleKind.CommonJS, jsx: JsxEmit.ReactJSX, target: ScriptTarget.ES2022
   } });
   const localRequire = id => {
@@ -282,8 +282,10 @@ now = new Date(2026, 9, 17, 10).getTime();
 const studyClock = new StudyClock(() => 'game-study');
 let studyLanguage = 'en-US', lastSignal;
 const reportStudy = (active, mode, until) => {
+  const previousSignal = lastSignal;
   lastSignal = { active, until };
   studyClock.set({ module: 'speaking-game', language: studyLanguage, mode }, active, now, until);
+  if (active && previousSignal?.active && until > previousSignal.until) studyClock.commit(now);
 };
 const tracked = new Harness(SpeakingGame, { language: studyLanguage, sourceLanguage: 'pt-BR', onStudyState: reportStudy });
 tracked.flush(); assert.equal(lastSignal.active, false); assert.equal(studyClock.snapshot(now), null);
@@ -301,15 +303,15 @@ const previousDeadline = lastSignal.until;
 advanceStudy(10); tracked.tree.props.onKeyDown({ isTrusted: true }); tracked.flush();
 assert.ok(lastSignal.until > previousDeadline);
 advanceStudy(IDLE_MS / 1000 + 60);
-assert.equal(studyClock.snapshot(now).activeSeconds, 385, 'idle adds only five minutes since last interaction');
+assert.equal(studyClock.snapshot(now).activeSeconds, 265, 'idle adds only three minutes since last interaction');
 component(tracked, SpeakingGamePlayStep).props.onStop(); tracked.flush();
-advanceStudy(60); assert.equal(lastSignal.active, false); assert.equal(studyClock.snapshot(now).activeSeconds, 385);
+advanceStudy(60); assert.equal(lastSignal.active, false); assert.equal(studyClock.snapshot(now).activeSeconds, 265);
 component(tracked, SpeakingGameReadyStep).props.onStart(); await settle(tracked); advanceStudy(5);
 tracked.flush({ language: 'fr-FR', sourceLanguage: 'pt-BR', onStudyState: reportStudy });
 assert.equal(lastSignal.active, false, 'language change stops the old practice');
 tracked.dispose(); assert.equal(lastSignal.active, false, 'unmount stops reporting');
 assert.equal(timers.size, 0);
-console.log('PASS Speaking study: setup exclusion, 65 seconds, explicit pause/resume, trusted activity, five-minute idle, stop, language and unmount.');
+console.log('PASS Speaking study: setup exclusion, 65 seconds, explicit pause/resume, trusted activity, three-minute idle, stop, language and unmount.');
 Date.now=oldDateNow;
 assert.equal(timers.size,0);
 console.log('Speaking Game: nine catalogs, English preservation, localized morphology, compatible forms, cache isolation, manual/automatic and sequential/random modes, timers, pause/resume/stop, language changes, stale requests, errors/retry and Translate passed.');

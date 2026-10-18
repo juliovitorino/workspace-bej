@@ -24,8 +24,8 @@ function load(file) {
   if (cache.has(file)) return cache.get(file).exports;
   const module = { exports: {} };
   cache.set(file, module);
-  if (file.endsWith('.json')) return module.exports = JSON.parse(readFileSync(file, 'utf8'));
-  const source = readFileSync(file, 'utf8').replaceAll('import.meta.env', 'globalThis.__storyTestEnv');
+  if (file.endsWith('.json')) return module.exports = JSON.parse(readFileSync(file, 'utf8').replaceAll('import.meta.url', JSON.stringify('file:///study-lock-tests/entry.js')));
+  const source = readFileSync(file, 'utf8').replaceAll('import.meta.url', JSON.stringify('file:///study-lock-tests/entry.js')).replaceAll('import.meta.env', 'globalThis.__storyTestEnv');
   const { outputText } = transpileModule(source, { compilerOptions: {
     module: ModuleKind.CommonJS, jsx: JsxEmit.ReactJSX, target: ScriptTarget.ES2022, esModuleInterop: true
   } });
@@ -400,8 +400,10 @@ let studyNow = new Date(2026, 9, 17, 10).getTime(), studySignal;
 Date.now = () => studyNow;
 const interpretationClock = new StudyClock(() => 'interpretation-study');
 const reportStudy = (active, mode, until) => {
+  const previousSignal = studySignal;
   studySignal = { active, until };
   interpretationClock.set({ module: 'interpretation', language: 'en-US', mode }, active, studyNow, until);
+  if (active && previousSignal?.active && until > previousSignal.until) interpretationClock.commit(studyNow);
 };
 const studying = new Harness(InterpretationPanel, { ...props, onStudyState: reportStudy }); studying.flush();
 assert.equal(studySignal.active, false); assert.equal(interpretationClock.snapshot(studyNow), null);
@@ -430,16 +432,16 @@ const firstDeadline = studySignal.until;
 content().props.onInput({ isTrusted: true }); studying.flush();
 assert.ok(studySignal.until > firstDeadline, 'typing renews the reading window');
 advanceStudy(IDLE_MS / 1000 + 60);
-assert.equal(interpretationClock.snapshot(studyNow).activeSeconds, 365);
+assert.equal(interpretationClock.snapshot(studyNow).activeSeconds, 245);
 content().props.onScrollCapture({ isTrusted: true }); studying.flush();
-advanceStudy(10); assert.equal(interpretationClock.snapshot(studyNow).activeSeconds, 375);
+advanceStudy(10); assert.equal(interpretationClock.snapshot(studyNow).activeSeconds, 255);
 studying.flush({ ...props, language: 'fr-FR', onStudyState: reportStudy });
 assert.equal(studySignal.active, false, 'new language requires a new interaction');
-advanceStudy(60); assert.equal(interpretationClock.snapshot(studyNow).activeSeconds, 375);
+advanceStudy(60); assert.equal(interpretationClock.snapshot(studyNow).activeSeconds, 255);
 content().props.onKeyDown({ isTrusted: true }); studying.flush();
 advanceStudy(5); studying.dispose();
 assert.equal(studySignal.active, false); advanceStudy(60);
-assert.equal(interpretationClock.snapshot(studyNow).activeSeconds, 380);
+assert.equal(interpretationClock.snapshot(studyNow).activeSeconds, 260);
 assert.equal(listeners.get('scroll')?.size ?? 0, 0, 'scroll listeners are removed');
 
 // Passive AI generation suspends an already active reading session.

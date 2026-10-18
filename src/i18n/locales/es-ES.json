@@ -1,4 +1,38 @@
 {
+  "studyDanger": {
+    "title": "Zona de peligro",
+    "intro": "Restablece solo los registros de tiempo e historial utilizados por el Dashboard. Conserva los demás datos de la aplicación. Recomendamos exportar una copia de seguridad antes de continuar.",
+    "languageTitle": "Restablecer los datos de un idioma",
+    "languageDescription": "Elimina el historial y los ajustes de estudio del idioma seleccionado.",
+    "resetLanguage": "Restablecer {{language}}",
+    "allTitle": "Restablecer todos los datos de estudio",
+    "allDescription": "Elimina permanentemente los registros de estudio de todos los idiomas, independientemente del idioma seleccionado en el Dashboard.",
+    "resetAll": "Restablecer todos los idiomas",
+    "globalTitle": "¡Atención! Restablecer TODOS los idiomas",
+    "languageConfirmTitle": "¿Restablecer los datos de {{language}}?",
+    "contextLanguage": "Idioma seleccionado actualmente en el Dashboard: {{language}}.",
+    "globalWarning": "Aunque esté seleccionado {{language}}, esta operación también eliminará los registros de todos los demás idiomas que tengan datos. El filtro del Dashboard no limita esta eliminación.",
+    "otherLanguagesPreserved": "Se conservarán los registros de los demás idiomas.",
+    "impactTitle": "Vista previa de los registros que se eliminarán",
+    "recordedTime": "Tiempo registrado",
+    "sessions": "Sesiones",
+    "adjustments": "Ajustes manuales",
+    "impactTotal": "Total que se eliminará: {{time}} en {{sessions}} sesiones y {{adjustments}} ajustes manuales. El tiempo incluye los ajustes.",
+    "changed": "Los registros han cambiado. Revisa la vista previa actualizada y vuelve a escribir la frase de confirmación.",
+    "confirmGlobal": "Eliminar datos de todos los idiomas",
+    "confirmLanguage": "Idioma afectado: {{language}}. Solo se eliminarán sus registros de tiempo del Dashboard: historial de estudio, puntos de control y ajustes de horas, incluido el tiempo registrado en Actividades Extra.",
+    "confirmAll": "Estás a punto de eliminar permanentemente los registros de estudio de TODOS los idiomas: historial del Dashboard, puntos de control y ajustes de horas, incluido el tiempo registrado en Actividades Extra.",
+    "preserved": "Se conservarán las metas totales y mensuales, los favoritos, los idiomas seleccionados, las preferencias y los contenidos educativos.",
+    "irreversible": "Esta operación es irreversible sin una copia de seguridad. Puedes cancelar y exportar tus datos antes de continuar.",
+    "typePhrase": "Escribe {{phrase}} para confirmar:",
+    "phraseLanguage": "RESTABLECER",
+    "phraseAll": "RESTABLECER TODOS LOS IDIOMAS",
+    "confirm": "Eliminar registros permanentemente",
+    "working": "Eliminando…",
+    "blocked": "No se pueden restablecer los datos mientras haya sesiones afectadas abiertas, incluso pausadas o en otras pestañas. Cierra las sesiones interactivas y finaliza o descarta las Actividades Extra antes de volver a intentarlo.",
+    "failed": "La eliminación no se completó. El Dashboard muestra los datos guardados. Inténtalo de nuevo; las eliminaciones interrumpidas se completarán de forma segura.",
+    "success": "Se eliminaron los registros de estudio seleccionados. Se conservaron las metas y las preferencias."
+  },
   "extras": {
     "title": "Actividades Extra",
     "intro": "Registra el estudio fuera de BEJ: conversación, escritura, clases y otras actividades.",
@@ -31,6 +65,7 @@
     "allCategories": "Todas las categorías"
   },
   "study": {
+    "calendar": "Filtrar por período",
     "historyTitle": "Historial de estudios",
     "backDashboard": "Volver al panel",
     "moreOptions": "M?s opciones del panel",
@@ -46,7 +81,7 @@
     "basicTraining": "Ejercicio básico",
     "advancedTraining": "Ejercicio avanzado",
     "tracking": { "waiting": "Esperando el inicio de la práctica", "active": "Contabilizando", "idle": "Pausado por inactividad", "unavailable": "Seguimiento no disponible" },
-    "compatibilityNote": "Sin Web Locks, el seguimiento usa el modo de compatibilidad. Utiliza una sola pestaña: la reserva temporal reduce conflictos, pero no garantiza la exclusión entre pestañas.",
+    "compatibilityNote": "El control entre pesta?as utiliza Web Locks cuando est? disponible o un SharedWorker en direcciones HTTP. Distintos m?dulos pueden funcionar simult?neamente.",
     "title": "Panel de estudios",
     "intro": "El camino de las 750 horas: una meta personal de dedicación, sin garantía de fluidez ni certificación del FSI.",
     "filters": "Filtros",
@@ -123,7 +158,7 @@
     "confirmMerge": "He revisado la vista previa y confirmo la fusión del historial.",
     "merge": "Confirmar restauración por fusión",
     "unavailable": "Historial no disponible. Los datos existentes no se han sustituido. Comprueba el almacenamiento y recarga la página.",
-    "limitations": "Sin sincronización automática. Los ID iguales se deduplican; distintos ID en diferentes dispositivos pueden representar el mismo intervalo. Puntos de control cada 15 segundos: una interrupción puede perder el último tramo no confirmado. Las sesiones importadas sin distribución diaria usan su fecha local de inicio.",
+    "limitations": "Sin sincronización automática entre dispositivos. Los ID iguales se deduplican; distintos ID en diferentes dispositivos pueden representar el mismo intervalo. Los puntos de control se guardan con las interacciones y los cambios de estado. Los módulos interactivos limitan cada intervalo sin interacción a 3 minutos; las Actividades Extras en curso no tienen ese límite. Una interrupción puede perder el tramo aún no confirmado. Las sesiones importadas sin distribución diaria usan su fecha local de inicio.",
     "modes": {
       "all": "Todas",
       "manual": "Manual",
@@ -140,8 +175,9 @@
       "custom": "Intervalo personalizado"
     },
     "errors": {
+      "unsupported": "Este navegador no ofrece Web Locks ni SharedWorker. El seguimiento no est? disponible en esta direcci?n. Usa un navegador compatible o HTTPS.",
       "extraActive": "Guarda o descarta la Actividad Extra activa o pendiente de recuperación antes de restaurar un backup o iniciar otra actividad.",
-      "otherTab": "Otra pestaña controla el seguimiento. Úsala o ciérrala y espera a que se libere el control aquí.",
+      "otherTab": "Otra pesta?a est? registrando este m?dulo. Puedes usar otro m?dulo aqu? o cerrar la pesta?a responsable para liberarlo.",
       "zero": "No se puede guardar una sesión de duración cero. Continúa estudiando o descarta la actividad.",
       "invalid": "Archivo, registro, fecha o duración no válidos. No se importaron datos.",
       "version": "Versión de copia o almacenamiento incompatible.",
@@ -152,9 +188,9 @@
       "duplicate": "Ya existe un ajuste con el mismo idioma, fecha, duración y descripción."
     },
     "warning": {
-      "compatibility": "Seguimiento automático activo en modo de compatibilidad. Mantén BEJ abierto en una sola pestaña para evitar duplicar el tiempo.",
-      "unsupported": "El navegador no admite Web Locks. El seguimiento automático se desactiva para evitar duplicados entre pestañas.",
-      "otherTab": "Otra pestaña gestiona el seguimiento. Usa la pestaña ya abierta o ciérrala para registrar aquí.",
+      "compatibility": "El control entre pesta?as est? activo mediante el navegador.",
+      "unsupported": "Este navegador no ofrece Web Locks ni SharedWorker. El seguimiento no est? disponible en esta direcci?n. Usa un navegador compatible o HTTPS.",
+      "otherTab": "Otra pesta?a est? registrando este m?dulo. Puedes usar otro m?dulo aqu? o cerrar la pesta?a responsable para liberarlo.",
       "storage": "No se pudo guardar el tiempo. Se detuvo el seguimiento automático. Comprueba el almacenamiento y recarga.",
       "invalid": "Datos de estudio no válidos. Se detuvo el seguimiento automático; se conservó el historial.",
       "conflict": "Conflicto en el historial de estudio. Se detuvo el seguimiento automático.",

@@ -12,7 +12,7 @@ function runtime() {
     file = resolve(file);
     if (cache.has(file)) return cache.get(file).exports;
     const module = { exports: {} }; cache.set(file, module);
-    const output = transpileModule(readFileSync(file, 'utf8'), { compilerOptions: { module: ModuleKind.CommonJS, target: ScriptTarget.ES2022 } }).outputText;
+    const output = transpileModule(readFileSync(file, 'utf8').replaceAll('import.meta.url', JSON.stringify('file:///study-lock-tests/entry.js')), { compilerOptions: { module: ModuleKind.CommonJS, target: ScriptTarget.ES2022 } }).outputText;
     const localRequire = id => {
       if (!id.startsWith('.')) return require(id);
       const base = resolve(dirname(file), id);
@@ -29,7 +29,7 @@ const realNow = Date.now;
 let now = new Date(2026, 9, 17, 12).getTime(), failWrite = false;
 Date.now = () => now;
 const data = new Map([['bej-favorite-chunks', 'preserve'], ['interface-theme', 'dark']]);
-globalThis.localStorage = { getItem: k => data.get(k) ?? null, setItem(k, v) { if (failWrite) throw new Error('quota'); data.set(k, v); }, removeItem: k => data.delete(k) };
+globalThis.localStorage = { get length() { return data.size; }, key: i => [...data.keys()][i] ?? null, getItem: k => data.get(k) ?? null, setItem(k, v) { if (failWrite) throw new Error('quota'); data.set(k, v); }, removeItem: k => data.delete(k) };
 const events = new EventTarget(), timers = new Map(); let timerId = 0;
 globalThis.window = { addEventListener: events.addEventListener.bind(events), removeEventListener: events.removeEventListener.bind(events), dispatchEvent: events.dispatchEvent.bind(events),
   setInterval(fn) { timers.set(++timerId, fn); return timerId; }, clearInterval(id) { timers.delete(id); }, setTimeout };
@@ -37,23 +37,24 @@ globalThis.window = { addEventListener: events.addEventListener.bind(events), re
 const locks = new Map();
 Object.defineProperty(globalThis, 'navigator', { configurable: true, value: { locks: { request(name, options, callback) {
   if (typeof options === 'function') { callback = options; options = {}; }
+  if (options.ifAvailable && locks.has(name)) return Promise.resolve(callback(null));
   const previous = locks.get(name) ?? Promise.resolve();
   const next = previous.catch(() => {}).then(() => { if (options.signal?.aborted) throw new Error('aborted'); return callback({ name }); });
-  locks.set(name, next); return next;
+  locks.set(name, next); void next.then(() => { if (locks.get(name) === next) locks.delete(name); }, () => { if (locks.get(name) === next) locks.delete(name); }); return next;
 } } } });
 const settle = async () => { for (let i = 0; i < 100; i++) await Promise.resolve(); };
 const code = expected => error => error.code === expected;
 let app = runtime(), stop = app.tracker.start(); await settle();
 const context = { module: 'basic-training', language: 'en-US', mode: 'manual' };
-app.tracker.set(context, true); now += 10000;
-await app.service.startExtraActivity('en-US', 'conversation', 'HelloTalk'); await settle();
+app.tracker.set(context, true); await settle(); now += 10000;
+await app.service.startExtraActivity('en-US', 'conversation', 'HelloTalk'); app.tracker.set(null, false); await settle();
 let store = app.storage.readStudyStore(), draft = store.extraActivity;
 assert.equal(app.storage.totalSeconds(store.studyData), 10);
 assert.ok(draft); assert.equal(store.activeSession, null);
 await assert.rejects(() => app.service.startExtraActivity('fr-FR', 'writing', ''), code('extraActive'));
 await assert.rejects(() => app.service.changeExtraActivity(draft.id, 'stop'), code('zero'));
 now += 45 * 60000; // no interval ticks: hidden tab, locked screen or app switch
-app.tracker.set(context, true); app.tracker.checkpoint(); await settle();
+app.tracker.checkpoint(); await settle();
 assert.equal(app.tracker.readSession(context).seconds, 0);
 assert.equal(app.storage.totalSeconds(app.storage.readStudyStore().studyData), 10, 'unconfirmed time never enters totals');
 await app.service.changeExtraActivity(draft.id, 'stop'); await settle();
@@ -64,7 +65,7 @@ assert.equal(store.extraActivity, null);
 await app.service.changeExtraActivity(draft.id, 'stop');
 assert.equal(app.storage.readStudyStore().studyData.sessions.filter(s => s.id === draft.id).length, 1);
 app.tracker.set(null, false); await app.tracker.seal();
-console.log('PASS 45-minute HelloTalk: timestamp-only background time, pending exclusion, internal suppression, double-start/zero rejection and idempotent stop.');
+console.log('PASS 45-minute HelloTalk: timestamp-only background time, pending exclusion, independent module navigation, double-start/zero rejection and idempotent stop.');
 
 await app.service.startExtraActivity('en-US', 'private-class', 'lesson');
 draft = app.storage.readStudyStore().extraActivity;
@@ -77,14 +78,14 @@ assert.equal(app.storage.readStudyStore().studyData.sessions.find(s => s.id === 
 console.log('PASS 60-minute lesson with 15-minute break records exactly 45 minutes.');
 
 async function reload() {
-  stop(); await settle(); app = runtime(); stop = app.tracker.start(); await settle();
-  assert.equal(app.tracker.hasControl(), true);
+  stop(); await settle(); app = runtime(); stop = app.tracker.start(); app.tracker.setExtraView(true); await settle();
+  assert.equal(app.tracker.hasExtraControl(), true);
 }
 await app.service.startExtraActivity('fr-FR', 'writing', 'paper');
 now += 60000; app.tracker.checkpoint(); await settle();
 draft = app.storage.readStudyStore().extraActivity; assert.equal(draft.accumulatedMs, 60000);
 stop(); await settle(); now += 2 * 3600000;
-app = runtime(); stop = app.tracker.start(); await settle();
+app = runtime(); stop = app.tracker.start(); app.tracker.setExtraView(true); await settle();
 draft = app.storage.readStudyStore().extraActivity;
 assert.ok(draft.recoveryAt); assert.equal(draft.accumulatedMs, 60000);
 const frozen = draft.recoveryAt, estimate = app.time.extraEstimate(draft, now).accumulatedMs;
@@ -93,9 +94,9 @@ await reload(); assert.equal(app.storage.readStudyStore().extraActivity.recovery
 await assert.rejects(() => app.service.changeExtraActivity(draft.id, 'resume'), code('stale'));
 await assert.rejects(() => app.service.changeExtraActivity(draft.id, 'confirm', 7261), code('invalid'));
 assert.throws(() => app.storage.restoreStudyBackup(app.storage.readStudyStore(), app.storage.backupOf(app.storage.emptyStore(), new Date(now)), JSON.stringify(app.storage.readStudyStore())), code('extraActive'));
-const beforeFailure = data.get(app.storage.STUDY_KEY); failWrite = true;
+const beforeFailure = JSON.stringify([...data]); failWrite = true;
 await assert.rejects(() => app.service.changeExtraActivity(draft.id, 'confirm', 1800), code('storage'));
-assert.equal(data.get(app.storage.STUDY_KEY), beforeFailure, 'failed save leaves recovery intact'); failWrite = false;
+assert.equal(JSON.stringify([...data]), beforeFailure, 'failed save leaves recovery intact'); failWrite = false;
 await app.service.changeExtraActivity(draft.id, 'confirm', 1800); await app.service.changeExtraActivity(draft.id, 'confirm', 1800);
 store = app.storage.readStudyStore();
 assert.equal(store.studyData.sessions.filter(s => s.id === draft.id).length, 1);
@@ -196,7 +197,7 @@ for (const category of ['reading', 'active-listening']) {
   assert.equal(saved.length, 1); assert.equal(saved[0].activeSeconds, 45);
 }
 const expandedStore = app.storage.readStudyStore();
-assert.deepEqual(expandedStore.studyData.sessions.slice(0, oldSessions.length), oldSessions);
+assert.deepEqual(expandedStore.studyData.sessions.filter(s => oldSessions.some(old => old.id === s.id)), oldSessions);
 for (const category of ['reading', 'active-listening']) {
   const filtered = app.stats(expandedStore.studyData, { ...filter, extraCategory: category }, new Date(now));
   assert.equal(filtered.total, 165); assert.equal(filtered.external, 165);
@@ -219,18 +220,11 @@ console.log('PASS reading/listening: start, pause, resume, stop, recovery, persi
 stop(); await settle(); Date.now = realNow;
 assert.equal(timers.size, 0);
 
-// The existing advisory lease also guards external commands without Web Locks.
-Date.now = () => now;
+// No atomic browser primitive: fail closed without mutating storage.
 Object.defineProperty(globalThis, 'navigator', { configurable: true, value: {} });
-app = runtime(); stop = app.tracker.start(); await new Promise(resolve => setTimeout(resolve, 180)); await settle();
-assert.equal(app.tracker.hasControl(), true);
-await app.service.startExtraActivity('en-US', 'other', 'compatibility');
-draft = app.storage.readStudyStore().extraActivity;
-const fallbackTab = runtime(), stopFallbackTab = fallbackTab.tracker.start(); await settle();
-await assert.rejects(() => fallbackTab.service.startExtraActivity('fr-FR', 'other', ''), code('otherTab'));
-now += 10000; app.tracker.checkpoint(); await settle();
-await app.service.changeExtraActivity(draft.id, 'stop');
-assert.equal(app.storage.readStudyStore().studyData.sessions.find(s => s.id === draft.id).activeSeconds, 10);
-stopFallbackTab(); stop(); await settle(); Date.now = realNow;
-assert.equal(timers.size, 0);
-console.log('PASS simultaneous starts serialize to one draft; no-Web-Locks external commands reuse the existing lease and exclude a second tab.');
+app = runtime(); stop = app.tracker.start();
+const beforeUnsupported = JSON.stringify([...data]);
+await assert.rejects(() => app.service.startExtraActivity('en-US', 'reading', ''), code('unsupported'));
+assert.equal(JSON.stringify([...data]), beforeUnsupported);
+stop(); await settle();
+console.log('PASS unsupported browsers: conservative read-only fallback preserves all records.');
