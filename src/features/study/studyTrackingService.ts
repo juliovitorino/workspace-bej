@@ -2,6 +2,7 @@ import { newStudyId, readExtraActivity, STUDY_CHANGED, isStudyStorageKey, StudyE
 import { advanceExtra, recoverExtra } from "./extraActivityTime";
 import type { StudentLanguage } from "../../config/languages";
 import { StudyLease } from "./studyLease";
+import { readResetGenerations } from "./studyStorage";
 
 export interface StudyContext { language: StudentLanguage; module: StudyModule; mode: StudyMode }
 export interface StudyReading { seconds: number; state: "waiting" | "active" | "idle" | "unavailable" }
@@ -85,6 +86,8 @@ export class StudyTracker {
   private mediaTokens = new Set<string>();
   private lastInteractionWrite = -Infinity;
   private clock = new StudyClock();
+  private clockLanguage: StudentLanguage | null = null;
+  private clockGeneration = "";
   private context: StudyContext | null = null;
   private active = false;
   private until = Infinity;
@@ -116,10 +119,12 @@ export class StudyTracker {
   }
   private enqueue(change: (store: StudyStore) => StudyStore, lease = this.lease) {
     if (!lease) return Promise.resolve();
+    const generations = readResetGenerations();
     this.queue = this.queue.then(() => updateStudyStore(store => {
       if (!lease.owns()) throw new StudyError("otherTab");
       return change(store);
-    }, lease.resource as StudyModule)).catch(error => {
+    }, lease.resource as StudyModule, generations)).catch(error => {
+      if (error?.code === "stale") { this.syncClock(); return; }
       if (error?.code === "otherTab") {
         if (this.lease === lease) { this.lease = null; this.clock = new StudyClock(); }
         if (this.extraLease === lease) this.extraLease = null;
@@ -135,7 +140,13 @@ export class StudyTracker {
   }
   private syncClock() {
     if (!this.hasControl()) return;
+    const generations = readResetGenerations();
+    if (this.clockLanguage && this.clockGeneration !== (generations[this.clockLanguage] ?? "")) {
+      this.clock = new StudyClock(); this.mediaTokens.clear();
+    }
     const finished = this.clock.set(this.context, this.active, Date.now(), this.until);
+    this.clockLanguage = this.context?.language ?? null;
+    this.clockGeneration = this.clockLanguage ? generations[this.clockLanguage] ?? "" : "";
     if (finished) void this.enqueue(store => ({ ...append(store, finished), activeSession: null }));
   }
   setExtraView(value: boolean) {

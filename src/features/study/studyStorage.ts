@@ -1,4 +1,4 @@
-import { isStudentLanguage, type StudentLanguage } from "../../config/languages";
+import { LANGUAGES, isStudentLanguage, type StudentLanguage } from "../../config/languages";
 import { getStudyLocks } from "./studyLocks";
 import { finishExtra } from "./extraActivityTime";
 
@@ -35,9 +35,9 @@ export interface StudyData {
   sessions: StudySession[];
   manualAdjustments: ManualAdjustment[];
 }
-export interface StudyStore { schemaVersion: 1; studyData: StudyData; activeSession: StudySession | null; extraActivity?: ExtraActivityDraft | null }
+export interface StudyStore { schemaVersion: 1; studyData: StudyData; activeSession: StudySession | null; extraActivity?: ExtraActivityDraft | null; resetGeneration?: Record<string, string> }
 export interface StudyBackup { schemaVersion: 1; application: typeof APPLICATION; exportedAt: string; studyData: StudyData }
-export type StudyErrorCode = "invalid" | "version" | "storage" | "conflict" | "stale" | "tooLarge" | "duplicate" | "extraActive" | "otherTab" | "zero" | "unsupported";
+export type StudyErrorCode = "invalid" | "version" | "storage" | "conflict" | "stale" | "tooLarge" | "duplicate" | "extraActive" | "otherTab" | "zero" | "unsupported" | "resetActive";
 export class StudyError extends Error { constructor(public code: StudyErrorCode) { super(code); } }
 type StorageLike = Pick<Storage, "getItem" | "setItem" | "removeItem" | "key" | "length">;
 const invalid = (): never => { throw new StudyError("invalid"); };
@@ -139,16 +139,142 @@ function validateStore(v: StudyStore): StudyStore {
     new Set(studyData.manualAdjustments.map(a => a.id)).size !== studyData.manualAdjustments.length) return invalid();
   const activeSession = v.activeSession == null ? null : session(v.activeSession);
   const extraActivity = v.extraActivity == null ? null : extraDraft(v.extraActivity);
-  return { schemaVersion: 1, studyData, activeSession, extraActivity };
+  return { schemaVersion: 1, studyData, activeSession, extraActivity, ...(v.resetGeneration ? { resetGeneration: v.resetGeneration } : {}) };
 }
 const recordKey = (kind: string, identity: string) => STUDY_KEY + kind + ":" + encodeURIComponent(identity);
-function readJSON(storage: StorageLike, key: string): unknown {
+export type StudyResetScope = { scope: "all" } | { scope: "language"; language: StudentLanguage };
+type ResetJournal = { generation: string; keys: string[] };
+// Only records actually read by the Dashboard. Similar prefixes owned by other
+// features are not reset candidates, including unknown active:* keys.
+function dashboardResetKey(key: string): boolean {
+  return ["session:", "adjustment:"].some(prefix => key.startsWith(STUDY_KEY + prefix) && key.length > (STUDY_KEY + prefix).length) ||
+    STUDY_MODULES.some(module => key === STUDY_KEY + "active:" + module);
+}
+function dashboardRecordLanguage(key: string, value: unknown): StudentLanguage {
+  if (key.startsWith(STUDY_KEY + "session:")) {
+    const item = session(value);
+    if (key !== recordKey("session", item.id)) return invalid();
+    return item.language;
+  }
+  if (key.startsWith(STUDY_KEY + "adjustment:")) {
+    const item = adjustment(value);
+    if (key !== recordKey("adjustment", item.id)) return invalid();
+    return item.language;
+  }
+  if (key === STUDY_KEY + "active:extra-activities") return extraDraft(value).language;
+  const item = session(value);
+  if (key !== STUDY_KEY + "active:" + item.module || !dashboardResetKey(key)) return invalid();
+  return item.language;
+}
+function resetJournals(storage: StorageLike): [StudentLanguage, ResetJournal][] {
+  return (Object.keys(LANGUAGES) as StudentLanguage[]).flatMap(language => {
+    const raw = storage.getItem(STUDY_KEY + "reset:" + language);
+    if (raw === null) return [];
+    const value = JSON.parse(raw);
+    if (!object(value) || !id(value.generation) || !Array.isArray(value.keys) || !value.keys.every(key => typeof key === "string" && dashboardResetKey(key))) return invalid();
+    return [[language, value as ResetJournal]];
+  });
+}
+export function readResetGenerations(storage: StorageLike = localStorage): Record<string, string> {
+  return Object.fromEntries(resetJournals(storage).map(([language, journal]) => [language, journal.generation]));
+}
+function pendingResetKeys(storage: StorageLike): Set<string> {
+  return new Set(resetJournals(storage).flatMap(([, journal]) => journal.keys));
+}
+// A durable per-language journal hides pending deletions immediately. Repeating
+// physical deletion is safe after interruption, before any coordinated writer.
+function completePendingResets(storage: StorageLike) {
+  for (const [language, journal] of resetJournals(storage)) if (journal.keys.length) {
+    for (const key of journal.keys) {
+      const raw = storage.getItem(key);
+      if (raw !== null) {
+        const value = JSON.parse(raw);
+        if (dashboardRecordLanguage(key, value) !== language) return invalid();
+        storage.removeItem(key);
+      }
+    }
+    storage.setItem(STUDY_KEY + "reset:" + language, JSON.stringify({ generation: journal.generation, keys: [] }));
+  }
+}
+function resetLanguages(scope: StudyResetScope): StudentLanguage[] {
+  if (!scope || (scope.scope !== "all" && scope.scope !== "language") ||
+    (scope.scope === "language" && !isStudentLanguage(scope.language))) return invalid();
+  return scope.scope === "all" ? Object.keys(LANGUAGES) as StudentLanguage[] : [scope.language];
+}
+async function protectReset<T>(scope: StudyResetScope, operation: (languages: StudentLanguage[]) => T, recover = true): Promise<T> {
+  const languages = resetLanguages(scope), locks = getStudyLocks();
+  if (!locks) throw new StudyError("unsupported");
+  return locks.request("bej-study-v2:write", async lock => {
+    if (!lock) throw new StudyError("otherTab");
+    if (recover) completePendingResets(localStorage);
+    // Validate every source used by the Dashboard before planning deletion.
+    readStudyStore(); readStudyCheckpoints();
+    const extra = readExtraActivity();
+    if (extra && languages.includes(extra.language)) throw new StudyError("resetActive");
+    const guard = (index: number): Promise<T> => {
+      if (index === STUDY_MODULES.length) return Promise.resolve(operation(languages));
+      const module = STUDY_MODULES[index];
+      return locks.request(STUDY_KEY + "control:" + module, { ifAvailable: true }, control => {
+        if (!control) {
+          const current = readJSON(localStorage, STUDY_KEY + "active:" + module);
+          // A held control with no checkpoint may be starting. Fail closed.
+          if (!object(current) || !isStudentLanguage(current.language) || languages.includes(current.language)) throw new StudyError("resetActive");
+        }
+        return guard(index + 1);
+      });
+    };
+    return guard(0);
+  });
+}
+export async function checkStudyReset(scope: StudyResetScope): Promise<void> {
+  await protectReset(scope, () => undefined, false);
+}
+function resetRecords(languages: StudentLanguage[]) {
+  return Array.from({ length: localStorage.length }, (_, index) => localStorage.key(index))
+    .filter((key): key is string => !!key && dashboardResetKey(key)).sort().flatMap(key => {
+      const raw = localStorage.getItem(key)!;
+      return languages.includes(dashboardRecordLanguage(key, JSON.parse(raw))) ? [[key, raw] as const] : [];
+    });
+}
+export function readStudyResetImpact(scope: StudyResetScope) {
+  const languages = resetLanguages(scope), data = studyDataWithCheckpoints(readStudyStore().studyData, readStudyCheckpoints());
+  const rows = languages.map(language => {
+    const sessions = data.sessions.filter(item => item.language === language);
+    const manualAdjustments = data.manualAdjustments.filter(item => item.language === language);
+    return { language, seconds: totalSeconds({ ...data, sessions, manualAdjustments }), sessions: sessions.length, adjustments: manualAdjustments.length };
+  });
+  return { fingerprint: JSON.stringify(resetRecords(languages)), rows,
+    seconds: rows.reduce((sum, row) => sum + row.seconds, 0), sessions: rows.reduce((sum, row) => sum + row.sessions, 0),
+    adjustments: rows.reduce((sum, row) => sum + row.adjustments, 0) };
+}
+export async function resetStudyData(scope: StudyResetScope, expectedImpact?: string): Promise<void> {
+  try {
+    await protectReset(scope, languages => {
+      if (expectedImpact !== undefined && expectedImpact !== JSON.stringify(resetRecords(languages))) throw new StudyError("stale");
+      const keys = Array.from({ length: localStorage.length }, (_, index) => localStorage.key(index))
+        .filter((key): key is string => !!key && dashboardResetKey(key));
+      const plan = languages.map(language => ({ language, keys: keys.filter(key => {
+        const value = JSON.parse(localStorage.getItem(key)!);
+        return dashboardRecordLanguage(key, value) === language;
+      }) }));
+      for (const { language, keys } of plan) {
+        localStorage.setItem(STUDY_KEY + "reset:" + language, JSON.stringify({ generation: newStudyId(), keys }));
+      }
+      completePendingResets(localStorage);
+    });
+  } catch (error) {
+    if (error instanceof StudyError) throw error;
+    throw new StudyError("storage");
+  } finally { window.dispatchEvent(new Event(STUDY_CHANGED)); }
+}
+function readJSON(storage: StorageLike, key: string, excluded = pendingResetKeys(storage)): unknown {
+  if (excluded.has(key)) return null;
   const raw = storage.getItem(key);
   return raw === null ? null : JSON.parse(raw);
 }
-export function readExtraActivity(storage: StorageLike = localStorage): ExtraActivityDraft | null {
+export function readExtraActivity(storage: StorageLike = localStorage, excluded = pendingResetKeys(storage)): ExtraActivityDraft | null {
   try {
-    const raw = readJSON(storage, STUDY_KEY + "active:extra-activities");
+    const raw = readJSON(storage, STUDY_KEY + "active:extra-activities", excluded);
     if (raw === null) return null;
     const draft = extraDraft(raw);
     return storage.getItem(recordKey("session", draft.id)) === null ? draft : null;
@@ -161,11 +287,14 @@ export function readExtraActivity(storage: StorageLike = localStorage): ExtraAct
 export function readStudyStore(storage: StorageLike = localStorage, module?: StudyModule): StudyStore {
   try {
     const result = emptyStore();
-    result.extraActivity = readExtraActivity(storage);
-    if (module && module !== "extra-activities") result.activeSession = readJSON(storage, STUDY_KEY + "active:" + module) as StudySession | null;
+    const excluded = pendingResetKeys(storage);
+    const generations = readResetGenerations(storage);
+    if (Object.keys(generations).length) result.resetGeneration = generations;
+    result.extraActivity = readExtraActivity(storage, excluded);
+    if (module && module !== "extra-activities") result.activeSession = readJSON(storage, STUDY_KEY + "active:" + module, excluded) as StudySession | null;
     const keys = Array.from({ length: storage.length }, (_, i) => storage.key(i)).filter((k): k is string => !!k && k.startsWith(STUDY_KEY));
     for (const key of keys.sort()) {
-      const value = readJSON(storage, key);
+      const value = readJSON(storage, key, excluded);
       if (value === null) continue;
       if (key.startsWith(STUDY_KEY + "session:")) {
         const item = session(value);
@@ -199,15 +328,16 @@ export function readStudyStore(storage: StorageLike = localStorage, module?: Stu
 export function readStudyCheckpoints(storage: StorageLike = localStorage): StudySession[] {
   try {
     const checkpoints: StudySession[] = [];
+    const excluded = pendingResetKeys(storage);
     for (const module of STUDY_MODULES) {
       if (module === "extra-activities") continue; // Its draft has a separate shape.
-      const raw = readJSON(storage, STUDY_KEY + "active:" + module);
+      const raw = readJSON(storage, STUDY_KEY + "active:" + module, excluded);
       if (raw === null) continue;
       const item = session(raw);
       if (item.module !== module) return invalid();
       if (item.activeSeconds > 0) checkpoints.push(item);
     }
-    const extra = readExtraActivity(storage);
+    const extra = readExtraActivity(storage, excluded);
     if (extra && extra.accumulatedMs >= 1000) {
       // Only the durable accumulated part is confirmed, never an estimated gap.
       checkpoints.push(finishExtra({ ...extra, state: "paused", runningSince: null, recoveryAt: undefined },
@@ -238,8 +368,15 @@ function entries(store: StudyStore, module?: StudyModule): Map<string, string> {
   if (module && module !== "extra-activities") add(STUDY_KEY + "active:" + module, store.activeSession);
   return values;
 }
-export function writeStudyStore(store: StudyStore, storage: StorageLike = localStorage, previous = readStudyStore(storage), module?: StudyModule): void {
+export function writeStudyStore(store: StudyStore, storage: StorageLike = localStorage, previous = readStudyStore(storage), module?: StudyModule, expectedGenerations = store.resetGeneration): void {
   const next = validateStore(store), before = entries(previous, module), after = entries(next, module);
+  const generations = readResetGenerations(storage);
+  for (const [key, value] of after) {
+    if (before.get(key) === value || key.startsWith(STUDY_KEY + "goal:")) continue;
+    const language = (JSON.parse(value) as { language: string }).language;
+    if ((next.resetGeneration?.[language] ?? "") !== (generations[language] ?? "") ||
+      (expectedGenerations?.[language] ?? "") !== (generations[language] ?? "")) throw new StudyError("stale");
+  }
   for (const item of next.studyData.sessions) {
     const raw = storage.getItem(recordKey("session", item.id));
     if (raw && JSON.stringify(session(JSON.parse(raw))) !== JSON.stringify(item)) throw new StudyError("conflict");
@@ -253,15 +390,16 @@ export function writeStudyStore(store: StudyStore, storage: StorageLike = localS
     for (const key of before.keys()) if (!after.has(key) && !key.startsWith(STUDY_KEY + "session:")) storage.removeItem(key);
   } catch { throw new StudyError("storage"); }
 }
-export async function updateStudyStore(change: (store: StudyStore) => StudyStore, module?: StudyModule): Promise<StudyStore> {
+export async function updateStudyStore(change: (store: StudyStore) => StudyStore, module?: StudyModule, expectedGenerations = readResetGenerations()): Promise<StudyStore> {
   // Short transaction lock, independent of the long-lived module control locks.
   const locks = getStudyLocks();
   if (!locks) throw new StudyError("unsupported");
   return locks.request("bej-study-v2:write", { controlResource: module }, lock => {
     if (!lock) throw new StudyError("otherTab");
+    completePendingResets(localStorage);
     const previous = readStudyStore(localStorage, module);
     const next = change(structuredClone(previous));
-    writeStudyStore(next, localStorage, previous, module);
+    writeStudyStore(next, localStorage, previous, module, expectedGenerations);
     window.dispatchEvent(new Event(STUDY_CHANGED));
     return readStudyStore(localStorage, module);
   });

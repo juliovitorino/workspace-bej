@@ -9,6 +9,8 @@ import { backupOf, MAX_BACKUP_BYTES, mergeStudyData, newStudyId, parseStudyBacku
 import { localDay, studyTracker } from "./studyTrackingService";
 import { studyEntries, studyStats, type StudyFilters } from "./studyStats";
 import "./study.css";
+import { StudyDangerZone } from "./StudyDangerZone";
+import { StudyPeriodMenu } from "./StudyPeriodMenu";
 
 const languages = Object.keys(LANGUAGES) as StudentLanguage[];
 const HISTORY_PAGE_SIZE = 20;
@@ -16,6 +18,8 @@ const moduleKeys: Record<string, string> = { hashmap: "Hashmap", "memory-flashca
 export function StudyDashboard({ language }: { language: StudentLanguage }) {
   const { t, i18n } = useTranslation();
   const [expanded, setExpanded] = useState(false);
+  const [calendarAnchor, setCalendarAnchor] = useState<HTMLElement | null>(null);
+  const closeCalendar = useMemo(() => () => setCalendarAnchor(null), []);
   const [historyVisible, setHistoryVisible] = useState(false);
   const [filtersVisible, setFiltersVisible] = useState(() => !window.matchMedia("(max-width: 820px)").matches);
   useEffect(() => {
@@ -162,21 +166,23 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
       setStore(current); setPending({ backup, baseline: JSON.stringify(current) });
     });
   }
-  const chart = (title: string, values: Record<string, number>, label: (key: string) => string = key => key, total?: number, modules = false) => {
+  const chart = (title: string, values: Record<string, number>, label: (key: string) => string = key => key, total?: number, modules = false, sectionId?: string) => {
     const entries = Object.entries(values).sort(modules
       ? ([a, secondsA], [b, secondsB]) => secondsB - secondsA || label(a).localeCompare(label(b), i18n.language)
       : ([a], [b]) => a.localeCompare(b));
     const max = Math.max(1, ...entries.map(([, seconds]) => seconds));
     const scale = Math.max(1, total ?? max);
-    return <section className="study-panel"><h3>{title}</h3>{!entries.length ? <p>{t("study.empty")}</p> : <ul className={modules ? "study-chart study-chart-modules" : "study-chart"}>{entries.map(([key, seconds]) => <li key={key}>
+    return <section id={sectionId} tabIndex={sectionId ? -1 : undefined} className="study-panel"><h3>{title}</h3>{!entries.length ? <p>{t("study.empty")}</p> : <ul className={modules ? "study-chart study-chart-modules" : "study-chart"}>{entries.map(([key, seconds]) => <li key={key}>
       <div><span>{label(key)}</span><strong>{duration(seconds)}{total !== undefined && ` · ${number(seconds / scale * 100)}%`}</strong></div><div className="study-bar" aria-hidden="true"><span style={{ width: `${seconds / scale * 100}%` }} /></div>
     </li>)}</ul>}</section>;
   };
   const informationIcon = <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v6"/><circle cx="12" cy="7" r="1" fill="currentColor" stroke="none"/></svg>;
   const dashboardControls = (floating = false) => <>
-        <button type="button" className={floating ? "study-floating-history" : "secondary-button study-icon-button"} aria-label={t("study.historyTitle")} title={t("study.historyTitle")} onClick={() => { setExpanded(false); setHistoryVisible(true); setScrollTarget("study-title"); }}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 11a9 9 0 1 1 2 7M3 4v7h7m2-5v6l4 2" /></svg></button>
-        <button type="button" className={floating ? "study-floating-settings" : "secondary-button study-icon-button"} aria-label={t("study.settings")} title={t("study.settings")} aria-expanded={settingsVisible} aria-controls="study-settings" onClick={() => { setExpanded(false); setSettingsVisible(!settingsVisible); setScrollTarget(settingsVisible ? "study-results" : "study-settings"); }}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m9 3-1 3-3 1-2 4 2 2v4l4 2 3-1 3 1 4-2v-4l2-2-2-4-3-1-1-3Z"/><circle cx="12" cy="12" r="3"/></svg></button>
-        <button type="button" className={floating ? "study-floating-info" : "secondary-button study-icon-button"} aria-label={t(detailsVisible ? "study.hideDetails" : "study.showDetails")} title={t(detailsVisible ? "study.hideDetails" : "study.showDetails")} aria-expanded={detailsVisible} aria-controls="study-details" onClick={() => { setExpanded(false); setDetailsVisible(!detailsVisible); if (floating && !detailsVisible) setScrollTarget("study-details"); }}>{informationIcon}</button>
+        <button type="button" className={floating ? "study-floating-calendar" : "secondary-button study-icon-button"} aria-label={t("study.calendar")} title={t("study.calendar")} aria-expanded={!!calendarAnchor} aria-controls="study-period-menu"
+          onClick={event => { const button = event.currentTarget; setCalendarAnchor(current => current === button ? null : button); }}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18m-12 4h2m2 0h2m2 0h2m-8 3h2m2 0h2"/></svg></button>
+        <button type="button" className={floating ? "study-floating-history" : "secondary-button study-icon-button"} aria-label={t("study.historyTitle")} title={t("study.historyTitle")} onClick={() => { closeCalendar(); setExpanded(false); setHistoryVisible(true); setScrollTarget("study-title"); }}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 11a9 9 0 1 1 2 7M3 4v7h7m2-5v6l4 2" /></svg></button>
+        <button type="button" className={floating ? "study-floating-settings" : "secondary-button study-icon-button"} aria-label={t("study.settings")} title={t("study.settings")} aria-expanded={settingsVisible} aria-controls="study-settings" onClick={() => { closeCalendar(); setExpanded(false); setSettingsVisible(!settingsVisible); setScrollTarget(settingsVisible ? "study-results" : "study-settings"); }}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m9 3-1 3-3 1-2 4 2 2v4l4 2 3-1 3 1 4-2v-4l2-2-2-4-3-1-1-3Z"/><circle cx="12" cy="12" r="3"/></svg></button>
+        <button type="button" className={floating ? "study-floating-info" : "secondary-button study-icon-button"} aria-label={t(detailsVisible ? "study.hideDetails" : "study.showDetails")} title={t(detailsVisible ? "study.hideDetails" : "study.showDetails")} aria-expanded={detailsVisible} aria-controls="study-details" onClick={() => { closeCalendar(); setExpanded(false); setDetailsVisible(!detailsVisible); if (floating && !detailsVisible) setScrollTarget("study-details"); }}>{informationIcon}</button>
   </>;
   return <section className="study-dashboard" aria-labelledby="study-title">
     <header className="study-header"><div><h2 id="study-title" tabIndex={-1}>{t(historyVisible ? "study.historyTitle" : "study.title")}</h2><p>{t("study.intro")}</p></div><div className="study-actions">
@@ -212,7 +218,7 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
         })}
       </section>
       {chart(t("study.byLanguage"), stats.byLanguage, code => languageName(code as StudentLanguage))}
-      {chart(t("study.byModule"), moduleValues, moduleLabel, stats.total, true)}
+      {chart(t("study.byModule"), moduleValues, moduleLabel, stats.total, true, "study-time-by-module")}
       {chart(t("extras.byCategory"), Object.fromEntries(EXTRA_CATEGORIES.map(key => [key, stats.byExtraCategory[key] ?? 0])), key => t(`extras.categories.${key}`), stats.external, true)}
       <div id="study-details" tabIndex={-1} className="study-content" hidden={!detailsVisible}>
       <div className="study-metrics">{([ ["accumulated", stats.total], ["today", stats.today], ["week", stats.week], ["month", stats.month], ["dailyAverage", stats.average] ] as const).map(([key, seconds]) => <div className="study-panel" key={key}><span>{t(`study.${key}`)}</span><strong>{duration(seconds)}</strong></div>)}
@@ -263,10 +269,12 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
           setStore(next); setPending(null); setConfirmed(false); setMessage(t("study.restored"));
         })}>{t("study.merge")}</button><button type="button" className="secondary-button" disabled={busy} onClick={() => { setPending(null); setConfirmed(false); }}>{t("study.cancel")}</button></div>
       </section>}
+      <StudyDangerZone language={language} dashboardLanguage={filters.language} onChanged={() => { setPending(null); setConfirmed(false); setEditing(null); }} />
       </section>
+      {calendarAnchor && <StudyPeriodMenu anchor={calendarAnchor} period={filters.period} onClose={closeCalendar} onSelect={period => { setFilters(current => ({ ...current, period })); closeCalendar(); setHistoryVisible(false); setScrollTarget("study-time-by-module"); }} />}
       <p hidden={historyVisible} className="study-note">{t("study.limitations")}</p>
       <p hidden={historyVisible} className="study-note">{t("study.compatibilityNote")}</p>
-        {!historyVisible && document.getElementById("app-floating-controls") && createPortal(<div className="study-mobile-controls"><div id="study-mobile-actions" className="study-mobile-actions" hidden={!expanded}>{dashboardControls(true)}<button type="button" className="hashmap-filter-toggle" aria-label={t(filtersVisible ? "navigation.hideFilters" : "navigation.showFilters")} title={t(filtersVisible ? "navigation.hideFilters" : "navigation.showFilters")} aria-expanded={filtersVisible} aria-controls="study-filters" onClick={() => { setExpanded(false); setFiltersVisible(!filtersVisible); setScrollTarget(filtersVisible ? "study-results" : "study-filters"); }}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button></div><button type="button" aria-label={t("study.moreOptions")} title={t("study.moreOptions")} aria-expanded={expanded} aria-controls="study-mobile-actions" onClick={() => setExpanded(!expanded)}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg></button></div>, document.getElementById("app-floating-controls")!)}
+        {!historyVisible && document.getElementById("app-floating-controls") && createPortal(<div className="study-mobile-controls"><div id="study-mobile-actions" className="study-mobile-actions" hidden={!expanded}>{dashboardControls(true)}<button type="button" className="hashmap-filter-toggle" aria-label={t(filtersVisible ? "navigation.hideFilters" : "navigation.showFilters")} title={t(filtersVisible ? "navigation.hideFilters" : "navigation.showFilters")} aria-expanded={filtersVisible} aria-controls="study-filters" onClick={() => { closeCalendar(); setExpanded(false); setFiltersVisible(!filtersVisible); setScrollTarget(filtersVisible ? "study-results" : "study-filters"); }}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button></div><button type="button" aria-label={t("study.moreOptions")} title={t("study.moreOptions")} aria-expanded={expanded} aria-controls="study-mobile-actions" onClick={() => { closeCalendar(); setExpanded(!expanded); }}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg></button></div>, document.getElementById("app-floating-controls")!)}
     </>}
   </section>;
 }

@@ -470,6 +470,50 @@ assert.ok(metricValue(translations.extras.consolidated).includes('2min 5s'));
 assert.equal(readStudyStore().studyData.sessions.length, 1);
 console.log('PASS live Dashboard: cross-tab checkpoint contributes to metrics/goals before completion, focus refresh, pause stays fixed, history wins without duplication and backup remains completed-only.');
 
+// The calendar uses the actual Dashboard filter state, with no persistence.
+const calendarWrites = writes;
+const calendarButton = () => named(dashboard.tree, translations.study.calendar);
+const periodSelect = () => find(dashboard.tree, n => n.type === 'select' && find(n, c => c.type === 'option' && c.props.value === 'custom'));
+const periodMenu = () => find(dashboard.tree, n => n.type?.name === 'StudyPeriodMenu');
+const calendarAnchor = {};
+const originalElementById = document.getElementById, originalMatchMedia = window.matchMedia;
+const calendarScrolls = []; let reducedMotion = false;
+document.getElementById = id => id === 'study-time-by-module' ? {
+  scrollIntoView(options) {
+    assert.equal(periodMenu(), null, 'menu collapses before scrolling');
+    assert.ok(find(dashboard.tree, node => node.props?.id === id), 'updated module chart is mounted');
+    calendarScrolls.push({ ...options, period: periodSelect().props.value });
+  }, focus(options) { assert.equal(options.preventScroll, true); }
+} : originalElementById(id);
+window.matchMedia = query => query === '(prefers-reduced-motion: reduce)' ? { matches: reducedMotion } : originalMatchMedia(query);
+for (const period of ['today', '7', '30', 'month', '90', 'all']) {
+  const beforeScroll = calendarScrolls.length;
+  calendarButton().props.onClick({ currentTarget: calendarAnchor }); dashboard.flush();
+  assert.equal(calendarScrolls.length, beforeScroll, 'opening never scrolls');
+  assert.equal(periodMenu().props.period, periodSelect().props.value);
+  periodMenu().props.onSelect(period); dashboard.flush();
+  assert.equal(periodSelect().props.value, period); assert.equal(periodMenu(), null);
+  assert.equal(calendarScrolls.length, beforeScroll + 1);
+  assert.deepEqual(calendarScrolls.at(-1), { behavior: 'smooth', block: 'start', period });
+  reducedMotion = true;
+  calendarButton().props.onClick({ currentTarget: calendarAnchor }); dashboard.flush();
+  periodMenu().props.onSelect(period); dashboard.flush();
+  assert.equal(periodMenu(), null); assert.equal(calendarScrolls.length, beforeScroll + 2, 'same period scrolls exactly once');
+  assert.deepEqual(calendarScrolls.at(-1), { behavior: 'instant', block: 'start', period });
+  reducedMotion = false;
+}
+const selectionScrolls = calendarScrolls.length;
+periodSelect().props.onChange({ target: { value: 'custom' } }); dashboard.flush();
+calendarButton().props.onClick({ currentTarget: calendarAnchor }); dashboard.flush();
+assert.equal(periodMenu().props.period, 'custom');
+periodMenu().props.onClose(); dashboard.flush(); assert.equal(periodSelect().props.value, 'custom');
+calendarButton().props.onClick({ currentTarget: calendarAnchor }); dashboard.flush();
+calendarButton().props.onClick({ currentTarget: calendarAnchor }); dashboard.flush(); assert.equal(periodMenu(), null);
+assert.equal(calendarScrolls.length, selectionScrolls, 'traditional filters, opening and closing never scroll to the module chart');
+document.getElementById = originalElementById; window.matchMedia = originalMatchMedia;
+assert.equal(writes, calendarWrites);
+console.log('PASS calendar Dashboard: all six periods share the existing filter, bidirectional selection, custom period, toggle/close and zero storage writes.');
+console.log('PASS calendar selection scroll: all six periods collapse before one scroll to the updated module chart, repeated active periods, reduced motion and no scroll without selection.');
 dashboard.dispose();
 console.log('PASS history pagination: 20/20/5 rows, disjoint pages, previous/next boundaries, filter reset, page clamping after data changes and empty state.');
 console.log('PASS module chart: 3min01s of 8min02s = 37.55%, filtered denominator, accurate bar width and safe empty state.');
