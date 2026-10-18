@@ -123,7 +123,7 @@
     "confirmMerge": "I reviewed the preview and confirm merging the history.",
     "merge": "Confirm merge restore",
     "unavailable": "History unavailable. Existing data has not been replaced. Check storage and reload the page.",
-    "limitations": "No automatic synchronization. Matching IDs are deduplicated; different IDs on different devices may represent the same interval. Checkpoints every 15 seconds: an interruption may lose the last unconfirmed segment. Imported sessions without daily buckets use their local start date.",
+    "limitations": "No automatic synchronization between devices. Matching IDs are deduplicated; different IDs on different devices may represent the same interval. Checkpoints are saved on interactions and state changes. Interactive modules cap each interval without interaction at 3 minutes; running Extra Activities have no such limit. An interruption may lose the unconfirmed segment. Imported sessions without daily buckets use their local start date.",
     "modes": {
       "all": "All",
       "manual": "Manual",

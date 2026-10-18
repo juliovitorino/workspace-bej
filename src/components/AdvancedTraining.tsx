@@ -1,3 +1,4 @@
+import { speakStudyAudio, cancelStudyAudio } from "../features/study/studyAudio";
 import { useTrainingStudy, type TrainingStudyReporter } from "../features/study/useTrainingStudy";
 import { TrainingStudyTime } from "../features/study/TrainingStudyTime";
 import { t, languageName as localizedLanguageName } from "../i18n";
@@ -374,7 +375,7 @@ export function AdvancedTraining({
       recognitionRef.current?.abort();
 
       if ("speechSynthesis" in window) {
-        window.speechSynthesis.cancel();
+        cancelStudyAudio();
       }
     };
   }, []);
@@ -416,7 +417,7 @@ export function AdvancedTraining({
     setDictationTarget(null);
 
     if ("speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
+      cancelStudyAudio();
     }
 
     window.requestAnimationFrame(() => {
@@ -587,7 +588,7 @@ export function AdvancedTraining({
     setDictationTarget(null);
 
     if ("speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
+      cancelStudyAudio();
     }
   }
 
@@ -851,7 +852,7 @@ export function AdvancedTraining({
       return;
     }
 
-    window.speechSynthesis.cancel();
+    cancelStudyAudio();
     setSpeechError(null);
     setEvaluationSpeaking(null);
 
@@ -884,7 +885,7 @@ export function AdvancedTraining({
       setSpeechError(t("common.couldNotPlayTheSentenceInTargetlanguage", { targetLanguage: (languageName) }));
     };
 
-    window.speechSynthesis.speak(utterance);
+    speakStudyAudio(utterance);
   }
 
   async function handleCopyEvaluationSentence(
@@ -939,7 +940,7 @@ export function AdvancedTraining({
       return;
     }
 
-    window.speechSynthesis.cancel();
+    cancelStudyAudio();
     setSpeechError(null);
     setSpeaking(false);
     setEvaluationSpeaking(null);
@@ -974,7 +975,7 @@ export function AdvancedTraining({
       setSpeechError(t("common.couldNotPlayTheSentenceInTargetlanguage", { targetLanguage: (languageName) }));
     };
 
-    window.speechSynthesis.speak(utterance);
+    speakStudyAudio(utterance);
   }
 
   return (
@@ -1754,7 +1755,7 @@ export function AdvancedTraining({
                 setEvaluationSpeaking(null);
 
                 if ("speechSynthesis" in window) {
-                  window.speechSynthesis.cancel();
+                  cancelStudyAudio();
                 }
               }}
             />

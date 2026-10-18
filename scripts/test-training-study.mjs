@@ -148,7 +148,8 @@ function input(practice, trusted = true) {
   const value = 'I might go home today.';
   const field = find(practice.component.tree, n => n.type === 'textarea');
   field.props.onChange({ target: { value } });
-  practice.component.tree.props.onInput({ isTrusted: trusted }); practice.component.flush();
+  practice.component.tree.props.onInput({ isTrusted: trusted });
+  listeners.get("input")?.({ type: "input", isTrusted: trusted, target: null }); practice.component.flush();
   assert.equal(find(practice.component.tree, n => n.type === 'textarea').props.value, value, 'typing survives a tracking render');
 }
 async function finish(practice) {
@@ -207,11 +208,11 @@ for (const module of ['basic-training', 'advanced-training']) {
 const idle = await openTraining('basic-training'); input(idle); await advance(30000, [idle.panel]); input(idle);
 await advance(IDLE_MS + 20000, [idle.panel]);
 const idleReading = studyTracker.readSession({ module: idle.module, language: 'en-US', mode: 'manual' });
-assert.equal(idleReading.state, 'idle'); assert.equal(idleReading.seconds, 330);
+assert.equal(idleReading.state, 'idle'); assert.equal(idleReading.seconds, 210);
 assert.equal(text(find(idle.panel.tree, n => n.props?.role === 'status')), translations.study.tracking.idle);
 const idleId = readStudyStore(localStorage, idle.module).activeSession.id;
 input(idle); await advance(30000, [idle.panel]); await finish(idle);
-assert.equal(readStudyStore().studyData.sessions.find(s => s.id === idleId).activeSeconds, 360, '20 seconds beyond IDLE_MS add zero');
+assert.equal(readStudyStore().studyData.sessions.find(s => s.id === idleId).activeSeconds, 240, '20 seconds beyond IDLE_MS add zero');
 
 // D/E: hidden source-module signals cannot become exercise signals.
 const originSignal = { view: 'chunk-flashcards', language: 'en-US', mode: 'manual', active: true };
@@ -261,7 +262,7 @@ const network = new Harness(p => useTrainingStudy(p.identity, p.ready, p.pending
 network.flush(); await settle(); network.tree.onInput({ isTrusted: true }); network.flush(); await advance(5000);
 network.flush({ ...pending, pending: true }); await advance(20000);
 const networkReading = studyTracker.readSession({ module: 'advanced-training', language: 'en-US', mode: 'manual' }); assert.equal(networkReading.seconds, 5);
-network.tree.onScrollCapture({ isTrusted: true }); network.flush(); await advance(10000);
+network.tree.onScrollCapture({ isTrusted: true }); listeners.get("pointerdown")?.({ type: "pointerdown", isTrusted: true, target: null }); network.flush(); await advance(10000);
 assert.equal(studyTracker.readSession({ module: 'advanced-training', language: 'en-US', mode: 'manual' }).seconds, 15);
 network.flush(pending); navigate('advanced-training', 'en-US', { view: 'advanced-training', language: 'en-US', active: true, mode: 'manual', activeUntil: now + IDLE_MS }, true);
 assert.equal(studyTracker.readSession({ module: 'advanced-training', language: 'en-US', mode: 'manual' }).state, 'unavailable');

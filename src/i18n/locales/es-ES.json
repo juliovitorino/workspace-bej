@@ -123,7 +123,7 @@
     "confirmMerge": "He revisado la vista previa y confirmo la fusión del historial.",
     "merge": "Confirmar restauración por fusión",
     "unavailable": "Historial no disponible. Los datos existentes no se han sustituido. Comprueba el almacenamiento y recarga la página.",
-    "limitations": "Sin sincronización automática. Los ID iguales se deduplican; distintos ID en diferentes dispositivos pueden representar el mismo intervalo. Puntos de control cada 15 segundos: una interrupción puede perder el último tramo no confirmado. Las sesiones importadas sin distribución diaria usan su fecha local de inicio.",
+    "limitations": "Sin sincronización automática entre dispositivos. Los ID iguales se deduplican; distintos ID en diferentes dispositivos pueden representar el mismo intervalo. Los puntos de control se guardan con las interacciones y los cambios de estado. Los módulos interactivos limitan cada intervalo sin interacción a 3 minutos; las Actividades Extras en curso no tienen ese límite. Una interrupción puede perder el tramo aún no confirmado. Las sesiones importadas sin distribución diaria usan su fecha local de inicio.",
     "modes": {
       "all": "Todas",
       "manual": "Manual",

@@ -1,3 +1,4 @@
+import { speakStudyAudio, cancelStudyAudio } from "../features/study/studyAudio";
 import type { StudentLanguage } from "../config/languages";
 
 const prompts: Record<StudentLanguage, string[]> = {
@@ -25,7 +26,7 @@ export class WalkingAudio {
     this.generation++;
     clearTimeout(this.timer);
     this.utterance = null;
-    window.speechSynthesis?.cancel();
+    cancelStudyAudio();
   }
 
   wait(ms: number, done: () => void) {
@@ -63,6 +64,6 @@ export class WalkingAudio {
     utterance.onerror = () => {
       if (generation === this.generation && !settled) { settled = true; this.cancel(); onError(); }
     };
-    try { synth.speak(this.utterance); } catch { this.cancel(); onError(); }
+    try { speakStudyAudio(this.utterance); } catch { this.cancel(); onError(); }
   }
 }

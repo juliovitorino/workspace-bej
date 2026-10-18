@@ -123,7 +123,7 @@
     "confirmMerge": "J’ai vérifié l’aperçu et je confirme la fusion de l’historique.",
     "merge": "Confirmer la restauration par fusion",
     "unavailable": "Historique indisponible. Les données existantes n’ont pas été remplacées. Vérifiez le stockage et rechargez la page.",
-    "limitations": "Sans synchronisation automatique. Les identifiants identiques sont dédupliqués ; des identifiants différents sur plusieurs appareils peuvent représenter le même intervalle. Points de contrôle toutes les 15 secondes : une interruption peut perdre le dernier segment non confirmé. Les sessions importées sans répartition quotidienne utilisent leur date locale de début.",
+    "limitations": "Sans synchronisation automatique entre appareils. Les identifiants identiques sont dédupliqués ; des identifiants différents sur plusieurs appareils peuvent représenter le même intervalle. Les points de contrôle sont enregistrés lors des interactions et des changements d’état. Les modules interactifs limitent chaque intervalle sans interaction à 3 minutes ; les Activités Extras en cours n’ont pas cette limite. Une interruption peut perdre le temps non confirmé. Les sessions importées sans répartition quotidienne utilisent leur date locale de début.",
     "modes": {
       "all": "Tous",
       "manual": "Manuel",

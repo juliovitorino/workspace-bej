@@ -47,14 +47,14 @@ const code = expected => error => error.code === expected;
 let app = runtime(), stop = app.tracker.start(); await settle();
 const context = { module: 'basic-training', language: 'en-US', mode: 'manual' };
 app.tracker.set(context, true); await settle(); now += 10000;
-await app.service.startExtraActivity('en-US', 'conversation', 'HelloTalk'); await settle();
+await app.service.startExtraActivity('en-US', 'conversation', 'HelloTalk'); app.tracker.set(null, false); await settle();
 let store = app.storage.readStudyStore(), draft = store.extraActivity;
 assert.equal(app.storage.totalSeconds(store.studyData), 10);
 assert.ok(draft); assert.equal(store.activeSession, null);
 await assert.rejects(() => app.service.startExtraActivity('fr-FR', 'writing', ''), code('extraActive'));
 await assert.rejects(() => app.service.changeExtraActivity(draft.id, 'stop'), code('zero'));
 now += 45 * 60000; // no interval ticks: hidden tab, locked screen or app switch
-app.tracker.set(context, true); app.tracker.checkpoint(); await settle();
+app.tracker.checkpoint(); await settle();
 assert.equal(app.tracker.readSession(context).seconds, 0);
 assert.equal(app.storage.totalSeconds(app.storage.readStudyStore().studyData), 10, 'unconfirmed time never enters totals');
 await app.service.changeExtraActivity(draft.id, 'stop'); await settle();
@@ -65,7 +65,7 @@ assert.equal(store.extraActivity, null);
 await app.service.changeExtraActivity(draft.id, 'stop');
 assert.equal(app.storage.readStudyStore().studyData.sessions.filter(s => s.id === draft.id).length, 1);
 app.tracker.set(null, false); await app.tracker.seal();
-console.log('PASS 45-minute HelloTalk: timestamp-only background time, pending exclusion, internal suppression, double-start/zero rejection and idempotent stop.');
+console.log('PASS 45-minute HelloTalk: timestamp-only background time, pending exclusion, independent module navigation, double-start/zero rejection and idempotent stop.');
 
 await app.service.startExtraActivity('en-US', 'private-class', 'lesson');
 draft = app.storage.readStudyStore().extraActivity;

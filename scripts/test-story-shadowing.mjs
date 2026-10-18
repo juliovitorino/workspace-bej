@@ -100,7 +100,7 @@ globalThis.clearInterval = id => intervals.delete(id);
 const utterances = [];
 let voices = [{ lang: 'en-US' }];
 globalThis.SpeechSynthesisUtterance = class { constructor(value) { this.text = value; } };
-globalThis.window = { speechSynthesis: {
+globalThis.window = { setInterval, clearInterval, addEventListener() {}, removeEventListener() {}, speechSynthesis: {
   cancel() { canceled++; }, getVoices: () => voices, speak: value => utterances.push(value),
   addEventListener: (name, fn) => listeners.set(name, fn), removeEventListener: name => listeners.delete(name)
 } };

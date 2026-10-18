@@ -123,7 +123,7 @@
     "confirmMerge": "Revisei a prévia e confirmo a mesclagem do histórico.",
     "merge": "Confirmar restauração por mesclagem",
     "unavailable": "Histórico indisponível. Os dados existentes não foram substituídos. Verifique o armazenamento e recarregue a página.",
-    "limitations": "Sem sincronização automática. IDs iguais são deduplicados; sessões com IDs diferentes em dispositivos distintos podem representar o mesmo intervalo. Checkpoints a cada 15 segundos: uma interrupção pode perder o último trecho não confirmado. Sessões importadas sem distribuição diária usam a data local de início.",
+    "limitations": "Sem sincronização automática entre dispositivos. IDs iguais são deduplicados; sessões com IDs diferentes em dispositivos distintos podem representar o mesmo intervalo. Checkpoints são salvos nas interações e mudanças de estado. Nos módulos interativos, cada intervalo sem interação tem teto de 3 minutos; Atividades Extras em execução não têm esse limite. Uma interrupção pode perder o trecho ainda não confirmado. Sessões importadas sem distribuição diária usam a data local de início.",
     "modes": {
       "all": "Todas",
       "manual": "Manual",

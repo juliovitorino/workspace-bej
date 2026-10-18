@@ -1,3 +1,4 @@
+import { speakStudyAudio, cancelStudyAudio } from "../features/study/studyAudio";
 import type { FavoriteChunk } from "../utils/favoriteChunks";
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
@@ -100,14 +101,14 @@ export function IntentionDetails({
   useEffect(() => {
     return () => {
       if ("speechSynthesis" in window) {
-        window.speechSynthesis.cancel();
+        cancelStudyAudio();
       }
     };
   }, []);
 
   useEffect(() => {
     if ("speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
+      cancelStudyAudio();
     }
 
     setSpeakingExampleIndex(null);
@@ -237,7 +238,7 @@ export function IntentionDetails({
       return;
     }
 
-    window.speechSynthesis.cancel();
+    cancelStudyAudio();
     setSpeechError(null);
     setSpeakingExampleIndex(null);
 
@@ -270,7 +271,7 @@ export function IntentionDetails({
       setSpeechError(t("details.couldNotPlayTheExample"));
     };
 
-    window.speechSynthesis.speak(utterance);
+    speakStudyAudio(utterance);
   }
 
   async function handleCopyIntentionId() {

@@ -1,5 +1,10 @@
 # Dashboard de Estudos
 
+> A contabilização, persistência e concorrência atuais estão descritas em
+> [study-tracking.md](study-tracking.md). Esse documento substitui as regras
+> históricas de chave única, lease, cinco minutos e checkpoints periódicos
+> descritas abaixo.
+
 O dashboard registra a dedicação à aprendizagem. As 750 horas são uma sugestão pessoal para inglês, sem garantia de fluência ou certificação do FSI. Os outros idiomas não recebem metas automáticas.
 
 ## Armazenamento e recuperação

@@ -5,8 +5,8 @@ import { StudyLease } from "./studyLease";
 
 export interface StudyContext { language: StudentLanguage; module: StudyModule; mode: StudyMode }
 export interface StudyReading { seconds: number; state: "waiting" | "active" | "idle" | "unavailable" }
-export const IDLE_MS = 5 * 60 * 1000;
-export const CHECKPOINT_MS = 15000;
+export const IDLE_MS = 3 * 60 * 1000;
+export const CONTROL_RETRY_MS = 15000;
 export function localDay(date: Date): string {
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
 }
@@ -16,39 +16,50 @@ export function localDay(date: Date): string {
 export class StudyClock {
   private current: (StudyContext & { id: string; startedAt: number }) | null = null;
   private last = 0;
-  private activeUntil = 0;
+  private enabled = false;
+  private media = false;
   private dailyMs: Record<string, number> = {};
   constructor(private uuid = newStudyId) {}
-  private advance(now: number) {
-    let start = this.last, end = Math.min(now, this.activeUntil);
-    // A suspended process confirms at most one minute, never the whole sleep gap.
-    end = Math.min(end, start + 60000);
-    while (start < end && this.current) {
+  private interval(now: number, buckets: Record<string, number>) {
+    if (!this.current || (!this.enabled && !this.media)) return;
+    let start = this.last;
+    const end = Math.max(start, this.media ? now : Math.min(now, start + IDLE_MS));
+    while (start < end) {
       const date = new Date(start), day = localDay(date);
-      const midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1).getTime();
-      const until = Math.min(end, midnight);
-      this.dailyMs[day] = (this.dailyMs[day] ?? 0) + until - start;
-      start = until;
+      const until = Math.min(end, new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1).getTime());
+      buckets[day] = (buckets[day] ?? 0) + until - start; start = until;
     }
-    this.last = now;
   }
-  snapshot(now: number): StudySession | null {
-    this.advance(now);
+  snapshot(now: number, preview = true): StudySession | null {
     if (!this.current) return null;
-    const dailySeconds = Object.fromEntries(Object.entries(this.dailyMs).map(([day, ms]) => [day, Math.floor(ms / 1000)]));
-    return { ...this.current, startedAt: new Date(this.current.startedAt).toISOString(), endedAt: new Date(now).toISOString(),
+    const buckets = { ...this.dailyMs };
+    if (preview) this.interval(now, buckets);
+    const dailySeconds = Object.fromEntries(Object.entries(buckets).map(([day, ms]) => [day, Math.floor(ms / 1000)]));
+    return { ...this.current, startedAt: new Date(this.current.startedAt).toISOString(), endedAt: new Date(Math.max(now, this.current.startedAt)).toISOString(),
       dailySeconds, activeSeconds: Object.values(dailySeconds).reduce((a, b) => a + b, 0) };
   }
-  set(context: StudyContext | null, active: boolean, now: number, until = Infinity): StudySession | null {
-    const previous = this.snapshot(now);
+  commit(now: number): StudySession | null {
+    const effective = Math.max(now, this.last);
+    this.interval(effective, this.dailyMs); this.last = effective;
+    return this.snapshot(effective, false);
+  }
+  isIdle(now: number) { return !this.media && this.enabled && now - this.last >= IDLE_MS; }
+  setMedia(playing: boolean, now: number, resuming = false) {
+    if (playing === this.media) return;
+    if (playing && resuming) this.last = Math.max(now, this.last);
+    else this.commit(now);
+    this.media = playing;
+  }
+  set(context: StudyContext | null, active: boolean, now: number, _until = Infinity): StudySession | null {
     const same = context && this.current && context.language === this.current.language && context.module === this.current.module && context.mode === this.current.mode;
-    if (!same) {
-      this.current = context && active ? { ...context, id: this.uuid(), startedAt: now } : null;
-      this.dailyMs = {};
-    } else if (!this.current && context && active) this.current = { ...context, id: this.uuid(), startedAt: now };
-    this.last = now;
-    this.activeUntil = active && this.current ? until : 0;
-    return !same ? previous : null;
+    if (same) {
+      if (active !== this.enabled) { this.commit(now); this.enabled = active; }
+      return null;
+    }
+    const previous = this.commit(now);
+    this.current = context && active ? { ...context, id: this.uuid(), startedAt: now } : null;
+    this.dailyMs = {}; this.last = now; this.enabled = !!this.current && active; this.media = false;
+    return previous;
   }
   finish(now: number): StudySession | null { return this.set(null, false, now); }
 }
@@ -62,8 +73,17 @@ function append(store: StudyStore, item: StudySession | null): StudyStore {
 export function recoverCheckpoint(store: StudyStore): StudyStore {
   return { ...append(store, store.activeSession), activeSession: null };
 }
+function tabStudyOwner() {
+  try {
+    const key = "bej-study-v2:tab-owner", previous = sessionStorage.getItem(key);
+    if (previous) return previous;
+    const id = newStudyId(); sessionStorage.setItem(key, id); return id;
+  } catch { return newStudyId(); }
+}
 export class StudyTracker {
-  readonly extraOwner = newStudyId();
+  readonly extraOwner = tabStudyOwner();
+  private mediaTokens = new Set<string>();
+  private lastInteractionWrite = -Infinity;
   private clock = new StudyClock();
   private context: StudyContext | null = null;
   private active = false;
@@ -84,15 +104,15 @@ export class StudyTracker {
   subscribe(listener: (status: string) => void) { this.listeners.add(listener); listener(this.status); return () => { this.listeners.delete(listener); }; }
   private report(status: string) { this.status = status; this.listeners.forEach(listener => listener(status)); }
   hasControl() { return !this.failed && this.lease?.resource === this.desiredModule && !!this.lease?.owns(); }
+  isViewing(module: StudyModule, language: StudentLanguage) { return this.context?.module === module && this.context.language === language; }
   requireControl() { if (!this.hasControl()) throw new StudyError(this.failed ? "storage" : "otherTab"); }
   hasExtraControl() { return !this.failed && !!this.extraLease?.owns(); }
   requireExtraControl() { if (!this.hasExtraControl()) throw new StudyError(this.failed ? "storage" : "otherTab"); }
-  private localExtra() { return readExtraActivity()?.owner === this.extraOwner; }
   readSession(context: StudyContext): StudyReading {
     if (!this.hasControl()) return { seconds: 0, state: "unavailable" };
     if (!this.context || this.context.module !== context.module || this.context.language !== context.language || this.context.mode !== context.mode) return { seconds: 0, state: "waiting" };
     const now = Date.now(), current = this.clock.snapshot(now);
-    return { seconds: current?.activeSeconds ?? 0, state: this.blocked || this.localExtra() ? "unavailable" : !current ? "waiting" : this.active && now < this.until ? "active" : now >= this.until ? "idle" : "unavailable" };
+    return { seconds: current?.activeSeconds ?? 0, state: this.blocked ? "unavailable" : !current ? "waiting" : !this.clock.isIdle(now) && (this.active || this.mediaTokens.size > 0) ? "active" : this.clock.isIdle(now) ? "idle" : "unavailable" };
   }
   private enqueue(change: (store: StudyStore) => StudyStore, lease = this.lease) {
     if (!lease) return Promise.resolve();
@@ -107,7 +127,7 @@ export class StudyTracker {
         if (this.started) this.report("otherTab");
         return;
       }
-      this.failed = true; this.clock = new StudyClock();
+      this.failed = true; this.clock = new StudyClock(); this.mediaTokens.clear();
       this.report(error instanceof StudyError ? error.code : "storage");
       lease.release();
     });
@@ -115,10 +135,11 @@ export class StudyTracker {
   }
   private syncClock() {
     if (!this.hasControl()) return;
-    const finished = this.clock.set(this.context, this.active && !this.localExtra(), Date.now(), this.until);
+    const finished = this.clock.set(this.context, this.active, Date.now(), this.until);
     if (finished) void this.enqueue(store => ({ ...append(store, finished), activeSession: null }));
   }
   setExtraView(value: boolean) {
+    if (value !== this.extraView) this.checkpointExtra();
     this.extraView = value;
     if (!value && this.extraLease?.owns() && !readExtraActivity()) {
       this.extraLease.release(); this.extraLease = null;
@@ -150,6 +171,7 @@ export class StudyTracker {
       this.transition = this.transition.then(async () => {
         if (this.lease && this.lease.resource !== this.desiredModule) {
           const old = this.lease, finished = this.clock.finish(Date.now());
+          this.mediaTokens.clear();
           if (old.owns()) await this.enqueue(store => ({ ...append(store, finished), activeSession: null }), old);
           old.release(); this.lease = null;
         }
@@ -182,15 +204,44 @@ export class StudyTracker {
       }
       await this.enqueue(recoverCheckpoint, lease);
       if (this.failed || !lease.owns()) return;
-      this.syncClock(); this.report("");
+      this.syncClock(); this.checkpoint(); this.report("");
     } finally { this.acquiring = false; }
+  }
+  interact(now = Date.now()) {
+    if (this.hasControl()) {
+      this.syncClock(); this.clock.commit(now);
+      if (now - this.lastInteractionWrite >= 250) {
+        this.lastInteractionWrite = now; this.checkpoint();
+      }
+      this.notifyReading();
+    }
+    this.interactExtra(now);
+  }
+  interactExtra(now = Date.now()) {
+    if (this.hasExtraControl() && now - this.lastExtraWrite >= 250) {
+      this.lastExtraWrite = now; this.checkpointExtra();
+    }
+  }
+  private lastExtraWrite = -Infinity;
+  private notifyReading() { this.listeners.forEach(listener => listener(this.status)); }
+  media(token: string, playing: boolean, resuming = false) {
+    if (!this.hasControl()) return;
+    if (!playing && !this.mediaTokens.has(token)) return;
+    if (playing && this.context) this.clock.set(this.context, true, Date.now());
+    if (playing) this.mediaTokens.add(token); else this.mediaTokens.delete(token);
+    this.clock.setMedia(this.mediaTokens.size > 0, Date.now(), resuming);
+    if (!playing) this.clock.set(this.context, this.active, Date.now());
+    this.checkpoint(); this.notifyReading();
   }
   checkpoint() {
     if (this.hasControl()) {
       this.syncClock();
-      const checkpoint = this.clock.snapshot(Date.now());
+      const checkpoint = this.clock.commit(Date.now());
       if (checkpoint) void this.enqueue(store => ({ ...store, activeSession: checkpoint }));
     }
+    this.checkpointExtra();
+  }
+  private checkpointExtra() {
     if (this.hasExtraControl()) {
       const now = Date.now(), lease = this.extraLease!;
       void this.enqueue(store => {
@@ -221,7 +272,7 @@ export class StudyTracker {
       if (this.extraView && !this.hasExtraControl()) void this.acquireExtraControl().catch(error => this.report(error instanceof StudyError ? error.code : "storage"));
     };
     retry();
-    const timer = window.setInterval(() => { retry(); this.checkpoint(); }, CHECKPOINT_MS);
+    const timer = window.setInterval(retry, CONTROL_RETRY_MS);
     // Do not stop the external clock at pagehide. Its persisted timestamp covers
     // suspension; another controller must explicitly confirm crash recovery.
     const closeControls = () => {
@@ -231,8 +282,8 @@ export class StudyTracker {
       if (lease?.owns()) void this.enqueue(store => ({ ...append(store, finished), activeSession: null }), lease);
       this.closing = this.queue.finally(() => { lease?.release(); extraLease?.release(); });
     };
-    const hide = () => { this.started = false; closeControls(); };
-    const show = () => { this.started = true; retry(); };
+    const hide = () => { this.checkpoint(); this.started = false; closeControls(); };
+    const show = () => { this.started = true; retry(); this.checkpoint(); this.notifyReading(); };
     window.addEventListener("pagehide", hide);
     window.addEventListener("pageshow", show);
     return () => {

@@ -63,12 +63,12 @@ try {
   assert.equal(store.studyData.sessions.length, 3);
   assert.equal(store.studyData.sessions.find(s => s.id === draft.id).activeSeconds, 3600);
   assert.equal(store.studyData.goals['en-US'], 800);
-  assert.equal(a.totalSeconds(store.studyData), 3840); // 3600 + two capped 60s + adjustment
+  assert.equal(a.totalSeconds(store.studyData), 4080); // 3600 + two capped 180s + adjustment
   const filters = { language: 'all', module: 'all', mode: 'all', period: 'all', from: '', to: '' };
-  assert.equal(a.studyStats(store.studyData, filters, new Date(now)).total, 3840);
+  assert.equal(a.studyStats(store.studyData, filters, new Date(now)).total, 4080);
   const backup = a.backupOf(store, new Date(now));
   await a.updateStudyStore(s => a.restoreStudyBackup(s, backup, JSON.stringify(s)));
-  assert.equal(a.totalSeconds(a.readStudyStore().studyData), 3840);
+  assert.equal(a.totalSeconds(a.readStudyStore().studyData), 4080);
   console.log('PASS A/B/D/E: reading + Hashmap + Shadowing, one-hour background interval, simultaneous finalization, three unique sessions, independent goals/adjustment, consolidated stats and idempotent backup import.');
 
   c.studyTracker.set(context('hashmap'), true); await settle();

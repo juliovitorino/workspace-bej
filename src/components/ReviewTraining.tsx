@@ -1,3 +1,4 @@
+import { speakStudyAudio, cancelStudyAudio } from "../features/study/studyAudio";
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { isAuthorMode } from "../utils/authorMode";
@@ -157,7 +158,7 @@ export function ReviewTraining({
       recognitionRef.current?.abort();
 
       if ("speechSynthesis" in window) {
-        window.speechSynthesis.cancel();
+        cancelStudyAudio();
       }
     };
   }, []);
@@ -282,7 +283,7 @@ export function ReviewTraining({
     setDictating(false);
 
     if ("speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
+      cancelStudyAudio();
     }
   }
 
@@ -499,7 +500,7 @@ export function ReviewTraining({
       return;
     }
 
-    window.speechSynthesis.cancel();
+    cancelStudyAudio();
     setSpeechError(null);
     setEvaluationSpeaking(null);
 
@@ -532,7 +533,7 @@ export function ReviewTraining({
       setSpeechError(t("common.couldNotPlayTheSentenceInTargetlanguage", { targetLanguage: (languageName) }));
     };
 
-    window.speechSynthesis.speak(utterance);
+    speakStudyAudio(utterance);
   }
 
   async function handleCopyEvaluationSentence(
@@ -587,7 +588,7 @@ export function ReviewTraining({
       return;
     }
 
-    window.speechSynthesis.cancel();
+    cancelStudyAudio();
     setSpeechError(null);
     setSpeaking(false);
     setEvaluationSpeaking(null);
@@ -622,7 +623,7 @@ export function ReviewTraining({
       setSpeechError(t("common.couldNotPlayTheSentenceInTargetlanguage", { targetLanguage: (languageName) }));
     };
 
-    window.speechSynthesis.speak(utterance);
+    speakStudyAudio(utterance);
   }
 
   return (
@@ -915,7 +916,7 @@ export function ReviewTraining({
                 setEvaluationSpeaking(null);
 
                 if ("speechSynthesis" in window) {
-                  window.speechSynthesis.cancel();
+                  cancelStudyAudio();
                 }
               }}
             />

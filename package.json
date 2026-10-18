@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "test:study": "node scripts/test-study-locks.mjs && node scripts/test-study-dashboard.mjs && node scripts/test-training-study.mjs && node scripts/test-extra-activities.mjs && node scripts/test-study-multitab.mjs",
+    "test:study": "node scripts/test-study-events.mjs && node scripts/test-study-locks.mjs && node scripts/test-study-dashboard.mjs && node scripts/test-training-study.mjs && node scripts/test-extra-activities.mjs && node scripts/test-study-multitab.mjs",
     "validate:hashmaps": "node scripts/validate-hashmap-locales.mjs",
     "build": "tsc -b && vite build",
     "preview": "vite preview",

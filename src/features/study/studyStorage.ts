@@ -1,5 +1,6 @@
 import { isStudentLanguage, type StudentLanguage } from "../../config/languages";
 import { getStudyLocks } from "./studyLocks";
+import { finishExtra } from "./extraActivityTime";
 
 export const STUDY_KEY = "bej-study-v2:";
 export const isStudyStorageKey = (key: string | null) => key === null || key.startsWith(STUDY_KEY);
@@ -199,12 +200,18 @@ export function readStudyCheckpoints(storage: StorageLike = localStorage): Study
   try {
     const checkpoints: StudySession[] = [];
     for (const module of STUDY_MODULES) {
-      if (module === "extra-activities") continue; // External drafts need confirmation.
+      if (module === "extra-activities") continue; // Its draft has a separate shape.
       const raw = readJSON(storage, STUDY_KEY + "active:" + module);
       if (raw === null) continue;
       const item = session(raw);
       if (item.module !== module) return invalid();
       if (item.activeSeconds > 0) checkpoints.push(item);
+    }
+    const extra = readExtraActivity(storage);
+    if (extra && extra.accumulatedMs >= 1000) {
+      // Only the durable accumulated part is confirmed, never an estimated gap.
+      checkpoints.push(finishExtra({ ...extra, state: "paused", runningSince: null, recoveryAt: undefined },
+        Date.parse(extra.updatedAt), Math.floor(extra.accumulatedMs / 1000)));
     }
     return checkpoints;
   } catch (error) {

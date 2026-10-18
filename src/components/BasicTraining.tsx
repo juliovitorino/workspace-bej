@@ -1,3 +1,4 @@
+import { speakStudyAudio, cancelStudyAudio } from "../features/study/studyAudio";
 import { useTrainingStudy, type TrainingStudyReporter } from "../features/study/useTrainingStudy";
 import { TrainingStudyTime } from "../features/study/TrainingStudyTime";
 import { t, languageName as localizedLanguageName } from "../i18n";
@@ -304,7 +305,7 @@ export function BasicTraining({
       recognitionRef.current?.abort();
 
       if ("speechSynthesis" in window) {
-        window.speechSynthesis.cancel();
+        cancelStudyAudio();
       }
     };
   }, []);
@@ -336,7 +337,7 @@ export function BasicTraining({
     setDictating(false);
 
     if ("speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
+      cancelStudyAudio();
     }
 
     // Após um novo sorteio, reposiciona o estudo no início dos cartões sorteados apenas no celular.
@@ -355,7 +356,7 @@ export function BasicTraining({
       setSpeechError(t("common.speechPlaybackIsUnavailableInThisBrowser"));
       return;
     }
-    window.speechSynthesis.cancel();
+    cancelStudyAudio();
     setSpeechError(null);
     setSpeaking(false);
     setEvaluationSpeaking(null);
@@ -376,7 +377,7 @@ export function BasicTraining({
         setSpeechError(t("basicTraining.couldNotPlayTheExampleInLanguage", { language: (LANGUAGES[locale].name.toLowerCase()) }));
       }
     };
-    window.speechSynthesis.speak(utterance);
+    speakStudyAudio(utterance);
   }
 
   function handleToggleDictation() {
@@ -502,7 +503,7 @@ export function BasicTraining({
     setDictating(false);
 
     if ("speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
+      cancelStudyAudio();
     }
   }
 
@@ -727,7 +728,7 @@ export function BasicTraining({
       return;
     }
 
-    window.speechSynthesis.cancel();
+    cancelStudyAudio();
     setSpeechError(null);
     setEvaluationSpeaking(null);
 
@@ -760,7 +761,7 @@ export function BasicTraining({
       setSpeechError(t("common.couldNotPlayTheSentenceInTargetlanguage", { targetLanguage: (languageName) }));
     };
 
-    window.speechSynthesis.speak(utterance);
+    speakStudyAudio(utterance);
   }
 
   async function handleCopyEvaluationSentence(
@@ -815,7 +816,7 @@ export function BasicTraining({
       return;
     }
 
-    window.speechSynthesis.cancel();
+    cancelStudyAudio();
     setSpeechError(null);
     setSpeaking(false);
     setEvaluationSpeaking(null);
@@ -850,7 +851,7 @@ export function BasicTraining({
       setSpeechError(t("common.couldNotPlayTheSentenceInTargetlanguage", { targetLanguage: (languageName) }));
     };
 
-    window.speechSynthesis.speak(utterance);
+    speakStudyAudio(utterance);
   }
 
   return (
@@ -1258,7 +1259,7 @@ export function BasicTraining({
                 setEvaluationSpeaking(null);
 
                 if ("speechSynthesis" in window) {
-                  window.speechSynthesis.cancel();
+                  cancelStudyAudio();
                 }
               }}
             />

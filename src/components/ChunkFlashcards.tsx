@@ -1,3 +1,5 @@
+import { speakStudyAudio, cancelStudyAudio } from "../features/study/studyAudio";
+import { useStudyReading } from "../features/study/useStudyReading";
 import { favoriteStudyItems, type FavoriteStudyItem } from "../utils/favoriteStudyItems";
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
@@ -55,6 +57,7 @@ export function ChunkFlashcards({
   onAdvancedTraining
 }: ChunkFlashcardsProps) {
   const { t } = useTranslation();
+  const trackedSeconds = useStudyReading(mode === "favorites" ? "chunk-favorites" : "chunk-flashcards", language);
   const authorMode = isAuthorMode();
   const [walking, setWalking] = useState(false);
   const [walkingSummary, setWalkingSummary] = useState<WalkingSummary | null>(null);
@@ -172,7 +175,7 @@ export function ChunkFlashcards({
         return;
       }
       if (mode === "favorites" && chunks.length === 0) {
-        window.speechSynthesis?.cancel();
+        cancelStudyAudio();
         if (studyStartedAt !== null) {
           setElapsedSeconds(Math.max(0, Math.floor(((pausedAt ?? Date.now()) - studyStartedAt - totalPausedMs) / 1000)));
           setStudyStartedAt(null);
@@ -213,7 +216,7 @@ export function ChunkFlashcards({
     // Inicia no primeiro chunk; uma nova rodada não zera a sessão.
     if (studyStartedAt === null) setStudyStartedAt(Date.now());
     if (typeof window !== "undefined" && "speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
+      cancelStudyAudio();
     }
     setAudioError(null);
     if (copyFeedbackTimeout.current !== null) clearTimeout(copyFeedbackTimeout.current);
@@ -231,7 +234,7 @@ export function ChunkFlashcards({
 
   function changeLevel(nextLevel: ChunkLevel) {
     if (nextLevel === level) return;
-    window.speechSynthesis?.cancel();
+    cancelStudyAudio();
     setLevel(nextLevel);
     setAudioError(null);
     setCopiedChunkId(null);
@@ -311,7 +314,7 @@ export function ChunkFlashcards({
 
     setAudioError(null);
     const synth = window.speechSynthesis;
-    synth.cancel();
+    cancelStudyAudio();
     const utterance = new SpeechSynthesisUtterance((currentChunk.targetIntention ?? currentChunk.english).trim());
     utterance.lang = language;
     utterance.rate = 0.9;
@@ -323,13 +326,13 @@ export function ChunkFlashcards({
         setAudioError(t("flashcards.couldNotPlayTheAudioInThisBrowser"));
       }
     };
-    synth.speak(utterance);
+    speakStudyAudio(utterance);
   }
 
   useEffect(() => {
     return () => {
       if (typeof window !== "undefined" && "speechSynthesis" in window) {
-        window.speechSynthesis.cancel();
+        cancelStudyAudio();
       }
     };
   }, []);
@@ -486,9 +489,9 @@ export function ChunkFlashcards({
         <div className="chunk-flashcards-heading-tools">
           <span className="chunk-flashcards-total">{t("flashcards.availableChunks", { count: total })}</span>
           {isStudyTimeVisible && (
-            <span className="chunk-flashcards-study-time" aria-label={t("flashcards.studyTimeTime", { time: (formatStudyTime(elapsedSeconds)) })}>
+            <span className="chunk-flashcards-study-time" aria-label={t("flashcards.studyTimeTime", { time: (formatStudyTime(trackedSeconds ?? elapsedSeconds)) })}>
               <span className="chunk-flashcards-study-time-label">{t("common.studyTime")}</span>
-              <span className="chunk-flashcards-study-time-value">{formatStudyTime(elapsedSeconds)}</span>
+              <span className="chunk-flashcards-study-time-value">{formatStudyTime(trackedSeconds ?? elapsedSeconds)}</span>
             </span>
           )}
           <button
@@ -566,7 +569,7 @@ export function ChunkFlashcards({
             {"⏸ "}{t("flashcards.studyPaused")}
           </strong>
           <span style={{ display: "block", marginTop: "0.3rem", fontWeight: 600 }}>
-            {t("flashcards.timerPaused", { time: formatStudyTime(elapsedSeconds) })}
+            {t("flashcards.timerPaused", { time: formatStudyTime(trackedSeconds ?? elapsedSeconds) })}
           </span>
         </div>
       )}
@@ -613,7 +616,7 @@ export function ChunkFlashcards({
             {mobile && <button type="button" className="primary-button walking-entry" onClick={() => {
               if (!isMobileDevice()) return;
               if (!currentChunk) nextChunk();
-              window.speechSynthesis?.cancel();
+              cancelStudyAudio();
               setWalkingSummary(null);
               setWalking(true);
             }}>{"🎧 "}{t("common.walkingMode")}</button>}
