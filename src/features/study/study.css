@@ -32,6 +32,13 @@
 .study-preview dl { display: grid; gap: 10px; }
 .study-preview dl > div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
 .study-preview dd { margin: 0; font-weight: 700; }
+.study-transfer { min-width: 0; }
+.study-transfer .study-actions button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; }
+.study-transfer label { display: grid; gap: 6px; margin: 12px 0; }
+.study-transfer label.study-check { display: flex; align-items: flex-start; gap: 8px; }
+.study-transfer .study-check input { width: auto; min-height: 0; margin-top: 4px; }
+.study-transfer select { min-height: 44px; max-width: 100%; padding: 8px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--surface); color: var(--text); }
+.study-transfer li { overflow-wrap: anywhere; }
 .study-danger, .study-danger-dialog { --study-danger: #b42318; --study-danger-solid: #b42318; border: 2px solid var(--study-danger); border-radius: 12px; padding: 20px; color: var(--text); background: var(--surface); }
 [data-theme="dark"] .study-danger, [data-theme="dark"] .study-danger-dialog { --study-danger: #ff9b91; --study-danger-solid: #a91c15; }
 .study-danger { margin-top: 32px; }

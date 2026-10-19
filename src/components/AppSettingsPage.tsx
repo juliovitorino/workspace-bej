@@ -1,3 +1,4 @@
+import { StudyDataTransfer } from "../features/study/StudyDataTransfer";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { ThemePreference } from "../theme";
@@ -50,12 +51,12 @@ export function AppSettingsPage({ theme, onThemeChange, onOpenStudy, onOpenData,
         </select>
       </label>}
       {category === "data" && <>
-        <p>{t("settingsPage.dataHelp")}</p>
+        <StudyDataTransfer settings />
         <div className="settings-shortcuts">
           <button type="button" className="secondary-button" onClick={() => onOpenData("settings")}>{t("settingsPage.openBackup")}</button>
           <button type="button" className="secondary-button" onClick={() => onOpenData("history")}>{t("study.history")}</button>
         </div>
-        <p className="settings-dialog-help">{t("study.backupNote")}</p>
+
       </>}
     </section>
   </section>;

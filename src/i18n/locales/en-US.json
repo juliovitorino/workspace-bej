@@ -1,4 +1,22 @@
 {
+  "studyRestore": {
+    "note": "Restore replaces all study sessions, manual adjustments and goals on this device with the backup data. App preferences are preserved.",
+    "preview": "Replacement restore preview",
+    "warning": "Local study records missing from the file will be removed. Export a current backup first if you want to keep them.",
+    "adjustments": "Manual adjustments in backup",
+    "after": "Time after restoring",
+    "confirm": "I confirm replacing all study records and goals on this device with the backup.",
+    "replace": "Replace data and restore",
+    "success": "Backup restored by replacement. Study data on this device now matches the file."
+  },
+  "studyTransfer": {
+    "title": "Study Consolidation",
+    "description": "Transfer and consolidate your study history between computer and phone without duplicating sessions.",
+    "export": "Export studies",
+    "import": "Import and consolidate",
+    "additional": "Additional time identified",
+    "alreadyConsolidated": "The history in this file is already consolidated on this device."
+  },
   "settingsPage": {
     "title": "Settings",
     "subtitle": "App preferences and adjustments",
@@ -154,12 +172,12 @@
     "empty": "No study recorded for these filters.",
     "showMore": "Show more",
     "myData": "My Study Data",
-    "backupNote": "Backup contains only goals, sessions and adjustments. Restore merges histories without deleting local records. Limit: 5 MB.",
+    "backupNote": "Backup of goals, sessions and adjustments. Consolidation merges histories without deleting local records; restore replaces this device’s study data. Limit: 5 MB.",
     "export": "Export backup",
     "restore": "Restore backup",
     "exported": "Backup download started.",
-    "restored": "Backup merged successfully. The dashboard is up to date.",
-    "preview": "Restore preview",
+    "restored": "Study history consolidated successfully. The Dashboard has been updated.",
+    "preview": "Consolidation preview",
     "backupSessions": "Sessions in backup",
     "newSessions": "New sessions",
     "duplicates": "Identical sessions already present",
@@ -172,7 +190,7 @@
     "keepLocal": "Keep local goals",
     "useIncoming": "Use backup goals",
     "confirmMerge": "I reviewed the preview and confirm merging the history.",
-    "merge": "Confirm merge restore",
+    "merge": "Confirm consolidation",
     "unavailable": "History unavailable. Existing data has not been replaced. Check storage and reload the page.",
     "limitations": "No automatic synchronization between devices. Matching IDs are deduplicated; different IDs on different devices may represent the same interval. Checkpoints are saved on interactions and state changes. Interactive modules cap each interval without interaction at 3 minutes; running Extra Activities have no such limit. An interruption may lose the unconfirmed segment. Imported sessions without daily buckets use their local start date.",
     "modes": {

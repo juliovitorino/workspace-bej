@@ -1,4 +1,22 @@
 {
+  "studyRestore": {
+    "note": "Restaurar substitui todas as sessões, ajustes manuais e metas deste dispositivo pelos dados do backup. Preferências do aplicativo são preservadas.",
+    "preview": "Prévia da restauração por substituição",
+    "warning": "Os registros de estudo locais que não estiverem no arquivo serão removidos. Exporte um backup atual antes de continuar se quiser preservá-los.",
+    "adjustments": "Ajustes manuais no backup",
+    "after": "Tempo após restaurar",
+    "confirm": "Confirmo a substituição de todos os registros de estudo e metas deste dispositivo pelo backup.",
+    "replace": "Substituir dados e restaurar",
+    "success": "Backup restaurado por substituição. Os dados de estudo deste dispositivo agora correspondem ao arquivo."
+  },
+  "studyTransfer": {
+    "title": "Consolidação de Estudos",
+    "description": "Transfira e consolide seu histórico de estudos entre computador e celular, sem duplicar sessões.",
+    "export": "Exportar estudos",
+    "import": "Importar e consolidar",
+    "additional": "Tempo adicional identificado",
+    "alreadyConsolidated": "O histórico deste arquivo já está consolidado neste dispositivo."
+  },
   "settingsPage": {
     "title": "Configurações",
     "subtitle": "Preferências e ajustes do aplicativo",
@@ -154,12 +172,12 @@
     "empty": "Nenhum estudo registrado para estes filtros.",
     "showMore": "Mostrar mais",
     "myData": "Meus Dados de Estudo",
-    "backupNote": "Backup apenas de metas, sessões e ajustes. A restauração mescla os históricos sem apagar registros locais. Limite: 5 MB.",
+    "backupNote": "Backup de metas, sessões e ajustes. A consolidação mescla os históricos sem apagar registros locais; a restauração substitui os dados do dispositivo. Limite: 5 MB.",
     "export": "Exportar backup",
     "restore": "Restaurar backup",
     "exported": "Download do backup iniciado.",
-    "restored": "Backup mesclado com sucesso. O dashboard foi atualizado.",
-    "preview": "Prévia da restauração",
+    "restored": "Histórico consolidado com sucesso. O Dashboard foi atualizado.",
+    "preview": "Prévia da consolidação",
     "backupSessions": "Sessões no backup",
     "newSessions": "Sessões novas",
     "duplicates": "Sessões idênticas já existentes",
@@ -172,7 +190,7 @@
     "keepLocal": "Manter metas locais",
     "useIncoming": "Usar metas do backup",
     "confirmMerge": "Revisei a prévia e confirmo a mesclagem do histórico.",
-    "merge": "Confirmar restauração por mesclagem",
+    "merge": "Confirmar consolidação",
     "unavailable": "Histórico indisponível. Os dados existentes não foram substituídos. Verifique o armazenamento e recarregue a página.",
     "limitations": "Sem sincronização automática entre dispositivos. IDs iguais são deduplicados; sessões com IDs diferentes em dispositivos distintos podem representar o mesmo intervalo. Checkpoints são salvos nas interações e mudanças de estado. Nos módulos interativos, cada intervalo sem interação tem teto de 3 minutos; Atividades Extras em execução não têm esse limite. Uma interrupção pode perder o trecho ainda não confirmado. Sessões importadas sem distribuição diária usam a data local de início.",
     "modes": {

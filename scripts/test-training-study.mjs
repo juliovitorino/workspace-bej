@@ -117,7 +117,7 @@ globalThis.fetch = async url => {
 const settle = async () => { for (let i = 0; i < 40; i++) await Promise.resolve(); };
 const { TrainingActivity, useTrainingStudy } = load('src/features/study/useTrainingStudy.ts');
 const { studyTracker, IDLE_MS } = load('src/features/study/studyTrackingService.ts');
-const { readStudyStore, totalSeconds, backupOf, parseStudyBackup, restoreStudyBackup } = load('src/features/study/studyStorage.ts');
+const { readStudyStore, totalSeconds, backupOf, parseStudyBackup, consolidateStudyBackup } = load('src/features/study/studyStorage.ts');
 const { effectiveStudyView, useStudyTracking } = load('src/features/study/useStudyTracking.ts');
 const { TrainingStudyTime } = load('src/features/study/TrainingStudyTime.tsx');
 const { BasicTraining } = load('src/components/BasicTraining.tsx');
@@ -291,8 +291,8 @@ console.log('PASS new module signals: central hook, initial inactivity, 65 secon
 
 // G: all exercise modules use the unchanged, idempotent backup contract.
 const current = readStudyStore(), backup = parseStudyBackup(JSON.stringify(backupOf(current, new Date(now))));
-let restored = restoreStudyBackup(current, backup, JSON.stringify(current));
-restored = restoreStudyBackup(restored, backup, JSON.stringify(restored));
+let restored = consolidateStudyBackup(current, backup, JSON.stringify(current));
+restored = consolidateStudyBackup(restored, backup, JSON.stringify(restored));
 assert.equal(totalSeconds(restored.studyData), totalSeconds(current.studyData)); assert.deepEqual(restored.studyData.sessions, current.studyData.sessions);
 assert.equal(backup.schemaVersion, 1); assert.equal(restored.studyData.goals['en-US'], 750);
 tracking.dispose(); await settle();

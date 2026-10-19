@@ -22,7 +22,7 @@ function load(file) {
 const storage = load('src/features/study/studyStorage.ts');
 const { StudyClock, recoverCheckpoint, localDay, IDLE_MS } = load('src/features/study/studyTrackingService.ts');
 const { studyStats } = load('src/features/study/studyStats.ts');
-const { emptyStore, backupOf, parseStudyBackup, mergeStudyData, restoreStudyBackup, writeStudyStore, readStudyStore, totalSeconds, STUDY_KEY, StudyError } = storage;
+const { emptyStore, backupOf, parseStudyBackup, mergeStudyData, consolidateStudyBackup, writeStudyStore, readStudyStore, totalSeconds, STUDY_KEY, StudyError } = storage;
 const code = expected => e => e instanceof StudyError && e.code === expected;
 const rawStore = new Map([['bej-favorite-chunks', '[{"id":"keep","language":"en-US"}]'], ['interface-theme', 'dark']]);
 let failWrite = false;
@@ -70,21 +70,46 @@ const incoming = parseStudyBackup(JSON.stringify(backup));
 const merge = mergeStudyData(emptyStore().studyData, incoming.studyData);
 assert.equal(merge.newSessions, 5); assert.equal(merge.newAdjustments, 1);
 assert.equal(merge.afterSeconds, 432360);
-const restored = restoreStudyBackup(emptyStore(), incoming, JSON.stringify(emptyStore()));
+const restored = consolidateStudyBackup(emptyStore(), incoming, JSON.stringify(emptyStore()));
 assert.equal(totalSeconds(restored.studyData), totalSeconds(first.studyData), 'round trip preserves the exact second total');
-const again = restoreStudyBackup(restored, incoming, JSON.stringify(restored));
+const again = consolidateStudyBackup(restored, incoming, JSON.stringify(restored));
 assert.equal(totalSeconds(again.studyData), 432360, 'repeated restore adds no hours');
 assert.equal(mergeStudyData(again.studyData, incoming.studyData).duplicates, 5);
+
+// Two devices consolidate individual records, then exchange the same backup safely.
+const deviceSession = (id, hours, language, module, date) => ({ id, language, module, mode: 'manual',
+  startedAt: `${date}T08:00:00Z`, endedAt: `${date}T${String(8 + hours).padStart(2, '0')}:00:00Z`, activeSeconds: hours * 3600,
+  ...(module === 'extra-activities' ? { category: 'reading', note: 'Book' } : {}) });
+const desktop = emptyStore(), mobile = emptyStore();
+desktop.studyData.sessions = [deviceSession('desktop-2h', 2, 'en-US', 'hashmap', '2026-10-15')];
+mobile.studyData.sessions = [deviceSession('mobile-3h', 3, 'es-ES', 'extra-activities', '2026-10-16'), deviceSession('mobile-2h', 2, 'fr-FR', 'shadowing', '2026-10-17')];
+desktop.studyData = backupOf(desktop).studyData;
+mobile.studyData = backupOf(mobile).studyData;
+const mobileBackup = parseStudyBackup(JSON.stringify(backupOf(mobile)));
+const consolidation = mergeStudyData(desktop.studyData, mobileBackup.studyData);
+assert.equal(consolidation.currentSeconds, 2 * 3600);
+assert.equal(consolidation.afterSeconds - consolidation.currentSeconds, 5 * 3600);
+assert.equal(consolidation.newSessions, 2);
+const combined = consolidateStudyBackup(desktop, mobileBackup, JSON.stringify(desktop));
+assert.equal(totalSeconds(combined.studyData), 7 * 3600);
+const repeatedDevice = consolidateStudyBackup(combined, mobileBackup, JSON.stringify(combined));
+assert.equal(totalSeconds(repeatedDevice.studyData), 7 * 3600);
+assert.equal(mergeStudyData(repeatedDevice.studyData, mobileBackup.studyData).duplicates, 2);
+const consolidatedBackup = parseStudyBackup(JSON.stringify(backupOf(combined)));
+const mobileCombined = consolidateStudyBackup(mobile, consolidatedBackup, JSON.stringify(mobile));
+assert.equal(totalSeconds(mobileCombined.studyData), 7 * 3600);
+assert.deepEqual(mobileCombined.studyData.sessions.map(s => s.id).sort(), combined.studyData.sessions.map(s => s.id).sort());
+console.log('PASS cross-device: 2h + 5h = 7h, repeated import = 7h, reverse transfer = 7h, different dates/languages and external study preserved.');
 const repeated = structuredClone(backup); repeated.studyData.sessions.push(structuredClone(backup.studyData.sessions[0])); repeated.studyData.manualAdjustments.push(structuredClone(backup.studyData.manualAdjustments[0]));
-assert.equal(totalSeconds(restoreStudyBackup(restored, parseStudyBackup(JSON.stringify(repeated)), JSON.stringify(restored)).studyData), 432360);
+assert.equal(totalSeconds(consolidateStudyBackup(restored, parseStudyBackup(JSON.stringify(repeated)), JSON.stringify(restored)).studyData), 432360);
 const conflict = structuredClone(incoming); conflict.studyData.sessions[0].mode = 'walking';
 assert.equal(mergeStudyData(restored.studyData, conflict.studyData).conflicts.length, 1);
-assert.throws(() => restoreStudyBackup(restored, conflict, JSON.stringify(restored)), code('conflict'));
+assert.throws(() => consolidateStudyBackup(restored, conflict, JSON.stringify(restored)), code('conflict'));
 const adjustmentConflict = structuredClone(incoming); adjustmentConflict.studyData.manualAdjustments[0].seconds++;
-assert.throws(() => restoreStudyBackup(restored, adjustmentConflict, JSON.stringify(restored)), code('conflict'));
+assert.throws(() => consolidateStudyBackup(restored, adjustmentConflict, JSON.stringify(restored)), code('conflict'));
 const internalConflict = structuredClone(repeated); internalConflict.studyData.sessions.at(-1).mode = 'walking';
 assert.throws(() => parseStudyBackup(JSON.stringify(internalConflict)), code('conflict'));
-assert.throws(() => restoreStudyBackup(restored, incoming, JSON.stringify(emptyStore())), code('stale'));
+assert.throws(() => consolidateStudyBackup(restored, incoming, JSON.stringify(emptyStore())), code('stale'));
 const otherGoals = structuredClone(incoming); otherGoals.studyData.goals['en-US'] = 999; otherGoals.studyData.goals['fr-FR'] = 600;
 const keptGoals = mergeStudyData(restored.studyData, otherGoals.studyData);
 assert.equal(keptGoals.studyData.goals['en-US'], 750); assert.equal(keptGoals.studyData.goals['fr-FR'], 600);
@@ -143,7 +168,7 @@ fakeNow += 5000; studyTracker.set(null, false); await studyTracker.seal();
 const afterExport = readStudyStore(disk);
 assert.equal(afterExport.studyData.sessions.length, 2, 'export seals one ID and continuation gets another');
 assert.equal(totalSeconds(afterExport.studyData), 10);
-assert.equal(totalSeconds(restoreStudyBackup(afterExport, midSessionBackup, JSON.stringify(afterExport)).studyData), 10, 'importing the active-session export cannot duplicate the exported segment');
+assert.equal(totalSeconds(consolidateStudyBackup(afterExport, midSessionBackup, JSON.stringify(afterExport)).studyData), 10, 'importing the active-session export cannot duplicate the exported segment');
 studyTracker.set(context, true); await settle(); fakeNow += 5000; failWrite = true; studyTracker.checkpoint(); await settle();
 assert.equal(lastStatus, 'storage');
 await assert.rejects(() => studyTracker.seal(), code('storage'));
@@ -167,8 +192,8 @@ shadowClock.set({ language: 'en-US', module: 'shadowing', mode: 'manual' }, true
 for (let elapsed = 15000; elapsed <= 1800000; elapsed += 15000) shadowClock.commit(start + elapsed);
 const shadowStore = emptyStore(); shadowStore.studyData.sessions.push(shadowClock.finish(start + 1800000));
 const shadowBackup = parseStudyBackup(JSON.stringify(backupOf(shadowStore, new Date(start + 3600000))));
-let shadowRestored = restoreStudyBackup(emptyStore(), shadowBackup, JSON.stringify(emptyStore()));
-shadowRestored = restoreStudyBackup(shadowRestored, shadowBackup, JSON.stringify(shadowRestored));
+let shadowRestored = consolidateStudyBackup(emptyStore(), shadowBackup, JSON.stringify(emptyStore()));
+shadowRestored = consolidateStudyBackup(shadowRestored, shadowBackup, JSON.stringify(shadowRestored));
 const shadowStats = studyStats(shadowRestored.studyData, { ...filter, module: 'shadowing' }, new Date(start + 3600000));
 assert.equal(shadowStats.total, 1800); assert.equal(shadowStats.byModule.shadowing, 1800); assert.equal(shadowStats.byLanguage['en-US'], 1800);
 assert.equal(shadowRestored.studyData.sessions.length, 1); assert.equal(shadowRestored.studyData.goals['en-US'], 750);
@@ -184,8 +209,8 @@ for (const [module, seconds, language] of [['speaking-game', 65, 'en-US'], ['int
     startedAt: new Date(start).toISOString(), endedAt: new Date(start + seconds * 1000).toISOString(), activeSeconds: seconds });
 }
 const newBackup = parseStudyBackup(JSON.stringify(backupOf(newModuleStore, new Date(start + 3600000))));
-let mergedModules = restoreStudyBackup(emptyStore(), newBackup, JSON.stringify(emptyStore()));
-mergedModules = restoreStudyBackup(mergedModules, newBackup, JSON.stringify(mergedModules));
+let mergedModules = consolidateStudyBackup(emptyStore(), newBackup, JSON.stringify(emptyStore()));
+mergedModules = consolidateStudyBackup(mergedModules, newBackup, JSON.stringify(mergedModules));
 assert.equal(mergedModules.schemaVersion, 1); assert.equal(mergedModules.studyData.sessions.length, 2);
 assert.equal(totalSeconds(mergedModules.studyData), 190);
 for (const [module, seconds, language] of [['speaking-game', 65, 'en-US'], ['interpretation', 125, 'fr-FR']]) {

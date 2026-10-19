@@ -1,12 +1,13 @@
+import { StudyDataTransfer } from "./StudyDataTransfer";
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import { LANGUAGES, type StudentLanguage } from "../../config/languages";
 import { languageName } from "../../i18n";
-import { backupOf, MAX_BACKUP_BYTES, mergeStudyData, newStudyId, parseStudyBackup, readStudyStore, readStudyCheckpoints, studyDataWithCheckpoints, restoreStudyBackup,
+import { newStudyId, readStudyStore, readStudyCheckpoints, studyDataWithCheckpoints,
   STUDY_CHANGED, isStudyStorageKey, STUDY_MODULES, EXTRA_CATEGORIES, StudyError, updateStudyStore, validDay,
-  type ManualAdjustment, type StudyBackup, type StudyData, type StudyStore } from "./studyStorage";
-import { localDay, studyTracker } from "./studyTrackingService";
+  type ManualAdjustment, type StudyData, type StudyStore } from "./studyStorage";
+import { localDay } from "./studyTrackingService";
 import { studyEntries, studyStats, type StudyFilters } from "./studyStats";
 import "./study.css";
 import { StudyDangerZone } from "./StudyDangerZone";
@@ -59,10 +60,7 @@ export function StudyDashboard({ language, initialSection }: { language: Student
   const [date, setDate] = useState(localDay(new Date()));
   const [description, setDescription] = useState("");
   const [editing, setEditing] = useState<string | null>(null);
-  const [pending, setPending] = useState<{ backup: StudyBackup; baseline: string } | null>(null);
-  const [incomingGoals, setIncomingGoals] = useState(false);
-  const [confirmed, setConfirmed] = useState(false);
-  const fileInput = useRef<HTMLInputElement>(null);
+  const [transferVersion, setTransferVersion] = useState(0);
   const [now, setNow] = useState(() => new Date());
   const [historyPage, setHistoryPage] = useState(1);
   const fail = (e: unknown) => { setError(t(`study.errors.${e instanceof StudyError ? e.code : "storage"}`)); setMessage(""); };
@@ -99,8 +97,6 @@ export function StudyDashboard({ language, initialSection }: { language: Student
   const currentHistoryPage = Math.min(historyPage, historyPages);
   const historyRows = history.slice((currentHistoryPage - 1) * HISTORY_PAGE_SIZE, currentHistoryPage * HISTORY_PAGE_SIZE);
   useEffect(() => { setHistoryPage(page => Math.min(page, historyPages)); }, [historyPages]);
-  const preview = useMemo(() => store && pending && mergeStudyData(store.studyData, pending.backup.studyData, incomingGoals), [store, pending, incomingGoals]);
-  const stale = !!pending && (JSON.stringify(store) !== pending.baseline || !!store?.extraActivity);
   const duration = (seconds: number) => {
     const parts = [["durationHours", Math.floor(seconds / 3600)], ["durationMinutes", Math.floor(seconds % 3600 / 60)], ["durationSeconds", Math.floor(seconds % 60)]] as const;
     return parts.filter(([, value]) => value > 0).map(([key, value]) => t(`study.${key}`, { count: value })).join(" ") || t("study.zeroDuration");
@@ -148,28 +144,6 @@ export function StudyDashboard({ language, initialSection }: { language: Student
         return { ...data, manualAdjustments: editing ? data.manualAdjustments.map(a => a.id === editing ? item : a) : [...data.manualAdjustments, item] };
       });
       resetAdjustment(); setMessage(t("study.saved"));
-    });
-  }
-  async function exportBackup() {
-    await studyTracker.seal();
-    const backup = backupOf(readStudyStore());
-    const stamp = backup.exportedAt.replace(/[-:]/g, "").replace("T", "-").slice(0, 15);
-    const url = URL.createObjectURL(new Blob([JSON.stringify(backup, null, 2)], { type: "application/json" }));
-    const anchor = document.createElement("a"); anchor.href = url; anchor.download = `bej-study-backup-${stamp}.json`;
-    document.body.appendChild(anchor); anchor.click(); anchor.remove();
-    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-    setMessage(t("study.exported"));
-  }
-  function selectFile(file?: File) {
-    if (!file) return;
-    if (store?.extraActivity) { fail(new StudyError("extraActive")); return; }
-    setPending(null); setConfirmed(false); setIncomingGoals(false);
-    void action(async () => {
-      if (file.size > MAX_BACKUP_BYTES) throw new StudyError("tooLarge");
-      let text: string;
-      try { text = await file.text(); } catch { throw new StudyError("invalid"); }
-      const backup = parseStudyBackup(text), current = readStudyStore();
-      setStore(current); setPending({ backup, baseline: JSON.stringify(current) });
     });
   }
   const chart = (title: string, values: Record<string, number>, label: (key: string) => string = key => key, total?: number, modules = false, sectionId?: string) => {
@@ -258,24 +232,9 @@ export function StudyDashboard({ language, initialSection }: { language: Student
         <span role="status">{t("study.historyPage", { page: currentHistoryPage, total: historyPages, count: history.length })}</span>
         <button type="button" className="secondary-button" aria-controls="study-history-list" disabled={currentHistoryPage === historyPages} onClick={() => setHistoryPage(currentHistoryPage + 1)}>{t("common.next")}</button>
       </nav>}</section>
-      <section id="study-data" tabIndex={-1} hidden={historyVisible} className="study-panel"><h3>{t("study.myData")}</h3><p>{t("study.backupNote")}</p><div className="study-actions">
-        <button type="button" className="primary-button" disabled={busy} onClick={() => void action(exportBackup)}>{t("study.export")}</button>
-        <button type="button" className="secondary-button" disabled={busy || !!store.extraActivity} onClick={() => fileInput.current?.click()}>{t("study.restore")}</button>
-        <input ref={fileInput} hidden type="file" accept=".json,application/json" aria-label={t("study.restore")} onChange={e => { selectFile(e.target.files?.[0]); e.target.value = ""; }} />
-      </div>
-      {store.extraActivity && <p role="status">{t("study.errors.extraActive")}</p>}
-      {preview && pending && <section className="study-preview" aria-labelledby="study-preview-title"><h4 id="study-preview-title">{t("study.preview")}</h4>
-        <dl>{([ ["backupSessions", pending.backup.studyData.sessions.length], ["newSessions", preview.newSessions], ["duplicates", preview.duplicates], ["conflicts", preview.conflicts.length], ["newAdjustments", preview.newAdjustments] ] as const).map(([key, value]) => <div key={key}><dt>{t(`study.${key}`)}</dt><dd>{value}</dd></div>)}<div><dt>{t("study.currentHours")}</dt><dd>{duration(preview.currentSeconds)}</dd></div><div><dt>{t("study.afterHours")}</dt><dd>{duration(preview.afterSeconds)}</dd></div></dl>
-        {!!preview.conflicts.length && <p role="alert">{t("study.errors.conflict")}</p>}
-        {stale && <p role="alert">{t("study.errors.stale")}</p>}
-        {!!preview.goalDifferences.length && <><p>{t("study.goalDifferences")}</p><ul>{preview.goalDifferences.map(g => <li key={g.kind + g.language}>{languageName(g.language)} · {t(g.kind === "goals" ? "study.targetHours" : "study.monthlyHours")}: {number(g.local)} → {number(g.incoming)}</li>)}</ul><label>{t("study.goalChoice")}<select value={incomingGoals ? "incoming" : "local"} disabled={busy} onChange={e => { setIncomingGoals(e.target.value === "incoming"); setConfirmed(false); }}><option value="local">{t("study.keepLocal")}</option><option value="incoming">{t("study.useIncoming")}</option></select></label></>}
-        <label className="study-check"><input type="checkbox" checked={confirmed} disabled={busy || stale || !!preview.conflicts.length} onChange={e => setConfirmed(e.target.checked)} />{t("study.confirmMerge")}</label>
-        <div className="study-actions"><button type="button" className="primary-button" disabled={busy || !confirmed || stale || !!preview.conflicts.length} onClick={() => void action(async () => {
-          const next = await updateStudyStore(current => restoreStudyBackup(current, pending.backup, pending.baseline, incomingGoals));
-          setStore(next); setPending(null); setConfirmed(false); setMessage(t("study.restored"));
-        })}>{t("study.merge")}</button><button type="button" className="secondary-button" disabled={busy} onClick={() => { setPending(null); setConfirmed(false); }}>{t("study.cancel")}</button></div>
-      </section>}
-      <StudyDangerZone language={language} dashboardLanguage={filters.language} onChanged={() => { setPending(null); setConfirmed(false); setEditing(null); }} />
+      <section id="study-data" tabIndex={-1} hidden={historyVisible} className="study-panel">
+      <StudyDataTransfer mode="restore" key={transferVersion} disabled={busy} onBusyChange={setBusy} />
+      <StudyDangerZone language={language} dashboardLanguage={filters.language} onChanged={() => { setTransferVersion(value => value + 1); setEditing(null); }} />
       </section>
       {calendarAnchor && <StudyPeriodMenu anchor={calendarAnchor} period={filters.period} onClose={closeCalendar} onSelect={period => { setFilters(current => ({ ...current, period })); closeCalendar(); setHistoryVisible(false); setScrollTarget("study-time-by-module"); }} />}
       <p hidden={historyVisible} className="study-note">{t("study.limitations")}</p>

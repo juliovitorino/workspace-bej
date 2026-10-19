@@ -309,7 +309,7 @@ console.log('Multilingual Shadowing: translated cards/search, all CEFR levels, f
 // Dashboard integration uses the real Practice component and its real hook.
 // Advance a deterministic clock rather than waiting minutes in real time.
 const { StudyClock } = load('src/features/study/studyTrackingService.ts');
-const { emptyStore, backupOf, parseStudyBackup, restoreStudyBackup, totalSeconds } = load('src/features/study/studyStorage.ts');
+const { emptyStore, backupOf, parseStudyBackup, consolidateStudyBackup, totalSeconds } = load('src/features/study/studyStorage.ts');
 const { studyStats } = load('src/features/study/studyStats.ts');
 const baseTime = new Date(2026, 0, 1, 12).getTime();
 let studySequence = 0;
@@ -376,8 +376,8 @@ const noVoicePractice = dashboardPractice(); noVoicePractice.play(); noVoicePrac
 assert.equal(noVoicePractice.finish().length, 0, 'missing voice cannot start a study session'); voices = noVoiceSaved;
 const persisted = { ...emptyStore(), studyData: { ...emptyStore().studyData, sessions: recordsA } };
 const exported = parseStudyBackup(JSON.stringify(backupOf(persisted, new Date(baseTime + now))));
-let restored = restoreStudyBackup(emptyStore(), exported, JSON.stringify(emptyStore()));
-restored = restoreStudyBackup(restored, exported, JSON.stringify(restored));
+let restored = consolidateStudyBackup(emptyStore(), exported, JSON.stringify(emptyStore()));
+restored = consolidateStudyBackup(restored, exported, JSON.stringify(restored));
 assert.equal(totalSeconds(restored.studyData), 65); assert.equal(restored.studyData.sessions[0].id, recordsA[0].id);
 const metrics = studyStats(restored.studyData, { language: 'en-US', module: 'shadowing', mode: 'all', period: 'all', from: '', to: '' }, new Date(baseTime + now));
 assert.equal(metrics.total, 65); assert.equal(metrics.byModule.shadowing, 65); assert.equal(metrics.byLanguage['en-US'], 65);
