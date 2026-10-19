@@ -1,6 +1,25 @@
 import { speakStudyAudio, cancelStudyAudio } from "../features/study/studyAudio";
 import { studyTracker } from "../features/study/studyTrackingService";
 import type { StudentLanguage } from "../config/languages";
+import type { HashmapExampleV4 } from "../types/hashmap";
+import type { NeuralVoice } from "../features/study/neuralExampleAudio";
+
+/** Localiza o MP3 do exemplo. Para Cedar, o nome é <id>-cedar.mp3. */
+export function resolveWalkingMp3Url(
+  example: Pick<HashmapExampleV4, "id" | "mp3" | "exampleItem"> | undefined,
+  voice: NeuralVoice
+): string | undefined {
+  if (!example?.exampleItem.trim()) return undefined;
+  const registered = example.mp3?.[voice];
+  if (typeof registered === "string" &&
+      /^\/audio\/en-US\/(cedar|marin)\/[a-zA-Z0-9_-]+\.mp3$/.test(registered) &&
+      registered.includes(`/en-US/${voice}/`)) return registered;
+
+  // Todos os exemplos en-US têm o arquivo Cedar por ID no repositório.
+  // Não supor arquivos Marin sem referência explícita no JSON.
+  if (voice !== "cedar" || !/^[a-zA-Z0-9_-]+$/.test(example.id)) return undefined;
+  return `/audio/en-US/cedar/${example.id}-cedar.mp3`;
+}
 
 const prompts: Record<StudentLanguage, string[]> = {
   "pt-BR": ["Repita comigo", "De novo", "Mais uma vez", "Última vez"],
@@ -11,129 +30,142 @@ const prompts: Record<StudentLanguage, string[]> = {
 
 export function repetitionText(text: string, language: StudentLanguage, index: number, count: number): string {
   if (index === 0) return text;
-  const words = prompts[language];
-  const prompt = index === count - 1 ? words[3] : words[Math.min(index - 1, 2)];
+  const prompt = index === count - 1 ? prompts[language][3] : prompts[language][Math.min(index - 1, 2)];
   return `${prompt}. ${text}`;
 }
 
-// Shared owner of speech, local MP3 playback and repetition delays.
+/** Controls a single walking audio sequence, without interfering with the next chunk. */
 export class WalkingAudio {
   private generation = 0;
   private timer: ReturnType<typeof setTimeout> | undefined;
-  private utterance: SpeechSynthesisUtterance | null = null;
   private media: HTMLAudioElement | null = null;
   private mediaToken: string | null = null;
 
   cancel() {
     this.generation++;
     clearTimeout(this.timer);
-    this.utterance = null;
+    this.timer = undefined;
     if (this.media) {
       this.media.onplaying = this.media.onended = this.media.onerror = null;
       this.media.pause();
       this.media.removeAttribute("src");
       this.media = null;
     }
-    if (this.mediaToken) { studyTracker.media(this.mediaToken, false); this.mediaToken = null; }
+    if (this.mediaToken) {
+      studyTracker.media(this.mediaToken, false);
+      this.mediaToken = null;
+    }
     cancelStudyAudio();
   }
 
   wait(ms: number, done: () => void) {
     this.cancel();
-    const generation = this.generation;
-    this.timer = setTimeout(() => { if (generation === this.generation) done(); }, ms);
+    const request = this.generation;
+    this.timer = setTimeout(() => {
+      if (request === this.generation) done();
+    }, ms);
   }
 
-  /** MP3 for the chunk only; prompts remain independent browser utterances. */
+  /** The prompt is spoken separately; the local MP3 contains the original chunk only. */
   playChunk(text: string, language: StudentLanguage, rate: number, pauseMs: number,
     mp3Url: string | undefined, index: number, count: number,
     onSpoken: () => void, onDone: () => void, onError: () => void, onStart?: () => void) {
-    if (!mp3Url || language !== "en-US" ||
-        !/^\/audio\/en-US\/(cedar|marin)\/[a-zA-Z0-9_-]+\.mp3$/.test(mp3Url)) {
-      this.play(repetitionText(text, language, index, count), language, rate, pauseMs,
-        onSpoken, onDone, onError, false, onStart);
+    const validMp3 = language === "en-US" && typeof mp3Url === "string" &&
+      /^\/audio\/en-US\/(cedar|marin)\/[a-zA-Z0-9_-]+\.mp3$/.test(mp3Url);
+    if (!validMp3) {
+      this.play(repetitionText(text, language, index, count), language, rate,
+        pauseMs, onSpoken, onDone, onError, false, onStart);
       return;
     }
+
     this.cancel();
-    const generation = this.generation;
+    const request = this.generation;
+    const active = () => request === this.generation;
     let started = false;
-    const start = () => { if (!started && generation === this.generation) { started = true; onStart?.(); } };
-    const finish = () => {
-      if (generation !== this.generation) return;
-      if (this.mediaToken) { studyTracker.media(this.mediaToken, false); this.mediaToken = null; }
-      this.media = null;
-      onSpoken();
-      if (generation !== this.generation) return;
-      this.timer = setTimeout(() => { if (generation === this.generation) onDone(); }, pauseMs);
+    const startedOnce = () => {
+      if (active() && !started) {
+        started = true;
+        onStart?.();
+      }
     };
     const playFile = () => {
-      if (generation !== this.generation) return;
-      const media = new Audio(mp3Url);
+      if (!active()) return;
+      let media: HTMLAudioElement;
+      try {
+        media = new Audio(mp3Url);
+      } catch {
+        fallback();
+        return;
+      }
       this.media = media;
       media.playbackRate = rate;
-      const token = `walking-mp3-${generation}-${Date.now()}`;
+      const token = `walking-mp3-${request}-${Date.now()}`;
       this.mediaToken = token;
-      let failed = false;
-      const fallback = () => {
-        if (generation !== this.generation || failed) return;
-        failed = true;
-        // Missing/broken MP3 must never stop the walking session.
-        this.play(text, language, rate, pauseMs, onSpoken, onDone, onError, false, start);
-      };
       media.onplaying = () => {
-        if (generation !== this.generation) return;
+        if (!active()) return;
         studyTracker.media(token, true);
-        start();
+        startedOnce();
       };
-      media.onended = finish;
+      media.onended = () => {
+        if (!active()) return;
+        if (this.mediaToken === token) {
+          studyTracker.media(token, false);
+          this.mediaToken = null;
+        }
+        this.media = null;
+        onSpoken();
+        if (!active()) return;
+        this.timer = setTimeout(() => { if (active()) onDone(); }, pauseMs);
+      };
       media.onerror = fallback;
       void media.play().catch(fallback);
     };
-    if (index === 0) { playFile(); return; }
-    const prompt = index === count - 1 ? prompts[language][3] : prompts[language][Math.min(index - 1, 2)];
-    if (!("speechSynthesis" in window)) { playFile(); return; }
-    const utterance = new SpeechSynthesisUtterance(prompt);
+    const fallback = () => {
+      if (!active()) return;
+      // Invalid/missing MP3 must not break automatic advancement.
+      this.play(repetitionText(text, language, index, count), language, rate,
+        pauseMs, onSpoken, onDone, onError, false, startedOnce);
+    };
+
+    // O usuário selecionou Cedar/Marin: repetir sempre o mesmo MP3 neural.
+    playFile();
+  }
+
+  play(text: string, language: StudentLanguage, rate: number, pauseMs: number,
+    onSpoken: () => void, onDone: () => void, onError: () => void,
+    strictVoice = false, onStart?: () => void) {
+    this.cancel();
+    const request = this.generation;
+    if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
+      onError();
+      return;
+    }
+    const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = language;
     utterance.rate = rate;
     const voices = window.speechSynthesis.getVoices();
     utterance.voice = voices.find(v => v.lang.toLowerCase() === language.toLowerCase()) ??
       voices.find(v => v.lang.toLowerCase().startsWith(language.slice(0, 2))) ?? null;
-    this.utterance = utterance;
-    utterance.onstart = start;
-    utterance.onend = () => { if (generation === this.generation) { this.utterance = null; playFile(); } };
-    utterance.onerror = () => { if (generation === this.generation) { this.utterance = null; playFile(); } };
-    try { speakStudyAudio(utterance); } catch { if (generation === this.generation) playFile(); }
-  }
-
-  play(text: string, language: StudentLanguage, rate: number, pauseMs: number,
-    onSpoken: () => void, onDone: () => void, onError: () => void, strictVoice = false, onStart?: () => void) {
-    this.cancel();
-    const generation = this.generation;
-    if (!("speechSynthesis" in window)) { onError(); return; }
-    const synth = window.speechSynthesis;
-    const utterance = new SpeechSynthesisUtterance(text);
-    let settled = false;
-    this.utterance = utterance;
-    utterance.lang = language;
-    utterance.rate = rate;
-    const voices = synth.getVoices();
-    utterance.voice = voices.find(v => v.lang.toLowerCase() === language.toLowerCase()) ??
-      voices.find(v => v.lang.toLowerCase().startsWith(language.slice(0, 2))) ?? null;
     if (strictVoice && !utterance.voice) { onError(); return; }
-    utterance.onstart = () => { if (generation === this.generation) onStart?.(); };
+    let settled = false;
+    utterance.onstart = () => {
+      if (request === this.generation) onStart?.();
+    };
     utterance.onend = () => {
-      if (generation !== this.generation || settled) return;
+      if (request !== this.generation || settled) return;
       settled = true;
-      this.utterance = null;
       onSpoken();
-      if (generation !== this.generation) return;
+      if (request !== this.generation) return;
       this.timer = setTimeout(() => {
-        if (generation === this.generation) onDone();
+        if (request === this.generation) onDone();
       }, pauseMs);
     };
     utterance.onerror = () => {
-      if (generation === this.generation && !settled) { settled = true; this.cancel(); onError(); }
+      if (request !== this.generation || settled) return;
+      settled = true;
+      onError();
     };
-    try { speakStudyAudio(this.utterance); } catch { this.cancel(); onError(); }
+    try { speakStudyAudio(utterance, true); }
+    catch { if (!settled && request === this.generation) { settled = true; onError(); } }
   }
 }
