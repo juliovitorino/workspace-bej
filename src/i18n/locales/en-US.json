@@ -34,6 +34,7 @@
     "openBackup": "Backup, restore and management"
   },
   "studyDanger": {
+    "dataResetTitle": "Reset study data",
     "title": "Danger Zone",
     "intro": "Resets only the time and history records used by the Dashboard. Other app data is preserved. We recommend exporting a backup before continuing.",
     "languageTitle": "Reset one language's data",

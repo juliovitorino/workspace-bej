@@ -34,6 +34,7 @@
     "openBackup": "Backup, restauração e gerenciamento"
   },
   "studyDanger": {
+    "dataResetTitle": "Redefinição de dados",
     "title": "Zona de Perigo",
     "intro": "Redefine somente os registros de tempo e histórico que alimentam o Dashboard. Não apaga outros dados do aplicativo. Recomendamos exportar um backup antes de continuar.",
     "languageTitle": "Redefinir dados de um idioma",

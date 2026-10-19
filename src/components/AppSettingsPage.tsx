@@ -1,4 +1,5 @@
 import { StudyDataTransfer } from "../features/study/StudyDataTransfer";
+import { StudyDangerZone } from "../features/study/StudyDangerZone";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { ThemePreference } from "../theme";
@@ -56,7 +57,7 @@ export function AppSettingsPage({ theme, onThemeChange, onOpenStudy, onOpenData,
           <button type="button" className="secondary-button" onClick={() => onOpenData("settings")}>{t("settingsPage.openBackup")}</button>
           <button type="button" className="secondary-button" onClick={() => onOpenData("history")}>{t("study.history")}</button>
         </div>
-
+        <StudyDangerZone language={languages.language} onChanged={() => undefined} />
       </>}
     </section>
   </section>;

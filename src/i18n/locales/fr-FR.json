@@ -34,6 +34,7 @@
     "openBackup": "Sauvegarde, restauration et gestion"
   },
   "studyDanger": {
+    "dataResetTitle": "Réinitialisation des données",
     "title": "Zone de danger",
     "intro": "Réinitialise uniquement les données de temps et d’historique utilisées par le Dashboard. Les autres données de l’application sont conservées. Nous recommandons d’exporter une sauvegarde avant de continuer.",
     "languageTitle": "Réinitialiser les données d’une langue",

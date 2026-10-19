@@ -10,7 +10,6 @@ import { newStudyId, readStudyStore, readStudyCheckpoints, studyDataWithCheckpoi
 import { localDay } from "./studyTrackingService";
 import { studyEntries, studyStats, type StudyFilters } from "./studyStats";
 import "./study.css";
-import { StudyDangerZone } from "./StudyDangerZone";
 import { StudyPeriodMenu } from "./StudyPeriodMenu";
 
 const languages = Object.keys(LANGUAGES) as StudentLanguage[];
@@ -60,7 +59,6 @@ export function StudyDashboard({ language, initialSection }: { language: Student
   const [date, setDate] = useState(localDay(new Date()));
   const [description, setDescription] = useState("");
   const [editing, setEditing] = useState<string | null>(null);
-  const [transferVersion, setTransferVersion] = useState(0);
   const [now, setNow] = useState(() => new Date());
   const [historyPage, setHistoryPage] = useState(1);
   const fail = (e: unknown) => { setError(t(`study.errors.${e instanceof StudyError ? e.code : "storage"}`)); setMessage(""); };
@@ -233,8 +231,7 @@ export function StudyDashboard({ language, initialSection }: { language: Student
         <button type="button" className="secondary-button" aria-controls="study-history-list" disabled={currentHistoryPage === historyPages} onClick={() => setHistoryPage(currentHistoryPage + 1)}>{t("common.next")}</button>
       </nav>}</section>
       <section id="study-data" tabIndex={-1} hidden={historyVisible} className="study-panel">
-      <StudyDataTransfer mode="restore" key={transferVersion} disabled={busy} onBusyChange={setBusy} />
-      <StudyDangerZone language={language} dashboardLanguage={filters.language} onChanged={() => { setTransferVersion(value => value + 1); setEditing(null); }} />
+      <StudyDataTransfer mode="restore" disabled={busy} onBusyChange={setBusy} />
       </section>
       {calendarAnchor && <StudyPeriodMenu anchor={calendarAnchor} period={filters.period} onClose={closeCalendar} onSelect={period => { setFilters(current => ({ ...current, period })); closeCalendar(); setHistoryVisible(false); setScrollTarget("study-time-by-module"); }} />}
       <p hidden={historyVisible} className="study-note">{t("study.limitations")}</p>

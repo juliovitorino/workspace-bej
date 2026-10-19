@@ -34,6 +34,7 @@
     "openBackup": "Copias de seguridad, restauración y gestión"
   },
   "studyDanger": {
+    "dataResetTitle": "Restablecimiento de datos",
     "title": "Zona de peligro",
     "intro": "Restablece solo los registros de tiempo e historial utilizados por el Dashboard. Conserva los demás datos de la aplicación. Recomendamos exportar una copia de seguridad antes de continuar.",
     "languageTitle": "Restablecer los datos de un idioma",
