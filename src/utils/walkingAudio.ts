@@ -1,5 +1,7 @@
 import { speakStudyAudio, cancelStudyAudio } from "../features/study/studyAudio";
 import type { StudentLanguage } from "../config/languages";
+import type { HashmapExampleV4 } from "../types/hashmap";
+import { studyTracker } from "../features/study/studyTrackingService";
 
 const prompts: Record<StudentLanguage, string[]> = {
   "pt-BR": ["Repita comigo", "De novo", "Mais uma vez", "Última vez"],
@@ -8,11 +10,18 @@ const prompts: Record<StudentLanguage, string[]> = {
   "es-ES": ["Repite conmigo", "Otra vez", "Una vez más", "Una última vez"]
 };
 
-export function repetitionText(text: string, language: StudentLanguage, index: number, count: number): string {
-  if (index === 0) return text;
+// Tempo para o iOS liberar a atenuação do áudio após o TTS do prompt.
+const PROMPT_TO_CEDAR_DELAY_MS = 1300;
+
+export function repetitionPrompt(language: StudentLanguage, index: number, count: number): string | null {
+  if (index === 0) return null;
   const words = prompts[language];
-  const prompt = index === count - 1 ? words[3] : words[Math.min(index - 1, 2)];
-  return `${prompt}. ${text}`;
+  return index === count - 1 ? words[3] : words[Math.min(index - 1, 2)];
+}
+
+export function repetitionText(text: string, language: StudentLanguage, index: number, count: number): string {
+  const prompt = repetitionPrompt(language, index, count);
+  return prompt ? `${prompt}. ${text}` : text;
 }
 
 // One owner for speech and delays. Invalidate before cancel(), because browsers
@@ -21,11 +30,26 @@ export class WalkingAudio {
   private generation = 0;
   private timer: ReturnType<typeof setTimeout> | undefined;
   private utterance: SpeechSynthesisUtterance | null = null;
+  private media: HTMLAudioElement | null = null;
+  private mediaToken: string | null = null;
+  private watchdog: ReturnType<typeof setTimeout> | undefined;
 
   cancel() {
     this.generation++;
     clearTimeout(this.timer);
+    clearTimeout(this.watchdog);
     this.utterance = null;
+    if (this.media) {
+      this.media.onplaying = this.media.onended = this.media.onerror = null;
+      this.media.pause();
+      // Reutilizar o mesmo HTMLAudioElement é importante no celular:
+      // um elemento novo em cada repetição pode perder a autorização de play.
+      // O src é preservado e será reposicionado no início do próximo exemplo.
+    }
+    if (this.mediaToken) {
+      studyTracker.media(this.mediaToken, false);
+      this.mediaToken = null;
+    }
     cancelStudyAudio();
   }
 
@@ -33,6 +57,109 @@ export class WalkingAudio {
     this.cancel();
     const generation = this.generation;
     this.timer = setTimeout(() => { if (generation === this.generation) done(); }, ms);
+  }
+
+  /**
+   * Reproduz o prompt com TTS e a frase com o MP3 Cedar registrado no JSON.
+   * Um único HTMLAudioElement é reutilizado para toda a caminhada.
+   * Não trocar silenciosamente um Cedar válido por voz sintética quando
+   * a reprodução falhar: isso mascararia erros de autoplay/rede no celular.
+   */
+  playExample(example: HashmapExampleV4, language: StudentLanguage, prompt: string | null,
+    rate: number, pauseMs: number,
+    onSpoken: () => void, onDone: () => void, onError: () => void, onStart?: () => void) {
+    this.cancel();
+    let generation = this.generation;
+    let started = false;
+    const markStart = () => {
+      if (generation !== this.generation || started) return;
+      started = true;
+      onStart?.();
+    };
+    const startExample = () => {
+      if (generation !== this.generation) return;
+      const url = example.mp3?.cedar;
+      if (language !== "en-US" || typeof url !== "string" ||
+          !/^\/audio\/en-US\/cedar\/[a-zA-Z0-9_-]+\.mp3$/.test(url)) {
+        // Só usar TTS se o catálogo realmente não possuir um Cedar válido.
+        this.play(example.exampleItem, language, rate, pauseMs, onSpoken, onDone, onError, false, markStart);
+        generation = this.generation;
+        return;
+      }
+
+      const player = this.media ?? new Audio();
+      this.media = player;
+      player.preload = "auto";
+      const mediaToken = `walking-cedar-${generation}`;
+      this.mediaToken = mediaToken;
+      let finished = false;
+      const cleanup = () => {
+        clearTimeout(this.watchdog);
+        player.onplaying = player.onended = player.onerror = null;
+        if (this.mediaToken === mediaToken) {
+          studyTracker.media(mediaToken, false);
+          this.mediaToken = null;
+        }
+      };
+      const finish = () => {
+        if (finished || generation !== this.generation) return;
+        finished = true;
+        cleanup();
+        onSpoken();
+        if (generation !== this.generation) return;
+        this.timer = setTimeout(() => {
+          if (generation === this.generation) onDone();
+        }, pauseMs);
+      };
+      const fail = () => {
+        if (finished || generation !== this.generation) return;
+        finished = true;
+        cleanup();
+        player.pause();
+        onError();
+      };
+
+      // Preservar o mesmo elemento, trocando a URL somente ao mudar de exemplo.
+      if (player.getAttribute("src") !== url) player.src = url;
+      try { player.currentTime = 0; } catch { /* metadata ainda indisponível */ }
+      player.onplaying = () => {
+        if (generation !== this.generation || finished) return;
+        studyTracker.media(mediaToken, true);
+        markStart();
+        clearTimeout(this.watchdog);
+        const durationMs = Number.isFinite(player.duration) && player.duration > 0
+          ? player.duration * 1000 : 60000;
+        this.watchdog = setTimeout(() => {
+          if (generation !== this.generation || finished) return;
+          if (player.ended || (Number.isFinite(player.duration) &&
+              player.duration > 0 && player.currentTime >= player.duration - 0.15)) finish();
+          else fail();
+        }, durationMs + 5000);
+      };
+      player.onended = finish;
+      player.onerror = fail;
+      // Safari/iOS pode deixar o áudio de mídia atenuado após speechSynthesis.
+      // Solicitar sessão de reprodução antes de retomar o MP3, se disponível.
+      try {
+        const audioSession = (navigator as Navigator & {
+          audioSession?: { type: string };
+        }).audioSession;
+        if (audioSession && /iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+          audioSession.type = "playback";
+        }
+      } catch { /* API indisponível ou bloqueada: manter reprodução original */ }
+      // O mesmo player que iniciou a sessão é reutilizado após cada prompt.
+      void player.play().catch(fail);
+    };
+    if (!prompt) {
+      startExample();
+      return;
+    }
+    // O prompt é sintetizado isoladamente. Somente depois começa o Cedar.
+    // Aguardar após o evento onend do prompt (não após seu início),
+    // para o iOS restaurar o volume da mídia antes do Cedar.
+    this.play(prompt, language, rate, PROMPT_TO_CEDAR_DELAY_MS, () => {}, startExample, onError, false, markStart);
+    generation = this.generation;
   }
 
   play(text: string, language: StudentLanguage, rate: number, pauseMs: number,
