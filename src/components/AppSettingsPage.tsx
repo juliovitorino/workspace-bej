@@ -1,0 +1,62 @@
+import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
+import type { ThemePreference } from "../theme";
+import { LanguageSettingsFields, type LanguageSettingsProps } from "./LanguageSettingsFields";
+import { NeuralVoiceSelect } from "./NeuralVoiceSelect";
+
+const categories = ["audio", "languages", "study", "appearance", "data"] as const;
+interface Props extends LanguageSettingsProps {
+  theme: ThemePreference;
+  onThemeChange: (theme: ThemePreference) => void;
+  onOpenStudy: () => void;
+  onOpenData: (section: "settings" | "history") => void;
+}
+
+export function AppSettingsPage({ theme, onThemeChange, onOpenStudy, onOpenData, ...languages }: Props) {
+  const { t } = useTranslation();
+  const [category, setCategory] = useState<typeof categories[number]>("audio");
+  const title = useRef<HTMLHeadingElement>(null);
+  useEffect(() => { title.current?.focus({ preventScroll: true }); }, []);
+  return <section className="app-settings-page" aria-labelledby="app-settings-title">
+    <header>
+      <h2 ref={title} tabIndex={-1} id="app-settings-title">{t("settingsPage.title")}</h2>
+      <p>{t("settingsPage.subtitle")}</p>
+    </header>
+    <nav className="settings-categories" aria-label={t("settingsPage.categories")}>
+      {categories.map(key => <button type="button" key={key} aria-pressed={category === key}
+        aria-controls="settings-category-content" onClick={() => setCategory(key)}>
+        {t(`settingsPage.${key}`)}
+      </button>)}
+    </nav>
+    <section id="settings-category-content" className="settings-category-content" aria-labelledby="settings-category-title">
+      <h3 id="settings-category-title">{t(`settingsPage.${category}`)}</h3>
+      {category === "audio" && <>
+        <p>{t("settingsPage.audioHelp")}</p>
+        <NeuralVoiceSelect />
+      </>}
+      {category === "languages" && <LanguageSettingsFields {...languages} helpId="settings-page-language-help" />}
+      {category === "study" && <>
+        <h4>{t("common.walkingMode")}</h4>
+        <p>{t("settingsPage.walkingHelp")}</p>
+        <p className="settings-dialog-help">{t("settingsPage.walkingLocal")}</p>
+        <button type="button" className="secondary-button" onClick={onOpenStudy}>{t("settingsPage.openStudy")}</button>
+      </>}
+      {category === "appearance" && <label className="settings-theme-field">
+        {t("theme.label")}
+        <select value={theme} onChange={event => onThemeChange(event.target.value as ThemePreference)}>
+          <option value="light">{t("theme.light")}</option>
+          <option value="dark">{t("theme.dark")}</option>
+          <option value="auto">{t("theme.auto")}</option>
+        </select>
+      </label>}
+      {category === "data" && <>
+        <p>{t("settingsPage.dataHelp")}</p>
+        <div className="settings-shortcuts">
+          <button type="button" className="secondary-button" onClick={() => onOpenData("settings")}>{t("settingsPage.openBackup")}</button>
+          <button type="button" className="secondary-button" onClick={() => onOpenData("history")}>{t("study.history")}</button>
+        </div>
+        <p className="settings-dialog-help">{t("study.backupNote")}</p>
+      </>}
+    </section>
+  </section>;
+}

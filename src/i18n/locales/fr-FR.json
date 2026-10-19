@@ -1,4 +1,20 @@
 {
+  "settingsPage": {
+    "title": "Paramètres",
+    "subtitle": "Préférences et réglages de l’application",
+    "categories": "Catégories de paramètres",
+    "audio": "Audio",
+    "languages": "Langues",
+    "study": "Étude",
+    "appearance": "Apparence",
+    "data": "Données",
+    "audioHelp": "Choisissez la voix des exemples avec audio neuronal. Cette préférence est partagée entre les modules et enregistrée dans ce navigateur.",
+    "walkingHelp": "Ouvrez Chunk Flashcards puis, sur mobile, le Mode Marche. Utilisez l’engrenage pour régler les répétitions, la vitesse, les pauses et l’avance automatique.",
+    "walkingLocal": "Ces réglages restent propres à la session de marche. L’option audio de la traduction conserve sa préférence enregistrée.",
+    "openStudy": "Ouvrir Chunk Flashcards",
+    "dataHelp": "Utilisez les outils existants du Dashboard pour exporter ou restaurer une sauvegarde, consulter l’historique et gérer les données d’étude.",
+    "openBackup": "Sauvegarde, restauration et gestion"
+  },
   "studyDanger": {
     "title": "Zone de danger",
     "intro": "Réinitialise uniquement les données de temps et d’historique utilisées par le Dashboard. Les autres données de l’application sont conservées. Nous recommandons d’exporter une sauvegarde avant de continuer.",

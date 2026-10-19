@@ -1,4 +1,20 @@
 {
+  "settingsPage": {
+    "title": "Configuración",
+    "subtitle": "Preferencias y ajustes de la aplicación",
+    "categories": "Categorías de configuración",
+    "audio": "Audio",
+    "languages": "Idiomas",
+    "study": "Estudio",
+    "appearance": "Apariencia",
+    "data": "Datos",
+    "audioHelp": "Elige la voz de los ejemplos con audio neuronal. La preferencia se comparte entre los módulos y se guarda en este navegador.",
+    "walkingHelp": "Abre Chunk Flashcards y, en el móvil, entra en el Modo Caminata. Usa el engranaje para ajustar repeticiones, velocidad, pausas y avance automático.",
+    "walkingLocal": "Estos ajustes siguen siendo locales a la sesión de caminata. La opción de audio de la traducción conserva su preferencia guardada.",
+    "openStudy": "Abrir Chunk Flashcards",
+    "dataHelp": "Usa las herramientas existentes del Dashboard para exportar o restaurar una copia de seguridad, consultar el historial y gestionar los registros de estudio.",
+    "openBackup": "Copias de seguridad, restauración y gestión"
+  },
   "studyDanger": {
     "title": "Zona de peligro",
     "intro": "Restablece solo los registros de tiempo e historial utilizados por el Dashboard. Conserva los demás datos de la aplicación. Recomendamos exportar una copia de seguridad antes de continuar.",

@@ -1,3 +1,4 @@
+import { AppSettingsPage } from "./components/AppSettingsPage";
 import { StudyDashboard } from "./features/study/StudyDashboard";
 import { ExtraActivities } from "./features/study/ExtraActivities";
 import { useExtraActivity } from "./features/study/useExtraActivity";
@@ -51,6 +52,7 @@ function App() {
   const favoriteChunkCount = useMemo(() => favoriteStudyItems(data?.metadata.language === language ? data.mentalMap : [], favorites, language, "all").length,
   [data, favorites, language]);
   const [source, setSource] = useState<"remote" | "cache">("remote");
+  const [dashboardSection, setDashboardSection] = useState<"settings" | "history" | undefined>();
   const [currentView, setCurrentView] = useState<AppView>("hashmap");
   const [personalCount, setPersonalCount] = useState(0);
   useEffect(() => {
@@ -325,6 +327,7 @@ function App() {
         personalCount={personalCount}
         favoriteChunkCount={favoriteChunkCount}
         onViewChange={view => {
+          setDashboardSection(undefined);
           if (view === "hashmap" && window.matchMedia("(max-width: 820px)").matches) {
             closeTraining();
             setSelected(null);
@@ -333,7 +336,7 @@ function App() {
           } else {
             setFilterScrollRequest(0);
           }
-          if (view === "shadowing" || view === "favorite-chunks" || view === "study-dashboard" || view === "extra-activities") {
+          if (view === "settings" || view === "shadowing" || view === "favorite-chunks" || view === "study-dashboard" || view === "extra-activities") {
             closeTraining();
             setSelected(null);
             window.speechSynthesis?.cancel();
@@ -358,19 +361,26 @@ function App() {
               onClose={() => setSettingsDialog(null)}
             />}
             {studyWarning && (studyWarning !== "compatibility" || currentView === "study-dashboard") && <p className="warning-banner" role="status">{t(`study.warning.${studyWarning}`)}</p>}
-            {currentView === "study-dashboard" && <StudyDashboard language={language} />}
+            {currentView === "settings" && <AppSettingsPage
+              language={language} sourceLanguage={sourceLanguage} languageLocked={walkingActive}
+              onLanguageChange={changeLanguage} onSourceLanguageChange={changeSourceLanguage}
+              theme={theme} onThemeChange={changeTheme}
+              onOpenStudy={() => setCurrentView("chunk-flashcards")}
+              onOpenData={section => { setDashboardSection(section); setCurrentView("study-dashboard"); }}
+            />}
+            {currentView === "study-dashboard" && <StudyDashboard language={language} initialSection={dashboardSection} />}
             {extraActivity.draft && currentView !== "extra-activities" && <p className="warning-banner" role="status">{t("extras.activeNotice")} <button type="button" className="secondary-button" onClick={() => { closeTraining(); setSelected(null); setCurrentView("extra-activities"); }}>{t("extras.open")}</button></p>}
             {currentView === "extra-activities" && <ExtraActivities language={language} state={extraActivity} />}
             {currentView === "shadowing" && <StoryShadowing key={`${sourceLanguage}-${language}`} language={language} onStudyState={reportStudy} onMenu={() => setCurrentView("hashmap")} />}
 
-        {loading && currentView !== "shadowing" && currentView !== "study-dashboard" && currentView !== "extra-activities" && (
+        {loading && currentView !== "shadowing" && currentView !== "study-dashboard" && currentView !== "extra-activities" && currentView !== "settings" && (
           <div className="status-card">
             <div className="spinner" />
             <p>{t("app.loadingMentalHashmap")}</p>
           </div>
         )}
 
-        {!loading && error && !data && currentView !== "shadowing" && currentView !== "study-dashboard" && currentView !== "extra-activities" && (
+        {!loading && error && !data && currentView !== "shadowing" && currentView !== "study-dashboard" && currentView !== "extra-activities" && currentView !== "settings" && (
           <div className="status-card error-card">
             <h2>{t("app.couldNotLoadMentalHashmap")}</h2>
             <p>{error}</p>

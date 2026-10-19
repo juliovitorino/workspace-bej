@@ -1,8 +1,7 @@
-import { NeuralVoiceSelect } from "./NeuralVoiceSelect";
-import { t, languageName as localizedLanguageName } from "../i18n";
+import { LanguageSettingsFields } from "./LanguageSettingsFields";
 import { useTranslation } from "react-i18next";
 import { useEffect, useRef } from "react";
-import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
+import { type SourceLanguage, type StudentLanguage } from "../config/languages";
 import type { HashmapMetadata } from "../types/hashmap";
 import { APP_VERSION } from "../config/appInfo";
 
@@ -36,7 +35,6 @@ export function AppSettingsDialog({ kind, language, sourceLanguage, languageLock
     };
   }, []);
 
-  const codes = Object.keys(LANGUAGES) as StudentLanguage[];
   return (
     <dialog ref={dialogRef} className="app-settings-dialog" aria-labelledby="settings-dialog-title"
       onCancel={event => { event.preventDefault(); onClose(); }}>
@@ -45,26 +43,8 @@ export function AppSettingsDialog({ kind, language, sourceLanguage, languageLock
         <button type="button" className="secondary-button" onClick={onClose} aria-label={t("settings.closeDialog")} autoFocus>{t("common.close")}</button>
       </div>
       {kind === "languages" ? <>
-        <div className="settings-language-fields">
-          <NeuralVoiceSelect />
-          <label>
-            <span>{t("settings.sourceLanguageSource")}</span>
-            <select aria-label={t("common.sourceLanguage")} aria-describedby="language-selection-help" value={sourceLanguage} disabled={languageLocked}
-              onChange={event => onSourceLanguageChange(event.target.value as SourceLanguage)}>
-              {codes.map(code => <option key={code} value={code}>{LANGUAGES[code].flag} {localizedLanguageName(code)}</option>)}
-            </select>
-          </label>
-          <label>
-            <span>{t("settings.studyLanguageTarget")}</span>
-            <select aria-label={t("settings.studyLanguage")} aria-describedby="language-selection-help" value={language} disabled={languageLocked}
-              onChange={event => onLanguageChange(event.target.value as StudentLanguage)}>
-              {codes.map(code => <option key={code} value={code}>{LANGUAGES[code].flag} {localizedLanguageName(code)}</option>)}
-            </select>
-          </label>
-        </div>
-        <p id="language-selection-help" className="settings-dialog-help">{languageLocked
-          ? t("settings.exitWalkingModeToChangeLanguages")
-          : t("settings.choosingTheOtherLanguageSwapsTheSourceAndStudyLanguages")}</p>
+        <LanguageSettingsFields language={language} sourceLanguage={sourceLanguage} languageLocked={languageLocked}
+          onLanguageChange={onLanguageChange} onSourceLanguageChange={onSourceLanguageChange} />
       </> : <>
         <p>Brazilian English Journey — Mental Hashmap</p>
         <dl className="settings-app-metadata">

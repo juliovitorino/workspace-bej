@@ -1,4 +1,20 @@
 {
+  "settingsPage": {
+    "title": "Settings",
+    "subtitle": "App preferences and adjustments",
+    "categories": "Settings categories",
+    "audio": "Audio",
+    "languages": "Languages",
+    "study": "Study",
+    "appearance": "Appearance",
+    "data": "Data",
+    "audioHelp": "Choose the voice for examples with neural audio. Your preference is shared across modules and saved in this browser.",
+    "walkingHelp": "Open Chunk Flashcards and, on mobile, enter Walking Mode. Use the gear to adjust repetitions, speed, pauses and automatic advance.",
+    "walkingLocal": "These settings remain local to the walking session. The translation audio option keeps its saved preference.",
+    "openStudy": "Open Chunk Flashcards",
+    "dataHelp": "Use the existing Dashboard tools to export or restore a backup, view history and manage study records.",
+    "openBackup": "Backup, restore and management"
+  },
   "studyDanger": {
     "title": "Danger Zone",
     "intro": "Resets only the time and history records used by the Dashboard. Other app data is preserved. We recommend exporting a backup before continuing.",

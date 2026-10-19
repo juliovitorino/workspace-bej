@@ -15,12 +15,12 @@ import { StudyPeriodMenu } from "./StudyPeriodMenu";
 const languages = Object.keys(LANGUAGES) as StudentLanguage[];
 const HISTORY_PAGE_SIZE = 20;
 const moduleKeys: Record<string, string> = { hashmap: "Hashmap", "memory-flashcards": "memory.title", "chunk-flashcards": "common.chunkFlashcards", "chunk-favorites": "favorites.title", shadowing: "common.shadowing", "basic-training": "study.basicTraining", "advanced-training": "study.advancedTraining", "speaking-game": "common.speakingGame", interpretation: "common.interpretation", "extra-activities": "extras.title", previous: "study.previousHours" };
-export function StudyDashboard({ language }: { language: StudentLanguage }) {
+export function StudyDashboard({ language, initialSection }: { language: StudentLanguage; initialSection?: "settings" | "history" }) {
   const { t, i18n } = useTranslation();
   const [expanded, setExpanded] = useState(false);
   const [calendarAnchor, setCalendarAnchor] = useState<HTMLElement | null>(null);
   const closeCalendar = useMemo(() => () => setCalendarAnchor(null), []);
-  const [historyVisible, setHistoryVisible] = useState(false);
+  const [historyVisible, setHistoryVisible] = useState(initialSection === "history");
   const [filtersVisible, setFiltersVisible] = useState(() => !window.matchMedia("(max-width: 820px)").matches);
   useEffect(() => {
     const mobile = window.matchMedia("(max-width: 820px)");
@@ -30,7 +30,7 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
   }, []);
   const [goalExplanationVisible, setGoalExplanationVisible] = useState(false);
   const [detailsVisible, setDetailsVisible] = useState(false);
-  const [settingsVisible, setSettingsVisible] = useState(false);
+  const [settingsVisible, setSettingsVisible] = useState(initialSection === "settings");
   const [scrollTarget, setScrollTarget] = useState("");
   useEffect(() => {
     if (!scrollTarget) return;
@@ -39,6 +39,12 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
     setScrollTarget("");
   }, [scrollTarget]);
   const [store, setStore] = useState<StudyStore | null>(null);
+  const initialSectionOpened = useRef(false);
+  useEffect(() => {
+    if (!store || !initialSection || initialSectionOpened.current) return;
+    initialSectionOpened.current = true;
+    setScrollTarget(initialSection === "settings" ? "study-data" : "study-title");
+  }, [store, initialSection]);
   const [checkpoints, setCheckpoints] = useState<ReturnType<typeof readStudyCheckpoints>>([]);
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
@@ -252,7 +258,7 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
         <span role="status">{t("study.historyPage", { page: currentHistoryPage, total: historyPages, count: history.length })}</span>
         <button type="button" className="secondary-button" aria-controls="study-history-list" disabled={currentHistoryPage === historyPages} onClick={() => setHistoryPage(currentHistoryPage + 1)}>{t("common.next")}</button>
       </nav>}</section>
-      <section hidden={historyVisible} className="study-panel"><h3>{t("study.myData")}</h3><p>{t("study.backupNote")}</p><div className="study-actions">
+      <section id="study-data" tabIndex={-1} hidden={historyVisible} className="study-panel"><h3>{t("study.myData")}</h3><p>{t("study.backupNote")}</p><div className="study-actions">
         <button type="button" className="primary-button" disabled={busy} onClick={() => void action(exportBackup)}>{t("study.export")}</button>
         <button type="button" className="secondary-button" disabled={busy || !!store.extraActivity} onClick={() => fileInput.current?.click()}>{t("study.restore")}</button>
         <input ref={fileInput} hidden type="file" accept=".json,application/json" aria-label={t("study.restore")} onChange={e => { selectFile(e.target.files?.[0]); e.target.value = ""; }} />
