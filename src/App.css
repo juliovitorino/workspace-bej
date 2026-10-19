@@ -2724,3 +2724,29 @@ button { color: inherit; }
   .settings-categories { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .settings-shortcuts { flex-direction: column; align-items: stretch; }
 }
+
+/* Walking settings live next to the favorite star without shifting the card. */
+.walking-mode .chunk-flashcards-card { overflow: visible; }
+.walking-mode .chunk-flashcards-card-header { position: relative; }
+.walking-configuration-card { position: relative; flex: 0 0 auto; }
+.walking-configuration-card summary { width: 44px; height: 44px; }
+.walking-configuration-card .walking-settings {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 20;
+  width: min(340px, calc(100vw - 48px));
+  max-height: min(65vh, 580px);
+  overflow-y: auto;
+  padding: 16px;
+  margin: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .22);
+}
+.walking-configuration-card .walking-settings label { flex-wrap: wrap; }
+.walking-configuration-card .walking-settings select { max-width: 100%; }
+
+.walking-empty-settings { display: flex; justify-content: flex-end; margin-bottom: 12px; }

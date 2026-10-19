@@ -5,6 +5,7 @@ import { roundKey, readRound, reconcileRound, finishRound, presentItem } from ".
 import { cancelStudyAudio } from "../features/study/studyAudio";
 import { useStudyReading } from "../features/study/useStudyReading";
 import { favoriteStudyItems, type FavoriteStudyItem } from "../utils/favoriteStudyItems";
+import { walkingStudyItems, type WalkingContentType } from "../utils/walkingStudyItems";
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -64,6 +65,13 @@ export function ChunkFlashcards({
   const authorMode = isAuthorMode();
   const { playback, play } = useExampleAudio();
   const [walking, setWalking] = useState(false);
+  const [walkingContentType, setWalkingContentType] = useState<WalkingContentType>(() => {
+    const saved = localStorage.getItem("bej-walking-content-type");
+    return saved === "chunk" || saved === "example" ? saved : "both";
+  });
+  const [walkingCurrentId, setWalkingCurrentId] = useState<string | null>(null);
+  const [walkingDrawnIds, setWalkingDrawnIds] = useState<string[]>([]);
+  const [walkingRound, setWalkingRound] = useState(1);
   const [walkingSummary, setWalkingSummary] = useState<WalkingSummary | null>(null);
   const [level, setLevel] = useState<ChunkLevel>("all");
   const [mobile, setMobile] = useState(isMobileDevice);
@@ -83,6 +91,15 @@ export function ChunkFlashcards({
     [intentions, level, mode, favorites, language]
   );
 
+  const walkingPoolFor = (type: WalkingContentType, nextLevel: ChunkLevel) =>
+    walkingStudyItems(intentions, favorites, language, mode, nextLevel, type);
+  const walkingChunks = useMemo(() => walkingPoolFor(walkingContentType, level),
+    [intentions, favorites, language, mode, level, walkingContentType]);
+  const walkingAllEligible = useMemo(() => walkingPoolFor(walkingContentType, "all"),
+    [intentions, favorites, language, mode, walkingContentType]);
+  const walkingKeyFor = (type: WalkingContentType) =>
+    roundKey(language, `${mode === "all" ? "walking-chunks" : "walking-favorites"}-${type}`);
+  const walkingPersistenceKey = walkingKeyFor(walkingContentType);
   const persistenceKey = roundKey(language, mode === "all" ? "chunk-flashcards" : "favorite-chunks");
   const allEligible = useMemo(() => mode === "all" ? eligibleChunks(intentions, "all") : favoriteStudyItems(intentions, favorites, language, "all"), [intentions, favorites, language, mode]);
 
@@ -170,6 +187,9 @@ export function ChunkFlashcards({
     setPausedAt(null);
     setTotalPausedMs(0);
     setWalkingSummary(null);
+    setWalkingCurrentId(null);
+    setWalkingDrawnIds([]);
+    setWalkingRound(1);
   }, [intentions, language, mode]);
 
   useEffect(() => {
@@ -204,8 +224,9 @@ export function ChunkFlashcards({
   }, [language, sourceLanguage, currentId, studyChunk, walking]);
 
   const retainedWalkingChunk = useRef<MentalIntention | null>(null);
-  const currentChunk = studyChunk ?? chunks.find((item) => item.id === currentId) ??
-    (walking && retainedWalkingChunk.current?.id === currentId ? retainedWalkingChunk.current : null);
+  const activeCurrentId = walking ? walkingCurrentId : currentId;
+  const currentChunk = studyChunk ?? (walking ? walkingChunks : chunks).find((item) => item.id === activeCurrentId) ??
+    (walking && retainedWalkingChunk.current?.id === activeCurrentId ? retainedWalkingChunk.current : null);
   if (currentChunk) retainedWalkingChunk.current = currentChunk;
   const studyItem = currentChunk as FavoriteStudyItem | null;
   const favoriteId = studyItem?.favoriteId ?? currentChunk?.id;
@@ -216,12 +237,15 @@ export function ChunkFlashcards({
     onStudyState?.(studyStartedAt !== null && pausedAt === null && chunks.length > 0, "manual");
     return () => onStudyState?.(false, "manual");
   }, [studyChunk, walking, studyStartedAt, pausedAt, chunks.length > 0, onStudyState]);
-  const total = chunks.length;
-  const shownCount = chunks.filter(item => drawnIds.includes(item.id)).length;
-  const completed = allEligible.length > 0 &&
-    allEligible.every(item => drawnIds.includes(item.id));
-  const shownHistory = drawnIds.filter(id => chunks.some(item => item.id === id));
-  const position = currentId === null ? 0 : Math.min(total, shownCount + (drawnIds.includes(currentId) ? 0 : 1));
+  const activePool = walking ? walkingChunks : chunks;
+  const activeDrawnIds = walking ? walkingDrawnIds : drawnIds;
+  const activeEligible = walking ? walkingAllEligible : allEligible;
+  const total = activePool.length;
+  const shownCount = activePool.filter(item => activeDrawnIds.includes(item.id)).length;
+  const completed = activeEligible.length > 0 &&
+    activeEligible.every(item => activeDrawnIds.includes(item.id));
+  const shownHistory = activeDrawnIds.filter(id => activePool.some(item => item.id === id));
+  const position = activeCurrentId === null ? 0 : Math.min(total, shownCount + (activeDrawnIds.includes(activeCurrentId) ? 0 : 1));
 
   function nextChunk(pool: MentalIntention[] = chunks) {
     cancelStudyAudio();
@@ -256,13 +280,54 @@ export function ChunkFlashcards({
     } catch (error) { setAudioError(t(error instanceof Error && "code" in error && error.code === "otherTab" ? "study.errors.otherTab" : "study.errors.storage")); }
   }
 
+  function nextWalkingChunk(
+    pool: MentalIntention[] = walkingChunks,
+    key: string = walkingPersistenceKey,
+    eligible: MentalIntention[] = walkingAllEligible,
+    allowLevelFallback = true
+  ) {
+    cancelStudyAudio();
+    if (!pool.length) { setWalkingCurrentId(null); return; }
+    try {
+      studyTracker.requireControl();
+      const state = finishRound(key, pool.map(item => item.id), eligible.map(item => item.id));
+      let candidates = pool.filter(item => !state.presentedItemIds.includes(item.id));
+      if (!candidates.length && allowLevelFallback && level !== "all" &&
+          state.presentedItemIds.length < eligible.length) {
+        candidates = eligible.filter(item => !state.presentedItemIds.includes(item.id));
+        setLevel("all");
+      }
+      if (!candidates.length) { setWalkingCurrentId(null); return; }
+      const selected = candidates[Math.floor(Math.random() * candidates.length)];
+      setWalkingRound(state.round);
+      setWalkingDrawnIds(state.presentedItemIds);
+      setWalkingCurrentId(selected.id);
+    } catch (error) {
+      setAudioError(t(error instanceof Error && "code" in error && error.code === "otherTab" ? "study.errors.otherTab" : "study.errors.storage"));
+    }
+  }
+
+  function changeWalkingContentType(nextType: WalkingContentType) {
+    if (nextType === walkingContentType) return;
+    localStorage.setItem("bej-walking-content-type", nextType);
+    setWalkingContentType(nextType);
+    // Each filter has its own round; never mix example IDs with chunk IDs.
+    nextWalkingChunk(walkingPoolFor(nextType, level), walkingKeyFor(nextType),
+      walkingPoolFor(nextType, "all"), false);
+  }
+
   function recordPresentation() {
     if (!currentChunk || studyChunk) return;
     studyTracker.requireControl();
     // Marcar ao exibir no modo manual ou ao iniciar o áudio no modo caminhada.
     // A rodada manual só reinicia no próximo sorteio, não ao exibir o último cartão.
-    const state = presentItem(persistenceKey, allEligible.map(item => item.id), currentChunk.id);
-    setDrawnIds(state.presentedItemIds); setRound(state.round);
+    if (walking) {
+      const state = presentItem(walkingPersistenceKey, walkingAllEligible.map(item => item.id), currentChunk.id);
+      setWalkingDrawnIds(state.presentedItemIds); setWalkingRound(state.round);
+    } else {
+      const state = presentItem(persistenceKey, allEligible.map(item => item.id), currentChunk.id);
+      setDrawnIds(state.presentedItemIds); setRound(state.round);
+    }
   }
   useEffect(() => {
     if (!walking && currentChunk && !studyChunk) {
@@ -292,7 +357,8 @@ export function ChunkFlashcards({
     setCopyError(null);
     if (copyFeedbackTimeout.current !== null) clearTimeout(copyFeedbackTimeout.current);
     // Keep persisted progress while selecting within the new level.
-    if (walking || currentId !== null) nextChunk(mode === "all" ? eligibleChunks(intentions, nextLevel) : favoriteStudyItems(intentions, favorites, language, nextLevel));
+    if (walking) nextWalkingChunk(walkingPoolFor(walkingContentType, nextLevel), walkingPersistenceKey, walkingAllEligible, false);
+    else if (currentId !== null) nextChunk(mode === "all" ? eligibleChunks(intentions, nextLevel) : favoriteStudyItems(intentions, favorites, language, nextLevel));
     else setCurrentId(null);
   }
 
@@ -499,16 +565,18 @@ export function ChunkFlashcards({
   if (walking) {
     return <WalkingMode onStudyState={onStudyState} chunk={currentChunk} language={language} sourceLanguage={sourceLanguage}
       onPresented={recordPresentation}
-      onCycleComplete={() => { studyTracker.requireControl(); const state = finishRound(persistenceKey, chunks.map(item => item.id), allEligible.map(item => item.id)); setDrawnIds(state.presentedItemIds); setRound(state.round); }}
-      stopWhenEmpty={mode === "favorites"}
-      currentEligible={mode !== "favorites" || chunks.some(item => item.id === currentChunk?.id)}
+      onCycleComplete={() => { studyTracker.requireControl(); const state = finishRound(walkingPersistenceKey, walkingChunks.map(item => item.id), walkingAllEligible.map(item => item.id)); setWalkingDrawnIds(state.presentedItemIds); setWalkingRound(state.round); }}
+      stopWhenEmpty={mode === "favorites" && favoriteStudyItems(intentions, favorites, language, level).length === 0}
+      currentEligible={walkingChunks.some(item => item.id === currentChunk?.id)}
       favorite={favorites.some(favorite => favorite.id === favoriteId && favorite.type === favoriteType && favorite.language === language)}
       onToggleFavorite={onToggleFavorite && currentChunk ? () => onToggleFavorite(favoriteId!, favoriteType) : undefined}
-      level={level} onLevelChange={changeLevel} position={shownCount} total={total} round={round}
-      canPrevious={currentId !== null && shownHistory.indexOf(currentId) > 0}
-      onPrevious={() => { const previous = currentId === null ? -1 : shownHistory.indexOf(currentId) - 1; if (previous >= 0) setCurrentId(shownHistory[previous]); }}
+      level={level} onLevelChange={changeLevel}
+      contentType={walkingContentType} onContentTypeChange={changeWalkingContentType}
+      position={position} total={total} round={walkingRound}
+      canPrevious={walkingCurrentId !== null && shownHistory.indexOf(walkingCurrentId) > 0}
+      onPrevious={() => { const previous = walkingCurrentId === null ? -1 : shownHistory.indexOf(walkingCurrentId) - 1; if (previous >= 0) setWalkingCurrentId(shownHistory[previous]); }}
       onNext={() => {
-        nextChunk();
+        nextWalkingChunk();
         return completed;
       }}
       onStop={summary => { setWalkingSummary(summary ?? null); setWalking(false); }} />;
@@ -619,6 +687,12 @@ export function ChunkFlashcards({
             {t("flashcards.markCompleteIntentionsWith")} <code>"allowLanguageChunkPractice": true</code>
             {" "}{t("flashcards.inTheMentalHashmapJsonToPracticeThemHere")}
           </p>}
+          {mobile && walkingAllEligible.length > 0 && <button type="button" className="primary-button walking-entry" onClick={() => {
+            cancelStudyAudio();
+            setWalkingSummary(null);
+            nextWalkingChunk();
+            setWalking(true);
+          }}>{"🎧 "}{t("common.walkingMode")}</button>}
         </div>
       ) : (
         <>
@@ -653,9 +727,9 @@ export function ChunkFlashcards({
             </button>
             {mobile && <button type="button" className="primary-button walking-entry" onClick={() => {
               if (!isMobileDevice()) return;
-              if (!currentChunk || drawnIds.includes(currentChunk.id)) nextChunk();
               cancelStudyAudio();
               setWalkingSummary(null);
+              nextWalkingChunk();
               setWalking(true);
             }}>{"🎧 "}{t("common.walkingMode")}</button>}
           </div>
