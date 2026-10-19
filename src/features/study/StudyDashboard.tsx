@@ -223,8 +223,8 @@ export function StudyDashboard({ language, initialSection }: { language: Student
           </div>;
         })}
       </section>
-      {chart(t("study.byLanguage"), stats.byLanguage, code => languageName(code as StudentLanguage))}
-      {chart(t("study.byModule"), moduleValues, moduleLabel, stats.total, true, "study-time-by-module")}
+      {chart(`${t("study.byLanguage")} · ${t(`study.periods.${filters.period}`)}`, stats.byLanguage, code => languageName(code as StudentLanguage))}
+      {chart(`${t("study.byModule")} · ${t(`study.periods.${filters.period}`)}`, moduleValues, moduleLabel, stats.total, true, "study-time-by-module")}
       {chart(t("extras.byCategory"), Object.fromEntries(EXTRA_CATEGORIES.map(key => [key, stats.byExtraCategory[key] ?? 0])), key => t(`extras.categories.${key}`), stats.external, true)}
       <div id="study-details" tabIndex={-1} className="study-content" hidden={!detailsVisible}>
       <div className="study-metrics">{([ ["accumulated", stats.total], ["today", stats.today], ["week", stats.week], ["month", stats.month], ["dailyAverage", stats.average] ] as const).map(([key, seconds]) => <div className="study-panel" key={key}><span>{t(`study.${key}`)}</span><strong>{duration(seconds)}</strong></div>)}
