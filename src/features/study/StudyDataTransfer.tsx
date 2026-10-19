@@ -62,8 +62,10 @@ export function StudyDataTransfer({ settings = false, mode = "consolidate", disa
     await studyTracker.seal();
     const backup = backupOf(readStudyStore());
     const stamp = backup.exportedAt.replace(/[-:]/g, "").replace("T", "-").slice(0, 15);
+    const mobile = window.matchMedia("(pointer: coarse) and (max-width: 820px)").matches;
+    const device = mobile ? "mobile" : "desktop";
     const url = URL.createObjectURL(new Blob([JSON.stringify(backup, null, 2)], { type: "application/json" }));
-    const anchor = document.createElement("a"); anchor.href = url; anchor.download = `bej-study-backup-${stamp}.json`;
+    const anchor = document.createElement("a"); anchor.href = url; anchor.download = `bej-study-backup-${device}-${stamp}.json`;
     document.body.appendChild(anchor); anchor.click(); anchor.remove();
     window.setTimeout(() => URL.revokeObjectURL(url), 1000);
     if (mounted.current) setMessage(t("study.exported"));
