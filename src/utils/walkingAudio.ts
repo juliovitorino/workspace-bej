@@ -10,6 +10,9 @@ const prompts: Record<StudentLanguage, string[]> = {
   "es-ES": ["Repite conmigo", "Otra vez", "Una vez más", "Una última vez"]
 };
 
+// Tempo para o iOS liberar a atenuação do áudio após o TTS do prompt.
+const PROMPT_TO_CEDAR_DELAY_MS = 1300;
+
 export function repetitionPrompt(language: StudentLanguage, index: number, count: number): string | null {
   if (index === 0) return null;
   const words = prompts[language];
@@ -135,6 +138,16 @@ export class WalkingAudio {
       };
       player.onended = finish;
       player.onerror = fail;
+      // Safari/iOS pode deixar o áudio de mídia atenuado após speechSynthesis.
+      // Solicitar sessão de reprodução antes de retomar o MP3, se disponível.
+      try {
+        const audioSession = (navigator as Navigator & {
+          audioSession?: { type: string };
+        }).audioSession;
+        if (audioSession && /iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+          audioSession.type = "playback";
+        }
+      } catch { /* API indisponível ou bloqueada: manter reprodução original */ }
       // O mesmo player que iniciou a sessão é reutilizado após cada prompt.
       void player.play().catch(fail);
     };
@@ -143,7 +156,9 @@ export class WalkingAudio {
       return;
     }
     // O prompt é sintetizado isoladamente. Somente depois começa o Cedar.
-    this.play(prompt, language, rate, 0, () => {}, startExample, onError, false, markStart);
+    // Aguardar após o evento onend do prompt (não após seu início),
+    // para o iOS restaurar o volume da mídia antes do Cedar.
+    this.play(prompt, language, rate, PROMPT_TO_CEDAR_DELAY_MS, () => {}, startExample, onError, false, markStart);
     generation = this.generation;
   }
 
