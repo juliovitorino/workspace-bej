@@ -11,7 +11,7 @@ const locale = "en-US";
 const jsonPath = path.join(root, "public", `sample-hashmap-${locale}.json`);
 const audioRoot = path.join(root, "public", "audio", locale);
 const voices = ["cedar", "marin"]; // cedar = default player voice
-const MAX_EXAMPLES = 50;
+const MAX_EXAMPLES = 600;
 const WRITE_RETRIES = 8;
 const RETRY_DELAY_MS = 250;
 const dryRun = process.argv.includes("--dry-run");
