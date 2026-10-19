@@ -40,6 +40,7 @@ export class WalkingAudio {
   private timer: ReturnType<typeof setTimeout> | undefined;
   private media: HTMLAudioElement | null = null;
   private mediaToken: string | null = null;
+  private mediaUrl: string | null = null;
   private promptTimer: ReturnType<typeof setTimeout> | undefined;
 
   cancel() {
@@ -51,8 +52,9 @@ export class WalkingAudio {
     if (this.media) {
       this.media.onplaying = this.media.onended = this.media.onerror = null;
       this.media.pause();
-      this.media.removeAttribute("src");
-      this.media = null;
+      // Preserve the unlocked audio element for subsequent automatic repetitions.
+      // Recreating Audio after a timer or speech callback can be blocked on mobile.
+      try { this.media.currentTime = 0; } catch { /* Not seekable yet. */ }
     }
     if (this.mediaToken) {
       studyTracker.media(this.mediaToken, false);
@@ -96,12 +98,18 @@ export class WalkingAudio {
       if (!active()) return;
       let media: HTMLAudioElement;
       try {
-        media = new Audio(mp3Url);
-      } catch {
-        fallback();
+        media = this.media ?? new Audio(mp3Url);
+        if (this.mediaUrl !== mp3Url) {
+          media.src = mp3Url;
+          this.mediaUrl = mp3Url;
+        }
+        this.media = media;
+        media.currentTime = 0;
+      } catch (reason) {
+        console.warn("[BEJ Walking] Não foi possível preparar o MP3:", reason);
+        onError();
         return;
       }
-      this.media = media;
       media.playbackRate = rate;
       const token = `walking-mp3-${request}-${Date.now()}`;
       this.mediaToken = token;
@@ -118,13 +126,24 @@ export class WalkingAudio {
           studyTracker.media(token, false);
           this.mediaToken = null;
         }
-        this.media = null;
+        // Keep media instance and its playback permission for the next repetition.
         onSpoken();
         if (!active()) return;
         this.timer = setTimeout(() => { if (active()) onDone(); }, pauseMs);
       };
-      media.onerror = fallback;
-      void media.play().catch(fallback);
+      media.onerror = () => {
+        if (!active()) return;
+        console.warn("[BEJ Walking] Falha ao carregar MP3:", mp3Url);
+        fallback();
+      };
+      void media.play().catch(reason => {
+        if (!active()) return;
+        console.warn("[BEJ Walking] MP3 bloqueado/falhou:", reason);
+        // A blocked MP3 must not silently switch to the browser voice.
+        // Resume is a user gesture and can unlock the same media element.
+        if (reason?.name === "NotAllowedError") onError();
+        else fallback();
+      });
     };
     const fallback = () => {
       if (!active()) return;

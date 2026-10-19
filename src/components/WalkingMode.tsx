@@ -42,6 +42,8 @@ export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk,
   const [pause, setPause] = useState(3);
   const [rate, setRate] = useState(0.9);
   const [automatic, setAutomatic] = useState(true);
+  const automaticRef = useRef(true);
+  automaticRef.current = automatic;
   const [keepAwake, setKeepAwake] = useState(true);
   const [index, setIndex] = useState(0);
   const [spoken, setSpoken] = useState(0);
@@ -122,7 +124,7 @@ export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk,
     }
     if (paused || !chunk) return;
     if (index >= repetitions) {
-      if (automatic) navigateRef.current();
+      if (automaticRef.current) navigateRef.current();
       return;
     }
     const currentChunkId = chunk.id;
@@ -140,7 +142,7 @@ export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk,
         try { onCycleComplete?.(); } catch { fail(); return; }
         // Do not wait for a React effect to advance. Its cleanup may cancel
         // the next audio when the first chunk completes on mobile browsers.
-        if (automatic && !finishWhenEmpty.current) {
+        if (automaticRef.current && !finishWhenEmpty.current) {
           if (completedItem.current !== currentChunkId) {
             completedItem.current = currentChunkId;
             navigateRef.current();
@@ -176,7 +178,7 @@ export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk,
         }, sourceLanguage);
     }
     return () => { audio.current.cancel(); };
-  }, [chunk?.id, language, sourceLanguage, level, paused, index, repetitions, pause, rate, automatic, revision, translationAudio]);
+  }, [chunk?.id, language, sourceLanguage, level, paused, index, repetitions, pause, rate, revision, translationAudio]);
 
   const sessionActive = !paused && !!chunk && (index < repetitions || automatic);
   useEffect(() => {
