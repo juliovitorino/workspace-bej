@@ -69,7 +69,8 @@ export class WalkingAudio {
   /** The prompt is spoken separately; the local MP3 contains the original chunk only. */
   playChunk(text: string, language: StudentLanguage, rate: number, pauseMs: number,
     mp3Url: string | undefined, index: number, count: number,
-    onSpoken: () => void, onDone: () => void, onError: () => void, onStart?: () => void) {
+    onSpoken: () => void, onDone: () => void, onError: () => void, onStart?: () => void,
+    promptLanguage: StudentLanguage = language) {
     const validMp3 = language === "en-US" && typeof mp3Url === "string" &&
       /^\/audio\/en-US\/(cedar|marin)\/[a-zA-Z0-9_-]+\.mp3$/.test(mp3Url);
     if (!validMp3) {
@@ -127,8 +128,40 @@ export class WalkingAudio {
         pauseMs, onSpoken, onDone, onError, false, startedOnce);
     };
 
-    // O usuário selecionou Cedar/Marin: repetir sempre o mesmo MP3 neural.
-    playFile();
+    // O MP3 neural continua responsável exclusivamente pela frase do exemplo.
+    // Os comandos da sequência são falados separadamente, antes do MP3.
+    if (index === 0) {
+      playFile();
+      return;
+    }
+
+    const words = prompts[promptLanguage];
+    const prompt = index === count - 1 ? words[3] : words[Math.min(index - 1, 2)];
+    if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
+      playFile();
+      return;
+    }
+
+    const utterance = new SpeechSynthesisUtterance(prompt);
+    utterance.lang = promptLanguage;
+    utterance.rate = rate;
+    const voices = window.speechSynthesis.getVoices();
+    utterance.voice = voices.find(v => v.lang.toLowerCase() === promptLanguage.toLowerCase()) ??
+      voices.find(v => v.lang.toLowerCase().startsWith(promptLanguage.slice(0, 2).toLowerCase())) ?? null;
+    let finishedPrompt = false;
+    const continueWithMp3 = () => {
+      if (!active() || finishedPrompt) return;
+      finishedPrompt = true;
+      playFile();
+    };
+    utterance.onend = continueWithMp3;
+    utterance.onerror = continueWithMp3;
+    try {
+      // Cancela qualquer áudio anterior antes de iniciar o comando, não durante o MP3.
+      speakStudyAudio(utterance);
+    } catch {
+      continueWithMp3();
+    }
   }
 
   play(text: string, language: StudentLanguage, rate: number, pauseMs: number,

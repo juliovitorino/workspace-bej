@@ -169,7 +169,7 @@ export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk,
         () => { if (translated) phase.current = "translation-gap"; else complete(); },
         translated ? translate : done, fail, () => {
           try { onPresented?.(); } catch { audio.current.cancel(); fail(); }
-        });
+        }, sourceLanguage);
     }
     return () => { audio.current.cancel(); };
   }, [chunk?.id, language, sourceLanguage, level, paused, index, repetitions, pause, rate, automatic, revision, translationAudio]);
