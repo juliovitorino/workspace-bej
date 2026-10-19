@@ -1,25 +1,5 @@
 import { speakStudyAudio, cancelStudyAudio } from "../features/study/studyAudio";
-import { studyTracker } from "../features/study/studyTrackingService";
 import type { StudentLanguage } from "../config/languages";
-import type { HashmapExampleV4 } from "../types/hashmap";
-import type { NeuralVoice } from "../features/study/neuralExampleAudio";
-
-/** Localiza o MP3 do exemplo. Para Cedar, o nome é <id>-cedar.mp3. */
-export function resolveWalkingMp3Url(
-  example: Pick<HashmapExampleV4, "id" | "mp3" | "exampleItem"> | undefined,
-  voice: NeuralVoice
-): string | undefined {
-  if (!example?.exampleItem.trim()) return undefined;
-  const registered = example.mp3?.[voice];
-  if (typeof registered === "string" &&
-      /^\/audio\/en-US\/(cedar|marin)\/[a-zA-Z0-9_-]+\.mp3$/.test(registered) &&
-      registered.includes(`/en-US/${voice}/`)) return registered;
-
-  // Todos os exemplos en-US têm o arquivo Cedar por ID no repositório.
-  // Não supor arquivos Marin sem referência explícita no JSON.
-  if (voice !== "cedar" || !/^[a-zA-Z0-9_-]+$/.test(example.id)) return undefined;
-  return `/audio/en-US/cedar/${example.id}-cedar.mp3`;
-}
 
 const prompts: Record<StudentLanguage, string[]> = {
   "pt-BR": ["Repita comigo", "De novo", "Mais uma vez", "Última vez"],
@@ -30,217 +10,60 @@ const prompts: Record<StudentLanguage, string[]> = {
 
 export function repetitionText(text: string, language: StudentLanguage, index: number, count: number): string {
   if (index === 0) return text;
-  const prompt = index === count - 1 ? prompts[language][3] : prompts[language][Math.min(index - 1, 2)];
+  const words = prompts[language];
+  const prompt = index === count - 1 ? words[3] : words[Math.min(index - 1, 2)];
   return `${prompt}. ${text}`;
 }
 
-/** Controls a single walking audio sequence, without interfering with the next chunk. */
+// One owner for speech and delays. Invalidate before cancel(), because browsers
+// can synchronously dispatch events from the canceled utterance.
 export class WalkingAudio {
   private generation = 0;
   private timer: ReturnType<typeof setTimeout> | undefined;
-  private media: HTMLAudioElement | null = null;
-  private mediaToken: string | null = null;
-  private mediaUrl: string | null = null;
-  private promptTimer: ReturnType<typeof setTimeout> | undefined;
+  private utterance: SpeechSynthesisUtterance | null = null;
 
   cancel() {
     this.generation++;
     clearTimeout(this.timer);
-    clearTimeout(this.promptTimer);
-    this.promptTimer = undefined;
-    this.timer = undefined;
-    if (this.media) {
-      this.media.onplaying = this.media.onended = this.media.onerror = null;
-      this.media.pause();
-      // Preserve the unlocked audio element for subsequent automatic repetitions.
-      // Recreating Audio after a timer or speech callback can be blocked on mobile.
-      try { this.media.currentTime = 0; } catch { /* Not seekable yet. */ }
-    }
-    if (this.mediaToken) {
-      studyTracker.media(this.mediaToken, false);
-      this.mediaToken = null;
-    }
+    this.utterance = null;
     cancelStudyAudio();
   }
 
   wait(ms: number, done: () => void) {
     this.cancel();
-    const request = this.generation;
-    this.timer = setTimeout(() => {
-      if (request === this.generation) done();
-    }, ms);
-  }
-
-  /** The prompt is spoken separately; the local MP3 contains the original chunk only. */
-  playChunk(text: string, language: StudentLanguage, rate: number, pauseMs: number,
-    mp3Url: string | undefined, index: number, count: number,
-    onSpoken: () => void, onDone: () => void, onError: () => void, onStart?: () => void,
-    promptLanguage: StudentLanguage = language) {
-    const validMp3 = language === "en-US" && typeof mp3Url === "string" &&
-      /^\/audio\/en-US\/(cedar|marin)\/[a-zA-Z0-9_-]+\.mp3$/.test(mp3Url);
-    if (!validMp3) {
-      this.play(repetitionText(text, language, index, count), language, rate,
-        pauseMs, onSpoken, onDone, onError, false, onStart);
-      return;
-    }
-
-    this.cancel();
-    const request = this.generation;
-    const active = () => request === this.generation;
-    let started = false;
-    const startedOnce = () => {
-      if (active() && !started) {
-        started = true;
-        onStart?.();
-      }
-    };
-    const playFile = () => {
-      if (!active()) return;
-      let media: HTMLAudioElement;
-      try {
-        media = this.media ?? new Audio(mp3Url);
-        if (this.mediaUrl !== mp3Url) {
-          media.src = mp3Url;
-          this.mediaUrl = mp3Url;
-        }
-        this.media = media;
-        media.currentTime = 0;
-      } catch (reason) {
-        console.warn("[BEJ Walking] Não foi possível preparar o MP3:", reason);
-        onError();
-        return;
-      }
-      media.playbackRate = rate;
-      const token = `walking-mp3-${request}-${Date.now()}`;
-      this.mediaToken = token;
-      media.onplaying = () => {
-        if (!active()) return;
-        studyTracker.media(token, true);
-        startedOnce();
-      };
-      let mediaFinished = false;
-      media.onended = () => {
-        if (!active() || mediaFinished) return;
-        mediaFinished = true;
-        if (this.mediaToken === token) {
-          studyTracker.media(token, false);
-          this.mediaToken = null;
-        }
-        // Keep media instance and its playback permission for the next repetition.
-        onSpoken();
-        if (!active()) return;
-        this.timer = setTimeout(() => { if (active()) onDone(); }, pauseMs);
-      };
-      media.onerror = () => {
-        if (!active()) return;
-        console.warn("[BEJ Walking] Falha ao carregar MP3:", mp3Url);
-        fallback();
-      };
-      void media.play().catch(reason => {
-        if (!active()) return;
-        console.warn("[BEJ Walking] MP3 bloqueado/falhou:", reason);
-        // A blocked MP3 must not silently switch to the browser voice.
-        // Resume is a user gesture and can unlock the same media element.
-        if (reason?.name === "NotAllowedError") onError();
-        else fallback();
-      });
-    };
-    const fallback = () => {
-      if (!active()) return;
-      // Invalid/missing MP3 must not break automatic advancement.
-      this.play(repetitionText(text, language, index, count), language, rate,
-        pauseMs, onSpoken, onDone, onError, false, startedOnce);
-    };
-
-    // O MP3 neural continua responsável exclusivamente pela frase do exemplo.
-    // Os comandos da sequência são falados separadamente, antes do MP3.
-    if (index === 0) {
-      playFile();
-      return;
-    }
-
-    const words = prompts[promptLanguage];
-    const prompt = index === count - 1 ? words[3] : words[Math.min(index - 1, 2)];
-    if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
-      console.warn("[BEJ Walking] TTS de comandos indisponível neste navegador.");
-      playFile();
-      return;
-    }
-
-    const utterance = new SpeechSynthesisUtterance(prompt);
-    utterance.lang = promptLanguage;
-    utterance.rate = rate;
-    const voices = window.speechSynthesis.getVoices();
-    utterance.voice = voices.find(v => v.lang.toLowerCase() === promptLanguage.toLowerCase()) ??
-      voices.find(v => v.lang.toLowerCase().startsWith(promptLanguage.slice(0, 2).toLowerCase())) ?? null;
-    let finishedPrompt = false;
-    const continueWithMp3 = () => {
-      if (!active() || finishedPrompt) return;
-      finishedPrompt = true;
-      clearTimeout(this.promptTimer);
-      this.promptTimer = undefined;
-      // A etapa seguinte depende do fim do comando, nunca de um clique.
-      playFile();
-    };
-    utterance.onend = continueWithMp3;
-    utterance.onerror = event => {
-      console.warn("[BEJ Walking] Falha no TTS do comando; seguindo com MP3 Cedar.", event);
-      continueWithMp3();
-    };
-    try {
-      // O comando é sintetizado pelo navegador; apenas a frase usa Cedar.
-      // true impede que studyAudio cancele o MP3/estado da caminhada.
-      speakStudyAudio(utterance, true);
-      // Alguns navegadores móveis deixam o sintetizador pausado após tocar MP3.
-      window.speechSynthesis.resume();
-      // Em dispositivos que não disparam onend/onerror, não bloquear a caminhada.
-      // O timeout só atua como recuperação; normalmente o onend inicia o Cedar.
-      this.promptTimer = setTimeout(() => {
-        if (!active() || finishedPrompt) return;
-        console.warn("[BEJ Walking] Comando TTS sem onend; retomando reprodução automaticamente.");
-        window.speechSynthesis.cancel();
-        continueWithMp3();
-      }, Math.max(12000, Math.ceil(prompt.length * 400 / Math.max(rate, 0.5))));
-    } catch {
-      continueWithMp3();
-    }
+    const generation = this.generation;
+    this.timer = setTimeout(() => { if (generation === this.generation) done(); }, ms);
   }
 
   play(text: string, language: StudentLanguage, rate: number, pauseMs: number,
-    onSpoken: () => void, onDone: () => void, onError: () => void,
-    strictVoice = false, onStart?: () => void) {
+    onSpoken: () => void, onDone: () => void, onError: () => void, strictVoice = false, onStart?: () => void) {
     this.cancel();
-    const request = this.generation;
-    if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
-      onError();
-      return;
-    }
+    const generation = this.generation;
+    if (!("speechSynthesis" in window)) { onError(); return; }
+    const synth = window.speechSynthesis;
     const utterance = new SpeechSynthesisUtterance(text);
+    let settled = false;
+    this.utterance = utterance;
     utterance.lang = language;
     utterance.rate = rate;
-    const voices = window.speechSynthesis.getVoices();
+    const voices = synth.getVoices();
     utterance.voice = voices.find(v => v.lang.toLowerCase() === language.toLowerCase()) ??
       voices.find(v => v.lang.toLowerCase().startsWith(language.slice(0, 2))) ?? null;
     if (strictVoice && !utterance.voice) { onError(); return; }
-    let settled = false;
-    utterance.onstart = () => {
-      if (request === this.generation) onStart?.();
-    };
+    utterance.onstart = () => { if (generation === this.generation) onStart?.(); };
     utterance.onend = () => {
-      if (request !== this.generation || settled) return;
+      if (generation !== this.generation || settled) return;
       settled = true;
+      this.utterance = null;
       onSpoken();
-      if (request !== this.generation) return;
+      if (generation !== this.generation) return;
       this.timer = setTimeout(() => {
-        if (request === this.generation) onDone();
+        if (generation === this.generation) onDone();
       }, pauseMs);
     };
     utterance.onerror = () => {
-      if (request !== this.generation || settled) return;
-      settled = true;
-      onError();
+      if (generation === this.generation && !settled) { settled = true; this.cancel(); onError(); }
     };
-    try { speakStudyAudio(utterance, true); }
-    catch { if (!settled && request === this.generation) { settled = true; onError(); } }
+    try { speakStudyAudio(this.utterance); } catch { this.cancel(); onError(); }
   }
 }

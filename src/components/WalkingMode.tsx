@@ -1,11 +1,11 @@
+import { t } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { ControlIcon } from "./ControlIcon";
 import { useEffect, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import type { SourceLanguage, StudentLanguage } from "../config/languages";
 import { isMobileDevice } from "../utils/mobileDevice";
-import { WalkingAudio, resolveWalkingMp3Url } from "../utils/walkingAudio";
-import { getNeuralVoice } from "../features/study/neuralExampleAudio";
+import { repetitionText, WalkingAudio } from "../utils/walkingAudio";
 import type { ChunkLevel } from "../utils/chunkEligibility";
 import { ChunkLevelSelect } from "./ChunkLevelSelect";
 import { WalkingSession, type WalkingSummary } from "../utils/walkingSession";
@@ -42,8 +42,6 @@ export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk,
   const [pause, setPause] = useState(3);
   const [rate, setRate] = useState(0.9);
   const [automatic, setAutomatic] = useState(true);
-  const automaticRef = useRef(true);
-  automaticRef.current = automatic;
   const [keepAwake, setKeepAwake] = useState(true);
   const [index, setIndex] = useState(0);
   const [spoken, setSpoken] = useState(0);
@@ -63,21 +61,6 @@ export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk,
   advanceAfterSpeech.current = !currentEligible;
   const callbacks = useRef({ onNext, onPrevious, onStop: stopSession });
   callbacks.current = { onNext, onPrevious, onStop: stopSession };
-  const completedItem = useRef<string | null>(null);
-
-  // O áudio Cedar pertence ao exemplo, não ao título da intenção.
-  // Mantém a mesma frase durante todas as repetições desta intenção.
-  const voice = getNeuralVoice();
-  const chunkText = (chunk?.targetIntention ?? chunk?.english ?? "").trim();
-  const exactExample = chunk?.examples?.find(item => item.exampleItem.trim() === chunkText);
-  const walkingExample = language === "en-US"
-    ? (exactExample && resolveWalkingMp3Url(exactExample, voice)
-      ? exactExample
-      : chunk?.examples?.find(item => Boolean(resolveWalkingMp3Url(item, voice))))
-    : exactExample;
-  const mp3Url = language === "en-US" ? resolveWalkingMp3Url(walkingExample, voice) : undefined;
-  const spokenText = walkingExample?.exampleItem.trim() || chunkText;
-  const spokenTranslation = walkingExample?.pt?.trim() || chunk?.intention || "";
 
   function stopSession() {
     onStudyState?.(false, "walking");
@@ -95,7 +78,6 @@ export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk,
   function resetPlayback() {
     audio.current.cancel();
     phase.current = "speech";
-    completedItem.current = null;
     setIndex(0);
     setSpoken(0);
     setError("");
@@ -124,61 +106,41 @@ export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk,
     }
     if (paused || !chunk) return;
     if (index >= repetitions) {
-      if (automaticRef.current) navigateRef.current();
+      if (automatic) navigateRef.current();
       return;
     }
-    const currentChunkId = chunk.id;
-    const fail = () => {
-      onStudyState?.(false, "walking");
-      setError(t("walking.couldNotPlayTheAudioTapResumeToTryAgain"));
-      setPaused(true);
-    };
-    let advanced = false;
+    const fail = () => { onStudyState?.(false, "walking"); setError(t("walking.couldNotPlayTheAudioTapResumeToTryAgain")); setPaused(true); };
     const done = () => {
-      if (advanced) return;
-      advanced = true;
       phase.current = "speech";
       if (index + 1 >= repetitions) {
         try { onCycleComplete?.(); } catch { fail(); return; }
-        // Do not wait for a React effect to advance. Its cleanup may cancel
-        // the next audio when the first chunk completes on mobile browsers.
-        if (automaticRef.current && !finishWhenEmpty.current) {
-          if (completedItem.current !== currentChunkId) {
-            completedItem.current = currentChunkId;
-            navigateRef.current();
-          }
-          return;
-        }
       }
       setIndex(v => v + 1);
     };
     const token = ++playbackToken.current;
-    const translated = Boolean(translationAudio && spokenTranslation.trim() && sourceLanguage !== language);
+    const translated = translationAudio && chunk.sourceAudioText?.trim() && sourceLanguage !== language;
     const complete = () => {
-      session.current.record(token, currentChunkId, index + 1 >= repetitions);
-      // A pausa já é controlada por WalkingAudio após o término do MP3.
-      // Não iniciar outra espera ao renderizar o contador.
+      session.current.record(token, chunk.id, index + 1 >= repetitions);
+      phase.current = "pause";
       setSpoken(index + 1);
       if (finishWhenEmpty.current) callbacks.current.onStop();
       else if (advanceAfterSpeech.current) navigateRef.current();
     };
     const translate = () => {
       phase.current = "translation";
-      audio.current.play(spokenTranslation.trim(), sourceLanguage, rate, pause * 1000, complete, done, fail);
+      audio.current.play(chunk.sourceAudioText!.trim(), sourceLanguage, rate, pause * 1000, complete, done, fail);
     };
     if (phase.current === "pause") audio.current.wait(pause * 1000, done);
     else if (phase.current === "translation-gap") audio.current.wait(1000, translate);
     else if (phase.current === "translation") translate();
-    else {
-      audio.current.playChunk(spokenText, language, rate, translated ? 1000 : pause * 1000,
-        mp3Url, index, repetitions,
-        () => { if (translated) phase.current = "translation-gap"; else complete(); },
-        translated ? translate : done, fail, () => {
-          try { onPresented?.(); } catch { audio.current.cancel(); fail(); }
-        }, sourceLanguage);
-    }
+    else audio.current.play(repetitionText((chunk.targetIntention ?? chunk.english).trim(), language, index, repetitions),
+      language, rate, translated ? 1000 : pause * 1000,
+      () => { if (translated) phase.current = "translation-gap"; else complete(); },
+      translated ? translate : done, fail, false, () => {
+        try { onPresented?.(); } catch { audio.current.cancel(); fail(); }
+      });
     return () => { audio.current.cancel(); };
-  }, [chunk?.id, language, sourceLanguage, level, paused, index, repetitions, pause, rate, revision, translationAudio]);
+  }, [chunk?.id, language, sourceLanguage, level, paused, index, repetitions, pause, rate, automatic, revision, translationAudio]);
 
   const sessionActive = !paused && !!chunk && (index < repetitions || automatic);
   useEffect(() => {
@@ -269,16 +231,16 @@ export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk,
         <p>{language}</p>
         {onToggleFavorite && <FavoriteChunkButton active={favorite} onToggle={onToggleFavorite} />}
       </div>
-      <h3 lang={language}>{spokenText}</h3>
-      <p lang={sourceLanguage}>{spokenTranslation}</p>
-    </article> : <p role="status">{level === "all" ? t("walking.noChunksAvailable") : t("common.noChunksAvailableForLevelLevel", { level })} {t("walking.chooseAnotherLevelInSettings")}</p>}
-    <p role="status">{paused ? t("common.paused") : !chunk ? t("walking.waitingForLevelSelection") : index >= repetitions ? t("walking.waitingForTheNextChunk") : t("walking.listenAndRepeat")} {t("shadowing.repetitions")} {spoken}/{repetitions}</p>
+      <h3 lang={language}>{chunk.targetIntention ?? chunk.english}</h3>
+      <p lang={sourceLanguage}>{chunk.intention}</p>
+    </article> : <p role="status">{level === "all" ? t("walking.noChunksAvailable") : t("common.noChunksAvailableForLevelLevel", { level: (level) })}  {t("walking.chooseAnotherLevelInSettings")}</p>}
+    <p role="status">{paused ? t("common.paused") : !chunk ? t("walking.waitingForLevelSelection") : index >= repetitions ? t("walking.waitingForTheNextChunk") : t("walking.listenAndRepeat")}  {t("shadowing.repetitions")} {spoken}/{repetitions}</p>
     <progress aria-label={t("walking.repetitionsCompleted")} value={spoken} max={repetitions} />
     {paused && <WalkingSessionSummary summary={session.current.summary(total, seconds)} />}
     {error && <p role="alert">{error}</p>}
     <div className="walking-controls">
       <button type="button" aria-label={t("walking.previousChunk")} title={t("walking.previousChunk")} disabled={!canPrevious || !chunk} onClick={() => navigate(true)}><ControlIcon name="previous" /></button>
-      <button type="button" className="walking-toggle" aria-label={paused ? t("common.resume") : t("common.pause")} title={paused ? t("common.resume") : t("common.pause")} onClick={() => { onStudyState?.(paused, "walking"); audio.current.cancel(); phase.current = "speech"; setError(""); setPaused(v => !v); }}><ControlIcon name={paused ? "play" : "pause"} /></button>
+      <button type="button" className="walking-toggle" aria-label={paused ? t("common.resume") : t("common.pause")} title={paused ? t("common.resume") : t("common.pause")} onClick={() => { onStudyState?.(paused, "walking"); audio.current.cancel(); setError(""); setPaused(v => !v); }}><ControlIcon name={paused ? "play" : "pause"} /></button>
       <button type="button" aria-label={t("walking.nextChunk")} title={t("walking.nextChunk")} disabled={!chunk} onClick={() => navigate()}><ControlIcon name="next" /></button>
       <button type="button" aria-label={t("common.stop")} title={t("common.stop")} onClick={stopSession}><ControlIcon name="stop" /></button>
     </div>
@@ -294,13 +256,13 @@ export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk,
           {Array.from({ length: 8 }, (_, i) => i + 3).map(v => <option key={v}>{v}</option>)}
         </select></label>
         <label>{t("walking.pauseBetweenPlaybacks")} <select value={pause} onChange={e => setPause(Number(e.target.value))}>
-          {Array.from({ length: 7 }, (_, i) => i + 2).map(v => <option key={v} value={v}>{v} {t("walking.seconds")}</option>)}
+          {Array.from({ length: 7 }, (_, i) => i + 2).map(v => <option key={v} value={v}>{v}  {t("walking.seconds")}</option>)}
         </select></label>
         <label>{t("walking.voiceSpeed")} <select value={rate} onChange={e => setRate(Number(e.target.value))}>
           {[0.8, 0.9, 1].map(v => <option key={v} value={v}>{v.toFixed(1)}×</option>)}
         </select></label>
-        <label><input type="checkbox" checked={automatic} onChange={e => setAutomatic(e.target.checked)} /> {t("walking.autoAdvance")}</label>
-        <label><input type="checkbox" checked={keepAwake} onChange={e => setKeepAwake(e.target.checked)} /> {t("walking.keepScreenAwake")}</label>
+        <label><input type="checkbox" checked={automatic} onChange={e => setAutomatic(e.target.checked)} />  {t("walking.autoAdvance")}</label>
+        <label><input type="checkbox" checked={keepAwake} onChange={e => setKeepAwake(e.target.checked)} />  {t("walking.keepScreenAwake")}</label>
       </div>
     </details>
     {wakeWarning && <p role="status">{wakeWarning}</p>}
