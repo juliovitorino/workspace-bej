@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const SIDEBAR_COLLAPSED_KEY = "bej-sidebar-collapsed";
 import type { ThemePreference } from "../theme";
-export type AppView = "study-dashboard" | "extra-activities" | "personal-flashcards" | "memory-flashcards" | "hashmap" | "exercises" | "speaking-game" | "chunk-flashcards" | "favorite-chunks" | "interpretation" | "shadowing";
+export type AppView = "settings" | "study-dashboard" | "extra-activities" | "personal-flashcards" | "memory-flashcards" | "hashmap" | "exercises" | "speaking-game" | "chunk-flashcards" | "favorite-chunks" | "interpretation" | "shadowing";
 interface SidebarProps {
   theme: ThemePreference;
   onThemeChange: (theme: ThemePreference) => void;
@@ -168,6 +168,18 @@ const menuItems: Array<{
             <option value="auto">{t("theme.auto")}</option>
           </select>
         </div>
+        <button type="button" className={`sidebar-menu-item${currentView === "settings" ? " active" : ""}`}
+          aria-current={currentView === "settings" ? "page" : undefined}
+          aria-label={t("settingsPage.title")} title={collapsed ? t("settingsPage.title") : undefined}
+          onClick={() => { setMenuOpen(false); onViewChange("settings"); }}>
+          <span className="sidebar-menu-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="m9 3-.5 2-2 1-2-.5-2 3 1.5 1.5v3L2.5 15l2 3 2-.5 2 1L9 21h4l.5-2 2-1 2 .5 2-3L18 14v-3l1.5-1.5-2-3-2 .5-2-1L13 3Z" />
+              <circle cx="11" cy="12" r="3" />
+            </svg>
+          </span>
+          <span className="sidebar-menu-label">{t("settingsPage.title")}</span>
+        </button>
         <button type="button" className="sidebar-menu-item" aria-haspopup="dialog"
           aria-label={t("common.aboutTheApp")} title={collapsed ? t("common.aboutTheApp") : undefined}
           onClick={() => { setMenuOpen(false); onOpenAbout(); }}>

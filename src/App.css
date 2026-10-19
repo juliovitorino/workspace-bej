@@ -2180,6 +2180,9 @@ button {
   gap: 12px;
 }
 
+.neural-voice-select { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 1rem; color: var(--text); }
+.neural-voice-select select { min-height: 44px; padding: 8px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--surface); color: var(--text); }
+
 .chunk-flashcards-english-row h3 {
   margin: 0;
   color: var(--text);
@@ -2704,3 +2707,20 @@ button { color: inherit; }
 }
 
 #app-floating-controls .hashmap-clear-card-filters { order: -2; }
+
+.app-settings-page { max-width: 920px; color: var(--text); }
+.app-settings-page > header p { color: var(--muted); }
+.settings-categories { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin: 24px 0; }
+.settings-categories button { min-height: 48px; padding: 10px; border: 1px solid var(--border-strong); border-radius: 10px; background: var(--surface); color: var(--text); }
+.settings-categories button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent); color: var(--on-accent, #fff); font-weight: 700; }
+.settings-category-content { padding: clamp(16px, 3vw, 28px); border: 1px solid var(--border-strong); border-radius: 12px; background: var(--surface); }
+.settings-category-content h3 { margin-top: 0; }
+.settings-category-content p { line-height: 1.6; }
+.settings-theme-field { display: grid; gap: 8px; max-width: 360px; }
+.settings-theme-field select { min-height: 48px; padding: 10px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--surface-raised); color: var(--text); }
+.settings-shortcuts { display: flex; gap: 12px; flex-wrap: wrap; }
+.app-settings-page button:focus-visible, .app-settings-page select:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+@media (max-width: 600px) {
+  .settings-categories { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .settings-shortcuts { flex-direction: column; align-items: stretch; }
+}

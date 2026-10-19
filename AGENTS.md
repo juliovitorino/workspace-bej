@@ -1,5 +1,17 @@
 # Mental Hashmap 4.0 — Codex orchestration instructions
 
+## Politica obrigatoria: mp3 e hashmp3 locais por idioma
+
+REGRA INVIOLAVEL - METADADOS DE AUDIO PRIVADOS POR IDIOMA:
+- Os campos examples[].mp3 e examples[].hashmp3 pertencem EXCLUSIVAMENTE ao JSON de seu proprio idioma (pt-BR, en-US, es-ES, fr-FR). Sao locais, como hqImage, e NAO sao campos estruturais sincronizaveis.
+- NUNCA copie, replique, traduza, sincronize ou propague mp3/hashmp3 de um arquivo de idioma para outro, nem por spread de objetos, clonagem de exemplos ou merge generico.
+- Ao criar uma intencao ou exemplo em um idioma destino, OMITA mp3 e hashmp3, mesmo se existirem na origem. Isso vale para os 3 exemplos do pre-pass e para todas as sincronizacoes incrementais.
+- Ao atualizar exemplos sobreviventes, preserve EXATAMENTE os mp3/hashmp3 locais preexistentes (inclusive a ausencia), sem apagar, substituir, recalcular ou modificar. Nunca use os valores da origem para preencher campos ausentes.
+- Se exampleItem for traduzido ou alterado, preserve os metadados locais existentes; qualquer eventual hash desatualizado deve ser resolvido EXCLUSIVAMENTE pelo processo TTS do proprio idioma, fora da sincronizacao.
+- Diferencas ou ausencias de mp3/hashmp3 entre idiomas sao normais, nao bloqueantes e nao devem ser reconciliadas. Nao gere MP3 nem calcule hashmp3 nesta tarefa.
+- Unica excecao: a exclusao GLOBAL explicita e validada de um exemplo por deleteItem === true remove o registro JSON inteiro, inclusive os metadados locais; arquivos MP3 fisicos nunca devem ser apagados.
+- Na validacao final, verifique que os metadados mp3/hashmp3 dos exemplos sobreviventes ficaram inalterados e que exemplos novos nao herdaram esses campos de outros idiomas.
+
 ## Activation
 When the user asks to **sincronizar hashmap**, **sync hashmap**, or to run the Mental Hashmap multilingual agents, act as the **ROOT ORCHESTRATOR** in this Codex session. Do not spawn `hashmap_orchestrator` as a child. Its TOML is a reference for the root role.
 

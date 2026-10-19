@@ -67,7 +67,7 @@ try {
   const filters = { language: 'all', module: 'all', mode: 'all', period: 'all', from: '', to: '' };
   assert.equal(a.studyStats(store.studyData, filters, new Date(now)).total, 4080);
   const backup = a.backupOf(store, new Date(now));
-  await a.updateStudyStore(s => a.restoreStudyBackup(s, backup, JSON.stringify(s)));
+  await a.updateStudyStore(s => a.consolidateStudyBackup(s, backup, JSON.stringify(s)));
   assert.equal(a.totalSeconds(a.readStudyStore().studyData), 4080);
   console.log('PASS A/B/D/E: reading + Hashmap + Shadowing, one-hour background interval, simultaneous finalization, three unique sessions, independent goals/adjustment, consolidated stats and idempotent backup import.');
 

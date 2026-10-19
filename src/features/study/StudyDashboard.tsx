@@ -1,26 +1,26 @@
+import { StudyDataTransfer } from "./StudyDataTransfer";
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import { LANGUAGES, type StudentLanguage } from "../../config/languages";
 import { languageName } from "../../i18n";
-import { backupOf, MAX_BACKUP_BYTES, mergeStudyData, newStudyId, parseStudyBackup, readStudyStore, readStudyCheckpoints, studyDataWithCheckpoints, restoreStudyBackup,
+import { newStudyId, readStudyStore, readStudyCheckpoints, studyDataWithCheckpoints,
   STUDY_CHANGED, isStudyStorageKey, STUDY_MODULES, EXTRA_CATEGORIES, StudyError, updateStudyStore, validDay,
-  type ManualAdjustment, type StudyBackup, type StudyData, type StudyStore } from "./studyStorage";
-import { localDay, studyTracker } from "./studyTrackingService";
+  type ManualAdjustment, type StudyData, type StudyStore } from "./studyStorage";
+import { localDay } from "./studyTrackingService";
 import { studyEntries, studyStats, type StudyFilters } from "./studyStats";
 import "./study.css";
-import { StudyDangerZone } from "./StudyDangerZone";
 import { StudyPeriodMenu } from "./StudyPeriodMenu";
 
 const languages = Object.keys(LANGUAGES) as StudentLanguage[];
 const HISTORY_PAGE_SIZE = 20;
 const moduleKeys: Record<string, string> = { hashmap: "Hashmap", "memory-flashcards": "memory.title", "chunk-flashcards": "common.chunkFlashcards", "chunk-favorites": "favorites.title", shadowing: "common.shadowing", "basic-training": "study.basicTraining", "advanced-training": "study.advancedTraining", "speaking-game": "common.speakingGame", interpretation: "common.interpretation", "extra-activities": "extras.title", previous: "study.previousHours" };
-export function StudyDashboard({ language }: { language: StudentLanguage }) {
+export function StudyDashboard({ language, initialSection }: { language: StudentLanguage; initialSection?: "settings" | "history" }) {
   const { t, i18n } = useTranslation();
   const [expanded, setExpanded] = useState(false);
   const [calendarAnchor, setCalendarAnchor] = useState<HTMLElement | null>(null);
   const closeCalendar = useMemo(() => () => setCalendarAnchor(null), []);
-  const [historyVisible, setHistoryVisible] = useState(false);
+  const [historyVisible, setHistoryVisible] = useState(initialSection === "history");
   const [filtersVisible, setFiltersVisible] = useState(() => !window.matchMedia("(max-width: 820px)").matches);
   useEffect(() => {
     const mobile = window.matchMedia("(max-width: 820px)");
@@ -30,7 +30,7 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
   }, []);
   const [goalExplanationVisible, setGoalExplanationVisible] = useState(false);
   const [detailsVisible, setDetailsVisible] = useState(false);
-  const [settingsVisible, setSettingsVisible] = useState(false);
+  const [settingsVisible, setSettingsVisible] = useState(initialSection === "settings");
   const [scrollTarget, setScrollTarget] = useState("");
   useEffect(() => {
     if (!scrollTarget) return;
@@ -39,6 +39,12 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
     setScrollTarget("");
   }, [scrollTarget]);
   const [store, setStore] = useState<StudyStore | null>(null);
+  const initialSectionOpened = useRef(false);
+  useEffect(() => {
+    if (!store || !initialSection || initialSectionOpened.current) return;
+    initialSectionOpened.current = true;
+    setScrollTarget(initialSection === "settings" ? "study-data" : "study-title");
+  }, [store, initialSection]);
   const [checkpoints, setCheckpoints] = useState<ReturnType<typeof readStudyCheckpoints>>([]);
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
@@ -53,10 +59,6 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
   const [date, setDate] = useState(localDay(new Date()));
   const [description, setDescription] = useState("");
   const [editing, setEditing] = useState<string | null>(null);
-  const [pending, setPending] = useState<{ backup: StudyBackup; baseline: string } | null>(null);
-  const [incomingGoals, setIncomingGoals] = useState(false);
-  const [confirmed, setConfirmed] = useState(false);
-  const fileInput = useRef<HTMLInputElement>(null);
   const [now, setNow] = useState(() => new Date());
   const [historyPage, setHistoryPage] = useState(1);
   const fail = (e: unknown) => { setError(t(`study.errors.${e instanceof StudyError ? e.code : "storage"}`)); setMessage(""); };
@@ -93,8 +95,6 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
   const currentHistoryPage = Math.min(historyPage, historyPages);
   const historyRows = history.slice((currentHistoryPage - 1) * HISTORY_PAGE_SIZE, currentHistoryPage * HISTORY_PAGE_SIZE);
   useEffect(() => { setHistoryPage(page => Math.min(page, historyPages)); }, [historyPages]);
-  const preview = useMemo(() => store && pending && mergeStudyData(store.studyData, pending.backup.studyData, incomingGoals), [store, pending, incomingGoals]);
-  const stale = !!pending && (JSON.stringify(store) !== pending.baseline || !!store?.extraActivity);
   const duration = (seconds: number) => {
     const parts = [["durationHours", Math.floor(seconds / 3600)], ["durationMinutes", Math.floor(seconds % 3600 / 60)], ["durationSeconds", Math.floor(seconds % 60)]] as const;
     return parts.filter(([, value]) => value > 0).map(([key, value]) => t(`study.${key}`, { count: value })).join(" ") || t("study.zeroDuration");
@@ -144,28 +144,6 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
       resetAdjustment(); setMessage(t("study.saved"));
     });
   }
-  async function exportBackup() {
-    await studyTracker.seal();
-    const backup = backupOf(readStudyStore());
-    const stamp = backup.exportedAt.replace(/[-:]/g, "").replace("T", "-").slice(0, 15);
-    const url = URL.createObjectURL(new Blob([JSON.stringify(backup, null, 2)], { type: "application/json" }));
-    const anchor = document.createElement("a"); anchor.href = url; anchor.download = `bej-study-backup-${stamp}.json`;
-    document.body.appendChild(anchor); anchor.click(); anchor.remove();
-    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-    setMessage(t("study.exported"));
-  }
-  function selectFile(file?: File) {
-    if (!file) return;
-    if (store?.extraActivity) { fail(new StudyError("extraActive")); return; }
-    setPending(null); setConfirmed(false); setIncomingGoals(false);
-    void action(async () => {
-      if (file.size > MAX_BACKUP_BYTES) throw new StudyError("tooLarge");
-      let text: string;
-      try { text = await file.text(); } catch { throw new StudyError("invalid"); }
-      const backup = parseStudyBackup(text), current = readStudyStore();
-      setStore(current); setPending({ backup, baseline: JSON.stringify(current) });
-    });
-  }
   const chart = (title: string, values: Record<string, number>, label: (key: string) => string = key => key, total?: number, modules = false, sectionId?: string) => {
     const entries = Object.entries(values).sort(modules
       ? ([a, secondsA], [b, secondsB]) => secondsB - secondsA || label(a).localeCompare(label(b), i18n.language)
@@ -197,7 +175,7 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
         <label>{t("study.language")}<select value={filters.language} onChange={e => setFilters({ ...filters, language: e.target.value as StudyFilters["language"] })}><option value="all">{t("study.allLanguages")}</option>{languages.map(code => <option key={code} value={code}>{languageName(code)}</option>)}</select></label>
         <label>{t("study.module")}<select value={filters.module} onChange={e => setFilters({ ...filters, module: e.target.value as StudyFilters["module"] })}><option value="all">{t("study.allModules")}</option>{STUDY_MODULES.map(key => <option key={key} value={key}>{moduleLabel(key)}</option>)}</select></label>
         <label>{t("study.mode")}<select value={filters.mode} onChange={e => setFilters({ ...filters, mode: e.target.value as StudyFilters["mode"] })}>{["all", "manual", "walking"].map(key => <option key={key} value={key}>{t(`study.modes.${key}`)}</option>)}</select></label>
-        <label>{t("study.period")}<select value={filters.period} onChange={e => setFilters({ ...filters, period: e.target.value as StudyFilters["period"] })}>{["today", "7", "30", "month", "90", "all", "custom"].map(key => <option key={key} value={key}>{t(`study.periods.${key}`)}</option>)}</select></label>
+        <label>{t("study.period")}<select value={filters.period} onChange={e => setFilters({ ...filters, period: e.target.value as StudyFilters["period"] })}>{["today", "yesterday", "7", "30", "month", "90", "all", "custom"].map(key => <option key={key} value={key}>{t(`study.periods.${key}`)}</option>)}</select></label>
         <label>{t("extras.origin")}<select value={filters.origin ?? "all"} onChange={e => setFilters({ ...filters, origin: e.target.value as StudyFilters["origin"] })}>{["all", "internal", "external"].map(key => <option key={key} value={key}>{t(`extras.origins.${key}`)}</option>)}</select></label>
         {filters.origin !== "internal" && <label>{t("extras.category")}<select value={filters.extraCategory ?? "all"} onChange={e => setFilters({ ...filters, extraCategory: e.target.value as StudyFilters["extraCategory"] })}><option value="all">{t("extras.allCategories")}</option>{EXTRA_CATEGORIES.map(key => <option key={key} value={key}>{t(`extras.categories.${key}`)}</option>)}</select></label>}
         {filters.period === "custom" && <><label>{t("study.from")}<input type="date" value={filters.from} onChange={e => setFilters({ ...filters, from: e.target.value })} /></label><label>{t("study.to")}<input type="date" value={filters.to} onChange={e => setFilters({ ...filters, to: e.target.value })} /></label></>}
@@ -217,8 +195,8 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
           </div>;
         })}
       </section>
-      {chart(t("study.byLanguage"), stats.byLanguage, code => languageName(code as StudentLanguage))}
-      {chart(t("study.byModule"), moduleValues, moduleLabel, stats.total, true, "study-time-by-module")}
+      {chart(`${t("study.byLanguage")} · ${t(`study.periods.${filters.period}`)}`, stats.byLanguage, code => languageName(code as StudentLanguage))}
+      {chart(`${t("study.byModule")} · ${t(`study.periods.${filters.period}`)}`, moduleValues, moduleLabel, stats.total, true, "study-time-by-module")}
       {chart(t("extras.byCategory"), Object.fromEntries(EXTRA_CATEGORIES.map(key => [key, stats.byExtraCategory[key] ?? 0])), key => t(`extras.categories.${key}`), stats.external, true)}
       <div id="study-details" tabIndex={-1} className="study-content" hidden={!detailsVisible}>
       <div className="study-metrics">{([ ["accumulated", stats.total], ["today", stats.today], ["week", stats.week], ["month", stats.month], ["dailyAverage", stats.average] ] as const).map(([key, seconds]) => <div className="study-panel" key={key}><span>{t(`study.${key}`)}</span><strong>{duration(seconds)}</strong></div>)}
@@ -252,24 +230,8 @@ export function StudyDashboard({ language }: { language: StudentLanguage }) {
         <span role="status">{t("study.historyPage", { page: currentHistoryPage, total: historyPages, count: history.length })}</span>
         <button type="button" className="secondary-button" aria-controls="study-history-list" disabled={currentHistoryPage === historyPages} onClick={() => setHistoryPage(currentHistoryPage + 1)}>{t("common.next")}</button>
       </nav>}</section>
-      <section hidden={historyVisible} className="study-panel"><h3>{t("study.myData")}</h3><p>{t("study.backupNote")}</p><div className="study-actions">
-        <button type="button" className="primary-button" disabled={busy} onClick={() => void action(exportBackup)}>{t("study.export")}</button>
-        <button type="button" className="secondary-button" disabled={busy || !!store.extraActivity} onClick={() => fileInput.current?.click()}>{t("study.restore")}</button>
-        <input ref={fileInput} hidden type="file" accept=".json,application/json" aria-label={t("study.restore")} onChange={e => { selectFile(e.target.files?.[0]); e.target.value = ""; }} />
-      </div>
-      {store.extraActivity && <p role="status">{t("study.errors.extraActive")}</p>}
-      {preview && pending && <section className="study-preview" aria-labelledby="study-preview-title"><h4 id="study-preview-title">{t("study.preview")}</h4>
-        <dl>{([ ["backupSessions", pending.backup.studyData.sessions.length], ["newSessions", preview.newSessions], ["duplicates", preview.duplicates], ["conflicts", preview.conflicts.length], ["newAdjustments", preview.newAdjustments] ] as const).map(([key, value]) => <div key={key}><dt>{t(`study.${key}`)}</dt><dd>{value}</dd></div>)}<div><dt>{t("study.currentHours")}</dt><dd>{duration(preview.currentSeconds)}</dd></div><div><dt>{t("study.afterHours")}</dt><dd>{duration(preview.afterSeconds)}</dd></div></dl>
-        {!!preview.conflicts.length && <p role="alert">{t("study.errors.conflict")}</p>}
-        {stale && <p role="alert">{t("study.errors.stale")}</p>}
-        {!!preview.goalDifferences.length && <><p>{t("study.goalDifferences")}</p><ul>{preview.goalDifferences.map(g => <li key={g.kind + g.language}>{languageName(g.language)} · {t(g.kind === "goals" ? "study.targetHours" : "study.monthlyHours")}: {number(g.local)} → {number(g.incoming)}</li>)}</ul><label>{t("study.goalChoice")}<select value={incomingGoals ? "incoming" : "local"} disabled={busy} onChange={e => { setIncomingGoals(e.target.value === "incoming"); setConfirmed(false); }}><option value="local">{t("study.keepLocal")}</option><option value="incoming">{t("study.useIncoming")}</option></select></label></>}
-        <label className="study-check"><input type="checkbox" checked={confirmed} disabled={busy || stale || !!preview.conflicts.length} onChange={e => setConfirmed(e.target.checked)} />{t("study.confirmMerge")}</label>
-        <div className="study-actions"><button type="button" className="primary-button" disabled={busy || !confirmed || stale || !!preview.conflicts.length} onClick={() => void action(async () => {
-          const next = await updateStudyStore(current => restoreStudyBackup(current, pending.backup, pending.baseline, incomingGoals));
-          setStore(next); setPending(null); setConfirmed(false); setMessage(t("study.restored"));
-        })}>{t("study.merge")}</button><button type="button" className="secondary-button" disabled={busy} onClick={() => { setPending(null); setConfirmed(false); }}>{t("study.cancel")}</button></div>
-      </section>}
-      <StudyDangerZone language={language} dashboardLanguage={filters.language} onChanged={() => { setPending(null); setConfirmed(false); setEditing(null); }} />
+      <section id="study-data" tabIndex={-1} hidden={historyVisible} className="study-panel">
+      <StudyDataTransfer mode="restore" disabled={busy} onBusyChange={setBusy} />
       </section>
       {calendarAnchor && <StudyPeriodMenu anchor={calendarAnchor} period={filters.period} onClose={closeCalendar} onSelect={period => { setFilters(current => ({ ...current, period })); closeCalendar(); setHistoryVisible(false); setScrollTarget("study-time-by-module"); }} />}
       <p hidden={historyVisible} className="study-note">{t("study.limitations")}</p>

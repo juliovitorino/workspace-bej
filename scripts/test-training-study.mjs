@@ -117,7 +117,7 @@ globalThis.fetch = async url => {
 const settle = async () => { for (let i = 0; i < 40; i++) await Promise.resolve(); };
 const { TrainingActivity, useTrainingStudy } = load('src/features/study/useTrainingStudy.ts');
 const { studyTracker, IDLE_MS } = load('src/features/study/studyTrackingService.ts');
-const { readStudyStore, totalSeconds, backupOf, parseStudyBackup, restoreStudyBackup } = load('src/features/study/studyStorage.ts');
+const { readStudyStore, totalSeconds, backupOf, parseStudyBackup, consolidateStudyBackup } = load('src/features/study/studyStorage.ts');
 const { effectiveStudyView, useStudyTracking } = load('src/features/study/useStudyTracking.ts');
 const { TrainingStudyTime } = load('src/features/study/TrainingStudyTime.tsx');
 const { BasicTraining } = load('src/components/BasicTraining.tsx');
@@ -291,8 +291,8 @@ console.log('PASS new module signals: central hook, initial inactivity, 65 secon
 
 // G: all exercise modules use the unchanged, idempotent backup contract.
 const current = readStudyStore(), backup = parseStudyBackup(JSON.stringify(backupOf(current, new Date(now))));
-let restored = restoreStudyBackup(current, backup, JSON.stringify(current));
-restored = restoreStudyBackup(restored, backup, JSON.stringify(restored));
+let restored = consolidateStudyBackup(current, backup, JSON.stringify(current));
+restored = consolidateStudyBackup(restored, backup, JSON.stringify(restored));
 assert.equal(totalSeconds(restored.studyData), totalSeconds(current.studyData)); assert.deepEqual(restored.studyData.sessions, current.studyData.sessions);
 assert.equal(backup.schemaVersion, 1); assert.equal(restored.studyData.goals['en-US'], 750);
 tracking.dispose(); await settle();
@@ -324,7 +324,7 @@ find(dashboard.tree, n => n.type === 'button' && text(n) === translations.study.
 assert.equal(viewNode('study-results').props.hidden, false);
 assert.equal(JSON.stringify([...memory]), beforeUi, 'details, settings and history navigation never write study data');
 console.log('PASS dashboard views: collapsed details/settings, expansion, dedicated history, return and no storage writes.');
-const moduleChart = () => find(dashboard.tree, n => n.type === 'section' && React.Children.toArray(n.props.children).some(c => c?.type === 'h3' && text(c) === translations.study.byModule));
+const moduleChart = () => viewNode('study-time-by-module');
 const basicRow = () => find(moduleChart(), n => n.type === 'li' && text(n).includes(translations.study.basicTraining));
 const barPercent = row => parseFloat(find(row, n => n.type === 'span' && n.props.style?.width).props.style.width);
 assert.ok(text(basicRow()).includes('37,55%'), '181 seconds out of 482 seconds must display 37.55%');
@@ -340,13 +340,21 @@ assert.equal(React.Children.toArray(find(moduleChart(), n => n.type === 'ul').pr
 assert.ok(text(moduleChart()).includes(translations.study.zeroDuration)); assert.ok(text(moduleChart()).includes('0%'));
 assert.equal(barPercent(basicRow()), 0); assert.ok(!text(moduleChart()).includes('NaN'));
 // Module comparison lists every applicable module, ordered by raw seconds.
-const chartSection = title => find(dashboard.tree, n => n.type === 'section' && React.Children.toArray(n.props.children).some(c => c?.type === 'h3' && text(c) === title));
+const chartSection = title => find(dashboard.tree, n => n.type === 'section' && React.Children.toArray(n.props.children).some(c => c?.type === 'h3' && (text(c) === title || text(c).startsWith(title + ' \u00b7 '))));
 const chartRows = title => React.Children.toArray(find(chartSection(title), n => n.type === 'ul')?.props.children);
 const moduleRows = () => chartRows(translations.study.byModule);
 const rowLabel = row => text(find(row, n => n.type === 'span' && !n.props.style));
 const filterControls = () => React.Children.toArray(find(dashboard.tree, n => n.type === 'fieldset' && n.props.className?.includes('study-filters')).props.children)
   .map(label => find(label, n => n.type === 'select')).filter(Boolean);
 const setFilter = (index, value) => { filterControls()[index].props.onChange({ target: { value } }); dashboard.flush(); };
+for (const period of ['today', 'yesterday', 'month', '7', '30', '90', 'all', 'custom']) {
+  setFilter(3, period);
+  for (const title of [translations.study.byLanguage, translations.study.byModule]) {
+    assert.equal(text(find(chartSection(title), n => n.type === 'h3')), `${title} \u00b7 ${translations.study.periods[period]}`);
+  }
+}
+setFilter(3, 'all');
+console.log('PASS chart headings: language and module charts follow every selected period.');
 const labels = Object.fromEntries(STUDY_MODULES.map(module => [module, text(find(moduleFilter, n => n.type === 'option' && n.props.value === module))]));
 const updateChart = sessions => {
   chartStore.studyData.sessions = sessions; persistChartStore(); listeners.get(STUDY_CHANGED)(); dashboard.flush();

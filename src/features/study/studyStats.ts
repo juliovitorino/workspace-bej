@@ -2,7 +2,7 @@ import type { StudentLanguage } from "../../config/languages";
 import { localDay } from "./studyTrackingService";
 import { EXTRA_CATEGORIES, type ExtraCategory, type StudyData, type StudyMode, type StudyModule } from "./studyStorage";
 
-export type StudyPeriod = "today" | "7" | "30" | "month" | "90" | "all" | "custom";
+export type StudyPeriod = "today" | "yesterday" | "7" | "30" | "month" | "90" | "all" | "custom";
 export interface StudyFilters {
   language: StudentLanguage | "all"; module: StudyModule | "all"; mode: StudyMode | "all";
   period: StudyPeriod; from: string; to: string;
@@ -28,8 +28,8 @@ export function studyStats(data: StudyData, filters: StudyFilters, now = new Dat
     (filters.origin !== "external" || e.module === "extra-activities") &&
     (!filters.extraCategory || filters.extraCategory === "all" || filters.origin === "internal" || (e.module === "extra-activities" && e.category === filters.extraCategory)));
   const earliest = matching.reduce((day, e) => e.date < day ? e.date : day, today);
-  const from = filters.period === "custom" ? filters.from : filters.period === "today" ? today : filters.period === "month" ? month : filters.period === "all" ? earliest : previousDay(today, 1 - Number(filters.period));
-  const to = filters.period === "custom" ? filters.to : today;
+  const from = filters.period === "custom" ? filters.from : filters.period === "today" ? today : filters.period === "yesterday" ? previousDay(today, -1) : filters.period === "month" ? month : filters.period === "all" ? earliest : previousDay(today, 1 - Number(filters.period));
+  const to = filters.period === "custom" ? filters.to : filters.period === "yesterday" ? from : today;
   const entries = matching.filter(e => e.date >= from && e.date <= to);
   const sum = (list: StudyEntry[]) => list.reduce((n, e) => n + e.seconds, 0);
   function group(key: (entry: StudyEntry) => string) {

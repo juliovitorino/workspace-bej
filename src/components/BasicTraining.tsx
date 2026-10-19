@@ -1,3 +1,4 @@
+import { useExampleAudio } from "../features/study/useExampleAudio";
 import { speakStudyAudio, cancelStudyAudio } from "../features/study/studyAudio";
 import { useTrainingStudy, type TrainingStudyReporter } from "../features/study/useTrainingStudy";
 import { TrainingStudyTime } from "../features/study/TrainingStudyTime";
@@ -198,7 +199,11 @@ export function BasicTraining({
   const [translationError, setTranslationError] = useState<string | null>(null);
   const [googleTranslation, setGoogleTranslation] = useState<string | null>(null);
   const [speaking, setSpeaking] = useState(false);
+  const { playback: examplePlayback, play: playExample } = useExampleAudio();
   const [speakingExample, setSpeakingExample] = useState<"source" | "target" | null>(null);
+  useEffect(() => {
+    setSpeakingExample(examplePlayback?.state === "playing" ? examplePlayback.id === "reference-source" ? "source" : "target" : null);
+  }, [examplePlayback]);
   const [evaluationSpeaking, setEvaluationSpeaking] = useState<
     "corrected" | "better" | null
   >(null);
@@ -352,32 +357,12 @@ export function BasicTraining({
   }
 
   function handleSpeakReferenceExample(text: string, locale: StudentLanguage, side: "source" | "target") {
-    if (!("speechSynthesis" in window)) {
-      setSpeechError(t("common.speechPlaybackIsUnavailableInThisBrowser"));
-      return;
-    }
-    cancelStudyAudio();
     setSpeechError(null);
     setSpeaking(false);
     setEvaluationSpeaking(null);
-    setSpeakingExample(null);
-
-    const utterance = new SpeechSynthesisUtterance(text);
-    const voices = window.speechSynthesis.getVoices();
-    utterance.voice = voices.find((voice) => voice.lang.toLowerCase() === locale.toLowerCase())
-      ?? voices.find((voice) => voice.lang.toLowerCase().split("-")[0] === locale.split("-")[0])
-      ?? null;
-    utterance.lang = locale;
-    utterance.rate = 0.9;
-    utterance.onstart = () => setSpeakingExample(side);
-    utterance.onend = () => setSpeakingExample(null);
-    utterance.onerror = (event) => {
-      setSpeakingExample(null);
-      if (event.error !== "interrupted" && event.error !== "canceled") {
-        setSpeechError(t("basicTraining.couldNotPlayTheExampleInLanguage", { language: (LANGUAGES[locale].name.toLowerCase()) }));
-      }
-    };
-    speakStudyAudio(utterance);
+    const example = side === "target" ? referenceExample : undefined;
+    playExample(example ?? { id: `reference-${side}`, exampleItem: text, intent: text }, locale,
+      () => setSpeechError(t("common.speechPlaybackIsUnavailableInThisBrowser")));
   }
 
   function handleToggleDictation() {
@@ -893,10 +878,12 @@ export function BasicTraining({
                 {renderHighlightedText(referenceExample.pt, referenceExample.ptIntent)}
                 {" "}
                 <button type="button" className="secondary-button training-example-audio"
+                  disabled={examplePlayback?.state === "loading"}
+                  aria-busy={examplePlayback?.state === "loading"}
                   onClick={() => handleSpeakReferenceExample(referenceExample.pt, sourceLanguage, "source")}
                   aria-label={t("basicTraining.listenToTheExampleInSourcelanguage", { sourceLanguage: (sourceLanguageName) })}
                   title={t("basicTraining.listenInSourcelanguage", { sourceLanguage: (sourceLanguageName) })}>
-                  {speakingExample === "source" ? "🔊 " + t("basicTraining.listening") : "🔊 " + t("basicTraining.listen")}
+                  {examplePlayback?.id === "reference-source" && examplePlayback.state === "loading" ? "…" : speakingExample === "source" ? "■ " + t("basicTraining.listening") : "🔊 " + t("basicTraining.listen")}
                 </button>
               </p>
               <p className="training-example-language">{t("basicTraining.study")} {LANGUAGES[language].flag} {localizedLanguageName(language)}</p>
@@ -904,10 +891,12 @@ export function BasicTraining({
                 {renderHighlightedText(referenceExample.en, referenceExample.enIntent)}
                 {" "}
                 <button type="button" className="secondary-button training-example-audio"
+                  disabled={examplePlayback?.state === "loading"}
+                  aria-busy={examplePlayback?.state === "loading"}
                   onClick={() => handleSpeakReferenceExample(referenceExample.en, language, "target")}
                   aria-label={t("basicTraining.listenToTheExampleInSourcelanguage", { sourceLanguage: (languageName) })}
                   title={t("basicTraining.listenInSourcelanguage", { sourceLanguage: (languageName) })}>
-                  {speakingExample === "target" ? "🔊 " + t("basicTraining.listening") : "🔊 " + t("basicTraining.listen")}
+                  {examplePlayback?.id === referenceExample.id && examplePlayback.state === "loading" ? "…" : speakingExample === "target" ? "■ " + t("basicTraining.listening") : "🔊 " + t("basicTraining.listen")}
                 </button>
               </p>
             </div>

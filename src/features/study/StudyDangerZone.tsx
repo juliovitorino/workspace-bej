@@ -62,7 +62,7 @@ export function StudyDangerZone({ language, dashboardLanguage = language, onChan
     finally { onChanged(); gate.current = false; setBusy(false); }
   };
   return <section className="study-danger" aria-labelledby="study-danger-title">
-    <h4 id="study-danger-title"><span aria-hidden="true">⚠</span> {t("studyDanger.title")}</h4>
+    <h4 id="study-danger-title"><span aria-hidden="true">⚠</span> {t("studyDanger.dataResetTitle")}</h4>
     <p>{t("studyDanger.intro")}</p>
     <div className="study-danger-operation"><div><h5>{t("studyDanger.languageTitle")}</h5><p>{t("studyDanger.languageDescription")}</p>
       <label>{t("study.language")}<select value={selected} disabled={busy || !!scope} onChange={event => setSelected(event.target.value as StudentLanguage)}>

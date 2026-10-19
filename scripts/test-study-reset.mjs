@@ -57,10 +57,10 @@ await s.resetStudyData(all);assert.equal(s.totalSeconds(s.readStudyStore().study
 await s.resetStudyData(all);assert.equal(s.readStudyStore().studyData.sessions.length,0);
 const backup={schemaVersion:1,application:s.APPLICATION,exportedAt:'2026-10-19T00:00:00.000Z',studyData:{goals:{'en-US':750},monthlyGoals:{},sessions:[session('restored')],manualAdjustments:[]}};
 const baseline=JSON.stringify(s.readStudyStore());
-await s.updateStudyStore(store=>s.restoreStudyBackup(store,backup,baseline));
+await s.updateStudyStore(store=>s.consolidateStudyBackup(store,backup,baseline));
 assert.equal(s.readStudyStore().studyData.sessions[0].id,'restored','explicit restore remains supported after reset');
 await s.resetStudyData(all);
-await assert.rejects(s.updateStudyStore(store=>s.restoreStudyBackup(store,backup,baseline)),code('stale'));
+await assert.rejects(s.updateStudyStore(store=>s.consolidateStudyBackup(store,backup,baseline)),code('stale'));
 await assert.rejects(s.resetStudyData({scope:'language',language:'de-DE'}),code('invalid'));
 await assert.rejects(s.resetStudyData({scope:'wrong'}),code('invalid'));
 console.log('PASS global reset: zero totals, empty history, stable goals, idempotency, scope/language validation, explicit restore and stale restore rejection.');
@@ -106,3 +106,46 @@ assert.deepEqual(s.readStudyStore().studyData.sessions.map(row=>row.language).so
 const updated=s.readStudyResetImpact(all);await s.resetStudyData(all,updated.fingerprint);
 assert.equal(s.totalSeconds(s.readStudyStore().studyData),0);
 console.log('PASS impact preview: exact per-language totals/session/adjustment counts, read-only opening, stale identity/content rejection under lock, EN-only preservation of ES/FR and explicit global deletion.');
+
+// Replacement is independent of consolidation: the backup is the complete destination.
+function seedReplacement() {
+  seed();
+  for (const module of s.STUDY_MODULES) values.delete(K + 'active:' + module);
+}
+seedReplacement();
+const priorRestoreStore = s.readStudyStore();
+const preferenceBytes = [...values].filter(([key]) => !key.startsWith(K) || key === K + 'active:unrelated-feature' || key === K + 'preferences:learning');
+const replacementBackup = s.backupOf({ ...s.emptyStore(), studyData: {
+  goals: { 'fr-FR': 500 }, monthlyGoals: { 'fr-FR': 10 },
+  sessions: [session('z-new', 'fr-FR'), { ...session('english'), activeSeconds: 1800 }, session('a-new', 'es-ES')],
+  manualAdjustments: []
+} });
+assert.ok(s.mergeStudyData(priorRestoreStore.studyData, replacementBackup.studyData).conflicts.length, 'this input would conflict if it were merged');
+await s.restoreStudyBackup(replacementBackup, JSON.stringify(priorRestoreStore));
+const replaced = s.readStudyStore();
+assert.deepEqual(replaced.studyData.sessions.map(row => row.id), ['a-new', 'english', 'z-new']);
+assert.equal(replaced.studyData.sessions.find(row => row.id === 'english').activeSeconds, 1800, 'same ID is replaced, not merged');
+assert.equal(replaced.studyData.manualAdjustments.length, 0);
+assert.deepEqual(replaced.studyData.goals, { 'fr-FR': 500 });
+assert.deepEqual(replaced.studyData.monthlyGoals, { 'fr-FR': 10 });
+assert.equal(s.totalSeconds(replaced.studyData), 9000);
+for (const [key, value] of preferenceBytes) assert.equal(values.get(key), value);
+await assert.rejects(s.restoreStudyBackup(replacementBackup, JSON.stringify(priorRestoreStore)), code('stale'));
+await assert.rejects(s.updateStudyStore(() => priorRestoreStore, 'hashmap'), code('stale'));
+const replacementBytes = [...values].sort();
+await assert.rejects(s.restoreStudyBackup({ ...replacementBackup, schemaVersion: 2 }, JSON.stringify(replaced)), code('version'));
+assert.deepEqual([...values].sort(), replacementBytes);
+let releaseRestoreControl;
+const restoreControl = navigator.locks.request(K + 'control:hashmap', () => new Promise(resolve => { releaseRestoreControl = resolve; }));
+for (let i = 0; i < 20; i++) await Promise.resolve();
+await assert.rejects(s.restoreStudyBackup(replacementBackup, JSON.stringify(replaced)), code('resetActive'));
+releaseRestoreControl(); await restoreControl;
+put('active:hashmap', session('interrupted-restore'));
+await assert.rejects(s.restoreStudyBackup(replacementBackup, JSON.stringify(s.readStudyStore())), code('resetActive'));
+values.delete(K + 'active:hashmap');
+seedReplacement();
+const beforeReplaceFailure = [...values].sort();
+failAt = removals + 1;
+await assert.rejects(s.restoreStudyBackup(replacementBackup, JSON.stringify(s.readStudyStore())), code('storage'));
+assert.deepEqual([...values].sort(), beforeReplaceFailure, 'failed replacement restores exact original bytes');
+console.log('PASS replacement restore: removes absent local sessions/adjustments/goals, replaces matching IDs, keeps app preferences, accepts unsorted backups, rejects stale/invalid/active data, rolls back failures and blocks stale writers.');

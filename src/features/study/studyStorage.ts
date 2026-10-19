@@ -308,7 +308,9 @@ export function readStudyStore(storage: StorageLike = localStorage, module?: Stu
       else if (key.startsWith(STUDY_KEY + "goal:")) {
         const language = decodeURIComponent(key.slice((STUDY_KEY + "goal:").length));
         if (!isStudentLanguage(language) || !object(value)) return invalid();
-        Object.assign(result.studyData.goals, goals({ [language]: value.total }));
+        // An empty goal record explicitly clears the built-in default after restoration.
+        if (value.total === undefined) delete result.studyData.goals[language];
+        else Object.assign(result.studyData.goals, goals({ [language]: value.total }));
         if (value.monthly !== undefined) Object.assign(result.studyData.monthlyGoals, goals({ [language]: value.monthly }));
       }
     }
@@ -445,12 +447,54 @@ export function mergeStudyData(local: StudyData, incoming: StudyData, preferInco
   };
   return { studyData, newSessions, duplicates, newAdjustments, conflicts, goalDifferences, currentSeconds: totalSeconds(local), afterSeconds: totalSeconds(studyData) };
 }
-export function restoreStudyBackup(store: StudyStore, backup: StudyBackup, expected: string, preferIncomingGoals = false): StudyStore {
+/** Consolidation keeps all local records and deduplicates incoming records by ID. */
+export function consolidateStudyBackup(store: StudyStore, backup: StudyBackup, expected: string, preferIncomingGoals = false): StudyStore {
   if (store.extraActivity) throw new StudyError("extraActive");
   if (JSON.stringify(store) !== expected || store.activeSession) throw new StudyError("stale");
   const merge = mergeStudyData(store.studyData, backup.studyData, preferIncomingGoals);
   if (merge.conflicts.length) throw new StudyError("conflict");
   return { ...store, studyData: validateStudyData(merge.studyData) };
+}
+
+/** Explicit replacement of confirmed study records and goals, independent of merging. */
+export async function restoreStudyBackup(backup: StudyBackup, expected: string): Promise<StudyStore> {
+  const validated = parseStudyBackup(JSON.stringify(backup));
+  try {
+    return await protectReset({ scope: "all" }, languages => {
+      const current = readStudyStore();
+      if (JSON.stringify(current) !== expected) throw new StudyError("stale");
+      // Also protect interrupted sessions that no longer hold a live control lock.
+      if (STUDY_MODULES.some(module => localStorage.getItem(STUDY_KEY + "active:" + module) !== null)) throw new StudyError("resetActive");
+      const next: StudyStore = { ...current, studyData: validated.studyData };
+      const before = entries(current), after = entries(next);
+      if (!after.has(recordKey("goal", "en-US"))) after.set(recordKey("goal", "en-US"), "{}");
+      for (const language of languages) {
+        const key = STUDY_KEY + "reset:" + language;
+        const original = localStorage.getItem(key);
+        if (original !== null) before.set(key, original);
+        after.set(key, JSON.stringify({ generation: newStudyId(), keys: [] }));
+      }
+      const keys = new Set([...before.keys(), ...after.keys()]);
+      // Preserve exact original bytes for rollback on a failed multi-key write.
+      const originals = new Map([...keys].map(key => [key, localStorage.getItem(key)]));
+      try {
+        for (const [key, value] of after) if (originals.get(key) !== value) localStorage.setItem(key, value);
+        for (const key of before.keys()) if (!after.has(key)) localStorage.removeItem(key);
+        const result = readStudyStore();
+        const actual = entries(result), planned = entries(next);
+        if (actual.size !== planned.size || [...planned].some(([key, value]) => actual.get(key) !== value)) throw new StudyError("storage");
+        return result;
+      } catch (cause) {
+        // Clear only owned keys, then restore the snapshot while all controls are locked.
+        for (const key of keys) localStorage.removeItem(key);
+        for (const [key, value] of originals) if (value !== null) localStorage.setItem(key, value);
+        throw Object.assign(new StudyError("storage"), { cause });
+      }
+    });
+  } catch (error) {
+    if (error instanceof StudyError) throw error;
+    throw new StudyError("storage");
+  } finally { window.dispatchEvent(new Event(STUDY_CHANGED)); }
 }
 export function newStudyId(): string {
   if (typeof globalThis.crypto?.randomUUID === "function") return crypto.randomUUID();

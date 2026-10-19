@@ -170,6 +170,9 @@ for (const language of ['en-US', 'fr-FR', 'es-ES']) {
     speaker.props.onClick();
     assert.equal(utterances.at(-1).lang, language);
     assert.equal(utterances.at(-1).voice?.lang ?? null, available.length === 3 ? language : available[0]?.lang ?? null);
+    // Finish this utterance before requesting another: repeat clicks while
+    // loading are now deliberately ignored by the shared player.
+    utterances.at(-1).onend?.();
   }
   h.dispose();
 }
