@@ -1,18 +1,22 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { languageName } from "../../i18n";
-import { backupOf, MAX_BACKUP_BYTES, mergeStudyData, parseStudyBackup, readStudyStore,
+import {
+  backupOf, MAX_BACKUP_BYTES, mergeStudyData, parseStudyBackup, readStudyStore,
   consolidateStudyBackup, restoreStudyBackup, totalSeconds, STUDY_CHANGED, isStudyStorageKey, StudyError, updateStudyStore,
-  type StudyBackup, type StudyStore } from "./studyStorage";
+  type StudyBackup, type StudyStore
+} from "./studyStorage";
 import { studyTracker } from "./studyTrackingService";
 import "./study.css";
 
 /** Shared file controls, with independent consolidation and replacement operations. */
-export function StudyDataTransfer({ settings = false, mode = "consolidate", disabled = false, onBusyChange }: {
+export function StudyDataTransfer({ settings = false, mode = "consolidate", disabled = false, onBusyChange, standalone = false, onOpenConsolidation, onBack }: {
   settings?: boolean; mode?: "consolidate" | "restore"; disabled?: boolean; onBusyChange?: (busy: boolean) => void;
+  standalone?: boolean; onOpenConsolidation?: () => void; onBack?: () => void;
 }) {
   const { t, i18n } = useTranslation();
   const replacing = mode === "restore";
+  const [consolidationStep, setConsolidationStep] = useState<"intro" | "file">("intro");
   const [store, setStore] = useState<StudyStore | null>(null);
   const [pending, setPending] = useState<{ backup: StudyBackup; baseline: string } | null>(null);
   const [incomingGoals, setIncomingGoals] = useState(false);
@@ -89,22 +93,35 @@ export function StudyDataTransfer({ settings = false, mode = "consolidate", disa
     <path d={upload ? "m7 8 5-5 5 5" : "m7 10 5 5 5-5"} />
   </svg>;
   return <div className="study-transfer">
-    <h3>{t(settings ? "studyTransfer.title" : "study.myData")}</h3>
+    <h3>{t(standalone ? "studyTransfer.import" : settings ? "studyTransfer.title" : "study.myData")}</h3>
+    {standalone && <div className="study-actions"><button type="button" className="secondary-button" disabled={busy} onClick={onBack}>{t("studyTransfer.back")}</button></div>}
+    {standalone && consolidationStep === "intro" && <section className="study-preview" aria-labelledby="study-consolidation-intro">
+      <h4 id="study-consolidation-intro">{t("studyTransfer.introTitle")}</h4>
+      <p>{t("studyTransfer.introText")}</p>
+      <p role="note">{t("studyTransfer.introWarning")}</p>
+      <button type="button" className="primary-button" disabled={blocked || !!store?.extraActivity} onClick={() => setConsolidationStep("file")}>{t("studyTransfer.continue")}</button>
+    </section>}
+    {standalone && consolidationStep === "file" && <>
+      <h4>{t("studyTransfer.fileStep")}</h4>
+      <p>{t("studyTransfer.fileHelp")}</p>
+    </>}
     {settings && <p>{t("studyTransfer.description")}</p>}
-    <p>{t(replacing ? "studyRestore.note" : "study.backupNote")}</p>
+    {!standalone && <p>{t(replacing ? "studyRestore.note" : "study.backupNote")}</p>}
     {error && <p className="status-card error-card" role="alert">{error}</p>}
     {message && <p className="study-feedback" role="status">{message}</p>}
     {!store && <p role="status">{t("study.unavailable")}</p>}
-    <div className="study-actions">
-      <button type="button" className="primary-button" disabled={blocked} onClick={() => void action(exportBackup)}>
+    {(!standalone || consolidationStep === "file") && <div className="study-actions">
+      {!standalone && <button type="button" className="primary-button" disabled={blocked} onClick={() => void action(exportBackup)}>
         {settings && icon(false)}{t(settings ? "studyTransfer.export" : "study.export")}
-      </button>
-      <button type="button" className="secondary-button" disabled={blocked || !!store?.extraActivity} onClick={() => fileInput.current?.click()}>
-        {settings && icon(true)}{t(settings ? "studyTransfer.import" : "study.restore")}
-      </button>
-      <input ref={fileInput} hidden type="file" accept=".json,application/json" aria-label={t(settings ? "studyTransfer.import" : "study.restore")}
+      </button>}
+      {settings && onOpenConsolidation ? <button type="button" className="secondary-button" disabled={blocked || !!store?.extraActivity} onClick={onOpenConsolidation}>
+        {icon(true)}{t("studyTransfer.import")}
+      </button> : <button type="button" className="secondary-button" disabled={blocked || !!store?.extraActivity} onClick={() => fileInput.current?.click()}>
+        {settings && icon(true)}{t(standalone ? "studyTransfer.chooseFile" : settings ? "studyTransfer.import" : "study.restore")}
+      </button>}
+      <input ref={fileInput} hidden type="file" accept=".json,application/json" aria-label={t(standalone ? "studyTransfer.chooseFile" : settings ? "studyTransfer.import" : "study.restore")}
         onChange={e => { selectFile(e.target.files?.[0]); e.target.value = ""; }} />
-    </div>
+    </div>}
     {store?.extraActivity && <p role="status">{t("study.errors.extraActive")}</p>}
     {replacing && pending && store && <section className="study-preview" aria-label={t("studyRestore.preview")}>
       <h4>{t("studyRestore.preview")}</h4>
@@ -125,10 +142,10 @@ export function StudyDataTransfer({ settings = false, mode = "consolidate", disa
         <button type="button" className="secondary-button" disabled={blocked} onClick={() => { setPending(null); setConfirmed(false); }}>{t("study.cancel")}</button>
       </div>
     </section>}
-    {preview && pending && <section className="study-preview" aria-label={t("study.preview")}>
+    {(!standalone || consolidationStep === "file") && preview && pending && <section className="study-preview" aria-label={t("study.preview")}>
       <h4>{t("study.preview")}</h4>
       <dl>
-        {([ ["backupSessions", pending.backup.studyData.sessions.length], ["newSessions", preview.newSessions], ["duplicates", preview.duplicates], ["conflicts", preview.conflicts.length], ["newAdjustments", preview.newAdjustments] ] as const).map(([key, value]) => <div key={key}><dt>{t(`study.${key}`)}</dt><dd>{value}</dd></div>)}
+        {([["backupSessions", pending.backup.studyData.sessions.length], ["newSessions", preview.newSessions], ["duplicates", preview.duplicates], ["conflicts", preview.conflicts.length], ["newAdjustments", preview.newAdjustments]] as const).map(([key, value]) => <div key={key}><dt>{t(`study.${key}`)}</dt><dd>{value}</dd></div>)}
         <div><dt>{t("study.currentHours")}</dt><dd>{duration(preview.currentSeconds)}</dd></div>
         <div><dt>{t("studyTransfer.additional")}</dt><dd>{duration(preview.afterSeconds - preview.currentSeconds)}</dd></div>
         <div><dt>{t("study.afterHours")}</dt><dd>{duration(preview.afterSeconds)}</dd></div>
@@ -138,7 +155,7 @@ export function StudyDataTransfer({ settings = false, mode = "consolidate", disa
       {stale && <p role="alert">{t("study.errors.stale")}</p>}
       {!!preview.goalDifferences.length && <><p>{t("study.goalDifferences")}</p><ul>{preview.goalDifferences.map(g => <li key={g.kind + g.language}>{languageName(g.language)} · {t(g.kind === "goals" ? "study.targetHours" : "study.monthlyHours")}: {number(g.local)} → {number(g.incoming)}</li>)}</ul><label>{t("study.goalChoice")}<select value={incomingGoals ? "incoming" : "local"} disabled={blocked} onChange={e => { setIncomingGoals(e.target.value === "incoming"); setConfirmed(false); }}><option value="local">{t("study.keepLocal")}</option><option value="incoming">{t("study.useIncoming")}</option></select></label></>}
       <label className="study-check"><input type="checkbox" checked={confirmed} disabled={blocked || stale || !!preview.conflicts.length} onChange={e => setConfirmed(e.target.checked)} />{t("study.confirmMerge")}</label>
-      <div className="study-actions"><button type="button" className="primary-button" disabled={blocked || !confirmed || stale || !!preview.conflicts.length} onClick={() => void action(async () => {
+      <div className="study-actions"><button type="button" className="study-danger-button" disabled={blocked || !confirmed || stale || !!preview.conflicts.length} onClick={() => void action(async () => {
         const next = await updateStudyStore(current => consolidateStudyBackup(current, pending.backup, pending.baseline, incomingGoals));
         if (mounted.current) { setStore(next); setPending(null); setConfirmed(false); setMessage(t("study.restored")); }
       })}>{t("study.merge")}</button><button type="button" className="secondary-button" disabled={blocked} onClick={() => { setPending(null); setConfirmed(false); }}>{t("study.cancel")}</button></div>

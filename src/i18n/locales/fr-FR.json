@@ -14,6 +14,13 @@
     "description": "Transférez et consolidez votre historique d’étude entre ordinateur et téléphone sans dupliquer les sessions.",
     "export": "Exporter les études",
     "import": "Importer et consolider",
+    "introTitle": "Avant d’importer et de consolider",
+    "introText": "Cette opération ajoute les nouvelles sessions et corrections sans supprimer les données existantes. Les doublons ne sont pas ajoutés. Les conflits bloquent la validation et les différences d’objectifs peuvent être examinées.",
+    "introWarning": "La consolidation modifie les données stockées dans ce navigateur. Vérifiez la sauvegarde et pensez à exporter les données actuelles.",
+    "continue": "Continuer vers le fichier",
+    "chooseFile": "Choisir un fichier JSON",
+    "back": "Retour aux données",
+    "fileHelp": "Sélectionnez une sauvegarde JSON (5 Mo maximum), puis vérifiez l’aperçu et confirmez.",
     "additional": "Temps supplémentaire identifié",
     "alreadyConsolidated": "L’historique de ce fichier est déjà consolidé sur cet appareil."
   },

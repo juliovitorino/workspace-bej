@@ -17,6 +17,7 @@ interface Props extends LanguageSettingsProps {
 export function AppSettingsPage({ theme, onThemeChange, onOpenStudy, onOpenData, ...languages }: Props) {
   const { t } = useTranslation();
   const [category, setCategory] = useState<typeof categories[number]>("audio");
+  const [consolidationVisible, setConsolidationVisible] = useState(false);
   const title = useRef<HTMLHeadingElement>(null);
   useEffect(() => { title.current?.focus({ preventScroll: true }); }, []);
   return <section className="app-settings-page" aria-labelledby="app-settings-title">
@@ -24,26 +25,27 @@ export function AppSettingsPage({ theme, onThemeChange, onOpenStudy, onOpenData,
       <h2 ref={title} tabIndex={-1} id="app-settings-title">{t("settingsPage.title")}</h2>
       <p>{t("settingsPage.subtitle")}</p>
     </header>
-    <nav className="settings-categories" aria-label={t("settingsPage.categories")}>
+    {!consolidationVisible && <nav className="settings-categories" aria-label={t("settingsPage.categories")}>
       {categories.map(key => <button type="button" key={key} aria-pressed={category === key}
         aria-controls="settings-category-content" onClick={() => setCategory(key)}>
         {t(`settingsPage.${key}`)}
       </button>)}
-    </nav>
+    </nav>}
     <section id="settings-category-content" className="settings-category-content" aria-labelledby="settings-category-title">
-      <h3 id="settings-category-title">{t(`settingsPage.${category}`)}</h3>
-      {category === "audio" && <>
+      {!consolidationVisible && <h3 id="settings-category-title">{t(`settingsPage.${category}`)}</h3>}
+      {consolidationVisible && <StudyDataTransfer standalone onBack={() => setConsolidationVisible(false)} />}
+      {!consolidationVisible && category === "audio" && <>
         <p>{t("settingsPage.audioHelp")}</p>
         <NeuralVoiceSelect />
       </>}
-      {category === "languages" && <LanguageSettingsFields {...languages} helpId="settings-page-language-help" />}
-      {category === "study" && <>
+      {!consolidationVisible && category === "languages" && <LanguageSettingsFields {...languages} helpId="settings-page-language-help" />}
+      {!consolidationVisible && category === "study" && <>
         <h4>{t("common.walkingMode")}</h4>
         <p>{t("settingsPage.walkingHelp")}</p>
         <p className="settings-dialog-help">{t("settingsPage.walkingLocal")}</p>
         <button type="button" className="secondary-button" onClick={onOpenStudy}>{t("settingsPage.openStudy")}</button>
       </>}
-      {category === "appearance" && <label className="settings-theme-field">
+      {!consolidationVisible && category === "appearance" && <label className="settings-theme-field">
         {t("theme.label")}
         <select value={theme} onChange={event => onThemeChange(event.target.value as ThemePreference)}>
           <option value="light">{t("theme.light")}</option>
@@ -51,8 +53,8 @@ export function AppSettingsPage({ theme, onThemeChange, onOpenStudy, onOpenData,
           <option value="auto">{t("theme.auto")}</option>
         </select>
       </label>}
-      {category === "data" && <>
-        <StudyDataTransfer settings />
+      {!consolidationVisible && category === "data" && <>
+        <StudyDataTransfer settings onOpenConsolidation={() => setConsolidationVisible(true)} />
         <div className="settings-shortcuts">
           <button type="button" className="secondary-button" onClick={() => onOpenData("settings")}>{t("settingsPage.openBackup")}</button>
           <button type="button" className="secondary-button" onClick={() => onOpenData("history")}>{t("study.history")}</button>

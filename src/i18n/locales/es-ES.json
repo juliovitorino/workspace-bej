@@ -14,6 +14,13 @@
     "description": "Transfiere y consolida tu historial de estudio entre el ordenador y el móvil, sin duplicar sesiones.",
     "export": "Exportar estudios",
     "import": "Importar y consolidar",
+    "introTitle": "Antes de importar y consolidar",
+    "introText": "Esta operación añade sesiones y ajustes nuevos sin borrar los registros existentes. No añade sesiones duplicadas. Los conflictos bloquean la operación hasta resolverse. Puedes revisar diferencias de metas.",
+    "introWarning": "La consolidación modifica los datos de este navegador. Revisa la copia y considera exportar los datos actuales primero.",
+    "continue": "Continuar para seleccionar archivo",
+    "chooseFile": "Seleccionar archivo JSON",
+    "back": "Volver a Datos",
+    "fileHelp": "Selecciona una copia JSON (hasta 5 MB). Revisa la vista previa y confirma.",
     "additional": "Tiempo adicional identificado",
     "alreadyConsolidated": "El historial de este archivo ya está consolidado en este dispositivo."
   },

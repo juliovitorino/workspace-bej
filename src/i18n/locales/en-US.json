@@ -14,6 +14,13 @@
     "description": "Transfer and consolidate your study history between computer and phone without duplicating sessions.",
     "export": "Export studies",
     "import": "Import and consolidate",
+    "introTitle": "Before importing and consolidating",
+    "introText": "This operation adds new sessions and adjustments without deleting existing study records. Duplicate sessions will not be added. Conflicts block completion until resolved. Goal differences can be reviewed.",
+    "introWarning": "Consolidation changes the study data in this browser. Check the backup file and consider exporting your current data first.",
+    "continue": "Continue to file selection",
+    "chooseFile": "Choose JSON file",
+    "back": "Back to data",
+    "fileHelp": "Select a JSON backup (up to 5 MB). Review the preview and confirm.",
     "additional": "Additional time identified",
     "alreadyConsolidated": "The history in this file is already consolidated on this device."
   },

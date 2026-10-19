@@ -1,0 +1,10 @@
+BEJ 4.0 - Importar e consolidar em tela independente
+
+1. Extraia este ZIP na pasta raiz do projeto mental-hashmap-app.
+2. No PowerShell do VS Code, execute: python aplicar.py
+3. Execute: npm run build
+4. Confira: git diff
+
+A alteração é feita apenas na sua cópia local, nunca no GitHub.
+O instalador confere os trechos antes de gravar os seis arquivos.
+Destinado à branch feature/bej-tts atualizada.
