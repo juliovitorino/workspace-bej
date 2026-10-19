@@ -197,7 +197,11 @@ export function ChunkFlashcards({
 
   }, [chunks, walking, mode]);
 
-  useEffect(() => { cancelStudyAudio(); }, [language, sourceLanguage, currentId, studyChunk]);
+  // O WalkingMode gerencia seu próprio áudio. Cancelar aqui após trocar
+  // currentId interrompe a primeira fala do próximo chunk.
+  useEffect(() => {
+    if (!walking) cancelStudyAudio();
+  }, [language, sourceLanguage, currentId, studyChunk, walking]);
 
   const retainedWalkingChunk = useRef<MentalIntention | null>(null);
   const currentChunk = studyChunk ?? chunks.find((item) => item.id === currentId) ??
