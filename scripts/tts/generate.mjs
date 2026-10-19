@@ -11,7 +11,7 @@ const locale = "en-US";
 const jsonPath = path.join(root, "public", `sample-hashmap-${locale}.json`);
 const audioRoot = path.join(root, "public", "audio", locale);
 const voices = ["cedar", "marin"]; // cedar = default player voice
-const MAX_EXAMPLES = 3;
+const MAX_EXAMPLES = 60;
 const dryRun = process.argv.includes("--dry-run");
 const model = "gpt-4o-mini-tts";
 const instructions = [
