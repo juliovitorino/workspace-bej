@@ -5,7 +5,8 @@ import { useEffect, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import type { SourceLanguage, StudentLanguage } from "../config/languages";
 import { isMobileDevice } from "../utils/mobileDevice";
-import { repetitionText, WalkingAudio } from "../utils/walkingAudio";
+import { WalkingAudio } from "../utils/walkingAudio";
+import { getNeuralVoice } from "../features/study/neuralExampleAudio";
 import type { ChunkLevel } from "../utils/chunkEligibility";
 import { ChunkLevelSelect } from "./ChunkLevelSelect";
 import { WalkingSession, type WalkingSummary } from "../utils/walkingSession";
@@ -133,12 +134,17 @@ export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk,
     if (phase.current === "pause") audio.current.wait(pause * 1000, done);
     else if (phase.current === "translation-gap") audio.current.wait(1000, translate);
     else if (phase.current === "translation") translate();
-    else audio.current.play(repetitionText((chunk.targetIntention ?? chunk.english).trim(), language, index, repetitions),
-      language, rate, translated ? 1000 : pause * 1000,
-      () => { if (translated) phase.current = "translation-gap"; else complete(); },
-      translated ? translate : done, fail, false, () => {
-        try { onPresented?.(); } catch { audio.current.cancel(); fail(); }
-      });
+    else {
+      const text = (chunk.targetIntention ?? chunk.english).trim();
+      const example = chunk.examples?.find(item => item.exampleItem.trim() === text);
+      const mp3Url = example?.mp3?.[getNeuralVoice()];
+      audio.current.playChunk(text, language, rate, translated ? 1000 : pause * 1000,
+        mp3Url, index, repetitions,
+        () => { if (translated) phase.current = "translation-gap"; else complete(); },
+        translated ? translate : done, fail, () => {
+          try { onPresented?.(); } catch { audio.current.cancel(); fail(); }
+        });
+    }
     return () => { audio.current.cancel(); };
   }, [chunk?.id, language, sourceLanguage, level, paused, index, repetitions, pause, rate, automatic, revision, translationAudio]);
 
