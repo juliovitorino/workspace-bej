@@ -15,16 +15,20 @@ export function repetitionText(text: string, language: StudentLanguage, index: n
   return `${prompt}. ${text}`;
 }
 
-// One owner for speech and delays. Invalidate before cancel(), because browsers
-// can synchronously dispatch events from the canceled utterance.
+// Um único controlador para a fala e as pausas entre repetições.
+// A geração invalida callbacks atrasados de áudios cancelados.
 export class WalkingAudio {
   private generation = 0;
   private timer: ReturnType<typeof setTimeout> | undefined;
+  private watchdog: ReturnType<typeof setTimeout> | undefined;
   private utterance: SpeechSynthesisUtterance | null = null;
 
   cancel() {
     this.generation++;
     clearTimeout(this.timer);
+    clearTimeout(this.watchdog);
+    this.timer = undefined;
+    this.watchdog = undefined;
     this.utterance = null;
     cancelStudyAudio();
   }
@@ -39,21 +43,28 @@ export class WalkingAudio {
     onSpoken: () => void, onDone: () => void, onError: () => void, strictVoice = false, onStart?: () => void) {
     this.cancel();
     const generation = this.generation;
-    if (!("speechSynthesis" in window)) { onError(); return; }
+    if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
+      onError();
+      return;
+    }
     const synth = window.speechSynthesis;
     const utterance = new SpeechSynthesisUtterance(text);
     let settled = false;
-    this.utterance = utterance;
+    let started = false;
+    let startedAt = 0;
+    this.utterance = utterance; // Impede GC prematuro da fala em alguns navegadores.
     utterance.lang = language;
     utterance.rate = rate;
     const voices = synth.getVoices();
     utterance.voice = voices.find(v => v.lang.toLowerCase() === language.toLowerCase()) ??
       voices.find(v => v.lang.toLowerCase().startsWith(language.slice(0, 2))) ?? null;
     if (strictVoice && !utterance.voice) { onError(); return; }
-    utterance.onstart = () => { if (generation === this.generation) onStart?.(); };
-    utterance.onend = () => {
+
+    const finish = () => {
       if (generation !== this.generation || settled) return;
       settled = true;
+      clearTimeout(this.watchdog);
+      this.watchdog = undefined;
       this.utterance = null;
       onSpoken();
       if (generation !== this.generation) return;
@@ -61,9 +72,56 @@ export class WalkingAudio {
         if (generation === this.generation) onDone();
       }, pauseMs);
     };
-    utterance.onerror = () => {
-      if (generation === this.generation && !settled) { settled = true; this.cancel(); onError(); }
+    const fail = () => {
+      if (generation !== this.generation || settled) return;
+      settled = true;
+      this.cancel();
+      onError();
     };
-    try { speakStudyAudio(this.utterance); } catch { this.cancel(); onError(); }
+
+    // Alguns navegadores móveis não emitem onend. A recuperação só considera
+    // uma fala iniciada; enquanto speechSynthesis.speaking for true, espera.
+    // Não avança silenciosamente se a voz sequer começou a reproduzir.
+    const watchdog = () => {
+      if (generation !== this.generation || settled) return;
+      if (!started) {
+        console.warn("[BEJ Walking] O sintetizador não iniciou a fala.");
+        fail();
+        return;
+      }
+      const elapsed = Date.now() - startedAt;
+      if (synth.speaking && elapsed < 45000) {
+        this.watchdog = setTimeout(watchdog, 1000);
+        return;
+      }
+      if (synth.speaking) {
+        console.warn("[BEJ Walking] Sintetizador travado; interrompendo fala.");
+        synth.cancel();
+      } else {
+        console.warn("[BEJ Walking] Fala concluída sem evento onend; avançando.");
+      }
+      finish();
+    };
+
+    utterance.onstart = () => {
+      if (generation !== this.generation || settled) return;
+      started = true;
+      startedAt = Date.now();
+      clearTimeout(this.watchdog);
+      // Prazo inicial conservador; o watchdog nunca interrompe fala ativa
+      // antes de 45 segundos.
+      const estimatedMs = Math.max(5000, Math.ceil(text.length * 100 / Math.max(rate, 0.5)));
+      this.watchdog = setTimeout(watchdog, estimatedMs);
+      onStart?.();
+    };
+    utterance.onend = finish;
+    utterance.onerror = fail;
+    try {
+      this.watchdog = setTimeout(watchdog, 12000);
+      speakStudyAudio(utterance);
+      synth.resume();
+    } catch {
+      fail();
+    }
   }
 }
