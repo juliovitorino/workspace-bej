@@ -7,6 +7,7 @@ import type { SourceLanguage, StudentLanguage } from "../config/languages";
 import { isMobileDevice } from "../utils/mobileDevice";
 import { repetitionPrompt, repetitionText, WalkingAudio } from "../utils/walkingAudio";
 import type { ChunkLevel } from "../utils/chunkEligibility";
+import type { WalkingContentType } from "../utils/walkingStudyItems";
 import { ChunkLevelSelect } from "./ChunkLevelSelect";
 import { WalkingSession, type WalkingSummary } from "../utils/walkingSession";
 import { WalkingSessionSummary } from "./WalkingSessionSummary";
@@ -25,6 +26,8 @@ interface Props {
   sourceLanguage: SourceLanguage;
   level: ChunkLevel;
   onLevelChange: (level: ChunkLevel) => void;
+  contentType: WalkingContentType;
+  onContentTypeChange: (type: WalkingContentType) => void;
   position: number;
   total: number;
   round: number;
@@ -34,12 +37,12 @@ interface Props {
   onStop: (summary?: WalkingSummary) => void;
 }
 
-export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk, language, sourceLanguage, level, onLevelChange, position, total, round, canPrevious, onPrevious, onNext, onStop, stopWhenEmpty = false, currentEligible = true, favorite = false, onToggleFavorite }: Props) {
+export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk, language, sourceLanguage, level, onLevelChange, contentType, onContentTypeChange, position, total, round, canPrevious, onPrevious, onNext, onStop, stopWhenEmpty = false, currentEligible = true, favorite = false, onToggleFavorite }: Props) {
   const { t } = useTranslation();
   const [translationAudio, setTranslationAudio] = useState(() => localStorage.getItem("bej-walking-translation-audio") === "true");
   const [paused, setPaused] = useState(false);
   const [repetitions, setRepetitions] = useState(5);
-  const [pause, setPause] = useState(3);
+  const [pause, setPause] = useState(8);
   const [rate, setRate] = useState(0.9);
   const [automatic, setAutomatic] = useState(true);
   const [keepAwake, setKeepAwake] = useState(true);
@@ -235,6 +238,32 @@ export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk,
     return () => window.removeEventListener("pagehide", leaving);
   }, [onStudyState]);
 
+  const settings = <div className="walking-settings">
+    <label>{t("walking.contentType")}
+      <select value={contentType} onChange={e => { resetPlayback(); onContentTypeChange(e.target.value as WalkingContentType); }}>
+        <option value="chunk">{t("walking.contentChunk")}</option>
+        <option value="example">{t("walking.contentExample")}</option>
+        <option value="both">{t("walking.contentBoth")}</option>
+      </select>
+    </label>
+    <label><input type="checkbox" checked={translationAudio} onChange={e => { audio.current.cancel(); phase.current = "speech"; localStorage.setItem("bej-walking-translation-audio", String(e.target.checked)); setTranslationAudio(e.target.checked); }} />{t("walking.translationAudio")}<small>{t("walking.translationAudioDescription")}</small></label>
+    <ChunkLevelSelect value={level} onChange={nextLevel => {
+      if (nextLevel === level) return;
+      resetPlayback();
+      onLevelChange(nextLevel);
+    }} />
+    <label>{t("walking.repetitionsPerChunk")} <select value={repetitions} onChange={e => { resetPlayback(); setRepetitions(Number(e.target.value)); }}>
+      {Array.from({ length: 8 }, (_, i) => i + 3).map(v => <option key={v}>{v}</option>)}
+    </select></label>
+    <label>{t("walking.pauseBetweenPlaybacks")} <select value={pause} onChange={e => setPause(Number(e.target.value))}>
+      {Array.from({ length: 19 }, (_, i) => i + 2).map(v => <option key={v} value={v}>{v}  {t("walking.seconds")}</option>)}
+    </select></label>
+    <label>{t("walking.voiceSpeed")} <select value={rate} onChange={e => setRate(Number(e.target.value))}>
+      {[0.8, 0.9, 1].map(v => <option key={v} value={v}>{v.toFixed(1)}×</option>)}
+    </select></label>
+    <label><input type="checkbox" checked={automatic} onChange={e => setAutomatic(e.target.checked)} />  {t("walking.autoAdvance")}</label>
+    <label><input type="checkbox" checked={keepAwake} onChange={e => setKeepAwake(e.target.checked)} />  {t("walking.keepScreenAwake")}</label>
+  </div>;
   const time = [Math.floor(seconds / 3600), Math.floor(seconds / 60) % 60, seconds % 60]
     .map(v => String(v).padStart(2, "0")).join(":");
   return <section className="walking-mode" aria-labelledby="walking-title">
@@ -264,11 +293,23 @@ export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk,
             >{isExample ? "E" : "C"}</span>;
           })()}
           {onToggleFavorite && <FavoriteChunkButton active={favorite} onToggle={onToggleFavorite} />}
+          <details className="walking-configuration walking-configuration-card">
+            <summary aria-label={t("walking.playbackSettings")} title={t("walking.playbackSettings")}><ControlIcon name="settings" /></summary>
+            {settings}
+          </details>
         </div>
       </div>
       <h3 lang={language}>{chunk.targetIntention ?? chunk.english}</h3>
       <p lang={sourceLanguage}>{chunk.intention}</p>
-    </article> : <p role="status">{level === "all" ? t("walking.noChunksAvailable") : t("common.noChunksAvailableForLevelLevel", { level: (level) })}  {t("walking.chooseAnotherLevelInSettings")}</p>}
+    </article> : <div>
+      <div className="walking-empty-settings">
+        <details className="walking-configuration walking-configuration-card">
+          <summary aria-label={t("walking.playbackSettings")} title={t("walking.playbackSettings")}><ControlIcon name="settings" /></summary>
+          {settings}
+        </details>
+      </div>
+      <p role="status">{level === "all" ? t("walking.noChunksAvailable") : t("common.noChunksAvailableForLevelLevel", { level: (level) })} {t("walking.chooseAnotherLevelInSettings")}</p>
+    </div>}
     <p role="status">{paused ? t("common.paused") : !chunk ? t("walking.waitingForLevelSelection") : index >= repetitions ? t("walking.waitingForTheNextChunk") : t("walking.listenAndRepeat")}  {t("shadowing.repetitions")} {spoken}/{repetitions}</p>
     <progress aria-label={t("walking.repetitionsCompleted")} value={spoken} max={repetitions} />
     {paused && <WalkingSessionSummary summary={session.current.summary(total, seconds)} />}
@@ -279,27 +320,6 @@ export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk,
       <button type="button" aria-label={t("walking.nextChunk")} title={t("walking.nextChunk")} disabled={!chunk} onClick={() => navigate()}><ControlIcon name="next" /></button>
       <button type="button" aria-label={t("common.stop")} title={t("common.stop")} onClick={stopSession}><ControlIcon name="stop" /></button>
     </div>
-    <details className="walking-configuration"><summary aria-label={t("walking.playbackSettings")} title={t("walking.playbackSettings")}><ControlIcon name="settings" /></summary>
-      <div className="walking-settings">
-        <label><input type="checkbox" checked={translationAudio} onChange={e => { audio.current.cancel(); phase.current = "speech"; localStorage.setItem("bej-walking-translation-audio", String(e.target.checked)); setTranslationAudio(e.target.checked); }} />{t("walking.translationAudio")}<small>{t("walking.translationAudioDescription")}</small></label>
-        <ChunkLevelSelect value={level} onChange={nextLevel => {
-          if (nextLevel === level) return;
-          resetPlayback();
-          onLevelChange(nextLevel);
-        }} />
-        <label>{t("walking.repetitionsPerChunk")} <select value={repetitions} onChange={e => { resetPlayback(); setRepetitions(Number(e.target.value)); }}>
-          {Array.from({ length: 8 }, (_, i) => i + 3).map(v => <option key={v}>{v}</option>)}
-        </select></label>
-        <label>{t("walking.pauseBetweenPlaybacks")} <select value={pause} onChange={e => setPause(Number(e.target.value))}>
-          {Array.from({ length: 7 }, (_, i) => i + 2).map(v => <option key={v} value={v}>{v}  {t("walking.seconds")}</option>)}
-        </select></label>
-        <label>{t("walking.voiceSpeed")} <select value={rate} onChange={e => setRate(Number(e.target.value))}>
-          {[0.8, 0.9, 1].map(v => <option key={v} value={v}>{v.toFixed(1)}×</option>)}
-        </select></label>
-        <label><input type="checkbox" checked={automatic} onChange={e => setAutomatic(e.target.checked)} />  {t("walking.autoAdvance")}</label>
-        <label><input type="checkbox" checked={keepAwake} onChange={e => setKeepAwake(e.target.checked)} />  {t("walking.keepScreenAwake")}</label>
-      </div>
-    </details>
     {wakeWarning && <p role="status">{wakeWarning}</p>}
     <p className="walking-note">{t("walking.keepThisPageOpenAndYourPhoneUnlockedYourBrowser")}</p>
   </section>;
