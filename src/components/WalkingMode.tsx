@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import type { SourceLanguage, StudentLanguage } from "../config/languages";
 import { isMobileDevice } from "../utils/mobileDevice";
-import { repetitionText, WalkingAudio } from "../utils/walkingAudio";
+import { repetitionPrompt, repetitionText, WalkingAudio } from "../utils/walkingAudio";
 import type { ChunkLevel } from "../utils/chunkEligibility";
 import { ChunkLevelSelect } from "./ChunkLevelSelect";
 import { WalkingSession, type WalkingSummary } from "../utils/walkingSession";
@@ -133,12 +133,27 @@ export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk,
     if (phase.current === "pause") audio.current.wait(pause * 1000, done);
     else if (phase.current === "translation-gap") audio.current.wait(1000, translate);
     else if (phase.current === "translation") translate();
-    else audio.current.play(repetitionText((chunk.targetIntention ?? chunk.english).trim(), language, index, repetitions),
-      language, rate, translated ? 1000 : pause * 1000,
-      () => { if (translated) phase.current = "translation-gap"; else complete(); },
-      translated ? translate : done, fail, false, () => {
+    else {
+      const onSpoken = () => { if (translated) phase.current = "translation-gap"; else complete(); };
+      const onStart = () => {
         try { onPresented?.(); } catch { audio.current.cancel(); fail(); }
-      });
+      };
+      // Somente o cartão de exemplo usa MP3 Cedar. Intenções continuam
+      // usando o sintetizador do navegador, inclusive com os prompts.
+      const displayedText = (chunk.targetIntention ?? chunk.english).trim();
+      // A identidade do exemplo é o texto efetivamente exibido no cartão.
+      // O ID da intenção pode não ter o prefixo "example:".
+      const example = chunk.examples?.find(item => item.exampleItem.trim() === displayedText);
+      if (example) {
+        audio.current.playExample(example, language, repetitionPrompt(language, index, repetitions),
+          rate, translated ? 1000 : pause * 1000,
+          onSpoken, translated ? translate : done, fail, onStart);
+      } else {
+        audio.current.play(repetitionText((chunk.targetIntention ?? chunk.english).trim(), language, index, repetitions),
+          language, rate, translated ? 1000 : pause * 1000,
+          onSpoken, translated ? translate : done, fail, false, onStart);
+      }
+    }
     return () => { audio.current.cancel(); };
   }, [chunk?.id, language, sourceLanguage, level, paused, index, repetitions, pause, rate, automatic, revision, translationAudio]);
 
@@ -229,7 +244,27 @@ export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk,
     {chunk ? <article className="chunk-flashcards-card">
       <div className="chunk-flashcards-card-header">
         <p>{language}</p>
-        {onToggleFavorite && <FavoriteChunkButton active={favorite} onToggle={onToggleFavorite} />}
+        <div style={{ display: "flex", alignItems: "center", gap: 10, marginLeft: "auto" }}>
+          {(() => {
+            // Mesma regra da reprodução: o cartão é exemplo quando a frase
+            // exibida corresponde ao exampleItem de um exemplo associado.
+            const displayedText = (chunk.targetIntention ?? chunk.english).trim();
+            const isExample = chunk.examples?.some(item => item.exampleItem.trim() === displayedText) ?? false;
+            const label = isExample ? "Exemplo" : "Chunk";
+            return <span
+              title={label}
+              aria-label={label}
+              style={{
+                display: "inline-flex", alignItems: "center", justifyContent: "center",
+                width: 30, height: 30, flexShrink: 0,
+                border: "1px solid #b68b00", borderRadius: 999,
+                backgroundColor: "#facc15", color: "#422006",
+                fontSize: 14, fontWeight: 800, lineHeight: 1
+              }}
+            >{isExample ? "E" : "C"}</span>;
+          })()}
+          {onToggleFavorite && <FavoriteChunkButton active={favorite} onToggle={onToggleFavorite} />}
+        </div>
       </div>
       <h3 lang={language}>{chunk.targetIntention ?? chunk.english}</h3>
       <p lang={sourceLanguage}>{chunk.intention}</p>
