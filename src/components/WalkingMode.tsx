@@ -131,7 +131,10 @@ export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk,
       setError(t("walking.couldNotPlayTheAudioTapResumeToTryAgain"));
       setPaused(true);
     };
+    let advanced = false;
     const done = () => {
+      if (advanced) return;
+      advanced = true;
       phase.current = "speech";
       if (index + 1 >= repetitions) {
         try { onCycleComplete?.(); } catch { fail(); return; }
@@ -151,7 +154,8 @@ export function WalkingMode({ onPresented, onCycleComplete, onStudyState, chunk,
     const translated = Boolean(translationAudio && spokenTranslation.trim() && sourceLanguage !== language);
     const complete = () => {
       session.current.record(token, currentChunkId, index + 1 >= repetitions);
-      phase.current = "pause";
+      // A pausa já é controlada por WalkingAudio após o término do MP3.
+      // Não iniciar outra espera ao renderizar o contador.
       setSpoken(index + 1);
       if (finishWhenEmpty.current) callbacks.current.onStop();
       else if (advanceAfterSpeech.current) navigateRef.current();

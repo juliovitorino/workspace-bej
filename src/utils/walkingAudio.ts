@@ -40,10 +40,13 @@ export class WalkingAudio {
   private timer: ReturnType<typeof setTimeout> | undefined;
   private media: HTMLAudioElement | null = null;
   private mediaToken: string | null = null;
+  private promptTimer: ReturnType<typeof setTimeout> | undefined;
 
   cancel() {
     this.generation++;
     clearTimeout(this.timer);
+    clearTimeout(this.promptTimer);
+    this.promptTimer = undefined;
     this.timer = undefined;
     if (this.media) {
       this.media.onplaying = this.media.onended = this.media.onerror = null;
@@ -107,8 +110,10 @@ export class WalkingAudio {
         studyTracker.media(token, true);
         startedOnce();
       };
+      let mediaFinished = false;
       media.onended = () => {
-        if (!active()) return;
+        if (!active() || mediaFinished) return;
+        mediaFinished = true;
         if (this.mediaToken === token) {
           studyTracker.media(token, false);
           this.mediaToken = null;
@@ -138,6 +143,7 @@ export class WalkingAudio {
     const words = prompts[promptLanguage];
     const prompt = index === count - 1 ? words[3] : words[Math.min(index - 1, 2)];
     if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
+      console.warn("[BEJ Walking] TTS de comandos indisponível neste navegador.");
       playFile();
       return;
     }
@@ -152,13 +158,30 @@ export class WalkingAudio {
     const continueWithMp3 = () => {
       if (!active() || finishedPrompt) return;
       finishedPrompt = true;
+      clearTimeout(this.promptTimer);
+      this.promptTimer = undefined;
+      // A etapa seguinte depende do fim do comando, nunca de um clique.
       playFile();
     };
     utterance.onend = continueWithMp3;
-    utterance.onerror = continueWithMp3;
+    utterance.onerror = event => {
+      console.warn("[BEJ Walking] Falha no TTS do comando; seguindo com MP3 Cedar.", event);
+      continueWithMp3();
+    };
     try {
-      // Cancela qualquer áudio anterior antes de iniciar o comando, não durante o MP3.
-      speakStudyAudio(utterance);
+      // O comando é sintetizado pelo navegador; apenas a frase usa Cedar.
+      // true impede que studyAudio cancele o MP3/estado da caminhada.
+      speakStudyAudio(utterance, true);
+      // Alguns navegadores móveis deixam o sintetizador pausado após tocar MP3.
+      window.speechSynthesis.resume();
+      // Em dispositivos que não disparam onend/onerror, não bloquear a caminhada.
+      // O timeout só atua como recuperação; normalmente o onend inicia o Cedar.
+      this.promptTimer = setTimeout(() => {
+        if (!active() || finishedPrompt) return;
+        console.warn("[BEJ Walking] Comando TTS sem onend; retomando reprodução automaticamente.");
+        window.speechSynthesis.cancel();
+        continueWithMp3();
+      }, Math.max(12000, Math.ceil(prompt.length * 400 / Math.max(rate, 0.5))));
     } catch {
       continueWithMp3();
     }
