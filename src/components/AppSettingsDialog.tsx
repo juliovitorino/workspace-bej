@@ -1,3 +1,4 @@
+import { NeuralVoiceSelect } from "./NeuralVoiceSelect";
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { useEffect, useRef } from "react";
@@ -45,6 +46,7 @@ export function AppSettingsDialog({ kind, language, sourceLanguage, languageLock
       </div>
       {kind === "languages" ? <>
         <div className="settings-language-fields">
+          <NeuralVoiceSelect />
           <label>
             <span>{t("settings.sourceLanguageSource")}</span>
             <select aria-label={t("common.sourceLanguage")} aria-describedby="language-selection-help" value={sourceLanguage} disabled={languageLocked}

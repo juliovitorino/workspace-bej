@@ -7,7 +7,8 @@ import { isAuthorMode } from "../utils/authorMode";
 import { useEffect, useRef, useState } from "react";
 import type { Example, MentalIntention } from "../types/hashmap";
 import { ConnectedSpeechButton } from "./ConnectedSpeechStudio";
-import { playNeuralExampleAudio } from "../features/study/neuralExampleAudio";
+import { useExampleAudio } from "../features/study/useExampleAudio";
+import { NeuralVoiceSelect } from "./NeuralVoiceSelect";
 
 
 /** Campos de destino do contrato 4.0; pt/ptIntent vêm da associação por UUID no serviço. */
@@ -81,8 +82,8 @@ export function IntentionDetails({
   onReviewTraining
 }: IntentionDetailsProps) {
   const { t } = useTranslation();
-  const [speakingExampleIndex, setSpeakingExampleIndex] =
-    useState<number | null>(null);
+  const { playback, play } = useExampleAudio();
+
   const [copiedExampleIndex, setCopiedExampleIndex] =
     useState<number | null>(null);
   const [copiedHqPromptExampleIndex, setCopiedHqPromptExampleIndex] =
@@ -108,11 +109,8 @@ export function IntentionDetails({
   }, []);
 
   useEffect(() => {
-    if ("speechSynthesis" in window) {
-      cancelStudyAudio();
-    }
+    cancelStudyAudio();
 
-    setSpeakingExampleIndex(null);
     setCopiedExampleIndex(null);
     setCopiedHqPromptExampleIndex(null);
     setCopiedSection(null);
@@ -230,19 +228,8 @@ export function IntentionDetails({
       setSpeechError(t("details.thereIsNoTextToPlay"));
       return;
     }
-    cancelStudyAudio();
     setSpeechError(null);
-    setSpeakingExampleIndex(null);
-    void playNeuralExampleAudio({
-      example,
-      language,
-      onStart: () => setSpeakingExampleIndex(index),
-      onEnd: () => setSpeakingExampleIndex(null),
-      onError: () => {
-        setSpeakingExampleIndex(null);
-        setSpeechError(t("details.couldNotPlayTheExample"));
-      }
-    });
+    play(example, language, () => setSpeechError(t("details.couldNotPlayTheExample")));
   }
 
   async function handleCopyIntentionId() {
@@ -831,6 +818,7 @@ Mandatório:
         <p className="eyebrow">{t("common.communicativeIntention")}</p>
         <h2>{item.intention}</h2>
         <p className="detail-english" lang={language}>{item.targetIntention ?? item.english}</p>
+        <NeuralVoiceSelect />
 
         {(targetLevel || item.category || youtubeVideoUrl || youtubeShortUrl || (isAuthorMode() && item.allowLanguageChunkPractice === true)) && (
           <div
@@ -1139,7 +1127,9 @@ Mandatório:
                         type="button"
                         className="secondary-button"
                         onClick={() => handleSpeakExample(targetSentence(example), index)}
-                        disabled={speakingExampleIndex === index}
+                        disabled={playback?.id === example.id && playback.state === "loading"}
+                        aria-busy={playback?.id === example.id && playback.state === "loading"}
+                        aria-pressed={playback?.id === example.id && playback.state === "playing"}
                         title={t("details.listenToThisExampleInTargetlanguage", { targetLanguage: (LANGUAGES[language].name.toLowerCase()) })}
                         aria-label={t("details.listenToExampleNumberInTargetlanguage", { number: (index + 1), targetLanguage: (LANGUAGES[language].name.toLowerCase()) })}
                         style={{
@@ -1154,7 +1144,7 @@ Mandatório:
                           justifyContent: "center"
                         }}
                       >
-                        <span aria-hidden="true">🔊</span>
+                        <span aria-hidden="true">{playback?.id === example.id ? playback.state === "loading" ? "\u2026" : playback.state === "playing" ? "\u25a0" : "\u26a0" : "\ud83d\udd0a"}</span>
                       </button>
 
                       {language === "en-US" && <ConnectedSpeechButton

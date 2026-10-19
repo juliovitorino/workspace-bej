@@ -1,126 +1,114 @@
-import type { Example } from "../../types/hashmap";
+import type { HashmapExampleV4 } from "../../types/hashmap";
 import { studyTracker } from "./studyTrackingService";
 import { cancelStudyAudio, speakStudyAudio } from "./studyAudio";
 
 export type NeuralVoice = "cedar" | "marin";
 export const DEFAULT_NEURAL_VOICE: NeuralVoice = "cedar";
+export const STORAGE_TTS_VOICE_KEY = "bej.tts.voice";
+let selectedVoice: NeuralVoice = DEFAULT_NEURAL_VOICE;
+try {
+  const saved = localStorage.getItem(STORAGE_TTS_VOICE_KEY);
+  if (saved === "cedar" || saved === "marin") selectedVoice = saved;
+} catch { /* Storage may be unavailable; keep the session preference. */ }
+export const getNeuralVoice = () => selectedVoice;
+const subscribers = new Set<() => void>();
+export function subscribeNeuralVoice(listener: () => void) {
+  subscribers.add(listener);
+  return () => { subscribers.delete(listener); };
+}
+export function setNeuralVoice(voice: NeuralVoice) {
+  if (voice !== "cedar" && voice !== "marin" || voice === selectedVoice) return;
+  cancelStudyAudio();
+  selectedVoice = voice;
+  try { localStorage.setItem(STORAGE_TTS_VOICE_KEY, voice); } catch { /* Session still works. */ }
+  subscribers.forEach(listener => listener());
+}
 
 interface PlayOptions {
-  example: Example;
+  example: HashmapExampleV4;
   language: string;
   voice?: NeuralVoice;
+  onLoading?: () => void;
   onStart?: () => void;
   onEnd?: () => void;
   onError?: () => void;
 }
-
-let currentAudio: HTMLAudioElement | null = null;
-let currentToken: string | null = null;
+let audio: HTMLAudioElement | null = null;
 let generation = 0;
-let nextToken = 0;
+let token: string | null = null;
+let onCancel: (() => void) | undefined;
 
+function releaseAudio() {
+  if (audio) {
+    audio.onplaying = audio.onended = audio.onerror = null;
+    audio.pause();
+    audio.removeAttribute("src");
+    audio.load();
+    audio = null;
+  }
+  if (token) { studyTracker.media(token, false); token = null; }
+}
 export function cancelNeuralExampleAudio(): void {
   generation++;
-  if (currentAudio) {
-    currentAudio.pause();
-    currentAudio.removeAttribute("src");
-    currentAudio.load();
-    currentAudio = null;
-  }
-  if (currentToken) {
-    studyTracker.media(currentToken, false);
-    currentToken = null;
-  }
+  releaseAudio();
+  const notify = onCancel;
+  onCancel = undefined;
+  notify?.();
 }
 
-/** SHA-256 via Web Crypto, available in HTTPS and localhost contexts. */
-async function sha256(text: string): Promise<string | null> {
-  if (!globalThis.crypto?.subtle) return null;
-  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
-  return Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, "0")).join("");
-}
-
-function safeAudioPath(path: unknown, language: string, voice: NeuralVoice, id: string): path is string {
-  return typeof path === "string" &&
-    path === `/audio/${language}/${voice}/${id}-${voice}.mp3`;
-}
-
-/**
- * Uses the recording when its path is trusted and the example text hash matches.
- * On HTTP without Web Crypto, the recorded file is allowed by its strict local path;
- * SHA-256 verification is skipped only because the browser API is unavailable.
- *
- * Note: secure/integrity-sensitive deployments should serve the app over HTTPS.
- */
-export async function playNeuralExampleAudio({
-  example, language, voice = DEFAULT_NEURAL_VOICE, onStart, onEnd, onError
-}: PlayOptions): Promise<void> {
-  cancelNeuralExampleAudio();
+/** Play only this locale's registered local URL; missing/failed files use browser speech. */
+export async function playNeuralExampleAudio({ example, language, voice = getNeuralVoice(),
+  onLoading, onStart, onEnd, onError }: PlayOptions): Promise<void> {
   cancelStudyAudio();
   const request = generation;
+  onCancel = onEnd;
+  const active = () => request === generation;
+  const finish = (error = false) => {
+    if (!active()) return;
+    generation++;
+    onCancel = undefined;
+    releaseAudio();
+    if (error) onError?.(); else onEnd?.();
+  };
   const text = example.exampleItem;
-  if (!text.trim()) { onError?.(); return; }
-
+  if (!text.trim()) { finish(true); return; }
+  onLoading?.();
   const fallback = () => {
-    if (request !== generation) return;
-    if (!( "speechSynthesis" in window)) { onError?.(); return; }
+    if (!active()) return;
+    releaseAudio();
+    if (!window.speechSynthesis || typeof SpeechSynthesisUtterance === "undefined") { finish(true); return; }
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = language;
     utterance.rate = 0.9;
     const voices = window.speechSynthesis.getVoices();
     utterance.voice = voices.find(v => v.lang.toLowerCase() === language.toLowerCase()) ??
-      voices.find(v => v.lang.toLowerCase().startsWith(language.slice(0, 2).toLowerCase())) ?? null;
-    utterance.onstart = () => { if (request === generation) onStart?.(); };
-    utterance.onend = () => { if (request === generation) onEnd?.(); };
-    utterance.onerror = event => {
-      if (request === generation && event.error !== "canceled" && event.error !== "interrupted") onError?.();
-    };
-    try { speakStudyAudio(utterance); } catch { onError?.(); }
+      voices.find(v => v.lang.toLowerCase().split("-")[0] === language.toLowerCase().split("-")[0]) ?? null;
+    utterance.onstart = () => { if (active()) onStart?.(); };
+    utterance.onend = () => finish();
+    utterance.onerror = () => finish(true);
+    try { speakStudyAudio(utterance, true); } catch { finish(true); }
   };
-
-  if (language !== "en-US") { fallback(); return; }
-  let hash: string | null = null;
-  try { hash = await sha256(text); } catch { /* Web Crypto may be blocked on HTTP. */ }
-  if (request !== generation) return;
-
-  const order: NeuralVoice[] = voice === "marin" ? ["marin", "cedar"] : ["cedar"];
-  const urls = order.flatMap(candidate => {
-    const url = example.mp3?.[candidate];
-    const recordedHash = example.hashmp3?.[candidate];
-    const matchesHash = hash === null || recordedHash === hash;
-    return safeAudioPath(url, language, candidate, example.id) &&
-      typeof recordedHash === "string" && /^[a-f0-9]{64}$/i.test(recordedHash) &&
-      matchesHash ? [url] : [];
-  });
-  const tryNext = (index: number) => {
-    if (request !== generation) return;
-    if (index >= urls.length) { fallback(); return; }
-    const audio = new Audio(urls[index]);
-    currentAudio = audio;
-    let started = false;
+  const url = example.mp3?.[voice];
+  // Accept registered filenames without deriving one from the example UUID.
+  if (language !== "en-US" || typeof url !== "string" ||
+      !/^\/audio\/en-US\/(cedar|marin)\/[a-zA-Z0-9_-]+\.mp3$/.test(url)) { fallback(); return; }
+  try {
+    audio = new Audio(url);
+    const current = audio;
     let failed = false;
-    const token = `neural-${++nextToken}`;
-    const clear = () => {
-      if (currentAudio === audio) currentAudio = null;
-      if (currentToken === token) { studyTracker.media(token, false); currentToken = null; }
-    };
-    audio.onplaying = () => {
-      if (request !== generation) return;
-      if (!started) { started = true; currentToken = token; studyTracker.media(token, true); onStart?.(); }
-    };
-    audio.onended = () => { if (request !== generation) return; clear(); onEnd?.(); };
-    audio.onerror = () => {
-      if (request !== generation || failed) return;
+    token = `neural-${request}`;
+    const fail = () => {
+      if (!active() || failed) return;
       failed = true;
-      clear();
-      if (started) onError?.(); else tryNext(index + 1);
+      fallback();
     };
-    void audio.play().catch(() => {
-      if (request !== generation || failed) return;
-      failed = true;
-      clear();
-      if (started) onError?.(); else tryNext(index + 1);
-    });
-  };
-  tryNext(0);
+    current.onplaying = () => {
+      if (!active() || failed) return;
+      if (token) studyTracker.media(token, true);
+      onStart?.();
+    };
+    current.onended = () => finish();
+    current.onerror = fail;
+    void current.play().catch(fail);
+  } catch { fallback(); }
 }

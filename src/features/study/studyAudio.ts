@@ -5,7 +5,8 @@ import { cancelNeuralExampleAudio } from "./neuralExampleAudio";
 // prove playback; queuing an utterance or clicking Play does not prove speech.
 const tracked = new Map<SpeechSynthesisUtterance, string>();
 let sequence = 0;
-export function speakStudyAudio(utterance: SpeechSynthesisUtterance) {
+export function speakStudyAudio(utterance: SpeechSynthesisUtterance, neuralFallback = false) {
+  if (!neuralFallback) cancelStudyAudio();
   const token = `speech-${++sequence}`;
   tracked.set(utterance, token);
   const start = utterance.onstart, pause = utterance.onpause, resume = utterance.onresume;

@@ -1,6 +1,8 @@
+import { useExampleAudio } from "../features/study/useExampleAudio";
+import { NeuralVoiceSelect } from "./NeuralVoiceSelect";
 import { studyTracker } from "../features/study/studyTrackingService";
 import { roundKey, readRound, reconcileRound, finishRound, presentItem } from "../utils/learningRound";
-import { speakStudyAudio, cancelStudyAudio } from "../features/study/studyAudio";
+import { cancelStudyAudio } from "../features/study/studyAudio";
 import { useStudyReading } from "../features/study/useStudyReading";
 import { favoriteStudyItems, type FavoriteStudyItem } from "../utils/favoriteStudyItems";
 import { t, languageName as localizedLanguageName } from "../i18n";
@@ -60,6 +62,7 @@ export function ChunkFlashcards({
 }: ChunkFlashcardsProps) {
   const { t } = useTranslation();
   const authorMode = isAuthorMode();
+  const { playback, play } = useExampleAudio();
   const [walking, setWalking] = useState(false);
   const [walkingSummary, setWalkingSummary] = useState<WalkingSummary | null>(null);
   const [level, setLevel] = useState<ChunkLevel>("all");
@@ -181,7 +184,7 @@ export function ChunkFlashcards({
         return;
       }
       if (mode === "favorites" && chunks.length === 0) {
-        window.speechSynthesis?.cancel();
+        cancelStudyAudio();
         if (studyStartedAt !== null) {
           setElapsedSeconds(Math.max(0, Math.floor(((pausedAt ?? Date.now()) - studyStartedAt - totalPausedMs) / 1000)));
           setStudyStartedAt(null);
@@ -193,6 +196,8 @@ export function ChunkFlashcards({
     }
 
   }, [chunks, walking, mode]);
+
+  useEffect(() => { cancelStudyAudio(); }, [language, sourceLanguage, currentId, studyChunk]);
 
   const retainedWalkingChunk = useRef<MentalIntention | null>(null);
   const currentChunk = studyChunk ?? chunks.find((item) => item.id === currentId) ??
@@ -215,6 +220,7 @@ export function ChunkFlashcards({
   const position = currentId === null ? 0 : Math.min(total, shownCount + (drawnIds.includes(currentId) ? 0 : 1));
 
   function nextChunk(pool: MentalIntention[] = chunks) {
+    cancelStudyAudio();
     if (pool.length === 0) {
 
       setCurrentId(null);
@@ -222,9 +228,6 @@ export function ChunkFlashcards({
     }
     // Inicia no primeiro chunk; uma nova rodada não zera a sessão.
     if (studyStartedAt === null) setStudyStartedAt(Date.now());
-    if (typeof window !== "undefined" && "speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
-    }
     setAudioError(null);
     if (copyFeedbackTimeout.current !== null) clearTimeout(copyFeedbackTimeout.current);
     setCopiedChunkId(null);
@@ -277,7 +280,7 @@ export function ChunkFlashcards({
 
   function changeLevel(nextLevel: ChunkLevel) {
     if (nextLevel === level) return;
-    window.speechSynthesis?.cancel();
+    cancelStudyAudio();
     setLevel(nextLevel);
     setAudioError(null);
     setCopiedChunkId(null);
@@ -350,33 +353,16 @@ export function ChunkFlashcards({
 
   function speak() {
     if (!currentChunk) return;
-    if (typeof window === "undefined" || !("speechSynthesis" in window)) {
-      setAudioError(t("flashcards.yourBrowserDoesNotSupportSpeechPlayback"));
-      return;
-    }
-
+    const text = (currentChunk.targetIntention ?? currentChunk.english).trim();
+    const example = currentChunk.examples?.find(example => example.exampleItem.trim() === text);
     setAudioError(null);
-    const synth = window.speechSynthesis;
-    synth.cancel();
-    const utterance = new SpeechSynthesisUtterance((currentChunk.targetIntention ?? currentChunk.english).trim());
-    utterance.lang = language;
-    utterance.rate = 0.9;
-    const voices = synth.getVoices();
-    utterance.voice = voices.find((voice) => voice.lang.toLowerCase() === language.toLowerCase()) ??
-      voices.find((voice) => voice.lang.toLowerCase().split("-")[0] === language.slice(0, 2)) ?? null;
-    utterance.onerror = (event) => {
-      if (event.error !== "canceled" && event.error !== "interrupted") {
-        setAudioError(t("flashcards.couldNotPlayTheAudioInThisBrowser"));
-      }
-    };
-    synth.speak(utterance);
+    play(example ?? { id: currentChunk.id, exampleItem: text, intent: text }, language,
+      () => setAudioError(t("flashcards.couldNotPlayTheAudioInThisBrowser")));
   }
 
   useEffect(() => {
     return () => {
-      if (typeof window !== "undefined" && "speechSynthesis" in window) {
-        window.speechSynthesis.cancel();
-      }
+      cancelStudyAudio();
     };
   }, []);
 
@@ -393,13 +379,18 @@ export function ChunkFlashcards({
                 <div className="chunk-flashcards-english-row">
                   <h3>{currentChunk.targetIntention ?? currentChunk.english}</h3>
                   <div className="chunk-flashcards-english-actions">
+                    <NeuralVoiceSelect />
                     <button
                       type="button"
                       className="chunk-flashcards-speaker"
                       onClick={speak}
+                      disabled={playback?.state === "loading"}
+                      aria-busy={playback?.state === "loading"}
+                      aria-pressed={playback?.state === "playing"}
                       aria-label={t("flashcards.listenToThePronunciationOfText", { text: (currentChunk.targetIntention ?? currentChunk.english) })}
                       title={t("flashcards.listenToPronunciationTargetlanguage", { targetLanguage: (LANGUAGES[language].name) })}
                     >
+                      {playback && <span aria-hidden="true">{playback.state === "loading" ? "\u2026" : playback.state === "playing" ? "\u25a0" : "\u26a0"}</span>}
                       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                         <path d="M11 5 6 9H3v6h3l5 4V5Z" />
                         <path d="M15.5 8.5a5 5 0 0 1 0 7" />
@@ -659,7 +650,7 @@ export function ChunkFlashcards({
             {mobile && <button type="button" className="primary-button walking-entry" onClick={() => {
               if (!isMobileDevice()) return;
               if (!currentChunk || drawnIds.includes(currentChunk.id)) nextChunk();
-              window.speechSynthesis?.cancel();
+              cancelStudyAudio();
               setWalkingSummary(null);
               setWalking(true);
             }}>{"🎧 "}{t("common.walkingMode")}</button>}
