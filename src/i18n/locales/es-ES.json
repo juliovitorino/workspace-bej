@@ -182,6 +182,7 @@
       "previous": "Ajuste manual"
     },
     "periods": {
+      "yesterday": "Ayer",
       "7": "Últimos siete días",
       "30": "Últimos 30 días",
       "90": "Últimos 90 días",

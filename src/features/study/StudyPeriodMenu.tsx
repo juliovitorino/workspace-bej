@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import type { StudyPeriod } from "./studyStats";
 
-const periods: StudyPeriod[] = ["today", "7", "30", "month", "90", "all"];
+const periods: StudyPeriod[] = ["today", "yesterday", "7", "30", "month", "90", "all"];
 export function StudyPeriodMenu({ anchor, period, onSelect, onClose }: {
   anchor: HTMLElement; period: StudyPeriod; onSelect: (period: StudyPeriod) => void; onClose: () => void;
 }) {
