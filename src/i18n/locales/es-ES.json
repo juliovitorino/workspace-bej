@@ -1,4 +1,10 @@
 {
+  "backupReminder": {
+    "title": "¡Es hora de proteger tus estudios!",
+    "message": "Han pasado más de 7 días desde tu última copia de seguridad o desde el inicio del seguimiento. Exporta tu historial de estudio para guardar una copia fuera del navegador.",
+    "export": "Exportar copia de seguridad",
+    "later": "Recordármelo más tarde"
+  },
   "studyRestore": {
     "note": "Restaurar sustituye todas las sesiones, ajustes manuales y metas de este dispositivo por los datos de la copia de seguridad. Las preferencias de la aplicación se conservan.",
     "preview": "Vista previa de la restauración por sustitución",
@@ -10,6 +16,7 @@
     "success": "Copia restaurada por sustitución. Los datos de estudio de este dispositivo ahora coinciden con el archivo."
   },
   "studyTransfer": {
+    "fileStep": "Seleccionar archivo de copia de seguridad",
     "title": "Consolidación de Estudios",
     "description": "Transfiere y consolida tu historial de estudio entre el ordenador y el móvil, sin duplicar sesiones.",
     "export": "Exportar estudios",
@@ -110,20 +117,20 @@
     "calendar": "Filtrar por período",
     "historyTitle": "Historial de estudios",
     "backDashboard": "Volver al panel",
-    "moreOptions": "M?s opciones del panel",
-    "settings": "Configuraci?n",
+    "moreOptions": "Más opciones del panel",
+    "settings": "Configuración",
     "showDetails": "Mostrar detalles",
     "hideDetails": "Ocultar detalles",
-    "showGoalExplanation": "Mostrar explicaci?n de la meta",
-    "hideGoalExplanation": "Ocultar explicaci?n de la meta",
+    "showGoalExplanation": "Mostrar explicación de la meta",
+    "hideGoalExplanation": "Ocultar explicación de la meta",
     "moreDetails": "+ Detalles",
-    "lessDetails": "? Detalles",
+    "lessDetails": "− Detalles",
     "historyPages": "Paginación del historial",
     "historyPage": "Página {{page}} de {{total}} · {{count}} registros",
     "basicTraining": "Ejercicio básico",
     "advancedTraining": "Ejercicio avanzado",
     "tracking": { "waiting": "Esperando el inicio de la práctica", "active": "Contabilizando", "idle": "Pausado por inactividad", "unavailable": "Seguimiento no disponible" },
-    "compatibilityNote": "El control entre pesta?as utiliza Web Locks cuando est? disponible o un SharedWorker en direcciones HTTP. Distintos m?dulos pueden funcionar simult?neamente.",
+    "compatibilityNote": "El control entre pestañas utiliza Web Locks cuando está disponible o un SharedWorker en direcciones HTTP. Distintos módulos pueden funcionar simultáneamente.",
     "title": "Panel de estudios",
     "intro": "El camino de las 750 horas: una meta personal de dedicación, sin garantía de fluidez ni certificación del FSI.",
     "filters": "Filtros",
@@ -218,9 +225,9 @@
       "custom": "Intervalo personalizado"
     },
     "errors": {
-      "unsupported": "Este navegador no ofrece Web Locks ni SharedWorker. El seguimiento no est? disponible en esta direcci?n. Usa un navegador compatible o HTTPS.",
+      "unsupported": "Este navegador no ofrece Web Locks ni SharedWorker. El seguimiento no está disponible en esta dirección. Usa un navegador compatible o HTTPS.",
       "extraActive": "Guarda o descarta la Actividad Extra activa o pendiente de recuperación antes de restaurar un backup o iniciar otra actividad.",
-      "otherTab": "Otra pesta?a est? registrando este m?dulo. Puedes usar otro m?dulo aqu? o cerrar la pesta?a responsable para liberarlo.",
+      "otherTab": "Otra pestaña está registrando este módulo. Puedes usar otro módulo aquí o cerrar la pestaña responsable para liberarlo.",
       "zero": "No se puede guardar una sesión de duración cero. Continúa estudiando o descarta la actividad.",
       "invalid": "Archivo, registro, fecha o duración no válidos. No se importaron datos.",
       "version": "Versión de copia o almacenamiento incompatible.",
@@ -231,9 +238,9 @@
       "duplicate": "Ya existe un ajuste con el mismo idioma, fecha, duración y descripción."
     },
     "warning": {
-      "compatibility": "El control entre pesta?as est? activo mediante el navegador.",
-      "unsupported": "Este navegador no ofrece Web Locks ni SharedWorker. El seguimiento no est? disponible en esta direcci?n. Usa un navegador compatible o HTTPS.",
-      "otherTab": "Otra pesta?a est? registrando este m?dulo. Puedes usar otro m?dulo aqu? o cerrar la pesta?a responsable para liberarlo.",
+      "compatibility": "El control entre pestañas está activo mediante el navegador.",
+      "unsupported": "Este navegador no ofrece Web Locks ni SharedWorker. El seguimiento no está disponible en esta dirección. Usa un navegador compatible o HTTPS.",
+      "otherTab": "Otra pestaña está registrando este módulo. Puedes usar otro módulo aquí o cerrar la pestaña responsable para liberarlo.",
       "storage": "No se pudo guardar el tiempo. Se detuvo el seguimiento automático. Comprueba el almacenamiento y recarga.",
       "invalid": "Datos de estudio no válidos. Se detuvo el seguimiento automático; se conservó el historial.",
       "conflict": "Conflicto en el historial de estudio. Se detuvo el seguimiento automático.",
@@ -581,7 +588,7 @@
     "practiceType": "Tipo de práctica"
   },
   "filters": {
-    "clearLevelCategoryTags": "Limpiar filtros de nivel, categor?a y etiquetas",
+    "clearLevelCategoryTags": "Limpiar filtros de nivel, categoría y etiquetas",
     "all": "Todas (",
     "allCategoriesCount": "Todas ({{count}})",
     "allTodos": "Todos",
@@ -675,7 +682,7 @@
   },
   "hashmap": {
     "filterByLevel": "Filtrar por nivel {{level}}",
-    "filterByCategory": "Filtrar por categor?a {{category}}",
+    "filterByCategory": "Filtrar por categoría {{category}}",
     "filterByTag": "Filtrar por etiqueta {{tag}}",
     "contentPublishedOnYoutube": "Contenido publicado en YouTube",
     "couldNotCopyTheIdTryAgain": "No se ha podido copiar el ID. Inténtalo de nuevo.",

@@ -1,4 +1,10 @@
 {
+  "backupReminder": {
+    "title": "Time to protect your studies!",
+    "message": "It has been more than 7 days since your last backup or since monitoring began. Export your study history to keep a backup outside this browser.",
+    "export": "Export backup",
+    "later": "Remind me later"
+  },
   "studyRestore": {
     "note": "Restore replaces all study sessions, manual adjustments and goals on this device with the backup data. App preferences are preserved.",
     "preview": "Replacement restore preview",
@@ -10,6 +16,7 @@
     "success": "Backup restored by replacement. Study data on this device now matches the file."
   },
   "studyTransfer": {
+    "fileStep": "Select backup file",
     "title": "Study Consolidation",
     "description": "Transfer and consolidate your study history between computer and phone without duplicating sessions.",
     "export": "Export studies",
@@ -117,7 +124,7 @@
     "showGoalExplanation": "Show goal explanation",
     "hideGoalExplanation": "Hide goal explanation",
     "moreDetails": "+ Details",
-    "lessDetails": "? Details",
+    "lessDetails": "− Details",
     "historyPages": "History pagination",
     "historyPage": "Page {{page}} of {{total}} · {{count}} records",
     "basicTraining": "Basic Exercise",

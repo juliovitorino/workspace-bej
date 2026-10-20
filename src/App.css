@@ -2750,3 +2750,7 @@ button { color: inherit; }
 .walking-configuration-card .walking-settings select { max-width: 100%; }
 
 .walking-empty-settings { display: flex; justify-content: flex-end; margin-bottom: 12px; }
+
+.backup-reminder-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.backup-reminder-actions button { min-height: 44px; flex: 1 1 180px; }
+.backup-reminder-dialog p { line-height: 1.6; }

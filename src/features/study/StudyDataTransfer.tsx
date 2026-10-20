@@ -2,11 +2,11 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { languageName } from "../../i18n";
 import {
-  backupOf, MAX_BACKUP_BYTES, mergeStudyData, parseStudyBackup, readStudyStore,
+  MAX_BACKUP_BYTES, mergeStudyData, parseStudyBackup, readStudyStore,
   consolidateStudyBackup, restoreStudyBackup, totalSeconds, STUDY_CHANGED, isStudyStorageKey, StudyError, updateStudyStore,
   type StudyBackup, type StudyStore
 } from "./studyStorage";
-import { studyTracker } from "./studyTrackingService";
+import { exportStudyBackup } from "./exportStudyBackup";
 import "./study.css";
 
 /** Shared file controls, with independent consolidation and replacement operations. */
@@ -63,15 +63,7 @@ export function StudyDataTransfer({ settings = false, mode = "consolidate", disa
     finally { working.current = false; if (mounted.current) { setBusy(false); onBusyChange?.(false); } }
   }
   async function exportBackup() {
-    await studyTracker.seal();
-    const backup = backupOf(readStudyStore());
-    const stamp = backup.exportedAt.replace(/[-:]/g, "").replace("T", "-").slice(0, 15);
-    const mobile = window.matchMedia("(pointer: coarse) and (max-width: 820px)").matches;
-    const device = mobile ? "mobile" : "desktop";
-    const url = URL.createObjectURL(new Blob([JSON.stringify(backup, null, 2)], { type: "application/json" }));
-    const anchor = document.createElement("a"); anchor.href = url; anchor.download = `bej-study-backup-${device}-${stamp}.json`;
-    document.body.appendChild(anchor); anchor.click(); anchor.remove();
-    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+    await exportStudyBackup();
     if (mounted.current) setMessage(t("study.exported"));
   }
   function selectFile(file?: File) {

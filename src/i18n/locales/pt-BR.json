@@ -1,4 +1,10 @@
 {
+  "backupReminder": {
+    "title": "Hora de proteger seus estudos!",
+    "message": "Já faz mais de 7 dias desde o último backup ou desde o início do acompanhamento. Exporte seu histórico de estudo para manter uma cópia de segurança fora do navegador.",
+    "export": "Exportar backup",
+    "later": "Lembrar mais tarde"
+  },
   "studyRestore": {
     "note": "Restaurar substitui todas as sessões, ajustes manuais e metas deste dispositivo pelos dados do backup. Preferências do aplicativo são preservadas.",
     "preview": "Prévia da restauração por substituição",
@@ -10,6 +16,7 @@
     "success": "Backup restaurado por substituição. Os dados de estudo deste dispositivo agora correspondem ao arquivo."
   },
   "studyTransfer": {
+    "fileStep": "Selecionar arquivo de backup",
     "title": "Consolidação de Estudos",
     "description": "Transfira e consolide seu histórico de estudos entre computador e celular, sem duplicar sessões.",
     "export": "Exportar estudos",
@@ -108,22 +115,22 @@
   },
   "study": {
     "calendar": "Filtrar por período",
-    "historyTitle": "Hist?rico de Estudos",
+    "historyTitle": "Histórico de Estudos",
     "backDashboard": "Voltar ao Dashboard",
-    "moreOptions": "Mais op??es do Dashboard",
-    "settings": "Configura??es",
+    "moreOptions": "Mais opções do Dashboard",
+    "settings": "Configurações",
     "showDetails": "Mostrar detalhes",
     "hideDetails": "Ocultar detalhes",
-    "showGoalExplanation": "Mostrar explica??o da meta",
-    "hideGoalExplanation": "Ocultar explica??o da meta",
+    "showGoalExplanation": "Mostrar explicação da meta",
+    "hideGoalExplanation": "Ocultar explicação da meta",
     "moreDetails": "+ Detalhes",
-    "lessDetails": "? Detalhes",
+    "lessDetails": "− Detalhes",
     "historyPages": "Paginação do histórico",
     "historyPage": "Página {{page}} de {{total}} · {{count}} registros",
     "basicTraining": "Exercício Básico",
     "advancedTraining": "Exercício Avançado",
     "tracking": { "waiting": "Aguardando início da prática", "active": "Contabilizando", "idle": "Pausado por inatividade", "unavailable": "Contagem indisponível" },
-    "compatibilityNote": "O controle entre abas utiliza Web Locks quando dispon?vel ou um SharedWorker em endere?os HTTP. M?dulos diferentes podem funcionar simultaneamente.",
+    "compatibilityNote": "O controle entre abas utiliza Web Locks quando disponível ou um SharedWorker em endereços HTTP. Módulos diferentes podem funcionar simultaneamente.",
     "title": "Dashboard de Estudos",
     "intro": "Jornada das 750 horas: uma meta pessoal de dedicação, sem garantia de fluência ou certificação do FSI.",
     "filters": "Filtros",
@@ -218,9 +225,9 @@
       "custom": "Intervalo personalizado"
     },
     "errors": {
-      "unsupported": "Este navegador n?o oferece Web Locks nem SharedWorker. O monitoramento n?o est? dispon?vel neste endere?o. Use um navegador compat?vel ou acesso por HTTPS.",
+      "unsupported": "Este navegador não oferece Web Locks nem SharedWorker. O monitoramento não está disponível neste endereço. Use um navegador compatível ou acesso por HTTPS.",
       "extraActive": "Salve ou descarte a Atividade Extra ativa ou pendente de recuperação antes de restaurar um backup ou iniciar outra atividade.",
-      "otherTab": "Outra aba est? monitorando este m?dulo. Voc? pode usar outro m?dulo nesta aba ou fechar a aba respons?vel para liberar este m?dulo.",
+      "otherTab": "Outra aba está monitorando este módulo. Você pode usar outro módulo nesta aba ou fechar a aba responsável para liberar este módulo.",
       "zero": "Uma sessão de duração zero não pode ser salva. Continue estudando ou descarte a atividade.",
       "invalid": "Arquivo, registro, data ou duração inválida. Nenhum dado foi importado.",
       "version": "Versão de backup ou armazenamento incompatível.",
@@ -231,9 +238,9 @@
       "duplicate": "Já existe um ajuste com o mesmo idioma, data, duração e descrição."
     },
     "warning": {
-      "compatibility": "O controle entre abas est? ativo pelo navegador.",
-      "unsupported": "Este navegador n?o oferece Web Locks nem SharedWorker. O monitoramento n?o est? dispon?vel neste endere?o. Use um navegador compat?vel ou acesso por HTTPS.",
-      "otherTab": "Outra aba est? monitorando este m?dulo. Voc? pode usar outro m?dulo nesta aba ou fechar a aba respons?vel para liberar este m?dulo.",
+      "compatibility": "O controle entre abas está ativo pelo navegador.",
+      "unsupported": "Este navegador não oferece Web Locks nem SharedWorker. O monitoramento não está disponível neste endereço. Use um navegador compatível ou acesso por HTTPS.",
+      "otherTab": "Outra aba está monitorando este módulo. Você pode usar outro módulo nesta aba ou fechar a aba responsável para liberar este módulo.",
       "storage": "Falha ao salvar o tempo. A contagem automática foi interrompida. Verifique o armazenamento e recarregue.",
       "invalid": "Dados de estudo inválidos. A contagem automática foi interrompida; o histórico foi preservado.",
       "conflict": "Conflito no histórico de estudo. A contagem automática foi interrompida.",
@@ -581,7 +588,7 @@
     "practiceType": "Tipo de treino"
   },
   "filters": {
-    "clearLevelCategoryTags": "Limpar filtros de n?vel, categoria e tags",
+    "clearLevelCategoryTags": "Limpar filtros de nível, categoria e tags",
     "all": "Todas",
     "allCategoriesCount": "Todas ({{count}})",
     "allTodos": "Todos",
@@ -674,7 +681,7 @@
     "yourBrowserDoesNotSupportSpeechPlayback": "Seu navegador não oferece reprodução de voz."
   },
   "hashmap": {
-    "filterByLevel": "Filtrar pelo n?vel {{level}}",
+    "filterByLevel": "Filtrar pelo nível {{level}}",
     "filterByCategory": "Filtrar pela categoria {{category}}",
     "filterByTag": "Filtrar pela tag {{tag}}",
     "contentPublishedOnYoutube": "Conteúdos publicados no YouTube",
