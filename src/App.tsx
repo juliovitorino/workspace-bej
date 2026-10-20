@@ -1,3 +1,6 @@
+import { readStudyStore } from "./features/study/studyStorage";
+import { BackupReminderDialog } from "./components/BackupReminderDialog";
+import { backupReminder, BACKUP_REMINDER_CHANGED } from "./utils/backupReminder";
 import { AppSettingsPage } from "./components/AppSettingsPage";
 import { StudyDashboard } from "./features/study/StudyDashboard";
 import { ExtraActivities } from "./features/study/ExtraActivities";
@@ -53,7 +56,54 @@ function App() {
   [data, favorites, language]);
   const [source, setSource] = useState<"remote" | "cache">("remote");
   const [dashboardSection, setDashboardSection] = useState<"settings" | "history" | undefined>();
-  const [currentView, setCurrentView] = useState<AppView>("hashmap");
+  const [currentView, commitView] = useState<AppView>("hashmap");
+  const [backupReminderOpen, setBackupReminderOpen] = useState(false);
+  const pendingBackupNavigation = useRef<(() => void) | null>(null);
+  function requestStudyNavigation(proceed: () => void) {
+    if (backupReminder.due()) {
+      pendingBackupNavigation.current = proceed;
+      setBackupReminderOpen(true);
+    } else proceed();
+  }
+  function setCurrentView(view: AppView) {
+    if (view === "settings" || view === "study-dashboard") commitView(view);
+    else requestStudyNavigation(() => commitView(view));
+  }
+  function continueAfterBackup() {
+    setBackupReminderOpen(false);
+    const proceed = pendingBackupNavigation.current;
+    pendingBackupNavigation.current = null;
+    proceed?.();
+  }
+  const reminderContext = useRef({ currentView, walkingActive });
+  reminderContext.current = { currentView, walkingActive };
+  useEffect(() => {
+    if (backupReminder.due()) setBackupReminderOpen(true);
+    const refresh = () => {
+      if (document.visibilityState !== "visible") return;
+      if (!backupReminder.due()) {
+        // Another tab may have exported or postponed while this dialog was open.
+        continueAfterBackup();
+        return;
+      }
+      const context = reminderContext.current;
+      // Resume checks never interrupt an open study module, audio or timed activity.
+      if (!context.walkingActive && ["settings", "study-dashboard"].includes(context.currentView)) {
+        try { if (readStudyStore().extraActivity?.state === "running") return; } catch { return; }
+        setBackupReminderOpen(true);
+      }
+    };
+    window.addEventListener("focus", refresh);
+    window.addEventListener("storage", refresh);
+    window.addEventListener(BACKUP_REMINDER_CHANGED, refresh);
+    document.addEventListener("visibilitychange", refresh);
+    return () => {
+      window.removeEventListener("focus", refresh);
+      window.removeEventListener("storage", refresh);
+      window.removeEventListener(BACKUP_REMINDER_CHANGED, refresh);
+      document.removeEventListener("visibilitychange", refresh);
+    };
+  }, []);
   const [personalCount, setPersonalCount] = useState(0);
   useEffect(() => {
     let active = true;
@@ -100,7 +150,7 @@ function App() {
   }, [studyView, language]);
   const extraActivity = useExtraActivity();
   const studyWarning = useStudyTracking(studyView, language, trainingMode ? trainingSignal : studySignal,
-    !!settingsDialog || trainingMode === "review" || (studyView !== "shadowing" && (loading || !data)));
+    backupReminderOpen || !!settingsDialog || trainingMode === "review" || (studyView !== "shadowing" && (loading || !data)));
 
   // Mesma verificacao de modo autor usada pelas ferramentas existentes.
   const authorMode = isAuthorMode();
@@ -306,9 +356,11 @@ function App() {
     item: MentalIntention,
     mode: Exclude<TrainingMode, null>
   ) {
-    setTrainingIntention(item);
-    setTrainingMode(mode);
-    setSelected(null);
+    requestStudyNavigation(() => {
+      setTrainingIntention(item);
+      setTrainingMode(mode);
+      setSelected(null);
+    });
   }
 
   function closeTraining() {
@@ -318,6 +370,8 @@ function App() {
 
   return (
     <main className="app-layout">
+      {backupReminderOpen && <BackupReminderDialog onContinue={continueAfterBackup}
+        onDismiss={() => { backupReminder.dismiss(); continueAfterBackup(); }} />}
       <Sidebar
         theme={theme}
         onThemeChange={changeTheme}
@@ -327,21 +381,25 @@ function App() {
         personalCount={personalCount}
         favoriteChunkCount={favoriteChunkCount}
         onViewChange={view => {
-          setDashboardSection(undefined);
-          if (view === "hashmap" && window.matchMedia("(max-width: 820px)").matches) {
-            closeTraining();
-            setSelected(null);
-            window.speechSynthesis?.cancel();
-            setFilterScrollRequest(request => request + 1);
-          } else {
-            setFilterScrollRequest(0);
-          }
-          if (view === "settings" || view === "shadowing" || view === "favorite-chunks" || view === "study-dashboard" || view === "extra-activities") {
-            closeTraining();
-            setSelected(null);
-            window.speechSynthesis?.cancel();
-          }
-          setCurrentView(view);
+          const navigate = () => {
+            setDashboardSection(undefined);
+            if (view === "hashmap" && window.matchMedia("(max-width: 820px)").matches) {
+              closeTraining();
+              setSelected(null);
+              window.speechSynthesis?.cancel();
+              setFilterScrollRequest(request => request + 1);
+            } else {
+              setFilterScrollRequest(0);
+            }
+            if (view === "settings" || view === "shadowing" || view === "favorite-chunks" || view === "study-dashboard" || view === "extra-activities") {
+              closeTraining();
+              setSelected(null);
+              window.speechSynthesis?.cancel();
+            }
+            commitView(view);
+          };
+          if (view === "settings" || view === "study-dashboard") navigate();
+          else requestStudyNavigation(navigate);
         }}
       />
 

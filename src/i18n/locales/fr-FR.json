@@ -1,4 +1,10 @@
 {
+  "backupReminder": {
+    "title": "Protégez vos études !",
+    "message": "Plus de 7 jours se sont écoulés depuis votre dernière sauvegarde ou le début du suivi. Exportez votre historique d’étude pour conserver une copie hors du navigateur.",
+    "export": "Exporter une sauvegarde",
+    "later": "Me le rappeler plus tard"
+  },
   "studyRestore": {
     "note": "La restauration remplace toutes les sessions, corrections manuelles et objectifs de cet appareil par les données de la sauvegarde. Les préférences de l’application sont conservées.",
     "preview": "Aperçu de la restauration par remplacement",
@@ -10,6 +16,7 @@
     "success": "Sauvegarde restaurée par remplacement. Les données d’étude de cet appareil correspondent désormais au fichier."
   },
   "studyTransfer": {
+    "fileStep": "Sélectionner le fichier de sauvegarde",
     "title": "Consolidation des études",
     "description": "Transférez et consolidez votre historique d’étude entre ordinateur et téléphone sans dupliquer les sessions.",
     "export": "Exporter les études",
@@ -81,7 +88,7 @@
     "configuration": "Configuration de l’activité",
     "category": "Catégorie externe",
     "note": "Note facultative (1 000 caractères maximum)",
-    "categories": { "conversation": "Conversation", "writing": "Écriture", "private-class": "Cours particulier", "reading": "Lecture", "active-listening": "?coute active", "other": "Autres études" },
+    "categories": { "conversation": "Conversation", "writing": "Écriture", "private-class": "Cours particulier", "reading": "Lecture", "active-listening": "Écoute active", "other": "Autres études" },
     "states": { "ready": "Prêt à commencer", "running": "En cours", "paused": "En pause", "ended": "Terminé", "recovery": "Récupération en attente" },
     "start": "Démarrer l’activité",
     "stopSave": "Arrêter et enregistrer",
@@ -108,22 +115,22 @@
   },
   "study": {
     "calendar": "Filtrer par période",
-    "historyTitle": "Historique des ?tudes",
+    "historyTitle": "Historique des études",
     "backDashboard": "Retour au tableau de bord",
-    "moreOptions": "Plus d?options du tableau de bord",
-    "settings": "Param?tres",
-    "showDetails": "Afficher les d?tails",
-    "hideDetails": "Masquer les d?tails",
-    "showGoalExplanation": "Afficher l?explication de l?objectif",
-    "hideGoalExplanation": "Masquer l?explication de l?objectif",
-    "moreDetails": "+ D?tails",
-    "lessDetails": "? D?tails",
+    "moreOptions": "Plus d’options du tableau de bord",
+    "settings": "Paramètres",
+    "showDetails": "Afficher les détails",
+    "hideDetails": "Masquer les détails",
+    "showGoalExplanation": "Afficher l’explication de l’objectif",
+    "hideGoalExplanation": "Masquer l’explication de l’objectif",
+    "moreDetails": "+ Détails",
+    "lessDetails": "− Détails",
     "historyPages": "Pagination de l’historique",
     "historyPage": "Page {{page}} sur {{total}} · {{count}} enregistrements",
     "basicTraining": "Exercice de base",
     "advancedTraining": "Exercice avancé",
     "tracking": { "waiting": "En attente du début de la pratique", "active": "Suivi en cours", "idle": "En pause pour inactivité", "unavailable": "Suivi indisponible" },
-    "compatibilityNote": "Le contr?le entre onglets utilise Web Locks si disponible ou un SharedWorker pour les adresses HTTP. Diff?rents modules peuvent fonctionner simultan?ment.",
+    "compatibilityNote": "Le contrôle entre onglets utilise Web Locks si disponible ou un SharedWorker pour les adresses HTTP. Différents modules peuvent fonctionner simultanément.",
     "title": "Tableau de bord des études",
     "intro": "Le parcours des 750 heures : un objectif personnel de travail, sans garantie de maîtrise ni certification du FSI.",
     "filters": "Filtres",
@@ -218,9 +225,9 @@
       "custom": "Intervalle personnalisé"
     },
     "errors": {
-      "unsupported": "Ce navigateur ne propose ni Web Locks ni SharedWorker. Le suivi est indisponible ? cette adresse. Utilisez un navigateur compatible ou HTTPS.",
+      "unsupported": "Ce navigateur ne propose ni Web Locks ni SharedWorker. Le suivi est indisponible à cette adresse. Utilisez un navigateur compatible ou HTTPS.",
       "extraActive": "Enregistrez ou abandonnez l’activité supplémentaire en cours ou en attente de récupération avant de restaurer une sauvegarde ou d’en commencer une autre.",
-      "otherTab": "Un autre onglet suit ce module. Vous pouvez utiliser un autre module ici ou fermer l?onglet responsable pour le lib?rer.",
+      "otherTab": "Un autre onglet suit ce module. Vous pouvez utiliser un autre module ici ou fermer l’onglet responsable pour le libérer.",
       "zero": "Une session de durée nulle ne peut pas être enregistrée. Continuez à étudier ou abandonnez l’activité.",
       "invalid": "Fichier, enregistrement, date ou durée invalide. Aucune donnée importée.",
       "version": "Version de sauvegarde ou de stockage incompatible.",
@@ -231,9 +238,9 @@
       "duplicate": "Un ajustement avec la même langue, date, durée et description existe déjà."
     },
     "warning": {
-      "compatibility": "Le contr?le entre onglets est actif dans le navigateur.",
-      "unsupported": "Ce navigateur ne propose ni Web Locks ni SharedWorker. Le suivi est indisponible ? cette adresse. Utilisez un navigateur compatible ou HTTPS.",
-      "otherTab": "Un autre onglet suit ce module. Vous pouvez utiliser un autre module ici ou fermer l?onglet responsable pour le lib?rer.",
+      "compatibility": "Le contrôle entre onglets est actif dans le navigateur.",
+      "unsupported": "Ce navigateur ne propose ni Web Locks ni SharedWorker. Le suivi est indisponible à cette adresse. Utilisez un navigateur compatible ou HTTPS.",
+      "otherTab": "Un autre onglet suit ce module. Vous pouvez utiliser un autre module ici ou fermer l’onglet responsable pour le libérer.",
       "storage": "Impossible d’enregistrer le temps. Le suivi automatique est arrêté. Vérifiez le stockage et rechargez.",
       "invalid": "Données d’étude invalides. Le suivi automatique est arrêté ; l’historique est préservé.",
       "conflict": "Conflit dans l’historique d’étude. Le suivi automatique est arrêté.",
@@ -581,7 +588,7 @@
     "practiceType": "Type d’entraînement"
   },
   "filters": {
-    "clearLevelCategoryTags": "Effacer les filtres de niveau, cat?gorie et ?tiquettes",
+    "clearLevelCategoryTags": "Effacer les filtres de niveau, catégorie et étiquettes",
     "all": "Toutes (",
     "allCategoriesCount": "Toutes ({{count}})",
     "allTodos": "Tous",
@@ -675,8 +682,8 @@
   },
   "hashmap": {
     "filterByLevel": "Filtrer par niveau {{level}}",
-    "filterByCategory": "Filtrer par cat?gorie {{category}}",
-    "filterByTag": "Filtrer par ?tiquette {{tag}}",
+    "filterByCategory": "Filtrer par catégorie {{category}}",
+    "filterByTag": "Filtrer par étiquette {{tag}}",
     "contentPublishedOnYoutube": "Contenus publiés sur YouTube",
     "couldNotCopyTheIdTryAgain": "Impossible de copier l’ID. Réessayez.",
     "emptyHint": "Essayez d’autres termes en {{sourceLanguage}} ou en {{targetLanguage}}, ou effacez les filtres.",

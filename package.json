@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "test:flashcards": "node scripts/test-learning-rounds.mjs && node scripts/test-walking-mode.mjs && node scripts/test-chunk-flashcards.mjs && node scripts/test-favorite-chunks.mjs",
+    "test:backup": "node scripts/test-backup-reminder.mjs",
     "test:study": "node scripts/test-study-reset.mjs && node scripts/test-study-events.mjs && node scripts/test-study-locks.mjs && node scripts/test-study-dashboard.mjs && node scripts/test-training-study.mjs && node scripts/test-extra-activities.mjs && node scripts/test-study-multitab.mjs",
     "validate:hashmaps": "node scripts/validate-hashmap-locales.mjs",
     "build": "tsc -b && vite build",
