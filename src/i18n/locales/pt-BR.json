@@ -88,8 +88,21 @@
     "configuration": "Configuração da atividade",
     "category": "Categoria externa",
     "note": "Observação opcional (até 1.000 caracteres)",
-    "categories": { "conversation": "Conversação", "writing": "Escrita", "private-class": "Aula particular", "reading": "Leitura", "active-listening": "Escuta Ativa (Listening)", "other": "Outros estudos" },
-    "states": { "ready": "Pronto para iniciar", "running": "Em andamento", "paused": "Pausado", "ended": "Encerrado", "recovery": "Pendente de recuperação" },
+    "categories": {
+      "conversation": "Conversação",
+      "writing": "Escrita",
+      "private-class": "Aula particular",
+      "reading": "Leitura",
+      "active-listening": "Escuta Ativa (Listening)",
+      "other": "Outros estudos"
+    },
+    "states": {
+      "ready": "Pronto para iniciar",
+      "running": "Em andamento",
+      "paused": "Pausado",
+      "ended": "Encerrado",
+      "recovery": "Pendente de recuperação"
+    },
     "start": "Iniciar atividade",
     "stopSave": "Parar e salvar",
     "discard": "Descartar",
@@ -110,7 +123,11 @@
     "consolidated": "Total consolidado",
     "byCategory": "Atividades Extras — Tempo por categoria",
     "origin": "Origem",
-    "origins": { "all": "Todas as atividades", "internal": "Dentro do BEJ", "external": "Atividades Extras" },
+    "origins": {
+      "all": "Todas as atividades",
+      "internal": "Dentro do BEJ",
+      "external": "Atividades Extras"
+    },
     "allCategories": "Todas as categorias"
   },
   "study": {
@@ -129,7 +146,12 @@
     "historyPage": "Página {{page}} de {{total}} · {{count}} registros",
     "basicTraining": "Exercício Básico",
     "advancedTraining": "Exercício Avançado",
-    "tracking": { "waiting": "Aguardando início da prática", "active": "Contabilizando", "idle": "Pausado por inatividade", "unavailable": "Contagem indisponível" },
+    "tracking": {
+      "waiting": "Aguardando início da prática",
+      "active": "Contabilizando",
+      "idle": "Pausado por inatividade",
+      "unavailable": "Contagem indisponível"
+    },
     "compatibilityNote": "O controle entre abas utiliza Web Locks quando disponível ou um SharedWorker em endereços HTTP. Módulos diferentes podem funcionar simultaneamente.",
     "title": "Dashboard de Estudos",
     "intro": "Jornada das 750 horas: uma meta pessoal de dedicação, sem garantia de fluência ou certificação do FSI.",
@@ -1090,5 +1112,16 @@
     "empty": "Nenhum chunk favorito disponível para este idioma e nível.",
     "backToAll": "Voltar aos Chunk Flashcards",
     "storageError": "Não foi possível salvar os favoritos neste navegador."
+  },
+  "bejOverview": {
+    "currentWeek": "Semana atual",
+    "consecutiveDays": "dias consecutivos",
+    "weeklyActivity": "Atividade diária nesta semana",
+    "future": "Dia futuro",
+    "noStudy": "Sem estudo registrado",
+    "weeklyExtra": "Atividades extras da semana (por categoria)",
+    "days": "dias",
+    "studyTime": "Tempo de estudo",
+    "dailyTime": "Tempo por dia"
   }
 }
