@@ -1,5 +1,4 @@
 import { useExampleAudio } from "../features/study/useExampleAudio";
-import { NeuralVoiceSelect } from "./NeuralVoiceSelect";
 import { studyTracker } from "../features/study/studyTrackingService";
 import { roundKey, readRound, reconcileRound, finishRound, presentItem } from "../utils/learningRound";
 import { cancelStudyAudio } from "../features/study/studyAudio";
@@ -449,7 +448,6 @@ export function ChunkFlashcards({
                 <div className="chunk-flashcards-english-row">
                   <h3>{currentChunk.targetIntention ?? currentChunk.english}</h3>
                   <div className="chunk-flashcards-english-actions">
-                    <NeuralVoiceSelect />
                     <button
                       type="button"
                       className="chunk-flashcards-speaker"

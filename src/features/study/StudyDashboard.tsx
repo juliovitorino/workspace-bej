@@ -50,7 +50,7 @@ export function StudyDashboard({ language, initialSection }: { language: Student
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
-  const [filters, setFilters] = useState<StudyFilters>({ language, module: "all", mode: "all", period: "all", from: localDay(new Date()), to: localDay(new Date()) });
+  const [filters, setFilters] = useState<StudyFilters>({ language, module: "all", mode: "all", period: "today", from: localDay(new Date()), to: localDay(new Date()) });
   const [goalLanguage, setGoalLanguage] = useState(language);
   const [goalHours, setGoalHours] = useState("");
   const [monthlyHours, setMonthlyHours] = useState("");
