@@ -11,6 +11,7 @@ import { localDay } from "./studyTrackingService";
 import { studyEntries, studyStats, type StudyFilters } from "./studyStats";
 import "./study.css";
 import { StudyPeriodMenu } from "./StudyPeriodMenu";
+import { StudyWeeklyOverview } from "./StudyWeeklyOverview";
 
 const languages = Object.keys(LANGUAGES) as StudentLanguage[];
 const HISTORY_PAGE_SIZE = 20;
@@ -21,10 +22,10 @@ export function StudyDashboard({ language, initialSection }: { language: Student
   const [calendarAnchor, setCalendarAnchor] = useState<HTMLElement | null>(null);
   const closeCalendar = useMemo(() => () => setCalendarAnchor(null), []);
   const [historyVisible, setHistoryVisible] = useState(initialSection === "history");
-  const [filtersVisible, setFiltersVisible] = useState(() => !window.matchMedia("(max-width: 820px)").matches);
+  const [filtersVisible, setFiltersVisible] = useState(false);
   useEffect(() => {
     const mobile = window.matchMedia("(max-width: 820px)");
-    const resize = () => { setFiltersVisible(!mobile.matches); setExpanded(false); };
+    const resize = () => { setFiltersVisible(false); setExpanded(false); };
     mobile.addEventListener("change", resize);
     return () => mobile.removeEventListener("change", resize);
   }, []);
@@ -150,12 +151,13 @@ export function StudyDashboard({ language, initialSection }: { language: Student
       : ([a], [b]) => a.localeCompare(b));
     const max = Math.max(1, ...entries.map(([, seconds]) => seconds));
     const scale = Math.max(1, total ?? max);
-    return <section id={sectionId} tabIndex={sectionId ? -1 : undefined} className="study-panel"><h3>{title}</h3>{!entries.length ? <p>{t("study.empty")}</p> : <ul className={modules ? "study-chart study-chart-modules" : "study-chart"}>{entries.map(([key, seconds]) => <li key={key}>
+    return <section id={sectionId} tabIndex={sectionId ? -1 : undefined} className="study-panel bej-chart-card"><h3>{title}</h3>{!entries.length ? <p>{t("study.empty")}</p> : <ul className={modules ? "study-chart study-chart-modules" : "study-chart"}>{entries.map(([key, seconds]) => <li key={key}>
       <div><span>{label(key)}</span><strong>{duration(seconds)}{total !== undefined && ` · ${number(seconds / scale * 100)}%`}</strong></div><div className="study-bar" aria-hidden="true"><span style={{ width: `${seconds / scale * 100}%` }} /></div>
     </li>)}</ul>}</section>;
   };
   const informationIcon = <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v6"/><circle cx="12" cy="7" r="1" fill="currentColor" stroke="none"/></svg>;
   const dashboardControls = (floating = false) => <>
+        {!floating && <button type="button" className="secondary-button study-dashboard-filter-button" aria-label={t(filtersVisible ? "navigation.hideFilters" : "navigation.showFilters")} title={t(filtersVisible ? "navigation.hideFilters" : "navigation.showFilters")} aria-expanded={filtersVisible} aria-controls="study-filters" onClick={() => { closeCalendar(); setFiltersVisible(!filtersVisible); }}><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 7h16M7 12h10m-7 5h4"/></svg><span>{t("study.filters")}</span></button>}
         <button type="button" className={floating ? "study-floating-calendar" : "secondary-button study-icon-button"} aria-label={t("study.calendar")} title={t("study.calendar")} aria-expanded={!!calendarAnchor} aria-controls="study-period-menu"
           onClick={event => { const button = event.currentTarget; setCalendarAnchor(current => current === button ? null : button); }}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18m-12 4h2m2 0h2m2 0h2m-8 3h2m2 0h2"/></svg></button>
         <button type="button" className={floating ? "study-floating-history" : "secondary-button study-icon-button"} aria-label={t("study.historyTitle")} title={t("study.historyTitle")} onClick={() => { closeCalendar(); setExpanded(false); setHistoryVisible(true); setScrollTarget("study-title"); }}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 11a9 9 0 1 1 2 7M3 4v7h7m2-5v6l4 2" /></svg></button>
@@ -183,6 +185,13 @@ export function StudyDashboard({ language, initialSection }: { language: Student
       </div>
       {!validRange && <p role="alert">{t("study.errors.invalid")}</p>}
       <div id="study-results" className="study-content" tabIndex={-1} hidden={historyVisible}>
+      <StudyWeeklyOverview data={displayData!} now={now} />
+      <div className="bej-visual-chart-grid">
+        {chart(`${t("study.byModule")} · ${t(`study.periods.${filters.period}`)}`, moduleValues, moduleLabel, stats.total, true, "study-time-by-module")}
+        {chart(`${t("study.byLanguage")} · ${t(`study.periods.${filters.period}`)}`, stats.byLanguage, code => languageName(code as StudentLanguage), stats.total)}
+      </div>
+      {chart(t("extras.byCategory"), Object.fromEntries(EXTRA_CATEGORIES.map(key => [key, stats.byExtraCategory[key] ?? 0])), key => t(`extras.categories.${key}`), stats.external, true)}
+      <div className="bej-goal-section">
       <section className="study-panel"><div className="study-goal-heading"><h3>{t("study.journey")}</h3><button type="button" className="secondary-button study-goal-info" aria-label={t(goalExplanationVisible ? "study.hideGoalExplanation" : "study.showGoalExplanation")} title={t(goalExplanationVisible ? "study.hideGoalExplanation" : "study.showGoalExplanation")} aria-expanded={goalExplanationVisible} aria-controls="study-goal-explanation" onClick={() => setGoalExplanationVisible(!goalExplanationVisible)}>{informationIcon}</button></div><p id="study-goal-explanation" className="study-goal-explanation" data-expanded={goalExplanationVisible}>{t("study.historicalNote")}</p>
         {languages.filter(code => filters.language === "all" || filters.language === code).map(code => {
           const entries = studyEntries(displayData!).filter(e => e.language === code), total = entries.reduce((n, e) => n + e.seconds, 0);
@@ -195,9 +204,7 @@ export function StudyDashboard({ language, initialSection }: { language: Student
           </div>;
         })}
       </section>
-      {chart(`${t("study.byLanguage")} · ${t(`study.periods.${filters.period}`)}`, stats.byLanguage, code => languageName(code as StudentLanguage))}
-      {chart(`${t("study.byModule")} · ${t(`study.periods.${filters.period}`)}`, moduleValues, moduleLabel, stats.total, true, "study-time-by-module")}
-      {chart(t("extras.byCategory"), Object.fromEntries(EXTRA_CATEGORIES.map(key => [key, stats.byExtraCategory[key] ?? 0])), key => t(`extras.categories.${key}`), stats.external, true)}
+      </div>
       <div id="study-details" tabIndex={-1} className="study-content" hidden={!detailsVisible}>
       <div className="study-metrics">{([ ["accumulated", stats.total], ["today", stats.today], ["week", stats.week], ["month", stats.month], ["dailyAverage", stats.average] ] as const).map(([key, seconds]) => <div className="study-panel" key={key}><span>{t(`study.${key}`)}</span><strong>{duration(seconds)}</strong></div>)}
         {([ ["internalTime", stats.internal], ["externalTime", stats.external], ["consolidated", stats.total] ] as const).map(([key, seconds]) => <div className="study-panel" key={key}><span>{t(`extras.${key}`)}</span><strong>{duration(seconds)}</strong></div>)}

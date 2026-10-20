@@ -88,8 +88,21 @@
     "configuration": "Configuración de la actividad",
     "category": "Categoría externa",
     "note": "Nota opcional (hasta 1.000 caracteres)",
-    "categories": { "conversation": "Conversación", "writing": "Escritura", "private-class": "Clase particular", "reading": "Lectura", "active-listening": "Escucha activa", "other": "Otros estudios" },
-    "states": { "ready": "Listo para empezar", "running": "En curso", "paused": "En pausa", "ended": "Finalizado", "recovery": "Pendiente de recuperación" },
+    "categories": {
+      "conversation": "Conversación",
+      "writing": "Escritura",
+      "private-class": "Clase particular",
+      "reading": "Lectura",
+      "active-listening": "Escucha activa",
+      "other": "Otros estudios"
+    },
+    "states": {
+      "ready": "Listo para empezar",
+      "running": "En curso",
+      "paused": "En pausa",
+      "ended": "Finalizado",
+      "recovery": "Pendiente de recuperación"
+    },
     "start": "Iniciar actividad",
     "stopSave": "Detener y guardar",
     "discard": "Descartar",
@@ -110,7 +123,11 @@
     "consolidated": "Total consolidado",
     "byCategory": "Actividades Extra — Tiempo por categoría",
     "origin": "Origen",
-    "origins": { "all": "Todas las actividades", "internal": "Dentro de BEJ", "external": "Actividades Extra" },
+    "origins": {
+      "all": "Todas las actividades",
+      "internal": "Dentro de BEJ",
+      "external": "Actividades Extra"
+    },
     "allCategories": "Todas las categorías"
   },
   "study": {
@@ -129,7 +146,12 @@
     "historyPage": "Página {{page}} de {{total}} · {{count}} registros",
     "basicTraining": "Ejercicio básico",
     "advancedTraining": "Ejercicio avanzado",
-    "tracking": { "waiting": "Esperando el inicio de la práctica", "active": "Contabilizando", "idle": "Pausado por inactividad", "unavailable": "Seguimiento no disponible" },
+    "tracking": {
+      "waiting": "Esperando el inicio de la práctica",
+      "active": "Contabilizando",
+      "idle": "Pausado por inactividad",
+      "unavailable": "Seguimiento no disponible"
+    },
     "compatibilityNote": "El control entre pestañas utiliza Web Locks cuando está disponible o un SharedWorker en direcciones HTTP. Distintos módulos pueden funcionar simultáneamente.",
     "title": "Panel de estudios",
     "intro": "El camino de las 750 horas: una meta personal de dedicación, sin garantía de fluidez ni certificación del FSI.",
@@ -1090,5 +1112,16 @@
     "empty": "No hay chunks favoritos disponibles para este idioma y nivel.",
     "backToAll": "Volver a Chunk Flashcards",
     "storageError": "No se han podido guardar los favoritos en este navegador."
+  },
+  "bejOverview": {
+    "currentWeek": "Semana actual",
+    "consecutiveDays": "días consecutivos",
+    "weeklyActivity": "Actividad diaria de esta semana",
+    "future": "Día futuro",
+    "noStudy": "Sin estudios registrados",
+    "weeklyExtra": "Actividades extra de la semana (por categoría)",
+    "days": "días",
+    "studyTime": "Tiempo de estudio",
+    "dailyTime": "Tiempo diario"
   }
 }

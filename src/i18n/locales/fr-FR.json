@@ -88,8 +88,21 @@
     "configuration": "Configuration de l’activité",
     "category": "Catégorie externe",
     "note": "Note facultative (1 000 caractères maximum)",
-    "categories": { "conversation": "Conversation", "writing": "Écriture", "private-class": "Cours particulier", "reading": "Lecture", "active-listening": "Écoute active", "other": "Autres études" },
-    "states": { "ready": "Prêt à commencer", "running": "En cours", "paused": "En pause", "ended": "Terminé", "recovery": "Récupération en attente" },
+    "categories": {
+      "conversation": "Conversation",
+      "writing": "Écriture",
+      "private-class": "Cours particulier",
+      "reading": "Lecture",
+      "active-listening": "Écoute active",
+      "other": "Autres études"
+    },
+    "states": {
+      "ready": "Prêt à commencer",
+      "running": "En cours",
+      "paused": "En pause",
+      "ended": "Terminé",
+      "recovery": "Récupération en attente"
+    },
     "start": "Démarrer l’activité",
     "stopSave": "Arrêter et enregistrer",
     "discard": "Abandonner",
@@ -110,7 +123,11 @@
     "consolidated": "Total consolidé",
     "byCategory": "Activités supplémentaires — Temps par catégorie",
     "origin": "Origine",
-    "origins": { "all": "Toutes les activités", "internal": "Dans BEJ", "external": "Activités supplémentaires" },
+    "origins": {
+      "all": "Toutes les activités",
+      "internal": "Dans BEJ",
+      "external": "Activités supplémentaires"
+    },
     "allCategories": "Toutes les catégories"
   },
   "study": {
@@ -129,7 +146,12 @@
     "historyPage": "Page {{page}} sur {{total}} · {{count}} enregistrements",
     "basicTraining": "Exercice de base",
     "advancedTraining": "Exercice avancé",
-    "tracking": { "waiting": "En attente du début de la pratique", "active": "Suivi en cours", "idle": "En pause pour inactivité", "unavailable": "Suivi indisponible" },
+    "tracking": {
+      "waiting": "En attente du début de la pratique",
+      "active": "Suivi en cours",
+      "idle": "En pause pour inactivité",
+      "unavailable": "Suivi indisponible"
+    },
     "compatibilityNote": "Le contrôle entre onglets utilise Web Locks si disponible ou un SharedWorker pour les adresses HTTP. Différents modules peuvent fonctionner simultanément.",
     "title": "Tableau de bord des études",
     "intro": "Le parcours des 750 heures : un objectif personnel de travail, sans garantie de maîtrise ni certification du FSI.",
@@ -1090,5 +1112,16 @@
     "empty": "Aucun chunk favori disponible pour cette langue et ce niveau.",
     "backToAll": "Revenir aux Chunk Flashcards",
     "storageError": "Impossible d’enregistrer les favoris dans ce navigateur."
+  },
+  "bejOverview": {
+    "currentWeek": "Semaine en cours",
+    "consecutiveDays": "jours consécutifs",
+    "weeklyActivity": "Activité quotidienne de la semaine",
+    "future": "Jour à venir",
+    "noStudy": "Aucune étude enregistrée",
+    "weeklyExtra": "Activités supplémentaires de la semaine (par catégorie)",
+    "days": "jours",
+    "studyTime": "Temps d’étude",
+    "dailyTime": "Temps quotidien"
   }
 }

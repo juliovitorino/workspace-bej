@@ -88,8 +88,21 @@
     "configuration": "Activity setup",
     "category": "External category",
     "note": "Optional note (up to 1,000 characters)",
-    "categories": { "conversation": "Conversation", "writing": "Writing", "private-class": "Private lesson", "reading": "Reading", "active-listening": "Active Listening", "other": "Other study" },
-    "states": { "ready": "Ready to start", "running": "In progress", "paused": "Paused", "ended": "Finished", "recovery": "Recovery pending" },
+    "categories": {
+      "conversation": "Conversation",
+      "writing": "Writing",
+      "private-class": "Private lesson",
+      "reading": "Reading",
+      "active-listening": "Active Listening",
+      "other": "Other study"
+    },
+    "states": {
+      "ready": "Ready to start",
+      "running": "In progress",
+      "paused": "Paused",
+      "ended": "Finished",
+      "recovery": "Recovery pending"
+    },
     "start": "Start activity",
     "stopSave": "Stop and save",
     "discard": "Discard",
@@ -110,7 +123,11 @@
     "consolidated": "Consolidated total",
     "byCategory": "Extra Activities — Time by category",
     "origin": "Source",
-    "origins": { "all": "All activities", "internal": "Inside BEJ", "external": "Extra Activities" },
+    "origins": {
+      "all": "All activities",
+      "internal": "Inside BEJ",
+      "external": "Extra Activities"
+    },
     "allCategories": "All categories"
   },
   "study": {
@@ -129,7 +146,12 @@
     "historyPage": "Page {{page}} of {{total}} · {{count}} records",
     "basicTraining": "Basic Exercise",
     "advancedTraining": "Advanced Exercise",
-    "tracking": { "waiting": "Waiting for practice to begin", "active": "Tracking", "idle": "Paused due to inactivity", "unavailable": "Tracking unavailable" },
+    "tracking": {
+      "waiting": "Waiting for practice to begin",
+      "active": "Tracking",
+      "idle": "Paused due to inactivity",
+      "unavailable": "Tracking unavailable"
+    },
     "compatibilityNote": "Cross-tab control uses Web Locks when available or a SharedWorker on HTTP addresses. Different modules can run simultaneously.",
     "title": "Study Dashboard",
     "intro": "The 750-hour journey: a personal dedication goal, without a guarantee of fluency or FSI certification.",
@@ -1090,5 +1112,16 @@
     "empty": "No favorite chunks available for this language and level.",
     "backToAll": "Back to Chunk Flashcards",
     "storageError": "Could not save favorites in this browser."
+  },
+  "bejOverview": {
+    "currentWeek": "Current week",
+    "consecutiveDays": "consecutive days",
+    "weeklyActivity": "Daily activity this week",
+    "future": "Future day",
+    "noStudy": "No study recorded",
+    "weeklyExtra": "Extra activities this week (by category)",
+    "days": "days",
+    "studyTime": "Study time",
+    "dailyTime": "Daily study time"
   }
 }
