@@ -146,6 +146,7 @@
     "historyPage": "Page {{page}} sur {{total}} · {{count}} enregistrements",
     "basicTraining": "Exercice de base",
     "advancedTraining": "Exercice avancé",
+    "reviewTraining": "Révision écrite",
     "tracking": {
       "waiting": "En attente du début de la pratique",
       "active": "Suivi en cours",
