@@ -840,7 +840,7 @@ export function BasicTraining({
   }
 
   return (
-    <section className="basic-training" {...studyEvents}>
+    <section className="basic-training" onPointerDown={studyEvents.onPointerDown} onScrollCapture={studyEvents.onScrollCapture}>
       <TrainingStudyTime module="basic-training" language={language} paused={studyPaused} onTogglePause={toggleStudyPause} />
       <div className="training-toolbar">
         <button
@@ -1235,6 +1235,7 @@ export function BasicTraining({
               placeholder={t("common.typeYourSentenceInTargetlanguage", { targetLanguage: (languageName) })}
               value={studentText}
               onChange={(event) => {
+                // Update the controlled value before notifying study tracking.
                 setStudentText(event.target.value);
                 setCopyStatus("idle");
                 setEvaluation(null);
@@ -1250,6 +1251,7 @@ export function BasicTraining({
                 if ("speechSynthesis" in window) {
                   cancelStudyAudio();
                 }
+                recordStudyActivity();
               }}
             />
 

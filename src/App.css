@@ -2754,3 +2754,35 @@ button { color: inherit; }
 .backup-reminder-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .backup-reminder-actions button { min-height: 44px; flex: 1 1 180px; }
 .backup-reminder-dialog p { line-height: 1.6; }
+
+
+/* Desktop-only: do not change the existing mobile floating button layout. */
+.desktop-scroll-to-top { display: none; }
+@media (min-width: 821px) {
+  .desktop-scroll-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 6;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--on-accent);
+    box-shadow: 0 4px 12px var(--shadow);
+    cursor: pointer;
+  }
+  .desktop-scroll-to-top:hover { background: var(--accent-hover); }
+  .desktop-scroll-to-top:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+  body:has(dialog[open], .modal-backdrop, [aria-modal="true"]) .desktop-scroll-to-top { display: none; }
+}
+@media print { .desktop-scroll-to-top { display: none; } }
+
+/* Terms are stored in a standalone editable Markdown file. */
+.bej-terms-disclosure { margin: 18px 0; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+.bej-terms-disclosure summary { cursor: pointer; font-weight: 700; }
+.bej-terms-text { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 50vh; overflow-y: auto; margin-top: 12px; font: inherit; font-size: .88rem; line-height: 1.6; }

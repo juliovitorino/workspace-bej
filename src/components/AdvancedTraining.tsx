@@ -979,7 +979,7 @@ export function AdvancedTraining({
   }
 
   return (
-    <section className="advanced-training" {...studyEvents}>
+    <section className="advanced-training" onPointerDown={studyEvents.onPointerDown} onScrollCapture={studyEvents.onScrollCapture}>
       <TrainingStudyTime module="advanced-training" language={language} paused={studyPaused} onTogglePause={toggleStudyPause} />
       <div className="training-toolbar">
         <button
@@ -1320,11 +1320,13 @@ export function AdvancedTraining({
                 placeholder={t("advancedTraining.createTheFirstSentenceInTargetlanguage", { targetLanguage: (languageName) })}
                 value={sentenceOne}
                 onChange={(event) => {
+                  // Update the controlled value before notifying study tracking.
                   setSentenceOne(event.target.value);
                   setDraftCopyStatus((current) => ({ ...current, sentenceOne: "idle" }));
                   setEvaluation(null);
     setEvaluationCopyStatus(null);
                   setEvaluationError(null);
+                  recordStudyActivity();
                 }}
               />
               {draftCopyStatus.sentenceOne !== "idle" && (
@@ -1499,11 +1501,13 @@ export function AdvancedTraining({
                 placeholder={t("advancedTraining.createTheSecondSentenceInTargetlanguage", { targetLanguage: (languageName) })}
                 value={sentenceTwo}
                 onChange={(event) => {
+                  // Update the controlled value before notifying study tracking.
                   setSentenceTwo(event.target.value);
                   setDraftCopyStatus((current) => ({ ...current, sentenceTwo: "idle" }));
                   setEvaluation(null);
     setEvaluationCopyStatus(null);
                   setEvaluationError(null);
+                  recordStudyActivity();
                 }}
               />
               {draftCopyStatus.sentenceTwo !== "idle" && (
@@ -1743,6 +1747,7 @@ export function AdvancedTraining({
               placeholder={t("advancedTraining.useOneOrMoreConnectorsToCombineYourTwoSentences")}
               value={combinedSentence}
               onChange={(event) => {
+                // Update the controlled value before notifying study tracking.
                 setCombinedSentence(event.target.value);
                 setCopyStatus("idle");
                 setEvaluation(null);
@@ -1757,6 +1762,7 @@ export function AdvancedTraining({
                 if ("speechSynthesis" in window) {
                   cancelStudyAudio();
                 }
+                recordStudyActivity();
               }}
             />
 

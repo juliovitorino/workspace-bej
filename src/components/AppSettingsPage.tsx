@@ -1,3 +1,4 @@
+import termsOfUse from "../content/terms-of-use.md?raw";
 import { StudyDataTransfer } from "../features/study/StudyDataTransfer";
 import { StudyDangerZone } from "../features/study/StudyDangerZone";
 import { useEffect, useRef, useState } from "react";
@@ -59,6 +60,10 @@ export function AppSettingsPage({ theme, onThemeChange, onOpenStudy, onOpenData,
           <button type="button" className="secondary-button" onClick={() => onOpenData("settings")}>{t("settingsPage.openBackup")}</button>
           <button type="button" className="secondary-button" onClick={() => onOpenData("history")}>{t("study.history")}</button>
         </div>
+        <details className="bej-terms-disclosure">
+          <summary>Termos de Uso (PT-BR)</summary>
+          <div className="bej-terms-text" role="document">{termsOfUse}</div>
+        </details>
         <StudyDangerZone language={languages.language} onChanged={() => undefined} />
       </>}
     </section>

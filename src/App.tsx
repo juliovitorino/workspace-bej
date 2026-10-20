@@ -15,6 +15,7 @@ import "./App.css";
 import { AppSettingsDialog } from "./components/AppSettingsDialog";
 import { Header } from "./components/Header";
 import { ScrollToTopButton } from "./components/ScrollToTopButton";
+import { DesktopScrollToTopButton } from "./components/DesktopScrollToTopButton";
 import { SearchPanel, type ChunkFilter, type HqImageFilter, type YoutubeFilter } from "./components/SearchPanel";
 import { Sidebar, type AppView } from "./components/Sidebar";
 import { ExercisePanel } from "./components/ExercisePanel";
@@ -685,6 +686,7 @@ function App() {
         )}
         <ScrollToTopButton />
       </div>
+      <DesktopScrollToTopButton active={currentView === "hashmap" && !selected && !trainingMode && !loading && !!data} />
     </main>
   );
 }

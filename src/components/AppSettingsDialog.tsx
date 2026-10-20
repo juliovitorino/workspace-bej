@@ -1,3 +1,4 @@
+import termsOfUse from "../content/terms-of-use.md?raw";
 import { LanguageSettingsFields } from "./LanguageSettingsFields";
 import { useTranslation } from "react-i18next";
 import { useEffect, useRef } from "react";
@@ -55,6 +56,10 @@ export function AppSettingsDialog({ kind, language, sourceLanguage, languageLock
             <dt>{t("settings.lastUpdated")}</dt><dd>{metadata.updatedAt}</dd>
           </>}
         </dl>
+        <details className="bej-terms-disclosure">
+          <summary>Termos de Uso (PT-BR)</summary>
+          <div className="bej-terms-text" role="document">{termsOfUse}</div>
+        </details>
         {!metadata && <p role="status">{t("settings.metadataIsCurrentlyUnavailable")}</p>}
         {source === "cache" && <span className="cache-badge">{t("settings.localCache")}</span>}
       </>}
