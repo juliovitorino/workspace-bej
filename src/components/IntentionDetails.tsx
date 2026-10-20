@@ -8,7 +8,6 @@ import { useEffect, useRef, useState } from "react";
 import type { Example, MentalIntention } from "../types/hashmap";
 import { ConnectedSpeechButton } from "./ConnectedSpeechStudio";
 import { useExampleAudio } from "../features/study/useExampleAudio";
-import { NeuralVoiceSelect } from "./NeuralVoiceSelect";
 
 
 /** Campos de destino do contrato 4.0; pt/ptIntent vêm da associação por UUID no serviço. */
@@ -818,7 +817,6 @@ Mandatório:
         <p className="eyebrow">{t("common.communicativeIntention")}</p>
         <h2>{item.intention}</h2>
         <p className="detail-english" lang={language}>{item.targetIntention ?? item.english}</p>
-        <NeuralVoiceSelect />
 
         {(targetLevel || item.category || youtubeVideoUrl || youtubeShortUrl || (isAuthorMode() && item.allowLanguageChunkPractice === true)) && (
           <div

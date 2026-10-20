@@ -150,7 +150,7 @@ function App() {
   }, [studyView, language]);
   const extraActivity = useExtraActivity();
   const studyWarning = useStudyTracking(studyView, language, trainingMode ? trainingSignal : studySignal,
-    backupReminderOpen || !!settingsDialog || trainingMode === "review" || (studyView !== "shadowing" && (loading || !data)));
+    backupReminderOpen || !!settingsDialog || (studyView !== "shadowing" && (loading || !data)));
 
   // Mesma verificacao de modo autor usada pelas ferramentas existentes.
   const authorMode = isAuthorMode();
@@ -615,6 +615,7 @@ function App() {
               trainingMode === "review" &&
               trainingIntention && (
                 <ReviewTraining
+                  onStudyState={reportTraining}
                   language={language}
                   intention={trainingIntention}
                   onBack={closeTraining}

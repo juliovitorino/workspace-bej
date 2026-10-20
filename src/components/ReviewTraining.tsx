@@ -1,3 +1,5 @@
+import { useTrainingStudy, type TrainingStudyReporter } from "../features/study/useTrainingStudy";
+import { TrainingStudyTime } from "../features/study/TrainingStudyTime";
 import { speakStudyAudio, cancelStudyAudio } from "../features/study/studyAudio";
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
@@ -102,12 +104,14 @@ interface ReviewTrainingProps {
   intention: MentalIntention;
   language: StudentLanguage;
   onBack: () => void;
+  onStudyState?: TrainingStudyReporter;
 }
 
 export function ReviewTraining({
   intention,
   language,
-  onBack
+  onBack,
+  onStudyState
 }: ReviewTrainingProps) {
   const { t } = useTranslation();
   const languageName = localizedLanguageName(language).toLowerCase();
@@ -136,6 +140,10 @@ export function ReviewTraining({
   const showDictationButton = !isMobileDevice();
   const [dictationError, setDictationError] = useState<string | null>(null);
   const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
+  const { recordActivity: recordStudyActivity, studyPaused, toggleStudyPause, ...studyEvents } = useTrainingStudy(
+    `review-training:${language}:${intention.id}`, true, evaluating || translating,
+    speaking || evaluationSpeaking !== null || dictating, onStudyState
+  );
 
   const googleTranslationCardRef = useRef<HTMLElement | null>(null);
   const aiEvaluationCardRef = useRef<HTMLElement | null>(null);
@@ -187,6 +195,7 @@ export function ReviewTraining({
     recognition.maxAlternatives = 1;
 
     recognition.onstart = () => {
+      recordStudyActivity();
       setDictating(true);
     };
 
@@ -211,6 +220,7 @@ export function ReviewTraining({
         return;
       }
 
+      recordStudyActivity();
       setStudentText((current) => {
         const currentText = current.trimEnd();
 
@@ -627,7 +637,8 @@ export function ReviewTraining({
   }
 
   return (
-    <section className="basic-training review-training">
+    <section className="basic-training review-training" onPointerDown={studyEvents.onPointerDown} onScrollCapture={studyEvents.onScrollCapture}>
+      <TrainingStudyTime module="review-training" language={language} paused={studyPaused} onTogglePause={toggleStudyPause} />
       <div className="training-toolbar">
         <button
           type="button"
@@ -904,7 +915,10 @@ export function ReviewTraining({
               placeholder={t("common.typeYourSentenceInTargetlanguage", { targetLanguage: (languageName) })}
               value={studentText}
               onChange={(event) => {
+                // Atualizar primeiro o textarea controlado. Nunca atualizar o
+                // rastreador no keydown/input antes de o navegador inserir o texto.
                 setStudentText(event.target.value);
+                recordStudyActivity();
                 setCopyStatus("idle");
                 setEvaluation(null);
                 setEvaluationCopyStatus(null);
