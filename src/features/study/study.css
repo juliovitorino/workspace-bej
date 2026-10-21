@@ -136,7 +136,7 @@
 .bej-week-day-number { color:var(--muted); font-size:.8rem; }
 .bej-week-day-box { display:flex; align-items:center; justify-content:center; height:clamp(38px,4.4vw,66px); border:2px solid var(--border); background:var(--surface-soft); border-radius:15px; color:var(--muted); font-size:1.5rem; font-weight:700; }
 .bej-week-day-box.is-active { background:rgb(42 192 128 / .16); border-color:var(--bej-green); color:var(--bej-green); }
-.bej-week-day-box.is-today { box-shadow:0 0 0 2px rgb(78 141 245 / .23); }
+.bej-week-day-box.is-in-progress { background:rgb(78 141 245 / .12); border-color:var(--bej-blue); color:var(--bej-blue); box-shadow:0 0 0 2px rgb(78 141 245 / .12); }
 .bej-streak-bottom { margin-top:16px; }
 .study-dashboard .bej-streak-bottom h4 { margin:0 0 12px; font-size:.93rem; }
 .bej-category-mini-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
