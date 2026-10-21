@@ -5,9 +5,10 @@ import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/
 interface HeaderProps {
   language: StudentLanguage;
   sourceLanguage: SourceLanguage;
+  onOpenLanguages: () => void;
 }
 
-export function Header({ language, sourceLanguage }: HeaderProps) {
+export function Header({ language, sourceLanguage, onOpenLanguages }: HeaderProps) {
   const { t } = useTranslation();
   const pairLabel = localizedLanguageName(sourceLanguage) + " → " + localizedLanguageName(language);
   return (
@@ -17,9 +18,13 @@ export function Header({ language, sourceLanguage }: HeaderProps) {
         <h1>Mental Hashmap</h1>
         <p className="subtitle">{t("header.studyIntentionsFromOneLanguageToAnother")}</p>
       </div>
-      <span className="language-pair-indicator" role="status" aria-label={pairLabel} title={pairLabel}>
+      <button type="button" className="language-pair-indicator"
+        onClick={onOpenLanguages}
+        aria-label={`${t("navigation.languages")}: ${pairLabel}`}
+        aria-haspopup="dialog"
+        title={`${t("navigation.languages")}: ${pairLabel}`}>
         <span aria-hidden="true">{LANGUAGES[sourceLanguage].flag} → {LANGUAGES[language].flag}</span>
-      </span>
+      </button>
     </header>
   );
 }

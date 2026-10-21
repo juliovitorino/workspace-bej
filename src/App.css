@@ -2512,6 +2512,11 @@ button {
 
 /* Navigation settings */
 .language-pair-indicator {
+  appearance: none;
+  color: var(--text);
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease;
   flex-shrink: 0;
   white-space: nowrap;
   padding: 8px 12px;
@@ -2519,6 +2524,14 @@ button {
   border-radius: 999px;
   background: var(--surface);
   font-size: 1.1rem;
+}
+.language-pair-indicator:hover {
+  border-color: var(--accent);
+  background: var(--surface-hover, var(--surface));
+}
+.language-pair-indicator:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
 }
 .app-settings-dialog {
   width: min(520px, calc(100% - 32px));

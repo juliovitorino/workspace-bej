@@ -407,7 +407,7 @@ function App() {
       <div className="app-content">
         <div className="page-shell">
           <div className="container">
-            <Header language={language} sourceLanguage={sourceLanguage} />
+            <Header language={language} sourceLanguage={sourceLanguage} onOpenLanguages={() => setSettingsDialog("languages")} />
             {settingsDialog && <AppSettingsDialog
               kind={settingsDialog}
               language={language}

@@ -19,7 +19,8 @@ export function StudyWeeklyOverview({ data, now }: { data: StudyData; now: Date 
     }
     let streak = 0;
     let cursor = (byDay.get(today) ?? 0) >= 60 ? today : previousDay(today, -1);
-    while ((byDay.get(cursor) ?? 0) >= 60) { streak++; cursor = previousDay(cursor, -1); }
+    // This card represents the current week: do not include days from a prior week.
+    while (cursor >= monday && (byDay.get(cursor) ?? 0) >= 60) { streak++; cursor = previousDay(cursor, -1); }
     const categories = EXTRA_CATEGORIES.map(category => ({
       category,
       days: new Set(entries.filter(e => e.module === "extra-activities" && e.category === category && e.seconds > 0 && e.date >= monday && e.date <= today).map(e => e.date)).size
@@ -44,7 +45,7 @@ export function StudyWeeklyOverview({ data, now }: { data: StudyData; now: Date 
     <section className="study-panel bej-streak-card" aria-labelledby="bej-streak-title">
       <div className="bej-card-heading"><div><h3 id="bej-streak-title"><span aria-hidden="true">🔥</span> Days Streak</h3><p>{t("bejOverview.currentWeek")} · {fmt(week.days[0], { day: "numeric", month: "short" })} – {fmt(week.days[6], { day: "numeric", month: "short", year: "numeric" })}</p></div><div className="bej-streak-value"><strong>{week.streak}</strong><span>{t("bejOverview.consecutiveDays")}</span></div></div>
       <div className="bej-week-days" role="list" aria-label={t("bejOverview.weeklyActivity")}>
-        {week.days.map(day => { const seconds = week.byDay.get(day) ?? 0; const active = seconds >= 60; const future = day > week.today; return <div className="bej-week-day" key={day} role="listitem" aria-label={`${fmt(day, { weekday: "long", day: "numeric", month: "long" })}: ${future ? t("bejOverview.future") : active ? time(seconds) : t("bejOverview.noStudy")}`}><span className="bej-week-day-name">{fmt(day, { weekday: "short" }).replace(".", "").slice(0, 3)}</span><span className="bej-week-day-number">{Number(day.slice(-2))}</span><span className={`bej-week-day-box${active ? " is-active" : ""}${day === week.today ? " is-today" : ""}`}>{active ? "✓" : "—"}</span></div>; })}
+        {week.days.map(day => { const seconds = week.byDay.get(day) ?? 0; const active = seconds >= 60; const future = day > week.today; const todayInProgress = day === week.today; return <div className="bej-week-day" key={day} role="listitem" aria-label={`${fmt(day, { weekday: "long", day: "numeric", month: "long" })}: ${future ? t("bejOverview.future") : todayInProgress ? `${t("bejOverview.inProgress")}${seconds > 0 ? ` · ${time(seconds)}` : ""}` : active ? time(seconds) : t("bejOverview.noStudy")}`}><span className="bej-week-day-name">{fmt(day, { weekday: "short" }).replace(".", "").slice(0, 3)}</span><span className="bej-week-day-number">{Number(day.slice(-2))}</span><span className={`bej-week-day-box${active && !todayInProgress ? " is-active" : ""}${todayInProgress ? " is-in-progress" : ""}`}>{todayInProgress ? "◷" : active ? "✓" : "—"}</span></div>; })}
       </div>
       <div className="bej-streak-bottom"><h4>{t("bejOverview.weeklyExtra")}</h4><div className="bej-category-mini-grid">{week.categories.map(({ category, days }) => <div className={`bej-category-mini bej-category-${category}`} key={category}><div className="bej-category-mini-label"><span className="bej-category-icon" aria-hidden="true">{categoryIcons[category]}</span><span>{t(`extras.categories.${category}`)}</span></div><strong>{days} / 7 {t("bejOverview.days")}</strong><div className="bej-mini-track"><span style={{ width: `${days / 7 * 100}%` }} /></div></div>)}</div></div>
     </section>
