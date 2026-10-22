@@ -1140,5 +1140,23 @@
     "noMonthlyStudy": "No study time recorded for this year.",
     "goalCompleted": "of historical goal",
     "remaining": "Remaining"
+  },
+  "studyStorage": {
+    "title": "Local storage",
+    "refresh": "Refresh",
+    "sessions": "Study sessions",
+    "studyRecords": "Study records",
+    "studySize": "Study data size",
+    "totalRecords": "Total local records",
+    "totalSize": "Estimated total local size",
+    "disclaimer": "Estimates based on key and text lengths (2 bytes per character). They do not measure the actual quota or, by themselves, indicate storage exhaustion. Includes all keys on this origin. No data is changed.",
+    "unavailable": "Unable to read local storage.",
+    "hashmapSize": "Mental Hashmap data",
+    "otherSize": "Other local data",
+    "studyShare": "Study share of total",
+    "hashmapShare": "Mental Hashmap share of total",
+    "referencePercent": "Compared with 5 MiB reference",
+    "distributionNote": "The bar shows how estimated storage is split between study data, Mental Hashmap and other data.",
+    "referenceNote": "The 5 MiB reference is only for comparison, not the browser’s actual quota. Values above 100% do not, by themselves, mean storage is full."
   }
 }

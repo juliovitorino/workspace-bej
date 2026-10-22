@@ -1140,5 +1140,23 @@
     "noMonthlyStudy": "Nenhum tempo de estudo registrado neste ano.",
     "goalCompleted": "da meta histórica",
     "remaining": "Restante"
+  },
+  "studyStorage": {
+    "title": "Armazenamento local",
+    "refresh": "Atualizar",
+    "sessions": "Sessões de estudo",
+    "studyRecords": "Registros de estudo",
+    "studySize": "Espaço dos estudos",
+    "totalRecords": "Total de registros locais",
+    "totalSize": "Espaço local total estimado",
+    "disclaimer": "Valores estimados a partir do tamanho das chaves e textos (2 bytes por caractere). Não representam a cota real nem indicam, isoladamente, risco de falta de espaço. Inclui todas as chaves desta origem. Nenhum dado é alterado.",
+    "unavailable": "Não foi possível ler o armazenamento local.",
+    "hashmapSize": "Base Mental Hashmap",
+    "otherSize": "Outros dados locais",
+    "studyShare": "Participação dos estudos no total",
+    "hashmapShare": "Participação do Mental Hashmap no total",
+    "referencePercent": "Comparação com a referência de 5 MiB",
+    "distributionNote": "A barra mostra a distribuição do espaço estimado entre estudos, Mental Hashmap e outros dados.",
+    "referenceNote": "A referência de 5 MiB é apenas comparativa, não é a cota real do navegador. Valores acima de 100% não indicam, por si só, falta de espaço."
   }
 }

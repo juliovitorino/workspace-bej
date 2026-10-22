@@ -14,6 +14,7 @@ import { StudyPeriodMenu } from "./StudyPeriodMenu";
 import { StudyWeeklyOverview } from "./StudyWeeklyOverview";
 import { StudyMonthlyOverview } from "./StudyMonthlyOverview";
 import { StudyGoalGauges } from "./StudyGoalGauges";
+import { StudyStorageOverview } from "./StudyStorageOverview";
 
 const languages = Object.keys(LANGUAGES) as StudentLanguage[];
 const HISTORY_PAGE_SIZE = 20;
@@ -230,6 +231,7 @@ export function StudyDashboard({ language, initialSection }: { language: Student
         <span role="status">{t("study.historyPage", { page: currentHistoryPage, total: historyPages, count: history.length })}</span>
         <button type="button" className="secondary-button" aria-controls="study-history-list" disabled={currentHistoryPage === historyPages} onClick={() => setHistoryPage(currentHistoryPage + 1)}>{t("common.next")}</button>
       </nav>}</section>
+      {!historyVisible && <StudyStorageOverview />}
       <section id="study-data" tabIndex={-1} hidden={historyVisible} className="study-panel">
       <StudyDataTransfer mode="restore" disabled={busy} onBusyChange={setBusy} />
       </section>
