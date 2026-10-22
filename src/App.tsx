@@ -57,7 +57,7 @@ function App() {
   [data, favorites, language]);
   const [source, setSource] = useState<"remote" | "cache">("remote");
   const [dashboardSection, setDashboardSection] = useState<"settings" | "history" | undefined>();
-  const [currentView, commitView] = useState<AppView>("hashmap");
+  const [currentView, commitView] = useState<AppView>("study-dashboard");
   const [backupReminderOpen, setBackupReminderOpen] = useState(false);
   const pendingBackupNavigation = useRef<(() => void) | null>(null);
   function requestStudyNavigation(proceed: () => void) {
