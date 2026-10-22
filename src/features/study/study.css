@@ -176,3 +176,33 @@
 .study-dashboard-filter-button { display:inline-flex; align-items:center; gap:8px; padding:8px 15px; border-radius:12px; }
 .study-dashboard-filter-button[aria-expanded="true"] { outline:2px solid var(--accent); outline-offset:2px; }
 @media(max-width:820px){ .study-dashboard-filter-button { display:none; } }
+
+/* Dashboard: monthly bars and BI-style historical goal gauges (light/dark via theme tokens). */
+.study-dashboard .bej-monthly-overview,.study-dashboard .bej-goal-gauges { padding:24px; }
+.bej-monthly-heading { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; }
+.study-dashboard .bej-monthly-heading h3 { margin:0 0 5px; font-size:clamp(1.2rem,2vw,1.55rem); }
+.bej-monthly-heading p { margin:0; color:var(--muted); font-size:.9rem; }
+.study-dashboard .bej-monthly-year { width:130px; margin:0; font-weight:600; }
+.bej-monthly-total { display:flex; align-items:baseline; gap:12px; margin:16px 0 22px; color:var(--muted); }
+.bej-monthly-total strong { font-size:clamp(1.5rem,3vw,2.3rem); color:var(--text); font-variant-numeric:tabular-nums; }
+.bej-month-bars { min-height:210px; display:flex; align-items:stretch; gap:clamp(8px,1.7vw,22px); overflow-x:auto; padding:8px 4px 2px; }
+.bej-month-column { flex:1 0 0; min-width:54px; max-width:160px; height:210px; display:flex; flex-direction:column; align-items:center; gap:7px; }
+.bej-month-value { font-size:.77rem; font-weight:700; color:var(--text); white-space:nowrap; font-variant-numeric:tabular-nums; }
+.bej-month-bar-space { flex:1; min-height:0; width:100%; display:flex; align-items:end; border-bottom:1px solid var(--border); background:repeating-linear-gradient(to top,transparent 0,transparent calc(25% - 1px),rgb(128 148 181 / .12) 25%); }
+.bej-month-bar-fill { width:100%; background:linear-gradient(180deg,#5799ff,#3975eb); border-radius:6px 6px 0 0; }
+.bej-month-name { font-size:.82rem; font-weight:600; color:var(--muted); }
+.bej-monthly-empty { color:var(--muted); padding:35px 0; text-align:center; }
+.bej-gauge-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); gap:18px; margin-top:22px; }
+.bej-gauge-item { min-width:0; text-align:center; padding:16px; border:1px solid var(--border); border-radius:15px; background:var(--surface-soft); }
+.study-dashboard .bej-gauge-item h4 { margin:0 0 4px; }
+.bej-gauge-visual { max-width:300px; margin:0 auto; }
+.bej-gauge-visual svg { display:block; width:100%; height:auto; overflow:visible; }
+.bej-gauge-track { stroke:var(--border-strong); }
+.bej-gauge-progress { stroke:var(--bej-blue,#4384f0); }
+.bej-gauge-percent { font-size:31px; font-weight:800; fill:var(--text); font-variant-numeric:tabular-nums; }
+.bej-gauge-subtitle { font-size:11px; fill:var(--muted); }
+.bej-gauge-numbers { display:flex; justify-content:center; align-items:baseline; gap:7px; flex-wrap:wrap; }
+.bej-gauge-numbers strong { font-size:1.25rem; font-variant-numeric:tabular-nums; }
+.bej-gauge-numbers span,.bej-gauge-remaining,.bej-gauge-monthly { color:var(--muted); font-size:.85rem; }
+.bej-gauge-remaining,.bej-gauge-monthly { margin:8px 0 0; }
+@media(max-width:740px) { .study-dashboard .bej-monthly-overview,.study-dashboard .bej-goal-gauges { padding:17px; } .bej-month-column { min-width:48px; } .bej-month-bars { gap:9px; } }

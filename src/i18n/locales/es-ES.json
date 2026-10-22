@@ -1132,6 +1132,13 @@
     "weeklyExtra": "Actividades extra de la semana (por categoría)",
     "days": "días",
     "studyTime": "Tiempo de estudio",
-    "dailyTime": "Tiempo diario"
+    "dailyTime": "Tiempo diario",
+    "monthlyStudyTime": "Tiempo de estudio mensual",
+    "monthlyDescription": "Tiempo estudiado por mes",
+    "year": "Año",
+    "yearTotal": "Total del año",
+    "noMonthlyStudy": "No hay tiempo de estudio registrado este año.",
+    "goalCompleted": "de la meta histórica",
+    "remaining": "Restante"
   }
 }

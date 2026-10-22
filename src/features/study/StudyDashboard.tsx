@@ -12,6 +12,8 @@ import { studyEntries, studyStats, type StudyFilters } from "./studyStats";
 import "./study.css";
 import { StudyPeriodMenu } from "./StudyPeriodMenu";
 import { StudyWeeklyOverview } from "./StudyWeeklyOverview";
+import { StudyMonthlyOverview } from "./StudyMonthlyOverview";
+import { StudyGoalGauges } from "./StudyGoalGauges";
 
 const languages = Object.keys(LANGUAGES) as StudentLanguage[];
 const HISTORY_PAGE_SIZE = 20;
@@ -187,26 +189,15 @@ export function StudyDashboard({ language, initialSection }: { language: Student
       {!validRange && <p role="alert">{t("study.errors.invalid")}</p>}
       <div id="study-results" className="study-content" tabIndex={-1} hidden={historyVisible}>
       <StudyWeeklyOverview data={displayData!} now={now} />
+      <StudyMonthlyOverview data={displayData!} now={now} language={filters.language} />
+      <StudyGoalGauges data={displayData!} goals={store.studyData.goals} monthlyGoals={store.studyData.monthlyGoals} language={filters.language} now={now}
+        explanationVisible={goalExplanationVisible} onToggleExplanation={() => setGoalExplanationVisible(current => !current)} />
       <div className="bej-visual-chart-grid">
         {chart(`${t("study.byModule")} · ${t(`study.periods.${filters.period}`)}`, moduleValues, moduleLabel, stats.total, true, "study-time-by-module")}
         {chart(`${t("study.byLanguage")} · ${t(`study.periods.${filters.period}`)}`, stats.byLanguage, code => languageName(code as StudentLanguage), stats.total)}
       </div>
       {chart(t("extras.byCategory"), Object.fromEntries(EXTRA_CATEGORIES.map(key => [key, stats.byExtraCategory[key] ?? 0])), key => t(`extras.categories.${key}`), stats.external, true)}
       {chart(t("extras.byOtherSubcategory"), Object.fromEntries(OTHER_STUDY_SUBCATEGORIES.map(key => [key, stats.byOtherSubcategory[key] ?? 0])), key => t(`extras.subcategories.${key}`), stats.byExtraCategory.other ?? 0, true)}
-      <div className="bej-goal-section">
-      <section className="study-panel"><div className="study-goal-heading"><h3>{t("study.journey")}</h3><button type="button" className="secondary-button study-goal-info" aria-label={t(goalExplanationVisible ? "study.hideGoalExplanation" : "study.showGoalExplanation")} title={t(goalExplanationVisible ? "study.hideGoalExplanation" : "study.showGoalExplanation")} aria-expanded={goalExplanationVisible} aria-controls="study-goal-explanation" onClick={() => setGoalExplanationVisible(!goalExplanationVisible)}>{informationIcon}</button></div><p id="study-goal-explanation" className="study-goal-explanation" data-expanded={goalExplanationVisible}>{t("study.historicalNote")}</p>
-        {languages.filter(code => filters.language === "all" || filters.language === code).map(code => {
-          const entries = studyEntries(displayData!).filter(e => e.language === code), total = entries.reduce((n, e) => n + e.seconds, 0);
-          const target = store.studyData.goals[code], monthly = store.studyData.monthlyGoals[code];
-          const percent = target ? total / (target * 3600) * 100 : 0;
-          const monthTotal = entries.filter(e => e.date.slice(0, 7) === localDay(now).slice(0, 7)).reduce((n, e) => n + e.seconds, 0);
-          return <div className="study-goal" key={code}><h4>{languageName(code)}</h4><p>{duration(total)} / {target ? t("study.hoursValue", { hours: number(target) }) : t("study.noGoal")}</p>
-            {target && <><progress aria-label={t("study.progressFor", { language: languageName(code) })} value={Math.min(percent, 100)} max={100} /><p>{t("study.progress", { percent: number(percent), remaining: duration(Math.max(0, target * 3600 - total)) })}</p>{percent >= 100 && <strong>{t("study.reached")}</strong>}</>}
-            {monthly && <p>{t("study.monthlyProgress", { actual: duration(monthTotal), target: number(monthly) })}</p>}
-          </div>;
-        })}
-      </section>
-      </div>
       <div id="study-details" tabIndex={-1} className="study-content" hidden={!detailsVisible}>
       <div className="study-metrics">{([ ["accumulated", stats.total], ["today", stats.today], ["week", stats.week], ["month", stats.month], ["dailyAverage", stats.average] ] as const).map(([key, seconds]) => <div className="study-panel" key={key}><span>{t(`study.${key}`)}</span><strong>{duration(seconds)}</strong></div>)}
         {([ ["internalTime", stats.internal], ["externalTime", stats.external], ["consolidated", stats.total] ] as const).map(([key, seconds]) => <div className="study-panel" key={key}><span>{t(`extras.${key}`)}</span><strong>{duration(seconds)}</strong></div>)}
