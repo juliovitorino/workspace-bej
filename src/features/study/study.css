@@ -206,3 +206,14 @@
 .bej-gauge-numbers span,.bej-gauge-remaining,.bej-gauge-monthly { color:var(--muted); font-size:.85rem; }
 .bej-gauge-remaining,.bej-gauge-monthly { margin:8px 0 0; }
 @media(max-width:740px) { .study-dashboard .bej-monthly-overview,.study-dashboard .bej-goal-gauges { padding:17px; } .bej-month-column { min-width:48px; } .bej-month-bars { gap:9px; } }
+
+
+/* Subtle warning for extra-activity categories with zero study days this week. */
+.study-dashboard .bej-category-mini.is-zero-study {
+  background: rgba(220, 53, 69, .085);
+  border-color: rgba(195, 53, 67, .48);
+}
+[data-theme="dark"] .study-dashboard .bej-category-mini.is-zero-study {
+  background: rgba(248, 113, 113, .11);
+  border-color: rgba(248, 113, 113, .5);
+}
