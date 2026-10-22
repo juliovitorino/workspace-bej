@@ -217,3 +217,23 @@
   background: rgba(248, 113, 113, .11);
   border-color: rgba(248, 113, 113, .5);
 }
+
+/* Read-only storage indicator in Dashboard settings. */
+.study-dashboard .bej-storage-overview { display:grid; gap:14px; }
+.bej-storage-heading { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+.study-dashboard .bej-storage-heading h3 { margin:0; }
+.bej-storage-metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,165px),1fr)); gap:12px; }
+.bej-storage-metrics > div { display:flex; flex-direction:column; gap:5px; padding:12px; border:1px solid var(--border); border-radius:12px; background:var(--surface-soft); min-width:0; }
+.bej-storage-metrics span { color:var(--muted); font-size:.84rem; }
+.bej-storage-metrics strong { font-size:1.2rem; font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
+
+/* Estimated storage distribution and non-alarming 5 MiB comparison. */
+.bej-storage-distribution { display:flex; height:12px; overflow:hidden; border-radius:999px; background:var(--border); }
+.bej-storage-distribution > span { display:block; height:100%; flex-shrink:0; }
+.bej-storage-distribution-study { background:#2fa879; }
+.bej-storage-distribution-hashmap { background:#4b8cf5; }
+.bej-storage-reference { display:grid; gap:8px; }
+.bej-storage-reference-label { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; font-variant-numeric:tabular-nums; }
+.bej-storage-reference-bar { height:12px; border-radius:999px; overflow:hidden; background:var(--border); }
+.bej-storage-reference-bar span { display:block; height:100%; border-radius:inherit; background:var(--bej-blue,#4384f0); }
+.bej-storage-reference .study-note,.bej-storage-overview > .study-note { margin:0; }

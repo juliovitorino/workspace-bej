@@ -1140,5 +1140,23 @@
     "noMonthlyStudy": "Aucun temps d’étude enregistré cette année.",
     "goalCompleted": "de l’objectif historique",
     "remaining": "Restant"
+  },
+  "studyStorage": {
+    "title": "Stockage local",
+    "refresh": "Actualiser",
+    "sessions": "Sessions d'étude",
+    "studyRecords": "Enregistrements d'étude",
+    "studySize": "Taille des données d'étude",
+    "totalRecords": "Total des enregistrements locaux",
+    "totalSize": "Taille locale totale estimée",
+    "disclaimer": "Estimations basées sur la longueur des clés et textes (2 octets par caractère). Elles ne mesurent pas le quota réel et ne signalent pas à elles seules un manque d’espace. Inclut toutes les clés de cette origine. Aucune donnée n’est modifiée.",
+    "unavailable": "Impossible de lire le stockage local.",
+    "hashmapSize": "Données Mental Hashmap",
+    "otherSize": "Autres données locales",
+    "studyShare": "Part des études dans le total",
+    "hashmapShare": "Part de Mental Hashmap dans le total",
+    "referencePercent": "Comparaison à la référence de 5 Mio",
+    "distributionNote": "La barre montre la répartition estimée entre les études, Mental Hashmap et les autres données.",
+    "referenceNote": "La référence de 5 Mio sert uniquement de comparaison, pas de quota réel du navigateur. Une valeur supérieure à 100 % ne signifie pas à elle seule que le stockage est plein."
   }
 }
