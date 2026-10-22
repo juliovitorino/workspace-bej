@@ -10,6 +10,9 @@ export const MAX_BACKUP_BYTES = 5 * 1024 * 1024;
 export const STUDY_MODULES = ["hashmap", "memory-flashcards", "chunk-flashcards", "chunk-favorites", "shadowing", "basic-training", "advanced-training", "review-training", "speaking-game", "interpretation", "extra-activities"] as const;
 export const EXTRA_CATEGORIES = ["conversation", "writing", "private-class", "reading", "active-listening", "other"] as const;
 export type ExtraCategory = typeof EXTRA_CATEGORIES[number];
+// Optional: old sessions and active drafts remain valid without this field.
+export const OTHER_STUDY_SUBCATEGORIES = ["shadowing", "self-speaking", "misc"] as const;
+export type OtherStudySubcategory = typeof OTHER_STUDY_SUBCATEGORIES[number];
 export type StudyModule = typeof STUDY_MODULES[number];
 export type StudyMode = "manual" | "walking";
 export interface StudySession {
@@ -17,11 +20,12 @@ export interface StudySession {
   startedAt: string; endedAt: string; activeSeconds: number;
   dailySeconds?: Record<string, number>;
   category?: ExtraCategory;
+  subcategory?: OtherStudySubcategory;
   note?: string;
 }
 // Unconfirmed external time is deliberately separate from automatic checkpoints.
 export interface ExtraActivityDraft {
-  id: string; owner: string; language: StudentLanguage; category: ExtraCategory; note?: string;
+  id: string; owner: string; language: StudentLanguage; category: ExtraCategory; subcategory?: OtherStudySubcategory; note?: string;
   startedAt: string; updatedAt: string; state: "running" | "paused";
   accumulatedMs: number; dailyMs: Record<string, number>; runningSince: string | null;
   recoveryAt?: string;
@@ -57,6 +61,7 @@ function session(v: unknown): StudySession {
     Date.parse(v.endedAt) < Date.parse(v.startedAt) || v.activeSeconds > Math.floor((Date.parse(v.endedAt) - Date.parse(v.startedAt)) / 1000)) return invalid();
   if (v.module === "extra-activities" && (!EXTRA_CATEGORIES.includes(v.category as ExtraCategory) || v.mode !== "manual" || v.activeSeconds === 0)) return invalid();
   if (v.category !== undefined && !EXTRA_CATEGORIES.includes(v.category as ExtraCategory)) return invalid();
+  if (v.subcategory !== undefined && (v.category !== "other" || !OTHER_STUDY_SUBCATEGORIES.includes(v.subcategory as OtherStudySubcategory))) return invalid();
   if (v.note !== undefined && (typeof v.note !== "string" || v.note.length > 1000)) return invalid();
   let dailySeconds: Record<string, number> | undefined;
   if (v.dailySeconds !== undefined) {
@@ -72,11 +77,13 @@ function session(v: unknown): StudySession {
   return { id: v.id, language: v.language, module: v.module as StudyModule, mode: v.mode as StudyMode,
     startedAt: new Date(v.startedAt).toISOString(), endedAt: new Date(v.endedAt).toISOString(), activeSeconds: v.activeSeconds,
     ...(dailySeconds ? { dailySeconds } : {}), ...(v.category !== undefined ? { category: v.category as ExtraCategory } : {}),
+    ...(v.subcategory !== undefined ? { subcategory: v.subcategory as OtherStudySubcategory } : {}),
     ...(v.note !== undefined ? { note: v.note as string } : {}) };
 }
 function extraDraft(v: unknown): ExtraActivityDraft {
   if (!object(v) || !id(v.id) || !id(v.owner) || !isStudentLanguage(v.language) || !EXTRA_CATEGORIES.includes(v.category as ExtraCategory) ||
-    (v.note !== undefined && (typeof v.note !== "string" || v.note.length > 1000)) || !instant(v.startedAt) || !instant(v.updatedAt) ||
+    (v.note !== undefined && (typeof v.note !== "string" || v.note.length > 1000)) ||
+    (v.subcategory !== undefined && (v.category !== "other" || !OTHER_STUDY_SUBCATEGORIES.includes(v.subcategory as OtherStudySubcategory))) || !instant(v.startedAt) || !instant(v.updatedAt) ||
     !["running", "paused"].includes(v.state as string) || !seconds(v.accumulatedMs) || !object(v.dailyMs)) return invalid();
   const start = Date.parse(v.startedAt), updated = Date.parse(v.updatedAt);
   if (updated < start || v.accumulatedMs > updated - start ||
@@ -89,6 +96,7 @@ function extraDraft(v: unknown): ExtraActivityDraft {
   }
   if (Object.values(dailyMs).reduce((a, b) => a + b, 0) !== v.accumulatedMs) return invalid();
   return { id: v.id, owner: v.owner, language: v.language, category: v.category as ExtraCategory,
+    ...(v.subcategory !== undefined ? { subcategory: v.subcategory as OtherStudySubcategory } : {}),
     ...(v.note !== undefined ? { note: v.note as string } : {}), startedAt: v.startedAt, updatedAt: v.updatedAt,
     state: v.state as ExtraActivityDraft["state"], accumulatedMs: v.accumulatedMs, dailyMs, runningSince: v.runningSince as string | null,
     ...(v.recoveryAt !== undefined ? { recoveryAt: v.recoveryAt as string } : {}) };

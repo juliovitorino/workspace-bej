@@ -188,6 +188,14 @@ export function BasicTraining({
     ? intention.examples[round % intention.examples.length]
     : undefined;
   const [studentText, setStudentText] = useState("");
+  // Keep the native textarea in charge of its DOM value. iOS keyboard dictation
+  // revises words and spaces asynchronously; a controlled value can overwrite
+  // those in-progress edits.
+  const answerRef = useRef<HTMLTextAreaElement>(null);
+  function setAnswerText(value: string) {
+    if (answerRef.current) answerRef.current.value = value;
+    setStudentText(value);
+  }
   const intentionValidation = useMemo(
     () => validateIntention(studentText, intention, language),
     [studentText, intention, language]
@@ -325,7 +333,7 @@ export function BasicTraining({
 
   function generateNewRound() {
     setRound((current) => current + 1);
-    setStudentText("");
+    setAnswerText("");
     setEvaluation(null);
     setEvaluationCopyStatus(null);
     setEvaluationError(null);
@@ -415,13 +423,8 @@ export function BasicTraining({
         return;
       }
 
-      setStudentText((current) => {
-        const currentText = current.trimEnd();
-
-        return currentText
-          ? `${currentText} ${transcript}`
-          : transcript;
-      });
+      const currentText = (answerRef.current?.value ?? studentText).trimEnd();
+      setAnswerText(currentText ? `${currentText} ${transcript}` : transcript);
 
       setCopyStatus("idle");
       setEvaluation(null);
@@ -471,7 +474,7 @@ export function BasicTraining({
   }
 
   function handleClearStudentText() {
-    setStudentText("");
+    setAnswerText("");
     setCopyStatus("idle");
     setEvaluation(null);
     setEvaluationCopyStatus(null);
@@ -1233,7 +1236,10 @@ export function BasicTraining({
               id="basic-training-answer"
               rows={5}
               placeholder={t("common.typeYourSentenceInTargetlanguage", { targetLanguage: (languageName) })}
-              value={studentText}
+              ref={answerRef}
+              defaultValue=""
+              onBlur={(event) => setStudentText(event.currentTarget.value)}
+              onCompositionEnd={(event) => setStudentText(event.currentTarget.value)}
               onChange={(event) => {
                 // Update the controlled value before notifying study tracking.
                 setStudentText(event.target.value);

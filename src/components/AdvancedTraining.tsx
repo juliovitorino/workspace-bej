@@ -250,6 +250,23 @@ export function AdvancedTraining({
   const [sentenceOne, setSentenceOne] = useState("");
   const [sentenceTwo, setSentenceTwo] = useState("");
   const [combinedSentence, setCombinedSentence] = useState("");
+  // iOS keyboard dictation may revise spaces asynchronously; let the native
+  // textarea retain its DOM value across React renders.
+  const sentenceOneRef = useRef<HTMLTextAreaElement>(null);
+  const sentenceTwoRef = useRef<HTMLTextAreaElement>(null);
+  const combinedSentenceRef = useRef<HTMLTextAreaElement>(null);
+  function updateSentenceOne(value: string) {
+    if (sentenceOneRef.current) sentenceOneRef.current.value = value;
+    setSentenceOne(value);
+  }
+  function updateSentenceTwo(value: string) {
+    if (sentenceTwoRef.current) sentenceTwoRef.current.value = value;
+    setSentenceTwo(value);
+  }
+  function updateCombinedSentence(value: string) {
+    if (combinedSentenceRef.current) combinedSentenceRef.current.value = value;
+    setCombinedSentence(value);
+  }
   const combinedSentenceValidation = useMemo(
     () => validateIntention(combinedSentence, intention),
     [combinedSentence, intention]
@@ -397,9 +414,9 @@ export function AdvancedTraining({
 
   function generateNewRound() {
     setRound((current) => current + 1);
-    setSentenceOne("");
-    setSentenceTwo("");
-    setCombinedSentence("");
+    updateSentenceOne("");
+    updateSentenceTwo("");
+    updateCombinedSentence("");
     setEvaluation(null);
     setEvaluationCopyStatus(null);
     setEvaluationError(null);
@@ -490,13 +507,13 @@ export function AdvancedTraining({
       };
 
       if (target === "sentenceOne") {
-        setSentenceOne(appendTranscript);
+        updateSentenceOne(appendTranscript(sentenceOneRef.current?.value ?? sentenceOne));
         setDraftCopyStatus((current) => ({ ...current, sentenceOne: "idle" }));
       } else if (target === "sentenceTwo") {
-        setSentenceTwo(appendTranscript);
+        updateSentenceTwo(appendTranscript(sentenceTwoRef.current?.value ?? sentenceTwo));
         setDraftCopyStatus((current) => ({ ...current, sentenceTwo: "idle" }));
       } else {
-        setCombinedSentence(appendTranscript);
+        updateCombinedSentence(appendTranscript(combinedSentenceRef.current?.value ?? combinedSentence));
         setCopyStatus("idle");
         setGoogleTranslation(null);
         setTranslationError(null);
@@ -552,9 +569,9 @@ export function AdvancedTraining({
   function handleClearSentence(target: "sentenceOne" | "sentenceTwo") {
     setDraftCopyStatus((current) => ({ ...current, [target]: "idle" }));
     if (target === "sentenceOne") {
-      setSentenceOne("");
+      updateSentenceOne("");
     } else {
-      setSentenceTwo("");
+      updateSentenceTwo("");
     }
 
     setEvaluation(null);
@@ -571,7 +588,7 @@ export function AdvancedTraining({
   }
 
   function handleClearStudentText() {
-    setCombinedSentence("");
+    updateCombinedSentence("");
     setCopyStatus("idle");
     setEvaluation(null);
     setEvaluationCopyStatus(null);
@@ -1318,7 +1335,10 @@ export function AdvancedTraining({
                 id="advanced-sentence-one"
                 rows={4}
                 placeholder={t("advancedTraining.createTheFirstSentenceInTargetlanguage", { targetLanguage: (languageName) })}
-                value={sentenceOne}
+                ref={sentenceOneRef}
+                defaultValue=""
+                onBlur={(event) => updateSentenceOne(event.currentTarget.value)}
+                onCompositionEnd={(event) => updateSentenceOne(event.currentTarget.value)}
                 onChange={(event) => {
                   // Update the controlled value before notifying study tracking.
                   setSentenceOne(event.target.value);
@@ -1499,7 +1519,10 @@ export function AdvancedTraining({
                 id="advanced-sentence-two"
                 rows={4}
                 placeholder={t("advancedTraining.createTheSecondSentenceInTargetlanguage", { targetLanguage: (languageName) })}
-                value={sentenceTwo}
+                ref={sentenceTwoRef}
+                defaultValue=""
+                onBlur={(event) => updateSentenceTwo(event.currentTarget.value)}
+                onCompositionEnd={(event) => updateSentenceTwo(event.currentTarget.value)}
                 onChange={(event) => {
                   // Update the controlled value before notifying study tracking.
                   setSentenceTwo(event.target.value);
@@ -1745,7 +1768,10 @@ export function AdvancedTraining({
               id="advanced-combined-sentence"
               rows={5}
               placeholder={t("advancedTraining.useOneOrMoreConnectorsToCombineYourTwoSentences")}
-              value={combinedSentence}
+              ref={combinedSentenceRef}
+              defaultValue=""
+              onBlur={(event) => updateCombinedSentence(event.currentTarget.value)}
+              onCompositionEnd={(event) => updateCombinedSentence(event.currentTarget.value)}
               onChange={(event) => {
                 // Update the controlled value before notifying study tracking.
                 setCombinedSentence(event.target.value);

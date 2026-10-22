@@ -36,6 +36,7 @@ export function finishExtra(draft: ExtraActivityDraft, now: number, confirmedSec
     used += take; remaining -= take;
   }
   return { id: draft.id, language: draft.language, module: "extra-activities", mode: "manual", category: draft.category,
+    ...(draft.subcategory ? { subcategory: draft.subcategory } : {}),
     ...(draft.note ? { note: draft.note } : {}), startedAt: draft.startedAt, endedAt: estimate.updatedAt,
     activeSeconds: confirmedSeconds, dailySeconds };
 }

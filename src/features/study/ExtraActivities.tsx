@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { LANGUAGES, type StudentLanguage } from "../../config/languages";
 import { languageName } from "../../i18n";
-import { EXTRA_CATEGORIES, StudyError, type ExtraCategory, type StudyStore } from "./studyStorage";
+import { EXTRA_CATEGORIES, OTHER_STUDY_SUBCATEGORIES, StudyError, type ExtraCategory, type OtherStudySubcategory, type StudyStore } from "./studyStorage";
 import { studyTracker } from "./studyTrackingService";
 import { extraEstimate } from "./extraActivityTime";
 import { changeExtraActivity, startExtraActivity } from "./extraActivityService";
@@ -17,6 +17,7 @@ export function ExtraActivities({ language, state }: { language: StudentLanguage
   const { draft, available, error: storageError } = state;
   const [selectedLanguage, setLanguage] = useState(language);
   const [category, setCategory] = useState<ExtraCategory>("conversation");
+  const [subcategory, setSubcategory] = useState<OtherStudySubcategory>("misc");
   const [note, setNote] = useState("");
   const [now, setNow] = useState(Date.now);
   const [confirmed, setConfirmed] = useState("");
@@ -68,6 +69,9 @@ export function ExtraActivities({ language, state }: { language: StudentLanguage
         <label>{t("extras.category")}<select value={draft?.category ?? category} onChange={e => setCategory(e.target.value as ExtraCategory)}>
           {EXTRA_CATEGORIES.map(key => <option key={key} value={key}>{t(`extras.categories.${key}`)}</option>)}
         </select></label>
+        {(draft?.category ?? category) === "other" && <label>{t("extras.subcategory")}<select value={draft?.subcategory ?? (draft ? "misc" : subcategory)} onChange={e => setSubcategory(e.target.value as OtherStudySubcategory)}>
+          {OTHER_STUDY_SUBCATEGORIES.map(key => <option key={key} value={key}>{t(`extras.subcategories.${key}`)}</option>)}
+        </select></label>}
         <label>{t("extras.note")}<textarea maxLength={1000} rows={3} value={draft?.note ?? (draft ? "" : note)} onChange={e => setNote(e.target.value)} /></label>
       </fieldset>
       <p role="status">{t(`extras.states.${status}`)}</p>
@@ -83,7 +87,7 @@ export function ExtraActivities({ language, state }: { language: StudentLanguage
         <div className="study-actions"><button type="button" className="primary-button" disabled={busy || !available || !draft.recoveryAt || !confirmationValid} onClick={() => void act(() => changeExtraActivity(draft.id, "confirm", Number(confirmed)), Number(confirmed))}>{t("extras.confirmSave")}</button>
           <button type="button" className="secondary-button" disabled={busy || !available} onClick={discard}>{t("extras.discard")}</button></div>
       </div> : <div className="study-actions">
-        {!draft ? <button type="button" className="primary-button" disabled={busy || !available || !!storageError} onClick={() => void act(() => startExtraActivity(selectedLanguage, category, note))}>{t("extras.start")}</button> : <>
+        {!draft ? <button type="button" className="primary-button" disabled={busy || !available || !!storageError} onClick={() => void act(() => startExtraActivity(selectedLanguage, category, note, category === "other" ? subcategory : undefined))}>{t("extras.start")}</button> : <>
           <button type="button" className="secondary-button" disabled={busy || !available} onClick={() => void act(() => changeExtraActivity(draft.id, draft.state === "running" ? "pause" : "resume"))}>{t(draft.state === "running" ? "common.pause" : "common.resume")}</button>
           <button type="button" className="primary-button" disabled={busy || !available || maximum === 0} onClick={() => void act(() => changeExtraActivity(draft.id, "stop"), maximum)}>{t("extras.stopSave")}</button>
           <button type="button" className="secondary-button" disabled={busy || !available} onClick={discard}>{t("extras.discard")}</button>
