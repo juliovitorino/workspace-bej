@@ -1132,6 +1132,13 @@
     "weeklyExtra": "Extra activities this week (by category)",
     "days": "days",
     "studyTime": "Study time",
-    "dailyTime": "Daily study time"
+    "dailyTime": "Daily study time",
+    "monthlyStudyTime": "Monthly study time",
+    "monthlyDescription": "Time studied each month",
+    "year": "Year",
+    "yearTotal": "Year total",
+    "noMonthlyStudy": "No study time recorded for this year.",
+    "goalCompleted": "of historical goal",
+    "remaining": "Remaining"
   }
 }
