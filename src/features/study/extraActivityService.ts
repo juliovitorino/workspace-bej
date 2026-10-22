@@ -1,9 +1,9 @@
-import { newStudyId, StudyError, updateStudyStore, type ExtraCategory } from "./studyStorage";
+import { newStudyId, StudyError, updateStudyStore, type ExtraCategory, type OtherStudySubcategory } from "./studyStorage";
 import type { StudentLanguage } from "../../config/languages";
 import { studyTracker } from "./studyTrackingService";
 import { advanceExtra, extraEstimate, finishExtra } from "./extraActivityTime";
 
-export async function startExtraActivity(language: StudentLanguage, category: ExtraCategory, note: string) {
+export async function startExtraActivity(language: StudentLanguage, category: ExtraCategory, note: string, subcategory?: OtherStudySubcategory) {
   await studyTracker.acquireExtraControl();
   await studyTracker.seal();
   return updateStudyStore(store => {
@@ -11,6 +11,7 @@ export async function startExtraActivity(language: StudentLanguage, category: Ex
     if (store.extraActivity) throw new StudyError("extraActive");
     const now = new Date(Date.now()).toISOString();
     return { ...store, extraActivity: { id: newStudyId(), owner: studyTracker.extraOwner, language, category,
+      ...(category === "other" && subcategory ? { subcategory } : {}),
       ...(note.trim() ? { note: note.trim() } : {}), startedAt: now, updatedAt: now, state: "running",
       accumulatedMs: 0, dailyMs: {}, runningSince: now } };
   }, "extra-activities");

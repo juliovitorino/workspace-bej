@@ -128,7 +128,15 @@
       "internal": "Dentro do BEJ",
       "external": "Atividades Extras"
     },
-    "allCategories": "Todas as categorias"
+    "allCategories": "Todas as categorias",
+    "subcategory": "Subcategoria",
+    "allSubcategories": "Todas as subcategorias",
+    "byOtherSubcategory": "Outros estudos — Tempo por subcategoria",
+    "subcategories": {
+      "shadowing": "Shadowing",
+      "self-speaking": "Falando sozinho",
+      "misc": "Diversos"
+    }
   },
   "study": {
     "calendar": "Filtrar por período",

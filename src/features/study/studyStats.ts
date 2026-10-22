@@ -1,6 +1,6 @@
 import type { StudentLanguage } from "../../config/languages";
 import { localDay } from "./studyTrackingService";
-import { EXTRA_CATEGORIES, type ExtraCategory, type StudyData, type StudyMode, type StudyModule } from "./studyStorage";
+import { EXTRA_CATEGORIES, OTHER_STUDY_SUBCATEGORIES, type OtherStudySubcategory, type ExtraCategory, type StudyData, type StudyMode, type StudyModule } from "./studyStorage";
 
 export type StudyPeriod = "today" | "yesterday" | "7" | "30" | "month" | "90" | "all" | "custom";
 export interface StudyFilters {
@@ -8,15 +8,16 @@ export interface StudyFilters {
   period: StudyPeriod; from: string; to: string;
   origin?: "all" | "internal" | "external";
   extraCategory?: ExtraCategory | "all";
+  extraSubcategory?: OtherStudySubcategory | "all";
 }
-export interface StudyEntry { id: string; date: string; language: StudentLanguage; module: StudyModule | "previous"; mode: StudyMode | "previous"; seconds: number; description?: string; category?: ExtraCategory; note?: string }
+export interface StudyEntry { id: string; date: string; language: StudentLanguage; module: StudyModule | "previous"; mode: StudyMode | "previous"; seconds: number; description?: string; category?: ExtraCategory; subcategory?: OtherStudySubcategory; note?: string }
 export function previousDay(day: string, offset: number): string {
   const d = new Date(day + "T12:00:00"); d.setDate(d.getDate() + offset); return localDay(d);
 }
 export function studyEntries(data: StudyData): StudyEntry[] {
   return [
     ...data.sessions.flatMap(s => Object.entries(s.dailySeconds ?? { [localDay(new Date(s.startedAt))]: s.activeSeconds }).map(([date, seconds]) =>
-      ({ id: s.id, date, language: s.language, module: s.module, mode: s.mode, seconds, ...(s.category ? { category: s.category } : {}), ...(s.note ? { note: s.note } : {}) }))),
+      ({ id: s.id, date, language: s.language, module: s.module, mode: s.mode, seconds, ...(s.category ? { category: s.category } : {}), ...(s.subcategory ? { subcategory: s.subcategory } : {}), ...(s.note ? { note: s.note } : {}) }))),
     ...data.manualAdjustments.map(a => ({ id: a.id, date: a.date, language: a.language, module: "previous" as const, mode: "previous" as const, seconds: a.seconds, description: a.description }))
   ];
 }
@@ -26,7 +27,8 @@ export function studyStats(data: StudyData, filters: StudyFilters, now = new Dat
     (filters.module === "all" || filters.module === e.module) && (filters.mode === "all" || filters.mode === e.mode) &&
     (filters.origin !== "internal" || (e.module !== "extra-activities" && e.module !== "previous")) &&
     (filters.origin !== "external" || e.module === "extra-activities") &&
-    (!filters.extraCategory || filters.extraCategory === "all" || filters.origin === "internal" || (e.module === "extra-activities" && e.category === filters.extraCategory)));
+    (!filters.extraCategory || filters.extraCategory === "all" || filters.origin === "internal" || (e.module === "extra-activities" && e.category === filters.extraCategory)) &&
+    (!filters.extraSubcategory || filters.extraSubcategory === "all" || filters.origin === "internal" || (e.module === "extra-activities" && e.category === "other" && (e.subcategory ?? "misc") === filters.extraSubcategory)));
   const earliest = matching.reduce((day, e) => e.date < day ? e.date : day, today);
   const from = filters.period === "custom" ? filters.from : filters.period === "today" ? today : filters.period === "yesterday" ? previousDay(today, -1) : filters.period === "month" ? month : filters.period === "all" ? earliest : previousDay(today, 1 - Number(filters.period));
   const to = filters.period === "custom" ? filters.to : filters.period === "yesterday" ? from : today;
@@ -56,6 +58,8 @@ export function studyStats(data: StudyData, filters: StudyFilters, now = new Dat
     internal: sum(entries.filter(e => e.module !== "extra-activities" && e.module !== "previous")),
     external: sum(entries.filter(e => e.module === "extra-activities")),
     byExtraCategory: Object.fromEntries(EXTRA_CATEGORIES.map(category => [category, sum(entries.filter(e => e.module === "extra-activities" && e.category === category))])),
+    byOtherSubcategory: Object.fromEntries(OTHER_STUDY_SUBCATEGORIES.map(subcategory => [subcategory, sum(entries.filter(e =>
+      e.module === "extra-activities" && e.category === "other" && (e.subcategory ?? "misc") === subcategory))])),
     week: sum(entries.filter(e => e.date >= previousDay(today, -6) && e.date <= today)),
     month: sum(entries.filter(e => e.date >= month && e.date <= today)), average: sum(entries) / days,
     studyDays: Object.values(daily).filter(seconds => seconds > 0).length, streak, longest,
