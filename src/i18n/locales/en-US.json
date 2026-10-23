@@ -1158,5 +1158,14 @@
     "referencePercent": "Compared with 5 MiB reference",
     "distributionNote": "The bar shows how estimated storage is split between study data, Mental Hashmap and other data.",
     "referenceNote": "The 5 MiB reference is only for comparison, not the browser’s actual quota. Values above 100% do not, by themselves, mean storage is full."
+  },
+  "studyAverages": {
+    "title": "Average study time",
+    "thisWeek": "This week",
+    "last7Days": "Last 7 days",
+    "thisMonth": "This month",
+    "last90Days": "Last 90 days",
+    "allTime": "All time",
+    "note": "Average per calendar day, including days without study. Weeks start on Monday. Includes all languages and modules."
   }
 }

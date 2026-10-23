@@ -237,3 +237,12 @@
 .bej-storage-reference-bar { height:12px; border-radius:999px; overflow:hidden; background:var(--border); }
 .bej-storage-reference-bar span { display:block; height:100%; border-radius:inherit; background:var(--bej-blue,#4384f0); }
 .bej-storage-reference .study-note,.bej-storage-overview > .study-note { margin:0; }
+
+/* Study averages: compact read-only summary below historical goal progress. */
+.bej-study-average { display:grid; gap:16px; }
+.bej-study-average h3 { margin:0; }
+.bej-study-average-rows { display:grid; gap:0; }
+.bej-study-average-row { display:flex; justify-content:space-between; align-items:baseline; gap:16px; padding:11px 0; border-bottom:1px solid var(--border); }
+.bej-study-average-row:last-child { border-bottom:0; }
+.bej-study-average-row strong { text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+.bej-study-average > .study-note { margin:0; }
