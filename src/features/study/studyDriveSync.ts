@@ -7,7 +7,7 @@ const FOLDER_KEY = "bej-sync-folder-v1";
 const API = "https://www.googleapis.com/drive/v3/files";
 const UPLOAD = "https://www.googleapis.com/upload/drive/v3/files";
 export const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID as string | undefined;
-const SCOPE = "https://www.googleapis.com/auth/drive";
+const SCOPE = "https://www.googleapis.com/auth/drive.file";
 export type SyncFile = { schemaVersion: 1; kind: "bej-study-sync"; deviceId: string; exportedAt: string; study: StudyBackup; favorites: FavoriteChunk[] };
 export type DriveFile = { id: string; name: string };
 export function deviceId(): string {
