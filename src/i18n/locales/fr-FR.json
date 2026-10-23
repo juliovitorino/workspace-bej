@@ -1158,5 +1158,14 @@
     "referencePercent": "Comparaison à la référence de 5 Mio",
     "distributionNote": "La barre montre la répartition estimée entre les études, Mental Hashmap et les autres données.",
     "referenceNote": "La référence de 5 Mio sert uniquement de comparaison, pas de quota réel du navigateur. Une valeur supérieure à 100 % ne signifie pas à elle seule que le stockage est plein."
+  },
+  "studyAverages": {
+    "title": "Temps d’étude moyen",
+    "thisWeek": "Cette semaine",
+    "last7Days": "7 derniers jours",
+    "thisMonth": "Ce mois-ci",
+    "last90Days": "90 derniers jours",
+    "allTime": "Toute la période",
+    "note": "Moyenne par jour calendaire, y compris les jours sans étude. La semaine commence le lundi. Tous les modules et langues sont inclus."
   }
 }

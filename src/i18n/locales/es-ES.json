@@ -1158,5 +1158,14 @@
     "referencePercent": "Comparación con la referencia de 5 MiB",
     "distributionNote": "La barra muestra la distribución del espacio estimado entre estudios, Mental Hashmap y otros datos.",
     "referenceNote": "La referencia de 5 MiB es solo comparativa, no es la cuota real del navegador. Los valores superiores al 100 % no significan por sí solos que falte espacio."
+  },
+  "studyAverages": {
+    "title": "Tiempo medio de estudio",
+    "thisWeek": "Esta semana",
+    "last7Days": "Últimos 7 días",
+    "thisMonth": "Este mes",
+    "last90Days": "Últimos 90 días",
+    "allTime": "Todo el período",
+    "note": "Media por día natural, incluidos los días sin estudio. La semana comienza el lunes. Incluye todos los idiomas y módulos."
   }
 }
