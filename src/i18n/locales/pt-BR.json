@@ -1166,6 +1166,6 @@
     "thisMonth": "Neste mês",
     "last90Days": "Últimos 90 dias",
     "allTime": "Todo período",
-    "note": "Média por dia corrido, incluindo dias sem estudo. Semana iniciada na segunda-feira. Considera todos os idiomas e módulos."
+    "note": "Média por dia corrido, incluindo dias sem estudo. Semana iniciada na segunda-feira. Considera o idioma selecionado no filtro (ou todos, quando essa opção estiver selecionada) e todos os módulos."
   }
 }

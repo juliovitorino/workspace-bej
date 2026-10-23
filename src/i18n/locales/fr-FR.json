@@ -1166,6 +1166,6 @@
     "thisMonth": "Ce mois-ci",
     "last90Days": "90 derniers jours",
     "allTime": "Toute la période",
-    "note": "Moyenne par jour calendaire, y compris les jours sans étude. La semaine commence le lundi. Tous les modules et langues sont inclus."
+    "note": "Moyenne par jour calendaire, y compris les jours sans étude. La semaine commence le lundi. Tient compte de la langue sélectionnée dans le filtre (ou de toutes les langues si cette option est choisie) et de tous les modules."
   }
 }

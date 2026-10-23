@@ -1166,6 +1166,6 @@
     "thisMonth": "This month",
     "last90Days": "Last 90 days",
     "allTime": "All time",
-    "note": "Average per calendar day, including days without study. Weeks start on Monday. Includes all languages and modules."
+    "note": "Average per calendar day, including days without study. Weeks start on Monday. Uses the selected language filter (or all languages when selected) and all modules."
   }
 }

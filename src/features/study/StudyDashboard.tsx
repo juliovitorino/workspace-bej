@@ -194,7 +194,7 @@ export function StudyDashboard({ language, initialSection }: { language: Student
       <StudyMonthlyOverview data={displayData!} now={now} language={filters.language} />
       <StudyGoalGauges data={displayData!} goals={store.studyData.goals} monthlyGoals={store.studyData.monthlyGoals} language={filters.language} now={now}
         explanationVisible={goalExplanationVisible} onToggleExplanation={() => setGoalExplanationVisible(current => !current)} />
-      <StudyAverageOverview data={displayData!} now={now} />
+      <StudyAverageOverview data={displayData!} now={now} language={filters.language} />
       <div className="bej-visual-chart-grid">
         {chart(`${t("study.byModule")} · ${t(`study.periods.${filters.period}`)}`, moduleValues, moduleLabel, stats.total, true, "study-time-by-module")}
         {chart(`${t("study.byLanguage")} · ${t(`study.periods.${filters.period}`)}`, stats.byLanguage, code => languageName(code as StudentLanguage), stats.total)}

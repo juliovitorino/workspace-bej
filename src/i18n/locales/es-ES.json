@@ -1166,6 +1166,6 @@
     "thisMonth": "Este mes",
     "last90Days": "Últimos 90 días",
     "allTime": "Todo el período",
-    "note": "Media por día natural, incluidos los días sin estudio. La semana comienza el lunes. Incluye todos los idiomas y módulos."
+    "note": "Media por día natural, incluidos los días sin estudio. La semana comienza el lunes. Considera el idioma seleccionado en el filtro (o todos, si se selecciona esa opción) y todos los módulos."
   }
 }

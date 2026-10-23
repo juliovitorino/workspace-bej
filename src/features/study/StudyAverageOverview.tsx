@@ -1,18 +1,19 @@
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import type { StudyData } from "./studyStorage";
+import type { StudyFilters } from "./studyStats";
 import { studyEntries, previousDay } from "./studyStats";
 import { localDay } from "./studyTrackingService";
 
 /** Read-only averages per calendar day, including days with no study. */
-export function StudyAverageOverview({ data, now }: { data: StudyData; now: Date }) {
+export function StudyAverageOverview({ data, now, language }: { data: StudyData; now: Date; language: StudyFilters["language"] }) {
   const { t } = useTranslation();
   const values = useMemo(() => {
     const today = localDay(now);
     const weekday = (now.getDay() + 6) % 7; // Monday is the first day of the week.
     const monday = previousDay(today, -weekday);
     const month = `${today.slice(0, 7)}-01`;
-    const entries = studyEntries(data).filter(entry => entry.date <= today && entry.seconds > 0);
+    const entries = studyEntries(data).filter(entry => entry.date <= today && entry.seconds > 0 && (language === "all" || entry.language === language));
     const first = entries.reduce((earliest, entry) => entry.date < earliest ? entry.date : earliest, today);
     const dayCount = (from: string) => Math.max(1, Math.round((Date.parse(today) - Date.parse(from)) / 86400000) + 1);
     const average = (from: string) =>
@@ -24,7 +25,7 @@ export function StudyAverageOverview({ data, now }: { data: StudyData; now: Date
       ["last90Days", average(previousDay(today, -89))],
       ["allTime", average(first)],
     ] as const;
-  }, [data, now]);
+  }, [data, now, language]);
 
   const duration = (seconds: number) => {
     const minutes = Math.round(seconds / 60);
