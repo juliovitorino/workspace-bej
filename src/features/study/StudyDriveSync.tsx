@@ -1,3 +1,4 @@
+import { StudyCollapseToggle } from "./StudyCollapseToggle";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { backupReminder } from "../../utils/backupReminder";
@@ -8,6 +9,7 @@ import { applySync, authorizeDrive, combineSyncFiles, createSnapshot, deviceId, 
 type Preview = { baseline: string; local: SyncFile; merged: ReturnType<typeof combineSyncFiles>; token: string; folder: string; remoteCount: number };
 export function StudyDriveSync() {
   const { t } = useTranslation();
+  const [open, setOpen] = useState(false);
   const [folderInput, setFolderInput] = useState(() => folderId());
   const [folder, setFolder] = useState(() => folderId());
   const [busy, setBusy] = useState(false);
@@ -55,7 +57,8 @@ export function StudyDriveSync() {
     setMessage(t("driveSync.synced"));
   }
   return <section className="study-panel bej-drive-sync">
-    <h3>{t("driveSync.title")}</h3>
+    <StudyCollapseToggle expanded={open} onToggle={() => setOpen(v => !v)} title={t("driveSync.title")} />
+    {open && <>
     <p>{t("driveSync.description")}</p>
     {!GOOGLE_CLIENT_ID && <p className="study-note" role="note">{t("driveSync.notConfigured")}</p>}
     <label>{t("driveSync.folderLabel")}
@@ -89,5 +92,6 @@ export function StudyDriveSync() {
       </div>
     </div>}
     <p className="study-note">{t("driveSync.permissionNote")}</p>
+    </>}
   </section>;
 }

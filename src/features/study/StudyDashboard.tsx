@@ -1,5 +1,6 @@
+import { StudyCollapseToggle } from "./StudyCollapseToggle";
 import { StudyDataTransfer } from "./StudyDataTransfer";
-import { StudyDriveSync } from "./StudyDriveSync";
+import { StudyDriveSync } from "./StudyGoogleDrivePanel";
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
@@ -150,15 +151,16 @@ export function StudyDashboard({ language, initialSection }: { language: Student
       resetAdjustment(); setMessage(t("study.saved"));
     });
   }
-  const chart = (title: string, values: Record<string, number>, label: (key: string) => string = key => key, total?: number, modules = false, sectionId?: string) => {
+  const [collapsedCharts, setCollapsedCharts] = useState<Record<string, boolean>>({ extraCategory: false, otherStudies: false });
+  const chart = (title: string, values: Record<string, number>, label: (key: string) => string = key => key, total?: number, modules = false, sectionId?: string, collapseKey?: string) => {
     const entries = Object.entries(values).sort(modules
       ? ([a, secondsA], [b, secondsB]) => secondsB - secondsA || label(a).localeCompare(label(b), i18n.language)
       : ([a], [b]) => a.localeCompare(b));
     const max = Math.max(1, ...entries.map(([, seconds]) => seconds));
     const scale = Math.max(1, total ?? max);
-    return <section id={sectionId} tabIndex={sectionId ? -1 : undefined} className="study-panel bej-chart-card"><h3>{title}</h3>{!entries.length ? <p>{t("study.empty")}</p> : <ul className={modules ? "study-chart study-chart-modules" : "study-chart"}>{entries.map(([key, seconds]) => <li key={key}>
+    return <section id={sectionId} tabIndex={sectionId ? -1 : undefined} className="study-panel bej-chart-card">{collapseKey ? <StudyCollapseToggle expanded={collapsedCharts[collapseKey] ?? false} onToggle={() => setCollapsedCharts(v => ({ ...v, [collapseKey]: !(v[collapseKey] ?? false) }))} title={title} /> : <h3>{title}</h3>}{(!collapseKey || collapsedCharts[collapseKey]) && (!entries.length ? <p>{t("study.empty")}</p> : <ul className={modules ? "study-chart study-chart-modules" : "study-chart"}>{entries.map(([key, seconds]) => <li key={key}>
       <div><span>{label(key)}</span><strong>{duration(seconds)}{total !== undefined && ` · ${number(seconds / scale * 100)}%`}</strong></div><div className="study-bar" aria-hidden="true"><span style={{ width: `${seconds / scale * 100}%` }} /></div>
-    </li>)}</ul>}</section>;
+    </li>)}</ul>)}</section>;
   };
   const informationIcon = <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v6"/><circle cx="12" cy="7" r="1" fill="currentColor" stroke="none"/></svg>;
   const dashboardControls = (floating = false) => <>
@@ -200,8 +202,8 @@ export function StudyDashboard({ language, initialSection }: { language: Student
         {chart(`${t("study.byModule")} · ${t(`study.periods.${filters.period}`)}`, moduleValues, moduleLabel, stats.total, true, "study-time-by-module")}
         {chart(`${t("study.byLanguage")} · ${t(`study.periods.${filters.period}`)}`, stats.byLanguage, code => languageName(code as StudentLanguage), stats.total)}
       </div>
-      {chart(t("extras.byCategory"), Object.fromEntries(EXTRA_CATEGORIES.map(key => [key, stats.byExtraCategory[key] ?? 0])), key => t(`extras.categories.${key}`), stats.external, true)}
-      {chart(t("extras.byOtherSubcategory"), Object.fromEntries(OTHER_STUDY_SUBCATEGORIES.map(key => [key, stats.byOtherSubcategory[key] ?? 0])), key => t(`extras.subcategories.${key}`), stats.byExtraCategory.other ?? 0, true)}
+      {chart(t("extras.byCategory"), Object.fromEntries(EXTRA_CATEGORIES.map(key => [key, stats.byExtraCategory[key] ?? 0])), key => t(`extras.categories.${key}`), stats.external, true, undefined, "extraCategory")}
+      {chart(t("extras.byOtherSubcategory"), Object.fromEntries(OTHER_STUDY_SUBCATEGORIES.map(key => [key, stats.byOtherSubcategory[key] ?? 0])), key => t(`extras.subcategories.${key}`), stats.byExtraCategory.other ?? 0, true, undefined, "otherStudies")}
       <div id="study-details" tabIndex={-1} className="study-content" hidden={!detailsVisible}>
       <div className="study-metrics">{([ ["accumulated", stats.total], ["today", stats.today], ["week", stats.week], ["month", stats.month], ["dailyAverage", stats.average] ] as const).map(([key, seconds]) => <div className="study-panel" key={key}><span>{t(`study.${key}`)}</span><strong>{duration(seconds)}</strong></div>)}
         {([ ["internalTime", stats.internal], ["externalTime", stats.external], ["consolidated", stats.total] ] as const).map(([key, seconds]) => <div className="study-panel" key={key}><span>{t(`extras.${key}`)}</span><strong>{duration(seconds)}</strong></div>)}

@@ -1,4 +1,5 @@
-import { useMemo } from "react";
+import { StudyCollapseToggle } from "./StudyCollapseToggle";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { StudyData } from "./studyStorage";
 import type { StudyFilters } from "./studyStats";
@@ -8,6 +9,7 @@ import { localDay } from "./studyTrackingService";
 /** Read-only averages per calendar day, including days with no study. */
 export function StudyAverageOverview({ data, now, language }: { data: StudyData; now: Date; language: StudyFilters["language"] }) {
   const { t } = useTranslation();
+  const [open, setOpen] = useState(false);
   const values = useMemo(() => {
     const today = localDay(now);
     const weekday = (now.getDay() + 6) % 7; // Monday is the first day of the week.
@@ -39,7 +41,8 @@ export function StudyAverageOverview({ data, now, language }: { data: StudyData;
   };
 
   return <section className="study-panel bej-study-average" aria-labelledby="bej-study-average-title">
-    <h3 id="bej-study-average-title">{t("studyAverages.title")}</h3>
+    <StudyCollapseToggle expanded={open} onToggle={() => setOpen(v => !v)} title={t("studyAverages.title")}><h3 id="bej-study-average-title">{t("studyAverages.title")}</h3></StudyCollapseToggle>
+    {open && <>
     <div className="bej-study-average-rows">
       {values.map(([key, seconds]) => <div className="bej-study-average-row" key={key}>
         <span>{t(`studyAverages.${key}`)}</span>
@@ -47,5 +50,6 @@ export function StudyAverageOverview({ data, now, language }: { data: StudyData;
       </div>)}
     </div>
     <p className="study-note">{t("studyAverages.note")}</p>
+    </>}
   </section>;
 }

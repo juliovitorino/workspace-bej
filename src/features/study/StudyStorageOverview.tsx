@@ -1,3 +1,4 @@
+import { StudyCollapseToggle } from "./StudyCollapseToggle";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { STUDY_CHANGED, STUDY_KEY } from "./studyStorage";
@@ -30,6 +31,7 @@ function measureStorage(): Snapshot {
 
 export function StudyStorageOverview() {
   const { t, i18n } = useTranslation();
+  const [open, setOpen] = useState(false);
   const [snapshot, setSnapshot] = useState<Snapshot | null>(null);
   const [failed, setFailed] = useState(false);
   const refresh = () => {
@@ -56,10 +58,9 @@ export function StudyStorageOverview() {
   const hashmapShare = snapshot ? share(snapshot.hashmapBytes) : 0;
   const referencePercent = snapshot ? snapshot.totalBytes / REFERENCE_BYTES * 100 : 0;
   return <section className="study-panel bej-storage-overview" aria-label={t("studyStorage.title")}>
-    <div className="bej-storage-heading">
-      <h3>{t("studyStorage.title")}</h3>
-      <button type="button" className="secondary-button" onClick={refresh}>{t("studyStorage.refresh")}</button>
-    </div>
+    <StudyCollapseToggle expanded={open} onToggle={() => setOpen(v => !v)} title={t("studyStorage.title")} />
+    {open && <>
+    <div className="bej-storage-heading"><button type="button" className="secondary-button" onClick={refresh}>{t("studyStorage.refresh")}</button></div>
     {failed ? <p role="alert">{t("studyStorage.unavailable")}</p> : snapshot && <>
       <div className="bej-storage-metrics">
         <div><span>{t("studyStorage.sessions")}</span><strong>{format(snapshot.sessions)}</strong></div>
@@ -86,6 +87,7 @@ export function StudyStorageOverview() {
         <p className="study-note">{t("studyStorage.referenceNote")}</p>
       </div>
       <p className="study-note">{t("studyStorage.disclaimer")}</p>
+    </>}
     </>}
   </section>;
 }
