@@ -7,7 +7,7 @@ import { studyEntries, previousDay } from "./studyStats";
 import { localDay } from "./studyTrackingService";
 
 /** Read-only averages per calendar day, including days with no study. */
-export function StudyAverageOverview({ data, now, language }: { data: StudyData; now: Date; language: StudyFilters["language"] }) {
+export function StudyAverageOverview({ data, now, language, hideZeroData = false }: { data: StudyData; now: Date; language: StudyFilters["language"]; hideZeroData?: boolean }) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const values = useMemo(() => {
@@ -44,7 +44,7 @@ export function StudyAverageOverview({ data, now, language }: { data: StudyData;
     <StudyCollapseToggle expanded={open} onToggle={() => setOpen(v => !v)} title={t("studyAverages.title")}><h3 id="bej-study-average-title">{t("studyAverages.title")}</h3></StudyCollapseToggle>
     {open && <>
     <div className="bej-study-average-rows">
-      {values.map(([key, seconds]) => <div className="bej-study-average-row" key={key}>
+      {values.filter(([, seconds]) => !hideZeroData || Math.round(seconds / 60) > 0).map(([key, seconds]) => <div className="bej-study-average-row" key={key}>
         <span>{t(`studyAverages.${key}`)}</span>
         <strong>{duration(seconds)}</strong>
       </div>)}

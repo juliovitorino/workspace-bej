@@ -9,12 +9,13 @@ import { localDay } from "./studyTrackingService";
 const hoursAndMinutes = (seconds: number) => `${Math.floor(seconds / 3600)}h ${String(Math.floor(seconds % 3600 / 60)).padStart(2, "0")}min`;
 
 /** SVG semi-circular gauge inspired by BI dashboards. Display only; no persistence changes. */
-export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, explanationVisible, onToggleExplanation }: {
+export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hideZeroData = false, explanationVisible, onToggleExplanation }: {
   data: StudyData;
   goals: StudyData["goals"];
   monthlyGoals: StudyData["monthlyGoals"];
   language: StudentLanguage | "all";
   now: Date;
+  hideZeroData?: boolean;
   explanationVisible: boolean;
   onToggleExplanation: () => void;
 }) {
@@ -30,7 +31,7 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, expl
     }
     return result;
   }, [data, now]);
-  const languages = (Object.keys(LANGUAGES) as StudentLanguage[]).filter(code => language === "all" || code === language);
+  const languages = (Object.keys(LANGUAGES) as StudentLanguage[]).filter(code => (language === "all" || code === language) && (!hideZeroData || (totals[code]?.all ?? 0) > 0));
   return <section className="study-panel bej-goal-gauges" aria-labelledby="bej-goals-title">
     <div className="study-goal-heading"><h3 id="bej-goals-title">{t("study.journey")}</h3>
       <button type="button" className="secondary-button study-goal-info" aria-label={t(explanationVisible ? "study.hideGoalExplanation" : "study.showGoalExplanation")} aria-expanded={explanationVisible} aria-controls="bej-goals-explanation" onClick={onToggleExplanation}>ⓘ</button>
