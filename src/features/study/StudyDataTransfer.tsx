@@ -7,6 +7,7 @@ import {
   type StudyBackup, type StudyStore
 } from "./studyStorage";
 import { exportStudyBackup } from "./exportStudyBackup";
+import { authorizeDrive, createSnapshot, folderId, GOOGLE_CLIENT_ID, listSyncFiles, uploadSnapshot } from "./studyDriveSync";
 import "./study.css";
 
 /** Shared file controls, with independent consolidation and replacement operations. */
@@ -27,7 +28,7 @@ export function StudyDataTransfer({ settings = false, mode = "consolidate", disa
   const fileInput = useRef<HTMLInputElement>(null);
   const working = useRef(false);
   const mounted = useRef(true);
-  const fail = (e: unknown) => { setError(t(`study.errors.${e instanceof StudyError ? e.code : "storage"}`)); setMessage(""); };
+  const fail = (e: unknown) => { setError(e instanceof StudyError ? t(`study.errors.${e.code}`) : e instanceof Error ? e.message : t("study.errors.storage")); setMessage(""); };
   useEffect(() => {
     mounted.current = true;
     const refresh = () => {
@@ -63,8 +64,16 @@ export function StudyDataTransfer({ settings = false, mode = "consolidate", disa
     finally { working.current = false; if (mounted.current) { setBusy(false); onBusyChange?.(false); } }
   }
   async function exportBackup() {
+    // Always preserve the existing manual download as a recovery copy.
     await exportStudyBackup();
-    if (mounted.current) setMessage(t("study.exported"));
+    const folder = folderId();
+    if (folder) {
+      if (!GOOGLE_CLIENT_ID) throw new Error(t("driveSync.notConfigured"));
+      const token = await authorizeDrive();
+      const files = await listSyncFiles(token, folder);
+      await uploadSnapshot(token, folder, files, await createSnapshot());
+      if (mounted.current) setMessage(t("driveSync.exported"));
+    } else if (mounted.current) setMessage(t("study.exported"));
   }
   function selectFile(file?: File) {
     if (!file || working.current || disabled) return;

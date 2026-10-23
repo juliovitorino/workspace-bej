@@ -1,4 +1,5 @@
 import { StudyDataTransfer } from "./StudyDataTransfer";
+import { StudyDriveSync } from "./StudyDriveSync";
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
@@ -234,6 +235,7 @@ export function StudyDashboard({ language, initialSection }: { language: Student
         <button type="button" className="secondary-button" aria-controls="study-history-list" disabled={currentHistoryPage === historyPages} onClick={() => setHistoryPage(currentHistoryPage + 1)}>{t("common.next")}</button>
       </nav>}</section>
       {!historyVisible && <StudyStorageOverview />}
+      {!historyVisible && <StudyDriveSync />}
       <section id="study-data" tabIndex={-1} hidden={historyVisible} className="study-panel">
       <StudyDataTransfer mode="restore" disabled={busy} onBusyChange={setBusy} />
       </section>

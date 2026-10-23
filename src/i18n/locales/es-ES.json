@@ -1167,5 +1167,27 @@
     "last90Days": "Últimos 90 días",
     "allTime": "Todo el período",
     "note": "Media por día natural, incluidos los días sin estudio. La semana comienza el lunes. Considera el idioma seleccionado en el filtro (o todos, si se selecciona esa opción) y todos los módulos."
+  },
+  "driveSync": {
+    "title": "Sincronización Google Drive",
+    "description": "Sincroniza historial, actividades extras y favoritos entre dispositivos. Mental Hashmap no se envía.",
+    "notConfigured": "Google Drive no está configurado. Define VITE_GOOGLE_CLIENT_ID.",
+    "folderLabel": "Enlace o ID de carpeta de Google Drive",
+    "saveFolder": "Guardar carpeta",
+    "folderSaved": "Carpeta guardada en este dispositivo.",
+    "device": "Dispositivo",
+    "export": "Exportar a Drive",
+    "sync": "Sync",
+    "wait": "Preparando sincronización...",
+    "exported": "Copia enviada a la carpeta.",
+    "synced": "Datos combinados y copia actualizada en Drive.",
+    "preview": "Vista previa",
+    "files": "Archivos encontrados",
+    "favorites": "Favoritos tras combinar",
+    "confirm": "Confirmar y sincronizar",
+    "conflictNote": "Hay IDs en conflicto. No se importarán datos.",
+    "mergeNote": "BEJ añade registros nuevos y une favoritos; las eliminaciones y desmarcaciones no se propagan. Las metas son locales. Se descarga una copia de seguridad antes de cambiar datos.",
+    "permissionNote": "Google solicitará acceso a Drive. Esta versión usa permisos amplios para leer y actualizar archivos de la carpeta. Usa una cuenta de confianza.",
+    "invalidFolder": "Enlace o ID de carpeta inválido."
   }
 }

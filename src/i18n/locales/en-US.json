@@ -1167,5 +1167,27 @@
     "last90Days": "Last 90 days",
     "allTime": "All time",
     "note": "Average per calendar day, including days without study. Weeks start on Monday. Uses the selected language filter (or all languages when selected) and all modules."
+  },
+  "driveSync": {
+    "title": "Google Drive sync",
+    "description": "Sync study history, extra activities and favorites across devices. Mental Hashmap is not uploaded.",
+    "notConfigured": "Google Drive is not configured. Set VITE_GOOGLE_CLIENT_ID for deployment.",
+    "folderLabel": "Google Drive folder link or ID",
+    "saveFolder": "Save folder",
+    "folderSaved": "Folder saved on this device.",
+    "device": "Device",
+    "export": "Export to Drive",
+    "sync": "Sync",
+    "wait": "Preparing sync...",
+    "exported": "Backup uploaded to the folder.",
+    "synced": "Data merged and Drive backup updated.",
+    "preview": "Sync preview",
+    "files": "Files found",
+    "favorites": "Favorites after merge",
+    "confirm": "Confirm and sync",
+    "conflictNote": "Conflicting record IDs found. No data will be imported.",
+    "mergeNote": "BEJ adds missing records and unions favorites; deletions and favorite removals do not propagate in this version. Goals remain local. A safety backup is downloaded before changes.",
+    "permissionNote": "Google will request Drive access. This version uses broad Drive permission to read and update files in the chosen folder. Use a trusted account.",
+    "invalidFolder": "Invalid folder link or ID."
   }
 }
