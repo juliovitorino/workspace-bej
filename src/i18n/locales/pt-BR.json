@@ -1192,5 +1192,14 @@
     "mergeNote": "O BEJ adiciona registros ausentes e une favoritos; exclusões e desmarcações de favoritos não são propagadas nesta versão. Metas permanecem locais. Um backup de segurança será baixado antes de alterar seus dados.",
     "permissionNote": "O Google solicitará acesso ao Drive. Esta versão usa permissão ampla para ler e atualizar arquivos na pasta escolhida. Use apenas uma conta confiável.",
     "invalidFolder": "Link ou ID de pasta inválido."
+  },
+  "studyHeatmap": {
+    "title": "Mapa de calor — horários de estudo",
+    "period": "Período",
+    "swipe": "Deslize os horários para os lados",
+    "scrollLabel": "Horários do mapa de calor; rolagem horizontal",
+    "minutes": "minutos",
+    "sessions": "sessões",
+    "estimateNote": "Horários estimados: as sessões registram o tempo ativo total, não os minutos exatos de cada hora. Pausas podem alterar a distribuição. Ajustes manuais sem horário não entram neste mapa."
   }
 }

@@ -1192,5 +1192,14 @@
     "mergeNote": "BEJ adds missing records and unions favorites; deletions and favorite removals do not propagate in this version. Goals remain local. A safety backup is downloaded before changes.",
     "permissionNote": "Google will request Drive access. This version uses broad Drive permission to read and update files in the chosen folder. Use a trusted account.",
     "invalidFolder": "Invalid folder link or ID."
+  },
+  "studyHeatmap": {
+    "title": "Heatmap — study hours",
+    "period": "Period",
+    "swipe": "Swipe horizontally to explore hours",
+    "scrollLabel": "Heatmap hours, horizontally scrollable",
+    "minutes": "minutes",
+    "sessions": "sessions",
+    "estimateNote": "Estimated hours: sessions store total active time, not exact minutes in each hour. Pauses can change the distribution. Manual adjustments without a time are excluded."
   }
 }

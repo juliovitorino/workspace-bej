@@ -1192,5 +1192,14 @@
     "mergeNote": "BEJ añade registros nuevos y une favoritos; las eliminaciones y desmarcaciones no se propagan. Las metas son locales. Se descarga una copia de seguridad antes de cambiar datos.",
     "permissionNote": "Google solicitará acceso a Drive. Esta versión usa permisos amplios para leer y actualizar archivos de la carpeta. Usa una cuenta de confianza.",
     "invalidFolder": "Enlace o ID de carpeta inválido."
+  },
+  "studyHeatmap": {
+    "title": "Mapa de calor — horas de estudio",
+    "period": "Período",
+    "swipe": "Desliza para explorar las horas",
+    "scrollLabel": "Horas del mapa de calor, desplazamiento horizontal",
+    "minutes": "minutos",
+    "sessions": "sesiones",
+    "estimateNote": "Horarios estimados: las sesiones guardan el tiempo activo total, no los minutos exactos de cada hora. Las pausas pueden alterar la distribución. Se excluyen los ajustes manuales sin horario."
   }
 }

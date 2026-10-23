@@ -265,3 +265,24 @@
 /* Dashboard display-only preference; never changes stored study records. */
 .study-zero-filter-option { display: flex; align-items: center; gap: 10px; cursor: pointer; }
 .study-zero-filter-option input[type="checkbox"] { width: 18px; height: 18px; flex: none; margin: 0; }
+
+/* Hourly heatmap: weekday rail is fixed; only hour columns scroll. */
+.bej-hourly-heatmap { min-width: 0; max-width: 100%; overflow: hidden; }
+.bej-hourly-toolbar { display:flex; flex-wrap:wrap; align-items:end; justify-content:space-between; gap:12px; margin:14px 0; }
+.bej-hourly-toolbar label { display:flex; flex-direction:column; gap:4px; }
+.bej-hourly-toolbar select { max-width: 170px; }
+.bej-hourly-layout { display:flex; width:100%; min-width:0; max-width:100%; gap:5px; }
+.bej-hourly-fixed-days { flex:0 0 40px; display:grid; grid-template-rows: 24px repeat(7, 26px); gap:4px; align-items:center; }
+.bej-hourly-axis-spacer { height:24px; }
+.bej-hourly-day { font-size:12px; white-space:nowrap; }
+.bej-hourly-scroll { min-width:0; flex:1 1 0; overflow-x:auto; overflow-y:hidden; overscroll-behavior-x:contain; -webkit-overflow-scrolling:touch; padding-bottom:6px; }
+.bej-hourly-grid { display:grid; grid-template-columns:repeat(24, 27px); grid-template-rows:24px repeat(7, 26px); gap:4px; width:max-content; }
+.bej-hourly-hour { font-size:11px; text-align:center; align-self:center; }
+.bej-hourly-cell { display:block; min-width:0; width:27px; height:26px; padding:0; border:0; border-radius:3px; cursor:pointer; }
+.bej-hourly-level-0 { background:#e5e7eb; }
+.bej-hourly-level-1 { background:#bbf7d0; }
+.bej-hourly-level-2 { background:#86efac; }
+.bej-hourly-level-3 { background:#22c55e; }
+.bej-hourly-level-4 { background:#15803d; }
+.bej-hourly-cell:focus-visible, .bej-hourly-cell.is-selected { outline:2px solid var(--color-primary, #2563eb); outline-offset:1px; }
+@media (prefers-color-scheme: dark) { .bej-hourly-level-0 { background:#374151; } }

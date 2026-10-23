@@ -14,6 +14,7 @@ import { studyEntries, studyStats, type StudyFilters } from "./studyStats";
 import "./study.css";
 import { StudyPeriodMenu } from "./StudyPeriodMenu";
 import { StudyWeeklyOverview } from "./StudyWeeklyOverview";
+import { StudyHourlyHeatmap } from "./StudyHourlyHeatmap";
 import { StudyMonthlyOverview } from "./StudyMonthlyOverview";
 import { StudyGoalGauges } from "./StudyGoalGauges";
 import { StudyAverageOverview } from "./StudyAverageOverview";
@@ -202,6 +203,7 @@ export function StudyDashboard({ language, initialSection }: { language: Student
       {!validRange && <p role="alert">{t("study.errors.invalid")}</p>}
       <div id="study-results" className="study-content" tabIndex={-1} hidden={historyVisible}>
       <StudyWeeklyOverview data={displayData!} now={now} hideZeroData={hideZeroData} />
+      <StudyHourlyHeatmap data={displayData!} language={filters.language} now={now} />
       <StudyMonthlyOverview data={displayData!} now={now} language={filters.language} />
       <StudyGoalGauges data={displayData!} hideZeroData={hideZeroData} goals={store.studyData.goals} monthlyGoals={store.studyData.monthlyGoals} language={filters.language} now={now}
         explanationVisible={goalExplanationVisible} onToggleExplanation={() => setGoalExplanationVisible(current => !current)} />
