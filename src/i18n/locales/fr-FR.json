@@ -1167,5 +1167,27 @@
     "last90Days": "90 derniers jours",
     "allTime": "Toute la période",
     "note": "Moyenne par jour calendaire, y compris les jours sans étude. La semaine commence le lundi. Tient compte de la langue sélectionnée dans le filtre (ou de toutes les langues si cette option est choisie) et de tous les modules."
+  },
+  "driveSync": {
+    "title": "Synchronisation Google Drive",
+    "description": "Synchronisez l'historique, les activités supplémentaires et les favoris entre appareils. Mental Hashmap n'est pas envoyé.",
+    "notConfigured": "Google Drive n'est pas configuré. Définissez VITE_GOOGLE_CLIENT_ID.",
+    "folderLabel": "Lien ou ID du dossier Google Drive",
+    "saveFolder": "Enregistrer le dossier",
+    "folderSaved": "Dossier enregistré sur cet appareil.",
+    "device": "Appareil",
+    "export": "Exporter vers Drive",
+    "sync": "Sync",
+    "wait": "Préparation de la synchronisation…",
+    "exported": "Sauvegarde envoyée dans le dossier.",
+    "synced": "Données fusionnées et sauvegarde mise à jour sur Drive.",
+    "preview": "Aperçu de synchronisation",
+    "files": "Fichiers trouvés",
+    "favorites": "Favoris après fusion",
+    "confirm": "Confirmer et synchroniser",
+    "conflictNote": "Des identifiants sont en conflit. Aucune donnée ne sera importée.",
+    "mergeNote": "BEJ ajoute les entrées manquantes et réunit les favoris ; les suppressions et retraits des favoris ne se propagent pas. Les objectifs restent locaux. Une sauvegarde est téléchargée avant toute modification.",
+    "permissionNote": "Google demandera l'accès à Drive. Cette version utilise une autorisation étendue pour lire et modifier les fichiers du dossier. Utilisez un compte de confiance.",
+    "invalidFolder": "Lien ou ID de dossier invalide."
   }
 }

@@ -1167,5 +1167,27 @@
     "last90Days": "Últimos 90 dias",
     "allTime": "Todo período",
     "note": "Média por dia corrido, incluindo dias sem estudo. Semana iniciada na segunda-feira. Considera o idioma selecionado no filtro (ou todos, quando essa opção estiver selecionada) e todos os módulos."
+  },
+  "driveSync": {
+    "title": "Sincronização Google Drive",
+    "description": "Sincronize histórico, atividades extras e favoritos entre seus dispositivos. O Mental Hashmap não é enviado.",
+    "notConfigured": "Google Drive ainda não configurado. Configure VITE_GOOGLE_CLIENT_ID na implantação.",
+    "folderLabel": "Link ou ID da pasta do Google Drive",
+    "saveFolder": "Salvar pasta",
+    "folderSaved": "Pasta registrada neste dispositivo.",
+    "device": "Dispositivo",
+    "export": "Exportar para Drive",
+    "sync": "Sync",
+    "wait": "Preparando sincronização...",
+    "exported": "Backup enviado para a pasta.",
+    "synced": "Dados mesclados e backup atualizado no Drive.",
+    "preview": "Prévia da sincronização",
+    "files": "Arquivos encontrados",
+    "favorites": "Favoritos após mesclagem",
+    "confirm": "Confirmar e sincronizar",
+    "conflictNote": "Existem IDs conflitantes. Nada será importado.",
+    "mergeNote": "O BEJ adiciona registros ausentes e une favoritos; exclusões e desmarcações de favoritos não são propagadas nesta versão. Metas permanecem locais. Um backup de segurança será baixado antes de alterar seus dados.",
+    "permissionNote": "O Google solicitará acesso ao Drive. Esta versão usa permissão ampla para ler e atualizar arquivos na pasta escolhida. Use apenas uma conta confiável.",
+    "invalidFolder": "Link ou ID de pasta inválido."
   }
 }

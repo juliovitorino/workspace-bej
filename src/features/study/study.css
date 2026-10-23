@@ -246,3 +246,10 @@
 .bej-study-average-row:last-child { border-bottom:0; }
 .bej-study-average-row strong { text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
 .bej-study-average > .study-note { margin:0; }
+
+/* Optional manual Google Drive sync; no background writes. */
+.bej-drive-sync { display:grid; gap:12px; }
+.bej-drive-sync h3,.bej-drive-sync p { margin:0; }
+.bej-drive-sync label { display:grid; gap:6px; }
+.bej-drive-sync input { width:100%; max-width:100%; box-sizing:border-box; }
+.bej-drive-sync code { overflow-wrap:anywhere; }
