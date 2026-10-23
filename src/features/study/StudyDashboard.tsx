@@ -38,6 +38,14 @@ export function StudyDashboard({ language, initialSection }: { language: Student
   const [goalExplanationVisible, setGoalExplanationVisible] = useState(false);
   const [detailsVisible, setDetailsVisible] = useState(false);
   const [settingsVisible, setSettingsVisible] = useState(initialSection === "settings");
+  const [hideZeroData, setHideZeroData] = useState(() => {
+    try { return window.localStorage.getItem("bej.study.dashboard.hideZeroData") === "true"; }
+    catch { return false; }
+  });
+  const toggleHideZeroData = (checked: boolean) => {
+    setHideZeroData(checked);
+    try { window.localStorage.setItem("bej.study.dashboard.hideZeroData", String(checked)); } catch { /* Visual preference still works in memory. */ }
+  };
   const [scrollTarget, setScrollTarget] = useState("");
   useEffect(() => {
     if (!scrollTarget) return;
@@ -153,7 +161,7 @@ export function StudyDashboard({ language, initialSection }: { language: Student
   }
   const [collapsedCharts, setCollapsedCharts] = useState<Record<string, boolean>>({ extraCategory: false, otherStudies: false });
   const chart = (title: string, values: Record<string, number>, label: (key: string) => string = key => key, total?: number, modules = false, sectionId?: string, collapseKey?: string) => {
-    const entries = Object.entries(values).sort(modules
+    const entries = Object.entries(values).filter(([, seconds]) => !hideZeroData || seconds > 0).sort(modules
       ? ([a, secondsA], [b, secondsB]) => secondsB - secondsA || label(a).localeCompare(label(b), i18n.language)
       : ([a], [b]) => a.localeCompare(b));
     const max = Math.max(1, ...entries.map(([, seconds]) => seconds));
@@ -193,11 +201,11 @@ export function StudyDashboard({ language, initialSection }: { language: Student
       </div>
       {!validRange && <p role="alert">{t("study.errors.invalid")}</p>}
       <div id="study-results" className="study-content" tabIndex={-1} hidden={historyVisible}>
-      <StudyWeeklyOverview data={displayData!} now={now} />
+      <StudyWeeklyOverview data={displayData!} now={now} hideZeroData={hideZeroData} />
       <StudyMonthlyOverview data={displayData!} now={now} language={filters.language} />
-      <StudyGoalGauges data={displayData!} goals={store.studyData.goals} monthlyGoals={store.studyData.monthlyGoals} language={filters.language} now={now}
+      <StudyGoalGauges data={displayData!} hideZeroData={hideZeroData} goals={store.studyData.goals} monthlyGoals={store.studyData.monthlyGoals} language={filters.language} now={now}
         explanationVisible={goalExplanationVisible} onToggleExplanation={() => setGoalExplanationVisible(current => !current)} />
-      <StudyAverageOverview data={displayData!} now={now} language={filters.language} />
+      <StudyAverageOverview data={displayData!} now={now} language={filters.language} hideZeroData={hideZeroData} />
       <div className="bej-visual-chart-grid">
         {chart(`${t("study.byModule")} · ${t(`study.periods.${filters.period}`)}`, moduleValues, moduleLabel, stats.total, true, "study-time-by-module")}
         {chart(`${t("study.byLanguage")} · ${t(`study.periods.${filters.period}`)}`, stats.byLanguage, code => languageName(code as StudentLanguage), stats.total)}
@@ -205,14 +213,20 @@ export function StudyDashboard({ language, initialSection }: { language: Student
       {chart(t("extras.byCategory"), Object.fromEntries(EXTRA_CATEGORIES.map(key => [key, stats.byExtraCategory[key] ?? 0])), key => t(`extras.categories.${key}`), stats.external, true, undefined, "extraCategory")}
       {chart(t("extras.byOtherSubcategory"), Object.fromEntries(OTHER_STUDY_SUBCATEGORIES.map(key => [key, stats.byOtherSubcategory[key] ?? 0])), key => t(`extras.subcategories.${key}`), stats.byExtraCategory.other ?? 0, true, undefined, "otherStudies")}
       <div id="study-details" tabIndex={-1} className="study-content" hidden={!detailsVisible}>
-      <div className="study-metrics">{([ ["accumulated", stats.total], ["today", stats.today], ["week", stats.week], ["month", stats.month], ["dailyAverage", stats.average] ] as const).map(([key, seconds]) => <div className="study-panel" key={key}><span>{t(`study.${key}`)}</span><strong>{duration(seconds)}</strong></div>)}
-        {([ ["internalTime", stats.internal], ["externalTime", stats.external], ["consolidated", stats.total] ] as const).map(([key, seconds]) => <div className="study-panel" key={key}><span>{t(`extras.${key}`)}</span><strong>{duration(seconds)}</strong></div>)}
-        {([ ["studyDays", stats.studyDays], ["streak", stats.streak], ["longest", stats.longest] ] as const).map(([key, count]) => <div className="study-panel" key={key}><span>{t(`study.${key}`)}</span><strong>{number(count)}</strong></div>)}
+      <div className="study-metrics">{([ ["accumulated", stats.total], ["today", stats.today], ["week", stats.week], ["month", stats.month], ["dailyAverage", stats.average] ] as const).filter(([, seconds]) => !hideZeroData || seconds > 0).map(([key, seconds]) => <div className="study-panel" key={key}><span>{t(`study.${key}`)}</span><strong>{duration(seconds)}</strong></div>)}
+        {([ ["internalTime", stats.internal], ["externalTime", stats.external], ["consolidated", stats.total] ] as const).filter(([, seconds]) => !hideZeroData || seconds > 0).map(([key, seconds]) => <div className="study-panel" key={key}><span>{t(`extras.${key}`)}</span><strong>{duration(seconds)}</strong></div>)}
+        {([ ["studyDays", stats.studyDays], ["streak", stats.streak], ["longest", stats.longest] ] as const).filter(([, count]) => !hideZeroData || count > 0).map(([key, count]) => <div className="study-panel" key={key}><span>{t(`study.${key}`)}</span><strong>{number(count)}</strong></div>)}
       </div><p className="study-note">{t("study.streakNote")}</p>
 
       {chart(t("study.timeline"), stats.timeline)}
       </div>
-      <div id="study-settings" tabIndex={-1} hidden={!settingsVisible} className="study-charts"><form className="study-panel" onSubmit={saveGoals}><fieldset disabled={busy}><legend>{t("study.goals")}</legend>
+      <div id="study-settings" tabIndex={-1} hidden={!settingsVisible} className="study-charts">
+      <section className="study-panel"><h3>{t("study.displayPreferences")}</h3>
+        <label className="study-zero-filter-option"><input type="checkbox" checked={hideZeroData} onChange={e => toggleHideZeroData(e.target.checked)} />
+          <span>{t("study.hideZeroData")}</span></label>
+        <p className="study-note">{t("study.hideZeroDataHelp")}</p>
+      </section>
+      <form className="study-panel" onSubmit={saveGoals}><fieldset disabled={busy}><legend>{t("study.goals")}</legend>
         <label>{t("study.language")}<select value={goalLanguage} onChange={e => setGoalLanguage(e.target.value as StudentLanguage)}>{languages.map(code => <option key={code} value={code}>{languageName(code)}</option>)}</select></label>
         <label>{t("study.targetHours")}<input type="number" min="0.01" max="10000000" step="0.01" required value={goalHours} onChange={e => setGoalHours(e.target.value)} /></label>
         <label>{t("study.monthlyHours")}<input type="number" min="0.01" max="10000000" step="0.01" value={monthlyHours} onChange={e => setMonthlyHours(e.target.value)} /></label>

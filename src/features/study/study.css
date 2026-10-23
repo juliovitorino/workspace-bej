@@ -261,3 +261,7 @@
 .bej-collapse-toggle:hover { background:var(--border); }
 .bej-collapse-toggle:focus-visible { outline:2px solid var(--bej-blue,#4384f0); outline-offset:2px; }
 .bej-collapse-toggle svg { width:24px; height:24px; }
+
+/* Dashboard display-only preference; never changes stored study records. */
+.study-zero-filter-option { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.study-zero-filter-option input[type="checkbox"] { width: 18px; height: 18px; flex: none; margin: 0; }
