@@ -1,3 +1,4 @@
+import { StudyCollapseToggle } from "./StudyCollapseToggle";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { StudentLanguage } from "../../config/languages";
@@ -18,6 +19,7 @@ export function StudyMonthlyOverview({ data, now, language }: { data: StudyData;
   const { t, i18n } = useTranslation();
   const currentYear = now.getFullYear();
   const [selectedYear, setSelectedYear] = useState(currentYear);
+  const [open, setOpen] = useState(false);
   const entries = useMemo(() => studyEntries(data).filter(entry => language === "all" || entry.language === language), [data, language]);
   const years = useMemo(() => {
     const available = new Set(entries.map(entry => Number(entry.date.slice(0, 4))));
@@ -36,8 +38,10 @@ export function StudyMonthlyOverview({ data, now, language }: { data: StudyData;
   const total = months.reduce((sum, item) => sum + item.seconds, 0);
   const monthName = (month: number) => new Date(Date.UTC(selectedYear, month, 1)).toLocaleDateString(i18n.language, { month: "short", timeZone: "UTC" }).replace(".", "");
   return <section className="study-panel bej-monthly-overview" aria-labelledby="bej-monthly-title">
+    <StudyCollapseToggle expanded={open} onToggle={() => setOpen(v => !v)} title={t("bejOverview.monthlyStudyTime")}><h3 id="bej-monthly-title">{t("bejOverview.monthlyStudyTime")}</h3></StudyCollapseToggle>
+    {open && <>
     <div className="bej-monthly-heading">
-      <div><h3 id="bej-monthly-title">{t("bejOverview.monthlyStudyTime")}</h3><p>{t("bejOverview.monthlyDescription")}</p></div>
+      <div><p>{t("bejOverview.monthlyDescription")}</p></div>
       <label className="bej-monthly-year">{t("bejOverview.year")}
         <select value={selectedYear} onChange={event => setSelectedYear(Number(event.target.value))}>
           {years.map(year => <option key={year} value={year}>{year}</option>)}
@@ -52,5 +56,6 @@ export function StudyMonthlyOverview({ data, now, language }: { data: StudyData;
         <span className="bej-month-name">{monthName(month)}</span>
       </div>)}
     </div> : <p className="bej-monthly-empty">{t("bejOverview.noMonthlyStudy")}</p>}
+    </>}
   </section>;
 }
