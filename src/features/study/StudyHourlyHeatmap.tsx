@@ -6,7 +6,7 @@ import type { StudyData, StudySession } from "./studyStorage";
 import { localDay } from "./studyTrackingService";
 import { previousDay } from "./studyStats";
 
-type Period = "7" | "30" | "90" | "all";
+type Period = "today" | "yesterday" | "7" | "30" | "90" | "all";
 type Cell = { seconds: number; sessions: number };
 const hours = Array.from({ length: 24 }, (_, i) => i);
 const weekdays = Array.from({ length: 7 }, (_, i) => i);
@@ -20,7 +20,11 @@ export function StudyHourlyHeatmap({ data, language, now }: { data: StudyData; l
   const grid = useMemo(() => {
     const result = emptyGrid();
     const today = localDay(now);
-    const from = period === "all" ? "0000-01-01" : previousDay(today, 1 - Number(period));
+    const from = period === "all" ? "0000-01-01"
+      : period === "today" ? today
+      : period === "yesterday" ? previousDay(today, 1)
+      : previousDay(today, 1 - Number(period));
+    const to = period === "yesterday" ? previousDay(today, 1) : today;
     for (const session of data.sessions) {
       if (language !== "all" && session.language !== language) continue;
       const start = Date.parse(session.startedAt), end = Date.parse(session.endedAt);
@@ -41,7 +45,7 @@ export function StudyHourlyHeatmap({ data, language, now }: { data: StudyData; l
       const dayMs = new Map<string, number>();
       for (const slot of slots) dayMs.set(slot.day, (dayMs.get(slot.day) ?? 0) + slot.ms);
       for (const slot of slots) {
-        if (slot.day < from || slot.day > today) continue;
+        if (slot.day < from || slot.day > to) continue;
         const totalDaySeconds = session.dailySeconds?.[slot.day] ?? session.activeSeconds * (dayMs.get(slot.day) ?? 0) / (end - start);
         const cell = result[slot.weekday][slot.hour];
         cell.seconds += totalDaySeconds * slot.ms / (dayMs.get(slot.day) ?? 1);
@@ -63,7 +67,7 @@ export function StudyHourlyHeatmap({ data, language, now }: { data: StudyData; l
       <div className="bej-hourly-toolbar">
         <label>{t("studyHeatmap.period")}
           <select value={period} onChange={e => { setPeriod(e.target.value as Period); setSelected(null); }}>
-            {(["7", "30", "90", "all"] as const).map(p => <option key={p} value={p}>{t(`study.periods.${p}`)}</option>)}
+            {(["today", "yesterday", "7", "30", "90", "all"] as const).map(p => <option key={p} value={p}>{t(`study.periods.${p}`)}</option>)}
           </select>
         </label>
         <span className="study-note">{t("studyHeatmap.swipe")}</span>
