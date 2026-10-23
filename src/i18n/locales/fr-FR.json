@@ -1192,5 +1192,14 @@
     "mergeNote": "BEJ ajoute les entrées manquantes et réunit les favoris ; les suppressions et retraits des favoris ne se propagent pas. Les objectifs restent locaux. Une sauvegarde est téléchargée avant toute modification.",
     "permissionNote": "Google demandera l'accès à Drive. Cette version utilise une autorisation étendue pour lire et modifier les fichiers du dossier. Utilisez un compte de confiance.",
     "invalidFolder": "Lien ou ID de dossier invalide."
+  },
+  "studyHeatmap": {
+    "title": "Carte thermique — heures d’étude",
+    "period": "Période",
+    "swipe": "Faites glisser pour explorer les heures",
+    "scrollLabel": "Heures de la carte thermique, défilement horizontal",
+    "minutes": "minutes",
+    "sessions": "sessions",
+    "estimateNote": "Horaires estimés : les sessions enregistrent le temps actif total, pas les minutes exactes de chaque heure. Les pauses peuvent modifier la répartition. Les ajustements manuels sans horaire sont exclus."
   }
 }
