@@ -286,3 +286,13 @@
 .bej-hourly-level-4 { background:#15803d; }
 .bej-hourly-cell:focus-visible, .bej-hourly-cell.is-selected { outline:2px solid var(--color-primary, #2563eb); outline-offset:1px; }
 @media (prefers-color-scheme: dark) { .bej-hourly-level-0 { background:#374151; } }
+
+
+/* Mobile dashboard: actions for expanding all panels and toggling zero-value visibility. */
+#app-floating-controls .study-floating-expand-all { order: -6; }
+#app-floating-controls .study-floating-hide-zero { order: -5; }
+#app-floating-controls .study-floating-expand-all[aria-pressed="true"],
+#app-floating-controls .study-floating-hide-zero[aria-pressed="true"] {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}

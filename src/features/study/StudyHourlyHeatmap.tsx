@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { StudentLanguage } from "../../config/languages";
 import { StudyCollapseToggle } from "./StudyCollapseToggle";
@@ -12,9 +12,10 @@ const hours = Array.from({ length: 24 }, (_, i) => i);
 const weekdays = Array.from({ length: 7 }, (_, i) => i);
 const emptyGrid = (): Cell[][] => weekdays.map(() => hours.map(() => ({ seconds: 0, sessions: 0 })));
 
-export function StudyHourlyHeatmap({ data, language, now }: { data: StudyData; language: StudentLanguage | "all"; now: Date }) {
+export function StudyHourlyHeatmap({ data, language, now, allSectionsExpanded }: { data: StudyData; language: StudentLanguage | "all"; now: Date; allSectionsExpanded?: boolean }) {
   const { t, i18n } = useTranslation();
   const [expanded, setExpanded] = useState(false);
+  useEffect(() => { if (allSectionsExpanded !== undefined) setExpanded(allSectionsExpanded); }, [allSectionsExpanded]);
   const [period, setPeriod] = useState<Period>("30");
   const [selected, setSelected] = useState<{ weekday: number; hour: number } | null>(null);
   const grid = useMemo(() => {

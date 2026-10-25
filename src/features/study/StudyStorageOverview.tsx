@@ -29,9 +29,10 @@ function measureStorage(): Snapshot {
   return { sessions, studyRecords, studyBytes, hashmapRecords, hashmapBytes, allRecords, totalBytes };
 }
 
-export function StudyStorageOverview() {
+export function StudyStorageOverview({ allSectionsExpanded }: { allSectionsExpanded?: boolean }) {
   const { t, i18n } = useTranslation();
   const [open, setOpen] = useState(false);
+  useEffect(() => { if (allSectionsExpanded !== undefined) setOpen(allSectionsExpanded); }, [allSectionsExpanded]);
   const [snapshot, setSnapshot] = useState<Snapshot | null>(null);
   const [failed, setFailed] = useState(false);
   const refresh = () => {

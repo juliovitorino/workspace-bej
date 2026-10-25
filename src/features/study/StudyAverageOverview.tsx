@@ -1,5 +1,5 @@
 import { StudyCollapseToggle } from "./StudyCollapseToggle";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { StudyData } from "./studyStorage";
 import type { StudyFilters } from "./studyStats";
@@ -7,9 +7,10 @@ import { studyEntries, previousDay } from "./studyStats";
 import { localDay } from "./studyTrackingService";
 
 /** Read-only averages per calendar day, including days with no study. */
-export function StudyAverageOverview({ data, now, language, hideZeroData = false }: { data: StudyData; now: Date; language: StudyFilters["language"]; hideZeroData?: boolean }) {
+export function StudyAverageOverview({ data, now, language, hideZeroData = false, allSectionsExpanded }: { data: StudyData; now: Date; language: StudyFilters["language"]; hideZeroData?: boolean; allSectionsExpanded?: boolean }) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
+  useEffect(() => { if (allSectionsExpanded !== undefined) setOpen(allSectionsExpanded); }, [allSectionsExpanded]);
   const values = useMemo(() => {
     const today = localDay(now);
     const weekday = (now.getDay() + 6) % 7; // Monday is the first day of the week.

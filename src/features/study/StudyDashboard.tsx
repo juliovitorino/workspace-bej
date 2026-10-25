@@ -39,6 +39,16 @@ export function StudyDashboard({ language, initialSection }: { language: Student
   const [goalExplanationVisible, setGoalExplanationVisible] = useState(false);
   const [detailsVisible, setDetailsVisible] = useState(false);
   const [settingsVisible, setSettingsVisible] = useState(initialSection === "settings");
+  const [allSectionsExpanded, setAllSectionsExpanded] = useState(false);
+  const toggleAllSections = () => {
+    setAllSectionsExpanded(current => {
+      const next = !current;
+      setCollapsedCharts({ extraCategory: next, otherStudies: next });
+      return next;
+    });
+    closeCalendar();
+    setExpanded(false);
+  };
   const [hideZeroData, setHideZeroData] = useState(() => {
     try { return window.localStorage.getItem("bej.study.dashboard.hideZeroData") === "true"; }
     catch { return false; }
@@ -174,6 +184,18 @@ export function StudyDashboard({ language, initialSection }: { language: Student
   const informationIcon = <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v6"/><circle cx="12" cy="7" r="1" fill="currentColor" stroke="none"/></svg>;
   const dashboardControls = (floating = false) => <>
         {!floating && <button type="button" className="secondary-button study-dashboard-filter-button" aria-label={t(filtersVisible ? "navigation.hideFilters" : "navigation.showFilters")} title={t(filtersVisible ? "navigation.hideFilters" : "navigation.showFilters")} aria-expanded={filtersVisible} aria-controls="study-filters" onClick={() => { closeCalendar(); setFiltersVisible(!filtersVisible); }}><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 7h16M7 12h10m-7 5h4"/></svg><span>{t("study.filters")}</span></button>}
+        {floating && <>
+          <button type="button" className="study-floating-expand-all" aria-label={t(allSectionsExpanded ? "study.collapseAllSections" : "study.expandAllSections")} title={t(allSectionsExpanded ? "study.collapseAllSections" : "study.expandAllSections")} aria-pressed={allSectionsExpanded} onClick={toggleAllSections}>
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              {allSectionsExpanded ? <><path d="m7 15 5-5 5 5"/><path d="m7 20 5-5 5 5"/></> : <><path d="m7 4 5 5 5-5"/><path d="m7 9 5 5 5-5"/></>}
+            </svg>
+          </button>
+          <button type="button" className="study-floating-hide-zero" aria-label={t(hideZeroData ? "study.showZeroDataAction" : "study.hideZeroDataAction")} title={t(hideZeroData ? "study.showZeroDataAction" : "study.hideZeroDataAction")} aria-pressed={hideZeroData} onClick={() => { toggleHideZeroData(!hideZeroData); closeCalendar(); setExpanded(false); }}>
+            {hideZeroData
+              ? <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3 21 21"/><path d="M10.6 5.1A10.8 10.8 0 0 1 12 5c5.5 0 9 7 9 7a15 15 0 0 1-3 3.6"/><path d="M6.2 6.2C3.8 8 3 12 3 12s3.5 7 9 7a9.8 9.8 0 0 0 4.2-.9"/><path d="M10 10a3 3 0 0 0 4 4"/></svg>
+              : <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>}
+          </button>
+        </>}
         <button type="button" className={floating ? "study-floating-calendar" : "secondary-button study-icon-button"} aria-label={t("study.calendar")} title={t("study.calendar")} aria-expanded={!!calendarAnchor} aria-controls="study-period-menu"
           onClick={event => { const button = event.currentTarget; setCalendarAnchor(current => current === button ? null : button); }}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18m-12 4h2m2 0h2m2 0h2m-8 3h2m2 0h2"/></svg></button>
         <button type="button" className={floating ? "study-floating-history" : "secondary-button study-icon-button"} aria-label={t("study.historyTitle")} title={t("study.historyTitle")} onClick={() => { closeCalendar(); setExpanded(false); setHistoryVisible(true); setScrollTarget("study-title"); }}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 11a9 9 0 1 1 2 7M3 4v7h7m2-5v6l4 2" /></svg></button>
@@ -203,11 +225,11 @@ export function StudyDashboard({ language, initialSection }: { language: Student
       {!validRange && <p role="alert">{t("study.errors.invalid")}</p>}
       <div id="study-results" className="study-content" tabIndex={-1} hidden={historyVisible}>
       <StudyWeeklyOverview data={displayData!} now={now} hideZeroData={hideZeroData} />
-      <StudyHourlyHeatmap data={displayData!} language={filters.language} now={now} />
-      <StudyMonthlyOverview data={displayData!} now={now} language={filters.language} />
+      <StudyHourlyHeatmap allSectionsExpanded={allSectionsExpanded} data={displayData!} language={filters.language} now={now} />
+      <StudyMonthlyOverview allSectionsExpanded={allSectionsExpanded} data={displayData!} now={now} language={filters.language} />
       <StudyGoalGauges data={displayData!} hideZeroData={hideZeroData} goals={store.studyData.goals} monthlyGoals={store.studyData.monthlyGoals} language={filters.language} now={now}
         explanationVisible={goalExplanationVisible} onToggleExplanation={() => setGoalExplanationVisible(current => !current)} />
-      <StudyAverageOverview data={displayData!} now={now} language={filters.language} hideZeroData={hideZeroData} />
+      <StudyAverageOverview allSectionsExpanded={allSectionsExpanded} data={displayData!} now={now} language={filters.language} hideZeroData={hideZeroData} />
       <div className="bej-visual-chart-grid">
         {chart(`${t("study.byModule")} · ${t(`study.periods.${filters.period}`)}`, moduleValues, moduleLabel, stats.total, true, "study-time-by-module")}
         {chart(`${t("study.byLanguage")} · ${t(`study.periods.${filters.period}`)}`, stats.byLanguage, code => languageName(code as StudentLanguage), stats.total)}
@@ -252,8 +274,8 @@ export function StudyDashboard({ language, initialSection }: { language: Student
         <span role="status">{t("study.historyPage", { page: currentHistoryPage, total: historyPages, count: history.length })}</span>
         <button type="button" className="secondary-button" aria-controls="study-history-list" disabled={currentHistoryPage === historyPages} onClick={() => setHistoryPage(currentHistoryPage + 1)}>{t("common.next")}</button>
       </nav>}</section>
-      {!historyVisible && <StudyStorageOverview />}
-      {!historyVisible && <StudyDriveSync />}
+      {!historyVisible && <StudyStorageOverview allSectionsExpanded={allSectionsExpanded} />}
+      {!historyVisible && <StudyDriveSync allSectionsExpanded={allSectionsExpanded} />}
       <section id="study-data" tabIndex={-1} hidden={historyVisible} className="study-panel">
       <StudyDataTransfer mode="restore" disabled={busy} onBusyChange={setBusy} />
       </section>
