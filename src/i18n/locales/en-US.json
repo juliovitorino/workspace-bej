@@ -966,7 +966,15 @@
     "time": "Time",
     "using": "using:",
     "whenReadyTapTheButtonAndSayEachSentenceAloud": "When ready, tap the button and say each sentence aloud.",
-    "nextRoundIn": "Next round in"
+    "nextRoundIn": "Next round in",
+    "step1Of3": "Step 1 of 3",
+    "step2Of3": "Step 2 of 3",
+    "step3Of3": "Step 3 of 3",
+    "extraVocabulary": "Additional vocabulary",
+    "chooseExtraVocabulary": "Choose what appears during the game. All options are off by default.",
+    "noneSelected": "None",
+    "yes": "Yes",
+    "no": "No"
   },
   "stories": {
     "answerPtBrTargetlanguage": "Answer · PT-BR + {{targetLanguage}}",

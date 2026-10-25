@@ -40,7 +40,7 @@ export function SpeakingGameSetupStep({
   return (
     <section style={styles.card} aria-labelledby="speaking-game-title">
       <header style={styles.header}>
-        <span style={styles.step}>{t("speaking.step1Of2")}</span>
+        <span style={styles.step}>{t("speaking.step1Of3")}</span>
         <h1 id="speaking-game-title" style={styles.title}>
           
           {t("common.speakingGame")}

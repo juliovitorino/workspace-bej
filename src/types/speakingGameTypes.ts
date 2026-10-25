@@ -8,7 +8,7 @@ import type { SpeakingGameForm } from "../config/speakingGameForms";
  * de configuração, preparação e jogo em andamento.
  */
 
-export type SpeakingGameStep = 1 | 2 | 3;
+export type SpeakingGameStep = 1 | 2 | 3 | 4;
 
 export type SpeakingGameTimeMode = "manual" | "automatic";
 
@@ -20,6 +20,9 @@ export interface SpeakingGameSettings {
   timeMode: SpeakingGameTimeMode;
   seconds: number;
   order: SpeakingGameOrder;
+  includeAdjective: boolean;
+  includeNoun: boolean;
+  includeRandomChunk: boolean;
 }
 
 export interface SpeakingGameRound {
@@ -31,7 +34,10 @@ export interface SpeakingGameRound {
 export const DEFAULT_SPEAKING_GAME_SETTINGS: SpeakingGameSettings = {
   timeMode: "manual",
   seconds: 60,
-  order: "sequential"
+  order: "sequential",
+  includeAdjective: false,
+  includeNoun: false,
+  includeRandomChunk: false
 };
 
 export const SPEAKING_GAME_MIN_SECONDS = 2;

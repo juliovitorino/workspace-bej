@@ -37,7 +37,7 @@ export function SpeakingGameReadyStep({
   return (
     <section style={styles.card} aria-labelledby="speaking-game-ready-title">
       <header style={styles.header}>
-        <span style={styles.step}>{t("speaking.step2Of2")}</span>
+        <span style={styles.step}>{t("speaking.step3Of3")}</span>
 
         <h1 id="speaking-game-ready-title" style={styles.title}>
           
@@ -65,6 +65,16 @@ export function SpeakingGameReadyStep({
           <strong style={styles.summaryValue}>{orderDescription}</strong>
         </div>
 
+        <div style={styles.summaryRow}>
+          <span style={styles.summaryLabel}>{t("speaking.extraVocabulary")}</span>
+          <strong style={styles.summaryValue}>
+            {[
+              settings.includeAdjective && t("common.adjective"),
+              settings.includeNoun && t("common.noun"),
+              settings.includeRandomChunk && t("speaking.randomChunkIntention")
+            ].filter(Boolean).join(" • ") || t("speaking.noneSelected")}
+          </strong>
+        </div>
         <div style={styles.summaryRow}>
           <span style={styles.summaryLabel}>{t("speaking.forms")}</span>
           <strong style={styles.summaryValue}>
