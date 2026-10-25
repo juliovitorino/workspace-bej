@@ -966,7 +966,15 @@
     "time": "Tempo",
     "using": "usando:",
     "whenReadyTapTheButtonAndSayEachSentenceAloud": "Quando estiver pronto, toque no botão e fale cada frase em voz alta.",
-    "nextRoundIn": "Próxima rodada em"
+    "nextRoundIn": "Próxima rodada em",
+    "step1Of3": "Etapa 1 de 3",
+    "step2Of3": "Etapa 2 de 3",
+    "step3Of3": "Etapa 3 de 3",
+    "extraVocabulary": "Vocabulário adicional",
+    "chooseExtraVocabulary": "Escolha o que deve aparecer durante o jogo. Todas as opções começam desativadas.",
+    "noneSelected": "Nenhum",
+    "yes": "Sim",
+    "no": "Não"
   },
   "stories": {
     "answerPtBrTargetlanguage": "Solução · PT-BR + {{targetLanguage}}",

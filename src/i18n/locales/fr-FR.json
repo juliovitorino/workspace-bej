@@ -966,7 +966,15 @@
     "time": "Temps",
     "using": "en utilisant :",
     "whenReadyTapTheButtonAndSayEachSentenceAloud": "Quand vous êtes prêt, appuyez sur le bouton et dites chaque phrase à voix haute.",
-    "nextRoundIn": "Prochaine manche dans"
+    "nextRoundIn": "Prochaine manche dans",
+    "step1Of3": "Étape 1 sur 3",
+    "step2Of3": "Étape 2 sur 3",
+    "step3Of3": "Étape 3 sur 3",
+    "extraVocabulary": "Vocabulaire supplémentaire",
+    "chooseExtraVocabulary": "Choisissez les éléments affichés pendant le jeu. Toutes les options sont désactivées par défaut.",
+    "noneSelected": "Aucun",
+    "yes": "Oui",
+    "no": "Non"
   },
   "stories": {
     "answerPtBrTargetlanguage": "Corrigé · PT-BR + {{targetLanguage}}",

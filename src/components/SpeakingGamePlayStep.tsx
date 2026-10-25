@@ -121,6 +121,7 @@ export function SpeakingGamePlayStep({
     setChunkError(null);
 
     async function loadChunks() {
+      if (!settings.includeRandomChunk) return;
       try {
         const result = await loadHashmap(language, sourceLanguage);
         if (!active) return;
@@ -141,7 +142,7 @@ export function SpeakingGamePlayStep({
 
     void loadChunks();
     return () => { active = false; };
-  }, [language, sourceLanguage]);
+  }, [language, sourceLanguage, settings.includeRandomChunk]);
 
   // Novo chunk quando a forma verbal ou o verbo muda, e no carregamento inicial.
   useEffect(() => {
@@ -158,9 +159,9 @@ export function SpeakingGamePlayStep({
   }, [isAutomatic, remainingSeconds, chunks]);
 
   useEffect(() => {
-    setSelectedAdjective((previous) => drawDifferentItem(adjectives, previous));
-    setSelectedNoun((previous) => drawDifferentItem(nouns, previous));
-  }, [verb.id, adjectives, nouns]);
+    setSelectedAdjective((previous) => settings.includeAdjective ? drawDifferentItem(adjectives, previous) : null);
+    setSelectedNoun((previous) => settings.includeNoun ? drawDifferentItem(nouns, previous) : null);
+  }, [verb.id, adjectives, nouns, settings.includeAdjective, settings.includeNoun]);
 
   useEffect(() => {
     setSentenceMode(drawSentenceMode());
@@ -209,8 +210,8 @@ export function SpeakingGamePlayStep({
         </span>
       </header>
 
-      <div style={styles.vocabularyGrid} aria-label={t("common.selectedVocabulary")}>
-        <div style={styles.vocabularyCard}>
+      {(settings.includeAdjective || settings.includeNoun) && <div style={styles.vocabularyGrid} aria-label={t("common.selectedVocabulary")}>
+        {settings.includeAdjective && <div style={styles.vocabularyCard}>
           <span style={styles.vocabularyLabel}>{t("common.adjective")}</span>
           <strong style={styles.vocabularyWord}>
             {selectedAdjective?.adjective ?? "—"}
@@ -225,9 +226,9 @@ export function SpeakingGamePlayStep({
             {selectedAdjective.forms.masculinePlural} / {selectedAdjective.forms.femininePlural}
             {selectedAdjective.forms.masculineBeforeVowel && <><br />{t("speaking.beforeAVowel")} {selectedAdjective.forms.masculineBeforeVowel}</>}
           </span>}
-        </div>
+        </div>}
 
-        <div style={styles.vocabularyCard}>
+        {settings.includeNoun && <div style={styles.vocabularyCard}>
           <span style={styles.vocabularyLabel}>{t("common.noun")}</span>
           <strong style={styles.vocabularyWord}>
             {selectedNoun ? `${selectedNoun.article ?? ""}${selectedNoun.article?.endsWith("'") ? "" : " "}${selectedNoun.noun}`.trim() : "—"}
@@ -240,11 +241,11 @@ export function SpeakingGamePlayStep({
           {selectedNoun?.gender && <span style={styles.vocabularyMeaning}>{selectedNoun.gender === "feminine" ? t("speaking.feminine") : t("speaking.masculine")}</span>}
           {selectedNoun?.gender && selectedNoun.plural && <span style={styles.vocabularyMeaning}>{selectedNoun.pluralArticle} {selectedNoun.plural}</span>}
           {selectedNoun?.feminine && <span style={styles.vocabularyMeaning}>{t("speaking.feminine")} {selectedNoun.feminine} / {selectedNoun.femininePlural}</span>}
-        </div>
-      </div>
-      {chunkError && <p role="status">{chunkError}</p>}
+        </div>}
+      </div>}
+      {settings.includeRandomChunk && chunkError && <p role="status">{chunkError}</p>}
 
-      {selectedChunk && (
+      {settings.includeRandomChunk && selectedChunk && (
         <div style={styles.chunkCard} aria-label={t("speaking.randomChunkFromMentalHashmap")}>
           <span style={styles.vocabularyLabel}>{t("speaking.randomChunkIntention")}</span>
           <strong style={styles.chunkEnglish}>{selectedChunk.targetIntention ?? selectedChunk.english}</strong>

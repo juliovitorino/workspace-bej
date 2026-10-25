@@ -10,6 +10,7 @@ import { getNextSequentialFormIndex, getRandomFormIndex } from "../utils/speakin
 import { SpeakingGamePlayStep } from "./SpeakingGamePlayStep";
 import { SpeakingGameReadyStep } from "./SpeakingGameReadyStep";
 import { SpeakingGameSetupStep } from "./SpeakingGameSetupStep";
+import { SpeakingGameVocabularyStep } from "./SpeakingGameVocabularyStep";
 import { useTrainingStudy, type TrainingStudyReporter } from "../features/study/useTrainingStudy";
 
 export function SpeakingGame({ language, sourceLanguage, onStudyState }: { language: StudentLanguage; sourceLanguage: SourceLanguage; onStudyState?: TrainingStudyReporter }) {
@@ -30,7 +31,7 @@ export function SpeakingGame({ language, sourceLanguage, onStudyState }: { langu
   const currentLanguage = useRef(language);
   currentLanguage.current = language;
   const forms = getSpeakingGameForms(language);
-  const practicing = step === 3 && status === "running" && round?.language === language;
+  const practicing = step === 4 && status === "running" && round?.language === language;
   const { recordActivity, studyPaused: _studyPaused, toggleStudyPause: _toggleStudyPause, ...studyEvents } =
     useTrainingStudy(language, practicing && !isLoadingRound, isLoadingRound, false, onStudyState);
   // Only a real start/resume renews activity; automatic rounds do not defeat idle expiry.
@@ -86,7 +87,7 @@ export function SpeakingGame({ language, sourceLanguage, onStudyState }: { langu
         activeStudyStartedAtRef.current = Date.now();
         setLastStudySeconds(null);
         setStatus("running");
-        setStep(3);
+        setStep(4);
       }
     } catch (caughtError) {
       if (!valid()) return;
@@ -98,7 +99,7 @@ export function SpeakingGame({ language, sourceLanguage, onStudyState }: { langu
   }
 
   useEffect(() => {
-    if (step !== 3 || settings.timeMode !== "automatic" || status !== "running" || isLoadingRound || round?.language !== language) return;
+    if (step !== 4 || settings.timeMode !== "automatic" || status !== "running" || isLoadingRound || round?.language !== language) return;
     const timerId = window.setTimeout(() => {
       if (remainingSeconds <= 1) void loadRound("next");
       else setRemainingSeconds(seconds => seconds - 1);
@@ -116,7 +117,7 @@ export function SpeakingGame({ language, sourceLanguage, onStudyState }: { langu
     setRemainingSeconds(settings.seconds);
     setIsLoadingRound(false);
     setError(null);
-    setStep(2);
+    setStep(3);
   }
   function pauseGame() {
     if (status !== "running") return;
@@ -128,14 +129,16 @@ export function SpeakingGame({ language, sourceLanguage, onStudyState }: { langu
     activeStudyStartedAtRef.current = Date.now();
     setStatus("running");
   }
-  return <div style={styles.page} {...(step === 3 ? studyEvents : {})}>
+  return <div style={styles.page} {...(step === 4 ? studyEvents : {})}>
     {step === 1 && <SpeakingGameSetupStep settings={settings} onSettingsChange={setSettings} onNext={() => { setError(null); setStep(2); }} />}
-    {step === 2 && <>
+    {step === 2 && <SpeakingGameVocabularyStep settings={settings} onSettingsChange={setSettings}
+      onPrevious={() => setStep(1)} onNext={() => { setError(null); setStep(3); }} />}
+    {step === 3 && <>
       <SpeakingGameReadyStep language={language} loading={isLoadingRound} settings={settings} lastStudySeconds={lastStudySeconds}
-        onPrevious={() => { generation.current++; busy.current = false; setIsLoadingRound(false); setError(null); setStep(1); }} onStart={() => void loadRound("start")} />
+        onPrevious={() => { generation.current++; busy.current = false; setIsLoadingRound(false); setError(null); setStep(2); }} onStart={() => void loadRound("start")} />
       {isLoadingRound && <p style={styles.message} role="status">{t("speaking.preparingTheGame")}</p>}
     </>}
-    {step === 3 && round?.language === language && vocabulary && <SpeakingGamePlayStep
+    {step === 4 && round?.language === language && vocabulary && <SpeakingGamePlayStep
       key={language} language={language} sourceLanguage={sourceLanguage} verb={round.verb} vocabulary={vocabulary}
       form={getSpeakingChallenge(round.verb, forms[round.index])} formLabel={forms[round.index].label}
       settings={settings} status={status} remainingSeconds={remainingSeconds} loading={isLoadingRound}
