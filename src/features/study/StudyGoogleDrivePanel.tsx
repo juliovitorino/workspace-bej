@@ -1,5 +1,5 @@
 import { StudyCollapseToggle } from "./StudyCollapseToggle";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { backupReminder } from "../../utils/backupReminder";
 import { exportStudyBackup } from "./exportStudyBackup";
@@ -7,9 +7,10 @@ import { readStudyStore } from "./studyStorage";
 import { applySync, authorizeDrive, combineSyncFiles, createSnapshot, deviceId, folderId, GOOGLE_CLIENT_ID, listSyncFiles, readSyncFile, saveFolder, uploadSnapshot, type SyncFile } from "./studyDriveSync";
 
 type Preview = { baseline: string; local: SyncFile; merged: ReturnType<typeof combineSyncFiles>; token: string; folder: string; remoteCount: number };
-export function StudyDriveSync() {
+export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: boolean }) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
+  useEffect(() => { if (allSectionsExpanded !== undefined) setOpen(allSectionsExpanded); }, [allSectionsExpanded]);
   const [folderInput, setFolderInput] = useState(() => folderId());
   const [folder, setFolder] = useState(() => folderId());
   const [busy, setBusy] = useState(false);

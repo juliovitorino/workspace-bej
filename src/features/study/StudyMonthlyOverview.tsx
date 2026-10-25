@@ -1,5 +1,5 @@
 import { StudyCollapseToggle } from "./StudyCollapseToggle";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { StudentLanguage } from "../../config/languages";
 import type { StudyData } from "./studyStorage";
@@ -15,11 +15,12 @@ const compactTime = (seconds: number) => {
 };
 
 /** Read-only yearly projection: never writes to the study store. */
-export function StudyMonthlyOverview({ data, now, language }: { data: StudyData; now: Date; language: StudentLanguage | "all" }) {
+export function StudyMonthlyOverview({ data, now, language, allSectionsExpanded }: { data: StudyData; now: Date; language: StudentLanguage | "all"; allSectionsExpanded?: boolean }) {
   const { t, i18n } = useTranslation();
   const currentYear = now.getFullYear();
   const [selectedYear, setSelectedYear] = useState(currentYear);
   const [open, setOpen] = useState(false);
+  useEffect(() => { if (allSectionsExpanded !== undefined) setOpen(allSectionsExpanded); }, [allSectionsExpanded]);
   const entries = useMemo(() => studyEntries(data).filter(entry => language === "all" || entry.language === language), [data, language]);
   const years = useMemo(() => {
     const available = new Set(entries.map(entry => Number(entry.date.slice(0, 4))));
