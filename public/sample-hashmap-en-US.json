@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1234,
+    "totalIntentions": 1240,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -72257,6 +72257,481 @@
           "hashmp3": {
             "cedar": "78af58f733db5fc0c61bcbcb569247c3e50550063a7716ab208b0a30d05ba93b",
             "marin": "78af58f733db5fc0c61bcbcb569247c3e50550063a7716ab208b0a30d05ba93b"
+          }
+        }
+      ]
+    },
+    {
+      "id": "como-voce-preferir-6f31a8d2-4b75-4c90-8e16-2a97d5c043bf",
+      "intention": "As you please",
+      "pattern": "as you please / as you prefer / do as you like",
+      "description": "Accepts another person's preference or decision. Depending on the tone, it can convey politeness, indifference, or irritation. 'As you please' sounds relatively formal or old-fashioned in English.",
+      "category": "expressions",
+      "searchTerms": [
+        "as you please",
+        "as you prefer",
+        "do as you like"
+      ],
+      "validationPatterns": [
+        "\\bas\\s+you\\s+(?:please|prefer)\\b",
+        "\\bdo\\s+as\\s+you\\s+like\\b"
+      ],
+      "tags": [
+        "preference",
+        "agreement",
+        "politeness",
+        "tone of voice"
+      ],
+      "related": [
+        "como-desejar-1a83e6b4-9c25-4d70-8f13-b6a492e05d37",
+        "o-que-voce-preferir-3b72c9a5-6e14-4f80-9a35-d7e028c64b91"
+      ],
+      "structure": "As you please / As you prefer",
+      "level": "B1",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "b17a4c92-6e35-4d80-9f21-c8a63e05d274",
+          "exampleItem": "As you please.",
+          "intent": "As you please",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/b17a4c92-6e35-4d80-9f21-c8a63e05d274-cedar.mp3",
+            "marin": "/audio/en-US/marin/b17a4c92-6e35-4d80-9f21-c8a63e05d274-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "591f15823eeed79850e5077a66cef597b2a09a92df0cfb35d4dc0484a3de5ef8",
+            "marin": "591f15823eeed79850e5077a66cef597b2a09a92df0cfb35d4dc0484a3de5ef8"
+          }
+        },
+        {
+          "id": "c28b5d13-7f46-4a90-8e32-d9b74f16a385",
+          "exampleItem": "We can talk tomorrow, as you prefer.",
+          "intent": "as you prefer",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/c28b5d13-7f46-4a90-8e32-d9b74f16a385-cedar.mp3",
+            "marin": "/audio/en-US/marin/c28b5d13-7f46-4a90-8e32-d9b74f16a385-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "2e09f46f84e25ecd677fc9dfff6bb626836247c75ca4f41bebad9c5e28e7e131",
+            "marin": "2e09f46f84e25ecd677fc9dfff6bb626836247c75ca4f41bebad9c5e28e7e131"
+          }
+        },
+        {
+          "id": "d39c6e24-8a57-4b10-9f43-e0c85a27b496",
+          "exampleItem": "All right, do as you like.",
+          "intent": "do as you like",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/d39c6e24-8a57-4b10-9f43-e0c85a27b496-cedar.mp3",
+            "marin": "/audio/en-US/marin/d39c6e24-8a57-4b10-9f43-e0c85a27b496-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "901a1af7a11b013b4e2f1f07da1c93d499a837ed54cd04ff24ee6b0984770b8c",
+            "marin": "901a1af7a11b013b4e2f1f07da1c93d499a837ed54cd04ff24ee6b0984770b8c"
+          }
+        }
+      ]
+    },
+    {
+      "id": "como-desejar-1a83e6b4-9c25-4d70-8f13-b6a492e05d37",
+      "intention": "As you wish",
+      "pattern": "as you wish / however you wish",
+      "description": "Shows respect for another person's wishes. 'As you wish' can express politeness, formality, affection, or deference, depending on the context.",
+      "category": "expressions",
+      "searchTerms": [
+        "as you wish",
+        "however you wish",
+        "the way you want"
+      ],
+      "validationPatterns": [
+        "\\b(?:as|however)\\s+you\\s+wish\\b"
+      ],
+      "tags": [
+        "wishes",
+        "politeness",
+        "agreement",
+        "preference"
+      ],
+      "related": [
+        "como-voce-preferir-6f31a8d2-4b75-4c90-8e16-2a97d5c043bf"
+      ],
+      "structure": "As you wish / However you wish",
+      "level": "B1",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "e41d7f35-9b68-4c20-8a54-f1d96b38c507",
+          "exampleItem": "As you wish.",
+          "intent": "As you wish",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/e41d7f35-9b68-4c20-8a54-f1d96b38c507-cedar.mp3",
+            "marin": "/audio/en-US/marin/e41d7f35-9b68-4c20-8a54-f1d96b38c507-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "bb4c5f3714954e893d65f1a16da77ccc4379aa0723756a5ed0e50e75f337835a",
+            "marin": "bb4c5f3714954e893d65f1a16da77ccc4379aa0723756a5ed0e50e75f337835a"
+          }
+        },
+        {
+          "id": "f52e8a46-1c79-4d30-9b65-a2e07c49d618",
+          "exampleItem": "We can arrange everything however you wish.",
+          "intent": "however you wish",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/f52e8a46-1c79-4d30-9b65-a2e07c49d618-cedar.mp3",
+            "marin": "/audio/en-US/marin/f52e8a46-1c79-4d30-9b65-a2e07c49d618-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "b95d65f65bbfd3d5eff719f1555660d35df9a20102bd22ac513b376213d510b5",
+            "marin": "b95d65f65bbfd3d5eff719f1555660d35df9a20102bd22ac513b376213d510b5"
+          }
+        },
+        {
+          "id": "a63f9b57-2d80-4e40-8c76-b3f18d50e729",
+          "exampleItem": "If you want to change the plans, we'll do as you wish.",
+          "intent": "as you wish",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/a63f9b57-2d80-4e40-8c76-b3f18d50e729-cedar.mp3",
+            "marin": "/audio/en-US/marin/a63f9b57-2d80-4e40-8c76-b3f18d50e729-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "4b6d8f5bed2d46bbee5bf79cab55c09e6312a23d3316528943cd67c64ebd31c1",
+            "marin": "4b6d8f5bed2d46bbee5bf79cab55c09e6312a23d3316528943cd67c64ebd31c1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "o-que-voce-preferir-3b72c9a5-6e14-4f80-9a35-d7e028c64b91",
+      "intention": "Whatever you prefer",
+      "pattern": "whatever you prefer / whichever you prefer",
+      "description": "Lets the other person choose among possibilities. This is a natural, friendly way to show flexibility. 'Whatever you prefer' can stand alone as a response or form part of a sentence.",
+      "category": "preferences",
+      "searchTerms": [
+        "whatever you prefer",
+        "whichever you prefer",
+        "any option you prefer"
+      ],
+      "validationPatterns": [
+        "\\b(?:whatever|whichever)\\s+you\\s+prefer\\b"
+      ],
+      "tags": [
+        "preference",
+        "choice",
+        "flexibility",
+        "conversation"
+      ],
+      "related": [
+        "como-voce-preferir-6f31a8d2-4b75-4c90-8e16-2a97d5c043bf",
+        "voce-decide-5c91d7a3-8b26-4e50-9f14-a3d68e02c475"
+      ],
+      "structure": "Whatever you prefer / Whichever you prefer",
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "b74a1c68-3e91-4f50-9d87-c4a29b61f830",
+          "exampleItem": "Whatever you prefer.",
+          "intent": "Whatever you prefer",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/b74a1c68-3e91-4f50-9d87-c4a29b61f830-cedar.mp3",
+            "marin": "/audio/en-US/marin/b74a1c68-3e91-4f50-9d87-c4a29b61f830-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "701362fe9f4ea4bc4f53ab9b90820dae2db06d9fab8dea5e3d9bd0dabb2dd53e",
+            "marin": "701362fe9f4ea4bc4f53ab9b90820dae2db06d9fab8dea5e3d9bd0dabb2dd53e"
+          }
+        },
+        {
+          "id": "c85b2d79-4f02-4a60-8e98-d5b30c72a941",
+          "exampleItem": "We can order pizza or cook, whatever you prefer.",
+          "intent": "whatever you prefer",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/c85b2d79-4f02-4a60-8e98-d5b30c72a941-cedar.mp3",
+            "marin": "/audio/en-US/marin/c85b2d79-4f02-4a60-8e98-d5b30c72a941-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "a05bd49d46103b858acba470a21eb4184ceeb52725b9225de4bd585e474b6163",
+            "marin": "a05bd49d46103b858acba470a21eb4184ceeb52725b9225de4bd585e474b6163"
+          }
+        },
+        {
+          "id": "d96c3e80-5a13-4b70-9f19-e6c41d83b052",
+          "exampleItem": "Either is fine with me, whichever you prefer.",
+          "intent": "whichever you prefer",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/d96c3e80-5a13-4b70-9f19-e6c41d83b052-cedar.mp3",
+            "marin": "/audio/en-US/marin/d96c3e80-5a13-4b70-9f19-e6c41d83b052-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "cc73e94c99bd0805470c2139e8b88b3ebff09fe33b5d71526671faf26f4af05c",
+            "marin": "cc73e94c99bd0805470c2139e8b88b3ebff09fe33b5d71526671faf26f4af05c"
+          }
+        }
+      ]
+    },
+    {
+      "id": "voce-decide-5c91d7a3-8b26-4e50-9f14-a3d68e02c475",
+      "intention": "You decide / It's up to you",
+      "pattern": "you decide / it's up to you / at your discretion",
+      "description": "Indicates that a decision or choice belongs to the other person. 'It's up to you' is very common in English and can stand alone or introduce the specific decision.",
+      "category": "decision-making",
+      "searchTerms": [
+        "you decide",
+        "it's up to you",
+        "at your discretion",
+        "the decision is yours"
+      ],
+      "validationPatterns": [
+        "\\byou\\s+decide\\b",
+        "\\bit(?:['?]s|\\s+is)\\s+up\\s+to\\s+you\\b",
+        "\\bat\\s+your\\s+discretion\\b",
+        "\\bup\\s+to\\s+you\\b"
+      ],
+      "tags": [
+        "decision",
+        "choice",
+        "responsibility",
+        "conversation"
+      ],
+      "related": [
+        "o-que-voce-preferir-3b72c9a5-6e14-4f80-9a35-d7e028c64b91",
+        "o-que-for-melhor-para-voce-2d64b8e1-7a39-4c50-8f12-e5b97a03d246"
+      ],
+      "structure": "You decide / It's up to you / At your discretion",
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "e17d4f91-6b24-4c80-9a20-f7d52e94c163",
+          "exampleItem": "You decide.",
+          "intent": "You decide",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/e17d4f91-6b24-4c80-9a20-f7d52e94c163-cedar.mp3",
+            "marin": "/audio/en-US/marin/e17d4f91-6b24-4c80-9a20-f7d52e94c163-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "d9bdc74c9cc0377afc8a722d00f846acce019bfde93f5c69926047e771237d75",
+            "marin": "d9bdc74c9cc0377afc8a722d00f846acce019bfde93f5c69926047e771237d75"
+          }
+        },
+        {
+          "id": "f28e5a02-7c35-4d90-8b31-a8e63f05d274",
+          "exampleItem": "We can leave now or later, you decide.",
+          "intent": "you decide",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/f28e5a02-7c35-4d90-8b31-a8e63f05d274-cedar.mp3",
+            "marin": "/audio/en-US/marin/f28e5a02-7c35-4d90-8b31-a8e63f05d274-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "3005a0b8186f4397de50de0868bdcc251d6ef1523d898b8969d1fbfd5e5569e6",
+            "marin": "3005a0b8186f4397de50de0868bdcc251d6ef1523d898b8969d1fbfd5e5569e6"
+          }
+        },
+        {
+          "id": "a39f6b13-8d46-4e10-9c42-b9f74a16e385",
+          "exampleItem": "The choice of restaurant is at your discretion.",
+          "intent": "at your discretion",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/a39f6b13-8d46-4e10-9c42-b9f74a16e385-cedar.mp3",
+            "marin": "/audio/en-US/marin/a39f6b13-8d46-4e10-9c42-b9f74a16e385-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "6a7b15039b104895f7a4d08b649f3305ceb7b083879e0111ac7d93652f7ab8c2",
+            "marin": "6a7b15039b104895f7a4d08b649f3305ceb7b083879e0111ac7d93652f7ab8c2"
+          }
+        },
+        {
+          "id": "b40a7c24-9e57-4f20-8d53-c0a85b27f496",
+          "exampleItem": "It's up to you whether we continue with the project.",
+          "intent": "It's up to you",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/b40a7c24-9e57-4f20-8d53-c0a85b27f496-cedar.mp3",
+            "marin": "/audio/en-US/marin/b40a7c24-9e57-4f20-8d53-c0a85b27f496-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "b8f77832f66818b7867aa127c94379bbb3613607189334b60b623af08a735c9e",
+            "marin": "b8f77832f66818b7867aa127c94379bbb3613607189334b60b623af08a735c9e"
+          }
+        }
+      ]
+    },
+    {
+      "id": "o-que-for-melhor-para-voce-2d64b8e1-7a39-4c50-8f12-e5b97a03d246",
+      "intention": "Whatever works for you",
+      "pattern": "whatever works for you / whatever works best for you",
+      "description": "Shows flexibility and consideration for another person's convenience, availability, or needs. 'Whatever works for you' is natural in English, especially when arranging times, meetings, and plans.",
+      "category": "preferences",
+      "searchTerms": [
+        "whatever works for you",
+        "whatever works best for you",
+        "whatever is most convenient for you"
+      ],
+      "validationPatterns": [
+        "\\b(?:whatever|that)\\s+works(?:\\s+best)?\\s+for\\s+you\\b",
+        "\\bwhatever\\s+is\\s+most\\s+convenient\\s+for\\s+you\\b"
+      ],
+      "tags": [
+        "flexibility",
+        "convenience",
+        "scheduling",
+        "politeness"
+      ],
+      "related": [
+        "o-que-voce-preferir-3b72c9a5-6e14-4f80-9a35-d7e028c64b91",
+        "voce-decide-5c91d7a3-8b26-4e50-9f14-a3d68e02c475"
+      ],
+      "structure": "Whatever works for you / Whatever works best for you",
+      "level": "B1",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "c51b8d35-1f68-4a30-9e64-d1b96c38a507",
+          "exampleItem": "Whatever works for you.",
+          "intent": "Whatever works for you",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/c51b8d35-1f68-4a30-9e64-d1b96c38a507-cedar.mp3",
+            "marin": "/audio/en-US/marin/c51b8d35-1f68-4a30-9e64-d1b96c38a507-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "65a3874fa5ea13161c0d635108ee83aa014020bb90a356e91770e47be95b4b14",
+            "marin": "65a3874fa5ea13161c0d635108ee83aa014020bb90a356e91770e47be95b4b14"
+          }
+        },
+        {
+          "id": "d62c9e46-2a79-4b40-8f75-e2c07d49b618",
+          "exampleItem": "We can meet on Tuesday or Thursday, whatever works for you.",
+          "intent": "whatever works for you",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/d62c9e46-2a79-4b40-8f75-e2c07d49b618-cedar.mp3",
+            "marin": "/audio/en-US/marin/d62c9e46-2a79-4b40-8f75-e2c07d49b618-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "c6fc92a8c1925ac1f4d7b8469f6e21b29ede8b3ddcb60122b77a39655a1f8226",
+            "marin": "c6fc92a8c1925ac1f4d7b8469f6e21b29ede8b3ddcb60122b77a39655a1f8226"
+          }
+        },
+        {
+          "id": "e73d1f57-3b80-4c50-9a86-f3d18e50c729",
+          "exampleItem": "Choose the time that works best for you.",
+          "intent": "that works best for you",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/e73d1f57-3b80-4c50-9a86-f3d18e50c729-cedar.mp3",
+            "marin": "/audio/en-US/marin/e73d1f57-3b80-4c50-9a86-f3d18e50c729-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "66a1be2d58017b796cbb5471f6022dfbb1f158ce46d3c237dab33e4d6950b060",
+            "marin": "66a1be2d58017b796cbb5471f6022dfbb1f158ce46d3c237dab33e4d6950b060"
+          }
+        },
+        {
+          "id": "f84e2a68-4c91-4d60-8b97-a4e29f61d830",
+          "exampleItem": "We can talk by video or phone, whatever is most convenient for you.",
+          "intent": "whatever is most convenient for you",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/f84e2a68-4c91-4d60-8b97-a4e29f61d830-cedar.mp3",
+            "marin": "/audio/en-US/marin/f84e2a68-4c91-4d60-8b97-a4e29f61d830-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "93ef83f66100078e8a96debdf715367712131725cec7c6482cce15af90da7e75",
+            "marin": "93ef83f66100078e8a96debdf715367712131725cec7c6482cce15af90da7e75"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fazer-o-que-bem-entender-9e42a6c3-5d71-4f80-8b29-c7a03e95d164",
+      "intention": "Do as you please",
+      "pattern": "subject + can / want to / be free to + do as one pleases",
+      "description": "Expresses freedom to act as one wishes, with or without other people's approval. 'Do as you please' can convey autonomy, permission, indifference, or irritation, depending on the context and tone.",
+      "category": "expressions",
+      "searchTerms": [
+        "do as you please",
+        "do whatever you want",
+        "does as he pleases",
+        "do what you like",
+        "free to do as you please"
+      ],
+      "validationPatterns": [
+        "\\bdo\\s+as\\s+(?:I|you|we|they)\\s+please\\b",
+        "\\bdoes\\s+as\\s+(?:he|she)\\s+pleases\\b",
+        "\\bdo\\s+whatever\\s+you\\s+want\\b"
+      ],
+      "tags": [
+        "freedom",
+        "autonomy",
+        "permission",
+        "irritation",
+        "sentence generator"
+      ],
+      "related": [
+        "como-voce-preferir-6f31a8d2-4b75-4c90-8e16-2a97d5c043bf",
+        "voce-decide-5c91d7a3-8b26-4e50-9f14-a3d68e02c475"
+      ],
+      "structure": "Subject + can / want to / be free to + do as one pleases",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a95f3b79-5d02-4e70-9c18-b5f30a72e941",
+          "exampleItem": "You are free to do as you please.",
+          "intent": "do as you please",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/a95f3b79-5d02-4e70-9c18-b5f30a72e941-cedar.mp3",
+            "marin": "/audio/en-US/marin/a95f3b79-5d02-4e70-9c18-b5f30a72e941-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "b8659fbc4431edbb71b7e89269525861c386ca2cb8d0e51d3e79a0c8e1adb2e5",
+            "marin": "b8659fbc4431edbb71b7e89269525861c386ca2cb8d0e51d3e79a0c8e1adb2e5"
+          }
+        },
+        {
+          "id": "b16a4c80-6e13-4f80-8d29-c6a41b83f052",
+          "exampleItem": "After work, I can do as I please.",
+          "intent": "do as I please",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/b16a4c80-6e13-4f80-8d29-c6a41b83f052-cedar.mp3",
+            "marin": "/audio/en-US/marin/b16a4c80-6e13-4f80-8d29-c6a41b83f052-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "3a82ff10fe62f154bf003c674620ebb55579121c058cd30df07b04154eea1733",
+            "marin": "3a82ff10fe62f154bf003c674620ebb55579121c058cd30df07b04154eea1733"
+          }
+        },
+        {
+          "id": "c27b5d91-7f24-4a90-9e30-d7b52c94a163",
+          "exampleItem": "He does as he pleases without consulting anyone.",
+          "intent": "does as he pleases",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/c27b5d91-7f24-4a90-9e30-d7b52c94a163-cedar.mp3",
+            "marin": "/audio/en-US/marin/c27b5d91-7f24-4a90-9e30-d7b52c94a163-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "e448aa3b8891b74d0c3cb68d402dbdffab668ec9476ec81cdee21a91f00323cb",
+            "marin": "e448aa3b8891b74d0c3cb68d402dbdffab668ec9476ec81cdee21a91f00323cb"
+          }
+        },
+        {
+          "id": "d38c6e02-8a35-4b10-8f41-e8c63d05b274",
+          "exampleItem": "If you don't want to follow the plan, do as you please.",
+          "intent": "do as you please",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/d38c6e02-8a35-4b10-8f41-e8c63d05b274-cedar.mp3",
+            "marin": "/audio/en-US/marin/d38c6e02-8a35-4b10-8f41-e8c63d05b274-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "f8a8589da692d294ad9a2fa21ee81afde1d66db4977ac8899e8ee6be3c6c6755",
+            "marin": "f8a8589da692d294ad9a2fa21ee81afde1d66db4977ac8899e8ee6be3c6c6755"
+          }
+        },
+        {
+          "id": "e49d7f13-9b46-4c20-9a52-f9d74e16c385",
+          "exampleItem": "When you finish your tasks, you'll be able to do whatever you want.",
+          "intent": "do whatever you want",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/e49d7f13-9b46-4c20-9a52-f9d74e16c385-cedar.mp3",
+            "marin": "/audio/en-US/marin/e49d7f13-9b46-4c20-9a52-f9d74e16c385-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "88b3ca8192b26466f9d4689dbb824a37d964a99125a2e170b9d018cb34c9ba5b",
+            "marin": "88b3ca8192b26466f9d4689dbb824a37d964a99125a2e170b9d018cb34c9ba5b"
           }
         }
       ]

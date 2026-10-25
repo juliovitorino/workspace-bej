@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1234,
+    "totalIntentions": 1240,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -47992,6 +47992,311 @@
           "id": "9c4d72e0-6a31-4c6f-bb82-0d18e39a5403",
           "exampleItem": "Estou tentando tirar o máximo de proveito das minhas aulas de inglês.",
           "intent": "tirar o máximo de proveito"
+        }
+      ]
+    },
+    {
+      "id": "como-voce-preferir-6f31a8d2-4b75-4c90-8e16-2a97d5c043bf",
+      "intention": "Como você preferir",
+      "pattern": "como você preferir / como preferir",
+      "description": "Expressa aceitação da preferência ou decisão de outra pessoa. Pode transmitir cortesia, indiferença ou irritação dependendo do tom. Em inglês, 'as you please' é relativamente formal ou antiquado.",
+      "category": "expressions",
+      "searchTerms": [
+        "como você preferir",
+        "como preferir",
+        "faça como quiser"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])como\\s+(?:você\\s+)?preferir(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])faça\\s+como\\s+quiser(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "preferência",
+        "concordância",
+        "cortesia",
+        "tom de voz"
+      ],
+      "related": [
+        "como-desejar-1a83e6b4-9c25-4d70-8f13-b6a492e05d37",
+        "o-que-voce-preferir-3b72c9a5-6e14-4f80-9a35-d7e028c64b91"
+      ],
+      "structure": "Como você preferir / Como preferir",
+      "level": "B1",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "b17a4c92-6e35-4d80-9f21-c8a63e05d274",
+          "exampleItem": "Como você preferir.",
+          "intent": "Como você preferir"
+        },
+        {
+          "id": "c28b5d13-7f46-4a90-8e32-d9b74f16a385",
+          "exampleItem": "Podemos conversar amanhã, como você preferir.",
+          "intent": "como você preferir"
+        },
+        {
+          "id": "d39c6e24-8a57-4b10-9f43-e0c85a27b496",
+          "exampleItem": "Tudo bem, faça como quiser.",
+          "intent": "faça como quiser"
+        }
+      ]
+    },
+    {
+      "id": "como-desejar-1a83e6b4-9c25-4d70-8f13-b6a492e05d37",
+      "intention": "Como desejar",
+      "pattern": "como desejar / como você desejar",
+      "description": "Expressa respeito pela vontade ou desejo de outra pessoa. Em inglês, 'as you wish' pode transmitir cortesia, formalidade, afeto ou submissão dependendo do contexto.",
+      "category": "expressions",
+      "searchTerms": [
+        "como desejar",
+        "como você desejar",
+        "do jeito que desejar"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])como\\s+(?:você\\s+)?desejar(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])do\\s+jeito\\s+que\\s+desejar(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "desejo",
+        "cortesia",
+        "concordância",
+        "preferência"
+      ],
+      "related": [
+        "como-voce-preferir-6f31a8d2-4b75-4c90-8e16-2a97d5c043bf"
+      ],
+      "structure": "Como desejar / Como você desejar",
+      "level": "B1",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "e41d7f35-9b68-4c20-8a54-f1d96b38c507",
+          "exampleItem": "Como desejar.",
+          "intent": "Como desejar"
+        },
+        {
+          "id": "f52e8a46-1c79-4d30-9b65-a2e07c49d618",
+          "exampleItem": "Podemos organizar tudo como você desejar.",
+          "intent": "como você desejar"
+        },
+        {
+          "id": "a63f9b57-2d80-4e40-8c76-b3f18d50e729",
+          "exampleItem": "Se quiser mudar os planos, como desejar.",
+          "intent": "como desejar"
+        }
+      ]
+    },
+    {
+      "id": "o-que-voce-preferir-3b72c9a5-6e14-4f80-9a35-d7e028c64b91",
+      "intention": "O que você preferir",
+      "pattern": "o que você preferir / o que preferir",
+      "description": "Oferece liberdade para a outra pessoa escolher entre possibilidades. É uma maneira natural e amigável de demonstrar flexibilidade. Em inglês, 'whatever you prefer' pode funcionar como resposta independente ou parte de uma frase.",
+      "category": "preferences",
+      "searchTerms": [
+        "o que você preferir",
+        "o que preferir",
+        "qualquer opção que preferir"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])o\\s+que\\s+(?:você\\s+)?preferir(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])qualquer\\s+opção\\s+que\\s+preferir(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "preferência",
+        "escolha",
+        "flexibilidade",
+        "conversação"
+      ],
+      "related": [
+        "como-voce-preferir-6f31a8d2-4b75-4c90-8e16-2a97d5c043bf",
+        "voce-decide-5c91d7a3-8b26-4e50-9f14-a3d68e02c475"
+      ],
+      "structure": "O que você preferir / O que preferir",
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "b74a1c68-3e91-4f50-9d87-c4a29b61f830",
+          "exampleItem": "O que você preferir.",
+          "intent": "O que você preferir"
+        },
+        {
+          "id": "c85b2d79-4f02-4a60-8e98-d5b30c72a941",
+          "exampleItem": "Podemos pedir pizza ou cozinhar, o que você preferir.",
+          "intent": "o que você preferir"
+        },
+        {
+          "id": "d96c3e80-5a13-4b70-9f19-e6c41d83b052",
+          "exampleItem": "Para mim está bom, o que preferir.",
+          "intent": "o que preferir"
+        }
+      ]
+    },
+    {
+      "id": "voce-decide-5c91d7a3-8b26-4e50-9f14-a3d68e02c475",
+      "intention": "Você decide / Fica a seu critério",
+      "pattern": "você decide / fica a seu critério / depende de você",
+      "description": "Usado para indicar que uma decisão ou escolha pertence à outra pessoa. Em inglês, 'it's up to you' é uma expressão muito comum e pode ser utilizada isoladamente ou acompanhada da decisão específica.",
+      "category": "decision-making",
+      "searchTerms": [
+        "você decide",
+        "fica a seu critério",
+        "depende de você",
+        "a decisão é sua"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])você\\s+decide(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])fica\\s+a\\s+seu\\s+critério(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])depende\\s+de\\s+você(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])a\\s+decisão\\s+é\\s+sua(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "decisão",
+        "escolha",
+        "responsabilidade",
+        "conversação"
+      ],
+      "related": [
+        "o-que-voce-preferir-3b72c9a5-6e14-4f80-9a35-d7e028c64b91",
+        "o-que-for-melhor-para-voce-2d64b8e1-7a39-4c50-8f12-e5b97a03d246"
+      ],
+      "structure": "Você decide / Fica a seu critério / Depende de você",
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "e17d4f91-6b24-4c80-9a20-f7d52e94c163",
+          "exampleItem": "Você decide.",
+          "intent": "Você decide"
+        },
+        {
+          "id": "f28e5a02-7c35-4d90-8b31-a8e63f05d274",
+          "exampleItem": "Podemos sair agora ou mais tarde, você decide.",
+          "intent": "você decide"
+        },
+        {
+          "id": "a39f6b13-8d46-4e10-9c42-b9f74a16e385",
+          "exampleItem": "A escolha do restaurante fica a seu critério.",
+          "intent": "fica a seu critério"
+        },
+        {
+          "id": "b40a7c24-9e57-4f20-8d53-c0a85b27f496",
+          "exampleItem": "Depende de você se vamos continuar com o projeto.",
+          "intent": "Depende de você"
+        }
+      ]
+    },
+    {
+      "id": "o-que-for-melhor-para-voce-2d64b8e1-7a39-4c50-8f12-e5b97a03d246",
+      "intention": "O que for melhor para você",
+      "pattern": "o que for melhor para você / o que funcionar melhor para você",
+      "description": "Expressa flexibilidade e consideração pela conveniência, disponibilidade ou necessidade de outra pessoa. Em inglês, 'whatever works for you' é uma expressão natural, especialmente para combinar horários, encontros e planos.",
+      "category": "preferences",
+      "searchTerms": [
+        "o que for melhor para você",
+        "o que funcionar melhor para você",
+        "o que for mais conveniente para você"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])o\\s+que\\s+for\\s+melhor\\s+para\\s+você(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])o\\s+que\\s+funcionar\\s+melhor\\s+para\\s+você(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])o\\s+que\\s+for\\s+mais\\s+conveniente\\s+para\\s+você(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "flexibilidade",
+        "conveniência",
+        "agendamento",
+        "cortesia"
+      ],
+      "related": [
+        "o-que-voce-preferir-3b72c9a5-6e14-4f80-9a35-d7e028c64b91",
+        "voce-decide-5c91d7a3-8b26-4e50-9f14-a3d68e02c475"
+      ],
+      "structure": "O que for melhor para você / O que funcionar melhor para você",
+      "level": "B1",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "c51b8d35-1f68-4a30-9e64-d1b96c38a507",
+          "exampleItem": "O que for melhor para você.",
+          "intent": "O que for melhor para você"
+        },
+        {
+          "id": "d62c9e46-2a79-4b40-8f75-e2c07d49b618",
+          "exampleItem": "Podemos marcar para terça ou quinta, o que for melhor para você.",
+          "intent": "o que for melhor para você"
+        },
+        {
+          "id": "e73d1f57-3b80-4c50-9a86-f3d18e50c729",
+          "exampleItem": "Escolha o horário que funcionar melhor para você.",
+          "intent": "que funcionar melhor para você"
+        },
+        {
+          "id": "f84e2a68-4c91-4d60-8b97-a4e29f61d830",
+          "exampleItem": "Podemos conversar por vídeo ou telefone, o que for mais conveniente para você.",
+          "intent": "o que for mais conveniente para você"
+        }
+      ]
+    },
+    {
+      "id": "fazer-o-que-bem-entender-9e42a6c3-5d71-4f80-8b29-c7a03e95d164",
+      "intention": "Fazer o que bem entender",
+      "pattern": "sujeito + poder / querer / estar livre para + fazer o que bem entender",
+      "description": "Expressa liberdade para agir conforme a própria vontade, com ou sem aprovação de outras pessoas. Em inglês, 'do as you please' pode indicar autonomia, permissão, indiferença ou irritação, dependendo do contexto e do tom de voz.",
+      "category": "expressions",
+      "searchTerms": [
+        "fazer o que bem entender",
+        "faça o que bem entender",
+        "faz o que bem entende",
+        "fazer o que quiser",
+        "faça o que quiser",
+        "livre para fazer o que quiser"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])fazer\\s+o\\s+que\\s+bem\\s+entender(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])faça\\s+o\\s+que\\s+bem\\s+entender(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])faz\\s+o\\s+que\\s+bem\\s+entende(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])fazer\\s+o\\s+que\\s+quiser(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])faça\\s+o\\s+que\\s+quiser(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "liberdade",
+        "autonomia",
+        "permissão",
+        "irritação",
+        "gerador de frases"
+      ],
+      "related": [
+        "como-voce-preferir-6f31a8d2-4b75-4c90-8e16-2a97d5c043bf",
+        "voce-decide-5c91d7a3-8b26-4e50-9f14-a3d68e02c475"
+      ],
+      "structure": "Sujeito + poder / querer / estar livre para + fazer o que bem entender",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a95f3b79-5d02-4e70-9c18-b5f30a72e941",
+          "exampleItem": "Você é livre para fazer o que bem entender.",
+          "intent": "fazer o que bem entender"
+        },
+        {
+          "id": "b16a4c80-6e13-4f80-8d29-c6a41b83f052",
+          "exampleItem": "Depois do expediente, posso fazer o que bem entender.",
+          "intent": "fazer o que bem entender"
+        },
+        {
+          "id": "c27b5d91-7f24-4a90-9e30-d7b52c94a163",
+          "exampleItem": "Ele faz o que bem entende sem consultar ninguém.",
+          "intent": "faz o que bem entende"
+        },
+        {
+          "id": "d38c6e02-8a35-4b10-8f41-e8c63d05b274",
+          "exampleItem": "Se não quiser seguir o plano, faça o que bem entender.",
+          "intent": "faça o que bem entender"
+        },
+        {
+          "id": "e49d7f13-9b46-4c20-9a52-f9d74e16c385",
+          "exampleItem": "Quando terminar suas tarefas, poderá fazer o que quiser.",
+          "intent": "fazer o que quiser"
         }
       ]
     }

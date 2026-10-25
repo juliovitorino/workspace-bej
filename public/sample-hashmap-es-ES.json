@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1234,
+    "totalIntentions": 1240,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -48402,6 +48402,311 @@
           "id": "9c4d72e0-6a31-4c6f-bb82-0d18e39a5403",
           "exampleItem": "Estoy intentando sacar el máximo provecho de mis clases de inglés.",
           "intent": "sacar el máximo provecho"
+        }
+      ]
+    },
+    {
+      "id": "como-voce-preferir-6f31a8d2-4b75-4c90-8e16-2a97d5c043bf",
+      "intention": "Como prefieras",
+      "pattern": "como prefieras / haz como quieras",
+      "description": "Expresa aceptación de la preferencia o decisión de otra persona. Según el tono, puede transmitir cortesía, indiferencia o irritación. Su equivalente inglés, «as you please», resulta relativamente formal o anticuado.",
+      "category": "expressions",
+      "searchTerms": [
+        "como prefieras",
+        "como tú prefieras",
+        "haz como quieras"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])como(?:\\s+tú)?\\s+prefieras(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])haz\\s+como\\s+quieras(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "preferencia",
+        "acuerdo",
+        "cortesía",
+        "tono de voz"
+      ],
+      "related": [
+        "como-desejar-1a83e6b4-9c25-4d70-8f13-b6a492e05d37",
+        "o-que-voce-preferir-3b72c9a5-6e14-4f80-9a35-d7e028c64b91"
+      ],
+      "structure": "Como prefieras / Haz como quieras",
+      "level": "B1",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "b17a4c92-6e35-4d80-9f21-c8a63e05d274",
+          "exampleItem": "Como prefieras.",
+          "intent": "Como prefieras"
+        },
+        {
+          "id": "c28b5d13-7f46-4a90-8e32-d9b74f16a385",
+          "exampleItem": "Podemos hablar mañana, como prefieras.",
+          "intent": "como prefieras"
+        },
+        {
+          "id": "d39c6e24-8a57-4b10-9f43-e0c85a27b496",
+          "exampleItem": "Está bien, haz como quieras.",
+          "intent": "haz como quieras"
+        }
+      ]
+    },
+    {
+      "id": "como-desejar-1a83e6b4-9c25-4d70-8f13-b6a492e05d37",
+      "intention": "Como desees",
+      "pattern": "como desees / como tú desees",
+      "description": "Expresa respeto por la voluntad o el deseo de otra persona. Su equivalente inglés, «as you wish», puede transmitir cortesía, formalidad, afecto o sumisión según el contexto.",
+      "category": "expressions",
+      "searchTerms": [
+        "como desees",
+        "como tú desees",
+        "de la manera que desees"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])como(?:\\s+tú)?\\s+desees(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])de\\s+la\\s+manera\\s+que\\s+desees(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "deseo",
+        "cortesía",
+        "acuerdo",
+        "preferencia"
+      ],
+      "related": [
+        "como-voce-preferir-6f31a8d2-4b75-4c90-8e16-2a97d5c043bf"
+      ],
+      "structure": "Como desees / Como tú desees",
+      "level": "B1",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "e41d7f35-9b68-4c20-8a54-f1d96b38c507",
+          "exampleItem": "Como desees.",
+          "intent": "Como desees"
+        },
+        {
+          "id": "f52e8a46-1c79-4d30-9b65-a2e07c49d618",
+          "exampleItem": "Podemos organizarlo todo como tú desees.",
+          "intent": "como tú desees"
+        },
+        {
+          "id": "a63f9b57-2d80-4e40-8c76-b3f18d50e729",
+          "exampleItem": "Si quieres cambiar los planes, como desees.",
+          "intent": "como desees"
+        }
+      ]
+    },
+    {
+      "id": "o-que-voce-preferir-3b72c9a5-6e14-4f80-9a35-d7e028c64b91",
+      "intention": "Lo que prefieras",
+      "pattern": "lo que prefieras / lo que tú prefieras",
+      "description": "Da libertad a la otra persona para elegir entre varias posibilidades. Es una forma natural y cercana de mostrar flexibilidad. Su equivalente inglés, «whatever you prefer», puede usarse como respuesta independiente o como parte de una frase.",
+      "category": "preferences",
+      "searchTerms": [
+        "lo que prefieras",
+        "lo que tú prefieras",
+        "cualquier opción que prefieras"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])lo\\s+que(?:\\s+tú)?\\s+prefieras(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])cualquier\\s+opción\\s+que\\s+prefieras(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "preferencia",
+        "elección",
+        "flexibilidad",
+        "conversación"
+      ],
+      "related": [
+        "como-voce-preferir-6f31a8d2-4b75-4c90-8e16-2a97d5c043bf",
+        "voce-decide-5c91d7a3-8b26-4e50-9f14-a3d68e02c475"
+      ],
+      "structure": "Lo que prefieras / Lo que tú prefieras",
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "b74a1c68-3e91-4f50-9d87-c4a29b61f830",
+          "exampleItem": "Lo que prefieras.",
+          "intent": "Lo que prefieras"
+        },
+        {
+          "id": "c85b2d79-4f02-4a60-8e98-d5b30c72a941",
+          "exampleItem": "Podemos pedir pizza o cocinar, lo que prefieras.",
+          "intent": "lo que prefieras"
+        },
+        {
+          "id": "d96c3e80-5a13-4b70-9f19-e6c41d83b052",
+          "exampleItem": "Por mí está bien, lo que prefieras.",
+          "intent": "lo que prefieras"
+        }
+      ]
+    },
+    {
+      "id": "voce-decide-5c91d7a3-8b26-4e50-9f14-a3d68e02c475",
+      "intention": "Tú decides / Queda a tu criterio",
+      "pattern": "tú decides / queda a tu criterio / depende de ti",
+      "description": "Se usa para indicar que una decisión o elección corresponde a la otra persona. Su equivalente inglés, «it’s up to you», es muy habitual y puede usarse solo o acompañado de la decisión concreta.",
+      "category": "decision-making",
+      "searchTerms": [
+        "tú decides",
+        "queda a tu criterio",
+        "depende de ti",
+        "la decisión es tuya"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:tú\\s+)?decides(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])queda\\s+a\\s+tu\\s+criterio(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])depende\\s+de\\s+ti(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])la\\s+decisión\\s+es\\s+tuya(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "decisión",
+        "elección",
+        "responsabilidad",
+        "conversación"
+      ],
+      "related": [
+        "o-que-voce-preferir-3b72c9a5-6e14-4f80-9a35-d7e028c64b91",
+        "o-que-for-melhor-para-voce-2d64b8e1-7a39-4c50-8f12-e5b97a03d246"
+      ],
+      "structure": "Tú decides / Queda a tu criterio / Depende de ti",
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "e17d4f91-6b24-4c80-9a20-f7d52e94c163",
+          "exampleItem": "Tú decides.",
+          "intent": "Tú decides"
+        },
+        {
+          "id": "f28e5a02-7c35-4d90-8b31-a8e63f05d274",
+          "exampleItem": "Podemos salir ahora o más tarde, tú decides.",
+          "intent": "tú decides"
+        },
+        {
+          "id": "a39f6b13-8d46-4e10-9c42-b9f74a16e385",
+          "exampleItem": "La elección del restaurante queda a tu criterio.",
+          "intent": "queda a tu criterio"
+        },
+        {
+          "id": "b40a7c24-9e57-4f20-8d53-c0a85b27f496",
+          "exampleItem": "Depende de ti que sigamos adelante con el proyecto.",
+          "intent": "Depende de ti"
+        }
+      ]
+    },
+    {
+      "id": "o-que-for-melhor-para-voce-2d64b8e1-7a39-4c50-8f12-e5b97a03d246",
+      "intention": "Lo que te venga mejor",
+      "pattern": "lo que te venga mejor / lo que te resulte más conveniente",
+      "description": "Expresa flexibilidad y consideración por la comodidad, disponibilidad o necesidad de otra persona. Su equivalente inglés, «whatever works for you», es natural, sobre todo para acordar horarios, encuentros y planes.",
+      "category": "preferences",
+      "searchTerms": [
+        "lo que te venga mejor",
+        "lo que mejor te vaya",
+        "lo que te resulte más conveniente"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:lo\\s+)?que\\s+te\\s+venga\\s+mejor(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])lo\\s+que\\s+mejor\\s+te\\s+vaya(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])lo\\s+que\\s+te\\s+resulte\\s+más\\s+conveniente(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "flexibilidad",
+        "conveniencia",
+        "organización de horarios",
+        "cortesía"
+      ],
+      "related": [
+        "o-que-voce-preferir-3b72c9a5-6e14-4f80-9a35-d7e028c64b91",
+        "voce-decide-5c91d7a3-8b26-4e50-9f14-a3d68e02c475"
+      ],
+      "structure": "Lo que te venga mejor / Lo que te resulte más conveniente",
+      "level": "B1",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "c51b8d35-1f68-4a30-9e64-d1b96c38a507",
+          "exampleItem": "Lo que te venga mejor.",
+          "intent": "Lo que te venga mejor"
+        },
+        {
+          "id": "d62c9e46-2a79-4b40-8f75-e2c07d49b618",
+          "exampleItem": "Podemos quedar el martes o el jueves, lo que te venga mejor.",
+          "intent": "lo que te venga mejor"
+        },
+        {
+          "id": "e73d1f57-3b80-4c50-9a86-f3d18e50c729",
+          "exampleItem": "Elige la hora que te venga mejor.",
+          "intent": "que te venga mejor"
+        },
+        {
+          "id": "f84e2a68-4c91-4d60-8b97-a4e29f61d830",
+          "exampleItem": "Podemos hablar por videollamada o por teléfono, lo que te resulte más conveniente.",
+          "intent": "lo que te resulte más conveniente"
+        }
+      ]
+    },
+    {
+      "id": "fazer-o-que-bem-entender-9e42a6c3-5d71-4f80-8b29-c7a03e95d164",
+      "intention": "Hacer lo que te dé la gana",
+      "pattern": "sujeto + poder / querer / ser libre para + hacer lo que le dé la gana",
+      "description": "Expresa libertad para actuar según la propia voluntad, con o sin la aprobación de los demás. Su equivalente inglés, «do as you please», puede indicar autonomía, permiso, indiferencia o irritación, según el contexto y el tono de voz.",
+      "category": "expressions",
+      "searchTerms": [
+        "hacer lo que te dé la gana",
+        "haz lo que te dé la gana",
+        "hace lo que le da la gana",
+        "hacer lo que quieras",
+        "haz lo que quieras",
+        "libre para hacer lo que quieras"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])hacer\\s+lo\\s+que\\s+(?:me|te|le|nos|os|les)\\s+dé\\s+la\\s+gana(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])haz\\s+lo\\s+que\\s+te\\s+dé\\s+la\\s+gana(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])hace\\s+lo\\s+que\\s+le\\s+da\\s+la\\s+gana(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])hacer\\s+lo\\s+que\\s+(?:quiera|quieras|queramos|queráis|quieran)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])haz\\s+lo\\s+que\\s+quieras(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "libertad",
+        "autonomía",
+        "permiso",
+        "irritación",
+        "generador de frases"
+      ],
+      "related": [
+        "como-voce-preferir-6f31a8d2-4b75-4c90-8e16-2a97d5c043bf",
+        "voce-decide-5c91d7a3-8b26-4e50-9f14-a3d68e02c475"
+      ],
+      "structure": "Sujeto + poder / querer / ser libre para + hacer lo que le dé la gana",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a95f3b79-5d02-4e70-9c18-b5f30a72e941",
+          "exampleItem": "Eres libre para hacer lo que te dé la gana.",
+          "intent": "hacer lo que te dé la gana"
+        },
+        {
+          "id": "b16a4c80-6e13-4f80-8d29-c6a41b83f052",
+          "exampleItem": "Después del trabajo, puedo hacer lo que me dé la gana.",
+          "intent": "hacer lo que me dé la gana"
+        },
+        {
+          "id": "c27b5d91-7f24-4a90-9e30-d7b52c94a163",
+          "exampleItem": "Él hace lo que le da la gana sin consultar a nadie.",
+          "intent": "hace lo que le da la gana"
+        },
+        {
+          "id": "d38c6e02-8a35-4b10-8f41-e8c63d05b274",
+          "exampleItem": "Si no quieres seguir el plan, haz lo que te dé la gana.",
+          "intent": "haz lo que te dé la gana"
+        },
+        {
+          "id": "e49d7f13-9b46-4c20-9a52-f9d74e16c385",
+          "exampleItem": "Cuando termines tus tareas, podrás hacer lo que quieras.",
+          "intent": "hacer lo que quieras"
         }
       ]
     }
