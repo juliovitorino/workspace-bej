@@ -12,8 +12,6 @@ import type {
   SpeakingGameStatus
 } from "../types/speakingGameTypes";
 
-type SentenceMode = "afirmativa" | "negativa" | "interrogativa";
-
 interface VocabularyItem {
   id: string;
   meanings?: string[];
@@ -40,16 +38,6 @@ function drawDifferentChunk(
   const alternatives = chunks.filter((item) => item.id !== previous?.id);
   const pool = alternatives.length > 0 ? alternatives : chunks;
   return pool[Math.floor(Math.random() * pool.length)];
-}
-
-const sentenceModes: SentenceMode[] = [
-  "afirmativa",
-  "negativa",
-  "interrogativa"
-];
-
-function drawSentenceMode(): SentenceMode {
-  return sentenceModes[Math.floor(Math.random() * sentenceModes.length)];
 }
 
 interface SpeakingGamePlayStepProps {
@@ -100,9 +88,6 @@ export function SpeakingGamePlayStep({
   const [chunkError, setChunkError] = useState<string | null>(null);
   const [selectedChunk, setSelectedChunk] = useState<MentalIntention | null>(null);
   const previousRemainingSeconds = useRef(remainingSeconds);
-  const [sentenceMode, setSentenceMode] = useState<SentenceMode>(
-    drawSentenceMode
-  );
 
   const isAutomatic = settings.timeMode === "automatic";
   const isPaused = status === "paused";
@@ -170,10 +155,6 @@ export function SpeakingGamePlayStep({
       setSelectedNoun((previous) => settings.includeNoun ? drawDifferentItem(nouns, previous) : null);
     }
   }, [verb.id, adjectives, nouns, settings.includeAdjective, settings.includeNoun, automaticVerbOnly]);
-
-  useEffect(() => {
-    if (!automaticVerbOnly) setSentenceMode(drawSentenceMode());
-  }, [verb.id, form, automaticVerbOnly]);
 
   function scrollToVerbAfterUpdate() {
     window.requestAnimationFrame(() => {
@@ -266,12 +247,6 @@ export function SpeakingGamePlayStep({
           
           {t("speaking.sayASentenceAloudUsingThisForm")}
         </span>
-
-        <strong style={styles.sentenceMode}>
-          {sentenceMode.toUpperCase()}
-        </strong>
-
-        <span style={styles.challengeLabel}>{t("speaking.using")}</span>
 
         <strong style={styles.challengeForm}>{form}</strong>
         {language !== "en-US" && <span style={styles.challengeLabel}>{formLabel}</span>}
@@ -603,15 +578,6 @@ const styles: Record<string, CSSProperties> = {
     fontSize: "0.95rem",
     fontWeight: 700,
     color: "var(--text-secondary)"
-  },
-  sentenceMode: {
-    padding: "0.4rem 0.8rem",
-    borderRadius: "999px",
-    background: "var(--accent-soft)",
-    fontSize: "clamp(1rem, 4.5vw, 1.2rem)",
-    lineHeight: 1.2,
-    letterSpacing: "0.04em",
-    color: "var(--accent-hover)"
   },
   challengeForm: {
     fontSize: "clamp(1.35rem, 6vw, 1.9rem)",
