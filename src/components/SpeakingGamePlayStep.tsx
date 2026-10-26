@@ -63,6 +63,8 @@ interface SpeakingGamePlayStepProps {
   settings: SpeakingGameSettings;
   status: SpeakingGameStatus;
   remainingSeconds: number;
+  automaticVerbOnly: boolean;
+  onAutomaticVerbOnlyChange: (value: boolean) => void;
   onPause: () => void;
   onResume: () => void;
   onStop: () => void;
@@ -81,6 +83,8 @@ export function SpeakingGamePlayStep({
   settings,
   status,
   remainingSeconds,
+  automaticVerbOnly,
+  onAutomaticVerbOnlyChange,
   onPause,
   onResume,
   onStop,
@@ -146,26 +150,30 @@ export function SpeakingGamePlayStep({
 
   // Novo chunk quando a forma verbal ou o verbo muda, e no carregamento inicial.
   useEffect(() => {
-    setSelectedChunk((previous) => drawDifferentChunk(chunks, previous));
-  }, [verb.id, form, chunks]);
+    if (!automaticVerbOnly) {
+      setSelectedChunk((previous) => drawDifferentChunk(chunks, previous));
+    }
+  }, [verb.id, form, chunks, automaticVerbOnly]);
 
   // No modo automático, o contador volta a subir quando uma nova rodada começa.
   // Isso também cobre rodadas que reutilizam o mesmo verbo e a mesma forma.
   useEffect(() => {
-    if (isAutomatic && remainingSeconds > previousRemainingSeconds.current) {
+    if (isAutomatic && !automaticVerbOnly && remainingSeconds > previousRemainingSeconds.current) {
       setSelectedChunk((previous) => drawDifferentChunk(chunks, previous));
     }
     previousRemainingSeconds.current = remainingSeconds;
-  }, [isAutomatic, remainingSeconds, chunks]);
+  }, [isAutomatic, automaticVerbOnly, remainingSeconds, chunks]);
 
   useEffect(() => {
-    setSelectedAdjective((previous) => settings.includeAdjective ? drawDifferentItem(adjectives, previous) : null);
-    setSelectedNoun((previous) => settings.includeNoun ? drawDifferentItem(nouns, previous) : null);
-  }, [verb.id, adjectives, nouns, settings.includeAdjective, settings.includeNoun]);
+    if (!automaticVerbOnly) {
+      setSelectedAdjective((previous) => settings.includeAdjective ? drawDifferentItem(adjectives, previous) : null);
+      setSelectedNoun((previous) => settings.includeNoun ? drawDifferentItem(nouns, previous) : null);
+    }
+  }, [verb.id, adjectives, nouns, settings.includeAdjective, settings.includeNoun, automaticVerbOnly]);
 
   useEffect(() => {
-    setSentenceMode(drawSentenceMode());
-  }, [verb.id, form]);
+    if (!automaticVerbOnly) setSentenceMode(drawSentenceMode());
+  }, [verb.id, form, automaticVerbOnly]);
 
   function scrollToVerbAfterUpdate() {
     window.requestAnimationFrame(() => {
@@ -177,7 +185,7 @@ export function SpeakingGamePlayStep({
   }
 
   function handleNext() {
-    setSelectedChunk((previous) => drawDifferentChunk(chunks, previous));
+    if (!automaticVerbOnly) setSelectedChunk((previous) => drawDifferentChunk(chunks, previous));
     onNext();
     scrollToVerbAfterUpdate();
   }
@@ -306,6 +314,21 @@ export function SpeakingGamePlayStep({
             <strong style={styles.timer}>
               {remainingSeconds}s
             </strong>
+            <button
+              type="button"
+              onClick={() => onAutomaticVerbOnlyChange(!automaticVerbOnly)}
+              style={{ ...styles.timerNextButton, ...(automaticVerbOnly ? styles.lockButtonActive : {}) }}
+              aria-label={automaticVerbOnly ? "Desbloquear sorteio completo" : "Bloquear sorteio: trocar somente o verbo"}
+              title={automaticVerbOnly ? "Cadeado fechado: tocar para voltar ao sorteio completo" : "Cadeado aberto: tocar para trocar somente o verbo"}
+              aria-pressed={automaticVerbOnly}
+            >
+              <svg aria-hidden="true" width="23" height="23" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                {automaticVerbOnly
+                  ? <><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></>
+                  : <><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 7.2-2.4"/></>}
+              </svg>
+            </button>
             <button
               type="button"
               onClick={handleNext}
@@ -628,6 +651,11 @@ const styles: Record<string, CSSProperties> = {
     alignItems: "center",
     justifyContent: "center",
     gap: "0.85rem"
+  },
+  lockButtonActive: {
+    borderColor: "var(--accent, #2678c8)",
+    color: "var(--accent, #2678c8)",
+    background: "var(--surface)"
   },
   timerNextButton: {
     display: "inline-flex",
