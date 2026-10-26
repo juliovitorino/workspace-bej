@@ -2,7 +2,7 @@ import { t } from "../i18n";
 import { useTranslation } from "react-i18next";
 import type { SourceLanguage, StudentLanguage } from "../config/languages";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
-import { getSpeakingGameForms, getSpeakingChallenge, supportsSpeakingForm } from "../config/speakingGameForms";
+import { getSpeakingGameForms, getSpeakingChallenge, supportsSpeakingForm, drawSpeakingSubject, type SpeakingSubject } from "../config/speakingGameForms";
 import { getSpeakingVocabulary, type SpeakingVocabulary } from "../services/englishVerbService";
 import type { SpeakingVerb } from "../types/englishVerb";
 import { DEFAULT_SPEAKING_GAME_SETTINGS, type SpeakingGameSettings, type SpeakingGameStatus, type SpeakingGameStep } from "../types/speakingGameTypes";
@@ -19,7 +19,7 @@ export function SpeakingGame({ language, sourceLanguage, onStudyState }: { langu
   const [settings, setSettings] = useState<SpeakingGameSettings>(DEFAULT_SPEAKING_GAME_SETTINGS);
   const [status, setStatus] = useState<SpeakingGameStatus>("ready");
   const [automaticVerbOnly, setAutomaticVerbOnly] = useState(false);
-  const [round, setRound] = useState<{ language: StudentLanguage; verb: SpeakingVerb; index: number } | null>(null);
+  const [round, setRound] = useState<{ language: StudentLanguage; verb: SpeakingVerb; index: number; subject: SpeakingSubject } | null>(null);
   const [vocabulary, setVocabulary] = useState<SpeakingVocabulary | null>(null);
   const [remainingSeconds, setRemainingSeconds] = useState(settings.seconds);
   const [isLoadingRound, setIsLoadingRound] = useState(false);
@@ -82,7 +82,8 @@ export function SpeakingGame({ language, sourceLanguage, onStudyState }: { langu
       const pool = alternatives.length ? alternatives : compatible;
       const verb = pool[Math.floor(Math.random() * pool.length)];
       setVocabulary(data);
-      setRound({ language, verb, index });
+      const subject = drawSpeakingSubject(language, verb, round?.subject.id);
+      setRound({ language, verb, index, subject });
       if (kind !== "verb") setRemainingSeconds(settings.seconds);
       if (kind === "start") {
         accumulatedStudyTimeMsRef.current = 0;
@@ -143,7 +144,7 @@ export function SpeakingGame({ language, sourceLanguage, onStudyState }: { langu
     </>}
     {step === 4 && round?.language === language && vocabulary && <SpeakingGamePlayStep
       key={language} language={language} sourceLanguage={sourceLanguage} verb={round.verb} vocabulary={vocabulary}
-      form={getSpeakingChallenge(round.verb, forms[round.index])} formLabel={forms[round.index].label}
+      form={getSpeakingChallenge(round.verb, forms[round.index], language, round.subject)} formLabel={forms[round.index].label}
       settings={settings} status={status} remainingSeconds={remainingSeconds} loading={isLoadingRound}
       automaticVerbOnly={automaticVerbOnly} onAutomaticVerbOnlyChange={setAutomaticVerbOnly}
       onPause={pauseGame} onResume={resumeGame} onStop={stopGame}
