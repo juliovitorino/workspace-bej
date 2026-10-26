@@ -208,3 +208,16 @@ export function commitDeletions(files, backupDirectory, io = fs) {
   }
 }
 ```
+
+## Modo independente: criacao de HQ A4 (nao e sincronizacao)
+
+Quando o usuario pedir **gerar HQ**, **criar mini-historia HQ**, **HQ A4** ou invocar explicitamente `hashmap_hq_en_us`, `hashmap_hq_es_es`, `hashmap_hq_fr_fr` ou `hashmap_hq_pt_br`, ative o fluxo de HQ em vez do fluxo de sincronizacao. Nao execute os dois fluxos simultaneamente.
+
+- Escolha e delegue somente ao agente do idioma do exemplo: `hashmap_hq_en_us`, `hashmap_hq_es_es`, `hashmap_hq_fr_fr`, `hashmap_hq_pt_br`. Nao precisa iniciar todos os quatro para uma unica HQ. Se a delegacao nao estiver disponivel, informe; nao finja execucao do agente.
+- Exija `intentionId` e `exampleId` ou identificacao inequivoca do exemplo. Se houver ambiguidade por frase, solicite os IDs.
+- Siga integralmente o contrato de cada agente: roteiro de quatro quadros antes da arte; PNG A4 retrato 2480 x 3508, 300 DPI real e verificado; margens de 10 mm; frase original exata e legivel; arquivo por UUID; atualizacao de somente `examples[].hqImage` no JSON local apos validacao.
+- `hqImage`, `mp3` e `hashmp3` continuam privados de cada idioma. Nao propague imagens entre idiomas e nao altere audio. Nao altere outros campos ou JSONs.
+- **Excecao pontual ao bloqueio de escrita em pt-BR:** somente no MODO HQ explicitamente solicitado e fora de qualquer sincronizacao, o agente `hashmap_hq_pt_br` pode adicionar/atualizar `examples[].hqImage` de um unico exemplo selecionado no arquivo canonico pt-BR. Esta excecao nao permite qualquer outra alteracao no pt-BR nem interfere nas regras da sincronizacao.
+- A capacidade de gerar imagem NAO deve ser presumida: confirme ferramenta/integração realmente disponivel no Codex. Sem ela, pare antes de alterar arquivos e relate a limitacao. Nao instalar dependencias ou contratar API sem autorizacao.
+- Nao sobrescrever imagens existentes nem alterar `hqImage` ja preenchido sem autorizacao explicita.
+- Nao criar commits automaticamente. Relatar arquivos criados/alterados, dimensoes, DPI, verificacoes e eventuais bloqueios.
