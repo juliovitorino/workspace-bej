@@ -12,8 +12,6 @@ import type {
   SpeakingGameStatus
 } from "../types/speakingGameTypes";
 
-type SentenceMode = "afirmativa" | "negativa" | "interrogativa";
-
 interface VocabularyItem {
   id: string;
   meanings?: string[];
@@ -42,16 +40,6 @@ function drawDifferentChunk(
   return pool[Math.floor(Math.random() * pool.length)];
 }
 
-const sentenceModes: SentenceMode[] = [
-  "afirmativa",
-  "negativa",
-  "interrogativa"
-];
-
-function drawSentenceMode(): SentenceMode {
-  return sentenceModes[Math.floor(Math.random() * sentenceModes.length)];
-}
-
 interface SpeakingGamePlayStepProps {
   language: StudentLanguage;
   sourceLanguage: SourceLanguage;
@@ -63,6 +51,8 @@ interface SpeakingGamePlayStepProps {
   settings: SpeakingGameSettings;
   status: SpeakingGameStatus;
   remainingSeconds: number;
+  automaticVerbOnly: boolean;
+  onAutomaticVerbOnlyChange: (value: boolean) => void;
   onPause: () => void;
   onResume: () => void;
   onStop: () => void;
@@ -81,6 +71,8 @@ export function SpeakingGamePlayStep({
   settings,
   status,
   remainingSeconds,
+  automaticVerbOnly,
+  onAutomaticVerbOnlyChange,
   onPause,
   onResume,
   onStop,
@@ -96,9 +88,6 @@ export function SpeakingGamePlayStep({
   const [chunkError, setChunkError] = useState<string | null>(null);
   const [selectedChunk, setSelectedChunk] = useState<MentalIntention | null>(null);
   const previousRemainingSeconds = useRef(remainingSeconds);
-  const [sentenceMode, setSentenceMode] = useState<SentenceMode>(
-    drawSentenceMode
-  );
 
   const isAutomatic = settings.timeMode === "automatic";
   const isPaused = status === "paused";
@@ -146,26 +135,26 @@ export function SpeakingGamePlayStep({
 
   // Novo chunk quando a forma verbal ou o verbo muda, e no carregamento inicial.
   useEffect(() => {
-    setSelectedChunk((previous) => drawDifferentChunk(chunks, previous));
-  }, [verb.id, form, chunks]);
+    if (!automaticVerbOnly) {
+      setSelectedChunk((previous) => drawDifferentChunk(chunks, previous));
+    }
+  }, [verb.id, form, chunks, automaticVerbOnly]);
 
   // No modo automático, o contador volta a subir quando uma nova rodada começa.
   // Isso também cobre rodadas que reutilizam o mesmo verbo e a mesma forma.
   useEffect(() => {
-    if (isAutomatic && remainingSeconds > previousRemainingSeconds.current) {
+    if (isAutomatic && !automaticVerbOnly && remainingSeconds > previousRemainingSeconds.current) {
       setSelectedChunk((previous) => drawDifferentChunk(chunks, previous));
     }
     previousRemainingSeconds.current = remainingSeconds;
-  }, [isAutomatic, remainingSeconds, chunks]);
+  }, [isAutomatic, automaticVerbOnly, remainingSeconds, chunks]);
 
   useEffect(() => {
-    setSelectedAdjective((previous) => settings.includeAdjective ? drawDifferentItem(adjectives, previous) : null);
-    setSelectedNoun((previous) => settings.includeNoun ? drawDifferentItem(nouns, previous) : null);
-  }, [verb.id, adjectives, nouns, settings.includeAdjective, settings.includeNoun]);
-
-  useEffect(() => {
-    setSentenceMode(drawSentenceMode());
-  }, [verb.id, form]);
+    if (!automaticVerbOnly) {
+      setSelectedAdjective((previous) => settings.includeAdjective ? drawDifferentItem(adjectives, previous) : null);
+      setSelectedNoun((previous) => settings.includeNoun ? drawDifferentItem(nouns, previous) : null);
+    }
+  }, [verb.id, adjectives, nouns, settings.includeAdjective, settings.includeNoun, automaticVerbOnly]);
 
   function scrollToVerbAfterUpdate() {
     window.requestAnimationFrame(() => {
@@ -177,7 +166,7 @@ export function SpeakingGamePlayStep({
   }
 
   function handleNext() {
-    setSelectedChunk((previous) => drawDifferentChunk(chunks, previous));
+    if (!automaticVerbOnly) setSelectedChunk((previous) => drawDifferentChunk(chunks, previous));
     onNext();
     scrollToVerbAfterUpdate();
   }
@@ -259,12 +248,6 @@ export function SpeakingGamePlayStep({
           {t("speaking.sayASentenceAloudUsingThisForm")}
         </span>
 
-        <strong style={styles.sentenceMode}>
-          {sentenceMode.toUpperCase()}
-        </strong>
-
-        <span style={styles.challengeLabel}>{t("speaking.using")}</span>
-
         <strong style={styles.challengeForm}>{form}</strong>
         {language !== "en-US" && <span style={styles.challengeLabel}>{formLabel}</span>}
       </div>
@@ -306,6 +289,21 @@ export function SpeakingGamePlayStep({
             <strong style={styles.timer}>
               {remainingSeconds}s
             </strong>
+            <button
+              type="button"
+              onClick={() => onAutomaticVerbOnlyChange(!automaticVerbOnly)}
+              style={{ ...styles.timerNextButton, ...(automaticVerbOnly ? styles.lockButtonActive : {}) }}
+              aria-label={automaticVerbOnly ? "Desbloquear sorteio completo" : "Bloquear sorteio: trocar somente o verbo"}
+              title={automaticVerbOnly ? "Cadeado fechado: tocar para voltar ao sorteio completo" : "Cadeado aberto: tocar para trocar somente o verbo"}
+              aria-pressed={automaticVerbOnly}
+            >
+              <svg aria-hidden="true" width="23" height="23" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                {automaticVerbOnly
+                  ? <><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></>
+                  : <><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 7.2-2.4"/></>}
+              </svg>
+            </button>
             <button
               type="button"
               onClick={handleNext}
@@ -581,15 +579,6 @@ const styles: Record<string, CSSProperties> = {
     fontWeight: 700,
     color: "var(--text-secondary)"
   },
-  sentenceMode: {
-    padding: "0.4rem 0.8rem",
-    borderRadius: "999px",
-    background: "var(--accent-soft)",
-    fontSize: "clamp(1rem, 4.5vw, 1.2rem)",
-    lineHeight: 1.2,
-    letterSpacing: "0.04em",
-    color: "var(--accent-hover)"
-  },
   challengeForm: {
     fontSize: "clamp(1.35rem, 6vw, 1.9rem)",
     lineHeight: 1.25,
@@ -628,6 +617,11 @@ const styles: Record<string, CSSProperties> = {
     alignItems: "center",
     justifyContent: "center",
     gap: "0.85rem"
+  },
+  lockButtonActive: {
+    borderColor: "var(--accent, #2678c8)",
+    color: "var(--accent, #2678c8)",
+    background: "var(--surface)"
   },
   timerNextButton: {
     display: "inline-flex",

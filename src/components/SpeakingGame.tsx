@@ -18,6 +18,7 @@ export function SpeakingGame({ language, sourceLanguage, onStudyState }: { langu
   const [step, setStep] = useState<SpeakingGameStep>(1);
   const [settings, setSettings] = useState<SpeakingGameSettings>(DEFAULT_SPEAKING_GAME_SETTINGS);
   const [status, setStatus] = useState<SpeakingGameStatus>("ready");
+  const [automaticVerbOnly, setAutomaticVerbOnly] = useState(false);
   const [round, setRound] = useState<{ language: StudentLanguage; verb: SpeakingVerb; index: number } | null>(null);
   const [vocabulary, setVocabulary] = useState<SpeakingVocabulary | null>(null);
   const [remainingSeconds, setRemainingSeconds] = useState(settings.seconds);
@@ -43,6 +44,7 @@ export function SpeakingGame({ language, sourceLanguage, onStudyState }: { langu
     setRound(null);
     setVocabulary(null);
     setStatus("ready");
+    setAutomaticVerbOnly(false);
     setStep(1);
     setIsLoadingRound(false);
     setError(null);
@@ -71,7 +73,7 @@ export function SpeakingGame({ language, sourceLanguage, onStudyState }: { langu
       const data = await getSpeakingVocabulary(language);
       if (!valid()) return;
       const previousIndex = round?.index ?? 0;
-      const index = kind === "verb" ? previousIndex : settings.order === "random"
+      const index = (kind === "verb" || (kind === "next" && settings.timeMode === "automatic" && automaticVerbOnly)) ? previousIndex : settings.order === "random"
         ? getRandomFormIndex(kind === "start" ? undefined : previousIndex, forms.length)
         : kind === "start" ? 0 : getNextSequentialFormIndex(previousIndex, forms.length);
       const compatible = data.verbs.filter(verb => supportsSpeakingForm(verb, forms[index]));
@@ -113,6 +115,7 @@ export function SpeakingGame({ language, sourceLanguage, onStudyState }: { langu
     recordStudyTime();
     setLastStudySeconds(Math.floor(accumulatedStudyTimeMsRef.current / 1000));
     setStatus("ready");
+    setAutomaticVerbOnly(false);
     setRound(null);
     setRemainingSeconds(settings.seconds);
     setIsLoadingRound(false);
@@ -142,6 +145,7 @@ export function SpeakingGame({ language, sourceLanguage, onStudyState }: { langu
       key={language} language={language} sourceLanguage={sourceLanguage} verb={round.verb} vocabulary={vocabulary}
       form={getSpeakingChallenge(round.verb, forms[round.index])} formLabel={forms[round.index].label}
       settings={settings} status={status} remainingSeconds={remainingSeconds} loading={isLoadingRound}
+      automaticVerbOnly={automaticVerbOnly} onAutomaticVerbOnlyChange={setAutomaticVerbOnly}
       onPause={pauseGame} onResume={resumeGame} onStop={stopGame}
       onNext={() => void loadRound("next")} onNewVerb={() => void loadRound("verb")} />}
     {error && <div style={styles.error} role="alert"><strong>{t("speaking.couldNotContinue")}</strong><span>{error}</span></div>}
