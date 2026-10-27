@@ -16,6 +16,24 @@ export function advanceExtra(draft: ExtraActivityDraft, now: number): ExtraActiv
   return { ...draft, dailyMs, accumulatedMs: Object.values(dailyMs).reduce((a, b) => a + b, 0), updatedAt,
     runningSince: draft.state === "running" ? updatedAt : null };
 }
+// Subtract from the latest accumulated intervals, keeping the daily totals consistent.
+// This is applied to the persisted draft (not just the displayed clock).
+export function rewindExtra(draft: ExtraActivityDraft, now: number, milliseconds = 300_000): ExtraActivityDraft {
+  const advanced = advanceExtra(draft, now);
+  let remaining = Math.min(milliseconds, advanced.accumulatedMs);
+  const dailyMs = { ...advanced.dailyMs };
+  for (const day of Object.keys(dailyMs).sort().reverse()) {
+    if (remaining <= 0) break;
+    const removed = Math.min(remaining, dailyMs[day]);
+    dailyMs[day] -= removed;
+    remaining -= removed;
+    if (dailyMs[day] === 0) delete dailyMs[day];
+  }
+  return { ...advanced, dailyMs,
+    accumulatedMs: Object.values(dailyMs).reduce((sum, ms) => sum + ms, 0),
+    // A running session resumes counting from this instant, never from before the adjustment.
+    runningSince: draft.state === "running" ? advanced.updatedAt : null };
+}
 export function recoverExtra(store: StudyStore, owner: string, now: number): StudyStore {
   const draft = store.extraActivity;
   return draft && draft.owner !== owner && !draft.recoveryAt
