@@ -116,6 +116,14 @@ export function ReviewTraining({
   const { t } = useTranslation();
   const languageName = localizedLanguageName(language).toLowerCase();
   const [studentText, setStudentText] = useState("");
+  // O ditado do teclado do iOS ajusta palavras e espacos de forma assincrona.
+  // Um textarea controlado pode sobrescrever esses ajustes ao renderizar.
+  // Deixe o navegador controlar o valor no DOM, como no Treino Basico/Avancado.
+  const answerRef = useRef<HTMLTextAreaElement>(null);
+  function setAnswerText(value: string) {
+    if (answerRef.current) answerRef.current.value = value;
+    setStudentText(value);
+  }
   const intentionValidation = useMemo(
     () => validateIntention(studentText, intention),
     [studentText, intention]
@@ -221,13 +229,10 @@ export function ReviewTraining({
       }
 
       recordStudyActivity();
-      setStudentText((current) => {
-        const currentText = current.trimEnd();
-
-        return currentText
-          ? `${currentText} ${transcript}`
-          : transcript;
-      });
+      // Usa o valor atual do textarea: o iOS pode ter alterado o DOM
+      // antes de disparar o evento que atualiza o estado React.
+      const currentText = (answerRef.current?.value ?? studentText).trimEnd();
+      setAnswerText(currentText ? `${currentText} ${transcript}` : transcript);
 
       setCopyStatus("idle");
       setEvaluation(null);
@@ -277,7 +282,7 @@ export function ReviewTraining({
   }
 
   function handleClearStudentText() {
-    setStudentText("");
+    setAnswerText("");
     setCopyStatus("idle");
     setEvaluation(null);
     setEvaluationCopyStatus(null);
@@ -913,10 +918,13 @@ export function ReviewTraining({
               id="review-training-answer"
               rows={5}
               placeholder={t("common.typeYourSentenceInTargetlanguage", { targetLanguage: (languageName) })}
-              value={studentText}
+              ref={answerRef}
+              defaultValue=""
+              onBlur={(event) => setStudentText(event.currentTarget.value)}
+              onCompositionEnd={(event) => setStudentText(event.currentTarget.value)}
               onChange={(event) => {
-                // Atualizar primeiro o textarea controlado. Nunca atualizar o
-                // rastreador no keydown/input antes de o navegador inserir o texto.
+                // Atualiza o estado sem reescrever o valor nativo do textarea.
+                // Isso preserva os espacos inseridos pelo ditado do iPhone.
                 setStudentText(event.target.value);
                 recordStudyActivity();
                 setCopyStatus("idle");
