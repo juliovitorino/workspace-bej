@@ -7,7 +7,7 @@ export const isStudyStorageKey = (key: string | null) => key === null || key.sta
 export const STUDY_CHANGED = "bej-study-changed";
 export const APPLICATION = "Brazilian English Journey";
 export const MAX_BACKUP_BYTES = 5 * 1024 * 1024;
-export const STUDY_MODULES = ["hashmap", "memory-flashcards", "chunk-flashcards", "chunk-favorites", "shadowing", "basic-training", "advanced-training", "review-training", "speaking-game", "interpretation", "extra-activities"] as const;
+export const STUDY_MODULES = ["hashmap", "memory-flashcards", "chunk-flashcards", "chunk-favorites", "shadowing", "basic-training", "advanced-training", "review-training", "speaking-game", "would-you-rather", "interpretation", "extra-activities"] as const;
 export const EXTRA_CATEGORIES = ["conversation", "writing", "private-class", "reading", "active-listening", "other"] as const;
 export type ExtraCategory = typeof EXTRA_CATEGORIES[number];
 // Optional: old sessions and active drafts remain valid without this field.
