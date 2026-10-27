@@ -136,7 +136,9 @@
       "shadowing": "Shadowing",
       "self-speaking": "Hablar conmigo mismo",
       "misc": "Diversos"
-    }
+    },
+    "rewindFiveMinutes": "Retroceder 5 min",
+    "rewindFiveMinutesHelp": "Restar 5 minutos del cronómetro y actualizar la sesión en curso."
   },
   "study": {
     "calendar": "Filtrar por período",

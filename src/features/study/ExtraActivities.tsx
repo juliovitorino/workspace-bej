@@ -89,6 +89,14 @@ export function ExtraActivities({ language, state }: { language: StudentLanguage
       </div> : <div className="study-actions">
         {!draft ? <button type="button" className="primary-button" disabled={busy || !available || !!storageError} onClick={() => void act(() => startExtraActivity(selectedLanguage, category, note, category === "other" ? subcategory : undefined))}>{t("extras.start")}</button> : <>
           <button type="button" className="secondary-button" disabled={busy || !available} onClick={() => void act(() => changeExtraActivity(draft.id, draft.state === "running" ? "pause" : "resume"))}>{t(draft.state === "running" ? "common.pause" : "common.resume")}</button>
+          <button type="button" className="secondary-button extra-activity-rewind" disabled={busy || !available || maximum === 0}
+            onClick={() => void act(() => changeExtraActivity(draft.id, "rewind"))}
+            title={t("extras.rewindFiveMinutesHelp")} aria-label={t("extras.rewindFiveMinutes")}>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 11a9 9 0 1 1 2.7 6.4"/><path d="M3 4v7h7"/><path d="M12 7v5l-3 2"/>
+            </svg>
+            {t("extras.rewindFiveMinutes")}
+          </button>
           <button type="button" className="primary-button" disabled={busy || !available || maximum === 0} onClick={() => void act(() => changeExtraActivity(draft.id, "stop"), maximum)}>{t("extras.stopSave")}</button>
           <button type="button" className="secondary-button" disabled={busy || !available} onClick={discard}>{t("extras.discard")}</button>
         </>}

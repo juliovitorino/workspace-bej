@@ -136,7 +136,9 @@
       "shadowing": "Shadowing",
       "self-speaking": "Speaking to myself",
       "misc": "Miscellaneous"
-    }
+    },
+    "rewindFiveMinutes": "Rewind 5 min",
+    "rewindFiveMinutesHelp": "Subtract 5 minutes from the timer and update the ongoing session."
   },
   "study": {
     "calendar": "Filter by period",
