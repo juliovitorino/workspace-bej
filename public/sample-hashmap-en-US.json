@@ -107,6 +107,7 @@
       "level": "A2",
       "examples": [
         {
+          "hqImage": "/images/hq/a2/en-US/09a9f70c-360b-4266-bb75-7c02800d4c03.png",
           "id": "09a9f70c-360b-4266-bb75-7c02800d4c03",
           "exampleItem": "It might rain.",
           "intent": "might",
@@ -120,6 +121,7 @@
           }
         },
         {
+          "hqImage": "/images/hq/a2/en-US/a2f73c06-6407-44cb-a92d-1682c50cd94a.png",
           "id": "a2f73c06-6407-44cb-a92d-1682c50cd94a",
           "exampleItem": "You should play today.",
           "intent": "should",
@@ -72386,6 +72388,7 @@
         },
         {
           "id": "a63f9b57-2d80-4e40-8c76-b3f18d50e729",
+          "hqImage": "/images/hq/b1/en-US/a63f9b57-2d80-4e40-8c76-b3f18d50e729.png",
           "exampleItem": "If you want to change the plans, we'll do as you wish.",
           "intent": "as you wish",
           "mp3": {

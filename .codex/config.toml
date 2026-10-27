@@ -17,3 +17,20 @@ config_file = "agents/hashmap_es_es.toml"
 [agents.hashmap_fr_fr]
 description = "Sincroniza exclusivamente o Mental Hashmap fr-FR a partir de pt-BR, preservando hqImage local."
 config_file = "agents/hashmap_fr_fr.toml"
+
+# Novos especialistas de HQ A4: executados apenas quando explicitamente solicitados.
+[agents.hashmap_hq_en_us]
+description = "Gera HQ de quatro quadros A4 em en-US, valida PNG 300 DPI e atualiza hqImage do proprio idioma."
+config_file = "agents/hashmap_hq_en_us.toml"
+
+[agents.hashmap_hq_es_es]
+description = "Gera HQ de quatro quadros A4 em es-ES, valida PNG 300 DPI e atualiza hqImage do proprio idioma."
+config_file = "agents/hashmap_hq_es_es.toml"
+
+[agents.hashmap_hq_fr_fr]
+description = "Gera HQ de quatro quadros A4 em fr-FR, valida PNG 300 DPI e atualiza hqImage do proprio idioma."
+config_file = "agents/hashmap_hq_fr_fr.toml"
+
+[agents.hashmap_hq_pt_br]
+description = "Gera HQ de quatro quadros A4 em pt-BR, valida PNG 300 DPI e atualiza somente hqImage canonico autorizado."
+config_file = "agents/hashmap_hq_pt_br.toml"
