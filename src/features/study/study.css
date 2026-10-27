@@ -296,3 +296,7 @@
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+
+/* Extra activities: clearly visible, touch-friendly five-minute time correction. */
+.extra-activities .extra-activity-rewind { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.extra-activities .extra-activity-rewind svg { flex-shrink: 0; }
