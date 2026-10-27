@@ -128,6 +128,8 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
   function choose(choice: WyrChoice) {
     if (!current) return;
     recordActivity();
+    // Ao trocar a alternativa, ocultar a resposta anterior.
+    setRevealed({ A: false, B: false });
     const next = { ...choices, [current.id]: choice };
     setChoices(next);
     if (!saveWyrChoices(next)) setStorageError(true);
@@ -215,8 +217,8 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
         {card(tr("question"), current.question, "question")}
         {card(tr("optionA"), current.options.A.text, "optionA", { select: () => choose("A"), selected: choices[current.id] === "A" })}
         {card(tr("optionB"), current.options.B.text, "optionB", { select: () => choose("B"), selected: choices[current.id] === "B" })}
-        {card(tr("answerA"), current.options.A.answer, "answerA", { reveal: revealed.A, toggle: () => { recordActivity(); setRevealed(p => ({ ...p, A: !p.A })); } })}
-        {card(tr("answerB"), current.options.B.answer, "answerB", { reveal: revealed.B, toggle: () => { recordActivity(); setRevealed(p => ({ ...p, B: !p.B })); } })}
+        {choices[current.id] === "A" && card(tr("answerA"), current.options.A.answer, "answerA", { reveal: revealed.A, toggle: () => { recordActivity(); setRevealed(p => ({ ...p, A: !p.A })); } })}
+        {choices[current.id] === "B" && card(tr("answerB"), current.options.B.answer, "answerB", { reveal: revealed.B, toggle: () => { recordActivity(); setRevealed(p => ({ ...p, B: !p.B })); } })}
         {notice && <p role="status" className="wyr-notice">{notice}</p>}
         <div className="wyr-navigation"><button type="button" className="wyr-button wyr-button--ghost" onClick={() => go(index - 1)} disabled={index === 0}>‹ {tr("previous")}</button><button type="button" className="wyr-button" onClick={() => go(index + 1)}>{index + 1 === practiceSet.questions.length ? tr("finish") : tr("next")} ›</button></div>
       </div>}
