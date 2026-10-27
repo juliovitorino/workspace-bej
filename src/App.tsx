@@ -26,6 +26,7 @@ import { InterpretationPanel } from "./components/InterpretationPanel";
 import { IntentionList } from "./components/IntentionList";
 import { IntentionDetails } from "./components/IntentionDetails";
 import { SpeakingGame } from "./components/SpeakingGame";
+import { WouldYouRather } from "./features/would-you-rather/WouldYouRather";
 import { MemoryFlashcards } from "./components/MemoryFlashcards";
 import { PersonalFlashcards } from "./features/personal-flashcards/PersonalFlashcards";
 import { PERSONAL_CARDS_CHANGED, countPersonalFlashcards } from "./features/personal-flashcards/personalFlashcardStorage";
@@ -151,7 +152,7 @@ function App() {
   }, [studyView, language]);
   const extraActivity = useExtraActivity();
   const studyWarning = useStudyTracking(studyView, language, trainingMode ? trainingSignal : studySignal,
-    backupReminderOpen || !!settingsDialog || (studyView !== "shadowing" && (loading || !data)));
+    backupReminderOpen || !!settingsDialog || (!["shadowing", "would-you-rather"].includes(studyView) && (loading || !data)));
 
   // Mesma verificacao de modo autor usada pelas ferramentas existentes.
   const authorMode = isAuthorMode();
@@ -392,7 +393,7 @@ function App() {
             } else {
               setFilterScrollRequest(0);
             }
-            if (view === "settings" || view === "shadowing" || view === "favorite-chunks" || view === "study-dashboard" || view === "extra-activities") {
+            if (view === "settings" || view === "shadowing" || view === "would-you-rather" || view === "favorite-chunks" || view === "study-dashboard" || view === "extra-activities") {
               closeTraining();
               setSelected(null);
               window.speechSynthesis?.cancel();
@@ -430,16 +431,17 @@ function App() {
             {currentView === "study-dashboard" && <StudyDashboard language={language} initialSection={dashboardSection} />}
             {extraActivity.draft && currentView !== "extra-activities" && <p className="warning-banner" role="status">{t("extras.activeNotice")} <button type="button" className="secondary-button" onClick={() => { closeTraining(); setSelected(null); setCurrentView("extra-activities"); }}>{t("extras.open")}</button></p>}
             {currentView === "extra-activities" && <ExtraActivities language={language} state={extraActivity} />}
+            {currentView === "would-you-rather" && <WouldYouRather key={`${sourceLanguage}-${language}`} language={language} sourceLanguage={sourceLanguage} onStudyState={reportStudy} />}
             {currentView === "shadowing" && <StoryShadowing key={`${sourceLanguage}-${language}`} language={language} onStudyState={reportStudy} onMenu={() => setCurrentView("hashmap")} />}
 
-        {loading && currentView !== "shadowing" && currentView !== "study-dashboard" && currentView !== "extra-activities" && currentView !== "settings" && (
+        {loading && currentView !== "shadowing" && currentView !== "would-you-rather" && currentView !== "study-dashboard" && currentView !== "extra-activities" && currentView !== "settings" && (
           <div className="status-card">
             <div className="spinner" />
             <p>{t("app.loadingMentalHashmap")}</p>
           </div>
         )}
 
-        {!loading && error && !data && currentView !== "shadowing" && currentView !== "study-dashboard" && currentView !== "extra-activities" && currentView !== "settings" && (
+        {!loading && error && !data && currentView !== "shadowing" && currentView !== "would-you-rather" && currentView !== "study-dashboard" && currentView !== "extra-activities" && currentView !== "settings" && (
           <div className="status-card error-card">
             <h2>{t("app.couldNotLoadMentalHashmap")}</h2>
             <p>{error}</p>

@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const SIDEBAR_COLLAPSED_KEY = "bej-sidebar-collapsed";
 import type { ThemePreference } from "../theme";
-export type AppView = "settings" | "study-dashboard" | "extra-activities" | "personal-flashcards" | "memory-flashcards" | "hashmap" | "exercises" | "speaking-game" | "chunk-flashcards" | "favorite-chunks" | "interpretation" | "shadowing";
+export type AppView = "settings" | "study-dashboard" | "extra-activities" | "personal-flashcards" | "memory-flashcards" | "hashmap" | "exercises" | "speaking-game" | "would-you-rather" | "chunk-flashcards" | "favorite-chunks" | "interpretation" | "shadowing";
 interface SidebarProps {
   theme: ThemePreference;
   onThemeChange: (theme: ThemePreference) => void;
@@ -61,6 +61,9 @@ const menuItems: Array<{
       icon: "🃏"
     },
     ...(personalCount >= 1 ? [{ id: "personal-flashcards" as AppView, label: t("personal.title"), icon: "⭐" }] : []),
+    {
+      id: "would-you-rather", label: "Would You Rather?", icon: "🤔"
+    },
     {
       id: "speaking-game",
       label: t("common.speakingGame"),
