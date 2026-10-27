@@ -221,3 +221,22 @@ Quando o usuario pedir **gerar HQ**, **criar mini-historia HQ**, **HQ A4** ou in
 - A capacidade de gerar imagem NAO deve ser presumida: confirme ferramenta/integração realmente disponivel no Codex. Sem ela, pare antes de alterar arquivos e relate a limitacao. Nao instalar dependencias ou contratar API sem autorizacao.
 - Nao sobrescrever imagens existentes nem alterar `hqImage` ja preenchido sem autorizacao explicita.
 - Nao criar commits automaticamente. Relatar arquivos criados/alterados, dimensoes, DPI, verificacoes e eventuais bloqueios.
+
+## Regra obrigatoria: baloes DENTRO das cenas (HQ integrada)
+
+- Cada quadro deve ser uma ilustracao continua, com o balao **sobreposto dentro da cena** e com a cauda apontando para o personagem que fala.
+- **PROIBIDO** gerar faixas brancas, cabecalhos de balao, cartoes de texto ou elipses isoladas acima/fora da ilustracao. Nao aceitar o formato 'texto no topo + imagem embaixo'.
+- Reservar espaco negativo no enquadramento da cena para o balao, sem cobrir rostos ou a acao principal. Manter a arte visivel ao redor e atras do balao.
+- Se o gerador errar a tipografia, compor texto e balao SOBRE a propria arte, com cauda integrada; jamais deslocar o balao para fora do quadro.
+- Validar visualmente **todos os quatro quadros**. Falha de integracao, cauda sem falante, texto incorreto ou baloes fora da moldura BLOQUEIAM a atualizacao de `hqImage`.
+
+
+## Regra V2 — direcao de arte e baloes compactos (obrigatoria para HQ)
+
+- Os agentes devem ler `.codex/docs/EXEMPLO-VISUAL-E-CHECKLIST.md` antes de criar a arte.
+- REJEITAR baloes ovais geometricos enormes, elipses identicas, baloes com excesso de espaco branco e caudas desproporcionais, MESMO se estiverem dentro do quadro.
+- Exigir baloes organicos de quadrinhos, compactos e ajustados ao texto (meta de ate 20% da area do painel; tolerancia de ate 25% para frases-alvo longas).
+- Exigir quatro enquadramentos/acoes diferentes e progressao narrativa visual. Repetir quatro cenas quase identicas de pessoas sentadas conversando e motivo de REPROVACAO.
+- Planejar area negativa na arte e, quando necessario, compor baloes e tipografia sobre a cena com ferramenta grafica; nunca usar cabecalhos ou legendas externas.
+- Revisar visualmente cada quadro; nao aceitar apenas verificacao automatica de dimensoes/DPI. Se nao houver revisao visual possivel, nao atualizar hqImage.
+- Para regenerar imagem ja existente, exigir autorizacao explicita de substituicao e preservar os demais campos JSON e arquivos de audio.
