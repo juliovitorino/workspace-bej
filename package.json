@@ -20,12 +20,14 @@
     "react-dom": "^19.0.0",
     "react-i18next": "^17.0.19",
     "sharp": "^0.35.5",
+    "three": "^0.186.1",
     "typescript": "~5.7.2",
     "vite": "^6.0.5"
   },
   "devDependencies": {
     "@types/react": "^19.0.3",
     "@types/react-dom": "^19.0.2",
+    "@types/three": "^0.186.0",
     "openai": "^7.38.0"
   }
 }

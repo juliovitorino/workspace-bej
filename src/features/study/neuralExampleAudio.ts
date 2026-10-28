@@ -34,6 +34,8 @@ interface PlayOptions {
   onError?: () => void;
 }
 let audio: HTMLAudioElement | null = null;
+/** Somente leitura: fornece o relógio real do MP3 para o avatar. */
+export function getActiveNeuralAudio(): HTMLAudioElement | null { return audio; }
 let generation = 0;
 let token: string | null = null;
 let onCancel: (() => void) | undefined;

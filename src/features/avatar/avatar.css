@@ -1,0 +1,20 @@
+.bej-avatar {
+  width: min(100%, 370px);
+  margin: 0.75rem auto 1.25rem;
+  overflow: hidden;
+  border: 1px solid var(--border, #d9e2ec);
+  border-radius: 18px;
+  background: linear-gradient(155deg, #eaf6ff, #f6f7fb 65%, #e2ecf7);
+  color: #20334c;
+}
+.bej-avatar__scene { height: 260px; width: 100%; position: relative; }
+.bej-avatar__scene canvas { display: block; width: 100%; height: 100%; }
+.bej-avatar__caption {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 0.5rem; padding: 0.6rem 0.85rem;
+  background: rgba(255,255,255,0.8); font-size: 0.85rem;
+}
+.bej-avatar__caption span { font-size: 0.75rem; }
+.bej-avatar__fallback { padding: 1rem; text-align: center; }
+@media (max-width: 500px) { .bej-avatar__scene { height: 215px; } }
+@media print { .bej-avatar { display: none !important; } }
