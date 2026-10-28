@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1240,
+    "totalIntentions": 1241,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -39438,17 +39438,17 @@
         },
         {
           "id": "a7f31d82-6c45-4e90-8b12-d5a73f09c264",
-          "exampleItem": "?Yo me encargo! Resolver? este problema.",
+          "exampleItem": "¡Yo me encargo! Resolveré este problema.",
           "intent": "Yo me encargo"
         },
         {
           "id": "b8e42c93-7d56-4f10-9a23-e6b84d15f375",
-          "exampleItem": "No tienes que preocuparte por la reuni?n. ?Yo me encargo!",
+          "exampleItem": "No tienes que preocuparte por la reunión. ¡Yo me encargo!",
           "intent": "Yo me encargo"
         },
         {
           "id": "c9d53b04-8e67-4a20-8f34-a7c95e26b486",
-          "exampleItem": "?Yo me encargo! Voy a comprobar qu? ha pasado.",
+          "exampleItem": "¡Yo me encargo! Voy a comprobar qué ha pasado.",
           "intent": "Yo me encargo"
         },
         {
@@ -39458,7 +39458,7 @@
         },
         {
           "id": "e1b75d26-1a89-4c40-8d56-c9e17a48b608",
-          "exampleItem": "?Yo me encargo! Me ocupar? de todo mientras est?s fuera.",
+          "exampleItem": "¡Yo me encargo! Me ocuparé de todo mientras estés fuera.",
           "intent": "Yo me encargo"
         }
       ]
@@ -41099,12 +41099,12 @@
         },
         {
           "id": "ca14068b-824b-4926-91c0-e47febf6edc7",
-          "exampleItem": "?Eso mola!",
+          "exampleItem": "¡Eso mola!",
           "intent": "Eso mola"
         },
         {
           "id": "f0b3e5f4-83e9-4e5e-bd22-8f284ffc434d",
-          "exampleItem": "?Eso mola!",
+          "exampleItem": "¡Eso mola!",
           "intent": "Eso mola"
         }
       ]
@@ -48742,6 +48742,82 @@
           "id": "e49d7f13-9b46-4c20-9a52-f9d74e16c385",
           "exampleItem": "Cuando termines tus tareas, podrás hacer lo que quieras.",
           "intent": "hacer lo que quieras"
+        }
+      ]
+    },
+    {
+      "id": "quanto-custa-para-5c82e1a7-9d34-4b60-8f21-a6e73c09d458",
+      "intention": "¿Cuánto cuesta + infinitivo?",
+      "pattern": "cuánto + (me / te / le / nos / os / les) + cuesta + infinitivo / cuánto cuesta que + sujeto + subjuntivo",
+      "description": "Se usa para preguntar por el precio o el coste de realizar una acción, contratar un servicio, participar en una actividad o alcanzar un objetivo. La estructura inglesa «How much does it cost to + verbo en forma base» permite formular preguntas sobre costes. En español, «¿Cuánto cuesta + infinitivo?» es la forma más directa; se puede añadir un pronombre, como en «¿Cuánto nos cuesta participar?», o usar «¿Cuánto cuesta que alguien + subjuntivo?» para indicar quién realiza la acción.",
+      "category": "questions",
+      "searchTerms": [
+        "cuánto cuesta",
+        "cuánto cuesta que",
+        "cuál es el precio de",
+        "cuánto tengo que pagar para",
+        "cuál es el coste de",
+        "cuánto cuesta hacer",
+        "cuánto cuesta contratar",
+        "cuánto cuesta aprender"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])cuánto\\s+(?:(?:me|te|le|nos|os|les)\\s+)?cuesta\\s+(?:[\\p{L}]+(?:ar|er|ir)|que\\s+[\\p{L}]+)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])cuál\\s+es\\s+el\\s+(?:precio|coste)\\s+de(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])cuánto\\s+tengo\\s+que\\s+pagar\\s+para(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "preguntas",
+        "precios",
+        "costes",
+        "dinero",
+        "servicios",
+        "generador de frases",
+        "conversación"
+      ],
+      "related": [],
+      "structure": "¿Cuánto cuesta + infinitivo? / ¿Cuánto cuesta que + persona + subjuntivo?",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "a71c3e92-6d45-4b80-9f21-c8e63a05d274",
+          "exampleItem": "¿Cuánto cuesta aprender inglés por internet?",
+          "intent": "Cuánto cuesta aprender"
+        },
+        {
+          "id": "b82d4f13-7e56-4c90-8a32-d9f74b16a385",
+          "exampleItem": "¿Cuánto cuesta viajar a Estados Unidos?",
+          "intent": "Cuánto cuesta viajar"
+        },
+        {
+          "id": "c93e5a24-8f67-4d10-9b43-e0a85c27b496",
+          "exampleItem": "¿Cuánto cuesta que una persona viva sola en esta ciudad?",
+          "intent": "Cuánto cuesta que una persona viva"
+        },
+        {
+          "id": "d14f6b35-9a78-4e20-8c54-f1b96d38c507",
+          "exampleItem": "¿Cuánto cuesta contratar a un profesor particular de inglés?",
+          "intent": "Cuánto cuesta contratar"
+        },
+        {
+          "id": "e25a7c46-1b89-4f30-9d65-a2c07e49d618",
+          "exampleItem": "¿Cuánto cuesta desarrollar una aplicación como esta?",
+          "intent": "Cuánto cuesta desarrollar"
+        },
+        {
+          "id": "f36b8d57-2c90-4a40-8e76-b3d18f50e729",
+          "exampleItem": "¿Cuánto cuesta reparar mi ordenador?",
+          "intent": "Cuánto cuesta reparar"
+        },
+        {
+          "id": "a47c9e68-3d01-4b50-9f87-c4e29a61f830",
+          "exampleItem": "¿Cuánto nos cuesta participar en este evento?",
+          "intent": "Cuánto nos cuesta participar"
+        },
+        {
+          "id": "b58d1f79-4e12-4c60-8a98-d5f30b72a941",
+          "exampleItem": "¿Cuánto cuesta publicar una aplicación en internet?",
+          "intent": "Cuánto cuesta publicar"
         }
       ]
     }

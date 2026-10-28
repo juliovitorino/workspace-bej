@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1240,
+    "totalIntentions": 1241,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -48322,6 +48322,84 @@
           "id": "e49d7f13-9b46-4c20-9a52-f9d74e16c385",
           "exampleItem": "Quando terminar suas tarefas, poderá fazer o que quiser.",
           "intent": "fazer o que quiser"
+        }
+      ]
+    },
+    {
+      "id": "quanto-custa-para-5c82e1a7-9d34-4b60-8f21-a6e73c09d458",
+      "intention": "Quanto custa para + verbo?",
+      "pattern": "quanto custa + verbo no infinitivo / quanto custa para + sujeito + verbo no infinitivo",
+      "description": "Usado para perguntar o preço ou custo necessário para realizar uma ação, adquirir um serviço, participar de uma atividade ou alcançar determinado objetivo. Em inglês, a estrutura 'How much does it cost to + verbo na forma base' permite construir perguntas sobre custos de maneira natural. Em português, a forma 'Quanto custa + infinitivo?' costuma ser mais direta, enquanto 'Quanto custa para alguém + infinitivo?' destaca quem realizará a ação.",
+      "category": "questions",
+      "searchTerms": [
+        "quanto custa",
+        "quanto custa para",
+        "qual é o preço para",
+        "quanto preciso pagar para",
+        "qual é o custo de",
+        "quanto custa fazer",
+        "quanto custa contratar",
+        "quanto custa aprender"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])quanto\\s+custa\\s+para(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])quanto\\s+custa\\s+[\\p{L}]+(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])qual\\s+é\\s+o\\s+preço\\s+para(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])quanto\\s+preciso\\s+pagar\\s+para(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])qual\\s+é\\s+o\\s+custo\\s+de(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "perguntas",
+        "preços",
+        "custos",
+        "dinheiro",
+        "serviços",
+        "gerador de frases",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "Quanto custa + verbo no infinitivo? / Quanto custa para + pessoa + verbo no infinitivo?",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "a71c3e92-6d45-4b80-9f21-c8e63a05d274",
+          "exampleItem": "Quanto custa aprender inglês pela internet?",
+          "intent": "Quanto custa aprender"
+        },
+        {
+          "id": "b82d4f13-7e56-4c90-8a32-d9f74b16a385",
+          "exampleItem": "Quanto custa viajar para os Estados Unidos?",
+          "intent": "Quanto custa viajar"
+        },
+        {
+          "id": "c93e5a24-8f67-4d10-9b43-e0a85c27b496",
+          "exampleItem": "Quanto custa para uma pessoa morar sozinha nessa cidade?",
+          "intent": "Quanto custa para uma pessoa morar"
+        },
+        {
+          "id": "d14f6b35-9a78-4e20-8c54-f1b96d38c507",
+          "exampleItem": "Quanto custa contratar um professor particular de inglês?",
+          "intent": "Quanto custa contratar"
+        },
+        {
+          "id": "e25a7c46-1b89-4f30-9d65-a2c07e49d618",
+          "exampleItem": "Quanto custa desenvolver um aplicativo como esse?",
+          "intent": "Quanto custa desenvolver"
+        },
+        {
+          "id": "f36b8d57-2c90-4a40-8e76-b3d18f50e729",
+          "exampleItem": "Quanto custa consertar meu computador?",
+          "intent": "Quanto custa consertar"
+        },
+        {
+          "id": "a47c9e68-3d01-4b50-9f87-c4e29a61f830",
+          "exampleItem": "Quanto custa para nós participarmos desse evento?",
+          "intent": "Quanto custa para nós participarmos"
+        },
+        {
+          "id": "b58d1f79-4e12-4c60-8a98-d5f30b72a941",
+          "exampleItem": "Quanto custa publicar um aplicativo na internet?",
+          "intent": "Quanto custa publicar"
         }
       ]
     }

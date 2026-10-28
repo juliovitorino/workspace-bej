@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1240,
+    "totalIntentions": 1241,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -72771,6 +72771,83 @@
             "cedar": "88b3ca8192b26466f9d4689dbb824a37d964a99125a2e170b9d018cb34c9ba5b",
             "marin": "88b3ca8192b26466f9d4689dbb824a37d964a99125a2e170b9d018cb34c9ba5b"
           }
+        }
+      ]
+    },
+    {
+      "id": "quanto-custa-para-5c82e1a7-9d34-4b60-8f21-a6e73c09d458",
+      "intention": "How much does it cost to + verb?",
+      "pattern": "how much does it cost to + base verb / how much does it cost for + person + to + base verb",
+      "description": "Used to ask how much money is needed to perform an action, obtain a service, take part in an activity, or achieve a goal. Use \"How much does it cost to + base verb?\" to ask about the cost of an action. Add \"for + person\" before the infinitive to specify who will perform the action.",
+      "category": "questions",
+      "searchTerms": [
+        "how much does it cost",
+        "how much does it cost to",
+        "how much does it cost for",
+        "what is the price of",
+        "how much do I need to pay to",
+        "what is the cost of",
+        "how much does it cost to hire",
+        "how much does it cost to learn"
+      ],
+      "validationPatterns": [
+        "\\bhow\\s+much\\s+does\\s+it\\s+cost\\s+to\\s+[a-z]+\\b",
+        "\\bhow\\s+much\\s+does\\s+it\\s+cost\\s+for\\s+[a-z]+(?:\\s+[a-z]+){0,5}\\s+to\\s+[a-z]+\\b",
+        "\\bwhat\\s+is\\s+the\\s+(?:price|cost)\\s+of\\s+\\S+",
+        "\\bhow\\s+much\\s+do\\s+I\\s+need\\s+to\\s+pay\\s+to\\s+[a-z]+\\b"
+      ],
+      "tags": [
+        "questions",
+        "prices",
+        "costs",
+        "money",
+        "services",
+        "phrase generator",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "How much does it cost to + base verb? / How much does it cost for + person + to + base verb?",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "a71c3e92-6d45-4b80-9f21-c8e63a05d274",
+          "exampleItem": "How much does it cost to learn English online?",
+          "intent": "How much does it cost to learn"
+        },
+        {
+          "id": "b82d4f13-7e56-4c90-8a32-d9f74b16a385",
+          "exampleItem": "How much does it cost to travel to the United States?",
+          "intent": "How much does it cost to travel"
+        },
+        {
+          "id": "c93e5a24-8f67-4d10-9b43-e0a85c27b496",
+          "exampleItem": "How much does it cost for someone to live alone in this city?",
+          "intent": "How much does it cost for someone to live"
+        },
+        {
+          "id": "d14f6b35-9a78-4e20-8c54-f1b96d38c507",
+          "exampleItem": "How much does it cost to hire a private English tutor?",
+          "intent": "How much does it cost to hire"
+        },
+        {
+          "id": "e25a7c46-1b89-4f30-9d65-a2c07e49d618",
+          "exampleItem": "How much does it cost to develop an app like this?",
+          "intent": "How much does it cost to develop"
+        },
+        {
+          "id": "f36b8d57-2c90-4a40-8e76-b3d18f50e729",
+          "exampleItem": "How much does it cost to fix my computer?",
+          "intent": "How much does it cost to fix"
+        },
+        {
+          "id": "a47c9e68-3d01-4b50-9f87-c4e29a61f830",
+          "exampleItem": "How much does it cost for us to attend this event?",
+          "intent": "How much does it cost for us to attend"
+        },
+        {
+          "id": "b58d1f79-4e12-4c60-8a98-d5f30b72a941",
+          "exampleItem": "How much does it cost to publish an app online?",
+          "intent": "How much does it cost to publish"
         }
       ]
     }

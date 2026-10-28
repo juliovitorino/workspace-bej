@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1240,
+    "totalIntentions": 1241,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -39992,28 +39992,28 @@
         },
         {
           "id": "a7f31d82-6c45-4e90-8b12-d5a73f09c264",
-          "exampleItem": "Je g?re ! Je vais r?soudre ce probl?me.",
-          "intent": "Je g?re"
+          "exampleItem": "Je gère ! Je vais résoudre ce problème.",
+          "intent": "Je gère"
         },
         {
           "id": "b8e42c93-7d56-4f10-9a23-e6b84d15f375",
-          "exampleItem": "Pas besoin de t?inqui?ter pour la r?union. Je g?re !",
-          "intent": "Je g?re"
+          "exampleItem": "Pas besoin de t’inquiéter pour la réunion. Je gère !",
+          "intent": "Je gère"
         },
         {
           "id": "c9d53b04-8e67-4a20-8f34-a7c95e26b486",
-          "exampleItem": "Je g?re ! Je vais v?rifier ce qui s?est pass?.",
-          "intent": "Je g?re"
+          "exampleItem": "Je gère ! Je vais vérifier ce qui s’est passé.",
+          "intent": "Je gère"
         },
         {
           "id": "d0a64c15-9f78-4b30-9e45-b8d06f37c597",
-          "exampleItem": "Tu peux te reposer. Je g?re, je vais finir le travail.",
-          "intent": "Je g?re"
+          "exampleItem": "Tu peux te reposer. Je gère, je vais finir le travail.",
+          "intent": "Je gère"
         },
         {
           "id": "e1b75d26-1a89-4c40-8d56-c9e17a48b608",
-          "exampleItem": "Je g?re ! Je m?occupe de tout pendant ton absence.",
-          "intent": "Je g?re"
+          "exampleItem": "Je gère ! Je m’occupe de tout pendant ton absence.",
+          "intent": "Je gère"
         }
       ]
     },
@@ -41658,13 +41658,13 @@
         },
         {
           "id": "ca14068b-824b-4926-91c0-e47febf6edc7",
-          "exampleItem": "C'est trop styl? !",
-          "intent": "C'est trop styl?"
+          "exampleItem": "C'est trop stylé !",
+          "intent": "C'est trop stylé"
         },
         {
           "id": "f0b3e5f4-83e9-4e5e-bd22-8f284ffc434d",
-          "exampleItem": "C'est trop styl? !",
-          "intent": "C'est trop styl?"
+          "exampleItem": "C'est trop stylé !",
+          "intent": "C'est trop stylé"
         }
       ]
     },
@@ -49309,6 +49309,82 @@
           "id": "e49d7f13-9b46-4c20-9a52-f9d74e16c385",
           "exampleItem": "Quand tu auras terminé tes tâches, tu pourras faire ce que tu veux.",
           "intent": "faire ce que tu veux"
+        }
+      ]
+    },
+    {
+      "id": "quanto-custa-para-5c82e1a7-9d34-4b60-8f21-a6e73c09d458",
+      "intention": "Combien ça coûte de + infinitif ?",
+      "pattern": "combien ça coûte de / d’ + infinitif ; combien cela coûte-t-il à quelqu’un de + infinitif",
+      "description": "Permet de demander le prix ou le coût d’une action, d’un service, d’une activité ou d’un projet. En français courant, on emploie « Combien ça coûte de + infinitif ? », avec d’ devant une voyelle. La tournure « Combien cela coûte-t-il à quelqu’un de + infinitif ? » précise la personne concernée. L’équivalent anglais est « How much does it cost to + verbe à la base verbale ? ».",
+      "category": "questions",
+      "searchTerms": [
+        "combien ça coûte",
+        "combien cela coûte",
+        "combien ça coûte de",
+        "quel est le prix pour",
+        "combien faut-il payer pour",
+        "quel est le coût de",
+        "combien coûte un service",
+        "combien coûte l’apprentissage"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])combien\\s+(?:ça|cela)\\s+coûte(?:-t-il)?\\s+(?:de\\s+|d[’'])\\p{L}+",
+        "(?<![\\p{L}\\p{N}_])combien\\s+cela\\s+coûte-t-il\\s+à\\s+[^?!.,]+\\s+de\\s+\\p{L}+",
+        "(?<![\\p{L}\\p{N}_])combien\\s+cela\\s+(?:me|te|nous|vous|lui|leur)\\s+coûte-t-il\\s+(?:de\\s+|d[’'])\\p{L}+"
+      ],
+      "tags": [
+        "questions",
+        "prix",
+        "coûts",
+        "argent",
+        "services",
+        "générateur de phrases",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Combien ça coûte de + infinitif ? / Combien cela coûte-t-il à une personne de + infinitif ?",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "a71c3e92-6d45-4b80-9f21-c8e63a05d274",
+          "exampleItem": "Combien ça coûte d’apprendre l’anglais en ligne ?",
+          "intent": "Combien ça coûte d’apprendre"
+        },
+        {
+          "id": "b82d4f13-7e56-4c90-8a32-d9f74b16a385",
+          "exampleItem": "Combien ça coûte de voyager aux États-Unis ?",
+          "intent": "Combien ça coûte de voyager"
+        },
+        {
+          "id": "c93e5a24-8f67-4d10-9b43-e0a85c27b496",
+          "exampleItem": "Combien cela coûte-t-il à une personne de vivre seule dans cette ville ?",
+          "intent": "Combien cela coûte-t-il à une personne de vivre"
+        },
+        {
+          "id": "d14f6b35-9a78-4e20-8c54-f1b96d38c507",
+          "exampleItem": "Combien ça coûte de prendre un professeur particulier d’anglais ?",
+          "intent": "Combien ça coûte de prendre"
+        },
+        {
+          "id": "e25a7c46-1b89-4f30-9d65-a2c07e49d618",
+          "exampleItem": "Combien ça coûte de développer une application comme celle-ci ?",
+          "intent": "Combien ça coûte de développer"
+        },
+        {
+          "id": "f36b8d57-2c90-4a40-8e76-b3d18f50e729",
+          "exampleItem": "Combien ça coûte de réparer mon ordinateur ?",
+          "intent": "Combien ça coûte de réparer"
+        },
+        {
+          "id": "a47c9e68-3d01-4b50-9f87-c4e29a61f830",
+          "exampleItem": "Combien cela nous coûte-t-il de participer à cet événement ?",
+          "intent": "Combien cela nous coûte-t-il de participer"
+        },
+        {
+          "id": "b58d1f79-4e12-4c60-8a98-d5f30b72a941",
+          "exampleItem": "Combien ça coûte de publier une application sur Internet ?",
+          "intent": "Combien ça coûte de publier"
         }
       ]
     }
