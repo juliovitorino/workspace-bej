@@ -61475,27 +61475,67 @@
         {
           "id": "a7f31d82-6c45-4e90-8b12-d5a73f09c264",
           "exampleItem": "I got this! I'll fix this problem.",
-          "intent": "I got this"
+          "intent": "I got this",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/a7f31d82-6c45-4e90-8b12-d5a73f09c264-cedar.mp3",
+            "marin": "/audio/en-US/marin/a7f31d82-6c45-4e90-8b12-d5a73f09c264-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "7cba18bf60cad647b4c65c400f6a2f0429040aac0486addc49cad1c1a4caa8ce",
+            "marin": "7cba18bf60cad647b4c65c400f6a2f0429040aac0486addc49cad1c1a4caa8ce"
+          }
         },
         {
           "id": "b8e42c93-7d56-4f10-9a23-e6b84d15f375",
           "exampleItem": "You don't need to worry about the meeting. I got this!",
-          "intent": "I got this"
+          "intent": "I got this",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/b8e42c93-7d56-4f10-9a23-e6b84d15f375-cedar.mp3",
+            "marin": "/audio/en-US/marin/b8e42c93-7d56-4f10-9a23-e6b84d15f375-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "1e56e239bc4dc7d5e70eac49413f2196970d14a2147ad78af95f3c94c37264a7",
+            "marin": "1e56e239bc4dc7d5e70eac49413f2196970d14a2147ad78af95f3c94c37264a7"
+          }
         },
         {
           "id": "c9d53b04-8e67-4a20-8f34-a7c95e26b486",
           "exampleItem": "I got this! I'll check what happened.",
-          "intent": "I got this"
+          "intent": "I got this",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/c9d53b04-8e67-4a20-8f34-a7c95e26b486-cedar.mp3",
+            "marin": "/audio/en-US/marin/c9d53b04-8e67-4a20-8f34-a7c95e26b486-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "39c6c28ebd8727401837c29c3b83988c638a9da71bf1b8e413fd0102a71a2f9e",
+            "marin": "39c6c28ebd8727401837c29c3b83988c638a9da71bf1b8e413fd0102a71a2f9e"
+          }
         },
         {
           "id": "d0a64c15-9f78-4b30-9e45-b8d06f37c597",
           "exampleItem": "You can rest. I got this; I'll finish the work.",
-          "intent": "I got this"
+          "intent": "I got this",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/d0a64c15-9f78-4b30-9e45-b8d06f37c597-cedar.mp3",
+            "marin": "/audio/en-US/marin/d0a64c15-9f78-4b30-9e45-b8d06f37c597-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "b45d2f2082149c46b8eb82d6dec365f10726a07c7d10f6cde0e7e1beedda8771",
+            "marin": "b45d2f2082149c46b8eb82d6dec365f10726a07c7d10f6cde0e7e1beedda8771"
+          }
         },
         {
           "id": "e1b75d26-1a89-4c40-8d56-c9e17a48b608",
           "exampleItem": "I got this! I'll take care of everything while you're away.",
-          "intent": "I got this"
+          "intent": "I got this",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/e1b75d26-1a89-4c40-8d56-c9e17a48b608-cedar.mp3",
+            "marin": "/audio/en-US/marin/e1b75d26-1a89-4c40-8d56-c9e17a48b608-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "4d84dc55a7aab1056259372880d51318563d1b54ff5efd06b27e57afbeeedaf5",
+            "marin": "4d84dc55a7aab1056259372880d51318563d1b54ff5efd06b27e57afbeeedaf5"
+          }
         }
       ]
     },
@@ -63995,12 +64035,28 @@
         {
           "id": "ca14068b-824b-4926-91c0-e47febf6edc7",
           "exampleItem": "That's lit!",
-          "intent": "That's lit"
+          "intent": "That's lit",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/ca14068b-824b-4926-91c0-e47febf6edc7-cedar.mp3",
+            "marin": "/audio/en-US/marin/ca14068b-824b-4926-91c0-e47febf6edc7-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "208142c56051ae3d7105b5ae66f637046e6599ad45a9cbd7eca373ab738c86ac",
+            "marin": "208142c56051ae3d7105b5ae66f637046e6599ad45a9cbd7eca373ab738c86ac"
+          }
         },
         {
           "id": "f0b3e5f4-83e9-4e5e-bd22-8f284ffc434d",
           "exampleItem": "That's lit!",
-          "intent": "That's lit"
+          "intent": "That's lit",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/f0b3e5f4-83e9-4e5e-bd22-8f284ffc434d-cedar.mp3",
+            "marin": "/audio/en-US/marin/f0b3e5f4-83e9-4e5e-bd22-8f284ffc434d-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "208142c56051ae3d7105b5ae66f637046e6599ad45a9cbd7eca373ab738c86ac",
+            "marin": "208142c56051ae3d7105b5ae66f637046e6599ad45a9cbd7eca373ab738c86ac"
+          }
         }
       ]
     },
@@ -72812,42 +72868,106 @@
         {
           "id": "a71c3e92-6d45-4b80-9f21-c8e63a05d274",
           "exampleItem": "How much does it cost to learn English online?",
-          "intent": "How much does it cost to learn"
+          "intent": "How much does it cost to learn",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/a71c3e92-6d45-4b80-9f21-c8e63a05d274-cedar.mp3",
+            "marin": "/audio/en-US/marin/a71c3e92-6d45-4b80-9f21-c8e63a05d274-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "c997e52bce108fdd0be380239421f00db0511e7284e83c952d23be56aba89189",
+            "marin": "c997e52bce108fdd0be380239421f00db0511e7284e83c952d23be56aba89189"
+          }
         },
         {
           "id": "b82d4f13-7e56-4c90-8a32-d9f74b16a385",
           "exampleItem": "How much does it cost to travel to the United States?",
-          "intent": "How much does it cost to travel"
+          "intent": "How much does it cost to travel",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/b82d4f13-7e56-4c90-8a32-d9f74b16a385-cedar.mp3",
+            "marin": "/audio/en-US/marin/b82d4f13-7e56-4c90-8a32-d9f74b16a385-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "9a331c8caace2b648d613bd13c29dad7d2b0d6d914b2231661b5ec181c1dc753",
+            "marin": "9a331c8caace2b648d613bd13c29dad7d2b0d6d914b2231661b5ec181c1dc753"
+          }
         },
         {
           "id": "c93e5a24-8f67-4d10-9b43-e0a85c27b496",
           "exampleItem": "How much does it cost for someone to live alone in this city?",
-          "intent": "How much does it cost for someone to live"
+          "intent": "How much does it cost for someone to live",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/c93e5a24-8f67-4d10-9b43-e0a85c27b496-cedar.mp3",
+            "marin": "/audio/en-US/marin/c93e5a24-8f67-4d10-9b43-e0a85c27b496-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "26c6282c62311529ac1b5c2bd7c240e3df4fe90fe53e720a902f0a701fe8f1bf",
+            "marin": "26c6282c62311529ac1b5c2bd7c240e3df4fe90fe53e720a902f0a701fe8f1bf"
+          }
         },
         {
           "id": "d14f6b35-9a78-4e20-8c54-f1b96d38c507",
           "exampleItem": "How much does it cost to hire a private English tutor?",
-          "intent": "How much does it cost to hire"
+          "intent": "How much does it cost to hire",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/d14f6b35-9a78-4e20-8c54-f1b96d38c507-cedar.mp3",
+            "marin": "/audio/en-US/marin/d14f6b35-9a78-4e20-8c54-f1b96d38c507-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "b19eb44b07c953eb7b4f00768deae339bd1df160efe1d697f3f69d17c9936b76",
+            "marin": "b19eb44b07c953eb7b4f00768deae339bd1df160efe1d697f3f69d17c9936b76"
+          }
         },
         {
           "id": "e25a7c46-1b89-4f30-9d65-a2c07e49d618",
           "exampleItem": "How much does it cost to develop an app like this?",
-          "intent": "How much does it cost to develop"
+          "intent": "How much does it cost to develop",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/e25a7c46-1b89-4f30-9d65-a2c07e49d618-cedar.mp3",
+            "marin": "/audio/en-US/marin/e25a7c46-1b89-4f30-9d65-a2c07e49d618-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "3a2fab8cf0d9a782bd358abcd26a4badecd71be5ac54cf7540b4755895813ebc",
+            "marin": "3a2fab8cf0d9a782bd358abcd26a4badecd71be5ac54cf7540b4755895813ebc"
+          }
         },
         {
           "id": "f36b8d57-2c90-4a40-8e76-b3d18f50e729",
           "exampleItem": "How much does it cost to fix my computer?",
-          "intent": "How much does it cost to fix"
+          "intent": "How much does it cost to fix",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/f36b8d57-2c90-4a40-8e76-b3d18f50e729-cedar.mp3",
+            "marin": "/audio/en-US/marin/f36b8d57-2c90-4a40-8e76-b3d18f50e729-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "bbe1c2963667804914875a024d7235737ec32bd147eb61860e4bcda3e940fa47",
+            "marin": "bbe1c2963667804914875a024d7235737ec32bd147eb61860e4bcda3e940fa47"
+          }
         },
         {
           "id": "a47c9e68-3d01-4b50-9f87-c4e29a61f830",
           "exampleItem": "How much does it cost for us to attend this event?",
-          "intent": "How much does it cost for us to attend"
+          "intent": "How much does it cost for us to attend",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/a47c9e68-3d01-4b50-9f87-c4e29a61f830-cedar.mp3",
+            "marin": "/audio/en-US/marin/a47c9e68-3d01-4b50-9f87-c4e29a61f830-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "8229ec5e48744dcc048c6965cfb7432a2634cdf7a255054ee50a14563a57f4a2",
+            "marin": "8229ec5e48744dcc048c6965cfb7432a2634cdf7a255054ee50a14563a57f4a2"
+          }
         },
         {
           "id": "b58d1f79-4e12-4c60-8a98-d5f30b72a941",
           "exampleItem": "How much does it cost to publish an app online?",
-          "intent": "How much does it cost to publish"
+          "intent": "How much does it cost to publish",
+          "mp3": {
+            "cedar": "/audio/en-US/cedar/b58d1f79-4e12-4c60-8a98-d5f30b72a941-cedar.mp3",
+            "marin": "/audio/en-US/marin/b58d1f79-4e12-4c60-8a98-d5f30b72a941-marin.mp3"
+          },
+          "hashmp3": {
+            "cedar": "3286b29337102954327e8ab53a5a9ba3e49188104fa514decdfbfb1280115c22",
+            "marin": "3286b29337102954327e8ab53a5a9ba3e49188104fa514decdfbfb1280115c22"
+          }
         }
       ]
     }
