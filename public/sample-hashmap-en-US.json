@@ -61471,6 +61471,31 @@
             "cedar": "0b5b183ef29066e35561dea7e02300ee4d45ff51d7a3fa04ac1e193d209eed89",
             "marin": "0b5b183ef29066e35561dea7e02300ee4d45ff51d7a3fa04ac1e193d209eed89"
           }
+        },
+        {
+          "id": "a7f31d82-6c45-4e90-8b12-d5a73f09c264",
+          "exampleItem": "I got this! I'll fix this problem.",
+          "intent": "I got this"
+        },
+        {
+          "id": "b8e42c93-7d56-4f10-9a23-e6b84d15f375",
+          "exampleItem": "You don't need to worry about the meeting. I got this!",
+          "intent": "I got this"
+        },
+        {
+          "id": "c9d53b04-8e67-4a20-8f34-a7c95e26b486",
+          "exampleItem": "I got this! I'll check what happened.",
+          "intent": "I got this"
+        },
+        {
+          "id": "d0a64c15-9f78-4b30-9e45-b8d06f37c597",
+          "exampleItem": "You can rest. I got this; I'll finish the work.",
+          "intent": "I got this"
+        },
+        {
+          "id": "e1b75d26-1a89-4c40-8d56-c9e17a48b608",
+          "exampleItem": "I got this! I'll take care of everything while you're away.",
+          "intent": "I got this"
         }
       ]
     },
@@ -63966,6 +63991,16 @@
             "cedar": "208142c56051ae3d7105b5ae66f637046e6599ad45a9cbd7eca373ab738c86ac",
             "marin": "208142c56051ae3d7105b5ae66f637046e6599ad45a9cbd7eca373ab738c86ac"
           }
+        },
+        {
+          "id": "ca14068b-824b-4926-91c0-e47febf6edc7",
+          "exampleItem": "That's lit!",
+          "intent": "That's lit"
+        },
+        {
+          "id": "f0b3e5f4-83e9-4e5e-bd22-8f284ffc434d",
+          "exampleItem": "That's lit!",
+          "intent": "That's lit"
         }
       ]
     },

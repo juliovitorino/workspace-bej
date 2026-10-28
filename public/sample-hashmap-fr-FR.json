@@ -39989,6 +39989,31 @@
           "id": "510aa8db-d844-43b3-b4be-69020c5bf195",
           "exampleItem": "Je gère. Tu peux te détendre.",
           "intent": "Je gère"
+        },
+        {
+          "id": "a7f31d82-6c45-4e90-8b12-d5a73f09c264",
+          "exampleItem": "Je g?re ! Je vais r?soudre ce probl?me.",
+          "intent": "Je g?re"
+        },
+        {
+          "id": "b8e42c93-7d56-4f10-9a23-e6b84d15f375",
+          "exampleItem": "Pas besoin de t?inqui?ter pour la r?union. Je g?re !",
+          "intent": "Je g?re"
+        },
+        {
+          "id": "c9d53b04-8e67-4a20-8f34-a7c95e26b486",
+          "exampleItem": "Je g?re ! Je vais v?rifier ce qui s?est pass?.",
+          "intent": "Je g?re"
+        },
+        {
+          "id": "d0a64c15-9f78-4b30-9e45-b8d06f37c597",
+          "exampleItem": "Tu peux te reposer. Je g?re, je vais finir le travail.",
+          "intent": "Je g?re"
+        },
+        {
+          "id": "e1b75d26-1a89-4c40-8d56-c9e17a48b608",
+          "exampleItem": "Je g?re ! Je m?occupe de tout pendant ton absence.",
+          "intent": "Je g?re"
         }
       ]
     },
@@ -41630,6 +41655,16 @@
           "id": "e368eca5-9216-45dd-802f-057c7439041b",
           "exampleItem": "C'est trop stylé !",
           "intent": "C'est trop stylé"
+        },
+        {
+          "id": "ca14068b-824b-4926-91c0-e47febf6edc7",
+          "exampleItem": "C'est trop styl? !",
+          "intent": "C'est trop styl?"
+        },
+        {
+          "id": "f0b3e5f4-83e9-4e5e-bd22-8f284ffc434d",
+          "exampleItem": "C'est trop styl? !",
+          "intent": "C'est trop styl?"
         }
       ]
     },

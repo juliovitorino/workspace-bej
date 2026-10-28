@@ -40297,6 +40297,31 @@
           "id": "510aa8db-d844-43b3-b4be-69020c5bf195",
           "exampleItem": "Deixa comigo! Pode ficar tranquilo.",
           "intent": "Deixa comigo"
+        },
+        {
+          "id": "a7f31d82-6c45-4e90-8b12-d5a73f09c264",
+          "exampleItem": "Deixa comigo! Eu resolvo esse problema.",
+          "intent": "Deixa comigo"
+        },
+        {
+          "id": "b8e42c93-7d56-4f10-9a23-e6b84d15f375",
+          "exampleItem": "Não precisa se preocupar com a reunião. Deixa comigo!",
+          "intent": "Deixa comigo"
+        },
+        {
+          "id": "c9d53b04-8e67-4a20-8f34-a7c95e26b486",
+          "exampleItem": "Deixa comigo! Vou verificar o que aconteceu.",
+          "intent": "Deixa comigo"
+        },
+        {
+          "id": "d0a64c15-9f78-4b30-9e45-b8d06f37c597",
+          "exampleItem": "Você pode descansar. Deixa comigo que eu termino o trabalho.",
+          "intent": "Deixa comigo"
+        },
+        {
+          "id": "e1b75d26-1a89-4c40-8d56-c9e17a48b608",
+          "exampleItem": "Deixa comigo! Eu cuido de tudo enquanto você estiver fora.",
+          "intent": "Deixa comigo"
         }
       ]
     },

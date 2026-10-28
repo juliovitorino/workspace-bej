@@ -39435,6 +39435,31 @@
           "id": "510aa8db-d844-43b3-b4be-69020c5bf195",
           "exampleItem": "¡Yo me encargo! No te preocupes.",
           "intent": "Yo me encargo"
+        },
+        {
+          "id": "a7f31d82-6c45-4e90-8b12-d5a73f09c264",
+          "exampleItem": "?Yo me encargo! Resolver? este problema.",
+          "intent": "Yo me encargo"
+        },
+        {
+          "id": "b8e42c93-7d56-4f10-9a23-e6b84d15f375",
+          "exampleItem": "No tienes que preocuparte por la reuni?n. ?Yo me encargo!",
+          "intent": "Yo me encargo"
+        },
+        {
+          "id": "c9d53b04-8e67-4a20-8f34-a7c95e26b486",
+          "exampleItem": "?Yo me encargo! Voy a comprobar qu? ha pasado.",
+          "intent": "Yo me encargo"
+        },
+        {
+          "id": "d0a64c15-9f78-4b30-9e45-b8d06f37c597",
+          "exampleItem": "Puedes descansar. Yo me encargo de terminar el trabajo.",
+          "intent": "Yo me encargo"
+        },
+        {
+          "id": "e1b75d26-1a89-4c40-8d56-c9e17a48b608",
+          "exampleItem": "?Yo me encargo! Me ocupar? de todo mientras est?s fuera.",
+          "intent": "Yo me encargo"
         }
       ]
     },
@@ -41070,6 +41095,16 @@
         {
           "id": "3f81228a-2a44-4aea-8782-3c78c3e42b6c",
           "exampleItem": "¡Eso mola!",
+          "intent": "Eso mola"
+        },
+        {
+          "id": "ca14068b-824b-4926-91c0-e47febf6edc7",
+          "exampleItem": "?Eso mola!",
+          "intent": "Eso mola"
+        },
+        {
+          "id": "f0b3e5f4-83e9-4e5e-bd22-8f284ffc434d",
+          "exampleItem": "?Eso mola!",
           "intent": "Eso mola"
         }
       ]
