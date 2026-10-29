@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1251,
+    "totalIntentions": 1253,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -73403,6 +73403,144 @@
           "id": "c2d45e5e-85d1-4dae-a167-929cb174594a",
           "exampleItem": "Believe it or not, I ran into a childhood friend yesterday.",
           "intent": "Believe it or not"
+        }
+      ]
+    },
+    {
+      "id": "eu-quero-que-pessoa-verbo-a50c7c03-5a94-4894-801b-c246e480dcc2",
+      "intention": "I want + someone + to + verb",
+      "pattern": "I want + someone + to + base verb",
+      "structure": "I want + someone + to + base verb",
+      "description": "Used to express a direct wish for another person to do something. English uses want + person + to + base verb; the equivalent Portuguese construction typically uses querer que + subject + a verb in the subjunctive.",
+      "searchTerms": [
+        "I want someone to",
+        "want you to",
+        "wish",
+        "request"
+      ],
+      "tags": [
+        "wishes",
+        "requests",
+        "people",
+        "actions",
+        "sentence generator",
+        "conversation"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+want\\s+(?:you|him|her|them|us|everyone|someone|somebody|(?:my|the)\\s+[a-z]+)\\s+to\\s+[a-z]+\\b"
+      ],
+      "category": "requests",
+      "related": [],
+      "level": "A2",
+      "examples": [
+        {
+          "id": "c548d962-9679-4d9e-a489-2fc368cc48de",
+          "exampleItem": "I want you to help me.",
+          "intent": "want you to help"
+        },
+        {
+          "id": "9b14b862-f16e-4de6-ad6d-ede7aafcc35c",
+          "exampleItem": "I want her to call me tomorrow.",
+          "intent": "want her to call"
+        },
+        {
+          "id": "b3b5ec7b-1c6c-43a3-8d96-8c311474fb77",
+          "exampleItem": "I want them to understand the problem.",
+          "intent": "want them to understand"
+        },
+        {
+          "id": "7a5877e9-cd99-41d4-b8d3-d444ad15cd0e",
+          "exampleItem": "I want you to practice English every day.",
+          "intent": "want you to practice"
+        },
+        {
+          "id": "84d62c62-1819-4f92-8cf1-934d199e71ea",
+          "exampleItem": "I want my son to be independent.",
+          "intent": "want my son to be"
+        },
+        {
+          "id": "62548dfc-7f14-4833-b71f-02c1dc3f3598",
+          "exampleItem": "I want the teacher to correct my pronunciation.",
+          "intent": "want the teacher to correct"
+        },
+        {
+          "id": "959484b0-362c-439a-93c8-3ba3d94e7b1f",
+          "exampleItem": "I want you to review this code.",
+          "intent": "want you to review"
+        },
+        {
+          "id": "70351663-4fcf-4ff9-b38f-a5557de39ca3",
+          "exampleItem": "I want everyone to arrive on time.",
+          "intent": "want everyone to arrive"
+        }
+      ]
+    },
+    {
+      "id": "eu-gostaria-que-pessoa-verbo-aa03a181-d552-4355-a9bf-67b12775876e",
+      "intention": "I would like + someone + to + verb",
+      "pattern": "I would like + someone + to + base verb",
+      "structure": "I would like + someone + to + base verb",
+      "description": "Used to express a wish or request more politely and less directly. English uses would like + person + to + base verb; the equivalent Portuguese construction typically uses gostaria que + subject + a verb in the subjunctive.",
+      "searchTerms": [
+        "I would like someone to",
+        "I?d like you to",
+        "polite request",
+        "wish"
+      ],
+      "tags": [
+        "polite requests",
+        "wishes",
+        "courtesy",
+        "people",
+        "sentence generator",
+        "conversation"
+      ],
+      "validationPatterns": [
+        "\\bI(?:\\s+would|['?]d)\\s+like\\s+(?:you|him|her|them|us|everyone|someone|somebody|(?:my|the)\\s+[a-z]+)\\s+to\\s+[a-z]+\\b"
+      ],
+      "category": "requests",
+      "related": [],
+      "level": "B1",
+      "examples": [
+        {
+          "id": "276f8352-9eb7-44e1-a5a2-d27a6ab0f17e",
+          "exampleItem": "I would like you to stay here.",
+          "intent": "would like you to stay"
+        },
+        {
+          "id": "00452ed1-2fc0-4736-9cdd-28149e1dc7fd",
+          "exampleItem": "I would like him to explain that again.",
+          "intent": "would like him to explain"
+        },
+        {
+          "id": "d0f1bd03-a695-42df-b315-3c523839d384",
+          "exampleItem": "I would like you to check my code.",
+          "intent": "would like you to check"
+        },
+        {
+          "id": "bbcfacf3-6226-49c8-9e37-3b779e15c138",
+          "exampleItem": "I would like her to attend the meeting.",
+          "intent": "would like her to attend"
+        },
+        {
+          "id": "dfd7d20a-c7ab-4745-bd94-34a2f8c1c83b",
+          "exampleItem": "I would like you to speak more slowly.",
+          "intent": "would like you to speak"
+        },
+        {
+          "id": "3393d7c8-3b55-4761-9517-fd7f2ef72bfc",
+          "exampleItem": "I would like my teacher to assess my progress.",
+          "intent": "would like my teacher to assess"
+        },
+        {
+          "id": "86d0fcbe-217e-4483-b0ef-87870149c000",
+          "exampleItem": "I would like them to send the report today.",
+          "intent": "would like them to send"
+        },
+        {
+          "id": "0ff9bc7b-d45f-4f77-9f99-fea0be7fc1f5",
+          "exampleItem": "I would like you to let me know when you arrive.",
+          "intent": "would like you to let me know"
         }
       ]
     }

@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1251,
+    "totalIntentions": 1253,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -48847,6 +48847,144 @@
           "id": "c2d45e5e-85d1-4dae-a167-929cb174594a",
           "exampleItem": "Acredite se quiser, encontrei um amigo de infância ontem.",
           "intent": "Acredite se quiser"
+        }
+      ]
+    },
+    {
+      "id": "eu-quero-que-pessoa-verbo-a50c7c03-5a94-4894-801b-c246e480dcc2",
+      "intention": "Eu quero que + pessoa + verbo",
+      "pattern": "Eu quero que + pessoa + verbo (em inglês: I want + someone + to + verb)",
+      "description": "Usado para expressar diretamente o desejo de que outra pessoa realize uma ação. Em inglês, utiliza-se want + pessoa + to + verbo na forma base; em português, normalmente usamos querer que + sujeito + verbo no subjuntivo.",
+      "category": "requests",
+      "searchTerms": [
+        "eu quero que",
+        "quero que",
+        "desejo que",
+        "preciso que"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:eu\\s+)?quero\\s+que(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "desejos",
+        "pedidos",
+        "pessoas",
+        "ações",
+        "gerador de frases",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "Eu quero que + pessoa + verbo",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "c548d962-9679-4d9e-a489-2fc368cc48de",
+          "exampleItem": "Eu quero que você me ajude.",
+          "intent": "quero que você me ajude"
+        },
+        {
+          "id": "9b14b862-f16e-4de6-ad6d-ede7aafcc35c",
+          "exampleItem": "Eu quero que ela me ligue amanhã.",
+          "intent": "quero que ela me ligue"
+        },
+        {
+          "id": "b3b5ec7b-1c6c-43a3-8d96-8c311474fb77",
+          "exampleItem": "Eu quero que eles entendam o problema.",
+          "intent": "quero que eles entendam"
+        },
+        {
+          "id": "7a5877e9-cd99-41d4-b8d3-d444ad15cd0e",
+          "exampleItem": "Eu quero que você pratique inglês todos os dias.",
+          "intent": "quero que você pratique"
+        },
+        {
+          "id": "84d62c62-1819-4f92-8cf1-934d199e71ea",
+          "exampleItem": "Eu quero que meu filho seja independente.",
+          "intent": "quero que meu filho seja"
+        },
+        {
+          "id": "62548dfc-7f14-4833-b71f-02c1dc3f3598",
+          "exampleItem": "Eu quero que o professor corrija minha pronúncia.",
+          "intent": "quero que o professor corrija"
+        },
+        {
+          "id": "959484b0-362c-439a-93c8-3ba3d94e7b1f",
+          "exampleItem": "Eu quero que você revise esse código.",
+          "intent": "quero que você revise"
+        },
+        {
+          "id": "70351663-4fcf-4ff9-b38f-a5557de39ca3",
+          "exampleItem": "Eu quero que todos cheguem no horário.",
+          "intent": "quero que todos cheguem"
+        }
+      ]
+    },
+    {
+      "id": "eu-gostaria-que-pessoa-verbo-aa03a181-d552-4355-a9bf-67b12775876e",
+      "intention": "Eu gostaria que + pessoa + verbo",
+      "pattern": "Eu gostaria que + pessoa + verbo (em inglês: I would like + someone + to + verb)",
+      "description": "Usado para expressar um desejo ou pedido de maneira mais educada e menos direta. Em inglês, utiliza-se would like + pessoa + to + verbo na forma base. Em português, a construção equivalente costuma ser gostaria que + sujeito + verbo no subjuntivo.",
+      "category": "requests",
+      "searchTerms": [
+        "eu gostaria que",
+        "gostaria que",
+        "seria bom se",
+        "preferiria que"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:eu\\s+)?gostaria\\s+que(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "pedidos educados",
+        "desejos",
+        "cortesia",
+        "pessoas",
+        "gerador de frases",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "Eu gostaria que + pessoa + verbo",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "276f8352-9eb7-44e1-a5a2-d27a6ab0f17e",
+          "exampleItem": "Eu gostaria que você ficasse aqui.",
+          "intent": "gostaria que você ficasse"
+        },
+        {
+          "id": "00452ed1-2fc0-4736-9cdd-28149e1dc7fd",
+          "exampleItem": "Eu gostaria que ele explicasse isso novamente.",
+          "intent": "gostaria que ele explicasse"
+        },
+        {
+          "id": "d0f1bd03-a695-42df-b315-3c523839d384",
+          "exampleItem": "Eu gostaria que você verificasse meu código.",
+          "intent": "gostaria que você verificasse"
+        },
+        {
+          "id": "bbcfacf3-6226-49c8-9e37-3b779e15c138",
+          "exampleItem": "Eu gostaria que ela participasse da reunião.",
+          "intent": "gostaria que ela participasse"
+        },
+        {
+          "id": "dfd7d20a-c7ab-4745-bd94-34a2f8c1c83b",
+          "exampleItem": "Eu gostaria que vocês falassem mais devagar.",
+          "intent": "gostaria que vocês falassem"
+        },
+        {
+          "id": "3393d7c8-3b55-4761-9517-fd7f2ef72bfc",
+          "exampleItem": "Eu gostaria que meu professor avaliasse minha evolução.",
+          "intent": "gostaria que meu professor avaliasse"
+        },
+        {
+          "id": "86d0fcbe-217e-4483-b0ef-87870149c000",
+          "exampleItem": "Eu gostaria que eles enviassem o relatório hoje.",
+          "intent": "gostaria que eles enviassem"
+        },
+        {
+          "id": "0ff9bc7b-d45f-4f77-9f99-fea0be7fc1f5",
+          "exampleItem": "Eu gostaria que você me avisasse quando chegasse.",
+          "intent": "gostaria que você me avisasse"
         }
       ]
     }

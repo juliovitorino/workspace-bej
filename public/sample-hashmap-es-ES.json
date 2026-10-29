@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1251,
+    "totalIntentions": 1253,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -49261,6 +49261,142 @@
         "(?<![\\p{L}\\p{N}_])Aunque\\s+no\\s+te\\s+lo\\s+creas(?![\\p{L}\\p{N}_])",
         "(?<![\\p{L}\\p{N}_])Lo\\s+creas\\s+o\\s+no(?![\\p{L}\\p{N}_])"
       ]
+    },
+    {
+      "id": "eu-quero-que-pessoa-verbo-a50c7c03-5a94-4894-801b-c246e480dcc2",
+      "intention": "Quiero que + persona + verbo",
+      "pattern": "Quiero que + persona + verbo en presente de subjuntivo (en inglés: I want + someone + to + verb)",
+      "description": "Se usa para expresar directamente el deseo de que otra persona realice una acción. En inglés se emplea want + persona + to + verbo en forma base; en español se utiliza querer que + sujeto + verbo en presente de subjuntivo.",
+      "searchTerms": [
+        "quiero que",
+        "deseo que",
+        "necesito que"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:yo\\s+)?quiero\\s+que(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "deseos",
+        "peticiones",
+        "personas",
+        "acciones",
+        "generador de frases",
+        "conversación"
+      ],
+      "structure": "Quiero que + persona + verbo en presente de subjuntivo",
+      "examples": [
+        {
+          "id": "c548d962-9679-4d9e-a489-2fc368cc48de",
+          "exampleItem": "Quiero que me ayudes.",
+          "intent": "Quiero que me ayudes"
+        },
+        {
+          "id": "9b14b862-f16e-4de6-ad6d-ede7aafcc35c",
+          "exampleItem": "Quiero que ella me llame mañana.",
+          "intent": "Quiero que ella me llame"
+        },
+        {
+          "id": "b3b5ec7b-1c6c-43a3-8d96-8c311474fb77",
+          "exampleItem": "Quiero que ellos entiendan el problema.",
+          "intent": "Quiero que ellos entiendan"
+        },
+        {
+          "id": "7a5877e9-cd99-41d4-b8d3-d444ad15cd0e",
+          "exampleItem": "Quiero que practiques inglés todos los días.",
+          "intent": "Quiero que practiques"
+        },
+        {
+          "id": "84d62c62-1819-4f92-8cf1-934d199e71ea",
+          "exampleItem": "Quiero que mi hijo sea independiente.",
+          "intent": "Quiero que mi hijo sea"
+        },
+        {
+          "id": "62548dfc-7f14-4833-b71f-02c1dc3f3598",
+          "exampleItem": "Quiero que el profesor corrija mi pronunciación.",
+          "intent": "Quiero que el profesor corrija"
+        },
+        {
+          "id": "959484b0-362c-439a-93c8-3ba3d94e7b1f",
+          "exampleItem": "Quiero que revises ese código.",
+          "intent": "Quiero que revises"
+        },
+        {
+          "id": "70351663-4fcf-4ff9-b38f-a5557de39ca3",
+          "exampleItem": "Quiero que todos lleguen puntuales.",
+          "intent": "Quiero que todos lleguen"
+        }
+      ],
+      "category": "requests",
+      "related": [],
+      "level": "A2"
+    },
+    {
+      "id": "eu-gostaria-que-pessoa-verbo-aa03a181-d552-4355-a9bf-67b12775876e",
+      "intention": "Me gustaría que + persona + verbo",
+      "pattern": "Me gustaría que + persona + verbo en imperfecto de subjuntivo (en inglés: I would like + someone + to + verb)",
+      "description": "Se usa para expresar un deseo o una petición de una manera más educada y menos directa. En inglés se emplea would like + persona + to + verbo en forma base. En español, la construcción equivalente suele ser me gustaría que + sujeto + verbo en imperfecto de subjuntivo.",
+      "searchTerms": [
+        "me gustaría que",
+        "sería bueno que",
+        "preferiría que"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])me\\s+gustar[ií]a\\s+que(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "peticiones educadas",
+        "deseos",
+        "cortesía",
+        "personas",
+        "generador de frases",
+        "conversación"
+      ],
+      "structure": "Me gustaría que + persona + verbo en imperfecto de subjuntivo",
+      "examples": [
+        {
+          "id": "276f8352-9eb7-44e1-a5a2-d27a6ab0f17e",
+          "exampleItem": "Me gustaría que te quedaras aquí.",
+          "intent": "Me gustaría que te quedaras"
+        },
+        {
+          "id": "00452ed1-2fc0-4736-9cdd-28149e1dc7fd",
+          "exampleItem": "Me gustaría que él lo explicara de nuevo.",
+          "intent": "Me gustaría que él lo explicara"
+        },
+        {
+          "id": "d0f1bd03-a695-42df-b315-3c523839d384",
+          "exampleItem": "Me gustaría que comprobaras mi código.",
+          "intent": "Me gustaría que comprobaras"
+        },
+        {
+          "id": "bbcfacf3-6226-49c8-9e37-3b779e15c138",
+          "exampleItem": "Me gustaría que ella participara en la reunión.",
+          "intent": "Me gustaría que ella participara"
+        },
+        {
+          "id": "dfd7d20a-c7ab-4745-bd94-34a2f8c1c83b",
+          "exampleItem": "Me gustaría que hablarais más despacio.",
+          "intent": "Me gustaría que hablarais"
+        },
+        {
+          "id": "3393d7c8-3b55-4761-9517-fd7f2ef72bfc",
+          "exampleItem": "Me gustaría que mi profesor evaluara mi progreso.",
+          "intent": "Me gustaría que mi profesor evaluara"
+        },
+        {
+          "id": "86d0fcbe-217e-4483-b0ef-87870149c000",
+          "exampleItem": "Me gustaría que ellos enviaran el informe hoy.",
+          "intent": "Me gustaría que ellos enviaran"
+        },
+        {
+          "id": "0ff9bc7b-d45f-4f77-9f99-fea0be7fc1f5",
+          "exampleItem": "Me gustaría que me avisaras cuando llegaras.",
+          "intent": "Me gustaría que me avisaras"
+        }
+      ],
+      "category": "requests",
+      "related": [],
+      "level": "B1"
     }
   ]
 }

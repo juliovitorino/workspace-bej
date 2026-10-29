@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1251,
+    "totalIntentions": 1253,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -49822,6 +49822,144 @@
           "id": "c2d45e5e-85d1-4dae-a167-929cb174594a",
           "exampleItem": "Croyez-le ou non, j’ai retrouvé un ami d’enfance hier.",
           "intent": "Croyez-le ou non"
+        }
+      ]
+    },
+    {
+      "id": "eu-quero-que-pessoa-verbo-a50c7c03-5a94-4894-801b-c246e480dcc2",
+      "intention": "Je veux que + personne + verbe",
+      "pattern": "Je veux que + sujet + verbe au subjonctif",
+      "structure": "Je veux que + sujet + verbe au subjonctif",
+      "description": "Exprime directement le souhait qu’une autre personne accomplisse une action. En français, vouloir que est suivi d’un sujet et d’un verbe au subjonctif. En anglais, la construction correspondante est want + personne + to + verbe à la forme de base.",
+      "searchTerms": [
+        "je veux que",
+        "veux que",
+        "je souhaite que",
+        "j’ai besoin que"
+      ],
+      "tags": [
+        "souhaits",
+        "demandes",
+        "personnes",
+        "actions",
+        "générateur de phrases",
+        "conversation"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:je\\s+)?veux\\s+qu(?:e(?=\\s)|[’'](?=[\\p{L}]))"
+      ],
+      "category": "requests",
+      "related": [],
+      "level": "A2",
+      "examples": [
+        {
+          "id": "c548d962-9679-4d9e-a489-2fc368cc48de",
+          "exampleItem": "Je veux que tu m’aides.",
+          "intent": "veux que tu m’aides"
+        },
+        {
+          "id": "9b14b862-f16e-4de6-ad6d-ede7aafcc35c",
+          "exampleItem": "Je veux qu’elle m’appelle demain.",
+          "intent": "veux qu’elle m’appelle"
+        },
+        {
+          "id": "b3b5ec7b-1c6c-43a3-8d96-8c311474fb77",
+          "exampleItem": "Je veux qu’ils comprennent le problème.",
+          "intent": "veux qu’ils comprennent"
+        },
+        {
+          "id": "7a5877e9-cd99-41d4-b8d3-d444ad15cd0e",
+          "exampleItem": "Je veux que tu pratiques l’anglais tous les jours.",
+          "intent": "veux que tu pratiques"
+        },
+        {
+          "id": "84d62c62-1819-4f92-8cf1-934d199e71ea",
+          "exampleItem": "Je veux que mon fils soit indépendant.",
+          "intent": "veux que mon fils soit"
+        },
+        {
+          "id": "62548dfc-7f14-4833-b71f-02c1dc3f3598",
+          "exampleItem": "Je veux que le professeur corrige ma prononciation.",
+          "intent": "veux que le professeur corrige"
+        },
+        {
+          "id": "959484b0-362c-439a-93c8-3ba3d94e7b1f",
+          "exampleItem": "Je veux que tu relises ce code.",
+          "intent": "veux que tu relises"
+        },
+        {
+          "id": "70351663-4fcf-4ff9-b38f-a5557de39ca3",
+          "exampleItem": "Je veux que tout le monde arrive à l’heure.",
+          "intent": "veux que tout le monde arrive"
+        }
+      ]
+    },
+    {
+      "id": "eu-gostaria-que-pessoa-verbo-aa03a181-d552-4355-a9bf-67b12775876e",
+      "intention": "J’aimerais que + personne + verbe",
+      "pattern": "J’aimerais que + sujet + verbe au subjonctif",
+      "structure": "J’aimerais que + sujet + verbe au subjonctif",
+      "description": "Exprime un souhait ou une demande de manière plus polie et moins directe. En français, aimerais que est suivi d’un sujet et d’un verbe au subjonctif. En anglais, la construction correspondante est would like + personne + to + verbe à la forme de base.",
+      "searchTerms": [
+        "j’aimerais que",
+        "aimerais que",
+        "ce serait bien si",
+        "je préférerais que"
+      ],
+      "tags": [
+        "demandes polies",
+        "souhaits",
+        "politesse",
+        "personnes",
+        "générateur de phrases",
+        "conversation"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:j[’'])?aimerais\\s+qu(?:e(?=\\s)|[’'](?=[\\p{L}]))"
+      ],
+      "category": "requests",
+      "related": [],
+      "level": "B1",
+      "examples": [
+        {
+          "id": "276f8352-9eb7-44e1-a5a2-d27a6ab0f17e",
+          "exampleItem": "J’aimerais que tu restes ici.",
+          "intent": "aimerais que tu restes"
+        },
+        {
+          "id": "00452ed1-2fc0-4736-9cdd-28149e1dc7fd",
+          "exampleItem": "J’aimerais qu’il explique cela à nouveau.",
+          "intent": "aimerais qu’il explique"
+        },
+        {
+          "id": "d0f1bd03-a695-42df-b315-3c523839d384",
+          "exampleItem": "J’aimerais que tu vérifies mon code.",
+          "intent": "aimerais que tu vérifies"
+        },
+        {
+          "id": "bbcfacf3-6226-49c8-9e37-3b779e15c138",
+          "exampleItem": "J’aimerais qu’elle participe à la réunion.",
+          "intent": "aimerais qu’elle participe"
+        },
+        {
+          "id": "dfd7d20a-c7ab-4745-bd94-34a2f8c1c83b",
+          "exampleItem": "J’aimerais que vous parliez plus lentement.",
+          "intent": "aimerais que vous parliez"
+        },
+        {
+          "id": "3393d7c8-3b55-4761-9517-fd7f2ef72bfc",
+          "exampleItem": "J’aimerais que mon professeur évalue mes progrès.",
+          "intent": "aimerais que mon professeur évalue"
+        },
+        {
+          "id": "86d0fcbe-217e-4483-b0ef-87870149c000",
+          "exampleItem": "J’aimerais qu’ils envoient le rapport aujourd’hui.",
+          "intent": "aimerais qu’ils envoient"
+        },
+        {
+          "id": "0ff9bc7b-d45f-4f77-9f99-fea0be7fc1f5",
+          "exampleItem": "J’aimerais que tu me préviennes quand tu arriveras.",
+          "intent": "aimerais que tu me préviennes"
         }
       ]
     }
