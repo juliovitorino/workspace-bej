@@ -1,0 +1,325 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "decision-making",
+  "title": "Decision-making",
+  "description": null,
+  "items": [
+    {
+      "id": "5680f6e4-6c7e-4a52-8151-3d2e9a44a705",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How do you usually make important decisions in your life?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Decision-making",
+        "paragraphIndex": 1046
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "3addc37f-199a-4c07-bf88-e18395e94768",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you know what I mean?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Decision-making",
+        "paragraphIndex": 1049
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b01f89d1-7c8b-4cc7-b0a9-be8fff392ec5",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer to think carefully before deciding, or do you trust your instincts?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Decision-making",
+        "paragraphIndex": 1051
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7fd2f2ca-41ca-4ce9-a726-f544b9c7b63c",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you usually ask other people for advice before making a decision?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Decision-making",
+        "paragraphIndex": 1057
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d9961fd9-1b41-462b-b03d-444d78b2af4c",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If so, who do you ask for advice?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Decision-making",
+        "paragraphIndex": 1058
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "205b6e77-b5e0-4f09-a54d-b23e923ae261",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If so, who do you go to for advice?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Decision-making",
+        "paragraphIndex": 1059
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "066d1b67-9530-43f5-b7f6-907d0fceecd7",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If so, who do you usually talk to?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Decision-making",
+        "paragraphIndex": 1060
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ef982755-3e68-4ac7-82eb-e4f1d3036cd6",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you know what I mean?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Decision-making",
+        "paragraphIndex": 1063
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c6d6126c-b300-4874-8194-d4b5d4e09914",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one difficult decision you have had to make recently?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Decision-making",
+        "paragraphIndex": 1073
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c6d3e2b8-7505-484d-90c1-8a095e380399",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How do you feel after making a big decision?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Decision-making",
+        "paragraphIndex": 1075
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "76cf715d-653b-4eb2-8d29-49c7e91d8aa1",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think making quick decisions is a good skill to have?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Decision-making",
+        "paragraphIndex": 1076
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4c6748e3-4d7f-49d8-a402-a3545dd3217c",
+      "type": "question-answer",
+      "order": 12,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What factors are the most important when you make a decision?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Decision-making",
+        "paragraphIndex": 1077
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "5be250b7-8c25-4a45-9bf8-63ecaa223507",
+      "type": "question-answer",
+      "order": 13,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever made a decision that completely changed your life?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Decision-making",
+        "paragraphIndex": 1078
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2f35121f-1957-446c-a340-7fa6a5b680e4",
+      "type": "question-answer",
+      "order": 14,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you find it easy or difficult to make decisions under pressure?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Decision-making",
+        "paragraphIndex": 1079
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ab5f9d1f-44a2-4455-a258-a89f520c724e",
+      "type": "question-answer",
+      "order": 15,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you usually do if you regret a decision you made?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Decision-making",
+        "paragraphIndex": 1080
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

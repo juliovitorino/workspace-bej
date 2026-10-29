@@ -1,0 +1,430 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "general",
+  "title": "General Topic",
+  "description": null,
+  "items": [
+    {
+      "id": "8df120df-9130-4dba-9a08-9aee1db3c808",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you like your job and How is your routine?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "General Topic",
+        "paragraphIndex": 80
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "88bf7f0d-2243-42a9-8319-c9474f350ad2",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Why did you decide to come here?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "General Topic",
+        "paragraphIndex": 84
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "65b7032e-f6ae-454a-9dbc-e3ebf5673b73",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is this your first time here, or do you often come here?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "General Topic",
+        "paragraphIndex": 89
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "716dcc22-6c5b-4c88-ae5a-d8ead6749c1a",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What about your morning routine?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "General Topic",
+        "paragraphIndex": 92
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "87fa6545-1db1-4c2b-bac0-52f06c0cc10f",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you usually do in your free time?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "General Topic",
+        "paragraphIndex": 95
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "79525b4a-4925-4ad5-b7f9-3a5466dd9d1a",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you enjoy talking about?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "General Topic",
+        "paragraphIndex": 97
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6ccc9067-74a9-46c5-ae31-ebf724d145bf",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you usually do to relax after a long or stressful day?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "General Topic",
+        "paragraphIndex": 99
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e1c0a035-5c50-431d-aae6-b1a0de39ee17",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What habits have you been trying to build recently in your daily life?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "General Topic",
+        "paragraphIndex": 102
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f1f21c31-4d25-4e44-ad02-e8d03759f047",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What about your morning routine?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "General Topic",
+        "paragraphIndex": 106
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "0819658e-e8b9-48b0-b53d-f5758eca04d0",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you enjoy talking about?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "General Topic",
+        "paragraphIndex": 109
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "3533bdf6-1a2d-4675-a70b-809a5f85411f",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you have any pets, and what is unique about them?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "General Topic",
+        "paragraphIndex": 115
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c3945c8e-0c87-4885-8725-795ecb0f809f",
+      "type": "question-answer",
+      "order": 12,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If you have a pet, who in your family does it get along with?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "General Topic",
+        "paragraphIndex": 124
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "fd0d0678-5ee1-4892-8dfe-6fa6f5143e47",
+      "type": "question-answer",
+      "order": 13,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you like most about this time of year?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "General Topic",
+        "paragraphIndex": 127
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "0128fc6f-8143-4ea3-a1c6-ff3915e34e0a",
+      "type": "question-answer",
+      "order": 14,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the most recent book you’ve read that you’ve enjoyed?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "General Topic",
+        "paragraphIndex": 130
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "97c06e40-2545-4f80-849c-9bb28468b7b5",
+      "type": "question-answer",
+      "order": 15,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is your favorite type of cuisine and why?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "General Topic",
+        "paragraphIndex": 136
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f426b126-9e69-4aa2-8922-fa89c8f8e5ff",
+      "type": "question-answer",
+      "order": 16,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Who do you enjoy sharing these dishes with the most?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "General Topic",
+        "paragraphIndex": 145
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "193390e3-99af-4f76-aeae-d0034f7d37b3",
+      "type": "question-answer",
+      "order": 17,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you rather live in a city or a rural area, and why?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "General Topic",
+        "paragraphIndex": 148
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d866dea7-f0fa-4b7b-ba3f-63f0d393982f",
+      "type": "question-answer",
+      "order": 18,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What would you tell for yourself if you could come back at time when you were younger?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "General Topic",
+        "paragraphIndex": 153
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "db1572d1-fde8-45be-9892-c9131806e935",
+      "type": "question-answer",
+      "order": 19,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What countries is next to your country?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "General Topic",
+        "paragraphIndex": 157
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6e95f407-02d8-4628-bba0-359d83f897e2",
+      "type": "question-answer",
+      "order": 20,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How would you describe yourself to someone else who doesn’t know you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "General Topic",
+        "paragraphIndex": 160
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

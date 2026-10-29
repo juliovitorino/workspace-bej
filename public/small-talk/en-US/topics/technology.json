@@ -1,0 +1,241 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "technology",
+  "title": "Technology Topic",
+  "description": null,
+  "items": [
+    {
+      "id": "8872f660-65ff-4a11-a62e-9f1e2726ff73",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one technology or gadget you can’t live without and why?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Technology Topic",
+        "paragraphIndex": 710
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "dbbd55a0-c732-4057-9ca0-c66a683e2345",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you tried any new app software or devices recently, and what is your review of them?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Technology Topic",
+        "paragraphIndex": 740
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "663d1d45-b5bd-4df8-a902-0bebdf3f4adc",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you rather have Apple or Android products, and why?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Technology Topic",
+        "paragraphIndex": 742
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8c79884d-7afd-45e8-bef3-d4c81084af2e",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever built or customized a computer or device, and how did it turn out?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Technology Topic",
+        "paragraphIndex": 744
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "355db0a6-c354-44c4-ab8a-b63dd13896bd",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one recent technological advancement or development that you find interesting?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Technology Topic",
+        "paragraphIndex": 746
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "30eeddee-1339-47c1-a5d2-b67026f9a05f",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you tried virtual reality or augmented reality, and what is your experience like?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Technology Topic",
+        "paragraphIndex": 748
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "415bed3d-13c1-4ef5-b7bf-2be719798743",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is a useful app you use regularly, and how does it help you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Technology Topic",
+        "paragraphIndex": 750
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "fe9defa8-4f6b-4e48-b51f-745350c4472c",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you tried any technology or gadgets recently, and what is your review of them?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Technology Topic",
+        "paragraphIndex": 752
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "40bc84cc-42ed-4452-900d-3b7dd753f60f",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think technology has more positive or negative effects on our lives and why?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Technology Topic",
+        "paragraphIndex": 753
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e7e3b1cd-1b46-49e0-9551-2d17dc61e642",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one technological issue or challenge that you wish could be solved?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Technology Topic",
+        "paragraphIndex": 755
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "bc889835-c71b-4288-a939-cd8796556424",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you have any tips or recommendations for staying safe and secure online?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Technology Topic",
+        "paragraphIndex": 757
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

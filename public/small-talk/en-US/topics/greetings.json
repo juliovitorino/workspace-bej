@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "greetings",
+  "title": "Greetings Topic",
+  "description": null,
+  "items": [
+    {
+      "id": "7dd58de7-a365-4dff-83c6-024a01552094",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How’s it going?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Greetings Topic",
+        "paragraphIndex": 7
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "42bd2071-4550-496d-b736-9a615c6af567",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Where are you from?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Greetings Topic",
+        "paragraphIndex": 10
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8ec239cd-ca84-4275-b1bb-fe60be40d373",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How was your day?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Greetings Topic",
+        "paragraphIndex": 13
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f098728f-e80d-41a3-8d6c-f7bc9371cd51",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you do for a living?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Greetings Topic",
+        "paragraphIndex": 16
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "df41848a-dd84-4933-8aaa-13f3def5d21f",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What did you do last weekend?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Greetings Topic",
+        "paragraphIndex": 33
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "38075542-7fce-416a-a2f9-e882152094c2",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How long have you been using this App?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Greetings Topic",
+        "paragraphIndex": 37
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "dcfc671e-60e5-4883-8fb7-c38a3c81515f",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What brings you here?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Greetings Topic",
+        "paragraphIndex": 40
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d2cf9682-14fb-4a5c-8cee-82fe1fde0da7",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you what I mean?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Greetings Topic",
+        "paragraphIndex": 42
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e9c0f52f-20e8-4248-acad-0284e88982d1",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How do you want to feel by the end of the year?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Greetings Topic",
+        "paragraphIndex": 44
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d7102c50-ec2b-45d6-930b-0b2f9c017781",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How would you describe yourself to someone who doesn't know you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Greetings Topic",
+        "paragraphIndex": 49
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

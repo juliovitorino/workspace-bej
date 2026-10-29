@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "security",
+  "title": "Security",
+  "description": null,
+  "items": [
+    {
+      "id": "c02e0243-9cb9-4971-b499-065103012eb6",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is your country safe for tourists?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Security",
+        "paragraphIndex": 1156
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "0d707897-010d-4d1e-b82e-62ca9df5bbcb",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever been robbed?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Security",
+        "paragraphIndex": 1160
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6cab0c6f-3c2c-4eae-b5d8-2f6b32321a80",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How did that happen?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Security",
+        "paragraphIndex": 1163
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "15437fb4-79f0-40f3-96e0-c2e821bdc469",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Did you get your things back?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Security",
+        "paragraphIndex": 1166
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "620f4649-6017-4916-813b-df85141ce679",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Did you report the robbery to the police or not?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Security",
+        "paragraphIndex": 1169
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

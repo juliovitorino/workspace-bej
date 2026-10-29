@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "health",
+  "title": "Health",
+  "description": null,
+  "items": [
+    {
+      "id": "b29c6b95-59ec-407e-b858-1c26af6b169f",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you usually do to stay healthy?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Health",
+        "paragraphIndex": 889
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "1ada2885-bfae-440f-9273-2fe25fa88f55",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think it’s difficult to maintain a healthy lifestyle nowadays?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Health",
+        "paragraphIndex": 891
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7de61a94-c651-4e13-935a-21506d29a5b7",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of exercise do you enjoy the most?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Health",
+        "paragraphIndex": 893
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "05c80c94-93fc-49ad-acfe-89994f7dafbd",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How important is sleep for your health?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Health",
+        "paragraphIndex": 895
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e182a489-6797-46a1-a6b7-bfff9cc16ce5",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think people today are more health-conscious than before?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Health",
+        "paragraphIndex": 897
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b331275b-58e4-4d40-8d9d-43378e4dac18",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What habits do you think are the most important for good health?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Health",
+        "paragraphIndex": 899
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "544b8596-14f9-4d1a-a04e-b87f8042836e",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How do you usually deal with stress?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Health",
+        "paragraphIndex": 901
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6877fe1b-449a-4a4b-ad7c-9ed6e55eb79e",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer exercising at the gym or outdoors?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Health",
+        "paragraphIndex": 905
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2f47b2c8-9397-416f-aa3f-d22e3920c5c0",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one healthy habit you would like to develop?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Health",
+        "paragraphIndex": 907
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "37b277ed-10ea-4711-9327-0894d218fc16",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think mental health is discussed enough in society today?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Health",
+        "paragraphIndex": 909
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

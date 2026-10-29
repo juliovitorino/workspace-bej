@@ -1,0 +1,262 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "lifestyle",
+  "title": "Lifestyle",
+  "description": null,
+  "items": [
+    {
+      "id": "76664d5b-4d95-454e-aed5-a482f657ee73",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one activity or hobby you find most relaxing or stress-relieving?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Lifestyle",
+        "paragraphIndex": 762
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "80eb4980-04f0-45a5-a949-9beb55bdbbba",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you have any daily rituals or habits that you swear by?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Lifestyle",
+        "paragraphIndex": 769
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8cb8561b-41fa-4c60-aaf8-bb86e3b6d557",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Are you a homebody, or do you like going out with your friends?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Lifestyle",
+        "paragraphIndex": 775
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c73a4fe7-fc65-4df5-8fb5-9dcf959ee53a",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "# What Is a Successful Life?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Lifestyle",
+        "paragraphIndex": 778
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2789b9c9-001d-4d34-8041-da0d6ef8af7e",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is your typical daily routine, and how do you make the most of your time?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Lifestyle",
+        "paragraphIndex": 789
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "17037742-188b-4497-a318-f0fccd052ccc",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you rather stay in or go out, and what do you enjoy in your free time?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Lifestyle",
+        "paragraphIndex": 791
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4e63fc90-926d-44cc-b0e7-ea7ce8510962",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you typically have for lunch?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Lifestyle",
+        "paragraphIndex": 793
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a3a13b34-b64a-4f6d-a284-20e3e5d1663e",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one way you like to stay active or healthy, and how has it benefited you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Lifestyle",
+        "paragraphIndex": 795
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2742e61a-be08-45a0-bc06-ab40af9fa5ab",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you have any guilty pleasures, and what do you enjoy about them?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Lifestyle",
+        "paragraphIndex": 797
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7fbcee3e-1595-4661-bbb5-6baac244da7f",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one way you like to spend a lazy day or relax after a long week?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Lifestyle",
+        "paragraphIndex": 799
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "548a1e71-7056-4d98-b045-f4552563a481",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one activity or practice you do to distress or unwind?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Lifestyle",
+        "paragraphIndex": 801
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "dde1c84d-bde6-49d3-9a56-221fdcb412dc",
+      "type": "question-answer",
+      "order": 12,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one thing that brings you joy or fulfillment in life and why?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Lifestyle",
+        "paragraphIndex": 803
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

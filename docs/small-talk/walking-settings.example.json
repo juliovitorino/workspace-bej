@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "mode": "walking",
+  "repeatCount": 5,
+  "playDefaultAnswer": false,
+  "defaultAnswerSource": "original",
+  "pauseAfterQuestionSeconds": 10,
+  "pauseBetweenRepetitionsSeconds": 1,
+  "repetitionUnit": "full-answer",
+  "voice": "cedar",
+  "shuffle": false,
+  "keepScreenAwake": true,
+  "selectedLevels": [
+    "a1",
+    "a2",
+    "b1",
+    "b2",
+    "c1"
+  ],
+  "selectedTopicIds": [],
+  "favoritesOnly": false
+}

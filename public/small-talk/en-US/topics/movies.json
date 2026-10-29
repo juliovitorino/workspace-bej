@@ -1,0 +1,378 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "movies",
+  "title": "Movies",
+  "description": null,
+  "items": [
+    {
+      "id": "5422ca7c-9e29-4573-b3ce-b1d47b48588c",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What about you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Movies",
+        "paragraphIndex": 1752,
+        "promptHeading": "1. Watching movies",
+        "promptHeadingParagraphIndex": 1750
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "9df67190-bea0-426e-89db-aee4dce73d97",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What about you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Movies",
+        "paragraphIndex": 1755,
+        "promptHeading": "🎬 Avatar — The Best Movie I’ve Ever Seen",
+        "promptHeadingParagraphIndex": 1753
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "27c3aef6-572f-4d33-9e2c-658aafdfd8ac",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of movies do you usually watch?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Movies",
+        "paragraphIndex": 1758,
+        "promptHeading": "2. Favorite kind of movies",
+        "promptHeadingParagraphIndex": 1756
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "cc3d0e07-1655-4cdc-ac8c-e5cb7bdbd8b8",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you like movies based on true stories?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Movies",
+        "paragraphIndex": 1761,
+        "promptHeading": "3. Movies based on true stories",
+        "promptHeadingParagraphIndex": 1759
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a987a3ff-d07e-4bb5-a272-78deb443272c",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "When was the last time you went to the movie theater?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Movies",
+        "paragraphIndex": 1765,
+        "promptHeading": "4. Going to the movie theater",
+        "promptHeadingParagraphIndex": 1763
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f5b15030-78ad-4421-a0f5-c7d71d6940fa",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Does that happen to you too?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Movies",
+        "paragraphIndex": 1768,
+        "promptHeading": "5. Streaming services",
+        "promptHeadingParagraphIndex": 1766
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "1b8da51f-34dc-4ec8-98db-b26eef337bef",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever used movies or TV shows to learn another language?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Movies",
+        "paragraphIndex": 1771,
+        "promptHeading": "6. Watching movies in English",
+        "promptHeadingParagraphIndex": 1769
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f8510434-3a9e-45ca-8e34-eb0b929e89c7",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "When you watch something in another language, do you use subtitles in your language or in the original language?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Movies",
+        "paragraphIndex": 1774,
+        "promptHeading": "7. Subtitles",
+        "promptHeadingParagraphIndex": 1772
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "00d0a711-b2d7-41a4-9233-e2940730b12f",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is there an actor or actress whose movies you almost always watch?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Movies",
+        "paragraphIndex": 1780,
+        "promptHeading": "8. Actors and actresses",
+        "promptHeadingParagraphIndex": 1778
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e33a8769-da39-41b0-8634-ec6624a9b84c",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer older movies or newer movies?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Movies",
+        "paragraphIndex": 1783,
+        "promptHeading": "9. Old movies vs. new movies",
+        "promptHeadingParagraphIndex": 1781
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a5126f86-6da8-49b6-aedf-0dd5f006bb96",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What's one movie you'll never forget, and why?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Movies",
+        "paragraphIndex": 1786,
+        "promptHeading": "10. A movie you never forget",
+        "promptHeadingParagraphIndex": 1784
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6e231e0f-19d1-4357-aa01-641f1013cb73",
+      "type": "question-answer",
+      "order": 12,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is there a movie you've watched many times?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Movies",
+        "paragraphIndex": 1789,
+        "promptHeading": "11. Watching the same movie again",
+        "promptHeadingParagraphIndex": 1787
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b97d362a-af96-4edb-bb4c-deb4698084e2",
+      "type": "question-answer",
+      "order": 13,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What's the most disappointing movie you've ever watched?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Movies",
+        "paragraphIndex": 1792,
+        "promptHeading": "12. Bad movies",
+        "promptHeadingParagraphIndex": 1790
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "3f212514-530b-4c9e-8377-beadfe29673e",
+      "type": "question-answer",
+      "order": 14,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If you could recommend only one movie to me, which one would you choose?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Movies",
+        "paragraphIndex": 1796,
+        "promptHeading": "13. Recommendations",
+        "promptHeadingParagraphIndex": 1794
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "78eea578-3f53-48f9-8528-bd0283db69a3",
+      "type": "question-answer",
+      "order": 15,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What's a movie from your country that you think foreigners should watch?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Movies",
+        "paragraphIndex": 1800,
+        "promptHeading": "14. Movies from your country",
+        "promptHeadingParagraphIndex": 1798
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6043b229-61ea-40fd-9969-a2caaa4507a9",
+      "type": "question-answer",
+      "order": 16,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What would your perfect movie night look like?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Movies",
+        "paragraphIndex": 1803,
+        "promptHeading": "15. The perfect movie night",
+        "promptHeadingParagraphIndex": 1801
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

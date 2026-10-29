@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "france",
+  "title": "FRANCE",
+  "description": null,
+  "items": [
+    {
+      "id": "5116adb6-5e08-471b-b32d-6b10b00b4578",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Which part of France do you think is the most interesting to visit?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FRANCE",
+        "paragraphIndex": 1490
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "1eb64a2b-cecf-4f56-be42-4fce15b2da1d",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer famous tourist attractions or quieter local places?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FRANCE",
+        "paragraphIndex": 1491
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "89012442-1aa7-4180-90a1-633ac694a9d0",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What French food would you recommend to someone visiting for the first time?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FRANCE",
+        "paragraphIndex": 1492
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "230e1c0d-d7aa-4d2d-9994-689e30a218f5",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you usually have for breakfast?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FRANCE",
+        "paragraphIndex": 1493
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8ca5f627-4843-4285-a2c8-1a537685763e",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you enjoy spending time in cafés?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FRANCE",
+        "paragraphIndex": 1494
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "3e35e49d-4585-4a32-8749-83ba11138c23",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer visiting big cities or smaller towns?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FRANCE",
+        "paragraphIndex": 1495
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c58b7fd7-fd4a-4d9f-8fcb-499fd8b62094",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is there a region in your country with a very strong local identity?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FRANCE",
+        "paragraphIndex": 1496
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "775dcebc-f389-4b8f-b77a-fc6bb1ea0fa7",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer places with a relaxed lifestyle or a fast-paced city?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FRANCE",
+        "paragraphIndex": 1497
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ad8780cd-68fd-487a-9243-630e7b6cd2ca",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Are you more interested in movies, music, books, or art?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FRANCE",
+        "paragraphIndex": 1498
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c75bef0d-ce43-4576-8790-b5d7635baf9b",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one thing about France that foreigners usually misunderstand?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FRANCE",
+        "paragraphIndex": 1499
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

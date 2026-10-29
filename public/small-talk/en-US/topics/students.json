@@ -1,0 +1,430 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "students",
+  "title": "STUDENTS",
+  "description": null,
+  "items": [
+    {
+      "id": "e1828393-d7a3-48b6-bcb7-19a652939f3d",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the most stressful part of being a student for you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "STUDENTS",
+        "paragraphIndex": 57
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f52bbc4d-e50b-4a9e-b77e-25ae34d5ca48",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer studying alone or with other people?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "STUDENTS",
+        "paragraphIndex": 58
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "356e3972-ac4f-4ecb-ba21-4f3135915bb2",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How did you choose what you wanted to study?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "STUDENTS",
+        "paragraphIndex": 59
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f78c4b98-c416-411d-936b-f6e7339cfaeb",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever had a teacher who really influenced you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "STUDENTS",
+        "paragraphIndex": 60
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a149b3b7-a0f7-4128-8d66-0f8738b98bf4",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How do you organize your study time?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "STUDENTS",
+        "paragraphIndex": 61
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "1817767c-da65-423d-9ab4-77d4a8b78dfa",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you usually get nervous before an exam?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "STUDENTS",
+        "paragraphIndex": 62
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "aec39565-9d57-4bc3-a34b-65d8faf1a276",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is more important to you: studying something you love or choosing a good career?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "STUDENTS",
+        "paragraphIndex": 63
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "50c438a2-fc5e-4bbd-90ac-1602a9e2fcc9",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you enjoy most about student life besides studying?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "STUDENTS",
+        "paragraphIndex": 64
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4fc3c340-83a1-4075-bf0f-89127764fa27",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is your main reason for learning English?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "STUDENTS",
+        "paragraphIndex": 65
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "57f23337-450e-4575-ab6a-03fe9a55381e",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What would you like to do after you finish your studies?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "STUDENTS",
+        "paragraphIndex": 66
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b178bb32-ee0d-46b1-9128-8ca3930c47d9",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What are you studying?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "STUDENTS",
+        "paragraphIndex": 68
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "340ed729-6c18-429d-93ec-fc0d8d69bd41",
+      "type": "question-answer",
+      "order": 12,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Why did you choose that subject?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "STUDENTS",
+        "paragraphIndex": 69
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "9460b283-44ea-449e-8d03-40f47276a146",
+      "type": "question-answer",
+      "order": 13,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What year are you in?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "STUDENTS",
+        "paragraphIndex": 70
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "283eaa1b-8da1-43a9-9d6a-56e7ded3723e",
+      "type": "question-answer",
+      "order": 14,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is your favorite subject?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "STUDENTS",
+        "paragraphIndex": 71
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "1b85c534-17ac-4bf7-b008-9b660e422f20",
+      "type": "question-answer",
+      "order": 15,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is your hardest subject?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "STUDENTS",
+        "paragraphIndex": 72
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c833bed2-82ab-4020-abbc-fef27b268a15",
+      "type": "question-answer",
+      "order": 16,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you enjoy university life?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "STUDENTS",
+        "paragraphIndex": 73
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "5660ee7c-0010-4af1-a611-ffe1ab75749e",
+      "type": "question-answer",
+      "order": 17,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Are you working and studying at the same time?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "STUDENTS",
+        "paragraphIndex": 74
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "95b8ec31-44e2-4e5c-a749-7282a8785070",
+      "type": "question-answer",
+      "order": 18,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of job would you like to have?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "STUDENTS",
+        "paragraphIndex": 75
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4afbaa7b-3c71-4cc0-ad1c-d1f9c7954088",
+      "type": "question-answer",
+      "order": 19,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you like to study abroad someday?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "STUDENTS",
+        "paragraphIndex": 76
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2a70f5cd-60d8-451b-a4d2-05eb791cc05f",
+      "type": "question-answer",
+      "order": 20,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you usually do after class?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "STUDENTS",
+        "paragraphIndex": 77
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

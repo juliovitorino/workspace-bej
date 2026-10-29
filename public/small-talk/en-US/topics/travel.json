@@ -1,0 +1,262 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "travel",
+  "title": "Travel Topic",
+  "description": null,
+  "items": [
+    {
+      "id": "a7503273-9973-4fa1-b3d7-0c7521e68e1d",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you traveled anywhere recently, and where did you go?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Travel Topic",
+        "paragraphIndex": 351
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "1f54b1fa-585f-4c48-bed8-511ebf71d026",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is your favorite place you’ve ever visited, and why?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Travel Topic",
+        "paragraphIndex": 361
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d6cf43dc-72e5-4cf3-b07a-de40f3349e07",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Where would you like to go on your next trip?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Travel Topic",
+        "paragraphIndex": 373
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "aca10898-b651-4483-8fa3-a887ef09a220",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is your favorite way to travel, and why?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Travel Topic",
+        "paragraphIndex": 380
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d2424207-0bb7-43c6-a260-21c44d33a820",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you rather relax on vacation or go on adventure trips, and why?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Travel Topic",
+        "paragraphIndex": 386
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ae32bece-4e84-4c0c-ba2c-7b42f713f8a2",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever had a negative travel experience, and how did you deal with it?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Travel Topic",
+        "paragraphIndex": 396
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "fcbbf6a5-774b-4334-8ecd-e375542ff7f8",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one cultural experience you’ve had a while traveling that you will never forget?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Travel Topic",
+        "paragraphIndex": 403
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e9efaa77-7cf7-4895-9603-e1428498b067",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one unique or exotic food you've tried while you’re traveling?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Travel Topic",
+        "paragraphIndex": 412
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c42ea785-d32a-4854-ab6a-9d15f54dc3c9",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What about you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Travel Topic",
+        "paragraphIndex": 416
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "799c6eb7-a924-46f9-9d45-1a6d52ef12c8",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you rather travel alone or with others?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Travel Topic",
+        "paragraphIndex": 417
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "597b29fc-98cd-43d5-af71-f05f1eca57b9",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What about you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Travel Topic",
+        "paragraphIndex": 422
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7ed332a6-91e1-4831-8a4c-17b7ecaf2101",
+      "type": "question-answer",
+      "order": 12,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Who do you like traveling with most?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Travel Topic",
+        "paragraphIndex": 423
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

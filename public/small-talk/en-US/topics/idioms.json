@@ -1,0 +1,283 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "idioms",
+  "title": "Idioms Topic",
+  "description": null,
+  "items": [
+    {
+      "id": "3f47b977-337e-4158-8cb7-8a0643c1c6bd",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How many languages do you speak besides your mother tongue?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Idioms Topic",
+        "paragraphIndex": 168
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "52cd0df7-e13a-4597-b0ef-ab3f61d23337",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Are you fluent in that / those language?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Idioms Topic",
+        "paragraphIndex": 177
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "cc734024-adbb-4163-9ab9-877bb6ccbca0",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How long have you been studying English?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Idioms Topic",
+        "paragraphIndex": 180
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d6ae53b0-4594-47dc-aab5-2b909ac58e47",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What can English do for you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Idioms Topic",
+        "paragraphIndex": 183
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "acb00560-92e7-4b3f-a6a8-4c13cb00ab4b",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What usually motivates you to practice English, even on busy days?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Idioms Topic",
+        "paragraphIndex": 189
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d6a04385-2d21-4900-be16-68a9839a2eff",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of environment helps you feel more comfortable speaking another language?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Idioms Topic",
+        "paragraphIndex": 192
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "221f13d0-66b0-4556-b110-d5361e361e0b",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How did you start learning English, and what has helped you the most so far?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Idioms Topic",
+        "paragraphIndex": 194
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ae6577c1-fa71-4aa9-b7df-d6f3c3992df6",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If you could give advice to someone learning English, what would you say?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Idioms Topic",
+        "paragraphIndex": 203
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "670a7d90-3d61-42f3-92fd-21c6a009b773",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of situations make you feel more confident when speaking English?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Idioms Topic",
+        "paragraphIndex": 210
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "54c28f6b-b631-4c9f-a7f1-88f60046fb45",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If you could improve just one English skill this year, what would it be and why?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Idioms Topic",
+        "paragraphIndex": 216
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e2c3e1cd-cc5d-4e5f-b2ec-c77f58be1d20",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "When you’re speaking English, what do you really focus on more: fluency or correctness?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Idioms Topic",
+        "paragraphIndex": 218
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2d4bbb2e-15f5-4c13-8a02-3afde719d381",
+      "type": "question-answer",
+      "order": 12,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How have I done this?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Idioms Topic",
+        "paragraphIndex": 220
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d250bb2c-dd65-4ab1-a877-699252ad6908",
+      "type": "question-answer",
+      "order": 13,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What has been the biggest challenge for you when practicing speaking so far?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Idioms Topic",
+        "paragraphIndex": 221
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

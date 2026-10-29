@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "artificial-intelligence",
+  "title": "Artificial Intelligence",
+  "description": null,
+  "items": [
+    {
+      "id": "46e6bf72-0599-44d6-ba12-b4008af17bdd",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you think about artificial intelligence?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Artificial Intelligence",
+        "paragraphIndex": 1175
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "32055bb5-a902-4e3e-98fe-0d3f53aac3af",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you use AI in your daily life?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Artificial Intelligence",
+        "paragraphIndex": 1182
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7a450573-c50c-4f00-90b3-b417251badd5",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you trust AI to make important decisions for you, like financial or medical decisions?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Artificial Intelligence",
+        "paragraphIndex": 1191
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "75b733b8-c487-4b5a-9b5f-9a7f2dd2ae43",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think AI will replace many jobs in the future?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Artificial Intelligence",
+        "paragraphIndex": 1196
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "97bf0db8-665f-41e5-b412-7e32303a6996",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one thing AI can do today that really impresses you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Artificial Intelligence",
+        "paragraphIndex": 1221
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "55b9e1f6-0633-4abe-bbb6-b82e202498c6",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think AI will make people more productive or more lazy?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Artificial Intelligence",
+        "paragraphIndex": 1222
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7cbd3285-ee86-4ff0-bc41-d3cb46918dc0",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever had a strange or funny experience using AI?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Artificial Intelligence",
+        "paragraphIndex": 1223
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8d2e4edc-6518-4f92-bae0-569378b2cca1",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think AI can become more intelligent than humans someday?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Artificial Intelligence",
+        "paragraphIndex": 1224
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f5e2da4a-649f-4c25-ac15-31d23055aa49",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If you could create your own AI assistant, what would it do for you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Artificial Intelligence",
+        "paragraphIndex": 1225
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "0d758751-d207-4773-95ce-472b07310fc7",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think AI will improve human relationships or make them worse?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Artificial Intelligence",
+        "paragraphIndex": 1226
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

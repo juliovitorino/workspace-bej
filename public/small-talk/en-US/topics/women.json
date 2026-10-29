@@ -1,0 +1,199 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "women",
+  "title": "WOMEN",
+  "description": null,
+  "items": [
+    {
+      "id": "4c07b4fc-29fc-4268-b15f-a0cc5001d030",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Why do people say women from Rio are so attractive?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "WOMEN",
+        "paragraphIndex": 1291
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "fca392f3-9954-4cd6-9316-b23a1b00b97e",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Are women from Rio really more open-minded?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "WOMEN",
+        "paragraphIndex": 1293
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "52eb27f1-b790-49e6-958f-dae7d96392a1",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is it easy for a foreign guy to date a Brazilian woman?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "WOMEN",
+        "paragraphIndex": 1295
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f1f988f8-963b-4817-9cf8-a4ef9a7bdfa6",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Are Brazilian women very jealous?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "WOMEN",
+        "paragraphIndex": 1297
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c35b11ee-d242-49a5-a4b4-f871ed30b8c9",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do women from Rio like foreign men?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "WOMEN",
+        "paragraphIndex": 1299
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b342b5d9-ef22-4dbe-88f5-15546e6641b6",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Are cariocas more into casual dating or serious relationships?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "WOMEN",
+        "paragraphIndex": 1301
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "92aa14dc-d6e9-4c8e-9b52-3dc818d318f1",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is hookup culture common in Rio?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "WOMEN",
+        "paragraphIndex": 1302
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "82a69f89-d706-45cf-be80-e95da6888956",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is it normal to kiss someone the same night you meet them in Brazil?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "WOMEN",
+        "paragraphIndex": 1304
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a376ce08-cd31-48cb-9f04-fb4ec0854ef1",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do Brazilian women like guys who are very direct?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "WOMEN",
+        "paragraphIndex": 1306
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "unexpected-problems",
+  "title": "Unexpected problems",
+  "description": null,
+  "items": [
+    {
+      "id": "8a5a58b6-8771-4f00-ba5d-a9298c16b22c",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think dealing with problems makes people stronger?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Unexpected problems",
+        "paragraphIndex": 962
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "3fef8be6-bd01-4d72-a601-dd61a8a27140",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How do you usually react when something unexpected happens?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Unexpected problems",
+        "paragraphIndex": 964,
+        "promptHeading": "Of course I do. I believe that when you face a problem in your life, you will get stronger because you will learn new methods to deal with it.",
+        "promptHeadingParagraphIndex": 963
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8e354809-76af-4d78-84b4-32264073798c",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is an unexpected problem you have faced recently?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Unexpected problems",
+        "paragraphIndex": 967
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "5bd3f409-1d1d-449f-8f75-2761b57e6809",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer to solve problems alone or ask someone for help?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Unexpected problems",
+        "paragraphIndex": 973
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4e37d40f-a471-454f-bbd6-66f655d352fe",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever had a situation where everything suddenly went wrong?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Unexpected problems",
+        "paragraphIndex": 974
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "bea22853-e35e-43ee-b3bc-f8fa7821eeab",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you usually do first when you face a hard problem?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Unexpected problems",
+        "paragraphIndex": 975
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "77817e2a-b62b-46d6-b612-1b4f47d6a792",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Can unexpected problems sometimes lead to good opportunities?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Unexpected problems",
+        "paragraphIndex": 976
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "762da224-398b-42ce-aa87-12330a416845",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the most stressful unexpected situation you have experienced?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Unexpected problems",
+        "paragraphIndex": 977
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "71fab375-d910-46d6-a410-612645096c3c",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How do you stay calm when something goes wrong?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Unexpected problems",
+        "paragraphIndex": 978
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e3660755-d951-4b4e-bbe7-5f9afc590501",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the best way to prepare for unexpected situations?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Unexpected problems",
+        "paragraphIndex": 979
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

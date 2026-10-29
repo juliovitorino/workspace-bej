@@ -1,0 +1,241 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "personal-growth",
+  "title": "Personal growth",
+  "description": null,
+  "items": [
+    {
+      "id": "1a39be75-af70-4b36-b6e2-2a48370670cc",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What advice would you give to someone who wants to grow personally?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal growth",
+        "paragraphIndex": 1135
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "fc534389-ba31-4cb2-82c6-70ec0a571e63",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do I mean?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal growth",
+        "paragraphIndex": 1137
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "0b4ac8d5-1745-42e3-92eb-c048915813b2",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one habit that has helped you grow as a person?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal growth",
+        "paragraphIndex": 1140
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6fcd5e53-fd24-40b4-aa95-bad26a907072",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What does personal growth mean to you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal growth",
+        "paragraphIndex": 1142
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "18fdc964-e062-4778-840a-a1f8a43dbef4",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is something new you have learned about yourself recently?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal growth",
+        "paragraphIndex": 1143
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "5ad5676e-38ea-4057-81f1-dfa8af373880",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think challenges are important for personal growth?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal growth",
+        "paragraphIndex": 1144
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6b9469c2-50ab-4632-b8eb-e3215756ef7b",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one skill you are currently trying to improve?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal growth",
+        "paragraphIndex": 1145
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a922c5b3-1fe9-4c1b-83dd-7051f742a7c7",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What motivates you to keep improving yourself?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal growth",
+        "paragraphIndex": 1146
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8739de48-97e6-4aaf-95f8-7b5a7e63f314",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of experiences have helped you grow the most?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal growth",
+        "paragraphIndex": 1147
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "234fd464-82f5-4a2c-a3e8-da5cfa51e222",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How do you usually deal with setbacks or failures?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal growth",
+        "paragraphIndex": 1148
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d0dc6a2d-acd4-487e-a2a4-d00fde0a1b88",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think people can change a lot over time?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal growth",
+        "paragraphIndex": 1149
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

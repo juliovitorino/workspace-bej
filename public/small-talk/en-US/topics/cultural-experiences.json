@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "cultural-experiences",
+  "title": "Cultural experiences",
+  "description": null,
+  "items": [
+    {
+      "id": "8ca229b8-11e6-47a9-9aa2-cc28d4641b38",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you enjoy learning about other cultures?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Cultural experiences",
+        "paragraphIndex": 1098
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "5e829f81-e572-4dda-8676-77f0e47a8639",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is a cultural tradition from your country that you enjoy the most?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Cultural experiences",
+        "paragraphIndex": 1107
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "07b40ba5-1e51-405d-8860-87cfbfa963f2",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever experienced a culture very different from your own?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Cultural experiences",
+        "paragraphIndex": 1108
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d70f7f5a-a4c8-4f33-8ced-d208781758fa",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one cultural custom in your country that visitors might find surprising?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Cultural experiences",
+        "paragraphIndex": 1109
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "033001e1-e235-4782-b92b-0a1093ae359c",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever attended a traditional festival or celebration?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Cultural experiences",
+        "paragraphIndex": 1110
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "5d6c4fc8-1280-42b8-a244-e2428cb9c815",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is a typical food from your culture that you would recommend to foreigners?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Cultural experiences",
+        "paragraphIndex": 1111
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "75bde948-07f4-40bb-af83-75b1e8550e74",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think traveling helps people understand other cultures better?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Cultural experiences",
+        "paragraphIndex": 1112
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4d58780a-6255-49d9-b63d-2862c74a153b",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What cultural differences have surprised you the most when talking to people from other countries?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Cultural experiences",
+        "paragraphIndex": 1113
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d67830a7-0961-40bd-a97c-b5e9b2b00dda",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is there a culture you would like to explore more deeply?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Cultural experiences",
+        "paragraphIndex": 1114
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ff19ad24-96a2-441a-bc94-147a0ab13eaf",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you think people from other countries should know about your culture?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Cultural experiences",
+        "paragraphIndex": 1115
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

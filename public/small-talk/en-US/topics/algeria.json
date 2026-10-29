@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "algeria",
+  "title": "Algeria",
+  "description": null,
+  "items": [
+    {
+      "id": "b5f8586e-63e5-4d2b-bf9c-82b412686682",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Which part of Algeria do you think is the most interesting to visit?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Algeria",
+        "paragraphIndex": 1464
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "9bf76d90-995e-40bc-bdee-400b75e97a22",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you like most about your city?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Algeria",
+        "paragraphIndex": 1465
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "1ba2bc33-60f5-4e78-9975-d2adfbb93cfb",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What Algerian dish would you recommend to someone trying the food for the first time?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Algeria",
+        "paragraphIndex": 1466
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "674d60c3-b396-4dcd-8630-ac8d0df20b65",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you eat couscous often, or only on special occasions?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Algeria",
+        "paragraphIndex": 1467
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "064b8e33-0cab-4893-ae5f-9a6abcb5a023",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer tea or coffee?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Algeria",
+        "paragraphIndex": 1468
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "bd7dbaa6-b6de-468e-a2aa-4ca85d0e764f",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you like to spend a night in the desert?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Algeria",
+        "paragraphIndex": 1469
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "5959c858-a316-4c27-9cbb-7c40cbec2c11",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer the beach, the mountains, or the desert?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Algeria",
+        "paragraphIndex": 1470
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "87da83b7-a64c-4a2f-bbb5-1d204e1a6c1f",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do families usually do together on weekends?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Algeria",
+        "paragraphIndex": 1471
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "259b3c06-670d-40eb-b0f4-948867add96a",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What tradition from your culture are you most proud of?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Algeria",
+        "paragraphIndex": 1472
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "cad8b964-319e-4e96-8d4b-f83ae0603985",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one thing about Algeria that foreigners usually do not know?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Algeria",
+        "paragraphIndex": 1473
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

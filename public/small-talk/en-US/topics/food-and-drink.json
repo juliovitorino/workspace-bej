@@ -1,0 +1,451 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "food-and-drink",
+  "title": "Food and drink",
+  "description": null,
+  "items": [
+    {
+      "id": "cd06701d-a84f-47de-ae5d-6f5305a61b9b",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is your favorite kind of food and why?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 500
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6cb212bc-48dd-474f-b18f-211e6c6bf027",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you enjoy cooking and what is your favorite dish to prepare?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 507
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "cb9cda5d-b53c-406e-b729-2e442b500a86",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one food or drink you've tried that you didn’t like?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 528
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "91a1cddf-216f-4325-8a95-4a08f58d9351",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What about you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 532
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "5ea739dd-6dc8-4e67-bb8e-afb8051a9717",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is your favorite type of alcohol or non-alcoholic beverage?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 534
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e5d8a08f-b1c3-481d-9c5a-76d5b666c798",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What about you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 537
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a0c1669b-57de-461b-92c0-c4da3deaf62c",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is your favorite restaurant or café and what do you like about it?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 548
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "9036e1ed-a92a-4ecf-9db1-e49e20828921",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What about you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 552
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4d493715-1314-41a6-b503-bf0f328c52c7",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you rather eat sweet or savory foods, and why?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 553
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8a5e5fd6-8f12-45b0-96de-dd7d48796fe1",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What about you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 557
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "9af5ec59-399e-406b-9430-71c88e48da03",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of sweet do you like?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 558
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7911481e-f441-4ea2-856c-064657571127",
+      "type": "question-answer",
+      "order": 12,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is food very different from one region to another in your country?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 561
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a21a79b7-ece0-486c-bfef-30c0253a7da5",
+      "type": "question-answer",
+      "order": 13,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one traditional dish from your country?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 563
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "88f18497-9ba6-4e0b-9c6f-bf53fbcf8abb",
+      "type": "question-answer",
+      "order": 14,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do people in your country usually get together for meals on weekends?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 565
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "3ac465e5-96b6-4f5f-8f95-578698b29e7d",
+      "type": "question-answer",
+      "order": 15,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What food do you usually eat almost every day?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 567
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "eee810cc-b5f9-4edd-9f8e-d1b97a547c6d",
+      "type": "question-answer",
+      "order": 16,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is a popular snack in your country?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 569
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "5e187583-3ca3-46fd-ae50-d6d94c1b3265",
+      "type": "question-answer",
+      "order": 17,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you usually have for breakfast?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 571
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "0896dc24-fd5c-4ecb-8b89-311341e2ebc7",
+      "type": "question-answer",
+      "order": 18,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of dessert do you usually eat at celebrations?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 573
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c83e133d-cd0e-4e0d-a433-7182138ac7e5",
+      "type": "question-answer",
+      "order": 19,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer fruit, ice cream, or other cold desserts?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 575
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "43390924-c8d4-41e4-975d-e401a37d8614",
+      "type": "question-answer",
+      "order": 20,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you enjoy seafood, or do you prefer meat or chicken?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 577
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "0def9d9d-2492-48a5-b36f-cbe4ce689ac8",
+      "type": "question-answer",
+      "order": 21,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If I visited your country, what food should I try first?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Food and drink",
+        "paragraphIndex": 579
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

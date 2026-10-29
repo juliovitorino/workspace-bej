@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "bitcoin-cryptocurrencies",
+  "title": "Bitcoin & Cryptocurrencies",
+  "description": null,
+  "items": [
+    {
+      "id": "ca1223f0-e395-4b80-8264-2156df335743",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Are you into crypto, or do you prefer traditional investments?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Bitcoin & Cryptocurrencies",
+        "paragraphIndex": 1230
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "70a9d9c2-9acb-4e21-9539-b95bc45c8de1",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "When did you first hear about Bitcoin?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Bitcoin & Cryptocurrencies",
+        "paragraphIndex": 1234
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "job-interview",
+  "title": "Job Interview",
+  "description": null,
+  "items": [
+    {
+      "id": "9f637838-0244-46be-9e8c-bc94c7b61491",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of job are you currently looking for?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Job Interview",
+        "paragraphIndex": 982
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "fb88ba96-15fd-4515-bdf5-5f1eb2fa7524",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What skills do you think are most important for this job?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Job Interview",
+        "paragraphIndex": 985
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "43653def-a3c4-454a-b6b2-1a858b27434a",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Can you tell me a little about your previous work experience?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Job Interview",
+        "paragraphIndex": 988
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f9af9d89-6d66-4b8b-8eb4-7ea0b6cafde9",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Can you tell me a little about your previous work experience at the company?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Job Interview",
+        "paragraphIndex": 995
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d730affd-9983-4927-99ba-e56f6e99f902",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What motivated you to apply for this position?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Job Interview",
+        "paragraphIndex": 1003
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6c3e9c13-4b8b-4769-82ae-fb2f83a27584",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you think are your biggest strengths?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Job Interview",
+        "paragraphIndex": 1006
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "9c1e6db9-a1e5-4ac7-8c2e-ce9a4c93c6a7",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How do you usually handle stressful situations at work?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Job Interview",
+        "paragraphIndex": 1009
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ff34c837-b280-4511-b3d8-bddd277601ad",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one challenge you faced at work, and how did you deal with it?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Job Interview",
+        "paragraphIndex": 1011
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8e8f265b-afb7-46c0-81f9-6b6b1f3c8a85",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of work environment helps you perform your best?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Job Interview",
+        "paragraphIndex": 1013
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "409ebe86-7980-4f1e-a6cb-091dcfc8f7c6",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Where do you see your career in the next five years?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Job Interview",
+        "paragraphIndex": 1014
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4f529402-a3e0-41a5-b1e5-a283dd595330",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Why do you think you would be a good fit for this role?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Job Interview",
+        "paragraphIndex": 1015
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

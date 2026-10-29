@@ -1,0 +1,199 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "marrocos",
+  "title": "MARROCOS",
+  "description": null,
+  "items": [
+    {
+      "id": "c2bf7d7f-6f8a-422e-b67e-e5304647c92d",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Which part of Moroccan culture do you feel most connected to?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "MARROCOS",
+        "paragraphIndex": 1517
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "35174fcb-8a3d-4613-aaa0-0af0606ec139",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Which languages do you use in your daily life, and with whom?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "MARROCOS",
+        "paragraphIndex": 1518
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "83c67ad2-f58c-41b8-b7de-7d3fee04ed6d",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Which Moroccan city do you think represents the real Morocco best, and why?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "MARROCOS",
+        "paragraphIndex": 1519
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b65fc6ec-cd8f-46c6-9af8-0533e62baf37",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What Moroccan dish would you recommend to someone trying Moroccan food for the first time?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "MARROCOS",
+        "paragraphIndex": 1520
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "03ced5ae-ee5b-455c-97a6-214caa55ad08",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How important is family in the decisions people make in Morocco?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "MARROCOS",
+        "paragraphIndex": 1521
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "02f3971f-aacf-463c-b754-24358796464f",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you think Moroccans and Brazilians have in common?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "MARROCOS",
+        "paragraphIndex": 1522
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "db74fde8-2a4c-4090-a0df-86144b896ecc",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What usually happens when someone visits a Moroccan home for the first time?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "MARROCOS",
+        "paragraphIndex": 1523
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f199cb13-347b-47b9-828c-e6c665f7185d",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one stereotype about Morocco that you wish foreigners would stop believing?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "MARROCOS",
+        "paragraphIndex": 1524
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f2149a41-2b76-4d6f-aeaa-db56e1dd08a7",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Before talking to Brazilians, what did you imagine Brazil and Brazilian people were like?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "MARROCOS",
+        "paragraphIndex": 1525
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

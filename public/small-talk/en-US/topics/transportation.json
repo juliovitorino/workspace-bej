@@ -1,0 +1,241 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "transportation",
+  "title": "Transportation",
+  "description": null,
+  "items": [
+    {
+      "id": "23425fd6-ea94-49cf-a887-eada9d03a01f",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How do you usually get around your city?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Transportation",
+        "paragraphIndex": 1083
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "58745068-34f2-4982-a5ca-8682d56d7f88",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Who do you usually go with?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Transportation",
+        "paragraphIndex": 1085
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7e1e986a-24b8-4b8d-b7a1-317572127af1",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer driving, public transportation, or walking?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Transportation",
+        "paragraphIndex": 1087
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "dbbe4c15-8f55-41b5-a6fd-b5f000d45882",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the most common way people travel in your city?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Transportation",
+        "paragraphIndex": 1088
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "5ec2a50d-7034-47a2-af03-ed48985e7d9f",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever had a memorable experience while traveling somewhere?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Transportation",
+        "paragraphIndex": 1089
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8882fed6-f560-4e5d-a1be-b5f991ffe0df",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer traveling by car, train, plane, or motorcycle?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Transportation",
+        "paragraphIndex": 1090
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "0cecc2de-f4d8-41f6-9fa6-efccf52915f0",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the longest trip you have ever taken?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Transportation",
+        "paragraphIndex": 1091
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "dba82a81-4d8c-4641-94bd-ec220e7fcf93",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think transportation in your city is efficient?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Transportation",
+        "paragraphIndex": 1092
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "67a71830-741f-4d64-8213-ac746c942891",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What are the advantages of using public transportation?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Transportation",
+        "paragraphIndex": 1093
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "9db104e9-5127-4eca-86c6-362ccc735483",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think transportation will change a lot in the future?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Transportation",
+        "paragraphIndex": 1094
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "bededce8-b9ae-45dd-a1b0-3faf4d35d96f",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If you could improve transportation in your city, what would you change?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Transportation",
+        "paragraphIndex": 1095
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "friendships",
+  "title": "Friendships",
+  "description": null,
+  "items": [
+    {
+      "id": "39d4f1eb-f7b2-4130-bcad-6c64997849be",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you think makes a friendship last for many years?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Friendships",
+        "paragraphIndex": 808
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "fb8b9002-539c-4d8a-bbc7-4e2bf8d8fcae",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How did you meet your closest friend?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Friendships",
+        "paragraphIndex": 811
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f6e05a68-86ac-456b-8e4c-62714fac6861",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer having many friends or just a few close ones?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Friendships",
+        "paragraphIndex": 822
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f8cf7186-c79f-45ce-9bdf-b9cd38089f3a",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What qualities do you value the most in a good friend?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Friendships",
+        "paragraphIndex": 823
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "73d44eca-d3b7-403b-97bf-3954ddaf75c0",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever lost contact with a good friend?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Friendships",
+        "paragraphIndex": 824
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ebe22f33-2adb-473a-be42-457d65c7a19a",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you and your friends usually like to do together?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Friendships",
+        "paragraphIndex": 825
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "36ffb8af-cc18-40ad-8830-d3d74795288a",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you find it easy or difficult to make new friends as an adult?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Friendships",
+        "paragraphIndex": 826
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "70c484f4-6ebd-467f-acda-9b867b75f677",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever helped a friend during a difficult moment?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Friendships",
+        "paragraphIndex": 827
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "0beb5f1f-635b-4bc1-a64d-8cf399b49254",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one thing that can quickly damage a friendship?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Friendships",
+        "paragraphIndex": 828
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "635852aa-c134-4195-9da7-fd3979dcabea",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think friendships are different now compared to the past?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Friendships",
+        "paragraphIndex": 829
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

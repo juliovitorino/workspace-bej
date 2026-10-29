@@ -1,0 +1,199 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "curiosity",
+  "title": "CURIOSITY",
+  "description": null,
+  "items": [
+    {
+      "id": "0cb38e6b-7f28-40e2-911f-5b70c04c2e13",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If you were a billionaire, how would you spend your money?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CURIOSITY",
+        "paragraphIndex": 1267
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e44242e7-a8d3-45ec-a11c-80c26cab0784",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If you found a bag full of money, would you look for the owner?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CURIOSITY",
+        "paragraphIndex": 1269
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d6b67e70-d414-4ac7-bd5f-3e2be7cb6b4e",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If you had a lot of money, would you change your lifestyle?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CURIOSITY",
+        "paragraphIndex": 1271
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c86730ad-6acb-47df-a5a3-a2ca20a4db81",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If you were completely broke, what would you do?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CURIOSITY",
+        "paragraphIndex": 1273
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "da959690-92b4-4045-8e1b-cd941a76bf3f",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If you could buy anything in the world right now, what would you buy?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CURIOSITY",
+        "paragraphIndex": 1277
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "22d0cdfc-a949-483b-8c6e-d7876a39b770",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you say that having a lot of money can be scary and dangerous?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CURIOSITY",
+        "paragraphIndex": 1279
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "51065896-7039-4497-9a2b-ad2ec79d38de",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If you could give $100 million to any charity, which would you choose and why?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CURIOSITY",
+        "paragraphIndex": 1281
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2563bc12-1f63-434c-ad34-89cc0d058f9d",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If you were a billionaire, do you think that some people would want to be your friend just because of your wealth?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CURIOSITY",
+        "paragraphIndex": 1283
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "db52d300-6dae-44e7-9e9f-6013a58df420",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If you had a lot of money, what would you invest it in (e.g.: stocks, property etc)?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CURIOSITY",
+        "paragraphIndex": 1285
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

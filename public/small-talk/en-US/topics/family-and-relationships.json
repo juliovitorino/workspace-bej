@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "family-and-relationships",
+  "title": "Family and relationships",
+  "description": null,
+  "items": [
+    {
+      "id": "3039a676-5f7c-46c5-a327-b207eefcdf26",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you have any siblings and what is your relationship with them like?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Family and relationships",
+        "paragraphIndex": 585
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b318e0ec-65eb-496a-b5ec-8296992901c0",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is your family like and what do you enjoy most about spending time with them?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Family and relationships",
+        "paragraphIndex": 588
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e9949606-08e1-4111-9070-40d1afd742fa",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you have any children, and what do you enjoy most about being a parent?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Family and relationships",
+        "paragraphIndex": 591
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4fcd5411-f5a3-4b19-a2f6-413ba259d663",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you have any nieces or nephews and what do you enjoy doing with them?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Family and relationships",
+        "paragraphIndex": 610
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "5db23460-871b-486e-9f2d-f24f252a3517",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Are you in a relationship or married and how did you meet your partner?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Family and relationships",
+        "paragraphIndex": 612
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "097826f8-f487-4d08-9cf6-05fe9d6fc010",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one child view faced in the past relationship and how did you overcome it?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Family and relationships",
+        "paragraphIndex": 614
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2a0f63de-60b6-43b0-90f6-8d8fd5a45b9c",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one piece of relationship advice you would give to someone in a new relationship?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Family and relationships",
+        "paragraphIndex": 616
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "854ec3ec-ca0f-4af1-b8f5-2fa664c43037",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever been on a memorable or interesting date and what happened?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Family and relationships",
+        "paragraphIndex": 618
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "78aa9b6f-4c84-4ac6-9920-4b510905a170",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you have a best friend and what is the one thing you love about them?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Family and relationships",
+        "paragraphIndex": 620
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2113bbb2-a128-4772-a870-0a3819a33759",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one memorable family holiday or trip you’ve taken together?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Family and relationships",
+        "paragraphIndex": 622
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "libya",
+  "title": "LIBYA",
+  "description": null,
+  "items": [
+    {
+      "id": "aaffd899-59a7-4d9c-999c-6ca78d7d4f64",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever visited the desert, or would you like to?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "LIBYA",
+        "paragraphIndex": 1378
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "bceffc6c-119d-4281-9926-32f4c95c4db0",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the capital city like compared with other cities in Libya?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "LIBYA",
+        "paragraphIndex": 1379
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "aef21ad5-0e99-47fa-8647-8e105805be25",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What Libyan dish would you recommend to someone visiting for the first time?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "LIBYA",
+        "paragraphIndex": 1380
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "1fd8d2a8-9f2f-43fd-a291-4e8921c7ca1d",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you eat couscous often, and how is it usually prepared in your family?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "LIBYA",
+        "paragraphIndex": 1381
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "55212aea-7b14-45b8-a592-990d27ed3fa9",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is tea more popular than coffee in Libya?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "LIBYA",
+        "paragraphIndex": 1382
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "17e8527a-8aef-45c2-af1b-9dcf1eeb97ca",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What beach or coastal place in Libya would you recommend?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "LIBYA",
+        "paragraphIndex": 1383
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4871e838-45cd-4c88-bad7-1bd3f2493720",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do families usually do together on weekends in Libya?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "LIBYA",
+        "paragraphIndex": 1384
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "43464875-d37a-4a53-bf3b-ea52bc21ecb3",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Are traditional clothes common at weddings or family celebrations?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "LIBYA",
+        "paragraphIndex": 1385
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7c52ba5d-47f6-4755-8ef9-f42d8cb1b147",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is there a historical place in Libya that you think more tourists should know about?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "LIBYA",
+        "paragraphIndex": 1386
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "73575b34-9f97-4e9a-b86d-fb89921da490",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one thing about Libya that foreigners usually misunderstand or do not know?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "LIBYA",
+        "paragraphIndex": 1387
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

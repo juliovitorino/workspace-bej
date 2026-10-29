@@ -1,0 +1,157 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "carnaval",
+  "title": "CARNAVAL",
+  "description": null,
+  "items": [
+    {
+      "id": "40fe4dd0-cc39-4c3f-a157-861e000d1b87",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever experienced Carnival in Brazil?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CARNAVAL",
+        "paragraphIndex": 1312
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4aa5e23d-7183-4818-854a-bd345b5b4574",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you like most about Brazilian Carnival?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CARNAVAL",
+        "paragraphIndex": 1314
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "095943fd-df06-4353-9e94-81d2ff3acc48",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer street Carnival or the samba parades?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CARNAVAL",
+        "paragraphIndex": 1316
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e9e82940-95da-4c5c-86ad-875e8902cd70",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Why is Carnival so important in Brazil?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CARNAVAL",
+        "paragraphIndex": 1318
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d571afe8-c7e9-4711-87c1-adb2bc7659ae",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is Carnival the same everywhere in Brazil?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CARNAVAL",
+        "paragraphIndex": 1319
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "097bd5fb-96d0-4362-8135-5316bfc421fd",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do foreigners usually misunderstand about Brazilian Carnival?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CARNAVAL",
+        "paragraphIndex": 1320
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "04f719a5-a266-408a-9af3-1ab2f651fde6",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What comes to your mind when you think about Brazilian Carnival?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CARNAVAL",
+        "paragraphIndex": 1322
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}
