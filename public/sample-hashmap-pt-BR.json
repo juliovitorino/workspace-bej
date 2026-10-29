@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1253,
+    "totalIntentions": 1255,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -48985,6 +48985,156 @@
           "id": "0ff9bc7b-d45f-4f77-9f99-fea0be7fc1f5",
           "exampleItem": "Eu gostaria que você me avisasse quando chegasse.",
           "intent": "gostaria que você me avisasse"
+        }
+      ]
+    },
+    {
+      "id": "o-pouco-que-667bfc6f-93d1-4c00-b901-e0be82b96e5e",
+      "intention": "O pouco que + sujeito + verbo",
+      "pattern": "o pouco que + sujeito + verbo / o pouco de + substantivo + que + sujeito + verbo",
+      "description": "Usado para destacar que uma quantidade pequena de conhecimento, esforço, tempo, dinheiro ou experiência ainda tem valor, produz resultados ou é suficiente em determinado contexto. Em inglês, a tradução varia conforme o sentido: the little (that), the little bit (that), even the little bit ou the little + substantivo + that. Evitar traduzir mecanicamente todas as frases com uma única construção.",
+      "category": "quantity",
+      "searchTerms": [
+        "o pouco que",
+        "o pouco de",
+        "mesmo o pouco que",
+        "a pequena quantidade que",
+        "o pouco que sei",
+        "o pouco que tenho",
+        "o pouco que faço",
+        "o pouco que estudo"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])o\\s+pouco\\s+que(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])o\\s+pouco\\s+de\\s+[\\p{L}]+\\s+que(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])mesmo\\s+o\\s+pouco\\s+que(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "quantidade",
+        "pequena-quantidade",
+        "valorização",
+        "gerador-de-frases",
+        "conversação",
+        "bloco-de-linguagem"
+      ],
+      "related": [],
+      "structure": "O pouco que + sujeito + verbo + complemento",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "e5c0481a-2df1-430e-abf6-090860590011",
+          "exampleItem": "O pouco que você estuda ajuda muito.",
+          "intent": "O pouco que você estuda"
+        },
+        {
+          "id": "d62d15aa-7cf8-479c-9eae-6ed182dfbddd",
+          "exampleItem": "O pouco que eu sei já me ajuda bastante.",
+          "intent": "O pouco que eu sei"
+        },
+        {
+          "id": "36c57061-252b-477a-ae57-baa2fbd7e0b6",
+          "exampleItem": "O pouco que ele ganha é suficiente para viver.",
+          "intent": "O pouco que ele ganha"
+        },
+        {
+          "id": "d71a0063-ea29-4caf-81f0-4791be89fcab",
+          "exampleItem": "O pouco que conseguimos fazer já fez diferença.",
+          "intent": "O pouco que conseguimos fazer"
+        },
+        {
+          "id": "cce95cd7-ae07-4e44-bf56-c9bc86ed62e9",
+          "exampleItem": "O pouco que você pratica todos os dias faz diferença.",
+          "intent": "O pouco que você pratica"
+        },
+        {
+          "id": "127bf76a-6374-49b4-a157-f07fb6e6a672",
+          "exampleItem": "O pouco que tenho guardado será suficiente para começar.",
+          "intent": "O pouco que tenho guardado"
+        },
+        {
+          "id": "9e82b18b-2c75-4075-888e-b2f191dc0b12",
+          "exampleItem": "O pouco que ela aprendeu durante o curso foi muito útil.",
+          "intent": "O pouco que ela aprendeu"
+        },
+        {
+          "id": "ac19659d-7369-480a-9ed4-f5bc6be7b103",
+          "exampleItem": "O pouco que nós conversamos ontem me fez pensar.",
+          "intent": "O pouco que nós conversamos"
+        }
+      ]
+    },
+    {
+      "id": "eu-sabia-que-iria-40411263-dc0f-47e3-b13b-4eaafabd5fc2",
+      "intention": "Eu sabia que + sujeito + ia/iria + verbo",
+      "pattern": "eu sabia que + sujeito + verbo no futuro do pretérito / eu sabia que + sujeito + ia + infinitivo",
+      "description": "Usado para expressar uma previsão, convicção ou expectativa que já existia em um momento passado sobre algo posterior àquele momento. Em inglês, geralmente corresponde a I knew + sujeito + would + verbo na forma base (future in the past). A construção não afirma necessariamente que o acontecimento se concretizou.",
+      "category": "statements",
+      "searchTerms": [
+        "eu sabia que",
+        "eu sabia que ia",
+        "eu sabia que iria",
+        "eu sabia que você",
+        "eu sabia que isso",
+        "eu tinha certeza de que",
+        "futuro do passado",
+        "previsão no passado"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])eu\\s+sabia\\s+que(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])sabia\\s+que\\s+.{1,80}\\s+(?:ia|iria|iriam|íamos)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "gerador de frases",
+        "previsões",
+        "certeza",
+        "passado",
+        "futuro do pretérito",
+        "conversação",
+        "bloco-de-linguagem"
+      ],
+      "related": [],
+      "structure": "Eu sabia que + sujeito + verbo no futuro do pretérito / ia + verbo no infinitivo",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "c1fb50d7-8005-4091-85a0-ee1d5e54f39e",
+          "exampleItem": "Eu sabia que ia funcionar.",
+          "intent": "Eu sabia que ia funcionar"
+        },
+        {
+          "id": "d193b4a9-1150-496f-8b19-a347fd608e54",
+          "exampleItem": "Eu sabia que não ia funcionar bem.",
+          "intent": "Eu sabia que não ia funcionar"
+        },
+        {
+          "id": "404be1c9-37ca-4d2c-8fdb-a791f74d1944",
+          "exampleItem": "Eu sabia que você compraria o carro.",
+          "intent": "Eu sabia que você compraria"
+        },
+        {
+          "id": "88486291-3d44-480e-98c2-a9a75c57207e",
+          "exampleItem": "Eu sabia que essa solução funcionaria.",
+          "intent": "Eu sabia que essa solução funcionaria"
+        },
+        {
+          "id": "6acff5c6-226f-404b-a026-2a6ff6f308e3",
+          "exampleItem": "Eu sabia que você conseguiria.",
+          "intent": "Eu sabia que você conseguiria"
+        },
+        {
+          "id": "92931df8-f215-40cd-a6d8-b4de5bdeb74f",
+          "exampleItem": "Eu sabia que ela chegaria atrasada.",
+          "intent": "Eu sabia que ela chegaria"
+        },
+        {
+          "id": "b1b934bb-1cc2-4d10-8a0e-8fdf7e7e7bc6",
+          "exampleItem": "Eu sabia que eles não aceitariam a proposta.",
+          "intent": "Eu sabia que eles não aceitariam"
+        },
+        {
+          "id": "e2c9a944-340a-4b1c-8e20-0e810251482a",
+          "exampleItem": "Eu sabia que isso aconteceria mais cedo ou mais tarde.",
+          "intent": "Eu sabia que isso aconteceria"
         }
       ]
     }

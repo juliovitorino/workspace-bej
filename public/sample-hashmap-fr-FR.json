@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1253,
+    "totalIntentions": 1255,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -49960,6 +49960,154 @@
           "id": "0ff9bc7b-d45f-4f77-9f99-fea0be7fc1f5",
           "exampleItem": "J’aimerais que tu me préviennes quand tu arriveras.",
           "intent": "aimerais que tu me préviennes"
+        }
+      ]
+    },
+    {
+      "id": "o-pouco-que-667bfc6f-93d1-4c00-b901-e0be82b96e5e",
+      "intention": "Le peu que + sujet + verbe",
+      "pattern": "le peu que + sujet + verbe / le peu de + nom + que + sujet + verbe",
+      "structure": "Le peu que + sujet + verbe + complément",
+      "description": "Souligne qu’une petite quantité de connaissances, d’efforts, de temps, d’argent ou d’expérience garde de la valeur, produit des résultats ou suffit dans un contexte donné. Selon le sens, on emploie le peu que, le peu de… que ou même le peu que. La formulation doit s’adapter au contexte plutôt que suivre mécaniquement une seule construction.",
+      "searchTerms": [
+        "le peu que",
+        "le peu de",
+        "même le peu que",
+        "la petite quantité que",
+        "le peu que je sais",
+        "le peu que j’ai",
+        "le peu que je fais",
+        "le peu que j’étudie"
+      ],
+      "tags": [
+        "quantité",
+        "petite quantité",
+        "mise en valeur",
+        "générateur de phrases",
+        "conversation",
+        "bloc de langage"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:même\\s+)?le\\s+peu\\s+qu(?:e(?=\\s)|[’'](?=[\\p{L}]))",
+        "(?<![\\p{L}\\p{N}_])le\\s+peu\\s+de\\s+[\\p{L}]+\\s+qu(?:e(?=\\s)|[’'](?=[\\p{L}]))"
+      ],
+      "category": "quantity",
+      "related": [],
+      "level": "B1",
+      "examples": [
+        {
+          "id": "e5c0481a-2df1-430e-abf6-090860590011",
+          "exampleItem": "Le peu que tu étudies t’aide beaucoup.",
+          "intent": "Le peu que tu étudies"
+        },
+        {
+          "id": "d62d15aa-7cf8-479c-9eae-6ed182dfbddd",
+          "exampleItem": "Le peu que je sais m’aide déjà beaucoup.",
+          "intent": "Le peu que je sais"
+        },
+        {
+          "id": "36c57061-252b-477a-ae57-baa2fbd7e0b6",
+          "exampleItem": "Le peu qu’il gagne lui suffit pour vivre.",
+          "intent": "Le peu qu’il gagne"
+        },
+        {
+          "id": "d71a0063-ea29-4caf-81f0-4791be89fcab",
+          "exampleItem": "Le peu que nous avons réussi à faire a déjà fait la différence.",
+          "intent": "Le peu que nous avons réussi à faire"
+        },
+        {
+          "id": "cce95cd7-ae07-4e44-bf56-c9bc86ed62e9",
+          "exampleItem": "Le peu de pratique que tu fais chaque jour fait la différence.",
+          "intent": "Le peu de pratique que tu fais"
+        },
+        {
+          "id": "127bf76a-6374-49b4-a157-f07fb6e6a672",
+          "exampleItem": "Le peu que j’ai mis de côté suffira pour commencer.",
+          "intent": "Le peu que j’ai mis de côté"
+        },
+        {
+          "id": "9e82b18b-2c75-4075-888e-b2f191dc0b12",
+          "exampleItem": "Le peu qu’elle a appris pendant le cours a été très utile.",
+          "intent": "Le peu qu’elle a appris"
+        },
+        {
+          "id": "ac19659d-7369-480a-9ed4-f5bc6be7b103",
+          "exampleItem": "Le peu que nous nous sommes dit hier m’a fait réfléchir.",
+          "intent": "Le peu que nous nous sommes dit"
+        }
+      ]
+    },
+    {
+      "id": "eu-sabia-que-iria-40411263-dc0f-47e3-b13b-4eaafabd5fc2",
+      "intention": "Je savais que + sujet + verbe au conditionnel / allait + infinitif",
+      "pattern": "je savais que + sujet + verbe au conditionnel présent / je savais que + sujet + aller à l’imparfait + infinitif",
+      "structure": "Je savais que + sujet + conditionnel présent / aller à l’imparfait + infinitif",
+      "description": "Exprime une prévision, une conviction ou une attente déjà présente à un moment du passé concernant un événement ultérieur à ce moment. En français, on emploie généralement le conditionnel présent ou aller à l’imparfait suivi de l’infinitif pour exprimer ce futur dans le passé. La construction n’affirme pas nécessairement que l’événement s’est réalisé.",
+      "searchTerms": [
+        "je savais que",
+        "je savais que ça allait",
+        "je savais que tu",
+        "je savais que cela",
+        "je savais qu’elle",
+        "j’étais certain que",
+        "futur dans le passé",
+        "prévision dans le passé"
+      ],
+      "tags": [
+        "générateur de phrases",
+        "prévisions",
+        "certitude",
+        "passé",
+        "conditionnel présent",
+        "conversation",
+        "bloc de langage"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])je\\s+savais\\s+qu(?:e(?=\\s)|[’'](?=[\\p{L}]))"
+      ],
+      "category": "statements",
+      "related": [],
+      "level": "B1",
+      "examples": [
+        {
+          "id": "c1fb50d7-8005-4091-85a0-ee1d5e54f39e",
+          "exampleItem": "Je savais que ça allait marcher.",
+          "intent": "Je savais que ça allait marcher"
+        },
+        {
+          "id": "d193b4a9-1150-496f-8b19-a347fd608e54",
+          "exampleItem": "Je savais que ça n’allait pas bien marcher.",
+          "intent": "Je savais que ça n’allait pas bien marcher"
+        },
+        {
+          "id": "404be1c9-37ca-4d2c-8fdb-a791f74d1944",
+          "exampleItem": "Je savais que tu achèterais la voiture.",
+          "intent": "Je savais que tu achèterais"
+        },
+        {
+          "id": "88486291-3d44-480e-98c2-a9a75c57207e",
+          "exampleItem": "Je savais que cette solution fonctionnerait.",
+          "intent": "Je savais que cette solution fonctionnerait"
+        },
+        {
+          "id": "6acff5c6-226f-404b-a026-2a6ff6f308e3",
+          "exampleItem": "Je savais que tu y arriverais.",
+          "intent": "Je savais que tu y arriverais"
+        },
+        {
+          "id": "92931df8-f215-40cd-a6d8-b4de5bdeb74f",
+          "exampleItem": "Je savais qu’elle arriverait en retard.",
+          "intent": "Je savais qu’elle arriverait"
+        },
+        {
+          "id": "b1b934bb-1cc2-4d10-8a0e-8fdf7e7e7bc6",
+          "exampleItem": "Je savais qu’ils n’accepteraient pas la proposition.",
+          "intent": "Je savais qu’ils n’accepteraient pas"
+        },
+        {
+          "id": "e2c9a944-340a-4b1c-8e20-0e810251482a",
+          "exampleItem": "Je savais que cela arriverait tôt ou tard.",
+          "intent": "Je savais que cela arriverait"
         }
       ]
     }
