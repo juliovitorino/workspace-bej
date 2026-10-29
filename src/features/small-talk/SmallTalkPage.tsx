@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { loadSmallTalkIndex, loadSmallTalkTopic } from '../../services/smallTalkCatalogService';
 import { readSmallTalkPersonalAnswers } from '../../services/smallTalkPersonalAnswersService';
 import type { SmallTalkItem, SmallTalkTopic, SmallTalkTopicIndexEntry, SmallTalkWalkingSettings } from '../../types/smallTalk';
@@ -14,9 +15,22 @@ interface Props {
 type LevelFilter = 'all' | 'unclassified' | 'a1' | 'a2' | 'b1' | 'b2' | 'c1';
 const levelOptions: LevelFilter[] = ['all', 'unclassified', 'a1', 'a2', 'b1', 'b2', 'c1'];
 
+// Normalização apenas visual: preserva sourceTitle e IDs do catálogo JSON.
+function topicDisplayName(title: string): string {
+  const lowerCaseWords = new Set(['and', 'or', 'of', 'the', 'a', 'an', 'to', 'in', 'on', 'for']);
+  return title.trim().toLocaleLowerCase('en-US').replace(/\p{L}+/gu, (word, position) => {
+    if (position > 0 && lowerCaseWords.has(word)) return word;
+    return word.charAt(0).toLocaleUpperCase('en-US') + word.slice(1);
+  });
+}
+const topicSorter = new Intl.Collator('en-US', { sensitivity: 'base', numeric: true });
+
+
 export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   const [topics, setTopics] = useState<SmallTalkTopicIndexEntry[]>([]);
   const [topicId, setTopicId] = useState('');
+  const [topicsMenuOpen, setTopicsMenuOpen] = useState(false);
+  const [topicsMenuQuery, setTopicsMenuQuery] = useState('');
   const [topic, setTopic] = useState<SmallTalkTopic | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -42,7 +56,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     const controller = new AbortController();
     loadSmallTalkIndex(controller.signal).then(index => {
       if (!active) return;
-      const enabled = index.topics.filter(t => t.enabled).sort((a, b) => a.order - b.order);
+      const enabled = index.topics.filter(t => t.enabled).sort((a, b) => topicSorter.compare(topicDisplayName(a.sourceTitle), topicDisplayName(b.sourceTitle)) || a.order - b.order);
       setTopics(enabled);
       setTopicId(current => current || enabled[0]?.id || '');
     }).catch(e => { if (active && !controller.signal.aborted) { setError(String(e)); setLoading(false); } });
@@ -64,6 +78,25 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     try { setPersonalAnswers(readSmallTalkPersonalAnswers(window.localStorage)); setPrivateError(''); }
     catch { setPrivateError('O armazenamento privado não pôde ser lido. Faça backup e confira sua importação.'); setPersonalAnswers(null); }
   }, [walking]);
+
+  const menuTopics = useMemo(() => topics.filter(t =>
+    topicDisplayName(t.sourceTitle).toLocaleLowerCase('en-US').includes(topicsMenuQuery.trim().toLocaleLowerCase('en-US'))
+  ), [topics, topicsMenuQuery]);
+
+  useEffect(() => {
+    if (!topicsMenuOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    function onEscape(event: KeyboardEvent) { if (event.key === 'Escape') setTopicsMenuOpen(false); }
+    document.addEventListener('keydown', onEscape);
+    return () => { document.removeEventListener('keydown', onEscape); document.body.style.overflow = previousOverflow; };
+  }, [topicsMenuOpen]);
+
+  function selectTopic(id: string) {
+    setTopicId(id);
+    setQuery(''); // Evita ocultar perguntas por um termo de busca do tópico anterior.
+    setTopicsMenuOpen(false);
+  }
 
   const filtered = useMemo(() => {
     return (topic?.items ?? []).filter(item => {
@@ -134,7 +167,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
         [selection[i], selection[j]] = [selection[j], selection[i]];
       }
     }
-    setSessionItems(selection); setWalking(true);
+    setTopicsMenuOpen(false); setSessionItems(selection); setWalking(true);
   }
 
   if (walking) return <SmallTalkWalking items={sessionItems} settings={settings}
@@ -146,8 +179,45 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     </header>
     {error && <p className="warning-banner" role="alert">{error}</p>}
     {privateError && <p className="warning-banner" role="alert">{privateError}</p>}
+    {/* Mesmo SVG de três pontos do Dashboard; o portal usa a pilha flutuante do aplicativo. */}
+    {document.getElementById('app-floating-controls') && createPortal(
+      <div className="study-mobile-controls small-talk-mobile-controls">
+        <button type="button" aria-label="Abrir lista de tópicos" title="Selecionar tópico"
+          aria-expanded={topicsMenuOpen} aria-haspopup="dialog" aria-controls="small-talk-topics-modal"
+          onClick={() => setTopicsMenuOpen(true)}>
+          <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/>
+          </svg>
+        </button>
+      </div>, document.getElementById('app-floating-controls')!
+    )}
+    <button type="button" className="small-talk-topics-trigger small-talk-topics-trigger--desktop"
+      aria-label="Abrir lista de tópicos" title="Selecionar tópico" aria-expanded={topicsMenuOpen}
+      aria-haspopup="dialog" aria-controls="small-talk-topics-modal" onClick={() => setTopicsMenuOpen(true)}>
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/>
+      </svg>
+    </button>
+    {topicsMenuOpen && <div className="small-talk-topics-overlay" onMouseDown={event => { if (event.target === event.currentTarget) setTopicsMenuOpen(false); }}>
+      <div id="small-talk-topics-modal" className="small-talk-topics-modal" role="dialog" aria-modal="true" aria-labelledby="small-talk-topics-modal-title">
+        <div className="small-talk-topics-modal-header">
+          <div>
+            <h3 id="small-talk-topics-modal-title">Tópicos do Small Talk</h3>
+            <p>Escolha um dos {topics.length} tópicos para visualizar as perguntas.</p>
+          </div>
+          <button type="button" className="small-talk-topics-close" aria-label="Fechar lista de tópicos" title="Fechar" onClick={() => setTopicsMenuOpen(false)}>✕</button>
+        </div>
+        <label className="small-talk-topics-search">Pesquisar tópico
+          <input type="search" autoFocus value={topicsMenuQuery} onChange={event => setTopicsMenuQuery(event.target.value)} placeholder="Digite o nome do tópico..." />
+        </label>
+        <nav className="small-talk-topics-nav" aria-label="Lista alfabética de tópicos">
+          {menuTopics.map(t => <button key={t.id} type="button" className={`small-talk-topic-option${topicId === t.id ? ' is-selected' : ''}`} aria-current={topicId === t.id ? 'true' : undefined} onClick={() => selectTopic(t.id)}>{topicDisplayName(t.sourceTitle)}{topicId === t.id && <span aria-hidden="true">✓</span>}</button>)}
+          {menuTopics.length === 0 && <p className="small-talk-topics-empty">Nenhum tópico encontrado.</p>}
+        </nav>
+      </div>
+    </div>}
     <div className="small-talk-filters">
-      <label>Tópico <select value={topicId} onChange={e => setTopicId(e.target.value)}>{topics.map(t => <option key={t.id} value={t.id}>{t.sourceTitle}</option>)}</select></label>
+      <label>Tópico <select value={topicId} onChange={e => selectTopic(e.target.value)}>{topics.map(t => <option key={t.id} value={t.id}>{topicDisplayName(t.sourceTitle)}</option>)}</select></label>
       <label>Pesquisar pergunta <input type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Search questions..." /></label>
       <label>Nível <select value={level} onChange={e => setLevel(e.target.value as LevelFilter)}>{levelOptions.map(l => <option key={l} value={l}>{l === 'all' ? 'Todos' : l === 'unclassified' ? 'Sem classificação' : l.toUpperCase()}</option>)}</select></label>
       <label><input type="checkbox" checked={favoritesOnly} onChange={e => setFavoritesOnly(e.target.checked)} /> Apenas favoritos</label>

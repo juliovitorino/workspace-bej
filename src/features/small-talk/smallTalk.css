@@ -20,3 +20,134 @@
 .small-talk-restore-button{border:1px solid var(--border-color,#aaa);border-radius:.5rem;padding:.5rem;background:transparent;color:inherit;cursor:pointer}
 .small-talk-editor{display:grid;gap:.65rem;margin-top:1rem}
 .small-talk-editor textarea{width:100%;min-height:9rem;border:1px solid var(--border-color,#aaa);border-radius:.5rem;padding:.8rem;background:var(--card-bg,var(--surface-color,transparent));color:inherit;font:inherit;resize:vertical}
+
+
+/* Small Talk: atalho fixo acima do botão "Ir para o topo" do BEJ. */
+/* O botão mobile usa o MESMO contêiner e estilo do botão ⋮ do Dashboard. */
+.small-talk-mobile-controls { order: -1; }
+.small-talk-mobile-controls > button { cursor: pointer; }
+.small-talk-mobile-controls > button:focus-visible { outline: 3px solid var(--text, #fff); outline-offset: 3px; }
+
+/* Desktop: o mesmo desenho do Dashboard, alinhado aos botões flutuantes do BEJ. */
+.small-talk-topics-trigger--desktop { display: none; }
+@media (min-width: 821px) {
+  .small-talk-topics-trigger--desktop {
+    position: fixed;
+    right: 24px;
+    bottom: 80px;
+    z-index: 6;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--on-accent);
+    box-shadow: 0 4px 12px var(--shadow);
+    cursor: pointer;
+  }
+  .small-talk-topics-trigger--desktop:hover { background: var(--accent-hover); }
+  .small-talk-topics-trigger--desktop:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+}
+
+/* Modal central: contraste explícito independente do tema claro/escuro do BEJ. */
+.small-talk-topics-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, .72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(12px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) max(12px, env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px));
+  box-sizing: border-box;
+}
+.small-talk-topics-modal {
+  box-sizing: border-box;
+  width: min(560px, 100%);
+  max-height: min(760px, 90dvh);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 2px solid #b7c8e5;
+  border-radius: 16px;
+  background: #fff;
+  color: #152238;
+  box-shadow: 0 18px 60px rgba(0,0,0,.45);
+  font-size: 1rem;
+  color-scheme: light;
+}
+.small-talk-topics-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px 20px 8px;
+}
+.small-talk-topics-modal-header h3 { color: #122744; margin: 0 0 6px; font-size: 1.3rem; }
+.small-talk-topics-modal-header p { color: #40536d; margin: 0; line-height: 1.4; }
+.small-talk-topics-close {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #9eafc7;
+  border-radius: 10px;
+  background: #f1f5fb;
+  color: #172b4d;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.small-talk-topics-search { display: grid; gap: 6px; padding: 12px 20px 14px; font-weight: 600; color: #233b5d; }
+.small-talk-topics-search input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 2px solid #8296b3;
+  border-radius: 8px;
+  background: #fff;
+  color: #10223c;
+  font: inherit;
+}
+.small-talk-topics-search input::placeholder { color: #536780; opacity: 1; }
+.small-talk-topics-nav {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 8px 16px 16px;
+  border-top: 1px solid #d6dfed;
+  display: grid;
+  align-content: start;
+  gap: 6px;
+}
+.small-talk-topic-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid #c3d0e2;
+  border-radius: 8px;
+  background: #f7f9fc;
+  color: #172b4d;
+  font: inherit;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+}
+.small-talk-topic-option:hover { background: #e7f0ff; border-color: #416db4; }
+.small-talk-topic-option.is-selected { background: #174d98; border-color: #174d98; color: #fff; font-weight: 700; }
+.small-talk-topics-empty { padding: 14px; color: #40536d; }
+.small-talk-topic-option:focus-visible,.small-talk-topics-close:focus-visible,.small-talk-topics-search input:focus-visible { outline: 3px solid #e69b00; outline-offset: 2px; }
+@media (max-width: 640px) {
+  .small-talk-topics-modal { max-height: 88dvh; }
+  .small-talk-topics-modal-header { padding: 16px 14px 8px; }
+  .small-talk-topics-search { padding: 10px 14px; }
+  .small-talk-topics-nav { padding: 8px 10px 12px; }
+}
+@media print { .small-talk-topics-trigger,.small-talk-topics-overlay { display: none !important; } }
