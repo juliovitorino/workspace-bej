@@ -11,3 +11,12 @@
 .small-talk-original{border-left:3px solid var(--primary-color,#5586bc);padding:.7rem;margin-top:.7rem;white-space:pre-wrap}
 .small-talk-walk h3{font-size:clamp(1.35rem,4vw,2rem);line-height:1.4}
 @media(max-width:640px){.small-talk-filters,.small-talk-settings{display:grid;grid-template-columns:minmax(0,1fr)}.small-talk-settings h3,.small-talk-settings p{flex-basis:auto}}
+
+.small-talk-configuration-toggle,.small-talk-backup-actions{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center}
+.small-talk-icon-button{min-height:2.6rem;min-width:2.6rem;border-radius:.65rem;border:1px solid var(--border-color,#aaa);background:transparent;color:inherit;cursor:pointer;font-size:1.2rem;display:inline-flex;align-items:center;justify-content:center}
+.small-talk-icon-button:hover:not(:disabled){background:var(--hover-bg,rgba(120,120,120,.13))}
+.small-talk-icon-button:disabled{opacity:.35;cursor:not-allowed}
+.small-talk-icon-button:focus-visible,.small-talk-restore-button:focus-visible{outline:3px solid var(--primary-color,#5586bc);outline-offset:2px}
+.small-talk-restore-button{border:1px solid var(--border-color,#aaa);border-radius:.5rem;padding:.5rem;background:transparent;color:inherit;cursor:pointer}
+.small-talk-editor{display:grid;gap:.65rem;margin-top:1rem}
+.small-talk-editor textarea{width:100%;min-height:9rem;border:1px solid var(--border-color,#aaa);border-radius:.5rem;padding:.8rem;background:var(--card-bg,var(--surface-color,transparent));color:inherit;font:inherit;resize:vertical}
