@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "rio-de-janeiro",
+  "title": "RIO DE JANEIRO",
+  "description": null,
+  "items": [
+    {
+      "id": "451e880b-4e04-4582-b4c2-9306dceafc4e",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do people spend a lot of time at the beach where you live?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "RIO DE JANEIRO",
+        "paragraphIndex": 1556
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "442a0c56-4163-4f2b-b075-efc8367666b8",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of local food would you recommend to a tourist in your city?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "RIO DE JANEIRO",
+        "paragraphIndex": 1557
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "9b30a50f-f032-4857-929e-5432ac1260ac",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Does your country have a traditional meal that people usually eat on a specific day?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "RIO DE JANEIRO",
+        "paragraphIndex": 1558
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ddb4f7f8-30e4-445a-8730-a1cd8cdf96f9",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is nightlife like in your city?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "RIO DE JANEIRO",
+        "paragraphIndex": 1559
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4788efe0-4682-4e69-9c6b-31a3f27dfd69",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do people in your city usually dress casually or more formally?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "RIO DE JANEIRO",
+        "paragraphIndex": 1560
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2d86ab40-8ee0-4ca2-866a-fb3fb4fdbd1f",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the most famous tourist attraction in your city or country?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "RIO DE JANEIRO",
+        "paragraphIndex": 1561
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c6b233ca-1631-491b-bd85-584aab3296cc",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you enjoy visiting viewpoints when you travel?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "RIO DE JANEIRO",
+        "paragraphIndex": 1562
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "fb55a065-9fc7-42b9-b3f7-aca83ff674f6",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Does your country have a big festival or celebration like Carnival?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "RIO DE JANEIRO",
+        "paragraphIndex": 1563
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f56e82b9-0219-4e2c-a6ab-0fb2507abb32",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of landscape is common where you live?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "RIO DE JANEIRO",
+        "paragraphIndex": 1564
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "16aa4365-0acb-4061-b820-e7c0e90148a7",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "When you travel, do you prefer tourist attractions or more local experiences?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "RIO DE JANEIRO",
+        "paragraphIndex": 1565
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "hobbies",
+  "title": "Hobbies Topic",
+  "description": null,
+  "items": [
+    {
+      "id": "cdea200d-027c-45fa-96e8-66a65ebc210e",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What hobbies or interests do you have outside of work?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Hobbies Topic",
+        "paragraphIndex": 429
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ee5c6a6b-c74c-4425-9d32-fec82a2d20bd",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you watched any interesting movies or TV shows recently?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Hobbies Topic",
+        "paragraphIndex": 436
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "50cffc76-be89-4fea-b14b-453fd1f07f6f",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of music do you enjoy listening to?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Hobbies Topic",
+        "paragraphIndex": 438
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "05e14aa4-5f26-462f-a281-6f79e3887ba2",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one activity or interest you’d like to try in the future?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Hobbies Topic",
+        "paragraphIndex": 441
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "87eafb6c-9757-4021-b60e-5e4d61bee583",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you rather do indoor or outdoor activities, and why?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Hobbies Topic",
+        "paragraphIndex": 446
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "3d257018-a29c-4a83-a4e4-80cf124db70b",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one hobby or interest you are passionate about?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Hobbies Topic",
+        "paragraphIndex": 481
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "3305d18f-809b-4741-817f-25a0c737da94",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the most recent hobby or interest you’ve taken up?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Hobbies Topic",
+        "paragraphIndex": 483
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f00b8d78-27ba-48b9-a645-fc2190798732",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you have any hidden talents that people might not know about?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Hobbies Topic",
+        "paragraphIndex": 486
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6a4e83d7-9786-45d1-b12f-1a6fbba875c1",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one thing you’ve learned recently that relates to your hobby interest?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Hobbies Topic",
+        "paragraphIndex": 488
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "bbdf9141-0d93-4090-a84c-fc57540212bb",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever taken a class or workshop related to your hobby or interest?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Hobbies Topic",
+        "paragraphIndex": 490
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "73dc6ca9-7130-4182-883f-be36e14b6c95",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the most adventurous for daring thing you’ve done related to your job or interest?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Hobbies Topic",
+        "paragraphIndex": 492
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "dd5a7b8e-d9b3-4db5-ad08-48ddeba4c4d8",
+      "type": "question-answer",
+      "order": 12,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one thing you like to learn or accomplish related to your hobby or interest?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Hobbies Topic",
+        "paragraphIndex": 494
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ae09614e-4f72-4ec1-9407-a42cab4093db",
+      "type": "question-answer",
+      "order": 13,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the most interesting thing you’ve learned unrelated to work at our school?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Hobbies Topic",
+        "paragraphIndex": 496
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "education",
+  "title": "Education",
+  "description": null,
+  "items": [
+    {
+      "id": "6b204b6b-312a-4d91-916c-204da3cce06a",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What was your favorite subject when you were in school?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Education",
+        "paragraphIndex": 1118
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "33122dd0-1271-4680-8b4b-ec46f6836355",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think the education system in your country works well?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Education",
+        "paragraphIndex": 1121
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "105335a4-080a-4cf6-bfed-6434a14818e2",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Was there a teacher who had a big impact on your life?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Education",
+        "paragraphIndex": 1125
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b5964a99-eb0d-4e7e-a2ce-2a52340a8841",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What skills do you think schools should focus on more?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Education",
+        "paragraphIndex": 1126
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4b7ea3f9-b20f-4425-8501-a6d4544242b6",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer learning in a classroom or learning by yourself?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Education",
+        "paragraphIndex": 1127
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2a24dab7-16f9-4822-8280-74911f8e7102",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is something important that school did not teach you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Education",
+        "paragraphIndex": 1128
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "3779b326-fdfb-4986-bb0b-af1830c3cb05",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think education will change a lot in the future?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Education",
+        "paragraphIndex": 1129
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "5569b2cf-50a7-4efb-9fdf-594478c997ff",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How important is education for personal success?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Education",
+        "paragraphIndex": 1130
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "28ab42fe-668b-442c-a8a6-c5f56f2638f5",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of subjects do you enjoy studying the most?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Education",
+        "paragraphIndex": 1131
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "bc45b3c4-0282-4525-b685-10f56cda27bb",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If you could learn any new skill today, what would it be?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Education",
+        "paragraphIndex": 1132
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

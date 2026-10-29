@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "social-media",
+  "title": "Social Media",
+  "description": null,
+  "items": [
+    {
+      "id": "1e9c2f08-f0c0-4f9e-919f-f8bd8eb528b4",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "** Do you usually check the news before sleeping?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Social Media",
+        "paragraphIndex": 629
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "621623d3-ce44-417e-859a-cb2113821c83",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "** What kind of topic usually makes you lose track of time?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Social Media",
+        "paragraphIndex": 634
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7f335cd8-c917-4fc3-b01f-fc0daae474f7",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "** Which app do you think is the most addictive?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Social Media",
+        "paragraphIndex": 639
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "41286aff-c753-43e3-9a8a-636edcccbbd0",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "** What do you usually do on your phone when you’re bored?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Social Media",
+        "paragraphIndex": 644
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "1bf195c2-f1f0-41a1-8056-b2c60f157d36",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "** Do you think social media makes people care too much about what others think?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Social Media",
+        "paragraphIndex": 649
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7c82b942-70a9-4626-b39f-95110cb2c17d",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "** Do you think social media creates unrealistic expectations?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Social Media",
+        "paragraphIndex": 654
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "13f6cf05-6c5d-432b-b673-59adb7c4721d",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "** Are you comfortable sharing personal things online?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Social Media",
+        "paragraphIndex": 659
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "bf035ba2-e7f4-4d52-b106-cfe65fefcf74",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "** Do you have a love-hate relationship with any app?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Social Media",
+        "paragraphIndex": 664
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "bb596997-5354-4e8d-b570-4ff02147d12e",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "** Do you think people use their phones too much when they are with other people?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Social Media",
+        "paragraphIndex": 669
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ac62604d-eeb2-4f4a-9403-661cb38ed4eb",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "** Do you think people behave differently online and in real life?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Social Media",
+        "paragraphIndex": 674
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

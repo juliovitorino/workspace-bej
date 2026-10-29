@@ -1,0 +1,388 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "work",
+  "title": "Work topic",
+  "description": null,
+  "items": [
+    {
+      "id": "4bd7e7f4-c83d-45b2-b759-7096a62d39c9",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you do for a living and what is the one thing you enjoy about it?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Work topic",
+        "paragraphIndex": 251
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "65b545fa-1e13-4402-be0f-0f71eb6d56c8",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you work at home?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Work topic",
+        "paragraphIndex": 256
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "5ad81fd6-6912-42f2-b8a1-15134af7e9fa",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How far is it from there to where you work?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Work topic",
+        "paragraphIndex": 258
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "53ab1136-2968-471f-b0fb-86c2233cd699",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How long does your commute take?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Work topic",
+        "paragraphIndex": 260
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "33201fbd-9ae9-490c-990e-6fe525a88089",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you commute by subway?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Work topic",
+        "paragraphIndex": 263
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e308912a-3869-4a6b-a31b-5841df5e0407",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you like your job and How is your routine?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Work topic",
+        "paragraphIndex": 265
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7c4748b9-8975-4123-a2eb-519c685aee10",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the best professional advice you’ve ever received?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Work topic",
+        "paragraphIndex": 273
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a556e1c7-ccab-4bd7-bcf4-47fad3f03733",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How did you get started in your line of work?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Work topic",
+        "paragraphIndex": 282
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "47e47722-13a5-44d9-bfb0-05ea7f96a66f",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What project are you currently working on?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Work topic",
+        "paragraphIndex": 289
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "654efede-23fd-43bf-a33c-d887a13cb9ad",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you think the future of your industry looks like?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Work topic",
+        "paragraphIndex": 297
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a778b32a-832c-4976-ac34-6fc2d6c29222",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you think?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Work topic",
+        "paragraphIndex": 302
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d452fee3-19ee-4e42-afef-a97424116cbb",
+      "type": "question-answer",
+      "order": 12,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you think sets successful people apart in your field?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Work topic",
+        "paragraphIndex": 304
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "66005962-7245-4c96-914b-32db4634efe3",
+      "type": "question-answer",
+      "order": 13,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What makes someone stand out in your industry?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Work topic",
+        "paragraphIndex": 320
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "fae26fdb-2058-45b1-8191-29a455434e8a",
+      "type": "question-answer",
+      "order": 14,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What skills do you think are the most important in your field?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Work topic",
+        "paragraphIndex": 327
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ee906cb0-82f8-44ae-9cb9-c51ce1ce0f9b",
+      "type": "question-answer",
+      "order": 15,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one thing you’ve learned recently that helped you in your job?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Work topic",
+        "paragraphIndex": 341
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "cf3fd597-4289-43a0-be2a-e682971279a8",
+      "type": "question-answer",
+      "order": 16,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the one challenge you’ve faced at work and how did you overcome it?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Work topic",
+        "paragraphIndex": 343
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "22ecae4b-4dad-496c-a58f-8d796da99009",
+      "type": "question-answer",
+      "order": 17,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you have any career goals you are working on?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Work topic",
+        "paragraphIndex": 345
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "fdcab11f-f95d-49b7-8d8e-b9004ea16a7c",
+      "type": "question-answer",
+      "order": 18,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever had an interesting work experience or job?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Work topic",
+        "paragraphIndex": 347
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

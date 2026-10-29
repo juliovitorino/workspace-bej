@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "pets",
+  "title": "Pets",
+  "description": null,
+  "items": [
+    {
+      "id": "6eb6f16a-01a8-43fd-a79c-264679c93efd",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you have any pets, and what is unique about them?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pets",
+        "paragraphIndex": 873
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e4b4369b-ad59-491e-b42c-3bb1f30d979e",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If you have a pet, who in your family does it get along with?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pets",
+        "paragraphIndex": 882
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

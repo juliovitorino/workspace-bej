@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "housing",
+  "title": "HOUSING",
+  "description": null,
+  "items": [
+    {
+      "id": "43caa4bf-174c-4994-a1ba-dd957c03c5c5",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of housing is more common in Morocco: houses or apartments?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "HOUSING",
+        "paragraphIndex": 1605
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8c4e5c03-e981-420b-b929-fd2850e74bdd",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is rent expensive where you live?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "HOUSING",
+        "paragraphIndex": 1607
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2797fd98-318d-4318-af1d-1c2414d2aad8",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do most people in Morocco prefer to rent or buy a home?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "HOUSING",
+        "paragraphIndex": 1609
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "85294231-8f31-41d0-8b2c-c345073b617f",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "At what age do people usually leave their parents’ home in Morocco?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "HOUSING",
+        "paragraphIndex": 1611
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b3575097-6a9d-42b4-8ce3-a761bfd213a4",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Are gated communities common in Morocco too?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "HOUSING",
+        "paragraphIndex": 1613
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4e24df92-596d-41a3-9fc2-80d7f92531a6",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do apartment buildings in Morocco have similar monthly fees?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "HOUSING",
+        "paragraphIndex": 1616
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "82626a54-875b-4a83-810e-1c4e73d3e7b3",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Are homes becoming smaller in Moroccan cities too?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "HOUSING",
+        "paragraphIndex": 1618
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a5ded9e8-505f-47cb-bcfa-31ead0cd8acc",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How does the climate affect the way houses are built in Morocco?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "HOUSING",
+        "paragraphIndex": 1620
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a44a703c-425c-4fba-978f-474c9026e964",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do Moroccans usually consider when choosing a neighborhood?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "HOUSING",
+        "paragraphIndex": 1622
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "cf267793-9e1e-4365-9a0a-3908ac1dcc5c",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is housing inequality something people talk about a lot in Morocco?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "HOUSING",
+        "paragraphIndex": 1624
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "weather",
+  "title": "Weather Topic",
+  "description": null,
+  "items": [
+    {
+      "id": "6a1afbaa-8f7b-43f3-a223-ad7df66fdeab",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How is the weather there?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Weather Topic",
+        "paragraphIndex": 241
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8660e0b2-d876-47e8-b5b7-166279d7c841",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is it usually hot or cold where you live?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Weather Topic",
+        "paragraphIndex": 244
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "895419b9-2604-48df-9abd-0d9910e8bce1",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of weather do you most like?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Weather Topic",
+        "paragraphIndex": 247
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

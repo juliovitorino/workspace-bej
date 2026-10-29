@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "finances",
+  "title": "Finances",
+  "description": null,
+  "items": [
+    {
+      "id": "d3253f0a-bfef-46d2-b782-8a569fe4bc33",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What does financial success mean to you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Finances",
+        "paragraphIndex": 916
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a122ead9-dd04-481d-a908-29d201594fbc",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer saving money or spending it on experiences?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Finances",
+        "paragraphIndex": 921
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "096ffd51-2bf5-4e3c-880d-6c19ef64fa68",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one financial habit you think everyone should develop?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Finances",
+        "paragraphIndex": 924
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c61f06c1-4b39-49c7-a6bc-06430cb64638",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you usually plan your expenses or spend money more spontaneously?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Finances",
+        "paragraphIndex": 932
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b5a05f1d-4cd3-45e0-b83e-d41191e49855",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the best financial advice you have ever received?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Finances",
+        "paragraphIndex": 953
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "55272179-e52b-4e98-94ca-6f74dbbee5fd",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think schools should teach more about personal finance?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Finances",
+        "paragraphIndex": 954
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "9b88f287-1c14-4d88-ac0b-10fc099e7c88",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What are some common financial mistakes people make?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Finances",
+        "paragraphIndex": 955
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "03caad33-a8a8-4663-ab9b-de0939a8f379",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How important is investing for long-term financial security?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Finances",
+        "paragraphIndex": 956
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c912a18f-11e3-43a9-b072-c59a73f8067a",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think money can bring happiness?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Finances",
+        "paragraphIndex": 957
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "3cc78d0f-f4c8-428b-a7e5-cd7773dd4bfe",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What financial goals are you currently working toward?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Finances",
+        "paragraphIndex": 958
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

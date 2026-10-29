@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "saudi-arabia",
+  "title": "Saudi Arabia",
+  "description": null,
+  "items": [
+    {
+      "id": "102f78c5-8d3f-473c-ad4d-5622d3d28769",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What part of Saudi culture do you think foreigners should understand better?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Saudi Arabia",
+        "paragraphIndex": 1451
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d736f977-cd6c-4ac0-b03d-87defd8c2de6",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer living in a modern city or a quieter place?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Saudi Arabia",
+        "paragraphIndex": 1452
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "0acf5532-dac2-4305-9428-f68789cdd6c6",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer cities near the sea or cities inland?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Saudi Arabia",
+        "paragraphIndex": 1453
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "1fe62688-ac04-403f-9aa4-8be6995db9f1",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What traditional dish would you recommend to someone visiting your country?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Saudi Arabia",
+        "paragraphIndex": 1454
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "bb79fcab-80ab-45c6-8ae1-500095fdc247",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do people usually serve to guests in your home?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Saudi Arabia",
+        "paragraphIndex": 1455
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7695aa3c-8255-48ea-803f-6ea294246bec",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you enjoy hot weather, or do you prefer cooler temperatures?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Saudi Arabia",
+        "paragraphIndex": 1456
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d43c1dc5-9668-4fbd-a0b6-6f59d9318bf7",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you usually do when you spend time with your family?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Saudi Arabia",
+        "paragraphIndex": 1457
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "69ec9eee-92c7-4980-a0a0-e934367c4b90",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What change in your country has surprised you the most?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Saudi Arabia",
+        "paragraphIndex": 1458
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a2f4025b-b108-4202-9847-3b9aa4b69e63",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer visiting natural places or historical places?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Saudi Arabia",
+        "paragraphIndex": 1459
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "5c912f3d-cd2e-456f-9056-6a132869e54d",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one thing about Saudi Arabia that foreigners usually misunderstand?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Saudi Arabia",
+        "paragraphIndex": 1460
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

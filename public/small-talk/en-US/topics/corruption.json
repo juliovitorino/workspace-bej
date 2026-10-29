@@ -1,0 +1,261 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "corruption",
+  "title": "CORRUPTION",
+  "description": null,
+  "items": [
+    {
+      "id": "98a9002c-5a93-4920-82f0-e8991a9dc794",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think corruption is also a serious problem in your country?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CORRUPTION",
+        "paragraphIndex": 1634,
+        "promptHeading": "1. I believe — Eu acredito que...",
+        "promptHeadingParagraphIndex": 1632
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b924800d-a4c4-486f-bd82-402dd3be13ed",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What institutions fight corruption in your country?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CORRUPTION",
+        "paragraphIndex": 1641,
+        "promptHeading": "2. As far as I know — Até onde eu sei...",
+        "promptHeadingParagraphIndex": 1639
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0402488-a2bc-45dc-b710-5b2452e308dd",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think your government is transparent about public spending?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CORRUPTION",
+        "paragraphIndex": 1650,
+        "promptHeading": "3. There has to be — Tem que haver...",
+        "promptHeadingParagraphIndex": 1648
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "70af8dc8-a878-4878-93d6-c01fe277f59b",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What else do you think governments should do to prevent corruption?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CORRUPTION",
+        "paragraphIndex": 1657,
+        "promptHeading": "4. Even though — Embora / apesar de...",
+        "promptHeadingParagraphIndex": 1655
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8b500ad0-481e-4a4f-aeaf-1da5f28177aa",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What if every citizen could easily see where public money goes?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CORRUPTION",
+        "paragraphIndex": 1663,
+        "promptHeading": "5. What if — E se...",
+        "promptHeadingParagraphIndex": 1662
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6a61d216-4b02-4d35-a5f7-9e72c07d2d27",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would greater transparency help reduce corruption in your opinion?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CORRUPTION",
+        "paragraphIndex": 1664
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "fe3be0af-0713-489d-95f3-bdfa1f2cb91b",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How do people usually get political news in your country?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CORRUPTION",
+        "paragraphIndex": 1671,
+        "promptHeading": "6. Used to — Costumava...",
+        "promptHeadingParagraphIndex": 1669
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a822867b-1553-4688-9b8a-dc34978ca34c",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What can governments do to regain people's trust?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CORRUPTION",
+        "paragraphIndex": 1678,
+        "promptHeading": "7. Because of — Por causa de...",
+        "promptHeadingParagraphIndex": 1676
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "08fee89d-d2a5-4f57-9fd4-7286eabc386b",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think technology can help fight corruption?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CORRUPTION",
+        "paragraphIndex": 1686,
+        "promptHeading": "8. I wonder if — Eu me pergunto se...",
+        "promptHeadingParagraphIndex": 1684
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7664cb90-8d2f-44ac-a11d-87a2b852160d",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think prevention is more effective than punishment?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CORRUPTION",
+        "paragraphIndex": 1693,
+        "promptHeading": "9. Should have — Deveria ter...",
+        "promptHeadingParagraphIndex": 1691
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "87cf6a44-066f-4184-86e0-40cc41b71115",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you think is the most important thing a country can do to reduce corruption in the long run?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CORRUPTION",
+        "paragraphIndex": 1700,
+        "promptHeading": "10. In the long run — No longo prazo...",
+        "promptHeadingParagraphIndex": 1698
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

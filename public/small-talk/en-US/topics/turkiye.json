@@ -1,0 +1,430 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "turkiye",
+  "title": "Türkiye",
+  "description": null,
+  "items": [
+    {
+      "id": "4c75e0b6-4392-44f7-858a-2b6f27bd031e",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What part of Turkish culture do you think foreigners should understand better?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Türkiye",
+        "paragraphIndex": 1414
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "439187d2-0a5f-423f-bef1-9b7e3821b53a",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What Turkish dish would you recommend to someone trying Turkish food for the first time?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Türkiye",
+        "paragraphIndex": 1415
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f421ae83-775b-458f-b788-15062ca1174a",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you drink tea every day, and when do people usually drink it in Türkiye?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Türkiye",
+        "paragraphIndex": 1416
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c995c6ff-183e-4057-9a21-bdb116bef671",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is your favorite place in Istanbul, and why?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Türkiye",
+        "paragraphIndex": 1417
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ecbef1ba-668f-4986-8747-67bd4eb93ba1",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever been to Cappadocia, and what impressed you the most?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Türkiye",
+        "paragraphIndex": 1418
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "69ff84a0-1937-4391-8345-708c034f24de",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you like to take a balloon ride, or do you think you would be afraid of the height?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Türkiye",
+        "paragraphIndex": 1419
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7ac89a7b-b4de-40a4-b912-1a9295715741",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever seen the balloon festival in person?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Türkiye",
+        "paragraphIndex": 1420
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f745b693-a9c2-430c-89f0-3083d2b95df1",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you like to stay in a cave hotel for a few nights?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Türkiye",
+        "paragraphIndex": 1421
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d4efca2a-92b7-4d63-8a89-764b49df73e4",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What usually happens when someone visits your home in Türkiye?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Türkiye",
+        "paragraphIndex": 1422
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "69cefdfc-2e93-4e96-bde9-5a6b8e9f6611",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If I had only one week in Türkiye, which places would you tell me to visit first?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Türkiye",
+        "paragraphIndex": 1423
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "1bc8235e-d624-43a6-b819-fa2811e34e00",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever been to Cappadocia?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Türkiye",
+        "paragraphIndex": 1425
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "25c7db3f-1b28-4c3b-9122-376a68306da1",
+      "type": "question-answer",
+      "order": 12,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is Cappadocia expensive for Turkish people to visit?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Türkiye",
+        "paragraphIndex": 1426
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "10c9e77c-6eba-463f-b650-241e5427d050",
+      "type": "question-answer",
+      "order": 13,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the best time of year to go there?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Türkiye",
+        "paragraphIndex": 1427
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "0e239198-9751-4dff-a9c1-c7cc8a5c017e",
+      "type": "question-answer",
+      "order": 14,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you take a balloon ride?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Türkiye",
+        "paragraphIndex": 1428
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8acd5ed1-a743-4c89-bc0e-74d68f73c8df",
+      "type": "question-answer",
+      "order": 15,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What Turkish food should I try first?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Türkiye",
+        "paragraphIndex": 1429
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f042fd4c-b4e1-4581-9649-f71a9e540e37",
+      "type": "question-answer",
+      "order": 16,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do Turkish people usually do on weekends?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Türkiye",
+        "paragraphIndex": 1430
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c7f8d6eb-ba1a-4aae-823e-b8d6143873b9",
+      "type": "question-answer",
+      "order": 17,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is Istanbul very different from the rest of Türkiye?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Türkiye",
+        "paragraphIndex": 1431
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c235e698-fbfd-4db3-8a39-1a19f35328dd",
+      "type": "question-answer",
+      "order": 18,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Which city has the best food in Türkiye?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Türkiye",
+        "paragraphIndex": 1432
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "13268ea7-2a39-4387-b0b0-9fa851a27cee",
+      "type": "question-answer",
+      "order": 19,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is something tourists usually misunderstand about Türkiye?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Türkiye",
+        "paragraphIndex": 1433
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "fd462275-c201-496c-8181-2bf56a62fded",
+      "type": "question-answer",
+      "order": 20,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Where do Turkish people usually go on vacation?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Türkiye",
+        "paragraphIndex": 1434
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

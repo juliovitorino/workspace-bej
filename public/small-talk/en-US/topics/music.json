@@ -1,0 +1,199 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "music",
+  "title": "MUSIC",
+  "description": null,
+  "items": [
+    {
+      "id": "727c797e-a172-469d-8fc3-1544c399f984",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of music do you usually listen to when you want to relax?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "MUSIC",
+        "paragraphIndex": 1707
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2d24a361-1696-4078-95bc-a4cd4d76b331",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you have a favorite band or artist that you swear by?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "MUSIC",
+        "paragraphIndex": 1711
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "db676433-5c37-4bde-8a17-27559d06efb1",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you like to listen to music while you work or study, or do you prefer silence?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "MUSIC",
+        "paragraphIndex": 1718
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "04e5828c-d654-42e8-8a33-79c94d199f7b",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What’s the last song you listened to on Spotify, or YouTube, or Apple Music?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "MUSIC",
+        "paragraphIndex": 1724
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d7a4c6b9-ec8f-41b0-ba99-6a441468d3b5",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How do you usually find new music?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "MUSIC",
+        "paragraphIndex": 1727
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a29a7aa1-c8e3-459b-9564-fccf59ad5956",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is there a song that always puts you in a good mood?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "MUSIC",
+        "paragraphIndex": 1737
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "73bfc441-f1df-45c6-9943-1eda2d06514a",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you like listening to music with lyrics and singing together or not?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "MUSIC",
+        "paragraphIndex": 1739
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4e066b13-6b31-4833-95b2-3e537dfc511e",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever been to a live concert?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "MUSIC",
+        "paragraphIndex": 1741
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a699dc7d-1d6e-486d-83c2-e489d98bb3e7",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If you could learn any musical instrument, which one would you pick?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "MUSIC",
+        "paragraphIndex": 1744
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

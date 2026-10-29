@@ -1,0 +1,430 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "brazil",
+  "title": "BRAZIL",
+  "description": null,
+  "items": [
+    {
+      "id": "48814b9e-464c-419d-b9de-9fba8b0c7979",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Which part of Brazilian culture are you most curious about?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "BRAZIL",
+        "paragraphIndex": 1571
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b98719ed-2b5d-4dd3-9337-5a86de8142df",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever heard Brazilian Portuguese before?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "BRAZIL",
+        "paragraphIndex": 1573
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4e379b1a-6b9e-41d0-a791-b4153e479e25",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Which Brazilian city would you like to visit first?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "BRAZIL",
+        "paragraphIndex": 1575
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8f14afd6-6a36-4921-82d4-0a8493a50b15",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If you came to Brazil, which Brazilian food would you like to try?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "BRAZIL",
+        "paragraphIndex": 1577
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "3d9238bb-6dd6-4e65-a455-0c012144e4e3",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is family life similar in Morocco?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "BRAZIL",
+        "paragraphIndex": 1579
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4de628d3-8c63-4422-b61a-25ba18a82668",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do Brazilians seem more open than people in Morocco to you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "BRAZIL",
+        "paragraphIndex": 1581
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8d54726f-3f60-47f0-9d9b-9de7f4e77559",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you imagine a normal day in Brazil is like?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "BRAZIL",
+        "paragraphIndex": 1583
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "0a16097d-68ad-4f03-9dc0-e5d4abb7856b",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What would surprise you the most about visiting a Brazilian home?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "BRAZIL",
+        "paragraphIndex": 1585
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2649af41-8c0a-4407-9a13-9fe98262f03a",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the first thing that comes to your mind when you think about Brazil?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "BRAZIL",
+        "paragraphIndex": 1587
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "1bb86667-a9a6-45be-84e9-a89cfaf3a1ce",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What did you think about Brazil before you started talking to Brazilians?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "BRAZIL",
+        "paragraphIndex": 1589
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "beb3e85a-07a6-4965-95f7-d9caf4ce0ec2",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What city in your country has the strongest cultural identity?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "BRAZIL",
+        "paragraphIndex": 1592
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "fbdbbe3d-c9a5-4a71-9850-4dfc8f37b8f7",
+      "type": "question-answer",
+      "order": 12,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer cities with beaches or cities with mountains?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "BRAZIL",
+        "paragraphIndex": 1593
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4c558452-6988-4e30-8542-b154e8449ba4",
+      "type": "question-answer",
+      "order": 13,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of place do you usually choose for a vacation?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "BRAZIL",
+        "paragraphIndex": 1594
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b5db48f7-9c3c-42a9-a251-6fc4858ec203",
+      "type": "question-answer",
+      "order": 14,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you like spending your vacation relaxing or doing many activities?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "BRAZIL",
+        "paragraphIndex": 1595
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "519f1ecb-0dc8-4f98-b063-60d871880a8e",
+      "type": "question-answer",
+      "order": 15,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What outdoor activity would you like to try while traveling?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "BRAZIL",
+        "paragraphIndex": 1596
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "edf7da65-cf15-4299-a7e1-1adc388d90c7",
+      "type": "question-answer",
+      "order": 16,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer busy cities or quieter places?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "BRAZIL",
+        "paragraphIndex": 1597
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f6d2379c-e308-4841-8a2f-11b79a047363",
+      "type": "question-answer",
+      "order": 17,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you enjoy visiting historical neighborhoods when you travel?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "BRAZIL",
+        "paragraphIndex": 1598
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2bcf45a7-6f12-4466-8039-6cfa14996282",
+      "type": "question-answer",
+      "order": 18,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you rather live in a small city or a large city?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "BRAZIL",
+        "paragraphIndex": 1599
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "337fd219-5e68-40e6-97df-e0b53e184991",
+      "type": "question-answer",
+      "order": 19,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What local food from your country would you recommend to a visitor?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "BRAZIL",
+        "paragraphIndex": 1600
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "eb4f5b09-921d-49f6-bd50-f57a97b9bf56",
+      "type": "question-answer",
+      "order": 20,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Are cities in your country very different from one another?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "BRAZIL",
+        "paragraphIndex": 1601
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

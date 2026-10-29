@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "russia",
+  "title": "Rússia.",
+  "description": null,
+  "items": [
+    {
+      "id": "319150d1-6be7-42b5-8ab7-0d8a6d0c735b",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Which part of Russia do you think is the most interesting to visit?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Rússia.",
+        "paragraphIndex": 1437
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d8563488-877f-4e8f-9472-3c8e8e0d4546",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer living in a big city or a quieter place?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Rússia.",
+        "paragraphIndex": 1438
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "3b2a4e64-ed75-4c46-a478-616f8e1f9dcc",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you enjoy visiting historical cities when you travel?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Rússia.",
+        "paragraphIndex": 1439
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2c7444dd-a951-4e2d-87f0-3f0975b4e741",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What traditional Russian dish would you recommend to a foreigner?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Rússia.",
+        "paragraphIndex": 1440
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "93c71a0b-b2e8-408b-aae4-bf8ce2be8038",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer tea or coffee, and when do you usually drink it?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Rússia.",
+        "paragraphIndex": 1441
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2ba1d446-00a3-4e55-b5a8-24c46e7d408b",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you enjoy cold weather, or would you rather live somewhere warmer?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Rússia.",
+        "paragraphIndex": 1442
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "19b45848-9637-4beb-903d-ce82646f86e3",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Are you interested in books, music, theater, or another kind of art?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Rússia.",
+        "paragraphIndex": 1443
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c62f19e4-8d84-4845-b201-613e1202a96b",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the longest trip you have ever taken inside your own country?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Rússia.",
+        "paragraphIndex": 1444
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b0a3f743-fe9e-456b-ad18-782470266a58",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you usually do when you spend time with close friends?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Rússia.",
+        "paragraphIndex": 1445
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e56740bc-7dc4-40cd-b1c9-901ffa8200f7",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one thing about Russia that foreigners usually misunderstand?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Rússia.",
+        "paragraphIndex": 1446
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

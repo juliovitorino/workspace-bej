@@ -1,0 +1,430 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "pakistan",
+  "title": "Pakistan",
+  "description": null,
+  "items": [
+    {
+      "id": "d98f1f6a-531f-4c47-aebc-7ecd0a40c3d2",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Which part of Pakistan do you think is the most interesting for a foreigner to visit?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pakistan",
+        "paragraphIndex": 1390
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "40c0bd7c-a81e-4919-af17-a51b2c125a25",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What Pakistani dish would you recommend to someone trying the food for the first time?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pakistan",
+        "paragraphIndex": 1391
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "55dff39a-8ea5-42e3-ab84-0b84570f8a96",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do families usually do together in Pakistan?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pakistan",
+        "paragraphIndex": 1392
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7cf07725-e846-4fcd-a167-cb5925bf036d",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you drink tea every day, and how do you usually prepare it?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pakistan",
+        "paragraphIndex": 1393
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "259c9559-2ddb-4935-9791-0e993f9e4cfa",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Which city in Pakistan do you like the most, and why?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pakistan",
+        "paragraphIndex": 1394
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6754f684-4dbf-4009-9adc-77c21ff88a33",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever traveled to the northern part of Pakistan?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pakistan",
+        "paragraphIndex": 1395
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d493fe19-070d-4bfa-b3d1-8c0c1f231a18",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of traditional clothes do people usually wear in your region?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pakistan",
+        "paragraphIndex": 1396
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a91b6078-99c4-4483-8148-25de6c497241",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you follow cricket, and which team or player do you like?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pakistan",
+        "paragraphIndex": 1397
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ee321400-5aa4-40c8-80d5-5b55620dbc32",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one Pakistani tradition that you think foreigners should understand better?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pakistan",
+        "paragraphIndex": 1398
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "1b84c9d9-1ba4-4d38-8d41-efe740c6b7b3",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If I had only one week in Pakistan, what places should I visit first?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pakistan",
+        "paragraphIndex": 1399
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e82523e0-6eb2-45d0-a11e-29713d56ee89",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is daily life like in your city?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pakistan",
+        "paragraphIndex": 1401
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b67e8d3e-d414-438a-b3eb-39d97cca6531",
+      "type": "question-answer",
+      "order": 12,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What food do you usually eat at home?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pakistan",
+        "paragraphIndex": 1402
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d8f6dcb7-8268-4e96-ad0c-cf2e578d7291",
+      "type": "question-answer",
+      "order": 13,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Which language do you speak with your family?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pakistan",
+        "paragraphIndex": 1403
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f6a6f166-d02c-43d5-be28-b012429d2e05",
+      "type": "question-answer",
+      "order": 14,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do people usually do on weekends?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pakistan",
+        "paragraphIndex": 1404
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "07404bb5-686f-40e0-b4a4-98633251511a",
+      "type": "question-answer",
+      "order": 15,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is your city more traditional or modern?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pakistan",
+        "paragraphIndex": 1405
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "846c6cce-c234-4ca3-aead-62f72f137e7f",
+      "type": "question-answer",
+      "order": 16,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is something foreigners usually misunderstand about Pakistan?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pakistan",
+        "paragraphIndex": 1406
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a68e51c9-268e-4364-84c5-383ebf58980a",
+      "type": "question-answer",
+      "order": 17,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the best time of year to visit Pakistan?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pakistan",
+        "paragraphIndex": 1407
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "89ee5d35-f57e-4bd0-9eea-738d5870a887",
+      "type": "question-answer",
+      "order": 18,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of music is popular there?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pakistan",
+        "paragraphIndex": 1408
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4da470bd-785a-45db-8abf-da1d21b78e9c",
+      "type": "question-answer",
+      "order": 19,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do young people usually do for fun?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pakistan",
+        "paragraphIndex": 1409
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ceab58d9-b283-435d-945d-ac652338de61",
+      "type": "question-answer",
+      "order": 20,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What part of Pakistani culture are you most proud of?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Pakistan",
+        "paragraphIndex": 1410
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

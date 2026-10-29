@@ -1,0 +1,241 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "favelas",
+  "title": "FAVELAS",
+  "description": null,
+  "items": [
+    {
+      "id": "29fd3246-9ffc-4751-8499-cfb4bae0d394",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "1. What exactly is a favela?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FAVELAS",
+        "paragraphIndex": 1327
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "84aa24d5-7f54-4c02-b5a0-f7efb903e0d9",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "2. Are favelas as dangerous as they look in movies?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FAVELAS",
+        "paragraphIndex": 1331
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2fe9a469-1428-478b-956f-e0a83efad410",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "3. Why are there so many favelas in Rio?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FAVELAS",
+        "paragraphIndex": 1335
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "778c16f2-0454-4c12-90be-0642b6bf0772",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "4. Do only poor people live in favelas?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FAVELAS",
+        "paragraphIndex": 1339
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "0348c44e-2fda-4414-91f1-877edd256bf2",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "5. Do people in favelas have electricity and internet?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FAVELAS",
+        "paragraphIndex": 1343
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ab8fb283-810d-40fe-a863-6e55b17acdbc",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "6. Can tourists visit a favela?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FAVELAS",
+        "paragraphIndex": 1347
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "fa47a690-796d-4235-a5ab-74dba3b0136f",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "7. Have you ever been to a favela?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FAVELAS",
+        "paragraphIndex": 1351
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "5816594a-4371-454d-8b44-8201ade8c254",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "8. What's everyday life like in a favela?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FAVELAS",
+        "paragraphIndex": 1360
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f8bbe0ec-b6f9-4855-b1d0-c5a61b4d9f65",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "9. What's the biggest misconception foreigners have about favelas?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FAVELAS",
+        "paragraphIndex": 1364
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2b56fc2a-cf2c-4db9-99e4-e4030daffe4d",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "10. Why don't people just move out of the favelas?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FAVELAS",
+        "paragraphIndex": 1369
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "20812bc8-af57-45ce-b49f-b893b92abe4e",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What image comes to your mind when you hear the word “favela”?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "FAVELAS",
+        "paragraphIndex": 1374
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import type { ThemePreference } from "../theme";
 import { LanguageSettingsFields, type LanguageSettingsProps } from "./LanguageSettingsFields";
 import { NeuralVoiceSelect } from "./NeuralVoiceSelect";
+import { SmallTalkPersonalImport } from "./SmallTalkPersonalImport";
 
 const categories = ["audio", "languages", "study", "appearance", "data"] as const;
 interface Props extends LanguageSettingsProps {
@@ -64,6 +65,7 @@ export function AppSettingsPage({ theme, onThemeChange, onOpenStudy, onOpenData,
           <summary>Termos de Uso (PT-BR)</summary>
           <div className="bej-terms-text" role="document">{termsOfUse}</div>
         </details>
+        <SmallTalkPersonalImport />
         <StudyDangerZone language={languages.language} onChanged={() => undefined} />
       </>}
     </section>

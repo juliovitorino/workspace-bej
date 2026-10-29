@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "egypt",
+  "title": "Egypt",
+  "description": null,
+  "items": [
+    {
+      "id": "9a39111a-4a75-4e34-8199-7261467be583",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Are you interested in ancient history, or do you prefer modern places?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Egypt",
+        "paragraphIndex": 1529
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "db743ea3-15d7-4b1d-ac37-d0227305001b",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is your city usually busy and crowded, or is it more peaceful?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Egypt",
+        "paragraphIndex": 1530
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8baa5b1f-3865-4ea3-990c-c3c2dff7f535",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Which Egyptian food would you recommend to someone visiting for the first time?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Egypt",
+        "paragraphIndex": 1531
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "33d68f8d-2c35-4d05-97ca-9375f680824b",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is there an important river, lake, or natural place in your country?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Egypt",
+        "paragraphIndex": 1532
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8788cde5-3b06-484e-8ca2-9e91dd2c2e25",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever visited the pyramids, and what was your experience like?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Egypt",
+        "paragraphIndex": 1533
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "db6fee76-d473-4619-89bd-7fccd5e5d0c1",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer visiting historical places or spending time at the beach?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Egypt",
+        "paragraphIndex": 1534
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6bcf0bee-b94d-40bf-bf8f-69ff520a1c1d",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you enjoy visiting local markets when you travel?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Egypt",
+        "paragraphIndex": 1535
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "1f56a09b-aadc-475a-bccb-73dc81399bb1",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do people usually drink when they meet friends in your country?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Egypt",
+        "paragraphIndex": 1536
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6d123868-666e-45c1-9534-3023f96aae55",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What tradition from your country would you like foreigners to know more about?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Egypt",
+        "paragraphIndex": 1537
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d2416894-f716-42a4-bce6-a058e65d780c",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If I had only three days in Egypt, what places would you tell me to visit first?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Egypt",
+        "paragraphIndex": 1538
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

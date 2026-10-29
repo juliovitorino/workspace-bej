@@ -1,0 +1,262 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "daily-routines",
+  "title": "Daily routines",
+  "description": null,
+  "items": [
+    {
+      "id": "cdb5e4d9-651d-4294-9ede-93f8a39bf907",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Let me know more about you. What do you usually have for breakfast?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Daily routines",
+        "paragraphIndex": 1019
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "627a6a1a-e7ce-4e6d-b5f8-80dbcf6697e1",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you like coffee in your country?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Daily routines",
+        "paragraphIndex": 1026
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d8a6001a-1933-4d8c-b0cd-065491e7ee69",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What does a typical day look like for you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Daily routines",
+        "paragraphIndex": 1034
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "78314aa2-28a4-4e12-88b9-3c8ff8f31051",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the first thing you usually do when you wake up?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Daily routines",
+        "paragraphIndex": 1035
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e777bda9-0d9d-4f20-8355-440e457cf8f0",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer a busy routine or a more relaxed one?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Daily routines",
+        "paragraphIndex": 1036
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e9af09d7-2309-40a5-8597-422c4ca7fa7a",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What part of your daily routine do you enjoy the most?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Daily routines",
+        "paragraphIndex": 1037
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ce1b04ed-f2c2-48f2-a47c-081c643b0c3b",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is there anything in your routine that you would like to change?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Daily routines",
+        "paragraphIndex": 1038
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "37cd96e4-3806-4e65-b603-2720e96f5c91",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How do you usually start your morning?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Daily routines",
+        "paragraphIndex": 1039
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "1fc32b2d-2cc3-4b18-be48-c0a6954c37a5",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you usually do to relax after a long day?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Daily routines",
+        "paragraphIndex": 1040
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6f86af55-04ec-4be5-84a9-c94e63b2ec6a",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer doing things early in the morning or later at night?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Daily routines",
+        "paragraphIndex": 1041
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "583acae6-a3e3-45cb-ae6c-01734de1aa7c",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How important is having a consistent routine for you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Daily routines",
+        "paragraphIndex": 1042
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "65289a19-dea3-4154-bbf5-13600573f02c",
+      "type": "question-answer",
+      "order": 12,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one habit in your daily routine that you think is very important?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Daily routines",
+        "paragraphIndex": 1043
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

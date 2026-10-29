@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "soccer",
+  "title": "SOCCER",
+  "description": null,
+  "items": [
+    {
+      "id": "59079ab0-4214-4d7a-83f2-bdf1c70d7b95",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the most popular sport in your country?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "SOCCER",
+        "paragraphIndex": 226
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ee029ac6-1f73-4fbd-b427-a98d2bbfda19",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you support a soccer team?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "SOCCER",
+        "paragraphIndex": 227
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "baa10a34-c33e-4637-bf07-fb83dccc6b2a",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer watching games alone or with other people?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "SOCCER",
+        "paragraphIndex": 228
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4b0d3482-7059-48a8-bc3a-b9c3841696d4",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do people in your country get excited about the World Cup?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "SOCCER",
+        "paragraphIndex": 229
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d602460e-4e32-4290-92b5-1d4076731c51",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever watched a game with an incredible last-minute goal?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "SOCCER",
+        "paragraphIndex": 230
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2153dd2d-b0db-4fae-8101-7e048fde4c0b",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever watched a soccer match at a stadium?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "SOCCER",
+        "paragraphIndex": 231
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0ea0372-00bb-4137-bb22-44831dcd23c3",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Who do you think is the greatest soccer player of all time?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "SOCCER",
+        "paragraphIndex": 232
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c18ab136-3503-45ec-bf7a-5ed6aaf954ff",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you usually watch international soccer or only games from your country?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "SOCCER",
+        "paragraphIndex": 233
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "be18ccde-e0d8-49ce-bf80-c0371af64645",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you usually talk about a game after it finishes, or do you forget about it quickly?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "SOCCER",
+        "paragraphIndex": 234
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "299af331-d083-40bc-8912-9e361be1750d",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If we watched a soccer game together, which team would you want us to watch?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "SOCCER",
+        "paragraphIndex": 235
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

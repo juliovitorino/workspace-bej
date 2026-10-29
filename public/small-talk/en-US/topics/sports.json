@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "sports",
+  "title": "Sports",
+  "description": null,
+  "items": [
+    {
+      "id": "3fc5879c-ac7a-458e-a12f-b20ae7a47628",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Did you play any sports when you were younger?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Sports",
+        "paragraphIndex": 852
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "dcf83a87-8a3a-4aa6-a480-7c4bd40d777e",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer playing sports or watching them?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Sports",
+        "paragraphIndex": 854
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4d1e8482-4688-43b5-b008-f9e537459946",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think sports are important for a healthy lifestyle?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Sports",
+        "paragraphIndex": 856
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "87a46cfb-7479-43a3-bf48-a2fc9f65bec6",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What sports do you enjoy playing the most?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Sports",
+        "paragraphIndex": 859
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "353dc20c-5987-4e2e-9f4e-a723451fbe05",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is a popular sport in your country?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Sports",
+        "paragraphIndex": 861
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "afa2f538-c3db-45ac-b26f-10e4da21443a",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is your favorite sport to watch?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Sports",
+        "paragraphIndex": 863
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "15f356d1-607d-4092-955d-c6a69fe3292e",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What sport would you like to learn if you had the chance?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Sports",
+        "paragraphIndex": 865
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a7a50d84-f7ea-46db-b4ff-bb8625c03f42",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever tried an extreme sport?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Sports",
+        "paragraphIndex": 867
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "9abad5fc-8f6a-4d0c-95e6-f6e0f8e9460c",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer individual sports or team sports?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Sports",
+        "paragraphIndex": 868
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "444c73ae-3a7e-499c-8929-f3039acf120b",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think technology is changing the way people practice sports?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Sports",
+        "paragraphIndex": 869
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

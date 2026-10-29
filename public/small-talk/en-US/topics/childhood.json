@@ -1,0 +1,199 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "childhood",
+  "title": "Childhood",
+  "description": null,
+  "items": [
+    {
+      "id": "65ed38fb-fc5d-4da1-b606-192609d76109",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What games did you usually play when you were a kid?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Childhood",
+        "paragraphIndex": 833
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e645d14b-0919-420b-a855-d2ca816c9d01",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Did you spend more time indoors or outdoors when you were young?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Childhood",
+        "paragraphIndex": 835
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "71e6a418-75ce-457d-a0a1-4def4b64b127",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Who was your best friend when you were a kid?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Childhood",
+        "paragraphIndex": 837
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "28e1f3ee-89de-487f-a8e4-79e97451500e",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What did you want to become when you were a child?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Childhood",
+        "paragraphIndex": 839
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "5da3eae8-de80-4e2d-952d-87b62e37187a",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Did you have any hobbies or activities that you loved as a kid?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Childhood",
+        "paragraphIndex": 841
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "bae94c7d-6390-4fac-89bb-60f0558a0b89",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What was a typical weekend like for you when you were a child?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Childhood",
+        "paragraphIndex": 843
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ee378f63-ae87-4265-a000-705cd79c7a52",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is something you miss about your childhood?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Childhood",
+        "paragraphIndex": 846
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7317854f-6bfb-4b90-9dbe-261f8ce4e969",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Did your family have any special traditions when you were growing up?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Childhood",
+        "paragraphIndex": 847
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "69fa9ff8-16fc-4d21-acbe-8d8a83bff11b",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think childhood today is very different from when you were young?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Childhood",
+        "paragraphIndex": 848
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

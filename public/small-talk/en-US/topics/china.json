@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "china",
+  "title": "CHINA",
+  "description": null,
+  "items": [
+    {
+      "id": "a66426aa-c4a2-4f51-9c4a-1ec8e844c0af",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Which part of China do you think is the most interesting to visit?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CHINA",
+        "paragraphIndex": 1477
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f93ebf3c-b3b2-4eb5-8aaf-c32a7ed29fdc",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer historical places or modern attractions when you travel?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CHINA",
+        "paragraphIndex": 1478
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c760a7da-b224-4eb1-bf41-b72e8bd6d9b5",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you rather live in a very large city or a quieter place?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CHINA",
+        "paragraphIndex": 1479
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "486c3ced-793d-4ffc-b2aa-3c77710899b8",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What Chinese dish would you recommend to someone trying Chinese food for the first time?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CHINA",
+        "paragraphIndex": 1480
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e4064ac5-452f-451c-a8b0-1e5342bf3f6a",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer spicy food or mild food?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CHINA",
+        "paragraphIndex": 1481
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8b20396f-1d7f-412a-9cea-0ec54446a5ad",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you usually drink tea, coffee, or something else?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CHINA",
+        "paragraphIndex": 1482
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "1bbe40b4-dcbf-46bf-8a40-bb833bc64de8",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer visiting nature or exploring big cities?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CHINA",
+        "paragraphIndex": 1483
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "254814cc-4f3b-40a1-8be2-cd30609c2a47",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What holiday is the most important for your family?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CHINA",
+        "paragraphIndex": 1484
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7637a20a-0140-425f-ae82-cb0e3909e6f5",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What change in your city or country has impressed you the most?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CHINA",
+        "paragraphIndex": 1485
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a973a6e0-5c04-4407-a23f-23d2e252165a",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one thing about China that foreigners usually misunderstand?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "CHINA",
+        "paragraphIndex": 1486
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

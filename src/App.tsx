@@ -32,6 +32,8 @@ import { PersonalFlashcards } from "./features/personal-flashcards/PersonalFlash
 import { PERSONAL_CARDS_CHANGED, countPersonalFlashcards } from "./features/personal-flashcards/personalFlashcardStorage";
 import { ChunkFlashcards } from "./components/ChunkFlashcards";
 import { StoryShadowing } from "./components/StoryShadowing";
+import { SmallTalkPage } from "./features/small-talk/SmallTalkPage";
+import "./features/small-talk/smallTalk.css";
 import { fetchHashmap, loadHashmap } from "./services/hashmapService";
 import type { HashmapData, MentalIntention } from "./types/hashmap";
 import { normalizeText } from "./utils/normalizeText";
@@ -152,7 +154,7 @@ function App() {
   }, [studyView, language]);
   const extraActivity = useExtraActivity();
   const studyWarning = useStudyTracking(studyView, language, trainingMode ? trainingSignal : studySignal,
-    backupReminderOpen || !!settingsDialog || (!["shadowing", "would-you-rather"].includes(studyView) && (loading || !data)));
+    backupReminderOpen || !!settingsDialog || (!["shadowing", "would-you-rather", "small-talk"].includes(studyView) && (loading || !data)));
 
   // Mesma verificacao de modo autor usada pelas ferramentas existentes.
   const authorMode = isAuthorMode();
@@ -393,7 +395,7 @@ function App() {
             } else {
               setFilterScrollRequest(0);
             }
-            if (view === "settings" || view === "shadowing" || view === "would-you-rather" || view === "favorite-chunks" || view === "study-dashboard" || view === "extra-activities") {
+            if (view === "settings" || view === "shadowing" || view === "small-talk" || view === "would-you-rather" || view === "favorite-chunks" || view === "study-dashboard" || view === "extra-activities") {
               closeTraining();
               setSelected(null);
               window.speechSynthesis?.cancel();
@@ -432,16 +434,17 @@ function App() {
             {extraActivity.draft && currentView !== "extra-activities" && <p className="warning-banner" role="status">{t("extras.activeNotice")} <button type="button" className="secondary-button" onClick={() => { closeTraining(); setSelected(null); setCurrentView("extra-activities"); }}>{t("extras.open")}</button></p>}
             {currentView === "extra-activities" && <ExtraActivities language={language} state={extraActivity} />}
             {currentView === "would-you-rather" && <WouldYouRather key={`${sourceLanguage}-${language}`} language={language} sourceLanguage={sourceLanguage} onStudyState={reportStudy} />}
+            {currentView === "small-talk" && <SmallTalkPage onStudyState={reportStudy} onWalkingChange={setWalkingActive} />}
             {currentView === "shadowing" && <StoryShadowing key={`${sourceLanguage}-${language}`} language={language} onStudyState={reportStudy} onMenu={() => setCurrentView("hashmap")} />}
 
-        {loading && currentView !== "shadowing" && currentView !== "would-you-rather" && currentView !== "study-dashboard" && currentView !== "extra-activities" && currentView !== "settings" && (
+        {loading && currentView !== "shadowing" && currentView !== "small-talk" && currentView !== "would-you-rather" && currentView !== "study-dashboard" && currentView !== "extra-activities" && currentView !== "settings" && (
           <div className="status-card">
             <div className="spinner" />
             <p>{t("app.loadingMentalHashmap")}</p>
           </div>
         )}
 
-        {!loading && error && !data && currentView !== "shadowing" && currentView !== "would-you-rather" && currentView !== "study-dashboard" && currentView !== "extra-activities" && currentView !== "settings" && (
+        {!loading && error && !data && currentView !== "shadowing" && currentView !== "small-talk" && currentView !== "would-you-rather" && currentView !== "study-dashboard" && currentView !== "extra-activities" && currentView !== "settings" && (
           <div className="status-card error-card">
             <h2>{t("app.couldNotLoadMentalHashmap")}</h2>
             <p>{error}</p>

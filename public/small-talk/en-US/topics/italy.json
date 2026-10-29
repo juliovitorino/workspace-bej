@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "italy",
+  "title": "ITALY",
+  "description": null,
+  "items": [
+    {
+      "id": "4a578259-471e-4307-a286-2cc1442a5b0e",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Which part of Italy would you like to visit the most?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "ITALY",
+        "paragraphIndex": 1503
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "9ed17a43-97dc-4de5-ba29-a6ab1ca92df9",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer historical cities or modern cities?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "ITALY",
+        "paragraphIndex": 1504
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "9634a393-00a3-4aad-9e38-358bcf3a587f",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What Italian dish do you like the most?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "ITALY",
+        "paragraphIndex": 1505
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a0a504d3-ced1-42f1-b4ab-7c6d947fd766",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is food also very different between regions in your country?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "ITALY",
+        "paragraphIndex": 1506
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "0f2ce18c-7a84-48ac-bcbc-56526d6b02d3",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer coffee, tea, or another drink?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "ITALY",
+        "paragraphIndex": 1507
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "935495a5-cfbb-4495-b5b9-969dcb546942",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you enjoy visiting museums and historical places?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "ITALY",
+        "paragraphIndex": 1508
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "90b214b7-a2ca-466b-bb6c-b1ed2cec097f",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer living near the beach or in a big city?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "ITALY",
+        "paragraphIndex": 1509
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "acfa2b7e-bc4c-4551-931a-753e9c4da6b8",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you usually have meals with your family?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "ITALY",
+        "paragraphIndex": 1510
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "0a4a940a-9fe3-4938-9d62-912e8b7195d2",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "When you travel, do you prefer famous cities or small towns?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "ITALY",
+        "paragraphIndex": 1511
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8397caf6-b06b-4788-b1ce-da0d1109e861",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one thing about Italy that foreigners usually misunderstand?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "ITALY",
+        "paragraphIndex": 1512
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

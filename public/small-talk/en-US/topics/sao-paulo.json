@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "sao-paulo",
+  "title": "SÃO PAULO",
+  "description": null,
+  "items": [
+    {
+      "id": "d228b923-2d26-4717-906f-0dd1755c5db7",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of food would you like to try if you visited São Paulo?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "SÃO PAULO",
+        "paragraphIndex": 1543
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4d1ff16c-c397-439f-bb18-3d59bc50b9ca",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you usually prefer pizza, burgers, or another kind of food when you go out?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "SÃO PAULO",
+        "paragraphIndex": 1544
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e4d3679e-7d8e-4fda-bd5c-cb462fbf8088",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever visited a Japanese neighborhood or tried traditional Japanese food?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "SÃO PAULO",
+        "paragraphIndex": 1545
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "efcabae1-1ac4-4207-a74c-49b0802df14e",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you have a famous street or avenue like that in your city?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "SÃO PAULO",
+        "paragraphIndex": 1546
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "bf05aebb-2365-41e4-ba20-93bbfef949b3",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "When you go out at night, do you prefer bars, clubs, live music, or a quiet restaurant?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "SÃO PAULO",
+        "paragraphIndex": 1547
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "5224eb66-5db7-4ceb-b697-24d8106040f1",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is there a traditional market in your city that tourists should visit?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "SÃO PAULO",
+        "paragraphIndex": 1548
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "fbc25045-df25-44cd-84e2-9b5065a99540",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is life in your city fast and busy, or is it more relaxed?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "SÃO PAULO",
+        "paragraphIndex": 1549
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "698531a9-88ad-4f31-a96b-8573baf65889",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do people usually do in parks where you live?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "SÃO PAULO",
+        "paragraphIndex": 1550
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "de3c972e-0e0f-4c9f-a202-fe26d17ba546",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is your city also multicultural?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "SÃO PAULO",
+        "paragraphIndex": 1551
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "551fc842-5c60-487a-b30c-4b2b806086ef",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "When you visit a new city, what do you prefer to explore first: food, nightlife, museums, nature, or local neighborhoods?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "SÃO PAULO",
+        "paragraphIndex": 1552
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}

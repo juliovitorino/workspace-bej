@@ -1,0 +1,241 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "personal",
+  "title": "Personal Topic",
+  "description": null,
+  "items": [
+    {
+      "id": "d6134219-5c56-4d6f-a1ba-62283bebe8bb",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Where did you grow up and what was it like?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal Topic",
+        "paragraphIndex": 680
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "03904e99-0966-4da3-84d4-3a6abc6e65f8",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one childhood memory that stands out to you and why?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal Topic",
+        "paragraphIndex": 683
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "3845ca6f-c328-4558-866c-a9ef7a33f6d0",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you have any personal goals or aspirations that you’re working towards?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal Topic",
+        "paragraphIndex": 685
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "3b8b74c4-fb6d-4178-b3b4-014f31687b70",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What about you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal Topic",
+        "paragraphIndex": 689
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a2becb46-981a-44c4-a67a-156b3ca67c27",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What was your relationship like with your sibling when you were both growing up?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal Topic",
+        "paragraphIndex": 694
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "1e91d923-f728-4135-b292-d840d969646c",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the best thing that’s ever happened to you and how did it make you feel?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal Topic",
+        "paragraphIndex": 696
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "16f8ecac-6f32-46b3-8de5-1cf72e690ef2",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one challenge or obstacle you’ve faced in your life and how did you overcome it?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal Topic",
+        "paragraphIndex": 698
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "02b52934-05f4-421d-80d7-4184f2d035be",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one thing you’re proud of or accomplished recently outside of work?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal Topic",
+        "paragraphIndex": 700
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c82d66c7-1e35-451c-b148-e27d13842bf8",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Who’s one person that’s in influence or in spite of you and how have they impacted your life?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal Topic",
+        "paragraphIndex": 702
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2e608f01-1b6d-4f9c-bb85-f12f62255f8a",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one thing you’ve done for someone else recently and how did it make you feel?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal Topic",
+        "paragraphIndex": 704
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6a7e396c-be2b-422f-b793-3e57ea7adf2d",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one thing you’ve learned in life that’s helped you grow or become a better person?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "English small talk questions & answers.docx",
+        "section": "Personal Topic",
+        "paragraphIndex": 706
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}
