@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1241,
+    "totalIntentions": 1251,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -48819,6 +48819,447 @@
           "exampleItem": "¿Cuánto cuesta publicar una aplicación en internet?",
           "intent": "Cuánto cuesta publicar"
         }
+      ]
+    },
+    {
+      "id": "quando-eu-estava-crescendo-405ff80b-22f2-4cae-91ab-77fbddff4911",
+      "intention": "Cuando era pequeño... / Mientras crecía...",
+      "pattern": "cuando era pequeño / mientras crecía + oración",
+      "description": "Se usa para introducir recuerdos, hábitos y experiencias de la infancia o la adolescencia.",
+      "category": "time",
+      "searchTerms": [
+        "cuando era pequeño",
+        "mientras crecía",
+        "infancia",
+        "recuerdos",
+        "pasado"
+      ],
+      "tags": [
+        "bloque-de-lenguaje",
+        "inglés-hablado",
+        "infancia",
+        "recuerdos",
+        "pasado"
+      ],
+      "related": [],
+      "structure": "Cuando era pequeño / Mientras crecía + oración",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "1e27f3e7-b97d-4fdb-b707-f2a5663baf68",
+          "exampleItem": "Cuando era pequeño, jugaba en la calle todos los días.",
+          "intent": "Cuando era pequeño"
+        },
+        {
+          "id": "472020fb-f1bd-435c-828c-da207b41aa42",
+          "exampleItem": "Mientras crecía, mi familia vivía en un pueblo pequeño.",
+          "intent": "Mientras crecía"
+        },
+        {
+          "id": "5bf8b603-e627-4a21-b297-e7ce06651419",
+          "exampleItem": "En la época en que yo era pequeño, no teníamos internet en casa.",
+          "intent": "En la época en que yo era pequeño"
+        }
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Cuando\\s+era\\s+pequeño(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Mientras\\s+crecía(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])En\\s+la\\s+época\\s+en\\s+que\\s+yo\\s+era\\s+pequeño(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "antigamente-naquela-epoca-c845ba49-67f3-469f-b870-02393de4abfc",
+      "intention": "Antiguamente... / En aquella época...",
+      "pattern": "antiguamente / en aquella época + oración",
+      "description": "Introduce recuerdos o comparaciones con un periodo lejano del pasado, a menudo con un tono nostálgico.",
+      "category": "time",
+      "searchTerms": [
+        "antiguamente",
+        "en aquella época",
+        "pasado",
+        "nostalgia",
+        "tiempo"
+      ],
+      "tags": [
+        "bloque-de-lenguaje",
+        "inglés-hablado",
+        "pasado",
+        "nostalgia",
+        "tiempo"
+      ],
+      "related": [],
+      "structure": "Antiguamente / En aquella época + oración",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "5a57d738-c5cb-4de2-9301-959d313c047f",
+          "exampleItem": "Antiguamente, pasábamos más tiempo hablando en persona.",
+          "intent": "Antiguamente"
+        },
+        {
+          "id": "d6a2999e-795c-4582-882f-b3a1dff1d23e",
+          "exampleItem": "En aquella época, iba al colegio en bicicleta.",
+          "intent": "En aquella época"
+        },
+        {
+          "id": "023341b0-c6da-40ba-8e4a-b332cfc33b59",
+          "exampleItem": "Antiguamente, los móviles no formaban parte de nuestra rutina.",
+          "intent": "Antiguamente"
+        }
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Antiguamente(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])En\\s+aquella\\s+época(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "nunca-vou-esquecer-daquela-vez-483db54a-4dc2-42b9-b418-78dae2f1813e",
+      "intention": "Nunca olvidaré aquella vez en que...",
+      "pattern": "nunca olvidaré aquella vez en que + oración",
+      "description": "Introduce un episodio importante del pasado que sigue vivo en la memoria.",
+      "category": "memory",
+      "searchTerms": [
+        "nunca olvidaré aquella vez en que",
+        "recuerdos",
+        "experiencias",
+        "narración"
+      ],
+      "tags": [
+        "bloque-de-lenguaje",
+        "inglés-hablado",
+        "recuerdos",
+        "experiencias",
+        "narración"
+      ],
+      "related": [],
+      "structure": "Nunca olvidaré aquella vez en que + oración",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "23701dfb-3d8a-403c-b9d7-35f5c2e0c8b4",
+          "exampleItem": "Nunca olvidaré aquella vez en que perdí el autobús y llegué tarde.",
+          "intent": "Nunca olvidaré aquella vez en que"
+        },
+        {
+          "id": "e4d3bca1-05cc-486c-80ce-a65744380ff6",
+          "exampleItem": "Nunca olvidaré aquella vez en que conocí a mi mejor amigo.",
+          "intent": "Nunca olvidaré aquella vez en que"
+        },
+        {
+          "id": "4d9b3fa1-717d-4b89-bdbb-1dd431a6778e",
+          "exampleItem": "Nunca olvidaré aquella vez en que viajé solo por primera vez.",
+          "intent": "Nunca olvidaré aquella vez en que"
+        }
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Nunca\\s+olvidaré\\s+aquella\\s+vez\\s+en\\s+que(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "a-gente-nao-conhecia-outra-realidade-1c529430-6566-4662-84e6-3f28e2a003d1",
+      "intention": "¡No conocíamos otra realidad!",
+      "pattern": "no conocíamos otra realidad",
+      "description": "Expresa que una situación se consideraba normal porque no se conocía otra posibilidad.",
+      "category": "reflection",
+      "searchTerms": [
+        "no conocíamos otra realidad",
+        "pasado",
+        "perspectiva",
+        "costumbres"
+      ],
+      "tags": [
+        "bloque-de-lenguaje",
+        "inglés-hablado",
+        "pasado",
+        "perspectiva",
+        "costumbres"
+      ],
+      "related": [],
+      "structure": "No conocíamos otra realidad / No conocíamos nada diferente",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "f2217cbe-00f1-4674-b2ab-851d82eef8eb",
+          "exampleItem": "¡No conocíamos otra realidad! Así era como vivía todo el mundo.",
+          "intent": "¡No conocíamos otra realidad!"
+        },
+        {
+          "id": "d6d69fe2-26dc-479e-bd36-86ca10ee9977",
+          "exampleItem": "¡No conocíamos otra realidad! Para nosotros, aquello era normal.",
+          "intent": "¡No conocíamos otra realidad!"
+        },
+        {
+          "id": "eb5440ce-14e1-4006-b5e3-be04866f9e88",
+          "exampleItem": "¡No conocíamos otra realidad! Ni siquiera imaginábamos que pudiera ser diferente.",
+          "intent": "¡No conocíamos otra realidad!"
+        }
+      ],
+      "allowLanguageChunkPractice": true,
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])No\\s+conocíamos\\s+otra\\s+realidad(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "parece-que-foi-ontem-244d09cf-22b8-4f3a-aaa4-57c3784bd5cf",
+      "intention": "Parece que fue ayer...",
+      "pattern": "parece que fue ayer + oración",
+      "description": "Se usa cuando un recuerdo parece reciente, aunque haya pasado mucho tiempo.",
+      "category": "memory",
+      "searchTerms": [
+        "parece que fue ayer",
+        "recuerdos",
+        "nostalgia",
+        "tiempo"
+      ],
+      "tags": [
+        "bloque-de-lenguaje",
+        "inglés-hablado",
+        "recuerdos",
+        "nostalgia",
+        "tiempo"
+      ],
+      "related": [],
+      "structure": "Parece que fue ayer + oración",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "b5f9efde-9861-4957-bcb3-b58f65a8b968",
+          "exampleItem": "Parece que fue ayer cuando empecé en mi primer trabajo.",
+          "intent": "Parece que fue ayer"
+        },
+        {
+          "id": "74859acc-e30d-45f9-ad2e-2716cc316f42",
+          "exampleItem": "Parece que fue ayer cuando nació mi hijo.",
+          "intent": "Parece que fue ayer"
+        },
+        {
+          "id": "f5c3c0bf-041d-4e70-84bd-769c16cae22e",
+          "exampleItem": "Parece que fue ayer cuando nos mudamos a esta casa.",
+          "intent": "Parece que fue ayer"
+        }
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Parece\\s+que\\s+fue\\s+ayer(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "os-tempos-mudaram-5f967510-4da6-4bf9-b8e3-58af336a2a1d",
+      "intention": "Los tiempos han cambiado.",
+      "pattern": "los tiempos han cambiado",
+      "description": "Reconoce que las costumbres, las circunstancias o los comportamientos son distintos de los de antes.",
+      "category": "change",
+      "searchTerms": [
+        "los tiempos han cambiado",
+        "cambios",
+        "tiempo",
+        "comparación"
+      ],
+      "tags": [
+        "bloque-de-lenguaje",
+        "inglés-hablado",
+        "cambios",
+        "tiempo",
+        "comparación"
+      ],
+      "related": [],
+      "structure": "Los tiempos han cambiado",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "9a7bdf2a-4884-44b0-be3e-42d3d1ed23e2",
+          "exampleItem": "Los tiempos han cambiado. Hoy casi todo se hace con el móvil.",
+          "intent": "Los tiempos han cambiado."
+        },
+        {
+          "id": "e20348c7-5cbd-47ed-835d-ff9c616db8c5",
+          "exampleItem": "Los tiempos han cambiado. Ahora trabajamos de otras maneras.",
+          "intent": "Los tiempos han cambiado."
+        },
+        {
+          "id": "d0809c80-7e9b-4228-ac4c-d5a97f674f6c",
+          "exampleItem": "Los tiempos han cambiado. Los niños tienen otras formas de divertirse.",
+          "intent": "Los tiempos han cambiado."
+        }
+      ],
+      "allowLanguageChunkPractice": true,
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Los\\s+tiempos\\s+han\\s+cambiado(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "hoje-em-dia-atualmente-e7ba1570-5aa7-4973-b470-90ac957c0460",
+      "intention": "Hoy en día... / Actualmente...",
+      "pattern": "hoy en día / actualmente + oración",
+      "description": "Sitúa un hábito, un hecho o una tendencia en el presente, a menudo en contraste con el pasado.",
+      "category": "time",
+      "searchTerms": [
+        "hoy en día",
+        "actualmente",
+        "presente",
+        "costumbres",
+        "comparación"
+      ],
+      "tags": [
+        "bloque-de-lenguaje",
+        "inglés-hablado",
+        "presente",
+        "costumbres",
+        "comparación"
+      ],
+      "related": [],
+      "structure": "Hoy en día / Actualmente + oración",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "9680fe6d-df80-43ec-9653-fa45c8ed7279",
+          "exampleItem": "Hoy en día, estudio inglés con el móvil.",
+          "intent": "Hoy en día"
+        },
+        {
+          "id": "56e4bcb2-592b-4dd8-96bd-a6ae78bc2af2",
+          "exampleItem": "Actualmente, muchas personas trabajan desde casa.",
+          "intent": "Actualmente"
+        },
+        {
+          "id": "a481eb0e-4862-4808-8607-7179ab39fcbb",
+          "exampleItem": "Hoy en día, es más fácil hablar con personas de otros países.",
+          "intent": "Hoy en día"
+        }
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Hoy\\s+en\\s+día(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Actualmente(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "nao-e-mais-como-costumava-ser-49e7e7c2-d759-4ca9-85f0-26bdadf47406",
+      "intention": "...ya no es como antes.",
+      "pattern": "sujeto + ya no es como antes",
+      "description": "Compara la situación actual de algo con cómo era en el pasado.",
+      "category": "change",
+      "searchTerms": [
+        "ya no es como antes",
+        "cambios",
+        "comparación",
+        "pasado"
+      ],
+      "tags": [
+        "bloque-de-lenguaje",
+        "inglés-hablado",
+        "cambios",
+        "comparación",
+        "pasado"
+      ],
+      "related": [],
+      "structure": "Sujeto + ya no es como antes",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "ee28e2e0-62da-4d0e-b7e1-f5d902bf165f",
+          "exampleItem": "La ciudad ya no es como antes.",
+          "intent": "ya no es como antes"
+        },
+        {
+          "id": "09bc5a0d-33b4-4677-bd03-fc545cc90bdc",
+          "exampleItem": "Mi barrio ya no es como antes.",
+          "intent": "ya no es como antes"
+        },
+        {
+          "id": "0b06dc79-2988-4926-95ce-2bc29b7fec6b",
+          "exampleItem": "El mercado laboral ya no es como antes.",
+          "intent": "ya no es como antes"
+        }
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])ya\\s+no\\s+es\\s+como\\s+antes(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "quem-diria-que-8387fcd2-801b-4895-9894-f32f711afa79",
+      "intention": "Quién iba a decir que...",
+      "pattern": "quién iba a decir que + oración",
+      "description": "Expresa sorpresa ante algo inesperado, especialmente al mirar al pasado.",
+      "category": "surprise",
+      "searchTerms": [
+        "quién iba a decir que",
+        "sorpresa",
+        "reflexión",
+        "expectativas"
+      ],
+      "tags": [
+        "bloque-de-lenguaje",
+        "inglés-hablado",
+        "sorpresa",
+        "reflexión",
+        "expectativas"
+      ],
+      "related": [],
+      "structure": "Quién iba a decir que + oración",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "1584fcf8-4a27-4512-a7ac-fce65c7f366e",
+          "exampleItem": "¿Quién iba a decir que algún día trabajaría en tecnología?",
+          "intent": "Quién iba a decir que"
+        },
+        {
+          "id": "79b53c21-c875-4622-8e7b-eb5868197e5f",
+          "exampleItem": "¿Quién iba a decir que volveríamos a encontrarnos después de tantos años?",
+          "intent": "Quién iba a decir que"
+        },
+        {
+          "id": "d84c2d5a-ce15-4a22-9ccf-52acecf6c0a9",
+          "exampleItem": "¿Quién iba a decir que aprenderíamos tanto en tan poco tiempo?",
+          "intent": "Quién iba a decir que"
+        }
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Quién\\s+iba\\s+a\\s+decir\\s+que(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "acredite-se-quiser-dbd63154-67e3-4f48-b2ab-93c425e3d862",
+      "intention": "Aunque no te lo creas... / Lo creas o no...",
+      "pattern": "aunque no te lo creas / lo creas o no + oración",
+      "description": "Introduce una información sorprendente o difícil de creer.",
+      "category": "surprise",
+      "searchTerms": [
+        "aunque no te lo creas",
+        "lo creas o no",
+        "sorpresa",
+        "énfasis",
+        "conversación"
+      ],
+      "tags": [
+        "bloque-de-lenguaje",
+        "inglés-hablado",
+        "sorpresa",
+        "énfasis",
+        "conversación"
+      ],
+      "related": [],
+      "structure": "Aunque no te lo creas / Lo creas o no + oración",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "8f45cd0d-193a-4344-b858-9ac843a6d4eb",
+          "exampleItem": "Aunque no te lo creas, nunca he viajado en avión.",
+          "intent": "Aunque no te lo creas"
+        },
+        {
+          "id": "4683e4d5-9376-42d0-a7a6-ed1b355b02d6",
+          "exampleItem": "Lo creas o no, terminé el proyecto antes del plazo.",
+          "intent": "Lo creas o no"
+        },
+        {
+          "id": "c2d45e5e-85d1-4dae-a167-929cb174594a",
+          "exampleItem": "Aunque no te lo creas, ayer me encontré con un amigo de la infancia.",
+          "intent": "Aunque no te lo creas"
+        }
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Aunque\\s+no\\s+te\\s+lo\\s+creas(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Lo\\s+creas\\s+o\\s+no(?![\\p{L}\\p{N}_])"
       ]
     }
   ]

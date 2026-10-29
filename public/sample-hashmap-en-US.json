@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1241,
+    "totalIntentions": 1251,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -72968,6 +72968,441 @@
             "cedar": "3286b29337102954327e8ab53a5a9ba3e49188104fa514decdfbfb1280115c22",
             "marin": "3286b29337102954327e8ab53a5a9ba3e49188104fa514decdfbfb1280115c22"
           }
+        }
+      ]
+    },
+    {
+      "id": "quando-eu-estava-crescendo-405ff80b-22f2-4cae-91ab-77fbddff4911",
+      "intention": "When I was growing up...",
+      "pattern": "when I was a child / when I was growing up + clause",
+      "description": "Introduces memories, habits, and experiences from childhood or adolescence.",
+      "category": "time",
+      "searchTerms": [
+        "When I was growing up",
+        "childhood",
+        "memories",
+        "past"
+      ],
+      "validationPatterns": [
+        "\\bwhen\\s+I\\s+was\\s+(?:a\\s+child|growing\\s+up)\\b",
+        "\\bback\\s+when\\s+I\\s+was\\s+growing\\s+up\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "childhood",
+        "memories",
+        "past"
+      ],
+      "related": [],
+      "structure": "When I was a child / when I was growing up + clause",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "1e27f3e7-b97d-4fdb-b707-f2a5663baf68",
+          "exampleItem": "When I was a child, I played outside every day.",
+          "intent": "When I was a child"
+        },
+        {
+          "id": "472020fb-f1bd-435c-828c-da207b41aa42",
+          "exampleItem": "When I was growing up, my family lived in a small town.",
+          "intent": "When I was growing up"
+        },
+        {
+          "id": "5bf8b603-e627-4a21-b297-e7ce06651419",
+          "exampleItem": "Back when I was growing up, we didn't have internet at home.",
+          "intent": "Back when I was growing up"
+        }
+      ]
+    },
+    {
+      "id": "antigamente-naquela-epoca-c845ba49-67f3-469f-b870-02393de4abfc",
+      "intention": "Back in the day... / Back then...",
+      "pattern": "back in the day / back then + clause",
+      "description": "Introduces memories or comparisons with a distant period in the past, often with a nostalgic tone.",
+      "category": "time",
+      "searchTerms": [
+        "Back in the day / Back then",
+        "past",
+        "nostalgia",
+        "time"
+      ],
+      "validationPatterns": [
+        "\\bback\\s+in\\s+the\\s+day\\b",
+        "\\bback\\s+then\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "past",
+        "nostalgia",
+        "time"
+      ],
+      "related": [],
+      "structure": "Back in the day / back then + clause",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "5a57d738-c5cb-4de2-9301-959d313c047f",
+          "exampleItem": "Back in the day, we spent more time talking in person.",
+          "intent": "Back in the day"
+        },
+        {
+          "id": "d6a2999e-795c-4582-882f-b3a1dff1d23e",
+          "exampleItem": "Back then, I rode my bike to school.",
+          "intent": "Back then"
+        },
+        {
+          "id": "023341b0-c6da-40ba-8e4a-b332cfc33b59",
+          "exampleItem": "Back in the day, cell phones weren't part of our daily lives.",
+          "intent": "Back in the day"
+        }
+      ]
+    },
+    {
+      "id": "nunca-vou-esquecer-daquela-vez-483db54a-4dc2-42b9-b418-78dae2f1813e",
+      "intention": "I'll never forget the time...",
+      "pattern": "I'll never forget the time + clause",
+      "description": "Introduces a memorable event from the past that remains vivid in your memory.",
+      "category": "memory",
+      "searchTerms": [
+        "I'll never forget the time",
+        "memories",
+        "experiences",
+        "storytelling"
+      ],
+      "validationPatterns": [
+        "\\bI(?:'ll|\\s+will)\\s+never\\s+forget\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "memories",
+        "experiences",
+        "storytelling"
+      ],
+      "related": [],
+      "structure": "I'll never forget the time + clause",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "23701dfb-3d8a-403c-b9d7-35f5c2e0c8b4",
+          "exampleItem": "I'll never forget the time I missed the bus and arrived late.",
+          "intent": "I'll never forget the time"
+        },
+        {
+          "id": "e4d3bca1-05cc-486c-80ce-a65744380ff6",
+          "exampleItem": "I'll never forget the time I met my best friend.",
+          "intent": "I'll never forget the time"
+        },
+        {
+          "id": "4d9b3fa1-717d-4b89-bdbb-1dd431a6778e",
+          "exampleItem": "I'll never forget the time I traveled alone for the first time.",
+          "intent": "I'll never forget the time"
+        }
+      ]
+    },
+    {
+      "id": "a-gente-nao-conhecia-outra-realidade-1c529430-6566-4662-84e6-3f28e2a003d1",
+      "intention": "We didn't know any different!",
+      "pattern": "we didn't know any different",
+      "description": "Expresses that a situation seemed normal because no other possibility was known.",
+      "category": "reflection",
+      "searchTerms": [
+        "We didn't know any different!",
+        "past",
+        "perspective",
+        "customs"
+      ],
+      "validationPatterns": [
+        "\\bwe\\s+did(?:n't|\\s+not)\\s+know\\s+any\\s+different\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "past",
+        "perspective",
+        "customs"
+      ],
+      "related": [],
+      "structure": "We didn't know any different",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "f2217cbe-00f1-4674-b2ab-851d82eef8eb",
+          "exampleItem": "We didn't know any different! That's how everyone lived.",
+          "intent": "We didn't know any different!"
+        },
+        {
+          "id": "d6d69fe2-26dc-479e-bd36-86ca10ee9977",
+          "exampleItem": "We didn't know any different! To us, that was normal.",
+          "intent": "We didn't know any different!"
+        },
+        {
+          "id": "eb5440ce-14e1-4006-b5e3-be04866f9e88",
+          "exampleItem": "We didn't know any different! We never imagined things could be different.",
+          "intent": "We didn't know any different!"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "parece-que-foi-ontem-244d09cf-22b8-4f3a-aaa4-57c3784bd5cf",
+      "intention": "It feels like just yesterday...",
+      "pattern": "it feels like just yesterday + clause",
+      "description": "Used when a memory feels recent even though it happened a long time ago.",
+      "category": "memory",
+      "searchTerms": [
+        "It feels like just yesterday",
+        "memories",
+        "nostalgia",
+        "time"
+      ],
+      "validationPatterns": [
+        "\\bit\\s+feels\\s+like\\s+just\\s+yesterday\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "memories",
+        "nostalgia",
+        "time"
+      ],
+      "related": [],
+      "structure": "It feels like just yesterday + clause",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "b5f9efde-9861-4957-bcb3-b58f65a8b968",
+          "exampleItem": "It feels like just yesterday that I started my first job.",
+          "intent": "It feels like just yesterday"
+        },
+        {
+          "id": "74859acc-e30d-45f9-ad2e-2716cc316f42",
+          "exampleItem": "It feels like just yesterday that my son was born.",
+          "intent": "It feels like just yesterday"
+        },
+        {
+          "id": "f5c3c0bf-041d-4e70-84bd-769c16cae22e",
+          "exampleItem": "It feels like just yesterday that we moved into this house.",
+          "intent": "It feels like just yesterday"
+        }
+      ]
+    },
+    {
+      "id": "os-tempos-mudaram-5f967510-4da6-4bf9-b8e3-58af336a2a1d",
+      "intention": "Times have changed.",
+      "pattern": "times have changed",
+      "description": "Acknowledges that customs, circumstances, or behaviors differ from those of the past.",
+      "category": "change",
+      "searchTerms": [
+        "Times have changed.",
+        "changes",
+        "time",
+        "comparison"
+      ],
+      "validationPatterns": [
+        "\\btimes\\s+have\\s+changed\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "changes",
+        "time",
+        "comparison"
+      ],
+      "related": [],
+      "structure": "Times have changed",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "9a7bdf2a-4884-44b0-be3e-42d3d1ed23e2",
+          "exampleItem": "Times have changed. These days, almost everything is done on a cell phone.",
+          "intent": "Times have changed."
+        },
+        {
+          "id": "e20348c7-5cbd-47ed-835d-ff9c616db8c5",
+          "exampleItem": "Times have changed. We work in different ways now.",
+          "intent": "Times have changed."
+        },
+        {
+          "id": "d0809c80-7e9b-4228-ac4c-d5a97f674f6c",
+          "exampleItem": "Times have changed. Kids have different ways to have fun.",
+          "intent": "Times have changed."
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "hoje-em-dia-atualmente-e7ba1570-5aa7-4973-b470-90ac957c0460",
+      "intention": "These days... / Nowadays...",
+      "pattern": "these days / nowadays + clause",
+      "description": "Places a habit, fact, or trend in the present, often in contrast with the past.",
+      "category": "time",
+      "searchTerms": [
+        "These days / Nowadays",
+        "present",
+        "customs",
+        "comparison"
+      ],
+      "validationPatterns": [
+        "\\bthese\\s+days\\b",
+        "\\bnowadays\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "present",
+        "customs",
+        "comparison"
+      ],
+      "related": [],
+      "structure": "These days / nowadays + clause",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "9680fe6d-df80-43ec-9653-fa45c8ed7279",
+          "exampleItem": "These days, I study English on my phone.",
+          "intent": "These days"
+        },
+        {
+          "id": "56e4bcb2-592b-4dd8-96bd-a6ae78bc2af2",
+          "exampleItem": "Nowadays, many people work from home.",
+          "intent": "Nowadays"
+        },
+        {
+          "id": "a481eb0e-4862-4808-8607-7179ab39fcbb",
+          "exampleItem": "These days, it's easier to talk to people from other countries.",
+          "intent": "These days"
+        }
+      ]
+    },
+    {
+      "id": "nao-e-mais-como-costumava-ser-49e7e7c2-d759-4ca9-85f0-26bdadf47406",
+      "intention": "...isn't what it used to be.",
+      "pattern": "subject + isn't what it used to be",
+      "description": "Compares the current state of something with the way it was in the past.",
+      "category": "change",
+      "searchTerms": [
+        "isn't what it used to be.",
+        "changes",
+        "comparison",
+        "past"
+      ],
+      "validationPatterns": [
+        "\\b(?:isn't|is\\s+not)\\s+what\\s+it\\s+used\\s+to\\s+be\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "changes",
+        "comparison",
+        "past"
+      ],
+      "related": [],
+      "structure": "Subject + isn't what it used to be",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "ee28e2e0-62da-4d0e-b7e1-f5d902bf165f",
+          "exampleItem": "The city isn't what it used to be.",
+          "intent": "isn't what it used to be"
+        },
+        {
+          "id": "09bc5a0d-33b4-4677-bd03-fc545cc90bdc",
+          "exampleItem": "My neighborhood isn't what it used to be.",
+          "intent": "isn't what it used to be"
+        },
+        {
+          "id": "0b06dc79-2988-4926-95ce-2bc29b7fec6b",
+          "exampleItem": "The job market isn't what it used to be.",
+          "intent": "isn't what it used to be"
+        }
+      ]
+    },
+    {
+      "id": "quem-diria-que-8387fcd2-801b-4895-9894-f32f711afa79",
+      "intention": "Who would have thought...",
+      "pattern": "who would have thought + clause",
+      "description": "Expresses surprise at something unexpected, especially when looking back at the past.",
+      "category": "surprise",
+      "searchTerms": [
+        "Who would have thought",
+        "surprise",
+        "reflection",
+        "expectations"
+      ],
+      "validationPatterns": [
+        "\\bwho\\s+would\\s+have\\s+thought\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "surprise",
+        "reflection",
+        "expectations"
+      ],
+      "related": [],
+      "structure": "Who would have thought + clause",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "1584fcf8-4a27-4512-a7ac-fce65c7f366e",
+          "exampleItem": "Who would have thought I would work in technology one day?",
+          "intent": "Who would have thought"
+        },
+        {
+          "id": "79b53c21-c875-4622-8e7b-eb5868197e5f",
+          "exampleItem": "Who would have thought we would meet again after so many years?",
+          "intent": "Who would have thought"
+        },
+        {
+          "id": "d84c2d5a-ce15-4a22-9ccf-52acecf6c0a9",
+          "exampleItem": "Who would have thought we would learn so much in so little time?",
+          "intent": "Who would have thought"
+        }
+      ]
+    },
+    {
+      "id": "acredite-se-quiser-dbd63154-67e3-4f48-b2ab-93c425e3d862",
+      "intention": "Believe it or not...",
+      "pattern": "believe it or not + clause",
+      "description": "Introduces a surprising or hard-to-believe piece of information.",
+      "category": "surprise",
+      "searchTerms": [
+        "Believe it or not",
+        "surprise",
+        "emphasis",
+        "conversation"
+      ],
+      "validationPatterns": [
+        "\\bbelieve\\s+it\\s+or\\s+not\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "surprise",
+        "emphasis",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Believe it or not + clause",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "8f45cd0d-193a-4344-b858-9ac843a6d4eb",
+          "exampleItem": "Believe it or not, I've never flown on a plane.",
+          "intent": "Believe it or not"
+        },
+        {
+          "id": "4683e4d5-9376-42d0-a7a6-ed1b355b02d6",
+          "exampleItem": "Believe it or not, I finished the project ahead of schedule.",
+          "intent": "Believe it or not"
+        },
+        {
+          "id": "c2d45e5e-85d1-4dae-a167-929cb174594a",
+          "exampleItem": "Believe it or not, I ran into a childhood friend yesterday.",
+          "intent": "Believe it or not"
         }
       ]
     }

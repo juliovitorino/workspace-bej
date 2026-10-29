@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1241,
+    "totalIntentions": 1251,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -49385,6 +49385,443 @@
           "id": "b58d1f79-4e12-4c60-8a98-d5f30b72a941",
           "exampleItem": "Combien ça coûte de publier une application sur Internet ?",
           "intent": "Combien ça coûte de publier"
+        }
+      ]
+    },
+    {
+      "id": "quando-eu-estava-crescendo-405ff80b-22f2-4cae-91ab-77fbddff4911",
+      "intention": "Quand j’étais enfant…",
+      "pattern": "quand j’étais enfant / quand je grandissais + proposition",
+      "description": "Introduit des souvenirs, des habitudes et des expériences de l’enfance ou de l’adolescence.",
+      "category": "time",
+      "searchTerms": [
+        "Quand j’étais enfant",
+        "enfance",
+        "souvenirs",
+        "passé"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Quand\\s+j[’']étais\\s+enfant(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Quand\\s+je\\s+grandissais(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])À\\s+l[’']époque\\s+où\\s+je\\s+grandissais(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "anglais parlé",
+        "enfance",
+        "souvenirs",
+        "passé"
+      ],
+      "related": [],
+      "structure": "quand j’étais enfant / quand je grandissais + proposition",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "1e27f3e7-b97d-4fdb-b707-f2a5663baf68",
+          "exampleItem": "Quand j’étais enfant, je jouais dans la rue tous les jours.",
+          "intent": "Quand j’étais enfant"
+        },
+        {
+          "id": "472020fb-f1bd-435c-828c-da207b41aa42",
+          "exampleItem": "Quand je grandissais, ma famille habitait dans une petite ville.",
+          "intent": "Quand je grandissais"
+        },
+        {
+          "id": "5bf8b603-e627-4a21-b297-e7ce06651419",
+          "exampleItem": "À l’époque où je grandissais, nous n’avions pas Internet à la maison.",
+          "intent": "À l’époque où je grandissais"
+        }
+      ]
+    },
+    {
+      "id": "antigamente-naquela-epoca-c845ba49-67f3-469f-b870-02393de4abfc",
+      "intention": "Autrefois… / À cette époque…",
+      "pattern": "autrefois / à cette époque + proposition",
+      "description": "Introduit des souvenirs ou des comparaisons avec une époque lointaine, souvent sur un ton nostalgique.",
+      "category": "time",
+      "searchTerms": [
+        "Autrefois / À cette époque",
+        "passé",
+        "nostalgie",
+        "temps"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Autrefois(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])À\\s+cette\\s+époque(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "anglais parlé",
+        "passé",
+        "nostalgie",
+        "temps"
+      ],
+      "related": [],
+      "structure": "autrefois / à cette époque + proposition",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "5a57d738-c5cb-4de2-9301-959d313c047f",
+          "exampleItem": "Autrefois, on passait plus de temps à discuter en personne.",
+          "intent": "Autrefois"
+        },
+        {
+          "id": "d6a2999e-795c-4582-882f-b3a1dff1d23e",
+          "exampleItem": "À cette époque, j’allais à l’école à vélo.",
+          "intent": "À cette époque"
+        },
+        {
+          "id": "023341b0-c6da-40ba-8e4a-b332cfc33b59",
+          "exampleItem": "Autrefois, les téléphones portables ne faisaient pas partie de notre quotidien.",
+          "intent": "Autrefois"
+        }
+      ]
+    },
+    {
+      "id": "nunca-vou-esquecer-daquela-vez-483db54a-4dc2-42b9-b418-78dae2f1813e",
+      "intention": "Je n’oublierai jamais la fois où…",
+      "pattern": "je n’oublierai jamais la fois où + proposition",
+      "description": "Introduit un épisode marquant du passé qui reste gravé dans la mémoire.",
+      "category": "memory",
+      "searchTerms": [
+        "Je n’oublierai jamais la fois où",
+        "souvenirs",
+        "expériences",
+        "récit"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Je\\s+n[’']oublierai\\s+jamais\\s+la\\s+fois\\s+où(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "anglais parlé",
+        "souvenirs",
+        "expériences",
+        "récit"
+      ],
+      "related": [],
+      "structure": "je n’oublierai jamais la fois où + proposition",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "23701dfb-3d8a-403c-b9d7-35f5c2e0c8b4",
+          "exampleItem": "Je n’oublierai jamais la fois où j’ai raté le bus et où je suis arrivé en retard.",
+          "intent": "Je n’oublierai jamais la fois où"
+        },
+        {
+          "id": "e4d3bca1-05cc-486c-80ce-a65744380ff6",
+          "exampleItem": "Je n’oublierai jamais la fois où j’ai rencontré mon meilleur ami.",
+          "intent": "Je n’oublierai jamais la fois où"
+        },
+        {
+          "id": "4d9b3fa1-717d-4b89-bdbb-1dd431a6778e",
+          "exampleItem": "Je n’oublierai jamais la fois où j’ai voyagé seul pour la première fois.",
+          "intent": "Je n’oublierai jamais la fois où"
+        }
+      ]
+    },
+    {
+      "id": "a-gente-nao-conhecia-outra-realidade-1c529430-6566-4662-84e6-3f28e2a003d1",
+      "intention": "On ne connaissait rien d’autre !",
+      "pattern": "on ne connaissait rien d’autre",
+      "description": "Exprime qu’une situation paraissait normale parce qu’on ne connaissait pas d’autre possibilité.",
+      "category": "reflection",
+      "searchTerms": [
+        "On ne connaissait rien d’autre !",
+        "passé",
+        "point de vue",
+        "habitudes"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])On\\s+ne\\s+connaissait\\s+rien\\s+d[’']autre\\s+(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "anglais parlé",
+        "passé",
+        "point de vue",
+        "habitudes"
+      ],
+      "related": [],
+      "structure": "on ne connaissait rien d’autre",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "f2217cbe-00f1-4674-b2ab-851d82eef8eb",
+          "exampleItem": "On ne connaissait rien d’autre ! Tout le monde vivait comme ça.",
+          "intent": "On ne connaissait rien d’autre !"
+        },
+        {
+          "id": "d6d69fe2-26dc-479e-bd36-86ca10ee9977",
+          "exampleItem": "On ne connaissait rien d’autre ! Pour nous, c’était normal.",
+          "intent": "On ne connaissait rien d’autre !"
+        },
+        {
+          "id": "eb5440ce-14e1-4006-b5e3-be04866f9e88",
+          "exampleItem": "On ne connaissait rien d’autre ! On n’imaginait même pas que les choses puissent être différentes.",
+          "intent": "On ne connaissait rien d’autre !"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "parece-que-foi-ontem-244d09cf-22b8-4f3a-aaa4-57c3784bd5cf",
+      "intention": "J’ai l’impression que c’était hier…",
+      "pattern": "j’ai l’impression que c’était hier + proposition",
+      "description": "S’emploie lorsqu’un souvenir semble récent alors que les faits remontent à longtemps.",
+      "category": "memory",
+      "searchTerms": [
+        "J’ai l’impression que c’était hier",
+        "souvenirs",
+        "nostalgie",
+        "temps"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])J[’']ai\\s+l[’']impression\\s+que\\s+c[’']était\\s+hier(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "anglais parlé",
+        "souvenirs",
+        "nostalgie",
+        "temps"
+      ],
+      "related": [],
+      "structure": "j’ai l’impression que c’était hier + proposition",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "b5f9efde-9861-4957-bcb3-b58f65a8b968",
+          "exampleItem": "J’ai l’impression que c’était hier que je commençais mon premier emploi.",
+          "intent": "J’ai l’impression que c’était hier"
+        },
+        {
+          "id": "74859acc-e30d-45f9-ad2e-2716cc316f42",
+          "exampleItem": "J’ai l’impression que c’était hier que mon fils est né.",
+          "intent": "J’ai l’impression que c’était hier"
+        },
+        {
+          "id": "f5c3c0bf-041d-4e70-84bd-769c16cae22e",
+          "exampleItem": "J’ai l’impression que c’était hier que nous avons emménagé dans cette maison.",
+          "intent": "J’ai l’impression que c’était hier"
+        }
+      ]
+    },
+    {
+      "id": "os-tempos-mudaram-5f967510-4da6-4bf9-b8e3-58af336a2a1d",
+      "intention": "Les temps ont changé.",
+      "pattern": "les temps ont changé",
+      "description": "Reconnaît que les habitudes, les circonstances ou les comportements diffèrent de ceux d’autrefois.",
+      "category": "change",
+      "searchTerms": [
+        "Les temps ont changé.",
+        "changements",
+        "temps",
+        "comparaison"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Les\\s+temps\\s+ont\\s+changé(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "anglais parlé",
+        "changements",
+        "temps",
+        "comparaison"
+      ],
+      "related": [],
+      "structure": "les temps ont changé",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "9a7bdf2a-4884-44b0-be3e-42d3d1ed23e2",
+          "exampleItem": "Les temps ont changé. Aujourd’hui, on fait presque tout avec son téléphone.",
+          "intent": "Les temps ont changé."
+        },
+        {
+          "id": "e20348c7-5cbd-47ed-835d-ff9c616db8c5",
+          "exampleItem": "Les temps ont changé. Maintenant, nous travaillons différemment.",
+          "intent": "Les temps ont changé."
+        },
+        {
+          "id": "d0809c80-7e9b-4228-ac4c-d5a97f674f6c",
+          "exampleItem": "Les temps ont changé. Les enfants ont d’autres façons de s’amuser.",
+          "intent": "Les temps ont changé."
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "hoje-em-dia-atualmente-e7ba1570-5aa7-4973-b470-90ac957c0460",
+      "intention": "De nos jours… / Actuellement…",
+      "pattern": "de nos jours / actuellement + proposition",
+      "description": "Situe une habitude, un fait ou une tendance dans le présent, souvent par contraste avec le passé.",
+      "category": "time",
+      "searchTerms": [
+        "De nos jours / Actuellement",
+        "présent",
+        "habitudes",
+        "comparaison"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])De\\s+nos\\s+jours(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Actuellement(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "anglais parlé",
+        "présent",
+        "habitudes",
+        "comparaison"
+      ],
+      "related": [],
+      "structure": "de nos jours / actuellement + proposition",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "9680fe6d-df80-43ec-9653-fa45c8ed7279",
+          "exampleItem": "De nos jours, j’étudie l’anglais sur mon téléphone.",
+          "intent": "De nos jours"
+        },
+        {
+          "id": "56e4bcb2-592b-4dd8-96bd-a6ae78bc2af2",
+          "exampleItem": "Actuellement, beaucoup de personnes travaillent de chez elles.",
+          "intent": "Actuellement"
+        },
+        {
+          "id": "a481eb0e-4862-4808-8607-7179ab39fcbb",
+          "exampleItem": "De nos jours, il est plus facile de discuter avec des personnes d’autres pays.",
+          "intent": "De nos jours"
+        }
+      ]
+    },
+    {
+      "id": "nao-e-mais-como-costumava-ser-49e7e7c2-d759-4ca9-85f0-26bdadf47406",
+      "intention": "…n’est plus comme avant.",
+      "pattern": "sujet + n’est plus comme avant",
+      "description": "Compare la situation actuelle de quelque chose à ce qu’elle était autrefois.",
+      "category": "change",
+      "searchTerms": [
+        "n’est plus comme avant.",
+        "changements",
+        "comparaison",
+        "passé"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])n[’']est\\s+plus\\s+comme\\s+avant(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "anglais parlé",
+        "changements",
+        "comparaison",
+        "passé"
+      ],
+      "related": [],
+      "structure": "sujet + n’est plus comme avant",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "ee28e2e0-62da-4d0e-b7e1-f5d902bf165f",
+          "exampleItem": "La ville n’est plus comme avant.",
+          "intent": "n’est plus comme avant"
+        },
+        {
+          "id": "09bc5a0d-33b4-4677-bd03-fc545cc90bdc",
+          "exampleItem": "Mon quartier n’est plus comme avant.",
+          "intent": "n’est plus comme avant"
+        },
+        {
+          "id": "0b06dc79-2988-4926-95ce-2bc29b7fec6b",
+          "exampleItem": "Le marché du travail n’est plus comme avant.",
+          "intent": "n’est plus comme avant"
+        }
+      ]
+    },
+    {
+      "id": "quem-diria-que-8387fcd2-801b-4895-9894-f32f711afa79",
+      "intention": "Qui aurait cru que…",
+      "pattern": "qui aurait cru que + proposition",
+      "description": "Exprime la surprise face à un événement inattendu, notamment lorsqu’on repense au passé.",
+      "category": "surprise",
+      "searchTerms": [
+        "Qui aurait cru que",
+        "surprise",
+        "réflexion",
+        "attentes"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Qui\\s+aurait\\s+cru\\s+qu[’']",
+        "(?<![\\p{L}\\p{N}_])Qui\\s+aurait\\s+cru\\s+que(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "anglais parlé",
+        "surprise",
+        "réflexion",
+        "attentes"
+      ],
+      "related": [],
+      "structure": "qui aurait cru que + proposition",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "1584fcf8-4a27-4512-a7ac-fce65c7f366e",
+          "exampleItem": "Qui aurait cru qu’un jour je travaillerais dans la technologie ?",
+          "intent": "Qui aurait cru qu’"
+        },
+        {
+          "id": "79b53c21-c875-4622-8e7b-eb5868197e5f",
+          "exampleItem": "Qui aurait cru que nous nous retrouverions après tant d’années ?",
+          "intent": "Qui aurait cru que"
+        },
+        {
+          "id": "d84c2d5a-ce15-4a22-9ccf-52acecf6c0a9",
+          "exampleItem": "Qui aurait cru que nous apprendrions autant en si peu de temps ?",
+          "intent": "Qui aurait cru que"
+        }
+      ]
+    },
+    {
+      "id": "acredite-se-quiser-dbd63154-67e3-4f48-b2ab-93c425e3d862",
+      "intention": "Croyez-le ou non…",
+      "pattern": "croyez-le ou non + proposition",
+      "description": "Introduit une information surprenante ou difficile à croire.",
+      "category": "surprise",
+      "searchTerms": [
+        "Croyez-le ou non",
+        "surprise",
+        "insistance",
+        "conversation"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Croyez-le\\s+ou\\s+non(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "anglais parlé",
+        "surprise",
+        "insistance",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "croyez-le ou non + proposition",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "8f45cd0d-193a-4344-b858-9ac843a6d4eb",
+          "exampleItem": "Croyez-le ou non, je n’ai jamais pris l’avion.",
+          "intent": "Croyez-le ou non"
+        },
+        {
+          "id": "4683e4d5-9376-42d0-a7a6-ed1b355b02d6",
+          "exampleItem": "Croyez-le ou non, j’ai terminé le projet avant la date limite.",
+          "intent": "Croyez-le ou non"
+        },
+        {
+          "id": "c2d45e5e-85d1-4dae-a167-929cb174594a",
+          "exampleItem": "Croyez-le ou non, j’ai retrouvé un ami d’enfance hier.",
+          "intent": "Croyez-le ou non"
         }
       ]
     }
