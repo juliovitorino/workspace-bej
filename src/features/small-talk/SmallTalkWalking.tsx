@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { SmallTalkItem, SmallTalkWalkingSettings } from '../../types/smallTalk';
-import { getSmallTalkDefaultAnswer } from '../../services/smallTalkPersonalAnswersService';
+import { getSmallTalkActiveAnswer } from './smallTalkAnswerOverrides';
 import { speakStudyAudio } from '../study/studyAudio';
 import { SMALL_TALK_WALKING_PROGRESS_KEY, saveLocalJson, readLocalJson } from './smallTalkPreferences';
 
@@ -65,7 +65,7 @@ export function SmallTalkWalking({ items, settings, onExit, onStudyState, onWalk
 
   useEffect(() => {
     if (!current) { setPhase('complete'); return; }
-    try { setHasOriginal(!!getSmallTalkDefaultAnswer(current.id, window.localStorage)?.length); }
+    try { setHasOriginal(!!getSmallTalkActiveAnswer(current.id, window.localStorage).length); }
     catch { setHasOriginal(false); }
   }, [current?.id]);
 
@@ -92,7 +92,7 @@ export function SmallTalkWalking({ items, settings, onExit, onStudyState, onWalk
     const playAnswer = () => {
       if (!live()) return;
       let original: string[] = [];
-      try { original = getSmallTalkDefaultAnswer(current.id, window.localStorage)?.map(s => s.text) ?? []; }
+      try { original = [getSmallTalkActiveAnswer(current.id, window.localStorage)].filter(Boolean); }
       catch { /* original opcional quando storage indisponível */ }
       if (!settings.playDefaultAnswer || !original.length) {
         setPhase('between'); wait(settings.pauseBetweenRepetitionsSeconds * 1000, next); return;
@@ -130,8 +130,8 @@ export function SmallTalkWalking({ items, settings, onExit, onStudyState, onWalk
     <header><h2>🚶 Small Talk — Modo Caminhada</h2><p>Responda em voz alta. Nenhum áudio da sua voz é gravado.</p></header>
     <p><strong>{completed} / {items.length}</strong> perguntas · Repetição <strong>{Math.min(repetition + 1, settings.repeatCount)} / {settings.repeatCount}</strong></p>
     <h3>{current?.question?.text ?? 'Treino concluído!'}</h3>
-    <p role="status">{phase === 'question' ? '🔊 Pergunta' : phase === 'thinking' ? '🎤 Sua vez de responder em voz alta' : phase === 'answer' ? '🔊 Resposta original do documento' : phase === 'between' ? 'Próxima repetição' : phase === 'paused' ? 'Pausado' : phase === 'complete' ? 'Sessão concluída' : phase === 'error' ? 'Erro de áudio' : 'Pronto para começar'}</p>
-    {settings.playDefaultAnswer && !hasOriginal && <p className="warning-banner">Esta pergunta não possui resposta original importada; será feita apenas a pausa para resposta espontânea.</p>}
+    <p role="status">{phase === 'question' ? '🔊 Pergunta' : phase === 'thinking' ? '🎤 Sua vez de responder em voz alta' : phase === 'answer' ? '🔊 Resposta ativa' : phase === 'between' ? 'Próxima repetição' : phase === 'paused' ? 'Pausado' : phase === 'complete' ? 'Sessão concluída' : phase === 'error' ? 'Erro de áudio' : 'Pronto para começar'}</p>
+    {settings.playDefaultAnswer && !hasOriginal && <p className="warning-banner">Esta pergunta não possui resposta ativa; será feita apenas a pausa para resposta espontânea.</p>}
     {error && <p role="alert">{error}</p>}
     {!started && phase !== 'complete' && <button className="primary-button" type="button" onClick={() => { setStarted(true); setPhase('question'); }}>▶ Iniciar</button>}
     {started && phase !== 'complete' && <div className="small-talk-actions">

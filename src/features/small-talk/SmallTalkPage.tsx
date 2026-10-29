@@ -4,6 +4,7 @@ import { readSmallTalkPersonalAnswers } from '../../services/smallTalkPersonalAn
 import type { SmallTalkItem, SmallTalkTopic, SmallTalkTopicIndexEntry, SmallTalkWalkingSettings } from '../../types/smallTalk';
 import { readLocalJson, readWalkingSettings, saveLocalJson, SMALL_TALK_FAVORITES_KEY, SMALL_TALK_WALKING_SETTINGS_KEY } from './smallTalkPreferences';
 import { SmallTalkWalking } from './SmallTalkWalking';
+import { answerOverridesBackup, readAnswerOverrides, saveAnswerOverride, restoreOriginalAnswer } from './smallTalkAnswerOverrides';
 
 interface Props {
   onStudyState?: (active: boolean, mode: 'manual' | 'walking') => void;
@@ -28,6 +29,13 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   const [answerVisible, setAnswerVisible] = useState<string[]>([]);
   const [personalAnswers, setPersonalAnswers] = useState<ReturnType<typeof readSmallTalkPersonalAnswers> | null>(null);
   const [privateError, setPrivateError] = useState('');
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [editorId, setEditorId] = useState<string | null>(null);
+  const [draft, setDraft] = useState('');
+  const [answerOverrides, setAnswerOverrides] = useState<ReturnType<typeof readAnswerOverrides>>(() => {
+    try { return readAnswerOverrides(); } catch { return {}; }
+  });
+  const [editError, setEditError] = useState('');
 
   useEffect(() => {
     let active = true;
@@ -78,7 +86,36 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     catch { setError('Não foi possível salvar as configurações da caminhada.'); }
   }
   function reveal(id: string) { setAnswerVisible(old => old.includes(id) ? old.filter(v => v !== id) : [...old, id]); }
-  function answerFor(item: SmallTalkItem) { return personalAnswers?.answersByItemId[item.id]?.original?.segments.map(s => s.text).join('\n\n') ?? ''; }
+  function answerFor(item: SmallTalkItem) {
+    if (Object.prototype.hasOwnProperty.call(answerOverrides, item.id)) return answerOverrides[item.id].text ?? '';
+    return personalAnswers?.answersByItemId[item.id]?.original?.segments.map(s => s.text).join('\n\n') ?? '';
+  }
+  function openEditor(item: SmallTalkItem) { setEditorId(item.id); setDraft(answerFor(item)); setEditError(''); }
+  function saveEditor() {
+    if (!editorId || !draft.trim()) { setEditError('Digite uma resposta ou use a lixeira para removê-la.'); return; }
+    try { setAnswerOverrides(saveAnswerOverride(editorId, draft.trim())); setEditorId(null); setAnswerVisible(v => v.includes(editorId) ? v : [...v, editorId]); setEditError(''); }
+    catch { setEditError('Não foi possível salvar. Verifique o armazenamento local.'); }
+  }
+  function removeAnswer(id: string) {
+    if (!window.confirm('Ocultar esta resposta ativa? O original importado será preservado e poderá ser restaurado.')) return;
+    try { setAnswerOverrides(saveAnswerOverride(id, null)); setAnswerVisible(v => v.filter(x => x !== id)); setEditorId(null); setEditError(''); }
+    catch { setEditError('Não foi possível remover a resposta ativa.'); }
+  }
+  function restoreAnswer(id: string) {
+    try { setAnswerOverrides(restoreOriginalAnswer(id)); setEditorId(null); setEditError(''); }
+    catch { setEditError('Não foi possível restaurar a resposta importada.'); }
+  }
+  function downloadEdits() {
+    try {
+      const blob = new Blob([answerOverridesBackup()], { type: 'application/json;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'small-talk-respostas-editadas-privado.json'; a.click();
+      window.setTimeout(() => URL.revokeObjectURL(url), 2000);
+    } catch { setEditError('Falha ao exportar as edições locais.'); }
+  }
+  function googleTranslate(text: string) {
+    window.open('https://translate.google.com/?sl=en&tl=pt&text=' + encodeURIComponent(text) + '&op=translate', '_blank', 'noopener,noreferrer');
+  }
   const walkItems = useMemo(() => {
     const selected = filtered.slice();
     if (settings.shuffle) {
@@ -115,7 +152,12 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       <label>Nível <select value={level} onChange={e => setLevel(e.target.value as LevelFilter)}>{levelOptions.map(l => <option key={l} value={l}>{l === 'all' ? 'Todos' : l === 'unclassified' ? 'Sem classificação' : l.toUpperCase()}</option>)}</select></label>
       <label><input type="checkbox" checked={favoritesOnly} onChange={e => setFavoritesOnly(e.target.checked)} /> Apenas favoritos</label>
     </div>
-    <section className="small-talk-settings" aria-labelledby="small-talk-settings-title">
+    <div className="small-talk-configuration-toggle">
+      <button type="button" className="small-talk-icon-button" aria-label="Configurar Modo Caminhada" title="Configurar Modo Caminhada" aria-expanded={settingsOpen} aria-controls="small-talk-settings-panel" onClick={() => setSettingsOpen(v => !v)}>⚙️</button>
+      <span>Configurar Modo Caminhada</span>
+      <button type="button" className="primary-button" disabled={loading || !filtered.length} onClick={startWalking}>▶ Iniciar Modo Caminhada ({filtered.length} perguntas)</button>
+    </div>
+    {settingsOpen && <section id="small-talk-settings-panel" className="small-talk-settings" aria-labelledby="small-talk-settings-title">
       <h3 id="small-talk-settings-title">🚶 Configurar Modo Caminhada</h3>
       <p><strong>Resposta padrão:</strong> sempre a resposta original do DOCX, nunca uma revisão.</p>
       <label>Reproduzir resposta padrão <select value={settings.playDefaultAnswer ? 'yes' : 'no'} onChange={e => updateWalking('playDefaultAnswer', e.target.value === 'yes')}><option value="no">NÃO — eu respondo espontaneamente</option><option value="yes">SIM — ouvir minha resposta original</option></select></label>
@@ -126,20 +168,37 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       <label><input type="checkbox" checked={settings.keepScreenAwake} onChange={e => updateWalking('keepScreenAwake', e.target.checked)} /> Manter tela ligada quando possível</label>
       <p className="settings-dialog-help">Os filtros acima determinam quais perguntas entram na caminhada. Atualmente não há MP3s do Small Talk; o áudio usa a voz inglesa disponível no dispositivo.</p>
       <button type="button" className="primary-button" disabled={loading || !filtered.length} onClick={startWalking}>▶ Iniciar Modo Caminhada ({filtered.length} perguntas)</button>
-    </section>
+    </section>}
+    {editError && <p className="warning-banner" role="alert">{editError}</p>}
+    <div className="small-talk-backup-actions"><button type="button" className="secondary-button" onClick={downloadEdits}>⬇ Exportar backup privado das edições</button><span className="settings-dialog-help">Edições ficam apenas neste navegador; não são sincronizadas pelo Google Drive.</span></div>
     <header className="results-header"><h3>{loading ? 'Carregando...' : `${topic?.title ?? ''} — ${filtered.length} perguntas`}</h3></header>
     <div className="small-talk-question-list">{filtered.map(item => {
       const original = answerFor(item);
       const shown = answerVisible.includes(item.id);
+      const modified = Object.prototype.hasOwnProperty.call(answerOverrides, item.id);
+      const baseOriginal = personalAnswers?.answersByItemId[item.id]?.original?.segments.map(s => s.text).join('\n\n') ?? '';
       return <article className="small-talk-question-card" key={item.id}>
         <p><strong>{item.question?.text}</strong></p>
         <p className="settings-dialog-help">{item.level?.toUpperCase() ?? 'Nível pendente'} · {item.reviewStatus === 'pending' ? 'Revisão editorial pendente' : item.reviewStatus}</p>
         <div className="small-talk-actions">
-          <button type="button" className="secondary-button" aria-pressed={favorites.includes(item.id)} onClick={() => toggleFavorite(item.id)}>{favorites.includes(item.id) ? '★ Favorito' : '☆ Favoritar'}</button>
-          {original && <button type="button" className="secondary-button" onClick={() => reveal(item.id)}>{shown ? 'Ocultar resposta original' : 'Ver resposta original'}</button>}
-          {!original && <span className="settings-dialog-help">Sem resposta original importada</span>}
+          <button type="button" className="small-talk-icon-button" aria-label={favorites.includes(item.id) ? 'Desfavoritar' : 'Favoritar'} title={favorites.includes(item.id) ? 'Desfavoritar' : 'Favoritar'} aria-pressed={favorites.includes(item.id)} onClick={() => toggleFavorite(item.id)}>{favorites.includes(item.id) ? '★' : '☆'}</button>
+          <button type="button" className="small-talk-icon-button" aria-label={shown ? 'Ocultar resposta' : 'Ver resposta'} title={shown ? 'Ocultar resposta' : 'Ver resposta'} aria-pressed={shown} disabled={!original} onClick={() => reveal(item.id)}>👁️</button>
+          <button type="button" className="small-talk-icon-button" aria-label="Editar resposta" title="Editar resposta" onClick={() => openEditor(item)}>✏️</button>
+          <button type="button" className="small-talk-icon-button" aria-label="Excluir resposta ativa" title="Excluir resposta ativa" disabled={!original} onClick={() => removeAnswer(item.id)}>🗑️</button>
+          <button type="button" className="small-talk-icon-button" aria-label="Abrir resposta no Google Tradutor" title="Google Tradutor (resposta ativa)" disabled={!original} onClick={() => googleTranslate(original)}>🌐</button>
+          {modified && <button type="button" className="small-talk-restore-button" title="Recuperar o original importado" onClick={() => restoreAnswer(item.id)}>Restaurar original</button>}
+          {!original && !modified && <span className="settings-dialog-help">Sem resposta importada — use o lápis para incluir</span>}
+          {modified && <span className="settings-dialog-help">Resposta editada localmente</span>}
         </div>
         {shown && original && <p className="small-talk-original" style={{ whiteSpace: 'pre-wrap' }}>{original}</p>}
+        {editorId === item.id && <div className="small-talk-editor">
+          <label htmlFor={`small-talk-editor-${item.id}`}><strong>{baseOriginal ? 'Editar resposta ativa (original preservado)' : 'Incluir resposta pessoal'}</strong></label>
+          <textarea id={`small-talk-editor-${item.id}`} value={draft} onChange={e => setDraft(e.target.value)} rows={6} spellCheck lang="en-US" />
+          <div className="small-talk-actions">
+            <button type="button" className="primary-button" onClick={saveEditor}>Salvar resposta</button>
+            <button type="button" className="secondary-button" onClick={() => { setEditorId(null); setEditError(''); }}>Cancelar</button>
+          </div>
+        </div>}
       </article>;
     })}</div>
     {!loading && filtered.length === 0 && <p>Nenhuma pergunta corresponde aos filtros.</p>}
