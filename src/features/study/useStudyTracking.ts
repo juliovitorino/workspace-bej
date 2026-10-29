@@ -17,7 +17,7 @@ export function useStudyTracking(view: string, language: StudentLanguage, signal
   const refreshPolicy = useRef<(() => void) | null>(null);
   useEffect(() => {
     const module: StudyModule | null = view === "favorite-chunks" ? "chunk-favorites"
-      : ["hashmap", "memory-flashcards", "chunk-flashcards", "shadowing", "basic-training", "advanced-training", "review-training", "speaking-game", "would-you-rather", "interpretation"].includes(view) ? view as StudyModule : null;
+      : ["hashmap", "memory-flashcards", "chunk-flashcards", "shadowing", "basic-training", "advanced-training", "review-training", "speaking-game", "would-you-rather", "interpretation", "small-talk"].includes(view) ? view as StudyModule : null;
     studyTracker.setExtraView(view === "extra-activities");
     const context: StudyContext | null = module ? { language, module, mode: module === "hashmap" ? "manual" : signal?.mode ?? "manual" } : null;
     const refresh = () => {

@@ -22,7 +22,7 @@ import { StudyStorageOverview } from "./StudyStorageOverview";
 
 const languages = Object.keys(LANGUAGES) as StudentLanguage[];
 const HISTORY_PAGE_SIZE = 20;
-const moduleKeys: Record<string, string> = { hashmap: "Hashmap", "memory-flashcards": "memory.title", "chunk-flashcards": "common.chunkFlashcards", "chunk-favorites": "favorites.title", shadowing: "common.shadowing", "basic-training": "study.basicTraining", "advanced-training": "study.advancedTraining", "review-training": "study.reviewTraining", "speaking-game": "common.speakingGame", "would-you-rather": "wyr.moduleTitle", interpretation: "common.interpretation", "extra-activities": "extras.title", previous: "study.previousHours" };
+const moduleKeys: Record<string, string> = { hashmap: "Hashmap", "memory-flashcards": "memory.title", "chunk-flashcards": "common.chunkFlashcards", "chunk-favorites": "favorites.title", shadowing: "common.shadowing", "basic-training": "study.basicTraining", "advanced-training": "study.advancedTraining", "review-training": "study.reviewTraining", "speaking-game": "common.speakingGame", "would-you-rather": "wyr.moduleTitle", interpretation: "common.interpretation", "extra-activities": "extras.title", "small-talk": "Small Talk", previous: "study.previousHours" };
 export function StudyDashboard({ language, initialSection }: { language: StudentLanguage; initialSection?: "settings" | "history" }) {
   const { t, i18n } = useTranslation();
   const [expanded, setExpanded] = useState(false);
@@ -126,7 +126,7 @@ export function StudyDashboard({ language, initialSection }: { language: Student
     return parts.filter(([, value]) => value > 0).map(([key, value]) => t(`study.${key}`, { count: value })).join(" ") || t("study.zeroDuration");
   };
   const number = (value: number) => value.toLocaleString(i18n.language, { maximumFractionDigits: 2 });
-  const moduleLabel = (key: string) => key === "hashmap" ? "Mental Hashmap" : t(moduleKeys[key]);
+  const moduleLabel = (key: string) => key === "hashmap" ? "Mental Hashmap" : key === "small-talk" ? "Small Talk" : t(moduleKeys[key]);
   const applicableModules = STUDY_MODULES.filter(key => filters.origin === "internal" ? key !== "extra-activities"
     : filters.origin === "external" || (filters.extraCategory && filters.extraCategory !== "all") ? key === "extra-activities" : true);
   const moduleValues = Object.fromEntries((filters.module === "all" ? applicableModules : [filters.module])
