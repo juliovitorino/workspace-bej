@@ -151,3 +151,25 @@
   .small-talk-topics-nav { padding: 8px 10px 12px; }
 }
 @media print { .small-talk-topics-trigger,.small-talk-topics-overlay { display: none !important; } }
+
+/* Botão para limpar a pesquisa na modal de tópicos. */
+.small-talk-topics-search-field { position: relative; display: block; }
+.small-talk-topics-search-field input { width: 100%; padding-right: 3.5rem; }
+.small-talk-topics-clear {
+  position: absolute;
+  right: .4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #172b4d;
+  cursor: pointer;
+}
+.small-talk-topics-clear:hover { background: #e4eaf3; }
+.small-talk-topics-clear:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }

@@ -58,7 +58,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       if (!active) return;
       const enabled = index.topics.filter(t => t.enabled).sort((a, b) => topicSorter.compare(topicDisplayName(a.sourceTitle), topicDisplayName(b.sourceTitle)) || a.order - b.order);
       setTopics(enabled);
-      setTopicId(current => current || enabled[0]?.id || '');
+      setTopicId(current => current || enabled.find(t => t.id === 'greetings')?.id || enabled[0]?.id || '');
     }).catch(e => { if (active && !controller.signal.aborted) { setError(String(e)); setLoading(false); } });
     return () => { active = false; controller.abort(); };
   }, []);
@@ -208,7 +208,23 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
           <button type="button" className="small-talk-topics-close" aria-label="Fechar lista de tópicos" title="Fechar" onClick={() => setTopicsMenuOpen(false)}>✕</button>
         </div>
         <label className="small-talk-topics-search">Pesquisar tópico
-          <input type="search" autoFocus value={topicsMenuQuery} onChange={event => setTopicsMenuQuery(event.target.value)} placeholder="Digite o nome do tópico..." />
+          <span className="small-talk-topics-search-field">
+            <input type="search" autoFocus value={topicsMenuQuery}
+              onChange={event => setTopicsMenuQuery(event.target.value)}
+              placeholder="Digite o nome do tópico..." />
+            {topicsMenuQuery.length > 0 && (
+              <button type="button" className="small-talk-topics-clear"
+                aria-label="Limpar pesquisa de tópicos" title="Limpar pesquisa"
+                onClick={() => setTopicsMenuQuery('')}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"
+                  strokeLinejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M21 4H9a2 2 0 0 0-1.5.7L2 12l5.5 7.3A2 2 0 0 0 9 20h12a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1Z" />
+                  <path d="m13 9 6 6m0-6-6 6" />
+                </svg>
+              </button>
+            )}
+          </span>
         </label>
         <nav className="small-talk-topics-nav" aria-label="Lista alfabética de tópicos">
           {menuTopics.map(t => <button key={t.id} type="button" className={`small-talk-topic-option${topicId === t.id ? ' is-selected' : ''}`} aria-current={topicId === t.id ? 'true' : undefined} onClick={() => selectTopic(t.id)}>{topicDisplayName(t.sourceTitle)}{topicId === t.id && <span aria-hidden="true">✓</span>}</button>)}
