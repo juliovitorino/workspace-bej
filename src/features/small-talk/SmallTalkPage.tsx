@@ -64,8 +64,40 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   }
   async function copyCardJson() {
     if (!exportCard || !exportApproved) return;
-    try { await navigator.clipboard.writeText(exportCard.json); setExportMessage('JSON copiado.'); }
-    catch { setExportMessage('Não foi possível copiar automaticamente. Selecione o texto e copie.'); }
+
+    // A Clipboard API pode estar indisponível em contextos não seguros
+    // (por exemplo, acesso à aplicação via IP local no celular).
+    if (navigator.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(exportCard.json);
+        setExportMessage('JSON copiado para a área de transferência.');
+        return;
+      } catch {
+        // Tenta o método alternativo abaixo.
+      }
+    }
+
+    const textarea = document.querySelector<HTMLTextAreaElement>(
+      '.small-talk-export-modal textarea[aria-label="JSON do card"]'
+    );
+    if (!textarea) {
+      setExportMessage('Não foi possível acessar o texto. Utilize Baixar JSON.');
+      return;
+    }
+
+    textarea.focus();
+    textarea.select();
+    textarea.setSelectionRange(0, textarea.value.length);
+
+    try {
+      if (document.execCommand('copy')) {
+        setExportMessage('JSON copiado para a área de transferência.');
+        return;
+      }
+    } catch {
+      // Mantém o texto selecionado para cópia manual.
+    }
+    setExportMessage('Cópia automática indisponível. O JSON está selecionado: pressione Ctrl+C (ou Copiar no celular), ou use Baixar JSON.');
   }
   function downloadCardJson() {
     if (!exportCard || !exportApproved) return;

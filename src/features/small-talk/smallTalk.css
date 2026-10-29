@@ -2,7 +2,7 @@
 .small-talk-filters,.small-talk-settings{display:flex;flex-wrap:wrap;gap:.85rem;align-items:end}
 .small-talk-filters label,.small-talk-settings label{display:grid;gap:.4rem;min-width:12rem}
 .small-talk-filters label:has(input[type=checkbox]),.small-talk-settings label:has(input[type=checkbox]){display:flex;align-items:center}
-.small-talk-filters input:not([type=checkbox]),.small-talk-filters select,.small-talk-settings select,.small-talk-settings input[type=number]{width:100%;min-height:2.5rem;max-width:100%;padding:.5rem;border:1px solid var(--border-color,#aaa);border-radius:.45rem;color:inherit;background:var(--card-bg,var(--surface-color,transparent))}
+.small-talk-filters input:not([type=checkbox]),.small-talk-filters select,.small-talk-settings select,.small-talk-settings input[type=number]{box-sizing:border-box;width:100%;min-height:48px;max-width:100%;padding:10px;border:1px solid var(--border-strong);border-radius:8px;background:var(--surface-raised);color:var(--text);font:inherit}
 .small-talk-settings{border:1px solid var(--border-color,#bbb);border-radius:1rem;padding:1rem;align-items:end}
 .small-talk-settings h3,.small-talk-settings p{flex-basis:100%;margin:.1rem 0}
 .small-talk-question-list{display:grid;gap:.85rem}
@@ -185,3 +185,22 @@
 .small-talk-export-consent{display:flex;align-items:flex-start;gap:10px;font-weight:600;line-height:1.45}
 .small-talk-export-consent input{width:20px;height:20px;flex-shrink:0}
 .small-talk-export-modal button:focus-visible,.small-talk-export-modal textarea:focus-visible{outline:3px solid #e69b00;outline-offset:2px}
+
+/* Os selects do Small Talk seguem as variáveis de tema do filtro Hashmap. */
+.small-talk-filters select,
+.small-talk-settings select {
+  background: var(--surface-raised);
+  color: var(--text);
+  border-color: var(--border-strong);
+  color-scheme: normal;
+}
+.small-talk-filters select option,
+.small-talk-settings select option {
+  background: var(--surface-raised);
+  color: var(--text);
+}
+.small-talk-filters select:focus-visible,
+.small-talk-settings select:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
