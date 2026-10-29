@@ -39,7 +39,10 @@ function assertTopic(value: unknown, topicId: string, locale: SmallTalkLocale): 
       value.topicId !== topicId || value.locale !== locale || !Array.isArray(value.items) ||
       !value.items.every(item => isRecord(item) && typeof item.id === 'string' &&
         typeof item.order === 'number' && typeof item.enabled === 'boolean' &&
-        isRecord(item.question) && typeof item.question.text === 'string')) {
+        isRecord(item.question) && typeof item.question.text === 'string' &&
+        (item.answer === undefined || item.answer === null ||
+          (isRecord(item.answer) && typeof item.answer.text === 'string' &&
+            (item.answer.audio === null || typeof item.answer.audio === 'string'))))) {
     throw new SmallTalkCatalogError(`Small Talk: dados inválidos no tópico ${topicId}.`);
   }
 }

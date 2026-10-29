@@ -50,6 +50,130 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     try { return readAnswerOverrides(); } catch { return {}; }
   });
   const [editError, setEditError] = useState('');
+  const [exportCard, setExportCard] = useState<{ item: SmallTalkItem; json: string } | null>(null);
+  const [exportApproved, setExportApproved] = useState(false);
+  const [exportMessage, setExportMessage] = useState('');
+  const [topicExport, setTopicExport] = useState<{ json: string; count: number; answered: number; edited: number; topicId: string } | null>(null);
+  const [topicExportApproved, setTopicExportApproved] = useState(false);
+  const [topicExportStatus, setTopicExportStatus] = useState('');
+
+  function prepareTopicExport() {
+    if (!topic || loading || topic.topicId !== topicId) return;
+    // Todos os itens do catálogo, independentemente de filtros, favoritos ou nível.
+    // Preserva campos, ordem e IDs; a resposta ativa tem precedência:
+    // edição local > resposta pública > original privado.
+    const items = topic.items.map(item => {
+      const answer = answerFor(item).trim();
+      if (!answer) return { ...item, answer: null };
+      // MP3 público só pode ser mantido quando o texto ainda é o publicado.
+      const audio = item.answer?.text === answer ? item.answer.audio : null;
+      return { ...item, answer: { text: answer, audio } };
+    });
+    const output: SmallTalkTopic = { ...topic, items };
+    setTopicExport({
+      json: JSON.stringify(output, null, 2) + '\\n',
+      count: items.length,
+      answered: items.filter(item => !!item.answer?.text).length,
+      edited: items.filter(item => Object.prototype.hasOwnProperty.call(answerOverrides, item.id)).length,
+      topicId: topic.topicId
+    });
+    setTopicExportApproved(false);
+    setTopicExportStatus('');
+  }
+  async function shareOrDownloadTopic() {
+    if (!topicExport || !topicExportApproved) return;
+    const filename = `${topicExport.topicId}.json`;
+    const file = new File([topicExport.json], filename, { type: 'application/json' });
+    // O compartilhamento nativo permite escolher Google Drive no iOS/Android.
+    try {
+      if (navigator.share && (!navigator.canShare || navigator.canShare({ files: [file] }))) {
+        await navigator.share({ files: [file], title: `BEJ Small Talk — ${topicExport.topicId}` });
+        setTopicExportStatus('Arquivo enviado ao menu de compartilhamento. Confirme o salvamento no Google Drive.');
+        return;
+      }
+    } catch (error) {
+      if ((error as Error)?.name === 'AbortError') {
+        setTopicExportStatus('Compartilhamento cancelado. Use Baixar JSON para salvar o arquivo.');
+        return;
+      }
+      // Safari/Chrome sem suporte a arquivos compartilhados: baixar localmente.
+    }
+    downloadTopicJson();
+  }
+  function downloadTopicJson() {
+    if (!topicExport || !topicExportApproved) return;
+    try {
+      const blob = new Blob([topicExport.json], { type: 'application/json;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement('a');
+      anchor.href = url;
+      anchor.download = `${topicExport.topicId}.json`;
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+      window.setTimeout(() => URL.revokeObjectURL(url), 2000);
+      setTopicExportStatus('Arquivo gerado. Salve no Google Drive para depois substituir o JSON no VS Code.');
+    } catch {
+      setTopicExportStatus('O navegador não conseguiu gerar o arquivo. Tente outro navegador.');
+    }
+  }
+
+  function openCardExport(item: SmallTalkItem) {
+    const text = answerFor(item).trim();
+    if (!text) { setEditError('Este card não possui uma resposta para exportar.'); return; }
+    const publicItem: SmallTalkItem = { ...item, answer: { text, audio: null } };
+    setExportCard({ item, json: JSON.stringify(publicItem, null, 2) });
+    setExportApproved(false);
+    setExportMessage('');
+  }
+  async function copyCardJson() {
+    if (!exportCard || !exportApproved) return;
+
+    // A Clipboard API pode estar indisponível em contextos não seguros
+    // (por exemplo, acesso à aplicação via IP local no celular).
+    if (navigator.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(exportCard.json);
+        setExportMessage('JSON copiado para a área de transferência.');
+        return;
+      } catch {
+        // Tenta o método alternativo abaixo.
+      }
+    }
+
+    const textarea = document.querySelector<HTMLTextAreaElement>(
+      '.small-talk-export-modal textarea[aria-label="JSON do card"]'
+    );
+    if (!textarea) {
+      setExportMessage('Não foi possível acessar o texto. Utilize Baixar JSON.');
+      return;
+    }
+
+    textarea.focus();
+    textarea.select();
+    textarea.setSelectionRange(0, textarea.value.length);
+
+    try {
+      if (document.execCommand('copy')) {
+        setExportMessage('JSON copiado para a área de transferência.');
+        return;
+      }
+    } catch {
+      // Mantém o texto selecionado para cópia manual.
+    }
+    setExportMessage('Cópia automática indisponível. O JSON está selecionado: pressione Ctrl+C (ou Copiar no celular), ou use Baixar JSON.');
+  }
+  function downloadCardJson() {
+    if (!exportCard || !exportApproved) return;
+    const blob = new Blob([exportCard.json + '\n'], { type: 'application/json;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `small-talk-${topicId}-${exportCard.item.id}.json`;
+    a.click();
+    window.setTimeout(() => URL.revokeObjectURL(url), 2000);
+    setExportMessage('JSON gerado. Incorpore manualmente no arquivo do tópico.');
+  }
 
   useEffect(() => {
     let active = true;
@@ -121,7 +245,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   function reveal(id: string) { setAnswerVisible(old => old.includes(id) ? old.filter(v => v !== id) : [...old, id]); }
   function answerFor(item: SmallTalkItem) {
     if (Object.prototype.hasOwnProperty.call(answerOverrides, item.id)) return answerOverrides[item.id].text ?? '';
-    return personalAnswers?.answersByItemId[item.id]?.original?.segments.map(s => s.text).join('\n\n') ?? '';
+    return item.answer?.text || personalAnswers?.answersByItemId[item.id]?.original?.segments.map(s => s.text).join('\n\n') || '';
   }
   function openEditor(item: SmallTalkItem) { setEditorId(item.id); setDraft(answerFor(item)); setEditError(''); }
   function saveEditor() {
@@ -245,7 +369,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     </div>
     {settingsOpen && <section id="small-talk-settings-panel" className="small-talk-settings" aria-labelledby="small-talk-settings-title">
       <h3 id="small-talk-settings-title">🚶 Configurar Modo Caminhada</h3>
-      <p><strong>Resposta padrão:</strong> sempre a resposta original do DOCX, nunca uma revisão.</p>
+      <p><strong>Resposta padrão:</strong> edição local, resposta pública ou original importado (nessa ordem).</p>
       <label>Reproduzir resposta padrão <select value={settings.playDefaultAnswer ? 'yes' : 'no'} onChange={e => updateWalking('playDefaultAnswer', e.target.value === 'yes')}><option value="no">NÃO — eu respondo espontaneamente</option><option value="yes">SIM — ouvir minha resposta original</option></select></label>
       <label>Repetições <input type="number" min="1" max="10" value={settings.repeatCount} onChange={e => updateWalking('repeatCount', Math.max(1, Math.min(10, Number(e.target.value) || 5)))} /></label>
       <label>Pausa para responder (segundos) <input type="number" min="1" max="90" value={settings.pauseAfterQuestionSeconds} onChange={e => updateWalking('pauseAfterQuestionSeconds', Math.max(1, Math.min(90, Number(e.target.value) || 10)))} /></label>
@@ -257,6 +381,19 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     </section>}
     {editError && <p className="warning-banner" role="alert">{editError}</p>}
     <div className="small-talk-backup-actions"><button type="button" className="secondary-button" onClick={downloadEdits}>⬇ Exportar backup privado das edições</button><span className="settings-dialog-help">Edições ficam apenas neste navegador; não são sincronizadas pelo Google Drive.</span></div>
+    <div className="small-talk-topic-export-bar">
+      <button type="button" className="small-talk-topic-export-trigger" title="Exportar tópico inteiro"
+        aria-label="Exportar tópico inteiro" disabled={loading || !topic || topic.topicId !== topicId}
+        onClick={prepareTopicExport}>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+          strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 16V3m0 0-4 4m4-4 4 4"/>
+          <path d="M4 14v4a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-4"/>
+        </svg>
+        <span>Exportar tópico inteiro</span>
+      </button>
+      <span className="settings-dialog-help">Inclui todas as perguntas e respostas, mesmo fora dos filtros.</span>
+    </div>
     <header className="results-header"><h3>{loading ? 'Carregando...' : `${topic?.title ?? ''} — ${filtered.length} perguntas`}</h3></header>
     <div className="small-talk-question-list">{filtered.map(item => {
       const original = answerFor(item);
@@ -271,6 +408,8 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
           <button type="button" className="small-talk-icon-button" aria-label={shown ? 'Ocultar resposta' : 'Ver resposta'} title={shown ? 'Ocultar resposta' : 'Ver resposta'} aria-pressed={shown} disabled={!original} onClick={() => reveal(item.id)}>👁️</button>
           <button type="button" className="small-talk-icon-button" aria-label="Editar resposta" title="Editar resposta" onClick={() => openEditor(item)}>✏️</button>
           <button type="button" className="small-talk-icon-button" aria-label="Excluir resposta ativa" title="Excluir resposta ativa" disabled={!original} onClick={() => removeAnswer(item.id)}>🗑️</button>
+          <button type="button" className="small-talk-icon-button" aria-label="Exportar JSON público deste card"
+            title="Exportar JSON público deste card" disabled={!original} onClick={() => openCardExport(item)}>📋</button>
           <button type="button" className="small-talk-icon-button" aria-label="Abrir resposta no Google Tradutor" title="Google Tradutor (resposta ativa)" disabled={!original} onClick={() => googleTranslate(original)}>🌐</button>
           {modified && <button type="button" className="small-talk-restore-button" title="Recuperar o original importado" onClick={() => restoreAnswer(item.id)}>Restaurar original</button>}
           {!original && !modified && <span className="settings-dialog-help">Sem resposta importada — use o lápis para incluir</span>}
@@ -288,5 +427,62 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       </article>;
     })}</div>
     {!loading && filtered.length === 0 && <p>Nenhuma pergunta corresponde aos filtros.</p>}
+    {topicExport && <div className="small-talk-export-overlay"
+      onMouseDown={event => { if (event.target === event.currentTarget) setTopicExport(null); }}>
+      <section className="small-talk-export-modal" role="dialog" aria-modal="true"
+        aria-labelledby="small-talk-topic-export-title">
+        <header className="small-talk-export-header">
+          <h3 id="small-talk-topic-export-title">Exportar tópico inteiro</h3>
+          <button type="button" aria-label="Fechar exportação do tópico"
+            onClick={() => setTopicExport(null)}>✕</button>
+        </header>
+        <p><strong>Arquivo:</strong> <code>{topicExport.topicId}.json</code></p>
+        <p><strong>{topicExport.count}</strong> cards; <strong>{topicExport.answered}</strong> com resposta;
+          <strong> {topicExport.edited}</strong> com edição local.</p>
+        <p>O arquivo preserva o contrato completo do catálogo. Ele substitui <strong>o arquivo inteiro</strong> em
+          <code> public/small-talk/en-US/topics/{topicExport.topicId}.json</code>,
+          após sua revisão no VS Code. As respostas vazias permanecem sem texto.</p>
+        <p><strong>Atenção:</strong> respostas importadas e edições locais podem conter dados pessoais.
+          Revise antes de publicar. Exportar não publica nem sincroniza os dados.</p>
+        <label className="small-talk-export-consent">
+          <input type="checkbox" checked={topicExportApproved}
+            onChange={event => setTopicExportApproved(event.target.checked)} />
+          Confirmo que quero exportar as respostas deste tópico para revisão e possível publicação.
+        </label>
+        <div className="small-talk-actions">
+          <button type="button" className="primary-button" disabled={!topicExportApproved}
+            onClick={() => void shareOrDownloadTopic()}>Compartilhar / Salvar no Drive</button>
+          <button type="button" className="secondary-button" disabled={!topicExportApproved}
+            onClick={downloadTopicJson}>Baixar JSON</button>
+          <button type="button" className="secondary-button"
+            onClick={() => setTopicExport(null)}>Fechar</button>
+        </div>
+        {topicExportStatus && <p role="status">{topicExportStatus}</p>}
+      </section>
+    </div>}
+    {exportCard && <div className="small-talk-export-overlay"
+      onMouseDown={event => { if (event.target === event.currentTarget) setExportCard(null); }}>
+      <section className="small-talk-export-modal" role="dialog" aria-modal="true" aria-labelledby="small-talk-export-title">
+        <header className="small-talk-export-header">
+          <h3 id="small-talk-export-title">Exportar card para JSON público</h3>
+          <button type="button" aria-label="Fechar exportação" onClick={() => setExportCard(null)}>✕</button>
+        </header>
+        <p><strong>Arquivo de destino:</strong> <code>public/small-talk/en-US/topics/{topicId}.json</code></p>
+        <p>O JSON abaixo é somente o objeto do card. Substitua o item com o mesmo ID dentro de <code>items</code>; não substitua o arquivo inteiro.</p>
+        <textarea readOnly spellCheck={false} aria-label="JSON do card" value={exportCard.json} rows={12}
+          onFocus={event => event.currentTarget.select()} />
+        <label className="small-talk-export-consent">
+          <input type="checkbox" checked={exportApproved} onChange={event => setExportApproved(event.target.checked)} />
+          Confirmo que revisei esta resposta e autorizo sua publicação para todos os usuários.
+        </label>
+        <div className="small-talk-actions">
+          <button type="button" className="primary-button" disabled={!exportApproved} onClick={() => void copyCardJson()}>Copiar JSON</button>
+          <button type="button" className="secondary-button" disabled={!exportApproved} onClick={downloadCardJson}>Baixar JSON</button>
+          <button type="button" className="secondary-button" onClick={() => setExportCard(null)}>Fechar</button>
+        </div>
+        {exportMessage && <p role="status">{exportMessage}</p>}
+      </section>
+    </div>}
+
   </section>;
 }

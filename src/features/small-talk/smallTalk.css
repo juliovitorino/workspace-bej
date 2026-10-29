@@ -2,7 +2,7 @@
 .small-talk-filters,.small-talk-settings{display:flex;flex-wrap:wrap;gap:.85rem;align-items:end}
 .small-talk-filters label,.small-talk-settings label{display:grid;gap:.4rem;min-width:12rem}
 .small-talk-filters label:has(input[type=checkbox]),.small-talk-settings label:has(input[type=checkbox]){display:flex;align-items:center}
-.small-talk-filters input:not([type=checkbox]),.small-talk-filters select,.small-talk-settings select,.small-talk-settings input[type=number]{width:100%;min-height:2.5rem;max-width:100%;padding:.5rem;border:1px solid var(--border-color,#aaa);border-radius:.45rem;color:inherit;background:var(--card-bg,var(--surface-color,transparent))}
+.small-talk-filters input:not([type=checkbox]),.small-talk-filters select,.small-talk-settings select,.small-talk-settings input[type=number]{box-sizing:border-box;width:100%;min-height:48px;max-width:100%;padding:10px;border:1px solid var(--border-strong);border-radius:8px;background:var(--surface-raised);color:var(--text);font:inherit}
 .small-talk-settings{border:1px solid var(--border-color,#bbb);border-radius:1rem;padding:1rem;align-items:end}
 .small-talk-settings h3,.small-talk-settings p{flex-basis:100%;margin:.1rem 0}
 .small-talk-question-list{display:grid;gap:.85rem}
@@ -173,3 +173,43 @@
 }
 .small-talk-topics-clear:hover { background: #e4eaf3; }
 .small-talk-topics-clear:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }
+
+/* Exportação individual de card para catálogo público */
+.small-talk-export-overlay{position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center;padding:12px}
+.small-talk-export-modal{box-sizing:border-box;width:min(720px,100%);max-height:92dvh;overflow:auto;display:grid;gap:12px;padding:20px;border:2px solid #b7c8e5;border-radius:14px;background:#fff;color:#152238;color-scheme:light}
+.small-talk-export-header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.small-talk-export-header h3{margin:0;color:#122744}
+.small-talk-export-header button{min-width:40px;min-height:40px;border:1px solid #9eafc7;border-radius:8px;background:#f1f5fb;color:#172b4d;cursor:pointer}
+.small-talk-export-modal p{margin:0;overflow-wrap:anywhere}
+.small-talk-export-modal textarea{box-sizing:border-box;width:100%;min-height:240px;resize:vertical;padding:12px;border:2px solid #8296b3;border-radius:8px;background:#f7f9fc;color:#10223c;font:12px/1.5 ui-monospace,monospace}
+.small-talk-export-consent{display:flex;align-items:flex-start;gap:10px;font-weight:600;line-height:1.45}
+.small-talk-export-consent input{width:20px;height:20px;flex-shrink:0}
+.small-talk-export-modal button:focus-visible,.small-talk-export-modal textarea:focus-visible{outline:3px solid #e69b00;outline-offset:2px}
+
+/* Os selects do Small Talk seguem as variáveis de tema do filtro Hashmap. */
+.small-talk-filters select,
+.small-talk-settings select {
+  background: var(--surface-raised);
+  color: var(--text);
+  border-color: var(--border-strong);
+  color-scheme: normal;
+}
+.small-talk-filters select option,
+.small-talk-settings select option {
+  background: var(--surface-raised);
+  color: var(--text);
+}
+.small-talk-filters select:focus-visible,
+.small-talk-settings select:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+
+/* Exportação do tópico inteiro: ícone SVG original, sem imagem externa. */
+.small-talk-topic-export-bar{display:flex;align-items:center;flex-wrap:wrap;gap:.7rem}
+.small-talk-topic-export-trigger{display:inline-flex;gap:.55rem;align-items:center;justify-content:center;min-height:44px;padding:.6rem .9rem;border:1px solid var(--border-strong);border-radius:10px;background:var(--surface-raised);color:var(--text);font:inherit;font-weight:600;cursor:pointer}
+.small-talk-topic-export-trigger:hover:not(:disabled){background:var(--accent-soft,var(--surface-raised));border-color:var(--accent)}
+.small-talk-topic-export-trigger:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.small-talk-topic-export-trigger:disabled{opacity:.45;cursor:not-allowed}
+@media(max-width:640px){.small-talk-topic-export-trigger{flex:1}}
