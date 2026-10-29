@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { SmallTalkItem, SmallTalkWalkingSettings } from '../../types/smallTalk';
-import { getSmallTalkActiveAnswer } from './smallTalkAnswerOverrides';
+import { getSmallTalkActiveAnswer, readAnswerOverrides } from './smallTalkAnswerOverrides';
 import { speakStudyAudio } from '../study/studyAudio';
 import { SMALL_TALK_WALKING_PROGRESS_KEY, saveLocalJson, readLocalJson } from './smallTalkPreferences';
 
@@ -65,7 +65,13 @@ export function SmallTalkWalking({ items, settings, onExit, onStudyState, onWalk
 
   useEffect(() => {
     if (!current) { setPhase('complete'); return; }
-    try { setHasOriginal(!!getSmallTalkActiveAnswer(current.id, window.localStorage).length); }
+    try {
+      const local = getSmallTalkActiveAnswer(current.id, window.localStorage);
+      const overrides = readAnswerOverrides(window.localStorage);
+      const active = Object.prototype.hasOwnProperty.call(overrides, current.id)
+        ? overrides[current.id].text ?? '' : current.answer?.text || local;
+      setHasOriginal(!!active);
+    }
     catch { setHasOriginal(false); }
   }, [current?.id]);
 
@@ -92,7 +98,13 @@ export function SmallTalkWalking({ items, settings, onExit, onStudyState, onWalk
     const playAnswer = () => {
       if (!live()) return;
       let original: string[] = [];
-      try { original = [getSmallTalkActiveAnswer(current.id, window.localStorage)].filter(Boolean); }
+      try {
+        const local = getSmallTalkActiveAnswer(current.id, window.localStorage);
+        const overrides = readAnswerOverrides(window.localStorage);
+        const active = Object.prototype.hasOwnProperty.call(overrides, current.id)
+          ? overrides[current.id].text ?? '' : current.answer?.text || local;
+        original = [active].filter(Boolean);
+      }
       catch { /* original opcional quando storage indisponível */ }
       if (!settings.playDefaultAnswer || !original.length) {
         setPhase('between'); wait(settings.pauseBetweenRepetitionsSeconds * 1000, next); return;

@@ -25,7 +25,11 @@
         "section": "CHINA",
         "paragraphIndex": 1477
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "pending",
+      "answer": {
+        "text": "China is a huge country, so the food, weather, traditions and life styles can be very different from one region to another.",
+        "audio": null
+      }
     },
     {
       "id": "f93ebf3c-b3b2-4eb5-8aaf-c32a7ed29fdc",

@@ -30,6 +30,8 @@ export interface SmallTalkItem {
   /** null enquanto a classificação CEFR não foi aprovada. */
   level: SmallTalkLevel | null;
   question: SmallTalkAudioText | null;
+  /** Resposta pública opcional, publicada conscientemente no catálogo. */
+  answer?: SmallTalkAudioText | null;
   context: SmallTalkAudioText | null;
   followUps: SmallTalkFollowUp[];
   linkedIntentionIds: string[];

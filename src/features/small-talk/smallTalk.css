@@ -173,3 +173,15 @@
 }
 .small-talk-topics-clear:hover { background: #e4eaf3; }
 .small-talk-topics-clear:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }
+
+/* Exportação individual de card para catálogo público */
+.small-talk-export-overlay{position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center;padding:12px}
+.small-talk-export-modal{box-sizing:border-box;width:min(720px,100%);max-height:92dvh;overflow:auto;display:grid;gap:12px;padding:20px;border:2px solid #b7c8e5;border-radius:14px;background:#fff;color:#152238;color-scheme:light}
+.small-talk-export-header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.small-talk-export-header h3{margin:0;color:#122744}
+.small-talk-export-header button{min-width:40px;min-height:40px;border:1px solid #9eafc7;border-radius:8px;background:#f1f5fb;color:#172b4d;cursor:pointer}
+.small-talk-export-modal p{margin:0;overflow-wrap:anywhere}
+.small-talk-export-modal textarea{box-sizing:border-box;width:100%;min-height:240px;resize:vertical;padding:12px;border:2px solid #8296b3;border-radius:8px;background:#f7f9fc;color:#10223c;font:12px/1.5 ui-monospace,monospace}
+.small-talk-export-consent{display:flex;align-items:flex-start;gap:10px;font-weight:600;line-height:1.45}
+.small-talk-export-consent input{width:20px;height:20px;flex-shrink:0}
+.small-talk-export-modal button:focus-visible,.small-talk-export-modal textarea:focus-visible{outline:3px solid #e69b00;outline-offset:2px}

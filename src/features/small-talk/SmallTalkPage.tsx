@@ -50,6 +50,34 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     try { return readAnswerOverrides(); } catch { return {}; }
   });
   const [editError, setEditError] = useState('');
+  const [exportCard, setExportCard] = useState<{ item: SmallTalkItem; json: string } | null>(null);
+  const [exportApproved, setExportApproved] = useState(false);
+  const [exportMessage, setExportMessage] = useState('');
+
+  function openCardExport(item: SmallTalkItem) {
+    const text = answerFor(item).trim();
+    if (!text) { setEditError('Este card não possui uma resposta para exportar.'); return; }
+    const publicItem: SmallTalkItem = { ...item, answer: { text, audio: null } };
+    setExportCard({ item, json: JSON.stringify(publicItem, null, 2) });
+    setExportApproved(false);
+    setExportMessage('');
+  }
+  async function copyCardJson() {
+    if (!exportCard || !exportApproved) return;
+    try { await navigator.clipboard.writeText(exportCard.json); setExportMessage('JSON copiado.'); }
+    catch { setExportMessage('Não foi possível copiar automaticamente. Selecione o texto e copie.'); }
+  }
+  function downloadCardJson() {
+    if (!exportCard || !exportApproved) return;
+    const blob = new Blob([exportCard.json + '\n'], { type: 'application/json;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `small-talk-${topicId}-${exportCard.item.id}.json`;
+    a.click();
+    window.setTimeout(() => URL.revokeObjectURL(url), 2000);
+    setExportMessage('JSON gerado. Incorpore manualmente no arquivo do tópico.');
+  }
 
   useEffect(() => {
     let active = true;
@@ -121,7 +149,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   function reveal(id: string) { setAnswerVisible(old => old.includes(id) ? old.filter(v => v !== id) : [...old, id]); }
   function answerFor(item: SmallTalkItem) {
     if (Object.prototype.hasOwnProperty.call(answerOverrides, item.id)) return answerOverrides[item.id].text ?? '';
-    return personalAnswers?.answersByItemId[item.id]?.original?.segments.map(s => s.text).join('\n\n') ?? '';
+    return item.answer?.text || personalAnswers?.answersByItemId[item.id]?.original?.segments.map(s => s.text).join('\n\n') || '';
   }
   function openEditor(item: SmallTalkItem) { setEditorId(item.id); setDraft(answerFor(item)); setEditError(''); }
   function saveEditor() {
@@ -245,7 +273,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     </div>
     {settingsOpen && <section id="small-talk-settings-panel" className="small-talk-settings" aria-labelledby="small-talk-settings-title">
       <h3 id="small-talk-settings-title">🚶 Configurar Modo Caminhada</h3>
-      <p><strong>Resposta padrão:</strong> sempre a resposta original do DOCX, nunca uma revisão.</p>
+      <p><strong>Resposta padrão:</strong> edição local, resposta pública ou original importado (nessa ordem).</p>
       <label>Reproduzir resposta padrão <select value={settings.playDefaultAnswer ? 'yes' : 'no'} onChange={e => updateWalking('playDefaultAnswer', e.target.value === 'yes')}><option value="no">NÃO — eu respondo espontaneamente</option><option value="yes">SIM — ouvir minha resposta original</option></select></label>
       <label>Repetições <input type="number" min="1" max="10" value={settings.repeatCount} onChange={e => updateWalking('repeatCount', Math.max(1, Math.min(10, Number(e.target.value) || 5)))} /></label>
       <label>Pausa para responder (segundos) <input type="number" min="1" max="90" value={settings.pauseAfterQuestionSeconds} onChange={e => updateWalking('pauseAfterQuestionSeconds', Math.max(1, Math.min(90, Number(e.target.value) || 10)))} /></label>
@@ -271,6 +299,8 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
           <button type="button" className="small-talk-icon-button" aria-label={shown ? 'Ocultar resposta' : 'Ver resposta'} title={shown ? 'Ocultar resposta' : 'Ver resposta'} aria-pressed={shown} disabled={!original} onClick={() => reveal(item.id)}>👁️</button>
           <button type="button" className="small-talk-icon-button" aria-label="Editar resposta" title="Editar resposta" onClick={() => openEditor(item)}>✏️</button>
           <button type="button" className="small-talk-icon-button" aria-label="Excluir resposta ativa" title="Excluir resposta ativa" disabled={!original} onClick={() => removeAnswer(item.id)}>🗑️</button>
+          <button type="button" className="small-talk-icon-button" aria-label="Exportar JSON público deste card"
+            title="Exportar JSON público deste card" disabled={!original} onClick={() => openCardExport(item)}>📋</button>
           <button type="button" className="small-talk-icon-button" aria-label="Abrir resposta no Google Tradutor" title="Google Tradutor (resposta ativa)" disabled={!original} onClick={() => googleTranslate(original)}>🌐</button>
           {modified && <button type="button" className="small-talk-restore-button" title="Recuperar o original importado" onClick={() => restoreAnswer(item.id)}>Restaurar original</button>}
           {!original && !modified && <span className="settings-dialog-help">Sem resposta importada — use o lápis para incluir</span>}
@@ -288,5 +318,29 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       </article>;
     })}</div>
     {!loading && filtered.length === 0 && <p>Nenhuma pergunta corresponde aos filtros.</p>}
+    {exportCard && <div className="small-talk-export-overlay"
+      onMouseDown={event => { if (event.target === event.currentTarget) setExportCard(null); }}>
+      <section className="small-talk-export-modal" role="dialog" aria-modal="true" aria-labelledby="small-talk-export-title">
+        <header className="small-talk-export-header">
+          <h3 id="small-talk-export-title">Exportar card para JSON público</h3>
+          <button type="button" aria-label="Fechar exportação" onClick={() => setExportCard(null)}>✕</button>
+        </header>
+        <p><strong>Arquivo de destino:</strong> <code>public/small-talk/en-US/topics/{topicId}.json</code></p>
+        <p>O JSON abaixo é somente o objeto do card. Substitua o item com o mesmo ID dentro de <code>items</code>; não substitua o arquivo inteiro.</p>
+        <textarea readOnly spellCheck={false} aria-label="JSON do card" value={exportCard.json} rows={12}
+          onFocus={event => event.currentTarget.select()} />
+        <label className="small-talk-export-consent">
+          <input type="checkbox" checked={exportApproved} onChange={event => setExportApproved(event.target.checked)} />
+          Confirmo que revisei esta resposta e autorizo sua publicação para todos os usuários.
+        </label>
+        <div className="small-talk-actions">
+          <button type="button" className="primary-button" disabled={!exportApproved} onClick={() => void copyCardJson()}>Copiar JSON</button>
+          <button type="button" className="secondary-button" disabled={!exportApproved} onClick={downloadCardJson}>Baixar JSON</button>
+          <button type="button" className="secondary-button" onClick={() => setExportCard(null)}>Fechar</button>
+        </div>
+        {exportMessage && <p role="status">{exportMessage}</p>}
+      </section>
+    </div>}
+
   </section>;
 }
