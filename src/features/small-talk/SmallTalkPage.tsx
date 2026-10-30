@@ -35,6 +35,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   const [aiMessage, setAiMessage] = useState('');
   const [aiManualPrompt, setAiManualPrompt] = useState('');
   const [geminiPrompt, setGeminiPrompt] = useState('');
+  const [preparedAIProvider, setPreparedAIProvider] = useState<AIProvider>('gemini');
   const [geminiCopied, setGeminiCopied] = useState(false);
   const [geminiCopyError, setGeminiCopyError] = useState('');
   useEffect(() => {
@@ -462,6 +463,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     const simplifiedFrameworkUrl = new URL('framework/simplified-framework.json', base).href;
 
     if (provider === 'gemini') {
+      setPreparedAIProvider('gemini');
       // O fetch é assíncrono: a permissão de copiar deve ser solicitada em
       // um SEGUNDO clique explícito, dentro do modal, não depois do fetch.
       setAiMessage('Carregando os dois frameworks para preparar o prompt do Gemini…');
@@ -487,6 +489,15 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
 
     // ChatGPT mantém a integração existente por URL, sem carregar JSONs.
     const prompt = buildSmallTalkAnalysisPrompt({ question, answer, fullFrameworkUrl, simplifiedFrameworkUrl, provider });
+    // Chrome móvel pode ignorar o parâmetro ?q= ao abrir o ChatGPT.
+    // Exigimos um clique explícito para copiar antes da abertura, tal como no Gemini.
+    // No desktop, o comportamento existente via URL continua preservado.
+    if (window.matchMedia('(max-width: 1024px) and (pointer: coarse)').matches) {
+      setPreparedAIProvider('chatgpt');
+      setGeminiPrompt(prompt);
+      setAiMessage('Prompt do ChatGPT preparado. Copie no modal e abra o ChatGPT para colar na conversa.');
+      return;
+    }
     const encoded = encodeURIComponent(prompt);
     const url = encoded.length < 6500 ? 'https://chatgpt.com/?q=' + encoded : 'https://chatgpt.com/';
     const opened = window.open(url, '_blank', 'noopener,noreferrer');
@@ -525,14 +536,15 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
 
   function openPreparedGemini() {
     if (!geminiPrompt || !geminiCopied) return;
-    const opened = window.open('https://gemini.google.com/app', '_blank', 'noopener,noreferrer');
+    const destination = preparedAIProvider === 'chatgpt' ? 'https://chatgpt.com/' : 'https://gemini.google.com/app';
+    const opened = window.open(destination, '_blank', 'noopener,noreferrer');
     if (!opened) {
       setGeminiCopyError('O navegador bloqueou a nova aba. Autorize pop-ups e tente novamente.');
       return;
     }
     setGeminiPrompt('');
     setGeminiCopied(false);
-    setAiMessage('Gemini aberto. Cole o prompt completo com Ctrl+V (ou Colar no celular) e envie.');
+    setAiMessage(`${preparedAIProvider === 'chatgpt' ? 'ChatGPT' : 'Gemini'} aberto. Cole o prompt completo com Ctrl+V (ou Colar no celular) e envie.`);
   }
 
   function googleTranslate(text: string) {
@@ -649,17 +661,17 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     {geminiPrompt && <div className="small-talk-export-overlay" onMouseDown={event => { if (event.target === event.currentTarget) setGeminiPrompt(''); }}>
       <section className="small-talk-export-modal" role="dialog" aria-modal="true" aria-labelledby="small-talk-gemini-title">
         <header className="small-talk-export-header">
-          <h3 id="small-talk-gemini-title">Enviar análise ao Gemini</h3>
+          <h3 id="small-talk-gemini-title">Enviar análise ao {preparedAIProvider === 'chatgpt' ? 'ChatGPT' : 'Gemini'}</h3>
           <button type="button" aria-label="Fechar" onClick={() => setGeminiPrompt('')}>✕</button>
         </header>
-        <p>O prompt inclui a pergunta, a resposta e os dois frameworks completos. Primeiro copie; depois abra o Gemini e cole na conversa.</p>
-        <textarea id="small-talk-gemini-prompt" readOnly value={geminiPrompt} rows={8} aria-label="Prompt completo para o Gemini" onFocus={event => event.currentTarget.select()} />
+        <p>O prompt inclui a pergunta, a resposta e {preparedAIProvider === 'gemini' ? 'os dois frameworks completos' : 'os links para os dois frameworks'}. Primeiro copie; depois abra {preparedAIProvider === 'chatgpt' ? 'o ChatGPT' : 'o Gemini'} e cole na conversa.</p>
+        <textarea id="small-talk-gemini-prompt" readOnly value={geminiPrompt} rows={8} aria-label={`Prompt completo para ${preparedAIProvider === 'chatgpt' ? 'o ChatGPT' : 'o Gemini'}`} onFocus={event => event.currentTarget.select()} />
         <div className="small-talk-actions">
           <button type="button" className="primary-button" onClick={() => void copyGeminiPrompt()}>📋 COPIAR PROMPT</button>
-          <button type="button" className="primary-button" disabled={!geminiCopied} onClick={openPreparedGemini}>ABRIR GEMINI</button>
+          <button type="button" className="primary-button" disabled={!geminiCopied} onClick={openPreparedGemini}>ABRIR {preparedAIProvider === 'chatgpt' ? 'CHATGPT' : 'GEMINI'}</button>
           <button type="button" className="secondary-button" onClick={() => setGeminiPrompt('')}>Cancelar</button>
         </div>
-        {geminiCopied && <p role="status">✓ Cópia confirmada pelo navegador. Agora clique em ABRIR GEMINI e cole com Ctrl+V.</p>}
+        {geminiCopied && <p role="status">✓ Cópia confirmada pelo navegador. Agora abra a IA e cole o prompt na conversa.</p>}
         {geminiCopyError && <div role="alert"><p>{geminiCopyError}</p><button type="button" className="secondary-button" onClick={() => setGeminiCopied(true)}>JÁ COPIEI MANUALMENTE</button></div>}
       </section>
     </div>}
