@@ -213,3 +213,5 @@
 .small-talk-topic-export-trigger:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .small-talk-topic-export-trigger:disabled{opacity:.45;cursor:not-allowed}
 @media(max-width:640px){.small-talk-topic-export-trigger{flex:1}}
+
+.small-talk-question-heading{display:flex;align-items:flex-start;flex-wrap:wrap;gap:8px}.small-talk-question-heading p{flex:1;min-width:170px;margin:0}.small-talk-export-modal select{min-height:44px;padding:8px;border:1px solid #8296b3;border-radius:8px;background:white;color:#10223c}.small-talk-import-label{display:inline-flex;align-items:center;min-height:44px;padding:8px;border:1px solid var(--border-strong);border-radius:8px;background:var(--surface-raised);color:var(--text);cursor:pointer;font-weight:600}.small-talk-import-label input{position:absolute;opacity:0;width:1px;height:1px}.small-talk-import-label:focus-within{outline:3px solid var(--accent);outline-offset:2px}
