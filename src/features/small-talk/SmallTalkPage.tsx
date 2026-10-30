@@ -5,8 +5,8 @@ import { readSmallTalkPersonalAnswers } from '../../services/smallTalkPersonalAn
 import type { SmallTalkItem, SmallTalkTopic, SmallTalkTopicIndexEntry, SmallTalkWalkingSettings } from '../../types/smallTalk';
 import { readLocalJson, readWalkingSettings, saveLocalJson, SMALL_TALK_FAVORITES_KEY, SMALL_TALK_WALKING_SETTINGS_KEY } from './smallTalkPreferences';
 import { SmallTalkWalking } from './SmallTalkWalking';
-import { readAnswerOverrides, saveAnswerOverride, restoreOriginalAnswer } from './smallTalkAnswerOverrides';
-import { readQuestionOverrides, saveQuestionOverride, restoreOriginalQuestion } from './smallTalkQuestionOverrides';
+import { readAnswerOverrides, saveAnswerOverride, restoreOriginalAnswer, pruneRedundantAnswerOverrides } from './smallTalkAnswerOverrides';
+import { readQuestionOverrides, saveQuestionOverride, restoreOriginalQuestion, pruneRedundantQuestionOverrides } from './smallTalkQuestionOverrides';
 
 interface Props {
   onStudyState?: (active: boolean, mode: 'manual' | 'walking') => void;
@@ -72,7 +72,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   function openQuestionEditor(item: SmallTalkItem) { setQuestionEditorId(item.id); setQuestionDraft(questionFor(item)); setEditError(''); }
   function saveQuestionEditor() {
     if (!questionEditorId || !questionDraft.trim()) { setEditError('Digite uma pergunta.'); return; }
-    try { setQuestionOverrides(saveQuestionOverride(questionEditorId, questionDraft)); setQuestionEditorId(null); setEditError(''); }
+    try { setQuestionOverrides(saveQuestionOverride(questionEditorId, questionDraft, topic?.items.find(item => item.id === questionEditorId)?.question?.text)); setQuestionEditorId(null); setEditError(''); }
     catch { setEditError('Erro ao salvar pergunta no armazenamento local.'); }
   }
   function restoreQuestion(id: string) {
@@ -133,7 +133,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     });
     const output: SmallTalkTopic = { ...topic, items };
     setTopicExport({
-      json: JSON.stringify(output, null, 2) + '\\n',
+      json: JSON.stringify(output, null, 2),
       count: items.length,
       answered: items.filter(item => !!item.answer?.text).length,
       edited: items.filter(item => Object.prototype.hasOwnProperty.call(answerOverrides, item.id) || Object.prototype.hasOwnProperty.call(questionOverrides, item.id)).length,
@@ -255,7 +255,13 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     const controller = new AbortController();
     setLoading(true); setError(''); setAnswerVisible([]);
     loadSmallTalkTopic(topicId, 'en-US', controller.signal).then(value => {
-      if (active) { setTopic(value); setLoading(false); }
+      if (active) {
+        // A limpeza só considera IDs e textos do tópico público efetivamente carregado.
+        // Se o armazenamento falhar, não bloqueamos o estudo nem apagamos dados.
+        try { setAnswerOverrides(pruneRedundantAnswerOverrides(value.items)); } catch { /* dados preservados */ }
+        try { setQuestionOverrides(pruneRedundantQuestionOverrides(value.items)); } catch { /* dados preservados */ }
+        setTopic(value); setLoading(false);
+      }
     }).catch(e => { if (active && !controller.signal.aborted) { setError(String(e)); setLoading(false); } });
     return () => { active = false; controller.abort(); };
   }, [topicId]);
@@ -312,7 +318,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   function openEditor(item: SmallTalkItem) { setEditorId(item.id); setDraft(answerFor(item)); setEditError(''); }
   function saveEditor() {
     if (!editorId || !draft.trim()) { setEditError('Digite uma resposta ou use a lixeira para removê-la.'); return; }
-    try { setAnswerOverrides(saveAnswerOverride(editorId, draft.trim())); setEditorId(null); setAnswerVisible(v => v.includes(editorId) ? v : [...v, editorId]); setEditError(''); }
+    try { setAnswerOverrides(saveAnswerOverride(editorId, draft.trim(), topic?.items.find(item => item.id === editorId)?.answer?.text)); setEditorId(null); setAnswerVisible(v => v.includes(editorId) ? v : [...v, editorId]); setEditError(''); }
     catch { setEditError('Não foi possível salvar. Verifique o armazenamento local.'); }
   }
   function removeAnswer(id: string) {
@@ -362,7 +368,11 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       const answers = merge(readAnswerOverrides(), incomingAnswers as ReturnType<typeof readAnswerOverrides>);
       localStorage.setItem('bej:small-talk:question-overrides:v1', JSON.stringify(questions));
       localStorage.setItem('bej:small-talk:answer-overrides:v1', JSON.stringify(answers));
-      setQuestionOverrides(questions); setAnswerOverrides(answers);
+      // Remover duplicatas apenas depois da mesclagem; manter as demais revisões intactas.
+      if (topic && topic.topicId === topicId) {
+        try { setQuestionOverrides(pruneRedundantQuestionOverrides(topic.items)); } catch { setQuestionOverrides(questions); }
+        try { setAnswerOverrides(pruneRedundantAnswerOverrides(topic.items)); } catch { setAnswerOverrides(answers); }
+      } else { setQuestionOverrides(questions); setAnswerOverrides(answers); }
       setBackupMessage('Edições importadas e mescladas pela data. Confira seus cards.');
     } catch { setBackupMessage('Backup inválido ou armazenamento indisponível. Confira o arquivo.'); }
   }

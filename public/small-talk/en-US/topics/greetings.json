@@ -13,7 +13,7 @@
       "enabled": true,
       "level": null,
       "question": {
-        "text": "How’s it going?",
+        "text": "How’s it going? How have you been?",
         "audio": null
       },
       "context": null,
@@ -25,7 +25,11 @@
         "section": "Greetings Topic",
         "paragraphIndex": 7
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "pending",
+      "answer": {
+        "text": "I’m doing well. How about you?",
+        "audio": null
+      }
     },
     {
       "id": "42bd2071-4550-496d-b736-9a615c6af567",
@@ -46,7 +50,11 @@
         "section": "Greetings Topic",
         "paragraphIndex": 10
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "pending",
+      "answer": {
+        "text": "I’m from Brazil and I live in a city place between Rio de Janeiro and São Paulo.",
+        "audio": null
+      }
     },
     {
       "id": "8ec239cd-ca84-4275-b1bb-fe60be40d373",
@@ -67,7 +75,11 @@
         "section": "Greetings Topic",
         "paragraphIndex": 13
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "pending",
+      "answer": {
+        "text": "Well … It was a typical day. I worked a lot, and I had some meetings, but one meeting was long. I got tired, but I felt good.",
+        "audio": null
+      }
     },
     {
       "id": "f098728f-e80d-41a3-8d6c-f7bc9371cd51",
@@ -88,7 +100,11 @@
         "section": "Greetings Topic",
         "paragraphIndex": 16
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "pending",
+      "answer": {
+        "text": "You know, I’ve been working as a software engineer for about 30 years. I’ve already worked for big and small companies in Brazil. The point is I really love my work because I get to create many solutions to solve a lot of problems, even though sometimes I get stressed. I also like trading stock options in the Brazilian stock market. Although I know I can lose some money, I strongly follow my trading plan and my risk management.",
+        "audio": null
+      }
     },
     {
       "id": "df41848a-dd84-4933-8aaa-13f3def5d21f",
@@ -109,7 +125,11 @@
         "section": "Greetings Topic",
         "paragraphIndex": 33
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "pending",
+      "answer": {
+        "text": "Well… on Saturday, I went to Minas Gerais by motorcycle with my friends. So, we had a wonderful day surrounded by waterfalls, wild animals, and nature. After that we had lunch in a good restaurant.\n\nLet me think… on Sunday, I went with my wife to a restaurant; we had fried fish with vegetables, rice, and a lot of spices.",
+        "audio": null
+      }
     },
     {
       "id": "38075542-7fce-416a-a2f9-e882152094c2",
@@ -130,7 +150,11 @@
         "section": "Greetings Topic",
         "paragraphIndex": 37
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "pending",
+      "answer": {
+        "text": "I guess I’ve been using this app for about 58 days. The point is that I liked HelloTalk so much that I signed up for a VIP subscription a few days ago. I think this app is awesome!\n\nI believe coming here every day is part and parcel of my process.",
+        "audio": null
+      }
     },
     {
       "id": "dcfc671e-60e5-4883-8fb7-c38a3c81515f",
@@ -151,7 +175,11 @@
         "section": "Greetings Topic",
         "paragraphIndex": 40
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "pending",
+      "answer": {
+        "text": "You know what. First of all, my greatest motivation to be here is to improve my English speaking. Maybe I also want to work for any international software development company. I don’t know! And finally, I might make some friends here to practice English, even I might teach portuguese for them. I can't stand the idea that I won't be able to speak English.",
+        "audio": null
+      }
     },
     {
       "id": "d2cf9682-14fb-4a5c-8cee-82fe1fde0da7",
@@ -172,7 +200,8 @@
         "section": "Greetings Topic",
         "paragraphIndex": 42
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "pending",
+      "answer": null
     },
     {
       "id": "e9c0f52f-20e8-4248-acad-0284e88982d1",
@@ -193,7 +222,11 @@
         "section": "Greetings Topic",
         "paragraphIndex": 44
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "pending",
+      "answer": {
+        "text": "That’s a good question. I’ve never thought about this…. By the end of the year, I want to be speaking English with more confidence. This is my point. That's why I’m doing this challenge every single day in my spare time.\n\nOn the other hand, I also hope to finish a few things around the house, such as buying a new shelf for the kitchen and installing an air conditioner in my bedroom and the living room. Moreover, I want to install the new windows in my barbecue area.\n\nFor private things, I also want to keep riding motorcycles with my friends every 2 weeks whenever I can because I like going to the beach and visiting new places.",
+        "audio": null
+      }
     },
     {
       "id": "d7102c50-ec2b-45d6-930b-0b2f9c017781",
@@ -214,7 +247,11 @@
         "section": "Greetings Topic",
         "paragraphIndex": 49
       },
-      "reviewStatus": "pending"
+      "reviewStatus": "pending",
+      "answer": {
+        "text": "So that’s a good question. I’ve never thought about this. I’m an anxious guy. I’m usually a funny guy because I like to tell jokes to my friends.\n\nI think I’m a good father and husband. I’m sometimes a little bit tough on him, but it’s necessary because I have to be a role model for him.\n\nMost of the time I’m patient. I can be a little bit impulsive sometimes.\n\nI like going to the beach as much as I can. I’m really into riding my motorcycle every weekend with my friends whenever I can.",
+        "audio": null
+      }
     }
   ]
 }
