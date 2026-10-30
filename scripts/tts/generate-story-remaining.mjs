@@ -76,26 +76,26 @@ function isMp3(bytes) {
 const tasks = [];
 for (const [index, paragraph] of paragraphs.entries()) {
   for (const voice of voices) {
-  const { url, file } = target(paragraph, voice);
-  const hash = sha256(paragraph.en);
-  const registeredUrl = paragraph.mp3?.[locale]?.[voice];
-  const registeredHash = paragraph.hashmp3?.[locale]?.[voice];
-  const existing = await fileInfo(file);
-
-  // Never silently replace a registered MP3 or a file with unknown provenance.
-  if (registeredUrl && registeredUrl !== url || registeredHash && registeredHash !== hash) {
-    throw new Error(`Parágrafo ${index + 1}: URL ou hash divergente. Revisão manual necessária.`);
-  }
-  if (existing && existing.size === 0) {
-    throw new Error(`Parágrafo ${index + 2}: MP3 vazio em ${file}.`);
-  }
-  if (existing && (!registeredUrl || !registeredHash)) {
-    throw new Error(`Parágrafo ${index + 2}: MP3 existente sem metadados completos. Não sobrescrever: ${file}`);
-  }
-  if (!existing && (registeredUrl || registeredHash)) {
-    throw new Error(`Parágrafo ${index + 2}: JSON aponta para MP3 ausente: ${file}`);
-  }
-  tasks.push({ index: index + 1, paragraph, voice, url, file, hash, done: Boolean(existing) });
+    const { url, file } = target(paragraph, voice);
+    const hash = sha256(paragraph.en);
+    const registeredUrl = paragraph.mp3?.[locale]?.[voice];
+    const registeredHash = paragraph.hashmp3?.[locale]?.[voice];
+    const existing = await fileInfo(file);
+  
+    // Never silently replace a registered MP3 or a file with unknown provenance.
+    if (registeredUrl && registeredUrl !== url || registeredHash && registeredHash !== hash) {
+      throw new Error(`Parágrafo ${index + 1}: URL ou hash divergente. Revisão manual necessária.`);
+    }
+    if (existing && existing.size === 0) {
+      throw new Error(`Parágrafo ${index + 1}: MP3 vazio em ${file}.`);
+    }
+    if (existing && (!registeredUrl || !registeredHash)) {
+      throw new Error(`Parágrafo ${index + 1}: MP3 existente sem metadados completos. Não sobrescrever: ${file}`);
+    }
+    if (!existing && (registeredUrl || registeredHash)) {
+      throw new Error(`Parágrafo ${index + 1}: JSON aponta para MP3 ausente: ${file}`);
+    }
+    tasks.push({ index: index + 1, paragraph, voice, url, file, hash, done: Boolean(existing) });
   }
 }
 
