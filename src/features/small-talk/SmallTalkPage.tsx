@@ -8,6 +8,7 @@ import { readLocalJson, readWalkingSettings, saveLocalJson, SMALL_TALK_FAVORITES
 import { SmallTalkWalking } from './SmallTalkWalking';
 import { readAnswerOverrides, saveAnswerOverride, restoreOriginalAnswer, pruneRedundantAnswerOverrides } from './smallTalkAnswerOverrides';
 import { readQuestionOverrides, saveQuestionOverride, restoreOriginalQuestion, pruneRedundantQuestionOverrides } from './smallTalkQuestionOverrides';
+import { createCustomItem, isCustomItems, mergeCustomItems, readCustomItems, setCustomItemDeleted, writeCustomItems, type CustomSmallTalkItems } from './smallTalkCustomItems';
 
 interface Props {
   onStudyState?: (active: boolean, mode: 'manual' | 'walking') => void;
@@ -71,6 +72,46 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   const [topicExport, setTopicExport] = useState<{ json: string; count: number; answered: number; edited: number; topicId: string } | null>(null);
   const [topicExportApproved, setTopicExportApproved] = useState(false);
   const [topicExportStatus, setTopicExportStatus] = useState('');
+  const [customItems, setCustomItems] = useState<CustomSmallTalkItems>(() => {
+    try { return readCustomItems(); } catch { return {}; }
+  });
+  const [newCardOpen, setNewCardOpen] = useState(false);
+  const [newQuestion, setNewQuestion] = useState('');
+  const [newAnswer, setNewAnswer] = useState('');
+  const [newLevel, setNewLevel] = useState<'a1' | 'a2' | 'b1' | 'b2' | 'c1' | ''>('');
+  const [showDeleted, setShowDeleted] = useState(false);
+  const [newCardError, setNewCardError] = useState('');
+
+  const activeTopicItems = useMemo(() => {
+    const published = topic?.items ?? [];
+    const ids = new Set(published.map(item => item.id));
+    const local = Object.values(customItems)
+      .filter(entry => entry.topicId === topicId && !entry.deleted && !ids.has(entry.item.id))
+      .map(entry => entry.item);
+    return [...published, ...local].sort((a, b) => a.order - b.order);
+  }, [topic, topicId, customItems]);
+
+  function addCard() {
+    setNewCardError('');
+    if (!topic || topic.topicId !== topicId) { setNewCardError('Aguarde o carregamento do tópico antes de salvar.'); return; }
+    if (!newQuestion.trim()) { setNewCardError('Digite a pergunta.'); return; }
+    try {
+      const nextOrder = Math.max(0, ...activeTopicItems.map(item => item.order)) + 1;
+      const updated = createCustomItem(topicId, newQuestion, newAnswer, newLevel || null, nextOrder);
+      setCustomItems(updated);
+      setNewCardOpen(false); setNewQuestion(''); setNewAnswer(''); setNewLevel('');
+      setQuery(''); setLevel('all'); setFavoritesOnly(false); setEditError('');
+    } catch (error) {
+      setNewCardError(error instanceof Error ? error.message : 'Não foi possível salvar. Verifique o armazenamento local.');
+    }
+  }
+  function toggleCustomCard(id: string, deleted: boolean) {
+    if (deleted && !window.confirm('Remover este card da prática? Ele ficará disponível para restauração no mesmo tópico.')) return;
+    try {
+      setCustomItems(setCustomItemDeleted(id, deleted));
+      setQuestionEditorId(null); setEditorId(null); setEditError('');
+    } catch { setEditError('Não foi possível alterar o card pessoal.'); }
+  }
 
   function questionFor(item: SmallTalkItem) { return questionOverrides[item.id]?.text ?? item.question?.text ?? ''; }
   function itemWithQuestion(item: SmallTalkItem): SmallTalkItem {
@@ -104,7 +145,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   function printTopic(mode: 'both' | 'questions') {
     if (!topic || loading || topic.topicId !== topicId) return;
     const esc = (value: string) => value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
-    const items = topic.items.filter(item => item.enabled && questionFor(item).trim());
+    const items = activeTopicItems.filter(item => item.enabled && questionFor(item).trim());
     const cards = items.map((item,index) => '<article class="qa"><div class="q">' + (index + 1) + '. ' + esc(questionFor(item)) + '</div>' +
       (mode === 'both' && answerFor(item).trim() ? '<div class="a">' + esc(answerFor(item).trim()) + '</div>' : '') +
       (mode === 'questions' ? '<div class="notes"></div>' : '') + '</article>').join('');
@@ -132,7 +173,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     // Todos os itens do catálogo, independentemente de filtros, favoritos ou nível.
     // Preserva campos, ordem e IDs; a resposta ativa tem precedência:
     // edição local > resposta pública > original privado.
-    const items = topic.items.map(item => {
+    const items = activeTopicItems.map(item => {
       const answer = answerFor(item).trim();
       const activeItem = itemWithQuestion(item);
       if (!answer) return { ...activeItem, answer: null };
@@ -300,14 +341,14 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   }
 
   const filtered = useMemo(() => {
-    return (topic?.items ?? []).filter(item => {
+    return activeTopicItems.filter(item => {
       if (!item.enabled || !item.question?.text) return false;
       if (query.trim() && !questionFor(item).toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())) return false;
       if (level !== 'all' && (level === 'unclassified' ? item.level !== null : item.level !== level)) return false;
       if (favoritesOnly && !favorites.includes(item.id)) return false;
       return true;
     });
-  }, [topic, query, level, favoritesOnly, favorites, questionOverrides]);
+  }, [activeTopicItems, query, level, favoritesOnly, favorites, questionOverrides]);
 
   function toggleFavorite(id: string) {
     const next = favorites.includes(id) ? favorites.filter(v => v !== id) : [...favorites, id];
@@ -342,7 +383,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   function downloadEdits() {
     try {
       const backup = JSON.stringify({ schemaVersion: '1.0.0', module: 'small-talk', dataType: 'question-answer-overrides',
-        questions: readQuestionOverrides(), answers: readAnswerOverrides(), exportedAt: new Date().toISOString() }, null, 2);
+        questions: readQuestionOverrides(), answers: readAnswerOverrides(), customItems: readCustomItems(), exportedAt: new Date().toISOString() }, null, 2);
       const blob = new Blob([backup], { type: 'application/json;charset=utf-8' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a'); a.href = url; a.download = 'small-talk-perguntas-respostas-privado.json'; a.click();
@@ -357,6 +398,8 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       if (data.schemaVersion !== '1.0.0' || data.module !== 'small-talk' ||
           !['question-answer-overrides','answer-overrides'].includes(String(data.dataType))) throw Error('Backup incompatível');
       const incomingQuestions = data.dataType === 'answer-overrides' ? {} : data.questions;
+      const incomingCustom = data.customItems === undefined ? {} : data.customItems;
+      if (!isCustomItems(incomingCustom)) throw Error('Cards pessoais inválidos');
       const incomingAnswers = data.dataType === 'answer-overrides' ? data.overrides : data.answers;
       const valid = (v: unknown, allowNull: boolean) => v !== null && typeof v === 'object' && !Array.isArray(v) &&
         Object.entries(v).every(([id, raw]) => {
@@ -375,14 +418,16 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       };
       const questions = merge(readQuestionOverrides(), incomingQuestions as ReturnType<typeof readQuestionOverrides>);
       const answers = merge(readAnswerOverrides(), incomingAnswers as ReturnType<typeof readAnswerOverrides>);
+      const cards = mergeCustomItems(readCustomItems(), incomingCustom);
       localStorage.setItem('bej:small-talk:question-overrides:v1', JSON.stringify(questions));
       localStorage.setItem('bej:small-talk:answer-overrides:v1', JSON.stringify(answers));
+      writeCustomItems(cards); setCustomItems(cards);
       // Remover duplicatas apenas depois da mesclagem; manter as demais revisões intactas.
       if (topic && topic.topicId === topicId) {
         try { setQuestionOverrides(pruneRedundantQuestionOverrides(topic.items)); } catch { setQuestionOverrides(questions); }
         try { setAnswerOverrides(pruneRedundantAnswerOverrides(topic.items)); } catch { setAnswerOverrides(answers); }
       } else { setQuestionOverrides(questions); setAnswerOverrides(answers); }
-      setBackupMessage('Edições importadas e mescladas pela data. Confira seus cards.');
+      setBackupMessage('Edições e cards pessoais importados e mesclados pela data. Confira seus tópicos.');
     } catch { setBackupMessage('Backup inválido ou armazenamento indisponível. Confira o arquivo.'); }
   }
   function openAIAnalysis(item: SmallTalkItem) {
@@ -561,9 +606,22 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
         </svg>
         <span>Exportar tópico inteiro</span>
       </button>
+      <button type="button" className="small-talk-topic-export-trigger" disabled={loading || !topic || topic.topicId !== topicId}
+        onClick={() => { setNewCardOpen(true); setNewCardError(''); setEditError(''); }}>＋ <span>Nova pergunta</span></button>
       <button type="button" className="small-talk-topic-export-trigger" aria-label="Imprimir tópico A4" disabled={loading || !topic || topic.topicId !== topicId} onClick={() => setPrintMode('both')}>🖨️ <span>Imprimir tópico</span></button>
       <span className="settings-dialog-help">Exportação e impressão incluem o tópico inteiro.</span>
     </div>
+    {Object.values(customItems).some(entry => entry.topicId === topicId && entry.deleted && !(topic?.items ?? []).some(item => item.id === entry.item.id)) &&
+      <div className="small-talk-backup-actions">
+        <button type="button" className="secondary-button" onClick={() => setShowDeleted(v => !v)}>
+          {showDeleted ? 'Ocultar removidos' : 'Ver cards pessoais removidos'}
+        </button>
+        {showDeleted && Object.values(customItems).filter(entry => entry.topicId === topicId && entry.deleted && !(topic?.items ?? []).some(item => item.id === entry.item.id)).map(entry =>
+          <div key={entry.item.id} className="small-talk-deleted-card">
+            <span>{entry.item.question?.text}</span>
+            <button type="button" className="secondary-button" onClick={() => toggleCustomCard(entry.item.id, false)}>Restaurar card</button>
+          </div>)}
+      </div>}
     <header className="results-header"><h3>{loading ? 'Carregando...' : `${topic?.title ?? ''} — ${filtered.length} perguntas`}</h3></header>
     <div className="small-talk-question-list">{filtered.map(item => {
       const original = answerFor(item);
@@ -599,6 +657,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
           {modified && <button type="button" className="small-talk-restore-button" title="Recuperar o original importado" onClick={() => restoreAnswer(item.id)}>Restaurar original</button>}
           {!original && !modified && <span className="settings-dialog-help">Sem resposta importada — use o lápis para incluir</span>}
           {modified && <span className="settings-dialog-help">Resposta editada localmente</span>}
+          {customItems[item.id] && !(topic?.items ?? []).some(published => published.id === item.id) && <button type="button" className="small-talk-restore-button" title="Remover card pessoal (recuperável)" onClick={() => toggleCustomCard(item.id, true)}>Remover card</button>}
         </div>
         {shown && original && <p className="small-talk-original" style={{ whiteSpace: 'pre-wrap' }}>{original}</p>}
         {editorId === item.id && <div className="small-talk-editor">
@@ -612,6 +671,21 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       </article>;
     })}</div>
     {!loading && filtered.length === 0 && <p>Nenhuma pergunta corresponde aos filtros.</p>}
+    {newCardOpen && <div className="small-talk-export-overlay" onMouseDown={event => { if (event.target === event.currentTarget) setNewCardOpen(false); }}>
+      <section className="small-talk-export-modal" role="dialog" aria-modal="true" aria-labelledby="small-talk-add-title">
+        <header className="small-talk-export-header"><h3 id="small-talk-add-title">＋ Nova pergunta — {topic?.title}</h3>
+          <button type="button" aria-label="Fechar" onClick={() => setNewCardOpen(false)}>✕</button></header>
+        <label>Pergunta em inglês <textarea rows={3} value={newQuestion} onChange={e => setNewQuestion(e.target.value)} lang="en-US" spellCheck /></label>
+        <label>Resposta em inglês (opcional) <textarea rows={5} value={newAnswer} onChange={e => setNewAnswer(e.target.value)} lang="en-US" spellCheck /></label>
+        <label>Nível CEFR <select value={newLevel} onChange={e => setNewLevel(e.target.value as typeof newLevel)}>
+          <option value="">Sem classificação</option>{(['a1','a2','b1','b2','c1'] as const).map(v => <option key={v} value={v}>{v.toUpperCase()}</option>)}
+        </select></label>
+        <p>Este card será salvo somente neste dispositivo. Faça backup privado ou exporte o tópico inteiro para publicar após revisão.</p>
+        {newCardError && <p className="warning-banner" role="alert">{newCardError}</p>}
+        <div className="small-talk-actions"><button type="button" className="primary-button" disabled={!newQuestion.trim()} onClick={addCard}>Salvar nova pergunta</button>
+          <button type="button" className="secondary-button" onClick={() => setNewCardOpen(false)}>Cancelar</button></div>
+      </section>
+    </div>}
     {printMode && <div className="small-talk-export-overlay" onMouseDown={event => { if (event.target === event.currentTarget) setPrintMode(null); }}>
       <section className="small-talk-export-modal" role="dialog" aria-modal="true" aria-labelledby="small-talk-print-title">
         <header className="small-talk-export-header"><h3 id="small-talk-print-title">🖨️ Imprimir tópico A4</h3><button type="button" aria-label="Fechar" onClick={() => setPrintMode(null)}>✕</button></header>
