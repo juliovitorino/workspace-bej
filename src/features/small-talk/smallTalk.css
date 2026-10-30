@@ -305,9 +305,15 @@
   .small-talk-page .small-talk-topic-export-trigger {
     flex: 1 1 100%;
   }
+  /* Pergunta em linha exclusiva: os controles não comprimem o texto. */
   .small-talk-page .small-talk-question-heading p {
     min-width: 0;
-    flex: 1 1 0;
+    width: 100%;
+    flex: 0 0 100%;
+  }
+  .small-talk-page .small-talk-question-heading > button {
+    flex: 0 0 auto;
+    max-width: 100%;
   }
   .small-talk-page .small-talk-question-card {
     width: 100%;
