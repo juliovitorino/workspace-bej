@@ -81,6 +81,8 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   const [newLevel, setNewLevel] = useState<'a1' | 'a2' | 'b1' | 'b2' | 'c1' | ''>('');
   const [showDeleted, setShowDeleted] = useState(false);
   const [newCardError, setNewCardError] = useState('');
+  const [pendingConfirmation, setPendingConfirmation] = useState<{ kind: 'remove-answer' | 'remove-card'; id: string } | null>(null);
+  const [restorePromptId, setRestorePromptId] = useState<string | null>(null);
 
   const activeTopicItems = useMemo(() => {
     const published = topic?.items ?? [];
@@ -106,7 +108,10 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     }
   }
   function toggleCustomCard(id: string, deleted: boolean) {
-    if (deleted && !window.confirm('Remover este card da prática? Ele ficará disponível para restauração no mesmo tópico.')) return;
+    if (deleted) { setPendingConfirmation({ kind: 'remove-card', id }); return; }
+    applyCustomCardDeletion(id, deleted);
+  }
+  function applyCustomCardDeletion(id: string, deleted: boolean) {
     try {
       setCustomItems(setCustomItemDeleted(id, deleted));
       setQuestionEditorId(null); setEditorId(null); setEditError('');
@@ -151,7 +156,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       (mode === 'questions' ? '<div class="notes"></div>' : '') + '</article>').join('');
     const popup = window.open('', '_blank');
     if (!popup) { setEditError('Permita pop-ups para imprimir.'); return; }
-    const css = '@page{size:A4;margin:17mm 16mm}body{font:12pt/1.55 Arial,sans-serif;color:#111827;background:white;margin:0}h1{color:#15438f;font-size:20pt}header{border-bottom:2px solid #1d4ed8;margin-bottom:20px}.qa{break-inside:avoid;page-break-inside:avoid;border-bottom:1px solid #ddd;margin-bottom:16px;padding-bottom:12px}.q{font-weight:700;color:#154bb2;white-space:pre-wrap}.a{margin:8px 0 0 20px;white-space:pre-wrap}.notes{margin:10px 0 0 20px;min-height:54px;border-bottom:1px dotted #999}.print{padding:10px}@media print{.print{display:none}}';
+    const css = '@page{size:A4;margin:17mm 16mm 17mm 26mm}body{font:12pt/1.55 Arial,sans-serif;color:#111827;background:white;margin:0}h1{color:#15438f;font-size:20pt}header{border-bottom:2px solid #1d4ed8;margin-bottom:20px}.qa{break-inside:avoid;page-break-inside:avoid;border-bottom:1px solid #ddd;margin-bottom:16px;padding-bottom:12px}.q{font-weight:700;color:#154bb2;white-space:pre-wrap}.a{margin:8px 0 0 20px;white-space:pre-wrap}.notes{margin:10px 0 0 20px;min-height:54px;border-bottom:1px dotted #999}.print{padding:10px}@media print{.print{display:none}}';
     popup.document.open();popup.document.write('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + esc(topic.title) + '</title><style>' + css + '</style></head><body><button class="print" onclick="window.print()">Imprimir / Salvar como PDF</button><header><h1>' + esc(topic.title) + '</h1><p>Brazilian English Journey — ' + (mode === 'both' ? 'Perguntas e respostas' : 'Somente perguntas') + ' — ' + items.length + ' perguntas</p></header>' + cards + '</body></html>');popup.document.close();
     // Aciona o diálogo nativo assim que o documento da nova aba estiver renderizado.
     // O botão no documento continua disponível como alternativa em navegadores restritivos.
@@ -368,16 +373,25 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   function openEditor(item: SmallTalkItem) { setEditorId(item.id); setDraft(answerFor(item)); setEditError(''); }
   function saveEditor() {
     if (!editorId || !draft.trim()) { setEditError('Digite uma resposta ou use a lixeira para removê-la.'); return; }
-    try { setAnswerOverrides(saveAnswerOverride(editorId, draft.trim(), topic?.items.find(item => item.id === editorId)?.answer?.text)); setEditorId(null); setAnswerVisible(v => v.includes(editorId) ? v : [...v, editorId]); setEditError(''); }
+    try {
+      const savedId = editorId;
+      setAnswerOverrides(saveAnswerOverride(savedId, draft.trim(), topic?.items.find(item => item.id === savedId)?.answer?.text));
+      setEditorId(null); setAnswerVisible(v => v.includes(savedId) ? v : [...v, savedId]); setEditError('');
+      window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
+        document.getElementById('small-talk-card-' + savedId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }));
+    }
     catch { setEditError('Não foi possível salvar. Verifique o armazenamento local.'); }
   }
   function removeAnswer(id: string) {
-    if (!window.confirm('Ocultar esta resposta ativa? O original importado será preservado e poderá ser restaurado.')) return;
+    setPendingConfirmation({ kind: 'remove-answer', id });
+  }
+  function applyRemoveAnswer(id: string) {
     try { setAnswerOverrides(saveAnswerOverride(id, null)); setAnswerVisible(v => v.filter(x => x !== id)); setEditorId(null); setEditError(''); }
     catch { setEditError('Não foi possível remover a resposta ativa.'); }
   }
   function restoreAnswer(id: string) {
-    try { setAnswerOverrides(restoreOriginalAnswer(id)); setEditorId(null); setEditError(''); }
+    try { setAnswerOverrides(restoreOriginalAnswer(id)); setEditorId(null); setRestorePromptId(null); setEditError(''); }
     catch { setEditError('Não foi possível restaurar a resposta importada.'); }
   }
   function downloadEdits() {
@@ -628,7 +642,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       const shown = answerVisible.includes(item.id);
       const modified = Object.prototype.hasOwnProperty.call(answerOverrides, item.id);
       const baseOriginal = personalAnswers?.answersByItemId[item.id]?.original?.segments.map(s => s.text).join('\n\n') ?? '';
-      return <article className="small-talk-question-card" key={item.id}>
+      return <article className="small-talk-question-card" id={'small-talk-card-' + item.id} key={item.id}>
         <div className="small-talk-question-heading"><p><strong>{questionFor(item)}</strong></p>
           <button type="button" className="small-talk-icon-button" aria-label="Editar pergunta" title="Editar pergunta" onClick={() => openQuestionEditor(item)}>✏️</button>
           {questionOverrides[item.id] && <button type="button" className="small-talk-restore-button" onClick={() => restoreQuestion(item.id)}>Restaurar pergunta</button>}
@@ -653,8 +667,8 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
             onClick={() => openAIAnalysis(item)}>
             <img src={aiAssetPath(aiProvider)} width="22" height="22" alt="" aria-hidden="true" />
           </button>
-          <button type="button" className="small-talk-icon-button" aria-label="Abrir resposta no Google Tradutor" title="Google Tradutor (resposta ativa)" disabled={!original} onClick={() => googleTranslate(original)}>🌐</button>
-          {modified && <button type="button" className="small-talk-restore-button" title="Recuperar o original importado" onClick={() => restoreAnswer(item.id)}>Restaurar original</button>}
+          <button type="button" className="small-talk-icon-button" aria-label="Abrir pergunta e resposta no Google Tradutor" title="Google Tradutor (pergunta + resposta)" disabled={!questionFor(item).trim() && !original.trim()} onClick={() => googleTranslate([questionFor(item).trim(), original.trim()].filter(Boolean).join('\n\n'))}>🌐</button>
+          {modified && <button type="button" className="small-talk-restore-button" title="Recuperar o original importado" aria-expanded={restorePromptId === item.id} onClick={() => setRestorePromptId(current => current === item.id ? null : item.id)}>Restaurar original</button>}
           {!original && !modified && <span className="settings-dialog-help">Sem resposta importada — use o lápis para incluir</span>}
           {modified && <span className="settings-dialog-help">Resposta editada localmente</span>}
           {customItems[item.id] && !(topic?.items ?? []).some(published => published.id === item.id) && <button type="button" className="small-talk-restore-button" title="Remover card pessoal (recuperável)" onClick={() => toggleCustomCard(item.id, true)}>Remover card</button>}
@@ -668,9 +682,36 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
             <button type="button" className="secondary-button" onClick={() => { setEditorId(null); setEditError(''); }}>Cancelar</button>
           </div>
         </div>}
+        {modified && restorePromptId === item.id && <div className="small-talk-restore-warning" role="group" aria-label="Confirmar restauração da resposta">
+          <p role="alert"><strong>Atenção:</strong> restaurar o original descartará a edição local desta resposta. Essa operação não poderá ser desfeita.</p>
+          <div className="small-talk-actions">
+            <button type="button" className="secondary-button" onClick={() => setRestorePromptId(null)}>Cancelar</button>
+            <button type="button" className="small-talk-danger-button" onClick={() => restoreAnswer(item.id)}>RESTAURAR ORIGINAL</button>
+          </div>
+        </div>}
       </article>;
     })}</div>
     {!loading && filtered.length === 0 && <p>Nenhuma pergunta corresponde aos filtros.</p>}
+    {pendingConfirmation && <div className="small-talk-export-overlay" onMouseDown={event => { if (event.target === event.currentTarget) setPendingConfirmation(null); }}>
+      <section className="small-talk-export-modal small-talk-confirm-modal" role="dialog" aria-modal="true" aria-labelledby="small-talk-confirm-title" aria-describedby="small-talk-confirm-description">
+        <header className="small-talk-export-header">
+          <h3 id="small-talk-confirm-title">Confirmar remoção</h3>
+          <button type="button" aria-label="Fechar" onClick={() => setPendingConfirmation(null)}>✕</button>
+        </header>
+        <p id="small-talk-confirm-description">{pendingConfirmation.kind === 'remove-card'
+          ? 'Remover este card pessoal da prática? Ele continuará disponível para restauração neste tópico.'
+          : 'Ocultar esta resposta ativa? O original será preservado e poderá ser restaurado.'}</p>
+        <div className="small-talk-actions">
+          <button type="button" className="secondary-button" onClick={() => setPendingConfirmation(null)}>Cancelar</button>
+          <button type="button" className="small-talk-danger-button" onClick={() => {
+            const { kind, id } = pendingConfirmation;
+            setPendingConfirmation(null);
+            if (kind === 'remove-card') applyCustomCardDeletion(id, true);
+            else applyRemoveAnswer(id);
+          }}>REMOVER</button>
+        </div>
+      </section>
+    </div>}
     {newCardOpen && <div className="small-talk-export-overlay" onMouseDown={event => { if (event.target === event.currentTarget) setNewCardOpen(false); }}>
       <section className="small-talk-export-modal" role="dialog" aria-modal="true" aria-labelledby="small-talk-add-title">
         <header className="small-talk-export-header"><h3 id="small-talk-add-title">＋ Nova pergunta — {topic?.title}</h3>
