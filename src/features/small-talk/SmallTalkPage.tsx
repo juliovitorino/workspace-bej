@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { AI_PROVIDER_CHANGED_EVENT, aiAssetPath, getAIProvider, type AIProvider } from '../../config/aiProvider';
+import { buildSmallTalkAnalysisPrompt } from './smallTalkAiPrompt';
 import { loadSmallTalkIndex, loadSmallTalkTopic } from '../../services/smallTalkCatalogService';
 import { readSmallTalkPersonalAnswers } from '../../services/smallTalkPersonalAnswersService';
 import type { SmallTalkItem, SmallTalkTopic, SmallTalkTopicIndexEntry, SmallTalkWalkingSettings } from '../../types/smallTalk';
@@ -32,6 +33,10 @@ const topicSorter = new Intl.Collator('en-US', { sensitivity: 'base', numeric: t
 export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   const [aiProvider, setAiProvider] = useState<AIProvider>(getAIProvider);
   const [aiMessage, setAiMessage] = useState('');
+  const [aiManualPrompt, setAiManualPrompt] = useState('');
+  const [geminiPrompt, setGeminiPrompt] = useState('');
+  const [geminiCopied, setGeminiCopied] = useState(false);
+  const [geminiCopyError, setGeminiCopyError] = useState('');
   useEffect(() => {
     const sync = () => setAiProvider(getAIProvider());
     window.addEventListener(AI_PROVIDER_CHANGED_EVENT, sync);
@@ -81,6 +86,8 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   const [newLevel, setNewLevel] = useState<'a1' | 'a2' | 'b1' | 'b2' | 'c1' | ''>('');
   const [showDeleted, setShowDeleted] = useState(false);
   const [newCardError, setNewCardError] = useState('');
+  const [pendingConfirmation, setPendingConfirmation] = useState<{ kind: 'remove-answer' | 'remove-card'; id: string } | null>(null);
+  const [restorePromptId, setRestorePromptId] = useState<string | null>(null);
 
   const activeTopicItems = useMemo(() => {
     const published = topic?.items ?? [];
@@ -106,7 +113,10 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     }
   }
   function toggleCustomCard(id: string, deleted: boolean) {
-    if (deleted && !window.confirm('Remover este card da prática? Ele ficará disponível para restauração no mesmo tópico.')) return;
+    if (deleted) { setPendingConfirmation({ kind: 'remove-card', id }); return; }
+    applyCustomCardDeletion(id, deleted);
+  }
+  function applyCustomCardDeletion(id: string, deleted: boolean) {
     try {
       setCustomItems(setCustomItemDeleted(id, deleted));
       setQuestionEditorId(null); setEditorId(null); setEditError('');
@@ -151,7 +161,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       (mode === 'questions' ? '<div class="notes"></div>' : '') + '</article>').join('');
     const popup = window.open('', '_blank');
     if (!popup) { setEditError('Permita pop-ups para imprimir.'); return; }
-    const css = '@page{size:A4;margin:17mm 16mm}body{font:12pt/1.55 Arial,sans-serif;color:#111827;background:white;margin:0}h1{color:#15438f;font-size:20pt}header{border-bottom:2px solid #1d4ed8;margin-bottom:20px}.qa{break-inside:avoid;page-break-inside:avoid;border-bottom:1px solid #ddd;margin-bottom:16px;padding-bottom:12px}.q{font-weight:700;color:#154bb2;white-space:pre-wrap}.a{margin:8px 0 0 20px;white-space:pre-wrap}.notes{margin:10px 0 0 20px;min-height:54px;border-bottom:1px dotted #999}.print{padding:10px}@media print{.print{display:none}}';
+    const css = '@page{size:A4;margin:17mm 16mm 17mm 26mm}body{font:12pt/1.55 Arial,sans-serif;color:#111827;background:white;margin:0}h1{color:#15438f;font-size:20pt}header{border-bottom:2px solid #1d4ed8;margin-bottom:20px}.qa{break-inside:avoid;page-break-inside:avoid;border-bottom:1px solid #ddd;margin-bottom:16px;padding-bottom:12px}.q{font-weight:700;color:#154bb2;white-space:pre-wrap}.a{margin:8px 0 0 20px;white-space:pre-wrap}.notes{margin:10px 0 0 20px;min-height:54px;border-bottom:1px dotted #999}.print{padding:10px}@media print{.print{display:none}}';
     popup.document.open();popup.document.write('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + esc(topic.title) + '</title><style>' + css + '</style></head><body><button class="print" onclick="window.print()">Imprimir / Salvar como PDF</button><header><h1>' + esc(topic.title) + '</h1><p>Brazilian English Journey — ' + (mode === 'both' ? 'Perguntas e respostas' : 'Somente perguntas') + ' — ' + items.length + ' perguntas</p></header>' + cards + '</body></html>');popup.document.close();
     // Aciona o diálogo nativo assim que o documento da nova aba estiver renderizado.
     // O botão no documento continua disponível como alternativa em navegadores restritivos.
@@ -368,16 +378,25 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   function openEditor(item: SmallTalkItem) { setEditorId(item.id); setDraft(answerFor(item)); setEditError(''); }
   function saveEditor() {
     if (!editorId || !draft.trim()) { setEditError('Digite uma resposta ou use a lixeira para removê-la.'); return; }
-    try { setAnswerOverrides(saveAnswerOverride(editorId, draft.trim(), topic?.items.find(item => item.id === editorId)?.answer?.text)); setEditorId(null); setAnswerVisible(v => v.includes(editorId) ? v : [...v, editorId]); setEditError(''); }
+    try {
+      const savedId = editorId;
+      setAnswerOverrides(saveAnswerOverride(savedId, draft.trim(), topic?.items.find(item => item.id === savedId)?.answer?.text));
+      setEditorId(null); setAnswerVisible(v => v.includes(savedId) ? v : [...v, savedId]); setEditError('');
+      window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
+        document.getElementById('small-talk-card-' + savedId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }));
+    }
     catch { setEditError('Não foi possível salvar. Verifique o armazenamento local.'); }
   }
   function removeAnswer(id: string) {
-    if (!window.confirm('Ocultar esta resposta ativa? O original importado será preservado e poderá ser restaurado.')) return;
+    setPendingConfirmation({ kind: 'remove-answer', id });
+  }
+  function applyRemoveAnswer(id: string) {
     try { setAnswerOverrides(saveAnswerOverride(id, null)); setAnswerVisible(v => v.filter(x => x !== id)); setEditorId(null); setEditError(''); }
     catch { setEditError('Não foi possível remover a resposta ativa.'); }
   }
   function restoreAnswer(id: string) {
-    try { setAnswerOverrides(restoreOriginalAnswer(id)); setEditorId(null); setEditError(''); }
+    try { setAnswerOverrides(restoreOriginalAnswer(id)); setEditorId(null); setRestorePromptId(null); setEditError(''); }
     catch { setEditError('Não foi possível restaurar a resposta importada.'); }
   }
   function downloadEdits() {
@@ -430,53 +449,92 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       setBackupMessage('Edições e cards pessoais importados e mesclados pela data. Confira seus tópicos.');
     } catch { setBackupMessage('Backup inválido ou armazenamento indisponível. Confira o arquivo.'); }
   }
-  function openAIAnalysis(item: SmallTalkItem) {
+  async function openAIAnalysis(item: SmallTalkItem) {
+    setAiManualPrompt('');
+    setGeminiPrompt('');
+    setGeminiCopied(false);
+    setGeminiCopyError('');
     const question = questionFor(item).trim();
     const answer = answerFor(item).trim();
-    // BASE_URL suporta publicação em subdiretórios, sem supor um domínio fixo.
+    const provider = getAIProvider();
     const base = new URL(import.meta.env.BASE_URL, window.location.origin);
     const fullFrameworkUrl = new URL('framework/full-framework.json', base).href;
     const simplifiedFrameworkUrl = new URL('framework/simplified-framework.json', base).href;
-    const prompt = [
-      'Você é um professor de inglês americano e revisor pedagógico do Brazilian English Journey (BEJ).',
-      'Analise a pergunta ativa e a resposta corrente abaixo usando os dois frameworks gramaticais do BEJ como referência.',
-      '',
-      'PERGUNTA ATIVA:', question || '(sem pergunta)',
-      '',
-      'RESPOSTA CORRENTE:', answer || '(sem resposta cadastrada)',
-      '',
-      'FULL FRAMEWORK (JSON):', fullFrameworkUrl,
-      '',
-      'SIMPLIFIED FRAMEWORK (JSON):', simplifiedFrameworkUrl,
-      '',
-      'INSTRUÇÕES:',
-      '1. Consulte o conteúdo dos dois JSONs pelas URLs fornecidas antes de aplicar suas regras. Não presuma que conseguiu ler os arquivos: se não puder acessá-los, informe isso explicitamente e peça que eu os cole ou anexe.',
-      '2. Avalie se a resposta responde adequadamente à pergunta e se é natural para uma conversa em inglês americano.',
-      '3. Analise gramática, ordem das palavras, tempo verbal, auxiliares, modais, frequência, conectores e estruturas relevantes segundo os frameworks, distinguindo regras dos arquivos de sugestões gerais de inglês.',
-      '4. Aponte somente erros reais; diferencie erro gramatical, escolha pouco natural e alternativa estilística. Não altere o sentido nem invente informações pessoais.',
-      '5. Apresente: (a) avaliação resumida, (b) correções pontuais com explicações em português, (c) versão revisada em inglês, (d) tradução natural em português e (e) até três chunks reutilizáveis.',
-      '6. Se a resposta estiver vazia, sugira uma resposta curta e natural, indicando que é apenas um exemplo.',
-      '7. Preserve a pergunta original, exceto se houver erro real; nesse caso explique e proponha a correção separadamente.',
-      '8. Não trate os frameworks como gramática normativa universal: quando uma regra conflitar com uso natural do inglês, explique a diferença.',
-      '9. Não salve nem publique o conteúdo. Responda em português brasileiro, mantendo exemplos em inglês americano.'
-    ].join('\n');
-    // A cópia oferece fallback quando o site externo não suporta prompt pré-preenchido.
-    if (navigator.clipboard?.writeText) {
-      void navigator.clipboard.writeText(prompt).then(() => {
-        setAiMessage('Prompt copiado. Se necessário, cole no chat da IA.');
-      }).catch(() => setAiMessage('A cópia automática foi bloqueada. Use o ChatGPT ou copie o conteúdo manualmente.'));
+
+    if (provider === 'gemini') {
+      // O fetch é assíncrono: a permissão de copiar deve ser solicitada em
+      // um SEGUNDO clique explícito, dentro do modal, não depois do fetch.
+      setAiMessage('Carregando os dois frameworks para preparar o prompt do Gemini…');
+      try {
+        const [fullResponse, simplifiedResponse] = await Promise.all([
+          fetch(fullFrameworkUrl, { cache: 'no-store' }),
+          fetch(simplifiedFrameworkUrl, { cache: 'no-store' })
+        ]);
+        if (!fullResponse.ok || !simplifiedResponse.ok) {
+          throw new Error('HTTP ' + fullResponse.status + ' / ' + simplifiedResponse.status);
+        }
+        const [fullFramework, simplifiedFramework] = await Promise.all([fullResponse.json(), simplifiedResponse.json()]);
+        setGeminiPrompt(buildSmallTalkAnalysisPrompt({
+          question, answer, fullFrameworkUrl, simplifiedFrameworkUrl,
+          fullFramework, simplifiedFramework, provider
+        }));
+        setAiMessage('Prompt do Gemini preparado. Clique em COPIAR PROMPT no modal.');
+      } catch {
+        setAiMessage('Não foi possível carregar os dois frameworks JSON. Nenhum prompt incompleto foi enviado. Verifique a conexão e tente novamente.');
+      }
+      return;
     }
-    const provider = getAIProvider();
-    // ChatGPT aceita ?q= para pré-preenchimento; Gemini não oferece suporte nativo confiável.
-    // Para respostas muito longas, evita links excessivos: mantém o prompt na área de transferência.
-    const url = provider === 'chatgpt' && encodeURIComponent(prompt).length < 6500
-      ? 'https://chatgpt.com/?q=' + encodeURIComponent(prompt)
-      : provider === 'chatgpt' ? 'https://chatgpt.com/' : 'https://gemini.google.com/app';
-    const opened = window.open(url, '_blank');
-    if (opened) opened.opener = null;
+
+    // ChatGPT mantém a integração existente por URL, sem carregar JSONs.
+    const prompt = buildSmallTalkAnalysisPrompt({ question, answer, fullFrameworkUrl, simplifiedFrameworkUrl, provider });
+    const encoded = encodeURIComponent(prompt);
+    const url = encoded.length < 6500 ? 'https://chatgpt.com/?q=' + encoded : 'https://chatgpt.com/';
+    const opened = window.open(url, '_blank', 'noopener,noreferrer');
     if (!opened) setAiMessage('O navegador bloqueou a nova aba. Permita pop-ups e tente novamente.');
-    else if (provider === 'gemini') setAiMessage('Gemini aberto. Cole o prompt copiado na conversa para iniciar a análise.');
+    else if (encoded.length >= 6500) {
+      setAiManualPrompt(prompt);
+      setAiMessage('ChatGPT aberto. Copie o prompt exibido e cole na conversa.');
+    } else setAiMessage('ChatGPT aberto com o prompt na URL. Se necessário, confirme o envio.');
   }
+
+  async function copyGeminiPrompt() {
+    if (!geminiPrompt) return;
+    setGeminiCopied(false);
+    setGeminiCopyError('');
+    // Executado diretamente pelo botão: mantém a ativação do usuário para
+    // navigator.clipboard.writeText em Chrome, Safari e navegadores móveis.
+    let copied = false;
+    if (navigator.clipboard?.writeText) {
+      try { await navigator.clipboard.writeText(geminiPrompt); copied = true; } catch { /* fallback */ }
+    }
+    if (!copied) {
+      const textarea = document.getElementById('small-talk-gemini-prompt') as HTMLTextAreaElement | null;
+      if (textarea) {
+        textarea.focus(); textarea.select();
+        textarea.setSelectionRange(0, textarea.value.length);
+        try { copied = document.execCommand('copy'); } catch { /* seleção manual */ }
+      }
+    }
+    if (copied) {
+      setGeminiCopied(true);
+      setGeminiCopyError('');
+    } else {
+      setGeminiCopyError('O navegador bloqueou a cópia automática. O prompt está selecionado: use Ctrl+C (ou Copiar no celular), depois confirme que copiou.');
+    }
+  }
+
+  function openPreparedGemini() {
+    if (!geminiPrompt || !geminiCopied) return;
+    const opened = window.open('https://gemini.google.com/app', '_blank', 'noopener,noreferrer');
+    if (!opened) {
+      setGeminiCopyError('O navegador bloqueou a nova aba. Autorize pop-ups e tente novamente.');
+      return;
+    }
+    setGeminiPrompt('');
+    setGeminiCopied(false);
+    setAiMessage('Gemini aberto. Cole o prompt completo com Ctrl+V (ou Colar no celular) e envie.');
+  }
+
   function googleTranslate(text: string) {
     window.open('https://translate.google.com/?sl=en&tl=pt&text=' + encodeURIComponent(text) + '&op=translate', '_blank', 'noopener,noreferrer');
   }
@@ -588,6 +646,24 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     </section>}
     {editError && <p className="warning-banner" role="alert">{editError}</p>}
     {aiMessage && <p role="status" className="settings-dialog-help">{aiMessage}</p>}
+    {geminiPrompt && <div className="small-talk-export-overlay" onMouseDown={event => { if (event.target === event.currentTarget) setGeminiPrompt(''); }}>
+      <section className="small-talk-export-modal" role="dialog" aria-modal="true" aria-labelledby="small-talk-gemini-title">
+        <header className="small-talk-export-header">
+          <h3 id="small-talk-gemini-title">Enviar análise ao Gemini</h3>
+          <button type="button" aria-label="Fechar" onClick={() => setGeminiPrompt('')}>✕</button>
+        </header>
+        <p>O prompt inclui a pergunta, a resposta e os dois frameworks completos. Primeiro copie; depois abra o Gemini e cole na conversa.</p>
+        <textarea id="small-talk-gemini-prompt" readOnly value={geminiPrompt} rows={8} aria-label="Prompt completo para o Gemini" onFocus={event => event.currentTarget.select()} />
+        <div className="small-talk-actions">
+          <button type="button" className="primary-button" onClick={() => void copyGeminiPrompt()}>📋 COPIAR PROMPT</button>
+          <button type="button" className="primary-button" disabled={!geminiCopied} onClick={openPreparedGemini}>ABRIR GEMINI</button>
+          <button type="button" className="secondary-button" onClick={() => setGeminiPrompt('')}>Cancelar</button>
+        </div>
+        {geminiCopied && <p role="status">✓ Cópia confirmada pelo navegador. Agora clique em ABRIR GEMINI e cole com Ctrl+V.</p>}
+        {geminiCopyError && <div role="alert"><p>{geminiCopyError}</p><button type="button" className="secondary-button" onClick={() => setGeminiCopied(true)}>JÁ COPIEI MANUALMENTE</button></div>}
+      </section>
+    </div>}
+    {aiManualPrompt && <div className="small-talk-editor"><label htmlFor="small-talk-ai-manual-prompt">Copie manualmente o prompt completo para a IA:</label><textarea id="small-talk-ai-manual-prompt" readOnly value={aiManualPrompt} onFocus={event => event.currentTarget.select()} rows={6} /><button type="button" className="secondary-button" onClick={() => setAiManualPrompt('')}>Fechar prompt</button></div>}
     <div className="small-talk-backup-actions">
       <button type="button" className="secondary-button" onClick={downloadEdits}>⬇ Backup privado (perguntas + respostas)</button>
       <label className="small-talk-import-label">⬆ Importar backup
@@ -628,7 +704,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       const shown = answerVisible.includes(item.id);
       const modified = Object.prototype.hasOwnProperty.call(answerOverrides, item.id);
       const baseOriginal = personalAnswers?.answersByItemId[item.id]?.original?.segments.map(s => s.text).join('\n\n') ?? '';
-      return <article className="small-talk-question-card" key={item.id}>
+      return <article className="small-talk-question-card" id={'small-talk-card-' + item.id} key={item.id}>
         <div className="small-talk-question-heading"><p><strong>{questionFor(item)}</strong></p>
           <button type="button" className="small-talk-icon-button" aria-label="Editar pergunta" title="Editar pergunta" onClick={() => openQuestionEditor(item)}>✏️</button>
           {questionOverrides[item.id] && <button type="button" className="small-talk-restore-button" onClick={() => restoreQuestion(item.id)}>Restaurar pergunta</button>}
@@ -653,8 +729,8 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
             onClick={() => openAIAnalysis(item)}>
             <img src={aiAssetPath(aiProvider)} width="22" height="22" alt="" aria-hidden="true" />
           </button>
-          <button type="button" className="small-talk-icon-button" aria-label="Abrir resposta no Google Tradutor" title="Google Tradutor (resposta ativa)" disabled={!original} onClick={() => googleTranslate(original)}>🌐</button>
-          {modified && <button type="button" className="small-talk-restore-button" title="Recuperar o original importado" onClick={() => restoreAnswer(item.id)}>Restaurar original</button>}
+          <button type="button" className="small-talk-icon-button" aria-label="Abrir pergunta e resposta no Google Tradutor" title="Google Tradutor (pergunta + resposta)" disabled={!questionFor(item).trim() && !original.trim()} onClick={() => googleTranslate([questionFor(item).trim(), original.trim()].filter(Boolean).join('\n\n'))}>🌐</button>
+          {modified && <button type="button" className="small-talk-restore-button" title="Recuperar o original importado" aria-expanded={restorePromptId === item.id} onClick={() => setRestorePromptId(current => current === item.id ? null : item.id)}>Restaurar original</button>}
           {!original && !modified && <span className="settings-dialog-help">Sem resposta importada — use o lápis para incluir</span>}
           {modified && <span className="settings-dialog-help">Resposta editada localmente</span>}
           {customItems[item.id] && !(topic?.items ?? []).some(published => published.id === item.id) && <button type="button" className="small-talk-restore-button" title="Remover card pessoal (recuperável)" onClick={() => toggleCustomCard(item.id, true)}>Remover card</button>}
@@ -668,9 +744,36 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
             <button type="button" className="secondary-button" onClick={() => { setEditorId(null); setEditError(''); }}>Cancelar</button>
           </div>
         </div>}
+        {modified && restorePromptId === item.id && <div className="small-talk-restore-warning" role="group" aria-label="Confirmar restauração da resposta">
+          <p role="alert"><strong>Atenção:</strong> restaurar o original descartará a edição local desta resposta. Essa operação não poderá ser desfeita.</p>
+          <div className="small-talk-actions">
+            <button type="button" className="secondary-button" onClick={() => setRestorePromptId(null)}>Cancelar</button>
+            <button type="button" className="small-talk-danger-button" onClick={() => restoreAnswer(item.id)}>RESTAURAR ORIGINAL</button>
+          </div>
+        </div>}
       </article>;
     })}</div>
     {!loading && filtered.length === 0 && <p>Nenhuma pergunta corresponde aos filtros.</p>}
+    {pendingConfirmation && <div className="small-talk-export-overlay" onMouseDown={event => { if (event.target === event.currentTarget) setPendingConfirmation(null); }}>
+      <section className="small-talk-export-modal small-talk-confirm-modal" role="dialog" aria-modal="true" aria-labelledby="small-talk-confirm-title" aria-describedby="small-talk-confirm-description">
+        <header className="small-talk-export-header">
+          <h3 id="small-talk-confirm-title">Confirmar remoção</h3>
+          <button type="button" aria-label="Fechar" onClick={() => setPendingConfirmation(null)}>✕</button>
+        </header>
+        <p id="small-talk-confirm-description">{pendingConfirmation.kind === 'remove-card'
+          ? 'Remover este card pessoal da prática? Ele continuará disponível para restauração neste tópico.'
+          : 'Ocultar esta resposta ativa? O original será preservado e poderá ser restaurado.'}</p>
+        <div className="small-talk-actions">
+          <button type="button" className="secondary-button" onClick={() => setPendingConfirmation(null)}>Cancelar</button>
+          <button type="button" className="small-talk-danger-button" onClick={() => {
+            const { kind, id } = pendingConfirmation;
+            setPendingConfirmation(null);
+            if (kind === 'remove-card') applyCustomCardDeletion(id, true);
+            else applyRemoveAnswer(id);
+          }}>REMOVER</button>
+        </div>
+      </section>
+    </div>}
     {newCardOpen && <div className="small-talk-export-overlay" onMouseDown={event => { if (event.target === event.currentTarget) setNewCardOpen(false); }}>
       <section className="small-talk-export-modal" role="dialog" aria-modal="true" aria-labelledby="small-talk-add-title">
         <header className="small-talk-export-header"><h3 id="small-talk-add-title">＋ Nova pergunta — {topic?.title}</h3>
