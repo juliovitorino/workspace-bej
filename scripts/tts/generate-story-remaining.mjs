@@ -3,15 +3,15 @@ import { mkdir, readFile, rename, rm, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-// Generate the seven remaining Cedar MP3s for "A Different Saturday".
+// Generate both Cedar and Marin MP3s for "A Different Saturday".
 // node scripts/tts/generate-story-remaining.mjs --dry-run
 // node scripts/tts/generate-story-remaining.mjs
-// The previously approved first paragraph is never modified.
+// The previously approved first Cedar MP3 is never modified.
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const jsonPath = path.join(root, "src/data/stories/stories-a1.json");
 const storyId = "a1-daily-life-537eaab2-c43e-4157-bfb9-f3eff1702a3f";
 const approvedParagraphId = "5aa0ac9c-9d3e-417b-8c8e-5935f0b1f252";
-const voice = "cedar";
+const voices = ["cedar", "marin"];
 const locale = "en-US";
 const dryRun = process.argv.includes("--dry-run");
 
@@ -30,7 +30,7 @@ if (story.paragraphs[0]?.id !== approvedParagraphId) {
 }
 const UUID = /^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i;
 const ids = new Set();
-const remaining = story.paragraphs.slice(1);
+const paragraphs = story.paragraphs;
 for (const paragraph of story.paragraphs) {
   if (!UUID.test(paragraph?.id ?? "") || typeof paragraph.en !== "string" || !paragraph.en.trim()) {
     throw new Error("Parágrafo com UUID inválido ou sem texto em inglês.");
@@ -39,7 +39,7 @@ for (const paragraph of story.paragraphs) {
   ids.add(paragraph.id);
 }
 
-function target(paragraph) {
+function target(paragraph, voice) {
   const url = `/audio/stories/${locale}/${voice}/${paragraph.id}.mp3`;
   return { url, file: path.join(root, "public", url.slice(1)) };
 }
@@ -74,8 +74,9 @@ function isMp3(bytes) {
 }
 
 const tasks = [];
-for (const [index, paragraph] of remaining.entries()) {
-  const { url, file } = target(paragraph);
+for (const [index, paragraph] of paragraphs.entries()) {
+  for (const voice of voices) {
+  const { url, file } = target(paragraph, voice);
   const hash = sha256(paragraph.en);
   const registeredUrl = paragraph.mp3?.[locale]?.[voice];
   const registeredHash = paragraph.hashmp3?.[locale]?.[voice];
@@ -83,7 +84,7 @@ for (const [index, paragraph] of remaining.entries()) {
 
   // Never silently replace a registered MP3 or a file with unknown provenance.
   if (registeredUrl && registeredUrl !== url || registeredHash && registeredHash !== hash) {
-    throw new Error(`Parágrafo ${index + 2}: URL ou hash divergente. Revisão manual necessária.`);
+    throw new Error(`Parágrafo ${index + 1}: URL ou hash divergente. Revisão manual necessária.`);
   }
   if (existing && existing.size === 0) {
     throw new Error(`Parágrafo ${index + 2}: MP3 vazio em ${file}.`);
@@ -94,21 +95,22 @@ for (const [index, paragraph] of remaining.entries()) {
   if (!existing && (registeredUrl || registeredHash)) {
     throw new Error(`Parágrafo ${index + 2}: JSON aponta para MP3 ausente: ${file}`);
   }
-  tasks.push({ index: index + 2, paragraph, url, file, hash, done: Boolean(existing) });
+  tasks.push({ index: index + 1, paragraph, voice, url, file, hash, done: Boolean(existing) });
+  }
 }
 
-console.log(`BEJ — A Different Saturday | en-US / Cedar | 7 parágrafos restantes | dry-run=${dryRun}`);
+console.log(`BEJ — A Different Saturday | en-US / Cedar + Marin | 8 parágrafos | dry-run=${dryRun}`);
 for (const task of tasks) {
-  console.log(`${task.index}/8 [${task.done ? "PRONTO" : "PENDENTE"}] ${task.paragraph.id} | ${task.paragraph.en}`);
+  console.log(`${task.index}/8 ${task.voice} [${task.done ? "PRONTO" : "PENDENTE"}] ${task.paragraph.id} | ${task.paragraph.en}`);
 }
 const pending = tasks.filter(task => !task.done);
-console.log(`Resumo: ${tasks.length - pending.length} já gerado(s), ${pending.length} pendente(s). Primeiro parágrafo preservado.`);
+console.log(`Resumo: ${tasks.length - pending.length} já registrado(s), ${pending.length} pendente(s) de ${tasks.length}. Cedar aprovado não será sobrescrito.`);
 if (dryRun || !pending.length) process.exit(0);
 if (!process.env.OPENAI_API_KEY) throw new Error("Configure OPENAI_API_KEY no ambiente.");
 
 let completed = 0;
 for (const task of pending) {
-  console.log(`Gerando parágrafo ${task.index}/8: ${task.paragraph.id}`);
+  console.log(`Gerando parágrafo ${task.index}/8 — ${task.voice}: ${task.paragraph.id}`);
   const response = await fetch("https://api.openai.com/v1/audio/speech", {
     method: "POST",
     headers: {
@@ -117,7 +119,7 @@ for (const task of pending) {
     },
     body: JSON.stringify({
       model: "gpt-4o-mini-tts",
-      voice,
+      voice: task.voice,
       input: task.paragraph.en,
       response_format: "mp3",
       instructions: [
@@ -136,14 +138,14 @@ for (const task of pending) {
   await atomicWrite(task.file, bytes);
   task.paragraph.mp3 = {
     ...task.paragraph.mp3,
-    [locale]: { ...task.paragraph.mp3?.[locale], [voice]: task.url }
+    [locale]: { ...task.paragraph.mp3?.[locale], [task.voice]: task.url }
   };
   task.paragraph.hashmp3 = {
     ...task.paragraph.hashmp3,
-    [locale]: { ...task.paragraph.hashmp3?.[locale], [voice]: task.hash }
+    [locale]: { ...task.paragraph.hashmp3?.[locale], [task.voice]: task.hash }
   };
   await atomicWrite(jsonPath, JSON.stringify(data, null, 2) + "\n");
   completed++;
-  console.log(`OK ${task.index}/8 — ${task.url} (${bytes.length} bytes)`);
+  console.log(`OK ${task.index}/8 ${task.voice} — ${task.url} (${bytes.length} bytes)`);
 }
-console.log(`Concluído: ${completed} novos MP3s Cedar. Parágrafo 1 e demais histórias preservados.`);
+console.log(`Concluído: ${completed} novos MP3s Cedar/Marin. Áudios anteriores e demais histórias preservados.`);
