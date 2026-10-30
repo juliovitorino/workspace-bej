@@ -1,0 +1,103 @@
+{
+  "id": "simplified-framework",
+  "title": "Simplified framework",
+  "language": "en-US",
+  "version": "1.0.0",
+  "notation": {
+    "+": "Sequence / concatenation as authored",
+    "|": "Alternative",
+    "∅": "Optional absence / empty element",
+    "∈": "Membership restriction",
+    "∉": "Exclusion restriction",
+    "@": "Condition or restriction marker",
+    "↗": "Jump / reference to labeled section",
+    "<...>": "Placeholder",
+    "[...]": "Group",
+    "::1": "Question-prefix section",
+    "::2": "Continuation after modal verbs / will",
+    "::3": "Complement/object and return reference"
+  },
+  "sections": [
+    {
+      "label": "::1",
+      "purpose": "add before if you intend to make a question",
+      "steps": [
+        {
+          "order": 1,
+          "expression": "[ connectors] +"
+        },
+        {
+          "order": 2,
+          "expression": "[ [ WH ] + [object:optional] @ (WH ∈ {how, what, which}) +"
+        },
+        {
+          "order": 3,
+          "expression": "[ modal verb +[not] | will +[not] +<Subject> | ∅] +"
+        },
+        {
+          "order": 4,
+          "expression": "[ ( to be | auxiliary verb )+ [not] ] ] + …"
+        }
+      ]
+    },
+    {
+      "label": "normal-sentences",
+      "purpose": "for normal sentences",
+      "steps": [
+        {
+          "order": 1,
+          "expression": "[ connectors | ∅] +"
+        },
+        {
+          "order": 2,
+          "expression": "[ if | ∅] +"
+        },
+        {
+          "order": 3,
+          "expression": "[frequency| ∅] @ ∉ {always, never, seldom, ever, rarely} +"
+        },
+        {
+          "order": 4,
+          "expression": "[<Subject>| ∅ ∈ imperative] +"
+        },
+        {
+          "order": 5,
+          "expression": "[ [modal verbs | will] +[not]| ∅] + ↗::2 ∉ {∅}"
+        },
+        {
+          "order": 6,
+          "expression": "[ to be +[not] +[going to] | auxiliary verb +[not] | ∅ ] +"
+        }
+      ]
+    },
+    {
+      "label": "::2",
+      "purpose": "continuation",
+      "steps": [
+        {
+          "order": 1,
+          "expression": "[frequency| ∅] @ ∉ {going to} +"
+        },
+        {
+          "order": 2,
+          "expression": "[been + (ING | past participle ) |∅] @ (auxiliary ∈ {have, has, had}) + ↗::3 ∉ {∅}"
+        },
+        {
+          "order": 3,
+          "expression": "[ ( verb infinitive + (“s” | “es” |∅) | verb ING | irregular verb | verb past participle | verb + “ED” ) | ∅ ] +"
+        }
+      ]
+    },
+    {
+      "label": "::3",
+      "purpose": "complement / object",
+      "steps": [
+        {
+          "order": 1,
+          "expression": "<complement | object > ↗::1"
+        }
+      ]
+    }
+  ],
+  "originalText": "Simplified framework\n\nadd before if you intend to make a question\n\n::1 [ connectors] +\n[ [ WH ] + [object:optional] @ (WH ∈ {how, what, which}) +\n[ modal verb +[not] | will +[not] +<Subject> | ∅] +\n[ ( to be | auxiliary verb )+ [not] ] ] + …\n\nfor normal sentences\n\n[ connectors | ∅] +\n[ if | ∅] +\n[frequency| ∅] @ ∉ {always, never, seldom, ever, rarely} +\n[<Subject>| ∅ ∈ imperative] +\n[ [modal verbs | will] +[not]| ∅] + ↗::2 ∉ {∅}\n[ to be +[not] +[going to] | auxiliary verb +[not] | ∅ ] +\n\n::2 [frequency| ∅] @ ∉ {going to} +\n[been + (ING | past participle ) |∅] @ (auxiliary ∈ {have, has, had}) + ↗::3 ∉ {∅}\n[ ( verb infinitive + (“s” | “es” |∅) | verb ING | irregular verb | verb past participle | verb + “ED” ) | ∅ ] +\n\n::3 + <complement | object > ↗::1"
+}
