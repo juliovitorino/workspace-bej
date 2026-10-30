@@ -1,0 +1,157 @@
+{
+  "name": "Full Framework",
+  "type": "english-sentence-framework",
+  "version": "1.0.0",
+  "language": "en-US",
+  "preservationPolicy": "Transcrição estrutural das regras fornecidas; sem correções gramaticais nem normalização de condições potencialmente ambíguas.",
+  "notation": {
+    "[]": "Bloco ou elemento da expressão original",
+    "()": "Agrupamento",
+    "+": "Concatenação ou sequência",
+    "|": "Alternativas",
+    "∅": "Ausência de elemento",
+    "@": "Condição ou restrição",
+    "∈": "Pertence ao conjunto",
+    "∉": "Não pertence ao conjunto",
+    "!∅": "Não vazio (notação mantida conforme fornecida)",
+    "≤": "Menor ou igual",
+    "↗": "Retorno ou referência à etapa indicada",
+    "::1": "Marcador da seção de perguntas",
+    "<Subject>": "Marcador de sujeito",
+    "<complement | object>": "Marcador de complemento ou objeto",
+    "…": "Continuação da expressão"
+  },
+  "sections": [
+    {
+      "id": "question-prefix",
+      "title": "add before if you intend to make a question",
+      "marker": "::1",
+      "optional": true,
+      "steps": [
+        {
+          "id": "q1",
+          "expression": "[ connectors | ∅]"
+        },
+        {
+          "id": "q2",
+          "expression": "[ WH ] + [object:optional | ∅]",
+          "condition": "WH ∈ {how, what, which}"
+        },
+        {
+          "id": "q3",
+          "expression": "[ modal verb +[not] | will +[not] +<Subject> | ∅]"
+        },
+        {
+          "id": "q4",
+          "expression": "[ ( to be | auxiliary verb ) | ∅ ] + [not + (even | ∅)]"
+        },
+        {
+          "id": "q5",
+          "expression": "…"
+        }
+      ],
+      "expression": "::1 [ connectors | ∅] + [ [ WH ] + [object:optional | ∅] @ (WH ∈ {how, what, which}) + [ modal verb +[not] | will +[not] +<Subject> | ∅] + [ ( to be | auxiliary verb ) | ∅ ] + [not + (even | ∅)] ] + …"
+    },
+    {
+      "id": "normal-sentences",
+      "title": "for normal sentences",
+      "steps": [
+        {
+          "id": "n1",
+          "expression": "[ connectors | ∅]"
+        },
+        {
+          "id": "n2",
+          "expression": "[ if | ∅]"
+        },
+        {
+          "id": "n3",
+          "expression": "[frequency + ( do| does| did| have| has| had) @ frequency !∅ } | ∅]"
+        },
+        {
+          "id": "n4",
+          "expression": "[<Subject> | ∅ ∈ imperative]"
+        },
+        {
+          "id": "n5",
+          "expression": "[ [modal verbs | will] + [not + (even | ∅)]| ∅]"
+        },
+        {
+          "id": "n6",
+          "expression": "[ (to be + [not + (even | ∅)] + [being] + [ (frequency| ∅) + ( going to | going to (be | have | have been) )] | auxiliary verb + [not + (even | ∅)] | ∅) ]"
+        },
+        {
+          "id": "n7",
+          "expression": "[frequency_habit | ∅]"
+        },
+        {
+          "id": "n8",
+          "expression": "[frequency_window | ∅]"
+        },
+        {
+          "id": "n9",
+          "expression": "[frequency_emphasis | ∅]"
+        },
+        {
+          "id": "n10",
+          "expression": "[been + (ING | past participle ) |∅]",
+          "condition": "auxiliary ∈ {have, has, had}"
+        },
+        {
+          "id": "n11",
+          "expression": "[ ( verb infinitive + (“s” | “es” |∅) | verb ING | irregular verb | verb past participle | verb + “ED” ) | ∅ ]"
+        },
+        {
+          "id": "n12",
+          "expression": "[report speech tag]",
+          "reference": "report-speech-tag"
+        },
+        {
+          "id": "n13",
+          "expression": "<complement | object >"
+        },
+        {
+          "id": "n14",
+          "expression": "[, tag question ? |∅ ]",
+          "next": "::1"
+        }
+      ],
+      "constraints": [
+        "total_frequency_slots ≤ 2",
+        "frequency_emphasis is exclusive",
+        "∉ {going to}"
+      ],
+      "expression": "[ connectors | ∅] + [ if | ∅] + [frequency + ( do| does| did| have| has| had) @ frequency !∅ } | ∅] + [<Subject> | ∅ ∈ imperative] + [ [modal verbs | will] + [not + (even | ∅)]| ∅] + [ (to be + [not + (even | ∅)] + [being] + [ (frequency| ∅) + ( going to | going to (be | have | have been) )] | auxiliary verb + [not + (even | ∅)] | ∅) ] + [frequency_habit | ∅] + [frequency_window | ∅] + [frequency_emphasis | ∅] @ total_frequency_slots ≤ 2 @ frequency_emphasis is exclusive @ ∉ {going to} + [been + (ING | past participle ) |∅] @ (auxiliary ∈ {have, has, had}) + [ ( verb infinitive + (“s” | “es” |∅) | verb ING | irregular verb | verb past participle | verb + “ED” ) | ∅ ] + [report speech tag] + <complement | object > [, tag question ? |∅ ] ↗ ::1"
+    },
+    {
+      "id": "report-speech-tag",
+      "title": "report speech tag",
+      "insertionPoint": "before <complement | object>",
+      "optional": true,
+      "steps": [
+        {
+          "id": "r1",
+          "expression": "[that | had | ∅]"
+        },
+        {
+          "id": "r2",
+          "expression": "[<Subject>]"
+        },
+        {
+          "id": "r3",
+          "expression": "[ [modal verbs] + [not] | ∅]"
+        },
+        {
+          "id": "r4",
+          "expression": "[ (to be | auxiliary verb + [not + (even | ∅)] | ∅) ]"
+        },
+        {
+          "id": "r5",
+          "expression": "[ ( verb infinitive + (“s” | “es”) | verb ING | irregular verb | verb past participle | verb + “ED” ) ]"
+        }
+      ],
+      "expression": "( [that | had | ∅] + [<Subject>] + [ [modal verbs] + [not] | ∅] + [ (to be | auxiliary verb + [not + (even | ∅)] | ∅) ] + [ ( verb infinitive + (“s” | “es”) | verb ING | irregular verb | verb past participle | verb + “ED” ) ] | ∅ )"
+    }
+  ],
+  "originalText": "**Full framework**\n\n**add before if you intend to make a question**\n\n::1 [ connectors | ∅] +\n\n[ [ WH ] + [object:optional | ∅] @ (WH ∈ {how, what, which})\n\n+ [ modal verb +[not] | will +[not] +<Subject> | ∅]\n\n+ [ ( to be | auxiliary verb ) | ∅ ] + [not + (even | ∅)] ] + …\n\n**for normal sentences**\n\n[ connectors | ∅] +\n\n[ if | ∅] +\n\n[frequency + ( do| does| did| have| has| had) @ frequency !∅ } | ∅] +\n\n[<Subject> | ∅ ∈ imperative] +\n\n[ [modal verbs | will] + [not + (even | ∅)]| ∅] +\n\n[ (to be + [not + (even | ∅)] + [being] + [ (frequency| ∅) + ( going to | going to (be | have | have been) )] | auxiliary verb + [not + (even | ∅)] | ∅) ] +\n\n[frequency_habit | ∅] +\n\n[frequency_window | ∅] +\n\n[frequency_emphasis | ∅]\n\n@ total_frequency_slots ≤ 2\n\n@ frequency_emphasis is exclusive\n\n@ ∉ {going to} +\n\n[been + (ING | past participle ) |∅] @ (auxiliary ∈ {have, has, had}) +\n\n[ ( verb infinitive + (“s” | “es” |∅) | verb ING | irregular verb | verb past participle | verb + “ED” ) | ∅ ] +\n\n**[report speech tag]**\n\n**+ <complement | object >**\n\n**[, tag question ? |∅ ] ↗ ::1**\n\n**[report speech tag]**\n\n**add this section before <complement | object> section**\n\n( [that | had | ∅] + [<Subject>]\n\n+ [ [modal verbs] + [not] | ∅] + [ (to be | auxiliary verb + [not + (even | ∅)] | ∅) ] +\n\n[ ( verb infinitive + (“s” | “es”) | verb ING | irregular verb | verb past participle | verb + “ED” ) ] | ∅ )"
+}

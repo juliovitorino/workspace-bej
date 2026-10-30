@@ -1,11 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { AI_PROVIDER_CHANGED_EVENT, aiAssetPath, getAIProvider, type AIProvider } from '../../config/aiProvider';
 import { loadSmallTalkIndex, loadSmallTalkTopic } from '../../services/smallTalkCatalogService';
 import { readSmallTalkPersonalAnswers } from '../../services/smallTalkPersonalAnswersService';
 import type { SmallTalkItem, SmallTalkTopic, SmallTalkTopicIndexEntry, SmallTalkWalkingSettings } from '../../types/smallTalk';
 import { readLocalJson, readWalkingSettings, saveLocalJson, SMALL_TALK_FAVORITES_KEY, SMALL_TALK_WALKING_SETTINGS_KEY } from './smallTalkPreferences';
 import { SmallTalkWalking } from './SmallTalkWalking';
-import { answerOverridesBackup, readAnswerOverrides, saveAnswerOverride, restoreOriginalAnswer } from './smallTalkAnswerOverrides';
+import { readAnswerOverrides, saveAnswerOverride, restoreOriginalAnswer, pruneRedundantAnswerOverrides } from './smallTalkAnswerOverrides';
+import { readQuestionOverrides, saveQuestionOverride, restoreOriginalQuestion, pruneRedundantQuestionOverrides } from './smallTalkQuestionOverrides';
 
 interface Props {
   onStudyState?: (active: boolean, mode: 'manual' | 'walking') => void;
@@ -27,6 +29,14 @@ const topicSorter = new Intl.Collator('en-US', { sensitivity: 'base', numeric: t
 
 
 export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
+  const [aiProvider, setAiProvider] = useState<AIProvider>(getAIProvider);
+  const [aiMessage, setAiMessage] = useState('');
+  useEffect(() => {
+    const sync = () => setAiProvider(getAIProvider());
+    window.addEventListener(AI_PROVIDER_CHANGED_EVENT, sync);
+    window.addEventListener('storage', sync);
+    return () => { window.removeEventListener(AI_PROVIDER_CHANGED_EVENT, sync); window.removeEventListener('storage', sync); };
+  }, []);
   const [topics, setTopics] = useState<SmallTalkTopicIndexEntry[]>([]);
   const [topicId, setTopicId] = useState('');
   const [topicsMenuOpen, setTopicsMenuOpen] = useState(false);
@@ -50,6 +60,11 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     try { return readAnswerOverrides(); } catch { return {}; }
   });
   const [editError, setEditError] = useState('');
+  const [questionOverrides, setQuestionOverrides] = useState(() => { try { return readQuestionOverrides(); } catch { return {}; } });
+  const [questionEditorId, setQuestionEditorId] = useState<string | null>(null);
+  const [questionDraft, setQuestionDraft] = useState('');
+  const [printMode, setPrintMode] = useState<'both' | 'questions' | null>(null);
+  const [backupMessage, setBackupMessage] = useState('');
   const [exportCard, setExportCard] = useState<{ item: SmallTalkItem; json: string } | null>(null);
   const [exportApproved, setExportApproved] = useState(false);
   const [exportMessage, setExportMessage] = useState('');
@@ -57,6 +72,61 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   const [topicExportApproved, setTopicExportApproved] = useState(false);
   const [topicExportStatus, setTopicExportStatus] = useState('');
 
+  function questionFor(item: SmallTalkItem) { return questionOverrides[item.id]?.text ?? item.question?.text ?? ''; }
+  function itemWithQuestion(item: SmallTalkItem): SmallTalkItem {
+    const question = questionFor(item);
+    return { ...item, question: item.question ? { ...item.question, text: question,
+      audio: item.question.text === question ? item.question.audio : null } : null };
+  }
+  function openQuestionEditor(item: SmallTalkItem) { setQuestionEditorId(item.id); setQuestionDraft(questionFor(item)); setEditError(''); }
+  function saveQuestionEditor() {
+    if (!questionEditorId || !questionDraft.trim()) { setEditError('Digite uma pergunta.'); return; }
+    try { setQuestionOverrides(saveQuestionOverride(questionEditorId, questionDraft, topic?.items.find(item => item.id === questionEditorId)?.question?.text)); setQuestionEditorId(null); setEditError(''); }
+    catch { setEditError('Erro ao salvar pergunta no armazenamento local.'); }
+  }
+  function restoreQuestion(id: string) {
+    try { setQuestionOverrides(restoreOriginalQuestion(id)); setQuestionEditorId(null); setEditError(''); }
+    catch { setEditError('Erro ao restaurar pergunta.'); }
+  }
+  async function copyCardText() {
+    if (!exportCard) return;
+    const text = [questionFor(exportCard.item).trim(), answerFor(exportCard.item).trim()].filter(Boolean).join('\n\n');
+    if (navigator.clipboard?.writeText) {
+      try { await navigator.clipboard.writeText(text); setExportMessage('Pergunta e resposta copiadas!'); return; } catch { /* fallback */ }
+    }
+    const field = document.createElement('textarea');
+    field.value = text; field.style.position = 'fixed'; field.style.opacity = '0';
+    document.body.appendChild(field); field.focus(); field.select();
+    let copied = false;
+    try { copied = document.execCommand('copy'); } catch { /* acesso negado */ }
+    field.remove(); setExportMessage(copied ? 'Pergunta e resposta copiadas!' : 'Não foi possível copiar. Verifique as permissões.');
+  }
+  function printTopic(mode: 'both' | 'questions') {
+    if (!topic || loading || topic.topicId !== topicId) return;
+    const esc = (value: string) => value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+    const items = topic.items.filter(item => item.enabled && questionFor(item).trim());
+    const cards = items.map((item,index) => '<article class="qa"><div class="q">' + (index + 1) + '. ' + esc(questionFor(item)) + '</div>' +
+      (mode === 'both' && answerFor(item).trim() ? '<div class="a">' + esc(answerFor(item).trim()) + '</div>' : '') +
+      (mode === 'questions' ? '<div class="notes"></div>' : '') + '</article>').join('');
+    const popup = window.open('', '_blank');
+    if (!popup) { setEditError('Permita pop-ups para imprimir.'); return; }
+    const css = '@page{size:A4;margin:17mm 16mm}body{font:12pt/1.55 Arial,sans-serif;color:#111827;background:white;margin:0}h1{color:#15438f;font-size:20pt}header{border-bottom:2px solid #1d4ed8;margin-bottom:20px}.qa{break-inside:avoid;page-break-inside:avoid;border-bottom:1px solid #ddd;margin-bottom:16px;padding-bottom:12px}.q{font-weight:700;color:#154bb2;white-space:pre-wrap}.a{margin:8px 0 0 20px;white-space:pre-wrap}.notes{margin:10px 0 0 20px;min-height:54px;border-bottom:1px dotted #999}.print{padding:10px}@media print{.print{display:none}}';
+    popup.document.open();popup.document.write('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + esc(topic.title) + '</title><style>' + css + '</style></head><body><button class="print" onclick="window.print()">Imprimir / Salvar como PDF</button><header><h1>' + esc(topic.title) + '</h1><p>Brazilian English Journey — ' + (mode === 'both' ? 'Perguntas e respostas' : 'Somente perguntas') + ' — ' + items.length + ' perguntas</p></header>' + cards + '</body></html>');popup.document.close();
+    // Aciona o diálogo nativo assim que o documento da nova aba estiver renderizado.
+    // O botão no documento continua disponível como alternativa em navegadores restritivos.
+    // O evento afterprint ocorre tanto ao imprimir quanto ao cancelar o diálogo.
+    // Fechamos somente a aba temporária criada pelo próprio BEJ.
+    popup.addEventListener('afterprint', () => {
+      popup.setTimeout(() => { if (!popup.closed) popup.close(); }, 100);
+    }, { once: true });
+    popup.focus();
+    popup.setTimeout(() => {
+      if (popup.closed) return;
+      popup.focus();
+      popup.print();
+    }, 350);
+    setPrintMode(null);
+  }
   function prepareTopicExport() {
     if (!topic || loading || topic.topicId !== topicId) return;
     // Todos os itens do catálogo, independentemente de filtros, favoritos ou nível.
@@ -64,17 +134,18 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     // edição local > resposta pública > original privado.
     const items = topic.items.map(item => {
       const answer = answerFor(item).trim();
-      if (!answer) return { ...item, answer: null };
+      const activeItem = itemWithQuestion(item);
+      if (!answer) return { ...activeItem, answer: null };
       // MP3 público só pode ser mantido quando o texto ainda é o publicado.
       const audio = item.answer?.text === answer ? item.answer.audio : null;
-      return { ...item, answer: { text: answer, audio } };
+      return { ...activeItem, answer: { text: answer, audio } };
     });
     const output: SmallTalkTopic = { ...topic, items };
     setTopicExport({
-      json: JSON.stringify(output, null, 2) + '\\n',
+      json: JSON.stringify(output, null, 2),
       count: items.length,
       answered: items.filter(item => !!item.answer?.text).length,
-      edited: items.filter(item => Object.prototype.hasOwnProperty.call(answerOverrides, item.id)).length,
+      edited: items.filter(item => Object.prototype.hasOwnProperty.call(answerOverrides, item.id) || Object.prototype.hasOwnProperty.call(questionOverrides, item.id)).length,
       topicId: topic.topicId
     });
     setTopicExportApproved(false);
@@ -120,8 +191,8 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
 
   function openCardExport(item: SmallTalkItem) {
     const text = answerFor(item).trim();
-    if (!text) { setEditError('Este card não possui uma resposta para exportar.'); return; }
-    const publicItem: SmallTalkItem = { ...item, answer: { text, audio: null } };
+    // Cards sem resposta também podem ser exportados.
+    const publicItem: SmallTalkItem = { ...itemWithQuestion(item), answer: text ? { text, audio: item.answer?.text === text ? item.answer.audio : null } : null };
     setExportCard({ item, json: JSON.stringify(publicItem, null, 2) });
     setExportApproved(false);
     setExportMessage('');
@@ -193,7 +264,13 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     const controller = new AbortController();
     setLoading(true); setError(''); setAnswerVisible([]);
     loadSmallTalkTopic(topicId, 'en-US', controller.signal).then(value => {
-      if (active) { setTopic(value); setLoading(false); }
+      if (active) {
+        // A limpeza só considera IDs e textos do tópico público efetivamente carregado.
+        // Se o armazenamento falhar, não bloqueamos o estudo nem apagamos dados.
+        try { setAnswerOverrides(pruneRedundantAnswerOverrides(value.items)); } catch { /* dados preservados */ }
+        try { setQuestionOverrides(pruneRedundantQuestionOverrides(value.items)); } catch { /* dados preservados */ }
+        setTopic(value); setLoading(false);
+      }
     }).catch(e => { if (active && !controller.signal.aborted) { setError(String(e)); setLoading(false); } });
     return () => { active = false; controller.abort(); };
   }, [topicId]);
@@ -225,12 +302,12 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   const filtered = useMemo(() => {
     return (topic?.items ?? []).filter(item => {
       if (!item.enabled || !item.question?.text) return false;
-      if (query.trim() && !item.question.text.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())) return false;
+      if (query.trim() && !questionFor(item).toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())) return false;
       if (level !== 'all' && (level === 'unclassified' ? item.level !== null : item.level !== level)) return false;
       if (favoritesOnly && !favorites.includes(item.id)) return false;
       return true;
     });
-  }, [topic, query, level, favoritesOnly, favorites]);
+  }, [topic, query, level, favoritesOnly, favorites, questionOverrides]);
 
   function toggleFavorite(id: string) {
     const next = favorites.includes(id) ? favorites.filter(v => v !== id) : [...favorites, id];
@@ -250,7 +327,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   function openEditor(item: SmallTalkItem) { setEditorId(item.id); setDraft(answerFor(item)); setEditError(''); }
   function saveEditor() {
     if (!editorId || !draft.trim()) { setEditError('Digite uma resposta ou use a lixeira para removê-la.'); return; }
-    try { setAnswerOverrides(saveAnswerOverride(editorId, draft.trim())); setEditorId(null); setAnswerVisible(v => v.includes(editorId) ? v : [...v, editorId]); setEditError(''); }
+    try { setAnswerOverrides(saveAnswerOverride(editorId, draft.trim(), topic?.items.find(item => item.id === editorId)?.answer?.text)); setEditorId(null); setAnswerVisible(v => v.includes(editorId) ? v : [...v, editorId]); setEditError(''); }
     catch { setEditError('Não foi possível salvar. Verifique o armazenamento local.'); }
   }
   function removeAnswer(id: string) {
@@ -264,11 +341,96 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   }
   function downloadEdits() {
     try {
-      const blob = new Blob([answerOverridesBackup()], { type: 'application/json;charset=utf-8' });
+      const backup = JSON.stringify({ schemaVersion: '1.0.0', module: 'small-talk', dataType: 'question-answer-overrides',
+        questions: readQuestionOverrides(), answers: readAnswerOverrides(), exportedAt: new Date().toISOString() }, null, 2);
+      const blob = new Blob([backup], { type: 'application/json;charset=utf-8' });
       const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href = url; a.download = 'small-talk-respostas-editadas-privado.json'; a.click();
+      const a = document.createElement('a'); a.href = url; a.download = 'small-talk-perguntas-respostas-privado.json'; a.click();
       window.setTimeout(() => URL.revokeObjectURL(url), 2000);
     } catch { setEditError('Falha ao exportar as edições locais.'); }
+  }
+  async function importEdits(file: File) {
+    try {
+      const parsed: unknown = JSON.parse(await file.text());
+      if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) throw Error('Formato inválido');
+      const data = parsed as Record<string, unknown>;
+      if (data.schemaVersion !== '1.0.0' || data.module !== 'small-talk' ||
+          !['question-answer-overrides','answer-overrides'].includes(String(data.dataType))) throw Error('Backup incompatível');
+      const incomingQuestions = data.dataType === 'answer-overrides' ? {} : data.questions;
+      const incomingAnswers = data.dataType === 'answer-overrides' ? data.overrides : data.answers;
+      const valid = (v: unknown, allowNull: boolean) => v !== null && typeof v === 'object' && !Array.isArray(v) &&
+        Object.entries(v).every(([id, raw]) => {
+          if (!id || !raw || typeof raw !== 'object' || Array.isArray(raw)) return false;
+          const e = raw as Record<string, unknown>;
+          return typeof e.updatedAt === 'string' && !Number.isNaN(Date.parse(e.updatedAt)) &&
+            ((typeof e.text === 'string' && !!e.text.trim()) || (allowNull && e.text === null));
+        });
+      if (!valid(incomingQuestions, false) || !valid(incomingAnswers, true)) throw Error('Edições inválidas');
+      const merge = <T extends {updatedAt: string}>(old: Record<string,T>, added: Record<string,T>) => {
+        const next = {...old};
+        for (const [id, value] of Object.entries(added)) {
+          if (!next[id] || Date.parse(value.updatedAt) > Date.parse(next[id].updatedAt)) next[id] = value;
+        }
+        return next;
+      };
+      const questions = merge(readQuestionOverrides(), incomingQuestions as ReturnType<typeof readQuestionOverrides>);
+      const answers = merge(readAnswerOverrides(), incomingAnswers as ReturnType<typeof readAnswerOverrides>);
+      localStorage.setItem('bej:small-talk:question-overrides:v1', JSON.stringify(questions));
+      localStorage.setItem('bej:small-talk:answer-overrides:v1', JSON.stringify(answers));
+      // Remover duplicatas apenas depois da mesclagem; manter as demais revisões intactas.
+      if (topic && topic.topicId === topicId) {
+        try { setQuestionOverrides(pruneRedundantQuestionOverrides(topic.items)); } catch { setQuestionOverrides(questions); }
+        try { setAnswerOverrides(pruneRedundantAnswerOverrides(topic.items)); } catch { setAnswerOverrides(answers); }
+      } else { setQuestionOverrides(questions); setAnswerOverrides(answers); }
+      setBackupMessage('Edições importadas e mescladas pela data. Confira seus cards.');
+    } catch { setBackupMessage('Backup inválido ou armazenamento indisponível. Confira o arquivo.'); }
+  }
+  function openAIAnalysis(item: SmallTalkItem) {
+    const question = questionFor(item).trim();
+    const answer = answerFor(item).trim();
+    // BASE_URL suporta publicação em subdiretórios, sem supor um domínio fixo.
+    const base = new URL(import.meta.env.BASE_URL, window.location.origin);
+    const fullFrameworkUrl = new URL('framework/full-framework.json', base).href;
+    const simplifiedFrameworkUrl = new URL('framework/simplified-framework.json', base).href;
+    const prompt = [
+      'Você é um professor de inglês americano e revisor pedagógico do Brazilian English Journey (BEJ).',
+      'Analise a pergunta ativa e a resposta corrente abaixo usando os dois frameworks gramaticais do BEJ como referência.',
+      '',
+      'PERGUNTA ATIVA:', question || '(sem pergunta)',
+      '',
+      'RESPOSTA CORRENTE:', answer || '(sem resposta cadastrada)',
+      '',
+      'FULL FRAMEWORK (JSON):', fullFrameworkUrl,
+      '',
+      'SIMPLIFIED FRAMEWORK (JSON):', simplifiedFrameworkUrl,
+      '',
+      'INSTRUÇÕES:',
+      '1. Consulte o conteúdo dos dois JSONs pelas URLs fornecidas antes de aplicar suas regras. Não presuma que conseguiu ler os arquivos: se não puder acessá-los, informe isso explicitamente e peça que eu os cole ou anexe.',
+      '2. Avalie se a resposta responde adequadamente à pergunta e se é natural para uma conversa em inglês americano.',
+      '3. Analise gramática, ordem das palavras, tempo verbal, auxiliares, modais, frequência, conectores e estruturas relevantes segundo os frameworks, distinguindo regras dos arquivos de sugestões gerais de inglês.',
+      '4. Aponte somente erros reais; diferencie erro gramatical, escolha pouco natural e alternativa estilística. Não altere o sentido nem invente informações pessoais.',
+      '5. Apresente: (a) avaliação resumida, (b) correções pontuais com explicações em português, (c) versão revisada em inglês, (d) tradução natural em português e (e) até três chunks reutilizáveis.',
+      '6. Se a resposta estiver vazia, sugira uma resposta curta e natural, indicando que é apenas um exemplo.',
+      '7. Preserve a pergunta original, exceto se houver erro real; nesse caso explique e proponha a correção separadamente.',
+      '8. Não trate os frameworks como gramática normativa universal: quando uma regra conflitar com uso natural do inglês, explique a diferença.',
+      '9. Não salve nem publique o conteúdo. Responda em português brasileiro, mantendo exemplos em inglês americano.'
+    ].join('\n');
+    // A cópia oferece fallback quando o site externo não suporta prompt pré-preenchido.
+    if (navigator.clipboard?.writeText) {
+      void navigator.clipboard.writeText(prompt).then(() => {
+        setAiMessage('Prompt copiado. Se necessário, cole no chat da IA.');
+      }).catch(() => setAiMessage('A cópia automática foi bloqueada. Use o ChatGPT ou copie o conteúdo manualmente.'));
+    }
+    const provider = getAIProvider();
+    // ChatGPT aceita ?q= para pré-preenchimento; Gemini não oferece suporte nativo confiável.
+    // Para respostas muito longas, evita links excessivos: mantém o prompt na área de transferência.
+    const url = provider === 'chatgpt' && encodeURIComponent(prompt).length < 6500
+      ? 'https://chatgpt.com/?q=' + encodeURIComponent(prompt)
+      : provider === 'chatgpt' ? 'https://chatgpt.com/' : 'https://gemini.google.com/app';
+    const opened = window.open(url, '_blank');
+    if (opened) opened.opener = null;
+    if (!opened) setAiMessage('O navegador bloqueou a nova aba. Permita pop-ups e tente novamente.');
+    else if (provider === 'gemini') setAiMessage('Gemini aberto. Cole o prompt copiado na conversa para iniciar a análise.');
   }
   function googleTranslate(text: string) {
     window.open('https://translate.google.com/?sl=en&tl=pt&text=' + encodeURIComponent(text) + '&op=translate', '_blank', 'noopener,noreferrer');
@@ -291,7 +453,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
         [selection[i], selection[j]] = [selection[j], selection[i]];
       }
     }
-    setTopicsMenuOpen(false); setSessionItems(selection); setWalking(true);
+    setTopicsMenuOpen(false); setSessionItems(selection.map(itemWithQuestion)); setWalking(true);
   }
 
   if (walking) return <SmallTalkWalking items={sessionItems} settings={settings}
@@ -380,7 +542,14 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       <button type="button" className="primary-button" disabled={loading || !filtered.length} onClick={startWalking}>▶ Iniciar Modo Caminhada ({filtered.length} perguntas)</button>
     </section>}
     {editError && <p className="warning-banner" role="alert">{editError}</p>}
-    <div className="small-talk-backup-actions"><button type="button" className="secondary-button" onClick={downloadEdits}>⬇ Exportar backup privado das edições</button><span className="settings-dialog-help">Edições ficam apenas neste navegador; não são sincronizadas pelo Google Drive.</span></div>
+    {aiMessage && <p role="status" className="settings-dialog-help">{aiMessage}</p>}
+    <div className="small-talk-backup-actions">
+      <button type="button" className="secondary-button" onClick={downloadEdits}>⬇ Backup privado (perguntas + respostas)</button>
+      <label className="small-talk-import-label">⬆ Importar backup
+        <input type="file" accept="application/json,.json" onChange={event => { const file = event.currentTarget.files?.[0]; if (file) void importEdits(file); event.currentTarget.value = ''; }} />
+      </label><span className="settings-dialog-help">Salve no Drive e importe em outro dispositivo. Não há sincronização automática destas edições.</span>
+      {backupMessage && <span role="status">{backupMessage}</span>}
+    </div>
     <div className="small-talk-topic-export-bar">
       <button type="button" className="small-talk-topic-export-trigger" title="Exportar tópico inteiro"
         aria-label="Exportar tópico inteiro" disabled={loading || !topic || topic.topicId !== topicId}
@@ -392,7 +561,8 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
         </svg>
         <span>Exportar tópico inteiro</span>
       </button>
-      <span className="settings-dialog-help">Inclui todas as perguntas e respostas, mesmo fora dos filtros.</span>
+      <button type="button" className="small-talk-topic-export-trigger" aria-label="Imprimir tópico A4" disabled={loading || !topic || topic.topicId !== topicId} onClick={() => setPrintMode('both')}>🖨️ <span>Imprimir tópico</span></button>
+      <span className="settings-dialog-help">Exportação e impressão incluem o tópico inteiro.</span>
     </div>
     <header className="results-header"><h3>{loading ? 'Carregando...' : `${topic?.title ?? ''} — ${filtered.length} perguntas`}</h3></header>
     <div className="small-talk-question-list">{filtered.map(item => {
@@ -401,7 +571,16 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       const modified = Object.prototype.hasOwnProperty.call(answerOverrides, item.id);
       const baseOriginal = personalAnswers?.answersByItemId[item.id]?.original?.segments.map(s => s.text).join('\n\n') ?? '';
       return <article className="small-talk-question-card" key={item.id}>
-        <p><strong>{item.question?.text}</strong></p>
+        <div className="small-talk-question-heading"><p><strong>{questionFor(item)}</strong></p>
+          <button type="button" className="small-talk-icon-button" aria-label="Editar pergunta" title="Editar pergunta" onClick={() => openQuestionEditor(item)}>✏️</button>
+          {questionOverrides[item.id] && <button type="button" className="small-talk-restore-button" onClick={() => restoreQuestion(item.id)}>Restaurar pergunta</button>}
+        </div>
+        {questionEditorId === item.id && <div className="small-talk-editor">
+          <label><strong>Editar pergunta (original preservada)</strong>
+            <textarea rows={3} value={questionDraft} onChange={e => setQuestionDraft(e.target.value)} spellCheck lang="en-US" /></label>
+          <div className="small-talk-actions"><button type="button" className="primary-button" onClick={saveQuestionEditor}>Salvar pergunta</button>
+            <button type="button" className="secondary-button" onClick={() => setQuestionEditorId(null)}>Cancelar</button></div>
+        </div>}
         <p className="settings-dialog-help">{item.level?.toUpperCase() ?? 'Nível pendente'} · {item.reviewStatus === 'pending' ? 'Revisão editorial pendente' : item.reviewStatus}</p>
         <div className="small-talk-actions">
           <button type="button" className="small-talk-icon-button" aria-label={favorites.includes(item.id) ? 'Desfavoritar' : 'Favoritar'} title={favorites.includes(item.id) ? 'Desfavoritar' : 'Favoritar'} aria-pressed={favorites.includes(item.id)} onClick={() => toggleFavorite(item.id)}>{favorites.includes(item.id) ? '★' : '☆'}</button>
@@ -409,7 +588,13 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
           <button type="button" className="small-talk-icon-button" aria-label="Editar resposta" title="Editar resposta" onClick={() => openEditor(item)}>✏️</button>
           <button type="button" className="small-talk-icon-button" aria-label="Excluir resposta ativa" title="Excluir resposta ativa" disabled={!original} onClick={() => removeAnswer(item.id)}>🗑️</button>
           <button type="button" className="small-talk-icon-button" aria-label="Exportar JSON público deste card"
-            title="Exportar JSON público deste card" disabled={!original} onClick={() => openCardExport(item)}>📋</button>
+            title="Exportar JSON público deste card" onClick={() => openCardExport(item)}>📋</button>
+          <button type="button" className="small-talk-icon-button small-talk-ai-button"
+            aria-label={`Analisar pergunta e resposta com ${aiProvider === 'chatgpt' ? 'ChatGPT' : 'Gemini'}`}
+            title={`Analisar com ${aiProvider === 'chatgpt' ? 'ChatGPT' : 'Gemini'}`}
+            onClick={() => openAIAnalysis(item)}>
+            <img src={aiAssetPath(aiProvider)} width="22" height="22" alt="" aria-hidden="true" />
+          </button>
           <button type="button" className="small-talk-icon-button" aria-label="Abrir resposta no Google Tradutor" title="Google Tradutor (resposta ativa)" disabled={!original} onClick={() => googleTranslate(original)}>🌐</button>
           {modified && <button type="button" className="small-talk-restore-button" title="Recuperar o original importado" onClick={() => restoreAnswer(item.id)}>Restaurar original</button>}
           {!original && !modified && <span className="settings-dialog-help">Sem resposta importada — use o lápis para incluir</span>}
@@ -427,6 +612,17 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       </article>;
     })}</div>
     {!loading && filtered.length === 0 && <p>Nenhuma pergunta corresponde aos filtros.</p>}
+    {printMode && <div className="small-talk-export-overlay" onMouseDown={event => { if (event.target === event.currentTarget) setPrintMode(null); }}>
+      <section className="small-talk-export-modal" role="dialog" aria-modal="true" aria-labelledby="small-talk-print-title">
+        <header className="small-talk-export-header"><h3 id="small-talk-print-title">🖨️ Imprimir tópico A4</h3><button type="button" aria-label="Fechar" onClick={() => setPrintMode(null)}>✕</button></header>
+        <p>Imprime todas as perguntas ativas do tópico, incluindo suas edições locais, independentemente dos filtros.</p>
+        <label>Formato <select value={printMode} onChange={e => setPrintMode(e.target.value as 'both' | 'questions')}>
+          <option value="both">Perguntas e respostas</option><option value="questions">Somente perguntas com espaço para anotações</option>
+        </select></label>
+        <div className="small-talk-actions"><button type="button" className="primary-button" onClick={() => printTopic(printMode)}>Abrir impressão</button>
+          <button type="button" className="secondary-button" onClick={() => setPrintMode(null)}>Cancelar</button></div>
+      </section>
+    </div>}
     {topicExport && <div className="small-talk-export-overlay"
       onMouseDown={event => { if (event.target === event.currentTarget) setTopicExport(null); }}>
       <section className="small-talk-export-modal" role="dialog" aria-modal="true"
@@ -473,9 +669,10 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
           onFocus={event => event.currentTarget.select()} />
         <label className="small-talk-export-consent">
           <input type="checkbox" checked={exportApproved} onChange={event => setExportApproved(event.target.checked)} />
-          Confirmo que revisei esta resposta e autorizo sua publicação para todos os usuários.
+          Confirmo que revisei esta pergunta e resposta e autorizo sua publicação para todos os usuários.
         </label>
         <div className="small-talk-actions">
+          <button type="button" className="secondary-button" onClick={() => void copyCardText()}>📋 Copiar pergunta + resposta</button>
           <button type="button" className="primary-button" disabled={!exportApproved} onClick={() => void copyCardJson()}>Copiar JSON</button>
           <button type="button" className="secondary-button" disabled={!exportApproved} onClick={downloadCardJson}>Baixar JSON</button>
           <button type="button" className="secondary-button" onClick={() => setExportCard(null)}>Fechar</button>

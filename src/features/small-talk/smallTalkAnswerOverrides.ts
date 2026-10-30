@@ -1,4 +1,5 @@
 import { readSmallTalkPersonalAnswers } from '../../services/smallTalkPersonalAnswersService';
+import type { SmallTalkItem } from '../../types/smallTalk';
 
 /** Substituições privadas locais. Jamais gravar em public/ ou no repositório. */
 export const SMALL_TALK_ANSWER_OVERRIDES_KEY = 'bej:small-talk:answer-overrides:v1';
@@ -18,8 +19,15 @@ export function readAnswerOverrides(storage: Storage = window.localStorage): Ans
   }
   return data as AnswerOverrides;
 }
-export function saveAnswerOverride(itemId: string, text: string | null, storage: Storage = window.localStorage): AnswerOverrides {
-  const next = { ...readAnswerOverrides(storage), [itemId]: { text, updatedAt: new Date().toISOString() } };
+
+/** Sem equivalente público comprovado, nunca elimina a substituição privada. */
+export function saveAnswerOverride(itemId: string, text: string | null, publicText?: string, storage: Storage = window.localStorage): AnswerOverrides {
+  const next = { ...readAnswerOverrides(storage) };
+  if (typeof text === 'string' && typeof publicText === 'string' && text === publicText) {
+    delete next[itemId];
+  } else {
+    next[itemId] = { text, updatedAt: new Date().toISOString() };
+  }
   storage.setItem(SMALL_TALK_ANSWER_OVERRIDES_KEY, JSON.stringify(next));
   return next;
 }
@@ -27,6 +35,21 @@ export function restoreOriginalAnswer(itemId: string, storage: Storage = window.
   const next = { ...readAnswerOverrides(storage) };
   delete next[itemId];
   storage.setItem(SMALL_TALK_ANSWER_OVERRIDES_KEY, JSON.stringify(next));
+  return next;
+}
+/** Remove somente duplicatas textuais exatas, de itens com resposta pública não nula. */
+export function pruneRedundantAnswerOverrides(items: SmallTalkItem[], storage: Storage = window.localStorage): AnswerOverrides {
+  const current = readAnswerOverrides(storage);
+  const next = { ...current };
+  let changed = false;
+  for (const item of items) {
+    const original = item.answer?.text;
+    const saved = next[item.id];
+    if (typeof original === 'string' && saved && typeof saved.text === 'string' && saved.text === original) {
+      delete next[item.id]; changed = true;
+    }
+  }
+  if (changed) storage.setItem(SMALL_TALK_ANSWER_OVERRIDES_KEY, JSON.stringify(next));
   return next;
 }
 export function getSmallTalkActiveAnswer(itemId: string, storage: Storage = window.localStorage): string {
