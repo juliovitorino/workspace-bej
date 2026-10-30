@@ -31,7 +31,17 @@
               "frIntent": "je ne suis pas allé au parc"
             }
           ],
-          "id": "5aa0ac9c-9d3e-417b-8c8e-5935f0b1f252"
+          "id": "5aa0ac9c-9d3e-417b-8c8e-5935f0b1f252",
+          "mp3": {
+            "en-US": {
+              "cedar": "/audio/stories/en-US/cedar/5aa0ac9c-9d3e-417b-8c8e-5935f0b1f252.mp3"
+            }
+          },
+          "hashmp3": {
+            "en-US": {
+              "cedar": "1b6052b416a1eb68ac24617ef4cef86f8a038fdbf3d076577c391cc75993dcba"
+            }
+          }
         },
         {
           "pt": "Meu amigo Lucas me ligou. Ele disse: 'Você era um menino muito ativo no passado. Você tinha muitas ideias de jogos.'",
