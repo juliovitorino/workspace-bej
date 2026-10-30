@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { AI_PROVIDER_CHANGED_EVENT, aiAssetPath, getAIProvider, type AIProvider } from '../../config/aiProvider';
+import { buildSmallTalkAnalysisPrompt } from './smallTalkAiPrompt';
 import { loadSmallTalkIndex, loadSmallTalkTopic } from '../../services/smallTalkCatalogService';
 import { readSmallTalkPersonalAnswers } from '../../services/smallTalkPersonalAnswersService';
 import type { SmallTalkItem, SmallTalkTopic, SmallTalkTopicIndexEntry, SmallTalkWalkingSettings } from '../../types/smallTalk';
@@ -32,6 +33,7 @@ const topicSorter = new Intl.Collator('en-US', { sensitivity: 'base', numeric: t
 export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   const [aiProvider, setAiProvider] = useState<AIProvider>(getAIProvider);
   const [aiMessage, setAiMessage] = useState('');
+  const [aiManualPrompt, setAiManualPrompt] = useState('');
   useEffect(() => {
     const sync = () => setAiProvider(getAIProvider());
     window.addEventListener(AI_PROVIDER_CHANGED_EVENT, sync);
@@ -444,52 +446,71 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       setBackupMessage('Edições e cards pessoais importados e mesclados pela data. Confira seus tópicos.');
     } catch { setBackupMessage('Backup inválido ou armazenamento indisponível. Confira o arquivo.'); }
   }
-  function openAIAnalysis(item: SmallTalkItem) {
+  async function openAIAnalysis(item: SmallTalkItem) {
+    setAiManualPrompt('');
     const question = questionFor(item).trim();
     const answer = answerFor(item).trim();
-    // BASE_URL suporta publicação em subdiretórios, sem supor um domínio fixo.
+    const provider = getAIProvider();
     const base = new URL(import.meta.env.BASE_URL, window.location.origin);
     const fullFrameworkUrl = new URL('framework/full-framework.json', base).href;
     const simplifiedFrameworkUrl = new URL('framework/simplified-framework.json', base).href;
-    const prompt = [
-      'Você é um professor de inglês americano e revisor pedagógico do Brazilian English Journey (BEJ).',
-      'Analise a pergunta ativa e a resposta corrente abaixo usando os dois frameworks gramaticais do BEJ como referência.',
-      '',
-      'PERGUNTA ATIVA:', question || '(sem pergunta)',
-      '',
-      'RESPOSTA CORRENTE:', answer || '(sem resposta cadastrada)',
-      '',
-      'FULL FRAMEWORK (JSON):', fullFrameworkUrl,
-      '',
-      'SIMPLIFIED FRAMEWORK (JSON):', simplifiedFrameworkUrl,
-      '',
-      'INSTRUÇÕES:',
-      '1. Consulte o conteúdo dos dois JSONs pelas URLs fornecidas antes de aplicar suas regras. Não presuma que conseguiu ler os arquivos: se não puder acessá-los, informe isso explicitamente e peça que eu os cole ou anexe.',
-      '2. Avalie se a resposta responde adequadamente à pergunta e se é natural para uma conversa em inglês americano.',
-      '3. Analise gramática, ordem das palavras, tempo verbal, auxiliares, modais, frequência, conectores e estruturas relevantes segundo os frameworks, distinguindo regras dos arquivos de sugestões gerais de inglês.',
-      '4. Aponte somente erros reais; diferencie erro gramatical, escolha pouco natural e alternativa estilística. Não altere o sentido nem invente informações pessoais.',
-      '5. Apresente: (a) avaliação resumida, (b) correções pontuais com explicações em português, (c) versão revisada em inglês, (d) tradução natural em português e (e) até três chunks reutilizáveis.',
-      '6. Se a resposta estiver vazia, sugira uma resposta curta e natural, indicando que é apenas um exemplo.',
-      '7. Preserve a pergunta original, exceto se houver erro real; nesse caso explique e proponha a correção separadamente.',
-      '8. Não trate os frameworks como gramática normativa universal: quando uma regra conflitar com uso natural do inglês, explique a diferença.',
-      '9. Não salve nem publique o conteúdo. Responda em português brasileiro, mantendo exemplos em inglês americano.'
-    ].join('\n');
-    // A cópia oferece fallback quando o site externo não suporta prompt pré-preenchido.
-    if (navigator.clipboard?.writeText) {
-      void navigator.clipboard.writeText(prompt).then(() => {
-        setAiMessage('Prompt copiado. Se necessário, cole no chat da IA.');
-      }).catch(() => setAiMessage('A cópia automática foi bloqueada. Use o ChatGPT ou copie o conteúdo manualmente.'));
+
+    // Abre a aba durante o clique, antes do fetch assíncrono, para evitar bloqueio de pop-up.
+    const opened = window.open('about:blank', '_blank');
+    if (!opened) { setAiMessage('Permita pop-ups para abrir a IA e tente novamente.'); return; }
+    opened.opener = null;
+    setAiMessage(provider === 'gemini' ? 'Carregando os dois frameworks para o Gemini…' : 'Preparando análise no ChatGPT…');
+
+    let fullFramework: unknown;
+    let simplifiedFramework: unknown;
+    if (provider === 'gemini') {
+      try {
+        const [fullResponse, simplifiedResponse] = await Promise.all([
+          fetch(fullFrameworkUrl, { cache: 'no-store' }),
+          fetch(simplifiedFrameworkUrl, { cache: 'no-store' })
+        ]);
+        if (!fullResponse.ok || !simplifiedResponse.ok) throw new Error('HTTP ' + fullResponse.status + ' / ' + simplifiedResponse.status);
+        [fullFramework, simplifiedFramework] = await Promise.all([fullResponse.json(), simplifiedResponse.json()]);
+      } catch {
+        opened.close();
+        setAiMessage('Não foi possível carregar os dois JSONs. O Gemini não foi aberto com frameworks incompletos. Verifique a conexão e tente novamente.');
+        return;
+      }
     }
-    const provider = getAIProvider();
-    // ChatGPT aceita ?q= para pré-preenchimento; Gemini não oferece suporte nativo confiável.
-    // Para respostas muito longas, evita links excessivos: mantém o prompt na área de transferência.
-    const url = provider === 'chatgpt' && encodeURIComponent(prompt).length < 6500
-      ? 'https://chatgpt.com/?q=' + encodeURIComponent(prompt)
+
+    const prompt = buildSmallTalkAnalysisPrompt({
+      question, answer, fullFrameworkUrl, simplifiedFrameworkUrl,
+      fullFramework, simplifiedFramework, provider
+    });
+
+    // Fallback para navegadores sem Clipboard API (por exemplo, HTTP local).
+    let copied = false;
+    if (navigator.clipboard?.writeText) {
+      try { await navigator.clipboard.writeText(prompt); copied = true; } catch { /* tenta fallback */ }
+    }
+    if (!copied) {
+      const field = document.createElement('textarea');
+      field.value = prompt;
+      field.setAttribute('readonly', '');
+      field.style.cssText = 'position:fixed;left:-9999px;top:0;opacity:0';
+      document.body.appendChild(field); field.focus(); field.select();
+      try { copied = document.execCommand('copy'); } catch { /* cópia manual */ }
+      field.remove();
+    }
+
+    // Links longos não são confiáveis. Para o Gemini, o conteúdo JSON é enviado
+    // pela área de transferência; o site não possui prefill público confiável.
+    const encoded = encodeURIComponent(prompt);
+    const url = provider === 'chatgpt' && encoded.length < 6500
+      ? 'https://chatgpt.com/?q=' + encoded
       : provider === 'chatgpt' ? 'https://chatgpt.com/' : 'https://gemini.google.com/app';
-    const opened = window.open(url, '_blank');
-    if (opened) opened.opener = null;
-    if (!opened) setAiMessage('O navegador bloqueou a nova aba. Permita pop-ups e tente novamente.');
-    else if (provider === 'gemini') setAiMessage('Gemini aberto. Cole o prompt copiado na conversa para iniciar a análise.');
+    opened.location.replace(url);
+    if (!copied) setAiManualPrompt(prompt);
+    setAiMessage(copied
+      ? (provider === 'gemini'
+        ? 'Gemini aberto: cole o prompt (Ctrl+V). Os dois frameworks JSON já estão incluídos no texto copiado.'
+        : 'ChatGPT aberto. Se a pergunta não aparecer automaticamente, cole o prompt copiado (Ctrl+V).')
+      : 'A IA foi aberta, mas o navegador bloqueou a cópia. Use HTTPS ou autorize a área de transferência para enviar o prompt completo.');
   }
   function googleTranslate(text: string) {
     window.open('https://translate.google.com/?sl=en&tl=pt&text=' + encodeURIComponent(text) + '&op=translate', '_blank', 'noopener,noreferrer');
@@ -602,6 +623,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     </section>}
     {editError && <p className="warning-banner" role="alert">{editError}</p>}
     {aiMessage && <p role="status" className="settings-dialog-help">{aiMessage}</p>}
+    {aiManualPrompt && <div className="small-talk-editor"><label htmlFor="small-talk-ai-manual-prompt">Copie manualmente o prompt completo para a IA:</label><textarea id="small-talk-ai-manual-prompt" readOnly value={aiManualPrompt} onFocus={event => event.currentTarget.select()} rows={6} /><button type="button" className="secondary-button" onClick={() => setAiManualPrompt('')}>Fechar prompt</button></div>}
     <div className="small-talk-backup-actions">
       <button type="button" className="secondary-button" onClick={downloadEdits}>⬇ Backup privado (perguntas + respostas)</button>
       <label className="small-talk-import-label">⬆ Importar backup
