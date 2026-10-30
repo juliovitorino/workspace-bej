@@ -8,6 +8,7 @@ import { getStoryTitle, getParagraphText, searchShadowingStories, type LocalStor
 import { defaultShadowingSettings, formatPracticeTime, sentenceSegments, type ShadowingSettings } from "../utils/storyShadowing";
 import { useStoryShadowing } from "../hooks/useStoryShadowing";
 import { ChunkLevelSelect } from "./ChunkLevelSelect";
+import { NeuralVoiceSelect } from "./NeuralVoiceSelect";
 import type { ChunkLevel } from "../utils/chunkEligibility";
 
 const techniqueNames = () => ({ listen: t("shadowing.listen"), repeat: t("shadowing.repeatAfterMe"), shadow: t("shadowing.shadowingSpeakAlongWithTheVoice"), combined: [t("shadowing.listen"), t("shadowing.repeatAfterMe"), "Shadowing"].join(" → ") });
@@ -59,6 +60,7 @@ function Practice({ story, language, settings, selected, onSettings, onBack, onM
     <div className="shadowing-heading"><h3>{getStoryTitle(story, language)}</h3><button type="button" onClick={() => { session.stop(); onBack(); }}>{t("shadowing.chooseAnotherStory")}</button></div>
     <section ref={summaryRef} className="shadowing-session" aria-label={t("shadowing.practiceSummary")}>
       <div className="shadowing-session-meta"><span>{localizedLanguageName(language)}</span><span className="shadowing-level">{story.englishLevel}</span></div>
+      {language === "en-US" && <NeuralVoiceSelect />}
       <div className="shadowing-session-stats">
         <div className="shadowing-session-clock"><span className="shadowing-stat-label">{t("shadowing.practiceTime")}</span><time>{formatPracticeTime(trackedSeconds === null ? session.elapsed : trackedSeconds * 1000)}</time><span className="shadowing-stat-note">{t("shadowing.everyMinuteCounts")}</span></div>
         <div className="shadowing-session-progress">
@@ -126,6 +128,7 @@ export function StoryShadowing({ language, onMenu, onStudyState }: { language: S
     <h2 id="shadowing-title">{"🎧 "}{t("common.shadowing")}</h2>
     {practicing && story ? <Practice key={sessionVersion} {...{ story, language, settings, selected, onMenu, onStudyState }} onRestart={() => setSessionVersion(v => v + 1)} onSettings={setSettings} onBack={back} /> : story ? <>
       <h3>{getStoryTitle(story, language)}</h3><p>{story.englishLevel} · {t("shadowing.paragraphsCount", { count: story.paragraphs.length })}</p>
+      {language === "en-US" && <NeuralVoiceSelect />}
       <Settings value={settings} onChange={setSettings} sentenceAvailable={story.paragraphs.some(p => sentenceSegments(getParagraphText(p, language), language).length > 1)} />
       {settings.scope === "paragraph" && <label>{t("shadowing.selectParagraph")}<select value={selected} onChange={e => setSelected(Number(e.target.value))}>{story.paragraphs.map((_, i) => <option key={i} value={i}>{t("shadowing.paragraph")} {i + 1}</option>)}</select></label>}
       <p className="shadowing-preview" lang={language}>{getParagraphText(story.paragraphs[settings.scope === "paragraph" ? selected : 0], language)}</p>

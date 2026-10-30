@@ -1,4 +1,6 @@
 import { t } from "../i18n";
+import { getNeuralVoice, subscribeNeuralVoice } from "../features/study/neuralExampleAudio";
+import { getStoryNeuralUrl } from "../features/study/neuralStoryAudio";
 import { useEffect, useRef, useState } from "react";
 import type { StudentLanguage } from "../config/languages";
 import { getParagraphText, type LocalStory } from "../services/localStoryService";
@@ -19,6 +21,7 @@ export function useStoryShadowing(story: LocalStory, language: StudentLanguage, 
   const [completed, setCompleted] = useState<Set<number>>(new Set());
   const [error, setError] = useState("");
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
+  const [neuralVoice, setNeuralVoiceState] = useState(getNeuralVoice);
   const [elapsed, setElapsed] = useState(0);
   const [warning, setWarning] = useState("");
   const [revision, setRevision] = useState(0);
@@ -31,7 +34,17 @@ export function useStoryShadowing(story: LocalStory, language: StudentLanguage, 
   const text = getParagraphText(story.paragraphs[paragraph], language);
   const segments = settings.unit === "sentence" ? sentenceSegments(text, language) : [text];
   const spokenText = fullReading ? text : segments[sentence] ?? text;
-  const hasVoice = voices.some(v => v.lang.toLowerCase().split("-")[0] === language.slice(0, 2));
+  const neuralUrl = getStoryNeuralUrl(story.paragraphs[paragraph], language, neuralVoice, fullReading ? "paragraph" : settings.unit);
+  const hasVoice = Boolean(neuralUrl) || voices.some(v => v.lang.toLowerCase().split("-")[0] === language.slice(0, 2));
+
+  useEffect(() => subscribeNeuralVoice(() => {
+    setNeuralVoiceState(getNeuralVoice());
+    audio.current.cancel();
+    setPlaying(false);
+    setPhase("prompt");
+    setStep(0);
+    setError("");
+  }), []);
 
   useEffect(() => {
     const synth = window.speechSynthesis;
@@ -95,10 +108,12 @@ export function useStoryShadowing(story: LocalStory, language: StudentLanguage, 
         audio.current.play(repeatPrompts[language], language, settings.rate, 0, () => {}, () => setPhase("speech"), fail, true);
       } else setPhase("speech");
     } else if (phase === "speech") {
-      audio.current.play(spokenText, language, settings.rate, 0, () => {}, () => {
+      const spoken = () => {
         delay.current = { remaining: (current.technique === "repeat" && !fullReading ? responsePause(spokenText, settings.rate) : 0) + settings.interval * 1000, since: null };
         setPhase("wait");
-      }, fail, true);
+      };
+      if (neuralUrl) audio.current.playStoryMp3(neuralUrl, settings.rate, spoken, fail);
+      else audio.current.play(spokenText, language, settings.rate, 0, () => {}, spoken, fail, true);
     } else {
       delay.current.since = performance.now();
       audio.current.wait(delay.current.remaining, () => {
@@ -111,7 +126,7 @@ export function useStoryShadowing(story: LocalStory, language: StudentLanguage, 
       });
     }
     return stopAudio;
-  }, [playing, complete, phase, paragraph, sentence, step, revision, fullReading, language, settings]);
+  }, [playing, complete, phase, paragraph, sentence, step, revision, fullReading, language, settings, neuralVoice]);
 
   useEffect(() => {
     const now = performance.now();

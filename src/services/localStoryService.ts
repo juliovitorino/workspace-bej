@@ -15,6 +15,8 @@ export interface LocalStoryParagraphIntention {
 }
 
 export interface LocalStoryParagraph {
+  id?: string;
+  mp3?: { "en-US"?: { cedar?: string; marin?: string } };
   pt: string;
   en: string;
   es?: string;

@@ -162,6 +162,55 @@ export class WalkingAudio {
     generation = this.generation;
   }
 
+  /** Play a registered story paragraph with the same mobile-safe media element. */
+  playStoryMp3(url: string, rate: number, onDone: () => void, onError: () => void) {
+    this.cancel();
+    const generation = this.generation;
+    const player = this.media ?? new Audio();
+    this.media = player;
+    player.preload = "auto";
+    player.playbackRate = rate;
+    player.preservesPitch = true;
+    const token = `story-neural-${generation}`;
+    this.mediaToken = token;
+    let settled = false;
+    const cleanup = () => {
+      clearTimeout(this.watchdog);
+      player.onplaying = player.onended = player.onerror = null;
+      if (this.mediaToken === token) {
+        studyTracker.media(token, false);
+        this.mediaToken = null;
+      }
+    };
+    const fail = () => {
+      if (settled || generation !== this.generation) return;
+      settled = true; cleanup(); player.pause(); onError();
+    };
+    const finish = () => {
+      if (settled || generation !== this.generation) return;
+      settled = true; cleanup(); onDone();
+    };
+    if (player.getAttribute("src") !== url) player.src = url;
+    try { player.currentTime = 0; } catch { /* Metadata may not be ready. */ }
+    player.onplaying = () => {
+      if (settled || generation !== this.generation) return;
+      studyTracker.media(token, true);
+      clearTimeout(this.watchdog);
+      const duration = Number.isFinite(player.duration) && player.duration > 0 ? player.duration * 1000 / rate : 60000;
+      this.watchdog = setTimeout(() => {
+        if (player.ended || (Number.isFinite(player.duration) && player.currentTime >= player.duration - .15)) finish();
+        else fail();
+      }, duration + 5000);
+    };
+    player.onended = finish;
+    player.onerror = fail;
+    try {
+      const session = (navigator as Navigator & { audioSession?: { type: string } }).audioSession;
+      if (session && /iPhone|iPad|iPod/i.test(navigator.userAgent)) session.type = "playback";
+    } catch { /* Unsupported on this browser. */ }
+    void player.play().catch(fail);
+  }
+
   play(text: string, language: StudentLanguage, rate: number, pauseMs: number,
     onSpoken: () => void, onDone: () => void, onError: () => void, strictVoice = false, onStart?: () => void) {
     this.cancel();

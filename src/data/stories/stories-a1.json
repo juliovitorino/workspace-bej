@@ -31,7 +31,19 @@
               "frIntent": "je ne suis pas allé au parc"
             }
           ],
-          "id": "5aa0ac9c-9d3e-417b-8c8e-5935f0b1f252"
+          "id": "5aa0ac9c-9d3e-417b-8c8e-5935f0b1f252",
+          "mp3": {
+            "en-US": {
+              "cedar": "/audio/stories/en-US/cedar/5aa0ac9c-9d3e-417b-8c8e-5935f0b1f252.mp3",
+              "marin": "/audio/stories/en-US/marin/5aa0ac9c-9d3e-417b-8c8e-5935f0b1f252.mp3"
+            }
+          },
+          "hashmp3": {
+            "en-US": {
+              "cedar": "1b6052b416a1eb68ac24617ef4cef86f8a038fdbf3d076577c391cc75993dcba",
+              "marin": "1b6052b416a1eb68ac24617ef4cef86f8a038fdbf3d076577c391cc75993dcba"
+            }
+          }
         },
         {
           "pt": "Meu amigo Lucas me ligou. Ele disse: 'Você era um menino muito ativo no passado. Você tinha muitas ideias de jogos.'",
@@ -54,7 +66,19 @@
               "frIntent": "Tu avais beaucoup d'idées"
             }
           ],
-          "id": "33a86e12-e12a-4e55-a635-a6548dc88ffc"
+          "id": "33a86e12-e12a-4e55-a635-a6548dc88ffc",
+          "mp3": {
+            "en-US": {
+              "cedar": "/audio/stories/en-US/cedar/33a86e12-e12a-4e55-a635-a6548dc88ffc.mp3",
+              "marin": "/audio/stories/en-US/marin/33a86e12-e12a-4e55-a635-a6548dc88ffc.mp3"
+            }
+          },
+          "hashmp3": {
+            "en-US": {
+              "cedar": "e2e35cb84695e117223e2208534f2b6def3a9b27093f720c04d8052123fe255e",
+              "marin": "e2e35cb84695e117223e2208534f2b6def3a9b27093f720c04d8052123fe255e"
+            }
+          }
         },
         {
           "pt": "Então, Lucas disse: 'Hoje o dia está bonito. Vamos fazer um plano para este sábado.'",
@@ -70,7 +94,19 @@
               "frIntent": "faire un programme"
             }
           ],
-          "id": "6a0e25c4-80b2-47e9-8e6d-68ee4a33bbad"
+          "id": "6a0e25c4-80b2-47e9-8e6d-68ee4a33bbad",
+          "mp3": {
+            "en-US": {
+              "cedar": "/audio/stories/en-US/cedar/6a0e25c4-80b2-47e9-8e6d-68ee4a33bbad.mp3",
+              "marin": "/audio/stories/en-US/marin/6a0e25c4-80b2-47e9-8e6d-68ee4a33bbad.mp3"
+            }
+          },
+          "hashmp3": {
+            "en-US": {
+              "cedar": "3fc7015f70ec76b4385af38365ea19bdcc3b91fa08cf4900a77d1ae7424da71c",
+              "marin": "3fc7015f70ec76b4385af38365ea19bdcc3b91fa08cf4900a77d1ae7424da71c"
+            }
+          }
         },
         {
           "pt": "Nós decidimos fazer um piquenique. Eu preciso fazer uma lista de frutas e sanduíches para comprar no supermercado.",
@@ -86,7 +122,19 @@
               "frIntent": "faire une liste de fruits et de sandwichs"
             }
           ],
-          "id": "793e62a0-a51a-4f45-ae07-b1db40627eed"
+          "id": "793e62a0-a51a-4f45-ae07-b1db40627eed",
+          "mp3": {
+            "en-US": {
+              "cedar": "/audio/stories/en-US/cedar/793e62a0-a51a-4f45-ae07-b1db40627eed.mp3",
+              "marin": "/audio/stories/en-US/marin/793e62a0-a51a-4f45-ae07-b1db40627eed.mp3"
+            }
+          },
+          "hashmp3": {
+            "en-US": {
+              "cedar": "f00e74d18cb42a7e77d037524ab9bd2df3b7452fc69169c22c87a588b5129efe",
+              "marin": "f00e74d18cb42a7e77d037524ab9bd2df3b7452fc69169c22c87a588b5129efe"
+            }
+          }
         },
         {
           "pt": "Agora, eu estou no supermercado. O lugar está muito cheio de pessoas hoje.",
@@ -102,7 +150,19 @@
               "frIntent": "je suis"
             }
           ],
-          "id": "a662df44-58d9-4b9a-ac68-4069483005b6"
+          "id": "a662df44-58d9-4b9a-ac68-4069483005b6",
+          "mp3": {
+            "en-US": {
+              "cedar": "/audio/stories/en-US/cedar/a662df44-58d9-4b9a-ac68-4069483005b6.mp3",
+              "marin": "/audio/stories/en-US/marin/a662df44-58d9-4b9a-ac68-4069483005b6.mp3"
+            }
+          },
+          "hashmp3": {
+            "en-US": {
+              "cedar": "244b0b7db1d8c7749e970f0b3b0e1b290c4dd0aacf213057c8f35abb9420bb05",
+              "marin": "244b0b7db1d8c7749e970f0b3b0e1b290c4dd0aacf213057c8f35abb9420bb05"
+            }
+          }
         },
         {
           "pt": "Eu encontro Lucas no parque. Ele sorri e diz: 'Você está feliz hoje, meu amigo!'",
@@ -118,7 +178,19 @@
               "frIntent": "Tu es content"
             }
           ],
-          "id": "4410c614-c360-4007-adbe-52e44c8cea36"
+          "id": "4410c614-c360-4007-adbe-52e44c8cea36",
+          "mp3": {
+            "en-US": {
+              "cedar": "/audio/stories/en-US/cedar/4410c614-c360-4007-adbe-52e44c8cea36.mp3",
+              "marin": "/audio/stories/en-US/marin/4410c614-c360-4007-adbe-52e44c8cea36.mp3"
+            }
+          },
+          "hashmp3": {
+            "en-US": {
+              "cedar": "ec48ca4a3c6e6ebe9886e7feb6acdf76216e59dc2e8cbcb9812ff7ab9f429849",
+              "marin": "ec48ca4a3c6e6ebe9886e7feb6acdf76216e59dc2e8cbcb9812ff7ab9f429849"
+            }
+          }
         },
         {
           "pt": "Nós comemos os sanduíches e corremos um pouco. Depois, nós decidimos fazer uma pausa sob uma grande árvore.",
@@ -134,7 +206,19 @@
               "frIntent": "faire une pause"
             }
           ],
-          "id": "1e4e008c-9311-454e-896b-cc3a7d2a7180"
+          "id": "1e4e008c-9311-454e-896b-cc3a7d2a7180",
+          "mp3": {
+            "en-US": {
+              "cedar": "/audio/stories/en-US/cedar/1e4e008c-9311-454e-896b-cc3a7d2a7180.mp3",
+              "marin": "/audio/stories/en-US/marin/1e4e008c-9311-454e-896b-cc3a7d2a7180.mp3"
+            }
+          },
+          "hashmp3": {
+            "en-US": {
+              "cedar": "bf0e733a2265deeb319bea716f9adee3b35985bac2be066dc99c244c539fe938",
+              "marin": "bf0e733a2265deeb319bea716f9adee3b35985bac2be066dc99c244c539fe938"
+            }
+          }
         },
         {
           "pt": "Nós conversamos por horas. Foi maravilhoso passar o dia com meu melhor amigo.",
@@ -150,7 +234,19 @@
               "frIntent": "C'était merveilleux"
             }
           ],
-          "id": "85ebaf0e-965c-4f9c-b17f-fa414af95e87"
+          "id": "85ebaf0e-965c-4f9c-b17f-fa414af95e87",
+          "mp3": {
+            "en-US": {
+              "cedar": "/audio/stories/en-US/cedar/85ebaf0e-965c-4f9c-b17f-fa414af95e87.mp3",
+              "marin": "/audio/stories/en-US/marin/85ebaf0e-965c-4f9c-b17f-fa414af95e87.mp3"
+            }
+          },
+          "hashmp3": {
+            "en-US": {
+              "cedar": "d3ac8ac25224b1e1d159c000907488e487147b6cd770b8347168f816483fc0d8",
+              "marin": "d3ac8ac25224b1e1d159c000907488e487147b6cd770b8347168f816483fc0d8"
+            }
+          }
         }
       ],
       "intentionsUsed": [
