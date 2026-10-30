@@ -7,8 +7,9 @@ import type { ThemePreference } from "../theme";
 import { LanguageSettingsFields, type LanguageSettingsProps } from "./LanguageSettingsFields";
 import { NeuralVoiceSelect } from "./NeuralVoiceSelect";
 import { SmallTalkPersonalImport } from "./SmallTalkPersonalImport";
+import { AIProviderSettings } from "./AIProviderSettings";
 
-const categories = ["audio", "languages", "study", "appearance", "data"] as const;
+const categories = ["audio", "languages", "study", "appearance", "ai", "data"] as const;
 interface Props extends LanguageSettingsProps {
   theme: ThemePreference;
   onThemeChange: (theme: ThemePreference) => void;
@@ -22,6 +23,7 @@ export function AppSettingsPage({ theme, onThemeChange, onOpenStudy, onOpenData,
   const [consolidationVisible, setConsolidationVisible] = useState(false);
   const title = useRef<HTMLHeadingElement>(null);
   useEffect(() => { title.current?.focus({ preventScroll: true }); }, []);
+  const categoryTitle = (key: typeof categories[number]) => key === 'ai' ? 'Inteligência Artificial' : t(`settingsPage.${key}`);
   return <section className="app-settings-page" aria-labelledby="app-settings-title">
     <header>
       <h2 ref={title} tabIndex={-1} id="app-settings-title">{t("settingsPage.title")}</h2>
@@ -30,11 +32,11 @@ export function AppSettingsPage({ theme, onThemeChange, onOpenStudy, onOpenData,
     {!consolidationVisible && <nav className="settings-categories" aria-label={t("settingsPage.categories")}>
       {categories.map(key => <button type="button" key={key} aria-pressed={category === key}
         aria-controls="settings-category-content" onClick={() => setCategory(key)}>
-        {t(`settingsPage.${key}`)}
+        {categoryTitle(key)}
       </button>)}
     </nav>}
     <section id="settings-category-content" className="settings-category-content" aria-labelledby="settings-category-title">
-      {!consolidationVisible && <h3 id="settings-category-title">{t(`settingsPage.${category}`)}</h3>}
+      {!consolidationVisible && <h3 id="settings-category-title">{categoryTitle(category)}</h3>}
       {consolidationVisible && <StudyDataTransfer standalone onBack={() => setConsolidationVisible(false)} />}
       {!consolidationVisible && category === "audio" && <>
         <p>{t("settingsPage.audioHelp")}</p>
@@ -55,6 +57,7 @@ export function AppSettingsPage({ theme, onThemeChange, onOpenStudy, onOpenData,
           <option value="auto">{t("theme.auto")}</option>
         </select>
       </label>}
+      {!consolidationVisible && category === 'ai' && <AIProviderSettings />}
       {!consolidationVisible && category === "data" && <>
         <StudyDataTransfer settings onOpenConsolidation={() => setConsolidationVisible(true)} />
         <div className="settings-shortcuts">

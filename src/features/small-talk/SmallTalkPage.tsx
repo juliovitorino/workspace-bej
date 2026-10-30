@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { AI_PROVIDER_CHANGED_EVENT, aiAssetPath, getAIProvider, type AIProvider } from '../../config/aiProvider';
 import { loadSmallTalkIndex, loadSmallTalkTopic } from '../../services/smallTalkCatalogService';
 import { readSmallTalkPersonalAnswers } from '../../services/smallTalkPersonalAnswersService';
 import type { SmallTalkItem, SmallTalkTopic, SmallTalkTopicIndexEntry, SmallTalkWalkingSettings } from '../../types/smallTalk';
@@ -28,6 +29,14 @@ const topicSorter = new Intl.Collator('en-US', { sensitivity: 'base', numeric: t
 
 
 export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
+  const [aiProvider, setAiProvider] = useState<AIProvider>(getAIProvider);
+  const [aiMessage, setAiMessage] = useState('');
+  useEffect(() => {
+    const sync = () => setAiProvider(getAIProvider());
+    window.addEventListener(AI_PROVIDER_CHANGED_EVENT, sync);
+    window.addEventListener('storage', sync);
+    return () => { window.removeEventListener(AI_PROVIDER_CHANGED_EVENT, sync); window.removeEventListener('storage', sync); };
+  }, []);
   const [topics, setTopics] = useState<SmallTalkTopicIndexEntry[]>([]);
   const [topicId, setTopicId] = useState('');
   const [topicsMenuOpen, setTopicsMenuOpen] = useState(false);
@@ -376,6 +385,53 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       setBackupMessage('Edições importadas e mescladas pela data. Confira seus cards.');
     } catch { setBackupMessage('Backup inválido ou armazenamento indisponível. Confira o arquivo.'); }
   }
+  function openAIAnalysis(item: SmallTalkItem) {
+    const question = questionFor(item).trim();
+    const answer = answerFor(item).trim();
+    // BASE_URL suporta publicação em subdiretórios, sem supor um domínio fixo.
+    const base = new URL(import.meta.env.BASE_URL, window.location.origin);
+    const fullFrameworkUrl = new URL('framework/full-framework.json', base).href;
+    const simplifiedFrameworkUrl = new URL('framework/simplified-framework.json', base).href;
+    const prompt = [
+      'Você é um professor de inglês americano e revisor pedagógico do Brazilian English Journey (BEJ).',
+      'Analise a pergunta ativa e a resposta corrente abaixo usando os dois frameworks gramaticais do BEJ como referência.',
+      '',
+      'PERGUNTA ATIVA:', question || '(sem pergunta)',
+      '',
+      'RESPOSTA CORRENTE:', answer || '(sem resposta cadastrada)',
+      '',
+      'FULL FRAMEWORK (JSON):', fullFrameworkUrl,
+      '',
+      'SIMPLIFIED FRAMEWORK (JSON):', simplifiedFrameworkUrl,
+      '',
+      'INSTRUÇÕES:',
+      '1. Consulte o conteúdo dos dois JSONs pelas URLs fornecidas antes de aplicar suas regras. Não presuma que conseguiu ler os arquivos: se não puder acessá-los, informe isso explicitamente e peça que eu os cole ou anexe.',
+      '2. Avalie se a resposta responde adequadamente à pergunta e se é natural para uma conversa em inglês americano.',
+      '3. Analise gramática, ordem das palavras, tempo verbal, auxiliares, modais, frequência, conectores e estruturas relevantes segundo os frameworks, distinguindo regras dos arquivos de sugestões gerais de inglês.',
+      '4. Aponte somente erros reais; diferencie erro gramatical, escolha pouco natural e alternativa estilística. Não altere o sentido nem invente informações pessoais.',
+      '5. Apresente: (a) avaliação resumida, (b) correções pontuais com explicações em português, (c) versão revisada em inglês, (d) tradução natural em português e (e) até três chunks reutilizáveis.',
+      '6. Se a resposta estiver vazia, sugira uma resposta curta e natural, indicando que é apenas um exemplo.',
+      '7. Preserve a pergunta original, exceto se houver erro real; nesse caso explique e proponha a correção separadamente.',
+      '8. Não trate os frameworks como gramática normativa universal: quando uma regra conflitar com uso natural do inglês, explique a diferença.',
+      '9. Não salve nem publique o conteúdo. Responda em português brasileiro, mantendo exemplos em inglês americano.'
+    ].join('\n');
+    // A cópia oferece fallback quando o site externo não suporta prompt pré-preenchido.
+    if (navigator.clipboard?.writeText) {
+      void navigator.clipboard.writeText(prompt).then(() => {
+        setAiMessage('Prompt copiado. Se necessário, cole no chat da IA.');
+      }).catch(() => setAiMessage('A cópia automática foi bloqueada. Use o ChatGPT ou copie o conteúdo manualmente.'));
+    }
+    const provider = getAIProvider();
+    // ChatGPT aceita ?q= para pré-preenchimento; Gemini não oferece suporte nativo confiável.
+    // Para respostas muito longas, evita links excessivos: mantém o prompt na área de transferência.
+    const url = provider === 'chatgpt' && encodeURIComponent(prompt).length < 6500
+      ? 'https://chatgpt.com/?q=' + encodeURIComponent(prompt)
+      : provider === 'chatgpt' ? 'https://chatgpt.com/' : 'https://gemini.google.com/app';
+    const opened = window.open(url, '_blank');
+    if (opened) opened.opener = null;
+    if (!opened) setAiMessage('O navegador bloqueou a nova aba. Permita pop-ups e tente novamente.');
+    else if (provider === 'gemini') setAiMessage('Gemini aberto. Cole o prompt copiado na conversa para iniciar a análise.');
+  }
   function googleTranslate(text: string) {
     window.open('https://translate.google.com/?sl=en&tl=pt&text=' + encodeURIComponent(text) + '&op=translate', '_blank', 'noopener,noreferrer');
   }
@@ -486,6 +542,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       <button type="button" className="primary-button" disabled={loading || !filtered.length} onClick={startWalking}>▶ Iniciar Modo Caminhada ({filtered.length} perguntas)</button>
     </section>}
     {editError && <p className="warning-banner" role="alert">{editError}</p>}
+    {aiMessage && <p role="status" className="settings-dialog-help">{aiMessage}</p>}
     <div className="small-talk-backup-actions">
       <button type="button" className="secondary-button" onClick={downloadEdits}>⬇ Backup privado (perguntas + respostas)</button>
       <label className="small-talk-import-label">⬆ Importar backup
@@ -532,6 +589,12 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
           <button type="button" className="small-talk-icon-button" aria-label="Excluir resposta ativa" title="Excluir resposta ativa" disabled={!original} onClick={() => removeAnswer(item.id)}>🗑️</button>
           <button type="button" className="small-talk-icon-button" aria-label="Exportar JSON público deste card"
             title="Exportar JSON público deste card" onClick={() => openCardExport(item)}>📋</button>
+          <button type="button" className="small-talk-icon-button small-talk-ai-button"
+            aria-label={`Analisar pergunta e resposta com ${aiProvider === 'chatgpt' ? 'ChatGPT' : 'Gemini'}`}
+            title={`Analisar com ${aiProvider === 'chatgpt' ? 'ChatGPT' : 'Gemini'}`}
+            onClick={() => openAIAnalysis(item)}>
+            <img src={aiAssetPath(aiProvider)} width="22" height="22" alt="" aria-hidden="true" />
+          </button>
           <button type="button" className="small-talk-icon-button" aria-label="Abrir resposta no Google Tradutor" title="Google Tradutor (resposta ativa)" disabled={!original} onClick={() => googleTranslate(original)}>🌐</button>
           {modified && <button type="button" className="small-talk-restore-button" title="Recuperar o original importado" onClick={() => restoreAnswer(item.id)}>Restaurar original</button>}
           {!original && !modified && <span className="settings-dialog-help">Sem resposta importada — use o lápis para incluir</span>}
