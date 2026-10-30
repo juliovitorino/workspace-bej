@@ -236,3 +236,83 @@
 .small-talk-danger-button:hover { background: #991b1b; }
 .small-talk-danger-button:focus-visible { outline: 3px solid #ef4444; outline-offset: 3px; }
 .small-talk-confirm-modal { width: min(440px, 100%); }
+
+/* Correção de largura da PÁGINA INTEIRA no mobile.
+   Grid com tracks automáticas pode crescer pelo min-content de botões, selects
+   e textos extensos, mesmo quando os cards têm max-width: 100%. */
+.small-talk-page {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  grid-template-columns: minmax(0, 1fr);
+}
+.small-talk-page > :not(.small-talk-topics-overlay):not(.small-talk-export-overlay) {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.small-talk-page .small-talk-filters,
+.small-talk-page .small-talk-settings,
+.small-talk-page .small-talk-configuration-toggle,
+.small-talk-page .small-talk-backup-actions,
+.small-talk-page .small-talk-topic-export-bar,
+.small-talk-page .small-talk-question-list,
+.small-talk-page .small-talk-question-card,
+.small-talk-page .small-talk-question-heading,
+.small-talk-page .small-talk-actions,
+.small-talk-page .small-talk-editor {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.small-talk-page :is(h2, h3, p, span, strong, label, button, input, select, textarea, code) {
+  overflow-wrap: anywhere;
+}
+.small-talk-page :is(input, select, textarea) {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+@media (max-width: 640px) {
+  .small-talk-page .small-talk-filters,
+  .small-talk-page .small-talk-settings {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .small-talk-page .small-talk-filters > label,
+  .small-talk-page .small-talk-settings > label {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .small-talk-page .small-talk-configuration-toggle,
+  .small-talk-page .small-talk-backup-actions,
+  .small-talk-page .small-talk-topic-export-bar,
+  .small-talk-page .small-talk-actions {
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+  .small-talk-page .small-talk-configuration-toggle > button,
+  .small-talk-page .small-talk-backup-actions > button,
+  .small-talk-page .small-talk-topic-export-bar > button,
+  .small-talk-page .small-talk-actions > button,
+  .small-talk-page .small-talk-import-label {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .small-talk-page .small-talk-topic-export-trigger {
+    flex: 1 1 100%;
+  }
+  .small-talk-page .small-talk-question-heading p {
+    min-width: 0;
+    flex: 1 1 0;
+  }
+  .small-talk-page .small-talk-question-card {
+    width: 100%;
+  }
+  .small-talk-page .small-talk-question-card .small-talk-actions > button:not(.small-talk-icon-button) {
+    flex: 1 1 auto;
+  }
+}
