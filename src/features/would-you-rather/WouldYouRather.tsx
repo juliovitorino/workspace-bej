@@ -76,6 +76,7 @@ function TextCard(props: TextCardProps) {
         <div className="wyr-card-actions">
           <button type="button" className="wyr-icon-button" aria-label={copyLabel} title={copyLabel} onClick={event => { event.stopPropagation(); void copy(); }}><Icon kind="copy" /></button>
           <button type="button" className="wyr-icon-button" aria-label={translateLabel} title={translateLabel} onClick={event => { event.stopPropagation(); translate(); }}><Icon kind="translate" /></button>
+          {!isAnswer && !onSelect && <button type="button" className="wyr-icon-button" aria-label={lang === "pt" ? "Ouvir pergunta" : lang === "es" ? "Escuchar pregunta" : lang === "fr" ? "Écouter la question" : "Listen to question"} title={lang === "pt" ? "Ouvir pergunta" : lang === "es" ? "Escuchar pregunta" : lang === "fr" ? "Écouter la question" : "Listen to question"} onClick={event => { event.stopPropagation(); speak(); }}><Icon kind="audio" /></button>}
         </div>
       </div>
       {isAnswer ? <div>
