@@ -340,6 +340,18 @@
       "order": 55,
       "enabled": true,
       "sourceTitle": "Movies"
+    },
+    {
+      "id": "dominican-republic",
+      "order": 56,
+      "enabled": true,
+      "sourceTitle": "DOMINICAN REPUBLIC"
+    },
+    {
+      "id": "uruguay",
+      "order": 57,
+      "enabled": true,
+      "sourceTitle": "URUGUAY"
     }
   ],
   "importStatus": "staging-review-required"

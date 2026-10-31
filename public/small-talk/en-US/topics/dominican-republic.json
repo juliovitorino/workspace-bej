@@ -1,0 +1,635 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "dominican-republic",
+  "title": "DOMINICAN REPUBLIC",
+  "description": null,
+  "items": [
+    {
+      "id": "b4014e9b-e835-42cf-9c69-b603509dea37",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Which part of the Dominican Republic are you from?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I'm from Santo Domingo, the capital. It's a lively city with a lot of history.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 1
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "156ec720-79d2-4b84-9d36-8fe8419af34c",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What's your favorite thing about living in the Dominican Republic?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I love the warm weather, the music, and spending time with family and friends.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 2
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "76db40a5-0a6f-4439-9e03-68cd3297fc61",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What places would you recommend to someone visiting your country for the first time?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I'd recommend Santo Domingo and one of our beautiful beaches. It depends on what you enjoy.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 3
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d748b92a-9b0c-4dee-9fd0-41b223940576",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is everyday life in Santo Domingo different from life in smaller towns?",
+        "audio": null
+      },
+      "answer": {
+        "text": "Yes, the capital is usually busier, while smaller towns can feel more relaxed.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 4
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "38b532af-2ca9-46a3-a09d-1a9714910e8b",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What's a typical Dominican breakfast like?",
+        "audio": null
+      },
+      "answer": {
+        "text": "Mangú with eggs, cheese, and salami is a popular choice. I really enjoy it.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 5
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "9922ab34-bd46-4f58-a16a-f37c058e17a0",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer Dominican food or trying dishes from other countries?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I love Dominican food, but I also enjoy trying something new now and then.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 6
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "fa8f24b9-4ee3-480d-a237-cc61f68b20b5",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What Dominican dish should I try first?",
+        "audio": null
+      },
+      "answer": {
+        "text": "You should try la bandera. It's a traditional meal with rice, beans, and meat.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 7
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "5bfc9d3e-df80-41c2-a304-a546e78829ca",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How important is merengue or bachata in your daily life?",
+        "audio": null
+      },
+      "answer": {
+        "text": "Both are part of our culture. I enjoy hearing them at parties and family gatherings.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 8
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "bc6916c3-701d-4a77-a4d1-7e2bd88532df",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you like dancing bachata, or do you prefer listening to it?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I prefer listening to it, but I dance a little when I'm with friends.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 9
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "1dd68f48-01ba-432c-a59e-5710c9823bf4",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What's your favorite beach in the Dominican Republic?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I really like the beaches around Punta Cana, but there are many other beautiful places.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 10
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7e4308cd-9257-4ce1-a66b-30f5ba7f4409",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What's the weather like where you live throughout the year?",
+        "audio": null
+      },
+      "answer": {
+        "text": "It's warm most of the year, although we also have a rainy season.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 11
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "dfb08152-23f4-4596-a738-09daab7c4d1e",
+      "type": "question-answer",
+      "order": 12,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you usually do on weekends?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I often spend time with family, meet friends, or go out for something to eat.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 12
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "401dfad7-b491-4e4b-a805-e2bf9c795633",
+      "type": "question-answer",
+      "order": 13,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Are baseball games a big deal among your friends or family?",
+        "audio": null
+      },
+      "answer": {
+        "text": "Yes, baseball is very popular here, and people can get really excited about their teams.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 13
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a18a735c-452e-4700-a9d2-bba48d765f48",
+      "type": "question-answer",
+      "order": 14,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How do Dominicans usually celebrate special occasions with family?",
+        "audio": null
+      },
+      "answer": {
+        "text": "We often get together, share food, listen to music, and talk for hours.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 14
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "02f7ece1-d6cb-40b5-aa9f-94897e73685d",
+      "type": "question-answer",
+      "order": 15,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What's one Dominican expression you could teach me?",
+        "audio": null
+      },
+      "answer": {
+        "text": "You might hear '¿Qué lo que?' as a casual way to say hello or ask what's up.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 15
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "63646566-6768-496a-ab6c-6d6e6f707172",
+      "type": "question-answer",
+      "order": 16,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think Dominican Spanish is difficult for other Spanish speakers to understand?",
+        "audio": null
+      },
+      "answer": {
+        "text": "Sometimes we speak quickly and use local expressions, so it can take some getting used to.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 16
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c4d1deeb-f805-421f-ac39-4653606d7a87",
+      "type": "question-answer",
+      "order": 17,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever met someone from Brazil before?",
+        "audio": null
+      },
+      "answer": {
+        "text": "Yes, I've spoken with a few Brazilians online. It's fun to compare our cultures.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 17
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "253e5770-89a2-4bd4-ad06-1f38516a839c",
+      "type": "question-answer",
+      "order": 18,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What similarities do you notice between Dominican and Brazilian culture?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I think music, family, and enjoying time with friends are important in both places.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 18
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "86abd0f5-1a3f-4489-aed3-f81d42678cb1",
+      "type": "question-answer",
+      "order": 19,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "If you could travel anywhere in Brazil, where would you go?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I'd love to visit Rio de Janeiro and see the beaches and famous landmarks.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 19
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e718497a-abdc-4d3e-afa0-d102336495c6",
+      "type": "question-answer",
+      "order": 20,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is something about the Dominican Republic that visitors often overlook?",
+        "audio": null
+      },
+      "answer": {
+        "text": "There's much more to discover than the resorts, including local food, history, and mountain towns.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 20
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4885c2ff-3c79-46f3-b06d-aae724619edb",
+      "type": "question-answer",
+      "order": 21,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What local festival or celebration would you recommend?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I'd recommend experiencing Carnival. It's colorful, lively, and full of local traditions.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 21
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a9f23b84-cd16-4fa8-b13a-83cc155ea7f0",
+      "type": "question-answer",
+      "order": 22,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you rather spend a day at the beach or explore the mountains?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I'd choose the beach to relax, but exploring the mountains sounds exciting too.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 22
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "0a5fb409-5eb3-485d-b207-5cb1065bb005",
+      "type": "question-answer",
+      "order": 23,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of music do you listen to when you want to relax?",
+        "audio": null
+      },
+      "answer": {
+        "text": "It depends on my mood. Sometimes I listen to bachata, and sometimes I choose something quieter.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 23
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6bcc2d8e-ef50-4112-b3d4-3596f758b91a",
+      "type": "question-answer",
+      "order": 24,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What's a good way for a visitor to start a friendly conversation with locals?",
+        "audio": null
+      },
+      "answer": {
+        "text": "Be polite, ask about the area, and show genuine curiosity. People often enjoy sharing recommendations.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 24
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "cc39a613-80ed-4ac7-b4a1-0e7be855c22f",
+      "type": "question-answer",
+      "order": 25,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What would you like people from other countries to know about the Dominican Republic?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I'd like them to know about our rich culture, welcoming communities, and beautiful places beyond the tourist areas.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "DOMINICAN REPUBLIC",
+        "paragraphIndex": 25
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}
