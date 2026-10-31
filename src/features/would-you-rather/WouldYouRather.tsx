@@ -246,8 +246,23 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
     popup.document.open();
     popup.document.write(html);
     popup.document.close();
+    // The temporary print tab is owned by this click, so it can be closed
+    // when the native dialog finishes, whether printed or cancelled.
+    let finished = false;
+    const closePrintTab = () => {
+      if (finished) return;
+      finished = true;
+      popup.removeEventListener("afterprint", closePrintTab);
+      if (!popup.closed) popup.close();
+    };
+    popup.addEventListener("afterprint", closePrintTab, { once: true });
     popup.focus();
-    popup.print();
+    try {
+      popup.print();
+    } catch {
+      closePrintTab();
+      setNotice("Não foi possível abrir a impressão neste navegador.");
+    }
   }
   function openFavorites() {
     const questions = allTopics.flatMap(topic => topic.questions.filter(q => favorites.includes(q.id)));
