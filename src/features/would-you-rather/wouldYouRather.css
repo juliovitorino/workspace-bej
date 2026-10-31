@@ -70,3 +70,13 @@
 .wyr-editor-actions { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
 .wyr-root textarea:focus-visible { outline:3px solid var(--focus); outline-offset:2px; }
 @media(max-width:400px) { .wyr-answer-controls { gap:6px; }.wyr-answer-control { min-width:40px; } }
+
+/* One independent print action per catalog topic. */
+.wyr-topic { cursor:default; }
+.wyr-topic-heading { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.wyr-topic-open { border:0; background:transparent; color:inherit; text-align:left; font:inherit; padding:0; cursor:pointer; min-width:0; }
+.wyr-topic-open:hover .wyr-topic-title { color:var(--accent); }
+.wyr-topic-open--details { display:flex; flex-direction:column; width:100%; gap:9px; }
+.wyr-topic-print { display:grid; place-items:center; flex-shrink:0; min-width:42px; min-height:42px; padding:8px; background:var(--surface-soft); color:var(--text); border:1px solid var(--border-strong); border-radius:9px; cursor:pointer; }
+.wyr-topic-print:hover { color:var(--accent); border-color:var(--accent); }
+.wyr-root .wyr-topic-print:focus-visible, .wyr-root .wyr-topic-open:focus-visible { outline:3px solid var(--focus); outline-offset:2px; }
