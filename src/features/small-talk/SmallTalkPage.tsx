@@ -86,6 +86,10 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   const [newAnswer, setNewAnswer] = useState('');
   const [newLevel, setNewLevel] = useState<'a1' | 'a2' | 'b1' | 'b2' | 'c1' | ''>('');
   const [showDeleted, setShowDeleted] = useState(false);
+  const [orderMode, setOrderMode] = useState(false);
+  const ORDER_KEY = 'bej:small-talk:card-order:v1';
+  const [topicOrders, setTopicOrders] = useState<Record<string, string[]>>(() => readLocalJson<Record<string, string[]>>(ORDER_KEY, {}));
+  const [orderError, setOrderError] = useState('');
   const [newCardError, setNewCardError] = useState('');
   const [pendingConfirmation, setPendingConfirmation] = useState<{ kind: 'remove-answer' | 'remove-card'; id: string } | null>(null);
   const [restorePromptId, setRestorePromptId] = useState<string | null>(null);
@@ -98,6 +102,37 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       .map(entry => entry.item);
     return [...published, ...local].sort((a, b) => a.order - b.order);
   }, [topic, topicId, customItems]);
+
+  const orderedTopicItems = useMemo(() => {
+    const saved = topicOrders[topicId] ?? [];
+    const positions = new Map(saved.map((id, index) => [id, index]));
+    return activeTopicItems.slice().sort((a, b) => {
+      const ai = positions.get(a.id);
+      const bi = positions.get(b.id);
+      if (ai === undefined && bi === undefined) return 0;
+      if (ai === undefined) return 1;
+      if (bi === undefined) return -1;
+      return ai - bi;
+    });
+  }, [activeTopicItems, topicId, topicOrders]);
+
+  function moveCard(id: string, direction: -1 | 1) {
+    const ids = orderedTopicItems.map(item => item.id);
+    const index = ids.indexOf(id);
+    const target = index + direction;
+    if (index < 0 || target < 0 || target >= ids.length) return;
+    [ids[index], ids[target]] = [ids[target], ids[index]];
+    const next = { ...topicOrders, [topicId]: ids };
+    try { saveLocalJson(ORDER_KEY, next); setTopicOrders(next); setOrderError(''); }
+    catch { setOrderError('Não foi possível salvar a ordem dos cards neste dispositivo.'); }
+  }
+
+  function resetCardOrder() {
+    const next = { ...topicOrders };
+    delete next[topicId];
+    try { saveLocalJson(ORDER_KEY, next); setTopicOrders(next); setOrderError(''); }
+    catch { setOrderError('Não foi possível restaurar a ordem original.'); }
+  }
 
   function addCard() {
     setNewCardError('');
@@ -156,7 +191,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   function printTopic(mode: 'both' | 'questions') {
     if (!topic || loading || topic.topicId !== topicId) return;
     const esc = (value: string) => value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
-    const items = activeTopicItems.filter(item => item.enabled && questionFor(item).trim());
+    const items = orderedTopicItems.filter(item => item.enabled && questionFor(item).trim());
     const cards = items.map((item,index) => '<article class="qa"><div class="q">' + (index + 1) + '. ' + esc(questionFor(item)) + '</div>' +
       (mode === 'both' && answerFor(item).trim() ? '<div class="a">' + esc(answerFor(item).trim()) + '</div>' : '') +
       (mode === 'questions' ? '<div class="notes"></div>' : '') + '</article>').join('');
@@ -352,14 +387,14 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   }
 
   const filtered = useMemo(() => {
-    return activeTopicItems.filter(item => {
+    return orderedTopicItems.filter(item => {
       if (!item.enabled || !item.question?.text) return false;
       if (query.trim() && !questionFor(item).toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())) return false;
       if (level !== 'all' && (level === 'unclassified' ? item.level !== null : item.level !== level)) return false;
       if (favoritesOnly && !favorites.includes(item.id)) return false;
       return true;
     });
-  }, [activeTopicItems, query, level, favoritesOnly, favorites, questionOverrides]);
+  }, [orderedTopicItems, query, level, favoritesOnly, favorites, questionOverrides]);
 
   function toggleFavorite(id: string) {
     const next = favorites.includes(id) ? favorites.filter(v => v !== id) : [...favorites, id];
@@ -551,7 +586,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     window.open('https://translate.google.com/?sl=en&tl=pt&text=' + encodeURIComponent(text) + '&op=translate', '_blank', 'noopener,noreferrer');
   }
   const walkItems = useMemo(() => {
-    const selected = filtered.slice();
+    const selected = activeTopicItems.filter(item => filtered.some(f => f.id === item.id));
     if (settings.shuffle) {
       // Sorteio somente ao iniciar, não no render (via função startWalking).
       return selected;
@@ -710,13 +745,28 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
             <button type="button" className="secondary-button" onClick={() => toggleCustomCard(entry.item.id, false)}>Restaurar card</button>
           </div>)}
       </div>}
-    <header className="results-header"><h3>{loading ? 'Carregando...' : `${topic?.title ?? ''} — ${filtered.length} perguntas`}</h3></header>
+    <header className="results-header">
+      <h3>{loading ? 'Carregando...' : `${topic?.title ?? ''} — ${filtered.length} perguntas`}</h3>
+      <div className="small-talk-actions">
+        <button type="button" className="secondary-button" aria-pressed={orderMode} disabled={loading || !topic} onClick={() => setOrderMode(v => !v)}>
+          {orderMode ? '✓ Concluir ordenação' : '↕ Ordenar cards'}
+        </button>
+        {orderMode && <button type="button" className="secondary-button" disabled={!topicOrders[topicId]?.length} onClick={resetCardOrder}>Restaurar ordem original</button>}
+      </div>
+      {orderError && <p role="alert">{orderError}</p>}
+      {orderMode && <p className="settings-dialog-help">Use as setas para mudar a ordem dos cards. A ordem é salva automaticamente neste dispositivo e será usada na impressão. O Modo Caminhada não é alterado.</p>}
+    </header>
     <div className="small-talk-question-list">{filtered.map(item => {
       const original = answerFor(item);
       const shown = answerVisible.includes(item.id);
       const modified = Object.prototype.hasOwnProperty.call(answerOverrides, item.id);
       const baseOriginal = personalAnswers?.answersByItemId[item.id]?.original?.segments.map(s => s.text).join('\n\n') ?? '';
       return <article className="small-talk-question-card" id={'small-talk-card-' + item.id} key={item.id}>
+        {orderMode && <div className="small-talk-order-controls">
+          <span>Posição {orderedTopicItems.findIndex(card => card.id === item.id) + 1}</span>
+          <button type="button" className="small-talk-icon-button" title="Mover card para cima" aria-label="Mover card para cima" disabled={orderedTopicItems[0]?.id === item.id} onClick={() => moveCard(item.id, -1)}>↑</button>
+          <button type="button" className="small-talk-icon-button" title="Mover card para baixo" aria-label="Mover card para baixo" disabled={orderedTopicItems[orderedTopicItems.length - 1]?.id === item.id} onClick={() => moveCard(item.id, 1)}>↓</button>
+        </div>
         <div className="small-talk-question-heading"><p><strong>{questionFor(item)}</strong></p>
           <button type="button" className="small-talk-icon-button" aria-label="Editar pergunta" title="Editar pergunta" onClick={() => openQuestionEditor(item)}>✏️</button>
           {questionOverrides[item.id] && <button type="button" className="small-talk-restore-button" onClick={() => restoreQuestion(item.id)}>Restaurar pergunta</button>}
