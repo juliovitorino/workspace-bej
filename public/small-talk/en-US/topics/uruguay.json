@@ -1,0 +1,635 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "uruguay",
+  "title": "URUGUAY",
+  "description": null,
+  "items": [
+    {
+      "id": "0556a7f8-499a-4b3c-8dde-2f80d12273c4",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Which part of Uruguay are you from?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I'm from Brazil, but I've heard Montevideo is a pleasant coastal capital. Which part of Uruguay are you from?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 1
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6bc92785-e341-4ffd-9bb9-1775d3318fed",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What's your favorite thing about living in Uruguay?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I've heard that Uruguay has a relatively relaxed pace of life. What do you enjoy most about living there?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 2
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d13ca712-7de8-43be-a994-ff6ad540ab16",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What should I visit first if I travel to Uruguay?",
+        "audio": null
+      },
+      "answer": {
+        "text": "From what I've seen, Montevideo and Colonia del Sacramento look like great places to visit. Which would you recommend first?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 3
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "37af279f-178f-477f-b76f-e75fd74fc73f",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is life in Montevideo very different from life in smaller Uruguayan towns?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I've heard that Montevideo is busier than Uruguay's smaller towns, which can be quite peaceful. Is that how you see it?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 4
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "9d22a72c-b136-4b40-854a-cf54d95ee368",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you drink mate every day?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I've noticed that mate seems to be part of everyday life in Uruguay. Do you usually carry it with you?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 5
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "039527b9-4bdd-4f01-9325-b749db6dff91",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How would you explain mate to someone who's never tried it?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I've heard that mate is a herbal infusion that people usually drink through a metal straw called a bombilla.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 6
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6908a746-e584-43c2-a100-9f3edd7c1bba",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What's your favorite Uruguayan food?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I've heard that chivito is a popular Uruguayan sandwich. I'd love to know what ingredients you like in yours.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 7
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "cf7b27d3-7f2b-4783-afdb-8733df8b37e3",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer asado at home or going out to eat?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I've heard that sharing an asado is an important social tradition in Uruguay. It reminds me of barbecues here in Brazil.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 8
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "35eea760-19d2-4b44-bdb6-6f28e19a530c",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever tried Brazilian barbecue?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I'm familiar with Brazilian barbecue, and I've heard Uruguayan asado has its own traditions. I'd love to compare them someday.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 9
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "9b6127ed-b379-4f05-8b91-571de3a96f35",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What's the best time of year to visit Uruguay?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I've heard that summer is a popular time to visit Uruguay's beaches. I'd also be interested in exploring the country in a quieter season.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 10
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "01d4a77a-4d20-43c6-996c-3f12e5b88b5e",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer Punta del Este or quieter coastal towns?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I've seen pictures of Punta del Este, but I've heard Uruguay has lovely quieter coastal towns too. Which do you prefer?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 11
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "67472707-e7c7-4787-a747-2707e7c7a787",
+      "type": "question-answer",
+      "order": 12,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you usually do on weekends?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I imagine a walk by the coast or a meal with friends would make a nice weekend in Uruguay. What do you usually do?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 12
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "cdbaa794-816e-4b48-b522-0ffce9d6c3b0",
+      "type": "question-answer",
+      "order": 13,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How important is football in Uruguay?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I know that Uruguay has a remarkable football history for a country of its size. It must be exciting when the national team plays.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 13
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "332d2721-1b15-4f09-83fd-f7f1ebe5dfd9",
+      "type": "question-answer",
+      "order": 14,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you support Peñarol, Nacional, or another team?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I've heard that Peñarol and Nacional have a famous rivalry. Do you support either of them?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 14
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "99a0a7ae-b5bc-43ca-91d8-dfe6edf4fb02",
+      "type": "question-answer",
+      "order": 15,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What's it like when Uruguay plays in an international football tournament?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I can imagine how exciting an international football tournament must be in Uruguay, especially given the country's history in the sport.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 15
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ff13273b-4f63-478b-9fb3-c7dbef03172b",
+      "type": "question-answer",
+      "order": 16,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is tango still part of everyday cultural life in Uruguay?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I've read that tango is part of Uruguay's cultural heritage, along with Argentina's. Is it something people still enjoy today?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 16
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6586a7c8-e90a-4b4c-ad8e-afd0f1123354",
+      "type": "question-answer",
+      "order": 17,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What kind of music is popular among your friends?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I've heard of candombe and its importance in Uruguayan culture. What other kinds of music would you recommend?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 17
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "cbf92755-83b1-4f0d-bb69-97c5f3214f7d",
+      "type": "question-answer",
+      "order": 18,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever visited Brazil?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I'm Brazilian, so I'd be curious to hear which places in Brazil Uruguayans most enjoy visiting.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 18
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "316ca7e2-1d58-43ce-8944-7fbaf5306ba6",
+      "type": "question-answer",
+      "order": 19,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What similarities do you see between Uruguayans and Brazilians?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I think Uruguay and Brazil share a love of football, barbecues, and time with family. What other similarities have you noticed?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 19
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "97df276f-b7ff-478f-971f-67aff73f87cf",
+      "type": "question-answer",
+      "order": 20,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What differences have you noticed between Uruguayan Spanish and Brazilian Portuguese?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I've noticed that Spanish and Portuguese share quite a few words, but the pronunciation can be very different. I'm curious about Uruguayan expressions.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 20
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "fd52a7fc-51a6-4b50-a5fa-4fa4f94ea3f8",
+      "type": "question-answer",
+      "order": 21,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What's one Uruguayan expression you could teach me?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I've heard that people in Uruguay sometimes use 'bo' in casual conversation. Could you give me an example?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 21
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "63c52789-eb4d-4f11-b3d5-3799fb5dbf21",
+      "type": "question-answer",
+      "order": 22,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you enjoy walking along the Rambla in Montevideo?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I've seen photos of the Rambla in Montevideo, and it looks like a wonderful place for a walk by the water.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 22
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c938a716-85f4-43d2-81b0-1f8efd6cdb4a",
+      "type": "question-answer",
+      "order": 23,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you rather spend a weekend in Colonia or at the beach?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I'd love to explore the historic streets of Colonia del Sacramento, but a relaxing weekend at the beach also sounds great.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 23
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2fab27a3-1f9b-4793-8f8b-0783ff7bf773",
+      "type": "question-answer",
+      "order": 24,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How do people in Uruguay usually celebrate with friends or family?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I've heard that asado and sharing mate often bring people together in Uruguay. That sounds a little like family gatherings in Brazil.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 24
+      },
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "951ea730-b942-4b54-9d66-ef78018a139c",
+      "type": "question-answer",
+      "order": 25,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one thing about Uruguay you wish more foreigners knew?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I'd love more people to know about Uruguay's music, historic towns, and everyday culture, not just its famous beaches.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original Small Talk country conversations",
+        "section": "URUGUAY",
+        "paragraphIndex": 25
+      },
+      "reviewStatus": "pending"
+    }
+  ]
+}
