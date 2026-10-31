@@ -55,3 +55,28 @@
 .wyr-summary-actions { justify-content: center; }
 .wyr-root button:focus-visible, .wyr-root input:focus-visible, .wyr-root select:focus-visible, .wyr-root summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 @media (max-width: 700px) { .wyr-filters { grid-template-columns: 1fr; } .wyr-topic-grid { grid-template-columns: 1fr; } .wyr-heading { align-items: flex-start; } .wyr-card { padding: 12px; } .wyr-card--selected { padding: 11px; } .wyr-card-head { margin-bottom: 6px; } .wyr-stats { gap: 6px; } .wyr-stats strong { font-size: 1.25rem; } .wyr-stats span { font-size: .75rem; } }
+
+
+/* Personal answer controls; unaffected question and option cards. */
+.wyr-answer-controls { display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin:12px 0 14px; }
+.wyr-font-controls { display:flex; align-items:center; gap:4px; margin-right:4px; }
+.wyr-answer-control { display:grid; place-items:center; min-width:42px; height:42px; padding:4px 8px; border:1px solid var(--border-strong); border-radius:9px; background:var(--surface-soft); color:var(--text); cursor:pointer; }
+.wyr-answer-control:hover, .wyr-answer-control.wyr-control-active { border-color:var(--accent); color:var(--accent); }
+.wyr-font-small { font-size:14px; }.wyr-font-medium { font-size:19px; }.wyr-font-large { font-size:25px; font-weight:800; }
+.wyr-answer-text--small { font-size:.92rem; }.wyr-answer-text--medium { font-size:1.12rem; }.wyr-answer-text--large { font-size:1.43rem; }
+.wyr-answer-editor { margin:12px 0; padding:12px; border:1px solid var(--border); border-radius:10px; }
+.wyr-answer-editor label { display:block; font-weight:700; color:var(--text-secondary); }
+.wyr-answer-editor textarea { display:block; resize:vertical; width:100%; min-height:110px; margin-top:8px; padding:12px; background:var(--surface-soft); color:var(--text); border:1px solid var(--border-strong); border-radius:9px; font:inherit; line-height:1.5; }
+.wyr-editor-actions { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+.wyr-root textarea:focus-visible { outline:3px solid var(--focus); outline-offset:2px; }
+@media(max-width:400px) { .wyr-answer-controls { gap:6px; }.wyr-answer-control { min-width:40px; } }
+
+/* One independent print action per catalog topic. */
+.wyr-topic { cursor:default; }
+.wyr-topic-heading { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.wyr-topic-open { border:0; background:transparent; color:inherit; text-align:left; font:inherit; padding:0; cursor:pointer; min-width:0; }
+.wyr-topic-open:hover .wyr-topic-title { color:var(--accent); }
+.wyr-topic-open--details { display:flex; flex-direction:column; width:100%; gap:9px; }
+.wyr-topic-print { display:grid; place-items:center; flex-shrink:0; min-width:42px; min-height:42px; padding:8px; background:var(--surface-soft); color:var(--text); border:1px solid var(--border-strong); border-radius:9px; cursor:pointer; }
+.wyr-topic-print:hover { color:var(--accent); border-color:var(--accent); }
+.wyr-root .wyr-topic-print:focus-visible, .wyr-root .wyr-topic-open:focus-visible { outline:3px solid var(--focus); outline-offset:2px; }

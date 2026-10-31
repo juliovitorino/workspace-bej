@@ -1,6 +1,7 @@
 import { FAVORITE_CHUNKS_KEY, parseFavoriteChunks, readFavoriteChunks, type FavoriteChunk } from "../../utils/favoriteChunks";
 import { backupOf, mergeStudyData, parseStudyBackup, readStudyStore, updateStudyStore, STUDY_CHANGED, type StudyBackup, type StudyData } from "./studyStorage";
 import { studyTracker } from "./studyTrackingService";
+import { mergeWyrAnswers, readWyrAnswers, saveWyrAnswers, validateWyrAnswers, type WyrCustomAnswers } from "../would-you-rather/wouldYouRatherStorage";
 
 const DEVICE_KEY = "bej-sync-device-v1";
 const FOLDER_KEY = "bej-sync-folder-v1";
@@ -8,7 +9,7 @@ const API = "https://www.googleapis.com/drive/v3/files";
 const UPLOAD = "https://www.googleapis.com/upload/drive/v3/files";
 export const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID as string | undefined;
 const SCOPE = "https://www.googleapis.com/auth/drive.file";
-export type SyncFile = { schemaVersion: 1; kind: "bej-study-sync"; deviceId: string; exportedAt: string; study: StudyBackup; favorites: FavoriteChunk[] };
+export type SyncFile = { schemaVersion: 1; kind: "bej-study-sync"; deviceId: string; exportedAt: string; study: StudyBackup; favorites: FavoriteChunk[]; wyrAnswers?: WyrCustomAnswers };
 export type DriveFile = { id: string; name: string };
 export function deviceId(): string {
   let id = localStorage.getItem(DEVICE_KEY);
@@ -80,12 +81,12 @@ export async function readSyncFile(token: string, file: DriveFile): Promise<Sync
   // Reject malformed favorites instead of silently dropping entries.
   const favorites = parseFavoriteChunks(JSON.stringify(v.favorites));
   if (favorites.length !== v.favorites.length) throw new Error(`Invalid favorites in ${file.name}`);
-  return { schemaVersion: 1, kind: "bej-study-sync", deviceId: v.deviceId, exportedAt: String(v.exportedAt), study, favorites };
+  return { schemaVersion: 1, kind: "bej-study-sync", deviceId: v.deviceId, exportedAt: String(v.exportedAt), study, favorites, wyrAnswers: validateWyrAnswers(v.wyrAnswers) };
 }
 export async function createSnapshot(): Promise<SyncFile> {
   await studyTracker.seal();
   return { schemaVersion: 1, kind: "bej-study-sync", deviceId: deviceId(),
-    exportedAt: new Date().toISOString(), study: backupOf(readStudyStore()), favorites: readFavoriteChunks() };
+    exportedAt: new Date().toISOString(), study: backupOf(readStudyStore()), favorites: readFavoriteChunks(), wyrAnswers: readWyrAnswers() };
 }
 export async function uploadSnapshot(token: string, folder: string, files: DriveFile[], snapshot: SyncFile): Promise<void> {
   const name = `bej-study-${snapshot.deviceId}.json`;
@@ -98,20 +99,22 @@ export async function uploadSnapshot(token: string, folder: string, files: Drive
   const url = matches.length ? `${UPLOAD}/${encodeURIComponent(matches[0].id)}?uploadType=multipart` : `${UPLOAD}?uploadType=multipart`;
   await request(token, url, { method: matches.length ? "PATCH" : "POST", headers: { "Content-Type": `multipart/related; boundary=${boundary}` }, body });
 }
-export function combineSyncFiles(local: SyncFile, incoming: SyncFile[]): { study: StudyData; favorites: FavoriteChunk[]; newSessions: number; newAdjustments: number; conflicts: string[] } {
+export function combineSyncFiles(local: SyncFile, incoming: SyncFile[]): { study: StudyData; favorites: FavoriteChunk[]; newSessions: number; newAdjustments: number; conflicts: string[]; wyrAnswers: WyrCustomAnswers } {
   let study = local.study.studyData;
   let newSessions = 0, newAdjustments = 0;
   const conflicts: string[] = [];
+  let wyrAnswers = validateWyrAnswers(local.wyrAnswers);
   const favoriteMap = new Map<string, FavoriteChunk>();
   for (const favorite of local.favorites) favoriteMap.set(`${favorite.language}:${favorite.type ?? "chunk"}:${favorite.id}`, favorite);
   for (const remote of incoming) {
+    wyrAnswers = mergeWyrAnswers(wyrAnswers, validateWyrAnswers(remote.wyrAnswers));
     const merged = mergeStudyData(study, remote.study.studyData);
     study = { ...merged.studyData, goals: local.study.studyData.goals, monthlyGoals: local.study.studyData.monthlyGoals };
     newSessions += merged.newSessions; newAdjustments += merged.newAdjustments;
     conflicts.push(...merged.conflicts.map(c => `${remote.deviceId}: ${c}`));
     for (const favorite of remote.favorites) favoriteMap.set(`${favorite.language}:${favorite.type ?? "chunk"}:${favorite.id}`, favorite);
   }
-  return { study, favorites: [...favoriteMap.values()], newSessions, newAdjustments, conflicts };
+  return { study, favorites: [...favoriteMap.values()], wyrAnswers, newSessions, newAdjustments, conflicts };
 }
 export async function applySync(merged: ReturnType<typeof combineSyncFiles>, baseline: string): Promise<void> {
   if (merged.conflicts.length) throw new Error("Conflicting records: synchronization cancelled.");
@@ -122,6 +125,7 @@ export async function applySync(merged: ReturnType<typeof combineSyncFiles>, bas
     if (JSON.stringify(current) !== baseline) throw new Error("Study data changed. Retry Sync.");
     return { ...current, studyData: merged.study };
   });
+  if (!saveWyrAnswers(merged.wyrAnswers)) throw new Error("Could not save synchronized WRG answers.");
   localStorage.setItem(FAVORITE_CHUNKS_KEY, JSON.stringify(merged.favorites));
   window.dispatchEvent(new Event(STUDY_CHANGED));
   window.dispatchEvent(new StorageEvent("storage", { key: FAVORITE_CHUNKS_KEY }));

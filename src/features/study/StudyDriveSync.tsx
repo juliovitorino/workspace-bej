@@ -82,6 +82,7 @@ export function StudyDriveSync() {
         <div><dt>{t("study.newSessions")}</dt><dd>{preview.merged.newSessions}</dd></div>
         <div><dt>{t("study.newAdjustments")}</dt><dd>{preview.merged.newAdjustments}</dd></div>
         <div><dt>{t("driveSync.favorites")}</dt><dd>{preview.merged.favorites.length}</dd></div>
+        <div><dt>WRG · Respostas personalizadas</dt><dd>{Object.values(preview.merged.wyrAnswers).filter(answer => answer.text !== null).length}</dd></div>
         <div><dt>{t("study.conflicts")}</dt><dd>{preview.merged.conflicts.length}</dd></div>
       </dl>
       {!!preview.merged.conflicts.length && <p role="alert">{t("driveSync.conflictNote")}</p>}
