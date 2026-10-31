@@ -17,7 +17,7 @@
         "audio": null
       },
       "answer": {
-        "text": "I'm from Montevideo, the capital. I enjoy living near the coast.",
+        "text": "I'm from Brazil, but I've heard Montevideo is a pleasant coastal capital. Which part of Uruguay are you from?",
         "audio": null
       },
       "context": null,
@@ -42,7 +42,7 @@
         "audio": null
       },
       "answer": {
-        "text": "I like the relaxed atmosphere and having time to enjoy simple things.",
+        "text": "I've heard that Uruguay has a relatively relaxed pace of life. What do you enjoy most about living there?",
         "audio": null
       },
       "context": null,
@@ -67,7 +67,7 @@
         "audio": null
       },
       "answer": {
-        "text": "I'd suggest exploring Montevideo and then visiting Colonia del Sacramento.",
+        "text": "From what I've seen, Montevideo and Colonia del Sacramento look like great places to visit. Which would you recommend first?",
         "audio": null
       },
       "context": null,
@@ -92,7 +92,7 @@
         "audio": null
       },
       "answer": {
-        "text": "Yes, Montevideo is busier, while smaller towns tend to feel quieter.",
+        "text": "I've heard that Montevideo is busier than Uruguay's smaller towns, which can be quite peaceful. Is that how you see it?",
         "audio": null
       },
       "context": null,
@@ -117,7 +117,7 @@
         "audio": null
       },
       "answer": {
-        "text": "Yes, I drink mate quite often, especially when I'm working or spending time with friends.",
+        "text": "I've noticed that mate seems to be part of everyday life in Uruguay. Do you usually carry it with you?",
         "audio": null
       },
       "context": null,
@@ -142,7 +142,7 @@
         "audio": null
       },
       "answer": {
-        "text": "It's a herbal infusion that we usually drink through a metal straw called a bombilla.",
+        "text": "I've heard that mate is a herbal infusion that people usually drink through a metal straw called a bombilla.",
         "audio": null
       },
       "context": null,
@@ -167,7 +167,7 @@
         "audio": null
       },
       "answer": {
-        "text": "I really enjoy chivito. It's a hearty sandwich that's popular here.",
+        "text": "I've heard that chivito is a popular Uruguayan sandwich. I'd love to know what ingredients you like in yours.",
         "audio": null
       },
       "context": null,
@@ -192,7 +192,7 @@
         "audio": null
       },
       "answer": {
-        "text": "I prefer asado at home because it's a great chance to spend time with family.",
+        "text": "I've heard that sharing an asado is an important social tradition in Uruguay. It reminds me of barbecues here in Brazil.",
         "audio": null
       },
       "context": null,
@@ -217,7 +217,7 @@
         "audio": null
       },
       "answer": {
-        "text": "Yes, I have. I enjoy comparing it with Uruguayan asado.",
+        "text": "I'm familiar with Brazilian barbecue, and I've heard Uruguayan asado has its own traditions. I'd love to compare them someday.",
         "audio": null
       },
       "context": null,
@@ -242,7 +242,7 @@
         "audio": null
       },
       "answer": {
-        "text": "I'd recommend the warmer months if you want to enjoy the beaches.",
+        "text": "I've heard that summer is a popular time to visit Uruguay's beaches. I'd also be interested in exploring the country in a quieter season.",
         "audio": null
       },
       "context": null,
@@ -267,7 +267,7 @@
         "audio": null
       },
       "answer": {
-        "text": "I prefer quieter towns when I want to relax, but Punta del Este is fun too.",
+        "text": "I've seen pictures of Punta del Este, but I've heard Uruguay has lovely quieter coastal towns too. Which do you prefer?",
         "audio": null
       },
       "context": null,
@@ -292,7 +292,7 @@
         "audio": null
       },
       "answer": {
-        "text": "I like taking walks, meeting friends, and sharing a meal with family.",
+        "text": "I imagine a walk by the coast or a meal with friends would make a nice weekend in Uruguay. What do you usually do?",
         "audio": null
       },
       "context": null,
@@ -317,7 +317,7 @@
         "audio": null
       },
       "answer": {
-        "text": "Football has a big place in our culture, although not everyone follows it closely.",
+        "text": "I know that Uruguay has a remarkable football history for a country of its size. It must be exciting when the national team plays.",
         "audio": null
       },
       "context": null,
@@ -342,7 +342,7 @@
         "audio": null
       },
       "answer": {
-        "text": "I follow Nacional, but I enjoy talking about football with fans of other teams too.",
+        "text": "I've heard that Peñarol and Nacional have a famous rivalry. Do you support either of them?",
         "audio": null
       },
       "context": null,
@@ -367,7 +367,7 @@
         "audio": null
       },
       "answer": {
-        "text": "There's often a lot of excitement, and people get together to watch the matches.",
+        "text": "I can imagine how exciting an international football tournament must be in Uruguay, especially given the country's history in the sport.",
         "audio": null
       },
       "context": null,
@@ -392,7 +392,7 @@
         "audio": null
       },
       "answer": {
-        "text": "Tango is part of our cultural heritage, even though people enjoy many different music styles today.",
+        "text": "I've read that tango is part of Uruguay's cultural heritage, along with Argentina's. Is it something people still enjoy today?",
         "audio": null
       },
       "context": null,
@@ -417,7 +417,7 @@
         "audio": null
       },
       "answer": {
-        "text": "We listen to a mix of styles, including candombe, rock, and international music.",
+        "text": "I've heard of candombe and its importance in Uruguayan culture. What other kinds of music would you recommend?",
         "audio": null
       },
       "context": null,
@@ -442,7 +442,7 @@
         "audio": null
       },
       "answer": {
-        "text": "Yes, I visited southern Brazil and really enjoyed the food and beaches.",
+        "text": "I'm Brazilian, so I'd be curious to hear which places in Brazil Uruguayans most enjoy visiting.",
         "audio": null
       },
       "context": null,
@@ -467,7 +467,7 @@
         "audio": null
       },
       "answer": {
-        "text": "We both enjoy football, good food, and spending time with friends and family.",
+        "text": "I think Uruguay and Brazil share a love of football, barbecues, and time with family. What other similarities have you noticed?",
         "audio": null
       },
       "context": null,
@@ -492,7 +492,7 @@
         "audio": null
       },
       "answer": {
-        "text": "They're different languages, but some words are similar, which makes learning interesting.",
+        "text": "I've noticed that Spanish and Portuguese share quite a few words, but the pronunciation can be very different. I'm curious about Uruguayan expressions.",
         "audio": null
       },
       "context": null,
@@ -517,7 +517,7 @@
         "audio": null
       },
       "answer": {
-        "text": "You might hear 'bo' in casual conversations. People sometimes use it to get someone's attention.",
+        "text": "I've heard that people in Uruguay sometimes use 'bo' in casual conversation. Could you give me an example?",
         "audio": null
       },
       "context": null,
@@ -542,7 +542,7 @@
         "audio": null
       },
       "answer": {
-        "text": "Yes, it's a nice place to walk, relax, and watch the water.",
+        "text": "I've seen photos of the Rambla in Montevideo, and it looks like a wonderful place for a walk by the water.",
         "audio": null
       },
       "context": null,
@@ -567,7 +567,7 @@
         "audio": null
       },
       "answer": {
-        "text": "I'd choose Colonia for a quiet weekend, especially if I wanted to explore the old town.",
+        "text": "I'd love to explore the historic streets of Colonia del Sacramento, but a relaxing weekend at the beach also sounds great.",
         "audio": null
       },
       "context": null,
@@ -592,7 +592,7 @@
         "audio": null
       },
       "answer": {
-        "text": "We often share an asado, talk for a long time, and enjoy being together.",
+        "text": "I've heard that asado and sharing mate often bring people together in Uruguay. That sounds a little like family gatherings in Brazil.",
         "audio": null
       },
       "context": null,
@@ -617,7 +617,7 @@
         "audio": null
       },
       "answer": {
-        "text": "I'd like more people to discover our culture, historic towns, and places beyond the famous beaches.",
+        "text": "I'd love more people to know about Uruguay's music, historic towns, and everyday culture, not just its famous beaches.",
         "audio": null
       },
       "context": null,
