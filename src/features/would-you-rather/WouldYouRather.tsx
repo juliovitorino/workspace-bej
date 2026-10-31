@@ -212,6 +212,43 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
     const questions = [...topic.questions].filter(q => !favoritesOnly || favorites.includes(q.id)).sort((a, b) => a.order - b.order);
     startSet({ title: topic.title, questions, topic });
   }
+  function printTopic(topic: WyrTopic) {
+    if (!loaded) return;
+    // Browser print preview may allow PDF export on mobile and desktop.
+    const popup = window.open("", "_blank");
+    if (!popup) {
+      setNotice("Permita pop-ups para imprimir este tópico.");
+      return;
+    }
+    const escapeHtml = (value: string) => value.replace(/[&<>"']/g, char =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char] ?? char);
+    const locale = loaded.locale;
+    const questionHtml = [...topic.questions].sort((a, b) => a.order - b.order).map((q, i) => {
+      const answerA = customAnswers[wyrAnswerKey(locale, q.id, "A")]?.text ?? q.options.A.answer;
+      const answerB = customAnswers[wyrAnswerKey(locale, q.id, "B")]?.text ?? q.options.B.answer;
+      return '<section class="question"><h2>' + String(i + 1).padStart(2, "0") + '. ' + escapeHtml(q.question) + '</h2>' +
+        '<div class="option"><b>A.</b> ' + escapeHtml(q.options.A.text) + '</div>' +
+        '<p class="answer"><b>Answer A:</b> ' + escapeHtml(answerA) + '</p>' +
+        '<div class="option"><b>B.</b> ' + escapeHtml(q.options.B.text) + '</div>' +
+        '<p class="answer"><b>Answer B:</b> ' + escapeHtml(answerB) + '</p></section>';
+    }).join("");
+    const title = String(topic.order).padStart(2, "0") + ". " + topic.title;
+    const html = '<!doctype html><html lang="' + escapeHtml(locale) + '"><head><meta charset="utf-8">' +
+      '<meta name="viewport" content="width=device-width,initial-scale=1"><title>BEJ - ' + escapeHtml(title) + '</title>' +
+      '<style>@page{size:A4;margin:15mm 16mm}*{box-sizing:border-box}body{font:11pt/1.45 Arial,sans-serif;color:#111;background:#fff;margin:0}' +
+      'header{border-bottom:2px solid #173861;padding-bottom:9px;margin-bottom:16px}header small{font-size:9pt;font-weight:bold;letter-spacing:1px;color:#365b88}' +
+      'h1{font-size:20pt;margin:5px 0}header p{font-size:10pt;margin:0;color:#444}.question{break-inside:avoid;page-break-inside:avoid;margin:0 0 17px;padding:0 0 12px;border-bottom:1px solid #ddd}' +
+      'h2{font-size:12pt;margin:0 0 8px}.option{margin:5px 0}.answer{margin:3px 0 9px 18px;color:#333;font-size:10.5pt}' +
+      '@media screen{body{max-width:210mm;margin:20px auto;padding:15mm;box-shadow:0 2px 20px #ccc}}@media print{body{margin:0}}</style></head><body>' +
+      '<header><small>BRAZILIAN ENGLISH JOURNEY</small><h1>Would You Rather? — ' + escapeHtml(title) + '</h1>' +
+      '<p>Speaking &amp; Small Talk · ' + topic.questions.length + ' questions · ' + escapeHtml(topic.level) + '</p></header>' +
+      questionHtml + '</body></html>';
+    popup.document.open();
+    popup.document.write(html);
+    popup.document.close();
+    popup.focus();
+    popup.print();
+  }
   function openFavorites() {
     const questions = allTopics.flatMap(topic => topic.questions.filter(q => favorites.includes(q.id)));
     startSet({ title: tr("favorites"), questions, topic: null });
@@ -258,11 +295,26 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
           <div className="wyr-topic-grid">{topics.map(topic => {
             const total = topic.questions.length;
             const completed = completedCount(topic.questions);
-            return <button key={topic.id} type="button" className="wyr-topic" onClick={() => openTopic(topic)}>
-              <span className="wyr-topic-title">{String(topic.order).padStart(2, "0")}. {topic.title}</span>
-              <span className="wyr-topic-meta">{total} {tr("questions")} · {topic.level} · {completed}/{total} {tr("completed")}</span>
-              <span className="wyr-progress"><span style={{ width: `${100 * completed / total}%` }} /></span>
-            </button>;
+            return <div key={topic.id} className="wyr-topic">
+              <div className="wyr-topic-heading">
+                <button type="button" className="wyr-topic-open" onClick={() => openTopic(topic)}
+                  aria-label={String(topic.order).padStart(2, "0") + ". " + topic.title}>
+                  <span className="wyr-topic-title">{String(topic.order).padStart(2, "0")}. {topic.title}</span>
+                </button>
+                <button type="button" className="wyr-topic-print" onClick={() => printTopic(topic)}
+                  aria-label={"Imprimir " + topic.title} title={"Imprimir " + topic.title}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v5a2 2 0 0 1-2 2h-2"/>
+                    <path d="M6 14h12v7H6zM18 11h.01"/>
+                  </svg>
+                </button>
+              </div>
+              <button type="button" className="wyr-topic-open wyr-topic-open--details" onClick={() => openTopic(topic)}>
+                <span className="wyr-topic-meta">{total} {tr("questions")} · {topic.level} · {completed}/{total} {tr("completed")}</span>
+                <span className="wyr-progress"><span style={{ width: `${100 * completed / total}%` }} /></span>
+              </button>
+            </div>;
           })}</div>
         </details>)}
       </>}
