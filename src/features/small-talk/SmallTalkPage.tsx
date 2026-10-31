@@ -766,7 +766,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
           <span>Posição {orderedTopicItems.findIndex(card => card.id === item.id) + 1}</span>
           <button type="button" className="small-talk-icon-button" title="Mover card para cima" aria-label="Mover card para cima" disabled={orderedTopicItems[0]?.id === item.id} onClick={() => moveCard(item.id, -1)}>↑</button>
           <button type="button" className="small-talk-icon-button" title="Mover card para baixo" aria-label="Mover card para baixo" disabled={orderedTopicItems[orderedTopicItems.length - 1]?.id === item.id} onClick={() => moveCard(item.id, 1)}>↓</button>
-        </div>
+        </div>}
         <div className="small-talk-question-heading"><p><strong>{questionFor(item)}</strong></p>
           <button type="button" className="small-talk-icon-button" aria-label="Editar pergunta" title="Editar pergunta" onClick={() => openQuestionEditor(item)}>✏️</button>
           {questionOverrides[item.id] && <button type="button" className="small-talk-restore-button" onClick={() => restoreQuestion(item.id)}>Restaurar pergunta</button>}
