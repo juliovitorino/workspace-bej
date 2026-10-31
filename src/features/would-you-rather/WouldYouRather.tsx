@@ -4,7 +4,7 @@ import type { SourceLanguage, StudentLanguage } from "../../config/languages";
 import { LANGUAGES } from "../../config/languages";
 import { useTrainingStudy, type TrainingStudyReporter } from "../study/useTrainingStudy";
 import { loadWouldYouRather, normalizeWyrSearch, type WyrData, type WyrQuestion, type WyrTopic } from "./wouldYouRatherService";
-import { readWyrStored, saveWyrChoices, saveWyrFavorites, type WyrChoice } from "./wouldYouRatherStorage";
+import { readWyrStored, saveWyrChoices, saveWyrFavorites, readWyrAnswers, saveWyrAnswers, wyrAnswerKey, readWyrFontSize, saveWyrFontSize, type WyrChoice, type WyrCustomAnswers, type WyrFontSize } from "./wouldYouRatherStorage";
 import "./wouldYouRather.css";
 
 type Screen = "catalog" | "practice" | "summary";
@@ -15,7 +15,10 @@ const CATEGORY_NAMES: Record<string, string> = {
   relationships: "Relationships", "personal-growth": "Personal Growth", "fun-imagination": "Fun & Imagination", "deep-conversations": "Deep Conversations"
 };
 
-function Icon({ kind }: { kind: "copy" | "translate" }) {
+function Icon({ kind }: { kind: "copy" | "translate" | "audio" | "edit" }) {
+  if (kind === "audio") return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 9a5 5 0 0 1 0 6M18 6a9 9 0 0 1 0 12"/></svg>;
+  if (kind === "edit") return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m15 5 4 4M4 20l4.5-1 11-11a2.83 2.83 0 0 0-4-4l-11 11L4 20Z"/></svg>;
+
   return kind === "copy" ? (
     <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
   ) : (
@@ -23,14 +26,28 @@ function Icon({ kind }: { kind: "copy" | "translate" }) {
   );
 }
 
+
 interface TextCardProps {
   label: string; text: string; effectiveLocale: StudentLanguage; targetLocale: StudentLanguage;
   onNotice: (message: string) => void; reveal?: boolean; onReveal?: () => void;
   selected?: boolean; onSelect?: () => void; copyLabel: string; translateLabel: string;
   showLabel: string; hideLabel: string; copySuccess: string; copyError: string;
+  fontSize?: WyrFontSize; onFontSize?: (size: WyrFontSize) => void;
+  onSaveAnswer?: (value: string | null) => void; originalAnswer?: string;
 }
-function TextCard({ label, text, effectiveLocale, targetLocale, onNotice, reveal, onReveal, selected, onSelect, copyLabel, translateLabel, showLabel, hideLabel, copySuccess, copyError }: TextCardProps) {
+function TextCard(props: TextCardProps) {
+  const { label, text, effectiveLocale, targetLocale, onNotice, reveal, onReveal, selected, onSelect,
+    copyLabel, translateLabel, showLabel, hideLabel, copySuccess, copyError, fontSize = "medium",
+    onFontSize, onSaveAnswer, originalAnswer } = props;
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState(text);
   const isAnswer = onReveal !== undefined;
+  const lang = effectiveLocale.slice(0, 2);
+  const labels = lang === "pt" ?
+    { small: "Fonte pequena", medium: "Fonte média", large: "Fonte grande", audio: "Ouvir resposta", edit: "Editar resposta", save: "Salvar", cancel: "Cancelar", restore: "Restaurar original", draft: "Minha resposta" } :
+    lang === "es" ? { small: "Letra pequeña", medium: "Letra mediana", large: "Letra grande", audio: "Escuchar respuesta", edit: "Editar respuesta", save: "Guardar", cancel: "Cancelar", restore: "Restaurar original", draft: "Mi respuesta" } :
+    lang === "fr" ? { small: "Petite police", medium: "Police moyenne", large: "Grande police", audio: "Écouter la réponse", edit: "Modifier la réponse", save: "Enregistrer", cancel: "Annuler", restore: "Restaurer l’original", draft: "Ma réponse" } :
+    { small: "Small font", medium: "Medium font", large: "Large font", audio: "Listen to answer", edit: "Edit answer", save: "Save", cancel: "Cancel", restore: "Restore original", draft: "My answer" };
   async function copy() {
     try {
       if (!navigator.clipboard?.writeText) throw new Error("clipboard unavailable");
@@ -39,13 +56,21 @@ function TextCard({ label, text, effectiveLocale, targetLocale, onNotice, reveal
     } catch { onNotice(copyError); }
   }
   function translate() {
-    const sl = effectiveLocale.slice(0, 2);
-    const tl = targetLocale.slice(0, 2);
-    const url = `https://translate.google.com/?sl=${encodeURIComponent(sl)}&tl=${encodeURIComponent(tl)}&text=${encodeURIComponent(text)}&op=translate`;
-    window.open(url, "_blank", "noopener,noreferrer");
+    const sl = effectiveLocale.slice(0, 2), tl = targetLocale.slice(0, 2);
+    window.open("https://translate.google.com/?sl=" + encodeURIComponent(sl) + "&tl=" + encodeURIComponent(tl) +
+      "&text=" + encodeURIComponent(text) + "&op=translate", "_blank", "noopener,noreferrer");
+  }
+  function speak() {
+    if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
+      onNotice("Speech synthesis is not available on this device."); return;
+    }
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = effectiveLocale; utterance.rate = 0.92;
+    window.speechSynthesis.speak(utterance);
   }
   return (
-    <div className={`wyr-card${onSelect ? " wyr-card--option" : ""}${selected ? " wyr-card--selected" : ""}`}>
+    <div className={"wyr-card" + (onSelect ? " wyr-card--option" : "") + (selected ? " wyr-card--selected" : "")}>
       <div className="wyr-card-head">
         <span className="wyr-card-label">{label}</span>
         <div className="wyr-card-actions">
@@ -53,16 +78,33 @@ function TextCard({ label, text, effectiveLocale, targetLocale, onNotice, reveal
           <button type="button" className="wyr-icon-button" aria-label={translateLabel} title={translateLabel} onClick={event => { event.stopPropagation(); translate(); }}><Icon kind="translate" /></button>
         </div>
       </div>
-      {isAnswer ? (
-        <div>
-          {reveal && <p className="wyr-card-text">{text}</p>}
-          <button type="button" className="wyr-reveal" aria-expanded={!!reveal} onClick={onReveal}>{reveal ? hideLabel : showLabel}</button>
-        </div>
-      ) : onSelect ? (
+      {isAnswer ? <div>
+        {reveal && <>
+          <p className={"wyr-card-text wyr-answer-text wyr-answer-text--" + fontSize}>{text}</p>
+          <div className="wyr-answer-controls" aria-label={label}>
+            <div className="wyr-font-controls" role="group" aria-label="Font size">
+              {(["small", "medium", "large"] as const).map(size =>
+                <button type="button" key={size} className={"wyr-answer-control wyr-font-" + size + (fontSize === size ? " wyr-control-active" : "")}
+                  title={labels[size]} aria-label={labels[size]} aria-pressed={fontSize === size} onClick={() => onFontSize?.(size)}>A</button>)}
+            </div>
+            <button type="button" className="wyr-answer-control" title={labels.audio} aria-label={labels.audio} onClick={speak}><Icon kind="audio" /></button>
+            <button type="button" className="wyr-answer-control" title={labels.edit} aria-label={labels.edit} onClick={() => { setDraft(text); setEditing(value => !value); }}><Icon kind="edit" /></button>
+          </div>
+          {editing && <div className="wyr-answer-editor">
+            <label>{labels.draft}<textarea rows={5} maxLength={10000} value={draft} onChange={event => setDraft(event.target.value)} /></label>
+            <div className="wyr-editor-actions">
+              <button type="button" className="wyr-button" disabled={!draft.trim()} onClick={() => { onSaveAnswer?.(draft.trim()); setEditing(false); }}>{labels.save}</button>
+              <button type="button" className="wyr-button wyr-button--ghost" onClick={() => setEditing(false)}>{labels.cancel}</button>
+              <button type="button" className="wyr-button wyr-button--ghost" disabled={text === originalAnswer}
+                onClick={() => { onSaveAnswer?.(null); setDraft(originalAnswer ?? ""); setEditing(false); }}>{labels.restore}</button>
+            </div>
+          </div>}
+        </>}
+        <button type="button" className="wyr-reveal" aria-expanded={!!reveal} onClick={onReveal}>{reveal ? hideLabel : showLabel}</button>
+      </div> : onSelect ?
         <button type="button" className="wyr-option-select" aria-pressed={!!selected} onClick={onSelect}>
           <span className="wyr-radio" aria-hidden="true">{selected ? "✓" : ""}</span><span>{text}</span>
-        </button>
-      ) : <p className="wyr-card-text wyr-question-text">{text}</p>}
+        </button> : <p className="wyr-card-text wyr-question-text">{text}</p>}
     </div>
   );
 }
@@ -83,6 +125,8 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
   const [favorites, setFavorites] = useState<string[]>(stored.favorites);
   const [choices, setChoices] = useState<Record<string, WyrChoice>>(stored.choices);
   const [storageError, setStorageError] = useState(stored.storageError);
+  const [customAnswers, setCustomAnswers] = useState<WyrCustomAnswers>(readWyrAnswers);
+  const [fontSize, setFontSize] = useState<WyrFontSize>(readWyrFontSize);
   const [practiceSet, setPracticeSet] = useState<PracticeSet | null>(null);
   const [index, setIndex] = useState(0);
   const [revealed, setRevealed] = useState({ A: false, B: false });
@@ -120,6 +164,15 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
   const topic = practiceSet?.topic;
   const targetLocale = sourceLanguage === (loaded?.locale ?? "en-US") ? (language === sourceLanguage ? "pt-BR" : language) : sourceLanguage;
   const completedCount = (questions: WyrQuestion[]) => questions.filter(q => choices[q.id]).length;
+  function setAnswerFont(size: WyrFontSize) { setFontSize(size); if (!saveWyrFontSize(size)) setStorageError(true); }
+  function saveAnswer(choice: WyrChoice, text: string | null) {
+    if (!current || !loaded) return;
+    recordActivity();
+    const key = wyrAnswerKey(loaded.locale, current.id, choice);
+    const updated = { ...customAnswers, [key]: { text, updatedAt: new Date().toISOString() } };
+    if (!saveWyrAnswers(updated)) { setStorageError(true); return; }
+    setCustomAnswers(updated);
+  }
 
   function startSet(set: PracticeSet, startIndex = 0) {
     if (!set.questions.length) return;
@@ -172,7 +225,10 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
     <TextCard key={key} label={label} text={text} effectiveLocale={loaded?.locale ?? "en-US"} targetLocale={targetLocale}
       onNotice={setNotice} copyLabel={tr(`copy.${key}`)} translateLabel={tr(`translate.${key}`)} copySuccess={tr("copied")} copyError={tr("copyError")}
       showLabel={tr(key === "answerA" ? "showA" : "showB")} hideLabel={tr(key === "answerA" ? "hideA" : "hideB")}
-      onSelect={extra?.select} selected={extra?.selected} reveal={extra?.reveal} onReveal={extra?.toggle} />
+      onSelect={extra?.select} selected={extra?.selected} reveal={extra?.reveal} onReveal={extra?.toggle}
+      fontSize={fontSize} onFontSize={setAnswerFont}
+      originalAnswer={key === "answerA" ? current?.options.A.answer : key === "answerB" ? current?.options.B.answer : undefined}
+      onSaveAnswer={key === "answerA" ? value => saveAnswer("A", value) : key === "answerB" ? value => saveAnswer("B", value) : undefined} />
   );
 
   return <section className="wyr-root" aria-label="Would You Rather Game">
@@ -217,8 +273,8 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
         {card(tr("question"), current.question, "question")}
         {card(tr("optionA"), current.options.A.text, "optionA", { select: () => choose("A"), selected: choices[current.id] === "A" })}
         {card(tr("optionB"), current.options.B.text, "optionB", { select: () => choose("B"), selected: choices[current.id] === "B" })}
-        {choices[current.id] === "A" && card(tr("answerA"), current.options.A.answer, "answerA", { reveal: revealed.A, toggle: () => { recordActivity(); setRevealed(p => ({ ...p, A: !p.A })); } })}
-        {choices[current.id] === "B" && card(tr("answerB"), current.options.B.answer, "answerB", { reveal: revealed.B, toggle: () => { recordActivity(); setRevealed(p => ({ ...p, B: !p.B })); } })}
+        {choices[current.id] === "A" && card(tr("answerA"), customAnswers[wyrAnswerKey(loaded.locale, current.id, "A")]?.text ?? current.options.A.answer, "answerA", { reveal: revealed.A, toggle: () => { recordActivity(); setRevealed(p => ({ ...p, A: !p.A })); } })}
+        {choices[current.id] === "B" && card(tr("answerB"), customAnswers[wyrAnswerKey(loaded.locale, current.id, "B")]?.text ?? current.options.B.answer, "answerB", { reveal: revealed.B, toggle: () => { recordActivity(); setRevealed(p => ({ ...p, B: !p.B })); } })}
         {notice && <p role="status" className="wyr-notice">{notice}</p>}
         <div className="wyr-navigation"><button type="button" className="wyr-button wyr-button--ghost" onClick={() => go(index - 1)} disabled={index === 0}>‹ {tr("previous")}</button><button type="button" className="wyr-button" onClick={() => go(index + 1)}>{index + 1 === practiceSet.questions.length ? tr("finish") : tr("next")} ›</button></div>
       </div>}
