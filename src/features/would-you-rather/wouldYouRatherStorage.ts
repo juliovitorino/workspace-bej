@@ -24,3 +24,50 @@ export function saveWyrFavorites(ids: string[]): boolean {
 export function saveWyrChoices(choices: Record<string, WyrChoice>): boolean {
   try { localStorage.setItem(WYR_PROGRESS_KEY, JSON.stringify(choices)); return true; } catch { return false; }
 }
+
+
+export const WYR_CUSTOM_ANSWERS_KEY = "bej:would-you-rather:custom-answers:v1";
+export const WYR_FONT_SIZE_KEY = "bej:would-you-rather:answer-font:v1";
+export type WyrFontSize = "small" | "medium" | "large";
+export type WyrCustomAnswer = { text: string | null; updatedAt: string };
+export type WyrCustomAnswers = Record<string, WyrCustomAnswer>;
+export const wyrAnswerKey = (locale: string, questionId: string, choice: WyrChoice) => locale + ":" + questionId + ":" + choice;
+function validAnswer(value: unknown): value is WyrCustomAnswer {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return false;
+  const item = value as Partial<WyrCustomAnswer>;
+  return (item.text === null || (typeof item.text === "string" && !!item.text.trim() && item.text.length <= 10000)) &&
+    typeof item.updatedAt === "string" && !Number.isNaN(Date.parse(item.updatedAt));
+}
+export function validateWyrAnswers(value: unknown): WyrCustomAnswers {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return {};
+  const result: WyrCustomAnswers = {};
+  for (const [key, item] of Object.entries(value)) {
+    if (/^(en-US|pt-BR|es-ES|fr-FR):[a-f0-9-]{36}:[AB]$/i.test(key) && validAnswer(item)) result[key] = item;
+  }
+  return result;
+}
+export function readWyrAnswers(): WyrCustomAnswers {
+  try { return validateWyrAnswers(JSON.parse(localStorage.getItem(WYR_CUSTOM_ANSWERS_KEY) || "{}")); }
+  catch { return {}; }
+}
+export function saveWyrAnswers(answers: WyrCustomAnswers): boolean {
+  try { localStorage.setItem(WYR_CUSTOM_ANSWERS_KEY, JSON.stringify(answers)); return true; }
+  catch { return false; }
+}
+export function mergeWyrAnswers(...sources: WyrCustomAnswers[]): WyrCustomAnswers {
+  const result: WyrCustomAnswers = {};
+  for (const source of sources) for (const [key, answer] of Object.entries(validateWyrAnswers(source))) {
+    const existing = result[key];
+    if (!existing || answer.updatedAt > existing.updatedAt ||
+      (answer.updatedAt === existing.updatedAt && JSON.stringify(answer) > JSON.stringify(existing))) result[key] = answer;
+  }
+  return result;
+}
+export function readWyrFontSize(): WyrFontSize {
+  try { const value = localStorage.getItem(WYR_FONT_SIZE_KEY); return value === "small" || value === "large" ? value : "medium"; }
+  catch { return "medium"; }
+}
+export function saveWyrFontSize(value: WyrFontSize): boolean {
+  try { localStorage.setItem(WYR_FONT_SIZE_KEY, value); return true; }
+  catch { return false; }
+}
