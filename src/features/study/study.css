@@ -300,3 +300,17 @@
 /* Extra activities: clearly visible, touch-friendly five-minute time correction. */
 .extra-activities .extra-activity-rewind { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
 .extra-activities .extra-activity-rewind svg { flex-shrink: 0; }
+
+/* Days Streak category selection controls the weekly study-time projection. */
+.study-dashboard .bej-category-mini { display:block; width:100%; color:inherit; font:inherit; text-align:left; cursor:pointer; transition:border-color 150ms ease,box-shadow 150ms ease,background-color 150ms ease; }
+.study-dashboard .bej-category-mini:hover { border-color:var(--category-color); }
+.study-dashboard .bej-category-mini:focus-visible { outline:3px solid var(--category-color); outline-offset:3px; }
+.study-dashboard .bej-category-mini.is-selected,
+[data-theme="dark"] .study-dashboard .bej-category-mini.is-selected { border-color:var(--category-color); background:color-mix(in srgb,var(--category-color) 13%,transparent); box-shadow:inset 0 0 0 1px var(--category-color); }
+.study-dashboard .bej-category-mini.is-selected .bej-category-mini-label::after { content:"✓"; margin-left:auto; font-weight:800; color:var(--category-color); }
+.bej-week-bar-fill.has-study.bej-week-bar-conversation { background:#5799ff; }
+.bej-week-bar-fill.has-study.bej-week-bar-reading { background:var(--bej-green); }
+.bej-week-bar-fill.has-study.bej-week-bar-writing { background:#f8b736; }
+.bej-week-bar-fill.has-study.bej-week-bar-active-listening { background:var(--bej-pink); }
+.bej-week-bar-fill.has-study.bej-week-bar-private-class { background:var(--bej-purple); }
+.bej-week-bar-fill.has-study.bej-week-bar-other { background:var(--bej-orange); }
