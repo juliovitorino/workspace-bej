@@ -2799,3 +2799,9 @@ button { color: inherit; }
 .bej-terms-disclosure { margin: 18px 0; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
 .bej-terms-disclosure summary { cursor: pointer; font-weight: 700; }
 .bej-terms-text { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 50vh; overflow-y: auto; margin-top: 12px; font: inherit; font-size: .88rem; line-height: 1.6; }
+
+/* Recuperação ativa: like manual no lado de origem do flashcard de memória. */
+.memory-recall-like{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;margin:14px 0}
+.memory-recall-like button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:8px 14px;border:1px solid var(--border-strong);border-radius:10px;background:var(--page);color:var(--text);font:inherit;font-weight:700;cursor:pointer}
+.memory-recall-like button:hover{border-color:var(--accent);background:var(--surface-raised)}
+.memory-recall-like span{font-variant-numeric:tabular-nums}
