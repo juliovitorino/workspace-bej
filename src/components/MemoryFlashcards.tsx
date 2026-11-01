@@ -27,6 +27,25 @@ interface Props {
 
 const levelNames = () => [t("memory.beginner"), t("memory.elementary"), t("memory.intermediate"), t("memory.upperIntermediate"), t("memory.advanced"), t("memory.proficient")];
 const ignoreWalking = () => {};
+const MEMORY_RECALL_LIKES_KEY = "bej:memory-flashcards:recall-likes:v1";
+type RecallLikes = Record<string, number>;
+
+function readRecallLikes(): RecallLikes {
+  try {
+    const value: unknown = JSON.parse(localStorage.getItem(MEMORY_RECALL_LIKES_KEY) ?? "{}");
+    if (!value || typeof value !== "object" || Array.isArray(value)) return {};
+    return value as RecallLikes;
+  } catch { return {}; }
+}
+
+
+function currentRecallKeyFor(source: SourceLanguage, target: StudentLanguage, id?: string): string {
+  return id ? `${source}:${target}:${id}` : "";
+}
+
+function safeRecallCount(value: unknown): number {
+  return typeof value === "number" && Number.isSafeInteger(value) && value > 0 ? value : 0;
+}
 
 export function shuffleChunks(chunks: MentalIntention[]): MentalIntention[] {
   const shuffled = [...chunks];
@@ -77,6 +96,23 @@ function MemoryRound({ eligible, level, onLevelChange, ...props }: Props & {
   const [personalCount, setPersonalCount] = useState<number | null>(null);
   const [backupMessage, setBackupMessage] = useState("");
   const [backupError, setBackupError] = useState("");
+  const [recallLikes, setRecallLikes] = useState<RecallLikes>(readRecallLikes);
+  const [recallLikeError, setRecallLikeError] = useState("");
+  const currentRecallKey = currentRecallKeyFor(sourceLanguage, language, deck[position]?.id);
+  const currentRecallCount = safeRecallCount(recallLikes[currentRecallKey]);
+
+  function registerRecallLike() {
+    if (!currentRecallKey || !deck[position] || currentRecallCount === Number.MAX_SAFE_INTEGER) return;
+    const next = { ...recallLikes, [currentRecallKey]: currentRecallCount + 1 };
+    try {
+      localStorage.setItem(MEMORY_RECALL_LIKES_KEY, JSON.stringify(next));
+      setRecallLikes(next);
+      setRecallLikeError("");
+    } catch {
+      setRecallLikeError("Não foi possível salvar o acerto neste dispositivo.");
+    }
+  }
+
 
   useEffect(() => {
     let active = true;
@@ -197,6 +233,13 @@ function MemoryRound({ eligible, level, onLevelChange, ...props }: Props & {
               onToggle={() => props.onToggleFavorite?.(current.id)} />}
           </div>
           <h3 lang={sourceLanguage}>{current.intention}</h3>
+          <div className="memory-recall-like">
+            <button type="button" onClick={registerRecallLike} aria-label="Registrar recuperação correta deste flashcard" title="Acertei: registrar recuperação da memória">
+              <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 10v12H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h3Zm0 0 4-8a3 3 0 0 1 3 3v4h5a3 3 0 0 1 2.9 3.8l-2 7A3 3 0 0 1 17 22H7"/></svg>
+              <span>Like</span>
+            </button>
+            <span aria-live="polite">{currentRecallCount} {currentRecallCount === 1 ? "acerto" : "acertos"}</span>
+          </div>
           <p>{t("memory.recallHint", { targetLanguage: localizedLanguageName(language) })}</p>
           <small>{t("memory.answerHidden")}</small>
         </>}
@@ -211,6 +254,7 @@ function MemoryRound({ eligible, level, onLevelChange, ...props }: Props & {
           setRevealed(false);
         }}>{complete ? t("memory.startANewRound") : "⇄ " + t("memory.drawNextChunk")}</button>
     </div>
+    {recallLikeError && <p className="personal-error" role="alert">{recallLikeError}</p>}
     <p className="memory-status" role="status">{complete ? t("memory.roundComplete") : current && studied.has(current.id) ? t("memory.chunkRecordedYouCanMoveOn") : t("memory.revealTheBackToRecordYourStudy")}</p>
   </section>;
 }
