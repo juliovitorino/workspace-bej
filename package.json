@@ -1,7 +1,7 @@
 {
   "name": "mental-hashmap-app",
   "private": true,
-  "version": "5.0.14.20261101.0909",
+  "version": "5.0.15.20261101.1132",
   "type": "module",
   "scripts": {
     "dev": "vite",
