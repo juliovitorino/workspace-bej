@@ -16,6 +16,10 @@ interface Props {
   onWalkingChange?: (active: boolean) => void;
 }
 
+type OccurrenceFilter = 'all' | 'zero' | 'low' | 'medium' | 'high';
+type OccurrenceSort = 'manual' | 'most' | 'least';
+const OCCURRENCES_KEY = 'bej:small-talk:hellotalk-occurrences:v1';
+
 type LevelFilter = 'all' | 'unclassified' | 'a1' | 'a2' | 'b1' | 'b2' | 'c1';
 const levelOptions: LevelFilter[] = ['all', 'unclassified', 'a1', 'a2', 'b1', 'b2', 'c1'];
 
@@ -87,6 +91,10 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   const [newLevel, setNewLevel] = useState<'a1' | 'a2' | 'b1' | 'b2' | 'c1' | ''>('');
   const [showDeleted, setShowDeleted] = useState(false);
   const [orderMode, setOrderMode] = useState(false);
+  const [occurrences, setOccurrences] = useState<Record<string, number>>(() => readLocalJson<Record<string, number>>(OCCURRENCES_KEY, {}));
+  const [occurrenceFilter, setOccurrenceFilter] = useState<OccurrenceFilter>('all');
+  const [occurrenceSort, setOccurrenceSort] = useState<OccurrenceSort>('manual');
+  const [occurrenceError, setOccurrenceError] = useState('');
   const ORDER_KEY = 'bej:small-talk:card-order:v1';
   const [topicOrders, setTopicOrders] = useState<Record<string, string[]>>(() => readLocalJson<Record<string, string[]>>(ORDER_KEY, {}));
   const [orderError, setOrderError] = useState('');
@@ -132,6 +140,27 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     delete next[topicId];
     try { saveLocalJson(ORDER_KEY, next); setTopicOrders(next); setOrderError(''); }
     catch { setOrderError('Não foi possível restaurar a ordem original.'); }
+  }
+
+  function occurrenceCount(id: string): number {
+    const value = occurrences[id];
+    return typeof value === 'number' && Number.isSafeInteger(value) && value > 0 ? value : 0;
+  }
+
+  function changeOccurrence(id: string, delta: -1 | 1) {
+    const current = occurrenceCount(id);
+    const nextCount = Math.max(0, Math.min(Number.MAX_SAFE_INTEGER, current + delta));
+    if (nextCount === current) return;
+    const next = { ...occurrences };
+    if (nextCount === 0) delete next[id];
+    else next[id] = nextCount;
+    try {
+      saveLocalJson(OCCURRENCES_KEY, next);
+      setOccurrences(next);
+      setOccurrenceError('');
+    } catch {
+      setOccurrenceError('Não foi possível salvar as ocorrências neste dispositivo.');
+    }
   }
 
   function addCard() {
@@ -387,14 +416,26 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   }
 
   const filtered = useMemo(() => {
-    return orderedTopicItems.filter(item => {
+    const matches = orderedTopicItems.filter(item => {
       if (!item.enabled || !item.question?.text) return false;
       if (query.trim() && !questionFor(item).toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())) return false;
       if (level !== 'all' && (level === 'unclassified' ? item.level !== null : item.level !== level)) return false;
       if (favoritesOnly && !favorites.includes(item.id)) return false;
+      const count = occurrences[item.id] ?? 0;
+      const n = Number.isSafeInteger(count) && count > 0 ? count : 0;
+      if (occurrenceFilter === 'zero' && n !== 0) return false;
+      if (occurrenceFilter === 'low' && (n < 1 || n > 2)) return false;
+      if (occurrenceFilter === 'medium' && (n < 3 || n > 9)) return false;
+      if (occurrenceFilter === 'high' && n < 10) return false;
       return true;
     });
-  }, [orderedTopicItems, query, level, favoritesOnly, favorites, questionOverrides]);
+    if (occurrenceSort === 'manual') return matches;
+    return matches.sort((a, b) => {
+      const countA = Number.isSafeInteger(occurrences[a.id]) && occurrences[a.id] > 0 ? occurrences[a.id] : 0;
+      const countB = Number.isSafeInteger(occurrences[b.id]) && occurrences[b.id] > 0 ? occurrences[b.id] : 0;
+      return occurrenceSort === 'most' ? countB - countA : countA - countB;
+    });
+  }, [orderedTopicItems, query, level, favoritesOnly, favorites, questionOverrides, occurrenceFilter, occurrenceSort, occurrences]);
 
   function toggleFavorite(id: string) {
     const next = favorites.includes(id) ? favorites.filter(v => v !== id) : [...favorites, id];
@@ -673,6 +714,8 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       <label>Pesquisar pergunta <input type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Search questions..." /></label>
       <label>Nível <select value={level} onChange={e => setLevel(e.target.value as LevelFilter)}>{levelOptions.map(l => <option key={l} value={l}>{l === 'all' ? 'Todos' : l === 'unclassified' ? 'Sem classificação' : l.toUpperCase()}</option>)}</select></label>
       <label><input type="checkbox" checked={favoritesOnly} onChange={e => setFavoritesOnly(e.target.checked)} /> Apenas favoritos</label>
+      <label>Ocorrências HelloTalk <select value={occurrenceFilter} onChange={e => setOccurrenceFilter(e.target.value as OccurrenceFilter)}><option value="all">Todas</option><option value="zero">Sem ocorrências (0)</option><option value="low">Baixa (1–2)</option><option value="medium">Média (3–9)</option><option value="high">Alta (10+)</option></select></label>
+      <label>Ordenar por ocorrências <select value={occurrenceSort} onChange={e => setOccurrenceSort(e.target.value as OccurrenceSort)}><option value="manual">Ordem personalizada</option><option value="most">Maior ocorrência primeiro</option><option value="least">Menor ocorrência primeiro</option></select></label>
     </div>
     <div className="small-talk-configuration-toggle">
       <button type="button" className="small-talk-icon-button" aria-label="Configurar Modo Caminhada" title="Configurar Modo Caminhada" aria-expanded={settingsOpen} aria-controls="small-talk-settings-panel" onClick={() => setSettingsOpen(v => !v)}>⚙️</button>
@@ -754,6 +797,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
         {orderMode && <button type="button" className="secondary-button" disabled={!topicOrders[topicId]?.length} onClick={resetCardOrder}>Restaurar ordem original</button>}
       </div>
       {orderError && <p role="alert">{orderError}</p>}
+      {occurrenceError && <p role="alert">{occurrenceError}</p>}
       {orderMode && <p className="settings-dialog-help">Use as setas para mudar a ordem dos cards. A ordem é salva automaticamente neste dispositivo e será usada na impressão. O Modo Caminhada não é alterado.</p>}
     </header>
     <div className="small-talk-question-list">{filtered.map(item => {
@@ -767,6 +811,11 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
           <button type="button" className="small-talk-icon-button" title="Mover card para cima" aria-label="Mover card para cima" disabled={orderedTopicItems[0]?.id === item.id} onClick={() => moveCard(item.id, -1)}>↑</button>
           <button type="button" className="small-talk-icon-button" title="Mover card para baixo" aria-label="Mover card para baixo" disabled={orderedTopicItems[orderedTopicItems.length - 1]?.id === item.id} onClick={() => moveCard(item.id, 1)}>↓</button>
         </div>}
+        <div className="small-talk-occurrences" aria-label="Ocorrências desta pergunta no HelloTalk">
+          <span>HelloTalk: <strong>{occurrenceCount(item.id)}</strong> ocorrência(s)</span>
+          <button type="button" className="small-talk-icon-button" aria-label="Remover uma ocorrência HelloTalk" title="Corrigir ocorrência (-1)" disabled={occurrenceCount(item.id) === 0} onClick={() => changeOccurrence(item.id, -1)}>−1</button>
+          <button type="button" className="small-talk-icon-button" aria-label="Adicionar uma ocorrência HelloTalk" title="Registrar ocorrência (+1)" onClick={() => changeOccurrence(item.id, 1)}>+1</button>
+        </div>
         <div className="small-talk-question-heading"><p><strong>{questionFor(item)}</strong></p>
           <button type="button" className="small-talk-icon-button" aria-label="Editar pergunta" title="Editar pergunta" onClick={() => openQuestionEditor(item)}>✏️</button>
           {questionOverrides[item.id] && <button type="button" className="small-talk-restore-button" onClick={() => restoreQuestion(item.id)}>Restaurar pergunta</button>}
