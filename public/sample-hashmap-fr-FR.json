@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1255,
+    "totalIntentions": 1257,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -50110,6 +50110,156 @@
           "intent": "Je savais que cela arriverait"
         }
       ]
+    },
+    {
+      "id": "estar-se-cocando-de-vontade-de-8c42e7a1-6d95-4b30-9f21-a7e63d05c284",
+      "intention": "Avoir hâte de / Brûler d'impatience de + infinitif",
+      "pattern": "sujet + avoir conjugué + hâte de + infinitif / brûler d'impatience de + infinitif",
+      "description": "Exprime une envie intense de faire quelque chose, accompagnée d'impatience, d'agitation ou d'enthousiasme. En anglais, « be itching to + base verbale » est une expression familière qui traduit l'envie d'agir au plus vite. Contrairement à « be dying to », elle insiste souvent sur l'impatience ou la difficulté à attendre.",
+      "searchTerms": [
+        "avoir hâte de",
+        "j'ai hâte de",
+        "j'avais hâte de",
+        "brûler d'impatience de",
+        "être impatient de",
+        "être impatiente de",
+        "ne pas pouvoir attendre",
+        "envie de se lancer"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:ai|as|a|avons|avez|ont|avais|avait|avions|aviez|avaient)\\s+hâte\\s+d(?:e\\s+|['’])",
+        "(?<![\\p{L}\\p{N}_])brûl(?:e|es|ons|ez|ent|ais|ait|ions|iez|aient)\\s+d['’]impatience\\s+d(?:e\\s+|['’])"
+      ],
+      "tags": [
+        "envie",
+        "impatience",
+        "enthousiasme",
+        "attente",
+        "expressions idiomatiques",
+        "générateur de phrases",
+        "conversation"
+      ],
+      "structure": "Sujet + avoir hâte de / brûler d'impatience de + infinitif",
+      "examples": [
+        {
+          "id": "a71c4e92-6d35-4b80-9f12-c8e63a05d274",
+          "exampleItem": "Je brûlais d'impatience d'aller faire un tour à moto.",
+          "intent": "brûlais d'impatience d'aller"
+        },
+        {
+          "id": "b82d5f13-7a46-4c90-8e23-d9f74b16a385",
+          "exampleItem": "J'ai hâte d'essayer ma nouvelle moto.",
+          "intent": "ai hâte d'essayer"
+        },
+        {
+          "id": "c93e6a24-8b57-4d10-9f34-e0a85c27b496",
+          "exampleItem": "Je brûle d'impatience de commencer ce projet.",
+          "intent": "brûle d'impatience de"
+        },
+        {
+          "id": "d14f7b35-9c68-4e20-8a45-f1b96d38c507",
+          "exampleItem": "Elle a hâte d'annoncer la nouvelle.",
+          "intent": "a hâte d'annoncer"
+        },
+        {
+          "id": "e25a8c46-1d79-4f30-9b56-a2c07e49d618",
+          "exampleItem": "Nous brûlons d'impatience de voyager à nouveau.",
+          "intent": "brûlons d'impatience de"
+        },
+        {
+          "id": "f36b9d57-2e80-4a40-8c67-b3d18f50e729",
+          "exampleItem": "J'ai hâte d'essayer cette nouvelle fonctionnalité.",
+          "intent": "ai hâte d'essayer"
+        },
+        {
+          "id": "a47c1e68-3f91-4b50-9d78-c4e29a61f830",
+          "exampleItem": "Il avait hâte de se remettre à travailler sur ce projet.",
+          "intent": "avait hâte de"
+        },
+        {
+          "id": "b58d2f79-4a02-4c60-8e89-d5f30b72a941",
+          "exampleItem": "Je brûlais d'impatience de pratiquer l'anglais avec un locuteur natif.",
+          "intent": "brûlais d'impatience de"
+        }
+      ],
+      "category": "expressions",
+      "related": [
+        "morrendo-de-vontade-de-7c29e4a1-6b83-4f50-9d12-a5e74c08b396"
+      ],
+      "level": "B1"
+    },
+    {
+      "id": "morrendo-de-vontade-de-7c29e4a1-6b83-4f50-9d12-a5e74c08b396",
+      "intention": "Mourir d'envie de + infinitif",
+      "pattern": "sujet + mourir conjugué + d'envie de + infinitif + complément",
+      "description": "Exprime une très forte envie de faire quelque chose. Cette tournure peut s'employer au présent, au passé ou au futur selon la conjugaison du verbe « mourir ». En anglais, « be dying to + base verbale » est très courant dans la conversation familière et souligne l'enthousiasme, l'impatience positive ou une grande attente.",
+      "searchTerms": [
+        "mourir d'envie de",
+        "je meurs d'envie de",
+        "je mourais d'envie de",
+        "nous mourons d'envie de",
+        "avoir très envie de",
+        "avoir une folle envie de",
+        "être impatient de"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:meurs|meurt|mourons|mourez|meurent|mourais|mourait|mourions|mouriez|mouraient|mourrai|mourra)\\s+d['’]envie\\s+d(?:e\\s+|['’])"
+      ],
+      "tags": [
+        "désir",
+        "envie",
+        "enthousiasme",
+        "attente",
+        "expressions du quotidien",
+        "générateur de phrases",
+        "conversation"
+      ],
+      "structure": "Sujet + mourir d'envie de + infinitif",
+      "examples": [
+        {
+          "id": "a81d3e72-5c46-4b90-9f12-d7e64a05c283",
+          "exampleItem": "Je mourais d'envie d'aller faire un tour à moto.",
+          "intent": "mourais d'envie d'aller"
+        },
+        {
+          "id": "b92e4f83-6d57-4c10-8a23-e8f75b16d394",
+          "exampleItem": "Je meurs d'envie de partir en voyage le week-end prochain.",
+          "intent": "meurs d'envie de"
+        },
+        {
+          "id": "c03f5a94-7e68-4d20-9b34-f9a86c27e405",
+          "exampleItem": "Je mourais d'envie de te parler.",
+          "intent": "mourais d'envie de"
+        },
+        {
+          "id": "d14a6b05-8f79-4e30-8c45-a0b97d38f516",
+          "exampleItem": "Elle meurt d'envie de découvrir les États-Unis.",
+          "intent": "meurt d'envie de"
+        },
+        {
+          "id": "e25b7c16-9a80-4f40-9d56-b1c08e49a627",
+          "exampleItem": "Nous mourons d'envie d'essayer ce restaurant.",
+          "intent": "mourons d'envie d'essayer"
+        },
+        {
+          "id": "f36c8d27-1b91-4a50-8e67-c2d19f50b738",
+          "exampleItem": "Je mourais d'envie de terminer ce projet.",
+          "intent": "mourais d'envie de"
+        },
+        {
+          "id": "a47d9e38-2c02-4b60-9f78-d3e20a61c849",
+          "exampleItem": "Mon fils meurt d'envie d'acheter une nouvelle moto.",
+          "intent": "meurt d'envie d'acheter"
+        },
+        {
+          "id": "b58e1f49-3d13-4c70-8a89-e4f31b72d950",
+          "exampleItem": "Je mourais d'envie de pratiquer mon anglais avec quelqu'un.",
+          "intent": "mourais d'envie de"
+        }
+      ],
+      "category": "expressions",
+      "related": [],
+      "level": "B1"
     }
   ]
 }

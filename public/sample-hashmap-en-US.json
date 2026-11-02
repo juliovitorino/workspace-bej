@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1255,
+    "totalIntentions": 1257,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -73686,6 +73686,158 @@
           "id": "e2c9a944-340a-4b1c-8e20-0e810251482a",
           "exampleItem": "I knew this would happen sooner or later.",
           "intent": "I knew this would happen"
+        }
+      ]
+    },
+    {
+      "id": "estar-se-cocando-de-vontade-de-8c42e7a1-6d95-4b30-9f21-a7e63d05c284",
+      "intention": "Be itching to + verb / Be eager to + verb",
+      "pattern": "subject + be (conjugated) + itching to / eager to + base verb",
+      "description": "Expresses a strong desire accompanied by restlessness, impatience, or enthusiasm to do something. The informal idiom 'be itching to + base verb' conveys an urge to act as soon as possible. Compared with 'be dying to', it often places more emphasis on impatience or difficulty waiting.",
+      "category": "expressions",
+      "searchTerms": [
+        "itching to",
+        "I am itching to",
+        "I was itching to",
+        "eager to",
+        "keen to",
+        "cannot wait to",
+        "can't wait to",
+        "impatient to get started"
+      ],
+      "validationPatterns": [
+        "\\b(?:am|is|are|was|were|be|been|being)\\s+(?:itching|eager|keen)\\s+to\\s+[a-z]+\\b",
+        "\\b(?:I['?]m|he['?]s|she['?]s|we['?]re|they['?]re|you['?]re)\\s+(?:itching|eager|keen)\\s+to\\s+[a-z]+\\b",
+        "\\b(?:can(?:not|['?]t)|could(?:\\s+not|n['?]t))\\s+wait\\s+to\\s+[a-z]+\\b"
+      ],
+      "tags": [
+        "desire",
+        "impatience",
+        "enthusiasm",
+        "anticipation",
+        "idioms",
+        "sentence generator",
+        "conversation"
+      ],
+      "related": [
+        "morrendo-de-vontade-de-7c29e4a1-6b83-4f50-9d12-a5e74c08b396"
+      ],
+      "structure": "Subject + be + itching to / eager to + base verb",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e92-6d35-4b80-9f12-c8e63a05d274",
+          "exampleItem": "I was itching to go for a motorcycle ride.",
+          "intent": "was itching to"
+        },
+        {
+          "id": "b82d5f13-7a46-4c90-8e23-d9f74b16a385",
+          "exampleItem": "I'm itching to try out my new motorcycle.",
+          "intent": "I'm itching to"
+        },
+        {
+          "id": "c93e6a24-8b57-4d10-9f34-e0a85c27b496",
+          "exampleItem": "I'm itching to start this project.",
+          "intent": "I'm itching to"
+        },
+        {
+          "id": "d14f7b35-9c68-4e20-8a45-f1b96d38c507",
+          "exampleItem": "She's itching to share the news.",
+          "intent": "She's itching to"
+        },
+        {
+          "id": "e25a8c46-1d79-4f30-9b56-a2c07e49d618",
+          "exampleItem": "We're itching to travel again.",
+          "intent": "We're itching to"
+        },
+        {
+          "id": "f36b9d57-2e80-4a40-8c67-b3d18f50e729",
+          "exampleItem": "I can't wait to try out this new feature.",
+          "intent": "can't wait to"
+        },
+        {
+          "id": "a47c1e68-3f91-4b50-9d78-c4e29a61f830",
+          "exampleItem": "He was itching to get back to work on that project.",
+          "intent": "was itching to"
+        },
+        {
+          "id": "b58d2f79-4a02-4c60-8e89-d5f30b72a941",
+          "exampleItem": "I was itching to practice English with a native speaker.",
+          "intent": "was itching to"
+        }
+      ]
+    },
+    {
+      "id": "morrendo-de-vontade-de-7c29e4a1-6b83-4f50-9d12-a5e74c08b396",
+      "intention": "Be dying to + verb",
+      "pattern": "subject + be (conjugated) + dying to + base verb + complement",
+      "description": "Expresses a strong desire to do something. It can refer to the present, past, or future, depending on the form of 'be'. The construction 'be dying to + base verb' is very natural in informal conversation and emphasizes enthusiasm, eagerness, or great anticipation.",
+      "category": "expressions",
+      "searchTerms": [
+        "dying to",
+        "I am dying to",
+        "I was dying to",
+        "we are dying to",
+        "really want to",
+        "eager to",
+        "cannot wait to"
+      ],
+      "validationPatterns": [
+        "\\b(?:am|is|are|was|were|be|been|being)\\s+dying\\s+to\\s+[a-z]+\\b",
+        "\\b(?:I['?]m|he['?]s|she['?]s|we['?]re|they['?]re|you['?]re)\\s+dying\\s+to\\s+[a-z]+\\b"
+      ],
+      "tags": [
+        "desire",
+        "eagerness",
+        "enthusiasm",
+        "anticipation",
+        "everyday expressions",
+        "sentence generator",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Subject + be + dying to + base verb",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a81d3e72-5c46-4b90-9f12-d7e64a05c283",
+          "exampleItem": "I was dying to go for a motorcycle ride.",
+          "intent": "was dying to"
+        },
+        {
+          "id": "b92e4f83-6d57-4c10-8a23-e8f75b16d394",
+          "exampleItem": "I'm dying to travel next weekend.",
+          "intent": "I'm dying to"
+        },
+        {
+          "id": "c03f5a94-7e68-4d20-9b34-f9a86c27e405",
+          "exampleItem": "I was dying to talk to you.",
+          "intent": "was dying to"
+        },
+        {
+          "id": "d14a6b05-8f79-4e30-8c45-a0b97d38f516",
+          "exampleItem": "She's dying to visit the United States.",
+          "intent": "She's dying to"
+        },
+        {
+          "id": "e25b7c16-9a80-4f40-9d56-b1c08e49a627",
+          "exampleItem": "We're dying to try that restaurant.",
+          "intent": "We're dying to"
+        },
+        {
+          "id": "f36c8d27-1b91-4a50-8e67-c2d19f50b738",
+          "exampleItem": "I was dying to finish that project.",
+          "intent": "was dying to"
+        },
+        {
+          "id": "a47d9e38-2c02-4b60-9f78-d3e20a61c849",
+          "exampleItem": "My son is dying to buy a new motorcycle.",
+          "intent": "is dying to"
+        },
+        {
+          "id": "b58e1f49-3d13-4c70-8a89-e4f31b72d950",
+          "exampleItem": "I was dying to practice my English with someone.",
+          "intent": "was dying to"
         }
       ]
     }
