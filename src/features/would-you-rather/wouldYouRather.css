@@ -92,3 +92,10 @@
 .wyr-walk-settings select { width: 100%; background: var(--surface); color: var(--text); border: 1px solid var(--border-strong); border-radius: 8px; padding: 8px; }
 .wyr-walk-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .wyr-walk-help { font-size: .85rem; color: var(--muted); }
+
+/* Caminhada com escopo de categoria ou tópico */
+.wyr-category-walk { padding: 0 14px 12px; }
+.wyr-topic-walk { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 42px; min-height: 42px; border: 1px solid var(--border-strong); border-radius: 9px; background: var(--surface); color: var(--text); font: inherit; cursor: pointer; }
+.wyr-topic-walk:disabled { opacity: .4; cursor: not-allowed; }
+.wyr-topic-walk:not(:disabled):hover { border-color: var(--accent); }
+.wyr-walk-scope { margin: 0 auto 12px; max-width: 760px; color: var(--text-secondary); }
