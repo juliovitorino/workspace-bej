@@ -217,6 +217,30 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     try { copied = document.execCommand('copy'); } catch { /* acesso negado */ }
     field.remove(); setExportMessage(copied ? 'Pergunta e resposta copiadas!' : 'Não foi possível copiar. Verifique as permissões.');
   }
+  function printCard(item: SmallTalkItem) {
+    const question = questionFor(item).trim();
+    const answer = answerFor(item).trim();
+    if (!question) return;
+    const esc = (value: string) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    const popup = window.open('', '_blank');
+    if (!popup) { setEditError('Permita pop-ups para imprimir este card.'); return; }
+    const title = topic?.title ?? 'Small Talk';
+    const css = '@page{size:A4;margin:17mm 16mm 17mm 26mm}body{font:12pt/1.55 Arial,sans-serif;color:#111827;background:#fff;margin:0}h1{font-size:20pt;color:#15438f}header{border-bottom:2px solid #1d4ed8;margin-bottom:20px}.qa{break-inside:avoid;page-break-inside:avoid}.q{font-weight:700;color:#154bb2;white-space:pre-wrap}.a{margin:12px 0 0 20px;white-space:pre-wrap}';
+    const html = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + esc(title) + ' — Pergunta e resposta</title><style>' + css + '</style></head><body><header><h1>' + esc(title) + '</h1><p>Brazilian English Journey — Small Talk</p></header><article class="qa"><div class="q">' + esc(question) + '</div>' +
+      (answer ? '<div class="a">' + esc(answer) + '</div>' : '') + '</article></body></html>';
+    popup.document.open();
+    popup.document.write(html);
+    popup.document.close();
+    popup.addEventListener('afterprint', () => {
+      popup.setTimeout(() => { if (!popup.closed) popup.close(); }, 100);
+    }, { once: true });
+    popup.focus();
+    popup.setTimeout(() => {
+      if (popup.closed) return;
+      popup.focus();
+      popup.print();
+    }, 350);
+  }
   function printTopic(mode: 'both' | 'questions') {
     if (!topic || loading || topic.topicId !== topicId) return;
     const esc = (value: string) => value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
@@ -832,6 +856,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
           <button type="button" className="small-talk-icon-button" aria-label={shown ? 'Ocultar resposta' : 'Ver resposta'} title={shown ? 'Ocultar resposta' : 'Ver resposta'} aria-pressed={shown} disabled={!original} onClick={() => reveal(item.id)}>👁️</button>
           <button type="button" className="small-talk-icon-button" aria-label="Editar resposta" title="Editar resposta" onClick={() => openEditor(item)}>✏️</button>
           <button type="button" className="small-talk-icon-button" aria-label="Excluir resposta ativa" title="Excluir resposta ativa" disabled={!original} onClick={() => removeAnswer(item.id)}>🗑️</button>
+          <button type="button" className="small-talk-icon-button" aria-label="Imprimir esta pergunta e resposta" title="Imprimir apenas este card (A4)" disabled={!questionFor(item).trim()} onClick={() => printCard(item)}>🖨️</button>
           <button type="button" className="small-talk-icon-button" aria-label="Exportar JSON público deste card"
             title="Exportar JSON público deste card" onClick={() => openCardExport(item)}>📋</button>
           <button type="button" className="small-talk-icon-button small-talk-ai-button"
