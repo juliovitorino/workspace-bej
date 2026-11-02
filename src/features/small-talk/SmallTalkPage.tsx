@@ -871,7 +871,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
           {modified && <span className="settings-dialog-help">Resposta editada localmente</span>}
           {customItems[item.id] && !(topic?.items ?? []).some(published => published.id === item.id) && <button type="button" className="small-talk-restore-button" title="Remover card pessoal (recuperável)" onClick={() => toggleCustomCard(item.id, true)}>Remover card</button>}
         </div>
-        {shown && original && <p className="small-talk-original" style={{ whiteSpace: 'pre-wrap' }}>{original}</p>}
+        {editorId !== item.id && shown && original && <p className="small-talk-original" style={{ whiteSpace: 'pre-wrap' }}>{original}</p>}
         {editorId === item.id && <div className="small-talk-editor">
           <label htmlFor={`small-talk-editor-${item.id}`}><strong>{baseOriginal ? 'Editar resposta ativa (original preservado)' : 'Incluir resposta pessoal'}</strong></label>
           <textarea id={`small-talk-editor-${item.id}`} value={draft} onChange={e => setDraft(e.target.value)} rows={6} spellCheck lang="en-US" />
