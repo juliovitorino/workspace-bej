@@ -80,3 +80,15 @@
 .wyr-topic-print { display:grid; place-items:center; flex-shrink:0; min-width:42px; min-height:42px; padding:8px; background:var(--surface-soft); color:var(--text); border:1px solid var(--border-strong); border-radius:9px; cursor:pointer; }
 .wyr-topic-print:hover { color:var(--accent); border-color:var(--accent); }
 .wyr-root .wyr-topic-print:focus-visible, .wyr-root .wyr-topic-open:focus-visible { outline:3px solid var(--focus); outline-offset:2px; }
+
+/* Would You Rather — Modo Caminhada */
+.wyr-walk { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.wyr-walk h2, .wyr-walk h3, .wyr-walk p { margin: 0; }
+.wyr-walk h3 { font-size: clamp(1.2rem, 4vw, 1.65rem); line-height: 1.45; }
+.wyr-walk-settings { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; width: 100%; border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.wyr-walk-settings legend { font-weight: 750; padding: 0 6px; }
+.wyr-walk-settings label { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.wyr-walk-settings label:has(input[type="checkbox"]) { flex-direction: row; align-items: center; }
+.wyr-walk-settings select { width: 100%; background: var(--surface); color: var(--text); border: 1px solid var(--border-strong); border-radius: 8px; padding: 8px; }
+.wyr-walk-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.wyr-walk-help { font-size: .85rem; color: var(--muted); }
