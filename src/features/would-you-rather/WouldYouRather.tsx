@@ -5,9 +5,11 @@ import { LANGUAGES } from "../../config/languages";
 import { useTrainingStudy, type TrainingStudyReporter } from "../study/useTrainingStudy";
 import { loadWouldYouRather, normalizeWyrSearch, type WyrData, type WyrQuestion, type WyrTopic } from "./wouldYouRatherService";
 import { readWyrStored, saveWyrChoices, saveWyrFavorites, readWyrAnswers, saveWyrAnswers, wyrAnswerKey, readWyrFontSize, saveWyrFontSize, type WyrChoice, type WyrCustomAnswers, type WyrFontSize } from "./wouldYouRatherStorage";
+import { WyrWalking } from "./WyrWalking";
 import "./wouldYouRather.css";
 
-type Screen = "catalog" | "practice" | "summary";
+type Screen = "catalog" | "practice" | "summary" | "walking";
+type WalkingScope = { kind: "category" | "topic"; id: string; title: string };
 type PracticeSet = { title: string; questions: WyrQuestion[]; topic: WyrTopic | null };
 const CATEGORY_NAMES: Record<string, string> = {
   "everyday-life": "Everyday Life", lifestyle: "Lifestyle", "travel-adventure": "Travel & Adventure",
@@ -129,6 +131,7 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
   const [customAnswers, setCustomAnswers] = useState<WyrCustomAnswers>(readWyrAnswers);
   const [fontSize, setFontSize] = useState<WyrFontSize>(readWyrFontSize);
   const [practiceSet, setPracticeSet] = useState<PracticeSet | null>(null);
+  const [walkingScope, setWalkingScope] = useState<WalkingScope | null>(null);
   const [index, setIndex] = useState(0);
   const [revealed, setRevealed] = useState({ A: false, B: false });
   const [notice, setNotice] = useState("");
@@ -155,6 +158,26 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
     return !favoritesOnly || topic.questions.some(q => favorites.includes(q.id));
   }), [allTopics, categoryFilter, levelFilter, search, favoritesOnly, favorites]);
   const eligible = useMemo(() => filteredTopics.flatMap(topic => topic.questions.filter(q => !favoritesOnly || favorites.includes(q.id))), [filteredTopics, favoritesOnly, favorites]);
+  const selectedIn = (questions: WyrQuestion[]) => questions.filter(q => choices[q.id] === "A" || choices[q.id] === "B").length;
+  const walkingQuestions = useMemo(() => {
+    if (!walkingScope) return [];
+    const topics = walkingScope.kind === "category"
+      ? allTopics.filter(topic => topic.category === walkingScope.id)
+      : allTopics.filter(topic => topic.id === walkingScope.id);
+    return topics.flatMap(topic => [...topic.questions].sort((a, b) => a.order - b.order))
+      .filter(q => choices[q.id] === "A" || choices[q.id] === "B");
+  }, [allTopics, choices, walkingScope]);
+  const walkingItems = useMemo(() => !loaded ? [] : walkingQuestions.map(q => {
+    const choice = choices[q.id];
+    return { id: q.id, question: q.question, choice, option: q.options[choice], answer: customAnswers[wyrAnswerKey(loaded.locale, q.id, choice)]?.text ?? q.options[choice].answer };
+  }), [walkingQuestions, choices, customAnswers, loaded]);
+  function startWalking(scope: WalkingScope) {
+    const topics = scope.kind === "category" ? allTopics.filter(topic => topic.category === scope.id) : allTopics.filter(topic => topic.id === scope.id);
+    if (!topics.some(topic => selectedIn(topic.questions) > 0)) return;
+    setWalkingScope(scope);
+    setNotice("");
+    setScreen("walking");
+  }
   const groups = useMemo(() => {
     const map = new Map<string, WyrTopic[]>();
     filteredTopics.forEach(topic => map.set(topic.category, [...(map.get(topic.category) ?? []), topic]));
@@ -308,6 +331,12 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
         {groups.length === 0 && <p className="wyr-message">{tr("empty")}</p>}
         {groups.map(([category, topics]) => <details key={category} className="wyr-category" open>
           <summary>{CATEGORY_NAMES[category] ?? category} <span>{topics.length} {tr("topics")}</span></summary>
+          <div className="wyr-category-walk">
+            <button type="button" className="wyr-button wyr-button--ghost" disabled={!topics.some(topic => selectedIn(topic.questions) > 0)}
+              onClick={() => startWalking({ kind: "category", id: category, title: CATEGORY_NAMES[category] ?? category })}>
+              🚶 Caminhar nesta categoria ({topics.reduce((sum, topic) => sum + selectedIn(topic.questions), 0)})
+            </button>
+          </div>
           <div className="wyr-topic-grid">{topics.map(topic => {
             const total = topic.questions.length;
             const completed = completedCount(topic.questions);
@@ -316,6 +345,12 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
                 <button type="button" className="wyr-topic-open" onClick={() => openTopic(topic)}
                   aria-label={String(topic.order).padStart(2, "0") + ". " + topic.title}>
                   <span className="wyr-topic-title">{String(topic.order).padStart(2, "0")}. {topic.title}</span>
+                </button>
+                <button type="button" className="wyr-topic-walk" disabled={!selectedIn(topic.questions)}
+                  onClick={() => startWalking({ kind: "topic", id: topic.id, title: topic.title })}
+                  aria-label={"Modo Caminhada: " + topic.title + " (" + selectedIn(topic.questions) + " selecionadas)"}
+                  title={"Modo Caminhada: " + topic.title}>
+                  🚶
                 </button>
                 <button type="button" className="wyr-topic-print" onClick={() => printTopic(topic)}
                   aria-label={"Imprimir " + topic.title} title={"Imprimir " + topic.title}>
@@ -334,6 +369,7 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
           })}</div>
         </details>)}
       </>}
+      {screen === "walking" && walkingScope && <><p className="wyr-walk-scope">Treino selecionado: <strong>{walkingScope.title}</strong> · {walkingItems.length} perguntas</p><WyrWalking items={walkingItems} locale={loaded.locale} onExit={() => { setWalkingScope(null); setScreen("catalog"); }} onStudyState={onStudyState} /></>}
       {screen === "practice" && current && practiceSet && <div className="wyr-practice">
         <div className="wyr-practice-meta"><span>{LANGUAGES[sourceLanguage].flag} → {LANGUAGES[loaded.locale].flag} · {practiceSet.title} · {current.level}</span><span>{index + 1}/{practiceSet.questions.length}</span></div>
         <div className="wyr-practice-progress"><span style={{ width: `${100 * (index + 1) / practiceSet.questions.length}%` }} /></div>
