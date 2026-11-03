@@ -332,7 +332,7 @@ export function IntentionDetails({
       "",
       `${localizedLanguageName(language)} (${language}) — searchTerms:`,
       ...targetTerms
-    ].join("\\n");
+    ].join("\n");
 
     try {
       if (navigator.clipboard?.writeText) {
@@ -981,7 +981,7 @@ Mandatório:
             <button
               type="button"
               className="secondary-button"
-              onClick={() => setShowMetadataModal(true)}
+              onClick={() => { setMetadataSearchTermsCopyState(null); setShowMetadataModal(true); }}
               title={t("details.viewTagsAndSearchtermsForThisIntention")}
               aria-label={t("details.viewTagsAndSearchTerms")}
             >
