@@ -14,6 +14,7 @@ import { studyEntries, studyStats, type StudyFilters } from "./studyStats";
 import "./study.css";
 import { StudyPeriodMenu } from "./StudyPeriodMenu";
 import { StudyWeeklyOverview } from "./StudyWeeklyOverview";
+import { STUDY_MODULE_COLORS } from "./studyModuleColors";
 import { StudyHourlyHeatmap } from "./StudyHourlyHeatmap";
 import { StudyMonthlyOverview } from "./StudyMonthlyOverview";
 import { StudyGoalGauges } from "./StudyGoalGauges";
@@ -178,7 +179,7 @@ export function StudyDashboard({ language, initialSection }: { language: Student
     const max = Math.max(1, ...entries.map(([, seconds]) => seconds));
     const scale = Math.max(1, total ?? max);
     return <section id={sectionId} tabIndex={sectionId ? -1 : undefined} className="study-panel bej-chart-card">{collapseKey ? <StudyCollapseToggle expanded={collapsedCharts[collapseKey] ?? false} onToggle={() => setCollapsedCharts(v => ({ ...v, [collapseKey]: !(v[collapseKey] ?? false) }))} title={title} /> : <h3>{title}</h3>}{(!collapseKey || collapsedCharts[collapseKey]) && (!entries.length ? <p>{t("study.empty")}</p> : <ul className={modules ? "study-chart study-chart-modules" : "study-chart"}>{entries.map(([key, seconds]) => <li key={key}>
-      <div><span>{label(key)}</span><strong>{duration(seconds)}{total !== undefined && ` · ${number(seconds / scale * 100)}%`}</strong></div><div className="study-bar" aria-hidden="true"><span style={{ width: `${seconds / scale * 100}%` }} /></div>
+      <div><span>{label(key)}</span><strong>{duration(seconds)}{total !== undefined && ` · ${number(seconds / scale * 100)}%`}</strong></div><div className="study-bar" aria-hidden="true"><span style={{ width: `${seconds / scale * 100}%`, ...(sectionId === "study-time-by-module" && STUDY_MODULE_COLORS[key as typeof STUDY_MODULES[number]] ? { background: STUDY_MODULE_COLORS[key as typeof STUDY_MODULES[number]] } : {}) }} /></div>
     </li>)}</ul>)}</section>;
   };
   const informationIcon = <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v6"/><circle cx="12" cy="7" r="1" fill="currentColor" stroke="none"/></svg>;
@@ -224,7 +225,7 @@ export function StudyDashboard({ language, initialSection }: { language: Student
       </div>
       {!validRange && <p role="alert">{t("study.errors.invalid")}</p>}
       <div id="study-results" className="study-content" tabIndex={-1} hidden={historyVisible}>
-      <StudyWeeklyOverview data={displayData!} now={now} hideZeroData={hideZeroData} />
+      <StudyWeeklyOverview data={displayData!} now={now} hideZeroData={hideZeroData} moduleLabel={moduleLabel} />
       <StudyHourlyHeatmap allSectionsExpanded={allSectionsExpanded} data={displayData!} language={filters.language} now={now} />
       <StudyMonthlyOverview allSectionsExpanded={allSectionsExpanded} data={displayData!} now={now} language={filters.language} />
       <StudyGoalGauges data={displayData!} hideZeroData={hideZeroData} goals={store.studyData.goals} monthlyGoals={store.studyData.monthlyGoals} language={filters.language} now={now}
