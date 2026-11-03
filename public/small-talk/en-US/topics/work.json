@@ -383,6 +383,27 @@
         "paragraphIndex": 347
       },
       "reviewStatus": "pending"
+    },
+    {
+      "id": "b83f7a21-6d45-4e90-8c12-f5a76b03d249",
+      "type": "question-answer",
+      "order": 19,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you have a side line job or a side hustle?",
+        "audio": null
+      },
+      "answer": {
+        "text": "Yes, I do. I'm a software engineer, and I also work on personal projects in my spare time. One of them is an English-learning app that I'm developing. It's something I really enjoy because it combines my passion for technology with my interest in learning English.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
     }
   ]
 }

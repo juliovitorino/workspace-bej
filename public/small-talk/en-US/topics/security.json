@@ -16,6 +16,10 @@
         "text": "Is your country safe for tourists?",
         "audio": null
       },
+      "answer": {
+        "text": "Brazil is a beautiful country with many amazing places to visit. However, safety depends on the city, neighborhood, and time of day. I always recommend taking basic precautions and following local advice.",
+        "audio": null
+      },
       "context": null,
       "followUps": [],
       "linkedIntentionIds": [],
@@ -28,87 +32,436 @@
       "reviewStatus": "pending"
     },
     {
-      "id": "0d707897-010d-4d1e-b82e-62ca9df5bbcb",
+      "id": "2e4f0a11-6d83-4b91-9a27-c5f80e13d642",
       "type": "question-answer",
       "order": 2,
       "enabled": true,
       "level": null,
       "question": {
-        "text": "Have you ever been robbed?",
+        "text": "What safety precautions should tourists take in Brazil?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I recommend keeping valuables out of sight, avoiding unfamiliar areas at night, and using reliable transportation. It's also a good idea to ask local people for advice.",
         "audio": null
       },
       "context": null,
       "followUps": [],
       "linkedIntentionIds": [],
-      "tags": [],
-      "source": {
-        "document": "English small talk questions & answers.docx",
-        "section": "Security",
-        "paragraphIndex": 1160
-      },
+      "tags": [
+        "brazil",
+        "safety"
+      ],
+      "source": null,
       "reviewStatus": "pending"
     },
     {
-      "id": "6cab0c6f-3c2c-4eae-b5d8-2f6b32321a80",
+      "id": "3f5a1b22-7e94-4ca2-8b38-d6a91f24e753",
       "type": "question-answer",
       "order": 3,
       "enabled": true,
       "level": null,
       "question": {
-        "text": "How did that happen?",
+        "text": "Is it safe to walk around Brazilian cities at night?",
+        "audio": null
+      },
+      "answer": {
+        "text": "It really depends on the neighborhood. Some areas are busy and well-lit, while others require more caution. I would avoid walking alone in unfamiliar places late at night.",
         "audio": null
       },
       "context": null,
       "followUps": [],
       "linkedIntentionIds": [],
-      "tags": [],
-      "source": {
-        "document": "English small talk questions & answers.docx",
-        "section": "Security",
-        "paragraphIndex": 1163
-      },
+      "tags": [
+        "brazil",
+        "nighttime"
+      ],
+      "source": null,
       "reviewStatus": "pending"
     },
     {
-      "id": "15437fb4-79f0-40f3-96e0-c2e821bdc469",
+      "id": "4a6b2c33-8fa5-4db3-9c49-e7b02a35f864",
       "type": "question-answer",
       "order": 4,
       "enabled": true,
       "level": null,
       "question": {
-        "text": "Did you get your things back?",
+        "text": "Is it safe to use your smartphone on the street in Brazil?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I would be careful when using my phone in public, especially in crowded areas. If I needed to check directions, I would try to find a safer place, such as a store or a café.",
         "audio": null
       },
       "context": null,
       "followUps": [],
       "linkedIntentionIds": [],
-      "tags": [],
-      "source": {
-        "document": "English small talk questions & answers.docx",
-        "section": "Security",
-        "paragraphIndex": 1166
-      },
+      "tags": [
+        "brazil",
+        "smartphones"
+      ],
+      "source": null,
       "reviewStatus": "pending"
     },
     {
-      "id": "620f4649-6017-4916-813b-df85141ce679",
+      "id": "5b7c3d44-90b6-4ec4-8d50-f8c13b46a975",
       "type": "question-answer",
       "order": 5,
       "enabled": true,
       "level": null,
       "question": {
-        "text": "Did you report the robbery to the police or not?",
+        "text": "What is the safest way to get around Brazilian cities?",
+        "audio": null
+      },
+      "answer": {
+        "text": "It depends on the city and the time of day. I usually recommend checking the route in advance and choosing a reliable transportation service, especially at night.",
         "audio": null
       },
       "context": null,
       "followUps": [],
       "linkedIntentionIds": [],
-      "tags": [],
-      "source": {
-        "document": "English small talk questions & answers.docx",
-        "section": "Security",
-        "paragraphIndex": 1169
+      "tags": [
+        "brazil",
+        "transportation"
+      ],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6c8d4e55-a1c7-4fd5-9e61-a9d24c57b086",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What should tourists do if they get robbed in Brazil?",
+        "audio": null
       },
+      "answer": {
+        "text": "The most important thing is to stay safe and avoid resisting or confronting the robber. After reaching a safe place, they should contact the police, report the incident, and block any stolen bank cards.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [
+        "brazil",
+        "emergencies"
+      ],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7d9e5f66-b2d8-40e6-8f72-bae35d68c197",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Where can tourists find reliable safety information about Brazil?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I would check official travel advice and ask hotel staff or trusted local guides. Safety conditions can change, so it's important to get recent information.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [
+        "brazil",
+        "travel-advice"
+      ],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8e0f6077-c3e9-41f7-9073-cbf46e79d208",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is Rio de Janeiro safe for tourists?",
+        "audio": null
+      },
+      "answer": {
+        "text": "Rio de Janeiro is famous for its beaches, mountains, and beautiful scenery. However, tourists should be careful with their belongings and avoid unfamiliar areas without local guidance.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [
+        "rio-de-janeiro",
+        "tourism"
+      ],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "9f107188-d4fa-4208-a184-dc057f80e319",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What should tourists be careful about at Copacabana and Ipanema beaches?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I would recommend bringing only essential belongings to the beach. It's important not to leave your phone, wallet, or bag unattended, especially when going into the water.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [
+        "rio-de-janeiro",
+        "beaches"
+      ],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a0218299-e50b-4319-b295-ed168091f420",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is it safe to walk around Rio de Janeiro at night?",
+        "audio": null
+      },
+      "answer": {
+        "text": "It depends on the area. I would avoid walking through quiet or unfamiliar streets late at night. For longer distances, I would choose reliable transportation.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [
+        "rio-de-janeiro",
+        "nighttime"
+      ],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b13293aa-f61c-442a-83a6-fe2791a20531",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you recommend visiting Christ the Redeemer and Sugarloaf Mountain?",
+        "audio": null
+      },
+      "answer": {
+        "text": "Absolutely! They are two of Rio's most famous attractions. I would recommend planning the visit in advance, using official transportation options, and keeping personal belongings secure.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [
+        "rio-de-janeiro",
+        "attractions"
+      ],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c243a4bb-072d-453b-94b7-af38a2b31642",
+      "type": "question-answer",
+      "order": 12,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Should tourists avoid certain neighborhoods in Rio de Janeiro?",
+        "audio": null
+      },
+      "answer": {
+        "text": "Some neighborhoods require more caution than others. I wouldn't recommend exploring unfamiliar areas without reliable local guidance. It's always better to research the destination before going.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [
+        "rio-de-janeiro",
+        "neighborhoods"
+      ],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d354b5cc-183e-464c-85c8-b049b3c42753",
+      "type": "question-answer",
+      "order": 13,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What advice would you give someone visiting Rio de Janeiro for the first time?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I would suggest choosing accommodation carefully, planning transportation, and asking locals for advice. Rio has many wonderful attractions, and good planning can make the experience more enjoyable.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [
+        "rio-de-janeiro",
+        "first-time-visitors"
+      ],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e465c6dd-294f-475d-96d9-c15ac4d53864",
+      "type": "question-answer",
+      "order": 14,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is São Paulo safe for tourists?",
+        "audio": null
+      },
+      "answer": {
+        "text": "São Paulo is a huge city with many different neighborhoods. Some areas require more caution than others. I would recommend planning your routes and keeping valuables out of sight.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [
+        "sao-paulo",
+        "tourism"
+      ],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f576d7ee-3a50-486e-87ea-d26bd5e64975",
+      "type": "question-answer",
+      "order": 15,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is it safe to use the subway in São Paulo?",
+        "audio": null
+      },
+      "answer": {
+        "text": "The subway can be a practical way to get around São Paulo. However, I would keep an eye on my belongings, especially during rush hour when trains can get crowded.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [
+        "sao-paulo",
+        "subway"
+      ],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a687e8ff-4b61-497f-98fb-e37ce6f75086",
+      "type": "question-answer",
+      "order": 16,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is Avenida Paulista a good place for tourists to visit?",
+        "audio": null
+      },
+      "answer": {
+        "text": "Yes, Avenida Paulista is one of São Paulo's most famous avenues. It has museums, shops, and cultural attractions. I would enjoy the area while staying aware of my surroundings.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [
+        "sao-paulo",
+        "avenida-paulista"
+      ],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b798f900-5c72-4a80-890c-f48df7086197",
+      "type": "question-answer",
+      "order": 17,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is it safe to walk around downtown São Paulo?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I would be careful and check local conditions before visiting downtown São Paulo. I would avoid wandering into unfamiliar streets and would prefer visiting busy areas during the day.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [
+        "sao-paulo",
+        "downtown"
+      ],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c8a90111-6d83-4b91-9a27-a59e081972a8",
+      "type": "question-answer",
+      "order": 18,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Is it safe to go out at night in São Paulo?",
+        "audio": null
+      },
+      "answer": {
+        "text": "São Paulo has many restaurants, bars, and entertainment options. However, I would choose well-known places and arrange reliable transportation to get back safely.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [
+        "sao-paulo",
+        "nightlife"
+      ],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d9ba1222-7e94-4ca2-8b38-b6af192a83b9",
+      "type": "question-answer",
+      "order": 19,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How does safety in São Paulo compare with Rio de Janeiro?",
+        "audio": null
+      },
+      "answer": {
+        "text": "Both cities are large and have different safety challenges. I wouldn't say one is always safer than the other. It really depends on the neighborhood, the time of day, and the precautions you take.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [
+        "sao-paulo",
+        "rio-de-janeiro",
+        "comparison"
+      ],
+      "source": null,
       "reviewStatus": "pending"
     }
   ]

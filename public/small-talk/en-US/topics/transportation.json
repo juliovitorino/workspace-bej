@@ -1,3 +1,4 @@
+
 {
   "schemaVersion": "1.0.0",
   "module": "small-talk",
@@ -14,6 +15,10 @@
       "level": null,
       "question": {
         "text": "How do you usually get around your city?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I usually get around by car, but I also enjoy walking when places are nearby. It really depends on where I need to go.",
         "audio": null
       },
       "context": null,
@@ -37,6 +42,10 @@
         "text": "Who do you usually go with?",
         "audio": null
       },
+      "answer": {
+        "text": "Most of the time, I go by myself, especially during the week. On weekends, I sometimes go with family or friends.",
+        "audio": null
+      },
       "context": null,
       "followUps": [],
       "linkedIntentionIds": [],
@@ -56,6 +65,10 @@
       "level": null,
       "question": {
         "text": "Do you prefer driving, public transportation, or walking?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I prefer driving because it's more convenient and gives me more freedom. However, I enjoy walking when the weather is nice.",
         "audio": null
       },
       "context": null,
@@ -79,6 +92,10 @@
         "text": "What is the most common way people travel in your city?",
         "audio": null
       },
+      "answer": {
+        "text": "I'd say cars and buses are the most common ways to get around. However, it depends on the neighborhood and where people work.",
+        "audio": null
+      },
       "context": null,
       "followUps": [],
       "linkedIntentionIds": [],
@@ -98,6 +115,10 @@
       "level": null,
       "question": {
         "text": "Have you ever had a memorable experience while traveling somewhere?",
+        "audio": null
+      },
+      "answer": {
+        "text": "Yes, I have. I remember a trip when things didn't go exactly as planned, but it turned out to be a great experience.",
         "audio": null
       },
       "context": null,
@@ -121,6 +142,10 @@
         "text": "Do you prefer traveling by car, train, plane, or motorcycle?",
         "audio": null
       },
+      "answer": {
+        "text": "I really enjoy traveling by motorcycle because I love the feeling of freedom. However, for longer distances, I think traveling by plane is more practical.",
+        "audio": null
+      },
       "context": null,
       "followUps": [],
       "linkedIntentionIds": [],
@@ -140,6 +165,10 @@
       "level": null,
       "question": {
         "text": "What is the longest trip you have ever taken?",
+        "audio": null
+      },
+      "answer": {
+        "text": "One of the longest trips I've ever taken was a road trip that lasted several hours. It was tiring, but I really enjoyed the journey.",
         "audio": null
       },
       "context": null,
@@ -163,6 +192,10 @@
         "text": "Do you think transportation in your city is efficient?",
         "audio": null
       },
+      "answer": {
+        "text": "I think it's reasonably good, but there's definitely room for improvement. Traffic can be a problem, especially during rush hour.",
+        "audio": null
+      },
       "context": null,
       "followUps": [],
       "linkedIntentionIds": [],
@@ -182,6 +215,10 @@
       "level": null,
       "question": {
         "text": "What are the advantages of using public transportation?",
+        "audio": null
+      },
+      "answer": {
+        "text": "One of the biggest advantages is that it's usually cheaper than driving. It can also reduce traffic and pollution, and you don't have to worry about parking.",
         "audio": null
       },
       "context": null,
@@ -205,6 +242,10 @@
         "text": "Do you think transportation will change a lot in the future?",
         "audio": null
       },
+      "answer": {
+        "text": "Absolutely. I believe electric vehicles and new technologies will become more common. Hopefully, transportation will be faster, safer, and more environmentally friendly.",
+        "audio": null
+      },
       "context": null,
       "followUps": [],
       "linkedIntentionIds": [],
@@ -224,6 +265,10 @@
       "level": null,
       "question": {
         "text": "If you could improve transportation in your city, what would you change?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I'd improve public transportation and make the roads safer for everyone. I'd also invest in better sidewalks and bike lanes.",
         "audio": null
       },
       "context": null,
