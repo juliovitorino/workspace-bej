@@ -325,3 +325,26 @@
   .bej-module-mini .bej-category-mini-label { gap:5px; }
   .bej-module-mini .bej-category-icon { width:26px; height:26px; flex-shrink:0; }
 }
+
+/* Weekly study-time mean: total minutes divided by days with activity in the active scope. */
+.bej-week-average { display:flex; align-items:center; gap:9px; margin:-4px 0 16px; font-size:.85rem; color:var(--text); }
+.bej-week-average strong { font-variant-numeric:tabular-nums; }
+.bej-week-average-days { color:var(--muted); }
+.bej-week-average-key { flex:0 0 25px; height:3px; border-radius:2px; background:#ffca58; box-shadow:0 0 0 1px rgb(0 0 0 / .12); }
+.bej-week-bars .bej-week-bar-column { display:grid; grid-template-rows:minmax(0,1fr) 1.2em 1.2em; align-items:stretch; gap:7px; }
+.bej-week-bars .bej-week-bar-space { position:relative; flex:none; min-height:0; }
+.bej-week-bars .bej-week-bar-column > span,
+.bej-week-bars .bej-week-bar-column > small { text-align:center; }
+.bej-week-bars.has-average .bej-week-bar-space::after {
+  content:"";
+  position:absolute;
+  z-index:2;
+  pointer-events:none;
+  left:0;
+  bottom:var(--bej-average-height);
+  width:calc(100% + 9px);
+  height:3px;
+  background:#ffca58;
+  box-shadow:0 1px 2px rgb(0 0 0 / .22);
+}
+.bej-week-bars.has-average .bej-week-bar-column:last-child .bej-week-bar-space::after { width:100%; }
