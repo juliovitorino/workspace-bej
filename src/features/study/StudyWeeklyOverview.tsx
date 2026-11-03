@@ -64,7 +64,10 @@ export function StudyWeeklyOverview({ data, now, hideZeroData = false, moduleLab
     : selected?.kind === "module" ? moduleLabel(selected.key) : "";
   const selectedModuleColor = selected?.kind === "module" ? STUDY_MODULE_COLORS[selected.key] : undefined;
   const weekTotal = week.days.reduce((sum, day) => sum + (chartByDay.get(day) ?? 0), 0);
+  const studiedDays = week.days.filter(day => (chartByDay.get(day) ?? 0) > 0).length;
+  const dailyAverage = studiedDays > 0 ? weekTotal / studiedDays : 0;
   const max = Math.max(60, ...week.days.map(day => chartByDay.get(day) ?? 0));
+  const averageHeight = `${dailyAverage / max * 100}%`;
   const categoryIcons: Record<string, string> = { conversation: "💬", reading: "📖", writing: "✏️", "active-listening": "🎧", "private-class": "🎓", other: "✨" };
   return <div className="bej-overview-grid">
     <section className="study-panel bej-streak-card" aria-labelledby="bej-streak-title">
@@ -96,6 +99,22 @@ export function StudyWeeklyOverview({ data, now, hideZeroData = false, moduleLab
         </div>
       </div>
     </section>
-    <section className="study-panel bej-week-time" aria-labelledby="bej-week-time-title"><div className="bej-card-heading"><div><h3 id="bej-week-time-title"><span aria-hidden="true">◷</span> {t("bejOverview.studyTime")}</h3><p>{t("bejOverview.currentWeek")}{selected ? ` · ${selectedLabel}` : ""}</p></div></div><div className="bej-week-total">{time(weekTotal)}</div><div className="bej-week-bars" role="list" aria-label={t("bejOverview.dailyTime")}>{week.days.map(day => { const seconds = chartByDay.get(day) ?? 0; return <div className="bej-week-bar-column" role="listitem" key={day} aria-label={`${fmt(day, { weekday: "long" })}: ${barTime(seconds) || t("bejOverview.noStudy")}`}><div className="bej-week-bar-space"><div className={`bej-week-bar-fill${seconds ? " has-study" : ""}${selected?.kind === "category" ? ` bej-week-bar-${selected.key}` : ""}`} style={{ height: `${seconds > 0 ? Math.max(3, seconds / max * 100) : 0}%`, ...(selectedModuleColor ? { background: selectedModuleColor } : {}) }} /></div><span>{fmt(day, { weekday: "short" }).replace(".", "").slice(0, 3)}</span>{barTime(seconds) && <small>{barTime(seconds)}</small>}</div>; })}</div></section>
+    <section className="study-panel bej-week-time" aria-labelledby="bej-week-time-title"><div className="bej-card-heading"><div><h3 id="bej-week-time-title"><span aria-hidden="true">◷</span> {t("bejOverview.studyTime")}</h3><p>{t("bejOverview.currentWeek")}{selected ? ` · ${selectedLabel}` : ""}</p></div></div><div className="bej-week-total">{time(weekTotal)}</div>
+      <div className="bej-week-average" role="status" aria-label={`Média diária: ${time(Math.round(dailyAverage))}, calculada sobre ${studiedDays} dias estudados`}>
+        <span className="bej-week-average-key" aria-hidden="true" />
+        <span>Média por dia estudado: <strong>{time(Math.round(dailyAverage))}</strong> <span className="bej-week-average-days">({studiedDays} {studiedDays === 1 ? "dia" : "dias"})</span></span>
+      </div>
+      <div className={`bej-week-bars${studiedDays > 0 ? " has-average" : ""}`} role="list" aria-label={t("bejOverview.dailyTime")} style={{ "--bej-average-height": averageHeight } as CSSProperties}>
+        {week.days.map(day => {
+          const seconds = chartByDay.get(day) ?? 0;
+          return <div className="bej-week-bar-column" role="listitem" key={day} aria-label={`${fmt(day, { weekday: "long" })}: ${barTime(seconds) || t("bejOverview.noStudy")}`}>
+            <div className="bej-week-bar-space">
+              <div className={`bej-week-bar-fill${seconds ? " has-study" : ""}${selected?.kind === "category" ? ` bej-week-bar-${selected.key}` : ""}`} style={{ height: `${seconds > 0 ? Math.max(3, seconds / max * 100) : 0}%`, ...(selectedModuleColor ? { background: selectedModuleColor } : {}) }} />
+            </div>
+            <span>{fmt(day, { weekday: "short" }).replace(".", "").slice(0, 3)}</span>
+            <small>{barTime(seconds) || "\u00a0"}</small>
+          </div>;
+        })}
+      </div></section>
   </div>;
 }
