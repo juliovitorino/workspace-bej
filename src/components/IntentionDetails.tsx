@@ -87,7 +87,7 @@ export function IntentionDetails({
     useState<number | null>(null);
   const [copiedHqPromptExampleIndex, setCopiedHqPromptExampleIndex] =
     useState<number | null>(null);
-  const [copiedSection, setCopiedSection] = useState<"pattern" | "examples" | null>(null);
+  const [copiedSection, setCopiedSection] = useState<"pattern" | "description" | "examples" | null>(null);
   const [copySectionError, setCopySectionError] = useState<string | null>(null);
   const [copiedIntentionId, setCopiedIntentionId] = useState<string | null>(null);
   const [copyIntentionIdError, setCopyIntentionIdError] = useState<string | null>(null);
@@ -274,12 +274,14 @@ export function IntentionDetails({
     }
   }
 
-  async function handleCopySection(section: "pattern" | "examples") {
+  async function handleCopySection(section: "pattern" | "description" | "examples") {
     if (!item) return;
 
     const content = section === "pattern"
       ? item.pattern ?? ""
-      : (item.examples ?? [])
+      : section === "description"
+        ? item.description ?? ""
+        : (item.examples ?? [])
           .map((example) => `${example.pt}\r\n${targetSentence(example)}`)
           .join("\r\n\r\n");
 
@@ -1046,7 +1048,46 @@ Mandatório:
 
         {item.description && (
           <section>
-            <h3>{t("details.description")}</h3>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+              <h3>{t("details.description")}</h3>
+              <button
+                type="button"
+                className="secondary-button copy-section-button"
+                onClick={() => void handleCopySection("description")}
+                title={copiedSection === "description" ? t("stories.copied") : "Copiar descrição"}
+                aria-label={copiedSection === "description" ? t("stories.copied") : "Copiar descrição"}
+                style={{
+                  width: "2.25rem",
+                  minWidth: "2.25rem",
+                  height: "2.25rem",
+                  minHeight: "2.25rem",
+                  padding: 0,
+                  borderRadius: "999px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}
+              >
+                {copiedSection === "description" ? (
+                  <span aria-hidden="true" style={{ fontWeight: 700 }}>✓</span>
+                ) : (
+                  <svg
+                    aria-hidden="true"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                  </svg>
+                )}
+              </button>
+            </div>
             <p>{item.description}</p>
           </section>
         )}
