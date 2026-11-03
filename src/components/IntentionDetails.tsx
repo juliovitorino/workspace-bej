@@ -94,6 +94,7 @@ export function IntentionDetails({
   const [speechError, setSpeechError] = useState<string | null>(null);
   const [hqImage, setHqImage] = useState<string | null>(null);
   const [showMetadataModal, setShowMetadataModal] = useState(false);
+  const [metadataSearchTermsCopyState, setMetadataSearchTermsCopyState] = useState<"copied" | "error" | null>(null);
   const [shareError, setShareError] = useState<string | null>(null);
   const [hqZoom, setHqZoom] = useState(1);
   const hqViewportRef = useRef<HTMLDivElement | null>(null);
@@ -119,6 +120,7 @@ export function IntentionDetails({
     setSpeechError(null);
     setHqImage(null);
     setShowMetadataModal(false);
+    setMetadataSearchTermsCopyState(null);
     setShareError(null);
     setHqZoom(1);
   }, [item?.id, language]);
@@ -314,6 +316,37 @@ export function IntentionDetails({
     } catch {
       setCopiedSection(null);
       setCopySectionError(t("details.couldNotCopyTheContentTryAgain"));
+    }
+  }
+
+  async function handleCopyMetadataSearchTerms() {
+    if (!isAuthorMode() || !item) return;
+
+    const sourceTerms = item.sourceSearchTerms ?? [];
+    const targetTerms = item.searchTerms ?? [];
+    if (sourceTerms.length === 0 && targetTerms.length === 0) return;
+
+    const content = [
+      `${localizedLanguageName(sourceLanguage)} (${sourceLanguage}) — searchTerms:`,
+      ...sourceTerms,
+      "",
+      `${localizedLanguageName(language)} (${language}) — searchTerms:`,
+      ...targetTerms
+    ].join("\\n");
+
+    try {
+      if (navigator.clipboard?.writeText) {
+        try {
+          await navigator.clipboard.writeText(content);
+        } catch {
+          copyIntentionIdFallback(content);
+        }
+      } else {
+        copyIntentionIdFallback(content);
+      }
+      setMetadataSearchTermsCopyState("copied");
+    } catch {
+      setMetadataSearchTermsCopyState("error");
     }
   }
 
@@ -1416,7 +1449,30 @@ Mandatório:
               <h2 style={{ marginRight: "2rem" }}>{t("details.tagsAndSearchTerms")}</h2>
               <p style={{ overflowWrap: "anywhere" }}>{item.intention}</p>
               <section>
-                <h3>searchTerms ({item.searchTerms?.length ?? 0})</h3>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
+                  <h3 style={{ margin: 0 }}>searchTerms ({item.searchTerms?.length ?? 0})</h3>
+                  <button
+                    type="button"
+                    className="secondary-button"
+                    onClick={() => void handleCopyMetadataSearchTerms()}
+                    disabled={!item.searchTerms?.length && !item.sourceSearchTerms?.length}
+                    aria-label={metadataSearchTermsCopyState === "copied" ? t("stories.copied") : "Copiar termos de busca dos idiomas de origem e estudo"}
+                    title={metadataSearchTermsCopyState === "copied" ? t("stories.copied") : "Copiar searchTerms dos dois idiomas"}
+                    style={{ width: "2rem", height: "2rem", minWidth: "2rem", minHeight: "2rem", padding: "0.35rem", display: "inline-flex", justifyContent: "center", alignItems: "center" }}
+                  >
+                    {metadataSearchTermsCopyState === "copied" ? (
+                      <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="m5 12 4 4L19 6" />
+                      </svg>
+                    ) : (
+                      <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="8" y="8" width="12" height="12" rx="2" />
+                        <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
+                      </svg>
+                    )}
+                  </button>
+                </div>
+                {metadataSearchTermsCopyState === "error" && <p role="alert" style={{ color: "var(--bad)" }}>{t("details.couldNotCopyTheContentTryAgain")}</p>}
                 {item.searchTerms?.length ? (
                   <div className="tag-list">
                     {item.searchTerms.map((term, index) => (
