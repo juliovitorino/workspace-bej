@@ -314,3 +314,14 @@
 .bej-week-bar-fill.has-study.bej-week-bar-active-listening { background:var(--bej-pink); }
 .bej-week-bar-fill.has-study.bej-week-bar-private-class { background:var(--bej-purple); }
 .bej-week-bar-fill.has-study.bej-week-bar-other { background:var(--bej-orange); }
+
+/* Days Streak: module distribution lives next to the existing extra-activity selectors. */
+.bej-streak-modules { padding-top:16px; border-top:1px solid var(--border); }
+.study-dashboard .bej-module-mini { min-height:104px; }
+.bej-module-mini .bej-category-mini-label > span:last-child { min-width:0; overflow-wrap:anywhere; }
+.bej-module-mini .bej-category-icon { color:#fff; }
+@media (max-width:380px) {
+  .study-dashboard .bej-module-mini { min-height:108px; }
+  .bej-module-mini .bej-category-mini-label { gap:5px; }
+  .bej-module-mini .bej-category-icon { width:26px; height:26px; flex-shrink:0; }
+}
