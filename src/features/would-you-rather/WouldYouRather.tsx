@@ -6,6 +6,7 @@ import { useTrainingStudy, type TrainingStudyReporter } from "../study/useTraini
 import { loadWouldYouRather, normalizeWyrSearch, type WyrData, type WyrQuestion, type WyrTopic } from "./wouldYouRatherService";
 import { readWyrStored, saveWyrChoices, saveWyrFavorites, readWyrAnswers, saveWyrAnswers, wyrAnswerKey, readWyrFontSize, saveWyrFontSize, type WyrChoice, type WyrCustomAnswers, type WyrFontSize } from "./wouldYouRatherStorage";
 import { WyrWalking } from "./WyrWalking";
+import { celebrateAchievement } from "../../utils/achievements";
 import "./wouldYouRather.css";
 
 type Screen = "catalog" | "practice" | "summary" | "walking";
@@ -221,7 +222,17 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
   function go(next: number) {
     if (!practiceSet) return;
     recordActivity();
-    if (next >= practiceSet.questions.length) { setScreen("summary"); return; }
+    if (next >= practiceSet.questions.length) {
+      const fullTopic = practiceSet.topic;
+      if (fullTopic && fullTopic.questions.length > 0 &&
+          practiceSet.questions.length === fullTopic.questions.length &&
+          fullTopic.questions.every(question => practiceSet.questions.some(item => item.id === question.id) &&
+            (choices[question.id] === "A" || choices[question.id] === "B"))) {
+        celebrateAchievement(`wyr-topic:${loaded?.locale ?? language}:${fullTopic.id}`,
+          "Would You Rather completo!", `Você respondeu todas as perguntas de ${fullTopic.title}.`);
+      }
+      setScreen("summary"); return;
+    }
     if (next < 0) return;
     setIndex(next); setRevealed({ A: false, B: false }); setNotice("");
   }
