@@ -226,16 +226,14 @@ export function StudyDashboard({ language, initialSection }: { language: Student
       {!validRange && <p role="alert">{t("study.errors.invalid")}</p>}
       <div id="study-results" className="study-content" tabIndex={-1} hidden={historyVisible}>
       <StudyWeeklyOverview data={displayData!} now={now} hideZeroData={hideZeroData} moduleLabel={moduleLabel} />
+      {chart(`${t("study.byModule")} · ${t(`study.periods.${filters.period}`)}`, moduleValues, moduleLabel, stats.total, true, "study-time-by-module")}
+      {chart(t("extras.byCategory"), Object.fromEntries(EXTRA_CATEGORIES.map(key => [key, stats.byExtraCategory[key] ?? 0])), key => t(`extras.categories.${key}`), stats.external, true, undefined, "extraCategory")}
+      {chart(`${t("study.byLanguage")} · ${t(`study.periods.${filters.period}`)}`, stats.byLanguage, code => languageName(code as StudentLanguage), stats.total)}
       <StudyHourlyHeatmap allSectionsExpanded={allSectionsExpanded} data={displayData!} language={filters.language} now={now} />
       <StudyMonthlyOverview allSectionsExpanded={allSectionsExpanded} data={displayData!} now={now} language={filters.language} />
       <StudyGoalGauges data={displayData!} hideZeroData={hideZeroData} goals={store.studyData.goals} monthlyGoals={store.studyData.monthlyGoals} language={filters.language} now={now}
         explanationVisible={goalExplanationVisible} onToggleExplanation={() => setGoalExplanationVisible(current => !current)} />
       <StudyAverageOverview allSectionsExpanded={allSectionsExpanded} data={displayData!} now={now} language={filters.language} hideZeroData={hideZeroData} />
-      <div className="bej-visual-chart-grid">
-        {chart(`${t("study.byModule")} · ${t(`study.periods.${filters.period}`)}`, moduleValues, moduleLabel, stats.total, true, "study-time-by-module")}
-        {chart(`${t("study.byLanguage")} · ${t(`study.periods.${filters.period}`)}`, stats.byLanguage, code => languageName(code as StudentLanguage), stats.total)}
-      </div>
-      {chart(t("extras.byCategory"), Object.fromEntries(EXTRA_CATEGORIES.map(key => [key, stats.byExtraCategory[key] ?? 0])), key => t(`extras.categories.${key}`), stats.external, true, undefined, "extraCategory")}
       {chart(t("extras.byOtherSubcategory"), Object.fromEntries(OTHER_STUDY_SUBCATEGORIES.map(key => [key, stats.byOtherSubcategory[key] ?? 0])), key => t(`extras.subcategories.${key}`), stats.byExtraCategory.other ?? 0, true, undefined, "otherStudies")}
       <div id="study-details" tabIndex={-1} className="study-content" hidden={!detailsVisible}>
       <div className="study-metrics">{([ ["accumulated", stats.total], ["today", stats.today], ["week", stats.week], ["month", stats.month], ["dailyAverage", stats.average] ] as const).filter(([, seconds]) => !hideZeroData || seconds > 0).map(([key, seconds]) => <div className="study-panel" key={key}><span>{t(`study.${key}`)}</span><strong>{duration(seconds)}</strong></div>)}
