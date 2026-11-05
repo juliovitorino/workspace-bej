@@ -4,6 +4,8 @@ import { EXTRA_CATEGORIES, STUDY_MODULES, type ExtraCategory, type StudyData, ty
 import { STUDY_MODULE_COLORS, STUDY_MODULE_ICONS } from "./studyModuleColors";
 import { previousDay, studyEntries } from "./studyStats";
 import { localDay } from "./studyTrackingService";
+import { useEffect } from "react";
+import { celebrateAchievement } from "../../utils/achievements";
 
 type WeekSelection = { kind: "category"; key: ExtraCategory } | { kind: "module"; key: StudyModule };
 
@@ -54,6 +56,9 @@ export function StudyWeeklyOverview({ data, now, hideZeroData = false, moduleLab
     }));
     return { today, days, byDay, byCategoryDay, byModuleDay, streak, categories, modules };
   }, [data, now]);
+  useEffect(() => {
+    if (week.streak >= 7) celebrateAchievement("days-streak-7", "7 dias consecutivos!", "Você estudou todos os dias desta semana. Keep going!");
+  }, [week.streak]);
   const fmt = (day: string, options: Intl.DateTimeFormatOptions) => new Date(day + "T12:00:00").toLocaleDateString(i18n.language, options);
   const time = (seconds: number) => `${Math.floor(seconds / 3600)}h ${String(Math.floor(seconds % 3600 / 60)).padStart(2, "0")}min`;
   // Compact labels prevent overlaps between the seven bars.
