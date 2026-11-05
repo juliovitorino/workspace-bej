@@ -6,7 +6,7 @@ import { useTrainingStudy, type TrainingStudyReporter } from "../study/useTraini
 import { loadWouldYouRather, normalizeWyrSearch, type WyrData, type WyrQuestion, type WyrTopic } from "./wouldYouRatherService";
 import { readWyrStored, saveWyrChoices, saveWyrFavorites, readWyrAnswers, saveWyrAnswers, wyrAnswerKey, readWyrFontSize, saveWyrFontSize, type WyrChoice, type WyrCustomAnswers, type WyrFontSize } from "./wouldYouRatherStorage";
 import { WyrWalking } from "./WyrWalking";
-import { celebrateAchievement } from "../../utils/achievements";
+import { celebrateCompletedSession } from "../../utils/achievements";
 import "./wouldYouRather.css";
 
 type Screen = "catalog" | "practice" | "summary" | "walking";
@@ -211,16 +211,6 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
     const next = { ...choices, [current.id]: choice };
     setChoices(next);
     if (!saveWyrChoices(next)) setStorageError(true);
-    // Celebrate as soon as the final question receives an answer. The Finish
-    // button remains a fallback for topics completed before this change.
-    const fullTopic = practiceSet?.topic;
-    if (fullTopic && practiceSet.questions.length === fullTopic.questions.length &&
-        fullTopic.questions.length > 0 &&
-        fullTopic.questions.every(question => practiceSet.questions.some(item => item.id === question.id) &&
-          (next[question.id] === "A" || next[question.id] === "B"))) {
-      celebrateAchievement(`wyr-topic:${loaded?.locale ?? language}:${fullTopic.id}`,
-        "Would You Rather completo!", `Você respondeu todas as perguntas de ${fullTopic.title}.`);
-    }
   }
   function toggleFavorite() {
     if (!current) return;
@@ -234,14 +224,18 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
     recordActivity();
     if (next >= practiceSet.questions.length) {
       const fullTopic = practiceSet.topic;
-      if (fullTopic && fullTopic.questions.length > 0 &&
-          practiceSet.questions.length === fullTopic.questions.length &&
-          fullTopic.questions.every(question => practiceSet.questions.some(item => item.id === question.id) &&
-            (choices[question.id] === "A" || choices[question.id] === "B"))) {
-        celebrateAchievement(`wyr-topic:${loaded?.locale ?? language}:${fullTopic.id}`,
-          "Would You Rather completo!", `Você respondeu todas as perguntas de ${fullTopic.title}.`);
+      const allAnswered = practiceSet.questions.length > 0 &&
+        practiceSet.questions.every(question => choices[question.id] === "A" || choices[question.id] === "B");
+      const completeTopic = fullTopic && practiceSet.questions.length === fullTopic.questions.length &&
+        fullTopic.questions.every(question => practiceSet.questions.some(item => item.id === question.id));
+      setScreen("summary");
+      // Fire on entering the 10/10 summary, not on the tenth answer.
+      // Repeating the same topic is another completed session and deserves confetti.
+      if (allAnswered && completeTopic) {
+        celebrateCompletedSession(`wyr-session:${loaded?.locale ?? language}:${fullTopic.id}`,
+          "Rodada concluída! 🎉", `Você respondeu todas as perguntas de ${fullTopic.title}.`);
       }
-      setScreen("summary"); return;
+      return;
     }
     if (next < 0) return;
     setIndex(next); setRevealed({ A: false, B: false }); setNotice("");
