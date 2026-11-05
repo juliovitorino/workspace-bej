@@ -19,7 +19,7 @@ import type { FavoriteChunk } from "../utils/favoriteChunks";
 import type { WalkingSummary } from "../utils/walkingSession";
 import { FavoriteChunkButton } from "./FavoriteChunkButton";
 import { WalkingSessionSummary } from "./WalkingSessionSummary";
-import { celebrateAchievement, recordPracticedChunk } from "../utils/achievements";
+import { celebrateAchievement, celebrateFlashcardMilestone, recordPracticedChunk } from "../utils/achievements";
 
 const NO_FAVORITES: FavoriteChunk[] = [];
 
@@ -112,6 +112,7 @@ export function ChunkFlashcards({
   const [copiedIntentionId, setCopiedIntentionId] = useState<string | null>(null);
   const [copyError, setCopyError] = useState<string | null>(null);
   const previousStudySet = useRef({ intentions, language, mode });
+  const presentedInSession = useRef(0);
   const copyFeedbackTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // O feedback desaparece sozinho e novas cópias reiniciam o prazo.
@@ -319,14 +320,19 @@ export function ChunkFlashcards({
   function recordPresentation() {
     if (!currentChunk || studyChunk) return;
     studyTracker.requireControl();
-    // Marcar ao exibir no modo manual ou ao iniciar o áudio no modo caminhada.
-    // A rodada manual só reinicia no próximo sorteio, não ao exibir o último cartão.
+    // Count only a new presentation in the active round, not replays or navigation to previous cards.
+    const key = walking ? walkingPersistenceKey : persistenceKey;
+    const eligible = walking ? walkingAllEligible : allEligible;
+    const alreadyPresented = readRound(key).presentedItemIds.includes(currentChunk.id);
+    const state = presentItem(key, eligible.map(item => item.id), currentChunk.id);
     if (walking) {
-      const state = presentItem(walkingPersistenceKey, walkingAllEligible.map(item => item.id), currentChunk.id);
       setWalkingDrawnIds(state.presentedItemIds); setWalkingRound(state.round);
     } else {
-      const state = presentItem(persistenceKey, allEligible.map(item => item.id), currentChunk.id);
       setDrawnIds(state.presentedItemIds); setRound(state.round);
+    }
+    if (!alreadyPresented && state.presentedItemIds.includes(currentChunk.id)) {
+      presentedInSession.current += 1;
+      celebrateFlashcardMilestone("chunks", presentedInSession.current);
     }
     // Count a chunk once per language, regardless of manual/favorite/walking mode.
     // Example cards are not chunks and do not advance this milestone.
