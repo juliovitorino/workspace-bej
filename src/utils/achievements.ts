@@ -28,20 +28,21 @@ export function celebrateCompletedSession(key: string, title: string, descriptio
 }
 
 /** Emits only the first unlock. A storage failure must never interrupt studying. */
-export function celebrateAchievement(key: string, title: string, description: string): void {
-  if (typeof window === "undefined" || !key || announced.has(key)) return;
+export function celebrateAchievement(key: string, title: string, description: string): boolean {
+  if (typeof window === "undefined" || !key || announced.has(key)) return false;
   let saved: string[] = [];
   try {
     const data: unknown = JSON.parse(window.localStorage.getItem(ACHIEVEMENTS_KEY) ?? "[]");
     if (Array.isArray(data)) saved = data.filter((item): item is string => typeof item === "string");
   } catch { /* Cosmetic data only. */ }
-  if (saved.includes(key)) { announced.add(key); return; }
+  if (saved.includes(key)) { announced.add(key); return false; }
   announced.add(key);
   try { window.localStorage.setItem(ACHIEVEMENTS_KEY, JSON.stringify([...saved, key])); }
   catch { /* Quota / blocked storage must not affect studying. */ }
   window.dispatchEvent(new CustomEvent<AchievementDetail>(ACHIEVEMENT_EVENT, {
     detail: { key, title, description }
   }));
+  return true;
 }
 
 
