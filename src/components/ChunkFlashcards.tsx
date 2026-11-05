@@ -19,7 +19,7 @@ import type { FavoriteChunk } from "../utils/favoriteChunks";
 import type { WalkingSummary } from "../utils/walkingSession";
 import { FavoriteChunkButton } from "./FavoriteChunkButton";
 import { WalkingSessionSummary } from "./WalkingSessionSummary";
-import { celebrateAchievement } from "../utils/achievements";
+import { celebrateAchievement, recordPracticedChunk } from "../utils/achievements";
 
 const NO_FAVORITES: FavoriteChunk[] = [];
 
@@ -328,6 +328,9 @@ export function ChunkFlashcards({
       const state = presentItem(persistenceKey, allEligible.map(item => item.id), currentChunk.id);
       setDrawnIds(state.presentedItemIds); setRound(state.round);
     }
+    // Count a chunk once per language, regardless of manual/favorite/walking mode.
+    // Example cards are not chunks and do not advance this milestone.
+    if (favoriteType !== "example") recordPracticedChunk(language, favoriteId ?? currentChunk.id);
   }
   useEffect(() => {
     if (!walking && currentChunk && !studyChunk) {
