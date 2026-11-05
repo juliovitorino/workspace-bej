@@ -41,6 +41,7 @@ import { searchIntentions } from "./utils/searchIntentions";
 import { isAuthorMode } from "./utils/authorMode";
 import { useAppTheme } from "./hooks/useAppTheme";
 import { useFavoriteChunks } from "./hooks/useFavoriteChunks";
+import { AchievementCelebration } from "./components/AchievementCelebration";
 import { favoriteStudyItems } from "./utils/favoriteStudyItems";
 
 type TrainingMode = "basic" | "advanced" | "review" | null;
@@ -374,6 +375,7 @@ function App() {
 
   return (
     <main className="app-layout">
+      <AchievementCelebration />
       {backupReminderOpen && <BackupReminderDialog onContinue={continueAfterBackup}
         onDismiss={() => { backupReminder.dismiss(); continueAfterBackup(); }} />}
       <Sidebar
