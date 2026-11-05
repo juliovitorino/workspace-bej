@@ -1,4 +1,4 @@
-import type { StudyModule } from "./studyStorage";
+import type { ExtraCategory, StudyModule } from "./studyStorage";
 
 /** Stable colors shared by the module totals and the Days Streak weekly projection. */
 export const STUDY_MODULE_COLORS: Partial<Record<StudyModule, string>> = {
@@ -29,4 +29,14 @@ export const STUDY_MODULE_ICONS: Partial<Record<StudyModule, string>> = {
   "would-you-rather": "⚖️",
   interpretation: "🔎",
   "small-talk": "🤝",
+};
+
+/** Extra-activity category bars in the consolidated "Time by module" chart. */
+export const STUDY_EXTRA_CATEGORY_COLORS: Record<ExtraCategory, string> = {
+  conversation: "#4384f0",
+  writing: "#f8b736",
+  "private-class": "#a568ed",
+  reading: "#2fa879",
+  "active-listening": "#e9679a",
+  other: "#f59e42",
 };
