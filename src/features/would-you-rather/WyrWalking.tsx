@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import type { StudentLanguage } from "../../config/languages";
 import type { WyrChoice } from "./wouldYouRatherStorage";
 import { speakStudyAudio } from "../study/studyAudio";
+import { celebrateAchievement } from "../../utils/achievements";
 
 type WalkingItem = { id: string; question: string; choice: WyrChoice; option: { text: string; answer: string }; answer: string };
 type Phase = "ready" | "question" | "thinking" | "answer" | "between" | "paused" | "complete" | "error";
@@ -43,6 +44,7 @@ export function WyrWalking({ items, locale, onExit, onStudyState }: Props) {
   const [phase, setPhase] = useState<Phase>("ready");
   const [error, setError] = useState("");
   const generation = useRef(0);
+  const skipped = useRef(0);
   const cancelAudio = useRef<() => void>(() => undefined);
   const wakeLock = useRef<{ release(): Promise<void> } | null>(null);
   const current = items[index];
@@ -125,12 +127,20 @@ export function WyrWalking({ items, locale, onExit, onStudyState }: Props) {
     };
   }, [started, paused, index, repetition, repeatCount, thinkingSeconds, betweenSeconds, playAnswer, locale, items]);
 
+  useEffect(() => {
+    if (started && phase === "complete" && items.length > 0 && completed === items.length && skipped.current === 0) {
+      celebrateAchievement("walking-first-session", "Modo Caminhada concluído!", "Você completou sua primeira sessão de repetição em voz alta.");
+    }
+  }, [started, phase, completed, items.length]);
+
   function restart() {
+    skipped.current = 0;
     stopAudio();
     setStarted(false); setPaused(false); setIndex(0); setRepetition(0);
     setCompleted(0); setPhase("ready"); setError("");
   }
   function skip() {
+    skipped.current += 1;
     stopAudio();
     setRepetition(0);
     setCompleted(value => value + 1);
