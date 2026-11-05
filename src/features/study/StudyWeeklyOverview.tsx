@@ -56,9 +56,24 @@ export function StudyWeeklyOverview({ data, now, hideZeroData = false, moduleLab
     }));
     return { today, days, byDay, byCategoryDay, byModuleDay, streak, categories, modules };
   }, [data, now]);
+  // A streak can cross Sundays: the celebration uses calendar days, not only the
+  // seven columns in the current-week card.
+  const hasSevenDayStreak = useMemo(() => {
+    const totals = new Map<string, number>();
+    for (const entry of studyEntries(data)) {
+      if (entry.seconds > 0) totals.set(entry.date, (totals.get(entry.date) ?? 0) + entry.seconds);
+    }
+    const today = localDay(now);
+    let cursor = (totals.get(today) ?? 0) >= 60 ? today : previousDay(today, -1);
+    for (let i = 0; i < 7; i++) {
+      if ((totals.get(cursor) ?? 0) < 60) return false;
+      cursor = previousDay(cursor, -1);
+    }
+    return true;
+  }, [data, now]);
   useEffect(() => {
-    if (week.streak >= 7) celebrateAchievement("days-streak-7", "7 dias consecutivos!", "Você estudou todos os dias desta semana. Keep going!");
-  }, [week.streak]);
+    if (hasSevenDayStreak) celebrateAchievement("days-streak-7", "7 dias consecutivos!", "Você estudou por 7 dias seguidos. Keep going!");
+  }, [hasSevenDayStreak]);
   const fmt = (day: string, options: Intl.DateTimeFormatOptions) => new Date(day + "T12:00:00").toLocaleDateString(i18n.language, options);
   const time = (seconds: number) => `${Math.floor(seconds / 3600)}h ${String(Math.floor(seconds % 3600 / 60)).padStart(2, "0")}min`;
   // Compact labels prevent overlaps between the seven bars.
