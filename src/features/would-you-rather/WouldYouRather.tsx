@@ -231,7 +231,7 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
       setScreen("summary");
       // Fire on entering the 10/10 summary, not on the tenth answer.
       // Repeating the same topic is another completed session and deserves confetti.
-      if (allAnswered && completeTopic) {
+      if (allAnswered && fullTopic && completeTopic) {
         celebrateCompletedSession(`wyr-session:${loaded?.locale ?? language}:${fullTopic.id}`,
           "Rodada concluída! 🎉", `Você respondeu todas as perguntas de ${fullTopic.title}.`);
       }
