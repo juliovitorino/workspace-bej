@@ -22,6 +22,7 @@ function load(file) {
 const storage = load('src/features/study/studyStorage.ts');
 const { StudyClock, recoverCheckpoint, localDay, IDLE_MS } = load('src/features/study/studyTrackingService.ts');
 const { studyStats } = load('src/features/study/studyStats.ts');
+const { moduleChartValues, EXTRA_MODULE_PREFIX } = load('src/features/study/studyModuleChart.ts');
 const { emptyStore, backupOf, parseStudyBackup, mergeStudyData, consolidateStudyBackup, writeStudyStore, readStudyStore, totalSeconds, STUDY_KEY, StudyError } = storage;
 const code = expected => e => e instanceof StudyError && e.code === expected;
 const rawStore = new Map([['bej-favorite-chunks', '[{"id":"keep","language":"en-US"}]'], ['interface-theme', 'dark']]);
@@ -219,3 +220,22 @@ for (const [module, seconds, language] of [['speaking-game', 65, 'en-US'], ['int
 }
 assert.equal(studyStats(mergedModules.studyData, { ...filter, language: 'en-US', module: 'all' }, new Date(start + 3600000)).total, 65);
 console.log('PASS: Speaking Game and Interpretation version-1 backup round trip, repeated restore, exact totals and isolated module/language filters.');
+
+// Dashboard module chart: each extra category is a separate bar without counting the aggregate twice.
+const moduleChartStats = {
+  byModule: { hashmap: 480, 'extra-activities': 600, previous: 120 },
+  byExtraCategory: { conversation: 360, writing: 240, 'private-class': 0, reading: 0, 'active-listening': 0, other: 0 },
+};
+const moduleChartFilters = { module: 'all', origin: 'all', extraCategory: 'all' };
+const moduleBars = moduleChartValues(moduleChartStats, moduleChartFilters);
+assert.equal(moduleBars['extra-activities'], undefined);
+assert.equal(moduleBars[`${EXTRA_MODULE_PREFIX}conversation`], 360);
+assert.equal(moduleBars[`${EXTRA_MODULE_PREFIX}writing`], 240);
+assert.equal(Object.values(moduleBars).reduce((sum, value) => sum + value, 0), 1200);
+assert.deepEqual(Object.keys(moduleChartValues(moduleChartStats, { ...moduleChartFilters, origin: 'external' })).length, 6);
+assert.equal(moduleChartValues(moduleChartStats, { ...moduleChartFilters, origin: 'internal' }).hashmap, 480);
+assert.equal(Object.keys(moduleChartValues(moduleChartStats, { ...moduleChartFilters, origin: 'internal' })).some(key => key.startsWith(EXTRA_MODULE_PREFIX)), false);
+assert.deepEqual(moduleChartValues(moduleChartStats, { ...moduleChartFilters, extraCategory: 'writing' }), { [`${EXTRA_MODULE_PREFIX}writing`]: 240 });
+assert.equal(moduleChartValues(moduleChartStats, { ...moduleChartFilters, module: 'hashmap' }).hashmap, 480);
+assert.equal(Object.keys(moduleChartValues(moduleChartStats, { ...moduleChartFilters, module: 'extra-activities' })).length, 6);
+console.log('PASS: dashboard module bars split extra activities by category, honor filters, and do not double-count the aggregate.');
