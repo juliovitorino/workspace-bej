@@ -14,7 +14,8 @@ import { studyEntries, studyStats, type StudyFilters } from "./studyStats";
 import "./study.css";
 import { StudyPeriodMenu } from "./StudyPeriodMenu";
 import { StudyWeeklyOverview } from "./StudyWeeklyOverview";
-import { STUDY_MODULE_COLORS } from "./studyModuleColors";
+import { STUDY_MODULE_COLORS, STUDY_EXTRA_CATEGORY_COLORS } from "./studyModuleColors";
+import { EXTRA_MODULE_PREFIX, moduleChartValues } from "./studyModuleChart";
 import { StudyHourlyHeatmap } from "./StudyHourlyHeatmap";
 import { StudyMonthlyOverview } from "./StudyMonthlyOverview";
 import { StudyGoalGauges } from "./StudyGoalGauges";
@@ -45,7 +46,7 @@ export function StudyDashboard({ language, initialSection }: { language: Student
   const toggleAllSections = () => {
     setAllSectionsExpanded(current => {
       const next = !current;
-      setCollapsedCharts({ extraCategory: next, otherStudies: next });
+      setCollapsedCharts({ otherStudies: next });
       return next;
     });
     closeCalendar();
@@ -135,13 +136,11 @@ export function StudyDashboard({ language, initialSection }: { language: Student
     return parts.filter(([, value]) => value > 0).map(([key, value]) => t(`study.${key}`, { count: value })).join(" ") || t("study.zeroDuration");
   };
   const number = (value: number) => value.toLocaleString(i18n.language, { maximumFractionDigits: 2 });
-  const moduleLabel = (key: string) => key === "hashmap" ? "Mental Hashmap" : key === "small-talk" ? "Small Talk" : t(moduleKeys[key]);
-  const applicableModules = STUDY_MODULES.filter(key => filters.origin === "internal" ? key !== "extra-activities"
-    : filters.origin === "external" || (filters.extraCategory && filters.extraCategory !== "all") ? key === "extra-activities" : true);
-  const moduleValues = Object.fromEntries((filters.module === "all" ? applicableModules : [filters.module])
-    .map(key => [key, stats?.byModule[key] ?? 0]));
-  // Keep prior-hour adjustments visible when no module filter excludes them.
-  if (filters.module === "all" && stats?.byModule.previous) moduleValues.previous = stats.byModule.previous;
+  const moduleLabel = (key: string) => key.startsWith(EXTRA_MODULE_PREFIX)
+    ? t(`extras.categories.${key.slice(EXTRA_MODULE_PREFIX.length)}`)
+    : key === "hashmap" ? "Mental Hashmap" : key === "small-talk" ? "Small Talk" : t(moduleKeys[key]);
+  // Extra activities are shown as individual categories in the module chart, not as one aggregated bar.
+  const moduleValues = stats ? moduleChartValues(stats, filters) : {};
   async function action(work: () => Promise<void>) {
     setBusy(true); setError(""); setMessage("");
     try { await work(); } catch (e) { fail(e); } finally { setBusy(false); }
@@ -179,7 +178,7 @@ export function StudyDashboard({ language, initialSection }: { language: Student
       resetAdjustment(); setMessage(t("study.saved"));
     });
   }
-  const [collapsedCharts, setCollapsedCharts] = useState<Record<string, boolean>>({ extraCategory: false, otherStudies: false });
+  const [collapsedCharts, setCollapsedCharts] = useState<Record<string, boolean>>({ otherStudies: false });
   const chart = (title: string, values: Record<string, number>, label: (key: string) => string = key => key, total?: number, modules = false, sectionId?: string, collapseKey?: string) => {
     const entries = Object.entries(values).filter(([, seconds]) => !hideZeroData || seconds > 0).sort(modules
       ? ([a, secondsA], [b, secondsB]) => secondsB - secondsA || label(a).localeCompare(label(b), i18n.language)
@@ -187,7 +186,9 @@ export function StudyDashboard({ language, initialSection }: { language: Student
     const max = Math.max(1, ...entries.map(([, seconds]) => seconds));
     const scale = Math.max(1, total ?? max);
     return <section id={sectionId} tabIndex={sectionId ? -1 : undefined} className="study-panel bej-chart-card">{collapseKey ? <StudyCollapseToggle expanded={collapsedCharts[collapseKey] ?? false} onToggle={() => setCollapsedCharts(v => ({ ...v, [collapseKey]: !(v[collapseKey] ?? false) }))} title={title} /> : <h3>{title}</h3>}{(!collapseKey || collapsedCharts[collapseKey]) && (!entries.length ? <p>{t("study.empty")}</p> : <ul className={modules ? "study-chart study-chart-modules" : "study-chart"}>{entries.map(([key, seconds]) => <li key={key}>
-      <div><span>{label(key)}</span><strong>{duration(seconds)}{total !== undefined && ` · ${number(seconds / scale * 100)}%`}</strong></div><div className="study-bar" aria-hidden="true"><span style={{ width: `${seconds / scale * 100}%`, ...(sectionId === "study-time-by-module" && STUDY_MODULE_COLORS[key as typeof STUDY_MODULES[number]] ? { background: STUDY_MODULE_COLORS[key as typeof STUDY_MODULES[number]] } : {}) }} /></div>
+      <div><span>{label(key)}</span><strong>{duration(seconds)}{total !== undefined && ` · ${number(seconds / scale * 100)}%`}</strong></div><div className="study-bar" aria-hidden="true"><span style={{ width: `${seconds / scale * 100}%`, ...(sectionId === "study-time-by-module" ? { background: key.startsWith(EXTRA_MODULE_PREFIX)
+        ? STUDY_EXTRA_CATEGORY_COLORS[key.slice(EXTRA_MODULE_PREFIX.length) as typeof EXTRA_CATEGORIES[number]]
+        : STUDY_MODULE_COLORS[key as typeof STUDY_MODULES[number]] } : {}) }} /></div>
     </li>)}</ul>)}</section>;
   };
   const informationIcon = <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v6"/><circle cx="12" cy="7" r="1" fill="currentColor" stroke="none"/></svg>;
@@ -235,7 +236,6 @@ export function StudyDashboard({ language, initialSection }: { language: Student
       <div id="study-results" className="study-content" tabIndex={-1} hidden={historyVisible}>
       <StudyWeeklyOverview data={displayData!} now={now} hideZeroData={hideZeroData} moduleLabel={moduleLabel} />
       {chart(`${t("study.byModule")} · ${t(`study.periods.${filters.period}`)}`, moduleValues, moduleLabel, stats.total, true, "study-time-by-module")}
-      {chart(t("extras.byCategory"), Object.fromEntries(EXTRA_CATEGORIES.map(key => [key, stats.byExtraCategory[key] ?? 0])), key => t(`extras.categories.${key}`), stats.external, true, undefined, "extraCategory")}
       {chart(`${t("study.byLanguage")} · ${t(`study.periods.${filters.period}`)}`, stats.byLanguage, code => languageName(code as StudentLanguage), stats.total)}
       <StudyHourlyHeatmap allSectionsExpanded={allSectionsExpanded} data={displayData!} language={filters.language} now={now} />
       <StudyMonthlyOverview allSectionsExpanded={allSectionsExpanded} data={displayData!} now={now} language={filters.language} />
