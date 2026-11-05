@@ -12,6 +12,7 @@ import { PersonalBackupMenu } from "../features/personal-flashcards/PersonalBack
 import { PERSONAL_CARDS_CHANGED, countPersonalFlashcards } from "../features/personal-flashcards/personalFlashcardStorage";
 import type { FavoriteChunk } from "../utils/favoriteChunks";
 import { FavoriteChunkButton } from "./FavoriteChunkButton";
+import { celebrateFlashcardMilestone } from "../utils/achievements";
 
 interface Props {
   onStudyState?: (active: boolean, mode?: "manual" | "walking") => void;
@@ -90,6 +91,7 @@ function MemoryRound({ eligible, level, onLevelChange, ...props }: Props & {
   const [position, setPosition] = useState(0);
   const [revealed, setRevealed] = useState(false);
   const [studied, setStudied] = useState<Set<string>>(() => new Set());
+  const flippedInSession = useRef(0);
   const [elapsed, setElapsed] = useState(0);
   const clock = useRef<{ startedAt: number | null; accumulated: number }>({ startedAt: null, accumulated: 0 });
   const [running, setRunning] = useState(false);
@@ -162,6 +164,9 @@ function MemoryRound({ eligible, level, onLevelChange, ...props }: Props & {
     if (!revealed && !studied.has(current.id)) {
       const next = new Set(studied).add(current.id);
       setStudied(next);
+      // Only the first reveal of each card counts; turning it back does not.
+      flippedInSession.current += 1;
+      celebrateFlashcardMilestone("memory", flippedInSession.current);
       if (clock.current.startedAt === null) {
         clock.current.startedAt = Date.now();
         setRunning(true);
