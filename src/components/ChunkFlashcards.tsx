@@ -19,6 +19,7 @@ import type { FavoriteChunk } from "../utils/favoriteChunks";
 import type { WalkingSummary } from "../utils/walkingSession";
 import { FavoriteChunkButton } from "./FavoriteChunkButton";
 import { WalkingSessionSummary } from "./WalkingSessionSummary";
+import { celebrateAchievement, recordPracticedChunk } from "../utils/achievements";
 
 const NO_FAVORITES: FavoriteChunk[] = [];
 
@@ -327,6 +328,9 @@ export function ChunkFlashcards({
       const state = presentItem(persistenceKey, allEligible.map(item => item.id), currentChunk.id);
       setDrawnIds(state.presentedItemIds); setRound(state.round);
     }
+    // Count a chunk once per language, regardless of manual/favorite/walking mode.
+    // Example cards are not chunks and do not advance this milestone.
+    if (favoriteType !== "example") recordPracticedChunk(language, favoriteId ?? currentChunk.id);
   }
   useEffect(() => {
     if (!walking && currentChunk && !studyChunk) {
@@ -577,7 +581,12 @@ export function ChunkFlashcards({
         nextWalkingChunk();
         return completed;
       }}
-      onStop={summary => { setWalkingSummary(summary ?? null); setWalking(false); }} />;
+      onStop={summary => {
+        if (summary && summary.completed > 0 && summary.phrases > 0) {
+          celebrateAchievement("walking-first-session", "Modo Caminhada concluído!", "Você completou sua primeira sessão de repetição em voz alta.");
+        }
+        setWalkingSummary(summary ?? null); setWalking(false);
+      }} />;
   }
 
   return (

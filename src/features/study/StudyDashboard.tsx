@@ -19,6 +19,7 @@ import { StudyHourlyHeatmap } from "./StudyHourlyHeatmap";
 import { StudyMonthlyOverview } from "./StudyMonthlyOverview";
 import { StudyGoalGauges } from "./StudyGoalGauges";
 import { StudyAverageOverview } from "./StudyAverageOverview";
+import { celebrateAchievement } from "../../utils/achievements";
 import { StudyStorageOverview } from "./StudyStorageOverview";
 
 const languages = Object.keys(LANGUAGES) as StudentLanguage[];
@@ -115,6 +116,13 @@ export function StudyDashboard({ language, initialSection }: { language: Student
   const validRange = filters.period !== "custom" || (validDay(filters.from) && validDay(filters.to) && filters.from <= filters.to);
   const displayData = useMemo(() => store && studyDataWithCheckpoints(store.studyData, checkpoints), [store, checkpoints]);
   const stats = useMemo(() => displayData && studyStats(displayData, validRange ? filters : { ...filters, period: "today" }, now), [displayData, filters, validRange, now]);
+  // Milestones use the complete history, regardless of the dashboard period filter.
+  const accumulatedSeconds = useMemo(() => displayData
+    ? studyEntries(displayData).reduce((sum, entry) => sum + entry.seconds, 0) : 0, [displayData]);
+  useEffect(() => {
+    if (accumulatedSeconds >= 10 * 3600) celebrateAchievement("study-10-hours", "10 horas de estudo!", "Sua jornada de inglês já soma 10 horas de dedicação.");
+    if (accumulatedSeconds >= 100 * 3600) celebrateAchievement("study-100-hours", "100 horas de estudo!", "Você alcançou um marco importante na sua jornada!");
+  }, [accumulatedSeconds]);
   const history = useMemo(() => store
     ? [...studyStats(store.studyData, validRange ? filters : { ...filters, period: "today" }, now).entries].sort((a, b) => b.date.localeCompare(a.date))
     : [], [store, filters, validRange, now]);
