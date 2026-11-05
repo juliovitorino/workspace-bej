@@ -43,3 +43,16 @@ export function celebrateAchievement(key: string, title: string, description: st
     detail: { key, title, description }
   }));
 }
+
+
+/** Repeatable, session-scoped celebration. Never alters progress or backup data. */
+export function celebrateFlashcardMilestone(module: "chunks" | "memory" | "personal", count: number): void {
+  if (!Number.isSafeInteger(count) || count <= 0 || count % 10 !== 0) return;
+  const title = `${count} flashcards praticados! 🎉`;
+  const description = module === "memory"
+    ? `Você virou ${count} flashcards de memória nesta sessão!`
+    : module === "personal"
+      ? `Você virou ${count} flashcards pessoais nesta sessão!`
+      : `Você praticou ${count} flashcards de chunks nesta sessão!`;
+  celebrateCompletedSession(`flashcards:${module}:${count}`, title, description);
+}
