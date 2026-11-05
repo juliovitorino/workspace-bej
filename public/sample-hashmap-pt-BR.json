@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1257,
+    "totalIntentions": 1258,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -49288,6 +49288,108 @@
           "id": "b58e1f49-3d13-4c70-8a89-e4f31b72d950",
           "exampleItem": "Eu estava morrendo de vontade de praticar meu inglês com alguém.",
           "intent": "estava morrendo de vontade de"
+        }
+      ]
+    },
+    {
+      "id": "ja-tive-vontade-de-8b42e6a1-7c95-4d30-9f21-a6e83c05d274",
+      "intention": "Já tive vontade de + verbo",
+      "pattern": "sujeito + já + ter conjugado + vontade de + verbo no infinitivo / já sentir vontade de + verbo no infinitivo",
+      "description": "Expressa que uma pessoa já experimentou, em algum momento da vida, o desejo ou a vontade de realizar determinada ação, sem necessariamente tê-la realizado. Em inglês americano, 'have/has wanted to + verbo na forma base + before' é uma construção natural para indicar que esse desejo já existiu em algum momento anterior ao presente. Também pode ser utilizada a estrutura 'have/has felt like + verbo com -ing + before', especialmente quando se trata de uma vontade momentânea, impulso ou disposição para fazer algo. O present perfect é adequado quando não se especifica um momento passado definido. Para situações situadas em um momento específico do passado, utiliza-se normalmente o simple past, como em 'I wanted to quit yesterday'. A palavra 'before' reforça a ideia de experiência anterior, mas pode ser omitida quando o contexto já deixa isso claro.",
+      "category": "expressions",
+      "searchTerms": [
+        "já tive vontade de",
+        "já senti vontade de",
+        "já quis",
+        "alguma vez tive vontade de",
+        "alguma vez senti vontade de",
+        "já teve vontade de",
+        "já tivemos vontade de",
+        "já tiveram vontade de",
+        "já me deu vontade de",
+        "já pensei em fazer"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])já\\s+(?:tive|teve|tivemos|tiveram|tinha|tinham)\\s+vontade\\s+de(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])já\\s+(?:senti|sentiu|sentimos|sentiram)\\s+vontade\\s+de(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:alguma\\s+vez\\s+)?já\\s+(?:quis|quisemos|quiseram)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "desejo",
+        "vontade",
+        "experiência anterior",
+        "present perfect",
+        "sentimentos",
+        "intenções",
+        "gerador de frases",
+        "conversação"
+      ],
+      "related": [
+        "morrendo-de-vontade-de-7c29e4a1-6b83-4f50-9d12-a5e74c08b396",
+        "estar-se-cocando-de-vontade-de-8c42e7a1-6d95-4b30-9f21-a7e63d05c284"
+      ],
+      "structure": "Sujeito + já + ter conjugado + vontade de + verbo no infinitivo. Equivalentes em inglês: Subject + have/has + wanted + to + base verb + before; ou Subject + have/has + felt like + verb-ing + before. Para perguntas: Have/Has + subject + ever + wanted to + base verb? A estrutura não significa necessariamente que a ação foi realizada.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c2e43-5b96-4d80-8f12-c3e74a09d625",
+          "exampleItem": "Já tive vontade de morar nos Estados Unidos.",
+          "intent": "Já tive vontade de"
+        },
+        {
+          "id": "b82d3f54-6c07-4e91-9a23-d4f85b10e736",
+          "exampleItem": "Eu já tive vontade de largar tudo e viajar pelo mundo.",
+          "intent": "já tive vontade de"
+        },
+        {
+          "id": "c93e4065-7d18-4fa2-8b34-e5096c21f847",
+          "exampleItem": "Já tive vontade de comprar outra motocicleta.",
+          "intent": "Já tive vontade de"
+        },
+        {
+          "id": "d04f5176-8e29-40b3-9c45-f61a7d32a958",
+          "exampleItem": "Já tive vontade de desistir de aprender inglês.",
+          "intent": "Já tive vontade de"
+        },
+        {
+          "id": "e1506287-9f30-41c4-8d56-a72b8e43b069",
+          "exampleItem": "Já senti vontade de mudar completamente de carreira.",
+          "intent": "Já senti vontade de"
+        },
+        {
+          "id": "f2617398-0a41-42d5-9e67-b83c9f54c170",
+          "exampleItem": "Ela já teve vontade de abrir o próprio negócio.",
+          "intent": "já teve vontade de"
+        },
+        {
+          "id": "a37284a9-1b52-43e6-8f78-c94d0a65d281",
+          "exampleItem": "Nós já tivemos vontade de trabalhar em outro país.",
+          "intent": "já tivemos vontade de"
+        },
+        {
+          "id": "b48395ba-2c63-44f7-9089-da5e1b76e392",
+          "exampleItem": "Você já teve vontade de aprender a tocar violão?",
+          "intent": "já teve vontade de"
+        },
+        {
+          "id": "c594a6cb-3d74-4508-a19a-eb6f2c87f403",
+          "exampleItem": "Já tive vontade de criar meu próprio aplicativo de estudos.",
+          "intent": "Já tive vontade de"
+        },
+        {
+          "id": "d6a5b7dc-4e85-4619-b2ab-fc703d980514",
+          "exampleItem": "Eu já tive vontade de conversar com um falante nativo por horas.",
+          "intent": "já tive vontade de"
+        },
+        {
+          "id": "e7b6c8ed-5f96-472a-83bc-ad814e091625",
+          "exampleItem": "Eles já tiveram vontade de se mudar para uma cidade menor.",
+          "intent": "já tiveram vontade de"
+        },
+        {
+          "id": "f8c7d9fe-6a07-483b-94cd-be925f102736",
+          "exampleItem": "Você alguma vez já quis começar a vida do zero?",
+          "intent": "já quis"
         }
       ]
     }

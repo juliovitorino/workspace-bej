@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1257,
+    "totalIntentions": 1258,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -49697,6 +49697,107 @@
           "id": "b58e1f49-3d13-4c70-8a89-e4f31b72d950",
           "exampleItem": "Me moría de ganas de practicar mi inglés con alguien.",
           "intent": "Me moría de ganas de"
+        }
+      ]
+    },
+    {
+      "id": "ja-tive-vontade-de-8b42e6a1-7c95-4d30-9f21-a6e83c05d274",
+      "intention": "Haber tenido ganas de / Haber querido + infinitivo alguna vez",
+      "pattern": "sujeto + haber conjugado + tenido ganas de + infinitivo / haber sentido ganas de + infinitivo / haber querido + infinitivo + alguna vez",
+      "description": "Expresa que una persona ha experimentado, en alg?n momento de su vida, el deseo o las ganas de hacer algo, sin que necesariamente lo haya hecho. En ingl?s americano, ?have/has wanted to + verbo en forma base + before? es una construcci?n natural para indicar que ese deseo ha existido en alg?n momento anterior al presente. Tambi?n puede utilizarse ?have/has felt like + verbo terminado en -ing + before?, especialmente cuando se trata de unas ganas pasajeras, un impulso o la disposici?n a hacer algo. El present perfect es adecuado cuando no se especifica un momento concreto del pasado. Para situaciones situadas en un momento espec?fico del pasado, suele utilizarse el simple past, como en ?I wanted to quit yesterday?. La palabra ?before? refuerza la idea de una experiencia anterior, pero puede omitirse cuando el contexto ya lo deja claro.",
+      "category": "expressions",
+      "searchTerms": [
+        "alguna vez he tenido ganas de",
+        "he sentido ganas de",
+        "alguna vez he querido",
+        "en alguna ocasi?n he tenido ganas de",
+        "alguna vez has tenido ganas de",
+        "hemos tenido ganas de",
+        "han tenido ganas de",
+        "me han entrado ganas de",
+        "he pensado en hacer"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:he|has|ha|hemos|hab?is|han)\\s+tenido\\s+ganas\\s+de\\s+\\p{L}+(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:he|has|ha|hemos|hab?is|han)\\s+sentido\\s+ganas\\s+de\\s+\\p{L}+(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:he|has|ha|hemos|hab?is|han)\\s+querido\\s+\\p{L}+(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "deseo",
+        "ganas",
+        "experiencia anterior",
+        "pret?rito perfecto compuesto",
+        "sentimientos",
+        "intenciones",
+        "generador de frases",
+        "conversaci?n"
+      ],
+      "related": [
+        "morrendo-de-vontade-de-7c29e4a1-6b83-4f50-9d12-a5e74c08b396",
+        "estar-se-cocando-de-vontade-de-8c42e7a1-6d95-4b30-9f21-a7e63d05c284"
+      ],
+      "structure": "Sujeto + haber conjugado + tenido ganas de / sentido ganas de / querido + infinitivo + alguna vez. Equivalentes en ingl?s: sujeto + have/has + wanted + to + verbo en forma base + before; o sujeto + have/has + felt like + verbo terminado en -ing + before. Para preguntas: Have/Has + sujeto + ever + wanted to + verbo en forma base? La estructura no significa necesariamente que se haya realizado la acci?n.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c2e43-5b96-4d80-8f12-c3e74a09d625",
+          "exampleItem": "Alguna vez he tenido ganas de vivir en Estados Unidos.",
+          "intent": "he tenido ganas de"
+        },
+        {
+          "id": "b82d3f54-6c07-4e91-9a23-d4f85b10e736",
+          "exampleItem": "Alguna vez he tenido ganas de dejarlo todo y viajar por el mundo.",
+          "intent": "he tenido ganas de"
+        },
+        {
+          "id": "c93e4065-7d18-4fa2-8b34-e5096c21f847",
+          "exampleItem": "Alguna vez he tenido ganas de comprarme otra moto.",
+          "intent": "he tenido ganas de"
+        },
+        {
+          "id": "d04f5176-8e29-40b3-9c45-f61a7d32a958",
+          "exampleItem": "Alguna vez he tenido ganas de dejar de aprender ingl?s.",
+          "intent": "he tenido ganas de"
+        },
+        {
+          "id": "e1506287-9f30-41c4-8d56-a72b8e43b069",
+          "exampleItem": "Alguna vez he sentido ganas de cambiar por completo de profesi?n.",
+          "intent": "he sentido ganas de"
+        },
+        {
+          "id": "f2617398-0a41-42d5-9e67-b83c9f54c170",
+          "exampleItem": "Ella ha tenido ganas de abrir su propio negocio en alguna ocasi?n.",
+          "intent": "ha tenido ganas de"
+        },
+        {
+          "id": "a37284a9-1b52-43e6-8f78-c94d0a65d281",
+          "exampleItem": "Alguna vez hemos tenido ganas de trabajar en otro pa?s.",
+          "intent": "hemos tenido ganas de"
+        },
+        {
+          "id": "b48395ba-2c63-44f7-9089-da5e1b76e392",
+          "exampleItem": "?Alguna vez has tenido ganas de aprender a tocar la guitarra?",
+          "intent": "has tenido ganas de"
+        },
+        {
+          "id": "c594a6cb-3d74-4508-a19a-eb6f2c87f403",
+          "exampleItem": "Alguna vez he tenido ganas de crear mi propia aplicaci?n para estudiar.",
+          "intent": "he tenido ganas de"
+        },
+        {
+          "id": "d6a5b7dc-4e85-4619-b2ab-fc703d980514",
+          "exampleItem": "Alguna vez he tenido ganas de hablar durante horas con un hablante nativo.",
+          "intent": "he tenido ganas de"
+        },
+        {
+          "id": "e7b6c8ed-5f96-472a-83bc-ad814e091625",
+          "exampleItem": "Ellos han tenido ganas de mudarse a una ciudad m?s peque?a en alguna ocasi?n.",
+          "intent": "han tenido ganas de"
+        },
+        {
+          "id": "f8c7d9fe-6a07-483b-94cd-be925f102736",
+          "exampleItem": "?Alguna vez has querido empezar de cero?",
+          "intent": "has querido"
         }
       ]
     }

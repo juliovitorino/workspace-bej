@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1257,
+    "totalIntentions": 1258,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -73838,6 +73838,107 @@
           "id": "b58e1f49-3d13-4c70-8a89-e4f31b72d950",
           "exampleItem": "I was dying to practice my English with someone.",
           "intent": "was dying to"
+        }
+      ]
+    },
+    {
+      "id": "ja-tive-vontade-de-8b42e6a1-7c95-4d30-9f21-a6e83c05d274",
+      "intention": "Have wanted to + verb before / Have felt like + verb-ing before",
+      "pattern": "subject + have/has + wanted to + base verb + before / have/has + felt like + verb-ing + before",
+      "description": "Expresses that someone has experienced a desire to do something at some point in their life, without necessarily having done it. In American English, 'have/has wanted to + base verb + before' naturally describes a desire experienced at an earlier time. 'Have/has felt like + verb-ing + before' is another option, especially for a passing urge, impulse, or inclination. Use the present perfect when no specific past time is stated. With a definite past time, the simple past is normally used, as in 'I wanted to quit yesterday'. 'Before' emphasizes prior experience but can be omitted when the context already makes this clear.",
+      "category": "expressions",
+      "searchTerms": [
+        "have wanted to before",
+        "have felt like before",
+        "have ever wanted to",
+        "has ever wanted to",
+        "have you ever wanted to",
+        "have we ever wanted to",
+        "have they ever wanted to",
+        "have had the urge to",
+        "have thought about doing"
+      ],
+      "validationPatterns": [
+        "\\b(?:have|has)\\s+(?:ever\\s+)?wanted\\s+to\\s+[a-z]+\\b",
+        "\\b(?:have|has)\\s+(?:ever\\s+)?felt\\s+like\\s+[a-z]+ing\\b",
+        "\\b(?:have|has)\\s+(?:I|you|he|she|it|we|they)\\s+ever\\s+(?:wanted\\s+to\\s+[a-z]+|felt\\s+like\\s+[a-z]+ing)\\b"
+      ],
+      "tags": [
+        "desire",
+        "eagerness",
+        "prior experience",
+        "present perfect",
+        "feelings",
+        "intentions",
+        "sentence generator",
+        "conversation"
+      ],
+      "related": [
+        "morrendo-de-vontade-de-7c29e4a1-6b83-4f50-9d12-a5e74c08b396",
+        "estar-se-cocando-de-vontade-de-8c42e7a1-6d95-4b30-9f21-a7e63d05c284"
+      ],
+      "structure": "Subject + have/has + wanted to + base verb + before; or subject + have/has + felt like + verb-ing + before. Questions: Have/Has + subject + ever + wanted to + base verb? The construction does not necessarily mean the action was carried out.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c2e43-5b96-4d80-8f12-c3e74a09d625",
+          "exampleItem": "I have wanted to live in the United States before.",
+          "intent": "have wanted to"
+        },
+        {
+          "id": "b82d3f54-6c07-4e91-9a23-d4f85b10e736",
+          "exampleItem": "I have wanted to leave everything behind and travel the world before.",
+          "intent": "have wanted to"
+        },
+        {
+          "id": "c93e4065-7d18-4fa2-8b34-e5096c21f847",
+          "exampleItem": "I have wanted to buy another motorcycle before.",
+          "intent": "have wanted to"
+        },
+        {
+          "id": "d04f5176-8e29-40b3-9c45-f61a7d32a958",
+          "exampleItem": "I have wanted to give up learning English before.",
+          "intent": "have wanted to"
+        },
+        {
+          "id": "e1506287-9f30-41c4-8d56-a72b8e43b069",
+          "exampleItem": "I have felt like changing careers completely before.",
+          "intent": "have felt like changing"
+        },
+        {
+          "id": "f2617398-0a41-42d5-9e67-b83c9f54c170",
+          "exampleItem": "She has wanted to start her own business before.",
+          "intent": "has wanted to"
+        },
+        {
+          "id": "a37284a9-1b52-43e6-8f78-c94d0a65d281",
+          "exampleItem": "We have wanted to work in another country before.",
+          "intent": "have wanted to"
+        },
+        {
+          "id": "b48395ba-2c63-44f7-9089-da5e1b76e392",
+          "exampleItem": "Have you ever wanted to learn to play the guitar?",
+          "intent": "Have you ever wanted to"
+        },
+        {
+          "id": "c594a6cb-3d74-4508-a19a-eb6f2c87f403",
+          "exampleItem": "I have wanted to create my own study app before.",
+          "intent": "have wanted to"
+        },
+        {
+          "id": "d6a5b7dc-4e85-4619-b2ab-fc703d980514",
+          "exampleItem": "I have wanted to talk to a native speaker for hours before.",
+          "intent": "have wanted to"
+        },
+        {
+          "id": "e7b6c8ed-5f96-472a-83bc-ad814e091625",
+          "exampleItem": "They have wanted to move to a smaller city before.",
+          "intent": "have wanted to"
+        },
+        {
+          "id": "f8c7d9fe-6a07-483b-94cd-be925f102736",
+          "exampleItem": "Have you ever wanted to start your life over?",
+          "intent": "Have you ever wanted to"
         }
       ]
     }
