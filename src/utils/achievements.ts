@@ -18,6 +18,15 @@ export function recordPracticedChunk(language: string, id: string): void {
   } catch { /* This optional tracker must never block chunk practice. */ }
 }
 
+/** Celebrate each completed session, including repeat sessions of the same topic.
+ * Unlike first-time milestones, this never writes to localStorage. */
+export function celebrateCompletedSession(key: string, title: string, description: string): void {
+  if (typeof window === "undefined") return;
+  window.dispatchEvent(new CustomEvent<AchievementDetail>(ACHIEVEMENT_EVENT, {
+    detail: { key, title, description }
+  }));
+}
+
 /** Emits only the first unlock. A storage failure must never interrupt studying. */
 export function celebrateAchievement(key: string, title: string, description: string): void {
   if (typeof window === "undefined" || !key || announced.has(key)) return;
