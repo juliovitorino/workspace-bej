@@ -211,6 +211,16 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
     const next = { ...choices, [current.id]: choice };
     setChoices(next);
     if (!saveWyrChoices(next)) setStorageError(true);
+    // Celebrate as soon as the final question receives an answer. The Finish
+    // button remains a fallback for topics completed before this change.
+    const fullTopic = practiceSet?.topic;
+    if (fullTopic && practiceSet.questions.length === fullTopic.questions.length &&
+        fullTopic.questions.length > 0 &&
+        fullTopic.questions.every(question => practiceSet.questions.some(item => item.id === question.id) &&
+          (next[question.id] === "A" || next[question.id] === "B"))) {
+      celebrateAchievement(`wyr-topic:${loaded?.locale ?? language}:${fullTopic.id}`,
+        "Would You Rather completo!", `Você respondeu todas as perguntas de ${fullTopic.title}.`);
+    }
   }
   function toggleFavorite() {
     if (!current) return;
