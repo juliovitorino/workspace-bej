@@ -19,6 +19,7 @@ import type { FavoriteChunk } from "../utils/favoriteChunks";
 import type { WalkingSummary } from "../utils/walkingSession";
 import { FavoriteChunkButton } from "./FavoriteChunkButton";
 import { WalkingSessionSummary } from "./WalkingSessionSummary";
+import { celebrateAchievement } from "../utils/achievements";
 
 const NO_FAVORITES: FavoriteChunk[] = [];
 
@@ -577,7 +578,12 @@ export function ChunkFlashcards({
         nextWalkingChunk();
         return completed;
       }}
-      onStop={summary => { setWalkingSummary(summary ?? null); setWalking(false); }} />;
+      onStop={summary => {
+        if (summary && summary.completed > 0 && summary.phrases > 0) {
+          celebrateAchievement("walking-first-session", "Modo Caminhada concluído!", "Você completou sua primeira sessão de repetição em voz alta.");
+        }
+        setWalkingSummary(summary ?? null); setWalking(false);
+      }} />;
   }
 
   return (
