@@ -11,6 +11,13 @@ type WeekSelection = { kind: "category"; key: ExtraCategory } | { kind: "module"
 export function StudyWeeklyOverview({ data, now, hideZeroData = false, moduleLabel }: { data: StudyData; now: Date; hideZeroData?: boolean; moduleLabel: (module: StudyModule) => string }) {
   const { t, i18n } = useTranslation();
   const [selected, setSelected] = useState<WeekSelection | null>(null);
+  const selectAndScroll = (selection: WeekSelection) => {
+    setSelected(current => current?.kind === selection.kind && current.key === selection.key ? null : selection);
+    document.getElementById("bej-week-time-title")?.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+      block: "start"
+    });
+  };
   const week = useMemo(() => {
     const today = localDay(now);
     const weekday = new Date(today + "T12:00:00").getDay();
@@ -75,7 +82,7 @@ export function StudyWeeklyOverview({ data, now, hideZeroData = false, moduleLab
       <div className="bej-week-days" role="list" aria-label={t("bejOverview.weeklyActivity")}>
         {week.days.map(day => { const seconds = week.byDay.get(day) ?? 0; const active = seconds >= 60; const future = day > week.today; const todayInProgress = day === week.today; return <div className="bej-week-day" key={day} role="listitem" aria-label={`${fmt(day, { weekday: "long", day: "numeric", month: "long" })}: ${future ? t("bejOverview.future") : todayInProgress ? `${t("bejOverview.inProgress")}${seconds > 0 ? ` · ${time(seconds)}` : ""}` : active ? time(seconds) : t("bejOverview.noStudy")}`}><span className="bej-week-day-name">{fmt(day, { weekday: "short" }).replace(".", "").slice(0, 3)}</span><span className="bej-week-day-number">{Number(day.slice(-2))}</span><span className={`bej-week-day-box${active && !todayInProgress ? " is-active" : ""}${todayInProgress ? " is-in-progress" : ""}`}>{todayInProgress ? "◷" : active ? "✓" : "—"}</span></div>; })}
       </div>
-      <div className="bej-streak-bottom"><h4>{t("bejOverview.weeklyExtra")}</h4><div className="bej-category-mini-grid">{week.categories.filter(({ days }) => !hideZeroData || days > 0).map(({ category, days }) => <button type="button" className={`bej-category-mini bej-category-${category}${days === 0 ? " is-zero-study" : ""}${selected?.kind === "category" && selected.key === category ? " is-selected" : ""}`} key={category} aria-pressed={selected?.kind === "category" && selected.key === category} aria-label={`${t(`extras.categories.${category}`)}: ${days} / 7 ${t("bejOverview.days")}`} onClick={() => setSelected(current => current?.kind === "category" && current.key === category ? null : { kind: "category", key: category })}><div className="bej-category-mini-label"><span className="bej-category-icon" aria-hidden="true">{categoryIcons[category]}</span><span>{t(`extras.categories.${category}`)}</span></div><strong>{days} / 7 {t("bejOverview.days")}</strong><div className="bej-mini-track"><span style={{ width: `${days / 7 * 100}%` }} /></div></button>)}</div></div>
+      <div className="bej-streak-bottom"><h4>{t("bejOverview.weeklyExtra")}</h4><div className="bej-category-mini-grid">{week.categories.filter(({ days }) => !hideZeroData || days > 0).map(({ category, days }) => <button type="button" className={`bej-category-mini bej-category-${category}${days === 0 ? " is-zero-study" : ""}${selected?.kind === "category" && selected.key === category ? " is-selected" : ""}`} key={category} aria-pressed={selected?.kind === "category" && selected.key === category} aria-label={`${t(`extras.categories.${category}`)}: ${days} / 7 ${t("bejOverview.days")}`} onClick={() => selectAndScroll({ kind: "category", key: category })}><div className="bej-category-mini-label"><span className="bej-category-icon" aria-hidden="true">{categoryIcons[category]}</span><span>{t(`extras.categories.${category}`)}</span></div><strong>{days} / 7 {t("bejOverview.days")}</strong><div className="bej-mini-track"><span style={{ width: `${days / 7 * 100}%` }} /></div></button>)}</div></div>
       <div className="bej-streak-bottom bej-streak-modules">
         <h4>{t("study.byModule")}</h4>
         <div className="bej-category-mini-grid bej-module-mini-grid">
@@ -87,7 +94,7 @@ export function StudyWeeklyOverview({ data, now, hideZeroData = false, moduleLab
               style={{ "--category-color": STUDY_MODULE_COLORS[module] ?? "#438cf5" } as CSSProperties}
               aria-pressed={isSelected}
               aria-label={`${label}: ${days} / 7 ${t("bejOverview.days")}`}
-              onClick={() => setSelected(current => current?.kind === "module" && current.key === module ? null : { kind: "module", key: module })}>
+              onClick={() => selectAndScroll({ kind: "module", key: module })}>
               <div className="bej-category-mini-label">
                 <span className="bej-category-icon" aria-hidden="true">{STUDY_MODULE_ICONS[module] ?? "📘"}</span>
                 <span>{label}</span>
