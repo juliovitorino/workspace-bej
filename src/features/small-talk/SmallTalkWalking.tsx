@@ -8,7 +8,7 @@ interface Props {
   items: SmallTalkItem[];
   settings: SmallTalkWalkingSettings;
   onExit: () => void;
-  onComplete?: () => void;
+  onComplete?: (hadSkippedQuestions: boolean) => void;
   onStudyState?: (active: boolean, mode: 'manual' | 'walking') => void;
   onWalkingChange?: (active: boolean) => void;
 }
@@ -42,6 +42,7 @@ export function SmallTalkWalking({ items, settings, onExit, onComplete, onStudyS
   const [hasOriginal, setHasOriginal] = useState(false);
   const generation = useRef(0);
   const skipped = useRef(0);
+  const completionAnnounced = useRef(false);
   const cancelCurrent = useRef<() => void>(() => undefined);
   const wakeLock = useRef<{ release(): Promise<void> } | null>(null);
   const current = items[index];
@@ -136,12 +137,14 @@ export function SmallTalkWalking({ items, settings, onExit, onComplete, onStudyS
   }, [started, current?.id, repetition, completed]);
 
   useEffect(() => {
-    if (started && phase === "complete" && completed === items.length && items.length > 0 && skipped.current === 0) {
-      onComplete?.();
-    }
+    if (!started || phase !== "complete" || completed !== items.length || items.length === 0 || completionAnnounced.current) return;
+    // One celebration per finished session, even if questions were skipped.
+    // The guard prevents duplicate events when the parent rerenders.
+    completionAnnounced.current = true;
+    onComplete?.(skipped.current > 0);
   }, [started, phase, completed, items.length, onComplete]);
 
-  function restart() { skipped.current = 0; stopAudio(); setStarted(false); setPaused(false); setIndex(0); setRepetition(0); setCompleted(0); setError(''); setPhase('idle'); }
+  function restart() { skipped.current = 0; completionAnnounced.current = false; stopAudio(); setStarted(false); setPaused(false); setIndex(0); setRepetition(0); setCompleted(0); setError(''); setPhase('idle'); }
   function skip() { skipped.current += 1; stopAudio(); setRepetition(0); setCompleted(v => v + 1); if (index === items.length - 1) setPhase('complete'); else setIndex(v => v + 1); }
   function togglePause() { stopAudio(); setPaused(value => !value); setPhase('paused'); }
   const previous = readLocalJson<Progress | null>(SMALL_TALK_WALKING_PROGRESS_KEY, null);
