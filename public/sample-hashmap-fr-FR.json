@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1258,
+    "totalIntentions": 1264,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -50361,6 +50361,429 @@
           "intent": "As-tu déjà voulu"
         }
       ]
+    },
+    {
+      "id": "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462",
+      "intention": "Je m'en fiche / Ça m'est égal",
+      "pattern": "sujet + se ficher de + nom ou proposition / ça + pronom + être égal",
+      "description": "Exprime l'indifférence, le manque d'inquiétude ou le désintérêt face à une situation, une opinion ou un événement. En anglais américain, « I don't care » est très courant, mais le ton dépend du contexte et de l'intonation : il peut être neutre ou méprisant. « Je m'en fiche » est familier et peut sembler désinvolte. Pour exprimer poliment l'absence de préférence, « Ça m'est égal » ou « Ça ne me dérange pas » convient mieux. En anglais, « I don't care about + nom ou verbe en -ing » précise ce qui laisse indifférent.",
+      "searchTerms": [
+        "je m'en fiche",
+        "je me fiche de",
+        "ça m'est égal",
+        "je ne m'en soucie pas",
+        "ça ne m'intéresse pas",
+        "peu importe",
+        "je n'y attache pas d'importance"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:m['’]en|me|se)\\s+fiche(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])ça\\s+m['’]est\\s+égal(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "indifférence",
+        "désintérêt",
+        "opinions",
+        "sentiments",
+        "conversation",
+        "langage familier",
+        "expressions du quotidien"
+      ],
+      "structure": "« Je m'en fiche » ou « Ça m'est égal » exprime l'indifférence. Pour préciser l'objet : sujet + se ficher de + nom ou proposition. En anglais : sujet + don't/doesn't care ; avec un complément, sujet + don't/doesn't care about + nom ou verbe en -ing. On trouve aussi « I don't care what/if + proposition ». Pour un choix sans préférence, « I don't mind » est généralement plus poli.",
+      "examples": [
+        {
+          "id": "a71c2e43-5b96-4d80-8f12-c3e74a09d625",
+          "exampleItem": "Je m'en fiche !",
+          "intent": "Je m'en fiche"
+        },
+        {
+          "id": "b82d3f54-6c07-4e91-9a23-d4f85b10e736",
+          "exampleItem": "Je me fiche de ce que les autres pensent de moi.",
+          "intent": "Je me fiche"
+        },
+        {
+          "id": "c93e4065-7d18-4fa2-8b34-e5096c21f847",
+          "exampleItem": "Je me fiche de ce qu'il a dit.",
+          "intent": "Je me fiche"
+        },
+        {
+          "id": "d04f5176-8e29-40b3-9c45-f61a7d32a958",
+          "exampleItem": "Ils peuvent critiquer mon projet autant qu'ils veulent. Je m'en fiche !",
+          "intent": "Je m'en fiche"
+        },
+        {
+          "id": "e1506287-9f30-41c4-8d56-a72b8e43b069",
+          "exampleItem": "Ça m'est égal s'ils ne sont pas d'accord avec moi.",
+          "intent": "Ça m'est égal"
+        },
+        {
+          "id": "f2617398-0a41-42d5-9e67-b83c9f54c170",
+          "exampleItem": "Elle se fiche de l'avis de ses collègues.",
+          "intent": "se fiche"
+        },
+        {
+          "id": "a37284a9-1b52-43e6-8f78-c94d0a65d281",
+          "exampleItem": "Avant, je me faisais du souci pour tout, mais maintenant, je m'en fiche.",
+          "intent": "je m'en fiche"
+        },
+        {
+          "id": "b48395ba-2c63-44f7-9089-da5e1b76e392",
+          "exampleItem": "Ça m'est égal s'il faut tout recommencer.",
+          "intent": "Ça m'est égal"
+        }
+      ],
+      "category": "expressions",
+      "related": [
+        "to-pouco-me-lixando-8d52f9b3-7e06-4a41-8c32-b6f84d19e573"
+      ],
+      "level": "A2",
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "to-pouco-me-lixando-8d52f9b3-7e06-4a41-8c32-b6f84d19e573",
+      "intention": "Je m'en fiche éperdument / Je m'en moque complètement",
+      "pattern": "sujet + se ficher éperdument de / se moquer complètement de + nom ou proposition",
+      "description": "Exprime une indifférence extrême, du mépris ou une absence totale d'intérêt. En anglais américain, « I couldn't care less » signifie littéralement que l'on ne pourrait pas s'en soucier moins : l'intérêt est déjà au plus bas. Cette expression est plus appuyée que « I don't care » et peut sembler rude ou dédaigneuse. Elle peut être suivie de « about + nom ou verbe en -ing ». On entend aussi « I could care less » aux États-Unis, mais la forme avec « couldn't » est logiquement cohérente et recommandée pour l'apprentissage. En français, « Je m'en fiche éperdument » et « Je m'en moque complètement » rendent cette forte indifférence.",
+      "searchTerms": [
+        "je m'en fiche éperdument",
+        "je m'en moque complètement",
+        "je m'en moque éperdument",
+        "ça m'est complètement égal",
+        "je n'y accorde aucune importance",
+        "je ne m'en soucie pas le moins du monde"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:m|s)['’]en\\s+fiche\\s+éperdument(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:me|se)\\s+moque\\s+complètement(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "indifférence extrême",
+        "mépris",
+        "insistance",
+        "sentiments",
+        "opinions",
+        "expressions idiomatiques",
+        "langage familier",
+        "conversation"
+      ],
+      "structure": "« Je m'en fiche éperdument » exprime une indifférence totale. En anglais : sujet + could not (couldn't) + care + less. L'expression peut former une phrase complète ou recevoir « about + nom ou verbe en -ing », comme dans « I couldn't care less about their opinions ». La forme avec « couldn't » indique qu'il est impossible de s'en soucier moins. Le registre est appuyé et dépend du contexte social.",
+      "examples": [
+        {
+          "id": "c594a6cb-3d74-4508-a19a-eb6f2c87f403",
+          "exampleItem": "Je m'en fiche éperdument !",
+          "intent": "Je m'en fiche éperdument"
+        },
+        {
+          "id": "d6a5b7dc-4e85-4619-b2ab-fc703d980514",
+          "exampleItem": "Je me moque complètement de ce qu'il pense de moi.",
+          "intent": "Je me moque complètement"
+        },
+        {
+          "id": "e7b6c8ed-5f96-472a-83bc-ad814e091625",
+          "exampleItem": "Cette discussion ? Je m'en fiche éperdument.",
+          "intent": "Je m'en fiche éperdument"
+        },
+        {
+          "id": "f8c7d9fe-6a07-483b-94cd-be925f102736",
+          "exampleItem": "Ils peuvent dire ce qu'ils veulent. Je m'en fiche éperdument !",
+          "intent": "Je m'en fiche éperdument"
+        },
+        {
+          "id": "a9d8e0af-7b18-494c-85de-cf036a21b847",
+          "exampleItem": "Je me moque complètement des critiques sans fondement.",
+          "intent": "Je me moque complètement"
+        },
+        {
+          "id": "b0e9f1ba-8c29-405d-96ef-da147b32c958",
+          "exampleItem": "Les résultats de cette compétition ? Il s'en fiche éperdument.",
+          "intent": "s'en fiche éperdument"
+        },
+        {
+          "id": "c1fa02cb-9d30-416e-87f0-eb258c43d069",
+          "exampleItem": "S'ils n'aiment pas ma décision, je m'en fiche éperdument.",
+          "intent": "je m'en fiche éperdument"
+        },
+        {
+          "id": "d20b13dc-0e41-427f-9801-fc369d54e170",
+          "exampleItem": "Avant, je prenais ces critiques au sérieux. Aujourd'hui, je m'en fiche éperdument.",
+          "intent": "je m'en fiche éperdument"
+        }
+      ],
+      "category": "expressions",
+      "related": [
+        "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462"
+      ],
+      "level": "B1",
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "nao-dou-a-minima-4e72b9c1-6a83-4f50-9d24-c7e15a08b396",
+      "intention": "Je m'en fous / J'en ai rien à faire",
+      "pattern": "sujet + s'en foutre / se foutre de + nom ou proposition",
+      "description": "Exprime une forte indifférence, du désintérêt ou du mépris face à une situation, une opinion ou un événement. En anglais américain, « I don't give a damn » est une expression familière et appuyée, plus forte que « I don't care ». Le mot « damn » ajoute une charge émotionnelle et peut paraître grossier dans un cadre formel. L'expression s'emploie seule ou avec « about + nom ou verbe en -ing ». En français, « Je m'en fous » est familier et grossier. Il ne faut pas confondre ce ton avec le neutre « I don't mind ».",
+      "searchTerms": [
+        "je m'en fous",
+        "je me fous de",
+        "j'en ai rien à faire",
+        "je n'en ai rien à faire",
+        "ça m'est complètement égal",
+        "je m'en fiche complètement"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])je\\s+(?:m['’]en|me)\\s+fous(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "indifférence",
+        "mépris",
+        "insistance",
+        "langage familier",
+        "sentiments",
+        "opinions",
+        "conversation"
+      ],
+      "structure": "« Je m'en fous » est une réponse familière et grossière marquant l'indifférence. En anglais : sujet + do/does + not + give + a damn. Pour préciser l'objet : sujet + don't/doesn't give a damn about + nom ou verbe en -ing. Des propositions avec « what », « who » ou « if » sont aussi possibles. Le ton est appuyé et peut être rude.",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Je m'en fous !",
+          "intent": "Je m'en fous"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Je me fous de ce qu'ils pensent de moi.",
+          "intent": "Je me fous"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Je me fous de leurs critiques.",
+          "intent": "Je me fous"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Ils peuvent râler autant qu'ils veulent. Je m'en fous !",
+          "intent": "Je m'en fous"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "S'ils ne sont pas d'accord avec ma décision, je m'en fous complètement.",
+          "intent": "je m'en fous"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Je me fous de cette discussion absurde.",
+          "intent": "Je me fous"
+        }
+      ],
+      "category": "expressions",
+      "related": [
+        "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462",
+        "to-pouco-me-lixando-8d52f9b3-7e06-4a41-8c32-b6f84d19e573"
+      ],
+      "level": "B1",
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "tanto-faz-whatever-5f83c0d2-7b94-4061-8e35-d8f26b19c407",
+      "intention": "Peu importe / Comme tu veux / Ça m'est égal",
+      "pattern": "peu importe / comme tu veux / ça m'est égal / ça ne change rien pour moi",
+      "description": "Exprime l'indifférence, l'absence de préférence ou le refus de poursuivre une discussion. En anglais américain, « whatever » peut former une réponse à lui seul, mais son sens dépend beaucoup de l'intonation et du contexte. Dit sèchement ou avec impatience, il peut exprimer du mépris, de l'agacement ou du désintérêt. Pour un choix poli, « Either is fine », « It's up to you » ou « I don't mind » est souvent plus approprié. « Whatever » peut aussi être un déterminant ou un pronom ; ici, on se concentre sur son emploi comme réponse indépendante.",
+      "searchTerms": [
+        "peu importe",
+        "comme tu veux",
+        "ça m'est égal",
+        "pour moi peu importe",
+        "fais comme tu veux",
+        "ça ne change rien pour moi",
+        "je m'en fiche",
+        "de toute façon"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:peu\\s+importe|comme\\s+tu\\s+veux|ça\\s+m['’]est\\s+égal|je\\s+m['’]en\\s+fiche|ça\\s+ne\\s+change\\s+rien\\s+pour\\s+moi)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "indifférence",
+        "choix",
+        "désintérêt",
+        "réponses courtes",
+        "intonation",
+        "conversation",
+        "langage familier"
+      ],
+      "structure": "« Whatever » peut se traduire par « Peu importe », « Comme tu veux » ou « Je m'en fiche ». C'est une réponse indépendante, sans sujet ni verbe obligatoires. L'intonation et le contexte sont déterminants : un ton sec peut exprimer l'agacement ou le mépris. Pour un choix neutre, « Either is fine » ou « I don't mind » est généralement plus poli.",
+      "examples": [
+        {
+          "id": "a72c4e83-5b96-4d31-8f12-c3e74a09d626",
+          "exampleItem": "Peu importe.",
+          "intent": "Peu importe"
+        },
+        {
+          "id": "b83d5f94-6c07-4e42-9a23-d4f85b10e737",
+          "exampleItem": "Pour moi, peu importe. C'est toi qui décides.",
+          "intent": "peu importe"
+        },
+        {
+          "id": "c94e60a5-7d18-4f53-8b34-e5096c21f848",
+          "exampleItem": "Je m'en fiche. Fais ce que tu veux.",
+          "intent": "Je m'en fiche"
+        },
+        {
+          "id": "d05f71b6-8e29-4054-9c45-f61a7d32a959",
+          "exampleItem": "Comme tu veux. Je ne vais pas continuer à discuter.",
+          "intent": "Comme tu veux"
+        },
+        {
+          "id": "e16082c7-9f30-4165-8d56-a72b8e43b070",
+          "exampleItem": "Peu importe. J'en ai déjà assez de cette discussion.",
+          "intent": "Peu importe"
+        },
+        {
+          "id": "f27193d8-0a41-4276-9e67-b83c9f54c171",
+          "exampleItem": "Ça ne change rien pour moi. Choisis ce que tu préfères.",
+          "intent": "Ça ne change rien pour moi"
+        }
+      ],
+      "category": "expressions",
+      "related": [
+        "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462"
+      ],
+      "level": "A2",
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "isso-nao-me-incomoda-6a94d1e3-8c05-4172-9f46-e9a37c20d518",
+      "intention": "Ça ne me dérange pas / Ça ne m'ennuie pas",
+      "pattern": "ça / cela + ne + me + dérange pas / ne m'ennuie pas / je n'y vois aucun problème",
+      "description": "Indique qu'une situation, un comportement ou un événement ne provoque ni gêne, ni irritation, ni inquiétude. En anglais américain, « It doesn't bother me » est une expression naturelle et relativement neutre qui marque le calme ou la tolérance. Contrairement à « I don't care », qui peut exprimer de l'indifférence ou du désintérêt, elle insiste sur l'absence de gêne. « It doesn't bother me if + proposition » précise la situation qui ne dérange pas. « That doesn't bother me » peut reprendre un élément déjà mentionné.",
+      "searchTerms": [
+        "ça ne me dérange pas",
+        "cela ne me dérange pas",
+        "ça ne m'ennuie pas",
+        "ça ne me gêne pas",
+        "je n'y vois aucun problème",
+        "ça ne m'inquiète pas",
+        "aucun souci"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:ça|cela)\\s+ne\\s+me\\s+dérange\\s+pas(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])ça\\s+ne\\s+m['’]ennuie\\s+pas(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])je\\s+n['’]y\\s+vois\\s+aucun\\s+problème(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "calme",
+        "tolérance",
+        "sentiments",
+        "absence de gêne",
+        "réponses polies",
+        "conversation",
+        "expressions du quotidien"
+      ],
+      "structure": "« It doesn't bother me » signifie « Ça ne me dérange pas ». Structure anglaise : It/That + does not (doesn't) + bother + pronom complément. Pour une condition : It doesn't bother me if + sujet + verbe ; pour une situation récurrente : It doesn't bother me when + proposition. L'expression marque l'absence de gêne, sans impliquer une absence d'intérêt.",
+      "examples": [
+        {
+          "id": "a73c4e84-5b96-4d32-8f12-c3e74a09d627",
+          "exampleItem": "Ça ne me dérange pas.",
+          "intent": "Ça ne me dérange pas"
+        },
+        {
+          "id": "b84d5f95-6c07-4e43-9a23-d4f85b10e738",
+          "exampleItem": "Ça ne me dérange pas si tu arrives un peu en retard.",
+          "intent": "Ça ne me dérange pas"
+        },
+        {
+          "id": "c95e60a6-7d18-4f54-8b34-e5096c21f849",
+          "exampleItem": "Ça ne me dérange pas. On peut continuer à travailler.",
+          "intent": "Ça ne me dérange pas"
+        },
+        {
+          "id": "d06f71b7-8e29-4055-9c45-f61a7d32a960",
+          "exampleItem": "Ça ne me dérange pas de travailler chez moi.",
+          "intent": "Ça ne me dérange pas"
+        },
+        {
+          "id": "e17082c8-9f30-4166-8d56-a72b8e43b071",
+          "exampleItem": "Ça ne m'ennuie pas. J'ai l'habitude.",
+          "intent": "Ça ne m'ennuie pas"
+        },
+        {
+          "id": "f28193d9-0a41-4277-9e67-b83c9f54c172",
+          "exampleItem": "Je n'y vois aucun problème. On peut réessayer.",
+          "intent": "Je n'y vois aucun problème"
+        }
+      ],
+      "category": "expressions",
+      "related": [
+        "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462"
+      ],
+      "level": "A2",
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "to-cagando-pra-isso-7b05e2f4-9d16-4283-8a57-f0b48d31e629",
+      "intention": "J'en ai rien à foutre / Je m'en fous complètement",
+      "pattern": "j'en ai rien à foutre / je n'en ai rien à foutre de + nom ou proposition",
+      "description": "Exprime une indifférence extrême, du mépris ou de l'irritation. En anglais américain, « I don't give a shit » est une expression vulgaire et très appuyée, employée surtout dans des situations très informelles ou chargées d'émotion. Elle est plus agressive que « I don't care » et généralement plus vulgaire que « I don't give a damn ». Elle peut s'employer seule ou avec « about + nom ou verbe en -ing ». « J'en ai rien à foutre » en restitue le registre vulgaire ; l'omission de « ne » correspond à l'oral familier. Cette expression est à éviter dans les cadres professionnels, universitaires ou les situations exigeant un langage respectueux.",
+      "searchTerms": [
+        "j'en ai rien à foutre",
+        "je n'en ai rien à foutre",
+        "rien à foutre",
+        "je m'en fous complètement",
+        "j'en ai strictement rien à foutre",
+        "je me fous de ça"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:j['’]en|je\\s+n['’]en)\\s+ai\\s+(?:strictement\\s+)?rien\\s+à\\s+foutre(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "indifférence extrême",
+        "mépris",
+        "irritation",
+        "langage vulgaire",
+        "gros mots",
+        "expressions idiomatiques",
+        "conversation familière",
+        "insistance"
+      ],
+      "structure": "« I don't give a shit » correspond à « J'en ai rien à foutre ». Structure anglaise : sujet + do/does + not + give + a shit. Pour préciser l'objet : sujet + don't/doesn't give a shit about + nom ou verbe en -ing. On peut également ajouter une proposition avec « what », « who » ou « if ». L'expression est vulgaire et peut être offensante selon le contexte.",
+      "examples": [
+        {
+          "id": "a74c4e85-5b96-4d33-8f12-c3e74a09d628",
+          "exampleItem": "J'en ai rien à foutre !",
+          "intent": "J'en ai rien à foutre"
+        },
+        {
+          "id": "b85d5f96-6c07-4e44-9a23-d4f85b10e739",
+          "exampleItem": "J'en ai rien à foutre de ce qu'ils pensent de moi.",
+          "intent": "J'en ai rien à foutre"
+        },
+        {
+          "id": "c96e60a7-7d18-4f55-8b34-e5096c21f850",
+          "exampleItem": "J'en ai rien à foutre de cette discussion débile.",
+          "intent": "J'en ai rien à foutre"
+        },
+        {
+          "id": "d07f71b8-8e29-4056-9c45-f61a7d32a961",
+          "exampleItem": "Ils peuvent continuer à râler. J'en ai rien à foutre !",
+          "intent": "J'en ai rien à foutre"
+        },
+        {
+          "id": "e18082c9-9f30-4167-8d56-a72b8e43b072",
+          "exampleItem": "J'en ai rien à foutre de ses excuses.",
+          "intent": "J'en ai rien à foutre"
+        },
+        {
+          "id": "f29193da-0a41-4278-9e67-b83c9f54c173",
+          "exampleItem": "J'en ai strictement rien à foutre de ce qu'on dit de mon travail.",
+          "intent": "J'en ai strictement rien à foutre"
+        }
+      ],
+      "category": "expressions",
+      "related": [
+        "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462",
+        "to-pouco-me-lixando-8d52f9b3-7e06-4a41-8c32-b6f84d19e573",
+        "nao-dou-a-minima-4e72b9c1-6a83-4f50-9d24-c7e15a08b396"
+      ],
+      "level": "B2",
+      "allowLanguageChunkPractice": true
     }
   ]
 }

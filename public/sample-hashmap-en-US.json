@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1258,
+    "totalIntentions": 1264,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -73939,6 +73939,426 @@
           "id": "f8c7d9fe-6a07-483b-94cd-be925f102736",
           "exampleItem": "Have you ever wanted to start your life over?",
           "intent": "Have you ever wanted to"
+        }
+      ]
+    },
+    {
+      "id": "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462",
+      "intention": "I don't care",
+      "pattern": "subject + do/does not + care / care about + noun or verb-ing / care what or if + clause",
+      "description": "Expresses indifference, lack of concern, or lack of interest in a situation, opinion, or event. In American English, 'I don't care' is very common, but its tone depends on context and intonation. It can convey neutral indifference or a dismissive attitude. When expressing a lack of preference politely, 'I don't mind' may be more appropriate. Use 'don't care about + noun or verb-ing' to specify what someone is indifferent to.",
+      "category": "expressions",
+      "allowLanguageChunkPractice": true,
+      "related": [
+        "to-pouco-me-lixando-8d52f9b3-7e06-4a41-8c32-b6f84d19e573"
+      ],
+      "level": "A2",
+      "searchTerms": [
+        "I don't care",
+        "I do not care",
+        "don't care about",
+        "doesn't care about",
+        "I don't care what",
+        "I don't care if",
+        "it doesn't matter to me",
+        "I'm not concerned"
+      ],
+      "validationPatterns": [
+        "\\b(?:don['?]t|doesn['?]t|do\\s+not|does\\s+not)\\s+care\\b"
+      ],
+      "tags": [
+        "indifference",
+        "lack of interest",
+        "opinions",
+        "feelings",
+        "conversation",
+        "informal language",
+        "everyday expressions"
+      ],
+      "structure": "Subject + do/does + not + care. To specify the object of indifference: subject + don't/doesn't care about + noun or verb-ing. Other options include 'I don't care what + clause' and 'I don't care if + clause'. When expressing a lack of preference, 'I don't mind' is generally more polite.",
+      "examples": [
+        {
+          "id": "a71c2e43-5b96-4d80-8f12-c3e74a09d625",
+          "exampleItem": "I don't care!",
+          "intent": "I don't care"
+        },
+        {
+          "id": "b82d3f54-6c07-4e91-9a23-d4f85b10e736",
+          "exampleItem": "I don't care what other people think of me.",
+          "intent": "I don't care"
+        },
+        {
+          "id": "c93e4065-7d18-4fa2-8b34-e5096c21f847",
+          "exampleItem": "I don't care about what he said.",
+          "intent": "I don't care"
+        },
+        {
+          "id": "d04f5176-8e29-40b3-9c45-f61a7d32a958",
+          "exampleItem": "They can criticize my project all they want. I don't care!",
+          "intent": "I don't care"
+        },
+        {
+          "id": "e1506287-9f30-41c4-8d56-a72b8e43b069",
+          "exampleItem": "I don't care if they disagree with me.",
+          "intent": "I don't care"
+        },
+        {
+          "id": "f2617398-0a41-42d5-9e67-b83c9f54c170",
+          "exampleItem": "She doesn't care about her coworkers' opinions.",
+          "intent": "doesn't care"
+        },
+        {
+          "id": "a37284a9-1b52-43e6-8f78-c94d0a65d281",
+          "exampleItem": "I used to worry about everything, but now I don't care.",
+          "intent": "I don't care"
+        },
+        {
+          "id": "b48395ba-2c63-44f7-9089-da5e1b76e392",
+          "exampleItem": "I don't care if we have to start all over again.",
+          "intent": "I don't care"
+        }
+      ]
+    },
+    {
+      "id": "to-pouco-me-lixando-8d52f9b3-7e06-4a41-8c32-b6f84d19e573",
+      "intention": "I couldn't care less",
+      "pattern": "subject + could not (couldn?t) + care + less / care less about + noun or verb-ing",
+      "description": "Expresses extreme indifference, disregard, or a complete lack of interest. 'I couldn't care less' literally means that someone's level of concern is already so low that it cannot decrease. It is more emphatic than 'I don't care' and can sound rude or dismissive. Add 'about + noun or verb-ing' to specify the topic. 'I could care less' is also heard in informal American English, but 'I couldn't care less' is the logically consistent form recommended for learners.",
+      "category": "expressions",
+      "allowLanguageChunkPractice": true,
+      "related": [
+        "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462"
+      ],
+      "level": "B1",
+      "searchTerms": [
+        "I couldn't care less",
+        "I could not care less",
+        "couldn't care less about",
+        "complete indifference",
+        "I don't care at all",
+        "not the least bit concerned"
+      ],
+      "validationPatterns": [
+        "\\b(?:couldn['?]t|could\\s+not)\\s+care\\s+less\\b"
+      ],
+      "tags": [
+        "extreme indifference",
+        "disregard",
+        "emphasis",
+        "feelings",
+        "opinions",
+        "idioms",
+        "informal language",
+        "conversation"
+      ],
+      "structure": "Subject + could not (couldn't) + care + less. This can stand alone or be followed by 'about + noun or verb-ing', as in 'I couldn't care less about their opinions'. The negative form conveys that it is impossible to care any less than one already does. This emphatic expression requires attention to the social context.",
+      "examples": [
+        {
+          "id": "c594a6cb-3d74-4508-a19a-eb6f2c87f403",
+          "exampleItem": "I couldn't care less!",
+          "intent": "I couldn't care less"
+        },
+        {
+          "id": "d6a5b7dc-4e85-4619-b2ab-fc703d980514",
+          "exampleItem": "I couldn't care less what he thinks of me.",
+          "intent": "I couldn't care less"
+        },
+        {
+          "id": "e7b6c8ed-5f96-472a-83bc-ad814e091625",
+          "exampleItem": "I couldn't care less about that argument.",
+          "intent": "I couldn't care less"
+        },
+        {
+          "id": "f8c7d9fe-6a07-483b-94cd-be925f102736",
+          "exampleItem": "They can say whatever they want. I couldn't care less!",
+          "intent": "I couldn't care less"
+        },
+        {
+          "id": "a9d8e0af-7b18-494c-85de-cf036a21b847",
+          "exampleItem": "I couldn't care less about the baseless criticism.",
+          "intent": "I couldn't care less"
+        },
+        {
+          "id": "b0e9f1ba-8c29-405d-96ef-da147b32c958",
+          "exampleItem": "He couldn't care less about the results of that competition.",
+          "intent": "couldn't care less"
+        },
+        {
+          "id": "c1fa02cb-9d30-416e-87f0-eb258c43d069",
+          "exampleItem": "I couldn't care less if they don't like my decision.",
+          "intent": "I couldn't care less"
+        },
+        {
+          "id": "d20b13dc-0e41-427f-9801-fc369d54e170",
+          "exampleItem": "I used to take that criticism seriously. These days, I couldn't care less.",
+          "intent": "I couldn't care less"
+        }
+      ]
+    },
+    {
+      "id": "nao-dou-a-minima-4e72b9c1-6a83-4f50-9d24-c7e15a08b396",
+      "intention": "I don't give a damn",
+      "pattern": "subject + do/does not + give + a damn / give a damn about + noun or verb-ing",
+      "description": "Expresses strong indifference, lack of interest, or disregard for a situation, opinion, or event. In American English, 'I don't give a damn' is informal and emphatic, stronger than 'I don't care'. 'Damn' adds emotional intensity and can sound rude in formal settings. The expression can stand alone or be followed by 'about + noun or verb-ing'. It should not be confused with the neutral expression 'I don't mind'.",
+      "category": "expressions",
+      "allowLanguageChunkPractice": true,
+      "related": [
+        "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462",
+        "to-pouco-me-lixando-8d52f9b3-7e06-4a41-8c32-b6f84d19e573"
+      ],
+      "level": "B1",
+      "searchTerms": [
+        "I don't give a damn",
+        "don't give a damn about",
+        "doesn't give a damn",
+        "I do not give a damn",
+        "I don't care at all",
+        "not care in the slightest"
+      ],
+      "validationPatterns": [
+        "\\b(?:don['?]t|doesn['?]t|do\\s+not|does\\s+not)\\s+give\\s+a\\s+damn\\b"
+      ],
+      "tags": [
+        "indifference",
+        "disregard",
+        "emphasis",
+        "informal language",
+        "feelings",
+        "opinions",
+        "conversation"
+      ],
+      "structure": "Subject + do/does + not + give + a damn. To specify the object of indifference: subject + don't/doesn't give a damn about + noun or verb-ing. Clauses beginning with 'what', 'who', or 'if' are also possible. This expression is informal, emphatic, and potentially rude.",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "I don't give a damn!",
+          "intent": "I don't give a damn"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "I don't give a damn what they think of me.",
+          "intent": "I don't give a damn"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "I don't give a damn about their criticism.",
+          "intent": "I don't give a damn"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "They can complain all they want. I don't give a damn!",
+          "intent": "I don't give a damn"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "I don't give a damn if they disagree with my decision.",
+          "intent": "I don't give a damn"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "I don't give a damn about that pointless argument.",
+          "intent": "I don't give a damn"
+        }
+      ]
+    },
+    {
+      "id": "tanto-faz-whatever-5f83c0d2-7b94-4061-8e35-d8f26b19c407",
+      "intention": "Whatever",
+      "pattern": "Whatever (standalone response)",
+      "description": "Expresses indifference, lack of preference, or unwillingness to continue an argument. In American English, 'whatever' can stand alone as a response, but its interpretation depends heavily on tone and context. Said curtly or impatiently, it can convey contempt, irritation, or lack of interest. When politely choosing between options, 'Either is fine', 'It's up to you', or 'I don't mind' is usually more appropriate. 'Whatever' can also be a determiner or pronoun in other constructions, but this intention focuses on its standalone use.",
+      "category": "expressions",
+      "allowLanguageChunkPractice": true,
+      "related": [
+        "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462"
+      ],
+      "level": "A2",
+      "searchTerms": [
+        "whatever",
+        "whatever you say",
+        "no preference",
+        "dismissive response",
+        "short response",
+        "as you wish",
+        "it's all the same to me"
+      ],
+      "validationPatterns": [
+        "(?:^|[.!?]\\s+)whatever(?=\\s*(?:[.!?]|$))"
+      ],
+      "tags": [
+        "indifference",
+        "choices",
+        "lack of interest",
+        "short responses",
+        "intonation",
+        "conversation",
+        "informal language"
+      ],
+      "structure": "'Whatever' can function as a standalone response without a subject or verb. Its meaning depends on tone and context. A curt delivery can signal irritation or contempt. For neutral choices, 'Either is fine' or 'I don't mind' is generally more polite.",
+      "examples": [
+        {
+          "id": "a72c4e83-5b96-4d31-8f12-c3e74a09d626",
+          "exampleItem": "Whatever.",
+          "intent": "Whatever"
+        },
+        {
+          "id": "b83d5f94-6c07-4e42-9a23-d4f85b10e737",
+          "exampleItem": "Whatever. You decide.",
+          "intent": "Whatever"
+        },
+        {
+          "id": "c94e60a5-7d18-4f53-8b34-e5096c21f848",
+          "exampleItem": "Whatever. Do what you want.",
+          "intent": "Whatever"
+        },
+        {
+          "id": "d05f71b6-8e29-4054-9c45-f61a7d32a959",
+          "exampleItem": "Whatever. I'm not arguing about it anymore.",
+          "intent": "Whatever"
+        },
+        {
+          "id": "e16082c7-9f30-4165-8d56-a72b8e43b070",
+          "exampleItem": "Whatever. I'm tired of this argument already.",
+          "intent": "Whatever"
+        },
+        {
+          "id": "f27193d8-0a41-4276-9e67-b83c9f54c171",
+          "exampleItem": "Whatever. Pick whichever one you prefer.",
+          "intent": "Whatever"
+        }
+      ]
+    },
+    {
+      "id": "isso-nao-me-incomoda-6a94d1e3-8c05-4172-9f46-e9a37c20d518",
+      "intention": "It doesn't bother me",
+      "pattern": "it/that + does not (doesn't) + bother + object pronoun / it doesn't bother me if or when + clause",
+      "description": "Expresses that a situation, behavior, or event does not cause discomfort, irritation, or concern. In American English, 'It doesn't bother me' is a natural, relatively neutral expression used to show calmness or tolerance. Unlike 'I don't care', which can suggest indifference or lack of interest, it emphasizes the absence of annoyance. Use 'It doesn't bother me if + clause' to describe a situation that causes no discomfort. 'That doesn't bother me' can refer back to something already mentioned.",
+      "category": "expressions",
+      "allowLanguageChunkPractice": true,
+      "related": [
+        "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462"
+      ],
+      "level": "A2",
+      "searchTerms": [
+        "it doesn't bother me",
+        "that doesn't bother me",
+        "does not bother me",
+        "it doesn't bother me if",
+        "it doesn't bother me when",
+        "no problem with that",
+        "not bothered"
+      ],
+      "validationPatterns": [
+        "\\b(?:doesn['?]t|does\\s+not)\\s+bother\\s+(?:me|you|him|her|it|us|them)\\b"
+      ],
+      "tags": [
+        "calmness",
+        "tolerance",
+        "feelings",
+        "lack of annoyance",
+        "polite responses",
+        "conversation",
+        "everyday expressions"
+      ],
+      "structure": "It/That + does not (doesn't) + bother + object pronoun. For a condition: 'It doesn't bother me if + subject + verb'. For a recurring situation: 'It doesn't bother me when + clause'. The expression indicates a lack of annoyance, not necessarily a lack of interest.",
+      "examples": [
+        {
+          "id": "a73c4e84-5b96-4d32-8f12-c3e74a09d627",
+          "exampleItem": "It doesn't bother me.",
+          "intent": "It doesn't bother me"
+        },
+        {
+          "id": "b84d5f95-6c07-4e43-9a23-d4f85b10e738",
+          "exampleItem": "It doesn't bother me if you arrive a little late.",
+          "intent": "It doesn't bother me"
+        },
+        {
+          "id": "c95e60a6-7d18-4f54-8b34-e5096c21f849",
+          "exampleItem": "It doesn't bother me. We can keep working.",
+          "intent": "It doesn't bother me"
+        },
+        {
+          "id": "d06f71b7-8e29-4055-9c45-f61a7d32a960",
+          "exampleItem": "Working from home doesn't bother me.",
+          "intent": "doesn't bother me"
+        },
+        {
+          "id": "e17082c8-9f30-4166-8d56-a72b8e43b071",
+          "exampleItem": "That doesn't bother me. I'm used to it by now.",
+          "intent": "That doesn't bother me"
+        },
+        {
+          "id": "f28193d9-0a41-4277-9e67-b83c9f54c172",
+          "exampleItem": "It doesn't bother me. We can try again.",
+          "intent": "It doesn't bother me"
+        }
+      ]
+    },
+    {
+      "id": "to-cagando-pra-isso-7b05e2f4-9d16-4283-8a57-f0b48d31e629",
+      "intention": "I don't give a shit",
+      "pattern": "subject + do/does not + give + a shit / give a shit about + noun or verb-ing",
+      "description": "Expresses extreme indifference, contempt, or irritation toward something. In American English, 'I don't give a shit' is a vulgar, highly emphatic expression used mainly in very informal or emotionally charged situations. It is more aggressive than 'I don't care' and generally more vulgar than 'I don't give a damn'. It can stand alone or be followed by 'about + noun or verb-ing'. Avoid it in professional or academic settings and social situations that call for respectful language.",
+      "category": "expressions",
+      "allowLanguageChunkPractice": true,
+      "related": [
+        "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462",
+        "to-pouco-me-lixando-8d52f9b3-7e06-4a41-8c32-b6f84d19e573",
+        "nao-dou-a-minima-4e72b9c1-6a83-4f50-9d24-c7e15a08b396"
+      ],
+      "level": "B2",
+      "searchTerms": [
+        "I don't give a shit",
+        "don't give a shit about",
+        "doesn't give a shit",
+        "I do not give a shit",
+        "I don't care at all",
+        "vulgar indifference",
+        "not care in the slightest"
+      ],
+      "validationPatterns": [
+        "\\b(?:don['?]t|doesn['?]t|do\\s+not|does\\s+not)\\s+give\\s+a\\s+shit\\b"
+      ],
+      "tags": [
+        "extreme indifference",
+        "contempt",
+        "irritation",
+        "vulgar language",
+        "swearing",
+        "idioms",
+        "informal conversation",
+        "emphasis"
+      ],
+      "structure": "Subject + do/does + not + give + a shit. To specify the object of indifference: subject + don't/doesn't give a shit about + noun or verb-ing. Clauses beginning with 'what', 'who', or 'if' are also possible. This expression is vulgar and may offend people depending on the context.",
+      "examples": [
+        {
+          "id": "a74c4e85-5b96-4d33-8f12-c3e74a09d628",
+          "exampleItem": "I don't give a shit!",
+          "intent": "I don't give a shit"
+        },
+        {
+          "id": "b85d5f96-6c07-4e44-9a23-d4f85b10e739",
+          "exampleItem": "I don't give a shit what they think of me.",
+          "intent": "I don't give a shit"
+        },
+        {
+          "id": "c96e60a7-7d18-4f55-8b34-e5096c21f850",
+          "exampleItem": "I don't give a shit about that stupid argument.",
+          "intent": "I don't give a shit"
+        },
+        {
+          "id": "d07f71b8-8e29-4056-9c45-f61a7d32a961",
+          "exampleItem": "They can keep complaining. I don't give a shit!",
+          "intent": "I don't give a shit"
+        },
+        {
+          "id": "e18082c9-9f30-4167-8d56-a72b8e43b072",
+          "exampleItem": "I don't give a shit about his excuses.",
+          "intent": "I don't give a shit"
+        },
+        {
+          "id": "f29193da-0a41-4278-9e67-b83c9f54c173",
+          "exampleItem": "I don't give a shit what they say about my work.",
+          "intent": "I don't give a shit"
         }
       ]
     }

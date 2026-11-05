@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1258,
+    "totalIntentions": 1264,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -49390,6 +49390,455 @@
           "id": "f8c7d9fe-6a07-483b-94cd-be925f102736",
           "exampleItem": "Você alguma vez já quis começar a vida do zero?",
           "intent": "já quis"
+        }
+      ]
+    },
+    {
+      "id": "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462",
+      "intention": "Não tô nem aí / Tô nem aí / Não me importo",
+      "pattern": "não tô nem aí / tô nem aí / não me importo / não ligo para + substantivo ou oração",
+      "description": "Expressa indiferença, falta de preocupação ou desinteresse em relação a uma situação, opinião ou acontecimento. Em inglês americano, 'I don't care' é uma expressão muito comum, mas seu tom depende do contexto e da entonação. Pode transmitir indiferença neutra ou uma atitude de desprezo. Para indicar indiferença sem parecer grosseiro, 'I don't mind' pode ser mais apropriado em situações de escolha. A expressão 'I don't care about + substantivo ou verbo com -ing' permite especificar aquilo com que a pessoa não se importa.",
+      "category": "expressions",
+      "allowLanguageChunkPractice": true,
+      "searchTerms": [
+        "não tô nem aí",
+        "tô nem aí",
+        "não estou nem aí",
+        "estou nem aí",
+        "não me importo",
+        "não ligo",
+        "não me interessa",
+        "tanto faz",
+        "não dou importância",
+        "não me preocupo com isso"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:não\\s+)?(?:tô|estou)\\s+nem\\s+aí(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])não\\s+me\\s+importo(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])não\\s+ligo(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "indiferença",
+        "desinteresse",
+        "opiniões",
+        "sentimentos",
+        "conversação",
+        "linguagem informal",
+        "expressões cotidianas"
+      ],
+      "related": [
+        "to-pouco-me-lixando-8d52f9b3-7e06-4a41-8c32-b6f84d19e573"
+      ],
+      "structure": "I don't care = não tô nem aí / não me importo. Estrutura independente: Subject + do/does + not + care. Para especificar o motivo da indiferença: Subject + don't/doesn't care about + substantivo ou verbo com -ing. Também é possível utilizar 'I don't care what + oração' e 'I don't care if + oração'. Atenção: 'I don't mind' é geralmente mais educado quando se deseja apenas dizer que qualquer opção está boa.",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "a71c2e43-5b96-4d80-8f12-c3e74a09d625",
+          "exampleItem": "Não tô nem aí!",
+          "intent": "Não tô nem aí"
+        },
+        {
+          "id": "b82d3f54-6c07-4e91-9a23-d4f85b10e736",
+          "exampleItem": "Tô nem aí para o que os outros pensam de mim.",
+          "intent": "Tô nem aí"
+        },
+        {
+          "id": "c93e4065-7d18-4fa2-8b34-e5096c21f847",
+          "exampleItem": "Não me importo com o que ele disse.",
+          "intent": "Não me importo"
+        },
+        {
+          "id": "d04f5176-8e29-40b3-9c45-f61a7d32a958",
+          "exampleItem": "Eles podem criticar meu projeto à vontade. Não tô nem aí!",
+          "intent": "Não tô nem aí"
+        },
+        {
+          "id": "e1506287-9f30-41c4-8d56-a72b8e43b069",
+          "exampleItem": "Não ligo se eles discordarem de mim.",
+          "intent": "Não ligo"
+        },
+        {
+          "id": "f2617398-0a41-42d5-9e67-b83c9f54c170",
+          "exampleItem": "Ela não se importa com a opinião dos colegas.",
+          "intent": "não se importa"
+        },
+        {
+          "id": "a37284a9-1b52-43e6-8f78-c94d0a65d281",
+          "exampleItem": "Antes eu me preocupava com tudo, mas agora não tô nem aí.",
+          "intent": "não tô nem aí"
+        },
+        {
+          "id": "b48395ba-2c63-44f7-9089-da5e1b76e392",
+          "exampleItem": "Não me importo se precisarmos começar tudo de novo.",
+          "intent": "Não me importo"
+        }
+      ]
+    },
+    {
+      "id": "to-pouco-me-lixando-8d52f9b3-7e06-4a41-8c32-b6f84d19e573",
+      "intention": "Tô pouco me lixando / Não dou a mínima / Não poderia me importar menos",
+      "pattern": "tô pouco me lixando / não dou a mínima / não poderia me importar menos / não poderia ligar menos",
+      "description": "Expressa indiferença extrema, desprezo ou ausência completa de interesse por alguma coisa. Em inglês americano, 'I couldn't care less' significa literalmente 'Eu não poderia me importar menos', indicando que o nível de preocupação já é tão baixo que não pode diminuir. É mais enfática do que 'I don't care' e pode soar rude ou desdenhosa dependendo da situação. A expressão pode ser complementada por 'about + substantivo ou verbo com -ing'. Em conversas informais nos Estados Unidos também se ouve 'I could care less', mas 'I couldn't care less' é a forma semanticamente coerente e recomendada para aprendizagem.",
+      "category": "expressions",
+      "allowLanguageChunkPractice": true,
+      "searchTerms": [
+        "tô pouco me lixando",
+        "estou pouco me lixando",
+        "não dou a mínima",
+        "não poderia me importar menos",
+        "não poderia ligar menos",
+        "não estou nem aí",
+        "não me interessa nem um pouco",
+        "não dou a menor importância",
+        "não estou nem um pouco preocupado",
+        "pouco me importa"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:tô|estou)\\s+pouco\\s+me\\s+lixando(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])não\\s+dou\\s+a\\s+mínima(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])não\\s+poderia\\s+me\\s+importar\\s+menos(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])pouco\\s+me\\s+importa(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "indiferença extrema",
+        "desprezo",
+        "ênfase",
+        "sentimentos",
+        "opiniões",
+        "expressões idiomáticas",
+        "linguagem informal",
+        "conversação"
+      ],
+      "related": [
+        "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462"
+      ],
+      "structure": "I couldn't care less = não poderia me importar menos / não dou a mínima. Estrutura: Subject + could not (couldn't) + care + less. A expressão pode funcionar como frase completa ou ser complementada por 'about + substantivo ou verbo com -ing'. Exemplo: 'I couldn't care less about their opinions'. A forma com 'couldn't' comunica que é impossível se importar menos do que já se importa. É uma expressão enfática e deve ser utilizada com atenção ao contexto social.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "c594a6cb-3d74-4508-a19a-eb6f2c87f403",
+          "exampleItem": "Tô pouco me lixando!",
+          "intent": "Tô pouco me lixando"
+        },
+        {
+          "id": "d6a5b7dc-4e85-4619-b2ab-fc703d980514",
+          "exampleItem": "Não dou a mínima para o que ele pensa de mim.",
+          "intent": "Não dou a mínima"
+        },
+        {
+          "id": "e7b6c8ed-5f96-472a-83bc-ad814e091625",
+          "exampleItem": "Não poderia me importar menos com aquela discussão.",
+          "intent": "Não poderia me importar menos"
+        },
+        {
+          "id": "f8c7d9fe-6a07-483b-94cd-be925f102736",
+          "exampleItem": "Eles podem falar o que quiserem. Tô pouco me lixando!",
+          "intent": "Tô pouco me lixando"
+        },
+        {
+          "id": "a9d8e0af-7b18-494c-85de-cf036a21b847",
+          "exampleItem": "Não dou a mínima para as críticas sem fundamento.",
+          "intent": "Não dou a mínima"
+        },
+        {
+          "id": "b0e9f1ba-8c29-405d-96ef-da147b32c958",
+          "exampleItem": "Ele não poderia se importar menos com os resultados daquela competição.",
+          "intent": "não poderia se importar menos"
+        },
+        {
+          "id": "c1fa02cb-9d30-416e-87f0-eb258c43d069",
+          "exampleItem": "Tô pouco me lixando se eles não gostarem da minha decisão.",
+          "intent": "Tô pouco me lixando"
+        },
+        {
+          "id": "d20b13dc-0e41-427f-9801-fc369d54e170",
+          "exampleItem": "Antes eu levava aquelas críticas a sério. Hoje não dou a mínima.",
+          "intent": "não dou a mínima"
+        }
+      ]
+    },
+    {
+      "id": "nao-dou-a-minima-4e72b9c1-6a83-4f50-9d24-c7e15a08b396",
+      "intention": "Tô nem aí! / Tô pouco me lixando! / Não dou a mínima!",
+      "pattern": "tô nem aí / tô pouco me lixando / não dou a mínima / não ligo nem um pouco",
+      "description": "Expressa forte indiferença, desinteresse ou desprezo por determinada situação, opinião ou acontecimento. Em inglês americano, 'I don't give a damn' é uma expressão informal e enfática, mais forte do que 'I don't care'. A palavra 'damn' acrescenta intensidade emocional e pode soar rude em situações formais. Pode ser utilizada isoladamente ou acompanhada de 'about + substantivo ou verbo com -ing'. Não deve ser confundida com a expressão neutra 'I don't mind'.",
+      "category": "expressions",
+      "allowLanguageChunkPractice": true,
+      "searchTerms": [
+        "tô nem aí",
+        "tô pouco me lixando",
+        "não dou a mínima",
+        "não ligo nem um pouco",
+        "não estou nem aí",
+        "não dou a menor importância",
+        "pouco me importa"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:tô|estou)\\s+nem\\s+aí(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:tô|estou)\\s+pouco\\s+me\\s+lixando(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])não\\s+dou\\s+a\\s+mínima(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])não\\s+ligo\\s+nem\\s+um\\s+pouco(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "indiferença",
+        "desprezo",
+        "ênfase",
+        "linguagem informal",
+        "sentimentos",
+        "opiniões",
+        "conversação"
+      ],
+      "related": [
+        "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462",
+        "to-pouco-me-lixando-8d52f9b3-7e06-4a41-8c32-b6f84d19e573"
+      ],
+      "structure": "I don't give a damn = tô nem aí / não dou a mínima. Estrutura independente: Subject + do/does + not + give + a damn. Para especificar o objeto da indiferença: Subject + don't/doesn't give a damn + about + substantivo ou verbo com -ing. Também admite construções com 'what', 'who' e 'if' seguidas de oração. Expressão informal, enfática e potencialmente rude.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Tô nem aí!",
+          "intent": "Tô nem aí"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Tô pouco me lixando para o que eles pensam de mim.",
+          "intent": "Tô pouco me lixando"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Não dou a mínima para as críticas deles.",
+          "intent": "Não dou a mínima"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Eles podem reclamar o quanto quiserem. Tô nem aí!",
+          "intent": "Tô nem aí"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Não ligo nem um pouco se eles discordarem da minha decisão.",
+          "intent": "Não ligo nem um pouco"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Tô pouco me lixando para aquela discussão sem sentido.",
+          "intent": "Tô pouco me lixando"
+        }
+      ]
+    },
+    {
+      "id": "tanto-faz-whatever-5f83c0d2-7b94-4061-8e35-d8f26b19c407",
+      "intention": "Tanto faz / Tô nem aí / Como quiser",
+      "pattern": "tanto faz / pra mim tanto faz / tô nem aí / como quiser / seja como for",
+      "description": "Expressa indiferença, falta de preferência ou desinteresse em continuar uma discussão. Em inglês americano, 'whatever' pode funcionar como resposta independente, mas sua interpretação depende fortemente da entonação e do contexto. Quando utilizada de maneira seca ou impaciente, pode transmitir desprezo, irritação ou desinteresse. Em situações educadas de escolha, expressões como 'Either is fine', 'It's up to you' e 'I don't mind' costumam ser mais apropriadas. 'Whatever' também pode funcionar como determinante ou pronome em outras estruturas, mas esta intenção concentra-se em seu uso como resposta independente.",
+      "category": "expressions",
+      "allowLanguageChunkPractice": true,
+      "searchTerms": [
+        "tanto faz",
+        "pra mim tanto faz",
+        "para mim tanto faz",
+        "tô nem aí",
+        "como quiser",
+        "seja como for",
+        "tanto me faz",
+        "não faz diferença"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])tanto\\s+faz(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:pra|para)\\s+mim\\s+tanto\\s+faz(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:tô|estou)\\s+nem\\s+aí(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])como\\s+quiser(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])não\\s+faz\\s+diferença(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "indiferença",
+        "escolhas",
+        "desinteresse",
+        "respostas curtas",
+        "entonação",
+        "conversação",
+        "linguagem informal"
+      ],
+      "related": [
+        "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462"
+      ],
+      "structure": "Whatever = tanto faz / como quiser / tô nem aí. Pode funcionar como resposta independente sem sujeito ou verbo. Sua interpretação depende da entonação e do contexto. Quando pronunciada de forma seca, pode indicar irritação ou desprezo. Em escolhas neutras, 'Either is fine' ou 'I don't mind' geralmente são alternativas mais educadas.",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "a72c4e83-5b96-4d31-8f12-c3e74a09d626",
+          "exampleItem": "Tanto faz.",
+          "intent": "Tanto faz"
+        },
+        {
+          "id": "b83d5f94-6c07-4e42-9a23-d4f85b10e737",
+          "exampleItem": "Pra mim tanto faz. Você decide.",
+          "intent": "Pra mim tanto faz"
+        },
+        {
+          "id": "c94e60a5-7d18-4f53-8b34-e5096c21f848",
+          "exampleItem": "Tô nem aí. Faça o que quiser.",
+          "intent": "Tô nem aí"
+        },
+        {
+          "id": "d05f71b6-8e29-4054-9c45-f61a7d32a959",
+          "exampleItem": "Como quiser. Não vou discutir mais.",
+          "intent": "Como quiser"
+        },
+        {
+          "id": "e16082c7-9f30-4165-8d56-a72b8e43b070",
+          "exampleItem": "Tanto faz. Já estou cansado dessa discussão.",
+          "intent": "Tanto faz"
+        },
+        {
+          "id": "f27193d8-0a41-4276-9e67-b83c9f54c171",
+          "exampleItem": "Não faz diferença para mim. Escolha o que preferir.",
+          "intent": "Não faz diferença"
+        }
+      ]
+    },
+    {
+      "id": "isso-nao-me-incomoda-6a94d1e3-8c05-4172-9f46-e9a37c20d518",
+      "intention": "Isso não me incomoda / Não me incomoda",
+      "pattern": "isso não me incomoda / não me incomoda / isso não me aborrece / não me causa incômodo",
+      "description": "Expressa que determinada situação, comportamento ou acontecimento não provoca desconforto, irritação ou preocupação. Em inglês americano, 'It doesn't bother me' é uma expressão natural e relativamente neutra, utilizada para demonstrar tranquilidade ou tolerância. Diferencia-se de 'I don't care', que pode transmitir indiferença ou desinteresse, porque enfatiza a ausência de incômodo. A construção 'It doesn't bother me if + oração' permite explicar uma situação que não causa desconforto. Também é possível utilizar 'That doesn't bother me' para retomar algo mencionado anteriormente.",
+      "category": "expressions",
+      "allowLanguageChunkPractice": true,
+      "searchTerms": [
+        "isso não me incomoda",
+        "não me incomoda",
+        "isso não me aborrece",
+        "não me aborrece",
+        "não me causa incômodo",
+        "isso não me preocupa",
+        "não vejo problema nisso",
+        "não me importo com isso"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:isso\\s+)?não\\s+me\\s+incomoda(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:isso\\s+)?não\\s+me\\s+aborrece(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])não\\s+me\\s+causa\\s+incômodo(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])não\\s+vejo\\s+problema\\s+nisso(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "tranquilidade",
+        "tolerância",
+        "sentimentos",
+        "ausência de incômodo",
+        "respostas educadas",
+        "conversação",
+        "expressões cotidianas"
+      ],
+      "related": [
+        "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462"
+      ],
+      "structure": "It doesn't bother me = isso não me incomoda. Estrutura: It/That + does not (doesn't) + bother + object pronoun. Para especificar uma condição: It doesn't bother me if + sujeito + verbo. Para uma atividade: It doesn't bother me when + oração. A expressão indica ausência de incômodo, não necessariamente ausência de interesse.",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "a73c4e84-5b96-4d32-8f12-c3e74a09d627",
+          "exampleItem": "Isso não me incomoda.",
+          "intent": "Isso não me incomoda"
+        },
+        {
+          "id": "b84d5f95-6c07-4e43-9a23-d4f85b10e738",
+          "exampleItem": "Não me incomoda se você chegar um pouco atrasado.",
+          "intent": "Não me incomoda"
+        },
+        {
+          "id": "c95e60a6-7d18-4f54-8b34-e5096c21f849",
+          "exampleItem": "Isso não me incomoda. Podemos continuar trabalhando.",
+          "intent": "Isso não me incomoda"
+        },
+        {
+          "id": "d06f71b7-8e29-4055-9c45-f61a7d32a960",
+          "exampleItem": "Não me incomoda trabalhar em casa.",
+          "intent": "Não me incomoda"
+        },
+        {
+          "id": "e17082c8-9f30-4166-8d56-a72b8e43b071",
+          "exampleItem": "Isso não me aborrece. Já estou acostumado.",
+          "intent": "Isso não me aborrece"
+        },
+        {
+          "id": "f28193d9-0a41-4277-9e67-b83c9f54c172",
+          "exampleItem": "Não vejo problema nisso. Podemos tentar novamente.",
+          "intent": "Não vejo problema nisso"
+        }
+      ]
+    },
+    {
+      "id": "to-cagando-pra-isso-7b05e2f4-9d16-4283-8a57-f0b48d31e629",
+      "intention": "Tô cagando pra isso / Não tô nem aí / Tô me lixando",
+      "pattern": "tô cagando pra isso / tô cagando para + substantivo / não dou a mínima / tô me lixando",
+      "description": "Expressa indiferença extrema, desprezo ou irritação em relação a alguma coisa. Em inglês americano, 'I don't give a shit' é uma expressão vulgar e bastante enfática, utilizada principalmente em situações muito informais ou emocionalmente carregadas. É mais agressiva do que 'I don't care' e geralmente mais vulgar do que 'I don't give a damn'. Pode funcionar como frase independente ou ser complementada por 'about + substantivo ou verbo com -ing'. Deve ser evitada em ambientes profissionais, acadêmicos e situações sociais que exijam linguagem respeitosa.",
+      "category": "expressions",
+      "allowLanguageChunkPractice": true,
+      "searchTerms": [
+        "tô cagando pra isso",
+        "estou cagando para isso",
+        "tô cagando para",
+        "não dou a mínima",
+        "tô me lixando",
+        "não tô nem aí",
+        "não me importo nem um pouco",
+        "não dou a menor importância",
+        "tô pouco me lixando"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:tô|estou)\\s+cagando\\s+(?:pra|para)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:tô|estou)\\s+me\\s+lixando(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])não\\s+dou\\s+a\\s+mínima(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])não\\s+me\\s+importo\\s+nem\\s+um\\s+pouco(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "indiferença extrema",
+        "desprezo",
+        "irritação",
+        "linguagem vulgar",
+        "palavrões",
+        "expressões idiomáticas",
+        "conversação informal",
+        "ênfase"
+      ],
+      "related": [
+        "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462",
+        "to-pouco-me-lixando-8d52f9b3-7e06-4a41-8c32-b6f84d19e573",
+        "nao-dou-a-minima-4e72b9c1-6a83-4f50-9d24-c7e15a08b396"
+      ],
+      "structure": "I don't give a shit = tô cagando pra isso / não dou a mínima. Estrutura independente: Subject + do/does + not + give + a shit. Para indicar o objeto da indiferença: Subject + don't/doesn't give a shit + about + substantivo ou verbo com -ing. Também admite 'what', 'who' e 'if' seguidos de oração. É uma expressão vulgar e pode causar ofensa dependendo do contexto.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "a74c4e85-5b96-4d33-8f12-c3e74a09d628",
+          "exampleItem": "Tô cagando pra isso!",
+          "intent": "Tô cagando pra isso"
+        },
+        {
+          "id": "b85d5f96-6c07-4e44-9a23-d4f85b10e739",
+          "exampleItem": "Tô cagando para o que eles pensam de mim.",
+          "intent": "Tô cagando para"
+        },
+        {
+          "id": "c96e60a7-7d18-4f55-8b34-e5096c21f850",
+          "exampleItem": "Não dou a mínima para aquela discussão idiota.",
+          "intent": "Não dou a mínima"
+        },
+        {
+          "id": "d07f71b8-8e29-4056-9c45-f61a7d32a961",
+          "exampleItem": "Eles podem continuar reclamando. Tô cagando pra isso!",
+          "intent": "Tô cagando pra isso"
+        },
+        {
+          "id": "e18082c9-9f30-4167-8d56-a72b8e43b072",
+          "exampleItem": "Tô me lixando para as desculpas dele.",
+          "intent": "Tô me lixando"
+        },
+        {
+          "id": "f29193da-0a41-4278-9e67-b83c9f54c173",
+          "exampleItem": "Não me importo nem um pouco com o que dizem sobre meu trabalho.",
+          "intent": "Não me importo nem um pouco"
         }
       ]
     }

@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1258,
+    "totalIntentions": 1264,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -49800,6 +49800,442 @@
           "intent": "has querido"
         }
       ]
+    },
+    {
+      "id": "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462",
+      "intention": "Me da igual / No me importa",
+      "pattern": "me da igual / no me importa / no me importa si + oraci?n / no me importa lo que + oraci?n",
+      "description": "Expresa indiferencia, despreocupaci?n o desinter?s ante una situaci?n, una opini?n o un acontecimiento. En ingl?s americano, ?I don't care? es muy frecuente, pero su tono depende del contexto y de la entonaci?n. Puede transmitir indiferencia neutra o desprecio. Para expresar que cualquier opci?n es aceptable sin resultar brusco, ?I don't mind? puede ser m?s adecuado. ?I don't care about + sustantivo o verbo terminado en -ing? permite especificar aquello que no le importa a la persona.",
+      "category": "expressions",
+      "searchTerms": [
+        "me da igual",
+        "no me importa",
+        "no me preocupa",
+        "me da lo mismo",
+        "no me importa lo que digan",
+        "no me importa si",
+        "le da igual"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])me\\s+da\\s+igual(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])no\\s+me\\s+importa(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])no\\s+le\\s+importa(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])le\\s+da\\s+igual(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "indiferencia",
+        "desinter?s",
+        "opiniones",
+        "sentimientos",
+        "conversaci?n",
+        "lenguaje informal",
+        "expresiones cotidianas"
+      ],
+      "related": [
+        "to-pouco-me-lixando-8d52f9b3-7e06-4a41-8c32-b6f84d19e573"
+      ],
+      "structure": "Me da igual / No me importa. Puede usarse como respuesta independiente o con un complemento: no me importa + sustantivo; no me importa si / lo que + oraci?n. Equivalentes en ingl?s: sujeto + do/does + not + care; para especificar el objeto, don't/doesn't care about + sustantivo o verbo terminado en -ing. Tambi?n se emplea ?I don't care what/if + oraci?n?. ?I don't mind? suele ser m?s cort?s para aceptar cualquiera de las opciones.",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "a71c2e43-5b96-4d80-8f12-c3e74a09d625",
+          "exampleItem": "?Me da igual!",
+          "intent": "Me da igual"
+        },
+        {
+          "id": "b82d3f54-6c07-4e91-9a23-d4f85b10e736",
+          "exampleItem": "Me da igual lo que los dem?s piensen de m?.",
+          "intent": "Me da igual"
+        },
+        {
+          "id": "c93e4065-7d18-4fa2-8b34-e5096c21f847",
+          "exampleItem": "No me importa lo que ha dicho.",
+          "intent": "No me importa"
+        },
+        {
+          "id": "d04f5176-8e29-40b3-9c45-f61a7d32a958",
+          "exampleItem": "Pueden criticar mi proyecto todo lo que quieran. ?Me da igual!",
+          "intent": "Me da igual"
+        },
+        {
+          "id": "e1506287-9f30-41c4-8d56-a72b8e43b069",
+          "exampleItem": "No me importa si no est?n de acuerdo conmigo.",
+          "intent": "No me importa"
+        },
+        {
+          "id": "f2617398-0a41-42d5-9e67-b83c9f54c170",
+          "exampleItem": "A ella no le importa la opini?n de sus compa?eros.",
+          "intent": "no le importa"
+        },
+        {
+          "id": "a37284a9-1b52-43e6-8f78-c94d0a65d281",
+          "exampleItem": "Antes me preocupaba por todo, pero ahora me da igual.",
+          "intent": "me da igual"
+        },
+        {
+          "id": "b48395ba-2c63-44f7-9089-da5e1b76e392",
+          "exampleItem": "No me importa si tenemos que empezar de nuevo.",
+          "intent": "No me importa"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "to-pouco-me-lixando-8d52f9b3-7e06-4a41-8c32-b6f84d19e573",
+      "intention": "Me importa un comino / No me podr?a importar menos",
+      "pattern": "me importa un comino / me importa un pimiento / no me podr?a importar menos",
+      "description": "Expresa indiferencia extrema, desprecio o una falta absoluta de inter?s. En ingl?s americano, ?I couldn't care less? significa literalmente ?No me podr?a importar menos?: el grado de preocupaci?n ya es tan bajo que no puede disminuir. Es m?s enf?tico que ?I don't care? y puede sonar brusco o desde?oso. Puede completarse con ?about + sustantivo o verbo terminado en -ing?. En conversaciones informales estadounidenses tambi?n se oye ?I could care less?, pero ?I couldn't care less? es la forma sem?nticamente coherente y recomendada para aprender.",
+      "category": "expressions",
+      "searchTerms": [
+        "me importa un comino",
+        "me importa un pimiento",
+        "no me podr?a importar menos",
+        "no me importa lo m?s m?nimo",
+        "me trae sin cuidado"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])me\\s+importa\\s+un\\s+comino(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])me\\s+importa\\s+un\\s+pimiento(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])no\\s+me\\s+podr\\?a\\s+importar\\s+menos(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])no\\s+le\\s+podr\\?an\\s+importar\\s+menos(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])no\\s+me\\s+importa\\s+lo\\s+m\\?s\\s+m\\?nimo(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])me\\s+importan\\s+un\\s+comino(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])no\\s+me\\s+importan\\s+lo\\s+m\\?s\\s+m\\?nimo(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "indiferencia extrema",
+        "desprecio",
+        "?nfasis",
+        "sentimientos",
+        "opiniones",
+        "expresiones idiom?ticas",
+        "lenguaje informal",
+        "conversaci?n"
+      ],
+      "related": [
+        "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462"
+      ],
+      "structure": "Me importa un comino / No me podr?a importar menos. Expresiones enf?ticas de indiferencia, con complemento opcional. En ingl?s: sujeto + could not (couldn't) + care + less, seguido opcionalmente de about + sustantivo o verbo terminado en -ing. Ejemplo: ?I couldn't care less about their opinions?. ?Couldn't? indica que es imposible sentir menos inter?s del que ya se siente. Conviene tener en cuenta el contexto social.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "c594a6cb-3d74-4508-a19a-eb6f2c87f403",
+          "exampleItem": "?Me importa un comino!",
+          "intent": "Me importa un comino"
+        },
+        {
+          "id": "d6a5b7dc-4e85-4619-b2ab-fc703d980514",
+          "exampleItem": "Me importa un pimiento lo que piense de m?.",
+          "intent": "Me importa un pimiento"
+        },
+        {
+          "id": "e7b6c8ed-5f96-472a-83bc-ad814e091625",
+          "exampleItem": "Esa discusi?n no me podr?a importar menos.",
+          "intent": "no me podr?a importar menos"
+        },
+        {
+          "id": "f8c7d9fe-6a07-483b-94cd-be925f102736",
+          "exampleItem": "Pueden decir lo que quieran. ?Me importa un comino!",
+          "intent": "Me importa un comino"
+        },
+        {
+          "id": "a9d8e0af-7b18-494c-85de-cf036a21b847",
+          "exampleItem": "Me importan un comino las cr?ticas sin fundamento.",
+          "intent": "Me importan un comino"
+        },
+        {
+          "id": "b0e9f1ba-8c29-405d-96ef-da147b32c958",
+          "exampleItem": "A ?l no le podr?an importar menos los resultados de aquella competici?n.",
+          "intent": "no le podr?an importar menos"
+        },
+        {
+          "id": "c1fa02cb-9d30-416e-87f0-eb258c43d069",
+          "exampleItem": "Me importa un comino si no les gusta mi decisi?n.",
+          "intent": "Me importa un comino"
+        },
+        {
+          "id": "d20b13dc-0e41-427f-9801-fc369d54e170",
+          "exampleItem": "Antes me tomaba esas cr?ticas en serio. Hoy no me importan lo m?s m?nimo.",
+          "intent": "no me importan lo m?s m?nimo"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "nao-dou-a-minima-4e72b9c1-6a83-4f50-9d24-c7e15a08b396",
+      "intention": "?Me importa un carajo! / ?No me importa lo m?s m?nimo!",
+      "pattern": "me importa un carajo / me importa un comino / no me importa lo m?s m?nimo",
+      "description": "Expresa una indiferencia intensa, desinter?s o desprecio ante una situaci?n, una opini?n o un acontecimiento. En ingl?s americano, ?I don't give a damn? es una expresi?n informal y enf?tica, m?s fuerte que ?I don't care?. ?Damn? a?ade intensidad emocional y puede resultar descort?s en contextos formales. Puede utilizarse sola o con ?about + sustantivo o verbo terminado en -ing?. El equivalente espa?ol ?Me importa un carajo? tambi?n puede resultar malsonante. No debe confundirse con la expresi?n neutra ?I don't mind?.",
+      "category": "expressions",
+      "searchTerms": [
+        "me importa un carajo",
+        "no me importa lo m?s m?nimo",
+        "me importa un comino",
+        "no me importa en absoluto",
+        "me trae sin cuidado"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])me\\s+importa\\s+un\\s+carajo(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])me\\s+importa\\s+un\\s+comino(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])no\\s+me\\s+importa\\s+lo\\s+m\\?s\\s+m\\?nimo(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])me\\s+importan\\s+un\\s+carajo(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "indiferencia",
+        "desprecio",
+        "?nfasis",
+        "lenguaje informal",
+        "sentimientos",
+        "opiniones",
+        "conversaci?n"
+      ],
+      "related": [
+        "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462",
+        "to-pouco-me-lixando-8d52f9b3-7e06-4a41-8c32-b6f84d19e573"
+      ],
+      "structure": "Me importa un carajo / No me importa lo m?s m?nimo. En ingl?s: sujeto + do/does + not + give + a damn; con complemento, don't/doesn't give a damn about + sustantivo o verbo terminado en -ing. Tambi?n admite what, who e if seguidos de una oraci?n. Expresi?n informal, enf?tica y potencialmente descort?s.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "?Me importa un carajo!",
+          "intent": "Me importa un carajo"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Me importa un carajo lo que piensen de m?.",
+          "intent": "Me importa un carajo"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Me importan un carajo sus cr?ticas.",
+          "intent": "Me importan un carajo"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Pueden quejarse todo lo que quieran. ?Me importa un carajo!",
+          "intent": "Me importa un carajo"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "No me importa lo m?s m?nimo si no est?n de acuerdo con mi decisi?n.",
+          "intent": "No me importa lo m?s m?nimo"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Me importa un carajo esa discusi?n sin sentido.",
+          "intent": "Me importa un carajo"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "tanto-faz-whatever-5f83c0d2-7b94-4061-8e35-d8f26b19c407",
+      "intention": "Da igual / Como quieras",
+      "pattern": "da igual / a m? me da igual / como quieras / me da lo mismo / no hay diferencia",
+      "description": "Expresa indiferencia, falta de preferencia o desinter?s por seguir discutiendo. En ingl?s americano, ?whatever? puede funcionar como respuesta independiente, pero su interpretaci?n depende mucho de la entonaci?n y del contexto. Dicho de forma seca o impaciente, puede transmitir desprecio, irritaci?n o desinter?s. Al elegir con cortes?a, suelen ser m?s apropiadas expresiones como ?Either is fine?, ?It's up to you? e ?I don't mind?. ?Whatever? tambi?n tiene usos como determinante o pronombre; esta intenci?n se centra en su uso como respuesta independiente.",
+      "category": "expressions",
+      "searchTerms": [
+        "da igual",
+        "a m? me da igual",
+        "como quieras",
+        "me da lo mismo",
+        "no hay diferencia",
+        "haz lo que quieras"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])da\\s+igual(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])como\\s+quieras(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])no\\s+hay\\s+diferencia(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])a\\s+m\\?\\s+me\\s+da\\s+igual(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])me\\s+da\\s+igual(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "indiferencia",
+        "elecciones",
+        "desinter?s",
+        "respuestas cortas",
+        "entonaci?n",
+        "conversaci?n",
+        "lenguaje informal"
+      ],
+      "related": [
+        "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462"
+      ],
+      "structure": "Da igual / Como quieras. ?Whatever? puede funcionar como respuesta independiente, sin sujeto ni verbo. Su interpretaci?n depende del contexto y de la entonaci?n: un tono seco puede expresar irritaci?n o desprecio. En elecciones neutras, ?Either is fine? o ?I don't mind? suelen ser opciones m?s corteses.",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "a72c4e83-5b96-4d31-8f12-c3e74a09d626",
+          "exampleItem": "Da igual.",
+          "intent": "Da igual"
+        },
+        {
+          "id": "b83d5f94-6c07-4e42-9a23-d4f85b10e737",
+          "exampleItem": "A m? me da igual. T? decides.",
+          "intent": "A m? me da igual"
+        },
+        {
+          "id": "c94e60a5-7d18-4f53-8b34-e5096c21f848",
+          "exampleItem": "Me da igual. Haz lo que quieras.",
+          "intent": "Me da igual"
+        },
+        {
+          "id": "d05f71b6-8e29-4054-9c45-f61a7d32a959",
+          "exampleItem": "Como quieras. No voy a discutir m?s.",
+          "intent": "Como quieras"
+        },
+        {
+          "id": "e16082c7-9f30-4165-8d56-a72b8e43b070",
+          "exampleItem": "Da igual. Ya estoy cansado de esta discusi?n.",
+          "intent": "Da igual"
+        },
+        {
+          "id": "f27193d8-0a41-4276-9e67-b83c9f54c171",
+          "exampleItem": "Para m? no hay diferencia. Elige lo que prefieras.",
+          "intent": "no hay diferencia"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "isso-nao-me-incomoda-6a94d1e3-8c05-4172-9f46-e9a37c20d518",
+      "intention": "Eso no me molesta / No me molesta",
+      "pattern": "eso no me molesta / no me molesta / eso no me incomoda / no veo ning?n problema en eso",
+      "description": "Expresa que una situaci?n, un comportamiento o un acontecimiento no causa incomodidad, irritaci?n ni preocupaci?n. En ingl?s americano, ?It doesn't bother me? es una expresi?n natural y relativamente neutra que demuestra tranquilidad o tolerancia. Se diferencia de ?I don't care?, que puede transmitir indiferencia o desinter?s, porque destaca la ausencia de molestia. ?It doesn't bother me if + oraci?n? permite explicar qu? situaci?n no causa incomodidad. Tambi?n se usa ?That doesn't bother me? para referirse a algo mencionado anteriormente.",
+      "category": "expressions",
+      "searchTerms": [
+        "eso no me molesta",
+        "no me molesta",
+        "eso no me incomoda",
+        "no me incomoda",
+        "no me causa molestias",
+        "no veo ning?n problema en eso"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])no\\s+me\\s+molesta(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])no\\s+me\\s+incomoda(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])no\\s+veo\\s+ning\\?n\\s+problema\\s+en\\s+eso(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])eso\\s+no\\s+me\\s+molesta(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])eso\\s+no\\s+me\\s+incomoda(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "tranquilidad",
+        "tolerancia",
+        "sentimientos",
+        "ausencia de molestias",
+        "respuestas corteses",
+        "conversaci?n",
+        "expresiones cotidianas"
+      ],
+      "related": [
+        "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462"
+      ],
+      "structure": "Eso no me molesta. En ingl?s: It/That + does not (doesn't) + bother + pronombre de objeto. Para indicar una condici?n: It doesn't bother me if + sujeto + verbo; para una situaci?n habitual: It doesn't bother me when + oraci?n. Expresa ausencia de molestia, no necesariamente falta de inter?s.",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "a73c4e84-5b96-4d32-8f12-c3e74a09d627",
+          "exampleItem": "Eso no me molesta.",
+          "intent": "Eso no me molesta"
+        },
+        {
+          "id": "b84d5f95-6c07-4e43-9a23-d4f85b10e738",
+          "exampleItem": "No me molesta que llegues un poco tarde.",
+          "intent": "No me molesta"
+        },
+        {
+          "id": "c95e60a6-7d18-4f54-8b34-e5096c21f849",
+          "exampleItem": "Eso no me molesta. Podemos seguir trabajando.",
+          "intent": "Eso no me molesta"
+        },
+        {
+          "id": "d06f71b7-8e29-4055-9c45-f61a7d32a960",
+          "exampleItem": "No me molesta trabajar en casa.",
+          "intent": "No me molesta"
+        },
+        {
+          "id": "e17082c8-9f30-4166-8d56-a72b8e43b071",
+          "exampleItem": "Eso no me incomoda. Ya estoy acostumbrado.",
+          "intent": "Eso no me incomoda"
+        },
+        {
+          "id": "f28193d9-0a41-4277-9e67-b83c9f54c172",
+          "exampleItem": "No veo ning?n problema en eso. Podemos intentarlo otra vez.",
+          "intent": "No veo ning?n problema en eso"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "to-cagando-pra-isso-7b05e2f4-9d16-4283-8a57-f0b48d31e629",
+      "intention": "Me importa una mierda / Me la suda",
+      "pattern": "me importa una mierda / me la suda / no me importa lo m?s m?nimo",
+      "description": "Expresa indiferencia extrema, desprecio o irritaci?n ante algo. En ingl?s americano, ?I don't give a shit? es una expresi?n vulgar y muy enf?tica, propia de situaciones muy informales o cargadas de emoci?n. Es m?s agresiva que ?I don't care? y suele ser m?s vulgar que ?I don't give a damn?. Puede usarse como frase independiente o con ?about + sustantivo o verbo terminado en -ing?. Los equivalentes espa?oles ?Me importa una mierda? y ?Me la suda? conservan ese registro vulgar. Debe evitarse en entornos profesionales, acad?micos y situaciones que requieran un lenguaje respetuoso.",
+      "category": "expressions",
+      "searchTerms": [
+        "me importa una mierda",
+        "me la suda",
+        "no me importa una mierda",
+        "no me importa lo m?s m?nimo",
+        "me trae sin cuidado"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])me\\s+importa\\s+una\\s+mierda(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])me\\s+la\\s+suda(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])no\\s+me\\s+importa\\s+lo\\s+m\\?s\\s+m\\?nimo(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])me\\s+la\\s+sudan(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "indiferencia extrema",
+        "desprecio",
+        "irritaci?n",
+        "lenguaje vulgar",
+        "palabrotas",
+        "expresiones idiom?ticas",
+        "conversaci?n informal",
+        "?nfasis"
+      ],
+      "related": [
+        "nao-to-nem-ai-7c41e8a2-6d95-4f30-9b21-a5e73c08d462",
+        "to-pouco-me-lixando-8d52f9b3-7e06-4a41-8c32-b6f84d19e573",
+        "nao-dou-a-minima-4e72b9c1-6a83-4f50-9d24-c7e15a08b396"
+      ],
+      "structure": "Me importa una mierda / Me la suda. En ingl?s: sujeto + do/does + not + give + a shit; con complemento, don't/doesn't give a shit about + sustantivo o verbo terminado en -ing. Tambi?n admite what, who e if seguidos de una oraci?n. Es una expresi?n vulgar y puede ofender seg?n el contexto.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "a74c4e85-5b96-4d33-8f12-c3e74a09d628",
+          "exampleItem": "?Me importa una mierda!",
+          "intent": "Me importa una mierda"
+        },
+        {
+          "id": "b85d5f96-6c07-4e44-9a23-d4f85b10e739",
+          "exampleItem": "Me importa una mierda lo que piensen de m?.",
+          "intent": "Me importa una mierda"
+        },
+        {
+          "id": "c96e60a7-7d18-4f55-8b34-e5096c21f850",
+          "exampleItem": "Me importa una mierda esa discusi?n idiota.",
+          "intent": "Me importa una mierda"
+        },
+        {
+          "id": "d07f71b8-8e29-4056-9c45-f61a7d32a961",
+          "exampleItem": "Pueden seguir quej?ndose. ?Me importa una mierda!",
+          "intent": "Me importa una mierda"
+        },
+        {
+          "id": "e18082c9-9f30-4167-8d56-a72b8e43b072",
+          "exampleItem": "Me la sudan sus excusas.",
+          "intent": "Me la sudan"
+        },
+        {
+          "id": "f29193da-0a41-4278-9e67-b83c9f54c173",
+          "exampleItem": "No me importa lo m?s m?nimo lo que digan de mi trabajo.",
+          "intent": "No me importa lo m?s m?nimo"
+        }
+      ],
+      "allowLanguageChunkPractice": true
     }
   ]
 }
