@@ -7,7 +7,7 @@ import { readSmallTalkPersonalAnswers } from '../../services/smallTalkPersonalAn
 import type { SmallTalkItem, SmallTalkTopic, SmallTalkTopicIndexEntry, SmallTalkWalkingSettings } from '../../types/smallTalk';
 import { readLocalJson, readWalkingSettings, saveLocalJson, SMALL_TALK_FAVORITES_KEY, SMALL_TALK_WALKING_SETTINGS_KEY } from './smallTalkPreferences';
 import { SmallTalkWalking } from './SmallTalkWalking';
-import { celebrateAchievement } from '../../utils/achievements';
+import { celebrateCompletedSession } from '../../utils/achievements';
 import { readAnswerOverrides, saveAnswerOverride, restoreOriginalAnswer, pruneRedundantAnswerOverrides } from './smallTalkAnswerOverrides';
 import { readQuestionOverrides, saveQuestionOverride, restoreOriginalQuestion, pruneRedundantQuestionOverrides } from './smallTalkQuestionOverrides';
 import { createCustomItem, isCustomItems, mergeCustomItems, readCustomItems, setCustomItemDeleted, writeCustomItems, type CustomSmallTalkItems } from './smallTalkCustomItems';
@@ -673,16 +673,20 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   }
 
   if (walking) return <SmallTalkWalking items={sessionItems} settings={settings}
-    onComplete={() => {
+    onComplete={(hadSkippedQuestions) => {
       const allQuestions = orderedTopicItems.filter(item => item.enabled && questionFor(item).trim());
-      const fullTopic = topic?.topicId === topicId && allQuestions.length > 0 &&
+      const fullTopic = !hadSkippedQuestions && topic?.topicId === topicId && allQuestions.length > 0 &&
         sessionItems.length === allQuestions.length &&
         allQuestions.every(item => sessionItems.some(studied => studied.id === item.id));
-      if (fullTopic) {
-        celebrateAchievement(`small-talk-topic:${topicId}`, "Small Talk completo!", `Você praticou todas as perguntas de ${topic?.title ?? topicId}.`);
-      } else {
-        celebrateAchievement("walking-first-session", "Modo Caminhada concluído!", "Você completou sua primeira sessão de repetição em voz alta.");
-      }
+      // Celebrate every finished session, not just the first time a topic is completed.
+      // Skipped questions finish the session but do not count as a full-topic achievement.
+      celebrateCompletedSession(
+        `small-talk-walking:${topicId}`,
+        fullTopic ? "Small Talk completo!" : "Sessão de Small Talk concluída!",
+        fullTopic
+          ? `Você praticou todas as perguntas de ${topic?.title ?? topicId}.`
+          : `Você concluiu uma sessão com ${sessionItems.length} perguntas${hadSkippedQuestions ? " (incluindo perguntas puladas)" : ""}.`
+      );
     }}
     onStudyState={onStudyState} onWalkingChange={onWalkingChange} onExit={() => { setWalking(false); onStudyState?.(false, 'walking'); }} />;
 
