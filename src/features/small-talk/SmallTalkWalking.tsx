@@ -8,6 +8,7 @@ interface Props {
   items: SmallTalkItem[];
   settings: SmallTalkWalkingSettings;
   onExit: () => void;
+  onComplete?: () => void;
   onStudyState?: (active: boolean, mode: 'manual' | 'walking') => void;
   onWalkingChange?: (active: boolean) => void;
 }
@@ -30,7 +31,7 @@ function speak(text: string, onEnd: () => void, onError: () => void): () => void
   return () => { utterance.onend = utterance.onerror = null; window.speechSynthesis.cancel(); };
 }
 
-export function SmallTalkWalking({ items, settings, onExit, onStudyState, onWalkingChange }: Props) {
+export function SmallTalkWalking({ items, settings, onExit, onComplete, onStudyState, onWalkingChange }: Props) {
   const [started, setStarted] = useState(false);
   const [paused, setPaused] = useState(false);
   const [index, setIndex] = useState(0);
@@ -40,6 +41,7 @@ export function SmallTalkWalking({ items, settings, onExit, onStudyState, onWalk
   const [error, setError] = useState('');
   const [hasOriginal, setHasOriginal] = useState(false);
   const generation = useRef(0);
+  const skipped = useRef(0);
   const cancelCurrent = useRef<() => void>(() => undefined);
   const wakeLock = useRef<{ release(): Promise<void> } | null>(null);
   const current = items[index];
@@ -133,8 +135,14 @@ export function SmallTalkWalking({ items, settings, onExit, onStudyState, onWalk
     catch { /* não bloquear a caminhada */ }
   }, [started, current?.id, repetition, completed]);
 
-  function restart() { stopAudio(); setStarted(false); setPaused(false); setIndex(0); setRepetition(0); setCompleted(0); setError(''); setPhase('idle'); }
-  function skip() { stopAudio(); setRepetition(0); setCompleted(v => v + 1); if (index === items.length - 1) setPhase('complete'); else setIndex(v => v + 1); }
+  useEffect(() => {
+    if (started && phase === "complete" && completed === items.length && items.length > 0 && skipped.current === 0) {
+      onComplete?.();
+    }
+  }, [started, phase, completed, items.length, onComplete]);
+
+  function restart() { skipped.current = 0; stopAudio(); setStarted(false); setPaused(false); setIndex(0); setRepetition(0); setCompleted(0); setError(''); setPhase('idle'); }
+  function skip() { skipped.current += 1; stopAudio(); setRepetition(0); setCompleted(v => v + 1); if (index === items.length - 1) setPhase('complete'); else setIndex(v => v + 1); }
   function togglePause() { stopAudio(); setPaused(value => !value); setPhase('paused'); }
   const previous = readLocalJson<Progress | null>(SMALL_TALK_WALKING_PROGRESS_KEY, null);
 
