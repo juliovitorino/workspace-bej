@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { LANGUAGES, type StudentLanguage } from "../../config/languages";
 import {
@@ -8,6 +8,7 @@ import {
 import { PersonalFlashcardEditor } from "./PersonalFlashcardEditor";
 import { PersonalBackupMenu } from "./PersonalBackupMenu";
 import "./personalFlashcards.css";
+import { celebrateFlashcardMilestone } from "../../utils/achievements";
 
 interface Props { sourceLanguage: StudentLanguage; targetLanguage: StudentLanguage; }
 function shuffled(cards: PersonalFlashcard[]) {
@@ -40,6 +41,7 @@ export function PersonalFlashcards({ sourceLanguage, targetLanguage }: Props) {
   const [position, setPosition] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [reviewed, setReviewed] = useState(0);
+  const flippedInSession = useRef(0);
   const [importMessage, setImportMessage] = useState("");
 
   useEffect(() => {
@@ -80,7 +82,11 @@ export function PersonalFlashcards({ sourceLanguage, targetLanguage }: Props) {
   }
   function flip() {
     if (!current) return;
-    if (!flipped && reviewed === position) setReviewed(value => value + 1);
+    if (!flipped && reviewed === position) {
+      setReviewed(value => value + 1);
+      flippedInSession.current += 1;
+      celebrateFlashcardMilestone("personal", flippedInSession.current);
+    }
     setFlipped(value => !value);
   }
 
