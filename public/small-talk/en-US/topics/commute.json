@@ -1,0 +1,514 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "commute",
+  "title": "Commute",
+  "description": "Daily commuting: routines, traffic, transportation choices, work-life balance, and opinions about getting to work or school.",
+  "items": [
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc10001",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What does your daily commute usually look like?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I’d say my daily commute is fairly predictable. I usually leave at around the same time and follow a familiar route. I believe having a routine makes the start of the day less stressful.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc10002",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How do you usually get to work or school?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I usually drive to work because it gives me flexibility. From my perspective, the best way to commute depends on distance, cost, and the available transportation options.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc10003",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How long does your commute usually take?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I think a reasonable commute should leave enough time for work and personal life. Mine can vary depending on traffic, so I try to plan for unexpected delays.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc10004",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What do you usually do during your commute?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I believe commuting time can be useful rather than wasted. If I’m using public transportation, I can listen to a podcast or review something I’m learning. When I’m driving, I focus on the road and may listen to audio.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc10005",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer a short commute or a more comfortable one?",
+        "audio": null
+      },
+      "answer": {
+        "text": "Personally, I prefer a shorter commute, even if it’s not perfect. I think saving time every day makes a real difference because that time can be spent with family, exercising, or relaxing.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc10006",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is the most stressful part of commuting for you?",
+        "audio": null
+      },
+      "answer": {
+        "text": "For me, the hardest part is unpredictable traffic. I think it’s frustrating when a short trip takes much longer than expected. That’s why I try to give myself extra time.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc10007",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How do you deal with traffic jams during rush hour?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I try to stay calm because getting upset won’t make traffic move faster. In my opinion, leaving a little earlier or choosing another route can sometimes help. I also believe patience is essential.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc10008",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you rather commute by car, motorcycle, bicycle, or public transportation?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I think each option has advantages and disadvantages. A motorcycle can be convenient in heavy traffic, while public transportation may be more affordable. From my perspective, safety and reliability should come first.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc10009",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How different is your commute on weekdays and weekends?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I believe weekday trips are usually more time-sensitive because people have schedules to follow. On weekends, I tend to feel less rushed. The same road can be a completely different experience.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc1000a",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think commuting affects your mood or productivity?",
+        "audio": null
+      },
+      "answer": {
+        "text": "Absolutely. I think a stressful commute can leave people tired before their day even begins. On the other hand, a smooth trip can help them arrive feeling more focused and relaxed.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc1000b",
+      "type": "question-answer",
+      "order": 11,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you be willing to move closer to work to shorten your commute?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I would consider it, but I’d look at more than the travel time. In my opinion, housing costs, family needs, and quality of life are just as important. A shorter commute isn’t always worth a major move.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc1000c",
+      "type": "question-answer",
+      "order": 12,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think working from home has changed the way people commute?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I believe remote work has given many people more control over their schedules. It can reduce commuting time and transportation costs. However, I think some people still benefit from meeting coworkers in person.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc1000d",
+      "type": "question-answer",
+      "order": 13,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What are the advantages of commuting by public transportation?",
+        "audio": null
+      },
+      "answer": {
+        "text": "From my perspective, public transportation can reduce the cost of daily travel. It can also let passengers read or relax instead of driving. Of course, I think these benefits depend on whether the service is reliable.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc1000e",
+      "type": "question-answer",
+      "order": 14,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What are the disadvantages of commuting by car?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I think driving can become expensive when you consider fuel, parking, and maintenance. Traffic can also make the trip exhausting. Even so, I believe cars offer flexibility that other options may not provide.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc1000f",
+      "type": "question-answer",
+      "order": 15,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you consider biking or walking to work?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I’d be open to it if the distance and road conditions made sense. I believe walking and cycling can improve health while reducing pollution. However, safe routes and suitable weather are important.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc10010",
+      "type": "question-answer",
+      "order": 16,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How important is a reliable commute when choosing a job?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I think it matters a great deal because the commute is part of everyday life. A job might sound attractive, but a difficult trip can affect your energy and free time. From my perspective, it deserves serious consideration.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc10011",
+      "type": "question-answer",
+      "order": 17,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you usually leave early to avoid being late?",
+        "audio": null
+      },
+      "answer": {
+        "text": "Yes, I prefer having a little extra time. I believe that arriving a few minutes early is better than rushing and feeling stressed. Still, unexpected delays can happen.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc10012",
+      "type": "question-answer",
+      "order": 18,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Have you ever been late because of a transportation problem?",
+        "audio": null
+      },
+      "answer": {
+        "text": "Yes, that can happen even when you plan carefully. I think the best response is to let the other person know as soon as possible and explain the situation. Being honest and communicating early really helps.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc10013",
+      "type": "question-answer",
+      "order": 19,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you prefer listening to music, podcasts, or silence during a commute?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I usually choose based on how I’m feeling. I think music can make a routine trip more enjoyable, while podcasts can be a good way to learn. Sometimes, though, I prefer a quiet moment.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc10014",
+      "type": "question-answer",
+      "order": 20,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How does bad weather affect your commute?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I believe bad weather makes travel more complicated, especially when roads are wet or visibility is poor. I think it’s important to slow down and leave more time. Safety should always be the priority.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc10015",
+      "type": "question-answer",
+      "order": 21,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What improvements would make commuting easier in your city?",
+        "audio": null
+      },
+      "answer": {
+        "text": "From my perspective, more reliable buses and safer roads would make a big difference. I also think better sidewalks and bike lanes would give people more options. Small improvements can save commuters a lot of time.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc10016",
+      "type": "question-answer",
+      "order": 22,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think people should be paid for the time they spend commuting?",
+        "audio": null
+      },
+      "answer": {
+        "text": "That’s an interesting question. I think long commutes can take a real toll on personal time, but paying for every trip would be complicated. From my perspective, flexible schedules and remote-work options could be practical alternatives.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc10017",
+      "type": "question-answer",
+      "order": 23,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What would your ideal commute be like?",
+        "audio": null
+      },
+      "answer": {
+        "text": "My ideal commute would be short, safe, and predictable. I believe it should allow me to start the day without feeling rushed. If possible, I’d also like enough flexibility to avoid the busiest hours.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c0a91e00-24a7-4f4c-8b16-0000abc10018",
+      "type": "question-answer",
+      "order": 24,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "How do you think commuting will change in the next ten years?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I believe technology will make commuting more flexible, although change may be gradual. I think electric vehicles, better route planning, and hybrid work could all play a role. From my perspective, reliable public transit will still be essential.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": null,
+      "reviewStatus": "pending"
+    }
+  ]
+}
