@@ -7,6 +7,7 @@ import { readSmallTalkPersonalAnswers } from '../../services/smallTalkPersonalAn
 import type { SmallTalkItem, SmallTalkTopic, SmallTalkTopicIndexEntry, SmallTalkWalkingSettings } from '../../types/smallTalk';
 import { readLocalJson, readWalkingSettings, saveLocalJson, SMALL_TALK_FAVORITES_KEY, SMALL_TALK_WALKING_SETTINGS_KEY } from './smallTalkPreferences';
 import { SmallTalkWalking } from './SmallTalkWalking';
+import { celebrateAchievement } from '../../utils/achievements';
 import { readAnswerOverrides, saveAnswerOverride, restoreOriginalAnswer, pruneRedundantAnswerOverrides } from './smallTalkAnswerOverrides';
 import { readQuestionOverrides, saveQuestionOverride, restoreOriginalQuestion, pruneRedundantQuestionOverrides } from './smallTalkQuestionOverrides';
 import { createCustomItem, isCustomItems, mergeCustomItems, readCustomItems, setCustomItemDeleted, writeCustomItems, type CustomSmallTalkItems } from './smallTalkCustomItems';
@@ -672,6 +673,17 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   }
 
   if (walking) return <SmallTalkWalking items={sessionItems} settings={settings}
+    onComplete={() => {
+      const allQuestions = orderedTopicItems.filter(item => item.enabled && questionFor(item).trim());
+      const fullTopic = topic?.topicId === topicId && allQuestions.length > 0 &&
+        sessionItems.length === allQuestions.length &&
+        allQuestions.every(item => sessionItems.some(studied => studied.id === item.id));
+      if (fullTopic) {
+        celebrateAchievement(`small-talk-topic:${topicId}`, "Small Talk completo!", `Você praticou todas as perguntas de ${topic?.title ?? topicId}.`);
+      } else {
+        celebrateAchievement("walking-first-session", "Modo Caminhada concluído!", "Você completou sua primeira sessão de repetição em voz alta.");
+      }
+    }}
     onStudyState={onStudyState} onWalkingChange={onWalkingChange} onExit={() => { setWalking(false); onStudyState?.(false, 'walking'); }} />;
 
   return <section className="small-talk-page" aria-label="Small Talk">
