@@ -61430,6 +61430,7 @@
       "description": "Afirmação informal de confiança: eu consigo cuidar disso.",
       "category": "decisions-and-connectors",
       "allowLanguageChunkPractice": true,
+      "youtubeShort": "https://youtu.be/XtawPx2AQ0M",
       "searchTerms": [
         "i got this"
       ],
@@ -74193,7 +74194,7 @@
         "conversation",
         "informal language"
       ],
-      "structure": "'Whatever' can function as a standalone response without a subject or verb. Its meaning depends on tone and context. A curt delivery can signal irritation or contempt. For neutral choices, 'Either is fine' or 'I don't mind' is generally more polite.",
+      "structure": "'Whatever' can function as a standalone response without a subject or verb.",
       "examples": [
         {
           "id": "a72c4e83-5b96-4d31-8f12-c3e74a09d626",
