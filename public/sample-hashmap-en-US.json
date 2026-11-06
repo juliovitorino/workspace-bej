@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1264,
+    "totalIntentions": 1265,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -74360,6 +74360,121 @@
           "id": "f29193da-0a41-4278-9e67-b83c9f54c173",
           "exampleItem": "I don't give a shit what they say about my work.",
           "intent": "I don't give a shit"
+        }
+      ]
+    },
+    {
+      "id": "so-restamos-nos-aqui-8f42c7a1-6d95-4e30-9b21-a7e63c05d284",
+      "intention": "Only + person + left here",
+      "pattern": "It's just + person/object pronoun + left here",
+      "description": "Expresses that one or more people are still in a place after everyone else has left. In American English, 'It's just + person or object pronoun + left here' emphasizes who remains. The person can be me, you, him, her, us, them, or a combination of people. Another option is 'Subject + be + the only one(s) left here'. Here, 'left' means 'remaining', not the direction. The expression can convey surprise, loneliness, intimacy, or a simple observation.",
+      "category": "expressions",
+      "searchTerms": [
+        "it's just us left here",
+        "it's just me left here",
+        "it's just you left here",
+        "it's just him left here",
+        "it's just her left here",
+        "it's just them left here",
+        "it's just you and me left here",
+        "only two people are left here",
+        "we're the only ones left here",
+        "I'm the only one left here",
+        "only three students were left here"
+      ],
+      "validationPatterns": [
+        "\\bit(?:'s| is)\\s+just\\s+[^.!?\\r\\n]+?\\s+left\\s+here\\b",
+        "\\b(?:am|is|are|was|were|'m|'s|'re)\\s+the\\s+only\\s+ones?\\s+left\\s+here\\b",
+        "\\bonly\\s+[^.!?\\r\\n]+?\\s+(?:is|are|was|were)\\s+left\\s+here\\b"
+      ],
+      "tags": [
+        "remaining",
+        "exclusivity",
+        "people",
+        "pronouns",
+        "variable subjects",
+        "observation",
+        "sentence generator",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "It's + just + object pronoun or person + left + here. Object pronouns: me, you, him, her, us, them. Examples: 'It's just me left here', 'It's just you left here', 'It's just him left here', 'It's just her left here', 'It's just us left here', and 'It's just them left here'. For combinations: 'It's just you and me left here'. Alternatives: 'I'm the only one left here', 'She's the only one left here', or 'They're the only ones left here'. Use was or were when describing who remained in the past.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e92-5b96-4d80-8f12-c3e74a09d625",
+          "exampleItem": "It's just us left here.",
+          "intent": "It's just us left here"
+        },
+        {
+          "id": "b82d5f13-6c07-4e91-9a23-d4f85b10e736",
+          "exampleItem": "It's just me left here.",
+          "intent": "It's just me left here"
+        },
+        {
+          "id": "c93e6a24-7d18-4fa2-8b34-e5096c21f847",
+          "exampleItem": "It's just you left here.",
+          "intent": "It's just you left here"
+        },
+        {
+          "id": "d04f7b35-8e29-40b3-9c45-f61a7d32a958",
+          "exampleItem": "It's just him left here.",
+          "intent": "It's just him left here"
+        },
+        {
+          "id": "e1508c46-9f30-41c4-8d56-a72b8e43b069",
+          "exampleItem": "It's just her left here.",
+          "intent": "It's just her left here"
+        },
+        {
+          "id": "f2619d57-0a41-42d5-9e67-b83c9f54c170",
+          "exampleItem": "It's just them left here.",
+          "intent": "It's just them left here"
+        },
+        {
+          "id": "a372ae68-1b52-43e6-8f78-c94d0a65d281",
+          "exampleItem": "It's just them left here.",
+          "intent": "It's just them left here"
+        },
+        {
+          "id": "b483bf79-2c63-44f7-9089-da5e1b76e392",
+          "exampleItem": "It's just you and me left here.",
+          "intent": "It's just you and me left here"
+        },
+        {
+          "id": "c594c08a-3d74-4508-a19a-eb6f2c87f403",
+          "exampleItem": "After the meeting, it's just my boss and me left here.",
+          "intent": "it's just my boss and me left here"
+        },
+        {
+          "id": "d6a5d19b-4e85-4619-b2ab-fc703d980514",
+          "exampleItem": "Everyone has gone home. It's just my son left here.",
+          "intent": "It's just my son left here"
+        },
+        {
+          "id": "e7b6e2ac-5f96-472a-83bc-ad814e091625",
+          "exampleItem": "It looks like it's just the teachers left here.",
+          "intent": "it's just the teachers left here"
+        },
+        {
+          "id": "f8c7f3bd-6a07-483b-94cd-be925f102736",
+          "exampleItem": "It's already late, and it's just the two of us left here.",
+          "intent": "it's just the two of us left here"
+        },
+        {
+          "id": "a9d804ce-7b18-494c-85de-cf036a21b847",
+          "exampleItem": "After the guests left, my parents were the only ones left here.",
+          "intent": "my parents were the only ones left here"
+        },
+        {
+          "id": "b0e915df-8c29-405d-96ef-da147b32c958",
+          "exampleItem": "At the end of class, only three students were left here.",
+          "intent": "only three students were left here"
+        },
+        {
+          "id": "c1fa26e0-9d30-416e-87f0-eb258c43d069",
+          "exampleItem": "When the party ended, my sister was the only one left here.",
+          "intent": "my sister was the only one left here"
         }
       ]
     }

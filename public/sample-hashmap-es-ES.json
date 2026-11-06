@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1264,
+    "totalIntentions": 1265,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -50236,6 +50236,120 @@
         }
       ],
       "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "so-restamos-nos-aqui-8f42c7a1-6d95-4e30-9b21-a7e63c05d284",
+      "intention": "Solo quedar + persona + aquí",
+      "pattern": "solo + quedar conjugado + persona/pronombre + aquí",
+      "description": "Expresa que una o varias personas siguen en un lugar después de que las demás se hayan ido. En inglés americano, la construcción 'It’s just + persona o pronombre de objeto + left here' destaca quién sigue allí. El sujeto puede ser yo, tú, él, ella, nosotros, ellos o una combinación de personas. También se puede usar 'Subject + be + the only one(s) left here'. La palabra 'left' significa 'que queda' o 'que ha permanecido', y no la dirección izquierda. La expresión puede transmitir sorpresa, soledad, intimidad o una simple constatación.",
+      "category": "expressions",
+      "searchTerms": [
+        "solo quedamos nosotros aquí",
+        "solo quedo yo aquí",
+        "solo quedas tú aquí",
+        "solo queda él aquí",
+        "solo queda ella aquí",
+        "solo quedan ellos aquí",
+        "solo quedan ellas aquí",
+        "solo quedamos tú y yo aquí",
+        "solo quedan dos personas aquí",
+        "solo nosotros seguimos aquí",
+        "somos los únicos que quedan"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])solo\\s+qued(?:o|as|a|amos|áis|an|é|aste|ó|asteis|aron)\\s+.+?\\s+aquí(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:soy|eres|es|somos|sois|son)\\s+(?:el\\s+único|la\\s+única|los\\s+únicos|las\\s+únicas)\\s+que\\s+qued(?:o|as|a|amos|áis|an)\\s+aquí(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "permanencia",
+        "exclusividad",
+        "personas",
+        "pronombres",
+        "sujetos variables",
+        "constatación",
+        "generador de frases",
+        "conversación"
+      ],
+      "related": [],
+      "structure": "En español: solo + quedar conjugado + persona o pronombre + aquí. El verbo concuerda con quien permanece: 'Solo quedo yo aquí', 'Solo quedas tú aquí' o 'Solo quedamos nosotros aquí'. En inglés: It’s + just + pronombre de objeto o persona + left + here. Pronombres: me, you, him, her, us, them. Ejemplos: 'It’s just me left here', 'It’s just us left here' e 'It’s just you and me left here'. Alternativa: 'I’m the only one left here', 'She’s the only one left here' o 'They’re the only ones left here'.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e92-5b96-4d80-8f12-c3e74a09d625",
+          "exampleItem": "Solo quedamos nosotros aquí.",
+          "intent": "Solo quedamos nosotros aquí"
+        },
+        {
+          "id": "b82d5f13-6c07-4e91-9a23-d4f85b10e736",
+          "exampleItem": "Solo quedo yo aquí.",
+          "intent": "Solo quedo yo aquí"
+        },
+        {
+          "id": "c93e6a24-7d18-4fa2-8b34-e5096c21f847",
+          "exampleItem": "Solo quedas tú aquí.",
+          "intent": "Solo quedas tú aquí"
+        },
+        {
+          "id": "d04f7b35-8e29-40b3-9c45-f61a7d32a958",
+          "exampleItem": "Solo queda él aquí.",
+          "intent": "Solo queda él aquí"
+        },
+        {
+          "id": "e1508c46-9f30-41c4-8d56-a72b8e43b069",
+          "exampleItem": "Solo queda ella aquí.",
+          "intent": "Solo queda ella aquí"
+        },
+        {
+          "id": "f2619d57-0a41-42d5-9e67-b83c9f54c170",
+          "exampleItem": "Solo quedan ellos aquí.",
+          "intent": "Solo quedan ellos aquí"
+        },
+        {
+          "id": "a372ae68-1b52-43e6-8f78-c94d0a65d281",
+          "exampleItem": "Solo quedan ellas aquí.",
+          "intent": "Solo quedan ellas aquí"
+        },
+        {
+          "id": "b483bf79-2c63-44f7-9089-da5e1b76e392",
+          "exampleItem": "Solo quedamos tú y yo aquí.",
+          "intent": "Solo quedamos tú y yo aquí"
+        },
+        {
+          "id": "c594c08a-3d74-4508-a19a-eb6f2c87f403",
+          "exampleItem": "Después de la reunión, solo quedamos mi jefe y yo aquí.",
+          "intent": "solo quedamos mi jefe y yo aquí"
+        },
+        {
+          "id": "d6a5d19b-4e85-4619-b2ab-fc703d980514",
+          "exampleItem": "Todo el mundo se ha ido. Solo queda mi hijo aquí.",
+          "intent": "Solo queda mi hijo aquí"
+        },
+        {
+          "id": "e7b6e2ac-5f96-472a-83bc-ad814e091625",
+          "exampleItem": "Parece que solo quedan los profesores aquí.",
+          "intent": "solo quedan los profesores aquí"
+        },
+        {
+          "id": "f8c7f3bd-6a07-483b-94cd-be925f102736",
+          "exampleItem": "Ya es tarde y solo quedamos nosotros dos aquí.",
+          "intent": "solo quedamos nosotros dos aquí"
+        },
+        {
+          "id": "a9d804ce-7b18-494c-85de-cf036a21b847",
+          "exampleItem": "Después de que se fueran los invitados, solo quedaron mis padres aquí.",
+          "intent": "solo quedaron mis padres aquí"
+        },
+        {
+          "id": "b0e915df-8c29-405d-96ef-da147b32c958",
+          "exampleItem": "Al final de la clase, solo quedaron tres alumnos aquí.",
+          "intent": "solo quedaron tres alumnos aquí"
+        },
+        {
+          "id": "c1fa26e0-9d30-416e-87f0-eb258c43d069",
+          "exampleItem": "Cuando terminó la fiesta, solo quedó mi hermana aquí.",
+          "intent": "solo quedó mi hermana aquí"
+        }
+      ]
     }
   ]
 }

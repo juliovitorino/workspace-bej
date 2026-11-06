@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1264,
+    "totalIntentions": 1265,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -50784,6 +50784,118 @@
       ],
       "level": "B2",
       "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "so-restamos-nos-aqui-8f42c7a1-6d95-4e30-9b21-a7e63c05d284",
+      "intention": "Il ne reste que + personne + ici",
+      "pattern": "il + ne + rester conjugu? + que/qu? + personne ou pronom tonique + ici",
+      "description": "Indique qu?une ou plusieurs personnes sont encore pr?sentes dans un lieu apr?s le d?part des autres. En fran?ais, ? Il ne reste que + personne ou pronom tonique + ici ? met en relief les personnes qui restent. On peut employer moi, toi, lui, elle, nous, vous, eux, elles ou une combinaison de personnes. On peut aussi dire ? ?tre le seul / la seule / les seuls / les seules ? ?tre encore ici ?. La tournure peut exprimer la surprise, la solitude, l?intimit? ou une simple constatation.",
+      "category": "expressions",
+      "searchTerms": [
+        "il ne reste que nous ici",
+        "il ne reste que moi ici",
+        "il ne reste que toi ici",
+        "il ne reste que lui ici",
+        "il ne reste qu?elle ici",
+        "il ne reste qu?eux ici",
+        "il ne reste qu?elles ici",
+        "il ne reste que toi et moi ici",
+        "il ne reste que deux personnes ici",
+        "nous sommes les seuls ? ?tre encore ici"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])il\\s+ne\\s+rest(?:e|ait|era)\\s+qu(?:e\\s+|['?]).+?\\s+ici(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "pr?sence prolong?e",
+        "exclusivit?",
+        "personnes",
+        "pronoms",
+        "sujets variables",
+        "constatation",
+        "g?n?rateur de phrases",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Il ne reste que + personne ou pronom tonique + ici. Pronoms : moi, toi, lui, elle, nous, vous, eux, elles. Exemples : ? Il ne reste que moi ici ?, ? Il ne reste que nous ici ?, ? Il ne reste qu?elle ici ?, ? Il ne reste qu?eux ici ?. Pour plusieurs personnes : ? Il ne reste que toi et moi ici ?. Au pass? : ? Il ne restait que mes parents ici ?. Autre formulation : ? Je suis le seul / la seule ? ?tre encore ici ?, ? Nous sommes les seuls / les seules ? ?tre encore ici ?. Dans la construction impersonnelle, le verbe reste au singulier.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e92-5b96-4d80-8f12-c3e74a09d625",
+          "exampleItem": "Il ne reste que nous ici.",
+          "intent": "Il ne reste que nous ici"
+        },
+        {
+          "id": "b82d5f13-6c07-4e91-9a23-d4f85b10e736",
+          "exampleItem": "Il ne reste que moi ici.",
+          "intent": "Il ne reste que moi ici"
+        },
+        {
+          "id": "c93e6a24-7d18-4fa2-8b34-e5096c21f847",
+          "exampleItem": "Il ne reste que toi ici.",
+          "intent": "Il ne reste que toi ici"
+        },
+        {
+          "id": "d04f7b35-8e29-40b3-9c45-f61a7d32a958",
+          "exampleItem": "Il ne reste que lui ici.",
+          "intent": "Il ne reste que lui ici"
+        },
+        {
+          "id": "e1508c46-9f30-41c4-8d56-a72b8e43b069",
+          "exampleItem": "Il ne reste qu?elle ici.",
+          "intent": "Il ne reste qu?elle ici"
+        },
+        {
+          "id": "f2619d57-0a41-42d5-9e67-b83c9f54c170",
+          "exampleItem": "Il ne reste qu?eux ici.",
+          "intent": "Il ne reste qu?eux ici"
+        },
+        {
+          "id": "a372ae68-1b52-43e6-8f78-c94d0a65d281",
+          "exampleItem": "Il ne reste qu?elles ici.",
+          "intent": "Il ne reste qu?elles ici"
+        },
+        {
+          "id": "b483bf79-2c63-44f7-9089-da5e1b76e392",
+          "exampleItem": "Il ne reste que toi et moi ici.",
+          "intent": "Il ne reste que toi et moi ici"
+        },
+        {
+          "id": "c594c08a-3d74-4508-a19a-eb6f2c87f403",
+          "exampleItem": "Apr?s la r?union, il ne reste que mon chef et moi ici.",
+          "intent": "il ne reste que mon chef et moi ici"
+        },
+        {
+          "id": "d6a5d19b-4e85-4619-b2ab-fc703d980514",
+          "exampleItem": "Tout le monde est parti. Il ne reste que mon fils ici.",
+          "intent": "Il ne reste que mon fils ici"
+        },
+        {
+          "id": "e7b6e2ac-5f96-472a-83bc-ad814e091625",
+          "exampleItem": "On dirait qu?il ne reste que les professeurs ici.",
+          "intent": "il ne reste que les professeurs ici"
+        },
+        {
+          "id": "f8c7f3bd-6a07-483b-94cd-be925f102736",
+          "exampleItem": "Il est d?j? tard et il ne reste que nous deux ici.",
+          "intent": "il ne reste que nous deux ici"
+        },
+        {
+          "id": "a9d804ce-7b18-494c-85de-cf036a21b847",
+          "exampleItem": "Apr?s le d?part des invit?s, il ne restait que mes parents ici.",
+          "intent": "il ne restait que mes parents ici"
+        },
+        {
+          "id": "b0e915df-8c29-405d-96ef-da147b32c958",
+          "exampleItem": "? la fin du cours, il ne restait que trois ?l?ves ici.",
+          "intent": "il ne restait que trois ?l?ves ici"
+        },
+        {
+          "id": "c1fa26e0-9d30-416e-87f0-eb258c43d069",
+          "exampleItem": "Quand la f?te s?est termin?e, il ne restait que ma s?ur ici.",
+          "intent": "il ne restait que ma s?ur ici"
+        }
+      ]
     }
   ]
 }

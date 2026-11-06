@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1264,
+    "totalIntentions": 1265,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -49839,6 +49839,121 @@
           "id": "f29193da-0a41-4278-9e67-b83c9f54c173",
           "exampleItem": "Não me importo nem um pouco com o que dizem sobre meu trabalho.",
           "intent": "Não me importo nem um pouco"
+        }
+      ]
+    },
+    {
+      "id": "so-restamos-nos-aqui-8f42c7a1-6d95-4e30-9b21-a7e63c05d284",
+      "intention": "Só restar + pessoa + aqui",
+      "pattern": "só + restar conjugado + pessoa/pronome + aqui",
+      "description": "Expressa que uma ou mais pessoas continuam presentes em determinado lugar depois que as demais foram embora. Em inglês americano, a construção 'It's just + pessoa ou pronome objeto + left here' enfatiza quem ainda permanece. O sujeito pode variar entre eu, você, ele, ela, nós, eles ou combinações de pessoas. Também é possível utilizar a construção 'Subject + be + the only one(s) left here'. A palavra 'left' significa 'que restou' ou 'que permaneceu', e não a direção esquerda. A expressão pode transmitir surpresa, solidão, intimidade ou uma simples constatação.",
+      "category": "expressions",
+      "searchTerms": [
+        "só restamos nós aqui",
+        "só resto eu aqui",
+        "só resta você aqui",
+        "só resta ele aqui",
+        "só resta ela aqui",
+        "só restam eles aqui",
+        "só restam elas aqui",
+        "só resta a gente aqui",
+        "só restamos eu e você aqui",
+        "só restam duas pessoas aqui",
+        "somente nós permanecemos aqui",
+        "somos os únicos que restaram"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])só\\s+rest(?:o|a|amos|am)\\s+.+?\\s+aqui(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:sou|é|somos|são)\\s+(?:o\\s+único|a\\s+única|os\\s+únicos|as\\s+únicas)\\s+que\\s+rest(?:ou|aram)\\s+aqui(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "permanência",
+        "exclusividade",
+        "pessoas",
+        "pronomes",
+        "sujeitos variáveis",
+        "constatação",
+        "gerador de frases",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "It's + just + pronome objeto ou pessoa + left + here. Pronomes: me, you, him, her, us, them. Exemplos: 'It's just me left here', 'It's just you left here', 'It's just him left here', 'It's just her left here', 'It's just us left here' e 'It's just them left here'. Para combinações: 'It's just you and me left here'. Alternativa: 'I'm the only one left here', 'She's the only one left here' ou 'They're the only ones left here'. Em português, o verbo restar concorda com a pessoa ou grupo que permaneceu.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e92-5b96-4d80-8f12-c3e74a09d625",
+          "exampleItem": "Só restamos nós aqui.",
+          "intent": "Só restamos nós aqui"
+        },
+        {
+          "id": "b82d5f13-6c07-4e91-9a23-d4f85b10e736",
+          "exampleItem": "Só resto eu aqui.",
+          "intent": "Só resto eu aqui"
+        },
+        {
+          "id": "c93e6a24-7d18-4fa2-8b34-e5096c21f847",
+          "exampleItem": "Só resta você aqui.",
+          "intent": "Só resta você aqui"
+        },
+        {
+          "id": "d04f7b35-8e29-40b3-9c45-f61a7d32a958",
+          "exampleItem": "Só resta ele aqui.",
+          "intent": "Só resta ele aqui"
+        },
+        {
+          "id": "e1508c46-9f30-41c4-8d56-a72b8e43b069",
+          "exampleItem": "Só resta ela aqui.",
+          "intent": "Só resta ela aqui"
+        },
+        {
+          "id": "f2619d57-0a41-42d5-9e67-b83c9f54c170",
+          "exampleItem": "Só restam eles aqui.",
+          "intent": "Só restam eles aqui"
+        },
+        {
+          "id": "a372ae68-1b52-43e6-8f78-c94d0a65d281",
+          "exampleItem": "Só restam elas aqui.",
+          "intent": "Só restam elas aqui"
+        },
+        {
+          "id": "b483bf79-2c63-44f7-9089-da5e1b76e392",
+          "exampleItem": "Só restamos eu e você aqui.",
+          "intent": "Só restamos eu e você aqui"
+        },
+        {
+          "id": "c594c08a-3d74-4508-a19a-eb6f2c87f403",
+          "exampleItem": "Depois da reunião, só restamos eu e meu chefe aqui.",
+          "intent": "só restamos eu e meu chefe aqui"
+        },
+        {
+          "id": "d6a5d19b-4e85-4619-b2ab-fc703d980514",
+          "exampleItem": "Todo mundo foi embora. Só resta meu filho aqui.",
+          "intent": "Só resta meu filho aqui"
+        },
+        {
+          "id": "e7b6e2ac-5f96-472a-83bc-ad814e091625",
+          "exampleItem": "Parece que só restam os professores aqui.",
+          "intent": "só restam os professores aqui"
+        },
+        {
+          "id": "f8c7f3bd-6a07-483b-94cd-be925f102736",
+          "exampleItem": "Já está tarde e só restamos nós dois aqui.",
+          "intent": "só restamos nós dois aqui"
+        },
+        {
+          "id": "a9d804ce-7b18-494c-85de-cf036a21b847",
+          "exampleItem": "Depois que os convidados saíram, só restaram meus pais aqui.",
+          "intent": "só restaram meus pais aqui"
+        },
+        {
+          "id": "b0e915df-8c29-405d-96ef-da147b32c958",
+          "exampleItem": "No final da aula, só restaram três alunos aqui.",
+          "intent": "só restaram três alunos aqui"
+        },
+        {
+          "id": "c1fa26e0-9d30-416e-87f0-eb258c43d069",
+          "exampleItem": "Quando a festa terminou, só restou minha irmã aqui.",
+          "intent": "só restou minha irmã aqui"
         }
       ]
     }
