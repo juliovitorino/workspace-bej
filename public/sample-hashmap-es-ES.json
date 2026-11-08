@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1265,
+    "totalIntentions": 1268,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -50348,6 +50348,335 @@
           "id": "c1fa26e0-9d30-416e-87f0-eb258c43d069",
           "exampleItem": "Cuando terminó la fiesta, solo quedó mi hermana aquí.",
           "intent": "solo quedó mi hermana aquí"
+        }
+      ]
+    },
+    {
+      "id": "nao-acredito-que-ja-faz-6b2d8f41-9a73-4c50-8e16-d5f0a29c7b34",
+      "intention": "No me puedo creer que ya haga + periodo de tiempo",
+      "pattern": "no me puedo creer que ya haga + periodo de tiempo + desde que / desde + acontecimiento",
+      "description": "Expresa sorpresa, asombro o nostalgia al darse cuenta del tiempo transcurrido desde un acontecimiento. En inglés americano, una construcción muy natural es 'I can’t believe it’s been + periodo de tiempo + since + oración en pasado'. 'It’s been' es la contracción de 'it has been' y utiliza el presente perfecto para relacionar un periodo iniciado en el pasado con el momento actual. Se puede añadir 'already' para destacar que el tiempo ha pasado más deprisa de lo esperado. También se puede omitir 'since' si el acontecimiento ya está claro por el contexto. En español es natural decir 'No me puedo creer que ya haga…' o 'No me puedo creer que ya hayan pasado…'. La construcción inglesa utiliza 'it’s been', no una traducción literal con 'does'.",
+      "category": "expressions",
+      "searchTerms": [
+        "no me puedo creer que ya haga",
+        "no puedo creer que ya haga",
+        "no me puedo creer que ya hayan pasado",
+        "no me puedo creer que haya pasado tanto tiempo",
+        "cómo pasa el tiempo",
+        "desde la última vez",
+        "tiempo transcurrido",
+        "nostalgia"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])no\\s+(?:me\\s+puedo\\s+creer|puedo\\s+creer)\\s+que\\s+(?:ya\\s+)?(?:haga|hayan?\\s+pasado)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "sorpresa",
+        "paso del tiempo",
+        "tiempo transcurrido",
+        "presente perfecto",
+        "desde que",
+        "recuerdos",
+        "nostalgia",
+        "expresiones cotidianas",
+        "generador de frases",
+        "conversación"
+      ],
+      "related": [],
+      "structure": "En español: no me puedo creer + que + ya haga + periodo de tiempo + desde que + oración en pasado. Alternativa: no me puedo creer que ya hayan pasado + periodo de tiempo. En inglés: I can’t believe + it’s been + periodo de tiempo + since + sujeto + verbo en pasado simple.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a4e71b92-6c35-4f80-9d21-b7a05e3c1846",
+          "exampleItem": "¡No me puedo creer que ya haga un año!",
+          "intent": "No me puedo creer que ya haga"
+        },
+        {
+          "id": "b5f82ca3-7d46-4091-8e32-c8b16f4d2957",
+          "exampleItem": "No me puedo creer que ya haga dos años desde la última vez que hablamos.",
+          "intent": "No me puedo creer que ya haga"
+        },
+        {
+          "id": "c6093db4-8e57-41a2-9f43-d9c2705e3a68",
+          "exampleItem": "No me puedo creer que ya haga cinco años desde que empecé a trabajar aquí.",
+          "intent": "No me puedo creer que ya haga"
+        },
+        {
+          "id": "d71a4ec5-9f68-42b3-8054-ead3816f4b79",
+          "exampleItem": "No me puedo creer que ya haga seis meses desde que me compré la moto.",
+          "intent": "No me puedo creer que ya haga"
+        },
+        {
+          "id": "e82b5fd6-0a79-43c4-9165-fbe492705c80",
+          "exampleItem": "No me puedo creer que ya haga tres semanas desde que empezamos el proyecto.",
+          "intent": "No me puedo creer que ya haga"
+        },
+        {
+          "id": "f93c60e7-1b8a-44d5-8276-acf503816d91",
+          "exampleItem": "No me puedo creer que ya haga diez años desde que nos conocimos.",
+          "intent": "No me puedo creer que ya haga"
+        },
+        {
+          "id": "a04d71f8-2c9b-45e6-9387-bd0614927ea2",
+          "exampleItem": "No me puedo creer que ya haga tanto tiempo desde nuestro último viaje.",
+          "intent": "No me puedo creer que ya haga"
+        },
+        {
+          "id": "b15e8209-3dac-46f7-8498-ce1725a38fb3",
+          "exampleItem": "No me puedo creer que ya haga un mes desde que empecé a estudiar inglés todos los días.",
+          "intent": "No me puedo creer que ya haga"
+        },
+        {
+          "id": "c26f931a-4ebd-4708-95a9-df2836b490c4",
+          "exampleItem": "No me puedo creer que ya haga cuatro horas desde que llegamos aquí.",
+          "intent": "No me puedo creer que ya haga"
+        },
+        {
+          "id": "d370a42b-5fce-4819-86ba-e03947c5a1d5",
+          "exampleItem": "No me puedo creer que ya haga veinte años desde que terminé la carrera.",
+          "intent": "No me puedo creer que ya haga"
+        },
+        {
+          "id": "e481b53c-60df-492a-97cb-f14a58d6b2e6",
+          "exampleItem": "No me puedo creer que ya haga un año desde que ella se mudó a otro país.",
+          "intent": "No me puedo creer que ya haga"
+        },
+        {
+          "id": "f592c64d-71e0-4a3b-88dc-a25b69e7c3f7",
+          "exampleItem": "No me puedo creer que ya hayan pasado tres meses desde nuestro último encuentro.",
+          "intent": "No me puedo creer que ya hayan pasado"
+        },
+        {
+          "id": "a6a3d75e-82f1-4b4c-99ed-b36c70f8d408",
+          "exampleItem": "No me puedo creer que ya haga ocho años desde que mi hijo empezó a trabajar.",
+          "intent": "No me puedo creer que ya haga"
+        },
+        {
+          "id": "b7b4e86f-9302-4c5d-8afe-c47d8109e519",
+          "exampleItem": "No me puedo creer que ya haga una semana desde que hablamos de esto.",
+          "intent": "No me puedo creer que ya haga"
+        },
+        {
+          "id": "c8c5f970-a413-4d6e-9b0f-d58e921af62a",
+          "exampleItem": "No me puedo creer que ya haga dos meses desde que publiqué mi primer vídeo.",
+          "intent": "No me puedo creer que ya haga"
+        },
+        {
+          "id": "d9d60a81-b524-4e7f-8c10-e69fa32b073b",
+          "exampleItem": "No me puedo creer que ya haga quince años desde la última vez que nos vimos.",
+          "intent": "No me puedo creer que ya haga"
+        }
+      ]
+    },
+    {
+      "id": "estar-feliz-da-vida-6e91b4c8-2f73-4a05-9d62-c8e17f30a945",
+      "intention": "Estar encantado de la vida",
+      "pattern": "sujeto + estar/quedarse conjugado + encantado de la vida + complemento opcional",
+      "description": "Expresa una gran felicidad, satisfacción o alegría ante una situación. En inglés americano, la expresión idiomática '(as) happy as a pig in mud' compara la felicidad de alguien con lo a gusto que está un cerdo en el barro. Es informal, humorística y normalmente positiva. Puede describir a alguien muy satisfecho con algo sencillo, cómodo o placentero. Admite distintos sujetos y tiempos verbales. En español, 'estar encantado de la vida' es una equivalencia natural, mientras que 'estar más contento que unas castañuelas' ofrece una alternativa idiomática y coloquial.",
+      "category": "expressions",
+      "searchTerms": [
+        "estar encantado de la vida",
+        "estoy encantado de la vida",
+        "está encantada de la vida",
+        "estamos encantados de la vida",
+        "estar más contento que unas castañuelas",
+        "muy feliz",
+        "sumamente contento",
+        "radiante de felicidad",
+        "felicidad",
+        "satisfacción"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:estoy|estás|está|estamos|estáis|están|estaba|estabas|estábamos|estabais|estaban|estuve|estuviste|estuvo|estuvimos|estuvisteis|estuvieron|estaré|estarás|estará|estaremos|estaréis|estarán|estaría|estarías|estaríamos|estaríais|estarían|quedé|quedaste|quedó|quedamos|quedasteis|quedaron|quedar)\\s+encantad[oa]s?\\s+de\\s+la\\s+vida(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])más\\s+content[oa]s?\\s+que\\s+unas\\s+castañuelas(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "felicidad",
+        "alegría",
+        "satisfacción",
+        "emociones",
+        "expresiones idiomáticas",
+        "comparaciones",
+        "lenguaje informal",
+        "conversación",
+        "generador de frases"
+      ],
+      "related": [],
+      "structure": "En español: sujeto + estar + encantado/encantada/encantados/encantadas de la vida. También: quedarse encantado de la vida o estar más contento que unas castañuelas. En inglés: sujeto + be + (as) happy as a pig in mud. Presente: 'I’m as happy as a pig in mud', 'She’s as happy as a pig in mud'. Pasado: 'I was as happy as a pig in mud'. Futuro: 'I’ll be as happy as a pig in mud'. Para indicar la causa se puede usar 'with + sustantivo' o una oración contextual. Omitir el primer 'as' es una variante coloquial. Con sujetos plurales se puede adaptar 'pig' a 'pigs', aunque también se mantiene la expresión fija en singular. Es una expresión informal y humorística.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a14c8e72-3f95-4d60-8b21-e7a43c09f625",
+          "exampleItem": "¡Estoy encantado de la vida!",
+          "intent": "Estoy encantado de la vida"
+        },
+        {
+          "id": "b25d9f83-4a06-4e71-9c32-f8b54d10a736",
+          "exampleItem": "Ella está encantada de la vida con su nuevo trabajo.",
+          "intent": "está encantada de la vida"
+        },
+        {
+          "id": "c36e0a94-5b17-4f82-8d43-a9c65e21b847",
+          "exampleItem": "Él está encantado de la vida con su moto nueva.",
+          "intent": "está encantado de la vida"
+        },
+        {
+          "id": "d47f1ba5-6c28-4093-9e54-b0d76f32c958",
+          "exampleItem": "Estamos encantados de la vida con el resultado del proyecto.",
+          "intent": "Estamos encantados de la vida"
+        },
+        {
+          "id": "e5802cb6-7d39-41a4-8f65-c1e87043d069",
+          "exampleItem": "Los niños están encantados de la vida jugando en el patio.",
+          "intent": "están encantados de la vida"
+        },
+        {
+          "id": "f6913dc7-8e40-42b5-9076-d2f98154e170",
+          "exampleItem": "Yo estaba encantado de la vida durante las vacaciones.",
+          "intent": "estaba encantado de la vida"
+        },
+        {
+          "id": "a7a24ed8-9f51-43c6-8187-e30a9265f281",
+          "exampleItem": "Ella se quedó encantada de la vida cuando recibió la noticia.",
+          "intent": "se quedó encantada de la vida"
+        },
+        {
+          "id": "b8b35fe9-0a62-44d7-9298-f41ba376a392",
+          "exampleItem": "Ellos se quedaron encantados de la vida después del viaje.",
+          "intent": "se quedaron encantados de la vida"
+        },
+        {
+          "id": "c9c460fa-1b73-45e8-83a9-a52cb487b403",
+          "exampleItem": "Me voy a quedar encantado de la vida si consigo terminarlo todo hoy.",
+          "intent": "quedar encantado de la vida"
+        },
+        {
+          "id": "d0d571ab-2c84-46f9-94ba-b63dc598c514",
+          "exampleItem": "Con un buen libro y una taza de café, estoy encantado de la vida.",
+          "intent": "estoy encantado de la vida"
+        },
+        {
+          "id": "e1e682bc-3d95-470a-85cb-c74ed6a9d625",
+          "exampleItem": "Mi hijo estaba encantado de la vida con el regalo.",
+          "intent": "estaba encantado de la vida"
+        },
+        {
+          "id": "f2f793cd-4ea6-481b-96dc-d85fe7b0e736",
+          "exampleItem": "Después de resolver aquel problema tan difícil, me quedé encantado de la vida.",
+          "intent": "me quedé encantado de la vida"
+        },
+        {
+          "id": "a308a4de-5fb7-492c-87ed-e960f8c1f847",
+          "exampleItem": "Si pudiera pasarme el día entero leyendo, estaría encantado de la vida.",
+          "intent": "estaría encantado de la vida"
+        },
+        {
+          "id": "b419b5ef-60c8-4a3d-98fe-fa7109d2a958",
+          "exampleItem": "Cuando lleguemos a la playa, estaremos encantados de la vida.",
+          "intent": "estaremos encantados de la vida"
+        },
+        {
+          "id": "c52ac6f0-71d9-4b4e-890f-ab821ae3b069",
+          "exampleItem": "Está más contento que unas castañuelas desde que se compró el coche.",
+          "intent": "más contento que unas castañuelas"
+        }
+      ]
+    },
+    {
+      "id": "estar-de-saco-cheio-7c42e9a1-6d85-4f30-9b21-a8e73c05d264",
+      "intention": "Estar harto",
+      "pattern": "sujeto + estar conjugado + harto/harta/hartos/hartas + de + sustantivo o infinitivo",
+      "description": "Expresa frustración, irritación o pérdida de paciencia ante una situación desagradable, repetitiva o persistente. En inglés americano, la construcción más directa es 'be fed up', que puede funcionar sola o ir seguida de 'with + sustantivo o verbo terminado en -ing'. También hay alternativas como 'be sick and tired of' y 'have had enough of', que pueden expresar mayor intensidad. Normalmente indica cansancio emocional o agotamiento de la paciencia, y no simplemente cansancio físico.",
+      "category": "expressions",
+      "searchTerms": [
+        "estoy harto",
+        "estoy harta",
+        "estar harto de",
+        "está harto",
+        "estamos hartos",
+        "están hartos",
+        "estaba harto",
+        "no aguanto más",
+        "he perdido la paciencia",
+        "ya me he cansado de esto"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:estoy|estás|está|estamos|estáis|están|estaba|estabas|estábamos|estabais|estaban|estuve|estuviste|estuvo|estuvimos|estuvisteis|estuvieron)\\s+hart[oa]s?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:no\\s+aguanto\\s+más|ya\\s+me\\s+he\\s+cansado\\s+de\\s+esto)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "frustración",
+        "irritación",
+        "impaciencia",
+        "sentimientos",
+        "expresiones idiomáticas",
+        "lenguaje informal",
+        "generador de frases",
+        "conversación"
+      ],
+      "related": [],
+      "structure": "En español: sujeto + estar + harto/harta/hartos/hartas (+ de + sustantivo o infinitivo). En inglés: sujeto + be + fed up (+ with + sustantivo o verbo terminado en -ing). Presente: 'I’m fed up', 'You’re fed up', 'He’s fed up', 'She’s fed up', 'We’re fed up', 'They’re fed up'. Pasado: 'I was fed up', 'They were fed up'. Presente perfecto: 'I’ve been fed up with this for weeks'. La causa se introduce con 'with': 'I’m fed up with waiting'. Alternativas enfáticas: 'I’m sick and tired of…' y 'I’ve had enough of…'.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e92-5b96-4d80-8f12-c3e74a09d625",
+          "exampleItem": "¡Estoy harto!",
+          "intent": "Estoy harto"
+        },
+        {
+          "id": "b82d5f13-6c07-4e91-9a23-d4f85b10e736",
+          "exampleItem": "Estoy harto de esperar.",
+          "intent": "Estoy harto de"
+        },
+        {
+          "id": "c93e6a24-7d18-4fa2-8b34-e5096c21f847",
+          "exampleItem": "Estoy harto de esta situación.",
+          "intent": "Estoy harto"
+        },
+        {
+          "id": "d04f7b35-8e29-40b3-9c45-f61a7d32a958",
+          "exampleItem": "Ella está harta de oír excusas.",
+          "intent": "está harta de"
+        },
+        {
+          "id": "e1508c46-9f30-41c4-8d56-a72b8e43b069",
+          "exampleItem": "Él está harto del trabajo.",
+          "intent": "está harto"
+        },
+        {
+          "id": "f2619d57-0a41-42d5-9e67-b83c9f54c170",
+          "exampleItem": "Estamos hartos de estos problemas.",
+          "intent": "Estamos hartos"
+        },
+        {
+          "id": "a372ae68-1b52-43e6-8f78-c94d0a65d281",
+          "exampleItem": "Ellos están hartos de trabajar hasta tan tarde.",
+          "intent": "están hartos de"
+        },
+        {
+          "id": "b483bf79-2c63-44f7-9089-da5e1b76e392",
+          "exampleItem": "Yo estaba harto de aquella discusión.",
+          "intent": "estaba harto"
+        },
+        {
+          "id": "c594c08a-3d74-4508-a19a-eb6f2c87f403",
+          "exampleItem": "Ella estaba harta de quedarse en casa.",
+          "intent": "estaba harta de"
+        },
+        {
+          "id": "d6a5d19b-4e85-4619-b2ab-fc703d980514",
+          "exampleItem": "Estoy harto de corregir los mismos errores.",
+          "intent": "Estoy harto de"
+        },
+        {
+          "id": "e7b6e2ac-5f96-472a-83bc-ad814e091625",
+          "exampleItem": "Estamos hartos de participar en reuniones improductivas.",
+          "intent": "Estamos hartos de"
+        },
+        {
+          "id": "f8c7f3bd-6a07-483b-94cd-be925f102736",
+          "exampleItem": "Ya hace semanas que estoy harto de esta situación.",
+          "intent": "estoy harto"
         }
       ]
     }

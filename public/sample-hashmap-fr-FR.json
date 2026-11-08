@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1265,
+    "totalIntentions": 1268,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -50894,6 +50894,336 @@
           "id": "c1fa26e0-9d30-416e-87f0-eb258c43d069",
           "exampleItem": "Quand la f?te s?est termin?e, il ne restait que ma s?ur ici.",
           "intent": "il ne restait que ma s?ur ici"
+        }
+      ]
+    },
+    {
+      "id": "nao-acredito-que-ja-faz-6b2d8f41-9a73-4c50-8e16-d5f0a29c7b34",
+      "intention": "Je n’arrive pas à croire que ça fait déjà + durée",
+      "pattern": "je n’arrive pas à croire que + ça fait + déjà + durée + depuis que / depuis + événement",
+      "description": "Exprime la surprise, l’étonnement ou la nostalgie devant le temps écoulé depuis un événement. On dit naturellement « Je n’arrive pas à croire que ça fait déjà + durée + depuis que + proposition au passé ». « Déjà » souligne que le temps a passé plus vite que prévu. On peut omettre le point de départ s’il est clair dans le contexte. La tournure anglaise correspondante emploie le present perfect ; le français emploie ici le présent avec « ça fait ».",
+      "category": "expressions",
+      "searchTerms": [
+        "je n’arrive pas à croire que ça fait déjà",
+        "ça fait déjà un an",
+        "je n’en reviens pas",
+        "le temps passe vite",
+        "temps écoulé",
+        "depuis la dernière fois",
+        "depuis que c’est arrivé",
+        "nostalgie",
+        "surprise devant le temps écoulé"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])je\\s+n['’]arrive\\s+(?:vraiment\\s+)?pas\\s+à\\s+croire\\s+que\\s+ça\\s+fait(?:\\s+déjà)?(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "surprise",
+        "passage du temps",
+        "temps écoulé",
+        "present perfect en anglais",
+        "depuis que",
+        "souvenirs",
+        "nostalgie",
+        "expressions du quotidien",
+        "générateur de phrases",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Je n’arrive pas à croire que + ça fait + déjà + durée + depuis que + sujet + verbe au passé. Avec un nom : depuis + événement. Exemple : « Je n’arrive pas à croire que ça fait déjà deux ans depuis notre dernière conversation. »",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a4e71b92-6c35-4f80-9d21-b7a05e3c1846",
+          "exampleItem": "Je n’arrive pas à croire que ça fait déjà un an !",
+          "intent": "Je n’arrive pas à croire que ça fait déjà"
+        },
+        {
+          "id": "b5f82ca3-7d46-4091-8e32-c8b16f4d2957",
+          "exampleItem": "Je n’arrive pas à croire que ça fait déjà deux ans depuis notre dernière conversation.",
+          "intent": "Je n’arrive pas à croire que ça fait déjà"
+        },
+        {
+          "id": "c6093db4-8e57-41a2-9f43-d9c2705e3a68",
+          "exampleItem": "Je n’arrive pas à croire que ça fait déjà cinq ans depuis que j’ai commencé à travailler ici.",
+          "intent": "Je n’arrive pas à croire que ça fait déjà"
+        },
+        {
+          "id": "d71a4ec5-9f68-42b3-8054-ead3816f4b79",
+          "exampleItem": "Je n’arrive pas à croire que ça fait déjà six mois depuis que j’ai acheté ma moto.",
+          "intent": "Je n’arrive pas à croire que ça fait déjà"
+        },
+        {
+          "id": "e82b5fd6-0a79-43c4-9165-fbe492705c80",
+          "exampleItem": "Je n’arrive pas à croire que ça fait déjà trois semaines depuis le début du projet.",
+          "intent": "Je n’arrive pas à croire que ça fait déjà"
+        },
+        {
+          "id": "f93c60e7-1b8a-44d5-8276-acf503816d91",
+          "exampleItem": "Je n’arrive pas à croire que ça fait déjà dix ans depuis notre rencontre.",
+          "intent": "Je n’arrive pas à croire que ça fait déjà"
+        },
+        {
+          "id": "a04d71f8-2c9b-45e6-9387-bd0614927ea2",
+          "exampleItem": "Je n’arrive pas à croire que ça fait déjà si longtemps depuis notre dernier voyage.",
+          "intent": "Je n’arrive pas à croire que ça fait déjà"
+        },
+        {
+          "id": "b15e8209-3dac-46f7-8498-ce1725a38fb3",
+          "exampleItem": "Je n’arrive pas à croire que ça fait déjà un mois depuis que j’ai commencé à étudier l’anglais tous les jours.",
+          "intent": "Je n’arrive pas à croire que ça fait déjà"
+        },
+        {
+          "id": "c26f931a-4ebd-4708-95a9-df2836b490c4",
+          "exampleItem": "Je n’arrive pas à croire que ça fait déjà quatre heures depuis notre arrivée ici.",
+          "intent": "Je n’arrive pas à croire que ça fait déjà"
+        },
+        {
+          "id": "d370a42b-5fce-4819-86ba-e03947c5a1d5",
+          "exampleItem": "Je n’arrive pas à croire que ça fait déjà vingt ans depuis la fin de mes études universitaires.",
+          "intent": "Je n’arrive pas à croire que ça fait déjà"
+        },
+        {
+          "id": "e481b53c-60df-492a-97cb-f14a58d6b2e6",
+          "exampleItem": "Je n’arrive vraiment pas à croire que ça fait déjà un an depuis qu’elle est partie vivre à l’étranger.",
+          "intent": "Je n’arrive vraiment pas à croire que ça fait déjà"
+        },
+        {
+          "id": "f592c64d-71e0-4a3b-88dc-a25b69e7c3f7",
+          "exampleItem": "Je n’arrive pas à croire que ça fait déjà trois mois depuis notre dernier rendez-vous.",
+          "intent": "Je n’arrive pas à croire que ça fait déjà"
+        },
+        {
+          "id": "a6a3d75e-82f1-4b4c-99ed-b36c70f8d408",
+          "exampleItem": "Je n’arrive pas à croire que ça fait déjà huit ans depuis que mon fils a commencé à travailler.",
+          "intent": "Je n’arrive pas à croire que ça fait déjà"
+        },
+        {
+          "id": "b7b4e86f-9302-4c5d-8afe-c47d8109e519",
+          "exampleItem": "Je n’arrive pas à croire que ça fait déjà une semaine depuis notre discussion à ce sujet.",
+          "intent": "Je n’arrive pas à croire que ça fait déjà"
+        },
+        {
+          "id": "c8c5f970-a413-4d6e-9b0f-d58e921af62a",
+          "exampleItem": "Je n’arrive pas à croire que ça fait déjà deux mois depuis la publication de ma première vidéo.",
+          "intent": "Je n’arrive pas à croire que ça fait déjà"
+        },
+        {
+          "id": "d9d60a81-b524-4e7f-8c10-e69fa32b073b",
+          "exampleItem": "Je n’arrive pas à croire que ça fait déjà quinze ans depuis la dernière fois qu’on s’est vus.",
+          "intent": "Je n’arrive pas à croire que ça fait déjà"
+        }
+      ]
+    },
+    {
+      "id": "estar-feliz-da-vida-6e91b4c8-2f73-4a05-9d62-c8e17f30a945",
+      "intention": "Être heureux comme un poisson dans l’eau",
+      "pattern": "sujet + être/devenir + heureux/heureuse/heureux/heureuses + comme un poisson dans l’eau",
+      "description": "Exprime un grand bonheur, de la satisfaction ou un profond contentement. L’expression « être heureux comme un poisson dans l’eau » décrit une personne parfaitement à son aise et ravie de sa situation. Elle s’emploie pour des plaisirs simples, une activité agréable ou un cadre confortable. L’adjectif heureux s’accorde avec le sujet et la construction admet différents temps. « Être aux anges » est une autre façon naturelle d’exprimer une grande joie.",
+      "category": "expressions",
+      "searchTerms": [
+        "être heureux comme un poisson dans l’eau",
+        "être heureuse comme un poisson dans l’eau",
+        "être aux anges",
+        "être très heureux",
+        "être ravi",
+        "être comblé",
+        "bonheur",
+        "contentement",
+        "satisfaction",
+        "rayonner de bonheur"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])heureu(?:x|se|ses)\\s+comme\\s+(?:un\\s+poisson|des\\s+poissons)\\s+dans\\s+l['’]eau(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:suis|es|est|sommes|êtes|sont|étais|était|étions|étiez|étaient|serai|sera|serons|seront)\\s+aux\\s+anges(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bonheur",
+        "contentement",
+        "satisfaction",
+        "émotions",
+        "expressions idiomatiques",
+        "comparaisons",
+        "langage familier",
+        "conversation",
+        "générateur de phrases"
+      ],
+      "related": [],
+      "structure": "Sujet + être + heureux / heureuse / heureux / heureuses + comme un poisson dans l’eau. Présent : « Je suis heureux comme un poisson dans l’eau ». Passé : « Elle était heureuse comme un poisson dans l’eau ». Futur : « Nous serons heureux comme des poissons dans l’eau ». On peut préciser la cause avec un complément ou le contexte. Autre tournure : sujet + être + aux anges.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a14c8e72-3f95-4d60-8b21-e7a43c09f625",
+          "exampleItem": "Je suis heureux comme un poisson dans l’eau !",
+          "intent": "heureux comme un poisson dans l’eau"
+        },
+        {
+          "id": "b25d9f83-4a06-4e71-9c32-f8b54d10a736",
+          "exampleItem": "Elle est heureuse comme un poisson dans l’eau dans son nouvel emploi.",
+          "intent": "heureuse comme un poisson dans l’eau"
+        },
+        {
+          "id": "c36e0a94-5b17-4f82-8d43-a9c65e21b847",
+          "exampleItem": "Il est heureux comme un poisson dans l’eau avec sa nouvelle moto.",
+          "intent": "heureux comme un poisson dans l’eau"
+        },
+        {
+          "id": "d47f1ba5-6c28-4093-9e54-b0d76f32c958",
+          "exampleItem": "Nous sommes aux anges avec le résultat du projet.",
+          "intent": "sommes aux anges"
+        },
+        {
+          "id": "e5802cb6-7d39-41a4-8f65-c1e87043d069",
+          "exampleItem": "Les enfants sont heureux comme des poissons dans l’eau en jouant dans le jardin.",
+          "intent": "heureux comme des poissons dans l’eau"
+        },
+        {
+          "id": "f6913dc7-8e40-42b5-9076-d2f98154e170",
+          "exampleItem": "J’étais heureux comme un poisson dans l’eau pendant mes vacances.",
+          "intent": "heureux comme un poisson dans l’eau"
+        },
+        {
+          "id": "a7a24ed8-9f51-43c6-8187-e30a9265f281",
+          "exampleItem": "Elle était aux anges quand elle a appris la nouvelle.",
+          "intent": "était aux anges"
+        },
+        {
+          "id": "b8b35fe9-0a62-44d7-9298-f41ba376a392",
+          "exampleItem": "Ils étaient aux anges après le voyage.",
+          "intent": "étaient aux anges"
+        },
+        {
+          "id": "c9c460fa-1b73-45e8-83a9-a52cb487b403",
+          "exampleItem": "Je serai aux anges si j’arrive à tout finir aujourd’hui.",
+          "intent": "serai aux anges"
+        },
+        {
+          "id": "d0d571ab-2c84-46f9-94ba-b63dc598c514",
+          "exampleItem": "Avec un bon livre et une tasse de café, je suis heureux comme un poisson dans l’eau.",
+          "intent": "heureux comme un poisson dans l’eau"
+        },
+        {
+          "id": "e1e682bc-3d95-470a-85cb-c74ed6a9d625",
+          "exampleItem": "Mon fils était aux anges avec son cadeau.",
+          "intent": "était aux anges"
+        },
+        {
+          "id": "f2f793cd-4ea6-481b-96dc-d85fe7b0e736",
+          "exampleItem": "Après avoir résolu ce problème difficile, j’étais aux anges.",
+          "intent": "étais aux anges"
+        },
+        {
+          "id": "a308a4de-5fb7-492c-87ed-e960f8c1f847",
+          "exampleItem": "Si je pouvais passer toute la journée à lire, je serais heureux comme un poisson dans l’eau.",
+          "intent": "heureux comme un poisson dans l’eau"
+        },
+        {
+          "id": "b419b5ef-60c8-4a3d-98fe-fa7109d2a958",
+          "exampleItem": "Quand nous arriverons à la plage, nous serons heureux comme des poissons dans l’eau.",
+          "intent": "heureux comme des poissons dans l’eau"
+        },
+        {
+          "id": "c52ac6f0-71d9-4b4e-890f-ab821ae3b069",
+          "exampleItem": "Il est heureux comme un poisson dans l’eau depuis qu’il a acheté sa voiture.",
+          "intent": "heureux comme un poisson dans l’eau"
+        }
+      ]
+    },
+    {
+      "id": "estar-de-saco-cheio-7c42e9a1-6d85-4f30-9b21-a8e73c05d264",
+      "intention": "En avoir ras le bol",
+      "pattern": "sujet + en + avoir conjugué + ras le bol + de + nom ou infinitif",
+      "description": "Exprime la frustration, l’agacement ou la perte de patience face à une situation désagréable, répétitive ou persistante. L’expression familière « en avoir ras le bol » s’emploie seule ou suivie de « de + nom ou infinitif ». « En avoir assez » et « ne plus en pouvoir » sont d’autres possibilités selon le contexte et l’intensité. Il s’agit généralement de lassitude émotionnelle ou d’impatience plutôt que de simple fatigue physique.",
+      "category": "expressions",
+      "searchTerms": [
+        "j’en ai ras le bol",
+        "en avoir ras le bol",
+        "elle en a ras le bol",
+        "nous en avons ras le bol",
+        "ils en ont ras le bol",
+        "j’en avais ras le bol",
+        "j’en ai assez",
+        "je n’en peux plus",
+        "être excédé",
+        "perdre patience",
+        "en avoir marre"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:j['’]en\\s+(?:ai|avais|aurai)|(?:tu|il|elle|on|nous|vous|ils|elles)\\s+en\\s+(?:as|a|avons|avez|ont|avais|avait|avions|aviez|avaient|auras|aura|aurons|aurez|auront))\\s+ras\\s+le\\s+bol(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "frustration",
+        "agacement",
+        "impatience",
+        "sentiments",
+        "expressions idiomatiques",
+        "langage familier",
+        "générateur de phrases",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Sujet + en + avoir + ras le bol (+ de + nom ou infinitif). Présent : « J’en ai ras le bol », « Elle en a ras le bol », « Nous en avons ras le bol ». Passé : « J’en avais ras le bol ». Avec une cause : « J’en ai ras le bol d’attendre » ou « J’en ai ras le bol de cette situation ». Pour une durée : « Ça fait des semaines que j’en ai ras le bol ». Variantes : « J’en ai assez de… », « Je n’en peux plus de… ».",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e92-5b96-4d80-8f12-c3e74a09d625",
+          "exampleItem": "J’en ai ras le bol !",
+          "intent": "J’en ai ras le bol"
+        },
+        {
+          "id": "b82d5f13-6c07-4e91-9a23-d4f85b10e736",
+          "exampleItem": "J’en ai ras le bol d’attendre.",
+          "intent": "J’en ai ras le bol"
+        },
+        {
+          "id": "c93e6a24-7d18-4fa2-8b34-e5096c21f847",
+          "exampleItem": "J’en ai ras le bol de cette situation.",
+          "intent": "J’en ai ras le bol"
+        },
+        {
+          "id": "d04f7b35-8e29-40b3-9c45-f61a7d32a958",
+          "exampleItem": "Elle en a ras le bol d’entendre des excuses.",
+          "intent": "Elle en a ras le bol"
+        },
+        {
+          "id": "e1508c46-9f30-41c4-8d56-a72b8e43b069",
+          "exampleItem": "Il en a ras le bol du travail.",
+          "intent": "Il en a ras le bol"
+        },
+        {
+          "id": "f2619d57-0a41-42d5-9e67-b83c9f54c170",
+          "exampleItem": "Nous en avons ras le bol de ces problèmes.",
+          "intent": "Nous en avons ras le bol"
+        },
+        {
+          "id": "a372ae68-1b52-43e6-8f78-c94d0a65d281",
+          "exampleItem": "Ils en ont ras le bol de travailler tard.",
+          "intent": "Ils en ont ras le bol"
+        },
+        {
+          "id": "b483bf79-2c63-44f7-9089-da5e1b76e392",
+          "exampleItem": "J’en avais ras le bol de cette discussion.",
+          "intent": "J’en avais ras le bol"
+        },
+        {
+          "id": "c594c08a-3d74-4508-a19a-eb6f2c87f403",
+          "exampleItem": "Elle en avait ras le bol de rester à la maison.",
+          "intent": "Elle en avait ras le bol"
+        },
+        {
+          "id": "d6a5d19b-4e85-4619-b2ab-fc703d980514",
+          "exampleItem": "J’en ai ras le bol de corriger les mêmes erreurs.",
+          "intent": "J’en ai ras le bol"
+        },
+        {
+          "id": "e7b6e2ac-5f96-472a-83bc-ad814e091625",
+          "exampleItem": "Nous en avons ras le bol de participer à des réunions improductives.",
+          "intent": "Nous en avons ras le bol"
+        },
+        {
+          "id": "f8c7f3bd-6a07-483b-94cd-be925f102736",
+          "exampleItem": "Ça fait des semaines que j’en ai ras le bol de cette situation.",
+          "intent": "j’en ai ras le bol"
         }
       ]
     }

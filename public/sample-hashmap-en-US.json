@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1265,
+    "totalIntentions": 1268,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -74475,6 +74475,340 @@
           "id": "c1fa26e0-9d30-416e-87f0-eb258c43d069",
           "exampleItem": "When the party ended, my sister was the only one left here.",
           "intent": "my sister was the only one left here"
+        }
+      ]
+    },
+    {
+      "id": "nao-acredito-que-ja-faz-6b2d8f41-9a73-4c50-8e16-d5f0a29c7b34",
+      "intention": "I can't believe it's been + length of time",
+      "pattern": "I can't believe + it's been + length of time + since + event",
+      "description": "Expresses surprise, amazement, or nostalgia at how much time has passed since an event. In American English, a natural construction is 'I can't believe it's been + length of time + since + a clause in the simple past'. Here, 'it's been' is short for 'it has been'; the present perfect connects a period that began in the past to the present. Add 'already' to emphasize that time passed faster than expected. Omit 'since' when the event is clear from context. This expression describes elapsed time using 'it's been'.",
+      "category": "expressions",
+      "searchTerms": [
+        "I can't believe it's been",
+        "I can't believe it's already been",
+        "I cannot believe it has been",
+        "I can't believe so much time has passed",
+        "time flies",
+        "it's been so long",
+        "since the last time",
+        "since it happened",
+        "passage of time",
+        "surprised at how time flies"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+(?:can['?]t|cannot)\\s+believe\\s+it(?:['?]s|\\s+has)\\s+(?:already\\s+)?been\\b"
+      ],
+      "tags": [
+        "surprise",
+        "passage of time",
+        "elapsed time",
+        "present perfect",
+        "since",
+        "memories",
+        "nostalgia",
+        "everyday expressions",
+        "sentence generator",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "I can't believe + it's been + length of time + since + subject + verb in the simple past.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a4e71b92-6c35-4f80-9d21-b7a05e3c1846",
+          "exampleItem": "I can't believe it's already been a year!",
+          "intent": "I can't believe it's already been"
+        },
+        {
+          "id": "b5f82ca3-7d46-4091-8e32-c8b16f4d2957",
+          "exampleItem": "I can't believe it's already been two years since we last talked.",
+          "intent": "I can't believe it's already been"
+        },
+        {
+          "id": "c6093db4-8e57-41a2-9f43-d9c2705e3a68",
+          "exampleItem": "I can't believe it's already been five years since I started working here.",
+          "intent": "I can't believe it's already been"
+        },
+        {
+          "id": "d71a4ec5-9f68-42b3-8054-ead3816f4b79",
+          "exampleItem": "I can't believe it's already been six months since I bought my motorcycle.",
+          "intent": "I can't believe it's already been"
+        },
+        {
+          "id": "e82b5fd6-0a79-43c4-9165-fbe492705c80",
+          "exampleItem": "I can't believe it's already been three weeks since we started the project.",
+          "intent": "I can't believe it's already been"
+        },
+        {
+          "id": "f93c60e7-1b8a-44d5-8276-acf503816d91",
+          "exampleItem": "I can't believe it's already been ten years since we met.",
+          "intent": "I can't believe it's already been"
+        },
+        {
+          "id": "a04d71f8-2c9b-45e6-9387-bd0614927ea2",
+          "exampleItem": "I can't believe it's been so long since our last trip.",
+          "intent": "I can't believe it's been"
+        },
+        {
+          "id": "b15e8209-3dac-46f7-8498-ce1725a38fb3",
+          "exampleItem": "I can't believe it's already been a month since I started studying English every day.",
+          "intent": "I can't believe it's already been"
+        },
+        {
+          "id": "c26f931a-4ebd-4708-95a9-df2836b490c4",
+          "exampleItem": "I can't believe it's already been four hours since we got here.",
+          "intent": "I can't believe it's already been"
+        },
+        {
+          "id": "d370a42b-5fce-4819-86ba-e03947c5a1d5",
+          "exampleItem": "I can't believe it's already been twenty years since I graduated from college.",
+          "intent": "I can't believe it's already been"
+        },
+        {
+          "id": "e481b53c-60df-492a-97cb-f14a58d6b2e6",
+          "exampleItem": "I can't believe it's already been a year since she moved to another country.",
+          "intent": "I can't believe it's already been"
+        },
+        {
+          "id": "f592c64d-71e0-4a3b-88dc-a25b69e7c3f7",
+          "exampleItem": "I can't believe it's already been three months since we last got together.",
+          "intent": "I can't believe it's already been"
+        },
+        {
+          "id": "a6a3d75e-82f1-4b4c-99ed-b36c70f8d408",
+          "exampleItem": "I can't believe it's already been eight years since my son started working.",
+          "intent": "I can't believe it's already been"
+        },
+        {
+          "id": "b7b4e86f-9302-4c5d-8afe-c47d8109e519",
+          "exampleItem": "I can't believe it's already been a week since we talked about this.",
+          "intent": "I can't believe it's already been"
+        },
+        {
+          "id": "c8c5f970-a413-4d6e-9b0f-d58e921af62a",
+          "exampleItem": "I can't believe it's already been two months since I posted my first video.",
+          "intent": "I can't believe it's already been"
+        },
+        {
+          "id": "d9d60a81-b524-4e7f-8c10-e69fa32b073b",
+          "exampleItem": "I can't believe it's already been fifteen years since we last saw each other.",
+          "intent": "I can't believe it's already been"
+        }
+      ]
+    },
+    {
+      "id": "estar-feliz-da-vida-6e91b4c8-2f73-4a05-9d62-c8e17f30a945",
+      "intention": "Be as happy as a pig in mud",
+      "pattern": "Subject + be/become + (as) happy as a pig in mud + optional complement",
+      "description": "Expresses great happiness, satisfaction, or contentment with a situation. The American English idiom '(as) happy as a pig in mud' compares a person's happiness to a pig's comfort in mud. It is informal, humorous, and generally positive. It can describe someone who is extremely content with something simple, comfortable, or enjoyable. Use it with different subjects and verb tenses. The expression emphasizes being very happy or thoroughly content.",
+      "category": "expressions",
+      "searchTerms": [
+        "be as happy as a pig in mud",
+        "I'm as happy as a pig in mud",
+        "she's as happy as a pig in mud",
+        "we're as happy as pigs in mud",
+        "happy as a pig in mud",
+        "very happy",
+        "extremely happy",
+        "thoroughly content",
+        "delighted",
+        "happiness",
+        "contentment"
+      ],
+      "validationPatterns": [
+        "\\b(?:as\\s+)?happy\\s+as\\s+(?:a\\s+pig|pigs)\\s+in\\s+mud\\b"
+      ],
+      "tags": [
+        "happiness",
+        "contentment",
+        "satisfaction",
+        "emotions",
+        "idioms",
+        "comparisons",
+        "informal language",
+        "conversation",
+        "sentence generator"
+      ],
+      "related": [],
+      "structure": "Subject + be + (as) happy as a pig in mud. Present: 'I'm as happy as a pig in mud', 'She's as happy as a pig in mud', 'They're as happy as pigs in mud'. Past: 'I was as happy as a pig in mud', 'We were as happy as pigs in mud'. Future: 'I'll be as happy as a pig in mud'. Use 'with + noun' or a contextual clause to explain the cause of the happiness. The initial 'as' completes the comparison; 'happy as a pig in mud' is a colloquial variant. With plural subjects, 'pigs in mud' is possible, though the fixed singular form is also used. This is an informal, humorous expression.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a14c8e72-3f95-4d60-8b21-e7a43c09f625",
+          "exampleItem": "I'm as happy as a pig in mud!",
+          "intent": "I'm as happy as a pig in mud"
+        },
+        {
+          "id": "b25d9f83-4a06-4e71-9c32-f8b54d10a736",
+          "exampleItem": "She's as happy as a pig in mud with her new job.",
+          "intent": "She's as happy as a pig in mud"
+        },
+        {
+          "id": "c36e0a94-5b17-4f82-8d43-a9c65e21b847",
+          "exampleItem": "He's as happy as a pig in mud with his new motorcycle.",
+          "intent": "He's as happy as a pig in mud"
+        },
+        {
+          "id": "d47f1ba5-6c28-4093-9e54-b0d76f32c958",
+          "exampleItem": "We're as happy as pigs in mud with how the project turned out.",
+          "intent": "We're as happy as pigs in mud"
+        },
+        {
+          "id": "e5802cb6-7d39-41a4-8f65-c1e87043d069",
+          "exampleItem": "The kids are as happy as pigs in mud playing in the backyard.",
+          "intent": "are as happy as pigs in mud"
+        },
+        {
+          "id": "f6913dc7-8e40-42b5-9076-d2f98154e170",
+          "exampleItem": "I was as happy as a pig in mud during my vacation.",
+          "intent": "was as happy as a pig in mud"
+        },
+        {
+          "id": "a7a24ed8-9f51-43c6-8187-e30a9265f281",
+          "exampleItem": "She was as happy as a pig in mud when she heard the news.",
+          "intent": "was as happy as a pig in mud"
+        },
+        {
+          "id": "b8b35fe9-0a62-44d7-9298-f41ba376a392",
+          "exampleItem": "They were as happy as pigs in mud after the trip.",
+          "intent": "were as happy as pigs in mud"
+        },
+        {
+          "id": "c9c460fa-1b73-45e8-83a9-a52cb487b403",
+          "exampleItem": "I'll be as happy as a pig in mud if I can finish everything today.",
+          "intent": "be as happy as a pig in mud"
+        },
+        {
+          "id": "d0d571ab-2c84-46f9-94ba-b63dc598c514",
+          "exampleItem": "With a good book and a cup of coffee, I'm as happy as a pig in mud.",
+          "intent": "I'm as happy as a pig in mud"
+        },
+        {
+          "id": "e1e682bc-3d95-470a-85cb-c74ed6a9d625",
+          "exampleItem": "My son was as happy as a pig in mud with his gift.",
+          "intent": "was as happy as a pig in mud"
+        },
+        {
+          "id": "f2f793cd-4ea6-481b-96dc-d85fe7b0e736",
+          "exampleItem": "After solving that difficult problem, I was as happy as a pig in mud.",
+          "intent": "was as happy as a pig in mud"
+        },
+        {
+          "id": "a308a4de-5fb7-492c-87ed-e960f8c1f847",
+          "exampleItem": "If I could spend the whole day reading, I'd be as happy as a pig in mud.",
+          "intent": "be as happy as a pig in mud"
+        },
+        {
+          "id": "b419b5ef-60c8-4a3d-98fe-fa7109d2a958",
+          "exampleItem": "When we get to the beach, we'll be as happy as pigs in mud.",
+          "intent": "be as happy as pigs in mud"
+        },
+        {
+          "id": "c52ac6f0-71d9-4b4e-890f-ab821ae3b069",
+          "exampleItem": "He's been as happy as a pig in mud since he bought the car.",
+          "intent": "as happy as a pig in mud"
+        }
+      ]
+    },
+    {
+      "id": "estar-de-saco-cheio-7c42e9a1-6d85-4f30-9b21-a8e73c05d264",
+      "intention": "Be fed up",
+      "pattern": "Subject + be + fed up (+ with + noun or -ing form)",
+      "description": "Expresses frustration, irritation, or a loss of patience with an unpleasant, repetitive, or persistent situation. In American English, 'be fed up' can stand alone or be followed by 'with + noun or -ing form'. Alternatives such as 'be sick and tired of' and 'have had enough of' can convey greater intensity. The expression usually refers to emotional exhaustion or running out of patience rather than simply being physically tired.",
+      "category": "expressions",
+      "searchTerms": [
+        "I'm fed up",
+        "be fed up",
+        "she's fed up",
+        "we're fed up",
+        "they're fed up",
+        "I was fed up",
+        "I can't take it anymore",
+        "I'm sick and tired of",
+        "I have had enough",
+        "I lost my patience",
+        "I'm tired of this"
+      ],
+      "validationPatterns": [
+        "\\b(?:am|is|are|was|were|be|been|being)\\s+fed\\s+up\\b",
+        "['?](?:m|s|re)\\s+fed\\s+up\\b",
+        "\\b(?:am|is|are|was|were|be|been)\\s+sick\\s+and\\s+tired\\s+of\\b",
+        "\\b(?:have|has|had|['?]ve|['?]s)\\s+had\\s+enough\\s+of\\b"
+      ],
+      "tags": [
+        "frustration",
+        "irritation",
+        "impatience",
+        "feelings",
+        "idioms",
+        "informal language",
+        "sentence generator",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Subject + be + fed up (+ with + noun/-ing form). Present: 'I'm fed up', 'You're fed up', 'He's fed up', 'She's fed up', 'We're fed up', 'They're fed up'. Past: 'I was fed up', 'They were fed up'. Present perfect: 'I've been fed up with this for weeks'. Specify the cause of the frustration with 'with + noun' or 'with + an -ing form', as in 'I'm fed up with waiting'. Emphatic alternatives: 'I'm sick and tired of...' and 'I've had enough of...'.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e92-5b96-4d80-8f12-c3e74a09d625",
+          "exampleItem": "I'm fed up!",
+          "intent": "I'm fed up"
+        },
+        {
+          "id": "b82d5f13-6c07-4e91-9a23-d4f85b10e736",
+          "exampleItem": "I'm fed up with waiting.",
+          "intent": "I'm fed up with"
+        },
+        {
+          "id": "c93e6a24-7d18-4fa2-8b34-e5096c21f847",
+          "exampleItem": "I'm fed up with this situation.",
+          "intent": "I'm fed up"
+        },
+        {
+          "id": "d04f7b35-8e29-40b3-9c45-f61a7d32a958",
+          "exampleItem": "She's fed up with hearing excuses.",
+          "intent": "She's fed up with"
+        },
+        {
+          "id": "e1508c46-9f30-41c4-8d56-a72b8e43b069",
+          "exampleItem": "He's fed up with work.",
+          "intent": "He's fed up"
+        },
+        {
+          "id": "f2619d57-0a41-42d5-9e67-b83c9f54c170",
+          "exampleItem": "We're fed up with these problems.",
+          "intent": "We're fed up"
+        },
+        {
+          "id": "a372ae68-1b52-43e6-8f78-c94d0a65d281",
+          "exampleItem": "They're fed up with working late.",
+          "intent": "They're fed up with"
+        },
+        {
+          "id": "b483bf79-2c63-44f7-9089-da5e1b76e392",
+          "exampleItem": "I was fed up with that argument.",
+          "intent": "was fed up"
+        },
+        {
+          "id": "c594c08a-3d74-4508-a19a-eb6f2c87f403",
+          "exampleItem": "She was fed up with staying home.",
+          "intent": "was fed up with"
+        },
+        {
+          "id": "d6a5d19b-4e85-4619-b2ab-fc703d980514",
+          "exampleItem": "I'm fed up with correcting the same mistakes.",
+          "intent": "I'm fed up with"
+        },
+        {
+          "id": "e7b6e2ac-5f96-472a-83bc-ad814e091625",
+          "exampleItem": "We're fed up with attending unproductive meetings.",
+          "intent": "We're fed up with"
+        },
+        {
+          "id": "f8c7f3bd-6a07-483b-94cd-be925f102736",
+          "exampleItem": "I've been fed up with this situation for weeks.",
+          "intent": "been fed up"
         }
       ]
     }

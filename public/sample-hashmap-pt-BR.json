@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1265,
+    "totalIntentions": 1268,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -49954,6 +49954,347 @@
           "id": "c1fa26e0-9d30-416e-87f0-eb258c43d069",
           "exampleItem": "Quando a festa terminou, só restou minha irmã aqui.",
           "intent": "só restou minha irmã aqui"
+        }
+      ]
+    },
+    {
+      "id": "nao-acredito-que-ja-faz-6b2d8f41-9a73-4c50-8e16-d5f0a29c7b34",
+      "intention": "Não acredito que já faz + período de tempo",
+      "pattern": "não acredito que já faz + período de tempo + desde que / desde + acontecimento",
+      "description": "Expressa surpresa, espanto ou nostalgia ao perceber quanto tempo passou desde determinado acontecimento. Em inglês americano, uma das construções mais naturais é 'I can't believe it's been + período de tempo + since + oração no passado'. A expressão 'it's been' é a contração de 'it has been' e utiliza o present perfect para relacionar um período iniciado no passado ao momento atual. O advérbio 'already' pode ser acrescentado para enfatizar que o tempo passou mais rapidamente do que o esperado. A construção também pode aparecer sem 'since' quando o acontecimento já está claro no contexto. Em português brasileiro, é comum dizer 'não acredito que já faz', enquanto em inglês a estrutura correspondente utiliza 'it's been', e não uma tradução literal com 'does'.",
+      "category": "expressions",
+      "searchTerms": [
+        "não acredito que já faz",
+        "não acredito que faz",
+        "nem acredito que já faz",
+        "não acredito que já se passaram",
+        "nem acredito que já se passaram",
+        "não acredito que passou tanto tempo",
+        "como o tempo passou rápido",
+        "já faz tanto tempo",
+        "desde a última vez",
+        "desde que aconteceu",
+        "passagem do tempo",
+        "surpresa com o tempo"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:não|nem)\\s+acredito\\s+que\\s+(?:já\\s+)?faz(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:não|nem)\\s+acredito\\s+que\\s+(?:já\\s+)?se\\s+pass(?:ou|aram)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])não\\s+acredito\\s+que\\s+passou\\s+tanto\\s+tempo(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "surpresa",
+        "passagem do tempo",
+        "tempo decorrido",
+        "present perfect",
+        "desde que",
+        "memórias",
+        "nostalgia",
+        "expressões cotidianas",
+        "gerador de frases",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "I can't believe + it's been + período de tempo + since + sujeito + verbo no simple past.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a4e71b92-6c35-4f80-9d21-b7a05e3c1846",
+          "exampleItem": "Não acredito que já faz um ano!",
+          "intent": "Não acredito que já faz"
+        },
+        {
+          "id": "b5f82ca3-7d46-4091-8e32-c8b16f4d2957",
+          "exampleItem": "Não acredito que já faz dois anos desde a última vez que conversamos.",
+          "intent": "Não acredito que já faz"
+        },
+        {
+          "id": "c6093db4-8e57-41a2-9f43-d9c2705e3a68",
+          "exampleItem": "Não acredito que já faz cinco anos desde que comecei a trabalhar aqui.",
+          "intent": "Não acredito que já faz"
+        },
+        {
+          "id": "d71a4ec5-9f68-42b3-8054-ead3816f4b79",
+          "exampleItem": "Não acredito que já faz seis meses desde que comprei minha motocicleta.",
+          "intent": "Não acredito que já faz"
+        },
+        {
+          "id": "e82b5fd6-0a79-43c4-9165-fbe492705c80",
+          "exampleItem": "Não acredito que já faz três semanas desde que começamos o projeto.",
+          "intent": "Não acredito que já faz"
+        },
+        {
+          "id": "f93c60e7-1b8a-44d5-8276-acf503816d91",
+          "exampleItem": "Não acredito que já faz dez anos desde que nos conhecemos.",
+          "intent": "Não acredito que já faz"
+        },
+        {
+          "id": "a04d71f8-2c9b-45e6-9387-bd0614927ea2",
+          "exampleItem": "Não acredito que já faz tanto tempo desde a nossa última viagem.",
+          "intent": "Não acredito que já faz"
+        },
+        {
+          "id": "b15e8209-3dac-46f7-8498-ce1725a38fb3",
+          "exampleItem": "Não acredito que já faz um mês desde que comecei a estudar inglês todos os dias.",
+          "intent": "Não acredito que já faz"
+        },
+        {
+          "id": "c26f931a-4ebd-4708-95a9-df2836b490c4",
+          "exampleItem": "Não acredito que já faz quatro horas desde que chegamos aqui.",
+          "intent": "Não acredito que já faz"
+        },
+        {
+          "id": "d370a42b-5fce-4819-86ba-e03947c5a1d5",
+          "exampleItem": "Não acredito que já faz vinte anos desde que terminei a faculdade.",
+          "intent": "Não acredito que já faz"
+        },
+        {
+          "id": "e481b53c-60df-492a-97cb-f14a58d6b2e6",
+          "exampleItem": "Nem acredito que já faz um ano desde que ela se mudou para outro país.",
+          "intent": "Nem acredito que já faz"
+        },
+        {
+          "id": "f592c64d-71e0-4a3b-88dc-a25b69e7c3f7",
+          "exampleItem": "Não acredito que já se passaram três meses desde o nosso último encontro.",
+          "intent": "Não acredito que já se passaram"
+        },
+        {
+          "id": "a6a3d75e-82f1-4b4c-99ed-b36c70f8d408",
+          "exampleItem": "Não acredito que já faz oito anos desde que meu filho começou a trabalhar.",
+          "intent": "Não acredito que já faz"
+        },
+        {
+          "id": "b7b4e86f-9302-4c5d-8afe-c47d8109e519",
+          "exampleItem": "Não acredito que já faz uma semana desde que conversamos sobre isso.",
+          "intent": "Não acredito que já faz"
+        },
+        {
+          "id": "c8c5f970-a413-4d6e-9b0f-d58e921af62a",
+          "exampleItem": "Não acredito que já faz dois meses desde que publiquei meu primeiro vídeo.",
+          "intent": "Não acredito que já faz"
+        },
+        {
+          "id": "d9d60a81-b524-4e7f-8c10-e69fa32b073b",
+          "exampleItem": "Não acredito que já faz quinze anos desde que nos vimos pela última vez.",
+          "intent": "Não acredito que já faz"
+        }
+      ]
+    },
+    {
+      "id": "estar-feliz-da-vida-6e91b4c8-2f73-4a05-9d62-c8e17f30a945",
+      "intention": "Estar feliz da vida",
+      "pattern": "sujeito + estar/ficar conjugado + feliz da vida + complemento opcional",
+      "description": "Expressa um estado de grande felicidade, satisfação ou contentamento com determinada situação. Em inglês americano, a expressão idiomática '(as) happy as a pig in mud' compara a felicidade de uma pessoa ao conforto de um porco na lama. É utilizada de maneira informal, bem-humorada e geralmente positiva. Pode descrever alguém que está extremamente satisfeito com algo simples, confortável ou prazeroso. A construção admite diferentes sujeitos e tempos verbais. Em português brasileiro, 'estar feliz da vida' é uma equivalência natural, enquanto 'mais feliz que pinto no lixo' representa uma alternativa idiomática mais coloquial.",
+      "category": "expressions",
+      "searchTerms": [
+        "estar feliz da vida",
+        "estou feliz da vida",
+        "está feliz da vida",
+        "estamos felizes da vida",
+        "estão felizes da vida",
+        "ficar feliz da vida",
+        "ficou feliz da vida",
+        "muito feliz",
+        "extremamente feliz",
+        "satisfeito da vida",
+        "mais feliz que pinto no lixo",
+        "radiante de felicidade",
+        "felicidade",
+        "contentamento"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:estou|tô|está|estamos|estão|estava|estávamos|estavam|estive|esteve|estivemos|estiveram|estarei|estará|estaremos|estarão)\\s+feliz(?:es)?\\s+da\\s+vida(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:fico|fica|ficamos|ficam|fiquei|ficou|ficaram|ficarei|ficará|ficaremos|ficarão)\\s+feliz(?:es)?\\s+da\\s+vida(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:mais\\s+feliz(?:es)?\\s+que\\s+pinto(?:s)?\\s+no\\s+lixo)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "felicidade",
+        "contentamento",
+        "satisfação",
+        "emoções",
+        "expressões idiomáticas",
+        "comparações",
+        "linguagem informal",
+        "conversação",
+        "gerador de frases"
+      ],
+      "related": [],
+      "structure": "Subject + be + (as) happy as a pig in mud. Presente: 'I'm as happy as a pig in mud', 'She's as happy as a pig in mud', 'They're as happy as pigs in mud'. Passado: 'I was as happy as a pig in mud', 'We were as happy as pigs in mud'. Futuro: 'I'll be as happy as a pig in mud'. Para indicar a causa da felicidade, pode-se usar 'with + substantivo' ou uma oração contextual. A forma com 'as' inicial é uma comparação completa, enquanto 'happy as a pig in mud' é uma variante coloquial. No plural, 'pigs in mud' é uma adaptação possível, embora a forma singular fixa também seja utilizada com sujeitos plurais. Expressão informal e bem-humorada.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a14c8e72-3f95-4d60-8b21-e7a43c09f625",
+          "exampleItem": "Estou feliz da vida!",
+          "intent": "Estou feliz da vida"
+        },
+        {
+          "id": "b25d9f83-4a06-4e71-9c32-f8b54d10a736",
+          "exampleItem": "Ela está feliz da vida com o emprego novo.",
+          "intent": "está feliz da vida"
+        },
+        {
+          "id": "c36e0a94-5b17-4f82-8d43-a9c65e21b847",
+          "exampleItem": "Ele está feliz da vida com a motocicleta nova.",
+          "intent": "está feliz da vida"
+        },
+        {
+          "id": "d47f1ba5-6c28-4093-9e54-b0d76f32c958",
+          "exampleItem": "Estamos felizes da vida com o resultado do projeto.",
+          "intent": "Estamos felizes da vida"
+        },
+        {
+          "id": "e5802cb6-7d39-41a4-8f65-c1e87043d069",
+          "exampleItem": "As crianças estão felizes da vida brincando no quintal.",
+          "intent": "estão felizes da vida"
+        },
+        {
+          "id": "f6913dc7-8e40-42b5-9076-d2f98154e170",
+          "exampleItem": "Eu estava feliz da vida durante minhas férias.",
+          "intent": "estava feliz da vida"
+        },
+        {
+          "id": "a7a24ed8-9f51-43c6-8187-e30a9265f281",
+          "exampleItem": "Ela ficou feliz da vida quando recebeu a notícia.",
+          "intent": "ficou feliz da vida"
+        },
+        {
+          "id": "b8b35fe9-0a62-44d7-9298-f41ba376a392",
+          "exampleItem": "Eles ficaram felizes da vida depois da viagem.",
+          "intent": "ficaram felizes da vida"
+        },
+        {
+          "id": "c9c460fa-1b73-45e8-83a9-a52cb487b403",
+          "exampleItem": "Vou ficar feliz da vida se conseguir terminar tudo hoje.",
+          "intent": "ficar feliz da vida"
+        },
+        {
+          "id": "d0d571ab-2c84-46f9-94ba-b63dc598c514",
+          "exampleItem": "Com um bom livro e uma xícara de café, fico feliz da vida.",
+          "intent": "fico feliz da vida"
+        },
+        {
+          "id": "e1e682bc-3d95-470a-85cb-c74ed6a9d625",
+          "exampleItem": "Meu filho estava feliz da vida com o presente.",
+          "intent": "estava feliz da vida"
+        },
+        {
+          "id": "f2f793cd-4ea6-481b-96dc-d85fe7b0e736",
+          "exampleItem": "Depois de resolver aquele problema difícil, fiquei feliz da vida.",
+          "intent": "fiquei feliz da vida"
+        },
+        {
+          "id": "a308a4de-5fb7-492c-87ed-e960f8c1f847",
+          "exampleItem": "Se eu pudesse passar o dia inteiro lendo, estaria feliz da vida.",
+          "intent": "estaria feliz da vida"
+        },
+        {
+          "id": "b419b5ef-60c8-4a3d-98fe-fa7109d2a958",
+          "exampleItem": "Quando chegarmos à praia, estaremos felizes da vida.",
+          "intent": "estaremos felizes da vida"
+        },
+        {
+          "id": "c52ac6f0-71d9-4b4e-890f-ab821ae3b069",
+          "exampleItem": "Ele está mais feliz que pinto no lixo desde que comprou o carro.",
+          "intent": "mais feliz que pinto no lixo"
+        }
+      ]
+    },
+    {
+      "id": "estar-de-saco-cheio-7c42e9a1-6d85-4f30-9b21-a8e73c05d264",
+      "intention": "Estar de saco cheio",
+      "pattern": "sujeito + estar conjugado + de saco cheio + de + substantivo ou verbo no infinitivo",
+      "description": "Expressa frustração, irritação ou perda de paciência diante de uma situação desagradável, repetitiva ou persistente. Em inglês americano, a construção mais direta é 'be fed up', que pode funcionar isoladamente ou ser seguida de 'with + substantivo ou verbo com -ing'. Também existem alternativas como 'be sick and tired of' e 'have had enough of', que podem transmitir maior intensidade. A expressão geralmente indica cansaço emocional ou esgotamento da paciência, e não simplesmente cansaço físico.",
+      "category": "expressions",
+      "searchTerms": [
+        "estou de saco cheio",
+        "tô de saco cheio",
+        "estar de saco cheio",
+        "está de saco cheio",
+        "estamos de saco cheio",
+        "estão de saco cheio",
+        "estava de saco cheio",
+        "não aguento mais",
+        "estou farto",
+        "perdi a paciência",
+        "cansei disso"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:estou|tô|está|estamos|estão|estava|estávamos|estavam|estive|esteve|estivemos|estiveram)\\s+de\\s+saco\\s+cheio(?:s)?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:não\\s+aguento\\s+mais|cansei\\s+disso)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "frustração",
+        "irritação",
+        "impaciência",
+        "sentimentos",
+        "expressões idiomáticas",
+        "linguagem informal",
+        "gerador de frases",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "Subject + be + fed up (+ with + noun/verb-ing). Presente: 'I'm fed up', 'You're fed up', 'He's fed up', 'She's fed up', 'We're fed up', 'They're fed up'. Passado: 'I was fed up', 'They were fed up'. Presente perfeito: 'I've been fed up with this for weeks'. Para especificar a causa da frustração, usar 'with + substantivo' ou 'with + verbo terminado em -ing'. Exemplo: 'I'm fed up with waiting'. Alternativas enfáticas: 'I'm sick and tired of...' e 'I've had enough of...'.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e92-5b96-4d80-8f12-c3e74a09d625",
+          "exampleItem": "Estou de saco cheio!",
+          "intent": "Estou de saco cheio"
+        },
+        {
+          "id": "b82d5f13-6c07-4e91-9a23-d4f85b10e736",
+          "exampleItem": "Estou de saco cheio de esperar.",
+          "intent": "Estou de saco cheio de"
+        },
+        {
+          "id": "c93e6a24-7d18-4fa2-8b34-e5096c21f847",
+          "exampleItem": "Estou de saco cheio dessa situação.",
+          "intent": "Estou de saco cheio"
+        },
+        {
+          "id": "d04f7b35-8e29-40b3-9c45-f61a7d32a958",
+          "exampleItem": "Ela está de saco cheio de ouvir desculpas.",
+          "intent": "está de saco cheio de"
+        },
+        {
+          "id": "e1508c46-9f30-41c4-8d56-a72b8e43b069",
+          "exampleItem": "Ele está de saco cheio do trabalho.",
+          "intent": "está de saco cheio"
+        },
+        {
+          "id": "f2619d57-0a41-42d5-9e67-b83c9f54c170",
+          "exampleItem": "Estamos de saco cheio desses problemas.",
+          "intent": "Estamos de saco cheio"
+        },
+        {
+          "id": "a372ae68-1b52-43e6-8f78-c94d0a65d281",
+          "exampleItem": "Eles estão de saco cheio de trabalhar até tarde.",
+          "intent": "estão de saco cheio de"
+        },
+        {
+          "id": "b483bf79-2c63-44f7-9089-da5e1b76e392",
+          "exampleItem": "Eu estava de saco cheio daquela discussão.",
+          "intent": "estava de saco cheio"
+        },
+        {
+          "id": "c594c08a-3d74-4508-a19a-eb6f2c87f403",
+          "exampleItem": "Ela estava de saco cheio de ficar em casa.",
+          "intent": "estava de saco cheio de"
+        },
+        {
+          "id": "d6a5d19b-4e85-4619-b2ab-fc703d980514",
+          "exampleItem": "Estou de saco cheio de corrigir os mesmos erros.",
+          "intent": "Estou de saco cheio de"
+        },
+        {
+          "id": "e7b6e2ac-5f96-472a-83bc-ad814e091625",
+          "exampleItem": "Estamos de saco cheio de participar de reuniões improdutivas.",
+          "intent": "Estamos de saco cheio de"
+        },
+        {
+          "id": "f8c7f3bd-6a07-483b-94cd-be925f102736",
+          "exampleItem": "Já faz semanas que estou de saco cheio dessa situação.",
+          "intent": "estou de saco cheio"
         }
       ]
     }
