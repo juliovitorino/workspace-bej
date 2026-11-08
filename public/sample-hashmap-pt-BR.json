@@ -50297,6 +50297,120 @@
           "intent": "estou de saco cheio"
         }
       ]
+    },
+    {
+      "id": "falar-da-boca-pra-fora-9c41e7a2-6d85-4f30-8b21-a5e73c09d462",
+      "intention": "Falar da boca pra fora",
+      "pattern": "sujeito + falar/dizer conjugado + algo + da boca pra fora",
+      "description": "Expressa que alguém diz alguma coisa sem realmente acreditar no que está dizendo, sem sinceridade ou sem ter a intenção verdadeira de sustentar aquela afirmação. Em inglês americano, uma construção natural é 'say something without really meaning it'. Quando a intenção é enfatizar a ausência de convicção, pode-se utilizar 'say something you don't really believe'. A expressão também pode aparecer em frases como 'He said it, but he didn't really mean it'. É importante observar que 'mean it' está relacionado à sinceridade ou à intenção verdadeira por trás das palavras, enquanto 'believe it' enfatiza acreditar naquilo que foi dito. A expressão não deve ser confundida com falar sem pensar, pois alguém pode falar deliberadamente da boca pra fora.",
+      "category": "expressions",
+      "searchTerms": [
+        "falar da boca pra fora",
+        "falar da boca para fora",
+        "dizer da boca pra fora",
+        "disse da boca pra fora",
+        "falou da boca pra fora",
+        "estou falando da boca pra fora",
+        "não acreditar no que diz",
+        "não acreditar no que está dizendo",
+        "dizer sem acreditar",
+        "falar sem sinceridade",
+        "dizer sem realmente querer dizer",
+        "palavras vazias",
+        "falar sem convicção"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:falar|falando|falo|fala|falamos|falam|falei|falou|falaram|falava|falavam|disse|dizer|diz|dizem|dizendo)\\b[^.!?]{0,100}?\\bda\\s+boca\\s+(?:pra|para)\\s+fora(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])da\\s+boca\\s+(?:pra|para)\\s+fora(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:não\\s+acredito|não\\s+acredita|não\\s+acreditam)\\s+no\\s+que\\s+(?:digo|diz|dizem|estou\\s+dizendo|está\\s+dizendo|estão\\s+dizendo)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "falta de sinceridade",
+        "ausência de convicção",
+        "expressões idiomáticas",
+        "intenções",
+        "opiniões",
+        "sentimentos",
+        "comunicação",
+        "linguagem informal",
+        "gerador de frases",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "A intenção expressa uma afirmação feita sem sinceridade ou sem convicção verdadeira. Em português, pode ser construída com um sujeito, o verbo falar ou dizer conjugado, um complemento opcional e a expressão 'da boca pra fora'. Em inglês americano, utiliza-se frequentemente o verbo 'say' acompanhado de uma indicação de que a pessoa não estava sendo sincera. A construção 'without really meaning it' enfatiza que as palavras não expressam a verdadeira intenção de quem fala. A construção 'without really believing it' enfatiza que a pessoa não acredita naquilo que afirma. Para situações passadas, pode-se utilizar 'said it but didn't really mean it'. Os sujeitos, os tempos verbais e os complementos podem variar. É importante distinguir a falta de sinceridade da simples ausência de reflexão antes de falar.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Eu falei aquilo da boca pra fora.",
+          "intent": "falei aquilo da boca pra fora"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Ela disse aquilo da boca pra fora.",
+          "intent": "disse aquilo da boca pra fora"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Ele está falando da boca pra fora.",
+          "intent": "falando da boca pra fora"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Você está falando isso da boca pra fora?",
+          "intent": "falando isso da boca pra fora"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Eles falaram da boca pra fora quando disseram que apoiavam o projeto.",
+          "intent": "falaram da boca pra fora"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Eu não quero falar da boca pra fora.",
+          "intent": "falar da boca pra fora"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Ela falou que estava feliz por mim, mas foi da boca pra fora.",
+          "intent": "da boca pra fora"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Não diga que acredita em mim se for da boca pra fora.",
+          "intent": "da boca pra fora"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Ele disse que concordava comigo, mas falou da boca pra fora.",
+          "intent": "falou da boca pra fora"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Eu não acredito no que estou dizendo. Estou falando da boca pra fora.",
+          "intent": "Estou falando da boca pra fora"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "Nós falamos aquilo da boca pra fora porque não queríamos discutir.",
+          "intent": "falamos aquilo da boca pra fora"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "Ela costuma falar da boca pra fora quando quer agradar alguém.",
+          "intent": "falar da boca pra fora"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "Você realmente acredita nisso ou está falando da boca pra fora?",
+          "intent": "falando da boca pra fora"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "Eu nunca falaria uma coisa dessas da boca pra fora.",
+          "intent": "da boca pra fora"
+        }
+      ]
     }
   ]
 }
