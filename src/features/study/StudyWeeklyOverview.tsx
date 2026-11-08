@@ -1,4 +1,4 @@
-import { useMemo, useState, type CSSProperties } from "react";
+import { useMemo, useRef, useState, type CSSProperties } from "react";
 import { useTranslation } from "react-i18next";
 import { EXTRA_CATEGORIES, STUDY_MODULES, type ExtraCategory, type StudyData, type StudyModule } from "./studyStorage";
 import { STUDY_MODULE_COLORS, STUDY_MODULE_ICONS } from "./studyModuleColors";
@@ -13,12 +13,24 @@ type WeekSelection = { kind: "category"; key: ExtraCategory } | { kind: "module"
 export function StudyWeeklyOverview({ data, now, hideZeroData = false, moduleLabel }: { data: StudyData; now: Date; hideZeroData?: boolean; moduleLabel: (module: StudyModule) => string }) {
   const { t, i18n } = useTranslation();
   const [selected, setSelected] = useState<WeekSelection | null>(null);
-  const selectAndScroll = (selection: WeekSelection) => {
-    setSelected(current => current?.kind === selection.kind && current.key === selection.key ? null : selection);
+  // Keep the exact clicked card as the return destination, without relying on fixed IDs.
+  const selectedCardRef = useRef<HTMLButtonElement | null>(null);
+  const scrollBehavior = (): ScrollBehavior => window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth";
+  const selectAndScroll = (selection: WeekSelection, card: HTMLButtonElement) => {
+    const alreadySelected = selected?.kind === selection.kind && selected.key === selection.key;
+    selectedCardRef.current = alreadySelected ? null : card;
+    setSelected(alreadySelected ? null : selection);
     document.getElementById("bej-week-time-title")?.scrollIntoView({
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+      behavior: scrollBehavior(),
       block: "start"
     });
+  };
+  const returnToSelectedCard = () => {
+    const card = selectedCardRef.current;
+    if (!card?.isConnected) return;
+    card.scrollIntoView({ behavior: scrollBehavior(), block: "center" });
+    // Restore keyboard orientation without cancelling the smooth scroll.
+    card.focus({ preventScroll: true });
   };
   const week = useMemo(() => {
     const today = localDay(now);
@@ -102,7 +114,7 @@ export function StudyWeeklyOverview({ data, now, hideZeroData = false, moduleLab
       <div className="bej-week-days" role="list" aria-label={t("bejOverview.weeklyActivity")}>
         {week.days.map(day => { const seconds = week.byDay.get(day) ?? 0; const active = seconds >= 60; const future = day > week.today; const todayInProgress = day === week.today; return <div className="bej-week-day" key={day} role="listitem" aria-label={`${fmt(day, { weekday: "long", day: "numeric", month: "long" })}: ${future ? t("bejOverview.future") : todayInProgress ? `${t("bejOverview.inProgress")}${seconds > 0 ? ` · ${time(seconds)}` : ""}` : active ? time(seconds) : t("bejOverview.noStudy")}`}><span className="bej-week-day-name">{fmt(day, { weekday: "short" }).replace(".", "").slice(0, 3)}</span><span className="bej-week-day-number">{Number(day.slice(-2))}</span><span className={`bej-week-day-box${active && !todayInProgress ? " is-active" : ""}${todayInProgress ? " is-in-progress" : ""}`}>{todayInProgress ? "◷" : active ? "✓" : "—"}</span></div>; })}
       </div>
-      <div className="bej-streak-bottom"><h4>{t("bejOverview.weeklyExtra")}</h4><div className="bej-category-mini-grid">{week.categories.filter(({ days }) => !hideZeroData || days > 0).map(({ category, days }) => <button type="button" className={`bej-category-mini bej-category-${category}${days === 0 ? " is-zero-study" : ""}${selected?.kind === "category" && selected.key === category ? " is-selected" : ""}`} key={category} aria-pressed={selected?.kind === "category" && selected.key === category} aria-label={`${t(`extras.categories.${category}`)}: ${days} / 7 ${t("bejOverview.days")}`} onClick={() => selectAndScroll({ kind: "category", key: category })}><div className="bej-category-mini-label"><span className="bej-category-icon" aria-hidden="true">{categoryIcons[category]}</span><span>{t(`extras.categories.${category}`)}</span></div><strong>{days} / 7 {t("bejOverview.days")}</strong><div className="bej-mini-track"><span style={{ width: `${days / 7 * 100}%` }} /></div></button>)}</div></div>
+      <div className="bej-streak-bottom"><h4>{t("bejOverview.weeklyExtra")}</h4><div className="bej-category-mini-grid">{week.categories.filter(({ days }) => !hideZeroData || days > 0).map(({ category, days }) => <button type="button" className={`bej-category-mini bej-category-${category}${days === 0 ? " is-zero-study" : ""}${selected?.kind === "category" && selected.key === category ? " is-selected" : ""}`} key={category} aria-pressed={selected?.kind === "category" && selected.key === category} aria-label={`${t(`extras.categories.${category}`)}: ${days} / 7 ${t("bejOverview.days")}`} onClick={event => selectAndScroll({ kind: "category", key: category }, event.currentTarget)}><div className="bej-category-mini-label"><span className="bej-category-icon" aria-hidden="true">{categoryIcons[category]}</span><span>{t(`extras.categories.${category}`)}</span></div><strong>{days} / 7 {t("bejOverview.days")}</strong><div className="bej-mini-track"><span style={{ width: `${days / 7 * 100}%` }} /></div></button>)}</div></div>
       <div className="bej-streak-bottom bej-streak-modules">
         <h4>{t("study.byModule")}</h4>
         <div className="bej-category-mini-grid bej-module-mini-grid">
@@ -114,7 +126,7 @@ export function StudyWeeklyOverview({ data, now, hideZeroData = false, moduleLab
               style={{ "--category-color": STUDY_MODULE_COLORS[module] ?? "#438cf5" } as CSSProperties}
               aria-pressed={isSelected}
               aria-label={`${label}: ${days} / 7 ${t("bejOverview.days")}`}
-              onClick={() => selectAndScroll({ kind: "module", key: module })}>
+              onClick={event => selectAndScroll({ kind: "module", key: module }, event.currentTarget)}>
               <div className="bej-category-mini-label">
                 <span className="bej-category-icon" aria-hidden="true">{STUDY_MODULE_ICONS[module] ?? "📘"}</span>
                 <span>{label}</span>
@@ -126,7 +138,15 @@ export function StudyWeeklyOverview({ data, now, hideZeroData = false, moduleLab
         </div>
       </div>
     </section>
-    <section className="study-panel bej-week-time" aria-labelledby="bej-week-time-title"><div className="bej-card-heading"><div><h3 id="bej-week-time-title"><span aria-hidden="true">◷</span> {t("bejOverview.studyTime")}</h3><p>{t("bejOverview.currentWeek")}{selected ? ` · ${selectedLabel}` : ""}</p></div></div><div className="bej-week-total">{time(weekTotal)}</div>
+    <section className="study-panel bej-week-time" aria-labelledby="bej-week-time-title"><div className="bej-card-heading"><div><h3 id="bej-week-time-title"><span aria-hidden="true">◷</span> {t("bejOverview.studyTime")}</h3><p>{t("bejOverview.currentWeek")}{selected ? ` · ${selectedLabel}` : ""}</p></div>
+      {selected && <button type="button" className="bej-week-return-button" onClick={returnToSelectedCard}
+        aria-label={`Voltar ao card ${selectedLabel} no Days Streak`}
+        title={`Voltar para ${selectedLabel}`}>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="m12 19 0-14" /><path d="m5 12 7-7 7 7" />
+        </svg>
+      </button>}
+      </div><div className="bej-week-total">{time(weekTotal)}</div>
       <div className="bej-week-average" role="status" aria-label={`Média diária: ${time(Math.round(dailyAverage))}, calculada sobre ${studiedDays} dias estudados`}>
         <span className="bej-week-average-key" aria-hidden="true" />
         <span>Média por dia estudado: <strong>{time(Math.round(dailyAverage))}</strong> <span className="bej-week-average-days">({studiedDays} {studiedDays === 1 ? "dia" : "dias"})</span></span>
