@@ -83,4 +83,16 @@ duplicate.onend(); duplicate.onend(); duplicate.onerror();
 assert.equal(successful, 1);
 assert.equal(pending.length, 1);
 audio.cancel();
-console.log('Walking Mode: mobile detection, localized speech, five repetitions, timing, voice/rate, errors and cancellation passed.');
+// WRG walking: preserve default order, shuffle without replacement, and never mutate source data.
+const { orderWalkingItems } = await load('../src/features/would-you-rather/wyrWalkingOrder.ts');
+const source = Object.freeze([{ id: 'a' }, { id: 'b' }, { id: 'c' }, { id: 'd' }]);
+const sequential = orderWalkingItems(source, false, () => { throw new Error('No randomness expected in sequential mode'); });
+assert.deepEqual(sequential.map(item => item.id), ['a', 'b', 'c', 'd']);
+assert.notStrictEqual(sequential, source);
+const randomized = orderWalkingItems(source, true, () => 0);
+assert.deepEqual(randomized.map(item => item.id), ['b', 'c', 'd', 'a']);
+assert.deepEqual(source.map(item => item.id), ['a', 'b', 'c', 'd']);
+assert.equal(new Set(randomized.map(item => item.id)).size, source.length);
+assert.deepEqual(orderWalkingItems([], true), []);
+assert.deepEqual(orderWalkingItems([{ id: 'single' }], true), [{ id: 'single' }]);
+console.log('Walking Mode: mobile detection, localized speech, five repetitions, timing, voice/rate, errors and cancellation and WRG random ordering passed.');
