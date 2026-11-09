@@ -50411,6 +50411,289 @@
           "intent": "da boca pra fora"
         }
       ]
+    },
+    {
+      "id": "como-voce-chegou-conseguiu-ficou-8c42e7a1-6d95-4f30-9b21-a5e73c08d462",
+      "intention": "Como você chegou / conseguiu / ficou...?",
+      "pattern": "como + sujeito + chegou / conseguiu / ficou + complemento",
+      "description": "Utilizada para perguntar como alguém chegou a determinado lugar, conseguiu alguma coisa ou passou a apresentar uma característica ou condição. Em inglês americano, a estrutura 'How did + sujeito + get + complemento?' permite formular perguntas no passado sobre deslocamento, obtenção e mudança de estado. O significado do verbo 'get' depende do complemento. Com lugares, pode significar chegar; com objetos, informações ou oportunidades, pode significar conseguir ou obter; com adjetivos, pode indicar tornar-se ou ficar de determinada maneira. O auxiliar 'did' marca o passado, por isso o verbo principal permanece na forma base 'get', independentemente do sujeito.",
+      "category": "questions",
+      "searchTerms": [
+        "como você chegou",
+        "como ele chegou",
+        "como ela chegou",
+        "como vocês chegaram",
+        "como eles chegaram",
+        "como você conseguiu",
+        "como ele conseguiu",
+        "como ela conseguiu",
+        "como você ficou",
+        "como ele ficou",
+        "como ela ficou",
+        "como você se tornou",
+        "como você obteve",
+        "como você arranjou",
+        "como você ficou tão bom",
+        "como você chegou até aqui",
+        "como você conseguiu isso"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])como\\s+(?:eu|você|vocês|ele|ela|nós|eles|elas|a\\s+gente|[\\p{L}]+)\\s+(?:cheguei|chegou|chegamos|chegaram|consegui|conseguiu|conseguimos|conseguiram|fiquei|ficou|ficamos|ficaram|obtive|obteve|obtivemos|obtiveram|arranjei|arranjou|arranjamos|arranjaram)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])como\\s+(?:você|ele|ela|vocês|eles|elas)\\s+(?:se\\s+tornou|se\\s+tornaram)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "perguntas",
+        "passado simples",
+        "verbo get",
+        "deslocamento",
+        "obtenção",
+        "mudança de estado",
+        "sujeitos variáveis",
+        "expressões cotidianas",
+        "gerador de frases",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "A intenção permite perguntar como uma pessoa chegou a um lugar, conseguiu alguma coisa ou ficou de determinada maneira. Em inglês americano, a pergunta começa com 'How', seguida do auxiliar 'did', do sujeito, do verbo 'get' e de um complemento. O auxiliar 'did' indica que a pergunta está no passado, portanto o verbo 'get' não deve ser conjugado como 'got' nessa construção. O sujeito pode variar entre 'I', 'you', 'he', 'she', 'we' e 'they'. Quando o complemento indica um lugar, como 'here' ou 'home', a pergunta trata da chegada. Quando indica um objeto, informação ou oportunidade, como 'this job' ou 'that information', a pergunta trata de obtenção. Quando o complemento é um adjetivo ou expressão de estado, como 'so good at English', a pergunta trata de uma transformação ou mudança de condição. A interpretação correta depende do complemento e do contexto. Expressões como 'get rid of', 'get into' e 'get involved' devem ser estudadas separadamente por apresentarem significados próprios.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Como você chegou aqui?",
+          "intent": "Como você chegou"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Como você chegou em casa ontem à noite?",
+          "intent": "Como você chegou"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Como ela chegou ao trabalho tão cedo?",
+          "intent": "Como ela chegou"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Como eles chegaram até aqui?",
+          "intent": "Como eles chegaram"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Como você conseguiu esse emprego?",
+          "intent": "Como você conseguiu"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Como você conseguiu meu número de telefone?",
+          "intent": "Como você conseguiu"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Como ela conseguiu aquela informação?",
+          "intent": "Como ela conseguiu"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Como eles conseguiram os ingressos para o show?",
+          "intent": "Como eles conseguiram"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Como você conseguiu esse desconto?",
+          "intent": "Como você conseguiu"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Como ele conseguiu tanto dinheiro?",
+          "intent": "Como ele conseguiu"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "Como você ficou tão bom em inglês?",
+          "intent": "Como você ficou"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "Como ela ficou tão confiante?",
+          "intent": "Como ela ficou"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "Como ele ficou tão forte?",
+          "intent": "Como ele ficou"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "Como você ficou tão rápido na resolução desses problemas?",
+          "intent": "Como você ficou"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "Como eles ficaram tão bons nesse jogo?",
+          "intent": "Como eles ficaram"
+        },
+        {
+          "id": "d20b3d71-0e41-421f-98a1-fc369d54e170",
+          "exampleItem": "Como você ficou tão interessado em tecnologia?",
+          "intent": "Como você ficou"
+        },
+        {
+          "id": "e31c4e82-1f52-432a-89b2-ad47ae65f281",
+          "exampleItem": "Como nós chegamos a esse ponto?",
+          "intent": "Como nós chegamos"
+        },
+        {
+          "id": "f42d5f93-2a63-443b-9ac3-be58bf76a392",
+          "exampleItem": "Como você conseguiu essa oportunidade?",
+          "intent": "Como você conseguiu"
+        },
+        {
+          "id": "a53e60a4-3b74-45ac-8bd4-cf69c087b403",
+          "exampleItem": "Como ela ficou tão famosa?",
+          "intent": "Como ela ficou"
+        },
+        {
+          "id": "b64f71b5-4c85-46bd-9ce5-d07ad198c514",
+          "exampleItem": "Como vocês chegaram ao aeroporto?",
+          "intent": "Como vocês chegaram"
+        }
+      ]
+    },
+    {
+      "id": "estar-a-fim-de-estar-disposto-a-7e42b9c1-6a83-4f50-9d24-c7e15a08b396",
+      "intention": "Estar a fim de / Estar disposto a / Topar",
+      "pattern": "sujeito + estar conjugado + a fim de / disposto a + ação ou atividade",
+      "description": "Expressa disposição, interesse, ânimo ou vontade de participar de uma atividade, aceitar uma proposta ou realizar determinada ação. Em inglês americano, a construção 'be up for' é muito comum na linguagem informal e cotidiana. Pode ser utilizada em frases afirmativas para demonstrar disposição, em frases negativas para indicar falta de ânimo ou interesse e em perguntas para verificar se alguém aceita uma proposta. Quando seguida de um verbo, utiliza-se a forma com -ing. Também pode ser seguida diretamente de um substantivo ou pronome. A expressão não deve ser confundida com 'be up to', que possui outros significados.",
+      "category": "expressions",
+      "searchTerms": [
+        "estar a fim de",
+        "estou a fim de",
+        "não estou a fim de",
+        "estar disposto a",
+        "estou disposto a",
+        "não estou disposto a",
+        "topar",
+        "eu topo",
+        "você topa",
+        "estar animado para",
+        "ter disposição para",
+        "não ter ânimo para",
+        "aceitar uma proposta",
+        "estar preparado para um desafio"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:estou|tô|está|estamos|estão|estava|estávamos|estavam|estarei|estará|estaremos|estarão)\\s+(?:não\\s+)?a\\s+fim\\s+de(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:não\\s+)?(?:estou|tô|está|estamos|estão|estava|estávamos|estavam|estarei|estará|estaremos|estarão)\\s+a\\s+fim\\s+de(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:não\\s+)?(?:estou|tô|está|estamos|estão|estava|estávamos|estavam|estarei|estará|estaremos|estarão)\\s+dispost[oa]s?\\s+a(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:não\\s+)?(?:topo|topa|topamos|topam|topava|topavam|topei|topou|toparam|toparia|topariam)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "disposição",
+        "vontade",
+        "interesse",
+        "aceitação",
+        "convites",
+        "propostas",
+        "linguagem informal",
+        "expressões cotidianas",
+        "gerador de frases",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "A construção expressa disposição ou interesse em realizar uma atividade ou aceitar uma proposta. Em inglês americano, utiliza-se o verbo 'be' conjugado de acordo com o sujeito, seguido de 'up for'. Quando a expressão é acompanhada de uma ação, o verbo seguinte deve terminar em -ing, como em 'I'm up for trying something new'. Quando o complemento é um substantivo, utiliza-se diretamente a construção, como em 'I'm up for a challenge'. Na negativa, acrescenta-se 'not' ao verbo 'be', formando expressões como 'I'm not up for going out'. Nas perguntas, o verbo 'be' aparece antes do sujeito, como em 'Are you up for going out?'. No passado, são utilizadas as formas 'was' e 'were'. A expressão 'I'm up for it' significa 'Eu topo', enquanto 'I'm not up for it' significa 'Não estou a fim disso'. Trata-se de uma construção informal que pode indicar vontade, ânimo, disposição ou aceitação, dependendo do contexto.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Não estou a fim de sair hoje à noite.",
+          "intent": "Não estou a fim de"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Estou a fim de experimentar alguma coisa nova.",
+          "intent": "Estou a fim de"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Não estou a fim de conversar agora.",
+          "intent": "Não estou a fim de"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Você topa sair para jantar hoje?",
+          "intent": "topa"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Eu topo!",
+          "intent": "topo"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Ela não está a fim de conhecer pessoas novas.",
+          "intent": "não está a fim de"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Estamos dispostos a enfrentar esse desafio.",
+          "intent": "Estamos dispostos a"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Ele não estava a fim de discutir o problema.",
+          "intent": "não estava a fim de"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Vocês topam participar de uma conversa em inglês?",
+          "intent": "topam"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Não estamos a fim de participar de outra reunião.",
+          "intent": "Não estamos a fim de"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "Você está disposto a tentar novamente?",
+          "intent": "está disposto a"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "Eu não estava a fim de trabalhar no fim de semana.",
+          "intent": "não estava a fim de"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "Ela está a fim de fazer uma viagem no próximo mês.",
+          "intent": "está a fim de"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "Eles não estão dispostos a aceitar essa proposta.",
+          "intent": "não estão dispostos a"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "Estou a fim de praticar inglês por mais uma hora.",
+          "intent": "Estou a fim de"
+        },
+        {
+          "id": "d20b3d71-0e41-421f-98a1-fc369d54e170",
+          "exampleItem": "Você topa um desafio?",
+          "intent": "topa"
+        },
+        {
+          "id": "e31c4e82-1f52-432a-89b2-ad47ae65f281",
+          "exampleItem": "Eu não topo essa ideia.",
+          "intent": "não topo"
+        },
+        {
+          "id": "f42d5f93-2a63-443b-9ac3-be58bf76a392",
+          "exampleItem": "Nós estávamos a fim de assistir a um filme.",
+          "intent": "estávamos a fim de"
+        }
+      ]
     }
   ]
 }
