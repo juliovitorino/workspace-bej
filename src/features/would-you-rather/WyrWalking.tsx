@@ -3,6 +3,7 @@ import type { StudentLanguage } from "../../config/languages";
 import type { WyrChoice } from "./wouldYouRatherStorage";
 import { speakStudyAudio } from "../study/studyAudio";
 import { celebrateAchievement } from "../../utils/achievements";
+import { orderWalkingItems } from "./wyrWalkingOrder";
 
 type WalkingItem = { id: string; question: string; choice: WyrChoice; option: { text: string; answer: string }; answer: string };
 type Phase = "ready" | "question" | "thinking" | "answer" | "between" | "paused" | "complete" | "error";
@@ -32,6 +33,9 @@ function speak(text: string, locale: string, onDone: () => void, onError: () => 
 
 export function WyrWalking({ items, locale, onExit, onStudyState }: Props) {
   const [started, setStarted] = useState(false);
+  const [randomOrder, setRandomOrder] = useState(false);
+  // Freeze the question order for the duration of a walking session.
+  const [sessionItems, setSessionItems] = useState(items);
   const [paused, setPaused] = useState(false);
   const [index, setIndex] = useState(0);
   const [repetition, setRepetition] = useState(0);
@@ -47,7 +51,7 @@ export function WyrWalking({ items, locale, onExit, onStudyState }: Props) {
   const skipped = useRef(0);
   const cancelAudio = useRef<() => void>(() => undefined);
   const wakeLock = useRef<{ release(): Promise<void> } | null>(null);
-  const current = items[index];
+  const current = sessionItems[index];
 
   function stopAudio() {
     generation.current++;
@@ -100,7 +104,7 @@ export function WyrWalking({ items, locale, onExit, onStudyState }: Props) {
       else {
         setCompleted(value => value + 1);
         setRepetition(0);
-        if (index + 1 < items.length) setIndex(value => value + 1);
+        if (index + 1 < sessionItems.length) setIndex(value => value + 1);
         else setPhase("complete");
       }
     };
@@ -125,18 +129,19 @@ export function WyrWalking({ items, locale, onExit, onStudyState }: Props) {
       cancelAudio.current();
       cancelAudio.current = () => undefined;
     };
-  }, [started, paused, index, repetition, repeatCount, thinkingSeconds, betweenSeconds, playAnswer, locale, items]);
+  }, [started, paused, index, repetition, repeatCount, thinkingSeconds, betweenSeconds, playAnswer, locale, sessionItems]);
 
   useEffect(() => {
-    if (started && phase === "complete" && items.length > 0 && completed === items.length && skipped.current === 0) {
+    if (started && phase === "complete" && sessionItems.length > 0 && completed === sessionItems.length && skipped.current === 0) {
       celebrateAchievement("walking-first-session", "Modo Caminhada concluído!", "Você completou sua primeira sessão de repetição em voz alta.");
     }
-  }, [started, phase, completed, items.length]);
+  }, [started, phase, completed, sessionItems.length]);
 
   function restart() {
     skipped.current = 0;
     stopAudio();
     setStarted(false); setPaused(false); setIndex(0); setRepetition(0);
+    setSessionItems(items);
     setCompleted(0); setPhase("ready"); setError("");
   }
   function skip() {
@@ -144,8 +149,13 @@ export function WyrWalking({ items, locale, onExit, onStudyState }: Props) {
     stopAudio();
     setRepetition(0);
     setCompleted(value => value + 1);
-    if (index + 1 >= items.length) setPhase("complete");
+    if (index + 1 >= sessionItems.length) setPhase("complete");
     else setIndex(value => value + 1);
+  }
+  function startWalking() {
+    setSessionItems(orderWalkingItems(items, randomOrder));
+    setStarted(true);
+    setPhase("question");
   }
   function togglePause() {
     stopAudio();
@@ -156,7 +166,7 @@ export function WyrWalking({ items, locale, onExit, onStudyState }: Props) {
   return <section className="wyr-walk" aria-label="Would You Rather — modo caminhada">
     <h2>🚶 Would You Rather — Modo Caminhada</h2>
     <p>Responda em voz alta durante a pausa. Sua voz não é gravada.</p>
-    <p><strong>{completed}/{items.length}</strong> perguntas · Repetição <strong>{Math.min(repetition + 1, repeatCount)}/{repeatCount}</strong></p>
+    <p><strong>{completed}/{sessionItems.length}</strong> perguntas · Repetição <strong>{Math.min(repetition + 1, repeatCount)}/{repeatCount}</strong></p>
     <h3>{current?.question ?? "Treino concluído!"}</h3>
     {current && <p>Alternativa selecionada: <strong>{current.choice}</strong> — {current.option.text}</p>}
     <p role="status">{phase === "question" ? "🔊 Pergunta" : phase === "thinking" ? "🎤 Sua vez de responder" : phase === "answer" ? "🔊 Resposta selecionada" : phase === "between" ? "Próxima repetição" : phase === "paused" ? "Pausado" : phase === "complete" ? "Sessão concluída!" : phase === "error" ? "Erro de áudio" : "Pronto para começar"}</p>
@@ -166,10 +176,11 @@ export function WyrWalking({ items, locale, onExit, onStudyState }: Props) {
       <label>Repetições por pergunta <select value={repeatCount} onChange={e => setRepeatCount(Number(e.target.value))}>{[1, 2, 3, 5].map(value => <option key={value} value={value}>{value}</option>)}</select></label>
       <label>Pausa para responder <select value={thinkingSeconds} onChange={e => setThinkingSeconds(Number(e.target.value))}>{[5, 8, 10, 15, 20, 30].map(value => <option key={value} value={value}>{value} s</option>)}</select></label>
       <label>Intervalo entre repetições <select value={betweenSeconds} onChange={e => setBetweenSeconds(Number(e.target.value))}>{[0, 1, 2, 3, 5].map(value => <option key={value} value={value}>{value} s</option>)}</select></label>
+      <label><input type="checkbox" checked={randomOrder} onChange={e => setRandomOrder(e.target.checked)} /> Seleção aleatória das perguntas</label>
       <label><input type="checkbox" checked={playAnswer} onChange={e => setPlayAnswer(e.target.checked)} /> Ouvir resposta selecionada (inclui personalizações)</label>
       <label><input type="checkbox" checked={keepAwake} onChange={e => setKeepAwake(e.target.checked)} /> Manter tela ligada, quando disponível</label>
     </fieldset>}
-    {!started && phase !== "complete" && <button className="wyr-button" type="button" disabled={!items.length} onClick={() => { setStarted(true); setPhase("question"); }}>▶ Iniciar caminhada</button>}
+    {!started && phase !== "complete" && <button className="wyr-button" type="button" disabled={!items.length} onClick={startWalking}>▶ Iniciar caminhada</button>}
     {started && phase !== "complete" && <div className="wyr-walk-actions">
       <button type="button" className="wyr-button wyr-button--ghost" onClick={togglePause}>{paused ? "▶ Continuar" : "⏸ Pausar"}</button>
       <button type="button" className="wyr-button wyr-button--ghost" onClick={skip}>⏭ Pular pergunta</button>
