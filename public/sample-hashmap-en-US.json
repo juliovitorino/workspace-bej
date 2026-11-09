@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1268,
+    "totalIntentions": 1272,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -74809,6 +74809,524 @@
           "id": "f8c7f3bd-6a07-483b-94cd-be925f102736",
           "exampleItem": "I've been fed up with this situation for weeks.",
           "intent": "been fed up"
+        }
+      ]
+    },
+    {
+      "id": "tenho-conseguido-verbo-8c42e7a1-6d95-4f30-9b21-a5e73c08d462",
+      "intention": "Have been able to + verb",
+      "pattern": "Subject + have/has + been able to / managed to + base verb + optional complement",
+      "description": "Expresses that someone has been able to perform actions, reach goals, or overcome difficulties over a period extending to the present. In American English, 'have/has been able to + base verb' naturally describes ability or opportunity demonstrated over time. 'Have/has managed to + base verb' emphasizes successfully doing something, especially when effort or difficulty is involved. Choose according to the context and intended meaning. Both constructions can describe results or abilities that have become evident up to the present.",
+      "category": "get-results",
+      "searchTerms": [
+        "have been able to",
+        "have managed to",
+        "I've been able to study",
+        "I've been able to understand",
+        "I've been able to speak",
+        "I've managed to improve",
+        "she has been able to",
+        "we have managed to",
+        "they have been able to",
+        "I haven't been able to",
+        "results over time",
+        "demonstrated ability",
+        "continued progress"
+      ],
+      "validationPatterns": [
+        "\\b(?:have|has|haven['?]t|hasn['?]t)\\s+(?:(?:I|you|he|she|it|we|they)\\s+)?(?:not\\s+)?(?:been\\s+able|managed)\\s+to\\s+[a-z]+\\b",
+        "['?](?:ve|s)\\s+(?:not\\s+)?(?:been\\s+able|managed)\\s+to\\s+[a-z]+\\b"
+      ],
+      "tags": [
+        "results",
+        "present perfect",
+        "ability",
+        "achievements",
+        "progress",
+        "overcoming difficulties",
+        "completed actions",
+        "experiences",
+        "sentence generator",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Subject + have/has + been able to or managed to + base verb. 'Been able to' emphasizes ability or opportunity during a period extending to the present. 'Managed to' emphasizes successful action, often despite difficulty. Use 'have' with I, you, we, and they; use 'has' with he, she, and it. Add 'not' to the auxiliary for negatives. In questions, put the auxiliary before the subject. Keep the main verb in its base form after 'to'. Distinguish repeated results or demonstrated ability over time from individual events completed at a specific past time.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "I've been able to study English every day.",
+          "intent": "I've been able to study"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "I've been able to understand movies in English better.",
+          "intent": "I've been able to understand"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "I've been able to speak English without mentally translating everything.",
+          "intent": "I've been able to speak"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "I've managed to improve my pronunciation through daily practice.",
+          "intent": "I've managed to improve"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "I've been able to solve difficult problems at work.",
+          "intent": "I've been able to solve"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "I've managed to wake up early during the week.",
+          "intent": "I've managed to wake up"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "I've managed to save money every month.",
+          "intent": "I've managed to save"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "I've been able to maintain my exercise routine.",
+          "intent": "I've been able to maintain"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "She's been able to learn new words quickly.",
+          "intent": "She's been able to learn"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "He's been able to finish his tasks ahead of schedule.",
+          "intent": "He's been able to finish"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "We've been able to work together without any problems.",
+          "intent": "We've been able to work"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "They've been able to reach their career goals.",
+          "intent": "They've been able to reach"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "Have you been able to sleep better lately?",
+          "intent": "Have you been able to sleep"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "Has she been able to handle the pressure at work better?",
+          "intent": "Has she been able to handle"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "I haven't been able to concentrate on my studies lately.",
+          "intent": "I haven't been able to concentrate"
+        },
+        {
+          "id": "d20b3d71-0e41-421f-98a1-fc369d54e170",
+          "exampleItem": "He hasn't been able to find time to rest.",
+          "intent": "hasn't been able to find"
+        },
+        {
+          "id": "e31c4e82-1f52-432a-89b2-ad47ae65f281",
+          "exampleItem": "We've been able to deliver our projects on time.",
+          "intent": "We've been able to deliver"
+        },
+        {
+          "id": "f42d5f93-2a63-443b-9ac3-be58bf76a392",
+          "exampleItem": "I've been able to talk to people from other countries.",
+          "intent": "I've been able to talk"
+        }
+      ]
+    },
+    {
+      "id": "falar-da-boca-pra-fora-9c41e7a2-6d85-4f30-8b21-a5e73c09d462",
+      "intention": "Say something without really meaning it",
+      "pattern": "Subject + say something + without really meaning it / without really believing it",
+      "description": "Expresses saying something without really believing it, without sincerity, or without a genuine intention to stand by the statement. A natural American English construction is 'say something without really meaning it'. To emphasize lack of conviction, use 'say something you don't really believe'. Another option is 'He said it, but he didn't really mean it'. 'Mean it' concerns sincerity or the true intention behind the words, whereas 'believe it' emphasizes believing what was said. This differs from speaking without thinking: someone can deliberately say something insincerely.",
+      "category": "expressions",
+      "searchTerms": [
+        "say something without really meaning it",
+        "say something without really believing it",
+        "I said it but didn't mean it",
+        "she didn't really mean it",
+        "insincere words",
+        "empty words",
+        "speak without conviction",
+        "don't believe what I'm saying",
+        "say something insincerely",
+        "not mean what you say"
+      ],
+      "validationPatterns": [
+        "\\bwithout\\s+(?:really\\s+)?(?:meaning|believing)\\s+it\\b",
+        "\\b(?:don['?]t|doesn['?]t|didn['?]t|do\\s+not|does\\s+not|did\\s+not)\\s+(?:really\\s+)?mean\\s+it\\b"
+      ],
+      "tags": [
+        "insincerity",
+        "lack of conviction",
+        "idioms",
+        "intentions",
+        "opinions",
+        "feelings",
+        "communication",
+        "informal language",
+        "sentence generator",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Use a subject, a form of 'say', and a phrase indicating that the words are insincere or lack conviction. 'Without really meaning it' emphasizes that the words do not express the speaker's true intention. 'Without really believing it' emphasizes that the speaker does not believe the statement. For the past, use 'said it but didn't really mean it'. Subjects, verb tenses, and complements can vary. Distinguish insincerity from simply speaking without thinking.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "I said that without really meaning it.",
+          "intent": "said that without really meaning it"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "She said that without really meaning it.",
+          "intent": "said that without really meaning it"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "He's saying it without really meaning it.",
+          "intent": "saying it without really meaning it"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Are you saying that without really meaning it?",
+          "intent": "saying that without really meaning it"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "They didn't really mean it when they said they supported the project.",
+          "intent": "didn't really mean it"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "I don't want to say something without really meaning it.",
+          "intent": "say something without really meaning it"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "She said she was happy for me, but she didn't really mean it.",
+          "intent": "didn't really mean it"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Don't say you believe in me if you don't really mean it.",
+          "intent": "don't really mean it"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "He said he agreed with me, but he didn't really mean it.",
+          "intent": "didn't really mean it"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "I don't believe what I'm saying. I'm saying it without really meaning it.",
+          "intent": "I'm saying it without really meaning it"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "We said that without really meaning it because we didn't want to argue.",
+          "intent": "said that without really meaning it"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "She often says things without really meaning it when she wants to please someone.",
+          "intent": "says things without really meaning it"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "Do you really believe that, or are you saying it without really meaning it?",
+          "intent": "saying it without really meaning it"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "I would never say something like that without really meaning it.",
+          "intent": "without really meaning it"
+        }
+      ]
+    },
+    {
+      "id": "como-voce-chegou-conseguiu-ficou-8c42e7a1-6d95-4f30-9b21-a5e73c08d462",
+      "intention": "How did you get here / get something / become...?",
+      "pattern": "How + did + subject + get + complement?",
+      "description": "Asks how someone arrived somewhere, obtained something, or came to have a particular characteristic or condition. In American English, 'How did + subject + get + complement?' forms past-tense questions about movement, acquisition, and changes of state. The meaning of 'get' depends on the complement: with places, it can mean arrive; with objects, information, or opportunities, it can mean obtain; with adjectives, it can mean become. The auxiliary 'did' marks the past, so the main verb stays in the base form 'get' regardless of the subject.",
+      "category": "questions",
+      "searchTerms": [
+        "how did you get here",
+        "how did he get home",
+        "how did she get to work",
+        "how did they get here",
+        "how did you get this job",
+        "how did you get my number",
+        "how did she get that information",
+        "how did you get so good",
+        "how did he get so strong",
+        "how did you become",
+        "how did you obtain",
+        "how did you get that opportunity"
+      ],
+      "validationPatterns": [
+        "\\bhow\\s+did\\s+(?:I|you|he|she|it|we|they|[a-z]+(?:\\s+[a-z]+){0,3})\\s+get\\s+[^.!?\\r\\n]+"
+      ],
+      "tags": [
+        "questions",
+        "simple past",
+        "verb get",
+        "movement",
+        "acquisition",
+        "change of state",
+        "variable subjects",
+        "everyday expressions",
+        "sentence generator",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "How + did + subject + get + complement? Because 'did' marks the past, use 'get', not 'got'. Subjects include I, you, he, she, we, and they. A place complement, such as 'here' or 'home', makes this a question about arrival. An object, information, or opportunity, such as 'this job' or 'that information', makes it a question about obtaining something. An adjective or state expression, such as 'so good at English', describes a change in condition. Interpret the construction using its complement and context. Study expressions such as 'get rid of', 'get into', and 'get involved' separately because they have their own meanings.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "How did you get here?",
+          "intent": "How did you get"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "How did you get home last night?",
+          "intent": "How did you get"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "How did she get to work so early?",
+          "intent": "How did she get"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "How did they get all the way here?",
+          "intent": "How did they get"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "How did you get this job?",
+          "intent": "How did you get"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "How did you get my phone number?",
+          "intent": "How did you get"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "How did she get that information?",
+          "intent": "How did she get"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "How did they get tickets to the concert?",
+          "intent": "How did they get"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "How did you get this discount?",
+          "intent": "How did you get"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "How did he get so much money?",
+          "intent": "How did he get"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "How did you get so good at English?",
+          "intent": "How did you get"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "How did she get so confident?",
+          "intent": "How did she get"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "How did he get so strong?",
+          "intent": "How did he get"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "How did you get so fast at solving these problems?",
+          "intent": "How did you get"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "How did they get so good at this game?",
+          "intent": "How did they get"
+        },
+        {
+          "id": "d20b3d71-0e41-421f-98a1-fc369d54e170",
+          "exampleItem": "How did you get so interested in technology?",
+          "intent": "How did you get"
+        },
+        {
+          "id": "e31c4e82-1f52-432a-89b2-ad47ae65f281",
+          "exampleItem": "How did we get to this point?",
+          "intent": "How did we get"
+        },
+        {
+          "id": "f42d5f93-2a63-443b-9ac3-be58bf76a392",
+          "exampleItem": "How did you get this opportunity?",
+          "intent": "How did you get"
+        },
+        {
+          "id": "a53e60a4-3b74-45ac-8bd4-cf69c087b403",
+          "exampleItem": "How did she get so famous?",
+          "intent": "How did she get"
+        },
+        {
+          "id": "b64f71b5-4c85-46bd-9ce5-d07ad198c514",
+          "exampleItem": "How did you get to the airport?",
+          "intent": "How did you get"
+        }
+      ]
+    },
+    {
+      "id": "estar-a-fim-de-estar-disposto-a-7e42b9c1-6a83-4f50-9d24-c7e15a08b396",
+      "intention": "Be up for / Be willing to",
+      "pattern": "Subject + be + up for + noun, pronoun, or -ing form",
+      "description": "Expresses willingness, interest, enthusiasm, or a desire to join an activity, accept a proposal, or do something. In American English, 'be up for' is common in informal everyday speech. Affirmative statements express willingness, negatives express a lack of energy or interest, and questions ask whether someone accepts a suggestion. Use an -ing form when a verb follows it. A noun or pronoun can also follow it directly. Do not confuse 'be up for' with 'be up to', which has different meanings.",
+      "category": "expressions",
+      "searchTerms": [
+        "I'm up for",
+        "I'm not up for",
+        "be up for",
+        "be willing to",
+        "I'm willing to",
+        "are you up for",
+        "I'm up for it",
+        "are you up for a challenge",
+        "feel like doing something",
+        "accept a suggestion",
+        "be interested in an activity",
+        "have the energy for something"
+      ],
+      "validationPatterns": [
+        "\\b(?:am|is|are|was|were|be|been|being)\\s+(?:not\\s+)?up\\s+for\\b",
+        "['?](?:m|s|re)\\s+(?:not\\s+)?up\\s+for\\b",
+        "\\b(?:isn['?]t|aren['?]t|wasn['?]t|weren['?]t)\\s+up\\s+for\\b",
+        "\\b(?:am|is|are|was|were)\\s+(?:I|you|he|she|it|we|they)\\s+(?:not\\s+)?up\\s+for\\b"
+      ],
+      "tags": [
+        "willingness",
+        "desire",
+        "interest",
+        "acceptance",
+        "invitations",
+        "suggestions",
+        "informal language",
+        "everyday expressions",
+        "sentence generator",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Subject + be + up for + noun, pronoun, or -ing form. Conjugate 'be' to agree with the subject. For an action, use an -ing form: 'I'm up for trying something new'. With a noun, use the expression directly: 'I'm up for a challenge'. Add 'not' to 'be' for negatives: 'I'm not up for going out'. In questions, put 'be' before the subject: 'Are you up for going out?'. Use 'was' or 'were' for the past. 'I'm up for it' accepts a suggestion, while 'I'm not up for it' expresses a lack of interest or willingness. This informal construction can convey desire, energy, willingness, or acceptance depending on context.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "I'm not up for going out tonight.",
+          "intent": "I'm not up for"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "I'm up for trying something new.",
+          "intent": "I'm up for"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "I'm not up for talking right now.",
+          "intent": "I'm not up for"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Are you up for going out to dinner today?",
+          "intent": "Are you up for"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "I'm up for it!",
+          "intent": "I'm up for it"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "She's not up for meeting new people.",
+          "intent": "She's not up for"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "We're up for taking on this challenge.",
+          "intent": "We're up for"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "He wasn't up for discussing the problem.",
+          "intent": "wasn't up for"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Are you up for joining a conversation in English?",
+          "intent": "Are you up for"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "We're not up for attending another meeting.",
+          "intent": "We're not up for"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "Are you up for trying again?",
+          "intent": "Are you up for"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "I wasn't up for working over the weekend.",
+          "intent": "wasn't up for"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "She's up for taking a trip next month.",
+          "intent": "She's up for"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "They're not up for accepting this proposal.",
+          "intent": "They're not up for"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "I'm up for practicing English for another hour.",
+          "intent": "I'm up for"
+        },
+        {
+          "id": "d20b3d71-0e41-421f-98a1-fc369d54e170",
+          "exampleItem": "Are you up for a challenge?",
+          "intent": "Are you up for"
+        },
+        {
+          "id": "e31c4e82-1f52-432a-89b2-ad47ae65f281",
+          "exampleItem": "I'm not up for that idea.",
+          "intent": "I'm not up for"
+        },
+        {
+          "id": "f42d5f93-2a63-443b-9ac3-be58bf76a392",
+          "exampleItem": "We were up for watching a movie.",
+          "intent": "were up for"
         }
       ]
     }

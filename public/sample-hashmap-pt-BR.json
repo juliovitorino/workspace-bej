@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1268,
+    "totalIntentions": 1272,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -2982,6 +2982,144 @@
           "id": "91668a9a-a6aa-445f-8c01-5e7da53b0e44",
           "exampleItem": "Tenho conseguido bons resultados com essa abordagem.",
           "intent": "Tenho conseguido"
+        }
+      ]
+    },
+    {
+      "id": "tenho-conseguido-verbo-8c42e7a1-6d95-4f30-9b21-a5e73c08d462",
+      "intention": "Tenho conseguido + verbo",
+      "pattern": "sujeito + ter conjugado no presente + conseguido + verbo no infinitivo + complemento opcional",
+      "description": "Expressa que alguém vem conseguindo realizar determinadas ações, alcançar objetivos ou superar dificuldades ao longo de um período que se estende até o presente. Em inglês americano, a construção 'have/has been able to + verbo na forma base' é natural para indicar capacidade ou possibilidade demonstrada ao longo do tempo. A construção 'have/has managed to + verbo na forma base' enfatiza o sucesso na realização de uma ação, especialmente quando existe esforço ou dificuldade. A escolha depende do contexto e da intenção comunicativa. Em português, a estrutura 'tenho conseguido + verbo' destaca resultados ou capacidades que vêm se manifestando até o momento atual.",
+      "category": "get-results",
+      "searchTerms": [
+        "tenho conseguido",
+        "tenho conseguido fazer",
+        "tenho conseguido estudar",
+        "tenho conseguido aprender",
+        "tenho conseguido melhorar",
+        "tenho conseguido trabalhar",
+        "tenho conseguido resolver",
+        "tenho conseguido entender",
+        "tenho conseguido falar",
+        "tem conseguido",
+        "temos conseguido",
+        "têm conseguido",
+        "não tenho conseguido",
+        "venho conseguindo",
+        "resultados ao longo do tempo",
+        "capacidade demonstrada",
+        "progresso contínuo"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:tenho|tem|temos|têm)\\s+conseguido\\s+\\p{L}+(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])não\\s+(?:tenho|tem|temos|têm)\\s+conseguido\\s+\\p{L}+(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:venho|vem|vimos|vêm)\\s+conseguindo\\s+\\p{L}+(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "resultados",
+        "presente perfeito",
+        "capacidade",
+        "conquistas",
+        "progresso",
+        "superação",
+        "ações realizadas",
+        "experiências",
+        "gerador de frases",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "A intenção é formada por um sujeito, o verbo 'ter' conjugado no presente, o particípio 'conseguido' e outro verbo no infinitivo. Em inglês americano, utiliza-se o presente perfeito com o auxiliar 'have' ou 'has', seguido de 'been able to' ou 'managed to' e de um verbo na forma base. A construção com 'been able to' destaca a capacidade ou possibilidade de realizar uma ação durante um período que chega até o presente. A construção com 'managed to' destaca a realização bem-sucedida de algo, frequentemente apesar de dificuldades. Com os sujeitos 'I', 'you', 'we' e 'they', utiliza-se 'have'. Com 'he', 'she' e 'it', utiliza-se 'has'. Na negativa, acrescenta-se 'not' ao auxiliar. Nas perguntas, o auxiliar aparece antes do sujeito. O verbo principal permanece na forma base depois de 'to'. É importante distinguir resultados repetidos ou capacidades demonstradas ao longo do tempo de acontecimentos isolados e concluídos em um momento específico do passado.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Tenho conseguido estudar inglês todos os dias.",
+          "intent": "Tenho conseguido estudar"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Tenho conseguido entender melhor os filmes em inglês.",
+          "intent": "Tenho conseguido entender"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Tenho conseguido falar inglês sem traduzir tudo mentalmente.",
+          "intent": "Tenho conseguido falar"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Tenho conseguido melhorar minha pronúncia com a prática diária.",
+          "intent": "Tenho conseguido melhorar"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Tenho conseguido resolver problemas difíceis no trabalho.",
+          "intent": "Tenho conseguido resolver"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Tenho conseguido acordar cedo durante a semana.",
+          "intent": "Tenho conseguido acordar"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Tenho conseguido economizar dinheiro todos os meses.",
+          "intent": "Tenho conseguido economizar"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Tenho conseguido manter minha rotina de exercícios.",
+          "intent": "Tenho conseguido manter"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Ela tem conseguido aprender novas palavras rapidamente.",
+          "intent": "tem conseguido aprender"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Ele tem conseguido terminar suas tarefas antes do prazo.",
+          "intent": "tem conseguido terminar"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "Nós temos conseguido trabalhar juntos sem problemas.",
+          "intent": "temos conseguido trabalhar"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "Eles têm conseguido alcançar suas metas profissionais.",
+          "intent": "têm conseguido alcançar"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "Você tem conseguido dormir melhor ultimamente?",
+          "intent": "tem conseguido dormir"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "Ela tem conseguido lidar melhor com a pressão no trabalho?",
+          "intent": "tem conseguido lidar"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "Não tenho conseguido me concentrar nos estudos ultimamente.",
+          "intent": "Não tenho conseguido me concentrar"
+        },
+        {
+          "id": "d20b3d71-0e41-421f-98a1-fc369d54e170",
+          "exampleItem": "Ele não tem conseguido encontrar tempo para descansar.",
+          "intent": "não tem conseguido encontrar"
+        },
+        {
+          "id": "e31c4e82-1f52-432a-89b2-ad47ae65f281",
+          "exampleItem": "Temos conseguido entregar nossos projetos dentro do prazo.",
+          "intent": "Temos conseguido entregar"
+        },
+        {
+          "id": "f42d5f93-2a63-443b-9ac3-be58bf76a392",
+          "exampleItem": "Tenho conseguido conversar com pessoas de outros países.",
+          "intent": "Tenho conseguido conversar"
         }
       ]
     },

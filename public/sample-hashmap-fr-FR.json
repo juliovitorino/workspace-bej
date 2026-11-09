@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1268,
+    "totalIntentions": 1272,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -51224,6 +51224,507 @@
           "id": "f8c7f3bd-6a07-483b-94cd-be925f102736",
           "exampleItem": "Ça fait des semaines que j’en ai ras le bol de cette situation.",
           "intent": "j’en ai ras le bol"
+        }
+      ]
+    },
+    {
+      "id": "tenho-conseguido-verbo-8c42e7a1-6d95-4f30-9b21-a5e73c08d462",
+      "intention": "Réussir à + infinitif ces derniers temps",
+      "pattern": "sujet + réussir à / arriver à / ne pas réussir à + infinitif + indication de durée récente",
+      "description": "Exprime la capacité à accomplir des actions, à atteindre des objectifs ou à surmonter des difficultés pendant une période qui se prolonge jusqu’au présent. En français, on emploie naturellement « réussir à » ou « arriver à » au présent, avec un repère comme « ces derniers temps » ou « depuis quelque temps ». « Réussir à » souligne le résultat obtenu malgré les difficultés. Il faut distinguer cette réussite régulière d’un événement isolé et terminé dans le passé.",
+      "category": "get-results",
+      "searchTerms": [
+        "je réussis à",
+        "j’arrive à",
+        "ces derniers temps",
+        "depuis quelque temps",
+        "réussite régulière",
+        "capacité actuelle",
+        "surmonter des difficultés",
+        "atteindre ses objectifs",
+        "je n’arrive pas à"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:réussi(?:s|t|ssons|ssez|ssent)|arriv(?:e|es|ons|ez|ent))\\s+(?:pas\\s+)?à(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "capacité",
+        "réussite",
+        "effort",
+        "progrès",
+        "continuité",
+        "résultats récents",
+        "grammaire",
+        "générateur de phrases",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Sujet + réussir à / arriver à + infinitif. Pour souligner la continuité jusqu’au présent : ces derniers temps, depuis quelque temps, régulièrement. Négation : sujet + ne + réussir conjugué + pas à + infinitif. Question : est-ce que + sujet + réussir conjugué + à + infinitif ? Le verbe qui suit à reste à l’infinitif, comme dans « réussir à apprendre ».",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Ces derniers temps, je réussis à étudier l’anglais tous les jours.",
+          "intent": "réussis à"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Ces derniers temps, j’arrive à mieux comprendre les films en anglais.",
+          "intent": "arrive à"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "J’arrive à parler anglais sans tout traduire dans ma tête.",
+          "intent": "arrive à"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Je réussis à améliorer ma prononciation grâce à la pratique quotidienne.",
+          "intent": "réussis à"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Ces derniers temps, je réussis à résoudre des problèmes difficiles au travail.",
+          "intent": "réussis à"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "J’arrive à me lever tôt en semaine.",
+          "intent": "arrive à"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Je réussis à économiser de l’argent tous les mois.",
+          "intent": "réussis à"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "J’arrive à maintenir ma routine sportive.",
+          "intent": "arrive à"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Elle réussit à apprendre de nouveaux mots rapidement.",
+          "intent": "réussit à"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Il réussit à terminer ses tâches avant la date limite.",
+          "intent": "réussit à"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "Nous arrivons à travailler ensemble sans problème.",
+          "intent": "arrivons à"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "Ils réussissent à atteindre leurs objectifs professionnels.",
+          "intent": "réussissent à"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "Est-ce que tu arrives à mieux dormir ces derniers temps ?",
+          "intent": "arrives à"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "Est-ce qu’elle arrive à mieux gérer la pression au travail ?",
+          "intent": "arrive à"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "Ces derniers temps, je ne réussis pas à me concentrer sur mes études.",
+          "intent": "ne réussis pas à"
+        },
+        {
+          "id": "d20b3d71-0e41-421f-98a1-fc369d54e170",
+          "exampleItem": "Il n’arrive pas à trouver du temps pour se reposer.",
+          "intent": "n’arrive pas à"
+        },
+        {
+          "id": "e31c4e82-1f52-432a-89b2-ad47ae65f281",
+          "exampleItem": "Nous réussissons à livrer nos projets dans les délais.",
+          "intent": "réussissons à"
+        },
+        {
+          "id": "f42d5f93-2a63-443b-9ac3-be58bf76a392",
+          "exampleItem": "Ces derniers temps, j’arrive à discuter avec des personnes d’autres pays.",
+          "intent": "arrive à"
+        }
+      ]
+    },
+    {
+      "id": "falar-da-boca-pra-fora-9c41e7a2-6d85-4f30-8b21-a5e73c09d462",
+      "intention": "Dire quelque chose sans le penser vraiment",
+      "pattern": "sujet + dire + quelque chose + sans le penser vraiment / sans être sincère",
+      "description": "Exprime qu’une personne dit quelque chose sans y croire réellement, sans sincérité ou sans avoir l’intention de tenir ses propos. « Dire quelque chose sans le penser vraiment » souligne l’écart entre les paroles et la conviction ou l’intention réelle. « Dire cela sans y croire » insiste sur l’absence de conviction. Il ne faut pas confondre cette attitude avec le fait de parler sans réfléchir : des paroles peu sincères peuvent être délibérées.",
+      "category": "expressions",
+      "searchTerms": [
+        "dire sans le penser",
+        "sans le penser vraiment",
+        "sans être sincère",
+        "parler sans conviction",
+        "dire sans y croire",
+        "des paroles en l’air",
+        "manque de sincérité",
+        "ne pas penser ce qu’on dit"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])sans\\s+(?:les?\\s+penser(?:\\s+vraiment)?|être\\s+sincères?|y\\s+croire)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])ne\\s+le\\s+pens(?:ais|ait)\\s+pas\\s+vraiment(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "sincérité",
+        "conviction",
+        "paroles",
+        "intentions",
+        "communication",
+        "expressions du quotidien",
+        "générateur de phrases",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Sujet + dire conjugué + complément + sans le penser vraiment. Variante : sujet + dire + complément + sans être sincère / sans y croire. Au passé : « Il a dit ça, mais il ne le pensait pas vraiment ». Les sujets, les temps et les compléments varient. La sincérité concerne l’intention derrière les paroles ; croire concerne la conviction.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "J’ai dit ça sans le penser vraiment.",
+          "intent": "sans le penser vraiment"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Elle a dit ça sans le penser vraiment.",
+          "intent": "sans le penser vraiment"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Il dit ça sans le penser vraiment.",
+          "intent": "sans le penser vraiment"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Est-ce que tu dis ça sans le penser vraiment ?",
+          "intent": "sans le penser vraiment"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Ils ont dit qu’ils soutenaient le projet sans être sincères.",
+          "intent": "sans être sincères"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Je ne veux pas dire quelque chose sans le penser vraiment.",
+          "intent": "sans le penser vraiment"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Elle a dit qu’elle était contente pour moi, mais elle ne le pensait pas vraiment.",
+          "intent": "ne le pensait pas vraiment"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Ne dis pas que tu crois en moi sans le penser vraiment.",
+          "intent": "sans le penser vraiment"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Il a dit qu’il était d’accord avec moi, mais il ne le pensait pas vraiment.",
+          "intent": "ne le pensait pas vraiment"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Je ne crois pas à ce que je dis. Je dis ça sans le penser vraiment.",
+          "intent": "sans le penser vraiment"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "Nous avons dit ça sans le penser vraiment parce que nous ne voulions pas nous disputer.",
+          "intent": "sans le penser vraiment"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "Elle dit souvent des choses sans les penser vraiment quand elle veut faire plaisir à quelqu’un.",
+          "intent": "sans les penser vraiment"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "Est-ce que tu y crois vraiment ou est-ce que tu dis ça sans le penser vraiment ?",
+          "intent": "sans le penser vraiment"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "Je ne dirais jamais une chose pareille sans le penser vraiment.",
+          "intent": "sans le penser vraiment"
+        }
+      ]
+    },
+    {
+      "id": "como-voce-chegou-conseguiu-ficou-8c42e7a1-6d95-4f30-9b21-a5e73c08d462",
+      "intention": "Comment être arrivé / avoir obtenu / être devenu… ?",
+      "pattern": "comment + est-ce que + sujet + verbe au passé composé + complément ?",
+      "description": "Sert à demander comment une personne est arrivée dans un lieu, a obtenu quelque chose ou est devenue d’une certaine manière. Le français emploie des verbes différents selon le sens : arriver pour un déplacement, obtenir pour une acquisition et devenir pour un changement d’état. La question se construit naturellement avec « Comment est-ce que… ? ». Au passé composé, arriver et devenir prennent être et leur participe s’accorde avec le sujet ; obtenir prend avoir.",
+      "category": "questions",
+      "searchTerms": [
+        "comment es-tu arrivé",
+        "comment est-ce que tu es arrivé",
+        "comment as-tu obtenu",
+        "comment est-ce que tu as obtenu",
+        "comment es-tu devenu",
+        "comment est-elle devenue",
+        "arriver à un endroit",
+        "obtenir quelque chose",
+        "changer d’état",
+        "question au passé"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])comment\\s+est-ce\\s+qu(?:e\\s+|['’])(?:tu|vous|il|elle|ils|elles|nous)\\s+(?:es|êtes|est|sont|sommes|as|avez|a|ont|avons)\\s+(?:arrivé(?:e?s?)?|obtenu|devenu(?:e?s?)?)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])comment\\s+est-ce\\s+que\\s+(?:tu\\s+es\\s+rentré|tu\\s+t['’]es\\s+autant\\s+intéressé|nous\\s+en\\s+sommes\\s+arrivés)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "questions",
+        "passé composé",
+        "déplacement",
+        "obtention",
+        "changement d’état",
+        "verbes selon le contexte",
+        "générateur de phrases",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Comment + est-ce que + sujet + auxiliaire au présent + participe passé + complément ? Déplacement : « Comment est-ce que tu es arrivé ici ? ». Obtention : « Comment est-ce que tu as obtenu cet emploi ? ». Changement : « Comment est-ce qu’elle est devenue aussi confiante ? ». Arrivé et devenu s’accordent avec le sujet lorsque l’auxiliaire est être. Le choix du verbe dépend du complément.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Comment est-ce que tu es arrivé ici ?",
+          "intent": "Comment est-ce que tu es arrivé"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Comment est-ce que tu es rentré chez toi hier soir ?",
+          "intent": "Comment est-ce que tu es rentré"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Comment est-ce qu’elle est arrivée au travail si tôt ?",
+          "intent": "Comment est-ce qu’elle est arrivée"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Comment est-ce qu’ils sont arrivés jusqu’ici ?",
+          "intent": "Comment est-ce qu’ils sont arrivés"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Comment est-ce que tu as obtenu cet emploi ?",
+          "intent": "Comment est-ce que tu as obtenu"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Comment est-ce que tu as obtenu mon numéro de téléphone ?",
+          "intent": "Comment est-ce que tu as obtenu"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Comment est-ce qu’elle a obtenu cette information ?",
+          "intent": "Comment est-ce qu’elle a obtenu"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Comment est-ce qu’ils ont obtenu les billets pour le concert ?",
+          "intent": "Comment est-ce qu’ils ont obtenu"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Comment est-ce que tu as obtenu cette réduction ?",
+          "intent": "Comment est-ce que tu as obtenu"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Comment est-ce qu’il a obtenu autant d’argent ?",
+          "intent": "Comment est-ce qu’il a obtenu"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "Comment est-ce que tu es devenu aussi bon en anglais ?",
+          "intent": "Comment est-ce que tu es devenu"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "Comment est-ce qu’elle est devenue aussi confiante ?",
+          "intent": "Comment est-ce qu’elle est devenue"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "Comment est-ce qu’il est devenu aussi fort ?",
+          "intent": "Comment est-ce qu’il est devenu"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "Comment est-ce que tu es devenu aussi rapide pour résoudre ces problèmes ?",
+          "intent": "Comment est-ce que tu es devenu"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "Comment est-ce qu’ils sont devenus aussi bons à ce jeu ?",
+          "intent": "Comment est-ce qu’ils sont devenus"
+        },
+        {
+          "id": "d20b3d71-0e41-421f-98a1-fc369d54e170",
+          "exampleItem": "Comment est-ce que tu t’es autant intéressé à la technologie ?",
+          "intent": "Comment est-ce que tu t’es autant intéressé"
+        },
+        {
+          "id": "e31c4e82-1f52-432a-89b2-ad47ae65f281",
+          "exampleItem": "Comment est-ce que nous en sommes arrivés là ?",
+          "intent": "Comment est-ce que nous en sommes arrivés"
+        },
+        {
+          "id": "f42d5f93-2a63-443b-9ac3-be58bf76a392",
+          "exampleItem": "Comment est-ce que tu as obtenu cette occasion ?",
+          "intent": "Comment est-ce que tu as obtenu"
+        },
+        {
+          "id": "a53e60a4-3b74-45ac-8bd4-cf69c087b403",
+          "exampleItem": "Comment est-ce qu’elle est devenue aussi célèbre ?",
+          "intent": "Comment est-ce qu’elle est devenue"
+        },
+        {
+          "id": "b64f71b5-4c85-46bd-9ce5-d07ad198c514",
+          "exampleItem": "Comment est-ce que vous êtes arrivés à l’aéroport ?",
+          "intent": "Comment est-ce que vous êtes arrivés"
+        }
+      ]
+    },
+    {
+      "id": "estar-a-fim-de-estar-disposto-a-7e42b9c1-6a83-4f50-9d24-c7e15a08b396",
+      "intention": "Avoir envie de / Être partant pour",
+      "pattern": "sujet + avoir envie de + infinitif / être partant pour + activité",
+      "description": "Exprime l’envie, l’enthousiasme ou la volonté de participer à une activité, d’accepter une proposition ou d’accomplir une action. « Avoir envie de » insiste sur le désir ; « être partant pour » indique que l’on accepte volontiers une activité proposée. Ces tournures s’emploient dans les affirmations, les négations et les questions. Après « envie de », on utilise l’infinitif ; après « partant pour », un nom ou un infinitif convient. Le registre est courant ou familier.",
+      "category": "expressions",
+      "searchTerms": [
+        "avoir envie de",
+        "je n’ai pas envie de",
+        "être partant pour",
+        "tu es partant",
+        "je suis partant",
+        "être prêt à",
+        "accepter une proposition",
+        "être motivé",
+        "avoir envie d’essayer",
+        "ne pas avoir envie"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:ai|as|a|avons|avez|ont|avais|avait|avions|aviez|avaient)\\s+(?:pas\\s+)?envie\\s+d(?:e\\s+|['’])",
+        "(?<![\\p{L}\\p{N}_])(?:suis|es|est|sommes|êtes|sont|étais|était|étions|étiez|étaient)\\s+(?:pas\\s+)?(?:partant(?:e?s?)?|prêt(?:e?s?)?)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "envie",
+        "volonté",
+        "intérêt",
+        "acceptation",
+        "invitations",
+        "propositions",
+        "langage familier",
+        "expressions du quotidien",
+        "générateur de phrases",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Sujet + avoir + envie de + infinitif. Négation : « Je n’ai pas envie de sortir ». Proposition : « Tu es partant pour dîner dehors ? ». Acceptation : « Je suis partant ! ». Partant s’accorde avec le sujet : partant, partante, partants, partantes. Variante pour la volonté d’agir : être prêt à + infinitif. Au passé : « Nous avions envie de regarder un film ».",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Je n’ai pas envie de sortir ce soir.",
+          "intent": "n’ai pas envie de"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "J’ai envie d’essayer quelque chose de nouveau.",
+          "intent": "ai envie d’"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Je n’ai pas envie de parler maintenant.",
+          "intent": "n’ai pas envie de"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Tu es partant pour dîner dehors aujourd’hui ?",
+          "intent": "es partant pour"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Je suis partant !",
+          "intent": "suis partant"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Elle n’a pas envie de rencontrer de nouvelles personnes.",
+          "intent": "n’a pas envie de"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Nous sommes prêts à relever ce défi.",
+          "intent": "sommes prêts à"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Il n’avait pas envie de discuter du problème.",
+          "intent": "n’avait pas envie de"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Vous êtes partants pour participer à une conversation en anglais ?",
+          "intent": "êtes partants pour"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Nous n’avons pas envie de participer à une autre réunion.",
+          "intent": "n’avons pas envie de"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "Est-ce que tu es prêt à réessayer ?",
+          "intent": "es prêt à"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "Je n’avais pas envie de travailler le week-end.",
+          "intent": "n’avais pas envie de"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "Elle a envie de partir en voyage le mois prochain.",
+          "intent": "a envie de"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "Ils ne sont pas prêts à accepter cette proposition.",
+          "intent": "ne sont pas prêts à"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "J’ai envie de pratiquer l’anglais pendant encore une heure.",
+          "intent": "ai envie de"
+        },
+        {
+          "id": "d20b3d71-0e41-421f-98a1-fc369d54e170",
+          "exampleItem": "Tu es partant pour un défi ?",
+          "intent": "es partant pour"
+        },
+        {
+          "id": "e31c4e82-1f52-432a-89b2-ad47ae65f281",
+          "exampleItem": "Je ne suis pas partant pour cette idée.",
+          "intent": "ne suis pas partant pour"
+        },
+        {
+          "id": "f42d5f93-2a63-443b-9ac3-be58bf76a392",
+          "exampleItem": "Nous avions envie de regarder un film.",
+          "intent": "avions envie de"
         }
       ]
     }
