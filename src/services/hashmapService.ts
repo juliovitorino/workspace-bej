@@ -97,16 +97,11 @@ async function fetchCatalog(language: StudentLanguage): Promise<HashmapDataV4> {
 }
 
 /**
- * No contrato JSON 4.0, `intention` ainda é o identificador textual em pt-BR
- * em TODOS os catálogos. O rótulo localizado está em `structure` nos catálogos
- * en-US, es-ES e fr-FR. Não usar `intention` como título desses idiomas.
- *
- * Quando o JSON passar a fornecer um campo `intention` traduzido, este
- * adaptador poderá ser revisado sem alterar os componentes da listagem.
+ * Cada catálogo JSON 4.0 fornece seu próprio título traduzido em `intention`.
+ * `structure` descreve a estrutura gramatical e nunca substitui esse título.
  */
-function localizedIntention(item: HashmapIntentionV4, locale: string): string {
-  if (locale === "pt-BR") return item.intention;
-  return item.structure?.trim() || item.pattern?.trim() || item.intention;
+function localizedIntention(item: HashmapIntentionV4): string {
+  return item.intention;
 }
 
 /**
@@ -140,10 +135,10 @@ function normalizeHashmap(target: HashmapDataV4, source: HashmapDataV4): Hashmap
       // A explicação acompanha o idioma de origem, sem fallback para o Target.
       description: original?.description,
       // Títulos visíveis sempre no par escolhido; não repetir o pt-BR fixo.
-      intention: localizedIntention(original ?? item, source.metadata.language),
-      english: item.structure || item.pattern || item.intention,
-      targetIntention: localizedIntention(item, target.metadata.language),
-      sourceAudioText: original ? localizedIntention(original, source.metadata.language) : "",
+      intention: localizedIntention(original ?? item),
+      english: item.intention,
+      targetIntention: localizedIntention(item),
+      sourceAudioText: original ? localizedIntention(original) : "",
       // Inclui TODOS os exemplos do idioma de origem, mesmo sem par no destino.
       sourceExampleTexts: (original?.examples ?? []).map((example) => example.exampleItem),
       // Não perder os campos de busca da origem ao normalizar o catálogo de estudo.
