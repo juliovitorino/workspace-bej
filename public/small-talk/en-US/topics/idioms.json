@@ -238,27 +238,6 @@
       "reviewStatus": "pending"
     },
     {
-      "id": "2d4bbb2e-15f5-4c13-8a02-3afde719d381",
-      "type": "question-answer",
-      "order": 12,
-      "enabled": true,
-      "level": null,
-      "question": {
-        "text": "How have I done this?",
-        "audio": null
-      },
-      "context": null,
-      "followUps": [],
-      "linkedIntentionIds": [],
-      "tags": [],
-      "source": {
-        "document": "English small talk questions & answers.docx",
-        "section": "Idioms Topic",
-        "paragraphIndex": 220
-      },
-      "reviewStatus": "pending"
-    },
-    {
       "id": "d250bb2c-dd65-4ab1-a877-699252ad6908",
       "type": "question-answer",
       "order": 13,
