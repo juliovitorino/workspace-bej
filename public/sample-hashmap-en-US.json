@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1272,
+    "totalIntentions": 1273,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -75328,6 +75328,132 @@
           "id": "f42d5f93-2a63-443b-9ac3-be58bf76a392",
           "exampleItem": "We were up for watching a movie.",
           "intent": "were up for"
+        }
+      ]
+    },
+    {
+      "id": "se-acostumar-a-com-9d42e7b1-6c85-4f30-8a21-b5e73c09d462",
+      "intention": "Get used to + an activity or situation",
+      "pattern": "subject + get / be getting / have gotten used to + noun, pronoun, or verb ending in -ing",
+      "description": "Expresses the process of adapting to a new situation, routine, activity, environment, or behavior. In American English, 'get used to' is followed by a noun, pronoun, or verb ending in -ing. The construction can appear in different tenses to show that someone is adapting, has adapted, needs to adapt, or has not yet managed to adapt. It describes the transition from something initially unfamiliar, strange, or uncomfortable to something familiar or habitual. Distinguish 'get used to', which emphasizes the process of adaptation, from 'be used to', which describes an existing state of familiarity.",
+      "category": "expressions",
+      "searchTerms": [
+        "get used to",
+        "getting used to",
+        "got used to",
+        "gotten used to",
+        "get used to it",
+        "get used to doing something",
+        "I am getting used to",
+        "I got used to",
+        "have gotten used to",
+        "will get used to",
+        "need to get used to",
+        "cannot get used to",
+        "take time to get used to",
+        "adapt",
+        "adaptation",
+        "new routine",
+        "new habits"
+      ],
+      "validationPatterns": [
+        "\\b(?:get|gets|getting|got|gotten)\\s+used\\s+to\\b"
+      ],
+      "tags": [
+        "adaptation",
+        "habits",
+        "routine",
+        "changes",
+        "experiences",
+        "learning",
+        "adaptation process",
+        "everyday expressions",
+        "sentence generator",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Use 'get used to' followed by a noun, pronoun, or verb ending in -ing to describe the process of becoming accustomed to something: 'get used to the weather', 'get used to it', or 'get used to waking up early'. Conjugate 'get' for the required tense. Use 'am/is/are getting used to' for adaptation in progress, 'got used to' for adaptation in the past, and 'will get used to' for future adaptation. In the American English present perfect, use 'have/has gotten used to' for adaptation achieved up to the present. When another verb follows 'used to', it must take the -ing form because 'to' is a preposition here. Distinguish three constructions: 'get used to' describes becoming accustomed to something; 'be used to' describes already being accustomed to it; and 'used to + base verb' describes a past habit or situation. For example, 'I'm getting used to working remotely' describes adaptation in progress; 'I'm used to working remotely' describes existing familiarity; and 'I used to work remotely' describes a past work arrangement.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "I'm getting used to waking up early.",
+          "intent": "I'm getting used to waking up"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "I need to get used to speaking English every day.",
+          "intent": "I need to get used to speaking"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "I got used to working remotely.",
+          "intent": "got used to working"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "You'll get used to this new routine.",
+          "intent": "'ll get used to"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "I can't get used to this weather.",
+          "intent": "can't get used to"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "She's getting used to living alone.",
+          "intent": "'s getting used to living"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Has he gotten used to the new job yet?",
+          "intent": "gotten used to"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "We're getting used to using the new system.",
+          "intent": "We're getting used to using"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "They haven't gotten used to the change yet.",
+          "intent": "haven't gotten used to"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "It took me a while to get used to driving in the big city.",
+          "intent": "It took me a while to get used to driving"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "Are you getting used to speaking English without translating in your head?",
+          "intent": "getting used to speaking"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "I'll never get used to this noise.",
+          "intent": "'ll never get used to"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "My wife is getting used to working from home.",
+          "intent": "is getting used to working"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "How long did it take you to get used to the new environment?",
+          "intent": "get used to"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "I'm trying to get used to listening to podcasts in English.",
+          "intent": "get used to listening"
+        },
+        {
+          "id": "d20b3d71-0e41-421f-98a1-fc369d54e170",
+          "exampleItem": "She couldn't get used to working at night.",
+          "intent": "get used to working"
         }
       ]
     }

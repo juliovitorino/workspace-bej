@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1272,
+    "totalIntentions": 1273,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -51725,6 +51725,135 @@
           "id": "f42d5f93-2a63-443b-9ac3-be58bf76a392",
           "exampleItem": "Nous avions envie de regarder un film.",
           "intent": "avions envie de"
+        }
+      ]
+    },
+    {
+      "id": "se-acostumar-a-com-9d42e7b1-6c85-4f30-8a21-b5e73c09d462",
+      "intention": "S’habituer à une action ou à une situation",
+      "pattern": "sujet + s’habituer à + infinitif, nom ou situation",
+      "description": "Exprime le processus d’adaptation à une nouvelle situation, une routine, une activité, un environnement ou un comportement. La construction « s’habituer à » se conjugue à différents temps pour indiquer que l’adaptation est en cours, qu’elle a déjà eu lieu, qu’elle est nécessaire ou qu’elle reste difficile. Elle souligne le passage de quelque chose d’inconnu, d’étrange ou d’inconfortable à quelque chose de familier ou d’habituel. Il faut distinguer « s’habituer à », qui insiste sur le processus d’adaptation, de « être habitué à », qui décrit un état de familiarité déjà établi.",
+      "category": "expressions",
+      "searchTerms": [
+        "s’habituer",
+        "m’habituer à",
+        "s’habituer à",
+        "je m’habitue",
+        "elle s’habitue",
+        "nous nous habituons",
+        "je me suis habitué",
+        "il s’est habitué",
+        "déjà habitué",
+        "je vais m’habituer",
+        "tu vas t’habituer",
+        "je dois m’habituer",
+        "je n’arrive pas à m’habituer",
+        "mettre du temps à s’habituer",
+        "s’adapter",
+        "adaptation",
+        "nouvelle routine",
+        "nouvelles habitudes"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:m|t|s)['’]habitu(?:er|e|es|ait|aient|era|eras|erai|eront|erais|erait|eraient)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:nous|vous)\\s+habitu(?:er|ons|ez|ions|iez|erons|erez)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:me\\s+suis|t['’]es|s['’]est|nous\\s+sommes|vous\\s+êtes|se\\s+sont)\\s+(?:(?:déjà|pas|encore)\\s+)*habitué(?:e|s|es)?(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "adaptation",
+        "habitudes",
+        "routine",
+        "changements",
+        "expériences",
+        "apprentissage",
+        "processus d’adaptation",
+        "expressions du quotidien",
+        "générateur de phrases",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Pour exprimer le processus d’adaptation, on utilise « s’habituer à » suivi d’un nom ou d’un verbe à l’infinitif : « s’habituer au climat », « s’habituer à cela », « s’habituer à se lever tôt ». Le pronom réfléchi varie selon le sujet : je m’habitue, tu t’habitues, il ou elle s’habitue, nous nous habituons, vous vous habituez, ils ou elles s’habituent. Le présent peut décrire une adaptation en cours. Le passé composé, avec l’auxiliaire être, indique une adaptation accomplie : « Je me suis habitué à travailler à distance ». Le participe passé s’accorde ici avec le sujet : habitué, habituée, habitués, habituées. Au futur : « Tu t’habitueras à cette routine ». La préposition à se contracte avec le ou les : au climat, aux horaires. Il faut distinguer « s’habituer à », processus d’adaptation, de « être habitué à », état déjà acquis, et de « avoir l’habitude de », habitude régulière. Ainsi, « Je m’habitue à travailler à distance » indique une adaptation en cours ; « Je suis habitué à travailler à distance » indique que cette situation est déjà familière.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Je m’habitue à me lever tôt.",
+          "intent": "Je m’habitue à me lever"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Je dois m’habituer à parler anglais tous les jours.",
+          "intent": "Je dois m’habituer à parler"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Je me suis habitué à travailler à distance.",
+          "intent": "me suis habitué à travailler"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Tu vas t’habituer à cette nouvelle routine.",
+          "intent": "vas t’habituer à"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Je n’arrive pas à m’habituer à ce climat.",
+          "intent": "Je n’arrive pas à m’habituer à"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Elle s’habitue à vivre seule.",
+          "intent": "s’habitue à vivre"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Est-ce qu’il s’est déjà habitué à son nouveau travail ?",
+          "intent": "s’est déjà habitué à"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Nous nous habituons à utiliser le nouveau système.",
+          "intent": "Nous nous habituons à utiliser"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Ils ne se sont pas encore habitués au changement.",
+          "intent": "ne se sont pas encore habitués au"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "J’ai mis du temps à m’habituer à conduire dans une grande ville.",
+          "intent": "J’ai mis du temps à m’habituer à conduire"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "Est-ce que tu t’habitues à parler anglais sans traduire dans ta tête ?",
+          "intent": "t’habitues à parler"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "Je ne m’habituerai jamais à ce bruit.",
+          "intent": "ne m’habituerai jamais à"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "Ma femme s’habitue à travailler chez elle.",
+          "intent": "s’habitue à travailler"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "Combien de temps as-tu mis à t’habituer à ton nouvel environnement ?",
+          "intent": "t’habituer à"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "J’essaie de m’habituer à écouter des podcasts en anglais.",
+          "intent": "m’habituer à écouter"
+        },
+        {
+          "id": "d20b3d71-0e41-421f-98a1-fc369d54e170",
+          "exampleItem": "Elle n’a pas réussi à s’habituer à travailler la nuit.",
+          "intent": "s’habituer à travailler"
         }
       ]
     }
