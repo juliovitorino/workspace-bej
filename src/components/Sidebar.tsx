@@ -1,6 +1,6 @@
 import { t } from "../i18n";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const SIDEBAR_COLLAPSED_KEY = "bej-sidebar-collapsed";
 import type { ThemePreference } from "../theme";
@@ -14,6 +14,7 @@ interface SidebarProps {
   personalCount: number;
   favoriteChunkCount?: number;
   onViewChange: (view: AppView) => void;
+  mobileMenuOpenRequest?: number;
 }
 
 export function Sidebar({
@@ -24,7 +25,8 @@ export function Sidebar({
   favoriteChunkCount = 0,
   onViewChange,
   onOpenLanguages,
-  onOpenAbout
+  onOpenAbout,
+  mobileMenuOpenRequest = 0
 }: SidebarProps) {
   const { t } = useTranslation();
 const menuItems: Array<{
@@ -78,6 +80,12 @@ const menuItems: Array<{
   ];
 
   const [menuOpen, setMenuOpen] = useState(false);
+  // O botão Home do Dashboard solicita a abertura do hambúrguer no mobile.
+  useEffect(() => {
+    if (mobileMenuOpenRequest > 0 && window.matchMedia("(max-width: 820px)").matches) {
+      setMenuOpen(true);
+    }
+  }, [mobileMenuOpenRequest]);
   const [collapsed, setCollapsed] = useState(() => {
     try {
       return window.localStorage.getItem(SIDEBAR_COLLAPSED_KEY) === "true";
