@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1273,
+    "totalIntentions": 1276,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -51854,6 +51854,275 @@
           "id": "d20b3d71-0e41-421f-98a1-fc369d54e170",
           "exampleItem": "Elle n’a pas réussi à s’habituer à travailler la nuit.",
           "intent": "s’habituer à travailler"
+        }
+      ]
+    },
+    {
+      "id": "daqui-a-poucos-periodo-de-tempo-6f82a1c4-3d75-4b90-8e21-c7a54d09f632",
+      "intention": "Dans quelques + unité de temps",
+      "pattern": "dans + quelques + unité de temps au pluriel",
+      "description": "Indique qu’un événement se produira après un intervalle relativement court à partir du moment présent. On utilise « dans quelques » suivi d’une unité de temps au pluriel, comme secondes, minutes, heures, jours, semaines, mois ou années. Cette expression sert notamment à annoncer une arrivée, le début d’une activité ou un événement à venir. Elle indique le délai avant l’événement, et non la durée de l’activité.",
+      "searchTerms": [
+        "dans un moment",
+        "dans quelques secondes",
+        "dans quelques minutes",
+        "dans quelques heures",
+        "dans quelques jours",
+        "dans quelques semaines",
+        "dans quelques mois",
+        "dans quelques années",
+        "d’ici quelques minutes",
+        "événement futur",
+        "délai avant un événement"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])dans\\s+quelques\\s+(?:secondes|minutes|heures|jours|semaines|mois|années|ans)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "temps",
+        "futur",
+        "intervalle de temps",
+        "délais",
+        "événements futurs",
+        "expressions temporelles",
+        "générateur de phrases",
+        "conversation"
+      ],
+      "structure": "Pour situer un événement après un délai à partir de maintenant, on emploie « dans quelques » suivi d’une unité de temps au pluriel : « dans quelques minutes », « dans quelques heures », « dans quelques jours ». L’expression peut se placer au début ou à la fin de la phrase. Elle accompagne souvent le futur simple ou le futur proche : « Elle appellera dans quelques heures ». Il faut distinguer « dans quelques minutes », délai avant un événement, de « pendant quelques minutes », durée d’une activité, et de « en quelques minutes », temps nécessaire pour accomplir une action.",
+      "category": "time",
+      "related": [],
+      "level": "A2",
+      "examples": [
+        {
+          "id": "a182c3d4-5e67-4890-8a12-b3c4d5e6f701",
+          "exampleItem": "Je serai là dans quelques minutes.",
+          "intent": "dans quelques minutes"
+        },
+        {
+          "id": "b293d4e5-6f78-4901-9b23-c4d5e6f7a812",
+          "exampleItem": "Elle t’appellera dans quelques heures.",
+          "intent": "dans quelques heures"
+        },
+        {
+          "id": "c3a4e5f6-7089-4a12-8c34-d5e6f7a8b923",
+          "exampleItem": "Nous connaîtrons les résultats dans quelques jours.",
+          "intent": "dans quelques jours"
+        },
+        {
+          "id": "d4b5f607-819a-4b23-9d45-e6f7a8b9c034",
+          "exampleItem": "La réunion commencera dans quelques minutes.",
+          "intent": "dans quelques minutes"
+        },
+        {
+          "id": "e5c60718-92ab-4c34-8e56-f7a8b9c0d145",
+          "exampleItem": "Ils arriveront dans quelques heures.",
+          "intent": "dans quelques heures"
+        },
+        {
+          "id": "f6d71829-a3bc-4d45-9f67-a8b9c0d1e256",
+          "exampleItem": "Nous partirons en voyage dans quelques semaines.",
+          "intent": "dans quelques semaines"
+        },
+        {
+          "id": "a7e8293a-b4cd-4e56-8078-b9c0d1e2f367",
+          "exampleItem": "Le film va commencer dans quelques secondes.",
+          "intent": "dans quelques secondes"
+        },
+        {
+          "id": "b8f93a4b-c5de-4f67-9189-c0d1e2f3a478",
+          "exampleItem": "Tu recevras une réponse dans quelques jours.",
+          "intent": "dans quelques jours"
+        },
+        {
+          "id": "c90a4b5c-d6ef-4078-a29a-d1e2f3a4b589",
+          "exampleItem": "Le nouveau projet démarrera dans quelques mois.",
+          "intent": "dans quelques mois"
+        },
+        {
+          "id": "da1b5c6d-e7f0-4189-b3ab-e2f3a4b5c690",
+          "exampleItem": "Nous serons prêts dans quelques minutes.",
+          "intent": "dans quelques minutes"
+        }
+      ]
+    },
+    {
+      "id": "concluir-em-poucos-periodo-de-tempo-7a93b2d5-4e86-4c01-9f32-d8b65e10a743",
+      "intention": "Réussir à faire / Terminer quelque chose en quelques + unité de temps",
+      "pattern": "sujet + action ou résultat + en + quelques + unité de temps au pluriel",
+      "description": "Exprime le temps nécessaire pour effectuer ou terminer une action. On utilise « en quelques » suivi d’une unité de temps au pluriel. Contrairement à « dans quelques », qui situe un événement à venir, l’intervalle représente ici le temps consacré ou nécessaire à la réalisation d’une activité. La construction convient aux tâches achevées dans le passé, aux capacités présentes et aux estimations du temps nécessaire pour une tâche future.",
+      "searchTerms": [
+        "en quelques minutes",
+        "en quelques heures",
+        "en quelques jours",
+        "en quelques semaines",
+        "terminer rapidement",
+        "finir en peu de temps",
+        "résoudre en quelques minutes",
+        "faire en quelques heures",
+        "apprendre en quelques mois",
+        "temps d’exécution",
+        "temps nécessaire",
+        "durée jusqu’à l’achèvement"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])en\\s+quelques\\s+(?:secondes|minutes|heures|jours|semaines|mois|années|ans)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "temps",
+        "achèvement",
+        "temps d’exécution",
+        "résultats",
+        "tâches",
+        "productivité",
+        "expressions temporelles",
+        "générateur de phrases",
+        "conversation"
+      ],
+      "structure": "Pour indiquer le temps nécessaire à la réalisation d’une action, on utilise « en quelques » suivi d’une unité de temps au pluriel : « J’ai terminé en quelques minutes », « Je peux résoudre ce problème en quelques heures ». Le temps du verbe varie selon le contexte. Au passé, l’expression indique le temps mis pour parvenir au résultat ; au futur, elle peut donner une estimation du temps nécessaire. Le contexte doit montrer qu’il s’agit du temps d’exécution. À distinguer de « dans quelques minutes », qui situe un événement à venir, et de « pendant quelques minutes », qui exprime une durée sans nécessairement indiquer un résultat.",
+      "category": "time",
+      "related": [],
+      "level": "A2",
+      "examples": [
+        {
+          "id": "e12c6d7e-f801-429a-84bc-f3a4b5c6d701",
+          "exampleItem": "J’ai terminé le rapport en quelques minutes.",
+          "intent": "en quelques minutes"
+        },
+        {
+          "id": "f23d7e8f-0912-43ab-95cd-a4b5c6d7e812",
+          "exampleItem": "Je peux résoudre ce problème en quelques minutes.",
+          "intent": "en quelques minutes"
+        },
+        {
+          "id": "a34e8f90-1a23-44bc-86de-b5c6d7e8f923",
+          "exampleItem": "Elle a réussi à terminer le travail en quelques heures.",
+          "intent": "en quelques heures"
+        },
+        {
+          "id": "b45f901a-2b34-45cd-97ef-c6d7e8f9a034",
+          "exampleItem": "Nous avons achevé le projet en quelques jours.",
+          "intent": "en quelques jours"
+        },
+        {
+          "id": "c5601a2b-3c45-46de-8801-d7e8f9a0b145",
+          "exampleItem": "Il a appris à utiliser le système en quelques semaines.",
+          "intent": "en quelques semaines"
+        },
+        {
+          "id": "d6712b3c-4d56-47ef-9912-e8f9a0b1c256",
+          "exampleItem": "Je pourrai préparer la présentation en quelques heures.",
+          "intent": "en quelques heures"
+        },
+        {
+          "id": "e7823c4d-5e67-4801-8a23-f9a0b1c2d367",
+          "exampleItem": "Ils ont corrigé toutes les erreurs en quelques jours.",
+          "intent": "en quelques jours"
+        },
+        {
+          "id": "f8934d5e-6f78-4912-9b34-a0b1c2d3e478",
+          "exampleItem": "Peux-tu terminer cette tâche en quelques minutes ?",
+          "intent": "en quelques minutes"
+        },
+        {
+          "id": "a9a45e6f-7089-4a23-8c45-b1c2d3e4f589",
+          "exampleItem": "J’ai réussi à configurer l’environnement de développement en quelques heures.",
+          "intent": "en quelques heures"
+        },
+        {
+          "id": "bab56f70-819a-4b34-9d56-c2d3e4f5a690",
+          "exampleItem": "Elle a réussi à améliorer nettement sa prononciation en quelques mois.",
+          "intent": "en quelques mois"
+        }
+      ]
+    },
+    {
+      "id": "por-alguns-periodo-de-tempo-8b04c3e6-5f97-4d12-8a43-e9c76f21b854",
+      "intention": "Pendant quelques + unité de temps",
+      "pattern": "sujet + action ou situation + pendant + quelques + unité de temps au pluriel",
+      "description": "Exprime la durée d’une activité, d’un état ou d’une situation sur une période relativement courte. On utilise généralement « pendant quelques » suivi d’une unité de temps au pluriel. L’expression répond à la question « pendant combien de temps ? » et s’emploie à différents temps verbaux sans indiquer nécessairement qu’une tâche a été achevée. Pour une situation commencée dans le passé et toujours en cours, on utilise « depuis quelques » avec le présent. « Dans quelques » indique un délai avant un événement, tandis que « en quelques » indique le temps nécessaire pour accomplir une action.",
+      "searchTerms": [
+        "pendant quelques minutes",
+        "pendant quelques heures",
+        "pendant quelques jours",
+        "pendant quelques semaines",
+        "pendant quelques mois",
+        "pendant quelques années",
+        "durant quelques minutes",
+        "durant quelques heures",
+        "rester quelques jours",
+        "attendre quelques minutes",
+        "étudier pendant quelques heures",
+        "durée d’une activité",
+        "intervalle de durée",
+        "depuis quelques minutes"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:pendant|durant|depuis)\\s+quelques\\s+(?:secondes|minutes|heures|jours|semaines|mois|années|ans)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "temps",
+        "durée",
+        "activités",
+        "période de temps",
+        "expériences",
+        "expressions temporelles",
+        "générateur de phrases",
+        "conversation"
+      ],
+      "structure": "Pour indiquer la durée d’une activité ou d’une situation, on emploie « pendant quelques » suivi d’une unité de temps au pluriel : « pendant quelques minutes », « pendant quelques heures », « pendant quelques jours ». On peut utiliser différents temps : « J’ai étudié pendant quelques heures », « Je resterai pendant quelques jours ». Pour une attente commencée auparavant et toujours en cours, on emploie le présent avec depuis : « J’attends depuis quelques minutes ». La durée n’implique pas nécessairement l’achèvement d’une tâche. Il faut distinguer « pendant quelques minutes », durée d’une activité, de « dans quelques minutes », délai avant un événement, et de « en quelques minutes », temps nécessaire pour accomplir une action.",
+      "category": "time",
+      "related": [],
+      "level": "A2",
+      "examples": [
+        {
+          "id": "c1c67081-92ab-4c45-8e67-d3e4f5a6b701",
+          "exampleItem": "Je vais me reposer pendant quelques minutes.",
+          "intent": "pendant quelques minutes"
+        },
+        {
+          "id": "d2d78192-a3bc-4d56-9f78-e4f5a6b7c812",
+          "exampleItem": "Elle a étudié l’anglais pendant quelques heures.",
+          "intent": "pendant quelques heures"
+        },
+        {
+          "id": "e3e892a3-b4cd-4e67-8089-f5a6b7c8d923",
+          "exampleItem": "Nous allons rester en ville pendant quelques jours.",
+          "intent": "pendant quelques jours"
+        },
+        {
+          "id": "f4f9a3b4-c5de-4f78-919a-a6b7c8d9e034",
+          "exampleItem": "Il a travaillé sur ce projet pendant quelques semaines.",
+          "intent": "pendant quelques semaines"
+        },
+        {
+          "id": "a50ab4c5-d6ef-4089-82ab-b7c8d9e0f145",
+          "exampleItem": "J’attends depuis quelques minutes.",
+          "intent": "depuis quelques minutes"
+        },
+        {
+          "id": "b61bc5d6-e7f0-419a-93bc-c8d9e0f1a256",
+          "exampleItem": "Ils ont vécu au Canada pendant quelques années.",
+          "intent": "pendant quelques années"
+        },
+        {
+          "id": "c72cd6e7-f801-42ab-84cd-d9e0f1a2b367",
+          "exampleItem": "Peux-tu rester ici pendant quelques minutes ?",
+          "intent": "pendant quelques minutes"
+        },
+        {
+          "id": "d83de7f8-0912-43bc-95de-e0f1a2b3c478",
+          "exampleItem": "Nous avons discuté pendant quelques heures hier.",
+          "intent": "pendant quelques heures"
+        },
+        {
+          "id": "e94ef809-1a23-44cd-86ef-f1a2b3c4d589",
+          "exampleItem": "Elle va partir en voyage pendant quelques semaines.",
+          "intent": "pendant quelques semaines"
+        },
+        {
+          "id": "fa5f091a-2b34-45de-9701-a2b3c4d5e690",
+          "exampleItem": "Je dois m’éloigner de l’ordinateur pendant quelques minutes.",
+          "intent": "pendant quelques minutes"
         }
       ]
     }

@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1273,
+    "totalIntentions": 1276,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -75454,6 +75454,270 @@
           "id": "d20b3d71-0e41-421f-98a1-fc369d54e170",
           "exampleItem": "She couldn't get used to working at night.",
           "intent": "get used to working"
+        }
+      ]
+    },
+    {
+      "id": "daqui-a-poucos-periodo-de-tempo-6f82a1c4-3d75-4b90-8e21-c7a54d09f632",
+      "intention": "In a few + time unit: a future event",
+      "pattern": "in a few + plural time unit",
+      "description": "Indicates that an event will happen after a relatively short interval measured from now. Use 'in a few' followed by a plural time unit, such as seconds, minutes, hours, days, weeks, months, or years. This construction commonly tells someone when a person will arrive, an activity will begin, or something will happen. It describes the interval before the event starts or occurs, rather than the duration of the activity.",
+      "category": "time",
+      "searchTerms": [
+        "in a few seconds",
+        "in a few minutes",
+        "in a few hours",
+        "in a few days",
+        "in a few weeks",
+        "in a few months",
+        "in a few years",
+        "a short time from now",
+        "future event"
+      ],
+      "validationPatterns": [
+        "\\bin\\s+a\\s+few\\s+(?:seconds|minutes|hours|days|weeks|months|years)\\b"
+      ],
+      "tags": [
+        "time",
+        "future",
+        "time interval",
+        "deadlines",
+        "future events",
+        "time expressions",
+        "sentence generator",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "To say that something will happen after an interval measured from now, use 'in a few' followed by a plural time unit: 'in a few minutes', 'in a few hours', or 'in a few days'. The expression can appear at the beginning or end of a sentence. It usually accompanies a future clause, although the verb tense depends on context. Distinguish this construction from 'for a few', which indicates duration. 'Few' does not change form, and the time unit is plural.",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "a182c3d4-5e67-4890-8a12-b3c4d5e6f701",
+          "exampleItem": "I'll be there in a few minutes.",
+          "intent": "in a few minutes"
+        },
+        {
+          "id": "b293d4e5-6f78-4901-9b23-c4d5e6f7a812",
+          "exampleItem": "She'll call you in a few hours.",
+          "intent": "in a few hours"
+        },
+        {
+          "id": "c3a4e5f6-7089-4a12-8c34-d5e6f7a8b923",
+          "exampleItem": "We'll know the results in a few days.",
+          "intent": "in a few days"
+        },
+        {
+          "id": "d4b5f607-819a-4b23-9d45-e6f7a8b9c034",
+          "exampleItem": "The meeting will start in a few minutes.",
+          "intent": "in a few minutes"
+        },
+        {
+          "id": "e5c60718-92ab-4c34-8e56-f7a8b9c0d145",
+          "exampleItem": "They'll arrive in a few hours.",
+          "intent": "in a few hours"
+        },
+        {
+          "id": "f6d71829-a3bc-4d45-9f67-a8b9c0d1e256",
+          "exampleItem": "We're going on a trip in a few weeks.",
+          "intent": "in a few weeks"
+        },
+        {
+          "id": "a7e8293a-b4cd-4e56-8078-b9c0d1e2f367",
+          "exampleItem": "The movie will start in a few seconds.",
+          "intent": "in a few seconds"
+        },
+        {
+          "id": "b8f93a4b-c5de-4f67-9189-c0d1e2f3a478",
+          "exampleItem": "You'll get an answer in a few days.",
+          "intent": "in a few days"
+        },
+        {
+          "id": "c90a4b5c-d6ef-4078-a29a-d1e2f3a4b589",
+          "exampleItem": "The new project will start in a few months.",
+          "intent": "in a few months"
+        },
+        {
+          "id": "da1b5c6d-e7f0-4189-b3ab-e2f3a4b5c690",
+          "exampleItem": "We'll be ready in a few minutes.",
+          "intent": "in a few minutes"
+        }
+      ]
+    },
+    {
+      "id": "concluir-em-poucos-periodo-de-tempo-7a93b2d5-4e86-4c01-9f32-d8b65e10a743",
+      "intention": "Finish or accomplish something in a few + time unit",
+      "pattern": "subject + action or result + in a few + plural time unit",
+      "description": "Expresses the time needed to carry out or complete an action. Use 'in a few' followed by a plural time unit. Unlike the construction that tells when a future event will happen, this interval represents the time spent or needed to perform an activity. Use it for tasks completed in the past, activities performed in the present, or estimates of how long a future task will take.",
+      "category": "time",
+      "searchTerms": [
+        "in a few minutes",
+        "in a few hours",
+        "in a few days",
+        "in a few weeks",
+        "finish quickly",
+        "finish in a short time",
+        "solve in minutes",
+        "do in a few hours",
+        "learn in a few months",
+        "completion time",
+        "time needed",
+        "time to completion"
+      ],
+      "validationPatterns": [
+        "\\bin\\s+a\\s+few\\s+(?:seconds|minutes|hours|days|weeks|months|years)\\b"
+      ],
+      "tags": [
+        "time",
+        "completion",
+        "completion time",
+        "results",
+        "tasks",
+        "productivity",
+        "time expressions",
+        "sentence generator",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "To indicate how much time was or will be needed to perform an action, use 'in a few' followed by a plural time unit: 'I finished it in a few minutes' or 'I can solve it in a few hours'. The main verb tense varies with the situation. In the past, the construction tells how long an action took to complete. For future tasks, it can express an estimate of the time needed. Context must make clear that the expression refers to the time required to perform the task, rather than the interval before a future event. Distinguish it from 'for a few', which describes how long a situation or activity lasts without necessarily implying completion.",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "e12c6d7e-f801-429a-84bc-f3a4b5c6d701",
+          "exampleItem": "I finished the report in a few minutes.",
+          "intent": "in a few minutes"
+        },
+        {
+          "id": "f23d7e8f-0912-43ab-95cd-a4b5c6d7e812",
+          "exampleItem": "I can solve this problem in a few minutes.",
+          "intent": "in a few minutes"
+        },
+        {
+          "id": "a34e8f90-1a23-44bc-86de-b5c6d7e8f923",
+          "exampleItem": "She managed to finish the work in a few hours.",
+          "intent": "in a few hours"
+        },
+        {
+          "id": "b45f901a-2b34-45cd-97ef-c6d7e8f9a034",
+          "exampleItem": "We completed the project in a few days.",
+          "intent": "in a few days"
+        },
+        {
+          "id": "c5601a2b-3c45-46de-8801-d7e8f9a0b145",
+          "exampleItem": "He learned to use the system in a few weeks.",
+          "intent": "in a few weeks"
+        },
+        {
+          "id": "d6712b3c-4d56-47ef-9912-e8f9a0b1c256",
+          "exampleItem": "I'll be able to prepare the presentation in a few hours.",
+          "intent": "in a few hours"
+        },
+        {
+          "id": "e7823c4d-5e67-4801-8a23-f9a0b1c2d367",
+          "exampleItem": "They fixed all the errors in a few days.",
+          "intent": "in a few days"
+        },
+        {
+          "id": "f8934d5e-6f78-4912-9b34-a0b1c2d3e478",
+          "exampleItem": "Can you finish this task in a few minutes?",
+          "intent": "in a few minutes"
+        },
+        {
+          "id": "a9a45e6f-7089-4a23-8c45-b1c2d3e4f589",
+          "exampleItem": "I managed to set up the development environment in a few hours.",
+          "intent": "in a few hours"
+        },
+        {
+          "id": "bab56f70-819a-4b34-9d56-c2d3e4f5a690",
+          "exampleItem": "She managed to improve her pronunciation a lot in a few months.",
+          "intent": "in a few months"
+        }
+      ]
+    },
+    {
+      "id": "por-alguns-periodo-de-tempo-8b04c3e6-5f97-4d12-8a43-e9c76f21b854",
+      "intention": "For a few + time unit: duration",
+      "pattern": "subject + action or situation + for a few + plural time unit",
+      "description": "Expresses the duration of an activity, state, or situation over a relatively short period. Use 'for a few' followed by a plural time unit. This construction answers the question of how long something happens, happened, or will happen. It works with different verb tenses and does not necessarily imply that a task was completed. The main distinction is that 'for a few' emphasizes duration, whereas 'in a few' can indicate when a future event will occur or how much time is needed to complete an action.",
+      "category": "time",
+      "searchTerms": [
+        "for a few minutes",
+        "for a few hours",
+        "for a few days",
+        "for a few weeks",
+        "for a few months",
+        "for a few years",
+        "stay for a few days",
+        "wait for a few minutes",
+        "study for a few hours",
+        "activity duration",
+        "duration of a period"
+      ],
+      "validationPatterns": [
+        "\\bfor\\s+a\\s+few\\s+(?:seconds|minutes|hours|days|weeks|months|years)\\b"
+      ],
+      "tags": [
+        "time",
+        "duration",
+        "activities",
+        "period of time",
+        "experiences",
+        "time expressions",
+        "sentence generator",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "To indicate how long an activity or situation lasts, use 'for a few' followed by a plural time unit: 'for a few minutes', 'for a few hours', or 'for a few days'. Use it with different verb tenses, as in 'I studied for a few hours', 'I'll stay for a few days', and 'I've been waiting for a few minutes'. The expression answers the question of how long a situation lasts or lasted. It does not necessarily imply that the activity was completed. Distinguish 'for a few minutes', which indicates duration, from 'in a few minutes', which can indicate when something will happen or how long it will take to complete.",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "c1c67081-92ab-4c45-8e67-d3e4f5a6b701",
+          "exampleItem": "I'm going to rest for a few minutes.",
+          "intent": "for a few minutes"
+        },
+        {
+          "id": "d2d78192-a3bc-4d56-9f78-e4f5a6b7c812",
+          "exampleItem": "She studied English for a few hours.",
+          "intent": "for a few hours"
+        },
+        {
+          "id": "e3e892a3-b4cd-4e67-8089-f5a6b7c8d923",
+          "exampleItem": "We're going to stay in the city for a few days.",
+          "intent": "for a few days"
+        },
+        {
+          "id": "f4f9a3b4-c5de-4f78-919a-a6b7c8d9e034",
+          "exampleItem": "He worked on that project for a few weeks.",
+          "intent": "for a few weeks"
+        },
+        {
+          "id": "a50ab4c5-d6ef-4089-82ab-b7c8d9e0f145",
+          "exampleItem": "I've been waiting for a few minutes.",
+          "intent": "for a few minutes"
+        },
+        {
+          "id": "b61bc5d6-e7f0-419a-93bc-c8d9e0f1a256",
+          "exampleItem": "They lived in Canada for a few years.",
+          "intent": "for a few years"
+        },
+        {
+          "id": "c72cd6e7-f801-42ab-84cd-d9e0f1a2b367",
+          "exampleItem": "Can you stay here for a few minutes?",
+          "intent": "for a few minutes"
+        },
+        {
+          "id": "d83de7f8-0912-43bc-95de-e0f1a2b3c478",
+          "exampleItem": "We talked for a few hours yesterday.",
+          "intent": "for a few hours"
+        },
+        {
+          "id": "e94ef809-1a23-44cd-86ef-f1a2b3c4d589",
+          "exampleItem": "She's going to travel for a few weeks.",
+          "intent": "for a few weeks"
+        },
+        {
+          "id": "fa5f091a-2b34-45de-9701-a2b3c4d5e690",
+          "exampleItem": "I need to step away from the computer for a few minutes.",
+          "intent": "for a few minutes"
         }
       ]
     }

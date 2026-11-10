@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1273,
+    "totalIntentions": 1276,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -50962,6 +50962,277 @@
           "id": "d20b3d71-0e41-421f-98a1-fc369d54e170",
           "exampleItem": "Ela não conseguiu se acostumar a trabalhar à noite.",
           "intent": "se acostumar a trabalhar"
+        }
+      ]
+    },
+    {
+      "id": "daqui-a-poucos-periodo-de-tempo-6f82a1c4-3d75-4b90-8e21-c7a54d09f632",
+      "intention": "Daqui a poucos / algumas + período de tempo",
+      "pattern": "daqui a + poucos / poucas / alguns / algumas + unidade de tempo no plural",
+      "description": "Indica que um acontecimento ocorrerá após um intervalo relativamente curto contado a partir do momento atual. Em inglês americano, utiliza-se 'in a few' seguido de uma unidade de tempo no plural, como segundos, minutos, horas, dias, semanas, meses ou anos. A construção é comum para informar quando alguém chegará, quando uma atividade começará ou quando algo acontecerá. Não expressa a duração da atividade, mas o intervalo até seu início ou ocorrência.",
+      "category": "time",
+      "searchTerms": [
+        "daqui a pouco",
+        "daqui a poucos segundos",
+        "daqui a alguns minutos",
+        "daqui a poucas horas",
+        "daqui a alguns dias",
+        "daqui a algumas semanas",
+        "daqui a poucos meses",
+        "daqui a alguns anos",
+        "em alguns minutos",
+        "em poucos dias",
+        "dentro de alguns minutos",
+        "acontecimento futuro"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])daqui\\s+a\\s+(?:poucos|poucas|alguns|algumas)\\s+(?:segundos|minutos|horas|dias|semanas|meses|anos)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:em|dentro\\s+de)\\s+(?:poucos|poucas|alguns|algumas)\\s+(?:segundos|minutos|horas|dias|semanas|meses|anos)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "tempo",
+        "futuro",
+        "intervalo de tempo",
+        "prazos",
+        "acontecimentos futuros",
+        "expressões temporais",
+        "gerador de frases",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "Para indicar que algo acontecerá após um intervalo de tempo contado a partir de agora, utiliza-se 'in a few' seguido de uma unidade de tempo no plural. Exemplos: 'in a few minutes', 'in a few hours' e 'in a few days'. A expressão pode aparecer no início ou no final da frase. Normalmente é acompanhada de uma oração no futuro, embora o tempo verbal dependa do contexto. É importante não confundir essa construção com 'for a few', que indica duração. A palavra 'few' permanece invariável, e a unidade de tempo aparece no plural.",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "a182c3d4-5e67-4890-8a12-b3c4d5e6f701",
+          "exampleItem": "Estarei aí daqui a poucos minutos.",
+          "intent": "daqui a poucos minutos"
+        },
+        {
+          "id": "b293d4e5-6f78-4901-9b23-c4d5e6f7a812",
+          "exampleItem": "Ela vai ligar para você daqui a algumas horas.",
+          "intent": "daqui a algumas horas"
+        },
+        {
+          "id": "c3a4e5f6-7089-4a12-8c34-d5e6f7a8b923",
+          "exampleItem": "Saberemos os resultados daqui a poucos dias.",
+          "intent": "daqui a poucos dias"
+        },
+        {
+          "id": "d4b5f607-819a-4b23-9d45-e6f7a8b9c034",
+          "exampleItem": "A reunião começará daqui a alguns minutos.",
+          "intent": "daqui a alguns minutos"
+        },
+        {
+          "id": "e5c60718-92ab-4c34-8e56-f7a8b9c0d145",
+          "exampleItem": "Eles chegarão daqui a poucas horas.",
+          "intent": "daqui a poucas horas"
+        },
+        {
+          "id": "f6d71829-a3bc-4d45-9f67-a8b9c0d1e256",
+          "exampleItem": "Vamos viajar daqui a algumas semanas.",
+          "intent": "daqui a algumas semanas"
+        },
+        {
+          "id": "a7e8293a-b4cd-4e56-8078-b9c0d1e2f367",
+          "exampleItem": "O filme vai começar daqui a poucos segundos.",
+          "intent": "daqui a poucos segundos"
+        },
+        {
+          "id": "b8f93a4b-c5de-4f67-9189-c0d1e2f3a478",
+          "exampleItem": "Você receberá uma resposta daqui a alguns dias.",
+          "intent": "daqui a alguns dias"
+        },
+        {
+          "id": "c90a4b5c-d6ef-4078-a29a-d1e2f3a4b589",
+          "exampleItem": "O novo projeto começará daqui a poucos meses.",
+          "intent": "daqui a poucos meses"
+        },
+        {
+          "id": "da1b5c6d-e7f0-4189-b3ab-e2f3a4b5c690",
+          "exampleItem": "Estaremos prontos daqui a alguns minutos.",
+          "intent": "daqui a alguns minutos"
+        }
+      ]
+    },
+    {
+      "id": "concluir-em-poucos-periodo-de-tempo-7a93b2d5-4e86-4c01-9f32-d8b65e10a743",
+      "intention": "Conseguir fazer / Concluir algo em poucos + período de tempo",
+      "pattern": "sujeito + ação ou resultado + em + poucos / poucas / alguns / algumas + unidade de tempo",
+      "description": "Expressa o tempo necessário para realizar ou concluir uma ação. Em inglês americano, utiliza-se 'in a few' seguido de uma unidade de tempo no plural. Diferentemente da construção que indica quando algo acontecerá no futuro, aqui o intervalo corresponde ao tempo gasto ou necessário para executar uma atividade. Pode ser utilizado para falar de tarefas concluídas no passado, atividades realizadas no presente ou previsões sobre o tempo de execução de uma tarefa futura.",
+      "category": "time",
+      "searchTerms": [
+        "em poucos minutos",
+        "em algumas horas",
+        "em poucos dias",
+        "em algumas semanas",
+        "terminar rapidamente",
+        "concluir em pouco tempo",
+        "resolver em minutos",
+        "fazer em poucas horas",
+        "aprender em alguns meses",
+        "tempo de execução",
+        "tempo necessário",
+        "duração até a conclusão"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])em\\s+(?:poucos|poucas|alguns|algumas)\\s+(?:segundos|minutos|horas|dias|semanas|meses|anos)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "tempo",
+        "conclusão",
+        "tempo de execução",
+        "resultados",
+        "tarefas",
+        "produtividade",
+        "expressões temporais",
+        "gerador de frases",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "Para indicar quanto tempo foi necessário ou será necessário para realizar uma ação, utiliza-se 'in a few' seguido de uma unidade de tempo no plural. Exemplos: 'I finished it in a few minutes' e 'I can solve it in a few hours'. O tempo verbal da oração principal pode variar conforme a situação. No passado, a construção informa quanto tempo uma ação levou para ser concluída. No futuro, pode indicar uma previsão de tempo necessário. O contexto deve deixar claro que a expressão representa o tempo de execução e não o intervalo até um acontecimento futuro. A estrutura não deve ser confundida com 'for a few', que indica a duração de uma situação ou atividade, sem necessariamente informar sua conclusão.",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "e12c6d7e-f801-429a-84bc-f3a4b5c6d701",
+          "exampleItem": "Terminei o relatório em poucos minutos.",
+          "intent": "em poucos minutos"
+        },
+        {
+          "id": "f23d7e8f-0912-43ab-95cd-a4b5c6d7e812",
+          "exampleItem": "Consigo resolver esse problema em alguns minutos.",
+          "intent": "em alguns minutos"
+        },
+        {
+          "id": "a34e8f90-1a23-44bc-86de-b5c6d7e8f923",
+          "exampleItem": "Ela conseguiu terminar o trabalho em poucas horas.",
+          "intent": "em poucas horas"
+        },
+        {
+          "id": "b45f901a-2b34-45cd-97ef-c6d7e8f9a034",
+          "exampleItem": "Nós concluímos o projeto em alguns dias.",
+          "intent": "em alguns dias"
+        },
+        {
+          "id": "c5601a2b-3c45-46de-8801-d7e8f9a0b145",
+          "exampleItem": "Ele aprendeu a usar o sistema em poucas semanas.",
+          "intent": "em poucas semanas"
+        },
+        {
+          "id": "d6712b3c-4d56-47ef-9912-e8f9a0b1c256",
+          "exampleItem": "Conseguirei preparar a apresentação em algumas horas.",
+          "intent": "em algumas horas"
+        },
+        {
+          "id": "e7823c4d-5e67-4801-8a23-f9a0b1c2d367",
+          "exampleItem": "Eles corrigiram todos os erros em poucos dias.",
+          "intent": "em poucos dias"
+        },
+        {
+          "id": "f8934d5e-6f78-4912-9b34-a0b1c2d3e478",
+          "exampleItem": "Você consegue terminar essa tarefa em alguns minutos?",
+          "intent": "em alguns minutos"
+        },
+        {
+          "id": "a9a45e6f-7089-4a23-8c45-b1c2d3e4f589",
+          "exampleItem": "Consegui configurar o ambiente de desenvolvimento em poucas horas.",
+          "intent": "em poucas horas"
+        },
+        {
+          "id": "bab56f70-819a-4b34-9d56-c2d3e4f5a690",
+          "exampleItem": "Ela conseguiu melhorar bastante a pronúncia em alguns meses.",
+          "intent": "em alguns meses"
+        }
+      ]
+    },
+    {
+      "id": "por-alguns-periodo-de-tempo-8b04c3e6-5f97-4d12-8a43-e9c76f21b854",
+      "intention": "Por poucos / algumas + período de tempo",
+      "pattern": "sujeito + ação ou situação + por + poucos / poucas / alguns / algumas + unidade de tempo",
+      "description": "Expressa a duração de uma atividade, estado ou situação durante um intervalo de tempo relativamente curto. Em inglês americano, utiliza-se 'for a few' seguido de uma unidade de tempo no plural. Essa construção responde à pergunta sobre quanto tempo algo acontece, aconteceu ou acontecerá. Pode ser utilizada com diferentes tempos verbais e não indica necessariamente que uma tarefa foi concluída. A principal diferença em relação a 'in a few' é que 'for a few' destaca a duração, enquanto 'in a few' pode indicar um momento futuro ou o tempo necessário para concluir uma ação.",
+      "category": "time",
+      "searchTerms": [
+        "por alguns minutos",
+        "por poucos minutos",
+        "por algumas horas",
+        "por poucos dias",
+        "por algumas semanas",
+        "por alguns meses",
+        "por alguns anos",
+        "durante alguns minutos",
+        "durante algumas horas",
+        "ficar por alguns dias",
+        "esperar por alguns minutos",
+        "estudar por algumas horas",
+        "duração de atividade",
+        "intervalo de duração"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:por|durante)\\s+(?:poucos|poucas|alguns|algumas)\\s+(?:segundos|minutos|horas|dias|semanas|meses|anos)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "tempo",
+        "duração",
+        "atividades",
+        "período de tempo",
+        "experiências",
+        "expressões temporais",
+        "gerador de frases",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "Para indicar a duração de uma atividade ou situação, utiliza-se 'for a few' seguido de uma unidade de tempo no plural. Exemplos: 'for a few minutes', 'for a few hours' e 'for a few days'. A construção pode ser utilizada com diferentes tempos verbais, como em 'I studied for a few hours', 'I'll stay for a few days' e 'I've been waiting for a few minutes'. A expressão responde à pergunta sobre quanto tempo uma situação dura ou durou. Não informa necessariamente que a atividade foi concluída. Deve-se distinguir 'for a few minutes', que indica duração, de 'in a few minutes', que pode indicar quando algo acontecerá ou quanto tempo será necessário para concluí-lo.",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "c1c67081-92ab-4c45-8e67-d3e4f5a6b701",
+          "exampleItem": "Vou descansar por alguns minutos.",
+          "intent": "por alguns minutos"
+        },
+        {
+          "id": "d2d78192-a3bc-4d56-9f78-e4f5a6b7c812",
+          "exampleItem": "Ela estudou inglês por algumas horas.",
+          "intent": "por algumas horas"
+        },
+        {
+          "id": "e3e892a3-b4cd-4e67-8089-f5a6b7c8d923",
+          "exampleItem": "Vamos ficar na cidade por alguns dias.",
+          "intent": "por alguns dias"
+        },
+        {
+          "id": "f4f9a3b4-c5de-4f78-919a-a6b7c8d9e034",
+          "exampleItem": "Ele trabalhou naquele projeto por algumas semanas.",
+          "intent": "por algumas semanas"
+        },
+        {
+          "id": "a50ab4c5-d6ef-4089-82ab-b7c8d9e0f145",
+          "exampleItem": "Tenho esperado por alguns minutos.",
+          "intent": "por alguns minutos"
+        },
+        {
+          "id": "b61bc5d6-e7f0-419a-93bc-c8d9e0f1a256",
+          "exampleItem": "Eles moraram no Canadá por alguns anos.",
+          "intent": "por alguns anos"
+        },
+        {
+          "id": "c72cd6e7-f801-42ab-84cd-d9e0f1a2b367",
+          "exampleItem": "Você pode ficar aqui por alguns minutos?",
+          "intent": "por alguns minutos"
+        },
+        {
+          "id": "d83de7f8-0912-43bc-95de-e0f1a2b3c478",
+          "exampleItem": "Nós conversamos por algumas horas ontem.",
+          "intent": "por algumas horas"
+        },
+        {
+          "id": "e94ef809-1a23-44cd-86ef-f1a2b3c4d589",
+          "exampleItem": "Ela vai viajar por algumas semanas.",
+          "intent": "por algumas semanas"
+        },
+        {
+          "id": "fa5f091a-2b34-45de-9701-a2b3c4d5e690",
+          "exampleItem": "Preciso me afastar do computador por alguns minutos.",
+          "intent": "por alguns minutos"
         }
       ]
     }

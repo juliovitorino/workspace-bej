@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1273,
+    "totalIntentions": 1276,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -51313,6 +51313,273 @@
           "id": "d20b3d71-0e41-421f-98a1-fc369d54e170",
           "exampleItem": "Ella no consiguió acostumbrarse a trabajar de noche.",
           "intent": "acostumbrarse a trabajar"
+        }
+      ]
+    },
+    {
+      "id": "daqui-a-poucos-periodo-de-tempo-6f82a1c4-3d75-4b90-8e21-c7a54d09f632",
+      "intention": "Dentro de unos pocos + unidad de tiempo",
+      "pattern": "dentro de + unos / unas / unos pocos / unas pocas + unidad de tiempo en plural",
+      "description": "Indica que un acontecimiento ocurrirá tras un intervalo relativamente corto contado desde el momento actual. Se utiliza «dentro de unos» o «dentro de unas» seguido de una unidad de tiempo en plural, como segundos, minutos, horas, días, semanas, meses o años. Es habitual para informar de cuándo llegará alguien, empezará una actividad o sucederá algo. No expresa la duración de la actividad, sino el intervalo hasta su inicio u ocurrencia.",
+      "category": "time",
+      "searchTerms": [
+        "dentro de poco",
+        "dentro de unos segundos",
+        "dentro de unos minutos",
+        "dentro de unas horas",
+        "dentro de unos días",
+        "dentro de unas semanas",
+        "dentro de unos meses",
+        "dentro de unos años",
+        "en unos minutos",
+        "en pocos días",
+        "acontecimiento futuro"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:dentro\\s+de|en)\\s+(?:unos|unas|pocos|pocas|unos\\s+pocos|unas\\s+pocas)\\s+(?:segundos|minutos|horas|días|semanas|meses|años)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "tiempo",
+        "futuro",
+        "intervalo de tiempo",
+        "plazos",
+        "acontecimientos futuros",
+        "expresiones temporales",
+        "generador de frases",
+        "conversación"
+      ],
+      "related": [],
+      "structure": "Para indicar que algo sucederá después de un intervalo contado desde ahora, se utiliza «dentro de unos» o «dentro de unas» seguido de una unidad de tiempo en plural: «dentro de unos minutos», «dentro de unas horas» y «dentro de unos días». También puede decirse «en unos minutos» si el contexto deja claro el sentido futuro. La expresión puede aparecer al principio o al final de la oración. Suele acompañar a un verbo en futuro o a una construcción con sentido futuro. Debe distinguirse de «durante unos minutos», que expresa duración, y de «terminar en unos minutos», que indica el tiempo necesario para completar una tarea. En inglés, este sentido se expresa con «in a few» y una unidad de tiempo en plural.",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "a182c3d4-5e67-4890-8a12-b3c4d5e6f701",
+          "exampleItem": "Estaré ahí dentro de unos minutos.",
+          "intent": "dentro de unos minutos"
+        },
+        {
+          "id": "b293d4e5-6f78-4901-9b23-c4d5e6f7a812",
+          "exampleItem": "Ella te llamará dentro de unas horas.",
+          "intent": "dentro de unas horas"
+        },
+        {
+          "id": "c3a4e5f6-7089-4a12-8c34-d5e6f7a8b923",
+          "exampleItem": "Sabremos los resultados dentro de unos días.",
+          "intent": "dentro de unos días"
+        },
+        {
+          "id": "d4b5f607-819a-4b23-9d45-e6f7a8b9c034",
+          "exampleItem": "La reunión empezará dentro de unos minutos.",
+          "intent": "dentro de unos minutos"
+        },
+        {
+          "id": "e5c60718-92ab-4c34-8e56-f7a8b9c0d145",
+          "exampleItem": "Llegarán dentro de unas horas.",
+          "intent": "dentro de unas horas"
+        },
+        {
+          "id": "f6d71829-a3bc-4d45-9f67-a8b9c0d1e256",
+          "exampleItem": "Nos iremos de viaje dentro de unas semanas.",
+          "intent": "dentro de unas semanas"
+        },
+        {
+          "id": "a7e8293a-b4cd-4e56-8078-b9c0d1e2f367",
+          "exampleItem": "La película va a empezar dentro de unos segundos.",
+          "intent": "dentro de unos segundos"
+        },
+        {
+          "id": "b8f93a4b-c5de-4f67-9189-c0d1e2f3a478",
+          "exampleItem": "Recibirás una respuesta dentro de unos días.",
+          "intent": "dentro de unos días"
+        },
+        {
+          "id": "c90a4b5c-d6ef-4078-a29a-d1e2f3a4b589",
+          "exampleItem": "El nuevo proyecto comenzará dentro de unos meses.",
+          "intent": "dentro de unos meses"
+        },
+        {
+          "id": "da1b5c6d-e7f0-4189-b3ab-e2f3a4b5c690",
+          "exampleItem": "Estaremos listos dentro de unos minutos.",
+          "intent": "dentro de unos minutos"
+        }
+      ]
+    },
+    {
+      "id": "concluir-em-poucos-periodo-de-tempo-7a93b2d5-4e86-4c01-9f32-d8b65e10a743",
+      "intention": "Conseguir hacer o terminar algo en poco tiempo",
+      "pattern": "sujeto + acción o resultado + en + unos / unas / pocos / pocas + unidad de tiempo en plural",
+      "description": "Expresa el tiempo necesario para realizar o completar una acción. Se utiliza «en unos» o «en unas» seguido de una unidad de tiempo en plural. A diferencia de la construcción que indica cuándo sucederá algo en el futuro, aquí el intervalo representa el tiempo empleado o necesario para ejecutar una actividad. Puede referirse a tareas terminadas en el pasado, actividades del presente o previsiones sobre el tiempo de ejecución de una tarea futura.",
+      "category": "time",
+      "searchTerms": [
+        "en pocos minutos",
+        "en unas horas",
+        "en pocos días",
+        "en unas semanas",
+        "terminar rápidamente",
+        "terminar en poco tiempo",
+        "resolver en minutos",
+        "hacer en pocas horas",
+        "aprender en unos meses",
+        "tiempo de ejecución",
+        "tiempo necesario",
+        "tiempo hasta terminar"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])en\\s+(?:unos|unas|pocos|pocas|unos\\s+pocos|unas\\s+pocas)\\s+(?:segundos|minutos|horas|días|semanas|meses|años)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "tiempo",
+        "finalización",
+        "tiempo de ejecución",
+        "resultados",
+        "tareas",
+        "productividad",
+        "expresiones temporales",
+        "generador de frases",
+        "conversación"
+      ],
+      "related": [],
+      "structure": "Para indicar cuánto tiempo ha sido o será necesario para realizar una acción, se utiliza «en unos» o «en unas» seguido de una unidad de tiempo en plural: «Terminé el informe en unos minutos» y «Puedo resolverlo en unas horas». El tiempo verbal varía según el contexto. En pasado, indica cuánto se tardó en completar una tarea; en futuro, puede expresar una estimación del tiempo necesario. El contexto debe dejar claro que se trata del tiempo de ejecución y no del intervalo hasta un acontecimiento futuro. Debe distinguirse de «durante unos minutos», que expresa duración sin implicar necesariamente que se complete una tarea. En inglés, el tiempo necesario se expresa con «in a few», mientras que «for a few» indica duración.",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "e12c6d7e-f801-429a-84bc-f3a4b5c6d701",
+          "exampleItem": "Terminé el informe en pocos minutos.",
+          "intent": "en pocos minutos"
+        },
+        {
+          "id": "f23d7e8f-0912-43ab-95cd-a4b5c6d7e812",
+          "exampleItem": "Puedo resolver este problema en unos minutos.",
+          "intent": "en unos minutos"
+        },
+        {
+          "id": "a34e8f90-1a23-44bc-86de-b5c6d7e8f923",
+          "exampleItem": "Ella consiguió terminar el trabajo en pocas horas.",
+          "intent": "en pocas horas"
+        },
+        {
+          "id": "b45f901a-2b34-45cd-97ef-c6d7e8f9a034",
+          "exampleItem": "Terminamos el proyecto en unos días.",
+          "intent": "en unos días"
+        },
+        {
+          "id": "c5601a2b-3c45-46de-8801-d7e8f9a0b145",
+          "exampleItem": "Él aprendió a usar el sistema en pocas semanas.",
+          "intent": "en pocas semanas"
+        },
+        {
+          "id": "d6712b3c-4d56-47ef-9912-e8f9a0b1c256",
+          "exampleItem": "Podré preparar la presentación en unas horas.",
+          "intent": "en unas horas"
+        },
+        {
+          "id": "e7823c4d-5e67-4801-8a23-f9a0b1c2d367",
+          "exampleItem": "Corrigieron todos los errores en pocos días.",
+          "intent": "en pocos días"
+        },
+        {
+          "id": "f8934d5e-6f78-4912-9b34-a0b1c2d3e478",
+          "exampleItem": "¿Puedes terminar esta tarea en unos minutos?",
+          "intent": "en unos minutos"
+        },
+        {
+          "id": "a9a45e6f-7089-4a23-8c45-b1c2d3e4f589",
+          "exampleItem": "Conseguí configurar el entorno de desarrollo en pocas horas.",
+          "intent": "en pocas horas"
+        },
+        {
+          "id": "bab56f70-819a-4b34-9d56-c2d3e4f5a690",
+          "exampleItem": "Ella consiguió mejorar mucho su pronunciación en unos meses.",
+          "intent": "en unos meses"
+        }
+      ]
+    },
+    {
+      "id": "por-alguns-periodo-de-tempo-8b04c3e6-5f97-4d12-8a43-e9c76f21b854",
+      "intention": "Durante unos pocos + unidad de tiempo",
+      "pattern": "sujeto + acción o situación + durante + unos / unas / pocos / pocas + unidad de tiempo en plural",
+      "description": "Expresa la duración de una actividad, estado o situación a lo largo de un intervalo relativamente corto. Se utiliza «durante unos» o «durante unas» seguido de una unidad de tiempo en plural. Responde a la pregunta de cuánto tiempo ocurre, ocurrió u ocurrirá algo. Puede usarse con distintos tiempos verbales y no implica necesariamente que se haya completado una tarea. A diferencia de «en unos minutos», que puede indicar un momento futuro o el tiempo necesario para terminar algo, «durante unos minutos» destaca la duración.",
+      "category": "time",
+      "searchTerms": [
+        "durante unos minutos",
+        "durante pocos minutos",
+        "durante unas horas",
+        "durante pocos días",
+        "durante unas semanas",
+        "durante unos meses",
+        "durante unos años",
+        "quedarse unos días",
+        "esperar unos minutos",
+        "estudiar unas horas",
+        "duración de una actividad",
+        "intervalo de duración"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])durante\\s+(?:unos|unas|pocos|pocas|unos\\s+pocos|unas\\s+pocas)\\s+(?:segundos|minutos|horas|días|semanas|meses|años)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "tiempo",
+        "duración",
+        "actividades",
+        "periodo de tiempo",
+        "experiencias",
+        "expresiones temporales",
+        "generador de frases",
+        "conversación"
+      ],
+      "related": [],
+      "structure": "Para indicar la duración de una actividad o situación, se utiliza «durante unos» o «durante unas» seguido de una unidad de tiempo en plural: «durante unos minutos», «durante unas horas» y «durante unos días». La construcción admite distintos tiempos verbales: «Estudié durante unas horas», «Me quedaré durante unos días» y «He estado esperando durante unos minutos». Responde a la pregunta de cuánto dura o duró una situación, sin indicar necesariamente que una tarea haya terminado. Debe distinguirse de «en unos minutos», que puede indicar cuándo ocurrirá algo o cuánto tiempo hará falta para completarlo. En inglés, la duración se expresa con «for a few» y se distingue de «in a few».",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "c1c67081-92ab-4c45-8e67-d3e4f5a6b701",
+          "exampleItem": "Voy a descansar durante unos minutos.",
+          "intent": "durante unos minutos"
+        },
+        {
+          "id": "d2d78192-a3bc-4d56-9f78-e4f5a6b7c812",
+          "exampleItem": "Ella estudió inglés durante unas horas.",
+          "intent": "durante unas horas"
+        },
+        {
+          "id": "e3e892a3-b4cd-4e67-8089-f5a6b7c8d923",
+          "exampleItem": "Nos quedaremos en la ciudad durante unos días.",
+          "intent": "durante unos días"
+        },
+        {
+          "id": "f4f9a3b4-c5de-4f78-919a-a6b7c8d9e034",
+          "exampleItem": "Él trabajó en aquel proyecto durante unas semanas.",
+          "intent": "durante unas semanas"
+        },
+        {
+          "id": "a50ab4c5-d6ef-4089-82ab-b7c8d9e0f145",
+          "exampleItem": "He estado esperando durante unos minutos.",
+          "intent": "durante unos minutos"
+        },
+        {
+          "id": "b61bc5d6-e7f0-419a-93bc-c8d9e0f1a256",
+          "exampleItem": "Vivieron en Canadá durante unos años.",
+          "intent": "durante unos años"
+        },
+        {
+          "id": "c72cd6e7-f801-42ab-84cd-d9e0f1a2b367",
+          "exampleItem": "¿Puedes quedarte aquí durante unos minutos?",
+          "intent": "durante unos minutos"
+        },
+        {
+          "id": "d83de7f8-0912-43bc-95de-e0f1a2b3c478",
+          "exampleItem": "Ayer hablamos durante unas horas.",
+          "intent": "durante unas horas"
+        },
+        {
+          "id": "e94ef809-1a23-44cd-86ef-f1a2b3c4d589",
+          "exampleItem": "Ella va a estar de viaje durante unas semanas.",
+          "intent": "durante unas semanas"
+        },
+        {
+          "id": "fa5f091a-2b34-45de-9701-a2b3c4d5e690",
+          "exampleItem": "Necesito alejarme del ordenador durante unos minutos.",
+          "intent": "durante unos minutos"
         }
       ]
     }
