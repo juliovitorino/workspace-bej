@@ -549,6 +549,8 @@
     "yourBrowserBlockedTheNewTabAllowPopUpsFor": "Le navigateur a bloqué le nouvel onglet. Autorisez les fenêtres surgissantes pour ce site."
   },
   "details": {
+    "copyIntentionInLanguage": "Copier l’intention en {{language}}",
+    "intentionInLanguageCopied": "Intention en {{language}} copiée",
     "authorMode": "Mode Auteur",
     "closeTagsAndSearchTerms": "Fermer les tags et les termes de recherche",
     "comicIntention": "BD - {{intention}}",
