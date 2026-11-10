@@ -62,6 +62,7 @@ function App() {
   const [source, setSource] = useState<"remote" | "cache">("remote");
   const [dashboardSection, setDashboardSection] = useState<"settings" | "history" | undefined>();
   const [currentView, commitView] = useState<AppView>("study-dashboard");
+  const [mobileMenuOpenRequest, setMobileMenuOpenRequest] = useState(0);
   const [backupReminderOpen, setBackupReminderOpen] = useState(false);
   const pendingBackupNavigation = useRef<(() => void) | null>(null);
   function requestStudyNavigation(proceed: () => void) {
@@ -379,6 +380,7 @@ function App() {
       {backupReminderOpen && <BackupReminderDialog onContinue={continueAfterBackup}
         onDismiss={() => { backupReminder.dismiss(); continueAfterBackup(); }} />}
       <Sidebar
+        mobileMenuOpenRequest={mobileMenuOpenRequest}
         theme={theme}
         onThemeChange={changeTheme}
         onOpenLanguages={() => setSettingsDialog("languages")}
@@ -432,7 +434,10 @@ function App() {
               onOpenStudy={() => setCurrentView("chunk-flashcards")}
               onOpenData={section => { setDashboardSection(section); setCurrentView("study-dashboard"); }}
             />}
-            {currentView === "study-dashboard" && <StudyDashboard language={language} initialSection={dashboardSection} />}
+            {currentView === "study-dashboard" && <StudyDashboard language={language} initialSection={dashboardSection} onOpenMobileMenu={() => {
+              window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+              setMobileMenuOpenRequest(request => request + 1);
+            }} />}
             {extraActivity.draft && currentView !== "extra-activities" && <p className="warning-banner" role="status">{t("extras.activeNotice")} <button type="button" className="secondary-button" onClick={() => { closeTraining(); setSelected(null); setCurrentView("extra-activities"); }}>{t("extras.open")}</button></p>}
             {currentView === "extra-activities" && <ExtraActivities language={language} state={extraActivity} />}
             {currentView === "would-you-rather" && <WouldYouRather key={`${sourceLanguage}-${language}`} language={language} sourceLanguage={sourceLanguage} onStudyState={reportStudy} />}
