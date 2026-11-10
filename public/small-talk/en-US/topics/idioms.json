@@ -278,6 +278,36 @@
         "paragraphIndex": 221
       },
       "reviewStatus": "pending"
+    },
+    {
+      "id": "e7b29f41-6c83-4a1d-9e52-0b7c93f8a614",
+      "type": "question-answer",
+      "order": 14,
+      "enabled": true,
+      "level": "B1",
+      "question": {
+        "text": "How long did it take you to learn English?",
+        "audio": null
+      },
+      "answer": {
+        "text": "I've been learning English for a few years now, and I'm still improving. At first, it was difficult for me to understand native speakers and express my thoughts. But with regular practice, I've made a lot of progress. I believe learning a language is a continuous process, and there's always something new to learn.",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [
+        "learning-english",
+        "language-learning",
+        "personal-experience",
+        "speaking-practice"
+      ],
+      "source": {
+        "document": "BEJ Small Talk",
+        "section": "Learning English",
+        "paragraphIndex": null
+      },
+      "reviewStatus": "pending"
     }
   ]
 }
