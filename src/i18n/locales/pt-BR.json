@@ -549,6 +549,8 @@
     "yourBrowserBlockedTheNewTabAllowPopUpsFor": "O navegador bloqueou a nova aba. Permita pop-ups para este site."
   },
   "details": {
+    "copyIntentionInLanguage": "Copiar intenção em {{language}}",
+    "intentionInLanguageCopied": "Intenção em {{language}} copiada",
     "authorMode": "Modo Autor",
     "closeTagsAndSearchTerms": "Fechar tags e termos de busca",
     "comicIntention": "HQ - {{intention}}",
