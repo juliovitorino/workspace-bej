@@ -549,6 +549,8 @@
     "yourBrowserBlockedTheNewTabAllowPopUpsFor": "El navegador ha bloqueado la nueva pestaña. Permite las ventanas emergentes para este sitio."
   },
   "details": {
+    "copyIntentionInLanguage": "Copiar intención en {{language}}",
+    "intentionInLanguageCopied": "Intención en {{language}} copiada",
     "authorMode": "Modo Autor",
     "closeTagsAndSearchTerms": "Cerrar tags y términos de búsqueda",
     "comicIntention": "Cómic - {{intention}}",

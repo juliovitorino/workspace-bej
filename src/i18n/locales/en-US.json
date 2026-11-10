@@ -549,6 +549,8 @@
     "yourBrowserBlockedTheNewTabAllowPopUpsFor": "Your browser blocked the new tab. Allow pop-ups for this site."
   },
   "details": {
+    "copyIntentionInLanguage": "Copy intention in {{language}}",
+    "intentionInLanguageCopied": "Intention in {{language}} copied",
     "authorMode": "Author Mode",
     "closeTagsAndSearchTerms": "Close tags and search terms",
     "comicIntention": "Comic - {{intention}}",

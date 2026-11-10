@@ -90,6 +90,8 @@ export function IntentionDetails({
   const [copiedSection, setCopiedSection] = useState<"pattern" | "description" | "examples" | null>(null);
   const [copySectionError, setCopySectionError] = useState<string | null>(null);
   const [copiedIntentionId, setCopiedIntentionId] = useState<string | null>(null);
+  const [copiedIntentionLanguage, setCopiedIntentionLanguage] = useState<"source" | "target" | null>(null);
+  const [copyIntentionError, setCopyIntentionError] = useState<string | null>(null);
   const [copyIntentionIdError, setCopyIntentionIdError] = useState<string | null>(null);
   const [speechError, setSpeechError] = useState<string | null>(null);
   const [hqImage, setHqImage] = useState<string | null>(null);
@@ -117,6 +119,8 @@ export function IntentionDetails({
     setCopySectionError(null);
     setCopiedIntentionId(null);
     setCopyIntentionIdError(null);
+    setCopiedIntentionLanguage(null);
+    setCopyIntentionError(null);
     setSpeechError(null);
     setHqImage(null);
     setShowMetadataModal(false);
@@ -231,6 +235,79 @@ export function IntentionDetails({
     }
     setSpeechError(null);
     play(example, language, () => setSpeechError(t("details.couldNotPlayTheExample")));
+  }
+
+  async function handleCopyIntention(languageKind: "source" | "target", value: string) {
+    const text = value.trim();
+    if (!text) return;
+
+    try {
+      if (navigator.clipboard?.writeText) {
+        try {
+          await navigator.clipboard.writeText(text);
+        } catch {
+          copyIntentionIdFallback(text);
+        }
+      } else {
+        copyIntentionIdFallback(text);
+      }
+
+      setCopyIntentionError(null);
+      setCopiedIntentionLanguage(languageKind);
+      window.setTimeout(() => {
+        setCopiedIntentionLanguage((current) => current === languageKind ? null : current);
+      }, 1500);
+    } catch {
+      setCopiedIntentionLanguage(null);
+      setCopyIntentionError(t("details.couldNotCopyTheContentTryAgain"));
+    }
+  }
+
+  function renderCopyIntentionButton(
+    languageKind: "source" | "target",
+    value: string | undefined,
+    languageName: string
+  ) {
+    const copied = copiedIntentionLanguage === languageKind;
+    const label = copied
+      ? t("details.intentionInLanguageCopied", { language: languageName })
+      : t("details.copyIntentionInLanguage", { language: languageName });
+
+    return (
+      <button
+        type="button"
+        className="secondary-button copy-section-button"
+        onClick={() => void handleCopyIntention(languageKind, value ?? "")}
+        disabled={!value?.trim()}
+        title={label}
+        aria-label={label}
+        style={{
+          width: "2.25rem",
+          minWidth: "2.25rem",
+          height: "2.25rem",
+          minHeight: "2.25rem",
+          padding: 0,
+          marginLeft: "0.5rem",
+          borderRadius: "999px",
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          verticalAlign: "middle",
+          flexShrink: 0
+        }}
+      >
+        {copied ? (
+          <span aria-hidden="true" style={{ fontSize: "1rem", fontWeight: 700 }}>✓</span>
+        ) : (
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" strokeWidth="2"
+            strokeLinecap="round" strokeLinejoin="round">
+            <rect x="8" y="8" width="12" height="12" rx="2" />
+            <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
+          </svg>
+        )}
+      </button>
+    );
   }
 
   async function handleCopyIntentionId() {
@@ -850,8 +927,17 @@ Mandatório:
         </button>
 
         <p className="eyebrow">{t("common.communicativeIntention")}</p>
-        <h2>{item.intention}</h2>
-        <p className="detail-english" lang={language}>{item.targetIntention ?? item.english}</p>
+        <h2>
+          {item.intention}
+          {renderCopyIntentionButton("source", item.intention, sourceLanguageName)}
+        </h2>
+        <p className="detail-english" lang={language}>
+          {item.targetIntention ?? item.english}
+          {renderCopyIntentionButton("target", item.targetIntention ?? item.english, targetLanguageName)}
+        </p>
+        {copyIntentionError && (
+          <p role="alert" style={{ color: "var(--bad)" }}>{copyIntentionError}</p>
+        )}
 
         {(targetLevel || item.category || youtubeVideoUrl || youtubeShortUrl || (isAuthorMode() && item.allowLanguageChunkPractice === true)) && (
           <div
