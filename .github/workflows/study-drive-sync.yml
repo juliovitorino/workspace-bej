@@ -8,6 +8,7 @@ on:
     paths:
       - 'src/features/study/studyDriveSync.ts'
       - 'src/features/study/StudyDriveSync.tsx'
+      - 'src/features/study/StudyGoogleDrivePanel.tsx'
       - 'scripts/test-study-drive-sync.mjs'
       - 'package.json'
 
