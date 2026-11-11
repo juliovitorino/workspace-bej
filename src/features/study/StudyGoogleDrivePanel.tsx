@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { backupReminder } from "../../utils/backupReminder";
 import { exportStudyBackup } from "./exportStudyBackup";
-import { readStudyStore, STUDY_CHANGED } from "./studyStorage";
+import { readStudyStore, STUDY_CHANGED, StudyError } from "./studyStorage";
 import { languageName } from "../../i18n";
 import { applySync, authorizeDrive, clearPendingDrivePublication, combineSyncFiles, createSnapshot, deviceId, folderId, GOOGLE_CLIENT_ID, listSyncFiles, markPendingDrivePublication, pendingDrivePublication, publishCurrentSnapshot, readSyncFile, saveFolder, studySyncDiagnostics, syncBaseline, type SyncBaseline, type SyncFile } from "./studyDriveSync";
 
@@ -37,7 +37,7 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
   async function action(work: () => Promise<void>) {
     if (busy) return;
     setBusy(true); setError(""); setMessage(""); setPreview(null);
-    try { await work(); } catch (e) { setError(e instanceof Error ? e.message : String(e)); }
+    try { await work(); } catch (e) { setError(e instanceof StudyError ? t("study.errors." + e.code) : e instanceof Error ? e.message : String(e)); }
     finally { setBusy(false); }
   }
   function registerFolder() {
