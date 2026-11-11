@@ -4,9 +4,9 @@ import { useTranslation } from "react-i18next";
 import { backupReminder } from "../../utils/backupReminder";
 import { exportStudyBackup } from "./exportStudyBackup";
 import { readStudyStore } from "./studyStorage";
-import { applySync, authorizeDrive, combineSyncFiles, createSnapshot, deviceId, folderId, GOOGLE_CLIENT_ID, listSyncFiles, readSyncFile, saveFolder, uploadSnapshot, type SyncFile } from "./studyDriveSync";
+import { applySync, authorizeDrive, combineSyncFiles, createSnapshot, deviceId, folderId, GOOGLE_CLIENT_ID, listSyncFiles, readSyncFile, saveFolder, syncBaseline, uploadSnapshot, type SyncBaseline, type SyncFile } from "./studyDriveSync";
 
-type Preview = { baseline: string; local: SyncFile; merged: ReturnType<typeof combineSyncFiles>; token: string; folder: string; remoteCount: number };
+type Preview = { baseline: SyncBaseline; local: SyncFile; merged: ReturnType<typeof combineSyncFiles>; token: string; folder: string; remoteCount: number };
 export function StudyDriveSync() {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
@@ -37,11 +37,14 @@ export function StudyDriveSync() {
   async function inspectDrive() {
     const token = await authorizeDrive();
     const local = await createSnapshot();
-    const baseline = JSON.stringify(readStudyStore());
+    const baseline = syncBaseline();
     if (readStudyStore().extraActivity) throw new Error(t("study.errors.extraActive"));
+    if (JSON.stringify(local.study.studyData) !== JSON.stringify(readStudyStore().studyData) ||
+        JSON.stringify(local.favorites) !== baseline.favorites ||
+        JSON.stringify(local.wyrAnswers ?? {}) !== baseline.wyrAnswers) throw new Error(t("study.errors.stale"));
     const files = await listSyncFiles(token, folder);
     const incoming = await Promise.all(files.map(f => readSyncFile(token, f)));
-    if (JSON.stringify(readStudyStore()) !== baseline) throw new Error(t("study.errors.stale"));
+    if (JSON.stringify(syncBaseline()) !== JSON.stringify(baseline)) throw new Error(t("study.errors.stale"));
     const merged = combineSyncFiles(local, incoming);
     setPreview({ baseline, local, merged, token, folder, remoteCount: incoming.length });
   }
