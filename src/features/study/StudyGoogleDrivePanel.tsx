@@ -5,7 +5,7 @@ import { backupReminder } from "../../utils/backupReminder";
 import { exportStudyBackup } from "./exportStudyBackup";
 import { readStudyStore, STUDY_CHANGED, StudyError } from "./studyStorage";
 import { languageName } from "../../i18n";
-import { applySync, authorizeDrive, clearPendingDrivePublication, combineSyncFiles, createSnapshot, deviceId, folderId, GOOGLE_CLIENT_ID, listSyncFiles, markPendingDrivePublication, pendingDrivePublication, publishCurrentSnapshot, readSyncFile, saveFolder, studySyncDiagnostics, syncBaseline, type SyncBaseline, type SyncFile } from "./studyDriveSync";
+import { applySync, assertNoUncommittedCheckpoints, authorizeDrive, clearPendingDrivePublication, combineSyncFiles, createSnapshot, deviceId, folderId, GOOGLE_CLIENT_ID, listSyncFiles, markPendingDrivePublication, pendingDrivePublication, publishCurrentSnapshot, readSyncFile, saveFolder, studySyncDiagnostics, syncBaseline, type SyncBaseline, type SyncFile } from "./studyDriveSync";
 
 type Preview = { baseline: SyncBaseline; local: SyncFile; merged: ReturnType<typeof combineSyncFiles>; token: string; folder: string; remoteCount: number; recoveredSeconds: number };
 function formatSeconds(seconds: number): string {
@@ -59,6 +59,7 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
     const local = await createSnapshot();
     const recoveredSeconds = Math.max(0, before - checkpointSeconds());
     const baseline = syncBaseline();
+    assertNoUncommittedCheckpoints();
     if (readStudyStore().extraActivity) throw new Error(t("study.errors.extraActive"));
     if (JSON.stringify(local.study.studyData) !== JSON.stringify(readStudyStore().studyData) ||
         JSON.stringify(local.favorites) !== baseline.favorites ||
