@@ -378,6 +378,23 @@ export async function reconcileOrphanedCheckpoints(): Promise<{ sessions: number
     if (localStorage.getItem(key) === null) continue;
     await locks.request(STUDY_KEY + "control:" + module, { ifAvailable: true }, async control => {
       if (!control) { skipped.push(module); return; }
+      // readStudyStore intentionally hides a checkpoint whose ID is already in
+      // history. Handle that legacy leftover explicitly under the write lock.
+      // Never remove a differing record: it may contain unmerged study time.
+      const checkpoint = readStudyCheckpoints().find(item => item.module === module);
+      const completed = checkpoint && readStudyStore().studyData.sessions.find(item => item.id === checkpoint.id);
+      if (completed) {
+        await locks.request(STUDY_KEY + "write", { controlResource: module }, writeLock => {
+          if (!writeLock) throw new StudyError("otherTab");
+          const latest = readStudyCheckpoints().find(item => item.module === module);
+          const saved = latest && readStudyStore().studyData.sessions.find(item => item.id === latest.id);
+          if (!latest || !saved) throw new StudyError("stale");
+          if (JSON.stringify(saved) !== JSON.stringify(latest)) throw new StudyError("conflict");
+          localStorage.removeItem(key);
+          window.dispatchEvent(new Event(STUDY_CHANGED));
+        });
+        return;
+      }
       await updateStudyStore(store => {
         const checkpoint = store.activeSession;
         if (!checkpoint) return store;
