@@ -1,5 +1,5 @@
 import { FAVORITE_CHUNKS_KEY, parseFavoriteChunks, readFavoriteChunks, type FavoriteChunk } from "../../utils/favoriteChunks";
-import { backupOf, mergeStudyData, parseStudyBackup, readStudyCheckpoints, readStudyStore, updateStudyStore, STUDY_CHANGED, type StudyBackup, type StudyData, type StudySession } from "./studyStorage";
+import { backupOf, mergeStudyData, parseStudyBackup, readStudyCheckpoints, readStudyStore, reconcileOrphanedCheckpoints, updateStudyStore, STUDY_CHANGED, StudyError, type StudyBackup, type StudyData, type StudySession } from "./studyStorage";
 import type { StudentLanguage } from "../../config/languages";
 import { studyTracker } from "./studyTrackingService";
 import { mergeWyrAnswers, readWyrAnswers, saveWyrAnswers, validateWyrAnswers, type WyrCustomAnswers } from "../would-you-rather/wouldYouRatherStorage";
@@ -13,7 +13,7 @@ export const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID as string 
 const SCOPE = "https://www.googleapis.com/auth/drive.file";
 export type SyncFile = { schemaVersion: 1; kind: "bej-study-sync"; deviceId: string; exportedAt: string; study: StudyBackup; favorites: FavoriteChunk[]; wyrAnswers?: WyrCustomAnswers };
 export type DriveFile = { id: string; name: string };
-export type SyncBaseline = { study: string; favorites: string; wyrAnswers: string };
+export type SyncBaseline = { study: string; checkpoints: string; favorites: string; wyrAnswers: string };
 export type PendingDrivePublication = { folder: string; deviceId: string; startedAt: string };
 
 /** A failed Drive upload never undoes a completed local merge. Persist the pending state across reloads. */
@@ -136,14 +136,24 @@ export async function readSyncFile(token: string, file: DriveFile): Promise<Sync
   if (favorites.length !== v.favorites.length) throw new Error(`Invalid favorites in ${file.name}`);
   return { schemaVersion: 1, kind: "bej-study-sync", deviceId: v.deviceId, exportedAt: String(v.exportedAt), study, favorites, wyrAnswers: validateWyrAnswers(v.wyrAnswers) };
 }
+/** Prevent a live checkpoint from being silently omitted from a Drive snapshot. */
+export function assertNoUncommittedCheckpoints(): void {
+  const completedIds = new Set(readStudyStore().studyData.sessions.map(item => item.id));
+  if (readStudyCheckpoints().some(item => item.module !== "extra-activities" && !completedIds.has(item.id)))
+    throw new StudyError("otherTab");
+}
 export async function createSnapshot(): Promise<SyncFile> {
   await studyTracker.seal();
+  // Reconcile durable, orphaned checkpoints before capturing the local backup.
+  // Live module owners keep their checkpoints; those are never forcibly closed.
+  await reconcileOrphanedCheckpoints();
+  assertNoUncommittedCheckpoints();
   return { schemaVersion: 1, kind: "bej-study-sync", deviceId: deviceId(),
     exportedAt: new Date().toISOString(), study: backupOf(readStudyStore()), favorites: readFavoriteChunks(), wyrAnswers: readWyrAnswers() };
 }
 /** Protect all locally editable sync domains during the preview/confirmation interval. */
 export function syncBaseline(): SyncBaseline {
-  return { study: JSON.stringify(readStudyStore()), favorites: JSON.stringify(readFavoriteChunks()), wyrAnswers: JSON.stringify(readWyrAnswers()) };
+  return { study: JSON.stringify(readStudyStore()), checkpoints: JSON.stringify(readStudyCheckpoints()), favorites: JSON.stringify(readFavoriteChunks()), wyrAnswers: JSON.stringify(readWyrAnswers()) };
 }
 export async function uploadSnapshot(token: string, folder: string, files: DriveFile[], snapshot: SyncFile): Promise<void> {
   const name = `bej-study-${snapshot.deviceId}.json`;
@@ -170,6 +180,7 @@ export async function publishCurrentSnapshot(token: string, folder: string): Pro
   if (readStudyStore().extraActivity) throw new Error("Finish the extra activity before publishing to Drive.");
   const snapshot = await createSnapshot();
   const baseline = syncBaseline();
+  assertNoUncommittedCheckpoints();
   const files = await listSyncFiles(token, folder);
   await uploadSnapshot(token, folder, files, snapshot);
   if (JSON.stringify(syncBaseline()) !== JSON.stringify(baseline))
@@ -197,11 +208,12 @@ export async function applySync(merged: ReturnType<typeof combineSyncFiles>, bas
   const unchangedAuxiliaryData = () => JSON.stringify(readFavoriteChunks()) === baseline.favorites &&
     JSON.stringify(readWyrAnswers()) === baseline.wyrAnswers;
   const store = readStudyStore();
-  if (JSON.stringify(store) !== baseline.study || store.extraActivity || store.activeSession) throw new Error("Study data changed or an activity is running. Retry Sync.");
+  if (JSON.stringify(store) !== baseline.study || JSON.stringify(readStudyCheckpoints()) !== baseline.checkpoints || store.extraActivity || store.activeSession) throw new Error("Study data or checkpoints changed. Retry Sync.");
   if (!unchangedAuxiliaryData()) throw new Error("Favorites or WRG answers changed. Retry Sync.");
+  assertNoUncommittedCheckpoints();
   // Existing import logic enforces storage locks and validation.
   await updateStudyStore(current => {
-    if (JSON.stringify(current) !== baseline.study) throw new Error("Study data changed. Retry Sync.");
+    if (JSON.stringify(current) !== baseline.study || JSON.stringify(readStudyCheckpoints()) !== baseline.checkpoints) throw new Error("Study data or checkpoints changed. Retry Sync.");
     if (!unchangedAuxiliaryData()) throw new Error("Favorites or WRG answers changed. Retry Sync.");
     return { ...current, studyData: merged.study };
   });

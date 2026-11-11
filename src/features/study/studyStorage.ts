@@ -360,6 +360,64 @@ export function readStudyCheckpoints(storage: StorageLike = localStorage): Study
     throw new StudyError("storage");
   }
 }
+/**
+ * Move abandoned durable checkpoints into confirmed history before a Drive sync.
+ * The module's control lock is required: a live tab keeps its checkpoint and
+ * continues tracking normally. The write lock makes append + removal atomic
+ * with respect to other BEJ writers, and the existing session ID is retained.
+ * Extra-activity drafts require explicit confirmation and are never recovered.
+ */
+export async function reconcileOrphanedCheckpoints(): Promise<{ sessions: number; seconds: number; skipped: StudyModule[] }> {
+  const modules = STUDY_MODULES.filter(module =>
+    module !== "extra-activities" && localStorage.getItem(STUDY_KEY + "active:" + module) !== null);
+  if (!modules.length) return { sessions: 0, seconds: 0, skipped: [] };
+  const locks = getStudyLocks();
+  if (!locks) throw new StudyError("unsupported");
+  let sessions = 0, seconds = 0;
+  const skipped: StudyModule[] = [];
+  for (const module of modules) {
+    const key = STUDY_KEY + "active:" + module;
+    await locks.request(STUDY_KEY + "control:" + module, { ifAvailable: true }, async control => {
+      if (!control) { skipped.push(module); return; }
+      // readStudyStore intentionally hides a checkpoint whose ID is already in
+      // history. Handle that legacy leftover explicitly under the write lock.
+      // Never remove a differing record: it may contain unmerged study time.
+      const checkpoint = readStudyCheckpoints().find(item => item.module === module);
+      const completed = checkpoint && readStudyStore().studyData.sessions.find(item => item.id === checkpoint.id);
+      if (completed) {
+        await locks.request(STUDY_KEY + "write", { controlResource: module }, writeLock => {
+          if (!writeLock) throw new StudyError("otherTab");
+          const latest = readStudyCheckpoints().find(item => item.module === module);
+          const saved = latest && readStudyStore().studyData.sessions.find(item => item.id === latest.id);
+          if (!latest || !saved) throw new StudyError("stale");
+          if (JSON.stringify(saved) !== JSON.stringify(latest)) throw new StudyError("conflict");
+          localStorage.removeItem(key);
+          window.dispatchEvent(new Event(STUDY_CHANGED));
+        });
+        return;
+      }
+      await updateStudyStore(store => {
+        const checkpoint = store.activeSession;
+        if (!checkpoint) return store;
+        const existing = store.studyData.sessions.find(item => item.id === checkpoint.id);
+        if (existing && JSON.stringify(existing) !== JSON.stringify(checkpoint))
+          throw new StudyError("conflict");
+        if (!existing && checkpoint.activeSeconds > 0) {
+          sessions++;
+          seconds += checkpoint.activeSeconds;
+        }
+        return { ...store,
+          studyData: !existing && checkpoint.activeSeconds > 0
+            ? { ...store.studyData, sessions: [...store.studyData.sessions, checkpoint] }
+            : store.studyData,
+          activeSession: null
+        };
+      }, module);
+    });
+  }
+  return { sessions, seconds, skipped };
+}
+
 export function studyDataWithCheckpoints(data: StudyData, checkpoints: StudySession[]): StudyData {
   const sessions = new Map(data.sessions.map(item => [item.id, item]));
   for (const checkpoint of checkpoints) if (!sessions.has(checkpoint.id)) sessions.set(checkpoint.id, checkpoint);
