@@ -124,7 +124,13 @@ assert.equal(seconds(convergedB.study), expectedSeconds);
 assert.deepEqual(favoriteIds(convergedB.favorites), expectedFavorites);
 assert.deepEqual(convergedB.wyrAnswers, expectedWyr);
 assert.equal(sync.combineSyncFiles(snapshotA, [a, b, snapshotA]).newSessions, 0);
-console.log('PASS real local apply and second-device convergence; repeated sync is idempotent.');
+seed(b);
+await sync.applySync(convergedB, sync.syncBaseline());
+assert.deepEqual(ids(storage.readStudyStore().studyData.sessions), expectedIds);
+assert.equal(seconds(storage.readStudyStore().studyData), expectedSeconds);
+assert.deepEqual(favoriteIds(favorite.readFavoriteChunks()), expectedFavorites);
+assert.deepEqual(wyr.readWyrAnswers(), expectedWyr);
+console.log('PASS persisted A and B both converge to identical study/favorite/WRG results; repeated sync is idempotent.');
 
 seed(a);
 const oldBaseline = sync.syncBaseline();
