@@ -184,6 +184,8 @@ globalThis.fetch = async (_url, init = {}) => {
     files: [{ id: 'existing-file', name: 'bej-study-' + sync.deviceId() + '.json' }]
   }), { status: 200, headers: { 'Content-Type': 'application/json' } });
   if (method === 'PATCH') {
+    assert.match(String(_url), /uploadType=media/, 'existing file should use simple media upload');
+    assert.equal(init.headers['Content-Type'], 'application/json');
     uploadAttempts++;
     if (failUpload) throw new TypeError('Load failed');
     return new Response('{}', { status: 200 });
@@ -210,6 +212,17 @@ try {
   assert.equal(uploadAttempts, 2);
   assert.equal(JSON.stringify(storage.readStudyStore().studyData), localBefore,
     'retry publishes the local snapshot without altering sessions');
+  let created = 0;
+  globalThis.fetch = async (_url, init = {}) => {
+    if ((init.method ?? 'GET') === 'GET') return new Response(JSON.stringify({ files: [] }), { status: 200 });
+    assert.equal(init.method, 'POST');
+    assert.match(String(_url), /uploadType=multipart/);
+    assert.match(init.headers['Content-Type'], /multipart\/related/);
+    created++;
+    return new Response('{}', { status: 200 });
+  };
+  await sync.publishCurrentSnapshot('token', folder);
+  assert.equal(created, 1, 'first upload creates a file in the selected folder');
 } finally {
   globalThis.fetch = previousFetch;
 }
