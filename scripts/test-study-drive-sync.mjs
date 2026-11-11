@@ -156,3 +156,55 @@ assert.ok(conflicting.conflicts.length > 0);
 seed(a);
 await assert.rejects(() => sync.applySync(conflicting, sync.syncBaseline()), /Conflicting/);
 console.log('PASS conflicting session IDs block the write without losing local data.');
+
+seed(a);
+localStorage.setItem(storage.STUDY_KEY + 'active:hashmap', JSON.stringify(example('checkpoint-1', 590)));
+localStorage.setItem(storage.STUDY_KEY + 'active:shadowing', JSON.stringify({ ...example('checkpoint-2', 190), module: 'shadowing' }));
+const diagnostics = sync.studySyncDiagnostics();
+const english = diagnostics.rows.find(row => row.language === 'en-US');
+assert.equal(english.completedSeconds, seconds(a.study.studyData));
+assert.equal(english.checkpointSeconds, 780);
+assert.equal(english.checkpoints.length, 2);
+assert.equal(english.completedSeconds + english.checkpointSeconds, seconds(a.study.studyData) + 780);
+assert.equal(storage.backupOf(storage.readStudyStore()).studyData.sessions.length, a.study.studyData.sessions.length,
+  'unfinished checkpoints must not be silently exported or removed');
+localStorage.removeItem(storage.STUDY_KEY + 'active:hashmap');
+localStorage.removeItem(storage.STUDY_KEY + 'active:shadowing');
+console.log('PASS dashboard diagnostics separate completed backup sessions from 13-minute active checkpoints.');
+
+const folder = 'drive-folder-for-tests';
+sync.markPendingDrivePublication(folder);
+assert.equal(sync.pendingDrivePublication().folder, folder, 'pending publication survives component reload');
+const previousFetch = globalThis.fetch;
+let uploadAttempts = 0;
+let failUpload = true;
+globalThis.fetch = async (_url, init = {}) => {
+  const method = init.method ?? 'GET';
+  if (method === 'GET') return new Response(JSON.stringify({
+    files: [{ id: 'existing-file', name: 'bej-study-' + sync.deviceId() + '.json' }]
+  }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+  if (method === 'PATCH') {
+    uploadAttempts++;
+    if (failUpload) throw new TypeError('Load failed');
+    return new Response('{}', { status: 200 });
+  }
+  throw new Error('Unexpected HTTP method: ' + method);
+};
+try {
+  const localBefore = JSON.stringify(storage.readStudyStore().studyData);
+  await assert.rejects(() => sync.publishCurrentSnapshot('token', folder), /Google Drive PATCH network failure: Load failed/,
+    'network error must identify the failed HTTP step');
+  assert.equal(sync.pendingDrivePublication().folder, folder);
+  assert.equal(JSON.stringify(storage.readStudyStore().studyData), localBefore,
+    'a failed Drive publication must not roll back or re-merge local data');
+  failUpload = false;
+  await sync.publishCurrentSnapshot('fresh-token', folder);
+  sync.clearPendingDrivePublication(folder);
+  assert.equal(sync.pendingDrivePublication(), null);
+  assert.equal(uploadAttempts, 2);
+  assert.equal(JSON.stringify(storage.readStudyStore().studyData), localBefore,
+    'retry publishes the local snapshot without altering sessions');
+} finally {
+  globalThis.fetch = previousFetch;
+}
+console.log('PASS failed PATCH keeps local sessions and pending marker; retry publishes without repeating merge.');
