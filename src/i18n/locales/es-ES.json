@@ -1213,6 +1213,7 @@
     "published": "Datos locales publicados en Google Drive. No fue necesario repetir la combinación.",
     "diagnosticTitle": "Diagnóstico del tiempo de estudio",
     "diagnosticNote": "Al exportar o sincronizar, los puntos de control de módulos sin actividad en curso se incorporan al historial y se conservan en la copia. Las sesiones en curso y las Actividades Extra sin confirmar permanecen intactas. Termina las actividades de otras pestañas antes de sincronizar.",
+    "recoveredNote": "Puntos de control locales consolidados de forma segura: {{time}}. Este tiempo ahora forma parte de las sesiones finalizadas y se enviará a Google Drive.",
     "completedTime": "Tiempo de sesiones finalizadas (copia)",
     "checkpointTime": "Tiempo adicional de puntos de control",
     "visibleTime": "Total incluyendo puntos de control"
