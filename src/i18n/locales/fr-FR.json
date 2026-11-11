@@ -1213,6 +1213,7 @@
     "published": "Données locales publiées sur Google Drive. Aucune nouvelle fusion nécessaire.",
     "diagnosticTitle": "Diagnostic du temps d'étude",
     "diagnosticNote": "Lors de l'exportation ou de la synchronisation, les points de contrôle des modules sans activité en cours sont intégrés à l'historique et conservés dans la sauvegarde. Les sessions en cours et les activités supplémentaires non confirmées restent intactes. Terminez les activités dans les autres onglets avant de synchroniser.",
+    "recoveredNote": "Points de contrôle locaux consolidés en toute sécurité : {{time}}. Ce temps fait maintenant partie des sessions terminées et sera envoyé vers Google Drive.",
     "completedTime": "Temps des sessions terminées (sauvegarde)",
     "checkpointTime": "Temps supplémentaire des points de contrôle",
     "visibleTime": "Total avec points de contrôle"
