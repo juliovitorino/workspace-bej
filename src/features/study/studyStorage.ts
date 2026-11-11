@@ -368,14 +368,15 @@ export function readStudyCheckpoints(storage: StorageLike = localStorage): Study
  * Extra-activity drafts require explicit confirmation and are never recovered.
  */
 export async function reconcileOrphanedCheckpoints(): Promise<{ sessions: number; seconds: number; skipped: StudyModule[] }> {
+  const modules = STUDY_MODULES.filter(module =>
+    module !== "extra-activities" && localStorage.getItem(STUDY_KEY + "active:" + module) !== null);
+  if (!modules.length) return { sessions: 0, seconds: 0, skipped: [] };
   const locks = getStudyLocks();
   if (!locks) throw new StudyError("unsupported");
   let sessions = 0, seconds = 0;
   const skipped: StudyModule[] = [];
-  for (const module of STUDY_MODULES) {
-    if (module === "extra-activities") continue;
+  for (const module of modules) {
     const key = STUDY_KEY + "active:" + module;
-    if (localStorage.getItem(key) === null) continue;
     await locks.request(STUDY_KEY + "control:" + module, { ifAvailable: true }, async control => {
       if (!control) { skipped.push(module); return; }
       // readStudyStore intentionally hides a checkpoint whose ID is already in
