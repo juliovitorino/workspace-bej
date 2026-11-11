@@ -11,6 +11,7 @@ export const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID as string 
 const SCOPE = "https://www.googleapis.com/auth/drive.file";
 export type SyncFile = { schemaVersion: 1; kind: "bej-study-sync"; deviceId: string; exportedAt: string; study: StudyBackup; favorites: FavoriteChunk[]; wyrAnswers?: WyrCustomAnswers };
 export type DriveFile = { id: string; name: string };
+export type SyncBaseline = { study: string; favorites: string; wyrAnswers: string };
 export function deviceId(): string {
   let id = localStorage.getItem(DEVICE_KEY);
   if (!id) { id = crypto.randomUUID(); localStorage.setItem(DEVICE_KEY, id); }
@@ -88,6 +89,10 @@ export async function createSnapshot(): Promise<SyncFile> {
   return { schemaVersion: 1, kind: "bej-study-sync", deviceId: deviceId(),
     exportedAt: new Date().toISOString(), study: backupOf(readStudyStore()), favorites: readFavoriteChunks(), wyrAnswers: readWyrAnswers() };
 }
+/** Protect all locally editable sync domains during the preview/confirmation interval. */
+export function syncBaseline(): SyncBaseline {
+  return { study: JSON.stringify(readStudyStore()), favorites: JSON.stringify(readFavoriteChunks()), wyrAnswers: JSON.stringify(readWyrAnswers()) };
+}
 export async function uploadSnapshot(token: string, folder: string, files: DriveFile[], snapshot: SyncFile): Promise<void> {
   const name = `bej-study-${snapshot.deviceId}.json`;
   const matches = files.filter(f => f.name === name);
@@ -116,15 +121,21 @@ export function combineSyncFiles(local: SyncFile, incoming: SyncFile[]): { study
   }
   return { study, favorites: [...favoriteMap.values()], wyrAnswers, newSessions, newAdjustments, conflicts };
 }
-export async function applySync(merged: ReturnType<typeof combineSyncFiles>, baseline: string): Promise<void> {
+export async function applySync(merged: ReturnType<typeof combineSyncFiles>, baseline: SyncBaseline): Promise<void> {
   if (merged.conflicts.length) throw new Error("Conflicting records: synchronization cancelled.");
+  const unchangedAuxiliaryData = () => JSON.stringify(readFavoriteChunks()) === baseline.favorites &&
+    JSON.stringify(readWyrAnswers()) === baseline.wyrAnswers;
   const store = readStudyStore();
-  if (JSON.stringify(store) !== baseline || store.extraActivity || store.activeSession) throw new Error("Study data changed or an activity is running. Retry Sync.");
+  if (JSON.stringify(store) !== baseline.study || store.extraActivity || store.activeSession) throw new Error("Study data changed or an activity is running. Retry Sync.");
+  if (!unchangedAuxiliaryData()) throw new Error("Favorites or WRG answers changed. Retry Sync.");
   // Existing import logic enforces storage locks and validation.
   await updateStudyStore(current => {
-    if (JSON.stringify(current) !== baseline) throw new Error("Study data changed. Retry Sync.");
+    if (JSON.stringify(current) !== baseline.study) throw new Error("Study data changed. Retry Sync.");
+    if (!unchangedAuxiliaryData()) throw new Error("Favorites or WRG answers changed. Retry Sync.");
     return { ...current, studyData: merged.study };
   });
+  // Do not overwrite a favorite or WRG edit made while the study transaction was pending.
+  if (!unchangedAuxiliaryData()) throw new Error("Favorites or WRG answers changed. Retry Sync.");
   if (!saveWyrAnswers(merged.wyrAnswers)) throw new Error("Could not save synchronized WRG answers.");
   localStorage.setItem(FAVORITE_CHUNKS_KEY, JSON.stringify(merged.favorites));
   window.dispatchEvent(new Event(STUDY_CHANGED));
