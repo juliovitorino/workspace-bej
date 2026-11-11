@@ -1,10 +1,12 @@
 import { FAVORITE_CHUNKS_KEY, parseFavoriteChunks, readFavoriteChunks, type FavoriteChunk } from "../../utils/favoriteChunks";
-import { backupOf, mergeStudyData, parseStudyBackup, readStudyStore, updateStudyStore, STUDY_CHANGED, type StudyBackup, type StudyData } from "./studyStorage";
+import { backupOf, mergeStudyData, parseStudyBackup, readStudyCheckpoints, readStudyStore, updateStudyStore, STUDY_CHANGED, type StudyBackup, type StudyData, type StudySession } from "./studyStorage";
+import type { StudentLanguage } from "../../config/languages";
 import { studyTracker } from "./studyTrackingService";
 import { mergeWyrAnswers, readWyrAnswers, saveWyrAnswers, validateWyrAnswers, type WyrCustomAnswers } from "../would-you-rather/wouldYouRatherStorage";
 
 const DEVICE_KEY = "bej-sync-device-v1";
 const FOLDER_KEY = "bej-sync-folder-v1";
+const PENDING_PUBLICATION_KEY = "bej-sync-pending-publication-v1";
 const API = "https://www.googleapis.com/drive/v3/files";
 const UPLOAD = "https://www.googleapis.com/upload/drive/v3/files";
 export const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID as string | undefined;
@@ -12,6 +14,48 @@ const SCOPE = "https://www.googleapis.com/auth/drive.file";
 export type SyncFile = { schemaVersion: 1; kind: "bej-study-sync"; deviceId: string; exportedAt: string; study: StudyBackup; favorites: FavoriteChunk[]; wyrAnswers?: WyrCustomAnswers };
 export type DriveFile = { id: string; name: string };
 export type SyncBaseline = { study: string; favorites: string; wyrAnswers: string };
+export type PendingDrivePublication = { folder: string; deviceId: string; startedAt: string };
+
+/** A failed Drive upload never undoes a completed local merge. Persist the pending state across reloads. */
+export function pendingDrivePublication(): PendingDrivePublication | null {
+  const raw = localStorage.getItem(PENDING_PUBLICATION_KEY);
+  if (!raw) return null;
+  try {
+    const value: unknown = JSON.parse(raw);
+    if (!value || typeof value !== "object") return null;
+    const pending = value as Partial<PendingDrivePublication>;
+    return typeof pending.folder === "string" && typeof pending.deviceId === "string" &&
+      typeof pending.startedAt === "string" && pending.deviceId === deviceId() ? pending as PendingDrivePublication : null;
+  } catch { return null; }
+}
+export function markPendingDrivePublication(folder: string): PendingDrivePublication {
+  const pending = { folder, deviceId: deviceId(), startedAt: new Date().toISOString() };
+  localStorage.setItem(PENDING_PUBLICATION_KEY, JSON.stringify(pending));
+  return pending;
+}
+export function clearPendingDrivePublication(folder: string): void {
+  if (pendingDrivePublication()?.folder === folder) localStorage.removeItem(PENDING_PUBLICATION_KEY);
+}
+
+/** Dashboard may include durable active checkpoints that are deliberately absent from backup JSON. */
+export function studySyncDiagnostics(): { rows: { language: StudentLanguage; completedSeconds: number; checkpointSeconds: number; checkpoints: StudySession[] }[] } {
+  const data = readStudyStore().studyData;
+  const completedIds = new Set(data.sessions.map(session => session.id));
+  const checkpoints = readStudyCheckpoints().filter(session => !completedIds.has(session.id));
+  const languages = new Set<StudentLanguage>([
+    ...data.sessions.map(session => session.language),
+    ...data.manualAdjustments.map(adjustment => adjustment.language),
+    ...checkpoints.map(session => session.language)
+  ]);
+  return { rows: [...languages].sort().map(language => ({
+    language,
+    completedSeconds: data.sessions.filter(session => session.language === language).reduce((sum, session) => sum + session.activeSeconds, 0) +
+      data.manualAdjustments.filter(adjustment => adjustment.language === language).reduce((sum, adjustment) => sum + adjustment.seconds, 0),
+    checkpointSeconds: checkpoints.filter(session => session.language === language).reduce((sum, session) => sum + session.activeSeconds, 0),
+    checkpoints: checkpoints.filter(session => session.language === language)
+  })) };
+}
+
 export function deviceId(): string {
   let id = localStorage.getItem(DEVICE_KEY);
   if (!id) { id = crypto.randomUUID(); localStorage.setItem(DEVICE_KEY, id); }
@@ -54,8 +98,16 @@ export async function authorizeDrive(): Promise<string> {
   });
 }
 async function request(token: string, url: string, init: RequestInit = {}): Promise<Response> {
-  const response = await fetch(url, { ...init, headers: { Authorization: `Bearer ${token}`, ...init.headers } });
-  if (!response.ok) throw new Error(`Google Drive HTTP ${response.status}: ${(await response.text()).slice(0, 200)}`);
+  const method = init.method ?? "GET";
+  let response: Response;
+  try {
+    response = await fetch(url, { ...init, headers: { Authorization: "Bearer " + token, ...init.headers } });
+  } catch (cause) {
+    // Chrome on mobile often reports a generic "Load failed" without an HTTP status.
+    const message = cause instanceof Error ? cause.message : String(cause);
+    throw new Error("Google Drive " + method + " network failure: " + message);
+  }
+  if (!response.ok) throw new Error("Google Drive " + method + " HTTP " + response.status + ": " + (await response.text()).slice(0, 200));
   return response;
 }
 export async function listSyncFiles(token: string, folder: string): Promise<DriveFile[]> {
@@ -103,6 +155,16 @@ export async function uploadSnapshot(token: string, folder: string, files: Drive
   const body = `--${boundary}\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n${JSON.stringify(metadata)}\r\n--${boundary}\r\nContent-Type: application/json\r\n\r\n${content}\r\n--${boundary}--`;
   const url = matches.length ? `${UPLOAD}/${encodeURIComponent(matches[0].id)}?uploadType=multipart` : `${UPLOAD}?uploadType=multipart`;
   await request(token, url, { method: matches.length ? "PATCH" : "POST", headers: { "Content-Type": `multipart/related; boundary=${boundary}` }, body });
+}
+/** Publish a fresh local snapshot. Safe to retry after a failed upload; never reapplies the merge. */
+export async function publishCurrentSnapshot(token: string, folder: string): Promise<void> {
+  if (readStudyStore().extraActivity) throw new Error("Finish the extra activity before publishing to Drive.");
+  const snapshot = await createSnapshot();
+  const baseline = syncBaseline();
+  const files = await listSyncFiles(token, folder);
+  await uploadSnapshot(token, folder, files, snapshot);
+  if (JSON.stringify(syncBaseline()) !== JSON.stringify(baseline))
+    throw new Error("Local study data changed during Drive upload. Publish again.");
 }
 export function combineSyncFiles(local: SyncFile, incoming: SyncFile[]): { study: StudyData; favorites: FavoriteChunk[]; newSessions: number; newAdjustments: number; conflicts: string[]; wyrAnswers: WyrCustomAnswers } {
   let study = local.study.studyData;
