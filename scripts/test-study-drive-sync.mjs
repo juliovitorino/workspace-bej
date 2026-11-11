@@ -172,6 +172,96 @@ localStorage.removeItem(storage.STUDY_KEY + 'active:hashmap');
 localStorage.removeItem(storage.STUDY_KEY + 'active:shadowing');
 console.log('PASS dashboard diagnostics separate completed backup sessions from 13-minute active checkpoints.');
 
+
+function checkpoint(id, module, seconds) {
+  return { ...example(id, seconds), module };
+}
+const mobileCheckpoints = [
+  checkpoint('mobile-hashmap', 'hashmap', 65),
+  checkpoint('mobile-memory', 'memory-flashcards', 596),
+  checkpoint('mobile-basic', 'basic-training', 1),
+  checkpoint('mobile-review', 'review-training', 99),
+  checkpoint('mobile-speaking', 'speaking-game', 240),
+  checkpoint('mobile-wrg', 'would-you-rather', 23)
+];
+const desktopCheckpoint = checkpoint('desktop-basic', 'basic-training', 122);
+seed(a);
+for (const item of mobileCheckpoints) {
+  localStorage.setItem(storage.STUDY_KEY + 'active:' + item.module, JSON.stringify(item));
+}
+assert.equal(sync.studySyncDiagnostics().rows.find(row => row.language === 'en-US').checkpointSeconds, 1024);
+const recoveredMobile = await storage.reconcileOrphanedCheckpoints();
+assert.equal(recoveredMobile.sessions, 6);
+assert.equal(recoveredMobile.seconds, 1024);
+assert.deepEqual(recoveredMobile.skipped, []);
+assert.equal(storage.readStudyCheckpoints().length, 0);
+assert.equal(storage.readStudyStore().studyData.sessions.length, a.study.studyData.sessions.length + 6);
+const mobileSnapshot = await sync.createSnapshot();
+assert.equal(seconds(mobileSnapshot.study.studyData), seconds(a.study.studyData) + 1024);
+assert.equal((await storage.reconcileOrphanedCheckpoints()).sessions, 0, 'recovery is idempotent');
+assert.equal(storage.readStudyStore().studyData.sessions.length, a.study.studyData.sessions.length + 6);
+seed(b);
+localStorage.setItem(storage.STUDY_KEY + 'active:basic-training', JSON.stringify(desktopCheckpoint));
+const recoveredDesktop = await storage.reconcileOrphanedCheckpoints();
+assert.equal(recoveredDesktop.sessions, 1);
+assert.equal(recoveredDesktop.seconds, 122);
+const desktopSnapshot = await sync.createSnapshot();
+const consolidated = sync.combineSyncFiles(mobileSnapshot, [desktopSnapshot]);
+assert.deepEqual(consolidated.conflicts, []);
+assert.equal(seconds(consolidated.study), expectedSeconds + 1024 + 122);
+assert.equal(consolidated.study.sessions.length, expectedIds.length + 7);
+seed(a);
+await sync.applySync(consolidated, sync.syncBaseline());
+assert.equal(seconds(storage.readStudyStore().studyData), expectedSeconds + 1146);
+assert.equal(storage.readStudyCheckpoints().length, 0);
+assert.equal(sync.combineSyncFiles(await sync.createSnapshot(), [mobileSnapshot, desktopSnapshot]).newSessions, 0);
+console.log('PASS mobile 17m04s and desktop 2m02s checkpoints converge once, with no lost or duplicated seconds.');
+
+seed(a);
+const live = checkpoint('live-checkpoint', 'hashmap', 65);
+localStorage.setItem(storage.STUDY_KEY + 'active:hashmap', JSON.stringify(live));
+const realRequest = navigator.locks.request;
+navigator.locks.request = (name, options, callback) => {
+  if (name === storage.STUDY_KEY + 'control:hashmap') {
+    return Promise.resolve((typeof options === 'function' ? options : callback)(null));
+  }
+  return realRequest(name, options, callback);
+};
+try {
+  const result = await storage.reconcileOrphanedCheckpoints();
+  assert.deepEqual(result.skipped, ['hashmap']);
+  assert.equal(result.sessions, 0);
+  assert.deepEqual(storage.readStudyCheckpoints(), [live]);
+  await assert.rejects(() => sync.createSnapshot(), error => error.code === 'otherTab',
+    'a live tab must block a snapshot that would silently omit its checkpoint');
+  assert.equal(storage.readStudyStore().studyData.sessions.length, a.study.studyData.sessions.length);
+} finally {
+  navigator.locks.request = realRequest;
+}
+const staleBaseline = sync.syncBaseline();
+localStorage.setItem(storage.STUDY_KEY + 'active:hashmap', JSON.stringify({ ...live, activeSeconds: 66, dailySeconds: { '2026-11-09': 66 } }));
+await assert.rejects(() => sync.applySync(mergedA, staleBaseline), /changed|Retry/,
+  'checkpoint changes between preview and confirmation must invalidate the preview');
+assert.equal(storage.readStudyCheckpoints()[0].activeSeconds, 66);
+console.log('PASS active locks protect live checkpoints and changed checkpoints invalidate stale sync previews.');
+
+seed(a);
+const duplicate = clone(a.study.studyData.sessions[0]);
+localStorage.setItem(storage.STUDY_KEY + 'active:hashmap', JSON.stringify(duplicate));
+const duplicateResult = await storage.reconcileOrphanedCheckpoints();
+assert.equal(duplicateResult.sessions, 0);
+assert.equal(storage.readStudyCheckpoints().length, 0);
+assert.equal(storage.readStudyStore().studyData.sessions.length, a.study.studyData.sessions.length);
+localStorage.setItem(storage.STUDY_KEY + 'active:hashmap', JSON.stringify({
+  ...duplicate, activeSeconds: duplicate.activeSeconds + 1,
+  dailySeconds: { '2026-11-09': duplicate.activeSeconds + 1 }
+}));
+await assert.rejects(() => storage.reconcileOrphanedCheckpoints(), error => error.code === 'conflict',
+  'same ID with different data must fail closed');
+assert.equal(storage.readStudyCheckpoints().length, 1, 'conflicting checkpoint must not be deleted');
+console.log('PASS duplicate IDs are idempotent; conflicting records are preserved and block reconciliation.');
+seed(a);
+
 const folder = 'drive-folder-for-tests';
 sync.markPendingDrivePublication(folder);
 assert.equal(sync.pendingDrivePublication().folder, folder, 'pending publication survives component reload');
