@@ -360,6 +360,46 @@ export function readStudyCheckpoints(storage: StorageLike = localStorage): Study
     throw new StudyError("storage");
   }
 }
+/**
+ * Move abandoned durable checkpoints into confirmed history before a Drive sync.
+ * The module's control lock is required: a live tab keeps its checkpoint and
+ * continues tracking normally. The write lock makes append + removal atomic
+ * with respect to other BEJ writers, and the existing session ID is retained.
+ * Extra-activity drafts require explicit confirmation and are never recovered.
+ */
+export async function reconcileOrphanedCheckpoints(): Promise<{ sessions: number; seconds: number; skipped: StudyModule[] }> {
+  const locks = getStudyLocks();
+  if (!locks) throw new StudyError("unsupported");
+  let sessions = 0, seconds = 0;
+  const skipped: StudyModule[] = [];
+  for (const module of STUDY_MODULES) {
+    if (module === "extra-activities") continue;
+    const key = STUDY_KEY + "active:" + module;
+    if (localStorage.getItem(key) === null) continue;
+    await locks.request(STUDY_KEY + "control:" + module, { ifAvailable: true }, async control => {
+      if (!control) { skipped.push(module); return; }
+      await updateStudyStore(store => {
+        const checkpoint = store.activeSession;
+        if (!checkpoint) return store;
+        const existing = store.studyData.sessions.find(item => item.id === checkpoint.id);
+        if (existing && JSON.stringify(existing) !== JSON.stringify(checkpoint))
+          throw new StudyError("conflict");
+        if (!existing && checkpoint.activeSeconds > 0) {
+          sessions++;
+          seconds += checkpoint.activeSeconds;
+        }
+        return { ...store,
+          studyData: !existing && checkpoint.activeSeconds > 0
+            ? { ...store.studyData, sessions: [...store.studyData.sessions, checkpoint] }
+            : store.studyData,
+          activeSession: null
+        };
+      }, module);
+    });
+  }
+  return { sessions, seconds, skipped };
+}
+
 export function studyDataWithCheckpoints(data: StudyData, checkpoints: StudySession[]): StudyData {
   const sessions = new Map(data.sessions.map(item => [item.id, item]));
   for (const checkpoint of checkpoints) if (!sessions.has(checkpoint.id)) sessions.set(checkpoint.id, checkpoint);
