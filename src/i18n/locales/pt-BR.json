@@ -1212,7 +1212,7 @@
     "retryPublish": "Reenviar dados locais ao Drive",
     "published": "Dados locais publicados no Google Drive. Não foi necessário repetir a mesclagem.",
     "diagnosticTitle": "Diagnóstico do tempo de estudo",
-    "diagnosticNote": "O Dashboard pode incluir checkpoints de atividades ainda não concluídas. O backup contém somente sessões concluídas. Nenhum checkpoint será apagado.",
+    "diagnosticNote": "Ao exportar ou sincronizar, checkpoints de módulos sem atividade em andamento são incorporados ao histórico e preservados no backup. Atividades em andamento e Atividades Extras não confirmadas permanecem intactas. Se houver outra aba estudando, conclua a atividade antes de sincronizar.",
     "completedTime": "Tempo das sessões concluídas (backup)",
     "checkpointTime": "Tempo de checkpoints adicionais",
     "visibleTime": "Tempo total incluindo checkpoints"
