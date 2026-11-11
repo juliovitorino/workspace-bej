@@ -1207,7 +1207,15 @@
     "conflictNote": "Existem IDs conflitantes. Nada será importado.",
     "mergeNote": "O BEJ adiciona registros ausentes e une favoritos; exclusões e desmarcações de favoritos não são propagadas nesta versão. Metas permanecem locais. Um backup de segurança será baixado antes de alterar seus dados.",
     "permissionNote": "O Google solicitará acesso ao Drive. Esta versão usa permissão ampla para ler e atualizar arquivos na pasta escolhida. Use apenas uma conta confiável.",
-    "invalidFolder": "Link ou ID de pasta inválido."
+    "invalidFolder": "Link ou ID de pasta inválido.",
+    "localSavedPending": "As sessões foram salvas neste dispositivo, mas o envio ao Google Drive não foi concluído. Você pode repetir somente o envio, sem mesclar os dados novamente.",
+    "retryPublish": "Reenviar dados locais ao Drive",
+    "published": "Dados locais publicados no Google Drive. Não foi necessário repetir a mesclagem.",
+    "diagnosticTitle": "Diagnóstico do tempo de estudo",
+    "diagnosticNote": "O Dashboard pode incluir checkpoints de atividades ainda não concluídas. O backup contém somente sessões concluídas. Nenhum checkpoint será apagado.",
+    "completedTime": "Tempo das sessões concluídas (backup)",
+    "checkpointTime": "Tempo de checkpoints adicionais",
+    "visibleTime": "Tempo total incluindo checkpoints"
   },
   "studyHeatmap": {
     "title": "Mapa de calor — horários de estudo",
