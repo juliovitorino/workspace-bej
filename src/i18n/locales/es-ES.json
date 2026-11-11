@@ -1212,7 +1212,7 @@
     "retryPublish": "Reintentar envío de datos locales",
     "published": "Datos locales publicados en Google Drive. No fue necesario repetir la combinación.",
     "diagnosticTitle": "Diagnóstico del tiempo de estudio",
-    "diagnosticNote": "El panel puede incluir puntos de control de actividades sin terminar. Las copias contienen solo sesiones finalizadas. No se eliminarán registros.",
+    "diagnosticNote": "Al exportar o sincronizar, los puntos de control de módulos sin actividad en curso se incorporan al historial y se conservan en la copia. Las sesiones en curso y las Actividades Extra sin confirmar permanecen intactas. Termina las actividades de otras pestañas antes de sincronizar.",
     "completedTime": "Tiempo de sesiones finalizadas (copia)",
     "checkpointTime": "Tiempo adicional de puntos de control",
     "visibleTime": "Total incluyendo puntos de control"
