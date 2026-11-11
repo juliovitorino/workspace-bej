@@ -192,6 +192,12 @@ globalThis.fetch = async (_url, init = {}) => {
 };
 try {
   const localBefore = JSON.stringify(storage.readStudyStore().studyData);
+  const uploadFetch = globalThis.fetch;
+  globalThis.fetch = async () => { throw new TypeError('Load failed'); };
+  await assert.rejects(() => sync.publishCurrentSnapshot('token', folder), /Google Drive GET network failure: Load failed/,
+    'failed Drive file listing must identify GET without changing local data');
+  assert.equal(sync.pendingDrivePublication().folder, folder);
+  globalThis.fetch = uploadFetch;
   await assert.rejects(() => sync.publishCurrentSnapshot('token', folder), /Google Drive PATCH network failure: Load failed/,
     'network error must identify the failed HTTP step');
   assert.equal(sync.pendingDrivePublication().folder, folder);
