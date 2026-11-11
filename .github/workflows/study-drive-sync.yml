@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - bugfix/sync-1125
+      - bugfix/sync-1208
   pull_request:
     paths:
       - 'src/features/study/studyDriveSync.ts'

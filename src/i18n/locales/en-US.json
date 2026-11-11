@@ -1207,7 +1207,15 @@
     "conflictNote": "Conflicting record IDs found. No data will be imported.",
     "mergeNote": "BEJ adds missing records and unions favorites; deletions and favorite removals do not propagate in this version. Goals remain local. A safety backup is downloaded before changes.",
     "permissionNote": "Google will request Drive access. This version uses broad Drive permission to read and update files in the chosen folder. Use a trusted account.",
-    "invalidFolder": "Invalid folder link or ID."
+    "invalidFolder": "Invalid folder link or ID.",
+    "localSavedPending": "Sessions were saved on this device, but publishing to Google Drive did not finish. Retry only the upload without merging again.",
+    "retryPublish": "Retry publishing local data",
+    "published": "Local data published to Google Drive. No additional merge was needed.",
+    "diagnosticTitle": "Study time diagnostics",
+    "diagnosticNote": "The Dashboard may include checkpoints from unfinished activities. Backups contain completed sessions only. No checkpoint will be deleted.",
+    "completedTime": "Completed session time (backup)",
+    "checkpointTime": "Additional checkpoint time",
+    "visibleTime": "Total including checkpoints"
   },
   "studyHeatmap": {
     "title": "Heatmap — study hours",
