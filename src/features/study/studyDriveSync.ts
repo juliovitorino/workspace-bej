@@ -1,5 +1,5 @@
 import { FAVORITE_CHUNKS_KEY, parseFavoriteChunks, readFavoriteChunks, type FavoriteChunk } from "../../utils/favoriteChunks";
-import { backupOf, mergeStudyData, parseStudyBackup, readStudyCheckpoints, readStudyStore, reconcileOrphanedCheckpoints, updateStudyStore, STUDY_CHANGED, type StudyBackup, type StudyData, type StudySession } from "./studyStorage";
+import { backupOf, mergeStudyData, parseStudyBackup, readStudyCheckpoints, readStudyStore, reconcileOrphanedCheckpoints, updateStudyStore, STUDY_CHANGED, StudyError, type StudyBackup, type StudyData, type StudySession } from "./studyStorage";
 import type { StudentLanguage } from "../../config/languages";
 import { studyTracker } from "./studyTrackingService";
 import { mergeWyrAnswers, readWyrAnswers, saveWyrAnswers, validateWyrAnswers, type WyrCustomAnswers } from "../would-you-rather/wouldYouRatherStorage";
@@ -144,8 +144,7 @@ export async function createSnapshot(): Promise<SyncFile> {
   const completedIds = new Set(readStudyStore().studyData.sessions.map(item => item.id));
   const pending = readStudyCheckpoints().filter(item =>
     item.module !== "extra-activities" && !completedIds.has(item.id));
-  if (pending.length) throw new Error("Study activities are still active in another tab: " +
-    [...new Set(pending.map(item => item.module))].join(", ") + ". Finish them before syncing.");
+  if (pending.length) throw new StudyError("otherTab");
   return { schemaVersion: 1, kind: "bej-study-sync", deviceId: deviceId(),
     exportedAt: new Date().toISOString(), study: backupOf(readStudyStore()), favorites: readFavoriteChunks(), wyrAnswers: readWyrAnswers() };
 }
