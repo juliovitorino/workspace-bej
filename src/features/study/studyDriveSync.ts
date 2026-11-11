@@ -136,15 +136,18 @@ export async function readSyncFile(token: string, file: DriveFile): Promise<Sync
   if (favorites.length !== v.favorites.length) throw new Error(`Invalid favorites in ${file.name}`);
   return { schemaVersion: 1, kind: "bej-study-sync", deviceId: v.deviceId, exportedAt: String(v.exportedAt), study, favorites, wyrAnswers: validateWyrAnswers(v.wyrAnswers) };
 }
+/** Prevent a live checkpoint from being silently omitted from a Drive snapshot. */
+export function assertNoUncommittedCheckpoints(): void {
+  const completedIds = new Set(readStudyStore().studyData.sessions.map(item => item.id));
+  if (readStudyCheckpoints().some(item => item.module !== "extra-activities" && !completedIds.has(item.id)))
+    throw new StudyError("otherTab");
+}
 export async function createSnapshot(): Promise<SyncFile> {
   await studyTracker.seal();
   // Reconcile durable, orphaned checkpoints before capturing the local backup.
   // Live module owners keep their checkpoints; those are never forcibly closed.
   await reconcileOrphanedCheckpoints();
-  const completedIds = new Set(readStudyStore().studyData.sessions.map(item => item.id));
-  const pending = readStudyCheckpoints().filter(item =>
-    item.module !== "extra-activities" && !completedIds.has(item.id));
-  if (pending.length) throw new StudyError("otherTab");
+  assertNoUncommittedCheckpoints();
   return { schemaVersion: 1, kind: "bej-study-sync", deviceId: deviceId(),
     exportedAt: new Date().toISOString(), study: backupOf(readStudyStore()), favorites: readFavoriteChunks(), wyrAnswers: readWyrAnswers() };
 }
@@ -177,6 +180,7 @@ export async function publishCurrentSnapshot(token: string, folder: string): Pro
   if (readStudyStore().extraActivity) throw new Error("Finish the extra activity before publishing to Drive.");
   const snapshot = await createSnapshot();
   const baseline = syncBaseline();
+  assertNoUncommittedCheckpoints();
   const files = await listSyncFiles(token, folder);
   await uploadSnapshot(token, folder, files, snapshot);
   if (JSON.stringify(syncBaseline()) !== JSON.stringify(baseline))
@@ -206,6 +210,7 @@ export async function applySync(merged: ReturnType<typeof combineSyncFiles>, bas
   const store = readStudyStore();
   if (JSON.stringify(store) !== baseline.study || JSON.stringify(readStudyCheckpoints()) !== baseline.checkpoints || store.extraActivity || store.activeSession) throw new Error("Study data or checkpoints changed. Retry Sync.");
   if (!unchangedAuxiliaryData()) throw new Error("Favorites or WRG answers changed. Retry Sync.");
+  assertNoUncommittedCheckpoints();
   // Existing import logic enforces storage locks and validation.
   await updateStudyStore(current => {
     if (JSON.stringify(current) !== baseline.study || JSON.stringify(readStudyCheckpoints()) !== baseline.checkpoints) throw new Error("Study data or checkpoints changed. Retry Sync.");
