@@ -5,9 +5,11 @@ on:
     branches:
       - bugfix/sync-1125
       - bugfix/sync-1208
+      - bugfix/sync-1232
   pull_request:
     paths:
       - 'src/features/study/studyDriveSync.ts'
+      - 'src/features/study/studyStorage.ts'
       - 'src/features/study/StudyDriveSync.tsx'
       - 'src/features/study/StudyGoogleDrivePanel.tsx'
       - 'scripts/test-study-drive-sync.mjs'
