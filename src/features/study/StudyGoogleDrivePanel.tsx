@@ -5,7 +5,7 @@ import { backupReminder } from "../../utils/backupReminder";
 import { exportStudyBackup } from "./exportStudyBackup";
 import { readStudyStore, STUDY_CHANGED } from "./studyStorage";
 import { languageName } from "../../i18n";
-import { applySync, authorizeDrive, clearPendingDrivePublication, combineSyncFiles, createSnapshot, deviceId, folderId, GOOGLE_CLIENT_ID, listSyncFiles, markPendingDrivePublication, pendingDrivePublication, publishCurrentSnapshot, readSyncFile, saveFolder, studySyncDiagnostics, syncBaseline, uploadSnapshot, type SyncBaseline, type SyncFile } from "./studyDriveSync";
+import { applySync, authorizeDrive, clearPendingDrivePublication, combineSyncFiles, createSnapshot, deviceId, folderId, GOOGLE_CLIENT_ID, listSyncFiles, markPendingDrivePublication, pendingDrivePublication, publishCurrentSnapshot, readSyncFile, saveFolder, studySyncDiagnostics, syncBaseline, type SyncBaseline, type SyncFile } from "./studyDriveSync";
 
 type Preview = { baseline: SyncBaseline; local: SyncFile; merged: ReturnType<typeof combineSyncFiles>; token: string; folder: string; remoteCount: number };
 function formatSeconds(seconds: number): string {
@@ -46,9 +46,7 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
   }
   async function exportDrive() {
     const token = await authorizeDrive();
-    const files = await listSyncFiles(token, folder);
-    const snapshot = await createSnapshot();
-    await uploadSnapshot(token, folder, files, snapshot);
+    await publishCurrentSnapshot(token, folder);
     clearPendingDrivePublication(folder);
     setPending(pendingDrivePublication());
     backupReminder.exported();
