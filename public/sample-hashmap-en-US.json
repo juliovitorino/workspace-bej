@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1276,
+    "totalIntentions": 1280,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -75718,6 +75718,339 @@
           "id": "fa5f091a-2b34-45de-9701-a2b3c4d5e690",
           "exampleItem": "I need to step away from the computer for a few minutes.",
           "intent": "for a few minutes"
+        }
+      ]
+    },
+    {
+      "id": "quebrar-o-galho-de-alguem-6c91e4a2-7d35-4b80-9f26-a8e73c05d142",
+      "intention": "Help someone out / Give someone a hand",
+      "pattern": "subject + help + someone + out + optional complement",
+      "description": "Expresses helping someone in a specific situation, usually through a favor, practical assistance, or support with a difficulty. 'Help someone out' is very common in informal American English. Use it to ask for help, offer help, thank someone for a favor, or describe someone helping another person. Conjugate 'help' for the required tense. When the person receiving help is represented by a personal pronoun, place it between 'help' and 'out'.",
+      "category": "expressions",
+      "searchTerms": [
+        "help someone out",
+        "help me out",
+        "help you out",
+        "give someone a hand",
+        "give me a hand",
+        "help someone",
+        "do someone a favor",
+        "need help",
+        "help me with this",
+        "you really helped me out"
+      ],
+      "validationPatterns": [
+        "\\bhelp(?:s|ed|ing)?\\s+(?:me|you|him|her|us|them|someone|somebody)\\s+out\\b"
+      ],
+      "tags": [
+        "help",
+        "favors",
+        "collaboration",
+        "solidarity",
+        "requests",
+        "offering help",
+        "informal expressions",
+        "conversation",
+        "sentence generator"
+      ],
+      "related": [],
+      "structure": "Use 'help someone out' to describe doing someone a favor or giving practical assistance. Conjugate 'help' according to the subject and tense. The person receiving help can be represented by 'me', 'you', 'him', 'her', 'us', or 'them': 'help me out', 'help her out', or 'help them out'. To ask for help, say 'Can you help me out?' or 'Could you help me out?'. Use 'helped' in the past, as in 'She helped me out yesterday', and 'will help' in the future. Add 'with' for a specific task: 'Can you help me out with this problem?'. Personal pronouns must go between 'help' and 'out'. This informal expression emphasizes practical help or a favor.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a81c2d43-5e67-4890-8b12-c3d4e5f60718",
+          "exampleItem": "Can you help me out?",
+          "intent": "help me out"
+        },
+        {
+          "id": "b92d3e54-6f78-4901-9c23-d4e5f6071829",
+          "exampleItem": "Could you help me out with this problem?",
+          "intent": "help me out"
+        },
+        {
+          "id": "ca3e4f65-7089-4a12-8d34-e5f60718293a",
+          "exampleItem": "My friend helped me out yesterday.",
+          "intent": "helped me out"
+        },
+        {
+          "id": "db4f5076-819a-4b23-9e45-f60718293a4b",
+          "exampleItem": "She always helps me out when I need it.",
+          "intent": "helps me out"
+        },
+        {
+          "id": "ec506187-92ab-4c34-8f56-a718293a4b5c",
+          "exampleItem": "I can help you out with that.",
+          "intent": "help you out"
+        },
+        {
+          "id": "fd617298-a3bc-4d45-9067-b8293a4b5c6d",
+          "exampleItem": "They helped us out during the move.",
+          "intent": "helped us out"
+        },
+        {
+          "id": "ae7283a9-b4cd-4e56-8178-c93a4b5c6d7e",
+          "exampleItem": "Thanks for helping me out.",
+          "intent": "helping me out"
+        },
+        {
+          "id": "bf8394ba-c5de-4f67-9289-da4b5c6d7e8f",
+          "exampleItem": "Can you help me out tomorrow?",
+          "intent": "help me out"
+        },
+        {
+          "id": "c094a5cb-d6ef-4078-a39a-eb5c6d7e8f90",
+          "exampleItem": "I helped her out when her computer stopped working.",
+          "intent": "helped her out"
+        },
+        {
+          "id": "d1a5b6dc-e7f0-4189-b4ab-fc6d7e8f9012",
+          "exampleItem": "Could someone help me out with this?",
+          "intent": "help me out"
+        }
+      ]
+    },
+    {
+      "id": "isso-resolve-quebra-o-galho-7d02f5b3-8e46-4c91-8a37-b9f84d16e253",
+      "intention": "That does the trick / That works",
+      "pattern": "solution, tool, or action + do the trick",
+      "description": "Expresses that something works, solves a problem, or produces the intended result. In American English, the idiom 'do the trick' describes a solution, tool, action, or procedure that achieves a goal. It is especially common in practical situations, such as technical troubleshooting, small repairs, or finding a simple, effective solution. Use it in statements, negatives, questions, and different tenses. It does not necessarily imply a temporary solution; it can mean that the problem has been fully resolved.",
+      "category": "expressions",
+      "searchTerms": [
+        "that does the trick",
+        "this should do the trick",
+        "that did the trick",
+        "this will work",
+        "that should work",
+        "that should be enough",
+        "effective solution",
+        "solve the problem",
+        "get the desired result"
+      ],
+      "validationPatterns": [
+        "\\b(?:do|does|did|doing|done)\\s+the\\s+trick\\b"
+      ],
+      "tags": [
+        "solutions",
+        "results",
+        "effectiveness",
+        "problem solving",
+        "practical situations",
+        "idioms",
+        "informal language",
+        "conversation",
+        "sentence generator"
+      ],
+      "related": [],
+      "structure": "The idiom 'do the trick' means that something works or produces the intended result. Conjugate 'do' according to the subject and tense. Use 'does the trick' with a singular subject in the present, as in 'This does the trick', and 'did the trick' in the past, as in 'That did the trick'. To express an expectation, say 'This should do the trick'. Use 'will do the trick' for the future. Questions can take the form 'Did that do the trick?', and negatives can use 'didn't do the trick'. The idiom is natural for simple, practical solutions. Distinguish it from 'make do with', which describes adapting to the resources available.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "e2b6c7ed-f801-429a-85bc-a17e8f901234",
+          "exampleItem": "This should do the trick.",
+          "intent": "This should do the trick"
+        },
+        {
+          "id": "f3c7d8fe-0912-43ab-96cd-b28f90123456",
+          "exampleItem": "That did the trick!",
+          "intent": "That did the trick"
+        },
+        {
+          "id": "a4d8e90f-1a23-44bc-87de-c39012345678",
+          "exampleItem": "This solution should do the trick.",
+          "intent": "This solution should do the trick"
+        },
+        {
+          "id": "b5e9f01a-2b34-45cd-98ef-d40123456789",
+          "exampleItem": "Restarting the computer should do the trick.",
+          "intent": "should do the trick"
+        },
+        {
+          "id": "c6f0012b-3c45-46de-8901-e51234567890",
+          "exampleItem": "This should do the trick.",
+          "intent": "This should do the trick"
+        },
+        {
+          "id": "d701123c-4d56-47ef-9a12-f62345678901",
+          "exampleItem": "A small change should do the trick.",
+          "intent": "should do the trick"
+        },
+        {
+          "id": "e812234d-5e67-4801-8b23-a73456789012",
+          "exampleItem": "Did that do the trick?",
+          "intent": "Did that do the trick"
+        },
+        {
+          "id": "f923345e-6f78-4912-9c34-b84567890123",
+          "exampleItem": "That update didn't do the trick.",
+          "intent": "didn't do the trick"
+        },
+        {
+          "id": "a034456f-7089-4a23-8d45-c95678901234",
+          "exampleItem": "A little rest should do the trick.",
+          "intent": "should do the trick"
+        },
+        {
+          "id": "b1455670-819a-4b34-9e56-da6789012345",
+          "exampleItem": "I think this will do the trick.",
+          "intent": "this will do the trick"
+        }
+      ]
+    },
+    {
+      "id": "quebrar-o-galho-com-o-que-tem-8e13a6c4-9f57-4da2-9b48-c0e95f27a364",
+      "intention": "Make do with what you have / Get by with",
+      "pattern": "subject + make do with + available resource",
+      "description": "Expresses the need or ability to use the resources available, even when they are limited, unsuitable, or less than ideal. In American English, 'make do with' means adapting to a situation and managing with what is available. It is common when discussing improvisation, resource shortages, financial constraints, technical problems, or temporary solutions. The expression can also appear without a complement, as in 'We'll make do', when the resources are clear from context.",
+      "category": "expressions",
+      "searchTerms": [
+        "make do with",
+        "get by with",
+        "make do with what we have",
+        "have to make do",
+        "use what is available",
+        "improvise",
+        "adapt",
+        "available resources",
+        "less than ideal",
+        "use for now",
+        "manage with less",
+        "find a way"
+      ],
+      "validationPatterns": [
+        "\\b(?:make|makes|made|making)\\s+do\\b"
+      ],
+      "tags": [
+        "improvisation",
+        "adaptation",
+        "limited resources",
+        "temporary solutions",
+        "necessity",
+        "creativity",
+        "everyday situations",
+        "idioms",
+        "conversation",
+        "sentence generator"
+      ],
+      "related": [],
+      "structure": "Use 'make do with' to express managing with the resources available. Conjugate 'make' for the required tense: 'make do with' or 'makes do with' in the present, 'made do with' in the past, and 'will make do with' in the future. The expression can also follow 'have to', as in 'We'll have to make do with what we have'. After 'with', use a noun, pronoun, or phrase identifying the available resource: 'make do with this computer', 'make do with less money', or 'make do with what we have'. When the resource is clear from context, omit 'with' and its complement: 'We'll make do'. This expression describes adapting to a limitation by using what is available, rather than simply solving a problem.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "c2566781-92ab-4c45-8f67-eb7890123456",
+          "exampleItem": "We'll have to make do with what we have.",
+          "intent": "make do with what we have"
+        },
+        {
+          "id": "d3677892-a3bc-4d56-9078-fc8901234567",
+          "exampleItem": "I can make do with this old computer.",
+          "intent": "make do with"
+        },
+        {
+          "id": "e47889a3-b4cd-4e67-8189-ad9012345678",
+          "exampleItem": "It's not ideal, but we'll make do.",
+          "intent": "we'll make do"
+        },
+        {
+          "id": "f5899ab4-c5de-4f78-929a-be0123456789",
+          "exampleItem": "She had to make do with very little money.",
+          "intent": "make do with"
+        },
+        {
+          "id": "a69aabc5-d6ef-4089-83ab-cf1234567890",
+          "exampleItem": "For now, I'll make do with this phone.",
+          "intent": "make do with"
+        },
+        {
+          "id": "b7abbcd6-e7f0-419a-94bc-d02345678901",
+          "exampleItem": "They had to make do with the resources available.",
+          "intent": "make do with"
+        },
+        {
+          "id": "c8bccde7-f801-42ab-85cd-e13456789012",
+          "exampleItem": "We can make do with less money.",
+          "intent": "make do with"
+        },
+        {
+          "id": "d9cddef8-0912-43bc-96de-f24567890123",
+          "exampleItem": "Last year, we had to make do with old equipment.",
+          "intent": "make do with"
+        },
+        {
+          "id": "eadeef09-1a23-44cd-87ef-a35678901234",
+          "exampleItem": "Can you make do with what you have?",
+          "intent": "make do with what you have"
+        },
+        {
+          "id": "fbef001a-2b34-45de-9801-b46789012345",
+          "exampleItem": "We don't have all the tools, but we'll make do.",
+          "intent": "we'll make do"
+        }
+      ]
+    },
+    {
+      "id": "isso-vai-servir-por-enquanto-9f24b7d5-0a68-4eb3-8c59-d1f06a38b475",
+      "intention": "This will do for now",
+      "pattern": "this + will do / should do + for now",
+      "description": "Used when something is sufficient or acceptable for a current need, even if it is not the best solution or might be replaced later. 'This will do for now' is a natural, common complete sentence in American English. Use it to temporarily accept an available object, piece of equipment, resource, or solution. It conveys that something is adequate at the moment without necessarily expressing complete satisfaction or a permanent solution.",
+      "category": "expressions",
+      "searchTerms": [
+        "this will do for now",
+        "this should do for now",
+        "this is enough for now",
+        "this will be enough for now",
+        "this is sufficient for now",
+        "this will work for now",
+        "temporary solution",
+        "good enough for now"
+      ],
+      "validationPatterns": [
+        "\\bthis\\s+(?:will|should)\\s+do\\s+for\\s+now\\b"
+      ],
+      "tags": [
+        "temporary solution",
+        "sufficiency",
+        "acceptance",
+        "practicality",
+        "available resources",
+        "everyday situations",
+        "informal expressions",
+        "standalone chunk",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "'This will do for now' means that something is adequate for the moment. The demonstrative pronoun 'this' identifies the available object or solution. 'Will do' indicates that it will be sufficient or suitable for a purpose. 'For now' limits that acceptance to the present situation. This is a complete sentence and can stand alone. A common variation is 'This should do for now', which expresses an expectation that the solution will be sufficient. Use 'This will do' when there is no need to emphasize its temporary nature. Here, 'do' means 'be sufficient' or 'serve the purpose', rather than literally performing an action. Distinguish it from 'do the trick', which emphasizes a solution's result, and 'make do with', which emphasizes adapting to available resources.",
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "ac01212b-3c45-46ef-8912-c57890123456",
+          "exampleItem": "This will do for now.",
+          "intent": "This will do for now"
+        },
+        {
+          "id": "bd12323c-4d56-4701-9a23-d68901234567",
+          "exampleItem": "This will do for now, until we buy a new one.",
+          "intent": "This will do for now"
+        },
+        {
+          "id": "ce23434d-5e67-4812-8b34-e79012345678",
+          "exampleItem": "This will do for now, even though it's not ideal.",
+          "intent": "This will do for now"
+        },
+        {
+          "id": "df34545e-6f78-4923-9c45-f80123456789",
+          "exampleItem": "This will do for now. We can improve it later.",
+          "intent": "This will do for now"
+        },
+        {
+          "id": "e045656f-7089-4a34-8d56-a91234567890",
+          "exampleItem": "This will do for now. We don't need to spend more money right now.",
+          "intent": "This will do for now"
+        },
+        {
+          "id": "f1567670-819a-4b45-9e67-ba2345678901",
+          "exampleItem": "This will do for now, until we find a better solution.",
+          "intent": "This will do for now"
         }
       ]
     }

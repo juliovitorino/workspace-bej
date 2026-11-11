@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1276,
+    "totalIntentions": 1280,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -52125,6 +52125,351 @@
           "intent": "pendant quelques minutes"
         }
       ]
+    },
+    {
+      "id": "quebrar-o-galho-de-alguem-6c91e4a2-7d35-4b80-9f26-a8e73c05d142",
+      "intention": "Rendre service à quelqu’un / Donner un coup de main",
+      "pattern": "sujet + rendre service à quelqu’un / donner un coup de main à quelqu’un + complément facultatif",
+      "description": "Exprime le fait d’aider quelqu’un dans une situation précise, par un service, une aide pratique ou un soutien face à une difficulté. « Rendre service » et « donner un coup de main » sont courants dans les échanges du quotidien. Ces expressions permettent de demander de l’aide, de la proposer, de remercier pour un service ou de raconter qu’une personne en a aidé une autre. Le verbe se conjugue selon le temps et le sujet ; la personne aidée peut être désignée par un nom ou un pronom complément.",
+      "searchTerms": [
+        "rendre service",
+        "me rendre service",
+        "te rendre service",
+        "rendre service à quelqu’un",
+        "donner un coup de main",
+        "me donner un coup de main",
+        "aider quelqu’un",
+        "faire une faveur",
+        "avoir besoin d’aide",
+        "m’aider avec ça",
+        "donner un coup de pouce",
+        "tu m’as bien dépanné"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:rendre|rends|rend|rendons|rendez|rendent|rendu|rendrai|rendras|rendra|rendrons|rendrez|rendront)\\s+service(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:donner|donne|donnes|donnons|donnez|donnent|donné|donnerai|donneras|donnera|donnerons|donnerez|donneront)\\s+(?:toujours\\s+)?un\\s+coup\\s+de\\s+main(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "aide",
+        "services",
+        "collaboration",
+        "solidarité",
+        "demandes",
+        "proposer de l’aide",
+        "expressions familières",
+        "conversation",
+        "générateur de phrases"
+      ],
+      "structure": "Pour exprimer une aide pratique ou un service ponctuel, on utilise « rendre service à quelqu’un » ou « donner un coup de main à quelqu’un ». La personne aidée peut être remplacée par me, te, lui, nous, vous ou leur : « Tu peux me rendre service ? », « Je peux lui donner un coup de main ». Dans les temps composés, le pronom se place devant l’auxiliaire : « Elle m’a rendu service hier ». Pour demander poliment : « Pourrais-tu me donner un coup de main ? ». On peut préciser la tâche avec pour suivi d’un infinitif ou avec suivi d’un nom : « un coup de main pour déménager », « un coup de main avec ce problème ». Ces expressions relèvent du langage courant ou familier.",
+      "category": "expressions",
+      "related": [],
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a81c2d43-5e67-4890-8b12-c3d4e5f60718",
+          "exampleItem": "Tu peux me rendre service ?",
+          "intent": "me rendre service"
+        },
+        {
+          "id": "b92d3e54-6f78-4901-9c23-d4e5f6071829",
+          "exampleItem": "Pourrais-tu me donner un coup de main avec ce problème ?",
+          "intent": "me donner un coup de main"
+        },
+        {
+          "id": "ca3e4f65-7089-4a12-8d34-e5f60718293a",
+          "exampleItem": "Mon ami m’a rendu service hier.",
+          "intent": "m’a rendu service"
+        },
+        {
+          "id": "db4f5076-819a-4b23-9e45-f60718293a4b",
+          "exampleItem": "Elle me donne toujours un coup de main quand j’en ai besoin.",
+          "intent": "me donne toujours un coup de main"
+        },
+        {
+          "id": "ec506187-92ab-4c34-8f56-a718293a4b5c",
+          "exampleItem": "Je peux te donner un coup de main pour ça.",
+          "intent": "te donner un coup de main"
+        },
+        {
+          "id": "fd617298-a3bc-4d45-9067-b8293a4b5c6d",
+          "exampleItem": "Ils nous ont donné un coup de main pendant le déménagement.",
+          "intent": "nous ont donné un coup de main"
+        },
+        {
+          "id": "ae7283a9-b4cd-4e56-8178-c93a4b5c6d7e",
+          "exampleItem": "Merci de m’avoir rendu service.",
+          "intent": "m’avoir rendu service"
+        },
+        {
+          "id": "bf8394ba-c5de-4f67-9289-da4b5c6d7e8f",
+          "exampleItem": "Tu peux me donner un coup de main demain ?",
+          "intent": "me donner un coup de main"
+        },
+        {
+          "id": "c094a5cb-d6ef-4078-a39a-eb5c6d7e8f90",
+          "exampleItem": "Je lui ai donné un coup de main quand son ordinateur est tombé en panne.",
+          "intent": "lui ai donné un coup de main"
+        },
+        {
+          "id": "d1a5b6dc-e7f0-4189-b4ab-fc6d7e8f9012",
+          "exampleItem": "Est-ce que quelqu’un peut me donner un coup de main avec ça ?",
+          "intent": "me donner un coup de main"
+        }
+      ]
+    },
+    {
+      "id": "isso-resolve-quebra-o-galho-7d02f5b3-8e46-4c91-8a37-b9f84d16e253",
+      "intention": "Ça fait l’affaire / Ça règle le problème",
+      "pattern": "solution, outil ou action + faire l’affaire / régler le problème",
+      "description": "Exprime qu’une solution, un outil, une action ou une procédure fonctionne et permet d’obtenir le résultat attendu. « Faire l’affaire » est une expression idiomatique courante pour une solution simple et efficace, notamment dans les réparations et les problèmes techniques. « Régler le problème » insiste sur la résolution. Ces expressions s’emploient aux formes affirmative, négative ou interrogative et à différents temps. Elles n’impliquent pas nécessairement une solution provisoire : le problème peut être définitivement résolu.",
+      "searchTerms": [
+        "ça fait l’affaire",
+        "ça devrait faire l’affaire",
+        "ça a fait l’affaire",
+        "ça va marcher",
+        "ça devrait marcher",
+        "ça règle le problème",
+        "ça devrait suffire",
+        "cette solution fonctionne",
+        "c’est suffisant",
+        "résoudre le problème",
+        "fonctionner parfaitement",
+        "solution efficace",
+        "donner des résultats"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:faire|fait|font|fera|feront|faisait|faisaient)\\s+l[’']affaire(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:régler|réglé|règle|règlent|réglera|régleront)\\s+le\\s+problème(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "solutions",
+        "résultats",
+        "efficacité",
+        "résolution de problèmes",
+        "situations pratiques",
+        "expressions idiomatiques",
+        "langage familier",
+        "conversation",
+        "générateur de phrases"
+      ],
+      "structure": "L’expression « faire l’affaire » indique qu’une chose convient et produit le résultat voulu. Le verbe faire varie selon le sujet et le temps : « Ça fait l’affaire », « Ça a fait l’affaire », « Ça fera l’affaire ». Pour exprimer une attente : « Ça devrait faire l’affaire ». Dans une question : « Est-ce que ça a fait l’affaire ? ». À la forme négative : « Ça n’a pas fait l’affaire ». « Régler le problème » est une autre formulation naturelle lorsque l’on insiste sur la résolution effective. À distinguer de « se débrouiller avec », qui met l’accent sur l’adaptation à des ressources limitées.",
+      "category": "expressions",
+      "related": [],
+      "level": "B1",
+      "examples": [
+        {
+          "id": "e2b6c7ed-f801-429a-85bc-a17e8f901234",
+          "exampleItem": "Ça devrait régler le problème.",
+          "intent": "Ça devrait régler le problème"
+        },
+        {
+          "id": "f3c7d8fe-0912-43ab-96cd-b28f90123456",
+          "exampleItem": "Ça a fait l’affaire !",
+          "intent": "Ça a fait l’affaire"
+        },
+        {
+          "id": "a4d8e90f-1a23-44bc-87de-c39012345678",
+          "exampleItem": "Cette solution devrait faire l’affaire.",
+          "intent": "Cette solution devrait faire l’affaire"
+        },
+        {
+          "id": "b5e9f01a-2b34-45cd-98ef-d40123456789",
+          "exampleItem": "Redémarrer l’ordinateur devrait régler le problème.",
+          "intent": "devrait régler le problème"
+        },
+        {
+          "id": "c6f0012b-3c45-46de-8901-e51234567890",
+          "exampleItem": "Ça devrait faire l’affaire.",
+          "intent": "Ça devrait faire l’affaire"
+        },
+        {
+          "id": "d701123c-4d56-47ef-9a12-f62345678901",
+          "exampleItem": "Une petite modification devrait faire l’affaire.",
+          "intent": "devrait faire l’affaire"
+        },
+        {
+          "id": "e812234d-5e67-4801-8b23-a73456789012",
+          "exampleItem": "Est-ce que ça a réglé le problème ?",
+          "intent": "ça a réglé le problème"
+        },
+        {
+          "id": "f923345e-6f78-4912-9c34-b84567890123",
+          "exampleItem": "Cette mise à jour n’a pas réglé le problème.",
+          "intent": "n’a pas réglé le problème"
+        },
+        {
+          "id": "a034456f-7089-4a23-8d45-c95678901234",
+          "exampleItem": "Un peu de repos devrait faire l’affaire.",
+          "intent": "devrait faire l’affaire"
+        },
+        {
+          "id": "b1455670-819a-4b34-9e56-da6789012345",
+          "exampleItem": "Je pense que ça fera l’affaire.",
+          "intent": "ça fera l’affaire"
+        }
+      ]
+    },
+    {
+      "id": "quebrar-o-galho-com-o-que-tem-8e13a6c4-9f57-4da2-9b48-c0e95f27a364",
+      "intention": "Se débrouiller avec ce qu’on a / Faire avec",
+      "pattern": "sujet + se débrouiller avec + ressource disponible / sujet + faire avec",
+      "description": "Exprime la nécessité ou la capacité d’utiliser les ressources disponibles, même si elles sont limitées, peu adaptées ou différentes de ce qui serait idéal. « Se débrouiller avec » indique que l’on s’adapte pour avancer avec ce dont on dispose. Cette expression est courante lorsqu’il faut improviser, faire face à un manque d’argent ou de matériel, ou trouver une solution provisoire. Quand les ressources sont déjà connues, on peut dire simplement « On va se débrouiller » ou « On fera avec ».",
+      "searchTerms": [
+        "se débrouiller avec",
+        "me débrouiller avec",
+        "nous débrouiller avec",
+        "devoir se débrouiller",
+        "utiliser ce qu’on a",
+        "faire avec les moyens du bord",
+        "improviser",
+        "s’adapter",
+        "ressources disponibles",
+        "ce n’est pas l’idéal",
+        "utiliser pour le moment",
+        "se contenter de",
+        "trouver un moyen",
+        "faire avec"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:me|te|se|nous|vous)\\s+débrouill(?:er|e|es|ons|ez|ent|é|ée|és|ées|erai|eras|era|erons|erez|eront)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:faire|fait|fais|faisons|faites|font|fera|ferai|ferons|ferez|feront)\\s+avec(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "improvisation",
+        "adaptation",
+        "ressources limitées",
+        "solutions provisoires",
+        "nécessité",
+        "créativité",
+        "situations du quotidien",
+        "expressions idiomatiques",
+        "conversation",
+        "générateur de phrases"
+      ],
+      "structure": "Pour exprimer l’adaptation à des ressources limitées, on utilise « se débrouiller avec » suivi d’un nom, d’un pronom ou d’une proposition : « se débrouiller avec cet ordinateur », « se débrouiller avec moins d’argent », « se débrouiller avec ce qu’on a ». Le pronom réfléchi varie selon le sujet : je me débrouille, tu te débrouilles, nous nous débrouillons. Au passé composé : « Elle a dû se débrouiller avec peu d’argent ». Au futur : « Nous nous débrouillerons ». Quand les ressources sont claires, le complément peut être omis : « On va se débrouiller ». « Faire avec » est une autre expression courante : « Ce n’est pas idéal, mais on fera avec ». Ces tournures insistent sur l’adaptation à une limitation, plutôt que sur la simple résolution d’un problème.",
+      "category": "expressions",
+      "related": [],
+      "level": "B1",
+      "examples": [
+        {
+          "id": "c2566781-92ab-4c45-8f67-eb7890123456",
+          "exampleItem": "Nous allons devoir nous débrouiller avec ce que nous avons.",
+          "intent": "nous débrouiller avec ce que nous avons"
+        },
+        {
+          "id": "d3677892-a3bc-4d56-9078-fc8901234567",
+          "exampleItem": "Je peux me débrouiller avec ce vieil ordinateur.",
+          "intent": "me débrouiller avec"
+        },
+        {
+          "id": "e47889a3-b4cd-4e67-8189-ad9012345678",
+          "exampleItem": "Ce n’est pas l’idéal, mais on va se débrouiller.",
+          "intent": "on va se débrouiller"
+        },
+        {
+          "id": "f5899ab4-c5de-4f78-929a-be0123456789",
+          "exampleItem": "Elle a dû se débrouiller avec peu d’argent.",
+          "intent": "se débrouiller avec"
+        },
+        {
+          "id": "a69aabc5-d6ef-4089-83ab-cf1234567890",
+          "exampleItem": "Pour le moment, je vais me débrouiller avec ce téléphone.",
+          "intent": "me débrouiller avec"
+        },
+        {
+          "id": "b7abbcd6-e7f0-419a-94bc-d02345678901",
+          "exampleItem": "Ils ont dû se débrouiller avec les ressources disponibles.",
+          "intent": "se débrouiller avec"
+        },
+        {
+          "id": "c8bccde7-f801-42ab-85cd-e13456789012",
+          "exampleItem": "Nous pouvons nous débrouiller avec moins d’argent.",
+          "intent": "nous débrouiller avec"
+        },
+        {
+          "id": "d9cddef8-0912-43bc-96de-f24567890123",
+          "exampleItem": "L’année dernière, nous avons dû nous débrouiller avec du vieux matériel.",
+          "intent": "nous débrouiller avec"
+        },
+        {
+          "id": "eadeef09-1a23-44cd-87ef-a35678901234",
+          "exampleItem": "Tu peux te débrouiller avec ce que tu as ?",
+          "intent": "te débrouiller avec ce que tu as"
+        },
+        {
+          "id": "fbef001a-2b34-45de-9801-b46789012345",
+          "exampleItem": "Nous n’avons pas tous les outils, mais on va se débrouiller.",
+          "intent": "on va se débrouiller"
+        }
+      ]
+    },
+    {
+      "id": "isso-vai-servir-por-enquanto-9f24b7d5-0a68-4eb3-8c59-d1f06a38b475",
+      "intention": "Ça fera l’affaire pour le moment",
+      "pattern": "ça + fera / devrait faire + l’affaire + pour le moment",
+      "description": "Expression utilisée lorsqu’un objet, un équipement, une ressource ou une solution est jugé suffisant pour un besoin immédiat, même si ce n’est pas la meilleure option et qu’on pourra le remplacer plus tard. « Ça fera l’affaire pour le moment » est une phrase complète, naturelle et courante. Elle exprime une acceptation provisoire : la solution suffit maintenant, sans nécessairement donner entière satisfaction ni être définitive.",
+      "searchTerms": [
+        "ça fera l’affaire pour le moment",
+        "ça fait l’affaire pour le moment",
+        "ça devrait faire l’affaire pour le moment",
+        "ça suffira pour le moment",
+        "c’est suffisant pour le moment",
+        "ça ira pour le moment",
+        "solution temporaire",
+        "ça convient pour le moment",
+        "pour l’instant ça ira"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])ça\\s+(?:fera|fait|devrait\\s+faire)\\s+l[’']affaire\\s+pour\\s+(?:le\\s+moment|l[’']instant)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "solution temporaire",
+        "suffisance",
+        "acceptation",
+        "sens pratique",
+        "ressources disponibles",
+        "situations du quotidien",
+        "expressions familières",
+        "expression autonome",
+        "conversation"
+      ],
+      "structure": "« Ça fera l’affaire pour le moment » signifie qu’une chose sera suffisamment adaptée au besoin présent. Le pronom ça renvoie à l’objet ou à la solution disponible. « Fera l’affaire » exprime qu’il conviendra, et « pour le moment » limite cette acceptation à la situation actuelle. La phrase peut s’employer seule. « Ça devrait faire l’affaire pour le moment » exprime une attente moins certaine ; « Ça fera l’affaire » ne souligne pas explicitement le caractère provisoire. « Faire l’affaire » est ici idiomatique et signifie convenir ou suffire. La précision « pour le moment » distingue cette acceptation temporaire d’une résolution définitive ; « se débrouiller avec » insiste plutôt sur l’adaptation aux moyens disponibles.",
+      "category": "expressions",
+      "related": [],
+      "level": "A2",
+      "examples": [
+        {
+          "id": "ac01212b-3c45-46ef-8912-c57890123456",
+          "exampleItem": "Ça fera l’affaire pour le moment.",
+          "intent": "Ça fera l’affaire pour le moment"
+        },
+        {
+          "id": "bd12323c-4d56-4701-9a23-d68901234567",
+          "exampleItem": "Ça fera l’affaire pour le moment, en attendant d’en acheter un nouveau.",
+          "intent": "Ça fera l’affaire pour le moment"
+        },
+        {
+          "id": "ce23434d-5e67-4812-8b34-e79012345678",
+          "exampleItem": "Ça fera l’affaire pour le moment, même si ce n’est pas l’idéal.",
+          "intent": "Ça fera l’affaire pour le moment"
+        },
+        {
+          "id": "df34545e-6f78-4923-9c45-f80123456789",
+          "exampleItem": "Ça fera l’affaire pour le moment. Nous pourrons améliorer ça plus tard.",
+          "intent": "Ça fera l’affaire pour le moment"
+        },
+        {
+          "id": "e045656f-7089-4a34-8d56-a91234567890",
+          "exampleItem": "Ça fera l’affaire pour le moment. Nous n’avons pas besoin de dépenser plus d’argent maintenant.",
+          "intent": "Ça fera l’affaire pour le moment"
+        },
+        {
+          "id": "f1567670-819a-4b45-9e67-ba2345678901",
+          "exampleItem": "Ça fera l’affaire pour le moment, en attendant de trouver une meilleure solution.",
+          "intent": "Ça fera l’affaire pour le moment"
+        }
+      ],
+      "allowLanguageChunkPractice": true
     }
   ]
 }

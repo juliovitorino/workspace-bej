@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1276,
+    "totalIntentions": 1280,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -51233,6 +51233,357 @@
           "id": "fa5f091a-2b34-45de-9701-a2b3c4d5e690",
           "exampleItem": "Preciso me afastar do computador por alguns minutos.",
           "intent": "por alguns minutos"
+        }
+      ]
+    },
+    {
+      "id": "quebrar-o-galho-de-alguem-6c91e4a2-7d35-4b80-9f26-a8e73c05d142",
+      "intention": "Quebrar o galho de alguém / Dar uma força",
+      "pattern": "sujeito + quebrar o galho de alguém / dar uma força para alguém + complemento opcional",
+      "description": "Expressa a ação de ajudar alguém em uma situação específica, geralmente por meio de um favor, auxílio prático ou apoio diante de uma dificuldade. Em inglês americano, a construção 'help someone out' é muito comum na linguagem informal e cotidiana. Pode ser utilizada para pedir ajuda, oferecer ajuda, agradecer um favor ou contar que alguém ajudou outra pessoa. O verbo 'help' pode ser conjugado em diferentes tempos verbais. O pronome ou a pessoa que recebe a ajuda aparece entre 'help' e 'out' quando representado por um pronome pessoal.",
+      "category": "expressions",
+      "searchTerms": [
+        "quebrar o galho",
+        "quebrar meu galho",
+        "quebrar seu galho",
+        "quebrar o galho de alguém",
+        "dar uma força",
+        "me dar uma força",
+        "ajudar alguém",
+        "fazer um favor",
+        "precisar de ajuda",
+        "me ajudar com isso",
+        "dar uma mão",
+        "me salvou nessa"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:quebrar|quebrou|quebrei|quebra|quebramos|quebraram|quebraria)\\s+(?:(?:o|um)\\s+)?(?:meu|seu|nosso|dela|dele)?\\s*galho(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:dar|deu|dei|dá|damos|deram|daria)\\s+(?:(?:me|te|nos|lhe)\\s+)?uma\\s+força(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:me|te|nos)\\s+(?:ajudar|ajudou|ajuda|ajudaram)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "ajuda",
+        "favores",
+        "colaboração",
+        "solidariedade",
+        "pedidos",
+        "oferecer ajuda",
+        "expressões informais",
+        "conversação",
+        "gerador de frases"
+      ],
+      "related": [],
+      "structure": "Para expressar a ideia de quebrar o galho de alguém, utiliza-se 'help someone out'. O verbo 'help' pode variar conforme o sujeito e o tempo verbal. A pessoa ajudada pode ser representada por pronomes como 'me', 'you', 'him', 'her', 'us' e 'them'. Exemplos: 'help me out', 'help her out' e 'help them out'. Em perguntas, pode-se utilizar 'Can you help me out?' ou 'Could you help me out?'. No passado, utiliza-se 'helped', como em 'She helped me out yesterday'. No futuro, pode-se utilizar 'will help'. Quando a ajuda envolve uma tarefa específica, é comum acrescentar 'with', como em 'Can you help me out with this problem?'. Com pronomes pessoais, a posição natural é entre 'help' e 'out'. A expressão é informal e transmite a ideia de auxílio prático ou favor.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a81c2d43-5e67-4890-8b12-c3d4e5f60718",
+          "exampleItem": "Você pode quebrar meu galho?",
+          "intent": "quebrar meu galho"
+        },
+        {
+          "id": "b92d3e54-6f78-4901-9c23-d4e5f6071829",
+          "exampleItem": "Você poderia quebrar meu galho com esse problema?",
+          "intent": "quebrar meu galho"
+        },
+        {
+          "id": "ca3e4f65-7089-4a12-8d34-e5f60718293a",
+          "exampleItem": "Meu amigo quebrou meu galho ontem.",
+          "intent": "quebrou meu galho"
+        },
+        {
+          "id": "db4f5076-819a-4b23-9e45-f60718293a4b",
+          "exampleItem": "Ela sempre quebra meu galho quando preciso.",
+          "intent": "quebra meu galho"
+        },
+        {
+          "id": "ec506187-92ab-4c34-8f56-a718293a4b5c",
+          "exampleItem": "Posso te dar uma força com isso.",
+          "intent": "dar uma força"
+        },
+        {
+          "id": "fd617298-a3bc-4d45-9067-b8293a4b5c6d",
+          "exampleItem": "Eles quebraram nosso galho durante a mudança.",
+          "intent": "quebraram nosso galho"
+        },
+        {
+          "id": "ae7283a9-b4cd-4e56-8178-c93a4b5c6d7e",
+          "exampleItem": "Obrigado por quebrar meu galho.",
+          "intent": "quebrar meu galho"
+        },
+        {
+          "id": "bf8394ba-c5de-4f67-9289-da4b5c6d7e8f",
+          "exampleItem": "Você consegue me dar uma força amanhã?",
+          "intent": "dar uma força"
+        },
+        {
+          "id": "c094a5cb-d6ef-4078-a39a-eb5c6d7e8f90",
+          "exampleItem": "Eu quebrei o galho dela quando o computador parou de funcionar.",
+          "intent": "quebrei o galho dela"
+        },
+        {
+          "id": "d1a5b6dc-e7f0-4189-b4ab-fc6d7e8f9012",
+          "exampleItem": "Será que alguém pode me ajudar com isso?",
+          "intent": "me ajudar"
+        }
+      ]
+    },
+    {
+      "id": "isso-resolve-quebra-o-galho-7d02f5b3-8e46-4c91-8a37-b9f84d16e253",
+      "intention": "Isso resolve / Isso quebra o galho",
+      "pattern": "isso / essa solução / essa ação + resolver / funcionar / ser suficiente para alcançar o resultado",
+      "description": "Expressa que alguma coisa funciona, resolve um problema ou produz o resultado esperado. Em inglês americano, a expressão idiomática 'do the trick' é utilizada quando uma solução, ferramenta, ação ou procedimento consegue atingir determinado objetivo. É especialmente comum em situações práticas, como resolver problemas técnicos, fazer pequenos reparos ou encontrar uma solução simples e eficaz. A expressão pode aparecer em frases afirmativas, negativas, interrogativas e em diferentes tempos verbais. Não significa necessariamente uma solução temporária, pois também pode indicar que o problema foi efetivamente resolvido.",
+      "category": "expressions",
+      "searchTerms": [
+        "isso resolve",
+        "isso deve resolver",
+        "isso resolveu",
+        "isso vai funcionar",
+        "isso deve funcionar",
+        "isso quebra o galho",
+        "isso deve dar conta",
+        "essa solução resolve",
+        "isso é suficiente",
+        "resolver o problema",
+        "funcionar perfeitamente",
+        "solução eficaz",
+        "dar resultado"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:isso|essa\\s+solução|esse\\s+procedimento)\\s+(?:deve\\s+|vai\\s+|pode\\s+)?(?:resolver|resolve|resolveu|funcionar|funciona|funcionou)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:isso|essa\\s+solução|esse\\s+recurso)\\s+(?:quebra|quebrou|vai\\s+quebrar|deve\\s+quebrar)\\s+o\\s+galho(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:isso|essa\\s+solução)\\s+(?:deve\\s+|vai\\s+)?(?:dar\\s+conta|ser\\s+suficiente)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "soluções",
+        "resultados",
+        "eficácia",
+        "resolução de problemas",
+        "situações práticas",
+        "expressões idiomáticas",
+        "linguagem informal",
+        "conversação",
+        "gerador de frases"
+      ],
+      "related": [],
+      "structure": "A expressão idiomática 'do the trick' indica que alguma coisa funciona ou produz o resultado esperado. O verbo 'do' pode ser conjugado conforme o sujeito e o tempo verbal. No presente, utiliza-se 'does the trick' com sujeitos no singular, como em 'This does the trick'. No passado, utiliza-se 'did the trick', como em 'That did the trick'. Para expressar uma expectativa, é comum utilizar 'should do the trick', como em 'This should do the trick'. No futuro, pode-se utilizar 'will do the trick'. Em perguntas, a expressão pode aparecer como 'Did that do the trick?'. Na negativa, pode-se utilizar 'didn't do the trick'. A expressão é bastante natural para soluções simples e práticas, mas não deve ser confundida com 'make do with', que indica adaptar-se aos recursos disponíveis.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "e2b6c7ed-f801-429a-85bc-a17e8f901234",
+          "exampleItem": "Isso deve resolver o problema.",
+          "intent": "Isso deve resolver"
+        },
+        {
+          "id": "f3c7d8fe-0912-43ab-96cd-b28f90123456",
+          "exampleItem": "Isso resolveu!",
+          "intent": "Isso resolveu"
+        },
+        {
+          "id": "a4d8e90f-1a23-44bc-87de-c39012345678",
+          "exampleItem": "Essa solução deve funcionar.",
+          "intent": "Essa solução deve funcionar"
+        },
+        {
+          "id": "b5e9f01a-2b34-45cd-98ef-d40123456789",
+          "exampleItem": "Reiniciar o computador deve resolver o problema.",
+          "intent": "deve resolver o problema"
+        },
+        {
+          "id": "c6f0012b-3c45-46de-8901-e51234567890",
+          "exampleItem": "Isso deve dar conta do recado.",
+          "intent": "Isso deve dar conta"
+        },
+        {
+          "id": "d701123c-4d56-47ef-9a12-f62345678901",
+          "exampleItem": "Uma pequena alteração deve resolver.",
+          "intent": "deve resolver"
+        },
+        {
+          "id": "e812234d-5e67-4801-8b23-a73456789012",
+          "exampleItem": "Isso resolveu o problema?",
+          "intent": "Isso resolveu"
+        },
+        {
+          "id": "f923345e-6f78-4912-9c34-b84567890123",
+          "exampleItem": "Essa atualização não resolveu o problema.",
+          "intent": "não resolveu"
+        },
+        {
+          "id": "a034456f-7089-4a23-8d45-c95678901234",
+          "exampleItem": "Um pouco de descanso deve resolver.",
+          "intent": "deve resolver"
+        },
+        {
+          "id": "b1455670-819a-4b34-9e56-da6789012345",
+          "exampleItem": "Acho que isso vai funcionar.",
+          "intent": "isso vai funcionar"
+        }
+      ]
+    },
+    {
+      "id": "quebrar-o-galho-com-o-que-tem-8e13a6c4-9f57-4da2-9b48-c0e95f27a364",
+      "intention": "Quebrar o galho com o que tem / Se virar com",
+      "pattern": "sujeito + se virar / ter que se virar / quebrar o galho + com + recurso disponível",
+      "description": "Expressa a necessidade ou a capacidade de utilizar os recursos disponíveis, mesmo quando são limitados, inadequados ou diferentes do que seria ideal. Em inglês americano, a construção 'make do with' indica adaptar-se a uma situação e conseguir seguir em frente com aquilo que está disponível. É muito utilizada em contextos de improvisação, falta de recursos, limitações financeiras, problemas técnicos ou soluções provisórias. A expressão também pode aparecer sem complemento, como em 'We'll make do', quando o contexto já deixa claro com quais recursos será necessário se virar.",
+      "category": "expressions",
+      "searchTerms": [
+        "quebrar o galho com",
+        "se virar com",
+        "me virar com",
+        "nos virar com",
+        "ter que se virar",
+        "usar o que tem",
+        "fazer com o que tem",
+        "improvisar",
+        "se adaptar",
+        "recursos disponíveis",
+        "não é o ideal",
+        "usar por enquanto",
+        "se contentar com",
+        "dar um jeito"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:me|se|nos)\\s+(?:virar|viro|vira|viramos|viraram|virei|virou)\\s+com(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:quebrar|quebra|quebrou|quebrei|quebramos)\\s+o\\s+galho\\s+com(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:usar|utilizar|fazer)\\s+(?:com\\s+)?o\\s+que\\s+(?:tem|temos|tenho|está\\s+disponível)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:ter|tenho|temos|vai|vamos|vou)\\s+(?:que\\s+)?(?:me\\s+|se\\s+|nos\\s+)?virar(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "improvisação",
+        "adaptação",
+        "recursos limitados",
+        "soluções provisórias",
+        "necessidade",
+        "criatividade",
+        "situações cotidianas",
+        "expressões idiomáticas",
+        "conversação",
+        "gerador de frases"
+      ],
+      "related": [],
+      "structure": "A construção 'make do with' expressa a ideia de se virar com os recursos disponíveis. O verbo 'make' pode ser conjugado conforme o tempo verbal. No presente, utiliza-se 'make do with' ou 'makes do with', dependendo do sujeito. No passado, utiliza-se 'made do with'. No futuro, utiliza-se 'will make do with'. A construção também pode aparecer com 'have to', como em 'We'll have to make do with what we have'. Depois de 'with', utiliza-se um substantivo, pronome ou expressão que identifica o recurso disponível. Exemplos: 'make do with this computer', 'make do with less money' e 'make do with what we have'. Quando o recurso já está claro pelo contexto, é possível omitir 'with' e utilizar apenas 'make do', como em 'We'll make do'. Essa expressão não significa simplesmente resolver um problema, mas adaptar-se a uma limitação utilizando aquilo que está disponível.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "c2566781-92ab-4c45-8f67-eb7890123456",
+          "exampleItem": "Vamos ter que nos virar com o que temos.",
+          "intent": "nos virar com o que temos"
+        },
+        {
+          "id": "d3677892-a3bc-4d56-9078-fc8901234567",
+          "exampleItem": "Consigo quebrar o galho com esse computador antigo.",
+          "intent": "quebrar o galho com"
+        },
+        {
+          "id": "e47889a3-b4cd-4e67-8189-ad9012345678",
+          "exampleItem": "Não é o ideal, mas vamos nos virar.",
+          "intent": "vamos nos virar"
+        },
+        {
+          "id": "f5899ab4-c5de-4f78-929a-be0123456789",
+          "exampleItem": "Ela teve que se virar com pouco dinheiro.",
+          "intent": "se virar com"
+        },
+        {
+          "id": "a69aabc5-d6ef-4089-83ab-cf1234567890",
+          "exampleItem": "Por enquanto, vou me virar com esse celular.",
+          "intent": "me virar com"
+        },
+        {
+          "id": "b7abbcd6-e7f0-419a-94bc-d02345678901",
+          "exampleItem": "Eles tiveram que se virar com os recursos disponíveis.",
+          "intent": "se virar com"
+        },
+        {
+          "id": "c8bccde7-f801-42ab-85cd-e13456789012",
+          "exampleItem": "Podemos nos virar com menos dinheiro.",
+          "intent": "nos virar com"
+        },
+        {
+          "id": "d9cddef8-0912-43bc-96de-f24567890123",
+          "exampleItem": "No ano passado, tivemos que nos virar com equipamentos antigos.",
+          "intent": "nos virar com"
+        },
+        {
+          "id": "eadeef09-1a23-44cd-87ef-a35678901234",
+          "exampleItem": "Você consegue se virar com o que tem?",
+          "intent": "se virar com o que tem"
+        },
+        {
+          "id": "fbef001a-2b34-45de-9801-b46789012345",
+          "exampleItem": "Não temos todas as ferramentas, mas vamos nos virar.",
+          "intent": "vamos nos virar"
+        }
+      ]
+    },
+    {
+      "id": "isso-vai-servir-por-enquanto-9f24b7d5-0a68-4eb3-8c59-d1f06a38b475",
+      "intention": "Isso vai servir por enquanto",
+      "pattern": "isso + vai servir / vai dar conta + por enquanto",
+      "description": "Expressão utilizada quando alguma coisa é considerada suficiente ou aceitável para uma necessidade atual, mesmo que não seja a melhor solução ou que possa ser substituída posteriormente. Em inglês americano, 'This will do for now' é uma frase completa, natural e muito comum em situações cotidianas. Pode ser utilizada para aceitar temporariamente um objeto, equipamento, recurso ou solução disponível. A expressão transmite a ideia de que aquilo é suficiente no momento, sem necessariamente indicar satisfação plena ou uma solução definitiva.",
+      "category": "expressions",
+      "searchTerms": [
+        "isso vai servir por enquanto",
+        "isso serve por enquanto",
+        "isso deve servir por enquanto",
+        "isso vai dar conta por enquanto",
+        "isso é suficiente por enquanto",
+        "isso basta por enquanto",
+        "vai servir por agora",
+        "solução temporária",
+        "serve por enquanto",
+        "por enquanto está bom"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])isso\\s+(?:vai\\s+servir|serve|deve\\s+servir|vai\\s+dar\\s+conta|é\\s+suficiente|basta)\\s+por\\s+enquanto(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])isso\\s+vai\\s+servir\\s+por\\s+agora(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "solução temporária",
+        "suficiência",
+        "aceitação",
+        "praticidade",
+        "recursos disponíveis",
+        "situações cotidianas",
+        "expressões informais",
+        "chunk independente",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "A expressão 'This will do for now' significa 'Isso vai servir por enquanto'. O pronome demonstrativo 'this' identifica o objeto ou a solução disponível. A construção 'will do' indica que algo será suficiente ou adequado para determinada finalidade. A expressão 'for now' significa 'por enquanto' e destaca que a aceitação está limitada ao momento atual. A frase é completa e pode ser utilizada isoladamente. Uma variação comum é 'This should do for now', que expressa uma expectativa de que a solução seja suficiente. Outra possibilidade é 'This will do', quando não é necessário destacar o caráter temporário. Nessa construção, 'do' não significa literalmente 'fazer', mas 'servir' ou 'ser suficiente'. É diferente de 'do the trick', que enfatiza o resultado de uma solução, e de 'make do with', que enfatiza a adaptação aos recursos disponíveis.",
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "ac01212b-3c45-46ef-8912-c57890123456",
+          "exampleItem": "Isso vai servir por enquanto.",
+          "intent": "Isso vai servir por enquanto"
+        },
+        {
+          "id": "bd12323c-4d56-4701-9a23-d68901234567",
+          "exampleItem": "Isso vai servir por enquanto, até comprarmos um novo.",
+          "intent": "Isso vai servir por enquanto"
+        },
+        {
+          "id": "ce23434d-5e67-4812-8b34-e79012345678",
+          "exampleItem": "Isso vai servir por enquanto, mesmo não sendo o ideal.",
+          "intent": "Isso vai servir por enquanto"
+        },
+        {
+          "id": "df34545e-6f78-4923-9c45-f80123456789",
+          "exampleItem": "Isso vai servir por enquanto. Podemos melhorar depois.",
+          "intent": "Isso vai servir por enquanto"
+        },
+        {
+          "id": "e045656f-7089-4a34-8d56-a91234567890",
+          "exampleItem": "Isso vai servir por enquanto. Não precisamos gastar mais dinheiro agora.",
+          "intent": "Isso vai servir por enquanto"
+        },
+        {
+          "id": "f1567670-819a-4b45-9e67-ba2345678901",
+          "exampleItem": "Isso vai servir por enquanto, até encontrarmos uma solução melhor.",
+          "intent": "Isso vai servir por enquanto"
         }
       ]
     }
