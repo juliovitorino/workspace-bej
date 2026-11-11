@@ -150,11 +150,20 @@ export async function uploadSnapshot(token: string, folder: string, files: Drive
   const matches = files.filter(f => f.name === name);
   if (matches.length > 1) throw new Error("Duplicate device files in Drive. Resolve before exporting.");
   const content = JSON.stringify(snapshot);
-  const metadata = matches.length ? { name } : { name, parents: [folder], mimeType: "application/json" };
+  if (matches.length) {
+    // Existing device file: update only its bytes. A media PATCH avoids multipart
+    // processing and metadata changes, which are unnecessary for a routine sync.
+    await request(token, `${UPLOAD}/${encodeURIComponent(matches[0].id)}?uploadType=media`, {
+      method: "PATCH", headers: { "Content-Type": "application/json" }, body: content
+    });
+    return;
+  }
+  const metadata = { name, parents: [folder], mimeType: "application/json" };
   const boundary = "bej_sync_boundary";
   const body = `--${boundary}\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n${JSON.stringify(metadata)}\r\n--${boundary}\r\nContent-Type: application/json\r\n\r\n${content}\r\n--${boundary}--`;
-  const url = matches.length ? `${UPLOAD}/${encodeURIComponent(matches[0].id)}?uploadType=multipart` : `${UPLOAD}?uploadType=multipart`;
-  await request(token, url, { method: matches.length ? "PATCH" : "POST", headers: { "Content-Type": `multipart/related; boundary=${boundary}` }, body });
+  await request(token, `${UPLOAD}?uploadType=multipart`, {
+    method: "POST", headers: { "Content-Type": `multipart/related; boundary=${boundary}` }, body
+  });
 }
 /** Publish a fresh local snapshot. Safe to retry after a failed upload; never reapplies the merge. */
 export async function publishCurrentSnapshot(token: string, folder: string): Promise<void> {
