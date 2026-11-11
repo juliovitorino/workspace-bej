@@ -1212,7 +1212,7 @@
     "retryPublish": "Réessayer l'envoi des données locales",
     "published": "Données locales publiées sur Google Drive. Aucune nouvelle fusion nécessaire.",
     "diagnosticTitle": "Diagnostic du temps d'étude",
-    "diagnosticNote": "Le tableau de bord peut inclure des points de contrôle d'activités inachevées. Les sauvegardes ne contiennent que les sessions terminées. Aucun point de contrôle ne sera supprimé.",
+    "diagnosticNote": "Lors de l'exportation ou de la synchronisation, les points de contrôle des modules sans activité en cours sont intégrés à l'historique et conservés dans la sauvegarde. Les sessions en cours et les activités supplémentaires non confirmées restent intactes. Terminez les activités dans les autres onglets avant de synchroniser.",
     "completedTime": "Temps des sessions terminées (sauvegarde)",
     "checkpointTime": "Temps supplémentaire des points de contrôle",
     "visibleTime": "Total avec points de contrôle"
