@@ -1207,7 +1207,15 @@
     "conflictNote": "Des identifiants sont en conflit. Aucune donnée ne sera importée.",
     "mergeNote": "BEJ ajoute les entrées manquantes et réunit les favoris ; les suppressions et retraits des favoris ne se propagent pas. Les objectifs restent locaux. Une sauvegarde est téléchargée avant toute modification.",
     "permissionNote": "Google demandera l'accès à Drive. Cette version utilise une autorisation étendue pour lire et modifier les fichiers du dossier. Utilisez un compte de confiance.",
-    "invalidFolder": "Lien ou ID de dossier invalide."
+    "invalidFolder": "Lien ou ID de dossier invalide.",
+    "localSavedPending": "Les sessions sont enregistrées sur cet appareil, mais l'envoi vers Google Drive n'est pas terminé. Vous pouvez réessayer uniquement l'envoi, sans refusionner les données.",
+    "retryPublish": "Réessayer l'envoi des données locales",
+    "published": "Données locales publiées sur Google Drive. Aucune nouvelle fusion nécessaire.",
+    "diagnosticTitle": "Diagnostic du temps d'étude",
+    "diagnosticNote": "Le tableau de bord peut inclure des points de contrôle d'activités inachevées. Les sauvegardes ne contiennent que les sessions terminées. Aucun point de contrôle ne sera supprimé.",
+    "completedTime": "Temps des sessions terminées (sauvegarde)",
+    "checkpointTime": "Temps supplémentaire des points de contrôle",
+    "visibleTime": "Total avec points de contrôle"
   },
   "studyHeatmap": {
     "title": "Carte thermique — heures d’étude",
