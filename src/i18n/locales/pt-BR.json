@@ -1213,6 +1213,7 @@
     "published": "Dados locais publicados no Google Drive. Não foi necessário repetir a mesclagem.",
     "diagnosticTitle": "Diagnóstico do tempo de estudo",
     "diagnosticNote": "Ao exportar ou sincronizar, checkpoints de módulos sem atividade em andamento são incorporados ao histórico e preservados no backup. Atividades em andamento e Atividades Extras não confirmadas permanecem intactas. Se houver outra aba estudando, conclua a atividade antes de sincronizar.",
+    "recoveredNote": "Checkpoints locais consolidados com segurança: {{time}}. Esse tempo agora faz parte das sessões concluídas e será enviado ao Google Drive.",
     "completedTime": "Tempo das sessões concluídas (backup)",
     "checkpointTime": "Tempo de checkpoints adicionais",
     "visibleTime": "Tempo total incluindo checkpoints"
