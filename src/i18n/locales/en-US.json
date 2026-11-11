@@ -1212,7 +1212,7 @@
     "retryPublish": "Retry publishing local data",
     "published": "Local data published to Google Drive. No additional merge was needed.",
     "diagnosticTitle": "Study time diagnostics",
-    "diagnosticNote": "The Dashboard may include checkpoints from unfinished activities. Backups contain completed sessions only. No checkpoint will be deleted.",
+    "diagnosticNote": "When exporting or syncing, checkpoints from modules with no active controller are moved into study history and preserved in backups. Ongoing sessions and unconfirmed Extra Activities are left untouched. Finish studying in other tabs before syncing.",
     "completedTime": "Completed session time (backup)",
     "checkpointTime": "Additional checkpoint time",
     "visibleTime": "Total including checkpoints"
