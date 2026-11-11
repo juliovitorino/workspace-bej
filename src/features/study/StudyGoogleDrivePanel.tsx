@@ -7,7 +7,7 @@ import { readStudyStore, STUDY_CHANGED, StudyError } from "./studyStorage";
 import { languageName } from "../../i18n";
 import { applySync, authorizeDrive, clearPendingDrivePublication, combineSyncFiles, createSnapshot, deviceId, folderId, GOOGLE_CLIENT_ID, listSyncFiles, markPendingDrivePublication, pendingDrivePublication, publishCurrentSnapshot, readSyncFile, saveFolder, studySyncDiagnostics, syncBaseline, type SyncBaseline, type SyncFile } from "./studyDriveSync";
 
-type Preview = { baseline: SyncBaseline; local: SyncFile; merged: ReturnType<typeof combineSyncFiles>; token: string; folder: string; remoteCount: number };
+type Preview = { baseline: SyncBaseline; local: SyncFile; merged: ReturnType<typeof combineSyncFiles>; token: string; folder: string; remoteCount: number; recoveredSeconds: number };
 function formatSeconds(seconds: number): string {
   const hours = Math.floor(seconds / 3600);
   const minutes = Math.floor(seconds % 3600 / 60);
@@ -54,7 +54,10 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
   }
   async function inspectDrive() {
     const token = await authorizeDrive();
+    const checkpointSeconds = () => studySyncDiagnostics().rows.reduce((total, row) => total + row.checkpointSeconds, 0);
+    const before = checkpointSeconds();
     const local = await createSnapshot();
+    const recoveredSeconds = Math.max(0, before - checkpointSeconds());
     const baseline = syncBaseline();
     if (readStudyStore().extraActivity) throw new Error(t("study.errors.extraActive"));
     if (JSON.stringify(local.study.studyData) !== JSON.stringify(readStudyStore().studyData) ||
@@ -64,7 +67,7 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
     const incoming = await Promise.all(files.map(f => readSyncFile(token, f)));
     if (JSON.stringify(syncBaseline()) !== JSON.stringify(baseline)) throw new Error(t("study.errors.stale"));
     const merged = combineSyncFiles(local, incoming);
-    setPreview({ baseline, local, merged, token, folder, remoteCount: incoming.length });
+    setPreview({ baseline, local, merged, token, folder, remoteCount: incoming.length, recoveredSeconds });
   }
   async function confirmSync() {
     if (!preview) return;
@@ -122,6 +125,9 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
     {message && <p className="study-feedback" role="status">{message}</p>}
     {preview && <div className="study-preview">
       <h4>{t("driveSync.preview")}</h4>
+      {preview.recoveredSeconds > 0 && <p className="study-feedback" role="status">
+        {t("driveSync.recoveredNote", { time: formatSeconds(preview.recoveredSeconds) })}
+      </p>}
       <dl>
         <div><dt>{t("driveSync.files")}</dt><dd>{preview.remoteCount}</dd></div>
         <div><dt>{t("study.newSessions")}</dt><dd>{preview.merged.newSessions}</dd></div>
