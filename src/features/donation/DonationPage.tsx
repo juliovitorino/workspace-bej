@@ -2,19 +2,24 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { QRCodeSVG } from "qrcode.react";
 import type { DonationConfig } from "./donationConfig";
-import { createBitcoinUri, createPixPayload } from "./donationQr";
+import { createBitcoinUri, createPixPayload, pickNextBitcoinAddress } from "./donationQr";
 
 interface DonationPageProps {
   config: DonationConfig;
 }
 
 type CopyMethod = "pix" | "pixPayload" | "bitcoin";
-type CopyFeedback = { kind: "success" | "error"; method: CopyMethod };
+type CopyFeedback = { kind: "success" | "error"; method: CopyMethod; address?: string };
 
 export function DonationPage({ config }: DonationPageProps) {
   const { t } = useTranslation();
   const [feedback, setFeedback] = useState<CopyFeedback | null>(null);
   const feedbackDialogRef = useRef<HTMLDialogElement>(null);
+  const [selectedBitcoinAddress, setSelectedBitcoinAddress] = useState<string | null>(() => {
+    const valid = config.bitcoin.address.filter((address) => createBitcoinUri(address) !== null);
+    return valid.length ? valid[Math.floor(Math.random() * valid.length)] : null;
+  });
+  const [bitcoinCopyPending, setBitcoinCopyPending] = useState(false);
 
   useEffect(() => {
     const dialog = feedbackDialogRef.current;
@@ -23,12 +28,16 @@ export function DonationPage({ config }: DonationPageProps) {
     if (!feedback && dialog.open) dialog.close();
   }, [feedback]);
   const pixAvailable = config.pix.enabled && Boolean(config.pix.key);
-  const bitcoinAvailable = config.bitcoin.enabled && Boolean(config.bitcoin.address);
+  const bitcoinAddresses = config.bitcoin.address.filter((address) => createBitcoinUri(address) !== null);
+  const activeBitcoinAddress = selectedBitcoinAddress && bitcoinAddresses.includes(selectedBitcoinAddress)
+    ? selectedBitcoinAddress
+    : bitcoinAddresses[0] ?? null;
+  const bitcoinAvailable = config.bitcoin.enabled && activeBitcoinAddress !== null;
   const pixPayload = pixAvailable && config.pix.qrCodeEnabled
     ? createPixPayload(config.pix.key, config.pix.qrHolderName, config.pix.city)
     : null;
-  const bitcoinUri = bitcoinAvailable && config.bitcoin.qrCodeEnabled
-    ? createBitcoinUri(config.bitcoin.address)
+  const bitcoinUri = bitcoinAvailable && config.bitcoin.qrCodeEnabled && activeBitcoinAddress
+    ? createBitcoinUri(activeBitcoinAddress)
     : null;
 
   async function copy(value: string, method: CopyMethod) {
@@ -37,6 +46,23 @@ export function DonationPage({ config }: DonationPageProps) {
       setFeedback({ kind: "success", method });
     } catch {
       setFeedback({ kind: "error", method });
+    }
+  }
+
+  async function copyRandomBitcoinAddress() {
+    if (!bitcoinAvailable || bitcoinCopyPending) return;
+    const nextAddress = pickNextBitcoinAddress(bitcoinAddresses, activeBitcoinAddress);
+    if (!nextAddress) return;
+    setBitcoinCopyPending(true);
+    try {
+      await navigator.clipboard.writeText(nextAddress);
+      setSelectedBitcoinAddress(nextAddress);
+      setFeedback({ kind: "success", method: "bitcoin", address: nextAddress });
+    } catch {
+      // Keep the previous address and QR code together if clipboard access fails.
+      setFeedback({ kind: "error", method: "bitcoin" });
+    } finally {
+      setBitcoinCopyPending(false);
     }
   }
 
@@ -92,10 +118,10 @@ export function DonationPage({ config }: DonationPageProps) {
             <p className="donation-network">{t("donation.network")}</p>
             <p className="donation-field-label">{t("donation.bitcoinAddress")}</p>
             {bitcoinAvailable
-              ? <code className="donation-address">{config.bitcoin.address}</code>
+              ? <code className="donation-address">{activeBitcoinAddress}</code>
               : <p className="donation-unavailable">{t("donation.notConfigured")}</p>}
-            <button type="button" className="primary-button donation-copy" disabled={!bitcoinAvailable}
-              onClick={() => void copy(config.bitcoin.address, "bitcoin")}>
+            <button type="button" className="primary-button donation-copy" disabled={!bitcoinAvailable || bitcoinCopyPending}
+              onClick={() => void copyRandomBitcoinAddress()}>
               <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>
               {t("donation.copyBitcoin")}
             </button>
@@ -144,6 +170,12 @@ export function DonationPage({ config }: DonationPageProps) {
                 feedback.method === "pix" ? "donation.copiedPix" :
                 feedback.method === "pixPayload" ? "donation.copiedPixPayload" : "donation.copiedBitcoin")}
             </p>
+            {feedback.kind === "success" && feedback.method === "bitcoin" && feedback.address && (
+              <>
+                <p className="donation-field-label">{t("donation.bitcoinAddress")}</p>
+                <code className="donation-address donation-copy-dialog-address">{feedback.address}</code>
+              </>
+            )}
             <button type="button" className="primary-button donation-copy-dialog-ok" onClick={() => setFeedback(null)}>
               {t("donation.copyDialogOk")}
             </button>
