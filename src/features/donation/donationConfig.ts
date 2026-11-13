@@ -1,7 +1,7 @@
 export interface DonationConfig {
   enabled: boolean;
   footer: { visible: boolean };
-  pix: { enabled: boolean; key: string; holderName: string; city: string; qrCodeEnabled: boolean };
+  pix: { enabled: boolean; key: string; holderName: string; qrHolderName: string; city: string; qrCodeEnabled: boolean };
   bitcoin: { enabled: boolean; network: "bitcoin"; address: string; qrCodeEnabled: boolean };
   content: { title: string; description: string; footerMessage: string; buttonLabel: string };
 }
@@ -9,7 +9,7 @@ export interface DonationConfig {
 export const DISABLED_DONATION_CONFIG: DonationConfig = {
   enabled: false,
   footer: { visible: false },
-  pix: { enabled: false, key: "", holderName: "", city: "", qrCodeEnabled: false },
+  pix: { enabled: false, key: "", holderName: "", qrHolderName: "", city: "", qrCodeEnabled: false },
   bitcoin: { enabled: false, network: "bitcoin", address: "", qrCodeEnabled: false },
   content: { title: "", description: "", footerMessage: "", buttonLabel: "" },
 };
@@ -38,6 +38,7 @@ export function parseDonationConfig(value: unknown): DonationConfig {
       enabled: pix.enabled === true,
       key: stringValue(pix.key),
       holderName: stringValue(pix.holderName),
+      qrHolderName: stringValue(pix.qrHolderName),
       city: stringValue(pix.city),
       qrCodeEnabled: pix.qrCodeEnabled === true,
     },
