@@ -1305,7 +1305,7 @@
     "noMethods": "No hay métodos de donación disponibles por ahora.",
     "pixQrTitle": "Código QR Pix",
     "pixQrHint": "Escanéalo con tu aplicación bancaria. Tú eliges el importe.",
-    "pixQrSetup": "Para generar el QR Pix, configura el nombre completo sin asteriscos y la ciudad del beneficiario en donation.json.",
+    "pixQrSetup": "Para generar el QR Pix, configura qrHolderName (nombre completo sin asteriscos) y city (ciudad) en donation.json. El nombre mostrado en la aplicación seguirá oculto.",
     "copyPixPayload": "Copiar código Pix de pago",
     "copiedPixPayload": "¡Código Pix de pago copiado!",
     "bitcoinQrTitle": "Código QR Bitcoin",
