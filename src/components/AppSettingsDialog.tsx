@@ -60,6 +60,11 @@ export function AppSettingsDialog({ kind, language, sourceLanguage, languageLock
           <summary>Termos de Uso (PT-BR)</summary>
           <div className="bej-terms-text" role="document">{termsOfUse}</div>
         </details>
+        <p className="bej-legal-links">
+          <a href="/terms" target="_blank" rel="noopener noreferrer">Termos de Uso (página pública)</a>
+          {" · "}
+          <a href="/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>
+        </p>
         {!metadata && <p role="status">{t("settings.metadataIsCurrentlyUnavailable")}</p>}
         {source === "cache" && <span className="cache-badge">{t("settings.localCache")}</span>}
       </>}
