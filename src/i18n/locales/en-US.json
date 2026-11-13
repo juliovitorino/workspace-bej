@@ -255,10 +255,10 @@
       "previous": "Manual adjustment"
     },
     "periods": {
-      "yesterday": "Yesterday",
       "7": "Last seven days",
       "30": "Last 30 days",
       "90": "Last 90 days",
+      "yesterday": "Yesterday",
       "today": "Today",
       "month": "Current month",
       "all": "All history",
@@ -1302,6 +1302,14 @@
     "footerMessage": "Enjoying BEJ? Support this project!",
     "footerDescription": "Your contribution helps maintain the app and the channel.",
     "buttonLabel": "Make a donation",
-    "noMethods": "No donation methods are currently available."
+    "noMethods": "No donation methods are currently available.",
+    "pixQrTitle": "Pix QR code",
+    "pixQrHint": "Scan with your banking app. You choose the donation amount.",
+    "pixQrSetup": "To generate a Pix QR code, set qrHolderName (full unmasked name) and city in donation.json. The name shown in the app stays masked.",
+    "copyPixPayload": "Copy Pix payment code",
+    "copiedPixPayload": "Pix payment code copied!",
+    "bitcoinQrTitle": "Bitcoin QR code",
+    "bitcoinQrHint": "Scan with a Bitcoin mainnet wallet. You choose the amount.",
+    "bitcoinQrInvalid": "Invalid Bitcoin receiving address for QR generation. Check the network and address."
   }
 }
