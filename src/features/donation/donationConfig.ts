@@ -2,7 +2,7 @@ export interface DonationConfig {
   enabled: boolean;
   footer: { visible: boolean };
   pix: { enabled: boolean; key: string; holderName: string; qrHolderName: string; city: string; qrCodeEnabled: boolean };
-  bitcoin: { enabled: boolean; network: "bitcoin"; address: string; qrCodeEnabled: boolean };
+  bitcoin: { enabled: boolean; network: "bitcoin"; address: string[]; qrCodeEnabled: boolean };
   content: { title: string; description: string; footerMessage: string; buttonLabel: string };
 }
 
@@ -10,7 +10,7 @@ export const DISABLED_DONATION_CONFIG: DonationConfig = {
   enabled: false,
   footer: { visible: false },
   pix: { enabled: false, key: "", holderName: "", qrHolderName: "", city: "", qrCodeEnabled: false },
-  bitcoin: { enabled: false, network: "bitcoin", address: "", qrCodeEnabled: false },
+  bitcoin: { enabled: false, network: "bitcoin", address: [], qrCodeEnabled: false },
   content: { title: "", description: "", footerMessage: "", buttonLabel: "" },
 };
 
@@ -22,6 +22,12 @@ function record(value: unknown): Record<string, unknown> {
 
 function stringValue(value: unknown): string {
   return typeof value === "string" ? value.trim() : "";
+}
+
+/** Accepts the new address[] format and legacy single-address configurations. */
+function bitcoinAddresses(value: unknown): string[] {
+  const raw = Array.isArray(value) ? value : [value];
+  return [...new Set(raw.map(stringValue).filter(Boolean))];
 }
 
 export function parseDonationConfig(value: unknown): DonationConfig {
@@ -45,7 +51,7 @@ export function parseDonationConfig(value: unknown): DonationConfig {
     bitcoin: {
       enabled: bitcoin.enabled === true && (bitcoin.network === undefined || bitcoin.network === "bitcoin"),
       network: "bitcoin",
-      address: stringValue(bitcoin.address),
+      address: bitcoinAddresses(bitcoin.address),
       qrCodeEnabled: bitcoin.qrCodeEnabled === true,
     },
     content: {

@@ -1313,6 +1313,7 @@
     "bitcoinQrInvalid": "Invalid Bitcoin receiving address for QR generation. Check the network and address.",
     "copySuccessTitle": "Copied successfully!",
     "copyErrorTitle": "Unable to copy",
-    "copyDialogOk": "OK"
+    "copyDialogOk": "OK",
+    "bitcoinRotationHint": "Each copy picks a different address. The QR code always matches the address shown."
   }
 }

@@ -15,7 +15,11 @@
     "bitcoin": {
       "enabled": true,
       "network": "bitcoin",
-      "address": "3JauYEHdJfTgJ2ogX75ueZ6C1waktjFrvw",
+      "address": [
+        "3JauYEHdJfTgJ2ogX75ueZ6C1waktjFrvw",
+        "36AFfcXWFM8efk6qwKwzGBQoRGMLtG35de",
+"39FSrhap4d1DSPL9kQ56jVWewf6ThNxWQf"
+      ],
       "qrCodeEnabled": true
     },
     "content": {

@@ -55,3 +55,20 @@ export function createBitcoinUri(address: string): string | null {
   const segwit = /^(bc1q[ac-hj-np-z02-9]{11,71}|bc1p[ac-hj-np-z02-9]{11,71})$/.test(value);
   return legacy || segwit ? `bitcoin:${value}` : null;
 }
+
+/**
+ * Picks a receiving address, excluding the currently displayed one whenever
+ * there is more than one option. The QR code and copied address share this choice.
+ */
+export function pickNextBitcoinAddress(
+  addresses: string[],
+  current: string | null,
+  random: () => number = Math.random,
+): string | null {
+  const unique = [...new Set(addresses)];
+  const alternatives = unique.filter((address) => address !== current);
+  const pool = alternatives.length ? alternatives : unique;
+  if (!pool.length) return null;
+  const index = Math.max(0, Math.min(pool.length - 1, Math.floor(random() * pool.length)));
+  return pool[index];
+}
