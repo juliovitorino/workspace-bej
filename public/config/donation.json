@@ -6,19 +6,19 @@
     },
     "pix": {
       "enabled": true,
-      "key": "",
-      "holderName": ""
+      "key": "00737033703",
+      "holderName": "Julio Cesar Vitorino"
     },
     "bitcoin": {
       "enabled": true,
       "network": "bitcoin",
-      "address": ""
+      "address": "uuuyuoyouyuioyuyiuyyyouyioy"
     },
     "content": {
-      "title": "",
-      "description": "",
-      "footerMessage": "",
-      "buttonLabel": ""
+      "title": "Apoie o Brazilian English Journey",
+      "description": "Ajude a manter o BEJ e o canal.",
+      "footerMessage": "Gostou do BEJ? Apoie este projeto!",
+      "buttonLabel": "Fazer uma doação"
     }
   }
 }
