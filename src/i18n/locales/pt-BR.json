@@ -1313,6 +1313,7 @@
     "bitcoinQrInvalid": "Endereço Bitcoin inválido para gerar o QR Code. Confira a rede e o endereço.",
     "copySuccessTitle": "Copiado com sucesso!",
     "copyErrorTitle": "Não foi possível copiar",
-    "copyDialogOk": "OK"
+    "copyDialogOk": "OK",
+    "bitcoinRotationHint": "A cada cópia, outro endereço é sorteado. O QR Code acompanha o endereço exibido."
   }
 }
