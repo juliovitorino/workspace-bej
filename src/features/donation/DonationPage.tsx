@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { QRCodeSVG } from "qrcode.react";
 import type { DonationConfig } from "./donationConfig";
@@ -9,11 +9,19 @@ interface DonationPageProps {
 }
 
 type CopyMethod = "pix" | "pixPayload" | "bitcoin";
+type CopyFeedback = { kind: "success" | "error"; method: CopyMethod };
 
 export function DonationPage({ config }: DonationPageProps) {
   const { t } = useTranslation();
-  const [copied, setCopied] = useState<CopyMethod | null>(null);
-  const [copyError, setCopyError] = useState(false);
+  const [feedback, setFeedback] = useState<CopyFeedback | null>(null);
+  const feedbackDialogRef = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    const dialog = feedbackDialogRef.current;
+    if (!dialog) return;
+    if (feedback && !dialog.open) dialog.showModal();
+    if (!feedback && dialog.open) dialog.close();
+  }, [feedback]);
   const pixAvailable = config.pix.enabled && Boolean(config.pix.key);
   const bitcoinAvailable = config.bitcoin.enabled && Boolean(config.bitcoin.address);
   const pixPayload = pixAvailable && config.pix.qrCodeEnabled
@@ -26,11 +34,9 @@ export function DonationPage({ config }: DonationPageProps) {
   async function copy(value: string, method: CopyMethod) {
     try {
       await navigator.clipboard.writeText(value);
-      setCopied(method);
-      setCopyError(false);
+      setFeedback({ kind: "success", method });
     } catch {
-      setCopied(null);
-      setCopyError(true);
+      setFeedback({ kind: "error", method });
     }
   }
 
@@ -113,11 +119,37 @@ export function DonationPage({ config }: DonationPageProps) {
       </div>
 
       {!config.pix.enabled && !config.bitcoin.enabled && <p>{t("donation.noMethods")}</p>}
-      {copied && !copyError && <p className="donation-feedback" role="status">{t(
-        copied === "pix" ? "donation.copiedPix"
-          : copied === "pixPayload" ? "donation.copiedPixPayload" : "donation.copiedBitcoin"
-      )}</p>}
-      {copyError && <p className="donation-feedback donation-feedback-error" role="alert">{t("donation.copyError")}</p>}
+      <dialog
+        ref={feedbackDialogRef}
+        className="donation-copy-dialog"
+        aria-labelledby="donation-copy-dialog-title"
+        aria-describedby="donation-copy-dialog-message"
+        onClose={() => setFeedback(null)}
+        onCancel={() => setFeedback(null)}
+      >
+        {feedback && (
+          <div className="donation-copy-dialog-content">
+            <div className={`donation-copy-dialog-icon ${feedback.kind === "success" ? "donation-copy-dialog-icon-success" : "donation-copy-dialog-icon-error"}`} aria-hidden="true">
+              {feedback.kind === "success" ? (
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12 4 4L19 6" /></svg>
+              ) : (
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round"><path d="M12 7v6" /><circle cx="12" cy="17" r="1" fill="currentColor" stroke="none" /><circle cx="12" cy="12" r="10" /></svg>
+              )}
+            </div>
+            <h3 id="donation-copy-dialog-title">
+              {t(feedback.kind === "success" ? "donation.copySuccessTitle" : "donation.copyErrorTitle")}
+            </h3>
+            <p id="donation-copy-dialog-message">
+              {t(feedback.kind === "error" ? "donation.copyError" :
+                feedback.method === "pix" ? "donation.copiedPix" :
+                feedback.method === "pixPayload" ? "donation.copiedPixPayload" : "donation.copiedBitcoin")}
+            </p>
+            <button type="button" className="primary-button donation-copy-dialog-ok" onClick={() => setFeedback(null)}>
+              {t("donation.copyDialogOk")}
+            </button>
+          </div>
+        )}
+      </dialog>
     </section>
   );
 }
