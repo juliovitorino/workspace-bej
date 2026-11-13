@@ -125,6 +125,9 @@ export function DonationPage({ config }: DonationPageProps) {
               <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>
               {t("donation.copyBitcoin")}
             </button>
+            {bitcoinAvailable && bitcoinAddresses.length > 1 && (
+              <p className="donation-rotation-hint">{t("donation.bitcoinRotationHint")}</p>
+            )}
             {bitcoinAvailable && config.bitcoin.qrCodeEnabled && (
               <div className="donation-qr-section">
                 {bitcoinUri ? (
