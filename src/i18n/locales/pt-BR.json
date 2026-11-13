@@ -1283,4 +1283,26 @@
     "copied": "Copiado!",
     "copyError": "Não foi possível copiar. Verifique a permissão da área de transferência."
   }
+,
+  "donation": {
+    "title": "Doação",
+    "pageTitle": "Apoie o Brazilian English Journey",
+    "description": "Se o BEJ ou o canal tem ajudado você a aprender inglês, considere fazer uma contribuição voluntária.",
+    "pixTitle": "Doação via Pix",
+    "bitcoinTitle": "Doação via Bitcoin (BTC)",
+    "pixKey": "Chave Pix",
+    "holderName": "Beneficiário",
+    "bitcoinAddress": "Endereço da carteira Bitcoin",
+    "network": "Rede: Bitcoin (BTC)",
+    "copyPix": "Copiar chave Pix",
+    "copyBitcoin": "Copiar endereço BTC",
+    "copiedPix": "Chave Pix copiada!",
+    "copiedBitcoin": "Endereço Bitcoin copiado!",
+    "copyError": "Não foi possível copiar. Copie o endereço manualmente.",
+    "notConfigured": "Ainda não configurado.",
+    "footerMessage": "Gostou do BEJ? Apoie este projeto!",
+    "footerDescription": "Sua contribuição ajuda a manter o aplicativo e o canal.",
+    "buttonLabel": "Fazer uma doação",
+    "noMethods": "Nenhum método de doação disponível no momento."
+  }
 }
