@@ -2839,3 +2839,29 @@ button { color: inherit; }
   .donation-footer-button { width: 100%; }
 }
 @media print { .donation-footer, .donation-copy { display: none; } }
+
+
+/* Donation payment QR codes (always black on white for reliable scanning). */
+.donation-qr-section {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.donation-qr-title { margin: 0; font-weight: 800; color: var(--text); }
+.donation-qr-image {
+  display: inline-flex;
+  max-width: 100%;
+  padding: 14px;
+  border: 1px solid #d0d5dd;
+  border-radius: 12px;
+  background: #fff;
+}
+.donation-qr-image svg { display: block; width: min(220px, 100%); height: auto; }
+.donation-qr-hint { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.5; }
+@media (max-width: 600px) {
+  .donation-qr-section { justify-items: center; text-align: center; }
+  .donation-qr-section .donation-copy { width: 100%; justify-content: center; }
+}
