@@ -2913,3 +2913,8 @@ button { color: inherit; }
   .donation-copy-dialog-ok { width: 100%; }
 }
 @media print { .donation-copy-dialog { display: none; } }
+
+
+/* Bitcoin address rotation: QR and copy confirmation use the same selected address. */
+.donation-rotation-hint { font-size: .87rem; line-height: 1.5; color: var(--text-secondary); }
+.donation-copy-dialog-address { max-width: 100%; text-align: left; }
