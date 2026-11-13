@@ -3,6 +3,9 @@ import { BackupReminderDialog } from "./components/BackupReminderDialog";
 import { backupReminder, BACKUP_REMINDER_CHANGED } from "./utils/backupReminder";
 import { AppSettingsPage } from "./components/AppSettingsPage";
 import { StudyDashboard } from "./features/study/StudyDashboard";
+import { DonationPage } from "./features/donation/DonationPage";
+import { DonationFooter } from "./features/donation/DonationFooter";
+import { DISABLED_DONATION_CONFIG, loadDonationConfig, type DonationConfig } from "./features/donation/donationConfig";
 import { ExtraActivities } from "./features/study/ExtraActivities";
 import { useExtraActivity } from "./features/study/useExtraActivity";
 import { effectiveStudyView, useStudyTracking, type StudySignal } from "./features/study/useStudyTracking";
@@ -62,6 +65,14 @@ function App() {
   const [source, setSource] = useState<"remote" | "cache">("remote");
   const [dashboardSection, setDashboardSection] = useState<"settings" | "history" | undefined>();
   const [currentView, commitView] = useState<AppView>("study-dashboard");
+  const [donationConfig, setDonationConfig] = useState<DonationConfig>(DISABLED_DONATION_CONFIG);
+  useEffect(() => {
+    const controller = new AbortController();
+    loadDonationConfig(controller.signal).then(setDonationConfig).catch(error => {
+      if (!controller.signal.aborted) console.warn("Donation configuration unavailable:", error);
+    });
+    return () => controller.abort();
+  }, []);
   const [mobileMenuOpenRequest, setMobileMenuOpenRequest] = useState(0);
   const [backupReminderOpen, setBackupReminderOpen] = useState(false);
   const pendingBackupNavigation = useRef<(() => void) | null>(null);
@@ -380,6 +391,7 @@ function App() {
       {backupReminderOpen && <BackupReminderDialog onContinue={continueAfterBackup}
         onDismiss={() => { backupReminder.dismiss(); continueAfterBackup(); }} />}
       <Sidebar
+        donationEnabled={donationConfig.enabled}
         mobileMenuOpenRequest={mobileMenuOpenRequest}
         theme={theme}
         onThemeChange={changeTheme}
@@ -399,7 +411,7 @@ function App() {
             } else {
               setFilterScrollRequest(0);
             }
-            if (view === "settings" || view === "shadowing" || view === "small-talk" || view === "would-you-rather" || view === "favorite-chunks" || view === "study-dashboard" || view === "extra-activities") {
+            if (view === "settings" || view === "shadowing" || view === "small-talk" || view === "would-you-rather" || view === "favorite-chunks" || view === "study-dashboard" || view === "extra-activities" || view === "donation") {
               closeTraining();
               setSelected(null);
               window.speechSynthesis?.cancel();
@@ -427,6 +439,7 @@ function App() {
               onClose={() => setSettingsDialog(null)}
             />}
             {studyWarning && (studyWarning !== "compatibility" || currentView === "study-dashboard") && <p className="warning-banner" role="status">{t(`study.warning.${studyWarning}`)}</p>}
+            {currentView === "donation" && donationConfig.enabled && <DonationPage config={donationConfig} />}
             {currentView === "settings" && <AppSettingsPage
               language={language} sourceLanguage={sourceLanguage} languageLocked={walkingActive}
               onLanguageChange={changeLanguage} onSourceLanguageChange={changeSourceLanguage}
@@ -444,14 +457,14 @@ function App() {
             {currentView === "small-talk" && <SmallTalkPage onStudyState={reportStudy} onWalkingChange={setWalkingActive} />}
             {currentView === "shadowing" && <StoryShadowing key={`${sourceLanguage}-${language}`} language={language} onStudyState={reportStudy} onMenu={() => setCurrentView("hashmap")} />}
 
-        {loading && currentView !== "shadowing" && currentView !== "small-talk" && currentView !== "would-you-rather" && currentView !== "study-dashboard" && currentView !== "extra-activities" && currentView !== "settings" && (
+        {loading && currentView !== "shadowing" && currentView !== "small-talk" && currentView !== "would-you-rather" && currentView !== "study-dashboard" && currentView !== "extra-activities" && currentView !== "settings" && currentView !== "donation" && (
           <div className="status-card">
             <div className="spinner" />
             <p>{t("app.loadingMentalHashmap")}</p>
           </div>
         )}
 
-        {!loading && error && !data && currentView !== "shadowing" && currentView !== "small-talk" && currentView !== "would-you-rather" && currentView !== "study-dashboard" && currentView !== "extra-activities" && currentView !== "settings" && (
+        {!loading && error && !data && currentView !== "shadowing" && currentView !== "small-talk" && currentView !== "would-you-rather" && currentView !== "study-dashboard" && currentView !== "extra-activities" && currentView !== "settings" && currentView !== "donation" && (
           <div className="status-card error-card">
             <h2>{t("app.couldNotLoadMentalHashmap")}</h2>
             <p>{error}</p>
@@ -634,6 +647,15 @@ function App() {
                   onBack={closeTraining}
                 />
               )}
+            {currentView !== "donation" && <DonationFooter config={donationConfig} onDonate={() => {
+              requestStudyNavigation(() => {
+                closeTraining();
+                setSelected(null);
+                window.speechSynthesis?.cancel();
+                commitView("donation");
+                window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+              });
+            }} />}
           </div>
         </div>
       </div>
