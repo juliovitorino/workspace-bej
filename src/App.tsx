@@ -417,6 +417,7 @@ function App() {
               window.speechSynthesis?.cancel();
             }
             commitView(view);
+            if (view === "donation") window.scrollTo({ top: 0, left: 0, behavior: "instant" });
           };
           if (view === "settings" || view === "study-dashboard") navigate();
           else requestStudyNavigation(navigate);
