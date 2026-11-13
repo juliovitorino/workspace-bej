@@ -1305,7 +1305,7 @@
     "noMethods": "Nenhum método de doação disponível no momento.",
     "pixQrTitle": "QR Code Pix",
     "pixQrHint": "Escaneie com o aplicativo do seu banco. Você escolhe o valor da doação.",
-    "pixQrSetup": "Para gerar o QR Code Pix, configure o nome completo (sem asteriscos) e a cidade do beneficiário em donation.json.",
+    "pixQrSetup": "Para gerar o QR Code Pix, configure qrHolderName (nome completo sem asteriscos) e city (cidade) em donation.json. O nome mostrado no app continuará mascarado.",
     "copyPixPayload": "Copiar Pix Copia e Cola",
     "copiedPixPayload": "Código Pix Copia e Cola copiado!",
     "bitcoinQrTitle": "QR Code Bitcoin",
