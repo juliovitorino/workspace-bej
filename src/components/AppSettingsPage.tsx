@@ -68,6 +68,11 @@ export function AppSettingsPage({ theme, onThemeChange, onOpenStudy, onOpenData,
           <summary>Termos de Uso (PT-BR)</summary>
           <div className="bej-terms-text" role="document">{termsOfUse}</div>
         </details>
+        <p className="bej-legal-links">
+          <a href="/terms" target="_blank" rel="noopener noreferrer">Termos de Uso (página pública)</a>
+          {" · "}
+          <a href="/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>
+        </p>
         <SmallTalkPersonalImport />
         <StudyDangerZone language={languages.language} onChanged={() => undefined} />
       </>}
