@@ -17,7 +17,7 @@ export function DonationPage({ config }: DonationPageProps) {
   const pixAvailable = config.pix.enabled && Boolean(config.pix.key);
   const bitcoinAvailable = config.bitcoin.enabled && Boolean(config.bitcoin.address);
   const pixPayload = pixAvailable && config.pix.qrCodeEnabled
-    ? createPixPayload(config.pix.key, config.pix.holderName, config.pix.city)
+    ? createPixPayload(config.pix.key, config.pix.qrHolderName, config.pix.city)
     : null;
   const bitcoinUri = bitcoinAvailable && config.bitcoin.qrCodeEnabled
     ? createBitcoinUri(config.bitcoin.address)
