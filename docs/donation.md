@@ -20,7 +20,7 @@ A seção **Doação** e o convite no rodapé dos módulos são configurados em 
     "bitcoin": {
       "enabled": true,
       "network": "bitcoin",
-      "address": "SEU_ENDERECO_PUBLICO_BTC",
+      "address": ["SEU_ENDERECO_PUBLICO_BTC", "OUTRO_ENDERECO_PUBLICO_BTC"],
       "qrCodeEnabled": true
     },
     "content": {
@@ -36,7 +36,8 @@ A seção **Doação** e o convite no rodapé dos módulos são configurados em 
 - `donation.enabled: false`: oculta a opção Doação no menu e o convite no rodapé.
 - `donation.footer.visible: false`: mantém a página Doação no menu, mas oculta o convite no final dos módulos.
 - `pix.enabled` e `bitcoin.enabled`: controlam cada método individualmente.
-- `pix.key` e `bitcoin.address`: campos públicos copiados para a área de transferência. Se vazios, os botões Copiar ficam desabilitados.
+- `pix.key`: chave pública copiada para a área de transferência. Se vazia, o botão Copiar fica desabilitado.
+- `bitcoin.address`: **lista `string[]` de endereços públicos Bitcoin**. O parser também aceita a configuração antiga com uma única string, para compatibilidade. Endereços vazios e duplicados são removidos.
 - `pix.qrCodeEnabled` e `bitcoin.qrCodeEnabled`: ativam ou desativam individualmente a exibição dos QR Codes.
 - `bitcoin.network`: usar **somente** `bitcoin` (rede principal BTC). Outros valores desabilitam a opção Bitcoin para evitar instruções incompatíveis.
 - `content`: valores vazios utilizam os textos traduzidos do aplicativo (pt-BR, en-US, es-ES e fr-FR). Valores preenchidos substituem os textos em todos os idiomas.
@@ -55,7 +56,9 @@ Se `qrHolderName` estiver vazio, contiver asteriscos ou se `city` estiver vazio,
 
 ### QR Code Bitcoin
 
-O QR Code Bitcoin codifica uma URI `bitcoin:ENDERECO` (BIP21), sem valor definido, para endereços da rede principal (legado ou SegWit). O botão de copiar endereço BTC permanece disponível independentemente do QR Code. Teste o QR Code em uma carteira compatível e confirme o endereço antes de publicar.
+O QR Code Bitcoin codifica uma URI `bitcoin:ENDERECO` (BIP21), sem valor definido, para endereços da rede principal (legado ou SegWit). A tela mostra **um único endereço ativo e seu QR Code**. Ao clicar em **Copiar endereço BTC**, o app sorteia um endereço válido da lista, evitando repetir o endereço ativo quando existem dois ou mais, copia o endereço sorteado e **atualiza o texto e o QR Code para o mesmo endereço**. A modal de confirmação mostra o endereço realmente copiado. Se a cópia falhar, o endereço ativo e o QR Code não mudam. Com apenas um endereço válido, o mesmo endereço é copiado.
+
+A seleção inicial é aleatória e permanece estável até a próxima cópia. Entradas incompatíveis com o formato de endereço Bitcoin mainnet são ignoradas na seleção; se não houver endereço válido, o botão Copiar fica desabilitado. O botão permanece disponível quando `qrCodeEnabled` é `false`. Teste os endereços em uma carteira compatível e confirme o destinatário antes de publicar.
 
 O QR Code é renderizado localmente no navegador usando `qrcode.react`. Não há API externa nem backend.
 
@@ -75,3 +78,5 @@ Depois de alterar o arquivo, publique uma nova versão do aplicativo. A configur
 7. Testar o Pix QR em um app bancário e verificar beneficiário e CRC; conferir o Pix Copia e Cola.
 8. Testar o QR BTC com carteira compatível na rede Bitcoin mainnet, sem realizar transferência de teste obrigatória.
 9. Testar `qrCodeEnabled: false` para ambos os métodos e conferir que os botões Copiar originais permanecem disponíveis.
+10. Configurar dois ou mais endereços BTC e verificar que cliques consecutivos em Copiar não repetem o endereço anterior; confirmar que o QR Code e a modal mostram exatamente o endereço copiado.
+11. Verificar configuração antiga com `bitcoin.address` como string, lista vazia, endereço inválido e falha de acesso à área de transferência.
