@@ -1310,6 +1310,9 @@
     "copiedPixPayload": "Pix payment code copied!",
     "bitcoinQrTitle": "Bitcoin QR code",
     "bitcoinQrHint": "Scan with a Bitcoin mainnet wallet. You choose the amount.",
-    "bitcoinQrInvalid": "Invalid Bitcoin receiving address for QR generation. Check the network and address."
+    "bitcoinQrInvalid": "Invalid Bitcoin receiving address for QR generation. Check the network and address.",
+    "copySuccessTitle": "Copied successfully!",
+    "copyErrorTitle": "Unable to copy",
+    "copyDialogOk": "OK"
   }
 }

@@ -1310,6 +1310,9 @@
     "copiedPixPayload": "Código Pix Copia e Cola copiado!",
     "bitcoinQrTitle": "QR Code Bitcoin",
     "bitcoinQrHint": "Escaneie com uma carteira Bitcoin na rede principal. Você escolhe o valor.",
-    "bitcoinQrInvalid": "Endereço Bitcoin inválido para gerar o QR Code. Confira a rede e o endereço."
+    "bitcoinQrInvalid": "Endereço Bitcoin inválido para gerar o QR Code. Confira a rede e o endereço.",
+    "copySuccessTitle": "Copiado com sucesso!",
+    "copyErrorTitle": "Não foi possível copiar",
+    "copyDialogOk": "OK"
   }
 }

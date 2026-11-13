@@ -2865,3 +2865,51 @@ button { color: inherit; }
   .donation-qr-section { justify-items: center; text-align: center; }
   .donation-qr-section .donation-copy { width: 100%; justify-content: center; }
 }
+
+
+/* Donation clipboard confirmation: visible above the page on small screens. */
+.donation-copy-dialog {
+  box-sizing: border-box;
+  width: min(420px, calc(100vw - 32px));
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, .25);
+}
+.donation-copy-dialog::backdrop { background: rgba(0, 0, 0, .58); }
+.donation-copy-dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: clamp(24px, 6vw, 34px);
+  text-align: center;
+}
+.donation-copy-dialog-icon {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+}
+.donation-copy-dialog-icon-success { color: #127a48; background: #d9f5e6; }
+.donation-copy-dialog-icon-error { color: #a9273d; background: #fde5e9; }
+.donation-copy-dialog h3 { margin: 0; font-size: 1.3rem; }
+.donation-copy-dialog p { margin: 0; line-height: 1.55; overflow-wrap: anywhere; }
+.donation-copy-dialog-ok {
+  min-width: 140px;
+  min-height: 48px;
+  margin-top: 8px;
+  padding: 10px 24px;
+}
+.donation-copy-dialog-ok:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+@media (max-width: 600px) {
+  .donation-copy-dialog-ok { width: 100%; }
+}
+@media print { .donation-copy-dialog { display: none; } }
