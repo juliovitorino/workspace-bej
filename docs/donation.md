@@ -12,7 +12,8 @@ A seção **Doação** e o convite no rodapé dos módulos são configurados em 
     "pix": {
       "enabled": true,
       "key": "SUA_CHAVE_PIX",
-      "holderName": "NOME_COMPLETO_DO_BENEFICIARIO",
+      "holderName": "N*** S*****",
+      "qrHolderName": "NOME_COMPLETO_DO_BENEFICIARIO",
       "city": "CIDADE",
       "qrCodeEnabled": true
     },
@@ -46,10 +47,11 @@ O QR Code Pix é gerado localmente com payload EMV/BR Code e CRC16, **sem valor 
 
 Para gerar o QR Code Pix, preencha:
 - `pix.key`: chave Pix válida (UUID, e-mail, telefone ou chave aleatória).
-- `pix.holderName`: **nome do recebedor sem máscara**, até 25 caracteres ASCII após remoção de acentos.
+- `pix.holderName`: **nome mascarado exibido na tela do BEJ** (pode conter asteriscos).
+- `pix.qrHolderName`: **nome do recebedor sem máscara**, até 25 caracteres ASCII após remoção de acentos, usado exclusivamente na geração do BR Code.
 - `pix.city`: **cidade do recebedor**, até 15 caracteres ASCII após remoção de acentos.
 
-Se `holderName` contiver asteriscos (como o nome atualmente mascarado) ou se `city` estiver vazio, o BEJ **não gera o QR Pix** e mostra um aviso de configuração. Isso evita exibir um código de pagamento potencialmente incorreto. A chave Pix continua copiável. Verifique os dados do recebedor no aplicativo bancário antes de publicar.
+Se `qrHolderName` estiver vazio, contiver asteriscos ou se `city` estiver vazio, o BEJ **não gera o QR Pix** e mostra um aviso de configuração. Isso evita exibir um código de pagamento potencialmente incorreto. A chave Pix continua copiável. O nome exibido no BEJ permanece mascarado mesmo com o QR habilitado. **Atenção:** `qrHolderName` é incorporado ao QR Code e fica no JSON público; a máscara na tela não impede que o nome seja obtido por inspeção do arquivo ou leitura do QR. Verifique os dados do recebedor no aplicativo bancário antes de publicar.
 
 ### QR Code Bitcoin
 
