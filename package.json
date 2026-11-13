@@ -12,7 +12,8 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "validate:i18n": "node scripts/validate-i18n.mjs",
-    "test:sync": "node scripts/test-study-drive-sync.mjs"
+    "test:sync": "node scripts/test-study-drive-sync.mjs",
+    "test:donation": "node scripts/test-donation-qr.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
