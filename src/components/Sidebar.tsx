@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const SIDEBAR_COLLAPSED_KEY = "bej-sidebar-collapsed";
 import type { ThemePreference } from "../theme";
-export type AppView = "settings" | "study-dashboard" | "extra-activities" | "personal-flashcards" | "memory-flashcards" | "hashmap" | "exercises" | "speaking-game" | "would-you-rather" | "chunk-flashcards" | "favorite-chunks" | "interpretation" | "shadowing" | "small-talk";
+export type AppView = "settings" | "study-dashboard" | "extra-activities" | "personal-flashcards" | "memory-flashcards" | "hashmap" | "exercises" | "speaking-game" | "would-you-rather" | "chunk-flashcards" | "favorite-chunks" | "interpretation" | "shadowing" | "small-talk" | "donation";
 interface SidebarProps {
   theme: ThemePreference;
   onThemeChange: (theme: ThemePreference) => void;
@@ -15,6 +15,7 @@ interface SidebarProps {
   favoriteChunkCount?: number;
   onViewChange: (view: AppView) => void;
   mobileMenuOpenRequest?: number;
+  donationEnabled?: boolean;
 }
 
 export function Sidebar({
@@ -26,7 +27,8 @@ export function Sidebar({
   onViewChange,
   onOpenLanguages,
   onOpenAbout,
-  mobileMenuOpenRequest = 0
+  mobileMenuOpenRequest = 0,
+  donationEnabled = false
 }: SidebarProps) {
   const { t } = useTranslation();
 const menuItems: Array<{
@@ -198,6 +200,15 @@ const menuItems: Array<{
           <span className="sidebar-menu-icon" aria-hidden="true">ⓘ</span>
           <span className="sidebar-menu-label">{t("common.aboutTheApp")}</span>
         </button>
+        {donationEnabled && (
+          <button type="button" className={`sidebar-menu-item${currentView === "donation" ? " active" : ""}`}
+            aria-current={currentView === "donation" ? "page" : undefined}
+            aria-label={t("donation.title")} title={collapsed ? t("donation.title") : undefined}
+            onClick={() => { setMenuOpen(false); onViewChange("donation"); }}>
+            <span className="sidebar-menu-icon" aria-hidden="true">❤️</span>
+            <span className="sidebar-menu-label">{t("donation.title")}</span>
+          </button>
+        )}
       </nav>
     </aside>
   );

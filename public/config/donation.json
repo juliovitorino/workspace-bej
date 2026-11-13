@@ -1,0 +1,24 @@
+{
+  "donation": {
+    "enabled": true,
+    "footer": {
+      "visible": true
+    },
+    "pix": {
+      "enabled": true,
+      "key": "0202020220202020202",
+      "holderName": "Julio Cesar Vitorino"
+    },
+    "bitcoin": {
+      "enabled": true,
+      "network": "bitcoin",
+      "address": "uuuyuoyouyuioyuyiuyyyouyioy"
+    },
+    "content": {
+      "title": "Apoie o Brazilian English Journey",
+      "description": "Ajude a manter o BEJ e o canal.",
+      "footerMessage": "Gostou do BEJ? Apoie este projeto!",
+      "buttonLabel": "Fazer uma doação"
+    }
+  }
+}

@@ -1282,5 +1282,26 @@
     "moduleTitle": "Would You Rather Game",
     "copied": "Copié !",
     "copyError": "Copie impossible. Vérifiez les autorisations du presse-papiers."
+  },
+  "donation": {
+    "title": "Don",
+    "pageTitle": "Soutenez Brazilian English Journey",
+    "description": "Si BEJ ou la chaîne vous aide à apprendre l'anglais, envisagez une contribution volontaire.",
+    "pixTitle": "Don par Pix",
+    "bitcoinTitle": "Don en Bitcoin (BTC)",
+    "pixKey": "Clé Pix",
+    "holderName": "Bénéficiaire",
+    "bitcoinAddress": "Adresse du portefeuille Bitcoin",
+    "network": "Réseau : Bitcoin (BTC)",
+    "copyPix": "Copier la clé Pix",
+    "copyBitcoin": "Copier l'adresse BTC",
+    "copiedPix": "Clé Pix copiée !",
+    "copiedBitcoin": "Adresse Bitcoin copiée !",
+    "copyError": "Copie impossible. Copiez l'adresse manuellement.",
+    "notConfigured": "Pas encore configuré.",
+    "footerMessage": "Vous aimez BEJ ? Soutenez ce projet !",
+    "footerDescription": "Votre contribution aide à maintenir l'application et la chaîne.",
+    "buttonLabel": "Faire un don",
+    "noMethods": "Aucun moyen de don n'est disponible pour le moment."
   }
 }
