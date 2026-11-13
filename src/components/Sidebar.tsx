@@ -39,7 +39,6 @@ const menuItems: Array<{
     { id: "study-dashboard", label: t("study.title"), icon: "\u{1F4CA}" },
     { id: "extra-activities", label: t("extras.title"), icon: "\u{23F1}" },
     { id: "small-talk", label: "Small Talk", icon: "💬" },
-    ...(donationEnabled ? [{ id: "donation" as AppView, label: t("donation.title"), icon: "❤️" }] : []),
     {
       id: "hashmap",
       label: "Hashmap",
@@ -201,6 +200,15 @@ const menuItems: Array<{
           <span className="sidebar-menu-icon" aria-hidden="true">ⓘ</span>
           <span className="sidebar-menu-label">{t("common.aboutTheApp")}</span>
         </button>
+        {donationEnabled && (
+          <button type="button" className={`sidebar-menu-item${currentView === "donation" ? " active" : ""}`}
+            aria-current={currentView === "donation" ? "page" : undefined}
+            aria-label={t("donation.title")} title={collapsed ? t("donation.title") : undefined}
+            onClick={() => { setMenuOpen(false); onViewChange("donation"); }}>
+            <span className="sidebar-menu-icon" aria-hidden="true">❤️</span>
+            <span className="sidebar-menu-label">{t("donation.title")}</span>
+          </button>
+        )}
       </nav>
     </aside>
   );
