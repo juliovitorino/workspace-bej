@@ -64,7 +64,7 @@ export function DonationPage({ config }: DonationPageProps) {
                   <>
                     <p className="donation-qr-title">{t("donation.pixQrTitle")}</p>
                     <div className="donation-qr-image">
-                      <QRCodeSVG value={pixPayload} size={220} level="M" bgColor="#ffffff" fgColor="#000000" title={t("donation.pixQrTitle")} />
+                      <QRCodeSVG value={pixPayload} size={220} marginSize={4} level="M" bgColor="#ffffff" fgColor="#000000" title={t("donation.pixQrTitle")} />
                     </div>
                     <p className="donation-qr-hint">{t("donation.pixQrHint")}</p>
                     <button type="button" className="primary-button donation-copy"
@@ -99,7 +99,7 @@ export function DonationPage({ config }: DonationPageProps) {
                   <>
                     <p className="donation-qr-title">{t("donation.bitcoinQrTitle")}</p>
                     <div className="donation-qr-image">
-                      <QRCodeSVG value={bitcoinUri} size={220} level="M" bgColor="#ffffff" fgColor="#000000" title={t("donation.bitcoinQrTitle")} />
+                      <QRCodeSVG value={bitcoinUri} size={220} marginSize={4} level="M" bgColor="#ffffff" fgColor="#000000" title={t("donation.bitcoinQrTitle")} />
                     </div>
                     <p className="donation-qr-hint">{t("donation.bitcoinQrHint")}</p>
                   </>
