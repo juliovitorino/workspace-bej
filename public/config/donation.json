@@ -9,7 +9,8 @@
       "key": "f06c084e-a719-4abc-8376-310ccf8cc6cd",
       "holderName": "Jul**** C***r Vito*****",
       "city": "",
-      "qrCodeEnabled": true
+      "qrCodeEnabled": true,
+      "qrHolderName": ""
     },
     "bitcoin": {
       "enabled": true,
