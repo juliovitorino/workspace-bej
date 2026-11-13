@@ -34,6 +34,11 @@ assert.equal(createBitcoinUri("not-a-bitcoin-address"), null);
 const btcA = "3JauYEHdJfTgJ2ogX75ueZ6C1waktjFrvw";
 const btcB = "1BoatSLRHtKNngkdXEeobR76b53LETtpyT";
 const btcC = "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa";
+// Initial selection after asynchronous config loading is randomized from the full list.
+assert.equal(pickNextBitcoinAddress([], null, () => 0), null);
+assert.equal(pickNextBitcoinAddress([btcA, btcB, btcC], null, () => 0), btcA);
+assert.equal(pickNextBitcoinAddress([btcA, btcB, btcC], null, () => 0.5), btcB);
+assert.equal(pickNextBitcoinAddress([btcA, btcB, btcC], null, () => 0.999), btcC);
 assert.equal(pickNextBitcoinAddress([], btcA, () => 0), null);
 assert.equal(pickNextBitcoinAddress([btcA], btcA, () => 0), btcA);
 assert.equal(pickNextBitcoinAddress([btcA, btcB], btcA, () => 0), btcB);
