@@ -2,7 +2,7 @@ import { useMemo, useRef, useState, type CSSProperties } from "react";
 import { useTranslation } from "react-i18next";
 import { EXTRA_CATEGORIES, STUDY_MODULES, type ExtraCategory, type StudyData, type StudyModule } from "./studyStorage";
 import { STUDY_MODULE_COLORS, STUDY_MODULE_ICONS } from "./studyModuleColors";
-import { previousDay, studyEntries } from "./studyStats";
+import { currentWeekStart, previousDay, studyEntries } from "./studyStats";
 import { localDay } from "./studyTrackingService";
 import { useEffect } from "react";
 import { celebrateAchievement } from "../../utils/achievements";
@@ -34,8 +34,7 @@ export function StudyWeeklyOverview({ data, now, hideZeroData = false, moduleLab
   };
   const week = useMemo(() => {
     const today = localDay(now);
-    const weekday = new Date(today + "T12:00:00").getDay();
-    const monday = previousDay(today, -(weekday + 6) % 7);
+    const monday = currentWeekStart(today);
     const days = Array.from({ length: 7 }, (_, i) => previousDay(monday, i));
     const entries = studyEntries(data);
     const byDay = new Map<string, number>();

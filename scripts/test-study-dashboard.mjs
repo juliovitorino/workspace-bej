@@ -21,7 +21,7 @@ function load(file) {
 }
 const storage = load('src/features/study/studyStorage.ts');
 const { StudyClock, recoverCheckpoint, localDay, IDLE_MS } = load('src/features/study/studyTrackingService.ts');
-const { studyStats } = load('src/features/study/studyStats.ts');
+const { studyStats, currentWeekStart } = load('src/features/study/studyStats.ts');
 const { moduleChartValues, EXTRA_MODULE_PREFIX } = load('src/features/study/studyModuleChart.ts');
 const { emptyStore, backupOf, parseStudyBackup, mergeStudyData, consolidateStudyBackup, writeStudyStore, readStudyStore, totalSeconds, STUDY_KEY, StudyError } = storage;
 const code = expected => e => e instanceof StudyError && e.code === expected;
@@ -146,6 +146,34 @@ assert.equal(manualStats.total + walkingStats.total, stats.total - 432000, 'mode
 assert.equal(studyStats(restored.studyData, { ...filter, period: 'today' }, new Date(2026, 9, 18, 12)).total, 30);
 assert.equal(studyStats(restored.studyData, { ...filter, period: 'today' }, new Date(2026, 9, 18, 12)).streak, 0, 'less than a minute does not make a streak');
 assert.equal(localDay(new Date(2026, 9, 17, 0, 1)), '2026-10-17');
+
+// The "This week" filter must use the exact Monday-to-Sunday calendar week
+// shown in StudyWeeklyOverview, not the rolling seven-day window.
+assert.equal(currentWeekStart('2026-11-13'), '2026-11-09', 'Friday starts on Monday');
+assert.equal(currentWeekStart('2026-11-15'), '2026-11-09', 'Sunday belongs to the preceding Monday');
+assert.equal(currentWeekStart('2026-11-16'), '2026-11-16', 'Monday begins a new week');
+assert.equal(currentWeekStart('2026-11-01'), '2026-10-26', 'week can span a month boundary');
+assert.equal(currentWeekStart('2027-01-01'), '2026-12-28', 'week can span a year boundary');
+const weeklyFixture = emptyStore().studyData;
+weeklyFixture.manualAdjustments = [
+  { id: 'previous-sunday', language: 'en-US', date: '2026-11-08', seconds: 111, description: 'Previous week' },
+  { id: 'this-monday', language: 'en-US', date: '2026-11-09', seconds: 222, description: 'Monday' },
+  { id: 'this-friday', language: 'en-US', date: '2026-11-13', seconds: 333, description: 'Friday' },
+  { id: 'this-saturday', language: 'en-US', date: '2026-11-14', seconds: 444, description: 'Saturday' },
+];
+const weeklyFilter = { ...filter, period: 'week' };
+const fridayWeek = studyStats(weeklyFixture, weeklyFilter, new Date(2026, 10, 13, 12));
+assert.equal(fridayWeek.from, '2026-11-09');
+assert.equal(fridayWeek.to, '2026-11-13');
+assert.equal(fridayWeek.total, 555, 'Monday through today; excludes prior Sunday and future Saturday');
+assert.equal(fridayWeek.week, fridayWeek.total, 'week total agrees with selected period');
+assert.equal(studyStats(weeklyFixture, { ...filter, period: '7' }, new Date(2026, 10, 13, 12)).total, 666,
+  'rolling seven days differs from this calendar week');
+assert.equal(studyStats(weeklyFixture, weeklyFilter, new Date(2026, 10, 15, 12)).total, 999,
+  'Sunday includes the full Monday-to-Sunday week');
+assert.equal(studyStats(weeklyFixture, weeklyFilter, new Date(2026, 10, 16, 12)).total, 0,
+  'Monday resets the calendar-week period');
+
 
 // Exercise the real queued persistence path, including an export mid-session.
 const { studyTracker } = load('src/features/study/studyTrackingService.ts');

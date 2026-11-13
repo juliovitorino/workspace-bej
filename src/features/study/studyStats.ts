@@ -2,7 +2,7 @@ import type { StudentLanguage } from "../../config/languages";
 import { localDay } from "./studyTrackingService";
 import { EXTRA_CATEGORIES, OTHER_STUDY_SUBCATEGORIES, type OtherStudySubcategory, type ExtraCategory, type StudyData, type StudyMode, type StudyModule } from "./studyStorage";
 
-export type StudyPeriod = "today" | "yesterday" | "7" | "30" | "month" | "90" | "all" | "custom";
+export type StudyPeriod = "today" | "yesterday" | "week" | "7" | "30" | "month" | "90" | "all" | "custom";
 export interface StudyFilters {
   language: StudentLanguage | "all"; module: StudyModule | "all"; mode: StudyMode | "all";
   period: StudyPeriod; from: string; to: string;
@@ -13,6 +13,11 @@ export interface StudyFilters {
 export interface StudyEntry { id: string; date: string; language: StudentLanguage; module: StudyModule | "previous"; mode: StudyMode | "previous"; seconds: number; description?: string; category?: ExtraCategory; subcategory?: OtherStudySubcategory; note?: string }
 export function previousDay(day: string, offset: number): string {
   const d = new Date(day + "T12:00:00"); d.setDate(d.getDate() + offset); return localDay(d);
+}
+/** Monday of the current calendar week, matching the weekly study chart. */
+export function currentWeekStart(day: string): string {
+  const weekday = new Date(day + "T12:00:00").getDay();
+  return previousDay(day, -(weekday + 6) % 7);
 }
 export function studyEntries(data: StudyData): StudyEntry[] {
   return [
@@ -30,7 +35,7 @@ export function studyStats(data: StudyData, filters: StudyFilters, now = new Dat
     (!filters.extraCategory || filters.extraCategory === "all" || filters.origin === "internal" || (e.module === "extra-activities" && e.category === filters.extraCategory)) &&
     (!filters.extraSubcategory || filters.extraSubcategory === "all" || filters.origin === "internal" || (e.module === "extra-activities" && e.category === "other" && (e.subcategory ?? "misc") === filters.extraSubcategory)));
   const earliest = matching.reduce((day, e) => e.date < day ? e.date : day, today);
-  const from = filters.period === "custom" ? filters.from : filters.period === "today" ? today : filters.period === "yesterday" ? previousDay(today, -1) : filters.period === "month" ? month : filters.period === "all" ? earliest : previousDay(today, 1 - Number(filters.period));
+  const from = filters.period === "custom" ? filters.from : filters.period === "today" ? today : filters.period === "yesterday" ? previousDay(today, -1) : filters.period === "month" ? month : filters.period === "week" ? currentWeekStart(today) : filters.period === "all" ? earliest : previousDay(today, 1 - Number(filters.period));
   const to = filters.period === "custom" ? filters.to : filters.period === "yesterday" ? from : today;
   const entries = matching.filter(e => e.date >= from && e.date <= to);
   const sum = (list: StudyEntry[]) => list.reduce((n, e) => n + e.seconds, 0);

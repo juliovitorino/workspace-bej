@@ -255,6 +255,7 @@
       "previous": "Ajuste manual"
     },
     "periods": {
+      "week": "Esta semana",
       "7": "Últimos siete días",
       "30": "Últimos 30 días",
       "90": "Últimos 90 días",
