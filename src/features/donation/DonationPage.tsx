@@ -15,11 +15,15 @@ export function DonationPage({ config }: DonationPageProps) {
   const { t } = useTranslation();
   const [feedback, setFeedback] = useState<CopyFeedback | null>(null);
   const feedbackDialogRef = useRef<HTMLDialogElement>(null);
-  const [selectedBitcoinAddress, setSelectedBitcoinAddress] = useState<string | null>(() => {
-    const valid = config.bitcoin.address.filter((address) => createBitcoinUri(address) !== null);
-    return valid.length ? valid[Math.floor(Math.random() * valid.length)] : null;
-  });
+  // Donation config is loaded asynchronously: the first render can have no BTC addresses.
+  // Pick the initial address when the configured list arrives (or changes).
+  const [selectedBitcoinAddress, setSelectedBitcoinAddress] = useState<string | null>(null);
   const [bitcoinCopyPending, setBitcoinCopyPending] = useState(false);
+
+  useEffect(() => {
+    const valid = config.bitcoin.address.filter((address) => createBitcoinUri(address) !== null);
+    setSelectedBitcoinAddress(pickNextBitcoinAddress(valid, null));
+  }, [config.bitcoin.address]);
 
   useEffect(() => {
     const dialog = feedbackDialogRef.current;
@@ -51,13 +55,13 @@ export function DonationPage({ config }: DonationPageProps) {
 
   async function copyRandomBitcoinAddress() {
     if (!bitcoinAvailable || bitcoinCopyPending) return;
-    const nextAddress = pickNextBitcoinAddress(bitcoinAddresses, activeBitcoinAddress);
-    if (!nextAddress) return;
+    if (!activeBitcoinAddress) return;
     setBitcoinCopyPending(true);
     try {
-      await navigator.clipboard.writeText(nextAddress);
-      setSelectedBitcoinAddress(nextAddress);
-      setFeedback({ kind: "success", method: "bitcoin", address: nextAddress });
+      // Copy what the user can currently see; rotate only after a successful copy.
+      await navigator.clipboard.writeText(activeBitcoinAddress);
+      setFeedback({ kind: "success", method: "bitcoin", address: activeBitcoinAddress });
+      setSelectedBitcoinAddress(pickNextBitcoinAddress(bitcoinAddresses, activeBitcoinAddress));
     } catch {
       // Keep the previous address and QR code together if clipboard access fails.
       setFeedback({ kind: "error", method: "bitcoin" });
