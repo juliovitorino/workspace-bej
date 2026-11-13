@@ -47,9 +47,9 @@ Os termos poderão ser atualizados. Mudanças relevantes deverão ser comunicada
 
 ## 9. Responsável e contato
 
-**Responsável pelo serviço:** [preencher nome ou razão social]
+**Serviço:** Brazilian English Journey (BEJ) — projeto educacional independente
 
-**Canal de contato:** [preencher e-mail de suporte]
+**Canal de contato:** julio.vitorino@gmail.com
 
 **País de referência:** Brasil. Eventuais conflitos serão tratados conforme a legislação e as regras de competência aplicáveis, respeitados os direitos do consumidor.
 
