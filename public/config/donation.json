@@ -1,0 +1,24 @@
+{
+  "donation": {
+    "enabled": true,
+    "footer": {
+      "visible": true
+    },
+    "pix": {
+      "enabled": true,
+      "key": "",
+      "holderName": ""
+    },
+    "bitcoin": {
+      "enabled": true,
+      "network": "bitcoin",
+      "address": ""
+    },
+    "content": {
+      "title": "",
+      "description": "",
+      "footerMessage": "",
+      "buttonLabel": ""
+    }
+  }
+}
