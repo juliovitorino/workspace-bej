@@ -1310,6 +1310,9 @@
     "copiedPixPayload": "¡Código Pix de pago copiado!",
     "bitcoinQrTitle": "Código QR Bitcoin",
     "bitcoinQrHint": "Escanéalo con una cartera Bitcoin en la red principal. Tú eliges el importe.",
-    "bitcoinQrInvalid": "Dirección Bitcoin inválida para generar el QR. Comprueba la red y la dirección."
+    "bitcoinQrInvalid": "Dirección Bitcoin inválida para generar el QR. Comprueba la red y la dirección.",
+    "copySuccessTitle": "¡Copiado correctamente!",
+    "copyErrorTitle": "No se pudo copiar",
+    "copyDialogOk": "Aceptar"
   }
 }
