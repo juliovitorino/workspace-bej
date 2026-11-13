@@ -1305,7 +1305,7 @@
     "noMethods": "No donation methods are currently available.",
     "pixQrTitle": "Pix QR code",
     "pixQrHint": "Scan with your banking app. You choose the donation amount.",
-    "pixQrSetup": "To generate a Pix QR code, set the recipient's full unmasked name and city in donation.json.",
+    "pixQrSetup": "To generate a Pix QR code, set qrHolderName (full unmasked name) and city in donation.json. The name shown in the app stays masked.",
     "copyPixPayload": "Copy Pix payment code",
     "copiedPixPayload": "Pix payment code copied!",
     "bitcoinQrTitle": "Bitcoin QR code",
