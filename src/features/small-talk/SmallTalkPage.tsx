@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { AI_PROVIDER_CHANGED_EVENT, aiAssetPath, getAIProvider, type AIProvider } from '../../config/aiProvider';
 import { buildSmallTalkAnalysisPrompt } from './smallTalkAiPrompt';
@@ -7,6 +7,7 @@ import { readSmallTalkPersonalAnswers } from '../../services/smallTalkPersonalAn
 import type { SmallTalkItem, SmallTalkTopic, SmallTalkTopicIndexEntry, SmallTalkWalkingSettings } from '../../types/smallTalk';
 import { readLocalJson, readWalkingSettings, saveLocalJson, SMALL_TALK_FAVORITES_KEY, SMALL_TALK_WALKING_SETTINGS_KEY } from './smallTalkPreferences';
 import { SmallTalkWalking } from './SmallTalkWalking';
+import { beginAnswerEdit, changeAnswerEdit, undoAnswerEdit, redoAnswerEdit } from './smallTalkAnswerEditHistory';
 import { celebrateAchievement, celebrateCompletedSession } from '../../utils/achievements';
 import { readAnswerOverrides, saveAnswerOverride, restoreOriginalAnswer, pruneRedundantAnswerOverrides } from './smallTalkAnswerOverrides';
 import { readQuestionOverrides, saveQuestionOverride, restoreOriginalQuestion, pruneRedundantQuestionOverrides } from './smallTalkQuestionOverrides';
@@ -67,7 +68,9 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   const [privateError, setPrivateError] = useState('');
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [editorId, setEditorId] = useState<string | null>(null);
-  const [draft, setDraft] = useState('');
+  const [answerEditHistory, setAnswerEditHistory] = useState(() => beginAnswerEdit(''));
+  const draft = answerEditHistory.present;
+  const answerEditorRef = useRef<HTMLTextAreaElement | null>(null);
   const [answerOverrides, setAnswerOverrides] = useState<ReturnType<typeof readAnswerOverrides>>(() => {
     try { return readAnswerOverrides(); } catch { return {}; }
   });
@@ -477,13 +480,40 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     if (Object.prototype.hasOwnProperty.call(answerOverrides, item.id)) return answerOverrides[item.id].text ?? '';
     return item.answer?.text || personalAnswers?.answersByItemId[item.id]?.original?.segments.map(s => s.text).join('\n\n') || '';
   }
-  function openEditor(item: SmallTalkItem) { setEditorId(item.id); setDraft(answerFor(item)); setEditError(''); }
+  function openEditor(item: SmallTalkItem) {
+    setEditorId(item.id);
+    setQuestionEditorId(null);
+    setRestorePromptId(null);
+    setAnswerEditHistory(beginAnswerEdit(answerFor(item)));
+    setEditError('');
+  }
+  function closeEditor() {
+    setEditorId(null);
+    setAnswerEditHistory(beginAnswerEdit(''));
+    setEditError('');
+  }
+  function updateAnswerDraft(text: string) {
+    setAnswerEditHistory(current => changeAnswerEdit(current, text));
+    setEditError('');
+  }
+  function clearAnswerDraft() {
+    updateAnswerDraft('');
+    answerEditorRef.current?.focus();
+  }
+  function undoAnswerDraft() {
+    setAnswerEditHistory(undoAnswerEdit);
+    answerEditorRef.current?.focus();
+  }
+  function redoAnswerDraft() {
+    setAnswerEditHistory(redoAnswerEdit);
+    answerEditorRef.current?.focus();
+  }
   function saveEditor() {
     if (!editorId || !draft.trim()) { setEditError('Digite uma resposta ou use a lixeira para removê-la.'); return; }
     try {
       const savedId = editorId;
       setAnswerOverrides(saveAnswerOverride(savedId, draft.trim(), topic?.items.find(item => item.id === savedId)?.answer?.text));
-      setEditorId(null); setAnswerVisible(v => v.includes(savedId) ? v : [...v, savedId]); setEditError('');
+      closeEditor(); setAnswerVisible(v => v.includes(savedId) ? v : [...v, savedId]);
       window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
         document.getElementById('small-talk-card-' + savedId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }));
@@ -870,7 +900,23 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
             <button type="button" className="secondary-button" onClick={() => setQuestionEditorId(null)}>Cancelar</button></div>
         </div>}
         <p className="settings-dialog-help">{item.level?.toUpperCase() ?? 'Nível pendente'} · {item.reviewStatus === 'pending' ? 'Revisão editorial pendente' : item.reviewStatus}</p>
-        <div className="small-talk-actions">
+        {editorId === item.id ? <div className="small-talk-actions small-talk-edit-toolbar" role="toolbar" aria-label="Ferramentas de edição da resposta">
+          <button type="button" className="small-talk-icon-button" aria-label="Limpar texto da resposta" title="Borracha — limpar o texto" disabled={!draft} onClick={clearAnswerDraft}>
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="m20 20-7.5-7.5M4.7 15.3l8.6-8.6a2 2 0 0 1 2.8 0l3.2 3.2a2 2 0 0 1 0 2.8L12 20H8a2 2 0 0 1-1.4-.6l-1.9-1.9a2 2 0 0 1 0-2.2Z"/><path d="M12 20h9"/>
+            </svg>
+          </button>
+          <button type="button" className="small-talk-icon-button" aria-label="Desfazer última alteração" title="Desfazer (Ctrl/Cmd + Z)" disabled={!answerEditHistory.past.length} onClick={undoAnswerDraft}>
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 14 4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-2"/>
+            </svg>
+          </button>
+          <button type="button" className="small-talk-icon-button" aria-label="Refazer alteração desfeita" title="Refazer (Ctrl/Cmd + Shift + Z ou Ctrl + Y)" disabled={!answerEditHistory.future.length} onClick={redoAnswerDraft}>
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="m15 14 5-5-5-5"/><path d="M20 9H10a6 6 0 0 0 0 12h2"/>
+            </svg>
+          </button>
+        </div> : <div className="small-talk-actions">
           <button type="button" className="small-talk-icon-button" aria-label={favorites.includes(item.id) ? 'Desfavoritar' : 'Favoritar'} title={favorites.includes(item.id) ? 'Desfavoritar' : 'Favoritar'} aria-pressed={favorites.includes(item.id)} onClick={() => toggleFavorite(item.id)}>{favorites.includes(item.id) ? '★' : '☆'}</button>
           <button type="button" className="small-talk-icon-button" aria-label={shown ? 'Ocultar resposta' : 'Ver resposta'} title={shown ? 'Ocultar resposta' : 'Ver resposta'} aria-pressed={shown} disabled={!original} onClick={() => reveal(item.id)}>👁️</button>
           <button type="button" className="small-talk-icon-button" aria-label="Editar resposta" title="Editar resposta" onClick={() => openEditor(item)}>✏️</button>
@@ -889,17 +935,30 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
           {!original && !modified && <span className="settings-dialog-help">Sem resposta importada — use o lápis para incluir</span>}
           {modified && <span className="settings-dialog-help">Resposta editada localmente</span>}
           {customItems[item.id] && !(topic?.items ?? []).some(published => published.id === item.id) && <button type="button" className="small-talk-restore-button" title="Remover card pessoal (recuperável)" onClick={() => toggleCustomCard(item.id, true)}>Remover card</button>}
-        </div>
+        </div>}
         {editorId !== item.id && shown && original && <p className="small-talk-original" style={{ whiteSpace: 'pre-wrap' }}>{original}</p>}
         {editorId === item.id && <div className="small-talk-editor">
           <label htmlFor={`small-talk-editor-${item.id}`}><strong>{baseOriginal ? 'Editar resposta ativa (original preservado)' : 'Incluir resposta pessoal'}</strong></label>
-          <textarea id={`small-talk-editor-${item.id}`} value={draft} onChange={e => setDraft(e.target.value)} rows={6} spellCheck lang="en-US" />
+          <textarea id={`small-talk-editor-${item.id}`} ref={answerEditorRef} value={draft} onChange={e => updateAnswerDraft(e.target.value)}
+            onKeyDown={event => {
+              if (!(event.ctrlKey || event.metaKey) || event.altKey) return;
+              const key = event.key.toLowerCase();
+              if (key === 'z') {
+                event.preventDefault();
+                if (event.shiftKey) redoAnswerDraft();
+                else undoAnswerDraft();
+              } else if (key === 'y' && !event.shiftKey) {
+                event.preventDefault();
+                redoAnswerDraft();
+              }
+            }}
+            rows={6} spellCheck lang="en-US" />
           <div className="small-talk-actions">
             <button type="button" className="primary-button" onClick={saveEditor}>Salvar resposta</button>
-            <button type="button" className="secondary-button" onClick={() => { setEditorId(null); setEditError(''); }}>Cancelar</button>
+            <button type="button" className="secondary-button" onClick={closeEditor}>Cancelar</button>
           </div>
         </div>}
-        {modified && restorePromptId === item.id && <div className="small-talk-restore-warning" role="group" aria-label="Confirmar restauração da resposta">
+        {editorId !== item.id && modified && restorePromptId === item.id && <div className="small-talk-restore-warning" role="group" aria-label="Confirmar restauração da resposta">
           <p role="alert"><strong>Atenção:</strong> restaurar o original descartará a edição local desta resposta. Essa operação não poderá ser desfeita.</p>
           <div className="small-talk-actions">
             <button type="button" className="secondary-button" onClick={() => setRestorePromptId(null)}>Cancelar</button>
