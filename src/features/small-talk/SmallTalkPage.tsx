@@ -70,6 +70,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   const [editorId, setEditorId] = useState<string | null>(null);
   const [answerEditHistory, setAnswerEditHistory] = useState(() => beginAnswerEdit(''));
   const draft = answerEditHistory.present;
+  const [answerCopyMessage, setAnswerCopyMessage] = useState('');
   const answerEditorRef = useRef<HTMLTextAreaElement | null>(null);
   const [answerOverrides, setAnswerOverrides] = useState<ReturnType<typeof readAnswerOverrides>>(() => {
     try { return readAnswerOverrides(); } catch { return {}; }
@@ -496,15 +497,18 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     setQuestionEditorId(null);
     setRestorePromptId(null);
     setAnswerEditHistory(beginAnswerEdit(answerFor(item)));
+    setAnswerCopyMessage('');
     setEditError('');
   }
   function closeEditor() {
     setEditorId(null);
     setAnswerEditHistory(beginAnswerEdit(''));
+    setAnswerCopyMessage('');
     setEditError('');
   }
   function updateAnswerDraft(text: string) {
     setAnswerEditHistory(current => changeAnswerEdit(current, text));
+    setAnswerCopyMessage('');
     setEditError('');
   }
   function clearAnswerDraft() {
@@ -518,6 +522,29 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   function redoAnswerDraft() {
     setAnswerEditHistory(redoAnswerEdit);
     answerEditorRef.current?.focus();
+  }
+  async function copyAnswerDraft() {
+    // Copy the unsaved editor draft, not the last persisted answer.
+    if (!draft) return;
+    let copied = false;
+    if (navigator.clipboard?.writeText) {
+      try { await navigator.clipboard.writeText(draft); copied = true; } catch { /* legacy fallback */ }
+    }
+    if (!copied) {
+      const field = document.createElement('textarea');
+      field.value = draft;
+      field.setAttribute('readonly', '');
+      field.style.position = 'fixed';
+      field.style.opacity = '0';
+      document.body.appendChild(field);
+      try {
+        field.focus();
+        field.select();
+        copied = document.execCommand('copy');
+      } catch { /* clipboard blocked */ }
+      finally { field.remove(); }
+    }
+    setAnswerCopyMessage(copied ? 'Resposta em edição copiada!' : 'Não foi possível copiar automaticamente. Selecione o texto e copie manualmente.');
   }
   function saveEditor() {
     if (!editorId || !draft.trim()) { setEditError('Digite uma resposta ou use a lixeira para removê-la.'); return; }
@@ -927,6 +954,12 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
               <path d="m15 14 5-5-5-5"/><path d="M20 9H10a6 6 0 0 0 0 12h2"/>
             </svg>
           </button>
+          <button type="button" className="small-talk-icon-button" aria-label="Copiar resposta em edição" title="Copiar texto da resposta em edição" disabled={!draft} onClick={() => void copyAnswerDraft()}>
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>
+            </svg>
+          </button>
+          {answerCopyMessage && <span role="status" className="settings-dialog-help">{answerCopyMessage}</span>}
         </div> : <div className="small-talk-actions">
           <button type="button" className="small-talk-icon-button" aria-label={favorites.includes(item.id) ? 'Desfavoritar' : 'Favoritar'} title={favorites.includes(item.id) ? 'Desfavoritar' : 'Favoritar'} aria-pressed={favorites.includes(item.id)} onClick={() => toggleFavorite(item.id)}>{favorites.includes(item.id) ? '★' : '☆'}</button>
           <button type="button" className="small-talk-icon-button" aria-label={shown ? 'Ocultar resposta' : 'Ver resposta'} title={shown ? 'Ocultar resposta' : 'Ver resposta'} aria-pressed={shown} disabled={!original} onClick={() => reveal(item.id)}>👁️</button>
