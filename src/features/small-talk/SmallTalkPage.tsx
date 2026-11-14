@@ -939,7 +939,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
         {editorId !== item.id && shown && original && <p className="small-talk-original" style={{ whiteSpace: 'pre-wrap' }}>{original}</p>}
         {editorId === item.id && <div className="small-talk-editor">
           <label htmlFor={`small-talk-editor-${item.id}`}><strong>{baseOriginal ? 'Editar resposta ativa (original preservado)' : 'Incluir resposta pessoal'}</strong></label>
-          <textarea id={`small-talk-editor-${item.id}`} ref={answerEditorRef} value={draft} onChange={e => updateAnswerDraft(e.target.value)}
+          <textarea id={`small-talk-editor-${item.id}`} ref={answerEditorRef} autoFocus value={draft} onChange={e => updateAnswerDraft(e.target.value)}
             onKeyDown={event => {
               if (!(event.ctrlKey || event.metaKey) || event.altKey) return;
               const key = event.key.toLowerCase();
