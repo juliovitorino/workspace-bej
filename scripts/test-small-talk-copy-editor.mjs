@@ -4,9 +4,9 @@ import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
 
 const source = readFileSync('src/features/small-talk/SmallTalkPage.tsx', 'utf8');
-const functionMatch = source.match(/  async function copyAnswerDraft\(\) \{[\s\S]*?\n  \}\n  function saveEditor\(\)/);
+const functionMatch = source.match(/  async function copyAnswerDraft\(\) \{[\s\S]*?\r?\n  \}\r?\n  function saveEditor\(\)/);
 assert.ok(functionMatch, 'copyAnswerDraft function exists');
-const implementation = functionMatch[0].replace(/\n  function saveEditor\(\)$/, '');
+const implementation = functionMatch[0].replace(/\r?\n  function saveEditor\(\)$/, '');
 
 function createCopyContext({ draft, clipboard, fallback = false }) {
   let copiedText = null;
