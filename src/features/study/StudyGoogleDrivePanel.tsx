@@ -63,7 +63,8 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
     if (readStudyStore().extraActivity) throw new Error(t("study.errors.extraActive"));
     if (JSON.stringify(local.study.studyData) !== JSON.stringify(readStudyStore().studyData) ||
         JSON.stringify(local.favorites) !== baseline.favorites ||
-        JSON.stringify(local.wyrAnswers ?? {}) !== baseline.wyrAnswers) throw new Error(t("study.errors.stale"));
+        JSON.stringify(local.wyrAnswers ?? {}) !== baseline.wyrAnswers ||
+        JSON.stringify(local.smallTalk) !== baseline.smallTalk) throw new Error(t("study.errors.stale"));
     const files = await listSyncFiles(token, folder);
     const incoming = await Promise.all(files.map(f => readSyncFile(token, f)));
     if (JSON.stringify(syncBaseline()) !== JSON.stringify(baseline)) throw new Error(t("study.errors.stale"));
@@ -134,6 +135,10 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
         <div><dt>{t("study.newSessions")}</dt><dd>{preview.merged.newSessions}</dd></div>
         <div><dt>{t("study.newAdjustments")}</dt><dd>{preview.merged.newAdjustments}</dd></div>
         <div><dt>{t("driveSync.favorites")}</dt><dd>{preview.merged.favorites.length}</dd></div>
+        <div><dt>Small Talk — perguntas editadas</dt><dd>{Object.keys(preview.merged.smallTalk.questions).length}</dd></div>
+        <div><dt>Small Talk — respostas editadas</dt><dd>{Object.keys(preview.merged.smallTalk.answers).length}</dd></div>
+        <div><dt>Small Talk — cards pessoais</dt><dd>{Object.keys(preview.merged.smallTalk.customItems).length}</dd></div>
+        <div><dt>Small Talk — respostas pessoais</dt><dd>{Object.keys(preview.merged.smallTalk.personalAnswers.answersByItemId).length}</dd></div>
         <div><dt>{t("study.conflicts")}</dt><dd>{preview.merged.conflicts.length}</dd></div>
       </dl>
       {!!preview.merged.conflicts.length && <p role="alert">{t("driveSync.conflictNote")}</p>}

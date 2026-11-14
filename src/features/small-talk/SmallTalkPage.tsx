@@ -89,6 +89,17 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   const [customItems, setCustomItems] = useState<CustomSmallTalkItems>(() => {
     try { return readCustomItems(); } catch { return {}; }
   });
+  useEffect(() => {
+    const refresh = (event: StorageEvent) => {
+      if (event.key && !event.key.startsWith('bej:small-talk:')) return;
+      try { setAnswerOverrides(readAnswerOverrides()); } catch { /* retain visible data */ }
+      try { setQuestionOverrides(readQuestionOverrides()); } catch { /* retain visible data */ }
+      try { setCustomItems(readCustomItems()); } catch { /* retain visible data */ }
+      try { setPersonalAnswers(readSmallTalkPersonalAnswers(window.localStorage)); } catch { /* retain visible data */ }
+    };
+    window.addEventListener('storage', refresh);
+    return () => window.removeEventListener('storage', refresh);
+  }, []);
   const [newCardOpen, setNewCardOpen] = useState(false);
   const [newQuestion, setNewQuestion] = useState('');
   const [newAnswer, setNewAnswer] = useState('');
