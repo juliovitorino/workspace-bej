@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1280,
+    "totalIntentions": 1281,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -27625,16 +27625,10 @@
         "desde que você",
         "desde que ele",
         "desde que ela",
-        "desde que comecei",
-        "desde que você começou",
-        "desde que você saiu",
-        "desde que você se mudou",
-        "desde que nos conhecemos",
-        "Desde que ele começou",
-        "Desde que ela comprou",
-        "Desde que eles atualizaram",
-        "Desde que você me explicou",
-        "outras 2 variações"
+        "desde que",
+        "desde que nos",
+        "Desde que eles",
+        "Desde que você me"
       ],
       "validationPatterns": [
         "(?<![\\p{L}\\p{N}_])Desde\\s+que\\s+você\\s+começou(?![\\p{L}\\p{N}_])",
@@ -51584,6 +51578,135 @@
           "id": "f1567670-819a-4b45-9e67-ba2345678901",
           "exampleItem": "Isso vai servir por enquanto, até encontrarmos uma solução melhor.",
           "intent": "Isso vai servir por enquanto"
+        }
+      ]
+    },
+    {
+      "id": "em-que-mais-o-que-mais-pergunta-8c42e7a1-6d95-4f30-9b21-a5e73c08d462",
+      "intention": "Em que mais / O que mais + pergunta?",
+      "pattern": "em que mais / o que mais + sujeito + verbo + complemento?",
+      "description": "Utilizada para fazer perguntas adicionais sobre atividades, interesses, necessidades, possibilidades, opiniões ou assuntos já mencionados em uma conversa. Em inglês americano, a construção 'What else' permite perguntar sobre outras opções, ações ou informações além daquelas já conhecidas. Dependendo do verbo, a tradução pode ser 'o que mais', 'em que mais', 'com o que mais' ou 'sobre o que mais'. É muito utilizada em conversas cotidianas, Small Talk, reuniões, entrevistas e situações em que se deseja aprofundar ou continuar um assunto.",
+      "category": "expressions",
+      "searchTerms": [
+        "em que mais",
+        "o que mais",
+        "com o que mais",
+        "sobre o que mais",
+        "de que mais",
+        "para que mais",
+        "em que mais posso ajudar",
+        "o que mais posso fazer",
+        "em que mais você está trabalhando",
+        "o que mais você precisa",
+        "em que mais você está interessado",
+        "o que mais podemos melhorar",
+        "que outras coisas",
+        "quais outras opções",
+        "perguntar mais",
+        "perguntas adicionais",
+        "continuar uma conversa"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])em\\s+que\\s+mais(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])o\\s+que\\s+mais(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])com\\s+(?:o\\s+)?que\\s+mais(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])sobre\\s+(?:o\\s+)?que\\s+mais(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])de\\s+que\\s+mais(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])para\\s+que\\s+mais(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "perguntas",
+        "perguntas abertas",
+        "continuação de conversa",
+        "conversação",
+        "small talk",
+        "interesses",
+        "necessidades",
+        "possibilidades",
+        "opiniões",
+        "verbos auxiliares",
+        "verbos modais",
+        "preposições",
+        "gerador de perguntas"
+      ],
+      "related": [],
+      "structure": "A construção principal é 'What else + auxiliar ou modal + sujeito + verbo + complemento?'. A expressão 'What else' significa 'O que mais' ou 'Em que mais', dependendo do contexto. Com verbos modais, utiliza-se 'What else can I do?' (O que mais posso fazer?) ou 'What else should we consider?' (O que mais devemos considerar?). No presente simples, utiliza-se 'What else do you need?' (O que mais você precisa?). No presente contínuo, utiliza-se 'What else are you working on?' (Em que mais você está trabalhando?). No presente perfeito, pode-se utilizar 'What else have you learned?' (O que mais você aprendeu?). Em perguntas com verbos que exigem preposição, é natural deixar a preposição no final, como em 'What else are you interested in?', 'What else are you thinking about?' e 'What else can I help you with?'. Em português, a preposição normalmente aparece no início da pergunta, mas em inglês americano frequentemente aparece no final. Também é importante distinguir 'What else' (O que mais?) de 'Who else' (Quem mais?), 'Where else' (Onde mais?) e 'How else' (De que outra maneira?). Essas construções são relacionadas, mas possuem intenções interrogativas diferentes.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Em que mais posso ajudar você?",
+          "intent": "Em que mais"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Em que mais você está trabalhando atualmente?",
+          "intent": "Em que mais"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "O que mais podemos fazer para melhorar nossos resultados?",
+          "intent": "O que mais"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Em que mais ela está interessada?",
+          "intent": "Em que mais"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "O que mais você precisa aprender para se sentir confiante?",
+          "intent": "O que mais"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Em que mais devemos prestar atenção durante a reunião?",
+          "intent": "Em que mais"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Sobre o que mais vocês gostariam de conversar?",
+          "intent": "Sobre o que mais"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Com o que mais ele está preocupado?",
+          "intent": "Com o que mais"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "O que mais você aprendeu desde que começou a estudar inglês?",
+          "intent": "O que mais"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Em que mais eles estão envolvidos neste projeto?",
+          "intent": "Em que mais"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "O que mais você gostaria de saber sobre minha experiência?",
+          "intent": "O que mais"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "Em que mais podemos investir nosso tempo?",
+          "intent": "Em que mais"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "O que mais ela pode fazer para melhorar sua pronúncia?",
+          "intent": "O que mais"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "Em que mais você está pensando?",
+          "intent": "Em que mais"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "O que mais precisamos considerar antes de tomar uma decisão?",
+          "intent": "O que mais"
         }
       ]
     }

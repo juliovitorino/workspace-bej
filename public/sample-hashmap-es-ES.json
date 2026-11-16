@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1280,
+    "totalIntentions": 1281,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -26918,31 +26918,37 @@
     },
     {
       "id": "desde-que-voce-since-you-3f7a82c1-6d94-4e50-b218-5c9e71d4a632",
-      "intention": "DESDE QUE VOCÊ... / DESDE QUE ELE... / DESDE QUE ELA...",
+      "intention": "DESDE QUE TÚ... / DESDE QUE ÉL... / DESDE QUE ELLA...",
       "pattern": "desde que + hecho inicial + situación posterior",
-      "description": "Usado para indicar um acontecimento que marca o início de outra situação. Em espanhol, desde que identifica o momento inicial: 'Desde que empezaste a estudiar, has mejorado mucho'. Quando esse início foi concluído no passado, o pretérito indefinido é comum depois de desde que. A oração principal pode aparecer no presente, no pretérito perfecto compuesto ou em outro tempo adequado ao contexto. A oração com desde que pode vir no início ou no final. Aqui o sentido é temporal, não a condição de contanto que, que pode ser expressa por 'siempre que' ou 'con tal de que'.",
+      "description": "Se utiliza para indicar un acontecimiento que marca el inicio de otra situación. En español, «desde que» identifica el momento inicial: «Desde que empezaste a estudiar, has mejorado mucho». Cuando ese hecho inicial se completó en el pasado, es habitual usar el pretérito indefinido después de «desde que». La oración principal puede aparecer en presente, pretérito perfecto compuesto u otro tiempo adecuado al contexto. La oración con «desde que» puede ir al principio o al final. Aquí tiene un sentido temporal; no expresa la condición de «siempre que» o «con tal de que».",
       "category": "chunk",
       "searchTerms": [
-        "desde que"
+        "desde que tú",
+        "desde que él",
+        "desde que ella",
+        "desde que",
+        "desde que nos",
+        "desde que ellos",
+        "desde que tú me"
       ],
       "validationPatterns": [
         "(?<![A-Za-zÁÉÍÓÚÜÑáéíóúüñ])(?:desde\\s+que)(?![A-Za-zÁÉÍÓÚÜÑáéíóúüñ])"
       ],
       "tags": [
-        "chunk",
-        "since",
-        "since you",
-        "time expressions",
-        "time clauses",
-        "past simple",
-        "present perfect",
-        "present perfect continuous",
-        "sentence patterns",
-        "daily routine",
-        "small talk",
-        "workplace English",
-        "spoken English",
-        "American English"
+        "expresión",
+        "desde que",
+        "desde que tú",
+        "expresiones temporales",
+        "oraciones temporales",
+        "pretérito indefinido",
+        "pretérito perfecto compuesto",
+        "perífrasis progresivas",
+        "estructuras de frases",
+        "rutina diaria",
+        "charla informal",
+        "inglés en el trabajo",
+        "inglés hablado",
+        "inglés americano"
       ],
       "related": [],
       "structure": "desde que",
@@ -51916,6 +51922,130 @@
         }
       ],
       "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "em-que-mais-o-que-mais-pergunta-8c42e7a1-6d95-4f30-9b21-a5e73c08d462",
+      "intention": "¿En qué más / Qué más + pregunta?",
+      "pattern": "(preposición) + qué más + verbo + sujeto o complemento",
+      "description": "Se utiliza para hacer preguntas adicionales sobre actividades, intereses, necesidades, posibilidades, opiniones o asuntos ya mencionados en una conversación. La construcción «qué más», con la preposición que corresponda al verbo, permite preguntar por otras opciones, acciones o informaciones además de las ya conocidas. Es habitual en conversaciones cotidianas, charlas informales, reuniones y entrevistas para profundizar en un tema o continuar la conversación.",
+      "category": "expressions",
+      "searchTerms": [
+        "en qué más",
+        "qué más",
+        "con qué más",
+        "sobre qué más",
+        "de qué más",
+        "para qué más",
+        "en qué más puedo ayudarte",
+        "qué más puedo hacer",
+        "en qué más estás trabajando",
+        "qué más necesitas",
+        "en qué más estás interesado",
+        "qué más podemos mejorar",
+        "qué otras cosas",
+        "qué otras opciones",
+        "preguntar más",
+        "preguntas adicionales",
+        "continuar una conversación"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:en\\s+|con\\s+|sobre\\s+|de\\s+|para\\s+|a\\s+)?qué\\s+más(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "preguntas",
+        "preguntas abiertas",
+        "continuación de una conversación",
+        "conversación",
+        "charla informal",
+        "intereses",
+        "necesidades",
+        "posibilidades",
+        "opiniones",
+        "verbos auxiliares",
+        "verbos modales",
+        "preposiciones",
+        "generador de preguntas"
+      ],
+      "related": [],
+      "structure": "Se forma la pregunta con «qué más» y el verbo correspondiente: «¿Qué más necesitas?» o «¿Qué más podemos hacer?». Cuando el verbo exige una preposición, esta aparece delante de «qué»: «¿En qué más estás trabajando?», «¿De qué más os gustaría hablar?» o «¿A qué más debemos prestar atención?». Se pueden emplear distintos tiempos verbales: «¿Qué más has aprendido?» o «¿Qué más te gustaría saber?». En español, el sujeto suele omitirse cuando la conjugación permite identificarlo. Hay que distinguir «qué más» de «quién más», «dónde más» y «de qué otra manera», que expresan preguntas diferentes.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "¿En qué más puedo ayudarte?",
+          "intent": "En qué más"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "¿En qué más estás trabajando actualmente?",
+          "intent": "En qué más"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "¿Qué más podemos hacer para mejorar nuestros resultados?",
+          "intent": "Qué más"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "¿En qué más está interesada ella?",
+          "intent": "En qué más"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "¿Qué más necesitas aprender para sentirte seguro?",
+          "intent": "Qué más"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "¿A qué más debemos prestar atención durante la reunión?",
+          "intent": "A qué más"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "¿De qué más os gustaría hablar?",
+          "intent": "De qué más"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "¿Qué más le preocupa a él?",
+          "intent": "Qué más"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "¿Qué más has aprendido desde que empezaste a estudiar inglés?",
+          "intent": "Qué más"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "¿En qué más están implicados en este proyecto?",
+          "intent": "En qué más"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "¿Qué más te gustaría saber sobre mi experiencia?",
+          "intent": "Qué más"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "¿En qué más podemos invertir nuestro tiempo?",
+          "intent": "En qué más"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "¿Qué más puede hacer ella para mejorar su pronunciación?",
+          "intent": "Qué más"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "¿En qué más estás pensando?",
+          "intent": "En qué más"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "¿Qué más tenemos que tener en cuenta antes de tomar una decisión?",
+          "intent": "Qué más"
+        }
+      ]
     }
   ]
 }

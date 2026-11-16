@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1280,
+    "totalIntentions": 1281,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -42056,17 +42056,10 @@
         "since you",
         "since he",
         "since she",
+        "since",
         "since we",
         "since they",
-        "since you started",
-        "since you left",
-        "since you moved",
-        "since we met",
-        "Since I started",
-        "Since he started",
-        "Since she bought",
-        "Since they updated",
-        "Since you explained"
+        "since you explained"
       ],
       "validationPatterns": [
         "\\b(?:since\\s+(?:i|you|he|she|it|we|they|there|this|that|[a-z]+(?:\\s+[a-z]+){0,2}))\\b"
@@ -76051,6 +76044,125 @@
           "id": "f1567670-819a-4b45-9e67-ba2345678901",
           "exampleItem": "This will do for now, until we find a better solution.",
           "intent": "This will do for now"
+        }
+      ]
+    },
+    {
+      "id": "em-que-mais-o-que-mais-pergunta-8c42e7a1-6d95-4f30-9b21-a5e73c08d462",
+      "intention": "What else + question?",
+      "pattern": "What else + auxiliary or modal + subject + verb + complement?",
+      "description": "Used to ask follow-up questions about activities, interests, needs, possibilities, opinions, or topics already mentioned in a conversation. In American English, \"What else\" asks about additional options, actions, or information beyond what is already known. It is common in everyday conversations, small talk, meetings, interviews, and situations where you want to explore a topic further or keep a conversation going.",
+      "category": "expressions",
+      "searchTerms": [
+        "what else",
+        "what else can I help you with",
+        "what else can I do",
+        "what else are you working on",
+        "what else do you need",
+        "what else are you interested in",
+        "what else can we improve",
+        "what other things",
+        "what other options",
+        "ask more",
+        "follow-up questions",
+        "continue a conversation"
+      ],
+      "validationPatterns": [
+        "\\bwhat\\s+else\\b"
+      ],
+      "tags": [
+        "questions",
+        "open-ended questions",
+        "keeping a conversation going",
+        "conversation",
+        "small talk",
+        "interests",
+        "needs",
+        "possibilities",
+        "opinions",
+        "auxiliary verbs",
+        "modal verbs",
+        "prepositions",
+        "question generator"
+      ],
+      "related": [],
+      "structure": "Use \"What else + auxiliary or modal + subject + verb + complement?\" to ask for additional information. With modals: \"What else can I do?\" or \"What else should we consider?\" In the simple present: \"What else do you need?\" In the present continuous: \"What else are you working on?\" In the present perfect: \"What else have you learned?\" When the verb takes a preposition, it naturally comes at the end of the question: \"What else are you interested in?\", \"What else are you thinking about?\", or \"What else can I help you with?\" Distinguish \"What else?\" from \"Who else?\", \"Where else?\", and \"How else?\", which ask about additional people, places, and ways of doing something.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "What else can I help you with?",
+          "intent": "What else"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "What else are you working on right now?",
+          "intent": "What else"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "What else can we do to improve our results?",
+          "intent": "What else"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "What else is she interested in?",
+          "intent": "What else"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "What else do you need to learn to feel confident?",
+          "intent": "What else"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "What else should we pay attention to during the meeting?",
+          "intent": "What else"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "What else would you like to talk about?",
+          "intent": "What else"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "What else is he worried about?",
+          "intent": "What else"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "What else have you learned since you started studying English?",
+          "intent": "What else"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "What else are they involved in on this project?",
+          "intent": "What else"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "What else would you like to know about my experience?",
+          "intent": "What else"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "What else can we invest our time in?",
+          "intent": "What else"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "What else can she do to improve her pronunciation?",
+          "intent": "What else"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "What else are you thinking about?",
+          "intent": "What else"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "What else do we need to consider before making a decision?",
+          "intent": "What else"
         }
       ]
     }

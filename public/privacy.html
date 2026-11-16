@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Política de Privacidade do Brazilian English Journey (BEJ).">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bejapp.com.br/privacy">
+<title>Política de Privacidade | Brazilian English Journey</title>
+<style>:root { color-scheme: light dark; font-family: system-ui, -apple-system, sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #f6f8fb; color: #192638; line-height: 1.7; }
+header { background: #122d55; color: white; padding: 20px max(20px, calc((100vw - 850px)/2)); }
+header a { color: white; font-weight: 750; text-decoration: none; }
+main { max-width: 850px; margin: 30px auto; padding: 28px 36px; background: white; border: 1px solid #dce3ee; border-radius: 14px; }
+h1, h2, h3 { line-height: 1.3; color: #14396c; }
+h1 { font-size: clamp(1.5rem, 4vw, 2.1rem); }
+h2 { margin-top: 30px; font-size: 1.2rem; }
+a { color: #155eae; overflow-wrap: anywhere; }
+code { overflow-wrap: anywhere; background: #edf2f8; padding: 1px 4px; border-radius: 4px; }
+blockquote { margin: 16px 0; padding: 8px 16px; border-left: 4px solid #407bc3; background: #edf4ff; }
+footer { max-width: 850px; margin: 0 auto 30px; padding: 0 20px; color: #46566a; font-size: .92rem; }
+footer a { margin-right: 20px; }
+@media (max-width: 600px) { main { margin: 0; padding: 20px; border: 0; border-radius: 0; } }
+@media (prefers-color-scheme: dark) {
+body { background: #0d1726; color: #e4e9f2; }
+main { background: #16253b; border-color: #35445a; }
+h1, h2, h3 { color: #a9ceff; }
+a { color: #91c4ff; }
+code, blockquote { background: #253a58; }
+footer { color: #b8c7db; }
+}</style></head><body>
+<header><a href="/">Brazilian English Journey</a></header>
+<main><h1>Política de Privacidade — Brazilian English Journey (BEJ)</h1>
+<p><strong>Versão:</strong> 1.0 — <strong>Atualização:</strong> 13/11/2026</p>
+<p>Esta política explica como o Brazilian English Journey (BEJ) trata informações relacionadas ao uso do aplicativo e à sincronização opcional com o Google Drive. O BEJ é uma ferramenta de apoio ao estudo de idiomas. Para dúvidas sobre privacidade, escreva para <strong>julio.vitorino@gmail.com</strong>.</p>
+<h2>1. Informações armazenadas no dispositivo</h2>
+<p>O BEJ pode armazenar no navegador, inclusive por meio de <code>localStorage</code>, informações como idioma selecionado, preferências, favoritos, respostas personalizadas, histórico de estudo, tempo de prática e progresso. Esses dados são mantidos no contexto do navegador e do domínio utilizado.</p>
+<p>Ao acessar o BEJ por um domínio diferente, como <code>bejapp.com.br</code> em vez de <code>workspace-bej.pages.dev</code>, os dados locais de um domínio não aparecem automaticamente no outro. Use as funções de exportação, importação ou sincronização quando disponíveis.</p>
+<h2>2. Sincronização opcional com o Google Drive</h2>
+<p>Se você escolher conectar sua Conta do Google e usar Exportar ou Sync, o BEJ solicitará autorização OAuth para o escopo <strong><code>https://www.googleapis.com/auth/drive.file</code></strong>. Essa permissão permite ao aplicativo criar e acessar arquivos do Google Drive com os quais ele trabalha, de acordo com as regras do Google. O BEJ utiliza a API do Google Drive para listar, ler, criar e atualizar arquivos JSON de sincronização na pasta informada pelo usuário.</p>
+<p>Esses arquivos podem incluir histórico e sessões de estudo, favoritos, respostas personalizadas e identificadores de dispositivo usados para combinar dados de diferentes aparelhos. O aplicativo não solicita sua senha do Google. O token OAuth de acesso é mantido em memória durante a operação, não no <code>localStorage</code>. O identificador da pasta e o identificador de dispositivo podem ser mantidos localmente para facilitar futuras sincronizações.</p>
+<p>A sincronização é iniciada por ação do usuário; o BEJ não precisa de um banco de dados próprio para guardar esses backups. Os arquivos sincronizados ficam na sua Conta do Google Drive, sujeitos também às políticas e configurações do Google.</p>
+<h2>3. Finalidade e uso dos dados do Google</h2>
+<p>O acesso aos dados do Google Drive é utilizado <strong>exclusivamente para as funcionalidades de backup, exportação, leitura e sincronização solicitadas pelo usuário</strong>. O BEJ não utiliza os dados obtidos por meio das APIs do Google para publicidade personalizada, não os vende e não os disponibiliza a terceiros para fins publicitários.</p>
+<p>O uso e a transferência de informações recebidas das APIs do Google seguem a <strong>Política de Dados do Usuário dos Serviços de API do Google</strong>, inclusive os requisitos de uso limitado (<em>Limited Use</em>), quando aplicáveis.</p>
+<h2>4. Hospedagem e serviços externos</h2>
+<p>O aplicativo é hospedado na infraestrutura da Cloudflare, que pode processar dados técnicos necessários à entrega e segurança do site, conforme suas próprias políticas. Ao usar recursos que direcionam para serviços externos, como tradução, recursos de IA ou serviços de áudio, informações compartilhadas diretamente com esses serviços podem estar sujeitas às respectivas políticas. A sincronização do Google Drive utiliza serviços do Google.</p>
+<h2>5. Compartilhamento e segurança</h2>
+<p>O BEJ não vende dados pessoais. Informações podem ser processadas por prestadores de infraestrutura ou serviços externos na medida necessária à funcionalidade utilizada. O usuário deve proteger o acesso ao dispositivo, à Conta do Google e aos arquivos de backup, pois esses arquivos podem conter dados de estudo e conteúdo personalizado.</p>
+<h2>6. Controle, revogação e exclusão</h2>
+<p>Você pode deixar de usar a sincronização a qualquer momento e revogar a autorização concedida ao BEJ nas configurações de segurança da sua Conta do Google. Também pode excluir os arquivos de backup do BEJ diretamente no Google Drive e apagar os dados locais pelas ferramentas do navegador ou pelas opções disponíveis no aplicativo. A exclusão em um local não implica necessariamente exclusão automática nos demais dispositivos ou backups.</p>
+<p>Para acessar e gerenciar permissões de aplicativos conectados, consulte <a href="https://myaccount.google.com/connections" rel="noopener noreferrer">sua Conta do Google</a>.</p>
+<h2>7. Atualizações desta política</h2>
+<p>Esta política poderá ser atualizada quando houver mudanças nas funcionalidades ou no tratamento de informações. A data e a versão serão atualizadas neste documento.</p>
+<h2>8. Contato</h2>
+<p><strong>Serviço:</strong> Brazilian English Journey (BEJ)</p>
+<p><strong>E-mail de contato:</strong> julio.vitorino@gmail.com</p>
+<p><strong>País de referência:</strong> Brasil.</p></main>
+<footer><a href="/terms">Termos de Uso</a> <a href="/privacy">Política de Privacidade</a> <a href="/">Voltar ao BEJ</a></footer>
+</body></html>
