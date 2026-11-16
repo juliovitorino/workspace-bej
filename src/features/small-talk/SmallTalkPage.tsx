@@ -8,7 +8,7 @@ import type { SmallTalkItem, SmallTalkTopic, SmallTalkTopicIndexEntry, SmallTalk
 import { readLocalJson, readWalkingSettings, saveLocalJson, SMALL_TALK_FAVORITES_KEY, SMALL_TALK_WALKING_SETTINGS_KEY } from './smallTalkPreferences';
 import { SmallTalkWalking } from './SmallTalkWalking';
 import { SmallTalkIcon } from './SmallTalkIcon';
-import { printableSmallTalkItems, smallTalkPrintNumbers } from './smallTalkPrintOrder';
+import { printableSmallTalkItems, smallTalkPrintNumbers, duplicateCardOrder } from './smallTalkPrintOrder';
 import { beginAnswerEdit, changeAnswerEdit, undoAnswerEdit, redoAnswerEdit } from './smallTalkAnswerEditHistory';
 import { celebrateAchievement, celebrateCompletedSession } from '../../utils/achievements';
 import { readAnswerOverrides, saveAnswerOverride, restoreOriginalAnswer, pruneRedundantAnswerOverrides } from './smallTalkAnswerOverrides';
@@ -201,7 +201,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     setEditError('');
     if (!topic || topic.topicId !== topicId) { setEditError('Aguarde o carregamento do tópico.'); return; }
     try {
-      const nextOrder = Math.max(0, ...activeTopicItems.map(card => card.order)) + 1;
+      const nextOrder = duplicateCardOrder(activeTopicItems, item);
       const { items, id } = duplicateCustomItem(topicId, item, questionFor(item), answerFor(item), nextOrder);
       setCustomItems(items);
       const orderedIds = orderedTopicItems.map(card => card.id);
