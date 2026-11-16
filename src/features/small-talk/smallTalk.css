@@ -337,6 +337,7 @@
 .small-talk-icon-button svg{display:block;flex-shrink:0;width:21px;height:21px}
 .small-talk-actions .primary-button:has(svg),
 .small-talk-actions .secondary-button:has(svg),
+.small-talk-walk .primary-button:has(svg),
 .small-talk-configuration-toggle .primary-button:has(svg),
 .small-talk-topic-export-trigger:has(svg){display:inline-flex;align-items:center;justify-content:center;gap:.45rem}
 .small-talk-print-number{color:var(--accent,var(--primary-color,#5586bc));font-weight:800;white-space:nowrap}
