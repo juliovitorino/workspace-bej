@@ -18,15 +18,9 @@
       "address": [
         "3JauYEHdJfTgJ2ogX75ueZ6C1waktjFrvw",
         "36AFfcXWFM8efk6qwKwzGBQoRGMLtG35de",
-"39FSrhap4d1DSPL9kQ56jVWewf6ThNxWQf"
+        "39FSrhap4d1DSPL9kQ56jVWewf6ThNxWQf"
       ],
       "qrCodeEnabled": true
-    },
-    "content": {
-      "title": "Apoie o Brazilian English Journey",
-      "description": "Ajude a manter o BEJ e o canal.",
-      "footerMessage": "Gostou do BEJ? Apoie este projeto!",
-      "buttonLabel": "Fazer uma doação"
     }
   }
 }
