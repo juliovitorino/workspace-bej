@@ -14,11 +14,11 @@ export function DonationFooter({ config, onDonate }: DonationFooterProps) {
     <section className="donation-footer" aria-label={t("donation.title")}>
       <span className="donation-footer-heart" aria-hidden="true">♥</span>
       <div className="donation-footer-content">
-        <strong>{config.content.footerMessage || t("donation.footerMessage")}</strong>
+        <strong>{t("donation.footerMessage")}</strong>
         <p>{t("donation.footerDescription")}</p>
       </div>
       <button type="button" className="donation-footer-button" onClick={onDonate}>
-        {config.content.buttonLabel || t("donation.buttonLabel")}
+        {t("donation.buttonLabel")}
       </button>
     </section>
   );
