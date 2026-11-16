@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1281,
+    "totalIntentions": 1282,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -52590,6 +52590,131 @@
           "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
           "exampleItem": "Que devons-nous prendre d'autre en compte avant de prendre une décision ?",
           "intent": "prendre d'autre en compte"
+        }
+      ]
+    },
+    {
+      "id": "isso-faz-com-que-7b91e4a2-6d35-4f80-9c26-a8e73c05d142",
+      "intention": "Cela fait que / Cela rend / Cela fait + infinitif",
+      "pattern": "cela / ça + faire + infinitif, rendre + adjectif ou faire que + proposition",
+      "description": "Exprime une relation de cause à effet : une situation, un comportement, une décision ou un événement provoque une réaction, un sentiment, un changement ou une conséquence. En français courant, on emploie notamment faire suivi d'un infinitif, rendre suivi d'un adjectif, donner envie de ou faire que suivi d'une proposition. Ces tournures permettent d'expliquer l'influence de quelque chose sur les sentiments, les pensées, les décisions, les comportements et les résultats, ou de montrer qu'une activité devient plus facile ou plus difficile.",
+      "category": "expressions",
+      "searchTerms": [
+        "cela fait que",
+        "ça fait que",
+        "cela me fait",
+        "cela te fait",
+        "cela nous fait",
+        "cela lui donne envie",
+        "cela les pousse",
+        "cela rend",
+        "cela me donne confiance",
+        "cela fait perdre",
+        "cela permet",
+        "cela me fait voir",
+        "cela provoque",
+        "cela entraîne",
+        "cela rend plus facile",
+        "cela rend plus difficile",
+        "cause et effet",
+        "conséquences"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:cela|ça)\\s+(?:(?:me|te|nous|vous|le|la|les|lui|leur)\\s+)?(?:fait|rend|donne|pousse|permet)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "cause et effet",
+        "conséquences",
+        "sentiments",
+        "réactions",
+        "comportements",
+        "changements",
+        "pensées",
+        "décisions",
+        "influence",
+        "résultats",
+        "expressions du quotidien",
+        "construction de phrases",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Pour exprimer une cause, on peut employer faire + infinitif : Cela me fait réfléchir. Avec un état, on utilise souvent rendre + complément + adjectif : Cela la rend nerveuse, Cela rend les choses plus faciles. Pour une motivation, on peut dire Cela lui donne envie d'apprendre. La construction cela fait que + proposition à l'indicatif présente une conséquence : Cela fait que les efforts en valent la peine. On peut aussi employer pousser à ou permettre de selon le sens. Ça est très courant à l'oral ; cela convient aussi à l'écrit. Au passé : Cela m'a fait comprendre mon erreur. La négation entoure le verbe conjugué : Cela ne me fait pas de bien. Le choix de la tournure dépend de la conséquence exprimée.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Cela me donne plus confiance en moi quand je parle anglais.",
+          "intent": "Cela me donne"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Cela te fait réfléchir à deux fois avant de prendre une décision.",
+          "intent": "Cela te fait réfléchir"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Cela lui donne envie d'apprendre de nouvelles choses tous les jours.",
+          "intent": "Cela lui donne envie"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Cela la rend nerveuse pendant les présentations.",
+          "intent": "Cela la rend"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Cela nous fait commettre moins d'erreurs au travail.",
+          "intent": "Cela nous fait commettre"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Cela les pousse à abandonner avant même d'essayer.",
+          "intent": "Cela les pousse à abandonner"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Cela fait perdre aux gens confiance en eux.",
+          "intent": "Cela fait perdre"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Cela rend tout plus facile à comprendre.",
+          "intent": "Cela rend tout"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Cela me fait perdre beaucoup de temps à essayer de traduire mentalement.",
+          "intent": "Cela me fait perdre"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Cela te fait t'inquiéter pour des choses inutiles.",
+          "intent": "Cela te fait t'inquiéter"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "Cela me donne encore plus envie de continuer à étudier.",
+          "intent": "Cela me donne"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "Cela rend notre travail plus productif.",
+          "intent": "Cela rend notre travail"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "Cela permet aux enfants d'apprendre plus rapidement.",
+          "intent": "Cela permet aux enfants d'apprendre"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "Cela me fait voir les choses autrement.",
+          "intent": "Cela me fait voir"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "Cela fait que tous ces efforts en valent la peine.",
+          "intent": "Cela fait que"
         }
       ]
     }

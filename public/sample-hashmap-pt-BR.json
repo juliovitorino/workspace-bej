@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1281,
+    "totalIntentions": 1282,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -51707,6 +51707,142 @@
           "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
           "exampleItem": "O que mais precisamos considerar antes de tomar uma decisão?",
           "intent": "O que mais"
+        }
+      ]
+    },
+    {
+      "id": "isso-faz-com-que-7b91e4a2-6d35-4f80-9c26-a8e73c05d142",
+      "intention": "Isso faz com que + sujeito + ação ou estado",
+      "pattern": "isso faz com que + sujeito + verbo no subjuntivo / estado / consequência",
+      "description": "Expressa uma relação de causa e efeito, indicando que determinada situação, comportamento, decisão ou acontecimento provoca uma reação, sentimento, mudança ou consequência. No inglês americano cotidiano, a construção mais natural é 'This makes' ou 'That makes', seguida da pessoa ou coisa afetada e de um verbo na forma base ou de um adjetivo. É especialmente útil para explicar como alguma coisa influencia sentimentos, pensamentos, decisões, comportamentos e resultados. Também permite expressar que determinada situação torna uma atividade mais fácil, difícil ou agradável.",
+      "category": "expressions",
+      "searchTerms": [
+        "isso faz com que",
+        "isso me faz",
+        "isso te faz",
+        "isso nos faz",
+        "isso faz ele",
+        "isso faz ela",
+        "isso faz as pessoas",
+        "isso faz com que eu",
+        "isso faz com que você",
+        "isso faz com que ele",
+        "isso faz com que ela",
+        "isso faz com que nós",
+        "isso faz com que eles",
+        "isso me deixa",
+        "isso torna",
+        "isso provoca",
+        "isso causa",
+        "isso gera",
+        "isso me faz sentir",
+        "isso me faz pensar",
+        "isso me faz querer",
+        "isso torna mais fácil",
+        "isso torna mais difícil",
+        "causa e efeito",
+        "consequências"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])isso\\s+faz\\s+com\\s+que(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])isso\\s+(?:me|te|nos|o|a|os|as|lhe|lhes)\\s+faz(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])isso\\s+faz\\s+(?:você|vocês|ele|ela|eles|elas|a\\s+gente|as\\s+pessoas)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])isso\\s+(?:me|te|nos|o|a|os|as)\\s+deixa(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])isso\\s+torna(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "causa e efeito",
+        "consequências",
+        "sentimentos",
+        "reações",
+        "comportamentos",
+        "mudanças",
+        "pensamentos",
+        "decisões",
+        "influência",
+        "resultados",
+        "expressões cotidianas",
+        "gerador de frases",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "A construção principal é 'This makes + objeto + verbo na forma base' ou 'This makes + objeto + adjetivo'. Na primeira estrutura, o verbo aparece sem 'to': 'This makes me think twice' (Isso faz com que eu pense duas vezes), 'This makes her feel better' (Isso faz com que ela se sinta melhor) e 'This makes people give up' (Isso faz com que as pessoas desistam). Na segunda estrutura, utiliza-se um adjetivo para indicar um estado: 'This makes me happy' (Isso me deixa feliz) e 'This makes him nervous' (Isso o deixa nervoso). Também é comum a construção 'This makes + objeto + adjetivo comparativo', como em 'This makes things easier' (Isso torna as coisas mais fáceis). Para expressar que uma atividade se torna mais fácil ou difícil, pode-se utilizar 'This makes it easier to + verbo' ou 'This makes it harder to + verbo'. A palavra 'This' geralmente retoma uma situação próxima ou que está sendo explicada, enquanto 'That' frequentemente retoma algo mencionado anteriormente. No passado, utiliza-se 'made', como em 'That made me realize my mistake' (Aquilo fez com que eu percebesse meu erro). Na forma negativa, utiliza-se 'doesn't make', como em 'This doesn't make me feel better' (Isso não faz com que eu me sinta melhor). É importante não utilizar 'to' entre o objeto e o verbo principal na construção causativa com 'make'. A forma correta é 'This makes me feel', e não 'This makes me to feel'. A construção 'This causes + objeto + to + verbo' também expressa causa e efeito, mas costuma ser mais formal e exige 'to' antes do verbo.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Isso faz com que eu me sinta mais confiante ao falar inglês.",
+          "intent": "Isso faz com que eu me sinta"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Isso faz com que você pense duas vezes antes de tomar uma decisão.",
+          "intent": "Isso faz com que você pense"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Isso faz com que ele queira aprender coisas novas todos os dias.",
+          "intent": "Isso faz com que ele queira"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Isso faz com que ela fique nervosa durante as apresentações.",
+          "intent": "Isso faz com que ela fique"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Isso faz com que nós cometamos menos erros no trabalho.",
+          "intent": "Isso faz com que nós cometamos"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Isso faz com que eles desistam antes mesmo de tentar.",
+          "intent": "Isso faz com que eles desistam"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Isso faz com que as pessoas percam a confiança em si mesmas.",
+          "intent": "Isso faz com que as pessoas percam"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Isso faz com que tudo fique mais fácil de entender.",
+          "intent": "Isso faz com que tudo fique"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Isso faz com que eu perca muito tempo tentando traduzir mentalmente.",
+          "intent": "Isso faz com que eu perca"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Isso faz com que você se preocupe com coisas desnecessárias.",
+          "intent": "Isso faz com que você se preocupe"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "Isso faz com que eu tenha mais vontade de continuar estudando.",
+          "intent": "Isso faz com que eu tenha"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "Isso faz com que nosso trabalho se torne mais produtivo.",
+          "intent": "Isso faz com que nosso trabalho se torne"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "Isso faz com que as crianças aprendam mais rapidamente.",
+          "intent": "Isso faz com que as crianças aprendam"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "Isso faz com que eu veja as coisas de uma maneira diferente.",
+          "intent": "Isso faz com que eu veja"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "Isso faz com que todo o esforço valha a pena.",
+          "intent": "Isso faz com que todo o esforço valha a pena"
         }
       ]
     }

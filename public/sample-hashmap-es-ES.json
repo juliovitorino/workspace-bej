@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1281,
+    "totalIntentions": 1282,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -52044,6 +52044,140 @@
           "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
           "exampleItem": "¿Qué más tenemos que tener en cuenta antes de tomar una decisión?",
           "intent": "Qué más"
+        }
+      ]
+    },
+    {
+      "id": "isso-faz-com-que-7b91e4a2-6d35-4f80-9c26-a8e73c05d142",
+      "intention": "Eso hace que + sujeto + acción o estado",
+      "pattern": "eso hace que + sujeto + verbo en subjuntivo / estado / consecuencia",
+      "description": "Expresa una relación de causa y efecto: una situación, un comportamiento, una decisión o un acontecimiento provoca una reacción, un sentimiento, un cambio o una consecuencia. En español se usa «eso hace que» seguido de una oración en subjuntivo, o «eso me hace» seguido de un infinitivo. También se puede expresar un estado con «eso me pone» y un adjetivo. Estas construcciones permiten explicar cómo algo influye en los sentimientos, pensamientos, decisiones, comportamientos y resultados, o cómo facilita o dificulta una actividad.",
+      "category": "expressions",
+      "searchTerms": [
+        "eso hace que",
+        "esto hace que",
+        "eso me hace",
+        "eso te hace",
+        "eso nos hace",
+        "eso hace que él",
+        "eso hace que ella",
+        "eso hace que la gente",
+        "eso hace que yo",
+        "eso hace que tú",
+        "eso hace que nosotros",
+        "eso hace que ellos",
+        "eso me pone",
+        "eso vuelve",
+        "eso provoca",
+        "eso causa",
+        "eso genera",
+        "eso me hace sentir",
+        "eso me hace pensar",
+        "eso me hace querer",
+        "eso hace más fácil",
+        "eso hace más difícil",
+        "causa y efecto",
+        "consecuencias"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:eso|esto)\\s+hace\\s+que(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:eso|esto)\\s+(?:me|te|nos|os|lo|la|los|las|le|les)\\s+hace(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:eso|esto)\\s+(?:me|te|nos|os|lo|la|los|las)\\s+pone(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:eso|esto)\\s+(?:vuelve|hace\\s+más\\s+(?:fácil|difícil))(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "causa y efecto",
+        "consecuencias",
+        "sentimientos",
+        "reacciones",
+        "comportamientos",
+        "cambios",
+        "pensamientos",
+        "decisiones",
+        "influencia",
+        "resultados",
+        "expresiones cotidianas",
+        "generador de frases",
+        "conversación"
+      ],
+      "related": [],
+      "structure": "La construcción principal es «Eso hace que + sujeto + verbo en subjuntivo»: «Eso hace que ella se sienta mejor» o «Eso hace que la gente se rinda». El sujeto se puede omitir si el contexto permite identificarlo: «Eso hace que cometamos menos errores». Con un pronombre de objeto también se usa «Eso me hace + infinitivo»: «Eso me hace pensar dos veces». Para expresar un estado son naturales «Eso me pone nervioso» y «Eso me hace feliz». Para indicar que una actividad resulta más fácil o difícil se puede decir «Eso hace que sea más fácil aprender» o «Eso hace más difícil concentrarse». «Esto» suele referirse a una situación cercana o que se está explicando; «eso» suele retomar algo mencionado antes. En pasado se puede usar «Eso hizo que me diera cuenta de mi error». En negativo: «Eso no hace que me sienta mejor». Tras «hace que» se emplea el subjuntivo; tras «me hace», el infinitivo aparece sin preposición.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Eso hace que me sienta más seguro al hablar inglés.",
+          "intent": "Eso hace que me sienta"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Eso hace que te lo pienses dos veces antes de tomar una decisión.",
+          "intent": "Eso hace que te lo pienses"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Eso hace que él quiera aprender cosas nuevas todos los días.",
+          "intent": "Eso hace que él quiera"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Eso hace que ella se ponga nerviosa durante las presentaciones.",
+          "intent": "Eso hace que ella se ponga"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Eso hace que cometamos menos errores en el trabajo.",
+          "intent": "Eso hace que cometamos"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Eso hace que ellos se rindan antes incluso de intentarlo.",
+          "intent": "Eso hace que ellos se rindan"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Eso hace que la gente pierda la confianza en sí misma.",
+          "intent": "Eso hace que la gente pierda"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Eso hace que todo sea más fácil de entender.",
+          "intent": "Eso hace que todo sea"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Eso hace que pierda mucho tiempo intentando traducir mentalmente.",
+          "intent": "Eso hace que pierda"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Eso hace que te preocupes por cosas innecesarias.",
+          "intent": "Eso hace que te preocupes"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "Eso hace que tenga más ganas de seguir estudiando.",
+          "intent": "Eso hace que tenga"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "Eso hace que nuestro trabajo sea más productivo.",
+          "intent": "Eso hace que nuestro trabajo sea"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "Eso hace que los niños aprendan más rápido.",
+          "intent": "Eso hace que los niños aprendan"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "Eso hace que vea las cosas de otra manera.",
+          "intent": "Eso hace que vea"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "Eso hace que todo el esfuerzo merezca la pena.",
+          "intent": "Eso hace que todo el esfuerzo merezca la pena"
         }
       ]
     }

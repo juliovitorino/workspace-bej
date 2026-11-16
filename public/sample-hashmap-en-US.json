@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1281,
+    "totalIntentions": 1282,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -76163,6 +76163,134 @@
           "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
           "exampleItem": "What else do we need to consider before making a decision?",
           "intent": "What else"
+        }
+      ]
+    },
+    {
+      "id": "isso-faz-com-que-7b91e4a2-6d35-4f80-9c26-a8e73c05d142",
+      "intention": "This makes + object + action or state",
+      "pattern": "This/That makes + object + base verb / adjective / consequence",
+      "description": "Expresses cause and effect: a situation, behavior, decision, or event brings about a reaction, feeling, change, or consequence. In everyday American English, \"This makes\" or \"That makes\" is followed by the person or thing affected and a base-form verb or an adjective. It is especially useful for explaining how something influences feelings, thoughts, decisions, behavior, and results. It can also show that a situation makes an activity easier, harder, or more enjoyable.",
+      "category": "expressions",
+      "searchTerms": [
+        "this makes",
+        "that makes",
+        "this makes me",
+        "this makes you",
+        "this makes us",
+        "this makes him",
+        "this makes her",
+        "this makes people",
+        "this makes them",
+        "this makes me feel",
+        "this makes me think",
+        "this makes me want",
+        "this makes things easier",
+        "this makes things harder",
+        "this makes it easier",
+        "this makes it harder",
+        "this causes",
+        "this leads to",
+        "cause and effect",
+        "consequences"
+      ],
+      "validationPatterns": [
+        "\\b(?:this|that)\\s+(?:makes|made)\\s+(?:me|you|him|her|us|them|it|everything|things|people|children|our\\s+work|all\\s+the\\s+effort)\\b",
+        "\\b(?:this|that)\\s+does(?:n['’]t|\\s+not)\\s+make\\s+(?:me|you|him|her|us|them|it|everything|things|people|children)\\b"
+      ],
+      "tags": [
+        "cause and effect",
+        "consequences",
+        "feelings",
+        "reactions",
+        "behavior",
+        "changes",
+        "thoughts",
+        "decisions",
+        "influence",
+        "results",
+        "everyday expressions",
+        "sentence generator",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Use \"This makes + object + base-form verb\" or \"This makes + object + adjective\". In the first construction, the verb has no \"to\": \"This makes me think twice\", \"This makes her feel better\", and \"This makes people give up\". In the second, an adjective describes a state: \"This makes me happy\" or \"This makes him nervous\". Comparatives are also common: \"This makes things easier\". To describe an activity becoming easier or harder, use \"This makes it easier to + verb\" or \"This makes it harder to + verb\". \"This\" usually refers to a situation close at hand or currently being explained; \"that\" often refers back to something already mentioned. In the past, use \"made\": \"That made me realize my mistake\". In the negative, use \"does not make\" or \"doesn't make\": \"This doesn't make me feel better\". Do not put \"to\" between the object and the verb in this active causative construction: say \"This makes me feel\", not \"This makes me to feel\". \"This causes + object + to + verb\" also expresses cause and effect, but is generally more formal and requires \"to\" before the verb.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "This makes me feel more confident when speaking English.",
+          "intent": "This makes me feel"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "This makes you think twice before making a decision.",
+          "intent": "This makes you think"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "This makes him want to learn new things every day.",
+          "intent": "This makes him want"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "This makes her nervous during presentations.",
+          "intent": "This makes her nervous"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "This makes us make fewer mistakes at work.",
+          "intent": "This makes us make"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "This makes them give up before even trying.",
+          "intent": "This makes them give up"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "This makes people lose confidence in themselves.",
+          "intent": "This makes people lose"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "This makes everything easier to understand.",
+          "intent": "This makes everything easier"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "This makes me waste a lot of time trying to translate in my head.",
+          "intent": "This makes me waste"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "This makes you worry about things you do not need to worry about.",
+          "intent": "This makes you worry"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "This makes me want to keep studying even more.",
+          "intent": "This makes me want"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "This makes our work more productive.",
+          "intent": "This makes our work more productive"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "This makes children learn faster.",
+          "intent": "This makes children learn"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "This makes me see things differently.",
+          "intent": "This makes me see"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "This makes all the effort worthwhile.",
+          "intent": "This makes all the effort worthwhile"
         }
       ]
     }
