@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import type { SmallTalkItem, SmallTalkWalkingSettings } from '../../types/smallTalk';
+import { SmallTalkIcon } from './SmallTalkIcon';
 import { getSmallTalkActiveAnswer, readAnswerOverrides } from './smallTalkAnswerOverrides';
 import { speakStudyAudio } from '../study/studyAudio';
 import { SMALL_TALK_WALKING_PROGRESS_KEY, saveLocalJson, readLocalJson } from './smallTalkPreferences';
 
 interface Props {
   items: SmallTalkItem[];
+  questionNumbers: Record<string, number>;
   settings: SmallTalkWalkingSettings;
   onExit: () => void;
   onComplete?: (hadSkippedQuestions: boolean) => void;
@@ -31,7 +33,7 @@ function speak(text: string, onEnd: () => void, onError: () => void): () => void
   return () => { utterance.onend = utterance.onerror = null; window.speechSynthesis.cancel(); };
 }
 
-export function SmallTalkWalking({ items, settings, onExit, onComplete, onStudyState, onWalkingChange }: Props) {
+export function SmallTalkWalking({ items, questionNumbers, settings, onExit, onComplete, onStudyState, onWalkingChange }: Props) {
   const [started, setStarted] = useState(false);
   const [paused, setPaused] = useState(false);
   const [index, setIndex] = useState(0);
@@ -152,15 +154,15 @@ export function SmallTalkWalking({ items, settings, onExit, onComplete, onStudyS
   return <section className="small-talk-walk" aria-label="Small Talk — modo caminhada">
     <header><h2>🚶 Small Talk — Modo Caminhada</h2><p>Responda em voz alta. Nenhum áudio da sua voz é gravado.</p></header>
     <p><strong>{completed} / {items.length}</strong> perguntas · Repetição <strong>{Math.min(repetition + 1, settings.repeatCount)} / {settings.repeatCount}</strong></p>
-    <h3>{current?.question?.text ?? 'Treino concluído!'}</h3>
+    <h3>{current ? <><span className="small-talk-print-number" aria-label={`Pergunta ${questionNumbers[current.id] ?? '?'} no material impresso`}>{questionNumbers[current.id] ?? '?'}. </span>{current.question?.text}</> : 'Treino concluído!'}</h3>
     <p role="status">{phase === 'question' ? '🔊 Pergunta' : phase === 'thinking' ? '🎤 Sua vez de responder em voz alta' : phase === 'answer' ? '🔊 Resposta ativa' : phase === 'between' ? 'Próxima repetição' : phase === 'paused' ? 'Pausado' : phase === 'complete' ? 'Sessão concluída' : phase === 'error' ? 'Erro de áudio' : 'Pronto para começar'}</p>
     {settings.playDefaultAnswer && !hasOriginal && <p className="warning-banner">Esta pergunta não possui resposta ativa; será feita apenas a pausa para resposta espontânea.</p>}
     {error && <p role="alert">{error}</p>}
-    {!started && phase !== 'complete' && <button className="primary-button" type="button" onClick={() => { setStarted(true); setPhase('question'); }}>▶ Iniciar</button>}
+    {!started && phase !== 'complete' && <button className="primary-button" type="button" onClick={() => { setStarted(true); setPhase('question'); }}><SmallTalkIcon name="play"/> Iniciar</button>}
     {started && phase !== 'complete' && <div className="small-talk-actions">
-      <button type="button" className="secondary-button" onClick={togglePause}>{paused ? '▶ Continuar' : '⏸ Pausar'}</button>
-      <button type="button" className="secondary-button" onClick={skip}>⏭ Pular pergunta</button>
-      <button type="button" className="secondary-button" onClick={restart}>↺ Recomeçar</button>
+      <button type="button" className="secondary-button" onClick={togglePause}><SmallTalkIcon name={paused ? 'play' : 'pause'}/> {paused ? 'Continuar' : 'Pausar'}</button>
+      <button type="button" className="secondary-button" onClick={skip}><SmallTalkIcon name="skip"/> Pular pergunta</button>
+      <button type="button" className="secondary-button" onClick={restart}><SmallTalkIcon name="restart"/> Recomeçar</button>
     </div>}
     {phase === 'complete' && <p>Você praticou {completed} perguntas nesta sessão.</p>}
     <p className="settings-dialog-help">Voz: síntese de fala disponível no navegador. Cedar/Marin neural exigem MP3s próprios e ainda não estão conectados ao Small Talk.</p>
