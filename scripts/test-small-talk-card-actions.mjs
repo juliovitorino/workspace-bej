@@ -108,6 +108,12 @@ test('duplicate goes after all existing cards even when catalog order has gaps',
   assert.equal(printed[3].id, id);
   assert.equal(print.smallTalkPrintNumbers(printed)[id], 4);
 });
+test('duplication scrolls smoothly to the new card after React renders it', () => {
+  const duplicateAction = page.slice(page.indexOf('function duplicateCard('), page.indexOf('function toggleCustomCard('));
+  assert.match(duplicateAction, /setQuery\(''\); setLevel\('all'\); setFavoritesOnly\(false\)/);
+  assert.match(duplicateAction, /window\.requestAnimationFrame\(\(\) => window\.requestAnimationFrame/);
+  assert.match(duplicateAction, /document\.getElementById\('small-talk-card-' \+ id\)\?\.scrollIntoView\(\{ behavior: 'smooth', block: 'start' \}\)/);
+});
 test('walking shows printed number but does not speak it', () => {
   assert.match(page, /questionNumbers=\{printNumbers\}/);
   assert.match(walking, /questionNumbers\[current\.id\]/);
