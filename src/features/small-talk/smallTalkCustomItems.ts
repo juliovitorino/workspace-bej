@@ -93,6 +93,7 @@ export function duplicateCustomItem(
   const item: SmallTalkItem = {
     ...source,
     id,
+    type: 'question-answer',
     order,
     enabled: true,
     question: { text: question.trim(), audio: null },
