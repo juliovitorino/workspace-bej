@@ -83,15 +83,30 @@ test('print numbering is stable when walking filters or shuffles', () => {
   const shuffled = [printable[2], printable[0]];
   assert.deepEqual(shuffled.map(item => numbers[item.id]).join(','), '3,1');
 });
-test('duplicate uses a natural order between the source and next printed card', () => {
+test('duplicate receives N+1 at the end without changing existing print numbers', () => {
   const items = [card('a', 1), card('b', 2), card('c', 3)];
-  const order = print.duplicateCardOrder(items, items[1]);
-  assert.ok(order > 2 && order < 3);
+  const originalNumbers = print.smallTalkPrintNumbers(items);
+  const order = print.nextSmallTalkCardOrder(items);
+  assert.equal(order, 4);
   const storage = memoryStorage();
   const { items: copies, id } = cards.duplicateCustomItem('travel', items[1], 'B?', 'B answer', order, storage);
   const printed = print.printableSmallTalkItems([...items, copies[id].item].sort((a, b) => a.order - b.order), item => item.question.text);
-  assert.equal(printed.map(item => item.id).join(','), 'a,b,' + id + ',c');
-  assert.match(page, /orderedIds\.splice\(position \+ 1, 0, id\)/);
+  assert.equal(printed.map(item => item.id).join(','), 'a,b,c,' + id);
+  const nextNumbers = print.smallTalkPrintNumbers(printed);
+  for (const item of items) assert.equal(nextNumbers[item.id], originalNumbers[item.id]);
+  assert.equal(nextNumbers[id], 4);
+  assert.match(page, /orderedIds\.push\(id\)/);
+  assert.doesNotMatch(page, /orderedIds\.splice\(position \+ 1, 0, id\)/);
+});
+test('duplicate goes after all existing cards even when catalog order has gaps', () => {
+  const items = [card('a', 10), card('b', 20), card('c', 30)];
+  const order = print.nextSmallTalkCardOrder(items);
+  assert.equal(order, 31);
+  const storage = memoryStorage();
+  const { items: copies, id } = cards.duplicateCustomItem('travel', items[0], 'A?', 'A answer', order, storage);
+  const printed = [...items, copies[id].item].sort((a, b) => a.order - b.order);
+  assert.equal(printed[3].id, id);
+  assert.equal(print.smallTalkPrintNumbers(printed)[id], 4);
 });
 test('walking shows printed number but does not speak it', () => {
   assert.match(page, /questionNumbers=\{printNumbers\}/);
