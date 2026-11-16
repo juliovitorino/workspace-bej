@@ -3,7 +3,6 @@ export interface DonationConfig {
   footer: { visible: boolean };
   pix: { enabled: boolean; key: string; holderName: string; qrHolderName: string; city: string; qrCodeEnabled: boolean };
   bitcoin: { enabled: boolean; network: "bitcoin"; address: string[]; qrCodeEnabled: boolean };
-  content: { title: string; description: string; footerMessage: string; buttonLabel: string };
 }
 
 export const DISABLED_DONATION_CONFIG: DonationConfig = {
@@ -11,7 +10,6 @@ export const DISABLED_DONATION_CONFIG: DonationConfig = {
   footer: { visible: false },
   pix: { enabled: false, key: "", holderName: "", qrHolderName: "", city: "", qrCodeEnabled: false },
   bitcoin: { enabled: false, network: "bitcoin", address: [], qrCodeEnabled: false },
-  content: { title: "", description: "", footerMessage: "", buttonLabel: "" },
 };
 
 function record(value: unknown): Record<string, unknown> {
@@ -35,7 +33,6 @@ export function parseDonationConfig(value: unknown): DonationConfig {
   const footer = record(donation.footer);
   const pix = record(donation.pix);
   const bitcoin = record(donation.bitcoin);
-  const content = record(donation.content);
 
   return {
     enabled: donation.enabled === true,
@@ -53,12 +50,6 @@ export function parseDonationConfig(value: unknown): DonationConfig {
       network: "bitcoin",
       address: bitcoinAddresses(bitcoin.address),
       qrCodeEnabled: bitcoin.qrCodeEnabled === true,
-    },
-    content: {
-      title: stringValue(content.title),
-      description: stringValue(content.description),
-      footerMessage: stringValue(content.footerMessage),
-      buttonLabel: stringValue(content.buttonLabel),
     },
   };
 }

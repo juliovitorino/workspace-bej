@@ -68,8 +68,8 @@ export function DonationPage({ config }: DonationPageProps) {
       <header className="donation-heading">
         <span className="donation-heart" aria-hidden="true">♥</span>
         <div>
-          <h2 id="donation-title">{config.content.title || t("donation.pageTitle")}</h2>
-          <p>{config.content.description || t("donation.description")}</p>
+          <h2 id="donation-title">{t("donation.pageTitle")}</h2>
+          <p>{t("donation.description")}</p>
         </div>
       </header>
 
