@@ -332,3 +332,12 @@
 .small-talk-occurrences{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:.65rem 0;padding:.55rem .65rem;border:1px solid var(--border-strong);border-radius:.65rem;background:var(--surface-raised);color:var(--text)}
 .small-talk-occurrences span{margin-right:auto;font-size:.9rem}
 .small-talk-occurrences .small-talk-icon-button{min-width:44px;min-height:44px;font-size:.95rem;font-weight:700}
+
+/* Shared SVG sizing across Small Talk cards, topic controls and walking mode. */
+.small-talk-icon-button svg{display:block;flex-shrink:0;width:21px;height:21px}
+.small-talk-actions .primary-button:has(svg),
+.small-talk-actions .secondary-button:has(svg),
+.small-talk-walk .primary-button:has(svg),
+.small-talk-configuration-toggle .primary-button:has(svg),
+.small-talk-topic-export-trigger:has(svg){display:inline-flex;align-items:center;justify-content:center;gap:.45rem}
+.small-talk-print-number{color:var(--accent,var(--primary-color,#5586bc));font-weight:800;white-space:nowrap}

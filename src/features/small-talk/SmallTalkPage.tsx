@@ -7,11 +7,13 @@ import { readSmallTalkPersonalAnswers } from '../../services/smallTalkPersonalAn
 import type { SmallTalkItem, SmallTalkTopic, SmallTalkTopicIndexEntry, SmallTalkWalkingSettings } from '../../types/smallTalk';
 import { readLocalJson, readWalkingSettings, saveLocalJson, SMALL_TALK_FAVORITES_KEY, SMALL_TALK_WALKING_SETTINGS_KEY } from './smallTalkPreferences';
 import { SmallTalkWalking } from './SmallTalkWalking';
+import { SmallTalkIcon } from './SmallTalkIcon';
+import { printableSmallTalkItems, smallTalkPrintNumbers, duplicateCardOrder } from './smallTalkPrintOrder';
 import { beginAnswerEdit, changeAnswerEdit, undoAnswerEdit, redoAnswerEdit } from './smallTalkAnswerEditHistory';
 import { celebrateAchievement, celebrateCompletedSession } from '../../utils/achievements';
 import { readAnswerOverrides, saveAnswerOverride, restoreOriginalAnswer, pruneRedundantAnswerOverrides } from './smallTalkAnswerOverrides';
 import { readQuestionOverrides, saveQuestionOverride, restoreOriginalQuestion, pruneRedundantQuestionOverrides } from './smallTalkQuestionOverrides';
-import { createCustomItem, isCustomItems, mergeCustomItems, readCustomItems, setCustomItemDeleted, writeCustomItems, type CustomSmallTalkItems } from './smallTalkCustomItems';
+import { createCustomItem, duplicateCustomItem, isCustomItems, mergeCustomItems, readCustomItems, setCustomItemDeleted, writeCustomItems, type CustomSmallTalkItems } from './smallTalkCustomItems';
 
 interface Props {
   onStudyState?: (active: boolean, mode: 'manual' | 'walking') => void;
@@ -115,6 +117,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   const [topicOrders, setTopicOrders] = useState<Record<string, string[]>>(() => readLocalJson<Record<string, string[]>>(ORDER_KEY, {}));
   const [orderError, setOrderError] = useState('');
   const [newCardError, setNewCardError] = useState('');
+  const [duplicateMessage, setDuplicateMessage] = useState('');
   const [pendingConfirmation, setPendingConfirmation] = useState<{ kind: 'remove-answer' | 'remove-card'; id: string } | null>(null);
   const [restorePromptId, setRestorePromptId] = useState<string | null>(null);
 
@@ -193,6 +196,34 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       setNewCardError(error instanceof Error ? error.message : 'Não foi possível salvar. Verifique o armazenamento local.');
     }
   }
+  function duplicateCard(item: SmallTalkItem) {
+    setDuplicateMessage('');
+    setEditError('');
+    if (!topic || topic.topicId !== topicId) { setEditError('Aguarde o carregamento do tópico.'); return; }
+    try {
+      const nextOrder = duplicateCardOrder(activeTopicItems, item);
+      const { items, id } = duplicateCustomItem(topicId, item, questionFor(item), answerFor(item), nextOrder);
+      setCustomItems(items);
+      const orderedIds = orderedTopicItems.map(card => card.id);
+      const position = orderedIds.indexOf(item.id);
+      orderedIds.splice(position + 1, 0, id);
+      try {
+        const next = { ...topicOrders, [topicId]: orderedIds };
+        saveLocalJson(ORDER_KEY, next);
+        setTopicOrders(next);
+        setOrderError('');
+        setDuplicateMessage('Card duplicado! A cópia foi inserida após o original.');
+      } catch {
+        setOrderError('Card duplicado, mas não foi possível salvar sua posição. Ele aparecerá ao final do tópico.');
+        setDuplicateMessage('Card duplicado com sucesso.');
+      }
+      // Show the new card even when a filter would otherwise hide it.
+      setQuery(''); setLevel('all'); setFavoritesOnly(false);
+      setOccurrenceFilter('all'); setOccurrenceSort('manual');
+    } catch (error) {
+      setEditError(error instanceof Error ? error.message : 'Não foi possível duplicar o card.');
+    }
+  }
   function toggleCustomCard(id: string, deleted: boolean) {
     if (deleted) { setPendingConfirmation({ kind: 'remove-card', id }); return; }
     applyCustomCardDeletion(id, deleted);
@@ -237,12 +268,13 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     const question = questionFor(item).trim();
     const answer = answerFor(item).trim();
     if (!question) return;
+    const printedNumber = smallTalkPrintNumbers(printableSmallTalkItems(orderedTopicItems, questionFor))[item.id];
     const esc = (value: string) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
     const popup = window.open('', '_blank');
     if (!popup) { setEditError('Permita pop-ups para imprimir este card.'); return; }
     const title = topic?.title ?? 'Small Talk';
     const css = '@page{size:A4;margin:17mm 16mm 17mm 26mm}body{font:12pt/1.55 Arial,sans-serif;color:#111827;background:#fff;margin:0}h1{font-size:20pt;color:#15438f}header{border-bottom:2px solid #1d4ed8;margin-bottom:20px}.qa{break-inside:avoid;page-break-inside:avoid}.q{font-weight:700;color:#154bb2;white-space:pre-wrap}.a{margin:12px 0 0 20px;white-space:pre-wrap}';
-    const html = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + esc(title) + ' — Pergunta e resposta</title><style>' + css + '</style></head><body><header><h1>' + esc(title) + '</h1><p>Brazilian English Journey — Small Talk</p></header><article class="qa"><div class="q">' + esc(question) + '</div>' +
+    const html = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + esc(title) + ' — Pergunta e resposta</title><style>' + css + '</style></head><body><header><h1>' + esc(title) + '</h1><p>Brazilian English Journey — Small Talk</p></header><article class="qa"><div class="q">' + esc((printedNumber ? printedNumber + '. ' : '') + question) + '</div>' +
       (answer ? '<div class="a">' + esc(answer) + '</div>' : '') + '</article></body></html>';
     popup.document.open();
     popup.document.write(html);
@@ -260,7 +292,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   function printTopic(mode: 'both' | 'questions') {
     if (!topic || loading || topic.topicId !== topicId) return;
     const esc = (value: string) => value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
-    const items = orderedTopicItems.filter(item => item.enabled && questionFor(item).trim());
+    const items = printableSmallTalkItems(orderedTopicItems, questionFor);
     const cards = items.map((item,index) => '<article class="qa"><div class="q">' + (index + 1) + '. ' + esc(questionFor(item)) + '</div>' +
       (mode === 'both' && answerFor(item).trim() ? '<div class="a">' + esc(answerFor(item).trim()) + '</div>' : '') +
       (mode === 'questions' ? '<div class="notes"></div>' : '') + '</article>').join('');
@@ -719,14 +751,10 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   function googleTranslate(text: string) {
     window.open('https://translate.google.com/?sl=en&tl=pt&text=' + encodeURIComponent(text) + '&op=translate', '_blank', 'noopener,noreferrer');
   }
-  const walkItems = useMemo(() => {
-    const selected = activeTopicItems.filter(item => filtered.some(f => f.id === item.id));
-    if (settings.shuffle) {
-      // Sorteio somente ao iniciar, não no render (via função startWalking).
-      return selected;
-    }
-    return selected;
-  }, [filtered, settings.shuffle]);
+  const printableItems = printableSmallTalkItems(orderedTopicItems, questionFor);
+  const printNumbers = smallTalkPrintNumbers(printableItems);
+  // Keep the selected session in printed order until the optional shuffle starts.
+  const walkItems = filtered.filter(item => item.enabled && !!questionFor(item).trim());
   const [sessionItems, setSessionItems] = useState<SmallTalkItem[]>([]);
   function startWalking() {
     if (!walkItems.length) return;
@@ -740,7 +768,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     setTopicsMenuOpen(false); setSessionItems(selection.map(itemWithQuestion)); setWalking(true);
   }
 
-  if (walking) return <SmallTalkWalking items={sessionItems} settings={settings}
+  if (walking) return <SmallTalkWalking items={sessionItems} questionNumbers={printNumbers} settings={settings}
     onComplete={(hadSkippedQuestions) => {
       const allQuestions = orderedTopicItems.filter(item => item.enabled && questionFor(item).trim());
       const fullTopic = !hadSkippedQuestions && topic?.topicId === topicId && allQuestions.length > 0 &&
@@ -829,9 +857,9 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       <label>Ordenar por ocorrências <select value={occurrenceSort} onChange={e => setOccurrenceSort(e.target.value as OccurrenceSort)}><option value="manual">Ordem personalizada</option><option value="most">Maior ocorrência primeiro</option><option value="least">Menor ocorrência primeiro</option></select></label>
     </div>
     <div className="small-talk-configuration-toggle">
-      <button type="button" className="small-talk-icon-button" aria-label="Configurar Modo Caminhada" title="Configurar Modo Caminhada" aria-expanded={settingsOpen} aria-controls="small-talk-settings-panel" onClick={() => setSettingsOpen(v => !v)}>⚙️</button>
+      <button type="button" className="small-talk-icon-button" aria-label="Configurar Modo Caminhada" title="Configurar Modo Caminhada" aria-expanded={settingsOpen} aria-controls="small-talk-settings-panel" onClick={() => setSettingsOpen(v => !v)}><SmallTalkIcon name="settings"/></button>
       <span>Configurar Modo Caminhada</span>
-      <button type="button" className="primary-button" disabled={loading || !filtered.length} onClick={startWalking}>▶ Iniciar Modo Caminhada ({filtered.length} perguntas)</button>
+      <button type="button" className="primary-button" disabled={loading || !filtered.length} onClick={startWalking}><SmallTalkIcon name="play"/> Iniciar Modo Caminhada ({filtered.length} perguntas)</button>
     </div>
     {settingsOpen && <section id="small-talk-settings-panel" className="small-talk-settings" aria-labelledby="small-talk-settings-title">
       <h3 id="small-talk-settings-title">🚶 Configurar Modo Caminhada</h3>
@@ -884,8 +912,8 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
         <span>Exportar tópico inteiro</span>
       </button>
       <button type="button" className="small-talk-topic-export-trigger" disabled={loading || !topic || topic.topicId !== topicId}
-        onClick={() => { setNewCardOpen(true); setNewCardError(''); setEditError(''); }}>＋ <span>Nova pergunta</span></button>
-      <button type="button" className="small-talk-topic-export-trigger" aria-label="Imprimir tópico A4" disabled={loading || !topic || topic.topicId !== topicId} onClick={() => setPrintMode('both')}>🖨️ <span>Imprimir tópico</span></button>
+        onClick={() => { setNewCardOpen(true); setNewCardError(''); setEditError(''); }}><SmallTalkIcon name="plus"/> <span>Nova pergunta</span></button>
+      <button type="button" className="small-talk-topic-export-trigger" aria-label="Imprimir tópico A4" disabled={loading || !topic || topic.topicId !== topicId} onClick={() => setPrintMode('both')}><SmallTalkIcon name="printer"/> <span>Imprimir tópico</span></button>
       <span className="settings-dialog-help">Exportação e impressão incluem o tópico inteiro.</span>
     </div>
     {Object.values(customItems).some(entry => entry.topicId === topicId && entry.deleted && !(topic?.items ?? []).some(item => item.id === entry.item.id)) &&
@@ -903,14 +931,15 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       <h3>{loading ? 'Carregando...' : `${topic?.title ?? ''} — ${filtered.length} perguntas`}</h3>
       <div className="small-talk-actions">
         <button type="button" className="secondary-button" aria-pressed={orderMode} disabled={loading || !topic} onClick={() => setOrderMode(v => !v)}>
-          {orderMode ? '✓ Concluir ordenação' : '↕ Ordenar cards'}
+          <SmallTalkIcon name={orderMode ? 'check' : 'sort'}/> {orderMode ? 'Concluir ordenação' : 'Ordenar cards'}
         </button>
         {orderMode && <button type="button" className="secondary-button" disabled={!topicOrders[topicId]?.length} onClick={resetCardOrder}>Restaurar ordem original</button>}
       </div>
       {orderError && <p role="alert">{orderError}</p>}
       {occurrenceError && <p role="alert">{occurrenceError}</p>}
-      {orderMode && <p className="settings-dialog-help">Use as setas para mudar a ordem dos cards. A ordem é salva automaticamente neste dispositivo e será usada na impressão. O Modo Caminhada não é alterado.</p>}
+      {orderMode && <p className="settings-dialog-help">Use as setas para mudar a ordem dos cards. A ordem é salva neste dispositivo e determina a numeração da impressão e do Modo Caminhada.</p>}
     </header>
+    {duplicateMessage && <p role="status" className="settings-dialog-help">{duplicateMessage}</p>}
     <div className="small-talk-question-list">{filtered.map(item => {
       const original = answerFor(item);
       const shown = answerVisible.includes(item.id);
@@ -919,16 +948,16 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       return <article className="small-talk-question-card" id={'small-talk-card-' + item.id} key={item.id}>
         {orderMode && <div className="small-talk-order-controls">
           <span>Posição {orderedTopicItems.findIndex(card => card.id === item.id) + 1}</span>
-          <button type="button" className="small-talk-icon-button" title="Mover card para cima" aria-label="Mover card para cima" disabled={orderedTopicItems[0]?.id === item.id} onClick={() => moveCard(item.id, -1)}>↑</button>
-          <button type="button" className="small-talk-icon-button" title="Mover card para baixo" aria-label="Mover card para baixo" disabled={orderedTopicItems[orderedTopicItems.length - 1]?.id === item.id} onClick={() => moveCard(item.id, 1)}>↓</button>
+          <button type="button" className="small-talk-icon-button" title="Mover card para cima" aria-label="Mover card para cima" disabled={orderedTopicItems[0]?.id === item.id} onClick={() => moveCard(item.id, -1)}><SmallTalkIcon name="arrow-up"/></button>
+          <button type="button" className="small-talk-icon-button" title="Mover card para baixo" aria-label="Mover card para baixo" disabled={orderedTopicItems[orderedTopicItems.length - 1]?.id === item.id} onClick={() => moveCard(item.id, 1)}><SmallTalkIcon name="arrow-down"/></button>
         </div>}
         <div className="small-talk-occurrences" aria-label="Ocorrências desta pergunta no HelloTalk">
           <span>HelloTalk: <strong>{occurrenceCount(item.id)}</strong> ocorrência(s)</span>
-          <button type="button" className="small-talk-icon-button" aria-label="Remover uma ocorrência HelloTalk" title="Corrigir ocorrência (-1)" disabled={occurrenceCount(item.id) === 0} onClick={() => changeOccurrence(item.id, -1)}>−1</button>
-          <button type="button" className="small-talk-icon-button" aria-label="Adicionar uma ocorrência HelloTalk" title="Registrar ocorrência (+1)" onClick={() => changeOccurrence(item.id, 1)}>+1</button>
+          <button type="button" className="small-talk-icon-button" aria-label="Remover uma ocorrência HelloTalk" title="Corrigir ocorrência (-1)" disabled={occurrenceCount(item.id) === 0} onClick={() => changeOccurrence(item.id, -1)}><SmallTalkIcon name="minus"/></button>
+          <button type="button" className="small-talk-icon-button" aria-label="Adicionar uma ocorrência HelloTalk" title="Registrar ocorrência (+1)" onClick={() => changeOccurrence(item.id, 1)}><SmallTalkIcon name="plus"/></button>
         </div>
-        <div className="small-talk-question-heading"><p><strong>{questionFor(item)}</strong></p>
-          <button type="button" className="small-talk-icon-button" aria-label="Editar pergunta" title="Editar pergunta" onClick={() => openQuestionEditor(item)}>✏️</button>
+        <div className="small-talk-question-heading"><p><strong><span className="small-talk-print-number">{printNumbers[item.id]}. </span>{questionFor(item)}</strong></p>
+          <button type="button" className="small-talk-icon-button" aria-label="Editar pergunta" title="Editar pergunta" onClick={() => openQuestionEditor(item)}><SmallTalkIcon name="edit"/></button>
           {questionOverrides[item.id] && <button type="button" className="small-talk-restore-button" onClick={() => restoreQuestion(item.id)}>Restaurar pergunta</button>}
         </div>
         {questionEditorId === item.id && <div className="small-talk-editor">
@@ -961,20 +990,21 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
           </button>
           {answerCopyMessage && <span role="status" className="settings-dialog-help">{answerCopyMessage}</span>}
         </div> : <div className="small-talk-actions">
-          <button type="button" className="small-talk-icon-button" aria-label={favorites.includes(item.id) ? 'Desfavoritar' : 'Favoritar'} title={favorites.includes(item.id) ? 'Desfavoritar' : 'Favoritar'} aria-pressed={favorites.includes(item.id)} onClick={() => toggleFavorite(item.id)}>{favorites.includes(item.id) ? '★' : '☆'}</button>
-          <button type="button" className="small-talk-icon-button" aria-label={shown ? 'Ocultar resposta' : 'Ver resposta'} title={shown ? 'Ocultar resposta' : 'Ver resposta'} aria-pressed={shown} disabled={!original} onClick={() => reveal(item.id)}>👁️</button>
-          <button type="button" className="small-talk-icon-button" aria-label="Editar resposta" title="Editar resposta" onClick={() => openEditor(item)}>✏️</button>
-          <button type="button" className="small-talk-icon-button" aria-label="Excluir resposta ativa" title="Excluir resposta ativa" disabled={!original} onClick={() => removeAnswer(item.id)}>🗑️</button>
-          <button type="button" className="small-talk-icon-button" aria-label="Imprimir esta pergunta e resposta" title="Imprimir apenas este card (A4)" disabled={!questionFor(item).trim()} onClick={() => printCard(item)}>🖨️</button>
+          <button type="button" className="small-talk-icon-button" aria-label={favorites.includes(item.id) ? 'Desfavoritar' : 'Favoritar'} title={favorites.includes(item.id) ? 'Desfavoritar' : 'Favoritar'} aria-pressed={favorites.includes(item.id)} onClick={() => toggleFavorite(item.id)}><SmallTalkIcon name="star" filled={favorites.includes(item.id)}/></button>
+          <button type="button" className="small-talk-icon-button" aria-label={shown ? 'Ocultar resposta' : 'Ver resposta'} title={shown ? 'Ocultar resposta' : 'Ver resposta'} aria-pressed={shown} disabled={!original} onClick={() => reveal(item.id)}><SmallTalkIcon name={shown ? 'eye-off' : 'eye'}/></button>
+          <button type="button" className="small-talk-icon-button" aria-label="Duplicar card" title="Duplicar este card no mesmo tópico" onClick={() => duplicateCard(item)}><SmallTalkIcon name="duplicate"/></button>
+          <button type="button" className="small-talk-icon-button" aria-label="Editar resposta" title="Editar resposta" onClick={() => openEditor(item)}><SmallTalkIcon name="edit"/></button>
+          <button type="button" className="small-talk-icon-button" aria-label="Excluir resposta ativa" title="Excluir resposta ativa" disabled={!original} onClick={() => removeAnswer(item.id)}><SmallTalkIcon name="trash"/></button>
+          <button type="button" className="small-talk-icon-button" aria-label="Imprimir esta pergunta e resposta" title="Imprimir apenas este card (A4)" disabled={!questionFor(item).trim()} onClick={() => printCard(item)}><SmallTalkIcon name="printer"/></button>
           <button type="button" className="small-talk-icon-button" aria-label="Exportar JSON público deste card"
-            title="Exportar JSON público deste card" onClick={() => openCardExport(item)}>📋</button>
+            title="Exportar JSON público deste card" onClick={() => openCardExport(item)}><SmallTalkIcon name="clipboard"/></button>
           <button type="button" className="small-talk-icon-button small-talk-ai-button"
             aria-label={`Analisar pergunta e resposta com ${aiProvider === 'chatgpt' ? 'ChatGPT' : 'Gemini'}`}
             title={`Analisar com ${aiProvider === 'chatgpt' ? 'ChatGPT' : 'Gemini'}`}
             onClick={() => openAIAnalysis(item)}>
             <img src={aiAssetPath(aiProvider)} width="22" height="22" alt="" aria-hidden="true" />
           </button>
-          <button type="button" className="small-talk-icon-button" aria-label="Abrir pergunta e resposta no Google Tradutor" title="Google Tradutor (pergunta + resposta)" disabled={!questionFor(item).trim() && !original.trim()} onClick={() => googleTranslate([questionFor(item).trim(), original.trim()].filter(Boolean).join('\n\n'))}>🌐</button>
+          <button type="button" className="small-talk-icon-button" aria-label="Abrir pergunta e resposta no Google Tradutor" title="Google Tradutor (pergunta + resposta)" disabled={!questionFor(item).trim() && !original.trim()} onClick={() => googleTranslate([questionFor(item).trim(), original.trim()].filter(Boolean).join('\n\n'))}><SmallTalkIcon name="globe"/></button>
           {modified && <button type="button" className="small-talk-restore-button" title="Recuperar o original importado" aria-expanded={restorePromptId === item.id} onClick={() => setRestorePromptId(current => current === item.id ? null : item.id)}>Restaurar original</button>}
           {!original && !modified && <span className="settings-dialog-help">Sem resposta importada — use o lápis para incluir</span>}
           {modified && <span className="settings-dialog-help">Resposta editada localmente</span>}

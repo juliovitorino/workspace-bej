@@ -78,6 +78,38 @@ export function createCustomItem(topicId: string, question: string, answer: stri
     topicId, item, deleted: false, updatedAt: new Date().toISOString()
   } }, storage);
 }
+/**
+ * Copies the currently visible question/answer into an independent personal card.
+ * It does not copy favorites, statistics, overrides or revision identifiers.
+ */
+export function duplicateCustomItem(
+  topicId: string, source: SmallTalkItem, question: string, answer: string, order: number,
+  storage: Storage = window.localStorage
+): { items: CustomSmallTalkItems; id: string } {
+  if (!topicId || !question.trim()) throw new Error('Não é possível duplicar um card sem pergunta.');
+  const existing = readCustomItems(storage);
+  let id = newCardId();
+  while (existing[id] || id === source.id) id = newCardId();
+  const item: SmallTalkItem = {
+    ...source,
+    id,
+    type: 'question-answer',
+    order,
+    enabled: true,
+    question: { text: question.trim(), audio: null },
+    answer: answer.trim() ? { text: answer.trim(), audio: null } : null,
+    context: null,
+    followUps: source.followUps.map(followUp => ({ ...followUp, id: newCardId(), audio: null })),
+    linkedIntentionIds: [...source.linkedIntentionIds],
+    tags: [...source.tags],
+    source: { document: 'BEJ Small Talk — cópia pessoal', section: topicId, paragraphIndex: -1 },
+    reviewStatus: 'pending'
+  };
+  const items = writeCustomItems({ ...existing, [id]: {
+    topicId, item, deleted: false, updatedAt: new Date().toISOString()
+  } }, storage);
+  return { items, id };
+}
 export function setCustomItemDeleted(id: string, deleted: boolean, storage: Storage = window.localStorage): CustomSmallTalkItems {
   const current = readCustomItems(storage);
   if (!current[id]) throw new Error('Card pessoal não encontrado.');
