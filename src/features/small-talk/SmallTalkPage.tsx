@@ -8,7 +8,7 @@ import type { SmallTalkItem, SmallTalkTopic, SmallTalkTopicIndexEntry, SmallTalk
 import { readLocalJson, readWalkingSettings, saveLocalJson, SMALL_TALK_FAVORITES_KEY, SMALL_TALK_WALKING_SETTINGS_KEY } from './smallTalkPreferences';
 import { SmallTalkWalking } from './SmallTalkWalking';
 import { SmallTalkIcon } from './SmallTalkIcon';
-import { printableSmallTalkItems, smallTalkPrintNumbers, duplicateCardOrder } from './smallTalkPrintOrder';
+import { printableSmallTalkItems, smallTalkPrintNumbers, nextSmallTalkCardOrder } from './smallTalkPrintOrder';
 import { beginAnswerEdit, changeAnswerEdit, undoAnswerEdit, redoAnswerEdit } from './smallTalkAnswerEditHistory';
 import { celebrateAchievement, celebrateCompletedSession } from '../../utils/achievements';
 import { readAnswerOverrides, saveAnswerOverride, restoreOriginalAnswer, pruneRedundantAnswerOverrides } from './smallTalkAnswerOverrides';
@@ -201,25 +201,28 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     setEditError('');
     if (!topic || topic.topicId !== topicId) { setEditError('Aguarde o carregamento do tópico.'); return; }
     try {
-      const nextOrder = duplicateCardOrder(activeTopicItems, item);
+      const nextOrder = nextSmallTalkCardOrder(activeTopicItems);
       const { items, id } = duplicateCustomItem(topicId, item, questionFor(item), answerFor(item), nextOrder);
       setCustomItems(items);
       const orderedIds = orderedTopicItems.map(card => card.id);
-      const position = orderedIds.indexOf(item.id);
-      orderedIds.splice(position + 1, 0, id);
+      orderedIds.push(id);
       try {
         const next = { ...topicOrders, [topicId]: orderedIds };
         saveLocalJson(ORDER_KEY, next);
         setTopicOrders(next);
         setOrderError('');
-        setDuplicateMessage('Card duplicado! A cópia foi inserida após o original.');
+        setDuplicateMessage(`Card duplicado! A cópia foi adicionada ao final do tópico, como pergunta ${printableSmallTalkItems(orderedTopicItems, questionFor).length + 1}.`);
       } catch {
-        setOrderError('Card duplicado, mas não foi possível salvar sua posição. Ele aparecerá ao final do tópico.');
+        setOrderError('Card duplicado, mas não foi possível salvar a ordenação manual. Ele aparecerá ao final do tópico pela ordem do catálogo.');
         setDuplicateMessage('Card duplicado com sucesso.');
       }
       // Show the new card even when a filter would otherwise hide it.
       setQuery(''); setLevel('all'); setFavoritesOnly(false);
       setOccurrenceFilter('all'); setOccurrenceSort('manual');
+      // Wait for React to render the new card after clearing filters, then reveal it.
+      window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
+        document.getElementById('small-talk-card-' + id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }));
     } catch (error) {
       setEditError(error instanceof Error ? error.message : 'Não foi possível duplicar o card.');
     }
