@@ -219,6 +219,10 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       // Show the new card even when a filter would otherwise hide it.
       setQuery(''); setLevel('all'); setFavoritesOnly(false);
       setOccurrenceFilter('all'); setOccurrenceSort('manual');
+      // Wait for React to render the new card after clearing filters, then reveal it.
+      window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
+        document.getElementById('small-talk-card-' + id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }));
     } catch (error) {
       setEditError(error instanceof Error ? error.message : 'Não foi possível duplicar o card.');
     }
