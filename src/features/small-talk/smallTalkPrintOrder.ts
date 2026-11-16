@@ -12,7 +12,7 @@ export function smallTalkPrintNumbers(items: SmallTalkItem[]): Record<string, nu
   return Object.fromEntries(items.map((item, index) => [item.id, index + 1]));
 }
 
-/** A fractional order also keeps a duplicate next to its source after custom-item Drive sync. */
+/** Fractional catalog order preserves adjacency after custom-item sync when no manual order overrides it. */
 export function duplicateCardOrder(items: SmallTalkItem[], source: SmallTalkItem): number {
   const next = items.map(item => item.order).filter(order => order > source.order).sort((a, b) => a - b)[0];
   const candidate = next === undefined ? source.order + 0.5 : source.order + (next - source.order) / 2;
