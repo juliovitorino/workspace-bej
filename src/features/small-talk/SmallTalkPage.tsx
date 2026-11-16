@@ -268,12 +268,13 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     const question = questionFor(item).trim();
     const answer = answerFor(item).trim();
     if (!question) return;
+    const printedNumber = smallTalkPrintNumbers(printableSmallTalkItems(orderedTopicItems, questionFor))[item.id];
     const esc = (value: string) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
     const popup = window.open('', '_blank');
     if (!popup) { setEditError('Permita pop-ups para imprimir este card.'); return; }
     const title = topic?.title ?? 'Small Talk';
     const css = '@page{size:A4;margin:17mm 16mm 17mm 26mm}body{font:12pt/1.55 Arial,sans-serif;color:#111827;background:#fff;margin:0}h1{font-size:20pt;color:#15438f}header{border-bottom:2px solid #1d4ed8;margin-bottom:20px}.qa{break-inside:avoid;page-break-inside:avoid}.q{font-weight:700;color:#154bb2;white-space:pre-wrap}.a{margin:12px 0 0 20px;white-space:pre-wrap}';
-    const html = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + esc(title) + ' — Pergunta e resposta</title><style>' + css + '</style></head><body><header><h1>' + esc(title) + '</h1><p>Brazilian English Journey — Small Talk</p></header><article class="qa"><div class="q">' + esc(question) + '</div>' +
+    const html = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + esc(title) + ' — Pergunta e resposta</title><style>' + css + '</style></head><body><header><h1>' + esc(title) + '</h1><p>Brazilian English Journey — Small Talk</p></header><article class="qa"><div class="q">' + esc((printedNumber ? printedNumber + '. ' : '') + question) + '</div>' +
       (answer ? '<div class="a">' + esc(answer) + '</div>' : '') + '</article></body></html>';
     popup.document.open();
     popup.document.write(html);
@@ -955,7 +956,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
           <button type="button" className="small-talk-icon-button" aria-label="Remover uma ocorrência HelloTalk" title="Corrigir ocorrência (-1)" disabled={occurrenceCount(item.id) === 0} onClick={() => changeOccurrence(item.id, -1)}><SmallTalkIcon name="minus"/></button>
           <button type="button" className="small-talk-icon-button" aria-label="Adicionar uma ocorrência HelloTalk" title="Registrar ocorrência (+1)" onClick={() => changeOccurrence(item.id, 1)}><SmallTalkIcon name="plus"/></button>
         </div>
-        <div className="small-talk-question-heading"><p><strong>{questionFor(item)}</strong></p>
+        <div className="small-talk-question-heading"><p><strong><span className="small-talk-print-number">{printNumbers[item.id]}. </span>{questionFor(item)}</strong></p>
           <button type="button" className="small-talk-icon-button" aria-label="Editar pergunta" title="Editar pergunta" onClick={() => openQuestionEditor(item)}><SmallTalkIcon name="edit"/></button>
           {questionOverrides[item.id] && <button type="button" className="small-talk-restore-button" onClick={() => restoreQuestion(item.id)}>Restaurar pergunta</button>}
         </div>
