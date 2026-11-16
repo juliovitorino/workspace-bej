@@ -11,3 +11,11 @@ export function printableSmallTalkItems(
 export function smallTalkPrintNumbers(items: SmallTalkItem[]): Record<string, number> {
   return Object.fromEntries(items.map((item, index) => [item.id, index + 1]));
 }
+
+/** A fractional order also keeps a duplicate next to its source after custom-item Drive sync. */
+export function duplicateCardOrder(items: SmallTalkItem[], source: SmallTalkItem): number {
+  const next = items.map(item => item.order).filter(order => order > source.order).sort((a, b) => a - b)[0];
+  const candidate = next === undefined ? source.order + 0.5 : source.order + (next - source.order) / 2;
+  if (Number.isFinite(candidate) && candidate > source.order && (next === undefined || candidate < next)) return candidate;
+  return Math.max(0, ...items.map(item => item.order)) + 1;
+}
