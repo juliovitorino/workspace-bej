@@ -83,6 +83,16 @@ test('print numbering is stable when walking filters or shuffles', () => {
   const shuffled = [printable[2], printable[0]];
   assert.deepEqual(shuffled.map(item => numbers[item.id]).join(','), '3,1');
 });
+test('duplicate uses a natural order between the source and next printed card', () => {
+  const items = [card('a', 1), card('b', 2), card('c', 3)];
+  const order = print.duplicateCardOrder(items, items[1]);
+  assert.ok(order > 2 && order < 3);
+  const storage = memoryStorage();
+  const { items: copies, id } = cards.duplicateCustomItem('travel', items[1], 'B?', 'B answer', order, storage);
+  const printed = print.printableSmallTalkItems([...items, copies[id].item].sort((a, b) => a.order - b.order), item => item.question.text);
+  assert.equal(printed.map(item => item.id).join(','), 'a,b,' + id + ',c');
+  assert.match(page, /orderedIds\.splice\(position \+ 1, 0, id\)/);
+});
 test('walking shows printed number but does not speak it', () => {
   assert.match(page, /questionNumbers=\{printNumbers\}/);
   assert.match(walking, /questionNumbers\[current\.id\]/);
