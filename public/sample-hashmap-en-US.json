@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1282,
+    "totalIntentions": 1286,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -76291,6 +76291,386 @@
           "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
           "exampleItem": "This makes all the effort worthwhile.",
           "intent": "This makes all the effort worthwhile"
+        }
+      ]
+    },
+    {
+      "id": "finalmente-entender-tudo-fazer-sentido-8c13a6d4-9e57-4fa2-9b48-c0e95f27a364",
+      "intention": "Finally understand / Everything clicks",
+      "pattern": "It / something + (finally) + clicks / clicked / has clicked + explanation or context",
+      "description": "Describes the moment an idea, explanation, concept, or situation finally makes sense after doubt, confusion, or difficulty. In informal American English, \"click\" conveys the feeling that the pieces of an idea have fallen into place. It is common in learning, programming, problem-solving, and developing skills. Unlike \"sink in\", which emphasizes gradual absorption, or \"hit me\", which emphasizes sudden realization, \"click\" focuses on understanding how something works or makes sense.",
+      "category": "expressions",
+      "searchTerms": [
+        "it clicked",
+        "it finally clicked",
+        "now it clicks",
+        "everything clicked",
+        "it all clicked",
+        "something clicked",
+        "clicked for me",
+        "clicked in my head",
+        "finally understand",
+        "now it makes sense",
+        "everything fell into place"
+      ],
+      "validationPatterns": [
+        "\\b(?:it|everything|something|things|the\\s+explanation|the\\s+solution)\\s+(?:(?:has|have)\\s+)?(?:finally\\s+|all\\s+)?click(?:s|ed)?\\b"
+      ],
+      "tags": [
+        "comprehension",
+        "learning",
+        "understanding",
+        "clarity",
+        "discoveries",
+        "making sense",
+        "problem-solving",
+        "studying",
+        "programming",
+        "languages",
+        "idioms",
+        "sentence generator",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Use \"It clicked\" when something finally makes sense: \"It finally clicked!\" or \"The explanation finally clicked for me\". \"Something clicked\" describes a sudden moment of understanding. Indicate the person with \"for me\", \"for her\", or \"for them\". Present-tense forms include \"Now it clicks\", though \"Now it makes sense\" is also very common. The past form is \"clicked\"; the present perfect is \"It has finally clicked\". \"Something clicked in my head\" is another natural expression. Here, \"click\" metaphorically describes ideas fitting together, especially concepts, rules, processes, and explanations.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "a13c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "It finally clicked for me how this structure works in English.",
+          "intent": "It finally clicked"
+        },
+        {
+          "id": "b24d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Now it clicks! I was overcomplicating something simple.",
+          "intent": "Now it clicks"
+        },
+        {
+          "id": "c35e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Everything clicked when the teacher explained it differently.",
+          "intent": "Everything clicked"
+        },
+        {
+          "id": "d46f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "It finally clicked for me why I could not speak English naturally.",
+          "intent": "It finally clicked"
+        },
+        {
+          "id": "e57082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "It all clicked when I started thinking in terms of intentions instead of rules.",
+          "intent": "It all clicked"
+        },
+        {
+          "id": "f68193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "It finally clicked for her after several practical examples.",
+          "intent": "It finally clicked"
+        },
+        {
+          "id": "a792a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Something clicked in my head when I understood the logic behind the system.",
+          "intent": "Something clicked in my head"
+        },
+        {
+          "id": "b8a3b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Now everything clicks after your explanation of the problem.",
+          "intent": "Now everything clicks"
+        },
+        {
+          "id": "c9b4c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "The solution clicked for me after I saw the code running.",
+          "intent": "The solution clicked"
+        },
+        {
+          "id": "d0c5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "It finally clicked for me why I needed to practice speaking every day.",
+          "intent": "It finally clicked"
+        }
+      ]
+    },
+    {
+      "id": "cair-a-ficha-de-repente-7b02f5c3-8d46-4e91-8a37-b9f84d16e253",
+      "intention": "It suddenly hit me / Suddenly realize",
+      "pattern": "It + (suddenly / just) + hit + object pronoun + (that + clause)",
+      "description": "Describes suddenly noticing, discovering, or understanding something. In American English, \"It hit me\" conveys a realization that comes to mind abruptly. It works for discoveries, conclusions, remembered details, recognized mistakes, and shifts in perspective. It is natural in personal stories and informal conversations. Unlike \"sink in\", which emphasizes gradual absorption, \"hit me\" focuses on the instant of realization.",
+      "category": "expressions",
+      "searchTerms": [
+        "it hit me",
+        "it suddenly hit me",
+        "it just hit me",
+        "that is when it hit me",
+        "that's when it hit me",
+        "it hit him",
+        "it hit her",
+        "it hit us",
+        "suddenly realize",
+        "sudden realization",
+        "unexpected discovery"
+      ],
+      "validationPatterns": [
+        "\\bit\\s+(?:(?:suddenly|just|finally)\\s+)?hit\\s+(?:me|you|him|her|us|them)\\b"
+      ],
+      "tags": [
+        "realization",
+        "sudden awareness",
+        "discoveries",
+        "surprises",
+        "awareness",
+        "memories",
+        "thoughts",
+        "personal experiences",
+        "idioms",
+        "sentence generator",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Use \"It hit me that + clause\": \"It hit me that I was wrong\". \"That's when it hit me\" locates the moment of realization. \"It suddenly hit me\" emphasizes the abrupt discovery, while \"It just hit me\" means the realization has only just occurred. \"Hit\" is irregular and has the same form in the present, past, and past participle: hit, hit, hit. Change the object pronoun as needed: \"It hit him\", \"It hit her\", \"It hit us\", or \"It hit them\". In this figurative construction, \"hit\" describes sudden mental awareness rather than a physical blow; the focus is on the discovery itself rather than the time needed to absorb it.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "a12c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "That's when it hit me that I was making the same mistake.",
+          "intent": "That's when it hit me"
+        },
+        {
+          "id": "b23d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "It suddenly hit me that I had left my phone at home.",
+          "intent": "It suddenly hit me"
+        },
+        {
+          "id": "c34e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "It just hit me! I was trying to translate everything in my head.",
+          "intent": "It just hit me"
+        },
+        {
+          "id": "d45f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "That's when it hit me that I needed to change the way I studied.",
+          "intent": "That's when it hit me"
+        },
+        {
+          "id": "e56082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "It suddenly hit her that she was in the wrong job.",
+          "intent": "It suddenly hit her"
+        },
+        {
+          "id": "f67193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "At that moment, it hit me that we had taken the wrong route.",
+          "intent": "it hit me"
+        },
+        {
+          "id": "a782a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "That's when it hit him that he needed to apologize.",
+          "intent": "That's when it hit him"
+        },
+        {
+          "id": "b893b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "It suddenly hit me that I did not need to be afraid of making mistakes.",
+          "intent": "It suddenly hit me"
+        },
+        {
+          "id": "c9a4c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "That's when it hit us that the deadline was that day.",
+          "intent": "That's when it hit us"
+        },
+        {
+          "id": "d0b5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "It hit me that I had left the door open.",
+          "intent": "It hit me"
+        }
+      ]
+    },
+    {
+      "id": "demorar-para-cair-a-ficha-6a91e4b2-7c35-4d80-9f26-a8e73c05d142",
+      "intention": "Take time to sink in / Fully absorb something",
+      "pattern": "Information or reality + sink / sank / sunk in; take time + for something + to sink in",
+      "description": "Expresses the process of fully understanding, accepting, or absorbing information, news, an experience, or a reality. In American English, the phrasal verb \"sink in\" is used when something takes time to register mentally or emotionally. It is especially common with major changes, achievements, losses, surprises, and unexpected events. Unlike an immediate intellectual insight, \"sink in\" emphasizes gradually absorbing a reality.",
+      "category": "expressions",
+      "searchTerms": [
+        "sink in",
+        "sank in",
+        "sunk in",
+        "it finally sank in",
+        "it hasn't sunk in yet",
+        "starting to sink in",
+        "take time to sink in",
+        "took a while to sink in",
+        "let it sink in",
+        "absorb the news",
+        "process what happened",
+        "fully register"
+      ],
+      "validationPatterns": [
+        "\\b(?:sink(?:s|ing)?|sank|sunk)\\s+in\\b"
+      ],
+      "tags": [
+        "taking it in",
+        "assimilation",
+        "understanding",
+        "reality",
+        "emotions",
+        "news",
+        "experiences",
+        "awareness",
+        "phrasal verbs",
+        "idioms",
+        "sentence generator",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Use \"sink in\" when information or reality becomes fully absorbed. Conjugate the verb for the tense: \"It finally sank in\", \"It hasn't sunk in yet\", and \"It's starting to sink in\". The simple past is \"sank in\" and the past participle is \"sunk in\". To describe the delay, say \"It took a while for it to sink in\". The information itself can be the subject: \"The news finally sank in\". The verb forms are sink, sank, sunk. This construction emphasizes absorption over time rather than necessarily a sudden discovery.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "a11c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "It finally sank in that I had gotten the job.",
+          "intent": "It finally sank in"
+        },
+        {
+          "id": "b22d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "It hasn't sunk in yet that we are moving to another country.",
+          "intent": "It hasn't sunk in yet"
+        },
+        {
+          "id": "c33e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "It took a while for it to sink in after I got that news.",
+          "intent": "It took a while for it to sink in"
+        },
+        {
+          "id": "d44f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "It sank in when I realized I had actually graduated from college.",
+          "intent": "It sank in"
+        },
+        {
+          "id": "e55082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "It still hasn't sunk in for her after everything that happened.",
+          "intent": "It still hasn't sunk in"
+        },
+        {
+          "id": "f66193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "It took time for it to sink in after he lost his job.",
+          "intent": "It took time for it to sink in"
+        },
+        {
+          "id": "a772a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "It didn't sink in right away when I heard the result.",
+          "intent": "It didn't sink in"
+        },
+        {
+          "id": "b883b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "It finally sank in for us that the project had succeeded.",
+          "intent": "It finally sank in"
+        },
+        {
+          "id": "c994c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "It still hasn't sunk in that my son is already an adult.",
+          "intent": "It still hasn't sunk in"
+        },
+        {
+          "id": "d0a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "It gradually sank in after they announced the change.",
+          "intent": "gradually sank in"
+        }
+      ]
+    },
+    {
+      "id": "o-mais-de-todos-superlativo-0c232389-f436-42f1-88be-6cf6ea969e13",
+      "intention": "The most / The best + characteristic + ever",
+      "pattern": "Subject + be + the + superlative + (noun) + ever / of them all / of all time",
+      "description": "Expresses that a person, object, experience, or event stands out to the greatest degree for a particular quality. In everyday American English, a superlative followed by \"ever\", such as \"the best ever\", \"the funniest ever\", or \"the most amazing ever\", is a natural, emphatic way to express this. It commonly conveys enthusiasm, surprise, admiration, satisfaction, or a personal assessment. Use \"of them all\" for a defined group and \"of all time\" for a historical comparison when appropriate.",
+      "category": "expressions",
+      "searchTerms": [
+        "ever",
+        "the best ever",
+        "the worst ever",
+        "the funniest ever",
+        "the most beautiful ever",
+        "the hardest ever",
+        "the most amazing ever",
+        "the most incredible experience",
+        "the best there has ever been",
+        "superlative",
+        "of them all",
+        "of all time",
+        "emphatic comparison"
+      ],
+      "validationPatterns": [
+        "\\bthe\\s+(?:best|worst|[a-z]+est|most\\s+[a-z]+)(?:\\s+[a-z]+){0,4}\\s+(?:ever|of\\s+them\\s+all|of\\s+all\\s+time)\\b"
+      ],
+      "tags": [
+        "superlatives",
+        "comparisons",
+        "emphasis",
+        "opinions",
+        "preferences",
+        "experiences",
+        "feelings",
+        "evaluations",
+        "everyday expressions",
+        "sentence generator",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "The main pattern is \"the + superlative + noun + ever\": \"the funniest movie ever\" or \"the best day ever\". Omit the noun when the context makes it clear: \"This is the best ever\". Short adjectives usually take \"-est\", as in \"funniest\", \"biggest\", and \"hardest\"; many longer adjectives take \"most\", as in \"most beautiful\" or \"most amazing\". Irregular forms include good/best and bad/worst. \"Ever\" follows the item being compared and adds emphasis, often in a subjective assessment rather than a verifiable historical record. For a specific group, use \"of them all\": \"This one is the funniest of them all\". For an explicit historical comparison, use \"of all time\": \"the greatest player of all time\". These alternatives are not interchangeable in every context. Different tenses are possible: \"This is the best movie ever\", \"That was the worst day ever\", and \"This has been the most amazing experience ever\".",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "cd13fb6c-cfb4-4d5a-9c5b-b7647e39266d",
+          "exampleItem": "This is the funniest movie ever.",
+          "intent": "the funniest movie ever"
+        },
+        {
+          "id": "e2b33a27-cf23-4f8d-9e24-963cb9731ca5",
+          "exampleItem": "This was the best day ever.",
+          "intent": "the best day ever"
+        },
+        {
+          "id": "6193de3b-05ea-4f17-a477-c47f6f72330c",
+          "exampleItem": "That was the worst idea ever.",
+          "intent": "the worst idea ever"
+        },
+        {
+          "id": "b1b467fc-ab94-4dd4-b43d-a3627712fc63",
+          "exampleItem": "This is the most beautiful song ever.",
+          "intent": "the most beautiful song ever"
+        },
+        {
+          "id": "00e33d04-39dd-4eea-b852-4974d70bb198",
+          "exampleItem": "That was the most amazing trip ever.",
+          "intent": "the most amazing trip ever"
+        },
+        {
+          "id": "f7309349-4751-4871-b53a-50e69abb1dd5",
+          "exampleItem": "That was the most exciting moment ever.",
+          "intent": "the most exciting moment ever"
+        },
+        {
+          "id": "b84413e5-fbe7-4728-a69f-15f3c75d0cd8",
+          "exampleItem": "This is the best pizza ever.",
+          "intent": "the best pizza ever"
+        },
+        {
+          "id": "7d25d273-748c-493a-9c8c-44610f0075e1",
+          "exampleItem": "That was the hardest challenge ever.",
+          "intent": "the hardest challenge ever"
+        },
+        {
+          "id": "c9aa6139-55ba-486b-b80e-686b56b31b61",
+          "exampleItem": "That was the most pleasant surprise ever.",
+          "intent": "the most pleasant surprise ever"
+        },
+        {
+          "id": "00f6de8d-1fe2-4828-a059-4c2196586027",
+          "exampleItem": "This is the most useful app ever.",
+          "intent": "the most useful app ever"
+        },
+        {
+          "id": "1e16eb31-ca1d-4052-b770-741fd2937723",
+          "exampleItem": "That was the most embarrassing mistake ever.",
+          "intent": "the most embarrassing mistake ever"
+        },
+        {
+          "id": "8d9449b0-964c-4fcd-82d7-cc44cf8bbc59",
+          "exampleItem": "This was the most rewarding experience ever.",
+          "intent": "the most rewarding experience ever"
         }
       ]
     }

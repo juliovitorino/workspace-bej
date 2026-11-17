@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1282,
+    "totalIntentions": 1286,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -52715,6 +52715,403 @@
           "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
           "exampleItem": "Cela fait que tous ces efforts en valent la peine.",
           "intent": "Cela fait que"
+        }
+      ]
+    },
+    {
+      "id": "finalmente-entender-tudo-fazer-sentido-8c13a6d4-9e57-4fa2-9b48-c0e95f27a364",
+      "intention": "Enfin comprendre / Tout s'éclaire",
+      "pattern": "enfin comprendre / tout devient clair / avoir un déclic",
+      "description": "Exprime le moment où une idée, une explication, un concept ou une situation devient enfin compréhensible après une période de doute ou de confusion. En français, on peut dire enfin comprendre, avoir un déclic ou tout s'éclaire. Ces expressions sont courantes dans l'apprentissage, la programmation et la résolution de problèmes. Elles mettent l'accent sur la compréhension du fonctionnement ou de la logique de quelque chose, plutôt que sur l'assimilation progressive d'une nouvelle ou une prise de conscience soudaine.",
+      "category": "expressions",
+      "searchTerms": [
+        "j'ai enfin compris",
+        "maintenant je comprends",
+        "tout devient clair",
+        "tout s'éclaire",
+        "avoir un déclic",
+        "les pièces du puzzle",
+        "comprendre le fonctionnement",
+        "comprendre la logique"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])J['’]ai\\s+enfin\\s+compris(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Maintenant\\s+je\\s+comprends(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Tout\\s+s['’]est\\s+éclairé(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Les\\s+pièces\\s+du\\s+puzzle\\s+se\\s+sont\\s+assemblées(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Tout\\s+est\\s+enfin\\s+devenu\\s+clair(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])J['’]ai\\s+eu\\s+un\\s+déclic(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Maintenant\\s+tout\\s+s['’]emboîte(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])J['’]ai\\s+réussi\\s+à\\s+comprendre(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "compréhension",
+        "apprentissage",
+        "clarté",
+        "découvertes",
+        "logique",
+        "résolution de problèmes",
+        "études",
+        "programmation",
+        "langues",
+        "expressions idiomatiques",
+        "construction de phrases",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Pour décrire une compréhension qui se débloque, on dit J'ai enfin compris, J'ai eu un déclic ou Tout s'est éclairé. Le sujet peut être la personne qui comprend ou les éléments qui deviennent clairs. On précise le contenu avec comprendre comment ou comprendre pourquoi. Pour une autre personne : Elle a enfin compris ou Tout est devenu clair pour elle. Au présent, Maintenant je comprends souligne le résultat actuel. Ces tournures concernent surtout la logique d'une règle, d'une explication ou d'un processus.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "a13c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "J'ai enfin compris comment cette structure fonctionne en anglais.",
+          "intent": "J'ai enfin compris"
+        },
+        {
+          "id": "b24d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Maintenant je comprends ! Je compliquais quelque chose de simple.",
+          "intent": "Maintenant je comprends"
+        },
+        {
+          "id": "c35e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Tout s'est éclairé quand le professeur a expliqué les choses autrement.",
+          "intent": "Tout s'est éclairé"
+        },
+        {
+          "id": "d46f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "J'ai enfin compris pourquoi je n'arrivais pas à parler anglais naturellement.",
+          "intent": "J'ai enfin compris"
+        },
+        {
+          "id": "e57082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Les pièces du puzzle se sont assemblées quand j'ai commencé à penser en intentions plutôt qu'en règles.",
+          "intent": "Les pièces du puzzle se sont assemblées"
+        },
+        {
+          "id": "f68193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Tout est enfin devenu clair pour elle après plusieurs exemples pratiques.",
+          "intent": "Tout est enfin devenu clair"
+        },
+        {
+          "id": "a792a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "J'ai eu un déclic quand j'ai compris la logique du système.",
+          "intent": "J'ai eu un déclic"
+        },
+        {
+          "id": "b8a3b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Maintenant tout s'emboîte, après ton explication du problème.",
+          "intent": "Maintenant tout s'emboîte"
+        },
+        {
+          "id": "c9b4c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "J'ai réussi à comprendre la solution après avoir vu le code fonctionner.",
+          "intent": "J'ai réussi à comprendre"
+        },
+        {
+          "id": "d0c5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "J'ai enfin compris pourquoi je devais pratiquer la conversation tous les jours.",
+          "intent": "J'ai enfin compris"
+        }
+      ]
+    },
+    {
+      "id": "cair-a-ficha-de-repente-7b02f5c3-8d46-4e91-8a37-b9f84d16e253",
+      "intention": "Prendre soudain conscience / Se rendre compte",
+      "pattern": "soudain + se rendre compte / c'est alors que + comprendre",
+      "description": "Exprime l'instant où une personne prend soudain conscience d'un fait. Cette perception peut porter sur une découverte, une conclusion, un souvenir, une erreur ou un changement de perspective. Les tournures Je me suis soudain rendu compte et C'est alors que j'ai compris sont naturelles dans les récits personnels et les conversations informelles. L'accent porte sur l'instant de la prise de conscience, plutôt que sur le temps nécessaire pour assimiler une information.",
+      "category": "expressions",
+      "searchTerms": [
+        "je me suis soudain rendu compte",
+        "c'est alors que j'ai compris",
+        "prendre conscience",
+        "réaliser soudain",
+        "comprendre tout à coup",
+        "prise de conscience",
+        "découverte inattendue"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])C['’]est\\s+alors\\s+que\\s+j['’]ai\\s+compris(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Je\\s+me\\s+suis\\s+soudain\\s+rendu\\s+compte(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Maintenant\\s+je\\s+réalise(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Elle\\s+s['’]est\\s+soudain\\s+rendu\\s+compte(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])À\\s+ce\\s+moment-là,\\s+j['’]ai\\s+compris(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])C['’]est\\s+alors\\s+qu['’]il\\s+a\\s+compris(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])C['’]est\\s+alors\\s+que\\s+nous\\s+avons\\s+compris(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Je\\s+me\\s+suis\\s+rendu\\s+compte(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "prise de conscience",
+        "perception soudaine",
+        "découvertes",
+        "surprises",
+        "souvenirs",
+        "pensées",
+        "expériences personnelles",
+        "expressions idiomatiques",
+        "construction de phrases",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Se rendre compte de quelque chose devient se rendre compte que devant une proposition : Je me suis rendu compte que je m'étais trompé. Pour souligner la soudaineté, on ajoute soudain, tout à coup ou à ce moment-là. C'est alors que j'ai compris met en valeur le moment décisif d'un récit. Le participe rendu reste invariable dans se rendre compte : Elle s'est rendu compte, Nous nous sommes rendu compte. Le sujet varie selon la personne qui prend conscience du fait.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "a12c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "C'est alors que j'ai compris que je faisais toujours la même erreur.",
+          "intent": "C'est alors que j'ai compris"
+        },
+        {
+          "id": "b23d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Je me suis soudain rendu compte que j'avais oublié mon portable à la maison.",
+          "intent": "Je me suis soudain rendu compte"
+        },
+        {
+          "id": "c34e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Maintenant je réalise ! J'essayais de tout traduire mentalement.",
+          "intent": "Maintenant je réalise"
+        },
+        {
+          "id": "d45f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "C'est alors que j'ai compris que je devais changer ma façon d'étudier.",
+          "intent": "C'est alors que j'ai compris"
+        },
+        {
+          "id": "e56082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Elle s'est soudain rendu compte qu'elle n'était pas dans le bon emploi.",
+          "intent": "Elle s'est soudain rendu compte"
+        },
+        {
+          "id": "f67193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "À ce moment-là, j'ai compris que nous avions pris le mauvais chemin.",
+          "intent": "À ce moment-là, j'ai compris"
+        },
+        {
+          "id": "a782a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "C'est alors qu'il a compris qu'il devait s'excuser.",
+          "intent": "C'est alors qu'il a compris"
+        },
+        {
+          "id": "b893b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Je me suis soudain rendu compte que je n'avais pas besoin d'avoir peur de faire des erreurs.",
+          "intent": "Je me suis soudain rendu compte"
+        },
+        {
+          "id": "c9a4c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "C'est alors que nous avons compris que le délai expirait ce jour-là.",
+          "intent": "C'est alors que nous avons compris"
+        },
+        {
+          "id": "d0b5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Je me suis rendu compte que j'avais laissé la porte ouverte.",
+          "intent": "Je me suis rendu compte"
+        }
+      ]
+    },
+    {
+      "id": "demorar-para-cair-a-ficha-6a91e4b2-7c35-4d80-9f26-a8e73c05d142",
+      "intention": "Mettre du temps à réaliser / Assimiler une nouvelle",
+      "pattern": "mettre du temps à réaliser / ne pas encore avoir assimilé / réaliser peu à peu",
+      "description": "Exprime le processus par lequel une information, une nouvelle, une expérience ou une réalité est pleinement comprise ou acceptée. On dit mettre du temps à réaliser ou ne pas encore avoir assimilé lorsque l'information demande du temps pour être absorbée mentalement ou émotionnellement. Ces expressions sont courantes pour les changements importants, les réussites, les pertes et les événements inattendus. Elles soulignent l'assimilation progressive d'une réalité.",
+      "category": "expressions",
+      "searchTerms": [
+        "mettre du temps à réaliser",
+        "ne pas encore avoir assimilé",
+        "assimiler une nouvelle",
+        "absorber une information",
+        "réaliser peu à peu",
+        "prendre conscience progressivement",
+        "avoir du mal à y croire"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])J['’]ai\\s+enfin\\s+réalisé(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Je\\s+ne\\s+réalise\\s+pas\\s+encore(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])J['’]ai\\s+mis\\s+du\\s+temps\\s+à\\s+réaliser(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])J['’]ai\\s+vraiment\\s+réalisé(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Elle\\s+n['’]a\\s+pas\\s+encore\\s+assimilé(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Il\\s+a\\s+mis\\s+du\\s+temps\\s+à\\s+réaliser(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Je\\s+n['’]ai\\s+pas\\s+réalisé\\s+immédiatement(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Nous\\s+avons\\s+enfin\\s+réalisé(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Je\\s+n['’]ai\\s+pas\\s+encore\\s+assimilé(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])J['’]ai\\s+réalisé\\s+peu\\s+à\\s+peu(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "assimilation",
+        "compréhension",
+        "réalité",
+        "émotions",
+        "nouvelles",
+        "expériences",
+        "perception",
+        "prise de conscience",
+        "expressions idiomatiques",
+        "construction de phrases",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Mettre du temps à + infinitif indique la durée nécessaire : J'ai mis du temps à réaliser. Pour une nouvelle encore difficile à intégrer, on dit Je n'ai pas encore assimilé que ou Je ne réalise pas encore que. Enfin, peu à peu et pas immédiatement précisent le rythme de l'assimilation. Le sujet est normalement la personne qui assimile la réalité ; au pluriel, Nous avons enfin réalisé. Il s'agit d'une assimilation mentale ou émotionnelle, qui peut se produire après l'annonce initiale.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "a11c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "J'ai enfin réalisé que j'avais obtenu le poste.",
+          "intent": "J'ai enfin réalisé"
+        },
+        {
+          "id": "b22d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Je ne réalise pas encore que nous allons déménager dans un autre pays.",
+          "intent": "Je ne réalise pas encore"
+        },
+        {
+          "id": "c33e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "J'ai mis du temps à réaliser après avoir reçu cette nouvelle.",
+          "intent": "J'ai mis du temps à réaliser"
+        },
+        {
+          "id": "d44f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "J'ai vraiment réalisé quand j'ai compris que j'avais bel et bien terminé mes études universitaires.",
+          "intent": "J'ai vraiment réalisé"
+        },
+        {
+          "id": "e55082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Elle n'a pas encore assimilé tout ce qui s'est passé.",
+          "intent": "Elle n'a pas encore assimilé"
+        },
+        {
+          "id": "f66193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Il a mis du temps à réaliser après avoir perdu son emploi.",
+          "intent": "Il a mis du temps à réaliser"
+        },
+        {
+          "id": "a772a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Je n'ai pas réalisé immédiatement quand j'ai entendu le résultat.",
+          "intent": "Je n'ai pas réalisé immédiatement"
+        },
+        {
+          "id": "b883b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Nous avons enfin réalisé que le projet avait réussi.",
+          "intent": "Nous avons enfin réalisé"
+        },
+        {
+          "id": "c994c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Je n'ai pas encore assimilé le fait que mon fils est déjà adulte.",
+          "intent": "Je n'ai pas encore assimilé"
+        },
+        {
+          "id": "d0a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "J'ai réalisé peu à peu après l'annonce du changement.",
+          "intent": "J'ai réalisé peu à peu"
+        }
+      ]
+    },
+    {
+      "id": "o-mais-de-todos-superlativo-0c232389-f436-42f1-88be-6cf6ea969e13",
+      "intention": "Le plus / La plus + caractéristique + de tous",
+      "pattern": "sujet + être + le / la plus + adjectif + de tous / jamais",
+      "description": "Exprime qu'une personne, un objet, une expérience ou un événement se distingue au plus haut degré par une caractéristique. En français, on emploie un superlatif, souvent renforcé par de tous, de toutes ou que j'aie jamais connu. Ces constructions expriment l'enthousiasme, la surprise, l'admiration ou une évaluation personnelle. De tous compare les membres d'un groupe ; de tous les temps étend la comparaison à une perspective historique. Une appréciation enthousiaste n'est pas nécessairement l'affirmation d'un record vérifiable.",
+      "category": "expressions",
+      "searchTerms": [
+        "le meilleur de tous",
+        "la meilleure de toutes",
+        "le pire de tous",
+        "le plus drôle de tous",
+        "la plus belle de toutes",
+        "le plus difficile de tous",
+        "le plus incroyable de tous",
+        "de tous les temps",
+        "que j'aie jamais connu",
+        "superlatif",
+        "comparaison maximale"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])le\\s+plus\\s+drôle\\s+de\\s+tous(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])le\\s+meilleur\\s+jour\\s+de\\s+tous(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])la\\s+pire\\s+idée\\s+de\\s+toutes(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])la\\s+plus\\s+belle\\s+de\\s+toutes(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])le\\s+plus\\s+incroyable\\s+de\\s+tous(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])le\\s+plus\\s+émouvant\\s+de\\s+tous(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])la\\s+meilleure\\s+pizza\\s+de\\s+toutes(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])le\\s+plus\\s+difficile\\s+de\\s+tous(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])la\\s+plus\\s+agréable\\s+de\\s+toutes(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])la\\s+plus\\s+utile\\s+de\\s+toutes(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])la\\s+plus\\s+embarrassante\\s+de\\s+toutes(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])la\\s+plus\\s+gratifiante\\s+de\\s+toutes(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "superlatifs",
+        "comparaisons",
+        "insistance",
+        "opinions",
+        "préférences",
+        "expériences",
+        "sentiments",
+        "évaluations",
+        "expressions du quotidien",
+        "construction de phrases",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Le superlatif se construit avec le, la ou les + plus ou moins + adjectif : le film le plus drôle, la chanson la plus belle. L'article s'accorde avec le nom. Bon donne meilleur et mauvais peut donner pire : la meilleure pizza, la pire idée. De tous et de toutes précisent le groupe comparé. Pour une expérience personnelle, on peut dire le meilleur film que j'aie jamais vu ; le subjonctif est courant après un superlatif. De tous les temps exprime une comparaison historique. On adapte le temps du verbe : C'est le meilleur, C'était le meilleur, Cela a été la meilleure expérience.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "cd13fb6c-cfb4-4d5a-9c5b-b7647e39266d",
+          "exampleItem": "C'est le film le plus drôle de tous.",
+          "intent": "le plus drôle de tous"
+        },
+        {
+          "id": "e2b33a27-cf23-4f8d-9e24-963cb9731ca5",
+          "exampleItem": "C'était le meilleur jour de tous.",
+          "intent": "le meilleur jour de tous"
+        },
+        {
+          "id": "6193de3b-05ea-4f17-a477-c47f6f72330c",
+          "exampleItem": "C'était la pire idée de toutes.",
+          "intent": "la pire idée de toutes"
+        },
+        {
+          "id": "b1b467fc-ab94-4dd4-b43d-a3627712fc63",
+          "exampleItem": "C'est la chanson la plus belle de toutes.",
+          "intent": "la plus belle de toutes"
+        },
+        {
+          "id": "00e33d04-39dd-4eea-b852-4974d70bb198",
+          "exampleItem": "C'était le voyage le plus incroyable de tous.",
+          "intent": "le plus incroyable de tous"
+        },
+        {
+          "id": "f7309349-4751-4871-b53a-50e69abb1dd5",
+          "exampleItem": "C'était le moment le plus émouvant de tous.",
+          "intent": "le plus émouvant de tous"
+        },
+        {
+          "id": "b84413e5-fbe7-4728-a69f-15f3c75d0cd8",
+          "exampleItem": "C'est la meilleure pizza de toutes.",
+          "intent": "la meilleure pizza de toutes"
+        },
+        {
+          "id": "7d25d273-748c-493a-9c8c-44610f0075e1",
+          "exampleItem": "C'était le défi le plus difficile de tous.",
+          "intent": "le plus difficile de tous"
+        },
+        {
+          "id": "c9aa6139-55ba-486b-b80e-686b56b31b61",
+          "exampleItem": "C'était la surprise la plus agréable de toutes.",
+          "intent": "la plus agréable de toutes"
+        },
+        {
+          "id": "00f6de8d-1fe2-4828-a059-4c2196586027",
+          "exampleItem": "C'est l'application la plus utile de toutes.",
+          "intent": "la plus utile de toutes"
+        },
+        {
+          "id": "1e16eb31-ca1d-4052-b770-741fd2937723",
+          "exampleItem": "C'était l'erreur la plus embarrassante de toutes.",
+          "intent": "la plus embarrassante de toutes"
+        },
+        {
+          "id": "8d9449b0-964c-4fcd-82d7-cc44cf8bbc59",
+          "exampleItem": "C'était l'expérience la plus gratifiante de toutes.",
+          "intent": "la plus gratifiante de toutes"
         }
       ]
     }

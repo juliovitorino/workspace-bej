@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1282,
+    "totalIntentions": 1286,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -52180,6 +52180,401 @@
           "intent": "Eso hace que todo el esfuerzo merezca la pena"
         }
       ]
+    },
+    {
+      "id": "finalmente-entender-tudo-fazer-sentido-8c13a6d4-9e57-4fa2-9b48-c0e95f27a364",
+      "intention": "Entender por fin / Tener sentido",
+      "pattern": "por fin + entender / ahora + tener sentido / las piezas + encajar",
+      "description": "Expresa el momento en que una idea, explicación, concepto o situación empieza a tener sentido después de un periodo de dudas, confusión o dificultad. Es habitual al aprender, estudiar, programar o resolver problemas. «Por fin lo entendí» y «las piezas encajaron» destacan la comprensión de cómo funciona algo, frente a la asimilación emocional gradual de una realidad o una revelación repentina.",
+      "searchTerms": [
+        "por fin entendí",
+        "por fin lo entendí",
+        "ahora tiene sentido",
+        "todo tuvo sentido",
+        "las piezas encajaron",
+        "todo encaja",
+        "hacer clic",
+        "comprender una explicación",
+        "entender un concepto",
+        "entender la lógica"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])por\\s+fin\\s+entendí(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])ahora\\s+tiene\\s+sentido(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])todo\\s+tuvo\\s+sentido(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])las\\s+piezas\\s+encajaron(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])por\\s+fin\\s+tuvo\\s+sentido(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])hice\\s+clic(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])ahora\\s+todo\\s+encaja(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])conseguí\\s+entender(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "comprensión",
+        "aprendizaje",
+        "claridad",
+        "conceptos",
+        "explicaciones",
+        "resolución de problemas",
+        "expresiones idiomáticas",
+        "conversación"
+      ],
+      "structure": "Se puede decir «Por fin entendí cómo funciona» o «Ahora tiene sentido». Para describir metafóricamente la comprensión se usa «Las piezas encajaron» o «Hice clic». El verbo se adapta al momento: «Todo encaja», «Todo encajó» o «Por fin lo he entendido». «Para ella» o «para mí» permiten precisar quién comprende la explicación. Estas expresiones son especialmente adecuadas para conceptos, reglas, procesos y soluciones.",
+      "examples": [
+        {
+          "id": "a13c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Por fin entendí cómo funciona esta estructura en inglés.",
+          "intent": "Por fin entendí"
+        },
+        {
+          "id": "b24d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "¡Ahora tiene sentido! Estaba complicando algo sencillo.",
+          "intent": "Ahora tiene sentido"
+        },
+        {
+          "id": "c35e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Todo tuvo sentido cuando el profesor lo explicó de otra manera.",
+          "intent": "Todo tuvo sentido"
+        },
+        {
+          "id": "d46f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Por fin entendí por qué no conseguía hablar inglés con naturalidad.",
+          "intent": "Por fin entendí"
+        },
+        {
+          "id": "e57082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Las piezas encajaron cuando empecé a pensar en intenciones en vez de reglas.",
+          "intent": "Las piezas encajaron"
+        },
+        {
+          "id": "f68193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Por fin tuvo sentido para ella después de varios ejemplos prácticos.",
+          "intent": "Por fin tuvo sentido"
+        },
+        {
+          "id": "a792a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Hice clic cuando entendí la lógica del sistema.",
+          "intent": "Hice clic"
+        },
+        {
+          "id": "b8a3b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Ahora todo encaja después de que me hayas explicado el problema.",
+          "intent": "Ahora todo encaja"
+        },
+        {
+          "id": "c9b4c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Conseguí entender la solución después de ver el código en funcionamiento.",
+          "intent": "Conseguí entender"
+        },
+        {
+          "id": "d0c5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Por fin entendí por qué necesitaba practicar conversación todos los días.",
+          "intent": "Por fin entendí"
+        }
+      ],
+      "category": "expressions",
+      "related": [],
+      "level": "B2"
+    },
+    {
+      "id": "cair-a-ficha-de-repente-7b02f5c3-8d46-4e91-8a37-b9f84d16e253",
+      "intention": "Darse cuenta de repente / Caer en la cuenta",
+      "pattern": "de repente + darse cuenta de que / fue entonces cuando + darse cuenta",
+      "description": "Expresa el momento en que alguien descubre o comprende algo de repente. «De repente me di cuenta» transmite una percepción que surge de forma súbita. Puede tratarse de una conclusión, un recuerdo, un error o un cambio de perspectiva. Es natural en relatos personales y conversaciones informales. El foco está en el instante del descubrimiento, más que en el tiempo necesario para asimilarlo.",
+      "searchTerms": [
+        "darme cuenta de repente",
+        "de repente me di cuenta",
+        "fue entonces cuando me di cuenta",
+        "caer en la cuenta",
+        "ahora caigo",
+        "percibir un error",
+        "revelación repentina",
+        "descubrimiento"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])fue\\s+entonces\\s+cuando\\s+me\\s+di\\s+cuenta(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])de\\s+repente\\s+me\\s+di\\s+cuenta(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])ahora\\s+caigo(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])de\\s+repente\\s+ella\\s+se\\s+dio\\s+cuenta(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])en\\s+ese\\s+momento\\s+me\\s+di\\s+cuenta(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])fue\\s+entonces\\s+cuando\\s+él\\s+se\\s+dio\\s+cuenta(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])fue\\s+entonces\\s+cuando\\s+nos\\s+dimos\\s+cuenta(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])caí\\s+en\\s+la\\s+cuenta(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "revelación",
+        "percepción repentina",
+        "descubrimientos",
+        "recuerdos",
+        "errores",
+        "cambio de perspectiva",
+        "expresiones idiomáticas",
+        "conversación"
+      ],
+      "structure": "La construcción «Me di cuenta de que + oración» presenta el contenido de la revelación. «Fue entonces cuando me di cuenta» sitúa ese instante en un relato y «De repente me di cuenta» destaca su carácter súbito. El pronombre y el verbo cambian según la persona: «se dio cuenta», «nos dimos cuenta» o «se dieron cuenta». También se dice «Caí en la cuenta de que». Se mantiene la preposición «de» delante de «que».",
+      "examples": [
+        {
+          "id": "a12c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Fue entonces cuando me di cuenta de que estaba cometiendo el mismo error.",
+          "intent": "Fue entonces cuando me di cuenta"
+        },
+        {
+          "id": "b23d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "De repente me di cuenta de que me había dejado el móvil en casa.",
+          "intent": "De repente me di cuenta"
+        },
+        {
+          "id": "c34e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "¡Ahora caigo! Estaba intentando traducirlo todo mentalmente.",
+          "intent": "Ahora caigo"
+        },
+        {
+          "id": "d45f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Fue entonces cuando me di cuenta de que tenía que cambiar mi manera de estudiar.",
+          "intent": "Fue entonces cuando me di cuenta"
+        },
+        {
+          "id": "e56082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "De repente ella se dio cuenta de que no estaba en el trabajo adecuado.",
+          "intent": "De repente ella se dio cuenta"
+        },
+        {
+          "id": "f67193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "En ese momento me di cuenta de que habíamos tomado el camino equivocado.",
+          "intent": "En ese momento me di cuenta"
+        },
+        {
+          "id": "a782a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Fue entonces cuando él se dio cuenta de que tenía que pedir disculpas.",
+          "intent": "Fue entonces cuando él se dio cuenta"
+        },
+        {
+          "id": "b893b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "De repente me di cuenta de que no tenía por qué tener miedo a cometer errores.",
+          "intent": "De repente me di cuenta"
+        },
+        {
+          "id": "c9a4c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Fue entonces cuando nos dimos cuenta de que el plazo terminaba ese día.",
+          "intent": "Fue entonces cuando nos dimos cuenta"
+        },
+        {
+          "id": "d0b5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Caí en la cuenta de que había dejado la puerta abierta.",
+          "intent": "Caí en la cuenta"
+        }
+      ],
+      "category": "expressions",
+      "related": [],
+      "level": "B2"
+    },
+    {
+      "id": "demorar-para-cair-a-ficha-6a91e4b2-7c35-4d80-9f26-a8e73c05d142",
+      "intention": "Tardar en asimilar algo / Hacerse a la idea",
+      "pattern": "tardar en + asimilar / todavía no + asimilar / poco a poco + hacerse a la idea",
+      "description": "Expresa el proceso de comprender, aceptar o asimilar plenamente una información, noticia, experiencia o realidad. Se usa cuando hace falta tiempo para interiorizar algo mental o emocionalmente, sobre todo ante cambios importantes, logros, pérdidas, sorpresas o hechos inesperados. A diferencia de una comprensión intelectual inmediata, «asimilarlo» y «hacerse a la idea» destacan la aceptación gradual de una realidad.",
+      "searchTerms": [
+        "tardar en asimilar",
+        "hacerse a la idea",
+        "todavía no lo he asimilado",
+        "por fin lo asimilé",
+        "asimilar una noticia",
+        "interiorizar una realidad",
+        "procesar lo ocurrido",
+        "costar creerlo"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])por\\s+fin\\s+asimilé(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])todavía\\s+no\\s+me\\s+he\\s+hecho\\s+a\\s+la\\s+idea(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])tardé\\s+en\\s+asimilarlo(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])lo\\s+asimilé(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])todavía\\s+no\\s+lo\\s+ha\\s+asimilado(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])le\\s+llevó\\s+tiempo\\s+asimilarlo(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])no\\s+lo\\s+asimilé(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])por\\s+fin\\s+asimilamos(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])todavía\\s+no\\s+he\\s+asimilado(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])lo\\s+fui\\s+asimilando(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "asimilación",
+        "comprensión",
+        "realidad",
+        "emociones",
+        "noticias",
+        "experiencias",
+        "percepción",
+        "expresiones idiomáticas",
+        "conversación"
+      ],
+      "structure": "Para expresar la asimilación se puede decir «Por fin asimilé que había ocurrido» o «Todavía no me he hecho a la idea». «Tardé en asimilarlo» y «Me llevó tiempo asimilarlo» indican la duración del proceso. Se puede usar «hacerse a la idea de que + oración» o «asimilar que + oración». Los tiempos se adaptan al contexto: «Estoy empezando a asimilarlo», «Lo fui asimilando» o «Aún no lo he asimilado». El foco está en interiorizar la realidad, no necesariamente en una revelación repentina.",
+      "examples": [
+        {
+          "id": "a11c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Por fin asimilé que había conseguido el trabajo.",
+          "intent": "Por fin asimilé"
+        },
+        {
+          "id": "b22d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Todavía no me he hecho a la idea de que nos vamos a mudar a otro país.",
+          "intent": "Todavía no me he hecho a la idea"
+        },
+        {
+          "id": "c33e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Tardé en asimilarlo después de recibir aquella noticia.",
+          "intent": "Tardé en asimilarlo"
+        },
+        {
+          "id": "d44f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Lo asimilé cuando comprendí que de verdad había terminado la carrera.",
+          "intent": "Lo asimilé"
+        },
+        {
+          "id": "e55082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Ella todavía no lo ha asimilado después de todo lo que ha pasado.",
+          "intent": "todavía no lo ha asimilado"
+        },
+        {
+          "id": "f66193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Le llevó tiempo asimilarlo después de perder el trabajo.",
+          "intent": "Le llevó tiempo asimilarlo"
+        },
+        {
+          "id": "a772a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "No lo asimilé de inmediato cuando oí el resultado.",
+          "intent": "No lo asimilé"
+        },
+        {
+          "id": "b883b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Por fin asimilamos que el proyecto había salido bien.",
+          "intent": "Por fin asimilamos"
+        },
+        {
+          "id": "c994c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Todavía no he asimilado que mi hijo ya es adulto.",
+          "intent": "Todavía no he asimilado"
+        },
+        {
+          "id": "d0a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Lo fui asimilando poco a poco después de que anunciaran el cambio.",
+          "intent": "Lo fui asimilando"
+        }
+      ],
+      "category": "expressions",
+      "related": [],
+      "level": "B2"
+    },
+    {
+      "id": "o-mais-de-todos-superlativo-0c232389-f436-42f1-88be-6cf6ea969e13",
+      "intention": "El más / La más + característica + de todos",
+      "pattern": "sujeto + ser + el/la más + adjetivo + de todos/todas",
+      "description": "Expresa que una persona, un objeto, una experiencia o un acontecimiento destaca en grado máximo por una característica. Se usa para mostrar entusiasmo, sorpresa, admiración, satisfacción o una valoración personal. «El mejor de todos» compara elementos de un grupo, mientras que «el mejor de todos los tiempos» amplía la comparación al conjunto de la historia. Estas expresiones también pueden ser enfáticas y subjetivas, sin pretender demostrar un récord.",
+      "searchTerms": [
+        "de todos",
+        "de todas",
+        "el mejor de todos",
+        "la mejor de todas",
+        "el peor de todos",
+        "la peor de todas",
+        "el más divertido",
+        "la más bonita",
+        "el más difícil",
+        "el más increíble",
+        "superlativo",
+        "comparación máxima",
+        "de todos los tiempos"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])más\\s+divertida\\s+de\\s+todas(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])mejor\\s+día\\s+de\\s+todos(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])peor\\s+idea\\s+de\\s+todas(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])más\\s+bonita\\s+de\\s+todas(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])más\\s+increíble\\s+de\\s+todos(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])más\\s+emocionante\\s+de\\s+todos(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])mejor\\s+pizza\\s+de\\s+todas(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])más\\s+difícil\\s+de\\s+todos(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])más\\s+agradable\\s+de\\s+todas(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])más\\s+útil\\s+de\\s+todas(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])más\\s+embarazoso\\s+de\\s+todos(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])más\\s+gratificante\\s+de\\s+todas(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "superlativos",
+        "comparaciones",
+        "énfasis",
+        "opiniones",
+        "preferencias",
+        "experiencias",
+        "sentimientos",
+        "valoraciones",
+        "expresiones cotidianas",
+        "generador de frases",
+        "conversación"
+      ],
+      "structure": "El superlativo relativo se forma con artículo y «más + adjetivo»: «la película más divertida de todas». El artículo concuerda con el sustantivo. «Bueno» y «malo» tienen las formas «mejor» y «peor»: «el mejor día de todos» y «la peor idea de todas». Si el sustantivo ya se conoce, puede omitirse: «Esta es la mejor de todas». «De todos los tiempos» sitúa la comparación en un marco histórico; «que he probado» o «que he vivido» la limitan a la experiencia personal. Se pueden usar distintos tiempos: «es», «fue» o «ha sido».",
+      "examples": [
+        {
+          "id": "cd13fb6c-cfb4-4d5a-9c5b-b7647e39266d",
+          "exampleItem": "Esta es la película más divertida de todas.",
+          "intent": "más divertida de todas"
+        },
+        {
+          "id": "e2b33a27-cf23-4f8d-9e24-963cb9731ca5",
+          "exampleItem": "Este fue el mejor día de todos.",
+          "intent": "mejor día de todos"
+        },
+        {
+          "id": "6193de3b-05ea-4f17-a477-c47f6f72330c",
+          "exampleItem": "Esa fue la peor idea de todas.",
+          "intent": "peor idea de todas"
+        },
+        {
+          "id": "b1b467fc-ab94-4dd4-b43d-a3627712fc63",
+          "exampleItem": "Esta es la canción más bonita de todas.",
+          "intent": "más bonita de todas"
+        },
+        {
+          "id": "00e33d04-39dd-4eea-b852-4974d70bb198",
+          "exampleItem": "Aquel fue el viaje más increíble de todos.",
+          "intent": "más increíble de todos"
+        },
+        {
+          "id": "f7309349-4751-4871-b53a-50e69abb1dd5",
+          "exampleItem": "Ese fue el momento más emocionante de todos.",
+          "intent": "más emocionante de todos"
+        },
+        {
+          "id": "b84413e5-fbe7-4728-a69f-15f3c75d0cd8",
+          "exampleItem": "Esta es la mejor pizza de todas.",
+          "intent": "mejor pizza de todas"
+        },
+        {
+          "id": "7d25d273-748c-493a-9c8c-44610f0075e1",
+          "exampleItem": "Ese fue el reto más difícil de todos.",
+          "intent": "más difícil de todos"
+        },
+        {
+          "id": "c9aa6139-55ba-486b-b80e-686b56b31b61",
+          "exampleItem": "Esa fue la sorpresa más agradable de todas.",
+          "intent": "más agradable de todas"
+        },
+        {
+          "id": "00f6de8d-1fe2-4828-a059-4c2196586027",
+          "exampleItem": "Esta es la aplicación más útil de todas.",
+          "intent": "más útil de todas"
+        },
+        {
+          "id": "1e16eb31-ca1d-4052-b770-741fd2937723",
+          "exampleItem": "Aquel fue el error más embarazoso de todos.",
+          "intent": "más embarazoso de todos"
+        },
+        {
+          "id": "8d9449b0-964c-4fcd-82d7-cc44cf8bbc59",
+          "exampleItem": "Esta fue la experiencia más gratificante de todas.",
+          "intent": "más gratificante de todas"
+        }
+      ],
+      "category": "expressions",
+      "related": [],
+      "level": "B1"
     }
   ]
 }

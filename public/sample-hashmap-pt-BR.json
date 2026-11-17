@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1282,
+    "totalIntentions": 1286,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -52142,6 +52142,114 @@
           "id": "d0a5d71b-4e85-46b9-b2ab-fc703d980514",
           "exampleItem": "A ficha caiu aos poucos depois que eles anunciaram a mudança.",
           "intent": "A ficha caiu"
+        }
+      ]
+    },
+    {
+      "id": "o-mais-de-todos-superlativo-0c232389-f436-42f1-88be-6cf6ea969e13",
+      "intention": "O mais / A mais + característica + de todos",
+      "pattern": "sujeito + ser + o/a mais + adjetivo + de todos(as)",
+      "description": "Expressa que uma pessoa, objeto, experiência ou acontecimento se destaca em grau máximo por determinada característica. No inglês americano cotidiano, uma maneira muito natural e enfática de expressar essa intenção é utilizar um superlativo seguido de 'ever', como em 'the best ever', 'the funniest ever' ou 'the most amazing ever'. Essa construção é especialmente comum para expressar entusiasmo, surpresa, admiração, satisfação ou avaliações pessoais. Dependendo do contexto, também podem ser utilizadas as construções 'of them all', para comparar elementos de um grupo definido, e 'of all time', para comparações históricas.",
+      "category": "expressions",
+      "searchTerms": [
+        "de todos",
+        "de todas",
+        "o melhor de todos",
+        "a melhor de todas",
+        "o pior de todos",
+        "a pior de todas",
+        "o mais engraçado de todos",
+        "a mais bonita de todas",
+        "o mais difícil de todos",
+        "o mais incrível de todos",
+        "a experiência mais incrível",
+        "o melhor que já existiu",
+        "o pior que já aconteceu",
+        "superlativo",
+        "comparação máxima",
+        "ênfase em comparações"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:mais|menos)\\s+(?:\\p{L}+[\\s-]+){0,4}de\\s+tod[oa]s(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:melhor|pior|maior|menor)\\s+de\\s+tod[oa]s(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:o|a|os|as)\\s+(?:melhor(?:es)?|pior(?:es)?|maior(?:es)?|menor(?:es)?)\\s+de\\s+tod[oa]s(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "superlativos",
+        "comparações",
+        "ênfase",
+        "opiniões",
+        "preferências",
+        "experiências",
+        "sentimentos",
+        "avaliações",
+        "expressões cotidianas",
+        "gerador de frases",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "A construção principal é 'the + superlativo + substantivo + ever', como em 'the funniest movie ever' (o filme mais engraçado de todos) e 'the best day ever' (o melhor dia de todos). Quando o substantivo já está identificado pelo contexto, ele pode ser omitido: 'This is the best ever' (Este é o melhor de todos). Para adjetivos curtos, normalmente utiliza-se a terminação '-est', como em 'funniest', 'biggest' e 'hardest'. Para muitos adjetivos longos, utiliza-se 'most + adjetivo', como em 'most beautiful' e 'most amazing'. Alguns superlativos são irregulares: 'good' torna-se 'best' e 'bad' torna-se 'worst'. A palavra 'ever' aparece depois do elemento comparado e acrescenta uma ideia enfática de 'de todos', 'que já existiu' ou 'que já experimentei'. É comum utilizar essa construção em avaliações subjetivas, sem necessariamente afirmar um recorde histórico verificável. Para comparar elementos de um grupo específico, pode-se utilizar 'of them all', como em 'This one is the funniest of them all'. Para indicar explicitamente 'de todos os tempos', utiliza-se 'of all time', como em 'the greatest player of all time'. Essas alternativas não são intercambiáveis em todos os contextos. A construção pode ser utilizada com diferentes tempos verbais: 'This is the best movie ever', 'That was the worst day ever' e 'This has been the most amazing experience ever'.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "cd13fb6c-cfb4-4d5a-9c5b-b7647e39266d",
+          "exampleItem": "Este é o filme mais engraçado de todos.",
+          "intent": "mais engraçado de todos"
+        },
+        {
+          "id": "e2b33a27-cf23-4f8d-9e24-963cb9731ca5",
+          "exampleItem": "Este foi o melhor dia de todos.",
+          "intent": "melhor dia de todos"
+        },
+        {
+          "id": "6193de3b-05ea-4f17-a477-c47f6f72330c",
+          "exampleItem": "Essa foi a pior ideia de todas.",
+          "intent": "pior ideia de todas"
+        },
+        {
+          "id": "b1b467fc-ab94-4dd4-b43d-a3627712fc63",
+          "exampleItem": "Esta é a música mais bonita de todas.",
+          "intent": "mais bonita de todas"
+        },
+        {
+          "id": "00e33d04-39dd-4eea-b852-4974d70bb198",
+          "exampleItem": "Aquela foi a viagem mais incrível de todas.",
+          "intent": "mais incrível de todas"
+        },
+        {
+          "id": "f7309349-4751-4871-b53a-50e69abb1dd5",
+          "exampleItem": "Esse foi o momento mais emocionante de todos.",
+          "intent": "mais emocionante de todos"
+        },
+        {
+          "id": "b84413e5-fbe7-4728-a69f-15f3c75d0cd8",
+          "exampleItem": "Esta é a melhor pizza de todas.",
+          "intent": "melhor pizza de todas"
+        },
+        {
+          "id": "7d25d273-748c-493a-9c8c-44610f0075e1",
+          "exampleItem": "Esse foi o desafio mais difícil de todos.",
+          "intent": "mais difícil de todos"
+        },
+        {
+          "id": "c9aa6139-55ba-486b-b80e-686b56b31b61",
+          "exampleItem": "Essa foi a surpresa mais agradável de todas.",
+          "intent": "mais agradável de todas"
+        },
+        {
+          "id": "00f6de8d-1fe2-4828-a059-4c2196586027",
+          "exampleItem": "Este é o aplicativo mais útil de todos.",
+          "intent": "mais útil de todos"
+        },
+        {
+          "id": "1e16eb31-ca1d-4052-b770-741fd2937723",
+          "exampleItem": "Aquele foi o erro mais constrangedor de todos.",
+          "intent": "mais constrangedor de todos"
+        },
+        {
+          "id": "8d9449b0-964c-4fcd-82d7-cc44cf8bbc59",
+          "exampleItem": "Esta foi a experiência mais gratificante de todas.",
+          "intent": "mais gratificante de todas"
         }
       ]
     }
