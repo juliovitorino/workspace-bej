@@ -52445,6 +52445,140 @@
           "intent": "quantas vezes forem necessárias"
         }
       ]
+    },
+    {
+      "id": "dar-as-caras-aparecer-8f3b7a20-4c91-4d62-a8e5-9b1f70c2d436",
+      "intention": "Dar as caras / Aparecer / Comparecer",
+      "pattern": "sujeito + aparecer / dar as caras / comparecer + complemento",
+      "description": "Expressa a ação de alguém aparecer, chegar ou comparecer a um lugar, encontro, compromisso ou evento. Pode indicar uma chegada esperada, inesperada, atrasada ou até surpreendente. No inglês americano cotidiano, o phrasal verb 'show up' é muito utilizado para transmitir essa intenção. A expressão também é comum para reclamar que alguém não apareceu, comentar que uma pessoa finalmente deu as caras ou mencionar que alguém apareceu sem avisar. Dependendo do contexto, pode transmitir surpresa, expectativa, frustração, satisfação ou informalidade. É importante distinguir 'show up', utilizado principalmente para a presença ou chegada de alguém, de 'appear', que também pode descrever algo se tornando visível, como uma mensagem aparecendo na tela.",
+      "category": "expressions",
+      "searchTerms": [
+        "dar as caras",
+        "deu as caras",
+        "não deu as caras",
+        "finalmente deu as caras",
+        "aparecer",
+        "apareceu",
+        "não apareceu",
+        "aparecer do nada",
+        "aparecer de surpresa",
+        "aparecer sem avisar",
+        "comparecer",
+        "compareceu",
+        "não compareceu",
+        "chegar",
+        "chegou",
+        "não chegou",
+        "marcar presença",
+        "dar o ar da graça",
+        "sumiu e apareceu",
+        "aparecer depois de muito tempo",
+        "aparecer em uma festa",
+        "aparecer em uma reunião"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:dar|dou|dá|damos|dão|dei|deu|deram|dava|davam|darei|dará|darão|daria|dariam)\\s+as\\s+caras(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:não\\s+)?(?:aparecer|apareço|aparece|aparecemos|aparecem|apareci|apareceu|apareceram|aparecia|apareciam|aparecerá|aparecerão|apareceria|apareceriam|aparecido)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:não\\s+)?(?:comparecer|compareço|comparece|comparecemos|comparecem|compareci|compareceu|compareceram|comparecia|compareciam|comparecerá|comparecerão)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:dar|deu|dando)\\s+o\\s+ar\\s+da\\s+graça(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "aparecer",
+        "dar as caras",
+        "comparecer",
+        "chegada",
+        "presença",
+        "ausência",
+        "surpresa",
+        "expectativa",
+        "compromissos",
+        "eventos",
+        "encontros",
+        "expressões informais",
+        "verbos frasais",
+        "conversação cotidiana",
+        "gerador de frases"
+      ],
+      "related": [],
+      "structure": "A estrutura principal é 'show up', um phrasal verb muito comum no inglês americano para expressar aparecer, dar as caras, chegar ou comparecer. É um verbo intransitivo, portanto não recebe objeto direto: 'He showed up at the party' (Ele apareceu na festa). No presente simples, utiliza-se 'show up' ou 'shows up': 'She always shows up late' (Ela sempre aparece atrasada). No passado simples, utiliza-se 'showed up': 'He finally showed up' (Ele finalmente deu as caras). No presente perfeito, utiliza-se 'have/has shown up': 'He hasn't shown up yet' (Ele ainda não apareceu). No futuro, pode-se utilizar 'will show up': 'I think she'll show up' (Acho que ela vai aparecer). Também é possível utilizar 'be going to show up': 'Are you going to show up?' (Você vai aparecer?). Para expressar uma chegada inesperada, pode-se utilizar 'show up out of nowhere' (aparecer do nada) ou 'show up unexpectedly' (aparecer inesperadamente). Para indicar que alguém apareceu sem avisar, utiliza-se 'show up unannounced'. Para indicar o local, são comuns as preposições 'at' e 'to', conforme o complemento: 'show up at the party' (aparecer na festa) e 'show up to the meeting' (comparecer à reunião). Em situações informais, 'show up' também pode significar simplesmente marcar presença: 'Just show up!' (É só aparecer!). A expressão 'turn up' pode transmitir sentido semelhante, sendo também utilizada no inglês americano, mas 'show up' é especialmente comum na conversação cotidiana. 'Make an appearance' enfatiza o ato de marcar presença, muitas vezes brevemente, enquanto 'show one's face' pode enfatizar dar as caras após uma ausência ou em uma situação de constrangimento. Não confundir com 'appear' em contextos de elementos surgindo visualmente, como uma mensagem aparecendo na tela.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "1a4c7e92-5b63-4f80-9d21-e3a76b40c158",
+          "exampleItem": "Ele finalmente deu as caras na festa ontem à noite.",
+          "intent": "deu as caras"
+        },
+        {
+          "id": "2b5d8f03-6c74-4091-ae32-f4b87c51d269",
+          "exampleItem": "Por que você não apareceu na reunião?",
+          "intent": "não apareceu"
+        },
+        {
+          "id": "3c6e9014-7d85-41a2-bf43-a5c98d62e370",
+          "exampleItem": "Ela ainda não deu as caras hoje.",
+          "intent": "não deu as caras"
+        },
+        {
+          "id": "4d7fa125-8e96-42b3-8054-b6da9e73f481",
+          "exampleItem": "Você vai aparecer na minha festa de aniversário?",
+          "intent": "aparecer"
+        },
+        {
+          "id": "5e80b236-9fa7-43c4-9165-c7eb0f840592",
+          "exampleItem": "Meu amigo apareceu do nada na minha casa.",
+          "intent": "apareceu do nada"
+        },
+        {
+          "id": "6f91c347-0ab8-44d5-a276-d8fc109516a3",
+          "exampleItem": "Eu estava esperando por você, mas você não deu as caras.",
+          "intent": "não deu as caras"
+        },
+        {
+          "id": "70a2d458-1bc9-45e6-b387-e90d21a627b4",
+          "exampleItem": "Ela sempre aparece atrasada nos encontros.",
+          "intent": "aparece"
+        },
+        {
+          "id": "81b3e569-2cda-46f7-8498-fa1e32b738c5",
+          "exampleItem": "Não acredito que ele apareceu depois de tanto tempo!",
+          "intent": "apareceu"
+        },
+        {
+          "id": "92c4f670-3deb-4708-95a9-0b2f43c849d6",
+          "exampleItem": "Acho que eles não vão aparecer hoje.",
+          "intent": "aparecer"
+        },
+        {
+          "id": "a3d50781-4efc-4819-a6ba-1c3054d95ae7",
+          "exampleItem": "Você pode simplesmente aparecer quando quiser.",
+          "intent": "aparecer"
+        },
+        {
+          "id": "b4e61892-5f0d-492a-b7cb-2d4165ea6bf8",
+          "exampleItem": "Ele apareceu sem avisar e surpreendeu todo mundo.",
+          "intent": "apareceu sem avisar"
+        },
+        {
+          "id": "c5f729a3-601e-4a3b-88dc-3e5276fb7c09",
+          "exampleItem": "Fiquei surpreso quando ela deu as caras no escritório.",
+          "intent": "deu as caras"
+        },
+        {
+          "id": "d6083ab4-712f-4b4c-99ed-4f63870c8d1a",
+          "exampleItem": "Se você não aparecer, vamos começar sem você.",
+          "intent": "não aparecer"
+        },
+        {
+          "id": "e7194bc5-8230-4c5d-aafe-5074981d9e2b",
+          "exampleItem": "Ele prometeu comparecer ao evento, mas não apareceu.",
+          "intent": "não apareceu"
+        },
+        {
+          "id": "f82a5cd6-9341-4d6e-bb0f-6185a92e0f3c",
+          "exampleItem": "Depois de semanas desaparecido, ele finalmente deu o ar da graça.",
+          "intent": "deu o ar da graça"
+        }
+      ]
     }
   ]
 }
