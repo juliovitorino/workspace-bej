@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1286,
+    "totalIntentions": 1287,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -52313,6 +52313,136 @@
           "id": "c52ac6f0-9d30-410e-87f0-eb258c43d069",
           "exampleItem": "Quanto tempo vai demorar para o sistema ficar pronto?",
           "intent": "Quanto tempo vai demorar para"
+        }
+      ]
+    },
+    {
+      "id": "tantas-vezes-quanto-quantas-vezes-forem-necessarias-6f8a2d41-9c73-4b50-8e16-a4d92c7f035b",
+      "intention": "Tantas vezes quanto / Quantas vezes + condição",
+      "pattern": "ação + tantas vezes quanto / quantas vezes + sujeito + verbo ou condição",
+      "description": "Expressa que uma ação pode ou deve ser repetida determinado número de vezes, conforme uma necessidade, vontade, possibilidade ou condição. No inglês americano, a construção 'as many times as' é utilizada para indicar uma quantidade de repetições sem estabelecer necessariamente um limite fixo. É especialmente natural em situações de aprendizado, treinamento, tentativas, explicações, solicitações e atividades repetitivas. Pode transmitir liberdade para repetir uma ação, disposição para continuar tentando ou necessidade de insistir até alcançar um resultado. Também permite comparar a quantidade de vezes que duas ações acontecem.",
+      "category": "expressions",
+      "searchTerms": [
+        "tantas vezes quanto",
+        "quantas vezes quiser",
+        "quantas vezes você quiser",
+        "quantas vezes precisar",
+        "quantas vezes forem necessárias",
+        "quantas vezes for necessário",
+        "quantas vezes for preciso",
+        "tantas vezes quanto necessário",
+        "tantas vezes quanto puder",
+        "tantas vezes quanto conseguir",
+        "quantas vezes forem precisas",
+        "repetir quantas vezes quiser",
+        "tentar quantas vezes precisar",
+        "fazer quantas vezes for necessário",
+        "sem limite de tentativas",
+        "repetições necessárias",
+        "quantidade de repetições",
+        "repetir até conseguir"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])tantas\\s+vezes\\s+quanto(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])quantas\\s+vezes\\s+(?:(?:eu|você|ele|ela|nós|vocês|eles|elas|a\\s+gente)\\s+)?(?:quiser|quiserem|quisermos|quero|quer|queremos|querem|precisar|precisarem|precisarmos|puder|puderem|pudermos|conseguir|conseguirem|conseguirmos)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])quantas\\s+vezes\\s+(?:for|forem|seja|sejam)\\s+(?:necessári[oa]s?|precis[oa]s?)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])tantas\\s+vezes\\s+quanto\\s+(?:for|forem|seja|sejam)\\s+(?:necessári[oa]s?|precis[oa]s?)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "repetição",
+        "quantidade",
+        "frequência",
+        "condições",
+        "possibilidades",
+        "necessidades",
+        "preferências",
+        "persistência",
+        "tentativas",
+        "aprendizado",
+        "prática",
+        "comparações",
+        "expressões cotidianas",
+        "gerador de frases",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "A construção principal é 'as many times as + sujeito + verbo', utilizada para expressar quantas repetições de uma ação são permitidas, desejadas ou necessárias. Exemplos: 'as many times as you want' (quantas vezes você quiser), 'as many times as you need' (quantas vezes você precisar), 'as many times as I can' (tantas vezes quanto eu puder) e 'as many times as it takes' (quantas vezes forem necessárias para alcançar um resultado). Também pode ser seguida diretamente de uma condição, como em 'as many times as necessary' (quantas vezes forem necessárias). A expressão geralmente aparece depois da ação principal: 'You can repeat it as many times as you want' (Você pode repetir quantas vezes quiser). O sujeito pode variar entre 'I', 'you', 'he', 'she', 'we' e 'they', com a conjugação apropriada do verbo. A oração principal também pode aparecer no passado ou no futuro, como em 'I tried as many times as I needed' (Tentei quantas vezes precisei) e 'I'll explain it as many times as necessary' (Vou explicar quantas vezes forem necessárias). Para indicar uma quantidade específica em uma comparação, pode-se utilizar 'as many times as', como em 'I've watched it twice as many times as you have' (Assisti ao vídeo duas vezes mais do que você). É importante distinguir 'as many times as', que enfatiza o número de repetições, de 'as often as', que enfatiza a frequência de uma atividade. A expressão 'as much as' é utilizada principalmente com quantidades não contáveis ou intensidade e não substitui 'as many times as' quando a intenção é contar repetições.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Você pode repetir a frase quantas vezes quiser.",
+          "intent": "quantas vezes quiser"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Vou explicar isso quantas vezes forem necessárias.",
+          "intent": "quantas vezes forem necessárias"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Você pode me perguntar quantas vezes precisar.",
+          "intent": "quantas vezes precisar"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Vou tentar quantas vezes for preciso até conseguir.",
+          "intent": "quantas vezes for preciso"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Ela pode assistir ao vídeo quantas vezes quiser.",
+          "intent": "quantas vezes quiser"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Nós vamos praticar tantas vezes quanto for necessário.",
+          "intent": "tantas vezes quanto for necessário"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Ele repetiu o exercício quantas vezes precisou.",
+          "intent": "quantas vezes precisou"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Eu pratico minha pronúncia tantas vezes quanto posso.",
+          "intent": "tantas vezes quanto posso"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Eles podem tentar novamente quantas vezes quiserem.",
+          "intent": "quantas vezes quiserem"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Vou ouvir esse áudio quantas vezes precisar para entender tudo.",
+          "intent": "quantas vezes precisar"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "Você deve revisar o conteúdo tantas vezes quanto achar necessário.",
+          "intent": "tantas vezes quanto achar necessário"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "Ela vai fazer o teste quantas vezes forem necessárias para passar.",
+          "intent": "quantas vezes forem necessárias"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "Podemos repetir essa atividade quantas vezes quisermos.",
+          "intent": "quantas vezes quisermos"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "Eu já assisti a esse filme tantas vezes quanto você.",
+          "intent": "tantas vezes quanto você"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "Eles vão continuar tentando quantas vezes forem necessárias até resolver o problema.",
+          "intent": "quantas vezes forem necessárias"
         }
       ]
     }

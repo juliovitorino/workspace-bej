@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1286,
+    "totalIntentions": 1287,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -76661,6 +76661,130 @@
           "id": "c52ac6f0-9d30-410e-87f0-eb258c43d069",
           "exampleItem": "How long will it take for the system to be ready?",
           "intent": "How long will it take"
+        }
+      ]
+    },
+    {
+      "id": "tantas-vezes-quanto-quantas-vezes-forem-necessarias-6f8a2d41-9c73-4b50-8e16-a4d92c7f035b",
+      "intention": "As many times as + condition",
+      "pattern": "Action + as many times as + subject + verb / condition",
+      "description": "Expresses that an action can or should be repeated according to a need, preference, possibility, or condition. In American English, \"as many times as\" describes a number of repetitions without necessarily setting a fixed limit. It is especially natural in learning, training, attempts, explanations, requests, and repeated activities. It can convey permission to repeat something, willingness to keep trying, or the need to persist until a result is achieved. It also allows comparisons between the number of times two actions occur.",
+      "category": "expressions",
+      "searchTerms": [
+        "as many times as",
+        "as many times as you want",
+        "as many times as you need",
+        "as many times as necessary",
+        "as many times as it takes",
+        "as many times as I can",
+        "as many times as possible",
+        "as many times as needed",
+        "repeat as many times as you want",
+        "try as many times as you need",
+        "do it as many times as necessary",
+        "unlimited attempts",
+        "necessary repetitions",
+        "number of repetitions",
+        "repeat until you succeed"
+      ],
+      "validationPatterns": [
+        "\\bas\\s+many\\s+times\\s+as\\b"
+      ],
+      "tags": [
+        "repetition",
+        "quantity",
+        "frequency",
+        "conditions",
+        "possibilities",
+        "needs",
+        "preferences",
+        "persistence",
+        "attempts",
+        "learning",
+        "practice",
+        "comparisons",
+        "everyday expressions",
+        "sentence generator",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "Use \"as many times as + subject + verb\" to express how many repetitions are allowed, wanted, or needed: \"as many times as you want\", \"as many times as you need\", \"as many times as I can\", and \"as many times as it takes\". A condition can follow directly: \"as many times as necessary\". The expression usually follows the main action: \"You can repeat it as many times as you want\". The subject can be I, you, he, she, we, or they, with the appropriate verb form. The main clause can be in the past or future: \"I tried as many times as I needed\" and \"I'll explain it as many times as necessary\". To compare a specific number of repetitions, add a multiplier: \"I've watched it twice as many times as you have\". Distinguish \"as many times as\", which emphasizes the number of repetitions, from \"as often as\", which emphasizes frequency. \"As much as\" mainly describes uncountable quantities or intensity and does not replace \"as many times as\" when counting repetitions.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "You can repeat the sentence as many times as you want.",
+          "intent": "as many times as you want"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "I'll explain this as many times as necessary.",
+          "intent": "as many times as necessary"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "You can ask me as many times as you need.",
+          "intent": "as many times as you need"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "I'll try as many times as it takes until I succeed.",
+          "intent": "as many times as it takes"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "She can watch the video as many times as she wants.",
+          "intent": "as many times as she wants"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "We'll practice as many times as necessary.",
+          "intent": "as many times as necessary"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "He repeated the exercise as many times as he needed.",
+          "intent": "as many times as he needed"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "I practice my pronunciation as many times as I can.",
+          "intent": "as many times as I can"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "They can try again as many times as they want.",
+          "intent": "as many times as they want"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "I'll listen to this audio as many times as I need to understand everything.",
+          "intent": "as many times as I need"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "You should review the material as many times as you think necessary.",
+          "intent": "as many times as you think necessary"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "She'll take the test as many times as it takes to pass.",
+          "intent": "as many times as it takes"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "We can repeat this activity as many times as we want.",
+          "intent": "as many times as we want"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "I've watched this movie as many times as you have.",
+          "intent": "as many times as you have"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "They'll keep trying as many times as necessary until they solve the problem.",
+          "intent": "as many times as necessary"
         }
       ]
     }

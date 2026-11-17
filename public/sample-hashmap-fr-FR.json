@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1286,
+    "totalIntentions": 1287,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -53177,6 +53177,125 @@
           "id": "c52ac6f0-9d30-410e-87f0-eb258c43d069",
           "exampleItem": "Combien de temps faudra-t-il pour que le système soit prêt ?",
           "intent": "Combien de temps faudra-t-il pour"
+        }
+      ]
+    },
+    {
+      "id": "tantas-vezes-quanto-quantas-vezes-forem-necessarias-6f8a2d41-9c73-4b50-8e16-a4d92c7f035b",
+      "intention": "Autant de fois que / Autant de fois que nécessaire",
+      "pattern": "action + autant de fois que + sujet et verbe / condition",
+      "description": "Exprime qu'une action peut ou doit être répétée selon un besoin, une envie, une possibilité ou une condition. La construction autant de fois que indique un nombre de répétitions sans forcément fixer de limite. Elle est naturelle dans l'apprentissage, l'entraînement, les tentatives, les explications et les demandes répétées. Elle peut exprimer la liberté de recommencer ou la volonté de persévérer jusqu'au résultat souhaité. Elle permet aussi de comparer le nombre de fois où deux actions se produisent.",
+      "category": "expressions",
+      "searchTerms": [
+        "autant de fois que",
+        "autant de fois que tu veux",
+        "autant de fois que nécessaire",
+        "autant de fois qu'il le faudra",
+        "autant de fois que possible",
+        "autant de fois que tu en as besoin",
+        "répéter sans limite",
+        "nombre de répétitions",
+        "recommencer jusqu'à réussir",
+        "autant de fois que toi"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])autant\\s+de\\s+fois\\s+qu(?:e(?![\\p{L}\\p{N}_])|['’])"
+      ],
+      "tags": [
+        "répétition",
+        "quantité",
+        "fréquence",
+        "conditions",
+        "possibilités",
+        "besoins",
+        "préférences",
+        "persévérance",
+        "tentatives",
+        "apprentissage",
+        "pratique",
+        "comparaisons",
+        "expressions du quotidien",
+        "construction de phrases",
+        "conversation"
+      ],
+      "related": [],
+      "structure": "La construction autant de fois que + sujet + verbe exprime le nombre de répétitions autorisées, souhaitées ou nécessaires : autant de fois que tu veux, autant de fois que tu en as besoin, autant de fois que je peux. Devant une voyelle, que devient qu' : autant de fois qu'elle veut. Pour insister sur la persévérance, on dit autant de fois qu'il le faudra ; pour une condition sans sujet explicite, autant de fois que nécessaire. L'expression suit généralement l'action principale : Tu peux répéter la phrase autant de fois que tu veux. Le verbe s'adapte au sujet et au temps du récit. Dans une comparaison, on peut dire J'ai vu ce film autant de fois que toi ou deux fois plus souvent que toi. Autant de fois que met l'accent sur le nombre de répétitions ; aussi souvent que souligne plutôt la fréquence, et autant que peut exprimer une quantité ou une intensité sans compter des occurrences.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a71c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Tu peux répéter la phrase autant de fois que tu veux.",
+          "intent": "autant de fois que tu veux"
+        },
+        {
+          "id": "b82d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Je vais expliquer cela autant de fois que nécessaire.",
+          "intent": "autant de fois que nécessaire"
+        },
+        {
+          "id": "c93e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Tu peux me poser la question autant de fois que tu en as besoin.",
+          "intent": "autant de fois que tu en as besoin"
+        },
+        {
+          "id": "d04f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Je vais essayer autant de fois qu'il le faudra jusqu'à y arriver.",
+          "intent": "autant de fois qu'il le faudra"
+        },
+        {
+          "id": "e15082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Elle peut regarder la vidéo autant de fois qu'elle veut.",
+          "intent": "autant de fois qu'elle veut"
+        },
+        {
+          "id": "f26193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Nous allons nous entraîner autant de fois que nécessaire.",
+          "intent": "autant de fois que nécessaire"
+        },
+        {
+          "id": "a372a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Il a refait l'exercice autant de fois qu'il en a eu besoin.",
+          "intent": "autant de fois qu'il en a eu besoin"
+        },
+        {
+          "id": "b483b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Je travaille ma prononciation autant de fois que je peux.",
+          "intent": "autant de fois que je peux"
+        },
+        {
+          "id": "c594c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Ils peuvent réessayer autant de fois qu'ils veulent.",
+          "intent": "autant de fois qu'ils veulent"
+        },
+        {
+          "id": "d6a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Je vais écouter cet enregistrement autant de fois que j'en aurai besoin pour tout comprendre.",
+          "intent": "autant de fois que j'en aurai besoin"
+        },
+        {
+          "id": "e7b6e82c-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "Tu dois réviser le contenu autant de fois que tu le juges nécessaire.",
+          "intent": "autant de fois que tu le juges nécessaire"
+        },
+        {
+          "id": "f8c7f93d-6a07-48db-94cd-be925f102736",
+          "exampleItem": "Elle va passer le test autant de fois qu'il le faudra pour le réussir.",
+          "intent": "autant de fois qu'il le faudra"
+        },
+        {
+          "id": "a9d80a4e-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "Nous pouvons refaire cette activité autant de fois que nous le voulons.",
+          "intent": "autant de fois que nous le voulons"
+        },
+        {
+          "id": "b0e91b5f-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "J'ai déjà vu ce film autant de fois que toi.",
+          "intent": "autant de fois que toi"
+        },
+        {
+          "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "Ils vont continuer à essayer autant de fois qu'il le faudra jusqu'à résoudre le problème.",
+          "intent": "autant de fois qu'il le faudra"
         }
       ]
     }
