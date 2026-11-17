@@ -2955,3 +2955,12 @@ button { color: inherit; }
 /* Bitcoin address rotation: QR and copy confirmation use the same selected address. */
 .donation-rotation-hint { font-size: .87rem; line-height: 1.5; color: var(--text-secondary); }
 .donation-copy-dialog-address { max-width: 100%; text-align: left; }
+
+/* Dashboard: sequential numbering for the displayed Time by Module ranking. */
+#study-time-by-module .study-module-rank {
+  display: inline-block;
+  min-width: 2em;
+  margin-right: 0.25em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
