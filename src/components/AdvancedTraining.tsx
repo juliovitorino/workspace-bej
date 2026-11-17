@@ -2,6 +2,7 @@ import { speakStudyAudio, cancelStudyAudio } from "../features/study/studyAudio"
 import { useTrainingStudy, type TrainingStudyReporter } from "../features/study/useTrainingStudy";
 import { TrainingStudyTime } from "../features/study/TrainingStudyTime";
 import { TrainingExampleNavigator } from "./TrainingExampleNavigator";
+import { nextTrainingExampleIndex, trainingExampleIndex } from "../utils/trainingExampleNavigation";
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { isAuthorMode } from "../utils/authorMode";
@@ -250,7 +251,7 @@ export function AdvancedTraining({
   const [round, setRound] = useState(0);
   const [selectedExampleIndex, setSelectedExampleIndex] = useState(0);
   const exampleCount = intention.examples?.length ?? 0;
-  const currentExampleIndex = exampleCount ? selectedExampleIndex % exampleCount : 0;
+  const currentExampleIndex = trainingExampleIndex(selectedExampleIndex, exampleCount);
   const referenceExample = intention.examples?.[currentExampleIndex];
   useEffect(() => { setSelectedExampleIndex(0); }, [intention.id]);
   const [sentenceOne, setSentenceOne] = useState("");
@@ -1036,7 +1037,7 @@ export function AdvancedTraining({
             <TrainingExampleNavigator
               index={currentExampleIndex}
               total={exampleCount}
-              onNext={() => setSelectedExampleIndex((current) => (current + 1) % exampleCount)}
+              onNext={() => setSelectedExampleIndex((current) => nextTrainingExampleIndex(current, exampleCount))}
             />
             <div className="example">
               <p>
