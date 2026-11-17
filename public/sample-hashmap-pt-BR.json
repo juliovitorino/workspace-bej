@@ -51845,6 +51845,305 @@
           "intent": "Isso faz com que todo o esforço valha a pena"
         }
       ]
+    },
+    {
+      "id": "finalmente-entender-tudo-fazer-sentido-8c13a6d4-9e57-4fa2-9b48-c0e95f27a364",
+      "intention": "Finalmente entender / Tudo fazer sentido",
+      "pattern": "finalmente + entender / algo + fazer sentido / a ficha + cair sobre o funcionamento de algo",
+      "description": "Expressa o momento em que uma ideia, explicação, conceito ou situação passa a fazer sentido, especialmente depois de um período de dúvida, confusão ou dificuldade. Em inglês americano, o verbo 'click' é utilizado informalmente para descrever esse instante de compreensão. É muito comum em contextos de aprendizagem, estudos, programação, resolução de problemas e desenvolvimento de habilidades. A expressão sugere que as peças de uma ideia finalmente se encaixaram mentalmente. Diferentemente de 'sink in', que enfatiza assimilação gradual, e de 'hit me', que destaca uma percepção repentina, 'click' enfatiza a compreensão de como algo funciona ou faz sentido.",
+      "category": "expressions",
+      "searchTerms": [
+        "finalmente entendi",
+        "agora entendi",
+        "agora faz sentido",
+        "tudo fez sentido",
+        "finalmente fez sentido",
+        "caiu a ficha",
+        "as peças se encaixaram",
+        "agora tudo se encaixa",
+        "uma chave virou",
+        "entender como funciona",
+        "compreender de repente",
+        "entender de verdade",
+        "clareou minha mente",
+        "ficou claro",
+        "finalmente compreendi",
+        "consegui entender",
+        "entendimento repentino"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:finalmente|agora)\\s+(?:eu\\s+)?(?:entendi|compreendi)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:agora|finalmente)\\s+(?:tudo\\s+)?(?:faz|fez)\\s+sentido(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:as\\s+peças\\s+se\\s+encaixaram|agora\\s+tudo\\s+se\\s+encaixa)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:uma\\s+chave\\s+virou|ficou\\s+claro|consegui\\s+entender)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "compreensão",
+        "aprendizado",
+        "entendimento",
+        "clareza",
+        "descobertas",
+        "fazer sentido",
+        "resolução de problemas",
+        "estudos",
+        "programação",
+        "idiomas",
+        "expressões idiomáticas",
+        "gerador de frases",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "A construção 'It clicked' expressa o momento em que algo finalmente faz sentido. Pode aparecer isoladamente, como em 'It finally clicked!' (Finalmente entendi!), ou com uma referência ao assunto, como em 'The explanation finally clicked for me' (Finalmente entendi a explicação). A expressão 'Something clicked' significa que algo passou a fazer sentido de repente. Para falar de uma pessoa, utiliza-se frequentemente 'It clicked for me', 'It clicked for her' ou 'It clicked for them'. No presente, é possível dizer 'Now it clicks' (Agora faz sentido), embora 'Now it makes sense' seja uma alternativa muito comum. No passado, utiliza-se 'clicked'. No presente perfeito, pode-se dizer 'It has finally clicked' (Finalmente fez sentido). Também existe a expressão 'Something clicked in my head' (Uma chave virou na minha cabeça). O verbo 'click' normalmente descreve um clique físico, mas nessa construção representa metaforicamente o encaixe de uma ideia na mente. É especialmente apropriado para compreensão de conceitos, regras, processos e explicações.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "a13c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Finalmente entendi como essa estrutura funciona em inglês.",
+          "intent": "Finalmente entendi"
+        },
+        {
+          "id": "b24d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Agora faz sentido! Eu estava complicando uma coisa simples.",
+          "intent": "Agora faz sentido"
+        },
+        {
+          "id": "c35e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Tudo fez sentido quando o professor explicou de outra maneira.",
+          "intent": "Tudo fez sentido"
+        },
+        {
+          "id": "d46f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Finalmente entendi por que não conseguia falar inglês naturalmente.",
+          "intent": "Finalmente entendi"
+        },
+        {
+          "id": "e57082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "As peças se encaixaram quando comecei a pensar em intenções em vez de regras.",
+          "intent": "As peças se encaixaram"
+        },
+        {
+          "id": "f68193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Finalmente fez sentido para ela depois de vários exemplos práticos.",
+          "intent": "Finalmente fez sentido"
+        },
+        {
+          "id": "a792a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Uma chave virou na minha cabeça quando entendi a lógica do sistema.",
+          "intent": "Uma chave virou"
+        },
+        {
+          "id": "b8a3b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Agora tudo se encaixa depois que você explicou o problema.",
+          "intent": "Agora tudo se encaixa"
+        },
+        {
+          "id": "c9b4c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Consegui entender a solução depois que vi o código funcionando.",
+          "intent": "Consegui entender"
+        },
+        {
+          "id": "d0c5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Finalmente entendi por que precisava praticar conversação todos os dias.",
+          "intent": "Finalmente entendi"
+        }
+      ]
+    },
+    {
+      "id": "cair-a-ficha-de-repente-7b02f5c3-8d46-4e91-8a37-b9f84d16e253",
+      "intention": "Cair a ficha de repente / Dar-se conta",
+      "pattern": "de repente + cair a ficha / dar-se conta de + situação",
+      "description": "Expressa o momento em que alguém percebe, descobre ou compreende alguma coisa de maneira repentina. Em inglês americano, a construção 'It hit me' transmite a sensação de que uma percepção surgiu subitamente na mente. Pode ser utilizada para descobertas, conclusões, lembranças, erros percebidos e mudanças de perspectiva. A expressão é muito natural em narrativas pessoais, conversas informais e relatos de experiências. Diferentemente de 'sink in', que enfatiza a assimilação gradual, 'hit me' destaca o instante da percepção.",
+      "category": "expressions",
+      "searchTerms": [
+        "caiu a ficha",
+        "foi aí que caiu a ficha",
+        "de repente caiu a ficha",
+        "agora caiu a ficha",
+        "me dei conta",
+        "de repente me dei conta",
+        "foi aí que percebi",
+        "percebi de repente",
+        "me toquei",
+        "só então percebi",
+        "naquele momento percebi",
+        "me ocorreu de repente",
+        "percepção repentina",
+        "descoberta inesperada",
+        "cair na real"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:foi\\s+aí\\s+que|de\\s+repente|agora|naquele\\s+momento)\\s+(?:me\\s+)?caiu\\s+a\\s+ficha(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:de\\s+repente|naquele\\s+momento|só\\s+então)\\s+(?:eu\\s+)?(?:me\\s+dei\\s+conta|percebi)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])foi\\s+aí\\s+que\\s+(?:eu\\s+)?(?:percebi|me\\s+dei\\s+conta)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:me\\s+toquei|me\\s+ocorreu\\s+de\\s+repente)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "cair a ficha",
+        "percepção repentina",
+        "descobertas",
+        "realização",
+        "surpresas",
+        "consciência",
+        "lembranças",
+        "pensamentos",
+        "experiências pessoais",
+        "expressões idiomáticas",
+        "gerador de frases",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "A construção 'It hit me' expressa uma percepção repentina. A forma mais comum é 'It hit me that + oração', como em 'It hit me that I was wrong' (De repente me dei conta de que estava errado). A expressão 'That's when it hit me' significa 'Foi aí que caiu a ficha'. Também é possível utilizar 'It suddenly hit me' (De repente caiu a ficha) e 'It just hit me' (Acabei de me dar conta). O verbo 'hit' é irregular e possui a mesma forma no presente, passado e particípio: hit, hit, hit. O pronome objeto pode variar: 'It hit him' (Ele se deu conta), 'It hit her' (Ela se deu conta), 'It hit us' (Nós nos demos conta) e 'It hit them' (Eles se deram conta). Embora 'hit' normalmente signifique bater ou atingir, nessa construção indica uma percepção mental súbita. O foco está no momento da descoberta, e não no tempo necessário para assimilar a informação.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "a12c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Foi aí que caiu a ficha de que eu estava cometendo o mesmo erro.",
+          "intent": "Foi aí que caiu a ficha"
+        },
+        {
+          "id": "b23d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "De repente me dei conta de que tinha esquecido meu celular em casa.",
+          "intent": "De repente me dei conta"
+        },
+        {
+          "id": "c34e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Agora caiu a ficha! Eu estava tentando traduzir tudo mentalmente.",
+          "intent": "Agora caiu a ficha"
+        },
+        {
+          "id": "d45f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Foi aí que percebi que precisava mudar minha maneira de estudar.",
+          "intent": "Foi aí que percebi"
+        },
+        {
+          "id": "e56082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "De repente caiu a ficha para ela de que estava no emprego errado.",
+          "intent": "De repente caiu a ficha"
+        },
+        {
+          "id": "f67193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Naquele momento percebi que tínhamos seguido o caminho errado.",
+          "intent": "Naquele momento percebi"
+        },
+        {
+          "id": "a782a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Foi aí que caiu a ficha para ele de que precisava pedir desculpas.",
+          "intent": "Foi aí que caiu a ficha"
+        },
+        {
+          "id": "b893b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "De repente me dei conta de que não precisava ter medo de cometer erros.",
+          "intent": "De repente me dei conta"
+        },
+        {
+          "id": "c9a4c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Foi aí que caiu a ficha para nós de que o prazo terminava naquele dia.",
+          "intent": "Foi aí que caiu a ficha"
+        },
+        {
+          "id": "d0b5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Me toquei de que tinha deixado a porta aberta.",
+          "intent": "Me toquei"
+        }
+      ]
+    },
+    {
+      "id": "demorar-para-cair-a-ficha-6a91e4b2-7c35-4d80-9f26-a8e73c05d142",
+      "intention": "Demorar para cair a ficha / Assimilar algo",
+      "pattern": "a ficha + cair / demorar para cair a ficha / algo + ser assimilado",
+      "description": "Expressa o processo de compreender, aceitar ou assimilar plenamente uma informação, notícia, experiência ou realidade. Em inglês americano, o phrasal verb 'sink in' é utilizado quando algo leva algum tempo para ser realmente absorvido mental ou emocionalmente. É especialmente comum ao falar de mudanças importantes, conquistas, perdas, surpresas e acontecimentos inesperados. Diferentemente de uma compreensão intelectual instantânea, 'sink in' enfatiza a assimilação gradual de uma realidade.",
+      "category": "expressions",
+      "searchTerms": [
+        "cair a ficha",
+        "a ficha caiu",
+        "a ficha não caiu",
+        "a ficha ainda não caiu",
+        "demorou para cair a ficha",
+        "demorar para assimilar",
+        "assimilar a notícia",
+        "absorver a informação",
+        "processar o que aconteceu",
+        "perceber a realidade",
+        "entender de verdade",
+        "ainda não assimilei",
+        "custar a acreditar",
+        "levar tempo para entender"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:a\\s+ficha\\s+(?:ainda\\s+)?(?:não\\s+)?caiu)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:(?:finalmente|agora|ainda\\s+não)\\s+)?caiu\\s+a\\s+ficha(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:demorou|levou\\s+tempo|está\\s+demorando|vai\\s+demorar)\\s+(?:um\\s+tempo\\s+)?(?:para|pra)\\s+(?:a\\s+)?ficha\\s+cair(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:ainda\\s+)?não\\s+(?:assimilei|assimilaram|assimilamos|assimilou)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "cair a ficha",
+        "assimilação",
+        "compreensão",
+        "realidade",
+        "emoções",
+        "notícias",
+        "experiências",
+        "percepção",
+        "phrasal verbs",
+        "expressões idiomáticas",
+        "gerador de frases",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "O phrasal verb 'sink in' expressa o processo de uma informação ou realidade ser plenamente assimilada. A estrutura mais comum é 'It + sink in', com o verbo conjugado conforme o tempo verbal. Exemplos: 'It finally sank in' (Finalmente caiu a ficha), 'It hasn't sunk in yet' (A ficha ainda não caiu) e 'It's starting to sink in' (A ficha está começando a cair). No passado simples, utiliza-se 'sank in'. No particípio passado, utiliza-se 'sunk in', como em 'It hasn't sunk in yet'. Para indicar quanto tempo a assimilação demorou, utiliza-se 'It took a while for it to sink in' (Demorou um pouco para cair a ficha). Também é possível colocar a informação como sujeito: 'The news finally sank in' (Finalmente assimilei a notícia). O verbo 'sink' é irregular: sink, sank, sunk. Essa construção enfatiza a assimilação gradual, não necessariamente uma descoberta repentina.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "a11c4e82-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Finalmente caiu a ficha de que eu tinha conseguido o emprego.",
+          "intent": "Finalmente caiu a ficha"
+        },
+        {
+          "id": "b22d5f93-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "A ficha ainda não caiu de que vamos nos mudar para outro país.",
+          "intent": "A ficha ainda não caiu"
+        },
+        {
+          "id": "c33e60a4-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Demorou para cair a ficha depois que recebi aquela notícia.",
+          "intent": "Demorou para cair a ficha"
+        },
+        {
+          "id": "d44f71b5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "A ficha caiu quando percebi que realmente tinha terminado a faculdade.",
+          "intent": "A ficha caiu"
+        },
+        {
+          "id": "e55082c6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "A ficha ainda não caiu para ela depois de tudo o que aconteceu.",
+          "intent": "A ficha ainda não caiu"
+        },
+        {
+          "id": "f66193d7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Levou tempo para a ficha cair depois que ele perdeu o emprego.",
+          "intent": "Levou tempo para a ficha cair"
+        },
+        {
+          "id": "a772a4e8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "A ficha não caiu imediatamente quando ouvi o resultado.",
+          "intent": "A ficha não caiu"
+        },
+        {
+          "id": "b883b5f9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Finalmente caiu a ficha para nós de que o projeto tinha dado certo.",
+          "intent": "Finalmente caiu a ficha"
+        },
+        {
+          "id": "c994c60a-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Ainda não assimilei o fato de que meu filho já é adulto.",
+          "intent": "Ainda não assimilei"
+        },
+        {
+          "id": "d0a5d71b-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "A ficha caiu aos poucos depois que eles anunciaram a mudança.",
+          "intent": "A ficha caiu"
+        }
+      ]
     }
   ]
 }
