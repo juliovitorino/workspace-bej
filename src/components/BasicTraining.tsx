@@ -190,6 +190,8 @@ export function BasicTraining({
   const exampleCount = intention.examples?.length ?? 0;
   const currentExampleIndex = trainingExampleIndex(selectedExampleIndex, exampleCount);
   const referenceExample = intention.examples?.[currentExampleIndex];
+  // Printing keeps its original round-based reference, independent of manual browsing.
+  const printReferenceExample = exampleCount ? intention.examples[round % exampleCount] : undefined;
   useEffect(() => { setSelectedExampleIndex(0); }, [intention.id]);
   const [studentText, setStudentText] = useState("");
   // Keep the native textarea in charge of its DOM value. iOS keyboard dictation
@@ -1894,17 +1896,17 @@ export function BasicTraining({
           <p className="worksheet-english">{intention.targetIntention ?? intention.english}</p>
         </header>
 
-        {referenceExample && (
+        {printReferenceExample && (
           <section className="worksheet-section">
             <h2 className="worksheet-section-title">{t("common.example")}</h2>
             <div className="worksheet-example">
               <p className="worksheet-example-language">{t("basicTraining.source")} {localizedLanguageName(sourceLanguage)}</p>
               <p className="worksheet-example-pt">
-                {renderHighlightedText(referenceExample.pt, referenceExample.ptIntent)}
+                {renderHighlightedText(printReferenceExample.pt, printReferenceExample.ptIntent)}
               </p>
               <p className="worksheet-example-language">{t("basicTraining.study")} {localizedLanguageName(language)}</p>
               <p className="worksheet-example-en">
-                {renderHighlightedText(referenceExample.en, referenceExample.enIntent)}
+                {renderHighlightedText(printReferenceExample.en, printReferenceExample.enIntent)}
               </p>
             </div>
           </section>
