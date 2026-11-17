@@ -1,6 +1,7 @@
 import { speakStudyAudio, cancelStudyAudio } from "../features/study/studyAudio";
 import { useTrainingStudy, type TrainingStudyReporter } from "../features/study/useTrainingStudy";
 import { TrainingStudyTime } from "../features/study/TrainingStudyTime";
+import { TrainingExampleNavigator } from "./TrainingExampleNavigator";
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { isAuthorMode } from "../utils/authorMode";
@@ -247,6 +248,11 @@ export function AdvancedTraining({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [round, setRound] = useState(0);
+  const [selectedExampleIndex, setSelectedExampleIndex] = useState(0);
+  const exampleCount = intention.examples?.length ?? 0;
+  const currentExampleIndex = exampleCount ? selectedExampleIndex % exampleCount : 0;
+  const referenceExample = intention.examples?.[currentExampleIndex];
+  useEffect(() => { setSelectedExampleIndex(0); }, [intention.id]);
   const [sentenceOne, setSentenceOne] = useState("");
   const [sentenceTwo, setSentenceTwo] = useState("");
   const [combinedSentence, setCombinedSentence] = useState("");
@@ -1025,20 +1031,24 @@ export function AdvancedTraining({
         <h1>{intention.intention}</h1>
         <p className="detail-english">{intention.targetIntention ?? intention.english}</p>
 
-        {intention.examples && intention.examples.length > 0 && (
+        {referenceExample && (
           <section className="training-intention-example">
-            <h3>{t("common.example")}</h3>
+            <TrainingExampleNavigator
+              index={currentExampleIndex}
+              total={exampleCount}
+              onNext={() => setSelectedExampleIndex((current) => (current + 1) % exampleCount)}
+            />
             <div className="example">
               <p>
                 {renderHighlightedText(
-                  intention.examples[0].pt,
-                  intention.examples[0].ptIntent
+                  referenceExample.pt,
+                  referenceExample.ptIntent
                 )}
               </p>
               <p className="english">
                 {renderHighlightedText(
-                  intention.examples[0].en,
-                  intention.examples[0].enIntent
+                  referenceExample.en,
+                  referenceExample.enIntent
                 )}
               </p>
             </div>
