@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1287,
+    "totalIntentions": 1288,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -52755,6 +52755,139 @@
           "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
           "exampleItem": "Van a seguir intentándolo tantas veces como sea necesario hasta resolver el problema.",
           "intent": "tantas veces como sea necesario"
+        }
+      ],
+      "category": "expressions",
+      "related": [],
+      "level": "B1"
+    },
+    {
+      "id": "dar-as-caras-aparecer-8f3b7a20-4c91-4d62-a8e5-9b1f70c2d436",
+      "intention": "Dejarse ver / Aparecer / Presentarse",
+      "pattern": "sujeto + aparecer / dejarse ver / presentarse / asistir + complemento",
+      "description": "Expresa que alguien aparece, llega o acude a un lugar, una cita, un compromiso o un evento. La llegada puede ser esperada, inesperada, tardía o sorprendente. «Dejarse ver» es una expresión informal especialmente natural cuando alguien reaparece tras una ausencia. También se usa «aparecer», «presentarse» o «venir» según el contexto. Puede expresar sorpresa, expectativa, frustración o satisfacción, por ejemplo cuando alguien no aparece o llega sin avisar. Este uso se refiere a la presencia de una persona; no debe confundirse con la aparición visual de un mensaje en una pantalla.",
+      "searchTerms": [
+        "dejarse ver",
+        "se dejó ver",
+        "no se dejó ver",
+        "por fin se dejó ver",
+        "aparecer",
+        "apareció",
+        "no apareció",
+        "aparecer de la nada",
+        "aparecer por sorpresa",
+        "aparecer sin avisar",
+        "presentarse",
+        "se presentó",
+        "no se presentó",
+        "asistir",
+        "acudir",
+        "llegar",
+        "no llegó",
+        "hacer acto de presencia",
+        "dar señales de vida",
+        "reaparecer después de mucho tiempo",
+        "aparecer en una fiesta",
+        "presentarse en una reunión"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:aparecer|aparezco|apareces|aparece|aparecemos|aparecéis|aparecen|aparecí|apareciste|apareció|aparecieron|aparecido|apareces)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:se\\s+)?(?:dejó|dejara|ha\\s+dejado)\\s+ver(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:venir|llega|asistir|presentarse)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "aparecer",
+        "dejarse ver",
+        "asistir",
+        "llegada",
+        "presencia",
+        "ausencia",
+        "sorpresa",
+        "expectativa",
+        "compromisos",
+        "eventos",
+        "encuentros",
+        "expresiones informales",
+        "verbos con partículas",
+        "conversación cotidiana",
+        "generador de frases"
+      ],
+      "structure": "«Aparecer» y «presentarse» indican que una persona llega o acude a un lugar: «Apareció en la fiesta» o «Se presentó en la reunión». «Dejarse ver» añade un tono informal y suele destacar que alguien reaparece: «Por fin se dejó ver». Se puede variar el tiempo: «Siempre aparece tarde», «Ayer apareció», «Todavía no ha aparecido» o «Creo que aparecerá». Para una llegada inesperada se usa «aparecer de la nada» o «aparecer por sorpresa»; «aparecer sin avisar» indica que no hubo aviso previo. «Ven cuando quieras» es natural como invitación informal. «Hacer acto de presencia» puede sugerir una visita breve. En español, «dar la cara» suele significar afrontar una situación o asumir responsabilidades, por lo que no siempre equivale a aparecer o dejarse ver. El verbo «aparecer» también puede referirse a elementos que se hacen visibles, pero ese sentido queda fuera de esta intención.",
+      "examples": [
+        {
+          "id": "1a4c7e92-5b63-4f80-9d21-e3a76b40c158",
+          "exampleItem": "Por fin se dejó ver en la fiesta anoche.",
+          "intent": "se dejó ver"
+        },
+        {
+          "id": "2b5d8f03-6c74-4091-ae32-f4b87c51d269",
+          "exampleItem": "¿Por qué no apareciste en la reunión?",
+          "intent": "no apareciste"
+        },
+        {
+          "id": "3c6e9014-7d85-41a2-bf43-a5c98d62e370",
+          "exampleItem": "Ella todavía no se ha dejado ver hoy.",
+          "intent": "no se ha dejado ver"
+        },
+        {
+          "id": "4d7fa125-8e96-42b3-8054-b6da9e73f481",
+          "exampleItem": "¿Vas a venir a mi fiesta de cumpleaños?",
+          "intent": "Vas a venir"
+        },
+        {
+          "id": "5e80b236-9fa7-43c4-9165-c7eb0f840592",
+          "exampleItem": "Mi amigo apareció de la nada en mi casa.",
+          "intent": "apareció de la nada"
+        },
+        {
+          "id": "6f91c347-0ab8-44d5-a276-d8fc109516a3",
+          "exampleItem": "Te estaba esperando, pero no apareciste.",
+          "intent": "no apareciste"
+        },
+        {
+          "id": "70a2d458-1bc9-45e6-b387-e90d21a627b4",
+          "exampleItem": "Ella siempre llega tarde a las citas.",
+          "intent": "llega"
+        },
+        {
+          "id": "81b3e569-2cda-46f7-8498-fa1e32b738c5",
+          "exampleItem": "¡No me puedo creer que haya aparecido después de tanto tiempo!",
+          "intent": "haya aparecido"
+        },
+        {
+          "id": "92c4f670-3deb-4708-95a9-0b2f43c849d6",
+          "exampleItem": "Creo que hoy no van a aparecer.",
+          "intent": "van a aparecer"
+        },
+        {
+          "id": "a3d50781-4efc-4819-a6ba-1c3054d95ae7",
+          "exampleItem": "Puedes venir cuando quieras, sin más.",
+          "intent": "venir"
+        },
+        {
+          "id": "b4e61892-5f0d-492a-b7cb-2d4165ea6bf8",
+          "exampleItem": "Apareció sin avisar y sorprendió a todo el mundo.",
+          "intent": "Apareció sin avisar"
+        },
+        {
+          "id": "c5f729a3-601e-4a3b-88dc-3e5276fb7c09",
+          "exampleItem": "Me sorprendió que ella se dejara ver por la oficina.",
+          "intent": "se dejara ver"
+        },
+        {
+          "id": "d6083ab4-712f-4b4c-99ed-4f63870c8d1a",
+          "exampleItem": "Si no apareces, empezaremos sin ti.",
+          "intent": "no apareces"
+        },
+        {
+          "id": "e7194bc5-8230-4c5d-aafe-5074981d9e2b",
+          "exampleItem": "Prometió asistir al evento, pero no apareció.",
+          "intent": "no apareció"
+        },
+        {
+          "id": "f82a5cd6-9341-4d6e-bb0f-6185a92e0f3c",
+          "exampleItem": "Después de semanas sin dar señales de vida, por fin se dejó ver.",
+          "intent": "se dejó ver"
         }
       ],
       "category": "expressions",

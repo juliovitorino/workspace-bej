@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1287,
+    "totalIntentions": 1288,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -53296,6 +53296,140 @@
           "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
           "exampleItem": "Ils vont continuer à essayer autant de fois qu'il le faudra jusqu'à résoudre le problème.",
           "intent": "autant de fois qu'il le faudra"
+        }
+      ]
+    },
+    {
+      "id": "dar-as-caras-aparecer-8f3b7a20-4c91-4d62-a8e5-9b1f70c2d436",
+      "intention": "Pointer le bout de son nez / Venir / Se montrer",
+      "pattern": "sujet + venir / arriver / pointer le bout de son nez + complément",
+      "description": "Exprime le fait qu'une personne arrive ou se présente à un endroit, une rencontre, un rendez-vous ou un événement. L'arrivée peut être attendue, inattendue, tardive ou surprenante. Pointer le bout de son nez est une expression familière qui souligne souvent une apparition après une absence. Selon le contexte, on emploie aussi venir, arriver, passer, débarquer ou se montrer. Ces tournures permettent de commenter une absence, une arrivée sans prévenir ou une présence enfin remarquée, avec surprise, impatience, satisfaction ou agacement. Elles concernent la présence d'une personne, contrairement à apparaître lorsqu'un message devient visible sur un écran.",
+      "category": "expressions",
+      "searchTerms": [
+        "pointer le bout de son nez",
+        "a pointé le bout de son nez",
+        "ne pas venir",
+        "venir",
+        "arriver",
+        "passer",
+        "se montrer",
+        "débarquer",
+        "arriver sans prévenir",
+        "venir à une fête",
+        "assister à une réunion",
+        "faire une apparition",
+        "donner signe de vie",
+        "arriver après une longue absence"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])a\\s+enfin\\s+pointé\\s+le\\s+bout\\s+de\\s+son\\s+nez(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])n['’]es-tu\\s+pas\\s+venu(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])n['’]a\\s+pas\\s+encore\\s+pointé\\s+le\\s+bout\\s+de\\s+son\\s+nez(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])vas\\s+venir(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])a\\s+débarqué(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])n['’]es\\s+pas\\s+venu(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])arrive(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])soit\\s+venu(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])ne\\s+vont\\s+pas\\s+venir(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])passer(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])est\\s+arrivé\\s+sans\\s+prévenir(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])pointer\\s+le\\s+bout\\s+de\\s+son\\s+nez(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])ne\\s+viens\\s+pas(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])n['’]est\\s+pas\\s+venu(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])a\\s+enfin\\s+daigné\\s+se\\s+montrer(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "arrivée",
+        "présence",
+        "absence",
+        "surprise",
+        "attente",
+        "rendez-vous",
+        "événements",
+        "rencontres",
+        "expressions familières",
+        "locutions verbales",
+        "conversation quotidienne",
+        "construction de phrases"
+      ],
+      "related": [],
+      "structure": "Venir et arriver indiquent simplement la présence ou l'arrivée d'une personne : Il est venu à la fête, Elle arrive en retard. Pointer le bout de son nez souligne une apparition, souvent après une attente ou une absence : Il a enfin pointé le bout de son nez. Dans un registre familier, débarquer insiste sur une arrivée soudaine : Il a débarqué sans prévenir. Passer peut exprimer une visite informelle : Tu peux passer quand tu veux. Au passé composé, venir et arriver prennent être : Il est venu, Elle est arrivée ; pointer et débarquer prennent avoir. Pour nier la présence : Il n'est pas venu ou Elle n'a pas encore pointé le bout de son nez. Au futur proche : Ils vont venir. Se montrer et faire une apparition peuvent insister sur le fait de marquer sa présence, parfois brièvement. Le choix du verbe et du registre dépend du contexte.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "1a4c7e92-5b63-4f80-9d21-e3a76b40c158",
+          "exampleItem": "Il a enfin pointé le bout de son nez à la fête hier soir.",
+          "intent": "a enfin pointé le bout de son nez"
+        },
+        {
+          "id": "2b5d8f03-6c74-4091-ae32-f4b87c51d269",
+          "exampleItem": "Pourquoi n'es-tu pas venu à la réunion ?",
+          "intent": "n'es-tu pas venu"
+        },
+        {
+          "id": "3c6e9014-7d85-41a2-bf43-a5c98d62e370",
+          "exampleItem": "Elle n'a pas encore pointé le bout de son nez aujourd'hui.",
+          "intent": "n'a pas encore pointé le bout de son nez"
+        },
+        {
+          "id": "4d7fa125-8e96-42b3-8054-b6da9e73f481",
+          "exampleItem": "Tu vas venir à ma fête d'anniversaire ?",
+          "intent": "vas venir"
+        },
+        {
+          "id": "5e80b236-9fa7-43c4-9165-c7eb0f840592",
+          "exampleItem": "Mon ami a débarqué chez moi sans prévenir.",
+          "intent": "a débarqué"
+        },
+        {
+          "id": "6f91c347-0ab8-44d5-a276-d8fc109516a3",
+          "exampleItem": "Je t'attendais, mais tu n'es pas venu.",
+          "intent": "n'es pas venu"
+        },
+        {
+          "id": "70a2d458-1bc9-45e6-b387-e90d21a627b4",
+          "exampleItem": "Elle arrive toujours en retard aux rendez-vous.",
+          "intent": "arrive"
+        },
+        {
+          "id": "81b3e569-2cda-46f7-8498-fa1e32b738c5",
+          "exampleItem": "Je n'arrive pas à croire qu'il soit venu après tout ce temps !",
+          "intent": "soit venu"
+        },
+        {
+          "id": "92c4f670-3deb-4708-95a9-0b2f43c849d6",
+          "exampleItem": "Je pense qu'ils ne vont pas venir aujourd'hui.",
+          "intent": "ne vont pas venir"
+        },
+        {
+          "id": "a3d50781-4efc-4819-a6ba-1c3054d95ae7",
+          "exampleItem": "Tu peux simplement passer quand tu veux.",
+          "intent": "passer"
+        },
+        {
+          "id": "b4e61892-5f0d-492a-b7cb-2d4165ea6bf8",
+          "exampleItem": "Il est arrivé sans prévenir et a surpris tout le monde.",
+          "intent": "est arrivé sans prévenir"
+        },
+        {
+          "id": "c5f729a3-601e-4a3b-88dc-3e5276fb7c09",
+          "exampleItem": "J'ai eu la surprise de la voir pointer le bout de son nez au bureau.",
+          "intent": "pointer le bout de son nez"
+        },
+        {
+          "id": "d6083ab4-712f-4b4c-99ed-4f63870c8d1a",
+          "exampleItem": "Si tu ne viens pas, nous commencerons sans toi.",
+          "intent": "ne viens pas"
+        },
+        {
+          "id": "e7194bc5-8230-4c5d-aafe-5074981d9e2b",
+          "exampleItem": "Il avait promis d'assister à l'événement, mais il n'est pas venu.",
+          "intent": "n'est pas venu"
+        },
+        {
+          "id": "f82a5cd6-9341-4d6e-bb0f-6185a92e0f3c",
+          "exampleItem": "Après des semaines sans donner de nouvelles, il a enfin daigné se montrer.",
+          "intent": "a enfin daigné se montrer"
         }
       ]
     }

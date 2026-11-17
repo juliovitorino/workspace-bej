@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1287,
+    "totalIntentions": 1288,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -76785,6 +76785,131 @@
           "id": "c1fa2c60-9d30-410e-87f0-eb258c43d069",
           "exampleItem": "They'll keep trying as many times as necessary until they solve the problem.",
           "intent": "as many times as necessary"
+        }
+      ]
+    },
+    {
+      "id": "dar-as-caras-aparecer-8f3b7a20-4c91-4d62-a8e5-9b1f70c2d436",
+      "intention": "Show up / Make an appearance",
+      "pattern": "Subject + show / shows / showed / has shown up + complement",
+      "description": "Expresses someone appearing, arriving, or attending a place, meeting, appointment, or event. The arrival may be expected, unexpected, late, or surprising. In everyday American English, the phrasal verb \"show up\" is very common for this meaning. It is also used to complain that someone did not come, say that someone finally made an appearance, or mention that someone arrived unannounced. Depending on context, it can convey surprise, expectation, frustration, satisfaction, or informality. Distinguish \"show up\", which mainly concerns someone being present or arriving, from \"appear\", which can also describe something becoming visible, such as a message appearing on a screen.",
+      "category": "expressions",
+      "searchTerms": [
+        "show up",
+        "showed up",
+        "didn't show up",
+        "finally showed up",
+        "shows up",
+        "hasn't shown up",
+        "show up out of nowhere",
+        "show up unexpectedly",
+        "show up unannounced",
+        "attend",
+        "arrive",
+        "make an appearance",
+        "show one's face",
+        "show up after a long time",
+        "show up at a party",
+        "show up to a meeting"
+      ],
+      "validationPatterns": [
+        "\\bshow(?:s|ed|n|ing)?\\s+up\\b"
+      ],
+      "tags": [
+        "showing up",
+        "making an appearance",
+        "attendance",
+        "arrival",
+        "presence",
+        "absence",
+        "surprise",
+        "expectation",
+        "appointments",
+        "events",
+        "get-togethers",
+        "informal expressions",
+        "phrasal verbs",
+        "everyday conversation",
+        "sentence generator"
+      ],
+      "related": [],
+      "structure": "The main expression is \"show up\", a common American English phrasal verb meaning to arrive or be present. It is intransitive and takes no direct object: \"He showed up at the party\". In the simple present, use \"show up\" or \"shows up\": \"She always shows up late\". The simple past is \"showed up\": \"He finally showed up\". The present perfect uses \"have/has shown up\": \"He hasn't shown up yet\". In the future, use \"will show up\" or \"be going to show up\": \"I think she'll show up\" and \"Are you going to show up?\" For an unexpected arrival, use \"show up out of nowhere\" or \"show up unexpectedly\"; for arriving without warning, use \"show up unannounced\". Common location prepositions include \"at\" and \"to\": \"show up at the party\" and \"show up to the meeting\". Informally, \"Just show up!\" can mean simply to be there. \"Turn up\" can have a similar meaning and is also used in American English, though \"show up\" is especially common in everyday conversation. \"Make an appearance\" emphasizes being present, often briefly, while \"show one's face\" may emphasize arriving after an absence or in an embarrassing situation. Use \"appear\" for things becoming visually apparent, such as a message on a screen.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "1a4c7e92-5b63-4f80-9d21-e3a76b40c158",
+          "exampleItem": "He finally showed up at the party last night.",
+          "intent": "showed up"
+        },
+        {
+          "id": "2b5d8f03-6c74-4091-ae32-f4b87c51d269",
+          "exampleItem": "Why didn't you show up to the meeting?",
+          "intent": "didn't you show up"
+        },
+        {
+          "id": "3c6e9014-7d85-41a2-bf43-a5c98d62e370",
+          "exampleItem": "She hasn't shown up yet today.",
+          "intent": "hasn't shown up"
+        },
+        {
+          "id": "4d7fa125-8e96-42b3-8054-b6da9e73f481",
+          "exampleItem": "Are you going to show up at my birthday party?",
+          "intent": "show up"
+        },
+        {
+          "id": "5e80b236-9fa7-43c4-9165-c7eb0f840592",
+          "exampleItem": "My friend showed up out of nowhere at my house.",
+          "intent": "showed up out of nowhere"
+        },
+        {
+          "id": "6f91c347-0ab8-44d5-a276-d8fc109516a3",
+          "exampleItem": "I was waiting for you, but you didn't show up.",
+          "intent": "didn't show up"
+        },
+        {
+          "id": "70a2d458-1bc9-45e6-b387-e90d21a627b4",
+          "exampleItem": "She always shows up late to get-togethers.",
+          "intent": "shows up"
+        },
+        {
+          "id": "81b3e569-2cda-46f7-8498-fa1e32b738c5",
+          "exampleItem": "I can't believe he showed up after all this time!",
+          "intent": "showed up"
+        },
+        {
+          "id": "92c4f670-3deb-4708-95a9-0b2f43c849d6",
+          "exampleItem": "I don't think they'll show up today.",
+          "intent": "show up"
+        },
+        {
+          "id": "a3d50781-4efc-4819-a6ba-1c3054d95ae7",
+          "exampleItem": "You can just show up whenever you want.",
+          "intent": "show up"
+        },
+        {
+          "id": "b4e61892-5f0d-492a-b7cb-2d4165ea6bf8",
+          "exampleItem": "He showed up unannounced and surprised everyone.",
+          "intent": "showed up unannounced"
+        },
+        {
+          "id": "c5f729a3-601e-4a3b-88dc-3e5276fb7c09",
+          "exampleItem": "I was surprised when she showed up at the office.",
+          "intent": "showed up"
+        },
+        {
+          "id": "d6083ab4-712f-4b4c-99ed-4f63870c8d1a",
+          "exampleItem": "If you don't show up, we'll start without you.",
+          "intent": "don't show up"
+        },
+        {
+          "id": "e7194bc5-8230-4c5d-aafe-5074981d9e2b",
+          "exampleItem": "He promised to attend the event, but he didn't show up.",
+          "intent": "didn't show up"
+        },
+        {
+          "id": "f82a5cd6-9341-4d6e-bb0f-6185a92e0f3c",
+          "exampleItem": "After being out of touch for weeks, he finally showed up.",
+          "intent": "finally showed up"
         }
       ]
     }
