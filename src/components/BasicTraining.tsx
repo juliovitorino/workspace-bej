@@ -2,6 +2,7 @@ import { useExampleAudio } from "../features/study/useExampleAudio";
 import { speakStudyAudio, cancelStudyAudio } from "../features/study/studyAudio";
 import { useTrainingStudy, type TrainingStudyReporter } from "../features/study/useTrainingStudy";
 import { TrainingStudyTime } from "../features/study/TrainingStudyTime";
+import { TrainingExampleNavigator } from "./TrainingExampleNavigator";
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { isAuthorMode } from "../utils/authorMode";
@@ -184,9 +185,11 @@ export function BasicTraining({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [round, setRound] = useState(0);
-  const referenceExample = intention.examples?.length
-    ? intention.examples[round % intention.examples.length]
-    : undefined;
+  const [selectedExampleIndex, setSelectedExampleIndex] = useState(0);
+  const exampleCount = intention.examples?.length ?? 0;
+  const currentExampleIndex = exampleCount ? selectedExampleIndex % exampleCount : 0;
+  const referenceExample = intention.examples?.[currentExampleIndex];
+  useEffect(() => { setSelectedExampleIndex(0); }, [intention.id]);
   const [studentText, setStudentText] = useState("");
   // Keep the native textarea in charge of its DOM value. iOS keyboard dictation
   // revises words and spaces asynchronously; a controlled value can overwrite
@@ -333,6 +336,8 @@ export function BasicTraining({
 
   function generateNewRound() {
     setRound((current) => current + 1);
+    // Preserve the previous automatic example rotation on a new round.
+    setSelectedExampleIndex((current) => exampleCount ? (current + 1) % exampleCount : 0);
     setAnswerText("");
     setEvaluation(null);
     setEvaluationCopyStatus(null);
@@ -874,7 +879,15 @@ export function BasicTraining({
 
         {referenceExample && (
           <section className="training-intention-example">
-            <h3>{t("common.example")}</h3>
+            <TrainingExampleNavigator
+              index={currentExampleIndex}
+              total={exampleCount}
+              onNext={() => {
+                cancelStudyAudio();
+                setSpeakingExample(null);
+                setSelectedExampleIndex((current) => (current + 1) % exampleCount);
+              }}
+            />
             <div className="example">
               <p className="training-example-language">{t("basicTraining.source")} {LANGUAGES[sourceLanguage].flag} {localizedLanguageName(sourceLanguage)}</p>
               <p>
