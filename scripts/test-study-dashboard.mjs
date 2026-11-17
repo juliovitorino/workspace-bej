@@ -267,3 +267,10 @@ assert.deepEqual(moduleChartValues(moduleChartStats, { ...moduleChartFilters, ex
 assert.equal(moduleChartValues(moduleChartStats, { ...moduleChartFilters, module: 'hashmap' }).hashmap, 480);
 assert.equal(Object.keys(moduleChartValues(moduleChartStats, { ...moduleChartFilters, module: 'extra-activities' })).length, 6);
 console.log('PASS: dashboard module bars split extra activities by category, honor filters, and do not double-count the aggregate.');
+
+// Display order (after sorting and zero-value filtering) determines the numbering.
+// Only the Time by Module section is numbered; the other dashboard charts stay unchanged.
+const dashboardSource = readFileSync('src/features/study/StudyDashboard.tsx', 'utf8');
+assert.match(dashboardSource, /entries\.map\(\(\[key, seconds\], index\) => <li key=\{key\}>/);
+assert.match(dashboardSource, /sectionId === "study-time-by-module" && <span className="study-module-rank">\{index \+ 1\}\.<\/span>/);
+console.log('PASS: Time by Module displays consecutive numbers in the visible, sorted order only.');
