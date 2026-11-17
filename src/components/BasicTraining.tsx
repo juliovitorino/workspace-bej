@@ -191,7 +191,7 @@ export function BasicTraining({
   const currentExampleIndex = trainingExampleIndex(selectedExampleIndex, exampleCount);
   const referenceExample = intention.examples?.[currentExampleIndex];
   // Printing keeps its original round-based reference, independent of manual browsing.
-  const printReferenceExample = exampleCount ? intention.examples[round % exampleCount] : undefined;
+  const printReferenceExample = exampleCount ? intention.examples?.[round % exampleCount] : undefined;
   useEffect(() => { setSelectedExampleIndex(0); }, [intention.id]);
   const [studentText, setStudentText] = useState("");
   // Keep the native textarea in charge of its DOM value. iOS keyboard dictation
