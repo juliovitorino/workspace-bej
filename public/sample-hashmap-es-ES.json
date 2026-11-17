@@ -24972,74 +24972,6 @@
       ]
     },
     {
-      "id": "quanto-tempo-demorou-para-voce-how-long-did-it-take-you-7c4e91a2-5d83-46f7-b120-9a3e68d5f241",
-      "intention": "Quanto tempo demorou para você...?",
-      "pattern": "cuánto + tardar en pretérito + en + infinitivo",
-      "description": "Usado para perguntar quanto tempo foi necessário para alguém realizar ou concluir alguma coisa no passado. Em português brasileiro, a intenção pode surgir naturalmente como 'Quanto tempo demorou para você...?'.",
-      "category": "question",
-      "searchTerms": [
-        "cuánto tardaste en…",
-        "Cuánto tardaste en"
-      ],
-      "validationPatterns": [
-        "(?<![A-Za-zÁÉÍÓÚÜÑáéíóúüñ])(?:cuánto\\s+tardaste\\s+en)(?![A-Za-zÁÉÍÓÚÜÑáéíóúüñ])"
-      ],
-      "tags": [
-        "question",
-        "how long",
-        "take",
-        "time",
-        "duration",
-        "past",
-        "high-frequency"
-      ],
-      "related": [],
-      "structure": "¿cuánto tardaste en…?",
-      "level": "A2",
-      "examples": [
-        {
-          "id": "55904f2c-dbb3-4522-af52-1fad0e34bc84",
-          "exampleItem": "¿Cuánto tardaste en aprender inglés?",
-          "intent": "Cuánto tardaste en"
-        },
-        {
-          "id": "b037268f-13fe-454e-ac1d-c251ea73549f",
-          "exampleItem": "¿Cuánto tardaste en terminar el proyecto?",
-          "intent": "Cuánto tardaste en"
-        },
-        {
-          "id": "679ea327-c0b6-4d91-8f94-73eb09646e3b",
-          "exampleItem": "¿Cuánto tardaste en llegar allí?",
-          "intent": "Cuánto tardaste en"
-        },
-        {
-          "id": "579c712e-3502-4509-8929-e9c56e4423fa",
-          "exampleItem": "¿Cuánto tardaste en encontrar un trabajo?",
-          "intent": "Cuánto tardaste en"
-        },
-        {
-          "id": "412e8b93-4df4-4a52-9ec9-3c3b2c8d9db5",
-          "exampleItem": "¿Cuánto tardaste en acostumbrarte a la nueva ciudad?",
-          "intent": "Cuánto tardaste en"
-        },
-        {
-          "id": "2ad7946d-a5b8-4c85-bd34-9ece194ec6c9",
-          "exampleItem": "¿Cuánto tardaste en construir tu casa?",
-          "intent": "Cuánto tardaste en"
-        },
-        {
-          "id": "d4319921-fc9f-423d-8987-334c9c9d5430",
-          "exampleItem": "¿Cuánto tardaste en aprender a conducir?",
-          "intent": "Cuánto tardaste en"
-        },
-        {
-          "id": "3b52ed07-833e-4036-bb8f-acada7d66a3f",
-          "exampleItem": "¿Cuánto tardaste en tomar esa decisión?",
-          "intent": "Cuánto tardaste en"
-        }
-      ]
-    },
-    {
       "id": "estar-todo-arrumado-dressed-to-the-nines-5f8c2a71-3d94-4e62-b817-6a39d5f1c240",
       "intention": "Estar todo arrumado / Todo elegante",
       "pattern": "ir o estar de punta en blanco para vestimenta elegante",
@@ -52575,6 +52507,134 @@
       "category": "expressions",
       "related": [],
       "level": "B1"
+    },
+    {
+      "id": "quanto-tempo-leva-para-fazer-algo-3e8c7b41-9d52-4a6f-b120-7c5e93d4a861",
+      "intention": "¿Cuánto se tarda / Cuánto tardas en + acción?",
+      "pattern": "cuánto (tiempo) + tardar + en + infinitivo",
+      "description": "Se utiliza para preguntar por el tiempo necesario para realizar una actividad, completar una tarea, aprender una habilidad, llegar a un destino o alcanzar un resultado. En español, «¿Cuánto se tarda en…?» permite hacer una pregunta general. Para referirse a una persona concreta se conjuga el verbo: «¿Cuánto tardas en…?» o «¿Cuánto tarda ella en…?». También se adapta al pasado, al futuro y a situaciones hipotéticas. Es útil en conversaciones cotidianas, viajes, trabajo, estudios y situaciones prácticas.",
+      "category": "expressions",
+      "searchTerms": [
+        "cuánto se tarda",
+        "cuánto tardas",
+        "cuánto tiempo se tarda",
+        "cuánto tiempo tardas",
+        "cuánto tardaste",
+        "cuánto se tardó",
+        "cuánto se va a tardar",
+        "cuánto vamos a tardar",
+        "cuánto se tardaría",
+        "cuánto se tarda en aprender",
+        "cuánto se tarda en llegar",
+        "cuánto se tarda en terminar",
+        "cuánto se tarda en hacer",
+        "cuánto tiempo hace falta",
+        "duración de una actividad",
+        "tiempo necesario",
+        "tiempo para terminar"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])cuánto(?:\\s+tiempo)?\\s+(?:se\\s+)?(?:tard(?:o|as|a|amos|áis|an|é|aste|ó|asteis|aron|aré|arás|ará|aremos|aréis|arán|aría|arías|aríamos|aríais|arían))(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])cuánto(?:\\s+tiempo)?\\s+(?:se\\s+)?(?:voy|vas|va|vamos|vais|van)\\s+a\\s+tardar(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "preguntas",
+        "duración",
+        "tiempo",
+        "actividades",
+        "rutina",
+        "aprendizaje",
+        "viajes",
+        "trabajo",
+        "planificación",
+        "experiencias",
+        "presente",
+        "pretérito indefinido",
+        "futuro",
+        "verbos auxiliares",
+        "generador de preguntas",
+        "conversación"
+      ],
+      "related": [],
+      "structure": "La pregunta general se construye con «¿Cuánto se tarda en + infinitivo?»: «¿Cuánto se tarda en aprender inglés?». El pronombre «se» permite no especificar quién realiza la actividad. Para preguntar por una persona se conjuga «tardar»: «¿Cuánto tardas en arreglarte?» o «¿Cuánto tarda ella en llegar?». El sujeto puede omitirse si se entiende por la conjugación. En pasado se usa «¿Cuánto tardaste en aprender a conducir?». Para el futuro se puede decir «¿Cuánto vamos a tardar en terminar?» o «¿Cuánto tardaremos en terminar?». En situaciones hipotéticas se emplea el condicional: «¿Cuánto se tardaría en hacerlo?». La preposición «en» introduce el infinitivo. Para responder son habituales «Se tarda unos veinte minutos», «Tardé dos horas» y «Vamos a tardar unos días». Esta pregunta pide el tiempo necesario para completar una actividad; «¿Cuánto tiempo llevas estudiando?» pregunta por el tiempo que una actividad lleva en curso.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a14c8e72-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "¿Cuánto se tarda en aprender inglés?",
+          "intent": "Cuánto se tarda en"
+        },
+        {
+          "id": "b25d9f83-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "¿Cuánto tardas en arreglarte por la mañana?",
+          "intent": "Cuánto tardas en"
+        },
+        {
+          "id": "c36e0a94-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "¿Cuánto se tarda en llegar al aeropuerto?",
+          "intent": "Cuánto se tarda en"
+        },
+        {
+          "id": "d47f1ba5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "¿Cuánto tardaste en aprender a conducir?",
+          "intent": "Cuánto tardaste en"
+        },
+        {
+          "id": "e5802cb6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "¿Cuánto se va a tardar en terminar este proyecto?",
+          "intent": "Cuánto se va a tardar en"
+        },
+        {
+          "id": "f6913dc7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "¿Cuánto tarda ella en llegar al trabajo?",
+          "intent": "Cuánto tarda ella en"
+        },
+        {
+          "id": "a7a24ed8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "¿Cuánto tardamos en completar esta tarea?",
+          "intent": "Cuánto tardamos en"
+        },
+        {
+          "id": "b8b35fe9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "¿Cuánto tardaron ellos en resolver el problema?",
+          "intent": "Cuánto tardaron ellos en"
+        },
+        {
+          "id": "c9c460fa-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "¿Cuánto tardas en responder a un mensaje?",
+          "intent": "Cuánto tardas en"
+        },
+        {
+          "id": "d0d571ab-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "¿Cuánto se tardaría en desarrollar una aplicación como esta?",
+          "intent": "Cuánto se tardaría en"
+        },
+        {
+          "id": "e1e682bc-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "¿Cuánto tardó él en encontrar un nuevo trabajo?",
+          "intent": "Cuánto tardó él en"
+        },
+        {
+          "id": "f2f793cd-6a07-48db-94cd-be925f102736",
+          "exampleItem": "¿Cuánto vamos a tardar en llegar allí?",
+          "intent": "Cuánto vamos a tardar en"
+        },
+        {
+          "id": "a308a4de-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "¿Cuánto se tarda en adquirir el hábito de practicar inglés todos los días?",
+          "intent": "Cuánto se tarda en"
+        },
+        {
+          "id": "b419b5ef-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "¿Cuánto tardaste en sentirte cómodo hablando inglés?",
+          "intent": "Cuánto tardaste en"
+        },
+        {
+          "id": "c52ac6f0-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "¿Cuánto se va a tardar en tener listo el sistema?",
+          "intent": "Cuánto se va a tardar en"
+        }
+      ]
     }
   ]
 }

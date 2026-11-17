@@ -25522,76 +25522,6 @@
       ]
     },
     {
-      "id": "quanto-tempo-demorou-para-voce-how-long-did-it-take-you-7c4e91a2-5d83-46f7-b120-9a3e68d5f241",
-      "intention": "Quanto tempo demorou para você...?",
-      "pattern": "«Quanto tempo demorou para você» + continuação interrogativa (quando necessária)",
-      "description": "Usado para perguntar quanto tempo foi necessário para alguém realizar ou concluir alguma coisa no passado. Em português brasileiro, a intenção pode surgir naturalmente como 'Quanto tempo demorou para você...?'.",
-      "category": "question",
-      "searchTerms": [
-        "quanto tempo",
-        "quanto tempo demorou",
-        "quanto tempo demorou para você",
-        "demorou para você"
-      ],
-      "validationPatterns": [
-        "(?<![\\p{L}\\p{N}_])Quanto\\s+tempo\\s+demorou\\s+para\\s+você(?![\\p{L}\\p{N}_])"
-      ],
-      "tags": [
-        "question",
-        "how long",
-        "take",
-        "time",
-        "duration",
-        "past",
-        "high-frequency"
-      ],
-      "related": [],
-      "structure": "Quanto tempo demorou para você",
-      "level": "A2",
-      "examples": [
-        {
-          "id": "55904f2c-dbb3-4522-af52-1fad0e34bc84",
-          "exampleItem": "Quanto tempo demorou para você aprender inglês?",
-          "intent": "Quanto tempo demorou para você"
-        },
-        {
-          "id": "b037268f-13fe-454e-ac1d-c251ea73549f",
-          "exampleItem": "Quanto tempo demorou para você terminar o projeto?",
-          "intent": "Quanto tempo demorou para você"
-        },
-        {
-          "id": "679ea327-c0b6-4d91-8f94-73eb09646e3b",
-          "exampleItem": "Quanto tempo demorou para você chegar lá?",
-          "intent": "Quanto tempo demorou para você"
-        },
-        {
-          "id": "579c712e-3502-4509-8929-e9c56e4423fa",
-          "exampleItem": "Quanto tempo demorou para você encontrar um emprego?",
-          "intent": "Quanto tempo demorou para você"
-        },
-        {
-          "id": "412e8b93-4df4-4a52-9ec9-3c3b2c8d9db5",
-          "exampleItem": "Quanto tempo demorou para você se acostumar com a nova cidade?",
-          "intent": "Quanto tempo demorou para você"
-        },
-        {
-          "id": "2ad7946d-a5b8-4c85-bd34-9ece194ec6c9",
-          "exampleItem": "Quanto tempo demorou para você construir sua casa?",
-          "intent": "Quanto tempo demorou para você"
-        },
-        {
-          "id": "d4319921-fc9f-423d-8987-334c9c9d5430",
-          "exampleItem": "Quanto tempo demorou para você aprender a dirigir?",
-          "intent": "Quanto tempo demorou para você"
-        },
-        {
-          "id": "3b52ed07-833e-4036-bb8f-acada7d66a3f",
-          "exampleItem": "Quanto tempo demorou para você tomar essa decisão?",
-          "intent": "Quanto tempo demorou para você"
-        }
-      ]
-    },
-    {
       "id": "estar-todo-arrumado-dressed-to-the-nines-5f8c2a71-3d94-4e62-b817-6a39d5f1c240",
       "intention": "Estar todo arrumado / Todo elegante",
       "pattern": "«todo arrumado» / «super elegante» / «toda elegante» + contexto ou complemento (conforme a frase)",
@@ -52250,6 +52180,139 @@
           "id": "8d9449b0-964c-4fcd-82d7-cc44cf8bbc59",
           "exampleItem": "Esta foi a experiência mais gratificante de todas.",
           "intent": "mais gratificante de todas"
+        }
+      ]
+    },
+    {
+      "id": "quanto-tempo-leva-para-fazer-algo-3e8c7b41-9d52-4a6f-b120-7c5e93d4a861",
+      "intention": "Quanto tempo leva / demora para + ação?",
+      "pattern": "quanto tempo + levar / demorar + para + verbo no infinitivo?",
+      "description": "Utilizada para perguntar sobre a duração necessária para realizar uma atividade, concluir uma tarefa, aprender uma habilidade, chegar a um destino ou alcançar determinado resultado. No inglês americano, a construção 'How long does it take to' é muito natural para perguntas gerais sobre o tempo necessário para fazer alguma coisa. Quando se deseja perguntar sobre uma pessoa específica, utiliza-se 'How long does it take you to', 'How long does it take him to' ou outras variações com pronomes e nomes. A construção também pode ser adaptada ao passado e ao futuro para perguntar quanto tempo uma atividade levou ou levará. É especialmente útil em conversas cotidianas, viagens, trabalho, estudos e situações práticas.",
+      "category": "expressions",
+      "searchTerms": [
+        "quanto tempo leva",
+        "quanto tempo demora",
+        "quanto tempo leva para",
+        "quanto tempo demora para",
+        "quanto tempo você leva",
+        "quanto tempo você demora",
+        "quanto tempo você levou",
+        "quanto tempo demorou",
+        "quanto tempo vai levar",
+        "quanto tempo vai demorar",
+        "quanto tempo levaria",
+        "quanto tempo demora para aprender",
+        "quanto tempo leva para chegar",
+        "quanto tempo leva para terminar",
+        "quanto tempo leva para fazer",
+        "quanto tempo é necessário",
+        "duração de uma atividade",
+        "tempo necessário",
+        "tempo para concluir"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])quanto\\s+tempo\\s+(?:leva|levam|demora|demoram)(?:\\s+(?:para|pra))?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])quanto\\s+tempo\\s+(?:(?:eu|você|ele|ela|nós|vocês|eles|elas|a\\s+gente)\\s+)?(?:levo|leva|levamos|levam|demoro|demora|demoramos|demoram)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])quanto\\s+tempo\\s+(?:(?:eu|você|ele|ela|nós|vocês|eles|elas|a\\s+gente)\\s+)?(?:levei|levou|levamos|levaram|demorei|demorou|demoramos|demoraram)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])quanto\\s+tempo\\s+(?:vai|vão|irá|irão|iria|iriam)\\s+(?:levar|demorar)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])quanto\\s+tempo\\s+(?:seria|é)\\s+necessário(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "perguntas",
+        "duração",
+        "tempo",
+        "atividades",
+        "rotina",
+        "aprendizado",
+        "viagens",
+        "trabalho",
+        "planejamento",
+        "experiências",
+        "presente simples",
+        "passado simples",
+        "futuro",
+        "verbos auxiliares",
+        "gerador de perguntas",
+        "conversação"
+      ],
+      "related": [],
+      "structure": "A construção principal é 'How long does it take to + verbo na forma base?', utilizada para perguntar quanto tempo normalmente é necessário para realizar uma atividade. Exemplo: 'How long does it take to learn English?' (Quanto tempo leva para aprender inglês?). O pronome 'it' funciona como sujeito gramatical da construção. Para perguntar sobre uma pessoa específica, utiliza-se 'How long does it take + objeto + to + verbo?', como em 'How long does it take you to get ready?' (Quanto tempo você leva para se arrumar?). Os pronomes objeto mais comuns são 'me', 'you', 'him', 'her', 'us' e 'them'. No passado, utiliza-se 'How long did it take + objeto + to + verbo?', como em 'How long did it take you to learn English?' (Quanto tempo você levou para aprender inglês?). No futuro, utiliza-se 'How long will it take + objeto + to + verbo?', como em 'How long will it take us to finish?' (Quanto tempo vamos levar para terminar?). Para situações hipotéticas, utiliza-se 'How long would it take + objeto + to + verbo?'. A construção também pode incluir um destino, uma condição ou um complemento de tempo. Em perguntas no presente simples, utiliza-se 'does' porque o sujeito gramatical é 'it'. No passado, utiliza-se 'did', e o verbo 'take' permanece na forma base. No futuro, utiliza-se 'will' seguido de 'it take'. A preposição 'to' antes do verbo principal é obrigatória nessa construção. Para responder, são comuns estruturas como 'It takes about twenty minutes', 'It took me two hours' e 'It will take us a few days'. É importante distinguir essa construção de 'How long have you been + verbo com -ing?', que pergunta há quanto tempo uma atividade está em andamento, e não quanto tempo é necessário para realizá-la.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a14c8e72-5b96-4d30-8f12-c3e74a09d625",
+          "exampleItem": "Quanto tempo leva para aprender inglês?",
+          "intent": "Quanto tempo leva para"
+        },
+        {
+          "id": "b25d9f83-6c07-4e41-9a23-d4f85b10e736",
+          "exampleItem": "Quanto tempo você leva para se arrumar de manhã?",
+          "intent": "Quanto tempo você leva para"
+        },
+        {
+          "id": "c36e0a94-7d18-4f52-8b34-e5096c21f847",
+          "exampleItem": "Quanto tempo demora para chegar ao aeroporto?",
+          "intent": "Quanto tempo demora para"
+        },
+        {
+          "id": "d47f1ba5-8e29-4053-9c45-f61a7d32a958",
+          "exampleItem": "Quanto tempo você levou para aprender a dirigir?",
+          "intent": "Quanto tempo você levou para"
+        },
+        {
+          "id": "e5802cb6-9f30-4164-8d56-a72b8e43b069",
+          "exampleItem": "Quanto tempo vai levar para terminar esse projeto?",
+          "intent": "Quanto tempo vai levar para"
+        },
+        {
+          "id": "f6913dc7-0a41-4275-9e67-b83c9f54c170",
+          "exampleItem": "Quanto tempo ela leva para chegar ao trabalho?",
+          "intent": "Quanto tempo ela leva para"
+        },
+        {
+          "id": "a7a24ed8-1b52-4386-8f78-c94d0a65d281",
+          "exampleItem": "Quanto tempo nós levamos para concluir essa tarefa?",
+          "intent": "Quanto tempo nós levamos para"
+        },
+        {
+          "id": "b8b35fe9-2c63-4497-9089-da5e1b76e392",
+          "exampleItem": "Quanto tempo eles demoraram para resolver o problema?",
+          "intent": "Quanto tempo eles demoraram para"
+        },
+        {
+          "id": "c9c460fa-3d74-45a8-a19a-eb6f2c87f403",
+          "exampleItem": "Quanto tempo você demora para responder a uma mensagem?",
+          "intent": "Quanto tempo você demora para"
+        },
+        {
+          "id": "d0d571ab-4e85-46b9-b2ab-fc703d980514",
+          "exampleItem": "Quanto tempo levaria para desenvolver um aplicativo como esse?",
+          "intent": "Quanto tempo levaria para"
+        },
+        {
+          "id": "e1e682bc-5f96-47ca-83bc-ad814e091625",
+          "exampleItem": "Quanto tempo ele levou para encontrar um novo emprego?",
+          "intent": "Quanto tempo ele levou para"
+        },
+        {
+          "id": "f2f793cd-6a07-48db-94cd-be925f102736",
+          "exampleItem": "Quanto tempo vamos levar para chegar lá?",
+          "intent": "Quanto tempo vamos levar para"
+        },
+        {
+          "id": "a308a4de-7b18-49ec-85de-cf036a21b847",
+          "exampleItem": "Quanto tempo leva para criar o hábito de praticar inglês todos os dias?",
+          "intent": "Quanto tempo leva para"
+        },
+        {
+          "id": "b419b5ef-8c29-40fd-96ef-da147b32c958",
+          "exampleItem": "Quanto tempo você levou para se sentir confortável falando inglês?",
+          "intent": "Quanto tempo você levou para"
+        },
+        {
+          "id": "c52ac6f0-9d30-410e-87f0-eb258c43d069",
+          "exampleItem": "Quanto tempo vai demorar para o sistema ficar pronto?",
+          "intent": "Quanto tempo vai demorar para"
         }
       ]
     }
