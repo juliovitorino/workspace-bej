@@ -34,6 +34,10 @@ for (const component of ["BasicTraining", "AdvancedTraining"]) {
   assert.match(source, /nextTrainingExampleIndex\(current, exampleCount\)/);
   assert.match(source, /referenceExample\.(pt|en)/);
 }
+const basic = await read("../src/components/BasicTraining.tsx");
+const basicPrint = basic.slice(basic.indexOf('className="basic-training-print-sheet"'));
+assert.match(basicPrint, /printReferenceExample\.pt/);
+assert.doesNotMatch(basicPrint, /referenceExample\.pt/, "Printing must not follow manual browsing");
 const advanced = await read("../src/components/AdvancedTraining.tsx");
 const display = advanced.slice(advanced.indexOf('className="training-page-header"'), advanced.indexOf('className="training-instruction"'));
 assert.doesNotMatch(display, /intention\.examples\[0\]/, "Advanced training display must use the selected example");
