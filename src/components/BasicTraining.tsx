@@ -2,6 +2,8 @@ import { useExampleAudio } from "../features/study/useExampleAudio";
 import { speakStudyAudio, cancelStudyAudio } from "../features/study/studyAudio";
 import { useTrainingStudy, type TrainingStudyReporter } from "../features/study/useTrainingStudy";
 import { TrainingStudyTime } from "../features/study/TrainingStudyTime";
+import { TrainingExampleNavigator } from "./TrainingExampleNavigator";
+import { nextTrainingExampleIndex, trainingExampleIndex } from "../utils/trainingExampleNavigation";
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { isAuthorMode } from "../utils/authorMode";
@@ -184,9 +186,13 @@ export function BasicTraining({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [round, setRound] = useState(0);
-  const referenceExample = intention.examples?.length
-    ? intention.examples[round % intention.examples.length]
-    : undefined;
+  const [selectedExampleIndex, setSelectedExampleIndex] = useState(0);
+  const exampleCount = intention.examples?.length ?? 0;
+  const currentExampleIndex = trainingExampleIndex(selectedExampleIndex, exampleCount);
+  const referenceExample = intention.examples?.[currentExampleIndex];
+  // Printing keeps its original round-based reference, independent of manual browsing.
+  const printReferenceExample = exampleCount ? intention.examples?.[round % exampleCount] : undefined;
+  useEffect(() => { setSelectedExampleIndex(0); }, [intention.id]);
   const [studentText, setStudentText] = useState("");
   // Keep the native textarea in charge of its DOM value. iOS keyboard dictation
   // revises words and spaces asynchronously; a controlled value can overwrite
@@ -333,6 +339,8 @@ export function BasicTraining({
 
   function generateNewRound() {
     setRound((current) => current + 1);
+    // Preserve the previous automatic example rotation on a new round.
+    setSelectedExampleIndex((current) => nextTrainingExampleIndex(current, exampleCount));
     setAnswerText("");
     setEvaluation(null);
     setEvaluationCopyStatus(null);
@@ -874,7 +882,15 @@ export function BasicTraining({
 
         {referenceExample && (
           <section className="training-intention-example">
-            <h3>{t("common.example")}</h3>
+            <TrainingExampleNavigator
+              index={currentExampleIndex}
+              total={exampleCount}
+              onNext={() => {
+                cancelStudyAudio();
+                setSpeakingExample(null);
+                setSelectedExampleIndex((current) => nextTrainingExampleIndex(current, exampleCount));
+              }}
+            />
             <div className="example">
               <p className="training-example-language">{t("basicTraining.source")} {LANGUAGES[sourceLanguage].flag} {localizedLanguageName(sourceLanguage)}</p>
               <p>
@@ -1880,17 +1896,17 @@ export function BasicTraining({
           <p className="worksheet-english">{intention.targetIntention ?? intention.english}</p>
         </header>
 
-        {referenceExample && (
+        {printReferenceExample && (
           <section className="worksheet-section">
             <h2 className="worksheet-section-title">{t("common.example")}</h2>
             <div className="worksheet-example">
               <p className="worksheet-example-language">{t("basicTraining.source")} {localizedLanguageName(sourceLanguage)}</p>
               <p className="worksheet-example-pt">
-                {renderHighlightedText(referenceExample.pt, referenceExample.ptIntent)}
+                {renderHighlightedText(printReferenceExample.pt, printReferenceExample.ptIntent)}
               </p>
               <p className="worksheet-example-language">{t("basicTraining.study")} {localizedLanguageName(language)}</p>
               <p className="worksheet-example-en">
-                {renderHighlightedText(referenceExample.en, referenceExample.enIntent)}
+                {renderHighlightedText(printReferenceExample.en, printReferenceExample.enIntent)}
               </p>
             </div>
           </section>
