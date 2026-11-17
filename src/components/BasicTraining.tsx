@@ -3,6 +3,7 @@ import { speakStudyAudio, cancelStudyAudio } from "../features/study/studyAudio"
 import { useTrainingStudy, type TrainingStudyReporter } from "../features/study/useTrainingStudy";
 import { TrainingStudyTime } from "../features/study/TrainingStudyTime";
 import { TrainingExampleNavigator } from "./TrainingExampleNavigator";
+import { nextTrainingExampleIndex, trainingExampleIndex } from "../utils/trainingExampleNavigation";
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { isAuthorMode } from "../utils/authorMode";
@@ -187,7 +188,7 @@ export function BasicTraining({
   const [round, setRound] = useState(0);
   const [selectedExampleIndex, setSelectedExampleIndex] = useState(0);
   const exampleCount = intention.examples?.length ?? 0;
-  const currentExampleIndex = exampleCount ? selectedExampleIndex % exampleCount : 0;
+  const currentExampleIndex = trainingExampleIndex(selectedExampleIndex, exampleCount);
   const referenceExample = intention.examples?.[currentExampleIndex];
   useEffect(() => { setSelectedExampleIndex(0); }, [intention.id]);
   const [studentText, setStudentText] = useState("");
@@ -337,7 +338,7 @@ export function BasicTraining({
   function generateNewRound() {
     setRound((current) => current + 1);
     // Preserve the previous automatic example rotation on a new round.
-    setSelectedExampleIndex((current) => exampleCount ? (current + 1) % exampleCount : 0);
+    setSelectedExampleIndex((current) => nextTrainingExampleIndex(current, exampleCount));
     setAnswerText("");
     setEvaluation(null);
     setEvaluationCopyStatus(null);
@@ -885,7 +886,7 @@ export function BasicTraining({
               onNext={() => {
                 cancelStudyAudio();
                 setSpeakingExample(null);
-                setSelectedExampleIndex((current) => (current + 1) % exampleCount);
+                setSelectedExampleIndex((current) => nextTrainingExampleIndex(current, exampleCount));
               }}
             />
             <div className="example">
