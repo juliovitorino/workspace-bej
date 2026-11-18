@@ -82,6 +82,15 @@ function App() {
       setBackupReminderOpen(true);
     } else proceed();
   }
+  function openDonationPage() {
+    requestStudyNavigation(() => {
+      closeTraining();
+      setSelected(null);
+      window.speechSynthesis?.cancel();
+      commitView("donation");
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    });
+  }
   function setCurrentView(view: AppView) {
     if (view === "settings" || view === "study-dashboard") commitView(view);
     else requestStudyNavigation(() => commitView(view));
@@ -648,20 +657,14 @@ function App() {
                   onBack={closeTraining}
                 />
               )}
-            {currentView !== "donation" && <DonationFooter config={donationConfig} onDonate={() => {
-              requestStudyNavigation(() => {
-                closeTraining();
-                setSelected(null);
-                window.speechSynthesis?.cancel();
-                commitView("donation");
-                window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-              });
-            }} />}
+            {currentView !== "donation" && <DonationFooter config={donationConfig} onDonate={openDonationPage} />}
           </div>
         </div>
       </div>
 
       <IntentionDetails
+        donationConfig={donationConfig}
+        onDonate={openDonationPage}
         favorites={favorites}
         onToggleFavorite={(id, type) => toggleFavorite(id, language, type)}
         sourceLanguage={sourceLanguage}

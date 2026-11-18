@@ -8,6 +8,8 @@ import { useEffect, useRef, useState } from "react";
 import type { Example, MentalIntention } from "../types/hashmap";
 import { ConnectedSpeechButton } from "./ConnectedSpeechStudio";
 import { useExampleAudio } from "../features/study/useExampleAudio";
+import { DonationFooter } from "../features/donation/DonationFooter";
+import type { DonationConfig } from "../features/donation/donationConfig";
 
 
 /** Campos de destino do contrato 4.0; pt/ptIntent vêm da associação por UUID no serviço. */
@@ -54,6 +56,8 @@ function getYoutubeUrl(value?: string): string | null {
 }
 
 interface IntentionDetailsProps {
+  donationConfig: DonationConfig;
+  onDonate: () => void;
   favorites?: FavoriteChunk[];
   onToggleFavorite?: (id: string, type?: "example") => void;
   language: StudentLanguage;
@@ -68,6 +72,8 @@ interface IntentionDetailsProps {
 }
 
 export function IntentionDetails({
+  donationConfig,
+  onDonate,
   favorites = [],
   onToggleFavorite,
   language,
@@ -1527,6 +1533,10 @@ Mandatório:
             </div>
           </section>
         )}
+
+        <div className="intention-details-mobile-donation">
+          <DonationFooter config={donationConfig} onDonate={onDonate} />
+        </div>
 
         {isAuthorMode() && showMetadataModal && (
           <div

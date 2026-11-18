@@ -2861,6 +2861,16 @@ button { color: inherit; }
 .donation-copy:disabled { opacity: .5; cursor: not-allowed; }
 .donation-feedback { margin: 0; font-weight: 700; color: var(--text); }
 .donation-feedback-error { color: #c52b45; }
+/* Keep the existing donation invitation exclusive to mobile intention details. */
+.intention-details-mobile-donation { display: none; }
+@media (max-width: 820px) {
+  .intention-details-mobile-donation { display: block; }
+  .detail-panel .intention-details-mobile-donation .donation-footer {
+    margin-top: 28px;
+    align-items: flex-start;
+  }
+  .detail-panel .intention-details-mobile-donation .donation-footer-button { width: 100%; }
+}
 .donation-footer { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; padding: 20px 22px; margin-top: 36px; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); }
 .donation-footer-heart { font-size: 2rem; color: #e54866; line-height: 1; }
 .donation-footer-content { flex: 1 1 220px; min-width: 0; }
