@@ -10,7 +10,7 @@ import { newStudyId, readStudyStore, readStudyCheckpoints, studyDataWithCheckpoi
   STUDY_CHANGED, isStudyStorageKey, STUDY_MODULES, EXTRA_CATEGORIES, OTHER_STUDY_SUBCATEGORIES, StudyError, updateStudyStore, validDay,
   type ManualAdjustment, type StudyData, type StudyStore } from "./studyStorage";
 import { localDay } from "./studyTrackingService";
-import { studyEntries, studyStats, STUDY_PERIOD_ORDER, nextStudyPeriod, type StudyFilters } from "./studyStats";
+import { studyEntries, studyStats, STUDY_FILTER_PERIOD_ORDER, nextStudyPeriod, type StudyFilters } from "./studyStats";
 import "./study.css";
 import { StudyPeriodMenu } from "./StudyPeriodMenu";
 import { StudyWeeklyOverview } from "./StudyWeeklyOverview";
@@ -188,7 +188,6 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu }: {
   const cycleModulePeriod = () => {
     const next = nextStudyPeriod(filters.period);
     setFilters(current => ({ ...current, period: next }));
-    if (next === "custom") setFiltersVisible(true); // Expose the date inputs when reaching custom range.
     closeCalendar();
   };
   const chart = (title: string, values: Record<string, number>, label: (key: string) => string = key => key, total?: number, modules = false, sectionId?: string, collapseKey?: string) => {
@@ -239,7 +238,7 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu }: {
         <label>{t("study.language")}<select value={filters.language} onChange={e => setFilters({ ...filters, language: e.target.value as StudyFilters["language"] })}><option value="all">{t("study.allLanguages")}</option>{languages.map(code => <option key={code} value={code}>{languageName(code)}</option>)}</select></label>
         <label>{t("study.module")}<select value={filters.module} onChange={e => setFilters({ ...filters, module: e.target.value as StudyFilters["module"] })}><option value="all">{t("study.allModules")}</option>{STUDY_MODULES.map(key => <option key={key} value={key}>{moduleLabel(key)}</option>)}</select></label>
         <label>{t("study.mode")}<select value={filters.mode} onChange={e => setFilters({ ...filters, mode: e.target.value as StudyFilters["mode"] })}>{["all", "manual", "walking"].map(key => <option key={key} value={key}>{t(`study.modes.${key}`)}</option>)}</select></label>
-        <label>{t("study.period")}<select value={filters.period} onChange={e => setFilters({ ...filters, period: e.target.value as StudyFilters["period"] })}>{STUDY_PERIOD_ORDER.map(key => <option key={key} value={key}>{t(`study.periods.${key}`)}</option>)}</select></label>
+        <label>{t("study.period")}<select value={filters.period} onChange={e => setFilters({ ...filters, period: e.target.value as StudyFilters["period"] })}>{STUDY_FILTER_PERIOD_ORDER.map(key => <option key={key} value={key}>{t(`study.periods.${key}`)}</option>)}</select></label>
         <label>{t("extras.origin")}<select value={filters.origin ?? "all"} onChange={e => setFilters({ ...filters, origin: e.target.value as StudyFilters["origin"] })}>{["all", "internal", "external"].map(key => <option key={key} value={key}>{t(`extras.origins.${key}`)}</option>)}</select></label>
         {filters.origin !== "internal" && <label>{t("extras.category")}<select value={filters.extraCategory ?? "all"} onChange={e => setFilters({ ...filters, extraCategory: e.target.value as StudyFilters["extraCategory"], extraSubcategory: "all" })}><option value="all">{t("extras.allCategories")}</option>{EXTRA_CATEGORIES.map(key => <option key={key} value={key}>{t(`extras.categories.${key}`)}</option>)}</select></label>}
         {filters.origin !== "internal" && filters.extraCategory === "other" && <label>{t("extras.subcategory")}<select value={filters.extraSubcategory ?? "all"} onChange={e => setFilters({ ...filters, extraSubcategory: e.target.value as StudyFilters["extraSubcategory"] })}><option value="all">{t("extras.allSubcategories")}</option>{OTHER_STUDY_SUBCATEGORIES.map(key => <option key={key} value={key}>{t(`extras.subcategories.${key}`)}</option>)}</select></label>}
