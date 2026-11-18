@@ -23,7 +23,7 @@ import { StudyAverageOverview } from "./StudyAverageOverview";
 import { celebrateAchievement } from "../../utils/achievements";
 import { StudyStorageOverview } from "./StudyStorageOverview";
 import { StudyModuleTimeValue } from "./StudyModuleTimeValue";
-import { moduleDurationParts, moduleRelativeBarWidth, nextModuleValueMode, type ModuleValueMode } from "./studyModuleTime";
+import { moduleDurationParts, modulePercentageBarWidth, nextModuleValueMode, type ModuleValueMode } from "./studyModuleTime";
 
 const languages = Object.keys(LANGUAGES) as StudentLanguage[];
 const HISTORY_PAGE_SIZE = 20;
@@ -194,7 +194,7 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu }: {
     return <section id={sectionId} tabIndex={sectionId ? -1 : undefined} className="study-panel bej-chart-card">{collapseKey ? <StudyCollapseToggle expanded={collapsedCharts[collapseKey] ?? false} onToggle={() => setCollapsedCharts(v => ({ ...v, [collapseKey]: !(v[collapseKey] ?? false) }))} title={title} /> : <h3>{title}</h3>}{(!collapseKey || collapsedCharts[collapseKey]) && (!entries.length ? <p>{t("study.empty")}</p> : <ul className={modules ? "study-chart study-chart-modules" : "study-chart"}>{entries.map(([key, seconds], index) => <li key={key}>
       <div><span>{sectionId === "study-time-by-module" && <span className="study-module-rank">{index + 1}.</span>}{label(key)}</span>{sectionId === "study-time-by-module" && total !== undefined
         ? <StudyModuleTimeValue moduleName={label(key)} time={moduleDuration(seconds)} percentage={`${number(seconds / scale * 100)}%`} mode={moduleValueMode} onToggle={() => setModuleValueMode(nextModuleValueMode)} />
-        : <strong>{duration(seconds)}{total !== undefined && ` · ${number(seconds / scale * 100)}%`}</strong>}</div><div className="study-bar" aria-hidden="true"><span style={{ width: `${sectionId === "study-time-by-module" ? moduleRelativeBarWidth(seconds, max) : seconds / scale * 100}%`, ...(sectionId === "study-time-by-module" ? { background: key.startsWith(EXTRA_MODULE_PREFIX)
+        : <strong>{duration(seconds)}{total !== undefined && ` · ${number(seconds / scale * 100)}%`}</strong>}</div><div className="study-bar" aria-hidden="true"><span style={{ width: `${sectionId === "study-time-by-module" ? modulePercentageBarWidth(seconds, scale) : seconds / scale * 100}%`, ...(sectionId === "study-time-by-module" ? { background: key.startsWith(EXTRA_MODULE_PREFIX)
         ? STUDY_EXTRA_CATEGORY_COLORS[key.slice(EXTRA_MODULE_PREFIX.length) as typeof EXTRA_CATEGORIES[number]]
         : STUDY_MODULE_COLORS[key as typeof STUDY_MODULES[number]] } : {}) }} /></div>
     </li>)}</ul>)}</section>;

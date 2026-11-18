@@ -16,11 +16,11 @@ export function nextModuleValueMode(mode: ModuleValueMode): ModuleValueMode {
 }
 
 /**
- * The Time by Module bar compares a module with the most-studied visible module.
- * A small visual floor keeps nonzero study times visible; zero remains empty.
- * The actual percentage label still uses total study time, not this visual scale.
+ * Fill the Time by Module bar according to the module's share of total study time.
+ * The full track represents 100%, exactly like the percentage shown beside it.
+ * No visual minimum: even small percentages retain their proportional width.
  */
-export function moduleRelativeBarWidth(seconds: number, largestSeconds: number): number {
-  if (seconds <= 0 || largestSeconds <= 0) return 0;
-  return Math.min(100, Math.max(2, seconds / largestSeconds * 100));
+export function modulePercentageBarWidth(seconds: number, totalSeconds: number): number {
+  if (!Number.isFinite(seconds) || !Number.isFinite(totalSeconds) || seconds <= 0 || totalSeconds <= 0) return 0;
+  return Math.min(100, seconds / totalSeconds * 100);
 }

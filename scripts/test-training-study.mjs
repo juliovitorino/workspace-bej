@@ -145,12 +145,19 @@ async function openTraining(module, language = 'en-US') {
   return { component, panel, module, language, report };
 }
 function input(practice, trusted = true) {
-  const value = 'I might go home today.';
   const field = find(practice.component.tree, n => n.type === 'textarea');
-  field.props.onChange({ target: { value } });
-  practice.component.tree.props.onInput({ isTrusted: trusted });
-  listeners.get("input")?.({ type: "input", isTrusted: trusted, target: null }); practice.component.flush();
-  assert.equal(find(practice.component.tree, n => n.type === 'textarea').props.value, value, 'typing survives a tracking render');
+  assert.ok(field, 'training exercise must expose a textarea');
+  if (trusted) {
+    // The current training components record typing in the textarea's onChange.
+    // The textarea is uncontrolled (defaultValue + ref), so no props.value exists.
+    field.props.onChange({ target: { value: 'I might go home today.' }, isTrusted: true });
+  } else {
+    // An untrusted pointer event alone must not start study tracking.
+    practice.component.tree.props.onPointerDown({ isTrusted: false });
+  }
+  listeners.get("input")?.({ type: "input", isTrusted: trusted, target: null });
+  practice.component.flush();
+  assert.ok(find(practice.component.tree, n => n.type === 'textarea'), 'textarea remains mounted after a tracking render');
 }
 async function finish(practice) {
   practice.component.dispose(); practice.panel.dispose(); navigate('study-dashboard', practice.language);
@@ -299,6 +306,7 @@ tracking.dispose(); await settle();
 
 // Module bars represent a share of all filtered study time, not the largest bar.
 const { StudyDashboard } = load('src/features/study/StudyDashboard.tsx');
+const { StudyModuleTimeValue } = load('src/features/study/StudyModuleTimeValue.tsx');
 const { STUDY_KEY, STUDY_CHANGED, STUDY_MODULES, writeStudyStore } = load('src/features/study/studyStorage.ts');
 function persistChartStore() {
   for (const key of [...memory.keys()]) if (key.startsWith(STUDY_KEY)) memory.delete(key);
@@ -324,20 +332,35 @@ find(dashboard.tree, n => n.type === 'button' && text(n) === translations.study.
 assert.equal(viewNode('study-results').props.hidden, false);
 assert.equal(JSON.stringify([...memory]), beforeUi, 'details, settings and history navigation never write study data');
 console.log('PASS dashboard views: collapsed details/settings, expansion, dedicated history, return and no storage writes.');
+// The dashboard defaults to "today", but this harness records sessions on a
+// simulated January 2026 clock while new Date() uses the actual wall clock.
+// Select "all" explicitly so this fixture is included regardless of test date.
+const chartFilterControls = () => React.Children.toArray(find(dashboard.tree, n =>
+  n.type === 'fieldset' && n.props.className?.includes('study-filters')).props.children)
+  .map(label => find(label, n => n.type === 'select')).filter(Boolean);
+const chartPeriodFilter = chartFilterControls()[3];
+assert.ok(chartPeriodFilter, 'dashboard period filter must exist');
+chartPeriodFilter.props.onChange({ target: { value: 'all' } });
+dashboard.flush();
 const moduleChart = () => viewNode('study-time-by-module');
 const basicRow = () => find(moduleChart(), n => n.type === 'li' && text(n).includes(translations.study.basicTraining));
 const barPercent = row => parseFloat(find(row, n => n.type === 'span' && n.props.style?.width).props.style.width);
-assert.ok(text(basicRow()).includes('37,55%'), '181 seconds out of 482 seconds must display 37.55%');
+// The lightweight harness does not render nested function components; inspect
+// the actual props passed to StudyModuleTimeValue instead of flattening JSX text.
+const displayedModulePercent = row => find(row, n => n.type === StudyModuleTimeValue)?.props.percentage;
+const displayedModuleTime = row => find(row, n => n.type === StudyModuleTimeValue)?.props.time;
+assert.equal(displayedModulePercent(basicRow()), '37,55%', '181 seconds out of 482 seconds must display 37.55%');
 assert.ok(Math.abs(barPercent(basicRow()) - 181 / 482 * 100) < 1e-9);
 const moduleFilter = find(dashboard.tree, n => n.type === 'select' && find(n, c => c.type === 'option' && c.props.value === 'basic-training'));
 for (const [module, key] of [['speaking-game', 'speakingGame'], ['interpretation', 'interpretation']]) {
   assert.equal(text(find(moduleFilter, n => n.type === 'option' && n.props.value === module)), translations.common[key]);
 }
 moduleFilter.props.onChange({ target: { value: 'basic-training' } }); dashboard.flush();
-assert.ok(text(basicRow()).includes('100%')); assert.equal(barPercent(basicRow()), 100, 'percentages follow the filtered total');
+assert.equal(displayedModulePercent(basicRow()), '100%'); assert.equal(barPercent(basicRow()), 100, 'percentages follow the filtered total');
 chartStore.studyData.sessions = []; persistChartStore(); listeners.get(STUDY_CHANGED)(); dashboard.flush();
 assert.equal(React.Children.toArray(find(moduleChart(), n => n.type === 'ul').props.children).length, 1);
-assert.ok(text(moduleChart()).includes(translations.study.zeroDuration)); assert.ok(text(moduleChart()).includes('0%'));
+assert.equal(displayedModulePercent(basicRow()), '0%');
+assert.equal(displayedModuleTime(basicRow()), translations.study.zeroDuration);
 assert.equal(barPercent(basicRow()), 0); assert.ok(!text(moduleChart()).includes('NaN'));
 // Module comparison lists every applicable module, ordered by raw seconds.
 const chartSection = title => find(dashboard.tree, n => n.type === 'section' && React.Children.toArray(n.props.children).some(c => c?.type === 'h3' && (text(c) === title || text(c).startsWith(title + ' \u00b7 '))));
@@ -368,12 +391,12 @@ const chartSession = (module, seconds, language = 'en-US', daysAgo = 0, mode = '
 setFilter(1, 'all');
 for (const [seconds, expected] of [[308, '5min 8s'], [3608, '1h 8s'], [3600, '1h'], [300, '5min'], [8, '8s']]) {
   updateChart([chartSession('basic-training', seconds)]);
-  assert.equal(text(find(basicRow(), n => n.type === 'strong')), expected + ' \u00b7 100%');
+  assert.equal(`${displayedModuleTime(basicRow())} \u00b7 ${displayedModulePercent(basicRow())}`, expected + ' \u00b7 100%');
 }
 updateChart([]);
 console.log('PASS compact durations: omitted zero units, exact hours/minutes/seconds and zero fallback.');
 assert.equal(moduleRows().length, STUDY_MODULES.length);
-assert.ok(moduleRows().every(row => text(row).includes('0s') && text(row).includes('0%') && barPercent(row) === 0));
+assert.ok(moduleRows().every(row => displayedModuleTime(row) === translations.study.zeroDuration && displayedModulePercent(row) === '0%' && barPercent(row) === 0));
 assert.deepEqual(moduleRows().map(rowLabel), Object.values(labels).sort((a, b) => a.localeCompare(b, 'pt-BR')));
 assert.equal(find(moduleChart(), n => n.type === 'ul').props.className, 'study-chart study-chart-modules');
 updateChart([chartSession('basic-training', 5 * 3600), chartSession('shadowing', 2 * 3600), chartSession('speaking-game', 10 * 3600)]);
@@ -381,7 +404,7 @@ assert.equal(moduleRows().length, STUDY_MODULES.length);
 assert.deepEqual(moduleRows().slice(0, 3).map(rowLabel), ['speaking-game', 'basic-training', 'shadowing'].map(module => labels[module]));
 assert.equal(moduleRows().filter(row => barPercent(row) === 0).length, STUDY_MODULES.length - 3);
 assert.ok(Math.abs(barPercent(moduleRows()[0]) - 10 / 17 * 100) < 1e-9);
-assert.ok(text(moduleRows()[0]).includes('10h'));
+assert.ok(displayedModuleTime(moduleRows()[0]).includes('10h'));
 updateChart(STUDY_MODULES.map((module, index) => chartSession(module, (index + 1) * 60)));
 assert.deepEqual(moduleRows().map(rowLabel), [...STUDY_MODULES].reverse().map(module => labels[module]));
 updateChart(STUDY_MODULES.map(module => chartSession(module, 120)));

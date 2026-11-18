@@ -309,17 +309,23 @@ for (const locale of ['pt-BR', 'en-US', 'es-ES', 'fr-FR']) {
 console.log('PASS: module time uses two largest units, cycles in sync across all module rows on mobile, preserves static desktop and other charts.');
 
 
-// Relative module bars: the largest visible module fills the bar, not the whole-study share.
-const { moduleRelativeBarWidth } = load('src/features/study/studyModuleTime.ts');
-assert.equal(moduleRelativeBarWidth(3600, 3600), 100);
-assert.equal(moduleRelativeBarWidth(1800, 3600), 50);
-assert.equal(moduleRelativeBarWidth(900, 3600), 25);
-assert.equal(moduleRelativeBarWidth(3600, 7200), 50);
-assert.equal(moduleRelativeBarWidth(1, 3600), 2); // nonzero visual floor
-assert.equal(moduleRelativeBarWidth(0, 3600), 0);
-assert.equal(moduleRelativeBarWidth(0, 0), 0);
-assert.equal(moduleRelativeBarWidth(120, 0), 0);
-assert.equal(moduleRelativeBarWidth(7200, 3600), 100); // never exceed container
-assert.match(dashboardSource, /moduleRelativeBarWidth\(seconds, max\) : seconds \/ scale \* 100/);
+// Time by Module bars use the same share-of-total percentage as their labels.
+// The track is 100% of study time, never the largest visible module.
+const { modulePercentageBarWidth } = load('src/features/study/studyModuleTime.ts');
+assert.equal(modulePercentageBarWidth(1800, 3600), 50);
+assert.equal(modulePercentageBarWidth(1080, 3600), 30);
+assert.equal(modulePercentageBarWidth(720, 3600), 20);
+assert.equal(modulePercentageBarWidth(900, 3600), 25);
+assert.equal(modulePercentageBarWidth(3600, 7200), 50, 'largest module does not automatically fill the track');
+assert.equal(modulePercentageBarWidth(1, 3600), 1 / 3600 * 100, 'tiny percentages remain proportional; no 2% floor');
+assert.equal(modulePercentageBarWidth(0, 3600), 0);
+assert.equal(modulePercentageBarWidth(0, 0), 0);
+assert.equal(modulePercentageBarWidth(120, 0), 0);
+assert.equal(modulePercentageBarWidth(7200, 3600), 100, 'never exceed the track');
+assert.equal(modulePercentageBarWidth(Number.NaN, 3600), 0);
+assert.equal(modulePercentageBarWidth(3600, Number.NaN), 0);
+assert.equal(modulePercentageBarWidth(-60, 3600), 0);
+assert.match(dashboardSource, /modulePercentageBarWidth\(seconds, scale\) : seconds \/ scale \* 100/);
 assert.match(dashboardSource, /percentage=\{\x60\$\{number\(seconds \/ scale \* 100\)\}%\x60\}/);
-console.log('PASS: Time by Module bars normalize to the largest module, keep a nonzero minimum, and preserve actual percentage labels.');
+assert.doesNotMatch(dashboardSource, /moduleRelativeBarWidth/);
+console.log('PASS: Time by Module bar fill matches percentage of total study time, without minimum floor; other charts unchanged.');
