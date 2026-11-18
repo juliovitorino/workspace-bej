@@ -14,3 +14,13 @@ export type ModuleValueMode = "both" | "time" | "percentage";
 export function nextModuleValueMode(mode: ModuleValueMode): ModuleValueMode {
   return mode === "both" ? "time" : mode === "time" ? "percentage" : "both";
 }
+
+/**
+ * The Time by Module bar compares a module with the most-studied visible module.
+ * A small visual floor keeps nonzero study times visible; zero remains empty.
+ * The actual percentage label still uses total study time, not this visual scale.
+ */
+export function moduleRelativeBarWidth(seconds: number, largestSeconds: number): number {
+  if (seconds <= 0 || largestSeconds <= 0) return 0;
+  return Math.min(100, Math.max(2, seconds / largestSeconds * 100));
+}
