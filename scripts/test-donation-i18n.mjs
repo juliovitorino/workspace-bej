@@ -40,3 +40,20 @@ for (const language of ["pt-BR", "en-US", "es-ES", "fr-FR"]) {
   }
 }
 console.log("BEJ donation i18n configuration and translations validated.");
+
+
+// Intention details reuses the same translated footer and navigation as other modules,
+// but CSS exposes the extra placement only at the app's 820px mobile breakpoint.
+const app = await read("../src/App.tsx");
+const details = await read("../src/components/IntentionDetails.tsx");
+const styles = await read("../src/App.css");
+assert.match(details, /import \{ DonationFooter \} from "\.\.\/features\/donation\/DonationFooter"/);
+assert.match(details, /<div className="intention-details-mobile-donation">\s*<DonationFooter config=\{donationConfig\} onDonate=\{onDonate\} \/>/);
+assert.match(app, /<IntentionDetails\s+donationConfig=\{donationConfig\}\s+onDonate=\{openDonationPage\}/);
+assert.match(app, /<DonationFooter config=\{donationConfig\} onDonate=\{openDonationPage\}/);
+assert.match(app, /function openDonationPage\(\) \{\s*requestStudyNavigation\(\(\) => \{/);
+assert.match(app, /commitView\("donation"\)/);
+assert.match(styles, /\.intention-details-mobile-donation \{ display: none; \}/);
+assert.match(styles, /@media \(max-width: 820px\) \{\s*\.intention-details-mobile-donation \{ display: block; \}/);
+assert.match(footer, /if \(!config.enabled \|\| !config.footer.visible\) return null;/);
+console.log("BEJ mobile intention details donation footer and shared navigation validated.");
