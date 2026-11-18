@@ -2,11 +2,13 @@ import type { SourceLanguage } from "../../config/languages";
 
 export interface MaintenanceConfig {
   visible: boolean;
+  lockapp: boolean;
   messages: Record<SourceLanguage, string>;
 }
 
 export const HIDDEN_MAINTENANCE_CONFIG: MaintenanceConfig = {
   visible: false,
+  lockapp: false,
   messages: { "pt-BR": "", "en-US": "", "es-ES": "", "fr-FR": "" },
 };
 
@@ -26,6 +28,7 @@ export function parseMaintenanceConfig(value: unknown): MaintenanceConfig {
   const messages = asRecord(maintenance.messages);
   return {
     visible: maintenance.visible === true,
+    lockapp: maintenance.lockapp === true,
     messages: {
       "pt-BR": asMessage(messages["pt-BR"]),
       "en-US": asMessage(messages["en-US"]),
@@ -33,6 +36,11 @@ export function parseMaintenanceConfig(value: unknown): MaintenanceConfig {
       "fr-FR": asMessage(messages["fr-FR"]),
     },
   };
+}
+
+/** The full-page lock is enabled only when BOTH maintenance flags are true. */
+export function isMaintenanceLocked(config: MaintenanceConfig): boolean {
+  return config.visible && config.lockapp;
 }
 
 /** Prefer the UI/source language; fall back to Portuguese for incomplete configs. */
