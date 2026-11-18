@@ -329,3 +329,22 @@ assert.match(dashboardSource, /modulePercentageBarWidth\(seconds, scale\) : seco
 assert.match(dashboardSource, /percentage=\{\x60\$\{number\(seconds \/ scale \* 100\)\}%\x60\}/);
 assert.doesNotMatch(dashboardSource, /moduleRelativeBarWidth/);
 console.log('PASS: Time by Module bar fill matches percentage of total study time, without minimum floor; other charts unchanged.');
+ 
+// The heading's period action and the filter select use one canonical order.
+const { STUDY_PERIOD_ORDER, nextStudyPeriod } = load('src/features/study/studyStats.ts');
+assert.deepEqual([...STUDY_PERIOD_ORDER], ['today', 'yesterday', 'week', '7', '30', 'month', '90', 'all', 'custom']);
+for (let i = 0; i < STUDY_PERIOD_ORDER.length; i++) {
+  assert.equal(nextStudyPeriod(STUDY_PERIOD_ORDER[i]), STUDY_PERIOD_ORDER[(i + 1) % STUDY_PERIOD_ORDER.length]);
+}
+assert.match(dashboardSource, /className="study-module-period-button"/);
+assert.match(dashboardSource, /onClick=\{cycleModulePeriod\}/);
+assert.match(dashboardSource, /setFilters\(current => \(\{ \.\.\.current, period: next \}\)\)/);
+assert.match(dashboardSource, /if \(next === "custom"\) setFiltersVisible\(true\)/);
+assert.match(dashboardSource, /STUDY_PERIOD_ORDER\.map\(key => <option/);
+assert.match(studyStyles, /\.study-module-period-button:focus-visible/);
+for (const locale of ['pt-BR', 'en-US', 'es-ES', 'fr-FR']) {
+  const translations = JSON.parse(readFileSync(`src/i18n/locales/${locale}.json`, 'utf8'));
+  assert.ok(translations.study.nextPeriod, `Missing next period action label in ${locale}`);
+}
+console.log('PASS: Time by Module period cycle order, shared filter options, accessible button and all four translations.');
+
