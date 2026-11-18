@@ -1,6 +1,6 @@
 {
   "maintenance": {
-    "visible": false,
+    "visible": true,
     "messages": {
       "pt-BR": "Estamos realizando uma manutenção programada no BEJ. Algumas funcionalidades podem ficar temporariamente indisponíveis. Agradecemos a compreensão!",
       "en-US": "We are performing scheduled maintenance on BEJ. Some features may be temporarily unavailable. Thank you for your understanding!",
