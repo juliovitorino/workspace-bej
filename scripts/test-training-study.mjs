@@ -145,12 +145,19 @@ async function openTraining(module, language = 'en-US') {
   return { component, panel, module, language, report };
 }
 function input(practice, trusted = true) {
-  const value = 'I might go home today.';
   const field = find(practice.component.tree, n => n.type === 'textarea');
-  field.props.onChange({ target: { value } });
-  practice.component.tree.props.onInput({ isTrusted: trusted });
-  listeners.get("input")?.({ type: "input", isTrusted: trusted, target: null }); practice.component.flush();
-  assert.equal(find(practice.component.tree, n => n.type === 'textarea').props.value, value, 'typing survives a tracking render');
+  assert.ok(field, 'training exercise must expose a textarea');
+  if (trusted) {
+    // The current training components record typing in the textarea's onChange.
+    // The textarea is uncontrolled (defaultValue + ref), so no props.value exists.
+    field.props.onChange({ target: { value: 'I might go home today.' }, isTrusted: true });
+  } else {
+    // An untrusted pointer event alone must not start study tracking.
+    practice.component.tree.props.onPointerDown({ isTrusted: false });
+  }
+  listeners.get("input")?.({ type: "input", isTrusted: trusted, target: null });
+  practice.component.flush();
+  assert.ok(find(practice.component.tree, n => n.type === 'textarea'), 'textarea remains mounted after a tracking render');
 }
 async function finish(practice) {
   practice.component.dispose(); practice.panel.dispose(); navigate('study-dashboard', practice.language);
