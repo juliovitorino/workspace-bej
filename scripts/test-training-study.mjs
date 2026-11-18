@@ -348,6 +348,7 @@ const barPercent = row => parseFloat(find(row, n => n.type === 'span' && n.props
 // The lightweight harness does not render nested function components; inspect
 // the actual props passed to StudyModuleTimeValue instead of flattening JSX text.
 const displayedModulePercent = row => find(row, n => n.type === StudyModuleTimeValue)?.props.percentage;
+const displayedModuleTime = row => find(row, n => n.type === StudyModuleTimeValue)?.props.time;
 assert.equal(displayedModulePercent(basicRow()), '37,55%', '181 seconds out of 482 seconds must display 37.55%');
 assert.ok(Math.abs(barPercent(basicRow()) - 181 / 482 * 100) < 1e-9);
 const moduleFilter = find(dashboard.tree, n => n.type === 'select' && find(n, c => c.type === 'option' && c.props.value === 'basic-training'));
@@ -359,7 +360,7 @@ assert.equal(displayedModulePercent(basicRow()), '100%'); assert.equal(barPercen
 chartStore.studyData.sessions = []; persistChartStore(); listeners.get(STUDY_CHANGED)(); dashboard.flush();
 assert.equal(React.Children.toArray(find(moduleChart(), n => n.type === 'ul').props.children).length, 1);
 assert.equal(displayedModulePercent(basicRow()), '0%');
-assert.equal(find(basicRow(), n => n.type === StudyModuleTimeValue)?.props.time, translations.study.zeroDuration);
+assert.equal(displayedModuleTime(basicRow()), translations.study.zeroDuration);
 assert.equal(barPercent(basicRow()), 0); assert.ok(!text(moduleChart()).includes('NaN'));
 // Module comparison lists every applicable module, ordered by raw seconds.
 const chartSection = title => find(dashboard.tree, n => n.type === 'section' && React.Children.toArray(n.props.children).some(c => c?.type === 'h3' && (text(c) === title || text(c).startsWith(title + ' \u00b7 '))));
@@ -390,12 +391,12 @@ const chartSession = (module, seconds, language = 'en-US', daysAgo = 0, mode = '
 setFilter(1, 'all');
 for (const [seconds, expected] of [[308, '5min 8s'], [3608, '1h 8s'], [3600, '1h'], [300, '5min'], [8, '8s']]) {
   updateChart([chartSession('basic-training', seconds)]);
-  assert.equal(text(find(basicRow(), n => n.type === 'strong')), expected + ' \u00b7 100%');
+  assert.equal(`${displayedModuleTime(basicRow())} \u00b7 ${displayedModulePercent(basicRow())}`, expected + ' \u00b7 100%');
 }
 updateChart([]);
 console.log('PASS compact durations: omitted zero units, exact hours/minutes/seconds and zero fallback.');
 assert.equal(moduleRows().length, STUDY_MODULES.length);
-assert.ok(moduleRows().every(row => text(row).includes('0s') && text(row).includes('0%') && barPercent(row) === 0));
+assert.ok(moduleRows().every(row => displayedModuleTime(row) === translations.study.zeroDuration && displayedModulePercent(row) === '0%' && barPercent(row) === 0));
 assert.deepEqual(moduleRows().map(rowLabel), Object.values(labels).sort((a, b) => a.localeCompare(b, 'pt-BR')));
 assert.equal(find(moduleChart(), n => n.type === 'ul').props.className, 'study-chart study-chart-modules');
 updateChart([chartSession('basic-training', 5 * 3600), chartSession('shadowing', 2 * 3600), chartSession('speaking-game', 10 * 3600)]);
@@ -403,7 +404,7 @@ assert.equal(moduleRows().length, STUDY_MODULES.length);
 assert.deepEqual(moduleRows().slice(0, 3).map(rowLabel), ['speaking-game', 'basic-training', 'shadowing'].map(module => labels[module]));
 assert.equal(moduleRows().filter(row => barPercent(row) === 0).length, STUDY_MODULES.length - 3);
 assert.ok(Math.abs(barPercent(moduleRows()[0]) - 10 / 17 * 100) < 1e-9);
-assert.ok(text(moduleRows()[0]).includes('10h'));
+assert.ok(displayedModuleTime(moduleRows()[0]).includes('10h'));
 updateChart(STUDY_MODULES.map((module, index) => chartSession(module, (index + 1) * 60)));
 assert.deepEqual(moduleRows().map(rowLabel), [...STUDY_MODULES].reverse().map(module => labels[module]));
 updateChart(STUDY_MODULES.map(module => chartSession(module, 120)));
