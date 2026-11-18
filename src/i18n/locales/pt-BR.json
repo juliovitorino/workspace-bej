@@ -145,6 +145,7 @@
     "historyTitle": "Histórico de Estudos",
     "backDashboard": "Voltar ao Dashboard",
     "moreOptions": "Mais opções do Dashboard",
+    "toggleModuleTimePercentage": "Alternar entre tempo e percentual",
     "displayPreferences": "Preferências de visualização",
     "hideZeroData": "Não mostrar dados zerados",
     "hideZeroDataHelp": "Oculta indicadores, módulos e categorias sem estudo registrado. Não altera nem exclui os dados. Os dias da semana continuam visíveis.",
