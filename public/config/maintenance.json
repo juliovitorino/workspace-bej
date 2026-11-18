@@ -6,6 +6,7 @@
       "en-US": "We are performing scheduled maintenance on BEJ. Some features may be temporarily unavailable. Thank you for your understanding!",
       "es-ES": "Estamos realizando tareas de mantenimiento programado en BEJ. Algunas funciones pueden no estar disponibles temporalmente. ¡Gracias por tu comprensión!",
       "fr-FR": "Nous effectuons une maintenance programmée sur BEJ. Certaines fonctionnalités peuvent être temporairement indisponibles. Merci de votre compréhension !"
-    }
+    },
+    "lockapp": false
   }
 }
