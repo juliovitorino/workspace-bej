@@ -288,8 +288,12 @@ assert.equal(nextModuleValueMode('both'), 'time');
 assert.equal(nextModuleValueMode('time'), 'percentage');
 assert.equal(nextModuleValueMode('percentage'), 'both');
 const moduleTimeComponent = readFileSync('src/features/study/StudyModuleTimeValue.tsx', 'utf8');
-assert.match(moduleTimeComponent, /useState<ModuleValueMode>\("both"\)/);
-assert.match(moduleTimeComponent, /setMode\(nextModuleValueMode\)/);
+assert.doesNotMatch(moduleTimeComponent, /useState<ModuleValueMode>/);
+assert.match(moduleTimeComponent, /mode: ModuleValueMode;/);
+assert.match(moduleTimeComponent, /onToggle: \(\) => void;/);
+assert.match(moduleTimeComponent, /onClick=\{onToggle\}/);
+assert.match(dashboardSource, /const \[moduleValueMode, setModuleValueMode\] = useState<ModuleValueMode>\("both"\)/);
+assert.match(dashboardSource, /mode=\{moduleValueMode\} onToggle=\{\(\) => setModuleValueMode\(nextModuleValueMode\)\}/);
 assert.match(moduleTimeComponent, /className="study-module-value-desktop"/);
 assert.match(moduleTimeComponent, /className="study-module-value-mobile"/);
 assert.match(dashboardSource, /sectionId === "study-time-by-module" && total !== undefined/);
@@ -302,4 +306,4 @@ for (const locale of ['pt-BR', 'en-US', 'es-ES', 'fr-FR']) {
   const translations = JSON.parse(readFileSync(`src/i18n/locales/${locale}.json`, 'utf8'));
   assert.ok(translations.study.toggleModuleTimePercentage, `Missing module toggle label in ${locale}`);
 }
-console.log('PASS: module time uses two largest units, cycles independently on mobile, preserves static desktop and other charts.');
+console.log('PASS: module time uses two largest units, cycles in sync across all module rows on mobile, preserves static desktop and other charts.');
