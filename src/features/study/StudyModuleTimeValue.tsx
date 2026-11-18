@@ -1,17 +1,17 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { nextModuleValueMode, type ModuleValueMode } from "./studyModuleTime";
+import type { ModuleValueMode } from "./studyModuleTime";
 
 interface StudyModuleTimeValueProps {
   moduleName: string;
   time: string;
   percentage: string;
+  mode: ModuleValueMode;
+  onToggle: () => void;
 }
 
-/** Desktop is always static; each mobile module row owns its independent three-step cycle. */
-export function StudyModuleTimeValue({ moduleName, time, percentage }: StudyModuleTimeValueProps) {
+/** Desktop remains static; mobile rows share the same display mode from the dashboard. */
+export function StudyModuleTimeValue({ moduleName, time, percentage, mode, onToggle }: StudyModuleTimeValueProps) {
   const { t } = useTranslation();
-  const [mode, setMode] = useState<ModuleValueMode>("both");
   const fullValue = `${time} · ${percentage}`;
   const visibleValue = mode === "both" ? fullValue : mode === "time" ? time : percentage;
 
@@ -21,7 +21,7 @@ export function StudyModuleTimeValue({ moduleName, time, percentage }: StudyModu
       <button
         type="button"
         className="study-module-value-mobile"
-        onClick={() => setMode(nextModuleValueMode)}
+        onClick={onToggle}
         aria-live="polite"
         aria-label={`${moduleName}: ${visibleValue}. ${t("study.toggleModuleTimePercentage")}`}
         title={t("study.toggleModuleTimePercentage")}
