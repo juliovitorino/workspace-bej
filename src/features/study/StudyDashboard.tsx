@@ -10,7 +10,7 @@ import { newStudyId, readStudyStore, readStudyCheckpoints, studyDataWithCheckpoi
   STUDY_CHANGED, isStudyStorageKey, STUDY_MODULES, EXTRA_CATEGORIES, OTHER_STUDY_SUBCATEGORIES, StudyError, updateStudyStore, validDay,
   type ManualAdjustment, type StudyData, type StudyStore } from "./studyStorage";
 import { localDay } from "./studyTrackingService";
-import { studyEntries, studyStats, type StudyFilters } from "./studyStats";
+import { studyEntries, studyStats, STUDY_FILTER_PERIOD_ORDER, nextStudyPeriod, type StudyFilters } from "./studyStats";
 import "./study.css";
 import { StudyPeriodMenu } from "./StudyPeriodMenu";
 import { StudyWeeklyOverview } from "./StudyWeeklyOverview";
@@ -185,13 +185,18 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu }: {
     });
   }
   const [collapsedCharts, setCollapsedCharts] = useState<Record<string, boolean>>({ otherStudies: false });
+  const cycleModulePeriod = () => {
+    const next = nextStudyPeriod(filters.period);
+    setFilters(current => ({ ...current, period: next }));
+    closeCalendar();
+  };
   const chart = (title: string, values: Record<string, number>, label: (key: string) => string = key => key, total?: number, modules = false, sectionId?: string, collapseKey?: string) => {
     const entries = Object.entries(values).filter(([, seconds]) => !hideZeroData || seconds > 0).sort(modules
       ? ([a, secondsA], [b, secondsB]) => secondsB - secondsA || label(a).localeCompare(label(b), i18n.language)
       : ([a], [b]) => a.localeCompare(b));
     const max = Math.max(1, ...entries.map(([, seconds]) => seconds));
     const scale = Math.max(1, total ?? max);
-    return <section id={sectionId} tabIndex={sectionId ? -1 : undefined} className="study-panel bej-chart-card">{collapseKey ? <StudyCollapseToggle expanded={collapsedCharts[collapseKey] ?? false} onToggle={() => setCollapsedCharts(v => ({ ...v, [collapseKey]: !(v[collapseKey] ?? false) }))} title={title} /> : <h3>{title}</h3>}{(!collapseKey || collapsedCharts[collapseKey]) && (!entries.length ? <p>{t("study.empty")}</p> : <ul className={modules ? "study-chart study-chart-modules" : "study-chart"}>{entries.map(([key, seconds], index) => <li key={key}>
+    return <section id={sectionId} tabIndex={sectionId ? -1 : undefined} className="study-panel bej-chart-card">{collapseKey ? <StudyCollapseToggle expanded={collapsedCharts[collapseKey] ?? false} onToggle={() => setCollapsedCharts(v => ({ ...v, [collapseKey]: !(v[collapseKey] ?? false) }))} title={title} /> : sectionId === "study-time-by-module" ? <h3>{t("study.byModule")} · <button type="button" className="study-module-period-button" onClick={cycleModulePeriod} aria-label={`${t("study.nextPeriod")}: ${t(`study.periods.${nextStudyPeriod(filters.period)}`)}`} title={`${t("study.nextPeriod")}: ${t(`study.periods.${nextStudyPeriod(filters.period)}`)}`}>{t(`study.periods.${filters.period}`)}<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 5 7 7-7 7"/></svg></button></h3> : <h3>{title}</h3>}{(!collapseKey || collapsedCharts[collapseKey]) && (!entries.length ? <p>{t("study.empty")}</p> : <ul className={modules ? "study-chart study-chart-modules" : "study-chart"}>{entries.map(([key, seconds], index) => <li key={key}>
       <div><span>{sectionId === "study-time-by-module" && <span className="study-module-rank">{index + 1}.</span>}{label(key)}</span>{sectionId === "study-time-by-module" && total !== undefined
         ? <StudyModuleTimeValue moduleName={label(key)} time={moduleDuration(seconds)} percentage={`${number(seconds / scale * 100)}%`} mode={moduleValueMode} onToggle={() => setModuleValueMode(nextModuleValueMode)} />
         : <strong>{duration(seconds)}{total !== undefined && ` · ${number(seconds / scale * 100)}%`}</strong>}</div><div className="study-bar" aria-hidden="true"><span style={{ width: `${sectionId === "study-time-by-module" ? modulePercentageBarWidth(seconds, scale) : seconds / scale * 100}%`, ...(sectionId === "study-time-by-module" ? { background: key.startsWith(EXTRA_MODULE_PREFIX)
@@ -233,7 +238,7 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu }: {
         <label>{t("study.language")}<select value={filters.language} onChange={e => setFilters({ ...filters, language: e.target.value as StudyFilters["language"] })}><option value="all">{t("study.allLanguages")}</option>{languages.map(code => <option key={code} value={code}>{languageName(code)}</option>)}</select></label>
         <label>{t("study.module")}<select value={filters.module} onChange={e => setFilters({ ...filters, module: e.target.value as StudyFilters["module"] })}><option value="all">{t("study.allModules")}</option>{STUDY_MODULES.map(key => <option key={key} value={key}>{moduleLabel(key)}</option>)}</select></label>
         <label>{t("study.mode")}<select value={filters.mode} onChange={e => setFilters({ ...filters, mode: e.target.value as StudyFilters["mode"] })}>{["all", "manual", "walking"].map(key => <option key={key} value={key}>{t(`study.modes.${key}`)}</option>)}</select></label>
-        <label>{t("study.period")}<select value={filters.period} onChange={e => setFilters({ ...filters, period: e.target.value as StudyFilters["period"] })}>{["today", "yesterday", "week", "7", "30", "month", "90", "all", "custom"].map(key => <option key={key} value={key}>{t(`study.periods.${key}`)}</option>)}</select></label>
+        <label>{t("study.period")}<select value={filters.period} onChange={e => setFilters({ ...filters, period: e.target.value as StudyFilters["period"] })}>{STUDY_FILTER_PERIOD_ORDER.map(key => <option key={key} value={key}>{t(`study.periods.${key}`)}</option>)}</select></label>
         <label>{t("extras.origin")}<select value={filters.origin ?? "all"} onChange={e => setFilters({ ...filters, origin: e.target.value as StudyFilters["origin"] })}>{["all", "internal", "external"].map(key => <option key={key} value={key}>{t(`extras.origins.${key}`)}</option>)}</select></label>
         {filters.origin !== "internal" && <label>{t("extras.category")}<select value={filters.extraCategory ?? "all"} onChange={e => setFilters({ ...filters, extraCategory: e.target.value as StudyFilters["extraCategory"], extraSubcategory: "all" })}><option value="all">{t("extras.allCategories")}</option>{EXTRA_CATEGORIES.map(key => <option key={key} value={key}>{t(`extras.categories.${key}`)}</option>)}</select></label>}
         {filters.origin !== "internal" && filters.extraCategory === "other" && <label>{t("extras.subcategory")}<select value={filters.extraSubcategory ?? "all"} onChange={e => setFilters({ ...filters, extraSubcategory: e.target.value as StudyFilters["extraSubcategory"] })}><option value="all">{t("extras.allSubcategories")}</option>{OTHER_STUDY_SUBCATEGORIES.map(key => <option key={key} value={key}>{t(`extras.subcategories.${key}`)}</option>)}</select></label>}
