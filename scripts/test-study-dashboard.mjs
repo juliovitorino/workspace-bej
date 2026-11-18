@@ -274,3 +274,32 @@ const dashboardSource = readFileSync('src/features/study/StudyDashboard.tsx', 'u
 assert.match(dashboardSource, /entries\.map\(\(\[key, seconds\], index\) => <li key=\{key\}>/);
 assert.match(dashboardSource, /sectionId === "study-time-by-module" && <span className="study-module-rank">\{index \+ 1\}\.<\/span>/);
 console.log('PASS: Time by Module displays consecutive numbers in the visible, sorted order only.');
+
+
+// Time by Module: show the two largest nonzero units without changing other charts.
+const { moduleDurationParts, nextModuleValueMode } = load('src/features/study/studyModuleTime.ts');
+assert.deepEqual(moduleDurationParts(8 * 3600 + 19 * 60 + 46), [['durationHours', 8], ['durationMinutes', 19]]);
+assert.deepEqual(moduleDurationParts(2 * 3600 + 35 * 60 + 12), [['durationHours', 2], ['durationMinutes', 35]]);
+assert.deepEqual(moduleDurationParts(15 * 60 + 42), [['durationMinutes', 15], ['durationSeconds', 42]]);
+assert.deepEqual(moduleDurationParts(45), [['durationSeconds', 45]]);
+assert.deepEqual(moduleDurationParts(0), []);
+assert.deepEqual(moduleDurationParts(8 * 3600 + 46), [['durationHours', 8], ['durationSeconds', 46]]);
+assert.equal(nextModuleValueMode('both'), 'time');
+assert.equal(nextModuleValueMode('time'), 'percentage');
+assert.equal(nextModuleValueMode('percentage'), 'both');
+const moduleTimeComponent = readFileSync('src/features/study/StudyModuleTimeValue.tsx', 'utf8');
+assert.match(moduleTimeComponent, /useState<ModuleValueMode>\("both"\)/);
+assert.match(moduleTimeComponent, /setMode\(nextModuleValueMode\)/);
+assert.match(moduleTimeComponent, /className="study-module-value-desktop"/);
+assert.match(moduleTimeComponent, /className="study-module-value-mobile"/);
+assert.match(dashboardSource, /sectionId === "study-time-by-module" && total !== undefined/);
+assert.match(dashboardSource, /moduleDuration\(seconds\)/);
+const studyStyles = readFileSync('src/features/study/study.css', 'utf8');
+assert.match(studyStyles, /#study-time-by-module \.study-module-value-mobile \{ display: none; \}/);
+assert.match(studyStyles, /@media \(max-width: 820px\)/);
+assert.match(studyStyles, /#study-time-by-module \.study-module-value-desktop \{ display: none; \}/);
+for (const locale of ['pt-BR', 'en-US', 'es-ES', 'fr-FR']) {
+  const translations = JSON.parse(readFileSync(`src/i18n/locales/${locale}.json`, 'utf8'));
+  assert.ok(translations.study.toggleModuleTimePercentage, `Missing module toggle label in ${locale}`);
+}
+console.log('PASS: module time uses two largest units, cycles independently on mobile, preserves static desktop and other charts.');
