@@ -3,6 +3,12 @@ import { localDay } from "./studyTrackingService";
 import { EXTRA_CATEGORIES, OTHER_STUDY_SUBCATEGORIES, type OtherStudySubcategory, type ExtraCategory, type StudyData, type StudyMode, type StudyModule } from "./studyStorage";
 
 export type StudyPeriod = "today" | "yesterday" | "week" | "7" | "30" | "month" | "90" | "all" | "custom";
+/** Period sequence shared by the dashboard filter and the Time by Module heading. */
+export const STUDY_PERIOD_ORDER: readonly StudyPeriod[] = ["today", "yesterday", "week", "7", "30", "month", "90", "all", "custom"];
+export function nextStudyPeriod(period: StudyPeriod): StudyPeriod {
+  const index = STUDY_PERIOD_ORDER.indexOf(period);
+  return STUDY_PERIOD_ORDER[(index + 1) % STUDY_PERIOD_ORDER.length];
+}
 export interface StudyFilters {
   language: StudentLanguage | "all"; module: StudyModule | "all"; mode: StudyMode | "all";
   period: StudyPeriod; from: string; to: string;
