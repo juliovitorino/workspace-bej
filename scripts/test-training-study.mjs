@@ -378,6 +378,26 @@ for (const period of ['today', 'yesterday', 'month', '7', '30', '90', 'all', 'cu
 }
 setFilter(3, 'all');
 console.log('PASS chart headings: language and module charts follow every selected period.');
+// Clicking only the period in the module heading advances the actual dashboard filter.
+setFilter(3, 'today');
+const cycleButton = () => find(moduleChart(), n => n.type === 'button' && n.props.className === 'study-module-period-button');
+const beforePeriodCycle = JSON.stringify([...memory]);
+for (const period of ['yesterday', 'week', '7', '30', 'month', '90', 'all', 'custom', 'today']) {
+  const button = cycleButton();
+  assert.ok(button, 'Time by Module period button is present');
+  assert.equal(button.props['aria-label'], `${translations.study.nextPeriod}: ${translations.study.periods[period]}`);
+  button.props.onClick(); dashboard.flush();
+  assert.equal(filterControls()[3].props.value, period, 'heading and filter select remain synchronized');
+  for (const title of [translations.study.byModule, translations.study.byLanguage]) {
+    assert.equal(text(find(chartSection(title), n => n.type === 'h3')), `${title} · ${translations.study.periods[period]}`);
+  }
+  if (period === 'custom') {
+    assert.equal(viewNode('study-filters').props.hidden, false, 'custom range exposes date inputs');
+    assert.ok(find(viewNode('study-filters'), n => n.type === 'input' && n.props.type === 'date'));
+  }
+}
+assert.equal(JSON.stringify([...memory]), beforePeriodCycle, 'period cycling must not write study data');
+console.log('PASS module heading period cycle: nine periods, wrap to today, synchronized charts and filters, custom dates and zero storage writes.');
 const labels = Object.fromEntries(STUDY_MODULES.map(module => [module, text(find(moduleFilter, n => n.type === 'option' && n.props.value === module))]));
 const updateChart = sessions => {
   chartStore.studyData.sessions = sessions; persistChartStore(); listeners.get(STUDY_CHANGED)(); dashboard.flush();
