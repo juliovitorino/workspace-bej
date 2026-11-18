@@ -306,6 +306,7 @@ tracking.dispose(); await settle();
 
 // Module bars represent a share of all filtered study time, not the largest bar.
 const { StudyDashboard } = load('src/features/study/StudyDashboard.tsx');
+const { StudyModuleTimeValue } = load('src/features/study/StudyModuleTimeValue.tsx');
 const { STUDY_KEY, STUDY_CHANGED, STUDY_MODULES, writeStudyStore } = load('src/features/study/studyStorage.ts');
 function persistChartStore() {
   for (const key of [...memory.keys()]) if (key.startsWith(STUDY_KEY)) memory.delete(key);
@@ -334,17 +335,21 @@ console.log('PASS dashboard views: collapsed details/settings, expansion, dedica
 const moduleChart = () => viewNode('study-time-by-module');
 const basicRow = () => find(moduleChart(), n => n.type === 'li' && text(n).includes(translations.study.basicTraining));
 const barPercent = row => parseFloat(find(row, n => n.type === 'span' && n.props.style?.width).props.style.width);
-assert.ok(text(basicRow()).includes('37,55%'), '181 seconds out of 482 seconds must display 37.55%');
+// The lightweight harness does not render nested function components; inspect
+// the actual props passed to StudyModuleTimeValue instead of flattening JSX text.
+const displayedModulePercent = row => find(row, n => n.type === StudyModuleTimeValue)?.props.percentage;
+assert.equal(displayedModulePercent(basicRow()), '37,55%', '181 seconds out of 482 seconds must display 37.55%');
 assert.ok(Math.abs(barPercent(basicRow()) - 181 / 482 * 100) < 1e-9);
 const moduleFilter = find(dashboard.tree, n => n.type === 'select' && find(n, c => c.type === 'option' && c.props.value === 'basic-training'));
 for (const [module, key] of [['speaking-game', 'speakingGame'], ['interpretation', 'interpretation']]) {
   assert.equal(text(find(moduleFilter, n => n.type === 'option' && n.props.value === module)), translations.common[key]);
 }
 moduleFilter.props.onChange({ target: { value: 'basic-training' } }); dashboard.flush();
-assert.ok(text(basicRow()).includes('100%')); assert.equal(barPercent(basicRow()), 100, 'percentages follow the filtered total');
+assert.equal(displayedModulePercent(basicRow()), '100%'); assert.equal(barPercent(basicRow()), 100, 'percentages follow the filtered total');
 chartStore.studyData.sessions = []; persistChartStore(); listeners.get(STUDY_CHANGED)(); dashboard.flush();
 assert.equal(React.Children.toArray(find(moduleChart(), n => n.type === 'ul').props.children).length, 1);
-assert.ok(text(moduleChart()).includes(translations.study.zeroDuration)); assert.ok(text(moduleChart()).includes('0%'));
+assert.equal(displayedModulePercent(basicRow()), '0%');
+assert.equal(find(basicRow(), n => n.type === StudyModuleTimeValue)?.props.time, translations.study.zeroDuration);
 assert.equal(barPercent(basicRow()), 0); assert.ok(!text(moduleChart()).includes('NaN'));
 // Module comparison lists every applicable module, ordered by raw seconds.
 const chartSection = title => find(dashboard.tree, n => n.type === 'section' && React.Children.toArray(n.props.children).some(c => c?.type === 'h3' && (text(c) === title || text(c).startsWith(title + ' \u00b7 '))));
