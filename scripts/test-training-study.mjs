@@ -332,6 +332,16 @@ find(dashboard.tree, n => n.type === 'button' && text(n) === translations.study.
 assert.equal(viewNode('study-results').props.hidden, false);
 assert.equal(JSON.stringify([...memory]), beforeUi, 'details, settings and history navigation never write study data');
 console.log('PASS dashboard views: collapsed details/settings, expansion, dedicated history, return and no storage writes.');
+// The dashboard defaults to "today", but this harness records sessions on a
+// simulated January 2026 clock while new Date() uses the actual wall clock.
+// Select "all" explicitly so this fixture is included regardless of test date.
+const chartFilterControls = () => React.Children.toArray(find(dashboard.tree, n =>
+  n.type === 'fieldset' && n.props.className?.includes('study-filters')).props.children)
+  .map(label => find(label, n => n.type === 'select')).filter(Boolean);
+const chartPeriodFilter = chartFilterControls()[3];
+assert.ok(chartPeriodFilter, 'dashboard period filter must exist');
+chartPeriodFilter.props.onChange({ target: { value: 'all' } });
+dashboard.flush();
 const moduleChart = () => viewNode('study-time-by-module');
 const basicRow = () => find(moduleChart(), n => n.type === 'li' && text(n).includes(translations.study.basicTraining));
 const barPercent = row => parseFloat(find(row, n => n.type === 'span' && n.props.style?.width).props.style.width);
