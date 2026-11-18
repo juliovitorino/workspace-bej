@@ -6,7 +6,8 @@ import { StudyDashboard } from "./features/study/StudyDashboard";
 import { DonationPage } from "./features/donation/DonationPage";
 import { DonationFooter } from "./features/donation/DonationFooter";
 import { MaintenanceNotice } from "./features/maintenance/MaintenanceNotice";
-import { HIDDEN_MAINTENANCE_CONFIG, loadMaintenanceConfig, type MaintenanceConfig } from "./features/maintenance/maintenanceConfig";
+import { MaintenanceLockPage } from "./features/maintenance/MaintenanceLockPage";
+import { HIDDEN_MAINTENANCE_CONFIG, isMaintenanceLocked, loadMaintenanceConfig, type MaintenanceConfig } from "./features/maintenance/maintenanceConfig";
 import { DISABLED_DONATION_CONFIG, loadDonationConfig, type DonationConfig } from "./features/donation/donationConfig";
 import { ExtraActivities } from "./features/study/ExtraActivities";
 import { useExtraActivity } from "./features/study/useExtraActivity";
@@ -52,6 +53,28 @@ import { favoriteStudyItems } from "./utils/favoriteStudyItems";
 type TrainingMode = "basic" | "advanced" | "review" | null;
 
 function App() {
+  // Load maintenance policy before mounting the application, so locked sessions
+  // never mount study modules, navigation, background study effects or dialogs.
+  const [maintenanceConfig, setMaintenanceConfig] = useState<MaintenanceConfig | null>(null);
+  useEffect(() => {
+    const controller = new AbortController();
+    loadMaintenanceConfig(controller.signal).then(setMaintenanceConfig).catch(error => {
+      if (!controller.signal.aborted) {
+        console.warn("Maintenance configuration unavailable:", error);
+        setMaintenanceConfig(HIDDEN_MAINTENANCE_CONFIG);
+      }
+    });
+    return () => controller.abort();
+  }, []);
+
+  if (maintenanceConfig === null) return null;
+  if (isMaintenanceLocked(maintenanceConfig)) {
+    return <MaintenanceLockPage config={maintenanceConfig} language={getSourceLanguage()} />;
+  }
+  return <BejApp maintenanceConfig={maintenanceConfig} />;
+}
+
+function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig }) {
   const { t } = useTranslation();
   const { theme, changeTheme } = useAppTheme();
   const [language, setLanguage] = useState<StudentLanguage>(getStudentLanguage);
@@ -68,14 +91,6 @@ function App() {
   const [dashboardSection, setDashboardSection] = useState<"settings" | "history" | undefined>();
   const [currentView, commitView] = useState<AppView>("study-dashboard");
   const [donationConfig, setDonationConfig] = useState<DonationConfig>(DISABLED_DONATION_CONFIG);
-  const [maintenanceConfig, setMaintenanceConfig] = useState<MaintenanceConfig>(HIDDEN_MAINTENANCE_CONFIG);
-  useEffect(() => {
-    const controller = new AbortController();
-    loadMaintenanceConfig(controller.signal).then(setMaintenanceConfig).catch(error => {
-      if (!controller.signal.aborted) console.warn("Maintenance configuration unavailable:", error);
-    });
-    return () => controller.abort();
-  }, []);
   useEffect(() => {
     const controller = new AbortController();
     loadDonationConfig(controller.signal).then(setDonationConfig).catch(error => {
