@@ -1,5 +1,16 @@
 .study-dashboard { display: grid; gap: 20px; min-width: 0; }
 #study-time-by-module { scroll-margin-top: 16px; }
+/* The period in the Time by Module heading is a keyboard-accessible filter control. */
+.study-dashboard #study-time-by-module .study-module-period-button {
+  display: inline-flex; align-items: center; gap: 4px; vertical-align: middle;
+  min-height: 44px; padding: 0 3px; border: 0; border-bottom: 1px dashed currentColor;
+  background: transparent; color: var(--accent); font: inherit; font-weight: inherit;
+  cursor: pointer; text-align: start;
+}
+.study-dashboard #study-time-by-module .study-module-period-button:hover { border-bottom-style: solid; }
+.study-dashboard #study-time-by-module .study-module-period-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.study-dashboard #study-time-by-module .study-module-period-button svg { flex-shrink: 0; }
+
 .study-dashboard h2, .study-dashboard h3, .study-dashboard h4 { margin: 0 0 12px; }
 .study-panel { min-width: 0; margin: 0; padding: 20px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); }
 .study-dashboard fieldset { min-width: 0; margin: 0; border: 0; padding: 0; }
