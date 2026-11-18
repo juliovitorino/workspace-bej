@@ -5,6 +5,8 @@ import { AppSettingsPage } from "./components/AppSettingsPage";
 import { StudyDashboard } from "./features/study/StudyDashboard";
 import { DonationPage } from "./features/donation/DonationPage";
 import { DonationFooter } from "./features/donation/DonationFooter";
+import { MaintenanceNotice } from "./features/maintenance/MaintenanceNotice";
+import { HIDDEN_MAINTENANCE_CONFIG, loadMaintenanceConfig, type MaintenanceConfig } from "./features/maintenance/maintenanceConfig";
 import { DISABLED_DONATION_CONFIG, loadDonationConfig, type DonationConfig } from "./features/donation/donationConfig";
 import { ExtraActivities } from "./features/study/ExtraActivities";
 import { useExtraActivity } from "./features/study/useExtraActivity";
@@ -66,6 +68,14 @@ function App() {
   const [dashboardSection, setDashboardSection] = useState<"settings" | "history" | undefined>();
   const [currentView, commitView] = useState<AppView>("study-dashboard");
   const [donationConfig, setDonationConfig] = useState<DonationConfig>(DISABLED_DONATION_CONFIG);
+  const [maintenanceConfig, setMaintenanceConfig] = useState<MaintenanceConfig>(HIDDEN_MAINTENANCE_CONFIG);
+  useEffect(() => {
+    const controller = new AbortController();
+    loadMaintenanceConfig(controller.signal).then(setMaintenanceConfig).catch(error => {
+      if (!controller.signal.aborted) console.warn("Maintenance configuration unavailable:", error);
+    });
+    return () => controller.abort();
+  }, []);
   useEffect(() => {
     const controller = new AbortController();
     loadDonationConfig(controller.signal).then(setDonationConfig).catch(error => {
@@ -437,6 +447,7 @@ function App() {
         <div className="page-shell">
           <div className="container">
             <Header language={language} sourceLanguage={sourceLanguage} onOpenLanguages={() => setSettingsDialog("languages")} />
+            <MaintenanceNotice config={maintenanceConfig} language={sourceLanguage} />
             {settingsDialog && <AppSettingsDialog
               kind={settingsDialog}
               language={language}
