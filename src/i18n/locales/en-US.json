@@ -5,6 +5,28 @@
     "export": "Export backup",
     "later": "Remind me later"
   },
+  "studyNotifications": {
+    "title": "Study notifications",
+    "description": "Get alerts inside BEJ when a monitored module has been inactive longer than your chosen limit.",
+    "master": "Enable notifications",
+    "masterHelp": "Main switch for inactivity alerts.",
+    "threshold": "Notify when inactivity exceeds",
+    "periods": {
+      "1": "1 day",
+      "7": "1 week",
+      "30": "1 month"
+    },
+    "modules": "Monitored modules",
+    "localOnly": "Alerts appear only inside BEJ. Preferences are saved in this browser; they are not push notifications and are not synced through Google Drive.",
+    "saveError": "Could not save preferences in this browser.",
+    "centerTitle": "Notification center",
+    "bellLabel": "Study notifications: {{count}} alerts",
+    "close": "Close notifications",
+    "disabled": "Inactivity alerts are turned off. Enable them in Settings.",
+    "empty": "All caught up! No monitored module has exceeded its inactivity limit.",
+    "alertMessage": "You haven't practiced this module for {{time}}. How about returning to it?",
+    "configure": "Configure notifications"
+  },
   "studyRestore": {
     "note": "Restore replaces all study sessions, manual adjustments and goals on this device with the backup data. App preferences are preserved.",
     "preview": "Replacement restore preview",
@@ -38,6 +60,7 @@
     "audio": "Audio",
     "languages": "Languages",
     "study": "Study",
+    "notifications": "Notifications",
     "appearance": "Appearance",
     "data": "Data",
     "audioHelp": "Choose the voice for examples with neural audio. Your preference is shared across modules and saved in this browser.",
