@@ -34,6 +34,10 @@ export function studyEntries(data: StudyData): StudyEntry[] {
     ...data.manualAdjustments.map(a => ({ id: a.id, date: a.date, language: a.language, module: "previous" as const, mode: "previous" as const, seconds: a.seconds, description: a.description }))
   ];
 }
+/** Select entries for the active study language, preserving the explicit all-languages view. */
+export function studyEntriesForLanguage(data: StudyData, language: StudyFilters["language"]): StudyEntry[] {
+  return studyEntries(data).filter(entry => language === "all" || entry.language === language);
+}
 export function studyStats(data: StudyData, filters: StudyFilters, now = new Date()) {
   const today = localDay(now), month = today.slice(0, 7) + "-01";
   const matching = studyEntries(data).filter(e => (filters.language === "all" || filters.language === e.language) &&
