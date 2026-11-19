@@ -263,7 +263,7 @@
       "type": "question-answer",
       "order": 14,
       "enabled": true,
-      "level": "B1",
+      "level": "b1",
       "question": {
         "text": "How long did it take you to learn English?",
         "audio": null
@@ -282,9 +282,9 @@
         "speaking-practice"
       ],
       "source": {
-        "document": "BEJ Small Talk",
-        "section": "Learning English",
-        "paragraphIndex": null
+        "document": "BEJ catalog: public/small-talk/en-US/topics/idioms.json",
+        "section": "Idioms Topic (catalog entry)",
+        "paragraphIndex": 14
       },
       "reviewStatus": "pending"
     }
