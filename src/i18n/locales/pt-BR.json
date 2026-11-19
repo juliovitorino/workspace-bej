@@ -150,8 +150,8 @@
     "moduleActivityAgo": "{{time}} atrás",
     "noModuleActivity": "Sem atividade registrada",
     "moduleRecencyUnits": {
-      "secondOne": "seg",
-      "secondOther": "seg",
+      "secondOne": " seg",
+      "secondOther": " seg",
       "minuteOne": "min",
       "minuteOther": "min",
       "hourOne": "h",
