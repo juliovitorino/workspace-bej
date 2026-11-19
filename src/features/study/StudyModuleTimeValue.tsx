@@ -1,33 +1,37 @@
 import { useTranslation } from "react-i18next";
 import type { ModuleValueMode } from "./studyModuleTime";
+import { moduleRecencyParts } from "./studyModuleRecency";
 
 interface StudyModuleTimeValueProps {
   moduleName: string;
   time: string;
   percentage: string;
+  lastActivity?: number;
+  now: Date;
   mode: ModuleValueMode;
   onToggle: () => void;
 }
 
-/** Desktop remains static; mobile rows share the same display mode from the dashboard. */
-export function StudyModuleTimeValue({ moduleName, time, percentage, mode, onToggle }: StudyModuleTimeValueProps) {
+/** One accessible, responsive control for the entire ranking, on every device. */
+export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivity, now, mode, onToggle }: StudyModuleTimeValueProps) {
   const { t } = useTranslation();
+  const parts = lastActivity === undefined ? null : moduleRecencyParts(lastActivity, now.getTime());
+  const lastActivityLabel = parts
+    ? t("study.moduleActivityAgo", { time: `${parts.count}${t(`study.moduleRecencyUnits.${parts.unit}${parts.count === 1 ? "One" : "Other"}`)}` })
+    : t("study.noModuleActivity");
   const fullValue = `${time} · ${percentage}`;
-  const visibleValue = mode === "both" ? fullValue : mode === "time" ? time : percentage;
+  const visibleValue = mode === "both" ? fullValue : mode === "time" ? time : mode === "percentage" ? percentage : lastActivityLabel;
 
   return (
-    <>
-      <strong className="study-module-value-desktop">{fullValue}</strong>
-      <button
-        type="button"
-        className="study-module-value-mobile"
-        onClick={onToggle}
-        aria-live="polite"
-        aria-label={`${moduleName}: ${visibleValue}. ${t("study.toggleModuleTimePercentage")}`}
-        title={t("study.toggleModuleTimePercentage")}
-      >
-        {visibleValue}
-      </button>
-    </>
+    <button
+      type="button"
+      className="study-module-value"
+      onClick={onToggle}
+      aria-live="polite"
+      aria-label={`${moduleName}: ${visibleValue}. ${t("study.toggleModuleTimePercentage")}`}
+      title={t("study.toggleModuleTimePercentage")}
+    >
+      {visibleValue}
+    </button>
   );
 }
