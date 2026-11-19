@@ -256,7 +256,7 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu, onO
     {message && <p className="study-feedback" role="status">{message}</p>}
     {!historyVisible && <StudyNotificationCenter alerts={notificationAlerts} enabled={notificationSettings.enabled}
       open={notificationCenterOpen} onClose={() => setNotificationCenterOpen(false)} now={now}
-      onOpenSettings={() => { setNotificationCenterOpen(false); onOpenNotificationSettings?.(); }} />
+      onOpenSettings={() => { setNotificationCenterOpen(false); onOpenNotificationSettings?.(); }} />}
     {!store || !stats ? <p>{t("study.unavailable")}</p> : <>
       <div id="study-filters" tabIndex={-1} hidden={!historyVisible && !filtersVisible}><fieldset className="study-panel study-filters" disabled={busy}><legend>{t("study.filters")}</legend>
         <label>{t("study.language")}<select value={filters.language} onChange={e => setFilters({ ...filters, language: e.target.value as StudyFilters["language"] })}><option value="all">{t("study.allLanguages")}</option>{languages.map(code => <option key={code} value={code}>{languageName(code)}</option>)}</select></label>
