@@ -271,6 +271,7 @@ console.log('PASS: dashboard module bars split extra activities by category, hon
 // Display order (after sorting and zero-value filtering) determines the numbering.
 // Only the Time by Module section is numbered; the other dashboard charts stay unchanged.
 const dashboardSource = readFileSync('src/features/study/StudyDashboard.tsx', 'utf8');
+const studyStyles = readFileSync('src/features/study/study.css', 'utf8');
 assert.match(dashboardSource, /entries\.map\(\(\[key, seconds\], index\) => <li key=\{key\}>/);
 assert.match(dashboardSource, /sectionId === "study-time-by-module" && <span className="study-module-rank">/);
 assert.match(dashboardSource, /index < 3 && seconds > 0 \? <><StudyRankMedal rank=\{\(index \+ 1\) as 1 \| 2 \| 3\}/);
@@ -309,7 +310,7 @@ assert.match(moduleTimeComponent, /className="study-module-value-desktop"/);
 assert.match(moduleTimeComponent, /className="study-module-value-mobile"/);
 assert.match(dashboardSource, /sectionId === "study-time-by-module" && total !== undefined/);
 assert.match(dashboardSource, /moduleDuration\(seconds\)/);
-const studyStyles = readFileSync('src/features/study/study.css', 'utf8');
+
 assert.match(studyStyles, /#study-time-by-module \.study-module-value-mobile \{ display: none; \}/);
 assert.match(studyStyles, /@media \(max-width: 820px\)/);
 assert.match(studyStyles, /#study-time-by-module \.study-module-value-desktop \{ display: none; \}/);
