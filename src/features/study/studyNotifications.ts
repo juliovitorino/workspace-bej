@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import type { StudentLanguage } from "../../config/languages";
 import { EXTRA_CATEGORIES, STUDY_MODULES, type StudyData } from "./studyStorage";
 import { EXTRA_MODULE_PREFIX } from "./studyModuleChart";
 import { moduleLastActivity } from "./studyModuleRecency";
@@ -79,9 +80,10 @@ export function studyInactivityAlerts(
   data: StudyData,
   settings: StudyNotificationSettings,
   nowMs: number,
+  language: StudentLanguage,
 ): StudyInactivityAlert[] {
   if (!settings.enabled || !Number.isFinite(nowMs)) return [];
-  const last = moduleLastActivity(data, { language: "all", mode: "all" });
+  const last = moduleLastActivity(data, { language, mode: "all" });
   const limitMs = settings.thresholdDays * 86400000;
   return NOTIFICATION_MODULES
     .filter(module => settings.modules[module] === true)

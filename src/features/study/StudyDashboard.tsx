@@ -170,8 +170,8 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu, onO
   const latestModuleActivity = useMemo<Record<string, number>>(() => displayData
     ? moduleLastActivity(displayData, filters) : {}, [displayData, filters.language, filters.mode]);
   const notificationAlerts = useMemo(() => displayData
-    ? studyInactivityAlerts(displayData, notificationSettings, now.getTime()) : [],
-    [displayData, notificationSettings, now]);
+    ? studyInactivityAlerts(displayData, notificationSettings, now.getTime(), language) : [],
+    [displayData, notificationSettings, now, language]);
   async function action(work: () => Promise<void>) {
     setBusy(true); setError(""); setMessage("");
     try { await work(); } catch (e) { fail(e); } finally { setBusy(false); }

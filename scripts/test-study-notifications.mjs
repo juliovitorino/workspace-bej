@@ -92,21 +92,29 @@ const data = { goals: {}, monthlyGoals: {}, sessions: [
   session('shadowing', 40),
 ], manualAdjustments: [{ id: 'prior', date: '2020-01-01', language: 'en-US', seconds: 600, description: 'old' }] };
 const withThreshold = (thresholdDays, modules = configured.modules, enabled = true) => ({ ...configured, enabled, thresholdDays, modules });
-assert.deepEqual(studyInactivityAlerts(data, withThreshold(1), now).map(a => a.module), ['extra-category:conversation', 'extra-category:reading', 'hashmap']);
-assert.deepEqual(studyInactivityAlerts(data, withThreshold(7), now).map(a => a.module), ['extra-category:conversation']);
-assert.deepEqual(studyInactivityAlerts(data, withThreshold(30), now), []);
-assert.deepEqual(studyInactivityAlerts(data, withThreshold(1, configured.modules, false), now), []);
-assert.deepEqual(studyInactivityAlerts(data, withThreshold(1, { ...configured.modules, 'extra-category:conversation': false }), now).map(a => a.module), ['extra-category:reading', 'hashmap']);
-assert.deepEqual(studyInactivityAlerts({ ...data, sessions: [] }, withThreshold(1), now), [], 'never-used modules do not alert');
-assert.deepEqual(studyInactivityAlerts(data, withThreshold(1), NaN), []);
+const alertsFor = (records, settings, at = now, language = 'en-US') => studyInactivityAlerts(records, settings, at, language);
+assert.deepEqual(alertsFor(data, withThreshold(1), now).map(a => a.module), ['small-talk', 'extra-category:conversation', 'extra-category:reading', 'hashmap']);
+assert.deepEqual(alertsFor(data, withThreshold(7), now).map(a => a.module), ['small-talk', 'extra-category:conversation']);
+assert.deepEqual(alertsFor(data, withThreshold(30), now), []);
+assert.deepEqual(alertsFor(data, withThreshold(1, configured.modules, false), now), []);
+assert.deepEqual(alertsFor(data, withThreshold(1, { ...configured.modules, 'extra-category:conversation': false }), now).map(a => a.module), ['small-talk', 'extra-category:reading', 'hashmap']);
+assert.deepEqual(alertsFor({ ...data, sessions: [] }, withThreshold(1), now), [], 'never-used modules do not alert');
+assert.deepEqual(alertsFor(data, withThreshold(1), NaN), []);
 const fresh = { ...data, sessions: [...data.sessions, session('extra-activities', 0, 'en-US', 'conversation')] };
-assert.ok(!studyInactivityAlerts(fresh, withThreshold(7), now).some(a => a.module === 'extra-category:conversation'), 'new practice clears the alert');
+assert.ok(!alertsFor(fresh, withThreshold(7), now).some(a => a.module === 'extra-category:conversation'), 'new practice clears the alert');
 const exactBoundary = { ...data, sessions: [session('hashmap', 1)] };
-assert.equal(studyInactivityAlerts(exactBoundary, withThreshold(1), now).length, 0, 'the threshold must be exceeded, not merely reached');
+assert.equal(alertsFor(exactBoundary, withThreshold(1), now).length, 0, 'the threshold must be exceeded, not merely reached');
 const allModules = Object.fromEntries(NOTIFICATION_MODULES.map(key => [key, true]));
-assert.ok(!studyInactivityAlerts(data, withThreshold(1, allModules), now).some(a => a.module === 'previous'), 'manual adjustments do not generate module alerts');
-assert.ok(studyInactivityAlerts(data, withThreshold(30, allModules), now).some(a => a.module === 'shadowing'));
-assert.ok(!studyInactivityAlerts(data, withThreshold(30, allModules), now).some(a => a.module === 'small-talk'), 'a recent session in another language clears the module alert');
+assert.ok(!alertsFor(data, withThreshold(1, allModules), now).some(a => a.module === 'previous'), 'manual adjustments do not generate module alerts');
+assert.ok(alertsFor(data, withThreshold(30, allModules), now).some(a => a.module === 'shadowing'));
+assert.ok(alertsFor(data, withThreshold(7, allModules), now, 'en-US').some(a => a.module === 'small-talk'), 'French study must not clear an English inactivity alert');
+assert.ok(!alertsFor(data, withThreshold(7, allModules), now, 'fr-FR').some(a => a.module === 'small-talk'), 'recent French practice must not trigger a French alert');
+for (const language of ['pt-BR', 'es-ES']) {
+  assert.deepEqual(alertsFor(data, withThreshold(1, allModules), now, language), [], `never-used language ${language} must have no inherited alerts`);
+}
+assert.deepEqual(alertsFor(data, withThreshold(1, allModules), now, 'fr-FR'), [], 'only the recent French session is relevant');
+assert.deepEqual(alertsFor(data, withThreshold(7), now, 'en-US').map(a => a.module), ['small-talk', 'extra-category:conversation'], 'English alerts must include only English activity');
+assert.deepEqual(alertsFor(data, withThreshold(7), now, 'fr-FR'), [], 'changing study language immediately changes alert results');
 
 const settingsSource = readFileSync('src/features/study/StudyNotificationSettings.tsx', 'utf8');
 const centerSource = readFileSync('src/features/study/StudyNotificationCenter.tsx', 'utf8');
@@ -122,7 +130,10 @@ assert.match(centerSource, /study-notification-count/);
 assert.match(centerSource, /studyNotificationModuleLabel/);
 assert.match(dashboardSource, /<StudyNotificationBell/);
 assert.match(dashboardSource, /<StudyNotificationCenter/);
-assert.match(dashboardSource, /studyInactivityAlerts\(displayData, notificationSettings, now\.getTime\(\)\)/);
+assert.match(dashboardSource, /studyInactivityAlerts\(displayData, notificationSettings, now\.getTime\(\), language\)/);
+assert.match(dashboardSource, /\[displayData, notificationSettings, now, language\]/);
+const notificationsSource = readFileSync('src/features/study/studyNotifications.ts', 'utf8');
+assert.match(notificationsSource, /moduleLastActivity\(data, \{ language, mode: "all" \}\)/);
 assert.match(appSettingsSource, /"notifications"/);
 assert.match(appSettingsSource, /<StudyNotificationSettings/);
 assert.match(appSource, /onOpenNotificationSettings/);
@@ -135,4 +146,4 @@ for (const locale of ['pt-BR', 'en-US', 'es-ES', 'fr-FR']) {
   }
   for (const days of [1,7,30]) assert.ok(translation.studyNotifications.periods[days]);
 }
-console.log('PASS study notifications: defaults, opt-in, thresholds, all modules/categories, latest history, localization and dashboard/settings integration.');
+console.log('PASS study notifications: defaults, opt-in, thresholds, per-language inactivity, cross-language isolation, localization and dashboard/settings integration.');
