@@ -118,6 +118,7 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
     });
   }
   function setCurrentView(view: AppView) {
+    if (view === "settings") setNotificationSettingsRequest(0);
     if (view === "settings" || view === "study-dashboard") commitView(view);
     else requestStudyNavigation(() => commitView(view));
   }
@@ -485,7 +486,7 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
               onOpenData={section => { setDashboardSection(section); setCurrentView("study-dashboard"); }}
             />}
             {currentView === "study-dashboard" && <StudyDashboard language={language} initialSection={dashboardSection}
-              onOpenNotificationSettings={() => { setNotificationSettingsRequest(value => value + 1); setCurrentView("settings"); }}
+              onOpenNotificationSettings={() => { setNotificationSettingsRequest(value => value + 1); commitView("settings"); }}
               onOpenMobileMenu={() => {
               window.scrollTo({ top: 0, left: 0, behavior: "instant" });
               setMobileMenuOpenRequest(request => request + 1);
