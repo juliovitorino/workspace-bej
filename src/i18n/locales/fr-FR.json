@@ -5,6 +5,28 @@
     "export": "Exporter une sauvegarde",
     "later": "Me le rappeler plus tard"
   },
+  "studyNotifications": {
+    "title": "Notifications d'étude",
+    "description": "Recevez des alertes dans BEJ lorsqu'un module suivi reste inactif au-delà du délai choisi.",
+    "master": "Activer les notifications",
+    "masterHelp": "Interrupteur général des alertes d'inactivité.",
+    "threshold": "Alerter lorsque l'inactivité dépasse",
+    "periods": {
+      "1": "1 jour",
+      "7": "1 semaine",
+      "30": "1 mois"
+    },
+    "modules": "Modules suivis",
+    "localOnly": "Les alertes apparaissent uniquement dans BEJ. Les préférences sont enregistrées dans ce navigateur ; il ne s'agit pas de notifications push et elles ne sont pas synchronisées via Google Drive.",
+    "saveError": "Impossible d'enregistrer les préférences dans ce navigateur.",
+    "centerTitle": "Centre de notifications",
+    "bellLabel": "Notifications d'étude : {{count}} alertes",
+    "close": "Fermer les notifications",
+    "disabled": "Les alertes d'inactivité sont désactivées. Activez-les dans les paramètres.",
+    "empty": "Tout est à jour ! Aucun module suivi n'a dépassé le délai défini.",
+    "alertMessage": "Vous n'avez pas pratiqué ce module depuis {{time}}. Pourquoi ne pas le reprendre ?",
+    "configure": "Configurer les notifications"
+  },
   "studyRestore": {
     "note": "La restauration remplace toutes les sessions, corrections manuelles et objectifs de cet appareil par les données de la sauvegarde. Les préférences de l’application sont conservées.",
     "preview": "Aperçu de la restauration par remplacement",
@@ -38,6 +60,7 @@
     "audio": "Audio",
     "languages": "Langues",
     "study": "Étude",
+    "notifications": "Notifications",
     "appearance": "Apparence",
     "data": "Données",
     "audioHelp": "Choisissez la voix des exemples avec audio neuronal. Cette préférence est partagée entre les modules et enregistrée dans ce navigateur.",

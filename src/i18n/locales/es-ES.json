@@ -5,6 +5,28 @@
     "export": "Exportar copia de seguridad",
     "later": "Recordármelo más tarde"
   },
+  "studyNotifications": {
+    "title": "Notificaciones de estudio",
+    "description": "Recibe alertas dentro de BEJ cuando un módulo supervisado lleve más tiempo inactivo que el límite elegido.",
+    "master": "Activar notificaciones",
+    "masterHelp": "Interruptor general de las alertas de inactividad.",
+    "threshold": "Avisar cuando la inactividad supere",
+    "periods": {
+      "1": "1 día",
+      "7": "1 semana",
+      "30": "1 mes"
+    },
+    "modules": "Módulos supervisados",
+    "localOnly": "Las alertas solo aparecen dentro de BEJ. Las preferencias se guardan en este navegador; no son notificaciones push ni se sincronizan con Google Drive.",
+    "saveError": "No se pudieron guardar las preferencias en este navegador.",
+    "centerTitle": "Centro de notificaciones",
+    "bellLabel": "Notificaciones de estudio: {{count}} alertas",
+    "close": "Cerrar notificaciones",
+    "disabled": "Las alertas de inactividad están desactivadas. Actívalas en Configuración.",
+    "empty": "¡Todo al día! Ningún módulo supervisado ha superado el límite.",
+    "alertMessage": "No practicas este módulo desde hace {{time}}. ¿Qué tal retomarlo?",
+    "configure": "Configurar notificaciones"
+  },
   "studyRestore": {
     "note": "Restaurar sustituye todas las sesiones, ajustes manuales y metas de este dispositivo por los datos de la copia de seguridad. Las preferencias de la aplicación se conservan.",
     "preview": "Vista previa de la restauración por sustitución",
@@ -38,6 +60,7 @@
     "audio": "Audio",
     "languages": "Idiomas",
     "study": "Estudio",
+    "notifications": "Notificaciones",
     "appearance": "Apariencia",
     "data": "Datos",
     "audioHelp": "Elige la voz de los ejemplos con audio neuronal. La preferencia se comparte entre los módulos y se guarda en este navegador.",

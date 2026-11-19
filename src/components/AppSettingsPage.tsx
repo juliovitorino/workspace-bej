@@ -8,21 +8,24 @@ import { LanguageSettingsFields, type LanguageSettingsProps } from "./LanguageSe
 import { NeuralVoiceSelect } from "./NeuralVoiceSelect";
 import { SmallTalkPersonalImport } from "./SmallTalkPersonalImport";
 import { AIProviderSettings } from "./AIProviderSettings";
+import { StudyNotificationSettings } from "../features/study/StudyNotificationSettings";
 
-const categories = ["audio", "languages", "study", "appearance", "ai", "data"] as const;
+const categories = ["audio", "languages", "study", "notifications", "appearance", "ai", "data"] as const;
 interface Props extends LanguageSettingsProps {
+  notificationSettingsRequest?: number;
   theme: ThemePreference;
   onThemeChange: (theme: ThemePreference) => void;
   onOpenStudy: () => void;
   onOpenData: (section: "settings" | "history") => void;
 }
 
-export function AppSettingsPage({ theme, onThemeChange, onOpenStudy, onOpenData, ...languages }: Props) {
+export function AppSettingsPage({ notificationSettingsRequest = 0, theme, onThemeChange, onOpenStudy, onOpenData, ...languages }: Props) {
   const { t } = useTranslation();
   const [category, setCategory] = useState<typeof categories[number]>("audio");
   const [consolidationVisible, setConsolidationVisible] = useState(false);
   const title = useRef<HTMLHeadingElement>(null);
   useEffect(() => { title.current?.focus({ preventScroll: true }); }, []);
+  useEffect(() => { if (notificationSettingsRequest > 0) setCategory("notifications"); }, [notificationSettingsRequest]);
   const categoryTitle = (key: typeof categories[number]) => key === 'ai' ? 'Inteligência Artificial' : t(`settingsPage.${key}`);
   return <section className="app-settings-page" aria-labelledby="app-settings-title">
     <header>
@@ -49,6 +52,7 @@ export function AppSettingsPage({ theme, onThemeChange, onOpenStudy, onOpenData,
         <p className="settings-dialog-help">{t("settingsPage.walkingLocal")}</p>
         <button type="button" className="secondary-button" onClick={onOpenStudy}>{t("settingsPage.openStudy")}</button>
       </>}
+      {!consolidationVisible && category === "notifications" && <StudyNotificationSettings />}
       {!consolidationVisible && category === "appearance" && <label className="settings-theme-field">
         {t("theme.label")}
         <select value={theme} onChange={event => onThemeChange(event.target.value as ThemePreference)}>
