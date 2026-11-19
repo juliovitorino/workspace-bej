@@ -89,6 +89,7 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
   [data, favorites, language]);
   const [source, setSource] = useState<"remote" | "cache">("remote");
   const [dashboardSection, setDashboardSection] = useState<"settings" | "history" | undefined>();
+  const [notificationSettingsRequest, setNotificationSettingsRequest] = useState(0);
   const [currentView, commitView] = useState<AppView>("study-dashboard");
   const [donationConfig, setDonationConfig] = useState<DonationConfig>(DISABLED_DONATION_CONFIG);
   useEffect(() => {
@@ -476,14 +477,16 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
             />}
             {studyWarning && (studyWarning !== "compatibility" || currentView === "study-dashboard") && <p className="warning-banner" role="status">{t(`study.warning.${studyWarning}`)}</p>}
             {currentView === "donation" && donationConfig.enabled && <DonationPage config={donationConfig} />}
-            {currentView === "settings" && <AppSettingsPage
+            {currentView === "settings" && <AppSettingsPage notificationSettingsRequest={notificationSettingsRequest}
               language={language} sourceLanguage={sourceLanguage} languageLocked={walkingActive}
               onLanguageChange={changeLanguage} onSourceLanguageChange={changeSourceLanguage}
               theme={theme} onThemeChange={changeTheme}
               onOpenStudy={() => setCurrentView("chunk-flashcards")}
               onOpenData={section => { setDashboardSection(section); setCurrentView("study-dashboard"); }}
             />}
-            {currentView === "study-dashboard" && <StudyDashboard language={language} initialSection={dashboardSection} onOpenMobileMenu={() => {
+            {currentView === "study-dashboard" && <StudyDashboard language={language} initialSection={dashboardSection}
+              onOpenNotificationSettings={() => { setNotificationSettingsRequest(value => value + 1); setCurrentView("settings"); }}
+              onOpenMobileMenu={() => {
               window.scrollTo({ top: 0, left: 0, behavior: "instant" });
               setMobileMenuOpenRequest(request => request + 1);
             }} />}
