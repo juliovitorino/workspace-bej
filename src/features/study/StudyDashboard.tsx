@@ -25,12 +25,14 @@ import { StudyStorageOverview } from "./StudyStorageOverview";
 import { StudyModuleTimeValue } from "./StudyModuleTimeValue";
 import { StudyRankMedal } from "./StudyRankMedal";
 import { moduleLastActivity } from "./studyModuleRecency";
+import { studyInactivityAlerts, useStudyNotificationSettings } from "./studyNotifications";
+import { StudyNotificationBell, StudyNotificationCenter } from "./StudyNotificationCenter";
 import { moduleDurationParts, modulePercentageBarWidth, nextModuleValueMode, type ModuleValueMode } from "./studyModuleTime";
 
 const languages = Object.keys(LANGUAGES) as StudentLanguage[];
 const HISTORY_PAGE_SIZE = 20;
 const moduleKeys: Record<string, string> = { hashmap: "Hashmap", "memory-flashcards": "memory.title", "chunk-flashcards": "common.chunkFlashcards", "chunk-favorites": "favorites.title", shadowing: "common.shadowing", "basic-training": "study.basicTraining", "advanced-training": "study.advancedTraining", "review-training": "study.reviewTraining", "speaking-game": "common.speakingGame", "would-you-rather": "wyr.moduleTitle", interpretation: "common.interpretation", "extra-activities": "extras.title", "small-talk": "Small Talk", previous: "study.previousHours" };
-export function StudyDashboard({ language, initialSection, onOpenMobileMenu }: { language: StudentLanguage; initialSection?: "settings" | "history"; onOpenMobileMenu?: () => void }) {
+export function StudyDashboard({ language, initialSection, onOpenMobileMenu, onOpenNotificationSettings }: { language: StudentLanguage; initialSection?: "settings" | "history"; onOpenMobileMenu?: () => void; onOpenNotificationSettings?: () => void }) {
   const { t, i18n } = useTranslation();
   const [expanded, setExpanded] = useState(false);
   const [calendarAnchor, setCalendarAnchor] = useState<HTMLElement | null>(null);
@@ -40,6 +42,8 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu }: {
   // One shared value display mode for every module row on every device.
   const [moduleValueMode, setModuleValueMode] = useState<ModuleValueMode>("both");
   const [recencyNow, setRecencyNow] = useState(() => new Date());
+  const [notificationCenterOpen, setNotificationCenterOpen] = useState(false);
+  const { settings: notificationSettings } = useStudyNotificationSettings();
   const toggleModuleValueMode = () => { setModuleValueMode(nextModuleValueMode); setRecencyNow(new Date()); };
   useEffect(() => {
     if (moduleValueMode !== "recent") return;
@@ -160,6 +164,9 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu }: {
   // Always use full study history for recency, regardless of the ranking's date range.
   const latestModuleActivity = useMemo<Record<string, number>>(() => displayData
     ? moduleLastActivity(displayData, filters) : {}, [displayData, filters.language, filters.mode]);
+  const notificationAlerts = useMemo(() => displayData
+    ? studyInactivityAlerts(displayData, notificationSettings, now.getTime()) : [],
+    [displayData, notificationSettings, now]);
   async function action(work: () => Promise<void>) {
     setBusy(true); setError(""); setMessage("");
     try { await work(); } catch (e) { fail(e); } finally { setBusy(false); }
@@ -241,11 +248,15 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu }: {
   return <section className="study-dashboard" aria-labelledby="study-title">
     <header className="study-header"><div><h2 id="study-title" tabIndex={-1}>{t(historyVisible ? "study.historyTitle" : "study.title")}</h2><p>{t("study.intro")}</p></div><div className="study-actions">
       {historyVisible ? <button type="button" className="secondary-button" onClick={() => { setHistoryVisible(false); setScrollTarget("study-title"); }}>{t("study.backDashboard")}</button> : <>
+      <StudyNotificationBell count={notificationAlerts.length} open={notificationCenterOpen} onClick={() => setNotificationCenterOpen(open => !open)} />
       {dashboardControls()}
     </>}
     </div></header>
     {error && <p className="status-card error-card" role="alert">{error}</p>}
     {message && <p className="study-feedback" role="status">{message}</p>}
+    {!historyVisible && <StudyNotificationCenter alerts={notificationAlerts} enabled={notificationSettings.enabled}
+      open={notificationCenterOpen} onClose={() => setNotificationCenterOpen(false)} now={now}
+      onOpenSettings={() => { setNotificationCenterOpen(false); onOpenNotificationSettings?.(); }} />
     {!store || !stats ? <p>{t("study.unavailable")}</p> : <>
       <div id="study-filters" tabIndex={-1} hidden={!historyVisible && !filtersVisible}><fieldset className="study-panel study-filters" disabled={busy}><legend>{t("study.filters")}</legend>
         <label>{t("study.language")}<select value={filters.language} onChange={e => setFilters({ ...filters, language: e.target.value as StudyFilters["language"] })}><option value="all">{t("study.allLanguages")}</option>{languages.map(code => <option key={code} value={code}>{languageName(code)}</option>)}</select></label>
