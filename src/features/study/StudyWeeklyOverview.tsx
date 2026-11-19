@@ -82,7 +82,7 @@ export function StudyWeeklyOverview({ data, language, now, hideZeroData = false,
       cursor = previousDay(cursor, -1);
     }
     return true;
-  }, [data, now]);
+  }, [data, language, now]);
   useEffect(() => {
     if (hasSevenDayStreak) celebrateAchievement("days-streak-7", "7 dias consecutivos!", "Você estudou por 7 dias seguidos. Keep going!");
   }, [hasSevenDayStreak]);
