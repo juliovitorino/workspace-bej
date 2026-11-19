@@ -1,8 +1,9 @@
 import { useMemo, useRef, useState, type CSSProperties } from "react";
+import type { StudentLanguage } from "../../config/languages";
 import { useTranslation } from "react-i18next";
 import { EXTRA_CATEGORIES, STUDY_MODULES, type ExtraCategory, type StudyData, type StudyModule } from "./studyStorage";
 import { STUDY_MODULE_COLORS, STUDY_MODULE_ICONS } from "./studyModuleColors";
-import { currentWeekStart, previousDay, studyEntries } from "./studyStats";
+import { currentWeekStart, previousDay, studyEntriesForLanguage } from "./studyStats";
 import { localDay } from "./studyTrackingService";
 import { useEffect } from "react";
 import { celebrateAchievement } from "../../utils/achievements";
@@ -10,7 +11,7 @@ import { celebrateAchievement } from "../../utils/achievements";
 type WeekSelection = { kind: "category"; key: ExtraCategory } | { kind: "module"; key: StudyModule };
 
 /** Read-only dashboard projection. Uses the same >=60s qualification as studyStats.streak. */
-export function StudyWeeklyOverview({ data, now, hideZeroData = false, moduleLabel }: { data: StudyData; now: Date; hideZeroData?: boolean; moduleLabel: (module: StudyModule) => string }) {
+export function StudyWeeklyOverview({ data, language, now, hideZeroData = false, moduleLabel }: { data: StudyData; language: StudentLanguage | "all"; now: Date; hideZeroData?: boolean; moduleLabel: (module: StudyModule) => string }) {
   const { t, i18n } = useTranslation();
   const [selected, setSelected] = useState<WeekSelection | null>(null);
   // Keep the exact clicked card as the return destination, without relying on fixed IDs.
@@ -36,7 +37,7 @@ export function StudyWeeklyOverview({ data, now, hideZeroData = false, moduleLab
     const today = localDay(now);
     const monday = currentWeekStart(today);
     const days = Array.from({ length: 7 }, (_, i) => previousDay(monday, i));
-    const entries = studyEntries(data);
+    const entries = studyEntriesForLanguage(data, language);
     const byDay = new Map<string, number>();
     const byCategoryDay = new Map<ExtraCategory, Map<string, number>>(
       EXTRA_CATEGORIES.map(category => [category, new Map<string, number>()])
@@ -66,12 +67,12 @@ export function StudyWeeklyOverview({ data, now, hideZeroData = false, moduleLab
       days: days.filter(day => (byModuleDay.get(module)?.get(day) ?? 0) > 0).length
     }));
     return { today, days, byDay, byCategoryDay, byModuleDay, streak, categories, modules };
-  }, [data, now]);
+  }, [data, language, now]);
   // A streak can cross Sundays: the celebration uses calendar days, not only the
   // seven columns in the current-week card.
   const hasSevenDayStreak = useMemo(() => {
     const totals = new Map<string, number>();
-    for (const entry of studyEntries(data)) {
+    for (const entry of studyEntriesForLanguage(data, language)) {
       if (entry.seconds > 0) totals.set(entry.date, (totals.get(entry.date) ?? 0) + entry.seconds);
     }
     const today = localDay(now);
@@ -81,7 +82,7 @@ export function StudyWeeklyOverview({ data, now, hideZeroData = false, moduleLab
       cursor = previousDay(cursor, -1);
     }
     return true;
-  }, [data, now]);
+  }, [data, language, now]);
   useEffect(() => {
     if (hasSevenDayStreak) celebrateAchievement("days-streak-7", "7 dias consecutivos!", "Você estudou por 7 dias seguidos. Keep going!");
   }, [hasSevenDayStreak]);

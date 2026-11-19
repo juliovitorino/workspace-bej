@@ -393,3 +393,28 @@ for (const locale of ['pt-BR', 'en-US', 'es-ES', 'fr-FR']) {
 }
 console.log('PASS: Time by Module cycles standard periods, skips custom, preserves custom in the full filter and supports four translations.');
 
+// Regression: switching the study language must change the displayed totals,
+// including the weekly overview and Days Streak, not only translated captions.
+const { studyEntriesForLanguage } = load('src/features/study/studyStats.ts');
+const languageFixture = { ...emptyStore().studyData, sessions: [], manualAdjustments: [
+  { id: 'pt-study', language: 'pt-BR', date: '2026-11-16', seconds: 120, description: 'Portuguese' },
+  { id: 'en-study', language: 'en-US', date: '2026-11-17', seconds: 240, description: 'English' },
+  { id: 'es-study', language: 'es-ES', date: '2026-11-18', seconds: 360, description: 'Spanish' },
+  { id: 'fr-study', language: 'fr-FR', date: '2026-11-19', seconds: 480, description: 'French' }
+]};
+const languageNow = new Date(2026, 10, 19, 12);
+const languageFilter = { language: 'all', module: 'all', mode: 'all', period: 'week', from: '2026-11-16', to: '2026-11-19' };
+for (const [code, expected] of [['pt-BR', 120], ['en-US', 240], ['es-ES', 360], ['fr-FR', 480]]) {
+  assert.equal(studyEntriesForLanguage(languageFixture, code).reduce((total, entry) => total + entry.seconds, 0), expected, code + ' weekly entries');
+  assert.equal(studyStats(languageFixture, { ...languageFilter, language: code }, languageNow).total, expected, code + ' dashboard total');
+}
+assert.equal(studyEntriesForLanguage(languageFixture, 'all').reduce((total, entry) => total + entry.seconds, 0), 1200);
+const weeklySource = readFileSync('src/features/study/StudyWeeklyOverview.tsx', 'utf8');
+assert.match(dashboardSource, /useEffect\(\(\) => \{\s*setFilters\(current => current\.language === language \? current : \{ \.\.\.current, language \}\);\s*\}, \[language\]\)/);
+assert.match(dashboardSource, /<StudyWeeklyOverview data=\{displayData!\} language=\{filters\.language\}/);
+assert.match(weeklySource, /const entries = studyEntriesForLanguage\(data, language\)/);
+assert.match(weeklySource, /for \(const entry of studyEntriesForLanguage\(data, language\)\)/);
+assert.doesNotMatch(weeklySource, /studyEntries\(data\)/, 'weekly chart and streak must not aggregate other study languages');
+console.log('PASS: dashboard and weekly streak follow all four study languages and keep the explicit all-languages filter.');
+
+

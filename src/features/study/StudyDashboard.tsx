@@ -97,6 +97,11 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu, onO
   const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
   const [filters, setFilters] = useState<StudyFilters>({ language, module: "all", mode: "all", period: "today", from: localDay(new Date()), to: localDay(new Date()) });
+  // The dashboard stays mounted while the app switches study languages.
+  // Keep the selected language in sync without discarding period/module/mode filters.
+  useEffect(() => {
+    setFilters(current => current.language === language ? current : { ...current, language });
+  }, [language]);
   const [goalLanguage, setGoalLanguage] = useState(language);
   const [goalHours, setGoalHours] = useState("");
   const [monthlyHours, setMonthlyHours] = useState("");
@@ -271,7 +276,7 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu, onO
       </div>
       {!validRange && <p role="alert">{t("study.errors.invalid")}</p>}
       <div id="study-results" className="study-content" tabIndex={-1} hidden={historyVisible}>
-      <StudyWeeklyOverview data={displayData!} now={now} hideZeroData={hideZeroData} moduleLabel={moduleLabel} />
+      <StudyWeeklyOverview data={displayData!} language={filters.language} now={now} hideZeroData={hideZeroData} moduleLabel={moduleLabel} />
       {chart(`${t("study.byModule")} · ${t(`study.periods.${filters.period}`)}`, moduleValues, moduleLabel, stats.total, true, "study-time-by-module")}
       {chart(`${t("study.byLanguage")} · ${t(`study.periods.${filters.period}`)}`, stats.byLanguage, code => languageName(code as StudentLanguage), stats.total)}
       <StudyHourlyHeatmap allSectionsExpanded={allSectionsExpanded} data={displayData!} language={filters.language} now={now} />
