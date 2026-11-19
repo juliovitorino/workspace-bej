@@ -1,13 +1,13 @@
 {
   "name": "mental-hashmap-app",
   "private": true,
-  "version": "5.1.35.20261119.1011",
+  "version": "5.1.36.20261119.1036",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "test:flashcards": "node scripts/test-learning-rounds.mjs && node scripts/test-walking-mode.mjs && node scripts/test-chunk-flashcards.mjs && node scripts/test-favorite-chunks.mjs",
     "test:backup": "node scripts/test-backup-reminder.mjs",
-    "test:study": "node scripts/test-study-reset.mjs && node scripts/test-study-events.mjs && node scripts/test-study-locks.mjs && node scripts/test-study-dashboard.mjs && node scripts/test-training-study.mjs && node scripts/test-extra-activities.mjs && node scripts/test-study-multitab.mjs && npm run test:sync",
+    "test:study": "node scripts/test-study-notifications.mjs && node scripts/test-study-reset.mjs && node scripts/test-study-events.mjs && node scripts/test-study-locks.mjs && node scripts/test-study-dashboard.mjs && node scripts/test-training-study.mjs && node scripts/test-extra-activities.mjs && node scripts/test-study-multitab.mjs && npm run test:sync",
     "validate:hashmaps": "node scripts/validate-hashmap-locales.mjs",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
