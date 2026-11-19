@@ -10,7 +10,7 @@ function load(file) {
   file = resolve(file);
   if (cache.has(file)) return cache.get(file).exports;
   const module = { exports: {} }; cache.set(file, module);
-  const output = transpileModule(readFileSync(file, 'utf8'), {
+  const output = transpileModule(readFileSync(file, 'utf8').replaceAll('import.meta.url', JSON.stringify('file:///study-notification-tests/entry.js')), {
     compilerOptions: { module: ModuleKind.CommonJS, target: ScriptTarget.ES2022 }
   }).outputText;
   const localRequire = id => {
