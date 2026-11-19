@@ -52,7 +52,11 @@
         "brazil",
         "safety"
       ],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/security.json",
+        "section": "Security (catalog entry)",
+        "paragraphIndex": 2
+      },
       "reviewStatus": "pending"
     },
     {
@@ -76,7 +80,11 @@
         "brazil",
         "nighttime"
       ],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/security.json",
+        "section": "Security (catalog entry)",
+        "paragraphIndex": 3
+      },
       "reviewStatus": "pending"
     },
     {
@@ -100,7 +108,11 @@
         "brazil",
         "smartphones"
       ],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/security.json",
+        "section": "Security (catalog entry)",
+        "paragraphIndex": 4
+      },
       "reviewStatus": "pending"
     },
     {
@@ -124,7 +136,11 @@
         "brazil",
         "transportation"
       ],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/security.json",
+        "section": "Security (catalog entry)",
+        "paragraphIndex": 5
+      },
       "reviewStatus": "pending"
     },
     {
@@ -148,7 +164,11 @@
         "brazil",
         "emergencies"
       ],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/security.json",
+        "section": "Security (catalog entry)",
+        "paragraphIndex": 6
+      },
       "reviewStatus": "pending"
     },
     {
@@ -172,7 +192,11 @@
         "brazil",
         "travel-advice"
       ],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/security.json",
+        "section": "Security (catalog entry)",
+        "paragraphIndex": 7
+      },
       "reviewStatus": "pending"
     },
     {
@@ -196,7 +220,11 @@
         "rio-de-janeiro",
         "tourism"
       ],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/security.json",
+        "section": "Security (catalog entry)",
+        "paragraphIndex": 8
+      },
       "reviewStatus": "pending"
     },
     {
@@ -220,7 +248,11 @@
         "rio-de-janeiro",
         "beaches"
       ],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/security.json",
+        "section": "Security (catalog entry)",
+        "paragraphIndex": 9
+      },
       "reviewStatus": "pending"
     },
     {
@@ -244,7 +276,11 @@
         "rio-de-janeiro",
         "nighttime"
       ],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/security.json",
+        "section": "Security (catalog entry)",
+        "paragraphIndex": 10
+      },
       "reviewStatus": "pending"
     },
     {
@@ -268,7 +304,11 @@
         "rio-de-janeiro",
         "attractions"
       ],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/security.json",
+        "section": "Security (catalog entry)",
+        "paragraphIndex": 11
+      },
       "reviewStatus": "pending"
     },
     {
@@ -292,7 +332,11 @@
         "rio-de-janeiro",
         "neighborhoods"
       ],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/security.json",
+        "section": "Security (catalog entry)",
+        "paragraphIndex": 12
+      },
       "reviewStatus": "pending"
     },
     {
@@ -316,7 +360,11 @@
         "rio-de-janeiro",
         "first-time-visitors"
       ],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/security.json",
+        "section": "Security (catalog entry)",
+        "paragraphIndex": 13
+      },
       "reviewStatus": "pending"
     },
     {
@@ -340,7 +388,11 @@
         "sao-paulo",
         "tourism"
       ],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/security.json",
+        "section": "Security (catalog entry)",
+        "paragraphIndex": 14
+      },
       "reviewStatus": "pending"
     },
     {
@@ -364,7 +416,11 @@
         "sao-paulo",
         "subway"
       ],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/security.json",
+        "section": "Security (catalog entry)",
+        "paragraphIndex": 15
+      },
       "reviewStatus": "pending"
     },
     {
@@ -388,7 +444,11 @@
         "sao-paulo",
         "avenida-paulista"
       ],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/security.json",
+        "section": "Security (catalog entry)",
+        "paragraphIndex": 16
+      },
       "reviewStatus": "pending"
     },
     {
@@ -412,7 +472,11 @@
         "sao-paulo",
         "downtown"
       ],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/security.json",
+        "section": "Security (catalog entry)",
+        "paragraphIndex": 17
+      },
       "reviewStatus": "pending"
     },
     {
@@ -436,7 +500,11 @@
         "sao-paulo",
         "nightlife"
       ],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/security.json",
+        "section": "Security (catalog entry)",
+        "paragraphIndex": 18
+      },
       "reviewStatus": "pending"
     },
     {
@@ -461,7 +529,11 @@
         "rio-de-janeiro",
         "comparison"
       ],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/security.json",
+        "section": "Security (catalog entry)",
+        "paragraphIndex": 19
+      },
       "reviewStatus": "pending"
     }
   ]

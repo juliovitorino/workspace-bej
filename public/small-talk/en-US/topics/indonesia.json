@@ -1,0 +1,260 @@
+{
+  "schemaVersion": "1.0.0",
+  "module": "small-talk",
+  "locale": "en-US",
+  "topicId": "indonesia",
+  "title": "INDONESIA",
+  "description": null,
+  "items": [
+    {
+      "id": "634d0132-c2c4-4bc4-8957-c0ce2c96056f",
+      "type": "question-answer",
+      "order": 1,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Which part of Indonesia would you recommend visiting for the first time?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original small talk content",
+        "section": "INDONESIA",
+        "paragraphIndex": 1
+      },
+      "reviewStatus": "pending",
+      "answer": {
+        "text": "I've heard that Indonesia has many different places to explore. Bali is famous for its beaches and culture, while Yogyakarta is known for its history and traditional arts.",
+        "audio": null
+      }
+    },
+    {
+      "id": "2aab5d82-4215-428c-9c90-c191b303eae0",
+      "type": "question-answer",
+      "order": 2,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is everyday life like in your city compared with other parts of Indonesia?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original small talk content",
+        "section": "INDONESIA",
+        "paragraphIndex": 2
+      },
+      "reviewStatus": "pending",
+      "answer": {
+        "text": "From what I understand, life in Indonesia can vary a lot depending on the region. A busy city like Jakarta may feel very different from a smaller town or an island community.",
+        "audio": null
+      }
+    },
+    {
+      "id": "3d9a11e3-9683-40dc-aee2-9a0df929351c",
+      "type": "question-answer",
+      "order": 3,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What Indonesian dish would you recommend to someone trying Indonesian food for the first time?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original small talk content",
+        "section": "INDONESIA",
+        "paragraphIndex": 3
+      },
+      "reviewStatus": "pending",
+      "answer": {
+        "text": "I'd love to try nasi goreng, which is Indonesian fried rice. I've also heard great things about rendang, a rich and flavorful meat dish.",
+        "audio": null
+      }
+    },
+    {
+      "id": "a823e772-8f71-472c-bfc5-02a0883e0c26",
+      "type": "question-answer",
+      "order": 4,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you enjoy spicy food, or do you usually prefer something milder?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original small talk content",
+        "section": "INDONESIA",
+        "paragraphIndex": 4
+      },
+      "reviewStatus": "pending",
+      "answer": {
+        "text": "I've heard that sambal, a spicy chili condiment, is popular in Indonesia. I'd like to try it, but I would probably start with a small amount.",
+        "audio": null
+      }
+    },
+    {
+      "id": "3e063659-3a80-43d5-99ce-800215746213",
+      "type": "question-answer",
+      "order": 5,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What languages do people usually speak in your region besides Indonesian?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original small talk content",
+        "section": "INDONESIA",
+        "paragraphIndex": 5
+      },
+      "reviewStatus": "pending",
+      "answer": {
+        "text": "I know that Bahasa Indonesia is the national language, but many people also speak regional languages. I'd be interested to learn which languages are common where you live.",
+        "audio": null
+      }
+    },
+    {
+      "id": "b56bba65-08d4-438c-a54f-dd0c8343fe1a",
+      "type": "question-answer",
+      "order": 6,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What traditional celebration or holiday is especially important to your family?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original small talk content",
+        "section": "INDONESIA",
+        "paragraphIndex": 6
+      },
+      "reviewStatus": "pending",
+      "answer": {
+        "text": "I've heard that people in Indonesia celebrate different holidays depending on their communities and traditions. I'd love to know which celebration means the most to your family.",
+        "audio": null
+      }
+    },
+    {
+      "id": "c659db03-4bfd-45b1-9feb-42f4c451ffe6",
+      "type": "question-answer",
+      "order": 7,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Would you rather spend a weekend at the beach, in the mountains, or exploring a city?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original small talk content",
+        "section": "INDONESIA",
+        "paragraphIndex": 7
+      },
+      "reviewStatus": "pending",
+      "answer": {
+        "text": "Indonesia seems to offer all three options. Personally, I'd love to explore its natural scenery and then spend some time discovering local food and culture.",
+        "audio": null
+      }
+    },
+    {
+      "id": "b71d36bd-65b1-4754-81cd-a84fd6cd3de5",
+      "type": "question-answer",
+      "order": 8,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What Indonesian tradition or art form do you think visitors should learn about?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original small talk content",
+        "section": "INDONESIA",
+        "paragraphIndex": 8
+      },
+      "reviewStatus": "pending",
+      "answer": {
+        "text": "I've heard that batik is an important part of Indonesian culture. I find it interesting that fabrics can carry such beautiful patterns and cultural meaning.",
+        "audio": null
+      }
+    },
+    {
+      "id": "a610a7e4-e2b8-4c10-ae92-e74d6ecd24ff",
+      "type": "question-answer",
+      "order": 9,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "What is one thing about Indonesia that foreigners often misunderstand?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original small talk content",
+        "section": "INDONESIA",
+        "paragraphIndex": 9
+      },
+      "reviewStatus": "pending",
+      "answer": {
+        "text": "I think people sometimes associate Indonesia only with Bali. However, the country has many islands, communities, languages, and traditions, so there is much more to discover.",
+        "audio": null
+      }
+    },
+    {
+      "id": "098c9a78-58b2-48fd-8d69-b594a3794649",
+      "type": "question-answer",
+      "order": 10,
+      "enabled": true,
+      "level": null,
+      "question": {
+        "text": "Do you think Indonesia and Brazil have anything in common?",
+        "audio": null
+      },
+      "context": null,
+      "followUps": [],
+      "linkedIntentionIds": [],
+      "tags": [],
+      "source": {
+        "document": "BEJ original small talk content",
+        "section": "INDONESIA",
+        "paragraphIndex": 10
+      },
+      "reviewStatus": "pending",
+      "answer": {
+        "text": "I think both countries are known for their cultural diversity, warm weather in many regions, and love of food and celebrations. I'd be curious to hear what similarities you notice.",
+        "audio": null
+      }
+    }
+  ]
+}
