@@ -451,6 +451,8 @@ assert.deepEqual(moduleRows().map(rowLabel), Object.values(labels).sort((a, b) =
 updateChart([chartSession('shadowing', 1000, 'en-US', 40), chartSession('speaking-game', 65), chartSession('interpretation', 125, 'fr-FR'), chartSession('chunk-favorites', 70, 'en-US', 0, 'walking')]);
 assert.equal(rowLabel(moduleRows()[0]), labels.shadowing);
 setFilter(3, 'today'); assert.equal(rowLabel(moduleRows()[0]), labels['chunk-favorites']);
+assert.equal(rowMedal(moduleRows()[0])?.props.rank, 1, 'gold follows the leader when period changes');
+assert.ok(moduleRows().slice(1).every(row => !rowMedal(row)), 'filtered-out and zero-time modules do not receive medals');
 setFilter(0, 'fr-FR'); assert.equal(rowLabel(moduleRows()[0]), labels.interpretation);
 assert.equal(moduleRows().filter(row => barPercent(row) > 0).length, 1);
 setFilter(0, 'all'); assert.equal(rowLabel(moduleRows()[0]), labels.interpretation);
@@ -462,6 +464,7 @@ setFilter(1, 'all'); setFilter(2, 'all'); setFilter(3, 'all');
 const diskBeforeFilters = JSON.stringify([...memory]);
 setFilter(0, 'en-US'); setFilter(0, 'all'); assert.equal(JSON.stringify([...memory]), diskBeforeFilters);
 for (const title of [translations.study.byLanguage, translations.study.timeline]) {
+  assert.equal(find(chartSection(title), n => n.type === StudyRankMedal), null, 'other charts never display podium medals');
   assert.equal(find(chartSection(title), n => n.type === 'ul').props.className, 'study-chart');
   const order = chartRows(title).map(rowLabel); assert.deepEqual(order, [...order].sort((a, b) => a.localeCompare(b)));
 }
