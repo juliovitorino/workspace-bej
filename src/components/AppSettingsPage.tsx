@@ -8,8 +8,9 @@ import { LanguageSettingsFields, type LanguageSettingsProps } from "./LanguageSe
 import { NeuralVoiceSelect } from "./NeuralVoiceSelect";
 import { SmallTalkPersonalImport } from "./SmallTalkPersonalImport";
 import { AIProviderSettings } from "./AIProviderSettings";
+import { StudyNotificationSettings } from "../features/study/StudyNotificationSettings";
 
-const categories = ["audio", "languages", "study", "appearance", "ai", "data"] as const;
+const categories = ["audio", "languages", "study", "notifications", "appearance", "ai", "data"] as const;
 interface Props extends LanguageSettingsProps {
   theme: ThemePreference;
   onThemeChange: (theme: ThemePreference) => void;
@@ -49,6 +50,7 @@ export function AppSettingsPage({ theme, onThemeChange, onOpenStudy, onOpenData,
         <p className="settings-dialog-help">{t("settingsPage.walkingLocal")}</p>
         <button type="button" className="secondary-button" onClick={onOpenStudy}>{t("settingsPage.openStudy")}</button>
       </>}
+      {!consolidationVisible && category === "notifications" && <StudyNotificationSettings />}
       {!consolidationVisible && category === "appearance" && <label className="settings-theme-field">
         {t("theme.label")}
         <select value={theme} onChange={event => onThemeChange(event.target.value as ThemePreference)}>
