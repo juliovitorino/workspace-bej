@@ -17,7 +17,7 @@ export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivit
   const { t } = useTranslation();
   const parts = lastActivity === undefined ? null : moduleRecencyParts(lastActivity, now.getTime());
   const lastActivityLabel = parts
-    ? t("study.moduleActivityAgo", { time: `${parts.count}${t(`study.moduleRecencyUnits.${parts.unit}`, { count: parts.count })}` })
+    ? t("study.moduleActivityAgo", { time: `${parts.count}${t(`study.moduleRecencyUnits.${parts.unit}${parts.count === 1 ? "One" : "Other"}`)}` })
     : t("study.noModuleActivity");
   const fullValue = `${time} · ${percentage}`;
   const visibleValue = mode === "both" ? fullValue : mode === "time" ? time : mode === "percentage" ? percentage : lastActivityLabel;
