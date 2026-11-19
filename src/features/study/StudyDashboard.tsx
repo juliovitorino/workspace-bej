@@ -23,6 +23,7 @@ import { StudyAverageOverview } from "./StudyAverageOverview";
 import { celebrateAchievement } from "../../utils/achievements";
 import { StudyStorageOverview } from "./StudyStorageOverview";
 import { StudyModuleTimeValue } from "./StudyModuleTimeValue";
+import { StudyRankMedal } from "./StudyRankMedal";
 import { moduleDurationParts, modulePercentageBarWidth, nextModuleValueMode, type ModuleValueMode } from "./studyModuleTime";
 
 const languages = Object.keys(LANGUAGES) as StudentLanguage[];
@@ -197,7 +198,7 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu }: {
     const max = Math.max(1, ...entries.map(([, seconds]) => seconds));
     const scale = Math.max(1, total ?? max);
     return <section id={sectionId} tabIndex={sectionId ? -1 : undefined} className="study-panel bej-chart-card">{collapseKey ? <StudyCollapseToggle expanded={collapsedCharts[collapseKey] ?? false} onToggle={() => setCollapsedCharts(v => ({ ...v, [collapseKey]: !(v[collapseKey] ?? false) }))} title={title} /> : sectionId === "study-time-by-module" ? <h3>{t("study.byModule")} · <button type="button" className="study-module-period-button" onClick={cycleModulePeriod} aria-label={`${t("study.nextPeriod")}: ${t(`study.periods.${nextStudyPeriod(filters.period)}`)}`} title={`${t("study.nextPeriod")}: ${t(`study.periods.${nextStudyPeriod(filters.period)}`)}`}>{t(`study.periods.${filters.period}`)}<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 5 7 7-7 7"/></svg></button></h3> : <h3>{title}</h3>}{(!collapseKey || collapsedCharts[collapseKey]) && (!entries.length ? <p>{t("study.empty")}</p> : <ul className={modules ? "study-chart study-chart-modules" : "study-chart"}>{entries.map(([key, seconds], index) => <li key={key}>
-      <div><span>{sectionId === "study-time-by-module" && <span className="study-module-rank">{index + 1}.</span>}{label(key)}</span>{sectionId === "study-time-by-module" && total !== undefined
+      <div><span className={sectionId === "study-time-by-module" ? "study-module-label" : undefined}>{sectionId === "study-time-by-module" && <span className="study-module-rank">{index < 3 && seconds > 0 ? <><StudyRankMedal rank={(index + 1) as 1 | 2 | 3} /><span className="study-module-rank-sr-only">{index + 1}.</span></> : `${index + 1}.`}</span>}<span className={sectionId === "study-time-by-module" ? "study-module-name" : undefined}>{label(key)}</span></span>{sectionId === "study-time-by-module" && total !== undefined
         ? <StudyModuleTimeValue moduleName={label(key)} time={moduleDuration(seconds)} percentage={`${number(seconds / scale * 100)}%`} mode={moduleValueMode} onToggle={() => setModuleValueMode(nextModuleValueMode)} />
         : <strong>{duration(seconds)}{total !== undefined && ` · ${number(seconds / scale * 100)}%`}</strong>}</div><div className="study-bar" aria-hidden="true"><span style={{ width: `${sectionId === "study-time-by-module" ? modulePercentageBarWidth(seconds, scale) : seconds / scale * 100}%`, ...(sectionId === "study-time-by-module" ? { background: key.startsWith(EXTRA_MODULE_PREFIX)
         ? STUDY_EXTRA_CATEGORY_COLORS[key.slice(EXTRA_MODULE_PREFIX.length) as typeof EXTRA_CATEGORIES[number]]

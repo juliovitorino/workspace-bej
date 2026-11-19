@@ -271,9 +271,21 @@ console.log('PASS: dashboard module bars split extra activities by category, hon
 // Display order (after sorting and zero-value filtering) determines the numbering.
 // Only the Time by Module section is numbered; the other dashboard charts stay unchanged.
 const dashboardSource = readFileSync('src/features/study/StudyDashboard.tsx', 'utf8');
+const studyStyles = readFileSync('src/features/study/study.css', 'utf8');
 assert.match(dashboardSource, /entries\.map\(\(\[key, seconds\], index\) => <li key=\{key\}>/);
-assert.match(dashboardSource, /sectionId === "study-time-by-module" && <span className="study-module-rank">\{index \+ 1\}\.<\/span>/);
-console.log('PASS: Time by Module displays consecutive numbers in the visible, sorted order only.');
+assert.match(dashboardSource, /sectionId === "study-time-by-module" && <span className="study-module-rank">/);
+assert.match(dashboardSource, /index < 3 && seconds > 0 \? <><StudyRankMedal rank=\{\(index \+ 1\) as 1 \| 2 \| 3\}/);
+assert.match(dashboardSource, /className="study-module-rank-sr-only">\{index \+ 1\}\./);
+assert.match(dashboardSource, /className=\{sectionId === "study-time-by-module" \? "study-module-name" : undefined\}/);
+const medalSource = readFileSync('src/features/study/StudyRankMedal.tsx', 'utf8');
+assert.match(medalSource, /rank: MedalRank/);
+assert.match(medalSource, /1: \{ ribbon:/);
+assert.match(medalSource, /2: \{ ribbon:/);
+assert.match(medalSource, /3: \{ ribbon:/);
+assert.match(medalSource, /aria-hidden="true"/);
+assert.match(studyStyles, /#study-time-by-module \.study-rank-medal/);
+assert.match(studyStyles, /#study-time-by-module \.study-module-rank-sr-only/);
+console.log('PASS: Time by Module awards accessible SVG medals to positive-time podium positions, keeps numeric ranks for others.');
 
 
 // Time by Module: show the two largest nonzero units without changing other charts.
@@ -298,7 +310,7 @@ assert.match(moduleTimeComponent, /className="study-module-value-desktop"/);
 assert.match(moduleTimeComponent, /className="study-module-value-mobile"/);
 assert.match(dashboardSource, /sectionId === "study-time-by-module" && total !== undefined/);
 assert.match(dashboardSource, /moduleDuration\(seconds\)/);
-const studyStyles = readFileSync('src/features/study/study.css', 'utf8');
+
 assert.match(studyStyles, /#study-time-by-module \.study-module-value-mobile \{ display: none; \}/);
 assert.match(studyStyles, /@media \(max-width: 820px\)/);
 assert.match(studyStyles, /#study-time-by-module \.study-module-value-desktop \{ display: none; \}/);
