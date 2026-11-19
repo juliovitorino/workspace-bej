@@ -2851,7 +2851,7 @@ button { color: inherit; }
 
 .app-settings-page { max-width: 920px; color: var(--text); }
 .app-settings-page > header p { color: var(--muted); }
-.settings-categories { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin: 24px 0; }
+.settings-categories { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 24px 0; }
 .settings-categories button { min-height: 48px; padding: 10px; border: 1px solid var(--border-strong); border-radius: 10px; background: var(--surface); color: var(--text); }
 .settings-categories button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent); color: var(--on-accent, #fff); font-weight: 700; }
 .settings-category-content { padding: clamp(16px, 3vw, 28px); border: 1px solid var(--border-strong); border-radius: 12px; background: var(--surface); }
