@@ -24,7 +24,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 1
+      },
       "reviewStatus": "pending"
     },
     {
@@ -45,7 +49,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 2
+      },
       "reviewStatus": "pending"
     },
     {
@@ -66,7 +74,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 3
+      },
       "reviewStatus": "pending"
     },
     {
@@ -87,7 +99,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 4
+      },
       "reviewStatus": "pending"
     },
     {
@@ -108,7 +124,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 5
+      },
       "reviewStatus": "pending"
     },
     {
@@ -129,7 +149,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 6
+      },
       "reviewStatus": "pending"
     },
     {
@@ -150,7 +174,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 7
+      },
       "reviewStatus": "pending"
     },
     {
@@ -171,7 +199,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 8
+      },
       "reviewStatus": "pending"
     },
     {
@@ -192,7 +224,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 9
+      },
       "reviewStatus": "pending"
     },
     {
@@ -213,7 +249,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 10
+      },
       "reviewStatus": "pending"
     },
     {
@@ -234,7 +274,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 11
+      },
       "reviewStatus": "pending"
     },
     {
@@ -255,7 +299,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 12
+      },
       "reviewStatus": "pending"
     },
     {
@@ -276,7 +324,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 13
+      },
       "reviewStatus": "pending"
     },
     {
@@ -297,7 +349,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 14
+      },
       "reviewStatus": "pending"
     },
     {
@@ -318,7 +374,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 15
+      },
       "reviewStatus": "pending"
     },
     {
@@ -339,7 +399,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 16
+      },
       "reviewStatus": "pending"
     },
     {
@@ -360,7 +424,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 17
+      },
       "reviewStatus": "pending"
     },
     {
@@ -381,7 +449,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 18
+      },
       "reviewStatus": "pending"
     },
     {
@@ -402,7 +474,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 19
+      },
       "reviewStatus": "pending"
     },
     {
@@ -423,7 +499,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 20
+      },
       "reviewStatus": "pending"
     },
     {
@@ -444,7 +524,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 21
+      },
       "reviewStatus": "pending"
     },
     {
@@ -465,7 +549,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 22
+      },
       "reviewStatus": "pending"
     },
     {
@@ -486,7 +574,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 23
+      },
       "reviewStatus": "pending"
     },
     {
@@ -507,7 +599,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/commute.json",
+        "section": "Commute (catalog entry)",
+        "paragraphIndex": 24
+      },
       "reviewStatus": "pending"
     }
   ]
