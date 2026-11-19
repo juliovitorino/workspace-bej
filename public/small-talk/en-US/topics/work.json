@@ -402,7 +402,11 @@
       "followUps": [],
       "linkedIntentionIds": [],
       "tags": [],
-      "source": null,
+      "source": {
+        "document": "BEJ catalog: public/small-talk/en-US/topics/work.json",
+        "section": "Work topic (catalog entry)",
+        "paragraphIndex": 19
+      },
       "reviewStatus": "pending"
     }
   ]
