@@ -23,7 +23,7 @@ function load(file) {
 }
 const {
   NOTIFICATION_MODULES, STUDY_NOTIFICATION_KEY, defaultStudyNotificationSettings,
-  parseStudyNotificationSettings, studyInactivityAlerts,
+  parseStudyNotificationSettings, readStudyNotificationSettings, writeStudyNotificationSettings, studyInactivityAlerts,
 } = load('src/features/study/studyNotifications.ts');
 const { STUDY_MODULES, EXTRA_CATEGORIES } = load('src/features/study/studyStorage.ts');
 const { EXTRA_MODULE_PREFIX } = load('src/features/study/studyModuleChart.ts');
@@ -56,6 +56,24 @@ assert.equal(configured.modules.hashmap, true);
 assert.equal(configured.modules.hacked, undefined, 'unknown keys are ignored');
 assert.equal(configured.modules['chunk-flashcards'], false);
 assert.deepEqual(parseStudyNotificationSettings(JSON.stringify({ version: 1, enabled: true, thresholdDays: 2, modules: {} })), defaults);
+
+// Preferences persist in a dedicated key without modifying study history.
+const saved = new Map();
+let changed = 0;
+globalThis.window = {
+  localStorage: {
+    getItem: key => saved.get(key) ?? null,
+    setItem: (key, value) => saved.set(key, value),
+  },
+  dispatchEvent: event => { if (event.type === 'bej-study-notifications-changed') changed++; },
+};
+assert.deepEqual(readStudyNotificationSettings(), defaults);
+writeStudyNotificationSettings(configured);
+assert.deepEqual(readStudyNotificationSettings(), configured);
+assert.equal(changed, 1);
+assert.deepEqual([...saved.keys()], [STUDY_NOTIFICATION_KEY]);
+saved.set(STUDY_NOTIFICATION_KEY, '{broken');
+assert.deepEqual(readStudyNotificationSettings(), defaults);
 
 const day = 86400000;
 const now = Date.parse('2026-11-19T12:00:00.000Z');
