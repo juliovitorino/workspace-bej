@@ -350,6 +350,7 @@ const barPercent = row => parseFloat(find(row, n => n.type === 'span' && n.props
 // the actual props passed to StudyModuleTimeValue instead of flattening JSX text.
 const displayedModulePercent = row => find(row, n => n.type === StudyModuleTimeValue)?.props.percentage;
 const displayedModuleTime = row => find(row, n => n.type === StudyModuleTimeValue)?.props.time;
+const moduleValue = row => find(row, n => n.type === StudyModuleTimeValue);
 assert.equal(displayedModulePercent(basicRow()), '37,55%', '181 seconds out of 482 seconds must display 37.55%');
 assert.ok(Math.abs(barPercent(basicRow()) - 181 / 482 * 100) < 1e-9);
 const moduleFilter = find(dashboard.tree, n => n.type === 'select' && find(n, c => c.type === 'option' && c.props.value === 'basic-training'));
@@ -436,6 +437,13 @@ updateChart([chartSession('basic-training', 5 * 3600), chartSession('shadowing',
 assert.equal(moduleRows().length, STUDY_MODULES.length);
 assert.deepEqual(moduleRows().slice(0, 3).map(rowLabel), ['speaking-game', 'basic-training', 'shadowing'].map(module => labels[module]));
 assert.deepEqual(moduleRows().slice(0, 3).map(row => rowMedal(row)?.props.rank), [1, 2, 3], 'gold, silver and bronze follow the sorted modules');
+assert.equal(moduleValue(basicRow()).props.lastActivity, Date.parse(chartStore.studyData.sessions[0].endedAt), 'last activity is sourced from the recorded session end');
+assert.equal(moduleValue(moduleRows().find(row => rowLabel(row) === labels['chunk-flashcards'])).props.lastActivity, undefined, 'no activity remains distinct from a zero-time row');
+for (const mode of ['time', 'percentage', 'recent', 'both']) {
+  moduleValue(basicRow()).props.onToggle(); dashboard.flush();
+  assert.ok(moduleRows().every(row => moduleValue(row).props.mode === mode), `every row shares ${mode} mode on desktop and mobile`);
+}
+assert.match(renderToStaticMarkup(React.createElement(StudyModuleTimeValue, { moduleName: 'Small Talk', time: '1h', percentage: '25%', lastActivity: 0, now: new Date(3600000), mode: 'recent', onToggle: () => {} })), /1h atrás/, 'relative mode renders the localized last activity in the same button');
 assert.ok(moduleRows().slice(3).every(row => !rowMedal(row)), 'ranks four onward remain numeric');
 assert.equal(text(rankMarker(moduleRows()[3])), '4.');
 assert.equal(text(find(rankMarker(moduleRows()[0]), n => n.props.className === 'study-module-rank-sr-only')), '1.');
@@ -451,6 +459,7 @@ assert.deepEqual(moduleRows().map(rowLabel), Object.values(labels).sort((a, b) =
 updateChart([chartSession('shadowing', 1000, 'en-US', 40), chartSession('speaking-game', 65), chartSession('interpretation', 125, 'fr-FR'), chartSession('chunk-favorites', 70, 'en-US', 0, 'walking')]);
 assert.equal(rowLabel(moduleRows()[0]), labels.shadowing);
 setFilter(3, 'today'); assert.equal(rowLabel(moduleRows()[0]), labels['chunk-favorites']);
+assert.ok(moduleValue(moduleRows().find(row => rowLabel(row) === labels.shadowing)).props.lastActivity, 'last activity uses full history even when the ranking is filtered to today');
 assert.equal(rowMedal(moduleRows()[0])?.props.rank, 1, 'gold follows the leader when period changes');
 assert.ok(moduleRows().slice(1).every(row => !rowMedal(row)), 'filtered-out and zero-time modules do not receive medals');
 setFilter(0, 'fr-FR'); assert.equal(rowLabel(moduleRows()[0]), labels.interpretation);
