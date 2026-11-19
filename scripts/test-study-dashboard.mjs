@@ -298,27 +298,58 @@ assert.deepEqual(moduleDurationParts(0), []);
 assert.deepEqual(moduleDurationParts(8 * 3600 + 46), [['durationHours', 8], ['durationSeconds', 46]]);
 assert.equal(nextModuleValueMode('both'), 'time');
 assert.equal(nextModuleValueMode('time'), 'percentage');
-assert.equal(nextModuleValueMode('percentage'), 'both');
+assert.equal(nextModuleValueMode('percentage'), 'recent');
+assert.equal(nextModuleValueMode('recent'), 'both');
 const moduleTimeComponent = readFileSync('src/features/study/StudyModuleTimeValue.tsx', 'utf8');
 assert.doesNotMatch(moduleTimeComponent, /useState<ModuleValueMode>/);
 assert.match(moduleTimeComponent, /mode: ModuleValueMode;/);
 assert.match(moduleTimeComponent, /onToggle: \(\) => void;/);
 assert.match(moduleTimeComponent, /onClick=\{onToggle\}/);
 assert.match(dashboardSource, /const \[moduleValueMode, setModuleValueMode\] = useState<ModuleValueMode>\("both"\)/);
-assert.match(dashboardSource, /mode=\{moduleValueMode\} onToggle=\{\(\) => setModuleValueMode\(nextModuleValueMode\)\}/);
-assert.match(moduleTimeComponent, /className="study-module-value-desktop"/);
-assert.match(moduleTimeComponent, /className="study-module-value-mobile"/);
+assert.match(dashboardSource, /lastActivity=\{latestModuleActivity\[key\]\} now=\{recencyNow\} mode=\{moduleValueMode\} onToggle=\{toggleModuleValueMode\}/);
+assert.match(moduleTimeComponent, /className="study-module-value"/);
+assert.doesNotMatch(moduleTimeComponent, /study-module-value-desktop|study-module-value-mobile/);
+assert.match(moduleTimeComponent, /mode === "percentage" \? percentage : lastActivityLabel/);
 assert.match(dashboardSource, /sectionId === "study-time-by-module" && total !== undefined/);
 assert.match(dashboardSource, /moduleDuration\(seconds\)/);
-
-assert.match(studyStyles, /#study-time-by-module \.study-module-value-mobile \{ display: none; \}/);
-assert.match(studyStyles, /@media \(max-width: 820px\)/);
-assert.match(studyStyles, /#study-time-by-module \.study-module-value-desktop \{ display: none; \}/);
+assert.match(studyStyles, /#study-time-by-module \.study-module-value \{/);
+assert.match(studyStyles, /#study-time-by-module \.study-module-value:focus-visible/);
+assert.doesNotMatch(studyStyles, /study-module-value-desktop|study-module-value-mobile/);
+const expectedRankingTitles = { 'pt-BR': 'Ranking por módulo', 'en-US': 'Module Ranking', 'es-ES': 'Clasificación por módulo', 'fr-FR': 'Classement par module' };
 for (const locale of ['pt-BR', 'en-US', 'es-ES', 'fr-FR']) {
   const translations = JSON.parse(readFileSync(`src/i18n/locales/${locale}.json`, 'utf8'));
+  assert.equal(translations.study.byModule, expectedRankingTitles[locale]);
   assert.ok(translations.study.toggleModuleTimePercentage, `Missing module toggle label in ${locale}`);
+  assert.ok(translations.study.moduleActivityAgo, `Missing relative-time label in ${locale}`);
+  assert.ok(translations.study.noModuleActivity, `Missing empty-activity label in ${locale}`);
+  for (const unit of ['second', 'minute', 'hour', 'day', 'week', 'month', 'year'])
+    for (const suffix of ['One', 'Other']) assert.ok(translations.study.moduleRecencyUnits[unit + suffix], `Missing ${unit + suffix} in ${locale}`);
 }
-console.log('PASS: module time uses two largest units, cycles in sync across all module rows on mobile, preserves static desktop and other charts.');
+console.log('PASS: ranking title localized, shared four-state toggle on every device and relative-time translations.');
+const { moduleLastActivity, moduleRecencyParts } = load('src/features/study/studyModuleRecency.ts');
+const at = iso => new Date(iso).getTime();
+const records = { sessions: [
+  { id: 'old', module: 'small-talk', language: 'en-US', mode: 'manual', activeSeconds: 10, endedAt: '2026-11-10T12:00:00.000Z' },
+  { id: 'new', module: 'small-talk', language: 'en-US', mode: 'walking', activeSeconds: 20, endedAt: '2026-11-18T12:00:00.000Z' },
+  { id: 'empty', module: 'hashmap', language: 'en-US', mode: 'manual', activeSeconds: 0, endedAt: '2026-11-19T12:00:00.000Z' },
+  { id: 'other', module: 'small-talk', language: 'fr-FR', mode: 'manual', activeSeconds: 20, endedAt: '2026-11-19T12:00:00.000Z' },
+  { id: 'external', module: 'extra-activities', category: 'conversation', language: 'en-US', mode: 'manual', activeSeconds: 60, endedAt: '2026-11-17T12:00:00.000Z' }
+], manualAdjustments: [{ id: 'prior', language: 'en-US', seconds: 120, date: '2026-10-01' }] };
+const allActivity = moduleLastActivity(records, { language: 'en-US', mode: 'all' });
+assert.equal(allActivity['small-talk'], at('2026-11-18T12:00:00.000Z'));
+assert.equal(allActivity['hashmap'], undefined, 'unrecorded module has no last activity');
+assert.equal(allActivity['extra-category:conversation'], at('2026-11-17T12:00:00.000Z'));
+assert.ok(Number.isFinite(allActivity.previous), 'prior-hours adjustment is represented');
+assert.equal(moduleLastActivity(records, { language: 'en-US', mode: 'manual' })['small-talk'], at('2026-11-10T12:00:00.000Z'));
+assert.equal(moduleLastActivity(records, { language: 'en-US', mode: 'walking' }).previous, undefined);
+assert.equal(moduleLastActivity(records, { language: 'fr-FR', mode: 'all' })['small-talk'], at('2026-11-19T12:00:00.000Z'));
+const ref = 1000 * 86400 * 1000;
+for (const [seconds, count, unit] of [[2,2,'second'],[60,1,'minute'],[3600,1,'hour'],[5*86400,5,'day'],[14*86400,2,'week'],[150*86400,5,'month'],[730*86400,2,'year']]) {
+  assert.deepEqual(moduleRecencyParts(ref - seconds * 1000, ref), { count, unit });
+}
+assert.deepEqual(moduleRecencyParts(ref + 1000, ref), { count: 0, unit: 'second' }, 'clock skew never shows negative values');
+assert.equal(moduleRecencyParts(NaN, ref), null);
+console.log('PASS: latest recorded activity per module, language/mode/category filters, and largest-unit relative time.');
 
 
 // Time by Module bars use the same share-of-total percentage as their labels.
