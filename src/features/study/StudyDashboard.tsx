@@ -158,7 +158,7 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu }: {
   // Extra activities are shown as individual categories in the module chart, not as one aggregated bar.
   const moduleValues = stats ? moduleChartValues(stats, filters) : {};
   // Always use full study history for recency, regardless of the ranking's date range.
-  const latestModuleActivity = useMemo(() => displayData
+  const latestModuleActivity = useMemo<Record<string, number>>(() => displayData
     ? moduleLastActivity(displayData, filters) : {}, [displayData, filters.language, filters.mode]);
   async function action(work: () => Promise<void>) {
     setBusy(true); setError(""); setMessage("");
