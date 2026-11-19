@@ -367,7 +367,7 @@ assert.equal(barPercent(basicRow()), 0); assert.ok(!text(moduleChart()).includes
 const chartSection = title => find(dashboard.tree, n => n.type === 'section' && React.Children.toArray(n.props.children).some(c => c?.type === 'h3' && (text(c) === title || text(c).startsWith(title + ' \u00b7 '))));
 const chartRows = title => React.Children.toArray(find(chartSection(title), n => n.type === 'ul')?.props.children);
 const moduleRows = () => chartRows(translations.study.byModule);
-const rowLabel = row => text(find(row, n => n.type === 'span' && n.props.className === 'study-module-name'));
+const rowLabel = row => text(find(row, n => n.type === 'span' && n.props.className === 'study-module-name') ?? find(row, n => n.type === 'span' && !n.props.style));
 const rankMarker = row => find(row, n => n.type === 'span' && n.props.className === 'study-module-rank');
 const rowMedal = row => find(row, n => n.type === StudyRankMedal);
 for (const rank of [1, 2, 3]) {
