@@ -12,18 +12,20 @@ import { StudyNotificationSettings } from "../features/study/StudyNotificationSe
 
 const categories = ["audio", "languages", "study", "notifications", "appearance", "ai", "data"] as const;
 interface Props extends LanguageSettingsProps {
+  notificationSettingsRequest?: number;
   theme: ThemePreference;
   onThemeChange: (theme: ThemePreference) => void;
   onOpenStudy: () => void;
   onOpenData: (section: "settings" | "history") => void;
 }
 
-export function AppSettingsPage({ theme, onThemeChange, onOpenStudy, onOpenData, ...languages }: Props) {
+export function AppSettingsPage({ notificationSettingsRequest = 0, theme, onThemeChange, onOpenStudy, onOpenData, ...languages }: Props) {
   const { t } = useTranslation();
   const [category, setCategory] = useState<typeof categories[number]>("audio");
   const [consolidationVisible, setConsolidationVisible] = useState(false);
   const title = useRef<HTMLHeadingElement>(null);
   useEffect(() => { title.current?.focus({ preventScroll: true }); }, []);
+  useEffect(() => { if (notificationSettingsRequest > 0) setCategory("notifications"); }, [notificationSettingsRequest]);
   const categoryTitle = (key: typeof categories[number]) => key === 'ai' ? 'Inteligência Artificial' : t(`settingsPage.${key}`);
   return <section className="app-settings-page" aria-labelledby="app-settings-title">
     <header>
