@@ -307,6 +307,7 @@ tracking.dispose(); await settle();
 // Module bars represent a share of all filtered study time, not the largest bar.
 const { StudyDashboard } = load('src/features/study/StudyDashboard.tsx');
 const { StudyModuleTimeValue } = load('src/features/study/StudyModuleTimeValue.tsx');
+const { StudyRankMedal } = load('src/features/study/StudyRankMedal.tsx');
 const { STUDY_KEY, STUDY_CHANGED, STUDY_MODULES, writeStudyStore } = load('src/features/study/studyStorage.ts');
 function persistChartStore() {
   for (const key of [...memory.keys()]) if (key.startsWith(STUDY_KEY)) memory.delete(key);
@@ -366,7 +367,17 @@ assert.equal(barPercent(basicRow()), 0); assert.ok(!text(moduleChart()).includes
 const chartSection = title => find(dashboard.tree, n => n.type === 'section' && React.Children.toArray(n.props.children).some(c => c?.type === 'h3' && (text(c) === title || text(c).startsWith(title + ' \u00b7 '))));
 const chartRows = title => React.Children.toArray(find(chartSection(title), n => n.type === 'ul')?.props.children);
 const moduleRows = () => chartRows(translations.study.byModule);
-const rowLabel = row => text(find(row, n => n.type === 'span' && !n.props.style));
+const rowLabel = row => text(find(row, n => n.type === 'span' && n.props.className === 'study-module-name'));
+const rankMarker = row => find(row, n => n.type === 'span' && n.props.className === 'study-module-rank');
+const rowMedal = row => find(row, n => n.type === StudyRankMedal);
+for (const rank of [1, 2, 3]) {
+  const markup = renderToStaticMarkup(React.createElement(StudyRankMedal, { rank }));
+  assert.match(markup, /aria-hidden="true"/);
+  assert.match(markup, /class="study-rank-medal"/);
+  assert.match(markup, /<circle/);
+}
+assert.notEqual(renderToStaticMarkup(React.createElement(StudyRankMedal, { rank: 1 })), renderToStaticMarkup(React.createElement(StudyRankMedal, { rank: 2 })));
+assert.notEqual(renderToStaticMarkup(React.createElement(StudyRankMedal, { rank: 2 })), renderToStaticMarkup(React.createElement(StudyRankMedal, { rank: 3 })));
 const filterControls = () => React.Children.toArray(find(dashboard.tree, n => n.type === 'fieldset' && n.props.className?.includes('study-filters')).props.children)
   .map(label => find(label, n => n.type === 'select')).filter(Boolean);
 const setFilter = (index, value) => { filterControls()[index].props.onChange({ target: { value } }); dashboard.flush(); };
@@ -418,16 +429,22 @@ updateChart([]);
 console.log('PASS compact durations: omitted zero units, exact hours/minutes/seconds and zero fallback.');
 assert.equal(moduleRows().length, STUDY_MODULES.length);
 assert.ok(moduleRows().every(row => displayedModuleTime(row) === translations.study.zeroDuration && displayedModulePercent(row) === '0%' && barPercent(row) === 0));
+assert.ok(moduleRows().every(row => !rowMedal(row)), 'zero-time modules do not receive medals');
 assert.deepEqual(moduleRows().map(rowLabel), Object.values(labels).sort((a, b) => a.localeCompare(b, 'pt-BR')));
 assert.equal(find(moduleChart(), n => n.type === 'ul').props.className, 'study-chart study-chart-modules');
 updateChart([chartSession('basic-training', 5 * 3600), chartSession('shadowing', 2 * 3600), chartSession('speaking-game', 10 * 3600)]);
 assert.equal(moduleRows().length, STUDY_MODULES.length);
 assert.deepEqual(moduleRows().slice(0, 3).map(rowLabel), ['speaking-game', 'basic-training', 'shadowing'].map(module => labels[module]));
+assert.deepEqual(moduleRows().slice(0, 3).map(row => rowMedal(row)?.props.rank), [1, 2, 3], 'gold, silver and bronze follow the sorted modules');
+assert.ok(moduleRows().slice(3).every(row => !rowMedal(row)), 'ranks four onward remain numeric');
+assert.equal(text(rankMarker(moduleRows()[3])), '4.');
+assert.equal(text(find(rankMarker(moduleRows()[0]), n => n.props.className === 'study-module-rank-sr-only')), '1.');
 assert.equal(moduleRows().filter(row => barPercent(row) === 0).length, STUDY_MODULES.length - 3);
 assert.ok(Math.abs(barPercent(moduleRows()[0]) - 10 / 17 * 100) < 1e-9);
 assert.ok(displayedModuleTime(moduleRows()[0]).includes('10h'));
 updateChart(STUDY_MODULES.map((module, index) => chartSession(module, (index + 1) * 60)));
 assert.deepEqual(moduleRows().map(rowLabel), [...STUDY_MODULES].reverse().map(module => labels[module]));
+assert.deepEqual(moduleRows().slice(0, 3).map(row => rowMedal(row)?.props.rank), [1, 2, 3], 'medals follow the recalculated ranking');
 updateChart(STUDY_MODULES.map(module => chartSession(module, 120)));
 assert.deepEqual(moduleRows().map(rowLabel), Object.values(labels).sort((a, b) => a.localeCompare(b, 'pt-BR')));
 // Refresh and all four filters recalculate order without changing persisted data.
