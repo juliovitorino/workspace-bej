@@ -1,14 +1,15 @@
-import { EXTRA_CATEGORIES, STUDY_MODULES } from "./studyStorage";
+import { EXTRA_CATEGORIES, OTHER_STUDY_SUBCATEGORIES, STUDY_MODULES } from "./studyStorage";
 import type { StudyFilters } from "./studyStats";
 import type { studyStats } from "./studyStats";
 
 /** Visual-only keys: recorded sessions remain under the original extra-activities module. */
 export const EXTRA_MODULE_PREFIX = "extra-category:";
+export const OTHER_SUBCATEGORY_MODULE_PREFIX = "extra-other-subcategory:";
 
 /** Build non-overlapping bars for the dashboard without changing the stored study data. */
 export function moduleChartValues(
-  stats: Pick<ReturnType<typeof studyStats>, "byModule" | "byExtraCategory">,
-  filters: Pick<StudyFilters, "module" | "origin" | "extraCategory">,
+  stats: Pick<ReturnType<typeof studyStats>, "byModule" | "byExtraCategory" | "byOtherSubcategory">,
+  filters: Pick<StudyFilters, "module" | "origin" | "extraCategory" | "extraSubcategory">,
 ): Record<string, number> {
   const values: Record<string, number> = {};
   const categorySelected = !!filters.extraCategory && filters.extraCategory !== "all";
@@ -23,7 +24,15 @@ export function moduleChartValues(
   if (showExternal) {
     for (const category of EXTRA_CATEGORIES) {
       if (!categorySelected || filters.extraCategory === category) {
-        values[`${EXTRA_MODULE_PREFIX}${category}`] = stats.byExtraCategory[category] ?? 0;
+        if (category === "other") {
+          for (const subcategory of OTHER_STUDY_SUBCATEGORIES) {
+            if (!filters.extraSubcategory || filters.extraSubcategory === "all" || filters.extraSubcategory === subcategory) {
+              values[`${OTHER_SUBCATEGORY_MODULE_PREFIX}${subcategory}`] = stats.byOtherSubcategory[subcategory] ?? 0;
+            }
+          }
+        } else {
+          values[`${EXTRA_MODULE_PREFIX}${category}`] = stats.byExtraCategory[category] ?? 0;
+        }
       }
     }
   }

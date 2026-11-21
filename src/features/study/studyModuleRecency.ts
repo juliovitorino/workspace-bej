@@ -1,6 +1,6 @@
 import type { StudyData } from "./studyStorage";
 import type { StudyFilters } from "./studyStats";
-import { EXTRA_MODULE_PREFIX } from "./studyModuleChart";
+import { EXTRA_MODULE_PREFIX, OTHER_SUBCATEGORY_MODULE_PREFIX } from "./studyModuleChart";
 
 /** Latest confirmed study activity by chart row, independently of the selected period. */
 export function moduleLastActivity(
@@ -16,7 +16,9 @@ export function moduleLastActivity(
       (filters.language !== "all" && session.language !== filters.language) ||
       (filters.mode !== "all" && session.mode !== filters.mode)) continue;
     const key = session.module === "extra-activities"
-      ? session.category && `${EXTRA_MODULE_PREFIX}${session.category}`
+      ? session.category === "other"
+        ? `${OTHER_SUBCATEGORY_MODULE_PREFIX}${session.subcategory ?? "misc"}`
+        : session.category && `${EXTRA_MODULE_PREFIX}${session.category}`
       : session.module;
     if (key) add(key, Date.parse(session.endedAt));
   }

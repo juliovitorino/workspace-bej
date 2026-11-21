@@ -22,7 +22,7 @@ function load(file) {
 const storage = load('src/features/study/studyStorage.ts');
 const { StudyClock, recoverCheckpoint, localDay, IDLE_MS } = load('src/features/study/studyTrackingService.ts');
 const { studyStats, currentWeekStart } = load('src/features/study/studyStats.ts');
-const { moduleChartValues, EXTRA_MODULE_PREFIX } = load('src/features/study/studyModuleChart.ts');
+const { moduleChartValues, EXTRA_MODULE_PREFIX, OTHER_SUBCATEGORY_MODULE_PREFIX } = load('src/features/study/studyModuleChart.ts');
 const { emptyStore, backupOf, parseStudyBackup, mergeStudyData, consolidateStudyBackup, writeStudyStore, readStudyStore, totalSeconds, STUDY_KEY, StudyError } = storage;
 const code = expected => e => e instanceof StudyError && e.code === expected;
 const rawStore = new Map([['bej-favorite-chunks', '[{"id":"keep","language":"en-US"}]'], ['interface-theme', 'dark']]);
@@ -253,6 +253,7 @@ console.log('PASS: Speaking Game and Interpretation version-1 backup round trip,
 const moduleChartStats = {
   byModule: { hashmap: 480, 'extra-activities': 600, previous: 120 },
   byExtraCategory: { conversation: 360, writing: 240, 'private-class': 0, reading: 0, 'active-listening': 0, other: 0 },
+  byOtherSubcategory: { shadowing: 0, 'self-speaking': 0, misc: 0 },
 };
 const moduleChartFilters = { module: 'all', origin: 'all', extraCategory: 'all' };
 const moduleBars = moduleChartValues(moduleChartStats, moduleChartFilters);
@@ -267,6 +268,24 @@ assert.deepEqual(moduleChartValues(moduleChartStats, { ...moduleChartFilters, ex
 assert.equal(moduleChartValues(moduleChartStats, { ...moduleChartFilters, module: 'hashmap' }).hashmap, 480);
 assert.equal(Object.keys(moduleChartValues(moduleChartStats, { ...moduleChartFilters, module: 'extra-activities' })).length, 6);
 console.log('PASS: dashboard module bars split extra activities by category, honor filters, and do not double-count the aggregate.');
+
+// Other studies: split the category into real subcategories, including legacy sessions without a subcategory.
+const otherData = {
+  ...moduleChartStats,
+  byModule: { ...moduleChartStats.byModule, 'extra-activities': 1200 },
+  byExtraCategory: { ...moduleChartStats.byExtraCategory, other: 600 },
+  byOtherSubcategory: { shadowing: 240, 'self-speaking': 300, misc: 60 },
+};
+const otherBars = moduleChartValues(otherData, moduleChartFilters);
+assert.equal(otherBars[`${EXTRA_MODULE_PREFIX}other`], undefined, 'generic Other studies must not appear');
+assert.equal(otherBars[`${OTHER_SUBCATEGORY_MODULE_PREFIX}shadowing`], 240);
+assert.equal(otherBars[`${OTHER_SUBCATEGORY_MODULE_PREFIX}self-speaking`], 300);
+assert.equal(otherBars[`${OTHER_SUBCATEGORY_MODULE_PREFIX}misc`], 60);
+assert.equal(Object.values(otherBars).reduce((sum, value) => sum + value, 0), 1800, 'total remains unchanged');
+assert.deepEqual(moduleChartValues(otherData, { ...moduleChartFilters, extraCategory: 'other', extraSubcategory: 'shadowing' }), { [`${OTHER_SUBCATEGORY_MODULE_PREFIX}shadowing`]: 240 });
+assert.equal(Object.keys(moduleChartValues(otherData, { ...moduleChartFilters, origin: 'internal' })).some(key => key.startsWith(OTHER_SUBCATEGORY_MODULE_PREFIX)), false);
+assert.match(readFileSync('src/features/study/StudyDashboard.tsx', 'utf8'), /extras\\.subcategories/);
+console.log('PASS: Other studies ranking shows individual subcategories without double-counting, respecting filters.');
 
 // Display order (after sorting and zero-value filtering) determines the numbering.
 // Only the Time by Module section is numbered; the other dashboard charts stay unchanged.
