@@ -81,6 +81,12 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   const [questionOverrides, setQuestionOverrides] = useState(() => { try { return readQuestionOverrides(); } catch { return {}; } });
   const [questionEditorId, setQuestionEditorId] = useState<string | null>(null);
   const [questionDraft, setQuestionDraft] = useState('');
+  const [copiedQuestionId, setCopiedQuestionId] = useState<string | null>(null);
+  const [questionCopyError, setQuestionCopyError] = useState<{ id: string; message: string } | null>(null);
+  const questionCopyTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => {
+    if (questionCopyTimerRef.current !== null) window.clearTimeout(questionCopyTimerRef.current);
+  }, []);
   const [printMode, setPrintMode] = useState<'both' | 'questions' | null>(null);
   const [backupMessage, setBackupMessage] = useState('');
   const [exportCard, setExportCard] = useState<{ item: SmallTalkItem; json: string } | null>(null);
@@ -243,6 +249,45 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     const question = questionFor(item);
     return { ...item, question: item.question ? { ...item.question, text: question,
       audio: item.question.text === question ? item.question.audio : null } : null };
+  }
+  async function copyQuestion(item: SmallTalkItem) {
+    const text = questionFor(item).trim();
+    if (!text) return;
+    if (questionCopyTimerRef.current !== null) window.clearTimeout(questionCopyTimerRef.current);
+    questionCopyTimerRef.current = null;
+    setCopiedQuestionId(null);
+    setQuestionCopyError(null);
+
+    let copied = false;
+    if (navigator.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(text);
+        copied = true;
+      } catch { /* Tenta a cópia alternativa para navegadores com restrições. */ }
+    }
+    if (!copied) {
+      const field = document.createElement('textarea');
+      field.value = text;
+      field.setAttribute('readonly', '');
+      field.style.position = 'fixed';
+      field.style.opacity = '0';
+      document.body.appendChild(field);
+      try {
+        field.focus();
+        field.select();
+        copied = document.execCommand('copy');
+      } catch { /* Sem permissão para copiar. */ }
+      finally { field.remove(); }
+    }
+    if (!copied) {
+      setQuestionCopyError({ id: item.id, message: 'Não foi possível copiar a pergunta. Verifique as permissões do navegador.' });
+      return;
+    }
+    setCopiedQuestionId(item.id);
+    questionCopyTimerRef.current = window.setTimeout(() => {
+      setCopiedQuestionId(null);
+      questionCopyTimerRef.current = null;
+    }, 2000);
   }
   function openQuestionEditor(item: SmallTalkItem) { setQuestionEditorId(item.id); setQuestionDraft(questionFor(item)); setEditError(''); }
   function saveQuestionEditor() {
@@ -485,6 +530,10 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   }, [topicsMenuOpen]);
 
   function selectTopic(id: string) {
+    if (questionCopyTimerRef.current !== null) window.clearTimeout(questionCopyTimerRef.current);
+    questionCopyTimerRef.current = null;
+    setCopiedQuestionId(null);
+    setQuestionCopyError(null);
     setTopicId(id);
     setQuery(''); // Evita ocultar perguntas por um termo de busca do tópico anterior.
     setTopicsMenuOpen(false);
@@ -961,6 +1010,13 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
         </div>
         <div className="small-talk-question-heading"><p><strong><span className="small-talk-print-number">{printNumbers[item.id]}. </span>{questionFor(item)}</strong></p>
           <button type="button" className="small-talk-icon-button" aria-label="Editar pergunta" title="Editar pergunta" onClick={() => openQuestionEditor(item)}><SmallTalkIcon name="edit"/></button>
+          <button type="button" className={`small-talk-icon-button${copiedQuestionId === item.id ? ' small-talk-question-copy-success' : ''}`}
+            aria-label={copiedQuestionId === item.id ? 'Pergunta copiada' : 'Copiar pergunta'}
+            title={copiedQuestionId === item.id ? 'Pergunta copiada!' : 'Copiar pergunta'}
+            disabled={!questionFor(item).trim()} onClick={() => void copyQuestion(item)}>
+            <SmallTalkIcon name={copiedQuestionId === item.id ? 'check' : 'copy'}/>
+          </button>
+          {questionCopyError?.id === item.id && <span role="alert" className="small-talk-question-copy-error">{questionCopyError.message}</span>}
           {questionOverrides[item.id] && <button type="button" className="small-talk-restore-button" onClick={() => restoreQuestion(item.id)}>Restaurar pergunta</button>}
         </div>
         {questionEditorId === item.id && <div className="small-talk-editor">
