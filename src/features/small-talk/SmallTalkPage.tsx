@@ -73,6 +73,12 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   const [answerEditHistory, setAnswerEditHistory] = useState(() => beginAnswerEdit(''));
   const draft = answerEditHistory.present;
   const [answerCopyMessage, setAnswerCopyMessage] = useState('');
+  const [answerPasteSuccess, setAnswerPasteSuccess] = useState(false);
+  const answerPasteTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const activeAnswerEditorRef = useRef<string | null>(null);
+  useEffect(() => () => {
+    if (answerPasteTimerRef.current !== null) window.clearTimeout(answerPasteTimerRef.current);
+  }, []);
   const answerEditorRef = useRef<HTMLTextAreaElement | null>(null);
   const [answerOverrides, setAnswerOverrides] = useState<ReturnType<typeof readAnswerOverrides>>(() => {
     try { return readAnswerOverrides(); } catch { return {}; }
@@ -577,6 +583,10 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     return item.answer?.text || personalAnswers?.answersByItemId[item.id]?.original?.segments.map(s => s.text).join('\n\n') || '';
   }
   function openEditor(item: SmallTalkItem) {
+    activeAnswerEditorRef.current = item.id;
+    if (answerPasteTimerRef.current !== null) window.clearTimeout(answerPasteTimerRef.current);
+    answerPasteTimerRef.current = null;
+    setAnswerPasteSuccess(false);
     setEditorId(item.id);
     setQuestionEditorId(null);
     setRestorePromptId(null);
@@ -585,12 +595,19 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     setEditError('');
   }
   function closeEditor() {
+    activeAnswerEditorRef.current = null;
+    if (answerPasteTimerRef.current !== null) window.clearTimeout(answerPasteTimerRef.current);
+    answerPasteTimerRef.current = null;
+    setAnswerPasteSuccess(false);
     setEditorId(null);
     setAnswerEditHistory(beginAnswerEdit(''));
     setAnswerCopyMessage('');
     setEditError('');
   }
   function updateAnswerDraft(text: string) {
+    if (answerPasteTimerRef.current !== null) window.clearTimeout(answerPasteTimerRef.current);
+    answerPasteTimerRef.current = null;
+    setAnswerPasteSuccess(false);
     setAnswerEditHistory(current => changeAnswerEdit(current, text));
     setAnswerCopyMessage('');
     setEditError('');
@@ -629,6 +646,36 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       finally { field.remove(); }
     }
     setAnswerCopyMessage(copied ? 'Resposta em edição copiada!' : 'Não foi possível copiar automaticamente. Selecione o texto e copie manualmente.');
+  }
+  async function pasteAnswerDraft() {
+    const currentEditorId = activeAnswerEditorRef.current;
+    if (!currentEditorId) return;
+    setAnswerCopyMessage('');
+    setEditError('');
+    if (!navigator.clipboard?.readText) {
+      setAnswerCopyMessage('Este navegador não permite ler a área de transferência. Cole manualmente com Ctrl/Cmd + V.');
+      return;
+    }
+    try {
+      const clipboardText = await navigator.clipboard.readText();
+      // Ignore results from a clipboard permission prompt after the editor was closed/switched.
+      if (activeAnswerEditorRef.current !== currentEditorId) return;
+      if (!clipboardText) {
+        setAnswerCopyMessage('A área de transferência está vazia. A resposta foi preservada.');
+        return;
+      }
+      setAnswerEditHistory(current => changeAnswerEdit(current, clipboardText));
+      if (answerPasteTimerRef.current !== null) window.clearTimeout(answerPasteTimerRef.current);
+      setAnswerPasteSuccess(true);
+      answerPasteTimerRef.current = window.setTimeout(() => {
+        setAnswerPasteSuccess(false);
+        answerPasteTimerRef.current = null;
+      }, 2000);
+      answerEditorRef.current?.focus();
+    } catch {
+      if (activeAnswerEditorRef.current !== currentEditorId) return;
+      setAnswerCopyMessage('Não foi possível acessar a área de transferência. Permita o acesso ou use Ctrl/Cmd + V.');
+    }
   }
   function saveEditor() {
     if (!editorId || !draft.trim()) { setEditError('Digite uma resposta ou use a lixeira para removê-la.'); return; }
@@ -1046,6 +1093,12 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
             <svg aria-hidden="true" viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
               <rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>
             </svg>
+          </button>
+          <button type="button" className={`small-talk-icon-button${answerPasteSuccess ? ' small-talk-answer-paste-success' : ''}`}
+            aria-label={answerPasteSuccess ? 'Resposta colada' : 'Colar resposta da área de transferência'}
+            title={answerPasteSuccess ? 'Resposta colada!' : 'Substituir resposta pelo texto copiado'}
+            onClick={() => void pasteAnswerDraft()}>
+            <SmallTalkIcon name={answerPasteSuccess ? 'check' : 'paste'}/>
           </button>
           {answerCopyMessage && <span role="status" className="settings-dialog-help">{answerCopyMessage}</span>}
         </div> : <div className="small-talk-actions">

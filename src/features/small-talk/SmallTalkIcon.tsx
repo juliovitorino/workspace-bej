@@ -3,7 +3,7 @@ export type SmallTalkIconName =
   | 'duplicate' | 'star' | 'eye' | 'eye-off' | 'edit' | 'trash' | 'printer'
   | 'clipboard' | 'globe' | 'settings' | 'arrow-up' | 'arrow-down'
   | 'plus' | 'minus' | 'play' | 'pause' | 'skip' | 'restart'
-  | 'sort' | 'copy' | 'check' | 'close';
+  | 'sort' | 'copy' | 'paste' | 'check' | 'close';
 
 export function SmallTalkIcon({ name, filled = false }: { name: SmallTalkIconName; filled?: boolean }) {
   return <svg aria-hidden="true" focusable="false" width="21" height="21" viewBox="0 0 24 24"
@@ -28,6 +28,7 @@ export function SmallTalkIcon({ name, filled = false }: { name: SmallTalkIconNam
     {name === 'restart' && <><path d="M3 11a9 9 0 1 1 3 7M3 4v7h7"/></>}
     {name === 'sort' && <><path d="M7 19V5m-4 4 4-4 4 4m6-4v14m-4-4 4 4 4-4"/></>}
     {name === 'copy' && <><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></>}
+    {name === 'paste' && <><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M12 12v7m-3-3 3 3 3-3M16 9h5"/></>}
     {name === 'check' && <path d="m4 12 5 5L20 6"/>}
     {name === 'close' && <path d="M5 5 19 19M19 5 5 19"/>}
   </svg>;
