@@ -16,11 +16,11 @@ export function nextModuleValueMode(mode: ModuleValueMode): ModuleValueMode {
 }
 
 /**
- * Fill the Time by Module bar according to the module's share of total study time.
- * The full track represents 100%, exactly like the percentage shown beside it.
- * No visual minimum: even small percentages retain their proportional width.
+ * Fill the ranking bar relative to the leading module's duration.
+ * The leader fills the track; displayed percentages still use total study time.
+ * No visual minimum: even small values retain their proportional width.
  */
-export function modulePercentageBarWidth(seconds: number, totalSeconds: number): number {
-  if (!Number.isFinite(seconds) || !Number.isFinite(totalSeconds) || seconds <= 0 || totalSeconds <= 0) return 0;
-  return Math.min(100, seconds / totalSeconds * 100);
+export function modulePercentageBarWidth(seconds: number, leaderSeconds: number): number {
+  if (!Number.isFinite(seconds) || !Number.isFinite(leaderSeconds) || seconds <= 0 || leaderSeconds <= 0) return 0;
+  return Math.min(100, seconds / leaderSeconds * 100);
 }

@@ -378,7 +378,8 @@ assert.equal(modulePercentageBarWidth(1800, 3600), 50);
 assert.equal(modulePercentageBarWidth(1080, 3600), 30);
 assert.equal(modulePercentageBarWidth(720, 3600), 20);
 assert.equal(modulePercentageBarWidth(900, 3600), 25);
-assert.equal(modulePercentageBarWidth(3600, 7200), 50, 'largest module does not automatically fill the track');
+assert.equal(modulePercentageBarWidth(3600, 3600), 100, 'leader fills the entire track');
+assert.equal(modulePercentageBarWidth(2700, 3600), 75, 'runner-up is scaled relative to leader');
 assert.equal(modulePercentageBarWidth(1, 3600), 1 / 3600 * 100, 'tiny percentages remain proportional; no 2% floor');
 assert.equal(modulePercentageBarWidth(0, 3600), 0);
 assert.equal(modulePercentageBarWidth(0, 0), 0);
@@ -387,7 +388,7 @@ assert.equal(modulePercentageBarWidth(7200, 3600), 100, 'never exceed the track'
 assert.equal(modulePercentageBarWidth(Number.NaN, 3600), 0);
 assert.equal(modulePercentageBarWidth(3600, Number.NaN), 0);
 assert.equal(modulePercentageBarWidth(-60, 3600), 0);
-assert.match(dashboardSource, /modulePercentageBarWidth\(seconds, scale\) : seconds \/ scale \* 100/);
+assert.match(dashboardSource, /modulePercentageBarWidth\(seconds, max\) : seconds \/ scale \* 100/);
 assert.match(dashboardSource, /percentage=\{\x60\$\{number\(seconds \/ scale \* 100\)\}%\x60\}/);
 assert.doesNotMatch(dashboardSource, /moduleRelativeBarWidth/);
 console.log('PASS: Time by Module bar fill matches percentage of total study time, without minimum floor; other charts unchanged.');
