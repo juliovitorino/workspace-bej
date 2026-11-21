@@ -261,12 +261,12 @@ assert.equal(moduleBars['extra-activities'], undefined);
 assert.equal(moduleBars[`${EXTRA_MODULE_PREFIX}conversation`], 360);
 assert.equal(moduleBars[`${EXTRA_MODULE_PREFIX}writing`], 240);
 assert.equal(Object.values(moduleBars).reduce((sum, value) => sum + value, 0), 1200);
-assert.deepEqual(Object.keys(moduleChartValues(moduleChartStats, { ...moduleChartFilters, origin: 'external' })).length, 6);
+assert.deepEqual(Object.keys(moduleChartValues(moduleChartStats, { ...moduleChartFilters, origin: 'external' })).length, 8);
 assert.equal(moduleChartValues(moduleChartStats, { ...moduleChartFilters, origin: 'internal' }).hashmap, 480);
 assert.equal(Object.keys(moduleChartValues(moduleChartStats, { ...moduleChartFilters, origin: 'internal' })).some(key => key.startsWith(EXTRA_MODULE_PREFIX)), false);
 assert.deepEqual(moduleChartValues(moduleChartStats, { ...moduleChartFilters, extraCategory: 'writing' }), { [`${EXTRA_MODULE_PREFIX}writing`]: 240 });
 assert.equal(moduleChartValues(moduleChartStats, { ...moduleChartFilters, module: 'hashmap' }).hashmap, 480);
-assert.equal(Object.keys(moduleChartValues(moduleChartStats, { ...moduleChartFilters, module: 'extra-activities' })).length, 6);
+assert.equal(Object.keys(moduleChartValues(moduleChartStats, { ...moduleChartFilters, module: 'extra-activities' })).length, 8);
 console.log('PASS: dashboard module bars split extra activities by category, honor filters, and do not double-count the aggregate.');
 
 // Other studies: split the category into real subcategories, including legacy sessions without a subcategory.
