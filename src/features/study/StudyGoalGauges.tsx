@@ -55,7 +55,7 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
             <text x="120" y="125" textAnchor="middle" className="bej-gauge-subtitle">{t("bejOverview.goalCompleted")}</text>
           </svg>
         </div>
-        {target > 0 && <div className="bej-rocket-journey" role="img" aria-label={`${languageName(code)}: ${percentage.toFixed(1)}% ${t("bejOverview.goalCompleted")}`} style={{ width: "100%", maxWidth: 520, margin: "12px auto 18px" }}>
+        {target !== undefined && target > 0 && <div className="bej-rocket-journey" role="img" aria-label={`${languageName(code)}: ${percentage.toFixed(1)}% ${t("bejOverview.goalCompleted")}`} style={{ width: "100%", maxWidth: 520, margin: "12px auto 18px" }}>
           <svg viewBox="0 0 360 112" width="100%" aria-hidden="true" style={{ display: "block", overflow: "visible" }}>
             <defs>
               <linearGradient id={`bej-rocket-trail-${code}`} x1="0" y1="0" x2="1" y2="0">
