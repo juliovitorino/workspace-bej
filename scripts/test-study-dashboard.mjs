@@ -444,5 +444,5 @@ const rocketSource = readFileSync('src/features/study/StudyGoalGauges.tsx', 'utf
 assert.match(rocketSource, /bej-rocket-journey/);
 assert.match(rocketSource, /284 \* fraction/);
 assert.match(rocketSource, /stroke=\{\x60url\(#bej-rocket-trail-/);
-assert.match(rocketSource, /target > 0 &&/);
+assert.match(rocketSource, /target !== undefined && target > 0 &&/);
 console.log('PASS: rocket and colored trail use the existing historical goal fraction.');
