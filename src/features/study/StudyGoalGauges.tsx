@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { LANGUAGES, type StudentLanguage } from "../../config/languages";
 import { languageName } from "../../i18n";
@@ -20,6 +20,38 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
   onToggleExplanation: () => void;
 }) {
   const { t } = useTranslation();
+  const journeyRef = useRef<HTMLElement | null>(null);
+  const [flightProgress, setFlightProgress] = useState(0);
+  useEffect(() => {
+    const section = journeyRef.current;
+    if (!section) return;
+    let frame = 0;
+    let started = false;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const observer = new IntersectionObserver(entries => {
+      if (started || !entries.some(entry => entry.isIntersecting)) return;
+      started = true;
+      observer.disconnect();
+      if (reducedMotion) {
+        setFlightProgress(1);
+        return;
+      }
+      let startTime: number | undefined;
+      const tick = (now: number) => {
+        if (startTime === undefined) startTime = now;
+        const elapsed = Math.min(1, (now - startTime) / 1800);
+        setFlightProgress(1 - Math.pow(1 - elapsed, 3));
+        if (elapsed < 1) frame = requestAnimationFrame(tick);
+      };
+      frame = requestAnimationFrame(tick);
+    }, { threshold: 0.2 });
+    observer.observe(section);
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(frame);
+    };
+  }, []);
+
   const totals = useMemo(() => {
     const result: Record<string, { all: number; month: number }> = {};
     const month = localDay(now).slice(0, 7);
@@ -32,7 +64,7 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
     return result;
   }, [data, now]);
   const languages = (Object.keys(LANGUAGES) as StudentLanguage[]).filter(code => (language === "all" || code === language) && (!hideZeroData || (totals[code]?.all ?? 0) > 0));
-  return <section className="study-panel bej-goal-gauges" aria-labelledby="bej-goals-title">
+  return <section ref={journeyRef} className="study-panel bej-goal-gauges" aria-labelledby="bej-goals-title">
     <div className="study-goal-heading"><h3 id="bej-goals-title">{t("study.journey")}</h3>
       <button type="button" className="secondary-button study-goal-info" aria-label={t(explanationVisible ? "study.hideGoalExplanation" : "study.showGoalExplanation")} aria-expanded={explanationVisible} aria-controls="bej-goals-explanation" onClick={onToggleExplanation}>ⓘ</button>
     </div>
@@ -42,6 +74,7 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
       const target = goals[code];
       const percentage = target ? actual / (target * 3600) * 100 : 0;
       const fraction = Math.max(0, Math.min(1, percentage / 100));
+      const flightFraction = fraction * flightProgress;
       const monthly = monthlyGoals[code];
       // Half-circle with radius 88 and a 276.46 unit arc.
       const arc = Math.PI * 88;
@@ -64,8 +97,8 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
               </linearGradient>
             </defs>
             <path d="M 38 62 H 322" fill="none" stroke="#94a3b8" strokeOpacity=".38" strokeWidth="12" strokeLinecap="round" />
-            <path d={`M 38 62 H ${38 + 284 * fraction}`} fill="none" stroke={`url(#bej-rocket-trail-${code})`} strokeWidth="12" strokeLinecap="round" />
-            {fraction > 0 && <circle cx={38 + 284 * fraction} cy="62" r="6" fill="#22c55e" />}
+            <path d={`M 38 62 H ${38 + 284 * flightFraction}`} fill="none" stroke={`url(#bej-rocket-trail-${code})`} strokeWidth="12" strokeLinecap="round" />
+            {flightFraction > 0 && <circle cx={38 + 284 * flightFraction} cy="62" r="6" fill="#22c55e" />}
             <g transform="translate(12 40)">
               <rect x="0" y="43" width="34" height="5" rx="2" fill="#475569" />
               <rect x="4" y="7" width="5" height="36" fill="#64748b" />
@@ -77,8 +110,8 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
               <path d="M -18 -7 Q -9 -19 2 -13 L 4 -3 L -6 5 L -16 2 L -10 15 L 3 11 L 11 17 L 20 3 L 11 -6 L 15 -15" fill="#34d399" />
               <ellipse rx="27" ry="9" transform="rotate(-25)" stroke="#93c5fd" strokeWidth="2.5" fill="none" />
             </g>
-            {fraction > 0 && <path d={`M ${38 + 284 * fraction} 45 V 62`} stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="3 3" />}
-            <g transform={`translate(${38 + 284 * fraction} ${fraction === 0 ? 49 : 29}) rotate(${fraction === 0 ? 0 : 90})`}>
+            {flightFraction > 0 && <path d={`M ${38 + 284 * flightFraction} 45 V 62`} stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="3 3" />}
+            <g transform={`translate(${38 + 284 * flightFraction} ${flightFraction === 0 ? 49 : 29}) rotate(${flightFraction === 0 ? 0 : 90})`}>
               <path d="M -6 13 L -10 23 L 0 19 L 10 23 L 6 13" fill="#f97316" />
               <path d="M 0 -22 Q 13 -10 10 9 L 6 15 H -6 L -10 9 Q -13 -10 0 -22 Z" fill="#f8fafc" stroke="#475569" strokeWidth="1.5" />
               <circle cy="-4" r="5" fill="#38bdf8" stroke="#0284c7" strokeWidth="2" />

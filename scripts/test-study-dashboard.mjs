@@ -449,3 +449,10 @@ assert.match(rocketSource, /fraction > 0 && <circle/, 'progress endpoint remains
 assert.match(rocketSource, /stroke=\{\x60url\(#bej-rocket-trail-/);
 assert.match(rocketSource, /target !== undefined && target > 0 &&/);
 console.log('PASS: rocket and colored trail use the existing historical goal fraction.');
+
+// Rocket animation starts when the goal section enters the viewport.
+assert.match(rocketSource, /IntersectionObserver/);
+assert.match(rocketSource, /requestAnimationFrame/);
+assert.match(rocketSource, /prefers-reduced-motion/);
+assert.match(rocketSource, /fraction \* flightProgress/);
+console.log('PASS: rocket journey animates on visibility and honors reduced motion.');
