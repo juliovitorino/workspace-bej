@@ -22,33 +22,40 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
   const { t } = useTranslation();
   const journeyRef = useRef<HTMLElement | null>(null);
   const [flightProgress, setFlightProgress] = useState(0);
+  const flightFrameRef = useRef<number | null>(null);
+  const launchFlight = () => {
+    if (flightFrameRef.current !== null) cancelAnimationFrame(flightFrameRef.current);
+    flightFrameRef.current = null;
+    setFlightProgress(0);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setFlightProgress(1);
+      return;
+    }
+    let startTime: number | undefined;
+    const tick = (now: number) => {
+      if (startTime === undefined) startTime = now;
+      const elapsed = Math.min(1, (now - startTime) / 1800);
+      setFlightProgress(1 - Math.pow(1 - elapsed, 3));
+      if (elapsed < 1) flightFrameRef.current = requestAnimationFrame(tick);
+      else flightFrameRef.current = null;
+    };
+    flightFrameRef.current = requestAnimationFrame(tick);
+  };
   useEffect(() => {
     const section = journeyRef.current;
     if (!section) return;
-    let frame = 0;
     let started = false;
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const observer = new IntersectionObserver(entries => {
       if (started || !entries.some(entry => entry.isIntersecting)) return;
       started = true;
       observer.disconnect();
-      if (reducedMotion) {
-        setFlightProgress(1);
-        return;
-      }
-      let startTime: number | undefined;
-      const tick = (now: number) => {
-        if (startTime === undefined) startTime = now;
-        const elapsed = Math.min(1, (now - startTime) / 1800);
-        setFlightProgress(1 - Math.pow(1 - elapsed, 3));
-        if (elapsed < 1) frame = requestAnimationFrame(tick);
-      };
-      frame = requestAnimationFrame(tick);
+      launchFlight();
     }, { threshold: 0.2 });
     observer.observe(section);
     return () => {
       observer.disconnect();
-      cancelAnimationFrame(frame);
+      if (flightFrameRef.current !== null) cancelAnimationFrame(flightFrameRef.current);
+      flightFrameRef.current = null;
     };
   }, []);
 
@@ -88,8 +95,8 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
             <text x="120" y="125" textAnchor="middle" className="bej-gauge-subtitle">{t("bejOverview.goalCompleted")}</text>
           </svg>
         </div>
-        {target !== undefined && target > 0 && <div className="bej-rocket-journey" role="img" aria-label={`${languageName(code)}: ${percentage.toFixed(1)}% ${t("bejOverview.goalCompleted")}`} style={{ width: "100%", maxWidth: 520, margin: "12px auto 18px" }}>
-          <svg viewBox="0 0 360 112" width="100%" aria-hidden="true" style={{ display: "block", overflow: "visible" }}>
+        {target !== undefined && target > 0 && <div className="bej-rocket-journey" role="group" aria-label={`${languageName(code)}: ${percentage.toFixed(1)}% ${t("bejOverview.goalCompleted")}`} style={{ width: "100%", maxWidth: 520, margin: "12px auto 18px" }}>
+          <svg viewBox="0 0 360 112" width="100%" role="group" aria-label="Jornada espacial da meta" style={{ display: "block", overflow: "visible" }}>
             <defs>
               <linearGradient id={`bej-rocket-trail-${code}`} x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stopColor="#0ea5e9" />
@@ -105,10 +112,14 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
               <path d="M 6 13 H 26 M 6 23 H 26 M 6 33 H 26" stroke="#94a3b8" strokeWidth="2" />
               <path d="M 17 43 V 10 L 24 2 L 31 10 V 43 Z" fill="#cbd5e1" stroke="#64748b" strokeWidth="1.5" />
             </g>
-            <g transform="translate(322 62)">
-              <circle r="22" fill="#3b82f6" />
-              <path d="M -18 -7 Q -9 -19 2 -13 L 4 -3 L -6 5 L -16 2 L -10 15 L 3 11 L 11 17 L 20 3 L 11 -6 L 15 -15" fill="#34d399" />
-              <ellipse rx="27" ry="9" transform="rotate(-25)" stroke="#93c5fd" strokeWidth="2.5" fill="none" />
+            <g role="button" tabIndex={0} aria-label="Repetir animação do foguete" onClick={launchFlight} onKeyDown={event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); launchFlight(); } }} style={{ cursor: "pointer" }}>
+              <title>Repetir animação do foguete</title>
+              <circle cx="322" cy="62" r="32" fill="transparent" />
+              <g transform="translate(322 62)">
+                <circle r="22" fill="#3b82f6" />
+                <path d="M -18 -7 Q -9 -19 2 -13 L 4 -3 L -6 5 L -16 2 L -10 15 L 3 11 L 11 17 L 20 3 L 11 -6 L 15 -15" fill="#34d399" />
+                <ellipse rx="27" ry="9" transform="rotate(-25)" stroke="#93c5fd" strokeWidth="2.5" fill="none" />
+              </g>
             </g>
             {flightFraction > 0 && <path d={`M ${38 + 284 * flightFraction} 45 V 62`} stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="3 3" />}
             <g transform={`translate(${38 + 284 * flightFraction} ${flightFraction === 0 ? 49 : 29}) rotate(${flightFraction === 0 ? 0 : 90})`}>
