@@ -95,8 +95,8 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
             <text x="120" y="125" textAnchor="middle" className="bej-gauge-subtitle">{t("bejOverview.goalCompleted")}</text>
           </svg>
         </div>
-        {target !== undefined && target > 0 && <div className="bej-rocket-journey" role="img" aria-label={`${languageName(code)}: ${percentage.toFixed(1)}% ${t("bejOverview.goalCompleted")}`} style={{ width: "100%", maxWidth: 520, margin: "12px auto 18px" }}>
-          <svg viewBox="0 0 360 112" width="100%" aria-hidden="true" style={{ display: "block", overflow: "visible" }}>
+        {target !== undefined && target > 0 && <div className="bej-rocket-journey" role="group" aria-label={`${languageName(code)}: ${percentage.toFixed(1)}% ${t("bejOverview.goalCompleted")}`} style={{ width: "100%", maxWidth: 520, margin: "12px auto 18px" }}>
+          <svg viewBox="0 0 360 112" width="100%" role="group" aria-label="Jornada espacial da meta" style={{ display: "block", overflow: "visible" }}>
             <defs>
               <linearGradient id={`bej-rocket-trail-${code}`} x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stopColor="#0ea5e9" />
@@ -112,7 +112,7 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
               <path d="M 6 13 H 26 M 6 23 H 26 M 6 33 H 26" stroke="#94a3b8" strokeWidth="2" />
               <path d="M 17 43 V 10 L 24 2 L 31 10 V 43 Z" fill="#cbd5e1" stroke="#64748b" strokeWidth="1.5" />
             </g>
-            <g role="button" tabIndex={0} aria-label="Repetir animação do foguete" onClick={launchFlight} onKeyDown={event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); launchFlight(); } }} style={{ cursor: "pointer", outline: "none" }}>
+            <g role="button" tabIndex={0} aria-label="Repetir animação do foguete" onClick={launchFlight} onKeyDown={event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); launchFlight(); } }} style={{ cursor: "pointer" }}>
               <title>Repetir animação do foguete</title>
               <circle cx="322" cy="62" r="32" fill="transparent" />
               <g transform="translate(322 62)">
