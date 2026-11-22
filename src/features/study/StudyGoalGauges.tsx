@@ -65,6 +65,7 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
             </defs>
             <path d="M 38 62 H 322" fill="none" stroke="#94a3b8" strokeOpacity=".38" strokeWidth="12" strokeLinecap="round" />
             <path d={`M 38 62 H ${38 + 284 * fraction}`} fill="none" stroke={`url(#bej-rocket-trail-${code})`} strokeWidth="12" strokeLinecap="round" />
+            {fraction > 0 && <circle cx={38 + 284 * fraction} cy="62" r="6" fill="#22c55e" />}
             <g transform="translate(12 40)">
               <rect x="0" y="43" width="34" height="5" rx="2" fill="#475569" />
               <rect x="4" y="7" width="5" height="36" fill="#64748b" />
@@ -76,7 +77,8 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
               <path d="M -18 -7 Q -9 -19 2 -13 L 4 -3 L -6 5 L -16 2 L -10 15 L 3 11 L 11 17 L 20 3 L 11 -6 L 15 -15" fill="#34d399" />
               <ellipse rx="27" ry="9" transform="rotate(-25)" stroke="#93c5fd" strokeWidth="2.5" fill="none" />
             </g>
-            <g transform={`translate(${38 + 284 * fraction} ${fraction === 0 ? 49 : 56}) rotate(${fraction === 0 ? 0 : 90})`}>
+            {fraction > 0 && <path d={`M ${38 + 284 * fraction} 45 V 62`} stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="3 3" />}
+            <g transform={`translate(${38 + 284 * fraction} ${fraction === 0 ? 49 : 29}) rotate(${fraction === 0 ? 0 : 90})`}>
               <path d="M -6 13 L -10 23 L 0 19 L 10 23 L 6 13" fill="#f97316" />
               <path d="M 0 -22 Q 13 -10 10 9 L 6 15 H -6 L -10 9 Q -13 -10 0 -22 Z" fill="#f8fafc" stroke="#475569" strokeWidth="1.5" />
               <circle cy="-4" r="5" fill="#38bdf8" stroke="#0284c7" strokeWidth="2" />
