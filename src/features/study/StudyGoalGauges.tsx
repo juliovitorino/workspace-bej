@@ -76,7 +76,7 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
               <path d="M -18 -7 Q -9 -19 2 -13 L 4 -3 L -6 5 L -16 2 L -10 15 L 3 11 L 11 17 L 20 3 L 11 -6 L 15 -15" fill="#34d399" />
               <ellipse rx="27" ry="9" transform="rotate(-25)" stroke="#93c5fd" strokeWidth="2.5" fill="none" />
             </g>
-            <g transform={`translate(${38 + 284 * fraction} 56) rotate(45)`}>
+            <g transform={`translate(${38 + 284 * fraction} ${fraction === 0 ? 49 : 56}) rotate(${fraction === 0 ? 0 : 90})`}>
               <path d="M -6 13 L -10 23 L 0 19 L 10 23 L 6 13" fill="#f97316" />
               <path d="M 0 -22 Q 13 -10 10 9 L 6 15 H -6 L -10 9 Q -13 -10 0 -22 Z" fill="#f8fafc" stroke="#475569" strokeWidth="1.5" />
               <circle cy="-4" r="5" fill="#38bdf8" stroke="#0284c7" strokeWidth="2" />
