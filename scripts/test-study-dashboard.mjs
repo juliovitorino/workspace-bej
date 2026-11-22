@@ -438,3 +438,11 @@ assert.doesNotMatch(weeklySource, /studyEntries\(data\)/, 'weekly chart and stre
 console.log('PASS: dashboard and weekly streak follow all four study languages and keep the explicit all-languages filter.');
 
 
+
+// Rocket journey: visual-only, relative to the same historical goal percentage.
+const rocketSource = readFileSync('src/features/study/StudyGoalGauges.tsx', 'utf8');
+assert.match(rocketSource, /bej-rocket-journey/);
+assert.match(rocketSource, /284 \* fraction/);
+assert.match(rocketSource, /stroke=\{\x60url\(#bej-rocket-trail-/);
+assert.match(rocketSource, /target > 0 &&/);
+console.log('PASS: rocket and colored trail use the existing historical goal fraction.');
