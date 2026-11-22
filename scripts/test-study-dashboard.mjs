@@ -442,10 +442,10 @@ console.log('PASS: dashboard and weekly streak follow all four study languages a
 // Rocket journey: visual-only, relative to the same historical goal percentage.
 const rocketSource = readFileSync('src/features/study/StudyGoalGauges.tsx', 'utf8');
 assert.match(rocketSource, /bej-rocket-journey/);
-assert.match(rocketSource, /284 \* fraction/);
-assert.match(rocketSource, /fraction === 0 \? 0 : 90/, 'rocket is upright at launch and horizontal during flight');
-assert.match(rocketSource, /fraction === 0 \? 49 : 29/, 'flying rocket stays above the colored progress track');
-assert.match(rocketSource, /fraction > 0 && <circle/, 'progress endpoint remains visible');
+assert.match(rocketSource, /284 \* flightFraction/);
+assert.match(rocketSource, /flightFraction === 0 \? 0 : 90/, 'rocket is upright at launch and horizontal during flight');
+assert.match(rocketSource, /flightFraction === 0 \? 49 : 29/, 'flying rocket stays above the colored progress track');
+assert.match(rocketSource, /flightFraction > 0 && <circle/, 'progress endpoint remains visible');
 assert.match(rocketSource, /stroke=\{\x60url\(#bej-rocket-trail-/);
 assert.match(rocketSource, /target !== undefined && target > 0 &&/);
 console.log('PASS: rocket and colored trail use the existing historical goal fraction.');
@@ -456,3 +456,10 @@ assert.match(rocketSource, /requestAnimationFrame/);
 assert.match(rocketSource, /prefers-reduced-motion/);
 assert.match(rocketSource, /fraction \* flightProgress/);
 console.log('PASS: rocket journey animates on visibility and honors reduced motion.');
+
+// Tapping or keyboard-activating the planet replays the flight.
+assert.match(rocketSource, /onClick=\{launchFlight\}/);
+assert.match(rocketSource, /onKeyDown=\{event =>/);
+assert.match(rocketSource, /event\.key === "Enter" \|\| event\.key === " "/);
+assert.match(rocketSource, /cancelAnimationFrame\(flightFrameRef\.current\)/);
+console.log('PASS: planet supports mouse, touch and keyboard replay without overlapping animations.');
