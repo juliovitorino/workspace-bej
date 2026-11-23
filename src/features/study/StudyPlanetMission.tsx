@@ -100,9 +100,9 @@ export function StudyPlanetMission({ percentage, progress, launchElapsedMs, onRe
   // Use the segment normal to keep the separation consistent around bends.
   const headingRadians = (position.angle - 90) * Math.PI / 180;
   const offset = 35;
-  const rocketX = Math.max(22, Math.min(598, position.x + Math.sin(headingRadians) * offset));
-  const cruiseY = Math.max(26, Math.min(365, position.y - Math.cos(headingRadians) * offset));
   const takeoffLift = Math.max(0, Math.min(1, (launchElapsedMs - 500) / 750));
+  const rocketX = Math.max(22, Math.min(598, position.x + Math.sin(headingRadians) * offset * (launching ? takeoffLift : 1)));
+  const cruiseY = Math.max(26, Math.min(365, position.y - Math.cos(headingRadians) * offset));
   const rocketY = launching ? position.y + (cruiseY - position.y) * takeoffLift : cruiseY;
   const rocketAngle = launching ? launchAngle : position.angle;
   return <div className="bej-planet-mission" style={{ width: "100%", maxWidth: 650, margin: "12px auto 18px" }}>
