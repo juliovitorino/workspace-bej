@@ -204,15 +204,6 @@ export function SearchPanel({
       </div>
 
       <div className="field">
-        <label htmlFor="exact-intention-search" style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer" }}>
-          <input id="exact-intention-search" type="checkbox" checked={exactSearch}
-            onChange={(event) => onExactSearchChange(event.target.checked)}
-            style={{ width: 18, height: 18, flexShrink: 0 }} />
-          <span>Busca exata</span>
-        </label>
-      </div>
-
-      <div className="field">
         <label htmlFor="category-search">{t("common.category")}</label>
         <div className="search-input-with-clear">
         <input id="category-search" type="search" placeholder={t("filters.eGQuestionsHabitsConditions")}
@@ -307,6 +298,15 @@ export function SearchPanel({
             ))}
           </div>
         )}
+      </div>
+
+      <div className="field">
+        <label htmlFor="exact-intention-search" style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer" }}>
+          <input id="exact-intention-search" type="checkbox" checked={exactSearch}
+            onChange={(event) => onExactSearchChange(event.target.checked)}
+            style={{ width: 18, height: 18, flexShrink: 0 }} />
+          <span>Busca exata</span>
+        </label>
       </div>
 
       <button type="button" className="secondary-button" onClick={onClear} disabled={!hasFilters}>
