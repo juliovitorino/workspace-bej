@@ -56,6 +56,21 @@ assert.ok(searchIntentions(catalog.mentalMap, '', 'I’ve ever', '', [], '').som
 assert.ok(globalSearch(catalog.mentalMap, 'I’ve ever').some(i => i.id === item.id));
 console.log('PASS search: real catalog loader, target/global search, apostrophe variants, case, accents, term order and punctuation boundaries.');
 
+const exactFixtures = [
+  { id: 'a', intention: 'Pode ser que', targetIntention: 'It might be that', sourceSearchTerms: ['outra coisa'], examples: [{ pt: 'Pode ser que ele venha', exampleItem: 'It might be that he comes' }] },
+  { id: 'b', intention: 'Pode ser que ele venha', targetIntention: 'It might be that he comes', examples: [] },
+  { id: 'c', intention: 'Pode ser', targetIntention: 'It might be', examples: [] }
+];
+const exact = (source, target) => searchIntentions(exactFixtures, source, target, '', [], '', 'pt-BR', true).map(i => i.id);
+assert.deepEqual(exact('pode ser que', ''), ['a'], 'exact source search matches only the complete intention');
+assert.deepEqual(exact(' PODE SER QUE ', ''), ['a'], 'exact search ignores case and outer whitespace');
+assert.deepEqual(exact('pode ser', ''), ['c'], 'exact search does not include longer intentions');
+assert.deepEqual(exact('pode ser que ele', ''), [], 'exact search ignores example-only matches');
+assert.deepEqual(exact('', 'it might be that'), ['a'], 'exact target search matches target intention');
+assert.deepEqual(exact('pode ser que', 'it might be'), [], 'source and target searches remain combined with AND');
+assert.deepEqual(searchIntentions(exactFixtures, 'pode ser que', '', '', [], '').map(i => i.id), ['a', 'b'], 'flexible search remains unchanged when checkbox is off');
+console.log('PASS exact search: source/target intention, full phrase, normalization, AND, and flexible fallback.');
+
 const { studyStats } = load('src/features/study/studyStats.ts');
 const filters = { language: 'all', module: 'all', mode: 'all', period: 'yesterday', from: '', to: '' };
 const empty = { sessions: [], manualAdjustments: [], goals: {}, monthlyGoals: {} };
