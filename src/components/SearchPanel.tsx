@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
 import { createPortal } from "react-dom";
+import "../features/study/studyNotifications.css";
 
 export type HqImageFilter = "all" | "with" | "without";
 export type ChunkFilter = "all" | "with" | "without";
@@ -301,11 +302,11 @@ export function SearchPanel({
       </div>
 
       <div className="field">
-        <label htmlFor="exact-intention-search" style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer" }}>
-          <input id="exact-intention-search" type="checkbox" checked={exactSearch}
-            onChange={(event) => onExactSearchChange(event.target.checked)}
-            style={{ width: 18, height: 18, flexShrink: 0 }} />
+        <label htmlFor="exact-intention-search" className="exact-search-switch-row">
           <span>Busca exata</span>
+          <input id="exact-intention-search" type="checkbox" role="switch"
+            className="study-notification-switch" checked={exactSearch}
+            onChange={(event) => onExactSearchChange(event.target.checked)} />
         </label>
       </div>
 
