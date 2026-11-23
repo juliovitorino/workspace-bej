@@ -71,6 +71,11 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
     };
     flightFrameRef.current = requestAnimationFrame(tick);
   };
+  const switchMissionView = () => {
+    // A newly selected view starts its own animation at the moment of the click.
+    setMissionView(previous => !previous);
+    launchFlight();
+  };
   useEffect(() => {
     const section = journeyRef.current;
     if (!section) return;
@@ -116,7 +121,7 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
       return <article className="bej-gauge-item" key={code} aria-label={`${languageName(code)}: ${hoursAndMinutes(actual)} / ${target ? `${target}h` : t("study.noGoal")}`}>
         <h4>{languageName(code)}</h4>
         <div className="bej-gauge-visual">
-          <button type="button" onClick={() => setMissionView(previous => !previous)} aria-pressed={missionView} aria-label={missionView ? "Mostrar jornada espacial clássica" : "Mostrar Missão Espacial BEJ"} title={missionView ? "Voltar à jornada clássica" : "Abrir Missão Espacial BEJ"} style={{ display: "block", width: "100%", background: "none", border: "none", padding: 0, cursor: "pointer" }}>
+          <button type="button" onClick={switchMissionView} aria-pressed={missionView} aria-label={missionView ? "Mostrar jornada espacial clássica" : "Mostrar Missão Espacial BEJ"} title={missionView ? "Voltar à jornada clássica" : "Abrir Missão Espacial BEJ"} style={{ display: "block", width: "100%", background: "none", border: "none", padding: 0, cursor: "pointer" }}>
             <StudySpeedometer percentage={percentage} progress={flightProgress} hasGoal={Boolean(target)} subtitle={t("bejOverview.goalCompleted")} />
           </button>
           <p style={{ fontSize: 12, textAlign: "center", margin: "2px 0 0", opacity: .8 }}>Toque no velocímetro para {missionView ? "voltar à jornada clássica" : "ver a Missão Espacial BEJ"}</p>
