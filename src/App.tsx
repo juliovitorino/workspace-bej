@@ -176,6 +176,7 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
   const [filtersVisible, setFiltersVisible] = useState(false);
   const resultsRef = useRef<HTMLElement>(null);
   const [mentalSearch, setMentalSearch] = useState("");
+  const [exactSearch, setExactSearch] = useState(false);
   const [englishSearch, setEnglishSearch] = useState("");
   const [categorySearch, setCategorySearch] = useState("");
   const [englishLevelSearch, setEnglishLevelSearch] = useState("");
@@ -277,7 +278,8 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
       categorySearch,
       selectedTags,
       englishLevelSearch,
-      sourceLanguage
+      sourceLanguage,
+      exactSearch
     );
 
     return searchedItems.filter((item) => {
@@ -318,6 +320,7 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
     data,
     mentalSearch,
     englishSearch,
+    exactSearch,
     categorySearch,
     selectedTags,
     englishLevelSearch,
@@ -394,6 +397,7 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
   }
 
   function clearFilters() {
+    setExactSearch(false);
     setMentalSearch("");
     setEnglishSearch("");
     setCategorySearch("");
@@ -540,6 +544,7 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
               sourceLanguage={sourceLanguage}
               language={language}
               mentalSearch={mentalSearch}
+              exactSearch={exactSearch}
               englishSearch={englishSearch}
               categorySearch={categorySearch}
               englishLevelSearch={englishLevelSearch}
@@ -551,6 +556,7 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
               availableTags={availableTags}
               selectedTags={selectedTags}
               onMentalSearchChange={setMentalSearch}
+              onExactSearchChange={setExactSearch}
               onEnglishSearchChange={setEnglishSearch}
               onCategorySearchChange={setCategorySearch}
               onEnglishLevelSearchChange={setEnglishLevelSearch}
