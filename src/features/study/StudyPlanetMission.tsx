@@ -1,4 +1,5 @@
 import { useId, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 type Planet = { name: string; at: number; color: string; radius: number; labelDy: number };
 const PLANETS: Planet[] = [
@@ -52,6 +53,7 @@ const routeTo = (fraction: number) => {
 };
 
 function PlanetArt({ planet, x, y, achieved }: { planet: Planet; x: number; y: number; achieved: boolean }) {
+  const { t } = useTranslation();
   const r = planet.radius;
   return <g>
     {achieved && <circle cx={x} cy={y} r={r + 6} fill="none" stroke="#6ee7b7" strokeWidth="2" opacity=".85" />}
@@ -68,26 +70,23 @@ function PlanetArt({ planet, x, y, achieved }: { planet: Planet; x: number; y: n
     </g>}
     {planet.name === "Saturno" && <ellipse cx={x} cy={y} rx={r + 13} ry="7" transform={`rotate(-25 ${x} ${y})`} fill="none" stroke="#f0d99d" strokeWidth="2" />}
     {planet.name === "Netuno" && <path d={`M ${x-r*.75} ${y+2} Q ${x} ${y-3} ${x+r*.75} ${y+2}`} fill="none" stroke="#a5b4fc" strokeWidth="2" />}
-    <text x={x} y={y + planet.labelDy} fill="#f8fafc" fontSize="12" fontWeight="600" textAnchor="middle">{planet.name}</text>
+    <text x={x} y={y + planet.labelDy} fill="#f8fafc" fontSize="12" fontWeight="600" textAnchor="middle">{t(`spaceMission.planets.${planet.name}`)}</text>
     <text x={x} y={y + planet.labelDy + 13} fill="#a5b4c8" fontSize="10" textAnchor="middle">{Math.round(planet.at * 100)}%</text>
-    <title>{`${planet.name}: ${Math.round(planet.at * 100)}% ${achieved ? "conquistado" : "a conquistar"}`}</title>
+    <title>{t("spaceMission.planetStatus", { name: t(`spaceMission.planets.${planet.name}`), percent: Math.round(planet.at * 100), status: t(achieved ? "spaceMission.achieved" : "spaceMission.toAchieve") })}</title>
   </g>;
 }
 
 type Tribute = "webb" | "voyager";
-const TRIBUTE_DETAILS: Record<Tribute, { title: string; detail: string }> = {
-  webb: { title: "James Webb Space Telescope", detail: "Lançado em 2021, observa o universo principalmente em infravermelho. Seu espelho principal possui 18 segmentos hexagonais dourados." },
-  voyager: { title: "Voyager 1", detail: "Lançada em 1977, tornou-se o primeiro objeto construído pela humanidade a alcançar o espaço interestelar, em 2012." },
-};
 
 function SpaceTribute({ kind, x, y, onSelect }: { kind: Tribute; x: number; y: number; onSelect: (kind: Tribute) => void }) {
+  const { t } = useTranslation();
   const webb = kind === "webb";
-  const label = webb ? "Telescópio James Webb" : "Sonda Voyager 1";
+  const label = t(webb ? "spaceMission.webbLabel" : "spaceMission.voyagerLabel");
   return <g transform={`translate(${x} ${y})`} role="button" tabIndex={0}
-    aria-label={`Conhecer ${label}`} onClick={() => onSelect(kind)}
+    aria-label={t("spaceMission.learnAbout", { name: label })} onClick={() => onSelect(kind)}
     onKeyDown={event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); onSelect(kind); } }}
     style={{ cursor: "pointer", outline: "none" }}>
-    <title>{`Homenagem: ${label}. Clique para conhecer.`}</title>
+    <title>{t("spaceMission.tributeHint", { name: label })}</title>
     <circle r="43" fill="#182d4d" fillOpacity=".85" stroke="#55759c" strokeDasharray="3 5" />
     {webb ? <>
       <g transform="translate(0 -12)">
@@ -122,6 +121,7 @@ export function StudyPlanetMission({ percentage, progress, launchElapsedMs, onRe
   launchElapsedMs: number;
   onReplay: () => void;
 }) {
+  const { t } = useTranslation();
   const gradientId = useId().replace(/:/g, "");
   const [selectedTribute, setSelectedTribute] = useState<Tribute | null>(null);
   const completed = Math.max(0, Math.min(1, percentage / 100));
@@ -150,10 +150,10 @@ export function StudyPlanetMission({ percentage, progress, launchElapsedMs, onRe
   const rocketAngle = launching ? launchAngle : position.angle;
   return <div className="bej-planet-mission" style={{ width: "100%", maxWidth: 650, margin: "12px auto 18px" }}>
     <div style={{ display: "flex", justifyContent: "space-between", gap: 8, alignItems: "center", flexWrap: "wrap", marginBottom: 6 }}>
-      <strong>🚀 Missão Espacial BEJ</strong>
-      <button type="button" className="secondary-button" onClick={onReplay} aria-label="Repetir missão espacial">↻ Repetir missão</button>
+      <strong>🚀 {t("spaceMission.title")}</strong>
+      <button type="button" className="secondary-button" onClick={onReplay} aria-label={t("spaceMission.replayAccessible")}>↻ {t("spaceMission.replay")}</button>
     </div>
-    <svg viewBox="0 0 620 395" width="100%" role="img" aria-label={`Missão Espacial BEJ: ${percentage.toFixed(1)}% concluído. ${next ? `Próximo destino: ${next.name}` : "Netuno conquistado"}`} style={{ display: "block", background: "#0b1930", borderRadius: 16 }}>
+    <svg viewBox="0 0 620 395" width="100%" role="img" aria-label={t("spaceMission.progressAccessible", { percent: percentage.toFixed(1), destination: next ? t("spaceMission.nextDestination", { name: t(`spaceMission.planets.${next.name}`), percent: Math.round(next.at * 100) }) : t("spaceMission.neptuneAchieved") })} style={{ display: "block", background: "#0b1930", borderRadius: 16 }}>
       <defs>
         <linearGradient id={`bej-mission-trail-${gradientId}`} x1="0" y1="1" x2="1" y2="0">
           <stop offset="0%" stopColor="#38bdf8" /><stop offset="60%" stopColor="#a78bfa" /><stop offset="100%" stopColor="#34d399" />
@@ -181,12 +181,12 @@ export function StudyPlanetMission({ percentage, progress, launchElapsedMs, onRe
       </g>
     </svg>
     {selectedTribute && <div role="status" style={{ marginTop: 10, padding: "10px 12px", border: "1px solid #64748b", borderRadius: 10 }}>
-      <strong>{TRIBUTE_DETAILS[selectedTribute].title}</strong>
-      <button type="button" onClick={() => setSelectedTribute(null)} aria-label="Fechar homenagem" style={{ float: "right", cursor: "pointer" }}>×</button>
-      <p style={{ margin: "6px 0 0", fontSize: 13 }}>{TRIBUTE_DETAILS[selectedTribute].detail}</p>
+      <strong>{t(selectedTribute === "webb" ? "spaceMission.webbTitle" : "spaceMission.voyagerTitle")}</strong>
+      <button type="button" onClick={() => setSelectedTribute(null)} aria-label={t("spaceMission.closeTribute")} style={{ float: "right", cursor: "pointer" }}>×</button>
+      <p style={{ margin: "6px 0 0", fontSize: 13 }}>{t(selectedTribute === "webb" ? "spaceMission.webbDetail" : "spaceMission.voyagerDetail")}</p>
     </div>}
     <p style={{ margin: "8px 0 0", textAlign: "center", fontSize: 13 }}>
-      {next ? `Próximo destino: ${next.name} (${Math.round(next.at * 100)}%)` : "🏆 Missão concluída: Netuno conquistado!"}
+      {next ? t("spaceMission.nextDestination", { name: t(`spaceMission.planets.${next.name}`), percent: Math.round(next.at * 100) }) : `🏆 ${t("spaceMission.completed")}`}
     </p>
   </div>;
 }
