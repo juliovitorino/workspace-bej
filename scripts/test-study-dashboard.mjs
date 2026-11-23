@@ -443,8 +443,8 @@ console.log('PASS: dashboard and weekly streak follow all four study languages a
 const rocketSource = readFileSync('src/features/study/StudyGoalGauges.tsx', 'utf8');
 assert.match(rocketSource, /bej-rocket-journey/);
 assert.match(rocketSource, /284 \* flightFraction/);
-assert.match(rocketSource, /flightFraction === 0 \? 0 : 90/, 'rocket is upright at launch and horizontal during flight');
-assert.match(rocketSource, /flightFraction === 0 \? 49 : 29/, 'flying rocket stays above the colored progress track');
+assert.match(rocketSource, /rotate\(\$\{rocketPose\.angle\}\)/, 'rocket rotation follows staged launch pose');
+assert.match(rocketSource, /\$\{rocketPose\.y\}/, 'rocket climbs vertically before entering cruise');
 assert.match(rocketSource, /flightFraction > 0 && <circle/, 'progress endpoint remains visible');
 assert.match(rocketSource, /stroke=\{\x60url\(#bej-rocket-trail-/);
 assert.match(rocketSource, /target !== undefined && target > 0 &&/);
@@ -472,3 +472,16 @@ assert.match(speedometerSource, /rotate\(\$\{angle\} 120 115\)/);
 assert.match(speedometerSource, /Math\.min\(1, percentage \/ 100\)\) \* progress/);
 assert.match(speedometerSource, /Math\.round\(percentage\)/);
 console.log('PASS: historical goal speedometer needle follows scroll animation and displays goal percentage.');
+
+// Three-stage takeoff pauses at 0° and 45° before the horizontal cruise.
+assert.match(rocketSource, /elapsedMs <= 500/);
+assert.match(rocketSource, /elapsedMs <= 750/);
+assert.match(rocketSource, /elapsedMs <= 1000/);
+assert.match(rocketSource, /elapsedMs <= 1250/);
+assert.match(rocketSource, /angle: 45, y: 39/);
+assert.match(rocketSource, /angle: 90, y: 29/);
+assert.match(rocketSource, /LAUNCH_DURATION_MS = 1500/);
+assert.match(rocketSource, /CRUISE_DURATION_MS = 1800/);
+assert.match(rocketSource, /elapsedMs - LAUNCH_DURATION_MS/);
+assert.match(rocketSource, /setLaunchElapsedMs\(0\)/);
+console.log('PASS: rocket holds at launch, climbs through 45 degrees, then cruises horizontally.');
