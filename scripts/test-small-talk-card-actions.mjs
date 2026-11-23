@@ -118,7 +118,7 @@ test('walking shows printed number but does not speak it', () => {
   assert.match(page, /questionNumbers=\{printNumbers\}/);
   assert.match(walking, /questionNumbers\[current\.id\]/);
   assert.match(walking, /speak\(current\.question\?\.text \?\? ''/);
-  assert.match(page, /const items = printableSmallTalkItems\(orderedTopicItems, questionFor\)/);
+  assert.match(page, /const items = printableSmallTalkItems\(filtered, questionFor\)/);
 });
 test('duplicate action and card icons use SVG; brand assets stay intact', () => {
   assert.match(page, /aria-label="Duplicar card"[^>]*onClick=\{\(\) => duplicateCard\(item\)\}/);
@@ -128,4 +128,17 @@ test('duplicate action and card icons use SVG; brand assets stay intact', () => 
     assert.ok(actions.includes('name="' + icon + '"'), icon);
   }
   assert.match(actions, /<img src=\{aiAssetPath\(aiProvider\)\}/);
+});
+
+test('screen and printing use the same filtered sequence and numbering', () => {
+  assert.match(page, /const printableItems = printableSmallTalkItems\(filtered, questionFor\)/);
+  assert.match(page, /const printNumbers = smallTalkPrintNumbers\(printableItems\)/);
+  assert.match(page, /const printedNumber = printNumbers\[item\.id\]/);
+  assert.match(page, /const items = printableSmallTalkItems\(filtered, questionFor\)/);
+  assert.match(page, /small-talk-print-number">\{printNumbers\[item\.id\]\}/);
+  const visible = [card('c', 3), card('a', 1), card('b', 2)];
+  const numbered = print.smallTalkPrintNumbers(print.printableSmallTalkItems(visible, item => item.question.text));
+  assert.equal(numbered.c, 1);
+  assert.equal(numbered.a, 2);
+  assert.equal(numbered.b, 3);
 });
