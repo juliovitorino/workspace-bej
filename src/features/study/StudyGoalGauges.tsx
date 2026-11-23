@@ -50,6 +50,17 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
   const journeyRef = useRef<HTMLElement | null>(null);
   const [launchElapsedMs, setLaunchElapsedMs] = useState(0);
   const [missionView, setMissionView] = useState(false);
+  const [isPhoneViewport, setIsPhoneViewport] = useState(() => typeof window !== "undefined" && window.matchMedia("(max-width: 600px)").matches);
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 600px)");
+    const update = () => {
+      setIsPhoneViewport(media.matches);
+      if (media.matches) setMissionView(false);
+    };
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
   const flightProgress = cruiseProgress(launchElapsedMs);
   const rocketPose = launchPose(launchElapsedMs);
   const flightFrameRef = useRef<number | null>(null);
@@ -73,6 +84,7 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
   };
   const switchMissionView = () => {
     // A newly selected view starts its own animation at the moment of the click.
+    if (isPhoneViewport) return;
     setMissionView(previous => !previous);
     launchFlight();
   };
@@ -121,13 +133,13 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
       return <article className="bej-gauge-item" key={code} aria-label={`${languageName(code)}: ${hoursAndMinutes(actual)} / ${target ? `${target}h` : t("study.noGoal")}`}>
         <h4>{languageName(code)}</h4>
         <div className="bej-gauge-visual">
-          <button type="button" onClick={switchMissionView} aria-pressed={missionView} aria-label={missionView ? "Mostrar jornada espacial clássica" : "Mostrar Missão Espacial BEJ"} title={missionView ? "Voltar à jornada clássica" : "Abrir Missão Espacial BEJ"} style={{ display: "block", width: "100%", background: "none", border: "none", padding: 0, cursor: "pointer" }}>
+          <button type="button" onClick={switchMissionView} disabled={isPhoneViewport} aria-pressed={missionView} aria-label={isPhoneViewport ? "Velocímetro de progresso" : missionView ? "Mostrar jornada espacial clássica" : "Mostrar Missão Espacial BEJ"} title={missionView ? "Voltar à jornada clássica" : "Abrir Missão Espacial BEJ"} style={{ display: "block", width: "100%", background: "none", border: "none", padding: 0, cursor: isPhoneViewport ? "default" : "pointer" }}>
             <StudySpeedometer percentage={percentage} progress={flightProgress} hasGoal={Boolean(target)} subtitle={t("bejOverview.goalCompleted")} />
           </button>
-          <p style={{ fontSize: 12, textAlign: "center", margin: "2px 0 0", opacity: .8 }}>Toque no velocímetro para {missionView ? "voltar à jornada clássica" : "ver a Missão Espacial BEJ"}</p>
+          {!isPhoneViewport && <p style={{ fontSize: 12, textAlign: "center", margin: "2px 0 0", opacity: .8 }}>Toque no velocímetro para {missionView ? "voltar à jornada clássica" : "ver a Missão Espacial BEJ"}</p>}
         </div>
-        {target !== undefined && target > 0 && missionView && <StudyPlanetMission percentage={percentage} progress={flightProgress} launchElapsedMs={launchElapsedMs} onReplay={launchFlight} />}
-        {target !== undefined && target > 0 && !missionView && <div className="bej-rocket-journey" role="group" aria-label={`${languageName(code)}: ${percentage.toFixed(1)}% ${t("bejOverview.goalCompleted")}`} style={{ width: "100%", maxWidth: 520, margin: "12px auto 18px" }}>
+        {target !== undefined && target > 0 && missionView && !isPhoneViewport && <StudyPlanetMission percentage={percentage} progress={flightProgress} launchElapsedMs={launchElapsedMs} onReplay={launchFlight} />}
+        {target !== undefined && target > 0 && (!missionView || isPhoneViewport) && <div className="bej-rocket-journey" role="group" aria-label={`${languageName(code)}: ${percentage.toFixed(1)}% ${t("bejOverview.goalCompleted")}`} style={{ width: "100%", maxWidth: 520, margin: "12px auto 18px" }}>
           <svg viewBox="0 0 360 112" width="100%" role="group" aria-label="Jornada espacial da meta" style={{ display: "block", overflow: "visible" }}>
             <defs>
               <linearGradient id={`bej-rocket-trail-${code}`} x1="0" y1="0" x2="1" y2="0">
