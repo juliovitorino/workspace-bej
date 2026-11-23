@@ -527,3 +527,12 @@ assert.match(rocketSource, /const switchMissionView = \(\) => \{/);
 assert.match(rocketSource, /setMissionView\(previous => !previous\);\s*launchFlight\(\);/);
 assert.match(rocketSource, /onClick=\{switchMissionView\}/);
 console.log('PASS: switching between mission views restarts the animation on click.');
+
+// Phone viewports use only the classic journey; tablet/desktop retain the switch.
+assert.match(rocketSource, /matchMedia\("\(max-width: 600px\)"\)/);
+assert.match(rocketSource, /if \(media\.matches\) setMissionView\(false\)/);
+assert.match(rocketSource, /if \(isPhoneViewport\) return/);
+assert.match(rocketSource, /disabled=\{isPhoneViewport\}/);
+assert.match(rocketSource, /missionView && !isPhoneViewport && <StudyPlanetMission/);
+assert.match(rocketSource, /\(!missionView \|\| isPhoneViewport\)/);
+console.log('PASS: phone viewports show classic journey only.');
