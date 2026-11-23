@@ -490,9 +490,9 @@ console.log('PASS: rocket holds at launch, climbs through 45 degrees, then cruis
 const missionSource = readFileSync('src/features/study/StudyPlanetMission.tsx', 'utf8');
 assert.match(rocketSource, /useState\(false\)/);
 assert.match(rocketSource, /setMissionView\(previous => !previous\)/);
-assert.match(rocketSource, /!missionView && <div className="bej-rocket-journey"/);
-assert.match(rocketSource, /missionView && <StudyPlanetMission/);
-assert.match(missionSource, /Missão Espacial BEJ/);
+assert.match(rocketSource, /\(!missionView \|\| isPhoneViewport\) && <div className="bej-rocket-journey"/);
+assert.match(rocketSource, /missionView && !isPhoneViewport && <StudyPlanetMission/);
+assert.match(missionSource, /spaceMission\.title/);
 assert.match(missionSource, /const PLANETS/);
 assert.match(missionSource, /name: "Netuno", at: 1/);
 assert.match(missionSource, /name: "Lua", at: 0\.05/);
@@ -516,7 +516,7 @@ console.log('PASS: green marker follows planetary route and rocket flies offset 
 assert.match(missionSource, /function SpaceTribute/);
 assert.match(missionSource, /kind="webb"/);
 assert.match(missionSource, /kind="voyager"/);
-assert.match(missionSource, /James Webb Space Telescope/);
+assert.match(missionSource, /spaceMission\.webbTitle/);
 assert.match(missionSource, /Voyager 1/);
 assert.match(missionSource, /onKeyDown=\{event =>/);
 assert.match(missionSource, /selectedTribute &&/);
@@ -536,3 +536,19 @@ assert.match(rocketSource, /disabled=\{isPhoneViewport\}/);
 assert.match(rocketSource, /missionView && !isPhoneViewport && <StudyPlanetMission/);
 assert.match(rocketSource, /\(!missionView \|\| isPhoneViewport\)/);
 console.log('PASS: phone viewports show classic journey only.');
+
+// All mission labels and accessibility strings are localized for each interface language.
+const locales = ['pt-BR', 'en-US', 'es-ES', 'fr-FR'];
+const translations = locales.map(locale => JSON.parse(readFileSync(`src/i18n/locales/${locale}.json`, 'utf8')).spaceMission);
+const keys = Object.keys(translations[0]).sort();
+for (const translation of translations) {
+  assert.deepEqual(Object.keys(translation).sort(), keys);
+  assert.deepEqual(Object.keys(translation.planets).sort(), Object.keys(translations[0].planets).sort());
+  for (const key of keys) assert.ok(translation[key], `Missing translation: ${key}`);
+}
+assert.match(missionSource, /useTranslation/);
+assert.match(missionSource, /spaceMission\.nextDestination/);
+assert.match(missionSource, /spaceMission\.webbDetail/);
+assert.match(missionSource, /spaceMission\.voyagerDetail/);
+assert.match(rocketSource, /spaceMission\.tapMission/);
+console.log('PASS: space mission translations are complete across all four interface languages.');
