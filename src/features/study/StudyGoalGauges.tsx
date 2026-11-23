@@ -133,14 +133,14 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
       return <article className="bej-gauge-item" key={code} aria-label={`${languageName(code)}: ${hoursAndMinutes(actual)} / ${target ? `${target}h` : t("study.noGoal")}`}>
         <h4>{languageName(code)}</h4>
         <div className="bej-gauge-visual">
-          <button type="button" onClick={switchMissionView} disabled={isPhoneViewport} aria-pressed={missionView} aria-label={isPhoneViewport ? "Velocímetro de progresso" : missionView ? "Mostrar jornada espacial clássica" : "Mostrar Missão Espacial BEJ"} title={missionView ? "Voltar à jornada clássica" : "Abrir Missão Espacial BEJ"} style={{ display: "block", width: "100%", background: "none", border: "none", padding: 0, cursor: isPhoneViewport ? "default" : "pointer" }}>
+          <button type="button" onClick={switchMissionView} disabled={isPhoneViewport} aria-pressed={missionView} aria-label={t(isPhoneViewport ? "spaceMission.speedometer" : missionView ? "spaceMission.showClassic" : "spaceMission.showMission")} title={isPhoneViewport ? t("spaceMission.speedometer") : t(missionView ? "spaceMission.backClassic" : "spaceMission.openMission")} style={{ display: "block", width: "100%", background: "none", border: "none", padding: 0, cursor: isPhoneViewport ? "default" : "pointer" }}>
             <StudySpeedometer percentage={percentage} progress={flightProgress} hasGoal={Boolean(target)} subtitle={t("bejOverview.goalCompleted")} />
           </button>
-          {!isPhoneViewport && <p style={{ fontSize: 12, textAlign: "center", margin: "2px 0 0", opacity: .8 }}>Toque no velocímetro para {missionView ? "voltar à jornada clássica" : "ver a Missão Espacial BEJ"}</p>}
+          {!isPhoneViewport && <p style={{ fontSize: 12, textAlign: "center", margin: "2px 0 0", opacity: .8 }}>{t(missionView ? "spaceMission.tapClassic" : "spaceMission.tapMission")}</p>}
         </div>
         {target !== undefined && target > 0 && missionView && !isPhoneViewport && <StudyPlanetMission percentage={percentage} progress={flightProgress} launchElapsedMs={launchElapsedMs} onReplay={launchFlight} />}
         {target !== undefined && target > 0 && (!missionView || isPhoneViewport) && <div className="bej-rocket-journey" role="group" aria-label={`${languageName(code)}: ${percentage.toFixed(1)}% ${t("bejOverview.goalCompleted")}`} style={{ width: "100%", maxWidth: 520, margin: "12px auto 18px" }}>
-          <svg viewBox="0 0 360 112" width="100%" role="group" aria-label="Jornada espacial da meta" style={{ display: "block", overflow: "visible" }}>
+          <svg viewBox="0 0 360 112" width="100%" role="group" aria-label={t("spaceMission.classicJourney")} style={{ display: "block", overflow: "visible" }}>
             <defs>
               <linearGradient id={`bej-rocket-trail-${code}`} x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stopColor="#0ea5e9" />
@@ -156,8 +156,8 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
               <path d="M 6 13 H 26 M 6 23 H 26 M 6 33 H 26" stroke="#94a3b8" strokeWidth="2" />
               <path d="M 17 43 V 10 L 24 2 L 31 10 V 43 Z" fill="#cbd5e1" stroke="#64748b" strokeWidth="1.5" />
             </g>
-            <g role="button" tabIndex={0} aria-label="Repetir animação do foguete" onClick={launchFlight} onKeyDown={event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); launchFlight(); } }} style={{ cursor: "pointer" }}>
-              <title>Repetir animação do foguete</title>
+            <g role="button" tabIndex={0} aria-label={t("spaceMission.replayRocket")} onClick={launchFlight} onKeyDown={event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); launchFlight(); } }} style={{ cursor: "pointer" }}>
+              <title>{t("spaceMission.replayRocket")}</title>
               <circle cx="322" cy="62" r="32" fill="transparent" />
               <g transform="translate(322 62)">
                 <circle r="22" fill="#3b82f6" />
