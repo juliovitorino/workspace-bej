@@ -447,7 +447,7 @@ assert.match(rocketSource, /rotate\(\$\{rocketPose\.angle\}\)/, 'rocket rotation
 assert.match(rocketSource, /\$\{rocketPose\.y\}/, 'rocket climbs vertically before entering cruise');
 assert.match(rocketSource, /flightFraction > 0 && <circle/, 'progress endpoint remains visible');
 assert.match(rocketSource, /stroke=\{\x60url\(#bej-rocket-trail-/);
-assert.match(rocketSource, /target !== undefined && target > 0 &&/);
+assert.match(rocketSource, /target !== undefined && target > 0 && !missionView/);
 console.log('PASS: rocket and colored trail use the existing historical goal fraction.');
 
 // Rocket animation starts when the goal section enters the viewport.
@@ -485,3 +485,19 @@ assert.match(rocketSource, /CRUISE_DURATION_MS = 1800/);
 assert.match(rocketSource, /elapsedMs - LAUNCH_DURATION_MS/);
 assert.match(rocketSource, /setLaunchElapsedMs\(0\)/);
 console.log('PASS: rocket holds at launch, climbs through 45 degrees, then cruises horizontally.');
+
+// Planetary mission coexists with the original journey and is toggled by the speedometer.
+const missionSource = readFileSync('src/features/study/StudyPlanetMission.tsx', 'utf8');
+assert.match(rocketSource, /useState\(false\)/);
+assert.match(rocketSource, /setMissionView\(previous => !previous\)/);
+assert.match(rocketSource, /!missionView && <div className="bej-rocket-journey"/);
+assert.match(rocketSource, /missionView && <StudyPlanetMission/);
+assert.match(missionSource, /Missão Espacial BEJ/);
+assert.match(missionSource, /const PLANETS/);
+assert.match(missionSource, /name: "Netuno", at: 1/);
+assert.match(missionSource, /name: "Lua", at: 0\.05/);
+assert.match(missionSource, /const routePoint/);
+assert.match(missionSource, /const routeTo/);
+assert.match(missionSource, /crater|\["Lua", "Marte", "Mercúrio", "Vênus"\]/i);
+assert.match(missionSource, /onReplay/);
+console.log('PASS: speedometer switches between classic journey and cratered planetary mission.');
