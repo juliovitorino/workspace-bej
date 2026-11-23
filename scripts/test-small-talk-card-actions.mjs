@@ -161,6 +161,19 @@ test('Small Talk cards start collapsed and expand one card at a time', () => {
   assert.match(page, /setExpandedCardId\(id\)/);
 });
 
+test('opening a Small Talk card scrolls its wrapper after expansion, not when closing', () => {
+  const toggle = page.slice(page.indexOf('className="small-talk-card-toggle"'), page.indexOf('className="small-talk-card-number"'));
+  assert.match(toggle, /event\.currentTarget\.closest\('\.small-talk-question-card'\)/);
+  assert.match(toggle, /setExpandedCardId\(current => current === item\.id \? null : item\.id\)/);
+  assert.match(toggle, /if \(!expanded\) \{/);
+  assert.match(toggle, /window\.requestAnimationFrame\(\(\) => window\.requestAnimationFrame/);
+  assert.match(toggle, /card\?\.classList\.contains\('small-talk-card-expanded'\)/);
+  assert.match(toggle, /card\.scrollIntoView\(\{ behavior: 'smooth', block: 'start' \}\)/);
+  assert.match(toggle, /\} else \{\s*if \(editorId === item\.id\)/);
+  const css = readFileSync('src/features/small-talk/smallTalk.css', 'utf8');
+  assert.match(css, /\.small-talk-question-card \{[^}]*scroll-margin-top: 84px;/);
+});
+
 test('expanded card does not duplicate the question while keeping question actions', () => {
   assert.match(page, /className="small-talk-card-question">\{questionFor\(item\)\}/);
   assert.match(page, /className="small-talk-question-heading" role="group" aria-label="Ações da pergunta"/);
