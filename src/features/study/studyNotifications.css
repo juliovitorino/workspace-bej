@@ -34,3 +34,38 @@
 .study-notification-alert-list p { margin: 4px 0 0; color: var(--muted); }
 .study-notification-alert-symbol { display: inline-grid; place-items: center; flex: 0 0 26px; width: 26px; height: 26px; border-radius: 50%; background: #d73a49; color: #fff; font-weight: 800; }
 @media (prefers-reduced-motion: reduce) { .study-notification-switch, .study-notification-switch::before { transition: none; } }
+
+/* Reuse the notification ON/OFF switch in the intention search filter. */
+.search-panel .exact-search-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 48px;
+  cursor: pointer;
+}
+.search-panel .field input.study-notification-switch {
+  flex: 0 0 48px;
+  width: 48px;
+  min-width: 48px;
+  height: 28px;
+  min-height: 28px;
+  padding: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: 99px;
+  background: var(--border-strong);
+  box-shadow: none;
+}
+.search-panel .field input.study-notification-switch:checked,
+.search-panel .field input.study-notification-switch:checked:focus {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.search-panel .field input.study-notification-switch:focus:not(:checked) {
+  background: var(--border-strong);
+  border-color: var(--border-strong);
+}
+.search-panel .field input.study-notification-switch:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
