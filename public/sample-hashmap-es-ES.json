@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1288,
+    "totalIntentions": 1289,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -52893,6 +52893,172 @@
       "category": "expressions",
       "related": [],
       "level": "B1"
+    },
+    {
+      "id": "pode-ser-que-talvez-existe-a-possibilidade-7c9e4a21-8d35-4f60-a172-b5e83c9d064f",
+      "intention": "Puede que... / Quizá... / Existe la posibilidad de que...",
+      "pattern": "puede que + sujeto + subjuntivo / quizá + oración / es posible que + subjuntivo",
+      "description": "Expresa posibilidad, incertidumbre, suposición o una hipótesis sobre algo que puede ocurrir, estar ocurriendo o haber ocurrido. En español, «puede que» permite plantear numerosas posibilidades sin afirmar que sean ciertas y suele ir seguido de subjuntivo. También se usan «quizá», «tal vez», «es posible que» y «existe la posibilidad de que». Estas construcciones sirven para hablar de decisiones inciertas, situaciones presentes, acontecimientos futuros e hipótesis sobre el pasado. Para una posibilidad referida a un hecho anterior se puede usar «puede que haya» seguido de un participio. La elección depende del matiz y del contexto de la conversación.",
+      "category": "expressions",
+      "searchTerms": [
+        "puede que",
+        "puede que sí",
+        "puede que no",
+        "puede que vaya",
+        "puede que salga bien",
+        "puede que no funcione",
+        "puede que ocurra",
+        "puede que lo consiga",
+        "puede que me equivoque",
+        "puede que tenga razón",
+        "puede que se me haya olvidado",
+        "puede que haya salido",
+        "puede que sea demasiado tarde",
+        "puede que cambie de opinión",
+        "puede que lo consigamos",
+        "quizá",
+        "quizá vaya",
+        "quizá ocurra",
+        "quizá no salga bien",
+        "es posible que",
+        "existe la posibilidad de que",
+        "hay una posibilidad de que",
+        "quién sabe",
+        "no estoy seguro",
+        "posibilidad",
+        "incertidumbre",
+        "suposición",
+        "hipótesis"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])puede\\s+que(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:quizá|quizás|tal\\s+vez)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])es\\s+posible\\s+que(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:existe\\s+la|hay\\s+una)\\s+posibilidad\\s+de(?:\\s+que)?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])quién\\s+sabe(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "posibilidad",
+        "incertidumbre",
+        "hipótesis",
+        "suposiciones",
+        "probabilidad",
+        "futuro",
+        "presente",
+        "pasado",
+        "decisiones",
+        "expectativas",
+        "predicciones",
+        "verbos modales",
+        "conversación cotidiana",
+        "generador de frases",
+        "inglés americano"
+      ],
+      "related": [],
+      "structure": "«Puede que + subjuntivo» expresa una posibilidad sin darla por segura: «Puede que vaya», «Puede que funcione» o «Puede que él tenga razón». La negación se coloca delante del verbo subordinado: «Puede que no funcione». Para una situación en curso se usa «puede que esté + gerundio»: «Puede que esté durmiendo». Para una posibilidad anterior al momento de hablar se usa el pretérito perfecto de subjuntivo: «Puede que se me haya olvidado» o «Puede que lo haya entendido mal». Si se plantea una acción que estaba en curso en un momento pasado, puede usarse «Puede que estuvieran trabajando cuando llamaste». «Quizá» y «tal vez» introducen una oración y admiten indicativo o subjuntivo según el grado de certeza y el contexto: «Quizá necesite más tiempo». «Es posible que + subjuntivo» y «existe la posibilidad de que + subjuntivo» son alternativas claras: «Es posible que no sepa la respuesta» y «Existe la posibilidad de que encontremos una solución mejor». Como respuesta aislada, «Puede que sí, puede que no» o «Quizá sí, quizá no» expresan incertidumbre. Para preguntar por una hipótesis puede decirse «¿Crees que puede que venga?» o, de forma más directa, «¿Crees que vendrá?». En inglés americano, una equivalencia frecuente es «subject + might + verbo en forma base», con «might not» para la negación, «might be + gerundio» para una acción en curso y «might have + participio» para una posibilidad pasada. El modal «might» no cambia con el sujeto ni lleva «to» ante el verbo principal. «May», «could», «maybe» y «there is a chance that» ofrecen otras maneras de expresar esta intención, según el contexto.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a1c42e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "Puede que vaya a la fiesta mañana.",
+          "intent": "Puede que"
+        },
+        {
+          "id": "b2d53f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "Puede que esta vez salga bien.",
+          "intent": "Puede que"
+        },
+        {
+          "id": "c3e64085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "Puede que él tenga razón sobre eso.",
+          "intent": "Puede que"
+        },
+        {
+          "id": "d4f75196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "Puede que me equivoque.",
+          "intent": "Puede que"
+        },
+        {
+          "id": "e50862a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "Puede que no funcione como esperamos.",
+          "intent": "Puede que"
+        },
+        {
+          "id": "f61973b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "Puede que cambie de opinión más tarde.",
+          "intent": "Puede que"
+        },
+        {
+          "id": "a72a84c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "Puede que consigamos terminar hoy.",
+          "intent": "Puede que"
+        },
+        {
+          "id": "b83b95da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "Puede que ella esté durmiendo ahora.",
+          "intent": "Puede que"
+        },
+        {
+          "id": "c94ca6eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "Puede que llueva durante el viaje.",
+          "intent": "Puede que"
+        },
+        {
+          "id": "d05db7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "Puede que sea demasiado tarde para cambiar eso.",
+          "intent": "Puede que"
+        },
+        {
+          "id": "e16ec80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "Puede que se me haya olvidado responder a tu mensaje.",
+          "intent": "Puede que"
+        },
+        {
+          "id": "f27fd91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "Puede que él lo haya entendido todo mal.",
+          "intent": "Puede que"
+        },
+        {
+          "id": "a380ea2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "Puede que ella ya haya salido de casa.",
+          "intent": "Puede que"
+        },
+        {
+          "id": "b491fb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "Puede que estuvieran trabajando cuando llamaste.",
+          "intent": "Puede que"
+        },
+        {
+          "id": "c5a20c41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "Quizá necesite más tiempo para decidir.",
+          "intent": "Quizá"
+        },
+        {
+          "id": "d6b31d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "Es posible que él no sepa la respuesta.",
+          "intent": "Es posible que"
+        },
+        {
+          "id": "e7c42e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "Existe la posibilidad de que encontremos una solución mejor.",
+          "intent": "Existe la posibilidad de que"
+        },
+        {
+          "id": "f8d53f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "Puede que sí, puede que no.",
+          "intent": "Puede que sí, puede que no"
+        },
+        {
+          "id": "a9e64085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "¿Crees que puede que él aparezca hoy?",
+          "intent": "puede que"
+        },
+        {
+          "id": "b0f75196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "Puede que consiga hablar inglés con más naturalidad si sigo practicando todos los días.",
+          "intent": "Puede que"
+        }
+      ]
     }
   ]
 }

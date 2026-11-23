@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1288,
+    "totalIntentions": 1289,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -53430,6 +53430,172 @@
           "id": "f82a5cd6-9341-4d6e-bb0f-6185a92e0f3c",
           "exampleItem": "Après des semaines sans donner de nouvelles, il a enfin daigné se montrer.",
           "intent": "a enfin daigné se montrer"
+        }
+      ]
+    },
+    {
+      "id": "pode-ser-que-talvez-existe-a-possibilidade-7c9e4a21-8d35-4f60-a172-b5e83c9d064f",
+      "intention": "Il se peut que… / Peut-être… / Il est possible que…",
+      "pattern": "il se peut que + sujet + subjonctif / peut-être + proposition / il est possible que + proposition",
+      "description": "Exprime une possibilité, une incertitude, une supposition ou une hypothèse concernant un événement futur, une situation présente ou un fait passé. En français courant, on emploie notamment il se peut que, il est possible que, peut-être et le conditionnel de pouvoir. Il se peut que et il est possible que sont suivis du subjonctif. Peut-être permet de nuancer une proposition sans affirmer qu'elle est certaine. Pour évoquer le passé, on peut employer le subjonctif passé ou peut-être avec un temps du passé. Le choix dépend du contexte, du degré d'incertitude et du registre de la conversation.",
+      "category": "expressions",
+      "searchTerms": [
+        "il se peut que",
+        "il se peut qu'",
+        "peut-être",
+        "il est possible que",
+        "il est possible qu'",
+        "il y a une chance que",
+        "pourrait",
+        "peut-être bien que oui",
+        "peut-être bien que non",
+        "il se peut que j'aille",
+        "ça pourrait marcher",
+        "il se peut que ça ne fonctionne pas",
+        "il se peut que ça arrive",
+        "il se peut que j'y arrive",
+        "je me trompe peut-être",
+        "il a peut-être raison",
+        "j'ai peut-être oublié",
+        "elle est peut-être partie",
+        "il est peut-être trop tard",
+        "je changerai peut-être d’avis",
+        "qui sait",
+        "je ne suis pas sûr",
+        "possibilité",
+        "incertitude",
+        "supposition",
+        "hypothèse"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])il\\s+se\\s+peut\\s+que(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])il\\s+se\\s+peut\\s+qu['’](?=\\p{L})",
+        "(?<![\\p{L}\\p{N}_])peut-être(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])il\\s+est\\s+possible\\s+que(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])il\\s+est\\s+possible\\s+qu['’](?=\\p{L})",
+        "(?<![\\p{L}\\p{N}_])il\\s+y\\s+a\\s+une\\s+chance\\s+que(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])pourrait(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "possibilité",
+        "incertitude",
+        "hypothèses",
+        "suppositions",
+        "probabilité",
+        "futur",
+        "présent",
+        "passé",
+        "décisions",
+        "attentes",
+        "prévisions",
+        "verbes modaux",
+        "conversation quotidienne",
+        "construction de phrases",
+        "anglais américain"
+      ],
+      "related": [],
+      "structure": "La tournure il se peut que + subjonctif permet de formuler une hypothèse : Il se peut que je parte, Il se peut que ça marche, Il se peut qu'il ait raison. À la forme négative, la négation porte généralement sur le verbe de la proposition : Il se peut que ça ne marche pas. Il est possible que se construit également avec le subjonctif : Il est possible qu'il ne sache pas. Peut-être s'emploie avec une proposition à l'indicatif, souvent après le verbe conjugué : Elle dort peut-être, Elle est peut-être en train de dormir. En tête de phrase, on peut dire Peut-être qu'elle dort ou, dans un registre plus soutenu, Peut-être dort-elle. Pour une hypothèse sur un événement passé, employer il se peut que + subjonctif passé : Il se peut que j'aie oublié, Il se peut qu'elle soit déjà partie. Peut-être peut aussi accompagner le passé composé ou l'imparfait : J'ai peut-être oublié, Ils étaient peut-être en train de travailler. Le conditionnel de pouvoir exprime une possibilité : Ça pourrait marcher. Il s'accorde avec le sujet : je pourrais, tu pourrais, il pourrait, nous pourrions, vous pourriez, ils pourraient. Il y a une chance que + subjonctif souligne l'existence d'une possibilité : Il y a une chance que nous trouvions une solution. Pour une réponse incertaine, on dit Peut-être bien que oui, peut-être bien que non. Dans une question familière, on peut demander Tu crois qu'il pourrait venir ? Ces tournures permettent de parler de décisions incertaines, de prévisions et d'hypothèses sans présenter les faits comme certains.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a1c42e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "Il se peut que j'aille à la fête demain.",
+          "intent": "Il se peut que"
+        },
+        {
+          "id": "b2d53f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "Ça pourrait marcher cette fois.",
+          "intent": "pourrait"
+        },
+        {
+          "id": "c3e64085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "Il se peut qu'il ait raison à ce sujet.",
+          "intent": "Il se peut qu'"
+        },
+        {
+          "id": "d4f75196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "Il se peut que je me trompe.",
+          "intent": "Il se peut que"
+        },
+        {
+          "id": "e50862a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "Il se peut que ça ne fonctionne pas comme nous le souhaitons.",
+          "intent": "Il se peut que"
+        },
+        {
+          "id": "f61973b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "Il se peut que je change d'avis plus tard.",
+          "intent": "Il se peut que"
+        },
+        {
+          "id": "a72a84c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "Il se peut qu'on arrive à terminer aujourd'hui.",
+          "intent": "Il se peut qu'"
+        },
+        {
+          "id": "b83b95da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "Elle est peut-être en train de dormir en ce moment.",
+          "intent": "peut-être"
+        },
+        {
+          "id": "c94ca6eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "Il se peut qu'il pleuve pendant le voyage.",
+          "intent": "Il se peut qu'"
+        },
+        {
+          "id": "d05db7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "Il se peut qu'il soit trop tard pour changer ça.",
+          "intent": "Il se peut qu'"
+        },
+        {
+          "id": "e16ec80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "J'ai peut-être oublié de répondre à ton message.",
+          "intent": "peut-être"
+        },
+        {
+          "id": "f27fd91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "Il se peut qu'il ait tout compris de travers.",
+          "intent": "Il se peut qu'"
+        },
+        {
+          "id": "a380ea2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "Il se peut qu'elle soit déjà partie de chez elle.",
+          "intent": "Il se peut qu'"
+        },
+        {
+          "id": "b491fb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "Ils étaient peut-être en train de travailler quand tu as appelé.",
+          "intent": "peut-être"
+        },
+        {
+          "id": "c5a20c41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "J'aurai peut-être besoin de plus de temps pour décider.",
+          "intent": "peut-être"
+        },
+        {
+          "id": "d6b31d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "Il est possible qu'il ne connaisse pas la réponse.",
+          "intent": "Il est possible qu'"
+        },
+        {
+          "id": "e7c42e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "Il y a une chance que nous trouvions une meilleure solution.",
+          "intent": "Il y a une chance que"
+        },
+        {
+          "id": "f8d53f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "Peut-être bien que oui, peut-être bien que non.",
+          "intent": "Peut-être bien que oui, peut-être bien que non"
+        },
+        {
+          "id": "a9e64085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "Tu crois qu'il pourrait passer aujourd'hui ?",
+          "intent": "pourrait"
+        },
+        {
+          "id": "b0f75196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "Il se peut que j'arrive à parler anglais plus naturellement si je continue à m'entraîner tous les jours.",
+          "intent": "Il se peut que"
         }
       ]
     }

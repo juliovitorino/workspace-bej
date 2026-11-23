@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1288,
+    "totalIntentions": 1289,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -76910,6 +76910,169 @@
           "id": "f82a5cd6-9341-4d6e-bb0f-6185a92e0f3c",
           "exampleItem": "After being out of touch for weeks, he finally showed up.",
           "intent": "finally showed up"
+        }
+      ]
+    },
+    {
+      "id": "pode-ser-que-talvez-existe-a-possibilidade-7c9e4a21-8d35-4f60-a172-b5e83c9d064f",
+      "intention": "Might... / Maybe... / There's a chance...",
+      "pattern": "subject + might + base verb / maybe + clause / it's possible that + clause",
+      "description": "Expresses possibility, uncertainty, a supposition, or a hypothesis about something that may happen, be happening, or have happened. In everyday American English, 'might' followed by a base verb is a natural way to express a possibility without stating that it is certain. Use it for uncertain decisions, future events, present situations, and hypotheses about the past. For past possibilities, use 'might have' followed by a past participle. Related expressions include 'may', 'could', 'maybe', and 'there's a chance that'; the choice depends on the nuance and conversational context.",
+      "category": "expressions",
+      "searchTerms": [
+        "might",
+        "might not",
+        "might go",
+        "might work",
+        "might not work",
+        "might happen",
+        "might be able to",
+        "might be wrong",
+        "might be right",
+        "might have forgotten",
+        "might have left",
+        "might be too late",
+        "might change my mind",
+        "maybe",
+        "maybe not",
+        "it's possible that",
+        "there's a chance",
+        "there's a possibility",
+        "who knows",
+        "not sure",
+        "possibility",
+        "uncertainty",
+        "supposition",
+        "hypothesis"
+      ],
+      "validationPatterns": [
+        "\\bmight\\s+(?:not\\s+)?[a-z]+\\b",
+        "\\bmaybe\\b",
+        "\\bit(?:'s| is)\\s+possible\\s+that\\b",
+        "\\bthere(?:'s| is)\\s+(?:a\\s+)?(?:chance|possibility)\\b",
+        "\\bmay\\s+(?:not\\s+)?[a-z]+\\b",
+        "\\bcould\\s+(?:not\\s+)?[a-z]+\\b"
+      ],
+      "tags": [
+        "possibility",
+        "uncertainty",
+        "hypotheses",
+        "suppositions",
+        "probability",
+        "future",
+        "present",
+        "past",
+        "decisions",
+        "expectations",
+        "predictions",
+        "modal verbs",
+        "everyday conversation",
+        "sentence building",
+        "American English"
+      ],
+      "related": [],
+      "structure": "Use 'subject + might + base verb' to express possibility or uncertainty: 'I might go', 'It might work', and 'He might be right'. For a negative possibility, use 'might not + base verb': 'It might not work'. For something possibly happening now, use 'might be + verb-ing': 'She might be sleeping'. For a past possibility, use 'might have + past participle': 'I might have forgotten' or 'He might have misunderstood me'. Use 'might have been + verb-ing' for an action that was possibly in progress in the past: 'He might have been working'. 'Might' stays the same with every subject. Do not add '-s' to the following verb or put 'to' directly after 'might'; a later infinitive may still be required by the main verb, as in 'I might want to leave'. 'May + base verb' also expresses possibility and is common in more formal contexts as well as conversation. 'Could + base verb' can express possibility depending on context. 'Maybe' is an adverb that modifies a complete clause: 'Maybe I'll go'. 'There's a chance that + clause' emphasizes that a possibility exists: 'There's a chance that it might rain'. 'It could be that + clause' introduces a hypothesis. A natural standalone response is 'Maybe, maybe not'. For direct questions about possibility, use constructions such as 'Could...?', 'Do you think...?', or 'Is it possible...?', as in 'Do you think he might come?'. These patterns help you form hypotheses directly in English.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a1c42e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "I might go to the party tomorrow.",
+          "intent": "might go"
+        },
+        {
+          "id": "b2d53f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "It might work this time.",
+          "intent": "might work"
+        },
+        {
+          "id": "c3e64085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "He might be right about this.",
+          "intent": "might be right"
+        },
+        {
+          "id": "d4f75196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "I might be wrong.",
+          "intent": "might be wrong"
+        },
+        {
+          "id": "e50862a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "It might not work the way we expect.",
+          "intent": "might not work"
+        },
+        {
+          "id": "f61973b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "I might change my mind later.",
+          "intent": "might change"
+        },
+        {
+          "id": "a72a84c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "We might be able to finish today.",
+          "intent": "might be able to"
+        },
+        {
+          "id": "b83b95da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "She might be sleeping right now.",
+          "intent": "might be sleeping"
+        },
+        {
+          "id": "c94ca6eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "It might rain during the trip.",
+          "intent": "might rain"
+        },
+        {
+          "id": "d05db7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "It might be too late to change that.",
+          "intent": "might be"
+        },
+        {
+          "id": "e16ec80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "I might have forgotten to reply to your message.",
+          "intent": "might have forgotten"
+        },
+        {
+          "id": "f27fd91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "He might have misunderstood everything.",
+          "intent": "might have misunderstood"
+        },
+        {
+          "id": "a380ea2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "She might have already left home.",
+          "intent": "might have already left"
+        },
+        {
+          "id": "b491fb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "They might have been working when you called.",
+          "intent": "might have been working"
+        },
+        {
+          "id": "c5a20c41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "Maybe I need more time to decide.",
+          "intent": "Maybe"
+        },
+        {
+          "id": "d6b31d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "It's possible that he doesn't know the answer.",
+          "intent": "It's possible that"
+        },
+        {
+          "id": "e7c42e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "There's a chance we could find a better solution.",
+          "intent": "There's a chance"
+        },
+        {
+          "id": "f8d53f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "Maybe, maybe not.",
+          "intent": "Maybe, maybe not"
+        },
+        {
+          "id": "a9e64085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "Do you think he might show up today?",
+          "intent": "might show up"
+        },
+        {
+          "id": "b0f75196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "I might be able to speak English more naturally if I keep practicing every day.",
+          "intent": "might be able to"
         }
       ]
     }

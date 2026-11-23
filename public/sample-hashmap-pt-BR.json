@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1288,
+    "totalIntentions": 1289,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -52577,6 +52577,173 @@
           "id": "f82a5cd6-9341-4d6e-bb0f-6185a92e0f3c",
           "exampleItem": "Depois de semanas desaparecido, ele finalmente deu o ar da graça.",
           "intent": "deu o ar da graça"
+        }
+      ]
+    },
+    {
+      "id": "pode-ser-que-talvez-existe-a-possibilidade-7c9e4a21-8d35-4f60-a172-b5e83c9d064f",
+      "intention": "Pode ser que... / Talvez... / Existe a possibilidade de...",
+      "pattern": "pode ser que + sujeito + verbo / talvez + oração / é possível que + oração",
+      "description": "Expressa possibilidade, incerteza, suposição ou hipótese sobre algo que pode acontecer, estar acontecendo ou ter acontecido. No português brasileiro, a construção 'pode ser que' funciona como um poderoso gerador de frases, permitindo expressar inúmeras possibilidades sem afirmar que algo é certo. No inglês americano cotidiano, uma das maneiras mais naturais de transmitir essa intenção é utilizar o verbo modal 'might' seguido de um verbo na forma base. A construção pode ser utilizada para falar de decisões incertas, acontecimentos futuros, situações presentes e hipóteses sobre o passado. Para possibilidades relacionadas ao passado, utiliza-se 'might have' seguido do particípio passado. Outras construções relacionadas incluem 'may', 'could', 'maybe' e 'there's a chance that'. A escolha depende da nuance desejada e do contexto da conversa.",
+      "category": "expressions",
+      "searchTerms": [
+        "pode ser que",
+        "pode ser que sim",
+        "pode ser que não",
+        "pode ser que eu vá",
+        "pode ser que dê certo",
+        "pode ser que não funcione",
+        "pode ser que aconteça",
+        "pode ser que eu consiga",
+        "pode ser que eu esteja errado",
+        "pode ser que ele esteja certo",
+        "pode ser que eu tenha esquecido",
+        "pode ser que ela tenha saído",
+        "pode ser que seja tarde demais",
+        "pode ser que eu mude de ideia",
+        "pode ser que a gente consiga",
+        "talvez",
+        "talvez eu vá",
+        "talvez aconteça",
+        "talvez não dê certo",
+        "é possível que",
+        "existe a possibilidade de",
+        "há uma chance de",
+        "quem sabe",
+        "não tenho certeza",
+        "possibilidade",
+        "incerteza",
+        "suposição",
+        "hipótese"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])pode\\s+ser\\s+que(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])talvez(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])é\\s+possível\\s+que(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])existe\\s+(?:a\\s+)?possibilidade\\s+de(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])há\\s+(?:uma\\s+)?(?:chance|possibilidade)\\s+de(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])quem\\s+sabe(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "possibilidade",
+        "incerteza",
+        "hipóteses",
+        "suposições",
+        "probabilidade",
+        "futuro",
+        "presente",
+        "passado",
+        "decisões",
+        "expectativas",
+        "previsões",
+        "verbos modais",
+        "conversação cotidiana",
+        "gerador de frases",
+        "inglês americano"
+      ],
+      "related": [],
+      "structure": "A construção principal é 'MIGHT + verbo na forma base', utilizada para expressar possibilidade ou incerteza. Diferentemente do português brasileiro, que normalmente utiliza 'pode ser que' seguido de um verbo no subjuntivo, o inglês utiliza o modal 'might' diretamente antes do verbo principal. Estrutura afirmativa: 'subject + might + base verb'. Exemplos: 'I might go' (Pode ser que eu vá), 'It might work' (Pode ser que dê certo) e 'He might be right' (Pode ser que ele esteja certo). Estrutura negativa: 'subject + might not + base verb', como em 'It might not work' (Pode ser que não funcione). Para expressar possibilidade sobre uma situação em andamento, utiliza-se 'might be + verb-ing': 'She might be sleeping' (Pode ser que ela esteja dormindo). Para possibilidades relacionadas ao passado, utiliza-se 'might have + past participle': 'I might have forgotten' (Pode ser que eu tenha esquecido), 'He might have misunderstood me' (Pode ser que ele tenha me entendido errado). A construção 'might have been + verb-ing' expressa uma possibilidade sobre uma ação que estava em andamento no passado: 'He might have been working' (Pode ser que ele estivesse trabalhando). O modal 'might' não muda conforme o sujeito: 'I might', 'you might', 'he might', 'she might', 'we might' e 'they might'. Não se utiliza 'to' entre 'might' e o verbo principal, exceto quando o próprio verbo exige um infinitivo como complemento: 'I might want to leave'. Também não se acrescenta '-s' ao verbo depois de 'might'. A construção 'may + base verb' pode expressar possibilidade semelhante, sendo comum em registros mais formais, embora também apareça na conversação. 'Could + base verb' pode indicar possibilidade, dependendo do contexto. 'Maybe' é um advérbio e normalmente introduz ou modifica uma oração completa: 'Maybe I'll go' (Talvez eu vá). 'There's a chance that + clause' enfatiza a existência de uma possibilidade: 'There's a chance that it might rain' (Existe a possibilidade de chover). A expressão 'It could be that + clause' também permite introduzir uma hipótese. Para a resposta isolada 'Pode ser que sim, pode ser que não', a construção natural é 'Maybe, maybe not'. Em perguntas diretas sobre possibilidade, geralmente são mais naturais construções com 'could', 'do you think' ou 'is it possible', como em 'Do you think he might come?' (Você acha que pode ser que ele venha?). 'Might' é especialmente útil para desenvolver fluência porque permite construir hipóteses diretamente em inglês, sem traduzir palavra por palavra a estrutura portuguesa 'pode ser que'.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a1c42e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "Pode ser que eu vá à festa amanhã.",
+          "intent": "Pode ser que"
+        },
+        {
+          "id": "b2d53f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "Pode ser que dê certo dessa vez.",
+          "intent": "Pode ser que"
+        },
+        {
+          "id": "c3e64085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "Pode ser que ele esteja certo sobre isso.",
+          "intent": "Pode ser que"
+        },
+        {
+          "id": "d4f75196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "Pode ser que eu esteja errado.",
+          "intent": "Pode ser que"
+        },
+        {
+          "id": "e50862a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "Pode ser que não funcione como esperamos.",
+          "intent": "Pode ser que"
+        },
+        {
+          "id": "f61973b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "Pode ser que eu mude de ideia mais tarde.",
+          "intent": "Pode ser que"
+        },
+        {
+          "id": "a72a84c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "Pode ser que a gente consiga terminar hoje.",
+          "intent": "Pode ser que"
+        },
+        {
+          "id": "b83b95da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "Pode ser que ela esteja dormindo agora.",
+          "intent": "Pode ser que"
+        },
+        {
+          "id": "c94ca6eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "Pode ser que chova durante a viagem.",
+          "intent": "Pode ser que"
+        },
+        {
+          "id": "d05db7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "Pode ser que seja tarde demais para mudar isso.",
+          "intent": "Pode ser que"
+        },
+        {
+          "id": "e16ec80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "Pode ser que eu tenha esquecido de responder sua mensagem.",
+          "intent": "Pode ser que"
+        },
+        {
+          "id": "f27fd91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "Pode ser que ele tenha entendido tudo errado.",
+          "intent": "Pode ser que"
+        },
+        {
+          "id": "a380ea2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "Pode ser que ela já tenha saído de casa.",
+          "intent": "Pode ser que"
+        },
+        {
+          "id": "b491fb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "Pode ser que eles estivessem trabalhando quando você ligou.",
+          "intent": "Pode ser que"
+        },
+        {
+          "id": "c5a20c41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "Talvez eu precise de mais tempo para decidir.",
+          "intent": "Talvez"
+        },
+        {
+          "id": "d6b31d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "É possível que ele não saiba a resposta.",
+          "intent": "É possível que"
+        },
+        {
+          "id": "e7c42e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "Existe a possibilidade de encontrarmos uma solução melhor.",
+          "intent": "Existe a possibilidade de"
+        },
+        {
+          "id": "f8d53f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "Pode ser que sim, pode ser que não.",
+          "intent": "Pode ser que sim, pode ser que não"
+        },
+        {
+          "id": "a9e64085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "Você acha que pode ser que ele apareça hoje?",
+          "intent": "pode ser que"
+        },
+        {
+          "id": "b0f75196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "Pode ser que eu consiga falar inglês com mais naturalidade se continuar praticando todos os dias.",
+          "intent": "Pode ser que"
         }
       ]
     }
