@@ -298,10 +298,10 @@
       "previous": "Manual adjustment"
     },
     "periods": {
-      "week": "This week",
       "7": "Last seven days",
       "30": "Last 30 days",
       "90": "Last 90 days",
+      "week": "This week",
       "yesterday": "Yesterday",
       "today": "Today",
       "month": "Current month",
@@ -1360,5 +1360,46 @@
     "copyErrorTitle": "Unable to copy",
     "copyDialogOk": "OK",
     "bitcoinRotationHint": "Each copy picks a different address. The QR code always matches the address shown."
+  },
+  "spaceMission": {
+    "title": "BEJ Space Mission",
+    "planets": {
+      "Terra": "Earth",
+      "Lua": "Moon",
+      "Marte": "Mars",
+      "Vênus": "Venus",
+      "Mercúrio": "Mercury",
+      "Júpiter": "Jupiter",
+      "Saturno": "Saturn",
+      "Urano": "Uranus",
+      "Netuno": "Neptune"
+    },
+    "planetStatus": "{{name}}: {{percent}}% — {{status}}",
+    "achieved": "reached",
+    "toAchieve": "yet to reach",
+    "webbLabel": "James Webb Telescope",
+    "voyagerLabel": "Voyager 1 probe",
+    "learnAbout": "Learn about {{name}}",
+    "tributeHint": "Tribute to {{name}}. Click to learn more.",
+    "webbTitle": "James Webb Space Telescope",
+    "voyagerTitle": "Voyager 1",
+    "webbDetail": "Launched in 2021, it observes the universe primarily in infrared light. Its primary mirror has 18 gold-coated hexagonal segments.",
+    "voyagerDetail": "Launched in 1977, it became the first human-made object to reach interstellar space in 2012.",
+    "replay": "Replay mission",
+    "replayAccessible": "Replay space mission",
+    "progressAccessible": "BEJ Space Mission: {{percent}}% complete. {{destination}}",
+    "nextDestination": "Next destination: {{name}} ({{percent}}%)",
+    "neptuneAchieved": "Neptune reached",
+    "completed": "Mission complete: Neptune reached!",
+    "closeTribute": "Close tribute",
+    "speedometer": "Progress speedometer",
+    "showClassic": "Show classic space journey",
+    "showMission": "Show BEJ Space Mission",
+    "backClassic": "Return to classic journey",
+    "openMission": "Open BEJ Space Mission",
+    "tapClassic": "Tap the speedometer to return to the classic journey",
+    "tapMission": "Tap the speedometer to see the BEJ Space Mission",
+    "classicJourney": "Goal space journey",
+    "replayRocket": "Replay rocket animation"
   }
 }
