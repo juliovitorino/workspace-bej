@@ -324,7 +324,7 @@ assert.doesNotMatch(moduleTimeComponent, /useState<ModuleValueMode>/);
 assert.match(moduleTimeComponent, /mode: ModuleValueMode;/);
 assert.match(moduleTimeComponent, /onToggle: \(\) => void;/);
 assert.match(moduleTimeComponent, /onClick=\{onToggle\}/);
-assert.match(dashboardSource, /const \[moduleValueMode, setModuleValueMode\] = useState<ModuleValueMode>\("both"\)/);
+assert.match(dashboardSource, /const \[moduleValueMode, setModuleValueMode\] = useState<ModuleValueMode>\("time"\)/);
 assert.match(dashboardSource, /lastActivity=\{latestModuleActivity\[key\]\} now=\{recencyNow\} mode=\{moduleValueMode\} onToggle=\{toggleModuleValueMode\}/);
 assert.match(moduleTimeComponent, /className="study-module-value"/);
 assert.doesNotMatch(moduleTimeComponent, /study-module-value-desktop|study-module-value-mobile/);
@@ -536,3 +536,11 @@ assert.match(rocketSource, /disabled=\{isPhoneViewport\}/);
 assert.match(rocketSource, /missionView && !isPhoneViewport && <StudyPlanetMission/);
 assert.match(rocketSource, /\(!missionView \|\| isPhoneViewport\)/);
 console.log('PASS: phone viewports show classic journey only.');
+
+// The ranking opens on studied time, and the weekly total/average omit zero units.
+assert.match(dashboardSource, /useState<ModuleValueMode>\("time"\)/);
+assert.match(weeklySource, /if \(!hours\) return `\$\{minutes\}min`/);
+assert.match(weeklySource, /if \(!minutes\) return `\$\{hours\}h`/);
+assert.match(weeklySource, /\{time\(weekTotal\)\}/);
+assert.match(weeklySource, /\{time\(Math\.round\(dailyAverage\)\)\}/);
+console.log('PASS: ranking defaults to hours and weekly total/average suppress zero units.');

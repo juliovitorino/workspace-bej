@@ -40,7 +40,7 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu, onO
   const [historyVisible, setHistoryVisible] = useState(initialSection === "history");
   const [filtersVisible, setFiltersVisible] = useState(false);
   // One shared value display mode for every module row on every device.
-  const [moduleValueMode, setModuleValueMode] = useState<ModuleValueMode>("both");
+  const [moduleValueMode, setModuleValueMode] = useState<ModuleValueMode>("time");
   const [recencyNow, setRecencyNow] = useState(() => new Date());
   const [notificationCenterOpen, setNotificationCenterOpen] = useState(false);
   const { settings: notificationSettings } = useStudyNotificationSettings();
