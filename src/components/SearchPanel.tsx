@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
 import { createPortal } from "react-dom";
+import "../features/study/studyNotifications.css";
 
 export type HqImageFilter = "all" | "with" | "without";
 export type ChunkFilter = "all" | "with" | "without";
@@ -13,6 +14,7 @@ interface SearchPanelProps {
   sourceLanguage: SourceLanguage;
   language: StudentLanguage;
   mentalSearch: string;
+  exactSearch: boolean;
   englishSearch: string;
   categorySearch: string;
   englishLevelSearch: string;
@@ -24,6 +26,7 @@ interface SearchPanelProps {
   availableTags: string[];
   selectedTags: string[];
   onMentalSearchChange: (value: string) => void;
+  onExactSearchChange: (value: boolean) => void;
   onEnglishSearchChange: (value: string) => void;
   onCategorySearchChange: (value: string) => void;
   onEnglishLevelSearchChange: (value: string) => void;
@@ -77,6 +80,7 @@ export function SearchPanel({
   sourceLanguage,
   language,
   mentalSearch,
+  exactSearch,
   englishSearch,
   categorySearch,
   englishLevelSearch,
@@ -88,6 +92,7 @@ export function SearchPanel({
   availableTags,
   selectedTags,
   onMentalSearchChange,
+  onExactSearchChange,
   onEnglishSearchChange,
   onCategorySearchChange,
   onEnglishLevelSearchChange,
@@ -106,7 +111,7 @@ export function SearchPanel({
   const openButtonRef = useRef<HTMLButtonElement>(null);
 
   const hasFilters = Boolean(
-    mentalSearch || englishSearch || categorySearch || englishLevelSearch ||
+    mentalSearch || englishSearch || exactSearch || categorySearch || englishLevelSearch ||
     hqImageFilter !== "all" || chunkFilter !== "all" ||
     (isAuthor && (youtubeVideoFilter !== "all" || youtubeShortFilter !== "all")) ||
     selectedTags.length > 0
@@ -294,6 +299,15 @@ export function SearchPanel({
             ))}
           </div>
         )}
+      </div>
+
+      <div className="field">
+        <label htmlFor="exact-intention-search" className="exact-search-switch-row">
+          <span>Busca exata</span>
+          <input id="exact-intention-search" type="checkbox" role="switch"
+            className="study-notification-switch" checked={exactSearch}
+            onChange={(event) => onExactSearchChange(event.target.checked)} />
+        </label>
       </div>
 
       <button type="button" className="secondary-button" onClick={onClear} disabled={!hasFilters}>

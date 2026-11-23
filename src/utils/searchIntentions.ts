@@ -53,7 +53,8 @@ export function searchIntentions(
   categorySearch: string,
   selectedTags: string[],
   englishLevelSearch: string,
-  sourceLanguage = "pt-BR"
+  sourceLanguage = "pt-BR",
+  exactSearch = false
 ): MentalIntention[] {
   const sourcePattern = createSearchPattern(mentalSearch);
   const targetPattern = createSearchPattern(englishSearch);
@@ -62,8 +63,12 @@ export function searchIntentions(
   const normalizedTags = selectedTags.map(normalizeText);
 
   return sortedBySource(intentions.filter((item) => {
-    const sourceMatches = matchesAny(sourceFields(item), sourcePattern);
-    const targetMatches = matchesAny(targetFields(item), targetPattern);
+    const sourceMatches = exactSearch
+      ? !normalizeText(mentalSearch) || normalizeText(item.intention).includes(normalizeText(mentalSearch))
+      : matchesAny(sourceFields(item), sourcePattern);
+    const targetMatches = exactSearch
+      ? !normalizeText(englishSearch) || normalizeText(item.targetIntention ?? item.intention).includes(normalizeText(englishSearch))
+      : matchesAny(targetFields(item), targetPattern);
     const categoryMatches = !normalizedCategory ||
       [item.category, item.sourceCategory].some((value) =>
         normalizeText(value ?? "").includes(normalizedCategory)

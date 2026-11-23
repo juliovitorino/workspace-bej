@@ -56,6 +56,24 @@ assert.ok(searchIntentions(catalog.mentalMap, '', 'I’ve ever', '', [], '').som
 assert.ok(globalSearch(catalog.mentalMap, 'I’ve ever').some(i => i.id === item.id));
 console.log('PASS search: real catalog loader, target/global search, apostrophe variants, case, accents, term order and punctuation boundaries.');
 
+const exactFixtures = [
+  { id: 'a', intention: 'Pode ser que... / Talvez... / Existe a possibilidade de...', targetIntention: 'It might be that', sourceSearchTerms: ['outra coisa'], examples: [{ pt: 'Pode ser que ele venha', exampleItem: 'It might be that he comes' }] },
+  { id: 'b', intention: 'Pode ser que ele venha', targetIntention: 'It might be that he comes', examples: [] },
+  { id: 'c', intention: 'Pode ser', targetIntention: 'It might be', examples: [] },
+  { id: 'd', intention: 'Pode realmente ser que', targetIntention: 'It might really be that', examples: [] },
+  { id: 'e', intention: 'Talvez... / Pode ser que...', targetIntention: 'Perhaps / It might be that', examples: [] }
+];
+const exact = (source, target) => searchIntentions(exactFixtures, source, target, '', [], '', 'pt-BR', true).map(i => i.id);
+assert.deepEqual(exact('pode ser que', ''), ['a', 'b', 'e'], 'exact source search matches contiguous phrases anywhere within an intention');
+assert.deepEqual(exact(' PODE SER QUE ', ''), ['a', 'b', 'e'], 'exact search ignores case and outer whitespace');
+assert.deepEqual(exact('pode ser', ''), ['a', 'b', 'c', 'e'], 'exact search also matches longer intentions containing the contiguous phrase');
+assert.deepEqual(exact('pode ser que ele', ''), ['b'], 'exact search ignores example-only matches');
+assert.deepEqual(exact('', 'it might be that'), ['a', 'b', 'e'], 'exact target search matches a contiguous phrase within target intention');
+assert.deepEqual(exact('pode ser que', 'it might be'), ['a', 'b', 'e'], 'source and target searches remain combined with AND');
+assert.deepEqual(exact('pode realmente ser que', ''), ['d'], 'exact mode respects uninterrupted word sequence');
+assert.deepEqual(searchIntentions(exactFixtures, 'pode ser que', '', '', [], '').map(i => i.id), ['d', 'a', 'b', 'e'], 'flexible search remains unchanged when checkbox is off');
+console.log('PASS exact search: contiguous phrase in source/target intention, normalization, AND, and flexible fallback.');
+
 const { studyStats } = load('src/features/study/studyStats.ts');
 const filters = { language: 'all', module: 'all', mode: 'all', period: 'yesterday', from: '', to: '' };
 const empty = { sessions: [], manualAdjustments: [], goals: {}, monthlyGoals: {} };
