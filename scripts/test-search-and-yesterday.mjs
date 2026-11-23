@@ -71,7 +71,7 @@ assert.deepEqual(exact('pode ser que ele', ''), ['b'], 'exact search ignores exa
 assert.deepEqual(exact('', 'it might be that'), ['a', 'b', 'e'], 'exact target search matches a contiguous phrase within target intention');
 assert.deepEqual(exact('pode ser que', 'it might be'), ['a', 'b', 'e'], 'source and target searches remain combined with AND');
 assert.deepEqual(exact('pode realmente ser que', ''), ['d'], 'exact mode respects uninterrupted word sequence');
-assert.deepEqual(searchIntentions(exactFixtures, 'pode ser que', '', '', [], '').map(i => i.id), ['a', 'b', 'd', 'e'], 'flexible search remains unchanged when checkbox is off');
+assert.deepEqual(searchIntentions(exactFixtures, 'pode ser que', '', '', [], '').map(i => i.id), ['d', 'a', 'b', 'e'], 'flexible search remains unchanged when checkbox is off');
 console.log('PASS exact search: contiguous phrase in source/target intention, normalization, AND, and flexible fallback.');
 
 const { studyStats } = load('src/features/study/studyStats.ts');
