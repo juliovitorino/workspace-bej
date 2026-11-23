@@ -3,21 +3,24 @@ import { readQuestionOverrides, SMALL_TALK_QUESTION_OVERRIDES_KEY, type Question
 import { readCustomItems, mergeCustomItems, isCustomItems, SMALL_TALK_CUSTOM_ITEMS_KEY, type CustomSmallTalkItems } from "../small-talk/smallTalkCustomItems";
 import { emptySmallTalkPersonalAnswers, readSmallTalkPersonalAnswers, parseSmallTalkPersonalAnswers, planSmallTalkPersonalImport, SMALL_TALK_PERSONAL_ANSWERS_KEY } from "../../services/smallTalkPersonalAnswersService";
 import type { SmallTalkPersonalAnswers } from "../../types/smallTalk";
+import { SMALL_TALK_CARD_ORDER_KEY, readCardOrders, validateCardOrders, mergeCardOrders, type CardOrders } from "../small-talk/smallTalkCardOrderStorage";
 
 export type SmallTalkSyncData = {
   questions: QuestionOverrides;
   answers: AnswerOverrides;
   customItems: CustomSmallTalkItems;
   personalAnswers: SmallTalkPersonalAnswers;
+  cardOrders?: CardOrders;
 };
-export const SMALL_TALK_SYNC_KEYS = [SMALL_TALK_QUESTION_OVERRIDES_KEY, SMALL_TALK_ANSWER_OVERRIDES_KEY, SMALL_TALK_CUSTOM_ITEMS_KEY, SMALL_TALK_PERSONAL_ANSWERS_KEY] as const;
+export const SMALL_TALK_SYNC_KEYS = [SMALL_TALK_QUESTION_OVERRIDES_KEY, SMALL_TALK_ANSWER_OVERRIDES_KEY, SMALL_TALK_CUSTOM_ITEMS_KEY, SMALL_TALK_PERSONAL_ANSWERS_KEY, SMALL_TALK_CARD_ORDER_KEY] as const;
 
 export function readSmallTalkSync(storage: Storage = localStorage): SmallTalkSyncData {
   return {
     questions: readQuestionOverrides(storage),
     answers: readAnswerOverrides(storage),
     customItems: readCustomItems(storage),
-    personalAnswers: readSmallTalkPersonalAnswers(storage)
+    personalAnswers: readSmallTalkPersonalAnswers(storage),
+    cardOrders: readCardOrders(storage)
   };
 }
 export function validateSmallTalkSync(input: unknown): SmallTalkSyncData {
@@ -46,7 +49,7 @@ export function validateSmallTalkSync(input: unknown): SmallTalkSyncData {
         if (JSON.stringify(personal) !== JSON.stringify(empty)) throw new Error("Respostas pessoais vazias inválidas.");
         return empty;
       })();
-  return { questions, answers, customItems: value.customItems, personalAnswers };
+  return { questions, answers, customItems: value.customItems, personalAnswers, cardOrders: validateCardOrders(value.cardOrders) };
 }
 function latest<T extends { updatedAt: string }>(left: Record<string, T>, right: Record<string, T>): Record<string, T> {
   const merged = { ...left };
@@ -66,7 +69,8 @@ export function mergeSmallTalkSync(local: SmallTalkSyncData, incoming: SmallTalk
     questions: latest(a.questions, b.questions),
     answers: latest(a.answers, b.answers),
     customItems: mergeCustomItems(a.customItems, b.customItems),
-    personalAnswers: plan.merged
+    personalAnswers: plan.merged,
+    cardOrders: mergeCardOrders(a.cardOrders ?? {}, b.cardOrders ?? {})
   };
 }
 export function writeSmallTalkSync(value: SmallTalkSyncData, storage: Storage = localStorage): void {
@@ -75,7 +79,8 @@ export function writeSmallTalkSync(value: SmallTalkSyncData, storage: Storage = 
     [SMALL_TALK_QUESTION_OVERRIDES_KEY, valid.questions],
     [SMALL_TALK_ANSWER_OVERRIDES_KEY, valid.answers],
     [SMALL_TALK_CUSTOM_ITEMS_KEY, valid.customItems],
-    [SMALL_TALK_PERSONAL_ANSWERS_KEY, valid.personalAnswers]
+    [SMALL_TALK_PERSONAL_ANSWERS_KEY, valid.personalAnswers],
+    [SMALL_TALK_CARD_ORDER_KEY, valid.cardOrders ?? {}]
   ] as const;
   // Preflight quota/availability and restore every previous value on write failure.
   const old = entries.map(([key]) => storage.getItem(key));
