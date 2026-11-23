@@ -64,10 +64,10 @@ export function searchIntentions(
 
   return sortedBySource(intentions.filter((item) => {
     const sourceMatches = exactSearch
-      ? !normalizeText(mentalSearch) || normalizeText(item.intention) === normalizeText(mentalSearch)
+      ? !normalizeText(mentalSearch) || normalizeText(item.intention).includes(normalizeText(mentalSearch))
       : matchesAny(sourceFields(item), sourcePattern);
     const targetMatches = exactSearch
-      ? !normalizeText(englishSearch) || normalizeText(item.targetIntention ?? item.intention) === normalizeText(englishSearch)
+      ? !normalizeText(englishSearch) || normalizeText(item.targetIntention ?? item.intention).includes(normalizeText(englishSearch))
       : matchesAny(targetFields(item), targetPattern);
     const categoryMatches = !normalizedCategory ||
       [item.category, item.sourceCategory].some((value) =>
