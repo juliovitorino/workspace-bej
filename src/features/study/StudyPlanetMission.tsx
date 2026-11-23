@@ -96,8 +96,15 @@ export function StudyPlanetMission({ percentage, progress, launchElapsedMs, onRe
     : launchElapsedMs <= 750 ? 45 * ((launchElapsedMs - 500) / 250)
     : launchElapsedMs <= 1000 ? 45
     : launchElapsedMs <= 1250 ? 45 + 45 * ((launchElapsedMs - 1000) / 250) : 90;
+  // The green marker stays exactly on the route; the rocket flies beside it.
+  // Use the segment normal to keep the separation consistent around bends.
+  const headingRadians = (position.angle - 90) * Math.PI / 180;
+  const offset = 35;
+  const rocketX = Math.max(22, Math.min(598, position.x + Math.sin(headingRadians) * offset));
+  const cruiseY = Math.max(26, Math.min(365, position.y - Math.cos(headingRadians) * offset));
+  const takeoffLift = Math.max(0, Math.min(1, (launchElapsedMs - 500) / 750));
+  const rocketY = launching ? position.y + (cruiseY - position.y) * takeoffLift : cruiseY;
   const rocketAngle = launching ? launchAngle : position.angle;
-  const rocketY = launching ? position.y - Math.max(0, Math.min(1, (launchElapsedMs - 500) / 750)) * 17 : position.y;
   return <div className="bej-planet-mission" style={{ width: "100%", maxWidth: 650, margin: "12px auto 18px" }}>
     <div style={{ display: "flex", justifyContent: "space-between", gap: 8, alignItems: "center", flexWrap: "wrap", marginBottom: 6 }}>
       <strong>🚀 Missão Espacial BEJ</strong>
@@ -116,7 +123,11 @@ export function StudyPlanetMission({ percentage, progress, launchElapsedMs, onRe
         const point = routePoint(planet.at);
         return <PlanetArt key={planet.name} planet={planet} x={point.x} y={point.y} achieved={completed >= planet.at} />;
       })}
-      <g transform={`translate(${position.x} ${rocketY}) rotate(${rocketAngle})`}>
+      {/* A dashed tether connects the off-route rocket to the precise progress marker. */}
+      <line x1={position.x} y1={position.y} x2={rocketX} y2={rocketY} stroke="#7dd3fc" strokeWidth="1.8" strokeDasharray="4 5" strokeLinecap="round" opacity=".9" />
+      <circle cx={position.x} cy={position.y} r="9" fill="#22c55e" fillOpacity=".22" />
+      <circle cx={position.x} cy={position.y} r="5.5" fill="#22c55e" stroke="#dcfce7" strokeWidth="1.5" />
+      <g transform={`translate(${rocketX} ${rocketY}) rotate(${rocketAngle})`}>
         <path d="M -5 12 L -8 22 L 0 17 L 8 22 L 5 12" fill="#fb923c" />
         <path d="M 0 -20 Q 11 -9 9 9 L 5 14 H -5 L -9 9 Q -11 -9 0 -20 Z" fill="#f8fafc" stroke="#475569" strokeWidth="1.5" />
         <circle cy="-4" r="4.5" fill="#38bdf8" />
