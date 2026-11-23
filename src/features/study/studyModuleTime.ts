@@ -10,9 +10,9 @@ export function moduleDurationParts(seconds: number) {
 
 export type ModuleValueMode = "both" | "time" | "percentage" | "recent";
 
-/** All devices share the cycle: both -> time -> percentage -> last activity -> both. */
+/** All devices share the cycle: time -> percentage -> last activity -> both -> time. */
 export function nextModuleValueMode(mode: ModuleValueMode): ModuleValueMode {
-  return mode === "both" ? "time" : mode === "time" ? "percentage" : mode === "percentage" ? "recent" : "both";
+  return mode === "time" ? "percentage" : mode === "percentage" ? "recent" : mode === "recent" ? "both" : "time";
 }
 
 /**
