@@ -1057,9 +1057,18 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       return <article className={'small-talk-question-card' + (expanded ? ' small-talk-card-expanded' : '')} id={'small-talk-card-' + item.id} key={item.id}>
         <button type="button" className="small-talk-card-toggle" aria-expanded={expanded}
           aria-controls={'small-talk-card-content-' + item.id}
-          onClick={() => {
+          onClick={event => {
+            // Captura a seção antes de atualizar o estado; o card anterior pode encolher.
+            const card = event.currentTarget.closest('.small-talk-question-card');
             setExpandedCardId(current => current === item.id ? null : item.id);
-            if (expanded) {
+            if (!expanded) {
+              // Aguarda o React expandir este card e recolher o anterior antes de rolar.
+              window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
+                if (card?.classList.contains('small-talk-card-expanded')) {
+                  card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }));
+            } else {
               if (editorId === item.id) closeEditor();
               if (questionEditorId === item.id) setQuestionEditorId(null);
             }
