@@ -149,3 +149,22 @@ test('manual card ordering is stored with a timestamp and refreshed after Drive 
   assert.match(page, /saveCardOrders\(next\)/);
   assert.match(page, /event\.key === SMALL_TALK_CARD_ORDER_KEY/);
 });
+
+test('Small Talk cards start collapsed and expand one card at a time', () => {
+  assert.match(page, /const \[expandedCardId, setExpandedCardId\] = useState<string \| null>\(null\)/);
+  assert.match(page, /const expanded = expandedCardId === item\.id/);
+  assert.match(page, /aria-expanded=\{expanded\}/);
+  assert.match(page, /setExpandedCardId\(current => current === item\.id \? null : item\.id\)/);
+  assert.match(page, /\{expanded && <div id=\{'small-talk-card-content-' \+ item\.id\}/);
+  assert.match(page, /className="small-talk-card-number"/);
+  assert.match(page, /className="small-talk-card-question"/);
+  assert.match(page, /setExpandedCardId\(id\)/);
+});
+
+test('expanded card does not duplicate the question while keeping question actions', () => {
+  assert.match(page, /className="small-talk-card-question">\{questionFor\(item\)\}/);
+  assert.match(page, /className="small-talk-question-heading" role="group" aria-label="Ações da pergunta"/);
+  assert.doesNotMatch(page, /small-talk-question-heading"><p><strong>/);
+  assert.match(page, /aria-label="Editar pergunta"/);
+  assert.match(page, /'Copiar pergunta'/);
+});
