@@ -298,10 +298,10 @@
       "previous": "Ajuste manual"
     },
     "periods": {
-      "week": "Esta semana",
       "7": "Últimos siete días",
       "30": "Últimos 30 días",
       "90": "Últimos 90 días",
+      "week": "Esta semana",
       "yesterday": "Ayer",
       "today": "Hoy",
       "month": "Mes actual",
@@ -1360,5 +1360,46 @@
     "copyErrorTitle": "No se pudo copiar",
     "copyDialogOk": "Aceptar",
     "bitcoinRotationHint": "Cada vez que copias, se elige otra dirección. El código QR coincide con la dirección mostrada."
+  },
+  "spaceMission": {
+    "title": "Misión Espacial BEJ",
+    "planets": {
+      "Terra": "Tierra",
+      "Lua": "Luna",
+      "Marte": "Marte",
+      "Vênus": "Venus",
+      "Mercúrio": "Mercurio",
+      "Júpiter": "Júpiter",
+      "Saturno": "Saturno",
+      "Urano": "Urano",
+      "Netuno": "Neptuno"
+    },
+    "planetStatus": "{{name}}: {{percent}} % — {{status}}",
+    "achieved": "alcanzado",
+    "toAchieve": "por alcanzar",
+    "webbLabel": "Telescopio James Webb",
+    "voyagerLabel": "Sonda Voyager 1",
+    "learnAbout": "Conocer {{name}}",
+    "tributeHint": "Homenaje a {{name}}. Haz clic para saber más.",
+    "webbTitle": "Telescopio Espacial James Webb",
+    "voyagerTitle": "Voyager 1",
+    "webbDetail": "Lanzado en 2021, observa el universo principalmente en infrarrojo. Su espejo principal tiene 18 segmentos hexagonales dorados.",
+    "voyagerDetail": "Lanzada en 1977, se convirtió en el primer objeto fabricado por la humanidad en alcanzar el espacio interestelar, en 2012.",
+    "replay": "Repetir misión",
+    "replayAccessible": "Repetir misión espacial",
+    "progressAccessible": "Misión Espacial BEJ: {{percent}} % completado. {{destination}}",
+    "nextDestination": "Próximo destino: {{name}} ({{percent}} %)",
+    "neptuneAchieved": "Neptuno alcanzado",
+    "completed": "¡Misión completada: Neptuno alcanzado!",
+    "closeTribute": "Cerrar homenaje",
+    "speedometer": "Velocímetro de progreso",
+    "showClassic": "Mostrar viaje espacial clásico",
+    "showMission": "Mostrar Misión Espacial BEJ",
+    "backClassic": "Volver al viaje clásico",
+    "openMission": "Abrir Misión Espacial BEJ",
+    "tapClassic": "Toca el velocímetro para volver al viaje clásico",
+    "tapMission": "Toca el velocímetro para ver la Misión Espacial BEJ",
+    "classicJourney": "Viaje espacial hacia la meta",
+    "replayRocket": "Repetir animación del cohete"
   }
 }
