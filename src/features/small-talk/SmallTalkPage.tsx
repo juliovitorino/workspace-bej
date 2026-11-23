@@ -9,6 +9,7 @@ import { readLocalJson, readWalkingSettings, saveLocalJson, SMALL_TALK_FAVORITES
 import { SmallTalkWalking } from './SmallTalkWalking';
 import { SmallTalkIcon } from './SmallTalkIcon';
 import { printableSmallTalkItems, smallTalkPrintNumbers, nextSmallTalkCardOrder } from './smallTalkPrintOrder';
+import { SMALL_TALK_CARD_ORDER_KEY, readCardOrders, saveCardOrders, updateCardOrder } from './smallTalkCardOrderStorage';
 import { beginAnswerEdit, changeAnswerEdit, undoAnswerEdit, redoAnswerEdit } from './smallTalkAnswerEditHistory';
 import { celebrateAchievement, celebrateCompletedSession } from '../../utils/achievements';
 import { readAnswerOverrides, saveAnswerOverride, restoreOriginalAnswer, pruneRedundantAnswerOverrides } from './smallTalkAnswerOverrides';
@@ -125,8 +126,14 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   const [occurrenceFilter, setOccurrenceFilter] = useState<OccurrenceFilter>('all');
   const [occurrenceSort, setOccurrenceSort] = useState<OccurrenceSort>('manual');
   const [occurrenceError, setOccurrenceError] = useState('');
-  const ORDER_KEY = 'bej:small-talk:card-order:v1';
-  const [topicOrders, setTopicOrders] = useState<Record<string, string[]>>(() => readLocalJson<Record<string, string[]>>(ORDER_KEY, {}));
+  const [topicOrders, setTopicOrders] = useState(() => readCardOrders());
+  useEffect(() => {
+    const refreshOrders = (event: StorageEvent) => {
+      if (event.key === SMALL_TALK_CARD_ORDER_KEY) setTopicOrders(readCardOrders());
+    };
+    window.addEventListener('storage', refreshOrders);
+    return () => window.removeEventListener('storage', refreshOrders);
+  }, []);
   const [orderError, setOrderError] = useState('');
   const [newCardError, setNewCardError] = useState('');
   const [duplicateMessage, setDuplicateMessage] = useState('');
@@ -143,7 +150,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   }, [topic, topicId, customItems]);
 
   const orderedTopicItems = useMemo(() => {
-    const saved = topicOrders[topicId] ?? [];
+    const saved = topicOrders[topicId]?.ids ?? [];
     const positions = new Map(saved.map((id, index) => [id, index]));
     return activeTopicItems.slice().sort((a, b) => {
       const ai = positions.get(a.id);
@@ -161,15 +168,14 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     const target = index + direction;
     if (index < 0 || target < 0 || target >= ids.length) return;
     [ids[index], ids[target]] = [ids[target], ids[index]];
-    const next = { ...topicOrders, [topicId]: ids };
-    try { saveLocalJson(ORDER_KEY, next); setTopicOrders(next); setOrderError(''); }
+    const next = updateCardOrder(topicOrders, topicId, ids);
+    try { saveCardOrders(next); setTopicOrders(next); setOrderError(''); }
     catch { setOrderError('Não foi possível salvar a ordem dos cards neste dispositivo.'); }
   }
 
   function resetCardOrder() {
-    const next = { ...topicOrders };
-    delete next[topicId];
-    try { saveLocalJson(ORDER_KEY, next); setTopicOrders(next); setOrderError(''); }
+    const next = updateCardOrder(topicOrders, topicId, []);
+    try { saveCardOrders(next); setTopicOrders(next); setOrderError(''); }
     catch { setOrderError('Não foi possível restaurar a ordem original.'); }
   }
 
@@ -219,8 +225,8 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       const orderedIds = orderedTopicItems.map(card => card.id);
       orderedIds.push(id);
       try {
-        const next = { ...topicOrders, [topicId]: orderedIds };
-        saveLocalJson(ORDER_KEY, next);
+        const next = updateCardOrder(topicOrders, topicId, orderedIds);
+        saveCardOrders(next);
         setTopicOrders(next);
         setOrderError('');
         setDuplicateMessage(`Card duplicado! A cópia foi adicionada ao final do tópico, como pergunta ${printableSmallTalkItems(orderedTopicItems, questionFor).length + 1}.`);
@@ -1033,7 +1039,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
         <button type="button" className="secondary-button" aria-pressed={orderMode} disabled={loading || !topic} onClick={() => setOrderMode(v => !v)}>
           <SmallTalkIcon name={orderMode ? 'check' : 'sort'}/> {orderMode ? 'Concluir ordenação' : 'Ordenar cards'}
         </button>
-        {orderMode && <button type="button" className="secondary-button" disabled={!topicOrders[topicId]?.length} onClick={resetCardOrder}>Restaurar ordem original</button>}
+        {orderMode && <button type="button" className="secondary-button" disabled={!topicOrders[topicId]?.ids.length} onClick={resetCardOrder}>Restaurar ordem original</button>}
       </div>
       {orderError && <p role="alert">{orderError}</p>}
       {occurrenceError && <p role="alert">{occurrenceError}</p>}
