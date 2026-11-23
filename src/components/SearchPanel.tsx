@@ -13,6 +13,7 @@ interface SearchPanelProps {
   sourceLanguage: SourceLanguage;
   language: StudentLanguage;
   mentalSearch: string;
+  exactSearch: boolean;
   englishSearch: string;
   categorySearch: string;
   englishLevelSearch: string;
@@ -24,6 +25,7 @@ interface SearchPanelProps {
   availableTags: string[];
   selectedTags: string[];
   onMentalSearchChange: (value: string) => void;
+  onExactSearchChange: (value: boolean) => void;
   onEnglishSearchChange: (value: string) => void;
   onCategorySearchChange: (value: string) => void;
   onEnglishLevelSearchChange: (value: string) => void;
@@ -77,6 +79,7 @@ export function SearchPanel({
   sourceLanguage,
   language,
   mentalSearch,
+  exactSearch,
   englishSearch,
   categorySearch,
   englishLevelSearch,
@@ -88,6 +91,7 @@ export function SearchPanel({
   availableTags,
   selectedTags,
   onMentalSearchChange,
+  onExactSearchChange,
   onEnglishSearchChange,
   onCategorySearchChange,
   onEnglishLevelSearchChange,
@@ -106,7 +110,7 @@ export function SearchPanel({
   const openButtonRef = useRef<HTMLButtonElement>(null);
 
   const hasFilters = Boolean(
-    mentalSearch || englishSearch || categorySearch || englishLevelSearch ||
+    mentalSearch || englishSearch || exactSearch || categorySearch || englishLevelSearch ||
     hqImageFilter !== "all" || chunkFilter !== "all" ||
     (isAuthor && (youtubeVideoFilter !== "all" || youtubeShortFilter !== "all")) ||
     selectedTags.length > 0
@@ -197,6 +201,15 @@ export function SearchPanel({
             </button>
           )}
         </div>
+      </div>
+
+      <div className="field">
+        <label htmlFor="exact-intention-search" style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer" }}>
+          <input id="exact-intention-search" type="checkbox" checked={exactSearch}
+            onChange={(event) => onExactSearchChange(event.target.checked)}
+            style={{ width: 18, height: 18, flexShrink: 0 }} />
+          <span>Busca exata</span>
+        </label>
       </div>
 
       <div className="field">
