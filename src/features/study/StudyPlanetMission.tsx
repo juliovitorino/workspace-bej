@@ -51,7 +51,7 @@ const routeTo = (fraction: number) => {
   return points.map(point => `${point.x},${point.y}`).join(" ");
 };
 
-function PlanetArt({ planet, x, y, achieved, id }: { planet: Planet; x: number; y: number; achieved: boolean; id: string }) {
+function PlanetArt({ planet, x, y, achieved, id }: { planet: Planet; x: number; y: number; achieved: boolean }) {
   const r = planet.radius;
   return <g>
     {achieved && <circle cx={x} cy={y} r={r + 6} fill="none" stroke="#6ee7b7" strokeWidth="2" opacity=".85" />}
@@ -114,7 +114,7 @@ export function StudyPlanetMission({ percentage, progress, launchElapsedMs, onRe
       {traveled > 0 && <polyline points={routeTo(traveled)} fill="none" stroke={`url(#bej-mission-trail-${gradientId})`} strokeWidth="5" strokeLinejoin="round" strokeLinecap="round" />}
       {PLANETS.map(planet => {
         const point = routePoint(planet.at);
-        return <PlanetArt key={planet.name} planet={planet} x={point.x} y={point.y} achieved={completed >= planet.at} id={gradientId} />;
+        return <PlanetArt key={planet.name} planet={planet} x={point.x} y={point.y} achieved={completed >= planet.at} />;
       })}
       <g transform={`translate(${position.x} ${rocketY}) rotate(${rocketAngle})`}>
         <path d="M -5 12 L -8 22 L 0 17 L 8 22 L 5 12" fill="#fb923c" />
