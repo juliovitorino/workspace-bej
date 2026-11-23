@@ -87,7 +87,14 @@ export function StudyWeeklyOverview({ data, language, now, hideZeroData = false,
     if (hasSevenDayStreak) celebrateAchievement("days-streak-7", "7 dias consecutivos!", "Você estudou por 7 dias seguidos. Keep going!");
   }, [hasSevenDayStreak]);
   const fmt = (day: string, options: Intl.DateTimeFormatOptions) => new Date(day + "T12:00:00").toLocaleDateString(i18n.language, options);
-  const time = (seconds: number) => `${Math.floor(seconds / 3600)}h ${String(Math.floor(seconds % 3600 / 60)).padStart(2, "0")}min`;
+  const time = (seconds: number) => {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    if (!hours && !minutes) return "0min";
+    if (!hours) return `${minutes}min`;
+    if (!minutes) return `${hours}h`;
+    return `${hours}h ${minutes}min`;
+  };
   // Compact labels prevent overlaps between the seven bars.
   const barTime = (seconds: number) => {
     const hours = Math.floor(seconds / 3600);
