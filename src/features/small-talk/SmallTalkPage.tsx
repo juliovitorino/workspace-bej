@@ -71,6 +71,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   const [privateError, setPrivateError] = useState('');
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [editorId, setEditorId] = useState<string | null>(null);
+  const [expandedCardId, setExpandedCardId] = useState<string | null>(null);
   const [answerEditHistory, setAnswerEditHistory] = useState(() => beginAnswerEdit(''));
   const draft = answerEditHistory.present;
   const [answerCopyMessage, setAnswerCopyMessage] = useState('');
@@ -239,6 +240,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       setOccurrenceFilter('all'); setOccurrenceSort('manual');
       // Wait for React to render the new card after clearing filters, then reveal it.
       window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
+        setExpandedCardId(id);
         document.getElementById('small-talk-card-' + id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }));
     } catch (error) {
@@ -1051,7 +1053,22 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       const shown = answerVisible.includes(item.id);
       const modified = Object.prototype.hasOwnProperty.call(answerOverrides, item.id);
       const baseOriginal = personalAnswers?.answersByItemId[item.id]?.original?.segments.map(s => s.text).join('\n\n') ?? '';
-      return <article className="small-talk-question-card" id={'small-talk-card-' + item.id} key={item.id}>
+      const expanded = expandedCardId === item.id;
+      return <article className={'small-talk-question-card' + (expanded ? ' small-talk-card-expanded' : '')} id={'small-talk-card-' + item.id} key={item.id}>
+        <button type="button" className="small-talk-card-toggle" aria-expanded={expanded}
+          aria-controls={'small-talk-card-content-' + item.id}
+          onClick={() => {
+            setExpandedCardId(current => current === item.id ? null : item.id);
+            if (expanded) {
+              if (editorId === item.id) closeEditor();
+              if (questionEditorId === item.id) setQuestionEditorId(null);
+            }
+          }}>
+          <span className="small-talk-card-number">{printNumbers[item.id] ?? '—'}.</span>
+          <span className="small-talk-card-question">{questionFor(item)}</span>
+          <span className="small-talk-card-chevron" aria-hidden="true">{expanded ? '▴' : '▾'}</span>
+        </button>
+        {expanded && <div id={'small-talk-card-content-' + item.id} className="small-talk-card-content">
         {orderMode && <div className="small-talk-order-controls">
           <span>Posição {orderedTopicItems.findIndex(card => card.id === item.id) + 1}</span>
           <button type="button" className="small-talk-icon-button" title="Mover card para cima" aria-label="Mover card para cima" disabled={orderedTopicItems[0]?.id === item.id} onClick={() => moveCard(item.id, -1)}><SmallTalkIcon name="arrow-up"/></button>
@@ -1157,6 +1174,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
             <button type="button" className="secondary-button" onClick={() => setRestorePromptId(null)}>Cancelar</button>
             <button type="button" className="small-talk-danger-button" onClick={() => restoreAnswer(item.id)}>RESTAURAR ORIGINAL</button>
           </div>
+        </div>}
         </div>}
       </article>;
     })}</div>
