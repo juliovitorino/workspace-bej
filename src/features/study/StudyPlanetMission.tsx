@@ -19,7 +19,7 @@ const WAYPOINTS = [
   [267, 169], [335, 196], [403, 244], [471, 227],
   [520, 180], [498, 123], [452, 80], [508, 47], [577, 50],
 ] as const;
-const ROUTE = WAYPOINTS.map(([x, y]) => ({ x, y }));
+const ROUTE: { x: number; y: number }[] = WAYPOINTS.map(([x, y]) => ({ x, y }));
 const DISTANCES = ROUTE.reduce<number[]>((acc, point, index) => {
   if (index === 0) return [0];
   const previous = ROUTE[index - 1];
@@ -51,7 +51,7 @@ const routeTo = (fraction: number) => {
   return points.map(point => `${point.x},${point.y}`).join(" ");
 };
 
-function PlanetArt({ planet, x, y, achieved, id }: { planet: Planet; x: number; y: number; achieved: boolean }) {
+function PlanetArt({ planet, x, y, achieved }: { planet: Planet; x: number; y: number; achieved: boolean }) {
   const r = planet.radius;
   return <g>
     {achieved && <circle cx={x} cy={y} r={r + 6} fill="none" stroke="#6ee7b7" strokeWidth="2" opacity=".85" />}
