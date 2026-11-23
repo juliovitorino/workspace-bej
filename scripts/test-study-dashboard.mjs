@@ -463,3 +463,12 @@ assert.match(rocketSource, /onKeyDown=\{event =>/);
 assert.match(rocketSource, /event\.key === "Enter" \|\| event\.key === " "/);
 assert.match(rocketSource, /cancelAnimationFrame\(flightFrameRef\.current\)/);
 console.log('PASS: planet supports mouse, touch and keyboard replay without overlapping animations.');
+
+// The historical gauge is now a needle speedometer animated with the rocket journey.
+const speedometerSource = readFileSync('src/features/study/StudySpeedometer.tsx', 'utf8');
+assert.match(dashboardSource, /StudySpeedometer/);
+assert.match(rocketSource, /<StudySpeedometer percentage=\{percentage\} progress=\{flightProgress\}/);
+assert.match(speedometerSource, /rotate\(\$\{angle\} 120 115\)/);
+assert.match(speedometerSource, /Math\.min\(1, percentage \/ 100\)\) \* progress/);
+assert.match(speedometerSource, /Math\.round\(percentage\)/);
+console.log('PASS: historical goal speedometer needle follows scroll animation and displays goal percentage.');
