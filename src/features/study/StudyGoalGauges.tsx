@@ -5,10 +5,37 @@ import { languageName } from "../../i18n";
 import type { StudyData } from "./studyStorage";
 import { studyEntries } from "./studyStats";
 import { localDay } from "./studyTrackingService";
+import { StudySpeedometer } from "./StudySpeedometer";
+import { StudyPlanetMission } from "./StudyPlanetMission";
 
 const hoursAndMinutes = (seconds: number) => `${Math.floor(seconds / 3600)}h ${String(Math.floor(seconds % 3600 / 60)).padStart(2, "0")}min`;
 
-/** SVG semi-circular gauge inspired by BI dashboards. Display only; no persistence changes. */
+// Launch sequence: hold upright, climb to 45°, hold, level to 90°, then cruise.
+const LAUNCH_DURATION_MS = 1500;
+const CRUISE_DURATION_MS = 1800;
+const smoothStep = (value: number) => {
+  const t = Math.max(0, Math.min(1, value));
+  return t * t * (3 - 2 * t);
+};
+const launchPose = (elapsedMs: number) => {
+  if (elapsedMs <= 500) return { angle: 0, y: 49 };
+  if (elapsedMs <= 750) {
+    const t = smoothStep((elapsedMs - 500) / 250);
+    return { angle: 45 * t, y: 49 - 10 * t };
+  }
+  if (elapsedMs <= 1000) return { angle: 45, y: 39 };
+  if (elapsedMs <= 1250) {
+    const t = smoothStep((elapsedMs - 1000) / 250);
+    return { angle: 45 + 45 * t, y: 39 - 10 * t };
+  }
+  return { angle: 90, y: 29 };
+};
+const cruiseProgress = (elapsedMs: number) => {
+  const t = Math.max(0, Math.min(1, (elapsedMs - LAUNCH_DURATION_MS) / CRUISE_DURATION_MS));
+  return 1 - Math.pow(1 - t, 3);
+};
+
+/** SVG historical goal visualization. Display only; no persistence changes. */
 export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hideZeroData = false, explanationVisible, onToggleExplanation }: {
   data: StudyData;
   goals: StudyData["goals"];
@@ -21,34 +48,61 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
 }) {
   const { t } = useTranslation();
   const journeyRef = useRef<HTMLElement | null>(null);
-  const [flightProgress, setFlightProgress] = useState(0);
+  const [launchElapsedMs, setLaunchElapsedMs] = useState(0);
+  const [missionView, setMissionView] = useState(false);
+  const [isPhoneViewport, setIsPhoneViewport] = useState(() => typeof window !== "undefined" && window.matchMedia("(max-width: 600px)").matches);
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 600px)");
+    const update = () => {
+      setIsPhoneViewport(media.matches);
+      if (media.matches) setMissionView(false);
+    };
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+  const flightProgress = cruiseProgress(launchElapsedMs);
+  const rocketPose = launchPose(launchElapsedMs);
+  const flightFrameRef = useRef<number | null>(null);
+  const launchFlight = () => {
+    if (flightFrameRef.current !== null) cancelAnimationFrame(flightFrameRef.current);
+    flightFrameRef.current = null;
+    setLaunchElapsedMs(0);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setLaunchElapsedMs(LAUNCH_DURATION_MS + CRUISE_DURATION_MS);
+      return;
+    }
+    let startTime: number | undefined;
+    const tick = (now: number) => {
+      if (startTime === undefined) startTime = now;
+      const elapsed = Math.min(LAUNCH_DURATION_MS + CRUISE_DURATION_MS, now - startTime);
+      setLaunchElapsedMs(elapsed);
+      if (elapsed < LAUNCH_DURATION_MS + CRUISE_DURATION_MS) flightFrameRef.current = requestAnimationFrame(tick);
+      else flightFrameRef.current = null;
+    };
+    flightFrameRef.current = requestAnimationFrame(tick);
+  };
+  const switchMissionView = () => {
+    // A newly selected view starts its own animation at the moment of the click.
+    if (isPhoneViewport) return;
+    setMissionView(previous => !previous);
+    launchFlight();
+  };
   useEffect(() => {
     const section = journeyRef.current;
     if (!section) return;
-    let frame = 0;
     let started = false;
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const observer = new IntersectionObserver(entries => {
       if (started || !entries.some(entry => entry.isIntersecting)) return;
       started = true;
       observer.disconnect();
-      if (reducedMotion) {
-        setFlightProgress(1);
-        return;
-      }
-      let startTime: number | undefined;
-      const tick = (now: number) => {
-        if (startTime === undefined) startTime = now;
-        const elapsed = Math.min(1, (now - startTime) / 1800);
-        setFlightProgress(1 - Math.pow(1 - elapsed, 3));
-        if (elapsed < 1) frame = requestAnimationFrame(tick);
-      };
-      frame = requestAnimationFrame(tick);
+      launchFlight();
     }, { threshold: 0.2 });
     observer.observe(section);
     return () => {
       observer.disconnect();
-      cancelAnimationFrame(frame);
+      if (flightFrameRef.current !== null) cancelAnimationFrame(flightFrameRef.current);
+      flightFrameRef.current = null;
     };
   }, []);
 
@@ -76,20 +130,17 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
       const fraction = Math.max(0, Math.min(1, percentage / 100));
       const flightFraction = fraction * flightProgress;
       const monthly = monthlyGoals[code];
-      // Half-circle with radius 88 and a 276.46 unit arc.
-      const arc = Math.PI * 88;
       return <article className="bej-gauge-item" key={code} aria-label={`${languageName(code)}: ${hoursAndMinutes(actual)} / ${target ? `${target}h` : t("study.noGoal")}`}>
         <h4>{languageName(code)}</h4>
         <div className="bej-gauge-visual">
-          <svg viewBox="0 0 240 150" role="img" aria-label={`${Math.round(percentage)}%`}>
-            <path className="bej-gauge-track" d="M 32 118 A 88 88 0 0 1 208 118" fill="none" strokeWidth="19" strokeLinecap="round" />
-            <path className="bej-gauge-progress" d="M 32 118 A 88 88 0 0 1 208 118" fill="none" strokeWidth="19" strokeLinecap="round" strokeDasharray={`${fraction * arc} ${arc}`} />
-            <text x="120" y="102" textAnchor="middle" className="bej-gauge-percent">{target ? `${Math.round(percentage)}%` : "—"}</text>
-            <text x="120" y="125" textAnchor="middle" className="bej-gauge-subtitle">{t("bejOverview.goalCompleted")}</text>
-          </svg>
+          <button type="button" onClick={switchMissionView} disabled={isPhoneViewport} aria-pressed={missionView} aria-label={isPhoneViewport ? "Velocímetro de progresso" : missionView ? "Mostrar jornada espacial clássica" : "Mostrar Missão Espacial BEJ"} title={missionView ? "Voltar à jornada clássica" : "Abrir Missão Espacial BEJ"} style={{ display: "block", width: "100%", background: "none", border: "none", padding: 0, cursor: isPhoneViewport ? "default" : "pointer" }}>
+            <StudySpeedometer percentage={percentage} progress={flightProgress} hasGoal={Boolean(target)} subtitle={t("bejOverview.goalCompleted")} />
+          </button>
+          {!isPhoneViewport && <p style={{ fontSize: 12, textAlign: "center", margin: "2px 0 0", opacity: .8 }}>Toque no velocímetro para {missionView ? "voltar à jornada clássica" : "ver a Missão Espacial BEJ"}</p>}
         </div>
-        {target !== undefined && target > 0 && <div className="bej-rocket-journey" role="img" aria-label={`${languageName(code)}: ${percentage.toFixed(1)}% ${t("bejOverview.goalCompleted")}`} style={{ width: "100%", maxWidth: 520, margin: "12px auto 18px" }}>
-          <svg viewBox="0 0 360 112" width="100%" aria-hidden="true" style={{ display: "block", overflow: "visible" }}>
+        {target !== undefined && target > 0 && missionView && !isPhoneViewport && <StudyPlanetMission percentage={percentage} progress={flightProgress} launchElapsedMs={launchElapsedMs} onReplay={launchFlight} />}
+        {target !== undefined && target > 0 && (!missionView || isPhoneViewport) && <div className="bej-rocket-journey" role="group" aria-label={`${languageName(code)}: ${percentage.toFixed(1)}% ${t("bejOverview.goalCompleted")}`} style={{ width: "100%", maxWidth: 520, margin: "12px auto 18px" }}>
+          <svg viewBox="0 0 360 112" width="100%" role="group" aria-label="Jornada espacial da meta" style={{ display: "block", overflow: "visible" }}>
             <defs>
               <linearGradient id={`bej-rocket-trail-${code}`} x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stopColor="#0ea5e9" />
@@ -105,13 +156,17 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
               <path d="M 6 13 H 26 M 6 23 H 26 M 6 33 H 26" stroke="#94a3b8" strokeWidth="2" />
               <path d="M 17 43 V 10 L 24 2 L 31 10 V 43 Z" fill="#cbd5e1" stroke="#64748b" strokeWidth="1.5" />
             </g>
-            <g transform="translate(322 62)">
-              <circle r="22" fill="#3b82f6" />
-              <path d="M -18 -7 Q -9 -19 2 -13 L 4 -3 L -6 5 L -16 2 L -10 15 L 3 11 L 11 17 L 20 3 L 11 -6 L 15 -15" fill="#34d399" />
-              <ellipse rx="27" ry="9" transform="rotate(-25)" stroke="#93c5fd" strokeWidth="2.5" fill="none" />
+            <g role="button" tabIndex={0} aria-label="Repetir animação do foguete" onClick={launchFlight} onKeyDown={event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); launchFlight(); } }} style={{ cursor: "pointer" }}>
+              <title>Repetir animação do foguete</title>
+              <circle cx="322" cy="62" r="32" fill="transparent" />
+              <g transform="translate(322 62)">
+                <circle r="22" fill="#3b82f6" />
+                <path d="M -18 -7 Q -9 -19 2 -13 L 4 -3 L -6 5 L -16 2 L -10 15 L 3 11 L 11 17 L 20 3 L 11 -6 L 15 -15" fill="#34d399" />
+                <ellipse rx="27" ry="9" transform="rotate(-25)" stroke="#93c5fd" strokeWidth="2.5" fill="none" />
+              </g>
             </g>
             {flightFraction > 0 && <path d={`M ${38 + 284 * flightFraction} 45 V 62`} stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="3 3" />}
-            <g transform={`translate(${38 + 284 * flightFraction} ${flightFraction === 0 ? 49 : 29}) rotate(${flightFraction === 0 ? 0 : 90})`}>
+            <g transform={`translate(${38 + 284 * flightFraction} ${rocketPose.y}) rotate(${rocketPose.angle})`}>
               <path d="M -6 13 L -10 23 L 0 19 L 10 23 L 6 13" fill="#f97316" />
               <path d="M 0 -22 Q 13 -10 10 9 L 6 15 H -6 L -10 9 Q -13 -10 0 -22 Z" fill="#f8fafc" stroke="#475569" strokeWidth="1.5" />
               <circle cy="-4" r="5" fill="#38bdf8" stroke="#0284c7" strokeWidth="2" />

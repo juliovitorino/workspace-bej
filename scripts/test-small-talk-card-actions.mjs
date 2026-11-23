@@ -118,7 +118,7 @@ test('walking shows printed number but does not speak it', () => {
   assert.match(page, /questionNumbers=\{printNumbers\}/);
   assert.match(walking, /questionNumbers\[current\.id\]/);
   assert.match(walking, /speak\(current\.question\?\.text \?\? ''/);
-  assert.match(page, /const items = printableSmallTalkItems\(orderedTopicItems, questionFor\)/);
+  assert.match(page, /const items = printableSmallTalkItems\(filtered, questionFor\)/);
 });
 test('duplicate action and card icons use SVG; brand assets stay intact', () => {
   assert.match(page, /aria-label="Duplicar card"[^>]*onClick=\{\(\) => duplicateCard\(item\)\}/);
@@ -128,4 +128,43 @@ test('duplicate action and card icons use SVG; brand assets stay intact', () => 
     assert.ok(actions.includes('name="' + icon + '"'), icon);
   }
   assert.match(actions, /<img src=\{aiAssetPath\(aiProvider\)\}/);
+});
+
+test('screen and printing use the same filtered sequence and numbering', () => {
+  assert.match(page, /const printableItems = printableSmallTalkItems\(filtered, questionFor\)/);
+  assert.match(page, /const printNumbers = smallTalkPrintNumbers\(printableItems\)/);
+  assert.match(page, /const printedNumber = printNumbers\[item\.id\]/);
+  assert.match(page, /const items = printableSmallTalkItems\(filtered, questionFor\)/);
+  assert.match(page, /small-talk-print-number">\{printNumbers\[item\.id\]\}/);
+  const visible = [card('c', 3), card('a', 1), card('b', 2)];
+  const numbered = print.smallTalkPrintNumbers(print.printableSmallTalkItems(visible, item => item.question.text));
+  assert.equal(numbered.c, 1);
+  assert.equal(numbered.a, 2);
+  assert.equal(numbered.b, 3);
+});
+
+test('manual card ordering is stored with a timestamp and refreshed after Drive sync', () => {
+  assert.match(page, /readCardOrders\(\)/);
+  assert.match(page, /updateCardOrder\(topicOrders, topicId, ids\)/);
+  assert.match(page, /saveCardOrders\(next\)/);
+  assert.match(page, /event\.key === SMALL_TALK_CARD_ORDER_KEY/);
+});
+
+test('Small Talk cards start collapsed and expand one card at a time', () => {
+  assert.match(page, /const \[expandedCardId, setExpandedCardId\] = useState<string \| null>\(null\)/);
+  assert.match(page, /const expanded = expandedCardId === item\.id/);
+  assert.match(page, /aria-expanded=\{expanded\}/);
+  assert.match(page, /setExpandedCardId\(current => current === item\.id \? null : item\.id\)/);
+  assert.match(page, /\{expanded && <div id=\{'small-talk-card-content-' \+ item\.id\}/);
+  assert.match(page, /className="small-talk-card-number"/);
+  assert.match(page, /className="small-talk-card-question"/);
+  assert.match(page, /setExpandedCardId\(id\)/);
+});
+
+test('expanded card does not duplicate the question while keeping question actions', () => {
+  assert.match(page, /className="small-talk-card-question">\{questionFor\(item\)\}/);
+  assert.match(page, /className="small-talk-question-heading" role="group" aria-label="Ações da pergunta"/);
+  assert.doesNotMatch(page, /small-talk-question-heading"><p><strong>/);
+  assert.match(page, /aria-label="Editar pergunta"/);
+  assert.match(page, /'Copiar pergunta'/);
 });

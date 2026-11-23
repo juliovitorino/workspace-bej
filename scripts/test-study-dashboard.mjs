@@ -324,7 +324,7 @@ assert.doesNotMatch(moduleTimeComponent, /useState<ModuleValueMode>/);
 assert.match(moduleTimeComponent, /mode: ModuleValueMode;/);
 assert.match(moduleTimeComponent, /onToggle: \(\) => void;/);
 assert.match(moduleTimeComponent, /onClick=\{onToggle\}/);
-assert.match(dashboardSource, /const \[moduleValueMode, setModuleValueMode\] = useState<ModuleValueMode>\("both"\)/);
+assert.match(dashboardSource, /const \[moduleValueMode, setModuleValueMode\] = useState<ModuleValueMode>\("time"\)/);
 assert.match(dashboardSource, /lastActivity=\{latestModuleActivity\[key\]\} now=\{recencyNow\} mode=\{moduleValueMode\} onToggle=\{toggleModuleValueMode\}/);
 assert.match(moduleTimeComponent, /className="study-module-value"/);
 assert.doesNotMatch(moduleTimeComponent, /study-module-value-desktop|study-module-value-mobile/);
@@ -442,12 +442,12 @@ console.log('PASS: dashboard and weekly streak follow all four study languages a
 // Rocket journey: visual-only, relative to the same historical goal percentage.
 const rocketSource = readFileSync('src/features/study/StudyGoalGauges.tsx', 'utf8');
 assert.match(rocketSource, /bej-rocket-journey/);
-assert.match(rocketSource, /284 \* fraction/);
-assert.match(rocketSource, /fraction === 0 \? 0 : 90/, 'rocket is upright at launch and horizontal during flight');
-assert.match(rocketSource, /fraction === 0 \? 49 : 29/, 'flying rocket stays above the colored progress track');
-assert.match(rocketSource, /fraction > 0 && <circle/, 'progress endpoint remains visible');
+assert.match(rocketSource, /284 \* flightFraction/);
+assert.match(rocketSource, /rotate\(\$\{rocketPose\.angle\}\)/, 'rocket rotation follows staged launch pose');
+assert.match(rocketSource, /\$\{rocketPose\.y\}/, 'rocket climbs vertically before entering cruise');
+assert.match(rocketSource, /flightFraction > 0 && <circle/, 'progress endpoint remains visible');
 assert.match(rocketSource, /stroke=\{\x60url\(#bej-rocket-trail-/);
-assert.match(rocketSource, /target !== undefined && target > 0 &&/);
+assert.match(rocketSource, /target !== undefined && target > 0 && !missionView/);
 console.log('PASS: rocket and colored trail use the existing historical goal fraction.');
 
 // Rocket animation starts when the goal section enters the viewport.
@@ -456,3 +456,91 @@ assert.match(rocketSource, /requestAnimationFrame/);
 assert.match(rocketSource, /prefers-reduced-motion/);
 assert.match(rocketSource, /fraction \* flightProgress/);
 console.log('PASS: rocket journey animates on visibility and honors reduced motion.');
+
+// Tapping or keyboard-activating the planet replays the flight.
+assert.match(rocketSource, /onClick=\{launchFlight\}/);
+assert.match(rocketSource, /onKeyDown=\{event =>/);
+assert.match(rocketSource, /event\.key === "Enter" \|\| event\.key === " "/);
+assert.match(rocketSource, /cancelAnimationFrame\(flightFrameRef\.current\)/);
+console.log('PASS: planet supports mouse, touch and keyboard replay without overlapping animations.');
+
+// The historical gauge is now a needle speedometer animated with the rocket journey.
+const speedometerSource = readFileSync('src/features/study/StudySpeedometer.tsx', 'utf8');
+assert.match(rocketSource, /import \{ StudySpeedometer \} from/);
+assert.match(rocketSource, /<StudySpeedometer percentage=\{percentage\} progress=\{flightProgress\}/);
+assert.match(speedometerSource, /rotate\(\$\{angle\} 120 115\)/);
+assert.match(speedometerSource, /Math\.min\(1, percentage \/ 100\)\) \* progress/);
+assert.match(speedometerSource, /Math\.round\(percentage\)/);
+console.log('PASS: historical goal speedometer needle follows scroll animation and displays goal percentage.');
+
+// Three-stage takeoff pauses at 0° and 45° before the horizontal cruise.
+assert.match(rocketSource, /elapsedMs <= 500/);
+assert.match(rocketSource, /elapsedMs <= 750/);
+assert.match(rocketSource, /elapsedMs <= 1000/);
+assert.match(rocketSource, /elapsedMs <= 1250/);
+assert.match(rocketSource, /angle: 45, y: 39/);
+assert.match(rocketSource, /angle: 90, y: 29/);
+assert.match(rocketSource, /LAUNCH_DURATION_MS = 1500/);
+assert.match(rocketSource, /CRUISE_DURATION_MS = 1800/);
+assert.match(rocketSource, /elapsedMs - LAUNCH_DURATION_MS/);
+assert.match(rocketSource, /setLaunchElapsedMs\(0\)/);
+console.log('PASS: rocket holds at launch, climbs through 45 degrees, then cruises horizontally.');
+
+// Planetary mission coexists with the original journey and is toggled by the speedometer.
+const missionSource = readFileSync('src/features/study/StudyPlanetMission.tsx', 'utf8');
+assert.match(rocketSource, /useState\(false\)/);
+assert.match(rocketSource, /setMissionView\(previous => !previous\)/);
+assert.match(rocketSource, /!missionView && <div className="bej-rocket-journey"/);
+assert.match(rocketSource, /missionView && <StudyPlanetMission/);
+assert.match(missionSource, /Missão Espacial BEJ/);
+assert.match(missionSource, /const PLANETS/);
+assert.match(missionSource, /name: "Netuno", at: 1/);
+assert.match(missionSource, /name: "Lua", at: 0\.05/);
+assert.match(missionSource, /const routePoint/);
+assert.match(missionSource, /const routeTo/);
+assert.match(missionSource, /crater|\["Lua", "Marte", "Mercúrio", "Vênus"\]/i);
+assert.match(missionSource, /onReplay/);
+console.log('PASS: speedometer switches between classic journey and cratered planetary mission.');
+
+// The marker follows the path while the rocket remains offset, linked by a dashed tether.
+assert.match(missionSource, /const rocketX =/);
+assert.match(missionSource, /const cruiseY =/);
+assert.match(missionSource, /headingRadians/);
+assert.match(missionSource, /cx=\{position\.x\} cy=\{position\.y\} r="5\.5" fill="#22c55e"/);
+assert.match(missionSource, /x1=\{position\.x\} y1=\{position\.y\} x2=\{rocketX\} y2=\{rocketY\}/);
+assert.match(missionSource, /strokeDasharray="4 5"/);
+assert.match(missionSource, /translate\(\$\{rocketX\} \$\{rocketY\}\)/);
+console.log('PASS: green marker follows planetary route and rocket flies offset with dashed tether.');
+
+// Space tributes remain decorative milestones, with keyboard-accessible facts.
+assert.match(missionSource, /function SpaceTribute/);
+assert.match(missionSource, /kind="webb"/);
+assert.match(missionSource, /kind="voyager"/);
+assert.match(missionSource, /James Webb Space Telescope/);
+assert.match(missionSource, /Voyager 1/);
+assert.match(missionSource, /onKeyDown=\{event =>/);
+assert.match(missionSource, /selectedTribute &&/);
+console.log('PASS: James Webb and Voyager 1 SVG tributes show accessible facts.');
+
+// Switching views restarts the flight clock, not the saved study progress.
+assert.match(rocketSource, /const switchMissionView = \(\) => \{/);
+assert.match(rocketSource, /setMissionView\(previous => !previous\);\s*launchFlight\(\);/);
+assert.match(rocketSource, /onClick=\{switchMissionView\}/);
+console.log('PASS: switching between mission views restarts the animation on click.');
+
+// Phone viewports use only the classic journey; tablet/desktop retain the switch.
+assert.match(rocketSource, /matchMedia\("\(max-width: 600px\)"\)/);
+assert.match(rocketSource, /if \(media\.matches\) setMissionView\(false\)/);
+assert.match(rocketSource, /if \(isPhoneViewport\) return/);
+assert.match(rocketSource, /disabled=\{isPhoneViewport\}/);
+assert.match(rocketSource, /missionView && !isPhoneViewport && <StudyPlanetMission/);
+assert.match(rocketSource, /\(!missionView \|\| isPhoneViewport\)/);
+console.log('PASS: phone viewports show classic journey only.');
+
+// The ranking opens on studied time, and the weekly total/average omit zero units.
+assert.match(dashboardSource, /useState<ModuleValueMode>\("time"\)/);
+assert.match(weeklySource, /if \(!hours\) return `\$\{minutes\}min`/);
+assert.match(weeklySource, /if \(!minutes\) return `\$\{hours\}h`/);
+assert.match(weeklySource, /\{time\(weekTotal\)\}/);
+assert.match(weeklySource, /\{time\(Math\.round\(dailyAverage\)\)\}/);
+console.log('PASS: ranking defaults to hours and weekly total/average suppress zero units.');
