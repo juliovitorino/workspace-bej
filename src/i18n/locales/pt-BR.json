@@ -298,10 +298,10 @@
       "previous": "Ajuste manual"
     },
     "periods": {
-      "week": "Nesta semana",
       "7": "Últimos sete dias",
       "30": "Últimos 30 dias",
       "90": "Últimos 90 dias",
+      "week": "Nesta semana",
       "yesterday": "Ontem",
       "today": "Hoje",
       "month": "Mês atual",
@@ -1360,5 +1360,46 @@
     "copyErrorTitle": "Não foi possível copiar",
     "copyDialogOk": "OK",
     "bitcoinRotationHint": "A cada cópia, outro endereço é sorteado. O QR Code acompanha o endereço exibido."
+  },
+  "spaceMission": {
+    "title": "Missão Espacial BEJ",
+    "planets": {
+      "Terra": "Terra",
+      "Lua": "Lua",
+      "Marte": "Marte",
+      "Vênus": "Vênus",
+      "Mercúrio": "Mercúrio",
+      "Júpiter": "Júpiter",
+      "Saturno": "Saturno",
+      "Urano": "Urano",
+      "Netuno": "Netuno"
+    },
+    "planetStatus": "{{name}}: {{percent}}% — {{status}}",
+    "achieved": "conquistado",
+    "toAchieve": "a conquistar",
+    "webbLabel": "Telescópio James Webb",
+    "voyagerLabel": "Sonda Voyager 1",
+    "learnAbout": "Conhecer {{name}}",
+    "tributeHint": "Homenagem: {{name}}. Clique para conhecer.",
+    "webbTitle": "Telescópio Espacial James Webb",
+    "voyagerTitle": "Voyager 1",
+    "webbDetail": "Lançado em 2021, observa o universo principalmente em infravermelho. Seu espelho principal possui 18 segmentos hexagonais dourados.",
+    "voyagerDetail": "Lançada em 1977, tornou-se o primeiro objeto construído pela humanidade a alcançar o espaço interestelar, em 2012.",
+    "replay": "Repetir missão",
+    "replayAccessible": "Repetir missão espacial",
+    "progressAccessible": "Missão Espacial BEJ: {{percent}}% concluído. {{destination}}",
+    "nextDestination": "Próximo destino: {{name}} ({{percent}}%)",
+    "neptuneAchieved": "Netuno conquistado",
+    "completed": "Missão concluída: Netuno conquistado!",
+    "closeTribute": "Fechar homenagem",
+    "speedometer": "Velocímetro de progresso",
+    "showClassic": "Mostrar jornada espacial clássica",
+    "showMission": "Mostrar Missão Espacial BEJ",
+    "backClassic": "Voltar à jornada clássica",
+    "openMission": "Abrir Missão Espacial BEJ",
+    "tapClassic": "Toque no velocímetro para voltar à jornada clássica",
+    "tapMission": "Toque no velocímetro para ver a Missão Espacial BEJ",
+    "classicJourney": "Jornada espacial da meta",
+    "replayRocket": "Repetir animação do foguete"
   }
 }
