@@ -501,3 +501,13 @@ assert.match(missionSource, /const routeTo/);
 assert.match(missionSource, /crater|\["Lua", "Marte", "Mercúrio", "Vênus"\]/i);
 assert.match(missionSource, /onReplay/);
 console.log('PASS: speedometer switches between classic journey and cratered planetary mission.');
+
+// The marker follows the path while the rocket remains offset, linked by a dashed tether.
+assert.match(missionSource, /const rocketX =/);
+assert.match(missionSource, /const cruiseY =/);
+assert.match(missionSource, /headingRadians/);
+assert.match(missionSource, /cx=\{position\.x\} cy=\{position\.y\} r="5\.5" fill="#22c55e"/);
+assert.match(missionSource, /x1=\{position\.x\} y1=\{position\.y\} x2=\{rocketX\} y2=\{rocketY\}/);
+assert.match(missionSource, /strokeDasharray="4 5"/);
+assert.match(missionSource, /translate\(\$\{rocketX\} \$\{rocketY\}\)/);
+console.log('PASS: green marker follows planetary route and rocket flies offset with dashed tether.');
