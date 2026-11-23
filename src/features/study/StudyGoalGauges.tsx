@@ -9,7 +9,32 @@ import { StudySpeedometer } from "./StudySpeedometer";
 
 const hoursAndMinutes = (seconds: number) => `${Math.floor(seconds / 3600)}h ${String(Math.floor(seconds % 3600 / 60)).padStart(2, "0")}min`;
 
-/** SVG semi-circular gauge inspired by BI dashboards. Display only; no persistence changes. */
+// Launch sequence: hold upright, climb to 45°, hold, level to 90°, then cruise.
+const LAUNCH_DURATION_MS = 1500;
+const CRUISE_DURATION_MS = 1800;
+const smoothStep = (value: number) => {
+  const t = Math.max(0, Math.min(1, value));
+  return t * t * (3 - 2 * t);
+};
+const launchPose = (elapsedMs: number) => {
+  if (elapsedMs <= 500) return { angle: 0, y: 49 };
+  if (elapsedMs <= 750) {
+    const t = smoothStep((elapsedMs - 500) / 250);
+    return { angle: 45 * t, y: 49 - 10 * t };
+  }
+  if (elapsedMs <= 1000) return { angle: 45, y: 39 };
+  if (elapsedMs <= 1250) {
+    const t = smoothStep((elapsedMs - 1000) / 250);
+    return { angle: 45 + 45 * t, y: 39 - 10 * t };
+  }
+  return { angle: 90, y: 29 };
+};
+const cruiseProgress = (elapsedMs: number) => {
+  const t = Math.max(0, Math.min(1, (elapsedMs - LAUNCH_DURATION_MS) / CRUISE_DURATION_MS));
+  return 1 - Math.pow(1 - t, 3);
+};
+
+/** SVG historical goal visualization. Display only; no persistence changes. */
 export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hideZeroData = false, explanationVisible, onToggleExplanation }: {
   data: StudyData;
   goals: StudyData["goals"];
@@ -22,22 +47,24 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
 }) {
   const { t } = useTranslation();
   const journeyRef = useRef<HTMLElement | null>(null);
-  const [flightProgress, setFlightProgress] = useState(0);
+  const [launchElapsedMs, setLaunchElapsedMs] = useState(0);
+  const flightProgress = cruiseProgress(launchElapsedMs);
+  const rocketPose = launchPose(launchElapsedMs);
   const flightFrameRef = useRef<number | null>(null);
   const launchFlight = () => {
     if (flightFrameRef.current !== null) cancelAnimationFrame(flightFrameRef.current);
     flightFrameRef.current = null;
-    setFlightProgress(0);
+    setLaunchElapsedMs(0);
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setFlightProgress(1);
+      setLaunchElapsedMs(LAUNCH_DURATION_MS + CRUISE_DURATION_MS);
       return;
     }
     let startTime: number | undefined;
     const tick = (now: number) => {
       if (startTime === undefined) startTime = now;
-      const elapsed = Math.min(1, (now - startTime) / 1800);
-      setFlightProgress(1 - Math.pow(1 - elapsed, 3));
-      if (elapsed < 1) flightFrameRef.current = requestAnimationFrame(tick);
+      const elapsed = Math.min(LAUNCH_DURATION_MS + CRUISE_DURATION_MS, now - startTime);
+      setLaunchElapsedMs(elapsed);
+      if (elapsed < LAUNCH_DURATION_MS + CRUISE_DURATION_MS) flightFrameRef.current = requestAnimationFrame(tick);
       else flightFrameRef.current = null;
     };
     flightFrameRef.current = requestAnimationFrame(tick);
@@ -116,7 +143,7 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
               </g>
             </g>
             {flightFraction > 0 && <path d={`M ${38 + 284 * flightFraction} 45 V 62`} stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="3 3" />}
-            <g transform={`translate(${38 + 284 * flightFraction} ${flightFraction === 0 ? 49 : 29}) rotate(${flightFraction === 0 ? 0 : 90})`}>
+            <g transform={`translate(${38 + 284 * flightFraction} ${rocketPose.y}) rotate(${rocketPose.angle})`}>
               <path d="M -6 13 L -10 23 L 0 19 L 10 23 L 6 13" fill="#f97316" />
               <path d="M 0 -22 Q 13 -10 10 9 L 6 15 H -6 L -10 9 Q -13 -10 0 -22 Z" fill="#f8fafc" stroke="#475569" strokeWidth="1.5" />
               <circle cy="-4" r="5" fill="#38bdf8" stroke="#0284c7" strokeWidth="2" />
