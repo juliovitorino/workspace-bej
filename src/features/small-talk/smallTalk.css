@@ -345,3 +345,27 @@
 .small-talk-configuration-toggle .primary-button:has(svg),
 .small-talk-topic-export-trigger:has(svg){display:inline-flex;align-items:center;justify-content:center;gap:.45rem}
 .small-talk-print-number{color:var(--accent,var(--primary-color,#5586bc));font-weight:800;white-space:nowrap}
+
+
+/* Compact Small Talk list: show only number and question until expanded. */
+.small-talk-card-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.small-talk-card-toggle:hover { background: rgba(127, 127, 127, 0.08); }
+.small-talk-card-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: -3px; }
+.small-talk-card-number { flex: 0 0 auto; font-weight: 700; font-variant-numeric: tabular-nums; }
+.small-talk-card-question { flex: 1; min-width: 0; font-weight: 600; overflow-wrap: anywhere; }
+.small-talk-card-chevron { flex: 0 0 auto; opacity: 0.7; }
+.small-talk-card-content { padding: 0 1rem 1rem; }
+.small-talk-card-content .small-talk-question-heading { margin-top: 0.25rem; }
