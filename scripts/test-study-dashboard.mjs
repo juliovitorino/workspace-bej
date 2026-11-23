@@ -521,3 +521,9 @@ assert.match(missionSource, /Voyager 1/);
 assert.match(missionSource, /onKeyDown=\{event =>/);
 assert.match(missionSource, /selectedTribute &&/);
 console.log('PASS: James Webb and Voyager 1 SVG tributes show accessible facts.');
+
+// Switching views restarts the flight clock, not the saved study progress.
+assert.match(rocketSource, /const switchMissionView = \(\) => \{/);
+assert.match(rocketSource, /setMissionView\(previous => !previous\);\s*launchFlight\(\);/);
+assert.match(rocketSource, /onClick=\{switchMissionView\}/);
+console.log('PASS: switching between mission views restarts the animation on click.');
