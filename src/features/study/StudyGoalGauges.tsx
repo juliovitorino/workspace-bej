@@ -5,6 +5,7 @@ import { languageName } from "../../i18n";
 import type { StudyData } from "./studyStorage";
 import { studyEntries } from "./studyStats";
 import { localDay } from "./studyTrackingService";
+import { StudySpeedometer } from "./StudySpeedometer";
 
 const hoursAndMinutes = (seconds: number) => `${Math.floor(seconds / 3600)}h ${String(Math.floor(seconds % 3600 / 60)).padStart(2, "0")}min`;
 
@@ -83,17 +84,10 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
       const fraction = Math.max(0, Math.min(1, percentage / 100));
       const flightFraction = fraction * flightProgress;
       const monthly = monthlyGoals[code];
-      // Half-circle with radius 88 and a 276.46 unit arc.
-      const arc = Math.PI * 88;
       return <article className="bej-gauge-item" key={code} aria-label={`${languageName(code)}: ${hoursAndMinutes(actual)} / ${target ? `${target}h` : t("study.noGoal")}`}>
         <h4>{languageName(code)}</h4>
         <div className="bej-gauge-visual">
-          <svg viewBox="0 0 240 150" role="img" aria-label={`${Math.round(percentage)}%`}>
-            <path className="bej-gauge-track" d="M 32 118 A 88 88 0 0 1 208 118" fill="none" strokeWidth="19" strokeLinecap="round" />
-            <path className="bej-gauge-progress" d="M 32 118 A 88 88 0 0 1 208 118" fill="none" strokeWidth="19" strokeLinecap="round" strokeDasharray={`${fraction * arc} ${arc}`} />
-            <text x="120" y="102" textAnchor="middle" className="bej-gauge-percent">{target ? `${Math.round(percentage)}%` : "—"}</text>
-            <text x="120" y="125" textAnchor="middle" className="bej-gauge-subtitle">{t("bejOverview.goalCompleted")}</text>
-          </svg>
+          <StudySpeedometer percentage={percentage} progress={flightProgress} hasGoal={Boolean(target)} subtitle={t("bejOverview.goalCompleted")} />
         </div>
         {target !== undefined && target > 0 && <div className="bej-rocket-journey" role="group" aria-label={`${languageName(code)}: ${percentage.toFixed(1)}% ${t("bejOverview.goalCompleted")}`} style={{ width: "100%", maxWidth: 520, margin: "12px auto 18px" }}>
           <svg viewBox="0 0 360 112" width="100%" role="group" aria-label="Jornada espacial da meta" style={{ display: "block", overflow: "visible" }}>
