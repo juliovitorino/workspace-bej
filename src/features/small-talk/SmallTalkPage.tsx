@@ -1079,7 +1079,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
           <button type="button" className="small-talk-icon-button" aria-label="Remover uma ocorrência HelloTalk" title="Corrigir ocorrência (-1)" disabled={occurrenceCount(item.id) === 0} onClick={() => changeOccurrence(item.id, -1)}><SmallTalkIcon name="minus"/></button>
           <button type="button" className="small-talk-icon-button" aria-label="Adicionar uma ocorrência HelloTalk" title="Registrar ocorrência (+1)" onClick={() => changeOccurrence(item.id, 1)}><SmallTalkIcon name="plus"/></button>
         </div>
-        <div className="small-talk-question-heading"><p><strong><span className="small-talk-print-number">{printNumbers[item.id]}. </span>{questionFor(item)}</strong></p>
+        <div className="small-talk-question-heading" role="group" aria-label="Ações da pergunta">
           <button type="button" className="small-talk-icon-button" aria-label="Editar pergunta" title="Editar pergunta" onClick={() => openQuestionEditor(item)}><SmallTalkIcon name="edit"/></button>
           <button type="button" className={`small-talk-icon-button${copiedQuestionId === item.id ? ' small-talk-question-copy-success' : ''}`}
             aria-label={copiedQuestionId === item.id ? 'Pergunta copiada' : 'Copiar pergunta'}
