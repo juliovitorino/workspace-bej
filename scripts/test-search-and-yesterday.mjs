@@ -61,18 +61,29 @@ const exactFixtures = [
   { id: 'b', intention: 'Pode ser que ele venha', targetIntention: 'It might be that he comes', examples: [] },
   { id: 'c', intention: 'Pode ser', targetIntention: 'It might be', examples: [] },
   { id: 'd', intention: 'Pode realmente ser que', targetIntention: 'It might really be that', examples: [] },
-  { id: 'e', intention: 'Talvez... / Pode ser que...', targetIntention: 'Perhaps / It might be that', examples: [] }
+  { id: 'e', intention: 'Talvez... / Pode ser que...', targetIntention: 'Perhaps / It might be that', examples: [] },
+  { id: 'f', intention: 'Uma intenção diferente', targetIntention: 'Another intention', sourceExampleTexts: ['Eu vou conseguir terminar amanhã'], examples: [] },
+  { id: 'g', intention: 'Algo diferente', targetIntention: 'Something else', sourceSearchTerms: ['apenas nos termos de busca'], searchTerms: ['only in search terms'], sourceStructure: 'estrutura exclusiva', structure: 'unique structure', examples: [] },
+  { id: 'h', intention: 'Mais uma intenção', targetIntention: 'Yet another intention', examples: [{ pt: 'Amanhã talvez chova', exampleItem: 'It might rain tomorrow' }] }
 ];
 const exact = (source, target) => searchIntentions(exactFixtures, source, target, '', [], '', 'pt-BR', true).map(i => i.id);
 assert.deepEqual(exact('pode ser que', ''), ['a', 'b', 'e'], 'exact source search matches contiguous phrases anywhere within an intention');
 assert.deepEqual(exact(' PODE SER QUE ', ''), ['a', 'b', 'e'], 'exact search ignores case and outer whitespace');
 assert.deepEqual(exact('pode ser', ''), ['a', 'b', 'c', 'e'], 'exact search also matches longer intentions containing the contiguous phrase');
-assert.deepEqual(exact('pode ser que ele', ''), ['b'], 'exact search ignores example-only matches');
+assert.deepEqual(exact('pode ser que ele', ''), ['a', 'b'], 'exact source search includes the complete example text');
+assert.deepEqual(exact('vou conseguir terminar', ''), ['f'], 'exact source search includes canonical source-only examples');
+assert.deepEqual(exact('AMANHÃ TALVEZ', ''), ['h'], 'exact source examples ignore case and accents');
+assert.deepEqual(exact('', 'it might be that he comes'), ['a', 'b'], 'exact target search includes exampleItem');
+assert.deepEqual(exact('', 'might rain tomorrow'), ['h'], 'exact target search matches an example-only phrase');
+assert.deepEqual(exact('talvez chova', 'might rain'), ['h'], 'exact search combines source and target example matches with AND');
+assert.deepEqual(exact('apenas nos termos de busca', ''), [], 'exact source search excludes search terms and structures');
+assert.deepEqual(exact('', 'only in search terms'), [], 'exact target search excludes search terms and structures');
+assert.deepEqual(exact('que ele venha it might', ''), [], 'exact search never combines text across different fields');
 assert.deepEqual(exact('', 'it might be that'), ['a', 'b', 'e'], 'exact target search matches a contiguous phrase within target intention');
 assert.deepEqual(exact('pode ser que', 'it might be'), ['a', 'b', 'e'], 'source and target searches remain combined with AND');
 assert.deepEqual(exact('pode realmente ser que', ''), ['d'], 'exact mode respects uninterrupted word sequence');
 assert.deepEqual(searchIntentions(exactFixtures, 'pode ser que', '', '', [], '').map(i => i.id), ['d', 'a', 'b', 'e'], 'flexible search remains unchanged when checkbox is off');
-console.log('PASS exact search: contiguous phrase in source/target intention, normalization, AND, and flexible fallback.');
+console.log('PASS exact search: contiguous phrase in source/target intentions and examples, normalization, AND, and flexible fallback.');
 
 const { studyStats } = load('src/features/study/studyStats.ts');
 const filters = { language: 'all', module: 'all', mode: 'all', period: 'yesterday', from: '', to: '' };

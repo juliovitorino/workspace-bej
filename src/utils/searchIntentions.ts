@@ -17,6 +17,12 @@ function matchesAny(values: (string | undefined)[], pattern: RegExp | null): boo
   return !pattern || values.some((value) => matchesSearch(value, pattern));
 }
 
+/** Busca exata: sequência contínua dentro da intenção ou de um único exemplo. */
+function matchesExact(values: (string | undefined)[], query: string): boolean {
+  const normalizedQuery = normalizeText(query);
+  return !normalizedQuery || values.some((value) => normalizeText(value ?? "").includes(normalizedQuery));
+}
+
 function sourceFields(item: MentalIntention): (string | undefined)[] {
   return [
     item.intention,
@@ -64,10 +70,16 @@ export function searchIntentions(
 
   return sortedBySource(intentions.filter((item) => {
     const sourceMatches = exactSearch
-      ? !normalizeText(mentalSearch) || normalizeText(item.intention).includes(normalizeText(mentalSearch))
+      ? matchesExact([
+          item.intention,
+          ...(item.sourceExampleTexts ?? (item.examples ?? []).map((example) => example.pt))
+        ], mentalSearch)
       : matchesAny(sourceFields(item), sourcePattern);
     const targetMatches = exactSearch
-      ? !normalizeText(englishSearch) || normalizeText(item.targetIntention ?? item.intention).includes(normalizeText(englishSearch))
+      ? matchesExact([
+          item.targetIntention ?? item.intention,
+          ...(item.examples ?? []).map((example) => example.exampleItem || example.en)
+        ], englishSearch)
       : matchesAny(targetFields(item), targetPattern);
     const categoryMatches = !normalizedCategory ||
       [item.category, item.sourceCategory].some((value) =>
