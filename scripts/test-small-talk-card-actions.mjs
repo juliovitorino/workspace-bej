@@ -142,3 +142,10 @@ test('screen and printing use the same filtered sequence and numbering', () => {
   assert.equal(numbered.a, 2);
   assert.equal(numbered.b, 3);
 });
+
+test('manual card ordering is stored with a timestamp and refreshed after Drive sync', () => {
+  assert.match(page, /readCardOrders\(\)/);
+  assert.match(page, /updateCardOrder\(topicOrders, topicId, ids\)/);
+  assert.match(page, /saveCardOrders\(next\)/);
+  assert.match(page, /event\.key === SMALL_TALK_CARD_ORDER_KEY/);
+});
