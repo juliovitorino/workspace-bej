@@ -1,4 +1,4 @@
-import { useId, useMemo } from "react";
+import { useId, useMemo, useState } from "react";
 
 type Planet = { name: string; at: number; color: string; radius: number; labelDy: number };
 const PLANETS: Planet[] = [
@@ -74,6 +74,48 @@ function PlanetArt({ planet, x, y, achieved }: { planet: Planet; x: number; y: n
   </g>;
 }
 
+type Tribute = "webb" | "voyager";
+const TRIBUTE_DETAILS: Record<Tribute, { title: string; detail: string }> = {
+  webb: { title: "James Webb Space Telescope", detail: "Lançado em 2021, observa o universo principalmente em infravermelho. Seu espelho principal possui 18 segmentos hexagonais dourados." },
+  voyager: { title: "Voyager 1", detail: "Lançada em 1977, tornou-se o primeiro objeto construído pela humanidade a alcançar o espaço interestelar, em 2012." },
+};
+
+function SpaceTribute({ kind, x, y, onSelect }: { kind: Tribute; x: number; y: number; onSelect: (kind: Tribute) => void }) {
+  const webb = kind === "webb";
+  const label = webb ? "Telescópio James Webb" : "Sonda Voyager 1";
+  return <g transform={`translate(${x} ${y})`} role="button" tabIndex={0}
+    aria-label={`Conhecer ${label}`} onClick={() => onSelect(kind)}
+    onKeyDown={event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); onSelect(kind); } }}
+    style={{ cursor: "pointer", outline: "none" }}>
+    <title>{`Homenagem: ${label}. Clique para conhecer.`}</title>
+    <circle r="43" fill="#182d4d" fillOpacity=".85" stroke="#55759c" strokeDasharray="3 5" />
+    {webb ? <>
+      <g transform="translate(0 -12)">
+        {Array.from({ length: 18 }, (_, index) => {
+          const row = Math.floor(index / 6);
+          const col = index % 6;
+          const cx = (col - 2.5) * 10 + (row % 2 ? 5 : 0);
+          const cy = (row - 1) * 17;
+          return <path key={index} d={`M ${cx} ${cy-6} l 5 3 v 6 l -5 3 l -5 -3 v -6 Z`}
+            fill={index % 3 === 0 ? "#f8d67a" : "#d5a342"} stroke="#ffefb0" strokeWidth=".8" />;
+        })}
+        <circle r="5" fill="#223a54" stroke="#e2e8f0" strokeWidth="1.5" />
+      </g>
+      <path d="M -29 15 L -40 29 L 40 29 L 29 15 Z" fill="#8e83c4" stroke="#c4b5fd" strokeWidth="1.5" />
+      <path d="M -34 21 H 34 M -29 25 H 29" stroke="#ddd6fe" strokeWidth="1" />
+    </> : <g transform="rotate(-22)">
+      <path d="M -8 -5 L -8 -30 M 7 -4 L 22 -28 M -14 5 L -31 12 M 0 12 V 30" stroke="#cbd5e1" strokeWidth="2.5" fill="none" />
+      <circle cx="22" cy="-28" r="8" fill="#b8c2cf" stroke="#f1f5f9" strokeWidth="1.5" />
+      <ellipse cx="22" cy="-28" rx="5" ry="2.5" fill="#475569" />
+      <rect x="-13" y="-9" width="26" height="20" rx="2" fill="#c49a55" stroke="#fef3c7" strokeWidth="1.5" />
+      <path d="M -13 -2 H 13 M -13 5 H 13 M -4 -9 V 11 M 5 -9 V 11" stroke="#80623d" strokeWidth="1" />
+      <circle cx="-31" cy="12" r="5" fill="#94a3b8" stroke="#e2e8f0" />
+      <path d="M -19 30 Q 0 12 19 30" fill="none" stroke="#dbeafe" strokeWidth="3" />
+    </g>}
+    <text y="55" textAnchor="middle" fontSize="11" fontWeight="600" fill="#e2e8f0">{webb ? "James Webb" : "Voyager 1"}</text>
+  </g>;
+}
+
 export function StudyPlanetMission({ percentage, progress, launchElapsedMs, onReplay }: {
   percentage: number;
   progress: number;
@@ -81,6 +123,7 @@ export function StudyPlanetMission({ percentage, progress, launchElapsedMs, onRe
   onReplay: () => void;
 }) {
   const gradientId = useId().replace(/:/g, "");
+  const [selectedTribute, setSelectedTribute] = useState<Tribute | null>(null);
   const completed = Math.max(0, Math.min(1, percentage / 100));
   const traveled = completed * progress;
   const position = routePoint(traveled);
@@ -123,6 +166,9 @@ export function StudyPlanetMission({ percentage, progress, launchElapsedMs, onRe
         const point = routePoint(planet.at);
         return <PlanetArt key={planet.name} planet={planet} x={point.x} y={point.y} achieved={completed >= planet.at} />;
       })}
+      {/* Scientific tributes are independent of the progress route and do not change milestones. */}
+      <SpaceTribute kind="webb" x={116} y={79} onSelect={setSelectedTribute} />
+      <SpaceTribute kind="voyager" x={333} y={70} onSelect={setSelectedTribute} />
       {/* A dashed tether connects the off-route rocket to the precise progress marker. */}
       <line x1={position.x} y1={position.y} x2={rocketX} y2={rocketY} stroke="#7dd3fc" strokeWidth="1.8" strokeDasharray="4 5" strokeLinecap="round" opacity=".9" />
       <circle cx={position.x} cy={position.y} r="9" fill="#22c55e" fillOpacity=".22" />
@@ -134,6 +180,11 @@ export function StudyPlanetMission({ percentage, progress, launchElapsedMs, onRe
         <path d="M -9 4 L -14 14 L -7 10 M 9 4 L 14 14 L 7 10" fill="#ef4444" />
       </g>
     </svg>
+    {selectedTribute && <div role="status" style={{ marginTop: 10, padding: "10px 12px", border: "1px solid #64748b", borderRadius: 10 }}>
+      <strong>{TRIBUTE_DETAILS[selectedTribute].title}</strong>
+      <button type="button" onClick={() => setSelectedTribute(null)} aria-label="Fechar homenagem" style={{ float: "right", cursor: "pointer" }}>×</button>
+      <p style={{ margin: "6px 0 0", fontSize: 13 }}>{TRIBUTE_DETAILS[selectedTribute].detail}</p>
+    </div>}
     <p style={{ margin: "8px 0 0", textAlign: "center", fontSize: 13 }}>
       {next ? `Próximo destino: ${next.name} (${Math.round(next.at * 100)}%)` : "🏆 Missão concluída: Netuno conquistado!"}
     </p>
