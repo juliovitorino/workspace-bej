@@ -322,7 +322,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     const question = questionFor(item).trim();
     const answer = answerFor(item).trim();
     if (!question) return;
-    const printedNumber = smallTalkPrintNumbers(printableSmallTalkItems(orderedTopicItems, questionFor))[item.id];
+    const printedNumber = printNumbers[item.id];
     const esc = (value: string) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
     const popup = window.open('', '_blank');
     if (!popup) { setEditError('Permita pop-ups para imprimir este card.'); return; }
@@ -346,7 +346,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   function printTopic(mode: 'both' | 'questions') {
     if (!topic || loading || topic.topicId !== topicId) return;
     const esc = (value: string) => value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
-    const items = printableSmallTalkItems(orderedTopicItems, questionFor);
+    const items = printableSmallTalkItems(filtered, questionFor);
     const cards = items.map((item,index) => '<article class="qa"><div class="q">' + (index + 1) + '. ' + esc(questionFor(item)) + '</div>' +
       (mode === 'both' && answerFor(item).trim() ? '<div class="a">' + esc(answerFor(item).trim()) + '</div>' : '') +
       (mode === 'questions' ? '<div class="notes"></div>' : '') + '</article>').join('');
@@ -850,7 +850,8 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
   function googleTranslate(text: string) {
     window.open('https://translate.google.com/?sl=en&tl=pt&text=' + encodeURIComponent(text) + '&op=translate', '_blank', 'noopener,noreferrer');
   }
-  const printableItems = printableSmallTalkItems(orderedTopicItems, questionFor);
+  // The visible list, individual-card printing and topic printing share one order and numbering.
+  const printableItems = printableSmallTalkItems(filtered, questionFor);
   const printNumbers = smallTalkPrintNumbers(printableItems);
   // Keep the selected session in printed order until the optional shuffle starts.
   const walkItems = filtered.filter(item => item.enabled && !!questionFor(item).trim());
@@ -1036,7 +1037,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       </div>
       {orderError && <p role="alert">{orderError}</p>}
       {occurrenceError && <p role="alert">{occurrenceError}</p>}
-      {orderMode && <p className="settings-dialog-help">Use as setas para mudar a ordem dos cards. A ordem é salva neste dispositivo e determina a numeração da impressão e do Modo Caminhada.</p>}
+      {orderMode && <p className="settings-dialog-help">Use as setas para mudar a ordem dos cards. A ordem é salva neste dispositivo. Filtros e ordenação por ocorrências também afetam a sequência e a numeração da impressão.</p>}
     </header>
     {duplicateMessage && <p role="status" className="settings-dialog-help">{duplicateMessage}</p>}
     <div className="small-talk-question-list">{filtered.map(item => {
@@ -1192,7 +1193,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
     {printMode && <div className="small-talk-export-overlay" onMouseDown={event => { if (event.target === event.currentTarget) setPrintMode(null); }}>
       <section className="small-talk-export-modal" role="dialog" aria-modal="true" aria-labelledby="small-talk-print-title">
         <header className="small-talk-export-header"><h3 id="small-talk-print-title">🖨️ Imprimir tópico A4</h3><button type="button" aria-label="Fechar" onClick={() => setPrintMode(null)}>✕</button></header>
-        <p>Imprime todas as perguntas ativas do tópico, incluindo suas edições locais, independentemente dos filtros.</p>
+        <p>Imprime as perguntas exibidas na tela, na mesma ordem e numeração, respeitando os filtros e a ordenação selecionados.</p>
         <label>Formato <select value={printMode} onChange={e => setPrintMode(e.target.value as 'both' | 'questions')}>
           <option value="both">Perguntas e respostas</option><option value="questions">Somente perguntas com espaço para anotações</option>
         </select></label>
