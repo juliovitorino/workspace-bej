@@ -511,3 +511,13 @@ assert.match(missionSource, /x1=\{position\.x\} y1=\{position\.y\} x2=\{rocketX\
 assert.match(missionSource, /strokeDasharray="4 5"/);
 assert.match(missionSource, /translate\(\$\{rocketX\} \$\{rocketY\}\)/);
 console.log('PASS: green marker follows planetary route and rocket flies offset with dashed tether.');
+
+// Space tributes remain decorative milestones, with keyboard-accessible facts.
+assert.match(missionSource, /function SpaceTribute/);
+assert.match(missionSource, /kind="webb"/);
+assert.match(missionSource, /kind="voyager"/);
+assert.match(missionSource, /James Webb Space Telescope/);
+assert.match(missionSource, /Voyager 1/);
+assert.match(missionSource, /onKeyDown=\{event =>/);
+assert.match(missionSource, /selectedTribute &&/);
+console.log('PASS: James Webb and Voyager 1 SVG tributes show accessible facts.');
