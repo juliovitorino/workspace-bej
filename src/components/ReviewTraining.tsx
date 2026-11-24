@@ -4,6 +4,7 @@ import { speakStudyAudio, cancelStudyAudio } from "../features/study/studyAudio"
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { isAuthorMode } from "../utils/authorMode";
+import { GoogleTranslateIcon } from "./GoogleTranslateIcon";
 import { LANGUAGES, type StudentLanguage } from "../config/languages";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
@@ -862,17 +863,7 @@ export function ReviewTraining({
                   overflow: "hidden"
                 }}
               >
-                <img
-                  src="/google-translate-icon.png"
-                  alt=""
-                  aria-hidden="true"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "contain",
-                    display: "block"
-                  }}
-                />
+                <GoogleTranslateIcon size={22} />
               </button>
 
               <button
@@ -1021,6 +1012,8 @@ export function ReviewTraining({
                 onClick={handleGoogleTranslate}
                 disabled={translating || !studentText.trim()}
               >
+                <GoogleTranslateIcon size={18} />
+                {" "}
                 {translating
                   ? "Traduzindo..."
                   : t("common.translateWithGoogle")}
@@ -1236,17 +1229,7 @@ export function ReviewTraining({
                       overflow: "hidden"
                     }}
                   >
-                    <img
-                      src="/google-translate-icon.png"
-                      alt=""
-                      aria-hidden="true"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "contain",
-                        display: "block"
-                      }}
-                    />
+                    <GoogleTranslateIcon size={22} />
                   </button>
                   </div>
                 </div>
@@ -1375,17 +1358,7 @@ export function ReviewTraining({
                       overflow: "hidden"
                     }}
                   >
-                    <img
-                      src="/google-translate-icon.png"
-                      alt=""
-                      aria-hidden="true"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "contain",
-                        display: "block"
-                      }}
-                    />
+                    <GoogleTranslateIcon size={22} />
                   </button>
                   </div>
                 </div>
