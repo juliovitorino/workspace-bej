@@ -101,6 +101,19 @@ test("an older legacy favorite cannot resurrect a removed favorite", () => {
   assert.equal(wyr.readWyrProgress().favorites[ID1].value, false);
 });
 
+test("single-question edits preserve unrelated synchronized choices and favorites", () => {
+  reset();
+  assert.equal(wyr.setWyrChoice(ID1, "A"), true);
+  assert.equal(wyr.setWyrChoice(ID2, "B"), true);
+  assert.equal(wyr.setWyrFavorite(ID1, true), true);
+  assert.equal(wyr.setWyrFavorite(ID2, true), true);
+  assert.equal(wyr.setWyrChoice(ID1, "B"), true);
+  assert.equal(wyr.setWyrFavorite(ID1, false), true);
+  assert.equal(wyr.readWyrStored().choices[ID2], "B");
+  assert.deepEqual(wyr.readWyrStored().favorites, [ID2]);
+  assert.equal(wyr.readWyrProgress().favorites[ID1].value, false);
+});
+
 test("invalid IDs, revisions and values are ignored", () => {
   reset();
   const invalid = wyr.validateWyrProgress({
@@ -127,4 +140,6 @@ test("Drive snapshot, legacy reader, merge, stale protection, apply and UI refre
   assert.ok(ui.includes('window.addEventListener(WYR_SYNC_CHANGED, refresh)'));
   assert.ok(ui.includes('setChoices(current.choices)'));
   assert.ok(ui.includes('setFavorites(current.favorites)'));
+  assert.ok(ui.includes('setWyrChoice(current.id, choice)'));
+  assert.ok(ui.includes('setWyrFavorite(current.id, !favorites.includes(current.id))'));
 });
