@@ -32,6 +32,8 @@ jobs:
           npm run validate:hashmaps:v4
           npm run validate:i18n
       - name: Test Google Drive Sync and WRG
-        run: npm run test:sync
+        run: |
+          npm run test:sync
+          npm run test:wrg-scroll
       - name: TypeScript check and production build
         run: npm run build
