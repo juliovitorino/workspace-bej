@@ -49,6 +49,7 @@ export function writeChunkLikes(value: ChunkLikes, storage: Storage = localStora
 export function mergeChunkLikes(left: ChunkLikes, right: ChunkLikes): ChunkLikes {
   const merged = validateChunkLikes(left);
   for (const [language, chunks] of Object.entries(validateChunkLikes(right))) {
+    if (!chunks) continue;
     const lang = language as StudentLanguage;
     const current = merged[lang] ?? (merged[lang] = Object.create(null));
     for (const [chunkId, devices] of Object.entries(chunks)) {
