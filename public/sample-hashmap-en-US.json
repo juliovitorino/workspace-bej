@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1289,
+    "totalIntentions": 1294,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -6605,7 +6605,8 @@
       ],
       "tags": [
         "contrast",
-        "connector"
+        "connector",
+        "even"
       ],
       "related": [],
       "structure": "still / anyway / even so / nevertheless",
@@ -22165,7 +22166,8 @@
         "contrast",
         "concession",
         "connector",
-        "conversation"
+        "conversation",
+        "even"
       ],
       "related": [],
       "structure": "even though",
@@ -24537,7 +24539,8 @@
         "condition",
         "hypothesis",
         "even-if",
-        "conversation"
+        "conversation",
+        "even"
       ],
       "related": [],
       "structure": "even if",
@@ -77073,6 +77076,487 @@
           "id": "b0f75196-aec8-40b3-8254-b9ea364df471",
           "exampleItem": "I might be able to speak English more naturally if I keep practicing every day.",
           "intent": "might be able to"
+        }
+      ]
+    },
+    {
+      "id": "nem-fodendo-nem-pensar-de-jeito-nenhum-2c84f1a7-9e35-4b60-a218-d7c05e93b46f",
+      "intention": "Fuck that! / No way! / Absolutely not!",
+      "pattern": "fuck that / no way / absolutely not + rejection of a proposal or situation",
+      "description": "Expresses emphatic rejection, indignation, or a categorical refusal of a proposal, demand, idea, or situation considered absurd, unfair, or unacceptable. In informal American English, 'Fuck that!' is a vulgar, direct reaction to something just suggested or described. Less offensive alternatives include 'No way!', 'Forget that!', and 'Absolutely not!'.",
+      "category": "expressions",
+      "searchTerms": [
+        "fuck that",
+        "no way",
+        "absolutely not",
+        "not a chance",
+        "forget that",
+        "out of the question",
+        "not accepting that",
+        "not doing that",
+        "count me out",
+        "not going along with that"
+      ],
+      "validationPatterns": [
+        "\\bfuck\\s+that\\b",
+        "\\bno\\s+way\\b",
+        "\\babsolutely\\s+not\\b",
+        "\\bnot\\s+a\\s+chance\\b",
+        "\\bforget\\s+that\\b",
+        "\\bout\\s+of\\s+the\\s+question\\b"
+      ],
+      "tags": [
+        "refusal",
+        "rejection",
+        "indignation",
+        "opposition",
+        "disagreement",
+        "personal boundaries",
+        "proposals",
+        "decisions",
+        "frustration",
+        "informal language",
+        "swear words",
+        "vulgar expressions",
+        "American English"
+      ],
+      "related": [],
+      "structure": "'Fuck that!' is a standalone idiomatic exclamation that firmly rejects an idea, proposal, demand, or situation: 'Work for free? Fuck that!' The demonstrative 'that' refers back to something already mentioned or considered unacceptable. A reason or decision may follow: 'Fuck that! I'm not doing it.' This expression is vulgar and can sound aggressive, especially in response to someone's proposal. Less offensive alternatives are 'No way!', 'Forget that!', and 'Absolutely not!'. Distinguish 'Fuck that!' (rejecting a proposal or situation), 'Fuck it!' (deciding to stop worrying), and 'Fuck you!' (an insult directed at a person).",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "c1f86047-b149-42c4-9365-cae9b7f40582",
+          "exampleItem": "Work on Sunday without getting paid? Fuck that!",
+          "intent": "Fuck that!"
+        },
+        {
+          "id": "d2097158-c25a-43d5-a476-dbf0c8051693",
+          "exampleItem": "Pay for everything myself? No way!",
+          "intent": "No way!"
+        },
+        {
+          "id": "e31a8269-d36b-44e6-b587-ec01d91627a4",
+          "exampleItem": "Accept that salary? Absolutely not!",
+          "intent": "Absolutely not!"
+        },
+        {
+          "id": "f42b937a-e47c-45f7-8698-fd12ea2738b5",
+          "exampleItem": "Stay late again? Fuck that!",
+          "intent": "Fuck that!"
+        },
+        {
+          "id": "a53ca48b-f58d-4608-97a9-0e23fb3849c6",
+          "exampleItem": "Fuck that! I'm not accepting that condition.",
+          "intent": "Fuck that!"
+        },
+        {
+          "id": "b64db59c-069e-4719-a8ba-1f340c495ad7",
+          "exampleItem": "You want me to apologize for something I didn't do? No way!",
+          "intent": "No way!"
+        },
+        {
+          "id": "c75ec6ad-17af-482a-b9cb-2051ad5a6be8",
+          "exampleItem": "Drive for ten hours without a break? Fuck that!",
+          "intent": "Fuck that!"
+        },
+        {
+          "id": "d86fd7be-28b0-493b-8adc-3162be6b7cf9",
+          "exampleItem": "Go back to that job? Not a chance!",
+          "intent": "Not a chance!"
+        },
+        {
+          "id": "e970e8cf-39c1-4a4c-9bed-4273cf7c8d0a",
+          "exampleItem": "Take the blame for someone else's mistake? Absolutely not!",
+          "intent": "Absolutely not!"
+        },
+        {
+          "id": "fa81f9d0-4ad2-4b5d-8cfe-5384d08d9e1b",
+          "exampleItem": "Let them treat me that way? Fuck that!",
+          "intent": "Fuck that!"
+        }
+      ]
+    },
+    {
+      "id": "to-pouco-me-fodendo-nao-to-nem-ai-1a92e7c4-5b60-4d38-8f21-c6e03a7d954b",
+      "intention": "I don't give a fuck! / I don't care! / I don't give a damn!",
+      "pattern": "subject + don't/doesn't/didn't + give a fuck / care + about something or someone",
+      "description": "Expresses intense indifference to other people's opinions, criticism, consequences, or situations. In informal American English, 'I don't give a fuck' is a vulgar and highly emphatic way to say that something does not concern or interest you. It can convey emotional independence, irritation, contempt, or refusal to attach importance to an issue. 'I don't give a damn' is less vulgar but still emphatic; 'I don't care' is a more neutral everyday alternative.",
+      "category": "expressions",
+      "searchTerms": [
+        "I don't give a fuck",
+        "I don't care",
+        "I don't give a damn",
+        "I don't give a shit",
+        "I couldn't care less",
+        "not interested",
+        "not worried",
+        "indifference",
+        "their opinions",
+        "criticism"
+      ],
+      "validationPatterns": [
+        "\\b(?:don['?]t|doesn['?]t|didn['?]t|do not|does not|did not)\\s+give\\s+a\\s+(?:fuck|damn|shit)\\b",
+        "\\b(?:don['?]t|doesn['?]t|didn['?]t|do not|does not|did not)\\s+care\\b",
+        "\\bcouldn['?]t\\s+care\\s+less\\b"
+      ],
+      "tags": [
+        "indifference",
+        "contempt",
+        "opinions",
+        "criticism",
+        "lack of interest",
+        "attitude",
+        "frustration",
+        "emotions",
+        "informal language",
+        "swear words",
+        "vulgar expressions",
+        "American English"
+      ],
+      "related": [],
+      "structure": "Use 'subject + don't/doesn't + give a fuck', followed by a clause or a complement naming what does not matter: 'I don't give a fuck what they think'. Use 'about + noun' for a noun complement: 'I don't give a fuck about their opinions'. Use 'doesn't' in the third-person singular ('He doesn't give a fuck') and 'didn't' in the past ('I didn't give a fuck'). The expression is highly vulgar and unsuitable for formal or professional situations. 'I don't give a damn' is less vulgar but still emphatic. 'I don't give a shit' is another vulgar informal alternative. 'I don't care' is the most versatile neutral alternative. Distinguish indifference ('I don't give a fuck') from deciding to stop worrying about a situation ('Fuck it!').",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "e15ec6ad-17af-482a-b9cb-2051ad5a6be8",
+          "exampleItem": "I don't give a fuck what they think.",
+          "intent": "I don't give a fuck"
+        },
+        {
+          "id": "f26fd7be-28b0-493b-8adc-3162be6b7cf9",
+          "exampleItem": "I don't care about the criticism.",
+          "intent": "I don't care"
+        },
+        {
+          "id": "a370e8cf-39c1-4a4c-9bed-4273cf7c8d0a",
+          "exampleItem": "I don't give a damn about his opinion.",
+          "intent": "I don't give a damn"
+        },
+        {
+          "id": "b481f9d0-4ad2-4b5d-8cfe-5384d08d9e1b",
+          "exampleItem": "I don't give a fuck if they don't like it.",
+          "intent": "I don't give a fuck"
+        },
+        {
+          "id": "c5920ae1-5be3-4c6e-9d0f-6495e19eaf2c",
+          "exampleItem": "He doesn't care about the rules.",
+          "intent": "doesn't care"
+        },
+        {
+          "id": "d6a31bf2-6cf4-4d7f-ae10-75a6f20fb03d",
+          "exampleItem": "I don't give a damn what they say about me.",
+          "intent": "don't give a damn"
+        },
+        {
+          "id": "e7b42c03-7d05-4e80-9f21-86b7031ac14e",
+          "exampleItem": "I don't give a fuck who won that argument.",
+          "intent": "I don't give a fuck"
+        },
+        {
+          "id": "f8c53d14-8e16-4f91-a032-97c8142bd25f",
+          "exampleItem": "I don't care if that bothers anyone.",
+          "intent": "I don't care"
+        },
+        {
+          "id": "a9d64e25-9f27-40a2-b143-a8d9253ce360",
+          "exampleItem": "Back then, I didn't care about the future.",
+          "intent": "didn't care"
+        },
+        {
+          "id": "b0e75f36-a038-41b3-8254-b9ea364df471",
+          "exampleItem": "Honestly, I don't give a damn about this competition.",
+          "intent": "don't give a damn"
+        }
+      ]
+    },
+    {
+      "id": "foda-se-que-se-foda-que-se-dane-8f31c6a2-4d79-4b05-9e16-72a0d5c83f49",
+      "intention": "Fuck it! / Screw it! / To hell with it!",
+      "pattern": "fuck it / screw it / to hell with it + a decision or reaction",
+      "description": "Expresses an impulsive or deliberate decision to stop worrying about a situation, consequence, rule, or difficulty. It can convey frustration, resignation, defiance, courage, or willingness to act despite the risks. In informal American English, 'Fuck it!' is vulgar and emphatic, while 'Screw it!' conveys a similar intention with less intensity. Both can stand alone or introduce a decision: 'Fuck it! I'm doing it anyway'. They should not be confused with 'Fuck you!', an insult directed at a person.",
+      "category": "expressions",
+      "searchTerms": [
+        "fuck it",
+        "screw it",
+        "to hell with it",
+        "whatever",
+        "you know what",
+        "done worrying",
+        "do it anyway",
+        "forget about it",
+        "fed up",
+        "stop worrying"
+      ],
+      "validationPatterns": [
+        "\\bfuck\\s+it\\b",
+        "\\bscrew\\s+it\\b",
+        "\\bto\\s+hell\\s+with\\s+it\\b",
+        "\\bwhatever\\b"
+      ],
+      "tags": [
+        "frustration",
+        "letting go of worries",
+        "giving up",
+        "resignation",
+        "defiance",
+        "decision",
+        "indifference",
+        "informal language",
+        "swear words",
+        "vulgar expressions",
+        "American English"
+      ],
+      "related": [],
+      "structure": "'Fuck it!' and 'Screw it!' are standalone idiomatic exclamations. 'Fuck it!' is vulgar and expresses strong frustration, a decision to stop worrying, or willingness to act despite the consequences. 'Screw it!' has a similar meaning but is less offensive. Either can stand alone or precede a clause: 'Fuck it! I'll try anyway'. 'To hell with it!' can also dismiss a concern or situation. 'Whatever!' is less aggressive, though it may sound dismissive. Distinguish 'Fuck it!' (a reaction to a situation), 'Fuck that!' (rejection of an idea or proposal), and 'Fuck you!' (a personal insult). 'It' normally refers to a situation, difficulty, or topic already understood in context. B2 reflects the pragmatic nuance, emotional intensity, and need to judge the social context.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "a1b42c63-7d95-4e80-9f21-e6a573b0c148",
+          "exampleItem": "Fuck it! I'm doing it anyway.",
+          "intent": "Fuck it!"
+        },
+        {
+          "id": "b2c53d74-8e16-4f91-a032-f7b684c1d259",
+          "exampleItem": "Oh, screw it! Let's go.",
+          "intent": "screw it"
+        },
+        {
+          "id": "c3d64e85-9f27-40a2-b143-a8c795d2e360",
+          "exampleItem": "You know what? Fuck it! I'll try anyway.",
+          "intent": "Fuck it!"
+        },
+        {
+          "id": "d4e75f96-a038-41b3-8254-b9d8a6e3f471",
+          "exampleItem": "Fuck it! I'm not wasting any more time on this.",
+          "intent": "Fuck it!"
+        },
+        {
+          "id": "e5f860a7-b149-42c4-9365-cae9b7f40582",
+          "exampleItem": "Screw it! I'll buy it anyway.",
+          "intent": "Screw it!"
+        },
+        {
+          "id": "f60971b8-c25a-43d5-a476-dbf0c8051693",
+          "exampleItem": "Fuck it! I'm tired of waiting.",
+          "intent": "Fuck it!"
+        },
+        {
+          "id": "a71a82c9-d36b-44e6-b587-ec01d91627a4",
+          "exampleItem": "Oh, screw it! We don't need a perfect plan.",
+          "intent": "screw it"
+        },
+        {
+          "id": "b82b93da-e47c-45f7-8698-fd12ea2738b5",
+          "exampleItem": "Fuck it! I'm going to say what I really think.",
+          "intent": "Fuck it!"
+        },
+        {
+          "id": "c93ca4eb-f58d-4608-97a9-0e23fb3849c6",
+          "exampleItem": "Screw it! If it goes wrong, we'll deal with it later.",
+          "intent": "Screw it!"
+        },
+        {
+          "id": "d04db5fc-069e-4719-a8ba-1f340c495ad7",
+          "exampleItem": "You know what? Fuck it! I deserve a day off.",
+          "intent": "Fuck it!"
+        }
+      ]
+    },
+    {
+      "id": "melhor-ainda-melhor-do-que-antes-6d83f2a1-9b47-4e50-a126-c8f305d7b942",
+      "intention": "Even better! / Better than before! / Better than expected!",
+      "pattern": "even better / even better than + reference / or even better + alternative",
+      "description": "Expresses that something is even more positive, advantageous, satisfying, or suitable than an earlier situation, result, expectation, or alternative. 'Even better' intensifies the comparative 'better', highlighting a further improvement or a superior option. It can stand alone as an enthusiastic or approving reaction ('Even better!') or form part of a comparison ('This is even better than before'). 'Or even better' introduces an alternative considered superior to the one just mentioned. It is common in everyday conversations, suggestions, evaluations, comparisons, and descriptions of results that exceed expectations.",
+      "category": "expressions",
+      "searchTerms": [
+        "even better",
+        "better yet",
+        "better than before",
+        "better than expected",
+        "better than I expected",
+        "or even better",
+        "an even better idea",
+        "an even better option",
+        "it gets even better",
+        "further improvement",
+        "exceeded expectations"
+      ],
+      "validationPatterns": [
+        "\\beven\\s+better\\b",
+        "\\bbetter\\s+yet\\b",
+        "\\bbetter\\s+than\\s+(?:before|expected|I\\s+expected)\\b"
+      ],
+      "tags": [
+        "comparison",
+        "improvement",
+        "exceeding expectations",
+        "positive evaluation",
+        "enthusiasm",
+        "approval",
+        "alternatives",
+        "suggestions",
+        "advantages",
+        "comparatives",
+        "intensifiers",
+        "everyday conversation",
+        "sentence building",
+        "American English",
+        "even"
+      ],
+      "related": [],
+      "structure": "'Even better' combines the intensifier 'even' with 'better', the irregular comparative of 'good' or 'well'. 'Even' emphasizes a further improvement relative to an earlier reference. Use 'Even better!' as a standalone approving reaction, 'subject + be + even better' for an evaluation, and 'even better than + noun/pronoun/clause' for an explicit comparison: 'This is even better than before' or 'It was even better than I expected'. Introduce a superior alternative with 'or even better + phrase/clause': 'We could meet tomorrow, or even better, today'. It can modify nouns ('an even better idea') and verbs ('She speaks English even better now'). 'It gets even better!' announces additional positive or surprising information. Distinguish 'even better', which emphasizes further improvement, from 'much better', which emphasizes the size of the difference. 'Better yet' is an idiomatic alternative when suggesting a superior option.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a1c42e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "Even better! We can finish everything today.",
+          "intent": "Even better!"
+        },
+        {
+          "id": "b2d53f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "This version turned out even better.",
+          "intent": "even better"
+        },
+        {
+          "id": "c3e64085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "The result was even better than I expected.",
+          "intent": "even better"
+        },
+        {
+          "id": "d4f75196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "We can study together or, even better, practice having conversations.",
+          "intent": "even better"
+        },
+        {
+          "id": "e50862a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "I have an even better idea for solving this problem.",
+          "intent": "even better"
+        },
+        {
+          "id": "f61973b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "Your English is even better than it was last month.",
+          "intent": "even better"
+        },
+        {
+          "id": "a72a84c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "If we could automate this task, that would be even better.",
+          "intent": "even better"
+        },
+        {
+          "id": "b83b95da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "She already spoke English very well, but now she speaks it even better.",
+          "intent": "even better"
+        },
+        {
+          "id": "c94ca6eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "Wait until you see the next feature. It gets even better!",
+          "intent": "even better"
+        },
+        {
+          "id": "d05db7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "We can launch the app tomorrow or, even better, tonight.",
+          "intent": "even better"
+        }
+      ]
+    },
+    {
+      "id": "pior-ainda-ainda-pior-para-piorar-ainda-mais-7e42a9c1-6b85-4d30-8f12-e5a973c0b246",
+      "intention": "Even worse! / Worse yet! / To make matters even worse!",
+      "pattern": "even worse / even worse than + reference / or even worse + situation / to make matters even worse",
+      "description": "Expresses that a situation, result, event, or alternative is even more negative, serious, unpleasant, or unfavorable than something previously mentioned, experienced, or expected. 'Even worse' intensifies the comparative 'worse', highlighting a deterioration or an inferior condition. It can stand alone as a surprised or disapproving reaction ('Even worse!') or form part of a comparison ('The situation is even worse than before'). 'Or even worse' introduces a more negative possibility, while 'to make matters even worse' adds a circumstance that aggravates an already bad situation. It is common in everyday conversations, accounts of problems, evaluations, comparisons, complaints, and unexpected situations.",
+      "category": "expressions",
+      "searchTerms": [
+        "even worse",
+        "worse yet",
+        "worse than before",
+        "worse than expected",
+        "worse than I expected",
+        "or even worse",
+        "an even worse problem",
+        "an even worse situation",
+        "to make matters even worse",
+        "to make matters worse",
+        "it gets even worse",
+        "deterioration",
+        "negative comparison"
+      ],
+      "validationPatterns": [
+        "\\beven\\s+worse\\b",
+        "\\bworse\\s+yet\\b",
+        "\\bworse\\s+than\\s+(?:before|expected|I\\s+expected)\\b",
+        "\\bto\\s+make\\s+matters\\s+(?:even\\s+)?worse\\b"
+      ],
+      "tags": [
+        "comparison",
+        "deterioration",
+        "problems",
+        "negative situations",
+        "frustration",
+        "surprise",
+        "disapproval",
+        "consequences",
+        "difficulties",
+        "complaints",
+        "comparatives",
+        "intensifiers",
+        "everyday conversation",
+        "sentence building",
+        "American English",
+        "even"
+      ],
+      "related": [],
+      "structure": "'Even worse' combines the intensifier 'even' with 'worse', the irregular comparative of 'bad' or 'badly'. 'Even' emphasizes further deterioration relative to an earlier reference. Use 'Even worse!' as a standalone reaction, 'subject + be + even worse' to evaluate a situation, and 'even worse than + noun/pronoun/clause' for an explicit comparison: 'The situation is even worse than before' or 'It was even worse than I expected'. Introduce a more negative possibility with 'or even worse + phrase/clause': 'We could lose time, or even worse, lose money'. It can modify nouns ('an even worse problem') and verbs ('He performed even worse this time'). 'It gets even worse!' introduces a further negative development. 'To make matters even worse' adds a circumstance that aggravates an already bad situation. Distinguish 'even worse', which emphasizes further deterioration, from 'much worse', which emphasizes the size of the difference. 'Worse yet' can introduce a more negative possibility.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a1c42e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "Even worse! Now we have two problems to solve.",
+          "intent": "Even worse!"
+        },
+        {
+          "id": "b2d53f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "The situation got even worse after the meeting.",
+          "intent": "even worse"
+        },
+        {
+          "id": "c3e64085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "The result was even worse than I expected.",
+          "intent": "even worse"
+        },
+        {
+          "id": "d4f75196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "We could lose time or, even worse, lose money.",
+          "intent": "even worse"
+        },
+        {
+          "id": "e50862a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "We found an even worse problem in the system.",
+          "intent": "even worse"
+        },
+        {
+          "id": "f61973b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "The traffic is even worse than yesterday.",
+          "intent": "even worse"
+        },
+        {
+          "id": "a72a84c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "If we lose the data, the situation will be even worse.",
+          "intent": "even worse"
+        },
+        {
+          "id": "b83b95da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "He was already playing badly, but today he played even worse.",
+          "intent": "even worse"
+        },
+        {
+          "id": "c94ca6eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "It gets even worse! We found out the backup failed too.",
+          "intent": "even worse"
+        },
+        {
+          "id": "d05db7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "To make matters even worse, it started raining during the trip.",
+          "intent": "To make matters even worse"
         }
       ]
     }
