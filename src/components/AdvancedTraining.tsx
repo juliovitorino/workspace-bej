@@ -6,6 +6,7 @@ import { nextTrainingExampleIndex, trainingExampleIndex } from "../utils/trainin
 import { t, languageName as localizedLanguageName } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { isAuthorMode } from "../utils/authorMode";
+import { GoogleTranslateIcon } from "./GoogleTranslateIcon";
 import { LANGUAGES, type StudentLanguage } from "../config/languages";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import type { MentalIntention } from "../types/hashmap";
@@ -1723,17 +1724,7 @@ export function AdvancedTraining({
                   overflow: "hidden"
                 }}
               >
-                <img
-                  src="/google-translate-icon.png"
-                  alt=""
-                  aria-hidden="true"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "contain",
-                    display: "block"
-                  }}
-                />
+                <GoogleTranslateIcon size={22} />
               </button>
 
               <button
@@ -1844,6 +1835,8 @@ export function AdvancedTraining({
                 onClick={handleGoogleTranslate}
                 disabled={translating || !combinedSentence.trim()}
               >
+                <GoogleTranslateIcon size={18} />
+                {" "}
                 {translating
                   ? "Traduzindo..."
                   : t("common.translateWithGoogle")}
@@ -2066,17 +2059,7 @@ export function AdvancedTraining({
                       overflow: "hidden"
                     }}
                   >
-                    <img
-                      src="/google-translate-icon.png"
-                      alt=""
-                      aria-hidden="true"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "contain",
-                        display: "block"
-                      }}
-                    />
+                    <GoogleTranslateIcon size={22} />
                   </button>
                   </div>
                 </div>
@@ -2205,17 +2188,7 @@ export function AdvancedTraining({
                       overflow: "hidden"
                     }}
                   >
-                    <img
-                      src="/google-translate-icon.png"
-                      alt=""
-                      aria-hidden="true"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "contain",
-                        display: "block"
-                      }}
-                    />
+                    <GoogleTranslateIcon size={22} />
                   </button>
                   </div>
                 </div>
