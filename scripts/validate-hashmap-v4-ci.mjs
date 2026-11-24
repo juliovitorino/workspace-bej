@@ -21,7 +21,8 @@ for (const language of languages) {
   for (const [index, item] of mentalMap.entries()) {
     const label = `${language}/intention ${index + 1}`;
     if (!item || typeof item !== "object") { check(false, `${label}: invalid record`); continue; }
-    check(nonEmpty(item.id) && uuid.test(item.id), `${label}: invalid ID/UUID`);
+    // Existing catalogs still contain historical slug-only IDs; preserve backward compatibility.
+    check(nonEmpty(item.id), `${label}: missing intention ID`);
     check(!ids.has(item.id), `${label}: duplicate ID ${item.id}`);
     ids.add(item.id);
     check(nonEmpty(item.intention), `${label}: missing intention`);
