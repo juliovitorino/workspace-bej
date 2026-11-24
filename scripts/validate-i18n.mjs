@@ -32,7 +32,7 @@ const sourceFiles = dir => readdirSync(dir, { withFileTypes: true }).flatMap(ent
 const used = new Set();
 for (const file of sourceFiles("src")) {
   const source = readFileSync(file, "utf8");
-  for (const match of source.matchAll(/\bt\(\s*["']([^"']+)["']/g)) {
+  for (const match of source.matchAll(/\bt\(\s*["']([^"']+)["'](?=\s*[,\)])/g)) {
     const key = match[1];
     used.add(key);
     if (!(key in dict["pt-BR"]) && !(`${key}_one` in dict["pt-BR"]) && !(`${key}_other` in dict["pt-BR"]))
