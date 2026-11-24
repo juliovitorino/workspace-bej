@@ -106,7 +106,11 @@ export function saveWyrChoices(choices: Record<string, WyrChoice>): boolean {
 function latest<T extends { updatedAt: string }>(a: T | undefined, b: T): T {
   if (!a) return b;
   const time = Date.parse(b.updatedAt) - Date.parse(a.updatedAt);
-  return time > 0 || (time === 0 && JSON.stringify(b) > JSON.stringify(a)) ? b : a;
+  if (time !== 0) return time > 0 ? b : a;
+  // A simultaneous unfavorite must not be resurrected by an equally dated favorite.
+  if ("value" in a && "value" in b && typeof a.value === "boolean" && typeof b.value === "boolean" && a.value !== b.value)
+    return a.value ? b : a;
+  return JSON.stringify(b) > JSON.stringify(a) ? b : a;
 }
 /** Commutative and idempotent merge, including tombstones for removed favorites. */
 export function mergeWyrProgress(...sources: (WyrProgressSync | undefined)[]): WyrProgressSync {
