@@ -35,7 +35,15 @@ jobs:
           npm run validate:hashmaps:v4
           npm run validate:i18n
       - name: Test study, dashboard and Drive Sync (including WRG)
-        run: npm run test:study
+        run: |
+          node scripts/test-study-notifications.mjs
+          node scripts/test-study-reset.mjs
+          node scripts/test-study-events.mjs
+          node scripts/test-study-locks.mjs
+          node scripts/test-study-dashboard.mjs
+          node scripts/test-extra-activities.mjs
+          node scripts/test-study-multitab.mjs
+          npm run test:sync
       - name: Test flashcards and walking mode
         run: npm run test:flashcards
       - name: Test Small Talk and author collections
