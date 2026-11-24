@@ -88,12 +88,41 @@ function validateHashmapV4(value: unknown, language: string): HashmapDataV4 {
   return value as unknown as HashmapDataV4;
 }
 
+// Guarda os objetos V4 originais carregados para exportações de autoria sem normalização.
+const originalCatalogs = new Map<StudentLanguage, HashmapDataV4>();
+
 async function fetchCatalog(language: StudentLanguage): Promise<HashmapDataV4> {
   const response = await fetch(getHashmapUrl(language), { cache: "no-store" });
   if (!response.ok) {
     throw new Error(t("catalog.couldNotLoadMentalHashmapLanguageHttpStatus", { language: (language), status: (response.status) }));
   }
-  return validateHashmapV4(await response.json(), language);
+  const catalog = validateHashmapV4(await response.json(), language);
+  originalCatalogs.set(language, catalog);
+  return catalog;
+}
+
+/**
+ * Retorna os objetos V4 originais, completos e sem alterações, na mesma ordem
+ * dos IDs filtrados pela interface. Não exporta os aliases de compatibilidade
+ * (english, pt, en, etc.) criados apenas para exibição.
+ */
+export async function getOriginalFilteredIntentions(language: StudentLanguage, ids: string[]): Promise<HashmapIntentionV4[]> {
+  if (ids.length === 0) return [];
+
+  let catalog = originalCatalogs.get(language) ?? await fetchCatalog(language);
+  let byId = new Map(catalog.mentalMap.map(item => [item.id, item]));
+
+  // Um catálogo em memória pode estar desatualizado após uma sincronização.
+  if (ids.some(id => !byId.has(id))) {
+    catalog = await fetchCatalog(language);
+    byId = new Map(catalog.mentalMap.map(item => [item.id, item]));
+  }
+
+  return ids.map(id => {
+    const intention = byId.get(id);
+    if (!intention) throw new Error(`Intenção não encontrada no catálogo original: ${id}`);
+    return intention;
+  });
 }
 
 /**
