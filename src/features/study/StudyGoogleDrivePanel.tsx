@@ -4,6 +4,8 @@ import { useTranslation } from "react-i18next";
 import { backupReminder } from "../../utils/backupReminder";
 import { exportStudyBackup } from "./exportStudyBackup";
 import { readStudyStore, STUDY_CHANGED, StudyError } from "./studyStorage";
+import { readChunkLikes, chunkLikeTotal } from "../../utils/chunkLikes";
+import type { StudentLanguage } from "../../config/languages";
 import { languageName } from "../../i18n";
 import { applySync, assertNoUncommittedCheckpoints, authorizeDrive, clearPendingDrivePublication, combineSyncFiles, createSnapshot, deviceId, folderId, GOOGLE_CLIENT_ID, listSyncFiles, markPendingDrivePublication, pendingDrivePublication, publishCurrentSnapshot, readSyncFile, saveFolder, studySyncDiagnostics, syncBaseline, type SyncBaseline, type SyncFile } from "./studyDriveSync";
 
@@ -65,7 +67,8 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
         JSON.stringify(local.favorites) !== baseline.favorites ||
         JSON.stringify(local.wyrAnswers ?? {}) !== baseline.wyrAnswers ||
         JSON.stringify(local.wyrProgress) !== baseline.wyrProgress ||
-        JSON.stringify(local.smallTalk) !== baseline.smallTalk) throw new Error(t("study.errors.stale"));
+        JSON.stringify(local.smallTalk) !== baseline.smallTalk ||
+        JSON.stringify(local.likes) !== baseline.likes) throw new Error(t("study.errors.stale"));
     const files = await listSyncFiles(token, folder);
     const incoming = await Promise.all(files.map(f => readSyncFile(token, f)));
     if (JSON.stringify(syncBaseline()) !== JSON.stringify(baseline)) throw new Error(t("study.errors.stale"));
@@ -142,6 +145,8 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
         <div><dt>Small Talk — respostas editadas</dt><dd>{Object.keys(preview.merged.smallTalk.answers).length}</dd></div>
         <div><dt>Small Talk — cards pessoais</dt><dd>{Object.keys(preview.merged.smallTalk.customItems).length}</dd></div>
         <div><dt>Small Talk — respostas pessoais</dt><dd>{Object.keys(preview.merged.smallTalk.personalAnswers.answersByItemId).length}</dd></div>
+        <div><dt>{t("driveSync.chunkLikes")}</dt><dd>{Object.entries(preview.merged.likes).reduce((sum, [lang, chunks]) =>
+          sum + Object.keys(chunks).reduce((total, id) => total + chunkLikeTotal(preview.merged.likes, lang as StudentLanguage, id), 0), 0)}</dd></div>
         <div><dt>{t("study.conflicts")}</dt><dd>{preview.merged.conflicts.length}</dd></div>
       </dl>
       {!!preview.merged.conflicts.length && <p role="alert">{t("driveSync.conflictNote")}</p>}
