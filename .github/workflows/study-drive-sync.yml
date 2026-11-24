@@ -77,3 +77,23 @@ jobs:
     steps:
       - name: Confirm all CI stages passed
         run: echo "BEJ CI aprovado!"
+
+  awaiting-merge:
+    name: "05 - Aguardando merge na master"
+    needs: [ci-success]
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Informar proxima acao manual
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: |
+          echo "CI aprovado. O merge na master depende de aprovacao manual."
+          {
+            echo "## 05 - Aguardando merge na master"
+            echo ""
+            echo "Todas as verificacoes do CI foram aprovadas."
+            echo "O merge na master depende de revisao e acao manual."
+            echo ""
+            echo "Pull request: ${PR_URL}"
+          } >> "$GITHUB_STEP_SUMMARY"
