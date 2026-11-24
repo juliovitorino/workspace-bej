@@ -32,7 +32,7 @@ jobs:
         run: npm ci
       - name: Validate translated content and intentions
         run: |
-          npm run validate:hashmaps
+          npm run validate:hashmaps:v4
           npm run validate:i18n
       - name: Test study, dashboard and Drive Sync (including WRG)
         run: npm run test:study
