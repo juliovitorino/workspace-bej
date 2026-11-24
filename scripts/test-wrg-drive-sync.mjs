@@ -69,6 +69,14 @@ test("newest A/B selection wins; merge is commutative and idempotent", () => {
   assert.equal(wyr.readWyrStored().choices[ID1], "A");
 });
 
+test("simultaneous favorite add and removal favors the removal on both devices", () => {
+  const timestamp = "2026-11-24T12:00:00.000Z";
+  const added = { favorites: { [ID1]: { value: true, updatedAt: timestamp } }, choices: {} };
+  const removed = { favorites: { [ID1]: { value: false, updatedAt: timestamp } }, choices: {} };
+  assert.equal(wyr.mergeWyrProgress(added, removed).favorites[ID1].value, false);
+  assert.equal(wyr.mergeWyrProgress(removed, added).favorites[ID1].value, false);
+});
+
 test("reselecting A/B in the same millisecond advances the revision clock", () => {
   reset();
   assert.equal(wyr.saveWyrChoices({ [ID1]: "A" }), true);
