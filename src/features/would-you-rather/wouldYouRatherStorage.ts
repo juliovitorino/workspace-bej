@@ -80,6 +80,25 @@ export function writeWyrProgress(value: WyrProgressSync): boolean {
   window.dispatchEvent(new Event(WYR_SYNC_CHANGED));
   return true;
 }
+/** Change only one question, so a stale UI cannot overwrite unrelated synchronized data. */
+export function setWyrFavorite(id: string, value: boolean): boolean {
+  if (!isUuid(id)) return false;
+  try {
+    const progress = readWyrProgress();
+    if ((progress.favorites[id]?.value ?? false) !== value)
+      progress.favorites[id] = { value, updatedAt: nextEditTime(progress.favorites[id]?.updatedAt) };
+    return writeWyrProgress(progress);
+  } catch { return false; }
+}
+export function setWyrChoice(id: string, value: WyrChoice): boolean {
+  if (!isUuid(id) || (value !== "A" && value !== "B")) return false;
+  try {
+    const progress = readWyrProgress();
+    if (progress.choices[id]?.value !== value)
+      progress.choices[id] = { value, updatedAt: nextEditTime(progress.choices[id]?.updatedAt) };
+    return writeWyrProgress(progress);
+  } catch { return false; }
+}
 export function saveWyrFavorites(ids: string[]): boolean {
   try {
     const progress = readWyrProgress();
