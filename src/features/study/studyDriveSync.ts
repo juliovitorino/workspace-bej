@@ -2,7 +2,7 @@ import { FAVORITE_CHUNKS_KEY, parseFavoriteChunks, readFavoriteChunks, type Favo
 import { backupOf, mergeStudyData, parseStudyBackup, readStudyCheckpoints, readStudyStore, reconcileOrphanedCheckpoints, updateStudyStore, STUDY_CHANGED, StudyError, type StudyBackup, type StudyData, type StudySession } from "./studyStorage";
 import type { StudentLanguage } from "../../config/languages";
 import { studyTracker } from "./studyTrackingService";
-import { mergeWyrAnswers, readWyrAnswers, saveWyrAnswers, validateWyrAnswers, type WyrCustomAnswers } from "../would-you-rather/wouldYouRatherStorage";
+import { mergeWyrAnswers, readWyrAnswers, saveWyrAnswers, validateWyrAnswers, readWyrProgress, validateWyrProgress, mergeWyrProgress, writeWyrProgress, type WyrCustomAnswers, type WyrProgressSync } from "../would-you-rather/wouldYouRatherStorage";
 
 import { readSmallTalkSync, validateSmallTalkSync, mergeSmallTalkSync, writeSmallTalkSync, type SmallTalkSyncData } from "./smallTalkDriveSync";
 
@@ -13,9 +13,9 @@ const API = "https://www.googleapis.com/drive/v3/files";
 const UPLOAD = "https://www.googleapis.com/upload/drive/v3/files";
 export const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID as string | undefined;
 const SCOPE = "https://www.googleapis.com/auth/drive.file";
-export type SyncFile = { schemaVersion: 1; kind: "bej-study-sync"; deviceId: string; exportedAt: string; study: StudyBackup; favorites: FavoriteChunk[]; wyrAnswers?: WyrCustomAnswers; smallTalk?: SmallTalkSyncData };
+export type SyncFile = { schemaVersion: 1; kind: "bej-study-sync"; deviceId: string; exportedAt: string; study: StudyBackup; favorites: FavoriteChunk[]; wyrAnswers?: WyrCustomAnswers; wyrProgress?: WyrProgressSync; smallTalk?: SmallTalkSyncData };
 export type DriveFile = { id: string; name: string };
-export type SyncBaseline = { study: string; checkpoints: string; favorites: string; wyrAnswers: string; smallTalk: string };
+export type SyncBaseline = { study: string; checkpoints: string; favorites: string; wyrAnswers: string; wyrProgress: string; smallTalk: string };
 export type PendingDrivePublication = { folder: string; deviceId: string; startedAt: string };
 
 /** A failed Drive upload never undoes a completed local merge. Persist the pending state across reloads. */
@@ -136,7 +136,7 @@ export async function readSyncFile(token: string, file: DriveFile): Promise<Sync
   // Reject malformed favorites instead of silently dropping entries.
   const favorites = parseFavoriteChunks(JSON.stringify(v.favorites));
   if (favorites.length !== v.favorites.length) throw new Error(`Invalid favorites in ${file.name}`);
-  return { schemaVersion: 1, kind: "bej-study-sync", deviceId: v.deviceId, exportedAt: String(v.exportedAt), study, favorites, wyrAnswers: validateWyrAnswers(v.wyrAnswers), smallTalk: v.smallTalk === undefined ? undefined : validateSmallTalkSync(v.smallTalk) };
+  return { schemaVersion: 1, kind: "bej-study-sync", deviceId: v.deviceId, exportedAt: String(v.exportedAt), study, favorites, wyrAnswers: validateWyrAnswers(v.wyrAnswers), wyrProgress: v.wyrProgress === undefined ? undefined : validateWyrProgress(v.wyrProgress), smallTalk: v.smallTalk === undefined ? undefined : validateSmallTalkSync(v.smallTalk) };
 }
 /** Prevent a live checkpoint from being silently omitted from a Drive snapshot. */
 export function assertNoUncommittedCheckpoints(): void {
@@ -151,11 +151,11 @@ export async function createSnapshot(): Promise<SyncFile> {
   await reconcileOrphanedCheckpoints();
   assertNoUncommittedCheckpoints();
   return { schemaVersion: 1, kind: "bej-study-sync", deviceId: deviceId(),
-    exportedAt: new Date().toISOString(), study: backupOf(readStudyStore()), favorites: readFavoriteChunks(), wyrAnswers: readWyrAnswers(), smallTalk: readSmallTalkSync() };
+    exportedAt: new Date().toISOString(), study: backupOf(readStudyStore()), favorites: readFavoriteChunks(), wyrAnswers: readWyrAnswers(), wyrProgress: readWyrProgress(), smallTalk: readSmallTalkSync() };
 }
 /** Protect all locally editable sync domains during the preview/confirmation interval. */
 export function syncBaseline(): SyncBaseline {
-  return { study: JSON.stringify(readStudyStore()), checkpoints: JSON.stringify(readStudyCheckpoints()), favorites: JSON.stringify(readFavoriteChunks()), wyrAnswers: JSON.stringify(readWyrAnswers()), smallTalk: JSON.stringify(readSmallTalkSync()) };
+  return { study: JSON.stringify(readStudyStore()), checkpoints: JSON.stringify(readStudyCheckpoints()), favorites: JSON.stringify(readFavoriteChunks()), wyrAnswers: JSON.stringify(readWyrAnswers()), wyrProgress: JSON.stringify(readWyrProgress()), smallTalk: JSON.stringify(readSmallTalkSync()) };
 }
 export async function uploadSnapshot(token: string, folder: string, files: DriveFile[], snapshot: SyncFile): Promise<void> {
   const name = `bej-study-${snapshot.deviceId}.json`;
@@ -188,16 +188,18 @@ export async function publishCurrentSnapshot(token: string, folder: string): Pro
   if (JSON.stringify(syncBaseline()) !== JSON.stringify(baseline))
     throw new Error("Local study data changed during Drive upload. Publish again.");
 }
-export function combineSyncFiles(local: SyncFile, incoming: SyncFile[]): { study: StudyData; favorites: FavoriteChunk[]; newSessions: number; newAdjustments: number; conflicts: string[]; wyrAnswers: WyrCustomAnswers; smallTalk: SmallTalkSyncData } {
+export function combineSyncFiles(local: SyncFile, incoming: SyncFile[]): { study: StudyData; favorites: FavoriteChunk[]; newSessions: number; newAdjustments: number; conflicts: string[]; wyrAnswers: WyrCustomAnswers; wyrProgress: WyrProgressSync; smallTalk: SmallTalkSyncData } {
   let study = local.study.studyData;
   let newSessions = 0, newAdjustments = 0;
   const conflicts: string[] = [];
   let wyrAnswers = validateWyrAnswers(local.wyrAnswers);
+  let wyrProgress = validateWyrProgress(local.wyrProgress);
   let smallTalk = validateSmallTalkSync(local.smallTalk ?? readSmallTalkSync());
   const favoriteMap = new Map<string, FavoriteChunk>();
   for (const favorite of local.favorites) favoriteMap.set(`${favorite.language}:${favorite.type ?? "chunk"}:${favorite.id}`, favorite);
   for (const remote of incoming) {
     wyrAnswers = mergeWyrAnswers(wyrAnswers, validateWyrAnswers(remote.wyrAnswers));
+    if (remote.wyrProgress) wyrProgress = mergeWyrProgress(wyrProgress, remote.wyrProgress);
     if (remote.smallTalk) smallTalk = mergeSmallTalkSync(smallTalk, remote.smallTalk);
     const merged = mergeStudyData(study, remote.study.studyData);
     study = { ...merged.studyData, goals: local.study.studyData.goals, monthlyGoals: local.study.studyData.monthlyGoals };
@@ -205,12 +207,13 @@ export function combineSyncFiles(local: SyncFile, incoming: SyncFile[]): { study
     conflicts.push(...merged.conflicts.map(c => `${remote.deviceId}: ${c}`));
     for (const favorite of remote.favorites) favoriteMap.set(`${favorite.language}:${favorite.type ?? "chunk"}:${favorite.id}`, favorite);
   }
-  return { study, favorites: [...favoriteMap.values()], wyrAnswers, smallTalk, newSessions, newAdjustments, conflicts };
+  return { study, favorites: [...favoriteMap.values()], wyrAnswers, wyrProgress, smallTalk, newSessions, newAdjustments, conflicts };
 }
 export async function applySync(merged: ReturnType<typeof combineSyncFiles>, baseline: SyncBaseline): Promise<void> {
   if (merged.conflicts.length) throw new Error("Conflicting records: synchronization cancelled.");
   const unchangedAuxiliaryData = () => JSON.stringify(readFavoriteChunks()) === baseline.favorites &&
     JSON.stringify(readWyrAnswers()) === baseline.wyrAnswers &&
+    JSON.stringify(readWyrProgress()) === baseline.wyrProgress &&
     JSON.stringify(readSmallTalkSync()) === baseline.smallTalk;
   const store = readStudyStore();
   if (JSON.stringify(store) !== baseline.study || JSON.stringify(readStudyCheckpoints()) !== baseline.checkpoints || store.extraActivity || store.activeSession) throw new Error("Study data or checkpoints changed. Retry Sync.");
@@ -226,6 +229,7 @@ export async function applySync(merged: ReturnType<typeof combineSyncFiles>, bas
   if (!unchangedAuxiliaryData()) throw new Error("Favorites or WRG answers changed. Retry Sync.");
   writeSmallTalkSync(merged.smallTalk);
   if (!saveWyrAnswers(merged.wyrAnswers)) throw new Error("Could not save synchronized WRG answers.");
+  if (!writeWyrProgress(merged.wyrProgress)) throw new Error("Could not save synchronized WRG choices and favorites.");
   localStorage.setItem(FAVORITE_CHUNKS_KEY, JSON.stringify(merged.favorites));
   window.dispatchEvent(new Event(STUDY_CHANGED));
   window.dispatchEvent(new StorageEvent("storage", { key: FAVORITE_CHUNKS_KEY }));
