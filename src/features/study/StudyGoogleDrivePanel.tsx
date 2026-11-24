@@ -64,6 +64,7 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
     if (JSON.stringify(local.study.studyData) !== JSON.stringify(readStudyStore().studyData) ||
         JSON.stringify(local.favorites) !== baseline.favorites ||
         JSON.stringify(local.wyrAnswers ?? {}) !== baseline.wyrAnswers ||
+        JSON.stringify(local.wyrProgress) !== baseline.wyrProgress ||
         JSON.stringify(local.smallTalk) !== baseline.smallTalk) throw new Error(t("study.errors.stale"));
     const files = await listSyncFiles(token, folder);
     const incoming = await Promise.all(files.map(f => readSyncFile(token, f)));
@@ -135,6 +136,8 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
         <div><dt>{t("study.newSessions")}</dt><dd>{preview.merged.newSessions}</dd></div>
         <div><dt>{t("study.newAdjustments")}</dt><dd>{preview.merged.newAdjustments}</dd></div>
         <div><dt>{t("driveSync.favorites")}</dt><dd>{preview.merged.favorites.length}</dd></div>
+        <div><dt>Would You Rather — favoritas</dt><dd>{Object.values(preview.merged.wyrProgress.favorites).filter(item => item.value).length}</dd></div>
+        <div><dt>Would You Rather — alternativas A/B</dt><dd>{Object.keys(preview.merged.wyrProgress.choices).length}</dd></div>
         <div><dt>Small Talk — perguntas editadas</dt><dd>{Object.keys(preview.merged.smallTalk.questions).length}</dd></div>
         <div><dt>Small Talk — respostas editadas</dt><dd>{Object.keys(preview.merged.smallTalk.answers).length}</dd></div>
         <div><dt>Small Talk — cards pessoais</dt><dd>{Object.keys(preview.merged.smallTalk.customItems).length}</dd></div>
