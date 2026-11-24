@@ -4,7 +4,7 @@ import type { SourceLanguage, StudentLanguage } from "../../config/languages";
 import { LANGUAGES } from "../../config/languages";
 import { useTrainingStudy, type TrainingStudyReporter } from "../study/useTrainingStudy";
 import { loadWouldYouRather, normalizeWyrSearch, type WyrData, type WyrQuestion, type WyrTopic } from "./wouldYouRatherService";
-import { readWyrStored, saveWyrChoices, saveWyrFavorites, readWyrAnswers, saveWyrAnswers, wyrAnswerKey, readWyrFontSize, saveWyrFontSize, type WyrChoice, type WyrCustomAnswers, type WyrFontSize } from "./wouldYouRatherStorage";
+import { readWyrStored, saveWyrChoices, saveWyrFavorites, readWyrAnswers, saveWyrAnswers, wyrAnswerKey, readWyrFontSize, saveWyrFontSize, type WyrChoice, type WyrCustomAnswers, type WyrFontSize, WYR_SYNC_CHANGED, WYR_FAVORITES_KEY, WYR_PROGRESS_KEY, WYR_CUSTOM_ANSWERS_KEY } from "./wouldYouRatherStorage";
 import { WyrWalking } from "./WyrWalking";
 import { celebrateCompletedSession } from "../../utils/achievements";
 import "./wouldYouRather.css";
@@ -138,6 +138,26 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
   const [notice, setNotice] = useState("");
   const [lastRandom, setLastRandom] = useState<string | null>(null);
   const { recordActivity } = useTrainingStudy(language, screen === "practice" && !!loaded && !loading, loading, false, onStudyState);
+
+  // The same-tab Drive merge dispatches WYR_SYNC_CHANGED; other tabs use storage events.
+  useEffect(() => {
+    const refresh = () => {
+      const current = readWyrStored();
+      setFavorites(current.favorites);
+      setChoices(current.choices);
+      setCustomAnswers(readWyrAnswers());
+      if (current.storageError) setStorageError(true);
+    };
+    const onStorage = (event: StorageEvent) => {
+      if (event.key === null || [WYR_FAVORITES_KEY, WYR_PROGRESS_KEY, WYR_CUSTOM_ANSWERS_KEY].includes(event.key)) refresh();
+    };
+    window.addEventListener(WYR_SYNC_CHANGED, refresh);
+    window.addEventListener("storage", onStorage);
+    return () => {
+      window.removeEventListener(WYR_SYNC_CHANGED, refresh);
+      window.removeEventListener("storage", onStorage);
+    };
+  }, []);
 
   useEffect(() => {
     const controller = new AbortController();
