@@ -34,6 +34,8 @@
 .wyr-star { background: var(--surface); color: var(--accent); border: 1px solid var(--border); border-radius: 10px; min-width: 44px; min-height: 44px; font-size: 1.5rem; cursor: pointer; }
 .wyr-card { border: 1px solid var(--border); border-radius: 14px; background: var(--surface); padding: 15px 18px; margin-bottom: 12px; }
 .wyr-card:first-of-type { background: var(--surface-soft); }
+/* Keep the target card heading visible below the app header, including mobile safe areas. */
+.wyr-card--scroll-target { scroll-margin-top: calc(84px + env(safe-area-inset-top, 0px)); }
 .wyr-card--option { transition: border-color .12s; }
 .wyr-card--selected { border: 2px solid var(--accent); padding: 14px 17px; }
 .wyr-card-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 9px; }
