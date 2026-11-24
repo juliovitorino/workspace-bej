@@ -45,7 +45,10 @@ jobs:
           node scripts/test-study-multitab.mjs
           npm run test:sync
       - name: Test flashcards and walking mode
-        run: npm run test:flashcards
+        run: |
+          node scripts/test-learning-rounds.mjs
+          node scripts/test-walking-mode.mjs
+          node scripts/test-favorite-chunks.mjs
       - name: Test Small Talk and author collections
         run: |
           npm run test:smalltalk
