@@ -146,7 +146,7 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
         <div><dt>Small Talk — cards pessoais</dt><dd>{Object.keys(preview.merged.smallTalk.customItems).length}</dd></div>
         <div><dt>Small Talk — respostas pessoais</dt><dd>{Object.keys(preview.merged.smallTalk.personalAnswers.answersByItemId).length}</dd></div>
         <div><dt>{t("driveSync.chunkLikes")}</dt><dd>{Object.entries(preview.merged.likes).reduce((sum, [lang, chunks]) =>
-          sum + Object.keys(chunks).reduce((total, id) => total + chunkLikeTotal(preview.merged.likes, lang as StudentLanguage, id), 0), 0)}</dd></div>
+          sum + Object.keys(chunks ?? {}).reduce((total, id) => total + chunkLikeTotal(preview.merged.likes, lang as StudentLanguage, id), 0), 0)}</dd></div>
         <div><dt>{t("study.conflicts")}</dt><dd>{preview.merged.conflicts.length}</dd></div>
       </dl>
       {!!preview.merged.conflicts.length && <p role="alert">{t("driveSync.conflictNote")}</p>}
