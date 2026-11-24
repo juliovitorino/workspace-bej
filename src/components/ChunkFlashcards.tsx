@@ -19,6 +19,9 @@ import type { FavoriteChunk } from "../utils/favoriteChunks";
 import type { WalkingSummary } from "../utils/walkingSession";
 import { FavoriteChunkButton } from "./FavoriteChunkButton";
 import { WalkingSessionSummary } from "./WalkingSessionSummary";
+import { GoogleTranslateIcon } from "./GoogleTranslateIcon";
+import { CHUNK_LIKES_CHANGED, CHUNK_LIKES_KEY, chunkLikeTotal, incrementChunkLike, readChunkLikes } from "../utils/chunkLikes";
+import { deviceId } from "../features/study/studyDriveSync";
 import { celebrateAchievement, celebrateFlashcardMilestone, recordPracticedChunk } from "../utils/achievements";
 
 const NO_FAVORITES: FavoriteChunk[] = [];
@@ -57,9 +60,7 @@ export function ChunkFlashcards({
   language,
   sourceLanguage,
   onWalkingChange,
-  onShowDetails,
-  onBasicTraining,
-  onAdvancedTraining
+  onShowDetails
 }: ChunkFlashcardsProps) {
   const { t } = useTranslation();
   const authorMode = isAuthorMode();
@@ -111,6 +112,19 @@ export function ChunkFlashcards({
   const [copiedChunkId, setCopiedChunkId] = useState<string | null>(null);
   const [copiedIntentionId, setCopiedIntentionId] = useState<string | null>(null);
   const [copyError, setCopyError] = useState<string | null>(null);
+  const [likes, setLikes] = useState(() => { try { return readChunkLikes(); } catch { return {}; } });
+  const [likeError, setLikeError] = useState<string | null>(null);
+  useEffect(() => {
+    const refresh = () => {
+      try { setLikes(readChunkLikes()); setLikeError(null); }
+      catch { setLikeError(t("flashcards.couldNotSaveLike")); }
+    };
+    const onStorage = (event: StorageEvent) => { if (event.key === CHUNK_LIKES_KEY) refresh(); };
+    refresh();
+    window.addEventListener(CHUNK_LIKES_CHANGED, refresh);
+    window.addEventListener("storage", onStorage);
+    return () => { window.removeEventListener(CHUNK_LIKES_CHANGED, refresh); window.removeEventListener("storage", onStorage); };
+  }, [t]);
   const previousStudySet = useRef({ intentions, language, mode });
   const presentedInSession = useRef(0);
   const copyFeedbackTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -229,6 +243,7 @@ export function ChunkFlashcards({
   const currentChunk = studyChunk ?? (walking ? walkingChunks : chunks).find((item) => item.id === activeCurrentId) ??
     (walking && retainedWalkingChunk.current?.id === activeCurrentId ? retainedWalkingChunk.current : null);
   if (currentChunk) retainedWalkingChunk.current = currentChunk;
+  const likeCount = currentChunk ? chunkLikeTotal(likes, language, currentChunk.id) : 0;
   const studyItem = currentChunk as FavoriteStudyItem | null;
   const favoriteId = studyItem?.favoriteId ?? currentChunk?.id;
   const favoriteType = studyItem?.favoriteType;
@@ -430,6 +445,24 @@ export function ChunkFlashcards({
     }
   }
 
+  function translateChunk() {
+    if (!currentChunk) return;
+    const text = (currentChunk.targetIntention ?? currentChunk.english).trim();
+    if (!text) return;
+    const url = "https://translate.google.com/?sl=" + encodeURIComponent(language.slice(0, 2)) +
+      "&tl=" + encodeURIComponent(sourceLanguage.slice(0, 2)) +
+      "&text=" + encodeURIComponent(text) + "&op=translate";
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
+
+  function registerLike() {
+    if (!currentChunk) return;
+    try {
+      setLikes(incrementChunkLike(language, currentChunk.id, deviceId()));
+      setLikeError(null);
+    } catch { setLikeError(t("flashcards.couldNotSaveLike")); }
+  }
+
   function speak() {
     if (!currentChunk) return;
     const text = (currentChunk.targetIntention ?? currentChunk.english).trim();
@@ -521,20 +554,23 @@ export function ChunkFlashcards({
                     <button
                       type="button"
                       className="chunk-flashcards-details"
-                      onClick={() => onBasicTraining(origin!)}
-                      aria-label={t("flashcards.openBasicPracticeForText", { text: (currentChunk.targetIntention ?? currentChunk.english) })}
-                      title={t("common.basicPractice")}
+                      onClick={translateChunk}
+                      aria-label={t("flashcards.openGoogleTranslate")}
+                      title={t("flashcards.openGoogleTranslate")}
                     >
-                      <span aria-hidden="true" style={{ fontSize: "1.5rem", lineHeight: 1 }}>🚶🏻‍➡️</span>
+                      <GoogleTranslateIcon size={26} />
                     </button>
                     <button
                       type="button"
-                      className="chunk-flashcards-details"
-                      onClick={() => onAdvancedTraining(origin!)}
-                      aria-label={t("flashcards.openAdvancedPracticeForText", { text: (currentChunk.targetIntention ?? currentChunk.english) })}
-                      title={t("common.advancedPractice")}
+                      className="chunk-flashcards-details chunk-flashcards-like"
+                      onClick={registerLike}
+                      aria-label={t("flashcards.likeChunkWithCount", { count: likeCount })}
+                      title={t("flashcards.likeChunkWithCount", { count: likeCount })}
                     >
-                      <span aria-hidden="true" style={{ fontSize: "1.5rem", lineHeight: 1 }}>🏃</span>
+                      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M7 10v12H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h3Zm0 0 4-8a3 3 0 0 1 3 3v4h5a3 3 0 0 1 2.9 3.8l-2 7A3 3 0 0 1 17 22H7" />
+                      </svg>
+                      <span className="chunk-flashcards-like-count" aria-hidden="true">{likeCount}</span>
                     </button>
                   </div>
                 </div>
@@ -552,6 +588,7 @@ export function ChunkFlashcards({
 
           {audioError && <p className="chunk-flashcards-audio-error" role="alert">{audioError}</p>}
           {copyError && <p className="chunk-flashcards-audio-error" role="alert">{copyError}</p>}
+          {likeError && <p className="chunk-flashcards-audio-error" role="alert">{likeError}</p>}
           {(currentChunk !== null && (copiedChunkId === currentChunk.id || (authorMode && copiedIntentionId === currentChunk.id))) && (
             <p
               role="status"

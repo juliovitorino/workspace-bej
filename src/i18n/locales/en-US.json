@@ -718,6 +718,9 @@
     "youtubeVideo": "YouTube video"
   },
   "flashcards": {
+    "openGoogleTranslate": "Open phrase in Google Translate",
+    "likeChunkWithCount": "Like this chunk ({{count}} likes)",
+    "couldNotSaveLike": "Could not save the like on this device.",
     "itemsRemaining": "Items remaining",
     "availableChunks_many": "{{count}} chunks available",
     "availableChunks_one": "{{count}} chunk available",
@@ -1233,6 +1236,7 @@
     "note": "Average per calendar day, including days without study. Weeks start on Monday. Uses the selected language filter (or all languages when selected) and all modules."
   },
   "driveSync": {
+    "chunkLikes": "Chunk likes",
     "title": "Google Drive sync",
     "description": "Sync study history, extra activities and favorites across devices. Mental Hashmap is not uploaded.",
     "notConfigured": "Google Drive is not configured. Set VITE_GOOGLE_CLIENT_ID for deployment.",

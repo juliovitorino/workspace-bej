@@ -718,6 +718,9 @@
     "youtubeVideo": "Vídeo de YouTube"
   },
   "flashcards": {
+    "openGoogleTranslate": "Abrir frase en Google Traductor",
+    "likeChunkWithCount": "Me gusta este chunk ({{count}} likes)",
+    "couldNotSaveLike": "No se pudo guardar el like en este dispositivo.",
     "itemsRemaining": "Elementos restantes",
     "availableChunks_many": "{{count}} chunks disponibles",
     "availableChunks_one": "{{count}} chunk disponible",
@@ -1233,6 +1236,7 @@
     "note": "Media por día natural, incluidos los días sin estudio. La semana comienza el lunes. Considera el idioma seleccionado en el filtro (o todos, si se selecciona esa opción) y todos los módulos."
   },
   "driveSync": {
+    "chunkLikes": "Likes de los chunks",
     "title": "Sincronización Google Drive",
     "description": "Sincroniza historial, actividades extras y favoritos entre dispositivos. Mental Hashmap no se envía.",
     "notConfigured": "Google Drive no está configurado. Define VITE_GOOGLE_CLIENT_ID.",
