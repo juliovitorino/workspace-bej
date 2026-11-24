@@ -331,6 +331,54 @@ button {
   color: var(--muted);
 }
 
+.hashmap-results-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.hashmap-results-actions > p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.hashmap-collection-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.hashmap-collection-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 38px;
+}
+
+.hashmap-collection-feedback {
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-align: right;
+}
+
+.hashmap-collection-feedback--error {
+  color: var(--bad);
+}
+
+@media (max-width: 820px) {
+  .hashmap-results-actions,
+  .hashmap-collection-control {
+    align-items: flex-start;
+  }
+
+  .hashmap-collection-feedback {
+    text-align: left;
+  }
+}
+
 .intention-list {
   display: grid;
   gap: 12px;
