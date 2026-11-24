@@ -9,6 +9,7 @@ import type {
   MentalIntention
 } from "../types/hashmap";
 import { getHashmapCache, saveHashmapCache } from "./cacheService";
+import { selectOriginalIntentions } from "../utils/filteredIntentionCollection";
 
 
 
@@ -118,11 +119,7 @@ export async function getOriginalFilteredIntentions(language: StudentLanguage, i
     byId = new Map(catalog.mentalMap.map(item => [item.id, item]));
   }
 
-  return ids.map(id => {
-    const intention = byId.get(id);
-    if (!intention) throw new Error(`Intenção não encontrada no catálogo original: ${id}`);
-    return intention;
-  });
+  return selectOriginalIntentions(catalog.mentalMap, ids);
 }
 
 /**
