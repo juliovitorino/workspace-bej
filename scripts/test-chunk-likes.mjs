@@ -69,3 +69,14 @@ test("malformed data is rejected instead of being silently overwritten", () => {
   assert.equal(storage.getItem(likes.CHUNK_LIKES_KEY), "{not json");
   storage.removeItem(likes.CHUNK_LIKES_KEY);
 });
+
+
+test("shared flashcard uses Google Translate SVG and like badge instead of training shortcuts", () => {
+  const card = readFileSync("src/components/ChunkFlashcards.tsx", "utf8");
+  assert.match(card, /<GoogleTranslateIcon size=\{26\} \/>/);
+  assert.match(card, /onClick=\{translateChunk\}/);
+  assert.match(card, /onClick=\{registerLike\}/);
+  assert.match(card, /className="chunk-flashcards-like-count"/);
+  assert.match(card, /encodeURIComponent\(text\)/);
+  assert.doesNotMatch(card, /🚶🏻‍➡️|🏃|onBasicTraining\(origin!\)|onAdvancedTraining\(origin!\)/);
+});
