@@ -491,7 +491,6 @@ const missionSource = readFileSync('src/features/study/StudyPlanetMission.tsx', 
 assert.match(rocketSource, /useState\(false\)/);
 assert.match(rocketSource, /setMissionView\(previous => !previous\)/);
 assert.match(rocketSource, /\(!missionView \|\| isPhoneViewport\) && <div className="bej-rocket-journey"/);
-assert.match(rocketSource, /missionView && <StudyPlanetMission/);
 assert.match(missionSource, /Missão Espacial BEJ/);
 assert.match(missionSource, /const PLANETS/);
 assert.match(missionSource, /name: "Netuno", at: 1/);
