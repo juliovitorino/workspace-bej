@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { backupReminder } from "../../utils/backupReminder";
 import { exportStudyBackup } from "./exportStudyBackup";
 import { readStudyStore, STUDY_CHANGED, StudyError } from "./studyStorage";
-import { readChunkLikes, chunkLikeTotal } from "../../utils/chunkLikes";
+import { chunkLikeTotal } from "../../utils/chunkLikes";
 import type { StudentLanguage } from "../../config/languages";
 import { languageName } from "../../i18n";
 import { applySync, assertNoUncommittedCheckpoints, authorizeDrive, clearPendingDrivePublication, combineSyncFiles, createSnapshot, deviceId, folderId, GOOGLE_CLIENT_ID, listSyncFiles, markPendingDrivePublication, pendingDrivePublication, publishCurrentSnapshot, readSyncFile, saveFolder, studySyncDiagnostics, syncBaseline, type SyncBaseline, type SyncFile } from "./studyDriveSync";
