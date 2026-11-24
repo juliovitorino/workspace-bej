@@ -447,7 +447,7 @@ assert.match(rocketSource, /rotate\(\$\{rocketPose\.angle\}\)/, 'rocket rotation
 assert.match(rocketSource, /\$\{rocketPose\.y\}/, 'rocket climbs vertically before entering cruise');
 assert.match(rocketSource, /flightFraction > 0 && <circle/, 'progress endpoint remains visible');
 assert.match(rocketSource, /stroke=\{\x60url\(#bej-rocket-trail-/);
-assert.match(rocketSource, /target !== undefined && target > 0 && !missionView/);
+assert.match(rocketSource, /target !== undefined && target > 0 && \(!missionView \|\| isPhoneViewport\)/);
 console.log('PASS: rocket and colored trail use the existing historical goal fraction.');
 
 // Rocket animation starts when the goal section enters the viewport.
@@ -490,7 +490,7 @@ console.log('PASS: rocket holds at launch, climbs through 45 degrees, then cruis
 const missionSource = readFileSync('src/features/study/StudyPlanetMission.tsx', 'utf8');
 assert.match(rocketSource, /useState\(false\)/);
 assert.match(rocketSource, /setMissionView\(previous => !previous\)/);
-assert.match(rocketSource, /!missionView && <div className="bej-rocket-journey"/);
+assert.match(rocketSource, /\(!missionView \|\| isPhoneViewport\) && <div className="bej-rocket-journey"/);
 assert.match(rocketSource, /missionView && <StudyPlanetMission/);
 assert.match(missionSource, /Missão Espacial BEJ/);
 assert.match(missionSource, /const PLANETS/);
