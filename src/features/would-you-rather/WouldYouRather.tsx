@@ -4,7 +4,7 @@ import type { SourceLanguage, StudentLanguage } from "../../config/languages";
 import { LANGUAGES } from "../../config/languages";
 import { useTrainingStudy, type TrainingStudyReporter } from "../study/useTrainingStudy";
 import { loadWouldYouRather, normalizeWyrSearch, type WyrData, type WyrQuestion, type WyrTopic } from "./wouldYouRatherService";
-import { readWyrStored, saveWyrChoices, saveWyrFavorites, readWyrAnswers, saveWyrAnswers, wyrAnswerKey, readWyrFontSize, saveWyrFontSize, type WyrChoice, type WyrCustomAnswers, type WyrFontSize, WYR_SYNC_CHANGED, WYR_FAVORITES_KEY, WYR_PROGRESS_KEY, WYR_CUSTOM_ANSWERS_KEY } from "./wouldYouRatherStorage";
+import { readWyrStored, setWyrChoice, setWyrFavorite, readWyrAnswers, saveWyrAnswers, wyrAnswerKey, readWyrFontSize, saveWyrFontSize, type WyrChoice, type WyrCustomAnswers, type WyrFontSize, WYR_SYNC_CHANGED, WYR_FAVORITES_KEY, WYR_PROGRESS_KEY, WYR_CUSTOM_ANSWERS_KEY } from "./wouldYouRatherStorage";
 import { WyrWalking } from "./WyrWalking";
 import { celebrateCompletedSession } from "../../utils/achievements";
 import "./wouldYouRather.css";
@@ -230,14 +230,14 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
     setRevealed({ A: false, B: false });
     const next = { ...choices, [current.id]: choice };
     setChoices(next);
-    if (!saveWyrChoices(next)) setStorageError(true);
+    if (!setWyrChoice(current.id, choice)) setStorageError(true);
   }
   function toggleFavorite() {
     if (!current) return;
     recordActivity();
     const next = favorites.includes(current.id) ? favorites.filter(id => id !== current.id) : [...favorites, current.id];
     setFavorites(next);
-    if (!saveWyrFavorites(next)) setStorageError(true);
+    if (!setWyrFavorite(current.id, !favorites.includes(current.id))) setStorageError(true);
   }
   function go(next: number) {
     if (!practiceSet) return;
