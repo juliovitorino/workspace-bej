@@ -40,7 +40,7 @@ import { ChunkFlashcards } from "./components/ChunkFlashcards";
 import { StoryShadowing } from "./components/StoryShadowing";
 import { SmallTalkPage } from "./features/small-talk/SmallTalkPage";
 import "./features/small-talk/smallTalk.css";
-import { fetchHashmap, loadHashmap } from "./services/hashmapService";
+import { fetchHashmap, getOriginalFilteredIntentions, loadHashmap } from "./services/hashmapService";
 import type { HashmapData, MentalIntention } from "./types/hashmap";
 import { normalizeText } from "./utils/normalizeText";
 import { searchIntentions } from "./utils/searchIntentions";
@@ -185,6 +185,7 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
   const [youtubeVideoFilter, setYoutubeVideoFilter] = useState<YoutubeFilter>("all");
   const [youtubeShortFilter, setYoutubeShortFilter] = useState<YoutubeFilter>("all");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [collectionCopyStatus, setCollectionCopyStatus] = useState<"idle" | "copying" | "success" | "error">("idle");
   const [selected, setSelected] = useState<MentalIntention | null>(null);
   const [trainingMode, setTrainingMode] = useState<TrainingMode>(null);
   const [trainingIntention, setTrainingIntention] = useState<MentalIntention | null>(null);
@@ -257,6 +258,52 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
       active = false;
     };
   }, [language, sourceLanguage]);
+
+  // O botão de coleção usa exatamente os IDs da listagem já filtrada,
+  // sem recalcular a busca nem limitar a exportação aos cards visíveis.
+  async function copyFilteredCollection() {
+    if (!isAuthorMode() || !data || filteredItems.length === 0 || collectionCopyStatus === "copying") return;
+
+    const ids = filteredItems.map(item => item.id);
+    const selectedLanguage = language;
+    setCollectionCopyStatus("copying");
+    try {
+      const originals = await getOriginalFilteredIntentions(selectedLanguage, ids);
+      const json = JSON.stringify({ "collection-filtered": originals }, null, 2);
+      let copied = false;
+
+      if (navigator.clipboard?.writeText) {
+        try {
+          await navigator.clipboard.writeText(json);
+          copied = true;
+        } catch {
+          // Fallback para navegadores que bloqueiam a Clipboard API.
+        }
+      }
+
+      if (!copied) {
+        const textarea = document.createElement("textarea");
+        textarea.value = json;
+        textarea.readOnly = true;
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        textarea.style.pointerEvents = "none";
+        document.body.appendChild(textarea);
+        try {
+          textarea.focus();
+          textarea.select();
+          if (!document.execCommand("copy")) throw new Error("Não foi possível copiar a coleção.");
+        } finally {
+          textarea.remove();
+        }
+      }
+
+      setCollectionCopyStatus("success");
+    } catch (error) {
+      console.error("Erro ao copiar coleção filtrada:", error);
+      setCollectionCopyStatus("error");
+    }
+  }
 
   const availableTags = useMemo(() => {
     if (!data) return [];
@@ -332,6 +379,8 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
     youtubeShortFilter
   ]);
 
+
+  useEffect(() => { setCollectionCopyStatus("idle"); }, [filteredItems, language]);
   async function retry() {
     const version = ++requestVersion.current;
     setRetrying(true);
@@ -576,9 +625,36 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
                 </h2>
               </div>
 
-              <p>
-                {t("hashmap.totalAvailable", { count: data.mentalMap.length })}
-              </p>
+              <div className="hashmap-results-actions">
+                <p>{t("hashmap.totalAvailable", { count: data.mentalMap.length })}</p>
+                {authorMode && (
+                  <div className="hashmap-collection-control">
+                    <button type="button" className="secondary-button hashmap-collection-button"
+                      onClick={() => { void copyFilteredCollection(); }}
+                      disabled={filteredItems.length === 0 || collectionCopyStatus === "copying"}
+                      title={`Copiar coleção com ${filteredItems.length} intenção(ões) completas`}
+                      aria-label={`Copiar coleção filtrada com ${filteredItems.length} intenções completas`}>
+                      <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="4" y="4" width="11" height="11" rx="2" />
+                        <path d="M9 19h9a2 2 0 0 0 2-2V8" />
+                        <path d="M8 8h3m-1.5-1.5v3" />
+                      </svg>
+                      <span>{collectionCopyStatus === "copying" ? "Copiando..." : "Coleção"}</span>
+                    </button>
+                    {collectionCopyStatus === "success" && (
+                      <span className="hashmap-collection-feedback" role="status">
+                        {filteredItems.length} intenção(ões) completas copiadas!
+                      </span>
+                    )}
+                    {collectionCopyStatus === "error" && (
+                      <span className="hashmap-collection-feedback hashmap-collection-feedback--error" role="alert">
+                        Não foi possível copiar a coleção. Tente novamente.
+                      </span>
+                    )}
+                  </div>
+                )}
+              </div>
             </section>
 
                 <IntentionList
