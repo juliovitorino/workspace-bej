@@ -50,6 +50,8 @@ jobs:
         run: npm run test:sync
       - name: Test WRG scrolling
         run: npm run test:wrg-scroll
+      - name: Test shared Google Translate icon
+        run: npm run test:google-translate-icon
 
   build:
     name: "03 - Build"

@@ -8,6 +8,7 @@ import { readWyrStored, setWyrChoice, setWyrFavorite, readWyrAnswers, saveWyrAns
 import { WyrWalking } from "./WyrWalking";
 import { scrollToWyrCard, type WyrScrollTarget } from "./wyrScroll";
 import { celebrateCompletedSession } from "../../utils/achievements";
+import { GoogleTranslateIcon } from "../../components/GoogleTranslateIcon";
 import "./wouldYouRather.css";
 
 type Screen = "catalog" | "practice" | "summary" | "walking";
@@ -19,15 +20,11 @@ const CATEGORY_NAMES: Record<string, string> = {
   relationships: "Relationships", "personal-growth": "Personal Growth", "fun-imagination": "Fun & Imagination", "deep-conversations": "Deep Conversations"
 };
 
-function Icon({ kind }: { kind: "copy" | "translate" | "audio" | "edit" }) {
+function Icon({ kind }: { kind: "copy" | "audio" | "edit" }) {
   if (kind === "audio") return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 9a5 5 0 0 1 0 6M18 6a9 9 0 0 1 0 12"/></svg>;
   if (kind === "edit") return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m15 5 4 4M4 20l4.5-1 11-11a2.83 2.83 0 0 0-4-4l-11 11L4 20Z"/></svg>;
 
-  return kind === "copy" ? (
-    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
-  ) : (
-    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 5h12M10 3v2m4 0c-.5 6-3 10-8 13M6 9c1 3 4 6 8 8M13 21l5-11 5 11m-8-4h6"/></svg>
-  );
+  return <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>;
 }
 
 
@@ -80,7 +77,7 @@ function TextCard(props: TextCardProps) {
         <span className="wyr-card-label">{label}</span>
         <div className="wyr-card-actions">
           <button type="button" className="wyr-icon-button" aria-label={copyLabel} title={copyLabel} onClick={event => { event.stopPropagation(); void copy(); }}><Icon kind="copy" /></button>
-          <button type="button" className="wyr-icon-button" aria-label={translateLabel} title={translateLabel} onClick={event => { event.stopPropagation(); translate(); }}><Icon kind="translate" /></button>
+          <button type="button" className="wyr-icon-button" aria-label={translateLabel} title={translateLabel} onClick={event => { event.stopPropagation(); translate(); }}><GoogleTranslateIcon size={19} /></button>
           {!isAnswer && !onSelect && <button type="button" className="wyr-icon-button" aria-label={lang === "pt" ? "Ouvir pergunta" : lang === "es" ? "Escuchar pregunta" : lang === "fr" ? "Écouter la question" : "Listen to question"} title={lang === "pt" ? "Ouvir pergunta" : lang === "es" ? "Escuchar pregunta" : lang === "fr" ? "Écouter la question" : "Listen to question"} onClick={event => { event.stopPropagation(); speak(); }}><Icon kind="audio" /></button>}
         </div>
       </div>

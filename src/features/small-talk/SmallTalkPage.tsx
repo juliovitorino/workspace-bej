@@ -8,6 +8,7 @@ import type { SmallTalkItem, SmallTalkTopic, SmallTalkTopicIndexEntry, SmallTalk
 import { readLocalJson, readWalkingSettings, saveLocalJson, SMALL_TALK_FAVORITES_KEY, SMALL_TALK_WALKING_SETTINGS_KEY } from './smallTalkPreferences';
 import { SmallTalkWalking } from './SmallTalkWalking';
 import { SmallTalkIcon } from './SmallTalkIcon';
+import { GoogleTranslateIcon } from '../../components/GoogleTranslateIcon';
 import { printableSmallTalkItems, smallTalkPrintNumbers, nextSmallTalkCardOrder } from './smallTalkPrintOrder';
 import { SMALL_TALK_CARD_ORDER_KEY, readCardOrders, saveCardOrders, updateCardOrder } from './smallTalkCardOrderStorage';
 import { beginAnswerEdit, changeAnswerEdit, undoAnswerEdit, redoAnswerEdit } from './smallTalkAnswerEditHistory';
@@ -1149,7 +1150,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
             onClick={() => openAIAnalysis(item)}>
             <img src={aiAssetPath(aiProvider)} width="22" height="22" alt="" aria-hidden="true" />
           </button>
-          <button type="button" className="small-talk-icon-button" aria-label="Abrir pergunta e resposta no Google Tradutor" title="Google Tradutor (pergunta + resposta)" disabled={!questionFor(item).trim() && !original.trim()} onClick={() => googleTranslate([questionFor(item).trim(), original.trim()].filter(Boolean).join('\n\n'))}><SmallTalkIcon name="globe"/></button>
+          <button type="button" className="small-talk-icon-button" aria-label="Abrir pergunta e resposta no Google Tradutor" title="Google Tradutor (pergunta + resposta)" disabled={!questionFor(item).trim() && !original.trim()} onClick={() => googleTranslate([questionFor(item).trim(), original.trim()].filter(Boolean).join('\n\n'))}><GoogleTranslateIcon size={21}/></button>
           {modified && <button type="button" className="small-talk-restore-button" title="Recuperar o original importado" aria-expanded={restorePromptId === item.id} onClick={() => setRestorePromptId(current => current === item.id ? null : item.id)}>Restaurar original</button>}
           {!original && !modified && <span className="settings-dialog-help">Sem resposta importada — use o lápis para incluir</span>}
           {modified && <span className="settings-dialog-help">Resposta editada localmente</span>}

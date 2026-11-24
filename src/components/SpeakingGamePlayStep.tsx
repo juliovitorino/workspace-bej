@@ -1,6 +1,7 @@
 import { t } from "../i18n";
 import { useTranslation } from "react-i18next";
 import { LANGUAGES, type SourceLanguage, type StudentLanguage } from "../config/languages";
+import { GoogleTranslateIcon } from "./GoogleTranslateIcon";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import type { SpeakingGameForm } from "../config/speakingGameForms";
 import type { SpeakingVerb, GameAdjective, GameNoun } from "../types/englishVerb";
@@ -359,7 +360,7 @@ export function SpeakingGamePlayStep({
           title={t("speaking.openGoogleTranslateTargetlanguageToSourcelanguage", { targetLanguage: (LANGUAGES[language].name), sourceLanguage: (LANGUAGES[sourceLanguage].name) })}
           aria-label={t("speaking.openGoogleTranslateTargetlanguageToSourcelanguage", { targetLanguage: (LANGUAGES[language].name), sourceLanguage: (LANGUAGES[sourceLanguage].name) })}
         >
-          <span aria-hidden="true">{LANGUAGES[language].flag} {LANGUAGES[sourceLanguage].flag}</span>
+          <GoogleTranslateIcon size={20} />
           <span>{t("speaking.openGoogleTranslate")}</span>
         </button>
       )}

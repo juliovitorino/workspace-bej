@@ -1,7 +1,7 @@
 {
   "name": "mental-hashmap-app",
   "private": true,
-  "version": "5.1.75.20261124.1048",
+  "version": "5.1.76.20261124.1107",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -15,6 +15,7 @@
     "validate:i18n": "node scripts/validate-i18n.mjs",
     "test:sync": "node scripts/test-study-drive-sync.mjs && node --test scripts/test-small-talk-drive-sync.mjs && node --test scripts/test-wrg-drive-sync.mjs",
     "test:wrg-scroll": "node --test scripts/test-wrg-scroll.mjs",
+    "test:google-translate-icon": "node --test scripts/test-google-translate-icon.mjs",
     "test:donation": "node scripts/test-donation-qr.mjs && node scripts/test-donation-i18n.mjs",
     "test:maintenance": "node scripts/test-maintenance.mjs",
     "test:smalltalk-editor": "node --test scripts/test-small-talk-editor-history.mjs scripts/test-small-talk-copy-editor.mjs",
