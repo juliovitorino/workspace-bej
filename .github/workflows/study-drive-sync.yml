@@ -1,4 +1,4 @@
-name: BEJ CI - build e sincronizacao
+name: BEJ CI - validacoes, testes e build
 
 on:
   pull_request:
@@ -13,8 +13,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  quality-and-regression:
-    name: BEJ CI / tests and build
+  validations:
+    name: "01 - Validacoes"
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -27,13 +27,53 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Validate V4 intention catalogs and translations
-        run: |
-          npm run validate:hashmaps:v4
-          npm run validate:i18n
-      - name: Test Google Drive Sync and WRG
-        run: |
-          npm run test:sync
-          npm run test:wrg-scroll
+      - name: Validate V4 intention catalogs
+        run: npm run validate:hashmaps:v4
+      - name: Validate translations
+        run: npm run validate:i18n
+
+  tests:
+    name: "02 - Testes"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Test Google Drive Sync
+        run: npm run test:sync
+      - name: Test WRG scrolling
+        run: npm run test:wrg-scroll
+
+  build:
+    name: "03 - Build"
+    needs: [validations, tests]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
       - name: TypeScript check and production build
         run: npm run build
+
+  ci-success:
+    name: "04 - CI Aprovado"
+    needs: [validations, tests, build]
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Confirm all CI stages passed
+        run: echo "BEJ CI aprovado!"
