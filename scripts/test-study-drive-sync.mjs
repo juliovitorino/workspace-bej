@@ -31,6 +31,7 @@ const storage = load('src/features/study/studyStorage.ts');
 const sync = load('src/features/study/studyDriveSync.ts');
 const wyr = load('src/features/would-you-rather/wouldYouRatherStorage.ts');
 const favorite = load('src/utils/favoriteChunks.ts');
+const chunkLikes = load('src/utils/chunkLikes.ts');
 const disk = new Map();
 globalThis.localStorage = {
   get length() { return disk.size; },
@@ -317,3 +318,30 @@ try {
   globalThis.fetch = previousFetch;
 }
 console.log('PASS failed PATCH keeps local sessions and pending marker; retry publishes without repeating merge.');
+
+
+// Compact likes sync: each device's maximum survives repeated snapshots and sync rounds.
+const likeSnapshotA = { ...a, likes: { 'en-US': { 'chunk-001': { 'device-a': 3, 'device-b': 2 } } } };
+const likeSnapshotB = { ...b, likes: { 'en-US': { 'chunk-001': { 'device-a': 2, 'device-b': 5 } }, 'es-ES': { 'chunk-001': { 'device-b': 4 } } } };
+const likeMergedA = sync.combineSyncFiles(likeSnapshotA, [likeSnapshotB, likeSnapshotB]);
+const likeMergedB = sync.combineSyncFiles(likeSnapshotB, [likeSnapshotA, likeSnapshotA]);
+assert.deepEqual(likeMergedA.likes, likeMergedB.likes);
+assert.equal(chunkLikes.chunkLikeTotal(likeMergedA.likes, 'en-US', 'chunk-001'), 8);
+assert.equal(chunkLikes.chunkLikeTotal(likeMergedA.likes, 'es-ES', 'chunk-001'), 4);
+assert.deepEqual(sync.combineSyncFiles(a, [b]).likes, {}, 'older sync files without likes remain supported');
+seed(a);
+localStorage.setItem(chunkLikes.CHUNK_LIKES_KEY, JSON.stringify(likeSnapshotA.likes));
+await sync.applySync(likeMergedA, sync.syncBaseline());
+assert.deepEqual(chunkLikes.readChunkLikes(), likeMergedA.likes);
+const likesSnapshot = await sync.createSnapshot();
+assert.deepEqual(likesSnapshot.likes, likeMergedA.likes);
+assert.deepEqual(sync.combineSyncFiles(likesSnapshot, [likeSnapshotA, likeSnapshotB, likesSnapshot]).likes, likeMergedA.likes,
+  'repeated Drive sync must not double count likes');
+const likesBaseline = sync.syncBaseline();
+chunkLikes.incrementChunkLike('en-US', 'chunk-001', sync.deviceId());
+await assert.rejects(() => sync.applySync(likeMergedA, likesBaseline), /changed|Retry/i,
+  'a like made after preview must not be lost');
+assert.equal(chunkLikes.chunkLikeTotal(chunkLikes.readChunkLikes(), 'en-US', 'chunk-001'), 9);
+assert.throws(() => sync.combineSyncFiles(likeSnapshotA, [{ ...likeSnapshotB, likes: { 'en-US': { id: { 'device-b': -1 } } } }]),
+  /Invalid chunk likes/, 'malformed remote likes must be rejected');
+console.log('PASS per-language/per-device likes converge without double counting, old files work, and stale previews block writes.');
