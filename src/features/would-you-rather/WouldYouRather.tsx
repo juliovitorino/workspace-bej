@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type Ref } from "react";
 import { useTranslation } from "react-i18next";
 import type { SourceLanguage, StudentLanguage } from "../../config/languages";
 import { LANGUAGES } from "../../config/languages";
@@ -6,6 +6,7 @@ import { useTrainingStudy, type TrainingStudyReporter } from "../study/useTraini
 import { loadWouldYouRather, normalizeWyrSearch, type WyrData, type WyrQuestion, type WyrTopic } from "./wouldYouRatherService";
 import { readWyrStored, setWyrChoice, setWyrFavorite, readWyrAnswers, saveWyrAnswers, wyrAnswerKey, readWyrFontSize, saveWyrFontSize, type WyrChoice, type WyrCustomAnswers, type WyrFontSize, WYR_SYNC_CHANGED, WYR_FAVORITES_KEY, WYR_PROGRESS_KEY, WYR_CUSTOM_ANSWERS_KEY } from "./wouldYouRatherStorage";
 import { WyrWalking } from "./WyrWalking";
+import { scrollToWyrCard, type WyrScrollTarget } from "./wyrScroll";
 import { celebrateCompletedSession } from "../../utils/achievements";
 import "./wouldYouRather.css";
 
@@ -37,11 +38,12 @@ interface TextCardProps {
   showLabel: string; hideLabel: string; copySuccess: string; copyError: string;
   fontSize?: WyrFontSize; onFontSize?: (size: WyrFontSize) => void;
   onSaveAnswer?: (value: string | null) => void; originalAnswer?: string;
+  scrollRef?: Ref<HTMLDivElement>;
 }
 function TextCard(props: TextCardProps) {
   const { label, text, effectiveLocale, targetLocale, onNotice, reveal, onReveal, selected, onSelect,
     copyLabel, translateLabel, showLabel, hideLabel, copySuccess, copyError, fontSize = "medium",
-    onFontSize, onSaveAnswer, originalAnswer } = props;
+    onFontSize, onSaveAnswer, originalAnswer, scrollRef } = props;
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(text);
   const isAnswer = onReveal !== undefined;
@@ -73,7 +75,7 @@ function TextCard(props: TextCardProps) {
     window.speechSynthesis.speak(utterance);
   }
   return (
-    <div className={"wyr-card" + (onSelect ? " wyr-card--option" : "") + (selected ? " wyr-card--selected" : "")}>
+    <div ref={scrollRef} className={"wyr-card" + (onSelect ? " wyr-card--option" : "") + (selected ? " wyr-card--selected" : "") + (scrollRef ? " wyr-card--scroll-target" : "")}>
       <div className="wyr-card-head">
         <span className="wyr-card-label">{label}</span>
         <div className="wyr-card-actions">
@@ -137,6 +139,10 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
   const [revealed, setRevealed] = useState({ A: false, B: false });
   const [notice, setNotice] = useState("");
   const [lastRandom, setLastRandom] = useState<string | null>(null);
+  const questionCardRef = useRef<HTMLDivElement>(null);
+  const answerACardRef = useRef<HTMLDivElement>(null);
+  const answerBCardRef = useRef<HTMLDivElement>(null);
+  const pendingScrollRef = useRef<WyrScrollTarget | null>(null);
   const { recordActivity } = useTrainingStudy(language, screen === "practice" && !!loaded && !loading, loading, false, onStudyState);
 
   // The same-tab Drive merge dispatches WYR_SYNC_CHANGED; other tabs use storage events.
@@ -206,6 +212,15 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
   }, [filteredTopics]);
   const totalQuestions = allTopics.reduce((sum, topic) => sum + topic.questions.length, 0);
   const current = practiceSet?.questions[index];
+  // Scroll only after React commits the next question or the newly expanded answer.
+  useEffect(() => {
+    if (screen !== "practice" || !pendingScrollRef.current) return;
+    const target = pendingScrollRef.current === "question" ? questionCardRef.current
+      : pendingScrollRef.current === "answerA" ? answerACardRef.current : answerBCardRef.current;
+    if (!target) return;
+    pendingScrollRef.current = null;
+    scrollToWyrCard(target, window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false);
+  }, [index, revealed.A, revealed.B, screen]);
   const topic = practiceSet?.topic;
   const targetLocale = sourceLanguage === (loaded?.locale ?? "en-US") ? (language === sourceLanguage ? "pt-BR" : language) : sourceLanguage;
   const completedCount = (questions: WyrQuestion[]) => questions.filter(q => choices[q.id]).length;
@@ -221,6 +236,7 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
 
   function startSet(set: PracticeSet, startIndex = 0) {
     if (!set.questions.length) return;
+    pendingScrollRef.current = null;
     setPracticeSet(set); setIndex(startIndex); setRevealed({ A: false, B: false }); setNotice(""); setScreen("practice");
   }
   function choose(choice: WyrChoice) {
@@ -238,6 +254,12 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
     const next = favorites.includes(current.id) ? favorites.filter(id => id !== current.id) : [...favorites, current.id];
     setFavorites(next);
     if (!setWyrFavorite(current.id, !favorites.includes(current.id))) setStorageError(true);
+  }
+  function toggleAnswer(choice: WyrChoice) {
+    recordActivity();
+    // Hiding a response does not scroll; showing it scrolls after it is rendered.
+    pendingScrollRef.current = revealed[choice] ? null : choice === "A" ? "answerA" : "answerB";
+    setRevealed(previous => ({ ...previous, [choice]: !previous[choice] }));
   }
   function go(next: number) {
     if (!practiceSet) return;
@@ -258,6 +280,7 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
       return;
     }
     if (next < 0) return;
+    pendingScrollRef.current = next > index ? "question" : null;
     setIndex(next); setRevealed({ A: false, B: false }); setNotice("");
   }
   function random() {
@@ -334,6 +357,7 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
   }
   const card = (label: string, text: string, key: "question" | "optionA" | "optionB" | "answerA" | "answerB", extra?: { select?: () => void; selected?: boolean; reveal?: boolean; toggle?: () => void }) => (
     <TextCard key={key} label={label} text={text} effectiveLocale={loaded?.locale ?? "en-US"} targetLocale={targetLocale}
+      scrollRef={key === "question" ? questionCardRef : key === "answerA" ? answerACardRef : key === "answerB" ? answerBCardRef : undefined}
       onNotice={setNotice} copyLabel={tr(`copy.${key}`)} translateLabel={tr(`translate.${key}`)} copySuccess={tr("copied")} copyError={tr("copyError")}
       showLabel={tr(key === "answerA" ? "showA" : "showB")} hideLabel={tr(key === "answerA" ? "hideA" : "hideB")}
       onSelect={extra?.select} selected={extra?.selected} reveal={extra?.reveal} onReveal={extra?.toggle}
@@ -412,8 +436,8 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
         {card(tr("question"), current.question, "question")}
         {card(tr("optionA"), current.options.A.text, "optionA", { select: () => choose("A"), selected: choices[current.id] === "A" })}
         {card(tr("optionB"), current.options.B.text, "optionB", { select: () => choose("B"), selected: choices[current.id] === "B" })}
-        {choices[current.id] === "A" && card(tr("answerA"), customAnswers[wyrAnswerKey(loaded.locale, current.id, "A")]?.text ?? current.options.A.answer, "answerA", { reveal: revealed.A, toggle: () => { recordActivity(); setRevealed(p => ({ ...p, A: !p.A })); } })}
-        {choices[current.id] === "B" && card(tr("answerB"), customAnswers[wyrAnswerKey(loaded.locale, current.id, "B")]?.text ?? current.options.B.answer, "answerB", { reveal: revealed.B, toggle: () => { recordActivity(); setRevealed(p => ({ ...p, B: !p.B })); } })}
+        {choices[current.id] === "A" && card(tr("answerA"), customAnswers[wyrAnswerKey(loaded.locale, current.id, "A")]?.text ?? current.options.A.answer, "answerA", { reveal: revealed.A, toggle: () => toggleAnswer("A") })}
+        {choices[current.id] === "B" && card(tr("answerB"), customAnswers[wyrAnswerKey(loaded.locale, current.id, "B")]?.text ?? current.options.B.answer, "answerB", { reveal: revealed.B, toggle: () => toggleAnswer("B") })}
         {notice && <p role="status" className="wyr-notice">{notice}</p>}
         <div className="wyr-navigation"><button type="button" className="wyr-button wyr-button--ghost" onClick={() => go(index - 1)} disabled={index === 0}>‹ {tr("previous")}</button><button type="button" className="wyr-button" onClick={() => go(index + 1)}>{index + 1 === practiceSet.questions.length ? tr("finish") : tr("next")} ›</button></div>
       </div>}
