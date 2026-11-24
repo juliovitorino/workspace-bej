@@ -304,7 +304,7 @@ assert.equal(totalSeconds(restored.studyData), totalSeconds(current.studyData));
 assert.equal(backup.schemaVersion, 1); assert.equal(restored.studyData.goals['en-US'], 750);
 tracking.dispose(); await settle();
 
-// Module bars represent a share of all filtered study time, not the largest bar.
+// Labels show percentage of filtered total; bar widths scale against the largest module.
 const { StudyDashboard } = load('src/features/study/StudyDashboard.tsx');
 const { StudyModuleTimeValue } = load('src/features/study/StudyModuleTimeValue.tsx');
 const { StudyRankMedal } = load('src/features/study/StudyRankMedal.tsx');
@@ -352,7 +352,7 @@ const displayedModulePercent = row => find(row, n => n.type === StudyModuleTimeV
 const displayedModuleTime = row => find(row, n => n.type === StudyModuleTimeValue)?.props.time;
 const moduleValue = row => find(row, n => n.type === StudyModuleTimeValue);
 assert.equal(displayedModulePercent(basicRow()), '37,55%', '181 seconds out of 482 seconds must display 37.55%');
-assert.ok(Math.abs(barPercent(basicRow()) - 181 / 482 * 100) < 1e-9);
+assert.ok(Math.abs(barPercent(basicRow()) - 181 / 301 * 100) < 1e-9);
 const moduleFilter = find(dashboard.tree, n => n.type === 'select' && find(n, c => c.type === 'option' && c.props.value === 'basic-training'));
 for (const [module, key] of [['speaking-game', 'speakingGame'], ['interpretation', 'interpretation']]) {
   assert.equal(text(find(moduleFilter, n => n.type === 'option' && n.props.value === module)), translations.common[key]);

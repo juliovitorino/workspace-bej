@@ -1,29 +1,37 @@
-name: BEJ Study Drive Sync regression
+name: BEJ CI - build e sincronizacao
 
 on:
-  push:
-    branches:
-      - bugfix/sync-1125
-      - bugfix/sync-1208
-      - bugfix/sync-1232
   pull_request:
-    paths:
-      - 'src/features/study/studyDriveSync.ts'
-      - 'src/features/study/studyStorage.ts'
-      - 'src/features/study/StudyDriveSync.tsx'
-      - 'src/features/study/StudyGoogleDrivePanel.tsx'
-      - 'scripts/test-study-drive-sync.mjs'
-      - 'package.json'
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bej-ci-${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 
 jobs:
-  test-sync:
+  quality-and-regression:
+    name: BEJ CI / tests and build
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: npm
-      - run: npm ci
-      - run: npm run test:sync
-      - run: npm run build
+      - name: Install dependencies
+        run: npm ci
+      - name: Validate V4 intention catalogs and translations
+        run: |
+          npm run validate:hashmaps:v4
+          npm run validate:i18n
+      - name: Test Google Drive Sync and WRG
+        run: npm run test:sync
+      - name: TypeScript check and production build
+        run: npm run build

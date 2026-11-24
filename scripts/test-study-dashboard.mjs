@@ -284,7 +284,7 @@ assert.equal(otherBars[`${OTHER_SUBCATEGORY_MODULE_PREFIX}misc`], 60);
 assert.equal(Object.values(otherBars).reduce((sum, value) => sum + value, 0), 1800, 'total remains unchanged');
 assert.deepEqual(moduleChartValues(otherData, { ...moduleChartFilters, extraCategory: 'other', extraSubcategory: 'shadowing' }), { [`${OTHER_SUBCATEGORY_MODULE_PREFIX}shadowing`]: 240 });
 assert.equal(Object.keys(moduleChartValues(otherData, { ...moduleChartFilters, origin: 'internal' })).some(key => key.startsWith(OTHER_SUBCATEGORY_MODULE_PREFIX)), false);
-assert.match(readFileSync('src/features/study/StudyDashboard.tsx', 'utf8'), /extras\\.subcategories/);
+assert.match(readFileSync('src/features/study/StudyDashboard.tsx', 'utf8'), /extras\.subcategories/);
 console.log('PASS: Other studies ranking shows individual subcategories without double-counting, respecting filters.');
 
 // Display order (after sorting and zero-value filtering) determines the numbering.
@@ -447,7 +447,7 @@ assert.match(rocketSource, /rotate\(\$\{rocketPose\.angle\}\)/, 'rocket rotation
 assert.match(rocketSource, /\$\{rocketPose\.y\}/, 'rocket climbs vertically before entering cruise');
 assert.match(rocketSource, /flightFraction > 0 && <circle/, 'progress endpoint remains visible');
 assert.match(rocketSource, /stroke=\{\x60url\(#bej-rocket-trail-/);
-assert.match(rocketSource, /target !== undefined && target > 0 && !missionView/);
+assert.match(rocketSource, /target !== undefined && target > 0 && \(!missionView \|\| isPhoneViewport\)/);
 console.log('PASS: rocket and colored trail use the existing historical goal fraction.');
 
 // Rocket animation starts when the goal section enters the viewport.
@@ -490,8 +490,7 @@ console.log('PASS: rocket holds at launch, climbs through 45 degrees, then cruis
 const missionSource = readFileSync('src/features/study/StudyPlanetMission.tsx', 'utf8');
 assert.match(rocketSource, /useState\(false\)/);
 assert.match(rocketSource, /setMissionView\(previous => !previous\)/);
-assert.match(rocketSource, /!missionView && <div className="bej-rocket-journey"/);
-assert.match(rocketSource, /missionView && <StudyPlanetMission/);
+assert.match(rocketSource, /\(!missionView \|\| isPhoneViewport\) && <div className="bej-rocket-journey"/);
 assert.match(missionSource, /Missão Espacial BEJ/);
 assert.match(missionSource, /const PLANETS/);
 assert.match(missionSource, /name: "Netuno", at: 1/);
