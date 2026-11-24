@@ -284,7 +284,7 @@ assert.equal(otherBars[`${OTHER_SUBCATEGORY_MODULE_PREFIX}misc`], 60);
 assert.equal(Object.values(otherBars).reduce((sum, value) => sum + value, 0), 1800, 'total remains unchanged');
 assert.deepEqual(moduleChartValues(otherData, { ...moduleChartFilters, extraCategory: 'other', extraSubcategory: 'shadowing' }), { [`${OTHER_SUBCATEGORY_MODULE_PREFIX}shadowing`]: 240 });
 assert.equal(Object.keys(moduleChartValues(otherData, { ...moduleChartFilters, origin: 'internal' })).some(key => key.startsWith(OTHER_SUBCATEGORY_MODULE_PREFIX)), false);
-assert.match(readFileSync('src/features/study/StudyDashboard.tsx', 'utf8'), /extras\\.subcategories/);
+assert.match(readFileSync('src/features/study/StudyDashboard.tsx', 'utf8'), /extras\.subcategories/);
 console.log('PASS: Other studies ranking shows individual subcategories without double-counting, respecting filters.');
 
 // Display order (after sorting and zero-value filtering) determines the numbering.
