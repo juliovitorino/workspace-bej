@@ -212,6 +212,8 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
   }, [filteredTopics]);
   const totalQuestions = allTopics.reduce((sum, topic) => sum + topic.questions.length, 0);
   const current = practiceSet?.questions[index];
+  // A random session can move across topics; show the topic of the current question.
+  const currentTopic = current ? allTopics.find(topic => topic.questions.some(question => question.id === current.id)) : null;
   // Scroll only after React commits the next question or the newly expanded answer.
   useEffect(() => {
     if (screen !== "practice" || !pendingScrollRef.current) return;
@@ -462,7 +464,7 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
       </>}
       {screen === "walking" && walkingScope && <><p className="wyr-walk-scope">Treino selecionado: <strong>{walkingScope.title}</strong> · {walkingItems.length} perguntas</p><WyrWalking items={walkingItems} locale={loaded.locale} onExit={() => { setWalkingScope(null); setScreen("catalog"); }} onStudyState={onStudyState} /></>}
       {screen === "practice" && current && practiceSet && <div className="wyr-practice">
-        <div className="wyr-practice-meta"><span>{LANGUAGES[sourceLanguage].flag} → {LANGUAGES[loaded.locale].flag} · {practiceSet.title} · {current.level}</span><span>{index + 1}/{practiceSet.questions.length}</span></div>
+        <div className="wyr-practice-meta"><span>{LANGUAGES[sourceLanguage].flag} → {LANGUAGES[loaded.locale].flag} · {practiceSet.title}{practiceSet.topic === null && currentTopic ? ` · ${currentTopic.title}` : ""} · {current.level}</span><span>{index + 1}/{practiceSet.questions.length}</span></div>
         <div className="wyr-practice-progress"><span style={{ width: `${100 * (index + 1) / practiceSet.questions.length}%` }} /></div>
         <div className="wyr-practice-tools"><span>{tr("speakHint")}</span><button type="button" className="wyr-star" aria-pressed={favorites.includes(current.id)} aria-label={favorites.includes(current.id) ? tr("removeFavorite") : tr("addFavorite")} title={tr("favorites")} onClick={toggleFavorite}>{favorites.includes(current.id) ? "★" : "☆"}</button></div>
         {card(tr("question"), current.question, "question")}
