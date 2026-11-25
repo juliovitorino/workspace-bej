@@ -607,7 +607,7 @@ Mandatório:
 
     const style = doc.createElement("style");
     style.textContent = `
-      @page { size: A4 portrait; margin: 15mm; }
+      @page { size: A4 portrait; margin: 15mm 15mm 15mm 25.4mm; }
       body { font-family: Arial, Helvetica, sans-serif; color: var(--text); margin: 0; }
       h1 { font-size: 20pt; margin: 0 0 5mm; }
       .subtitle { color: var(--text-secondary); font-size: 12pt; margin-bottom: 10mm; }
@@ -736,7 +736,7 @@ Mandatório:
           <style>
             @page {
               size: A4 portrait;
-              margin: 12mm;
+              margin: 12mm 12mm 12mm 25.4mm;
             }
 
             html,
