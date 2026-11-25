@@ -1727,7 +1727,7 @@ export function BasicTraining({
           .basic-training-print-sheet { display: none !important; }
         }
         @media print {
-          @page { size: A4 portrait; margin: 12mm; }
+          @page { size: A4 portrait; margin: 12mm 12mm 12mm 25.4mm; }
           body * { visibility: hidden !important; }
           .basic-training > :not(.basic-training-print-sheet):not(style) {
             display: none !important;
