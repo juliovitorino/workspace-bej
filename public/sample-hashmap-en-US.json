@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1294,
+    "totalIntentions": 1296,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -77557,6 +77557,202 @@
           "id": "d05db7fc-042e-4619-a8ba-1f340c495ad7",
           "exampleItem": "To make matters even worse, it started raining during the trip.",
           "intent": "To make matters even worse"
+        }
+      ]
+    },
+    {
+      "id": "tambem-nao-nem-eu-nem-isso-7b4e2c91-6f83-4d50-a172-9e3c85f0b246",
+      "intention": "Not... either / Me neither / Neither...",
+      "pattern": "subject + negative verb + complement + either / me neither / neither + auxiliary + subject",
+      "description": "Expresses agreement with a previous negative statement or adds another negative fact to a conversation. In American English, 'not... either' indicates that a negative situation also applies to another person, thing, or circumstance. 'Either' normally appears at the end of the negative clause. This pattern is common in everyday conversations about opinions, experiences, difficulties, and negative comparisons. Unlike 'not even', which emphasizes something surprising or extreme, 'not... either' expresses negative addition or agreement.",
+      "searchTerms": [
+        "not either",
+        "I don't either",
+        "me neither",
+        "neither do I",
+        "I don't know either",
+        "she doesn't either",
+        "we can't either",
+        "I didn't either",
+        "I haven't either",
+        "not ready either",
+        "never either",
+        "negative agreement",
+        "negative addition"
+      ],
+      "validationPatterns": [
+        "\\b(?:not|never|don['?]t|doesn['?]t|didn['?]t|can['?]t|couldn['?]t|won['?]t|wouldn['?]t|haven['?]t|hasn['?]t|hadn['?]t|isn['?]t|aren['?]t|wasn['?]t|weren['?]t)\\b[^.!?]*\\beither\\s*(?=[.!?]|$)",
+        "\\bme\\s+neither\\b",
+        "\\bneither\\s+(?:do|does|did|can|could|will|would|have|has|had|am|is|are|was|were)\\s+(?:I|you|he|she|it|we|they)\\b"
+      ],
+      "tags": [
+        "negative agreement",
+        "negative addition",
+        "negation",
+        "agreement",
+        "comparison",
+        "opinions",
+        "experiences",
+        "everyday conversation",
+        "adverbs",
+        "sentence building",
+        "American English"
+      ],
+      "structure": "Use 'subject + negative verb + complement + either'. 'Either' normally comes at the end of the negative clause: 'I don't know either', 'She doesn't understand either', or 'We can't go either'. The pattern works with different tenses and auxiliaries: 'don't... either', 'doesn't... either', 'didn't... either', 'can't... either', 'won't... either', 'haven't... either', and 'isn't... either'. Short replies include 'I don't either', 'Me neither', and 'Neither do I'; the last requires auxiliary-subject inversion. 'Me neither' is very common in informal conversation. The pattern normally assumes an explicit or implied previous negative statement. Distinguish clause-final 'either' expressing negative addition from 'either... or' expressing alternatives. Also distinguish 'I don't understand everything in Portuguese either' (the same negative situation applies here too) from 'I don't even understand everything in Portuguese' (a surprising limitation). 'Either' does not require 'even'.",
+      "category": "expressions",
+      "related": [],
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a2c41e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "I don't understand everything in Portuguese either.",
+          "intent": "don't understand everything in Portuguese either"
+        },
+        {
+          "id": "b3d52f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "I don't know the answer either.",
+          "intent": "don't know the answer either"
+        },
+        {
+          "id": "c4e63085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "She doesn't want to attend the meeting either.",
+          "intent": "doesn't want to attend the meeting either"
+        },
+        {
+          "id": "d5f74196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "I didn't like that movie either.",
+          "intent": "didn't like that movie either"
+        },
+        {
+          "id": "e60852a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "We couldn't solve the problem either.",
+          "intent": "couldn't solve the problem either"
+        },
+        {
+          "id": "f71963b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "I don't have time for that either.",
+          "intent": "don't have time for that either"
+        },
+        {
+          "id": "a82a74c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "He doesn't speak French either.",
+          "intent": "doesn't speak French either"
+        },
+        {
+          "id": "b93b85da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "I've never been to that country either.",
+          "intent": "never been to that country either"
+        },
+        {
+          "id": "c04c96eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "I'm not ready to start either.",
+          "intent": "not ready to start either"
+        },
+        {
+          "id": "d15da7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "I can't understand what he's saying either.",
+          "intent": "can't understand what he's saying either"
+        }
+      ]
+    },
+    {
+      "id": "nem-mesmo-em-nem-sequer-em-8c5f3a21-7d94-4e60-b182-f6a093c7d245",
+      "intention": "Not even in... / Not even at...",
+      "pattern": "not even in + language, place, environment, period, or situation / negative clause + even in + context",
+      "description": "Expresses that an action, ability, or situation does not occur even in a context where it could reasonably be expected. In American English, 'not even in' combines negation, the intensifier 'even', and the preposition 'in' to emphasize an unexpected circumstance, language, environment, place, period, or situation. It highlights surprising contrasts and limitations. It can follow a complete negative clause ('I can't explain it, not even in Portuguese') or form part of a negative construction with 'even in' ('I can't explain it even in Portuguese'). Choose a different preposition when natural English requires it, as in 'not even at home'.",
+      "searchTerms": [
+        "not even in",
+        "not even at",
+        "not even in Portuguese",
+        "not even in English",
+        "not even at home",
+        "not even at work",
+        "not even at school",
+        "not even in the documentation",
+        "not even in the manual",
+        "not even in the system",
+        "not even in the code",
+        "not even in simple situations",
+        "not even in an emergency",
+        "not even in my dreams",
+        "not even in a test environment",
+        "not even in the dictionary",
+        "not even under ideal conditions"
+      ],
+      "validationPatterns": [
+        "\\bnot\\s+even\\s+(?:in|at|under)\\b",
+        "\\b(?:not|never|can['?]t|couldn['?]t|don['?]t|doesn['?]t|didn['?]t|won['?]t|isn['?]t|aren['?]t|haven['?]t|hasn['?]t)\\b[^.!?]*\\beven\\s+(?:in|at|under)\\b"
+      ],
+      "tags": [
+        "emphasis",
+        "negation",
+        "surprise",
+        "contrast",
+        "limitations",
+        "expectations",
+        "languages",
+        "contexts",
+        "circumstances",
+        "environments",
+        "intensifiers",
+        "everyday conversation",
+        "sentence building",
+        "American English"
+      ],
+      "structure": "Use 'not even in + noun phrase', often after a negative clause, to emphasize an unexpected context: 'I can't explain it, not even in Portuguese'. The final phrase stresses that the difficulty persists even in a language where greater ease would be expected. Another natural pattern is 'negative clause + even in + context': 'I can't explain it even in Portuguese'. The context may also come first: 'Even in Portuguese, I can't explain it'; here the negation occurs in the main clause rather than immediately before 'even'. Use 'in' where appropriate: 'in Portuguese', 'in the documentation', 'in an emergency', 'in my dreams', and 'in a test environment'. English prepositions vary with the expression: say 'not even at home', rather than 'not even in home'. Distinguish 'not even in', which emphasizes a surprising circumstance, from clause-final 'either', which adds a related negative fact. This construction applies to languages, work, learning, documentation, technology, experiences, and unexpected circumstances.",
+      "category": "expressions",
+      "related": [],
+      "level": "B1",
+      "examples": [
+        {
+          "id": "e26eb80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "I can't explain it, not even in Portuguese.",
+          "intent": "not even in Portuguese"
+        },
+        {
+          "id": "f37fc91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "I can't understand this explanation, not even in English.",
+          "intent": "not even in English"
+        },
+        {
+          "id": "a480da2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "I couldn't find that information, not even in the documentation.",
+          "intent": "not even in the documentation"
+        },
+        {
+          "id": "b591eb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "He can't stay calm, not even in simple situations.",
+          "intent": "not even in simple situations"
+        },
+        {
+          "id": "c6a2fc41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "I couldn't find that word, not even in the dictionary.",
+          "intent": "not even in the dictionary"
+        },
+        {
+          "id": "d7b30d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "He doesn't answer the phone, not even in an emergency.",
+          "intent": "not even in an emergency"
+        },
+        {
+          "id": "e8c41e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "I never imagined anything like that, not even in my dreams.",
+          "intent": "not even in my dreams"
+        },
+        {
+          "id": "f9d52f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "The system doesn't work, not even in a test environment.",
+          "intent": "not even in a test environment"
+        },
+        {
+          "id": "a0e63085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "I can't concentrate, not even in a quiet environment.",
+          "intent": "not even in a quiet environment"
+        },
+        {
+          "id": "b1f74196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "I couldn't find the cause of the problem, not even in the source code.",
+          "intent": "not even in the source code"
         }
       ]
     }

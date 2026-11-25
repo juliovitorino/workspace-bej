@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1294,
+    "totalIntentions": 1296,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -54051,6 +54051,203 @@
           "id": "d05db7fc-042e-4619-a8ba-1f340c495ad7",
           "exampleItem": "Pour ne rien arranger, il s'est mis à pleuvoir pendant le voyage.",
           "intent": "Pour ne rien arranger"
+        }
+      ]
+    },
+    {
+      "id": "tambem-nao-nem-eu-nem-isso-7b4e2c91-6f83-4d50-a172-9e3c85f0b246",
+      "intention": "Non plus… / Moi non plus… / Cela non plus…",
+      "pattern": "sujet + ne + verbe + pas / jamais + complément + non plus",
+      "description": "Exprime un accord avec une affirmation négative précédente ou ajoute une autre information négative. Non plus indique qu'une même situation négative concerne une autre personne, une autre chose ou une autre circonstance. Il se place généralement après le verbe et ses compléments. Moi non plus est une réponse courte très courante. Cette addition négative se distingue de même pas, qui souligne un fait surprenant ou extrême.",
+      "category": "expressions",
+      "searchTerms": [
+        "non plus",
+        "moi non plus",
+        "lui non plus",
+        "elle non plus",
+        "nous non plus",
+        "eux non plus",
+        "cela non plus",
+        "je ne sais pas non plus",
+        "je ne comprends pas non plus",
+        "je ne veux pas non plus",
+        "je ne peux pas non plus",
+        "jamais non plus",
+        "accord négatif",
+        "addition négative"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])non\\s+plus(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "accord négatif",
+        "addition négative",
+        "négation",
+        "accord",
+        "comparaison",
+        "opinions",
+        "expériences",
+        "conversation quotidienne",
+        "adverbes",
+        "construction de phrases",
+        "anglais américain"
+      ],
+      "related": [],
+      "structure": "La construction habituelle est sujet + ne + verbe + pas + complément + non plus : Je ne sais pas non plus, Elle ne comprend pas non plus, Nous ne pouvons pas venir non plus. Elle fonctionne avec différents temps : Je n'ai pas aimé ce film non plus, Je n'irai pas non plus. Avec jamais : Je ne suis jamais allé dans ce pays non plus. Dans les échanges familiers, ne est souvent omis à l'oral, mais il est conservé ici dans les phrases complètes. Pour répondre brièvement à une affirmation négative, employer Moi non plus, Lui non plus ou Nous non plus. Dans une réponse plus développée, on peut dire Moi non plus, je ne sais pas. Ne pas confondre non plus, qui ajoute une information négative à une autre, et même pas, qui accentue une limite inattendue. Non plus suppose généralement un contexte négatif explicite ou implicite. Ni… ni… sert à coordonner deux éléments négatifs et possède une construction différente.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a2c41e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "Je ne comprends pas tout en portugais non plus.",
+          "intent": "non plus"
+        },
+        {
+          "id": "b3d52f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "Je ne connais pas la réponse non plus.",
+          "intent": "non plus"
+        },
+        {
+          "id": "c4e63085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "Elle ne veut pas participer à la réunion non plus.",
+          "intent": "non plus"
+        },
+        {
+          "id": "d5f74196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "Je n'ai pas aimé ce film non plus.",
+          "intent": "non plus"
+        },
+        {
+          "id": "e60852a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "Nous n'avons pas réussi à résoudre le problème non plus.",
+          "intent": "non plus"
+        },
+        {
+          "id": "f71963b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "Je n'ai pas le temps pour ça non plus.",
+          "intent": "non plus"
+        },
+        {
+          "id": "a82a74c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "Il ne parle pas français non plus.",
+          "intent": "non plus"
+        },
+        {
+          "id": "b93b85da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "Je ne suis jamais allé dans ce pays non plus.",
+          "intent": "non plus"
+        },
+        {
+          "id": "c04c96eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "Je ne suis pas prêt à commencer non plus.",
+          "intent": "non plus"
+        },
+        {
+          "id": "d15da7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "Je n'arrive pas à comprendre ce qu'il dit non plus.",
+          "intent": "non plus"
+        }
+      ]
+    },
+    {
+      "id": "nem-mesmo-em-nem-sequer-em-8c5f3a21-7d94-4e60-b182-f6a093c7d245",
+      "intention": "Pas même en… / Même pas dans… / Pas même dans…",
+      "pattern": "proposition négative + pas même / même pas + préposition adaptée au contexte",
+      "description": "Souligne qu'une action, une capacité ou une situation ne se réalise pas même dans un contexte où l'on pourrait raisonnablement s'y attendre. Pas même et même pas mettent en relief un contraste inattendu, une limite ou une circonstance surprenante. Le contexte peut être une langue, un lieu, une période ou une situation. La préposition dépend du complément : en portugais, dans la documentation, en cas d'urgence, chez soi. Cette emphase se distingue de non plus, qui ajoute simplement une autre information négative.",
+      "category": "expressions",
+      "searchTerms": [
+        "pas même en",
+        "même pas en",
+        "pas même dans",
+        "même pas dans",
+        "pas même en portugais",
+        "pas même en anglais",
+        "pas même chez moi",
+        "pas même au travail",
+        "pas même à l’école",
+        "pas même dans la documentation",
+        "pas même dans le manuel",
+        "pas même dans le système",
+        "pas même dans le code",
+        "pas même dans des situations simples",
+        "pas même en cas d'urgence",
+        "pas même dans mes rêves",
+        "pas même dans un environnement de test",
+        "pas même dans le dictionnaire",
+        "même dans ces conditions",
+        "même dans ce contexte"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:pas\\s+même|même\\s+pas)\\s+(?:en|dans|chez|au|à)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "emphase",
+        "négation",
+        "surprise",
+        "contraste",
+        "limites",
+        "attentes",
+        "langues",
+        "contextes",
+        "circonstances",
+        "environnements",
+        "intensificateurs",
+        "conversation quotidienne",
+        "construction de phrases",
+        "anglais américain"
+      ],
+      "related": [],
+      "structure": "Une proposition négative peut être suivie de pas même + contexte : Je n'arrive pas à l'expliquer, pas même en portugais. On peut aussi intégrer le groupe à la proposition : Je n'arrive même pas à l'expliquer en portugais. Pour mettre le contexte au premier plan, dire Même en portugais, je n'arrive pas à l'expliquer ; la négation reste alors dans la proposition principale. La préposition doit être naturelle en français : en portugais, en anglais, dans la documentation, dans le dictionnaire, en cas d'urgence, dans mes rêves, dans un environnement de test, chez moi. Même pas et pas même expriment une attente déçue ou une situation extrême ; non plus exprime une addition négative. Je ne comprends pas tout en portugais non plus ajoute une difficulté comparable à une autre, tandis que Je ne comprends pas cette explication, même pas en portugais souligne une difficulté surprenante jusque dans cette langue.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "e26eb80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "Je n'arrive pas à l'expliquer, pas même en portugais.",
+          "intent": "pas même en portugais"
+        },
+        {
+          "id": "f37fc91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "Je ne comprends pas cette explication, pas même en anglais.",
+          "intent": "pas même en anglais"
+        },
+        {
+          "id": "a480da2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "Je n'ai pas trouvé cette information, pas même dans la documentation.",
+          "intent": "pas même dans la documentation"
+        },
+        {
+          "id": "b591eb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "Il n'arrive pas à garder son calme, pas même dans des situations simples.",
+          "intent": "pas même dans des situations simples"
+        },
+        {
+          "id": "c6a2fc41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "Je n'ai pas trouvé ce mot, même pas dans le dictionnaire.",
+          "intent": "même pas dans le dictionnaire"
+        },
+        {
+          "id": "d7b30d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "Il ne répond pas au téléphone, pas même en cas d'urgence.",
+          "intent": "pas même en cas d'urgence"
+        },
+        {
+          "id": "e8c41e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "Je n'avais jamais imaginé une chose pareille, pas même dans mes rêves.",
+          "intent": "pas même dans mes rêves"
+        },
+        {
+          "id": "f9d52f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "Le système ne fonctionne pas, pas même dans un environnement de test.",
+          "intent": "pas même dans un environnement de test"
+        },
+        {
+          "id": "a0e63085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "Je n'arrive pas à me concentrer, pas même dans un environnement calme.",
+          "intent": "pas même dans un environnement calme"
+        },
+        {
+          "id": "b1f74196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "Je n'ai pas réussi à trouver la cause du problème, pas même dans le code source.",
+          "intent": "pas même dans le code source"
         }
       ]
     }

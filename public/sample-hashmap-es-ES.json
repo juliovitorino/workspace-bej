@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1294,
+    "totalIntentions": 1296,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -53575,6 +53575,208 @@
           "id": "d05db7fc-042e-4619-a8ba-1f340c495ad7",
           "exampleItem": "Para empeorar aún más las cosas, empezó a llover durante el viaje.",
           "intent": "Para empeorar aún más las cosas"
+        }
+      ]
+    },
+    {
+      "id": "tambem-nao-nem-eu-nem-isso-7b4e2c91-6f83-4d50-a172-9e3c85f0b246",
+      "intention": "Tampoco... / Yo tampoco... / Eso tampoco...",
+      "pattern": "sujeto + tampoco + verbo / tampoco + sujeto o complemento",
+      "description": "Expresa acuerdo con una afirmación negativa anterior o añade otra información negativa a una conversación. En español, «tampoco» indica que una situación negativa se aplica igualmente a otra persona, cosa o circunstancia. Es habitual en opiniones, experiencias, dificultades y comparaciones negativas. «Yo tampoco» permite responder brevemente a una afirmación negativa y «eso tampoco» añade otro elemento a la negación. En inglés americano, la construcción equivalente «not... either» suele colocar «either» al final de la oración negativa. Debe distinguirse de «ni siquiera», que destaca algo sorprendente o extremo, en lugar de limitarse a añadir otra información negativa.",
+      "category": "expressions",
+      "searchTerms": [
+        "tampoco",
+        "yo tampoco",
+        "él tampoco",
+        "ella tampoco",
+        "nosotros tampoco",
+        "vosotros tampoco",
+        "ellos tampoco",
+        "eso tampoco",
+        "tampoco puedo",
+        "tampoco entiendo",
+        "tampoco sé",
+        "tampoco quiero",
+        "tampoco me gustó",
+        "tampoco tengo",
+        "tampoco puedo ir",
+        "tampoco he estado nunca",
+        "acuerdo negativo",
+        "adición negativa"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:tampoco)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "acuerdo negativo",
+        "adición negativa",
+        "negación",
+        "acuerdo",
+        "comparación",
+        "opiniones",
+        "experiencias",
+        "conversación cotidiana",
+        "adverbios",
+        "generador de frases",
+        "inglés americano"
+      ],
+      "related": [],
+      "structure": "«Tampoco + verbo» añade una negación relacionada con otra afirmación negativa: «Yo tampoco sé la respuesta» o «Ella tampoco quiere participar». Si «tampoco» aparece antes del verbo, normalmente no se añade «no»: «Tampoco puedo ir». Si se coloca después, se mantiene la negación delante del verbo: «No puedo ir tampoco». Para responder brevemente se usa «Yo tampoco», «Él tampoco» o «Nosotros tampoco», según la persona. «Eso tampoco» niega un elemento adicional. Puede combinarse con distintos tiempos y construcciones: «Tampoco me gustó», «Tampoco he estado nunca allí» o «Tampoco estaré listo». En inglés, el equivalente habitual es «subject + negative verb + complement + either», con «either» al final: «I don’t know either». Las respuestas cortas incluyen «Me neither», «I don’t either» y «Neither do I»; esta última invierte el auxiliar y el sujeto. «Either» en una oración negativa no debe confundirse con «either... or», que presenta alternativas. Tampoco equivale a «not even»: «Tampoco entiendo todo en español» añade una negación, mientras que «Ni siquiera entiendo todo en español» enfatiza una circunstancia inesperada.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a2c41e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "Yo tampoco lo entiendo todo en portugués.",
+          "intent": "tampoco"
+        },
+        {
+          "id": "b3d52f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "Yo tampoco sé la respuesta.",
+          "intent": "tampoco"
+        },
+        {
+          "id": "c4e63085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "Ella tampoco quiere participar en la reunión.",
+          "intent": "tampoco"
+        },
+        {
+          "id": "d5f74196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "A mí tampoco me gustó aquella película.",
+          "intent": "tampoco"
+        },
+        {
+          "id": "e60852a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "Nosotros tampoco conseguimos resolver el problema.",
+          "intent": "tampoco"
+        },
+        {
+          "id": "f71963b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "Yo tampoco tengo tiempo para eso.",
+          "intent": "tampoco"
+        },
+        {
+          "id": "a82a74c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "Él tampoco habla francés.",
+          "intent": "tampoco"
+        },
+        {
+          "id": "b93b85da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "Yo tampoco he estado nunca en ese país.",
+          "intent": "tampoco he estado nunca"
+        },
+        {
+          "id": "c04c96eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "Yo tampoco estoy listo para empezar.",
+          "intent": "tampoco"
+        },
+        {
+          "id": "d15da7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "Yo tampoco consigo entender lo que está diciendo.",
+          "intent": "tampoco"
+        }
+      ]
+    },
+    {
+      "id": "nem-mesmo-em-nem-sequer-em-8c5f3a21-7d94-4e60-b182-f6a093c7d245",
+      "intention": "Ni siquiera en... / Ni tan siquiera en... / Ni en...",
+      "pattern": "ni siquiera en + idioma, lugar, entorno, periodo o situación",
+      "description": "Expresa que una acción, capacidad o situación no se da ni siquiera en un contexto en el que sería razonable esperarla. «Ni siquiera en» enfatiza una circunstancia, un idioma, un entorno, un lugar o una situación y destaca un contraste inesperado. «Ni tan siquiera en» añade énfasis y «ni en» puede transmitir el mismo sentido cuando el contexto es claro. Puede aparecer después de una oración negativa completa: «No puedo explicarlo, ni siquiera en portugués». En inglés, «not even in» suele cumplir esta función, aunque la preposición depende del contexto. Se distingue de «tampoco», que añade otra información negativa sin ese énfasis de sorpresa.",
+      "category": "expressions",
+      "searchTerms": [
+        "ni siquiera en",
+        "ni tan siquiera en",
+        "ni en",
+        "ni siquiera en portugués",
+        "ni siquiera en inglés",
+        "ni siquiera en casa",
+        "ni siquiera en el trabajo",
+        "ni siquiera en la escuela",
+        "ni siquiera en la documentación",
+        "ni siquiera en el manual",
+        "ni siquiera en el sistema",
+        "ni siquiera en el código",
+        "ni siquiera en situaciones sencillas",
+        "ni siquiera en una emergencia",
+        "ni siquiera en mis sueños",
+        "ni siquiera en un entorno de pruebas",
+        "ni siquiera en el diccionario",
+        "ni siquiera en esas condiciones",
+        "ni siquiera en ese contexto",
+        "ni en condiciones ideales",
+        "ni en un ambiente tranquilo"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:ni\\s+(?:(?:tan\\s+)?siquiera\\s+)?en)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "énfasis",
+        "negación",
+        "sorpresa",
+        "contraste",
+        "limitaciones",
+        "expectativas",
+        "idiomas",
+        "contextos",
+        "circunstancias",
+        "entornos",
+        "intensificadores",
+        "conversación cotidiana",
+        "generador de frases",
+        "inglés americano"
+      ],
+      "related": [],
+      "structure": "«Ni siquiera en + grupo nominal» destaca que una negación se mantiene en un contexto en el que cabría esperar un resultado distinto: «No puedo explicarlo, ni siquiera en portugués». Puede integrarse en la oración: «No puedo explicarlo ni siquiera en portugués». Si el segmento negativo aparece al principio, no se añade «no» ante el verbo: «Ni siquiera en portugués puedo explicarlo». También se usa «ni tan siquiera en», o simplemente «ni en» cuando el contraste resulta claro. La preposición «en» introduce idiomas, lugares y circunstancias: «en inglés», «en la documentación», «en una emergencia», «en mis sueños» o «en un entorno de pruebas». «Ni siquiera en» expresa una circunstancia inesperada; «tampoco» añade una negación relacionada con otra afirmación. En inglés se usa «not even in + noun phrase», por ejemplo «I can’t explain it, not even in Portuguese». Otra posibilidad es una oración negativa seguida de «even in»: «I can’t explain it even in Portuguese». Si el contexto se antepone, la negación queda en la oración principal: «Even in Portuguese, I can’t explain it». No todos los usos españoles de «en» se traducen con «in»: «ni siquiera en casa» normalmente corresponde a «not even at home». La elección de la preposición inglesa debe respetar el uso natural de cada expresión.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "e26eb80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "No puedo explicar eso, ni siquiera en portugués.",
+          "intent": "ni siquiera en portugués"
+        },
+        {
+          "id": "f37fc91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "No consigo entender esa explicación, ni siquiera en inglés.",
+          "intent": "ni siquiera en inglés"
+        },
+        {
+          "id": "a480da2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "No he encontrado esa información, ni siquiera en la documentación.",
+          "intent": "ni siquiera en la documentación"
+        },
+        {
+          "id": "b591eb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "Él no consigue mantener la calma, ni siquiera en situaciones sencillas.",
+          "intent": "ni siquiera en situaciones sencillas"
+        },
+        {
+          "id": "c6a2fc41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "No he encontrado esa palabra, ni siquiera en el diccionario.",
+          "intent": "ni siquiera en el diccionario"
+        },
+        {
+          "id": "d7b30d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "No contesta al teléfono, ni siquiera en una emergencia.",
+          "intent": "ni siquiera en una emergencia"
+        },
+        {
+          "id": "e8c41e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "Nunca había imaginado algo así, ni siquiera en mis sueños.",
+          "intent": "ni siquiera en mis sueños"
+        },
+        {
+          "id": "f9d52f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "El sistema no funciona, ni siquiera en un entorno de pruebas.",
+          "intent": "ni siquiera en un entorno de pruebas"
+        },
+        {
+          "id": "a0e63085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "No consigo concentrarme, ni siquiera en un ambiente tranquilo.",
+          "intent": "ni siquiera en un ambiente tranquilo"
+        },
+        {
+          "id": "b1f74196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "No he conseguido encontrar la causa del problema, ni siquiera en el código fuente.",
+          "intent": "ni siquiera en el código fuente"
         }
       ]
     }

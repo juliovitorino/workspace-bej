@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1294,
+    "totalIntentions": 1296,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -53282,6 +53282,222 @@
           "id": "d05db7fc-042e-4619-a8ba-1f340c495ad7",
           "exampleItem": "Para piorar ainda mais, começou a chover durante a viagem.",
           "intent": "Para piorar ainda mais"
+        }
+      ]
+    },
+    {
+      "id": "tambem-nao-nem-eu-nem-isso-7b4e2c91-6f83-4d50-a172-9e3c85f0b246",
+      "intention": "Também não... / Nem eu... / Nem isso...",
+      "pattern": "sujeito + também não + verbo / nem + sujeito ou complemento",
+      "description": "Expressa concordância com uma afirmação negativa anterior ou acrescenta outra informação negativa a uma conversa. No inglês americano, a construção 'not... either' permite comunicar que uma situação negativa também se aplica a outra pessoa, coisa ou circunstância. O advérbio 'either' normalmente aparece no final da oração negativa, funcionando como equivalente de 'também não' em português brasileiro. É uma estrutura muito utilizada em conversas cotidianas, opiniões, experiências, dificuldades e comparações negativas. Diferentemente de 'not even', que enfatiza algo surpreendente ou extremo, 'not... either' estabelece uma relação de adição ou concordância negativa.",
+      "category": "expressions",
+      "searchTerms": [
+        "também não",
+        "eu também não",
+        "ele também não",
+        "ela também não",
+        "nós também não",
+        "a gente também não",
+        "eles também não",
+        "nem eu",
+        "nem ele",
+        "nem ela",
+        "nem nós",
+        "nem isso",
+        "também não consigo",
+        "também não entendo",
+        "também não sei",
+        "também não quero",
+        "também não gostei",
+        "também não tenho",
+        "também não posso",
+        "também nunca",
+        "concordância negativa",
+        "adição negativa"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])também\\s+não(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:eu|ele|ela|nós|vocês|eles|elas|a\\s+gente)\\s+também\\s+não(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])nem\\s+(?:eu|ele|ela|nós|vocês|eles|elas|isso)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])também\\s+nunca(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "concordância negativa",
+        "adição negativa",
+        "negação",
+        "concordância",
+        "comparação",
+        "opiniões",
+        "experiências",
+        "conversação cotidiana",
+        "advérbios",
+        "gerador de frases",
+        "inglês americano"
+      ],
+      "related": [],
+      "structure": "A construção principal é 'SUBJECT + NEGATIVE VERB + COMPLEMENT + EITHER'. O advérbio 'either' normalmente aparece no final de uma oração negativa e expressa 'também não'. Exemplos: 'I don't know either' (Eu também não sei), 'She doesn't understand either' (Ela também não entende) e 'We can't go either' (Nós também não podemos ir). A estrutura funciona com diferentes tempos verbais e auxiliares: 'don't... either', 'doesn't... either', 'didn't... either', 'can't... either', 'won't... either', 'haven't... either' e 'isn't... either'. Em respostas curtas, pode-se dizer 'I don't either' (Eu também não), 'Me neither' (Nem eu) ou 'Neither do I' (Eu também não), observando que 'Neither do I' utiliza inversão entre auxiliar e sujeito. A expressão 'Me neither' é muito comum na conversação informal. A construção 'not... either' normalmente pressupõe uma informação negativa anterior explícita ou implícita. É importante distinguir 'either' no final de uma oração negativa, que significa 'também não', de 'either... or', que expressa alternativas. Também é importante não confundir 'not... either' com 'not even': 'I don't understand everything in Portuguese either' significa 'Eu também não entendo tudo em português', enquanto 'I don't even understand everything in Portuguese' significa 'Eu nem mesmo entendo tudo em português', enfatizando uma situação inesperada. 'Either' não exige o uso de 'even'.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a2c41e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "Eu também não entendo tudo em português.",
+          "intent": "também não"
+        },
+        {
+          "id": "b3d52f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "Eu também não sei a resposta.",
+          "intent": "também não"
+        },
+        {
+          "id": "c4e63085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "Ela também não quer participar da reunião.",
+          "intent": "também não"
+        },
+        {
+          "id": "d5f74196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "Eu também não gostei daquele filme.",
+          "intent": "também não"
+        },
+        {
+          "id": "e60852a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "A gente também não conseguiu resolver o problema.",
+          "intent": "também não"
+        },
+        {
+          "id": "f71963b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "Eu também não tenho tempo para isso.",
+          "intent": "também não"
+        },
+        {
+          "id": "a82a74c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "Ele também não fala francês.",
+          "intent": "também não"
+        },
+        {
+          "id": "b93b85da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "Eu também nunca estive naquele país.",
+          "intent": "também nunca"
+        },
+        {
+          "id": "c04c96eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "Eu também não estou pronto para começar.",
+          "intent": "também não"
+        },
+        {
+          "id": "d15da7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "Eu também não consigo entender o que ele está dizendo.",
+          "intent": "também não"
+        }
+      ]
+    },
+    {
+      "id": "nem-mesmo-em-nem-sequer-em-8c5f3a21-7d94-4e60-b182-f6a093c7d245",
+      "intention": "Nem mesmo em... / Nem sequer em... / Nem em...",
+      "pattern": "nem mesmo em + idioma, lugar, ambiente, período ou situação",
+      "description": "Expressa que uma ação, capacidade ou situação não ocorre nem mesmo em um contexto no qual seria razoável esperar que acontecesse. No inglês americano, a construção 'not even in' combina a negação 'not', o intensificador 'even' e a preposição 'in', enfatizando uma circunstância, idioma, ambiente, lugar, período ou situação. É especialmente útil para destacar contrastes inesperados, limitações e situações surpreendentes. Em português brasileiro, corresponde naturalmente a 'nem mesmo em', 'nem sequer em' ou simplesmente 'nem em'. Pode aparecer após uma oração negativa completa, como em 'I can't explain it, not even in Portuguese', ou integrar uma construção negativa com 'even in', como em 'I can't explain it even in Portuguese'.",
+      "category": "expressions",
+      "searchTerms": [
+        "nem mesmo em",
+        "nem sequer em",
+        "nem em",
+        "nem mesmo em português",
+        "nem mesmo em inglês",
+        "nem mesmo em casa",
+        "nem mesmo no trabalho",
+        "nem mesmo na escola",
+        "nem mesmo na documentação",
+        "nem mesmo no manual",
+        "nem mesmo no sistema",
+        "nem mesmo no código",
+        "nem mesmo em situações simples",
+        "nem mesmo em uma emergência",
+        "nem mesmo em meus sonhos",
+        "nem mesmo em ambiente de testes",
+        "nem sequer no dicionário",
+        "nem sequer na documentação",
+        "nem sequer em situações fáceis",
+        "nem mesmo nessas condições",
+        "nem mesmo nesse contexto",
+        "nem em condições ideais",
+        "nem em um ambiente tranquilo"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])nem\\s+mesmo\\s+em(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])nem\\s+sequer\\s+em(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])nem\\s+em(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])nem\\s+mesmo\\s+(?:no|na|nos|nas|num|numa)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])nem\\s+sequer\\s+(?:no|na|nos|nas|num|numa)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])nem\\s+(?:no|na|nos|nas)\\s+(?:português|inglês|manual|dicionário|sistema|código|documentação)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "ênfase",
+        "negação",
+        "surpresa",
+        "contraste",
+        "limitações",
+        "expectativas",
+        "idiomas",
+        "contextos",
+        "circunstâncias",
+        "ambientes",
+        "intensificadores",
+        "conversação cotidiana",
+        "gerador de frases",
+        "inglês americano"
+      ],
+      "related": [],
+      "structure": "A construção principal é 'NOT EVEN IN + NOUN PHRASE', geralmente utilizada após uma oração negativa para enfatizar um contexto inesperado. Exemplo: 'I can't explain it, not even in Portuguese' (Não consigo explicar isso, nem mesmo em português). O segmento 'not even in Portuguese' destaca que a dificuldade persiste inclusive no idioma em que se esperaria maior facilidade. Outra construção natural é 'NEGATIVE CLAUSE + EVEN IN + CONTEXT': 'I can't explain it even in Portuguese' (Não consigo explicar isso nem mesmo em português). Também é possível colocar o contexto no início da oração: 'Even in Portuguese, I can't explain it' (Nem mesmo em português eu consigo explicar isso). Nessa última estrutura, a negação aparece na oração principal, e não imediatamente antes de 'even'. O uso da preposição 'in' depende do contexto: 'in Portuguese' (em português), 'in the documentation' (na documentação), 'in an emergency' (em uma emergência), 'in my dreams' (nos meus sonhos) e 'in a test environment' (em um ambiente de testes). Nem toda expressão portuguesa com 'em', 'no' ou 'na' exige 'in' em inglês. Por exemplo, 'nem mesmo em casa' normalmente é 'not even at home', e não 'not even in home'. Por isso, a preposição deve respeitar o uso natural do inglês. É importante distinguir 'not even in' (nem mesmo em determinado contexto) de 'not... either' (também não). 'Not even in' enfatiza uma circunstância surpreendente, enquanto 'not... either' acrescenta uma informação negativa relacionada a outra situação. A expressão pode ser usada para falar de idiomas, trabalho, aprendizado, documentação, tecnologia, experiências e circunstâncias inesperadas.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "e26eb80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "Eu não consigo explicar isso, nem mesmo em português.",
+          "intent": "nem mesmo em português"
+        },
+        {
+          "id": "f37fc91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "Não consigo entender essa explicação, nem mesmo em inglês.",
+          "intent": "nem mesmo em inglês"
+        },
+        {
+          "id": "a480da2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "Não encontrei essa informação, nem mesmo na documentação.",
+          "intent": "nem mesmo na documentação"
+        },
+        {
+          "id": "b591eb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "Ele não consegue manter a calma, nem mesmo em situações simples.",
+          "intent": "nem mesmo em situações simples"
+        },
+        {
+          "id": "c6a2fc41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "Não encontrei essa palavra, nem sequer no dicionário.",
+          "intent": "nem sequer no dicionário"
+        },
+        {
+          "id": "d7b30d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "Ele não atende ao telefone, nem mesmo em uma emergência.",
+          "intent": "nem mesmo em uma emergência"
+        },
+        {
+          "id": "e8c41e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "Eu nunca imaginei uma coisa dessas, nem mesmo em meus sonhos.",
+          "intent": "nem mesmo em meus sonhos"
+        },
+        {
+          "id": "f9d52f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "O sistema não funciona, nem mesmo em ambiente de testes.",
+          "intent": "nem mesmo em ambiente de testes"
+        },
+        {
+          "id": "a0e63085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "Não consigo me concentrar, nem mesmo em um ambiente tranquilo.",
+          "intent": "nem mesmo em um ambiente tranquilo"
+        },
+        {
+          "id": "b1f74196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "Não consegui encontrar a causa do problema, nem mesmo no código-fonte.",
+          "intent": "nem mesmo no código-fonte"
         }
       ]
     }
