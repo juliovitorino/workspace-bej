@@ -137,6 +137,7 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
   const [notice, setNotice] = useState("");
   const randomPoolRef = useRef<WyrQuestion[]>([]);
   const randomSeenRef = useRef<Set<string>>(new Set());
+  const practiceTitleRef = useRef<HTMLDivElement>(null);
   const questionCardRef = useRef<HTMLDivElement>(null);
   const answerACardRef = useRef<HTMLDivElement>(null);
   const answerBCardRef = useRef<HTMLDivElement>(null);
@@ -217,7 +218,8 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
   // Scroll only after React commits the next question or the newly expanded answer.
   useEffect(() => {
     if (screen !== "practice" || !pendingScrollRef.current) return;
-    const target = pendingScrollRef.current === "question" ? questionCardRef.current
+    const target = pendingScrollRef.current === "title" ? practiceTitleRef.current
+      : pendingScrollRef.current === "question" ? questionCardRef.current
       : pendingScrollRef.current === "answerA" ? answerACardRef.current : answerBCardRef.current;
     if (!target) return;
     pendingScrollRef.current = null;
@@ -317,7 +319,7 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
     const question = drawRandomQuestion(current.id);
     if (!question) return;
     recordActivity();
-    pendingScrollRef.current = "question";
+    pendingScrollRef.current = "title";
     // Keep the already presented questions so "Previous" still works.
     setPracticeSet(previous => previous ? { ...previous, questions: [...previous.questions, question] } : previous);
     setIndex(practiceSet.questions.length);
@@ -464,7 +466,7 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
       </>}
       {screen === "walking" && walkingScope && <><p className="wyr-walk-scope">Treino selecionado: <strong>{walkingScope.title}</strong> · {walkingItems.length} perguntas</p><WyrWalking items={walkingItems} locale={loaded.locale} onExit={() => { setWalkingScope(null); setScreen("catalog"); }} onStudyState={onStudyState} /></>}
       {screen === "practice" && current && practiceSet && <div className="wyr-practice">
-        <div className="wyr-practice-meta"><span>{LANGUAGES[sourceLanguage].flag} → {LANGUAGES[loaded.locale].flag} · {practiceSet.title}{practiceSet.topic === null && currentTopic ? ` · ${currentTopic.title}` : ""} · {current.level}</span><span>{index + 1}/{practiceSet.questions.length}</span></div>
+        <div className="wyr-practice-meta" ref={practiceTitleRef}><span>{LANGUAGES[sourceLanguage].flag} → {LANGUAGES[loaded.locale].flag} · {practiceSet.title}{practiceSet.topic === null && currentTopic ? ` · ${currentTopic.title}` : ""} · {current.level}</span><span>{index + 1}/{practiceSet.questions.length}</span></div>
         <div className="wyr-practice-progress"><span style={{ width: `${100 * (index + 1) / practiceSet.questions.length}%` }} /></div>
         <div className="wyr-practice-tools"><span>{tr("speakHint")}</span><button type="button" className="wyr-star" aria-pressed={favorites.includes(current.id)} aria-label={favorites.includes(current.id) ? tr("removeFavorite") : tr("addFavorite")} title={tr("favorites")} onClick={toggleFavorite}>{favorites.includes(current.id) ? "★" : "☆"}</button></div>
         {card(tr("question"), current.question, "question")}
