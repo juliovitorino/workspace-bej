@@ -2217,7 +2217,7 @@ export function AdvancedTraining({
           .advanced-training-print-sheet { display: none !important; }
         }
         @media print {
-          @page { size: A4 portrait; margin: 11mm; }
+          @page { size: A4 portrait; margin: 11mm 11mm 11mm 25.4mm; }
           body * { visibility: hidden !important; }
           .advanced-training > :not(.advanced-training-print-sheet):not(style) { display: none !important; }
           .advanced-training-print-sheet,
