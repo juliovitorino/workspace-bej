@@ -314,7 +314,7 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
     const title = String(topic.order).padStart(2, "0") + ". " + topic.title;
     const html = '<!doctype html><html lang="' + escapeHtml(locale) + '"><head><meta charset="utf-8">' +
       '<meta name="viewport" content="width=device-width,initial-scale=1"><title>BEJ - ' + escapeHtml(title) + '</title>' +
-      '<style>@page{size:A4;margin:15mm 16mm}*{box-sizing:border-box}body{font:11pt/1.45 Arial,sans-serif;color:#111;background:#fff;margin:0}' +
+      '<style>@page{size:A4;margin:15mm 16mm 15mm 25.4mm}*{box-sizing:border-box}body{font:11pt/1.45 Arial,sans-serif;color:#111;background:#fff;margin:0}' +
       'header{border-bottom:2px solid #173861;padding-bottom:9px;margin-bottom:16px}header small{font-size:9pt;font-weight:bold;letter-spacing:1px;color:#365b88}' +
       'h1{font-size:20pt;margin:5px 0}header p{font-size:10pt;margin:0;color:#444}.question{break-inside:avoid;page-break-inside:avoid;margin:0 0 17px;padding:0 0 12px;border-bottom:1px solid #ddd}' +
       'h2{font-size:12pt;margin:0 0 8px}.option{margin:5px 0}.answer{margin:3px 0 9px 18px;color:#333;font-size:10.5pt}' +
