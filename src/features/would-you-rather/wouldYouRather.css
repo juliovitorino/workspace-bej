@@ -50,6 +50,11 @@
 .wyr-card--selected .wyr-radio { background: var(--accent); }
 .wyr-reveal { display: block; width: 100%; padding: 10px 14px; min-height: 42px; background: var(--surface-soft); border: 1px solid var(--border-strong); border-radius: 9px; color: var(--text); font: inherit; font-weight: 650; cursor: pointer; }
 .wyr-navigation, .wyr-summary-actions { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
+.wyr-random-next { min-width: 48px; padding: 8px 12px; font-size: 1.4rem; line-height: 1; display: inline-flex; align-items: center; justify-content: center; }
+.wyr-navigation:has(.wyr-random-next) { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; }
+.wyr-navigation:has(.wyr-random-next) > :first-child { justify-self: start; }
+.wyr-navigation:has(.wyr-random-next) > :last-child { justify-self: end; }
+@media (max-width: 400px) { .wyr-navigation:has(.wyr-random-next) { gap: 6px; } .wyr-navigation:has(.wyr-random-next) .wyr-button { padding: 9px 8px; } }
 .wyr-summary { max-width: 650px; margin: 24px auto; text-align: center; background: var(--surface); padding: 25px; border: 1px solid var(--border); border-radius: 16px; }
 .wyr-summary h2 { margin: 8px 0; }
 .wyr-summary-check { display: grid; place-items: center; margin: auto; background: var(--good-soft); color: var(--good); width: 55px; height: 55px; border-radius: 50%; font-size: 1.8rem; }

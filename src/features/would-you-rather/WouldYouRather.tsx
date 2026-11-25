@@ -135,7 +135,9 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
   const [index, setIndex] = useState(0);
   const [revealed, setRevealed] = useState({ A: false, B: false });
   const [notice, setNotice] = useState("");
-  const [lastRandom, setLastRandom] = useState<string | null>(null);
+  const randomPoolRef = useRef<WyrQuestion[]>([]);
+  const randomSeenRef = useRef<Set<string>>(new Set());
+  const practiceTitleRef = useRef<HTMLDivElement>(null);
   const questionCardRef = useRef<HTMLDivElement>(null);
   const answerACardRef = useRef<HTMLDivElement>(null);
   const answerBCardRef = useRef<HTMLDivElement>(null);
@@ -164,6 +166,8 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
 
   useEffect(() => {
     const controller = new AbortController();
+    randomPoolRef.current = [];
+    randomSeenRef.current = new Set();
     setLoading(true); setError(""); setLoaded(null); setScreen("catalog");
     void loadWouldYouRather(language, controller.signal).then(result => {
       if (!controller.signal.aborted) { setLoaded(result); setLoading(false); }
@@ -209,10 +213,13 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
   }, [filteredTopics]);
   const totalQuestions = allTopics.reduce((sum, topic) => sum + topic.questions.length, 0);
   const current = practiceSet?.questions[index];
+  // A random session can move across topics; show the topic of the current question.
+  const currentTopic = current ? allTopics.find(topic => topic.questions.some(question => question.id === current.id)) : null;
   // Scroll only after React commits the next question or the newly expanded answer.
   useEffect(() => {
     if (screen !== "practice" || !pendingScrollRef.current) return;
-    const target = pendingScrollRef.current === "question" ? questionCardRef.current
+    const target = pendingScrollRef.current === "title" ? practiceTitleRef.current
+      : pendingScrollRef.current === "question" ? questionCardRef.current
       : pendingScrollRef.current === "answerA" ? answerACardRef.current : answerBCardRef.current;
     if (!target) return;
     pendingScrollRef.current = null;
@@ -280,12 +287,44 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
     pendingScrollRef.current = next > index ? "question" : null;
     setIndex(next); setRevealed({ A: false, B: false }); setNotice("");
   }
+  function drawRandomQuestion(previousId?: string): WyrQuestion | null {
+    const pool = randomPoolRef.current;
+    if (!pool.length) return null;
+    let remaining = pool.filter(question => !randomSeenRef.current.has(question.id));
+    if (!remaining.length) {
+      // A new cycle starts only after every eligible question has appeared.
+      randomSeenRef.current = new Set();
+      remaining = pool;
+    }
+    // At the cycle boundary, avoid showing the same question twice in a row.
+    if (previousId && remaining.length > 1) {
+      remaining = remaining.filter(question => question.id !== previousId);
+    }
+    const question = remaining[Math.floor(Math.random() * remaining.length)];
+    randomSeenRef.current.add(question.id);
+    return question;
+  }
   function random() {
     if (!eligible.length) return;
-    const pool = eligible.length > 1 ? eligible.filter(q => q.id !== lastRandom) : eligible;
-    const question = pool[Math.floor(Math.random() * pool.length)];
-    setLastRandom(question.id);
-    startSet({ title: tr("random"), questions: [question], topic: allTopics.find(topic => topic.questions.some(q => q.id === question.id)) ?? null });
+    // Freeze the currently filtered set for this session; subsequent draws do not
+    // depend on catalog filters changing while the practice screen is open.
+    randomPoolRef.current = [...eligible];
+    randomSeenRef.current = new Set();
+    const question = drawRandomQuestion();
+    if (!question) return;
+    startSet({ title: tr("random"), questions: [question], topic: null });
+  }
+  function nextRandom() {
+    if (!practiceSet || !current || !randomPoolRef.current.length) return;
+    const question = drawRandomQuestion(current.id);
+    if (!question) return;
+    recordActivity();
+    pendingScrollRef.current = "title";
+    // Keep the already presented questions so "Previous" still works.
+    setPracticeSet(previous => previous ? { ...previous, questions: [...previous.questions, question] } : previous);
+    setIndex(practiceSet.questions.length);
+    setRevealed({ A: false, B: false });
+    setNotice("");
   }
   function openTopic(topic: WyrTopic) {
     const questions = [...topic.questions].filter(q => !favoritesOnly || favorites.includes(q.id)).sort((a, b) => a.order - b.order);
@@ -427,7 +466,7 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
       </>}
       {screen === "walking" && walkingScope && <><p className="wyr-walk-scope">Treino selecionado: <strong>{walkingScope.title}</strong> · {walkingItems.length} perguntas</p><WyrWalking items={walkingItems} locale={loaded.locale} onExit={() => { setWalkingScope(null); setScreen("catalog"); }} onStudyState={onStudyState} /></>}
       {screen === "practice" && current && practiceSet && <div className="wyr-practice">
-        <div className="wyr-practice-meta"><span>{LANGUAGES[sourceLanguage].flag} → {LANGUAGES[loaded.locale].flag} · {practiceSet.title} · {current.level}</span><span>{index + 1}/{practiceSet.questions.length}</span></div>
+        <div className="wyr-practice-meta" ref={practiceTitleRef}><span>{LANGUAGES[sourceLanguage].flag} → {LANGUAGES[loaded.locale].flag} · {practiceSet.title}{practiceSet.topic === null && currentTopic ? ` · ${currentTopic.title}` : ""} · {current.level}</span><span>{index + 1}/{practiceSet.questions.length}</span></div>
         <div className="wyr-practice-progress"><span style={{ width: `${100 * (index + 1) / practiceSet.questions.length}%` }} /></div>
         <div className="wyr-practice-tools"><span>{tr("speakHint")}</span><button type="button" className="wyr-star" aria-pressed={favorites.includes(current.id)} aria-label={favorites.includes(current.id) ? tr("removeFavorite") : tr("addFavorite")} title={tr("favorites")} onClick={toggleFavorite}>{favorites.includes(current.id) ? "★" : "☆"}</button></div>
         {card(tr("question"), current.question, "question")}
@@ -436,7 +475,7 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
         {choices[current.id] === "A" && card(tr("answerA"), customAnswers[wyrAnswerKey(loaded.locale, current.id, "A")]?.text ?? current.options.A.answer, "answerA", { reveal: revealed.A, toggle: () => toggleAnswer("A") })}
         {choices[current.id] === "B" && card(tr("answerB"), customAnswers[wyrAnswerKey(loaded.locale, current.id, "B")]?.text ?? current.options.B.answer, "answerB", { reveal: revealed.B, toggle: () => toggleAnswer("B") })}
         {notice && <p role="status" className="wyr-notice">{notice}</p>}
-        <div className="wyr-navigation"><button type="button" className="wyr-button wyr-button--ghost" onClick={() => go(index - 1)} disabled={index === 0}>‹ {tr("previous")}</button><button type="button" className="wyr-button" onClick={() => go(index + 1)}>{index + 1 === practiceSet.questions.length ? tr("finish") : tr("next")} ›</button></div>
+        <div className="wyr-navigation"><button type="button" className="wyr-button wyr-button--ghost" onClick={() => go(index - 1)} disabled={index === 0}>‹ {tr("previous")}</button>{randomPoolRef.current.length > 0 && practiceSet.topic === null && practiceSet.title === tr("random") && <button type="button" className="wyr-button wyr-button--ghost wyr-random-next" onClick={nextRandom} aria-label={tr("random")} title={tr("random")}>🎲</button>}<button type="button" className="wyr-button" onClick={() => go(index + 1)}>{index + 1 === practiceSet.questions.length ? tr("finish") : tr("next")} ›</button></div>
       </div>}
       {screen === "summary" && practiceSet && <div className="wyr-summary">
         <div className="wyr-summary-check" aria-hidden="true">✓</div><h2>{tr("finished")}</h2><p>{practiceSet.title}</p>
