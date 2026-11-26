@@ -1122,7 +1122,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
             disabled={!questionFor(item).trim()} onClick={() => void copyQuestion(item)}>
             <SmallTalkIcon name={copiedQuestionId === item.id ? 'check' : 'copy'}/>
           </button>
-          {editorId !== item.id && <button type="button" className="small-talk-icon-button" aria-label={shown ? 'Ocultar resposta' : 'Ver resposta'} title={shown ? 'Ocultar resposta' : 'Ver resposta'} aria-pressed={shown} onClick={() => { if (shown && editorId === item.id) closeEditor(); reveal(item.id); }}><SmallTalkIcon name={shown ? 'eye-off' : 'eye'}/></button>
+          {editorId !== item.id && <button type="button" className="small-talk-icon-button" aria-label={shown ? 'Ocultar resposta' : 'Ver resposta'} title={shown ? 'Ocultar resposta' : 'Ver resposta'} aria-pressed={shown} onClick={() => reveal(item.id)}><SmallTalkIcon name={shown ? 'eye-off' : 'eye'}/></button>
           {questionCopyError?.id === item.id && <span role="alert" className="small-talk-question-copy-error">{questionCopyError.message}</span>}
           {questionOverrides[item.id] && <button type="button" className="small-talk-restore-button" onClick={() => restoreQuestion(item.id)}>Restaurar pergunta</button>}
         </div>
@@ -1133,10 +1133,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
             <button type="button" className="secondary-button" onClick={() => setQuestionEditorId(null)}>Cancelar</button></div>
         </div>}
         {authorMode && <p className="settings-dialog-help">{item.level?.toUpperCase() ?? 'Nível pendente'} · {item.reviewStatus === 'pending' ? 'Revisão editorial pendente' : item.reviewStatus}</p>}
-        <hr className="small-talk-section-divider" />
-        <div className="small-talk-question-heading" role="group" aria-label="Ações da resposta">
-          {editorId !== item.id && <button type="button" className="small-talk-icon-button" aria-label={shown ? 'Ocultar resposta' : 'Ver resposta'} title={shown ? 'Ocultar resposta' : 'Ver resposta'} aria-pressed={shown} onClick={() => { if (shown && editorId === item.id) closeEditor(); reveal(item.id); }}><SmallTalkIcon name={shown ? 'eye-off' : 'eye'}/></button>}
-        </div>
+        {(shown || editorId === item.id) && <hr className="small-talk-section-divider" />}
         {editorId === item.id ? <div className="small-talk-actions small-talk-edit-toolbar" role="toolbar" aria-label="Ferramentas de edição da resposta">
           <button type="button" className="small-talk-icon-button" aria-label="Limpar texto da resposta" title="Borracha — limpar o texto" disabled={!draft} onClick={clearAnswerDraft}>
             <svg aria-hidden="true" viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
