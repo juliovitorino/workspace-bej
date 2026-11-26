@@ -42,7 +42,7 @@ export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivit
     >
       {mode === "rankChange" && movement ? (
         <span style={{
-          display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "4px",
+          display: "inline-flex", alignItems: "center", justifyContent: "flex-start", gap: "4px",\n          width: "max-content", maxWidth: "100%", flex: "0 0 auto",
           padding: "4px 8px", borderRadius: "8px", fontWeight: 800,
           color: rankChange! > 0 ? "#4ade80" : "#fb7185",
           backgroundColor: rankChange! > 0 ? "#123d31" : "#4a252d",
@@ -52,7 +52,7 @@ export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivit
             stroke="currentColor" strokeWidth="3.25" strokeLinecap="round" strokeLinejoin="round">
             {rankChange! > 0 ? <path d="M12 20V4m-7 7 7-7 7 7" /> : <path d="M12 4v16m-7-7 7 7 7-7" />}
           </svg>
-          <span>{movement}</span>
+          <span style={{ flex: "0 0 auto" }}>{movement}</span>
         </span>
       ) : visibleValue}
     </button>
