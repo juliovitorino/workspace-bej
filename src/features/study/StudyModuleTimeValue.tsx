@@ -42,7 +42,8 @@ export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivit
     >
       {mode === "rankChange" && movement ? (
         <span style={{
-          display: "inline-flex", alignItems: "center", justifyContent: "flex-start", gap: "4px",\n          width: "max-content", maxWidth: "100%", flex: "0 0 auto",
+          display: "inline-flex", alignItems: "center", justifyContent: "flex-start", gap: "4px",
+          width: "max-content", maxWidth: "100%", flex: "0 0 auto",
           padding: "4px 8px", borderRadius: "8px", fontWeight: 800,
           color: rankChange! > 0 ? "#4ade80" : "#fb7185",
           backgroundColor: rankChange! > 0 ? "#123d31" : "#4a252d",
