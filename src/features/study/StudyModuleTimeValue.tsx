@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import type { ModuleValueMode } from "./studyModuleTime";
 import { moduleRecencyParts } from "./studyModuleRecency";
@@ -8,14 +10,22 @@ interface StudyModuleTimeValueProps {
   percentage: string;
   lastActivity?: number;
   rankChange?: number;
+  previousRank?: number;
+  currentRank?: number;
   now: Date;
   mode: ModuleValueMode;
   onToggle: () => void;
 }
 
 /** One accessible, responsive control for the entire ranking, on every device. */
-export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivity, rankChange, now, mode, onToggle }: StudyModuleTimeValueProps) {
-  const { t } = useTranslation();
+export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivity, rankChange, previousRank, currentRank, now, mode, onToggle }: StudyModuleTimeValueProps) {
+  const { t, i18n } = useTranslation();
+  const [detailOpen, setDetailOpen] = useState(false);
+  const locale = i18n.language.toLowerCase();
+  const labels = locale.startsWith("pt") ? ["Movimentação no ranking", "Período anterior", "Período atual", "Fechar", "Próxima informação"]
+    : locale.startsWith("es") ? ["Movimiento en la clasificación", "Período anterior", "Período actual", "Cerrar", "Siguiente información"]
+    : locale.startsWith("fr") ? ["Évolution du classement", "Période précédente", "Période actuelle", "Fermer", "Information suivante"]
+    : ["Ranking movement", "Previous period", "Current period", "Close", "Next metric"];
   const parts = lastActivity === undefined ? null : moduleRecencyParts(lastActivity, now.getTime());
   const lastActivityLabel = parts
     ? t("study.moduleActivityAgo", { time: `${parts.count}${t(`study.moduleRecencyUnits.${parts.unit}${parts.count === 1 ? "One" : "Other"}`)}` })
@@ -32,6 +42,7 @@ export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivit
     : null;
 
   return (
+    <>
     <button
       type="button"
       className="study-module-value"
@@ -56,5 +67,19 @@ export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivit
         </svg>
       ) : visibleValue}
     </button>
+    {mode === "rankChange" && movement && previousRank !== undefined && currentRank !== undefined && (
+      <button type="button" className="study-rank-info-button" aria-label={`${moduleName}: ${labels[0]}`} title={labels[0]} onClick={() => setDetailOpen(true)}>ⓘ</button>
+    )}
+    {detailOpen && mode === "rankChange" && movement && previousRank !== undefined && currentRank !== undefined && createPortal(
+      <div className="study-rank-detail-overlay" onClick={() => setDetailOpen(false)}>
+        <section className="study-rank-detail-dialog" role="dialog" aria-modal="true" aria-label={`${moduleName}: ${labels[0]}`} onClick={event => event.stopPropagation()}>
+          <strong>{moduleName} — {labels[0]}</strong>
+          <div className="study-rank-detail-positions"><span><small>{labels[1]}</small><strong>{previousRank}º</strong></span><span aria-hidden="true">→</span><span><small>{labels[2]}</small><strong>{currentRank}º</strong></span></div>
+          <span>{movementLabel}</span>
+          <button type="button" className="study-rank-detail-close" onClick={() => setDetailOpen(false)}>{labels[3]}</button>
+        </section>
+      </div>, document.body
+    )}
+    </>
   );
 }

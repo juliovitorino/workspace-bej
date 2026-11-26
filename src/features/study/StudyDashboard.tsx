@@ -194,7 +194,7 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu, onO
   const moduleValues = stats ? moduleChartValues(stats, filters) : {};
   // Compare exactly the same ranking categories and filters in the preceding period.
   // Only modules with positive study time in both periods have a comparable rank.
-  const rankChanges = useMemo<Record<string, number>>(() => {
+  const rankComparison = useMemo<Record<string, { change: number; previousRank: number; currentRank: number }>>(() => {
     if (!displayData || !validRange) return {};
     const prior = previousStudyPeriodRange(filters, now);
     if (!prior) return {};
@@ -207,14 +207,14 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu, onO
     );
     const currentRanks = rank(current);
     const previousRanks = rank(previous);
-    const changes: Record<string, number> = {};
+    const changes: Record<string, { change: number; previousRank: number; currentRank: number }> = {};
     for (const [key, position] of currentRanks) {
       const before = previousRanks.get(key);
-      if (before !== undefined && before !== position) changes[key] = before - position;
+      if (before !== undefined && before !== position) changes[key] = { change: before - position, previousRank: before, currentRank: position };
     }
     return changes;
   }, [displayData, filters, now, validRange, i18n.language, t]);
-  const hasRankChanges = Object.keys(rankChanges).length > 0;
+  const hasRankChanges = Object.keys(rankComparison).length > 0;
   const displayedModuleValueMode = moduleValueMode === "rankChange" && !hasRankChanges ? "time" : moduleValueMode;
   const toggleModuleValueMode = () => {
     setModuleValueMode(nextModuleValueMode(displayedModuleValueMode, hasRankChanges));
@@ -278,7 +278,7 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu, onO
     const scale = Math.max(1, total ?? max);
     return <section id={sectionId} tabIndex={sectionId ? -1 : undefined} className="study-panel bej-chart-card">{collapseKey ? <StudyCollapseToggle expanded={collapsedCharts[collapseKey] ?? false} onToggle={() => setCollapsedCharts(v => ({ ...v, [collapseKey]: !(v[collapseKey] ?? false) }))} title={title} /> : sectionId === "study-time-by-module" ? <h3>{t("study.byModule")} · <button type="button" className="study-module-period-button" onClick={cycleModulePeriod} aria-label={`${t("study.nextPeriod")}: ${t(`study.periods.${nextStudyPeriod(filters.period)}`)}`} title={`${t("study.nextPeriod")}: ${t(`study.periods.${nextStudyPeriod(filters.period)}`)}`}>{t(`study.periods.${filters.period}`)}<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 5 7 7-7 7"/></svg></button></h3> : <h3>{title}</h3>}{(!collapseKey || collapsedCharts[collapseKey]) && (!entries.length ? <p>{t("study.empty")}</p> : <ul className={modules ? "study-chart study-chart-modules" : "study-chart"}>{entries.map(([key, seconds], index) => <li key={key}>
       <div><span className={sectionId === "study-time-by-module" ? "study-module-label" : undefined}>{sectionId === "study-time-by-module" && <span className="study-module-rank">{index < 3 && seconds > 0 ? <><StudyRankMedal rank={(index + 1) as 1 | 2 | 3} /><span className="study-module-rank-sr-only">{index + 1}.</span></> : `${index + 1}.`}</span>}<span className={sectionId === "study-time-by-module" ? "study-module-name" : undefined}>{label(key)}</span></span>{sectionId === "study-time-by-module" && total !== undefined
-        ? <StudyModuleTimeValue moduleName={label(key)} time={moduleDuration(seconds)} percentage={`${number(seconds / scale * 100)}%`} lastActivity={latestModuleActivity[key]} now={recencyNow} mode={displayedModuleValueMode} rankChange={rankChanges[key]} onToggle={toggleModuleValueMode} />
+        ? <StudyModuleTimeValue moduleName={label(key)} time={moduleDuration(seconds)} percentage={`${number(seconds / scale * 100)}%`} lastActivity={latestModuleActivity[key]} now={recencyNow} mode={displayedModuleValueMode} rankChange={rankComparison[key]?.change} previousRank={rankComparison[key]?.previousRank} currentRank={rankComparison[key]?.currentRank} onToggle={toggleModuleValueMode} />
         : <strong>{duration(seconds)}{total !== undefined && ` · ${number(seconds / scale * 100)}%`}</strong>}</div><div className="study-bar" aria-hidden="true"><span style={{ width: `${sectionId === "study-time-by-module" ? modulePercentageBarWidth(seconds, max) : seconds / scale * 100}%`, ...(sectionId === "study-time-by-module" ? { background: key.startsWith(OTHER_SUBCATEGORY_MODULE_PREFIX)
         ? STUDY_EXTRA_CATEGORY_COLORS.other
         : key.startsWith(EXTRA_MODULE_PREFIX)
