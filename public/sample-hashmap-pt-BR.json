@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1296,
+    "totalIntentions": 1299,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -53498,6 +53498,337 @@
           "id": "b1f74196-aec8-40b3-8254-b9ea364df471",
           "exampleItem": "Não consegui encontrar a causa do problema, nem mesmo no código-fonte.",
           "intent": "nem mesmo no código-fonte"
+        }
+      ]
+    },
+    {
+      "id": "pra-cacete-pra-caramba-muito-mesmo-7e3a4c21-9b65-4d80-a172-f8c295e6b340",
+      "intention": "Pra cacete! / Pra caramba! / Muito mesmo!",
+      "pattern": "adjetivo + pra cacete / adjetivo + pra caramba / muito + adjetivo",
+      "description": "Expressa intensidade elevada de uma qualidade, característica, sensação ou estado, seja positivo ou negativo. No inglês americano informal, a construção 'adjective + as hell' funciona como um intensificador enfático, semelhante a 'pra cacete', 'pra caramba', 'pra danado' ou 'muito mesmo' em português brasileiro. Pode ser utilizada para enfatizar cansaço, dificuldade, temperatura, preço, velocidade, emoções, aparência e avaliações. A expressão é bastante coloquial e pode soar forte ou inadequada em ambientes formais, embora normalmente seja menos vulgar que construções com 'fucking'. É um gerador produtivo de frases porque permite combinar 'as hell' com diversos adjetivos.",
+      "category": "expressions",
+      "searchTerms": [
+        "pra cacete",
+        "para cacete",
+        "pra caramba",
+        "para caramba",
+        "pra caralho",
+        "para caralho",
+        "pra danado",
+        "muito mesmo",
+        "demais da conta",
+        "bom pra cacete",
+        "ruim pra cacete",
+        "caro pra cacete",
+        "difícil pra cacete",
+        "cansado pra cacete",
+        "quente pra cacete",
+        "frio pra cacete",
+        "rápido pra cacete",
+        "chato pra cacete",
+        "feliz pra cacete",
+        "intensidade extrema",
+        "intensificar adjetivo",
+        "ênfase informal"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:pra|para)\\s+(?:cacete|caramba|caralho|danado)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])muito\\s+mesmo(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])demais\\s+da\\s+conta(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:bom|boa|ruim|caro|cara|difícil|cansado|cansada|quente|frio|fria|rápido|rápida|chato|chata|feliz)\\s+(?:pra|para)\\s+(?:cacete|caramba|caralho)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "intensidade",
+        "intensificadores",
+        "ênfase",
+        "adjetivos",
+        "linguagem informal",
+        "expressões coloquiais",
+        "emoções",
+        "sensações",
+        "avaliações",
+        "comparações",
+        "conversação cotidiana",
+        "gerador de frases",
+        "inglês americano"
+      ],
+      "related": [],
+      "structure": "A construção principal é 'ADJECTIVE + AS HELL'. O intensificador 'as hell' aparece depois do adjetivo e expressa intensidade elevada. Exemplos: 'expensive as hell' (caro pra cacete), 'tired as hell' (cansado pra cacete), 'hard as hell' (difícil pra cacete), 'hot as hell' (quente pra cacete), 'cold as hell' (frio pra cacete), 'fast as hell' (rápido pra cacete), 'boring as hell' (chato pra cacete) e 'happy as hell' (feliz pra cacete). Uma estrutura muito comum é 'SUBJECT + BE + ADJECTIVE + AS HELL': 'This is expensive as hell!' (Isso é caro pra cacete!). Também pode ocorrer com verbos de ligação, como 'look', 'feel', 'sound' e 'get': 'I feel tired as hell' (Estou cansado pra cacete). O intensificador funciona tanto com adjetivos positivos quanto negativos. 'Good as hell' é possível, mas 'fucking awesome', 'so damn good' e 'really good' podem soar mais naturais em determinadas avaliações positivas. 'Bad as hell' também existe, mas 'fucking terrible' e 'it sucks so bad' podem transmitir melhor uma avaliação extremamente negativa. 'As hell' é uma expressão informal e enfática, com referência religiosa lexicalizada, e deve ser evitada em situações muito formais. Diferentemente de 'as... as', usado em comparações de igualdade, 'as hell' funciona como uma unidade intensificadora e não exige um segundo termo de comparação. Não se deve traduzir literalmente a palavra 'hell' nessa construção.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "a2c41e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "Esse aplicativo é bom pra cacete!",
+          "intent": "bom pra cacete"
+        },
+        {
+          "id": "b3d52f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "Esse restaurante é caro pra cacete!",
+          "intent": "caro pra cacete"
+        },
+        {
+          "id": "c4e63085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "Aprender inglês pode ser difícil pra cacete!",
+          "intent": "difícil pra cacete"
+        },
+        {
+          "id": "d5f74196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "Estou cansado pra cacete depois do trabalho.",
+          "intent": "cansado pra cacete"
+        },
+        {
+          "id": "e60852a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "Está quente pra cacete hoje!",
+          "intent": "quente pra cacete"
+        },
+        {
+          "id": "f71963b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "Estava frio pra cacete ontem à noite.",
+          "intent": "frio pra cacete"
+        },
+        {
+          "id": "a82a74c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "Esse computador é rápido pra cacete!",
+          "intent": "rápido pra cacete"
+        },
+        {
+          "id": "b93b85da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "Aquela reunião foi chata pra cacete.",
+          "intent": "chata pra cacete"
+        },
+        {
+          "id": "c04c96eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "Estou feliz pra cacete com o resultado!",
+          "intent": "feliz pra cacete"
+        },
+        {
+          "id": "d15da7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "Esse filme foi ruim pra cacete!",
+          "intent": "ruim pra cacete"
+        }
+      ]
+    },
+    {
+      "id": "bom-pra-cacete-foda-pra-caralho-8f4b5d32-ac76-4e91-b283-a9d306f7c451",
+      "intention": "Bom pra cacete! / Foda pra caralho! / Bom demais!",
+      "pattern": "algo + é/foi/ficou + bom pra cacete / foda pra caralho / incrível demais",
+      "description": "Expressa entusiasmo, admiração ou aprovação extremamente intensa diante de algo considerado excelente, impressionante ou extraordinário. No inglês americano informal, 'fucking awesome' é uma expressão enfática e vulgar que combina o intensificador 'fucking' com o adjetivo positivo 'awesome'. É utilizada para elogiar experiências, resultados, produtos, acontecimentos, conquistas e realizações de maneira espontânea e emocional. Em português brasileiro, corresponde a expressões como 'bom pra cacete', 'foda pra caralho', 'bom demais', 'sensacional pra caramba' ou 'incrível demais', dependendo do grau de informalidade. Por conter um palavrão explícito, é mais adequada a conversas descontraídas entre pessoas que aceitam esse tipo de linguagem.",
+      "category": "expressions",
+      "searchTerms": [
+        "bom pra cacete",
+        "bom para cacete",
+        "bom pra caralho",
+        "bom demais",
+        "bom pra caramba",
+        "foda pra caralho",
+        "foda pra cacete",
+        "foda demais",
+        "muito foda",
+        "foda pra valer",
+        "incrível demais",
+        "incrível pra cacete",
+        "sensacional pra caramba",
+        "sensacional demais",
+        "fantástico demais",
+        "espetacular",
+        "maravilhoso demais",
+        "excelente pra caralho",
+        "animal demais",
+        "bom demais da conta",
+        "elogio intenso",
+        "entusiasmo extremo",
+        "admiração intensa"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])bom\\s+(?:pra|para)\\s+(?:cacete|caralho|caramba)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])foda\\s+(?:pra|para)\\s+(?:caralho|cacete)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:bom|boa|foda|incrível|sensacional|fantástico|fantástica|maravilhoso|maravilhosa)\\s+demais(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])muito\\s+foda(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:incrível|excelente)\\s+(?:pra|para)\\s+(?:cacete|caralho)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "elogios",
+        "entusiasmo",
+        "admiração",
+        "aprovação",
+        "avaliação positiva",
+        "intensidade",
+        "emoções",
+        "linguagem vulgar",
+        "palavrões",
+        "linguagem informal",
+        "expressões coloquiais",
+        "reações espontâneas",
+        "conversação cotidiana",
+        "inglês americano"
+      ],
+      "related": [],
+      "structure": "A expressão principal é 'FUCKING AWESOME!', formada pelo intensificador vulgar 'fucking' e pelo adjetivo positivo 'awesome'. Pode funcionar como uma reação independente: 'Fucking awesome!' (Bom pra cacete! / Foda pra caralho!). Também pode aparecer em uma oração completa: 'SUBJECT + BE + FUCKING AWESOME': 'This app is fucking awesome!' (Esse aplicativo é bom pra cacete!). Com o passado: 'That movie was fucking awesome!' (Aquele filme foi bom pra cacete!). Para elogiar uma experiência ou conquista: 'That's fucking awesome!' (Isso é foda pra caralho!). O intensificador 'fucking' aumenta fortemente a carga emocional do elogio. Em inglês americano, 'awesome' já é positivo e bastante comum na linguagem cotidiana; 'fucking awesome' acrescenta entusiasmo extremo e vulgaridade. Alternativas de intensidade semelhante incluem 'fucking amazing', 'fucking incredible' e 'fucking fantastic'. Alternativas menos vulgares incluem 'so damn good', 'really freaking good', 'absolutely amazing' e 'incredibly good'. A expressão não é adequada a situações formais, apresentações profissionais ou conversas com pessoas que possam se incomodar com palavrões. É importante distinguir o sentido positivo de 'fucking awesome' de outros usos de 'fucking', que podem expressar irritação, frustração ou hostilidade. Nesta construção, a intenção é elogiar intensamente algo considerado excelente.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "e26eb80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "Cara, esse aplicativo é bom pra cacete!",
+          "intent": "bom pra cacete"
+        },
+        {
+          "id": "f37fc91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "Esse filme foi foda pra caralho!",
+          "intent": "foda pra caralho"
+        },
+        {
+          "id": "a480da2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "O resultado desse projeto ficou bom demais!",
+          "intent": "bom demais"
+        },
+        {
+          "id": "b591eb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "Essa funcionalidade nova ficou incrível demais!",
+          "intent": "incrível demais"
+        },
+        {
+          "id": "c6a2fc41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "O show de ontem foi bom pra cacete!",
+          "intent": "bom pra cacete"
+        },
+        {
+          "id": "d7b30d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "A viagem de moto foi foda pra caralho!",
+          "intent": "foda pra caralho"
+        },
+        {
+          "id": "e8c41e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "Sua apresentação ficou sensacional demais!",
+          "intent": "sensacional demais"
+        },
+        {
+          "id": "f9d52f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "Esse restaurante é bom pra caralho!",
+          "intent": "bom pra caralho"
+        },
+        {
+          "id": "a0e63085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "A ideia que você teve foi muito foda!",
+          "intent": "muito foda"
+        },
+        {
+          "id": "b1f74196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "Esse recurso de compartilhar intenções ficou bom pra cacete!",
+          "intent": "bom pra cacete"
+        }
+      ]
+    },
+    {
+      "id": "ruim-pra-cacete-horrivel-pra-caralho-9a5c6e43-bd87-4fa2-8394-b0e417a8d562",
+      "intention": "Ruim pra cacete! / Horrível pra caralho! / Péssimo demais!",
+      "pattern": "algo + é/foi/está/ficou + ruim pra cacete / horrível pra caralho / péssimo demais",
+      "description": "Expressa desaprovação, frustração, decepção ou avaliação extremamente negativa de algo considerado muito ruim, desagradável, frustrante ou inaceitável. No inglês americano informal, 'fucking terrible' combina o intensificador vulgar 'fucking' com o adjetivo negativo 'terrible', transmitindo uma avaliação fortemente desfavorável. Em português brasileiro, corresponde a expressões como 'ruim pra cacete', 'horrível pra caralho', 'péssimo demais', 'uma merda' ou 'ruim pra caramba', dependendo do contexto e da intensidade. É frequentemente utilizada para criticar produtos, serviços, experiências, filmes, resultados, situações, desempenhos e acontecimentos. Por conter um palavrão explícito, deve ser utilizada com cautela em situações profissionais ou formais.",
+      "category": "expressions",
+      "searchTerms": [
+        "ruim pra cacete",
+        "ruim para cacete",
+        "ruim pra caralho",
+        "ruim pra caramba",
+        "ruim demais",
+        "horrível pra caralho",
+        "horrível pra cacete",
+        "horrível demais",
+        "péssimo demais",
+        "péssima demais",
+        "uma merda",
+        "uma merda completa",
+        "uma porcaria",
+        "uma porcaria completa",
+        "uma bosta",
+        "terrível demais",
+        "terrível pra caramba",
+        "muito ruim",
+        "muito ruim mesmo",
+        "ruim demais da conta",
+        "decepcionante pra caramba",
+        "desastroso demais",
+        "avaliação negativa intensa",
+        "frustração extrema",
+        "crítica intensa"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])ruim\\s+(?:pra|para)\\s+(?:cacete|caralho|caramba)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])horrível\\s+(?:pra|para)\\s+(?:caralho|cacete|caramba)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:ruim|horrível|péssimo|péssima|terrível|desastroso|desastrosa)\\s+demais(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:uma|um)\\s+(?:merda|bosta|porcaria)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])muito\\s+ruim(?:\\s+mesmo)?(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:uma|um)\\s+(?:merda|porcaria)\\s+completa?(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "críticas",
+        "frustração",
+        "decepção",
+        "desaprovação",
+        "avaliação negativa",
+        "intensidade",
+        "emoções",
+        "reclamações",
+        "linguagem vulgar",
+        "palavrões",
+        "linguagem informal",
+        "expressões coloquiais",
+        "reações espontâneas",
+        "conversação cotidiana",
+        "inglês americano"
+      ],
+      "related": [],
+      "structure": "A expressão principal é 'FUCKING TERRIBLE!', formada pelo intensificador vulgar 'fucking' e pelo adjetivo negativo 'terrible'. Pode funcionar como reação independente: 'Fucking terrible!' (Ruim pra cacete! / Horrível pra caralho!). Em uma oração completa, utiliza-se 'SUBJECT + BE + FUCKING TERRIBLE': 'This movie is fucking terrible!' (Esse filme é ruim pra cacete!). No passado: 'The service was fucking terrible!' (O atendimento foi horrível pra caralho!). A construção também pode ser utilizada com verbos de ligação: 'That sounds fucking terrible!' (Isso parece horrível pra caralho!). O intensificador 'fucking' acrescenta forte carga emocional e vulgaridade. Expressões próximas incluem 'fucking awful', 'fucking horrible' e 'absolutely terrible', embora a última não seja vulgar. A expressão 'This sucks so bad!' também é muito comum no inglês americano informal para reclamar de uma experiência ou situação desagradável, mas não possui exatamente a mesma estrutura gramatical. É importante distinguir 'fucking terrible' de 'terribly', que pode funcionar como advérbio em outros contextos. A construção 'fucking terrible' é uma avaliação negativa intensa, e não deve ser confundida com 'fucking awesome', que expressa entusiasmo positivo. Deve ser evitada em situações formais e utilizada com cuidado em ambientes profissionais. Para uma alternativa sem palavrões, pode-se utilizar 'absolutely terrible', 'really awful' ou 'extremely bad'.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "c2a85207-1bfd-47c4-965e-3a70d8f214b6",
+          "exampleItem": "Cara, esse filme foi ruim pra cacete!",
+          "intent": "ruim pra cacete"
+        },
+        {
+          "id": "d3b96318-2c0e-48d5-a76f-4b81e90325c7",
+          "exampleItem": "O atendimento daquele restaurante foi horrível pra caralho!",
+          "intent": "horrível pra caralho"
+        },
+        {
+          "id": "e4ca7429-3d1f-49e6-b870-5c92fa1436d8",
+          "exampleItem": "A experiência com aquele aplicativo foi péssima demais!",
+          "intent": "péssima demais"
+        },
+        {
+          "id": "f5db853a-4e20-4af7-9981-6da30b2547e9",
+          "exampleItem": "Esse serviço é ruim pra cacete!",
+          "intent": "ruim pra cacete"
+        },
+        {
+          "id": "a6ec964b-5f31-4b08-a192-7eb41c3658fa",
+          "exampleItem": "A reunião de ontem foi uma merda!",
+          "intent": "uma merda"
+        },
+        {
+          "id": "b7fda75c-6042-4c19-b2a3-8fc52d47690b",
+          "exampleItem": "O resultado do teste foi horrível demais!",
+          "intent": "horrível demais"
+        },
+        {
+          "id": "c80eb86d-7153-4d2a-83b4-90d63e587a1c",
+          "exampleItem": "Esse jogo é ruim pra caralho!",
+          "intent": "ruim pra caralho"
+        },
+        {
+          "id": "d91fc97e-8264-4e3b-94c5-a1e74f698b2d",
+          "exampleItem": "A qualidade do áudio ficou muito ruim mesmo!",
+          "intent": "muito ruim mesmo"
+        },
+        {
+          "id": "ea20da8f-9375-4f4c-a5d6-b2f8507a9c3e",
+          "exampleItem": "Aquele hotel era uma porcaria completa!",
+          "intent": "uma porcaria completa"
+        },
+        {
+          "id": "fb31eb90-a486-405d-b6e7-c309618bad4f",
+          "exampleItem": "A apresentação do sistema foi ruim pra cacete!",
+          "intent": "ruim pra cacete"
         }
       ]
     }

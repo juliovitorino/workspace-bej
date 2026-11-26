@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1296,
+    "totalIntentions": 1299,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -53777,6 +53777,319 @@
           "id": "b1f74196-aec8-40b3-8254-b9ea364df471",
           "exampleItem": "No he conseguido encontrar la causa del problema, ni siquiera en el código fuente.",
           "intent": "ni siquiera en el código fuente"
+        }
+      ]
+    },
+    {
+      "id": "pra-cacete-pra-caramba-muito-mesmo-7e3a4c21-9b65-4d80-a172-f8c295e6b340",
+      "intention": "¡De cojones! / ¡De narices! / ¡Muchísimo!",
+      "pattern": "adjetivo + de cojones / de narices / muy + adjetivo",
+      "description": "Expresa una intensidad elevada de una cualidad, una sensación o un estado, tanto positivo como negativo. En el español coloquial de España, «de cojones» funciona como un intensificador vulgar, mientras que «de narices» resulta menos ofensivo y «muy» o las terminaciones en «-ísimo» ofrecen alternativas más neutras. Se puede intensificar el cansancio, la dificultad, la temperatura, el precio, la velocidad o una valoración. En inglés americano, «adjective + as hell» desempeña una función similar. Es una construcción productiva e informal cuyo registro debe ajustarse a la situación.",
+      "category": "expressions",
+      "searchTerms": [
+        "de cojones",
+        "de narices",
+        "muchísimo",
+        "muy de verdad",
+        "una barbaridad",
+        "bueno de cojones",
+        "caro de cojones",
+        "difícil de cojones",
+        "cansado de cojones",
+        "calor de cojones",
+        "frío de cojones",
+        "rápido de cojones",
+        "aburrido de cojones",
+        "contento de cojones",
+        "malo de cojones",
+        "intensidad extrema",
+        "intensificar un adjetivo",
+        "énfasis informal"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:de\\s+(?:cojones|narices))(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "intensidad",
+        "intensificadores",
+        "énfasis",
+        "adjetivos",
+        "lenguaje informal",
+        "expresiones coloquiales",
+        "emociones",
+        "sensaciones",
+        "valoraciones",
+        "comparaciones",
+        "conversación cotidiana",
+        "generador de frases",
+        "inglés americano"
+      ],
+      "related": [],
+      "structure": "«Adjetivo + de cojones» intensifica una cualidad en un registro vulgar y coloquial de España: «Es caro de cojones», «Estoy cansado de cojones» o «Es difícil de cojones». «De narices» expresa una intensidad parecida con menor vulgaridad. Con sensaciones meteorológicas son naturales las construcciones nominales «Hace un calor de cojones» y «Hacía un frío de cojones». La intensidad puede ser positiva o negativa: «contento de cojones» y «aburrido de cojones». No todos los adjetivos combinan con la misma naturalidad; en los elogios también se usa «de puta madre» y, en registros neutros, «muy bueno» o «buenísimo». En inglés, «adjective + as hell» coloca el intensificador detrás del adjetivo: «tired as hell», «expensive as hell» o «cold as hell». Puede aparecer con «be» y con otros verbos de enlace, como «feel», «look» o «sound». «As hell» funciona como una unidad intensificadora; no es una comparación de igualdad con la estructura «as... as», y no se traduce literalmente la palabra «hell». Estas construcciones son enfáticas e informales, y se evitan en situaciones muy formales.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "a2c41e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "¡Esta aplicación es buena de cojones!",
+          "intent": "buena de cojones"
+        },
+        {
+          "id": "b3d52f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "¡Este restaurante es caro de cojones!",
+          "intent": "caro de cojones"
+        },
+        {
+          "id": "c4e63085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "¡Aprender inglés puede ser difícil de cojones!",
+          "intent": "difícil de cojones"
+        },
+        {
+          "id": "d5f74196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "Estoy cansado de cojones después del trabajo.",
+          "intent": "cansado de cojones"
+        },
+        {
+          "id": "e60852a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "¡Hoy hace un calor de cojones!",
+          "intent": "calor de cojones"
+        },
+        {
+          "id": "f71963b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "Anoche hacía un frío de cojones.",
+          "intent": "frío de cojones"
+        },
+        {
+          "id": "a82a74c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "¡Este ordenador es rápido de cojones!",
+          "intent": "rápido de cojones"
+        },
+        {
+          "id": "b93b85da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "Aquella reunión fue aburrida de cojones.",
+          "intent": "aburrida de cojones"
+        },
+        {
+          "id": "c04c96eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "¡Estoy contento de cojones con el resultado!",
+          "intent": "contento de cojones"
+        },
+        {
+          "id": "d15da7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "¡Esa película fue mala de cojones!",
+          "intent": "mala de cojones"
+        }
+      ]
+    },
+    {
+      "id": "bom-pra-cacete-foda-pra-caralho-8f4b5d32-ac76-4e91-b283-a9d306f7c451",
+      "intention": "¡De puta madre! / ¡La hostia! / ¡Buenísimo!",
+      "pattern": "algo + ser / estar / quedar + de puta madre / ser la hostia / ser buenísimo",
+      "description": "Expresa entusiasmo, admiración o aprobación muy intensos ante algo que se considera excelente, impresionante o extraordinario. En el español coloquial de España, «de puta madre» y «la hostia» son elogios vulgares y enfáticos. Se usan para valorar experiencias, resultados, productos, acontecimientos y logros de forma espontánea y emocional. «Buenísimo», «increíble» o «sensacional» ofrecen alternativas menos vulgares. En inglés americano, «fucking awesome» combina un intensificador vulgar con un adjetivo positivo y expresa un entusiasmo similar. Estas expresiones son propias de conversaciones informales con personas que aceptan las palabrotas.",
+      "category": "expressions",
+      "searchTerms": [
+        "de puta madre",
+        "la hostia",
+        "es la hostia",
+        "buenísimo",
+        "buenísima",
+        "increíble",
+        "alucinante",
+        "sensacional",
+        "cojonudo",
+        "cojonuda",
+        "una pasada",
+        "excelente de verdad",
+        "fantástico",
+        "espectacular",
+        "maravilloso",
+        "elogio intenso",
+        "entusiasmo extremo",
+        "admiración intensa"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:de\\s+puta\\s+madre)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:la\\s+hostia)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:buenísim[oa]s?)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:increíble)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:sensacional)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "elogios",
+        "entusiasmo",
+        "admiración",
+        "aprobación",
+        "valoración positiva",
+        "intensidad",
+        "emociones",
+        "lenguaje vulgar",
+        "palabrotas",
+        "lenguaje informal",
+        "expresiones coloquiales",
+        "reacciones espontáneas",
+        "conversación cotidiana",
+        "inglés americano"
+      ],
+      "related": [],
+      "structure": "«¡De puta madre!» puede funcionar como una reacción independiente o valorar algo en una oración: «La aplicación está de puta madre», «El concierto estuvo de puta madre» o «El proyecto ha quedado de puta madre». «Ser la hostia» también expresa una valoración muy positiva en este contexto: «Esa película fue la hostia». Ambas expresiones son vulgares y adquieren su matiz concreto según el tono y el contexto. «Buenísimo», «sensacional», «increíble» o «una pasada» son alternativas menos ofensivas para un elogio intenso. En inglés americano, «fucking awesome» une el intensificador vulgar «fucking» al adjetivo positivo «awesome»: «This app is fucking awesome». Puede usarse solo o con «subject + be», y admite distintos tiempos verbales. «Fucking amazing», «fucking incredible» y «fucking fantastic» son variantes próximas. «Absolutely amazing» e «incredibly good» evitan las palabrotas. En esta intención la evaluación es positiva; otros usos de los mismos intensificadores pueden expresar irritación o desaprobación. Debe adaptarse el registro al interlocutor y al entorno.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "e26eb80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "¡Tío, esta aplicación está de puta madre!",
+          "intent": "de puta madre"
+        },
+        {
+          "id": "f37fc91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "¡Esa película fue la hostia!",
+          "intent": "la hostia"
+        },
+        {
+          "id": "a480da2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "¡El resultado de este proyecto ha sido buenísimo!",
+          "intent": "buenísimo"
+        },
+        {
+          "id": "b591eb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "¡Esta nueva función ha quedado increíble!",
+          "intent": "increíble"
+        },
+        {
+          "id": "c6a2fc41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "¡El concierto de ayer estuvo de puta madre!",
+          "intent": "de puta madre"
+        },
+        {
+          "id": "d7b30d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "¡El viaje en moto fue la hostia!",
+          "intent": "la hostia"
+        },
+        {
+          "id": "e8c41e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "¡Tu presentación ha quedado sensacional!",
+          "intent": "sensacional"
+        },
+        {
+          "id": "f9d52f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "¡Este restaurante está de puta madre!",
+          "intent": "de puta madre"
+        },
+        {
+          "id": "a0e63085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "¡La idea que has tenido es la hostia!",
+          "intent": "la hostia"
+        },
+        {
+          "id": "b1f74196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "¡Esta función para compartir intenciones ha quedado de puta madre!",
+          "intent": "de puta madre"
+        }
+      ]
+    },
+    {
+      "id": "ruim-pra-cacete-horrivel-pra-caralho-9a5c6e43-bd87-4fa2-8394-b0e417a8d562",
+      "intention": "¡Malo de cojones! / ¡Una puta mierda! / ¡Pésimo!",
+      "pattern": "algo + ser / estar / quedar + malo de cojones / ser una puta mierda / ser pésimo",
+      "description": "Expresa desaprobación, frustración, decepción o una valoración muy negativa de algo que se considera malo, desagradable o inaceptable. «Malo de cojones» y «una puta mierda» son expresiones vulgares y enfáticas usadas en España para criticar productos, servicios, experiencias, resultados y actuaciones. «Pésimo», «horrible» y «muy malo» permiten expresar una crítica intensa con menor vulgaridad. En inglés americano, «fucking terrible» combina un intensificador vulgar con un adjetivo negativo y comunica una valoración fuertemente desfavorable. El registro debe adaptarse al entorno, especialmente en situaciones profesionales o formales.",
+      "category": "expressions",
+      "searchTerms": [
+        "malo de cojones",
+        "mala de cojones",
+        "una puta mierda",
+        "horrible de cojones",
+        "pésimo",
+        "pésima",
+        "horrible",
+        "una mierda",
+        "una porquería",
+        "una auténtica porquería",
+        "una mierda de servicio",
+        "muy malo",
+        "realmente malo",
+        "decepcionante",
+        "desastroso",
+        "valoración negativa intensa",
+        "frustración extrema",
+        "crítica intensa"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:mal[oa]s?\\s+de\\s+cojones)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:horrible\\s+de\\s+cojones)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:una\\s+(?:puta\\s+)?mierda)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:pésim[oa]s?)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:horrible)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:muy\\s+mal[oa])(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:una\\s+(?:auténtica\\s+)?porquería)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "críticas",
+        "frustración",
+        "decepción",
+        "desaprobación",
+        "valoración negativa",
+        "intensidad",
+        "emociones",
+        "quejas",
+        "lenguaje vulgar",
+        "palabrotas",
+        "lenguaje informal",
+        "expresiones coloquiales",
+        "reacciones espontáneas",
+        "conversación cotidiana",
+        "inglés americano"
+      ],
+      "related": [],
+      "structure": "«Malo de cojones» intensifica una valoración negativa en un registro vulgar: «Este servicio es malo de cojones». El adjetivo concuerda con el referente: «La película fue mala de cojones». «Una puta mierda» es una crítica nominal muy vulgar: «La atención fue una puta mierda». «Una mierda» y «una auténtica porquería» también expresan rechazo, con distinta intensidad. «Pésimo», «horrible» y «muy malo» evitan o reducen la vulgaridad sin eliminar la valoración negativa. En inglés, «fucking terrible» combina el intensificador vulgar «fucking» con el adjetivo «terrible»: «This movie is fucking terrible». Puede aparecer con «be» o con verbos de enlace, como en «That sounds fucking terrible». «Fucking awful» y «fucking horrible» son expresiones próximas; «absolutely terrible», «really awful» y «extremely bad» no incluyen palabrotas. «This sucks so bad» es otra queja informal frecuente, aunque su estructura gramatical es distinta. «Fucking terrible» expresa una evaluación negativa intensa; no debe confundirse con el adverbio «terribly» ni con el elogio «fucking awesome».",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "c2a85207-1bfd-47c4-965e-3a70d8f214b6",
+          "exampleItem": "¡Tío, esa película fue mala de cojones!",
+          "intent": "mala de cojones"
+        },
+        {
+          "id": "d3b96318-2c0e-48d5-a76f-4b81e90325c7",
+          "exampleItem": "¡La atención en aquel restaurante fue una puta mierda!",
+          "intent": "una puta mierda"
+        },
+        {
+          "id": "e4ca7429-3d1f-49e6-b870-5c92fa1436d8",
+          "exampleItem": "¡La experiencia con aquella aplicación fue pésima!",
+          "intent": "pésima"
+        },
+        {
+          "id": "f5db853a-4e20-4af7-9981-6da30b2547e9",
+          "exampleItem": "¡Este servicio es malo de cojones!",
+          "intent": "malo de cojones"
+        },
+        {
+          "id": "a6ec964b-5f31-4b08-a192-7eb41c3658fa",
+          "exampleItem": "¡La reunión de ayer fue una mierda!",
+          "intent": "una mierda"
+        },
+        {
+          "id": "b7fda75c-6042-4c19-b2a3-8fc52d47690b",
+          "exampleItem": "¡El resultado de la prueba fue horrible!",
+          "intent": "horrible"
+        },
+        {
+          "id": "c80eb86d-7153-4d2a-83b4-90d63e587a1c",
+          "exampleItem": "¡Este juego es una puta mierda!",
+          "intent": "una puta mierda"
+        },
+        {
+          "id": "d91fc97e-8264-4e3b-94c5-a1e74f698b2d",
+          "exampleItem": "¡La calidad del audio ha quedado muy mala!",
+          "intent": "muy mala"
+        },
+        {
+          "id": "ea20da8f-9375-4f4c-a5d6-b2f8507a9c3e",
+          "exampleItem": "¡Aquel hotel era una auténtica porquería!",
+          "intent": "una auténtica porquería"
+        },
+        {
+          "id": "fb31eb90-a486-405d-b6e7-c309618bad4f",
+          "exampleItem": "¡La presentación del sistema fue mala de cojones!",
+          "intent": "mala de cojones"
         }
       ]
     }

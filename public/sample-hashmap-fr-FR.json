@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1296,
+    "totalIntentions": 1299,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -54248,6 +54248,323 @@
           "id": "b1f74196-aec8-40b3-8254-b9ea364df471",
           "exampleItem": "Je n'ai pas réussi à trouver la cause du problème, pas même dans le code source.",
           "intent": "pas même dans le code source"
+        }
+      ]
+    },
+    {
+      "id": "pra-cacete-pra-caramba-muito-mesmo-7e3a4c21-9b65-4d80-a172-f8c295e6b340",
+      "intention": "Vachement… / … comme pas possible / … en putain de…",
+      "pattern": "vachement + adjectif / adjectif + comme pas possible / putain de + nom",
+      "description": "Exprime une forte intensité d'une qualité, d'une sensation ou d'un état, positif ou négatif. Vachement et comme pas possible sont des intensificateurs très familiers. Les constructions avec putain ou de merde sont plus vulgaires. Selon le contexte, on peut renforcer une appréciation, la fatigue, la difficulté, la température, le prix, la vitesse ou une émotion. Le choix de l'expression doit rester naturel et respecter le degré de vulgarité recherché.",
+      "category": "expressions",
+      "searchTerms": [
+        "vachement bien",
+        "vachement cher",
+        "vachement difficile",
+        "fatigué comme pas possible",
+        "une chaleur de dingue",
+        "un froid de canard",
+        "vachement rapide",
+        "chiante comme pas possible",
+        "content comme pas possible",
+        "un vrai film de merde",
+        "intensité",
+        "intensificateurs",
+        "emphase",
+        "adjectifs",
+        "langage familier"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])vachement\\s+bien(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])vachement\\s+cher(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])vachement\\s+difficile(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])fatigué\\s+comme\\s+pas\\s+possible(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])une\\s+chaleur\\s+de\\s+dingue(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])un\\s+froid\\s+de\\s+canard(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])vachement\\s+rapide(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])chiante\\s+comme\\s+pas\\s+possible(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])content\\s+comme\\s+pas\\s+possible(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])un\\s+vrai\\s+film\\s+de\\s+merde(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "intensité",
+        "intensificateurs",
+        "emphase",
+        "adjectifs",
+        "langage familier",
+        "expressions familières",
+        "émotions",
+        "sensations",
+        "évaluations",
+        "comparaisons",
+        "conversation quotidienne",
+        "construction de phrases",
+        "anglais américain"
+      ],
+      "related": [],
+      "structure": "Vachement se place devant un adjectif ou un adverbe : vachement cher, vachement difficile, vachement vite. Comme pas possible suit souvent l'adjectif : fatigué comme pas possible, content comme pas possible. Pour insister sur la chaleur ou le froid, on peut dire une chaleur de dingue ou un froid de canard. Les formes avec putain de et de merde sont vulgaires : un putain de bon film, un film de merde. Ces intensificateurs ne décrivent pas une comparaison littérale ; ils renforcent simplement le degré d'une propriété. Ils conviennent aux échanges détendus et peuvent être déplacés en contexte formel. Très, vraiment et extrêmement permettent une formulation plus neutre.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "a2c41e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "Cette application est vachement bien !",
+          "intent": "vachement bien"
+        },
+        {
+          "id": "b3d52f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "Ce restaurant est vachement cher !",
+          "intent": "vachement cher"
+        },
+        {
+          "id": "c4e63085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "Apprendre l'anglais peut être vachement difficile !",
+          "intent": "vachement difficile"
+        },
+        {
+          "id": "d5f74196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "Je suis fatigué comme pas possible après le boulot.",
+          "intent": "fatigué comme pas possible"
+        },
+        {
+          "id": "e60852a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "Il fait une chaleur de dingue aujourd'hui !",
+          "intent": "une chaleur de dingue"
+        },
+        {
+          "id": "f71963b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "Il faisait un froid de canard hier soir.",
+          "intent": "un froid de canard"
+        },
+        {
+          "id": "a82a74c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "Cet ordinateur est vachement rapide !",
+          "intent": "vachement rapide"
+        },
+        {
+          "id": "b93b85da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "Cette réunion était chiante comme pas possible.",
+          "intent": "chiante comme pas possible"
+        },
+        {
+          "id": "c04c96eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "Je suis content comme pas possible du résultat !",
+          "intent": "content comme pas possible"
+        },
+        {
+          "id": "d15da7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "Ce film était un vrai film de merde !",
+          "intent": "un vrai film de merde"
+        }
+      ]
+    },
+    {
+      "id": "bom-pra-cacete-foda-pra-caralho-8f4b5d32-ac76-4e91-b283-a9d306f7c451",
+      "intention": "Putain, c’est génial ! / C’est trop bon ! / C’est carrément énorme !",
+      "pattern": "sujet + être + vraiment / carrément + génial / putain de + nom positif",
+      "description": "Exprime un enthousiasme, une admiration ou une approbation extrêmement forte pour quelque chose d'excellent ou d'impressionnant. Putain, c'est génial ! ajoute une grossièreté à une appréciation positive. C'est trop bon !, C'est carrément énorme ! et C'est vraiment incroyable ! peuvent transmettre un enthousiasme voisin avec des registres différents. Ces expressions permettent de féliciter une réussite, un produit, une expérience ou un résultat de manière spontanée et émotionnelle.",
+      "category": "expressions",
+      "searchTerms": [
+        "putain, cette application est géniale",
+        "un putain de bon film",
+        "vraiment excellent",
+        "vraiment incroyable",
+        "Putain, le concert d'hier était génial",
+        "carrément énorme",
+        "vraiment sensationnelle",
+        "Putain, ce restaurant est trop bon",
+        "carrément géniale",
+        "Putain, cette fonction de partage des intentions est géniale",
+        "éloges",
+        "enthousiasme",
+        "admiration",
+        "approbation",
+        "évaluation positive"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])putain,\\s+cette\\s+application\\s+est\\s+géniale(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])un\\s+putain\\s+de\\s+bon\\s+film(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])vraiment\\s+excellent(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])vraiment\\s+incroyable(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Putain,\\s+le\\s+concert\\s+d['’]hier\\s+était\\s+génial(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])carrément\\s+énorme(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])vraiment\\s+sensationnelle(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Putain,\\s+ce\\s+restaurant\\s+est\\s+trop\\s+bon(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])carrément\\s+géniale(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Putain,\\s+cette\\s+fonction\\s+de\\s+partage\\s+des\\s+intentions\\s+est\\s+géniale(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "éloges",
+        "enthousiasme",
+        "admiration",
+        "approbation",
+        "évaluation positive",
+        "intensité",
+        "émotions",
+        "langage vulgaire",
+        "grossièretés",
+        "langage familier",
+        "expressions familières",
+        "réactions spontanées",
+        "conversation quotidienne",
+        "anglais américain"
+      ],
+      "related": [],
+      "structure": "Putain peut être détaché en début de phrase comme interjection : Putain, c'est génial ! Il peut aussi entrer dans un groupe nominal valorisant : C'est un putain de bon film ! Dans les deux cas, le contexte rend l'évaluation positive, malgré la grossièreté. On peut employer le présent ou le passé : Cette application est géniale ; Ce concert était génial. Carrément, vraiment et trop renforcent également l'appréciation : carrément énorme, vraiment incroyable, trop bon. Dans l'usage familier positif, trop ne signifie pas nécessairement un excès indésirable. Les formulations avec putain sont vulgaires ; absolument formidable ou vraiment excellent sont des alternatives sans grossièreté. Il faut distinguer ces éloges d'un usage irrité ou hostile du même juron.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "e26eb80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "Mec, putain, cette application est géniale !",
+          "intent": "putain, cette application est géniale"
+        },
+        {
+          "id": "f37fc91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "Ce film était un putain de bon film !",
+          "intent": "un putain de bon film"
+        },
+        {
+          "id": "a480da2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "Le résultat de ce projet est vraiment excellent !",
+          "intent": "vraiment excellent"
+        },
+        {
+          "id": "b591eb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "Cette nouvelle fonctionnalité est vraiment incroyable !",
+          "intent": "vraiment incroyable"
+        },
+        {
+          "id": "c6a2fc41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "Putain, le concert d'hier était génial !",
+          "intent": "Putain, le concert d'hier était génial"
+        },
+        {
+          "id": "d7b30d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "Cette virée à moto était carrément énorme !",
+          "intent": "carrément énorme"
+        },
+        {
+          "id": "e8c41e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "Ta présentation était vraiment sensationnelle !",
+          "intent": "vraiment sensationnelle"
+        },
+        {
+          "id": "f9d52f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "Putain, ce restaurant est trop bon !",
+          "intent": "Putain, ce restaurant est trop bon"
+        },
+        {
+          "id": "a0e63085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "Ton idée était carrément géniale !",
+          "intent": "carrément géniale"
+        },
+        {
+          "id": "b1f74196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "Putain, cette fonction de partage des intentions est géniale !",
+          "intent": "Putain, cette fonction de partage des intentions est géniale"
+        }
+      ]
+    },
+    {
+      "id": "ruim-pra-cacete-horrivel-pra-caralho-9a5c6e43-bd87-4fa2-8394-b0e417a8d562",
+      "intention": "Vraiment merdique ! / Putain, c’est horrible ! / Complètement nul !",
+      "pattern": "sujet + être + vraiment merdique / complètement nul / horrible",
+      "description": "Exprime une désapprobation, une déception ou une frustration très forte face à quelque chose de mauvais, de désagréable ou d'inacceptable. Vraiment merdique, de la merde et une vraie merde sont des appréciations vulgaires et négatives. Putain, c'est horrible ! ajoute une forte charge émotionnelle. Complètement nul et absolument épouvantable permettent de critiquer intensément sans employer le même degré de grossièreté. Ces expressions servent à commenter des services, des produits, des expériences, des résultats et des performances.",
+      "category": "expressions",
+      "searchTerms": [
+        "vraiment merdique",
+        "Putain, le service dans ce restaurant était horrible",
+        "absolument épouvantable",
+        "de la merde",
+        "vraiment horrible",
+        "vraiment de la merde",
+        "vraiment mauvaise",
+        "une vraie merde",
+        "critiques",
+        "frustration",
+        "déception",
+        "désapprobation",
+        "évaluation négative"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])vraiment\\s+merdique(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Putain,\\s+le\\s+service\\s+dans\\s+ce\\s+restaurant\\s+était\\s+horrible(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])absolument\\s+épouvantable(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])de\\s+la\\s+merde(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])vraiment\\s+horrible(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])vraiment\\s+de\\s+la\\s+merde(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])vraiment\\s+mauvaise(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])une\\s+vraie\\s+merde(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "critiques",
+        "frustration",
+        "déception",
+        "désapprobation",
+        "évaluation négative",
+        "intensité",
+        "émotions",
+        "plaintes",
+        "langage vulgaire",
+        "grossièretés",
+        "langage familier",
+        "expressions familières",
+        "réactions spontanées",
+        "conversation quotidienne",
+        "anglais américain"
+      ],
+      "related": [],
+      "structure": "Merdique est un adjectif familier et vulgaire qui s'accorde en nombre : un service merdique, des résultats merdiques. Vraiment peut le renforcer : C'était vraiment merdique. On peut aussi employer de la merde ou une vraie merde pour une appréciation globale : Ce jeu, c'est de la merde ! Putain est une interjection détachée : Putain, c'était horrible ! Complètement nul, vraiment mauvais et absolument épouvantable expriment une évaluation très négative sans le même juron. Ces constructions fonctionnent au présent, au passé ou avec un verbe décrivant un résultat : La qualité est devenue vraiment mauvaise. Le contexte doit permettre de distinguer la critique négative d'un éloge formulé avec une grossièreté. Éviter les formes vulgaires dans les situations formelles et tenir compte de la relation entre interlocuteurs.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "c2a85207-1bfd-47c4-965e-3a70d8f214b6",
+          "exampleItem": "Mec, ce film était vraiment merdique !",
+          "intent": "vraiment merdique"
+        },
+        {
+          "id": "d3b96318-2c0e-48d5-a76f-4b81e90325c7",
+          "exampleItem": "Putain, le service dans ce restaurant était horrible !",
+          "intent": "Putain, le service dans ce restaurant était horrible"
+        },
+        {
+          "id": "e4ca7429-3d1f-49e6-b870-5c92fa1436d8",
+          "exampleItem": "L'expérience avec cette application était absolument épouvantable !",
+          "intent": "absolument épouvantable"
+        },
+        {
+          "id": "f5db853a-4e20-4af7-9981-6da30b2547e9",
+          "exampleItem": "Ce service est vraiment merdique !",
+          "intent": "vraiment merdique"
+        },
+        {
+          "id": "a6ec964b-5f31-4b08-a192-7eb41c3658fa",
+          "exampleItem": "La réunion d'hier, c'était de la merde !",
+          "intent": "de la merde"
+        },
+        {
+          "id": "b7fda75c-6042-4c19-b2a3-8fc52d47690b",
+          "exampleItem": "Le résultat du test était vraiment horrible !",
+          "intent": "vraiment horrible"
+        },
+        {
+          "id": "c80eb86d-7153-4d2a-83b4-90d63e587a1c",
+          "exampleItem": "Ce jeu, c'est vraiment de la merde !",
+          "intent": "vraiment de la merde"
+        },
+        {
+          "id": "d91fc97e-8264-4e3b-94c5-a1e74f698b2d",
+          "exampleItem": "La qualité audio est devenue vraiment mauvaise !",
+          "intent": "vraiment mauvaise"
+        },
+        {
+          "id": "ea20da8f-9375-4f4c-a5d6-b2f8507a9c3e",
+          "exampleItem": "Cet hôtel était une vraie merde !",
+          "intent": "une vraie merde"
+        },
+        {
+          "id": "fb31eb90-a486-405d-b6e7-c309618bad4f",
+          "exampleItem": "La démonstration du système était vraiment merdique !",
+          "intent": "vraiment merdique"
         }
       ]
     }

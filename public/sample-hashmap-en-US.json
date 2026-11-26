@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1296,
+    "totalIntentions": 1299,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -77753,6 +77753,306 @@
           "id": "b1f74196-aec8-40b3-8254-b9ea364df471",
           "exampleItem": "I couldn't find the cause of the problem, not even in the source code.",
           "intent": "not even in the source code"
+        }
+      ]
+    },
+    {
+      "id": "pra-cacete-pra-caramba-muito-mesmo-7e3a4c21-9b65-4d80-a172-f8c295e6b340",
+      "intention": "As hell! / Really, really...!",
+      "pattern": "adjective + as hell",
+      "description": "Expresses a high degree of a quality, characteristic, feeling, or state, whether positive or negative. In informal American English, 'adjective + as hell' is an emphatic intensifier. It can emphasize tiredness, difficulty, temperature, price, speed, emotions, appearance, and evaluations. It is highly colloquial and may sound strong or inappropriate in formal settings, though it is usually less vulgar than expressions with 'fucking'. It is a productive sentence-building pattern because it works with many adjectives.",
+      "searchTerms": [
+        "as hell",
+        "good as hell",
+        "bad as hell",
+        "expensive as hell",
+        "hard as hell",
+        "tired as hell",
+        "hot as hell",
+        "cold as hell",
+        "fast as hell",
+        "boring as hell",
+        "happy as hell",
+        "really really",
+        "extremely",
+        "intensify an adjective",
+        "informal emphasis"
+      ],
+      "validationPatterns": [
+        "\\b[a-z]+\\s+as\\s+hell\\b"
+      ],
+      "tags": [
+        "intensity",
+        "intensifiers",
+        "emphasis",
+        "adjectives",
+        "informal language",
+        "colloquial expressions",
+        "emotions",
+        "sensations",
+        "evaluations",
+        "comparisons",
+        "everyday conversation",
+        "sentence building",
+        "American English"
+      ],
+      "structure": "The main pattern is 'adjective + as hell'. The intensifier follows the adjective and expresses a high degree: 'expensive as hell', 'tired as hell', 'hard as hell', 'hot as hell', 'cold as hell', 'fast as hell', 'boring as hell', and 'happy as hell'. A common sentence pattern is 'subject + be + adjective + as hell': 'This is expensive as hell!' It also works with linking verbs such as 'look', 'feel', 'sound', and 'get': 'I feel tired as hell'. It intensifies both positive and negative adjectives. 'Good as hell' is possible, though 'fucking awesome', 'so damn good', or 'really good' may sound more natural in some positive evaluations. 'Bad as hell' also exists, though 'fucking terrible' or 'it sucks so bad' may better convey a strongly negative evaluation. 'As hell' is informal and emphatic, with a conventionalized religious reference, and is unsuitable for very formal situations. Unlike the comparative pattern 'as... as', it functions as a single intensifying unit and needs no second comparison term. Do not interpret 'hell' literally in this expression.",
+      "category": "expressions",
+      "related": [],
+      "level": "B2",
+      "examples": [
+        {
+          "id": "a2c41e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "This app is good as hell!",
+          "intent": "good as hell"
+        },
+        {
+          "id": "b3d52f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "This restaurant is expensive as hell!",
+          "intent": "expensive as hell"
+        },
+        {
+          "id": "c4e63085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "Learning English can be hard as hell!",
+          "intent": "hard as hell"
+        },
+        {
+          "id": "d5f74196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "I'm tired as hell after work.",
+          "intent": "tired as hell"
+        },
+        {
+          "id": "e60852a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "It's hot as hell today!",
+          "intent": "hot as hell"
+        },
+        {
+          "id": "f71963b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "It was cold as hell last night.",
+          "intent": "cold as hell"
+        },
+        {
+          "id": "a82a74c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "This computer is fast as hell!",
+          "intent": "fast as hell"
+        },
+        {
+          "id": "b93b85da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "That meeting was boring as hell.",
+          "intent": "boring as hell"
+        },
+        {
+          "id": "c04c96eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "I'm happy as hell with the result!",
+          "intent": "happy as hell"
+        },
+        {
+          "id": "d15da7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "That movie was bad as hell!",
+          "intent": "bad as hell"
+        }
+      ]
+    },
+    {
+      "id": "bom-pra-cacete-foda-pra-caralho-8f4b5d32-ac76-4e91-b283-a9d306f7c451",
+      "intention": "Fucking awesome! / Fucking amazing! / So damn good!",
+      "pattern": "subject + be + fucking awesome / fucking amazing / really good",
+      "description": "Expresses extremely strong enthusiasm, admiration, or approval of something excellent, impressive, or extraordinary. In informal American English, 'fucking awesome' combines the vulgar intensifier 'fucking' with the positive adjective 'awesome'. It is a spontaneous, emotional way to praise experiences, results, products, events, achievements, and accomplishments. Related expressions vary in strength, from 'fucking amazing' to 'absolutely amazing' and 'really good'. Because it contains an explicit swear word, it suits relaxed conversations with people comfortable with that language.",
+      "searchTerms": [
+        "fucking awesome",
+        "fucking amazing",
+        "fucking incredible",
+        "fucking fantastic",
+        "so damn good",
+        "really freaking good",
+        "absolutely amazing",
+        "incredibly good",
+        "really good",
+        "so good",
+        "awesome",
+        "intense praise",
+        "extreme enthusiasm",
+        "strong admiration"
+      ],
+      "validationPatterns": [
+        "\\bfucking\\s+(?:awesome|amazing|incredible|fantastic|good)\\b",
+        "\\bso\\s+damn\\s+good\\b",
+        "\\b(?:absolutely|really|so)\\s+(?:amazing|incredible|fantastic|good)\\b",
+        "\\breally\\s+freaking\\s+good\\b"
+      ],
+      "tags": [
+        "praise",
+        "enthusiasm",
+        "admiration",
+        "approval",
+        "positive evaluation",
+        "intensity",
+        "emotions",
+        "vulgar language",
+        "swear words",
+        "informal language",
+        "colloquial expressions",
+        "spontaneous reactions",
+        "everyday conversation",
+        "American English"
+      ],
+      "structure": "'Fucking awesome!' combines the vulgar intensifier 'fucking' and the positive adjective 'awesome'. It can stand alone as a reaction or appear in 'subject + be + fucking awesome': 'This app is fucking awesome!' Use the past tense for completed experiences: 'That movie was fucking awesome!' 'That's fucking awesome!' praises an experience or achievement. The intensifier adds a strong emotional charge and vulgarity; 'awesome' itself is already a common positive word in everyday American English. Similar expressions include 'fucking amazing', 'fucking incredible', and 'fucking fantastic'. Less vulgar alternatives include 'so damn good', 'really freaking good', 'absolutely amazing', and 'incredibly good'. Avoid the expression in formal situations, professional presentations, or conversations with people uncomfortable with swear words. Unlike other uses of 'fucking' that convey irritation or hostility, this construction expresses intense praise.",
+      "category": "expressions",
+      "related": [],
+      "level": "B2",
+      "examples": [
+        {
+          "id": "e26eb80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "Dude, this app is fucking awesome!",
+          "intent": "fucking awesome"
+        },
+        {
+          "id": "f37fc91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "That movie was fucking awesome!",
+          "intent": "fucking awesome"
+        },
+        {
+          "id": "a480da2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "The result of this project turned out so good!",
+          "intent": "so good"
+        },
+        {
+          "id": "b591eb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "This new feature turned out absolutely amazing!",
+          "intent": "absolutely amazing"
+        },
+        {
+          "id": "c6a2fc41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "Last night's concert was fucking awesome!",
+          "intent": "fucking awesome"
+        },
+        {
+          "id": "d7b30d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "The motorcycle trip was fucking awesome!",
+          "intent": "fucking awesome"
+        },
+        {
+          "id": "e8c41e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "Your presentation was absolutely fantastic!",
+          "intent": "absolutely fantastic"
+        },
+        {
+          "id": "f9d52f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "This restaurant is fucking amazing!",
+          "intent": "fucking amazing"
+        },
+        {
+          "id": "a0e63085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "That idea you came up with was fucking awesome!",
+          "intent": "fucking awesome"
+        },
+        {
+          "id": "b1f74196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "This intention-sharing feature turned out fucking awesome!",
+          "intent": "fucking awesome"
+        }
+      ]
+    },
+    {
+      "id": "ruim-pra-cacete-horrivel-pra-caralho-9a5c6e43-bd87-4fa2-8394-b0e417a8d562",
+      "intention": "Fucking terrible! / Fucking awful! / Absolutely terrible!",
+      "pattern": "subject + be / linking verb + fucking terrible / fucking awful / absolutely terrible",
+      "description": "Expresses disapproval, frustration, disappointment, or an extremely negative evaluation of something very bad, unpleasant, frustrating, or unacceptable. In informal American English, 'fucking terrible' combines the vulgar intensifier 'fucking' with the negative adjective 'terrible', conveying a strongly unfavorable judgment. Related expressions range from 'fucking awful' and 'a complete piece of shit' to non-vulgar alternatives such as 'absolutely terrible' and 'really awful'. It often criticizes products, services, experiences, movies, results, situations, performances, and events. Because it contains an explicit swear word, it requires care in professional or formal settings.",
+      "searchTerms": [
+        "fucking terrible",
+        "fucking awful",
+        "fucking horrible",
+        "fucking bad",
+        "absolutely terrible",
+        "really awful",
+        "extremely bad",
+        "really bad",
+        "a piece of shit",
+        "a complete piece of shit",
+        "a complete disaster",
+        "sucks so bad",
+        "very disappointing",
+        "intense criticism",
+        "extreme frustration"
+      ],
+      "validationPatterns": [
+        "\\bfucking\\s+(?:terrible|awful|horrible|bad)\\b",
+        "\\b(?:absolutely|really|extremely)\\s+(?:terrible|awful|horrible|bad)\\b",
+        "\\b(?:a\\s+)?(?:complete\\s+)?piece\\s+of\\s+shit\\b",
+        "\\b(?:a\\s+)?complete\\s+disaster\\b",
+        "\\bsucks?\\s+so\\s+bad\\b"
+      ],
+      "tags": [
+        "criticism",
+        "frustration",
+        "disappointment",
+        "disapproval",
+        "negative evaluation",
+        "intensity",
+        "emotions",
+        "complaints",
+        "vulgar language",
+        "swear words",
+        "informal language",
+        "colloquial expressions",
+        "spontaneous reactions",
+        "everyday conversation",
+        "American English"
+      ],
+      "structure": "'Fucking terrible!' combines the vulgar intensifier 'fucking' with the negative adjective 'terrible'. It can stand alone as a reaction or appear in 'subject + be + fucking terrible': 'This movie is fucking terrible!' Use the past tense for completed experiences: 'The service was fucking terrible!' It also works with linking verbs: 'That sounds fucking terrible!' 'Fucking' adds a strong emotional charge and vulgarity. Similar expressions are 'fucking awful', 'fucking horrible', and the non-vulgar 'absolutely terrible'. 'This sucks so bad!' is another common informal American complaint, but its grammar differs. Distinguish the adjective phrase 'fucking terrible' from the adverb 'terribly'. This strongly negative evaluation contrasts with the positive enthusiasm of 'fucking awesome'. Avoid it in formal situations and use care at work. Alternatives without swear words include 'absolutely terrible', 'really awful', and 'extremely bad'.",
+      "category": "expressions",
+      "related": [],
+      "level": "B2",
+      "examples": [
+        {
+          "id": "c2a85207-1bfd-47c4-965e-3a70d8f214b6",
+          "exampleItem": "Dude, that movie was fucking terrible!",
+          "intent": "fucking terrible"
+        },
+        {
+          "id": "d3b96318-2c0e-48d5-a76f-4b81e90325c7",
+          "exampleItem": "The service at that restaurant was fucking horrible!",
+          "intent": "fucking horrible"
+        },
+        {
+          "id": "e4ca7429-3d1f-49e6-b870-5c92fa1436d8",
+          "exampleItem": "The experience with that app was absolutely terrible!",
+          "intent": "absolutely terrible"
+        },
+        {
+          "id": "f5db853a-4e20-4af7-9981-6da30b2547e9",
+          "exampleItem": "This service is fucking terrible!",
+          "intent": "fucking terrible"
+        },
+        {
+          "id": "a6ec964b-5f31-4b08-a192-7eb41c3658fa",
+          "exampleItem": "Yesterday's meeting was a piece of shit!",
+          "intent": "a piece of shit"
+        },
+        {
+          "id": "b7fda75c-6042-4c19-b2a3-8fc52d47690b",
+          "exampleItem": "The test result was absolutely horrible!",
+          "intent": "absolutely horrible"
+        },
+        {
+          "id": "c80eb86d-7153-4d2a-83b4-90d63e587a1c",
+          "exampleItem": "This game is fucking terrible!",
+          "intent": "fucking terrible"
+        },
+        {
+          "id": "d91fc97e-8264-4e3b-94c5-a1e74f698b2d",
+          "exampleItem": "The audio quality turned out really bad!",
+          "intent": "really bad"
+        },
+        {
+          "id": "ea20da8f-9375-4f4c-a5d6-b2f8507a9c3e",
+          "exampleItem": "That hotel was a complete disaster!",
+          "intent": "a complete disaster"
+        },
+        {
+          "id": "fb31eb90-a486-405d-b6e7-c309618bad4f",
+          "exampleItem": "The system demonstration was fucking terrible!",
+          "intent": "fucking terrible"
         }
       ]
     }
