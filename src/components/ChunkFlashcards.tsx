@@ -21,6 +21,7 @@ import { FavoriteChunkButton } from "./FavoriteChunkButton";
 import { WalkingSessionSummary } from "./WalkingSessionSummary";
 import { GoogleTranslateIcon } from "./GoogleTranslateIcon";
 import { ShareStudyButton, studyShareText } from "./ShareStudyButton";
+import { createStudyDeepLink } from "../utils/studyDeepLink";
 import { CHUNK_LIKES_CHANGED, CHUNK_LIKES_KEY, chunkLikeTotal, incrementChunkLike, readChunkLikes } from "../utils/chunkLikes";
 import { deviceId } from "../features/study/studyDriveSync";
 import { celebrateAchievement, celebrateFlashcardMilestone, recordPracticedChunk } from "../utils/achievements";
@@ -35,6 +36,7 @@ interface ChunkFlashcardsProps {
   onBackToAll?: () => void;
   studyChunk?: MentalIntention;
   intentions: MentalIntention[];
+  deepLinkId?: string;
   language: StudentLanguage;
   sourceLanguage: SourceLanguage;
   onWalkingChange: (active: boolean) => void;
@@ -58,6 +60,7 @@ export function ChunkFlashcards({
   onBackToAll,
   studyChunk,
   intentions,
+  deepLinkId,
   language,
   sourceLanguage,
   onWalkingChange,
@@ -207,6 +210,17 @@ export function ChunkFlashcards({
     setWalkingDrawnIds([]);
     setWalkingRound(1);
   }, [intentions, language, mode]);
+
+  const deepLinkApplied = useRef(false);
+  useEffect(() => {
+    if (!deepLinkId || deepLinkApplied.current || !intentions.length) return;
+    deepLinkApplied.current = true;
+    const match = eligibleChunks(intentions, "all").find(item => item.id === deepLinkId);
+    if (match) {
+      setLevel("all");
+      setCurrentId(match.id);
+    } else setAudioError("Este chunk não está disponível no catálogo. Explore outros flashcards.");
+  }, [deepLinkId, intentions]);
 
   useEffect(() => {
     const previous = previousStudySet.current;
@@ -543,7 +557,7 @@ export function ChunkFlashcards({
                       content={() => studyShareText([
                         `🌐 ${localizedLanguageName(language)}: ${(currentChunk.targetIntention ?? currentChunk.english).trim()}`,
                         `🌐 ${localizedLanguageName(sourceLanguage)}: ${currentChunk.intention.trim()}`
-                      ])} />
+                      ], createStudyDeepLink({ module: "chunk", id: currentChunk.id, source: sourceLanguage, target: language }))} />
                     {authorMode && (
                       <button
                         type="button"

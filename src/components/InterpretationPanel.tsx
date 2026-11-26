@@ -15,6 +15,7 @@ import {
 import type { MentalIntention } from "../types/hashmap";
 import { ConnectedSpeechButton } from "./ConnectedSpeechStudio";
 import { ShareStudyButton, studyShareText } from "./ShareStudyButton";
+import { createStudyDeepLink, type StudyDeepLink } from "../utils/studyDeepLink";
 import {
   generateInterpretationStory,
   type StoryGenerationResult
@@ -37,6 +38,7 @@ interface InterpretationPanelProps {
   intentions: MentalIntention[];
   onSelectIntention: (item: MentalIntention) => void;
   onStudyState?: TrainingStudyReporter;
+  deepLink?: StudyDeepLink;
 }
 
 const THEMES = [
@@ -144,7 +146,8 @@ export function InterpretationPanel({
   sourceLanguage = "pt-BR",
   intentions,
   onSelectIntention,
-  onStudyState
+  onStudyState,
+  deepLink
 }: InterpretationPanelProps) {
   const { t } = useTranslation();
   const [authorMode, setAuthorMode] = useState(isAuthorMode);
@@ -454,7 +457,7 @@ export function InterpretationPanel({
       cancelSpeech();
     }
 
-    setEnglishLevel(searchLevel);
+    setEnglishLevel((localStory.englishLevel ?? searchLevel) as EnglishLevel);
     setStoryCopyFeedback("idle");
     setStory({
       ...localStory,
@@ -472,6 +475,21 @@ export function InterpretationPanel({
     setHqCopyFeedback("idle");
     setSearchOpen(false);
   }
+
+  const deepLinkApplied = useRef(false);
+  useEffect(() => {
+    if (!deepLink || deepLinkApplied.current) return;
+    deepLinkApplied.current = true;
+    const levels = deepLink.level ? [deepLink.level] : ["A1", "A2", "B1", "B2", "C1", "C2"];
+    const found = levels.flatMap(level => searchLocalStories(level, "", language))
+      .find(candidate => candidate.id === deepLink.id && isStoryAvailable(candidate, sourceLanguage));
+    if (found) {
+      setSearchLevel((found.englishLevel ?? deepLink.level ?? "B1") as EnglishLevel);
+      handleLoadLocalStory(found);
+    } else {
+      setLanguageNotice("Esta história não está disponível na biblioteca para estes idiomas. Explore outras histórias.");
+    }
+  }, [deepLink, language, sourceLanguage]);
 
   async function handleGenerateStory() {
     if (!isAuthorMode() || !aiEnabled || generationController.current || language !== "en-US") return;
@@ -1683,7 +1701,7 @@ export function InterpretationPanel({
                   content={() => studyShareText([
                     story.sourceTitle,
                     ...story.paragraphs.map(paragraph => paragraph.sourceText)
-                  ])} />
+                  ], story.source === "local" && story.id ? createStudyDeepLink({ module: "interpretation", id: story.id, source: sourceLanguage, target: language, level: englishLevel }) : undefined)} />
               </div>
               <div style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
                 <span style={{ fontSize: "0.8rem", fontWeight: 600 }}>{language}</span>
@@ -1692,7 +1710,7 @@ export function InterpretationPanel({
                   content={() => studyShareText([
                     story.title,
                     ...story.paragraphs.map(paragraph => paragraph.text)
-                  ])} />
+                  ], story.source === "local" && story.id ? createStudyDeepLink({ module: "interpretation", id: story.id, source: sourceLanguage, target: language, level: englishLevel }) : undefined)} />
               </div>
               <button
                 type="button"

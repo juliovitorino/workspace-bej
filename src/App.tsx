@@ -1,4 +1,5 @@
 import { readStudyStore } from "./features/study/studyStorage";
+import { readStudyDeepLink } from "./utils/studyDeepLink";
 import { BackupReminderDialog } from "./components/BackupReminderDialog";
 import { backupReminder, BACKUP_REMINDER_CHANGED } from "./utils/backupReminder";
 import { AppSettingsPage } from "./components/AppSettingsPage";
@@ -77,8 +78,9 @@ function App() {
 function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig }) {
   const { t } = useTranslation();
   const { theme, changeTheme } = useAppTheme();
-  const [language, setLanguage] = useState<StudentLanguage>(getStudentLanguage);
-  const [sourceLanguage, setSourceLanguage] = useState<SourceLanguage>(getSourceLanguage);
+  const incomingDeepLink = useRef(readStudyDeepLink());
+  const [language, setLanguage] = useState<StudentLanguage>(() => incomingDeepLink.current?.target ?? getStudentLanguage());
+  const [sourceLanguage, setSourceLanguage] = useState<SourceLanguage>(() => incomingDeepLink.current?.source ?? getSourceLanguage());
   useLayoutEffect(() => { syncSourceLanguage(sourceLanguage); }, [sourceLanguage]);
   const [settingsDialog, setSettingsDialog] = useState<"languages" | "about" | null>(null);
   const [walkingActive, setWalkingActive] = useState(false);
@@ -90,7 +92,12 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
   const [source, setSource] = useState<"remote" | "cache">("remote");
   const [dashboardSection, setDashboardSection] = useState<"settings" | "history" | undefined>();
   const [notificationSettingsRequest, setNotificationSettingsRequest] = useState(0);
-  const [currentView, commitView] = useState<AppView>("study-dashboard");
+  const [currentView, commitView] = useState<AppView>(() => {
+    const module = incomingDeepLink.current?.module;
+    return module === "intention" ? "hashmap" : module === "chunk" ? "chunk-flashcards"
+      : module === "wrg" ? "would-you-rather" : module === "small-talk" ? "small-talk"
+      : module === "interpretation" ? "interpretation" : "study-dashboard";
+  });
   const [donationConfig, setDonationConfig] = useState<DonationConfig>(DISABLED_DONATION_CONFIG);
   useEffect(() => {
     const controller = new AbortController();
@@ -258,6 +265,15 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
       active = false;
     };
   }, [language, sourceLanguage]);
+
+  const [deepLinkNotice, setDeepLinkNotice] = useState("");
+  useEffect(() => {
+    const link = incomingDeepLink.current;
+    if (!link || link.module !== "intention" || loading || !data) return;
+    const found = data.mentalMap.find(item => item.id === link.id);
+    if (found) setSelected(found);
+    else setDeepLinkNotice("Esta intenção não está disponível neste catálogo. Você pode explorar outras intenções.");
+  }, [data, loading]);
 
   // O botão de coleção usa exatamente os IDs da listagem já filtrada,
   // sem recalcular a busca nem limitar a exportação aos cards visíveis.
@@ -546,8 +562,8 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
             }} />}
             {extraActivity.draft && currentView !== "extra-activities" && <p className="warning-banner" role="status">{t("extras.activeNotice")} <button type="button" className="secondary-button" onClick={() => { closeTraining(); setSelected(null); setCurrentView("extra-activities"); }}>{t("extras.open")}</button></p>}
             {currentView === "extra-activities" && <ExtraActivities language={language} state={extraActivity} />}
-            {currentView === "would-you-rather" && <WouldYouRather key={`${sourceLanguage}-${language}`} language={language} sourceLanguage={sourceLanguage} onStudyState={reportStudy} />}
-            {currentView === "small-talk" && <SmallTalkPage onStudyState={reportStudy} onWalkingChange={setWalkingActive} />}
+            {currentView === "would-you-rather" && <WouldYouRather key={`${sourceLanguage}-${language}`} language={language} sourceLanguage={sourceLanguage} onStudyState={reportStudy} deepLinkId={incomingDeepLink.current?.module === "wrg" ? incomingDeepLink.current.id : undefined} />}
+            {currentView === "small-talk" && <SmallTalkPage onStudyState={reportStudy} onWalkingChange={setWalkingActive} language={language} sourceLanguage={sourceLanguage} deepLink={incomingDeepLink.current?.module === "small-talk" ? incomingDeepLink.current : undefined} />}
             {currentView === "shadowing" && <StoryShadowing key={`${sourceLanguage}-${language}`} language={language} onStudyState={reportStudy} onMenu={() => setCurrentView("hashmap")} />}
 
         {loading && currentView !== "shadowing" && currentView !== "small-talk" && currentView !== "would-you-rather" && currentView !== "study-dashboard" && currentView !== "extra-activities" && currentView !== "settings" && currentView !== "donation" && (
@@ -695,6 +711,7 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
                   language={language}
                   onWalkingChange={setWalkingActive}
                   intentions={data.mentalMap}
+                  deepLinkId={incomingDeepLink.current?.module === "chunk" ? incomingDeepLink.current.id : undefined}
                   onShowDetails={setSelected}
                   onBasicTraining={(item) => startTraining(item, "basic")}
                   onAdvancedTraining={(item) => startTraining(item, "advanced")}
@@ -730,6 +747,7 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
                   language={language}
                   sourceLanguage={sourceLanguage}
                   intentions={data?.mentalMap ?? []}
+                  deepLink={incomingDeepLink.current?.module === "interpretation" ? incomingDeepLink.current : undefined}
                   onSelectIntention={setSelected}
                 />
               )}
@@ -774,6 +792,7 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
         </div>
       </div>
 
+      {deepLinkNotice && <div role="status" className="warning-banner">{deepLinkNotice}</div>}
       <IntentionDetails
         donationConfig={donationConfig}
         onDonate={openDonationPage}

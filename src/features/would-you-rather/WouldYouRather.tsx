@@ -10,6 +10,7 @@ import { scrollToWyrCard, type WyrScrollTarget } from "./wyrScroll";
 import { celebrateCompletedSession } from "../../utils/achievements";
 import { GoogleTranslateIcon } from "../../components/GoogleTranslateIcon";
 import { ShareStudyButton, studyShareText } from "../../components/ShareStudyButton";
+import { createStudyDeepLink } from "../../utils/studyDeepLink";
 import "./wouldYouRather.css";
 
 type Screen = "catalog" | "practice" | "summary" | "walking";
@@ -117,7 +118,7 @@ function TextCard(props: TextCardProps) {
   );
 }
 
-export function WouldYouRather({ language, sourceLanguage, onStudyState }: { language: StudentLanguage; sourceLanguage: SourceLanguage; onStudyState?: TrainingStudyReporter }) {
+export function WouldYouRather({ language, sourceLanguage, onStudyState, deepLinkId }: { language: StudentLanguage; sourceLanguage: SourceLanguage; onStudyState?: TrainingStudyReporter; deepLinkId?: string }) {
   const { t } = useTranslation();
   const tr = (key: string, opts?: Record<string, string | number>) => t(`wyr.${key}`, opts);
   const [loaded, setLoaded] = useState<{ data: WyrData; locale: StudentLanguage; fallback: boolean } | null>(null);
@@ -183,6 +184,19 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
   }, [language, retry]);
 
   const allTopics = useMemo(() => [...(loaded?.data.topics ?? [])].sort((a, b) => a.order - b.order), [loaded]);
+  const deepLinkApplied = useRef(false);
+  useEffect(() => {
+    if (!deepLinkId || !loaded || deepLinkApplied.current) return;
+    deepLinkApplied.current = true;
+    const topic = allTopics.find(entry => entry.questions.some(question => question.id === deepLinkId));
+    if (!topic) {
+      setNotice("Esta pergunta não está disponível no catálogo. Escolha outra pergunta.");
+      return;
+    }
+    const questions = [...topic.questions].sort((a, b) => a.order - b.order);
+    const position = questions.findIndex(question => question.id === deepLinkId);
+    startSet({ title: topic.title, questions, topic }, position);
+  }, [loaded, allTopics, deepLinkId]);
   const filteredTopics = useMemo(() => allTopics.filter(topic => {
     if (categoryFilter !== "all" && topic.category !== categoryFilter) return false;
     if (levelFilter !== "all" && topic.level !== levelFilter) return false;
@@ -349,7 +363,7 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
       answerA.trim() ? `💬 ${answerA.trim()}` : null,
       `B. ${current.options.B.text}`,
       answerB.trim() ? `💬 ${answerB.trim()}` : null
-    ]);
+    ], createStudyDeepLink({ module: "wrg", id: current.id, source: sourceLanguage, target: language }));
   }
 
   function printQuestion() {

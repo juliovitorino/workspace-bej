@@ -9,6 +9,8 @@ import { readLocalJson, readWalkingSettings, saveLocalJson, SMALL_TALK_FAVORITES
 import { SmallTalkWalking } from './SmallTalkWalking';
 import { SmallTalkIcon } from './SmallTalkIcon';
 import { ShareStudyButton, studyShareText } from '../../components/ShareStudyButton';
+import { createStudyDeepLink, type StudyDeepLink } from '../../utils/studyDeepLink';
+import type { StudentLanguage } from '../../config/languages';
 import { GoogleTranslateIcon } from '../../components/GoogleTranslateIcon';
 import { printableSmallTalkItems, smallTalkPrintNumbers, nextSmallTalkCardOrder } from './smallTalkPrintOrder';
 import { SMALL_TALK_CARD_ORDER_KEY, readCardOrders, saveCardOrders, updateCardOrder } from './smallTalkCardOrderStorage';
@@ -21,6 +23,9 @@ import { createCustomItem, duplicateCustomItem, isCustomItems, mergeCustomItems,
 interface Props {
   onStudyState?: (active: boolean, mode: 'manual' | 'walking') => void;
   onWalkingChange?: (active: boolean) => void;
+  deepLink?: StudyDeepLink;
+  sourceLanguage?: StudentLanguage;
+  language?: StudentLanguage;
 }
 
 type OccurrenceFilter = 'all' | 'zero' | 'low' | 'medium' | 'high';
@@ -41,7 +46,7 @@ function topicDisplayName(title: string): string {
 const topicSorter = new Intl.Collator('en-US', { sensitivity: 'base', numeric: true });
 
 
-export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
+export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceLanguage = "pt-BR", language = "en-US" }: Props) {
   const [aiProvider, setAiProvider] = useState<AIProvider>(getAIProvider);
   const [aiMessage, setAiMessage] = useState('');
   const [aiManualPrompt, setAiManualPrompt] = useState('');
@@ -505,7 +510,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       if (!active) return;
       const enabled = index.topics.filter(t => t.enabled).sort((a, b) => topicSorter.compare(topicDisplayName(a.sourceTitle), topicDisplayName(b.sourceTitle)) || a.order - b.order);
       setTopics(enabled);
-      setTopicId(current => current || enabled.find(t => t.id === 'greetings')?.id || enabled[0]?.id || '');
+      setTopicId(current => current || (deepLink?.topic && enabled.some(t => t.id === deepLink.topic) ? deepLink.topic : undefined) || enabled.find(t => t.id === 'greetings')?.id || enabled[0]?.id || '');
     }).catch(e => { if (active && !controller.signal.aborted) { setError(String(e)); setLoading(false); } });
     return () => { active = false; controller.abort(); };
   }, []);
@@ -576,6 +581,23 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
       return occurrenceSort === 'most' ? countB - countA : countA - countB;
     });
   }, [orderedTopicItems, query, level, favoritesOnly, favorites, questionOverrides, occurrenceFilter, occurrenceSort, occurrences]);
+
+  const deepLinkApplied = useRef(false);
+  useEffect(() => {
+    if (!deepLink || !topic || loading || deepLinkApplied.current) return;
+    if (deepLink.topic && topicId !== deepLink.topic) return;
+    deepLinkApplied.current = true;
+    if (!activeTopicItems.some(item => item.id === deepLink.id && item.enabled)) {
+      setError('Esta pergunta não está disponível neste tópico. Escolha outra pergunta.');
+      return;
+    }
+    setQuery(''); setLevel('all'); setFavoritesOnly(false);
+    setOccurrenceFilter('all'); setOccurrenceSort('manual');
+    setExpandedCardId(deepLink.id);
+    window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
+      document.getElementById('small-talk-card-' + deepLink.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }));
+  }, [deepLink, topic, topicId, loading, activeTopicItems]);
 
   function toggleFavorite(id: string) {
     const next = favorites.includes(id) ? favorites.filter(v => v !== id) : [...favorites, id];
@@ -1146,7 +1168,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
             content={() => studyShareText([
               `❓ ${questionFor(item).trim()}`,
               original.trim() ? `💬 ${original.trim()}` : null
-            ])} />
+            ], createStudyDeepLink({ module: 'small-talk', id: item.id, topic: topicId, source: sourceLanguage, target: language }))} />
           <button type="button" className="small-talk-icon-button" aria-label="Imprimir esta pergunta e resposta" title="Imprimir apenas este card (A4)" disabled={!questionFor(item).trim()} onClick={() => printCard(item)}><SmallTalkIcon name="printer"/></button>
           <button type="button" className="small-talk-icon-button" aria-label="Exportar JSON público deste card"
             title="Exportar JSON público deste card" onClick={() => openCardExport(item)}><SmallTalkIcon name="clipboard"/></button>
