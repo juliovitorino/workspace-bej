@@ -8,6 +8,7 @@ import type { SmallTalkItem, SmallTalkTopic, SmallTalkTopicIndexEntry, SmallTalk
 import { readLocalJson, readWalkingSettings, saveLocalJson, SMALL_TALK_FAVORITES_KEY, SMALL_TALK_WALKING_SETTINGS_KEY } from './smallTalkPreferences';
 import { SmallTalkWalking } from './SmallTalkWalking';
 import { SmallTalkIcon } from './SmallTalkIcon';
+import { ShareStudyButton, studyShareText } from '../../components/ShareStudyButton';
 import { GoogleTranslateIcon } from '../../components/GoogleTranslateIcon';
 import { printableSmallTalkItems, smallTalkPrintNumbers, nextSmallTalkCardOrder } from './smallTalkPrintOrder';
 import { SMALL_TALK_CARD_ORDER_KEY, readCardOrders, saveCardOrders, updateCardOrder } from './smallTalkCardOrderStorage';
@@ -1141,6 +1142,11 @@ export function SmallTalkPage({ onStudyState, onWalkingChange }: Props) {
           <button type="button" className="small-talk-icon-button" aria-label="Duplicar card" title="Duplicar este card no mesmo tópico" onClick={() => duplicateCard(item)}><SmallTalkIcon name="duplicate"/></button>
           <button type="button" className="small-talk-icon-button" aria-label="Editar resposta" title="Editar resposta" onClick={() => openEditor(item)}><SmallTalkIcon name="edit"/></button>
           <button type="button" className="small-talk-icon-button" aria-label="Excluir resposta ativa" title="Excluir resposta ativa" disabled={!original} onClick={() => removeAnswer(item.id)}><SmallTalkIcon name="trash"/></button>
+          <ShareStudyButton className="small-talk-icon-button"
+            content={() => studyShareText([
+              `❓ ${questionFor(item).trim()}`,
+              original.trim() ? `💬 ${original.trim()}` : null
+            ])} />
           <button type="button" className="small-talk-icon-button" aria-label="Imprimir esta pergunta e resposta" title="Imprimir apenas este card (A4)" disabled={!questionFor(item).trim()} onClick={() => printCard(item)}><SmallTalkIcon name="printer"/></button>
           <button type="button" className="small-talk-icon-button" aria-label="Exportar JSON público deste card"
             title="Exportar JSON público deste card" onClick={() => openCardExport(item)}><SmallTalkIcon name="clipboard"/></button>

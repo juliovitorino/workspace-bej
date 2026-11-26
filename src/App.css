@@ -3138,3 +3138,18 @@ button { color: inherit; }
   color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
+
+/* Shared feedback for per-card native sharing and clipboard fallback. */
+.bej-share-feedback {
+  position: fixed;
+  z-index: 1200;
+  bottom: max(1.25rem, env(safe-area-inset-bottom));
+  right: 1.25rem;
+  max-width: min(90vw, 24rem);
+  padding: 0.65rem 1rem;
+  border-radius: 0.65rem;
+  background: var(--text, #1e293b);
+  color: var(--on-accent, #fff);
+  box-shadow: 0 4px 14px rgba(0,0,0,.22);
+  font-weight: 600;
+}
