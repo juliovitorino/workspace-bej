@@ -3,9 +3,9 @@ import { useId, useMemo, useState } from "react";
 type Planet = { name: string; at: number; color: string; radius: number; labelDy: number };
 const PLANETS: Planet[] = [
   { name: "Terra", at: 0, color: "#38bdf8", radius: 12, labelDy: 30 },
-  { name: "Lua", at: 0.05, color: "#bfc5ce", radius: 7, labelDy: -16 },
+  { name: "Lua", at: 0.05, color: "#bfc5ce", radius: 7, labelDy: -34 },
   { name: "Marte", at: 0.15, color: "#e76f51", radius: 10, labelDy: 25 },
-  { name: "Vênus", at: 0.25, color: "#e7b767", radius: 10, labelDy: -19 },
+  { name: "Vênus", at: 0.25, color: "#e7b767", radius: 10, labelDy: -35 },
   { name: "Mercúrio", at: 0.35, color: "#aab0b8", radius: 8, labelDy: 24 },
   { name: "Júpiter", at: 0.5, color: "#d5a27b", radius: 17, labelDy: 34 },
   { name: "Saturno", at: 0.65, color: "#dfc58e", radius: 13, labelDy: -28 },
