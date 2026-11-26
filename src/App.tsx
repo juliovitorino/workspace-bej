@@ -563,7 +563,7 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
             {extraActivity.draft && currentView !== "extra-activities" && <p className="warning-banner" role="status">{t("extras.activeNotice")} <button type="button" className="secondary-button" onClick={() => { closeTraining(); setSelected(null); setCurrentView("extra-activities"); }}>{t("extras.open")}</button></p>}
             {currentView === "extra-activities" && <ExtraActivities language={language} state={extraActivity} />}
             {currentView === "would-you-rather" && <WouldYouRather key={`${sourceLanguage}-${language}`} language={language} sourceLanguage={sourceLanguage} onStudyState={reportStudy} deepLinkId={incomingDeepLink.current?.module === "wrg" ? incomingDeepLink.current.id : undefined} />}
-            {currentView === "small-talk" && <SmallTalkPage onStudyState={reportStudy} onWalkingChange={setWalkingActive} deepLink={incomingDeepLink.current?.module === "small-talk" ? incomingDeepLink.current : undefined} />}
+            {currentView === "small-talk" && <SmallTalkPage onStudyState={reportStudy} onWalkingChange={setWalkingActive} language={language} sourceLanguage={sourceLanguage} deepLink={incomingDeepLink.current?.module === "small-talk" ? incomingDeepLink.current : undefined} />}
             {currentView === "shadowing" && <StoryShadowing key={`${sourceLanguage}-${language}`} language={language} onStudyState={reportStudy} onMenu={() => setCurrentView("hashmap")} />}
 
         {loading && currentView !== "shadowing" && currentView !== "small-talk" && currentView !== "would-you-rather" && currentView !== "study-dashboard" && currentView !== "extra-activities" && currentView !== "settings" && currentView !== "donation" && (
