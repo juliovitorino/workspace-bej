@@ -1,5 +1,6 @@
 import { StudyCollapseToggle } from "./StudyCollapseToggle";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import { backupReminder } from "../../utils/backupReminder";
 import { exportStudyBackup } from "./exportStudyBackup";
@@ -22,6 +23,18 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
   const [folderInput, setFolderInput] = useState(() => folderId());
   const [folder, setFolder] = useState(() => folderId());
   const [busy, setBusy] = useState(false);
+  type ProgressMode = "inspect" | "confirm" | "export" | "retry";
+  type ProgressState = { mode: ProgressMode; active: number; done: number; failed: boolean; detail: string };
+  const [progress, setProgress] = useState<ProgressState | null>(null);
+  const progressLabels: Record<ProgressMode, string[]> = {
+    inspect: [t("driveSync.progressAuthorize", { defaultValue: "Conectando ao Google Drive" }), t("driveSync.progressSnapshot", { defaultValue: "Preparando dados locais" }), t("driveSync.progressValidate", { defaultValue: "Verificando consistência dos dados" }), t("driveSync.progressList", { defaultValue: "Localizando arquivos no Drive" }), t("driveSync.progressDownload", { defaultValue: "Baixando arquivos do Drive" }), t("driveSync.progressMerge", { defaultValue: "Comparando e mesclando dados" })],
+    confirm: [t("driveSync.progressBackup", { defaultValue: "Criando backup de segurança" }), t("driveSync.progressApply", { defaultValue: "Aplicando dados no dispositivo" }), t("driveSync.progressPublish", { defaultValue: "Publicando dados no Drive" })],
+    export: [t("driveSync.progressAuthorize", { defaultValue: "Conectando ao Google Drive" }), t("driveSync.progressPublish", { defaultValue: "Publicando dados no Drive" })],
+    retry: [t("driveSync.progressAuthorize", { defaultValue: "Conectando ao Google Drive" }), t("driveSync.progressPublish", { defaultValue: "Publicando dados no Drive" })],
+  };
+  function startProgress(mode: ProgressMode) { setProgress({ mode, active: 0, done: 0, failed: false, detail: "" }); }
+  function nextProgress(index: number) { setProgress(p => p ? { ...p, active: index, done: index } : p); }
+  function finishProgress() { setProgress(p => p ? { ...p, active: progressLabels[p.mode].length, done: progressLabels[p.mode].length } : p); }
   const [preview, setPreview] = useState<Preview | null>(null);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
@@ -36,10 +49,10 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
       window.removeEventListener("storage", refresh);
     };
   }, []);
-  async function action(work: () => Promise<void>) {
+  async function action(mode: ProgressMode, work: () => Promise<void>) {
     if (busy) return;
-    setBusy(true); setError(""); setMessage(""); setPreview(null);
-    try { await work(); } catch (e) { setError(e instanceof StudyError ? t("study.errors." + e.code) : e instanceof Error ? e.message : String(e)); }
+    setBusy(true); setError(""); setMessage(""); setPreview(null); startProgress(mode);
+    try { await work(); finishProgress(); } catch (e) { const detail = e instanceof StudyError ? t("study.errors." + e.code) : e instanceof Error ? e.message : String(e); setError(detail); setProgress(p => p ? { ...p, failed: true, detail } : p); }
     finally { setBusy(false); }
   }
   function registerFolder() {
@@ -48,6 +61,7 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
   }
   async function exportDrive() {
     const token = await authorizeDrive();
+    nextProgress(1);
     await publishCurrentSnapshot(token, folder);
     clearPendingDrivePublication(folder);
     setPending(pendingDrivePublication());
@@ -56,10 +70,12 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
   }
   async function inspectDrive() {
     const token = await authorizeDrive();
+    nextProgress(1);
     const checkpointSeconds = () => studySyncDiagnostics().rows.reduce((total, row) => total + row.checkpointSeconds, 0);
     const before = checkpointSeconds();
     const local = await createSnapshot();
     const recoveredSeconds = Math.max(0, before - checkpointSeconds());
+    nextProgress(2);
     const baseline = syncBaseline();
     assertNoUncommittedCheckpoints();
     if (readStudyStore().extraActivity) throw new Error(t("study.errors.extraActive"));
@@ -69,8 +85,11 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
         JSON.stringify(local.wyrProgress) !== baseline.wyrProgress ||
         JSON.stringify(local.smallTalk) !== baseline.smallTalk ||
         JSON.stringify(local.likes) !== baseline.likes) throw new Error(t("study.errors.stale"));
+    nextProgress(3);
     const files = await listSyncFiles(token, folder);
+    nextProgress(4);
     const incoming = await Promise.all(files.map(f => readSyncFile(token, f)));
+    nextProgress(5);
     if (JSON.stringify(syncBaseline()) !== JSON.stringify(baseline)) throw new Error(t("study.errors.stale"));
     const merged = combineSyncFiles(local, incoming);
     setPreview({ baseline, local, merged, token, folder, remoteCount: incoming.length, recoveredSeconds });
@@ -80,9 +99,11 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
     if (preview.merged.conflicts.length) throw new Error(t("study.errors.conflict"));
     // Safety copy is initiated before any local write.
     await exportStudyBackup();
+    nextProgress(1);
     await applySync(preview.merged, preview.baseline);
     // The local merge is committed. A network failure is a publication failure,
     // not a rolled-back synchronization.
+    nextProgress(2);
     const publication = markPendingDrivePublication(preview.folder);
     setPending(publication);
     try {
@@ -98,6 +119,7 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
   async function retryPublication() {
     if (!pending || pending.folder !== folder) return;
     const token = await authorizeDrive(); // Do not reuse an expired OAuth token.
+    nextProgress(1);
     await publishCurrentSnapshot(token, pending.folder);
     clearPendingDrivePublication(pending.folder);
     setPending(null);
@@ -119,14 +141,24 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
       <p>{t("driveSync.localSavedPending")}</p>
       <div className="study-actions">
         <button className="primary-button" type="button" disabled={busy || !GOOGLE_CLIENT_ID}
-          onClick={() => void action(retryPublication)}>{t("driveSync.retryPublish")}</button>
+          onClick={() => void action("retry", retryPublication)}>{t("driveSync.retryPublish")}</button>
       </div>
     </div>}
     {folder && <div className="study-actions">
-      <button className="secondary-button" type="button" disabled={busy || !GOOGLE_CLIENT_ID} onClick={() => void action(exportDrive)}>{t("driveSync.export")}</button>
-      <button className="primary-button" type="button" disabled={busy || !GOOGLE_CLIENT_ID} onClick={() => void action(inspectDrive)}>{t("driveSync.sync")}</button>
+      <button className="secondary-button" type="button" disabled={busy || !GOOGLE_CLIENT_ID} onClick={() => void action("export", exportDrive)}>{t("driveSync.export")}</button>
+      <button className="primary-button" type="button" disabled={busy || !GOOGLE_CLIENT_ID} onClick={() => void action("inspect", inspectDrive)}>{t("driveSync.sync")}</button>
     </div>}
-    {busy && <p role="status">{t("driveSync.wait")}</p>}
+    {progress && createPortal(<div className="study-drive-progress-overlay" role="presentation">
+      <div className="study-drive-progress-dialog" role="dialog" aria-modal="true" aria-labelledby="study-drive-progress-title">
+        <h3 id="study-drive-progress-title">{t("driveSync.progressTitle", { defaultValue: "Sincronização Google Drive" })}</h3>
+        <p role="status" aria-live="polite">{progress.failed ? t("driveSync.progressFailed", { defaultValue: "Ocorreu um problema nesta etapa." }) : progress.done === progressLabels[progress.mode].length ? t("driveSync.progressComplete", { defaultValue: "Etapas concluídas." }) : t("driveSync.progressRunning", { defaultValue: "Acompanhando a operação..." })}</p>
+        <ol className="study-drive-progress-list">{progressLabels[progress.mode].map((label, index) => <li key={index} className={index < progress.done ? "completed" : index === progress.active ? progress.failed ? "failed" : "active" : "waiting"}>
+          <span className="study-drive-progress-mark" aria-hidden="true">{index < progress.done ? "☑" : index === progress.active && progress.failed ? "✕" : index === progress.active ? "◌" : "☐"}</span><span>{label}</span>
+        </li>)}</ol>
+        {progress.failed && <p className="study-drive-progress-error" role="alert">{progress.detail}</p>}
+        {!busy && <button type="button" className="secondary-button" onClick={() => setProgress(null)}>{t("study.close", { defaultValue: "Fechar" })}</button>}
+      </div>
+    </div>, document.body)}
     {error && <p className="status-card error-card" role="alert">{error}</p>}
     {message && <p className="study-feedback" role="status">{message}</p>}
     {preview && <div className="study-preview">
@@ -152,7 +184,7 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
       {!!preview.merged.conflicts.length && <p role="alert">{t("driveSync.conflictNote")}</p>}
       <p className="study-note">{t("driveSync.mergeNote")}</p>
       <div className="study-actions">
-        <button className="primary-button" type="button" disabled={busy || !!preview.merged.conflicts.length} onClick={() => void action(confirmSync)}>{t("driveSync.confirm")}</button>
+        <button className="primary-button" type="button" disabled={busy || !!preview.merged.conflicts.length} onClick={() => void action("confirm", confirmSync)}>{t("driveSync.confirm")}</button>
         <button className="secondary-button" type="button" disabled={busy} onClick={() => setPreview(null)}>{t("study.cancel")}</button>
       </div>
     </div>}
