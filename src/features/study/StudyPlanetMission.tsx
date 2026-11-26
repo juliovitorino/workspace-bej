@@ -148,7 +148,7 @@ export function StudyPlanetMission({ percentage, progress, launchElapsedMs, onRe
   const cruiseY = Math.max(26, Math.min(365, position.y - Math.cos(headingRadians) * offset));
   const rocketY = launching ? position.y + (cruiseY - position.y) * takeoffLift : cruiseY;
   const rocketAngle = launching ? launchAngle : position.angle;
-  return <div className="bej-planet-mission" style={{ width: "100%", maxWidth: 650, margin: "12px auto 18px" }}>
+  return <div className="bej-planet-mission" style={{ width: "100%", margin: "12px auto 18px" }}>
     <div style={{ display: "flex", justifyContent: "space-between", gap: 8, alignItems: "center", flexWrap: "wrap", marginBottom: 6 }}>
       <strong>🚀 Missão Espacial BEJ</strong>
       <button type="button" className="secondary-button" onClick={onReplay} aria-label="Repetir missão espacial">↻ Repetir missão</button>
