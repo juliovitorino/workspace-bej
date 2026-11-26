@@ -1122,6 +1122,8 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
             disabled={!questionFor(item).trim()} onClick={() => void copyQuestion(item)}>
             <SmallTalkIcon name={copiedQuestionId === item.id ? 'check' : 'copy'}/>
           </button>
+          <ShareStudyButton className="small-talk-icon-button" label="Compartilhar somente a pergunta"
+            content={() => studyShareText([`❓ ${questionFor(item).trim()}`], createStudyDeepLink({ module: 'small-talk', id: item.id, topic: topicId, source: sourceLanguage, target: language }))} />
           {editorId !== item.id && <button type="button" className="small-talk-icon-button" aria-label={shown ? 'Ocultar resposta' : 'Ver resposta'} title={shown ? 'Ocultar resposta' : 'Ver resposta'} aria-pressed={shown} onClick={() => reveal(item.id)}><SmallTalkIcon name={shown ? 'eye-off' : 'eye'}/></button>}
           {questionCopyError?.id === item.id && <span role="alert" className="small-talk-question-copy-error">{questionCopyError.message}</span>}
           {questionOverrides[item.id] && <button type="button" className="small-talk-restore-button" onClick={() => restoreQuestion(item.id)}>Restaurar pergunta</button>}
@@ -1167,11 +1169,8 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
           <button type="button" className="small-talk-icon-button" aria-label="Duplicar card" title="Duplicar este card no mesmo tópico" onClick={() => duplicateCard(item)}><SmallTalkIcon name="duplicate"/></button>
           <button type="button" className="small-talk-icon-button" aria-label="Editar resposta" title="Editar resposta" onClick={() => openEditor(item)}><SmallTalkIcon name="edit"/></button>
           <button type="button" className="small-talk-icon-button" aria-label="Excluir resposta ativa" title="Excluir resposta ativa" disabled={!original} onClick={() => removeAnswer(item.id)}><SmallTalkIcon name="trash"/></button>
-          <ShareStudyButton className="small-talk-icon-button"
-            content={() => studyShareText([
-              `❓ ${questionFor(item).trim()}`,
-              original.trim() ? `💬 ${original.trim()}` : null
-            ], createStudyDeepLink({ module: 'small-talk', id: item.id, topic: topicId, source: sourceLanguage, target: language }))} />
+          <ShareStudyButton className="small-talk-icon-button" label="Compartilhar somente a resposta"
+            content={() => studyShareText([original.trim() ? `💬 ${original.trim()}` : null], createStudyDeepLink({ module: 'small-talk', id: item.id, topic: topicId, source: sourceLanguage, target: language }))} />
           <button type="button" className="small-talk-icon-button" aria-label="Imprimir esta pergunta e resposta" title="Imprimir apenas este card (A4)" disabled={!questionFor(item).trim()} onClick={() => printCard(item)}><SmallTalkIcon name="printer"/></button>
           <button type="button" className="small-talk-icon-button" aria-label="Exportar JSON público deste card"
             title="Exportar JSON público deste card" onClick={() => openCardExport(item)}><SmallTalkIcon name="clipboard"/></button>
