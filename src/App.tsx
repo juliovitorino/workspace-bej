@@ -49,6 +49,7 @@ import { isAuthorMode } from "./utils/authorMode";
 import { useAppTheme } from "./hooks/useAppTheme";
 import { useFavoriteChunks } from "./hooks/useFavoriteChunks";
 import { AchievementCelebration } from "./components/AchievementCelebration";
+import { FirstAccessSyncNotice } from "./components/FirstAccessSyncNotice";
 import { favoriteStudyItems } from "./utils/favoriteStudyItems";
 
 type TrainingMode = "basic" | "advanced" | "review" | null;
@@ -493,6 +494,7 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
   return (
     <main className="app-layout">
       <AchievementCelebration />
+      <FirstAccessSyncNotice language={sourceLanguage} />
       {backupReminderOpen && <BackupReminderDialog onContinue={continueAfterBackup}
         onDismiss={() => { backupReminder.dismiss(); continueAfterBackup(); }} />}
       <Sidebar
