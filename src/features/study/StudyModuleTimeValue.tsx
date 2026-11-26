@@ -22,7 +22,7 @@ export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivit
     : t("study.noModuleActivity");
   const fullValue = `${time} · ${percentage}`;
   const movement = rankChange && Number.isFinite(rankChange)
-    ? `${rankChange > 0 ? "↑ +" : "↓ −"}${Math.abs(rankChange)}`
+    ? `${rankChange > 0 ? "+" : "−"}${Math.abs(rankChange)}`
     : null;
   // Unchanged and non-comparable modules never show a movement indicator.
   const visibleValue = mode === "both" ? fullValue : mode === "time" ? time : mode === "percentage" ? percentage
@@ -40,7 +40,21 @@ export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivit
       aria-label={`${moduleName}: ${mode === "rankChange" ? movementLabel ?? "Sem alteração de posição" : visibleValue}. ${t("study.toggleModuleTimePercentage")}`}
       title={t("study.toggleModuleTimePercentage")}
     >
-      {mode === "rankChange" && movement ? <span style={{ color: rankChange! > 0 ? "#15803d" : "#dc2626" }}>{visibleValue}</span> : visibleValue}
+      {mode === "rankChange" && movement ? (
+        <svg
+          aria-hidden="true"
+          width={movement.length > 2 ? 76 : 64}
+          height="32"
+          viewBox={`0 0 ${movement.length > 2 ? 76 : 64} 32`}
+          style={{ display: "block", flex: "0 0 auto", maxWidth: "none" }}
+        >
+          <rect width="100%" height="32" rx="8" fill={rankChange! > 0 ? "#123d31" : "#4a252d"} />
+          <g fill="none" stroke={rankChange! > 0 ? "#4ade80" : "#fb7185"} strokeWidth="3.25" strokeLinecap="round" strokeLinejoin="round">
+            {rankChange! > 0 ? <path d="M16 24V8m-7 7 7-7 7 7" /> : <path d="M16 8v16m-7-7 7 7 7-7" />}
+          </g>
+          <text x="31" y="21" fill={rankChange! > 0 ? "#4ade80" : "#fb7185"} fontSize="14" fontWeight="800" fontFamily="inherit">{movement}</text>
+        </svg>
+      ) : visibleValue}
     </button>
   );
 }
