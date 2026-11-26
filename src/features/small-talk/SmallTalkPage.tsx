@@ -1122,7 +1122,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
             disabled={!questionFor(item).trim()} onClick={() => void copyQuestion(item)}>
             <SmallTalkIcon name={copiedQuestionId === item.id ? 'check' : 'copy'}/>
           </button>
-          {editorId !== item.id && <button type="button" className="small-talk-icon-button" aria-label={shown ? 'Ocultar resposta' : 'Ver resposta'} title={shown ? 'Ocultar resposta' : 'Ver resposta'} aria-pressed={shown} onClick={() => reveal(item.id)}><SmallTalkIcon name={shown ? 'eye-off' : 'eye'}/></button>
+          {editorId !== item.id && <button type="button" className="small-talk-icon-button" aria-label={shown ? 'Ocultar resposta' : 'Ver resposta'} title={shown ? 'Ocultar resposta' : 'Ver resposta'} aria-pressed={shown} onClick={() => reveal(item.id)}><SmallTalkIcon name={shown ? 'eye-off' : 'eye'}/></button>}
           {questionCopyError?.id === item.id && <span role="alert" className="small-talk-question-copy-error">{questionCopyError.message}</span>}
           {questionOverrides[item.id] && <button type="button" className="small-talk-restore-button" onClick={() => restoreQuestion(item.id)}>Restaurar pergunta</button>}
         </div>
