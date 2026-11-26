@@ -27,6 +27,33 @@ export function currentWeekStart(day: string): string {
   const weekday = new Date(day + "T12:00:00").getDay();
   return previousDay(day, -(weekday + 6) % 7);
 }
+/** The immediately preceding, non-overlapping calendar period for ranking comparisons. */
+export function previousStudyPeriodRange(filters: Pick<StudyFilters, "period" | "from" | "to">, now: Date): { from: string; to: string } | null {
+  const today = localDay(now);
+  const yesterday = previousDay(today, -1);
+  if (filters.period === "all") return null;
+  if (filters.period === "today") return { from: yesterday, to: yesterday };
+  if (filters.period === "yesterday") {
+    const day = previousDay(today, -2);
+    return { from: day, to: day };
+  }
+  if (filters.period === "week") {
+    const monday = currentWeekStart(today);
+    return { from: previousDay(monday, -7), to: previousDay(monday, -1) };
+  }
+  if (filters.period === "month") {
+    const first = today.slice(0, 7) + "-01";
+    return { from: previousDay(first, -1).slice(0, 7) + "-01", to: previousDay(first, -1) };
+  }
+  if (filters.period === "custom") {
+    if (!/^\\d{4}-\\d{2}-\\d{2}$/.test(filters.from) || !/^\\d{4}-\\d{2}-\\d{2}$/.test(filters.to) || filters.from > filters.to) return null;
+    const days = Math.round((Date.parse(filters.to) - Date.parse(filters.from)) / 86400000) + 1;
+    if (days <= 0 || !Number.isFinite(days)) return null;
+    return { from: previousDay(filters.from, -days), to: previousDay(filters.from, -1) };
+  }
+  const days = Number(filters.period);
+  return { from: previousDay(today, -(days * 2 - 1)), to: previousDay(today, -days) };
+}
 export function studyEntries(data: StudyData): StudyEntry[] {
   return [
     ...data.sessions.flatMap(s => Object.entries(s.dailySeconds ?? { [localDay(new Date(s.startedAt))]: s.activeSeconds }).map(([date, seconds]) =>
