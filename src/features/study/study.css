@@ -425,3 +425,14 @@
 }
 #study-time-by-module .study-module-value > span > svg,
 #study-time-by-module .study-module-value > span > span { flex: 0 0 auto; }
+
+/* Ranking movement detail: compact, keyboard accessible and responsive. */
+#study-time-by-module .study-module-value-wrapper { position: relative; display: inline-flex; align-items: center; flex: 0 0 auto; }
+#study-time-by-module .study-rank-detail { position: absolute; z-index: 20; top: calc(100% + 8px); right: 0; width: min(245px, 82vw); padding: 12px; border: 1px solid var(--border, #475569); border-radius: 12px; background: var(--surface, #1e293b); color: var(--text, #f8fafc); box-shadow: 0 10px 30px #0006; display: grid; gap: 10px; text-align: left; white-space: normal; }
+#study-time-by-module .study-rank-detail-heading { font-weight: 700; font-size: 13px; }
+#study-time-by-module .study-rank-detail-positions { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+#study-time-by-module .study-rank-detail-positions > span:not(:nth-child(2)) { display: grid; gap: 3px; }
+#study-time-by-module .study-rank-detail-positions small { font-size: 11px; opacity: .8; }
+#study-time-by-module .study-rank-detail-positions strong { font-size: 19px; }
+#study-time-by-module .study-rank-detail-change { font-size: 12px; }
+#study-time-by-module .study-rank-detail-close { justify-self: end; border: 0; background: transparent; color: inherit; text-decoration: underline; cursor: pointer; padding: 3px; }
