@@ -32,8 +32,8 @@
 .study-chart-modules li, .study-chart-modules li > div:first-child > * { min-width: 0; overflow-wrap: anywhere; }
 
 /* Podium medals are decorative: a visually hidden number keeps rank accessible. */
-#study-time-by-module .study-module-label { display: inline-flex; align-items: center; gap: 8px; min-width: 0; }
-#study-time-by-module .study-module-rank { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 26px; width: 26px; font-weight: 700; font-variant-numeric: tabular-nums; }
+#study-time-by-module .study-module-label { display: inline-flex; align-items: center; gap: 5px; min-width: 0; }
+#study-time-by-module .study-module-rank { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 26px; width: 26px; min-width: 26px; margin-right: 0; font-weight: 700; font-variant-numeric: tabular-nums; }
 #study-time-by-module .study-rank-medal { display: block; width: 26px; height: 32px; flex-shrink: 0; }
 #study-time-by-module .study-module-name { min-width: 0; overflow-wrap: anywhere; }
 #study-time-by-module .study-module-rank-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
@@ -411,3 +411,4 @@
 }
 #study-time-by-module .study-module-value:hover { color: var(--text); text-decoration: underline; }
 #study-time-by-module .study-module-value:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+\n/* Keep ranking movement badges content-sized and aligned to the right. */\n#study-time-by-module .study-module-value { width: auto; min-width: 0; flex: 0 0 auto; }\n#study-time-by-module .study-module-value > span { width: max-content; max-width: 100%; flex: 0 0 auto; }\n
