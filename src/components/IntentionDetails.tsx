@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import type { Example, MentalIntention } from "../types/hashmap";
 import { ConnectedSpeechButton } from "./ConnectedSpeechStudio";
 import { ShareStudyButton, studyShareText } from "./ShareStudyButton";
+import { createStudyDeepLink } from "../utils/studyDeepLink";
 import { useExampleAudio } from "../features/study/useExampleAudio";
 import { DonationFooter } from "../features/donation/DonationFooter";
 import type { DonationConfig } from "../features/donation/donationConfig";
@@ -1058,7 +1059,7 @@ Mandatório:
                 example.pt?.trim() ? `${sourceLanguageName}: ${example.pt.trim()}` : null,
                 targetSentence(example)?.trim() ? `${targetLanguageName}: ${targetSentence(example).trim()}` : null
               ])
-            ])} />
+            ], createStudyDeepLink({ module: "intention", id: item.id, source: sourceLanguage, target: language }))} />
           <button
             type="button"
             className="secondary-button"
