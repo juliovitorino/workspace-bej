@@ -143,7 +143,10 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
           <svg viewBox="0 0 360 112" width="100%" role="group" aria-label="Jornada espacial da meta" style={{ display: "block", overflow: "visible" }}>
             <path d="M 38 62 H 322" fill="none" stroke="#94a3b8" strokeOpacity=".38" strokeWidth="12" strokeLinecap="round" />
             {flightFraction > 0 && <path d={`M 38 62 H ${38 + 284 * flightFraction}`} fill="none" stroke="#22c55e" strokeWidth="12" strokeLinecap="round" />}
-            {flightFraction > 0 && <circle cx={38 + 284 * flightFraction} cy="62" r="6" fill="#22c55e" />}
+            {flightFraction > 0 && <>
+              <circle cx={38 + 284 * flightFraction} cy="62" r="15" fill="#22c55e" fillOpacity=".2" />
+              <circle cx={38 + 284 * flightFraction} cy="62" r="9" fill="#22c55e" stroke="#f8fafc" strokeWidth="2.5" />
+            </>}
             <g transform="translate(12 40)">
               <rect x="0" y="43" width="34" height="5" rx="2" fill="#475569" />
               <rect x="4" y="7" width="5" height="36" fill="#64748b" />
