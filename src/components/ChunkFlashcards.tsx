@@ -20,6 +20,7 @@ import type { WalkingSummary } from "../utils/walkingSession";
 import { FavoriteChunkButton } from "./FavoriteChunkButton";
 import { WalkingSessionSummary } from "./WalkingSessionSummary";
 import { GoogleTranslateIcon } from "./GoogleTranslateIcon";
+import { ShareStudyButton, studyShareText } from "./ShareStudyButton";
 import { CHUNK_LIKES_CHANGED, CHUNK_LIKES_KEY, chunkLikeTotal, incrementChunkLike, readChunkLikes } from "../utils/chunkLikes";
 import { deviceId } from "../features/study/studyDriveSync";
 import { celebrateAchievement, celebrateFlashcardMilestone, recordPracticedChunk } from "../utils/achievements";
@@ -538,6 +539,11 @@ export function ChunkFlashcards({
                         </svg>
                       )}
                     </button>
+                    <ShareStudyButton className="chunk-flashcards-details"
+                      content={() => studyShareText([
+                        `🌐 ${localizedLanguageName(language)}: ${(currentChunk.targetIntention ?? currentChunk.english).trim()}`,
+                        `🌐 ${localizedLanguageName(sourceLanguage)}: ${currentChunk.intention.trim()}`
+                      ])} />
                     {authorMode && (
                       <button
                         type="button"
