@@ -7,6 +7,7 @@ import { isAuthorMode } from "../utils/authorMode";
 import { useEffect, useRef, useState } from "react";
 import type { Example, MentalIntention } from "../types/hashmap";
 import { ConnectedSpeechButton } from "./ConnectedSpeechStudio";
+import { ShareStudyButton, studyShareText } from "./ShareStudyButton";
 import { useExampleAudio } from "../features/study/useExampleAudio";
 import { DonationFooter } from "../features/donation/DonationFooter";
 import type { DonationConfig } from "../features/donation/donationConfig";
@@ -1045,6 +1046,19 @@ Mandatório:
             {t("common.review")}
           </button>
 
+          <ShareStudyButton className="secondary-button"
+            label={`${t("common.communicativeIntention")} — ${sourceLanguageName} / ${targetLanguageName}`}
+            content={() => studyShareText([
+              `${sourceLanguageName} (${sourceLanguage}): ${item.intention}`,
+              `${targetLanguageName} (${language}): ${item.targetIntention ?? item.english ?? ""}`,
+              item.pattern?.trim() ? `${t("details.pattern")}: ${item.pattern}` : null,
+              item.description?.trim() ? `${t("details.description")}: ${item.description}` : null,
+              ...(item.examples ?? []).flatMap((example, index) => [
+                `${t("details.examples")} ${index + 1}:`,
+                example.pt?.trim() ? `${sourceLanguageName}: ${example.pt.trim()}` : null,
+                targetSentence(example)?.trim() ? `${targetLanguageName}: ${targetSentence(example).trim()}` : null
+              ])
+            ])} />
           <button
             type="button"
             className="secondary-button"
