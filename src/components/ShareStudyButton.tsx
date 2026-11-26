@@ -35,7 +35,7 @@ async function copyForSharing(text: string): Promise<void> {
 }
 
 /** Shares the exact study item; uses native sharing where available and clipboard otherwise. */
-export function ShareStudyButton({ content, className }: { content: () => string; className: string }) {
+export function ShareStudyButton({ content, className, label }: { content: () => string; className: string; label?: string }) {
   const { i18n } = useTranslation();
   const language = i18n.language.toLowerCase();
   const labels = language.startsWith("pt") ? messages.pt : language.startsWith("es") ? messages.es
@@ -69,7 +69,7 @@ export function ShareStudyButton({ content, className }: { content: () => string
 
   return <>
     <button type="button" className={className} onClick={() => void share()}
-      aria-label={labels.share} title={labels.share}>
+      aria-label={label ?? labels.share} title={label ?? labels.share}>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
