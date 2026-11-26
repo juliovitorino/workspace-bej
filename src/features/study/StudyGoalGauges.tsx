@@ -141,14 +141,8 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
         {target !== undefined && target > 0 && missionView && !isPhoneViewport && <StudyPlanetMission percentage={percentage} progress={flightProgress} launchElapsedMs={launchElapsedMs} onReplay={launchFlight} />}
         {target !== undefined && target > 0 && (!missionView || isPhoneViewport) && <div className="bej-rocket-journey" role="group" aria-label={`${languageName(code)}: ${percentage.toFixed(1)}% ${t("bejOverview.goalCompleted")}`} style={{ width: "100%", maxWidth: 520, margin: "12px auto 18px" }}>
           <svg viewBox="0 0 360 112" width="100%" role="group" aria-label="Jornada espacial da meta" style={{ display: "block", overflow: "visible" }}>
-            <defs>
-              <linearGradient id={`bej-rocket-trail-${code}`} x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stopColor="#22c55e" />
-                <stop offset="100%" stopColor="#4ade80" />
-              </linearGradient>
-            </defs>
             <path d="M 38 62 H 322" fill="none" stroke="#94a3b8" strokeOpacity=".38" strokeWidth="12" strokeLinecap="round" />
-            <path d={`M 38 62 H ${38 + 284 * flightFraction}`} fill="none" stroke={`url(#bej-rocket-trail-${code})`} strokeWidth="12" strokeLinecap="round" />
+            {flightFraction > 0 && <path d={`M 38 62 H ${38 + 284 * flightFraction}`} fill="none" stroke="#22c55e" strokeWidth="12" strokeLinecap="round" />}
             {flightFraction > 0 && <circle cx={38 + 284 * flightFraction} cy="62" r="6" fill="#22c55e" />}
             <g transform="translate(12 40)">
               <rect x="0" y="43" width="34" height="5" rx="2" fill="#475569" />
