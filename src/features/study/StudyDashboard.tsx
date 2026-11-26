@@ -10,7 +10,7 @@ import { newStudyId, readStudyStore, readStudyCheckpoints, studyDataWithCheckpoi
   STUDY_CHANGED, isStudyStorageKey, STUDY_MODULES, EXTRA_CATEGORIES, OTHER_STUDY_SUBCATEGORIES, StudyError, updateStudyStore, validDay,
   type ManualAdjustment, type StudyData, type StudyStore } from "./studyStorage";
 import { localDay } from "./studyTrackingService";
-import { currentWeekStart, studyEntries, studyStats, STUDY_FILTER_PERIOD_ORDER, nextStudyPeriod, type StudyFilters } from "./studyStats";
+import { currentWeekStart, studyEntries, studyStats, previousStudyPeriodRange, STUDY_FILTER_PERIOD_ORDER, nextStudyPeriod, type StudyFilters } from "./studyStats";
 import "./study.css";
 import { StudyPeriodMenu } from "./StudyPeriodMenu";
 import { StudyWeeklyOverview } from "./StudyWeeklyOverview";
@@ -44,7 +44,6 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu, onO
   const [recencyNow, setRecencyNow] = useState(() => new Date());
   const [notificationCenterOpen, setNotificationCenterOpen] = useState(false);
   const { settings: notificationSettings } = useStudyNotificationSettings();
-  const toggleModuleValueMode = () => { setModuleValueMode(nextModuleValueMode); setRecencyNow(new Date()); };
   useEffect(() => {
     if (moduleValueMode !== "recent") return;
     // Keep second-level relative labels current only while the recency view is visible.
@@ -193,6 +192,37 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu, onO
     : key === "hashmap" ? "Mental Hashmap" : key === "small-talk" ? "Small Talk" : t(moduleKeys[key]);
   // Extra activities are shown by category; "other" is split into subcategories without double-counting.
   const moduleValues = stats ? moduleChartValues(stats, filters) : {};
+  // Compare exactly the same ranking categories and filters in the preceding period.
+  // Only modules with positive study time in both periods have a comparable rank.
+  const rankChanges = useMemo<Record<string, number>>(() => {
+    if (!displayData || !validRange) return {};
+    const prior = previousStudyPeriodRange(filters, now);
+    if (!prior) return {};
+    const current = moduleChartValues(studyStats(displayData, filters, now), filters);
+    const previous = moduleChartValues(studyStats(displayData, { ...filters, period: "custom", ...prior }, now), filters);
+    const rank = (values: Record<string, number>) => new Map(
+      Object.entries(values).filter(([, seconds]) => seconds > 0)
+        .sort(([a, sa], [b, sb]) => sb - sa || moduleLabel(a).localeCompare(moduleLabel(b), i18n.language))
+        .map(([key], index) => [key, index + 1])
+    );
+    const currentRanks = rank(current);
+    const previousRanks = rank(previous);
+    const changes: Record<string, number> = {};
+    for (const [key, position] of currentRanks) {
+      const before = previousRanks.get(key);
+      if (before !== undefined && before !== position) changes[key] = before - position;
+    }
+    return changes;
+  }, [displayData, filters, now, validRange, i18n.language, t]);
+  const hasRankChanges = Object.keys(rankChanges).length > 0;
+  const toggleModuleValueMode = () => {
+    setModuleValueMode(mode => nextModuleValueMode(mode, hasRankChanges));
+    setRecencyNow(new Date());
+  };
+  useEffect(() => {
+    if (moduleValueMode === "rankChange" && !hasRankChanges) setModuleValueMode("both");
+  }, [moduleValueMode, hasRankChanges]);
+
   // Always use full study history for recency, regardless of the ranking's date range.
   const latestModuleActivity = useMemo<Record<string, number>>(() => displayData
     ? moduleLastActivity(displayData, filters) : {}, [displayData, filters.language, filters.mode]);
@@ -250,7 +280,7 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu, onO
     const scale = Math.max(1, total ?? max);
     return <section id={sectionId} tabIndex={sectionId ? -1 : undefined} className="study-panel bej-chart-card">{collapseKey ? <StudyCollapseToggle expanded={collapsedCharts[collapseKey] ?? false} onToggle={() => setCollapsedCharts(v => ({ ...v, [collapseKey]: !(v[collapseKey] ?? false) }))} title={title} /> : sectionId === "study-time-by-module" ? <h3>{t("study.byModule")} · <button type="button" className="study-module-period-button" onClick={cycleModulePeriod} aria-label={`${t("study.nextPeriod")}: ${t(`study.periods.${nextStudyPeriod(filters.period)}`)}`} title={`${t("study.nextPeriod")}: ${t(`study.periods.${nextStudyPeriod(filters.period)}`)}`}>{t(`study.periods.${filters.period}`)}<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 5 7 7-7 7"/></svg></button></h3> : <h3>{title}</h3>}{(!collapseKey || collapsedCharts[collapseKey]) && (!entries.length ? <p>{t("study.empty")}</p> : <ul className={modules ? "study-chart study-chart-modules" : "study-chart"}>{entries.map(([key, seconds], index) => <li key={key}>
       <div><span className={sectionId === "study-time-by-module" ? "study-module-label" : undefined}>{sectionId === "study-time-by-module" && <span className="study-module-rank">{index < 3 && seconds > 0 ? <><StudyRankMedal rank={(index + 1) as 1 | 2 | 3} /><span className="study-module-rank-sr-only">{index + 1}.</span></> : `${index + 1}.`}</span>}<span className={sectionId === "study-time-by-module" ? "study-module-name" : undefined}>{label(key)}</span></span>{sectionId === "study-time-by-module" && total !== undefined
-        ? <StudyModuleTimeValue moduleName={label(key)} time={moduleDuration(seconds)} percentage={`${number(seconds / scale * 100)}%`} lastActivity={latestModuleActivity[key]} now={recencyNow} mode={moduleValueMode} onToggle={toggleModuleValueMode} />
+        ? <StudyModuleTimeValue moduleName={label(key)} time={moduleDuration(seconds)} percentage={`${number(seconds / scale * 100)}%`} lastActivity={latestModuleActivity[key]} now={recencyNow} mode={moduleValueMode} rankChange={rankChanges[key]} onToggle={toggleModuleValueMode} />
         : <strong>{duration(seconds)}{total !== undefined && ` · ${number(seconds / scale * 100)}%`}</strong>}</div><div className="study-bar" aria-hidden="true"><span style={{ width: `${sectionId === "study-time-by-module" ? modulePercentageBarWidth(seconds, max) : seconds / scale * 100}%`, ...(sectionId === "study-time-by-module" ? { background: key.startsWith(OTHER_SUBCATEGORY_MODULE_PREFIX)
         ? STUDY_EXTRA_CATEGORY_COLORS.other
         : key.startsWith(EXTRA_MODULE_PREFIX)
