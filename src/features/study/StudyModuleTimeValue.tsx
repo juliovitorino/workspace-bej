@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { ModuleValueMode } from "./studyModuleTime";
 import { moduleRecencyParts } from "./studyModuleRecency";
@@ -8,14 +9,22 @@ interface StudyModuleTimeValueProps {
   percentage: string;
   lastActivity?: number;
   rankChange?: number;
+  previousRank?: number;
+  currentRank?: number;
   now: Date;
   mode: ModuleValueMode;
   onToggle: () => void;
 }
 
 /** One accessible, responsive control for the entire ranking, on every device. */
-export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivity, rankChange, now, mode, onToggle }: StudyModuleTimeValueProps) {
-  const { t } = useTranslation();
+export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivity, rankChange, previousRank, currentRank, now, mode, onToggle }: StudyModuleTimeValueProps) {
+  const { t, i18n } = useTranslation();
+  const [detailOpen, setDetailOpen] = useState(false);
+  const locale = i18n.language.toLowerCase();
+  const labels = locale.startsWith("pt") ? ["Movimentação no ranking", "Período anterior", "Período atual", "Fechar"]
+    : locale.startsWith("es") ? ["Movimiento en la clasificación", "Período anterior", "Período actual", "Cerrar"]
+    : locale.startsWith("fr") ? ["Évolution du classement", "Période précédente", "Période actuelle", "Fermer"]
+    : ["Ranking movement", "Previous period", "Current period", "Close"];
   const parts = lastActivity === undefined ? null : moduleRecencyParts(lastActivity, now.getTime());
   const lastActivityLabel = parts
     ? t("study.moduleActivityAgo", { time: `${parts.count}${t(`study.moduleRecencyUnits.${parts.unit}${parts.count === 1 ? "One" : "Other"}`)}` })
@@ -32,13 +41,14 @@ export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivit
     : null;
 
   return (
+    <span className="study-module-value-wrapper" onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setDetailOpen(false); }}>
     <button
       type="button"
       className="study-module-value"
-      onClick={onToggle}
+      onClick={() => { if (mode === "rankChange" && movement && previousRank !== undefined && currentRank !== undefined) setDetailOpen(open => !open); else onToggle(); }}
       aria-live="polite"
       aria-label={`${moduleName}: ${mode === "rankChange" ? movementLabel ?? "Sem alteração de posição" : visibleValue}. ${t("study.toggleModuleTimePercentage")}`}
-      title={t("study.toggleModuleTimePercentage")}
+      title={mode === "rankChange" && movement ? labels[0] : t("study.toggleModuleTimePercentage")}
     >
       {mode === "rankChange" && movement ? (
         <svg
@@ -56,5 +66,14 @@ export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivit
         </svg>
       ) : visibleValue}
     </button>
+    {detailOpen && mode === "rankChange" && movement && previousRank !== undefined && currentRank !== undefined && (
+      <span className="study-rank-detail" role="group" aria-label={`${moduleName}: ${labels[0]}`}>
+        <span className="study-rank-detail-heading">{labels[0]}</span>
+        <span className="study-rank-detail-positions"><span><small>{labels[1]}</small><strong>{previousRank}º</strong></span><span aria-hidden="true">→</span><span><small>{labels[2]}</small><strong>{currentRank}º</strong></span></span>
+        <span className="study-rank-detail-change">{movementLabel}</span>
+        <button type="button" className="study-rank-detail-close" onClick={() => setDetailOpen(false)}>{labels[3]}</button>
+      </span>
+    )}
+    </span>
   );
 }
