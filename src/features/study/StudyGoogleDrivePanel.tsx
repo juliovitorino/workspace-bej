@@ -156,7 +156,7 @@ export function StudyDriveSync({ allSectionsExpanded }: { allSectionsExpanded?: 
           <span className="study-drive-progress-mark" aria-hidden="true">{index < progress.done ? "☑" : index === progress.active && progress.failed ? "✕" : index === progress.active ? "◌" : "☐"}</span><span>{label}</span>
         </li>)}</ol>
         {progress.failed && <p className="study-drive-progress-error" role="alert">{progress.detail}</p>}
-        {!busy && <button type="button" className="secondary-button" onClick={() => setProgress(null)}>{t("study.close", { defaultValue: "Fechar" })}</button>}
+        {!busy && <button type="button" className="secondary-button" onClick={() => setProgress(null)}>{t("driveSync.progressClose", { defaultValue: "Fechar" })}</button>}
       </div>
     </div>, document.body)}
     {error && <p className="status-card error-card" role="alert">{error}</p>}
