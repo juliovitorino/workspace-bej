@@ -143,8 +143,8 @@ export function StudyGoalGauges({ data, goals, monthlyGoals, language, now, hide
           <svg viewBox="0 0 360 112" width="100%" role="group" aria-label="Jornada espacial da meta" style={{ display: "block", overflow: "visible" }}>
             <defs>
               <linearGradient id={`bej-rocket-trail-${code}`} x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stopColor="#0ea5e9" />
-                <stop offset="100%" stopColor="#22c55e" />
+                <stop offset="0%" stopColor="#22c55e" />
+                <stop offset="100%" stopColor="#4ade80" />
               </linearGradient>
             </defs>
             <path d="M 38 62 H 322" fill="none" stroke="#94a3b8" strokeOpacity=".38" strokeWidth="12" strokeLinecap="round" />
