@@ -3128,9 +3128,13 @@ button { color: inherit; }
 
 /* Dashboard: sequential numbering for the displayed Time by Module ranking. */
 #study-time-by-module .study-module-rank {
-  display: inline-block;
-  min-width: 2em;
-  margin-right: 0.25em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 26px;
+  width: 26px;
+  min-width: 26px;
+  margin-right: 0;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
