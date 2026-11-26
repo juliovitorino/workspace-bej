@@ -1056,8 +1056,8 @@ Mandatório:
               item.description?.trim() ? `${t("details.description")}: ${item.description}` : null,
               ...(item.examples ?? []).flatMap((example, index) => [
                 `${t("details.examples")} ${index + 1}:`,
-                example.pt?.trim() ? `${LANGUAGES[sourceLanguage].flag} ${example.pt.trim()}` : null,
-                targetSentence(example)?.trim() ? `${LANGUAGES[language].flag} ${targetSentence(example).trim()}` : null
+                example.pt?.trim() ? `${LANGUAGES[sourceLanguage].flag} *${example.pt.trim()}*` : null,
+                targetSentence(example)?.trim() ? `${LANGUAGES[language].flag} *${targetSentence(example).trim()}*` : null
               ])
             ], createStudyDeepLink({ module: "intention", id: item.id, source: sourceLanguage, target: language }))} />
           <button
