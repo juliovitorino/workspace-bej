@@ -457,7 +457,7 @@ export function InterpretationPanel({
       cancelSpeech();
     }
 
-    setEnglishLevel(searchLevel);
+    setEnglishLevel((localStory.englishLevel ?? searchLevel) as EnglishLevel);
     setStoryCopyFeedback("idle");
     setStory({
       ...localStory,
