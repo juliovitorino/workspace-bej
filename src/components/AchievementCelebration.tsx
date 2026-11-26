@@ -36,8 +36,8 @@ export function AchievementCelebration() {
 
   return current ? (
     <div role="status" aria-live="polite" aria-atomic="true" style={{
-      position: "fixed", top: "max(18px, env(safe-area-inset-top))",
-      left: "50%", transform: "translateX(-50%)", width: "min(92vw, 440px)",
+      position: "fixed", top: "50%", left: "50%",
+      transform: "translate(-50%, -50%)", width: "min(92vw, 440px)",
       padding: "16px 20px", borderRadius: 16, textAlign: "center",
       background: "var(--surface, #132238)", color: "var(--text, #fff)",
       border: "2px solid #facc15", boxShadow: "0 12px 32px rgba(0,0,0,.24)",
