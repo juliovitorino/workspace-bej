@@ -20,7 +20,8 @@ const CATEGORY_NAMES: Record<string, string> = {
   relationships: "Relationships", "personal-growth": "Personal Growth", "fun-imagination": "Fun & Imagination", "deep-conversations": "Deep Conversations"
 };
 
-function Icon({ kind }: { kind: "copy" | "audio" | "edit" }) {
+function Icon({ kind }: { kind: "copy" | "audio" | "edit" | "print" }) {
+  if (kind === "print") return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6zM18 11h.01"/></svg>;
   if (kind === "audio") return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 9a5 5 0 0 1 0 6M18 6a9 9 0 0 1 0 12"/></svg>;
   if (kind === "edit") return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m15 5 4 4M4 20l4.5-1 11-11a2.83 2.83 0 0 0-4-4l-11 11L4 20Z"/></svg>;
 
@@ -35,12 +36,12 @@ interface TextCardProps {
   showLabel: string; hideLabel: string; copySuccess: string; copyError: string;
   fontSize?: WyrFontSize; onFontSize?: (size: WyrFontSize) => void;
   onSaveAnswer?: (value: string | null) => void; originalAnswer?: string;
-  scrollRef?: Ref<HTMLDivElement>;
+  scrollRef?: Ref<HTMLDivElement>; onPrint?: () => void; printLabel?: string;
 }
 function TextCard(props: TextCardProps) {
   const { label, text, effectiveLocale, targetLocale, onNotice, reveal, onReveal, selected, onSelect,
     copyLabel, translateLabel, showLabel, hideLabel, copySuccess, copyError, fontSize = "medium",
-    onFontSize, onSaveAnswer, originalAnswer, scrollRef } = props;
+    onFontSize, onSaveAnswer, originalAnswer, scrollRef, onPrint, printLabel } = props;
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(text);
   const isAnswer = onReveal !== undefined;
@@ -78,6 +79,7 @@ function TextCard(props: TextCardProps) {
         <div className="wyr-card-actions">
           <button type="button" className="wyr-icon-button" aria-label={copyLabel} title={copyLabel} onClick={event => { event.stopPropagation(); void copy(); }}><Icon kind="copy" /></button>
           <button type="button" className="wyr-icon-button" aria-label={translateLabel} title={translateLabel} onClick={event => { event.stopPropagation(); translate(); }}><GoogleTranslateIcon size={19} /></button>
+          {onPrint && <button type="button" className="wyr-icon-button" aria-label={printLabel} title={printLabel} onClick={event => { event.stopPropagation(); onPrint(); }}><Icon kind="print" /></button>}
           {!isAnswer && !onSelect && <button type="button" className="wyr-icon-button" aria-label={lang === "pt" ? "Ouvir pergunta" : lang === "es" ? "Escuchar pregunta" : lang === "fr" ? "Écouter la question" : "Listen to question"} title={lang === "pt" ? "Ouvir pergunta" : lang === "es" ? "Escuchar pregunta" : lang === "fr" ? "Écouter la question" : "Listen to question"} onClick={event => { event.stopPropagation(); speak(); }}><Icon kind="audio" /></button>}
         </div>
       </div>
@@ -330,6 +332,47 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
     const questions = [...topic.questions].filter(q => !favoritesOnly || favorites.includes(q.id)).sort((a, b) => a.order - b.order);
     startSet({ title: topic.title, questions, topic });
   }
+  function printQuestion() {
+    if (!current || !loaded) return;
+    const popup = window.open("", "_blank");
+    if (!popup) { setNotice("Permita pop-ups para imprimir esta pergunta."); return; }
+    const escapeHtml = (value: string) => value.replace(/[&<>"']/g, char =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char] ?? char);
+    const locale = loaded.locale;
+    const questionTopic = allTopics.find(topic => topic.questions.some(q => q.id === current.id));
+    const questionNumber = questionTopic
+      ? [...questionTopic.questions].sort((a, b) => a.order - b.order).findIndex(q => q.id === current.id) + 1
+      : index + 1;
+    const answerA = customAnswers[wyrAnswerKey(locale, current.id, "A")]?.text ?? current.options.A.answer;
+    const answerB = customAnswers[wyrAnswerKey(locale, current.id, "B")]?.text ?? current.options.B.answer;
+    const html = '<!doctype html><html lang="' + escapeHtml(locale) + '"><head><meta charset="utf-8">' +
+      '<meta name="viewport" content="width=device-width,initial-scale=1"><title>BEJ - Would You Rather?</title>' +
+      '<style>@page{size:A4;margin:15mm 16mm 15mm 25.4mm}*{box-sizing:border-box}body{font:11pt/1.45 Arial,sans-serif;color:#111;background:#fff;margin:0}' +
+      'header{border-bottom:2px solid #173861;padding-bottom:9px;margin-bottom:16px}header small{font-size:9pt;font-weight:bold;letter-spacing:1px;color:#365b88}' +
+      'h1{font-size:20pt;margin:5px 0}.question{margin:0 0 17px;padding:0 0 12px}.question h2{font-size:12pt;margin:0 0 12px}' +
+      '.option{margin:12px 0 4px}.answer{margin:3px 0 12px 18px;color:#333;font-size:10.5pt;white-space:pre-wrap;overflow-wrap:anywhere}' +
+      '@media screen{body{max-width:210mm;margin:20px auto;padding:15mm;box-shadow:0 2px 20px #ccc}}@media print{body{margin:0}}</style></head><body>' +
+      '<header><small>BRAZILIAN ENGLISH JOURNEY</small><h1>Would You Rather?</h1></header>' +
+      '<section class="question"><h2>' + String(questionNumber).padStart(2, "0") + '. ' + escapeHtml(current.question) + '</h2>' +
+      '<div class="option"><b>A.</b> ' + escapeHtml(current.options.A.text) + '</div>' +
+      '<p class="answer">' + escapeHtml(answerA) + '</p>' +
+      '<div class="option"><b>B.</b> ' + escapeHtml(current.options.B.text) + '</div>' +
+      '<p class="answer">' + escapeHtml(answerB) + '</p></section></body></html>';
+    popup.document.open(); popup.document.write(html); popup.document.close();
+    let finished = false;
+    const closePrintTab = () => {
+      if (finished) return;
+      finished = true;
+      popup.removeEventListener("afterprint", closePrintTab);
+      if (!popup.closed) popup.close();
+    };
+    popup.addEventListener("afterprint", closePrintTab, { once: true });
+    popup.focus();
+    try { popup.print(); } catch {
+      closePrintTab();
+      setNotice("Não foi possível abrir a impressão neste navegador.");
+    }
+  }
   function printTopic(topic: WyrTopic) {
     if (!loaded) return;
     // Browser print preview may allow PDF export on mobile and desktop.
@@ -394,6 +437,7 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
   const card = (label: string, text: string, key: "question" | "optionA" | "optionB" | "answerA" | "answerB", extra?: { select?: () => void; selected?: boolean; reveal?: boolean; toggle?: () => void }) => (
     <TextCard key={key} label={label} text={text} effectiveLocale={loaded?.locale ?? "en-US"} targetLocale={targetLocale}
       scrollRef={key === "question" ? questionCardRef : key === "answerA" ? answerACardRef : key === "answerB" ? answerBCardRef : undefined}
+      onPrint={key === "question" ? printQuestion : undefined} printLabel={loaded?.locale.startsWith("pt") ? "Imprimir pergunta" : loaded?.locale.startsWith("es") ? "Imprimir pregunta" : loaded?.locale.startsWith("fr") ? "Imprimer la question" : "Print question"}
       onNotice={setNotice} copyLabel={tr(`copy.${key}`)} translateLabel={tr(`translate.${key}`)} copySuccess={tr("copied")} copyError={tr("copyError")}
       showLabel={tr(key === "answerA" ? "showA" : "showB")} hideLabel={tr(key === "answerA" ? "hideA" : "hideB")}
       onSelect={extra?.select} selected={extra?.selected} reveal={extra?.reveal} onReveal={extra?.toggle}
