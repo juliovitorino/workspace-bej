@@ -21,10 +21,10 @@ export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivit
   const { t, i18n } = useTranslation();
   const [detailOpen, setDetailOpen] = useState(false);
   const locale = i18n.language.toLowerCase();
-  const labels = locale.startsWith("pt") ? ["Movimentação no ranking", "Período anterior", "Período atual", "Fechar"]
-    : locale.startsWith("es") ? ["Movimiento en la clasificación", "Período anterior", "Período actual", "Cerrar"]
-    : locale.startsWith("fr") ? ["Évolution du classement", "Période précédente", "Période actuelle", "Fermer"]
-    : ["Ranking movement", "Previous period", "Current period", "Close"];
+  const labels = locale.startsWith("pt") ? ["Movimentação no ranking", "Período anterior", "Período atual", "Fechar", "Próxima informação"]
+    : locale.startsWith("es") ? ["Movimiento en la clasificación", "Período anterior", "Período actual", "Cerrar", "Siguiente información"]
+    : locale.startsWith("fr") ? ["Évolution du classement", "Période précédente", "Période actuelle", "Fermer", "Information suivante"]
+    : ["Ranking movement", "Previous period", "Current period", "Close", "Next metric"];
   const parts = lastActivity === undefined ? null : moduleRecencyParts(lastActivity, now.getTime());
   const lastActivityLabel = parts
     ? t("study.moduleActivityAgo", { time: `${parts.count}${t(`study.moduleRecencyUnits.${parts.unit}${parts.count === 1 ? "One" : "Other"}`)}` })
@@ -71,7 +71,7 @@ export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivit
         <span className="study-rank-detail-heading">{labels[0]}</span>
         <span className="study-rank-detail-positions"><span><small>{labels[1]}</small><strong>{previousRank}º</strong></span><span aria-hidden="true">→</span><span><small>{labels[2]}</small><strong>{currentRank}º</strong></span></span>
         <span className="study-rank-detail-change">{movementLabel}</span>
-        <button type="button" className="study-rank-detail-close" onClick={() => setDetailOpen(false)}>{labels[3]}</button>
+        <span className="study-rank-detail-actions"><button type="button" className="study-rank-detail-close" onClick={() => setDetailOpen(false)}>{labels[3]}</button><button type="button" className="study-rank-detail-close" onClick={() => { setDetailOpen(false); onToggle(); }}>{labels[4]} →</button></span>
       </span>
     )}
     </span>
