@@ -12,7 +12,7 @@ export type ModuleValueMode = "both" | "time" | "percentage" | "recent" | "rankC
 
 /** The rank-change step is only enabled when a comparable movement exists. */
 export function nextModuleValueMode(mode: ModuleValueMode, hasRankChange = false): ModuleValueMode {
-  return mode === "time" ? "percentage" : mode === "percentage" ? "recent" : mode === "recent" ? (hasRankChange ? "rankChange" : "both") : mode === "rankChange" ? "both" : "time";
+  return mode === "rankChange" ? "time" : mode === "time" ? "percentage" : mode === "percentage" ? "recent" : mode === "recent" ? "both" : (hasRankChange ? "rankChange" : "time");
 }
 
 /**
