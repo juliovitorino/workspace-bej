@@ -26,7 +26,7 @@ export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivit
     : null;
   // Unchanged and non-comparable modules never show a movement indicator.
   const visibleValue = mode === "both" ? fullValue : mode === "time" ? time : mode === "percentage" ? percentage
-    : mode === "recent" ? lastActivityLabel : movement ?? time;
+    : mode === "recent" ? lastActivityLabel : movement ?? "";
   const movementLabel = movement
     ? `${rankChange! > 0 ? "Subiu" : "Desceu"} ${Math.abs(rankChange!)} ${Math.abs(rankChange!) === 1 ? "posição" : "posições"}`
     : null;
@@ -37,7 +37,7 @@ export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivit
       className="study-module-value"
       onClick={onToggle}
       aria-live="polite"
-      aria-label={`${moduleName}: ${mode === "rankChange" && movementLabel ? movementLabel : visibleValue}. ${t("study.toggleModuleTimePercentage")}`}
+      aria-label={`${moduleName}: ${mode === "rankChange" ? movementLabel ?? "Sem alteração de posição" : visibleValue}. ${t("study.toggleModuleTimePercentage")}`}
       title={t("study.toggleModuleTimePercentage")}
     >
       {mode === "rankChange" && movement ? <span style={{ color: rankChange! > 0 ? "#15803d" : "#dc2626" }}>{visibleValue}</span> : visibleValue}
