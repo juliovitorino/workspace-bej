@@ -9,6 +9,7 @@ import { WyrWalking } from "./WyrWalking";
 import { scrollToWyrCard, type WyrScrollTarget } from "./wyrScroll";
 import { celebrateCompletedSession } from "../../utils/achievements";
 import { GoogleTranslateIcon } from "../../components/GoogleTranslateIcon";
+import { ShareStudyButton, studyShareText } from "../../components/ShareStudyButton";
 import "./wouldYouRather.css";
 
 type Screen = "catalog" | "practice" | "summary" | "walking";
@@ -37,11 +38,12 @@ interface TextCardProps {
   fontSize?: WyrFontSize; onFontSize?: (size: WyrFontSize) => void;
   onSaveAnswer?: (value: string | null) => void; originalAnswer?: string;
   scrollRef?: Ref<HTMLDivElement>; onPrint?: () => void; printLabel?: string;
+  shareContent?: () => string;
 }
 function TextCard(props: TextCardProps) {
   const { label, text, effectiveLocale, targetLocale, onNotice, reveal, onReveal, selected, onSelect,
     copyLabel, translateLabel, showLabel, hideLabel, copySuccess, copyError, fontSize = "medium",
-    onFontSize, onSaveAnswer, originalAnswer, scrollRef, onPrint, printLabel } = props;
+    onFontSize, onSaveAnswer, originalAnswer, scrollRef, onPrint, printLabel, shareContent } = props;
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(text);
   const isAnswer = onReveal !== undefined;
@@ -79,6 +81,7 @@ function TextCard(props: TextCardProps) {
         <div className="wyr-card-actions">
           <button type="button" className="wyr-icon-button" aria-label={copyLabel} title={copyLabel} onClick={event => { event.stopPropagation(); void copy(); }}><Icon kind="copy" /></button>
           <button type="button" className="wyr-icon-button" aria-label={translateLabel} title={translateLabel} onClick={event => { event.stopPropagation(); translate(); }}><GoogleTranslateIcon size={19} /></button>
+          {shareContent && <ShareStudyButton className="wyr-icon-button" content={shareContent} />}
           {onPrint && <button type="button" className="wyr-icon-button" aria-label={printLabel} title={printLabel} onClick={event => { event.stopPropagation(); onPrint(); }}><Icon kind="print" /></button>}
           {!isAnswer && !onSelect && <button type="button" className="wyr-icon-button" aria-label={lang === "pt" ? "Ouvir pergunta" : lang === "es" ? "Escuchar pregunta" : lang === "fr" ? "Écouter la question" : "Listen to question"} title={lang === "pt" ? "Ouvir pergunta" : lang === "es" ? "Escuchar pregunta" : lang === "fr" ? "Écouter la question" : "Listen to question"} onClick={event => { event.stopPropagation(); speak(); }}><Icon kind="audio" /></button>}
         </div>
@@ -332,6 +335,23 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
     const questions = [...topic.questions].filter(q => !favoritesOnly || favorites.includes(q.id)).sort((a, b) => a.order - b.order);
     startSet({ title: topic.title, questions, topic });
   }
+  function shareQuestionContent(): string {
+    if (!current || !loaded) return "";
+    const questionTopic = allTopics.find(topic => topic.questions.some(q => q.id === current.id));
+    const number = questionTopic
+      ? [...questionTopic.questions].sort((a, b) => a.order - b.order).findIndex(q => q.id === current.id) + 1
+      : index + 1;
+    const answerA = customAnswers[wyrAnswerKey(loaded.locale, current.id, "A")]?.text ?? current.options.A.answer;
+    const answerB = customAnswers[wyrAnswerKey(loaded.locale, current.id, "B")]?.text ?? current.options.B.answer;
+    return studyShareText([
+      `${number}. ${current.question}`,
+      `A. ${current.options.A.text}`,
+      answerA.trim() ? `💬 ${answerA.trim()}` : null,
+      `B. ${current.options.B.text}`,
+      answerB.trim() ? `💬 ${answerB.trim()}` : null
+    ]);
+  }
+
   function printQuestion() {
     if (!current || !loaded) return;
     const popup = window.open("", "_blank");
@@ -437,6 +457,7 @@ export function WouldYouRather({ language, sourceLanguage, onStudyState }: { lan
   const card = (label: string, text: string, key: "question" | "optionA" | "optionB" | "answerA" | "answerB", extra?: { select?: () => void; selected?: boolean; reveal?: boolean; toggle?: () => void }) => (
     <TextCard key={key} label={label} text={text} effectiveLocale={loaded?.locale ?? "en-US"} targetLocale={targetLocale}
       scrollRef={key === "question" ? questionCardRef : key === "answerA" ? answerACardRef : key === "answerB" ? answerBCardRef : undefined}
+      shareContent={key === "question" ? shareQuestionContent : undefined}
       onPrint={key === "question" ? printQuestion : undefined} printLabel={loaded?.locale.startsWith("pt") ? "Imprimir pergunta" : loaded?.locale.startsWith("es") ? "Imprimir pregunta" : loaded?.locale.startsWith("fr") ? "Imprimer la question" : "Print question"}
       onNotice={setNotice} copyLabel={tr(`copy.${key}`)} translateLabel={tr(`translate.${key}`)} copySuccess={tr("copied")} copyError={tr("copyError")}
       showLabel={tr(key === "answerA" ? "showA" : "showB")} hideLabel={tr(key === "answerA" ? "hideA" : "hideB")}
