@@ -41,20 +41,19 @@ export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivit
       title={t("study.toggleModuleTimePercentage")}
     >
       {mode === "rankChange" && movement ? (
-        <span style={{
-          display: "inline-flex", alignItems: "center", justifyContent: "flex-start", gap: "4px",
-          width: "max-content", maxWidth: "100%", flex: "0 0 auto",
-          padding: "4px 8px", borderRadius: "8px", fontWeight: 800,
-          color: rankChange! > 0 ? "#4ade80" : "#fb7185",
-          backgroundColor: rankChange! > 0 ? "#123d31" : "#4a252d",
-          fontVariantNumeric: "tabular-nums", whiteSpace: "nowrap"
-        }}>
-          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" strokeWidth="3.25" strokeLinecap="round" strokeLinejoin="round">
-            {rankChange! > 0 ? <path d="M12 20V4m-7 7 7-7 7 7" /> : <path d="M12 4v16m-7-7 7 7 7-7" />}
-          </svg>
-          <span style={{ flex: "0 0 auto" }}>{movement}</span>
-        </span>
+        <svg
+          aria-hidden="true"
+          width={movement.length > 2 ? 76 : 64}
+          height="32"
+          viewBox={`0 0 ${movement.length > 2 ? 76 : 64} 32`}
+          style={{ display: "block", flex: "0 0 auto", maxWidth: "none" }}
+        >
+          <rect width="100%" height="32" rx="8" fill={rankChange! > 0 ? "#123d31" : "#4a252d"} />
+          <g fill="none" stroke={rankChange! > 0 ? "#4ade80" : "#fb7185"} strokeWidth="3.25" strokeLinecap="round" strokeLinejoin="round">
+            {rankChange! > 0 ? <path d="M16 24V8m-7 7 7-7 7 7" /> : <path d="M16 8v16m-7-7 7 7 7-7" />}
+          </g>
+          <text x="31" y="21" fill={rankChange! > 0 ? "#4ade80" : "#fb7185"} fontSize="14" fontWeight="800" fontFamily="inherit">{movement}</text>
+        </svg>
       ) : visibleValue}
     </button>
   );
