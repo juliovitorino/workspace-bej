@@ -1701,7 +1701,7 @@ export function InterpretationPanel({
                   content={() => studyShareText([
                     story.sourceTitle,
                     ...story.paragraphs.map(paragraph => paragraph.sourceText)
-                  ], story.source === "local" && story.id ? createStudyDeepLink({ module: "interpretation", id: story.id, source: sourceLanguage, target: language, level: story.englishLevel ?? searchLevel }) : undefined)} />
+                  ], story.source === "local" && story.id ? createStudyDeepLink({ module: "interpretation", id: story.id, source: sourceLanguage, target: language, level: englishLevel }) : undefined)} />
               </div>
               <div style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
                 <span style={{ fontSize: "0.8rem", fontWeight: 600 }}>{language}</span>
@@ -1710,7 +1710,7 @@ export function InterpretationPanel({
                   content={() => studyShareText([
                     story.title,
                     ...story.paragraphs.map(paragraph => paragraph.text)
-                  ], story.source === "local" && story.id ? createStudyDeepLink({ module: "interpretation", id: story.id, source: sourceLanguage, target: language, level: story.englishLevel ?? searchLevel }) : undefined)} />
+                  ], story.source === "local" && story.id ? createStudyDeepLink({ module: "interpretation", id: story.id, source: sourceLanguage, target: language, level: englishLevel }) : undefined)} />
               </div>
               <button
                 type="button"
