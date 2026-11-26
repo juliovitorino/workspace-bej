@@ -10,7 +10,7 @@ import { newStudyId, readStudyStore, readStudyCheckpoints, studyDataWithCheckpoi
   STUDY_CHANGED, isStudyStorageKey, STUDY_MODULES, EXTRA_CATEGORIES, OTHER_STUDY_SUBCATEGORIES, StudyError, updateStudyStore, validDay,
   type ManualAdjustment, type StudyData, type StudyStore } from "./studyStorage";
 import { localDay } from "./studyTrackingService";
-import { studyEntries, studyStats, STUDY_FILTER_PERIOD_ORDER, nextStudyPeriod, type StudyFilters } from "./studyStats";
+import { currentWeekStart, studyEntries, studyStats, STUDY_FILTER_PERIOD_ORDER, nextStudyPeriod, type StudyFilters } from "./studyStats";
 import "./study.css";
 import { StudyPeriodMenu } from "./StudyPeriodMenu";
 import { StudyWeeklyOverview } from "./StudyWeeklyOverview";
@@ -140,6 +140,31 @@ export function StudyDashboard({ language, initialSection, onOpenMobileMenu, onO
   const validRange = filters.period !== "custom" || (validDay(filters.from) && validDay(filters.to) && filters.from <= filters.to);
   const displayData = useMemo(() => store && studyDataWithCheckpoints(store.studyData, checkpoints), [store, checkpoints]);
   const stats = useMemo(() => displayData && studyStats(displayData, validRange ? filters : { ...filters, period: "today" }, now), [displayData, filters, validRange, now]);
+  // Celebrate the active language reaching the same current-week calendar-day
+  // average shown in StudyAverageOverview. Require an earlier day of study:
+  // otherwise Monday's first seconds would automatically equal the average.
+  const dailyAverageMilestone = useMemo(() => {
+    if (!displayData) return null;
+    const today = localDay(now);
+    const monday = currentWeekStart(today);
+    const entries = studyEntries(displayData).filter(entry =>
+      entry.language === language && entry.date >= monday && entry.date <= today && entry.seconds > 0);
+    const earlierSeconds = entries.reduce((sum, entry) => sum + (entry.date < today ? entry.seconds : 0), 0);
+    const todaySeconds = entries.reduce((sum, entry) => sum + (entry.date === today ? entry.seconds : 0), 0);
+    const daysElapsed = Math.round((Date.parse(today) - Date.parse(monday)) / 86400000) + 1;
+    const averageSeconds = (earlierSeconds + todaySeconds) / daysElapsed;
+    return earlierSeconds > 0 && todaySeconds > 0 && todaySeconds >= averageSeconds
+      ? { day: today, language } : null;
+  }, [displayData, language, now]);
+  useEffect(() => {
+    if (!dailyAverageMilestone) return;
+    celebrateAchievement(
+      `study-weekly-average:${dailyAverageMilestone.language}:${dailyAverageMilestone.day}`,
+      "Média semanal alcançada! 🎉",
+      "Parabéns! Seu tempo de estudo de hoje atingiu ou superou a média desta semana."
+    );
+  }, [dailyAverageMilestone]);
+
   // Milestones use the complete history, regardless of the dashboard period filter.
   const accumulatedSeconds = useMemo(() => displayData
     ? studyEntries(displayData).reduce((sum, entry) => sum + entry.seconds, 0) : 0, [displayData]);
