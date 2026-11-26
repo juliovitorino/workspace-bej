@@ -14,6 +14,7 @@ import {
 } from "react";
 import type { MentalIntention } from "../types/hashmap";
 import { ConnectedSpeechButton } from "./ConnectedSpeechStudio";
+import { ShareStudyButton, studyShareText } from "./ShareStudyButton";
 import {
   generateInterpretationStory,
   type StoryGenerationResult
@@ -1675,6 +1676,24 @@ export function InterpretationPanel({
                 flexWrap: "wrap"
               }}
             >
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
+                <span style={{ fontSize: "0.8rem", fontWeight: 600 }}>{sourceLanguage}</span>
+                <ShareStudyButton className="secondary-button"
+                  label={`${t("stories.story")} — ${localizedLanguageName(sourceLanguage)}: ${sourceLanguage}`}
+                  content={() => studyShareText([
+                    story.sourceTitle,
+                    ...story.paragraphs.map(paragraph => paragraph.sourceText)
+                  ])} />
+              </div>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
+                <span style={{ fontSize: "0.8rem", fontWeight: 600 }}>{language}</span>
+                <ShareStudyButton className="secondary-button"
+                  label={`${t("stories.story")} — ${localizedLanguageName(language)}: ${language}`}
+                  content={() => studyShareText([
+                    story.title,
+                    ...story.paragraphs.map(paragraph => paragraph.text)
+                  ])} />
+              </div>
               <button
                 type="button"
                 className="secondary-button"
