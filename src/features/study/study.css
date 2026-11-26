@@ -436,3 +436,5 @@
 #study-time-by-module .study-rank-detail-positions strong { font-size: 19px; }
 #study-time-by-module .study-rank-detail-change { font-size: 12px; }
 #study-time-by-module .study-rank-detail-close { justify-self: end; border: 0; background: transparent; color: inherit; text-decoration: underline; cursor: pointer; padding: 3px; }
+
+#study-time-by-module .study-rank-detail-actions { display: flex; justify-content: space-between; gap: 8px; }
