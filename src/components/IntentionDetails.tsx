@@ -1050,14 +1050,14 @@ Mandatório:
           <ShareStudyButton className="secondary-button"
             label={`${t("common.communicativeIntention")} — ${sourceLanguageName} / ${targetLanguageName}`}
             content={() => studyShareText([
-              `${sourceLanguageName} (${sourceLanguage}): ${item.intention}`,
-              `${targetLanguageName} (${language}): ${item.targetIntention ?? item.english ?? ""}`,
+              `${LANGUAGES[sourceLanguage].flag} *${item.intention.trim()}*`,
+              `${LANGUAGES[language].flag} *${(item.targetIntention ?? item.english ?? "").trim()}*`,
               item.pattern?.trim() ? `${t("details.pattern")}: ${item.pattern}` : null,
               item.description?.trim() ? `${t("details.description")}: ${item.description}` : null,
               ...(item.examples ?? []).flatMap((example, index) => [
                 `${t("details.examples")} ${index + 1}:`,
-                example.pt?.trim() ? `${sourceLanguageName}: ${example.pt.trim()}` : null,
-                targetSentence(example)?.trim() ? `${targetLanguageName}: ${targetSentence(example).trim()}` : null
+                example.pt?.trim() ? `${LANGUAGES[sourceLanguage].flag} ${example.pt.trim()}` : null,
+                targetSentence(example)?.trim() ? `${LANGUAGES[language].flag} ${targetSentence(example).trim()}` : null
               ])
             ], createStudyDeepLink({ module: "intention", id: item.id, source: sourceLanguage, target: language }))} />
           <button
