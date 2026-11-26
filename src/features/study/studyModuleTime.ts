@@ -8,11 +8,11 @@ export function moduleDurationParts(seconds: number) {
   return parts.filter(([, value]) => value > 0).slice(0, 2);
 }
 
-export type ModuleValueMode = "both" | "time" | "percentage" | "recent";
+export type ModuleValueMode = "both" | "time" | "percentage" | "recent" | "rankChange";
 
-/** All devices share the cycle: time -> percentage -> last activity -> both -> time. */
-export function nextModuleValueMode(mode: ModuleValueMode): ModuleValueMode {
-  return mode === "time" ? "percentage" : mode === "percentage" ? "recent" : mode === "recent" ? "both" : "time";
+/** The rank-change step is only enabled when a comparable movement exists. */
+export function nextModuleValueMode(mode: ModuleValueMode, hasRankChange = false): ModuleValueMode {
+  return mode === "time" ? "percentage" : mode === "percentage" ? "recent" : mode === "recent" ? (hasRankChange ? "rankChange" : "both") : mode === "rankChange" ? "both" : "time";
 }
 
 /**
