@@ -42,6 +42,17 @@ function renderHighlightedText(text: string, highlight?: string) {
   );
 }
 
+/** Destaca apenas o trecho da intenção no texto compartilhado, se encontrado. */
+function highlightSharedIntention(sentence: string, intent?: string): string {
+  const phrase = intent?.trim();
+  if (!phrase) return sentence;
+  const index = sentence.toLocaleLowerCase().indexOf(phrase.toLocaleLowerCase());
+  if (index < 0) return sentence;
+  return sentence.slice(0, index) +
+    "*" + sentence.slice(index, index + phrase.length) + "*" +
+    sentence.slice(index + phrase.length);
+}
+
 /** Aceita somente links HTTP(S) do YouTube. */
 function getYoutubeUrl(value?: string): string | null {
   if (!value?.trim()) return null;
@@ -1056,8 +1067,8 @@ Mandatório:
               item.description?.trim() ? `${t("details.description")}: ${item.description}` : null,
               ...(item.examples ?? []).flatMap((example, index) => [
                 `${t("details.examples")} ${index + 1}:`,
-                example.pt?.trim() ? `${LANGUAGES[sourceLanguage].flag} *${example.pt.trim()}*` : null,
-                targetSentence(example)?.trim() ? `${LANGUAGES[language].flag} *${targetSentence(example).trim()}*` : null
+                example.pt?.trim() ? `${LANGUAGES[sourceLanguage].flag} ${highlightSharedIntention(example.pt.trim(), example.ptIntent)}` : null,
+                targetSentence(example)?.trim() ? `${LANGUAGES[language].flag} ${highlightSharedIntention(targetSentence(example).trim(), targetIntent(example))}` : null
               ])
             ], createStudyDeepLink({ module: "intention", id: item.id, source: sourceLanguage, target: language }))} />
           <button
