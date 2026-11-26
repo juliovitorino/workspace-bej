@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { isAuthorMode } from '../../utils/authorMode';
 import { AI_PROVIDER_CHANGED_EVENT, aiAssetPath, getAIProvider, type AIProvider } from '../../config/aiProvider';
 import { buildSmallTalkAnalysisPrompt } from './smallTalkAiPrompt';
 import { loadSmallTalkIndex, loadSmallTalkTopic } from '../../services/smallTalkCatalogService';
@@ -47,6 +48,7 @@ const topicSorter = new Intl.Collator('en-US', { sensitivity: 'base', numeric: t
 
 
 export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceLanguage = "pt-BR", language = "en-US" }: Props) {
+  const authorMode = isAuthorMode();
   const [aiProvider, setAiProvider] = useState<AIProvider>(getAIProvider);
   const [aiMessage, setAiMessage] = useState('');
   const [aiManualPrompt, setAiManualPrompt] = useState('');
@@ -985,7 +987,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
       <label>Pesquisar pergunta <input type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Search questions..." /></label>
       <label>Nível <select value={level} onChange={e => setLevel(e.target.value as LevelFilter)}>{levelOptions.map(l => <option key={l} value={l}>{l === 'all' ? 'Todos' : l === 'unclassified' ? 'Sem classificação' : l.toUpperCase()}</option>)}</select></label>
       <label><input type="checkbox" checked={favoritesOnly} onChange={e => setFavoritesOnly(e.target.checked)} /> Apenas favoritos</label>
-      <label>Ocorrências HelloTalk <select value={occurrenceFilter} onChange={e => setOccurrenceFilter(e.target.value as OccurrenceFilter)}><option value="all">Todas</option><option value="zero">Sem ocorrências (0)</option><option value="low">Baixa (1–2)</option><option value="medium">Média (3–9)</option><option value="high">Alta (10+)</option></select></label>
+      {authorMode && <label>Ocorrências HelloTalk <select value={occurrenceFilter} onChange={e => setOccurrenceFilter(e.target.value as OccurrenceFilter)}><option value="all">Todas</option><option value="zero">Sem ocorrências (0)</option><option value="low">Baixa (1–2)</option><option value="medium">Média (3–9)</option><option value="high">Alta (10+)</option></select></label>}
       <label>Ordenar por ocorrências <select value={occurrenceSort} onChange={e => setOccurrenceSort(e.target.value as OccurrenceSort)}><option value="manual">Ordem personalizada</option><option value="most">Maior ocorrência primeiro</option><option value="least">Menor ocorrência primeiro</option></select></label>
     </div>
     <div className="small-talk-configuration-toggle">
@@ -1107,11 +1109,11 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
           <button type="button" className="small-talk-icon-button" title="Mover card para cima" aria-label="Mover card para cima" disabled={orderedTopicItems[0]?.id === item.id} onClick={() => moveCard(item.id, -1)}><SmallTalkIcon name="arrow-up"/></button>
           <button type="button" className="small-talk-icon-button" title="Mover card para baixo" aria-label="Mover card para baixo" disabled={orderedTopicItems[orderedTopicItems.length - 1]?.id === item.id} onClick={() => moveCard(item.id, 1)}><SmallTalkIcon name="arrow-down"/></button>
         </div>}
-        <div className="small-talk-occurrences" aria-label="Ocorrências desta pergunta no HelloTalk">
+        {authorMode && <div className="small-talk-occurrences" aria-label="Ocorrências desta pergunta no HelloTalk">
           <span>HelloTalk: <strong>{occurrenceCount(item.id)}</strong> ocorrência(s)</span>
           <button type="button" className="small-talk-icon-button" aria-label="Remover uma ocorrência HelloTalk" title="Corrigir ocorrência (-1)" disabled={occurrenceCount(item.id) === 0} onClick={() => changeOccurrence(item.id, -1)}><SmallTalkIcon name="minus"/></button>
           <button type="button" className="small-talk-icon-button" aria-label="Adicionar uma ocorrência HelloTalk" title="Registrar ocorrência (+1)" onClick={() => changeOccurrence(item.id, 1)}><SmallTalkIcon name="plus"/></button>
-        </div>
+        </div>}
         <div className="small-talk-question-heading" role="group" aria-label="Ações da pergunta">
           <button type="button" className="small-talk-icon-button" aria-label="Editar pergunta" title="Editar pergunta" onClick={() => openQuestionEditor(item)}><SmallTalkIcon name="edit"/></button>
           <button type="button" className={`small-talk-icon-button${copiedQuestionId === item.id ? ' small-talk-question-copy-success' : ''}`}
@@ -1120,6 +1122,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
             disabled={!questionFor(item).trim()} onClick={() => void copyQuestion(item)}>
             <SmallTalkIcon name={copiedQuestionId === item.id ? 'check' : 'copy'}/>
           </button>
+          {editorId !== item.id && <button type="button" className="small-talk-icon-button" aria-label={shown ? 'Ocultar resposta' : 'Ver resposta'} title={shown ? 'Ocultar resposta' : 'Ver resposta'} aria-pressed={shown} onClick={() => reveal(item.id)}><SmallTalkIcon name={shown ? 'eye-off' : 'eye'}/></button>}
           {questionCopyError?.id === item.id && <span role="alert" className="small-talk-question-copy-error">{questionCopyError.message}</span>}
           {questionOverrides[item.id] && <button type="button" className="small-talk-restore-button" onClick={() => restoreQuestion(item.id)}>Restaurar pergunta</button>}
         </div>
@@ -1129,7 +1132,8 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
           <div className="small-talk-actions"><button type="button" className="primary-button" onClick={saveQuestionEditor}>Salvar pergunta</button>
             <button type="button" className="secondary-button" onClick={() => setQuestionEditorId(null)}>Cancelar</button></div>
         </div>}
-        <p className="settings-dialog-help">{item.level?.toUpperCase() ?? 'Nível pendente'} · {item.reviewStatus === 'pending' ? 'Revisão editorial pendente' : item.reviewStatus}</p>
+        {authorMode && <p className="settings-dialog-help">{item.level?.toUpperCase() ?? 'Nível pendente'} · {item.reviewStatus === 'pending' ? 'Revisão editorial pendente' : item.reviewStatus}</p>}
+        {(shown || editorId === item.id) && <hr className="small-talk-section-divider" />}
         {editorId === item.id ? <div className="small-talk-actions small-talk-edit-toolbar" role="toolbar" aria-label="Ferramentas de edição da resposta">
           <button type="button" className="small-talk-icon-button" aria-label="Limpar texto da resposta" title="Borracha — limpar o texto" disabled={!draft} onClick={clearAnswerDraft}>
             <svg aria-hidden="true" viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -1158,9 +1162,8 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
             <SmallTalkIcon name={answerPasteSuccess ? 'check' : 'paste'}/>
           </button>
           {answerCopyMessage && <span role="status" className="settings-dialog-help">{answerCopyMessage}</span>}
-        </div> : <div className="small-talk-actions">
+        </div> : shown && <div className="small-talk-actions">
           <button type="button" className="small-talk-icon-button" aria-label={favorites.includes(item.id) ? 'Desfavoritar' : 'Favoritar'} title={favorites.includes(item.id) ? 'Desfavoritar' : 'Favoritar'} aria-pressed={favorites.includes(item.id)} onClick={() => toggleFavorite(item.id)}><SmallTalkIcon name="star" filled={favorites.includes(item.id)}/></button>
-          <button type="button" className="small-talk-icon-button" aria-label={shown ? 'Ocultar resposta' : 'Ver resposta'} title={shown ? 'Ocultar resposta' : 'Ver resposta'} aria-pressed={shown} disabled={!original} onClick={() => reveal(item.id)}><SmallTalkIcon name={shown ? 'eye-off' : 'eye'}/></button>
           <button type="button" className="small-talk-icon-button" aria-label="Duplicar card" title="Duplicar este card no mesmo tópico" onClick={() => duplicateCard(item)}><SmallTalkIcon name="duplicate"/></button>
           <button type="button" className="small-talk-icon-button" aria-label="Editar resposta" title="Editar resposta" onClick={() => openEditor(item)}><SmallTalkIcon name="edit"/></button>
           <button type="button" className="small-talk-icon-button" aria-label="Excluir resposta ativa" title="Excluir resposta ativa" disabled={!original} onClick={() => removeAnswer(item.id)}><SmallTalkIcon name="trash"/></button>
