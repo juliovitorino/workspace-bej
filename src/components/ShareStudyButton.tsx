@@ -10,9 +10,9 @@ const messages = {
   fr: { share: "Partager", copied: "Contenu copié pour le partage", error: "Impossible de partager ou copier dans ce navigateur." }
 };
 
-export function studyShareText(lines: Array<string | null | undefined>): string {
+export function studyShareText(lines: Array<string | null | undefined>, deepLink?: string): string {
   return [...lines.map(line => line?.trim()).filter((line): line is string => Boolean(line)),
-    "📚 Brazilian English Journey", BEJ_URL].join("\n\n");
+    "📚 Brazilian English Journey", deepLink ?? BEJ_URL].join("\n\n");
 }
 
 async function copyForSharing(text: string): Promise<void> {
