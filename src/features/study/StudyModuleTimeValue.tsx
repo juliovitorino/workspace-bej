@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import type { ModuleValueMode } from "./studyModuleTime";
 import { moduleRecencyParts } from "./studyModuleRecency";
@@ -41,14 +42,14 @@ export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivit
     : null;
 
   return (
-    <span className="study-module-value-wrapper" onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setDetailOpen(false); }}>
+    <>
     <button
       type="button"
       className="study-module-value"
-      onClick={() => { if (mode === "rankChange" && movement && previousRank !== undefined && currentRank !== undefined) setDetailOpen(open => !open); else onToggle(); }}
+      onClick={onToggle}
       aria-live="polite"
       aria-label={`${moduleName}: ${mode === "rankChange" ? movementLabel ?? "Sem alteração de posição" : visibleValue}. ${t("study.toggleModuleTimePercentage")}`}
-      title={mode === "rankChange" && movement ? labels[0] : t("study.toggleModuleTimePercentage")}
+      title={t("study.toggleModuleTimePercentage")}
     >
       {mode === "rankChange" && movement ? (
         <svg
@@ -66,14 +67,19 @@ export function StudyModuleTimeValue({ moduleName, time, percentage, lastActivit
         </svg>
       ) : visibleValue}
     </button>
-    {detailOpen && mode === "rankChange" && movement && previousRank !== undefined && currentRank !== undefined && (
-      <span className="study-rank-detail" role="group" aria-label={`${moduleName}: ${labels[0]}`}>
-        <span className="study-rank-detail-heading">{labels[0]}</span>
-        <span className="study-rank-detail-positions"><span><small>{labels[1]}</small><strong>{previousRank}º</strong></span><span aria-hidden="true">→</span><span><small>{labels[2]}</small><strong>{currentRank}º</strong></span></span>
-        <span className="study-rank-detail-change">{movementLabel}</span>
-        <span className="study-rank-detail-actions"><button type="button" className="study-rank-detail-close" onClick={() => setDetailOpen(false)}>{labels[3]}</button><button type="button" className="study-rank-detail-close" onClick={() => { setDetailOpen(false); onToggle(); }}>{labels[4]} →</button></span>
-      </span>
+    {mode === "rankChange" && movement && previousRank !== undefined && currentRank !== undefined && (
+      <button type="button" className="study-rank-info-button" aria-label={`${moduleName}: ${labels[0]}`} title={labels[0]} onClick={() => setDetailOpen(true)}>ⓘ</button>
     )}
-    </span>
+    {detailOpen && mode === "rankChange" && movement && previousRank !== undefined && currentRank !== undefined && createPortal(
+      <div className="study-rank-detail-overlay" onClick={() => setDetailOpen(false)}>
+        <section className="study-rank-detail-dialog" role="dialog" aria-modal="true" aria-label={`${moduleName}: ${labels[0]}`} onClick={event => event.stopPropagation()}>
+          <strong>{moduleName} — {labels[0]}</strong>
+          <div className="study-rank-detail-positions"><span><small>{labels[1]}</small><strong>{previousRank}º</strong></span><span aria-hidden="true">→</span><span><small>{labels[2]}</small><strong>{currentRank}º</strong></span></div>
+          <span>{movementLabel}</span>
+          <button type="button" className="study-rank-detail-close" onClick={() => setDetailOpen(false)}>{labels[3]}</button>
+        </section>
+      </div>, document.body
+    )}
+    </>
   );
 }
