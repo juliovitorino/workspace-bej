@@ -10,6 +10,7 @@ import { SmallTalkWalking } from './SmallTalkWalking';
 import { SmallTalkIcon } from './SmallTalkIcon';
 import { ShareStudyButton, studyShareText } from '../../components/ShareStudyButton';
 import { createStudyDeepLink, type StudyDeepLink } from '../../utils/studyDeepLink';
+import type { StudentLanguage } from '../../config/languages';
 import { GoogleTranslateIcon } from '../../components/GoogleTranslateIcon';
 import { printableSmallTalkItems, smallTalkPrintNumbers, nextSmallTalkCardOrder } from './smallTalkPrintOrder';
 import { SMALL_TALK_CARD_ORDER_KEY, readCardOrders, saveCardOrders, updateCardOrder } from './smallTalkCardOrderStorage';
@@ -23,6 +24,8 @@ interface Props {
   onStudyState?: (active: boolean, mode: 'manual' | 'walking') => void;
   onWalkingChange?: (active: boolean) => void;
   deepLink?: StudyDeepLink;
+  sourceLanguage?: StudentLanguage;
+  language?: StudentLanguage;
 }
 
 type OccurrenceFilter = 'all' | 'zero' | 'low' | 'medium' | 'high';
@@ -43,7 +46,7 @@ function topicDisplayName(title: string): string {
 const topicSorter = new Intl.Collator('en-US', { sensitivity: 'base', numeric: true });
 
 
-export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink }: Props) {
+export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceLanguage = "pt-BR", language = "en-US" }: Props) {
   const [aiProvider, setAiProvider] = useState<AIProvider>(getAIProvider);
   const [aiMessage, setAiMessage] = useState('');
   const [aiManualPrompt, setAiManualPrompt] = useState('');
@@ -1165,7 +1168,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink }: Props
             content={() => studyShareText([
               `❓ ${questionFor(item).trim()}`,
               original.trim() ? `💬 ${original.trim()}` : null
-            ], createStudyDeepLink({ module: 'small-talk', id: item.id, topic: topicId, source: 'pt-BR', target: 'en-US' }))} />
+            ], createStudyDeepLink({ module: 'small-talk', id: item.id, topic: topicId, source: sourceLanguage, target: language }))} />
           <button type="button" className="small-talk-icon-button" aria-label="Imprimir esta pergunta e resposta" title="Imprimir apenas este card (A4)" disabled={!questionFor(item).trim()} onClick={() => printCard(item)}><SmallTalkIcon name="printer"/></button>
           <button type="button" className="small-talk-icon-button" aria-label="Exportar JSON público deste card"
             title="Exportar JSON público deste card" onClick={() => openCardExport(item)}><SmallTalkIcon name="clipboard"/></button>
