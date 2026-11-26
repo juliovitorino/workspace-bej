@@ -452,3 +452,7 @@
 .study-drive-progress-dialog > button { display: block; margin-left: auto; }
 @keyframes study-drive-pulse { from { opacity: .45; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .study-drive-progress-list .active .study-drive-progress-mark { animation: none; } }
+
+/* Keep period captions on a separate line beneath each ranking comparison heading. */
+.study-rank-detail-positions .study-rank-period-label { display: block; margin-top: 4px; font-size: 11px; line-height: 1.35; font-weight: 400; color: var(--muted); }
+.study-rank-detail-positions > span:not(:nth-child(2)) { min-width: 0; }
