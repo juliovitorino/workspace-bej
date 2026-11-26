@@ -1115,7 +1115,6 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
           <button type="button" className="small-talk-icon-button" aria-label="Adicionar uma ocorrência HelloTalk" title="Registrar ocorrência (+1)" onClick={() => changeOccurrence(item.id, 1)}><SmallTalkIcon name="plus"/></button>
         </div>}
         <div className="small-talk-question-heading" role="group" aria-label="Ações da pergunta">
-          <span className="settings-dialog-help">PERGUNTA</span>
           <button type="button" className="small-talk-icon-button" aria-label="Editar pergunta" title="Editar pergunta" onClick={() => openQuestionEditor(item)}><SmallTalkIcon name="edit"/></button>
           <button type="button" className={`small-talk-icon-button${copiedQuestionId === item.id ? ' small-talk-question-copy-success' : ''}`}
             aria-label={copiedQuestionId === item.id ? 'Pergunta copiada' : 'Copiar pergunta'}
@@ -1123,6 +1122,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
             disabled={!questionFor(item).trim()} onClick={() => void copyQuestion(item)}>
             <SmallTalkIcon name={copiedQuestionId === item.id ? 'check' : 'copy'}/>
           </button>
+          {editorId !== item.id && <button type="button" className="small-talk-icon-button" aria-label={shown ? 'Ocultar resposta' : 'Ver resposta'} title={shown ? 'Ocultar resposta' : 'Ver resposta'} aria-pressed={shown} onClick={() => { if (shown && editorId === item.id) closeEditor(); reveal(item.id); }}><SmallTalkIcon name={shown ? 'eye-off' : 'eye'}/></button>
           {questionCopyError?.id === item.id && <span role="alert" className="small-talk-question-copy-error">{questionCopyError.message}</span>}
           {questionOverrides[item.id] && <button type="button" className="small-talk-restore-button" onClick={() => restoreQuestion(item.id)}>Restaurar pergunta</button>}
         </div>
@@ -1135,7 +1135,6 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
         {authorMode && <p className="settings-dialog-help">{item.level?.toUpperCase() ?? 'Nível pendente'} · {item.reviewStatus === 'pending' ? 'Revisão editorial pendente' : item.reviewStatus}</p>}
         <hr className="small-talk-section-divider" />
         <div className="small-talk-question-heading" role="group" aria-label="Ações da resposta">
-          <span className="settings-dialog-help">RESPOSTA</span>
           {editorId !== item.id && <button type="button" className="small-talk-icon-button" aria-label={shown ? 'Ocultar resposta' : 'Ver resposta'} title={shown ? 'Ocultar resposta' : 'Ver resposta'} aria-pressed={shown} onClick={() => { if (shown && editorId === item.id) closeEditor(); reveal(item.id); }}><SmallTalkIcon name={shown ? 'eye-off' : 'eye'}/></button>}
         </div>
         {editorId === item.id ? <div className="small-talk-actions small-talk-edit-toolbar" role="toolbar" aria-label="Ferramentas de edição da resposta">
