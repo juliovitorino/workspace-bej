@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1304,
+    "totalIntentions": 1305,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -54485,6 +54485,146 @@
           "id": "d15da7fc-042e-4619-a8ba-1f340c495ad7",
           "exampleItem": "A liberdade de trabalhar de qualquer lugar é impagável!",
           "intent": "é impagável"
+        }
+      ]
+    },
+    {
+      "id": "por-quanto-tempo-vai-estar-ficar-8f3a21c7-5d94-4e60-b182-a7c095d3e246",
+      "intention": "Por quanto tempo vai ficar / estar...? / Até quando vai ficar / estar...? / Quanto tempo vai durar...?",
+      "pattern": "por quanto tempo + sujeito + vai estar ou ficar + condição ou lugar / até quando + sujeito + vai estar ou ficar + condição ou lugar / quanto tempo + algo + vai durar",
+      "description": "Expressa uma pergunta sobre a duração futura de um estado, condição, situação, permanência ou característica. No inglês americano, a construção 'How long will + subject + be + complement?' permite perguntar por quanto tempo alguém estará em determinado lugar, permanecerá em determinada condição ou quanto tempo uma situação ou evento terá de duração. Em português brasileiro, pode corresponder a 'por quanto tempo você vai ficar...?', 'até quando você vai estar...?', 'quanto tempo isso vai durar?' ou 'por quanto tempo isso vai continuar assim?'. O verbo 'be' não possui uma tradução única, podendo representar 'ser', 'estar' ou 'ficar', dependendo do contexto. A intenção central é descobrir a duração prevista de uma condição ou permanência futura, sem necessariamente envolver obrigação ou esforço.",
+      "category": "expressions",
+      "searchTerms": [
+        "por quanto tempo",
+        "até quando",
+        "quanto tempo vai ficar",
+        "quanto tempo vai estar",
+        "por quanto tempo vai ficar",
+        "por quanto tempo vai estar",
+        "por quanto tempo você vai ficar",
+        "por quanto tempo você vai estar",
+        "até quando você vai ficar",
+        "até quando você vai estar",
+        "quanto tempo ficará",
+        "quanto tempo estará",
+        "quanto tempo será",
+        "quanto tempo vai durar",
+        "por quanto tempo ficará disponível",
+        "até quando estará disponível",
+        "por quanto tempo vai permanecer",
+        "quanto tempo vai continuar",
+        "até quando vai continuar",
+        "quanto tempo vai ficar fora",
+        "quanto tempo vai ficar aqui",
+        "quanto tempo vai ficar lá",
+        "quanto tempo vai estar ocupado",
+        "quanto tempo vai estar ausente",
+        "duração futura",
+        "permanência",
+        "estado futuro",
+        "condição futura"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])por\\s+quanto\\s+tempo\\b",
+        "(?<![\\p{L}\\p{N}_])até\\s+quando\\b",
+        "(?<![\\p{L}\\p{N}_])quanto\\s+tempo\\s+(?:(?:\\p{L}+[\\s,]+){0,5})?(?:vai|vão|irá|irão)\\s+(?:ficar|estar|ser|permanecer|durar|continuar)\\b",
+        "(?<![\\p{L}\\p{N}_])quanto\\s+tempo\\s+(?:(?:\\p{L}+[\\s,]+){0,5})?(?:ficará|ficarão|estará|estarão|será|serão|permanecerá|durará|continuará)\\b",
+        "(?<![\\p{L}\\p{N}_])(?:vai|vão|irá|irão)\\s+(?:ficar|estar|permanecer)\\s+(?:aqui|lá|fora|ausente|ocupado|ocupada|disponível|online)\\b"
+      ],
+      "tags": [
+        "duração",
+        "tempo",
+        "futuro",
+        "permanência",
+        "estado",
+        "condição",
+        "localização",
+        "disponibilidade",
+        "planejamento",
+        "previsões",
+        "perguntas",
+        "conversação cotidiana",
+        "gerador de frases",
+        "inglês americano"
+      ],
+      "related": [],
+      "structure": "A estrutura principal é 'HOW LONG WILL + SUBJECT + BE + COMPLEMENT?'. 'How long' pergunta sobre duração, 'will' indica futuro e 'be' representa um estado, condição, localização ou característica. O complemento pode ser um adjetivo, expressão de lugar, condição ou duração. Exemplos: 'How long will you be here?' (Por quanto tempo você vai ficar aqui?), 'How long will you be busy?' (Até quando você vai estar ocupado?), 'How long will she be away?' (Por quanto tempo ela vai ficar fora?) e 'How long will the meeting be?' (Quanto tempo vai durar a reunião?). A estrutura permanece igual com diferentes sujeitos: 'How long will I be...?', 'How long will you be...?', 'How long will he be...?', 'How long will she be...?', 'How long will we be...?', 'How long will they be...?' e 'How long will it be...?'. O verbo 'be' permanece na forma base após 'will', independentemente do sujeito. O complemento é normalmente necessário para deixar clara a condição ou situação: 'here', 'there', 'away', 'busy', 'available', 'online', 'in Brazil', 'on vacation' ou 'two hours long'. A pergunta 'How long will you be?' isoladamente geralmente precisa de contexto adicional para ter um significado claro. As respostas podem utilizar 'I'll be here for two weeks' (Vou ficar aqui por duas semanas), 'She'll be away until Friday' (Ela ficará fora até sexta-feira) e 'It'll be about an hour long' (Terá cerca de uma hora de duração). 'For' indica um período de duração, enquanto 'until' indica um limite temporal. A expressão portuguesa 'até quando' frequentemente corresponde a 'how long' quando a intenção é perguntar sobre a duração de um estado. Entretanto, quando a intenção é descobrir especificamente uma data ou horário limite, 'until when' ou 'how much longer' podem ser mais adequados, dependendo do contexto. É importante distinguir 'HOW LONG WILL + SUBJECT + BE' de 'HOW LONG WILL + SUBJECT + HAVE TO + VERB': a primeira pergunta sobre duração de estado ou permanência, enquanto a segunda pergunta por quanto tempo uma obrigação continuará existindo. Também se diferencia de 'HOW LONG WILL + SUBJECT + LAST?', que utiliza o verbo 'last' para perguntar diretamente quanto tempo um evento ou situação durará. Em muitos contextos, 'How long will the meeting last?' é mais comum do que 'How long will the meeting be?', embora ambas sejam compreensíveis e naturais. A estrutura é muito produtiva para conversas sobre viagens, trabalho, disponibilidade, reuniões, relacionamentos, saúde e planejamento.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a1c42e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "Por quanto tempo você vai ficar aqui?",
+          "intent": "Por quanto tempo você vai ficar aqui"
+        },
+        {
+          "id": "b2d53f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "Até quando você vai estar ocupado?",
+          "intent": "Até quando você vai estar ocupado"
+        },
+        {
+          "id": "c3e64085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "Por quanto tempo ela vai ficar fora?",
+          "intent": "Por quanto tempo ela vai ficar fora"
+        },
+        {
+          "id": "d4f75196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "Quanto tempo vai durar a reunião?",
+          "intent": "Quanto tempo vai durar a reunião"
+        },
+        {
+          "id": "e50862a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "Por quanto tempo você vai ficar no Brasil?",
+          "intent": "Por quanto tempo você vai ficar no Brasil"
+        },
+        {
+          "id": "f61973b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "Até quando esse serviço vai estar disponível?",
+          "intent": "Até quando esse serviço vai estar disponível"
+        },
+        {
+          "id": "a72a84c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "Por quanto tempo você vai ficar online?",
+          "intent": "Por quanto tempo você vai ficar online"
+        },
+        {
+          "id": "b83b95da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "Quanto tempo você vai ficar de férias?",
+          "intent": "Quanto tempo você vai ficar de férias"
+        },
+        {
+          "id": "c94ca6eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "Por quanto tempo eles vão ficar ausentes?",
+          "intent": "Por quanto tempo eles vão ficar ausentes"
+        },
+        {
+          "id": "d05db7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "Até quando o sistema vai estar fora do ar?",
+          "intent": "Até quando o sistema vai estar fora do ar"
+        },
+        {
+          "id": "e16ec80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "Por quanto tempo você vai estar disponível para conversar?",
+          "intent": "Por quanto tempo você vai estar disponível"
+        },
+        {
+          "id": "f27fd91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "Quanto tempo o escritório vai ficar fechado?",
+          "intent": "Quanto tempo o escritório vai ficar fechado"
+        },
+        {
+          "id": "a380ea2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "Por quanto tempo você vai ficar sozinho em casa?",
+          "intent": "Por quanto tempo você vai ficar sozinho em casa"
+        },
+        {
+          "id": "b491fb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "Quanto tempo vai durar o treinamento?",
+          "intent": "Quanto tempo vai durar o treinamento"
+        },
+        {
+          "id": "c5a20c41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "Até quando você vai estar de licença?",
+          "intent": "Até quando você vai estar de licença"
         }
       ]
     }

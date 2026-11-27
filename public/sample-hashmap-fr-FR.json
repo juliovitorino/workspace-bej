@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1304,
+    "totalIntentions": 1305,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -55205,6 +55205,133 @@
           "id": "d15da7fc-042e-4619-a8ba-1f340c495ad7",
           "exampleItem": "La liberté de travailler de n'importe où n'a pas de prix !",
           "intent": "n'a pas de prix"
+        }
+      ]
+    },
+    {
+      "id": "por-quanto-tempo-vai-estar-ficar-8f3a21c7-5d94-4e60-b182-a7c095d3e246",
+      "intention": "Combien de temps vas-tu rester… ? / Jusqu’à quand seras-tu… ? / Combien de temps cela va-t-il durer ?",
+      "pattern": "combien de temps + futur de être / rester / durer + complément / jusqu’à quand + futur + complément",
+      "description": "Permet de demander la durée prévue d'un état, d'une situation, d'une disponibilité ou d'un séjour à venir. Combien de temps porte sur une durée ; jusqu'à quand demande plus précisément un terme ou une échéance. On emploie être pour un état ou une localisation, rester pour une présence ou une situation qui se prolonge, et durer pour un événement. Ces questions n'impliquent pas nécessairement une obligation ou un effort.",
+      "category": "expressions",
+      "searchTerms": [
+        "combien de temps",
+        "jusqu’à quand",
+        "combien de temps vas-tu rester",
+        "combien de temps seras-tu",
+        "combien de temps sera-t-elle absente",
+        "jusqu’à quand seras-tu occupé",
+        "combien de temps va durer",
+        "combien de temps restera-t-il fermé",
+        "séjour au Brésil",
+        "disponibilité",
+        "en ligne",
+        "en vacances",
+        "absent",
+        "hors service",
+        "en congé",
+        "durée future",
+        "état futur",
+        "situation future"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])combien\\s+de\\s+temps(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])jusqu['’]à\\s+quand(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "durée",
+        "temps",
+        "futur",
+        "séjour",
+        "état",
+        "situation",
+        "localisation",
+        "disponibilité",
+        "planification",
+        "prévisions",
+        "questions",
+        "conversation quotidienne",
+        "construction de phrases",
+        "anglais américain"
+      ],
+      "related": [],
+      "structure": "Pour demander une durée future, utiliser Combien de temps + verbe au futur + complément : Combien de temps seras-tu ici ? Combien de temps restera-t-elle absente ? Le futur proche est courant à l'oral : Combien de temps vas-tu rester ici ? Avec une inversion, le pronom suit le verbe : seras-tu, seront-ils ; un t de liaison apparaît dans sera-t-elle ou restera-t-il. Quand le sujet est un nom, on peut le reprendre par un pronom : Combien de temps le bureau restera-t-il fermé ? Dans une question familière sans inversion : Tu vas rester ici combien de temps ? Jusqu'à quand demande une date, une heure ou un terme : Jusqu'à quand seras-tu en congé ? On peut répondre Je resterai ici pendant deux semaines ou Elle sera absente jusqu'à vendredi. Pendant indique une durée et jusqu'à indique une limite. Pour un événement, durer est souvent le choix le plus naturel : Combien de temps va durer la réunion ? Le complément précise l'état ou la situation : disponible, occupé, absent, en ligne, au Brésil, en vacances. Les adjectifs s'accordent avec la personne concernée : occupé ou occupée, seul ou seule. Distinguer ces questions de Combien de temps devras-tu rester… ?, qui ajoute une obligation. Selon le contexte, Combien de temps encore… ? demande la durée restante d'une situation déjà en cours.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a1c42e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "Combien de temps vas-tu rester ici ?",
+          "intent": "Combien de temps vas-tu rester ici"
+        },
+        {
+          "id": "b2d53f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "Jusqu'à quand seras-tu occupé ?",
+          "intent": "Jusqu'à quand seras-tu occupé"
+        },
+        {
+          "id": "c3e64085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "Combien de temps sera-t-elle absente ?",
+          "intent": "Combien de temps sera-t-elle absente"
+        },
+        {
+          "id": "d4f75196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "Combien de temps va durer la réunion ?",
+          "intent": "Combien de temps va durer la réunion"
+        },
+        {
+          "id": "e50862a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "Combien de temps vas-tu rester au Brésil ?",
+          "intent": "Combien de temps vas-tu rester au Brésil"
+        },
+        {
+          "id": "f61973b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "Jusqu'à quand ce service sera-t-il disponible ?",
+          "intent": "Jusqu'à quand ce service sera-t-il disponible"
+        },
+        {
+          "id": "a72a84c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "Combien de temps vas-tu rester en ligne ?",
+          "intent": "Combien de temps vas-tu rester en ligne"
+        },
+        {
+          "id": "b83b95da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "Combien de temps vas-tu rester en vacances ?",
+          "intent": "Combien de temps vas-tu rester en vacances"
+        },
+        {
+          "id": "c94ca6eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "Combien de temps seront-ils absents ?",
+          "intent": "Combien de temps seront-ils absents"
+        },
+        {
+          "id": "d05db7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "Jusqu'à quand le système sera-t-il hors service ?",
+          "intent": "Jusqu'à quand le système sera-t-il hors service"
+        },
+        {
+          "id": "e16ec80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "Combien de temps seras-tu disponible pour discuter ?",
+          "intent": "Combien de temps seras-tu disponible"
+        },
+        {
+          "id": "f27fd91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "Combien de temps le bureau restera-t-il fermé ?",
+          "intent": "Combien de temps le bureau restera-t-il fermé"
+        },
+        {
+          "id": "a380ea2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "Combien de temps vas-tu rester seul à la maison ?",
+          "intent": "Combien de temps vas-tu rester seul à la maison"
+        },
+        {
+          "id": "b491fb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "Combien de temps va durer la formation ?",
+          "intent": "Combien de temps va durer la formation"
+        },
+        {
+          "id": "c5a20c41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "Jusqu'à quand seras-tu en congé ?",
+          "intent": "Jusqu'à quand seras-tu en congé"
         }
       ]
     }

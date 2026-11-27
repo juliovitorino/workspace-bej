@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1304,
+    "totalIntentions": 1305,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -78641,6 +78641,133 @@
         }
       ],
       "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "por-quanto-tempo-vai-estar-ficar-8f3a21c7-5d94-4e60-b182-a7c095d3e246",
+      "intention": "How long will... be? / How long will... stay?",
+      "pattern": "how long will + subject + be + complement?",
+      "description": "Asks about the future duration of a state, condition, situation, stay, or characteristic. In American English, 'How long will + subject + be + complement?' asks how long someone will remain in a place or condition, or how long a situation or event will last. 'Be' can describe a state, location, or characteristic, depending on context. The main intention is to find out the expected duration of a future condition or stay, without necessarily implying obligation or effort.",
+      "category": "expressions",
+      "searchTerms": [
+        "how long will",
+        "how long will you be",
+        "how long will she be",
+        "how long will they be",
+        "how long will it be",
+        "how long will you stay",
+        "how long will you be here",
+        "how long will you be away",
+        "how long will you be busy",
+        "how long will it be available",
+        "how long will the meeting be",
+        "how much longer will",
+        "until when",
+        "future duration",
+        "stay",
+        "future state",
+        "future condition",
+        "availability"
+      ],
+      "validationPatterns": [
+        "\\bhow\\s+(?:much\\s+longer|long)\\s+will\\s+(?:(?!have\\b|to\\b|be\\b)[a-z]+\\s+){1,8}be\\b(?!\\s+(?:able|required|obliged)\\s+to\\b)",
+        "\\bhow\\s+long\\s+will\\s+(?:I|you|he|she|we|they)\\s+stay\\b"
+      ],
+      "tags": [
+        "duration",
+        "time",
+        "future",
+        "staying",
+        "state",
+        "condition",
+        "location",
+        "availability",
+        "planning",
+        "predictions",
+        "questions",
+        "everyday conversation",
+        "sentence building",
+        "American English"
+      ],
+      "related": [],
+      "structure": "The main pattern is 'How long will + subject + be + complement?'. 'How long' asks about duration, 'will' marks the future, and 'be' describes a state, condition, location, or characteristic. The complement may be an adjective, place phrase, condition, or duration: 'How long will you be here?', 'How long will you be busy?', 'How long will she be away?', and 'How long will the meeting be?'. Use the same pattern with 'I', 'you', 'he', 'she', 'we', 'they', or 'it'. 'Be' remains in its base form after 'will', regardless of the subject. Complements such as 'here', 'there', 'away', 'busy', 'available', 'online', 'in Brazil', or 'on vacation' make the intended situation clear. 'How long will you be?' on its own usually needs additional context. Answers include 'I'll be here for two weeks', 'She'll be away until Friday', and 'It'll be about an hour long'. 'For' introduces a period of duration; 'until' identifies an endpoint. When asking specifically about a deadline or end date, 'Until when...?' can be appropriate; 'How much longer...?' asks about remaining duration. Distinguish this state-or-stay question from 'How long will + subject + have to + verb?', which asks how long an obligation will continue, and from 'How long will + subject + last?', which directly asks how long an event or situation will continue. 'How long will the meeting last?' is often more common than 'How long will the meeting be?', though both are natural and understandable. The pattern is useful for travel, work, availability, meetings, relationships, health, and planning.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a1c42e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "How long will you be here?",
+          "intent": "How long will you be here"
+        },
+        {
+          "id": "b2d53f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "How long will you be busy?",
+          "intent": "How long will you be busy"
+        },
+        {
+          "id": "c3e64085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "How long will she be away?",
+          "intent": "How long will she be away"
+        },
+        {
+          "id": "d4f75196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "How long will the meeting be?",
+          "intent": "How long will the meeting be"
+        },
+        {
+          "id": "e50862a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "How long will you be in Brazil?",
+          "intent": "How long will you be in Brazil"
+        },
+        {
+          "id": "f61973b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "How long will this service be available?",
+          "intent": "How long will this service be available"
+        },
+        {
+          "id": "a72a84c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "How long will you be online?",
+          "intent": "How long will you be online"
+        },
+        {
+          "id": "b83b95da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "How long will you be on vacation?",
+          "intent": "How long will you be on vacation"
+        },
+        {
+          "id": "c94ca6eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "How long will they be away?",
+          "intent": "How long will they be away"
+        },
+        {
+          "id": "d05db7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "How long will the system be down?",
+          "intent": "How long will the system be down"
+        },
+        {
+          "id": "e16ec80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "How long will you be available to talk?",
+          "intent": "How long will you be available"
+        },
+        {
+          "id": "f27fd91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "How long will the office be closed?",
+          "intent": "How long will the office be closed"
+        },
+        {
+          "id": "a380ea2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "How long will you be home alone?",
+          "intent": "How long will you be home alone"
+        },
+        {
+          "id": "b491fb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "How long will the training be?",
+          "intent": "How long will the training be"
+        },
+        {
+          "id": "c5a20c41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "How long will you be on leave?",
+          "intent": "How long will you be on leave"
+        }
+      ]
     }
   ]
 }

@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1304,
+    "totalIntentions": 1305,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -54667,6 +54667,135 @@
         }
       ],
       "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "por-quanto-tempo-vai-estar-ficar-8f3a21c7-5d94-4e60-b182-a7c095d3e246",
+      "intention": "¿Cuánto tiempo vas a quedarte / estar...? / ¿Hasta cuándo vas a estar...? / ¿Cuánto tiempo va a durar...?",
+      "pattern": "cuánto tiempo + sujeto + ir a estar / quedarse + condición o lugar / hasta cuándo + sujeto + ir a estar / quedarse / cuánto tiempo + algo + ir a durar",
+      "description": "Pregunta por la duración futura de un estado, una condición, una situación o una estancia. En español se utilizan «¿Cuánto tiempo vas a estar...?», «¿Cuánto tiempo vas a quedarte...?» y «¿Hasta cuándo vas a estar...?». La pregunta puede referirse a una ubicación, una ausencia, la disponibilidad de alguien o la duración de un evento. En inglés americano, «How long will + subject + be + complement?» permite preguntar por estos estados o situaciones futuros. El verbo «be» puede corresponder a «ser», «estar» o «quedarse», según el contexto. La intención es conocer la duración prevista, sin implicar necesariamente una obligación ni el esfuerzo para realizar una tarea.",
+      "category": "expressions",
+      "searchTerms": [
+        "cuánto tiempo",
+        "hasta cuándo",
+        "cuánto tiempo vas a quedarte",
+        "cuánto tiempo vas a estar",
+        "cuánto tiempo va a durar",
+        "cuánto tiempo te quedarás",
+        "cuánto tiempo estarás",
+        "hasta cuándo estarás",
+        "hasta cuándo estará disponible",
+        "cuánto tiempo vas a estar fuera",
+        "cuánto tiempo vas a quedarte aquí",
+        "cuánto tiempo vas a estar ocupado",
+        "cuánto tiempo vas a estar ausente",
+        "cuánto tiempo vas a estar de vacaciones",
+        "cuánto tiempo va a seguir así",
+        "duración futura",
+        "estancia",
+        "estado futuro",
+        "condición futura",
+        "permanencia"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])cuánto\\s+tiempo(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])hasta\\s+cuándo(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "duración",
+        "tiempo",
+        "futuro",
+        "permanencia",
+        "estado",
+        "condición",
+        "ubicación",
+        "disponibilidad",
+        "planificación",
+        "previsiones",
+        "preguntas",
+        "conversación cotidiana",
+        "generador de frases",
+        "inglés americano"
+      ],
+      "related": [],
+      "structure": "En español, «¿Cuánto tiempo + ir a + estar/quedarse + complemento?» pregunta por la duración prevista de un estado o una estancia: «¿Cuánto tiempo vas a quedarte aquí?» y «¿Cuánto tiempo va a estar ella fuera?». «Quedarse» se conjuga con el pronombre correspondiente: «voy a quedarme», «vas a quedarte» o «se van a quedar». «Estar» introduce estados, ubicaciones y condiciones: «estar ocupado», «estar disponible», «estar en Brasil» o «estar de vacaciones». El futuro simple también es natural: «¿Cuánto tiempo estarás aquí?». «¿Hasta cuándo...?» suele pedir el límite temporal: «¿Hasta cuándo vas a estar de permiso?». Las respuestas distinguen un periodo, «Voy a estar aquí dos semanas», de un límite, «Voy a estar fuera hasta el viernes». En inglés, la estructura principal es «How long will + subject + be + complement?». «How long» pregunta por duración, «will» indica futuro y «be» permanece en forma base con cualquier sujeto: «How long will you be here?» o «How long will she be away?». Normalmente hace falta un complemento para aclarar el estado o lugar; «How long will you be?» aislado depende del contexto. Las respuestas pueden usar «for» para un periodo y «until» para un límite: «I’ll be here for two weeks» o «She’ll be away until Friday». Cuando interesa específicamente la fecha u hora final, puede ser más apropiado «until when» o una pregunta que pida cuándo terminará el estado; «how much longer» pregunta cuánto tiempo más queda. No se debe confundir «How long will + subject + be» con «How long will + subject + have to + verb», que pregunta cuánto durará una obligación. Para eventos se usa también «How long will + subject + last?»: «How long will the meeting last?» suele ser más frecuente que «How long will the meeting be?», aunque ambas pueden ser naturales. En español, el equivalente directo para un evento es «¿Cuánto tiempo va a durar la reunión?».",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a1c42e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "¿Cuánto tiempo vas a quedarte aquí?",
+          "intent": "Cuánto tiempo vas a quedarte aquí"
+        },
+        {
+          "id": "b2d53f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "¿Hasta cuándo vas a estar ocupado?",
+          "intent": "Hasta cuándo vas a estar ocupado"
+        },
+        {
+          "id": "c3e64085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "¿Cuánto tiempo va a estar ella fuera?",
+          "intent": "Cuánto tiempo va a estar ella fuera"
+        },
+        {
+          "id": "d4f75196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "¿Cuánto tiempo va a durar la reunión?",
+          "intent": "Cuánto tiempo va a durar la reunión"
+        },
+        {
+          "id": "e50862a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "¿Cuánto tiempo vas a quedarte en Brasil?",
+          "intent": "Cuánto tiempo vas a quedarte en Brasil"
+        },
+        {
+          "id": "f61973b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "¿Hasta cuándo va a estar disponible este servicio?",
+          "intent": "Hasta cuándo va a estar disponible este servicio"
+        },
+        {
+          "id": "a72a84c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "¿Cuánto tiempo vas a estar conectado?",
+          "intent": "Cuánto tiempo vas a estar conectado"
+        },
+        {
+          "id": "b83b95da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "¿Cuánto tiempo vas a estar de vacaciones?",
+          "intent": "Cuánto tiempo vas a estar de vacaciones"
+        },
+        {
+          "id": "c94ca6eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "¿Cuánto tiempo van a estar ellos ausentes?",
+          "intent": "Cuánto tiempo van a estar ellos ausentes"
+        },
+        {
+          "id": "d05db7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "¿Hasta cuándo va a estar caído el sistema?",
+          "intent": "Hasta cuándo va a estar caído el sistema"
+        },
+        {
+          "id": "e16ec80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "¿Cuánto tiempo vas a estar disponible para hablar?",
+          "intent": "Cuánto tiempo vas a estar disponible"
+        },
+        {
+          "id": "f27fd91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "¿Cuánto tiempo va a estar cerrada la oficina?",
+          "intent": "Cuánto tiempo va a estar cerrada la oficina"
+        },
+        {
+          "id": "a380ea2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "¿Cuánto tiempo vas a quedarte solo en casa?",
+          "intent": "Cuánto tiempo vas a quedarte solo en casa"
+        },
+        {
+          "id": "b491fb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "¿Cuánto tiempo va a durar la formación?",
+          "intent": "Cuánto tiempo va a durar la formación"
+        },
+        {
+          "id": "c5a20c41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "¿Hasta cuándo vas a estar de permiso?",
+          "intent": "Hasta cuándo vas a estar de permiso"
+        }
+      ]
     }
   ]
 }
