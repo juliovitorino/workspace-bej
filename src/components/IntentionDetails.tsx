@@ -53,6 +53,19 @@ function highlightSharedIntention(sentence: string, intent?: string): string {
     sentence.slice(index + phrase.length);
 }
 
+const ENGLISH_PILL_OPENINGS = [
+  "E aí, English learner! Bem-vindo a mais uma Pílula de Inglês! E se você quisesse dizer...",
+  "Fala, English learner! Já pensou em como dizer isso em inglês?",
+  "Mais uma dose de inglês pra você! Como você diria...",
+  "Você sabe como dizer isso em inglês americano? Olha só...",
+  "Chegou a hora da sua Pílula de Inglês! Imagine que você queira dizer...",
+  "Hey, English learner! Hoje vamos aprender uma maneira natural de dizer...",
+  "Quer deixar seu inglês mais natural? Então aprenda a dizer...",
+  "Mais uma Pílula de Inglês do BEJ! Sabe quando você quer expressar...",
+  "Vamos aumentar seu repertório de inglês? Como você diria...",
+  "E aí, bora praticar inglês? Hoje a intenção é dizer..."
+] as const;
+
 /** Aceita somente links HTTP(S) do YouTube. */
 function getYoutubeUrl(value?: string): string | null {
   if (!value?.trim()) return null;
@@ -117,6 +130,8 @@ export function IntentionDetails({
   const [showMetadataModal, setShowMetadataModal] = useState(false);
   const [metadataSearchTermsCopyState, setMetadataSearchTermsCopyState] = useState<"copied" | "error" | null>(null);
   const [shareError, setShareError] = useState<string | null>(null);
+  const [pillCopyStatus, setPillCopyStatus] = useState<"copied" | "error" | null>(null);
+  const previousPillOpening = useRef<number | null>(null);
   const [hqZoom, setHqZoom] = useState(1);
   const hqViewportRef = useRef<HTMLDivElement | null>(null);
   const detailPanelRef = useRef<HTMLElement | null>(null);
@@ -145,6 +160,7 @@ export function IntentionDetails({
     setShowMetadataModal(false);
     setMetadataSearchTermsCopyState(null);
     setShareError(null);
+    setPillCopyStatus(null);
     setHqZoom(1);
   }, [item?.id, language]);
 
@@ -367,6 +383,43 @@ export function IntentionDetails({
       }
     } finally {
       document.body.removeChild(textarea);
+    }
+  }
+
+  async function handleCopyEnglishPill() {
+    if (!isAuthorMode() || !item) return;
+    // Choose a fresh opening each time, without immediately repeating the last one.
+    const previous = previousPillOpening.current;
+    const randomIndex = Math.floor(Math.random() * (ENGLISH_PILL_OPENINGS.length - (previous === null ? 0 : 1)));
+    const openingIndex = previous !== null && randomIndex >= previous ? randomIndex + 1 : randomIndex;
+    previousPillOpening.current = openingIndex;
+    const sections = [
+      ENGLISH_PILL_OPENINGS[openingIndex],
+      `${LANGUAGES[sourceLanguage].flag} ${item.intention.trim()}`,
+      `${LANGUAGES[language].flag} ${(item.targetIntention ?? item.english ?? "").trim()}`,
+      item.description?.trim() ? `📖 Descrição\n${item.description.trim()}` : null,
+      item.pattern?.trim() ? `🧩 Padrão\n${item.pattern.trim()}` : null,
+      ...(item.examples ?? []).flatMap((example, index) => [
+        `${index === 0 ? "💬 Exemplos\n\n" : ""}${index + 1}.`,
+        example.pt?.trim() ? `${LANGUAGES[sourceLanguage].flag} ${example.pt.trim()}` : null,
+        targetSentence(example).trim() ? `${LANGUAGES[language].flag} ${targetSentence(example).trim()}` : null
+      ]),
+      "📚 Brazilian English Journey",
+      "https://bejapp.com.br"
+    ].filter((section): section is string => Boolean(section)).join("\n\n");
+    try {
+      if (navigator.clipboard?.writeText) {
+        try {
+          await navigator.clipboard.writeText(sections);
+        } catch {
+          copyIntentionIdFallback(sections);
+        }
+      } else {
+        copyIntentionIdFallback(sections);
+      }
+      setPillCopyStatus("copied");
+    } catch {
+      setPillCopyStatus("error");
     }
   }
 
@@ -1085,6 +1138,22 @@ Mandatório:
             title={t("common.intentionIntention", { intention: (item.intention) })}
             blocks={(item.examples ?? []).map((example) => ({ original: targetSentence(example), portuguese: example.pt }))}
           />}
+          {isAuthorMode() && (
+            <button type="button" className="secondary-button"
+              onClick={() => void handleCopyEnglishPill()}
+              title="Copiar Pílula de Inglês para YouTube ou WhatsApp"
+              aria-label="Copiar Pílula de Inglês para YouTube ou WhatsApp">
+              <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M10.5 3.5a6 6 0 0 1 8.5 8.5l-7 7a6 6 0 0 1-8.5-8.5z" />
+                <path d="m7.5 8.5 8 8" />
+              </svg>
+              <span>{pillCopyStatus === "copied" ? "✓ Copiada" : "Pílula"}</span>
+            </button>
+          )}
+          {isAuthorMode() && pillCopyStatus === "error" && (
+            <span role="alert">Não foi possível copiar a Pílula de Inglês.</span>
+          )}
           {isAuthorMode() && (
             <button
               type="button"
