@@ -82,7 +82,7 @@ const ENGLISH_PILL_COMMUNITY_INVITE = [
   "",
   "🇧🇷🇺🇸 *Brazilian English Journey*",
   "*Frases vivas. Contexto real. Repetição até virar automático.*"
-].join("\\n");
+].join("\n");
 
 const ENGLISH_PILL_OPENINGS = [
   "E aí, English learner! Bem-vindo a mais uma Pílula de Inglês! E se você quisesse dizer...",
