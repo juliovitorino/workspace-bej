@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1319,
+    "totalIntentions": 1320,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -79542,6 +79542,130 @@
           "id": "e8f99e7f-4b99-4b44-b840-8756570b7b6d",
           "exampleItem": "Wouldn't losing the team's trust be the last thing you want?",
           "intent": "the last thing you want"
+        }
+      ]
+    },
+    {
+      "id": "queria-que-voce-nao-parasse-de-b70fdd07-ea9b-436d-af59-ef15963cadd9",
+      "intention": "I wish you wouldn't... / I wish you would stop...",
+      "pattern": "I wish + subject + wouldn't + base verb / I wish + subject + would stop + verb-ing",
+      "description": "Expresses a desire for someone to stop doing something, abandon a behavior, or quit repeating an action that causes annoyance, frustration, or dissatisfaction. In American English, 'I wish + subject + wouldn't + verb' commonly complains about behavior, conveys displeasure, or indirectly asks someone to change how they act. 'I wish + subject + would stop + verb-ing' conveys a very similar desire. The intention goes beyond stating a preference: it highlights a wish for behavior to change, especially when it is repeated or expected to continue.",
+      "category": "chunk",
+      "searchTerms": [
+        "I wish you wouldn't",
+        "I wish he wouldn't",
+        "I wish she wouldn't",
+        "I wish they wouldn't",
+        "I wish you would stop",
+        "I wish he would stop",
+        "I wish she would stop",
+        "I wish they would stop",
+        "stop complaining",
+        "stop interrupting",
+        "stop bothering me",
+        "stop doing that",
+        "change that behavior",
+        "indirect complaint",
+        "dissatisfaction with behavior",
+        "wish for change"
+      ],
+      "validationPatterns": [
+        "\\bI\\s+wish\\s+(?:you(?:\\s+all)?|he|she|they|we|it)\\s+would(?:n['?]t|\\s+not)\\s+[a-z]+\\b",
+        "\\bI\\s+wish\\s+(?:you(?:\\s+all)?|he|she|they|we|it)\\s+would\\s+stop\\s+[a-z]+ing\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "sentence-building",
+        "spoken-English",
+        "American-English",
+        "wish",
+        "dissatisfaction",
+        "complaint",
+        "frustration",
+        "behavior",
+        "behavior-change",
+        "indirect-request",
+        "personal-relationships",
+        "everyday-conversation"
+      ],
+      "related": [],
+      "structure": "Use 'I wish + subject + wouldn't + base verb' to express a desire for a change in behavior: 'I wish you wouldn't do that', 'I wish you wouldn't interrupt me', or 'I wish he wouldn't complain so much'. The subject identifies who should change. 'Wouldn't' emphasizes a wish that an action not happen, especially when it is habitual or expected to recur. The following verb stays in its base form without 'to'. Subjects include 'you', 'he', 'she', 'they', and sometimes 'we'. In speech, 'would not' is normally contracted to 'wouldn't'. The construction often conveys irritation, impatience, frustration, or an indirect request; intonation determines its emotional force. Compare 'I wish you wouldn't do that', which asks for a behavior to stop, with 'I wish you would stop doing that', which has a similar meaning but uses affirmative 'would' and 'stop + verb-ing'. 'I wouldn't like you to do that' instead states a negative preference about an action, often hypothetical or future, without necessarily complaining about repeated behavior. 'I wish you didn't do that' can express dissatisfaction with a present habit or situation, while 'I wish you wouldn't do that' foregrounds the desired change. The pattern can also apply to events beyond human control, as in 'I wish it wouldn't rain so much', though complaints about behavior are especially characteristic. Choose the subject and complete 'wouldn't + base verb' or 'would stop + verb-ing' to build natural sentences.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "4c9c75a4-4a0c-4847-a225-0c66c1dfa890",
+          "exampleItem": "I wish you wouldn't do that.",
+          "intent": "I wish you wouldn't do that"
+        },
+        {
+          "id": "f8128713-d32a-438b-9f7c-4531d2aac32c",
+          "exampleItem": "I wish you wouldn't interrupt me.",
+          "intent": "I wish you wouldn't interrupt me"
+        },
+        {
+          "id": "d7ed2da8-197f-4d1a-b445-7516ce899e37",
+          "exampleItem": "I wish you would stop complaining so much.",
+          "intent": "I wish you would stop complaining so much"
+        },
+        {
+          "id": "c71fa69e-0939-4827-adb5-a340e06bff97",
+          "exampleItem": "I wish you would stop correcting me all the time.",
+          "intent": "I wish you would stop correcting me all the time"
+        },
+        {
+          "id": "4e0bf3a8-2f06-4c27-9b7f-7f97bd8791e9",
+          "exampleItem": "I wish he wouldn't show up late every time.",
+          "intent": "I wish he wouldn't show up late every time"
+        },
+        {
+          "id": "b39fed5e-4e59-407c-8f30-d76f4e0539ee",
+          "exampleItem": "I wish she would stop ignoring my messages.",
+          "intent": "I wish she would stop ignoring my messages"
+        },
+        {
+          "id": "11c1b683-ba8e-4901-801f-12e66a326bb1",
+          "exampleItem": "I wish you all wouldn't make so much noise.",
+          "intent": "I wish you all wouldn't make so much noise"
+        },
+        {
+          "id": "4f214fce-1967-4b50-b3b5-60867b8a6da0",
+          "exampleItem": "I wish they would stop arguing over every little thing.",
+          "intent": "I wish they would stop arguing over every little thing"
+        },
+        {
+          "id": "5ad3685b-fd0a-46c6-be21-e0fceda444de",
+          "exampleItem": "I wish you wouldn't take everything personally.",
+          "intent": "I wish you wouldn't take everything personally"
+        },
+        {
+          "id": "5440e5a9-a95c-4e4c-9ca8-6f40b533622d",
+          "exampleItem": "I wish you would stop messing with my phone.",
+          "intent": "I wish you would stop messing with my phone"
+        },
+        {
+          "id": "e8294e66-4b1d-400a-9ff1-b73fa50dd76b",
+          "exampleItem": "I wish you would stop changing the subject.",
+          "intent": "I wish you would stop changing the subject"
+        },
+        {
+          "id": "973a9484-f428-4fae-b04d-5c299df2f702",
+          "exampleItem": "I wish you wouldn't talk to me that way.",
+          "intent": "I wish you wouldn't talk to me that way"
+        },
+        {
+          "id": "31bbf485-5604-4269-9496-2c222f37fb89",
+          "exampleItem": "I wish he would stop canceling our plans.",
+          "intent": "I wish he would stop canceling our plans"
+        },
+        {
+          "id": "eb379c94-5092-4604-8ba3-d7351561b01e",
+          "exampleItem": "I wish you wouldn't leave everything until the last minute.",
+          "intent": "I wish you wouldn't leave everything until the last minute"
+        },
+        {
+          "id": "6088813f-2363-469f-8ace-fe73c4278b1e",
+          "exampleItem": "I wish you would stop doing that in front of other people.",
+          "intent": "I wish you would stop doing that in front of other people"
         }
       ]
     }

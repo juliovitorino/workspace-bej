@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1319,
+    "totalIntentions": 1320,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -55598,6 +55598,129 @@
           "id": "e8f99e7f-4b99-4b44-b840-8756570b7b6d",
           "exampleItem": "¿No sería perder la confianza del equipo lo último que quieres?",
           "intent": "lo último que quieres"
+        }
+      ]
+    },
+    {
+      "id": "queria-que-voce-nao-parasse-de-b70fdd07-ea9b-436d-af59-ef15963cadd9",
+      "intention": "Me gustaría que no... / Me gustaría que dejaras de... / Ya podrías dejar de...",
+      "pattern": "me gustaría que + persona + no + imperfecto de subjuntivo / me gustaría que + persona + dejara de + infinitivo / ya podrías dejar de + infinitivo",
+      "description": "Expresa el deseo de que alguien deje de hacer algo, abandone un comportamiento o no repita una actitud que causa molestia, frustración o descontento. En español, «me gustaría que no...» y «me gustaría que dejaras de...» introducen ese deseo mediante el imperfecto de subjuntivo. «Ya podrías dejar de...» transmite una queja más directa. En inglés americano, «I wish + subject + wouldn’t + verb» se utiliza para quejarse de una conducta o pedir indirectamente que cambie, especialmente cuando es repetitiva o se espera que continúe. La intención va más allá de expresar una simple preferencia: comunica el deseo de modificar un comportamiento.",
+      "category": "chunk",
+      "searchTerms": [
+        "me gustaría que no",
+        "me gustaría que dejaras de",
+        "me gustaría que dejara de",
+        "me gustaría que dejaran de",
+        "ya podrías dejar de",
+        "ojalá dejaras de",
+        "quisiera que no",
+        "dejar de hacer eso",
+        "dejar de quejarse",
+        "dejar de interrumpir",
+        "no volver a hacerlo",
+        "cambiar ese comportamiento",
+        "queja indirecta",
+        "descontento con una conducta",
+        "deseo de cambio"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])me\\s+gustaría\\s+que(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])ya\\s+podrías\\s+dejar\\s+de(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloque de lenguaje",
+        "generador de frases",
+        "inglés hablado",
+        "inglés americano",
+        "deseo",
+        "descontento",
+        "queja",
+        "frustración",
+        "comportamiento",
+        "cambio de comportamiento",
+        "petición indirecta",
+        "relaciones personales",
+        "conversación cotidiana"
+      ],
+      "related": [],
+      "structure": "En español, «me gustaría que + sujeto + imperfecto de subjuntivo» expresa el deseo de que una conducta cambie: «Me gustaría que no hicieras eso» o «Me gustaría que no me interrumpieras». «Me gustaría que dejaras de + infinitivo» destaca el cese de la acción: «Me gustaría que dejaras de quejarte». El verbo subordinado cambia con la persona: «dejara», «dejaras», «dejáramos», «dejarais» o «dejaran». En España, para dirigirse a varias personas de manera informal se usa «vosotros»: «Me gustaría que no hicierais tanto ruido». «Ya podrías dejar de...» añade una queja más explícita: «Ya podrías dejar de cambiar de tema». «Ojalá dejaras de...» es otra alternativa. En inglés, la construcción principal es «I wish + subject + wouldn’t + base verb»: «I wish you wouldn’t interrupt me». «Wouldn’t» suele aparecer contraído y el verbo siguiente permanece en forma base, sin «to». El sujeto identifica a quien se desea que cambie de conducta. Es frecuente con hábitos molestos o expectativas de repetición y puede transmitir irritación o una petición indirecta; la entonación determina su intensidad. «I wish you would stop doing that» expresa una intención parecida, pero usa «would» afirmativo y «stop + gerundio». «I wouldn’t like you to do that» suele expresar una preferencia contraria a una acción hipotética o futura, sin implicar necesariamente una conducta repetitiva. «I wish you didn’t do that» puede describir descontento con un hábito presente; «I wish you wouldn’t do that» destaca el deseo de cambio. La construcción también puede referirse a situaciones fuera del control humano, como la lluvia, aunque su uso característico aquí es la queja sobre comportamientos.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "4c9c75a4-4a0c-4847-a225-0c66c1dfa890",
+          "exampleItem": "Me gustaría que no hicieras eso.",
+          "intent": "Me gustaría que no hicieras eso"
+        },
+        {
+          "id": "f8128713-d32a-438b-9f7c-4531d2aac32c",
+          "exampleItem": "Me gustaría que no me interrumpieras.",
+          "intent": "Me gustaría que no me interrumpieras"
+        },
+        {
+          "id": "d7ed2da8-197f-4d1a-b445-7516ce899e37",
+          "exampleItem": "Me gustaría que dejaras de quejarte tanto.",
+          "intent": "Me gustaría que dejaras de quejarte tanto"
+        },
+        {
+          "id": "c71fa69e-0939-4827-adb5-a340e06bff97",
+          "exampleItem": "Ya podrías dejar de corregirme a todas horas.",
+          "intent": "Ya podrías dejar de corregirme a todas horas"
+        },
+        {
+          "id": "4e0bf3a8-2f06-4c27-9b7f-7f97bd8791e9",
+          "exampleItem": "Me gustaría que él no llegara tarde cada vez.",
+          "intent": "Me gustaría que él no llegara tarde cada vez"
+        },
+        {
+          "id": "b39fed5e-4e59-407c-8f30-d76f4e0539ee",
+          "exampleItem": "Me gustaría que ella dejara de ignorar mis mensajes.",
+          "intent": "Me gustaría que ella dejara de ignorar mis mensajes"
+        },
+        {
+          "id": "11c1b683-ba8e-4901-801f-12e66a326bb1",
+          "exampleItem": "Me gustaría que no hicierais tanto ruido.",
+          "intent": "Me gustaría que no hicierais tanto ruido"
+        },
+        {
+          "id": "4f214fce-1967-4b50-b3b5-60867b8a6da0",
+          "exampleItem": "Me gustaría que dejaran de discutir por cualquier cosa.",
+          "intent": "Me gustaría que dejaran de discutir por cualquier cosa"
+        },
+        {
+          "id": "5ad3685b-fd0a-46c6-be21-e0fceda444de",
+          "exampleItem": "Me gustaría que no te lo tomaras todo como algo personal.",
+          "intent": "Me gustaría que no te lo tomaras todo como algo personal"
+        },
+        {
+          "id": "5440e5a9-a95c-4e4c-9ca8-6f40b533622d",
+          "exampleItem": "Me gustaría que dejaras de tocar mi móvil.",
+          "intent": "Me gustaría que dejaras de tocar mi móvil"
+        },
+        {
+          "id": "e8294e66-4b1d-400a-9ff1-b73fa50dd76b",
+          "exampleItem": "Ya podrías dejar de cambiar de tema.",
+          "intent": "Ya podrías dejar de cambiar de tema"
+        },
+        {
+          "id": "973a9484-f428-4fae-b04d-5c299df2f702",
+          "exampleItem": "Me gustaría que no me hablaras así.",
+          "intent": "Me gustaría que no me hablaras así"
+        },
+        {
+          "id": "31bbf485-5604-4269-9496-2c222f37fb89",
+          "exampleItem": "Me gustaría que él dejara de cancelar nuestros planes.",
+          "intent": "Me gustaría que él dejara de cancelar nuestros planes"
+        },
+        {
+          "id": "eb379c94-5092-4604-8ba3-d7351561b01e",
+          "exampleItem": "Me gustaría que no lo dejaras todo para el último momento.",
+          "intent": "Me gustaría que no lo dejaras todo para el último momento"
+        },
+        {
+          "id": "6088813f-2363-469f-8ace-fe73c4278b1e",
+          "exampleItem": "Me gustaría que dejaras de hacer eso delante de los demás.",
+          "intent": "Me gustaría que dejaras de hacer eso delante de los demás"
         }
       ]
     }

@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1319,
+    "totalIntentions": 1320,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -55422,6 +55422,145 @@
           "id": "e8f99e7f-4b99-4b44-b840-8756570b7b6d",
           "exampleItem": "A última coisa que você quer não seria perder a confiança da equipe?",
           "intent": "A última coisa que você quer"
+        }
+      ]
+    },
+    {
+      "id": "queria-que-voce-nao-parasse-de-b70fdd07-ea9b-436d-af59-ef15963cadd9",
+      "intention": "Queria que você não... / Queria que parasse de... / Bem que você podia parar de...",
+      "pattern": "queria que + pessoa + não + ação / queria que + pessoa + parasse de + ação / bem que + pessoa + podia parar de + ação",
+      "description": "Expressa o desejo de que alguém deixe de fazer algo, abandone um comportamento ou pare de repetir uma atitude que causa incômodo, frustração ou insatisfação. No inglês americano, a estrutura 'I wish + subject + wouldn't + verb' é muito utilizada para reclamar de comportamentos, expressar descontentamento ou pedir indiretamente que alguém mude sua maneira de agir. Em português brasileiro, corresponde naturalmente a 'Queria que você não...', 'Queria que você parasse de...', 'Bem que você podia parar de...' ou 'Gostaria que você deixasse de...'. A intenção não é simplesmente declarar uma preferência, mas demonstrar o desejo de que um comportamento seja diferente, especialmente quando ele acontece repetidamente ou existe a expectativa de que continue acontecendo.",
+      "category": "chunk",
+      "searchTerms": [
+        "queria que você não",
+        "queria que você parasse",
+        "queria que parasse de",
+        "bem que você podia parar",
+        "bem que podia parar",
+        "gostaria que você não",
+        "gostaria que parasse de",
+        "queria que ele não",
+        "queria que ela não",
+        "queria que eles não",
+        "queria que vocês não",
+        "queria que ele parasse",
+        "queria que ela parasse",
+        "queria que eles parassem",
+        "queria que você deixasse de",
+        "bem que você podia deixar de",
+        "parar de fazer isso",
+        "parar de reclamar",
+        "parar de interromper",
+        "parar de incomodar",
+        "parar de repetir",
+        "não fazer mais isso",
+        "mudar esse comportamento",
+        "deixar de agir assim",
+        "reclamação indireta",
+        "insatisfação com comportamento",
+        "desejo de mudança"
+      ],
+      "validationPatterns": [
+        "\\b(?:eu\\s+)?queria\\s+que\\s+(?:você|vocês|ele|ela|eles|elas)\\s+não\\s+\\S+",
+        "\\b(?:eu\\s+)?queria\\s+que\\s+(?:(?:você|vocês|ele|ela|eles|elas)\\s+)?parass(?:e|em)\\s+de\\b",
+        "\\bbem\\s+que\\s+(?:(?:você|vocês|ele|ela|eles|elas)\\s+)?podi(?:a|am)\\s+parar\\s+de\\b",
+        "\\bgostaria\\s+que\\s+(?:você|vocês|ele|ela|eles|elas)\\s+não\\s+\\S+",
+        "\\bgostaria\\s+que\\s+(?:(?:você|vocês|ele|ela|eles|elas)\\s+)?parass(?:e|em)\\s+de\\b",
+        "\\bqueria\\s+que\\s+(?:você|vocês|ele|ela|eles|elas)\\s+deixass(?:e|em)\\s+de\\b"
+      ],
+      "tags": [
+        "bloco-de-linguagem",
+        "gerador-de-frases",
+        "inglês-falado",
+        "inglês-americano",
+        "desejo",
+        "insatisfação",
+        "reclamação",
+        "frustração",
+        "comportamento",
+        "mudança-de-comportamento",
+        "pedido-indireto",
+        "relações-pessoais",
+        "conversação-cotidiana"
+      ],
+      "related": [],
+      "structure": "A estrutura principal é 'I WISH + SUBJECT + WOULDN'T + BASE VERB'. O bloco 'I wish' introduz um desejo de mudança. O sujeito identifica quem deveria mudar o comportamento. 'Wouldn't' expressa o desejo de que a pessoa não pratique determinada ação, especialmente quando existe um hábito, comportamento recorrente ou expectativa de repetição. O verbo seguinte permanece na forma base, sem 'to'. Exemplos: 'I wish you wouldn't do that' (Queria que você não fizesse isso), 'I wish you wouldn't interrupt me' (Queria que você parasse de me interromper), 'I wish he wouldn't complain so much' (Queria que ele parasse de reclamar tanto) e 'I wish they wouldn't argue all the time' (Queria que eles parassem de discutir o tempo todo). A estrutura aceita diferentes sujeitos: 'I wish you wouldn't...', 'I wish he wouldn't...', 'I wish she wouldn't...', 'I wish they wouldn't...' e 'I wish we wouldn't...'. Na linguagem falada, 'would not' normalmente aparece contraído como 'wouldn't'. A construção frequentemente transmite irritação, impaciência, frustração ou um pedido indireto. A entonação determina a intensidade emocional. É importante distinguir três estruturas: 'I wish you wouldn't do that' expressa o desejo de que alguém deixe de agir de determinada maneira; 'I wish you would stop doing that' expressa uma intenção muito semelhante, mas utiliza a forma afirmativa 'would' seguida de 'stop + verb-ing'; e 'I wouldn't like you to do that' expressa uma preferência contrária a uma ação, frequentemente hipotética ou futura, sem necessariamente indicar incômodo com um comportamento recorrente. Outra diferença importante é 'I wish you didn't do that', que pode expressar insatisfação com um hábito ou situação presente, enquanto 'I wish you wouldn't do that' enfatiza o desejo de mudança do comportamento. A estrutura 'wouldn't' também pode ser utilizada para situações fora do controle humano, como 'I wish it wouldn't rain so much', mas seu uso mais característico é reclamar ou desejar a mudança de uma ação ou comportamento. Para produzir frases naturalmente, basta manter 'I wish', escolher o sujeito e completar com 'wouldn't + verbo na forma base'.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "4c9c75a4-4a0c-4847-a225-0c66c1dfa890",
+          "exampleItem": "Queria que você não fizesse isso.",
+          "intent": "Queria que você não fizesse isso"
+        },
+        {
+          "id": "f8128713-d32a-438b-9f7c-4531d2aac32c",
+          "exampleItem": "Queria que você não me interrompesse.",
+          "intent": "Queria que você não me interrompesse"
+        },
+        {
+          "id": "d7ed2da8-197f-4d1a-b445-7516ce899e37",
+          "exampleItem": "Queria que você parasse de reclamar tanto.",
+          "intent": "Queria que você parasse de reclamar tanto"
+        },
+        {
+          "id": "c71fa69e-0939-4827-adb5-a340e06bff97",
+          "exampleItem": "Bem que você podia parar de me corrigir toda hora.",
+          "intent": "Bem que você podia parar de me corrigir toda hora"
+        },
+        {
+          "id": "4e0bf3a8-2f06-4c27-9b7f-7f97bd8791e9",
+          "exampleItem": "Queria que ele não chegasse atrasado toda vez.",
+          "intent": "Queria que ele não chegasse atrasado toda vez"
+        },
+        {
+          "id": "b39fed5e-4e59-407c-8f30-d76f4e0539ee",
+          "exampleItem": "Queria que ela parasse de ignorar minhas mensagens.",
+          "intent": "Queria que ela parasse de ignorar minhas mensagens"
+        },
+        {
+          "id": "11c1b683-ba8e-4901-801f-12e66a326bb1",
+          "exampleItem": "Queria que vocês não fizessem tanto barulho.",
+          "intent": "Queria que vocês não fizessem tanto barulho"
+        },
+        {
+          "id": "4f214fce-1967-4b50-b3b5-60867b8a6da0",
+          "exampleItem": "Queria que eles parassem de discutir por qualquer coisa.",
+          "intent": "Queria que eles parassem de discutir por qualquer coisa"
+        },
+        {
+          "id": "5ad3685b-fd0a-46c6-be21-e0fceda444de",
+          "exampleItem": "Queria que você não levasse tudo para o lado pessoal.",
+          "intent": "Queria que você não levasse tudo para o lado pessoal"
+        },
+        {
+          "id": "5440e5a9-a95c-4e4c-9ca8-6f40b533622d",
+          "exampleItem": "Queria que você parasse de mexer no meu celular.",
+          "intent": "Queria que você parasse de mexer no meu celular"
+        },
+        {
+          "id": "e8294e66-4b1d-400a-9ff1-b73fa50dd76b",
+          "exampleItem": "Bem que você podia parar de mudar de assunto.",
+          "intent": "Bem que você podia parar de mudar de assunto"
+        },
+        {
+          "id": "973a9484-f428-4fae-b04d-5c299df2f702",
+          "exampleItem": "Queria que você não falasse comigo desse jeito.",
+          "intent": "Queria que você não falasse comigo desse jeito"
+        },
+        {
+          "id": "31bbf485-5604-4269-9496-2c222f37fb89",
+          "exampleItem": "Queria que ele parasse de cancelar nossos planos.",
+          "intent": "Queria que ele parasse de cancelar nossos planos"
+        },
+        {
+          "id": "eb379c94-5092-4604-8ba3-d7351561b01e",
+          "exampleItem": "Queria que você não deixasse tudo para a última hora.",
+          "intent": "Queria que você não deixasse tudo para a última hora"
+        },
+        {
+          "id": "6088813f-2363-469f-8ace-fe73c4278b1e",
+          "exampleItem": "Queria que você parasse de fazer isso na frente dos outros.",
+          "intent": "Queria que você parasse de fazer isso na frente dos outros"
         }
       ]
     }

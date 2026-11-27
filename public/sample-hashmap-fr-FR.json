@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1319,
+    "totalIntentions": 1320,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -56150,6 +56150,128 @@
           "id": "e8f99e7f-4b99-4b44-b840-8756570b7b6d",
           "exampleItem": "La dernière chose que tu veux, ce ne serait pas de perdre la confiance de l'équipe ?",
           "intent": "La dernière chose que tu veux"
+        }
+      ]
+    },
+    {
+      "id": "queria-que-voce-nao-parasse-de-b70fdd07-ea9b-436d-af59-ef15963cadd9",
+      "intention": "J’aimerais que tu ne… / J’aimerais que tu arrêtes de… / Tu pourrais quand même arrêter de…",
+      "pattern": "j’aimerais que + sujet + subjonctif / tu pourrais quand même arrêter de + infinitif",
+      "description": "Exprime le souhait que quelqu'un cesse une action, abandonne une habitude ou modifie un comportement qui provoque de l'agacement, de la frustration ou du mécontentement. J'aimerais que tu ne… et J'aimerais que tu arrêtes de… peuvent formuler une plainte ou une demande indirecte. Tu pourrais quand même arrêter de… est une tournure plus appuyée qui marque souvent l'impatience. Le contexte et l'intonation déterminent la force du reproche.",
+      "category": "chunk",
+      "searchTerms": [
+        "j'aimerais que tu ne",
+        "j'aimerais que tu arrêtes de",
+        "j'aimerais qu'il arrête de",
+        "j'aimerais qu'elle arrête de",
+        "j'aimerais qu'ils arrêtent de",
+        "j'aimerais que vous ne",
+        "tu pourrais quand même arrêter de",
+        "cesser de",
+        "arrêter de se plaindre",
+        "arrêter de m’interrompre",
+        "changer de comportement",
+        "plainte indirecte",
+        "mécontentement",
+        "demande indirecte"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])j['’]aimerais\\s+qu(?:e\\s+|['’])(?:tu|vous|il|elle|ils|elles)\\s+(?:ne\\s+|n['’]|arrêt)(?!$)",
+        "(?<![\\p{L}\\p{N}_])tu\\s+pourrais\\s+quand\\s+même\\s+arrêter\\s+de(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "construction de phrases",
+        "langue parlée",
+        "anglais américain",
+        "souhait",
+        "mécontentement",
+        "plainte",
+        "frustration",
+        "comportement",
+        "changement de comportement",
+        "demande indirecte",
+        "relations personnelles",
+        "conversation quotidienne"
+      ],
+      "related": [],
+      "structure": "La construction principale est J'aimerais que + sujet + subjonctif présent. Pour demander la cessation d'une action : J'aimerais que tu ne fasses pas ça. Pour exprimer une intention très proche : J'aimerais que tu arrêtes de faire ça. Arrêter de est suivi d'un infinitif, avec élision devant une voyelle : arrête d'ignorer. Les sujets et les formes du subjonctif varient : que tu ne fasses pas, qu'il n'arrive pas, que vous ne fassiez pas, qu'ils arrêtent. Aimerais est au conditionnel présent et adoucit la formulation du souhait, mais l'ensemble peut exprimer un reproche selon l'intonation. Tu pourrais quand même arrêter de + infinitif marque plus clairement l'impatience ou l'agacement. Le ne appartient à une véritable négation lorsqu'il est accompagné de pas : que tu ne me parles pas sur ce ton. Ne pas confondre ce souhait de changement avec une simple préférence pour une action future hypothétique. Le comportement est souvent récurrent ou susceptible de se reproduire. On peut aussi dire Je voudrais que tu cesses de… ; souhaiter que appelle également le subjonctif. Pour produire de nouvelles phrases, choisir le sujet puis une action au subjonctif ou utiliser arrêter de + infinitif.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "4c9c75a4-4a0c-4847-a225-0c66c1dfa890",
+          "exampleItem": "J'aimerais que tu ne fasses pas ça.",
+          "intent": "J'aimerais que tu ne fasses pas ça"
+        },
+        {
+          "id": "f8128713-d32a-438b-9f7c-4531d2aac32c",
+          "exampleItem": "J'aimerais que tu ne m'interrompes pas.",
+          "intent": "J'aimerais que tu ne m'interrompes pas"
+        },
+        {
+          "id": "d7ed2da8-197f-4d1a-b445-7516ce899e37",
+          "exampleItem": "J'aimerais que tu arrêtes de te plaindre autant.",
+          "intent": "J'aimerais que tu arrêtes de te plaindre autant"
+        },
+        {
+          "id": "c71fa69e-0939-4827-adb5-a340e06bff97",
+          "exampleItem": "Tu pourrais quand même arrêter de me corriger tout le temps.",
+          "intent": "Tu pourrais quand même arrêter de me corriger tout le temps"
+        },
+        {
+          "id": "4e0bf3a8-2f06-4c27-9b7f-7f97bd8791e9",
+          "exampleItem": "J'aimerais qu'il n'arrive pas en retard à chaque fois.",
+          "intent": "J'aimerais qu'il n'arrive pas en retard à chaque fois"
+        },
+        {
+          "id": "b39fed5e-4e59-407c-8f30-d76f4e0539ee",
+          "exampleItem": "J'aimerais qu'elle arrête d'ignorer mes messages.",
+          "intent": "J'aimerais qu'elle arrête d'ignorer mes messages"
+        },
+        {
+          "id": "11c1b683-ba8e-4901-801f-12e66a326bb1",
+          "exampleItem": "J'aimerais que vous ne fassiez pas autant de bruit.",
+          "intent": "J'aimerais que vous ne fassiez pas autant de bruit"
+        },
+        {
+          "id": "4f214fce-1967-4b50-b3b5-60867b8a6da0",
+          "exampleItem": "J'aimerais qu'ils arrêtent de se disputer pour un rien.",
+          "intent": "J'aimerais qu'ils arrêtent de se disputer pour un rien"
+        },
+        {
+          "id": "5ad3685b-fd0a-46c6-be21-e0fceda444de",
+          "exampleItem": "J'aimerais que tu ne prennes pas tout personnellement.",
+          "intent": "J'aimerais que tu ne prennes pas tout personnellement"
+        },
+        {
+          "id": "5440e5a9-a95c-4e4c-9ca8-6f40b533622d",
+          "exampleItem": "J'aimerais que tu arrêtes de toucher à mon téléphone.",
+          "intent": "J'aimerais que tu arrêtes de toucher à mon téléphone"
+        },
+        {
+          "id": "e8294e66-4b1d-400a-9ff1-b73fa50dd76b",
+          "exampleItem": "Tu pourrais quand même arrêter de changer de sujet.",
+          "intent": "Tu pourrais quand même arrêter de changer de sujet"
+        },
+        {
+          "id": "973a9484-f428-4fae-b04d-5c299df2f702",
+          "exampleItem": "J'aimerais que tu ne me parles pas sur ce ton.",
+          "intent": "J'aimerais que tu ne me parles pas sur ce ton"
+        },
+        {
+          "id": "31bbf485-5604-4269-9496-2c222f37fb89",
+          "exampleItem": "J'aimerais qu'il arrête d'annuler nos projets.",
+          "intent": "J'aimerais qu'il arrête d'annuler nos projets"
+        },
+        {
+          "id": "eb379c94-5092-4604-8ba3-d7351561b01e",
+          "exampleItem": "J'aimerais que tu ne remettes pas tout à la dernière minute.",
+          "intent": "J'aimerais que tu ne remettes pas tout à la dernière minute"
+        },
+        {
+          "id": "6088813f-2363-469f-8ace-fe73c4278b1e",
+          "exampleItem": "J'aimerais que tu arrêtes de faire ça devant les autres.",
+          "intent": "J'aimerais que tu arrêtes de faire ça devant les autres"
         }
       ]
     }
