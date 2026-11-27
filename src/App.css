@@ -2642,14 +2642,14 @@ button {
     display: none;
   }
 }
-/* Dashboard only: avoid covering charts while scrolling. Keep controls usable
+/* Shared mobile controls: avoid covering content while scrolling. Keep controls usable
    whenever the floating actions or the mobile sidebar menu are open. */
 @media (max-width: 820px) {
   .mobile-floating-controls {
     transition: opacity 200ms ease, visibility 200ms ease;
   }
   .app-layout:not(:has(.sidebar-menu.mobile-open))
-    .mobile-floating-controls.dashboard-nav-scrolling:not(:has(.study-mobile-actions:not([hidden]))) {
+    .mobile-floating-controls.floating-controls-scrolling:not(:has(.study-mobile-actions:not([hidden]))) {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
