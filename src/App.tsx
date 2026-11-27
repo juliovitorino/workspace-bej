@@ -848,7 +848,7 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
         onAdvancedTraining={(item) => startTraining(item, "advanced")}
         onReviewTraining={(item) => startTraining(item, "review")}
       />
-      <div id="app-floating-controls" className={`mobile-floating-controls${floatingControlsHidden ? " dashboard-nav-scrolling" : ""}`}>
+      <div id="app-floating-controls" className={`mobile-floating-controls${floatingControlsHidden ? " floating-controls-scrolling" : ""}`}>
         {currentView === "hashmap" && !loading && data && !trainingMode &&
           Boolean(englishLevelSearch || categorySearch || selectedTags.length) && (
           <button type="button" className="hashmap-clear-card-filters"
