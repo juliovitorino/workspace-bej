@@ -426,14 +426,14 @@ export function IntentionDetails({
     previousPillOpening.current = openingIndex;
     const sections = [
       ENGLISH_PILL_OPENINGS[openingIndex],
-      `${LANGUAGES[sourceLanguage].flag} ${item.intention.trim()}`,
-      `${LANGUAGES[language].flag} ${(item.targetIntention ?? item.english ?? "").trim()}`,
+      `${LANGUAGES[sourceLanguage].flag} *${item.intention.trim()}*`,
+      `${LANGUAGES[language].flag} *${(item.targetIntention ?? item.english ?? "").trim()}*`,
       item.description?.trim() ? `📖 Descrição\n${item.description.trim()}` : null,
       item.pattern?.trim() ? `🧩 Padrão\n${item.pattern.trim()}` : null,
       ...(item.examples ?? []).flatMap((example, index) => [
         `${index === 0 ? "💬 Exemplos\n\n" : ""}${index + 1}.`,
-        example.pt?.trim() ? `${LANGUAGES[sourceLanguage].flag} ${example.pt.trim()}` : null,
-        targetSentence(example).trim() ? `${LANGUAGES[language].flag} ${targetSentence(example).trim()}` : null
+        example.pt?.trim() ? `${LANGUAGES[sourceLanguage].flag} ${highlightSharedIntention(example.pt.trim(), example.ptIntent)}` : null,
+        targetSentence(example).trim() ? `${LANGUAGES[language].flag} ${highlightSharedIntention(targetSentence(example).trim(), targetIntent(example))}` : null
       ]),
       "📚 Brazilian English Journey",
       createStudyDeepLink({ module: "intention", id: item.id, source: sourceLanguage, target: language }),
