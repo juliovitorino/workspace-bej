@@ -1394,6 +1394,15 @@ Mandatório:
                         )}
                       </button>
 
+                      <ShareStudyButton
+                        className="secondary-button"
+                        label={`${t("details.examples")} ${index + 1} — ${sourceLanguageName} / ${targetLanguageName}`}
+                        content={() => studyShareText([
+                          example.pt?.trim() ? `${LANGUAGES[sourceLanguage].flag} ${highlightSharedIntention(example.pt.trim(), example.ptIntent)}` : null,
+                          targetSentence(example)?.trim() ? `${LANGUAGES[language].flag} ${highlightSharedIntention(targetSentence(example).trim(), targetIntent(example))}` : null
+                        ], createStudyDeepLink({ module: "intention", id: item.id, source: sourceLanguage, target: language }))}
+                      />
+
                       {isAuthorMode() && (
                       <button
                         type="button"
