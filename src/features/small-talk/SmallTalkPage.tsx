@@ -920,7 +920,16 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
     setTopicsMenuOpen(false); setSessionItems(selection.map(itemWithQuestion)); setWalking(true);
   }
 
-  if (walking) return <SmallTalkWalking items={sessionItems} questionNumbers={printNumbers} settings={settings}
+  const walkingTopicTitles = Object.fromEntries(sessionItems.map(item => {
+    const section = item.source?.section?.trim();
+    const matchingTopic = topics.find(entry => entry.sourceTitle.trim().toLocaleLowerCase('en-US') === section?.toLocaleLowerCase('en-US'));
+    const title = allTopicsSelected
+      ? topicDisplayName(matchingTopic?.sourceTitle ?? section ?? 'Small Talk')
+      : topicDisplayName(topic?.title ?? topics.find(entry => entry.id === topicId)?.sourceTitle ?? section ?? 'Small Talk');
+    return [item.id, title];
+  }));
+
+  if (walking) return <SmallTalkWalking items={sessionItems} questionNumbers={printNumbers} topicTitles={walkingTopicTitles} settings={settings}
     onComplete={(hadSkippedQuestions) => {
       const allQuestions = orderedTopicItems.filter(item => item.enabled && questionFor(item).trim());
       const fullTopic = !allTopicsSelected && !hadSkippedQuestions && topic?.topicId === topicId && allQuestions.length > 0 &&
