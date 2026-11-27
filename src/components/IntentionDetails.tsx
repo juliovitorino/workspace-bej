@@ -53,6 +53,37 @@ function highlightSharedIntention(sentence: string, intent?: string): string {
     sentence.slice(index + phrase.length);
 }
 
+const ENGLISH_PILL_COMMUNITY_INVITE = [
+  "━━━━━━━━━━━━━━━━━━",
+  "",
+  "🚀 *QUER PRATICAR SEU INGLÊS?*",
+  "",
+  "Faça parte do grupo gratuito de conversação do *Brazilian English Journey (BEJ)*! 🇧🇷🇺🇸",
+  "",
+  "🗣️ *BEJ | Let's Speak English*",
+  "",
+  "✅ Pratique conversação em inglês.",
+  "✅ Envie áudios e desenvolva seu speaking.",
+  "✅ Tire dúvidas e compartilhe experiências.",
+  "✅ Participe de desafios de inglês.",
+  "✅ Aprenda com outros estudantes!",
+  "",
+  "❤️ *Todos os níveis são bem-vindos!*",
+  "",
+  "Não tenha medo de errar. O importante é se comunicar!",
+  "",
+  "👇 *ENTRE NO NOSSO GRUPO:*",
+  "",
+  "https://chat.whatsapp.com/GmzmB3MzE8V09TZAtMcnYo",
+  "",
+  "🌎 *PRATIQUE TAMBÉM NO BEJ APP:*",
+  "",
+  "https://bejapp.com.br",
+  "",
+  "🇧🇷🇺🇸 *Brazilian English Journey*",
+  "*Frases vivas. Contexto real. Repetição até virar automático.*"
+].join("\n");
+
 const ENGLISH_PILL_OPENINGS = [
   "E aí, English learner! Bem-vindo a mais uma Pílula de Inglês! E se você quisesse dizer...",
   "Fala, English learner! Já pensou em como dizer isso em inglês?",
@@ -395,17 +426,18 @@ export function IntentionDetails({
     previousPillOpening.current = openingIndex;
     const sections = [
       ENGLISH_PILL_OPENINGS[openingIndex],
-      `${LANGUAGES[sourceLanguage].flag} ${item.intention.trim()}`,
-      `${LANGUAGES[language].flag} ${(item.targetIntention ?? item.english ?? "").trim()}`,
+      `${LANGUAGES[sourceLanguage].flag} *${item.intention.trim()}*`,
+      `${LANGUAGES[language].flag} *${(item.targetIntention ?? item.english ?? "").trim()}*`,
       item.description?.trim() ? `📖 Descrição\n${item.description.trim()}` : null,
       item.pattern?.trim() ? `🧩 Padrão\n${item.pattern.trim()}` : null,
       ...(item.examples ?? []).flatMap((example, index) => [
         `${index === 0 ? "💬 Exemplos\n\n" : ""}${index + 1}.`,
-        example.pt?.trim() ? `${LANGUAGES[sourceLanguage].flag} ${example.pt.trim()}` : null,
-        targetSentence(example).trim() ? `${LANGUAGES[language].flag} ${targetSentence(example).trim()}` : null
+        example.pt?.trim() ? `${LANGUAGES[sourceLanguage].flag} ${highlightSharedIntention(example.pt.trim(), example.ptIntent)}` : null,
+        targetSentence(example).trim() ? `${LANGUAGES[language].flag} ${highlightSharedIntention(targetSentence(example).trim(), targetIntent(example))}` : null
       ]),
       "📚 Brazilian English Journey",
-      createStudyDeepLink({ module: "intention", id: item.id, source: sourceLanguage, target: language })
+      createStudyDeepLink({ module: "intention", id: item.id, source: sourceLanguage, target: language }),
+      ENGLISH_PILL_COMMUNITY_INVITE
     ].filter((section): section is string => Boolean(section)).join("\n\n");
     try {
       if (navigator.clipboard?.writeText) {
