@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1305,
+    "totalIntentions": 1310,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -54794,6 +54794,269 @@
           "id": "c5a20c41-5973-4b6e-9d0f-6495e19eaf2c",
           "exampleItem": "¿Hasta cuándo vas a estar de permiso?",
           "intent": "Hasta cuándo vas a estar de permiso"
+        }
+      ]
+    },
+    {
+      "id": "o-que-me-preocupa-e-64693102-2486-4e59-910f-e8379e6805ab",
+      "intention": "Lo que me preocupa es...",
+      "pattern": "lo que me preocupa es + sustantivo / infinitivo / que + oración",
+      "description": "Introduce y destaca la causa principal de una preocupación. Equivale a «what worries me is» en inglés.",
+      "category": "preocupacao",
+      "searchTerms": [
+        "lo que me preocupa es",
+        "lo que más me preocupa es",
+        "mi preocupación es",
+        "lo que me tiene preocupado es"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:lo\\s+que\\s+(?:más\\s+)?me\\s+preocupa\\s+es)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloque de lenguaje",
+        "inglés hablado",
+        "estructura abierta",
+        "preocupación"
+      ],
+      "related": [],
+      "structure": "lo que me preocupa es + sustantivo / infinitivo / que + oración",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "444c6c70-93ec-4e06-bb69-800b574aefa7",
+          "exampleItem": "Lo que me preocupa es la falta de tiempo.",
+          "intent": "Lo que me preocupa es"
+        },
+        {
+          "id": "102d9e44-5e1f-4b45-9576-20cc4b75ca92",
+          "exampleItem": "Lo que me preocupa es no conseguir terminar el proyecto.",
+          "intent": "Lo que me preocupa es"
+        },
+        {
+          "id": "343a059b-ef1e-4be2-94b3-ff33d30b9377",
+          "exampleItem": "Lo que más me preocupa es la seguridad de los datos.",
+          "intent": "Lo que más me preocupa es"
+        },
+        {
+          "id": "1032fa8a-81b0-4b6e-9072-cdba94c395fc",
+          "exampleItem": "Lo que me preocupa es que nadie se ha dado cuenta del problema.",
+          "intent": "Lo que me preocupa es"
+        },
+        {
+          "id": "48c8657a-50de-495a-a502-07be4e92ac09",
+          "exampleItem": "Lo que me preocupa es perder la oportunidad de trabajar en el extranjero.",
+          "intent": "Lo que me preocupa es"
+        }
+      ]
+    },
+    {
+      "id": "para-o-bem-ou-para-o-mal-c5df15f3-ed84-4085-86d1-7f76a9b24510",
+      "intention": "Para bien o para mal",
+      "pattern": "para bien o para mal",
+      "description": "Expresa aceptación de las consecuencias positivas o negativas de una decisión o situación. Equivale a «for better or worse» en inglés.",
+      "category": "concessao",
+      "searchTerms": [
+        "para bien o para mal",
+        "sea para bien o para mal",
+        "independientemente de las consecuencias"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:para\\s+bien\\s+o\\s+para\\s+mal)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloque de lenguaje",
+        "inglés hablado",
+        "listo para usar",
+        "concesión"
+      ],
+      "related": [],
+      "structure": "para bien o para mal",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "23a23b9a-cf07-412a-8a91-3c4ad3d93b19",
+          "exampleItem": "Para bien o para mal, tenemos que seguir adelante.",
+          "intent": "Para bien o para mal"
+        },
+        {
+          "id": "c7fc1c1e-6540-4982-b22b-b6bd1238222d",
+          "exampleItem": "Voy a apoyar esta decisión, para bien o para mal.",
+          "intent": "para bien o para mal"
+        },
+        {
+          "id": "eafe8347-6057-49d9-8eb8-49ab73cb64ee",
+          "exampleItem": "Para bien o para mal, esta experiencia me cambió la vida.",
+          "intent": "Para bien o para mal"
+        },
+        {
+          "id": "e92743e5-3225-4dad-96c1-69fbb8d3066a",
+          "exampleItem": "Estamos juntos, para bien o para mal.",
+          "intent": "para bien o para mal"
+        },
+        {
+          "id": "5a6379fc-689f-4ac2-8954-6caeb8291ce1",
+          "exampleItem": "Para bien o para mal, ya hemos elegido.",
+          "intent": "Para bien o para mal"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "quer-gostemos-ou-nao-01f703ed-e08a-42b1-bc97-ad4cf6433bbb",
+      "intention": "Nos guste o no",
+      "pattern": "nos guste o no",
+      "description": "Expresa que hay que reconocer o afrontar una realidad, independientemente de nuestra voluntad. Equivale a «whether we like it or not» en inglés.",
+      "category": "concessao",
+      "searchTerms": [
+        "nos guste o no",
+        "nos guste o no nos guste",
+        "queramos o no",
+        "independientemente de que nos guste"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:nos\\s+guste\\s+o\\s+no)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloque de lenguaje",
+        "inglés hablado",
+        "listo para usar",
+        "concesión"
+      ],
+      "related": [],
+      "structure": "nos guste o no",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "790f3f1a-c949-4140-ba82-001109f538d7",
+          "exampleItem": "Nos guste o no, las cosas están cambiando.",
+          "intent": "Nos guste o no"
+        },
+        {
+          "id": "29d2796e-2a8b-423e-9520-15587fdf7e22",
+          "exampleItem": "La tecnología va a seguir avanzando, nos guste o no.",
+          "intent": "nos guste o no"
+        },
+        {
+          "id": "b99b1980-1561-4e49-810a-863f42c0dd46",
+          "exampleItem": "Nos guste o no, tenemos que aceptar los hechos.",
+          "intent": "Nos guste o no"
+        },
+        {
+          "id": "ab9f2bb0-b0e7-4730-bee9-1d63c58465d0",
+          "exampleItem": "Esta decisión nos afecta, nos guste o no.",
+          "intent": "nos guste o no"
+        },
+        {
+          "id": "c2ae4afb-27b3-4a07-a6c5-1a642fd2a7f4",
+          "exampleItem": "Nos guste o no, aprender exige dedicación.",
+          "intent": "Nos guste o no"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "so-o-tempo-dira-5c87e185-f716-4aa9-9aa8-7ed21fbabb80",
+      "intention": "Solo el tiempo lo dirá",
+      "pattern": "solo el tiempo lo dirá",
+      "description": "Expresa que únicamente el futuro podrá revelar la respuesta, el resultado o las consecuencias de una situación. Equivale a «only time will tell» en inglés.",
+      "category": "incerteza",
+      "searchTerms": [
+        "solo el tiempo lo dirá",
+        "únicamente el tiempo lo dirá",
+        "el tiempo dirá",
+        "solo el futuro lo dirá"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:solo\\s+el\\s+tiempo\\s+lo\\s+dirá)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloque de lenguaje",
+        "inglés hablado",
+        "listo para usar",
+        "incertidumbre"
+      ],
+      "related": [],
+      "structure": "solo el tiempo lo dirá",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "d15e3b76-11d2-4606-9b1f-a9fbd166f854",
+          "exampleItem": "Solo el tiempo lo dirá.",
+          "intent": "Solo el tiempo lo dirá"
+        },
+        {
+          "id": "3850c969-9c6e-43eb-878c-344870d8fe9c",
+          "exampleItem": "¿Funcionará esta estrategia? Solo el tiempo lo dirá.",
+          "intent": "Solo el tiempo lo dirá"
+        },
+        {
+          "id": "2cf4371c-3dd1-440c-af74-8d91cde70007",
+          "exampleItem": "Si hemos tomado la decisión correcta, solo el tiempo lo dirá.",
+          "intent": "solo el tiempo lo dirá"
+        },
+        {
+          "id": "024922e3-4ee0-4faf-a0a2-e5de8aa85ff1",
+          "exampleItem": "Nadie sabe qué va a pasar; solo el tiempo lo dirá.",
+          "intent": "solo el tiempo lo dirá"
+        },
+        {
+          "id": "318d2752-9fd4-4a84-aba4-381d5da02817",
+          "exampleItem": "Si todo este esfuerzo ha merecido la pena, solo el tiempo lo dirá.",
+          "intent": "solo el tiempo lo dirá"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "e-dificil-acompanhar-07e9c05b-6ebf-47e5-a614-cdf93e1a0569",
+      "intention": "Es difícil seguir el ritmo de... / Es difícil estar al día de...",
+      "pattern": "es difícil seguir el ritmo de + persona / grupo / cambios; es difícil estar al día de + información",
+      "description": "Expresa dificultad para seguir los cambios, la información, el ritmo o el progreso de alguien o de algo. «Seguir el ritmo de» se usa con personas y procesos; «estar al día de» se refiere a novedades e información. Equivale a «it’s hard to keep up with» en inglés.",
+      "category": "dificuldade",
+      "searchTerms": [
+        "es difícil seguir el ritmo de",
+        "es difícil estar al día de",
+        "no consigo seguir el ritmo",
+        "es complicado estar al día",
+        "es difícil seguir a alguien"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:es\\s+difícil\\s+(?:seguir(?:\\s+el\\s+ritmo\\s+de)?|estar\\s+al\\s+día\\s+de))(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloque de lenguaje",
+        "inglés hablado",
+        "estructura abierta",
+        "dificultad"
+      ],
+      "related": [],
+      "structure": "es difícil seguir el ritmo de + persona / grupo / cambios; es difícil estar al día de + información",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "c6c475aa-b6e0-456f-a21f-283d3917a6e6",
+          "exampleItem": "Es difícil seguir el ritmo de tantos cambios en la tecnología.",
+          "intent": "Es difícil seguir el ritmo de"
+        },
+        {
+          "id": "24ba3be0-a6ba-4111-8da8-4cc03681d5f1",
+          "exampleItem": "Es difícil seguir el ritmo de este equipo.",
+          "intent": "Es difícil seguir el ritmo de"
+        },
+        {
+          "id": "c4a23b90-b107-4547-9826-887dc8db86a2",
+          "exampleItem": "Es difícil estar al día de todas las noticias.",
+          "intent": "Es difícil estar al día de"
+        },
+        {
+          "id": "af49d603-7836-46a1-a859-5cbf62dac95c",
+          "exampleItem": "Es difícil seguir a alguien que habla inglés tan rápido.",
+          "intent": "Es difícil seguir"
+        },
+        {
+          "id": "48aec174-ae3e-4ad6-8077-05c0bfba8a5d",
+          "exampleItem": "A veces, es difícil estar al día de las novedades del proyecto.",
+          "intent": "es difícil estar al día de"
         }
       ]
     }

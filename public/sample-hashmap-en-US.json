@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1305,
+    "totalIntentions": 1310,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -78766,6 +78766,268 @@
           "id": "c5a20c41-5973-4b6e-9d0f-6495e19eaf2c",
           "exampleItem": "How long will you be on leave?",
           "intent": "How long will you be on leave"
+        }
+      ]
+    },
+    {
+      "id": "o-que-me-preocupa-e-64693102-2486-4e59-910f-e8379e6805ab",
+      "intention": "What worries me is...",
+      "pattern": "what worries me is + noun / clause",
+      "description": "Introduces and highlights the main cause of a concern.",
+      "searchTerms": [
+        "what worries me is",
+        "what worries me most is",
+        "my concern is",
+        "what concerns me is"
+      ],
+      "validationPatterns": [
+        "\\bwhat\\s+worries\\s+me\\s+(?:most\\s+)?is\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "open-ended-structure",
+        "concern"
+      ],
+      "structure": "Use 'What worries me is + noun/noun phrase/clause' to focus attention on the cause of concern. Follow it with a noun phrase ('the lack of time'), a gerund phrase ('not being able to finish'), or a 'that' clause ('that no one noticed'). Add 'most' after 'me' to identify the greatest concern: 'What worries me most is...'.",
+      "category": "preocupacao",
+      "related": [],
+      "level": "B1",
+      "examples": [
+        {
+          "id": "444c6c70-93ec-4e06-bb69-800b574aefa7",
+          "exampleItem": "What worries me is the lack of time.",
+          "intent": "What worries me is"
+        },
+        {
+          "id": "102d9e44-5e1f-4b45-9576-20cc4b75ca92",
+          "exampleItem": "What worries me is not being able to finish the project.",
+          "intent": "What worries me is"
+        },
+        {
+          "id": "343a059b-ef1e-4be2-94b3-ff33d30b9377",
+          "exampleItem": "What worries me most is data security.",
+          "intent": "What worries me most is"
+        },
+        {
+          "id": "1032fa8a-81b0-4b6e-9072-cdba94c395fc",
+          "exampleItem": "What worries me is that no one noticed the problem.",
+          "intent": "What worries me is"
+        },
+        {
+          "id": "48c8657a-50de-495a-a502-07be4e92ac09",
+          "exampleItem": "What worries me is losing the opportunity to work abroad.",
+          "intent": "What worries me is"
+        }
+      ]
+    },
+    {
+      "id": "para-o-bem-ou-para-o-mal-c5df15f3-ed84-4085-86d1-7f76a9b24510",
+      "intention": "For better or worse",
+      "pattern": "for better or worse",
+      "description": "Expresses acceptance of the positive or negative consequences of a decision or situation.",
+      "searchTerms": [
+        "for better or worse",
+        "whether for better or worse",
+        "regardless of the consequences"
+      ],
+      "validationPatterns": [
+        "\\bfor\\s+better\\s+or\\s+worse\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "ready-to-use",
+        "concession"
+      ],
+      "structure": "'For better or worse' is a fixed phrase acknowledging that consequences may be positive or negative. It can appear at the beginning or end of a clause, usually separated by a comma: 'For better or worse, we made our choice'.",
+      "category": "concessao",
+      "related": [],
+      "level": "B1",
+      "examples": [
+        {
+          "id": "23a23b9a-cf07-412a-8a91-3c4ad3d93b19",
+          "exampleItem": "For better or worse, we need to move forward.",
+          "intent": "For better or worse"
+        },
+        {
+          "id": "c7fc1c1e-6540-4982-b22b-b6bd1238222d",
+          "exampleItem": "I'll support this decision, for better or worse.",
+          "intent": "for better or worse"
+        },
+        {
+          "id": "eafe8347-6057-49d9-8eb8-49ab73cb64ee",
+          "exampleItem": "For better or worse, this experience changed my life.",
+          "intent": "For better or worse"
+        },
+        {
+          "id": "e92743e5-3225-4dad-96c1-69fbb8d3066a",
+          "exampleItem": "We're in this together, for better or worse.",
+          "intent": "for better or worse"
+        },
+        {
+          "id": "5a6379fc-689f-4ac2-8954-6caeb8291ce1",
+          "exampleItem": "For better or worse, we've already made our choice.",
+          "intent": "For better or worse"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "quer-gostemos-ou-nao-01f703ed-e08a-42b1-bc97-ad4cf6433bbb",
+      "intention": "Whether we like it or not",
+      "pattern": "whether we like it or not",
+      "description": "Expresses that a reality must be acknowledged or faced, regardless of our wishes.",
+      "searchTerms": [
+        "whether we like it or not",
+        "like it or not",
+        "whether we want to or not",
+        "regardless of our preferences"
+      ],
+      "validationPatterns": [
+        "\\b(?:whether\\s+we\\s+)?like\\s+it\\s+or\\s+not\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "ready-to-use",
+        "concession"
+      ],
+      "structure": "'Whether we like it or not' acknowledges an unavoidable reality. Place it before or after the main clause, usually with a comma. 'Whether' introduces the two possibilities 'we like it' and 'we do not like it'; either way, the main statement holds true.",
+      "category": "concessao",
+      "related": [],
+      "level": "B2",
+      "examples": [
+        {
+          "id": "790f3f1a-c949-4140-ba82-001109f538d7",
+          "exampleItem": "Whether we like it or not, things are changing.",
+          "intent": "Whether we like it or not"
+        },
+        {
+          "id": "29d2796e-2a8b-423e-9520-15587fdf7e22",
+          "exampleItem": "Technology will keep advancing, whether we like it or not.",
+          "intent": "whether we like it or not"
+        },
+        {
+          "id": "b99b1980-1561-4e49-810a-863f42c0dd46",
+          "exampleItem": "Whether we like it or not, we need to accept the facts.",
+          "intent": "Whether we like it or not"
+        },
+        {
+          "id": "ab9f2bb0-b0e7-4730-bee9-1d63c58465d0",
+          "exampleItem": "This decision affects us, whether we like it or not.",
+          "intent": "whether we like it or not"
+        },
+        {
+          "id": "c2ae4afb-27b3-4a07-a6c5-1a642fd2a7f4",
+          "exampleItem": "Whether we like it or not, learning takes dedication.",
+          "intent": "Whether we like it or not"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "so-o-tempo-dira-5c87e185-f716-4aa9-9aa8-7ed21fbabb80",
+      "intention": "Only time will tell",
+      "pattern": "only time will tell",
+      "description": "Expresses that only the future can reveal the answer, outcome, or consequences of a situation.",
+      "searchTerms": [
+        "only time will tell",
+        "time will tell",
+        "the future will tell",
+        "wait and see"
+      ],
+      "validationPatterns": [
+        "\\bonly\\s+time\\s+will\\s+tell\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "ready-to-use",
+        "uncertainty"
+      ],
+      "structure": "'Only time will tell' is a fixed expression about an uncertain outcome. It can stand alone or introduce a 'whether' or 'if' clause: 'Only time will tell if we made the right decision'. 'Time' is the subject; 'will tell' means the answer will become clear in the future.",
+      "category": "incerteza",
+      "related": [],
+      "level": "B1",
+      "examples": [
+        {
+          "id": "d15e3b76-11d2-4606-9b1f-a9fbd166f854",
+          "exampleItem": "Only time will tell.",
+          "intent": "Only time will tell"
+        },
+        {
+          "id": "3850c969-9c6e-43eb-878c-344870d8fe9c",
+          "exampleItem": "Will this strategy work? Only time will tell.",
+          "intent": "Only time will tell"
+        },
+        {
+          "id": "2cf4371c-3dd1-440c-af74-8d91cde70007",
+          "exampleItem": "Only time will tell if we made the right decision.",
+          "intent": "Only time will tell"
+        },
+        {
+          "id": "024922e3-4ee0-4faf-a0a2-e5de8aa85ff1",
+          "exampleItem": "Nobody knows what will happen; only time will tell.",
+          "intent": "only time will tell"
+        },
+        {
+          "id": "318d2752-9fd4-4a84-aba4-381d5da02817",
+          "exampleItem": "Only time will tell if all this effort was worth it.",
+          "intent": "Only time will tell"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "e-dificil-acompanhar-07e9c05b-6ebf-47e5-a614-cdf93e1a0569",
+      "intention": "It's hard to keep up with...",
+      "pattern": "it's hard to keep up with + person / topic / pace",
+      "description": "Expresses difficulty keeping pace with changes, information, or someone's or something's progress.",
+      "searchTerms": [
+        "it's hard to keep up with",
+        "hard to keep up",
+        "I can't keep up",
+        "difficult to keep up with"
+      ],
+      "validationPatterns": [
+        "\\bit(?:['?]s|\\s+is)\\s+hard\\s+to\\s+keep\\s+up\\s+with\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "open-ended-structure",
+        "difficulty"
+      ],
+      "structure": "Use 'It's hard to keep up with + noun/noun phrase' to describe difficulty staying informed or matching a pace. 'It' is an introductory subject and 'to keep up with...' names the difficult activity. Use 'with' before the person, topic, or developments: 'It's hard to keep up with all the news'.",
+      "category": "dificuldade",
+      "related": [],
+      "level": "B1",
+      "examples": [
+        {
+          "id": "c6c475aa-b6e0-456f-a21f-283d3917a6e6",
+          "exampleItem": "It's hard to keep up with so many changes in technology.",
+          "intent": "It's hard to keep up with"
+        },
+        {
+          "id": "24ba3be0-a6ba-4111-8da8-4cc03681d5f1",
+          "exampleItem": "It's hard to keep up with this team's pace.",
+          "intent": "It's hard to keep up with"
+        },
+        {
+          "id": "c4a23b90-b107-4547-9826-887dc8db86a2",
+          "exampleItem": "It's hard to keep up with all the news.",
+          "intent": "It's hard to keep up with"
+        },
+        {
+          "id": "af49d603-7836-46a1-a859-5cbf62dac95c",
+          "exampleItem": "It's hard to keep up with someone who speaks English so fast.",
+          "intent": "It's hard to keep up with"
+        },
+        {
+          "id": "48aec174-ae3e-4ad6-8077-05c0bfba8a5d",
+          "exampleItem": "Sometimes, it's hard to keep up with the project updates.",
+          "intent": "it's hard to keep up with"
         }
       ]
     }

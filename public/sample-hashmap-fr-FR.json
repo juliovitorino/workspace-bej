@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1305,
+    "totalIntentions": 1310,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -55332,6 +55332,273 @@
           "id": "c5a20c41-5973-4b6e-9d0f-6495e19eaf2c",
           "exampleItem": "Jusqu'à quand seras-tu en congé ?",
           "intent": "Jusqu'à quand seras-tu en congé"
+        }
+      ]
+    },
+    {
+      "id": "o-que-me-preocupa-e-64693102-2486-4e59-910f-e8379e6805ab",
+      "intention": "Ce qui m'inquiète, c'est…",
+      "pattern": "ce qui m'inquiète, c'est + nom / infinitif / que + proposition",
+      "description": "Introduit et met en relief la principale cause d'une inquiétude.",
+      "category": "preocupacao",
+      "searchTerms": [
+        "ce qui m'inquiète, c'est",
+        "ce qui m'inquiète le plus, c'est",
+        "mon inquiétude",
+        "ce qui me préoccupe"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Ce\\s+qui\\s+m['’]inquiète,\\s+c['’]est(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Ce\\s+qui\\s+m['’]inquiète\\s+le\\s+plus,\\s+c['’]est(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "langue parlée",
+        "structure ouverte",
+        "inquiétude"
+      ],
+      "related": [],
+      "structure": "Ce qui m'inquiète, c'est + groupe nominal ou infinitif : Ce qui m'inquiète, c'est le manque de temps ; Ce qui m'inquiète, c'est de ne pas finir. Pour introduire une proposition, employer c'est que : Ce qui m'inquiète, c'est que personne n'a remarqué le problème. Le plus renforce la priorité donnée à cette inquiétude.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "444c6c70-93ec-4e06-bb69-800b574aefa7",
+          "exampleItem": "Ce qui m'inquiète, c'est le manque de temps.",
+          "intent": "Ce qui m'inquiète, c'est"
+        },
+        {
+          "id": "102d9e44-5e1f-4b45-9576-20cc4b75ca92",
+          "exampleItem": "Ce qui m'inquiète, c'est de ne pas réussir à terminer le projet.",
+          "intent": "Ce qui m'inquiète, c'est"
+        },
+        {
+          "id": "343a059b-ef1e-4be2-94b3-ff33d30b9377",
+          "exampleItem": "Ce qui m'inquiète le plus, c'est la sécurité des données.",
+          "intent": "Ce qui m'inquiète le plus, c'est"
+        },
+        {
+          "id": "1032fa8a-81b0-4b6e-9072-cdba94c395fc",
+          "exampleItem": "Ce qui m'inquiète, c'est que personne n'a remarqué le problème.",
+          "intent": "Ce qui m'inquiète, c'est"
+        },
+        {
+          "id": "48c8657a-50de-495a-a502-07be4e92ac09",
+          "exampleItem": "Ce qui m'inquiète, c'est de perdre l'occasion de travailler à l'étranger.",
+          "intent": "Ce qui m'inquiète, c'est"
+        }
+      ]
+    },
+    {
+      "id": "para-o-bem-ou-para-o-mal-c5df15f3-ed84-4085-86d1-7f76a9b24510",
+      "intention": "Pour le meilleur ou pour le pire",
+      "pattern": "pour le meilleur ou pour le pire",
+      "description": "Exprime l'acceptation des conséquences positives ou négatives d'une décision ou d'une situation.",
+      "category": "concessao",
+      "searchTerms": [
+        "pour le meilleur ou pour le pire",
+        "quoi qu’il arrive",
+        "quelles que soient les conséquences"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Pour\\s+le\\s+meilleur\\s+ou\\s+pour\\s+le\\s+pire(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])pour\\s+le\\s+meilleur\\s+ou\\s+pour\\s+le\\s+pire(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "langue parlée",
+        "prêt à l’emploi",
+        "concession"
+      ],
+      "related": [],
+      "structure": "Pour le meilleur ou pour le pire est une expression figée qui peut précéder ou suivre une proposition. Elle signifie que les conséquences seront assumées, favorables ou défavorables. Une virgule la sépare souvent du reste de la phrase.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "23a23b9a-cf07-412a-8a91-3c4ad3d93b19",
+          "exampleItem": "Pour le meilleur ou pour le pire, nous devons aller de l’avant.",
+          "intent": "Pour le meilleur ou pour le pire"
+        },
+        {
+          "id": "c7fc1c1e-6540-4982-b22b-b6bd1238222d",
+          "exampleItem": "Je soutiendrai cette décision, pour le meilleur ou pour le pire.",
+          "intent": "pour le meilleur ou pour le pire"
+        },
+        {
+          "id": "eafe8347-6057-49d9-8eb8-49ab73cb64ee",
+          "exampleItem": "Pour le meilleur ou pour le pire, cette expérience a changé ma vie.",
+          "intent": "Pour le meilleur ou pour le pire"
+        },
+        {
+          "id": "e92743e5-3225-4dad-96c1-69fbb8d3066a",
+          "exampleItem": "Nous sommes ensemble, pour le meilleur ou pour le pire.",
+          "intent": "pour le meilleur ou pour le pire"
+        },
+        {
+          "id": "5a6379fc-689f-4ac2-8954-6caeb8291ce1",
+          "exampleItem": "Pour le meilleur ou pour le pire, nous avons déjà fait notre choix.",
+          "intent": "Pour le meilleur ou pour le pire"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "quer-gostemos-ou-nao-01f703ed-e08a-42b1-bc97-ad4cf6433bbb",
+      "intention": "Que cela nous plaise ou non",
+      "pattern": "que cela nous plaise ou non",
+      "description": "Indique qu'une réalité doit être reconnue ou affrontée, indépendamment de nos préférences.",
+      "category": "concessao",
+      "searchTerms": [
+        "que cela nous plaise ou non",
+        "que ça nous plaise ou non",
+        "qu’on le veuille ou non"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Que\\s+cela\\s+nous\\s+plaise\\s+ou\\s+non(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])que\\s+cela\\s+nous\\s+plaise\\s+ou\\s+non(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "langue parlée",
+        "prêt à l’emploi",
+        "concession"
+      ],
+      "related": [],
+      "structure": "Que cela nous plaise ou non exprime une concession. Plaise est au subjonctif présent. Cette expression figée peut être placée au début ou à la fin de la phrase. Que ça nous plaise ou non est plus familier ; Qu'on le veuille ou non est une tournure voisine.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "790f3f1a-c949-4140-ba82-001109f538d7",
+          "exampleItem": "Que cela nous plaise ou non, les choses changent.",
+          "intent": "Que cela nous plaise ou non"
+        },
+        {
+          "id": "29d2796e-2a8b-423e-9520-15587fdf7e22",
+          "exampleItem": "La technologie continuera à progresser, que cela nous plaise ou non.",
+          "intent": "que cela nous plaise ou non"
+        },
+        {
+          "id": "b99b1980-1561-4e49-810a-863f42c0dd46",
+          "exampleItem": "Que cela nous plaise ou non, nous devons accepter les faits.",
+          "intent": "Que cela nous plaise ou non"
+        },
+        {
+          "id": "ab9f2bb0-b0e7-4730-bee9-1d63c58465d0",
+          "exampleItem": "Cette décision nous concerne, que cela nous plaise ou non.",
+          "intent": "que cela nous plaise ou non"
+        },
+        {
+          "id": "c2ae4afb-27b3-4a07-a6c5-1a642fd2a7f4",
+          "exampleItem": "Que cela nous plaise ou non, apprendre demande de la persévérance.",
+          "intent": "Que cela nous plaise ou non"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "so-o-tempo-dira-5c87e185-f716-4aa9-9aa8-7ed21fbabb80",
+      "intention": "Seul l'avenir nous le dira",
+      "pattern": "seul l'avenir nous le dira",
+      "description": "Exprime que seul l'avenir permettra de connaître la réponse, le résultat ou les conséquences d'une situation.",
+      "category": "incerteza",
+      "searchTerms": [
+        "seul l'avenir nous le dira",
+        "l'avenir nous le dira",
+        "seul le temps nous le dira",
+        "on verra avec le temps"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Seul\\s+l['’]avenir\\s+nous\\s+le\\s+dira(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Seul\\s+l['’]avenir\\s+nous\\s+dira(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])seul\\s+l['’]avenir\\s+nous\\s+le\\s+dira(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "langue parlée",
+        "prêt à l’emploi",
+        "incertitude"
+      ],
+      "related": [],
+      "structure": "Seul l'avenir nous le dira est une réponse idiomatique à une question dont l'issue reste inconnue. Dira est le futur de dire ; le reprend la réponse ou le résultat attendu. On peut ajouter si + proposition : Seul l'avenir nous dira si nous avons fait le bon choix. Dans cette dernière construction, la proposition remplace le pronom le.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "d15e3b76-11d2-4606-9b1f-a9fbd166f854",
+          "exampleItem": "Seul l'avenir nous le dira.",
+          "intent": "Seul l'avenir nous le dira"
+        },
+        {
+          "id": "3850c969-9c6e-43eb-878c-344870d8fe9c",
+          "exampleItem": "Cette stratégie va-t-elle fonctionner ? Seul l'avenir nous le dira.",
+          "intent": "Seul l'avenir nous le dira"
+        },
+        {
+          "id": "2cf4371c-3dd1-440c-af74-8d91cde70007",
+          "exampleItem": "Seul l'avenir nous dira si nous avons pris la bonne décision.",
+          "intent": "Seul l'avenir nous dira"
+        },
+        {
+          "id": "024922e3-4ee0-4faf-a0a2-e5de8aa85ff1",
+          "exampleItem": "Personne ne sait ce qui va se passer ; seul l'avenir nous le dira.",
+          "intent": "seul l'avenir nous le dira"
+        },
+        {
+          "id": "318d2752-9fd4-4a84-aba4-381d5da02817",
+          "exampleItem": "Seul l'avenir nous dira si tous ces efforts en valaient la peine.",
+          "intent": "Seul l'avenir nous dira"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "e-dificil-acompanhar-07e9c05b-6ebf-47e5-a614-cdf93e1a0569",
+      "intention": "Il est difficile de suivre…",
+      "pattern": "il est difficile de suivre + personne / sujet / rythme",
+      "description": "Exprime la difficulté à suivre des changements, des informations, le rythme ou les progrès de quelqu'un ou de quelque chose.",
+      "category": "dificuldade",
+      "searchTerms": [
+        "il est difficile de suivre",
+        "c’est difficile de suivre",
+        "je n’arrive pas à suivre",
+        "il est compliqué de suivre"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Il\\s+est\\s+difficile\\s+de\\s+suivre(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])il\\s+est\\s+difficile\\s+de\\s+suivre(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "langue parlée",
+        "structure ouverte",
+        "difficulté"
+      ],
+      "related": [],
+      "structure": "Il est difficile de + infinitif introduit une difficulté générale : Il est difficile de suivre toutes les nouvelles. Suivre peut prendre un groupe nominal comme complément : suivre les changements, suivre le rythme, suivre quelqu'un qui parle vite. Pour insister sur la mise à jour des informations, on peut aussi dire se tenir au courant de. C'est difficile de suivre est une formulation courante à l'oral.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "c6c475aa-b6e0-456f-a21f-283d3917a6e6",
+          "exampleItem": "Il est difficile de suivre tous ces changements technologiques.",
+          "intent": "Il est difficile de suivre"
+        },
+        {
+          "id": "24ba3be0-a6ba-4111-8da8-4cc03681d5f1",
+          "exampleItem": "Il est difficile de suivre le rythme de cette équipe.",
+          "intent": "Il est difficile de suivre"
+        },
+        {
+          "id": "c4a23b90-b107-4547-9826-887dc8db86a2",
+          "exampleItem": "Il est difficile de suivre toute l'actualité.",
+          "intent": "Il est difficile de suivre"
+        },
+        {
+          "id": "af49d603-7836-46a1-a859-5cbf62dac95c",
+          "exampleItem": "Il est difficile de suivre quelqu'un qui parle anglais aussi vite.",
+          "intent": "Il est difficile de suivre"
+        },
+        {
+          "id": "48aec174-ae3e-4ad6-8077-05c0bfba8a5d",
+          "exampleItem": "Parfois, il est difficile de suivre les mises à jour du projet.",
+          "intent": "il est difficile de suivre"
         }
       ]
     }
