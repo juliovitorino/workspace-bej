@@ -405,7 +405,7 @@ export function IntentionDetails({
         targetSentence(example).trim() ? `${LANGUAGES[language].flag} ${targetSentence(example).trim()}` : null
       ]),
       "📚 Brazilian English Journey",
-      "https://bejapp.com.br"
+      createStudyDeepLink({ module: "intention", id: item.id, source: sourceLanguage, target: language })
     ].filter((section): section is string => Boolean(section)).join("\n\n");
     try {
       if (navigator.clipboard?.writeText) {
