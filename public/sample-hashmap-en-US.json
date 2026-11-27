@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1299,
+    "totalIntentions": 1304,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -78055,6 +78055,592 @@
           "intent": "fucking terrible"
         }
       ]
+    },
+    {
+      "id": "levar-demorar-x-tempo-9c5e13a4-8d67-4ba2-8394-a0e795d2f461",
+      "intention": "Take a certain amount of time / Take time to do something",
+      "pattern": "it + take + person + time + to + base verb / activity + take + time",
+      "description": "Expresses the time required or spent to perform, complete, or achieve an action, activity, or result. In American English, 'take' indicates how much time something needs. It is common in conversations about work, study, commuting, chores, projects, travel, and everyday activities. The subject may be impersonal 'it', the person performing the action, or the activity itself.",
+      "searchTerms": [
+        "take time",
+        "takes time",
+        "took time",
+        "will take",
+        "take two hours",
+        "take thirty minutes",
+        "take a long time",
+        "take forever",
+        "how long does it take",
+        "how long did it take",
+        "how long will it take",
+        "how long did it take you",
+        "time needed",
+        "time to finish",
+        "time to learn",
+        "longer than expected"
+      ],
+      "validationPatterns": [
+        "\\b(?:take|takes|took|taking)\\b[^.!?]*\\b(?:time|long|forever|seconds?|minutes?|hours?|days?|weeks?|months?|years?)\\b",
+        "\\bhow\\s+long\\b[^.!?]*\\btake\\b",
+        "\\b(?:take|takes|took|taking)\\s+longer\\b"
+      ],
+      "tags": [
+        "time",
+        "duration",
+        "time required",
+        "activities",
+        "tasks",
+        "productivity",
+        "work",
+        "studies",
+        "commuting",
+        "completing activities",
+        "planning",
+        "questions about time",
+        "past",
+        "present",
+        "future",
+        "everyday conversation",
+        "sentence building",
+        "American English"
+      ],
+      "structure": "Use 'it + take + person + time + to + base verb': 'It takes me thirty minutes to get ready', 'It took me two hours to finish the task', and 'It will take us three days to complete the project'. 'It' is impersonal; 'me', 'you', 'him', 'her', 'us', or 'them' identifies the person doing the activity. Omit the person when unimportant: 'It takes about an hour to get there'. Another pattern is 'activity + take + time': 'The trip took five hours' or 'The installation took twenty minutes'. Ask 'How long does it take?', 'How long did it take?', or 'How long will it take?'. To specify a person, ask 'How long did it take you to learn English?'. Negatives include 'It didn't take long' and 'It won't take more than ten minutes'. 'Take a long time' means a substantial amount of time; 'take forever' is informal exaggeration. Distinguish 'last', which emphasizes an event's duration ('The meeting lasted two hours'), from time required for an action ('It took me two hours to prepare the meeting'). 'Spend' uses different grammar: 'I spent two hours studying'. After 'take + person + time', use a 'to' infinitive, rather than a gerund.",
+      "category": "expressions",
+      "related": [],
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a1a20c41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "It took me two hours to finish this task.",
+          "intent": "took me two hours to finish"
+        },
+        {
+          "id": "b2b31d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "How long did it take you to learn English?",
+          "intent": "How long did it take you to learn"
+        },
+        {
+          "id": "c3c42e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "It takes me thirty minutes to get ready in the morning.",
+          "intent": "takes me thirty minutes to get ready"
+        },
+        {
+          "id": "d4d53f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "The trip took five hours.",
+          "intent": "took five hours"
+        },
+        {
+          "id": "e5e64085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "It will take three days to complete the project.",
+          "intent": "will take three days to complete"
+        },
+        {
+          "id": "f6f75196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "It didn't take long to solve the problem.",
+          "intent": "didn't take long to solve"
+        },
+        {
+          "id": "a70862a7-bfd9-41c4-9365-caf0475e0582",
+          "exampleItem": "How long does it take to get to the airport?",
+          "intent": "How long does it take to get"
+        },
+        {
+          "id": "b81973b8-c0ea-42d5-a476-dbf1586f1693",
+          "exampleItem": "The installation took only twenty minutes.",
+          "intent": "took only twenty minutes"
+        },
+        {
+          "id": "c92a84c9-d1fb-43e6-b587-ec02697027a4",
+          "exampleItem": "It's going to take forever to finish this!",
+          "intent": "going to take forever"
+        },
+        {
+          "id": "d03b95da-e20c-44f7-8698-fd137a8138b5",
+          "exampleItem": "It took me six months to develop the first version of the app.",
+          "intent": "took me six months to develop"
+        },
+        {
+          "id": "e14ca6eb-f31d-4508-97a9-0e248b9249c6",
+          "exampleItem": "How long will it take to fix this bug?",
+          "intent": "How long will it take to fix"
+        },
+        {
+          "id": "f25db7fc-042e-4619-a8ba-1f359ca35ad7",
+          "exampleItem": "It won't take more than ten minutes.",
+          "intent": "won't take more than ten minutes"
+        },
+        {
+          "id": "a36ec80d-153f-472a-b9cb-2056adb46be8",
+          "exampleItem": "It took me an hour to understand that explanation.",
+          "intent": "took me an hour to understand"
+        },
+        {
+          "id": "b47fd91e-2640-483b-8adc-3167bec57cf9",
+          "exampleItem": "The download took longer than I expected.",
+          "intent": "took longer than I expected"
+        },
+        {
+          "id": "c580ea2f-3751-494c-9bed-4278cfd68d0a",
+          "exampleItem": "How long does it take you to get to work?",
+          "intent": "How long does it take you to get"
+        }
+      ]
+    },
+    {
+      "id": "ter-x-tempo-de-duracao-8b4d02f3-7c56-4a91-b283-f9d684c1e350",
+      "intention": "Be a certain amount of time long / A two-hour meeting",
+      "pattern": "subject + be + time + long / number + singular time unit + noun",
+      "description": "Describes the duration of an event, activity, piece of content, or experience as a measurable characteristic. In American English, 'be + time + long' states how many hours, minutes, days, or other time units something lasts. It commonly describes meetings, videos, movies, courses, presentations, classes, interviews, and events. 'Long' after the time expression already conveys duration. A related construction uses a compound adjective before a noun, as in 'a two-hour meeting'.",
+      "searchTerms": [
+        "two hours long",
+        "ten minutes long",
+        "three days long",
+        "an hour long",
+        "how long is",
+        "how long was",
+        "duration",
+        "total length",
+        "two-hour meeting",
+        "ten-minute video",
+        "three-hour movie",
+        "six-month course",
+        "one-hour class",
+        "time measurement",
+        "compound adjective"
+      ],
+      "validationPatterns": [
+        "\\b(?:seconds?|minutes?|hours?|days?|weeks?|months?|years?)\\s+long\\b",
+        "\\bhow\\s+long\\s+(?:is|are|was|were)\\b",
+        "\\b(?:\\d+|one|two|three|four|five|six|ten|fifteen|twenty|thirty|forty|fifty)[-](?:second|minute|hour|day|week|month|year)\\s+[a-z]+\\b"
+      ],
+      "tags": [
+        "duration",
+        "time",
+        "time measurements",
+        "characteristics",
+        "descriptions",
+        "events",
+        "meetings",
+        "videos",
+        "movies",
+        "courses",
+        "compound adjectives",
+        "questions about time",
+        "everyday conversation",
+        "sentence building",
+        "American English"
+      ],
+      "structure": "Use 'subject + be + time + long': 'The meeting is two hours long', 'The video is ten minutes long', or 'The movie was three hours long'. 'Be' agrees with the subject and tense; 'long' follows the duration. In the future, say 'The session will be an hour long'. Ask 'How long is the movie?' or 'How long was the meeting?'. Approximation is possible: 'The video is about fifteen minutes long'. 'The meeting lasted two hours' emphasizes the time the event continued; 'The meeting was two hours long' describes its duration as a characteristic. Before a noun, use a compound adjective with a singular time unit and usually a hyphen: 'a two-hour meeting', 'a ten-minute video', or 'a three-day event'. Say 'two-hour', not 'two-hours', but use plural units where needed in 'two hours long'. For one unit, say 'one minute long', 'one hour long', or 'an hour long'. With months or years, 'last + time' or a compound adjective such as 'a six-month course' may sound more natural, depending on context. Here 'long' refers to duration, rather than physical length.",
+      "category": "expressions",
+      "related": [],
+      "level": "B1",
+      "examples": [
+        {
+          "id": "d6b31d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "The meeting was two hours long.",
+          "intent": "two hours long"
+        },
+        {
+          "id": "e7c42e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "The video is ten minutes long.",
+          "intent": "ten minutes long"
+        },
+        {
+          "id": "f8d53f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "The movie is three hours long.",
+          "intent": "three hours long"
+        },
+        {
+          "id": "a9e64085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "The presentation will be fifteen minutes long.",
+          "intent": "fifteen minutes long"
+        },
+        {
+          "id": "b0f75196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "The training session is an hour long.",
+          "intent": "is an hour long"
+        },
+        {
+          "id": "c10862a7-bfd9-41c4-9365-caf0475e0582",
+          "exampleItem": "The interview was forty minutes long.",
+          "intent": "forty minutes long"
+        },
+        {
+          "id": "d21973b8-c0ea-42d5-a476-dbf1586f1693",
+          "exampleItem": "The English class is fifty minutes long.",
+          "intent": "fifty minutes long"
+        },
+        {
+          "id": "e32a84c9-d1fb-43e6-b587-ec02697027a4",
+          "exampleItem": "How long is this documentary?",
+          "intent": "How long is"
+        },
+        {
+          "id": "f43b95da-e20c-44f7-8698-fd137a8138b5",
+          "exampleItem": "The episode is about twenty minutes long.",
+          "intent": "twenty minutes long"
+        },
+        {
+          "id": "a54ca6eb-f31d-4508-97a9-0e248b9249c6",
+          "exampleItem": "It was a two-hour meeting.",
+          "intent": "two-hour meeting"
+        },
+        {
+          "id": "b65db7fc-042e-4619-a8ba-1f359ca35ad7",
+          "exampleItem": "I recorded a five-minute video.",
+          "intent": "five-minute video"
+        },
+        {
+          "id": "c76ec80d-153f-472a-b9cb-2056adb46be8",
+          "exampleItem": "We attended a three-day event.",
+          "intent": "three-day event"
+        },
+        {
+          "id": "d87fd91e-2640-483b-8adc-3167bec57cf9",
+          "exampleItem": "The course is six months long.",
+          "intent": "six months long"
+        },
+        {
+          "id": "e980ea2f-3751-494c-9bed-4278cfd68d0a",
+          "exampleItem": "The next meeting will be only thirty minutes long.",
+          "intent": "will be only thirty minutes long"
+        },
+        {
+          "id": "fa91fb30-4862-4a5d-8cfe-5389d0e79e1b",
+          "exampleItem": "The lecture wasn't even twenty minutes long.",
+          "intent": "twenty minutes long"
+        }
+      ]
+    },
+    {
+      "id": "durar-ter-duracao-de-7a3c91e2-6b45-4f80-9d12-e8c573a0b246",
+      "intention": "Last / Have a duration of / Continue for",
+      "pattern": "event or situation + last + period of time",
+      "description": "Expresses how long an event, activity, experience, situation, or condition continues. In American English, 'last' indicates duration and works with meetings, movies, classes, interviews, presentations, trips, relationships, problems, and other events. It can appear in affirmative and negative statements, questions, and different tenses. 'How long did it last?' is a natural question about an event's duration.",
+      "searchTerms": [
+        "last",
+        "lasts",
+        "lasted",
+        "will last",
+        "lasting",
+        "how long does it last",
+        "how long did it last",
+        "how long will it last",
+        "last about",
+        "last around",
+        "last more than",
+        "last less than",
+        "last until",
+        "meeting duration",
+        "movie duration",
+        "event duration"
+      ],
+      "validationPatterns": [
+        "\\b(?:last|lasts|lasted|lasting)\\s+(?:(?:about|around|only|more\\s+than|less\\s+than)\\s+)?(?:\\d+|one|two|three|four|five|six|ten|twenty|thirty|forty|a\\s+few|an?)\\s+(?:seconds?|minutes?|hours?|days?|weeks?|months?|years?)\\b",
+        "\\b(?:last|lasts|lasted|lasting)\\s+(?:all\\s+(?:day|night)|forever|until\\b)",
+        "\\bhow\\s+long\\b[^.!?]*\\blast\\b"
+      ],
+      "tags": [
+        "duration",
+        "time",
+        "periods",
+        "events",
+        "meetings",
+        "activities",
+        "experiences",
+        "questions about time",
+        "past",
+        "present",
+        "future",
+        "everyday conversation",
+        "sentence building",
+        "American English"
+      ],
+      "structure": "Use 'subject + last + period of time': 'The meeting lasts two hours', 'The meeting lasted two hours', or 'The meeting will last two hours'. Ask 'How long did + subject + last?' for the past ('How long did the meeting last?') and 'How long does it last?' for the present. A negative example is 'The meeting didn't last two hours'. Duration phrases include 'two hours', 'thirty minutes', 'three days', 'a few seconds', 'all night', 'a long time', and 'about an hour'. Use 'last about/around + time' for approximation and 'last more/less than + time' for comparisons. The continuous 'is lasting' is possible when emphasizing a temporary ongoing situation, though the simple present is usually more natural for habitual or scheduled duration. 'Last' also expresses persistence: 'The pain lasted all day'. Distinguish an event's duration with 'last' from the time needed to complete an activity with 'take'. 'Be + time + long' describes duration as a characteristic and may convey the same information. The word 'last' also has non-duration meanings; context is required to distinguish them.",
+      "category": "expressions",
+      "related": [],
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a1c42e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "The meeting lasted two hours.",
+          "intent": "lasted two hours"
+        },
+        {
+          "id": "b2d53f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "The movie lasts about three hours.",
+          "intent": "lasts about three hours"
+        },
+        {
+          "id": "c3e64085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "The interview lasted thirty minutes.",
+          "intent": "lasted thirty minutes"
+        },
+        {
+          "id": "d4f75196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "How long did the presentation last?",
+          "intent": "How long did the presentation last"
+        },
+        {
+          "id": "e50862a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "The training will last all day.",
+          "intent": "will last all day"
+        },
+        {
+          "id": "f61973b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "The class didn't even last an hour.",
+          "intent": "didn't even last an hour"
+        },
+        {
+          "id": "a72a84c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "The trip lasted about five hours.",
+          "intent": "lasted about five hours"
+        },
+        {
+          "id": "b83b95da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "My laptop battery lasts about six hours.",
+          "intent": "lasts about six hours"
+        },
+        {
+          "id": "c94ca6eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "Tomorrow's meeting will last forty minutes.",
+          "intent": "will last forty minutes"
+        },
+        {
+          "id": "d05db7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "How long will this update last?",
+          "intent": "How long will this update last"
+        },
+        {
+          "id": "e16ec80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "The conversation lasted more than an hour.",
+          "intent": "lasted more than an hour"
+        },
+        {
+          "id": "f27fd91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "The problem lasted only a few minutes.",
+          "intent": "lasted only a few minutes"
+        },
+        {
+          "id": "a380ea2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "The party lasted until the early hours of the morning.",
+          "intent": "lasted until the early hours of the morning"
+        },
+        {
+          "id": "b491fb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "This feeling won't last forever.",
+          "intent": "won't last forever"
+        },
+        {
+          "id": "c5a20c41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "The event lasted three days.",
+          "intent": "lasted three days"
+        }
+      ]
+    },
+    {
+      "id": "nao-da-pra-colocar-preco-em-nao-tem-preco-8d5f3b21-7c94-4e60-b182-f6a093c7d245",
+      "intention": "You can't put a price on... / You can't measure... in money",
+      "pattern": "you can't put a price on + noun / noun phrase / gerund",
+      "description": "Expresses that an experience, quality, feeling, opportunity, relationship, or condition has a value that money cannot adequately represent. In American English, 'you can't put a price on + something' emphasizes immeasurable value, especially freedom, health, peace of mind, family, happiness, knowledge, trust, and personal experiences. It is a productive sentence-building pattern because its complement can be a noun, noun phrase, or action expressed with an '-ing' verb. It is natural in everyday conversations, personal reflections, and discussions of life's priorities.",
+      "searchTerms": [
+        "you can't put a price on",
+        "you cannot put a price on",
+        "I can't put a price on",
+        "we can't put a price on",
+        "you just can't put a price on",
+        "there's no putting a price on",
+        "immeasurable value",
+        "sentimental value",
+        "peace of mind",
+        "freedom",
+        "health",
+        "happiness",
+        "family time",
+        "trust",
+        "money cannot buy everything"
+      ],
+      "validationPatterns": [
+        "\\b(?:can['?]t|cannot)\\s+put\\s+a\\s+price\\s+on\\b",
+        "\\bthere['?]s\\s+no\\s+putting\\s+a\\s+price\\s+on\\b"
+      ],
+      "tags": [
+        "emotional value",
+        "inestimable value",
+        "sentimental value",
+        "priorities",
+        "reflections",
+        "quality of life",
+        "family",
+        "freedom",
+        "health",
+        "happiness",
+        "peace of mind",
+        "gratitude",
+        "experiences",
+        "idiomatic expressions",
+        "sentence building",
+        "everyday conversation",
+        "American English"
+      ],
+      "structure": "Use 'you can't put a price on + noun/noun phrase/gerund'. 'Put a price on' means assign a monetary value; the negative idiom conveys that something is inestimably valuable: 'You can't put a price on peace of mind', 'You can't put a price on freedom', and 'You can't put a price on spending time with your family'. 'You' is usually generic, meaning people in general rather than only the listener. Depending on emphasis, use 'I can't put a price on', 'We can't put a price on', or 'You really can't put a price on'. Complements include abstract nouns such as 'happiness', 'health', 'trust', and 'freedom', and nominalized actions such as 'spending time with family' or 'watching your children grow up'. For extra emphasis, say 'You just can't put a price on...'. 'There's no putting a price on...' is another option. Distinguish this productive construction, which introduces a complement, from the direct reaction 'That's priceless!'. 'Put a price on' can also refer literally to economic valuation; its negative idiomatic use especially highlights human values and benefits beyond money.",
+      "category": "expressions",
+      "related": [],
+      "level": "B2",
+      "examples": [
+        {
+          "id": "e26eb80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "You can't put a price on peace of mind.",
+          "intent": "You can't put a price on peace of mind"
+        },
+        {
+          "id": "f37fc91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "You can't put a price on freedom.",
+          "intent": "You can't put a price on freedom"
+        },
+        {
+          "id": "a480da2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "You can't put a price on spending time with your family.",
+          "intent": "You can't put a price on spending time with your family"
+        },
+        {
+          "id": "b591eb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "You can't put a price on health.",
+          "intent": "You can't put a price on health"
+        },
+        {
+          "id": "c6a2fc41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "You can't put a price on watching your children grow up.",
+          "intent": "You can't put a price on watching your children grow up"
+        },
+        {
+          "id": "d7b30d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "You can't put a price on trust between friends.",
+          "intent": "You can't put a price on trust between friends"
+        },
+        {
+          "id": "e8c41e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "You can't put a price on being able to work from anywhere.",
+          "intent": "You can't put a price on being able to work from anywhere"
+        },
+        {
+          "id": "f9d52f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "You can't put a price on the happiness of the people you love.",
+          "intent": "You can't put a price on the happiness of the people you love"
+        },
+        {
+          "id": "a0e63085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "You can't put a price on having time to do what you enjoy.",
+          "intent": "You can't put a price on having time to do what you enjoy"
+        },
+        {
+          "id": "b1f74196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "You can't put a price on the experience of discovering other cultures.",
+          "intent": "You can't put a price on the experience of discovering other cultures"
+        }
+      ]
+    },
+    {
+      "id": "isso-nao-tem-preco-e-impagavel-7c4e2a91-6b83-4d50-a172-9e3f85c0b246",
+      "intention": "That's priceless! / It's priceless! / Money can't buy that!",
+      "pattern": "that's priceless / subject + be + priceless",
+      "description": "Expresses that an experience, feeling, moment, memory, or situation has such great emotional value that it cannot be measured in money. In American English, 'That's priceless!' is a natural reaction of admiration, satisfaction, or emotion toward something especially valuable. 'Priceless' can also humorously describe a reaction, facial expression, or situation that is extremely funny, surprising, or memorable. The expression can stand alone or form part of a sentence with 'be'.",
+      "searchTerms": [
+        "that's priceless",
+        "it's priceless",
+        "priceless",
+        "that was priceless",
+        "would be priceless",
+        "money can't buy that",
+        "inestimable value",
+        "sentimental value",
+        "unforgettable moment",
+        "special moment",
+        "unforgettable experience",
+        "priceless feeling",
+        "priceless reaction",
+        "priceless expression"
+      ],
+      "validationPatterns": [
+        "\\bpriceless\\b",
+        "\\bmoney\\s+can['?]t\\s+buy\\s+that\\b"
+      ],
+      "tags": [
+        "emotional value",
+        "sentimental value",
+        "admiration",
+        "gratitude",
+        "satisfaction",
+        "happiness",
+        "experiences",
+        "special moments",
+        "memories",
+        "spontaneous reactions",
+        "humor",
+        "surprise",
+        "idiomatic expressions",
+        "language chunk",
+        "ready to use",
+        "everyday conversation",
+        "American English"
+      ],
+      "structure": "'That's priceless!' combines 'that is', usually contracted to 'that's', with the adjective 'priceless'. It can stand alone as a reaction or take different subjects: 'This moment is priceless', 'That memory is priceless', or 'Your reaction was priceless'. 'Priceless' describes something of inestimable value, especially emotionally or sentimentally. In humorous contexts, it describes something extremely funny, surprising, or memorable: 'The look on his face was priceless!'. Use 'was priceless' or 'were priceless' for the past, according to the subject, and 'will be priceless' for the future. Distinguish 'priceless' from 'expensive', meaning costly, and 'worthless', meaning without value. The expression is natural in informal conversation, personal stories, gratitude, family moments, and humorous comments. To specify what activity or quality has inestimable value, use the related construction 'You can't put a price on + something'.",
+      "category": "expressions",
+      "related": [],
+      "level": "B2",
+      "examples": [
+        {
+          "id": "a2c41e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "That's priceless!",
+          "intent": "That's priceless!"
+        },
+        {
+          "id": "b3d52f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "Seeing my son happy is priceless.",
+          "intent": "is priceless"
+        },
+        {
+          "id": "c4e63085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "Having that freedom is priceless!",
+          "intent": "is priceless"
+        },
+        {
+          "id": "d5f74196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "That feeling of accomplishment is priceless.",
+          "intent": "is priceless"
+        },
+        {
+          "id": "e60852a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "Dude, your reaction was priceless!",
+          "intent": "was priceless"
+        },
+        {
+          "id": "f71963b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "The look on his face was priceless!",
+          "intent": "was priceless"
+        },
+        {
+          "id": "a82a74c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "Spending this time with my family is priceless.",
+          "intent": "is priceless"
+        },
+        {
+          "id": "b93b85da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "That moment was priceless!",
+          "intent": "was priceless"
+        },
+        {
+          "id": "c04c96eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "Seeing my English improve is priceless.",
+          "intent": "is priceless"
+        },
+        {
+          "id": "d15da7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "The freedom to work from anywhere is priceless!",
+          "intent": "is priceless"
+        }
+      ],
+      "allowLanguageChunkPractice": true
     }
   ]
 }

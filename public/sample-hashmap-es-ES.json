@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1299,
+    "totalIntentions": 1304,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -54092,6 +54092,581 @@
           "intent": "mala de cojones"
         }
       ]
+    },
+    {
+      "id": "levar-demorar-x-tempo-9c5e13a4-8d67-4ba2-8394-a0e795d2f461",
+      "intention": "Tardar X tiempo / Llevar X tiempo / Necesitar X tiempo para hacer algo",
+      "pattern": "tardar + tiempo + en + infinitivo / algo + llevar + tiempo",
+      "description": "Expresa el tiempo necesario o empleado para realizar o terminar una actividad. En español se usa «tardar X tiempo en hacer algo», «llevar X tiempo» o «necesitar X tiempo para hacer algo». Es frecuente en el trabajo, los estudios, las tareas y los desplazamientos. En inglés, «take» expresa este tiempo necesario y permite utilizar «it» como sujeto impersonal.",
+      "category": "expressions",
+      "searchTerms": [
+        "tardar",
+        "tardo",
+        "tardé",
+        "tardó",
+        "tardará",
+        "llevar tiempo",
+        "lleva tiempo",
+        "llevó tiempo",
+        "cuánto se tarda",
+        "cuánto tardaste",
+        "tiempo necesario",
+        "tardar en llegar",
+        "tardar una eternidad"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])tard(?:ar|o|as|a|amos|áis|an|é|aste|ó|aron|ará|arán|aría)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])llev(?:ar|a|ó|ará)\\s+(?:[\\p{L}\\p{N}]+\\s+){0,4}(?:tiempo|minutos?|horas?|días?|meses|años)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])cuánto\\s+tiempo\\s+llev(?:a|ó|ará)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "tiempo",
+        "duración",
+        "tiempo necesario",
+        "actividades",
+        "tareas",
+        "productividad",
+        "trabajo",
+        "estudios",
+        "desplazamientos",
+        "finalización de actividades",
+        "planificación",
+        "preguntas sobre el tiempo",
+        "pasado",
+        "presente",
+        "futuro",
+        "conversación cotidiana",
+        "generador de frases",
+        "inglés americano"
+      ],
+      "related": [],
+      "structure": "«Sujeto + tardar + tiempo + en + infinitivo»: «Tardé dos horas en terminar». El verbo concuerda con la persona y el tiempo: «tardo», «tardamos», «tardaron» o «tardaré». Sin agente explícito se usa «se tarda»: «Se tarda una hora en llegar». La actividad puede ser sujeto con «llevar»: «La instalación llevó veinte minutos». Las preguntas incluyen «¿Cuánto tardaste en aprender?» y «¿Cuánto se tarda en llegar?». «No tardó mucho» y «No llevará más de diez minutos» son negativas naturales. «Tardar una eternidad» es una exageración informal. En inglés, «it + take + person + time + to + base verb» corresponde a «It took me two hours to finish». En presente se usa «takes» con «it»; en pasado, «took»; en futuro, «will take». El complemento de persona puede omitirse. «How long did it take you?» pregunta por el tiempo necesario. «Take» destaca el tiempo para realizar algo, mientras que «last» destaca la duración de un evento. «Spend» expresa tiempo empleado y suele ir con gerundio, como en «I spent two hours studying».",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a1a20c41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "Tardé dos horas en terminar esta tarea.",
+          "intent": "Tardé dos horas en terminar"
+        },
+        {
+          "id": "b2b31d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "¿Cuánto tiempo tardaste en aprender inglés?",
+          "intent": "Cuánto tiempo tardaste en aprender"
+        },
+        {
+          "id": "c3c42e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "Tardo treinta minutos en arreglarme por la mañana.",
+          "intent": "Tardo treinta minutos en arreglarme"
+        },
+        {
+          "id": "d4d53f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "El viaje llevó cinco horas.",
+          "intent": "llevó cinco horas"
+        },
+        {
+          "id": "e5e64085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "Llevará tres días completar el proyecto.",
+          "intent": "Llevará tres días completar"
+        },
+        {
+          "id": "f6f75196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "No tardamos mucho en resolver el problema.",
+          "intent": "No tardamos mucho en resolver"
+        },
+        {
+          "id": "a70862a7-bfd9-41c4-9365-caf0475e0582",
+          "exampleItem": "¿Cuánto se tarda en llegar al aeropuerto?",
+          "intent": "Cuánto se tarda en llegar"
+        },
+        {
+          "id": "b81973b8-c0ea-42d5-a476-dbf1586f1693",
+          "exampleItem": "La instalación llevó solo veinte minutos.",
+          "intent": "llevó solo veinte minutos"
+        },
+        {
+          "id": "c92a84c9-d1fb-43e6-b587-ec02697027a4",
+          "exampleItem": "¡Vamos a tardar una eternidad en terminar esto!",
+          "intent": "Vamos a tardar una eternidad"
+        },
+        {
+          "id": "d03b95da-e20c-44f7-8698-fd137a8138b5",
+          "exampleItem": "Tardé seis meses en desarrollar la primera versión de la aplicación.",
+          "intent": "Tardé seis meses en desarrollar"
+        },
+        {
+          "id": "e14ca6eb-f31d-4508-97a9-0e248b9249c6",
+          "exampleItem": "¿Cuánto tiempo llevará corregir este fallo?",
+          "intent": "Cuánto tiempo llevará corregir"
+        },
+        {
+          "id": "f25db7fc-042e-4619-a8ba-1f359ca35ad7",
+          "exampleItem": "No llevará más de diez minutos.",
+          "intent": "No llevará más de diez minutos"
+        },
+        {
+          "id": "a36ec80d-153f-472a-b9cb-2056adb46be8",
+          "exampleItem": "Tardé una hora en entender aquella explicación.",
+          "intent": "Tardé una hora en entender"
+        },
+        {
+          "id": "b47fd91e-2640-483b-8adc-3167bec57cf9",
+          "exampleItem": "La descarga llevó más tiempo del que esperaba.",
+          "intent": "llevó más tiempo del que esperaba"
+        },
+        {
+          "id": "c580ea2f-3751-494c-9bed-4278cfd68d0a",
+          "exampleItem": "¿Cuánto tardas en llegar al trabajo?",
+          "intent": "Cuánto tardas en llegar"
+        }
+      ]
+    },
+    {
+      "id": "ter-x-tempo-de-duracao-8b4d02f3-7c56-4a91-b283-f9d684c1e350",
+      "intention": "Tener X horas de duración / Tener X minutos de duración / Ser de X tiempo",
+      "pattern": "algo + tener una duración de + tiempo / algo + ser de + tiempo",
+      "description": "Describe la duración de un evento, una actividad o un contenido como una característica medible. En español se usan «tener una duración de», «ser de» y grupos nominales como «una reunión de dos horas». En inglés, «be + time + long» expresa esta característica. También se emplean adjetivos compuestos como «a two-hour meeting».",
+      "category": "expressions",
+      "searchTerms": [
+        "tener una duración de",
+        "tiene una duración de",
+        "tuvo una duración de",
+        "tendrá una duración de",
+        "horas de duración",
+        "minutos de duración",
+        "ser de dos horas",
+        "reunión de dos horas",
+        "vídeo de diez minutos",
+        "curso de seis meses",
+        "cuál es la duración",
+        "duración total"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:duración)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:(?:es|será)\\s+de)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:(?:reunión|vídeo|evento)\\s+de)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "duración",
+        "tiempo",
+        "medidas de tiempo",
+        "características",
+        "descripciones",
+        "eventos",
+        "reuniones",
+        "vídeos",
+        "películas",
+        "cursos",
+        "adjetivos compuestos",
+        "preguntas sobre el tiempo",
+        "conversación cotidiana",
+        "generador de frases",
+        "inglés americano"
+      ],
+      "related": [],
+      "structure": "«Tener una duración de + tiempo» describe una característica temporal: «El vídeo tiene una duración de diez minutos». El verbo puede cambiar a «tuvo» o «tendrá». «Ser de + tiempo» también es natural: «La sesión es de una hora». Un sustantivo puede incorporar la duración con «de»: «una reunión de dos horas» o «un vídeo de cinco minutos». Para preguntar se usa «¿Cuál es la duración?» o «¿Cuánto dura?». En inglés, «subject + be + time + long» coloca «long» después del periodo: «The meeting is two hours long». La unidad va en plural cuando corresponde. En cambio, al formar un adjetivo compuesto antes de un sustantivo se mantiene en singular y se une al número con un guion: «a two-hour meeting», no «a two-hours meeting». «How long is the movie?» pregunta por la duración. «Last + time» destaca cuánto dura el evento; «be + time + long» presenta esa duración como característica. Para cursos de meses o años, «a six-month course» o «last» pueden resultar más naturales según el contexto. «Long» se refiere aquí al tiempo, no a una longitud física.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "d6b31d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "La reunión tuvo una duración de dos horas.",
+          "intent": "una duración de dos horas"
+        },
+        {
+          "id": "e7c42e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "El vídeo tiene una duración de diez minutos.",
+          "intent": "una duración de diez minutos"
+        },
+        {
+          "id": "f8d53f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "La película tiene una duración de tres horas.",
+          "intent": "una duración de tres horas"
+        },
+        {
+          "id": "a9e64085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "La presentación tendrá una duración de quince minutos.",
+          "intent": "una duración de quince minutos"
+        },
+        {
+          "id": "b0f75196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "La formación es de una hora.",
+          "intent": "es de una hora"
+        },
+        {
+          "id": "c10862a7-bfd9-41c4-9365-caf0475e0582",
+          "exampleItem": "La entrevista tuvo una duración de cuarenta minutos.",
+          "intent": "una duración de cuarenta minutos"
+        },
+        {
+          "id": "d21973b8-c0ea-42d5-a476-dbf1586f1693",
+          "exampleItem": "La clase de inglés tiene una duración de cincuenta minutos.",
+          "intent": "una duración de cincuenta minutos"
+        },
+        {
+          "id": "e32a84c9-d1fb-43e6-b587-ec02697027a4",
+          "exampleItem": "¿Cuál es la duración de este documental?",
+          "intent": "Cuál es la duración"
+        },
+        {
+          "id": "f43b95da-e20c-44f7-8698-fd137a8138b5",
+          "exampleItem": "El episodio tiene una duración de unos veinte minutos.",
+          "intent": "una duración de unos veinte minutos"
+        },
+        {
+          "id": "a54ca6eb-f31d-4508-97a9-0e248b9249c6",
+          "exampleItem": "Fue una reunión de dos horas.",
+          "intent": "reunión de dos horas"
+        },
+        {
+          "id": "b65db7fc-042e-4619-a8ba-1f359ca35ad7",
+          "exampleItem": "Grabé un vídeo de cinco minutos.",
+          "intent": "vídeo de cinco minutos"
+        },
+        {
+          "id": "c76ec80d-153f-472a-b9cb-2056adb46be8",
+          "exampleItem": "Participamos en un evento de tres días.",
+          "intent": "evento de tres días"
+        },
+        {
+          "id": "d87fd91e-2640-483b-8adc-3167bec57cf9",
+          "exampleItem": "El curso tiene una duración de seis meses.",
+          "intent": "una duración de seis meses"
+        },
+        {
+          "id": "e980ea2f-3751-494c-9bed-4278cfd68d0a",
+          "exampleItem": "La próxima reunión será de apenas treinta minutos.",
+          "intent": "será de apenas treinta minutos"
+        },
+        {
+          "id": "fa91fb30-4862-4a5d-8cfe-5389d0e79e1b",
+          "exampleItem": "La charla no llegó a tener ni veinte minutos de duración.",
+          "intent": "veinte minutos de duración"
+        }
+      ]
+    },
+    {
+      "id": "durar-ter-duracao-de-7a3c91e2-6b45-4f80-9d12-e8c573a0b246",
+      "intention": "Durar... / Tener una duración de... / Prolongarse durante...",
+      "pattern": "algo + durar + periodo de tiempo / algo + prolongarse durante + periodo",
+      "description": "Expresa cuánto tiempo se mantiene un evento, una actividad, una experiencia, una situación o un estado. «Durar» se usa con reuniones, películas, viajes, relaciones y problemas. Admite afirmaciones, negaciones, preguntas y distintos tiempos verbales. «Tener una duración de» y «prolongarse durante» son alternativas según el contexto. En inglés, «last» expresa esta duración.",
+      "category": "expressions",
+      "searchTerms": [
+        "durar",
+        "dura",
+        "duran",
+        "duró",
+        "duraron",
+        "duraba",
+        "durará",
+        "va a durar",
+        "cuánto dura",
+        "cuánto duró",
+        "tener una duración de",
+        "prolongarse durante",
+        "durar dos horas",
+        "durar toda la noche",
+        "durar para siempre"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:dur(?:ar|a|an|ó|aron|aba|ará|arán|aría))(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:duración)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:se\\s+prolongó\\s+durante)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "duración",
+        "tiempo",
+        "periodos",
+        "eventos",
+        "reuniones",
+        "actividades",
+        "experiencias",
+        "preguntas sobre el tiempo",
+        "pasado",
+        "presente",
+        "futuro",
+        "conversación cotidiana",
+        "generador de frases",
+        "inglés americano"
+      ],
+      "related": [],
+      "structure": "«Sujeto + durar + tiempo» indica cuánto se mantiene algo: «La reunión duró dos horas». El verbo concuerda con el sujeto y el tiempo: «dura», «duró», «durará» o «va a durar». Puede incluir aproximaciones o límites: «dura unas tres horas», «duró más de una hora» o «no duró ni una hora». También admite «todo el día», «hasta la madrugada» y «para siempre». «Tener una duración de» es descriptivo y «prolongarse durante» puede destacar que el evento se extendió. En inglés, «subject + last + time» cumple esta función: «The meeting lasted two hours». Las preguntas usan auxiliares: «How long did the meeting last?» y «How long does it last?». La negativa es «didn’t last» y el futuro «will last». «Last» destaca la duración de un evento; «take» suele señalar el tiempo necesario para realizar una actividad. «Be + time + long» describe la duración como una característica. El presente simple suele ser más natural que el continuo para duraciones habituales o previstas.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a1c42e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "La reunión duró dos horas.",
+          "intent": "duró dos horas"
+        },
+        {
+          "id": "b2d53f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "La película dura aproximadamente tres horas.",
+          "intent": "dura aproximadamente tres horas"
+        },
+        {
+          "id": "c3e64085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "La entrevista duró treinta minutos.",
+          "intent": "duró treinta minutos"
+        },
+        {
+          "id": "d4f75196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "¿Cuánto tiempo duró la presentación?",
+          "intent": "Cuánto tiempo duró"
+        },
+        {
+          "id": "e50862a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "La formación va a durar todo el día.",
+          "intent": "va a durar todo el día"
+        },
+        {
+          "id": "f61973b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "La clase no duró ni una hora.",
+          "intent": "no duró ni una hora"
+        },
+        {
+          "id": "a72a84c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "El viaje duró unas cinco horas.",
+          "intent": "duró unas cinco horas"
+        },
+        {
+          "id": "b83b95da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "La batería de mi portátil dura aproximadamente seis horas.",
+          "intent": "dura aproximadamente seis horas"
+        },
+        {
+          "id": "c94ca6eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "La reunión de mañana tendrá una duración de cuarenta minutos.",
+          "intent": "tendrá una duración de cuarenta minutos"
+        },
+        {
+          "id": "d05db7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "¿Cuánto tiempo va a durar esta actualización?",
+          "intent": "Cuánto tiempo va a durar"
+        },
+        {
+          "id": "e16ec80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "La conversación duró más de una hora.",
+          "intent": "duró más de una hora"
+        },
+        {
+          "id": "f27fd91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "El problema duró solo unos minutos.",
+          "intent": "duró solo unos minutos"
+        },
+        {
+          "id": "a380ea2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "La fiesta duró hasta la madrugada.",
+          "intent": "duró hasta la madrugada"
+        },
+        {
+          "id": "b491fb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "Esta sensación no va a durar para siempre.",
+          "intent": "no va a durar para siempre"
+        },
+        {
+          "id": "c5a20c41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "El evento se prolongó durante tres días.",
+          "intent": "se prolongó durante tres días"
+        }
+      ]
+    },
+    {
+      "id": "nao-da-pra-colocar-preco-em-nao-tem-preco-8d5f3b21-7c94-4e60-b182-f6a093c7d245",
+      "intention": "No se puede poner precio a... / No tiene precio... / No se puede medir en dinero...",
+      "pattern": "no se puede poner precio a + algo / no tiene precio + infinitivo",
+      "description": "Expresa que una experiencia, una cualidad, un sentimiento o una relación poseen un valor que no se puede representar adecuadamente con dinero. «No se puede poner precio a» destaca el valor incalculable de la libertad, la salud, la tranquilidad o la confianza. «No tiene precio» y «no hay dinero que pague» son alternativas naturales. En inglés, «you can’t put a price on» permite añadir sustantivos o acciones para explicar qué se considera inestimable.",
+      "category": "expressions",
+      "searchTerms": [
+        "no se puede poner precio a",
+        "no puedes poner precio a",
+        "no tiene precio",
+        "no hay dinero que pague",
+        "no se puede medir en dinero",
+        "valor inestimable",
+        "valor incalculable",
+        "valor sentimental",
+        "la tranquilidad no tiene precio",
+        "la salud no tiene precio",
+        "el dinero no lo compra todo"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:no\\s+se\\s+puede\\s+poner\\s+precio\\s+a)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:no\\s+tiene\\s+precio)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:no\\s+hay\\s+dinero\\s+que\\s+pague)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:no\\s+se\\s+puede\\s+medir\\s+en\\s+dinero)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "valor emocional",
+        "valor inestimable",
+        "valor sentimental",
+        "prioridades",
+        "reflexiones",
+        "calidad de vida",
+        "familia",
+        "libertad",
+        "salud",
+        "felicidad",
+        "tranquilidad",
+        "gratitud",
+        "experiencias",
+        "expresiones idiomáticas",
+        "generador de frases",
+        "conversación cotidiana",
+        "inglés americano"
+      ],
+      "related": [],
+      "structure": "«No se puede poner precio a + sustantivo» destaca un valor que supera el dinero: «No se puede poner precio a la tranquilidad». La preposición es «a» y se contrae con «el» en «al». Para una actividad se utiliza el infinitivo: «Pasar tiempo con la familia no tiene precio». También se dice «No hay dinero que pague...» o «No se puede medir en dinero». En inglés, «you can’t put a price on + noun/noun phrase/gerund» expresa la misma idea. «You» suele ser genérico, sin referirse directamente al interlocutor. Se puede variar la persona con «I» o «we» y añadir énfasis con «really» o «just». Las acciones se expresan con gerundio: «spending time with family». «That’s priceless!» suele ser una reacción independiente, mientras que «you can’t put a price on...» introduce aquello cuyo valor se explica. La expresión suele ser figurada y emocional, aunque «put a price on» también puede referirse literalmente a una valoración económica.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "e26eb80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "No se puede poner precio a la tranquilidad.",
+          "intent": "No se puede poner precio a la tranquilidad"
+        },
+        {
+          "id": "f37fc91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "No se puede poner precio a la libertad.",
+          "intent": "No se puede poner precio a la libertad"
+        },
+        {
+          "id": "a480da2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "Pasar tiempo con la familia no tiene precio.",
+          "intent": "Pasar tiempo con la familia no tiene precio"
+        },
+        {
+          "id": "b591eb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "No se puede poner precio a la salud.",
+          "intent": "No se puede poner precio a la salud"
+        },
+        {
+          "id": "c6a2fc41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "Ver crecer a tus hijos no tiene precio.",
+          "intent": "Ver crecer a tus hijos no tiene precio"
+        },
+        {
+          "id": "d7b30d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "No se puede poner precio a la confianza entre amigos.",
+          "intent": "No se puede poner precio a la confianza entre amigos"
+        },
+        {
+          "id": "e8c41e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "Poder trabajar desde cualquier lugar no tiene precio.",
+          "intent": "Poder trabajar desde cualquier lugar no tiene precio"
+        },
+        {
+          "id": "f9d52f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "No se puede poner precio a la felicidad de quienes queremos.",
+          "intent": "No se puede poner precio a la felicidad de quienes queremos"
+        },
+        {
+          "id": "a0e63085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "Tener tiempo para hacer lo que te gusta no tiene precio.",
+          "intent": "Tener tiempo para hacer lo que te gusta no tiene precio"
+        },
+        {
+          "id": "b1f74196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "No se puede poner precio a la experiencia de conocer otras culturas.",
+          "intent": "No se puede poner precio a la experiencia de conocer otras culturas"
+        }
+      ]
+    },
+    {
+      "id": "isso-nao-tem-preco-e-impagavel-7c4e2a91-6b83-4d50-a172-9e3f85c0b246",
+      "intention": "¡Eso no tiene precio! / ¡Es impagable! / ¡No hay dinero que lo pague!",
+      "pattern": "eso no tiene precio / algo + ser impagable / no hay dinero que lo pague",
+      "description": "Expresa que una experiencia, un sentimiento, un recuerdo o una situación tienen un valor emocional que no se puede medir en dinero. «¡Eso no tiene precio!» y «¡Es impagable!» son reacciones de admiración, satisfacción o emoción. En contextos humorísticos, «impagable» también describe una reacción o una expresión facial especialmente divertida o memorable. En inglés, «That’s priceless!» cumple estas funciones y puede usarse como reacción independiente.",
+      "category": "expressions",
+      "searchTerms": [
+        "eso no tiene precio",
+        "no tiene precio",
+        "es impagable",
+        "fue impagable",
+        "sería impagable",
+        "no hay dinero que lo pague",
+        "valor inestimable",
+        "valor sentimental",
+        "momento inolvidable",
+        "reacción impagable",
+        "expresión impagable"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:no\\s+tiene\\s+precio)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:(?:es|fue|era|sería)\\s+impagable)(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])(?:no\\s+hay\\s+dinero\\s+que\\s+lo\\s+pague)(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "valor emocional",
+        "valor sentimental",
+        "admiración",
+        "gratitud",
+        "satisfacción",
+        "felicidad",
+        "experiencias",
+        "momentos especiales",
+        "recuerdos",
+        "reacciones espontáneas",
+        "humor",
+        "sorpresa",
+        "expresiones idiomáticas",
+        "bloque de lenguaje",
+        "listo para usar",
+        "conversación cotidiana",
+        "inglés americano"
+      ],
+      "related": [],
+      "structure": "«¡Eso no tiene precio!» es una reacción completa ante algo de gran valor emocional. «Ser impagable» admite distintos sujetos y tiempos: «Esa libertad es impagable», «Su reacción fue impagable» o «Ese momento será impagable». En un contexto humorístico destaca una reacción divertida: «¡La cara que puso fue impagable!». «No hay dinero que lo pague» refuerza que el valor supera una medida económica. En inglés, «That’s priceless!» combina «that is», habitualmente contraído, con «priceless». También se usa «Your reaction was priceless» o «This moment is priceless». «Priceless» no significa «expensive», que indica un precio alto, ni «worthless», que significa sin valor. Para introducir una actividad o cualidad valiosa se emplea «You can’t put a price on + something». Son expresiones naturales en recuerdos personales, momentos familiares, muestras de gratitud y comentarios con humor.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "a2c41e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "¡Eso no tiene precio!",
+          "intent": "¡Eso no tiene precio!"
+        },
+        {
+          "id": "b3d52f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "Ver a mi hijo feliz no tiene precio.",
+          "intent": "no tiene precio"
+        },
+        {
+          "id": "c4e63085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "¡Tener esa libertad es impagable!",
+          "intent": "es impagable"
+        },
+        {
+          "id": "d5f74196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "Aquella sensación de logro no tiene precio.",
+          "intent": "no tiene precio"
+        },
+        {
+          "id": "e60852a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "¡Tío, tu reacción fue impagable!",
+          "intent": "fue impagable"
+        },
+        {
+          "id": "f71963b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "¡La expresión de su cara fue impagable!",
+          "intent": "fue impagable"
+        },
+        {
+          "id": "a82a74c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "Pasar este tiempo con mi familia no tiene precio.",
+          "intent": "no tiene precio"
+        },
+        {
+          "id": "b93b85da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "¡Aquel momento fue impagable!",
+          "intent": "fue impagable"
+        },
+        {
+          "id": "c04c96eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "Ver cómo mejora mi inglés no tiene precio.",
+          "intent": "no tiene precio"
+        },
+        {
+          "id": "d15da7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "¡La libertad de trabajar desde cualquier lugar es impagable!",
+          "intent": "es impagable"
+        }
+      ],
+      "allowLanguageChunkPractice": true
     }
   ]
 }

@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1299,
+    "totalIntentions": 1304,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -54565,6 +54565,646 @@
           "id": "fb31eb90-a486-405d-b6e7-c309618bad4f",
           "exampleItem": "La démonstration du système était vraiment merdique !",
           "intent": "vraiment merdique"
+        }
+      ]
+    },
+    {
+      "id": "levar-demorar-x-tempo-9c5e13a4-8d67-4ba2-8394-a0e795d2f461",
+      "intention": "Mettre un certain temps à… / Prendre du temps / Combien de temps faut-il pour…",
+      "pattern": "sujet + mettre + durée + à + infinitif / il faut + durée + pour + infinitif",
+      "description": "Exprime le temps nécessaire pour effectuer une action, achever une tâche ou atteindre un résultat. On emploie mettre une certaine durée à faire quelque chose, prendre du temps ou il faut une certaine durée pour faire quelque chose. Ces constructions servent à parler de travail, d'études, de déplacements, de projets et de tâches quotidiennes. Elles peuvent préciser la personne concernée ou présenter une durée générale.",
+      "category": "expressions",
+      "searchTerms": [
+        "mis deux heures à terminer",
+        "Combien de temps as-tu mis à apprendre",
+        "mets trente minutes à me préparer",
+        "a pris cinq heures",
+        "faudra trois jours pour terminer",
+        "n'a pas fallu longtemps pour résoudre",
+        "Combien de temps faut-il pour arriver",
+        "a pris seulement vingt minutes",
+        "va prendre une éternité",
+        "mis six mois à développer",
+        "Combien de temps faudra-t-il pour corriger",
+        "ne prendra pas plus de dix minutes",
+        "mis une heure à comprendre",
+        "a pris plus de temps que prévu",
+        "Combien de temps mets-tu à aller",
+        "temps",
+        "durée",
+        "temps nécessaire",
+        "activités",
+        "tâches"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])mis\\s+deux\\s+heures\\s+à\\s+terminer(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Combien\\s+de\\s+temps\\s+as-tu\\s+mis\\s+à\\s+apprendre(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])mets\\s+trente\\s+minutes\\s+à\\s+me\\s+préparer(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])a\\s+pris\\s+cinq\\s+heures(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])faudra\\s+trois\\s+jours\\s+pour\\s+terminer(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])n['’]a\\s+pas\\s+fallu\\s+longtemps\\s+pour\\s+résoudre(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Combien\\s+de\\s+temps\\s+faut-il\\s+pour\\s+arriver(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])a\\s+pris\\s+seulement\\s+vingt\\s+minutes(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])va\\s+prendre\\s+une\\s+éternité(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])mis\\s+six\\s+mois\\s+à\\s+développer(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Combien\\s+de\\s+temps\\s+faudra-t-il\\s+pour\\s+corriger(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])ne\\s+prendra\\s+pas\\s+plus\\s+de\\s+dix\\s+minutes(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])mis\\s+une\\s+heure\\s+à\\s+comprendre(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])a\\s+pris\\s+plus\\s+de\\s+temps\\s+que\\s+prévu(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Combien\\s+de\\s+temps\\s+mets-tu\\s+à\\s+aller(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "temps",
+        "durée",
+        "temps nécessaire",
+        "activités",
+        "tâches",
+        "productivité",
+        "travail",
+        "études",
+        "déplacements",
+        "achèvement des activités",
+        "planification",
+        "questions sur le temps",
+        "passé",
+        "présent",
+        "futur",
+        "conversation quotidienne",
+        "construction de phrases",
+        "anglais américain"
+      ],
+      "related": [],
+      "structure": "Avec une personne comme sujet, employer mettre + durée + à + infinitif : J'ai mis deux heures à terminer cette tâche. Au présent : Je mets trente minutes à me préparer. Au futur : Nous mettrons trois jours à finir. Avec il faut, la durée précède pour + infinitif : Il faut une heure pour y arriver. Un pronom peut préciser la personne : Il m'a fallu deux heures pour comprendre. Une activité peut être sujet de prendre : Le téléchargement a pris vingt minutes. Pour interroger, dire Combien de temps faut-il pour… ? ou Combien de temps as-tu mis à… ? Ne pas confondre le temps nécessaire pour réaliser une action et la durée d'un événement : Préparer la réunion a pris deux heures ; La réunion a duré deux heures. Passer deux heures à étudier exprime le temps consacré à une activité. Prendre une éternité est une exagération familière.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a1a20c41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "J'ai mis deux heures à terminer cette tâche.",
+          "intent": "mis deux heures à terminer"
+        },
+        {
+          "id": "b2b31d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "Combien de temps as-tu mis à apprendre l'anglais ?",
+          "intent": "Combien de temps as-tu mis à apprendre"
+        },
+        {
+          "id": "c3c42e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "Je mets trente minutes à me préparer le matin.",
+          "intent": "mets trente minutes à me préparer"
+        },
+        {
+          "id": "d4d53f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "Le trajet a pris cinq heures.",
+          "intent": "a pris cinq heures"
+        },
+        {
+          "id": "e5e64085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "Il faudra trois jours pour terminer le projet.",
+          "intent": "faudra trois jours pour terminer"
+        },
+        {
+          "id": "f6f75196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "Il n'a pas fallu longtemps pour résoudre le problème.",
+          "intent": "n'a pas fallu longtemps pour résoudre"
+        },
+        {
+          "id": "a70862a7-bfd9-41c4-9365-caf0475e0582",
+          "exampleItem": "Combien de temps faut-il pour arriver à l'aéroport ?",
+          "intent": "Combien de temps faut-il pour arriver"
+        },
+        {
+          "id": "b81973b8-c0ea-42d5-a476-dbf1586f1693",
+          "exampleItem": "L'installation a pris seulement vingt minutes.",
+          "intent": "a pris seulement vingt minutes"
+        },
+        {
+          "id": "c92a84c9-d1fb-43e6-b587-ec02697027a4",
+          "exampleItem": "Ça va prendre une éternité de finir ça !",
+          "intent": "va prendre une éternité"
+        },
+        {
+          "id": "d03b95da-e20c-44f7-8698-fd137a8138b5",
+          "exampleItem": "J'ai mis six mois à développer la première version de l'application.",
+          "intent": "mis six mois à développer"
+        },
+        {
+          "id": "e14ca6eb-f31d-4508-97a9-0e248b9249c6",
+          "exampleItem": "Combien de temps faudra-t-il pour corriger ce bug ?",
+          "intent": "Combien de temps faudra-t-il pour corriger"
+        },
+        {
+          "id": "f25db7fc-042e-4619-a8ba-1f359ca35ad7",
+          "exampleItem": "Ça ne prendra pas plus de dix minutes.",
+          "intent": "ne prendra pas plus de dix minutes"
+        },
+        {
+          "id": "a36ec80d-153f-472a-b9cb-2056adb46be8",
+          "exampleItem": "J'ai mis une heure à comprendre cette explication.",
+          "intent": "mis une heure à comprendre"
+        },
+        {
+          "id": "b47fd91e-2640-483b-8adc-3167bec57cf9",
+          "exampleItem": "Le téléchargement a pris plus de temps que prévu.",
+          "intent": "a pris plus de temps que prévu"
+        },
+        {
+          "id": "c580ea2f-3751-494c-9bed-4278cfd68d0a",
+          "exampleItem": "Combien de temps mets-tu à aller au travail ?",
+          "intent": "Combien de temps mets-tu à aller"
+        }
+      ]
+    },
+    {
+      "id": "ter-x-tempo-de-duracao-8b4d02f3-7c56-4a91-b283-f9d684c1e350",
+      "intention": "Avoir une durée de… / Être de… / Un événement de deux heures",
+      "pattern": "sujet + être + de + durée / avoir une durée de + durée / nom + de + durée",
+      "description": "Présente la durée d'un événement, d'une activité ou d'un contenu comme une caractéristique mesurable. On emploie être de, avoir une durée de ou une construction nominale comme une réunion de deux heures. Ces formulations servent à décrire des réunions, vidéos, films, cours, entretiens et événements. Le verbe durer est souvent une alternative plus simple et naturelle.",
+      "category": "expressions",
+      "searchTerms": [
+        "une durée de deux heures",
+        "une durée de dix minutes",
+        "une durée de trois heures",
+        "une durée de quinze minutes",
+        "est d'une heure",
+        "une durée de quarante minutes",
+        "une durée de cinquante minutes",
+        "Quelle est la durée",
+        "une durée d'environ vingt minutes",
+        "réunion de deux heures",
+        "vidéo de cinq minutes",
+        "événement de trois jours",
+        "une durée de six mois",
+        "sera de trente minutes seulement",
+        "une durée de vingt minutes",
+        "durée",
+        "temps",
+        "mesures du temps",
+        "caractéristiques",
+        "descriptions"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])une\\s+durée\\s+de\\s+deux\\s+heures(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])une\\s+durée\\s+de\\s+dix\\s+minutes(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])une\\s+durée\\s+de\\s+trois\\s+heures(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])une\\s+durée\\s+de\\s+quinze\\s+minutes(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])est\\s+d['’]une\\s+heure(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])une\\s+durée\\s+de\\s+quarante\\s+minutes(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])une\\s+durée\\s+de\\s+cinquante\\s+minutes(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Quelle\\s+est\\s+la\\s+durée(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])une\\s+durée\\s+d['’]environ\\s+vingt\\s+minutes(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])réunion\\s+de\\s+deux\\s+heures(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])vidéo\\s+de\\s+cinq\\s+minutes(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])événement\\s+de\\s+trois\\s+jours(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])une\\s+durée\\s+de\\s+six\\s+mois(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])sera\\s+de\\s+trente\\s+minutes\\s+seulement(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])une\\s+durée\\s+de\\s+vingt\\s+minutes(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "durée",
+        "temps",
+        "mesures du temps",
+        "caractéristiques",
+        "descriptions",
+        "événements",
+        "réunions",
+        "vidéos",
+        "films",
+        "cours",
+        "adjectifs composés",
+        "questions sur le temps",
+        "conversation quotidienne",
+        "construction de phrases",
+        "anglais américain"
+      ],
+      "related": [],
+      "structure": "Pour décrire une durée comme une caractéristique, dire La durée de la réunion est de deux heures ou La vidéo a une durée de dix minutes. Dans une construction nominale : une réunion de deux heures, une vidéo de cinq minutes, un événement de trois jours. Contrairement aux adjectifs composés anglais, les unités de temps prennent normalement le pluriel en français : deux heures, dix minutes. Pour une approximation : une durée d'environ quinze minutes. Pour interroger : Quelle est la durée du film ? ou Combien de temps dure le film ? Durer présente directement le déroulement temporel ; avoir une durée de met la mesure en avant. La formulation avec être de demande un sujet adapté : La durée est de trente minutes, ou La réunion sera de trente minutes. Ne pas traduire une durée temporelle par long de lorsque cette construction paraît artificielle.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "d6b31d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "La réunion a eu une durée de deux heures.",
+          "intent": "une durée de deux heures"
+        },
+        {
+          "id": "e7c42e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "La vidéo a une durée de dix minutes.",
+          "intent": "une durée de dix minutes"
+        },
+        {
+          "id": "f8d53f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "Le film a une durée de trois heures.",
+          "intent": "une durée de trois heures"
+        },
+        {
+          "id": "a9e64085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "La présentation aura une durée de quinze minutes.",
+          "intent": "une durée de quinze minutes"
+        },
+        {
+          "id": "b0f75196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "La formation est d'une heure.",
+          "intent": "est d'une heure"
+        },
+        {
+          "id": "c10862a7-bfd9-41c4-9365-caf0475e0582",
+          "exampleItem": "L'entretien a eu une durée de quarante minutes.",
+          "intent": "une durée de quarante minutes"
+        },
+        {
+          "id": "d21973b8-c0ea-42d5-a476-dbf1586f1693",
+          "exampleItem": "Le cours d'anglais a une durée de cinquante minutes.",
+          "intent": "une durée de cinquante minutes"
+        },
+        {
+          "id": "e32a84c9-d1fb-43e6-b587-ec02697027a4",
+          "exampleItem": "Quelle est la durée de ce documentaire ?",
+          "intent": "Quelle est la durée"
+        },
+        {
+          "id": "f43b95da-e20c-44f7-8698-fd137a8138b5",
+          "exampleItem": "L'épisode a une durée d'environ vingt minutes.",
+          "intent": "une durée d'environ vingt minutes"
+        },
+        {
+          "id": "a54ca6eb-f31d-4508-97a9-0e248b9249c6",
+          "exampleItem": "C'était une réunion de deux heures.",
+          "intent": "réunion de deux heures"
+        },
+        {
+          "id": "b65db7fc-042e-4619-a8ba-1f359ca35ad7",
+          "exampleItem": "J'ai enregistré une vidéo de cinq minutes.",
+          "intent": "vidéo de cinq minutes"
+        },
+        {
+          "id": "c76ec80d-153f-472a-b9cb-2056adb46be8",
+          "exampleItem": "Nous avons participé à un événement de trois jours.",
+          "intent": "événement de trois jours"
+        },
+        {
+          "id": "d87fd91e-2640-483b-8adc-3167bec57cf9",
+          "exampleItem": "Le cours a une durée de six mois.",
+          "intent": "une durée de six mois"
+        },
+        {
+          "id": "e980ea2f-3751-494c-9bed-4278cfd68d0a",
+          "exampleItem": "La prochaine réunion sera de trente minutes seulement.",
+          "intent": "sera de trente minutes seulement"
+        },
+        {
+          "id": "fa91fb30-4862-4a5d-8cfe-5389d0e79e1b",
+          "exampleItem": "La conférence n'a même pas eu une durée de vingt minutes.",
+          "intent": "une durée de vingt minutes"
+        }
+      ]
+    },
+    {
+      "id": "durar-ter-duracao-de-7a3c91e2-6b45-4f80-9d12-e8c573a0b246",
+      "intention": "Durer… / Avoir une durée de… / S’étendre sur…",
+      "pattern": "événement ou situation + durer + durée / s’étendre sur + durée",
+      "description": "Exprime le temps pendant lequel un événement, une activité, une expérience ou une situation se poursuit. Durer se conjugue au présent, au passé et au futur et s'emploie avec des réunions, films, cours, voyages, relations ou problèmes. On peut indiquer une durée précise, approximative, minimale ou maximale, ou demander combien de temps un événement a duré.",
+      "category": "expressions",
+      "searchTerms": [
+        "a duré deux heures",
+        "dure environ trois heures",
+        "a duré trente minutes",
+        "Combien de temps a duré",
+        "va durer toute la journée",
+        "n'a même pas duré une heure",
+        "a duré environ cinq heures",
+        "tient environ six heures",
+        "durera quarante minutes",
+        "Combien de temps va durer",
+        "a duré plus d'une heure",
+        "a duré seulement quelques minutes",
+        "a duré jusqu'à l'aube",
+        "ne va pas durer éternellement",
+        "s'est étendu sur trois jours",
+        "durée",
+        "temps",
+        "périodes",
+        "événements",
+        "réunions"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])a\\s+duré\\s+deux\\s+heures(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])dure\\s+environ\\s+trois\\s+heures(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])a\\s+duré\\s+trente\\s+minutes(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Combien\\s+de\\s+temps\\s+a\\s+duré(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])va\\s+durer\\s+toute\\s+la\\s+journée(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])n['’]a\\s+même\\s+pas\\s+duré\\s+une\\s+heure(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])a\\s+duré\\s+environ\\s+cinq\\s+heures(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])tient\\s+environ\\s+six\\s+heures(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])durera\\s+quarante\\s+minutes(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Combien\\s+de\\s+temps\\s+va\\s+durer(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])a\\s+duré\\s+plus\\s+d['’]une\\s+heure(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])a\\s+duré\\s+seulement\\s+quelques\\s+minutes(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])a\\s+duré\\s+jusqu['’]à\\s+l['’]aube(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])ne\\s+va\\s+pas\\s+durer\\s+éternellement(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])s['’]est\\s+étendu\\s+sur\\s+trois\\s+jours(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "durée",
+        "temps",
+        "périodes",
+        "événements",
+        "réunions",
+        "activités",
+        "expériences",
+        "questions sur le temps",
+        "passé",
+        "présent",
+        "futur",
+        "conversation quotidienne",
+        "construction de phrases",
+        "anglais américain"
+      ],
+      "related": [],
+      "structure": "La structure principale est sujet + durer + durée : La réunion dure deux heures, La réunion a duré deux heures, La réunion durera deux heures. Pour interroger : Combien de temps a duré la présentation ? Pour nier : Le cours n'a pas duré une heure. On peut préciser environ, plus de, moins de ou seulement : La conversation a duré plus d'une heure. Jusqu'à indique un terme : La fête a duré jusqu'à l'aube. S'étendre sur met en relief une période couverte : L'événement s'est étendu sur trois jours. Pour une autonomie électrique, tenir est également naturel : La batterie tient six heures. Durer décrit la persistance d'un événement ou d'un état ; mettre du temps à et prendre du temps indiquent plutôt le temps nécessaire à une action. Le présent simple suffit pour une durée habituelle ou programmée ; être en train de durer serait généralement peu naturel.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "a1c42e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "La réunion a duré deux heures.",
+          "intent": "a duré deux heures"
+        },
+        {
+          "id": "b2d53f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "Le film dure environ trois heures.",
+          "intent": "dure environ trois heures"
+        },
+        {
+          "id": "c3e64085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "L'entretien a duré trente minutes.",
+          "intent": "a duré trente minutes"
+        },
+        {
+          "id": "d4f75196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "Combien de temps a duré la présentation ?",
+          "intent": "Combien de temps a duré"
+        },
+        {
+          "id": "e50862a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "La formation va durer toute la journée.",
+          "intent": "va durer toute la journée"
+        },
+        {
+          "id": "f61973b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "Le cours n'a même pas duré une heure.",
+          "intent": "n'a même pas duré une heure"
+        },
+        {
+          "id": "a72a84c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "Le voyage a duré environ cinq heures.",
+          "intent": "a duré environ cinq heures"
+        },
+        {
+          "id": "b83b95da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "La batterie de mon ordinateur portable tient environ six heures.",
+          "intent": "tient environ six heures"
+        },
+        {
+          "id": "c94ca6eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "La réunion de demain durera quarante minutes.",
+          "intent": "durera quarante minutes"
+        },
+        {
+          "id": "d05db7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "Combien de temps va durer cette mise à jour ?",
+          "intent": "Combien de temps va durer"
+        },
+        {
+          "id": "e16ec80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "La conversation a duré plus d'une heure.",
+          "intent": "a duré plus d'une heure"
+        },
+        {
+          "id": "f27fd91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "Le problème a duré seulement quelques minutes.",
+          "intent": "a duré seulement quelques minutes"
+        },
+        {
+          "id": "a380ea2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "La fête a duré jusqu'à l'aube.",
+          "intent": "a duré jusqu'à l'aube"
+        },
+        {
+          "id": "b491fb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "Cette sensation ne va pas durer éternellement.",
+          "intent": "ne va pas durer éternellement"
+        },
+        {
+          "id": "c5a20c41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "L'événement s'est étendu sur trois jours.",
+          "intent": "s'est étendu sur trois jours"
+        }
+      ]
+    },
+    {
+      "id": "nao-da-pra-colocar-preco-em-nao-tem-preco-8d5f3b21-7c94-4e60-b182-f6a093c7d245",
+      "intention": "On ne peut pas mettre un prix sur… / … n’a pas de prix / … ne se mesure pas en argent",
+      "pattern": "on ne peut pas mettre un prix sur + nom / infinitif ou groupe nominal + ne pas avoir de prix",
+      "description": "Souligne qu'une expérience, une qualité, un sentiment ou une relation a une valeur qu'une somme d'argent ne peut représenter correctement. On peut dire On ne peut pas mettre un prix sur… ou présenter directement ce qui n'a pas de prix. Cette expression permet de parler de liberté, de santé, de sérénité, de confiance et de moments partagés, en privilégiant la valeur humaine ou affective.",
+      "category": "expressions",
+      "searchTerms": [
+        "On ne peut pas mettre un prix sur la tranquillité d'esprit",
+        "On ne peut pas mettre un prix sur la liberté",
+        "Passer du temps en famille n'a pas de prix",
+        "On ne peut pas mettre un prix sur la santé",
+        "Voir ses enfants grandir n'a pas de prix",
+        "On ne peut pas mettre un prix sur la confiance entre amis",
+        "Pouvoir travailler de n'importe où n'a pas de prix",
+        "On ne peut pas mettre un prix sur le bonheur de ceux qu'on aime",
+        "Avoir du temps pour faire ce qu'on aime n'a pas de prix",
+        "On ne peut pas mettre un prix sur la découverte d'autres cultures",
+        "valeur émotionnelle",
+        "valeur inestimable",
+        "valeur sentimentale",
+        "priorités",
+        "réflexions"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])On\\s+ne\\s+peut\\s+pas\\s+mettre\\s+un\\s+prix\\s+sur\\s+la\\s+tranquillité\\s+d['’]esprit(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])On\\s+ne\\s+peut\\s+pas\\s+mettre\\s+un\\s+prix\\s+sur\\s+la\\s+liberté(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Passer\\s+du\\s+temps\\s+en\\s+famille\\s+n['’]a\\s+pas\\s+de\\s+prix(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])On\\s+ne\\s+peut\\s+pas\\s+mettre\\s+un\\s+prix\\s+sur\\s+la\\s+santé(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Voir\\s+ses\\s+enfants\\s+grandir\\s+n['’]a\\s+pas\\s+de\\s+prix(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])On\\s+ne\\s+peut\\s+pas\\s+mettre\\s+un\\s+prix\\s+sur\\s+la\\s+confiance\\s+entre\\s+amis(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Pouvoir\\s+travailler\\s+de\\s+n['’]importe\\s+où\\s+n['’]a\\s+pas\\s+de\\s+prix(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])On\\s+ne\\s+peut\\s+pas\\s+mettre\\s+un\\s+prix\\s+sur\\s+le\\s+bonheur\\s+de\\s+ceux\\s+qu['’]on\\s+aime(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Avoir\\s+du\\s+temps\\s+pour\\s+faire\\s+ce\\s+qu['’]on\\s+aime\\s+n['’]a\\s+pas\\s+de\\s+prix(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])On\\s+ne\\s+peut\\s+pas\\s+mettre\\s+un\\s+prix\\s+sur\\s+la\\s+découverte\\s+d['’]autres\\s+cultures(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "valeur émotionnelle",
+        "valeur inestimable",
+        "valeur sentimentale",
+        "priorités",
+        "réflexions",
+        "qualité de vie",
+        "famille",
+        "liberté",
+        "santé",
+        "bonheur",
+        "tranquillité",
+        "gratitude",
+        "expériences",
+        "expressions idiomatiques",
+        "construction de phrases",
+        "conversation quotidienne",
+        "anglais américain"
+      ],
+      "related": [],
+      "structure": "On ne peut pas mettre un prix sur + groupe nominal introduit ce dont la valeur est inestimable : On ne peut pas mettre un prix sur la tranquillité d'esprit. On a ici un sens général, sans désigner une personne précise. Une formulation très naturelle est sujet + ne pas avoir de prix : La santé n'a pas de prix. Un infinitif peut servir de sujet : Passer du temps en famille n'a pas de prix. Avec un sujet plus long, on peut reprendre par ça : Voir ses enfants grandir, ça n'a pas de prix. On peut aussi dire Cela ne se mesure pas en argent. À distinguer d'une estimation financière littérale : ici, le propos dépasse la valeur monétaire. Ça n'a pas de prix peut être une réaction autonome, tandis que On ne peut pas mettre un prix sur introduit explicitement un complément.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "e26eb80d-153f-472a-b9cb-2051ad5a6be8",
+          "exampleItem": "On ne peut pas mettre un prix sur la tranquillité d'esprit.",
+          "intent": "On ne peut pas mettre un prix sur la tranquillité d'esprit"
+        },
+        {
+          "id": "f37fc91e-2640-483b-8adc-3162be6b7cf9",
+          "exampleItem": "On ne peut pas mettre un prix sur la liberté.",
+          "intent": "On ne peut pas mettre un prix sur la liberté"
+        },
+        {
+          "id": "a480da2f-3751-494c-9bed-4273cf7c8d0a",
+          "exampleItem": "Passer du temps en famille n'a pas de prix.",
+          "intent": "Passer du temps en famille n'a pas de prix"
+        },
+        {
+          "id": "b591eb30-4862-4a5d-8cfe-5384d08d9e1b",
+          "exampleItem": "On ne peut pas mettre un prix sur la santé.",
+          "intent": "On ne peut pas mettre un prix sur la santé"
+        },
+        {
+          "id": "c6a2fc41-5973-4b6e-9d0f-6495e19eaf2c",
+          "exampleItem": "Voir ses enfants grandir n'a pas de prix.",
+          "intent": "Voir ses enfants grandir n'a pas de prix"
+        },
+        {
+          "id": "d7b30d52-6a84-4c7f-ae10-75a6f20fb03d",
+          "exampleItem": "On ne peut pas mettre un prix sur la confiance entre amis.",
+          "intent": "On ne peut pas mettre un prix sur la confiance entre amis"
+        },
+        {
+          "id": "e8c41e63-7b95-4d80-9f21-86b7031ac14e",
+          "exampleItem": "Pouvoir travailler de n'importe où n'a pas de prix.",
+          "intent": "Pouvoir travailler de n'importe où n'a pas de prix"
+        },
+        {
+          "id": "f9d52f74-8ca6-4e91-a032-97c8142bd25f",
+          "exampleItem": "On ne peut pas mettre un prix sur le bonheur de ceux qu'on aime.",
+          "intent": "On ne peut pas mettre un prix sur le bonheur de ceux qu'on aime"
+        },
+        {
+          "id": "a0e63085-9db7-4fa2-b143-a8d9253ce360",
+          "exampleItem": "Avoir du temps pour faire ce qu'on aime n'a pas de prix.",
+          "intent": "Avoir du temps pour faire ce qu'on aime n'a pas de prix"
+        },
+        {
+          "id": "b1f74196-aec8-40b3-8254-b9ea364df471",
+          "exampleItem": "On ne peut pas mettre un prix sur la découverte d'autres cultures.",
+          "intent": "On ne peut pas mettre un prix sur la découverte d'autres cultures"
+        }
+      ]
+    },
+    {
+      "id": "isso-nao-tem-preco-e-impagavel-7c4e2a91-6b83-4d50-a172-9e3f85c0b246",
+      "intention": "Ça n’a pas de prix ! / C’est inestimable ! / C’est impayable !",
+      "pattern": "sujet + ne pas avoir de prix / être inestimable / être impayable",
+      "description": "Exprime l'admiration, la gratitude ou l'émotion devant un moment ou une expérience dont la valeur affective ne peut se mesurer en argent. Ça n'a pas de prix ! et C'est inestimable ! soulignent cette valeur. Dans un contexte humoristique, C'est impayable ! décrit plutôt une réaction, une expression ou une situation particulièrement drôle et mémorable. Le choix du mot doit respecter cette différence de sens en français.",
+      "category": "expressions",
+      "searchTerms": [
+        "Ça n'a pas de prix",
+        "n'a pas de prix",
+        "était impayable",
+        "n'avait pas de prix",
+        "valeur émotionnelle",
+        "valeur sentimentale",
+        "admiration",
+        "gratitude",
+        "satisfaction"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Ça\\s+n['’]a\\s+pas\\s+de\\s+prix(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])n['’]a\\s+pas\\s+de\\s+prix(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])était\\s+impayable(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])n['’]avait\\s+pas\\s+de\\s+prix(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "valeur émotionnelle",
+        "valeur sentimentale",
+        "admiration",
+        "gratitude",
+        "satisfaction",
+        "bonheur",
+        "expériences",
+        "moments particuliers",
+        "souvenirs",
+        "réactions spontanées",
+        "humour",
+        "surprise",
+        "expressions idiomatiques",
+        "bloc de langage",
+        "prêt à l’emploi",
+        "conversation quotidienne",
+        "anglais américain"
+      ],
+      "related": [],
+      "structure": "Ça n'a pas de prix ! est une réaction autonome et peut aussi se construire avec un sujet précis : Ce souvenir n'a pas de prix, Cette liberté n'a pas de prix. Inestimable souligne une valeur immense ou impossible à chiffrer : Cette aide est inestimable. Impayable s'emploie surtout dans un registre humoristique pour quelque chose d'irrésistiblement drôle : Sa tête était impayable ! Au passé, on peut dire Ce moment n'avait pas de prix ou Sa réaction était impayable. Une expérience affectivement précieuse n'est pas nécessairement chère ; ne pas confondre valeur sentimentale et coût. Ne pas employer sans valeur, qui exprime le contraire. Pour détailler ce qui compte, un infinitif peut être sujet : Voir ses enfants heureux n'a pas de prix.",
+      "level": "B2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "a2c41e63-7b95-4d80-9f21-e6a573b0c148",
+          "exampleItem": "Ça n'a pas de prix !",
+          "intent": "Ça n'a pas de prix !"
+        },
+        {
+          "id": "b3d52f74-8ca6-4e91-a032-f7b684c1d259",
+          "exampleItem": "Voir mon fils heureux n'a pas de prix.",
+          "intent": "n'a pas de prix"
+        },
+        {
+          "id": "c4e63085-9db7-4fa2-b143-a8c795d2e360",
+          "exampleItem": "Avoir cette liberté n'a pas de prix !",
+          "intent": "n'a pas de prix"
+        },
+        {
+          "id": "d5f74196-aec8-40b3-8254-b9d8a6e3f471",
+          "exampleItem": "Ce sentiment d'accomplissement n'a pas de prix.",
+          "intent": "n'a pas de prix"
+        },
+        {
+          "id": "e60852a7-bfd9-41c4-9365-cae9b7f40582",
+          "exampleItem": "Mec, ta réaction était impayable !",
+          "intent": "était impayable"
+        },
+        {
+          "id": "f71963b8-c0ea-42d5-a476-dbf0c8051693",
+          "exampleItem": "La tête qu'il a faite était impayable !",
+          "intent": "était impayable"
+        },
+        {
+          "id": "a82a74c9-d1fb-43e6-b587-ec01d91627a4",
+          "exampleItem": "Passer ce temps avec ma famille n'a pas de prix.",
+          "intent": "n'a pas de prix"
+        },
+        {
+          "id": "b93b85da-e20c-44f7-8698-fd12ea2738b5",
+          "exampleItem": "Ce moment n'avait pas de prix !",
+          "intent": "n'avait pas de prix"
+        },
+        {
+          "id": "c04c96eb-f31d-4508-97a9-0e23fb3849c6",
+          "exampleItem": "Voir mon anglais progresser n'a pas de prix.",
+          "intent": "n'a pas de prix"
+        },
+        {
+          "id": "d15da7fc-042e-4619-a8ba-1f340c495ad7",
+          "exampleItem": "La liberté de travailler de n'importe où n'a pas de prix !",
+          "intent": "n'a pas de prix"
         }
       ]
     }
