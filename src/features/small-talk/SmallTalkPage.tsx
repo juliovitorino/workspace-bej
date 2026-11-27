@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import { isAuthorMode } from '../../utils/authorMode';
 import { AI_PROVIDER_CHANGED_EVENT, aiAssetPath, getAIProvider, type AIProvider } from '../../config/aiProvider';
 import { buildSmallTalkAnalysisPrompt } from './smallTalkAiPrompt';
-import { loadSmallTalkIndex, loadSmallTalkTopic } from '../../services/smallTalkCatalogService';
+import { loadSmallTalkIndex, loadSmallTalkTopic, loadSmallTalkItems } from '../../services/smallTalkCatalogService';
 import { readSmallTalkPersonalAnswers } from '../../services/smallTalkPersonalAnswersService';
 import type { SmallTalkItem, SmallTalkTopic, SmallTalkTopicIndexEntry, SmallTalkWalkingSettings } from '../../types/smallTalk';
 import { readLocalJson, readWalkingSettings, saveLocalJson, SMALL_TALK_FAVORITES_KEY, SMALL_TALK_WALKING_SETTINGS_KEY } from './smallTalkPreferences';
@@ -47,6 +47,14 @@ function topicDisplayName(title: string): string {
 const topicSorter = new Intl.Collator('en-US', { sensitivity: 'base', numeric: true });
 
 
+const ALL_TOPICS = '*';
+const ALL_TOPICS_LABELS: Record<string, string> = {
+  'pt-BR': '* - Todos os tópicos',
+  'en-US': '* - All topics',
+  'es-ES': '* - Todos los temas',
+  'fr-FR': '* - Tous les sujets'
+};
+
 export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceLanguage = "pt-BR", language = "en-US" }: Props) {
   const authorMode = isAuthorMode();
   const [aiProvider, setAiProvider] = useState<AIProvider>(getAIProvider);
@@ -64,6 +72,8 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
   }, []);
   const [topics, setTopics] = useState<SmallTalkTopicIndexEntry[]>([]);
   const [topicId, setTopicId] = useState('');
+  const allTopicsSelected = topicId === ALL_TOPICS;
+  const allTopicsLabel = ALL_TOPICS_LABELS[sourceLanguage] ?? ALL_TOPICS_LABELS['pt-BR'];
   const [topicsMenuOpen, setTopicsMenuOpen] = useState(false);
   const [topicsMenuQuery, setTopicsMenuQuery] = useState('');
   const [topic, setTopic] = useState<SmallTalkTopic | null>(null);
@@ -522,17 +532,25 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
     let active = true;
     const controller = new AbortController();
     setLoading(true); setError(''); setAnswerVisible([]);
-    loadSmallTalkTopic(topicId, 'en-US', controller.signal).then(value => {
+    const loadingTopic = topicId === ALL_TOPICS
+      ? loadSmallTalkItems(topics.map(entry => entry.id), 'en-US', controller.signal).then(items => ({
+          schemaVersion: '1.0.0' as const, module: 'small-talk' as const, locale: 'en-US' as const,
+          topicId: ALL_TOPICS, title: allTopicsLabel, description: null, items
+        }))
+      : loadSmallTalkTopic(topicId, 'en-US', controller.signal);
+    loadingTopic.then(value => {
       if (active) {
         // A limpeza só considera IDs e textos do tópico público efetivamente carregado.
         // Se o armazenamento falhar, não bloqueamos o estudo nem apagamos dados.
-        try { setAnswerOverrides(pruneRedundantAnswerOverrides(value.items)); } catch { /* dados preservados */ }
-        try { setQuestionOverrides(pruneRedundantQuestionOverrides(value.items)); } catch { /* dados preservados */ }
+        if (topicId !== ALL_TOPICS) {
+          try { setAnswerOverrides(pruneRedundantAnswerOverrides(value.items)); } catch { /* dados preservados */ }
+          try { setQuestionOverrides(pruneRedundantQuestionOverrides(value.items)); } catch { /* dados preservados */ }
+        }
         setTopic(value); setLoading(false);
       }
     }).catch(e => { if (active && !controller.signal.aborted) { setError(String(e)); setLoading(false); } });
     return () => { active = false; controller.abort(); };
-  }, [topicId]);
+  }, [topicId, topics, allTopicsLabel]);
 
   useEffect(() => {
     try { setPersonalAnswers(readSmallTalkPersonalAnswers(window.localStorage)); setPrivateError(''); }
@@ -891,9 +909,9 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
   const walkItems = filtered.filter(item => item.enabled && !!questionFor(item).trim());
   const [sessionItems, setSessionItems] = useState<SmallTalkItem[]>([]);
   function startWalking() {
-    if (!walkItems.length) return;
+    if (loading || !walkItems.length) return;
     const selection = walkItems.slice();
-    if (settings.shuffle) {
+    if (settings.shuffle || allTopicsSelected) {
       for (let i = selection.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [selection[i], selection[j]] = [selection[j], selection[i]];
@@ -905,7 +923,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
   if (walking) return <SmallTalkWalking items={sessionItems} questionNumbers={printNumbers} settings={settings}
     onComplete={(hadSkippedQuestions) => {
       const allQuestions = orderedTopicItems.filter(item => item.enabled && questionFor(item).trim());
-      const fullTopic = !hadSkippedQuestions && topic?.topicId === topicId && allQuestions.length > 0 &&
+      const fullTopic = !allTopicsSelected && !hadSkippedQuestions && topic?.topicId === topicId && allQuestions.length > 0 &&
         sessionItems.length === allQuestions.length &&
         allQuestions.every(item => sessionItems.some(studied => studied.id === item.id));
       const title = fullTopic ? "Small Talk completo!" : "Sessão de Small Talk concluída!";
@@ -977,13 +995,17 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
           </span>
         </label>
         <nav className="small-talk-topics-nav" aria-label="Lista alfabética de tópicos">
+          {(topicsMenuQuery.trim() === '' || allTopicsLabel.toLocaleLowerCase().includes(topicsMenuQuery.trim().toLocaleLowerCase())) && (
+            <button type="button" className={`small-talk-topic-option${allTopicsSelected ? ' is-selected' : ''}`}
+              onClick={() => selectTopic(ALL_TOPICS)}>{allTopicsLabel}{allTopicsSelected && <span aria-hidden="true">✓</span>}</button>
+          )}
           {menuTopics.map(t => <button key={t.id} type="button" className={`small-talk-topic-option${topicId === t.id ? ' is-selected' : ''}`} aria-current={topicId === t.id ? 'true' : undefined} onClick={() => selectTopic(t.id)}>{topicDisplayName(t.sourceTitle)}{topicId === t.id && <span aria-hidden="true">✓</span>}</button>)}
           {menuTopics.length === 0 && <p className="small-talk-topics-empty">Nenhum tópico encontrado.</p>}
         </nav>
       </div>
     </div>}
     <div className="small-talk-filters">
-      <label>Tópico <select value={topicId} onChange={e => selectTopic(e.target.value)}>{topics.map(t => <option key={t.id} value={t.id}>{topicDisplayName(t.sourceTitle)}</option>)}</select></label>
+      <label>Tópico <select value={topicId} onChange={e => selectTopic(e.target.value)}><option value={ALL_TOPICS}>{allTopicsLabel}</option>{topics.map(t => <option key={t.id} value={t.id}>{topicDisplayName(t.sourceTitle)}</option>)}</select></label>
       <label>Pesquisar pergunta <input type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Search questions..." /></label>
       <label>Nível <select value={level} onChange={e => setLevel(e.target.value as LevelFilter)}>{levelOptions.map(l => <option key={l} value={l}>{l === 'all' ? 'Todos' : l === 'unclassified' ? 'Sem classificação' : l.toUpperCase()}</option>)}</select></label>
       <label><input type="checkbox" checked={favoritesOnly} onChange={e => setFavoritesOnly(e.target.checked)} /> Apenas favoritos</label>
@@ -1034,6 +1056,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
       </label><span className="settings-dialog-help">Salve no Drive e importe em outro dispositivo. Não há sincronização automática destas edições.</span>
       {backupMessage && <span role="status">{backupMessage}</span>}
     </div>
+    {!allTopicsSelected && <>
     <div className="small-talk-topic-export-bar">
       <button type="button" className="small-talk-topic-export-trigger" title="Exportar tópico inteiro"
         aria-label="Exportar tópico inteiro" disabled={loading || !topic || topic.topicId !== topicId}
@@ -1061,6 +1084,9 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
             <button type="button" className="secondary-button" onClick={() => toggleCustomCard(entry.item.id, false)}>Restaurar card</button>
           </div>)}
       </div>}
+    </>}
+    {allTopicsSelected && <p className="settings-dialog-help">Todos os tópicos: use Iniciar Modo Caminhada para praticar perguntas misturadas. Para editar, imprimir ou exportar cards, selecione um tópico específico.</p>}
+    {!allTopicsSelected && <>
     <header className="results-header">
       <h3>{loading ? 'Carregando...' : `${topic?.title ?? ''} — ${filtered.length} perguntas`}</h3>
       <div className="small-talk-actions">
@@ -1218,6 +1244,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
         </div>}
       </article>;
     })}</div>
+    </>}
     {!loading && filtered.length === 0 && <p>Nenhuma pergunta corresponde aos filtros.</p>}
     {pendingConfirmation && <div className="small-talk-export-overlay" onMouseDown={event => { if (event.target === event.currentTarget) setPendingConfirmation(null); }}>
       <section className="small-talk-export-modal small-talk-confirm-modal" role="dialog" aria-modal="true" aria-labelledby="small-talk-confirm-title" aria-describedby="small-talk-confirm-description">
