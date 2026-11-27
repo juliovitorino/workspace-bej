@@ -904,7 +904,29 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
   }
   // The visible list, individual-card printing and topic printing share one order and numbering.
   const printableItems = printableSmallTalkItems(filtered, questionFor);
-  const printNumbers = smallTalkPrintNumbers(printableItems);
+  // Walking labels must match each topic's own printed order, even when all
+  // topics are combined, filtered or shuffled into a single session.
+  const printNumbers = (() => {
+    if (!allTopicsSelected) return smallTalkPrintNumbers(printableSmallTalkItems(orderedTopicItems, questionFor));
+    const numbers: Record<string, number> = {};
+    for (const entry of topics) {
+      const sameTopic = activeTopicItems.filter(item =>
+        item.source?.section?.trim().toLocaleLowerCase('en-US') === entry.sourceTitle.trim().toLocaleLowerCase('en-US')
+      );
+      const saved = topicOrders[entry.id]?.ids ?? [];
+      const positions = new Map(saved.map((id, index) => [id, index]));
+      const ordered = sameTopic.slice().sort((a, b) => {
+        const ai = positions.get(a.id);
+        const bi = positions.get(b.id);
+        if (ai === undefined && bi === undefined) return a.order - b.order;
+        if (ai === undefined) return 1;
+        if (bi === undefined) return -1;
+        return ai - bi;
+      });
+      Object.assign(numbers, smallTalkPrintNumbers(printableSmallTalkItems(ordered, questionFor)));
+    }
+    return numbers;
+  })();
   // Keep the selected session in printed order until the optional shuffle starts.
   const walkItems = filtered.filter(item => item.enabled && !!questionFor(item).trim());
   const [sessionItems, setSessionItems] = useState<SmallTalkItem[]>([]);
@@ -920,7 +942,16 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
     setTopicsMenuOpen(false); setSessionItems(selection.map(itemWithQuestion)); setWalking(true);
   }
 
-  if (walking) return <SmallTalkWalking items={sessionItems} questionNumbers={printNumbers} settings={settings}
+  const walkingTopicTitles = Object.fromEntries(sessionItems.map(item => {
+    const section = item.source?.section?.trim();
+    const matchingTopic = topics.find(entry => entry.sourceTitle.trim().toLocaleLowerCase('en-US') === section?.toLocaleLowerCase('en-US'));
+    const title = allTopicsSelected
+      ? topicDisplayName(matchingTopic?.sourceTitle ?? section ?? 'Small Talk')
+      : topicDisplayName(topic?.title ?? topics.find(entry => entry.id === topicId)?.sourceTitle ?? section ?? 'Small Talk');
+    return [item.id, title];
+  }));
+
+  if (walking) return <SmallTalkWalking items={sessionItems} questionNumbers={printNumbers} topicTitles={walkingTopicTitles} settings={settings}
     onComplete={(hadSkippedQuestions) => {
       const allQuestions = orderedTopicItems.filter(item => item.enabled && questionFor(item).trim());
       const fullTopic = !allTopicsSelected && !hadSkippedQuestions && topic?.topicId === topicId && allQuestions.length > 0 &&

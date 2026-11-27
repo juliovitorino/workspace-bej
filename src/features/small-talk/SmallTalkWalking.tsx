@@ -8,6 +8,7 @@ import { SMALL_TALK_WALKING_PROGRESS_KEY, saveLocalJson, readLocalJson } from '.
 interface Props {
   items: SmallTalkItem[];
   questionNumbers: Record<string, number>;
+  topicTitles: Record<string, string>;
   settings: SmallTalkWalkingSettings;
   onExit: () => void;
   onComplete?: (hadSkippedQuestions: boolean) => void;
@@ -33,7 +34,7 @@ function speak(text: string, onEnd: () => void, onError: () => void): () => void
   return () => { utterance.onend = utterance.onerror = null; window.speechSynthesis.cancel(); };
 }
 
-export function SmallTalkWalking({ items, questionNumbers, settings, onExit, onComplete, onStudyState, onWalkingChange }: Props) {
+export function SmallTalkWalking({ items, questionNumbers, topicTitles, settings, onExit, onComplete, onStudyState, onWalkingChange }: Props) {
   const [started, setStarted] = useState(false);
   const [paused, setPaused] = useState(false);
   const [index, setIndex] = useState(0);
@@ -48,6 +49,19 @@ export function SmallTalkWalking({ items, questionNumbers, settings, onExit, onC
   const cancelCurrent = useRef<() => void>(() => undefined);
   const wakeLock = useRef<{ release(): Promise<void> } | null>(null);
   const current = items[index];
+  const topicHeadingRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    if (!started || !current) return;
+    // Scroll only when the question changes, never on audio repetitions.
+    const frame = window.requestAnimationFrame(() => {
+      topicHeadingRef.current?.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'start'
+      });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [started, current?.id]);
 
   function stopAudio() { generation.current++; cancelCurrent.current(); cancelCurrent.current = () => undefined; window.speechSynthesis?.cancel(); }
 
@@ -154,6 +168,7 @@ export function SmallTalkWalking({ items, questionNumbers, settings, onExit, onC
   return <section className="small-talk-walk" aria-label="Small Talk — modo caminhada">
     <header><h2>🚶 Small Talk — Modo Caminhada</h2><p>Responda em voz alta. Nenhum áudio da sua voz é gravado.</p></header>
     <p><strong>{completed} / {items.length}</strong> perguntas · Repetição <strong>{Math.min(repetition + 1, settings.repeatCount)} / {settings.repeatCount}</strong></p>
+    {current && <h2 ref={topicHeadingRef} className="small-talk-walk-topic">{topicTitles[current.id] || current.source?.section || "Small Talk"}</h2>}
     <h3>{current ? <><span className="small-talk-print-number" aria-label={`Pergunta ${questionNumbers[current.id] ?? '?'} no material impresso`}>{questionNumbers[current.id] ?? '?'}. </span>{current.question?.text}</> : 'Treino concluído!'}</h3>
     <p role="status">{phase === 'question' ? '🔊 Pergunta' : phase === 'thinking' ? '🎤 Sua vez de responder em voz alta' : phase === 'answer' ? '🔊 Resposta ativa' : phase === 'between' ? 'Próxima repetição' : phase === 'paused' ? 'Pausado' : phase === 'complete' ? 'Sessão concluída' : phase === 'error' ? 'Erro de áudio' : 'Pronto para começar'}</p>
     {settings.playDefaultAnswer && !hasOriginal && <p className="warning-banner">Esta pergunta não possui resposta ativa; será feita apenas a pausa para resposta espontânea.</p>}
