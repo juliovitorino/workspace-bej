@@ -1056,6 +1056,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
       </label><span className="settings-dialog-help">Salve no Drive e importe em outro dispositivo. Não há sincronização automática destas edições.</span>
       {backupMessage && <span role="status">{backupMessage}</span>}
     </div>
+    {!allTopicsSelected && <>
     <div className="small-talk-topic-export-bar">
       <button type="button" className="small-talk-topic-export-trigger" title="Exportar tópico inteiro"
         aria-label="Exportar tópico inteiro" disabled={loading || !topic || topic.topicId !== topicId}
@@ -1083,6 +1084,9 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
             <button type="button" className="secondary-button" onClick={() => toggleCustomCard(entry.item.id, false)}>Restaurar card</button>
           </div>)}
       </div>}
+    </>}
+    {allTopicsSelected && <p className="settings-dialog-help">Todos os tópicos: use Iniciar Modo Caminhada para praticar perguntas misturadas. Para editar, imprimir ou exportar cards, selecione um tópico específico.</p>}
+    {!allTopicsSelected && <>
     <header className="results-header">
       <h3>{loading ? 'Carregando...' : `${topic?.title ?? ''} — ${filtered.length} perguntas`}</h3>
       <div className="small-talk-actions">
@@ -1240,6 +1244,7 @@ export function SmallTalkPage({ onStudyState, onWalkingChange, deepLink, sourceL
         </div>}
       </article>;
     })}</div>
+    </>}
     {!loading && filtered.length === 0 && <p>Nenhuma pergunta corresponde aos filtros.</p>}
     {pendingConfirmation && <div className="small-talk-export-overlay" onMouseDown={event => { if (event.target === event.currentTarget) setPendingConfirmation(null); }}>
       <section className="small-talk-export-modal small-talk-confirm-modal" role="dialog" aria-modal="true" aria-labelledby="small-talk-confirm-title" aria-describedby="small-talk-confirm-description">
