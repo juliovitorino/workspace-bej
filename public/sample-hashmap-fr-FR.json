@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1310,
+    "totalIntentions": 1319,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -55599,6 +55599,557 @@
           "id": "48aec174-ae3e-4ad6-8077-05c0bfba8a5d",
           "exampleItem": "Parfois, il est difficile de suivre les mises à jour du projet.",
           "intent": "il est difficile de suivre"
+        }
+      ]
+    },
+    {
+      "id": "de-cabeca-sem-pensar-muito-fd23d1b5-352b-4a48-b979-8b83735f9367",
+      "intention": "De tête / Sans trop réfléchir",
+      "pattern": "De tête / de tête / sans trop réfléchir",
+      "description": "Réponse spontanée donnée de mémoire, sans consulter d'informations ni réfléchir longuement.",
+      "category": "discurso",
+      "searchTerms": [
+        "De tête",
+        "de tête",
+        "sans trop réfléchir"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])De\\s+tête(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])de\\s+tête(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])sans\\s+trop\\s+réfléchir(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "langue parlée",
+        "prêt à l’emploi",
+        "discours"
+      ],
+      "related": [],
+      "structure": "De tête peut précéder ou suivre la proposition. Sans trop réfléchir décrit une réponse rapide qui peut demander vérification.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "f66648b3-ec3c-4a3f-85e3-fa1db41ae6d3",
+          "exampleItem": "De tête, je dirais que nous avons une vingtaine de participants.",
+          "intent": "De tête"
+        },
+        {
+          "id": "f65e05ef-51c4-4473-986f-8cb2cc332d81",
+          "exampleItem": "Elle n'arrive pas à se rappeler le nombre exact de tête.",
+          "intent": "de tête"
+        },
+        {
+          "id": "15907f69-c27c-4e37-b56a-8be6a4cec070",
+          "exampleItem": "Peux-tu citer trois exemples de tête ?",
+          "intent": "de tête"
+        },
+        {
+          "id": "c24271a3-64a1-4c43-a9d1-df3f342fea3d",
+          "exampleItem": "Comme ça, de tête, nous ne connaissons pas le montant final.",
+          "intent": "de tête"
+        },
+        {
+          "id": "899dc1c8-f020-461a-abfa-57f74808049d",
+          "exampleItem": "Ils ont répondu sans trop réfléchir.",
+          "intent": "sans trop réfléchir"
+        },
+        {
+          "id": "4e5c3aae-1b8d-4918-a822-a010482a93db",
+          "exampleItem": "Tu ne préfères pas vérifier les données plutôt que de répondre de tête ?",
+          "intent": "de tête"
+        }
+      ]
+    },
+    {
+      "id": "deixa-eu-ir-verificar-d343fd62-1415-43d8-838c-caeda46eb591",
+      "intention": "Laisse-moi aller vérifier / Laisse-moi vérifier",
+      "pattern": "Laisse-moi aller vérifier / Laisse-moi vérifier / laisse-moi vérifier / Laissez-moi vérifier",
+      "description": "Annonce l'intention de vérifier une information avant de répondre. Aller peut souligner le déplacement ou le passage à la vérification.",
+      "category": "verificacao",
+      "searchTerms": [
+        "Laisse-moi aller vérifier",
+        "Laisse-moi vérifier",
+        "laisse-moi vérifier",
+        "Laissez-moi vérifier"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Laisse-moi\\s+aller\\s+vérifier(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Laisse-moi\\s+vérifier(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])laisse-moi\\s+vérifier(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Laissez-moi\\s+vérifier(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "langue parlée",
+        "prêt à l’emploi",
+        "vérification"
+      ],
+      "related": [],
+      "structure": "Laisse-moi est un impératif suivi du pronom moi et d'un infinitif. Avec aller : Laisse-moi aller vérifier. Pour vouvoyer ou parler à plusieurs personnes, employer Laissez-moi.",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "f29bf2ab-f529-422e-a5bf-9c9d3de891df",
+          "exampleItem": "Laisse-moi aller vérifier si la porte est fermée à clé.",
+          "intent": "Laisse-moi aller vérifier"
+        },
+        {
+          "id": "185b0e9e-3331-4153-9f85-07815160d669",
+          "exampleItem": "Laisse-moi vérifier les chiffres avant de répondre.",
+          "intent": "Laisse-moi vérifier"
+        },
+        {
+          "id": "d93f046f-d232-46b2-a7f7-a7fb2f5199ee",
+          "exampleItem": "Laisse-moi aller vérifier si le serveur fonctionne de nouveau.",
+          "intent": "Laisse-moi aller vérifier"
+        },
+        {
+          "id": "27292e50-465a-4a1c-a75a-c2d0bb20d0cf",
+          "exampleItem": "Peux-tu attendre une minute ? Laisse-moi aller vérifier.",
+          "intent": "Laisse-moi aller vérifier"
+        },
+        {
+          "id": "33ac34b9-5bf8-4de1-a571-ccf78d26b565",
+          "exampleItem": "Inutile de deviner ; laisse-moi vérifier d’abord.",
+          "intent": "laisse-moi vérifier"
+        },
+        {
+          "id": "feefcf8f-a241-4ea3-b552-5c76d3545fea",
+          "exampleItem": "Laissez-moi vérifier s’ils sont déjà arrivés.",
+          "intent": "Laissez-moi vérifier"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "de-jeito-nenhum-eu-vou-f36dfb3b-6fd9-4f3b-9476-f8dbf42b2964",
+      "intention": "Hors de question que je… / Je ne vais certainement pas…",
+      "pattern": "Hors de question / hors de question / certainement pas / Certainement pas",
+      "description": "Exprime un refus catégorique de faire quelque chose, avec différents sujets ou dans une question rhétorique.",
+      "category": "recusa",
+      "searchTerms": [
+        "Hors de question",
+        "hors de question",
+        "certainement pas",
+        "Certainement pas"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Hors\\s+de\\s+question(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])hors\\s+de\\s+question(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])certainement\\s+pas(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Certainement\\s+pas(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "langue parlée",
+        "prêt à l’emploi",
+        "refus"
+      ],
+      "related": [],
+      "structure": "Hors de question de + infinitif rejette une action. Hors de question que est suivi du subjonctif : Hors de question que je renonce. Certainement pas renforce la négation.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "307841c5-8f43-4251-afb3-d49cdd97479c",
+          "exampleItem": "Hors de question que j'abandonne maintenant.",
+          "intent": "Hors de question"
+        },
+        {
+          "id": "4ba70743-acb2-4a48-9ada-b2e710f71325",
+          "exampleItem": "Il est hors de question qu'elle accepte cette proposition.",
+          "intent": "hors de question"
+        },
+        {
+          "id": "8d301546-3a5e-4f66-b7da-54ec0895e781",
+          "exampleItem": "Tu crois que nous allons accepter ça ? Hors de question !",
+          "intent": "Hors de question"
+        },
+        {
+          "id": "5b080001-c58e-4f72-9af0-8ffeb2b84cef",
+          "exampleItem": "Nous n’allons certainement pas annuler le voyage.",
+          "intent": "certainement pas"
+        },
+        {
+          "id": "b2564b21-5aec-4584-a0ee-5b4cc375010f",
+          "exampleItem": "Ils vont abandonner ? Certainement pas !",
+          "intent": "Certainement pas"
+        },
+        {
+          "id": "9f21603e-d5d8-4291-ad2e-1b2b60e26e00",
+          "exampleItem": "Hors de question qu'il donne le mot de passe.",
+          "intent": "Hors de question"
+        }
+      ]
+    },
+    {
+      "id": "estou-pensando-em-85acb9eb-87a4-4b83-bece-76a1cb0f65a8",
+      "intention": "Je pense à… / J’envisage de…",
+      "pattern": "J'envisage d'étudier / envisage de / n'envisageons pas de / Envisages-tu de / envisagent de / n'envisage-t-il pas de",
+      "description": "Présente une idée, une possibilité ou un projet encore à l'étude, sans décision définitive.",
+      "category": "planejamento",
+      "searchTerms": [
+        "J'envisage d'étudier",
+        "envisage de",
+        "n'envisageons pas de",
+        "Envisages-tu de",
+        "envisagent de",
+        "n'envisage-t-il pas de"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])J['’]envisage\\s+d['’]étudier(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])envisage\\s+de(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])n['’]envisageons\\s+pas\\s+de(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Envisages-tu\\s+de(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])envisagent\\s+de(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])n['’]envisage-t-il\\s+pas\\s+de(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "langue parlée",
+        "prêt à l’emploi",
+        "planification"
+      ],
+      "related": [],
+      "structure": "Envisager de + infinitif exprime un projet à l'étude. De devient d' devant une voyelle. Penser à + infinitif peut aussi exprimer une idée envisagée, mais peut signifier se souvenir de faire quelque chose selon le contexte.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "b610d82b-307d-4fa2-bc16-c9e89c6c0697",
+          "exampleItem": "J'envisage d'étudier le français l'année prochaine.",
+          "intent": "J'envisage d'étudier"
+        },
+        {
+          "id": "5148d127-fbd3-4af2-b9df-4ef67548c0d5",
+          "exampleItem": "Elle envisage de changer d'emploi.",
+          "intent": "envisage de"
+        },
+        {
+          "id": "1681d71d-1781-4708-9b17-a104d0bf18ae",
+          "exampleItem": "Nous n'envisageons pas de vendre la maison.",
+          "intent": "n'envisageons pas de"
+        },
+        {
+          "id": "47a0880b-7c76-4119-822f-4cfe8adf8f8d",
+          "exampleItem": "Envisages-tu de participer à la réunion ?",
+          "intent": "Envisages-tu de"
+        },
+        {
+          "id": "4861b47a-12c9-48c8-b7e8-18d7a88f2639",
+          "exampleItem": "Ils envisagent de voyager pendant le jour férié.",
+          "intent": "envisagent de"
+        },
+        {
+          "id": "4f00850f-be60-4ae3-b23c-56b2054f4481",
+          "exampleItem": "Pourquoi n'envisage-t-il pas de demander de l'aide ?",
+          "intent": "n'envisage-t-il pas de"
+        }
+      ]
+    },
+    {
+      "id": "estou-querendo-ha-algum-tempo-7398ae54-fa96-4006-9170-424b9fa28be2",
+      "intention": "Ça fait un moment que je veux… / Je compte… depuis quelque temps",
+      "pattern": "Ça fait des semaines que / veut commencer / n'avons pas l'intention de / Ça fait un moment que / ont l’intention de / Ça fait longtemps que",
+      "description": "Exprime un désir ou une intention présents depuis quelque temps, mais pas encore réalisés.",
+      "category": "intencao",
+      "searchTerms": [
+        "Ça fait des semaines que",
+        "veut commencer",
+        "n'avons pas l'intention de",
+        "Ça fait un moment que",
+        "ont l’intention de",
+        "Ça fait longtemps que"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Ça\\s+fait\\s+des\\s+semaines\\s+que(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])veut\\s+commencer(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])n['’]avons\\s+pas\\s+l['’]intention\\s+de(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Ça\\s+fait\\s+un\\s+moment\\s+que(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])ont\\s+l['’]intention\\s+de(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])Ça\\s+fait\\s+longtemps\\s+que(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "langue parlée",
+        "prêt à l’emploi",
+        "intention"
+      ],
+      "related": [],
+      "structure": "Ça fait une durée que + présent décrit un désir toujours actuel. Avoir l'intention de + infinitif exprime un projet. Depuis peut préciser le début de l'intention. Le présent est naturel pour une intention qui continue.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "6449edb8-f4f8-47fc-b7b9-f6303817e713",
+          "exampleItem": "Ça fait des semaines que je veux te parler.",
+          "intent": "Ça fait des semaines que"
+        },
+        {
+          "id": "4f190f51-db46-43f5-972c-65fad6c45b9c",
+          "exampleItem": "Elle veut commencer un nouveau cours depuis quelque temps.",
+          "intent": "veut commencer"
+        },
+        {
+          "id": "485ae600-b3ec-4a85-b00f-ca1b427ac937",
+          "exampleItem": "Nous n'avons pas l'intention de repousser cette conversation ; nous manquons simplement de temps.",
+          "intent": "n'avons pas l'intention de"
+        },
+        {
+          "id": "4ee32b64-e661-4baf-ae67-1dccf3d505f5",
+          "exampleItem": "Ça fait un moment que tu veux me dire quelque chose ?",
+          "intent": "Ça fait un moment que"
+        },
+        {
+          "id": "4cc8e1ee-9249-443a-974f-1d5ff4d41abe",
+          "exampleItem": "Ils ont l’intention de rendre visite à leurs grands-parents depuis janvier.",
+          "intent": "ont l’intention de"
+        },
+        {
+          "id": "cfd9d714-cd9f-4b31-8dc5-7de099ee6d32",
+          "exampleItem": "Ça fait longtemps que tu veux changer d’ordinateur ?",
+          "intent": "Ça fait longtemps que"
+        }
+      ]
+    },
+    {
+      "id": "nao-consigo-decidir-o-que-82cc25ef-a7f0-4f9f-95e9-580a9bf48e4b",
+      "intention": "Je n'arrive pas à décider quoi… / Je ne sais pas quoi choisir…",
+      "pattern": "n'arrive pas à décider quoi / n'arrivons pas à décider quoi / n'arrives pas à décider quoi / n'arrivent pas à décider quoi / n'arrive-t-il pas à décider quoi",
+      "description": "Exprime une indécision entre plusieurs possibilités, notamment sur ce qu'il faut faire, acheter, dire ou choisir.",
+      "category": "indecisao",
+      "searchTerms": [
+        "n'arrive pas à décider quoi",
+        "n'arrivons pas à décider quoi",
+        "n'arrives pas à décider quoi",
+        "n'arrivent pas à décider quoi",
+        "n'arrive-t-il pas à décider quoi"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])n['’]arrive\\s+pas\\s+à\\s+décider\\s+quoi(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])n['’]arrivons\\s+pas\\s+à\\s+décider\\s+quoi(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])n['’]arrives\\s+pas\\s+à\\s+décider\\s+quoi(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])n['’]arrivent\\s+pas\\s+à\\s+décider\\s+quoi(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])n['’]arrive-t-il\\s+pas\\s+à\\s+décider\\s+quoi(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "langue parlée",
+        "prêt à l’emploi",
+        "indécision"
+      ],
+      "related": [],
+      "structure": "Ne pas arriver à + infinitif exprime une difficulté. Décider quoi + infinitif introduit le choix : décider quoi acheter. On peut aussi dire ne pas savoir quoi choisir. Arriver se conjugue selon le sujet.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "6120efdf-aa17-43a2-ba9c-7c43fbe45412",
+          "exampleItem": "Je n'arrive pas à décider quoi acheter.",
+          "intent": "n'arrive pas à décider quoi"
+        },
+        {
+          "id": "df5ab742-7c9c-410b-9c3e-4af67c9660b2",
+          "exampleItem": "Elle n'arrive pas à décider quoi mettre pour la fête.",
+          "intent": "n'arrive pas à décider quoi"
+        },
+        {
+          "id": "4b085202-c1da-42eb-84d0-39b197943609",
+          "exampleItem": "Nous n'arrivons pas à décider quoi faire ce week-end.",
+          "intent": "n'arrivons pas à décider quoi"
+        },
+        {
+          "id": "7b1e462d-f405-4065-a98f-bdf37831e28f",
+          "exampleItem": "Toi non plus, tu n'arrives pas à décider quoi commander ?",
+          "intent": "n'arrives pas à décider quoi"
+        },
+        {
+          "id": "f097140b-9f19-4fb5-a438-18bc99307202",
+          "exampleItem": "Ils n'arrivent pas à décider quoi présenter en premier.",
+          "intent": "n'arrivent pas à décider quoi"
+        },
+        {
+          "id": "4db0a1f8-fe66-420c-b4f7-16c3f6e37104",
+          "exampleItem": "Pourquoi n'arrive-t-il pas à décider quoi étudier ?",
+          "intent": "n'arrive-t-il pas à décider quoi"
+        }
+      ]
+    },
+    {
+      "id": "pelo-que-eu-entendi-f137a3f4-805d-425a-92c6-557cd03285a1",
+      "intention": "D'après ce que j'ai compris…",
+      "pattern": "D'après ce que j'ai compris / D'après ce qu'elle a compris / D'après ce que nous avons compris / D'après ce que tu as compris",
+      "description": "Introduit une interprétation ou une conclusion fondée sur les informations disponibles, sans certitude absolue.",
+      "category": "interpretacao",
+      "searchTerms": [
+        "D'après ce que j'ai compris",
+        "D'après ce qu'elle a compris",
+        "D'après ce que nous avons compris",
+        "D'après ce que tu as compris"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])D['’]après\\s+ce\\s+que\\s+j['’]ai\\s+compris(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])D['’]après\\s+ce\\s+qu['’]elle\\s+a\\s+compris(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])D['’]après\\s+ce\\s+que\\s+nous\\s+avons\\s+compris(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])D['’]après\\s+ce\\s+que\\s+tu\\s+as\\s+compris(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "langue parlée",
+        "prêt à l’emploi",
+        "interprétation"
+      ],
+      "related": [],
+      "structure": "D'après ce que j'ai compris introduit une interprétation prudente. Le passé composé varie selon la personne : j'ai compris, nous avons compris. Ce que devient ce qu' devant elle. Une virgule sépare généralement l'introduction de la conclusion.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "82659bfa-3b1c-40a4-938a-8aa8d9d3c39a",
+          "exampleItem": "D'après ce que j'ai compris, la réunion a été reportée.",
+          "intent": "D'après ce que j'ai compris"
+        },
+        {
+          "id": "0ca3dcd7-8378-4512-ae7a-bf7a62eac8d1",
+          "exampleItem": "D'après ce qu'elle a compris, personne n'a besoin de repasser le test.",
+          "intent": "D'après ce qu'elle a compris"
+        },
+        {
+          "id": "c75882dc-3117-4026-90ba-b357d27b56ac",
+          "exampleItem": "D'après ce que nous avons compris, la date limite n'a pas changé.",
+          "intent": "D'après ce que nous avons compris"
+        },
+        {
+          "id": "9b6085e3-63ac-4018-86f4-7089436cf1b7",
+          "exampleItem": "D'après ce que tu as compris, devons-nous tout envoyer aujourd'hui ?",
+          "intent": "D'après ce que tu as compris"
+        },
+        {
+          "id": "4600b50f-6fc3-472f-a264-3b52e5ac40aa",
+          "exampleItem": "D'après ce que j'ai compris, ils ne vont pas participer.",
+          "intent": "D'après ce que j'ai compris"
+        },
+        {
+          "id": "edafec72-e3c4-4a43-a80e-8204cf97256a",
+          "exampleItem": "D'après ce que j'ai compris, tu n'es pas d'accord avec la proposition, c'est bien ça ?",
+          "intent": "D'après ce que j'ai compris"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "por-motivos-obvios-6de26607-3af0-4486-b7c5-2e351ec35f1f",
+      "intention": "Pour des raisons évidentes",
+      "pattern": "Pour des raisons évidentes / pour des raisons évidentes",
+      "description": "Présente une justification considérée comme évidente ou facile à comprendre dans le contexte.",
+      "category": "justificativa",
+      "searchTerms": [
+        "Pour des raisons évidentes",
+        "pour des raisons évidentes"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])Pour\\s+des\\s+raisons\\s+évidentes(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])pour\\s+des\\s+raisons\\s+évidentes(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "langue parlée",
+        "prêt à l’emploi",
+        "justification"
+      ],
+      "related": [],
+      "structure": "Pour des raisons évidentes peut précéder ou suivre la proposition. Évidentes s'accorde avec raisons, féminin pluriel. Cette formulation suppose que les interlocuteurs peuvent comprendre la justification sans autre explication.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "3feed568-b247-4b48-875e-7f4656744414",
+          "exampleItem": "Pour des raisons évidentes, je ne partage pas mes mots de passe.",
+          "intent": "Pour des raisons évidentes"
+        },
+        {
+          "id": "e56d0837-9a2b-4f90-80f6-55bcd1134f87",
+          "exampleItem": "Elle a décidé de ne pas voyager pour des raisons évidentes.",
+          "intent": "pour des raisons évidentes"
+        },
+        {
+          "id": "6d84b91e-cd06-4572-bc36-4ae63a8443f9",
+          "exampleItem": "Avez-vous annulé la réunion pour des raisons évidentes ?",
+          "intent": "pour des raisons évidentes"
+        },
+        {
+          "id": "70449a2e-aba8-485d-a64d-ec092ea0007a",
+          "exampleItem": "Nous ne divulguons pas ces données pour des raisons évidentes.",
+          "intent": "pour des raisons évidentes"
+        },
+        {
+          "id": "38904057-78da-40d7-8e49-881834a39392",
+          "exampleItem": "Ils ont préféré attendre pour des raisons évidentes.",
+          "intent": "pour des raisons évidentes"
+        },
+        {
+          "id": "28b13bcf-9d64-4c49-976b-ce677690c20f",
+          "exampleItem": "Ne vaudrait-il pas mieux éviter ce risque pour des raisons évidentes ?",
+          "intent": "pour des raisons évidentes"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "a-ultima-coisa-que-quero-e-80cdb87c-425f-4f39-8f85-584046fe59da",
+      "intention": "La dernière chose que je veux, c'est…",
+      "pattern": "La dernière chose que je veux, c'est / La dernière chose qu'elle veut, c'est / La dernière chose que nous voulons / la dernière chose que tu veux / La dernière chose qu'ils veulent, c'est / La dernière chose que tu veux",
+      "description": "Souligne quelque chose que l'on souhaite éviter, souvent pour expliquer une décision ou une préoccupation.",
+      "category": "preferencia",
+      "searchTerms": [
+        "La dernière chose que je veux, c'est",
+        "La dernière chose qu'elle veut, c'est",
+        "La dernière chose que nous voulons",
+        "la dernière chose que tu veux",
+        "La dernière chose qu'ils veulent, c'est",
+        "La dernière chose que tu veux"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])La\\s+dernière\\s+chose\\s+que\\s+je\\s+veux,\\s+c['’]est(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])La\\s+dernière\\s+chose\\s+qu['’]elle\\s+veut,\\s+c['’]est(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])La\\s+dernière\\s+chose\\s+que\\s+nous\\s+voulons(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])la\\s+dernière\\s+chose\\s+que\\s+tu\\s+veux(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])La\\s+dernière\\s+chose\\s+qu['’]ils\\s+veulent,\\s+c['’]est(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])La\\s+dernière\\s+chose\\s+que\\s+tu\\s+veux(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc de langage",
+        "langue parlée",
+        "prêt à l’emploi",
+        "préférence"
+      ],
+      "related": [],
+      "structure": "La dernière chose que je veux, c'est de + infinitif met un résultat indésirable en relief. Vouloir varie selon le sujet. Une négation supplémentaire devant être peut inverser le sens habituel et doit être interprétée selon le contexte.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "e2b792a4-707d-4705-84c1-3492e02375bc",
+          "exampleItem": "La dernière chose que je veux, c'est de perdre cette occasion.",
+          "intent": "La dernière chose que je veux, c'est"
+        },
+        {
+          "id": "30e8435d-5b36-4c68-a089-22b76f5360b2",
+          "exampleItem": "La dernière chose qu'elle veut, c'est de se disputer maintenant.",
+          "intent": "La dernière chose qu'elle veut, c'est"
+        },
+        {
+          "id": "346c444b-0c44-48ba-94ac-1d50544979c8",
+          "exampleItem": "La dernière chose que nous voulons n'est pas de créer davantage de problèmes.",
+          "intent": "La dernière chose que nous voulons"
+        },
+        {
+          "id": "9c9ab2da-09d9-4a3c-b335-36ed1a75ae75",
+          "exampleItem": "Quelle est la dernière chose que tu veux faire aujourd'hui ?",
+          "intent": "la dernière chose que tu veux"
+        },
+        {
+          "id": "d7651d79-fe59-4468-8aae-b163f680b41f",
+          "exampleItem": "La dernière chose qu'ils veulent, c'est de retarder le projet.",
+          "intent": "La dernière chose qu'ils veulent, c'est"
+        },
+        {
+          "id": "e8f99e7f-4b99-4b44-b840-8756570b7b6d",
+          "exampleItem": "La dernière chose que tu veux, ce ne serait pas de perdre la confiance de l'équipe ?",
+          "intent": "La dernière chose que tu veux"
         }
       ]
     }

@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1310,
+    "totalIntentions": 1319,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -79028,6 +79028,520 @@
           "id": "48aec174-ae3e-4ad6-8077-05c0bfba8a5d",
           "exampleItem": "Sometimes, it's hard to keep up with the project updates.",
           "intent": "it's hard to keep up with"
+        }
+      ]
+    },
+    {
+      "id": "de-cabeca-sem-pensar-muito-fd23d1b5-352b-4a48-b979-8b83735f9367",
+      "intention": "Off the top of my head / Without much thought",
+      "pattern": "off the top of + possessive + head / without much thought",
+      "description": "Expresses a spontaneous answer from memory, without consulting information or thinking at length.",
+      "category": "discurso",
+      "searchTerms": [
+        "off the top of my head",
+        "off the top of your head",
+        "from memory",
+        "without much thought"
+      ],
+      "validationPatterns": [
+        "\\boff\\s+the\\s+top\\s+of\\s+(?:my|your|his|her|our|their)\\s+heads?\\b",
+        "\\bwithout\\s+(?:much\\s+thought|thinking\\s+too\\s+much)\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "ready-to-use",
+        "discourse"
+      ],
+      "related": [],
+      "structure": "Use 'off the top of + possessive + head' for an answer from memory without checking or preparing: 'Off the top of my head, I'd say twenty'. Change the possessive to match the person: 'her head', 'your head', or 'our heads'. The phrase can appear at the beginning or end of a clause. 'Without much thought' emphasizes a quick response without lengthy reflection.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "f66648b3-ec3c-4a3f-85e3-fa1db41ae6d3",
+          "exampleItem": "Off the top of my head, I'd say we have about twenty participants.",
+          "intent": "Off the top of my head"
+        },
+        {
+          "id": "f65e05ef-51c4-4473-986f-8cb2cc332d81",
+          "exampleItem": "She can't remember the exact number off the top of her head.",
+          "intent": "off the top of her head"
+        },
+        {
+          "id": "15907f69-c27c-4e37-b56a-8be6a4cec070",
+          "exampleItem": "Can you name three examples off the top of your head?",
+          "intent": "off the top of your head"
+        },
+        {
+          "id": "c24271a3-64a1-4c43-a9d1-df3f342fea3d",
+          "exampleItem": "Well, off the top of our heads, we don't know the final amount.",
+          "intent": "off the top of our heads"
+        },
+        {
+          "id": "899dc1c8-f020-461a-abfa-57f74808049d",
+          "exampleItem": "They answered without much thought.",
+          "intent": "without much thought"
+        },
+        {
+          "id": "4e5c3aae-1b8d-4918-a822-a010482a93db",
+          "exampleItem": "Wouldn't you rather check the data than answer off the top of your head?",
+          "intent": "off the top of your head"
+        }
+      ]
+    },
+    {
+      "id": "deixa-eu-ir-verificar-d343fd62-1415-43d8-838c-caeda46eb591",
+      "intention": "Let me go check / Let me check",
+      "pattern": "let me + go check / check",
+      "description": "Expresses an intention to check information or a situation before answering. Adding go emphasizes going to check or taking action to verify something.",
+      "category": "verificacao",
+      "searchTerms": [
+        "let me go check",
+        "let me check",
+        "let me verify",
+        "let me go and check"
+      ],
+      "validationPatterns": [
+        "\\blet\\s+me\\s+(?:go\\s+(?:and\\s+)?)?(?:check|verify)\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "ready-to-use",
+        "verification"
+      ],
+      "related": [],
+      "structure": "Use 'let me + base verb': 'Let me check'. In casual American English, 'Let me go check' combines 'go' directly with another base verb. 'Let me go and check' is also possible. Follow 'check' or 'verify' with a noun phrase or an 'if/whether' clause: 'Let me check if they arrived'. Do not use 'to' immediately after 'let me'.",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "f29bf2ab-f529-422e-a5bf-9c9d3de891df",
+          "exampleItem": "Let me go check if the door is locked.",
+          "intent": "Let me go check"
+        },
+        {
+          "id": "185b0e9e-3331-4153-9f85-07815160d669",
+          "exampleItem": "Let me check the numbers before answering.",
+          "intent": "Let me check"
+        },
+        {
+          "id": "d93f046f-d232-46b2-a7f7-a7fb2f5199ee",
+          "exampleItem": "Let me go check if the server is back up.",
+          "intent": "Let me go check"
+        },
+        {
+          "id": "27292e50-465a-4a1c-a75a-c2d0bb20d0cf",
+          "exampleItem": "Can you wait a minute? Let me go check.",
+          "intent": "Let me go check"
+        },
+        {
+          "id": "33ac34b9-5bf8-4de1-a571-ccf78d26b565",
+          "exampleItem": "There's no need to guess; let me check first.",
+          "intent": "let me check"
+        },
+        {
+          "id": "feefcf8f-a241-4ea3-b552-5c76d3545fea",
+          "exampleItem": "Let me verify whether they have arrived yet.",
+          "intent": "Let me verify"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "de-jeito-nenhum-eu-vou-f36dfb3b-6fd9-4f3b-9476-f8dbf42b2964",
+      "intention": "There's no way I'm going to... / No way...",
+      "pattern": "there is no way + subject + be going to + base verb",
+      "description": "Expresses an emphatic refusal to do something. It can use different subjects and appear in rhetorical questions.",
+      "category": "recusa",
+      "searchTerms": [
+        "there is no way",
+        "no way",
+        "not going to",
+        "no way we are going to"
+      ],
+      "validationPatterns": [
+        "\\b(?:there(?:['?]s|\\s+is)\\s+)?no\\s+way\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "ready-to-use",
+        "refusal"
+      ],
+      "related": [],
+      "structure": "Use 'There's no way + subject + be going to + base verb' for emphatic refusal: 'There's no way I'm going to give up'. In casual speech, 'going to' may sound like 'gonna'. 'No way!' also stands alone as a firm negative answer. Other subjects require the appropriate form of 'be': 'she is', 'we are', or 'they are'.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "307841c5-8f43-4251-afb3-d49cdd97479c",
+          "exampleItem": "There's no way I'm going to give up now.",
+          "intent": "There's no way"
+        },
+        {
+          "id": "4ba70743-acb2-4a48-9ada-b2e710f71325",
+          "exampleItem": "There's no way she's going to accept that offer.",
+          "intent": "There's no way"
+        },
+        {
+          "id": "8d301546-3a5e-4f66-b7da-54ec0895e781",
+          "exampleItem": "Do you think we're going to agree to that? No way!",
+          "intent": "No way"
+        },
+        {
+          "id": "5b080001-c58e-4f72-9af0-8ffeb2b84cef",
+          "exampleItem": "There's no way we're going to cancel the trip.",
+          "intent": "There's no way"
+        },
+        {
+          "id": "b2564b21-5aec-4584-a0ee-5b4cc375010f",
+          "exampleItem": "Are they going to give up? No way! Of course not.",
+          "intent": "No way"
+        },
+        {
+          "id": "9f21603e-d5d8-4291-ad2e-1b2b60e26e00",
+          "exampleItem": "There's no way he's going to hand over the password.",
+          "intent": "There's no way"
+        }
+      ]
+    },
+    {
+      "id": "estou-pensando-em-85acb9eb-87a4-4b83-bece-76a1cb0f65a8",
+      "intention": "I'm thinking about... / Considering...",
+      "pattern": "subject + be + thinking about + gerund / noun",
+      "description": "Indicates an idea, possibility, or plan that is still under consideration.",
+      "category": "planejamento",
+      "searchTerms": [
+        "thinking about",
+        "thinking of",
+        "considering",
+        "we are thinking about"
+      ],
+      "validationPatterns": [
+        "\\bthinking\\s+(?:about|of)\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "ready-to-use",
+        "planning"
+      ],
+      "related": [],
+      "structure": "Use 'subject + am/is/are + thinking about + gerund or noun'. After the preposition 'about', use an '-ing' form for an action: 'I'm thinking about changing jobs'. Negate the auxiliary ('We aren't thinking about selling') and invert it in questions ('Are you thinking about joining?'). 'Thinking of' can convey a similar tentative plan.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "b610d82b-307d-4fa2-bc16-c9e89c6c0697",
+          "exampleItem": "I'm thinking about studying French next year.",
+          "intent": "I'm thinking about"
+        },
+        {
+          "id": "5148d127-fbd3-4af2-b9df-4ef67548c0d5",
+          "exampleItem": "She's thinking about changing jobs.",
+          "intent": "She's thinking about"
+        },
+        {
+          "id": "1681d71d-1781-4708-9b17-a104d0bf18ae",
+          "exampleItem": "We aren't thinking about selling the house.",
+          "intent": "thinking about"
+        },
+        {
+          "id": "47a0880b-7c76-4119-822f-4cfe8adf8f8d",
+          "exampleItem": "Are you thinking about attending the meeting?",
+          "intent": "thinking about"
+        },
+        {
+          "id": "4861b47a-12c9-48c8-b7e8-18d7a88f2639",
+          "exampleItem": "They're thinking about traveling over the holiday.",
+          "intent": "They're thinking about"
+        },
+        {
+          "id": "4f00850f-be60-4ae3-b23c-56b2054f4481",
+          "exampleItem": "Why isn't he thinking about asking for help?",
+          "intent": "thinking about"
+        }
+      ]
+    },
+    {
+      "id": "estou-querendo-ha-algum-tempo-7398ae54-fa96-4006-9170-424b9fa28be2",
+      "intention": "I've been meaning to... / Have wanted to for some time",
+      "pattern": "subject + have/has been meaning to + base verb",
+      "description": "Expresses an intention or desire held for some time that has not yet been acted on.",
+      "category": "intencao",
+      "searchTerms": [
+        "have been meaning to",
+        "has been meaning to",
+        "been wanting to",
+        "wanted to for a while"
+      ],
+      "validationPatterns": [
+        "\\bbeen\\s+(?:meaning|wanting)\\s+to\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "ready-to-use",
+        "intention"
+      ],
+      "related": [],
+      "structure": "Use 'have/has been meaning to + base verb' for a longstanding, unrealized intention: 'I've been meaning to call you'. Time phrases such as 'for weeks' or 'since January' can specify duration. 'Have/has been wanting to' emphasizes desire. In questions, put 'have/has' before the subject. A negative example may instead describe an intention someone does not currently have; preserve that distinction rather than implying a longstanding desire.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "6449edb8-f4f8-47fc-b7b9-f6303817e713",
+          "exampleItem": "I've been meaning to talk to you for weeks.",
+          "intent": "I've been meaning to"
+        },
+        {
+          "id": "4f190f51-db46-43f5-972c-65fad6c45b9c",
+          "exampleItem": "She's been meaning to start a new course.",
+          "intent": "She's been meaning to"
+        },
+        {
+          "id": "485ae600-b3ec-4a85-b00f-ca1b427ac937",
+          "exampleItem": "We haven't been meaning to put off this conversation; we just haven't had time.",
+          "intent": "been meaning to"
+        },
+        {
+          "id": "4ee32b64-e661-4baf-ae67-1dccf3d505f5",
+          "exampleItem": "Have you been meaning to tell me something for a while?",
+          "intent": "been meaning to"
+        },
+        {
+          "id": "4cc8e1ee-9249-443a-974f-1d5ff4d41abe",
+          "exampleItem": "They've been meaning to visit their grandparents since January.",
+          "intent": "They've been meaning to"
+        },
+        {
+          "id": "cfd9d714-cd9f-4b31-8dc5-7de099ee6d32",
+          "exampleItem": "Have you been wanting to replace your computer for a long time?",
+          "intent": "been wanting to"
+        }
+      ]
+    },
+    {
+      "id": "nao-consigo-decidir-o-que-82cc25ef-a7f0-4f9f-95e9-580a9bf48e4b",
+      "intention": "I can't decide what... / I don't know what to choose",
+      "pattern": "subject + cannot decide + what + to + base verb",
+      "description": "Expresses indecision between alternatives, especially about what to do, buy, say, or choose.",
+      "category": "indecisao",
+      "searchTerms": [
+        "can't decide what",
+        "cannot decide what",
+        "don't know what to choose"
+      ],
+      "validationPatterns": [
+        "\\b(?:can['?]t|cannot)\\s+decide\\s+what\\b",
+        "\\bcan['?]t\\s+(?:I|you|he|she|we|they)\\s+decide\\s+what\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "ready-to-use",
+        "indecision"
+      ],
+      "related": [],
+      "structure": "Use 'subject + can't/cannot decide + what + to + base verb': 'I can't decide what to buy'. 'Can' does not change for third-person subjects: 'She can't decide'. The phrase works inside negative questions and questions with 'why': 'Why can't he decide what to study?'.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "6120efdf-aa17-43a2-ba9c-7c43fbe45412",
+          "exampleItem": "I can't decide what to buy.",
+          "intent": "can't decide what"
+        },
+        {
+          "id": "df5ab742-7c9c-410b-9c3e-4af67c9660b2",
+          "exampleItem": "She can't decide what to wear to the party.",
+          "intent": "can't decide what"
+        },
+        {
+          "id": "4b085202-c1da-42eb-84d0-39b197943609",
+          "exampleItem": "We can't decide what to do this weekend.",
+          "intent": "can't decide what"
+        },
+        {
+          "id": "7b1e462d-f405-4065-a98f-bdf37831e28f",
+          "exampleItem": "Can't you decide what to order either?",
+          "intent": "Can't you decide what"
+        },
+        {
+          "id": "f097140b-9f19-4fb5-a438-18bc99307202",
+          "exampleItem": "They can't decide what to present first.",
+          "intent": "can't decide what"
+        },
+        {
+          "id": "4db0a1f8-fe66-420c-b4f7-16c3f6e37104",
+          "exampleItem": "Why can't he decide what to study?",
+          "intent": "can't he decide what"
+        }
+      ]
+    },
+    {
+      "id": "pelo-que-eu-entendi-f137a3f4-805d-425a-92c6-557cd03285a1",
+      "intention": "From what I understand... / As I understand it...",
+      "pattern": "from what + subject + understand / understood + clause",
+      "description": "Introduces an interpretation or conclusion based on available information, without claiming absolute certainty.",
+      "category": "interpretacao",
+      "searchTerms": [
+        "from what I understand",
+        "from what I understood",
+        "from what we understand",
+        "from what she understood"
+      ],
+      "validationPatterns": [
+        "\\bfrom\\s+what\\s+(?:I|you|he|she|we|they)\\s+(?:understand|understands|understood)\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "ready-to-use",
+        "interpretation"
+      ],
+      "related": [],
+      "structure": "Use 'From what + subject + understand/understood, + clause'. Choose the present for a current understanding or the past to refer to an earlier interpretation. The phrase usually introduces a statement with a comma, but it can also frame a question about someone's understanding: 'From what you understood, do we need to send it today?'.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "82659bfa-3b1c-40a4-938a-8aa8d9d3c39a",
+          "exampleItem": "From what I understand, the meeting was postponed.",
+          "intent": "From what I understand"
+        },
+        {
+          "id": "0ca3dcd7-8378-4512-ae7a-bf7a62eac8d1",
+          "exampleItem": "From what she understood, no one needs to retake the test.",
+          "intent": "From what she understood"
+        },
+        {
+          "id": "c75882dc-3117-4026-90ba-b357d27b56ac",
+          "exampleItem": "From what we understand, the deadline hasn't changed.",
+          "intent": "From what we understand"
+        },
+        {
+          "id": "9b6085e3-63ac-4018-86f4-7089436cf1b7",
+          "exampleItem": "From what you understood, do we need to send everything today?",
+          "intent": "From what you understood"
+        },
+        {
+          "id": "4600b50f-6fc3-472f-a264-3b52e5ac40aa",
+          "exampleItem": "From what I understand, they aren't going to participate.",
+          "intent": "From what I understand"
+        },
+        {
+          "id": "edafec72-e3c4-4a43-a80e-8204cf97256a",
+          "exampleItem": "From what I understand, you don't agree with the proposal, right?",
+          "intent": "From what I understand"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "por-motivos-obvios-6de26607-3af0-4486-b7c5-2e351ec35f1f",
+      "intention": "For obvious reasons",
+      "pattern": "for obvious reasons",
+      "description": "Introduces a justification considered evident or easily understood in context.",
+      "category": "justificativa",
+      "searchTerms": [
+        "for obvious reasons",
+        "for reasons that are obvious"
+      ],
+      "validationPatterns": [
+        "\\bfor\\s+obvious\\s+reasons\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "ready-to-use",
+        "justification"
+      ],
+      "related": [],
+      "structure": "'For obvious reasons' is a fixed prepositional phrase. It can introduce a clause with a comma or appear at the end of a statement or question. It signals that the explanation should already be clear from context without listing the reasons.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "3feed568-b247-4b48-875e-7f4656744414",
+          "exampleItem": "For obvious reasons, I don't share my passwords.",
+          "intent": "For obvious reasons"
+        },
+        {
+          "id": "e56d0837-9a2b-4f90-80f6-55bcd1134f87",
+          "exampleItem": "She decided not to travel for obvious reasons.",
+          "intent": "for obvious reasons"
+        },
+        {
+          "id": "6d84b91e-cd06-4572-bc36-4ae63a8443f9",
+          "exampleItem": "Did you cancel the meeting for obvious reasons?",
+          "intent": "for obvious reasons"
+        },
+        {
+          "id": "70449a2e-aba8-485d-a64d-ec092ea0007a",
+          "exampleItem": "We don't disclose this data for obvious reasons.",
+          "intent": "for obvious reasons"
+        },
+        {
+          "id": "38904057-78da-40d7-8e49-881834a39392",
+          "exampleItem": "They preferred to wait for obvious reasons.",
+          "intent": "for obvious reasons"
+        },
+        {
+          "id": "28b13bcf-9d64-4c49-976b-ce677690c20f",
+          "exampleItem": "Wouldn't it be better to avoid this risk for obvious reasons?",
+          "intent": "for obvious reasons"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "a-ultima-coisa-que-quero-e-80cdb87c-425f-4f39-8f85-584046fe59da",
+      "intention": "The last thing I want is...",
+      "pattern": "the last thing + subject + want/wants + be + infinitive / noun",
+      "description": "Emphasizes something a person wants to avoid, often to explain a decision or concern.",
+      "category": "preferencia",
+      "searchTerms": [
+        "the last thing I want",
+        "the last thing she wants",
+        "the last thing we want"
+      ],
+      "validationPatterns": [
+        "\\bthe\\s+last\\s+thing\\s+(?:I|you|he|she|we|they)\\s+wants?\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "spoken-english",
+        "ready-to-use",
+        "preference"
+      ],
+      "related": [],
+      "structure": "Use 'The last thing + subject + want/wants + is + infinitive/noun phrase': 'The last thing I want is to lose this opportunity'. 'Last' idiomatically means least desired here, rather than final in a sequence. Use 'wants' with 'he' or 'she'. In questions, this phrase can also have a literal sequence meaning, so context matters. Negating 'is' reverses the usual statement; do not silently remove a negative present in the source.",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "e2b792a4-707d-4705-84c1-3492e02375bc",
+          "exampleItem": "The last thing I want is to lose this opportunity.",
+          "intent": "The last thing I want is"
+        },
+        {
+          "id": "30e8435d-5b36-4c68-a089-22b76f5360b2",
+          "exampleItem": "The last thing she wants is to argue right now.",
+          "intent": "The last thing she wants is"
+        },
+        {
+          "id": "346c444b-0c44-48ba-94ac-1d50544979c8",
+          "exampleItem": "The last thing we want isn't to create more problems.",
+          "intent": "The last thing we want"
+        },
+        {
+          "id": "9c9ab2da-09d9-4a3c-b335-36ed1a75ae75",
+          "exampleItem": "What's the last thing you want to do today?",
+          "intent": "the last thing you want"
+        },
+        {
+          "id": "d7651d79-fe59-4468-8aae-b163f680b41f",
+          "exampleItem": "The last thing they want is to delay the project.",
+          "intent": "The last thing they want is"
+        },
+        {
+          "id": "e8f99e7f-4b99-4b44-b840-8756570b7b6d",
+          "exampleItem": "Wouldn't losing the team's trust be the last thing you want?",
+          "intent": "the last thing you want"
         }
       ]
     }

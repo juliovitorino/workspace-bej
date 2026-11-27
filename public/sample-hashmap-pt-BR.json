@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1310,
+    "totalIntentions": 1319,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -54888,6 +54888,540 @@
           "id": "48aec174-ae3e-4ad6-8077-05c0bfba8a5d",
           "exampleItem": "Às vezes, é difícil acompanhar as atualizações do projeto.",
           "intent": "é difícil acompanhar"
+        }
+      ]
+    },
+    {
+      "id": "de-cabeca-sem-pensar-muito-fd23d1b5-352b-4a48-b979-8b83735f9367",
+      "intention": "De cabeça / Sem pensar muito",
+      "pattern": "de cabeça / assim, de cabeça / sem pensar muito",
+      "description": "Expressa uma resposta espontânea, feita de memória e sem consultar informações ou refletir longamente. Equivale a off the top of my head.",
+      "category": "discurso",
+      "searchTerms": [
+        "de cabeça",
+        "assim de cabeça",
+        "sem pensar muito",
+        "de memória"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])de\\s+cabeça(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])sem\\s+pensar\\s+muito(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloco-de-linguagem",
+        "ingles-falado",
+        "pronto-para-uso",
+        "discurso"
+      ],
+      "related": [],
+      "structure": "de cabeça / assim, de cabeça / sem pensar muito",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "f66648b3-ec3c-4a3f-85e3-fa1db41ae6d3",
+          "exampleItem": "De cabeça, eu diria que temos uns vinte participantes.",
+          "intent": "De cabeça"
+        },
+        {
+          "id": "f65e05ef-51c4-4473-986f-8cb2cc332d81",
+          "exampleItem": "Ela não consegue lembrar o número exato de cabeça.",
+          "intent": "de cabeça"
+        },
+        {
+          "id": "15907f69-c27c-4e37-b56a-8be6a4cec070",
+          "exampleItem": "Você consegue citar três exemplos de cabeça?",
+          "intent": "de cabeça"
+        },
+        {
+          "id": "c24271a3-64a1-4c43-a9d1-df3f342fea3d",
+          "exampleItem": "Assim, de cabeça, nós não sabemos o valor final.",
+          "intent": "de cabeça"
+        },
+        {
+          "id": "899dc1c8-f020-461a-abfa-57f74808049d",
+          "exampleItem": "Eles responderam sem pensar muito.",
+          "intent": "sem pensar muito"
+        },
+        {
+          "id": "4e5c3aae-1b8d-4918-a822-a010482a93db",
+          "exampleItem": "Você não prefere conferir os dados em vez de responder de cabeça?",
+          "intent": "de cabeça"
+        }
+      ]
+    },
+    {
+      "id": "deixa-eu-ir-verificar-d343fd62-1415-43d8-838c-caeda46eb591",
+      "intention": "Deixa eu ir verificar / Deixa eu conferir",
+      "pattern": "deixa eu + ir + verificar / conferir / checar",
+      "description": "Expressa a intenção de verificar uma informação ou situação antes de responder. A forma com ir enfatiza o deslocamento ou a ação de ir conferir. Equivale a let me go check.",
+      "category": "verificacao",
+      "searchTerms": [
+        "deixa eu ir verificar",
+        "deixa eu conferir",
+        "deixa eu ir checar",
+        "deixe-me verificar"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])deixa\\s+eu\\s+ir\\s+verificar(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])deixa\\s+eu\\s+conferir(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])deixa\\s+eu\\s+ir\\s+checar(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])deixe-me\\s+verificar(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloco-de-linguagem",
+        "ingles-falado",
+        "pronto-para-uso",
+        "verificacao"
+      ],
+      "related": [],
+      "structure": "deixa eu + ir + verificar / conferir / checar",
+      "level": "A2",
+      "examples": [
+        {
+          "id": "f29bf2ab-f529-422e-a5bf-9c9d3de891df",
+          "exampleItem": "Deixa eu ir verificar se a porta está trancada.",
+          "intent": "Deixa eu ir verificar"
+        },
+        {
+          "id": "185b0e9e-3331-4153-9f85-07815160d669",
+          "exampleItem": "Deixa eu conferir os números antes de responder.",
+          "intent": "Deixa eu conferir"
+        },
+        {
+          "id": "d93f046f-d232-46b2-a7f7-a7fb2f5199ee",
+          "exampleItem": "Deixa eu ir checar se o servidor voltou.",
+          "intent": "Deixa eu ir checar"
+        },
+        {
+          "id": "27292e50-465a-4a1c-a75a-c2d0bb20d0cf",
+          "exampleItem": "Você pode esperar um minuto? Deixa eu ir verificar.",
+          "intent": "Deixa eu ir verificar"
+        },
+        {
+          "id": "33ac34b9-5bf8-4de1-a571-ccf78d26b565",
+          "exampleItem": "Não precisa adivinhar; deixa eu conferir primeiro.",
+          "intent": "deixa eu conferir"
+        },
+        {
+          "id": "feefcf8f-a241-4ea3-b552-5c76d3545fea",
+          "exampleItem": "Deixe-me verificar se eles já chegaram.",
+          "intent": "Deixe-me verificar"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "de-jeito-nenhum-eu-vou-f36dfb3b-6fd9-4f3b-9476-f8dbf42b2964",
+      "intention": "De jeito nenhum eu vou... / Não vou de jeito nenhum...",
+      "pattern": "de jeito nenhum + sujeito + ir + infinitivo / sujeito + não + ir + infinitivo + de jeito nenhum",
+      "description": "Recusa enfática de fazer algo, correspondente a there is no way I am gonna. Pode ocorrer com outros sujeitos e em perguntas retóricas.",
+      "category": "recusa",
+      "searchTerms": [
+        "de jeito nenhum",
+        "não vou de jeito nenhum",
+        "nem pensar",
+        "não vamos de jeito nenhum"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])de\\s+jeito\\s+nenhum(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])não\\s+vou(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])não\\s+vamos(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloco-de-linguagem",
+        "ingles-falado",
+        "pronto-para-uso",
+        "recusa"
+      ],
+      "related": [],
+      "structure": "de jeito nenhum + sujeito + ir + infinitivo / sujeito + não + ir + infinitivo + de jeito nenhum",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "307841c5-8f43-4251-afb3-d49cdd97479c",
+          "exampleItem": "De jeito nenhum eu vou desistir agora.",
+          "intent": "De jeito nenhum"
+        },
+        {
+          "id": "4ba70743-acb2-4a48-9ada-b2e710f71325",
+          "exampleItem": "Ela não vai aceitar essa proposta de jeito nenhum.",
+          "intent": "de jeito nenhum"
+        },
+        {
+          "id": "8d301546-3a5e-4f66-b7da-54ec0895e781",
+          "exampleItem": "Você acha que nós vamos concordar com isso? De jeito nenhum!",
+          "intent": "De jeito nenhum"
+        },
+        {
+          "id": "5b080001-c58e-4f72-9af0-8ffeb2b84cef",
+          "exampleItem": "Nós não vamos cancelar a viagem de jeito nenhum.",
+          "intent": "de jeito nenhum"
+        },
+        {
+          "id": "b2564b21-5aec-4584-a0ee-5b4cc375010f",
+          "exampleItem": "Eles vão desistir de jeito nenhum? Claro que não.",
+          "intent": "de jeito nenhum"
+        },
+        {
+          "id": "9f21603e-d5d8-4291-ad2e-1b2b60e26e00",
+          "exampleItem": "De jeito nenhum ele vai entregar a senha.",
+          "intent": "De jeito nenhum"
+        }
+      ]
+    },
+    {
+      "id": "estou-pensando-em-85acb9eb-87a4-4b83-bece-76a1cb0f65a8",
+      "intention": "Estou pensando em... / Considerando...",
+      "pattern": "sujeito + estar + pensando em + infinitivo / substantivo",
+      "description": "Indica uma ideia, possibilidade ou plano ainda em consideração. Equivale a be thinking about doing something.",
+      "category": "planejamento",
+      "searchTerms": [
+        "estou pensando em",
+        "está pensando em",
+        "estamos pensando em",
+        "pensando em"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])pensando\\s+em(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])pensa\\s+em(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloco-de-linguagem",
+        "ingles-falado",
+        "pronto-para-uso",
+        "planejamento"
+      ],
+      "related": [],
+      "structure": "sujeito + estar + pensando em + infinitivo / substantivo",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "b610d82b-307d-4fa2-bc16-c9e89c6c0697",
+          "exampleItem": "Eu estou pensando em estudar francês no ano que vem.",
+          "intent": "estou pensando em"
+        },
+        {
+          "id": "5148d127-fbd3-4af2-b9df-4ef67548c0d5",
+          "exampleItem": "Ela está pensando em mudar de emprego.",
+          "intent": "está pensando em"
+        },
+        {
+          "id": "1681d71d-1781-4708-9b17-a104d0bf18ae",
+          "exampleItem": "Nós não estamos pensando em vender a casa.",
+          "intent": "estamos pensando em"
+        },
+        {
+          "id": "47a0880b-7c76-4119-822f-4cfe8adf8f8d",
+          "exampleItem": "Você está pensando em participar da reunião?",
+          "intent": "está pensando em"
+        },
+        {
+          "id": "4861b47a-12c9-48c8-b7e8-18d7a88f2639",
+          "exampleItem": "Eles estão pensando em viajar no feriado.",
+          "intent": "estão pensando em"
+        },
+        {
+          "id": "4f00850f-be60-4ae3-b23c-56b2054f4481",
+          "exampleItem": "Por que ele não está pensando em pedir ajuda?",
+          "intent": "está pensando em"
+        }
+      ]
+    },
+    {
+      "id": "estou-querendo-ha-algum-tempo-7398ae54-fa96-4006-9170-424b9fa28be2",
+      "intention": "Estou querendo... há algum tempo / Venho querendo...",
+      "pattern": "sujeito + estar / vir + querendo + infinitivo (+ marcador de duração)",
+      "description": "Expressa uma intenção ou desejo que a pessoa tem há algum tempo, mas ainda não realizou. Equivale a have been meaning to.",
+      "category": "intencao",
+      "searchTerms": [
+        "venho querendo",
+        "estou querendo há algum tempo",
+        "há tempos quero",
+        "faz tempo que quero"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])venho\\s+querendo(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])vem\\s+querendo(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])estou\\s+querendo(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])há\\s+tempos\\s+quero(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])faz\\s+tempo\\s+que(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloco-de-linguagem",
+        "ingles-falado",
+        "pronto-para-uso",
+        "intencao"
+      ],
+      "related": [],
+      "structure": "sujeito + estar / vir + querendo + infinitivo (+ marcador de duração)",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "6449edb8-f4f8-47fc-b7b9-f6303817e713",
+          "exampleItem": "Eu venho querendo conversar com você há semanas.",
+          "intent": "venho querendo"
+        },
+        {
+          "id": "4f190f51-db46-43f5-972c-65fad6c45b9c",
+          "exampleItem": "Ela vem querendo começar um curso novo.",
+          "intent": "vem querendo"
+        },
+        {
+          "id": "485ae600-b3ec-4a85-b00f-ca1b427ac937",
+          "exampleItem": "Nós não estamos querendo adiar essa conversa; só falta tempo.",
+          "intent": "estamos querendo"
+        },
+        {
+          "id": "4ee32b64-e661-4baf-ae67-1dccf3d505f5",
+          "exampleItem": "Você está querendo me contar alguma coisa há algum tempo?",
+          "intent": "está querendo"
+        },
+        {
+          "id": "4cc8e1ee-9249-443a-974f-1d5ff4d41abe",
+          "exampleItem": "Eles vêm querendo visitar os avós desde janeiro.",
+          "intent": "vêm querendo"
+        },
+        {
+          "id": "cfd9d714-cd9f-4b31-8dc5-7de099ee6d32",
+          "exampleItem": "Faz tempo que você quer trocar de computador?",
+          "intent": "Faz tempo que"
+        }
+      ]
+    },
+    {
+      "id": "nao-consigo-decidir-o-que-82cc25ef-a7f0-4f9f-95e9-580a9bf48e4b",
+      "intention": "Não consigo decidir o que... / Não sei o que escolher...",
+      "pattern": "sujeito + não + conseguir + decidir + o que + infinitivo",
+      "description": "Expressa indecisão diante de alternativas, especialmente sobre o que fazer, comprar, dizer ou escolher.",
+      "category": "indecisao",
+      "searchTerms": [
+        "não consigo decidir o que",
+        "não consegue decidir o que",
+        "não conseguimos decidir o que",
+        "não sei o que escolher"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])não\\s+consigo\\s+decidir\\s+o\\s+que(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])não\\s+consegue\\s+decidir\\s+o\\s+que(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])não\\s+conseguimos\\s+decidir\\s+o\\s+que(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])não\\s+conseguem\\s+decidir\\s+o\\s+que(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])não\\s+sabe\\s+decidir\\s+o\\s+que(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloco-de-linguagem",
+        "ingles-falado",
+        "pronto-para-uso",
+        "indecisao"
+      ],
+      "related": [],
+      "structure": "sujeito + não + conseguir + decidir + o que + infinitivo",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "6120efdf-aa17-43a2-ba9c-7c43fbe45412",
+          "exampleItem": "Eu não consigo decidir o que comprar.",
+          "intent": "não consigo decidir o que"
+        },
+        {
+          "id": "df5ab742-7c9c-410b-9c3e-4af67c9660b2",
+          "exampleItem": "Ela não consegue decidir o que vestir para a festa.",
+          "intent": "não consegue decidir o que"
+        },
+        {
+          "id": "4b085202-c1da-42eb-84d0-39b197943609",
+          "exampleItem": "Nós não conseguimos decidir o que fazer no fim de semana.",
+          "intent": "não conseguimos decidir o que"
+        },
+        {
+          "id": "7b1e462d-f405-4065-a98f-bdf37831e28f",
+          "exampleItem": "Você também não consegue decidir o que pedir?",
+          "intent": "não consegue decidir o que"
+        },
+        {
+          "id": "f097140b-9f19-4fb5-a438-18bc99307202",
+          "exampleItem": "Eles não conseguem decidir o que apresentar primeiro.",
+          "intent": "não conseguem decidir o que"
+        },
+        {
+          "id": "4db0a1f8-fe66-420c-b4f7-16c3f6e37104",
+          "exampleItem": "Por que ele não consegue decidir o que estudar?",
+          "intent": "não consegue decidir o que"
+        }
+      ]
+    },
+    {
+      "id": "pelo-que-eu-entendi-f137a3f4-805d-425a-92c6-557cd03285a1",
+      "intention": "Pelo que eu entendi... / Pelo que entendi...",
+      "pattern": "pelo que + sujeito + entender + oração",
+      "description": "Introduz uma interpretação ou conclusão baseada nas informações disponíveis, sem afirmar certeza absoluta. Equivale a from what I understand.",
+      "category": "interpretacao",
+      "searchTerms": [
+        "pelo que eu entendi",
+        "pelo que entendi",
+        "pelo que nós entendemos",
+        "pelo que ela entendeu"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])pelo\\s+que\\s+eu\\s+entendi(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])pelo\\s+que\\s+entendi(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])pelo\\s+que\\s+nós\\s+entendemos(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])pelo\\s+que\\s+ela\\s+entendeu(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])pelo\\s+que\\s+você\\s+entendeu(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloco-de-linguagem",
+        "ingles-falado",
+        "pronto-para-uso",
+        "interpretacao"
+      ],
+      "related": [],
+      "structure": "pelo que + sujeito + entender + oração",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "82659bfa-3b1c-40a4-938a-8aa8d9d3c39a",
+          "exampleItem": "Pelo que eu entendi, a reunião foi adiada.",
+          "intent": "Pelo que eu entendi"
+        },
+        {
+          "id": "0ca3dcd7-8378-4512-ae7a-bf7a62eac8d1",
+          "exampleItem": "Pelo que ela entendeu, ninguém precisa refazer o teste.",
+          "intent": "Pelo que ela entendeu"
+        },
+        {
+          "id": "c75882dc-3117-4026-90ba-b357d27b56ac",
+          "exampleItem": "Pelo que nós entendemos, o prazo não mudou.",
+          "intent": "Pelo que nós entendemos"
+        },
+        {
+          "id": "9b6085e3-63ac-4018-86f4-7089436cf1b7",
+          "exampleItem": "Pelo que você entendeu, precisamos enviar tudo hoje?",
+          "intent": "Pelo que você entendeu"
+        },
+        {
+          "id": "4600b50f-6fc3-472f-a264-3b52e5ac40aa",
+          "exampleItem": "Pelo que entendi, eles não vão participar.",
+          "intent": "Pelo que entendi"
+        },
+        {
+          "id": "edafec72-e3c4-4a43-a80e-8204cf97256a",
+          "exampleItem": "Pelo que eu entendi, você não concorda com a proposta, certo?",
+          "intent": "Pelo que eu entendi"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "por-motivos-obvios-6de26607-3af0-4486-b7c5-2e351ec35f1f",
+      "intention": "Por motivos óbvios / Por razões óbvias",
+      "pattern": "por motivos óbvios / por razões óbvias",
+      "description": "Apresenta uma justificativa considerada evidente ou facilmente compreensível no contexto. Equivale a for obvious reasons.",
+      "category": "justificativa",
+      "searchTerms": [
+        "por motivos óbvios",
+        "por razões óbvias"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])por\\s+motivos\\s+óbvios(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])por\\s+razões\\s+óbvias(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloco-de-linguagem",
+        "ingles-falado",
+        "pronto-para-uso",
+        "justificativa"
+      ],
+      "related": [],
+      "structure": "por motivos óbvios / por razões óbvias",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "3feed568-b247-4b48-875e-7f4656744414",
+          "exampleItem": "Por motivos óbvios, eu não compartilho minhas senhas.",
+          "intent": "Por motivos óbvios"
+        },
+        {
+          "id": "e56d0837-9a2b-4f90-80f6-55bcd1134f87",
+          "exampleItem": "Ela decidiu não viajar por motivos óbvios.",
+          "intent": "por motivos óbvios"
+        },
+        {
+          "id": "6d84b91e-cd06-4572-bc36-4ae63a8443f9",
+          "exampleItem": "Vocês cancelaram a reunião por razões óbvias?",
+          "intent": "por razões óbvias"
+        },
+        {
+          "id": "70449a2e-aba8-485d-a64d-ec092ea0007a",
+          "exampleItem": "Nós não divulgamos esses dados por motivos óbvios.",
+          "intent": "por motivos óbvios"
+        },
+        {
+          "id": "38904057-78da-40d7-8e49-881834a39392",
+          "exampleItem": "Eles preferiram esperar por razões óbvias.",
+          "intent": "por razões óbvias"
+        },
+        {
+          "id": "28b13bcf-9d64-4c49-976b-ce677690c20f",
+          "exampleItem": "Não seria melhor evitar esse risco por motivos óbvios?",
+          "intent": "por motivos óbvios"
+        }
+      ],
+      "allowLanguageChunkPractice": true
+    },
+    {
+      "id": "a-ultima-coisa-que-quero-e-80cdb87c-425f-4f39-8f85-584046fe59da",
+      "intention": "A última coisa que eu quero é...",
+      "pattern": "a última coisa que + sujeito + querer + ser + infinitivo / substantivo",
+      "description": "Enfatiza algo que a pessoa deseja evitar, muitas vezes para explicar uma decisão ou uma preocupação.",
+      "category": "preferencia",
+      "searchTerms": [
+        "a última coisa que eu quero",
+        "a última coisa que ela quer",
+        "a última coisa que queremos"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])a\\s+última\\s+coisa\\s+que(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])a\\s+última\\s+coisa(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloco-de-linguagem",
+        "ingles-falado",
+        "pronto-para-uso",
+        "preferencia"
+      ],
+      "related": [],
+      "structure": "a última coisa que + sujeito + querer + ser + infinitivo / substantivo",
+      "level": "B2",
+      "examples": [
+        {
+          "id": "e2b792a4-707d-4705-84c1-3492e02375bc",
+          "exampleItem": "A última coisa que eu quero é perder essa oportunidade.",
+          "intent": "A última coisa que eu quero é"
+        },
+        {
+          "id": "30e8435d-5b36-4c68-a089-22b76f5360b2",
+          "exampleItem": "A última coisa que ela quer é discutir agora.",
+          "intent": "A última coisa que ela quer é"
+        },
+        {
+          "id": "346c444b-0c44-48ba-94ac-1d50544979c8",
+          "exampleItem": "A última coisa que nós queremos não é criar mais problemas.",
+          "intent": "A última coisa que nós queremos"
+        },
+        {
+          "id": "9c9ab2da-09d9-4a3c-b335-36ed1a75ae75",
+          "exampleItem": "Qual é a última coisa que você quer fazer hoje?",
+          "intent": "a última coisa que você quer"
+        },
+        {
+          "id": "d7651d79-fe59-4468-8aae-b163f680b41f",
+          "exampleItem": "A última coisa que eles querem é atrasar o projeto.",
+          "intent": "A última coisa que eles querem é"
+        },
+        {
+          "id": "e8f99e7f-4b99-4b44-b840-8756570b7b6d",
+          "exampleItem": "A última coisa que você quer não seria perder a confiança da equipe?",
+          "intent": "A última coisa que você quer"
         }
       ]
     }
