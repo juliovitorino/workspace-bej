@@ -99,24 +99,33 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
       : module === "wrg" ? "would-you-rather" : module === "small-talk" ? "small-talk"
       : module === "interpretation" ? "interpretation" : "study-dashboard";
   });
-  const [dashboardNavHidden, setDashboardNavHidden] = useState(false);
+  const [floatingControlsHidden, setFloatingControlsHidden] = useState(false);
   useEffect(() => {
-    if (currentView !== "study-dashboard") {
-      setDashboardNavHidden(false);
+    // A mesma regra de navegação do Dashboard vale para os controles flutuantes
+    // compartilhados pelos módulos. Durante a caminhada, os controles permanecem acessíveis.
+    if (walkingActive) {
+      setFloatingControlsHidden(false);
       return;
     }
     let revealTimer: ReturnType<typeof setTimeout> | undefined;
     const onScroll = () => {
-      setDashboardNavHidden(true);
+      // Não ocultar controles enquanto o usuário interage com um diálogo.
+      if (document.querySelector('[role="dialog"][aria-modal="true"], dialog[open]')) {
+        setFloatingControlsHidden(false);
+        if (revealTimer !== undefined) clearTimeout(revealTimer);
+        return;
+      }
+      setFloatingControlsHidden(true);
       if (revealTimer !== undefined) clearTimeout(revealTimer);
-      revealTimer = setTimeout(() => setDashboardNavHidden(false), 5000);
+      revealTimer = setTimeout(() => setFloatingControlsHidden(false), 5000);
     };
+    setFloatingControlsHidden(false);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", onScroll);
       if (revealTimer !== undefined) clearTimeout(revealTimer);
     };
-  }, [currentView]);
+  }, [currentView, walkingActive]);
   const [donationConfig, setDonationConfig] = useState<DonationConfig>(DISABLED_DONATION_CONFIG);
   useEffect(() => {
     const controller = new AbortController();
@@ -839,7 +848,7 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
         onAdvancedTraining={(item) => startTraining(item, "advanced")}
         onReviewTraining={(item) => startTraining(item, "review")}
       />
-      <div id="app-floating-controls" className={`mobile-floating-controls${currentView === "study-dashboard" && dashboardNavHidden ? " dashboard-nav-scrolling" : ""}`}>
+      <div id="app-floating-controls" className={`mobile-floating-controls${floatingControlsHidden ? " dashboard-nav-scrolling" : ""}`}>
         {currentView === "hashmap" && !loading && data && !trainingMode &&
           Boolean(englishLevelSearch || categorySearch || selectedTags.length) && (
           <button type="button" className="hashmap-clear-card-filters"
