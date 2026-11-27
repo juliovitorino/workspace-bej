@@ -99,6 +99,24 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
       : module === "wrg" ? "would-you-rather" : module === "small-talk" ? "small-talk"
       : module === "interpretation" ? "interpretation" : "study-dashboard";
   });
+  const [dashboardNavHidden, setDashboardNavHidden] = useState(false);
+  useEffect(() => {
+    if (currentView !== "study-dashboard") {
+      setDashboardNavHidden(false);
+      return;
+    }
+    let revealTimer: ReturnType<typeof setTimeout> | undefined;
+    const onScroll = () => {
+      setDashboardNavHidden(true);
+      if (revealTimer !== undefined) clearTimeout(revealTimer);
+      revealTimer = setTimeout(() => setDashboardNavHidden(false), 5000);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (revealTimer !== undefined) clearTimeout(revealTimer);
+    };
+  }, [currentView]);
   const [donationConfig, setDonationConfig] = useState<DonationConfig>(DISABLED_DONATION_CONFIG);
   useEffect(() => {
     const controller = new AbortController();
@@ -821,7 +839,7 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
         onAdvancedTraining={(item) => startTraining(item, "advanced")}
         onReviewTraining={(item) => startTraining(item, "review")}
       />
-      <div id="app-floating-controls" className="mobile-floating-controls">
+      <div id="app-floating-controls" className={`mobile-floating-controls${currentView === "study-dashboard" && dashboardNavHidden ? " dashboard-nav-scrolling" : ""}`}>
         {currentView === "hashmap" && !loading && data && !trainingMode &&
           Boolean(englishLevelSearch || categorySearch || selectedTags.length) && (
           <button type="button" className="hashmap-clear-card-filters"
