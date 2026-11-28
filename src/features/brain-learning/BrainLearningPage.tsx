@@ -1,4 +1,6 @@
-import { useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
+import confetti from "canvas-confetti";
+import { toggleAuthorMode } from "../../utils/authorMode";
 import "./brainLearning.css";
 
 type BodyPart = "Cérebro" | "Ouvidos" | "Olhos" | "Boca" | "Mãos";
@@ -40,6 +42,37 @@ const links: { part: BodyPart; x: number; y: number }[] = [
 
 export function BrainLearningPage() {
   const [selected, setSelected] = useState("wrg");
+  const sequence = useRef<BodyPart[]>([]);
+  const lastTap = useRef(0);
+  const messageTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [eggMessage, setEggMessage] = useState("");
+
+  useEffect(() => () => {
+    if (messageTimer.current) clearTimeout(messageTimer.current);
+  }, []);
+
+  function tapSecret(part: BodyPart) {
+    if (selected !== "wrg" || !window.matchMedia("(max-width: 820px) and (pointer: coarse)").matches) return;
+    const now = Date.now();
+    if (now - lastTap.current > 4000) sequence.current = [];
+    lastTap.current = now;
+    const expected: BodyPart[] = ["Cérebro", "Olhos", "Boca"];
+    const index = sequence.current.length;
+    sequence.current = part === expected[index] ? [...sequence.current, part] : part === expected[0] ? [part] : [];
+    if (sequence.current.length !== expected.length) return;
+    sequence.current = [];
+    try {
+      const enabled = toggleAuthorMode();
+      setEggMessage(enabled ? "EASTER EGG ATIVADO" : "EASTER EGG DESATIVADO");
+      if (messageTimer.current) clearTimeout(messageTimer.current);
+      messageTimer.current = setTimeout(() => setEggMessage(""), 3500);
+      if (enabled && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        void confetti({ particleCount: 140, spread: 95, origin: { y: 0.5 }, zIndex: 10002 });
+      }
+    } catch (error) {
+      console.warn("Não foi possível alterar o modo Author:", error);
+    }
+  }
   const activity = activities.find(item => item.id === selected) ?? activities[0];
   const active = (part: BodyPart) => activity.parts.includes(part);
 
@@ -102,6 +135,12 @@ export function BrainLearningPage() {
             <path d="M68 334 L40 354 L15 354" stroke={active("Mãos") ? activity.color : "#4d6583"} fill="none" />
             <text x="15" y="368" fill={active("Mãos") ? activity.color : "#a3b5cc"}>MÃOS</text>
           </g>
+          {/* Áreas de toque invisíveis: só aceitam a sequência quando WRG está selecionado no celular. */}
+          <g fill="transparent" stroke="none" className="bej-brain-secret-targets">
+            <ellipse cx="170" cy="56" rx="36" ry="29" onPointerUp={() => tapSecret("Cérebro")} />
+            <ellipse cx="170" cy="97" rx="43" ry="13" onPointerUp={() => tapSecret("Olhos")} />
+            <ellipse cx="170" cy="132" rx="29" ry="13" onPointerUp={() => tapSecret("Boca")} />
+          </g>
           <text x="170" y="380" textAnchor="middle" fontSize="9" fill="#7f96b5">Representação didática simplificada</text>
         </svg>
       </div>
@@ -110,7 +149,7 @@ export function BrainLearningPage() {
         {activities.map(item => (
           <button key={item.id} type="button" className={selected === item.id ? "bej-brain-activity selected" : "bej-brain-activity"}
             style={{ "--activity-color": item.color } as CSSProperties}
-            aria-pressed={selected === item.id} onClick={() => setSelected(item.id)}>
+            aria-pressed={selected === item.id} onClick={() => { sequence.current = []; setSelected(item.id); }}>
             <span aria-hidden="true">{item.icon}</span><span>{item.label}</span>
           </button>
         ))}
@@ -125,6 +164,7 @@ export function BrainLearningPage() {
           <p>{activity.practice}</p>
         </div>
       </article>
+      {eggMessage && <div className="bej-brain-egg-message" role="status" aria-live="polite">{eggMessage}</div>}
       <p className="bej-brain-disclaimer">As conexões ilustradas são uma representação pedagógica, não um mapa literal de ativação cerebral.</p>
     </section>
   );
