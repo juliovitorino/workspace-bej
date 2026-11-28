@@ -135,11 +135,11 @@ export function BrainLearningPage() {
             <path d="M68 334 L40 354 L15 354" stroke={active("Mãos") ? activity.color : "#4d6583"} fill="none" />
             <text x="15" y="368" fill={active("Mãos") ? activity.color : "#a3b5cc"}>MÃOS</text>
           </g>
-          {/* Áreas de toque invisíveis: só aceitam a sequência quando WRG está selecionado no celular. */}
-          <g fill="transparent" stroke="none" className="bej-brain-secret-targets">
-            <ellipse cx="170" cy="56" rx="36" ry="29" onPointerUp={() => tapSecret("Cérebro")} />
-            <ellipse cx="170" cy="97" rx="43" ry="13" onPointerUp={() => tapSecret("Olhos")} />
-            <ellipse cx="170" cy="132" rx="29" ry="13" onPointerUp={() => tapSecret("Boca")} />
+          {/* Etiquetas são os alvos secretos; áreas invisíveis do rosto não recebem toques. */}
+          <g className="bej-brain-secret-targets" fill="transparent" stroke="none">
+            <rect x="232" y="10" width="72" height="32" onPointerUp={() => tapSecret("Cérebro")} />
+            <rect x="242" y="94" width="77" height="33" onPointerUp={() => tapSecret("Olhos")} />
+            <rect x="239" y="128" width="73" height="33" onPointerUp={() => tapSecret("Boca")} />
           </g>
           <text x="170" y="380" textAnchor="middle" fontSize="9" fill="#7f96b5">Representação didática simplificada</text>
         </svg>
