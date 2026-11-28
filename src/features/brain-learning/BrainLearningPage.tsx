@@ -87,7 +87,7 @@ export function BrainLearningPage() {
           ))}
           <g fontSize="10" fontWeight="600" fill="#d6e3f6">
             <path d="M204 52 L240 35 L286 35" stroke={active("Cérebro") ? activity.color : "#4d6583"} fill="none" />
-            <text x="288" y="38" textAnchor="end" fill={active("Cérebro") ? activity.color : "#a3b5cc"}>CÉREBRO</text>
+            <text x="288" y="28" textAnchor="end" fill={active("Cérebro") ? activity.color : "#a3b5cc"}>CÉREBRO</text>
             <path d="M118 105 L82 112 L28 112" stroke={active("Ouvidos") ? activity.color : "#4d6583"} fill="none" />
             <text x="26" y="105" fill={active("Ouvidos") ? activity.color : "#a3b5cc"}>OUVIDOS</text>
             <path d="M184 97 L232 117 L309 117" stroke={active("Olhos") ? activity.color : "#4d6583"} fill="none" />
