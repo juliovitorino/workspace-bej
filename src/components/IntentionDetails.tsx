@@ -494,7 +494,8 @@ export function IntentionDetails({
     const openingIndex = nextPillVariation(ENGLISH_PILL_OPENINGS.length, previousYoutubePillOpening.current);
     const termsIndex = nextPillVariation(YOUTUBE_PILL_TERMS_INTROS.length, previousYoutubeTermsIntro.current);
     const endingIndex = nextPillVariation(YOUTUBE_PILL_ENDINGS.length, previousYoutubeEnding.current);
-    const searchTerms = (item.searchTerms ?? []).map(term => term.trim()).filter(Boolean);
+    // The YouTube script describes expressions in the source language, not the study language.
+    const searchTerms = (item.sourceSearchTerms ?? []).map(term => term.trim()).filter(Boolean);
     const sections = [
       ENGLISH_PILL_OPENINGS[openingIndex],
       `${LANGUAGES[sourceLanguage].flag} *${item.intention.trim()}*`,
