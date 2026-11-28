@@ -516,32 +516,17 @@ export function IntentionDetails({
     // Choose a fresh opening each time, without immediately repeating the last one.
     const openingIndex = nextPillVariation(ENGLISH_PILL_OPENINGS.length, previousPillOpening.current);
     previousPillOpening.current = openingIndex;
-    let previousMiddleExampleVariation: number | null = null;
     const sections = [
       ENGLISH_PILL_OPENINGS[openingIndex],
       `${LANGUAGES[sourceLanguage].flag} *${item.intention.trim()}*`,
       `${LANGUAGES[language].flag} *${(item.targetIntention ?? item.english ?? "").trim()}*`,
       item.description?.trim() ? `📖 Descrição\n${item.description.trim()}` : null,
       item.pattern?.trim() ? `🧩 Padrão\n${item.pattern.trim()}` : null,
-      ...(item.examples?.length ? [
-        "💬 Exemplos",
-        ...item.examples.map((example, index, examples) => {
-          // The final transition is exclusive to the last example when there is more than one.
-          const options = index === 0
-            ? YOUTUBE_PILL_EXAMPLE_FIRST
-            : index === examples.length - 1
-              ? YOUTUBE_PILL_EXAMPLE_LAST
-              : YOUTUBE_PILL_EXAMPLE_MIDDLE;
-          const previous = index > 1 && index < examples.length - 1 ? previousMiddleExampleVariation : null;
-          const variation = nextPillVariation(options.length, previous);
-          if (index > 0 && index < examples.length - 1) previousMiddleExampleVariation = variation;
-          return [
-            options[variation],
-            example.pt?.trim() ? `${LANGUAGES[sourceLanguage].flag} ${highlightSharedIntention(example.pt.trim(), example.ptIntent)}` : null,
-            targetSentence(example).trim() ? `${LANGUAGES[language].flag} ${highlightSharedIntention(targetSentence(example).trim(), targetIntent(example))}` : null
-          ].filter((line): line is string => Boolean(line)).join("\n");
-        })
-      ] : []),
+      ...(item.examples ?? []).flatMap((example, index) => [
+        `${index === 0 ? "💬 Exemplos\n\n" : ""}${index + 1}.`,
+        example.pt?.trim() ? `${LANGUAGES[sourceLanguage].flag} ${highlightSharedIntention(example.pt.trim(), example.ptIntent)}` : null,
+        targetSentence(example).trim() ? `${LANGUAGES[language].flag} ${highlightSharedIntention(targetSentence(example).trim(), targetIntent(example))}` : null
+      ]),
       "📚 Brazilian English Journey",
       createStudyDeepLink({ module: "intention", id: item.id, source: sourceLanguage, target: language }),
       ENGLISH_PILL_COMMUNITY_INVITE
@@ -569,6 +554,7 @@ export function IntentionDetails({
     const endingIndex = nextPillVariation(YOUTUBE_PILL_ENDINGS.length, previousYoutubeEnding.current);
     // The YouTube script describes expressions in the source language, not the study language.
     const searchTerms = (item.sourceSearchTerms ?? []).map(term => term.trim()).filter(Boolean);
+    let previousMiddleExampleVariation: number | null = null;
     const sections = [
       ENGLISH_PILL_OPENINGS[openingIndex],
       `${LANGUAGES[sourceLanguage].flag} *${item.intention.trim()}*`,
@@ -576,11 +562,25 @@ export function IntentionDetails({
       item.description?.trim() ? `📖 Descrição\n${item.description.trim()}` : null,
       item.pattern?.trim() ? `🧩 Padrão\n${item.pattern.trim()}` : null,
       searchTerms.length ? `${YOUTUBE_PILL_TERMS_INTROS[termsIndex]}\n${searchTerms.map(term => `• ${term}`).join("\n")}` : null,
-      ...(item.examples ?? []).flatMap((example, index) => [
-        `${index === 0 ? "💬 Exemplos\n\n" : ""}${index + 1}.`,
-        example.pt?.trim() ? `${LANGUAGES[sourceLanguage].flag} ${highlightSharedIntention(example.pt.trim(), example.ptIntent)}` : null,
-        targetSentence(example).trim() ? `${LANGUAGES[language].flag} ${highlightSharedIntention(targetSentence(example).trim(), targetIntent(example))}` : null
-      ]),
+      ...(item.examples?.length ? [
+        "💬 Exemplos",
+        ...item.examples.map((example, index, examples) => {
+          // The final transition is exclusive to the last example when there is more than one.
+          const options = index === 0
+            ? YOUTUBE_PILL_EXAMPLE_FIRST
+            : index === examples.length - 1
+              ? YOUTUBE_PILL_EXAMPLE_LAST
+              : YOUTUBE_PILL_EXAMPLE_MIDDLE;
+          const previous = index > 1 && index < examples.length - 1 ? previousMiddleExampleVariation : null;
+          const variation = nextPillVariation(options.length, previous);
+          if (index > 0 && index < examples.length - 1) previousMiddleExampleVariation = variation;
+          return [
+            options[variation],
+            example.pt?.trim() ? `${LANGUAGES[sourceLanguage].flag} ${highlightSharedIntention(example.pt.trim(), example.ptIntent)}` : null,
+            targetSentence(example).trim() ? `${LANGUAGES[language].flag} ${highlightSharedIntention(targetSentence(example).trim(), targetIntent(example))}` : null
+          ].filter((line): line is string => Boolean(line)).join("\n");
+        })
+      ] : []),
       YOUTUBE_PILL_ENDINGS[endingIndex]
     ].filter((section): section is string => Boolean(section)).join("\n\n");
     try {
