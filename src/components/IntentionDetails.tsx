@@ -123,6 +123,64 @@ const YOUTUBE_PILL_ENDINGS = [
   "Fechamos mais uma Pílula de Inglês do BEJ! Agora quero ver você saindo da teoria. Crie uma frase e compartilhe aqui embaixo. Quer aprender inglês de um jeito mais natural, sem depender de palavras isoladas? Inscreva-se no canal!"
 ] as const;
 
+/** Transições de fala para os exemplos do roteiro de teleprompter (10 + 30 + 10). */
+const YOUTUBE_PILL_EXAMPLE_FIRST = [
+  "Olha só esse exemplo!",
+  "Vamos começar com uma situação bem comum.",
+  "Presta atenção nessa frase.",
+  "Imagine a seguinte situação.",
+  "Pra começar, olha como funciona.",
+  "Vamos ver isso na prática.",
+  "Saca só essa frase!",
+  "Olha como você pode usar essa intenção.",
+  "Começando com um exemplo simples.",
+  "Dá uma olhada nessa situação."
+] as const;
+const YOUTUBE_PILL_EXAMPLE_MIDDLE = [
+  "Boa! Mais uma!",
+  "Agora olha essa!",
+  "Esse exemplo agora é legal!",
+  "Vamos para mais uma situação.",
+  "Olha que interessante essa próxima!",
+  "E tem mais!",
+  "Saca só essa outra!",
+  "Agora presta atenção nessa.",
+  "Vamos complicar um pouquinho?",
+  "Olha como fica nessa situação.",
+  "Mais um exemplo pra você!",
+  "Essa aqui também é muito comum.",
+  "Agora imagina essa situação.",
+  "Vamos mudar um pouco o contexto.",
+  "E se você quisesse dizer isso?",
+  "Olha outra maneira de usar essa intenção.",
+  "Agora vem uma bem interessante!",
+  "Essa você pode usar no dia a dia.",
+  "Vamos ver outro contexto.",
+  "E olha só o próximo exemplo!",
+  "Essa aqui é boa, hein?",
+  "Agora acompanha essa frase.",
+  "Bora pra mais uma!",
+  "Olha como essa intenção aparece aqui.",
+  "Essa próxima é bem natural.",
+  "Agora vamos para outra situação.",
+  "Presta atenção nessa construção.",
+  "Tem mais uma que eu quero te mostrar.",
+  "E agora, como você diria isso?",
+  "Olha essa outra possibilidade!"
+] as const;
+const YOUTUBE_PILL_EXAMPLE_LAST = [
+  "E pra terminar, olha essa!",
+  "Agora, pra fechar, presta atenção nessa frase.",
+  "E o nosso último exemplo é esse!",
+  "Pra encerrar os exemplos, olha só!",
+  "E antes de terminar, saca só essa!",
+  "Vamos fechar com uma situação bem comum.",
+  "E pra finalizar, olha como fica.",
+  "Agora vem o último exemplo!",
+  "Pra fechar com chave de ouro, olha essa!",
+  "E terminando nossa sequência, veja essa frase!"
+] as const;
+
 /** Sorteia sem repetir a opção imediatamente anterior. */
 function nextPillVariation(length: number, previous: number | null): number {
   const randomIndex = Math.floor(Math.random() * (length - (previous === null ? 0 : 1)));
@@ -458,17 +516,32 @@ export function IntentionDetails({
     // Choose a fresh opening each time, without immediately repeating the last one.
     const openingIndex = nextPillVariation(ENGLISH_PILL_OPENINGS.length, previousPillOpening.current);
     previousPillOpening.current = openingIndex;
+    let previousMiddleExampleVariation: number | null = null;
     const sections = [
       ENGLISH_PILL_OPENINGS[openingIndex],
       `${LANGUAGES[sourceLanguage].flag} *${item.intention.trim()}*`,
       `${LANGUAGES[language].flag} *${(item.targetIntention ?? item.english ?? "").trim()}*`,
       item.description?.trim() ? `📖 Descrição\n${item.description.trim()}` : null,
       item.pattern?.trim() ? `🧩 Padrão\n${item.pattern.trim()}` : null,
-      ...(item.examples ?? []).flatMap((example, index) => [
-        `${index === 0 ? "💬 Exemplos\n\n" : ""}${index + 1}.`,
-        example.pt?.trim() ? `${LANGUAGES[sourceLanguage].flag} ${highlightSharedIntention(example.pt.trim(), example.ptIntent)}` : null,
-        targetSentence(example).trim() ? `${LANGUAGES[language].flag} ${highlightSharedIntention(targetSentence(example).trim(), targetIntent(example))}` : null
-      ]),
+      ...(item.examples?.length ? [
+        "💬 Exemplos",
+        ...item.examples.map((example, index, examples) => {
+          // The final transition is exclusive to the last example when there is more than one.
+          const options = index === 0
+            ? YOUTUBE_PILL_EXAMPLE_FIRST
+            : index === examples.length - 1
+              ? YOUTUBE_PILL_EXAMPLE_LAST
+              : YOUTUBE_PILL_EXAMPLE_MIDDLE;
+          const previous = index > 1 && index < examples.length - 1 ? previousMiddleExampleVariation : null;
+          const variation = nextPillVariation(options.length, previous);
+          if (index > 0 && index < examples.length - 1) previousMiddleExampleVariation = variation;
+          return [
+            options[variation],
+            example.pt?.trim() ? `${LANGUAGES[sourceLanguage].flag} ${highlightSharedIntention(example.pt.trim(), example.ptIntent)}` : null,
+            targetSentence(example).trim() ? `${LANGUAGES[language].flag} ${highlightSharedIntention(targetSentence(example).trim(), targetIntent(example))}` : null
+          ].filter((line): line is string => Boolean(line)).join("\n");
+        })
+      ] : []),
       "📚 Brazilian English Journey",
       createStudyDeepLink({ module: "intention", id: item.id, source: sourceLanguage, target: language }),
       ENGLISH_PILL_COMMUNITY_INVITE
