@@ -10,3 +10,14 @@ export function isAuthorMode(): boolean {
     return false;
   }
 }
+
+/** Notifica componentes no mesmo documento (o evento storage não dispara na própria aba). */
+export const AUTHOR_MODE_CHANGED = "bej:author-mode-changed";
+
+export function toggleAuthorMode(): boolean {
+  const enabled = !isAuthorMode();
+  if (enabled) window.localStorage.setItem(STORAGE_AUTHOR_KEY, AUTHOR_TOKEN);
+  else window.localStorage.removeItem(STORAGE_AUTHOR_KEY);
+  window.dispatchEvent(new Event(AUTHOR_MODE_CHANGED));
+  return enabled;
+}

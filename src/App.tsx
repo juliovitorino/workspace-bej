@@ -46,7 +46,7 @@ import { fetchHashmap, getOriginalFilteredIntentions, loadHashmap } from "./serv
 import type { HashmapData, MentalIntention } from "./types/hashmap";
 import { normalizeText } from "./utils/normalizeText";
 import { searchIntentions } from "./utils/searchIntentions";
-import { isAuthorMode } from "./utils/authorMode";
+import { AUTHOR_MODE_CHANGED, isAuthorMode } from "./utils/authorMode";
 import { useAppTheme } from "./hooks/useAppTheme";
 import { useFavoriteChunks } from "./hooks/useFavoriteChunks";
 import { AchievementCelebration } from "./components/AchievementCelebration";
@@ -244,6 +244,16 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
     backupReminderOpen || !!settingsDialog || (!["shadowing", "would-you-rather", "small-talk"].includes(studyView) && (loading || !data)));
 
   // Mesma verificacao de modo autor usada pelas ferramentas existentes.
+  const [, refreshAuthorMode] = useState(0);
+  useEffect(() => {
+    const refresh = () => refreshAuthorMode(value => value + 1);
+    window.addEventListener(AUTHOR_MODE_CHANGED, refresh);
+    window.addEventListener("storage", refresh);
+    return () => {
+      window.removeEventListener(AUTHOR_MODE_CHANGED, refresh);
+      window.removeEventListener("storage", refresh);
+    };
+  }, []);
   const authorMode = isAuthorMode();
 
   useEffect(() => {
