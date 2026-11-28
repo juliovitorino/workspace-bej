@@ -582,13 +582,62 @@ export function IntentionDetails({
         })
       ] : []),
       YOUTUBE_PILL_ENDINGS[endingIndex]
-    ].filter((section): section is string => Boolean(section)).join("\n\n");
+    ].filter((section): section is string => Boolean(section));
+
+    // Keep the complete closing call-to-action and avoid splitting bilingual example pairs.
+    // Remove optional material before resorting to shortening a very long core section.
+    const maxCharacters = 5000;
+    const renderedLength = () => sections.join("\n\n").length;
+    const examplesHeading = sections.indexOf("💬 Exemplos");
+    if (examplesHeading !== -1) {
+      // Preserve the first and final examples when possible; remove middle examples first.
+      while (renderedLength() > maxCharacters && sections.length - examplesHeading > 3) {
+        sections.splice(sections.length - 3, 1);
+      }
+      // If still too long, remove the final example, then the first, as complete blocks.
+      while (renderedLength() > maxCharacters && sections.length - examplesHeading > 2) {
+        sections.splice(sections.length - 2, 1);
+      }
+      if (renderedLength() > maxCharacters) {
+        sections.splice(examplesHeading, 1); // Empty heading after all examples are removed.
+      }
+    }
+    // Search terms are supplementary; remove individual terms before touching the description.
+    const termsSection = sections.findIndex(section => section.startsWith(YOUTUBE_PILL_TERMS_INTROS[termsIndex]));
+    if (termsSection !== -1) {
+      const termsLines = sections[termsSection].split("\n");
+      while (renderedLength() > maxCharacters && termsLines.length > 1) {
+        termsLines.pop();
+        if (termsLines.length === 1) sections.splice(termsSection, 1);
+        else sections[termsSection] = termsLines.join("\n");
+      }
+    }
+    // As a last resort, shorten optional prose without cutting the final call to action.
+    for (const prefix of ["📖 Descrição\n", "🧩 Padrão\n"]) {
+      const sectionIndex = sections.findIndex(section => section.startsWith(prefix));
+      if (sectionIndex === -1 || renderedLength() <= maxCharacters) continue;
+      const excess = renderedLength() - maxCharacters;
+      const content = sections[sectionIndex].slice(prefix.length);
+      const allowed = content.length - excess - 1;
+      if (allowed <= 0) sections.splice(sectionIndex, 1);
+      else {
+        const shortened = content.slice(0, allowed);
+        const lastSpace = shortened.lastIndexOf(" ");
+        sections[sectionIndex] = prefix + (lastSpace > allowed / 2 ? shortened.slice(0, lastSpace) : shortened).trimEnd() + "…";
+      }
+    }
+    // Guarantee the clipboard never receives more than the teleprompter limit.
+    const script = sections.join("\n\n");
+    const youtubePillText = script.length <= maxCharacters
+      ? script
+      : script.slice(0, maxCharacters);
+
     try {
       if (navigator.clipboard?.writeText) {
-        try { await navigator.clipboard.writeText(sections); }
-        catch { copyIntentionIdFallback(sections); }
+        try { await navigator.clipboard.writeText(youtubePillText); }
+        catch { copyIntentionIdFallback(youtubePillText); }
       } else {
-        copyIntentionIdFallback(sections);
+        copyIntentionIdFallback(youtubePillText);
       }
       previousYoutubePillOpening.current = openingIndex;
       previousYoutubeTermsIntro.current = termsIndex;
