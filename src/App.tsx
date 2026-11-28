@@ -40,6 +40,7 @@ import { PERSONAL_CARDS_CHANGED, countPersonalFlashcards } from "./features/pers
 import { ChunkFlashcards } from "./components/ChunkFlashcards";
 import { StoryShadowing } from "./components/StoryShadowing";
 import { SmallTalkPage } from "./features/small-talk/SmallTalkPage";
+import { BrainLearningPage } from "./features/brain-learning/BrainLearningPage";
 import "./features/small-talk/smallTalk.css";
 import { fetchHashmap, getOriginalFilteredIntentions, loadHashmap } from "./services/hashmapService";
 import type { HashmapData, MentalIntention } from "./types/hashmap";
@@ -545,7 +546,7 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
             } else {
               setFilterScrollRequest(0);
             }
-            if (view === "settings" || view === "shadowing" || view === "small-talk" || view === "would-you-rather" || view === "favorite-chunks" || view === "study-dashboard" || view === "extra-activities" || view === "donation") {
+            if (view === "settings" || view === "shadowing" || view === "small-talk" || view === "brain-learning" || view === "would-you-rather" || view === "favorite-chunks" || view === "study-dashboard" || view === "extra-activities" || view === "donation") {
               closeTraining();
               setSelected(null);
               window.speechSynthesis?.cancel();
@@ -592,17 +593,18 @@ function BejApp({ maintenanceConfig }: { maintenanceConfig: MaintenanceConfig })
             {extraActivity.draft && currentView !== "extra-activities" && <p className="warning-banner" role="status">{t("extras.activeNotice")} <button type="button" className="secondary-button" onClick={() => { closeTraining(); setSelected(null); setCurrentView("extra-activities"); }}>{t("extras.open")}</button></p>}
             {currentView === "extra-activities" && <ExtraActivities language={language} state={extraActivity} />}
             {currentView === "would-you-rather" && <WouldYouRather key={`${sourceLanguage}-${language}`} language={language} sourceLanguage={sourceLanguage} onStudyState={reportStudy} deepLinkId={incomingDeepLink.current?.module === "wrg" ? incomingDeepLink.current.id : undefined} />}
+            {currentView === "brain-learning" && <BrainLearningPage />}
             {currentView === "small-talk" && <SmallTalkPage onStudyState={reportStudy} onWalkingChange={setWalkingActive} language={language} sourceLanguage={sourceLanguage} deepLink={incomingDeepLink.current?.module === "small-talk" ? incomingDeepLink.current : undefined} />}
             {currentView === "shadowing" && <StoryShadowing key={`${sourceLanguage}-${language}`} language={language} onStudyState={reportStudy} onMenu={() => setCurrentView("hashmap")} />}
 
-        {loading && currentView !== "shadowing" && currentView !== "small-talk" && currentView !== "would-you-rather" && currentView !== "study-dashboard" && currentView !== "extra-activities" && currentView !== "settings" && currentView !== "donation" && (
+        {loading && currentView !== "shadowing" && currentView !== "small-talk" && currentView !== "brain-learning" && currentView !== "would-you-rather" && currentView !== "study-dashboard" && currentView !== "extra-activities" && currentView !== "settings" && currentView !== "donation" && (
           <div className="status-card">
             <div className="spinner" />
             <p>{t("app.loadingMentalHashmap")}</p>
           </div>
         )}
 
-        {!loading && error && !data && currentView !== "shadowing" && currentView !== "small-talk" && currentView !== "would-you-rather" && currentView !== "study-dashboard" && currentView !== "extra-activities" && currentView !== "settings" && currentView !== "donation" && (
+        {!loading && error && !data && currentView !== "shadowing" && currentView !== "small-talk" && currentView !== "brain-learning" && currentView !== "would-you-rather" && currentView !== "study-dashboard" && currentView !== "extra-activities" && currentView !== "settings" && currentView !== "donation" && (
           <div className="status-card error-card">
             <h2>{t("app.couldNotLoadMentalHashmap")}</h2>
             <p>{error}</p>
