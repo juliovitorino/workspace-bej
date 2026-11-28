@@ -13,12 +13,17 @@ type Activity = {
 };
 
 const activities: Activity[] = [
-  { id: "listening", label: "Listening", icon: "👂", color: "#22b8cf", parts: ["Ouvidos", "Cérebro"], description: "O som chega pelos ouvidos e é interpretado por redes cerebrais que participam da compreensão da linguagem.", practice: "Ouça uma frase e tente compreender a intenção antes de ler a tradução." },
-  { id: "speaking", label: "Speaking", icon: "🎙️", color: "#f59e0b", parts: ["Cérebro", "Boca", "Ouvidos"], description: "O cérebro organiza a mensagem e coordena a produção da fala. Você também escuta a própria voz para ajustar o que diz.", practice: "Responda em voz alta, mesmo que sua frase não esteja perfeita." },
-  { id: "writing", label: "Writing", icon: "✍️", color: "#a78bfa", parts: ["Cérebro", "Olhos", "Mãos"], description: "Escrever envolve planejar frases, recuperar palavras, observar o texto e coordenar movimentos. A prática pode ajudar a consolidar o aprendizado.", practice: "Escreva uma frase nova com a intenção que acabou de estudar." },
-  { id: "reading", label: "Reading", icon: "📖", color: "#60a5fa", parts: ["Olhos", "Cérebro"], description: "Os olhos captam a escrita e o cérebro reconhece padrões, relaciona palavras e constrói significado.", practice: "Leia uma frase e identifique a intenção antes de consultar a explicação." },
-  { id: "shadowing", label: "Shadowing", icon: "🔁", color: "#fb7185", parts: ["Ouvidos", "Cérebro", "Boca"], description: "Ao ouvir e repetir, você pratica a coordenação entre percepção auditiva, articulação, ritmo e entonação.", practice: "Repita acompanhando o ritmo de uma gravação curta." },
-  { id: "conversation", label: "Conversação", icon: "💬", color: "#34d399", parts: ["Ouvidos", "Cérebro", "Boca"], description: "Conversar integra compreensão, memória, planejamento e fala em tempo real. É uma oportunidade de aplicar o que você aprendeu.", practice: "Participe de um Small Talk e responda espontaneamente." }
+  { id: "hashmap", label: "Hashmap", icon: "🧠", color: "#22b8cf", parts: ["Cérebro", "Olhos"], description: "Associar intenções a expressões em inglês envolve compreensão, atenção e recuperação de conhecimentos. Se você ouvir os exemplos, a audição também participa.", practice: "Leia uma intenção em português e tente recuperar a expressão correspondente em inglês." },
+  { id: "basic", label: "Treino Básico", icon: "✏️", color: "#a78bfa", parts: ["Cérebro", "Olhos", "Mãos"], description: "Construir e revisar respostas escritas mobiliza atenção, memória, planejamento da linguagem e movimentos das mãos ao digitar ou escrever.", practice: "Responda sem copiar o modelo e só depois consulte a correção." },
+  { id: "advanced", label: "Treino Avançado", icon: "🎯", color: "#f59e0b", parts: ["Cérebro", "Olhos", "Mãos"], description: "Criar frases mais elaboradas envolve recuperação ativa de expressões, organização de ideias, atenção e revisão do texto produzido.", practice: "Formule uma frase original usando a intenção estudada." },
+  { id: "review", label: "Revisão", icon: "🔄", color: "#818cf8", parts: ["Cérebro", "Olhos", "Mãos"], description: "Revisar e tentar recuperar respostas anteriores ajuda a exercitar a memória. Quando você escreve ou digita, também usa as mãos.", practice: "Tente reconstruir uma resposta antes de consultar a versão anterior." },
+  { id: "wrg", label: "Would You Rather?", icon: "🤔", color: "#fb923c", parts: ["Cérebro", "Olhos", "Boca", "Ouvidos"], description: "Ao ler as alternativas e defender sua escolha em voz alta, você combina leitura, tomada de decisão, argumentação, planejamento da fala e escuta da própria voz.", practice: "Escolha A ou B e explique em voz alta por que prefere essa opção." },
+  { id: "smalltalk", label: "Small Talk", icon: "💬", color: "#34d399", parts: ["Cérebro", "Olhos", "Boca", "Ouvidos"], description: "Ler ou escutar uma pergunta e responder em voz alta envolve compreensão, memória, planejamento e produção da fala. A interação com outra pessoa acrescenta escuta e adaptação em tempo real.", practice: "Responda espontaneamente a uma pergunta, sem procurar uma frase perfeita." },
+  { id: "shadowing", label: "Shadowing", icon: "🎧", color: "#fb7185", parts: ["Cérebro", "Ouvidos", "Boca"], description: "Ouvir e acompanhar uma gravação em voz alta combina percepção auditiva, planejamento motor, articulação, ritmo e entonação.", practice: "Repita uma frase tentando acompanhar o ritmo e a entonação do áudio." },
+  { id: "interpretation", label: "Interpretação", icon: "📖", color: "#60a5fa", parts: ["Cérebro", "Olhos"], description: "Interpretar um texto envolve reconhecimento visual, compreensão, construção de significado e memória de trabalho. Outras partes participam se você ouvir ou escrever.", practice: "Interprete o texto antes de consultar a tradução." },
+  { id: "flashcards", label: "Flashcards", icon: "🗂️", color: "#c084fc", parts: ["Cérebro", "Olhos"], description: "Ao tentar lembrar o conteúdo antes de virar um cartão, você exercita a recuperação ativa e o reconhecimento de expressões.", practice: "Tente recordar a expressão antes de revelar a resposta." },
+  { id: "speakinggame", label: "Jogo da Fala", icon: "🎮", color: "#f472b6", parts: ["Cérebro", "Olhos", "Boca", "Ouvidos"], description: "Falar sob limite de tempo combina recuperação rápida de expressões, organização de ideias, produção oral e monitoramento da própria voz.", practice: "Fale durante 30 segundos sem parar a cada pequeno erro." },
+  { id: "hq", label: "HQ Stories", icon: "📚", color: "#38bdf8", parts: ["Cérebro", "Olhos"], description: "A leitura de histórias em quadrinhos combina imagens e linguagem escrita para apoiar a compreensão e a construção de contexto. Ouvidos e boca também participam quando você usa áudio e leitura em voz alta.", practice: "Leia uma cena e tente compreender o contexto antes de consultar a tradução." }
 ];
 
 const points: { part: BodyPart; x: number; y: number }[] = [
@@ -34,7 +39,7 @@ const links: { part: BodyPart; x: number; y: number }[] = [
 ];
 
 export function BrainLearningPage() {
-  const [selected, setSelected] = useState("listening");
+  const [selected, setSelected] = useState("wrg");
   const activity = activities.find(item => item.id === selected) ?? activities[0];
   const active = (part: BodyPart) => activity.parts.includes(part);
 
