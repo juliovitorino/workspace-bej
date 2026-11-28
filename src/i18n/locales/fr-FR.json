@@ -305,6 +305,7 @@
       "yesterday": "Hier",
       "today": "Aujourd’hui",
       "month": "Mois en cours",
+      "ytd": "YTD (depuis janvier)",
       "all": "Tout l’historique",
       "custom": "Intervalle personnalisé"
     },

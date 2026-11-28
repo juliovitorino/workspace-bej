@@ -2,9 +2,9 @@ import type { StudentLanguage } from "../../config/languages";
 import { localDay } from "./studyTrackingService";
 import { EXTRA_CATEGORIES, OTHER_STUDY_SUBCATEGORIES, type OtherStudySubcategory, type ExtraCategory, type StudyData, type StudyMode, type StudyModule } from "./studyStorage";
 
-export type StudyPeriod = "today" | "yesterday" | "week" | "7" | "30" | "month" | "90" | "all" | "custom";
+export type StudyPeriod = "today" | "yesterday" | "week" | "7" | "30" | "month" | "90" | "ytd" | "all" | "custom";
 /** Standard periods available for one-click cycling in Time by Module. */
-export const STUDY_PERIOD_ORDER: readonly StudyPeriod[] = ["today", "yesterday", "week", "7", "30", "month", "90", "all"];
+export const STUDY_PERIOD_ORDER: readonly StudyPeriod[] = ["today", "yesterday", "week", "7", "30", "month", "90", "ytd", "all"];
 /** The full filter still supports an explicitly chosen custom date range. */
 export const STUDY_FILTER_PERIOD_ORDER: readonly StudyPeriod[] = [...STUDY_PERIOD_ORDER, "custom"];
 export function nextStudyPeriod(period: StudyPeriod): StudyPeriod {
@@ -32,6 +32,12 @@ export function previousStudyPeriodRange(filters: Pick<StudyFilters, "period" | 
   const today = localDay(now);
   const yesterday = previousDay(today, -1);
   if (filters.period === "all") return null;
+  if (filters.period === "ytd") {
+    // Match the elapsed calendar dates in the previous year; clamp Feb 29 to Feb 28.
+    const previousYear = now.getFullYear() - 1;
+    const previousYearEnd = new Date(previousYear, now.getMonth(), Math.min(now.getDate(), new Date(previousYear, now.getMonth() + 1, 0).getDate()));
+    return { from: `${previousYear}-01-01`, to: localDay(previousYearEnd) };
+  }
   if (filters.period === "today") return { from: yesterday, to: yesterday };
   if (filters.period === "yesterday") {
     const day = previousDay(today, -2);
@@ -74,7 +80,7 @@ export function studyStats(data: StudyData, filters: StudyFilters, now = new Dat
     (!filters.extraCategory || filters.extraCategory === "all" || filters.origin === "internal" || (e.module === "extra-activities" && e.category === filters.extraCategory)) &&
     (!filters.extraSubcategory || filters.extraSubcategory === "all" || filters.origin === "internal" || (e.module === "extra-activities" && e.category === "other" && (e.subcategory ?? "misc") === filters.extraSubcategory)));
   const earliest = matching.reduce((day, e) => e.date < day ? e.date : day, today);
-  const from = filters.period === "custom" ? filters.from : filters.period === "today" ? today : filters.period === "yesterday" ? previousDay(today, -1) : filters.period === "month" ? month : filters.period === "week" ? currentWeekStart(today) : filters.period === "all" ? earliest : previousDay(today, 1 - Number(filters.period));
+  const from = filters.period === "custom" ? filters.from : filters.period === "today" ? today : filters.period === "yesterday" ? previousDay(today, -1) : filters.period === "month" ? month : filters.period === "ytd" ? today.slice(0, 4) + "-01-01" : filters.period === "week" ? currentWeekStart(today) : filters.period === "all" ? earliest : previousDay(today, 1 - Number(filters.period));
   const to = filters.period === "custom" ? filters.to : filters.period === "yesterday" ? from : today;
   const entries = matching.filter(e => e.date >= from && e.date <= to);
   const sum = (list: StudyEntry[]) => list.reduce((n, e) => n + e.seconds, 0);
@@ -92,7 +98,7 @@ export function studyStats(data: StudyData, filters: StudyFilters, now = new Dat
   // UTC arithmetic on date-only values counts calendar days without DST drift.
   const days = Math.max(1, (Date.parse(to) - Date.parse(from)) / 86400000 + 1);
   const timeline = group(e => {
-    if (filters.period === "all" || filters.period === "90" || (filters.period === "custom" && days > 90)) return e.date.slice(0, 7);
+    if (filters.period === "all" || filters.period === "ytd" || filters.period === "90" || (filters.period === "custom" && days > 90)) return e.date.slice(0, 7);
     if (filters.period === "30" || (filters.period === "custom" && days > 31)) {
       const weekday = new Date(e.date + "T12:00:00").getDay(); return previousDay(e.date, -(weekday + 6) % 7);
     }
