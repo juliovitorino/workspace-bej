@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import "./brainLearning.css";
 
 type BodyPart = "Cérebro" | "Ouvidos" | "Olhos" | "Boca" | "Mãos";
@@ -39,7 +39,7 @@ export function BrainLearningPage() {
   const active = (part: BodyPart) => activity.parts.includes(part);
 
   return (
-    <section className="bej-brain" aria-labelledby="bej-brain-title" style={{ "--brain-accent": activity.color } as React.CSSProperties}>
+    <section className="bej-brain" aria-labelledby="bej-brain-title" style={{ "--brain-accent": activity.color } as CSSProperties}>
       <header className="bej-brain-header">
         <span>BRAZILIAN ENGLISH JOURNEY</span>
         <h1 id="bej-brain-title">🧠 BEJ e seu Cérebro</h1>
@@ -104,7 +104,7 @@ export function BrainLearningPage() {
       <div className="bej-brain-activities" role="group" aria-label="Escolha uma atividade de aprendizagem">
         {activities.map(item => (
           <button key={item.id} type="button" className={selected === item.id ? "bej-brain-activity selected" : "bej-brain-activity"}
-            style={{ "--activity-color": item.color } as React.CSSProperties}
+            style={{ "--activity-color": item.color } as CSSProperties}
             aria-pressed={selected === item.id} onClick={() => setSelected(item.id)}>
             <span aria-hidden="true">{item.icon}</span><span>{item.label}</span>
           </button>
