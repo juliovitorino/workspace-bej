@@ -628,9 +628,11 @@ export function IntentionDetails({
     }
     // Guarantee the clipboard never receives more than the teleprompter limit.
     const script = sections.join("\n\n");
+    const ending = YOUTUBE_PILL_ENDINGS[endingIndex];
+    // Preserve the ending even when the intention or title itself is unusually long.
     const youtubePillText = script.length <= maxCharacters
       ? script
-      : script.slice(0, maxCharacters);
+      : `${script.slice(0, maxCharacters - ending.length - 2)}\n\n${ending}`;
 
     try {
       if (navigator.clipboard?.writeText) {
