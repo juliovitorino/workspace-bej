@@ -305,6 +305,7 @@
       "yesterday": "Yesterday",
       "today": "Today",
       "month": "Current month",
+      "ytd": "YTD (year to date)",
       "all": "All history",
       "custom": "Custom range"
     },
