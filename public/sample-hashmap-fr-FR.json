@@ -6,7 +6,7 @@
     "language": "fr-FR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1320,
+    "totalIntentions": 1326,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -56272,6 +56272,700 @@
           "id": "6088813f-2363-469f-8ace-fe73c4278b1e",
           "exampleItem": "J'aimerais que tu arrêtes de faire ça devant les autres.",
           "intent": "J'aimerais que tu arrêtes de faire ça devant les autres"
+        }
+      ]
+    },
+    {
+      "id": "essa-me-pegou-you-got-me-there-5cbe7036-9d8a-4fc4-9165-e0a17b425398",
+      "intention": "Là, tu m'as eu ! / Tu marques un point ! / Tu me laisses sans réponse !",
+      "pattern": "là tu m'as eu / tu marques un point / tu me laisses sans réponse",
+      "description": "Reconnaît qu'une personne a surpris, convaincu ou désarmé son interlocuteur, ou l'a laissé sans réponse. « Là, tu m'as eu ! » s'emploie face à un argument difficile à contester, une question inattendue ou un point auquel on n'avait pas pensé. Le ton peut exprimer l'humour, l'admiration ou un aveu sincère. Il ne s'agit pas nécessairement d'une réaction à une blague : on admet surtout que l'autre nous a pris au dépourvu ou a soulevé un point auquel on ne sait pas répondre.",
+      "category": "chunk",
+      "searchTerms": [
+        "là tu m'as eu",
+        "tu m'as coincé",
+        "tu marques un point",
+        "tu me laisses sans réponse",
+        "je reste sans voix",
+        "je ne sais pas quoi répondre",
+        "je ne sais pas répondre à ça",
+        "sur ce point tu as raison",
+        "question difficile",
+        "tu m'as surpris",
+        "je n'y avais pas pensé",
+        "tu me laisses sans arguments",
+        "je ne m'y attendais pas",
+        "je ne sais pas quoi dire"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])là,\\s+tu\\s+m['’]as\\s+eu(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])tu\\s+marques\\s+un\\s+point(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])tu\\s+me\\s+laisses\\s+sans\\s+réponse(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])tu\\s+m['’]as\\s+coincé(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])tu\\s+me\\s+laisses\\s+sans\\s+voix(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])tu\\s+m['’]as\\s+eu(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc-de-langage",
+        "prêt-à-l'emploi",
+        "anglais-parlé",
+        "anglais-américain",
+        "surprise",
+        "reconnaissance",
+        "argumentation",
+        "sans-réponse",
+        "humour",
+        "conversation-quotidienne"
+      ],
+      "related": [],
+      "structure": "LÀ, TU M'AS EU ! est une formule familière qui reconnaît un argument convaincant, une question difficile ou une remarque inattendue. On peut aussi dire « Tu marques un point ! » ou « Tu me laisses sans réponse ! ». Le sens est figuré : on admet que l'autre nous a désarmé sur un point précis. Exemples : « Ha ha ! Là, tu m'as eu ! » et « Bon, tu marques un point ! ». Elle convient aux discussions amicales et aux débats détendus. « Tu m'as eu ! » employé seul peut aussi vouloir dire que quelqu'un nous a trompé ou piégé ; « là » souligne ici le point précis auquel on ne sait pas répondre.",
+      "level": "B1",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "a2f4c6d9-e3bd-4508-879a-017beb2743c9",
+          "exampleItem": "Ha ha ! Là, tu m’as eu !",
+          "intent": "Là, tu m’as eu"
+        },
+        {
+          "id": "b305d7ea-f4ce-4619-98ab-127cfc3854da",
+          "exampleItem": "Sur ce coup-là, tu marques un point !",
+          "intent": "tu marques un point"
+        },
+        {
+          "id": "c416e8fb-05df-472a-a9bc-238d0d4965eb",
+          "exampleItem": "Tu me laisses sans réponse !",
+          "intent": "Tu me laisses sans réponse"
+        },
+        {
+          "id": "d527f90c-16e0-483b-8acd-349e1e5a76fc",
+          "exampleItem": "Eh ben, là, tu m’as eu !",
+          "intent": "là, tu m’as eu"
+        },
+        {
+          "id": "e6380a1d-27f1-494c-9bde-45af2f6b870d",
+          "exampleItem": "Bon, tu marques un point !",
+          "intent": "tu marques un point"
+        },
+        {
+          "id": "f7491b2e-3802-4a5d-8cef-56b0307c981e",
+          "exampleItem": "Tu m’as coincé ! Je ne sais pas quoi répondre.",
+          "intent": "Tu m’as coincé"
+        },
+        {
+          "id": "085a2c3f-4913-4b6e-9df0-67c1418da92f",
+          "exampleItem": "Ha ha ! Tu me laisses sans voix !",
+          "intent": "Tu me laisses sans voix"
+        },
+        {
+          "id": "196b3d40-5a24-4c7f-ae01-78d2529eba30",
+          "exampleItem": "Là, tu m’as eu ! Je n’y avais pas pensé.",
+          "intent": "Là, tu m’as eu"
+        },
+        {
+          "id": "2a7c4e51-6b35-4d80-8f12-89e363afcb41",
+          "exampleItem": "Bon, sur ce point, tu m’as eu !",
+          "intent": "tu m’as eu"
+        },
+        {
+          "id": "3b8d5f62-7c46-4e91-9023-9af474b0dc52",
+          "exampleItem": "Tu marques un point ! Je ne peux pas te contredire.",
+          "intent": "Tu marques un point"
+        }
+      ]
+    },
+    {
+      "id": "boa-mandou-bem-nice-one-4bad6f25-8c79-4eb3-8054-dbf906a31487",
+      "intention": "Bien joué ! / Bravo ! / Beau travail ! / Joli coup !",
+      "pattern": "bien joué / bravo / beau travail / joli coup",
+      "description": "Exprime l'approbation, la reconnaissance ou un compliment pour ce que quelqu'un vient de faire ou de dire. « Bien joué ! » peut saluer une belle action, une réponse intelligente, une réussite, une idée ou une plaisanterie réussie. C'est une réaction brève et familière. Selon le contexte et l'intonation, elle peut aussi être ironique après une erreur. « Beau travail ! » et « Bravo ! » permettent également de féliciter quelqu'un pour une tâche accomplie.",
+      "category": "chunk",
+      "searchTerms": [
+        "bien joué",
+        "bravo",
+        "très bien",
+        "beau travail",
+        "joli coup",
+        "bien vu",
+        "bonne idée",
+        "elle est bonne",
+        "vraiment bien joué",
+        "tu as assuré",
+        "excellent",
+        "bonne réponse"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])bravo(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])bien\\s+joué(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])joli\\s+coup(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])tu\\s+as\\s+vraiment\\s+assuré(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])bien\\s+vu(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])bonne\\s+réponse(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc-de-langage",
+        "prêt-à-l'emploi",
+        "anglais-parlé",
+        "anglais-américain",
+        "compliment",
+        "approbation",
+        "reconnaissance",
+        "réaction-positive",
+        "conversation-quotidienne"
+      ],
+      "related": [],
+      "structure": "BIEN JOUÉ ! est une réaction familière d'approbation ou de félicitation. Elle peut saluer un joli coup, une réponse intelligente, une blague ou une action réussie. Exemples : « Bien joué ! », « Bien joué, mon pote ! » et « Hé, joli coup ! ». Elle convient aux sports, aux jeux et aux conversations détendues entre amis. « Beau travail ! » insiste davantage sur la réalisation d'une tâche, tandis que « Bien joué ! » réagit volontiers à un moment précis. Selon le ton et le contexte, la formule peut aussi être ironique.",
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "085a2c3f-4913-4b6e-9df0-56c1418da92f",
+          "exampleItem": "Bravo ! Tu as réussi !",
+          "intent": "Bravo"
+        },
+        {
+          "id": "196b3d40-5a24-4c7f-ae01-67d2529eba30",
+          "exampleItem": "Bien joué, mon pote !",
+          "intent": "Bien joué"
+        },
+        {
+          "id": "2a7c4e51-6b35-4d80-8f12-78e363afcb41",
+          "exampleItem": "Joli coup ! Tu as gagné !",
+          "intent": "Joli coup"
+        },
+        {
+          "id": "3b8d5f62-7c46-4e91-9023-89f474b0dc52",
+          "exampleItem": "Tu as vraiment assuré sur ce coup-là !",
+          "intent": "Tu as vraiment assuré"
+        },
+        {
+          "id": "4c9e6073-8d57-4fa2-a134-9a0585c1ed63",
+          "exampleItem": "Bien vu ! Je n’y avais pas pensé.",
+          "intent": "Bien vu"
+        },
+        {
+          "id": "5daf7184-9e68-40b3-b245-ab1696d2fe74",
+          "exampleItem": "Bonne réponse ! J’aime bien !",
+          "intent": "Bonne réponse"
+        },
+        {
+          "id": "6eb08295-af79-41c4-8356-bc27a7e30f85",
+          "exampleItem": "Bien joué ! C’était un excellent coup.",
+          "intent": "Bien joué"
+        },
+        {
+          "id": "7fc193a6-b08a-42d5-9467-cd38b8f41096",
+          "exampleItem": "Bravo ! C’était malin !",
+          "intent": "Bravo"
+        },
+        {
+          "id": "80d2a4b7-c19b-43e6-a578-de49c90521a7",
+          "exampleItem": "Bien joué, l’ami !",
+          "intent": "Bien joué"
+        },
+        {
+          "id": "91e3b5c8-d2ac-44f7-b689-ef5ada1632b8",
+          "exampleItem": "Bravo ! C’était une excellente idée.",
+          "intent": "Bravo"
+        }
+      ]
+    },
+    {
+      "id": "isso-foi-engracado-that-was-funny-3a9c5e14-7b68-4da2-bf43-cae895f20376",
+      "intention": "C'était drôle ! / Elle était drôle ! / J'ai trouvé ça très drôle !",
+      "pattern": "c'était drôle / elle était drôle / j'ai trouvé ça drôle",
+      "description": "Indique que ce qui vient de se passer ou d'être dit a amusé ou fait rire. « C'était drôle ! » est une réaction directe et naturelle à une blague, une histoire, une situation inattendue ou un événement amusant. Alors que « Elle est bonne ! » peut complimenter une blague ou une remarque spirituelle, « C'était drôle ! » insiste sur le fait que quelque chose était amusant.",
+      "category": "chunk",
+      "searchTerms": [
+        "c'était drôle",
+        "elle était drôle",
+        "j'ai trouvé ça drôle",
+        "j'ai trouvé ça très drôle",
+        "c'était très drôle",
+        "c'était hilarant",
+        "elle était hilarante",
+        "ça m'a fait rire",
+        "c'était amusant",
+        "comme c'est drôle"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])c['’]était\\s+drôle(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])c['’]était\\s+très\\s+drôle(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])elle\\s+était\\s+drôle(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])j['’]ai\\s+trouvé\\s+ça\\s+très\\s+drôle(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])c['’]était\\s+vraiment\\s+drôle(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])elle\\s+était\\s+vraiment\\s+drôle(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc-de-langage",
+        "prêt-à-l'emploi",
+        "anglais-parlé",
+        "anglais-américain",
+        "humour",
+        "divertissement",
+        "réaction",
+        "rire",
+        "conversation-quotidienne"
+      ],
+      "related": [],
+      "structure": "C'ÉTAIT DRÔLE ! permet de commenter quelque chose d'amusant qui vient de se produire. « C' » renvoie à une blague, une remarque, une histoire ou une situation précédente. Exemples : « Ha ha ! C'était drôle ! », « Oh là là, c'était vraiment drôle ! » et « C'était tellement drôle ! ». On peut renforcer la réaction avec « vraiment », « très » ou « tellement ». « Drôle » peut également signifier étrange dans d'autres contextes, comme « Il se passe quelque chose de drôle ». Ici, il désigne uniquement ce qui fait rire.",
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "6eb08295-af79-41c4-8356-bc27a7e30f85",
+          "exampleItem": "Ha ha ! C’était drôle !",
+          "intent": "C’était drôle"
+        },
+        {
+          "id": "7fc193a6-b08a-42d5-9467-cd38b8f41096",
+          "exampleItem": "Oh là là, c’était très drôle !",
+          "intent": "c’était très drôle"
+        },
+        {
+          "id": "80d2a4b7-c19b-43e6-a578-de49c90521a7",
+          "exampleItem": "Elle était drôle, celle-là !",
+          "intent": "Elle était drôle"
+        },
+        {
+          "id": "91e3b5c8-d2ac-44f7-b689-ef5ada1632b8",
+          "exampleItem": "Ha ha ! Ça, c’était drôle !",
+          "intent": "c’était drôle"
+        },
+        {
+          "id": "a2f4c6d9-e3bd-4508-879a-f06beb2743c9",
+          "exampleItem": "C’était drôle ! Je ne m’y attendais pas.",
+          "intent": "C’était drôle"
+        },
+        {
+          "id": "b305d7ea-f4ce-4619-98ab-017cfc3854da",
+          "exampleItem": "Dis donc, j’ai trouvé ça très drôle !",
+          "intent": "j’ai trouvé ça très drôle"
+        },
+        {
+          "id": "c416e8fb-05df-472a-a9bc-128d0d4965eb",
+          "exampleItem": "Oh là là, ça, c’était vraiment drôle !",
+          "intent": "c’était vraiment drôle"
+        },
+        {
+          "id": "d527f90c-16e0-483b-8acd-239e1e5a76fc",
+          "exampleItem": "C’était drôle, surtout à la fin.",
+          "intent": "C’était drôle"
+        },
+        {
+          "id": "e6380a1d-27f1-494c-9bde-34af2f6b870d",
+          "exampleItem": "Ha ha ! Elle était vraiment drôle, celle-là !",
+          "intent": "Elle était vraiment drôle"
+        },
+        {
+          "id": "f7491b2e-3802-4a5d-8cef-45b0307c981e",
+          "exampleItem": "C’était très drôle ! J’en ris encore.",
+          "intent": "C’était très drôle"
+        }
+      ]
+    },
+    {
+      "id": "boa-essa-good-one-2f8b4d03-6a57-4c91-ae32-b9d784e1f265",
+      "intention": "Elle est bonne, celle-là ! / Bien trouvé ! / Bien joué !",
+      "pattern": "elle est bonne celle-là / bien trouvé / bien joué",
+      "description": "Réaction brève et spontanée à une blague, une plaisanterie, une réponse intelligente ou une remarque spirituelle. « Elle est bonne ! » est une forme courte et courante pour saluer une plaisanterie. Selon le contexte et le ton, elle exprime une approbation sincère, l'amusement ou le sarcasme. Elle est particulièrement utile dans les conversations familières et les échanges humoristiques.",
+      "category": "chunk",
+      "searchTerms": [
+        "elle est bonne celle-là",
+        "elle est bonne",
+        "bien trouvé",
+        "elle est excellente",
+        "j'aime bien celle-là",
+        "bonne blague",
+        "elle est drôle",
+        "c'était malin",
+        "c'était intelligent",
+        "elle est à mourir de rire"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])elle\\s+est\\s+bonne(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])bien\\s+trouvé(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])bien\\s+joué(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])j['’]aime\\s+bien\\s+celle-là(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc-de-langage",
+        "prêt-à-l'emploi",
+        "anglais-parlé",
+        "anglais-américain",
+        "réaction-rapide",
+        "humour",
+        "blagues",
+        "sarcasme",
+        "conversation-quotidienne"
+      ],
+      "related": [],
+      "structure": "ELLE EST BONNE ! est une réaction brève et familière, souvent prononcée juste après une blague ou une remarque intelligente. Le pronom « elle » renvoie implicitement à la blague ou à la remarque. Exemples : « Ha ha ! Elle est bonne ! », « Bien trouvé, mon pote ! » et « Ah, elle est bonne, celle-là ! ». La formule peut être sarcastique face à une mauvaise blague, une excuse peu crédible ou une remarque absurde. La version courte et « Elle est bonne, celle-là ! » ont le même usage dans de nombreux contextes humoristiques. Pour féliciter une réussite ou une action bien exécutée, « Bien joué ! » est généralement plus approprié.",
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "c416e8fb-05df-472a-a9bc-018d0d4965eb",
+          "exampleItem": "Ha ha ! Elle est bonne !",
+          "intent": "Elle est bonne"
+        },
+        {
+          "id": "d527f90c-16e0-483b-8acd-129e1e5a76fc",
+          "exampleItem": "Bien trouvé, mon pote !",
+          "intent": "Bien trouvé"
+        },
+        {
+          "id": "e6380a1d-27f1-494c-9bde-23af2f6b870d",
+          "exampleItem": "Ah, elle est bonne, celle-là !",
+          "intent": "elle est bonne"
+        },
+        {
+          "id": "f7491b2e-3802-4a5d-8cef-34b0307c981e",
+          "exampleItem": "Ha ha ! Bien joué sur ce coup-là !",
+          "intent": "Bien joué"
+        },
+        {
+          "id": "085a2c3f-4913-4b6e-9df0-45c1418da92f",
+          "exampleItem": "Bien trouvé ! Je n’y avais pas pensé.",
+          "intent": "Bien trouvé"
+        },
+        {
+          "id": "196b3d40-5a24-4c7f-ae01-56d2529eba30",
+          "exampleItem": "Elle est bonne, mon pote !",
+          "intent": "Elle est bonne"
+        },
+        {
+          "id": "2a7c4e51-6b35-4d80-8f12-67e363afcb41",
+          "exampleItem": "Ha ha ! J’aime bien celle-là !",
+          "intent": "J’aime bien celle-là"
+        },
+        {
+          "id": "3b8d5f62-7c46-4e91-9023-78f474b0dc52",
+          "exampleItem": "Elle est bonne ! Tu me fais toujours rire.",
+          "intent": "Elle est bonne"
+        },
+        {
+          "id": "4c9e6073-8d57-4fa2-a134-890585c1ed63",
+          "exampleItem": "Ah, elle est bonne ! J’ai failli y croire.",
+          "intent": "elle est bonne"
+        },
+        {
+          "id": "5daf7184-9e68-40b3-b245-9a1696d2fe74",
+          "exampleItem": "Elle est bonne ! Cette blague était excellente.",
+          "intent": "Elle est bonne"
+        }
+      ]
+    },
+    {
+      "id": "essa-foi-boa-that-was-a-good-one-1e7a3c92-5f46-4b80-9d21-a8c673f0e154",
+      "intention": "Elle est bonne, celle-là ! / Elle était excellente ! / Bien trouvé !",
+      "pattern": "elle est bonne celle-là / elle était excellente / bien trouvé",
+      "description": "Réaction spontanée à une blague, une remarque spirituelle, une plaisanterie ou une réponse amusante. Elle montre qu'on a trouvé quelque chose drôle, intelligent ou surprenant. « Elle est bonne, celle-là ! » est très naturel après une blague ou une remarque amusante. Selon l'intonation, la formule peut aussi exprimer le sarcasme.",
+      "category": "chunk",
+      "searchTerms": [
+        "elle est bonne celle-là",
+        "bien trouvé",
+        "elle était excellente",
+        "elle était vraiment bonne",
+        "elle était géniale",
+        "elle était drôle",
+        "cette blague était bonne",
+        "elle était à mourir de rire",
+        "tu en as sorti une bonne",
+        "j'aime bien celle-là"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])elle\\s+est\\s+bonne(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])elle\\s+était\\s+excellente(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])elle\\s+était\\s+vraiment\\s+bonne(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])bien\\s+trouvé(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])elle\\s+était\\s+vraiment\\s+excellente(?![\\p{L}\\p{N}_])"
+      ],
+      "tags": [
+        "bloc-de-langage",
+        "prêt-à-l'emploi",
+        "anglais-parlé",
+        "anglais-américain",
+        "réaction",
+        "humour",
+        "blagues",
+        "conversation-quotidienne"
+      ],
+      "related": [],
+      "structure": "ELLE EST BONNE, CELLE-LÀ ! permet de réagir positivement à une blague, une remarque ou une réponse spirituelle. « Elle » et « celle-là » renvoient à ce qui vient d'être dit. Exemples : « Ha ha ! Elle est bonne, celle-là ! », « Oh là là, elle était vraiment excellente ! » et « Elle est bonne, mon pote ! ». On peut ajouter « vraiment » pour renforcer la réaction. L'intonation compte : un ton enthousiaste exprime une approbation sincère, tandis qu'un ton sec peut signaler du sarcasme. La formule convient particulièrement à l'humour ; elle ne remplace pas toutes les formes de félicitation.",
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "2a9c4e71-6b35-4d80-8f12-c7e503a96b41",
+          "exampleItem": "Ha ha ! Elle est bonne, celle-là !",
+          "intent": "Elle est bonne"
+        },
+        {
+          "id": "3b8d5f62-7c46-4e91-9023-d8f614b07c52",
+          "exampleItem": "Dis donc, elle était excellente !",
+          "intent": "elle était excellente"
+        },
+        {
+          "id": "4c9e6073-8d57-4fa2-a134-e90525c18d63",
+          "exampleItem": "Oh là là, elle était vraiment bonne !",
+          "intent": "elle était vraiment bonne"
+        },
+        {
+          "id": "5daf7184-9e68-40b3-b245-fa1636d29e74",
+          "exampleItem": "Bien trouvé, mon pote !",
+          "intent": "Bien trouvé"
+        },
+        {
+          "id": "6eb08295-af79-41c4-8356-ab2747e30f85",
+          "exampleItem": "Ha ha ! Elle est bonne, hein !",
+          "intent": "Elle est bonne"
+        },
+        {
+          "id": "7fc193a6-b08a-42d5-9467-bc3858f41096",
+          "exampleItem": "Elle est bonne ! Tu m’as fait rire.",
+          "intent": "Elle est bonne"
+        },
+        {
+          "id": "80d2a4b7-c19b-43e6-a578-cd49690521a7",
+          "exampleItem": "Eh ben, elle était vraiment excellente !",
+          "intent": "elle était vraiment excellente"
+        },
+        {
+          "id": "91e3b5c8-d2ac-44f7-b689-de5a7a1632b8",
+          "exampleItem": "Elle est bonne ! Je vais m’en souvenir.",
+          "intent": "Elle est bonne"
+        },
+        {
+          "id": "a2f4c6d9-e3bd-4508-879a-ef6b8b2743c9",
+          "exampleItem": "Ha ha ! Bien trouvé ! Je ne m’y attendais pas.",
+          "intent": "Bien trouvé"
+        },
+        {
+          "id": "b305d7ea-f4ce-4619-98ab-f07c9c3854da",
+          "exampleItem": "Elle était vraiment bonne ! Raconte-m’en une autre !",
+          "intent": "Elle était vraiment bonne"
+        }
+      ]
+    },
+    {
+      "id": "me-disseram-me-contaram-que-7a3e91c2-5b84-4f60-9d17-e2c685a0b439",
+      "intention": "On m’a dit que… / On m’a raconté que… / On ne m’a pas dit que… / On t’a dit que… ?",
+      "pattern": "on m’a dit/raconté que + information / on ne m’a pas dit/raconté que + information / on t’a dit/raconté que + information ?",
+      "description": "Permet de rapporter une information reçue d’une autre personne sans forcément préciser qui l’a transmise. En français, on emploie notamment « On m’a dit que… », « Quelqu’un m’a dit que… » ou « On m’a informé que… ». On peut nier le fait d’avoir été informé : « On ne m’a pas dit que… » ou « Personne ne m’a dit que… ». On peut aussi demander si une autre personne a reçu une information : « On t’a dit que… ? » ou « Est-ce qu’on t’a dit que… ? ». Il faut distinguer la négation de l’acte d’informer de la négation du contenu rapporté : « On ne m’a pas dit qu’il venait » signifie que l’information n’a pas été communiquée, tandis que « On m’a dit qu’il ne viendrait pas » rapporte une information négative. Contrairement à l’anglais, qui omet souvent « that » après « told », le français conserve normalement « que », élidé en « qu’ » devant une voyelle.",
+      "category": "reported-speech",
+      "searchTerms": [
+        "on m’a dit",
+        "on m’a dit que",
+        "on m’a raconté",
+        "on m’a raconté que",
+        "on m’a expliqué que",
+        "quelqu’un m’a dit",
+        "quelqu’un m’a dit que",
+        "quelqu’un m’a raconté que",
+        "j’ai appris que",
+        "j’ai entendu dire que",
+        "on ne m’a pas dit",
+        "on ne m’a pas dit que",
+        "on ne m’a pas raconté que",
+        "on ne m’a pas expliqué que",
+        "personne ne m’a dit",
+        "personne ne m’a dit que",
+        "personne ne m’a raconté que",
+        "on m’a dit que non",
+        "on m’a raconté que non",
+        "on t’a dit",
+        "on t’a dit que",
+        "on t’a raconté que",
+        "est-ce qu’on t’a dit que",
+        "on ne t’a pas dit que",
+        "qui t’a dit",
+        "qui t’a dit que",
+        "qui t’a raconté que",
+        "pourquoi ne m’a-t-on pas dit",
+        "pourquoi on ne m’a pas raconté",
+        "qu’est-ce qu’on t’a dit",
+        "qu’est-ce qu’on t’a raconté"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])on\\s+(?:ne\\s+)?[mt]['’]a\\s+(?:pas\\s+)?(?:dit|raconté|expliqué)\\s+qu(?:e\\s|['’])",
+        "(?<![\\p{L}\\p{N}_])quelqu['’]un\\s+m['’]a\\s+(?:dit|raconté|expliqué)\\s+qu(?:e\\s|['’])",
+        "(?<![\\p{L}\\p{N}_])personne\\s+ne\\s+m['’]a\\s+(?:dit|raconté|expliqué)\\s+qu(?:e\\s|['’])",
+        "(?<![\\p{L}\\p{N}_])qui\\s+t['’]a\\s+(?:dit|raconté|expliqué)\\s+qu(?:e\\s|['’])",
+        "(?<![\\p{L}\\p{N}_])pourquoi\\s+ne\\s+m['’]a-t-on\\s+pas\\s+(?:dit|raconté|expliqué)\\s+qu(?:e\\s|['’])",
+        "(?<![\\p{L}\\p{N}_])qu['’]est-ce\\s+qu['’]on\\s+t['’]a\\s+(?:dit|raconté|expliqué)\\s+(?:sur|à\\s+propos\\s+de)\\s",
+        "(?<![\\p{L}\\p{N}_])j['’]ai\\s+(?:appris|entendu\\s+dire)\\s+qu(?:e\\s|['’])"
+      ],
+      "tags": [
+        "discours-indirect",
+        "information-reçue",
+        "information-de-tiers",
+        "rapporter-des-informations",
+        "conversation-quotidienne",
+        "anglais-parlé",
+        "anglais-américain",
+        "forme-affirmative",
+        "forme-négative",
+        "forme-interrogative",
+        "communication",
+        "nouvelles",
+        "rumeurs",
+        "questions",
+        "générateur-de-phrases"
+      ],
+      "related": [],
+      "structure": "L’intention centrale consiste à rapporter une information reçue d’autrui. FORME AFFIRMATIVE : « On m’a dit que + proposition », « Quelqu’un m’a dit que + proposition » ou « On m’a informé que + proposition ». Exemples : « On m’a dit que tu allais déménager au Canada » et « On m’a dit que la réunion avait été annulée ». NÉGATION DU FAIT D’AVOIR ÉTÉ INFORMÉ : « On ne m’a pas dit que… », « Je n’ai pas été informé que… » ou « Personne ne m’a dit que… ». Exemple : « On ne m’a pas dit que tu étais malade ». INFORMATION RAPPORTÉE NÉGATIVE : « On m’a dit que + sujet + négation ». Exemple : « On m’a dit qu’il ne viendrait pas ». Cette phrase se distingue de « On ne m’a pas dit qu’il viendrait » : la place de la négation change le sens. QUESTION : « On t’a dit que… ? », « Est-ce qu’on t’a dit que… ? » ou « Quelqu’un t’a dit que… ? ». Exemple : « On t’a dit la vérité ? ». QUESTION NÉGATIVE : « On ne t’a pas dit que… ? » ou, dans un registre plus soutenu, « Ne t’a-t-on pas dit que… ? ». Exemple : « On ne t’a pas dit que la réunion avait été annulée ? ». MOTS INTERROGATIFS : « Qui t’a dit que… ? », « Pourquoi ne m’a-t-on pas dit que… ? » et « Qu’est-ce qu’on t’a dit sur + nom ? ». À l’oral, « Pourquoi on ne m’a pas dit que… ? » est également courant. En français standard, « que » reste nécessaire devant la proposition rapportée et devient « qu’ » devant une voyelle : « On m’a dit qu’il venait ». En anglais américain, les équivalents sont notamment « They told me (that)… », « Someone told me (that)… » et « I was told (that)… » ; « that » peut souvent être omis. « Tell » exige normalement un destinataire : « They told me… », et non « They told that… ». « J’ai entendu dire que… » peut aussi rapporter une information indirecte sans impliquer qu’elle ait été communiquée personnellement au locuteur. Les temps du discours indirect dépendent du contexte : « On m’a dit que tu partais » et « On m’a dit que tu pars » peuvent tous deux être naturels selon le point de vue temporel.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "b328d584-d903-46e2-80de-4f55f9d0d73f",
+          "exampleItem": "On m’a dit que tu allais commencer à travailler chez Microsoft.",
+          "intent": "On m’a dit que"
+        },
+        {
+          "id": "c419e695-e014-47f3-91ef-50660ae1e840",
+          "exampleItem": "On m’a dit que tu apprenais l’anglais.",
+          "intent": "On m’a dit que"
+        },
+        {
+          "id": "d52af7a6-f125-4804-a2f0-61771bf2f951",
+          "exampleItem": "On m’a raconté que tu avais trouvé un nouvel emploi.",
+          "intent": "On m’a raconté que"
+        },
+        {
+          "id": "e63b08b7-0236-4915-b301-72882c030a62",
+          "exampleItem": "On m’a dit que la réunion avait été annulée.",
+          "intent": "On m’a dit que"
+        },
+        {
+          "id": "f74c19c8-1347-4a26-8412-83993d141b73",
+          "exampleItem": "Quelqu’un m’a dit que tu pensais déménager.",
+          "intent": "Quelqu’un m’a dit que"
+        },
+        {
+          "id": "085d2ad9-2458-4b37-9523-94aa4e252c84",
+          "exampleItem": "On m’a dit que ce restaurant était très bon.",
+          "intent": "On m’a dit que"
+        },
+        {
+          "id": "196e3bea-3569-4c48-a634-a5bb5f363d95",
+          "exampleItem": "On m’a raconté que vous étiez partis en voyage ce week-end.",
+          "intent": "On m’a raconté que"
+        },
+        {
+          "id": "2a7f4cfb-467a-4d59-b745-b6cc60474ea6",
+          "exampleItem": "On m’a dit que le projet allait commencer lundi.",
+          "intent": "On m’a dit que"
+        },
+        {
+          "id": "3b805d0c-578b-4e6a-8856-c7dd71585fb7",
+          "exampleItem": "On m’a raconté que tu avais réussi ton entretien.",
+          "intent": "On m’a raconté que"
+        },
+        {
+          "id": "4c916e1d-689c-4f7b-9967-d8ee826960c8",
+          "exampleItem": "On m’a dit que tu parlais très bien anglais.",
+          "intent": "On m’a dit que"
+        },
+        {
+          "id": "5da27f2e-79ad-408c-aa78-e9ff937a71d9",
+          "exampleItem": "On ne m’a pas dit que tu étais malade.",
+          "intent": "On ne m’a pas dit que"
+        },
+        {
+          "id": "6eb3803f-8abe-419d-8b89-fa00a48b82ea",
+          "exampleItem": "On ne m’a pas raconté que l’entreprise recrutait.",
+          "intent": "On ne m’a pas raconté que"
+        },
+        {
+          "id": "7fc49140-9bcf-42ae-9c9a-0b11b59c93fb",
+          "exampleItem": "Personne ne m’a dit que l’horaire de la réunion avait changé.",
+          "intent": "Personne ne m’a dit que"
+        },
+        {
+          "id": "80d5a251-acd0-43bf-8dab-1c22c6ada40c",
+          "exampleItem": "On ne m’a pas dit que je devais apporter une pièce d’identité.",
+          "intent": "On ne m’a pas dit que"
+        },
+        {
+          "id": "91e6b362-bde1-44c0-9ebc-2d33d7beb51d",
+          "exampleItem": "On ne m’a pas dit que le délai expirait aujourd’hui.",
+          "intent": "On ne m’a pas dit que"
+        },
+        {
+          "id": "a2f7c473-cef2-45d1-8fcd-3e44e8cfc62e",
+          "exampleItem": "On m’a dit qu’il ne viendrait pas à la fête.",
+          "intent": "On m’a dit qu’il"
+        },
+        {
+          "id": "b308d584-df03-46e2-90de-4f55f9d0d73f",
+          "exampleItem": "On m’a raconté qu’elle ne travaillait plus dans cette entreprise.",
+          "intent": "On m’a raconté qu’elle"
+        },
+        {
+          "id": "c419e695-e014-47f3-a1ef-50660ae1e840",
+          "exampleItem": "On m’a dit que le système ne fonctionnait pas.",
+          "intent": "On m’a dit que"
+        },
+        {
+          "id": "d52af7a6-f125-4804-b2f0-61771bf2f951",
+          "exampleItem": "On m’a raconté que tu n’avais pas aimé la proposition.",
+          "intent": "On m’a raconté que"
+        },
+        {
+          "id": "e63b08b7-0236-4915-8301-72882c030a62",
+          "exampleItem": "On ne m’a pas dit que tu avais déjà terminé le travail.",
+          "intent": "On ne m’a pas dit que"
+        },
+        {
+          "id": "f74c19c8-1347-4a26-9412-83993d141b73",
+          "exampleItem": "On t’a dit que la réunion avait été reportée ?",
+          "intent": "On t’a dit que"
+        },
+        {
+          "id": "085d2ad9-2458-4b37-a523-94aa4e252c84",
+          "exampleItem": "On t’a raconté qu’il allait quitter l’entreprise ?",
+          "intent": "On t’a raconté qu’il"
+        },
+        {
+          "id": "196e3bea-3569-4c48-b634-a5bb5f363d95",
+          "exampleItem": "Est-ce qu’on t’a dit que le délai avait changé ?",
+          "intent": "on t’a dit que"
+        },
+        {
+          "id": "2a7f4cfb-467a-4d59-8745-b6cc60474ea6",
+          "exampleItem": "On ne t’a pas dit que l’événement avait été annulé ?",
+          "intent": "On ne t’a pas dit que"
+        },
+        {
+          "id": "3b805d0c-578b-4e6a-9856-c7dd71585fb7",
+          "exampleItem": "On ne t’a pas raconté qu’elle avait obtenu une promotion ?",
+          "intent": "On ne t’a pas raconté qu’elle"
+        },
+        {
+          "id": "4c916e1d-689c-4f7b-a967-d8ee826960c8",
+          "exampleItem": "Qui t’a dit que je cherchais un autre emploi ?",
+          "intent": "Qui t’a dit que"
+        },
+        {
+          "id": "5da27f2e-79ad-408c-8a78-e9ff937a71d9",
+          "exampleItem": "Qui t’a raconté que j’étudiais le français ?",
+          "intent": "Qui t’a raconté que"
+        },
+        {
+          "id": "6eb3803f-8abe-419d-9b89-fa00a48b82ea",
+          "exampleItem": "Pourquoi ne m’a-t-on pas dit que tu avais besoin d’aide ?",
+          "intent": "Pourquoi ne m’a-t-on pas dit que"
+        },
+        {
+          "id": "7fc49140-9bcf-42ae-8c9a-0b11b59c93fb",
+          "exampleItem": "Pourquoi ne m’a-t-on pas raconté que le projet avait été approuvé ?",
+          "intent": "Pourquoi ne m’a-t-on pas raconté que"
+        },
+        {
+          "id": "80d5a251-acd0-43bf-9dab-1c22c6ada40c",
+          "exampleItem": "Qu’est-ce qu’on t’a dit sur cette nouvelle possibilité d’emploi ?",
+          "intent": "Qu’est-ce qu’on t’a dit sur"
         }
       ]
     }

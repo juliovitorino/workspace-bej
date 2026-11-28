@@ -6,7 +6,7 @@
     "language": "pt-BR",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1320,
+    "totalIntentions": 1325,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -979,30 +979,236 @@
       ]
     },
     {
-      "id": "me-disseram-me-contaram-que",
-      "intention": "Me disseram / me contaram que",
-      "pattern": "me disseram/contaram que + oração",
-      "description": "Informação recebida de terceiros.",
+      "id": "me-disseram-me-contaram-que-7a3e91c2-5b84-4f60-9d17-e2c685a0b439",
+      "intention": "Me disseram que... / Me contaram que... / Não me disseram que... / Te disseram que...?",
+      "pattern": "me disseram/contaram que + informação / não me disseram/contaram que + informação / te disseram/contaram que + informação?",
+      "description": "Expressa a comunicação de uma informação recebida de terceiros, sem necessariamente identificar quem a transmitiu. No inglês americano, pode ser construída com 'They told me that...', 'Someone told me that...' ou 'I was told that...'. A intenção também permite negar o recebimento da informação, como em 'They didn't tell me that...' e 'I wasn't told that...', ou perguntar se outra pessoa recebeu determinada informação, como em 'Did they tell you that...?' e 'Were you told that...?'. Outra possibilidade é relatar uma informação negativa: 'They told me that he wasn't coming' (Me disseram que ele não viria). A diferença fundamental é distinguir a negação do ato de informar da negação do conteúdo informado. A palavra 'that' pode ser omitida naturalmente em muitas dessas construções no inglês falado.",
       "category": "reported-speech",
       "searchTerms": [
-        "Me disseram",
+        "me disseram",
         "me disseram que",
-        "me contaram que"
+        "me contaram",
+        "me contaram que",
+        "me falaram",
+        "me falaram que",
+        "alguém me disse",
+        "alguém me disse que",
+        "alguém me contou",
+        "alguém me contou que",
+        "fiquei sabendo que",
+        "soube por alguém que",
+        "não me disseram",
+        "não me disseram que",
+        "não me contaram",
+        "não me contaram que",
+        "não me falaram",
+        "não me falaram que",
+        "ninguém me disse",
+        "ninguém me disse que",
+        "ninguém me contou",
+        "ninguém me contou que",
+        "me disseram que não",
+        "me contaram que não",
+        "te disseram",
+        "te disseram que",
+        "te contaram",
+        "te contaram que",
+        "disseram para você",
+        "disseram para você que",
+        "não te disseram",
+        "não te disseram que",
+        "quem te disse",
+        "quem te disse que",
+        "quem te contou",
+        "quem te contou que",
+        "por que não me disseram",
+        "por que não me contaram",
+        "o que te disseram",
+        "o que te contaram"
       ],
       "validationPatterns": [
-        "(?<![\\p{L}\\p{N}_])Me\\s+disseram(?![\\p{L}\\p{N}_])"
+        "(?<![\\p{L}\\p{N}_])me\\s+(?:disseram|contaram|falaram)\\s+que\\b",
+        "(?<![\\p{L}\\p{N}_])alguém\\s+me\\s+(?:disse|contou|falou)\\s+que\\b",
+        "(?<![\\p{L}\\p{N}_])(?:não|nao)\\s+me\\s+(?:disseram|contaram|falaram)\\s+que\\b",
+        "(?<![\\p{L}\\p{N}_])ninguém\\s+me\\s+(?:disse|contou|falou)\\s+que\\b",
+        "(?<![\\p{L}\\p{N}_])(?:não|nao)\\s+te\\s+(?:disseram|contaram|falaram)\\s+que\\b",
+        "(?<![\\p{L}\\p{N}_])te\\s+(?:disseram|contaram|falaram)\\s+que\\b",
+        "(?<![\\p{L}\\p{N}_])(?:disseram|contaram|falaram)\\s+(?:para|pra|a)\\s+você\\s+que\\b",
+        "(?<![\\p{L}\\p{N}_])quem\\s+(?:te|lhe)\\s+(?:disse|contou|falou)\\s+que\\b",
+        "(?<![\\p{L}\\p{N}_])por\\s+que\\s+(?:não|nao)\\s+me\\s+(?:disseram|contaram|falaram)\\s+que\\b",
+        "(?<![\\p{L}\\p{N}_])o\\s+que\\s+(?:te|lhe)\\s+(?:disseram|contaram|falaram)\\s+sobre\\b",
+        "(?<![\\p{L}\\p{N}_])(?:fiquei\\s+sabendo|soube\\s+por\\s+alguém)\\s+que\\b"
       ],
       "tags": [
-        "reported-speech"
+        "discurso-indireto",
+        "informação-recebida",
+        "informação-de-terceiros",
+        "relatar-informações",
+        "conversação-cotidiana",
+        "inglês-falado",
+        "inglês-americano",
+        "forma-afirmativa",
+        "forma-negativa",
+        "forma-interrogativa",
+        "comunicação",
+        "notícias",
+        "boatos",
+        "perguntas",
+        "gerador-de-frases"
       ],
       "related": [],
-      "structure": "me disseram que / me contaram que",
+      "structure": "A intenção central é relatar uma informação recebida de outra pessoa. FORMA AFIRMATIVA: 'They told me (that) + clause' (Me disseram que...), 'Someone told me (that) + clause' (Alguém me disse que...) e 'I was told (that) + clause' (Me disseram que... / Fui informado de que...). Exemplos: 'They told me you're moving to Canada' (Me disseram que você vai se mudar para o Canadá) e 'I was told the meeting was canceled' (Me disseram que a reunião foi cancelada). FORMA NEGATIVA DO ATO DE INFORMAR: 'They didn't tell me (that) + clause' (Não me disseram que...), 'I wasn't told (that) + clause' (Não me disseram que...) e 'Nobody told me (that) + clause' (Ninguém me disse que...). Exemplo: 'They didn't tell me you were sick' (Não me disseram que você estava doente). FORMA AFIRMATIVA COM INFORMAÇÃO NEGATIVA: 'They told me (that) + subject + negative verb' (Me disseram que alguém não...). Exemplo: 'They told me he wasn't coming' (Me disseram que ele não viria). Essa construção não deve ser confundida com 'They didn't tell me he was coming' (Não me disseram que ele viria), pois a posição da negação altera a intenção. FORMA INTERROGATIVA: 'Did they tell you (that) + clause?' (Te disseram que...?), 'Did someone tell you (that) + clause?' (Alguém te disse que...?) e 'Were you told (that) + clause?' (Te disseram que...? / Você foi informado de que...?). Exemplo: 'Did they tell you the truth?' (Te contaram a verdade?). FORMA INTERROGATIVA NEGATIVA: 'Didn't they tell you (that) + clause?' (Não te disseram que...?) e 'Weren't you told (that) + clause?' (Não te disseram que...?). Exemplo: 'Didn't they tell you the meeting was canceled?' (Não te disseram que a reunião foi cancelada?). PERGUNTAS COM PALAVRAS INTERROGATIVAS: 'Who told you (that) + clause?' (Quem te disse que...?), 'Why didn't they tell me (that) + clause?' (Por que não me disseram que...?) e 'What did they tell you about + noun?' (O que te disseram sobre...?). No inglês americano falado, 'that' frequentemente é omitido após 'told', especialmente em conversas informais. O verbo 'tell' normalmente exige um destinatário, como 'me', 'you', 'him', 'her' ou 'us'. Por isso, 'They told me' é natural, enquanto 'They told that...' não é a construção adequada para essa intenção. 'I heard that...' também pode ser usado quando a intenção é 'Ouvi dizer que...' ou 'Fiquei sabendo que...', mas não necessariamente indica que alguém falou diretamente com o falante. Em discurso indireto, o tempo verbal pode ser ajustado conforme o contexto: 'They told me you were leaving' ou 'They told me you're leaving' podem ser naturais, dependendo da perspectiva temporal e da situação.",
       "level": "B1",
       "examples": [
         {
           "id": "b328d584-d903-46e2-80de-4f55f9d0d73f",
           "exampleItem": "Me disseram que você ia começar a trabalhar na Microsoft.",
-          "intent": "Me disseram"
+          "intent": "Me disseram que"
+        },
+        {
+          "id": "c419e695-e014-47f3-91ef-50660ae1e840",
+          "exampleItem": "Me disseram que você está aprendendo inglês.",
+          "intent": "Me disseram que"
+        },
+        {
+          "id": "d52af7a6-f125-4804-a2f0-61771bf2f951",
+          "exampleItem": "Me contaram que você conseguiu um emprego novo.",
+          "intent": "Me contaram que"
+        },
+        {
+          "id": "e63b08b7-0236-4915-b301-72882c030a62",
+          "exampleItem": "Me disseram que a reunião foi cancelada.",
+          "intent": "Me disseram que"
+        },
+        {
+          "id": "f74c19c8-1347-4a26-8412-83993d141b73",
+          "exampleItem": "Alguém me disse que você está pensando em se mudar.",
+          "intent": "Alguém me disse que"
+        },
+        {
+          "id": "085d2ad9-2458-4b37-9523-94aa4e252c84",
+          "exampleItem": "Me falaram que esse restaurante é muito bom.",
+          "intent": "Me falaram que"
+        },
+        {
+          "id": "196e3bea-3569-4c48-a634-a5bb5f363d95",
+          "exampleItem": "Me contaram que vocês viajaram no fim de semana.",
+          "intent": "Me contaram que"
+        },
+        {
+          "id": "2a7f4cfb-467a-4d59-b745-b6cc60474ea6",
+          "exampleItem": "Me disseram que o projeto vai começar na segunda-feira.",
+          "intent": "Me disseram que"
+        },
+        {
+          "id": "3b805d0c-578b-4e6a-8856-c7dd71585fb7",
+          "exampleItem": "Me contaram que você passou na entrevista.",
+          "intent": "Me contaram que"
+        },
+        {
+          "id": "4c916e1d-689c-4f7b-9967-d8ee826960c8",
+          "exampleItem": "Me disseram que você fala inglês muito bem.",
+          "intent": "Me disseram que"
+        },
+        {
+          "id": "5da27f2e-79ad-408c-aa78-e9ff937a71d9",
+          "exampleItem": "Não me disseram que você estava doente.",
+          "intent": "Não me disseram que"
+        },
+        {
+          "id": "6eb3803f-8abe-419d-8b89-fa00a48b82ea",
+          "exampleItem": "Não me contaram que a empresa estava contratando.",
+          "intent": "Não me contaram que"
+        },
+        {
+          "id": "7fc49140-9bcf-42ae-9c9a-0b11b59c93fb",
+          "exampleItem": "Ninguém me disse que a reunião tinha mudado de horário.",
+          "intent": "Ninguém me disse que"
+        },
+        {
+          "id": "80d5a251-acd0-43bf-8dab-1c22c6ada40c",
+          "exampleItem": "Não me falaram que eu precisava levar um documento.",
+          "intent": "Não me falaram que"
+        },
+        {
+          "id": "91e6b362-bde1-44c0-9ebc-2d33d7beb51d",
+          "exampleItem": "Não me disseram que o prazo terminava hoje.",
+          "intent": "Não me disseram que"
+        },
+        {
+          "id": "a2f7c473-cef2-45d1-8fcd-3e44e8cfc62e",
+          "exampleItem": "Me disseram que ele não viria à festa.",
+          "intent": "Me disseram que"
+        },
+        {
+          "id": "b308d584-df03-46e2-90de-4f55f9d0d73f",
+          "exampleItem": "Me contaram que ela não trabalha mais naquela empresa.",
+          "intent": "Me contaram que"
+        },
+        {
+          "id": "c419e695-e014-47f3-a1ef-50660ae1e840",
+          "exampleItem": "Me disseram que o sistema não estava funcionando.",
+          "intent": "Me disseram que"
+        },
+        {
+          "id": "d52af7a6-f125-4804-b2f0-61771bf2f951",
+          "exampleItem": "Me contaram que você não gostou da proposta.",
+          "intent": "Me contaram que"
+        },
+        {
+          "id": "e63b08b7-0236-4915-8301-72882c030a62",
+          "exampleItem": "Não me disseram que você já tinha terminado o trabalho.",
+          "intent": "Não me disseram que"
+        },
+        {
+          "id": "f74c19c8-1347-4a26-9412-83993d141b73",
+          "exampleItem": "Te disseram que a reunião foi adiada?",
+          "intent": "Te disseram que"
+        },
+        {
+          "id": "085d2ad9-2458-4b37-a523-94aa4e252c84",
+          "exampleItem": "Te contaram que ele vai sair da empresa?",
+          "intent": "Te contaram que"
+        },
+        {
+          "id": "196e3bea-3569-4c48-b634-a5bb5f363d95",
+          "exampleItem": "Disseram para você que o prazo mudou?",
+          "intent": "Disseram para você que"
+        },
+        {
+          "id": "2a7f4cfb-467a-4d59-8745-b6cc60474ea6",
+          "exampleItem": "Não te disseram que o evento foi cancelado?",
+          "intent": "Não te disseram que"
+        },
+        {
+          "id": "3b805d0c-578b-4e6a-9856-c7dd71585fb7",
+          "exampleItem": "Não te contaram que ela conseguiu a promoção?",
+          "intent": "Não te contaram que"
+        },
+        {
+          "id": "4c916e1d-689c-4f7b-a967-d8ee826960c8",
+          "exampleItem": "Quem te disse que eu estava procurando outro emprego?",
+          "intent": "Quem te disse que"
+        },
+        {
+          "id": "5da27f2e-79ad-408c-8a78-e9ff937a71d9",
+          "exampleItem": "Quem te contou que eu estava estudando francês?",
+          "intent": "Quem te contou que"
+        },
+        {
+          "id": "6eb3803f-8abe-419d-9b89-fa00a48b82ea",
+          "exampleItem": "Por que não me disseram que você precisava de ajuda?",
+          "intent": "Por que não me disseram que"
+        },
+        {
+          "id": "7fc49140-9bcf-42ae-8c9a-0b11b59c93fb",
+          "exampleItem": "Por que não me contaram que o projeto tinha sido aprovado?",
+          "intent": "Por que não me contaram que"
+        },
+        {
+          "id": "80d5a251-acd0-43bf-9dab-1c22c6ada40c",
+          "exampleItem": "O que te disseram sobre a nova oportunidade de trabalho?",
+          "intent": "O que te disseram sobre"
         }
       ]
     },
@@ -55561,6 +55767,474 @@
           "id": "6088813f-2363-469f-8ace-fe73c4278b1e",
           "exampleItem": "Queria que você parasse de fazer isso na frente dos outros.",
           "intent": "Queria que você parasse de fazer isso na frente dos outros"
+        }
+      ]
+    },
+    {
+      "id": "essa-me-pegou-you-got-me-there-5cbe7036-9d8a-4fc4-9165-e0a17b425398",
+      "intention": "Essa me pegou! / Nessa você me ganhou! / Você me deixou sem resposta!",
+      "pattern": "essa me pegou / nessa você me ganhou / você me deixou sem resposta",
+      "description": "Expressa o reconhecimento de que alguém conseguiu surpreender, convencer, desarmar ou deixar o falante sem uma boa resposta. No inglês americano, 'You got me there!' é frequentemente usado quando outra pessoa apresenta um argumento difícil de contestar, faz uma pergunta inesperada ou aponta algo que o falante não havia considerado. A expressão pode ser usada com humor, admiração ou reconhecimento sincero. Não significa necessariamente que a pessoa contou uma piada engraçada; a intenção principal é admitir que o outro conseguiu pegar você de surpresa ou deixou você sem uma resposta convincente.",
+      "category": "chunk",
+      "searchTerms": [
+        "essa me pegou",
+        "você me pegou",
+        "nessa você me ganhou",
+        "você me deixou sem resposta",
+        "fiquei sem resposta",
+        "não tenho resposta para essa",
+        "não sei responder essa",
+        "você tem razão nessa",
+        "essa foi difícil",
+        "você me surpreendeu",
+        "não tinha pensado nisso",
+        "você me deixou sem argumentos",
+        "essa eu não esperava",
+        "não sei o que dizer"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:essa|nessa)\\s+(?:me\\s+pegou|você\\s+me\\s+ganhou)\\b",
+        "(?<![\\p{L}\\p{N}_])você\\s+me\\s+(?:pegou|surpreendeu|deixou\\s+sem\\s+(?:resposta|argumentos))\\b",
+        "(?<![\\p{L}\\p{N}_])(?:fiquei|estou)\\s+sem\\s+resposta\\b",
+        "(?<![\\p{L}\\p{N}_])não\\s+(?:tenho|sei\\s+dar)\\s+(?:uma\\s+)?resposta\\s+(?:para|pra)\\s+essa\\b",
+        "(?<![\\p{L}\\p{N}_])(?:essa\\s+eu\\s+não\\s+esperava|não\\s+tinha\\s+pensado\\s+nisso)\\b"
+      ],
+      "tags": [
+        "bloco-de-linguagem",
+        "pronto-para-uso",
+        "inglês-falado",
+        "inglês-americano",
+        "surpresa",
+        "reconhecimento",
+        "argumentação",
+        "sem-resposta",
+        "humor",
+        "conversação-cotidiana"
+      ],
+      "related": [],
+      "structure": "YOU GOT ME THERE! É uma expressão idiomática informal usada para reconhecer que outra pessoa apresentou um argumento convincente, fez uma pergunta difícil ou conseguiu surpreender o falante. O verbo 'got' não deve ser interpretado literalmente como 'conseguiu' ou 'pegou' em todos os contextos. O bloco inteiro comunica a ideia de 'Nessa você me pegou!' ou 'Você me deixou sem resposta!'. Exemplos: 'You got me there!' (Nessa você me pegou!), 'Haha, you got me there!' (Haha, essa me pegou!) e 'Well, you got me there!' (Bom, nessa você me ganhou!). A expressão é especialmente comum em discussões amigáveis, conversas informais, debates descontraídos e situações nas quais alguém admite não ter uma boa resposta. Pode também reconhecer que o outro tem um bom argumento. Não deve ser confundida com 'You got me!', que pode significar 'Você me pegou!', 'Você me enganou!' ou 'Não sei!', dependendo do contexto. 'You got me there!' enfatiza o ponto específico em que a outra pessoa conseguiu surpreender ou desarmar o falante.",
+      "level": "B1",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "a2f4c6d9-e3bd-4508-879a-017beb2743c9",
+          "exampleItem": "Haha! Essa me pegou!",
+          "intent": "Essa me pegou"
+        },
+        {
+          "id": "b305d7ea-f4ce-4619-98ab-127cfc3854da",
+          "exampleItem": "Nessa você me ganhou!",
+          "intent": "Nessa você me ganhou"
+        },
+        {
+          "id": "c416e8fb-05df-472a-a9bc-238d0d4965eb",
+          "exampleItem": "Você me deixou sem resposta!",
+          "intent": "Você me deixou sem resposta"
+        },
+        {
+          "id": "d527f90c-16e0-483b-8acd-349e1e5a76fc",
+          "exampleItem": "Rapaz, essa me pegou!",
+          "intent": "essa me pegou"
+        },
+        {
+          "id": "e6380a1d-27f1-494c-9bde-45af2f6b870d",
+          "exampleItem": "Bom, nessa você me ganhou!",
+          "intent": "nessa você me ganhou"
+        },
+        {
+          "id": "f7491b2e-3802-4a5d-8cef-56b0307c981e",
+          "exampleItem": "Você me pegou! Não sei responder.",
+          "intent": "Você me pegou"
+        },
+        {
+          "id": "085a2c3f-4913-4b6e-9df0-67c1418da92f",
+          "exampleItem": "Haha! Você me deixou sem resposta!",
+          "intent": "Você me deixou sem resposta"
+        },
+        {
+          "id": "196b3d40-5a24-4c7f-ae01-78d2529eba30",
+          "exampleItem": "Essa me pegou! Não tinha pensado nisso.",
+          "intent": "Essa me pegou"
+        },
+        {
+          "id": "2a7c4e51-6b35-4d80-8f12-89e363afcb41",
+          "exampleItem": "Bom, você me pegou nessa!",
+          "intent": "você me pegou nessa"
+        },
+        {
+          "id": "3b8d5f62-7c46-4e91-9023-9af474b0dc52",
+          "exampleItem": "Nessa você me ganhou! Não tenho como contestar.",
+          "intent": "Nessa você me ganhou"
+        }
+      ]
+    },
+    {
+      "id": "boa-mandou-bem-nice-one-4bad6f25-8c79-4eb3-8054-dbf906a31487",
+      "intention": "Boa! / Mandou bem! / Belo trabalho! / Essa foi boa!",
+      "pattern": "boa / mandou bem / belo trabalho / boa jogada",
+      "description": "Expressa aprovação, reconhecimento ou elogio por algo que alguém acabou de fazer ou dizer. No inglês americano, 'Nice one!' pode ser usado para elogiar uma boa jogada, uma resposta inteligente, uma conquista, uma ideia ou uma brincadeira bem executada. É uma reação curta e informal. Dependendo do contexto e da entonação, também pode ser usada de forma irônica quando alguém comete um erro. Para elogiar conquistas, 'Nice job!' e 'Well done!' também são alternativas muito comuns.",
+      "category": "chunk",
+      "searchTerms": [
+        "boa",
+        "mandou bem",
+        "muito bem",
+        "belo trabalho",
+        "boa jogada",
+        "boa sacada",
+        "boa ideia",
+        "essa foi boa",
+        "mandou muito bem",
+        "arrasou",
+        "excelente",
+        "boa resposta"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])boa[!.,?\\s]*$",
+        "(?<![\\p{L}\\p{N}_])mandou\\s+(?:muito\\s+)?bem\\b",
+        "(?<![\\p{L}\\p{N}_])(?:belo|ótimo)\\s+trabalho\\b",
+        "(?<![\\p{L}\\p{N}_])boa\\s+(?:jogada|sacada|ideia|resposta)\\b",
+        "(?<![\\p{L}\\p{N}_])essa\\s+foi\\s+boa\\b",
+        "(?<![\\p{L}\\p{N}_])arrasou\\b"
+      ],
+      "tags": [
+        "bloco-de-linguagem",
+        "pronto-para-uso",
+        "inglês-falado",
+        "inglês-americano",
+        "elogio",
+        "aprovação",
+        "reconhecimento",
+        "reação-positiva",
+        "conversação-cotidiana"
+      ],
+      "related": [],
+      "structure": "NICE ONE! É uma reação informal de aprovação ou elogio. A expressão pode reconhecer uma boa jogada, uma resposta inteligente, uma piada ou uma ação bem executada. Exemplos: 'Nice one!' (Boa!), 'Nice one, man!' (Mandou bem, cara!) e 'Hey, nice one!' (Ei, boa essa!). É especialmente útil em situações descontraídas, esportes, jogos, conversas e interações entre amigos. No inglês americano, 'Nice job!' e 'Good job!' são frequentemente mais naturais para elogiar a execução de uma tarefa ou trabalho, enquanto 'Nice one!' funciona bem como reação rápida a um momento específico. A expressão também pode transmitir ironia dependendo da entonação e do contexto.",
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "085a2c3f-4913-4b6e-9df0-56c1418da92f",
+          "exampleItem": "Boa! Você conseguiu!",
+          "intent": "Boa"
+        },
+        {
+          "id": "196b3d40-5a24-4c7f-ae01-67d2529eba30",
+          "exampleItem": "Mandou bem, cara!",
+          "intent": "Mandou bem"
+        },
+        {
+          "id": "2a7c4e51-6b35-4d80-8f12-78e363afcb41",
+          "exampleItem": "Boa jogada! Você venceu!",
+          "intent": "Boa jogada"
+        },
+        {
+          "id": "3b8d5f62-7c46-4e91-9023-89f474b0dc52",
+          "exampleItem": "Mandou muito bem nessa!",
+          "intent": "Mandou muito bem"
+        },
+        {
+          "id": "4c9e6073-8d57-4fa2-a134-9a0585c1ed63",
+          "exampleItem": "Boa sacada! Não tinha pensado nisso.",
+          "intent": "Boa sacada"
+        },
+        {
+          "id": "5daf7184-9e68-40b3-b245-ab1696d2fe74",
+          "exampleItem": "Boa resposta! Gostei!",
+          "intent": "Boa resposta"
+        },
+        {
+          "id": "6eb08295-af79-41c4-8356-bc27a7e30f85",
+          "exampleItem": "Mandou bem! Foi uma ótima jogada.",
+          "intent": "Mandou bem"
+        },
+        {
+          "id": "7fc193a6-b08a-42d5-9467-cd38b8f41096",
+          "exampleItem": "Boa! Essa foi inteligente!",
+          "intent": "Boa"
+        },
+        {
+          "id": "80d2a4b7-c19b-43e6-a578-de49c90521a7",
+          "exampleItem": "Mandou bem, parceiro!",
+          "intent": "Mandou bem"
+        },
+        {
+          "id": "91e3b5c8-d2ac-44f7-b689-ef5ada1632b8",
+          "exampleItem": "Boa! Essa foi uma ótima ideia.",
+          "intent": "Boa"
+        }
+      ]
+    },
+    {
+      "id": "isso-foi-engracado-that-was-funny-3a9c5e14-7b68-4da2-bf43-cae895f20376",
+      "intention": "Isso foi engraçado! / Essa foi engraçada! / Achei muito engraçado!",
+      "pattern": "isso foi engraçado / essa foi engraçada / achei engraçado",
+      "description": "Expressa que algo que acabou de acontecer ou ser dito provocou humor, diversão ou riso. 'That was funny!' é uma reação direta e natural no inglês americano, usada para comentar piadas, histórias, situações inesperadas ou acontecimentos divertidos. Diferentemente de 'Good one!', que frequentemente elogia uma piada ou comentário espirituoso, 'That was funny!' destaca o fato de algo ter sido engraçado.",
+      "category": "chunk",
+      "searchTerms": [
+        "isso foi engraçado",
+        "essa foi engraçada",
+        "achei engraçado",
+        "achei muito engraçado",
+        "foi muito engraçado",
+        "isso foi hilário",
+        "essa foi hilária",
+        "me fez rir",
+        "foi divertido",
+        "que engraçado"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:isso|aquilo)\\s+foi\\s+(?:muito\\s+)?(?:engraçado|hilário|divertido)\\b",
+        "(?<![\\p{L}\\p{N}_])essa\\s+foi\\s+(?:muito\\s+)?(?:engraçada|hilária|divertida)\\b",
+        "(?<![\\p{L}\\p{N}_])achei\\s+(?:(?:isso|aquilo)\\s+)?(?:muito\\s+)?engraçado\\b",
+        "(?<![\\p{L}\\p{N}_])foi\\s+muito\\s+engraçado\\b"
+      ],
+      "tags": [
+        "bloco-de-linguagem",
+        "pronto-para-uso",
+        "inglês-falado",
+        "inglês-americano",
+        "humor",
+        "diversão",
+        "reação",
+        "risada",
+        "conversação-cotidiana"
+      ],
+      "related": [],
+      "structure": "THAT WAS FUNNY! É uma expressão pronta para comentar algo engraçado que acabou de acontecer. 'That' se refere a uma piada, comentário, história ou situação anterior. 'Funny' significa engraçado ou divertido nesse contexto. Exemplos: 'Haha! That was funny!' (Haha! Isso foi engraçado!), 'Wow, that was really funny!' (Nossa, isso foi muito engraçado!) e 'That was so funny!' (Aquilo foi tão engraçado!). A expressão pode ser intensificada com 'really' ou 'so'. Atenção: 'funny' também pode significar estranho ou suspeito em outros contextos, como 'Something funny is going on' (Tem alguma coisa estranha acontecendo). Nesta intenção, o sentido é exclusivamente relacionado ao humor.",
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "6eb08295-af79-41c4-8356-bc27a7e30f85",
+          "exampleItem": "Haha! Isso foi engraçado!",
+          "intent": "Isso foi engraçado"
+        },
+        {
+          "id": "7fc193a6-b08a-42d5-9467-cd38b8f41096",
+          "exampleItem": "Nossa, isso foi muito engraçado!",
+          "intent": "isso foi muito engraçado"
+        },
+        {
+          "id": "80d2a4b7-c19b-43e6-a578-de49c90521a7",
+          "exampleItem": "Essa foi engraçada!",
+          "intent": "Essa foi engraçada"
+        },
+        {
+          "id": "91e3b5c8-d2ac-44f7-b689-ef5ada1632b8",
+          "exampleItem": "Haha! Aquilo foi engraçado!",
+          "intent": "Aquilo foi engraçado"
+        },
+        {
+          "id": "a2f4c6d9-e3bd-4508-879a-f06beb2743c9",
+          "exampleItem": "Isso foi engraçado! Eu não esperava.",
+          "intent": "Isso foi engraçado"
+        },
+        {
+          "id": "b305d7ea-f4ce-4619-98ab-017cfc3854da",
+          "exampleItem": "Cara, achei muito engraçado!",
+          "intent": "achei muito engraçado"
+        },
+        {
+          "id": "c416e8fb-05df-472a-a9bc-128d0d4965eb",
+          "exampleItem": "Nossa, aquilo foi muito engraçado!",
+          "intent": "aquilo foi muito engraçado"
+        },
+        {
+          "id": "d527f90c-16e0-483b-8acd-239e1e5a76fc",
+          "exampleItem": "Isso foi engraçado, principalmente no final.",
+          "intent": "Isso foi engraçado"
+        },
+        {
+          "id": "e6380a1d-27f1-494c-9bde-34af2f6b870d",
+          "exampleItem": "Haha! Essa foi muito engraçada!",
+          "intent": "Essa foi muito engraçada"
+        },
+        {
+          "id": "f7491b2e-3802-4a5d-8cef-45b0307c981e",
+          "exampleItem": "Isso foi muito engraçado! Ainda estou rindo.",
+          "intent": "Isso foi muito engraçado"
+        }
+      ]
+    },
+    {
+      "id": "boa-essa-good-one-2f8b4d03-6a57-4c91-ae32-b9d784e1f265",
+      "intention": "Boa essa! / Essa foi boa! / Mandou bem nessa!",
+      "pattern": "boa essa / essa foi boa / mandou bem nessa",
+      "description": "Reação curta e espontânea a uma piada, brincadeira, resposta inteligente ou comentário espirituoso. 'Good one!' é uma forma reduzida e muito comum de 'That was a good one!'. No inglês americano, pode expressar aprovação genuína, diversão ou sarcasmo, dependendo do contexto e da entonação. É especialmente útil em conversas informais e situações de humor.",
+      "category": "chunk",
+      "searchTerms": [
+        "boa essa",
+        "essa foi boa",
+        "mandou bem nessa",
+        "essa foi ótima",
+        "gostei dessa",
+        "boa piada",
+        "essa foi engraçada",
+        "essa foi esperta",
+        "essa foi inteligente",
+        "essa foi de matar"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])boa\\s+essa\\b",
+        "(?<![\\p{L}\\p{N}_])essa\\s+foi\\s+(?:boa|ótima|engraçada|esperta|inteligente)\\b",
+        "(?<![\\p{L}\\p{N}_])mandou\\s+bem\\s+nessa\\b",
+        "(?<![\\p{L}\\p{N}_])gostei\\s+dessa\\b"
+      ],
+      "tags": [
+        "bloco-de-linguagem",
+        "pronto-para-uso",
+        "inglês-falado",
+        "inglês-americano",
+        "reação-rápida",
+        "humor",
+        "piadas",
+        "sarcasmo",
+        "conversação-cotidiana"
+      ],
+      "related": [],
+      "structure": "GOOD ONE! É uma reação curta e informal, equivalente a 'That was a good one!'. É frequentemente utilizada imediatamente depois de uma piada, brincadeira ou comentário inteligente. Exemplos: 'Haha, good one!' (Haha, boa essa!), 'Good one, buddy!' (Boa essa, parceiro!) e 'Oh, good one!' (Ah, essa foi boa!). Pode transmitir sarcasmo quando alguém faz uma piada ruim, uma desculpa pouco convincente ou um comentário absurdo. A principal diferença em relação a 'That was a good one!' é a concisão. Ambas pertencem à mesma família comunicativa e podem ser usadas de maneira intercambiável em muitos contextos de humor. Para elogiar uma conquista ou uma ação bem executada, 'Nice one!' costuma ser mais apropriado.",
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "c416e8fb-05df-472a-a9bc-018d0d4965eb",
+          "exampleItem": "Haha! Boa essa!",
+          "intent": "Boa essa"
+        },
+        {
+          "id": "d527f90c-16e0-483b-8acd-129e1e5a76fc",
+          "exampleItem": "Boa essa, parceiro!",
+          "intent": "Boa essa"
+        },
+        {
+          "id": "e6380a1d-27f1-494c-9bde-23af2f6b870d",
+          "exampleItem": "Ah, essa foi boa!",
+          "intent": "essa foi boa"
+        },
+        {
+          "id": "f7491b2e-3802-4a5d-8cef-34b0307c981e",
+          "exampleItem": "Haha! Mandou bem nessa!",
+          "intent": "Mandou bem nessa"
+        },
+        {
+          "id": "085a2c3f-4913-4b6e-9df0-45c1418da92f",
+          "exampleItem": "Boa essa! Não tinha pensado nisso.",
+          "intent": "Boa essa"
+        },
+        {
+          "id": "196b3d40-5a24-4c7f-ae01-56d2529eba30",
+          "exampleItem": "Essa foi boa, cara!",
+          "intent": "Essa foi boa"
+        },
+        {
+          "id": "2a7c4e51-6b35-4d80-8f12-67e363afcb41",
+          "exampleItem": "Haha! Gostei dessa!",
+          "intent": "Gostei dessa"
+        },
+        {
+          "id": "3b8d5f62-7c46-4e91-9023-78f474b0dc52",
+          "exampleItem": "Boa essa! Você sempre me faz rir.",
+          "intent": "Boa essa"
+        },
+        {
+          "id": "4c9e6073-8d57-4fa2-a134-890585c1ed63",
+          "exampleItem": "Ah, boa essa! Quase acreditei.",
+          "intent": "boa essa"
+        },
+        {
+          "id": "5daf7184-9e68-40b3-b245-9a1696d2fe74",
+          "exampleItem": "Boa essa! Essa piada foi ótima.",
+          "intent": "Boa essa"
+        }
+      ]
+    },
+    {
+      "id": "essa-foi-boa-that-was-a-good-one-1e7a3c92-5f46-4b80-9d21-a8c673f0e154",
+      "intention": "Essa foi boa! / Boa essa! / Essa foi ótima!",
+      "pattern": "essa foi boa / boa essa / essa foi ótima",
+      "description": "Reação espontânea a uma piada, comentário espirituoso, brincadeira ou resposta engraçada. Demonstra que a pessoa achou algo divertido, inteligente ou surpreendente. A expressão 'That was a good one!' é muito natural no inglês americano, especialmente depois de alguém contar uma piada ou fazer um comentário engraçado. Dependendo da entonação, também pode transmitir sarcasmo.",
+      "category": "chunk",
+      "searchTerms": [
+        "essa foi boa",
+        "boa essa",
+        "essa foi ótima",
+        "essa foi muito boa",
+        "essa foi demais",
+        "essa foi engraçada",
+        "essa piada foi boa",
+        "essa foi de matar",
+        "mandou uma boa",
+        "gostei dessa"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])essa\\s+foi\\s+(?:muito\\s+)?(?:boa|ótima|demais|engraçada)\\b",
+        "(?<![\\p{L}\\p{N}_])boa\\s+essa\\b",
+        "(?<![\\p{L}\\p{N}_])(?:gostei\\s+dessa|mandou\\s+uma\\s+boa)\\b"
+      ],
+      "tags": [
+        "bloco-de-linguagem",
+        "pronto-para-uso",
+        "inglês-falado",
+        "inglês-americano",
+        "reação",
+        "humor",
+        "piadas",
+        "conversação-cotidiana"
+      ],
+      "related": [],
+      "structure": "THAT WAS A GOOD ONE! É uma expressão pronta para reagir positivamente a uma piada, comentário ou resposta espirituosa. O pronome 'that' se refere ao que acabou de ser dito ou feito. 'One' retoma implicitamente a piada, brincadeira ou comentário. Exemplos: 'Haha! That was a good one!' (Haha! Essa foi boa!), 'Wow, that was a really good one!' (Nossa, essa foi muito boa!) e 'That was a good one, man!' (Essa foi boa, cara!). Pode aparecer com 'really' para intensificar a reação. A entonação é importante: uma fala entusiasmada transmite aprovação genuína, enquanto uma entonação seca pode indicar sarcasmo. A expressão é especialmente apropriada para humor, não sendo uma tradução universal de 'boa!' em qualquer situação.",
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "2a9c4e71-6b35-4d80-8f12-c7e503a96b41",
+          "exampleItem": "Haha! Essa foi boa!",
+          "intent": "Essa foi boa"
+        },
+        {
+          "id": "3b8d5f62-7c46-4e91-9023-d8f614b07c52",
+          "exampleItem": "Cara, essa foi ótima!",
+          "intent": "essa foi ótima"
+        },
+        {
+          "id": "4c9e6073-8d57-4fa2-a134-e90525c18d63",
+          "exampleItem": "Nossa, essa foi muito boa!",
+          "intent": "essa foi muito boa"
+        },
+        {
+          "id": "5daf7184-9e68-40b3-b245-fa1636d29e74",
+          "exampleItem": "Boa essa, cara!",
+          "intent": "Boa essa"
+        },
+        {
+          "id": "6eb08295-af79-41c4-8356-ab2747e30f85",
+          "exampleItem": "Haha! Essa foi boa, hein!",
+          "intent": "Essa foi boa"
+        },
+        {
+          "id": "7fc193a6-b08a-42d5-9467-bc3858f41096",
+          "exampleItem": "Essa foi boa! Você me fez rir.",
+          "intent": "Essa foi boa"
+        },
+        {
+          "id": "80d2a4b7-c19b-43e6-a578-cd49690521a7",
+          "exampleItem": "Rapaz, essa foi ótima mesmo!",
+          "intent": "essa foi ótima"
+        },
+        {
+          "id": "91e3b5c8-d2ac-44f7-b689-de5a7a1632b8",
+          "exampleItem": "Essa foi boa! Vou lembrar dessa.",
+          "intent": "Essa foi boa"
+        },
+        {
+          "id": "a2f4c6d9-e3bd-4508-879a-ef6b8b2743c9",
+          "exampleItem": "Haha! Boa essa! Não esperava por isso.",
+          "intent": "Boa essa"
+        },
+        {
+          "id": "b305d7ea-f4ce-4619-98ab-f07c9c3854da",
+          "exampleItem": "Essa foi muito boa! Conta outra!",
+          "intent": "Essa foi muito boa"
         }
       ]
     }

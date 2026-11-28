@@ -6,7 +6,7 @@
     "language": "es-ES",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1320,
+    "totalIntentions": 1326,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -52893,7 +52893,7 @@
       "category": "expressions",
       "related": [],
       "level": "B1"
-    },
+    },
     {
       "id": "pode-ser-que-talvez-existe-a-possibilidade-7c9e4a21-8d35-4f60-a172-b5e83c9d064f",
       "intention": "Puede que... / Quizá... / Existe la posibilidad de que...",
@@ -55721,6 +55721,703 @@
           "id": "6088813f-2363-469f-8ace-fe73c4278b1e",
           "exampleItem": "Me gustaría que dejaras de hacer eso delante de los demás.",
           "intent": "Me gustaría que dejaras de hacer eso delante de los demás"
+        }
+      ]
+    },
+    {
+      "id": "essa-me-pegou-you-got-me-there-5cbe7036-9d8a-4fc4-9165-e0a17b425398",
+      "intention": "¡Ahí me has pillado! / ¡En eso te doy la razón! / ¡Me has dejado sin respuesta!",
+      "pattern": "ahí me has pillado / en eso te doy la razón / me has dejado sin respuesta",
+      "description": "Reconoce que alguien ha conseguido sorprender, convencer o dejar al hablante sin una buena respuesta. En inglés americano, 'You got me there!' se usa ante un argumento difícil de rebatir, una pregunta inesperada o algo que el hablante no había considerado. Puede expresar humor, admiración o reconocimiento sincero. No implica necesariamente que alguien haya contado un chiste: admite que el otro te ha pillado por sorpresa o te ha dejado sin argumentos.",
+      "category": "chunk",
+      "related": [],
+      "level": "B1",
+      "allowLanguageChunkPractice": true,
+      "structure": "¡AHÍ ME HAS PILLADO! Es una expresión idiomática informal para reconocer que otra persona ha presentado un argumento convincente, ha hecho una pregunta difícil o te ha sorprendido. El bloque inglés 'You got me there!' no se interpreta palabra por palabra. Ejemplos: 'You got me there!' (¡Ahí me has pillado!), 'Haha, you got me there!' (¡Ja, ja, ahí me has pillado!) y 'Well, you got me there!' (Bueno, en eso te doy la razón). Es común en conversaciones y debates distendidos cuando se admite no tener una buena respuesta. No debe confundirse con 'You got me!', que puede indicar que te han pillado, engañado o que no sabes la respuesta. 'There' señala el punto concreto en el que el otro te ha dejado sin argumentos.",
+      "searchTerms": [
+        "ahí me has pillado",
+        "me has pillado",
+        "en eso te doy la razón",
+        "me has dejado sin respuesta",
+        "me he quedado sin respuesta",
+        "no tengo respuesta para eso",
+        "no sé responder a eso",
+        "en eso tienes razón",
+        "esa es difícil",
+        "me has sorprendido",
+        "no lo había pensado",
+        "me has dejado sin argumentos",
+        "esa no me la esperaba",
+        "no sé qué decir"
+      ],
+      "tags": [
+        "bloque-de-lenguaje",
+        "listo-para-usar",
+        "inglés-hablado",
+        "inglés-americano",
+        "sorpresa",
+        "reconocimiento",
+        "argumentación",
+        "sin-respuesta",
+        "humor",
+        "conversación-cotidiana"
+      ],
+      "examples": [
+        {
+          "id": "a2f4c6d9-e3bd-4508-879a-017beb2743c9",
+          "exampleItem": "¡Ja, ja! ¡Ahí me has pillado!",
+          "intent": "Ahí me has pillado"
+        },
+        {
+          "id": "b305d7ea-f4ce-4619-98ab-127cfc3854da",
+          "exampleItem": "¡En eso te doy la razón!",
+          "intent": "En eso te doy la razón"
+        },
+        {
+          "id": "c416e8fb-05df-472a-a9bc-238d0d4965eb",
+          "exampleItem": "¡Me has dejado sin respuesta!",
+          "intent": "Me has dejado sin respuesta"
+        },
+        {
+          "id": "d527f90c-16e0-483b-8acd-349e1e5a76fc",
+          "exampleItem": "¡Vaya, ahí me has pillado!",
+          "intent": "ahí me has pillado"
+        },
+        {
+          "id": "e6380a1d-27f1-494c-9bde-45af2f6b870d",
+          "exampleItem": "Bueno, ¡en eso te doy la razón!",
+          "intent": "en eso te doy la razón"
+        },
+        {
+          "id": "f7491b2e-3802-4a5d-8cef-56b0307c981e",
+          "exampleItem": "¡Me has pillado! No sé qué responder.",
+          "intent": "Me has pillado"
+        },
+        {
+          "id": "085a2c3f-4913-4b6e-9df0-67c1418da92f",
+          "exampleItem": "¡Ja, ja! ¡Me has dejado sin respuesta!",
+          "intent": "Me has dejado sin respuesta"
+        },
+        {
+          "id": "196b3d40-5a24-4c7f-ae01-78d2529eba30",
+          "exampleItem": "¡Ahí me has pillado! No lo había pensado.",
+          "intent": "Ahí me has pillado"
+        },
+        {
+          "id": "2a7c4e51-6b35-4d80-8f12-89e363afcb41",
+          "exampleItem": "Bueno, ¡me has pillado en eso!",
+          "intent": "me has pillado"
+        },
+        {
+          "id": "3b8d5f62-7c46-4e91-9023-9af474b0dc52",
+          "exampleItem": "¡En eso te doy la razón! No tengo cómo rebatirlo.",
+          "intent": "En eso te doy la razón"
+        }
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])ahí\\s+me\\s+has\\s+pillado(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])en\\s+eso\\s+te\\s+doy\\s+la\\s+razón(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])me\\s+has\\s+dejado\\s+sin\\s+respuesta(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])me\\s+has\\s+pillado(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "boa-mandou-bem-nice-one-4bad6f25-8c79-4eb3-8054-dbf906a31487",
+      "intention": "¡Muy bien! / ¡Bien hecho! / ¡Buen trabajo! / ¡Buena esa!",
+      "pattern": "muy bien / bien hecho / buen trabajo / buena jugada",
+      "description": "Expresa aprobación, reconocimiento o un elogio por algo que alguien acaba de hacer o decir. En inglés americano, 'Nice one!' elogia una buena jugada, una respuesta ingeniosa, un logro, una idea o una broma bien ejecutada. Es una reacción breve e informal. Según la entonación, puede usarse irónicamente ante un error. Para felicitar por un logro, 'Nice job!' y 'Well done!' son alternativas habituales.",
+      "category": "chunk",
+      "related": [],
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "structure": "¡BIEN HECHO! Es una reacción informal de aprobación o elogio, equivalente a 'Nice one!'. Puede reconocer una buena jugada, una respuesta inteligente, un chiste o una acción bien ejecutada. Ejemplos: 'Nice one!' (¡Muy bien!), 'Nice one, man!' (¡Bien hecho, tío!) y 'Hey, nice one!' (¡Oye, buena esa!). Resulta útil en deportes, juegos y conversaciones entre amigos. En inglés americano, 'Nice job!' y 'Good job!' suelen ser más naturales para elogiar una tarea bien realizada; 'Nice one!' funciona como reacción rápida a un momento concreto. Puede transmitir ironía según la entonación y el contexto.",
+      "searchTerms": [
+        "muy bien",
+        "bien hecho",
+        "buen trabajo",
+        "buena jugada",
+        "buena ocurrencia",
+        "buena idea",
+        "buena esa",
+        "lo has hecho muy bien",
+        "te has lucido",
+        "excelente",
+        "buena respuesta"
+      ],
+      "tags": [
+        "bloque-de-lenguaje",
+        "listo-para-usar",
+        "inglés-hablado",
+        "inglés-americano",
+        "elogio",
+        "aprobación",
+        "reconocimiento",
+        "reacción-positiva",
+        "conversación-cotidiana"
+      ],
+      "examples": [
+        {
+          "id": "085a2c3f-4913-4b6e-9df0-56c1418da92f",
+          "exampleItem": "¡Muy bien! ¡Lo has conseguido!",
+          "intent": "Muy bien"
+        },
+        {
+          "id": "196b3d40-5a24-4c7f-ae01-67d2529eba30",
+          "exampleItem": "¡Bien hecho, tío!",
+          "intent": "Bien hecho"
+        },
+        {
+          "id": "2a7c4e51-6b35-4d80-8f12-78e363afcb41",
+          "exampleItem": "¡Buena jugada! ¡Has ganado!",
+          "intent": "Buena jugada"
+        },
+        {
+          "id": "3b8d5f62-7c46-4e91-9023-89f474b0dc52",
+          "exampleItem": "¡Lo has hecho muy bien esta vez!",
+          "intent": "Lo has hecho muy bien"
+        },
+        {
+          "id": "4c9e6073-8d57-4fa2-a134-9a0585c1ed63",
+          "exampleItem": "¡Buena ocurrencia! No lo había pensado.",
+          "intent": "Buena ocurrencia"
+        },
+        {
+          "id": "5daf7184-9e68-40b3-b245-ab1696d2fe74",
+          "exampleItem": "¡Buena respuesta! ¡Me ha gustado!",
+          "intent": "Buena respuesta"
+        },
+        {
+          "id": "6eb08295-af79-41c4-8356-bc27a7e30f85",
+          "exampleItem": "¡Bien hecho! Ha sido una gran jugada.",
+          "intent": "Bien hecho"
+        },
+        {
+          "id": "7fc193a6-b08a-42d5-9467-cd38b8f41096",
+          "exampleItem": "¡Muy bien! ¡Eso ha sido ingenioso!",
+          "intent": "Muy bien"
+        },
+        {
+          "id": "80d2a4b7-c19b-43e6-a578-de49c90521a7",
+          "exampleItem": "¡Bien hecho, colega!",
+          "intent": "Bien hecho"
+        },
+        {
+          "id": "91e3b5c8-d2ac-44f7-b689-ef5ada1632b8",
+          "exampleItem": "¡Muy bien! Ha sido una idea estupenda.",
+          "intent": "Muy bien"
+        }
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])muy\\s+bien(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])bien\\s+hecho(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])buena\\s+jugada(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])lo\\s+has\\s+hecho\\s+muy\\s+bien(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])buena\\s+ocurrencia(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])buena\\s+respuesta(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "isso-foi-engracado-that-was-funny-3a9c5e14-7b68-4da2-bf43-cae895f20376",
+      "intention": "¡Eso ha tenido gracia! / ¡Qué gracioso! / ¡Me ha hecho mucha gracia!",
+      "pattern": "eso ha tenido gracia / qué gracioso / me ha hecho gracia",
+      "description": "Expresa que algo que acaba de ocurrir o decirse ha provocado diversión o risa. 'That was funny!' es una reacción directa y natural en inglés americano para comentar chistes, historias, situaciones inesperadas o acontecimientos divertidos. A diferencia de 'Good one!', que suele elogiar un chiste o comentario ingenioso, destaca que algo ha resultado gracioso.",
+      "category": "chunk",
+      "related": [],
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "structure": "¡ESO HA TENIDO GRACIA! Sirve para comentar algo gracioso que acaba de ocurrir y equivale a 'That was funny!'. 'That' alude a un chiste, comentario, historia o situación anterior. Aquí 'funny' significa gracioso o divertido. Ejemplos: 'Haha! That was funny!' (¡Ja, ja! ¡Eso ha tenido gracia!), 'Wow, that was really funny!' (¡Vaya, eso ha tenido mucha gracia!) y 'That was so funny!' (¡Eso ha tenido muchísima gracia!). Se puede intensificar con 'really' o 'so'. En otros contextos, 'funny' significa raro o sospechoso, como en 'Something funny is going on' (Está pasando algo raro). Esta intención se refiere exclusivamente al humor.",
+      "searchTerms": [
+        "eso ha tenido gracia",
+        "qué gracioso",
+        "me ha hecho gracia",
+        "me ha hecho mucha gracia",
+        "ha tenido mucha gracia",
+        "eso ha sido desternillante",
+        "me ha hecho reír",
+        "ha sido divertido",
+        "eso ha sido gracioso"
+      ],
+      "tags": [
+        "bloque-de-lenguaje",
+        "listo-para-usar",
+        "inglés-hablado",
+        "inglés-americano",
+        "humor",
+        "diversión",
+        "reacción",
+        "risa",
+        "conversación-cotidiana"
+      ],
+      "examples": [
+        {
+          "id": "6eb08295-af79-41c4-8356-bc27a7e30f85",
+          "exampleItem": "¡Ja, ja! ¡Eso ha tenido gracia!",
+          "intent": "Eso ha tenido gracia"
+        },
+        {
+          "id": "7fc193a6-b08a-42d5-9467-cd38b8f41096",
+          "exampleItem": "¡Vaya, eso ha tenido mucha gracia!",
+          "intent": "eso ha tenido mucha gracia"
+        },
+        {
+          "id": "80d2a4b7-c19b-43e6-a578-de49c90521a7",
+          "exampleItem": "¡Eso me ha hecho gracia!",
+          "intent": "me ha hecho gracia"
+        },
+        {
+          "id": "91e3b5c8-d2ac-44f7-b689-ef5ada1632b8",
+          "exampleItem": "¡Ja, ja! ¡Aquello ha tenido gracia!",
+          "intent": "Aquello ha tenido gracia"
+        },
+        {
+          "id": "a2f4c6d9-e3bd-4508-879a-f06beb2743c9",
+          "exampleItem": "¡Eso ha tenido gracia! No me lo esperaba.",
+          "intent": "Eso ha tenido gracia"
+        },
+        {
+          "id": "b305d7ea-f4ce-4619-98ab-017cfc3854da",
+          "exampleItem": "¡Tío, me ha hecho mucha gracia!",
+          "intent": "me ha hecho mucha gracia"
+        },
+        {
+          "id": "c416e8fb-05df-472a-a9bc-128d0d4965eb",
+          "exampleItem": "¡Vaya, aquello ha tenido mucha gracia!",
+          "intent": "aquello ha tenido mucha gracia"
+        },
+        {
+          "id": "d527f90c-16e0-483b-8acd-239e1e5a76fc",
+          "exampleItem": "Eso ha tenido gracia, sobre todo al final.",
+          "intent": "Eso ha tenido gracia"
+        },
+        {
+          "id": "e6380a1d-27f1-494c-9bde-34af2f6b870d",
+          "exampleItem": "¡Ja, ja! ¡Eso me ha hecho mucha gracia!",
+          "intent": "me ha hecho mucha gracia"
+        },
+        {
+          "id": "f7491b2e-3802-4a5d-8cef-45b0307c981e",
+          "exampleItem": "¡Eso ha tenido mucha gracia! Todavía me estoy riendo.",
+          "intent": "Eso ha tenido mucha gracia"
+        }
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])eso\\s+ha\\s+tenido\\s+gracia(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])eso\\s+ha\\s+tenido\\s+mucha\\s+gracia(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])me\\s+ha\\s+hecho\\s+gracia(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])aquello\\s+ha\\s+tenido\\s+gracia(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])me\\s+ha\\s+hecho\\s+mucha\\s+gracia(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])aquello\\s+ha\\s+tenido\\s+mucha\\s+gracia(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "boa-essa-good-one-2f8b4d03-6a57-4c91-ae32-b9d784e1f265",
+      "intention": "¡Buena esa! / ¡Esa ha sido buena! / ¡Has estado bien ahí!",
+      "pattern": "buena esa / esa ha sido buena / has estado bien ahí",
+      "description": "Reacción breve y espontánea ante un chiste, una broma, una respuesta inteligente o un comentario ingenioso. 'Good one!' es una forma abreviada muy habitual de 'That was a good one!'. En inglés americano puede expresar aprobación sincera, diversión o sarcasmo, según el contexto y la entonación. Es útil en conversaciones informales y situaciones de humor.",
+      "category": "chunk",
+      "related": [],
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "structure": "¡BUENA ESA! Es una reacción breve e informal equivalente a 'That was a good one!'. Se usa inmediatamente después de un chiste, una broma o un comentario inteligente. Ejemplos: 'Haha, good one!' (¡Ja, ja, buena esa!), 'Good one, buddy!' (¡Buena esa, colega!) y 'Oh, good one!' (¡Ah, esa ha sido buena!). Puede transmitir sarcasmo ante un chiste malo, una excusa poco convincente o un comentario absurdo. La diferencia principal respecto a 'That was a good one!' es la brevedad. Ambas expresiones suelen ser intercambiables en situaciones de humor. Para elogiar un logro o una acción bien ejecutada, 'Nice one!' suele ser más apropiado.",
+      "searchTerms": [
+        "buena esa",
+        "esa ha sido buena",
+        "has estado bien ahí",
+        "esa ha sido buenísima",
+        "esa me ha gustado",
+        "buen chiste",
+        "esa ha tenido gracia",
+        "qué ingenioso",
+        "qué buena ocurrencia",
+        "esa ha sido de morirse de risa"
+      ],
+      "tags": [
+        "bloque-de-lenguaje",
+        "listo-para-usar",
+        "inglés-hablado",
+        "inglés-americano",
+        "reacción-rápida",
+        "humor",
+        "chistes",
+        "sarcasmo",
+        "conversación-cotidiana"
+      ],
+      "examples": [
+        {
+          "id": "c416e8fb-05df-472a-a9bc-018d0d4965eb",
+          "exampleItem": "¡Ja, ja! ¡Buena esa!",
+          "intent": "Buena esa"
+        },
+        {
+          "id": "d527f90c-16e0-483b-8acd-129e1e5a76fc",
+          "exampleItem": "¡Buena esa, colega!",
+          "intent": "Buena esa"
+        },
+        {
+          "id": "e6380a1d-27f1-494c-9bde-23af2f6b870d",
+          "exampleItem": "¡Ah, esa ha sido buena!",
+          "intent": "esa ha sido buena"
+        },
+        {
+          "id": "f7491b2e-3802-4a5d-8cef-34b0307c981e",
+          "exampleItem": "¡Ja, ja! ¡Has estado bien ahí!",
+          "intent": "Has estado bien ahí"
+        },
+        {
+          "id": "085a2c3f-4913-4b6e-9df0-45c1418da92f",
+          "exampleItem": "¡Buena esa! No lo había pensado.",
+          "intent": "Buena esa"
+        },
+        {
+          "id": "196b3d40-5a24-4c7f-ae01-56d2529eba30",
+          "exampleItem": "¡Esa ha sido buena, tío!",
+          "intent": "Esa ha sido buena"
+        },
+        {
+          "id": "2a7c4e51-6b35-4d80-8f12-67e363afcb41",
+          "exampleItem": "¡Ja, ja! ¡Esa me ha gustado!",
+          "intent": "Esa me ha gustado"
+        },
+        {
+          "id": "3b8d5f62-7c46-4e91-9023-78f474b0dc52",
+          "exampleItem": "¡Buena esa! Siempre me haces reír.",
+          "intent": "Buena esa"
+        },
+        {
+          "id": "4c9e6073-8d57-4fa2-a134-890585c1ed63",
+          "exampleItem": "¡Ah, buena esa! Casi me lo creo.",
+          "intent": "buena esa"
+        },
+        {
+          "id": "5daf7184-9e68-40b3-b245-9a1696d2fe74",
+          "exampleItem": "¡Buena esa! Ese chiste ha sido buenísimo.",
+          "intent": "Buena esa"
+        }
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])buena\\s+esa(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])esa\\s+ha\\s+sido\\s+buena(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])has\\s+estado\\s+bien\\s+ahí(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])esa\\s+me\\s+ha\\s+gustado(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "essa-foi-boa-that-was-a-good-one-1e7a3c92-5f46-4b80-9d21-a8c673f0e154",
+      "intention": "¡Esa ha sido buena! / ¡Buena esa! / ¡Esa ha sido buenísima!",
+      "pattern": "esa ha sido buena / buena esa / esa ha sido buenísima",
+      "description": "Reacción espontánea ante un chiste, comentario ingenioso, broma o respuesta graciosa. Indica que algo le ha parecido divertido, inteligente o sorprendente al hablante. 'That was a good one!' es muy natural en inglés americano después de un chiste o comentario gracioso. También puede transmitir sarcasmo según la entonación.",
+      "category": "chunk",
+      "related": [],
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "structure": "¡ESA HA SIDO BUENA! Es una expresión para reaccionar positivamente ante un chiste, comentario o respuesta ingeniosa, equivalente a 'That was a good one!'. 'That' se refiere a lo que acaba de decirse o hacerse; 'one' retoma el chiste, la broma o el comentario. Ejemplos: 'Haha! That was a good one!' (¡Ja, ja! ¡Esa ha sido buena!), 'Wow, that was a really good one!' (¡Vaya, esa ha sido muy buena!) y 'That was a good one, man!' (¡Esa ha sido buena, tío!). Se puede añadir 'really' para intensificar la reacción. Una entonación entusiasta transmite aprobación sincera y un tono seco puede indicar sarcasmo. Es especialmente apropiada para el humor y no sirve como felicitación genérica en cualquier situación.",
+      "searchTerms": [
+        "esa ha sido buena",
+        "buena esa",
+        "esa ha sido buenísima",
+        "esa ha sido muy buena",
+        "esa ha sido genial",
+        "esa ha tenido gracia",
+        "ese chiste ha sido bueno",
+        "esa ha sido de morirse de risa",
+        "has soltado una buena",
+        "esa me ha gustado"
+      ],
+      "tags": [
+        "bloque-de-lenguaje",
+        "listo-para-usar",
+        "inglés-hablado",
+        "inglés-americano",
+        "reacción",
+        "humor",
+        "chistes",
+        "conversación-cotidiana"
+      ],
+      "examples": [
+        {
+          "id": "2a9c4e71-6b35-4d80-8f12-c7e503a96b41",
+          "exampleItem": "¡Ja, ja! ¡Esa ha sido buena!",
+          "intent": "Esa ha sido buena"
+        },
+        {
+          "id": "3b8d5f62-7c46-4e91-9023-d8f614b07c52",
+          "exampleItem": "¡Tío, esa ha sido buenísima!",
+          "intent": "esa ha sido buenísima"
+        },
+        {
+          "id": "4c9e6073-8d57-4fa2-a134-e90525c18d63",
+          "exampleItem": "¡Vaya, esa ha sido muy buena!",
+          "intent": "esa ha sido muy buena"
+        },
+        {
+          "id": "5daf7184-9e68-40b3-b245-fa1636d29e74",
+          "exampleItem": "¡Buena esa, tío!",
+          "intent": "Buena esa"
+        },
+        {
+          "id": "6eb08295-af79-41c4-8356-ab2747e30f85",
+          "exampleItem": "¡Ja, ja! ¡Esa ha sido buena, eh!",
+          "intent": "Esa ha sido buena"
+        },
+        {
+          "id": "7fc193a6-b08a-42d5-9467-bc3858f41096",
+          "exampleItem": "¡Esa ha sido buena! Me has hecho reír.",
+          "intent": "Esa ha sido buena"
+        },
+        {
+          "id": "80d2a4b7-c19b-43e6-a578-cd49690521a7",
+          "exampleItem": "¡Vaya, esa ha sido buenísima de verdad!",
+          "intent": "esa ha sido buenísima"
+        },
+        {
+          "id": "91e3b5c8-d2ac-44f7-b689-de5a7a1632b8",
+          "exampleItem": "¡Esa ha sido buena! Me acordaré de ella.",
+          "intent": "Esa ha sido buena"
+        },
+        {
+          "id": "a2f4c6d9-e3bd-4508-879a-ef6b8b2743c9",
+          "exampleItem": "¡Ja, ja! ¡Buena esa! No me lo esperaba.",
+          "intent": "Buena esa"
+        },
+        {
+          "id": "b305d7ea-f4ce-4619-98ab-f07c9c3854da",
+          "exampleItem": "¡Esa ha sido muy buena! ¡Cuenta otro!",
+          "intent": "Esa ha sido muy buena"
+        }
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])esa\\s+ha\\s+sido\\s+buena(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])esa\\s+ha\\s+sido\\s+buenísima(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])esa\\s+ha\\s+sido\\s+muy\\s+buena(?![\\p{L}\\p{N}_])",
+        "(?<![\\p{L}\\p{N}_])buena\\s+esa(?![\\p{L}\\p{N}_])"
+      ]
+    },
+    {
+      "id": "me-disseram-me-contaram-que-7a3e91c2-5b84-4f60-9d17-e2c685a0b439",
+      "intention": "Me dijeron que... / Me contaron que... / No me dijeron que... / ¿Te dijeron que...?",
+      "pattern": "me dijeron/contaron que + información / no me dijeron/contaron que + información / ¿te dijeron/contaron que + información?",
+      "description": "Expresa una información recibida de otras personas, sin necesidad de identificar quién la transmitió. En español se puede decir «Me dijeron que...», «Alguien me dijo que...» o «Me informaron de que...». También permite negar que se haya recibido esa información («No me dijeron que...» o «Nadie me dijo que...») y preguntar si otra persona fue informada («¿Te dijeron que...?»). Hay que distinguir la negación del acto de informar de una información cuyo contenido es negativo: «No me dijeron que venía» no significa lo mismo que «Me dijeron que no venía». En estas construcciones con una oración subordinada, el enlace «que» se mantiene en español.",
+      "category": "reported-speech",
+      "searchTerms": [
+        "me dijeron",
+        "me dijeron que",
+        "me contaron",
+        "me contaron que",
+        "me comentaron",
+        "me comentaron que",
+        "alguien me dijo",
+        "alguien me dijo que",
+        "alguien me contó",
+        "alguien me contó que",
+        "me enteré de que",
+        "supe por alguien que",
+        "no me dijeron",
+        "no me dijeron que",
+        "no me contaron",
+        "no me contaron que",
+        "no me comentaron",
+        "no me comentaron que",
+        "nadie me dijo",
+        "nadie me dijo que",
+        "nadie me contó",
+        "nadie me contó que",
+        "me dijeron que no",
+        "me contaron que no",
+        "te dijeron",
+        "te dijeron que",
+        "te contaron",
+        "te contaron que",
+        "te informaron de que",
+        "no te dijeron",
+        "no te dijeron que",
+        "quién te dijo",
+        "quién te dijo que",
+        "quién te contó",
+        "quién te contó que",
+        "por qué no me dijeron",
+        "por qué no me contaron",
+        "qué te dijeron",
+        "qué te contaron"
+      ],
+      "validationPatterns": [
+        "(?<![\\p{L}\\p{N}_])(?:no\\s+)?(?:me|te)\\s+(?:dijeron|contaron|comentaron)\\s+que\\b",
+        "(?<![\\p{L}\\p{N}_])(?:alguien|nadie)\\s+me\\s+(?:dijo|contó|comentó)\\s+que\\b",
+        "(?<![\\p{L}\\p{N}_])qui[eé]n\\s+te\\s+(?:dijo|contó|comentó)\\s+que\\b",
+        "(?<![\\p{L}\\p{N}_])por\\s+qu[eé]\\s+no\\s+me\\s+(?:dijeron|contaron|comentaron)\\s+que\\b",
+        "(?<![\\p{L}\\p{N}_])qu[eé]\\s+te\\s+(?:dijeron|contaron|comentaron)\\s+sobre\\b",
+        "(?<![\\p{L}\\p{N}_])(?:me\\s+enteré\\s+de|supe\\s+por\\s+alguien)\\s+que\\b",
+        "(?<![\\p{L}\\p{N}_])(?:me|te)\\s+informaron\\s+de\\s+que\\b"
+      ],
+      "tags": [
+        "discurso-indirecto",
+        "información-recibida",
+        "información-de-terceros",
+        "relatar-información",
+        "conversación-cotidiana",
+        "español-hablado",
+        "español-de-España",
+        "forma-afirmativa",
+        "forma-negativa",
+        "forma-interrogativa",
+        "comunicación",
+        "noticias",
+        "rumores",
+        "preguntas",
+        "generador-de-frases"
+      ],
+      "related": [],
+      "structure": "La intención central es transmitir una información recibida de otra persona. FORMA AFIRMATIVA: «Me dijeron que + oración», «Me contaron que + oración» y «Alguien me dijo que + oración». Ejemplos: «Me dijeron que te vas a mudar a Canadá» y «Me dijeron que la reunión se había cancelado». FORMA NEGATIVA DEL ACTO DE INFORMAR: «No me dijeron que + oración», «No me contaron que + oración» y «Nadie me dijo que + oración». Ejemplo: «No me dijeron que estabas enfermo». FORMA AFIRMATIVA CON INFORMACIÓN NEGATIVA: «Me dijeron que + sujeto + verbo negado». Ejemplo: «Me dijeron que él no vendría». No debe confundirse con «No me dijeron que él vendría»: la posición de «no» cambia el significado. FORMA INTERROGATIVA: «¿Te dijeron que + oración?» y «¿Te contaron que + oración?». Ejemplo: «¿Te dijeron que la reunión se había aplazado?». FORMA INTERROGATIVA NEGATIVA: «¿No te dijeron que + oración?» y «¿No te contaron que + oración?». PREGUNTAS CON INTERROGATIVOS: «¿Quién te dijo que + oración?», «¿Por qué no me dijeron que + oración?» y «¿Qué te dijeron sobre + nombre?». En español, los pronombres átonos «me» y «te» van delante de estas formas verbales conjugadas, y el sujeto plural puede quedar implícito sin identificar a las personas que transmitieron la información. Con una oración subordinada, se conserva «que». «Me informaron de que...» lleva «de», mientras que «Me dijeron que...» no lo lleva. «Me enteré de que...» y «He oído que...» pueden expresar que se conoce una noticia, aunque no impliquen que alguien se la haya contado directamente al hablante. El tiempo verbal del discurso indirecto depende del contexto: «Me dijeron que te ibas» y «Me dijeron que te vas» pueden ser naturales según la perspectiva temporal y la vigencia de la información.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "b328d584-d903-46e2-80de-4f55f9d0d73f",
+          "exampleItem": "Me dijeron que ibas a empezar a trabajar en Microsoft.",
+          "intent": "Me dijeron que"
+        },
+        {
+          "id": "c419e695-e014-47f3-91ef-50660ae1e840",
+          "exampleItem": "Me dijeron que estás aprendiendo inglés.",
+          "intent": "Me dijeron que"
+        },
+        {
+          "id": "d52af7a6-f125-4804-a2f0-61771bf2f951",
+          "exampleItem": "Me contaron que has conseguido un trabajo nuevo.",
+          "intent": "Me contaron que"
+        },
+        {
+          "id": "e63b08b7-0236-4915-b301-72882c030a62",
+          "exampleItem": "Me dijeron que la reunión se había cancelado.",
+          "intent": "Me dijeron que"
+        },
+        {
+          "id": "f74c19c8-1347-4a26-8412-83993d141b73",
+          "exampleItem": "Alguien me dijo que estás pensando en mudarte.",
+          "intent": "Alguien me dijo que"
+        },
+        {
+          "id": "085d2ad9-2458-4b37-9523-94aa4e252c84",
+          "exampleItem": "Me comentaron que ese restaurante es muy bueno.",
+          "intent": "Me comentaron que"
+        },
+        {
+          "id": "196e3bea-3569-4c48-a634-a5bb5f363d95",
+          "exampleItem": "Me contaron que viajasteis el fin de semana.",
+          "intent": "Me contaron que"
+        },
+        {
+          "id": "2a7f4cfb-467a-4d59-b745-b6cc60474ea6",
+          "exampleItem": "Me dijeron que el proyecto va a empezar el lunes.",
+          "intent": "Me dijeron que"
+        },
+        {
+          "id": "3b805d0c-578b-4e6a-8856-c7dd71585fb7",
+          "exampleItem": "Me contaron que has pasado la entrevista.",
+          "intent": "Me contaron que"
+        },
+        {
+          "id": "4c916e1d-689c-4f7b-9967-d8ee826960c8",
+          "exampleItem": "Me dijeron que hablas inglés muy bien.",
+          "intent": "Me dijeron que"
+        },
+        {
+          "id": "5da27f2e-79ad-408c-aa78-e9ff937a71d9",
+          "exampleItem": "No me dijeron que estabas enfermo.",
+          "intent": "No me dijeron que"
+        },
+        {
+          "id": "6eb3803f-8abe-419d-8b89-fa00a48b82ea",
+          "exampleItem": "No me contaron que la empresa estaba contratando personal.",
+          "intent": "No me contaron que"
+        },
+        {
+          "id": "7fc49140-9bcf-42ae-9c9a-0b11b59c93fb",
+          "exampleItem": "Nadie me dijo que la reunión había cambiado de hora.",
+          "intent": "Nadie me dijo que"
+        },
+        {
+          "id": "80d5a251-acd0-43bf-8dab-1c22c6ada40c",
+          "exampleItem": "No me comentaron que tenía que llevar un documento.",
+          "intent": "No me comentaron que"
+        },
+        {
+          "id": "91e6b362-bde1-44c0-9ebc-2d33d7beb51d",
+          "exampleItem": "No me dijeron que el plazo terminaba hoy.",
+          "intent": "No me dijeron que"
+        },
+        {
+          "id": "a2f7c473-cef2-45d1-8fcd-3e44e8cfc62e",
+          "exampleItem": "Me dijeron que él no vendría a la fiesta.",
+          "intent": "Me dijeron que"
+        },
+        {
+          "id": "b308d584-df03-46e2-90de-4f55f9d0d73f",
+          "exampleItem": "Me contaron que ella ya no trabaja en esa empresa.",
+          "intent": "Me contaron que"
+        },
+        {
+          "id": "c419e695-e014-47f3-a1ef-50660ae1e840",
+          "exampleItem": "Me dijeron que el sistema no estaba funcionando.",
+          "intent": "Me dijeron que"
+        },
+        {
+          "id": "d52af7a6-f125-4804-b2f0-61771bf2f951",
+          "exampleItem": "Me contaron que no te gustó la propuesta.",
+          "intent": "Me contaron que"
+        },
+        {
+          "id": "e63b08b7-0236-4915-8301-72882c030a62",
+          "exampleItem": "No me dijeron que ya habías terminado el trabajo.",
+          "intent": "No me dijeron que"
+        },
+        {
+          "id": "f74c19c8-1347-4a26-9412-83993d141b73",
+          "exampleItem": "¿Te dijeron que la reunión se había aplazado?",
+          "intent": "Te dijeron que"
+        },
+        {
+          "id": "085d2ad9-2458-4b37-a523-94aa4e252c84",
+          "exampleItem": "¿Te contaron que él se va de la empresa?",
+          "intent": "Te contaron que"
+        },
+        {
+          "id": "196e3bea-3569-4c48-b634-a5bb5f363d95",
+          "exampleItem": "¿Te dijeron que el plazo ha cambiado?",
+          "intent": "Te dijeron que"
+        },
+        {
+          "id": "2a7f4cfb-467a-4d59-8745-b6cc60474ea6",
+          "exampleItem": "¿No te dijeron que el evento se había cancelado?",
+          "intent": "No te dijeron que"
+        },
+        {
+          "id": "3b805d0c-578b-4e6a-9856-c7dd71585fb7",
+          "exampleItem": "¿No te contaron que ella ha conseguido el ascenso?",
+          "intent": "No te contaron que"
+        },
+        {
+          "id": "4c916e1d-689c-4f7b-a967-d8ee826960c8",
+          "exampleItem": "¿Quién te dijo que yo estaba buscando otro trabajo?",
+          "intent": "Quién te dijo que"
+        },
+        {
+          "id": "5da27f2e-79ad-408c-8a78-e9ff937a71d9",
+          "exampleItem": "¿Quién te contó que yo estaba estudiando francés?",
+          "intent": "Quién te contó que"
+        },
+        {
+          "id": "6eb3803f-8abe-419d-9b89-fa00a48b82ea",
+          "exampleItem": "¿Por qué no me dijeron que necesitabas ayuda?",
+          "intent": "Por qué no me dijeron que"
+        },
+        {
+          "id": "7fc49140-9bcf-42ae-8c9a-0b11b59c93fb",
+          "exampleItem": "¿Por qué no me contaron que el proyecto se había aprobado?",
+          "intent": "Por qué no me contaron que"
+        },
+        {
+          "id": "80d5a251-acd0-43bf-9dab-1c22c6ada40c",
+          "exampleItem": "¿Qué te dijeron sobre la nueva oportunidad de trabajo?",
+          "intent": "Qué te dijeron sobre"
         }
       ]
     }

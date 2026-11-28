@@ -6,7 +6,7 @@
     "language": "en-US",
     "source": "HASHMAP MENTAL DE CÓDIGO LINGUÍSTICO - 45th EDITION",
     "sourceBuild": "v.46.32.9.20261006.1753",
-    "totalIntentions": 1320,
+    "totalIntentions": 1326,
     "schemaVersion": "4.0.0",
     "integrity": {
       "algorithm": "SHA-256",
@@ -79666,6 +79666,684 @@
           "id": "6088813f-2363-469f-8ace-fe73c4278b1e",
           "exampleItem": "I wish you would stop doing that in front of other people.",
           "intent": "I wish you would stop doing that in front of other people"
+        }
+      ]
+    },
+    {
+      "id": "essa-me-pegou-you-got-me-there-5cbe7036-9d8a-4fc4-9165-e0a17b425398",
+      "intention": "You got me there! / You have a point! / You left me speechless!",
+      "pattern": "you got me there / you have a point / you left me speechless",
+      "description": "Acknowledges that someone has surprised, convinced, or stumped the speaker. In American English, 'You got me there!' often responds to a strong argument, an unexpected question, or a point the speaker had not considered. It can convey humor, admiration, or sincere recognition. It does not necessarily mean that someone told a funny joke; its main purpose is to admit that the other person has caught you off guard or left you without a convincing answer.",
+      "category": "chunk",
+      "searchTerms": [
+        "you got me there",
+        "you got me",
+        "you have a point",
+        "you left me speechless",
+        "I have no answer",
+        "I have no answer to that",
+        "I cannot answer that",
+        "you are right about that",
+        "that was a tough one",
+        "you surprised me",
+        "I had not thought of that",
+        "you left me with no argument",
+        "I did not see that coming",
+        "I do not know what to say"
+      ],
+      "validationPatterns": [
+        "\\byou\\s+(?:got|have)\\s+me\\s+there\\b",
+        "\\byou\\s+have\\s+a\\s+point\\b",
+        "\\byou\\s+left\\s+me\\s+speechless\\b",
+        "\\bI\\s+(?:have\\s+no|don['’]t\\s+have\\s+an?)\\s+answer\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "ready-to-use",
+        "spoken-english",
+        "american-english",
+        "surprise",
+        "acknowledgment",
+        "argumentation",
+        "stumped",
+        "humor",
+        "everyday-conversation"
+      ],
+      "related": [],
+      "structure": "YOU GOT ME THERE! is an informal idiom that acknowledges a convincing argument, a difficult question, or an unexpected point. Treat it as a complete expression rather than translating 'got' literally. Examples include 'You got me there!', 'Haha, you got me there!', and 'Well, you got me there!'. It is common in friendly discussions and casual debates when someone admits they do not have a good answer. It can also acknowledge that the other person has a point. Unlike 'You got me!', which can mean that someone caught or tricked you, or simply 'I don't know', 'You got me there!' emphasizes the specific point that has stumped you.",
+      "level": "B1",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "a2f4c6d9-e3bd-4508-879a-017beb2743c9",
+          "exampleItem": "Haha! You got me there!",
+          "intent": "You got me there"
+        },
+        {
+          "id": "b305d7ea-f4ce-4619-98ab-127cfc3854da",
+          "exampleItem": "You got me there!",
+          "intent": "You got me there"
+        },
+        {
+          "id": "c416e8fb-05df-472a-a9bc-238d0d4965eb",
+          "exampleItem": "You left me speechless!",
+          "intent": "You left me speechless"
+        },
+        {
+          "id": "d527f90c-16e0-483b-8acd-349e1e5a76fc",
+          "exampleItem": "Man, you got me there!",
+          "intent": "you got me there"
+        },
+        {
+          "id": "e6380a1d-27f1-494c-9bde-45af2f6b870d",
+          "exampleItem": "Well, you got me there!",
+          "intent": "you got me there"
+        },
+        {
+          "id": "f7491b2e-3802-4a5d-8cef-56b0307c981e",
+          "exampleItem": "You got me there! I don't know the answer.",
+          "intent": "You got me there"
+        },
+        {
+          "id": "085a2c3f-4913-4b6e-9df0-67c1418da92f",
+          "exampleItem": "Haha! You left me speechless!",
+          "intent": "You left me speechless"
+        },
+        {
+          "id": "196b3d40-5a24-4c7f-ae01-78d2529eba30",
+          "exampleItem": "You got me there! I hadn't thought of that.",
+          "intent": "You got me there"
+        },
+        {
+          "id": "2a7c4e51-6b35-4d80-8f12-89e363afcb41",
+          "exampleItem": "Well, you got me there!",
+          "intent": "you got me there"
+        },
+        {
+          "id": "3b8d5f62-7c46-4e91-9023-9af474b0dc52",
+          "exampleItem": "You got me there! I can't argue with that.",
+          "intent": "You got me there"
+        }
+      ]
+    },
+    {
+      "id": "boa-mandou-bem-nice-one-4bad6f25-8c79-4eb3-8054-dbf906a31487",
+      "intention": "Nice one! / Nice job! / Well done!",
+      "pattern": "nice one / nice job / well done / nice move",
+      "description": "Expresses approval, recognition, or praise for something someone has just done or said. In American English, 'Nice one!' can praise a clever move, a smart answer, an achievement, an idea, or a well-executed joke. It is a short, informal reaction. Depending on the context and tone, it can also be sarcastic when someone makes a mistake. 'Nice job!' and 'Well done!' are also common ways to praise achievements.",
+      "category": "chunk",
+      "searchTerms": [
+        "nice one",
+        "nice job",
+        "well done",
+        "great job",
+        "nice move",
+        "good thinking",
+        "good idea",
+        "that was a good one",
+        "you did great",
+        "you nailed it",
+        "excellent",
+        "good answer"
+      ],
+      "validationPatterns": [
+        "\\bnice\\s+(?:one|job|move)\\b",
+        "\\b(?:well\\s+done|great\\s+job|good\\s+(?:thinking|idea|answer))\\b",
+        "\\byou\\s+(?:did\\s+great|nailed\\s+it)\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "ready-to-use",
+        "spoken-english",
+        "american-english",
+        "praise",
+        "approval",
+        "recognition",
+        "positive-reaction",
+        "everyday-conversation"
+      ],
+      "related": [],
+      "structure": "NICE ONE! is an informal reaction expressing approval or praise. It can recognize a good move, a smart answer, a joke, or something done well. Examples include 'Nice one!', 'Nice one, man!', and 'Hey, nice one!'. It works especially well in sports, games, and casual conversations among friends. In American English, 'Nice job!' and 'Good job!' are often more natural for praising the completion of a task, while 'Nice one!' is a quick reaction to a particular moment. Tone and context can also make it sarcastic.",
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "085a2c3f-4913-4b6e-9df0-56c1418da92f",
+          "exampleItem": "Nice one! You did it!",
+          "intent": "Nice one"
+        },
+        {
+          "id": "196b3d40-5a24-4c7f-ae01-67d2529eba30",
+          "exampleItem": "Nice one, man!",
+          "intent": "Nice one"
+        },
+        {
+          "id": "2a7c4e51-6b35-4d80-8f12-78e363afcb41",
+          "exampleItem": "Nice move! You won!",
+          "intent": "Nice move"
+        },
+        {
+          "id": "3b8d5f62-7c46-4e91-9023-89f474b0dc52",
+          "exampleItem": "You did great on that one!",
+          "intent": "You did great"
+        },
+        {
+          "id": "4c9e6073-8d57-4fa2-a134-9a0585c1ed63",
+          "exampleItem": "Good thinking! I hadn't thought of that.",
+          "intent": "Good thinking"
+        },
+        {
+          "id": "5daf7184-9e68-40b3-b245-ab1696d2fe74",
+          "exampleItem": "Good answer! I liked it!",
+          "intent": "Good answer"
+        },
+        {
+          "id": "6eb08295-af79-41c4-8356-bc27a7e30f85",
+          "exampleItem": "Nice one! That was a great move.",
+          "intent": "Nice one"
+        },
+        {
+          "id": "7fc193a6-b08a-42d5-9467-cd38b8f41096",
+          "exampleItem": "Nice one! That was clever!",
+          "intent": "Nice one"
+        },
+        {
+          "id": "80d2a4b7-c19b-43e6-a578-de49c90521a7",
+          "exampleItem": "Nice one, buddy!",
+          "intent": "Nice one"
+        },
+        {
+          "id": "91e3b5c8-d2ac-44f7-b689-ef5ada1632b8",
+          "exampleItem": "Nice one! That was a great idea.",
+          "intent": "Nice one"
+        }
+      ]
+    },
+    {
+      "id": "isso-foi-engracado-that-was-funny-3a9c5e14-7b68-4da2-bf43-cae895f20376",
+      "intention": "That was funny! / I thought that was hilarious!",
+      "pattern": "that was funny / that was hilarious / I thought that was funny",
+      "description": "Says that something that just happened or was said was amusing or made the speaker laugh. 'That was funny!' is a direct, natural reaction in American English to jokes, stories, unexpected situations, or amusing events. Unlike 'Good one!', which often praises a joke or a witty remark, 'That was funny!' emphasizes that something was amusing.",
+      "category": "chunk",
+      "searchTerms": [
+        "that was funny",
+        "that was hilarious",
+        "I thought that was funny",
+        "I thought that was really funny",
+        "that was really funny",
+        "that was so funny",
+        "that was so hilarious",
+        "that made me laugh",
+        "that was amusing",
+        "how funny"
+      ],
+      "validationPatterns": [
+        "\\bthat\\s+was\\s+(?:(?:really|so|very)\\s+)?(?:funny|hilarious|amusing)\\b",
+        "\\bI\\s+thought\\s+(?:that\\s+was\\s+)?(?:really\\s+)?funny\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "ready-to-use",
+        "spoken-english",
+        "american-english",
+        "humor",
+        "fun",
+        "reaction",
+        "laughter",
+        "everyday-conversation"
+      ],
+      "related": [],
+      "structure": "THAT WAS FUNNY! is a ready-to-use expression for commenting on something amusing that has just happened. 'That' refers to a previous joke, remark, story, or situation. Here, 'funny' means amusing. Examples include 'Haha! That was funny!', 'Wow, that was really funny!', and 'That was so funny!'. Add 'really' or 'so' to intensify the reaction. In other contexts, 'funny' can mean strange or suspicious, as in 'Something funny is going on'. This intention deals specifically with humor.",
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "6eb08295-af79-41c4-8356-bc27a7e30f85",
+          "exampleItem": "Haha! That was funny!",
+          "intent": "That was funny"
+        },
+        {
+          "id": "7fc193a6-b08a-42d5-9467-cd38b8f41096",
+          "exampleItem": "Wow, that was really funny!",
+          "intent": "that was really funny"
+        },
+        {
+          "id": "80d2a4b7-c19b-43e6-a578-de49c90521a7",
+          "exampleItem": "That was funny!",
+          "intent": "That was funny"
+        },
+        {
+          "id": "91e3b5c8-d2ac-44f7-b689-ef5ada1632b8",
+          "exampleItem": "Haha! That was funny!",
+          "intent": "That was funny"
+        },
+        {
+          "id": "a2f4c6d9-e3bd-4508-879a-f06beb2743c9",
+          "exampleItem": "That was funny! I wasn't expecting it.",
+          "intent": "That was funny"
+        },
+        {
+          "id": "b305d7ea-f4ce-4619-98ab-017cfc3854da",
+          "exampleItem": "Man, I thought that was really funny!",
+          "intent": "I thought that was really funny"
+        },
+        {
+          "id": "c416e8fb-05df-472a-a9bc-128d0d4965eb",
+          "exampleItem": "Wow, that was really funny!",
+          "intent": "that was really funny"
+        },
+        {
+          "id": "d527f90c-16e0-483b-8acd-239e1e5a76fc",
+          "exampleItem": "That was funny, especially at the end.",
+          "intent": "That was funny"
+        },
+        {
+          "id": "e6380a1d-27f1-494c-9bde-34af2f6b870d",
+          "exampleItem": "Haha! That was really funny!",
+          "intent": "That was really funny"
+        },
+        {
+          "id": "f7491b2e-3802-4a5d-8cef-45b0307c981e",
+          "exampleItem": "That was really funny! I'm still laughing.",
+          "intent": "That was really funny"
+        }
+      ]
+    },
+    {
+      "id": "boa-essa-good-one-2f8b4d03-6a57-4c91-ae32-b9d784e1f265",
+      "intention": "Good one! / That was a good one! / Nice one!",
+      "pattern": "good one / that was a good one / nice one",
+      "description": "A short, spontaneous reaction to a joke, a prank, a clever answer, or a witty remark. 'Good one!' is a very common shortened form of 'That was a good one!'. In American English, it can convey genuine approval, amusement, or sarcasm, depending on the context and tone. It is especially useful in casual conversations involving humor.",
+      "category": "chunk",
+      "searchTerms": [
+        "good one",
+        "that was a good one",
+        "nice one",
+        "that was a great one",
+        "I liked that one",
+        "good joke",
+        "that was funny",
+        "that was clever",
+        "that was smart",
+        "that was hilarious"
+      ],
+      "validationPatterns": [
+        "\\b(?:good|nice)\\s+one\\b",
+        "\\bthat\\s+was\\s+a\\s+(?:good|great)\\s+one\\b",
+        "\\bI\\s+liked\\s+that\\s+one\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "ready-to-use",
+        "spoken-english",
+        "american-english",
+        "quick-reaction",
+        "humor",
+        "jokes",
+        "sarcasm",
+        "everyday-conversation"
+      ],
+      "related": [],
+      "structure": "GOOD ONE! is a short, informal reaction equivalent to 'That was a good one!'. It often follows a joke, a prank, or a clever remark. Examples include 'Haha, good one!', 'Good one, buddy!', and 'Oh, good one!'. It can be sarcastic in response to a bad joke, an unconvincing excuse, or an absurd remark. The main difference from 'That was a good one!' is its brevity. Both expressions can be used interchangeably in many humorous situations. 'Nice one!' is often more appropriate for praising an achievement or an action done well.",
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "c416e8fb-05df-472a-a9bc-018d0d4965eb",
+          "exampleItem": "Haha! Good one!",
+          "intent": "Good one"
+        },
+        {
+          "id": "d527f90c-16e0-483b-8acd-129e1e5a76fc",
+          "exampleItem": "Good one, buddy!",
+          "intent": "Good one"
+        },
+        {
+          "id": "e6380a1d-27f1-494c-9bde-23af2f6b870d",
+          "exampleItem": "Oh, good one!",
+          "intent": "good one"
+        },
+        {
+          "id": "f7491b2e-3802-4a5d-8cef-34b0307c981e",
+          "exampleItem": "Haha! Nice one!",
+          "intent": "Nice one"
+        },
+        {
+          "id": "085a2c3f-4913-4b6e-9df0-45c1418da92f",
+          "exampleItem": "Good one! I hadn't thought of that.",
+          "intent": "Good one"
+        },
+        {
+          "id": "196b3d40-5a24-4c7f-ae01-56d2529eba30",
+          "exampleItem": "Good one, man!",
+          "intent": "Good one"
+        },
+        {
+          "id": "2a7c4e51-6b35-4d80-8f12-67e363afcb41",
+          "exampleItem": "Haha! I liked that one!",
+          "intent": "I liked that one"
+        },
+        {
+          "id": "3b8d5f62-7c46-4e91-9023-78f474b0dc52",
+          "exampleItem": "Good one! You always make me laugh.",
+          "intent": "Good one"
+        },
+        {
+          "id": "4c9e6073-8d57-4fa2-a134-890585c1ed63",
+          "exampleItem": "Oh, good one! I almost believed you.",
+          "intent": "good one"
+        },
+        {
+          "id": "5daf7184-9e68-40b3-b245-9a1696d2fe74",
+          "exampleItem": "Good one! That joke was great.",
+          "intent": "Good one"
+        }
+      ]
+    },
+    {
+      "id": "essa-foi-boa-that-was-a-good-one-1e7a3c92-5f46-4b80-9d21-a8c673f0e154",
+      "intention": "That was a good one! / Good one! / That was a great one!",
+      "pattern": "that was a good one / good one / that was a great one",
+      "description": "A spontaneous reaction to a joke, a witty remark, a prank, or a funny answer. It shows that the speaker found something amusing, clever, or surprising. 'That was a good one!' is very natural in American English, especially after a joke or a funny comment. Depending on the tone, it can also convey sarcasm.",
+      "category": "chunk",
+      "searchTerms": [
+        "that was a good one",
+        "good one",
+        "that was a great one",
+        "that was a really good one",
+        "that was amazing",
+        "that was funny",
+        "that was a good joke",
+        "that was hilarious",
+        "you came up with a good one",
+        "I liked that one"
+      ],
+      "validationPatterns": [
+        "\\bthat\\s+(?:was\\s+a\\s+(?:really\\s+)?|really\\s+was\\s+a\\s+)(?:good|great)\\s+one\\b",
+        "\\bgood\\s+one\\b",
+        "\\bI\\s+liked\\s+that\\s+one\\b"
+      ],
+      "tags": [
+        "language-chunk",
+        "ready-to-use",
+        "spoken-english",
+        "american-english",
+        "reaction",
+        "humor",
+        "jokes",
+        "everyday-conversation"
+      ],
+      "related": [],
+      "structure": "THAT WAS A GOOD ONE! is a ready-to-use expression for reacting positively to a joke, a witty remark, or a clever answer. 'That' refers to what has just been said or done. 'One' stands for the joke, prank, or remark. Examples include 'Haha! That was a good one!', 'Wow, that was a really good one!', and 'That was a good one, man!'. Add 'really' to intensify the reaction. An enthusiastic tone conveys genuine approval, while a dry tone can convey sarcasm. The expression is especially appropriate for humor rather than praise in every possible situation.",
+      "level": "A2",
+      "allowLanguageChunkPractice": true,
+      "examples": [
+        {
+          "id": "2a9c4e71-6b35-4d80-8f12-c7e503a96b41",
+          "exampleItem": "Haha! That was a good one!",
+          "intent": "That was a good one"
+        },
+        {
+          "id": "3b8d5f62-7c46-4e91-9023-d8f614b07c52",
+          "exampleItem": "Man, that was a great one!",
+          "intent": "that was a great one"
+        },
+        {
+          "id": "4c9e6073-8d57-4fa2-a134-e90525c18d63",
+          "exampleItem": "Wow, that was a really good one!",
+          "intent": "that was a really good one"
+        },
+        {
+          "id": "5daf7184-9e68-40b3-b245-fa1636d29e74",
+          "exampleItem": "Good one, man!",
+          "intent": "Good one"
+        },
+        {
+          "id": "6eb08295-af79-41c4-8356-ab2747e30f85",
+          "exampleItem": "Haha! That was a good one, huh!",
+          "intent": "That was a good one"
+        },
+        {
+          "id": "7fc193a6-b08a-42d5-9467-bc3858f41096",
+          "exampleItem": "That was a good one! You made me laugh.",
+          "intent": "That was a good one"
+        },
+        {
+          "id": "80d2a4b7-c19b-43e6-a578-cd49690521a7",
+          "exampleItem": "Man, that really was a great one!",
+          "intent": "that really was a great one"
+        },
+        {
+          "id": "91e3b5c8-d2ac-44f7-b689-de5a7a1632b8",
+          "exampleItem": "That was a good one! I'll remember that.",
+          "intent": "That was a good one"
+        },
+        {
+          "id": "a2f4c6d9-e3bd-4508-879a-ef6b8b2743c9",
+          "exampleItem": "Haha! Good one! I wasn't expecting that.",
+          "intent": "Good one"
+        },
+        {
+          "id": "b305d7ea-f4ce-4619-98ab-f07c9c3854da",
+          "exampleItem": "That was a really good one! Tell me another!",
+          "intent": "That was a really good one"
+        }
+      ]
+    },
+    {
+      "id": "me-disseram-me-contaram-que-7a3e91c2-5b84-4f60-9d17-e2c685a0b439",
+      "intention": "They told me... / I was told... / They didn't tell me... / Did they tell you...?",
+      "pattern": "they/someone told me (that) + information / they didn't tell me (that) + information / did they tell you (that) + information?",
+      "description": "Reports information received from someone else without necessarily identifying the source. Natural American English forms include 'They told me (that)...', 'Someone told me (that)...', and 'I was told (that)...'. Negative forms such as 'They didn't tell me...' and 'I wasn't told...' deny that the information was communicated. In contrast, 'They told me he wasn't coming' reports negative information: the act of telling still happened. Questions include 'Did they tell you...?' and 'Were you told...?'. The word 'that' is often omitted in conversation.",
+      "category": "reported-speech",
+      "searchTerms": [
+        "they told me",
+        "they told me that",
+        "someone told me",
+        "somebody told me",
+        "I was told",
+        "I was told that",
+        "I heard that",
+        "I heard from someone",
+        "they didn't tell me",
+        "they did not tell me",
+        "I wasn't told",
+        "I was not told",
+        "nobody told me",
+        "no one told me",
+        "they told me he wasn't",
+        "they told me she didn't",
+        "did they tell you",
+        "did someone tell you",
+        "were you told",
+        "didn't they tell you",
+        "weren't you told",
+        "who told you",
+        "why didn't they tell me",
+        "what did they tell you",
+        "what did they tell you about"
+      ],
+      "validationPatterns": [
+        "\\b(?:they|someone|somebody|nobody|no\\s+one)\\s+told\\s+me\\b",
+        "\\bthey\\s+did(?:n['\\u2019]t|\\s+not)\\s+tell\\s+me\\b",
+        "\\bI\\s+was(?:n['\\u2019]t|\\s+not)?\\s+told\\b",
+        "\\bdid(?:n['\\u2019]t)?\\s+(?:they|someone|somebody)\\s+(?:not\\s+)?tell\\s+you\\b",
+        "\\bwere(?:n['\\u2019]t)?\\s+you\\s+(?:not\\s+)?told\\b",
+        "\\bwho\\s+told\\s+you\\b",
+        "\\bwhy\\s+did(?:n['\\u2019]t|\\s+not)\\s+they\\s+(?:not\\s+)?tell\\s+me\\b",
+        "\\bwhat\\s+did\\s+(?:they|someone|somebody)\\s+tell\\s+you\\s+about\\b",
+        "\\bI\\s+heard(?:\\s+from\\s+someone)?\\s+that\\b"
+      ],
+      "tags": [
+        "reported-speech",
+        "received-information",
+        "secondhand-information",
+        "reporting-information",
+        "everyday-conversation",
+        "spoken-english",
+        "american-english",
+        "affirmative-form",
+        "negative-form",
+        "question-form",
+        "communication",
+        "news",
+        "rumors",
+        "questions",
+        "sentence-generator"
+      ],
+      "related": [],
+      "structure": "Use this intention to report information received from another person. AFFIRMATIVE: 'They told me (that) + clause', 'Someone told me (that) + clause', or 'I was told (that) + clause'. Examples: 'They told me you're moving to Canada' and 'I was told the meeting was canceled'. NEGATIVE ACT OF INFORMING: 'They didn't tell me (that) + clause', 'I wasn't told (that) + clause', or 'Nobody told me (that) + clause'. Example: 'They didn't tell me you were sick'. AFFIRMATIVE REPORT OF NEGATIVE INFORMATION: 'They told me (that) + subject + negative verb'. Example: 'They told me he wasn't coming' means that someone communicated his absence; 'They didn't tell me he was coming' means that the speaker was not informed of his arrival. QUESTIONS: 'Did they tell you (that) + clause?', 'Did someone tell you (that) + clause?', or 'Were you told (that) + clause?'. Example: 'Did they tell you the truth?'. NEGATIVE QUESTIONS: 'Didn't they tell you (that) + clause?' or 'Weren't you told (that) + clause?'. Example: 'Didn't they tell you the meeting was canceled?'. WH-QUESTIONS: 'Who told you (that) + clause?', 'Why didn't they tell me (that) + clause?', and 'What did they tell you about + noun?'. In spoken American English, 'that' is frequently omitted after 'told'. The verb 'tell' normally requires a recipient, such as 'me', 'you', 'him', 'her', or 'us'; use 'They told me', rather than 'They told that...'. 'I heard that...' can express secondhand information without implying that someone spoke directly to the speaker. Reported-speech tense changes depend on context: both 'They told me you were leaving' and 'They told me you're leaving' can be natural, depending on the time perspective and whether the information remains current.",
+      "level": "B1",
+      "examples": [
+        {
+          "id": "b328d584-d903-46e2-80de-4f55f9d0d73f",
+          "exampleItem": "They told me you were going to start working at Microsoft.",
+          "intent": "They told me"
+        },
+        {
+          "id": "c419e695-e014-47f3-91ef-50660ae1e840",
+          "exampleItem": "They told me you're learning English.",
+          "intent": "They told me"
+        },
+        {
+          "id": "d52af7a6-f125-4804-a2f0-61771bf2f951",
+          "exampleItem": "They told me you got a new job.",
+          "intent": "They told me"
+        },
+        {
+          "id": "e63b08b7-0236-4915-b301-72882c030a62",
+          "exampleItem": "They told me the meeting was canceled.",
+          "intent": "They told me"
+        },
+        {
+          "id": "f74c19c8-1347-4a26-8412-83993d141b73",
+          "exampleItem": "Someone told me you're thinking about moving.",
+          "intent": "Someone told me"
+        },
+        {
+          "id": "085d2ad9-2458-4b37-9523-94aa4e252c84",
+          "exampleItem": "They told me this restaurant is really good.",
+          "intent": "They told me"
+        },
+        {
+          "id": "196e3bea-3569-4c48-a634-a5bb5f363d95",
+          "exampleItem": "They told me you went away for the weekend.",
+          "intent": "They told me"
+        },
+        {
+          "id": "2a7f4cfb-467a-4d59-b745-b6cc60474ea6",
+          "exampleItem": "They told me the project starts on Monday.",
+          "intent": "They told me"
+        },
+        {
+          "id": "3b805d0c-578b-4e6a-8856-c7dd71585fb7",
+          "exampleItem": "They told me you passed the interview.",
+          "intent": "They told me"
+        },
+        {
+          "id": "4c916e1d-689c-4f7b-9967-d8ee826960c8",
+          "exampleItem": "They told me you speak English really well.",
+          "intent": "They told me"
+        },
+        {
+          "id": "5da27f2e-79ad-408c-aa78-e9ff937a71d9",
+          "exampleItem": "They didn't tell me you were sick.",
+          "intent": "They didn't tell me"
+        },
+        {
+          "id": "6eb3803f-8abe-419d-8b89-fa00a48b82ea",
+          "exampleItem": "They didn't tell me the company was hiring.",
+          "intent": "They didn't tell me"
+        },
+        {
+          "id": "7fc49140-9bcf-42ae-9c9a-0b11b59c93fb",
+          "exampleItem": "Nobody told me the meeting time had changed.",
+          "intent": "Nobody told me"
+        },
+        {
+          "id": "80d5a251-acd0-43bf-8dab-1c22c6ada40c",
+          "exampleItem": "They didn't tell me I needed to bring an ID.",
+          "intent": "They didn't tell me"
+        },
+        {
+          "id": "91e6b362-bde1-44c0-9ebc-2d33d7beb51d",
+          "exampleItem": "They didn't tell me the deadline was today.",
+          "intent": "They didn't tell me"
+        },
+        {
+          "id": "a2f7c473-cef2-45d1-8fcd-3e44e8cfc62e",
+          "exampleItem": "They told me he wasn't coming to the party.",
+          "intent": "They told me"
+        },
+        {
+          "id": "b308d584-df03-46e2-90de-4f55f9d0d73f",
+          "exampleItem": "They told me she doesn't work at that company anymore.",
+          "intent": "They told me"
+        },
+        {
+          "id": "c419e695-e014-47f3-a1ef-50660ae1e840",
+          "exampleItem": "They told me the system wasn't working.",
+          "intent": "They told me"
+        },
+        {
+          "id": "d52af7a6-f125-4804-b2f0-61771bf2f951",
+          "exampleItem": "They told me you didn't like the proposal.",
+          "intent": "They told me"
+        },
+        {
+          "id": "e63b08b7-0236-4915-8301-72882c030a62",
+          "exampleItem": "They didn't tell me you had already finished the work.",
+          "intent": "They didn't tell me"
+        },
+        {
+          "id": "f74c19c8-1347-4a26-9412-83993d141b73",
+          "exampleItem": "Did they tell you the meeting was postponed?",
+          "intent": "Did they tell you"
+        },
+        {
+          "id": "085d2ad9-2458-4b37-a523-94aa4e252c84",
+          "exampleItem": "Did they tell you he's leaving the company?",
+          "intent": "Did they tell you"
+        },
+        {
+          "id": "196e3bea-3569-4c48-b634-a5bb5f363d95",
+          "exampleItem": "Did they tell you the deadline changed?",
+          "intent": "Did they tell you"
+        },
+        {
+          "id": "2a7f4cfb-467a-4d59-8745-b6cc60474ea6",
+          "exampleItem": "Didn't they tell you the event was canceled?",
+          "intent": "Didn't they tell you"
+        },
+        {
+          "id": "3b805d0c-578b-4e6a-9856-c7dd71585fb7",
+          "exampleItem": "Didn't they tell you she got the promotion?",
+          "intent": "Didn't they tell you"
+        },
+        {
+          "id": "4c916e1d-689c-4f7b-a967-d8ee826960c8",
+          "exampleItem": "Who told you I was looking for another job?",
+          "intent": "Who told you"
+        },
+        {
+          "id": "5da27f2e-79ad-408c-8a78-e9ff937a71d9",
+          "exampleItem": "Who told you I was studying French?",
+          "intent": "Who told you"
+        },
+        {
+          "id": "6eb3803f-8abe-419d-9b89-fa00a48b82ea",
+          "exampleItem": "Why didn't they tell me you needed help?",
+          "intent": "Why didn't they tell me"
+        },
+        {
+          "id": "7fc49140-9bcf-42ae-8c9a-0b11b59c93fb",
+          "exampleItem": "Why didn't they tell me the project had been approved?",
+          "intent": "Why didn't they tell me"
+        },
+        {
+          "id": "80d5a251-acd0-43bf-9dab-1c22c6ada40c",
+          "exampleItem": "What did they tell you about the new job opportunity?",
+          "intent": "What did they tell you about"
         }
       ]
     }
