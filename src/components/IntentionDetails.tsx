@@ -97,6 +97,38 @@ const ENGLISH_PILL_OPENINGS = [
   "E aí, bora praticar inglês? Hoje a intenção é dizer..."
 ] as const;
 
+const YOUTUBE_PILL_TERMS_INTROS = [
+  "Essa intenção cobre, em português, os seguintes termos e expressões:",
+  "Saca só o que essa intenção representa no nosso português:",
+  "Olha quantas formas de dizer a mesma coisa estão relacionadas a essa intenção:",
+  "Presta atenção nas expressões em português que essa intenção engloba:",
+  "Você sabia que essa intenção pode representar todas estas ideias em português?",
+  "Antes dos exemplos, dá uma olhada nas expressões que estamos trabalhando:",
+  "Olha só o alcance dessa intenção comunicativa em português:",
+  "Essas são algumas das formas de expressar essa mesma ideia em português:",
+  "Agora veja quantas expressões brasileiras podemos associar a essa intenção:",
+  "Quer entender melhor essa intenção? Olha o que ela cobre em português:"
+] as const;
+
+const YOUTUBE_PILL_ENDINGS = [
+  "Essa foi mais uma dose da sua Pílula de Inglês do Brazilian English Journey! Agora deixa a preguiça de lado e escreve nos comentários uma frase usando o que aprendeu. Chega de estudar palavras isoladas! Inscreva-se no canal e aprenda inglês por intenções e language chunks!",
+  "Mais uma Pílula de Inglês entregue! Mas só assistir não basta, hein? Quero ver você criar uma frase nos comentários. Aqui no BEJ, a gente aprende a se comunicar com blocos de linguagem. Curtiu? Inscreva-se e vem comigo!",
+  "Pronto! Agora você tem mais uma ferramenta para se comunicar em inglês. O desafio é seu: escreva uma frase nos comentários. E se você quer sair da tradução palavra por palavra, inscreva-se no Brazilian English Journey!",
+  "Essa foi a Pílula de Inglês de hoje! Agora transforma conhecimento em prática: cria uma frase e coloca aqui embaixo. Lembre-se: inglês natural não é uma coleção de palavras soltas. Inscreva-se e acompanhe as próximas pílulas!",
+  "E aí, fez sentido? Então prova que aprendeu! Escreve nos comentários uma frase usando essa intenção. Aqui no Brazilian English Journey, nosso foco é comunicação real. Inscreva-se para continuar aprendendo comigo!",
+  "Mais uma dose de inglês por intenção para você! Não deixa esse conhecimento parado. Usa a expressão numa frase e compartilha nos comentários. Quer aprender mais language chunks do cotidiano? Inscreva-se no canal!",
+  "Agora é hora de colocar esse inglês para funcionar! Quero uma frase sua nos comentários. Pare de decorar palavras isoladas e comece a construir ideias completas. Essa é a proposta do BEJ. Gostou? Inscreva-se!",
+  "Essa foi mais uma Pílula de Inglês! E o nosso combinado é simples: aprendeu, praticou. Então escreve uma frase aqui nos comentários. Para descobrir novas formas naturais de falar inglês, inscreva-se no Brazilian English Journey!",
+  "Não adianta só entender, tem que usar! Por isso, seu desafio é escrever uma frase nos comentários. O segredo está em pensar na intenção e usar os blocos de linguagem certos. Inscreva-se e acompanhe as próximas pílulas!",
+  "Fechamos mais uma Pílula de Inglês do BEJ! Agora quero ver você saindo da teoria. Crie uma frase e compartilhe aqui embaixo. Quer aprender inglês de um jeito mais natural, sem depender de palavras isoladas? Inscreva-se no canal!"
+] as const;
+
+/** Sorteia sem repetir a opção imediatamente anterior. */
+function nextPillVariation(length: number, previous: number | null): number {
+  const randomIndex = Math.floor(Math.random() * (length - (previous === null ? 0 : 1)));
+  return previous !== null && randomIndex >= previous ? randomIndex + 1 : randomIndex;
+}
+
 /** Aceita somente links HTTP(S) do YouTube. */
 function getYoutubeUrl(value?: string): string | null {
   if (!value?.trim()) return null;
@@ -163,6 +195,10 @@ export function IntentionDetails({
   const [shareError, setShareError] = useState<string | null>(null);
   const [pillCopyStatus, setPillCopyStatus] = useState<"copied" | "error" | null>(null);
   const previousPillOpening = useRef<number | null>(null);
+  const previousYoutubePillOpening = useRef<number | null>(null);
+  const previousYoutubeTermsIntro = useRef<number | null>(null);
+  const previousYoutubeEnding = useRef<number | null>(null);
+  const [youtubePillCopyStatus, setYoutubePillCopyStatus] = useState<"copied" | "error" | null>(null);
   const [hqZoom, setHqZoom] = useState(1);
   const hqViewportRef = useRef<HTMLDivElement | null>(null);
   const detailPanelRef = useRef<HTMLElement | null>(null);
@@ -420,9 +456,7 @@ export function IntentionDetails({
   async function handleCopyEnglishPill() {
     if (!isAuthorMode() || !item) return;
     // Choose a fresh opening each time, without immediately repeating the last one.
-    const previous = previousPillOpening.current;
-    const randomIndex = Math.floor(Math.random() * (ENGLISH_PILL_OPENINGS.length - (previous === null ? 0 : 1)));
-    const openingIndex = previous !== null && randomIndex >= previous ? randomIndex + 1 : randomIndex;
+    const openingIndex = nextPillVariation(ENGLISH_PILL_OPENINGS.length, previousPillOpening.current);
     previousPillOpening.current = openingIndex;
     const sections = [
       ENGLISH_PILL_OPENINGS[openingIndex],
@@ -452,6 +486,43 @@ export function IntentionDetails({
       setPillCopyStatus("copied");
     } catch {
       setPillCopyStatus("error");
+    }
+  }
+
+  async function handleCopyYoutubePill() {
+    if (!isAuthorMode() || !item) return;
+    const openingIndex = nextPillVariation(ENGLISH_PILL_OPENINGS.length, previousYoutubePillOpening.current);
+    const termsIndex = nextPillVariation(YOUTUBE_PILL_TERMS_INTROS.length, previousYoutubeTermsIntro.current);
+    const endingIndex = nextPillVariation(YOUTUBE_PILL_ENDINGS.length, previousYoutubeEnding.current);
+    // The YouTube script describes expressions in the source language, not the study language.
+    const searchTerms = (item.sourceSearchTerms ?? []).map(term => term.trim()).filter(Boolean);
+    const sections = [
+      ENGLISH_PILL_OPENINGS[openingIndex],
+      `${LANGUAGES[sourceLanguage].flag} *${item.intention.trim()}*`,
+      `${LANGUAGES[language].flag} *${(item.targetIntention ?? item.english ?? "").trim()}*`,
+      item.description?.trim() ? `📖 Descrição\n${item.description.trim()}` : null,
+      item.pattern?.trim() ? `🧩 Padrão\n${item.pattern.trim()}` : null,
+      searchTerms.length ? `${YOUTUBE_PILL_TERMS_INTROS[termsIndex]}\n${searchTerms.map(term => `• ${term}`).join("\n")}` : null,
+      ...(item.examples ?? []).flatMap((example, index) => [
+        `${index === 0 ? "💬 Exemplos\n\n" : ""}${index + 1}.`,
+        example.pt?.trim() ? `${LANGUAGES[sourceLanguage].flag} ${highlightSharedIntention(example.pt.trim(), example.ptIntent)}` : null,
+        targetSentence(example).trim() ? `${LANGUAGES[language].flag} ${highlightSharedIntention(targetSentence(example).trim(), targetIntent(example))}` : null
+      ]),
+      YOUTUBE_PILL_ENDINGS[endingIndex]
+    ].filter((section): section is string => Boolean(section)).join("\n\n");
+    try {
+      if (navigator.clipboard?.writeText) {
+        try { await navigator.clipboard.writeText(sections); }
+        catch { copyIntentionIdFallback(sections); }
+      } else {
+        copyIntentionIdFallback(sections);
+      }
+      previousYoutubePillOpening.current = openingIndex;
+      previousYoutubeTermsIntro.current = termsIndex;
+      previousYoutubeEnding.current = endingIndex;
+      setYoutubePillCopyStatus("copied");
+    } catch {
+      setYoutubePillCopyStatus("error");
     }
   }
 
@@ -1173,15 +1244,31 @@ Mandatório:
           {isAuthorMode() && (
             <button type="button" className="secondary-button"
               onClick={() => void handleCopyEnglishPill()}
-              title="Copiar Pílula de Inglês para YouTube ou WhatsApp"
-              aria-label="Copiar Pílula de Inglês para YouTube ou WhatsApp">
+              title="Copiar Pílula de Inglês para WhatsApp"
+              aria-label="Copiar Pílula de Inglês para WhatsApp">
               <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24"
                 fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M10.5 3.5a6 6 0 0 1 8.5 8.5l-7 7a6 6 0 0 1-8.5-8.5z" />
                 <path d="m7.5 8.5 8 8" />
               </svg>
-              <span>{pillCopyStatus === "copied" ? "✓ Copiada" : "Pílula"}</span>
+              <span>{pillCopyStatus === "copied" ? "✓ Copiada" : "Pílula WhatsApp"}</span>
             </button>
+          )}
+          {isAuthorMode() && (
+            <button type="button" className="secondary-button"
+              onClick={() => void handleCopyYoutubePill()}
+              title="Copiar roteiro da Pílula de Inglês para YouTube"
+              aria-label="Copiar roteiro da Pílula de Inglês para YouTube">
+              <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M10.5 3.5a6 6 0 0 1 8.5 8.5l-7 7a6 6 0 0 1-8.5-8.5z" />
+                <path d="m7.5 8.5 8 8" />
+              </svg>
+              <span>{youtubePillCopyStatus === "copied" ? "✓ Copiada" : "Pílula YouTube"}</span>
+            </button>
+          )}
+          {isAuthorMode() && youtubePillCopyStatus === "error" && (
+            <span role="alert">Não foi possível copiar a Pílula do YouTube.</span>
           )}
           {isAuthorMode() && pillCopyStatus === "error" && (
             <span role="alert">Não foi possível copiar a Pílula de Inglês.</span>
