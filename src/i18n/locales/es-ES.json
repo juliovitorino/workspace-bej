@@ -305,6 +305,7 @@
       "yesterday": "Ayer",
       "today": "Hoy",
       "month": "Mes actual",
+      "ytd": "YTD (año hasta hoy)",
       "all": "Todo el historial",
       "custom": "Intervalo personalizado"
     },
