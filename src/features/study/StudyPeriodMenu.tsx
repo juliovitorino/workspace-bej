@@ -3,14 +3,14 @@ import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import type { StudyPeriod } from "./studyStats";
 
-const periods: StudyPeriod[] = ["today", "yesterday", "week", "7", "30", "month", "90", "all"];
+const periods: StudyPeriod[] = ["today", "yesterday", "week", "7", "30", "month", "90", "ytd", "all"];
 export function StudyPeriodMenu({ anchor, period, onSelect, onClose }: {
   anchor: HTMLElement; period: StudyPeriod; onSelect: (period: StudyPeriod) => void; onClose: () => void;
 }) {
   const { t } = useTranslation();
   const menu = useRef<HTMLDivElement>(null);
   const rect = anchor.getBoundingClientRect();
-  const top = Math.max(8, Math.min(rect.top, window.innerHeight - 340));
+  const top = Math.max(8, Math.min(rect.top, window.innerHeight - 380));
   const left = Math.max(8, rect.left - 124);
   useEffect(() => {
     const buttons = menu.current?.querySelectorAll<HTMLButtonElement>("button");
